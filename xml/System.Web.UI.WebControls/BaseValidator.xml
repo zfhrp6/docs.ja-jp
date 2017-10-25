@@ -1,0 +1,1327 @@
+<Type Name="BaseValidator" FullName="System.Web.UI.WebControls.BaseValidator">
+  <TypeSignature Language="C#" Value="public abstract class BaseValidator : System.Web.UI.WebControls.Label, System.Web.UI.IValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseValidator extends System.Web.UI.WebControls.Label implements class System.Web.UI.IValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BaseValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Label</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IValidator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ErrorMessage")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.BaseValidatorDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>検証コントロールのための抽象基底クラスとして使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator>クラスはすべての検証コントロールの実装の中核を提供します。 検証コントロールは、関連付けられた入力コントロールにおけるユーザー入力の検証に使用されます。 検証に失敗した値を入力すると、検証コントロールには、エラー メッセージが表示されます。 入力コントロールの検証コントロールは分離されて、ため入力コントロールに対する相対的なページで、エラー メッセージを任意の場所に配置できます。 ASP.NET では、特定の種類の検証を実行するいくつかの検証コントロールを提供します。 次の表では、これらのコントロールについて説明します。  
+  
+|検証コントロール|説明|  
+|------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.CompareValidator>|設定して別の入力コントロールに入力された値に対して、定数の値に対して、または適切なデータ型に対して値を検証、<xref:System.Web.UI.WebControls.CompareValidator.Operator%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.UI.WebControls.ValidationCompareOperator?displayProperty=nameWithType>です。|  
+|<xref:System.Web.UI.WebControls.CustomValidator>|ユーザー指定のカスタム検証ルーチンを使用して値を検証します。|  
+|<xref:System.Web.UI.WebControls.RangeValidator>|値が値の範囲内にあるかどうかを検証します。|  
+|<xref:System.Web.UI.WebControls.RegularExpressionValidator>|正規表現を使用して値を検証します。|  
+|<xref:System.Web.UI.WebControls.RequiredFieldValidator>|必須フィールドに値を入力したことを検証します。|  
+  
+ 検証コントロールは、常にサーバーに関連付けられた入力コントロールを検証します。 検証コントロールには、クライアントの検証を実行する (Microsoft Internet Explorer バージョン 4.0 以降) などのスクリプトを有効にしたブラウザーを許可する完全なのクライアント側実装もがあります。 クライアント側の検証は、サーバーに送信される前に、ユーザー入力をチェックして、検証プロセスを強化します。 これにより、フォームを送信すると、サーバー側の検証に必要な情報のラウンド トリップを回避する前に、クライアントで検出されたエラーです。  
+  
+ 複数の検証コントロールは、さまざまな条件を検証する個々 の入力コントロールで使用できます。 たとえばで複数の検証コントロールを適用することができます、<xref:System.Web.UI.WebControls.TextBox>コントロール。 使用することができます、<xref:System.Web.UI.WebControls.RangeValidator>コントロールに入力された値を確実に、<xref:System.Web.UI.WebControls.TextBox>制御範囲内では、セット、および<xref:System.Web.UI.WebControls.RequiredFieldValidator>コントロールをユーザーが値を入力したことを確認してください。  
+  
+ ASP.NET には、サーバーに投稿することができる多くのコントロールが用意されています。 これらのコントロールのいずれかの場合にその`CausesValidation`プロパティに設定`true`サーバーへのコントロールのポストバック時に検証を実行します。 次のコントロールには、サーバーにポストバック機能があります。  
+  
+-   <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.CheckBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.CheckBoxList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.DropDownList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputImage?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ImageButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.LinkButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ListBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.RadioButtonList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.TextBox?displayProperty=nameWithType>  
+  
+> [!NOTE]
+>  これらのコントロールの後のサーバーにポストバックされる場合にのみ、`AutoPostBack`プロパティに設定されている`true`です。  
+  
+ これらの各コントロールが、`ValidationGroup`プロパティを設定すると、コントロール、サーバーへのポストバックがトリガーされたときに、指定されたグループ内の検証コントロールのみを検証します。 検証コントロールのグループで、設定を<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A>同じ値には、各検証コントロールのプロパティです。  
+  
+ コントロールに関連付ける入力コントロール、検証を使用して、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティです。 検証が失敗したときに、検証コントロールに表示するテキストを指定するには、使用、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>プロパティです。 使用して、ページの検証に失敗したすべてのコントロールの概要を表示することも、<xref:System.Web.UI.WebControls.ValidationSummary>コントロール。 表示するテキストを指定する、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールを使用して、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティです。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティ設定を指定せず、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>プロパティ、値の<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティは検証コントロールにも表示されます。  
+  
+ 検証コントロールを使用する場合は、常に、処理を実行する前にサーバー側の検証の結果を確認する必要があります。 ポストバックが後に、イベント メソッドを呼び出す前にページ検証コントロールを呼び出すし、集計には、その結果、<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>プロパティです。 (検証コントロールを使用して明示的に呼び出すこともできます、`Validate`メソッドです)。独自のコードで、ことを確認する必要があります、<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>プロパティから返される`true`入力を処理する前にします。 スクリプト対応のブラウザーは、検証チェックが失敗した場合も、常に確認する必要があります、クライアントで発生しているをポストバックを妨げる可能性も<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>検証済みのデータを処理する前にサーバー コードにします。  
+  
+ 手動で検証を実行することができます。 ページ上のすべての検証コントロールを検証するを使用して、<xref:System.Web.UI.Page.Validate%2A?displayProperty=nameWithType>メソッドです。 使用して個別の検証コントロールを検証することができます、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>コントロールのメソッドです。  
+  
+> [!NOTE]
+>  使用する場合、<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>プロパティに、`Page_Load`メソッド、最初に明示的に呼び出す必要があります、<xref:System.Web.UI.Page.Validate%2A?displayProperty=nameWithType>メソッドです。 後に検証が行われるため、<xref:System.Web.UI.Control.Load?displayProperty=nameWithType>イベントのイベント ハンドラーの前にですが、ページの`Click`または`Command`イベント、<xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>までプロパティは更新されません、<xref:System.Web.UI.Page.Validate%2A?displayProperty=nameWithType>メソッドが呼び出されます。 代わりのイベント ハンドラーにコードを配置することができます、`Click`または`Command`イベントの代わりに、`Page_Load`メソッドです。  
+  
+ すべての Web サーバー コントロールは、検証コントロールをサポートします。 検証コントロールと検証可能な標準のコントロールは次のとおりです。  
+  
+-   <xref:System.Web.UI.WebControls.DropDownList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.FileUpload?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ListBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.RadioButtonList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.TextBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputFile?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputPassword?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputText?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlSelect?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlTextArea?displayProperty=nameWithType>  
+  
+> [!NOTE]
+>  検証する入力コントロールの<xref:System.Web.UI.ValidationPropertyAttribute?displayProperty=nameWithType>コントロールに属性を適用する必要があります。  
+  
+> [!NOTE]
+>  派生する検証コントロールを使用すると<xref:System.Web.UI.WebControls.BaseValidator>内、<xref:System.Web.UI.UpdatePanel>制御、検証コントロールと関連付けられているコントロールが同じパネルであるかどうかを確認します。 使用しての詳細については、<xref:System.Web.UI.UpdatePanel>部分ページ更新プログラムの制御を参照してください[部分ページ レンダリング概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+ 検証に失敗したときにすることができますにフォーカスを設定、関連付けられた入力コントロールを設定して、<xref:System.Web.UI.WebControls.BaseValidator.SetFocusOnError%2A>プロパティを`true`です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.BaseValidator>を参照してください、<xref:System.Web.UI.WebControls.BaseValidator.%23ctor%2A>コンス トラクターです。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、複数の検証コントロールを使用して、ユーザーが有効な値にすることを確認する方法を示します、<xref:System.Web.UI.WebControls.TextBox>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.UI.WebControls.BaseValidator" />クラスでは、次のメンバーをオーバーライドする必要があります:<see cref="M:System.Web.UI.WebControls.BaseValidator.EvaluateIsValid" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BaseValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは直接呼び出されません。 このクラスから継承する検証コントロールは、基本プロパティを初期化するために、独自のコンス トラクターから、このコンス トラクターを呼び出すことができます。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.BaseValidator>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>|`true`|  
+|<xref:System.Web.UI.WebControls.BaseValidator.ForeColor%2A>|<xref:System.Drawing.Color.Red%2A?displayProperty=nameWithType>|  
+|<xref:System.Web.UI.WebControls.BaseValidator.PropertiesValid%2A>|`true`|  
+|<xref:System.Web.UI.WebControls.BaseValidator.RenderUplevel%2A>|`false`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>HTML 属性およびスタイルを指定したコントロールのレンダリングする必要がある追加<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.AddAttributesToRender%2A>メソッドは、コントロールの HTML タグ内のコントロールの属性を表示するために使用します。 このメソッドは、通常、適切な属性を挿入する派生クラス内でコントロールの開発者によってオーバーライドし、にスタイル、<xref:System.Web.UI.HtmlTextWriter>コントロール用の出力ストリーム。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.BaseValidator.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッド、基底クラスに対応するメソッドを呼び出してください。 それ以外の場合、基本クラスに含まれる属性はレンダリングされません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedControlID">
+      <MemberSignature Language="C#" Value="public override string AssociatedControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssociatedControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.AssociatedControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティはサポートされていません。</summary>
+        <value>このプロパティはサポートされていないため、常に <see cref="T:System.NotSupportedException" /> をスローします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはサポートされていません。 このプロパティは、ベースでのみサポート<xref:System.Web.UI.WebControls.Label>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このプロパティを設定しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckControlValidationProperty">
+      <MemberSignature Language="C#" Value="protected void CheckControlValidationProperty (string name, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void CheckControlValidationProperty(string name, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.CheckControlValidationProperty(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証するコントロール。</param>
+        <param name="propertyName">このメソッドを使用して、例外がスローされた場合、例外の原因を説明する追加のテキスト。</param>
+        <summary>指定されたコントロールがページに、検証プロパティが含まれますかどうかを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.CheckControlValidationProperty%2A>メソッドは、主にで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.BaseValidator.ControlPropertiesValid%2A>メソッドかどうか、指定されたコントロールがページに表示および検証プロパティを含むことを確認します。 このメソッドは、結果を報告する値を返しません。 代わりに、検証に失敗したときに例外がスローされます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたコントロールが見つかりませんでした。  
+  
+ \- または  
+  
+ 指定されたコントロールがない、<see cref="T:System.Web.UI.ValidationPropertyAttribute" />属性が関連付けられます。 検証コントロールにそのため、検証することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPropertiesValid">
+      <MemberSignature Language="C#" Value="protected virtual bool ControlPropertiesValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ControlPropertiesValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.ControlPropertiesValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールがで指定されたかどうかを判断、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティが有効なコントロールです。</summary>
+        <returns>
+          <see langword="true" />によってコントロールが指定されている場合<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />有効なコントロールは、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.ControlPropertiesValid%2A>メソッドは、主にで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.BaseValidator.PropertiesValid%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティに有効な入力コントロールが含まれています。 入力コントロールを有効にする、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティは、いくつかの値に設定する必要があり、その値は検証をサポートするページ上のコントロールである必要があります。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">値が指定されていない、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティです。  
+  
+ \- または  
+  
+ 指定された入力コントロール、 <see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />  ページでプロパティが見つかりません。  
+  
+ \- または  
+  
+ 指定された入力コントロール、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティがない、<see cref="T:System.Web.UI.ValidationPropertyAttribute" />属性が関連付けられます。 検証コントロールにそのため、検証することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlToValidate">
+      <MemberSignature Language="C#" Value="public string ControlToValidate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlToValidate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.ValidatedControlConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証する入力コントロールを設定します。</summary>
+        <value>検証する入力コントロール。 既定値は<see cref="F:System.String.Empty" />、このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティを検証する入力コントロールを指定します。 このプロパティは、入力コントロールを除くすべての検証コントロールの ID に設定する必要があります、<xref:System.Web.UI.WebControls.CustomValidator>コントロールで、空白にすることができます。 有効な入力コントロールを指定しない場合は、ページが表示される場合に、例外がスローされます。 ID は、検証コントロールと同じコンテナー内のコントロールを参照する必要があります。 これは、同じページまたはユーザー コントロールに存在する必要がありますか、これは、同じテンプレート コントロールのテンプレートに存在する必要があります。  
+  
+ 検証可能な標準のコントロールは次のとおりです。  
+  
+-   <xref:System.Web.UI.WebControls.DropDownList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.FileUpload?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ListBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.RadioButtonList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.TextBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputFile?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputPassword?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputText?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlSelect?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlTextArea?displayProperty=nameWithType>  
+  
+> [!NOTE]
+>  検証する入力コントロールの<xref:System.Web.UI.ValidationPropertyAttribute?displayProperty=nameWithType>コントロールに属性を適用する必要があります。  
+  
+ すべての検証コントロールを除く、<xref:System.Web.UI.WebControls.RequiredFieldValidator>によって入力コントロールが指定されている場合に、検証に合格、制御、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティにテキストが含まれていません。 使用している場合、<xref:System.Web.UI.WebControls.CustomValidator>いずれかのコントロールでは、クライアント側およびサーバー側の検証関数は呼び出されません。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティを検証する入力コントロールを指定します。  
+  
+ [!code-aspx-csharp[Classic BaseValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetermineRenderUplevel">
+      <MemberSignature Language="C#" Value="protected virtual bool DetermineRenderUplevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool DetermineRenderUplevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.DetermineRenderUplevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>検証コントロールがクライアント側の検証を実行できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />検証コントロールがクライアント側の検証を実行できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.DetermineRenderUplevel%2A>メソッドは、主にで使用されるヘルパー関数では、<xref:System.Web.UI.WebControls.BaseValidator.RenderUplevel%2A>クライアントのブラウザーがクライアント スクリプトをサポートしているかどうかを決定するプロパティです。 このプロパティを返すの`true`、次の条件を true にする必要があります。  
+  
+-   ブラウザーが、クライアント スクリプトを有効にします。  
+  
+-   <xref:System.Web.HttpBrowserCapabilitiesBase.W3CDomVersion%2A>のプロパティ、<xref:System.Web.HttpBrowserCapabilitiesBase>オブジェクトに格納されている、<xref:System.Web.HttpRequest.Browser%2A?displayProperty=nameWithType>プロパティが 1 またはそれ以降。  
+  
+-   <xref:System.Web.Configuration.HttpCapabilitiesBase.EcmaScriptVersion%2A>のプロパティ、<xref:System.Web.HttpBrowserCapabilitiesBase>オブジェクトに格納されている、<xref:System.Web.HttpRequest.Browser%2A?displayProperty=nameWithType>プロパティは、1.2 以降。  
+  
+    > [!NOTE]
+    >  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Display">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ValidatorDisplay Display { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ValidatorDisplay Display" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.Display" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ValidatorDisplay</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証コントロールで、エラー メッセージの表示動作を設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ValidatorDisplay" /> 値のいずれか。 既定値は <see langword="Static" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.Display%2A>検証コントロールで、エラー メッセージの表示動作を指定するプロパティです。 次の表は、使用できるさまざまな値を示します。  
+  
+|表示動作|説明|  
+|----------------------|-----------------|  
+|`None`|検証メッセージは、インライン表示ではありません。|  
+|`Static`|ページ レイアウトでは、検証メッセージ用の領域が割り当てられます。|  
+|`Dynamic`|検証メッセージ用の領域は、検証が失敗した場合に動的にページに追加されます。|  
+  
+> [!NOTE]
+>  表示動作は、クライアント側の検証を実行するかどうかによって異なります。 クライアント側の検証がアクティブでない場合 (ブラウザーでサポートされていないため、またはを使用して無効にされているため、<xref:System.Web.UI.Page.ClientTarget%2A?displayProperty=nameWithType>ページ ディレクティブまたは<xref:System.Web.UI.WebControls.BaseValidator.EnableClientScript%2A>プロパティ)、`ValidatorDisplay.Static`と`ValidatorDisplay.Dynamic`同様に動作: 表示されている場合にのみ、エラー メッセージが領域を占有します。 動的に表示されていないときに、メッセージの領域を割り当てることができる (`ValidatorDisplay.Dynamic`) クライアント側の検証でのみ動作します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.Display%2A>プロパティ、検証メッセージが追加される Web ページに動的に検証が失敗したときにその領域を指定します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値が、<see cref="T:System.Web.UI.WebControls.ValidatorDisplay" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableClientScript">
+      <MemberSignature Language="C#" Value="public bool EnableClientScript { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableClientScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.EnableClientScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアント側の検証が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアント側の検証が有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.EnableClientScript%2A>プロパティをクライアント側の検証が有効になっているかどうかを指定します。  
+  
+ 検証コントロールは、サーバーで常に検証を実行します。 また、DHTML でサポートされているブラウザー (Internet Explorer 4.0 などとそれ以降) をクライアントに対して検証を実行できるようにする完全なクライアント側の実装があります。 クライアント側の検証は、サーバーに送信される前に、ユーザー入力をチェックして、検証プロセスを強化します。 これにより、フォームを送信すると、サーバー側の検証に必要な情報のラウンド トリップを回避する前に、クライアントで検出されたエラーです。  
+  
+ 既定では、この値に設定`true`ブラウザーがサポートされている場合、クライアント側の検証ができます。 コントロールごとにクライアント側の検証を無効にすることができます。 これは、クライアントの動的更新により、ページのレイアウトに問題が発生する場合、または検証が実行する前に、いくつかのサーバー コードを実行する場合に便利です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.EnableClientScript%2A>ランダムな番号は、サーバーで生成できるように、クライアント側の検証を無効にするプロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public override bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証コントロールが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />検証コントロールが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティ検証コントロールが有効になっているかどうかを指定します。 このプロパティを設定して検証コントロールを無効にすることができます`false`です。  
+  
+ いずれかの設定、<xref:System.Web.UI.Control.Visible%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティを`false`検証を実行できなくなります。 これにより、<xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>常に評価するプロパティ`true`です。  
+  
+ <xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティとは少し異なります、<xref:System.Web.UI.Control.Visible%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Web.UI.Control.Visible%2A?displayProperty=nameWithType>検証コントロールのプロパティに設定されて`true`、ですが、<xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティに設定されている`false`クライアント側の検証が無効な状態で、まだ検証コントロールが表示されます。 再を有効にするクライアントの検証コントロール DHTML スクリプトを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティを有効にするにまたはサーバー側のコードを使用して、Web ページ上の検証コントロールを無効にします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator.Enabled Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator.Enabled Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator.Enabled Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator.Enabled Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.Enabled%2A>プロパティを有効にするにまたはクライアント側のコードを使用して、Web ページ上の検証コントロールを無効にします。  
+  
+<!-- TODO: review snippet reference  [!CODE [Classic BaseValidator.Enabled Example2#1](Classic BaseValidator.Enabled Example2#1)]  -->  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorMessage">
+      <MemberSignature Language="C#" Value="public string ErrorMessage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.ErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のテキストに、エラー メッセージが表示されます、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />検証が失敗したときを制御します。</summary>
+        <value>表示されるエラー メッセージ、<see cref="T:System.Web.UI.WebControls.ValidationSummary" />検証が失敗したときを制御します。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールを使用して、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>に表示するテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.ValidationSummary>検証に失敗すると、現在の検証コントロールを制御します。 検証コントロール自体に表示するテキストを指定するには、使用、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>プロパティです。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティ設定を指定せず、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>プロパティ、値の<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティは検証コントロールにも表示されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[ASP.NET のグローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>の別のメッセージを指定するプロパティ、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールと<xref:System.Web.UI.WebControls.RequiredFieldValidator>と<xref:System.Web.UI.WebControls.CompareValidator>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected abstract bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラス内でオーバーライドされた場合、このメソッドには、入力コントロールの値が有効かどうかを判断するコードが含まれます。</summary>
+        <returns>
+          入力コントロールの値が有効である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.EvaluateIsValid%2A>入力コントロールの値を指定しているかどうかを決定するメソッド、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティが無効です。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>戻り値の入力コントロールの値が有効かどうかを派生クラスでは、このメソッドを実装する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Red")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証に失敗したときに表示されるメッセージの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />検証が失敗したときに表示されるメッセージの色を表すです。 既定値は、<see cref="P:System.Drawing.Color.Red" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.ForeColor%2A>プロパティ検証が失敗したときに、検証コントロールに表示されるメッセージのカスタム テキストの色を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.ForeColor%2A>青色で、検証メッセージを表示するプロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic BaseValidator.ForeColor Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic BaseValidator.ForeColor Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic BaseValidator.ForeColor Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic BaseValidator.ForeColor Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetControlRenderID">
+      <MemberSignature Language="C#" Value="protected string GetControlRenderID (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetControlRenderID(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.GetControlRenderID(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">クライアント ID を取得するコントロールの名前。</param>
+        <summary>指定したコントロールのクライアント ID を取得します。</summary>
+        <returns>指定されたコントロールのクライアント ID。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.GetControlRenderID%2A>指定したコントロールのクライアント ID を取得します。 詳細については、「<xref:System.Web.UI.Control.ClientID%2A>」を参照してください。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetControlValidationValue">
+      <MemberSignature Language="C#" Value="protected string GetControlValidationValue (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetControlValidationValue(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.GetControlValidationValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">値を取得する入力コントロールの名前。</param>
+        <summary>指定された入力コントロールに関連付けられている値を取得します。</summary>
+        <returns>指定された入力コントロールに関連付けられている値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.GetControlValidationValue%2A>コントロールの種類に関係なく、指定した入力コントロールに関連付けられている値を取得します。 このメソッドを使用して、、値を取得するなど、<xref:System.Web.UI.WebControls.TextBox>から選択した項目の値と同様に、コントロール、<xref:System.Web.UI.WebControls.ListBox>コントロール。 指定されたコントロールが見つからない場合`null`が返されます。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidationProperty">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.PropertyDescriptor GetValidationProperty (object component);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.PropertyDescriptor GetValidationProperty(object component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.GetValidationProperty(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">A<see cref="T:System.Object" />を表すコントロールの検証プロパティを取得します。</param>
+        <summary>(存在する場合は、コントロールの検証プロパティを決定します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />コントロールの検証プロパティを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.GetValidationProperty%2A>メソッドは、指定された入力コントロールの検証プロパティを取得するヘルパー関数。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnobtrusive">
+      <MemberSignature Language="C#" Value="protected bool IsUnobtrusive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnobtrusive" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.IsUnobtrusive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが控え目な JavaScript を生成するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コントロールが控え目な JavaScript; を生成する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`false`場合、<xref:System.Web.UI.Page.UnobtrusiveValidationMode%2A>プロパティの値が<xref:System.Web.UI.UnobtrusiveValidationMode.None>です。 このプロパティを返しますそれ以外の場合`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public bool IsValid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.IsValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられた入力コントロールが検証に合格するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />関連付けられた入力コントロールが検証に合格した場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>プロパティに関連付けられた入力コントロールが検証に合格するかどうかを判断します。  
+  
+> [!CAUTION]
+>  このプロパティの既定値があるため`true`が返されます`true`検証が行われる前に、このプロパティをクエリする場合。 たとえば、これが発生するでこのプロパティを使用しようとする場合、<xref:System.Web.UI.Control.Load?displayProperty=nameWithType>ページのイベントです。  
+  
+ <xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>プロパティが評価される場合にのみ、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>メソッドが呼び出されます。 呼び出すことができます、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>の各検証メソッドが個別に、ページ上操作またはを使用して、それらのすべてを一度に呼び出す、<xref:System.Web.UI.Page.Validate%2A?displayProperty=nameWithType>メソッドです。 ボタンのコントロールとその`CausesValidation`プロパティに設定`true`も呼び出されます、<xref:System.Web.UI.Page.Validate%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  検証が行われた後に、このプロパティの値を手動で変更を行うことができます。 これにより、検証結果をオーバーライドするために必要な場合です。  
+  
+ <xref:System.Web.UI.Page.IsValid%2A?displayProperty=nameWithType>ページのプロパティに設定されて`true`場合にのみ、<xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>ページ上の各検証コントロールのプロパティに設定されても`true`します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>プロパティに関連付けられた入力コントロールが検証に合格するかどうかを判断します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[BaseValidatorIsValid#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseValidatorIsValid/CS/basevalidatorisvalidcs.aspx#1)]
+ [!code-aspx-vb[BaseValidatorIsValid#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseValidatorIsValid/VB/basevalidatorisvalidvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本コントロールの後に<xref:System.Web.UI.Control.OnInit%2A>メソッド、設定、<xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>次の条件に該当する場合。  
+  
+-   <xref:System.Web.UI.WebControls.WebControl.ForeColor%2A>プロパティが既に設定されていません。  
+  
+-   <xref:System.Web.UI.Control.RenderingCompatibility%2A>プロパティは、ASP.NET のバージョンを示しますよりも前`4.0`です。 既定では、ASP.NET 4 およびそれ以降のバージョンの検証コントロールはエラーを赤で表示する実行されません。 検証コントロールの外観を制御する方法については、次を参照してください。 [ASP.NET Web Pages でのユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)です。  
+  
+ このメソッドは、また、ページの検証コントロールを登録します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseValidator.OnInit(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseValidator.OnInit(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントのブラウザーを確認して、レンダリングの前に互換性のための検証コントロールを構成するには、このメソッドをオーバーライドされています。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseValidator.OnPreRender%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseValidator.OnPreRender(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseValidator.OnPreRender(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUnload">
+      <MemberSignature Language="C#" Value="protected override void OnUnload (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnUnload(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.OnUnload(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.Unload" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの検証コントロールの登録を解除するには、このメソッドをオーバーライドされています。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseValidator.OnUnload%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.BaseValidator.OnUnload(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.BaseValidator.OnUnload(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertiesValid">
+      <MemberSignature Language="C#" Value="protected bool PropertiesValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PropertiesValid" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.PropertiesValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってコントロールが指定されているかどうかを示す値を取得、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティが有効なコントロールです。</summary>
+        <value>
+          <see langword="true" />によってコントロールが指定されている場合<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />有効なコントロールは、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.PropertiesValid%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティに有効な入力コントロールが含まれています。 入力コントロールを有効にする、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティは、ページ上のコントロールに設定する必要があります。  
+  
+> [!NOTE]
+>  このプロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">値が指定されていない、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティです。  
+  
+ \- または  
+  
+ 指定された入力コントロール、 <see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />  ページでプロパティが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterValidatorCommonScript">
+      <MemberSignature Language="C#" Value="protected void RegisterValidatorCommonScript ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RegisterValidatorCommonScript() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.RegisterValidatorCommonScript" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアント側の検証のページで、コードを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.RegisterValidatorCommonScript%2A>クライアント側検証を実行するページ上のコードを登録します。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを呼び出す、<see cref="E:System.Web.UI.Control.PreRender" />クライアント側の検証を実行するコードを登録する派生クラスのイベント ハンドラー。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterValidatorDeclaration">
+      <MemberSignature Language="C#" Value="protected virtual void RegisterValidatorDeclaration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RegisterValidatorDeclaration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.RegisterValidatorDeclaration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列名を使用するように ECMAScript 配列宣言を登録<see langword="Page_Validators" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.RegisterValidatorDeclaration%2A>配列名を使用するように ECMAScript 配列宣言を登録するメソッド`Page_Validators`です。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに表示する出力ストリームを格納する <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>クライアント上のコントロールを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseValidator.Render%2A>検証コントロールの HTML マークアップを生成するメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderUplevel">
+      <MemberSignature Language="C#" Value="protected bool RenderUplevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderUplevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.RenderUplevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントのブラウザーが「上位」の表示をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに「レベル」の表示がサポートされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.RenderUplevel%2A>クライアントのブラウザーが「上位」の表示をサポートしているかどうかを決定するプロパティです。 「上位」の表示をサポートするためにブラウザーでは、Microsoft Internet Explorer ドキュメント オブジェクト モデル (DOM) の version 4 以降と ECMAScript バージョン 1.2 以降をサポートしてする必要があります。  
+  
+> [!NOTE]
+>  このプロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFocusOnError">
+      <MemberSignature Language="C#" Value="public bool SetFocusOnError { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SetFocusOnError" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.SetFocusOnError" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定されたコントロールにフォーカスを設定するかどうかを示す値、<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />プロパティ検証が失敗したときにします。</summary>
+        <value>
+          <see langword="true" />指定されたコントロールにフォーカスを設定する<see cref="P:System.Web.UI.WebControls.BaseValidator.ControlToValidate" />検証が失敗した場合です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.SetFocusOnError%2A>プロパティで指定されたコントロールにフォーカスが自動的に設定するかどうかを指定する、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>プロパティこの検証コントロールが失敗したときにします。 これにより、ユーザーに適切なコントロールを簡単に更新できます。  
+  
+ 複数の検証コントロールが失敗するし、このプロパティに設定`true`で指定したコントロール、<xref:System.Web.UI.WebControls.BaseValidator.ControlToValidate%2A>最初の検証コントロールのプロパティがフォーカスを受け取る。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証に失敗したときに、検証コントロールに表示されるテキストを設定します。</summary>
+        <value>検証が失敗したときに、検証コントロールに表示されるテキストです。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>検証が失敗したときに検証コントロールに表示するテキストを指定するプロパティです。 使用して、ページの検証に失敗したすべてのコントロールの概要を表示することも、<xref:System.Web.UI.WebControls.ValidationSummary>コントロール。 表示するテキストを指定する、<xref:System.Web.UI.WebControls.ValidationSummary>コントロールを使用して、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティです。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティ設定を指定せず、<xref:System.Web.UI.WebControls.BaseValidator.Text%2A>プロパティ、値の<xref:System.Web.UI.WebControls.BaseValidator.ErrorMessage%2A>プロパティは検証コントロールにも表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseValidator.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられた入力コントロールと更新プログラムで検証を実行、<see cref="P:System.Web.UI.WebControls.BaseValidator.IsValid" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>メソッドに関連付けられた入力コントロールに対して検証を実行します。 このメソッドでは、プログラムからの入力コントロールに対して検証を実行することができます。 <xref:System.Web.UI.WebControls.BaseValidator.IsValid%2A>プロパティが自動的に検証結果を更新します。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>派生クラスで使用されるメソッドを参照してください、<xref:System.Web.UI.WebControls.CompareValidator>クラスの概要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseValidator.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この検証コントロールが属する検証グループの名前を設定します。</summary>
+        <value>この検証コントロールが属する検証グループの名前。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET には、サーバーに投稿することができる多くのコントロールが用意されています。 これらのコントロールのいずれかの場合にその`CausesValidation`プロパティに設定`true`サーバーへのコントロールのポストバック時に検証を実行します。 次のコントロールには、サーバーにポストバック機能があります。  
+  
+-   <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.Button?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.CheckBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.CheckBoxList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.DropDownList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.HtmlControls.HtmlInputImage?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ImageButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.LinkButton?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.ListBox?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.RadioButtonList?displayProperty=nameWithType>  
+  
+-   <xref:System.Web.UI.WebControls.TextBox?displayProperty=nameWithType>  
+  
+> [!NOTE]
+>  これらのコントロールの後のサーバーにポストバックされる場合にのみ、`AutoPostBack`プロパティに設定されている`true`です。  
+  
+ これらの各コントロールが、`ValidationGroup`プロパティを設定すると、コントロール、サーバーへのポストバックがトリガーされたときに、指定されたグループ内の検証コントロールのみを検証します。 使用して、<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A>プロパティ検証コントロールをグループに割り当てる、検証します。 <xref:System.Web.UI.Page>クラスが公開も、<xref:System.Web.UI.Page.GetValidators%2A>メソッドおよび<xref:System.Web.UI.Page.Validate%2A>を受け入れるメソッド、<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A>入力パラメーターです。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.BaseValidator.ValidationGroup%2A>検証コントロールをグループに割り当てるプロパティをします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[BaseValidatorValidationGroup#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BaseValidatorValidationGroup/CS/BaseValidatorValidationGroupcs.aspx#1)]
+ [!code-aspx-vb[BaseValidatorValidationGroup#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BaseValidatorValidationGroup/VB/BaseValidatorValidationGroupvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

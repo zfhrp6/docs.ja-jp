@@ -1,0 +1,2467 @@
+<Type Name="IsolatedStorageFile" FullName="System.IO.IsolatedStorage.IsolatedStorageFile">
+  <TypeSignature Language="C#" Value="public sealed class IsolatedStorageFile : System.IO.IsolatedStorage.IsolatedStorage, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IsolatedStorageFile extends System.IO.IsolatedStorage.IsolatedStorage implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.IsolatedStorage.IsolatedStorageFile" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.IsolatedStorage.IsolatedStorage</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイルとディレクトリが含まれている分離ストレージ域を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトによって表されるファイルの場所を特定の分離ストレージのスコープに対応して<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトが存在します。 アプリケーションでは、データを保存するファイル システムの独自の独立した部分をファイル システム内の特定のパスを指定しなくても、分離ストレージを使用できます。 分離ストアは、特定のアセンブリにスコープはので、ほとんど他のマネージ コードは、コードのデータにアクセスできません (高信頼されたマネージ コードと管理ツールは他のアセンブリからストアにアクセスできます)。 アンマネージ コードは、どの分離ストアにアクセスできます。  
+  
+ 詳細については、次を参照してください。[分離ストレージ](~/docs/standard/io/isolated-storage.md)です。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+> [!IMPORTANT]
+>  分離ストレージは [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリでは使用できません。 代わりに、`Windows.Storage` API に含まれる [!INCLUDE[wrt](~/includes/wrt-md.md)] 名前空間内のアプリケーション データ クラスを使用して、ローカル データとローカル ファイルを格納します。 詳細については、Windows デベロッパー センターの [アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175) に関する説明を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、分離ストアのファイルとディレクトリを作成する方法を示しています。 ユーザー、ドメイン、およびアセンブリ別に分離されたストアが取得され、配置で最初に、`isoStore`変数。 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A>ディレクトリ、および 2 つのインスタンスを作成するメソッドが呼び出されます、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>クラスは、これらのディレクトリにファイルを作成します。  
+  
+ [!code-csharp[Conceptual.IsolatedStorage#1](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source.cs#1)]
+ [!code-vb[Conceptual.IsolatedStorage#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AvailableFreeSpace">
+      <MemberSignature Language="C#" Value="public override long AvailableFreeSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AvailableFreeSpace" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.AvailableFreeSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの空き領域の量を表す値を取得します。</summary>
+        <value>分離ストレージに使用可能な空き領域 (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>以前に開いたストアを閉じます<see cref="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Type,System.Type)" />、 <see cref="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly" />、または<see cref="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Close%2A> メソッドの使用方法を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#10)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#10)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public void CopyFile (string sourceFileName, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyFile(string sourceFileName, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.CopyFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルの名前。</param>
+        <param name="destinationFileName">コピー先ファイルの名前。 ディレクトリや既存のファイルは使用できません。</param>
+        <summary>既存のファイルを新しいファイルにコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sourceFileName`および`destinationFileName`別のファイル名を指定する必要があります。 使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CopyFile%28System.String%2CSystem.String%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドのオーバー ロードを既存のファイルを上書きします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceFileName" />または<paramref name="destinationFileName" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceFileName" /> または <paramref name="destinationFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="sourceFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。  
+  
+ または  
+  
+ <paramref name="destinationFileName" /> が存在しています。  
+  
+ -または-  
+  
+ I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFile">
+      <MemberSignature Language="C#" Value="public void CopyFile (string sourceFileName, string destinationFileName, bool overwrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyFile(string sourceFileName, string destinationFileName, bool overwrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.CopyFile(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+        <Parameter Name="overwrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">コピーするファイルの名前。</param>
+        <param name="destinationFileName">コピー先ファイルの名前。 このパラメーターには、ディレクトリは指定できません。</param>
+        <param name="overwrite">
+          コピー先ファイルが上書きできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>新しいファイルに既存のファイルをコピーし、必要に応じて、既存のファイルを上書きします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sourceFileName`および`destinationFileName`場合、同じファイル名を持つことができます`overwrite`は`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceFileName" />または<paramref name="destinationFileName" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceFileName" /> または <paramref name="destinationFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="sourceFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。  
+  
+ または  
+  
+ I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDirectory">
+      <MemberSignature Language="C#" Value="public void CreateDirectory (string dir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CreateDirectory(string dir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dir">分離ストレージのスコープ内で作成するディレクトリの相対パス。</param>
+        <summary>分離ストレージのスコープでディレクトリを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に作成されたディレクトリはファイルを含まない。 ディレクトリが既に存在する場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A>メソッドは、新しいディレクトリを作成することがなくを返します。 [する方法: 分離ストレージでファイルの作成およびディレクトリ](~/docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A>メソッド  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#7)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#7)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">現在のコードでは、分離ストレージのディレクトリを作成する十分なアクセス許可を持ちます。</exception>
+        <exception cref="T:System.ArgumentNullException">ディレクトリ パスは、<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのスコープにアクセスします。</permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFile">
+      <MemberSignature Language="C#" Value="public System.IO.IsolatedStorage.IsolatedStorageFileStream CreateFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.IsolatedStorage.IsolatedStorageFileStream CreateFile(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">作成するファイルの相対パス。</param>
+        <summary>分離ストア内のファイルを作成します。</summary>
+        <returns>新しい分離ストレージ ファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリ<paramref name="path" />存在しません。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentSize">
+      <MemberSignature Language="C#" Value="public override ulong CurrentSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 CurrentSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.CurrentSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの現在のサイズを取得します。</summary>
+        <value>記憶域のバイト数の合計は、分離ストレージのスコープ内で現在使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのファイルと分離ストレージのスコープ内のディレクトリの使用率の合計を表します。  
+  
+ 移動ユーザー プロファイルに参加しているストアの現在のサイズを正確に特定できません。 移動プロファイルは複数のクライアント コンピューター上にキャッシュされた多くの場合、後で、サーバーと同期されているため、このようなストアのクォータを適用することはできませんし、現在のサイズは報告されません。  
+  
+ [する方法: 分離ストレージの領域不足状態を予測して](~/docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CurrentSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.CurrentSize%2A>プロパティです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#5)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#5)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティは使用できません。 現在のストアに移動のスコープを持つかが開かれていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトのサイズが定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteDirectory">
+      <MemberSignature Language="C#" Value="public void DeleteDirectory (string dir);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteDirectory(string dir) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dir" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dir">分離ストレージのスコープ内で削除するディレクトリの相対パス。</param>
+        <summary>分離ストレージのスコープ内のディレクトリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除される前に、ディレクトリを空にする必要があります。 1 回の削除、削除されたディレクトリは復元できません。  
+  
+ [する方法: 分離ストレージでファイルの削除およびディレクトリ](~/docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#8)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#8)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">ディレクトリを削除できませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">ディレクトリ パスが<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのスコープにアクセスします。</permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteFile">
+      <MemberSignature Language="C#" Value="public void DeleteFile (string file);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteFile(string file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="file">分離ストレージのスコープ内で削除するファイルの相対パス。</param>
+        <summary>分離ストレージのスコープ内のファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 回の削除、削除されたファイルは復元できません。  
+  
+ [する方法: 分離ストレージでファイルの削除およびディレクトリ](~/docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>分離ストレージ内のファイルの数を削除するメソッド。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#6)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#6)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">ターゲット ファイルが開いているか、パスが正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">ファイル パスが<see langword="null" />です。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのスコープ内のファイルにアクセスします。</permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryExists">
+      <MemberSignature Language="C#" Value="public bool DirectoryExists (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool DirectoryExists(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.DirectoryExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">テストするパス。</param>
+        <summary>指定されたパスが分離ストア内の既存のディレクトリを参照するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="path" />分離ストア内の既存のディレクトリを参照しは<see langword="null" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.IO.IsolatedStorage.IsolatedStorageFile> を呼び出します。 `Dispose` メソッドによって、<xref:System.IO.IsolatedStorage.IsolatedStorageFile> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>ガベージ コレクターがメモリを再利用できるようにする<xref:System.IO.IsolatedStorage.IsolatedStorageFile>占有されていた。  
+  
+> [!NOTE]
+>  参照を解放する前に常に Dispose を呼び出す、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>です。 それ以外の場合、リソース、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>を使用しては解放されませんガベージ コレクション呼び出すまで、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトの<xref:System.Object.Finalize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例に分離ストレージ ファイルを開きます、情報をストリームに書き込むには、ファイルを閉じますおよびを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Dispose%2A>をすべてのリソースを解放するメソッド。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#10)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#10)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileExists">
+      <MemberSignature Language="C#" Value="public bool FileExists (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FileExists(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.FileExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">テストするパスとファイル名。</param>
+        <summary>指定されたパスが、分離ストアの既存のファイルを参照するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="path" />分離ストアの既存のファイルを参照しは<see langword="null" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~IsolatedStorageFile ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreationTime">
+      <MemberSignature Language="C#" Value="public DateTimeOffset GetCreationTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTimeOffset GetCreationTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetCreationTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルまたは作成の日付と時刻の情報を取得する対象のディレクトリへのパス。</param>
+        <summary>指定したファイルまたはディレクトリの作成日時を返します。</summary>
+        <returns>作成日時の指定したファイルまたはディレクトリ。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスによって記述されるファイルが存在しない場合は、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分でを返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryNames">
+      <MemberSignature Language="C#" Value="public string[] GetDirectoryNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetDirectoryNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>分離ストアのルートにあるディレクトリを列挙します。</summary>
+        <returns>分離ストアのルートにあるディレクトリの相対パスの配列。 長さ 0 の配列では、ルート ディレクトリがないことを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%28System.String%29?displayProperty=nameWithType>メソッドを"*"検索パターンを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元には、ディレクトリを列挙するアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">1 つまたは複数のディレクトリが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryNames">
+      <MemberSignature Language="C#" Value="public string[] GetDirectoryNames (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetDirectoryNames(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">検索パターン。 両方の単一の文字 ("?") と複数の文字 ("*") ワイルドカードはサポートされています。</param>
+        <summary>分離ストレージのスコープ内の指定した検索パターンに一致するディレクトリを列挙します。</summary>
+        <returns>分離ストレージ内のディレクトリの相対パスの配列のスコープと一致する<paramref name="searchPattern" />です。 長さ 0 の配列では、一致するディレクトリがないことを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワイルドカード文字は、の最後の要素にのみあります、`searchPattern`です。 たとえば、"directory1/* など\*"は有効な検索文字列が"\*など \* /ディレクトリ"はありません。  
+  
+ `searchPattern` 「Project\Data *」は、分離ストレージのスコープ内のデータでのプロジェクト以降のすべてのサブディレクトリで提供されます。 `searchPattern` "\*"はルートにあるすべてのディレクトリを返します。 文字列の検索条件の詳細については、次を参照してください。、<xref:System.IO.Directory>クラスです。  
+  
+ ファイル名の取得方法の詳細については、次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>メソッドです。  
+  
+ [する方法: 既存のファイルを検索し、分離ストレージ内のディレクトリ](~/docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#16)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#16)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元がディレクトリから解決を列挙するアクセス許可を持たない<paramref name="searchPattern" />です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたディレクトリ<paramref name="searchPattern" />が見つかりません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerator GetEnumerator (System.IO.IsolatedStorage.IsolatedStorageScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerator GetEnumerator(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator(System.IO.IsolatedStorage.IsolatedStorageScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope">表す、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />分離ストアを取得します。 <see langword="User" />および<see langword="User|Roaming" />だけが<see langword="IsolatedStorageScope" />サポートの組み合わせ。</param>
+        <summary>列挙子を取得、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />分離ストレージのスコープ内で格納します。</summary>
+        <returns>列挙子、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />指定の分離ストレージのスコープ内で格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [する方法: 分離ストレージでストアを列挙](~/docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileNames">
+      <MemberSignature Language="C#" Value="public string[] GetFileNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetFileNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>分離ストアのルートにファイル名を列挙します。</summary>
+        <returns>分離ストアのルートにあるファイルの相対パスの配列。  長さ 0 の配列では、ルートにあるファイルがないことを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%28System.String%29?displayProperty=nameWithType>メソッドを"*"検索パターンを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">分離ストアのルートからのファイル パスを特定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileNames">
+      <MemberSignature Language="C#" Value="public string[] GetFileNames (string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetFileNames(string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="searchPattern">検索パターン。 両方の単一の文字 ("?") と複数の文字 ("*") ワイルドカードはサポートされています。</param>
+        <summary>検索パターンに一致するファイル名を取得します。</summary>
+        <returns>分離ストレージ内のファイルの相対パスの配列のスコープと一致する<paramref name="searchPattern" />です。 長さ 0 の配列では、一致するファイルがないことを指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern` "Project\Data * .txt"分離ストレージのスコープのプロジェクト ディレクトリにデータで始まるすべての .txt ファイルになります。 検索文字列がパターンの詳細については、次を参照してください。<xref:System.IO.Directory?displayProperty=nameWithType>です。  
+  
+ ディレクトリ名を検索する方法については、次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A>メソッドです。  
+  
+ [する方法: 既存のファイルを検索し、分離ストレージ内のディレクトリ](~/docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#16)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#16)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">によって指定されたファイル パス<paramref name="searchPattern" />が見つかりません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastAccessTime">
+      <MemberSignature Language="C#" Value="public DateTimeOffset GetLastAccessTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTimeOffset GetLastAccessTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetLastAccessTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルまたは最終アクセス日時情報を取得する対象のディレクトリへのパス。</param>
+        <summary>指定されたファイルの日付と時刻を返しますまたはディレクトリが最後にアクセスします。</summary>
+        <returns>日付と時刻を指定したファイルまたはディレクトリに最後にアクセスします。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルが記述されている場合`path`がありません。 このメソッドは、西暦 1601 年 1 月 1 日深夜 12:00 を返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastWriteTime">
+      <MemberSignature Language="C#" Value="public DateTimeOffset GetLastWriteTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTimeOffset GetLastWriteTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetLastWriteTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルまたは最終書き込み日時情報を取得する対象のディレクトリへのパス。</param>
+        <summary>指定されたファイルの日付と時刻を返しますまたは、ディレクトリに最後に書き込んだです。</summary>
+        <returns>日付と、指定したファイルまたはディレクトリに最後に書き込んだ時間です。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイルが記述されている場合`path`がありません。 このメソッドは、西暦 1601 年 1 月 1 日深夜 12:00 を返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMachineStoreForApplication">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForApplication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForApplication() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForApplication" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のコードのアプリケーション id に対応するマシン スコープの分離ストレージを取得します。</summary>
+        <returns>呼び出し元のコードのアプリケーション id に基づく分離ストレージのスコープに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションに関連付けられているすべてのアセンブリは、このメソッドを使用する場合に、同じ分離ストアを使用します。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForApplication%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#18](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#18)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#18)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">呼び出し元のアプリケーション id を特定できませんでした。  
+  
+ または  
+  
+ アプリケーション ドメインに対するアクセス許可セットを特定できませんでした。  
+  
+ または  
+  
+ 分離ストレージの場所を初期化することはできません。</exception>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMachineStoreForAssembly">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForAssembly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForAssembly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForAssembly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のコードのアセンブリ id に対応するマシン スコープの分離ストレージを取得します。</summary>
+        <returns>呼び出し元のコードのアセンブリ id に基づく分離ストレージのスコープに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に別のアプリケーション内にある同じアセンブリは、このメソッドを使用する場合に、同じ分離ストアを使用します。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForAssembly%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#19](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#19)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#19](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#19)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#19](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#19)]  
+  
+> [!NOTE]
+>  常に同じアプリケーション ドメイン内で実行されている別のアセンブリでは、個別の分離ストアがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。</exception>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMachineStoreForDomain">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetMachineStoreForDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインの id とアセンブリ id に対応するマシン スコープの分離ストレージを取得します。</summary>
+        <returns>対応するオブジェクト、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />アプリケーション ドメインの id とアセンブリ id の組み合わせに基づきます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じアセンブリのコードでは、さまざまなアプリケーションのコンテキストで使用する場合に別の分離ストアを使用します。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetMachineStoreForDomain%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#20](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#20)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#20)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#20)]  
+  
+ 常に同じアプリケーション ドメイン内で実行されている別のアセンブリでは、個別の分離ストアがあります。  
+  
+> [!NOTE]
+>  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>返されます、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクトをアセンブリがインストールされているアプリケーション ドメインがあるない場合<xref:System.Security.Permissions.IsolatedStorageFilePermission>です。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#10)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#10)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">ストアを開くことができません。  
+  
+ または  
+  
+ 指定されたアセンブリでは、分離ストアを作成する十分なアクセス許可を持ちます。  
+  
+ または  
+  
+ アプリケーション ドメインに対する権限を決定することはできません。  
+  
+ または  
+  
+ 分離ストレージの場所を初期化することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPermission">
+      <MemberSignature Language="C#" Value="protected override System.Security.Permissions.IsolatedStoragePermission GetPermission (System.Security.PermissionSet ps);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Security.Permissions.IsolatedStoragePermission GetPermission(class System.Security.PermissionSet ps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetPermission(System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.IsolatedStoragePermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ps" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="ps">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStore">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, object applicationIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, object applicationIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="applicationIdentity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="scope">列挙値のビットごとの組み合わせ。</param>
+        <param name="applicationIdentity">アプリケーション id の証拠を含むオブジェクトです。</param>
+        <summary>特定のアプリケーション id に対応する分離ストレージを取得します。</summary>
+        <returns>パラメーターを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、`scope`パラメーターは<xref:System.IO.IsolatedStorage.IsolatedStorageScope?displayProperty=nameWithType>アセンブリがインストールされているアプリケーション ドメインがないと<xref:System.Security.Permissions.IsolatedStorageFilePermission>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクト。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="applicationIdentity" />の id が渡されていないのです。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="scope" /> が無効です。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ <paramref name="scope" />列挙値が含まれています<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />が呼び出し元のアプリケーション id を特定できませんであるため、<see cref="P:System.AppDomain.ActivationContext" />返される現在のアプリケーション ドメインに対する<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />がアプリケーション ドメインに対するアクセス許可を特定できません。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Assembly" />が呼び出し元のアセンブリのアクセス許可を特定できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStore">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, Type applicationEvidenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, class System.Type applicationEvidenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="applicationEvidenceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scope">列挙値のビットごとの組み合わせ。</param>
+        <param name="applicationEvidenceType">アプリケーション id を格納するオブジェクト。</param>
+        <summary>分離スコープおよびアプリケーションの id オブジェクトに対応する分離ストレージを取得します。</summary>
+        <returns>パラメーターを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、`scope`パラメーターは<xref:System.IO.IsolatedStorage.IsolatedStorageScope.Application>アセンブリがインストールされているアプリケーション ドメインがないと<xref:System.Security.Permissions.IsolatedStorageFilePermission>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクト。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="applicationEvidence" />の id が渡されていないのです。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="scope" /> が無効です。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ <paramref name="scope" />列挙値が含まれています<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />が呼び出し元のアプリケーション id を特定できませんであるため、<see cref="P:System.AppDomain.ActivationContext" />返される現在のアプリケーション ドメインに対する<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />がアプリケーション ドメインに対するアクセス許可を特定できません。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Assembly" />が呼び出し元のアセンブリのアクセス許可を特定できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStore">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, object domainIdentity, object assemblyIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, object domainIdentity, object assemblyIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="domainIdentity" Type="System.Object" />
+        <Parameter Name="assemblyIdentity" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="scope">列挙値のビットごとの組み合わせ。</param>
+        <param name="domainIdentity">アプリケーション ドメインの id の証拠を含むオブジェクトです。</param>
+        <param name="assemblyIdentity">コードのアセンブリ id の証拠を含むオブジェクトです。</param>
+        <summary>特定のアプリケーション ドメインとアセンブリの証拠オブジェクトに対応する分離ストレージを取得します。</summary>
+        <returns>パラメーターを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この形式の`GetStore`は管理用コードを別のアセンブリの場合と同様に、ストアを開く必要がある最も役立ちます。 提供した証拠と実行中のアセンブリではなく、ストアを開くことができます。  
+  
+> [!NOTE]
+>  場合、`scope`パラメーターは<xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain>アセンブリがインストールされているアプリケーション ドメインがないと<xref:System.Security.Permissions.IsolatedStorageFilePermission>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクト。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">どちらも<paramref name="domainIdentity" />も<paramref name="assemblyIdentity" />に渡されました。 これは、正しいコンス トラクターを使用していることを確認します。  
+  
+ または  
+  
+ <paramref name="domainIdentity" /> または <paramref name="assemblyIdentity" /> のいずれかが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="scope" /> が無効です。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ <paramref name="scope" />列挙値が含まれています<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />が呼び出し元のアプリケーション id を特定できませんであるため、<see cref="P:System.AppDomain.ActivationContext" />返される現在のアプリケーション ドメインに対する<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />がアプリケーション ドメインに対するアクセス許可を特定できません。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Assembly" />が呼び出し元のアセンブリのアクセス許可を特定できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStore">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, Type domainEvidenceType, Type assemblyEvidenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, class System.Type domainEvidenceType, class System.Type assemblyEvidenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="domainEvidenceType" Type="System.Type" />
+        <Parameter Name="assemblyEvidenceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scope">列挙値のビットごとの組み合わせ。</param>
+        <param name="domainEvidenceType">型、<see cref="T:System.Security.Policy.Evidence" />の一覧から選択できる<see cref="T:System.Security.Policy.Evidence" />の呼び出し元のアプリケーション ドメイン内に存在します。 <see langword="null" />により、<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、証拠を選択します。</param>
+        <param name="assemblyEvidenceType">型、<see cref="T:System.Security.Policy.Evidence" />の一覧から選択できる<see cref="T:System.Security.Policy.Evidence" />の呼び出し元のアプリケーション ドメイン内に存在します。 <see langword="null" />により、<see cref="T:System.IO.IsolatedStorage.IsolatedStorage" />オブジェクトは、証拠を選択します。</param>
+        <summary>アプリケーション ドメインとアセンブリの証拠の種類を指定された分離ストレージのスコープに対応する分離ストレージを取得します。</summary>
+        <returns>パラメーターを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、オーバー ロードの<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>アプリケーション コードから呼び出される可能性が最も高いです。  
+  
+ このオーバー ロード<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>で渡される証拠の種類の分離ストアを開きます。  
+  
+> [!NOTE]
+>  場合、`scope`パラメーターは<xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain>アセンブリがインストールされているアプリケーション ドメインがないと<xref:System.Security.Permissions.IsolatedStorageFilePermission>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクト。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#15)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#15)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="scope" /> が無効です。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">指定された証拠の種類がアセンブリの証拠リストにありません。  
+  
+ または  
+  
+ 分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ <paramref name="scope" />列挙値が含まれています<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />が呼び出し元のアプリケーション id を特定できませんであるため、<see cref="P:System.AppDomain.ActivationContext" />返される現在のアプリケーション ドメインに対する<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />がアプリケーション ドメインに対するアクセス許可を特定できません。  
+  
+ または  
+  
+ <paramref name="scope" />含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Assembly" />が呼び出し元のアセンブリのアクセス許可を特定できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStore">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetStore (System.IO.IsolatedStorage.IsolatedStorageScope scope, System.Security.Policy.Evidence domainEvidence, Type domainEvidenceType, System.Security.Policy.Evidence assemblyEvidence, Type assemblyEvidenceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetStore(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope, class System.Security.Policy.Evidence domainEvidence, class System.Type domainEvidenceType, class System.Security.Policy.Evidence assemblyEvidence, class System.Type assemblyEvidenceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore(System.IO.IsolatedStorage.IsolatedStorageScope,System.Security.Policy.Evidence,System.Type,System.Security.Policy.Evidence,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+        <Parameter Name="domainEvidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="domainEvidenceType" Type="System.Type" />
+        <Parameter Name="assemblyEvidence" Type="System.Security.Policy.Evidence" />
+        <Parameter Name="assemblyEvidenceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="scope">列挙値のビットごとの組み合わせ。</param>
+        <param name="domainEvidence">アプリケーション ドメイン id を格納するオブジェクト。</param>
+        <param name="domainEvidenceType">アプリケーション ドメインの証拠からを選択する id の種類。</param>
+        <param name="assemblyEvidence">コードのアセンブリ id を格納するオブジェクト。</param>
+        <param name="assemblyEvidenceType">アプリケーション コードのアセンブリ証拠から選択する id の種類。</param>
+        <summary>特定のアプリケーション ドメインとアセンブリの証拠オブジェクトとの種類に対応する分離ストレージを取得します。</summary>
+        <returns>パラメーターを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  場合、`scope`パラメーターは<xref:System.IO.IsolatedStorage.IsolatedStorageScope.Domain>アセンブリがインストールされているアプリケーション ドメインがないと<xref:System.Security.Permissions.IsolatedStorageFilePermission>、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A>メソッドは、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータなしオブジェクト。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、発行者証明書に基づく記憶域を取得します。  
+  
+ [!code-csharp[System.IO.IsolatedStorage.GetStore#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.GetStore/CS/source.cs#1)]
+ [!code-vb[System.IO.IsolatedStorage.GetStore#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.GetStore/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="domainEvidence" />または<paramref name="assemblyEvidence" />の id が渡されていないのです。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="scope" /> が無効です。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ <paramref name="scope" />列挙値が含まれています<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Application" />が呼び出し元のアプリケーション id を特定できませんであるため、<see cref="P:System.AppDomain.ActivationContext" />返される現在のアプリケーション ドメインに対する<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Domain" />がアプリケーション ドメインに対するアクセス許可を特定できません。  
+  
+ または  
+  
+ <paramref name="scope" />値を含む<see cref="F:System.IO.IsolatedStorage.IsolatedStorageScope.Assembly" />が呼び出し元のアセンブリのアクセス許可を特定できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserStoreForApplication">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForApplication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForApplication() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForApplication" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のコードのアプリケーション id に対応するユーザー スコープの分離ストレージを取得します。</summary>
+        <returns>呼び出し元のコードのアセンブリ id に基づく分離ストレージのスコープに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションに関連付けられているすべてのアセンブリは、このメソッドを使用する場合に、同じ分離ストアを使用します。 このメソッドは、アプリケーション id 決定できます - たとえば、アプリケーションの ClickOnce 配置経由で公開されたまたは Silverlight ベースのアプリケーションは、時場合にのみ使用できます。 ClickOnce または Silverlight ベースのアプリケーションの外部からこのメソッドを使用しようとするが表示されます、<xref:System.IO.IsolatedStorage.IsolatedStorageException>例外、呼び出し元のアプリケーション id を指定できないためです。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForApplication%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#21](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#21)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#21](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#21)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#21](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#21)]  
+  
+ このコードで、`applicationIdentity`パラメーター`GetStore(IsolatedStorageScope scope, Object applicationIdentity)`は`null`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ 呼び出し元のアプリケーション id を特定できないため、<see cref="P:System.AppDomain.ActivationContext" />プロパティによって返される<see langword="null" />です。  
+  
+ または  
+  
+ アプリケーション ドメインに対する権限を決定することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserStoreForAssembly">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForAssembly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForAssembly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のコードのアセンブリ id に対応するユーザー スコープの分離ストレージを取得します。</summary>
+        <returns>呼び出し元のコードのアセンブリ id に基づく分離ストレージのスコープに対応するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常に別のアプリケーション内にある同じアセンブリは、このメソッドを使用する場合に、同じ分離ストアを使用します。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#22](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#22)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#22](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#22)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#22](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#22)]  
+  
+> [!NOTE]
+>  常に同じアプリケーション ドメイン内で実行されている別のアセンブリでは、個別の分離ストアがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ 呼び出し元のアセンブリの権限を決定することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserStoreForDomain">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインの id、およびアセンブリの id に対応するユーザー スコープの分離ストレージを取得します。</summary>
+        <returns>対応するオブジェクト、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" />アプリケーション ドメインの id とアセンブリ id の組み合わせに基づきます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同じアセンブリのコードでは、さまざまなアプリケーションのコンテキストで使用する場合に別の分離ストアを使用します。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>次のコードに相当する機能です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#23](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/remarks.cpp#23)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#23](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/remarks.cs#23)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#23](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/remarks.vb#23)]  
+  
+ 常に同じアプリケーション ドメイン内で実行されている別のアセンブリでは、個別の分離ストアがあります。  
+  
+> [!NOTE]
+>  <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>返されます、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>アセンブリがインストールされているアプリケーション ドメインがあるない場合は、オブジェクト クォータに<xref:System.Security.Permissions.IsolatedStorageFilePermission>です。 作成しようとして後で、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクトを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>クォータがないオブジェクトが失敗し、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#10)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#10)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">分離ストレージのための十分なアクセス許可が付与されていません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">ストアを開くことができません。  
+  
+ または  
+  
+ 指定されたアセンブリでは、分離ストアを作成する十分なアクセス許可を持ちます。  
+  
+ または  
+  
+ 分離ストレージの場所を初期化することはできません。  
+  
+ または  
+  
+ アプリケーション ドメインに対する権限を決定することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserStoreForSite">
+      <MemberSignature Language="C#" Value="public static System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForSite ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.IsolatedStorage.IsolatedStorageFile GetUserStoreForSite() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForSite" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFile</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仮想ホスト ドメイン内のアプリケーションで使用するためのユーザー スコープの分離ストアを取得します。</summary>
+        <returns>呼び出し元のコードのアプリケーション id に基づく分離ストレージのスコープに対応する分離ストレージ ファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Silverlight ベースのアプリケーションでのみサポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseQuotaTo">
+      <MemberSignature Language="C#" Value="public override bool IncreaseQuotaTo (long newQuotaSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IncreaseQuotaTo(int64 newQuotaSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.IncreaseQuotaTo(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newQuotaSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="newQuotaSize">要求されたサイズ (バイト)。</param>
+        <summary>アプリケーションがより大きなクォータ サイズ、(バイト単位) を明示的に要求を有効にします。</summary>
+        <returns>
+          <see langword="true" />新しいクォータが承認された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFile.IncreaseQuotaTo%2A>メソッドにより、アプリケーションをより大きなクォータ サイズ (バイト単位) を明示的に要求します。 新しいクォータ サイズは、現在のクォータ サイズより大きくなければなりません、クォータのみが増えるためにはことができます。  
+  
+ ときに、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.IncreaseQuotaTo%2A>メソッドを呼び出すと、分離ストレージの呼び出し、<xref:System.AppDomainManager.CheckSecuritySettings%2A>メソッドです。  
+  
+ ポリシーの決定を実装するには、カスタムを作成することで<xref:System.AppDomainManager>を上書きするオブジェクト、<xref:System.AppDomainManager.CheckSecuritySettings%2A>メソッド オブジェクトに基づいてポリシーを決定を実行できるように、<xref:System.IO.IsolatedStorage.IsolatedStorageSecurityState>オブジェクト。  
+  
+ ユーザー設定がない場合は<xref:System.AppDomainManager>、オブジェクト クォータの増加要求が拒否されたための既定の実装<xref:System.AppDomainManager.CheckSecuritySettings%2A>返します`false`です。  
+  
+ 現時点では、このカスタマイズを提供、.NET Framework 内の各ホストは存在しませんので、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.IncreaseQuotaTo%2A>は常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="newQuotaSize" />現在のクォータ サイズ未満です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="newQuotaSize" />0 より小さいまたは現在のクォータ サイズを小さくします。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.NotSupportedException">現在のスコープは、アプリケーション ユーザーはありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全な .NET Framework アプリケーション用の分離ストレージは常に有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSize">
+      <MemberSignature Language="C#" Value="public override ulong MaximumSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 MaximumSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.MaximumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージ、クォータで制限内での使用可能な領域の最大量を表す値を取得します。</summary>
+        <value>分離ストレージの領域 (バイト単位) の制限。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できるバイト数は、管理者によって設定された分離ストレージ クォータによって制限されます。 クォータは、異なる証拠を使用して実行される場合に、同じコードが異なるクォータを受信できるように、証拠に基づいてセキュリティ ポリシーで構成されます。 たとえば、ローカルで実行しても、イントラネット上の共有からそうなアプリケーションは、異なるクォータを受信します。  
+  
+ [する方法: 分離ストレージの領域不足状態を予測して](~/docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)の使用例を示します、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.MaximumSize%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.MaximumSize%2A>プロパティです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#5)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#5)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロパティは使用できません。 <see cref="P:System.IO.IsolatedStorage.IsolatedStorageFile.MaximumSize" />アセンブリの作成から証拠なしを特定できません。 オブジェクトが作成されたときに、証拠を特定できませんでした。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストレージ エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveDirectory">
+      <MemberSignature Language="C#" Value="public void MoveDirectory (string sourceDirectoryName, string destinationDirectoryName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveDirectory(string sourceDirectoryName, string destinationDirectoryName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.MoveDirectory(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirectoryName" Type="System.String" />
+        <Parameter Name="destinationDirectoryName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirectoryName">移動するディレクトリの名前。</param>
+        <param name="destinationDirectoryName">新しい場所へのパス<c>sourceDirectoryName</c>です。 既存のディレクトリへのパスは指定できません。</param>
+        <summary>指定されたディレクトリとその内容を新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sourceFileName`および`destinationFileName`別のディレクトリ名を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceFileName" />または<paramref name="destinationFileName" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceFileName" /> または <paramref name="destinationFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="sourceDirectoryName" /> は存在しません。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。  
+  
+ または  
+  
+ <paramref name="destinationDirectoryName" />既に存在します。  
+  
+ または  
+  
+ <paramref name="sourceDirectoryName" />および<paramref name="destinationDirectoryName" />同じディレクトリを参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveFile">
+      <MemberSignature Language="C#" Value="public void MoveFile (string sourceFileName, string destinationFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveFile(string sourceFileName, string destinationFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.MoveFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFileName" Type="System.String" />
+        <Parameter Name="destinationFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFileName">移動するファイルの名前。</param>
+        <param name="destinationFileName">ファイルの新しい場所へのパス。 ファイル名が含まれる場合は、移動したファイルは、その名前があります。</param>
+        <summary>指定したファイルを新しい場所に移動し、必要に応じて新しいファイル名を指定することができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に、このメソッドが例外をスローしません`sourceFileName`と`destinationFileName`は同じです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceFileName" />または<paramref name="destinationFileName" />長さ 0 の文字列は、空白しか含んでいないかによって定義された 1 つまたは複数の無効な文字が含まれています、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceFileName" /> または <paramref name="destinationFileName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">
+          <paramref name="sourceFileName" /> が見つかりませんでした。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.OpenFile(System.String,System.IO.FileMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストア内のファイルの相対パス。</param>
+        <param name="mode">ファイルを開く方法を指定する列挙値の 1 つ。</param>
+        <summary>指定したモードでファイルを開きます。</summary>
+        <returns>読み取り/書き込みアクセスを使用して、指定したモードで開かれ、共有を解除するファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリ<paramref name="path" />存在しません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.OpenFile(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストア内のファイルの相対パス。</param>
+        <param name="mode">ファイルを開く方法を指定する列挙値の 1 つ。</param>
+        <param name="access">ファイルを読み取り、書き込み、または読み取り/書き込みアクセスをオープンするかどうかを指定する列挙値の 1 つ。</param>
+        <summary>指定下読み取り/書き込みアクセス権を持つ指定モードでファイルを開きます。</summary>
+        <returns>指定したモードとアクセスで開かれ、の共有を解除するファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリ<paramref name="path" />存在しません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenFile">
+      <MemberSignature Language="C#" Value="public System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.IsolatedStorage.IsolatedStorageFileStream OpenFile(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.OpenFile(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.IsolatedStorage.IsolatedStorageFileStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストア内のファイルの相対パス。</param>
+        <param name="mode">開くか、ファイルを作成する方法を示す列挙値の 1 つ。</param>
+        <param name="access">ファイルを読み取り、書き込み、または読み取り/書き込みアクセスをオープンするかどうかを指定する列挙値のいずれか</param>
+        <param name="share">その他のアクセスの種類を指定する列挙値のビットごとの組み合わせ<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" />オブジェクトがこのファイルにあります。</param>
+        <summary>指定したモード、指定下読み取り/書き込みアクセス権と共有アクセス許可でファイルを開きます。</summary>
+        <returns>指定したモードとアクセス、および指定した共有オプションで開かれているファイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.%23ctor%28System.String%2CSystem.IO.FileMode%2CSystem.IO.FileAccess%2CSystem.IO.FileShare%2CSystem.IO.IsolatedStorage.IsolatedStorageFile%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリ<paramref name="path" />存在しません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="M:System.IO.FileInfo.Open(System.IO.FileMode)" /> に設定されます。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Quota">
+      <MemberSignature Language="C#" Value="public override long Quota { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Quota" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.Quota" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージの使用可能な領域の最大量を表す値を取得します。</summary>
+        <value>(バイト単位) の分離ストレージ領域の制限。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。  
+  
+ または  
+  
+ 分離ストレージは無効です。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public override void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>分離ストレージのスコープとその内容をすべて削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このメソッドを完全に削除スコープ全体と含まれるすべてのディレクトリおよびファイルです。  
+  
+ ディレクトリまたはストア内のファイルのいずれかを使用している場合は、ストアの削除の試行が失敗し、ストアが削除対象としてマークします。 ストアを変更しようとした後続スロー、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A>その内容が空にされた後に、分離ストレージ ファイルを削除する方法です。 [する方法: 分離ストレージでストアを削除する](~/docs/standard/io/how-to-delete-stores-in-isolated-storage.md)の使用例、<xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A>メソッドです。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#16)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#16)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアを削除できません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public static void Remove (System.IO.IsolatedStorage.IsolatedStorageScope scope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Remove(valuetype System.IO.IsolatedStorage.IsolatedStorageScope scope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFile.Remove(System.IO.IsolatedStorage.IsolatedStorageScope)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scope" Type="System.IO.IsolatedStorage.IsolatedStorageScope" />
+      </Parameters>
+      <Docs>
+        <param name="scope"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageScope" /> 値のビットごとの組み合わせ。</param>
+        <summary>すべての id の指定された分離ストレージのスコープを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このメソッドを完全に削除スコープ全体と含まれるすべてのディレクトリおよびファイルです。  
+  
+ ディレクトリまたはストア内のファイルのいずれかを使用している場合は、ストアの削除の試行が失敗し、ストアが削除対象としてマークします。 ストアを変更しようとした後続スロー、<xref:System.IO.IsolatedStorage.IsolatedStorageException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアを削除できません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージを使用します。 関連する列挙。<see cref="F:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser" /></permission>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙。<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UsedSize">
+      <MemberSignature Language="C#" Value="public override long UsedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 UsedSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFile.UsedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分離ストレージに使用される領域の量を表す値を取得します。</summary>
+        <value>分離ストレージの使用領域 (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">分離ストアが閉じられました。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">分離ストアは削除されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアが破棄されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

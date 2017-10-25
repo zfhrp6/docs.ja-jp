@@ -1,0 +1,90 @@
+<Type Name="FaultBinding" FullName="System.Web.Services.Description.FaultBinding">
+  <TypeSignature Language="C#" Value="public sealed class FaultBinding : System.Web.Services.Description.MessageBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FaultBinding extends System.Web.Services.Description.MessageBinding" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.FaultBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.MessageBinding</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>操作の結果として出力されるエラー メッセージの形式を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FaultBinding`クラスが Web サービス記述言語 (WSDL) に対応しています`<fault>`要素で囲ま、`<operation>`順番に対応する要素、<xref:System.Web.Services.Description.OperationBinding>クラスです。 WSDL の詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`FaultBinding`クラスです。  
+  
+ [!code-cpp[FaultBindingCollection_Add#1](~/samples/snippets/cpp/VS_Snippets_Remoting/FaultBindingCollection_Add/CPP/faultbindingcollection_add.cpp#1)]
+ [!code-csharp[FaultBindingCollection_Add#1](~/samples/snippets/csharp/VS_Snippets_Remoting/FaultBindingCollection_Add/CS/faultbindingcollection_add.cs#1)]
+ [!code-vb[FaultBindingCollection_Add#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/FaultBindingCollection_Add/VB/faultbindingcollection_add.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FaultBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.FaultBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.FaultBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.FaultBinding.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在関連付けられている機能拡張要素のコレクションを取得<see cref="T:System.Web.Services.Description.FaultBinding" />です。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> 既定値は、コレクションに、 <see cref="P:System.Collections.CollectionBase.Count" /> 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での一般的な使用、`Extensions`プロパティです。  
+  
+ FaultBindingCollection_Add #1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

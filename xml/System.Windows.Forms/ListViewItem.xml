@@ -1,0 +1,2006 @@
+<Type Name="ListViewItem" FullName="System.Windows.Forms.ListViewItem">
+  <TypeSignature Language="C#" Value="public class ListViewItem : ICloneable, System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ListViewItem extends System.Object implements class System.ICloneable, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListViewItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DesignTimeVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ListViewItemConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.ListView" /> コントロール内の項目を表します。 </summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView>コントロールに似ていますが、<xref:System.Windows.Forms.ListBox>項目の一覧が表示されます。 その主な違いは、<xref:System.Windows.Forms.ListView>コントロールには、ユーザーがさまざまな方法で項目の数を表示できます。 <xref:System.Windows.Forms.ListViewItem>クラスは、外観、動作、およびに表示される項目に関連付けられているデータを定義、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListViewItem>オブジェクトに表示されることができます、 <xref:System.Windows.Forms.ListView> 4 つの異なるビューのいずれかで制御します。 大きいアイコンまたは小さいアイコン、または垂直方向の一覧に小さいアイコンとして、項目を表示できます。 項目は、親アイテムに関連する情報が含まれているサブアイテムを持つこともできます。 4 番目のビュー スタイルの詳細 ビューでは、サブ項目に表示される情報の識別に使用できる列のヘッダーを持つグリッドで、アイテムとそのサブ項目を表示します。  
+  
+ ほとんどのプロパティの<xref:System.Windows.Forms.ListViewItem>クラス内の項目の表示を変更する方法を提供する、<xref:System.Windows.Forms.ListView>コントロールに関連付けられていること。 <xref:System.Windows.Forms.ListViewItem.BackColor%2A>、 <xref:System.Windows.Forms.ListViewItem.ForeColor%2A>、および<xref:System.Windows.Forms.ListViewItem.Font%2A>プロパティをで項目のテキストを表示する方法を変更すること、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティからロードするイメージを指定することができます、<xref:System.Windows.Forms.ImageList>に割り当てられている、<xref:System.Windows.Forms.ListView>コントロール (設定して、<xref:System.Windows.Forms.ListView.LargeImageList%2A>または<xref:System.Windows.Forms.ListView.SmallImageList%2A>のプロパティ、 <xref:System.Windows.Forms.ListView>)。 項目と同様の方法でユーザーの選択項目を取得するためにチェック ボックスを表示することができます、<xref:System.Windows.Forms.CheckedListBox>コントロール。 使用することができます、<xref:System.Windows.Forms.ListViewItem.Checked%2A>プロパティ項目をオンになっているかどうかを決定するかを選択するか、実行時にチェック ボックスをオフにします。 項目は、任意の数を表示できます subitems ときに、 <xref:System.Windows.Forms.ListView.View%2A> 、関連するプロパティ<xref:System.Windows.Forms.ListView>コントロールに設定されている<xref:System.Windows.Forms.View.Details>で列が定義されていると、<xref:System.Windows.Forms.ListView.ColumnHeaderCollection>の<xref:System.Windows.Forms.ListView>コントロール。 アイテムにサブ項目を追加するには呼び出すことによって、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>クラスです。 <xref:System.Windows.Forms.ListViewItem.SubItems%2A>プロパティにアクセスすることができます、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>クラスとそのメンバーです。  
+  
+ いくつかのプロパティとメソッドの<xref:System.Windows.Forms.ListViewItem>クラスは、アイテム固有のバージョンのプロパティとメソッドの<xref:System.Windows.Forms.ListView>コントロール。 たとえば、<xref:System.Windows.Forms.ListViewItem.EnsureVisible%2A>メソッドがに似ていますが、 <xref:System.Windows.Forms.ListView> 、メソッドのバージョンが、<xref:System.Windows.Forms.ListViewItem>バージョンが現在の項目のみに影響します。  
+  
+ <xref:System.Windows.Forms.ListViewItem>クラスは、のバージョンのではないメソッドも用意されています。<xref:System.Windows.Forms.ListView>メソッドです。 <xref:System.Windows.Forms.ListViewItem.BeginEdit%2A>メソッドは、ユーザーが項目のテキストを変更できるように編集モードに、項目のテキストを配置 (ときに、<xref:System.Windows.Forms.ListView.LabelEdit%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロールに設定されている`true`)。 <xref:System.Windows.Forms.ListViewItem.Clone%2A>メソッドでは、既存のコピーを作成できます。<xref:System.Windows.Forms.ListViewItem>を他の再利用するオブジェクト<xref:System.Windows.Forms.ListView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ コードを追加する必要があります、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出します。 例では、イメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Forms.ListViewItem" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ コードを追加する必要があります、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出します。 例では、イメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定した項目のテキストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />サブ項目を表す文字列の配列を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />クラスし、指定されたグループに割り当てられます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ListViewItem (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />に関する情報を含む、<see cref="T:System.Windows.Forms.ListViewItem" />初期化されるようにします。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化ストリームのソースの変換先およびコンテキスト情報を示すです。</param>
+        <summary>指定したシリアル化情報とストリーム コンテキストを使用して、<see cref="T:System.Windows.Forms.ListViewItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />した、指定した項目のテキストと、項目のアイコンのイメージのインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />に表示する、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定したテキストとイメージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />クラスの指定した項目のテキストとして、指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />項目のアイコンとサブ項目を表す文字列の配列のイメージのインデックス位置を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="items">サブ項目のテキストを含む配列、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />に表示する、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定した項目とサブ項目のテキストとイメージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />を表す文字列の配列を持つクラスの subitems、および項目を指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (System.Windows.Forms.ListViewItem.ListViewSubItem[] subItems, int imageIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem/ListViewSubItem[] subItems, int32 imageIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Windows.Forms.ListViewItem.ListViewSubItem[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="subItems" Type="System.Windows.Forms.ListViewItem+ListViewSubItem[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="subItems">型の配列<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />アイテムのサブ項目を表すです。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />項目のアイコンとの配列のイメージのインデックス位置を持つクラス<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、このバージョンのコンス トラクターが役<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトを追加する前に、 <xref:System.Windows.Forms.ListViewItem> (たとえば、特殊な書式設定を示すために、または複数の項目で、サブ項目を使用する)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (System.Windows.Forms.ListViewItem.ListViewSubItem[] subItems, string imageKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem/ListViewSubItem[] subItems, string imageKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Windows.Forms.ListViewItem.ListViewSubItem[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="subItems" Type="System.Windows.Forms.ListViewItem+ListViewSubItem[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="subItems"><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" /> オブジェクトの配列。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />に表示する、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定されたサブ項目とイメージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text, int imageIndex, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, int32 imageIndex, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String,System.Int32,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />クラスの指定した項目のテキストと、項目のアイコンのイメージのインデックス位置を使用し、項目を指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string text, string imageKey, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string imageKey, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String,System.String,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="imageKey" Type="System.String" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="text">アイテムの表示テキストです。 259 文字を超えない必要があります。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />アイテムの表示にします。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定したテキスト、イメージ、およびグループを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, int imageIndex, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, int32 imageIndex, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.Int32,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />アイテムのアイコンをクリックしてを表す文字列の配列のイメージのインデックス位置を持つクラスの subitems、および項目を指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, string imageKey, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, string imageKey, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.String,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="items">サブ項目のテキストを表す文字列の配列、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />アイテムの表示にします。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />を持つ指定したテキスト、イメージ、およびグループを含むサブ クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (System.Windows.Forms.ListViewItem.ListViewSubItem[] subItems, int imageIndex, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem/ListViewSubItem[] subItems, int32 imageIndex, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Windows.Forms.ListViewItem.ListViewSubItem[],System.Int32,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="subItems" Type="System.Windows.Forms.ListViewItem+ListViewSubItem[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="subItems">型の配列<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />アイテムのサブ項目を表すです。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />項目のアイコンとの配列のイメージのインデックス位置を持つクラス<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />オブジェクト、および項目を指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、このバージョンのコンス トラクターが役<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトを追加する前に、<xref:System.Windows.Forms.ListViewItem>オブジェクト (たとえば、特殊な書式設定を示すために、または複数の項目で、サブ項目を使用する)。 項目が属するグループを指定することもできます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (System.Windows.Forms.ListViewItem.ListViewSubItem[] subItems, string imageKey, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListViewItem/ListViewSubItem[] subItems, string imageKey, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.Windows.Forms.ListViewItem.ListViewSubItem[],System.String,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="subItems" Type="System.Windows.Forms.ListViewItem+ListViewSubItem[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="subItems">配列<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />のサブ項目を表すオブジェクト、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />アイテムの表示にします。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />サブ項目を指定した、イメージ、およびグループを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、このバージョンのコンス トラクターが役<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトを追加する前に、 <xref:System.Windows.Forms.ListViewItem> (たとえば、特殊な書式設定を示すために、または複数の項目で、サブ項目を使用する)。 項目が属するグループを指定することもできます。  
+  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, int imageIndex, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, int32 imageIndex, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <param name="foreColor">A<see cref="T:System.Drawing.Color" />アイテムの前景色を表すです。</param>
+        <param name="backColor">A<see cref="T:System.Drawing.Color" />項目の背景色を表すです。</param>
+        <param name="font">A<see cref="T:System.Drawing.Font" />項目のテキストを表示するフォントを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />した項目のアイコンのイメージのインデックス位置以外の場合は、前景の色、背景色、および項目のフォントとサブ項目を表す文字列の配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を含むフォームを作成する、<xref:System.Windows.Forms.ListView>コントロール内の列の場合は、項目を手動で並べ替えを<xref:System.Windows.Forms.ListView>コントロールをクリックします。 例と呼ばれるクラス定義`ListViewItemComparer`を実装する、<xref:System.Collections.IComparer?displayProperty=nameWithType>を実行するインターフェイス、<xref:System.Windows.Forms.ListViewItem>比較します。 インスタンスを作成する例では、`ListViewItemComparer`設定を使用して、<xref:System.Windows.Forms.ListView.ListViewItemSorter%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListView.Sort%2A>メソッドの呼び出し、<xref:System.Windows.Forms.ListView.ColumnClick>イベント ハンドラーで定義されているメソッドを使用して`ListViewItemComparer`クリックされた列に基づくアイテムの並べ替えを実行します。  
+  
+ [!code-cpp[ListView.ColumnClick#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListView.ColumnClick/CPP/listviewsort1.cpp#1)]
+ [!code-csharp[ListView.ColumnClick#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListView.ColumnClick/CS/listviewsort1.cs#1)]
+ [!code-vb[ListView.ColumnClick#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListView.ColumnClick/VB/listviewsort1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, string imageKey, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, string imageKey, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.String,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="items">サブ項目のテキストを表す文字列の配列、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />アイテムの表示にします。</param>
+        <param name="foreColor">A<see cref="T:System.Drawing.Color" />アイテムの前景色を表すです。</param>
+        <param name="backColor">A<see cref="T:System.Drawing.Color" />項目の背景色を表すです。</param>
+        <param name="font">A<see cref="T:System.Drawing.Font" />項目のテキストに適用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定したテキスト、イメージ、色、およびフォントを持つサブ クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, int imageIndex, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Drawing.Font font, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, int32 imageIndex, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, class System.Drawing.Font font, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.Int32,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageIndex" Type="System.Int32" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="items">新しい項目のサブ項目を表す文字列の配列。</param>
+        <param name="imageIndex">内の画像の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />に関連付けられている、<see cref="T:System.Windows.Forms.ListView" />項目を格納しています。</param>
+        <param name="foreColor">A<see cref="T:System.Drawing.Color" />アイテムの前景色を表すです。</param>
+        <param name="backColor">A<see cref="T:System.Drawing.Color" />項目の背景色を表すです。</param>
+        <param name="font">A<see cref="T:System.Drawing.Font" />項目のテキストを表示するフォントを表すです。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />した項目のアイコンのイメージのインデックス位置以外の場合は、前景の色、背景色、および項目のフォントとサブ項目を表す文字列の配列。 項目を指定されたグループに割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewItem (string[] items, string imageKey, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Drawing.Font font, System.Windows.Forms.ListViewGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] items, string imageKey, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, class System.Drawing.Font font, class System.Windows.Forms.ListViewGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.#ctor(System.String[],System.String,System.Drawing.Color,System.Drawing.Color,System.Drawing.Font,System.Windows.Forms.ListViewGroup)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.String[]" />
+        <Parameter Name="imageKey" Type="System.String" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="group" Type="System.Windows.Forms.ListViewGroup" />
+      </Parameters>
+      <Docs>
+        <param name="items">サブ項目のテキストを表す文字列の配列、<see cref="T:System.Windows.Forms.ListViewItem" />です。</param>
+        <param name="imageKey">内の画像の名前、<see cref="P:System.Windows.Forms.ListViewItem.ImageList" />所有元の<see cref="T:System.Windows.Forms.ListView" />アイテムの表示にします。</param>
+        <param name="foreColor">A<see cref="T:System.Drawing.Color" />アイテムの前景色を表すです。</param>
+        <param name="backColor">A<see cref="T:System.Drawing.Color" />項目の背景色を表すです。</param>
+        <param name="font">A<see cref="T:System.Drawing.Font" />項目のテキストに適用します。</param>
+        <param name="group"><see cref="T:System.Windows.Forms.ListViewGroup" />項目を割り当てる。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ListViewItem" />指定したテキスト、イメージ、色、フォント、およびグループを持つサブ クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターでは、項目が属するグループを指定することができます。  
+  
+ `imageKey`パラメーター内のイメージを指定する、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>に所有している、関連付けられている<xref:System.Windows.Forms.ListView>コントロールで、アクセスするのには、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目のテキストの背景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />項目のテキストの背景色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.ListViewItem.BackColor%2A>項目テキストの背景に表示される色を変更するプロパティです。 このプロパティは、別の前景色および背景色の組み合わせを使用する場合に使用できます (を使用して、<xref:System.Windows.Forms.ListViewItem.ForeColor%2A>前景色を設定するプロパティ) を 1 つの項目を区別するためです。 たとえば、設定する、<xref:System.Windows.Forms.ListViewItem.BackColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>検証に失敗したか、サブ項目の情報がない項目を識別します。  
+  
+ 項目のすべてのサブ項目の背景色を使用する場合は、設定、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>プロパティを`true`です。 これは、結果、色とフォントは、項目の指定された、すべてのサブ項目のテキストに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginEdit">
+      <MemberSignature Language="C#" Value="public void BeginEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.BeginEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集モードには、項目のテキストを配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、有効な場合にのみ、<xref:System.Windows.Forms.ListView.LabelEdit%2A>のプロパティ、<xref:System.Windows.Forms.ListView>に設定されている項目を含むコントロール`true`です。 このメソッドは、編集モードで表示するのに項目のテキストを強制的に実行時に使用できます。 たとえば、ユーザーによって編集項目のテキストを検証するときは、項目が検証に失敗した場合は、内の項目を選択できます、<xref:System.Windows.Forms.ListView>を呼び出すし、制御、<xref:System.Windows.Forms.ListViewItem.BeginEdit%2A>検証に失敗したテキストを変更するユーザーを強制する方法です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.ListView.LabelEdit" /> 、関連するプロパティ<see cref="T:System.Windows.Forms.ListView" />に設定されていない<see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブ項目を含め、項目の外接する四角形を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />項目の外接する四角形を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、アイテム全体の外接する四角形を取得します。 アイテム全体の一部の外接する四角形を取得する場合は、使用、<xref:System.Windows.Forms.ListViewItem.GetBounds%2A>メソッドです。 <xref:System.Windows.Forms.ListView>クラスを提供する<xref:System.Windows.Forms.ListView.GetItemRect%2A>コントロール内にあるメソッドを任意の項目の外接する四角形を取得することができます。  
+  
+ 返される外接する四角形がクライアント コントロールに対する相対座標を格納しているの現在表示されている領域の左上隅を使用して<xref:System.Windows.Forms.ListBox>です。 場合、<xref:System.Windows.Forms.ListBox>スクロールと位置指定ができるように、<xref:System.Windows.Forms.ListViewItem>は、非表示、座標が返される可能性があります負の値。  
+  
+ ときに、<xref:System.Windows.Forms.ListView.View%2A?displayProperty=nameWithType>プロパティの値を持つ<xref:System.Windows.Forms.View.List>、外接する四角形の幅が、項目のテキストの幅は、項目を含む列の幅。 場合、<xref:System.Windows.Forms.ListView.Columns%2A?displayProperty=nameWithType>コレクションにすべての列が含まれていない、60 のピクセルの既定の列幅を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目がチェックされるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />項目がチェックされている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは場合にのみ、<xref:System.Windows.Forms.ListView.CheckBoxes%2A>のプロパティ、<xref:System.Windows.Forms.ListView>で項目が含まれているコントロールに設定されている`true`です。 このプロパティを使用するかどうか、項目がチェックされてもコードで、ユーザーが実行時に決定します。 チェックインされているすべての項目を決定する、<xref:System.Windows.Forms.ListView>制御を行うこともできます、<xref:System.Windows.Forms.ListView.CheckedItems%2A>プロパティです。 項目がチェックされている操作を行ったりのイベント ハンドラーを作成することができます、<xref:System.Windows.Forms.ListView.ItemCheck>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ コードを追加する必要があります、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出します。 例では、イメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アイテムの完全なコピーを作成します。</summary>
+        <returns>同じテキスト、イメージ、およびサブ項目が複製された項目と関連付けのあるアイテムを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのメソッドを使用することができます、<xref:System.Windows.Forms.ListViewItem>クラスは、既存の項目に基づいています。 複製されている項目のサブ項目でもは、新しいバージョンに対して指定されます。 この機能は、再利用する場合に便利です、 <xref:System.Windows.Forms.ListViewItem> 1 つ以上で<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="protected virtual void Deserialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Deserialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />項目を逆シリアル化するために必要なデータを保持します。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ソースと逆シリアル化ストリームの転送先を表すです。</param>
+        <summary>項目を逆シリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>およびこのクラスの派生バージョンの逆シリアル化することに、派生クラスには、シリアル化および逆シリアル化する状態情報が含まれている場合、このメソッドをオーバーライドする必要があります。 このメソッドの基本クラス実装は、アイテムがシリアル化され、正しく逆シリアル化することを確認するために呼び出す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureVisible">
+      <MemberSignature Language="C#" Value="public virtual void EnsureVisible ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EnsureVisible() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.EnsureVisible" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>項目が必要な場合に、コントロールの内容をスクロール コントロール内で表示されていることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには、項目が内で参照可能であることを確認する、<xref:System.Windows.Forms.ListView>コントロール。 項目に検証を実行するときに、このメソッドを使用できます。 呼び出すことができます、<xref:System.Windows.Forms.ListViewItem.EnsureVisible%2A>にアイテムが表示されていることを確認する方法、<xref:System.Windows.Forms.ListView>を使用する項目での変更を実行するユーザーの検証に失敗した場合は、制御します。  
+  
+ このメソッドがに似ていますが、<xref:System.Windows.Forms.ListView.EnsureVisible%2A>のメソッド、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindNearestItem">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem FindNearestItem (System.Windows.Forms.SearchDirectionHint searchDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem FindNearestItem(valuetype System.Windows.Forms.SearchDirectionHint searchDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.FindNearestItem(System.Windows.Forms.SearchDirectionHint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="searchDirection" Type="System.Windows.Forms.SearchDirectionHint" />
+      </Parameters>
+      <Docs>
+        <param name="searchDirection"><see cref="T:System.Windows.Forms.SearchDirectionHint" /> 値のいずれか。</param>
+        <summary>次の項目を検索、 <see cref="T:System.Windows.Forms.ListViewItem" />、指定した方向に検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem" />ですが、指定した方向での検索、特定の座標に最も近いです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.FindNearestItem%2A>メソッドを返します。`null`指定した方向に項目が見つからない場合。  
+  
+ アプリケーションが実行されているオペレーティング システムによって異なることができの結果に影響が最も近い項目を識別する<xref:System.Windows.Forms.ListViewItem.FindNearestItem%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.ListViewItem.FindNearestItem%2A> メソッドの使用方法を示します。 この例を実行するを含む Windows フォームに次のコードを貼り付け、<xref:System.Windows.Forms.ListView>という`findListView`です。 いることを確認、<xref:System.Windows.Forms.ListView.View%2A>アイコン ビューにプロパティを設定、<xref:System.Windows.Forms.ListView>アイテムが格納されます。 関連付ける、<xref:System.Windows.Forms.Control.MouseDown>のイベント`findListView`で、`findListView_MouseDown`この例ではメソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewItemWhidbeyMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemWhidbeyMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.ListView.View" />プロパティを含むの<see cref="T:System.Windows.Forms.ListView" />以外の値に設定が<see cref="F:System.Windows.Forms.View.SmallIcon" />または<see cref="F:System.Windows.Forms.View.LargeIcon" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Focused">
+      <MemberSignature Language="C#" Value="public bool Focused { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Focused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Focused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアイテムが内でフォーカスがあるかどうかを示す値を設定、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+        <value>
+          <see langword="true" />アイテムにフォーカスがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView>コントロールには直接編集可能な領域がありません-に含まれている項目のみ、<xref:System.Windows.Forms.ListView>編集できます — 内の項目のテキスト、<xref:System.Windows.Forms.ListView>フォーカス十字線が表示されるときに、<xref:System.Windows.Forms.ListView>にフォーカスがあります。 通常は、最後に選択内の項目、<xref:System.Windows.Forms.ListView>コントロールがフォーカスを持つ項目。 項目は、フォーカスの十字線を表示することが、実際には必要はありませんで選択したアイテム、<xref:System.Windows.Forms.ListView>です。 使用することができます、 <xref:System.Windows.Forms.ListViewItem.Focused%2A> 、項目が現在のフォーカスのあるアイテムを決定するプロパティ、<xref:System.Windows.Forms.ListView>それを含むコントロールです。 場合、<xref:System.Windows.Forms.ListViewItem>に関連付けられていない、<xref:System.Windows.Forms.ListView>コントロール、このプロパティは返します`false`です。  
+  
+ <xref:System.Windows.Forms.ListView>コントロールには、<xref:System.Windows.Forms.ListView.FocusedItem%2A>を決定できるようにするプロパティ<xref:System.Windows.Forms.ListViewItem>で、<xref:System.Windows.Forms.ListView>にフォーカスがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Font">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font Font { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font Font" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Font" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目によって表示されるテキストのフォントを取得または設定します。</summary>
+        <value>コントロールによって表示されるテキストに適用される <see cref="T:System.Drawing.Font" />。 既定の値は、<see cref="P:System.Windows.Forms.Control.DefaultFont" />プロパティ場合、<see cref="T:System.Windows.Forms.ListViewItem" />に関連付けられていない、<see cref="T:System.Windows.Forms.ListView" />制御; で、フォントを指定する場合は、<see cref="P:System.Windows.Forms.Control.Font" />プロパティを<see cref="T:System.Windows.Forms.ListView" />コントロールを使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、項目のテキストに適用されるフォント スタイルを変更します。 <xref:System.Drawing.Font>は変更できません (を調整できないプロパティのいずれか)、のみ割り当てることができます、 <xref:System.Windows.Forms.Control.Font%2A> 、新しいプロパティ<xref:System.Drawing.Font>です。 ただし、既存のフォントで新しいフォントを基準とすることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、太字にする既存のフォントを調整する方法を示します。  
+  
+```csharp  
+listViewItem1.Font = new Font(listViewItem1.Font,   
+    listViewItem1.Font.Style | FontStyle.Bold);  
+```  
+  
+```vb  
+ListViewItem1.Font = New Font(ListViewItem1.Font, _   
+    ListViewItem1.Font.Style Or FontStyle.Bold)  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目のテキストの前景色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />項目のテキストの前景色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.ListViewItem.ForeColor%2A>項目テキストの色を変更するプロパティです。 このプロパティは、別の前景色および背景色の組み合わせを使用する場合に使用できます (を使用して、<xref:System.Windows.Forms.ListViewItem.BackColor%2A>背景色を設定するプロパティ) を 1 つの項目を区別するためです。 たとえば、設定する、<xref:System.Windows.Forms.ListViewItem.ForeColor%2A>プロパティを<xref:System.Drawing.Color.Red%2A>をそれらに関連付けられている負の値を持つアイテムを識別または項目の検証に失敗しました。  
+  
+ 項目のすべてのサブの同じ前景の色を使用する場合は、設定、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>プロパティを`true`です。 これは、結果、色とフォントは、項目の指定された、すべてのサブ項目のテキストに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBounds (System.Windows.Forms.ItemBoundsPortion portion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBounds(valuetype System.Windows.Forms.ItemBoundsPortion portion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.GetBounds(System.Windows.Forms.ItemBoundsPortion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="portion" Type="System.Windows.Forms.ItemBoundsPortion" />
+      </Parameters>
+      <Docs>
+        <param name="portion">1 つ、<see cref="T:System.Windows.Forms.ItemBoundsPortion" />外接する四角形を取得する対象の項目の一部を表す値です。</param>
+        <summary>項目の外接する四角形の指定部分を取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />を表す、指定された部分では、項目の外接する四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される外接する四角形、<xref:System.Windows.Forms.ListViewItem.GetBounds%2A>メソッドで指定された項目のセクションのみを表す、`portion`パラメーター。 呼び出すことも、<xref:System.Windows.Forms.ListView.GetItemRect%2A>のメソッド、<xref:System.Windows.Forms.ListView>で項目の外接する四角形を取得するクラス、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSubItemAt">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem.ListViewSubItem GetSubItemAt (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.ListViewItem/ListViewSubItem GetSubItemAt(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.GetSubItemAt(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem+ListViewSubItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">x 座標。</param>
+        <param name="y">y 座標。</param>
+        <summary>サブ項目を返します、<see cref="T:System.Windows.Forms.ListViewItem" />指定した座標にします。</summary>
+        <returns><see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItem" />で、指定した x 座標と y 座標。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.GetSubItemAt%2A>メソッドが返す`null`場合、<xref:System.Windows.Forms.ListView>に含まれていない<xref:System.Windows.Forms.View.Details>ビューがないか、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>指定した位置にあります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.ListViewItem.GetSubItemAt%2A> メソッドの使用方法を示します。 このコードを実行するには、Windows フォームと呼び出しに貼り付け、`InitializeListView1`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewItemWhidbeyMembers#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/CS/form1.cs#5)]
+ [!code-vb[System.Windows.Forms.ListViewItemWhidbeyMembers#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewGroup Group { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewGroup Group" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目が割り当てられているグループを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewGroup" />項目が割り当てられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、項目が属するグループを設定できます。 グループを設定することも、<xref:System.Windows.Forms.ListViewItem.%23ctor%2A>コンス トラクター、またはを実行時に、グループ メンバーシップを変更するこのプロパティを使用できます。 このプロパティを設定する場合`null`でグループがあると、 <xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType> 、コレクション アイテムがヘッダー ラベルが"DefaultGroupSystem.Windows.Forms"既定のグループに表示されます。 既定のグループが含まれていない、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>コレクションを変更することはできません。 すべての項目がグループに正しく追加されていることを確認する、デバッグで、主に便利です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ListView>グループは、Windows XP および Windows Server 2003 ファミリで利用可能なのみ ([!INCLUDE[WinXpFamily](~/includes/winxpfamily-md.md)])。 詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewGroup>概要トピックです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、<xref:System.Windows.Forms.ListViewItem.Group%2A>プロパティを編成するアプリケーションで使用できます<xref:System.Windows.Forms.ListView>サブ項目に値の詳細ビューで項目。 この形式のグループ化は、Windows エクスプ ローラーで使用されているグループに似ています。 例では、グループは動的に作成されます。 サブアイテムの列ごとに一意のサブ項目の値ごとに 1 つのグループが作成されます。 親項目の列の一意の初期名ごとに 1 つのグループが作成されます。 各列に対して作成されたグループは、サブ項目のテキストまたは先頭の文字とハッシュ テーブルに格納されます。 列ヘッダーがクリックされたときにその列に対応するハッシュ テーブルを取得します。 次に、その列にサブ項目のテキスト値として使用されますハッシュ テーブル キーの各項目に対して正しいグループを取得します。 使用してグループに、項目が割り当てられます、<xref:System.Windows.Forms.ListViewItem.Group%2A>プロパティです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Windows.Forms.ListView.Groups%2A?displayProperty=nameWithType>プロパティです。  
+  
+ [!code-cpp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CPP/listviewgroupsexample.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/CS/listviewgroupsexample.cs#2)]
+ [!code-vb[System.Windows.Forms.ListView.Groups#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Groups/VB/listviewgroupsexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageIndex">
+      <MemberSignature Language="C#" Value="public int ImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.NoneExcludedImageIndexConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目に対して表示されるイメージのインデックスを設定します。</summary>
+        <value>内のイメージの 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />項目に対して表示される、します。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、の値によって異なります、<xref:System.Windows.Forms.ListViewItem.ImageList%2A>プロパティです。 現在の値に応じて、<xref:System.Windows.Forms.ListView.View%2A>のプロパティ、 <xref:System.Windows.Forms.ListView> 、アイテムに関連付けられたコントロール、<xref:System.Windows.Forms.ImageList>いずれかで指定した項目で使用される、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティまたは<xref:System.Windows.Forms.ListView.SmallImageList%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。 場合、<xref:System.Windows.Forms.ListView.View%2A>プロパティに設定されている<xref:System.Windows.Forms.View.LargeIcon>では、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティが使用されます。 それ以外の場合、、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティを使用します。 定義されている画像、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.SmallImageList%2A>内にある画像と同じインデックス位置にある必要があります、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティです。 インデックス位置は、の両方で同じ場合<xref:System.Windows.Forms.ImageList>、コントロールの 1 つのインデックス値を設定することができます、<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティや、該当するイメージの値に関係なく表示される、<xref:System.Windows.Forms.ListView.View%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ListViewItem.ImageKey%2A>と<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティが相互に排他的で、もう一方は無視が設定されている場合を意味します。 さらに、設定した場合、 <xref:System.Windows.Forms.ListViewItem.ImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合、 <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A> 、プロパティ、<xref:System.Windows.Forms.ListViewItem.ImageKey%2A>空の文字列に自動的に設定されている ("")。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定された値は、-1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageKey">
+      <MemberSignature Language="C#" Value="public string ImageKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ImageKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageKeyConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目に対して表示されるイメージのキーを設定します。</summary>
+        <value>表示されるイメージのキー、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.ImageKey%2A>プロパティが空の文字列を返します ("") と、<xref:System.Windows.Forms.ListViewItem.ImageKey%2A>に対して設定されていない、<xref:System.Windows.Forms.ListViewItem>です。 <xref:System.Windows.Forms.ListViewItem.ImageKey%2A>と<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティが相互に排他的で、もう一方は無視が設定されている場合を意味します。 設定した場合、 <xref:System.Windows.Forms.ListViewItem.ImageKey%2A> 、プロパティ、<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティが-1 に自動的に設定します。 または、設定した場合、 <xref:System.Windows.Forms.ListViewItem.ImageIndex%2A> 、プロパティ、<xref:System.Windows.Forms.ListViewItem.ImageKey%2A>空の文字列に自動的に設定されている ("")。  
+  
+> [!NOTE]
+>  大小さまざまなアイコン ビューに、複数のイメージ リストを使用している場合、<xref:System.Windows.Forms.ListView>コントロールを格納する小さなと同時にイメージの大規模なバージョンが、各イメージ リスト内の場所をインデックスします。 ビューの切り替え、他の一覧で、指定されたキーの値に関係なく、イメージを検索する 1 つのリスト内のイメージのインデックスの場所が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageList">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImageList ImageList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ImageList ImageList" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ImageList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ImageList" />項目に表示されるイメージを格納しています。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageList" />によって使用される、<see cref="T:System.Windows.Forms.ListView" />項目に表示されるイメージを格納しているコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の値に応じて、<xref:System.Windows.Forms.ListView.View%2A>のプロパティ、 <xref:System.Windows.Forms.ListView> 、アイテムに関連付けられたコントロール、<xref:System.Windows.Forms.ImageList>いずれかで指定した項目で使用される、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティまたは<xref:System.Windows.Forms.ListView.SmallImageList%2A>のプロパティ、<xref:System.Windows.Forms.ListView>コントロール。 場合、<xref:System.Windows.Forms.ListView.View%2A>プロパティに設定されている<xref:System.Windows.Forms.View.LargeIcon>では、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.LargeImageList%2A>プロパティが使用されます。 それ以外の場合、、<xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティを使用します。 このプロパティを使用するにはどちらかを決定<xref:System.Windows.Forms.ImageList>コントロールでは、項目のイメージを提供します。 インデックス位置を決定する、<xref:System.Windows.Forms.ImageList>を使用して、項目に表示するイメージを含む、<xref:System.Windows.Forms.ListViewItem.ImageIndex%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndentCount">
+      <MemberSignature Language="C#" Value="public int IndentCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 IndentCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.IndentCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をインデントする小さいイメージの幅の数、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value>インデントに使用する小さいイメージの幅の数、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.IndentCount%2A>プロパティを使用するされる場合にのみ、<xref:System.Windows.Forms.ListView.View%2A>プロパティを含むの<xref:System.Windows.Forms.ListView>に設定されている<xref:System.Windows.Forms.View.Details>、および<xref:System.Windows.Forms.ListView.SmallImageList%2A>のプロパティ、<xref:System.Windows.Forms.ListView>設定されています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Windows.Forms.ListViewItem.IndentCount%2A>プロパティです。 この例を実行するには、Windows フォームと呼び出しに次のコードを貼り付け、`InitializeIndentedListViewItems`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewItemWhidbeyMembers#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ListViewItemWhidbeyMembers#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定するときに<see cref="P:System.Windows.Forms.ListViewItem.IndentCount" />、指定した数値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の 0 から始まるインデックスを取得、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+        <value>内の項目の 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ListView.ListViewItemCollection" />の<see cref="T:System.Windows.Forms.ListView" />コントロール、またはアイテムに関連付けられていない場合は-1、<see cref="T:System.Windows.Forms.ListView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには、項目が関連付けであるかどうかを<xref:System.Windows.Forms.ListView>内の位置を決定して、<xref:System.Windows.Forms.ListView.ListViewItemCollection>の<xref:System.Windows.Forms.ListView>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ListView">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListView ListView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListView ListView" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ListView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ListView" />アイテムが含まれるコントロール。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListView" />を格納している、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用してアクセスすることができます、<xref:System.Windows.Forms.ListView>を所有しているコントロール、<xref:System.Windows.Forms.ListViewItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられた名前<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ListViewItem" /> の名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Forms.ListViewItem.Name%2A>プロパティは、キーの使用も、<xref:System.Windows.Forms.ListViewItem>項目がコレクションにアクセスされるときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の左上隅の位置、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value><see cref="T:System.Drawing.Point" />の左上隅にある、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.Position%2A>後にプロパティを設定する必要があります、<xref:System.Windows.Forms.ListViewItem>を含むと<xref:System.Windows.Forms.ListView>が構築されます。 変更、<xref:System.Windows.Forms.ListViewItem.Position%2A>プロパティときに含まれている<xref:System.Windows.Forms.ListView>に<xref:System.Windows.Forms.View.Details>または<xref:System.Windows.Forms.View.List>ビューには、アイテムの位置に影響はありません。 また、<xref:System.Windows.Forms.ListViewItem.Position%2A>プロパティは自動的に変更時に、<xref:System.Windows.Forms.ListView.View%2A>プロパティを含むの<xref:System.Windows.Forms.ListView>がから変更された<xref:System.Windows.Forms.View.SmallIcon>、 <xref:System.Windows.Forms.View.LargeIcon>、または<xref:System.Windows.Forms.View.Tile>ビューを<xref:System.Windows.Forms.View.List>または<xref:System.Windows.Forms.View.Details>です。 ときに、<xref:System.Windows.Forms.ListView>に<xref:System.Windows.Forms.View.SmallIcon>、 <xref:System.Windows.Forms.View.LargeIcon>、または<xref:System.Windows.Forms.View.Tile>ビュー、設定、<xref:System.Windows.Forms.ListViewItem.Position%2A>項目のプロパティに格納される他の項目になります、<xref:System.Windows.Forms.ListView>再配置します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ListViewItem.Position%2A>のプロパティ、<xref:System.Windows.Forms.ListViewItem>です。 この例を実行するには、Windows フォームと呼び出しに次のコードを貼り付け、`InitializePositionedListViewItems`フォームから<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。 位置の項目を表示 ボタンをクリックします。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewItemWhidbeyMembers#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/CS/form1.cs#3)]
+ [!code-vb[System.Windows.Forms.ListViewItemWhidbeyMembers#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Forms.ListViewItem.Position" />場合、設定が含まれている<see cref="T:System.Windows.Forms.ListView" />が仮想モードにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>それに関連付けられたから項目を削除<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの関数に似ています、<xref:System.Windows.Forms.ListView.ListViewItemCollection.Remove%2A>のメソッド、<xref:System.Windows.Forms.ListView.ListViewItemCollection>で、<xref:System.Windows.Forms.ListView>アイテムが含まれるコントロール。 使用することができます、<xref:System.Windows.Forms.ListViewItem.Remove%2A>から項目を削除する方法、<xref:System.Windows.Forms.ListView>コントロール。 この機能は別に項目を移動する場合に便利です、<xref:System.Windows.Forms.ListView>制御や、アプリケーション内で項目を削除するユーザーからの要求に基づいて、項目を削除する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public bool Selected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selected" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Selected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が選択されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          項目が選択されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListView.MultiSelect%2A>のプロパティ、<xref:System.Windows.Forms.ListView>で項目が含まれているコントロールに設定されている`true`、このプロパティの値の設定を追加または項目を選択した項目のセットから削除します。 場合、<xref:System.Windows.Forms.ListView.MultiSelect%2A>プロパティに設定されている`false`でその他の項目の選択を取り消します項目を自動的に選択するには、このプロパティの値を設定、<xref:System.Windows.Forms.ListView>コントロール。 項目が選択されているかどうかを決定する、または実行時に項目を選択するには、このプロパティを使用することができます。 選択されているすべての項目にアクセスすることができます、<xref:System.Windows.Forms.ListView>コントロールを使用して、<xref:System.Windows.Forms.ListView.SelectedItems%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  項目が選択されている場合にのみ表示されます、<xref:System.Windows.Forms.ListView>コントロールにフォーカスがあります。 項目を選択する、ユーザーへの応答アクション ボタンのクリックしてなど、必ずを呼び出す、<xref:System.Windows.Forms.Control.Focus%2A>メソッドに加えて、このプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ListView.Clear%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListViewItem.Selected%2A>メンバー。 実行するには、例を含むフォームで次のコードを配置、<xref:System.Windows.Forms.ListView>という名前`ListView1`と<xref:System.Windows.Forms.Button>、という名前のフォームの下部にある`Button1`です。 呼び出す、`InitializeListView`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListView4#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListView4/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListView4#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListView4/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListView4#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView4/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="protected virtual void Serialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Serialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />項目をシリアル化するために必要なデータを保持します。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ソースとシリアル化ストリームの転送先を表すです。</param>
+        <summary>項目をシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>およびこのクラスの派生バージョンの逆シリアル化することに、派生クラスには、シリアル化および逆シリアル化する状態情報が含まれている場合、このメソッドをオーバーライドする必要があります。 このメソッドの基本クラス実装は、アイテムがシリアル化され、正しく逆シリアル化することを確認するために呼び出す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="StateImageIndex">
+      <MemberSignature Language="C#" Value="public int StateImageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StateImageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.StateImageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ImageIndexEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.NoneExcludedImageIndexConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Forms.RelatedImageList("ListView.StateImageList")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の状態のイメージ (イメージを項目の状態を示す、選択されているかオフかのチェック ボックスなど) のインデックス項目に対して表示される、します。</summary>
+        <value>状態のイメージの 0 から始まるインデックス、<see cref="T:System.Windows.Forms.ImageList" />項目に対して表示される、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにインデックスを指定することができます、<xref:System.Windows.Forms.ImageList>に割り当てられている、 <xref:System.Windows.Forms.ListView.StateImageList%2A> 、関連するプロパティ<xref:System.Windows.Forms.ListView>コントロール、アイテムの左に表示される状態イメージを格納します。 通常、状態のイメージが選択されているかオフかのチェック ボックスまたはを表すために使用するイメージが選択されているか、または項目の状態をクリアします。 値が指定されていない場合、 <xref:System.Windows.Forms.ListView.StateImageList%2A> 、プロパティ、<xref:System.Windows.Forms.ListView>ボックス コントロールが表示されます、既定値が選択されているか、またはチェックをクリア、<xref:System.Windows.Forms.ListView.CheckBoxes%2A>コントロールのプロパティに設定されて`true`です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ImageList>で指定されている、<xref:System.Windows.Forms.ListView.StateImageList%2A>プロパティは、イメージを任意の数を含めることができます、 <xref:System.Windows.Forms.ListViewItem.StateImageIndex%2A> 14 以下、任意の値にプロパティを設定できる、イメージのインデックス位置 0 および 1 のみが状態の画像として表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">このプロパティに指定された値は、-1 未満です。  
+  
+ または  
+  
+ このプロパティに指定された値は 14 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubItems">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ListViewItem.ListViewSubItemCollection SubItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ListViewItem/ListViewSubItemCollection SubItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.SubItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ListViewSubItemCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ListViewItem+ListViewSubItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のすべてのサブ項目を含むコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.ListViewItem.ListViewSubItemCollection" />サブ項目を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>、サブ項目を追加、削除して、サブ項目してサブ項目の数を取得します。 コレクション内のサブ項目を使用して実行できるタスクの詳細については、次を参照してください。、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>クラスのリファレンス トピックです。  
+  
+> [!NOTE]
+>  最初のサブ項目、<xref:System.Windows.Forms.ListViewItem.ListViewSubItemCollection>サブ項目を所有している項目では常にします。 サブ項目に対して操作を実行する、コレクション内で、ときに、最初のサブ項目を変更するのには 0 ではなくインデックス位置 1 を参照することを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.ListView>を 3 つのコントロール<xref:System.Windows.Forms.ListViewItem>指定されたオブジェクトと 3 つ<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクトの各項目に指定します。 例でも作成<xref:System.Windows.Forms.ColumnHeader>詳細ビューで、サブ項目を表示するオブジェクト。 2 つ<xref:System.Windows.Forms.ImageList>オブジェクトは用のイメージを提供するコード例では作成も、<xref:System.Windows.Forms.ListViewItem>オブジェクト。 これら<xref:System.Windows.Forms.ImageList>オブジェクトに追加されます、<xref:System.Windows.Forms.ListView.LargeImageList%2A>と<xref:System.Windows.Forms.ListView.SmallImageList%2A>プロパティです。 例では、作成するのには、次のプロパティを使用して、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+-   <xref:System.Windows.Forms.ListView.View%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.LabelEdit%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.AllowColumnReorder%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.CheckBoxes%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.FullRowSelect%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.GridLines%2A>  
+  
+-   <xref:System.Windows.Forms.ListView.Sorting%2A>  
+  
+ コードを追加する必要があります、<xref:System.Windows.Forms.Form>コンス トラクターまたは、フォーム上の別の方法の例で作成したメソッドを呼び出します。 例では、イメージがという名前の必要があります`MySmallImage1`、 `MySmallImage2`、 `MyLargeImage1`、および`MyLargeImage2`は C ドライブのルート ディレクトリにあります  
+  
+ [!code-cpp[ListViewExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListViewExample/CPP/form1.cpp#1)]
+ [!code-csharp[ListViewExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListViewExample/CS/form1.cs#1)]
+ [!code-vb[ListViewExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListViewExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />項目をシリアル化するために必要なデータを保持します。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />ソースとシリアル化ストリームの転送先を表すです。</param>
+        <summary>項目をシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアイテムに関連付けられているデータを格納しているオブジェクトを設定します。</summary>
+        <value>アイテムに関連付けられている情報を含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.Tag%2A>の項目に 任意のオブジェクトを格納するプロパティを使用できます。 任意の項目を格納できますが、<xref:System.Windows.Forms.ListViewItem.Tag%2A>プロパティは通常一意の識別子など、データベース内のアイテムのデータのインデックス位置の項目に関する情報を文字列に使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ListViewItem>設定と、<xref:System.Windows.Forms.ListViewItem.Tag%2A>と<xref:System.Windows.Forms.ListViewItem.Text%2A>プロパティです。 この例を実行するを含むフォームに次のコードを配置、<xref:System.Windows.Forms.ListView>という`ListView1`を呼び出すと`InitializeListViewItems`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または項目のテキストを設定します。</summary>
+        <value>アイテムの表示テキストです。 259 文字を超えない必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListViewItem.Text%2A>プロパティでは、アイテムの表示テキストを変更することができます。 テキスト、 <xref:System.Windows.Forms.ListViewItem> 259 文字を超えてはいけませんまたは予期しない動作が発生する可能性があります。  
+  
+ 使用することができます、 <xref:System.Windows.Forms.ListViewItem.BackColor%2A>、 <xref:System.Windows.Forms.ListViewItem.ForeColor%2A>、および<xref:System.Windows.Forms.ListViewItem.Font%2A>プロパティをテキストを表示する方法を指定します。 <xref:System.Windows.Forms.ListView>クラスを提供、<xref:System.Windows.Forms.ListView.LabelWrap%2A>テキストが次の行に折り返されます。 または、1 行に表示されるかどうかを決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.ListViewItem>設定と、<xref:System.Windows.Forms.ListViewItem.Tag%2A>と<xref:System.Windows.Forms.ListViewItem.Text%2A>プロパティです。 この例を実行するを含むフォームで、次のコードを配置、<xref:System.Windows.Forms.ListView>という`ListView1`を呼び出すと`InitializeListViewItems`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipText">
+      <MemberSignature Language="C#" Value="public string ToolTipText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTipText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.ToolTipText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にマウス ポインターを合わせると表示されるテキスト、<see cref="T:System.Windows.Forms.ListViewItem" />です。</summary>
+        <value>マウス ポインターを合わせると表示されるテキスト、<see cref="T:System.Windows.Forms.ListViewItem" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方の<xref:System.Windows.Forms.ListViewItem>を含んでいると<xref:System.Windows.Forms.ListView>ツールヒントを設定のツールヒントにのみ、<xref:System.Windows.Forms.ListViewItem>が表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ListView.ShowItemToolTips%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.ListViewItem.ToolTipText%2A>プロパティです。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`InitializeItemsWithToolTips`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.ListViewItemWhidbeyMembers#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ListViewItemWhidbeyMembers#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemWhidbeyMembers/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListViewItem.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseItemStyleForSubItems">
+      <MemberSignature Language="C#" Value="public bool UseItemStyleForSubItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseItemStyleForSubItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、 <see cref="P:System.Windows.Forms.ListViewItem.Font" />、 <see cref="P:System.Windows.Forms.ListViewItem.ForeColor" />、および<see cref="P:System.Windows.Forms.ListViewItem.BackColor" />にすべてのサブ項目のプロパティが使用されます。</summary>
+        <value>
+          <see langword="true" />すべてのサブ項目には、フォント、前景色、および項目の背景色の設定が使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 統一された背景色、前景色をしたくないとすべてに使用されるフォント項目で subitems、<xref:System.Windows.Forms.ListView>コントロールこのプロパティを設定することができます`false`です。 このプロパティを設定すると`true`、サブ項目に加えられた変更<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.BackColor%2A?displayProperty=nameWithType>プロパティは無視され、項目の値が代わりに使用されます。 このプロパティを使用するには、さまざまなテキストの色、背景色、またはにサブ項目が表示されるときに、項目を強調表示にサブ項目を使用するフォントを指定する必要がある場合、<xref:System.Windows.Forms.ListView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Windows.Forms.ListViewItem.UseItemStyleForSubItems%2A>プロパティを`false`のカスタム スタイルを定義する<xref:System.Windows.Forms.ListViewItem.ListViewSubItem>オブジェクト。 設定する方法も示します、<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.ForeColor%2A>と<xref:System.Windows.Forms.ListViewItem.ListViewSubItem.Font%2A>プロパティです。 例を実行するには、フォームと呼び出しに、次のコードを貼り付けます、`InitializeListView`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListViewItemStyle#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListViewItemStyle/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

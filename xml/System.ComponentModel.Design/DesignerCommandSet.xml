@@ -1,0 +1,143 @@
+<Type Name="DesignerCommandSet" FullName="System.ComponentModel.Design.DesignerCommandSet">
+  <TypeSignature Language="C#" Value="public class DesignerCommandSet" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerCommandSet extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerCommandSet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生していない、デザイン時ツールの基本クラスを表します<see cref="T:System.ComponentModel.Design.ComponentDesigner" />、スマート タグまたはデザイナー動詞の機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ComponentDesigner>クラスを提供、<xref:System.ComponentModel.Design.ComponentDesigner.ActionLists%2A>と<xref:System.ComponentModel.Design.ComponentDesigner.Verbs%2A>プロパティ クエリを実行する、<xref:System.ComponentModel.Design.DesignerActionList>と<xref:System.ComponentModel.Design.DesignerVerb>コレクション、それぞれします。 ただし、デザイン時ツール作成者場合しないことにした、このクラスから派生して、<xref:System.ComponentModel.Design.DesignerCommandSet>クラスはこの機能を提供する別の基本クラスを表します。  
+  
+ <xref:System.ComponentModel.Design.DesignerCommandSet>クラスには、次の表に示す 3 つだけのメンバーが含まれています。  
+  
+|パブリック メンバー|説明|  
+|-------------------|-----------------|  
+|<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>|スマート タグまたはデザインされたコンポーネントに関連付けられたデザイナー動詞のコレクションを返します。 基本の実装を返します`null`です。|  
+|<xref:System.ComponentModel.Design.DesignerCommandSet.ActionLists%2A>|デザインされたコンポーネントに関連付けられているすべてのスマート タグのコレクションを取得します。 基底の実装を呼び出すだけ<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>です。|  
+|<xref:System.ComponentModel.Design.DesignerCommandSet.Verbs%2A>|デザインされたコンポーネントに関連付けられているすべてのデザイナー動詞のコレクションを取得します。 基底の実装を呼び出すだけ<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>です。|  
+  
+ A<xref:System.ComponentModel.Design.DesignerCommandSet>サイト固有のサービスとして追加する必要があります。 外部でスマート タグの表示とデザイナー動詞の機能を検出するこの型のサービスをクエリする必要があります最初。 このサービスが見つからない場合、<xref:System.ComponentModel.Design.IDesigner.Verbs%2A?displayProperty=nameWithType>プロパティを使用してください。 この手順は、パスの下位互換性です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerCommandSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerCommandSet.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ComponentModel.Design.DesignerCommandSet" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この基本クラスに状態が含まれていないため、既定のコンス トラクターは何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerCommandSet.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザインされたコンポーネントに関連付けられているすべてのスマート タグのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />関連付けられているデザインされたコンポーネントのスマート タグを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底の実装を呼び出すだけ<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>"ActionLists"文字列パラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCommands">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection GetCommands (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetCommands(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerCommandSet.GetCommands(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">戻るには、コレクションの型かを示す、<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />または<see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />です。</param>
+        <summary>コマンド オブジェクトのコレクションを返します。</summary>
+        <returns>指定された型を含むコレクション: いずれか<see cref="T:System.ComponentModel.Design.DesignerActionList" />または<see cref="T:System.ComponentModel.Design.DesignerVerb" />— コマンド オブジェクトの。 基本の実装は常に返します<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本の実装は常に返します`null`、プログラマによって指定されたオーバーライドのバージョンがによって記述された型のコマンド オブジェクトのコレクションを返す必要があります`name`です。 基本実装、<xref:System.ComponentModel.Design.DesignerCommandSet.Verbs%2A>と<xref:System.ComponentModel.Design.DesignerCommandSet.ActionLists%2A>プロパティは、次の値とこのパラメーターの意味を指定します。  
+  
+|String|説明|  
+|------------|-------------|  
+|"ActionLists"|コンポーネントに関連付けられているすべてのスマート タグのコレクションを返します。|  
+|「動詞」|コンポーネントに関連付けられているすべてのデザイナー動詞のコレクションを返します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerCommandSet.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザインされたコンポーネントに関連付けられているすべてのデザイナー動詞のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerVerbCollection" />関連付けられているデザインされたコンポーネントのデザイナー動詞を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基底の実装を呼び出すだけ<xref:System.ComponentModel.Design.DesignerCommandSet.GetCommands%2A>「動詞」文字列パラメーターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

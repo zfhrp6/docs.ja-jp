@@ -1,0 +1,109 @@
+<Type Name="ProgressEventArgs" FullName="System.Management.ProgressEventArgs">
+  <TypeSignature Language="C#" Value="public class ProgressEventArgs : System.Management.ManagementEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProgressEventArgs extends System.Management.ManagementEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ProgressEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント データを保持、<see cref="E:System.Management.ManagementOperationObserver.Progress" />イベント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public int Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Current" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ProgressEventArgs.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の操作によって行われた作業量を取得します。 これは、常に以下を<see cref="P:System.Management.ProgressEventArgs.UpperBound" />です。</summary>
+        <value>返します、<see cref="T:System.Int32" />現在の操作で既に完了した作業量を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 現在の操作で既に完了した作業量を表す整数。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ProgressEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作の進行状況に関する省略可能な追加情報を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />操作の進行状況に関する情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 操作の進行状況に関する追加情報を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpperBound">
+      <MemberSignature Language="C#" Value="public int UpperBound { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 UpperBound" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ProgressEventArgs.UpperBound" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作によって実行するために必要な作業量の合計を取得します。</summary>
+        <value>返します、<see cref="T:System.Int32" />操作によって実行される作業の合計金額を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 操作の作業量の合計を表す整数。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,113 @@
+<Type Name="IInheritanceService" FullName="System.ComponentModel.Design.IInheritanceService">
+  <TypeSignature Language="C#" Value="public interface IInheritanceService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInheritanceService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IInheritanceService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネントのコンポーネントを識別するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、基底クラスから継承されているコンポーネントの各コンポーネントの識別に使用できるメソッドを提供します。  
+  
+ どのようなコンポーネントは、継承を特定するのには、呼び出し、<xref:System.ComponentModel.Design.IInheritanceService.AddInheritedComponents%2A>メソッドとパスを検索する対象のコンポーネントと<xref:System.ComponentModel.IContainer>識別されたコンポーネントへの参照を格納します。 呼び出す、<xref:System.ComponentModel.Design.IInheritanceService.GetInheritanceAttribute%2A>を取得する方法、<xref:System.ComponentModel.InheritanceAttribute>で識別されているコンポーネントの<xref:System.ComponentModel.Design.IInheritanceService.AddInheritedComponents%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddInheritedComponents">
+      <MemberSignature Language="C#" Value="public void AddInheritedComponents (System.ComponentModel.IComponent component, System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddInheritedComponents(class System.ComponentModel.IComponent component, class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IInheritanceService.AddInheritedComponents(System.ComponentModel.IComponent,System.ComponentModel.IContainer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />を検索します。 検索は、このコンポーネントに開始されます。</param>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />にコンポーネントを追加します。</param>
+        <summary>実装するフィールドの指定されたコンポーネントを検索、<see cref="T:System.ComponentModel.IComponent" />インターフェイスし、各を使用して取得できる各の継承のレベルを格納する、指定されたコンテナーに追加、<see cref="M:System.ComponentModel.Design.IInheritanceService.GetInheritanceAttribute(System.ComponentModel.IComponent)" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装するすべてのフィールドの指定されたコンポーネントの検索、 <xref:System.ComponentModel.IComponent>、それぞれ指定されたコンテナーに追加し、格納、<xref:System.ComponentModel.InheritanceAttribute>ごとです。 <xref:System.ComponentModel.InheritanceAttribute>コンポーネント フィールドが基底クラスから継承されを使用して取得できるかどうかを示すため、<xref:System.ComponentModel.Design.IInheritanceService.GetInheritanceAttribute%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInheritanceAttribute">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.InheritanceAttribute GetInheritanceAttribute (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.InheritanceAttribute GetInheritanceAttribute(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.IInheritanceService.GetInheritanceAttribute(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.InheritanceAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />継承属性を取得します。</param>
+        <summary>指定されたコンポーネントの継承属性を取得します。</summary>
+        <returns>インスタンス<see cref="T:System.ComponentModel.InheritanceAttribute" />指定されたコンポーネントの継承のレベルを説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントがプロファイリングされた場合、<xref:System.ComponentModel.Design.IInheritanceService.AddInheritedComponents%2A>メソッドでは、このメソッドは、値を返します<xref:System.ComponentModel.InheritanceAttribute.NotInherited?displayProperty=nameWithType>です。 それ以外の場合、このコンポーネントの継承の属性を返します。  
+  
+ 呼び出す必要があります<xref:System.ComponentModel.Design.IInheritanceService.AddInheritedComponents%2A>で指定したコンポーネントまたは取得しようとする前に指定されたコンポーネントの親、<xref:System.ComponentModel.InheritanceAttribute>指定されたコンポーネントの継承のレベルを反映します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,127 @@
+<Type Name="TypedTableBase&lt;T&gt;" FullName="System.Data.TypedTableBase&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public abstract class TypedTableBase&lt;T&gt; : System.Data.DataTable, System.Collections.Generic.IEnumerable&lt;T&gt; where T : DataRow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit TypedTableBase`1&lt;(class System.Data.DataRow) T&gt; extends System.Data.DataTable implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.TypedTableBase`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <BaseTypeName>System.Data.DataRow</BaseTypeName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Data.DataTable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">通常、テーブルによって表されるソース シーケンス内のオブジェクトの種類<see cref="T:System.Data.DataRow" />です。</typeparam>
+    <summary>型指定されたこの型が基底クラスとして使用される-<see cref="T:System.Data.DataTable" /> Visual Studio および .NET Framework の XSD.exe ツールによってオブジェクトの生成コードから直接使用するものではありません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypedTableBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedTableBase`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Data.TypedTableBase'1" /> を初期化します。 このメソッドに型指定された - サポート<see cref="T:System.Data.DataTable" />によるオブジェクトの生成[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]および XSD.exe[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ツールです。 この型は、コードから直接使用するものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TypedTableBase (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedTableBase`1.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">A<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトを構築するためにデータを格納します。</param>
+        <param name="context">逆シリアル化されるオブジェクトのストリーミング コンテキスト。</param>
+        <summary>新しい <see cref="T:System.Data.TypedTableBase'1" /> を初期化します。 このメソッドに型指定された - サポート<see cref="T:System.Data.DataTable" />によるオブジェクトの生成[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]および XSD.exe[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ツールです。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cast&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.EnumerableRowCollection&lt;TResult&gt; Cast&lt;TResult&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EnumerableRowCollection`1&lt;!!TResult&gt; Cast&lt;TResult&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedTableBase`1.Cast``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EnumerableRowCollection&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TResult">To be added.</typeparam>
+        <summary><see cref="T:System.Data.TypedTableBase`1" /> の要素を指定した型に変換します。 このメソッドは、[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] と XSD.exe [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] ツールによって、型指定された <see cref="T:System.Data.DataTable" /> オブジェクトの生成をサポートします。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <returns>指定した型に変換されたソース シーケンスの各要素が格納されている <see cref="T:System.Data.EnumerableRowCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;T&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;!T&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedTableBase`1.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型指定された列挙子を返します<see cref="T:System.Data.DataRow" />です。 このメソッドに型指定された - サポート<see cref="T:System.Data.DataTable" />によるオブジェクトの生成[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]および XSD.exe[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ツールです。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> インターフェイスを実装するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.TypedTableBase`1.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.DataSetExtensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型指定された列挙子を返します<see cref="T:System.Data.DataRow" />です。 このメソッドに型指定された - サポート<see cref="T:System.Data.DataTable" />によるオブジェクトの生成[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]および XSD.exe[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ツールです。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerator`1" /> インターフェイスを実装するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

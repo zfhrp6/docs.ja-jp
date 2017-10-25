@@ -1,0 +1,1244 @@
+<Type Name="TextRunTypographyProperties" FullName="System.Windows.Media.TextFormatting.TextRunTypographyProperties">
+  <TypeSignature Language="C#" Value="public abstract class TextRunTypographyProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextRunTypographyProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.TextRunTypographyProperties" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字体裁プロパティをサポートするための抽象クラスを提供<see cref="T:System.Windows.Media.TextFormatting.TextRun" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト レイアウト クライアントを使用して、 <xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties> OpenType のレイアウト エンジンで処理される機能のセットを生成するクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextRunTypographyProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextRunTypographyProperties.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextRunTypographyProperties" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnnotationAlternates">
+      <MemberSignature Language="C#" Value="public abstract int AnnotationAlternates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AnnotationAlternates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.AnnotationAlternates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈の代替形式のインデックスを取得します。</summary>
+        <value>注釈の代替形式のインデックス。 既定では 0 (ゼロです)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 注釈のフォームには、または塗りつぶされた円、四角形、かっこ、ひし形、または角の丸いボックス内に配置されたグリフが含まれます。  
+  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.AnnotationAlternates%2A>は 0 より大きく、選択したフォントでは、注釈のバリエーションはサポートされていません、文字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capitals">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontCapitals Capitals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontCapitals Capitals" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.Capitals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontCapitals</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したフォントの大文字の形式を示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontCapitals" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontCapitals.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字は、大文字スタイルのグリフでテキストをレンダリングするタイポグラフィ形式のセットです。 通常、テキストをすべて大文字で表示すると、文字間隔が狭すぎるように見え、文字の印象と縦横比が重すぎるように感じられます。 OpenType は、英大文字、小型英大文字を含め、超小型英大文字、タイトル、および大文字スペーシングのスタイル書式の数をサポートします。 これらのスタイル形式を使用して、英大文字の外観を変えることができます。  
+  
+ 次のテキストは、Pescadero フォントの標準の大文字と、その後に "SmallCaps" および "AllSmallCaps" のスタイルをあてた文字を示したものです。 この場合、同じフォント サイズは 3 つすべての単語の使用します。  
+  
+ ![OpenType の大文字を使用してテキストを](~/add/media/opentypefont11.gif "OpenType の大文字を使用するテキスト")  
+大文字の例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CapitalSpacing">
+      <MemberSignature Language="C#" Value="public abstract bool CapitalSpacing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CapitalSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.CapitalSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリフ間のスペースをすべて大文字のテキストを読みやすさを向上させるためにグローバルに調整するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />間隔を調整します。 場合、それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大文字スペーシングは、テキストをすべて大文字にする場合に間隔を広くする機能です。 大文字は通常小文字とのブレンドに設計されます。 間で魅力的な間隔を表示し、大文字と小文字可能性がありますが密接すぎますすべて大文字を使用する場合。 次のテキストは、Pescadero フォントの通常の動作と大文字の間隔を表示します。  
+  
+ ![OpenType の大文字スペーシングを使用してテキストを](~/add/media/opentypefont21.gif "OpenType の大文字スペーシングを使用するテキスト")  
+通常の動作と大文字のスペースの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CaseSensitiveForms">
+      <MemberSignature Language="C#" Value="public abstract bool CaseSensitiveForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CaseSensitiveForms" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.CaseSensitiveForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリフが大文字のグリフに合わせるために垂直方向の位置を調整するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />垂直方向の位置が調整されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualAlternates">
+      <MemberSignature Language="C#" Value="public abstract bool ContextualAlternates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContextualAlternates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.ContextualAlternates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示されているテキストのコンテキストに基づいて、カスタム グリフ フォームを使用できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />カスタム グリフのフォームを使用する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランダムなコンテキスト代替は、単一文字に複数の代替グリフを提供します。 スクリプトの種類のフォントで実装された場合、この機能は、一連のランダムに選択されたグリフの外観にわずかに異なりますを使用して手書き入力をシミュレートできます。 次のテキストは、Lindsey フォントのランダムなコンテキスト代替グリフを使用します。 注意して、文字"a"が多少異なります外観  
+  
+ ![OpenType のランダムなコンテキスト代替グリフを使用してテキストを](~/add/media/opentypefont23.gif "OpenType のランダムなコンテキスト代替グリフを使用するテキスト")  
+ランダムなコンテキスト代替グリフの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualLigatures">
+      <MemberSignature Language="C#" Value="public abstract bool ContextualLigatures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ContextualLigatures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.ContextualLigatures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト合字が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コンテキスト合字が有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト合字は、合字を構成する文字の間の結合の動作を提供することによって、読みやすさを強化するために設計されています。  
+  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.ContextualLigatures%2A>は`true`と選択したフォントがコンテキスト合字をサポートしていないため、文字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualSwashes">
+      <MemberSignature Language="C#" Value="public abstract int ContextualSwashes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ContextualSwashes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.ContextualSwashes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト巻き髭形式のインデックスを指定する値を取得します。</summary>
+        <value>標準の巻き髭形式のインデックス。 既定では 0 (ゼロです)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 飾り付きグリフの特定の組み合わせでは、隣りあう文字の下に延びる部分が重なり合うなど、美しくない外観になる可能性があります。 コンテキスト スワッシュを使用するより優れた外観を生成する代替スワッシュ グリフを使用できます。 次のテキストは前に、とコンテキスト スワッシュが適用された後に、同じ単語を示します。  
+  
+ ![OpenType のコンテキスト巻き髭を使用してテキストを](~/add/media/opentypefont19.gif "OpenType のコンテキスト巻き髭を使用するテキスト")  
+コンテキスト スワッシュの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscretionaryLigatures">
+      <MemberSignature Language="C#" Value="public abstract bool DiscretionaryLigatures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DiscretionaryLigatures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.DiscretionaryLigatures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>随意合字が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />随意合字が有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 随意合字では、装飾に設計されていて、読みやすくするために設計されていません。 次のテキストは、Pericles フォントの随意合字グリフを示したものです。  
+  
+ ![OpenType の随意合字を使用してテキストを](~/add/media/opentypefont05.gif "OpenType の随意合字を使用するテキスト")  
+随意合字セットの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EastAsianExpertForms">
+      <MemberSignature Language="C#" Value="public abstract bool EastAsianExpertForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EastAsianExpertForms" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.EastAsianExpertForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日本語フォントの標準的な形式を対応する優先傍点を文字形式に置き換えられているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />日本語フォントの標準的な形式は; の対応する優先傍点を文字形式に置き換えられている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EastAsianLanguage">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontEastAsianLanguage EastAsianLanguage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontEastAsianLanguage EastAsianLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.EastAsianLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontEastAsianLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の書記体系または言語に使用するグリフのバージョンを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontEastAsianLanguage" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontEastAsianLanguage.Normal" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EastAsianWidths">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontEastAsianWidths EastAsianWidths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontEastAsianWidths EastAsianWidths" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.EastAsianWidths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontEastAsianWidths</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>東アジア言語のフォントでラテン文字の使用に比例して幅を示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontEastAsianWidths" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontEastAsianWidths.Normal" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fraction">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontFraction Fraction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontFraction Fraction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.Fraction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontFraction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>分数のスタイルを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontFraction" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontFraction.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォントは、スラッシュや積み上げなど、分数のスタイルをサポートします。  
+  
+ 次のテキストは、Palatino Linotype フォントの小数スタイルを示したものです。  
+  
+ ![OpenType を使用してテキストをスラッシュし、分数を積み上げ](~/add/media/opentypefont12.gif "OpenType を使用してテキストをスラッシュし、分数を示す積み上")  
+スラッシュと積み上げ分数スタイルの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HistoricalForms">
+      <MemberSignature Language="C#" Value="public abstract bool HistoricalForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HistoricalForms" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.HistoricalForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>歴史的書体が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />歴史的書体は有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 歴史的形式は、過去に一般的であった表示形式です。 次のテキストを表示、語句「ボストン、Massachusetts」Palatino Linotype フォントのグリフの履歴フォームを使用します。  
+  
+ ![OpenType の履歴フォームを使用してテキストを](~/add/media/opentypefont10.gif "OpenType の履歴フォームを使用するテキスト")  
+歴史的書体の例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HistoricalLigatures">
+      <MemberSignature Language="C#" Value="public abstract bool HistoricalLigatures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HistoricalLigatures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.HistoricalLigatures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>歴史的合字が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />歴史的合字が有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 歴史的合字とは、フォント デザイナーは、フォントに追加される履歴の文字体裁で使用される文字体裁の形式です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kerning">
+      <MemberSignature Language="C#" Value="public abstract bool Kerning { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Kerning" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.Kerning" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カーニングが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />カーニングは有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カーニングは、word の図形を強化するために文字間隔を調整します。 文字体裁の機能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MathematicalGreek">
+      <MemberSignature Language="C#" Value="public abstract bool MathematicalGreek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MathematicalGreek" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.MathematicalGreek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ギリシャ語グリフの標準の文字体裁フォント形式を数学的な表記法でよく使用されるフォントの対応する形式で置き換えられているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />数学ギリシャ フォームが有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.MathematicalGreek%2A>は`true`と選択したフォントが数学ギリシャ語形式をサポートしていない、文字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumeralAlignment">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontNumeralAlignment NumeralAlignment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontNumeralAlignment NumeralAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.NumeralAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数字を使用する場合は、幅の調整を取得します。</summary>
+        <value><see cref="T:System.Windows.FontNumeralAlignment" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontNumeralAlignment.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォントでは、数字を使用する際の幅の調整を制御するプロポーショナルおよび表形式の図機能をサポートします。 プロポーショナルの数字では、それぞれの数字は異なる幅を持つものとして扱われます。たとえば "1" は "5" より狭い幅です。 表形式の図は、それらを縦に揃える、数値情報の読みやすさを向上できるように、等幅の数字として扱われます。  
+  
+ 次のテキストは、Miramonte フォントを使用して最初の列に 2 つのプロポーショナル数字を表示します。 「5」と「1」数字の幅の違いに注意してください。 2 番目の列は、表形式の図の機能を使用して調整幅と同じ 2 つの数値を示します。  
+  
+ ![OpenType のプロポーショナル & 表形式の数字を使用してテキストを](~/add/media/opentypefont22.gif "OpenType 比例 & 表形式の数字を使用するテキスト")  
+プロポーショナルおよびタブ付きの図の例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumeralStyle">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontNumeralStyle NumeralStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontNumeralStyle NumeralStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.NumeralStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の代替フォント フォームを表示するために使用されるグリフのセットを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontNumeralStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontNumeralStyle.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォントでは、旧スタイルの数字形式をサポートします。 この形式は、もはや標準ではなくなったスタイルで数字を表示するのに便利です。 次のテキストは、Palatino Linotype フォントの標準および古いスタイルの数字の形式で 18th 世紀日付を表示します。  
+  
+ ![OpenType の古いスタイルの数字を使用してテキストを](~/add/media/opentypefont24.gif "OpenType の古いスタイルの数字を使用するテキスト")  
+標準および古いスタイルの数字の例  
+  
+ 次のテキストには、古いスタイルの数字を続けて、Palatino Linotype フォントの標準の数字が表示されます。  
+  
+ ![OpenType 古いスタイルの数字セットを使用してテキストを](~/add/media/opentypefont13.gif "OpenType 古いスタイルの数字セットを使用するテキスト")  
+標準および古いスタイルの数字セットの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertiesChanged">
+      <MemberSignature Language="C#" Value="protected void OnPropertiesChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPropertiesChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextRunTypographyProperties.OnPropertiesChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部状態を修正、<see cref="T:System.Windows.Media.TextFormatting.TextRunTypographyProperties" />いずれかの場合は、クラスを派生<see cref="T:System.Windows.Media.TextFormatting.TextRunTypographyProperties" />プロパティの値が変化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの set アクセサーから呼び出す、<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties>プロパティ オーバーライドで、かつ setter の一部として値が変更された場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlashedZero">
+      <MemberSignature Language="C#" Value="public abstract bool SlashedZero { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SlashedZero" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.SlashedZero" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公称ゼロ フォント形式するかどうかを示す値を取得スラッシュ ゼロに置き換えられます。</summary>
+        <value>
+          <see langword="true" />スラッシュされる場合 0 形式が有効です。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォント サポート スラッシュ ゼロの数字形式を文字"O"と「0」の数字の違いを強調します。 スラッシュ付きゼロは、財務およびビジネス情報における ID によく使用されます。  
+  
+ 次のテキストには、Miramonte フォントを使用して、サンプル注文識別子が表示されます。 最初の行は、標準の数字を使用します。 使用する 2 番目の線はスラッシュ ゼロ大文字の"O"により優れたコントラストを提供します。  
+  
+ ![OpenType を使用してテキストをスラッシュ ゼロ](~/add/media/opentypefont17.gif "OpenType を使用してテキストをスラッシュ ゼロ")  
+例はスラッシュ ゼロ  
+  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.SlashedZero%2A>は`true`され、選択したフォントがいないサポート スラッシュ ゼロ、数字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardLigatures">
+      <MemberSignature Language="C#" Value="public abstract bool StandardLigatures { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StandardLigatures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StandardLigatures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準合字が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />標準合字が有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のテキストは、Pericles フォントの標準合字グリフを示したものです。  
+  
+ ![OpenType の標準合字を使用してテキストを](~/add/media/opentypefont04.gif "OpenType の標準合字を使用するテキスト")  
+標準合字のセットの例  
+  
+ 既定では、OpenType フォントで[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]標準合字を有効にします。 たとえば、Palatino Linotype フォントを使用する場合、標準合字 "fi"、"ff" および "fl" は組み合わせ文字グリフとして表示されます。 各標準合字の文字が互いに接触することに注意してください。  
+  
+ ![OpenType の標準合字を使用してテキストを](~/add/media/opentypefont06.gif "OpenType の標準合字を使用するテキスト")  
+既定で有効になっている標準合字の例  
+  
+ ただし、標準合字機能を無効にして、"ff" などの標準合字が、組み合わせ文字グリフとしてではなく、2 つの別々のグリフとして表示されるようにできます。  
+  
+ ![OpenType の標準合字を無効になっているテキストを使用して](~/add/media/opentypefont07.gif "OpenType の標準合字のテキストを使用して無効になっています")  
+無効な標準合字の例  
+  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StandardLigatures%2A>は`true`と選択したフォントは標準合字をサポートしていません、文字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardSwashes">
+      <MemberSignature Language="C#" Value="public abstract int StandardSwashes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StandardSwashes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StandardSwashes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準の巻き髭形式のインデックスを取得します。</summary>
+        <value>標準の巻き髭形式のインデックス。 既定では 0 (ゼロです)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スワッシュは装飾的なグリフで、カリグラフィを連想させることがよくある、手の込んだ装飾が使用されます。 次のテキストには、Pescadero フォントの標準と飾り付きグリフが表示されます。  
+  
+ ![OpenType の標準と飾り付きグリフを使用するテキスト](~/add/media/opentypefont08.gif "OpenType の標準と飾り付きグリフを使用するテキスト")  
+標準と飾り付きグリフの例  
+  
+ 飾り付きは、季節のご挨拶などの短いフレーズで装飾的な要素としてよく使用されます。 次のテキストは、イベントの名前の大文字を強調するのに巻き髭を使用します。  
+  
+ ![OpenType の巻き髭を使用してテキストを](~/add/media/opentypefont09.gif "OpenType の巻き髭を使用するテキスト")  
+大文字に使用される巻き髭の例  
+  
+ 場合の値<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StandardSwashes%2A>は 0 より大きく、選択したフォントが指定されたインデックス値に標準の巻き髭フォームをサポートしない、文字の既定のフォームが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticAlternates">
+      <MemberSignature Language="C#" Value="public abstract int StylisticAlternates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StylisticAlternates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticAlternates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイル代替グリフの形式のインデックスを取得します。</summary>
+        <value>スタイル代替グリフのフォームのインデックス。 既定では 0 (ゼロです)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代替文字は、標準的なグリフの代わりに使用できるグリフです。 次の例で使用される Pericles フォントなどの OpenType フォントには、異なる外観のテキストを作成に使用できる代替グリフが含まれます。 次のテキストは、Pericles フォントの標準グリフを示したものです。  
+  
+ ![OpenType の標準グリフを使用してテキストを](~/add/media/opentypefont01.gif "OpenType の標準グリフを使用するテキスト")  
+グリフの標準セットの例  
+  
+ Pericles OpenType フォントでは、標準的な一連のグリフにスタイル代替グリフを提供する追加のグリフを格納します。 次のテキストでは、スタイル代替グリフが表示されています。  
+  
+ ![OpenType のスタイル代替グリフを使用してテキストを](~/add/media/opentypefont02.gif "OpenType のスタイル代替グリフを使用するテキスト")  
+スタイル代替グリフの例  
+  
+ 次のテキストには、Pericles フォントのスタイル代替グリフのいくつかが表示されます。  
+  
+ ![OpenType のスタイル代替グリフを使用してテキストを](~/add/media/opentypefont03.gif "OpenType のスタイル代替グリフを使用するテキスト")  
+その他のスタイル代替グリフの例  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet1">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet10">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet10" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet11">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet11 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet11" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet12">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet12 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet12" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet13">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet13 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet13" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet13" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet14">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet14 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet14" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet14" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet15">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet15" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet16">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet16" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet17">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet17 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet17" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet17" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet18">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet18 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet18" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet18" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet19">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet19 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet19" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet19" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet2">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet20">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet20 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet20" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet20" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet3">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet3 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet3" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet3" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet4">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet4 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet4" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet4" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet5">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet5 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet5" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet5" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet6">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet6 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet6" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet6" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet7">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet7 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet7" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet7" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet8">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet8 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet8" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet8" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StylisticSet9">
+      <MemberSignature Language="C#" Value="public abstract bool StylisticSet9 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StylisticSet9" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.StylisticSet9" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの形式のスタイル セットが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォントの形式のスタイル セットが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のフォントには、文字セットの部分に対応する variant のスタイルのグリフが含まれます。 スタイル セットでのグリフは、視覚的に調和、特定の方法で操作または他の方法で連携を設計することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variants">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FontVariants Variants { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontVariants Variants" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextRunTypographyProperties.Variants" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontVariants</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する標準の表記形式のバリエーションを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.FontVariants" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.FontVariants.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バリアントは、上付きのフォントの形式に似ています。 フォント形式上付き文字と、序数に基づくフォーム間、または添字と下位のフォーム間でのさまざまなグリフ セットを格納することができます。 <xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties.Variants%2A>プロパティでは、OpenType フォントの上付き文字と下付き文字の値を設定することができます。  
+  
+ 次のテキストは、Palatino Linotype フォントの上付き文字を示したものです。  
+  
+ ![OpenType の上付き文字を使用してテキストを](~/add/media/opentypefont14.gif "OpenType の上付き文字を使用するテキスト")  
+上付き文字の例  
+  
+ 次のテキストは、Palatino Linotype フォントの下付き文字を表示します。  
+  
+ ![OpenType の下付き文字を使用してテキストを](~/add/media/opentypefont15.gif "OpenType の下付き文字を使用するテキスト")  
+添字の例  
+  
+ フォントのバリアントをサポートしないフォント フォームの近似アルゴリズムがない可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

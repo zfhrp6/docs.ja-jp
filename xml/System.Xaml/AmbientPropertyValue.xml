@@ -1,0 +1,96 @@
+<Type Name="AmbientPropertyValue" FullName="System.Xaml.AmbientPropertyValue">
+  <TypeSignature Language="C#" Value="public class AmbientPropertyValue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AmbientPropertyValue extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.AmbientPropertyValue" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一部として、アンビエント プロパティに関する情報をレポートする<see cref="T:System.Xaml.IAmbientProvider" />実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.AmbientPropertyValue>呼び出しによって返される情報項目を表す、<xref:System.Xaml.IAmbientProvider>サービス メソッドです。 `GetAll`メソッドは、列挙型または配列を返す<xref:System.Xaml.AmbientPropertyValue>項目;、`GetFirst`メソッドは、1 つを返します<xref:System.Xaml.AmbientPropertyValue>です。  
+  
+## <a name="about-ambient-properties"></a>アンビエント プロパティについて  
+ アンビエント プロパティは、プロパティの値を XAML ノードの構造で値コンバーターの使用法および下にある、オブジェクト グラフを利用できますにする必要がありますプロパティです。 アンビエントの概念は、保存、読み込みパスのオブジェクトの記述フェーズまたは、シリアル化中に、XAML プロセッサに関連するパス。  
+  
+ 型をアンビエントとして帰属できるはもします。 この場合、属性付きの型を使用するすべてのプロパティは、アンビエントとして報告されます。  
+  
+ 読み込みパスの場合は、アンビエント プロパティの値がありますに影響を与える下にある XAML ノードの構造内に存在する他のプロパティのオブジェクトのグラフが生成される値。 アンビエントの概念のアンビエント プロパティの値が型コンバーターおよびマークアップ拡張機能から使用する必要がありますが意味を XAML ノード ストリームとして処理されるとき`StartObject`に`EndObject`です。 同様に、型コンバーターまたはマークアップ拡張機能を使用するファイルのパスがアンビエント プロパティとその値を検索できます。 そのため、生成される XAML より優れたラウンド トリップ表現です。  
+  
+ その言語の定義が XAML ではオブジェクトのメンバーを処理する順序は指定しません。 ただし、すべてアンビエント プロパティ値必要があります最初に処理する XAML リーダーによってアクセスできるように、型コンバーターとマークアップ拡張機能の使用その他のプロパティに含まれていることができますを通じて、<xref:System.Xaml.IAmbientProvider>サービス。  
+  
+ <xref:System.Xaml.XamlMember.DependsOn%2A>XAML ノード処理順序にも影響を与えるような概念です。 ただし、<xref:System.Xaml.XamlMember.DependsOn%2A>ピア メンバーとノード リレーションシップにのみ使用できるすべての子孫の影響を与えることはできません。 また、<xref:System.Xaml.XamlMember.DependsOn%2A>直接影響オブジェクトのグラフ プロパティを設定する一方、アンビエント手法は、型コンバーターまたはマークアップ拡張機能に依存しています。 アンビエントの方法でもあります特定の型コンバーターまたはマークアップ拡張機能の定義。 各型コンバーターまたはマークアップ拡張機能をアンビエント プロパティ値を解釈され、型コンバーターまたはマークアップ拡張機能が使用されているオブジェクト グラフの場所に適用する方法を決定の責任です。  
+  
+## <a name="wpf-usage-notes"></a>WPF の使用上の注意  
+ 説明しているアンビエント プロパティ シナリオ、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]機能セットは<xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>、以外の値を必要なプロパティ名の参照を修飾することができます。 ここで、<xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>値を修飾、<xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType>下にある XAML ノードの値。 <xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType>型コンバーターの動作を使用して、<xref:System.Windows.DependencyProperty>です。 この動作は、アンビエントにアクセス<xref:System.Windows.Style.TargetType%2A?displayProperty=nameWithType>クエリを実行して値<xref:System.Xaml.IAmbientProvider.GetFirstAmbientValue%2A>型コンバーターおよびマークアップ拡張機能に利用できるサービス コンテキストからです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AmbientPropertyValue (System.Xaml.XamlMember property, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlMember property, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.AmbientPropertyValue.#ctor(System.Xaml.XamlMember,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="property" Type="System.Xaml.XamlMember" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="property">アンビエント プロパティを表す識別子。</param>
+        <param name="value">レポートする値。</param>
+        <summary><see cref="T:System.Xaml.AmbientPropertyValue" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RetrievedProperty">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlMember RetrievedProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlMember RetrievedProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.AmbientPropertyValue.RetrievedProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XAML 型システム識別子を取得 (<see cref="T:System.Xaml.XamlMember" />) アンビエント プロパティを表すです。</summary>
+        <value>アンビエント プロパティを表す識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.AmbientPropertyValue.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンビエント プロパティの値を取得します。</summary>
+        <value>アンビエント プロパティの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

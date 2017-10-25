@@ -1,0 +1,531 @@
+<Type Name="DiscoveryClientProtocol" FullName="System.Web.Services.Discovery.DiscoveryClientProtocol">
+  <TypeSignature Language="C#" Value="public class DiscoveryClientProtocol : System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryClientProtocol extends System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.DiscoveryClientProtocol" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.HttpWebClientProtocol</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスの検出をプログラムで起動するためのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス検出は、特定するかを検出する、1 つのプロセスまたは複数の関連の使用可能な XML Web サービスを説明するドキュメントです。 XML Web サービス クライアントが指定された URL とその使用方法で使用可能な XML Web サービスについて説明する XML Web サービス探索からです。 既に取得して、ドキュメントの URL を検出、http://uddi.microsoft.com などのディレクトリ サービスを通じて可能性がありますただし、必要はありません、XML Web サービスに関する詳細な情報があることを前提から XML Web services discovery のしくみを提供します。 、XML Web サービス探索によりで示した XML Web サービスに関する詳細な情報を検出できる、<xref:System.Web.Services.Discovery.DiscoveryDocument>特定の URL でします。  
+  
+ XML Web サービス クライアントでは、XML Web サービスの検出を開始するか、URL を指定することによって、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>または<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッドです。 通常、この URL を参照して、さらに追加される、1 つまたは複数の XML Web サービスを説明するドキュメントを参照する探索ドキュメントに、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティです。 その時点では、そのドキュメントのみがダウンロードされ、XML Web サービスの有効な情報を指すことを確認します。 ただし、そのドキュメントに含まれる参照は、この段階では検証されません。 追加される代わりに、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティです。 参照が有効であることを確認するには、呼び出し、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>または<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>に有効な参照先のドキュメントを追加するメソッドを<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>プロパティです。 最後のクライアントが、検索結果をディスク、呼び出しを保存する場合、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll%2A>メソッドです。  
+  
+ XML Web サービスの検出にプログラムでアクセスが必要でない場合、[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]コマンド プロンプト内で XML Web サービスを検出するため、Web サービス検出ツール (Disco.exe) は付属しています。 詳細については、次を参照してください。 [Web サービス検出ツール (Disco.exe)](http://msdn.microsoft.com/en-us/acd88078-c581-42bc-94ca-6633e2851979)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを使用する方法を示す、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol>クラスの他のクラスと共に、<xref:System.Web.Services.Discovery>名前空間をプログラムから呼び出して、XML Web サービス探索します。 このコード例では、使用方法を示します、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[DiscoveryClientProtocol#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol/CS/discocs.aspx#1)]
+ [!code-aspx-vb[DiscoveryClientProtocol#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryClientProtocol ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.DiscoveryClientProtocol" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalInformation">
+      <MemberSignature Language="C#" Value="public System.Collections.IList AdditionalInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList AdditionalInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientProtocol.AdditionalInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>見つかった探索ドキュメントでの参照に加えて情報を取得します。</summary>
+        <value><see cref="T:System.Collections.IList" />探索ドキュメントで検出された追加情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.AdditionalInformation%2A>プロパティによって表される、SOAP バインディングを含む、主に、<xref:System.Web.Services.Discovery.SoapBinding>探索ドキュメントで定義されたクラスです。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DiscoveryClientProtocol_AdditionalInformation#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_AdditionalInformation/CPP/discoveryclientprotocol_additionalinformation.cpp#1)]
+ [!code-csharp[DiscoveryClientProtocol_AdditionalInformation#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol_AdditionalInformation/CS/discoveryclientprotocol_additionalinformation.cs#1)]
+ [!code-vb[DiscoveryClientProtocol_AdditionalInformation#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol_AdditionalInformation/VB/discoveryclientprotocol_additionalinformation.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Discover">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryDocument Discover (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Discovery.DiscoveryDocument Discover(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML Web サービスの探索 URL を開始します。</param>
+        <summary>探索ドキュメントであるかどうかを決定する指定された URL を検出します。</summary>
+        <returns>A<see cref="T:System.Web.Services.Discovery.DiscoveryDocument" />指定された URL にある XML Web サービスの検出の結果を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>メソッドは、指定された URL が探索ドキュメントが必要です。 URL がサービスの説明または XML スキーマを参照している場合は、例外がスローされます。 XML スキーマまたはサービスの説明の呼び出しを検出する、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッドです。  
+  
+ 指定された URL で探索ドキュメントを追加指定された URL は、有効な探索ドキュメントをポイントしている場合、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション。 探索ドキュメント内の参照を追加するさらに、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション、ドキュメントの有効な検出 をポイントする検証されませんが、します。 参照を確認を呼び出すための有効な探索ドキュメント をポイントする、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>または<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内のドキュメントの詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>参照と共にのプロパティが XML Web サービスの検出時に各ドキュメントに存在します。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>からの結果に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>への呼び出し後に呼び出し<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>です。  
+  
+ [!code-csharp[DiscoveryClientProtocol.Discover#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.Discover/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.Discover#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.Discover/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">返される HTTP ステータス コードの以外の指定された URL にアクセスする<see cref="F:System.Net.HttpStatusCode.OK" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="url" />指して有効な URL がしない有効な探索ドキュメント をポイントします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoverAny">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryDocument DiscoverAny (string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Discovery.DiscoveryDocument DiscoverAny(string url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">XML Web サービスの探索 URL を開始します。</param>
+        <summary>探索ドキュメント、サービスの説明または XML スキーマ定義 (XSD) スキーマを決定する指定された URL を検出します。</summary>
+        <returns>A<see cref="T:System.Web.Services.Discovery.DiscoveryDocument" />指定された URL にある XML Web サービスの検出の結果を格納します。 場合、<paramref name="url" />パラメーターをサービスの説明または XSD スキーマを指す、<see cref="T:System.Web.Services.Discovery.DiscoveryDocument" />をメモリ内に作成されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッドは、指定された URL が探索ドキュメント、サービスの説明または XSD スキーマであるかどうかを検出します。 URL がのみ探索ドキュメントを指すことがわかっている場合、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>メソッドが呼び出される可能性があります。  
+  
+ 指定された URL で探索ドキュメントを追加指定された URL は、有効な探索ドキュメント、XSD スキーマ、またはサービスの説明をポイントしている場合、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション。 指定された URL は XSD スキーマまたはサービスの説明を参照すると、<xref:System.Web.Services.Discovery.DiscoveryDocument>メモリ内に作成されに追加、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション。 探索ドキュメント内の参照を追加するさらに、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション、ドキュメントの有効な検出 をポイントする検証されませんが、します。 参照が有効な探索ドキュメントを指していることを確認するには、呼び出し、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>または<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内のドキュメントの詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>参照と共にのプロパティが XML Web サービス探索中に各ドキュメントに存在します。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>からの結果に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>への呼び出し後に呼び出し<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>です。  
+  
+ [!code-csharp[DiscoveryClientProtocol.DiscoverAny#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.DiscoverAny/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.DiscoverAny#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.DiscoverAny/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">返される HTTP ステータス コードの以外の指定された URL にアクセスする<see cref="F:System.Net.HttpStatusCode.OK" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="url" />指して有効な URL がしない有効な探索ドキュメント、サービスの説明、または XSD スキーマをポイントします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Documents">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryClientDocumentCollection Documents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Discovery.DiscoveryClientDocumentCollection Documents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryClientDocumentCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>探索ドキュメントのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Services.Discovery.DiscoveryClientDocumentCollection" />見つかった探索ドキュメントのコレクションを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>への呼び出し中にコレクションが作成される、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッドです。 呼び出し中に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッド場合、指定された URL は有効な探索ドキュメントでは、そのドキュメントに追加、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>コレクション。 呼び出し中に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッド、有効な探索ドキュメント参照、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクションに追加されて、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内のドキュメントの詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>XML Web サービス探索中に検出されたプロパティ。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>からの結果に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>への呼び出し後に呼び出し<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[DiscoveryClientProtocol.Documents#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.Documents/CS/discocs.aspx#1)]
+ [!code-aspx-vb[DiscoveryClientProtocol.Documents#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.Documents/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Download">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Download (ref string url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream Download(string&amp; url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.Download(System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="url">ダウンロードする探索ドキュメントの URL です。</param>
+        <summary>指定された URL で探索ドキュメントをダウンロード、<see cref="T:System.IO.Stream" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />指定された URL にあるドキュメントを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryClientProtocol_Download#2](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_Download/CPP/discoveryclientprotocol_download.cpp#2)]
+ [!code-csharp[DiscoveryClientProtocol_Download#2](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol_Download/CS/discoveryclientprotocol_download.cs#2)]
+ [!code-vb[DiscoveryClientProtocol_Download#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol_Download/VB/discoveryclientprotocol_download.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">返される HTTP ステータス コードを以外の指定された URL からダウンロード<see cref="F:System.Net.HttpStatusCode.OK" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Download">
+      <MemberSignature Language="C#" Value="public System.IO.Stream Download (ref string url, ref string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream Download(string&amp; url, string&amp; contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.Download(System.String@,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String&amp;" RefType="ref" />
+        <Parameter Name="contentType" Type="System.String&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="url">ダウンロードする探索ドキュメントの URL です。</param>
+        <param name="contentType">ダウンロードした探索ドキュメントの MIME エンコードします。</param>
+        <summary>指定された URL で探索ドキュメントをダウンロード、<see cref="T:System.IO.Stream" />オブジェクト、設定、<paramref name="contentType" />探索ドキュメントの MIME エンコードへのパラメーターです。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />指定された URL にあるドキュメントを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[DiscoveryClientProtocol_Download2#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_Download2/CPP/discoveryclientprotocol_download.cpp#1)]
+ [!code-csharp[DiscoveryClientProtocol_Download2#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol_Download2/CS/discoveryclientprotocol_download.cs#1)]
+ [!code-vb[DiscoveryClientProtocol_Download2#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol_Download2/VB/discoveryclientprotocol_download.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">返される HTTP ステータス コードを以外の指定された URL からダウンロード<see cref="F:System.Net.HttpStatusCode.OK" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryExceptionDictionary Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Discovery.DiscoveryExceptionDictionary Errors" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryExceptionDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスからメソッドの呼び出し中に発生した例外のコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.Services.Discovery.DiscoveryExceptionDictionary" />例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors%2A>への呼び出し中に発生した例外のコレクションが作成される、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>、および<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッドです。 <xref:System.Web.Services.Discovery.DiscoveryExceptionDictionary>これらのメソッドの呼び出しではオフになっています。  
+  
+   
+  
+## Examples  
+ [!code-cpp[DiscoveryClientProtocol_Errors#1](~/samples/snippets/cpp/VS_Snippets_Remoting/DiscoveryClientProtocol_Errors/CPP/discoveryclientprotocol_errors.cpp#1)]
+ [!code-csharp[DiscoveryClientProtocol_Errors#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol_Errors/CS/discoveryclientprotocol_errors.cs#1)]
+ [!code-vb[DiscoveryClientProtocol_Errors#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol_Errors/VB/discoveryclientprotocol_errors.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadExternals">
+      <MemberSignature Language="C#" Value="public void LoadExternals ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LoadExternals() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.LoadExternals" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method will be removed from a future version. The method call is no longer required for resource discovery", false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指示、<see cref="T:System.Web.Services.Discovery.DiscoveryClientProtocol" />任意の外部参照を読み込むオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAll">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryClientResultCollection ReadAll (string topLevelFilename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Discovery.DiscoveryClientResultCollection ReadAll(string topLevelFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryClientResultCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="topLevelFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="topLevelFilename">名前のファイルに読み取るには、マップを含む探索ドキュメントを保存します。</param>
+        <summary>保存されている探索ドキュメントのマップを含むファイルを読み取る、<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents" />と<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.References" />で探索ドキュメント、XML スキーマ定義 (XSD) スキーマ、およびファイルで参照されているサービスの説明のプロパティです。</summary>
+        <returns>A<see cref="T:System.Web.Services.Discovery.DiscoveryClientResultCollection" />のマップを使用したファイルに結果を含む探索ドキュメントを保存します。 ファイルの形式が、 <see cref="T:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoveryClientResultsFile" /> XML にシリアル化するクラス。 ただし、1 つが通常作成のみを使用して、ファイル、<see cref="M:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll(System.String,System.String)" />メソッドまたは Disco.exe です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって保存された探索ドキュメントのマップを含むファイルを作成できます、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll%2A>メソッドまたは Disco.exe です。  
+  
+ `topLevelFilename`パラメーターは現在のディレクトリにファイルが存在しない場合、完全修飾パスを含める必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>ドキュメントと、既存の検出マップを使用してドキュメントで発見された参照の詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll%2A>メソッドです。  
+  
+ [!code-csharp[DiscoveryClientProtocol.ReadAll#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.ReadAll/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.ReadAll#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.ReadAll/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="References">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryClientReferenceCollection References { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Discovery.DiscoveryClientReferenceCollection References" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.DiscoveryClientProtocol.References" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryClientReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照のコレクションに解決された探索ドキュメントで見つかった。</summary>
+        <value>A<see cref="T:System.Web.Services.Discovery.DiscoveryClientReferenceCollection" />の参照を検出します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>への呼び出し中にコレクションが作成される、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>、 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>メソッドです。 呼び出し中に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッド場合、指定された URL は有効な探索ドキュメントでは、そのドキュメントに追加、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>探索ドキュメントで見つかったと共に参照のコレクション。 呼び出し中に追加された参照、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Discover%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>メソッドは、必ずしも有効な探索ドキュメントではありません。 呼び出し中に<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>内で参照、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクションが有効な探索ドキュメントとして検証されます。 有効では、参照が含まれている場合はも追加する、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内の参照の詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>XML Web サービス探索中に検出されたプロパティ。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>呼び出しで発見された参照と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[DiscoveryClientProtocol.References#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.References/CS/discocs.aspx#1)]
+ [!code-aspx-vb[DiscoveryClientProtocol.References#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.References/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAll">
+      <MemberSignature Language="C#" Value="public void ResolveAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>探索ドキュメント、XML スキーマ定義 (XSD) スキーマ、およびサービスの説明ですべての参照を解決する、<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.References" />プロパティだけでなく参照で参照されている探索ドキュメントが見つかりませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>検索を参照してでそれらのすべての有効な解決、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>プロパティです。 両方<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>し、ダウンロードおよび XSD スキーマを確認して、サービスの説明、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティです。 ただし、探索ドキュメントを扱う方法の 2 つの方法が異なります。 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>内で探索ドキュメント内のすべての参照を解決する、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティ以外の場合は、探索ドキュメントが他の探索ドキュメントへの参照を含むかどうか<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>探索ドキュメントのみを解決します。 それらの探索ドキュメントで見つかった探索ドキュメントでは、いずれかのレベルの深いはでは解決されません入れ子になった<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>一方;<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>それらすべてを解決します。 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>参照がなくなるまで入れ子になった探索ドキュメント内の参照を解決するのには続行されます。  
+  
+ 実行する検証プロセス中に発生するエラー<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>されませんに見つかった位置の時にスローされますではなく収集されに追加された、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内のドキュメントの詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>参照と共にのプロパティが XML Web サービス探索中に各ドキュメントに存在します。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>からの結果に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>への呼び出し後に呼び出し<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>です。  
+  
+ [!code-csharp[DiscoveryClientProtocol.ResolveAll#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.ResolveAll/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.ResolveAll#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.ResolveAll/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveOneLevel">
+      <MemberSignature Language="C#" Value="public void ResolveOneLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveOneLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>探索ドキュメント、XML スキーマ定義 (XSD) スキーマ、およびサービスの説明ですべての参照を解決する<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.References" />、それらの探索ドキュメントで発見された参照とします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>検索を参照してでそれらのすべての有効な解決、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>プロパティです。 両方<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>し、ダウンロードおよび XSD スキーマを確認して、サービスの説明、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティです。 ただし、探索ドキュメントを扱う方法の 2 つの方法が異なります。 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>内で探索ドキュメント内のすべての参照を解決する、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>プロパティです。 探索ドキュメントには、他の探索ドキュメントへの参照が含まれている場合<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>探索ドキュメントのみを解決します。 これら探索ドキュメントで見つかった探索ドキュメントでは、いずれかのレベルの深いはでは解決されません入れ子になった<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>一方;<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>それらすべてを解決します。 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>参照がなくなるまで入れ子になった探索ドキュメント内の参照を解決するのには続行されます。  
+  
+ 実行する検証プロセス中に発生するエラー<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>されませんに見つかった位置の時にスローされますではなく収集されに追加された、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Errors%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを作成する、<xref:System.Web.UI.WebControls.DataGrid>内のドキュメントの詳細を<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>参照と共にのプロパティが XML Web サービス探索中に各ドキュメントに存在します。 `PopulateGrid`メソッドがいっぱいになった、<xref:System.Web.UI.WebControls.DataGrid>からの結果に、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>への呼び出し後に呼び出し<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveOneLevel%2A>です。  
+  
+ [!code-csharp[DiscoveryClientProtocol.ResolveOneLevel#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.ResolveOneLevel/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.ResolveOneLevel#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.ResolveOneLevel/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAll">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Discovery.DiscoveryClientResultCollection WriteAll (string directory, string topLevelFilename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Discovery.DiscoveryClientResultCollection WriteAll(string directory, string topLevelFilename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Discovery.DiscoveryClientResultCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directory" Type="System.String" />
+        <Parameter Name="topLevelFilename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="directory">現在のすべてのドキュメントを保存するディレクトリ、<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents" />プロパティです。</param>
+        <param name="topLevelFilename">作成または上書きの保存されたすべてのドキュメント マップを含むファイルの名前。</param>
+        <summary>すべての探索ドキュメント、XML スキーマ定義 (XSD) スキーマ、およびサービスの説明に書き込み、<see cref="P:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents" />プロパティを指定されたディレクトリにし、そのディレクトリにファイルを作成します。</summary>
+        <returns>A<see cref="T:System.Web.Services.Discovery.DiscoveryClientResultCollection" />保存されているすべてのファイルの結果を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前で作成されたファイル、 `topLevelFilename` directory パラメーターで指定されたディレクトリ内のパラメーターには、保存された探索ドキュメント、XML スキーマ定義 (XSD) スキーマ、およびサービスの説明のマップが含まれています。 使用してこのファイルを読み取ることができます、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ReadAll%2A>に挿入する方法、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.References%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.Documents%2A>プロパティです。 ファイルの形式は、XML シリアル化されたバージョンを含む、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoveryClientResultsFile>クラスです。  
+  
+ 同じ名前のファイルが存在する場合、`topLevelFilename`内のパラメーター、`directory`パラメーター、そのファイルは上書きされますが、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll%2A>メソッドです。 `topLevelFilename`パラメーターは現在のディレクトリにファイルが存在しない場合、完全修飾パスを含める必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web フォームを呼び出すことによって Web サービス検出の結果をディスクに書き込む、<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.WriteAll%2A>メソッドへの呼び出し後<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.DiscoverAny%2A>と<xref:System.Web.Services.Discovery.DiscoveryClientProtocol.ResolveAll%2A>です。  
+  
+ [!code-csharp[DiscoveryClientProtocol.WriteAll#1](~/samples/snippets/csharp/VS_Snippets_Remoting/DiscoveryClientProtocol.WriteAll/CS/discocs.aspx#1)]
+ [!code-vb[DiscoveryClientProtocol.WriteAll#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/DiscoveryClientProtocol.WriteAll/VB/discovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

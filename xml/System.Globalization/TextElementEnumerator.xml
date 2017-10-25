@@ -1,0 +1,282 @@
+<Type Name="TextElementEnumerator" FullName="System.Globalization.TextElementEnumerator">
+  <TypeSignature Language="C#" Value="public class TextElementEnumerator : System.Collections.IEnumerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TextElementEnumerator extends System.Object implements class System.Collections.IEnumerator" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.TextElementEnumerator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列のテキスト要素を列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework では、単一の文字、つまり、書記素として表示されるテキストの単位としてテキスト要素を定義します。 テキスト要素には、次のいずれかを指定できます。  
+  
+-   基本文字が含まれ、1 つとして表される<xref:System.Char>値。 ラテン文字の大文字などの文字で表される (u+0041) および LATIN SMALL 文字 AE (U +0 00E6) は基本文字です。  
+  
+-   組み合わせは、基本文字と 1 つまたは複数の結合文字で構成されるシーケンスを文字です。 たとえば、例では、(u+0041) が続く組み合わせ長音 LATIN CAPITAL LETTER (U +0 0304)、結合は、文字のシーケンス。  
+  
+-   サロゲート ペアをする、 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)一連の 2 つのコード単位で構成される 1 つの抽象文字のコード化文字表現として定義: 上位サロゲート、および下位サロゲート。 サロゲート ペアは、utf-8 でエンコードされた文字として Unicode 基本多言語面以外の文字を表すために使用されます。 たとえば、GOTHIC 文字 SAUIL (U +0 10343) は utf-8 エンコード値が 0xD800 上位サロゲートと値を持つ 0xDF43 下位サロゲートで表されます。 サロゲート ペアは、基本文字または組み合わせ文字を表すことができます。  
+  
+ <xref:System.Globalization.TextElementEnumerator>クラスでは、1 つではなく文字列内のテキスト要素で作業することができます<xref:System.Char>オブジェクト。  
+  
+ インスタンス化する、<xref:System.Globalization.TextElementEnumerator>する文字列を渡すことによって、特定の文字列を表すオブジェクト、<xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A?displayProperty=nameWithType>メソッドです。 文字列の最初のテキスト要素の前に配置する列挙子を返します。 呼び出す、<xref:System.Globalization.TextElementEnumerator.Reset%2A>メソッドがこの位置に戻さも、列挙子を表示します。 これを表すため、無効な状態、呼び出す必要があります<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>の値を読み取る前に、文字列の最初のテキスト要素に列挙子を進める、<xref:System.Globalization.TextElementEnumerator.Current%2A>プロパティを現在のテキスト要素を返します。  
+  
+ 使用する場合、<xref:System.Globalization.TextElementEnumerator>オブジェクトの列挙子の位置を担当しています。 <xref:System.Globalization.TextElementEnumerator.Current%2A>プロパティは、いずれかが呼び出されるまで、同じテキスト要素を返します<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>または<xref:System.Globalization.TextElementEnumerator.Reset%2A>です。 列挙子は無効な状態では文字列の最後のテキスト要素の前後のテキストの最初の要素に配置されている場合です。 列挙子は、状態が無効ですの値を取得しようとすると、<xref:System.Globalization.TextElementEnumerator.Current%2A>プロパティは例外をスローします。 テストすることによって、列挙子が無効な状態ではかどうかを判断できるかどうかの戻り値、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>プロパティは`false`します。  
+  
+ <xref:System.Globalization.TextElementEnumerator>オブジェクトを表す文字列変数または現時点でリテラル文字列の現在の状態のスナップショットを<xref:System.Globalization.TextElementEnumerator>オブジェクトをインスタンス化します。 次の点に注意してください。  
+  
+-   テキスト要素の列挙子は、文字列内のデータの読み取りにのみ使用できます。 基になる文字列を変更することはできません。  
+  
+-   列挙子には、それが表す文字列への排他アクセスがありません。 列挙子の作成後に、文字列変数を変更できます。  
+  
+-   A<xref:System.Globalization.TextElementEnumerator>オブジェクトのテキスト要素を列挙時に、文字列内に存在する、<xref:System.Globalization.TextElementEnumerator>オブジェクトがインスタンス化します。 その変数が終わった後で変更された場合、文字列変数にそれ以降の変更は反映されません。  
+  
+-   <xref:System.Globalization.TextElementEnumerator>クラスをオーバーライドしません<xref:System.Object.Equals%2A?displayProperty=nameWithType>、2 つ<xref:System.Globalization.TextElementEnumerator>を同じ文字列を表すオブジェクトと等しくない見なされます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.TextElementEnumerator>文字列のテキスト要素を列挙するクラス。  
+  
+ [!code-cpp[System.Globalization.TextElementEnumerator.Summary#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.TextElementEnumerator.Summary/CPP/tee_summary.cpp#1)]
+ [!code-csharp[System.Globalization.TextElementEnumerator.Summary#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.TextElementEnumerator.Summary/CS/tee_summary.cs#1)]
+ [!code-vb[System.Globalization.TextElementEnumerator.Summary#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.TextElementEnumerator.Summary/VB/tee_summary.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public object Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Current" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextElementEnumerator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列内の現在のテキスト要素を取得します。</summary>
+        <value>文字列内の現在のテキスト要素を格納しているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Globalization.TextElementEnumerator.Reset%2A>が呼び出されると、<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>の値を読み取る前に、文字列の最初のテキスト要素に列挙子を進めるに呼び出す必要があります<xref:System.Globalization.TextElementEnumerator.Current%2A>です。 それ以外の場合、<xref:System.Globalization.TextElementEnumerator.Current%2A>が定義されていません。  
+  
+ <xref:System.Globalization.TextElementEnumerator.Current%2A>場合は、最後の呼び出しも例外をスロー<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返される`false`文字列の末尾を示します。  
+  
+ <xref:System.Globalization.TextElementEnumerator.Current%2A>連続して呼び出すと、列挙子の位置を移動しません<xref:System.Globalization.TextElementEnumerator.Current%2A>されるまで、同じオブジェクトを返す<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>または<xref:System.Globalization.TextElementEnumerator.Reset%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">列挙子は、最初のテキスト要素またはテキストの最後の要素の後に、文字列の前に置かれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementIndex">
+      <MemberSignature Language="C#" Value="public int ElementIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ElementIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.TextElementEnumerator.ElementIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列挙子が現在位置しているテキスト要素のインデックスを取得します。</summary>
+        <value>列挙子が現在位置しているテキスト要素のインデックス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">列挙子は、最初のテキスト要素またはテキストの最後の要素の後に、文字列の前に置かれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTextElement">
+      <MemberSignature Language="C#" Value="public string GetTextElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetTextElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextElementEnumerator.GetTextElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列内の現在のテキスト要素を取得します。</summary>
+        <returns>読み取る文字列の現在のテキスト要素を格納している新しい文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドと同じテキスト要素を返します、<xref:System.Globalization.TextElementEnumerator.Current%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">列挙子は、最初のテキスト要素またはテキストの最後の要素の後に、文字列の前に置かれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextElementEnumerator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を文字列の次のテキスト要素に進めます。</summary>
+        <returns>
+          <see langword="true" />列挙子が次のテキスト要素に正常に進んだ場合<see langword="false" />列挙子が、文字列の末尾を越えた場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を作成した後、または後に、<xref:System.Globalization.TextElementEnumerator.Reset%2A>が呼び出されると、列挙子は、文字列、および最初の呼び出しの最初のテキスト要素の前に置かれます<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>列挙子を文字列の最初のテキスト要素の上に移動します。  
+  
+ この列挙子が作成された後に、文字列が変更された場合<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>例外をスローします。  
+  
+ 文字列の末尾が渡された、後続の呼び出し後<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>返す`false`まで<xref:System.Globalization.TextElementEnumerator.Reset%2A>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.TextElementEnumerator.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列挙子を初期位置、つまり文字列の最初のテキスト要素の前に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.TextElementEnumerator.Reset%2A>メソッドは、最初のテキスト要素の前に、文字列の先頭に、列挙子を移動します。 呼び出した後<xref:System.Globalization.TextElementEnumerator.Reset%2A>、呼び出す必要があります<xref:System.Globalization.TextElementEnumerator.MoveNext%2A>列挙子を呼び出す前に、文字列の最初のテキスト要素に進める<xref:System.Globalization.TextElementEnumerator.Current%2A>テキストの最初の要素の値を読み取れません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,245 @@
+<Type Name="ImportOptions" FullName="System.Runtime.Serialization.ImportOptions">
+  <TypeSignature Language="C#" Value="public class ImportOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImportOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ImportOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Runtime.Serialization.XsdDataContractImporter" /> に対して設定できるオプションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter> を使用して、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] CodeDOM を使用する XML スキーマからコードを生成します。 アセンブリから XML スキーマを生成するには、<xref:System.Runtime.Serialization.XsdDataContractExporter> を使用します。  
+  
+ インポートして、スキーマのエクスポートの詳細については、次を参照してください。[スキーマのインポートとエクスポート](~/docs/framework/wcf/feature-details/schema-import-and-export.md)と[クラスを生成するには、スキーマのインポート](~/docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Serialization.ImportOptions> クラスのインスタンスを作成し、<xref:System.Runtime.Serialization.ImportOptions.EnableDataBinding%2A> プロパティと <xref:System.Runtime.Serialization.ImportOptions.GenerateInternal%2A> プロパティを設定する例を次に示します。  
+  
+ [!code-csharp[XsdDataContractImporter#3](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#3)]
+ [!code-vb[XsdDataContractImporter#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImportOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ImportOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.ImportOptions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeProvider">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CodeProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CodeDomProvider CodeProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.CodeProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット言語に対する特定のオプションがサポートされているかどうかをチェックする手段を提供する <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> インスタンスを取得または設定します。</summary>
+        <value>ターゲット言語に対する特定のオプションがサポートされているかどうかをチェックする手段を提供する <see cref="T:System.CodeDom.Compiler.CodeDomProvider" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他の言語のためのよりよいコード生成をサポートするために、ターゲット言語で何がサポートされているかを示す情報をスキーマ インポーターに渡す必要があります。 これは、特定の <xref:System.CodeDom.Compiler.CodeDomProvider> をサポートしているかどうかをチェックする <xref:System.CodeDom.Compiler.CodeDomProvider.Supports%2A> メソッドを備えた <xref:System.CodeDom.Compiler.CodeGeneratorOptions> クラスのインスタンスを渡すことによって実行されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataContractSurrogate">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.IDataContractSurrogate DataContractSurrogate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.IDataContractSurrogate DataContractSurrogate" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.DataContractSurrogate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.IDataContractSurrogate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポート操作中に生成されたコードを変更するために使用できるデータ コントラクト サロゲートを取得または設定します。</summary>
+        <value>スキーマのインポートを処理する <see cref="T:System.Runtime.Serialization.IDataContractSurrogate" /> インターフェイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDataBinding">
+      <MemberSignature Language="C#" Value="public bool EnableDataBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableDataBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.EnableDataBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたコード内の型が、<see cref="T:System.ComponentModel.INotifyPropertyChanged" /> インターフェイスを実装する必要があるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          生成されたコードで <see langword="true" /> インターフェイスを実装する必要がある場合は <see cref="T:System.ComponentModel.INotifyPropertyChanged" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、Windows フォームや Windows Presentation Foundation などの [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] コンポーネントがデータ変更をキャプチャしてユーザー インターフェイスを更新するために使用されます。 生成されたプロパティは、値が変更された場合でもプロパティ変更イベントを発生し、UI がそのイベントをフックして反応できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateInternal">
+      <MemberSignature Language="C#" Value="public bool GenerateInternal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateInternal" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.GenerateInternal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたコードを内部またはパブリックとマークするかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          コードを <see langword="true" /> とマークする場合は <see langword="internal" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateSerializable">
+      <MemberSignature Language="C#" Value="public bool GenerateSerializable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GenerateSerializable" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.GenerateSerializable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたデータ コントラクト クラスを、<see cref="T:System.SerializableAttribute" /> 属性に加え、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性でマークするかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> を適用してクラスを生成する場合は <see cref="T:System.SerializableAttribute" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportXmlType">
+      <MemberSignature Language="C#" Value="public bool ImportXmlType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ImportXmlType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.ImportXmlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML スキーマ型を、データ コントラクト スキーマに準拠しない型も含めてすべてインポートするかどうかを決定する値を取得または設定します。</summary>
+        <value>
+          すべてのスキーマ型をインポートする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、有効なデータ コントラクト スキーマに準拠しない型のインポートは失敗します。 ただし、このプロパティを `true` に設定すると、それらの型は、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する型としてインポートされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Namespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポート操作中にコードを生成するために使用する必要がある、データ コンタクト名前空間と CLR 名前空間の割り当てを含むディクショナリを取得します。</summary>
+        <value>名前空間の割り当てを含む <see cref="T:System.Collections.Generic.IDictionary`2" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedCollectionTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Type&gt; ReferencedCollectionTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Type&gt; ReferencedCollectionTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のリストやディクショナリなどのコレクションのコードを生成するときに参照する必要がある、データ コントラクトのコレクションを表す型のコレクションを取得します。</summary>
+        <value>参照されているコレクションの型を含む <see cref="T:System.Collections.Generic.ICollection`1" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、コレクション スキームをインポートした場合は、配列が生成されます (スキーマに異なる型を示す特別な注釈がある場合は除きます)。 ただし、<xref:System.Runtime.Serialization.ImportOptions.ReferencedCollectionTypes%2A> コレクションの中に一致する型がある場合は、その型が使用されます。 たとえば、整数のリストを含むスキーマをインポートした場合、通常は整数の配列が生成されます。 ただし、コレクションに整数型の <xref:System.Collections.Generic.LinkedList%601> が含まれている場合は、配列の代わりにその型が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferencedTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Type&gt; ReferencedTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.Type&gt; ReferencedTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.ImportOptions.ReferencedTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたコードで参照されている型を含む <see cref="T:System.Collections.Generic.IList`1" /> を取得します。</summary>
+        <value>参照されている型を含む <see cref="T:System.Collections.Generic.IList`1" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

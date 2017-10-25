@@ -1,0 +1,144 @@
+<Type Name="InkCanvasGestureEventArgs" FullName="System.Windows.Controls.InkCanvasGestureEventArgs">
+  <TypeSignature Language="C#" Value="public class InkCanvasGestureEventArgs : System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InkCanvasGestureEventArgs extends System.Windows.RoutedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.InkCanvasGestureEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.RoutedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.InkCanvas.Gesture" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InkCanvasGestureEventArgs (System.Windows.Ink.StrokeCollection strokes, System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.GestureRecognitionResult&gt; gestureRecognitionResults);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Ink.StrokeCollection strokes, class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Ink.GestureRecognitionResult&gt; gestureRecognitionResults) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasGestureEventArgs.#ctor(System.Windows.Ink.StrokeCollection,System.Collections.Generic.IEnumerable{System.Windows.Ink.GestureRecognitionResult})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="strokes" Type="System.Windows.Ink.StrokeCollection" />
+        <Parameter Name="gestureRecognitionResults" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Ink.GestureRecognitionResult&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="strokes">使用可能なジェスチャを表す線。</param>
+        <param name="gestureRecognitionResults">ジェスチャ認識エンジンの結果。</param>
+        <summary><see cref="T:System.Windows.Controls.InkCanvasGestureEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストロークに対して、ジェスチャを考慮するかどうかを示すブール値を設定します。</summary>
+        <value>
+          <see langword="true" />インク ストローク場合<see langword="false" />ストロークがジェスチャ場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.InkCanvas.Gesture>イベントが発生するの値、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel%2A>プロパティに依存最初<xref:System.Windows.Ink.GestureRecognitionResult>によって返されるコレクションに、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.GetGestureRecognitionResults%2A>メソッドです。 場合の値、<xref:System.Windows.Ink.GestureRecognitionResult.ApplicationGesture%2A>プロパティは<xref:System.Windows.Ink.ApplicationGesture.NoGesture>、ジェスチャである場合、またはが<xref:System.Windows.Ink.GestureRecognitionResult.RecognitionConfidence%2A>以外の値は、 <xref:System.Windows.Ink.RecognitionConfidence.Strong>、し<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel%2A>は`true`します。 それ以外の場合、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel%2A> は `false` です。 ときに<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel%2A>は`false`、<xref:System.Windows.Controls.InkCanvas>を追加、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Strokes%2A>にその<xref:System.Windows.Ink.StrokeCollection>です。 ときに<xref:System.Windows.Controls.InkCanvasGestureEventArgs.Cancel%2A>は`true`、ストロークに追加されていない、<xref:System.Windows.Controls.InkCanvas>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGestureRecognitionResults">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.GestureRecognitionResult&gt; GetGestureRecognitionResults ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Ink.GestureRecognitionResult&gt; GetGestureRecognitionResults() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasGestureEventArgs.GetGestureRecognitionResults" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Ink.GestureRecognitionResult&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ジェスチャ レコグナイザーから結果を返します。</summary>
+        <returns>可能性のあるアプリケーションのコレクションをジェスチャを<see cref="P:System.Windows.Controls.InkCanvasGestureEventArgs.Strokes" />可能性があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるコレクション、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.GetGestureRecognitionResults%2A>メソッドに並べ替えて、<xref:System.Windows.Ink.GestureRecognitionResult.RecognitionConfidence%2A?displayProperty=nameWithType>プロパティです。 たとえば、<xref:System.Windows.Controls.InkCanvasGestureEventArgs.GetGestureRecognitionResults%2A>のコレクションを返す可能性があります<xref:System.Windows.Ink.GestureRecognitionResult>次の値を持つオブジェクト。  
+  
+|インデックス|ApplicationGesture|RecognitionConfidence|  
+|-----------|------------------------|---------------------------|  
+|0|<xref:System.Windows.Ink.ApplicationGesture.Check>|<xref:System.Windows.Ink.RecognitionConfidence.Strong>|  
+|1|<xref:System.Windows.Ink.ApplicationGesture.NoGesture>|<xref:System.Windows.Ink.RecognitionConfidence.Intermediate>|  
+|2|<xref:System.Windows.Ink.ApplicationGesture.Curlicue>|<xref:System.Windows.Ink.RecognitionConfidence.Poor>|  
+|3|<xref:System.Windows.Ink.ApplicationGesture.DoubleCurlicue>|<xref:System.Windows.Ink.RecognitionConfidence.Poor>|  
+  
+ つまり、<xref:System.Windows.Ink.GestureRecognizer>認識される可能性が非常を<xref:System.Windows.Ink.Stroke>比較的可能性の高いチェック マークを<xref:System.Windows.Ink.Stroke>ジェスチャではないとまったくない可能性がありますする、<xref:System.Windows.Ink.Stroke>渦巻きまたは二重渦巻きです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Controls.InkCanvasGestureEventArgs.GetGestureRecognitionResults%2A>メソッドが格納された配列を返すことができます<xref:System.Windows.Ink.ApplicationGesture.NoGesture>度の高い<xref:System.Windows.Ink.RecognitionConfidence>他のアプリケーションのジェスチャを使用していること。 つまりは可能性が高くなっている、<xref:System.Windows.Ink.Stroke>を下限を持つジェスチャではなく、ジェスチャではありません<xref:System.Windows.Ink.RecognitionConfidence>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.InkCanvasGestureEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">呼び出すジェネリック ハンドラー/デリゲート実装。</param>
+        <param name="genericTarget">指定したハンドラーが呼び出されるターゲット。</param>
+        <summary>派生クラスでオーバーライドされた場合、型固有の方法でイベント ハンドラーを呼び出す方法を提供します。これにより、基本実装よりも効率が向上する場合があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Strokes">
+      <MemberSignature Language="C#" Value="public System.Windows.Ink.StrokeCollection Strokes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Ink.StrokeCollection Strokes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.InkCanvasGestureEventArgs.Strokes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Ink.StrokeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なジェスチャを表す線を取得します。</summary>
+        <value>使用可能なジェスチャを表す線。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

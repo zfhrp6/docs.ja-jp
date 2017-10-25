@@ -1,0 +1,412 @@
+<Type Name="User" FullName="Microsoft.VisualBasic.ApplicationServices.User">
+  <TypeSignature Language="C#" Value="public class User" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi User extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.User" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のユーザーに関する情報へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとメソッドによって公開されている、`My.User`オブジェクトが現在のユーザーに関する情報へのアクセスを提供します。 「現在のユーザー」の意味は、Windows アプリケーションと Web アプリケーション間で若干異なります。 Windows アプリケーションでは、現在のユーザーは、アプリケーションを実行しているユーザーがします。 Web アプリケーションでは、現在のユーザーは、アプリケーションにアクセスするユーザーがします。  
+  
+ `My.User`プロパティへのアクセスも用意されています。、 <xref:System.Security.Principal.IPrincipal> 、現在のユーザーです。 プリンシパルのオブジェクトでは、そのユーザーの id や、ユーザーが所属するロールを含め、ユーザーのセキュリティ コンテキストを表します。  
+  
+ このプロパティは、Windows アプリケーションのと同じ機能を提供、<xref:System.Threading.Thread.CurrentPrincipal%2A>プロパティです。 このプロパティは、Web アプリケーションのと同じ機能を提供、<xref:System.Web.HttpContext.User%2A>によって返されるオブジェクトのプロパティ、<xref:System.Web.HttpContext.Current%2A>プロパティです。  
+  
+> [!NOTE]
+>  Windows アプリケーション ビルドされたプロジェクトのみ、 **Windows アプリケーション**テンプレート初期化、`My.User`既定ではオブジェクトです。 他の Windows のプロジェクト タイプで初期化する必要があります、`My.User`オブジェクトを呼び出して、<xref:Microsoft.VisualBasic.ApplicationServices.User.InitializeWithWindowsUser%2A>メソッドに値を割り当てることによって、明示的に<xref:System.Threading.Thread.CurrentPrincipal%2A>です。  
+  
+> [!NOTE]
+>  `My.User`オブジェクトは、これらのオペレーティング システムでは、ログオン ユーザーの概念をサポートしていないため Windows 95 および Windows 98 で実行する場合、現在の Windows ユーザーに関する情報を報告できません。 使用するカスタム認証を実装する必要があります、`My.User`これらのオペレーティング システム上のオブジェクト。  
+  
+   
+  
+## Examples  
+ この例で、アプリケーションが Windows 認証またはカスタムの認証に使用されていると、その情報を使用して解析かどうかを確認、`My.User.Name`プロパティです。  
+  
+ [!code-vb[VbVbalrMyUser#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public User ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.User.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.User" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとメソッドによって公開されている、`My.User`オブジェクトが現在のユーザーに関する情報へのアクセスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPrincipal">
+      <MemberSignature Language="C#" Value="public System.Security.Principal.IPrincipal CurrentPrincipal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal CurrentPrincipal" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (ロール ベース セキュリティ) の現在のプリンシパルを設定します。</summary>
+        <value>A<see cref="T:System.Security.Principal.IPrincipal" />のセキュリティ コンテキストを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、`My.User.CurrentPrincipal`プロパティを実装するオブジェクトを<xref:System.Security.Principal.IPrincipal>カスタム認証を有効にするインターフェイスです。  
+  
+ ほとんどの種類のプロジェクトでは、このプロパティを取得し、スレッドの現在のプリンシパルを設定します。 ASP.NET アプリケーションでこのプロパティは取得し、現在の HTTP 要求のユーザー id のセキュリティ情報を設定します。  
+  
+ これは、高度なメンバーの場合です。クリックするまで、IntelliSense が表示されない、**すべて**タブです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例で、アプリケーションが Windows 認証またはカスタムの認証に使用されていると、その情報を使用して解析かどうかチェック`My.User.Name`プロパティです。  
+  
+ [!code-vb[VbVbalrMyUser#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、プリンシパルを設定するために必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeWithWindowsUser">
+      <MemberSignature Language="C#" Value="public void InitializeWithWindowsUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void InitializeWithWindowsUser() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.User.InitializeWithWindowsUser" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションを開始した Windows ユーザーに、スレッドの現在のプリンシパルを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`My.User.InitializeWithWindowsUser`アプリケーションを開始した Windows ユーザーに、スレッドの現在のプリンシパルを設定します。 Windows アプリケーションで Visual Basic アプリケーション モデルは、既定では、起動時にこのメソッドを呼び出します。 このメソッドを明示的に呼び出すことによってまたはの値を割り当てることによって他のプロジェクト タイプで、スレッドの現在のプリンシパルを設定する必要があります<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>です。  
+  
+ Windows プロジェクトでは、`My.User`オブジェクトは、スレッドの現在のプリンシパルに基づいてです。 そのため、このメソッドが情報を変更できます`My.User`を返します。 ASP.NET アプリケーションで、`My.User`オブジェクトは、現在の HTTP 要求のユーザー id に基づいており、このメソッドによる影響はありません。  
+  
+> [!NOTE]
+>  実際の動作、`My.User`オブジェクトは、アプリケーションの種類と、アプリケーションが実行されているオペレーティング システムによって異なります。 詳細については、次を参照してください。、<xref:Microsoft.VisualBasic.ApplicationServices.User>クラスの概要です。  
+  
+ これは、高度なメンバーの場合です。クリックするまで、IntelliSense が表示されない、**すべて**タブです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalPrincipal">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.Principal.IPrincipal InternalPrincipal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Principal.IPrincipal InternalPrincipal" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.User.InternalPrincipal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.IPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のユーザーを表すプリンシパル オブジェクトを設定します。</summary>
+        <value><see cref="T:System.Security.Principal.IPrincipal" />現在のユーザーを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.User>オブジェクトのプロパティをラップ、<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティです。 動作の違いを提供する派生クラスでこのメソッドをオーバーライドします。 たとえば、<xref:Microsoft.VisualBasic.ApplicationServices.WebUser.InternalPrincipal%2A?displayProperty=nameWithType>プロパティは、このプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool IsAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.User.IsAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが認証されているかどうかを示す値を取得します。</summary>
+        <value>
+          ユーザーが認証されている場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.User.IsAuthenticated`プロパティは、現在のユーザーが認証されたかどうかを決定するコードを使用します。  
+  
+> [!NOTE]
+>  実際の動作`My.User`オブジェクトは、アプリケーションの種類と、アプリケーションが実行されているオペレーティング システムによって異なります。 詳細については、次を参照してください。、<xref:Microsoft.VisualBasic.ApplicationServices.User>クラスの概要です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、リソースにアクセスする前に、ユーザーが認証されていることを確認します。  
+  
+ [!code-vb[VbVbalrMyUser#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public bool IsInRole (Microsoft.VisualBasic.ApplicationServices.BuiltInRole role);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool IsInRole(valuetype Microsoft.VisualBasic.ApplicationServices.BuiltInRole role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.User.IsInRole(Microsoft.VisualBasic.ApplicationServices.BuiltInRole)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="Microsoft.VisualBasic.ApplicationServices.BuiltInRole" />
+      </Parameters>
+      <Docs>
+        <param name="role">メンバーシップをチェックする組み込みの Windows のロール。</param>
+        <summary>現在のユーザーが、指定したロールに属しているかどうかを確認します。</summary>
+        <returns>
+          <see langword="True" />現在のユーザーが指定されたロールのメンバーである場合それ以外の場合、<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.User.IsInRole`メソッドの使用、コードは、現在のユーザーが指定されたロールのメンバーかどうかを決定します。  
+  
+ オーバー ロード、 `My.User.IsInRole` 、文字列を受け取るメソッドに簡単にアクセスを提供する、<xref:System.Security.Principal.IPrincipal.IsInRole%2A>現在のプリンシパルのメソッドです。  
+  
+ オーバー ロード、`My.User.IsInRole`を受け取るメソッド、`BuiltInRole`によっては、現在のプリンシパル、異なる動作を列挙します。 Windows のユーザー プリンシパルである場合 (<xref:System.Security.Principal.WindowsPrincipal>)、この関数に変換`role`を同等の機能<xref:System.Security.Principal.WindowsBuiltInRole>列挙し、呼び出しの結果を返します<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>です。 現在のプリンシパルがその他の任意のプリンシパルの場合は、この関数で列挙値の名前を渡します`role`プリンシパルの<xref:System.Security.Principal.IPrincipal.IsInRole%2A>メソッドです。  
+  
+> [!NOTE]
+>  実際の動作、`My.User`オブジェクトは、アプリケーションの種類と、アプリケーションが実行されているオペレーティング システムによって異なります。 詳細については、次を参照してください。、<xref:Microsoft.VisualBasic.ApplicationServices.User>クラスの概要です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、ユーザーがリソースにアクセスする前に、管理者がかどうかを確認します。  
+  
+ [!code-vb[VbVbalrMyUser#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInRole">
+      <MemberSignature Language="C#" Value="public bool IsInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance bool IsInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.User.IsInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">メンバーシップを確認する対象のロールの名前。</param>
+        <summary>現在のユーザーが、指定したロールに属しているかどうかを確認します。</summary>
+        <returns>
+          <see langword="True" />現在のユーザーが指定されたロールのメンバーである場合それ以外の場合、<see langword="False" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.User.IsInRole`メソッドの使用、コードは、現在のユーザーが指定されたロールのメンバーかどうかを決定します。  
+  
+ オーバー ロード、 `My.User.IsInRole` 、文字列を受け取るメソッドに簡単にアクセスを提供する、<xref:System.Security.Principal.IPrincipal.IsInRole%2A>現在のプリンシパルのメソッドです。  
+  
+ オーバー ロード、`My.User.IsInRole`を受け取るメソッド、`BuiltInRole`によっては、現在のプリンシパル、異なる動作を列挙します。 Windows のユーザー プリンシパルである場合 (<xref:System.Security.Principal.WindowsPrincipal>)、この関数に変換`role`を同等の機能<xref:System.Security.Principal.WindowsBuiltInRole>列挙し、呼び出しの結果を返します<xref:System.Security.Principal.WindowsPrincipal.IsInRole%2A>です。 現在のプリンシパルがその他の任意のプリンシパルの場合は、この関数で列挙値の名前を渡します`role`プリンシパルの<xref:System.Security.Principal.IPrincipal.IsInRole%2A>メソッドです。  
+  
+> [!NOTE]
+>  実際の動作、`My.User`オブジェクトは、アプリケーションの種類と、アプリケーションが実行されているオペレーティング システムによって異なります。 詳細については、次を参照してください。、<xref:Microsoft.VisualBasic.ApplicationServices.User>クラスの概要です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、ユーザーがリソースにアクセスする前に、管理者がかどうかを確認します。  
+  
+ [!code-vb[VbVbalrMyUser#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.User.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザーの名前を取得します。</summary>
+        <value>
+          <see langword="String" />。 現在のユーザーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`My.User`現在のユーザーに関する情報を取得するオブジェクト。  
+  
+ プリンシパル ユーザーを認証するには、ユーザー名の形式も制御します。 既定では、アプリケーションが Windows 認証を使用し、domain \username という形式にユーザー名。 プリンシパルのカスタム実装は、同じ形式を必ずしもは使用しません。  
+  
+> [!NOTE]
+>  `My.User.Name`プロパティは、これらのオペレーティング システムがユーザー名を認識しないため Windows 95 および Windows 98 で実行する場合、空の文字列を返します。  
+  
+> [!NOTE]
+>  実際の動作、`My.User`オブジェクトは、アプリケーションの種類と、アプリケーションが実行されているオペレーティング システムによって異なります。 詳細については、次を参照してください。、<xref:Microsoft.VisualBasic.ApplicationServices.User>クラスの概要です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例で、アプリケーションが Windows 認証またはカスタムの認証に使用されていると、その情報を使用して解析かどうかを確認、`My.User.Name`プロパティです。  
+  
+ [!code-vb[VbVbalrMyUser#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyUser/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードに適用されるセキュリティのアクセス許可のセットについて説明します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPrincipal" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

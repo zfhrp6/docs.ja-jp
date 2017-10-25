@@ -1,0 +1,126 @@
+<Type Name="ParameterCollectionEditor" FullName="System.Web.UI.Design.WebControls.ParameterCollectionEditor">
+  <TypeSignature Language="C#" Value="public class ParameterCollectionEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParameterCollectionEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ParameterCollectionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネント エディターを提供、<see cref="T:System.Web.UI.WebControls.ParameterCollection" />で指定されたオブジェクト、<see langword="Parameters" />プロパティ、関連付けられているデータのソース管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>クラスを編集するためのユーザー インターフェイスの提供、<xref:System.Web.UI.WebControls.Parameter>の要素、 <xref:System.Web.UI.WebControls.ParameterCollection> 、デザイン時のいずれかで指定されたオブジェクト、`Parameters`プロパティです。 `Parameters`プロパティが含まれます、 <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.FilterParameters%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.InsertParameters%2A>、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectParameters%2A>と<xref:System.Web.UI.WebControls.ObjectDataSource.UpdateParameters%2A>のプロパティ、 <xref:System.Web.UI.WebControls.ObjectDataSource>、 <xref:System.Web.UI.WebControls.SqlDataSource>、およびその他のデータ ソース コントロール。  
+  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>を省略記号ボタンを選択すると呼び出されます (**.**) のいずれかのボタン、`Parameters`プロパティで、**プロパティ**ビジュアル デザイナーのグリッドです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor.EditValue%2A>メソッドの編集、<xref:System.Web.UI.WebControls.Parameter>の要素、<xref:System.Web.UI.WebControls.ParameterCollection>関連付けられているデータ ソース コントロールのです。 <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor.GetEditStyle%2A>メソッドは、このエディターに関連付けられている編集スタイルを取得します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.EditorAttribute>属性に関連付けるには、<xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>と<xref:System.Drawing.Design.UITypeEditor>クラス (コレクション エディター基本クラス)、`SelectParameters`カスタム コントロールのプロパティです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.DesignerEditors#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DesignerEditors/CS/DesignerEditors.cs#2)]
+ [!code-vb[System.Web.UI.Design.WebControls.DesignerEditors#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.DesignerEditors/VB/DesignerEditors.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParameterCollectionEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterCollectionEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ParameterCollectionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework の新しいインスタンスを構築する、<xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor>ページ デザイナーは、省略記号ボタンを選択したときにクラス (**.**) のいずれかのボタン、 `Parameters` 、ビジュアル デザイナーでプロパティ**プロパティ**関連付けられているデータ ソース コントロールのデザイン時にグリッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterCollectionEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトのコンテキスト情報を取得するために使用します。</param>
+        <param name="provider">実装するオブジェクト、<see cref="T:System.IServiceProvider" />使用される編集サービス取得できます。</param>
+        <param name="value">値を編集するオブジェクト。</param>
+        <summary>要素を編集、<see cref="T:System.Web.UI.WebControls.ParameterCollection" />オブジェクト、関連するデータのソース管理します。</summary>
+        <returns>新しい<paramref name="value" />、それ以外の場合は、オブジェクトの値が変更されていない<paramref name="value" />変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor.EditValue%2A>メソッドが関連付けられているデータ ソースの管理とからそのコントロールに関連付けられているデータ ソース コントロールのデザイナーを抽出し、`context`パラメーター。 サポートされているデータ ソース コントロールに含まれる、<xref:System.Web.UI.WebControls.ObjectDataSource>と<xref:System.Web.UI.WebControls.SqlDataSource>コントロール、それに対応する<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>と<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner>デザイナー。  
+  
+ データを抽出すると後、<xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor.EditValue%2A>編集に使用される編集 ダイアログ ボックスを表示するデータ ソース コントロール デザイナーに呼び出し、<xref:System.Web.UI.WebControls.ParameterCollection>のいずれかによって参照されるオブジェクト、`Parameters`ソース コントロールのデータのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ParameterCollectionEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />編集されているオブジェクトのコンテキストを示すオブジェクト。</param>
+        <summary>このエディターに関連付けられている編集スタイルを取得します。</summary>
+        <returns>このエディターに関連付けられている編集スタイルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ParameterCollectionEditor.GetEditStyle%2A>メソッドは常に返します、<xref:System.Drawing.Design.UITypeEditorEditStyle.Modal>エディターのユーザー インターフェイスがモーダル ダイアログ ボックスであることを示す値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

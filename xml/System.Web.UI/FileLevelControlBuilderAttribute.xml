@@ -1,0 +1,156 @@
+<Type Name="FileLevelControlBuilderAttribute" FullName="System.Web.UI.FileLevelControlBuilderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class FileLevelControlBuilderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileLevelControlBuilderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.FileLevelControlBuilderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>により、 <see cref="T:System.Web.UI.TemplateControl" />-ビルダー ツリーの最上位レベルにファイルを解析するときに使用されるコントロール ビルダーを指定するクラスを派生します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Page>と<xref:System.Web.UI.UserControl>クラスから派生し、<xref:System.Web.UI.TemplateControl>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLevelControlBuilderAttribute (Type builderType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type builderType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelControlBuilderAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="builderType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="builderType"><see cref="T:System.Type" />のファイルを解析するときに使用されるコントロール ビルダー。</param>
+        <summary><see cref="T:System.Web.UI.FileLevelControlBuilderAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.FileLevelControlBuilderAttribute>クラスです。  
+  
+> [!NOTE]
+>  ページの解析中に、このコンス トラクターが ASP.NET で使用されるとコントロールの階層構造を作成します。 コードで使用することはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuilderType">
+      <MemberSignature Language="C#" Value="public Type BuilderType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type BuilderType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.FileLevelControlBuilderAttribute.BuilderType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />のファイルを解析するときに使用されるコントロール ビルダー。 このプロパティは読み取り専用です。</summary>
+        <value><see cref="T:System.Type" />のファイルを解析するときに使用されるコントロール ビルダー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.FileLevelControlBuilderAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.FileLevelControlBuilderAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.FileLevelControlBuilderAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.FileLevelControlBuilderAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい指定<see cref="T:System.Web.UI.FileLevelControlBuilderAttribute" />オブジェクト。 既定では、新しいオブジェクトに設定<see langword="null" />です。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelControlBuilderAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.Object" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelControlBuilderAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelControlBuilderAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>決定するかどうか、現在<see cref="T:System.Web.UI.FileLevelControlBuilderAttribute" />オブジェクトは、既定値です。</summary>
+        <returns>
+          <see langword="true" />場合、現在<see cref="T:System.Web.UI.FileLevelControlBuilderAttribute" />既定値は、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

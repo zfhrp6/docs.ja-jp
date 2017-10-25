@@ -1,0 +1,238 @@
+<Type Name="XmlReadMode" FullName="System.Data.XmlReadMode">
+  <TypeSignature Language="C#" Value="public enum XmlReadMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlReadMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.XmlReadMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>XML データやにリレーショナル スキーマを読み取る方法を指定します、<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する場合は、この列挙体のメンバーを使用して、`ReadMode`のパラメーター、<xref:System.Data.DataSet.ReadXml%2A>メソッドです。  
+  
+> [!NOTE]
+>  `Auto`モードが設定よりも遅いことがあります<xref:System.Data.XmlReadMode>オプションを明示的にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定モード。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も適切なこれらのアクションを実行します。  
+  
+ データが、DiffGram の場合は、設定`XmlReadMode`に`DiffGram`です。  
+  
+ または  
+  
+ 設定の場合は、データセットには既にスキーマまたはドキュメントにインライン スキーマが含まれています、`XmlReadMode`に`ReadSchema`です。  
+  
+ または  
+  
+ データセットにまだないスキーマ ドキュメントにインライン スキーマが含まれていない場合は、設定`XmlReadMode`に`InferSchema`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiffGram">
+      <MemberSignature Language="C#" Value="DiffGram" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode DiffGram = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.DiffGram" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DiffGram から変更を適用する、DiffGram を読み取り、<see cref="T:System.Data.DataSet" />です。 セマンティクスは次のものと同じ、<see cref="M:System.Data.DataSet.Merge(System.Data.DataSet)" />操作します。 同様、<see cref="M:System.Data.DataSet.Merge(System.Data.DataSet)" />操作、<see cref="P:System.Data.DataRow.RowState" />値を保持します。 入力<see cref="M:System.Data.DataSet.ReadXml(System.Xml.XmlReader)" />Diffgram でのみ取得するかからの出力を使用して<see cref="M:System.Data.DataSet.WriteXml(System.IO.Stream)" />を DiffGram として。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット<xref:System.Data.DataSet>と同じスキーマが必要、<xref:System.Data.DataSet>を<xref:System.Data.DataSet.WriteXml%2A>DiffGram が呼び出されるとします。 それ以外の場合、DiffGram のマージ操作が失敗すると、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fragment">
+      <MemberSignature Language="C#" Value="Fragment" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode Fragment = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.Fragment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL Server のインスタンスに対して、FOR XML クエリを実行することによって生成されるものなどの XML フラグメントを読み取ります。 ときに<see cref="T:System.Data.XmlReadMode" />に設定されている<see langword="Fragment" />既定の名前空間は、インライン スキーマとして読み取らです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreSchema">
+      <MemberSignature Language="C#" Value="IgnoreSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode IgnoreSchema = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.IgnoreSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インライン スキーマを無視し、データを既存の <see cref="T:System.Data.DataSet" /> スキーマに読み取ります。 すべてのデータが既存のスキーマが一致しない場合は破棄されます (に対して定義されている異なる名前空間からデータを含む、 <see cref="T:System.Data.DataSet" />)。 場合は、データは、DiffGram<see langword="IgnoreSchema" />と同じ機能を持つ<see langword="DiffGram" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InferSchema">
+      <MemberSignature Language="C#" Value="InferSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode InferSchema = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.InferSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インライン スキーマを無視し、データからスキーマを推論データを読み込みます。 場合、<see cref="T:System.Data.DataSet" />スキーマを既に含む新しいテーブルを追加または既存のテーブルに列を追加することによって、現在のスキーマを拡張します。 推論されたテーブルが既に存在する場合が別の名前空間、例外がスローまたは推論された列と競合する既存の列です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InferTypedSchema">
+      <MemberSignature Language="C#" Value="InferTypedSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode InferTypedSchema = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.InferTypedSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インライン スキーマを無視、データから厳密に型指定されたスキーマを推論し、データを読み込みます。 データから、型が推測できない場合は、文字列データとして解釈されます。 場合、<see cref="T:System.Data.DataSet" />スキーマを既に含む新しいテーブルを追加することで、または既存のテーブルに列を追加することで、現在のスキーマが拡張されます。 推論されたテーブルが既に存在する場合が別の名前空間、例外がスローまたは推論された列と競合する既存の列です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSchema">
+      <MemberSignature Language="C#" Value="ReadSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.XmlReadMode ReadSchema = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.XmlReadMode.ReadSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.XmlReadMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インライン スキーマを読み取り、データを読み込みます。 場合、<see cref="T:System.Data.DataSet" />スキーマが既に含まれていますがスキーマに新しいテーブルを追加することがありますにインライン スキーマのすべてのテーブルが存在しない場合、例外がスローされます、<see cref="T:System.Data.DataSet" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

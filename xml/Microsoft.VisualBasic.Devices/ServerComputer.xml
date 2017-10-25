@@ -1,0 +1,318 @@
+<Type Name="ServerComputer" FullName="Microsoft.VisualBasic.Devices.ServerComputer">
+  <TypeSignature Language="C#" Value="public class ServerComputer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ServerComputer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.ServerComputer" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オーディオ、時計、キーボード、ファイル システムなどのコンピューター コンポーネントを操作するためのプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Computer`オブジェクトの実行時に決定される、アプリケーションが展開されているコンピューターに関する情報を返します。 通常、このデータは、開発用コンピューター上で利用できるは異なります。  
+  
+ 一部のメンバーなど、`My.Computer.Audio`オブジェクトではないサーバー アプリケーションに対してのみ使用できます。  
+  
+ 次の表に、関連するタスクの例については、`My.Computer`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|接続状態を確認します。|[方法 : 接続ステータスをチェックする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)|  
+|ファイルをダウンロードします。|[方法 : ファイルをダウンロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)|  
+|ファイルをアップロードします。|[方法 : ファイルをアップロードする](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)|  
+|レジストリ キーを作成します。|[方法: レジストリ キーを作成し、その値を設定する](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)|  
+|クリップボードへのアクセスします。|[クリップボードのデータの格納と読み取り](~/docs/visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Name`コードが実行されているコンピューターの名前を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServerComputer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.ServerComputer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.ServerComputer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clock">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Clock Clock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Clock Clock" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.Clock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Clock</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム クロックから現在の現地時刻と世界協定時刻 (グリニッジ標準時と同じ) にアクセスするためのプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Clock" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Clock`オブジェクト。 詳細については、「<xref:Microsoft.VisualBasic.Devices.Clock>」を参照してください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ `My.Computer.Audio.Play`メソッドは、バック グラウンドで指定したサウンドを再生時に`AudioPlayMode.Background`を指定します。  
+  
+ [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
+  
+ このコードは、Windows フォーム アプリケーション内でのみ実行できます。  
+  
+ ファイル名には、システムに .wav サウンド ファイルを参照する必要があります。  
+  
+ サウンド ファイルの管理を簡素化には、アプリケーションのリソースとしてファイルを保存することを検討してください。 ファイルにアクセスし、 [My.Resources オブジェクト](~/docs/visual-basic/language-reference/objects/my-resources-object.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileSystem">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.MyServices.FileSystemProxy FileSystem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.MyServices.FileSystemProxy FileSystem" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.FileSystem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.MyServices.FileSystemProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティとドライブ、ファイル、およびディレクトリを操作するためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.FileSystem" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、<xref:Microsoft.VisualBasic.MyServices.FileSystemProxy>オブジェクト。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例のチェックを決定するかどうかフォルダー`C:\backup\logs`が存在し、そのプロパティをチェックします。  
+  
+ [!code-vb[VbVbcnMyFileSystem#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Info">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.ComputerInfo Info { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.ComputerInfo Info" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.Info" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.ComputerInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターのメモリ、読み込まれたアセンブリ、名前、およびオペレーティング システムに関する情報を取得するためのプロパティを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Info" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、`My.Computer.Info`オブジェクト。 詳細については、「<xref:Microsoft.VisualBasic.Devices.ComputerInfo>」を参照してください。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.AvailablePhysicalMemory`コードが実行されているコンピューターの使用可能な物理メモリの量を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューター名を取得します。</summary>
+        <value>A<see langword="String" />コンピューターの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Name`プロパティと同様の機能を提供する、<xref:System.Environment.MachineName%2A>プロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Name`コードが実行されているコンピューターの名前を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Network">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Devices.Network Network { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Devices.Network Network" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.Network" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Devices.Network</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターが接続されているネットワークでのプロパティと対話するためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Network" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、<xref:Microsoft.VisualBasic.Devices.Network>オブジェクト。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|**はい**|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例は、ファイルをアップロード`Order.txt`http://www.cohowinery.com/uploads にします。  
+  
+ [!code-vb[VbVbalrMyNetwork#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyNetwork/VB/Class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Registry">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.MyServices.RegistryProxy Registry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.MyServices.RegistryProxy Registry" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ServerComputer.Registry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.MyServices.RegistryProxy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティとレジストリを操作するためのメソッドを提供するオブジェクトを取得します。</summary>
+        <value><see langword="My.Computer.Registry" />コンピューター用オブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに簡単にアクセスを提供する、<xref:Microsoft.VisualBasic.MyServices.RegistryProxy>オブジェクト。  
+  
+   
+  
+## Examples  
+ この例は、値を読み取って`Name`から`HKEY_CURRENT_USER\Software\MyApp`し、それをメッセージ ボックスに表示します。  
+  
+ [!code-vb[VbVbalrMyRegistry#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyRegistry/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

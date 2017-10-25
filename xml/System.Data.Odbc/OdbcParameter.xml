@@ -1,0 +1,1199 @@
+<Type Name="OdbcParameter" FullName="System.Data.Odbc.OdbcParameter">
+  <TypeSignature Language="C#" Value="public sealed class OdbcParameter : System.Data.Common.DbParameter, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcParameter extends System.Data.Common.DbParameter implements class System.Data.IDataParameter, class System.Data.IDbDataParameter, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbParameter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.Odbc.OdbcParameter/OdbcParameterConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パラメーターを表します、<see cref="T:System.Data.Odbc.OdbcCommand" />および必要に応じて、そのへのマッピング、<see cref="T:System.Data.DataColumn" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター名の大文字と小文字は区別されません。  
+  
+ Oracle (MSDAORA) と ODBC .NET Framework データ プロバイダーの Microsoft OLE DB プロバイダーを使用して Oracle データベースのクエリを実行するときに使用して、`LIKE`句クエリの固定長フィールドの値には、必要なすべての一致を返さない可能性があります。 Oracle の固定長フィールドの値と一致するとその理由は、`LIKE`句、末尾の空白の埋め込みも含めて、文字列の全体の長さに一致することです。 などのテーブルの場合、Oracle データベースが含まれています"Field1"として定義されているという名前のフィールドには`char(3)`値を入力して、次のコードは、そのテーブルの行に"a"が返されません行です。  
+  
+```vb  
+Dim queryString As String = "SELECT * FROM Table1 WHERE Field1 LIKE ?"  
+Dim command As OleDbCommand = New OleDbCommand(queryString, connection)  
+command.Parameters.Add("@p1", OleDbType.Char, 3).Value = "a"  
+Dim reader As OleDbDataReader = command.ExecuteReader()  
+```  
+  
+```csharp  
+string queryString = "SELECT * FROM Table1 WHERE Field1 LIKE ?";  
+OleDbCommand command = new OleDbCommand(queryString, connection);  
+command.Parameters.Add("@p1", OleDbType.Char, 3).Value = "a";  
+OleDbDataReader reader = command.ExecuteReader();  
+```  
+  
+ これは、Oracle は、"a"と列の値を格納するため (padding"a"、末尾のスペース、3 の固定フィールド長を)、Oracle はの場合、"a"のパラメーター値の一致するものとして処理しませんが、`LIKE`固定長フィールドを比較します。  
+  
+ この問題を解決するには、パラメーターの値をパーセント記号 (「%」) のワイルドカード文字を追加します。 (`"a%"`)、SQL を使用してまたは`=`比較代わりにします。  
+  
+   
+  
+## Examples  
+ 次の例の複数のインスタンスを作成する<xref:System.Data.Odbc.OdbcParameter>を通じて、<xref:System.Data.Odbc.OdbcParameterCollection>内で、<xref:System.Data.Odbc.OdbcDataAdapter>です。 これらのパラメーターは、データ ソースからデータを選択し、内のデータを配置に使用、<xref:System.Data.DataSet>です。 この例では、<xref:System.Data.DataSet>と<xref:System.Data.Odbc.OdbcDataAdapter>適切なスキーマ、コマンド、および接続を使用して既に作成されています。  
+  
+ [!code-csharp[Classic WebData OdbcParameter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本コンス トラクターは、すべてのフィールドを既定値を初期化します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.OdbcParameter#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.OdbcParameter#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string name, System.Data.Odbc.OdbcType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.Odbc.OdbcType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Data.Odbc.OdbcType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Data.Odbc.OdbcType" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="type"><see cref="T:System.Data.Odbc.OdbcType" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Odbc.OdbcParameter" />パラメーター名とデータ型を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.OdbcParameter1#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter1/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.OdbcParameter1#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="value"><see cref="T:System.Data.Odbc.OdbcParameter" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Odbc.OdbcParameter" />パラメーターの名前を使用するクラスと<see cref="T:System.Data.Odbc.OdbcParameter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用しているときに警告を使用して、<xref:System.Data.Odbc.OdbcParameter>コンス トラクターの整数パラメーターの値を指定します。 このオーバー ロードはため、`value`型の<xref:System.Object>は整数値を変換する必要があります、<xref:System.Object>次の c# の例に示すように、値が 0 の場合を入力します。  
+  
+```  
+Parameter = new OdbcParameter("@pname", Convert.ToInt32(0));  
+```  
+  
+ この変換を実行しない場合、コンパイラを呼び出すしようとするいると想定、<xref:System.Data.Odbc.OdbcParameter.%23ctor%2A?displayProperty=nameWithType>コンス トラクター オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string name, System.Data.Odbc.OdbcType type, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.Odbc.OdbcType type, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Data.Odbc.OdbcType,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Data.Odbc.OdbcType" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="type"><see cref="T:System.Data.Odbc.OdbcType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Odbc.OdbcParameter" />パラメーター名、データ型および長さを使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.OdbcParameter2#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter2/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.OdbcParameter2#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter2/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string name, System.Data.Odbc.OdbcType type, int size, string sourcecolumn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Data.Odbc.OdbcType type, int32 size, string sourcecolumn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Data.Odbc.OdbcType,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="type" Type="System.Data.Odbc.OdbcType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="sourcecolumn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">パラメーターの名前。</param>
+        <param name="type"><see cref="T:System.Data.Odbc.OdbcType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="sourcecolumn">ソース列の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Odbc.OdbcParameter" />パラメーター名、データ型、長さ、およびソース列名を使用するクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.OdbcParameter3#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter3/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.OdbcParameter3#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter3/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string parameterName, System.Data.Odbc.OdbcType odbcType, int size, System.Data.ParameterDirection parameterDirection, bool isNullable, byte precision, byte scale, string srcColumn, System.Data.DataRowVersion srcVersion, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string parameterName, valuetype System.Data.Odbc.OdbcType odbcType, int32 size, valuetype System.Data.ParameterDirection parameterDirection, bool isNullable, unsigned int8 precision, unsigned int8 scale, string srcColumn, valuetype System.Data.DataRowVersion srcVersion, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Data.Odbc.OdbcType,System.Int32,System.Data.ParameterDirection,System.Boolean,System.Byte,System.Byte,System.String,System.Data.DataRowVersion,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="odbcType" Type="System.Data.Odbc.OdbcType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="parameterDirection" Type="System.Data.ParameterDirection" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="precision" Type="System.Byte" />
+        <Parameter Name="scale" Type="System.Byte" />
+        <Parameter Name="srcColumn" Type="System.String" />
+        <Parameter Name="srcVersion" Type="System.Data.DataRowVersion" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="odbcType"><see cref="T:System.Data.Odbc.OdbcType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="parameterDirection"><see cref="T:System.Data.ParameterDirection" /> の値の 1 つ。</param>
+        <param name="isNullable">
+          フィールドの値を NULL に設定できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="precision"><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> を解決する際の、小数点の左側および右側の桁数の合計。</param>
+        <param name="scale"><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> を解決する際の、小数点以下の合計桁数。</param>
+        <param name="srcColumn">ソース列の名前。</param>
+        <param name="srcVersion"><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。</param>
+        <param name="value"><see cref="T:System.Data.Odbc.OdbcParameter" /> の値である <see cref="T:System.Object" />。</param>
+        <summary>パラメーター名、データ型、長さ、ソース列名、パラメーターの方向、数値の有効桁数、およびその他のプロパティを使用する <see cref="T:System.Data.Odbc.OdbcParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、表示、<xref:System.Data.Odbc.OdbcParameter.ParameterName%2A>です。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.OdbcParameter4#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter4/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.OdbcParameter4#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.OdbcParameter4/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcParameter (string parameterName, System.Data.Odbc.OdbcType odbcType, int size, System.Data.ParameterDirection parameterDirection, byte precision, byte scale, string sourceColumn, System.Data.DataRowVersion sourceVersion, bool sourceColumnNullMapping, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string parameterName, valuetype System.Data.Odbc.OdbcType odbcType, int32 size, valuetype System.Data.ParameterDirection parameterDirection, unsigned int8 precision, unsigned int8 scale, string sourceColumn, valuetype System.Data.DataRowVersion sourceVersion, bool sourceColumnNullMapping, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.#ctor(System.String,System.Data.Odbc.OdbcType,System.Int32,System.Data.ParameterDirection,System.Byte,System.Byte,System.String,System.Data.DataRowVersion,System.Boolean,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+        <Parameter Name="odbcType" Type="System.Data.Odbc.OdbcType" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="parameterDirection" Type="System.Data.ParameterDirection" />
+        <Parameter Name="precision" Type="System.Byte" />
+        <Parameter Name="scale" Type="System.Byte" />
+        <Parameter Name="sourceColumn" Type="System.String" />
+        <Parameter Name="sourceVersion" Type="System.Data.DataRowVersion" />
+        <Parameter Name="sourceColumnNullMapping" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">パラメーターの名前。</param>
+        <param name="odbcType"><see cref="P:System.Data.Odbc.OdbcParameter.OdbcType" /> 値のいずれか。</param>
+        <param name="size">パラメーターの長さ。</param>
+        <param name="parameterDirection"><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。</param>
+        <param name="precision"><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> を解決する際の、小数点の左側および右側の桁数の合計。</param>
+        <param name="scale"><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> を解決する際の、小数点以下の合計桁数。</param>
+        <param name="sourceColumn">ソース列の名前。</param>
+        <param name="sourceVersion"><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。</param>
+        <param name="sourceColumnNullMapping">
+          <see langword="true" />対応するソース列が null 許容型以外の場合<see langword="false" />されていない場合。</param>
+        <param name="value"><see cref="T:System.Data.Odbc.OdbcParameter" /> の値である <see cref="T:System.Object" />。</param>
+        <summary>パラメーター名、データ型、長さ、ソース列名、パラメーターの方向、数値の有効桁数、およびその他のプロパティを使用する <see cref="T:System.Data.Odbc.OdbcParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、表示、<xref:System.Data.Odbc.OdbcParameter.ParameterName%2A>です。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+  Dim parameter As New OdbcParameter("Description", OdbcType.VarChar, 11, ParameterDirection.Output, True, 0, 0, "Description", DataRowVersion.Current, False, "garden hose")  
+  MessageBox.Show(parameter.ToString())  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+{  
+  OdbcParameter parameter = new OdbcParameter("Description",OdbcType.VarChar,  
+              11,ParameterDirection.Output,true,0,0,"Description",  
+              DataRowVersion.Current, false, "garden hose");  
+  MessageBox.Show(parameter.ToString());  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" /> パラメーターの指定された値が、正しくないバックエンド データ型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DbType">
+      <MemberSignature Language="C#" Value="public override System.Data.DbType DbType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DbType DbType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.DbType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DbType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.DbType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.DbType" /> 値のいずれか。 既定値は、<see cref="T:System.String" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>と<xref:System.Data.Odbc.OdbcParameter.DbType%2A>がリンクされています。 そのため、設定、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>変更、<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>に、サポートする<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>です。  
+  
+ サポートされるデータ型の一覧を参照してください、適切な<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>メンバー。 詳細については、次を参照してください。 [DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Data.DbType.Object>サポートされていませんによって、Microsoft .NET Framework Data Provider for ODBC。  
+  
+   
+  
+## Examples  
+ 次の例では、**ストアド プロシージャの**3 つのパラメーターを使用して、ODBC を使用してプロバイダーを管理します。  
+  
+ [!code-csharp[Classic WebData OdbcParameter.DbType#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.DbType/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcParameter.DbType#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcParameter.DbType/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが有効な <see cref="T:System.Data.DbType" /> に設定されませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public override System.Data.ParameterDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ParameterDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.ParameterDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが入力専用、出力専用、双方向、またはストアド プロシージャの戻り値パラメーターのいずれであるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.ParameterDirection" /> 値のいずれか。 既定値は、<see langword="Input" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Data.ParameterDirection>は`Output`、および関連付けられている実行<xref:System.Data.Odbc.OdbcCommand>、値を返さない、 <xref:System.Data.Odbc.OdbcParameter> null 値が含まれます。 Null 値の処理を使用して、<xref:System.DBNull>クラスです。  
+  
+ `Output`、 `InputOut`、および`ReturnValue`呼び出しで返されるパラメーター<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>を呼び出すまでアクセスできません<xref:System.Data.Odbc.OdbcDataReader.Close%2A>または`Dispose`上、<xref:System.Data.Odbc.OdbcDataReader>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateMyProc(connection As OdbcConnection)  
+  
+   Dim command As OdbcCommand = connection.CreateCommand()  
+   command.CommandText = "{ call MyProc(?,?,?) }"  
+   command.Parameters.Add("", OdbcType.Int).Value = 1  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 2  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 3  
+  
+End Sub  
+```  
+  
+```csharp  
+public void CreateMyProc(OdbcConnection connection)   
+{  
+   OdbcCommand command = connection.CreateCommand();  
+   command.CommandText = "{ call MyProc(?,?,?) }";  
+   command.Parameters.Add("", OdbcType.Int).Value = 1;  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 2;  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 3;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティが、有効な <see cref="T:System.Data.ParameterDirection" /> 値のいずれかに設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public override bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターが null 値を受け取るかどうかを示す値を取得または設定します。</summary>
+        <value>
+          null 値を受け取る場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Null 値の処理を使用して、<xref:System.DBNull>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+   Dim parameter As New OdbcParameter("Description", OdbcType.VarChar, 88)  
+   parameter.IsNullable = True  
+   parameter.Direction = ParameterDirection.Output  
+End Sub  
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+{  
+   OdbcParameter parameter = new OdbcParameter("Description", OdbcType.VarChar, 88);  
+   parameter.IsNullable = true;  
+   parameter.Direction = ParameterDirection.Output;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OdbcType">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcType OdbcType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Odbc.OdbcType OdbcType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.OdbcType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Data.Common.DbProviderSpecificTypeProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの <see cref="T:System.Data.Odbc.OdbcType" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcType" />値が、<see cref="T:System.Data.Odbc.OdbcType" />のパラメーターです。 既定値は、<see langword="Nchar" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>と<xref:System.Data.Odbc.OdbcParameter.DbType%2A>がリンクされています。 そのため、設定、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>変更、<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>に、サポートする<xref:System.Data.Odbc.OdbcType>です。  
+  
+ サポートされるデータ型の一覧を参照してください、適切な<xref:System.Data.Odbc.OdbcType>メンバー。 詳細については、次を参照してください。 [DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterName">
+      <MemberSignature Language="C#" Value="public override string ParameterName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ParameterName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.ParameterName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcParameter" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcParameter" /> の名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きパラメーターは、代わりには、ODBC の .NET プロバイダーは、コマンド テキストの構文では疑問符 (?) でマークされている位置指定パラメーターを使用します。 内のパラメーターのオブジェクト、<xref:System.Data.Odbc.OdbcParameterCollection>ストアド プロシージャで受け入れられる実際のパラメーターまたはパラメーター化 SQL ステートメントを順番に基づき、互いに対応していると、<xref:System.Data.Odbc.OdbcParameter>オブジェクトは、パラメーター名の代わりに、コレクションに挿入されます。 パラメーター名は、指定することができますが、パラメーター オブジェクトのバインド中無視されます。  
+  
+   
+  
+## Examples  
+ 次の例は、データ ソースにテーブル名がある前提としています。 **MyTable**ととして定義されている MyProc をという名前のストアド プロシージャ。  
+  
+```  
+CREATE TABLE MyTable (col1 int, col2 smallmoney, col3 decimal)  
+CREATE PROC MyProc (@p1 int, @p2 smallmoney, @p3 decimal) AS INSERT INTO MyTable VALUES (@p1, @p2, @p3)  
+```  
+  
+ 次の例では、パラメーターを作成し、MyProc ストアド プロシージャを呼び出します。  
+  
+```vb  
+Public Sub CreateMyProc(connection As OdbcConnection)  
+  
+   Dim command As OdbcCommand = connection.CreateCommand()  
+  
+   command.CommandText = "{ call MyProc(?,?,?) }"  
+   command.Parameters.Add("", OdbcType.Int).Value = 1  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 2  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 3  
+  
+End Sub  
+```  
+  
+```csharp  
+public void CreateMyProc(OdbcConnection connection)   
+{  
+   OdbcCommand command = myConnection.CreateCommand();  
+  
+   command.CommandText = "{ call MyProc(?,?,?) }";  
+   command.Parameters.Add("", OdbcType.Int).Value = 1;  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 2;  
+   command.Parameters.Add("", OdbcType.Decimal).Value = 3;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Precision">
+      <MemberSignature Language="C#" Value="public byte Precision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Precision" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表すために使用する数字の数、<see cref="P:System.Data.Odbc.OdbcParameter.Value" />プロパティです。</summary>
+        <value><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> プロパティを表すために使用する最大桁数。 既定値は 0 で、データ プロバイダーでの有効桁数を設定することを示します<see cref="P:System.Data.Odbc.OdbcParameter.Value" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データベース内の値以外の値にこのプロパティの設定では、データ プロバイダーの実装に依存し、エラー コード、切り捨て、または round データを返す可能性があります。  
+  
+ <xref:System.Data.Odbc.OdbcParameter.Precision%2A>プロパティのみに影響を与えるパラメーターが<xref:System.Data.Odbc.OdbcType>は`Decimal`または`Numeric`です。 他のデータ型の<xref:System.Data.Odbc.OdbcParameter.Precision%2A>は無視されます。  
+  
+> [!NOTE]
+>  データベースに渡されるデータを強制するには、このプロパティの使用はサポートされていません。 Round、切り捨てる、またはそれ以外の場合、データベースに渡す前にデータを変換を使用して、<xref:System.Math>クラスの一部である、`System`パラメーターの値を割り当てる前に名前空間`Value`プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim parameter As New OdbcParameter("Price", OdbcType.Decimal)  
+    parameter.Value = 3.1416  
+    parameter.Precision = 8  
+    parameter.Scale = 4  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    OdbcParameter parameter = new OdbcParameter("Price", OdbcType.Decimal);  
+    parameter.Value = 3.1416;  
+    parameter.Precision = 8;  
+    parameter.Scale = 4;  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetDbType">
+      <MemberSignature Language="C#" Value="public override void ResetDbType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetDbType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.ResetDbType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Odbc.OdbcParameter" /> に関連付けられている型をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドを実行するときに、パラメーター値を含むまたはパラメーターの型は、コードで明示的に設定することができます値からその型を推論することができます。 このメソッドを呼び出すことでは、その型パラメーターに渡される値からもう一度推測できるようににパラメーターをリセットします。 このメソッドを呼び出すと、両方の影響を与える、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>と<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>のプロパティ、<xref:System.Data.Odbc.OdbcParameter>です。  
+  
+ 呼び出す<xref:System.Data.Odbc.OdbcParameter.ResetDbType%2A>リセット<xref:System.Data.Odbc.OdbcParameter.DbType%2A>をその既定値 (文字列)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetOdbcType">
+      <MemberSignature Language="C#" Value="public void ResetOdbcType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetOdbcType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.ResetOdbcType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Odbc.OdbcParameter" /> に関連付けられている型をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドを実行するときに、パラメーター値を含むまたはパラメーターの型は、コードで明示的に設定することができます値からその型を推論することができます。 このメソッドを呼び出すことでは、その型パラメーターに渡される値からもう一度推測できるようににパラメーターをリセットします。 このメソッドを呼び出すと、両方の影響を与える、<xref:System.Data.Odbc.OdbcParameter.DbType%2A>と<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>のプロパティ、<xref:System.Data.Odbc.OdbcParameter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public byte Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> が解決される、小数点以下の桁数を取得または設定します。</summary>
+        <value><see cref="P:System.Data.Odbc.OdbcParameter.Value" /> が解決される、小数点以下の桁数。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcParameter.Scale%2A>プロパティは decimal および numeric の入力パラメーターにのみ使用します。  
+  
+ データベース内の値以外の値にこのプロパティの設定の効果データ プロバイダーの実装に依存し可能性がありますエラー コードが返さまたは切り捨てるか丸めますデータ。  
+  
+ <xref:System.Data.Odbc.OdbcParameter.Scale%2A>プロパティのみに影響を与えるパラメーターが<xref:System.Data.Odbc.OdbcType>は`Decimal`または`Numeric`です。 他のデータ型の<xref:System.Data.Odbc.OdbcParameter.Scale%2A>は無視されます。  
+  
+ SQL Server ネイティブ クライアント 10 (またはそれ以降) を使用する場合の型が Decimal、Numeric、VarNumeric、DBDate、または DBTimeStamp パラメーターをバインドするには、適切なスケール値手動で指定する必要があります。  
+  
+> [!NOTE]
+>  データベースに渡されるデータを強制するには、このプロパティの使用はサポートされていません。 Round、切り捨てる、またはそれ以外の場合、データベースに渡す前にデータを変換を使用して、<xref:System.Math>クラスの一部である、`System`パラメーターの値を割り当てる前に名前空間`Value`プロパティです。  
+  
+> [!NOTE]
+>  .NET Framework version 1.0 に含まれている .NET framework データ プロバイダーでは確認されません、`scale`の<xref:System.Decimal>パラメーターの値。 これには、変更されたデータをデータ ソースに挿入されている可能性があります。 .NET Framework version 1.0 を使用している場合は、s を検証する`cale`d の`ecimal`値パラメーターの値を設定する前にします。 .NET Framework version 1.1 またはそれ以降のバージョンを使用するときに`scale`を超える値、`decimal`基になる ODBC ドライバーの動作である場合、パラメーターの小数点以下桁数をスケールで切り捨てだけことがあります。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim parameter As New OdbcParameter("Price", OdbcType.Decimal)  
+    parameter.Value = 3.1416  
+    parameter.Precision = 8  
+    parameter.Scale = 4  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    OdbcParameter parameter = new OdbcParameter("Price", OdbcType.Decimal);  
+    parameter.Value = 3.1416;  
+    parameter.Precision = 8;  
+    parameter.Scale = 4;  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public override int Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列内のデータの最大サイズを設定します。</summary>
+        <value>列内のデータの最大サイズ。 既定値はパラメーター値から推論されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcParameter.Size%2A> Binary と文字列型のプロパティを使用します。  
+  
+ 文字列以外のデータ型と ANSI の文字列データは、の<xref:System.Data.Odbc.OdbcParameter.Size%2A>プロパティのバイト数を示します。 Unicode 文字列データの<xref:System.Data.Odbc.OdbcParameter.Size%2A>文字の数を示します。 文字列の数では、終端の文字は含まれません。  
+  
+ 可変長データ型で`Size`サーバーに送信するデータの最大量を示します。 たとえば、Unicode 文字列値、 `Size` 100 を最初の文字に、サーバーに送信されるデータの量が制限される可能性があります。  
+  
+ 双方向と出力のパラメーターと戻り値は、の値を設定する必要があります`Size`です。 これは、入力パラメーターに必要なかどうかを明示的に設定の値は、推論指定されたパラメーターの実際のサイズからパラメーター化されたステートメントを実行するとします。  
+  
+ <xref:System.Data.Common.DbParameter.DbType%2A>、 <xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>、および<xref:System.Data.Odbc.OdbcParameter.Size%2A>設定で、パラメーターのプロパティを推測できなければ<xref:System.Data.Odbc.OdbcParameter.Value%2A>です。 そのため、それらを指定する必要はありません。 ただし、これらはで<xref:System.Data.Odbc.OdbcParameter>プロパティの設定。 たとえば、パラメーターのサイズが推論されました`Size`ステートメントの実行後に推定値が含まれていません。  
+  
+> [!NOTE]
+>  `OdbcParameter`で、<xref:System.Data.Odbc.OdbcParameter.Direction%2A>の`ParameterDirection.Output`、 `ParameterDirection.InputOutput`、または`ParameterDirection.ReturnValue`、データ ソースによって返される値のサイズは、指定値を超えた場合、コマンドを実行すると、例外がスローされます`Size`の<xref:System.Data.Odbc.OdbcParameter>です。  
+  
+ 固定長データ型の値の`Size`は無視されます。 サーバーへのパラメーターの値を送信するときに、プロバイダーを使用して、情報として利用できます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim myValue As String = "12 foot scarf - multiple colors, one previous owner"  
+    Dim parameter As New OdbcParameter("Description", OdbcType.VarChar)  
+    parameter.Direction = ParameterDirection.Output  
+    parameter.Size = myValue.Length  
+    parameter.Value = myValue  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    string myValue = "12 foot scarf - multiple colors, one previous owner";  
+    OdbcParameter parameter = new OdbcParameter("Description", OdbcType.VarChar);  
+    parameter.Direction = ParameterDirection.Output;  
+    parameter.Size = myValue.Length;  
+    parameter.Value = myValue;  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumn">
+      <MemberSignature Language="C#" Value="public override string SourceColumn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.SourceColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にマップされたソース列の名前、<see cref="T:System.Data.DataSet" />ロードしたり返したりするために使用して、<see cref="P:System.Data.Odbc.OdbcParameter.Value" />です。</summary>
+        <value>このパラメーターの値の設定に使用されるソース列の名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Data.Odbc.OdbcParameter.SourceColumn%2A>と列から取得したが、パラメーターの値、空の文字列以外の値に設定されている、`SourceColumn`名。 場合<xref:System.Data.Odbc.OdbcParameter.Direction%2A>に設定されている`Input`から値を取得、<xref:System.Data.DataSet>です。 場合`Direction`に設定されている`Output`、データ ソースから値を取得します。 A`Direction`の`InputOutput`両方の組み合わせです。  
+  
+ 使用する方法についての詳細、<xref:System.Data.Odbc.OdbcParameter.SourceColumn%2A>プロパティを参照してください[DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)と[Dataadapter によるデータ ソースを更新](~/docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim parameter As New OdbcParameter("Description", OdbcType.VarChar, 88)  
+    parameter.SourceColumn = "Description"  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    OdbcParameter parameter = new OdbcParameter("Description", OdbcType.VarChar, 88);  
+    parameter.SourceColumn = "Description";  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceColumnNullMapping">
+      <MemberSignature Language="C#" Value="public override bool SourceColumnNullMapping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SourceColumnNullMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.SourceColumnNullMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース列が null 許容かどうかを示す値を設定または取得します。 これにより、<see cref="T:System.Data.Common.DbCommandBuilder" />正しく null 許容列の Update ステートメントを生成します。</summary>
+        <value>
+          ソース列が null 許容である場合は <see langword="true" />。null 許容ではない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcParameter.SourceColumnNullMapping%2A>によって使用される、 <xref:System.Data.Common.DbCommandBuilder> null 許容の列を処理するときに、更新コマンドを正しく生成します。 一般に、使用の<xref:System.Data.Odbc.OdbcParameter.SourceColumnNullMapping%2A>から継承する開発者に制限されて<xref:System.Data.Common.DbCommandBuilder>です。  
+  
+ <xref:System.Data.Common.DbCommandBuilder>このプロパティを使用して、基になる列が、null 値し、このプロパティを設定するかどうかを判断する`true`、null 許容である場合と`false`されていない場合。 ときに<xref:System.Data.Common.DbCommandBuilder>が調べ、Update ステートメントを生成する、<xref:System.Data.Odbc.OdbcParameter.SourceColumnNullMapping%2A>パラメーターごとにします。 プロパティが場合`true`、<xref:System.Data.Common.DbCommandBuilder>次の例のように WHERE 句が生成されます。 このクエリ式では、"FieldName"は、フィールドの名前を表します。  
+  
+```  
+((@IsNull_FieldName = 1 AND FieldName IS NULL) OR   
+  (FieldName = @Original_FieldName))  
+```  
+  
+ 場合<xref:System.Data.Odbc.OdbcParameter.SourceColumnNullMapping%2A>フィールドが false の場合、<xref:System.Data.Common.DbCommandBuilder>次の WHERE 句が生成されます。  
+  
+```  
+FieldName = @OriginalFieldName  
+```  
+  
+ さらに、@IsNull_FieldNameそうでない場合、null と 0 をソース フィールドが存在する場合、1 が含まれています。 このメカニズムでは、SQL Server のパフォーマンスの最適化ではの複数のプロバイダーの間で機能する一般的なコードを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceVersion">
+      <MemberSignature Language="C#" Value="public override System.Data.DataRowVersion SourceVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.DataRowVersion SourceVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.SourceVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataRowVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.DataRowVersion" />を読み込むときに使用する<see cref="P:System.Data.Odbc.OdbcParameter.Value" />です。</summary>
+        <value><see cref="T:System.Data.DataRowVersion" /> 値のいずれか。 既定値は Current です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `SourceVersion`によって使用される<xref:System.Data.Odbc.OdbcDataAdapter.UpdateCommand%2A>中に、<xref:System.Data.Common.DbDataAdapter.Update*>操作をパラメーターの値が 現在または元に設定されているかどうかを判断します。 これにより、プライマリ キーを更新できます。  
+  
+ このプロパティのバージョンに、<xref:System.Data.DataRow>いずれかで使用される、`Item`プロパティ (`DataRow`インデクサー)、または<xref:System.Data.DataRow.GetChildRows%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim parameter As New OdbcParameter("Description", OdbcType.VarChar, 88)  
+    parameter.SourceColumn = "Description"  
+    parameter.SourceVersion = DataRowVersion.Current  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    OdbcParameter parameter = new OdbcParameter("Description", OdbcType.VarChar, 88);  
+    parameter.SourceColumn = "Description";  
+    parameter.SourceVersion = DataRowVersion.Current;  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」をご覧ください。</summary>
+        <returns>新しい<see cref="T:System.Object" />のこのインスタンスのコピーであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Odbc.OdbcParameter> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcParameter.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Data.Odbc.OdbcParameter.ParameterName" /> を表す文字列を取得します。</summary>
+        <returns><see cref="P:System.Data.Odbc.OdbcParameter.ParameterName" /> を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcParameter.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターの値を取得または設定します。</summary>
+        <value>パラメーターの値である <see cref="T:System.Object" />。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力パラメーターの値がバインドされている、<xref:System.Data.Odbc.OdbcCommand>ですが、サーバーに送信します。 完了時に出力パラメーターと戻り値パラメーターの値を設定、<xref:System.Data.Odbc.OdbcCommand>後、<xref:System.Data.Odbc.OdbcDataReader>が閉じられます。  
+  
+ Null パラメーター値をサーバーに送信するときにユーザーを指定する必要があります<xref:System.DBNull>null でないです。 システムの null 値は、値がない空オブジェクトです。 <xref:System.DBNull> は、null 値を表すために使用します。 パラメーターを使用して、設定の既定値を持つパラメーターを使用してストアド プロシージャを呼び出す場合<xref:System.Data.Odbc.OdbcParameter.Value%2A>に null の原因が既定値が使用される値します。  
+  
+ アプリケーションでは、データベースの種類を指定する場合、プロバイダーがサーバーにデータを送信するとき、バインドされた値がその型に変換されます。 プロバイダーがサポートしている場合は、任意の型の値を変換しようとした場合、<xref:System.IConvertible>インターフェイスです。 指定した型の値と互換性がない場合、変換エラーがあります。  
+  
+ 両方の<xref:System.Data.Odbc.OdbcParameter.DbType%2A>と<xref:System.Data.Odbc.OdbcParameter.OdbcType%2A>プロパティを設定して推論<xref:System.Data.Odbc.OdbcParameter.Value%2A>です。 かどうか必要に応じて、サイズ、有効桁数、および小数点以下桁数もから推測<xref:System.Data.Odbc.OdbcParameter.Value%2A>パラメーター化ステートメントが実行されるとします。 ただし、推論された値は、ユーザーには公開されません。  
+  
+ <xref:System.Data.Odbc.OdbcParameter.Value%2A>でプロパティを上書き、`Update`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Data.Odbc.OdbcParameter>し、一部のプロパティを設定します。  
+  
+```vb  
+Public Sub CreateOdbcParameter()  
+    Dim parameter As New OdbcParameter("Description", OdbcType.VarChar, 88)  
+    parameter.Value = "garden hose"  
+End Sub   
+```  
+  
+```csharp  
+public void CreateOdbcParameter()   
+ {  
+    OdbcParameter parameter = new OdbcParameter("Description", OdbcType.VarChar, 88);  
+    parameter.Value = "garden hose";  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

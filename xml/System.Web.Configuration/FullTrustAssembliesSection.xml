@@ -1,0 +1,96 @@
+<Type Name="FullTrustAssembliesSection" FullName="System.Web.Configuration.FullTrustAssembliesSection">
+  <TypeSignature Language="C#" Value="public sealed class FullTrustAssembliesSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FullTrustAssembliesSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.FullTrustAssembliesSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>完全信頼アセンブリのセットを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.FullTrustAssembliesSection>クラスでは、ASP.NET 部分的に信頼されたアプリケーション ドメイン内で完全に信頼されたアセンブリを指定することができます。  
+  
+ アセンブリを構成するには、その公開キーの 16 進数文字列形式が必要です。 厳密な名前 (Sn.exe) ツールを使用して、このキーを取得します。 このツールは、構成で使用する公開キーの 16 進数文字列表現を生成します。 また、公開キー トークンを生成します。 詳細については、「[Sn.exe (厳密名ツール)](~/docs/framework/tools/sn-exe-strong-name-tool.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用して完全に信頼されたアセンブリを指定する方法を示しています、`fullTrustAssemblies`構成ファイル内のセクションです。  
+  
+```  
+<fullTrustAssemblies>  
+  <add assemblyName="MyAssembly" version="1.0.0.0"   
+    publicKey="hex_key_representation" />  
+</fullTrustAssemblies>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FullTrustAssembliesSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.FullTrustAssembliesSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.FullTrustAssembliesSection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTrustAssemblies">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FullTrustAssemblyCollection FullTrustAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FullTrustAssemblyCollection FullTrustAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FullTrustAssembliesSection.FullTrustAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", IsDefaultCollection=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FullTrustAssemblyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.FullTrustAssemblyCollection" />完全に信頼されたアセンブリのコレクション。</summary>
+        <value>完全に信頼されたアセンブリのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.FullTrustAssembliesSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

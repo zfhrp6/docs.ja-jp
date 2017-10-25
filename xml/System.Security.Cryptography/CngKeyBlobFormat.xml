@@ -1,0 +1,573 @@
+<Type Name="CngKeyBlobFormat" FullName="System.Security.Cryptography.CngKeyBlobFormat">
+  <TypeSignature Language="C#" Value="public sealed class CngKeyBlobFormat : IEquatable&lt;System.Security.Cryptography.CngKeyBlobFormat&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit CngKeyBlobFormat extends System.Object implements class System.IEquatable`1&lt;class System.Security.Cryptography.CngKeyBlobFormat&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.CngKeyBlobFormat" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Security.Cryptography.CngKeyBlobFormat&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Microsoft CNG (Cryptography Next Generation) オブジェクトで使用するためのキー BLOB 形式を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.CngKeyBlobFormat>クラスは、ユーティリティ クラス。 静的プロパティ、比較のメソッド、およびキー BLOB 形式の名前を指定する文字列を内部的に保持された、プライベートで構成されます。  
+  
+ 静的プロパティの戻り値<xref:System.Security.Cryptography.CngKeyBlobFormat>オブジェクト。 各オブジェクトの内部文字列の名前は、静的プロパティの名前に対応するキー BLOB 形式の名前に初期化されます。  
+  
+ 静的プロパティで対応されていないキー BLOB 形式のオブジェクトを作成するのにこのクラスを使用することもできます。  
+  
+ CNG のいくつかのクラス (など<xref:System.Security.Cryptography.CngKey>) を受け入れる<xref:System.Security.Cryptography.CngKeyBlobFormat>オブジェクトを介して、`format`パラメーター。 クラスが受信すると、<xref:System.Security.Cryptography.CngKeyBlobFormat>オブジェクトを呼び出して、オブジェクトのキーの BLOB の形式の埋め込み名を取得<xref:System.Security.Cryptography.CngKeyBlobFormat.Format%2A>プロパティです。  
+  
+ したがって、<xref:System.Security.Cryptography.CngKeyBlobFormat>既知のキー BLOB 形式の列挙体として機能します。 文字列の代わりに厳密に型指定された値を使用して、よく知られているキー BLOB 形式を識別できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngKeyBlobFormat (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">初期化するためにキー BLOB 形式です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />指定の形式を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの主な目的は、作成するためのメソッドを提供<xref:System.Security.Cryptography.CngKeyBlobFormat>の静的プロパティでは表されないの形式の種類のオブジェクト、<xref:System.Security.Cryptography.CngKeyBlobFormat>クラスです。 この機能により、将来[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]リリース、サービス パック、およびサード パーティ製開発者は、現在利用可能なキー BLOB 形式と同じようにアクセス可能な新しいのキー BLOB 形式を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="format" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="format" />パラメーターの長さが 0 (ゼロ)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EccFullPrivateBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat EccFullPrivateBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat EccFullPrivateBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.EccFullPrivateBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>明示的な曲線パラメーターを含む楕円曲線暗号 (ECC) キーの秘密キー BLOB を指定する <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトを取得します。</summary>
+        <value>秘密キー BLOB を示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EccFullPublicBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat EccFullPublicBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat EccFullPublicBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.EccFullPublicBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>明示的な曲線パラメーターを含む楕円曲線暗号 (ECC) キーの公開キー BLOB を指定する <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトを取得します。</summary>
+        <value>公開キー BLOB を示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EccPrivateBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat EccPrivateBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat EccPrivateBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.EccPrivateBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />楕円曲線暗号 (ECC) キーの秘密キー BLOB を指定するオブジェクト。</summary>
+        <value>ECC 秘密キーの BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECC 秘密キー BLOB の形式には、ECC キーのパブリックおよびプライベートの部分が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EccPublicBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat EccPublicBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat EccPublicBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.EccPublicBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />楕円曲線暗号 (ECC) キーの公開キー BLOB を指定するオブジェクト。</summary>
+        <value>ECC 公開キー BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECC 公開キー BLOB の形式には、ECC キーのパブリックな部分のみが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトと現在の <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="obj" />パラメーターは、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクトが現在のオブジェクトと同じキー BLOB 形式を指定するそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Security.Cryptography.CngKeyBlobFormat other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Security.Cryptography.CngKeyBlobFormat other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.Equals(System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在の <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトと比較するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトと現在の <see cref="T:System.Security.Cryptography.CngKeyBlobFormat" /> オブジェクトを比較します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="other" />パラメーターが現在のオブジェクトと同じキー BLOB 形式を指定する場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー BLOB 形式の名前を取得、現在<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクトを指定します。</summary>
+        <value>埋め込まれたキー BLOB の形式の名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericPrivateBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat GenericPrivateBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat GenericPrivateBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.GenericPrivateBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />ジェネリック プライベート キーの BLOB を指定するオブジェクト。</summary>
+        <value>汎用プライベート キーの BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 汎用プライベート キーの BLOB は、任意の型の秘密キーを含めることができ、対応する公開キーを必ずしも含まないです。 BLOB を格納するキーの種類は、BLOB を調べることによってのみ決定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenericPublicBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat GenericPublicBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat GenericPublicBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.GenericPublicBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />汎用的な公開キー BLOB を指定するオブジェクト。</summary>
+        <value>汎用的な公開キー BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 汎用的な公開キーの BLOB には、任意の型の公開キーを含めることができます。 BLOB を含む公開キーの種類は、BLOB を調べることによってのみ決定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の埋め込みのキー BLOB 形式のハッシュ値を生成<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクト。</summary>
+        <returns>埋め込まれたキー BLOB 形式のハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Security.Cryptography.CngKeyBlobFormat left, System.Security.Cryptography.CngKeyBlobFormat right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Security.Cryptography.CngKeyBlobFormat left, class System.Security.Cryptography.CngKeyBlobFormat right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.op_Equality(System.Security.Cryptography.CngKeyBlobFormat,System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+        <Parameter Name="right" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="left">キー BLOB 形式を指定するオブジェクト。</param>
+        <param name="right">によって識別されるオブジェクトと比較する 2 番目のオブジェクト、<c>左</c>パラメーター。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクトが同じキー BLOB 形式を指定します。</summary>
+        <returns>
+          <see langword="true" />2 つのオブジェクトが同じキー BLOB は、形式を指定した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Security.Cryptography.CngKeyBlobFormat left, System.Security.Cryptography.CngKeyBlobFormat right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Security.Cryptography.CngKeyBlobFormat left, class System.Security.Cryptography.CngKeyBlobFormat right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.op_Inequality(System.Security.Cryptography.CngKeyBlobFormat,System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+        <Parameter Name="right" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="left">キー BLOB 形式を指定するオブジェクト。</param>
+        <param name="right">によって識別されるオブジェクトと比較する 2 番目のオブジェクト、<c>左</c>パラメーター。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクトが同じキー BLOB 形式を指定しません。</summary>
+        <returns>
+          <see langword="true" />2 つのオブジェクトを指定しなかった場合、同じキー BLOB 形式です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpaqueTransportBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat OpaqueTransportBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat OpaqueTransportBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.OpaqueTransportBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />不透明なトランスポート キー BLOB を指定するオブジェクト。</summary>
+        <value>不透明なトランスポート キー BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明なトランスポート キー BLOB の形式が、によって決定され、各キー格納プロバイダーに関連付けられています。 インポートとトランスポートの不透明な形式でキーをエクスポートは、両方の操作を同一のキー記憶域プロバイダーを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pkcs8PrivateBlob">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKeyBlobFormat Pkcs8PrivateBlob { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Cryptography.CngKeyBlobFormat Pkcs8PrivateBlob" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKeyBlobFormat.Pkcs8PrivateBlob" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyBlobFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />秘密キー情報構文標準 (PKCS 8) キー BLOB を指定するオブジェクト。</summary>
+        <value>PKCS 8 秘密キー BLOB を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ PKCS 8 秘密キー BLOB には、PKCS #8 形式でプライベートとパブリックの両方のキー マテリアルが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKeyBlobFormat.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>キー BLOB 形式の名前を取得、現在<see cref="T:System.Security.Cryptography.CngKeyBlobFormat" />オブジェクトを指定します。</summary>
+        <returns>埋め込まれたキー BLOB の形式の名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

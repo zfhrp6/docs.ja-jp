@@ -1,0 +1,78 @@
+<Type Name="ForeignKeyAttribute" FullName="System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute">
+  <TypeSignature Language="C#" Value="public class ForeignKeyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ForeignKeyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リレーションシップで外部キーとして使用されるプロパティを示します。 外部キー プロパティに注釈を配置して関連付けられたナビゲーション プロパティ名を指定したり、ナビゲーション プロパティに注釈を配置して関連付けられた外部キー名を指定したりすることもできます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ForeignKeyAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">外部キーのプロパティに ForeigKey 属性を追加する場合は、対応するナビゲーション プロパティの名前を指定する必要があります。 ナビゲーション プロパティに ForeigKey 属性を追加する場合は、対応する外部キーの名前を指定する必要があります。 1 つのナビゲーション プロパティに複数の外部キーが存在する場合は、コンマを使用して外部キー名の一覧を区切ります。 詳細については、次を参照してください。[コード最初データ注釈](http://msdn.microsoft.com/data/jj591583#relationships)です。</param>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.Schema.ForeignKeyAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部キーのプロパティに ForeigKey 属性を追加する場合は、対応するナビゲーション プロパティの名前を指定する必要があります。 ナビゲーション プロパティに ForeigKey 属性を追加する場合は、対応する外部キーの名前を指定する必要があります。 1 つのナビゲーション プロパティに複数の外部キーが存在する場合は、コンマを使用して外部キー名の一覧を区切ります。 詳細については、次を参照してください。[コード最初データ注釈](http://msdn.microsoft.com/data/jj591583#relationships)です。</summary>
+        <value>関連付けられたナビゲーション プロパティまたは関連付けられた外部キーのプロパティの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

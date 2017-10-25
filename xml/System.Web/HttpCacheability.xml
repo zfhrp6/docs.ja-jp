@@ -1,0 +1,124 @@
+<Type Name="HttpCacheability" FullName="System.Web.HttpCacheability">
+  <TypeSignature Language="C#" Value="public enum HttpCacheability" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpCacheability extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpCacheability" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>設定に使用される列挙の値を提供、 <see langword="Cache-Control" /> HTTP ヘッダー。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、RFC 2616 を参照してください: Hypertext Transfer Protocol--http/1.1、上、 [World Wide Web Consortium (W3C)](http://go.microsoft.com/fwlink/?linkid=37125) Web サイトです。 具体的には、完全な詳細については、「セクション 14.9"Cache-control"とセクション 13、「HTTP キャッシュ処理します」  
+  
+> [!NOTE]
+>  `NoCache`一般的な HTTP 1.0 要求ディレクティブを送信しません`Pragma: no-cache`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoCache">
+      <MemberSignature Language="C#" Value="NoCache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability NoCache = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.NoCache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セット、<see langword="Cache-Control: no-cache" />ヘッダー。 フィールド名がない場合は、ディレクティブが要求全体と、共有に適用されます (プロキシ サーバー) のキャッシュは元の Web サーバーで正常に再検証を強制する必要があります。 フィールドの名前を持つディレクティブは名前付きフィールドにのみ適用されます。共有キャッシュからの応答の残りの部分を指定することがあります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Private">
+      <MemberSignature Language="C#" Value="Private" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability Private = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.Private" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値です。 セット<see langword="Cache-Control: private" />応答がクライアントでのみキャッシュがあり、(プロキシ サーバー) のキャッシュ共有していないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Public">
+      <MemberSignature Language="C#" Value="Public" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability Public = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.Public" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セット<see langword="Cache-Control: public" />はキャッシュ応答がクライアントと共有 (プロキシ) でキャッシュできることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="Server" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability Server = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.Server" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答が、元のサーバーでのみキャッシュされていることを指定します。 ような<see cref="F:System.Web.HttpCacheability.NoCache" />オプション。 クライアントが受信、<see langword="Cache-Control: no-cache" />ディレクティブが、ドキュメントは、元のサーバーにキャッシュします。 これは、<see cref="F:System.Web.HttpCacheability.ServerAndNoCache" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerAndNoCache">
+      <MemberSignature Language="C#" Value="ServerAndNoCache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability ServerAndNoCache = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.ServerAndNoCache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>両方の設定を適用<see cref="F:System.Web.HttpCacheability.Server" />と<see cref="F:System.Web.HttpCacheability.NoCache" />コンテンツがサーバーにキャッシュしますが、応答をキャッシュする機能を明示的に拒否他のすべてのことを示すことです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerAndPrivate">
+      <MemberSignature Language="C#" Value="ServerAndPrivate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.HttpCacheability ServerAndPrivate = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.HttpCacheability.ServerAndPrivate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheability</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーとクライアントが、これ以外の場所で応答がキャッシュされることを示します。 プロキシ サーバーは応答をキャッシュすることはできません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

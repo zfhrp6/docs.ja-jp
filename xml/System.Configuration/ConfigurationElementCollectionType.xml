@@ -1,0 +1,111 @@
+<Type Name="ConfigurationElementCollectionType" FullName="System.Configuration.ConfigurationElementCollectionType">
+  <TypeSignature Language="C#" Value="public enum ConfigurationElementCollectionType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ConfigurationElementCollectionType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationElementCollectionType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>型を指定します、<see cref="T:System.Configuration.ConfigurationElementCollectionType" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体にはすべての可能な戻り値が含まれています、<xref:System.Configuration.ConfigurationElementCollection.CollectionType%2A>プロパティです。 構成設定を正しくマージを実行時に、構成システムで使用されます。 拡張するカスタム クラスを作成するときにも使用される<xref:System.Configuration.ConfigurationElementCollection>です。  
+  
+ 既定では、型、<xref:System.Configuration.ConfigurationElementCollection>オブジェクトが AddRemoveClearMap です。 BasicMap が必要な場合は、上書き、<xref:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap>プロパティを拡張するときに<xref:System.Configuration.ConfigurationElementCollectionType.BasicMap>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddRemoveClearMap">
+      <MemberSignature Language="C#" Value="AddRemoveClearMap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationElementCollectionType AddRemoveClearMap = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の種類の<see cref="T:System.Configuration.ConfigurationElementCollection" />します。 この型のコレクションには、構成ファイルの階層全体でマージできる要素が含まれます。 このような階層内の任意のレベルで<see langword="add" />、 <see langword="remove" />、および<see langword="clear" />ディレクティブを使用して、継承されたプロパティを変更し、新しいものを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRemoveClearMapAlternate">
+      <MemberSignature Language="C#" Value="AddRemoveClearMapAlternate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationElementCollectionType AddRemoveClearMapAlternate = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMapAlternate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じ<see cref="F:System.Configuration.ConfigurationElementCollectionType.AddRemoveClearMap" />ただし、この型により、<see cref="T:System.Configuration.ConfigurationElementCollection" />を継承された要素が最後に表示されるように、その内容を並べ替えるオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BasicMap">
+      <MemberSignature Language="C#" Value="BasicMap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationElementCollectionType BasicMap = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationElementCollectionType.BasicMap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この型のコレクションには、すべての子レベルと指定されているレベルに適用する要素が含まれます。 子レベルでは、この型の親要素によって指定されたプロパティを変更できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BasicMapAlternate">
+      <MemberSignature Language="C#" Value="BasicMapAlternate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.ConfigurationElementCollectionType BasicMapAlternate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.ConfigurationElementCollectionType.BasicMapAlternate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementCollectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同じ<see cref="F:System.Configuration.ConfigurationElementCollectionType.BasicMap" />ただし、この型により、<see cref="T:System.Configuration.ConfigurationElementCollection" />を継承された要素が最後に表示されるように、その内容を並べ替えるオブジェクト。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

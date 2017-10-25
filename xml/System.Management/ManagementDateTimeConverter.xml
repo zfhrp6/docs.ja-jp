@@ -1,0 +1,179 @@
+<Type Name="ManagementDateTimeConverter" FullName="System.Management.ManagementDateTimeConverter">
+  <TypeSignature Language="C#" Value="public sealed class ManagementDateTimeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManagementDateTimeConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementDateTimeConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>DMTF の日付および時刻の間隔を CLR 準拠に変換するメソッドを提供<see cref="T:System.DateTime" />と<see cref="T:System.TimeSpan" />形式およびその逆です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ToDateTime">
+      <MemberSignature Language="C#" Value="public static DateTime ToDateTime (string dmtfDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime ToDateTime(string dmtfDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementDateTimeConverter.ToDateTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dmtfDate" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dmtfDate">DMTF の形式で日時を表す文字列。</param>
+        <summary>指定された DMTF datetime に変換します<see cref="T:System.DateTime" />です。 返された<see cref="T:System.DateTime" />システムの現在のタイム ゾーンになります。</summary>
+        <returns>A<see cref="T:System.DateTime" />を表す、指定された DMTF datetime です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI の日付と時刻は DMTF datetime 形式で表されます。 この形式は、WMI SDK のドキュメントで説明します。 DMTF datetime 文字列では、この datetime 文字列で表される UTC オフセットがします。 変換中に<xref:System.DateTime>、UTC オフセットが日付を現在のタイム ゾーンに変換するために使用します。 DMTF の形式に従って特定のフィールドを文字で表すことが ' *'。 これに変換されます、<xref:System.DateTime.MinValue>で表すことができるこのフィールドの値<xref:System.DateTime>です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例に DMTF datetime 文字列の変換、<xref:System.DateTime>です。  
+  
+ [!code-csharp[wminet_ManagementDateTimeConverter_ToDateTime#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDateTime/cs/ManagementDateTimeConverter_ToDateTime.cs#1)]
+ [!code-vb[wminet_ManagementDateTimeConverter_ToDateTime#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDateTime/vb/ManagementDateTimeConverter_ToDateTime.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDmtfDateTime">
+      <MemberSignature Language="C#" Value="public static string ToDmtfDateTime (DateTime date);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToDmtfDateTime(valuetype System.DateTime date) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementDateTimeConverter.ToDmtfDateTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="date" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="date">A <see cref="T:System.DateTime" /> DMTF datetime に変換する日付と時刻を表すです。</param>
+        <summary>変換、指定された<see cref="T:System.DateTime" />DMTF datetime 形式にします。</summary>
+        <returns>DMTF 日付と時刻を表す文字列の指定された<see cref="T:System.DateTime" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI の日付と時刻は DMTF datetime 形式で表されます。 この形式は、WMI SDK のドキュメントで説明します。 表される DMTF datetime 文字列は、現在のタイム ゾーンの UTC オフセットになります。 DMTF の最も低い精度がマイクロ秒単位です。<xref:System.DateTime>、最小有効桁数は<xref:System.DateTime.Ticks%2A>、これは、100 ナノ秒に相当します。 変換中に、 <xref:System.DateTime.Ticks%2A> (マイクロ秒) に変換され、最も近いのマイクロ秒単位に四捨五入します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変換、指定された<xref:System.DateTime>DMTF datetime 形式にします。  
+  
+ [!code-csharp[wminet_ManagementDateTimeConverter_ToDmtfDateTime#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDmtfDateTime/cs/ManagementDateTimeConverter_ToDmtfDateTime.cs#1)]
+ [!code-vb[wminet_ManagementDateTimeConverter_ToDmtfDateTime#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDmtfDateTime/vb/ManagementDateTimeConverter_ToDmtfDateTime.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDmtfTimeInterval">
+      <MemberSignature Language="C#" Value="public static string ToDmtfTimeInterval (TimeSpan timespan);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToDmtfTimeInterval(valuetype System.TimeSpan timespan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementDateTimeConverter.ToDmtfTimeInterval(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timespan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timespan">A <see cref="T:System.TimeSpan" /> DMTF 時間間隔に変換する日付と時刻を表すです。</param>
+        <summary>変換、指定された<see cref="T:System.TimeSpan" />DMTF 時間間隔にします。</summary>
+        <returns>DMTF 時間間隔を表す文字列の指定された<see cref="T:System.TimeSpan" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI の時間間隔は DMTF datetime 形式で表されます。 この形式は、WMI SDK のドキュメントで説明します。 DMTF の最も低い精度がマイクロ秒単位です。<xref:System.TimeSpan>、最小有効桁数は<xref:System.TimeSpan.Ticks%2A>、これは 100 ナノ秒に相当します。 変換中に、 <xref:System.TimeSpan.Ticks%2A> (マイクロ秒) に変換され、最も近いのマイクロ秒単位に四捨五入します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変換、指定された<xref:System.TimeSpan>DMTF 時間間隔にします。  
+  
+ [!code-csharp[wminet_ManagementDateTimeConverter_ToDmtfTimeInterval#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDmtfTimeInterval/cs/ManagementDateTimeConverter_ToDmtfTimeInterval.cs#1)]
+ [!code-vb[wminet_ManagementDateTimeConverter_ToDmtfTimeInterval#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToDmtfTimeInterval/vb/ManagementDateTimeConverter_ToDmtfTimeInterval.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToTimeSpan">
+      <MemberSignature Language="C#" Value="public static TimeSpan ToTimeSpan (string dmtfTimespan);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.TimeSpan ToTimeSpan(string dmtfTimespan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementDateTimeConverter.ToTimeSpan(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dmtfTimespan" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dmtfTimespan">DMTF の時間間隔の文字列形式。</param>
+        <summary>変換指定 DMTF 時間間隔を<see cref="T:System.TimeSpan" />です。</summary>
+        <returns>A <see cref="T:System.TimeSpan" /> DMTF の指定した時間間隔を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WMI の時間間隔は DMTF 形式で表されます。 この形式は、WMI SDK のドキュメントで説明します。 DMTF の時間間隔の値よりも詳細が<xref:System.TimeSpan.MaxValue>し<xref:System.ArgumentOutOfRangeException>がスローされます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は変換指定 DMTF 時間間隔を<xref:System.TimeSpan>です。  
+  
+ [!code-csharp[wminet_ManagementDateTimeConverter_ToTimeSpan#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToTimeSpan/cs/ManagementDateTimeConverter_ToTimeSpan.cs#1)]
+ [!code-vb[wminet_ManagementDateTimeConverter_ToTimeSpan#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementDateTimeConverter_ToTimeSpan/vb/ManagementDateTimeConverter_ToTimeSpan.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

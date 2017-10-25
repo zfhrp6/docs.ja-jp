@@ -1,0 +1,598 @@
+<Type Name="Cursors" FullName="System.Windows.Forms.Cursors">
+  <TypeSignature Language="C#" Value="public sealed class Cursors" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Cursors extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Cursors" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを提供<see cref="T:System.Windows.Forms.Cursor" />Windows フォーム アプリケーションで使用するためのオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の<xref:System.Windows.Forms.Cursor>は記述されていない別の外観を実行できます。 このクラスのオブジェクト。 ユーザーは、そのオペレーティング システムでマウス ポインターの設定を調整することによってカーソルの外観を変更できます。 パンとなしは、カーソルは静的とオペレーティング システムでは変更できませんを移動します。  
+  
+ パンとなしは、マウス ホイールを操作中にカーソルを使用するを移動します。 ウィンドウをスクロールする方向に応じてカーソルに変わります、適切なありません移動カーソル マウスのホイールがクリックされたときにします。 カーソルは、マウスが移動されると、適切なパン カーソルに変わります。  
+  
+   
+  
+## Examples  
+ 次の例では、マウス カーソルを使用して、変更を示しています、 <xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType> 、プロパティ、<xref:System.Windows.Forms.Cursor>クラス、および<xref:System.Windows.Forms.Cursors>クラスです。 例を含むフォームを作成する、<xref:System.Windows.Forms.ComboBox>コントロール、<xref:System.Windows.Forms.Panel>コントロール、および<xref:System.Windows.Forms.ListView>コントロール。 <xref:System.Windows.Forms.ComboBox>によって提供されるすべてのカーソルが含まれています、<xref:System.Windows.Forms.Cursors>クラスです。 ユーザーがマウスのカーソルを選択すると、 <xref:System.Windows.Forms.ComboBox>、<xref:System.Windows.Forms.Control.Cursor%2A?displayProperty=nameWithType>プロパティが選択されているカーソルのカーソルの更新が、<xref:System.Windows.Forms.Panel>です。 <xref:System.Windows.Forms.ListView>が更新されるたびに、<xref:System.Windows.Forms.Control.CursorChanged?displayProperty=nameWithType>イベントが発生します。  
+  
+ [!code-cpp[System.Windows.Forms.Cursors#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Cursors/CPP/cursorexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Cursors#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Cursors/CS/cursorexample.cs#1)]
+ [!code-vb[System.Windows.Forms.Cursors#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Cursors/VB/cursorexample.vb#1)]  
+  
+ 次の例では、フォームの通常のサイズとストレッチ モードで 2 倍のサイズを指定したカーソルを描画します。 この例があるか、<xref:System.Windows.Forms.Form>と<xref:System.Windows.Forms.Cursor>が呼び出されると、メソッドに渡されるオブジェクト。  
+  
+ [!code-cpp[System.Windows.Forms.Cursor Members#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Cursor Members/CPP/cursorstuff.cpp#2)]
+ [!code-csharp[System.Windows.Forms.Cursor Members#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Cursor Members/CS/cursorstuff.cs#2)]
+ [!code-vb[System.Windows.Forms.Cursor Members#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Cursor Members/VB/cursorstuff.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppStarting">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor AppStarting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor AppStarting" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.AppStarting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの起動時に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表すアプリケーションの起動時に表示されるカーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Arrow">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor Arrow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor Arrow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.Arrow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>矢印カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す矢印カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cross">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor Cross { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor Cross" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.Cross" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>十字カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />十字カーソルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Forms.Cursors>クラスです。 この例を実行するには、場所はフォームに次のコードを貼り付けますおよびフォームのコンス トラクターまたは Load メソッドから InitializeRadioButtonsAndGroupBox メソッドを呼び出します。 すべてのイベントは、それぞれのイベント処理メソッドに接続していることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor Default" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のカーソルは通常、矢印カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />の既定のカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hand">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor Hand { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor Hand" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.Hand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常使用 Web リンクを置いたときに、手形カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />手形カーソルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Windows.Forms.Control.OnMouseHover%2A?displayProperty=nameWithType>派生クラスでメソッドを使用して、<xref:System.Windows.Forms.Cursors.Hand%2A>プロパティです。 例を実行するには、新しいフォームに次のコードを貼り付け、フォームの後に、同じファイルを形成する、このクラスを貼り付けます。 そしてのボタンをフォームに追加します。  
+  
+ [!code-cpp[System.Windows.Forms.ControlDefaultProperties#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ControlDefaultProperties/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ControlDefaultProperties#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ControlDefaultProperties/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ControlDefaultProperties#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ControlDefaultProperties/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Help">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor Help { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor Help" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.Help" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>矢印と疑問符 () の組み合わせであるヘルプ カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />ヘルプ カーソルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Forms.Cursors>クラスです。 この例を実行するには、場所はフォームに次のコードを貼り付けますおよびフォームのコンス トラクターまたは Load メソッドから InitializeRadioButtonsAndGroupBox メソッドを呼び出します。 すべてのイベントは、それぞれのイベント処理メソッドに接続していることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HSplit">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor HSplit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor HSplit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.HSplit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平分割バー上にマウスが置かれたときに表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />水平分割バー上にマウスが置かれたときに表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IBeam">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor IBeam { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor IBeam" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.IBeam" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスがクリックされたときにテキスト カーソルが表示される場所を表示するために使用される i ビーム カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" /> I ビーム カーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor No { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor No" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.No" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定の地域が現在の操作に対して有効であることを示します、カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />特定の地域が現在の操作に対して有効であることを示します、カーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoMove2D">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor NoMove2D { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor NoMove2D" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.NoMove2D" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動していないが、両方の水平方向および垂直方向にウィンドウをスクロールできる場合に、ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスが移動しないと、ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoMoveHoriz">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor NoMoveHoriz { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor NoMoveHoriz" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.NoMoveHoriz" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動していないものの、ウィンドウを水平方向にスクロールできる場合に、ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスが移動しないと、ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoMoveVert">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor NoMoveVert { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor NoMoveVert" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.NoMoveVert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動していないものの、ウィンドウを垂直方向にスクロールできる場合に、ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスが移動しないと、ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanEast">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanEast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanEast" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanEast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動し、右側のウィンドウを水平方向にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動し、右側のウィンドウを水平方向にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanNE">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanNE { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanNE" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanNE" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動すると、ウィンドウを水平方向および垂直方向にたどると、右にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動すると、ウィンドウを水平方向および垂直方向にたどると、右にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanNorth">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanNorth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanNorth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanNorth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動し、上方向にウィンドウを垂直方向にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動し、上方向にウィンドウを垂直方向にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanNW">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanNW { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanNW" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanNW" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動すると、ウィンドウを水平方向および垂直方向にたどると、左にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動すると、ウィンドウを水平方向および垂直方向にたどると、左にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanSE">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanSE { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanSE" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanSE" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動すると、ウィンドウを水平方向および垂直方向に下および右にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動すると、ウィンドウを水平方向および垂直方向に下および右にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanSouth">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanSouth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanSouth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanSouth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの移動と下方向にウィンドウを垂直方向にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す、マウスの移動と下方向にウィンドウを垂直方向にスクロール ホイール操作中に表示されるカーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanSW">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanSW { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanSW" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanSW" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動すると、ウィンドウを水平方向および垂直方向に下、左にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動すると、ウィンドウを水平方向および垂直方向に下、左にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PanWest">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor PanWest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor PanWest" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.PanWest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスを移動し、左側のウィンドウを水平方向にスクロール ホイール操作中に表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />マウスを移動し、左側のウィンドウを水平方向にスクロール ホイール操作中に表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeAll">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor SizeAll { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor SizeAll" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.SizeAll" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>西部、北を個別に参加している 4 つの矢印で構成される 4 方向のサイズ変更カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す 4 方向のサイズ変更カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeNESW">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor SizeNESW { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor SizeNESW" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.SizeNESW" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>斜線 (北東/南西) サイズの 2 方向のカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す 2 方向斜線 (北東/南西) サイズ変更用カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeNS">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor SizeNS { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor SizeNS" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.SizeNS" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直方向 (北と南) サイズの 2 方向のカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す、双方向垂直 (北と南) サイズ変更用カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeNWSE">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor SizeNWSE { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor SizeNWSE" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.SizeNWSE" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>斜線 (北西と南東) サイズの 2 方向のカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す、双方向斜線 (北西と南東) サイズ変更用カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeWE">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor SizeWE { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor SizeWE" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.SizeWE" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>水平 (西/東) サイズ変更の両方向のカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />を表す、双方向水平 (西/東) サイズ変更用カーソル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpArrow">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor UpArrow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor UpArrow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.UpArrow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常、カーソル位置の識別に使用、上向きの矢印カーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />上向きの矢印カーソルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Forms.Cursors>クラスです。 この例を実行するには、場所はフォームに次のコードを貼り付けますおよびフォームのコンス トラクターまたは Load メソッドから InitializeRadioButtonsAndGroupBox メソッドを呼び出します。 すべてのイベントは、それぞれのイベント処理メソッドに接続していることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.GroupBoxRadioButtonExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.GroupBoxRadioButtonExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VSplit">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor VSplit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor VSplit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.VSplit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直分割バーの上にマウスが配置されているときに表示されるカーソルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />垂直分割バーの上にマウスが配置されているときに表示されるカーソルを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitCursor">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.Cursor WaitCursor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.Cursor WaitCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Cursors.WaitCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>待機カーソルを取得します。通常は砂時計の形です。</summary>
+        <value><see cref="T:System.Windows.Forms.Cursor" />待機カーソルを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ そのコントロールを呼び出して、指定したコントロールの上に待機カーソルの表示を強制する<xref:System.Windows.Forms.Control.UseWaitCursor%2A>メソッドです。 表示コントロールまたは選択すると、フォームに関係なく、アプリケーション全体の待機カーソルを作成する<xref:System.Windows.Forms.Application.UseWaitCursor%2A>上、<xref:System.Windows.Forms.Application>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

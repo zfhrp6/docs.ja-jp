@@ -1,0 +1,77 @@
+<Type Name="AmbientAttribute" FullName="System.Windows.Markup.AmbientAttribute">
+  <TypeSignature Language="C#" Value="public sealed class AmbientAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AmbientAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.AmbientAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Property, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティまたは型をアンビエントとして扱うように指定しています。 アンビエントの概念は XAML プロセッサがメンバーの型の所有者を確認する方法と関連します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンビエント プロパティには、プロパティがあるが、オブジェクト グラフを作成するときに、即時の XAML ノードが作成されている設定のための一般的な型メンバーの参照が中断されている、パーサー コンテキストで使用できる値が予期されるときです。 アンビエントの概念を次の 2 つの主な方法があります。  
+  
+-   同じオブジェクトの他のいくつかのプロパティは影響し、そのオブジェクトとプロパティ検索の動作を修飾します。  
+  
+-   プロパティはより大きな遅延メカニズムを表し、現在のオブジェクトに含まれるすべてのオブジェクトにメンバーの値を検索するためのアンビエント機能を拡張します。  
+  
+ この属性は、アンビエント プロパティの検索動作を有効にするコンテナーを必要とする特定のプロパティに適用できますか、そのプロパティの値の型のすべてのケースにアンビエント プロパティの動作を有効にするクラスに適用できます。  
+  
+ <xref:System.Windows.Markup.AmbientAttribute>アンビエントとして XAML アタッチ可能なプロパティの属性をサポートするために、CLR のメソッドにも適用できます。 これは、CLR 実装、XAML で添付プロパティが実装されている/表されているためアクセサー パターンととしてのリフレクションを必要な可能性のある`get`と`set`メソッドです。 属性に実際の CLR プロパティが存在しないための使用量を制限する<xref:System.AttributeTargets>に`Property`が有効にしていないアンビエントとしてアタッチ可能なメンバーを指定します。 アタッチ可能なメンバーは、レポートを作成するアンビエントとして、属性、`get`アクセサー。 必要がありますいないしようとするサポート方法を具体的にはアタッチ可能なメンバーではない属性のメソッドです。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.AmbientAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ アンビエント型 (型 where<xref:System.Windows.Markup.AmbientAttribute>型レベルで適用されます) 状況によっては XAML の処理プロパティの型する必要がある解決順序どおりに使用できます。  
+  
+## <a name="object-writer-scenarios"></a>オブジェクト ライターのシナリオ  
+ XAML オブジェクト ライターを定義して、プロパティ、メソッドまたは型が発生した場合、<xref:System.Windows.Markup.AmbientAttribute>が適用すると、通常必要がありますサービスにアクセスする、オブジェクトの書き込みに必要な目的のアンビエント プロパティ検索の動作を決定します。 詳細については、「<xref:System.Xaml.IAmbientProvider>」を参照してください。  
+  
+## <a name="value-converters"></a>値コンバーター  
+ 型コンバーターまたはマークアップ拡張機能は、文字列の名前付きまたは修飾なしでのメンバーまたは型を指定するプロパティなどの間接的な型マッピングを表すプロパティを処理するためにアンビエント情報を知る必要があります。 このシナリオで<xref:System.Windows.Markup.AmbientAttribute>値コンバーター コード ロジックに直接使用するものではありません。 値コンバーターが、XAML ライター処理動作を渡すに依存する必要はなく、<xref:System.Xaml.IAmbientProvider>値コンバーターのメソッドが呼び出されたときにそのサービスのコンテキストでします。  
+  
+## <a name="wpf-scenarios-for-ambientattribute"></a>AmbientAttribute の WPF シナリオ  
+  
+-   プロパティ、 <xref:System.Windows.Style> (<xref:System.Windows.Style.TargetType%2A>) のプロパティ名のバッキング参照を検索するために必要なために必要なプロパティ名の参照を修飾できます<xref:System.Windows.Setter.Property%2A?displayProperty=nameWithType>値。  
+  
+-   内のすべてのコンテンツ、`Resources`プロパティ (の項目、 <xref:System.Windows.ResourceDictionary>) だけでなく、テンプレートのコンテンツを値として他のピアにアクセスすることにする必要があります。 全体を宣言する`Resources`アンビエントとしてプロパティを WPF XAML パーサーでこれを有効にするロジックを呼び出します。  
+  
+ 参照してください<xref:System.Windows.ResourceDictionary>設定用のシナリオ例については<xref:System.Windows.Markup.AmbientAttribute>型レベルでします。  
+  
+<a name="xamlTextUsage_AmbientAttribute"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AmbientAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.AmbientAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.AmbientAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

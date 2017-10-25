@@ -1,0 +1,109 @@
+<Type Name="TextChange" FullName="System.Windows.Controls.TextChange">
+  <TypeSignature Language="C#" Value="public class TextChange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextChange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TextChange" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>加えられた変更に関する情報が含まれています、<see cref="E:System.Windows.Controls.Primitives.TextBoxBase.TextChanged" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.TextChange>オブジェクトを指定で、変更が発生した、<xref:System.Windows.Controls.TextBox>または<xref:System.Windows.Controls.RichTextBox>です。 <xref:System.Windows.Controls.TextChange.Offset%2A>プロパティの変更の位置を指定、<xref:System.Windows.Controls.TextChange.AddedLength%2A>数の記号が追加された、プロパティを指定し、<xref:System.Windows.Controls.TextChange.RemovedLength%2A>プロパティは、どのように多数のシンボルが削除されたを指定します。 変更が発生する、<xref:System.Windows.Controls.TextBox>シンボルは 1 つの文字です。  変更が発生する、<xref:System.Windows.Controls.RichTextBox>シンボルは、次のいずれか。  
+  
+-   開始タグまたは終了タグの<xref:System.Windows.Documents.TextElement>要素。  
+  
+-   A<xref:System.Windows.UIElement>要素内に含まれる、<xref:System.Windows.Documents.InlineUIContainer>または<xref:System.Windows.Documents.BlockUIContainer>です。  このようなことを注意してください、<xref:System.Windows.UIElement>常に正確に 1 つの記号以外の場合は、追加のコンテンツまたはに含まれる要素としてカウントされますが、<xref:System.Windows.UIElement>シンボルとしてはカウントされません。  
+  
+-   各 16 ビット[!INCLUDE[TLA#tla_unicode](~/includes/tlasharptla-unicode-md.md)]テキスト内で文字<xref:System.Windows.Documents.Run>要素。  
+  
+ <xref:System.Windows.Controls.TextChange>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddedLength">
+      <MemberSignature Language="C#" Value="public int AddedLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AddedLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextChange.AddedLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールに追加されているシンボルの数を設定します。</summary>
+        <value>コントロールに追加されているシンボルの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextChange>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextChange.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または変更が発生した位置を設定します。</summary>
+        <value>変更が発生した位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextChange>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovedLength">
+      <MemberSignature Language="C#" Value="public int RemovedLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RemovedLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TextChange.RemovedLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールから削除されているシンボルの数を設定します。</summary>
+        <value>コントロールから削除されているシンボルの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TextChange>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

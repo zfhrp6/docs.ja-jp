@@ -1,0 +1,873 @@
+<Type Name="Freezable" FullName="System.Windows.Freezable">
+  <TypeSignature Language="C#" Value="public abstract class Freezable : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Freezable extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Freezable" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変更可能な状態と読み取り専用 (固定) の状態を持つオブジェクトを定義します。 派生したクラス<see cref="T:System.Windows.Freezable" />詳細な変更通知を提供する、変更できないを実行でき、自身のクローンします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Freezable>クラスは変更またはコピーするコストが高いオブジェクトを使用するのに役立つ特別な機能がアプリケーションのパフォーマンスを向上を提供します。 例については<xref:System.Windows.Freezable>オブジェクトには、次が含まれます。  
+  
+-   <xref:System.Windows.Media.Brush>  
+  
+-   <xref:System.Windows.Media.Pen>  
+  
+-   <xref:System.Windows.Media.Geometry>  
+  
+-   <xref:System.Windows.Media.Transform>  
+  
+-   <xref:System.Windows.Media.Animation.AnimationTimeline>  
+  
+## <a name="deriving-from-freezable"></a>Freezable から派生します。  
+ 派生したクラス<xref:System.Windows.Freezable>次の機能を取得します。  
+  
+-   特殊な状態: 読み取り専用 (固定) の状態および書き込み可能な状態です。  
+  
+-   スレッド セーフ: 固定された<xref:System.Windows.Freezable>オブジェクトは、スレッド間で共有することができます。  
+  
+-   変更通知の詳細: その他のとは異なり<xref:System.Windows.DependencyObject>、オブジェクト、<xref:System.Windows.Freezable>サブ プロパティの値を変更するときに、オブジェクトは変更通知を提供します。  
+  
+-   簡単な複製: Freezable のクラスが既にディープ クローンを生成するいくつかのメソッドを実装します。  
+  
+ 使用して、独自の作成について<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリック<see langword="static" />この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ ときに、<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="false" />、<see cref="T:System.Windows.Freezable" />オブジェクトが作成されたスレッドからのみアクセスできます。 別のスレッドがスローされますからアクセスしようとして、<see cref="T:System.InvalidOperationException" />です。 <see cref="Overload:System.Windows.Threading.Dispatcher.Invoke" />と<see cref="Overload:System.Windows.Threading.Dispatcher.BeginInvoke" />メソッドは、正しいスレッドにマーシャ リングのサポートを提供します。  
+  
+ ときにその<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="true" />、<see cref="T:System.Windows.Freezable" />オブジェクトはフリー スレッドです。  詳細については、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Freezable ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Freezable" />クラスを派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、抽象クラスのコンス トラクターは保護されたアクセシビリティ、です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanFreeze">
+      <MemberSignature Language="C#" Value="public bool CanFreeze { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanFreeze" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Freezable.CanFreeze" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを変更不可能にできるかどうかを示す値を取得します。</summary>
+        <value>
+          現在のオブジェクトを変更不可能にできる場合、または既に変更不可能になっている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドの実装を使用して、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />メソッドを<paramref name="isChecking" />'éý'<see langword="true" />を決定するかどうか、<see cref="T:System.Windows.Freezable" />変更不可能にできます。 派生クラスでこのプロパティの動作を変更するには、上書き、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Changed">
+      <MemberSignature Language="C#" Value="public event EventHandler Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Changed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Freezable.Changed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Freezable" />またはが含まれているオブジェクトを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加または現在のオブジェクトが変更可能な場合に、イベント ハンドラーを削除しようとすると (場合に、<xref:System.Windows.Freezable.IsFrozen%2A>プロパティは`true`)、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Freezable Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Freezable Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> の変更可能な複製を作成し、オブジェクトの値の詳細コピーを作成します。 このメソッドは、オブジェクトの依存関係プロパティをコピーするときに式をコピーしますが (コピーされた式は解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドの変更可能な複製を作成する固定<xref:System.Windows.Freezable>オブジェクト (メソッドの複製も<xref:System.Windows.Freezable>が固定されていないオブジェクト)。 複製は、事実上、現在のオブジェクトのディープ コピーです。  
+  
+ 次の表は、違いをまとめたもの、<xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドです。  
+  
+|アクション|メソッドの動作を複製します。|CloneCurrentValue メソッドの動作|  
+|------------|---------------------------|---------------------------------------|  
+|式を持つ依存関係プロパティのコピー|式は、コピーされますが、解決できなくなる可能性があります。 詳細については、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。|式そのものではありませんが、式の現在の値がコピーされます。|  
+|アニメーション化された依存関係プロパティのコピー|プロパティの基本 (アニメーション化されていない) 値がコピーされます。 アニメーションはコピーされません。|プロパティの現在のアニメーション化された値がコピーされます。 アニメーションはコピーされません。|  
+  
+ 設定されていないプロパティはコピーされませんに注意してください。 プロパティが設定されていないが、固定されている既定値を持つかどうか<xref:System.Windows.Freezable>プロパティの値をそのまま、それ以外の場合に変更可能な複製で固定します。  
+  
+## <a name="move-a-freezable-between-threads"></a>スレッド間で Freezable、移動します。  
+ このメソッドは移動の役に立ちます、<xref:System.Windows.Freezable>スレッド間でします。 最初に、作成、<xref:System.Windows.Freezable>を呼び出して変更不可能になってその<xref:System.Windows.Freezable.Freeze%2A>メソッドです。 別のスレッドがアクセスできるようになりました、<xref:System.Windows.Freezable>しローカル<xref:System.Windows.Freezable.Clone%2A>にアクセスできることです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用して<see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />クローンを生成するためにします。 派生クラスでは、このメソッドの動作を変更するには、上書き、<see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected virtual void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>基本 (アニメーション化されていない) プロパティ値を使用して、インスタンスを、指定した <see cref="T:System.Windows.Freezable" /> の複製 (詳細コピー) にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.Clone%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.Clone%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生した場合<see cref="T:System.Windows.Freezable" />、このメソッドをオーバーライドする必要があります。 オーバーライドする理由として、次のとおりです。  
+  
+-   派生クラス データを持っている依存関係プロパティを使用して、公開されません。  
+  
+-   派生クラスは、単にオーバーライドすることで実現できない余分な初期化作業を実行する必要があります<see cref="M:System.Windows.Freezable.CreateInstanceCore" />です。 たとえば、これが適用されます、派生クラスを実装する場合<see cref="T:System.ComponentModel.ISupportInitialize" />です。  
+  
+ 依存関係プロパティのすべてのデータを格納して、余分な初期化作業を実行する必要がないクラスがオーバーライドする必要はありません<see cref="M:System.Windows.Freezable.CloneCore(System.Windows.Freezable)" />です。  
+  
+ すべての実装が、このメソッドの基本実装を呼び出すことが重要です。 実装には、既定の実装で実行されていない作業のみを実行する必要があります。 既定の実装では、内部式を含む、すべてローカルに設定、書き込み可能プロパティの詳細コピーを使用します。  
+  
+ オブジェクトにデータ バインドされた依存関係プロパティがある場合、式はコピーしますが、解決できなくなる可能性があります。 データ バインドされたオブジェクトの複製の詳細については、次を参照してください。 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。 アニメーション化された依存関係プロパティをオブジェクトには、これらのプロパティの基本 (アニメーション化されていない) の値がコピーされます。 アニメーションはコピーされません。  
+  
+ 設定されていないプロパティがコピーされずも、読み取り専用プロパティは、注意してください。 このようなプロパティが既定値は固定されたを持つかどうか<see cref="T:System.Windows.Freezable" />プロパティの値をそのまま、それ以外の場合に変更可能な複製で固定します。  
+  
+ 次の一覧には、このメソッドの通常の動作をまとめたものです。  
+  
+-   生成されたコピーには、すべてのコピーが含まれています。<see cref="T:System.Windows.Freezable" />サブオブジェクトです。  
+  
+-   設定を解除し、読み取り専用プロパティはコピーされません。  
+  
+-   式がコピーされます。  
+  
+-   これらのサブオブジェクトの作成時に固定されます。  
+  
+-   コピー自体は固定されていません。  
+  
+-   アニメーションはコピーされません。  
+  
+-   プロパティの基本値だけは、コピー、最新ではないのアニメーション化された値です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Freezable CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Freezable CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変更可能な複製 (詳細コピー) を作成、<see cref="T:System.Windows.Freezable" />その現在の値を使用します。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> である場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドの変更可能な複製を作成する固定<xref:System.Windows.Freezable>オブジェクト (メソッドの複製も<xref:System.Windows.Freezable>が固定されていないオブジェクト)。 複製は、事実上、現在のオブジェクトのディープ コピーです。  
+  
+ 次の表は、違いをまとめたもの、<xref:System.Windows.Freezable.Clone%2A>と<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドです。  
+  
+|アクション|メソッドの動作を複製します。|CloneCurrentValue メソッドの動作|  
+|------------|---------------------------|---------------------------------------|  
+|式を持つ依存関係プロパティのコピー|式は、コピーされますが、解決できなくなる可能性があります。 詳細については、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」を参照してください。|式そのものではありませんが、式の現在の値がコピーされます。|  
+|アニメーション化された依存関係プロパティのコピー|プロパティの基本 (アニメーション化されていない) 値がコピーされます。 アニメーションはコピーされません。|プロパティの現在のアニメーション化された値がコピーされます。 アニメーションはコピーされません。|  
+  
+ 設定されていないプロパティはコピーされませんに注意してください。 プロパティが設定されていないが、固定されている既定値を持つかどうか<xref:System.Windows.Freezable>プロパティの値をそのまま、それ以外の場合に変更可能な複製で固定します。  
+  
+## <a name="move-a-freezable-between-threads"></a>スレッド間で Freezable、移動します。  
+ このメソッドは移動の役に立ちます、<xref:System.Windows.Freezable>スレッド間でします。 最初に、作成、<xref:System.Windows.Freezable>を使用して変更不可能になってその<xref:System.Windows.Freezable.Freeze%2A>メソッドです。 別のスレッドがアクセスできるようになりました、<xref:System.Windows.Freezable>し、アクセス可能なローカルのクローンを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用して、 <see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" /> ; クローンを作成する方法<see cref="T:System.Windows.Freezable" />オーバーライドの実装<see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />コピーが作成時に固定されていないことを確認する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected virtual void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する <see cref="T:System.Windows.Freezable" />。</param>
+        <summary>現在のプロパティ値を使用して、インスタンスを、指定した <see cref="T:System.Windows.Freezable" /> の変更可能な複製 (詳細コピー) にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの変更可能なコピーを作成するには<xref:System.Windows.Freezable.CloneCurrentValue%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生した場合<see cref="T:System.Windows.Freezable" />、このメソッドをオーバーライドする必要があります。 オーバーライドする理由として、次のとおりです。  
+  
+-   派生クラス データを持っている依存関係プロパティを使用して、公開されません。  
+  
+-   派生クラスは、単にオーバーライドすることで実現できない余分な初期化作業を実行する必要があります<see cref="M:System.Windows.Freezable.CreateInstanceCore" />です。 たとえば、これが適用されます、派生クラスを実装する場合<see cref="T:System.ComponentModel.ISupportInitialize" />です。  
+  
+ 依存関係プロパティのすべてのデータを格納して、余分な初期化作業を実行する必要がないクラスがオーバーライドする必要はありません<see cref="M:System.Windows.Freezable.CloneCurrentValueCore(System.Windows.Freezable)" />です。  
+  
+ すべての実装が、このメソッドの基本実装を呼び出すことが重要です。 実装には、既定の実装で実行されていない作業のみを実行する必要があります。 既定の実装は、すべての書き込み可能なローカルで設定のプロパティの詳細コピーします。 オブジェクト (データ バインディング) などの式を持つ依存関係プロパティが含まれている場合、式自体ではありませんが、式の現在の値がコピーされます。  
+  
+ オブジェクトは依存関係プロパティをアニメーション化される場合は、これらのプロパティの現在のアニメーション化された値をコピーするが、アニメーションはできません。  
+  
+ 設定されていないプロパティがコピーされずも、読み取り専用プロパティは、注意してください。 このようなプロパティが既定値は固定されたを持つかどうか<see cref="T:System.Windows.Freezable" />プロパティの値をそのまま、それ以外の場合に変更可能な複製で固定します。  
+  
+ 次の一覧は、このメソッドの通常の動作をまとめたものです。  
+  
+-   生成されたコピーには、すべてのコピーが含まれています。<see cref="T:System.Windows.Freezable" />サブオブジェクトです。  
+  
+-   設定を解除し、読み取り専用プロパティはコピーされません。  
+  
+-   プロパティは、アニメーション化されている場合は、その現在の値をコピーするは、アニメーション自体はありません。  
+  
+-   これらのサブオブジェクトの作成時に固定されます。  
+  
+-   コピー自体は固定されていません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="protected System.Windows.Freezable CreateInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Windows.Freezable CreateInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.CreateInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、保護された方法、および動作では、実際のオブジェクト固有の実装のオーバーライドの実装に依存する、<xref:System.Windows.Freezable.CreateInstanceCore%2A>メソッドで、このメソッドは内部的に呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected abstract System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、新しいインスタンスを作成、<see cref="T:System.Windows.Freezable" />クラスを派生します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接 (呼び出す場合を除きますベースの実装で) このメソッドを呼び出さないでください。 このメソッドがによって内部的に呼び出されます、<xref:System.Windows.Freezable.CreateInstance%2A>メソッドの新しいインスタンスをときに、<xref:System.Windows.Freezable>を作成します。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>各<see cref="T:System.Windows.Freezable" />派生クラスは、このメソッドを実装する必要があります。 一般的な実装では、既定のコンス トラクターを呼び出し、結果を返すだけです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Freeze">
+      <MemberSignature Language="C#" Value="public void Freeze ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Freeze() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.Freeze" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを変更不可能になり、設定、<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティを<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 可能性を回避する、<xref:System.InvalidOperationException>確認してこのメソッドを呼び出したときに、<xref:System.Windows.Freezable.CanFreeze%2A>プロパティを決定するかどうか、<xref:System.Windows.Freezable>変更不可能にできるこのメソッドを呼び出す前にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Freezable" />不可能な状態にすることはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用して、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />を作成するメソッド、<see cref="T:System.Windows.Freezable" />変更不可能になっています。 固定動作を変更するには、上書き、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Freeze">
+      <MemberSignature Language="C#" Value="protected static bool Freeze (System.Windows.Freezable freezable, bool isChecking);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblystatic hidebysig bool Freeze(class System.Windows.Freezable freezable, bool isChecking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="freezable" Type="System.Windows.Freezable" />
+        <Parameter Name="isChecking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="freezable">チェックまたは変更不可能な状態オブジェクト。 場合<c>isChecking</c>は<see langword="true" />、かどうか、変更不可能にできるを決定するオブジェクトをチェックします。 場合<c>isChecking</c>は<see langword="false" />オブジェクトは変更不可能に、可能な場合です。</param>
+        <param name="isChecking">
+          <see langword="true" />かどうか、オブジェクトを固定できる (実際には固定しない) を示す値を返す<see langword="false" />を実際には、オブジェクトを固定します。</param>
+        <summary>場合、<paramref name="isChecking" />パラメーターは<see langword="true" />、このメソッドを示すかどうか、指定した<see cref="T:System.Windows.Freezable" />変更不可能にできます。 場合、<paramref name="isChecking" />パラメーターは<see langword="false" />、このメソッドが、指定されたようにしようとしています。<see cref="T:System.Windows.Freezable" />不可能な状態と、操作が成功したかどうかを示します。</summary>
+        <returns>場合<paramref name="isChecking" />は<see langword="true" />、このメソッドが戻る<see langword="true" />場合、指定した<see cref="T:System.Windows.Freezable" />できます変更不可能にできる、または<see langword="false" />にできない変更不可能になっている場合。 場合<paramref name="isChecking" />は<see langword="false" />、このメソッドが戻る<see langword="true" />場合、指定した<see cref="T:System.Windows.Freezable" />は変更できますが、または<see langword="false" />にできない変更不可能になっている場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生する場合を除き、このメソッドを呼び出さないでください<xref:System.Windows.Freezable>をオーバーライドして、<xref:System.Windows.Freezable.FreezeCore%2A>メソッドです。  このメソッドで使用することがあります、<xref:System.Windows.Freezable.FreezeCore%2A>メソッド自体は、クラスのデータ メンバーを固定する<xref:System.Windows.Freezable>オブジェクト。  
+  
+ もう一度このメソッドを呼び出すには<xref:System.Windows.Freezable>(不可能) 既に凍結されているオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ときに<paramref name="isChecking" />は<see langword="false" />を試みた<paramref name="freezable" />不可能な状態が失敗しました。 オブジェクトは (これが部分的に固定する)、不明な状態にします。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドを使用して、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />を作成するメソッド、<see cref="T:System.Windows.Freezable" />変更不可能になっています。 固定動作を変更するには、上書き、<see cref="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FreezeCore">
+      <MemberSignature Language="C#" Value="protected virtual bool FreezeCore (bool isChecking);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool FreezeCore(bool isChecking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.FreezeCore(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isChecking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isChecking">
+          <see langword="true" />かどうか、オブジェクトを固定できる (実際には固定しない) を示す値を返す<see langword="false" />を実際には、オブジェクトを固定します。</param>
+        <summary>により、<see cref="T:System.Windows.Freezable" />不可能な状態のオブジェクトや、変更不可能にできるかどうかをテストします。</summary>
+        <returns>場合<paramref name="isChecking" />は<see langword="true" />、このメソッドが戻る<see langword="true" />場合、<see cref="T:System.Windows.Freezable" />できます変更不可能にできる、または<see langword="false" />にできない変更不可能になっている場合。 場合<paramref name="isChecking" />は<see langword="false" />、このメソッドが戻る<see langword="true" />場合場合に、指定した<see cref="T:System.Windows.Freezable" />は変更できますが、または<see langword="false" />ができない変更不可能にできる場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接 (呼び出す場合を除きますベースの実装で) このメソッドを呼び出さないでください。 このメソッドがによって内部的に呼び出されます、<xref:System.Windows.Freezable.CanFreeze%2A>プロパティ (で`isChecking`と等しい`true`) および<xref:System.Windows.Freezable.Freeze%2A>メソッド (で`isChecking`と等しい`false`)。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="T:System.Windows.Freezable" />実装時は、クラスには、依存関係プロパティを使用して保存されていないデータが含まれている場合、このメソッドをオーバーライドする必要があります。  
+  
+ 一般的な実装し、呼び出し、呼び出す静的<see cref="M:System.Windows.Freezable.Freeze(System.Windows.Freezable,System.Boolean)" />すべてメソッド<see cref="T:System.Windows.Freezable" />型指定されたプロパティを返すクラスに含まれている<see langword="true" />または場合にのみプロパティをすべて保持されていた (でした固定されている、指定する場合<see langword="true" />の<paramref name="isChecking" />)。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozen">
+      <MemberSignature Language="C#" Value="public System.Windows.Freezable GetAsFrozen ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Freezable GetAsFrozen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.GetAsFrozen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>固定されたコピーを作成、 <see cref="T:System.Windows.Freezable" />、基本 (アニメーション化されていない) プロパティの値を使用します。 コピーが固定されているために、任意の固定されたサブオブジェクトは、参照によりコピーされます。</summary>
+        <returns>固定コピー、<see cref="T:System.Windows.Freezable" />です。 コピーの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティに設定されている<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 確認する必要があります、<xref:System.Windows.Freezable.CanFreeze%2A>ことを確認するには、このメソッドを呼び出す前に、プロパティ、<xref:System.Windows.Freezable>固定することができます。 このメソッドを使用して、コピーの作成と同様、<xref:System.Windows.Freezable.Clone%2A>に固定し、<xref:System.Windows.Freezable.Freeze%2A>メソッドです。  
+  
+ <xref:System.Windows.Freezable.GetAsFrozen%2A>と<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッドは複製しないでくださいためコピーのパフォーマンスを向上できます<xref:System.Windows.Freezable>サブオブジェクトを既に凍結されている以外の参照によってコピーするだけです。  
+  
+ 次の表は、違いをまとめたもの、<xref:System.Windows.Freezable.GetAsFrozen%2A>と<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッドです。  
+  
+|アクション|GetAsFrozen メソッドの動作|GetCurrentValueAsFrozen メソッドの動作|  
+|------------|---------------------------------|---------------------------------------------|  
+|式を持つ依存関係プロパティのコピー|メソッドをスロー、<xref:System.InvalidOperationException>できないため<xref:System.Windows.Freezable.Freeze%2A>プロパティです。|式そのものではありませんが、式の現在の値がコピーされます。|  
+|アニメーション化された依存関係プロパティのコピー|プロパティの基本 (アニメーション化されていない) 値がコピーされます。 アニメーションはコピーされません。|プロパティの現在のアニメーション化された値がコピーされます。 アニメーションはコピーされません。|  
+  
+ 設定されていないプロパティがコピーされずも、読み取り専用プロパティは、注意してください。  
+  
+ コピーを作成する、<xref:System.Windows.Freezable>いない固定、使用されている、<xref:System.Windows.Freezable.Clone%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Freezable" />式またはアニメーション化されたプロパティが含まれているために、固定することはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、仮想<see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />クローンを生成するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected virtual void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーするインスタンス。</param>
+        <summary>インスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />基本 (アニメーション化されていない) プロパティの値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生した場合<see cref="T:System.Windows.Freezable" />このメソッドをオーバーライドする必要があります。 オーバーライドする理由として、次のとおりです。  
+  
+-   派生クラス データを持っている依存関係プロパティを使用して、公開されません。  
+  
+-   派生クラスは、単にオーバーライドすることで実現できない余分な初期化作業を実行する必要があります<see cref="M:System.Windows.Freezable.CreateInstanceCore" />です。 たとえば、これが適用されます、派生クラスを実装する場合<see cref="T:System.ComponentModel.ISupportInitialize" />です。  
+  
+ 依存関係プロパティのすべてのデータを格納して、余分な初期化作業を実行する必要がないクラスがオーバーライドする必要はありません<see cref="M:System.Windows.Freezable.GetAsFrozenCore(System.Windows.Freezable)" />です。  
+  
+ すべての実装が、このメソッドの基本実装を呼び出すことが重要です。 実装には、既定の実装で実行されていない作業のみを実行する必要があります。 既定の実装は、固定されていない freezable と他のすべての書き込み可能のシャロー コピー、ローカルが含まれているプロパティの設定の詳細コピーをします。 オブジェクトにデータ バインドされた依存関係プロパティがある場合、式はコピーしますが、解決されなくなる可能性があります。データ バインドされたオブジェクトの複製の詳細については、次を参照してください。 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。 オブジェクトは、アニメーション化された依存関係プロパティを持っている場合、基本 (アニメーション化されていない) これらのプロパティの値がコピーされます。 アニメーションはコピーされません。  
+  
+ 設定されていないプロパティがコピーされずも、読み取り専用プロパティは、注意してください。  
+  
+ このメソッドをオーバーライドする場合は、基本実装を呼び出す必要があります。  
+  
+ する必要はありません<see cref="M:System.Windows.Freezable.Freeze" />値をコピーします。  によって、結果が固定されている<see cref="M:System.Windows.Freezable.GetAsFrozen" />返される前にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozen">
+      <MemberSignature Language="C#" Value="public System.Windows.Freezable GetCurrentValueAsFrozen ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Freezable GetCurrentValueAsFrozen() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.GetCurrentValueAsFrozen" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>固定されたコピーを作成、<see cref="T:System.Windows.Freezable" />現在のプロパティ値を使用します。 コピーが固定されているために、任意の固定されたサブオブジェクトは、参照によりコピーされます。</summary>
+        <returns>固定コピー、<see cref="T:System.Windows.Freezable" />です。 コピーの<see cref="P:System.Windows.Freezable.IsFrozen" />プロパティに設定されている<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、コピーの作成と同様、<xref:System.Windows.Freezable.CloneCurrentValue%2A>に固定し、<xref:System.Windows.Freezable.Freeze%2A>メソッドです。  
+  
+ <xref:System.Windows.Freezable.GetAsFrozen%2A>と<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッドは複製しないでくださいためコピーのパフォーマンスを向上できます<xref:System.Windows.Freezable>サブオブジェクトを既に凍結されている以外の参照によってコピーするだけです。  
+  
+ 次の表は、違いをまとめたもの、<xref:System.Windows.Freezable.GetAsFrozen%2A>と<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッドです。  
+  
+|アクション|GetAsFrozen メソッドの動作|GetCurrentValueAsFrozen メソッドの動作|  
+|------------|---------------------------------|---------------------------------------------|  
+|式を持つ依存関係プロパティのコピー|メソッドをスロー、<xref:System.InvalidOperationException>できないため<xref:System.Windows.Freezable.Freeze%2A>プロパティです。|式そのものではありませんが、式の現在の値がコピーされます。|  
+|アニメーション化された依存関係プロパティのコピー|プロパティの基本 (アニメーション化されていない) 値がコピーされます。 アニメーションはコピーされません。|プロパティの現在のアニメーション化された値がコピーされます。 アニメーションはコピーされません。|  
+  
+ 設定されていないプロパティがコピーされずも、読み取り専用プロパティは、注意してください。  
+  
+ コピーを作成する、<xref:System.Windows.Freezable>いない固定、使用されている、<xref:System.Windows.Freezable.CloneCurrentValue%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、仮想<see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />クローンを生成するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected virtual void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">コピーし、固定する <see cref="T:System.Windows.Freezable" />。</param>
+        <summary>現在のインスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />です。 オブジェクトに、アニメーション化された依存関係プロパティが存在する場合、現在アニメーション化されている値がコピーされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>メソッド呼び出すことはできません、コードから直接を除く中に、このメソッドをオーバーライドする基本実装を呼び出すときに、します。 現在のオブジェクトの固定コピーを作成するには<xref:System.Windows.Freezable.GetCurrentValueAsFrozen%2A>このメソッドを直接呼び出す代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生した場合<see cref="T:System.Windows.Freezable" />、このメソッドをオーバーライドする必要があります。 オーバーライドする理由として、次のとおりです。  
+  
+-   派生クラス データを持っている依存関係プロパティを使用して、公開されません。  
+  
+-   派生クラスは、単にオーバーライドすることで実現できない余分な初期化作業を実行する必要があります<see cref="M:System.Windows.Freezable.CreateInstanceCore" />です。 たとえば、これが適用されます、派生クラスを実装する場合<see cref="T:System.ComponentModel.ISupportInitialize" />です。  
+  
+ 依存関係プロパティのすべてのデータを格納して、余分な初期化作業を実行する必要がないクラスがオーバーライドする必要はありません<see cref="M:System.Windows.Freezable.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />です。  
+  
+ すべての実装が、このメソッドの基本実装を呼び出すことが重要です。 実装には、既定の実装で実行されていない作業のみを実行する必要があります。 既定の実装が新たに作成<see cref="T:System.Windows.Freezable" />を使用して、<see cref="M:System.Windows.Freezable.CreateInstance" />が含まれているプロパティをローカルで設定固定されていない freezable の詳細コピーをメソッドとと他のすべての書き込み可能のシャロー コピーします。 オブジェクトにデータ バインドされた依存関係プロパティがある場合、データ バインドはコピーしますが、解決されなくなる可能性があります。データ バインドされたオブジェクトの複製の詳細については、次を参照してください。 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。 オブジェクトは依存関係プロパティをアニメーション化される場合は、これらのプロパティの現在のアニメーション化された値をコピーするが、アニメーションはできません。  
+  
+ 内での読み取り専用の依存関係プロパティを<see cref="T:System.Windows.Freezable" />この既定の実装ではコピーされません。  
+  
+ このメソッドをオーバーライドする場合は、基本実装を呼び出す必要があります。  
+  
+ する必要はありません<see cref="M:System.Windows.Freezable.Freeze" />値をコピーします。  によって、結果が固定されている<see cref="M:System.Windows.Freezable.GetAsFrozen" />返される前にします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFrozen">
+      <MemberSignature Language="C#" Value="public bool IsFrozen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFrozen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Freezable.IsFrozen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが変更可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />オブジェクトが固定されているし、は変更できません。<see langword="false" />場合は、オブジェクトを変更できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを変更しようとしています。 ときにその<xref:System.Windows.Freezable.IsFrozen%2A>プロパティは`true`スロー、<xref:System.InvalidOperationException>です。  
+  
+ このプロパティとは、オブジェクト モデルの観点からは読み取り専用です。 に関するドキュメントの一部<xref:System.Windows.Freezable>動作が言及可能性があります"設定<xref:System.Windows.Freezable.IsFrozen%2A>に`true`"またはその他のメソッドの動作を検討する場合のような言語<xref:System.Windows.Freezable>が、この動作が行われて内部的にクラスのインスタンスでインスタンスのメソッドは抽象クラス内に存在するためのプライベート変数を操作します。 このプロパティの値を設定するを呼び出す必要があります<xref:System.Windows.Freezable.Freeze%2A>です。 これは実質的に、1 回限りの操作を変更する、<xref:System.Windows.Freezable.IsFrozen%2A>プロパティを初期の既定値から`false`状態、`true`状態です。 値の設定に使用できる方法はありませんに`false`です。 代わりに元から作成されたディープ コピーを変更する可能性があります (を参照してください、<xref:System.Windows.Freezable.Clone%2A>メソッド)。 これは仕様では、ケースに適用されるときに任意の派生クラスの動作方法を<xref:System.Windows.Freezable>パターン便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます現在<see cref="T:System.Windows.Freezable" />オブジェクトを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すたびに、<xref:System.Windows.Freezable.Changed>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生するクラスを実装する場合<see cref="T:System.Windows.Freezable" />タスクを実行するには、このメソッドをオーバーライドする可能性があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFreezablePropertyChanged">
+      <MemberSignature Language="C#" Value="protected void OnFreezablePropertyChanged (System.Windows.DependencyObject oldValue, System.Windows.DependencyObject newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnFreezablePropertyChanged(class System.Windows.DependencyObject oldValue, class System.Windows.DependencyObject newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldValue" Type="System.Windows.DependencyObject" />
+        <Parameter Name="newValue" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="oldValue">データ メンバーの前の値。</param>
+        <param name="newValue">データ メンバーの現在の値。</param>
+        <summary>適切なコンテキストのポインターが確立されていることを確認、<see cref="T:System.Windows.DependencyObjectType" />が設定されているデータ メンバーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す必要があります<xref:System.Windows.Freezable>継承たびに、<xref:System.Windows.DependencyObject>として保存されていないデータ メンバー、<xref:System.Windows.DependencyProperty>設定されています。  
+  
+ このメソッドは、に対して呼び出される必要はありません<xref:System.Windows.DependencyObject>データ メンバーを使用して格納されている、<xref:System.Windows.DependencyProperty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFreezablePropertyChanged">
+      <MemberSignature Language="C#" Value="protected void OnFreezablePropertyChanged (System.Windows.DependencyObject oldValue, System.Windows.DependencyObject newValue, System.Windows.DependencyProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnFreezablePropertyChanged(class System.Windows.DependencyObject oldValue, class System.Windows.DependencyObject newValue, class System.Windows.DependencyProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.OnFreezablePropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyObject,System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldValue" Type="System.Windows.DependencyObject" />
+        <Parameter Name="newValue" Type="System.Windows.DependencyObject" />
+        <Parameter Name="property" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="oldValue">データ メンバーの前の値。</param>
+        <param name="newValue">データ メンバーの現在の値。</param>
+        <param name="property">変更されたプロパティ。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnPropertyChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPropertyChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更されたプロパティ、およびその変更前と変更後の値に関する情報を格納するイベント データ。</param>
+        <summary>上書き、<see cref="T:System.Windows.DependencyObject" />の実装<see cref="M:System.Windows.DependencyObject.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)" />もいずれかを呼び出す<see cref="E:System.Windows.Freezable.Changed" />型の変更の依存関係プロパティへの応答ハンドラー<see cref="T:System.Windows.Freezable" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント データに関する情報を含むのみ、<xref:System.Windows.Freezable>自体です。 を通じて情報を取得する必要があります、<xref:System.Windows.Freezable.Changed>ハンドラー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadPreamble">
+      <MemberSignature Language="C#" Value="protected void ReadPreamble ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ReadPreamble() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.ReadPreamble" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>確実に、<see cref="T:System.Windows.Freezable" />有効なスレッドからアクセスされています。 継承元<see cref="T:System.Windows.Freezable" />いずれかの先頭にこのメソッドを呼び出す必要があります[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]依存関係プロパティではないデータ メンバーを読み取る。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Freezable" />呼び出す必要があります、<see cref="M:System.Windows.Freezable.ReadPreamble" />メソッドに依存関係プロパティではない任意のメンバーにアクセスする前にします。 <see cref="M:System.Windows.Freezable.WritePreamble" />に、このようなメンバーが書き込まれる前に、メソッドを呼び出す必要があります。  
+  
+ このメソッド実質的には呼び出す<see cref="M:System.Windows.Threading.DispatcherObject.VerifyAccess" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WritePostscript">
+      <MemberSignature Language="C#" Value="protected void WritePostscript ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePostscript() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.WritePostscript" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>発生させます、<see cref="E:System.Windows.Freezable.Changed" />イベントを<see cref="T:System.Windows.Freezable" />を呼び出すと、<see cref="M:System.Windows.Freezable.OnChanged" />メソッドです。 派生したクラス<see cref="T:System.Windows.Freezable" />依存関係プロパティとして格納されていないクラス メンバーを変更するすべての API の最後に、このメソッドを呼び出す必要があります。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Freezable" />として保存されていないクラス メンバーの変更をすべての API の最後に、このメソッドを呼び出す必要があります、<see cref="T:System.Windows.DependencyProperty" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WritePreamble">
+      <MemberSignature Language="C#" Value="protected void WritePreamble ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void WritePreamble() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Freezable.WritePreamble" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>あることを確認、<see cref="T:System.Windows.Freezable" />固定されていない有効なスレッド コンテキストからアクセスしているとします。 <see cref="T:System.Windows.Freezable" />継承クラスは、いずれかの先頭にこのメソッドを呼び出す必要があります[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]依存関係プロパティではないデータ メンバーに書き込まれる。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>スレッドのコンテキストにアクセスできる場合、例外をスローことを確認、<xref:System.Windows.Freezable>インスタンスが既に凍結されています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Freezable" />インスタンスが固定されておりに書き込まれますそのメンバーことはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス<see cref="T:System.Windows.Freezable" />呼び出す必要があります<see cref="M:System.Windows.Freezable.WritePreamble" />依存関係プロパティではない任意のメンバーへの書き込みを試みる前にします。 呼び出す場合<see cref="M:System.Windows.Freezable.WritePreamble" />で、[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]への呼び出しを省略すると<see cref="M:System.Windows.Freezable.ReadPreamble" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

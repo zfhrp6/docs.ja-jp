@@ -1,0 +1,66 @@
+<Type Name="XamlObjectReaderSettings" FullName="System.Xaml.XamlObjectReaderSettings">
+  <TypeSignature Language="C#" Value="public class XamlObjectReaderSettings : System.Xaml.XamlReaderSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlObjectReaderSettings extends System.Xaml.XamlReaderSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlObjectReaderSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlReaderSettings</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>規則の処理またはのオプション設定を指定します、<see cref="T:System.Xaml.XamlObjectReader" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectReaderSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReaderSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlObjectReaderSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireExplicitContentVisibility">
+      <MemberSignature Language="C#" Value="public bool RequireExplicitContentVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireExplicitContentVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReaderSettings.RequireExplicitContentVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかのライターを使用するかを決定する値、関連付けられている<see cref="T:System.Xaml.XamlObjectReader" />コンテキストは、コンテンツを明示的に記述するためデザイナーの設定を使用する必要があります。</summary>
+        <value>
+          <see langword="true" />あるケース、出力の内容を書き込むために、このコンテキストを使用するライターがデザイナーの設定を使用するように指定する<see cref="P:System.Xaml.XamlMember.IsWritePublic" />レポート<see langword="false" />です。<see langword="false" />デザイナーの設定が無視される場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定が内部的に照会されます。 コンテキストの次の動作に与える影響を<xref:System.Xaml.XamlObjectReader>いずれかに渡す<xref:System.Xaml.XamlWriter>:  
+  
+-   <xref:System.Xaml.XamlObjectReaderSettings.RequireExplicitContentVisibility%2A>動作プロパティにのみ適用されます、<xref:System.Xaml.XamlMember.IsWritePublic%2A>は`false`とタイミング、`ShouldSerialize`パターンは、プロパティ値を使用できません。  
+  
+-   最初の箇条書きのステートメントが true の場合と<xref:System.Xaml.XamlObjectReaderSettings.RequireExplicitContentVisibility%2A>は`true`、デザイナーの設定を決定するかどうか、プロパティがその出力をコンテンツとしてを書き込む場合、またはプロパティは暗黙の型と見なされます。 デザイナーの設定へのアクセスは .NET Framework XAML サービスで内部 Api を使用し、読み取りに基づきます<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>からアセンブリをバックアップします。 ここでは、内部のコード チェック値<xref:System.ComponentModel.DesignerSerializationVisibility?displayProperty=nameWithType>プロパティにその出力を書き込みます。 それ以外の場合、コンテンツは、暗黙の型と見なされます。  
+  
+-   最初の箇条書きでステートメントがある場合`true`、AND<xref:System.Xaml.XamlObjectReaderSettings.RequireExplicitContentVisibility%2A>は`false`、プロパティは常にその出力を書き込みますと<xref:System.ComponentModel.DesignerSerializationVisibilityAttribute>アセンブリをバックアップからは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

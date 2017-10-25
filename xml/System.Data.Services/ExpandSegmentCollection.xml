@@ -1,0 +1,84 @@
+<Type Name="ExpandSegmentCollection" FullName="System.Data.Services.ExpandSegmentCollection">
+  <TypeSignature Language="C#" Value="public class ExpandSegmentCollection : System.Collections.Generic.List&lt;System.Data.Services.ExpandSegment&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExpandSegmentCollection extends System.Collections.Generic.List`1&lt;class System.Data.Services.ExpandSegment&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.ExpandSegmentCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Generic.List&lt;System.Data.Services.ExpandSegment&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Data.Services.ExpandSegment</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって展開できるクエリのセグメント、 <c>$展開</c>クエリに続く句。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `$expand` 句は、個々の展開項目を完全に展開する必要があることを示します。 たとえば、`OrderLines.Product.Image` に値 `$expand` を指定すると、`OrderLines`、`Product` 内の各要素の `OrderLines`、および `Image` 内の各要素の `Product` の `OrderLines` が展開されます。  
+  
+ `$expand` 句の一番左にあるリソース プロパティは、要求 URI の最後のパス セグメントで識別されるエンティティ セット内のエンティティ型のプロパティである必要があります。  
+  
+ 重複する `$expand` 句の規則は無視されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpandSegmentCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.ExpandSegmentCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>クエリの展開セグメントから成るコレクションを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExpandSegmentCollection (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.ExpandSegmentCollection.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">新しいコレクションが初期状態で格納できる展開セグメントの数。</param>
+        <summary>指定した初期容量を持つ空の展開セグメントの新しいコレクションを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFilter">
+      <MemberSignature Language="C#" Value="public bool HasFilter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.ExpandSegmentCollection.HasFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>展開対象のセグメントがフィルター句を含んでいるかどうかを示すブール値。</summary>
+        <value>展開対象のセグメントがフィルター句を含んでいるかどうかを示すブール値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,173 @@
+<Type Name="QueryAccessibilityHelpEventArgs" FullName="System.Windows.Forms.QueryAccessibilityHelpEventArgs">
+  <TypeSignature Language="C#" Value="public class QueryAccessibilityHelpEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryAccessibilityHelpEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.QueryAccessibilityHelpEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.QueryAccessibilityHelp" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control>クラスがパブリックでは公開<xref:System.Windows.Forms.Control.QueryAccessibilityHelp>イベント。 プロパティを使用することができます、<xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs>スクリーン リーダーなどのユーザー補助クライアントに特定のコントロールのカスタム ヘルプを取得するクラス。 処理するときに、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp>イベントの値を設定する必要があります、 <xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpNamespace%2A>、 <xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpKeyword%2A>、および<xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpString%2A>プロパティを適切な値にします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpKeyword%2A>プロパティは、数値のヘルプ トピック ID の文字列形式を指定してください  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例が、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs>クラス、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp>イベント。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#3)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#3)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryAccessibilityHelpEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.QueryAccessibilityHelpEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.QueryAccessibilityHelpEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryAccessibilityHelpEventArgs (string helpNamespace, string helpString, string helpKeyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string helpNamespace, string helpString, string helpKeyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.QueryAccessibilityHelpEventArgs.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="helpNamespace" Type="System.String" />
+        <Parameter Name="helpString" Type="System.String" />
+        <Parameter Name="helpKeyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="helpNamespace">ヘルプを含むファイル、<see cref="T:System.Windows.Forms.AccessibleObject" />です。</param>
+        <param name="helpString">ヘルプの取得を定義する文字列、<see cref="T:System.Windows.Forms.AccessibleObject" />です。</param>
+        <param name="helpKeyword">ヘルプの要求に関連付けるキーワード、<see cref="T:System.Windows.Forms.AccessibleObject" />です。</param>
+        <summary><see cref="T:System.Windows.Forms.QueryAccessibilityHelpEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpKeyword">
+      <MemberSignature Language="C#" Value="public string HelpKeyword { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpKeyword" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpKeyword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したコントロールのヘルプ キーワードを設定します。</summary>
+        <value>関連付けられているヘルプ トピック、<see cref="T:System.Windows.Forms.AccessibleObject" />をクエリが実行されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#44](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#44)]
+ [!code-vb[System.Windows.Forms.EventExamples#44](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#44)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpNamespace">
+      <MemberSignature Language="C#" Value="public string HelpNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはヘルプ ファイルの名前を指定する値を設定します。</summary>
+        <value>ヘルプ ファイルの名前。 この名前は、C:\path\sample.chm または/folder/file.htm 形式であることができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#44](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#44)]
+ [!code-vb[System.Windows.Forms.EventExamples#44](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#44)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpString">
+      <MemberSignature Language="C#" Value="public string HelpString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpString" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryAccessibilityHelpEventArgs.HelpString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するためのヘルプを定義する文字列、<see cref="T:System.Windows.Forms.AccessibleObject" />です。</summary>
+        <value>ヘルプのユーザー補助オブジェクトを取得します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ユーザー補助に対応するグラフの作成を示しますコントロールを使用して、<xref:System.Windows.Forms.AccessibleObject>と<xref:System.Windows.Forms.Control.ControlAccessibleObject>アクセス可能な情報を公開するクラス。 コントロールは、凡例と共に 2 つの曲線がプロットされます。 `ChartControlAccessibleObject`から派生するクラス`ControlAccessibleObject`で使用される、<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>グラフ コントロールのカスタムのアクセス可能な情報を提供するメソッド。 グラフの凡例が、実際はないため<xref:System.Windows.Forms.Control>-ベースの制御が、代わりに描画されるグラフ コントロールでは、組み込みのアクセス可能な情報です。 このため、`ChartControlAccessibleObject`クラスのオーバーライド、<xref:System.Windows.Forms.AccessibleObject.GetChild%2A>を返すメソッドを`CurveLegendAccessibleObject`凡例の各部分にアクセス可能な情報を表すです。 ユーザー補助対応アプリケーションでは、このコントロールを使用すると、コントロールは、必要なアクセス可能な情報を提供できます。  
+  
+ この例では、<xref:System.Windows.Forms.QueryAccessibilityHelpEventArgs>クラス、<xref:System.Windows.Forms.Control.QueryAccessibilityHelp>イベント。 参照してください、<xref:System.Windows.Forms.AccessibleObject>の完全なコード例がクラスの概要です。  
+  
+ [!code-cpp[System.Windows.Forms.AccessibleObject#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CPP/chartcontrol.cpp#2)]
+ [!code-csharp[System.Windows.Forms.AccessibleObject#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/CS/chartcontrol.cs#2)]
+ [!code-vb[System.Windows.Forms.AccessibleObject#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.AccessibleObject/VB/chartcontrol.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

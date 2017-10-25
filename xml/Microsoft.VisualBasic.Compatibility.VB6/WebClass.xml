@@ -1,0 +1,247 @@
+<Type Name="WebClass" FullName="Microsoft.VisualBasic.Compatibility.VB6.WebClass">
+  <TypeSignature Language="C#" Value="public class WebClass" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi WebClass extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 6.0 にアップグレードできるように<see langword="WebClass" />ASP.NET で実行するプロジェクトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic 6.0`WebClass`プロジェクトをアップグレード[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]に変換されます、 [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] Web サイト プロジェクト。  
+  
+ 宣言がプロジェクトに追加されます: 1 つずつ、`WebClass`と各`WebItem`と`Template`で、`WebClass`プロジェクト。 A`Page_Load`イベント プロシージャが、プロジェクトに追加します。 これが最初に作成、`WebClass`オブジェクトし<xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>ごとにオブジェクト`WebItem`と`Template`Visual Basic 6.0 に関連付けられている`WebClass`プロジェクト。 最後に、`Page_Load`イベント プロシージャが表示されますへの呼び出し、`WebClass`互換性ランタイム:<xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass.ProcessEvents%2A>です。 これにより、表示するために、ランタイム、<xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>要求 URL で指定します。 このコードは、アップグレードされたプロジェクトに追加する唯一の新しいコードであり、Visual Basic 6.0 の基になる動作をエミュレートするためにのみ機能`WebClass`ランタイム。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebClass (string UserWebClassName, string WebClassFileName, object ContainingClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string UserWebClassName, string WebClassFileName, object ContainingClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebClass.#ctor(System.String,System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="UserWebClassName" Type="System.String" />
+        <Parameter Name="WebClassFileName" Type="System.String" />
+        <Parameter Name="ContainingClass" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="UserWebClassName">A<see cref="T:System.String" />を格納している、<see langword="Name" />プロパティは、Visual Basic 6.0 の<see langword="WebClass" />オブジェクト。</param>
+        <param name="WebClassFileName">A <see cref="T:System.String" /> Visual Basic 6.0 のファイル名を含む<see langword="WebClass" />オブジェクト。</param>
+        <param name="ContainingClass">A<see cref="T:System.String" />を格納している、<see langword="Application" />プロパティは、Visual Basic 6.0 の<see langword="WebClass" />オブジェクト。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebClass.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別するコードで使用される名前を取得、<see langword="WebClass" />オブジェクト。</summary>
+        <value>A<see cref="T:System.String" />の名を含む、<see langword="WebClass" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用です。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextItem">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Compatibility.VB6.WebItem NextItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Compatibility.VB6.WebItem NextItem" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebClass.NextItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Compatibility.VB6.WebItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定別<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />、現在のオブジェクト<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" />オブジェクト。</summary>
+        <value><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Shift キーを 1 つから処理するために使用<xref:Microsoft.VisualBasic.Compatibility.VB6.WebItem>を別の 1 つの要求中にします。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEvents">
+      <MemberSignature Language="C#" Value="public void ProcessEvents (System.Web.HttpRequest Request);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void ProcessEvents(class System.Web.HttpRequest Request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebClass.ProcessEvents(System.Web.HttpRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Request" Type="System.Web.HttpRequest" />
+      </Parameters>
+      <Docs>
+        <param name="Request"><see cref="T:System.Web.HttpRequest" /> オブジェクト。</param>
+        <summary>表示、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />で、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlData">
+      <MemberSignature Language="C#" Value="public string UrlData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UrlData" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Compatibility.VB6.WebClass.UrlData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用して生成される任意の URL の末尾に追加されるパラメーター、<see cref="Overload:Microsoft.VisualBasic.Compatibility.VB6.WebClass.URLFor" />メソッドです。</summary>
+        <value>A<see cref="T:System.String" />追加されるパラメーターを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="URLFor">
+      <MemberSignature Language="C#" Value="public string URLFor (Microsoft.VisualBasic.Compatibility.VB6.WebItem obj, string EventName = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance string URLFor(class Microsoft.VisualBasic.Compatibility.VB6.WebItem obj, string EventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebClass.URLFor(Microsoft.VisualBasic.Compatibility.VB6.WebItem,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="Microsoft.VisualBasic.Compatibility.VB6.WebItem" />
+        <Parameter Name="EventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="obj">A <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" /> URL を生成し、イベントを発生するオブジェクト。</param>
+        <param name="EventName">省略可能です。 A<see cref="T:System.String" />でイベントを参照する、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />です。</param>
+        <summary>システムに必要な URL を指定の参照を<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" /><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />ブラウザーにします。</summary>
+        <returns>A <see cref="T:System.String" /> URL を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="URLFor">
+      <MemberSignature Language="C#" Value="public string URLFor (string objName, string EventName = &quot;&quot;);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance string URLFor(string objName, string EventName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.WebClass.URLFor(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objName" Type="System.String" />
+        <Parameter Name="EventName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="objName">A<see cref="T:System.String" />の名前を格納している、 <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" /> URL を生成し、イベントを発生するオブジェクト。</param>
+        <param name="EventName">省略可能です。 A<see cref="T:System.String" />でイベントを参照する、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />です。</param>
+        <summary>システムに必要な URL を指定の参照を<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebClass" /><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.WebItem" />ブラウザーにします。</summary>
+        <returns>A <see cref="T:System.String" /> URL を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.WebClass>クラスは、アップグレード ツール、Visual Basic 6.0 のアップグレードに使用する`WebClass`プロジェクトを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]Web サイト プロジェクト。  
+  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

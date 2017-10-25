@@ -1,0 +1,2067 @@
+<Type Name="X509Certificate2" FullName="System.Security.Cryptography.X509Certificates.X509Certificate2">
+  <TypeSignature Language="C#" Value="public class X509Certificate2 : System.Security.Cryptography.X509Certificates.X509Certificate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit X509Certificate2 extends System.Security.Cryptography.X509Certificates.X509Certificate" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.X509Certificates.X509Certificate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>X.509 証明書を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X.509 構造体は、作業グループ International Organization for Standardization (ISO) に由来します。 さまざまな種類の id、資格、および所有者の属性 (アクセス許可、年齢、性別、場所、属しているなど) を含む情報を表すため、この構造体を使用できます。 ISO 仕様は、構造体、自体を最も明確に指定ではないものの、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>クラスは、インターネット技術標準化委員会 (IETF) 公開キー インフラストラクチャ X.509 (PKIX) ワーキング グループによって発行された仕様で定義された使用シナリオをモデル化するように設計されています。 これらの仕様の中で最も有益なの RFC 3280"[証明書と証明書失効リスト (CRL) のプロファイル](http://go.microsoft.com/fwlink/?LinkId=45286)"。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、この型を実装して、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+>   
+>  対象とするアプリの[!INCLUDE[net_v452](~/includes/net-v452-md.md)]と以前のバージョン、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>クラスを実装しません、<xref:System.IDisposable>インターフェイスし、したがって必要はありません、`Dispose`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトを暗号化し、ファイル暗号化を解除します。  
+  
+ [!code-csharp[X509Certificate2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509certificate2/cs/program.cs#1)]
+ [!code-vb[X509Certificate2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509certificate2/vb/program.vb#1)]  
+  
+ 次の例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、空を作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>他のクラスのコンス トラクターこのバイト配列、ポインター、または証明書ファイルから証明書情報を使用するとは異なり、オブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (byte[] rawData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rawData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス バイト配列からの情報を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>バイト配列から証明書の情報を使用してオブジェクト。 バイト配列には、バイナリ (DER) エンコードまたは Base64 でエンコードされた X.509 データを指定できます。 バイト配列が pkcs7 ですることもできます (Authenticode) で署名されたファイルです。署名者の証明書は、オブジェクトの作成に使用されます。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`rawData`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">アンマネージ コードで証明書のコンテキストへのポインター。 C の構造体が呼び出された<see langword="PCCERT_CONTEXT" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラスをアンマネージ ハンドルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトのハンドルを使用した Microsoft Cryptographic API 証明書のコンテキストの`PCCERT_CONTEXT`します。 このコンス トラクターの直前の呼び出し元がアンマネージ コードのアクセス許可が必要であることを注意してください。  
+  
+> [!IMPORTANT]
+>  コンス トラクターでは、証明書のコンテキストのコピーを作成します。 行うわけでは、コンス トラクターに渡されるコンテキスト構造が無効です。リリースされている可能性があります。 現在のコピーを取得する`PCCERT_CONTEXT`から構造体、<xref:System.Security.Cryptography.X509Certificates.X509Certificate.Handle%2A>プロパティが有効の有効期間中にのみ、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (System.Security.Cryptography.X509Certificates.X509Certificate certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="certificate"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラスを使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の新しいインスタンスを作成、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>クラスを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス証明書ファイル名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクト証明書ファイル名を使用します。 バイナリ (DER) エンコードまたは Base64 エンコードをサポートします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`fileName`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (byte[] rawData, System.Security.SecureString password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rawData, class System.Security.SecureString password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Byte[],System.Security.SecureString)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス バイト配列とパスワードを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、証明書の秘密キーが含まれている PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターを呼び出すと、秘密キーを復号化、キー コンテナーに保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate> pkcs7 で署名されたファイルのストアを指定することによって証明書`rawData`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (byte[] rawData, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rawData, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Byte[],System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス バイト配列とパスワードを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトのバイト配列と証明書データにアクセスするために必要なパスワードを使用します。 証明書の秘密キーを格納する PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターを呼び出すと、秘密キーを復号化、キー コンテナーに保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`rawData`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected X509Certificate2 (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">新しいを逆シリアル化に必要なシリアル化情報<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />です。</param>
+        <param name="context">逆シリアル化するストリームのソースに関するコンテキスト情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラスの指定したシリアル化とストリーム コンテキスト情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (string fileName, System.Security.SecureString password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, class System.Security.SecureString password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.String,System.Security.SecureString)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス証明書ファイル名とパスワードを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、証明書の秘密キーが含まれている PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターを呼び出すと、秘密キーを復号化、キー コンテナーに保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate> pkcs7 で署名されたファイルのストアを指定することによって証明書`fileName`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (string fileName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラスの証明書ファイル名と証明書にアクセスするために使用するパスワードを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトの証明書ファイル名と証明書にアクセスするために必要なパスワードを使用します。 証明書の秘密キーを格納する PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターを呼び出すと、秘密キーを復号化、キー コンテナーに保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`fileName`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (byte[] rawData, System.Security.SecureString password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rawData, class System.Security.SecureString password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス バイト配列、パスワード、およびキーの格納フラグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、証明書の秘密キーが含まれている PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターの呼び出しでは、秘密キーの暗号化を解除しに Microsoft Cryptographic API 暗号化サービス プロバイダー (CSP) に保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate> pkcs7 で署名されたファイルのストアを指定することによって証明書`rawData`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (byte[] rawData, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rawData, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラス バイト配列、パスワード、およびキーの格納フラグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>バイトを使用してオブジェクトの配列、証明書のデータとキーの格納フラグにアクセスするために必要なパスワード。 証明書の秘密キーを格納する PKCS12 (PFX) ファイルと共に使用されます。 正しいパスワードを使用して、このコンス トラクターの呼び出しでは、秘密キーの暗号化を解除しに Microsoft Cryptographic API 暗号化サービス プロバイダー (CSP) に保存されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`rawData`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (string fileName, System.Security.SecureString password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, class System.Security.SecureString password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.String,System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />クラスの証明書ファイル名、パスワード、およびキーの格納フラグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate> pkcs7 で署名されたファイルのストアを指定することによって証明書`fileName`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Certificate2 (string fileName, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.#ctor(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />証明書ファイルを使用してクラスの名前、パスワード、証明書とキーの格納フラグにアクセスするために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>証明書ファイルを使用してオブジェクトの名前、証明書とキーの格納フラグにアクセスするために必要なパスワード。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ 作成する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> pkcs7 で署名されたファイルのストアを指定することによって証明書`fileName`、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ストア内の証明書のいずれかのではなく、ストアに署名した証明書の作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書でエラーが発生します。 例:  
+  
+-   証明書ファイルが存在しません。  
+  
+-   証明書が無効です。  
+  
+-   証明書のパスワードが正しくありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Archived">
+      <MemberSignature Language="C#" Value="public bool Archived { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Archived" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.Archived" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または X.509 証明書がアーカイブになっていることを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />証明書がアーカイブされている場合<see langword="false" />証明書がアーカイブしていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ストアに関連付けられている証明書でのみ設定します。 場合は、プロパティが設定され、証明書ストアに証明書を追加、値が永続化されます。 プロパティがストアから取得した証明書に設定されている場合、値はすぐに保存されます。  
+  
+ X.509 ストア、アーカイブされた証明書は含まれません、返された<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection>オブジェクトの場合を除き、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Archived%2A>プロパティに設定されている`true`です。 物理的なアーカイブ処理が行われない場合、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Archived%2A>値は設定または解除します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public override byte[] Export (System.Security.Cryptography.X509Certificates.X509ContentType contentType, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] Export(valuetype System.Security.Cryptography.X509Certificates.X509ContentType contentType, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Export(System.Security.Cryptography.X509Certificates.X509ContentType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("X509ContentType.SerializedCert is not supported")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.Security.Cryptography.X509Certificates.X509ContentType" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">To be added.</param>
+        <param name="password">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509ExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509ExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509ExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.X509Certificates.X509Extension" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509ExtensionCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X.509 v3 証明書の形式で定義された拡張機能は、証明書に含まれるその他のデータを許可します。 RFC 3280 に PKIX によって、また X.509 v3 定義で、ISO で多くの拡張機能が定義されて"[証明書と証明書失効リスト (CRL) のプロファイル](http://go.microsoft.com/fwlink/?LinkId=45286)"。 一般的な拡張機能は、キー使用法に関する情報を含める (<xref:System.Security.Cryptography.X509Certificates.X509KeyUsageExtension>)、キーの識別子 (<xref:System.Security.Cryptography.X509Certificates.X509SubjectKeyIdentifierExtension>)、証明書のポリシー、失効情報 (CRL 配布ポイント拡張機能)、およびその他の使用。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FriendlyName">
+      <MemberSignature Language="C#" Value="public string FriendlyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FriendlyName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.FriendlyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明書に関連付けられた別名を設定します。</summary>
+        <value>証明書のフレンドリ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フレンドリ名は、X.509 証明書ストアに設定できるプロパティです。 関連付けるエイリアス証明書が簡単に識別できるようにユーザーを有効に使用されます。  
+  
+ 空の文字列、証明書のフレンドリ名が存在しない場合 ("") が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCertContentType">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.X509Certificates.X509ContentType GetCertContentType (byte[] rawData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.X509Certificates.X509ContentType GetCertContentType(unsigned int8[] rawData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.GetCertContentType(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Detection limited to Cert, Pfx, Pkcs12, Pkcs7 and Unknown")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509ContentType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <summary>バイト配列に含まれている証明書の種類を示します。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509ContentType" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、ファイル内の証明書の種類を検出することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="rawData" />長さは 0 または<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCertContentType">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.X509Certificates.X509ContentType GetCertContentType (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.X509Certificates.X509ContentType GetCertContentType(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.GetCertContentType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Detection limited to Cert, Pfx, Pkcs12 and Unknown")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509ContentType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <summary>ファイルに含まれている証明書の種類を示します。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509ContentType" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、ファイル内の証明書の種類を検出することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">証明書の読み取り。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.IO.FileAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameInfo">
+      <MemberSignature Language="C#" Value="public string GetNameInfo (System.Security.Cryptography.X509Certificates.X509NameType nameType, bool forIssuer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetNameInfo(valuetype System.Security.Cryptography.X509Certificates.X509NameType nameType, bool forIssuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.GetNameInfo(System.Security.Cryptography.X509Certificates.X509NameType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("always return String.Empty for UpnName, DnsFromAlternativeName and UrlName")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nameType" Type="System.Security.Cryptography.X509Certificates.X509NameType" />
+        <Parameter Name="forIssuer" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="nameType"><see cref="T:System.Security.Cryptography.X509Certificates.X509NameType" />サブジェクトの値。</param>
+        <param name="forIssuer">
+          <see langword="true" />発行者名を含めるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>証明書からサブジェクトと発行者名を取得します。</summary>
+        <returns>証明書の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、複数の場所で、名前と値の多くにあることができますので、証明書を解析する代わり常に使用する必要があります。 このメソッドを使用して、適切な名前が返されることを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasPrivateKey">
+      <MemberSignature Language="C#" Value="public bool HasPrivateKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasPrivateKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.HasPrivateKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクトには、秘密キーが含まれています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクトを含むプライベート キー、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書のコンテキストが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (byte[] rawData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(unsigned int8[] rawData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />バイト配列のデータを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、X.509 証明書の生のバイト配列を受け取るし、作成に使用できます、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>関連する値を持つオブジェクト。  
+  
+ このメソッドは、バイト配列のみを受け入れる、ので、Base64 でエンコードされた、DER でエンコードされた X.509 証明書または PFX/PKCS12 証明書を含む、パスワードを必要としない種類の証明書に対してのみ使用できます。 PFX/PKCS12 証明書が複数の証明書を含めることができますに注意してください。 その場合は、秘密キーに関連付けられている最初の証明書を使用または、秘密キーが見つからない場合、最初の証明書が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書の名前。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />証明書ファイルから情報を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを表す X.509 証明書は追加、.cer 拡張子が付いたファイルなど、証明書ファイルを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>ファイルに含まれる証明書を持つオブジェクト。  
+  
+ このメソッドは、Base64 でエンコードされた、DER でエンコードされた X.509 証明書、証明書の PFX/PKCS12、Authenticode などの署名証明書など、いくつかの証明書の種類で使用できます。 PFX/PKCS12 証明書が複数の証明書を含めることができますに注意してください。 その場合は、秘密キーに関連付けられている最初の証明書を使用または、秘密キーが見つからない場合、最初の証明書が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (byte[] rawData, System.Security.SecureString password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(unsigned int8[] rawData, class System.Security.SecureString password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.Byte[],System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("SecureString is incomplete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクトのバイト配列、パスワード、およびキーの格納フラグのデータを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Base64 でエンコードされた、DER でエンコードされた X.509 証明書または PFX/PKCS12 証明書などの証明書の種類を使用できます。 PFX/PKCS12 証明書が複数の証明書を含めることができますに注意してください。 その場合は、秘密キーに関連付けられている最初の証明書を使用または、秘密キーが見つからない場合、最初の証明書が使用されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (byte[] rawData, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(unsigned int8[] rawData, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.Byte[],System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("missing KeyStorageFlags support")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rawData" Type="System.Byte[]" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="rawData">X.509 証明書のデータを格納しているバイト配列。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクトの秘密キーをインポートする方法を決定するためのデータをバイト配列、パスワード、およびフラグを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、設定を使用することができます、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクトのバイト配列で表される証明書のパスワードを使用します。 <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags>場所と方法を制御する値を使用することができます、秘密キーをインポートします。  
+  
+ このメソッドは、バイト配列を受け取り、Base64 でエンコードされた、DER でエンコードされた X.509 証明書または PFX/PKCS12 証明書などの証明書の種類に使用できます。 PFX/PKCS12 証明書が複数の証明書を含めることができますに注意してください。 その場合は、秘密キーに関連付けられている最初の証明書を使用または、秘密キーが見つからない場合、最初の証明書が使用されます。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (string fileName, System.Security.SecureString password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(string fileName, class System.Security.SecureString password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.String,System.Security.SecureString,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("SecureString is incomplete")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.Security.SecureString" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>追加、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />証明書ファイルをパスワード、およびキーの格納フラグから情報を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **セキュリティに関する注意**をハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public override void Import (string fileName, string password, System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Import(string fileName, string password, valuetype System.Security.Cryptography.X509Certificates.X509KeyStorageFlags keyStorageFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Import(System.String,System.String,System.Security.Cryptography.X509Certificates.X509KeyStorageFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("missing KeyStorageFlags support")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="keyStorageFlags" Type="System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">証明書ファイルの名前。</param>
+        <param name="password">X.509 証明書データにアクセスするために必要なパスワード。</param>
+        <param name="keyStorageFlags">証明書をインポートする場所と方法を制御する列挙値のビットごとの組み合わせ。</param>
+        <summary>追加、 <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" /> 、パスワード、証明書ファイルから情報を持つオブジェクトと<see cref="T:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用できますの設定、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> 、パスワード、証明書ファイルから情報を持つオブジェクトと<xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags>値。  
+  
+> [!IMPORTANT]
+>  ハードコードしないでをソース コード内のパスワード。  パスワードをハードコーディングを使用してアセンブリから取得できる、 [Ildasm.exe (IL 逆アセンブラー)](~/docs/framework/tools/ildasm-exe-il-disassembler.md)、16 進数のエディターまたは Notepad.exe などのテキスト エディターでアセンブリを開くだけでします。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IssuerName">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X500DistinguishedName IssuerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X500DistinguishedName IssuerName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.IssuerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X500DistinguishedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の発行者の識別名を取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" />証明書の発行者の名前を含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、証明書を発行した証明機関 (CA) の名前が含まれています。 証明書の名前を取得するを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.GetNameInfo%2A>メソッドです。  
+  
+ 証明書の識別名は、証明書のサブジェクトまたは発行者のテキスト表現です。 この表現は名前の属性 (たとえば、"CN = MyName, OU = MyOrgUnit、C = u. s.") です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書のコンテキストが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NotAfter">
+      <MemberSignature Language="C#" Value="public DateTime NotAfter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NotAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.NotAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その後、証明書が無効になって現地時刻で日付を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />証明書の有効期限の日付を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、証明書が無効になる有効期限の日付を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NotBefore">
+      <MemberSignature Language="C#" Value="public DateTime NotBefore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime NotBefore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.NotBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書が有効になるローカル時間で日付を取得します。</summary>
+        <value>A<see cref="T:System.DateTime" />証明書の発効日を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、証明書が有効になる日付を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateKey">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.AsymmetricAlgorithm PrivateKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.AsymmetricAlgorithm PrivateKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.PrivateKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" />証明書に関連付けられている秘密キーを表すオブジェクト。</summary>
+        <value><see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" /> DSA または RSA 暗号化サービス プロバイダーであるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在このプロパティをサポートしている RSA や DSA キーのみ、いずれかを返すように、<xref:System.Security.Cryptography.RSACryptoServiceProvider>または<xref:System.Security.Cryptography.DSACryptoServiceProvider>オブジェクト。 秘密キーがいないかどうか、証明書に関連付け、それを返します`null`です。  
+  
+> [!WARNING]
+>  このプロパティを設定する場合`null`または削除することがなく別のキーに秘密キー ファイルはディスクに残っています。  
+  
+ このプロパティに関連付けられている秘密キーを正しく削除するには、次のように設定します。`PersistKeyInCsp`に`false`、まず、<xref:System.Security.Cryptography.AsymmetricAlgorithm.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">キーの値は、RSA や DSA キーまたはキーを読み取ることができません。</exception>
+        <exception cref="T:System.ArgumentNullException">このプロパティに設定されている値<see langword="null" />です。</exception>
+        <exception cref="T:System.NotSupportedException">この秘密キーのキーのアルゴリズムがサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">X.509 キーが一致しません。</exception>
+        <exception cref="T:System.ArgumentException">暗号化サービス プロバイダー キーが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.PublicKey PublicKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.PublicKey PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.PublicKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey" />証明書に関連付けられているオブジェクト。</summary>
+        <value><see cref="P:System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey%2A>オブジェクト、オブジェクト識別子が含まれます (<xref:System.Security.Cryptography.Oid>) 公開キー アルゴリズム、ASN.1 エンコードされたパラメーター、および ASN.1 エンコードされたキーの値を表すです。  
+  
+ キーを取得することも、<xref:System.Security.Cryptography.AsymmetricAlgorithm>オブジェクトを参照することによって、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.PublicKey%2A>プロパティです。 このプロパティは、いずれかを返すように RSA や DSA キーのみをサポートしている、<xref:System.Security.Cryptography.RSACryptoServiceProvider>または<xref:System.Security.Cryptography.DSACryptoServiceProvider>公開キーを表すオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">キーの値は、RSA や DSA キーまたはキーを読み取ることができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RawData">
+      <MemberSignature Language="C#" Value="public byte[] RawData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] RawData" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.RawData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の生データを取得します。</summary>
+        <value>バイト配列としての証明書の生データ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>状態をリセットする<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、証明書の状態をリセットすることができます。 また、証明書に関連付けられているすべてのリソースを解放します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SerialNumber">
+      <MemberSignature Language="C#" Value="public string SerialNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SerialNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.SerialNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書のシリアル番号を取得します。</summary>
+        <value>証明書のシリアル番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書のシリアル番号は、元の X.509 プロトコルの一部です。 シリアル番号とは、証明機関 (CA) とも呼ばれる証明書の発行者によって発行された一意の番号です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Oid SignatureAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Oid SignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.SignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Oid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の署名の作成に使用されるアルゴリズムを取得します。</summary>
+        <value>オブジェクトの識別子を返します (<see cref="T:System.Security.Cryptography.Oid" />) の署名アルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト識別子 (<xref:System.Security.Cryptography.Oid>) 証明書で使用される署名アルゴリズムの種類を識別します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectName">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X500DistinguishedName SubjectName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X500DistinguishedName SubjectName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.SubjectName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X500DistinguishedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書からサブジェクトの識別名を取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" />証明書のサブジェクトの名前を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクト識別名は、証明書のユーザーの名前です。 証明書の識別名は、件名のテキスト表現または証明書の発行者です。 この表現は名前の属性、たとえば、"CN = MyName, OU = MyOrgUnit、C = u. s."です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書のコンテキストが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbprint">
+      <MemberSignature Language="C#" Value="public string Thumbprint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Thumbprint" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.Thumbprint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書のサムプリントを取得します。</summary>
+        <value>証明書のサムプリント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拇印は、SHA1 アルゴリズムを使用して動的に生成し、証明書に物理的に存在しません。 拇印が証明書の一意の値であるために、証明書ストアに特定の証明書を見つけるために使用が一般的です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>X.509 証明書をテキスト形式で表示します。</summary>
+        <returns>証明書の情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのと同様`ToString`メソッドを出力できない可能性があります、.NET Framework のバージョン間で一貫性のあるため、メソッドの結果は、コンテンツの解析してはなりません。 プロパティを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>コンテンツに関する正確な情報を取得または使用するオブジェクト、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString%2A>証明書に関する情報を取得します。  
+  
+ このメソッドは、テキスト形式で証明書を表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString (bool verbose);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString(bool verbose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.ToString(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verbose" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="verbose">
+          <see langword="true" />公開キー、秘密キー、拡張、およびなどを表示するには<see langword="false" />次のような情報を表示する、<see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />拇印、シリアル番号、サブジェクトと発行者名、およびなどを含むクラスです。</param>
+        <summary>X.509 証明書をテキスト形式で表示します。</summary>
+        <returns>証明書の情報です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのと同様`ToString`メソッドを出力できない可能性があります、.NET Framework のバージョン間で一貫性のあるため、メソッドの結果は、コンテンツの解析してはなりません。 プロパティを使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>正確な情報を取得するオブジェクト。  
+  
+ このメソッドは、テキスト形式で証明書を表示します。 場合、`verbose`にパラメーターが設定されている`true`テキストの表示には、公開キー、秘密キー、および拡張機能が含まれています。 場合`verbose`に設定されている`false`テキストの表示には、X.509 証明書の拇印、シリアル番号、サブジェクトと発行者名、および有効期限情報を含むから使用できるフィールドが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、コマンドライン実行可能ファイルを証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力を作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public bool Verify ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Verify() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2.Verify" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("by default this depends on the incomplete X509Chain")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基本的な検証ポリシーを使用して X.509 チェーンの検証を実行します。</summary>
+        <returns>
+          <see langword="true" />検証が成功した場合<see langword="false" />検証に失敗した場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、簡単な証明書のチェーンを構築し、そのチェーンにベースのポリシーを適用します。 使用して直接証明書の検証の失敗に関する詳細については、必要がある場合、<xref:System.Security.Cryptography.X509Certificates.X509Chain>オブジェクト。  
+  
+ 使用して、チェーン エンジンの既定をオーバーライドできることに注意してください、<xref:System.Security.Cryptography.CryptoConfig>クラスです。 Microsoft Windows Server 2003 で、既定のエンジンが RFC3280、」に記載の仕様に準拠"[証明書と証明書失効リスト (CRL) のプロファイル](http://go.microsoft.com/fwlink/?LinkId=45286)"。  
+  
+   
+  
+## Examples  
+ 次のコード例では、現在のユーザー証明書ストアを開いて、アクティブな証明書のみを選択し、1 つまたは複数の証明書を選択することができます。 この例は、証明書情報をコンソールに書き込みます。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Certificate2.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書の X.509 形式のバージョンを取得します。</summary>
+        <value>証明書の形式です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X.509 証明書のいくつかのバージョンがあります。 このプロパティは、証明書で使用する形式を識別します。 たとえば、バージョン 3 証明書の「3」が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、証明書ファイルを引数として受け取り、さまざまな証明書のプロパティをコンソールに出力するコマンドラインの実行可能ファイルを作成します。  
+  
+ [!code-cpp[CertInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertInfo/CPP/certinfo.cpp#1)]
+ [!code-csharp[CertInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertInfo/CS/certinfo.cs#1)]
+ [!code-vb[CertInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertInfo/VB/certinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書を読み取れません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

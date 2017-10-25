@@ -1,0 +1,1201 @@
+<Type Name="Operators" FullName="Microsoft.VisualBasic.CompilerServices.Operators">
+  <TypeSignature Language="C#" Value="public sealed class Operators" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Operators extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.Operators" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>など、遅延バインド算術演算子の提供<see cref="M:Microsoft.VisualBasic.CompilerServices.Operators.AddObject(System.Object,System.Object)" />と<see cref="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObject(System.Object,System.Object,System.Boolean)" />、Visual Basic コンパイラを内部的に使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AddObject">
+      <MemberSignature Language="C#" Value="public static object AddObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object AddObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.AddObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic 加算 (+) 演算子を表します。</summary>
+        <returns><paramref name="Left" /> と <paramref name="Right" /> の合計。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AndObject">
+      <MemberSignature Language="C#" Value="public static object AndObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object AndObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.AndObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <param name="Right">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <summary>Visual Basic を表す<see langword="And" />演算子。</summary>
+        <returns><see langword="Boolean" />操作、<see langword="True" />両方<paramref name="Left" />と<paramref name="Right" />に評価される<see langword="True" />、それ以外の<see langword="False" />します。 ビットごとの演算では、両方の場合は 1<paramref name="Left" />と<paramref name="Right" />1 に評価される場合は、0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObject">
+      <MemberSignature Language="C#" Value="public static int CompareObject (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 CompareObject(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObject(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic の比較演算子を表します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> は <paramref name="Right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> と <paramref name="Right" /> が等しい。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> が <paramref name="Right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectEqual">
+      <MemberSignature Language="C#" Value="public static object CompareObjectEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic の等号 (=) 演算子を表します。</summary>
+        <returns>
+          <see langword="True" /> と <paramref name="Left" /> が等しい場合は <paramref name="Right" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectGreater">
+      <MemberSignature Language="C#" Value="public static object CompareObjectGreater (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectGreater(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectGreater(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic を大きい値を表す-より (&gt;) 演算子。</summary>
+        <returns>
+          <see langword="True" /> が <paramref name="Left" /> より大きい場合は <paramref name="Right" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectGreaterEqual">
+      <MemberSignature Language="C#" Value="public static object CompareObjectGreaterEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectGreaterEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectGreaterEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic を大きい値を表す-よりまたは等しいかどうかを (&gt;=) 演算子。</summary>
+        <returns>
+          <paramref name="Left" /> が <paramref name="Right" /> 以上の場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectLess">
+      <MemberSignature Language="C#" Value="public static object CompareObjectLess (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectLess(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectLess(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic を小さいを表す-より (&lt;) 演算子。</summary>
+        <returns>
+          <paramref name="Left" /> が <paramref name="Right" /> より小さい場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectLessEqual">
+      <MemberSignature Language="C#" Value="public static object CompareObjectLessEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectLessEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectLessEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic を小さいを表す-よりまたは等しいかどうかを (&lt;=) 演算子。</summary>
+        <returns>
+          <paramref name="Left" /> が <paramref name="Right" /> 以下の場合は <see langword="True" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareObjectNotEqual">
+      <MemberSignature Language="C#" Value="public static object CompareObjectNotEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object CompareObjectNotEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareObjectNotEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>Visual Basic 不等号を表します (&lt;&gt;) 演算子。</summary>
+        <returns>
+          <see langword="True" /> が <paramref name="Left" /> と等しくない場合は <paramref name="Right" />。それ以外の場合は <see langword="False" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CompareString">
+      <MemberSignature Language="C#" Value="public static int CompareString (string Left, string Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 CompareString(string Left, string Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.CompareString(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.String" />
+        <Parameter Name="Right" Type="System.String" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意のブール型 (<see langword="String" />) の式を指定します。</param>
+        <param name="Right">必須です。 任意のブール型 (<see langword="String" />) の式を指定します。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>2 つの文字列を指定した場合のバイナリまたはテキスト文字列の比較を実行します。</summary>
+        <returns>
+          <list type="table">
+            <listheader>
+              <term> 値  
+  
+ </term>
+              <description> 条件  
+  
+ </description>
+            </listheader>
+            <item>
+              <term> -1  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> は <paramref name="Right" /> より小さい値です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 0  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> と <paramref name="Right" /> が等価です。  
+  
+ </description>
+            </item>
+            <item>
+              <term> 1  
+  
+ </term>
+              <description>
+                <paramref name="Left" /> が <paramref name="Right" /> より大きくなっています。  
+  
+ </description>
+            </item>
+          </list>
+        </returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ Visual Basic の等値演算子を使用する 2 つの文字列を比較するととき、に、文字列を渡します、<xref:Microsoft.VisualBasic.CompilerServices.Operators.CompareString%2A>メソッドの値と`False`の`TextCompare`引数。 これが序数に基づくか、ステートメントの値に応じて、現在のカルチャに基づいて区別して比較を実行します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConcatenateObject">
+      <MemberSignature Language="C#" Value="public static object ConcatenateObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object ConcatenateObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConcatenateObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <summary>Visual Basic の連結を表します (&amp;) 演算子。</summary>
+        <returns>文字列の連結を表す<paramref name="Left" />と<paramref name="Right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectEqual">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>オーバー ロードされた Visual Basic の等号 (=) 演算子を表します。</summary>
+        <returns>Equals をオーバー ロードされた演算子の結果です。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectGreater">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectGreater (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectGreater(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectGreater(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>大きいオーバー ロードされた Visual Basic を表す-より (&gt;) 演算子。</summary>
+        <returns>オーバー ロードされた以上の結果の演算子よりもします。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectGreaterEqual">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectGreaterEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectGreaterEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectGreaterEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>大きいオーバー ロードされた Visual Basic を表す-よりまたは等しいかどうかを (&gt;=) 演算子。</summary>
+        <returns>オーバー ロードされた以上の結果のよりまたは演算子のです。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectLess">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectLess (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectLess(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectLess(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>オーバー ロードされた Visual Basic を小さいを表す-より (&lt;) 演算子。</summary>
+        <returns>オーバー ロードされた結果小さいの演算子よりもします。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectLessEqual">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectLessEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectLessEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectLessEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>オーバー ロードされた Visual Basic を小さいを表す-よりまたは等しいかどうかを (&lt;=) 演算子。</summary>
+        <returns>オーバー ロードされた結果小さい-よりまたは演算子。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ConditionalCompareObjectNotEqual">
+      <MemberSignature Language="C#" Value="public static bool ConditionalCompareObjectNotEqual (object Left, object Right, bool TextCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool ConditionalCompareObjectNotEqual(object Left, object Right, bool TextCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ConditionalCompareObjectNotEqual(System.Object,System.Object,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+        <Parameter Name="TextCompare" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の式。</param>
+        <param name="Right">必須です。 任意の式。</param>
+        <param name="TextCompare">必須です。 <see langword="True" />大文字と小文字の文字列比較を実行するにはそれ以外の場合、<see langword="False" />です。</param>
+        <summary>オーバー ロードされた Visual Basic 不等号を表します (&lt;&gt;) 演算子。</summary>
+        <returns>オーバー ロードされた、等しくない演算子の結果。 <see langword="False" />演算子のオーバー ロードがサポートされていません場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DivideObject">
+      <MemberSignature Language="C#" Value="public static object DivideObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object DivideObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.DivideObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic 除算 (/) 演算子を表します。</summary>
+        <returns>フルの商<paramref name="Left" />で割った値<paramref name="Right" />、小数部分を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExponentObject">
+      <MemberSignature Language="C#" Value="public static object ExponentObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object ExponentObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ExponentObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic 指数 (^) 演算子を表します。</summary>
+        <returns>結果<paramref name="Left" />の累乗<paramref name="Right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackInvokeUserDefinedOperator">
+      <MemberSignature Language="C#" Value="public static object FallbackInvokeUserDefinedOperator (object vbOp, object[] Arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FallbackInvokeUserDefinedOperator(object vbOp, object[] Arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.FallbackInvokeUserDefinedOperator(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vbOp" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="vbOp">ユーザー定義演算子です。</param>
+        <param name="Arguments">ユーザー定義の演算子に渡す引数の値です。</param>
+        <summary>ユーザー定義の演算子の遅延バインディングの評価を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>ユーザー定義の演算子から返される結果。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IntDivideObject">
+      <MemberSignature Language="C#" Value="public static object IntDivideObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object IntDivideObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.IntDivideObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic 整数除算を表します (\\) 演算子。</summary>
+        <returns>整数の商<paramref name="Left" />で割った値<paramref name="Right" />、小数部分を破棄し、整数部分のみを保持します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LeftShiftObject">
+      <MemberSignature Language="C#" Value="public static object LeftShiftObject (object Operand, object Amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LeftShiftObject(object Operand, object Amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.LeftShiftObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operand" Type="System.Object" />
+        <Parameter Name="Amount" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Operand">必須です。 整数の数値式です。 シフトするビット パターンです。 データ型は整数型である必要があります (<see langword="SByte" />、 <see langword="Byte" />、 <see langword="Short" />、 <see langword="UShort" />、 <see langword="Integer" />、 <see langword="UInteger" />、 <see langword="Long" />、または<see langword="ULong" />)。</param>
+        <param name="Amount">必須です。 数値式です。 ビット パターンをシフトするビット数。 データ型にする必要があります<see langword="Integer" />に拡大変換または<see langword="Integer" />です。</param>
+        <summary>Visual Basic 算術左シフトを表します (&lt;&lt;) 演算子。</summary>
+        <returns>整数値。 ビット パターンのシフトの結果。 データ型はのと同じ<paramref name="Operand" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LikeObject">
+      <MemberSignature Language="C#" Value="public static object LikeObject (object Source, object Pattern, Microsoft.VisualBasic.CompareMethod CompareOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LikeObject(object Source, object Pattern, valuetype Microsoft.VisualBasic.CompareMethod CompareOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.LikeObject(System.Object,System.Object,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.Object" />
+        <Parameter Name="Pattern" Type="System.Object" />
+        <Parameter Name="CompareOption" Type="Microsoft.VisualBasic.CompareMethod" />
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 任意の式。</param>
+        <param name="Pattern">必須です。 Like 演算子で説明するパターン一致規則に準拠している任意の文字列式です。</param>
+        <param name="CompareOption">必須です。 A<see cref="T:Microsoft.VisualBasic.CompareMethod" />操作がテキストまたはバイナリの比較を使用することを指定する値。</param>
+        <summary>Visual Basic を表す<see langword="Like" />演算子。</summary>
+        <returns>
+          <see langword="True" />場合の値の文字列形式を<paramref name="Source" />に含まれているパターンを満たす<paramref name="Pattern" />、それ以外の<see langword="False" />します。 <see langword="True" />両方<paramref name="Source" />と<paramref name="Pattern" />は<see langword="Nothing" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LikeString">
+      <MemberSignature Language="C#" Value="public static bool LikeString (string Source, string Pattern, Microsoft.VisualBasic.CompareMethod CompareOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool LikeString(string Source, string Pattern, valuetype Microsoft.VisualBasic.CompareMethod CompareOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.LikeString(System.String,System.String,Microsoft.VisualBasic.CompareMethod)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Source" Type="System.String" />
+        <Parameter Name="Pattern" Type="System.String" />
+        <Parameter Name="CompareOption" Type="Microsoft.VisualBasic.CompareMethod" />
+      </Parameters>
+      <Docs>
+        <param name="Source">必須です。 任意のブール型 (<see langword="String" />) の式を指定します。</param>
+        <param name="Pattern">必須です。 どの<see langword="String" />Like 演算子で説明するパターン一致規則に準拠している式です。</param>
+        <param name="CompareOption">必須です。 A<see cref="T:Microsoft.VisualBasic.CompareMethod" />操作がテキストまたはバイナリの比較を使用することを指定する値。</param>
+        <summary>Visual Basic を表す<see langword="Like" />演算子。</summary>
+        <returns>
+          <see langword="True" />場合の値<paramref name="Source" />に含まれているパターンを満たす<paramref name="Pattern" />、それ以外の<see langword="False" />します。 <see langword="True" />両方<paramref name="Source" />と<paramref name="Pattern" />が空です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ModObject">
+      <MemberSignature Language="C#" Value="public static object ModObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object ModObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.ModObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic を表す<see langword="Mod" />演算子。</summary>
+        <returns>した結果生じた剰余<paramref name="Left" />で割った値<paramref name="Right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyObject">
+      <MemberSignature Language="C#" Value="public static object MultiplyObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object MultiplyObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.MultiplyObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic では、(*) 演算子を乗算します。</summary>
+        <returns>製品<paramref name="Left" />と<paramref name="Right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NegateObject">
+      <MemberSignature Language="C#" Value="public static object NegateObject (object Operand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object NegateObject(object Operand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.NegateObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Operand">必須です。 任意の数式。</param>
+        <summary>Visual Basic の単項マイナス (-) 演算子を表します。</summary>
+        <returns>負の値の<paramref name="Operand" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NotObject">
+      <MemberSignature Language="C#" Value="public static object NotObject (object Operand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object NotObject(object Operand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.NotObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Operand">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <summary>Visual Basic を表す<see langword="Not" />演算子。</summary>
+        <returns><see langword="Boolean" />操作、<see langword="False" />場合<paramref name="Operand" />は<see langword="True" />、それ以外の<see langword="True" />します。 ビットごとの演算の場合は、1 <paramref name="Operand" /> 0、そうでは、0 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OrObject">
+      <MemberSignature Language="C#" Value="public static object OrObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object OrObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.OrObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <param name="Right">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <summary>Visual Basic を表す<see langword="Or" />演算子。</summary>
+        <returns><see langword="Boolean" />操作、<see langword="False" />両方<paramref name="Left" />と<paramref name="Right" />に評価される<see langword="False" />、それ以外の<see langword="True" />します。 0 の場合は、両方のビットごとの演算<paramref name="Left" />と<paramref name="Right" />評価が 0 です。 それ以外の場合、1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PlusObject">
+      <MemberSignature Language="C#" Value="public static object PlusObject (object Operand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object PlusObject(object Operand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.PlusObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Operand">必須です。 任意の数式。</param>
+        <summary>Visual Basic の単項プラス (+) 演算子を表します。</summary>
+        <returns><paramref name="Operand" /> の値。 (の符号、<paramref name="Operand" />は変更されません)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RightShiftObject">
+      <MemberSignature Language="C#" Value="public static object RightShiftObject (object Operand, object Amount);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object RightShiftObject(object Operand, object Amount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.RightShiftObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Operand" Type="System.Object" />
+        <Parameter Name="Amount" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Operand">必須です。 整数の数値式です。 シフトするビット パターンです。 データ型は整数型である必要があります (<see langword="SByte" />、 <see langword="Byte" />、 <see langword="Short" />、 <see langword="UShort" />、 <see langword="Integer" />、 <see langword="UInteger" />、 <see langword="Long" />、または<see langword="ULong" />)。</param>
+        <param name="Amount">必須です。 数値式です。 ビット パターンをシフトするビット数。 データ型にする必要があります<see langword="Integer" />に拡大変換または<see langword="Integer" />です。</param>
+        <summary>Visual Basic 算術右シフトを表します (&gt;&gt;) 演算子。</summary>
+        <returns>整数値。 ビット パターンのシフトの結果。 データ型はのと同じ<paramref name="Operand" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SubtractObject">
+      <MemberSignature Language="C#" Value="public static object SubtractObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object SubtractObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.SubtractObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 任意の数式。</param>
+        <param name="Right">必須です。 任意の数式。</param>
+        <summary>Visual Basic の減算 (-) 演算子を表します。</summary>
+        <returns>違い<paramref name="Left" />と<paramref name="Right" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XorObject">
+      <MemberSignature Language="C#" Value="public static object XorObject (object Left, object Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object XorObject(object Left, object Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.Operators.XorObject(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Left" Type="System.Object" />
+        <Parameter Name="Right" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Left">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <param name="Right">必須です。 どの<see langword="Boolean" />または数値式です。</param>
+        <summary>Visual Basic を表す<see langword="Xor" />演算子。</summary>
+        <returns>A<see langword="Boolean" />値または数値です。 <see langword="Boolean" />比較、戻り値では、2 つの論理和 (排他的論理和)<see langword="Boolean" />値。 演算 (数値)、戻り値は、ビット処理排他的論理和) 2 つの数値のビット パターンを表す数値です。 詳細については、次を参照してください。 [Xor 演算子](~/docs/visual-basic/language-reference/operators/xor-operator.md)です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Visual Basic コンパイラをサポートしているし、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

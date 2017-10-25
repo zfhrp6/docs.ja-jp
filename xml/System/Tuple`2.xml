@@ -1,0 +1,652 @@
+<Type Name="Tuple&lt;T1,T2&gt;" FullName="System.Tuple&lt;T1,T2&gt;">
+  <TypeSignature Language="C#" Value="public class Tuple&lt;T1,T2&gt; : IComparable, System.Collections.IStructuralComparable, System.Collections.IStructuralEquatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Tuple`2&lt;T1, T2&gt; extends System.Object implements class System.Collections.IStructuralComparable, class System.Collections.IStructuralEquatable, class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Tuple`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T1" />
+    <TypeParameter Name="T2" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IStructuralComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.IStructuralEquatable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T1">組の最初のコンポーネントの型。</typeparam>
+    <typeparam name="T2">タプルの 2 番目のコンポーネントの型。</typeparam>
+    <summary>2 つ組、すなわちペアを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 組は、特定の数と一連の値を持つデータ構造です。 <xref:System.Tuple%602>クラスは、2 つ組、または 2 つのコンポーネントを持つタプルのペアを表します。 2 組がに似ていますが、<xref:System.Collections.Generic.KeyValuePair%602>構造体。  
+  
+ インスタンス化することができます、<xref:System.Tuple%602>を呼び出して、オブジェクト、<xref:System.Tuple%602.%23ctor%2A>コンス トラクターまたは静的な<xref:System.Tuple.Create%60%602%28%60%600%2C%60%601%29?displayProperty=nameWithType>メソッドです。 タプルの要素の値を取得するには、読み取り専用を使用して<xref:System.Tuple%602.Item1%2A>と<xref:System.Tuple%602.Item2%2A>インスタンス プロパティです。  
+  
+ 組は、4 つの方法でよく使用されます。  
+  
+-   単一のデータのセットを表します。 たとえば、組は、データベース内のレコードを表すことができ、そのコンポーネントがそのレコードのフィールドを表すことができます。  
+  
+-   簡単にアクセスしたり、操作、データ セットを提供します。 次の例の配列を定義する<xref:System.Tuple%602>受講者とそれに対応する名前を格納するオブジェクトは、スコアをテストします。 テストの平均スコアを計算する配列を反復処理します。  
+  
+     [!code-csharp[System.Tuple\`2.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.class/cs/example1.cs#1)]
+     [!code-vb[System.Tuple\`2.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.class/vb/example1.vb#1)]  
+  
+-   使用せず、メソッドから複数の値を返す`out`パラメーター (c#) または`ByRef`パラメーター (Visual Basic の場合)。 たとえば、次の例を使用して、<xref:System.Tuple%602>商と剰余を整数除算を行った結果を取得するオブジェクト。  
+  
+     [!code-csharp[System.Tuple\`2.Item1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.item1/cs/item1.cs#1)]
+     [!code-vb[System.Tuple\`2.Item1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.item1/vb/item1.vb#1)]  
+  
+-   メソッドに渡される複数の値、1 つのパラメーターを使用します。 たとえば、<xref:System.Threading.Thread.Start%28System.Object%29?displayProperty=nameWithType>メソッドには、スレッドが起動時に実行される方法を 1 つの値を提供できる 1 つのパラメーターです。 指定した場合、<xref:System.Tuple%602>オブジェクト、メソッド引数として、データの 2 つの項目を含む、スレッドのスタートアップ ルーチンを指定することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Tuple (T1 item1, T2 item2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(!T1 item1, !T2 item2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.#ctor(`0,`1)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item1" Type="T1" />
+        <Parameter Name="item2" Type="T2" />
+      </Parameters>
+      <Docs>
+        <param name="item1">組の最初のコンポーネントの値。</param>
+        <param name="item2">タプルの 2 番目のコンポーネントの値。</param>
+        <summary><see cref="T:System.Tuple`2" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的なを使用することもできます。<xref:System.Tuple.Create%60%602%28%60%600%2C%60%601%29?displayProperty=nameWithType>メソッドを明示的にそのコンポーネントの種類を指定せずに、2 タプル オブジェクトをインスタンス化します。 次の例では、 <xref:System.Tuple.Create%60%602%28%60%600%2C%60%601%29?displayProperty=nameWithType> 2 組のコンポーネントが含まれるの型のインスタンスを作成するメソッド<xref:System.String>と<xref:System.Double>です。  
+  
+ [!code-csharp[System.Tuple.Create#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple.create/cs/create1.cs#3)]
+ [!code-vb[System.Tuple.Create#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple.create/vb/create1.vb#3)]  
+  
+ これは、次の呼び出しに、<xref:System.Tuple%602.%23ctor%2A>クラスのコンス トラクターです。  
+  
+ [!code-csharp[System.Tuple.Create#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple.create/cs/create1.cs#4)]
+ [!code-vb[System.Tuple.Create#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple.create/vb/create1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Tuple`2" />オブジェクトが、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          現在のインスタンスが指定したオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `obj`パラメーターは、次の条件下で現在のインスタンスと等しいと見なされます。  
+  
+-   <xref:System.Tuple%602>オブジェクト。  
+  
+-   その 2 つのコンポーネントでは、現在のインスタンスと同じ型です。  
+  
+-   その 2 つのコンポーネントは、現在のインスタンスのものと同じです。 等しいかどうかは、各コンポーネントの既定のオブジェクトの等値比較子によって判断されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Tuple%602.Equals%28System.Object%29?displayProperty=nameWithType>かどうかのオブジェクトの配列のいずれかを調べます<xref:System.Tuple%602>オブジェクトが互いに等しい。 出力は、事実を反映する、<xref:System.Tuple%602.Equals%28System.Object%29>メソッドを返します。`true`比較するときに<xref:System.Tuple%602>コンポーネントが同じ値を持つオブジェクト。  
+  
+ [!code-csharp[System.Tuple\`2.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.equals/cs/equals1.cs#1)]
+ [!code-vb[System.Tuple\`2.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.equals/vb/equals1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Tuple`2" /> オブジェクトのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item1">
+      <MemberSignature Language="C#" Value="public T1 Item1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T1 Item1" />
+      <MemberSignature Language="DocId" Value="P:System.Tuple`2.Item1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T1</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の値を取得<see cref="T:System.Tuple`2" />オブジェクトの最初のコンポーネントです。</summary>
+        <value>現在の値<see cref="T:System.Tuple`2" />オブジェクトの最初のコンポーネントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型を動的に決定することができます、<xref:System.Tuple%602.Item1%2A>コンポーネントを 2 つの方法のいずれかで。  
+  
+-   呼び出して、`GetType`メソッドによって返される値を<xref:System.Tuple%602.Item1%2A>プロパティです。  
+  
+-   取得することによって、<xref:System.Type>を表すオブジェクト、<xref:System.Tuple%602>オブジェクト、および、によって返される配列から最初の要素を取得するその<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 使用、例を<xref:System.Tuple%602.Item1%2A>と<xref:System.Tuple%602.Item2%2A>を 2 組の形式で複数の値を返すメソッドを定義するプロパティです。  
+  
+ [!code-csharp[System.Tuple\`2.Item1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.item1/cs/item1.cs#1)]
+ [!code-vb[System.Tuple\`2.Item1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.item1/vb/item1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item2">
+      <MemberSignature Language="C#" Value="public T2 Item2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T2 Item2" />
+      <MemberSignature Language="DocId" Value="P:System.Tuple`2.Item2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の値を取得<see cref="T:System.Tuple`2" />オブジェクトの 2 番目のコンポーネントです。</summary>
+        <value>現在の値<see cref="T:System.Tuple`2" />オブジェクトの 2 番目のコンポーネントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型を動的に決定することができます、<xref:System.Tuple%602.Item2%2A>コンポーネントを 2 つの方法のいずれかで。  
+  
+-   呼び出して、`GetType`メソッドによって返される値を<xref:System.Tuple%602.Item2%2A>プロパティです。  
+  
+-   取得することによって、<xref:System.Type>を表すオブジェクト、<xref:System.Tuple%602>オブジェクト、およびによって返される配列から 2 番目の要素を取得するその<xref:System.Type.GetGenericArguments%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 使用、例を<xref:System.Tuple%602.Item1%2A>と<xref:System.Tuple%602.Item2%2A>を 2 組の形式で複数の値を返すメソッドを定義するプロパティです。  
+  
+ [!code-csharp[System.Tuple\`2.Item1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.item1/cs/item1.cs#1)]
+ [!code-vb[System.Tuple\`2.Item1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.item1/vb/item1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IStructuralComparable.CompareTo (object other, System.Collections.IComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IStructuralComparable.CompareTo(object other, class System.Collections.IComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.System#Collections#IStructuralComparable#CompareTo(System.Object,System.Collections.IComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">比較用のカスタムの規則を提供するオブジェクト。</param>
+        <summary>現在の比較<see cref="T:System.Tuple`2" />オブジェクトを指定された比較子を使用して、指定したオブジェクトにし、現在のオブジェクトが前に、後、または並べ替え順序で指定したオブジェクトと同じ位置にあるかどうかを示す整数を返します。</summary>
+        <returns>並べ替え順序における、このインスタンスと <paramref name="other" /> の相対位置を示す符号付き整数値 (次の表を参照)。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>負の整数  
+  
+ </term><description>このインスタンスの前に<paramref name="other" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと<paramref name="other" />並べ替え順序における位置が同じです。  
+  
+ </description></item><item><term>正の整数  
+  
+ </term><description>このインスタンスに依存して<paramref name="other" />です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Tuple%602> のインスタンスが <xref:System.Collections.IStructuralComparable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 並べ替え方法を含むコレクションで呼び出された最もよくはこのメソッドは、直接呼び出すことができます、<xref:System.Collections.IComparer>パラメーターのコレクションです。、メンバーの順序付けをなどによって呼び出されますが、<xref:System.Array.Sort%28System.Array%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>メソッドおよび<xref:System.Collections.SortedList.Add%2A>のメソッド、<xref:System.Collections.SortedList>を使用してインスタンス化されるオブジェクト、<xref:System.Collections.SortedList.%23ctor%28System.Collections.IComparer%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+> [!CAUTION]
+>  <xref:System.Tuple%602.System%23Collections%23IStructuralComparable%23CompareTo%2A>並べ替え操作で使用するためのメソッドです。 これはありません、比較の主な目的は 2 つのオブジェクトが等しいかどうかを判断するときに使用する必要があります。 2 つのオブジェクトが等しいかどうかを判断するを呼び出して、<xref:System.Tuple%602.System%23Collections%23IStructuralEquatable%23Equals%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の配列を作成する<xref:System.Tuple%602>のスチューデントの名で構成し、スコアをテストするオブジェクト。 並べ替え順序で配列内の各組のコンポーネントを表示、配列を並べ替え、およびを呼び出して<xref:System.Tuple%602.ToString%2A>並べ替え順のそれぞれの組の値を表示します。 ジェネリック型を定義している例では、並べ替えるには、配列、`ScoreComparer`を実装するクラス、<xref:System.Collections.IComparer>インターフェイスと並べ替え、<xref:System.Tuple%602>オブジェクトで、最初のコンポーネントではなく、2 番目のコンポーネントの値で昇順に並べ替えます。 例では、直接呼び出しませんなお、<xref:System.Tuple%602.System%23Collections%23IStructuralComparable%23CompareTo%2A>メソッドです。 このメソッドはによって暗黙的に呼び出されます、<xref:System.Array.Sort%28System.Array%2CSystem.Collections.IComparer%29?displayProperty=nameWithType>配列内の各要素のメソッドです。  
+  
+ [!code-csharp[System.Tuple\`2.CompareTo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.compareto/cs/compareto2.cs#2)]
+ [!code-vb[System.Tuple\`2.CompareTo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.compareto/vb/compareto2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="other" /> は <see cref="T:System.Tuple`2" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralEquatable.Equals">
+      <MemberSignature Language="C#" Value="bool IStructuralEquatable.Equals (object other, System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IStructuralEquatable.Equals(object other, class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.System#Collections#IStructuralEquatable#Equals(System.Object,System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">このインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">2 つのオブジェクトが等しいかどうかの評価に使用するメソッドを定義するオブジェクト。</param>
+        <summary>示す値を返すかどうか、現在<see cref="T:System.Tuple`2" />オブジェクトが指定された比較方法に基づいて、指定されたオブジェクトと等しい。</summary>
+        <returns>
+          現在のインスタンスが指定したオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Tuple%602> のインスタンスが <xref:System.Collections.IStructuralEquatable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ <xref:System.Tuple%602.System%23Collections%23IStructuralEquatable%23Equals%2A>実装が呼び出される場合にのみ`other`は`null`、キャスト (c#) またはに (Visual Basic) の変換が正常にすることができるかどうかと、<xref:System.Tuple%602>コンポーネントが含まれるは、現在のインスタンスと同じ型のオブジェクト。 <xref:System.Tuple%602.System%23Collections%23IStructuralEquatable%23Equals%2A>メソッドの最初のパス、<xref:System.Tuple%602.Item1%2A>の値、<xref:System.Tuple%602>と比較するオブジェクト、<xref:System.Collections.IEqualityComparer.Equals%2A?displayProperty=nameWithType>実装します。 このメソッドの呼び出しが返された場合`true`、メソッドが再度呼び出され、渡された、 <xref:System.Tuple%602.Item2%2A> 、2 つの値<xref:System.Tuple%602>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`Item2Comparer`を実装するクラス、<xref:System.Collections.IEqualityComparer>インターフェイスし、方法を変更<xref:System.Tuple%602>オブジェクトが等しいかどうかを評価します。 メソッドは常に返します`true`渡されたときに、 <xref:System.Tuple%602.Item1%2A> 2 つのプロパティ値<xref:System.Tuple%602>オブジェクト、およびそれを呼び出す、<xref:System.Tuple%602.System%23Collections%23IStructuralEquatable%23Equals%2A>を評価するメソッド、<xref:System.Tuple%602.Item2%2A>プロパティの値。 メソッドの値のみに基づいて等価をテスト結果として、<xref:System.Tuple%602.Item2%2A>プロパティです。 出力のデータ セットの結果を示しています。<xref:System.Tuple%602>ランナーと走行距離の名前を記録するオブジェクト。  
+  
+ [!code-csharp[System.Tuple\`2.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.equals/cs/equals2.cs#2)]
+ [!code-vb[System.Tuple\`2.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.equals/vb/equals2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IStructuralEquatable.GetHashCode">
+      <MemberSignature Language="C#" Value="int IStructuralEquatable.GetHashCode (System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IStructuralEquatable.GetHashCode(class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.System#Collections#IStructuralEquatable#GetHashCode(System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">オブジェクトが<see cref="M:System.Collections.IEqualityComparer.GetHashCode(System.Object)" />メソッドは、現在のハッシュ コードを計算<see cref="T:System.Tuple`2" />オブジェクト。</param>
+        <summary>現在のハッシュ コードを計算<see cref="T:System.Tuple`2" />オブジェクトの指定された計算方法を使用しています。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Tuple%602> のインスタンスが <xref:System.Collections.IStructuralEquatable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ メソッドは、単にへの呼び出しをラップ、`comparer`オブジェクトの<xref:System.Collections.IEqualityComparer.GetHashCode%2A?displayProperty=nameWithType>実装します。  
+  
+ 2 つのハッシュ コードの計算に使用するアルゴリズムが同じハッシュ コードを返す必要があります<xref:System.Tuple%602>同等であると見なされるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Tuple`2" /> オブジェクトと指定したオブジェクトを比較して、現在のオブジェクトが、並べ替え順序において、指定したオブジェクトの前後または同じ位置のいずれにあるかを示す整数を返します。</summary>
+        <returns>並べ替え順序における、このインスタンスと <paramref name="obj" /> の相対位置を示す符号付き整数値 (次の表を参照)。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>負の整数  
+  
+ </term><description>このインスタンスの前に<paramref name="obj" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと<paramref name="obj" />並べ替え順序における位置が同じです。  
+  
+ </description></item><item><term>正の整数  
+  
+ </term><description>このインスタンスに依存して<paramref name="obj" />です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Tuple%602> のインスタンスが <xref:System.IComparable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメソッドを提供、<xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType>の実装、<xref:System.Tuple%602>クラスです。 並べ替え方法などのコレクションの既定のオーバー ロードによって最もよく呼び出さは直接メソッドを呼び出すことができます、<xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType>と<xref:System.Collections.SortedList.Add%2A?displayProperty=nameWithType>コレクションのメンバーの順序付けをします。  
+  
+> [!CAUTION]
+>  <xref:System.Tuple%602.System%23IComparable%23CompareTo%2A?displayProperty=nameWithType>並べ替え操作で使用するためのメソッドです。 これはありません、比較の主な目的は 2 つのオブジェクトが等しいかどうかを判断するときに使用する必要があります。 2 つのオブジェクトが等しいかどうかを判断するを呼び出して、<xref:System.Tuple%602.Equals%2A>メソッドです。  
+  
+ <xref:System.Tuple%602.System%23IComparable%23CompareTo%2A?displayProperty=nameWithType>メソッドでは、既定のオブジェクトの比較子を使用して、各コンポーネントを比較します。  
+  
+   
+  
+## Examples  
+ 次の例の配列を作成する<xref:System.Tuple%602>のスチューデントの名で構成し、スコアをテストするオブジェクト。 並べ替え順序で配列内の各組のコンポーネントを表示、配列を並べ替え、およびを呼び出して<xref:System.Tuple%602.ToString%2A>並べ替え順のそれぞれの組の値を表示します。 出力は、その最初のコンポーネントによって配列が並べ替えられていることを示しています。 例では、直接呼び出しませんなお、<xref:System.Tuple%602.System%23IComparable%23CompareTo%28System.Object%29>メソッドです。 このメソッドはによって暗黙的に呼び出されます、<xref:System.Array.Sort%28System.Array%29>配列内の各要素のメソッドです。  
+  
+ [!code-csharp[System.Tuple\`2.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.compareto/cs/compareto1.cs#1)]
+ [!code-vb[System.Tuple\`2.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.compareto/vb/compareto1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="obj" /> は <see cref="T:System.Tuple`2" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.CompilerServices.ITuple.Item">
+      <MemberSignature Language="C#" Value="object System.Runtime.CompilerServices.ITuple.Item[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Runtime.CompilerServices.ITuple.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Tuple`2.System#Runtime#CompilerServices#ITuple#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.CompilerServices.ITuple.Length">
+      <MemberSignature Language="C#" Value="int System.Runtime.CompilerServices.ITuple.Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Runtime.CompilerServices.ITuple.Length" />
+      <MemberSignature Language="DocId" Value="P:System.Tuple`2.System#Runtime#CompilerServices#ITuple#Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Tuple`2.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Tuple`2" /> インスタンスの値を表す文字列を返します。</summary>
+        <returns>この <see cref="T:System.Tuple`2" /> オブジェクトの文字列表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって返される文字列の形式は (*Item1*、 *Item2*) ここで、 *Item1*と*Item2*の値を表す、<xref:System.Tuple%602.Item1%2A>と<xref:System.Tuple%602.Item2%2A>プロパティです。 いずれかのプロパティ値が場合`null`、として表されます<xref:System.String.Empty?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Tuple%602.ToString%2A>メソッドです。  
+  
+ [!code-csharp[System.Tuple\`2.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.tuple`2.tostring/cs/tostring1.cs#1)]
+ [!code-vb[System.Tuple\`2.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.tuple`2.tostring/vb/tostring1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

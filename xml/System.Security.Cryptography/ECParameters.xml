@@ -1,0 +1,154 @@
+<Type Name="ECParameters" FullName="System.Security.Cryptography.ECParameters">
+  <TypeSignature Language="C#" Value="public struct ECParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ECParameters extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.ECParameters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>楕円曲線暗号 (ECC) アルゴリズムの標準的なパラメーターを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Curve">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.ECCurve Curve;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Security.Cryptography.ECCurve Curve" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECParameters.Curve" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECCurve</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>公開キー (<see cref="F:System.Security.Cryptography.ECParameters.Q" />) とオプションの秘密キー (<see cref="F:System.Security.Cryptography.ECParameters.D" />) に関連付けられた曲線を表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="D">
+      <MemberSignature Language="C#" Value="public byte[] D;" />
+      <MemberSignature Language="ILAsm" Value=".field public unsigned int8[] D" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECParameters.D" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビッグ エディアン形式で格納された、楕円曲線暗号 (ECC) アルゴリズムの秘密キー <see langword="D" /> を表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Q">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.ECPoint Q;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Security.Cryptography.ECPoint Q" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.ECParameters.Q" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.ECPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>楕円曲線暗号 (ECC) アルゴリズムの公開キー <see langword="Q" /> を表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Validate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.ECParameters.Validate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.ECParameters.Validate%2A>の整合性をチェックするメソッド、<xref:System.Security.Cryptography.ECParameters>構造体、スロー、<xref:System.Security.Cryptography.CryptographicException>時は無効です。 要件を次に示します。  
+  
+-   <xref:System.Security.Cryptography.ECParameters.Q>.<xref:System.Security.Cryptography.ECPoint.X>と<xref:System.Security.Cryptography.ECParameters.Q>.<xref:System.Security.Cryptography.ECPoint.Y>必須のフィールドし、同じ長さである必要があります。  
+  
+-   曲線は、明示的な曲線場合<xref:System.Security.Cryptography.ECParameters.D>は必須であり、長さと同じである必要があります<xref:System.Security.Cryptography.ECParameters.Curve>.<xref:System.Security.Cryptography.ECCurve.Order>です。  
+  
+-   曲線の曲線では名前付き場合<xref:System.Security.Cryptography.ECParameters.D>は必須であり、長さと同じである必要があります<xref:System.Security.Cryptography.ECParameters.Q>.<xref:System.Security.Cryptography.ECPoint.X>と<xref:System.Security.Cryptography.ECParameters.Q>.<xref:System.Security.Cryptography.ECPoint.Y>です。  
+  
+-   <xref:System.Security.Cryptography.ECParameters.Curve>.<xref:System.Security.Cryptography.ECCurve.Validate%2A>も成功する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">キーまたは曲線パラメーターが現在の曲線の型に対して有効ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

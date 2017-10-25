@@ -1,0 +1,644 @@
+<Type Name="DomainUpDown" FullName="System.Windows.Forms.DomainUpDown">
+  <TypeSignature Language="C#" Value="public class DomainUpDown : System.Windows.Forms.UpDownBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DomainUpDown extends System.Windows.Forms.UpDownBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DomainUpDown" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.UpDownBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("SelectedItem")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("SelectedItemChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Items")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>文字列値を表示する Windows スピン ボックス (アップダウン コントロール) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.DomainUpDown>コントロールから選択されている 1 つの文字列値を表示する、<xref:System.Object>上矢印をクリックするか、下向きの矢印ボタン コントロールのコレクション。 入力できるテキスト コントロールでは、しない限り、<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>プロパティに設定されている`true`(で入力文字列は受け入れられるをコレクション内の項目を一致する必要があります)。 項目が選択されているときに、スピン ボックスに表示できるように、オブジェクトが文字列値に変換されます。  
+  
+ 表示するオブジェクトのコレクションを作成する、<xref:System.Windows.Forms.DomainUpDown>コントロールを追加するかを使用して、アイテムを個別に削除、<xref:System.Collections.ArrayList.Add%2A>と<xref:System.Collections.ArrayList.Remove%2A>メソッドです。 これで呼び出すできます、イベント ハンドラーなど、<xref:System.Windows.Forms.Control.Click>ボタンのイベントです。 設定によってはオブジェクトのコレクションをアルファベット順に並べ替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティを`true`です。 ときに、<xref:System.Windows.Forms.DomainUpDown.Wrap%2A>プロパティに設定されている`true`過去の最後にスクロールするか、コレクション内の最初オブジェクト リストが最初と最後のオブジェクトにそれぞれ経由で起動し、継続的なリスト内のロールを表示する場合は、します。  
+  
+ ときに、<xref:System.Windows.Forms.DomainUpDown.UpButton%2A>または<xref:System.Windows.Forms.DomainUpDown.DownButton%2A>メソッドが呼び出されると、コードまたは上矢印または下矢印ボタンをクリックして<xref:System.Windows.Forms.DomainUpDown.UpdateEditText%2A>が呼び出され、新しい文字列で、コントロールを更新します。 場合<xref:System.Windows.Forms.UpDownBase.UserEdit%2A>に設定されている`true`コントロールのテキストの表示を更新する前に、コレクション内の値のいずれかに、文字列は一致します。  
+  
+ 以降で、 [!INCLUDE[net_2015](~/includes/net-2015-md.md)]、<xref:System.Windows.Forms.DomainUpDown>コントロールは、app.config ファイルには、次のエントリが含まれている場合は、システム DPI 設定に基づいてサイズ変更されます。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例を使用すると、一部のプロパティを設定し、スピン ボックスに表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DomainUpDown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DomainUpDown" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例では、一部のプロパティを設定し、スピン ボックス (アップダウン コントロール) で表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DomainUpDown" /> コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しい <see cref="T:System.Windows.Forms.DomainUpDown.DomainUpDownAccessibleObject" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DomainUpDown.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.Control.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Control.AccessibilityObject%2A> プロパティを取得または設定するには、.NET Framework と一緒にインストールされているユーザー補助アセンブリへの参照を追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DomainUpDown.CreateAccessibilityInstance" />派生クラスで呼び出す必要はありません、基本クラスの<see cref="M:System.Windows.Forms.DomainUpDown.CreateAccessibilityInstance" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DownButton">
+      <MemberSignature Language="C#" Value="public override void DownButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DownButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DownButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクト コレクションで次の項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の項目のコレクションを移動すると、<xref:System.Windows.Forms.DomainUpDown>下矢印ボタンを使用して制御、最終的には、コレクション内の最後の項目に届きます。 続行する場合、および<xref:System.Windows.Forms.DomainUpDown.Wrap%2A>に設定されている`true`一覧は、コレクションの最初の項目を始めし、を継続として表示されます。 この動作は、印ボタンを使用して、コレクション内を移動するときにも発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DomainUpDown/DomainUpDownItemCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.StringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DomainUpDown+DomainUpDownItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボックス (アップダウン コントロール) に割り当てられているオブジェクトのコレクション。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection" />を格納している、<see cref="T:System.Object" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object>コレクションを構築およびからアクセスできる、 <xref:System.Windows.Forms.DomainUpDown> 2 つの方法で制御します。 使用してコレクションに項目を追加することができます、<xref:System.Collections.ArrayList.Add%2A>または<xref:System.Collections.ArrayList.Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例を使用すると、一部のプロパティを設定し、スピン ボックスに表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.OnChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DomainUpDown.SelectedItemChanged" /> イベントが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedItemChanged">
+      <MemberSignature Language="C#" Value="protected void OnSelectedItemChanged (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnSelectedItemChanged(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.OnSelectedItemChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DomainUpDown.SelectedItemChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DomainUpDown.OnSelectedItemChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例では、一部のプロパティを設定し、スピン ボックス (アップダウン コントロール) で表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DomainUpDown.OnSelectedItemChanged(System.Object,System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DomainUpDown.OnSelectedItemChanged(System.Object,System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextBoxKeyPress">
+      <MemberSignature Language="C#" Value="protected override void OnTextBoxKeyPress (object source, System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextBoxKeyPress(object source, class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.UpDownBase.ReadOnly%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.DomainUpDown>コントロールは、文字で始まるリストの項目を選択します。 コレクション内の 1 つ以上の項目が、同じ文字で始まる場合、<xref:System.Windows.Forms.DomainUpDown>コントロールは、現在選択されている位置から、型指定された文字で始まる次の項目を選択します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DomainUpDown.OnTextBoxKeyPress%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DomainUpDown.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DomainUpDown.OnTextBoxKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定間のスペース、<see cref="T:System.Windows.Forms.DomainUpDown" />コントロールのコンテンツと縁です。</summary>
+        <value>
+          常に <see cref="F:System.Windows.Forms.Padding.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合でも、<xref:System.Windows.Forms.DomainUpDown.Padding%2A>プロパティの値になります<xref:System.Windows.Forms.Padding.Empty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PaddingChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaddingChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DomainUpDown.PaddingChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DomainUpDown.Padding" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(-1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択された項目のインデックス値を取得または設定します。</summary>
+        <value>選択された項目の 0 から始まるインデックス値。 既定値は -1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DomainUpDown.SelectedIndex%2A>プロパティは、スピン ボックス (アップダウン コントロール) で現在選択されているコレクション内の項目のインデックス値を保持します。 場合、コレクション アイテムが再割り当てされた新しいインデックスの値を指定できます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>からプロパティが変更された`false`に`true`です。 コレクションが再度並べ替えられるアルファベット順と、アイテムには、新しいインデックス値が割り当てられます。  
+  
+> [!NOTE]
+>  ユーザーがスピン ボックスで、項目を入力した場合、または項目が選択されていない場合、<xref:System.Windows.Forms.DomainUpDown.SelectedIndex%2A>値は既定値は-1 になります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例を使用すると、一部のプロパティを設定し、スピン ボックスに表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値は、既定値は-1 より小さいです。  
+  
+ または  
+  
+ 割り当てられた値がより大きい、<see cref="P:System.Windows.Forms.DomainUpDown.Items" />カウントします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public object SelectedItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内で選択された項目のインデックス値に基づいて、選択された項目を取得または設定します。</summary>
+        <value>選択した項目に基づいて、<see cref="P:System.Windows.Forms.DomainUpDown.SelectedIndex" />値。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が、コレクション内の項目のいずれかに検証がこのプロパティを設定すると、および<xref:System.Windows.Forms.DomainUpDown.SelectedIndex%2A>プロパティが適切なインデックス値に設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例では、一部のプロパティを設定し、スピン ボックス (アップダウン コントロール) で表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectedItemChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedItemChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DomainUpDown.SelectedItemChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.DomainUpDown.SelectedItem" />プロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DomainUpDown.SelectedItemChanged>が発生するイベント、<xref:System.Windows.Forms.DomainUpDown.SelectedItem%2A>下向きの矢印ボタンまたは 新しい値を入力するか、コントロールの上をクリックすると、ユーザーが、コードでは、プロパティを変更できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DomainUpDown.SelectedItemChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DomainUpDown>という`DomainUpDown1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DomainUpDown.SelectedItemChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#381](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#381)]
+ [!code-vb[System.Windows.Forms.EventExamples#381](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#381)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sorted">
+      <MemberSignature Language="C#" Value="public bool Sorted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.Sorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目が並べ替えられたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コレクション内の項目が並べ替えられている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>に設定されている`true`コレクションがアルファベット順に並べ替えられます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例では、一部のプロパティを設定し、スピン ボックス (アップダウン コントロール) で表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DomainUpDown" /> コントロールを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.DomainUpDown" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の文字列型の値を含む、<xref:System.Collections.ArrayList.Count%2A>と<xref:System.Windows.Forms.DomainUpDown.SelectedIndex%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpButton">
+      <MemberSignature Language="C#" Value="public override void UpButton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void UpButton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.UpButton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションで 1 つ前の項目を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の項目のコレクションを移動すると、<xref:System.Windows.Forms.DomainUpDown>印ボタンを使用して制御、最終的には、コレクションの最初の項目に届きます。 続行する場合、および<xref:System.Windows.Forms.DomainUpDown.Wrap%2A>に設定されている`true`一覧は、コレクション内の最後の項目を始めし、を継続として表示されます。 この動作は、下矢印ボタンを使用して、コレクション内を移動するときにも発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateEditText">
+      <MemberSignature Language="C#" Value="protected override void UpdateEditText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void UpdateEditText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.UpdateEditText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択された項目を表示するには、スピン ボックス (アップダウン コントロール) でテキストを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrap">
+      <MemberSignature Language="C#" Value="public bool Wrap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.Wrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のコレクションのリストで、ユーザーがリストの末尾の項目を通過しても参照を続けた場合に、最初または最後の項目が引き続き表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが先頭またはコレクションの末尾に達した場合、リストがもう一度が開始した場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DomainUpDown.Wrap%2A>プロパティに設定されている`true`コレクション内の最後の項目に到達し、続行には、一覧は、最初の項目を最初からやり直すを継続として表示されます。 この動作は、同様に逆の順序で動作します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成し、初期化、<xref:System.Windows.Forms.DomainUpDown>コントロール。 この例では、一部のプロパティを設定し、スピン ボックス (アップダウン コントロール) で表示する文字列のコレクションを作成できます。 コードでは、 <xref:System.Windows.Forms.TextBox>、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.Button>フォームでインスタンス化されました。 例がという名前の 32 ビット符号付き整数として宣言されたクラス レベルのメンバー変数があると想定も`myCounter`します。 テキスト ボックスに文字列を入力しに追加することができます、<xref:System.Windows.Forms.DomainUpDown.Items%2A>ボタンがクリックされたときのコレクション。 チェック ボックスをクリックし、切り替えることができます、<xref:System.Windows.Forms.DomainUpDown.Sorted%2A>プロパティをスピン ボックス アイテムのコレクション内の違いを観察します。  
+  
+ [!code-cpp[Classic DomainUpDown Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DomainUpDown Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DomainUpDown Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DomainUpDown Example/CS/source.cs#1)]
+ [!code-vb[Classic DomainUpDown Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DomainUpDown Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

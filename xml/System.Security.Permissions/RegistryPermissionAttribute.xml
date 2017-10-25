@@ -1,0 +1,326 @@
+<Type Name="RegistryPermissionAttribute" FullName="System.Security.Permissions.RegistryPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class RegistryPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit RegistryPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.RegistryPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.RegistryPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>のために使用します。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのアクセス許可の対応するクラスを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegistryPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.RegistryPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.RegistryPermissionAttribute" /> を使用して、<see cref="T:System.Security.Permissions.SecurityAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="action" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.SecurityAction" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public string All { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string All" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("use newer properties")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したレジストリ キーにフル アクセスを設定します。</summary>
+        <value>フル アクセス用のレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、すべてのサブキーとすべての値へのアクセスを意味します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">Get アクセサーが呼び出されます。c# コンパイラの互換性のためのもののみです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeAccessControl">
+      <MemberSignature Language="C#" Value="public string ChangeAccessControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChangeAccessControl" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.ChangeAccessControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したレジストリ キーの変更アクセス制御を設定します。</summary>
+        <value>変更のアクセス制御のためのレジストリ キーのパスをセミコロンで区切った一覧。 」を参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+> [!IMPORTANT]
+>  アクセス制御リスト (ACL) には、個人またはグループがある、または権限がない、特定のレジストリ キーで特定のアクションをユーザーがについて説明します。  ACL を変更することは重要なアクセス許可し、慎重に付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public string Create { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Create" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.Create" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたレジストリ キーの作成レベルのアクセスを設定します。</summary>
+        <value>作成レベルのアクセスを取得または設定するレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.RegistryPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Security.Permissions.RegistryPermission" /> を作成して返します。</summary>
+        <returns>この属性に対応する <see cref="T:System.Security.Permissions.RegistryPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムによってのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、この属性に対応する権限をこのメソッドが返すから作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public string Read { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Read" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.Read" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したレジストリ キーの読み取りアクセス許可を設定します。</summary>
+        <value>読み取りアクセス用のレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewAccessControl">
+      <MemberSignature Language="C#" Value="public string ViewAccessControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewAccessControl" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.ViewAccessControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したレジストリ キーの表示アクセス制御を設定します。</summary>
+        <value>ビューのアクセス制御のためのレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+> [!IMPORTANT]
+>  アクセス制御リスト (ACL) には、個人またはグループがある、または権限がない、特定のレジストリ キーで特定のアクションをユーザーがについて説明します。  ACL を表示する機能は重要なアクセス許可し、慎重に付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewAndModify">
+      <MemberSignature Language="C#" Value="public string ViewAndModify { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ViewAndModify" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.ViewAndModify" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定された一連の表示および変更できるレジストリ キーを設定します。</summary>
+        <value>Create、read、および書き込みアクセス用のレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+ このプロパティを指定<xref:System.Security.Permissions.RegistryPermissionAttribute.Create%2A>、 <xref:System.Security.Permissions.RegistryPermissionAttribute.Read%2A>、および<xref:System.Security.Permissions.RegistryPermissionAttribute.Write%2A>アクセス権を指定したキーと値。 アクセス権は、レジストリ データだけです。コントロールのアクセス権が含まれない<xref:System.Security.Permissions.RegistryPermissionAttribute.ChangeAccessControl%2A>または<xref:System.Security.Permissions.RegistryPermissionAttribute.ViewAccessControl%2A>です。  
+  
+> [!NOTE]
+>  C# コンパイラとの互換性の get アクセサーを提供しています。 C# コンパイラでは、読み取り/書き込み属性プロパティが必要です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">Get アクセサーが呼び出されます。c# コンパイラの互換性のためのもののみです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public string Write { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Write" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.RegistryPermissionAttribute.Write" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したレジストリ キーへの書き込みアクセスを設定します。</summary>
+        <value>書き込みアクセス用のレジストリ キーのパスをセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーへのアクセスは、含まれるすべての値とその下にあるすべての変数へのアクセスを意味します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

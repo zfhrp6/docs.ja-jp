@@ -1,0 +1,531 @@
+<Type Name="Context" FullName="System.Runtime.Remoting.Contexts.Context">
+  <TypeSignature Language="C#" Value="public class Context" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit Context extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.Context" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>常駐のオブジェクトとポリシーを適用できる環境を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストは、常駐のオブジェクトのための環境を定義するプロパティの順序付けられたシーケンスです。 コンテキストは、同期、トランザクション、ジャスト イン タイム アクティベーション、セキュリティなどの特定の自動サービスを要求するように構成されているオブジェクトのアクティベーション プロセス中に作成を取得します。 複数のオブジェクトのコンテキスト内ライブことができます。  
+  
+ インスタンスとクラスがマークされている、<xref:System.Runtime.Remoting.Contexts.ContextAttribute>使用状況規則を提供するクラス。 .NET Framework を互換性のあるを検索またはの新しいインスタンスを作成、新しいオブジェクトをインスタンス化されるたびに、<xref:System.Runtime.Remoting.Contexts.Context>オブジェクトのクラスです。 コンテキスト内でオブジェクトが格納されるで使用することにとどまります。 コンテキストにバインドされるクラスは、コンテキスト バインド クラスと呼ばれます。 別のコンテキストからアクセスをするときに、このようなクラスは、プロキシを使用して直接参照されます。 1 つのコンテキスト内のオブジェクトから別のコンテキスト内のオブジェクトへのすべての呼び出しでは、コンテキストのプロキシを通過し、コンテキスト プロパティの組み合わせを適用するポリシーによって影響を受けます。  
+  
+ 新しいオブジェクトのコンテキストは、通常、クラスのメタデータ属性に基づいてが選択されます。 このメカニズムは、カスタム属性を使用して拡張できます。 これらは、クラス メタデータにコンパイルされる、静的なコンテキスト プロパティと呼ばれます。 動的コンテキスト プロパティ (構成プロパティとも呼ばれます) を適用し、管理者によって構成します。  
+  
+ コンテキストの詳細については、次を参照してください[&#91;\< 。topic://cpconboundariesprocessesapplicationdomainscontexts > & #93 です。](http://msdn.microsoft.com/en-us/7574180d-70df-44b8-8b78-55a119f2c96d).  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Context ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.Contexts.Context" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AllocateDataSlot">
+      <MemberSignature Language="C#" Value="public static LocalDataStoreSlot AllocateDataSlot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot AllocateDataSlot() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.AllocateDataSlot" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.LocalDataStoreSlot</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>無名のデータ スロットを割り当てます。</summary>
+        <returns>ローカル データ スロット。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スロットは、すべてのコンテキストに割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AllocateNamedDataSlot">
+      <MemberSignature Language="C#" Value="public static LocalDataStoreSlot AllocateNamedDataSlot (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot AllocateNamedDataSlot(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.AllocateNamedDataSlot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.LocalDataStoreSlot</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">必要なデータ スロットの名前です。</param>
+        <summary>名前付きデータ スロットを割り当てます。</summary>
+        <returns>ローカル データ スロット オブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スロットは、すべてのコンテキストに割り当てられます。 名前付きデータ スロットは、パブリックし、すべてのユーザーによって操作されることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ContextID">
+      <MemberSignature Language="C#" Value="public virtual int ContextID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ContextID" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.Context.ContextID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストのコンテキスト ID を取得します。</summary>
+        <value>現在のコンテキストのコンテキスト ID です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ContextProperties">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.Contexts.IContextProperty[] ContextProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Contexts.IContextProperty[] ContextProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.Context.ContextProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.IContextProperty[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキスト プロパティの配列を取得します。</summary>
+        <value>現在のコンテキスト プロパティの配列。それ以外の場合、<see langword="null" />コンテキストがそれに起因するすべてのプロパティを持たない場合。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultContext">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Contexts.Context DefaultContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Remoting.Contexts.Context DefaultContext" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Contexts.Context.DefaultContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.Context</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインの既定のコンテキストを取得します。</summary>
+        <value>既定のコンテキスト、<see cref="T:System.AppDomain" />名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのスレッドのコンテキストが明示的に設定されていないアプリケーション ドメインでは、既定のコンテキストで実行されていると見なされます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DoCallBack">
+      <MemberSignature Language="C#" Value="public void DoCallBack (System.Runtime.Remoting.Contexts.CrossContextDelegate deleg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DoCallBack(class System.Runtime.Remoting.Contexts.CrossContextDelegate deleg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.DoCallBack(System.Runtime.Remoting.Contexts.CrossContextDelegate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deleg" Type="System.Runtime.Remoting.Contexts.CrossContextDelegate" />
+      </Parameters>
+      <Docs>
+        <param name="deleg">コールバックを要求するために使用するデリゲート。</param>
+        <summary>別のコンテキストでコードを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コールバックを呼び出すことによって行うことができます、<xref:System.Runtime.Remoting.Contexts.Context.DoCallBack%2A>メソッドをデリゲートに渡すことで。 デリゲートはコールバックを要求するために使用します。 デリゲートである必要があります、<xref:System.Runtime.Remoting.Contexts.CrossContextDelegate>クラスの種類。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Context ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定以外のコンテキストを基になるオブジェクトをクリーンアップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンテキストの基になるオブジェクトがクリーンアップ シャット ダウンの最中の<xref:System.AppDomain>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FreeNamedDataSlot">
+      <MemberSignature Language="C#" Value="public static void FreeNamedDataSlot (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FreeNamedDataSlot(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.FreeNamedDataSlot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">無料のデータ スロットの名前。</param>
+        <summary>すべてのコンテキストで名前付きデータ スロットを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きデータ スロットは、パブリックし、すべてのユーザーによって操作されることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Freeze">
+      <MemberSignature Language="C#" Value="public virtual void Freeze ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Freeze() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.Freeze" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加または現在のコンテキストからコンテキスト プロパティを削除することができない、コンテキストを固定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストが固定された後、コンテキスト プロパティを追加できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コンテキストが既に凍結されています。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="public static object GetData (LocalDataStoreSlot slot);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetData(class System.LocalDataStoreSlot slot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.GetData(System.LocalDataStoreSlot)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="slot" Type="System.LocalDataStoreSlot" />
+      </Parameters>
+      <Docs>
+        <param name="slot">データを含むデータ スロット。</param>
+        <summary>指定した現在のコンテキストのスロットから値を取得します。</summary>
+        <returns>関連付けられているデータを返す<paramref name="slot" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedDataSlot">
+      <MemberSignature Language="C#" Value="public static LocalDataStoreSlot GetNamedDataSlot (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.LocalDataStoreSlot GetNamedDataSlot(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.GetNamedDataSlot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.LocalDataStoreSlot</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">データ スロットの名前。</param>
+        <summary>名前付きデータ スロットを検索します。</summary>
+        <returns>ローカル データ スロットを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前が使用されていない場合は、新しいスロットが割り当てられます。 名前付きデータ スロットは、パブリックし、すべてのユーザーによって操作されることができます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public virtual System.Runtime.Remoting.Contexts.IContextProperty GetProperty (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Contexts.IContextProperty GetProperty(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.GetProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.IContextProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロパティの名前。</param>
+        <summary>名前で指定された、特定のコンテキスト プロパティを返します。</summary>
+        <returns>指定したコンテキスト プロパティです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDynamicProperty">
+      <MemberSignature Language="C#" Value="public static bool RegisterDynamicProperty (System.Runtime.Remoting.Contexts.IDynamicProperty prop, ContextBoundObject obj, System.Runtime.Remoting.Contexts.Context ctx);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RegisterDynamicProperty(class System.Runtime.Remoting.Contexts.IDynamicProperty prop, class System.ContextBoundObject obj, class System.Runtime.Remoting.Contexts.Context ctx) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.RegisterDynamicProperty(System.Runtime.Remoting.Contexts.IDynamicProperty,System.ContextBoundObject,System.Runtime.Remoting.Contexts.Context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Runtime.Remoting.Contexts.IDynamicProperty" />
+        <Parameter Name="obj" Type="System.ContextBoundObject" />
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+      </Parameters>
+      <Docs>
+        <param name="prop">登録する動的なプロパティです。</param>
+        <param name="obj">対象のオブジェクト/プロキシ、<c>プロパティ</c>が登録されています。</param>
+        <param name="ctx">対象のコンテキスト、<c>プロパティ</c>が登録されています。</param>
+        <summary>実装する動的なプロパティを登録、 <see cref="T:System.Runtime.Remoting.Contexts.IDynamicProperty" /> remoting service がインターフェイスです。</summary>
+        <returns>
+          <see langword="true" />場合は、プロパティが正常に登録されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基づく`obj`と`ctx`、`prop`はリモート呼び出しのパスのいくつかの場所に配置されているシンクを指定するように依頼します。 複数のプロパティが登録されている場合、シンクが呼び出しの間で変更可能な任意の順序で呼び出されます。  
+  
+ 場合`obj`は`null`とし、プロキシがある場合、プロキシで行われたすべての呼び出しが受け取られます。 それ以外の場合`obj`実際のオブジェクトは、オブジェクトのすべての呼び出しが受け取られます。 `ctx`パラメーターでなければなりません`null`です。  
+  
+ 場合`ctx`は`null`、`obj`する必要があります`null`コンテキストを出入りするすべての呼び出しが傍受されたとします。  
+  
+ 両方`ctx`と`obj`は`null`、すべてのコンテキストを出入りするすべての呼び出しが受け取られます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">いずれか<paramref name="prop" />の名前または<see langword="null" />、か動的ではありません (を実装していない<see cref="T:System.Runtime.Remoting.Contexts.IDynamicProperty" />)。</exception>
+        <exception cref="T:System.ArgumentException">オブジェクトとコンテキストの両方が指定された (両方<paramref name="obj" />と<paramref name="ctx" />されない<see langword="null" />)。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードを CLR インフラストラクチャに接続します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" />です。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public static void SetData (LocalDataStoreSlot slot, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetData(class System.LocalDataStoreSlot slot, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.SetData(System.LocalDataStoreSlot,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="slot" Type="System.LocalDataStoreSlot" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="slot">データが追加されるデータ スロット。</param>
+        <param name="data">このデータを追加します。</param>
+        <summary>現在のコンテキストに指定されたスロット内のデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public virtual void SetProperty (System.Runtime.Remoting.Contexts.IContextProperty prop);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetProperty(class System.Runtime.Remoting.Contexts.IContextProperty prop) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.SetProperty(System.Runtime.Remoting.Contexts.IContextProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prop" Type="System.Runtime.Remoting.Contexts.IContextProperty" />
+      </Parameters>
+      <Docs>
+        <param name="prop">実際のコンテキスト プロパティです。</param>
+        <summary>名前で特定のコンテキスト プロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンテキストにプロパティを追加することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コンテキストが凍結されます。</exception>
+        <exception cref="T:System.ArgumentNullException">プロパティまたはプロパティ名が<see langword="null" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />クラスの現在のコンテキストの表現。</summary>
+        <returns>A<see cref="T:System.String" />クラスの現在のコンテキストの表現。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterDynamicProperty">
+      <MemberSignature Language="C#" Value="public static bool UnregisterDynamicProperty (string name, ContextBoundObject obj, System.Runtime.Remoting.Contexts.Context ctx);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool UnregisterDynamicProperty(string name, class System.ContextBoundObject obj, class System.Runtime.Remoting.Contexts.Context ctx) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.Context.UnregisterDynamicProperty(System.String,System.ContextBoundObject,System.Runtime.Remoting.Contexts.Context)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="obj" Type="System.ContextBoundObject" />
+        <Parameter Name="ctx" Type="System.Runtime.Remoting.Contexts.Context" />
+      </Parameters>
+      <Docs>
+        <param name="name">登録を解除する動的なプロパティの名前です。</param>
+        <param name="obj">対象のオブジェクト/プロキシ、<c>プロパティ</c>が登録されています。</param>
+        <param name="ctx">対象のコンテキスト、<c>プロパティ</c>が登録されています。</param>
+        <summary>実装する動的なプロパティの登録を解除、<see cref="T:System.Runtime.Remoting.Contexts.IDynamicProperty" />インターフェイスです。</summary>
+        <returns>
+          <see langword="true" />オブジェクトが正常に登録できなかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">オブジェクトとコンテキストの両方が指定された (両方<paramref name="obj" />と<paramref name="ctx" />されない<see langword="null" />)。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">コードを CLR インフラストラクチャに接続します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" />です。</permission>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

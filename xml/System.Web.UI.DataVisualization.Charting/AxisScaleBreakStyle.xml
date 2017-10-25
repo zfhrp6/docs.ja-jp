@@ -1,0 +1,1051 @@
+<Type Name="AxisScaleBreakStyle" FullName="System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle">
+  <TypeSignature Language="C#" Value="public class AxisScaleBreakStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AxisScaleBreakStyle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Enabled")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グラフの y 軸のスケール区切りを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スケール区切りは、グラフの系列のデータ ポイントを再配布に使用されるほとんどの場合、y 軸に意図的な不連続性です。 この機能は、プロットされる 1 つの系列内のデータの高値と低値に大きな違いがある場合に、読みやすさを向上します。 複数の系列内のデータとの違いについては、スケールの区切り線は描画されません。  
+  
+ 既定では、スケール区切りが無効になります。 設定して、y 軸のスケール区切りを有効にすることができます、<xref:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.Enabled%2A>プロパティを`true`です。 垂直方向のスケール区切りの間隔を変更することを指定する、<xref:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.Spacing%2A>値。 これは、y 軸のスケールの割合として計算されます。  
+  
+ スケール区切りを描画する 1 つの系列のデータ ポイントのデータ範囲間の十分な分離が必要です。 既定では、グラフの 25% 以上のデータ範囲間の分離がある場合にのみ、スケール区切りを追加できます。 スケール区切りを有効にしたが開かない場合は、データ範囲間十分な距離がある場合でも設定できる場合、<xref:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.CollapsibleSpaceThreshold%2A>プロパティを 25 未満の値にします。  
+  
+ グラフは、グラフ; あたり最大 5 つのスケール区切りをサポートします。ただし、グラフは、1 つ以上のスケール区切りを表示する場合にくくなることができます。 データ範囲が 3 つ以上ある場合は、このデータを表示するための別の方法を使用することを検討します。 使用して、<xref:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.MaxNumberOfBreaks%2A>プロパティをグラフに表示できるスケール区切りの数を減らします。  
+  
+ スケール区切りを使用すると、y 軸ラベルをオフセットになる可能性があります。 ラベルのオフセットを無効にする設定、<xref:System.Web.UI.DataVisualization.Charting.LabelStyle.IsStaggered%2A>プロパティを`false`です。  
+  
+ スケール区切りは、次の条件のいずれかではサポートされていません。  
+  
+-   円グラフ、ドーナツ グラフ、じょうごグラフ、ピラミッド、放射状または任意の積み上げグラフの種類が使用されます。  
+  
+-   ラベルのカスタムの間隔、目盛りまたはグリッド線が有効にします。  
+  
+-   軸の最小値または最大値を設定します。  
+  
+-   カスタム ラベルが使用されます。  
+  
+-   対数の y 軸を指定します。  
+  
+-   スクロールおよびズームを含めるには、軸ビューを y 軸が使用されます。  
+  
+-   3-D グラフが使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AxisScaleBreakStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakLineStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.BreakLineStyle BreakLineStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.BreakLineStyle BreakLineStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.BreakLineStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.BreakLineStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切りを描画するために使用する区切り線のスタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.BreakLineStyle" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapsibleSpaceThreshold">
+      <MemberSignature Language="C#" Value="public int CollapsibleSpaceThreshold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CollapsibleSpaceThreshold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.CollapsibleSpaceThreshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(25)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切りを描画するグラフ領域のしきい値を設定します。</summary>
+        <value><see langword="integer" />するスケール区切りが描画されるグラフ領域のしきい値を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、y 軸のスケールの比率として計測されます。 既定では、その値を 25 に設定します。 これをスケールの 25% 以上の差を持つ系列のデータ ポイントをスケール区切りによって折りたたむはことを意味します。  
+  
+   
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケールの区切り線が有効になっているかどうかを示すフラグを設定します。</summary>
+        <value>A<see langword="Boolean" />スケール区切りを有効にするかどうかを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LineColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LineColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.LineColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切り線の色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />スケール区切り線の色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineDashStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartDashStyle LineDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartDashStyle LineDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.LineDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切り線のスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartDashStyle" />スケール区切り線のスタイルを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineWidth">
+      <MemberSignature Language="C#" Value="public int LineWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.LineWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切り線の幅を設定します。</summary>
+        <value><see langword="integer" />スケール区切り線の幅を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxNumberOfBreaks">
+      <MemberSignature Language="C#" Value="public int MaxNumberOfBreaks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxNumberOfBreaks" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.MaxNumberOfBreaks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(2)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフに表示するスケール区切りの最大数を設定します。</summary>
+        <value><see langword="integer" />をグラフに表示する小数点以下桁数の最大数を表す値を中断します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.Chart>は最大 5 つのスケール区切りを表示できます。  
+  
+   
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Spacing">
+      <MemberSignature Language="C#" Value="public double Spacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Spacing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.Spacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1.5)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスケール区切りの線の間の間隔を設定します。 間隔は、y 軸の割合として表されます。</summary>
+        <value>A<see langword="double" />スケール区切りの線の間の間隔を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、スケールの区切りに関連するプロパティを設定する方法を示します。 ように仮定、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+' Add data to the chart  
+Private Sub AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = AutoBool.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+// Add data to the chart  
+private void AddChartData()  
+{  
+   chart1.Series["Default"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Default"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Default"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Default"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.StartFromZero = AutoBool.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of Y-axis).  
+    chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartFromZero">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.StartFromZero StartFromZero { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.StartFromZero StartFromZero" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.StartFromZero" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.StartFromZero</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.DataVisualization.Charting.StartFromZero" />スケールを開始するかどうかを示す列挙値が 0 から中断します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.StartFromZero" />スケールを開始するかどうかを示す列挙値が 0 から中断します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.DataVisualization.Charting.AxisScaleBreakStyle.StartFromZero%2A>プロパティに設定されている<xref:System.Web.UI.DataVisualization.Charting.StartFromZero.Auto>グラフが自動的に計算系列の最小値またはゼロから y 軸のスケールの最小値を起動するかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例を有効にして、後にスケール区切りをカスタマイズする方法を示しています、<xref:System.Web.UI.DataVisualization.Charting.Chart>コントロールがデザイン画面に追加されました。  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function AddChartData()   
+  
+    chart1.Series("Default").Points.Add(New DataPoint(1, 2))   
+    chart1.Series("Default").Points.Add(New DataPoint(2, 4))   
+    chart1.Series("Default").Points.Add(New DataPoint(3, 400000))   
+    chart1.Series("Default").Points.Add(New DataPoint(4, 3))   
+  
+End Sub  
+  
+Private Function AddScaleBreaks()  
+  
+   ' Enable scale breaks.  
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.Enabled = True   
+  
+   ' Show scale break if more than 25% of the chart is empty space.       
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25   
+  
+   ' Set the line width of the scale break.      
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineWidth = 2   
+  
+   ' Set the color of the scale break.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.LineColor = Color.Red   
+  
+   ' If all data points are significantly far from zero, the chart will calculate the scale minimum value.   
+   chart1.ChartAreas("Default").AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto  
+  
+   ' Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+   chart1.ChartAreas["Default"].AxisY.ScaleBreakStyle.Spacing = 2;  
+  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void AddChartData()  
+{  
+   chart1.Series["Series1"].Points.Add(new DataPoint(1, 2));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(2, 4));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(3, 400000));  
+   chart1.Series["Series1"].Points.Add(new DataPoint(4, 3));  
+}  
+  
+private void AddScaleBreaks()  
+{  
+   // Enable scale breaks.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Enabled = true;  
+  
+   // Show scale break if more than 25% of the chart is empty space.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.CollapsibleSpaceThreshold = 25;  
+  
+   // Set the line width of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineWidth = 2;  
+  
+   // Set the color of the scale break.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.LineColor = Color.Red;  
+  
+   // If all data points are significantly far from zero, the chart will calculate the scale minimum value.  
+   chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.StartFromZero = StartFromZero.Auto;  
+  
+   // Set the spacing gap between the lines of the scale break (as a percentage of the Y-axis).  
+    chart1.ChartAreas["ChartArea1"].AxisY.ScaleBreakStyle.Spacing = 2;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

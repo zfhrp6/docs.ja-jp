@@ -1,0 +1,194 @@
+<Type Name="CustomValidator" FullName="System.Web.UI.MobileControls.CustomValidator">
+  <TypeSignature Language="C#" Value="public class CustomValidator : System.Web.UI.MobileControls.BaseValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomValidator extends System.Web.UI.MobileControls.BaseValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.CustomValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.BaseValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ServerValidate")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem("System.Web.UI.Design.WebControlToolboxItem, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:CustomValidator runat="server" ErrorMessage="CustomValidator"&gt;&lt;/{0}:CustomValidator&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>他のコントロールに対してカスタム検証を実行できるコントロールを提供します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの動作と同じように、 <xref:System.Web.UI.WebControls.CustomValidator?displayProperty=nameWithType> Web サーバー コントロールです。 開発者は、独自の共通言語ランタイム デリゲート検証に使用するを選択できます。  
+  
+ 既定では、<xref:System.Web.UI.MobileControls.Command>フォーム上のコントロールがフォームがサーバーに送信されるときに検証を実行するフォームに検証イベントを発生させます。 自動検証を無効にする設定、<xref:System.Web.UI.MobileControls.Command.CausesValidation%2A>プロパティを<xref:System.Web.UI.MobileControls.Command>コントロールを`false`です。  
+  
+   
+  
+## Examples  
+ 次の例のチェックするかどうかにユーザーが配置される値、<xref:System.Web.UI.MobileControls.TextBox>コントロールが偶数個です。 値が偶数の場合は、ページは有効です。 ページが無効な場合、および<xref:System.Web.UI.MobileControls.CustomValidator>が表示されます、<xref:System.Web.UI.MobileControls.BaseValidator.ErrorMessage%2A>プロパティです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[MobileCustomValidatorSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileCustomValidatorSample/cs/Default.aspx#1)]
+ [!code-aspx-vb[MobileCustomValidatorSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileCustomValidatorSample/vb/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.CustomValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.CustomValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlPropertiesValid">
+      <MemberSignature Language="C#" Value="protected override bool ControlPropertiesValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ControlPropertiesValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.CustomValidator.ControlPropertiesValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>検証対象のプロパティが有効であるかどうかを判断します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>
+          検証対象のコントロール プロパティが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWebValidator">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.BaseValidator CreateWebValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.BaseValidator CreateWebValidator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.CustomValidator.CreateWebValidator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BaseValidator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラス独自の集計 Web 検証コントロールを作成するための仮想メソッド。 Web 検証コントロールは、Web ベースの検証コントロールに共通のプロパティを取得または設定するためのものです。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>集約された Web 検証コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected override bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.CustomValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET が Mobile Web フォームを処理するときに検証段階で呼び出されます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>
+          検証コントロールが正しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnServerValidate">
+      <MemberSignature Language="C#" Value="protected virtual bool OnServerValidate (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnServerValidate(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.CustomValidator.OnServerValidate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象の値。</param>
+        <summary><see cref="E:System.Web.UI.MobileControls.CustomValidator.ServerValidate" /> イベントを発生させます。</summary>
+        <returns>
+          <see langword="true" />値が指定されている場合、<paramref name="value" />パラメーターが検証に合格です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerValidate">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.ServerValidateEventHandler ServerValidate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.ServerValidateEventHandler ServerValidate" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.MobileControls.CustomValidator.ServerValidate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ServerValidateEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Web.UI.MobileControls.CustomValidator" />の値を検証、<see cref="P:System.Web.UI.MobileControls.BaseValidator.ControlToValidate" />プロパティです。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値で呼び出されたメソッドがこのイベントに登録されている場合、<xref:System.Web.UI.MobileControls.BaseValidator.ControlToValidate%2A>プロパティです。 このイベント ハンドラーを返す場合にのみ検証が成功した`true`です。  
+  
+   
+  
+## Examples  
+ 次の例をトラップする方法を示しています、<xref:System.Web.UI.MobileControls.CustomValidator.ServerValidate>ページを検証するためのロジックを追加するイベントです。  
+  
+ [!code-aspx-csharp[MobileCustomValidatorSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileCustomValidatorSample/cs/Default.aspx#1)]
+ [!code-aspx-vb[MobileCustomValidatorSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileCustomValidatorSample/vb/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,171 @@
+<Type Name="DispatcherObject" FullName="System.Windows.Threading.DispatcherObject">
+  <TypeSignature Language="C#" Value="public abstract class DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DispatcherObject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherObject" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられているオブジェクトを表す、<see cref="T:System.Windows.Threading.Dispatcher" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドのみを<xref:System.Windows.Threading.DispatcherObject.Dispatcher%2A>が作成されたアクセスで、<xref:System.Windows.Threading.DispatcherObject>直接です。  アクセスする、<xref:System.Windows.Threading.DispatcherObject>スレッド以外のスレッドから、<xref:System.Windows.Threading.DispatcherObject>が作成された、呼び出す<xref:System.Windows.Threading.Dispatcher.Invoke%2A>または<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>上、 <xref:System.Windows.Threading.Dispatcher> 、<xref:System.Windows.Threading.DispatcherObject>に関連付けられています。  
+  
+ サブクラス<xref:System.Windows.Threading.DispatcherObject>こと必要があるスレッドを適用する安全性を行うには呼び出す<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>すべてのパブリック メソッドにします。  これにより、呼び出し元スレッドがスレッドを<xref:System.Windows.Threading.DispatcherObject>に作成されました。  
+  
+ A<xref:System.Windows.Threading.DispatcherObject>とは別にインスタンス化できません。 つまり、すべてのコンス トラクターが保護されています。  
+  
+ 派生したオブジェクト<xref:System.Windows.Threading.DispatcherObject>スレッド アフィニティがあります。  
+  
+ 派生したオブジェクト<xref:System.Windows.Freezable>はフリー スレッドは、固定したときにします。  詳しくは、「[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)」をご覧ください。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリック<see langword="static" />この型のメンバーは、スレッド セーフであります。 インスタンス メンバーの場合は、スレッド セーフであるとは限りません。  
+  
+ このオブジェクトが作成されたスレッドからのみアクセスできます。 他のスレッドからアクセスする試行がスローされます、<see cref="T:System.InvalidOperationException" />です。 <see cref="M:System.Windows.Threading.Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority,System.Delegate)" />または<see cref="M:System.Windows.Threading.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority,System.Delegate)" />正しいスレッドに作業をマーシャ リングのサポートを提供します。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DispatcherObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Threading.DispatcherObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckAccess">
+      <MemberSignature Language="C#" Value="public bool CheckAccess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CheckAccess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherObject.CheckAccess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のスレッドがへのアクセスを持つかどうかを判断<see cref="T:System.Windows.Threading.DispatcherObject" />です。</summary>
+        <returns>
+          <see langword="true" />呼び出し元のスレッドがあるこのオブジェクトにアクセスできるを場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドでのみ、<xref:System.Windows.Threading.DispatcherObject.Dispatcher%2A>が作成されたアクセスで、<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+ 任意のスレッドがへのアクセスを持っているかどうかが確認チェックできます<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+ 違い<xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>と<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>される<xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>呼び出し元のスレッドがへのアクセスを持つかどうかを指定するブール値を返します<xref:System.Windows.Threading.DispatcherObject>と<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>呼び出し元のスレッドへのアクセスがない場合は、例外をスロー<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+ このメソッドを呼び出すを呼び出すことと同じです<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A>、関連する<xref:System.Windows.Threading.Dispatcher>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>をスレッドが、スレッドへのアクセスを持つかどうかを判断する、<xref:System.Windows.Controls.Button>上に作成されました。  <xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>メソッドを<xref:System.Windows.Controls.Button>スレッドへのアクセスを確認するために呼び出されます。  呼び出し元のスレッドがアクセスを<xref:System.Windows.Controls.Button>だけのメンバーにアクセスして更新、 <xref:System.Windows.Controls.Button>、それ以外のデリゲートを受け入れ、<xref:System.Windows.Controls.Button>にポストを引数として、<xref:System.Windows.Threading.Dispatcher>の<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[DispatcherObjectAccessSample#DispatcherObjectAccessCheckAccess](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherObjectAccessSample/CSharp/Window1.xaml.cs#dispatcherobjectaccesscheckaccess)]
+ [!code-vb[DispatcherObjectAccessSample#DispatcherObjectAccessCheckAccess](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherObjectAccessSample/visualbasic/window1.xaml.vb#dispatcherobjectaccesscheckaccess)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispatcher">
+      <MemberSignature Language="C#" Value="public System.Windows.Threading.Dispatcher Dispatcher { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Threading.Dispatcher Dispatcher" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Threading.DispatcherObject.Dispatcher" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.Dispatcher</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Threading.Dispatcher" />この<see cref="T:System.Windows.Threading.DispatcherObject" />に関連付けられています。</summary>
+        <value>ディスパッチャー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドのみを<xref:System.Windows.Threading.DispatcherObject.Dispatcher%2A>が作成されたアクセスで、<xref:System.Windows.Threading.DispatcherObject>直接です。  アクセスする、<xref:System.Windows.Threading.DispatcherObject>スレッド以外のスレッドから、<xref:System.Windows.Threading.DispatcherObject>が作成された、呼び出す<xref:System.Windows.Threading.Dispatcher.Invoke%2A>と<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>上、 <xref:System.Windows.Threading.Dispatcher> 、<xref:System.Windows.Threading.DispatcherObject>に関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyAccess">
+      <MemberSignature Language="C#" Value="public void VerifyAccess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyAccess() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Threading.DispatcherObject.VerifyAccess" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し元のスレッドがへのアクセスを持つことを強制<see cref="T:System.Windows.Threading.DispatcherObject" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドでのみ、<xref:System.Windows.Threading.DispatcherObject.Dispatcher%2A>が作成されたアクセスで、<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+ 任意のスレッドがへのアクセスを持っているかどうかが確認チェックできます<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+ 違い<xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>と<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>される<xref:System.Windows.Threading.DispatcherObject.CheckAccess%2A>呼び出し元のスレッドがへのアクセスを持つかどうかを指定するブール値を返します<xref:System.Windows.Threading.DispatcherObject>と<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>呼び出し元のスレッドへのアクセスがない場合は、例外をスロー<xref:System.Windows.Threading.DispatcherObject>です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Windows.Threading.DispatcherObject.VerifyAccess%2A>をスレッドが、スレッドへのアクセスを持つかどうかを判断する、<xref:System.Windows.Controls.Button>上に作成されました。  呼び出し元のスレッドには、アクセスがない場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ [!code-csharp[DispatcherObjectAccessSample#DispatcherObjectAccessVerifyAccess](~/samples/snippets/csharp/VS_Snippets_Wpf/DispatcherObjectAccessSample/CSharp/Window1.xaml.cs#dispatcherobjectaccessverifyaccess)]
+ [!code-vb[DispatcherObjectAccessSample#DispatcherObjectAccessVerifyAccess](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DispatcherObjectAccessSample/visualbasic/window1.xaml.vb#dispatcherobjectaccessverifyaccess)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出し元のスレッドでは、これにアクセスできない<see cref="T:System.Windows.Threading.DispatcherObject" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

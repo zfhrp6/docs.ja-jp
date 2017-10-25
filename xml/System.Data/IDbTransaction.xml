@@ -1,0 +1,218 @@
+<Type Name="IDbTransaction" FullName="System.Data.IDbTransaction">
+  <TypeSignature Language="C#" Value="public interface IDbTransaction : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDbTransaction implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.IDbTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ ソースで実行されるトランザクションを表し、リレーショナル データベースにアクセスする .NET Framework データ プロバイダーにより実装されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.IDbTransaction>インターフェイスにより、データ ソースで実行するトランザクションを表すトランザクション クラスの実装、継承したクラスです。 トランザクション クラスの詳細については、次を参照してください。[トランザクションと同時実行](~/docs/framework/data/adonet/transactions-and-concurrency.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.IDbTransaction>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.IDbTransaction>です。  
+  
+ 継承するクラス<xref:System.Data.IDbTransaction>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.IDbTransaction>インターフェイスを定義、<xref:System.Data.IDbTransaction.Commit%2A>メソッドです。 さらに、<xref:System.Data.OleDb.OleDbTransaction>クラスは、このプロパティを継承しも定義、<xref:System.Data.OleDb.OleDbTransaction.Begin%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>.NET Framework データ プロバイダー間の整合性を高める形式で継承するクラスの名前を<paramref name="Prv" />トランザクション場所<paramref name="Prv" />は、特定の .NET Framework データ プロバイダー名前空間のすべてのクラスに指定された uniform プレフィックス。 たとえば、<paramref name="Sql" />のプレフィックス、<see cref="T:System.Data.SqlClient.SqlTransaction" />クラス内で、<see langword="System.Data.SqlClient" />名前空間。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベース トランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.IDbConnection Connection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.IDbConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbTransaction.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IDbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションに関連付けられる Connection オブジェクトを指定します。</summary>
+        <value>トランザクションに関連付けられる Connection オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのアプリケーションでは、0 個以上のトランザクションで複数のデータベース接続があります。 このプロパティでは、特定のトランザクションに関連付けられている接続オブジェクトを確認することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsolationLevel">
+      <MemberSignature Language="C#" Value="public System.Data.IsolationLevel IsolationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.IsolationLevel IsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Data.IDbTransaction.IsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトランザクションの <see cref="T:System.Data.IsolationLevel" /> を指定します。</summary>
+        <value>このトランザクションの <see cref="T:System.Data.IsolationLevel" />。 既定値は、<see langword="ReadCommitted" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 並列トランザクションはサポートされていません。 したがって、<xref:System.Data.IsolationLevel>トランザクション全体に適用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public void Rollback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Rollback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.IDbTransaction.Rollback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションを保留状態からロールバックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションのみロールバック可能を保留状態から (後<xref:System.Data.IDbConnection.BeginTransaction%2A>が呼び出されると、その前に<xref:System.Data.IDbTransaction.Commit%2A>と呼びます)。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.SqlClient.SqlConnection>と<xref:System.Data.SqlClient.SqlTransaction>です。 使用する方法も示します、 <xref:System.Data.SqlClient.SqlConnection.BeginTransaction%2A>、 <xref:System.Data.SqlClient.SqlTransaction.Commit%2A>、および<xref:System.Data.SqlClient.SqlTransaction.Rollback%2A>メソッドです。  
+  
+ [!code-csharp[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData SqlConnection.BeginTransaction Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlConnection.BeginTransaction Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">トランザクションをコミットしようとしてエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">トランザクションは既にコミットまたはロールバックされています。  
+  
+ または  
+  
+ 接続が切れています。</exception>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Data.IDbTransaction.Rollback" />派生クラスでは、基本クラスの呼び出しを必ず<see langword="Rollback" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,151 @@
+<Type Name="SecurityTokenTypes" FullName="System.IdentityModel.Tokens.SecurityTokenTypes">
+  <TypeSignature Language="C#" Value="public static class SecurityTokenTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SecurityTokenTypes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityTokenTypes" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>セキュリティ トークンの種類を表す文字列を返す一連の静的なプロパティを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SecurityTokenTypes> を使用して、クライアントによって送信される、またはサービスによって要求される SOAP メッセージに含める必要があるセキュリティ トークンの種類を指定します。 セキュリティ トークンの種類に関する要件を指定するには、<xref:System.IdentityModel.Selectors.SecurityTokenRequirement.TokenType%2A> プロパティを設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Kerberos">
+      <MemberSignature Language="C#" Value="public static string Kerberos { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Kerberos" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenTypes.Kerberos" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kerberos チケットに基づくセキュリティ トークンを表す文字列を取得します。</summary>
+        <value>Kerberos チケットに基づくセキュリティ トークンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Kerberos チケットに基づくセキュリティ トークンには、<xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken> と <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> の 2 種類があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rsa">
+      <MemberSignature Language="C#" Value="public static string Rsa { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Rsa" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenTypes.Rsa" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RSA キーに基づくセキュリティ トークンを表す文字列を取得します。</summary>
+        <value>RSA キーに基づくセキュリティ トークンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.RsaSecurityToken> セキュリティ トークンは、RSA キーに基づきます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Saml">
+      <MemberSignature Language="C#" Value="public static string Saml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Saml" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenTypes.Saml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML アサーションに基づくセキュリティ トークンを表す文字列を取得します。</summary>
+        <value>SAML アサーションに基づくセキュリティ トークンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、SAML アサーションに基づきます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public static string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenTypes.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー名とパスワードに基づくセキュリティ トークンを表す文字列を取得します。</summary>
+        <value>ユーザー名とパスワードに基づくセキュリティ トークンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンは、ユーザー名とパスワードに基づきます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X509Certificate">
+      <MemberSignature Language="C#" Value="public static string X509Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string X509Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenTypes.X509Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書に基づくセキュリティ トークンを表す文字列を取得します。</summary>
+        <value>X.509 証明書に基づくセキュリティ トークンを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンは、X.509 証明書に基づきます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

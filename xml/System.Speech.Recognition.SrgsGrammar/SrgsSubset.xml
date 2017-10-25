@@ -1,0 +1,125 @@
+<Type Name="SrgsSubset" FullName="System.Speech.Recognition.SrgsGrammar.SrgsSubset">
+  <TypeSignature Language="C#" Value="public class SrgsSubset : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsSubset extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsSubset" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドと音声の語句とを指定する文字列を一致するように使用できるプロパティを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声の語句では、サブセットとして指定した文字列を含めることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsSubset (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsSubset.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">一致する語句の部分。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsSubset" />クラス、一致する語句の部分を指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsSubset (string text, System.Speech.Recognition.SubsetMatchingMode matchingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, valuetype System.Speech.Recognition.SubsetMatchingMode matchingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsSubset.#ctor(System.String,System.Speech.Recognition.SubsetMatchingMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="matchingMode" Type="System.Speech.Recognition.SubsetMatchingMode" />
+      </Parameters>
+      <Docs>
+        <param name="text">一致する語句の部分。</param>
+        <param name="matchingMode">モード<c>テキスト</c>話された句と一致する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsSubset" />クラス、一致する部分であり、テキストが一致するモードを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `matchingMode`パラメーターには、メンバーが必要があります、<xref:System.Speech.Recognition.SubsetMatchingMode>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="text" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="text" /> が空です。  
+  
+ <paramref name="text" />空白文字だけが含まれています (つまり、' '、'\t'、'\n'、'\r')。  
+  
+ <paramref name="matchingMode" />値に設定されている、<see cref="T:System.Speech.Recognition.SubsetMatchingMode" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchingMode">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.SubsetMatchingMode MatchingMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Recognition.SubsetMatchingMode MatchingMode" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsSubset.MatchingMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SubsetMatchingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサブセットの一致モードを設定します。</summary>
+        <value><see cref="T:System.Speech.Recognition.SubsetMatchingMode" /> 列挙体のメンバー。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsSubset.MatchingMode" />のメンバーではない値に、<see cref="T:System.Speech.Recognition.SubsetMatchingMode" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsSubset.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一致する音声の語句の部分を含む文字列として設定します。</summary>
+        <value>照合する音声の語句の部分を含む文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsSubset.Text" />に<see langword="null" />または空の文字列にします。</exception>
+        <exception cref="T:System.ArgumentException">設定しようとしましたが<see cref="P:System.Speech.Recognition.SrgsGrammar.SrgsSubset.Text" />を空白文字だけを含む文字列を使用して (' '、'\t'、'\n'、'\r')。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

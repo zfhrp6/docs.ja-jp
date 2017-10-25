@@ -1,0 +1,169 @@
+<Type Name="Saml2Conditions" FullName="System.IdentityModel.Tokens.Saml2Conditions">
+  <TypeSignature Language="C#" Value="public class Saml2Conditions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2Conditions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2Conditions" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>[Saml2Core、2.5.1] で指定された条件の要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す要素の詳細については、SAML V2.0 のコア仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2Conditions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2Conditions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.Saml2Conditions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AudienceRestrictions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2AudienceRestriction&gt; AudienceRestrictions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.Saml2AudienceRestriction&gt; AudienceRestrictions" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Conditions.AudienceRestrictions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.Saml2AudienceRestriction&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アサーションがアドレス指定される対象ユーザーを指定するコレクションを取得します。 [Saml2Core、2.5.1]</summary>
+        <value>型のコレクション<see cref="T:System.IdentityModel.Tokens.Saml2AudienceRestriction" />アサーションの対象ユーザーを指定します。 コレクションが空の場合は、対象ユーザーに制限は適用されません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ AudienceRestrictions 要素です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotBefore">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; NotBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; NotBefore" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Conditions.NotBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、アサーションを有効にするインスタント最も早い時刻を設定します。 [Saml2Core、2.5.1]</summary>
+        <value>Null 許容型<see cref="T:System.DateTime" />インスタント (utc) 時刻を格納しています。 A<see langword="null" />値では、属性が存在しないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NotBefore の属性です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.IdentityModel.Tokens.Saml2Conditions.NotOnOrAfter" />プロパティは使用されません<see langword="null" />、瞬時で指定された時間以降に出現する値を設定しようと、<see cref="P:System.IdentityModel.Tokens.Saml2Conditions.NotOnOrAfter" />プロパティが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NotOnOrAfter">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; NotOnOrAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; NotOnOrAfter" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Conditions.NotOnOrAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサーションを切れてインスタントの時間を設定します。 [Saml2Core、2.5.1]</summary>
+        <value>Null 許容型<see cref="T:System.DateTime" />インスタント (utc) 時刻を格納しています。 A<see langword="null" />値では、属性が存在しないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NotOnOrAfter 属性です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.IdentityModel.Tokens.Saml2Conditions.NotBefore" />プロパティは使用されません<see langword="null" />、瞬時で指定した時間の前に発生する値を設定しようと、<see cref="P:System.IdentityModel.Tokens.Saml2Conditions.NotBefore" />プロパティが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OneTimeUse">
+      <MemberSignature Language="C#" Value="public bool OneTimeUse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OneTimeUse" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Conditions.OneTimeUse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アサーションがすぐに使用する必要があります、将来使用するは保持されない必要があるかどうかを示す値を取得します。 [Saml2Core、2.5.1]</summary>
+        <value>
+          <see langword="true" />アサーションをすぐに使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OneTimeUse 要素です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyRestriction">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2ProxyRestriction ProxyRestriction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2ProxyRestriction ProxyRestriction" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2Conditions.ProxyRestriction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2ProxyRestriction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアサートするパーティ自体と、元のアサーションに格納されている情報に基づいて独自のアサーションを問題として、後で機能する証明書利用者にアサートするパーティは、制限を設定します。 [Saml2Core、2.5.1]</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.Saml2ProxyRestriction" />後続のアサートするパーティに適用される制限を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ProxyRestriction 要素です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

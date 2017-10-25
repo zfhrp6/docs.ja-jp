@@ -1,0 +1,185 @@
+<Type Name="DataControlReference" FullName="System.Web.DynamicData.DataControlReference">
+  <TypeSignature Language="C#" Value="public class DataControlReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataControlReference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DataControlReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>により、<see cref="T:System.Web.DynamicData.DynamicDataManager" />を管理しているデータ コントロールを宣言によって定義されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、マークアップを接続している動的データ ページのテンプレートから、<xref:System.Web.DynamicData.DynamicDataManager>を<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+> [!NOTE]
+>  わかりやすくするためには、いくつかのマークアップが削除されます。  
+  
+```  
+<asp:DynamicDataManager ID="DynamicDataManager1" runat="server"   
+    AutoLoadForeignKeys="true">  
+  <DataControls>  
+    <asp:DataControlReference ControlID="FormView1" />  
+  </DataControls>  
+</asp:DynamicDataManager>  
+  
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">  
+  <ContentTemplate>  
+    <!-- Items ommited for clarity. -->  
+    <asp:FormView runat="server" ID="FormView1"   
+        DataSourceID="DetailsDataSource" DefaultMode="Edit"  
+        OnDataBound="FormView1_DataBound">  
+        <!-- Items ommited for clarity. -->  
+    </asp:FormView>  
+  
+  </ContentTemplate>  
+</asp:UpdatePanel>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataControlReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DataControlReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [ASP.NET 動的データのインフラストラクチャ](http://msdn.microsoft.com/library/161bbf29-a0b1-4034-b42f-e8b7a42f8bcf)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlID">
+      <MemberSignature Language="C#" Value="public string ControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DataControlReference.ControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.DynamicData.Design.DataControlReferenceIDConverter, System.Web.DynamicData.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理されているデータ バインド コントロールの ID を取得、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</summary>
+        <value>管理されているデータ バインド コントロールの ID、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、マークアップを接続している動的データ ページのテンプレートから、<xref:System.Web.DynamicData.DynamicDataManager>コントロールを<xref:System.Web.UI.WebControls.FormView>コントロール。 <xref:System.Web.DynamicData.DataControlReference.ControlID%2A>プロパティが"FormView1"に設定します。  
+  
+> [!NOTE]
+>  わかりやすくするためには、いくつかのマークアップが削除されます。  
+  
+```  
+<asp:DynamicDataManager ID="DynamicDataManager1" runat="server"   
+    AutoLoadForeignKeys="true">  
+  <DataControls>  
+    <asp:DataControlReference ControlID="FormView1" />  
+  </DataControls>  
+</asp:DynamicDataManager>  
+  
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">  
+  <ContentTemplate>  
+  <!-- Items ommited for clarity. -->  
+    <asp:FormView runat="server" ID="FormView1"   
+        DataSourceID="DetailsDataSource" DefaultMode="Edit"  
+        OnDataBound="FormView1_DataBound">  
+        <!-- Items ommited for clarity. -->  
+    </asp:FormView>  
+  
+  </ContentTemplate>  
+</asp:UpdatePanel>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.DynamicDataManager Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.DynamicDataManager Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DataControlReference.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DynamicDataManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.DynamicDataManager" />データ コントロールを含むコントロールです。</summary>
+        <value><see cref="T:System.Web.DynamicData.DynamicDataManager" />データ コントロールを含むコントロールです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DataControlReference.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リテラル文字列を取得<c>DataControl</c><c>:</c>の値を持つ、<see cref="P:System.Web.DynamicData.DataControlReference.ControlID" />コントロールが追加されます。</summary>
+        <returns>リテラル文字列<c>DataControl:</c>の値を持つ、<see cref="P:System.Web.DynamicData.DataControlReference.ControlID" />プロパティが追加されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.DynamicData.DataControlReference.ControlID%2A>プロパティが空または`null`、リテラル文字列`DataControl`が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

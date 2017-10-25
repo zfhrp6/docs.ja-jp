@@ -1,0 +1,134 @@
+<Type Name="ContentWrapperAttribute" FullName="System.Windows.Markup.ContentWrapperAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ContentWrapperAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContentWrapperAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ContentWrapperAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=true, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>外部コンテンツをラップするために使用される関連するコレクション型に対して 1 つ以上の型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部コンテンツをコンテンツのプロパティの型の型システムの制約をキャプチャしません所有している型の XAML の使用方法をサポートするコンテンツ ケースのすべてのケースを指します。 XAML での特定の種類のコンテンツは厳密に型指定されたジェネリック型の文字列をサポートする場合がありますのサポートなど、<xref:System.Collections.ObjectModel.Collection%601>です。  
+  
+ <xref:System.Windows.Documents.InlineCollection>例を示します、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]を持つクラス、<xref:System.Windows.Markup.ContentWrapperAttribute>属性を適用します。 この例では、2 つの個別の属性付きラッパー クラスがあります。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.ContentWrapperAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentWrapperAttribute (Type contentWrapper);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type contentWrapper) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ContentWrapperAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentWrapper" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="contentWrapper">コレクション型のコンテンツ ラッパーとして宣言される <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Windows.Markup.ContentWrapperAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentWrapper">
+      <MemberSignature Language="C#" Value="public Type ContentWrapper { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContentWrapper" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ContentWrapperAttribute.ContentWrapper" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられているコレクション型のコンテンツ ラッパーとして宣言されている型を取得します。</summary>
+        <value>コレクション型のコンテンツ ラッパーとして宣言されている型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ContentWrapperAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象の <see cref="T:System.Windows.Markup.ContentWrapperAttribute" />。</param>
+        <summary><see cref="P:System.Windows.Markup.ContentWrapperAttribute.ContentWrapper" /> プロパティを比較して、指定した <see cref="T:System.Windows.Markup.ContentWrapperAttribute" /> がこの <see cref="T:System.Windows.Markup.ContentWrapperAttribute" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          <see cref="P:System.Windows.Markup.ContentWrapperAttribute.ContentWrapper" /> プロパティが等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ContentWrapperAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを取得します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeId">
+      <MemberSignature Language="C#" Value="public override object TypeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object TypeId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ContentWrapperAttribute.TypeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性の一意の識別子を取得します。</summary>
+        <value>属性の一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

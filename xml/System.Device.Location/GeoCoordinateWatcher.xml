@@ -1,0 +1,729 @@
+<Type Name="GeoCoordinateWatcher" FullName="System.Device.Location.GeoCoordinateWatcher">
+  <TypeSignature Language="C#" Value="public class GeoCoordinateWatcher : IDisposable, System.ComponentModel.INotifyPropertyChanged, System.Device.Location.IGeoPositionWatcher&lt;System.Device.Location.GeoCoordinate&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GeoCoordinateWatcher extends System.Object implements class System.ComponentModel.INotifyPropertyChanged, class System.Device.Location.IGeoPositionWatcher`1&lt;class System.Device.Location.GeoCoordinate&gt;, class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.GeoCoordinateWatcher" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.INotifyPropertyChanged</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Device.Location.IGeoPositionWatcher&lt;System.Device.Location.GeoCoordinate&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>緯度と経度に基づいている装置場所データを調整します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Device.Location.GeoCoordinateWatcher>クラスは、現在の場所のプロバイダーから座標ベースの場所にデータを提供します。 現在の場所のプロバイダーは、コンピューターで、最高の値に基づいて、さまざまな年齢とすべてのプロバイダーからのデータの正確性などの要因の場所のアプリケーション、および場所プロバイダーに関連付けられている電力消費やパフォーマンスの影響が要求した精度に優先順位は。 現在の場所のプロバイダーがインスタンスの場合 GPS デバイス屋内でそのサテライト信号を失い Wi-fi 三プロバイダーは、最も正確なコンピューター上のプロバイダー、時間の経過と共に変化します。  
+  
+ 場所データにアクセスするには、作成、<xref:System.Device.Location.GeoCoordinateWatcher>を呼び出すと<xref:System.Device.Location.GeoCoordinateWatcher.Start%2A>または<xref:System.Device.Location.GeoCoordinateWatcher.TryStart%2A>の現在の場所のプロバイダーからのデータの取得を開始します。  
+  
+ <xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティを確認するにはデータが使用できるかを判断します。 場合は、データを取得できます、場所から 1 回、<xref:System.Device.Location.GeoCoordinateWatcher.Position*>プロパティ、または処理することにより、継続的な場所の更新を受信、<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベント。  
+  
+ <xref:System.Device.Location.GeoCoordinateWatcher.Permission%2A>、 <xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>、および<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>プロパティ サポート<xref:System.ComponentModel.INotifyPropertyChanged>アプリケーションでこれらのプロパティにデータのバインドこともできます。  
+  
+ Windows 7 ではすべて、<xref:System.Device.Location>クラスは、完全に機能的場所プロバイダーがインストールされている場合、コンピューターの場所を解決するのにはできません。  
+  
+> [!NOTE]
+>  Windows 7 の Starter Edition でのみサポートされている場所プロバイダーはコントロール パネルで、既定の場所プロバイダーやアドインを追加する必要がありますにインストールする緯度と経度を指定します。  
+  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+   
+  
+## Examples  
+ 次のプログラムを作成する方法を示しています、<xref:System.Device.Location.GeoCoordinateWatcher>および初期化のタイムアウトを使用して、データの取得を開始します。 コードは、既知の場合、場所の座標を出力します。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataSync1#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdatasync1/cs/getlocationdatasync.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataSync1#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdatasync1/vb/GetLocationDataSync.vb#1)]  
+  
+ 次のプログラムにサブスクライブすることで継続的な場所の更新を受信する方法を示しています。<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベント。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataAsync#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdataasync/cs/getlocationdataasync.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataAsync#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdataasync/vb/GetLocationDataAsync.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>
+          <see cref="T:System.Device.Location.GeoCoordinateWatcher" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinateWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Device.Location.GeoCoordinateWatcher" />既定の精度の設定を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の精度の設定は<xref:System.Device.Location.GeoPositionAccuracy.Default>します。  
+  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GeoCoordinateWatcher (System.Device.Location.GeoPositionAccuracy desiredAccuracy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Device.Location.GeoPositionAccuracy desiredAccuracy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.#ctor(System.Device.Location.GeoPositionAccuracy)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="desiredAccuracy" Type="System.Device.Location.GeoPositionAccuracy" />
+      </Parameters>
+      <Docs>
+        <param name="desiredAccuracy">
+          <see cref="T:System.Device.Location.GeoLocationAccuracy" />場所のプロバイダーの要求された精度のレベルを示します。  
+  
+ 精度の<see cref="F:System.Device.Location.GeoPositionAccuracy.High" />パフォーマンスが低下することができ、高精度が必要な場合にのみ指定する必要があります。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Device.Location.GeoCoordinateWatcher" />、正確性レベルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredAccuracy">
+      <MemberSignature Language="C#" Value="public System.Device.Location.GeoPositionAccuracy DesiredAccuracy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Device.Location.GeoPositionAccuracy DesiredAccuracy" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinateWatcher.DesiredAccuracy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPositionAccuracy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Device.Location.GeoCoordinateWatcher" /> によって提供される場所データの、要求された精度レベル。</summary>
+        <value>
+          位置情報取得機能の要求された精度レベルを示す、<see cref="T:System.Device.Location.GeoPositionAccuracy" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 精度の<xref:System.Device.Location.GeoPositionAccuracy.High>パフォーマンスが低下することができ、高精度が必要な場合にのみ指定する必要があります。  
+  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Dispose">
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Device.Location.GeoCoordinateWatcher" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Device.Location.GeoCoordinateWatcher.Dispose%2A>が終了したらを使用して、<xref:System.Device.Location.GeoCoordinateWatcher>クラス? qualifyHint = False & autoUpgrade = True です。  
+  
+ アンマネージ リソースを解放できるように、このメソッドを呼び出す必要があります。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Device.Location.GeoCoordinateWatcher" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Device.Location.GeoCoordinateWatcher.Dispose%2A>が終了したらを使用して、<xref:System.Device.Location.GeoCoordinateWatcher>クラス? qualifyHint = False & autoUpgrade = True です。  
+  
+ アンマネージ リソースを解放できるように、このメソッドを呼び出す必要があります。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Device.Location.GeoCoordinateWatcher" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Device.Location.GeoCoordinateWatcher.Dispose%2A>が終了したらを使用して、<xref:System.Device.Location.GeoCoordinateWatcher>クラス? qualifyHint = False & autoUpgrade = True です。  
+  
+ アンマネージ リソースを解放できるように、このメソッドを呼び出す必要があります。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~GeoCoordinateWatcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Device.Location.GeoCoordinateWatcher" /> がガベージ コレクションによって回収される前にリソースを解放し、その他のクリーンアップ操作を実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovementThreshold">
+      <MemberSignature Language="C#" Value="public double MovementThreshold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MovementThreshold" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinateWatcher.MovementThreshold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の座標値をメートル単位で、移動する必要がありますの距離<see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />場所プロバイダーを発生させる別前に、イベント、<see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />イベント。</summary>
+        <value>距離をメートル単位で。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作のしきい値は、現在の場所プロバイダー原因によって検出された場所に変更することを意味する 0、<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベントおよび内の更新プログラム、<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>プロパティです。  
+  
+> [!NOTE]
+>  移動のしきい値では、要求のしきい値でのイベントを受信することは保証されません。 プラットフォームは、特定の移動しきい値の要求を受け入れるしようとしていますが、場合によっては、イベントは発生しません。 要求のしきい値に達した。  
+  
+ **注**Windows 7 以前の Windows バージョンは、次の条件が適用されます。  
+  
+-   すべて<xref:System.Device.Location>コンス トラクターを持つオブジェクトを作成することができますが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティは、値が常に<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+-   によって示される位置、<xref:System.Device.Location.GeoPosition%601.Location%2A>プロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が必ず<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+-   場所のイベントは発生しません。  
+  
+ 次の図では、(たとえば、GPS デバイス) の場所のプロバイダーがコンピューターに提供する場所の座標を表します。 P1、ダイアグラムに含まれる場所データを表す、<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベント、および P2、P3、P4 移動しきい値の範囲内の点を表します。 場所のプロバイダーがありません (P1、P2、P3、および P4) は、その時点での場所を示すデータを指定した場合は<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベントが発生して<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>P1 を返します。 外部のポイント P5 は、<xref:System.Device.Location.GeoCoordinateWatcher.MovementThreshold%2A>距離、したがってその時点で、<xref:System.Device.Location.GeoCoordinateWatcher.Position*>が更新されると、<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベントが発生します。  
+  
+ ![MovementThreshold を示すダイアグラム](~/add/media/ndp-movementthreshold.png "MovementThreshold を示す図")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPositionChanged">
+      <MemberSignature Language="C#" Value="protected void OnPositionChanged (System.Device.Location.GeoPositionChangedEventArgs&lt;System.Device.Location.GeoCoordinate&gt; e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPositionChanged(class System.Device.Location.GeoPositionChangedEventArgs`1&lt;class System.Device.Location.GeoCoordinate&gt; e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.OnPositionChanged(System.Device.Location.GeoPositionChangedEventArgs{System.Device.Location.GeoCoordinate})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Device.Location.GeoPositionChangedEventArgs&lt;System.Device.Location.GeoCoordinate&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Device.Location.GeoPositionChangedEventArgs`1" />を新しい場所を含むオブジェクト。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のプログラムからの継続的な更新をサブスクライブする方法を示しています。<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベント。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataAsync#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdataasync/cs/getlocationdataasync.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataAsync#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdataasync/vb/GetLocationDataAsync.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPositionStatusChanged">
+      <MemberSignature Language="C#" Value="protected void OnPositionStatusChanged (System.Device.Location.GeoPositionStatusChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPositionStatusChanged(class System.Device.Location.GeoPositionStatusChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.OnPositionStatusChanged(System.Device.Location.GeoPositionStatusChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Device.Location.GeoPositionStatusChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Device.Location.GeoPositionStatusChangedEventArgs" />新しいステータスを含むオブジェクトです。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Device.Location.GeoCoordinateWatcher.StatusChanged" />イベントが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyChanged">
+      <MemberSignature Language="C#" Value="protected void OnPropertyChanged (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPropertyChanged(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.OnPropertyChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">変更されたプロパティの名前。</param>
+        <summary>プロパティのときに呼び出されます、<see cref="T:System.Device.Location.GeoCoordinateWatcher" />変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、 <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> Windows フォーム アプリケーションでデータ バインディングを実装するイベントです。  
+  
+ このメソッドでは、ことを示します、 <xref:System.Device.Location.GeoCoordinateWatcher.Status%2A> 、プロパティ、<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>プロパティ、または<xref:System.Device.Location.GeoCoordinateWatcher.Permission%2A>プロパティが変更されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Permission">
+      <MemberSignature Language="C#" Value="public System.Device.Location.GeoPositionPermission Permission { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Device.Location.GeoPositionPermission Permission" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinateWatcher.Permission" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPositionPermission</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーの場所から場所データにアクセスする権限が許可または拒否されているかどうかを示します。</summary>
+        <value>権限が許可または拒否されているかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Device.Location.GeoPosition&lt;System.Device.Location.GeoCoordinate&gt; Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Device.Location.GeoPosition`1&lt;class System.Device.Location.GeoCoordinate&gt; Position" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinateWatcher.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPosition&lt;System.Device.Location.GeoCoordinate&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Device.Location.GeoCoordinate" />現在の場所を示します。</summary>
+        <value><see cref="T:System.Device.Location.GeoCoordinate" />現在の場所を示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Device.Location.GeoPosition%601.Location%2A>のプロパティ、<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>プロパティに保存されて、<xref:System.Device.Location.GeoCoordinate>オブジェクト。 緯度と経度のフィールド、<xref:System.Device.Location.GeoCoordinate>が知られている場合に出力されます。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataSync1#2](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdatasync1/cs/getlocationdatasync.cs#2)]
+ [!code-vb[System.Device.Location.GetLocationDataSync1#2](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdatasync1/vb/GetLocationDataSync.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Device.Location.GeoPositionChangedEventArgs&lt;System.Device.Location.GeoCoordinate&gt;&gt; PositionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Device.Location.GeoPositionChangedEventArgs`1&lt;class System.Device.Location.GeoCoordinate&gt;&gt; PositionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Device.Location.GeoPositionChangedEventArgs&lt;System.Device.Location.GeoCoordinate&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>緯度や経度、場所データの変更されたことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、最後のイベントがで指定されているしきい値を超えたため、距離が移動したときにだけ発生<xref:System.Device.Location.GeoCoordinateWatcher.MovementThreshold%2A>です。  
+  
+ <xref:System.Device.Location.GeoPositionChangedEventArgs%601> 、イベント ハンドラーに渡されるオブジェクトが含まれています、<xref:System.Device.Location.GeoPosition%601>最新の場所データを含むオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つ目の処理方法を示しています。<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベント。  
+  
+ [!code-csharp[System.Device.Location.LocationEvent1#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.locationevent1/cs/locationevent.cs#1)]
+ [!code-vb[System.Device.Location.LocationEvent1#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.locationevent1/vb/locationevent.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の場所のプロバイダーからのデータの取得を開始します。 このメソッドにより、<see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />イベントにアクセスできる、<see cref="P:System.Device.Location.GeoCoordinateWatcher.Position" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、現在の場所のプロバイダーからのデータの取得が開始されます。 現在の場所のプロバイダーが、年齢とすべてのプロバイダー、アプリケーションまたはアプリケーション、および、電力消費量が要求した正確性と場所プロバイダーに関連付けられているパフォーマンスに与える影響のデータの精度などの要因に基づいて選択されます。 現在の場所のプロバイダーがインスタンスの場合 GPS デバイス屋内でそのサテライト信号を失い Wi-fi 三プロバイダーは、最も正確なコンピューター上のプロバイダー、時間の経過と共に変化します。  
+  
+ 場所プロバイダーがデータを持たない場合、現在の優先順位を付けるときに、<xref:System.Device.Location.GeoCoordinateWatcher.Start%2A>メソッドが呼び出されると、データの取得が開始されます。 アクセス許可に与えられているクライアント データが利用可能になったら、データは同期的にアクセスできるし、イベントが処理されている場合は、非同期的に配信されます。  
+  
+ Windows 7 のセンサーと場所のプラットフォームが無効になっている場合と<xref:System.Device.Location.GeoCoordinateWatcher.Start%2A>が呼び出されると、<xref:System.Device.Location.GeoCoordinateWatcher.Start%2A>はすぐに、<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベントは発生しません、および場所がによって返される、<xref:System.Device.Location.GeoPosition%601.Location%2A>のプロパティ<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が含まれます<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+ データの現在の優先順位の高い場所プロバイダーに含まれている場合は、すぐに同期的に使用可能になり、イベントが処理されている場合は、非同期的に配信されます。  
+  
+ 呼び出し元のアプリケーションが場所プロバイダーからデータにアクセスする権限を持っていない場合は、付与するか、権限を拒否する ダイアログ ボックスで、ユーザーが求められます。 モードレス ダイアログ ボックスは使用されます。  
+  
+   
+  
+## Examples  
+ 次のプログラムが後に発生する最初の場所の更新を処理<xref:System.Device.Location.GeoCoordinateWatcher.Start%2A>と呼びます。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataUpdateOnce#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdataupdateonce/cs/getlocationdataupdateonce.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataUpdateOnce#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdataupdateonce/vb/GetLocationDataUpdateOnce.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start (bool suppressPermissionPrompt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Start(bool suppressPermissionPrompt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Start(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="suppressPermissionPrompt" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="suppressPermissionPrompt">
+          <see langword="true" />抑制する状況、アクセス許可 ダイアログ ボックスです。<see langword="false" />かどうかのアクセス許可が既に与えられていないアクセス許可 ダイアログ ボックスを表示します。</param>
+        <summary>現在の場所のプロバイダーからのデータの取得を開始します。 このメソッドにより、<see cref="E:System.Device.Location.GeoCoordinateWatcher.PositionChanged" />イベントにアクセスできる、<see cref="P:System.Device.Location.GeoCoordinateWatcher.Position" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Device.Location.GeoPositionStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Device.Location.GeoPositionStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Device.Location.GeoCoordinateWatcher.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPositionStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の状態を取得、<see cref="T:System.Device.Location.GeoCoordinateWatcher" />です。</summary>
+        <value>A<see cref="T:System.Device.Location.GeoPositionStatus" />からのデータの可用性を示します、<see cref="T:System.Device.Location.GeoCoordinateWatcher" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例ハンドル<xref:System.Device.Location.GeoCoordinateWatcher.StatusChanged>イベントと出力メッセージがに基づいて、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>です。  
+  
+ [!code-csharp[System.Device.Location.ShowStatusUpdates#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.showstatusupdates/cs/showstatusupdates.cs#1)]
+ [!code-vb[System.Device.Location.ShowStatusUpdates#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.showstatusupdates/vb/ShowStatusUpdates.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Device.Location.GeoPositionStatusChangedEventArgs&gt; StatusChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Device.Location.GeoPositionStatusChangedEventArgs&gt; StatusChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Device.Location.GeoCoordinateWatcher.StatusChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Device.Location.GeoPositionStatusChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示しますの状態、<see cref="T:System.Device.Location.GeoCoordinateWatcher" />オブジェクトが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Device.Location.GeoCoordinateWatcher.StatusChanged>のイベントは、同じスレッド、<xref:System.Device.Location.GeoCoordinateWatcher>にオブジェクトが作成されました。  
+  
+   
+  
+## Examples  
+ 次の例は、処理する方法を示します<xref:System.Device.Location.GeoCoordinateWatcher.StatusChanged>イベント。  
+  
+ [!code-csharp[System.Device.Location.ShowStatusUpdates#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.showstatusupdates/cs/showstatusupdates.cs#1)]
+ [!code-vb[System.Device.Location.ShowStatusUpdates#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.showstatusupdates/vb/ShowStatusUpdates.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>停止、<see cref="T:System.Device.Location.GeoCoordinateWatcher" />から場所データおよびイベントを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Device.Location.GeoCoordinateWatcher.Stop%2A>が呼び出されると、それ以上<xref:System.Device.Location.GeoCoordinateWatcher.PositionChanged>イベントが発生して、<xref:System.Device.Location.GeoCoordinateWatcher.Position%2A>が返される<xref:System.Device.Location.GeoCoordinate.Unknown>です。  
+  
+ ときに<xref:System.Device.Location.GeoCoordinateWatcher.Stop%2A>が呼び出されたが、<xref:System.Device.Location.GeoCoordinateWatcher.Status%2A>プロパティに設定されている<xref:System.Device.Location.GeoPositionStatus.Disabled>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryStart">
+      <MemberSignature Language="C#" Value="public bool TryStart (bool suppressPermissionPrompt, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryStart(bool suppressPermissionPrompt, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Device.Location.GeoCoordinateWatcher.TryStart(System.Boolean,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="suppressPermissionPrompt" Type="System.Boolean" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="suppressPermissionPrompt">
+          <see langword="true" />抑制する状況、アクセス許可 ダイアログ ボックスです。<see langword="false" />アクセス許可 ダイアログ ボックスを表示します。</param>
+        <param name="timeout">場所プロバイダーがタイムアウトする前に開始するまで待機するミリ秒単位の時間です。</param>
+        <summary>現在の場所のプロバイダーからのデータの取得を開始します。 このメソッドは同期的に返します。</summary>
+        <returns>
+          <see langword="true" />指定された期間内のデータの取得が開始された場合<paramref name="timeout" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された期間内に呼び出し元のスレッドの実行をブロックする`timeout`です。 呼び出すときに警告を使用して<xref:System.Device.Location.GeoCoordinateWatcher.TryStart%2A>アプリケーションのユーザー インターフェイス スレッドからです。  
+  
+   
+  
+## Examples  
+ 次の例では、呼び出す<xref:System.Device.Location.GeoCoordinateWatcher.TryStart%2A>です。  
+  
+ [!code-csharp[System.Device.Location.GetLocationDataSync1#1](~/samples/snippets/csharp/VS_Snippets_Misc/system.device.location.getlocationdatasync1/cs/getlocationdatasync.cs#1)]
+ [!code-vb[System.Device.Location.GetLocationDataSync1#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/system.device.location.getlocationdatasync1/vb/GetLocationDataSync.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

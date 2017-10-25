@@ -1,0 +1,380 @@
+<Type Name="Table" FullName="System.Windows.Documents.Table">
+  <TypeSignature Language="C#" Value="public class Table : System.Windows.Documents.Block, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Table extends System.Windows.Documents.Block implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Table" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Block</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("RowGroups")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>行と列に整理されたグリッド ベースのプレゼンテーションを提供する、ブロック レベルのフロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Table>派生した、<xref:System.Windows.Documents.Block>要素を格納するための一般的な規則に準拠している、<xref:System.Windows.Documents.Block>要素。  A<xref:System.Windows.Documents.Table>要素は、次の要素のいずれかが含まれる可能性があります。  
+  
+-   <xref:System.Windows.Documents.FlowDocument>  
+  
+-   <xref:System.Windows.Documents.TableCell>  
+  
+-   <xref:System.Windows.Controls.ListBoxItem>  
+  
+-   <xref:System.Windows.Controls.ListViewItem>  
+  
+-   <xref:System.Windows.Documents.Section>  
+  
+-   <xref:System.Windows.Documents.Floater>  
+  
+-   <xref:System.Windows.Documents.Figure>  
+  
+> [!NOTE]
+>  <xref:System.Windows.Documents.Table>に似ていますが、<xref:System.Windows.Controls.Grid>要素が、多くの機能があり、したがって、大きいリソースのオーバーヘッドが必要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Table ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Documents.Table" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInit">
+      <MemberSignature Language="C#" Value="public override void BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素が初期化される前に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpacing">
+      <MemberSignature Language="C#" Value="public double CellSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 CellSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Table.CellSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブル内のセルの間隔を取得または設定します。</summary>
+        <value>デバイス非依存のピクセル単位でのテーブル内のセルの間隔。  
+  
+ 既定値は**2.0**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_CellSpacing"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="double"/>  
+- or -  
+<object property="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_CellSpacing"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると**0.0**がよりも小さい<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位指定子のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_CellSpacing"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Table.CellSpacingProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、単純な 2 x 3 テーブルを定義、 <xref:System.Windows.Documents.Table.CellSpacing%2A> 0.35 センチメートルのです。  
+  
+ [!code-xaml[TableSnippets2#_Table_ColumnSpacing](~/samples/snippets/csharp/VS_Snippets_Wpf/TableSnippets2/CSharp/Window1.xaml#_table_columnspacing)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: テーブル セル間のスペース](~/add/media/table-cellspacing.png "スクリーン ショット: テーブル セル間隔")  
+  
+ これに対し、次の図は、同じテーブルが 2 ピクセルの既定のセルの間隔で表示する方法を示します。  
+  
+ ![スクリーン ショット: テーブル セル間のスペース](~/add/media/table-cellspacingdefault.png "スクリーン ショット: テーブル セル間隔")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellSpacingProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CellSpacingProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CellSpacingProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Table.CellSpacingProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Table.CellSpacing" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Columns">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TableColumnCollection Columns { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TableColumnCollection Columns" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Table.Columns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TableColumnCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルによってホストされている列を含む <see cref="T:System.Windows.Documents.TableColumnCollection" /> オブジェクトを取得します。</summary>
+        <value>テーブルによってホストされている (<see cref="T:System.Windows.Documents.TableColumn" /> オブジェクトによって表される) 列を含む <see cref="T:System.Windows.Documents.TableColumnCollection" /> オブジェクト。 この数字はテーブルにレンダリングされる列の実際の数ではない場合があることにご注意ください。 <see cref="T:System.Windows.Documents.TableCell" />テーブル内の列の数が実際にレンダリングされるかを決定するオブジェクト。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TableColumn>と共に、このプロパティによって返されるオブジェクトができる、<xref:System.Windows.Documents.TableCell>を使用すると、列内のオブジェクトの列のレイアウトの定義が表示される列の実際の数を特定できません。 <xref:System.Windows.Documents.TableCell>テーブル内の列の数が実際にレンダリングされるかを決定するオブジェクト。 たとえば、3 つの列の定義のみテーブルの 2 つの列のセルがある場合は、2 つのみの列はレンダリングされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInit">
+      <MemberSignature Language="C#" Value="public override void EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要素が初期化された直後に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Table.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理子を反復処理に使用できる列挙子を取得、<see cref="T:System.Windows.Documents.Table" />です。</summary>
+        <value>論理的な子の列挙子、<see cref="T:System.Windows.Documents.Table" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子オブジェクトは、次の順序で列挙されます。  
+  
+1.  列 (によって表される<xref:System.Windows.Documents.TableColumn>オブジェクト)。  
+  
+2.  行のグループ (によって表される<xref:System.Windows.Documents.TableRowGroup>オブジェクト)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Documents.Table" />します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Documents.Table" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowGroups">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TableRowGroupCollection RowGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TableRowGroupCollection RowGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Table.RowGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TableRowGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.TableRowGroupCollection" />テーブルによってホストされている行グループを含むコレクション オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TableRowGroupCollection" />を行グループを含むコレクション オブジェクト (によって表される<see cref="T:System.Windows.Documents.TableRowGroup" />オブジェクト)、テーブルによってホストされています。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeColumns">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeColumns ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeColumns() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.ShouldSerializeColumns" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうかの有効値、<see cref="P:System.Windows.Documents.Table.Columns" />のシリアル化中にプロパティをシリアル化する、<see cref="T:System.Windows.Documents.Table" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Documents.Table.Columns" />プロパティは、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Table.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

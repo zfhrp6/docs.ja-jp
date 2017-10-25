@@ -1,0 +1,127 @@
+<Type Name="FirstChanceExceptionEventArgs" FullName="System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs">
+  <TypeSignature Language="C#" Value="public class FirstChanceExceptionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FirstChanceExceptionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マネージ例外最初に発生すると、共通言語ランタイムは、イベント ハンドラーの検索を開始する前に発生する通知イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの例外ハンドラーを提供する、<xref:System.AppDomain.FirstChanceException?displayProperty=nameWithType>例外へのアクセス権を持つイベント。  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーション ドメインがという名前の系列`Child_0`を通じて`Child_3`で、`Worker`各アプリケーション ドメイン内のオブジェクト。 各`Worker`オブジェクトへの参照には、`Worker`を除き、[次へ] のアプリケーション ドメイン内のオブジェクト、`Worker`最後のアプリケーション ドメインでします。 <xref:System.AppDomain.FirstChanceException>を除くすべてのアプリケーション ドメインでイベントを処理`Child_1`です。  
+  
+ アプリケーション ドメインが作成されると、既定のアプリケーション ドメインを呼び出す、`TestException`メソッドの最初の子アプリケーション ドメイン。 各`Worker`オブジェクトの呼び出し、`TestException`最後まで、次のメソッド`Worker`が処理または未処理の例外をスローします。 現在のスレッドが、すべてのアプリケーション ドメインを通過するため、および`TestException`が各アプリケーション ドメイン内のスタックに追加します。  
+  
+ ときに、最後`Worker`オブジェクト、例外を処理する、<xref:System.AppDomain.FirstChanceException>イベントは、アプリケーションの最後のドメインでのみ発生します。 他のアプリケーション ドメインでは、イベントが発生していないために、例外を処理するされなくなります。  
+  
+ ときに、最後`Worker`オブジェクトが例外を処理していない、<xref:System.AppDomain.FirstChanceException>をイベント ハンドラーを持つアプリケーション ドメインごとにイベントが発生します。 各イベント ハンドラーが完了したら、既定のアプリケーション ドメインによって、例外がキャッチされるまでをアンワインドするスタックが続行されます。  
+  
+> [!NOTE]
+>  ようにこのイベントは近くの履歴の表示の成長と既定のアプリケーション ドメインに近いを表示する変更`e.Exception.Message`に`e.Exception`で、`FirstChanceHandler`イベント ハンドラー。 場合に`TestException`と呼ばれるアプリケーション ドメインの境界を越えて 2 回表示されます。 プロキシとスタブの 1 回です。  
+  
+ [!code-csharp[System.AppDomain.FirstChanceException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.appdomain.firstchanceexception/cs/example.cs#1)]
+ [!code-vb[System.AppDomain.FirstChanceException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.firstchanceexception/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FirstChanceExceptionEventArgs (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs.#ctor(System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception">例外、マネージ コードによってスローされただけとしているが検査されます、<see cref="E:System.AppDomain.UnhandledException" />イベント。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs" />指定した例外を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードではなく、共通言語ランタイムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マネージ コードでスローされた例外に対応するマネージ例外オブジェクト。</summary>
+        <value>新しくスローされる例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するメソッド、<xref:System.AppDomain.UnhandledException?displayProperty=nameWithType>イベントが、例外を確認し、適切なログ記録やその他の通知サービスを実行できます。  
+  
+ コード例については、「<xref:System.Runtime.ExceptionServices.FirstChanceExceptionEventArgs>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

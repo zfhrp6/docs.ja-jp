@@ -1,0 +1,494 @@
+<Type Name="HttpRuntime" FullName="System.Web.HttpRuntime">
+  <TypeSignature Language="C#" Value="public sealed class HttpRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpRuntime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のアプリケーションに対して ASP.NET ランタイム サービスのセットを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpRuntime> HTTP 要求を処理する ASP.NET パイプライン モデルの先頭にオブジェクトを使用します。 <xref:System.Web.HttpRuntime.ProcessRequest%2A>メソッド ドライブの後続のすべての ASP.NET Web を処理します。  
+  
+ ページの開発者が使用できる、<xref:System.Web.HttpRuntime>クラスのプロパティを診断用には、たとえば現在のアプリケーション ドメインについての情報を検索します。 カスタム プロセス パイプラインまたはカスタムのホスティング環境を作成する開発者が呼び出す必要があります、<xref:System.Web.HttpRuntime.ProcessRequest%2A>から派生したクラスのメソッド、<xref:System.Web.HttpWorkerRequest>または<xref:System.Web.Hosting.SimpleWorkerRequest>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例でのプロパティを取得する方法、<xref:System.Web.HttpRuntime>クラスの現在のアプリケーション ドメインを表すと、ブラウザーに表示します。  
+  
+ [!code-aspx-csharp[SystemWebHttpRuntime#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebHttpRuntime/CS/systemwebhttpruntime.cs.aspx#1)]
+ [!code-aspx-vb[SystemWebHttpRuntime#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebHttpRuntime/VB/systemwebhttpruntime.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRuntime ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRuntime.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpRuntime" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainAppId">
+      <MemberSignature Language="C#" Value="public static string AppDomainAppId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AppDomainAppId" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AppDomainAppId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインのアプリケーション id の取得場所、<see cref="T:System.Web.HttpRuntime" />が存在します。</summary>
+        <value>アプリケーション ドメインのアプリケーション id を<see cref="T:System.Web.HttpRuntime" />が存在します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `AppDomainAppID`アプリケーションを一意に識別します。 アプリケーションが再起動して、新しいアプリケーション ドメインが作成された後は変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainAppPath">
+      <MemberSignature Language="C#" Value="public static string AppDomainAppPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AppDomainAppPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AppDomainAppPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインでホストされるアプリケーションのアプリケーションのディレクトリの物理ドライブ パスを取得します。</summary>
+        <value>現在のアプリケーション ドメインでホストされるアプリケーションのアプリケーションのディレクトリの物理ドライブ パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainAppVirtualPath">
+      <MemberSignature Language="C#" Value="public static string AppDomainAppVirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AppDomainAppVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AppDomainAppVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション ドメインでホストされているアプリケーションを含むディレクトリの仮想パスを取得します。</summary>
+        <value>現在のアプリケーション ドメインでホストされているアプリケーションが含まれているディレクトリの仮想パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomainId">
+      <MemberSignature Language="C#" Value="public static string AppDomainId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AppDomainId" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AppDomainId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ドメインのドメインの id の取得場所、<see cref="T:System.Web.HttpRuntime" />インスタンスが存在します。</summary>
+        <value>一意のアプリケーション ドメイン識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `AppDomainID`アプリケーションが再起動し、新しいアプリケーション ドメインが作成されるたびに変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AspClientScriptPhysicalPath">
+      <MemberSignature Language="C#" Value="public static string AspClientScriptPhysicalPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AspClientScriptPhysicalPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AspClientScriptPhysicalPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET クライアント スクリプト ファイルのフォルダーのパスを取得します。</summary>
+        <value>ASP.NET クライアント スクリプト ファイルのフォルダー パス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">ASP.NET がインストールされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AspClientScriptVirtualPath">
+      <MemberSignature Language="C#" Value="public static string AspClientScriptVirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AspClientScriptVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AspClientScriptVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET クライアント スクリプト ファイルの仮想パスを取得します。</summary>
+        <value>ASP.NET クライアント スクリプト ファイルの仮想パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AspInstallDirectory">
+      <MemberSignature Language="C#" Value="public static string AspInstallDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AspInstallDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.AspInstallDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET の実行可能ファイルがインストールされているディレクトリの物理パスを取得します。</summary>
+        <value>ASP.NET の実行可能ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">ASP.NET はこのコンピューターにインストールされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BinDirectory">
+      <MemberSignature Language="C#" Value="public static string BinDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string BinDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.BinDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの/bin ディレクトリへの物理パスを取得します。</summary>
+        <value>現在のアプリケーションの/bin ディレクトリへのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public static System.Web.Caching.Cache Cache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Web.Caching.Cache Cache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.Cache</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Caching.Cache" />現在のアプリケーションです。</summary>
+        <value>現在の <see cref="T:System.Web.Caching.Cache" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Web.Caching.Cache?displayProperty=nameWithType> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ASP.NET がインストールされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public static void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRuntime.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シャット ダウン、<see cref="T:System.Web.HttpRuntime" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードが独自のホスティング環境を実装するを使用して提供されます。 通常の要求処理の途中でこのメソッドを呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrInstallDirectory">
+      <MemberSignature Language="C#" Value="public static string ClrInstallDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ClrInstallDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.ClrInstallDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共通言語ランタイムの実行可能ファイルがインストールされているディレクトリへの物理パスを取得します。</summary>
+        <value>共通言語ランタイムの実行可能ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodegenDir">
+      <MemberSignature Language="C#" Value="public static string CodegenDir { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CodegenDir" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.CodegenDir" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET が現在のアプリケーションの一時ファイル (生成されたソース、コンパイルされたアセンブリなど) を格納するディレクトリへの物理パスを取得します。</summary>
+        <value>アプリケーションの一時ファイル記憶域ディレクトリへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public static System.Security.NamedPermissionSet GetNamedPermissionSet ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.NamedPermissionSet GetNamedPermissionSet() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRuntime.GetNamedPermissionSet" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コード グループに関連付けられている権限のセットを返します。</summary>
+        <returns>A<see cref="T:System.Security.NamedPermissionSet" />名前と、アクセス許可の説明を含むオブジェクトまたは<see langword="null" />が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpRuntime.GetNamedPermissionSet%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IISVersion">
+      <MemberSignature Language="C#" Value="public static Version IISVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Version IISVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.IISVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションをホストしている IIS のバージョンを取得します。</summary>
+        <value>このアプリケーションをホストしている IIS のバージョンまたは<see langword="null" />このアプリケーションが IIS によってホストされていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンには、メジャー バージョンとマイナー バージョンが含まれます。たとえば、7.0、7.5、8.0 などです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOnUNCShare">
+      <MemberSignature Language="C#" Value="public static bool IsOnUNCShare { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsOnUNCShare" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.IsOnUNCShare" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは、汎用名前付け規則 (UNC) 共有にマップされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />アプリケーションがマップされている場合に UNC 共有です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MachineConfigurationDirectory">
+      <MemberSignature Language="C#" Value="public static string MachineConfigurationDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MachineConfigurationDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.MachineConfigurationDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの Machine.config ファイルがあるディレクトリへの物理パスを取得します。</summary>
+        <value>現在のアプリケーションの Machine.config ファイルへの物理パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public static void ProcessRequest (System.Web.HttpWorkerRequest wr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProcessRequest(class System.Web.HttpWorkerRequest wr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRuntime.ProcessRequest(System.Web.HttpWorkerRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wr" Type="System.Web.HttpWorkerRequest" />
+      </Parameters>
+      <Docs>
+        <param name="wr"><see cref="T:System.Web.HttpWorkerRequest" />現在のアプリケーションです。</param>
+        <summary>ドライブのすべての ASP.NET Web 処理実行をします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コードが独自のホスティング環境を実装するを使用して提供されます。 これも使用できます、コードを実装するとき、独自に子要求を実行して<xref:System.Web.HttpWorkerRequest>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="wr" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Web アプリケーションの統合モードで IIS 7 で実行します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFramework">
+      <MemberSignature Language="C#" Value="public static Version TargetFramework { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Version TargetFramework" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.TargetFramework" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の web アプリケーションがターゲット .NET Framework のバージョンを取得します。</summary>
+        <value>現在の web アプリケーションがターゲット .NET Framework のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは通常を使用して設定、`targetFramework`の属性、 `httpRuntime` Web.config ファイル内の要素。  
+  
+ このプロパティは、currentapplication ドメインが ASP.NET アプリケーション ドメインではない場合は、正しい値を返すには保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnloadAppDomain">
+      <MemberSignature Language="C#" Value="public static void UnloadAppDomain ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnloadAppDomain() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRuntime.UnloadAppDomain" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアプリケーションを終了します。 アプリケーションでは、要求を受信して、[次へ] の時刻を再起動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UnloadAppDomain`頻度の低い要求を受信するアプリケーションの数が多いサーバーに便利です。 Keep アプリケーション リソース、プロセスの有効期間にわたって有効ではなく`UnloadAppDomain`使用しないアプリケーションのプログラムによるシャット ダウンを許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsingIntegratedPipeline">
+      <MemberSignature Language="C#" Value="public static bool UsingIntegratedPipeline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UsingIntegratedPipeline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpRuntime.UsingIntegratedPipeline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションがの統合パイプライン モードで実行されているかどうかを示す値を取得[!INCLUDE[iisver](~/includes/iisver-md.md)]です。</summary>
+        <value>
+          <see langword="true" />アプリケーションが統合パイプライン モードで実行されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 統合パイプライン モードでは使用できません前のバージョンの IIS より[!INCLUDE[iisver](~/includes/iisver-md.md)]です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

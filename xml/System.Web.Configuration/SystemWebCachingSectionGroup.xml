@@ -1,0 +1,226 @@
+<Type Name="SystemWebCachingSectionGroup" FullName="System.Web.Configuration.SystemWebCachingSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class SystemWebCachingSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SystemWebCachingSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.SystemWebCachingSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see langword="caching" />構成ファイル内でグループ化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SystemWebCachingSectionGroup>クラスをプログラムでアクセスおよび変更する方法を提供する、`caching`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.SystemWebCachingSectionGroup>クラスおよび`caching`セクションでは、サイトまたはアプリケーションのキャッシュ メカニズムの一元管理を提供します。 これにより、キャッシュを展開、変更、およびアプリケーション内の個々 のページを変更しなくても無効になっていること。  
+  
+ によって、ASP.NET のキャッシュ メカニズムが実装される、<xref:System.Web.Caching.Cache>クラスです。 詳細については、次を参照してください[ASP.NET のキャッシュの概要。](http://msdn.microsoft.com/library/5ec28012-4972-4dc3-b3e8-9d20401fe11d)  
+  
+ 次のとおりに、2 つの型の ASP.NET のキャッシュを提供します。  
+  
+-   最初と呼ばれる出力キャッシュ、動的ページやユーザー コントロールの応答を格納することができます。 以降の要求では、ページやユーザー コントロールのコードは実行されません。キャッシュされた出力は、要求を満たすために使用されます。 出力キャッシュの設定を使用してアクセスすることができます、<xref:System.Web.Configuration.SystemWebCachingSectionGroup.OutputCache%2A>と<xref:System.Web.Configuration.SystemWebCachingSectionGroup.OutputCacheSettings%2A>プロパティです。  
+  
+-   キャッシュの 2 番目の型は、アプリケーションは、時間とリソースがそれらを再作成にかかるを保存できるように、サーバーのメモリを任意のオブジェクトをプログラムによって格納に使用できるようにキャッシュ、従来のアプリケーション データです。 使用してこれらのキャッシュ設定にアクセスすることができます、<xref:System.Web.Configuration.SystemWebCachingSectionGroup.Cache%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SystemWebCachingSectionGroup>既存の Web アプリケーションに関連付けられている構成ファイルからのオブジェクト。 アクセスに含まれているセクションでは、このオブジェクトを使用することができます、`caching`グループ。  
+  
+ [!code-csharp[System.Web.Configuration.SystemWebCachingSectionGroup#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/CS/SystemWebCachingSectionGroup.cs#1)]
+ [!code-vb[System.Web.Configuration.SystemWebCachingSectionGroup#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/VB/SystemWebCachingSectionGroup.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SystemWebCachingSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SystemWebCachingSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.SystemWebCachingSectionGroup" /> の新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SystemWebCachingSectionGroup.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.SystemWebCachingSectionGroup>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.CacheSection Cache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.CacheSection Cache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SystemWebCachingSectionGroup.Cache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cache")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.CacheSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="cache" />構成内に含まれるセクションです。</summary>
+        <value><see cref="T:System.Web.Configuration.CacheSection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.CacheSection>オブジェクトを指す、`cache`構成ファイルのセクションです。 使用することができます、<xref:System.Web.Configuration.CacheSection>を変更するクラス、`cache`プログラムでセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.CacheSection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SystemWebCachingSectionGroup#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/CS/SystemWebCachingSectionGroup.cs#2)]
+ [!code-vb[System.Web.Configuration.SystemWebCachingSectionGroup#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/VB/SystemWebCachingSectionGroup.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputCache">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheSection OutputCache { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.OutputCacheSection OutputCache" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SystemWebCachingSectionGroup.OutputCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("outputCache")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="outputCache" />構成内に含まれるセクションです。</summary>
+        <value><see cref="T:System.Web.Configuration.OutputCacheSection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSection>オブジェクトを指す、`outputCache`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.OutputCacheSection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SystemWebCachingSectionGroup#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/CS/SystemWebCachingSectionGroup.cs#3)]
+ [!code-vb[System.Web.Configuration.SystemWebCachingSectionGroup#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/VB/SystemWebCachingSectionGroup.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputCacheSettings">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.OutputCacheSettingsSection OutputCacheSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.OutputCacheSettingsSection OutputCacheSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SystemWebCachingSectionGroup.OutputCacheSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("outputCacheSettings")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.OutputCacheSettingsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="outputCacheSettings" />構成内に含まれるセクションです。</summary>
+        <value><see cref="T:System.Web.Configuration.OutputCacheSettingsSection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.OutputCacheSettingsSection>オブジェクトを指す、`outputCacheSettings`構成ファイルのセクションです。  
+  
+ 出力キャッシュの設定を有効にまたは永続的な出力のディスク ベース キャッシュを無効にするをキャッシュするデータを保持するための場所を定義、アプリケーションあたりのキャッシュの最大サイズを指定します。  
+  
+ ASP.NET では、ディレクティブの属性を使用してのプロパティとメソッドを使用してプログラムから、ページの応答の複数のバージョンを宣言してキャッシュすることができます、<xref:System.Web.HttpCachePolicy>クラスです。  
+  
+ 使用して、アプリケーションを構成することによって、同じ結果を得ることができます、<xref:System.Web.Configuration.OutputCacheSettingsSection>または<xref:System.Web.Configuration.OutputCacheProfile>型です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.OutputCacheSettingsSection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SystemWebCachingSectionGroup#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/CS/SystemWebCachingSectionGroup.cs#4)]
+ [!code-vb[System.Web.Configuration.SystemWebCachingSectionGroup#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/VB/SystemWebCachingSectionGroup.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlCacheDependency">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.SqlCacheDependencySection SqlCacheDependency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.SqlCacheDependencySection SqlCacheDependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SystemWebCachingSectionGroup.SqlCacheDependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("sqlCacheDependency")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.SqlCacheDependencySection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="sqlCacheDependency" />構成内に含まれるセクションです。</summary>
+        <value><see cref="T:System.Web.Configuration.SqlCacheDependencySection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SqlCacheDependencySection>オブジェクトを指す、`sqlCacheDependency`構成ファイルのセクションです。  
+  
+ SQL キャッシュ依存関係は、ASP.NET アプリケーションのキャッシュと、特定の SQL Server データベース テーブルに格納されている項目の間にリレーションシップを確立します。 インスタンス、<xref:System.Web.Caching.SqlCacheDependency>できるように、キャッシュから項目を自動的に削除するテーブルが変更されたときに、クラスはテーブルを監視する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SqlCacheDependencySection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SystemWebCachingSectionGroup#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/CS/SystemWebCachingSectionGroup.cs#5)]
+ [!code-vb[System.Web.Configuration.SystemWebCachingSectionGroup#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SystemWebCachingSectionGroup/VB/SystemWebCachingSectionGroup.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

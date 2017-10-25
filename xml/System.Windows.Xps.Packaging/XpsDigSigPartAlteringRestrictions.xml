@@ -1,0 +1,108 @@
+<Type Name="XpsDigSigPartAlteringRestrictions" FullName="System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions">
+  <TypeSignature Language="C#" Value="public enum XpsDigSigPartAlteringRestrictions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XpsDigSigPartAlteringRestrictions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XPS の各部分を指定<see cref="T:System.IO.Packaging.Package" />は、さまざまなデジタル署名から除外します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、メンバー値のビットごとの組み合わせを可能 FlagsAttribute がします。  
+  
+ デジタル署名から除外するように指定されている部分は、署名が無効に変更できます。  たとえば、ドキュメントを 1 人以上によって署名されている場合は、SignatureOrigin 部分をドキュメントが署名、署名から除外する必要があります。  (で除外が指定されて、`restrictions`への呼び出しのパラメーター <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>)。SignatureOrigin 部品が除外されていない場合、追加の署名には、最初の署名者の署名が無効にします。  
+  
+ デジタル署名の詳細については、MSDN の記事を参照してください。 *Open Packaging Conventions のデジタル署名 Framework*いただけます[http://go.microsoft.com/fwlink/?LinkId=74494](http://go.microsoft.com/fwlink/?LinkId=74494)です。  
+  
+ Core Properties と署名の発行元のパーツの詳細については、の第 3 章を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+   
+  
+## Examples  
+ 次の例は、この列挙体を使用して、デジタル署名する方法を示しています、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  
+  
+ [!code-csharp[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#signxpsdocument)]
+ [!code-vb[XpsReadWriteSign#SignXpsDocument](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#signxpsdocument)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="Annotations" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions Annotations = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.Annotations" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>注釈の一部は除外されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CoreMetadata">
+      <MemberSignature Language="C#" Value="CoreMetadata" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions CoreMetadata = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.CoreMetadata" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Core Properties パートは除外されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>部分は除外されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureOrigin">
+      <MemberSignature Language="C#" Value="SignatureOrigin" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions SignatureOrigin = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.SignatureOrigin" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名の発行元の一部は除外されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

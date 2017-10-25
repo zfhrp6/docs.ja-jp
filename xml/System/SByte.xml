@@ -1,0 +1,1980 @@
+<Type Name="SByte" FullName="System.SByte">
+  <TypeSignature Language="C#" Value="public struct SByte : IComparable, IComparable&lt;sbyte&gt;, IConvertible, IEquatable&lt;sbyte&gt;, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit int8 extends System.ValueType implements class System.IComparable, class System.IComparable`1&lt;int8&gt;, class System.IConvertible, class System.IEquatable`1&lt;int8&gt;, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.SByte" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable&lt;System.SByte&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.SByte&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>8 ビット符号付き整数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte>値型は、負の 128 から正の 127 までの値を整数を表します。  
+  
+> [!IMPORTANT]
+>  <xref:System.SByte>型が CLS 準拠ではありません。 CLS 準拠の代替の型は<xref:System.Int16>します。 <xref:System.Byte>正の値を置換する代わりに使用できる<xref:System.SByte>値の範囲は 0 ~<xref:System.Byte.MaxValue>します。 CLS 準拠の詳細については、次を参照してください。[言語非依存および言語非依存コンポーネント](~/docs/standard/language-independence-and-language-independent-components.md)です。  
+  
+ <xref:System.SByte>この型のインスタンスを比較、インスタンスの値をその文字列形式に変換および数値の文字列形式をこの型のインスタンスに変換するメソッドを提供します。  
+  
+ 書式指定コードが値型の文字列形式を制御する方法については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <altCompliant cref="T:System.Int16" />
+    <threadsafe>この種類のすべてのメンバーでは、スレッド セーフです。 インスタンスの状態を変更する表示されるメンバーは、新しい値で初期化された新しいインスタンスを実際に返します。 として、他の種類と読み取りと書き込みをこの型のインスタンスを含む共有変数を保護する必要があるスレッド セーフを確保するロックによってです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>指定したオブジェクトとこのインスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスと <paramref name="obj" /> の相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="obj" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="obj" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="obj" />です。  
+  
+ または  
+  
+ <paramref name="obj" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のインスタンス<xref:System.SByte>、その値に関係なくが大きいと見なされますより`null`です。  
+  
+ `obj`パラメーターでなければなりません`null`またはのインスタンス<xref:System.SByte>です。 それ以外の場合、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="obj" /> が <see cref="T:System.SByte" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.CompareTo(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較対象の 8 ビット符号付き整数。</param>
+        <summary>指定した 8 ビット符号付き整数とこのインスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスと <paramref name="value" /> の相対順序を示す符号付き整数。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスより小さい<paramref name="value" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスと等しい<paramref name="value" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスがより大きい<paramref name="value" />です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IComparable%601?displayProperty=nameWithType>インターフェイスし、実行よりもわずかに向上、<xref:System.SByte.CompareTo%2A?displayProperty=nameWithType>メソッドに変換があるないため、`value`オブジェクトへのパラメーターです。  
+  
+ プログラミング言語に応じてコードに考えられる場合があります、<xref:System.SByte.CompareTo%2A>メソッドのパラメーターの型のビット数が少ないがここではインスタンスの型よりもします。 これには一部のプログラミング言語は、ビット数のインスタンスと型としてパラメーターを表す暗黙の拡大変換を実行するため。  
+  
+ たとえば、インスタンスの型が<xref:System.Int32>パラメーターの型と<xref:System.Byte>です。 Microsoft c# コンパイラは、パラメーターの値を表す命令を生成、<xref:System.Int32>オブジェクトを生成、<xref:System.Int32.CompareTo%2A?displayProperty=nameWithType>の値を比較するメソッド、<xref:System.Int32>インスタンスおよび<xref:System.Int32>パラメーター形式です。  
+  
+ コンパイラが数値型に暗黙の拡大変換を実行するかどうかを決定する、プログラミング言語のドキュメントを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、ジェネリックと非ジェネリック バージョンの<xref:System.SByte.CompareTo%2A>いくつかの値と参照型のメソッドです。  
+  
+ [!code-cpp[T.CompareTo#1](~/samples/snippets/cpp/VS_Snippets_CLR/T.CompareTo/CPP/cat.cpp#1)]
+ [!code-csharp[T.CompareTo#1](~/samples/snippets/csharp/VS_Snippets_CLR/T.CompareTo/CS/cat.cs#1)]
+ [!code-vb[T.CompareTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/T.CompareTo/VB/cat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> のインスタンスで、このインスタンスの値に等しい場合は <see cref="T:System.SByte" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (sbyte obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(int8 obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Equals(System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較する <see cref="T:System.SByte" /> 値。</param>
+        <summary>対象のインスタンスが、指定した <see cref="T:System.SByte" /> 値に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> がこのインスタンスと同じ値を保持している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装する、<xref:System.IEquatable%601?displayProperty=nameWithType>インターフェイス、および実行よりもわずかに向上<xref:System.SByte.Equals%2A>変換があるないため、`obj`オブジェクトへのパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TypeCode GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.TypeCode" /> 値型の <see cref="T:System.SByte" /> を返します。</summary>
+        <returns>列挙型定数 <see cref="F:System.TypeCode.SByte" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public const sbyte MaxValue = 127;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int8 MaxValue = int8(127)" />
+      <MemberSignature Language="DocId" Value="F:System.SByte.MaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <MemberValue>127</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.SByte" /> の最大有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は 127 です。つまり、16 進 0x7F です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.SByte.MinValue>と<xref:System.SByte.MaxValue>ことを確認するフィールド、<xref:System.Int64>値の範囲内では、<xref:System.SByte>型変換を実行する前に入力します。 この確認により、<xref:System.OverflowException>実行時にします。  
+  
+ [!code-csharp[System.SByte.MaxValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.MaxValue/cs/MaxValue1.cs#1)]
+ [!code-vb[System.SByte.MaxValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.MaxValue/vb/MaxValue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public const sbyte MinValue = -128;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int8 MinValue = int8(-128)" />
+      <MemberSignature Language="DocId" Value="F:System.SByte.MinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <MemberValue>-128</MemberValue>
+      <Docs>
+        <summary><see cref="T:System.SByte" /> の最小有効値を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この定数の値は-128 です。つまり、16 進 0x80 します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.SByte.MinValue>と<xref:System.SByte.MaxValue>ことを確認するフィールド、<xref:System.Int64>値の範囲内では、<xref:System.SByte>型変換を実行する前に入力します。 この確認により、<xref:System.OverflowException>実行時にします。  
+  
+ [!code-csharp[System.SByte.MaxValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.MaxValue/cs/MaxValue1.cs#1)]
+ [!code-vb[System.SByte.MaxValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.MaxValue/vb/MaxValue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static sbyte Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を表す文字列。 文字列は、<see cref="F:System.Globalization.NumberStyles.Integer" /> スタイルを使用して解釈されます。</param>
+        <summary>数値の文字列形式を、それと等価な 8 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> パラメーターに格納されている数値と等価な 8 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `s`パラメーターには、フォームの番号が含まれています。  
+  
+ [*ws*] [*記号*]*桁*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。|  
+|*サインイン*|省略可能な符号の場合。|  
+|*digits*|0 から 9 までの数字のシーケンス。|  
+  
+ `s`パラメーターを使用して解釈されますが、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル。 バイト値の 10 進数字以外には、先頭と末尾のスペースが先頭の正または負符号を持つのみを使用できます。 使用できるスタイル要素を明示的に定義する`s`、いずれかを使用して、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>または<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>メソッドです。  
+  
+ `s`パラメーターは書式設定情報を使用して解析、<xref:System.Globalization.NumberFormatInfo>を現在のシステムのカルチャ用に初期化します。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>」を参照してください。 いくつか他のカルチャの書式情報を使用して、文字列を解析するを使用して、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、符号付きバイト値を使用して、文字列値に変換する方法、<xref:System.SByte.Parse%2A>メソッドです。 結果の符号付きバイト値は、コンソールに表示されます。  
+  
+ [!code-csharp[System.SByte.Parse2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.sbyte.parse2/cs/parseex1.cs#1)]
+ [!code-vb[System.SByte.Parse2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.sbyte.parse2/vb/parseex1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Int16.Parse(System.String)" />
+        <exception cref="T:System.ArgumentException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />一連の数字 (0 ~ 9) を続けて、省略可能な符号の構成になっていません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.SByte.MinValue" />以上<see cref="F:System.SByte.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static sbyte Parse (string s, System.Globalization.NumberStyles style);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 Parse(string s, valuetype System.Globalization.NumberStyles style) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Parse(System.String,System.Globalization.NumberStyles)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。 指定されたスタイルを使用して、文字列が解釈されます<c>スタイル</c>です。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <summary>指定したスタイルの数値の文字列形式を、それと等価の 8 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値と等しい 8 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素を定義します (空白や正または負符号) では許可されて、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。  
+  
+ 値に応じて`style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*][*$*][*sign*]*digits*[.*fractional_digits*] [E [*記号*]*exponential_digits*] [*ws*]  
+  
+ 場合`style`が含まれています<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*]*hexdigits*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`スタイルが含まれている場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。 現在のカルチャの通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、およびそのがの末尾に置くことができます`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*|0 ~ 9 桁の数字のシーケンス。|  
+|*.*|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*fractional_digits*|数字 0 ~ 9 の 1 つ以上の出現場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、またはそうでない場合は 0 の数字の 1 つまたは複数回出現します。 小数部の桁が表示できる`s`場合にのみ、`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*exponential_digits*|数字 0 ~ 9 の 1 つ以上の出現します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 10 進数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) が正常に解析します。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーが存在する可能性がありますが、入力文字列内に存在する必要がない要素を制御します。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`s`です。  
+  
+|非複合 NumberStyles 値|使用できる要素*s*数字だけでなく|  
+|----------------------------------------|-----------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|10 進数字のみです。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|小数点 (*.*) および*fractional_digits*要素。 ただし場合、`style`は含まれません、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、 *fractional_digits*のみ 1 つ以上の数字が 0 ので構成されている必要があります、それ以外の<xref:System.OverflowException>がスローされます。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|"E"または"E"文字は、と共に、指数表記法を示す*exponential_digits*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|前に正符号*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|後の正符号*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|グループの区切り記号 (,) 要素です。 表示されるグループ区切り記号が`s`、のみ 1 つ以上の数字 0 が前に必要です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|通貨 (*$*) 要素です。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、 `s` 16 進値でなければなりません。 有効な 16 進数の数字は 0 ~ 9、a ~ f、A ~ F "0 x"などプレフィックスはサポートされていませんし、解析操作が失敗します。 のみ他のフラグに組み合わせることに含まれる`style`は<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙には、複合数値スタイルが含まれています<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、両方の空白のフラグが含まれている。)。  
+  
+> [!NOTE]
+>  場合、`s`パラメーターは、16 進数の文字列形式は、その前に、装飾することはできません (など`0x`または`&h`) の 16 進数として区別します。 これにより、解析操作が例外をスローします。  
+  
+ 場合`s`、16 進数を表す、<xref:System.Byte.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>メソッドは、符号ビットとしてのバイトの上位ビットを解釈します。  
+  
+ `s`パラメーターは書式設定情報を使用して解析、<xref:System.Globalization.NumberFormatInfo>現在のシステムのカルチャに初期化されるオブジェクト。 いくつか他のカルチャの書式情報を使用するのには、呼び出し、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例の文字列表現を解析して<xref:System.SByte>の値を使った、<xref:System.Byte.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>メソッドです。 たとえば、現在のカルチャは、EN-US です。  
+  
+ [!code-csharp[System.SByte.Parse2#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.sbyte.parse2/cs/parseex2.cs#2)]
+ [!code-vb[System.SByte.Parse2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.sbyte.parse2/vb/parseex2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Int16.Parse(System.String)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />準拠した形式ではありません<paramref name="style" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.SByte.MinValue" />以上<see cref="F:System.SByte.MaxValue" />です。  
+  
+ -または-  
+  
+ <paramref name="s" />0 以外の小数部の桁が含まれます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static sbyte Parse (string s, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 Parse(string s, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Parse(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を表す文字列。 文字列は、<see cref="F:System.Globalization.NumberStyles.Integer" /> スタイルを使用して解釈されます。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。 場合<c>プロバイダー</c>は<see langword="null" />、現在のスレッド カルチャを使用します。</param>
+        <summary>指定したカルチャに固有の書式による数値の文字列形式を、それと等価な 8 ビット符号付き整数に変換します。</summary>
+        <returns><paramref name="s" /> で指定した数値と等しい 8 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `s`パラメーターには、フォームの番号が含まれています。  
+  
+ [*ws*] [*記号*]*桁*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。|  
+|*サインイン*|省略可能な符号の場合。|  
+|*digits*|0 から 9 までの数字のシーケンス。|  
+  
+ `s`パラメーターを使用して解釈されますが、<xref:System.Globalization.NumberStyles.Integer>スタイル。 バイト値の 10 進数字以外には、先頭と末尾のスペースが先頭の符号と共にのみを使用できます。 使用できるカルチャに固有の書式情報を持つスタイル要素を明示的に定義する`s`を使用して、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>メソッドです。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の書式に関するカルチャ固有の情報を提供するオブジェクト`s`です。 3 つの方法を使用する、`provider`パラメーター、解析操作にカスタムの書式情報を提供します。  
+  
+-   実際に渡すことができます<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。 (その実装の<xref:System.IFormatProvider.GetFormat%2A>単にそれ自体を返します)。  
+  
+-   渡すことができます、<xref:System.Globalization.CultureInfo>使用する書式のカルチャを指定するオブジェクト。 その<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティは、書式指定情報を提供します。  
+  
+-   カスタムを渡すことができます<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドはインスタンス化を返す必要があります、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>オブジェクトの現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム<xref:System.Globalization.NumberFormatInfo>負の符号として、チルダ (~) を定義するオブジェクト。 このユーザー設定を使用して数値の文字列の数を解析し、<xref:System.Globalization.NumberFormatInfo>オブジェクトと同様に、<xref:System.Globalization.CultureInfo>インバリアント カルチャを表すオブジェクト。  
+  
+ [!code-csharp[System.SByte.Parse2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.sbyte.parse2/cs/parseex3.cs#3)]
+ [!code-vb[System.SByte.Parse2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.sbyte.parse2/vb/parseex3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Int16.Parse(System.String)" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />正しい形式ではありません。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" />数値を表すより小さい<see cref="F:System.SByte.MinValue" />以上<see cref="F:System.SByte.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static sbyte Parse (string s, System.Globalization.NumberStyles style, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int8 Parse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。 指定されたスタイルを使用して、文字列が解釈されます<c>スタイル</c>です。</param>
+        <param name="style">使用可能なスタイル要素を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。 場合<c>プロバイダー</c>は<see langword="null" />、現在のスレッド カルチャを使用します。</param>
+        <summary>指定したスタイルおよびカルチャに固有の書式による数値の文字列形式を、それと等価な 8 ビット符号付きの値に変換します。</summary>
+        <returns><paramref name="s" /> パラメーターに指定された数値と等価な 8 ビット符号付きバイト値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `style`パラメーター スタイル要素を定義します (空白や正または負符号) では許可されて、`s`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。  
+  
+ 値に応じて`style`、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*][*$*][*sign*]*digits*[.*fractional_digits*] [E [*記号*]*exponential_digits*] [*ws*]  
+  
+ 場合`style`が含まれています<xref:System.Globalization.NumberStyles.AllowHexSpecifier>、`s`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*]*hexdigits*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭に空白文字は使用できません`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。 現在のカルチャの通貨記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭に表示できる符号`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグの末尾を表示できる`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`s`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*|0 ~ 9 桁の数字のシーケンス。|  
+|*.*|カルチャに固有の小数点記号です。 現在のカルチャの小数点記号に表示される`s`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*fractional_digits*|数字 0 ~ 9 の 1 つ以上の出現場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、またはそうでない場合は 0 の数字の 1 つまたは複数回出現します。 小数部の桁が表示できる`s`場合にのみ、`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*exponential_digits*|0 ~ 9 桁の数字のシーケンス。 `s`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 10 進数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル) が正常に解析します。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーが存在する可能性がありますが、この入力文字列内に存在する必要はありません要素を制御します。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`s`です。  
+  
+|非複合`NumberStyles`値|使用できる要素`s`数字だけでなく|  
+|------------------------------------------|-----------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|10 進数字のみです。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|小数点 (*.*) および*fractional_digits*要素。 ただし、スタイルが含まれていない場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを*fractional_digits*のみ 1 つ以上の数字が 0 ので構成されている必要があります。 それ以外の場合、<xref:System.OverflowException>がスローされます。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|"E"または"E"文字は、と共に、指数表記法を示す*exponential_digits*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の先頭にある要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|*Ws*の末尾に要素`s`です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|前に正符号*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|後の正符号*桁*です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|かっこの前に、と後*桁*を負の値を示します。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|桁区切り記号 (*、*) 要素です。 表示されるグループ区切り記号が`s`、のみ 1 つ以上の数字 0 が前に必要です。|  
+|<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>|通貨 (*$*) 要素です。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、 `s` 16 進値でなければなりません。 有効な 16 進数の数字は 0 ~ 9、a ~ f、A ~ F のみの他のフラグと組み合わせることができますが<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙には、複合数値スタイルが含まれています<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>、両方の空白のフラグが含まれている。)。  
+  
+> [!NOTE]
+>  場合、`s`パラメーターは、16 進数の文字列形式は、その前に、装飾することはできません (など`0x`または`&h`) の 16 進数として区別します。 これにより、解析操作が例外をスローします。  
+  
+ 場合`s`、16 進数を表す、<xref:System.Byte.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>メソッドは、符号ビットとしてのバイトの上位ビットを解釈します。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装が<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の書式に関するカルチャ固有の情報を提供するオブジェクト`s`です。 3 つの方法を使用する、`provider`パラメーター、解析操作にカスタムの書式情報を提供します。  
+  
+-   実際に渡すことができます<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。 (その実装の<xref:System.IFormatProvider.GetFormat%2A>単にそれ自体を返します)。  
+  
+-   渡すことができます、<xref:System.Globalization.CultureInfo>使用する書式のカルチャを指定するオブジェクト。 その<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティは、書式指定情報を提供します。  
+  
+-   カスタムを渡すことができます<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドはインスタンス化を返す必要があります、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>オブジェクトの現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>に変換する数値の文字列形式をさまざまなメソッドの符号付きの整数値。  
+  
+ [!code-csharp[System.SByte.Parse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.Parse/CS/parse_1.cs#2)]
+ [!code-vb[System.SByte.Parse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.Parse/VB/parse_1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Int16.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)" />
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="s" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="s" />準拠した形式ではありません<paramref name="style" />です。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="s" /> は <see cref="F:System.SByte.MinValue" /> 未満の数値か、<see cref="F:System.SByte.MaxValue" /> より大きい数値を表します。  
+  
+ -または-  
+  
+ <paramref name="s" />0 以外の小数部の桁が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IComparable.CompareTo">
+      <MemberSignature Language="C#" Value="int IComparable.CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IComparable.CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IComparable#CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.GetTypeCode">
+      <MemberSignature Language="C#" Value="TypeCode IConvertible.GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.TypeCode System.IConvertible.GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToBoolean">
+      <MemberSignature Language="C#" Value="bool IConvertible.ToBoolean (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IConvertible.ToBoolean(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToBoolean(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは使用されません。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToBoolean(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>
+          現在のインスタンスの値が 0 でない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToBoolean%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToByte">
+      <MemberSignature Language="C#" Value="byte IConvertible.ToByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int8 System.IConvertible.ToByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは使用されません。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Byte" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToByte%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToChar">
+      <MemberSignature Language="C#" Value="char IConvertible.ToChar (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance char System.IConvertible.ToChar(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToChar(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToChar(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Char" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToChar%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDateTime">
+      <MemberSignature Language="C#" Value="DateTime IConvertible.ToDateTime (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.DateTime System.IConvertible.ToDateTime(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToDateTime(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>この変換はサポートされていません。 変換を試みると、<see cref="T:System.InvalidCastException" /> がスローされます。</summary>
+        <returns>なし。 この変換はサポートされていません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDecimal">
+      <MemberSignature Language="C#" Value="decimal IConvertible.ToDecimal (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Decimal System.IConvertible.ToDecimal(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToDecimal(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは使用されません。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDecimal(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Decimal" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToDecimal%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDouble">
+      <MemberSignature Language="C#" Value="double IConvertible.ToDouble (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float64 System.IConvertible.ToDouble(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToDouble(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToDouble(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Double" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToDouble%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt16">
+      <MemberSignature Language="C#" Value="short IConvertible.ToInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int16 System.IConvertible.ToInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt16%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt32">
+      <MemberSignature Language="C#" Value="int IConvertible.ToInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IConvertible.ToInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt32%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt64">
+      <MemberSignature Language="C#" Value="long IConvertible.ToInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int64 System.IConvertible.ToInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Int64" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToInt64%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSByte">
+      <MemberSignature Language="C#" Value="sbyte IConvertible.ToSByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int8 System.IConvertible.ToSByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToSByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSByte(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns>変更されていない、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSingle">
+      <MemberSignature Language="C#" Value="float IConvertible.ToSingle (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float32 System.IConvertible.ToSingle(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToSingle(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToSingle(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Single" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToSingle%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToType">
+      <MemberSignature Language="C#" Value="object IConvertible.ToType (Type type, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IConvertible.ToType(class System.Type type, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToType(System.Type,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="type">この <see cref="T:System.Type" /> 値の変換後の <see cref="T:System.SByte" />。</param>
+        <param name="provider">戻り値の書式に関する情報を提供する <see cref="T:System.IFormatProvider" /> の実装。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToType(System.Type,System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><paramref name="type" /> 型のオブジェクトに変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、 `static` (`Shared` Visual Basic で)<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt16">
+      <MemberSignature Language="C#" Value="ushort IConvertible.ToUInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int16 System.IConvertible.ToUInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToUInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt16(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt16" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt16%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt32">
+      <MemberSignature Language="C#" Value="uint IConvertible.ToUInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int32 System.IConvertible.ToUInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToUInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt32(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt32" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt32%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt64">
+      <MemberSignature Language="C#" Value="ulong IConvertible.ToUInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int64 System.IConvertible.ToUInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.System#IConvertible#ToUInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">このパラメーターは無視されます。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.IConvertible.ToUInt64(System.IFormatProvider)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.UInt64" /> に変換後の、現在のインスタンスの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.SByte> のインスタンスが <xref:System.IConvertible> インターフェイスにキャストされる場合にのみ、使用できます。 推奨される代替手段が呼び出されて、<xref:System.Convert.ToUInt64%28System.SByte%29?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns>値が負の場合はマイナス記号を伴い、先行ゼロを含まない 0 から 9 の一連の数字から構成される、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.ToString>メソッドの形式、<xref:System.SByte>現在のカルチャの形式 ("G"、または [全般]) の既定の値します。 別の形式またはカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.SByte.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.SByte.ToString%28System.IFormatProvider%29>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.SByte.ToString%28System.String%29>|  
+|特定の形式|特定のカルチャ|<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ [全般] の数値書式指定子 ("G") の文字列表現を使用して、戻り値が書式設定、<xref:System.SByte>値には、その値が負の値、および一連の数字の 0 から 9 まで 0 を付けない場合は負の符号が含まれます。 負の符号がによって定義された、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+ 符号付きバイト値の文字列形式の書式を定義するのには、呼び出し、<xref:System.SByte.ToString%28System.String%29>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を表示、<xref:System.SByte>値の既定値を使用して<xref:System.SByte.ToString>メソッドです。 文字列形式も表示されます、<xref:System.SByte>からさまざまな標準書式指定子を使用して結果の値。 例は、EN-US カルチャの書式指定規則を使用して表示されます。  
+  
+ [!code-csharp[System.SByte.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.ToString/CS/tostring2.cs#2)]
+ [!code-vb[System.SByte.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.ToString/VB/tostring2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>このインスタンスの数値を、指定したカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.ToString%28System.IFormatProvider%29>メソッドの形式、<xref:System.SByte>値の既定値 ("G"、または [全般]) で指定されたカルチャの形式です。 別の形式または現在のカルチャを指定する場合は、他のオーバー ロードを使用して、<xref:System.SByte.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.SByte.ToString>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.SByte.ToString%28System.String%29>|  
+|特定の形式|特定のカルチャ|<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>このメソッドによって返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 場合`provider`は`null`、<xref:System.SByte>を使用して、値が書式設定、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。 唯一のプロパティ、<xref:System.Globalization.NumberFormatInfo>の文字列形式を制御するオブジェクト、<xref:System.SByte>一般書式指定子を使用する値は<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A?displayProperty=nameWithType>、負の符号を表す文字を定義します。  
+  
+ `provider`パラメーターは、次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>の書式情報を提供するカルチャを表すオブジェクト。  
+  
+-   <xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+-   実装するカスタム オブジェクト<xref:System.IFormatProvider>です。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>を書式設定情報を提供するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム<xref:System.Globalization.NumberFormatInfo>オブジェクトと割り当てます、"~"文字をその<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>プロパティです。 このカスタム オブジェクトを使用してだけでなく<xref:System.Globalization.NumberFormatInfo>オブジェクトを一連の書式設定、インバリアント カルチャの<xref:System.SByte>値。  
+  
+ [!code-csharp[System.SByte.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.ToString/CS/tostring3.cs#3)]
+ [!code-vb[System.SByte.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.ToString/VB/tostring3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.ToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">標準またはカスタムの数値書式指定文字列。</param>
+        <summary>指定した書式を使用して、このインスタンスの数値を、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.ToString%28System.String%29>メソッドの形式、<xref:System.SByte>現在のカルチャの規則を使用して、指定した書式の値。 既定値 ("G"、または [全般]) を使用する場合は、書式を設定または別のカルチャを指定して、他のオーバー ロードを使用して、<xref:System.SByte.ToString%2A>メソッドは、次のように。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.SByte.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.SByte.ToString%28System.IFormatProvider%29>|  
+|特定の形式|特定のカルチャ|<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>|  
+  
+ `format`パラメーターには、任意の有効な標準の数値書式指定子、またはカスタムの数値書式指定子の任意の組み合わせを指定できます。 場合`format`と等しい<xref:System.String.Empty?displayProperty=nameWithType>または`null`、現在の戻り値<xref:System.SByte>オブジェクトは、一般書式指定子 ("G") でフォーマットします。 場合`format`その他の値、メソッドがスローされますが、<xref:System.FormatException>です。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   .NET Framework における書式設定のサポートに関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ によって返される文字列の形式が決定されます、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。 によって、`format`パラメーター、このオブジェクトは、マイナス記号、桁区切り記号で、出力文字列に小数点記号などのシンボルを制御します。 現在のカルチャ以外のカルチャの書式情報を提供するには、呼び出し、<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>オーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例の配列を初期化する<xref:System.SByte>値し、各標準書式指定文字列と一部のカスタム書式指定文字列を使用してそれらを表示します。  
+  
+ [!code-csharp[System.SByte.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.ToString/CS/tostring4.cs#4)]
+ [!code-vb[System.SByte.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.ToString/VB/tostring4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">標準またはカスタムの数値書式指定文字列。</param>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>このインスタンスの数値を、指定した書式およびカルチャ固有の書式情報を使用して、それと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> と <paramref name="provider" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>メソッドの形式、<xref:System.SByte>特定のカルチャの指定した形式の値。 既定の形式またはカルチャの設定を使用する場合は、他のオーバー ロードを使用して、<xref:System.SByte.ToString%2A>メソッドは、次のようにします。  
+  
+|形式を使用するには|カルチャの|オーバー ロードを使用します。|  
+|-------------------|-----------------|----------------------|  
+|既定値 ("G") 書式|(現在) の既定のカルチャ|<xref:System.SByte.ToString>|  
+|既定値 ("G") 書式|特定のカルチャ|<xref:System.SByte.ToString%28System.IFormatProvider%29>|  
+|特定の形式|(現在) の既定のカルチャ|<xref:System.SByte.ToString%28System.String%29>|  
+  
+ `format`パラメーターには、任意の有効な標準の数値書式指定子、またはカスタムの数値書式指定子の任意の組み合わせを指定できます。 場合`format`と等しい<xref:System.String.Empty?displayProperty=nameWithType>または`null`、現在の戻り値<xref:System.SByte>オブジェクトは、一般書式指定子 ("G") でフォーマットします。 場合`format`その他の値、メソッドがスローされますが、<xref:System.FormatException>です。  
+  
+ .NET Framework では、次の書式設定のトピックで詳しく説明されている、広範な書式設定サポートを提供します。  
+  
+-   数値書式指定子の詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+-   .NET Framework における書式設定のサポートに関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>このメソッドによって返される文字列の書式に関するカルチャ固有の情報を提供するオブジェクト。 ときに、<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>メソッドが呼び出され、呼び出し、`provider`パラメーターの<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>メソッド渡します、<xref:System.Type>を表すオブジェクト、<xref:System.Globalization.NumberFormatInfo>型です。 <xref:System.IFormatProvider.GetFormat%2A>メソッドが戻ります、<xref:System.Globalization.NumberFormatInfo>の書式設定情報を提供するオブジェクト、`value`負の記号、桁区切り記号や小数点記号などのパラメーターです。 3 つの方法を使用する、`provider`書式設定情報を指定するパラメーター、<xref:System.SByte.ToString%28System.String%2CSystem.IFormatProvider%29>メソッド。  
+  
+-   渡すことができます、<xref:System.Globalization.CultureInfo>の書式情報を提供するカルチャを表すオブジェクト。 その<xref:System.Globalization.CultureInfo.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>そのカルチャの数値の書式設定情報を提供するオブジェクト。  
+  
+-   実際に渡すことができます<xref:System.Globalization.NumberFormatInfo>数値書式設定情報を提供するオブジェクト。 (その実装の<xref:System.Globalization.NumberFormatInfo.GetFormat%2A>自体を返すだけです)。  
+  
+-   実装するカスタム オブジェクトを渡すことができます<xref:System.IFormatProvider>です。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドがインスタンス化し、返します、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`、に基づいて返される文字列の書式設定、<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、正と負の両方が表示されます。<xref:System.SByte>値の標準数値書式指定子と特定の番号を使用して<xref:System.Globalization.CultureInfo>オブジェクト。  
+  
+ [!code-csharp[System.SByte.ToString#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.ToString/CS/tostring5.cs#5)]
+ [!code-vb[System.SByte.ToString#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.ToString/VB/tostring5.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, out sbyte result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, [out] int8&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.TryParse(System.String,System.SByte@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="result" Type="System.SByte&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を含んだ文字列。</param>
+        <param name="result">このメソッドが戻るときに格納された数値と等価の 8 ビット符号付き整数値が含まれています。 <c>s</c>変換が成功した場合、変換に失敗した場合は 0 です。 場合、変換は失敗、 <c>s</c>パラメーターは<see langword="null" />または<see cref="F:System.String.Empty" />が、正しい形式でないかである数値を表してより小さい<see cref="F:System.SByte.MinValue" />以上<see cref="F:System.SByte.MaxValue" />です。 このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>数値の文字列形式を対応する <see cref="T:System.SByte" /> 表現に変換できるかどうかを試行し、変換に成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.TryParse%28System.String%2CSystem.SByte%40%29?displayProperty=nameWithType>などのメソッドは、<xref:System.SByte.Parse%28System.String%29?displayProperty=nameWithType>メソッド、点を除いて、変換が失敗した場合に、it が例外をスローしません。 このメソッドをテストする例外処理を使用する必要がある、<xref:System.FormatException>場合`value`無効なため、正常に解析することはできません。  
+  
+ `s`パラメーターが、次の形式の 10 進数の文字列形式にする必要があります。  
+  
+ [*ws*] [*記号*]*桁*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。|  
+|*サインイン*|省略可能な符号の場合。 有効な符号文字がによって決定されます、<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A?displayProperty=nameWithType>と<xref:System.Globalization.NumberFormatInfo.PositiveSign%2A?displayProperty=nameWithType>現在のカルチャのプロパティです。|  
+|*digits*|10 進数字の 0 から 9 までのシーケンス。|  
+  
+> [!NOTE]
+>  指定された文字列、`value`パラメーターは、任意の桁区切り記号または 10 進区切り記号を含めることはできませんし、小数部分を持つことはできません。  
+  
+ `s`パラメーターを使用して解釈されます、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>スタイル。 10 進数字以外には、先頭と末尾のスペースが先頭の符号と共にのみを使用できます。 使用できるカルチャに固有の書式情報を持つスタイル要素を明示的に定義する`value`を呼び出し、<xref:System.SByte.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.SByte%40%29>メソッドです。  
+  
+ `s`で書式設定情報を使用してパラメーターを解析する<xref:System.Globalization.NumberFormatInfo>現在のカルチャ オブジェクト。 詳細については、「<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ このオーバー ロード内のすべての桁を解釈し、`value`として小数点以下桁数のパラメーターです。 16 進数の文字列表現を解析するには、呼び出し、<xref:System.SByte.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.SByte%40%29>オーバー ロードを代用します。  
+  
+   
+  
+## Examples  
+ 次の例が、配列内の文字列を変換しようとしています。<xref:System.SByte>値を呼び出して、<xref:System.SByte.TryParse%28System.String%2CSystem.SByte%40%29>メソッドです。  
+  
+ [!code-csharp[System.SByte.TryParse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.TryParse/cs/TryParse1.cs#1)]
+ [!code-vb[System.SByte.TryParse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.TryParse/vb/TryParse1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string s, System.Globalization.NumberStyles style, IFormatProvider provider, out sbyte result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string s, valuetype System.Globalization.NumberStyles style, class System.IFormatProvider provider, [out] int8&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SByte.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,System.SByte@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="style" Type="System.Globalization.NumberStyles" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+        <Parameter Name="result" Type="System.SByte&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する数値を表す文字列。</param>
+        <param name="style">使用可能な書式を示す列挙値のビットごとの組み合わせ<c>s</c>です。 通常指定する値は、<see cref="F:System.Globalization.NumberStyles.Integer" /> です。</param>
+        <param name="provider">に関するカルチャ固有の書式情報を提供するオブジェクト<c>s</c>です。</param>
+        <param name="result">このメソッドが戻るときに含まれている数値と等価の 8 ビット符号付き整数値が含まれています。 <c>s</c>変換が成功した場合は 0、変換に失敗した場合は、します。 場合、変換は失敗、 <c>s</c>パラメーターが<see langword="null" />または<see cref="F:System.String.Empty" />に準拠した形式では<c>スタイル</c>、または数値を表すより小さい<see cref="F:System.SByte.MinValue" />より大きいまたは<see cref="F:System.SByte.MaxValue" />. このパラメーターは初期化されていません。最初に指定された任意の値<c>結果</c>が上書きされます。</param>
+        <summary>指定されたスタイルおよびカルチャ固有の書式の数値の文字列形式を等価の <see cref="T:System.SByte" /> に変換できるかどうかを試行し、変換に成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が正常に変換された場合は <paramref name="s" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.SByte.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.SByte%40%29>などのメソッドは、<xref:System.SByte.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29>メソッド、点を除いて、変換が失敗した場合に、it が例外をスローしません。 このメソッドをテストする例外処理を使用する必要がある、<xref:System.FormatException>場合`value`無効なため、正常に解析されたことはできません。  
+  
+ `style`パラメーター スタイル要素を定義します (空白や正または負符号) では許可されて、`value`解析操作が成功するためのパラメーターです。 ビット フラグの組み合わせを可能にする必要があります、<xref:System.Globalization.NumberStyles>列挙します。 値に応じて`style`、`value`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*][*$*][*sign*][*digits*,]*digits*[.*fractional_digits*] [E [*記号*]*exponential_digits*] [*ws*]  
+  
+ 場合、`style`パラメーターが含まれています<xref:System.Globalization.NumberStyles.AllowHexSpecifier>、`value`パラメーターは、次の要素を含めることがあります。  
+  
+ [*ws*]*hexdigits*[*ws*]  
+  
+ 角かっこ ([ および ]) 内の要素は省略可能です。 次の表では、各要素について説明します。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|*ws*|省略可能なホワイト スペースです。 先頭の空白文字が表示できる`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ、またはの末尾`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*$*|カルチャ固有の通貨記号。 文字列内での位置がによって定義された、<xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A>のプロパティ、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.IFormatProvider.GetFormat%2A>のメソッド、`provider`パラメーター。 通貨記号に表示される`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*サインイン*|省略可能な符号の場合。 先頭の符号が表示できる`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>の最後に表示されることができますフラグ、およびその`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。 かっこを使用できる`value`負の値を指定する場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*digits*|0 ~ 9 桁の数字のシーケンス。|  
+|*、*|カルチャ固有のグループの区切り記号。 指定されたカルチャの桁区切り記号`provider`に表示できる`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*.*|カルチャに固有の小数点記号です。 指定されたカルチャの小数点記号`provider`に表示できる`value`場合`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*fractional_digits*|数字の 0 の 1 つ以上の出現します。 小数部の桁が表示できる`value`場合にのみ、`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|E|"E"または"E"文字は、値を指数表記で表されていることを示します。 `value`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*exponential_digits*|0 ~ 9 桁の数字のシーケンス。 `value`場合、パラメーターは指数表記の数値を表すことができる`style`が含まれています、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ。|  
+|*hexdigits*|一連の 0 f からまたは f 0 から 16 進数の数字|  
+  
+ 10 進数字のみを含む文字列 (に対応する、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグ) が正常に解析します。 ほとんど残りの<xref:System.Globalization.NumberStyles>メンバーが存在する可能性がありますが、この入力文字列内に存在する必要はありません要素を制御します。 次の表に示す個別<xref:System.Globalization.NumberStyles>メンバー内に存在可能な要素に影響を与える`value`です。  
+  
+|非複合`NumberStyles`値|数字以外の値で使用できる要素|  
+|------------------------------------------|-------------------------------------------------------|  
+|<xref:System.Globalization.NumberStyles.None>|10 進数字のみです。|  
+|<xref:System.Globalization.NumberStyles.AllowDecimalPoint>|小数点 (*.*) および*fractional_digits*要素。 ただし、 *fractional_digits*のみ 1 つ以上の数字 0、またはメソッドを返しますので構成されている必要があります`false`です。|  
+|<xref:System.Globalization.NumberStyles.AllowExponent>|"E"または"E"文字は、と共に、指数表記法を示す*exponential_digits*です。 場合`value`の数値を表す、0 以外の小数部のコンポーネント、指数表記で持つことができません。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingWhite>|*Ws*の先頭の要素`value`です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingWhite>|*Ws*の末尾に要素`value`です。|  
+|<xref:System.Globalization.NumberStyles.AllowLeadingSign>|*記号*の前に要素*桁*です。|  
+|<xref:System.Globalization.NumberStyles.AllowTrailingSign>|*記号*要素の後に*桁*です。|  
+|<xref:System.Globalization.NumberStyles.AllowParentheses>|*記号*数値の値を囲むかっこの形式での要素。|  
+|<xref:System.Globalization.NumberStyles.AllowThousands>|桁区切り記号 (*、*) 要素です。|  
+|<xref:System.Globalization.NumberStyles.AllowCurrencySymbol>|通貨 (*$*) 要素です。|  
+|<xref:System.Globalization.NumberStyles.Currency>|すべての要素。 ただし、 `value` 16 進数または指数表記の数値を表すことはできません。|  
+|<xref:System.Globalization.NumberStyles.Float>|*Ws*開始または終了の位置にある要素`value`、*記号*の開始時`value`、および小数点 (*.*) シンボル。 `value`パラメーターは、指数表記も使用できます。|  
+|<xref:System.Globalization.NumberStyles.Number>|*Ws*、*記号*、桁区切り記号 (*、*)、および小数点 (*.*) 要素です。|  
+|<xref:System.Globalization.NumberStyles.Any>|すべての要素。 ただし、 `value` 16 進数を表すことはできません。|  
+  
+ 場合、<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>フラグを使用すると、 `value` 16 進値でなければなりません。 有効な 16 進数の数字は 0 ~ 9、a ~ f、A ~ F その他のフラグのみで使用可能な`style`は<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>と<xref:System.Globalization.NumberStyles?displayProperty=nameWithType>です。 (、<xref:System.Globalization.NumberStyles>列挙体には、複合スタイル<xref:System.Globalization.NumberStyles.HexNumber>、両方の空白のフラグが含まれている)。  
+  
+> [!NOTE]
+>  場合`value`文字列表現は、16 進数は、そのことはできません前に、装飾 (など`0x`または`&h`) の 16 進数として区別します。 これにより、変換に失敗します。  
+  
+ `provider`パラメーターは、<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>の書式に関するカルチャ固有の情報を提供するオブジェクト`value`です。 `provider`パラメーターは、次のいずれかを指定できます。  
+  
+-   A<xref:System.Globalization.CultureInfo>の書式情報を提供するカルチャを表すオブジェクト。 その<xref:System.Globalization.CultureInfo.GetFormat%2A>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>そのカルチャの数値の書式設定情報を提供するオブジェクト。  
+  
+-   A<xref:System.Globalization.NumberFormatInfo>数値書式設定情報を提供するオブジェクト。 (その実装の<xref:System.Globalization.NumberFormatInfo.GetFormat%2A>自体を返すだけです)。  
+  
+-   実装するカスタム オブジェクト<xref:System.IFormatProvider>です。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドがインスタンス化し、返します、<xref:System.Globalization.NumberFormatInfo>の書式情報を提供するオブジェクト。  
+  
+ 場合`provider`は`null`、<xref:System.Globalization.NumberFormatInfo>オブジェクトの現在のカルチャが使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.SByte.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.SByte%40%29>別の文字列の数を持つメソッドと<xref:System.Globalization.NumberStyles>値。  
+  
+ [!code-csharp[System.SByte.TryParse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.SByte.TryParse/cs/tryparse2.cs#2)]
+ [!code-vb[System.SByte.TryParse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.SByte.TryParse/vb/tryparse2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Int16.TryParse(System.String,System.Int16@)" />
+        <exception cref="T:System.ArgumentException">
+          <paramref name="style" /> が <see cref="T:System.Globalization.NumberStyles" /> 値ではありません。  
+  
+ -または-  
+  
+ <paramref name="style" />組み合わせではありません<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />と<see cref="F:System.Globalization.NumberStyles.HexNumber" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

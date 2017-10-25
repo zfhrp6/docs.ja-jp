@@ -1,0 +1,134 @@
+<Type Name="ItemPager" FullName="System.Web.UI.MobileControls.ItemPager">
+  <TypeSignature Language="C#" Value="public class ItemPager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ItemPager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ItemPager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォームが改ページ調整を支援します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部改ページをサポートする各コントロールに対して、<xref:System.Web.UI.MobileControls.ItemPager>オブジェクトが作成され、コントロールの内容を改ページ調整するために使用します。  
+  
+ このクラスが使用されて、<xref:System.Web.UI.MobileControls.PagedControl>など、長いテキストの長さを持つコントロールにクラス、 <xref:System.Web.UI.WebControls.ListControl>、 <xref:System.Web.UI.MobileControls.LiteralText>、または<xref:System.Web.UI.MobileControls.ObjectList>です。  
+  
+ 通常、継承し、独自のカスタマイズされた改ページを作成する場合を除き、このクラスを変更するはありません。 一般的から継承するよう、<xref:System.Web.UI.MobileControls.PagedControl>クラスや、独自のカスタム プロパティとメソッドを拡張します。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemPager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ItemPager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.ItemPager" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい ItemPager オブジェクトを構築します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ItemPager (System.Web.UI.MobileControls.ControlPager pager, System.Web.UI.MobileControls.MobileControl control, int itemCount, int itemsPerPage, int itemWeight);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.MobileControls.ControlPager pager, class System.Web.UI.MobileControls.MobileControl control, int32 itemCount, int32 itemsPerPage, int32 itemWeight) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.ItemPager.#ctor(System.Web.UI.MobileControls.ControlPager,System.Web.UI.MobileControls.MobileControl,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pager" Type="System.Web.UI.MobileControls.ControlPager" />
+        <Parameter Name="control" Type="System.Web.UI.MobileControls.MobileControl" />
+        <Parameter Name="itemCount" Type="System.Int32" />
+        <Parameter Name="itemsPerPage" Type="System.Int32" />
+        <Parameter Name="itemWeight" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pager">改ページ調整されているコントロールのコントロールのページャー。</param>
+        <param name="control">改ページ調整されているコントロール。</param>
+        <param name="itemCount">改ページ調整するをコントロール内の項目の合計数。</param>
+        <param name="itemsPerPage">1 ページに表示される項目の最大数。</param>
+        <param name="itemWeight">項目ごとに割り当てられる重み。 この値を小さいする必要があります、コントロール文字を 1 項目場合、コントロール、行のテキスト項目である場合、この値が大きくなければなりません。</param>
+        <summary><see cref="T:System.Web.UI.MobileControls.ItemPager" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい<xref:System.Web.UI.MobileControls.ItemPager>オブジェクトを初期化、<xref:System.Web.UI.MobileControls.ControlPager>と<xref:System.Web.UI.MobileControls.MobileControl>オブジェクトで、および<xref:System.Web.UI.MobileControls.ItemPager.ItemCount%2A>、 <xref:System.Web.UI.MobileControls.PagedControl.ItemsPerPage%2A>、および<xref:System.Web.UI.MobileControls.PagedControl.ItemWeight%2A>プロパティの値で、 `pager`、 `control`、 `itemCount`、 `itemsPerPage`、および`itemWeight`パラメーター、それぞれします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemCount">
+      <MemberSignature Language="C#" Value="public int ItemCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ItemPager.ItemCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページに表示されている項目の数を取得します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>現在のページに表示される項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内部改ページ調整をサポートする ASP.NET モバイル コントロールでは、カスタムの改ページと呼ばれる機能も提供します。 通常、このようなコントロールには、表示可能なすべてのデータを提供する必要があります。 開発者は、一覧内にある項目の合計数を指定、<xref:System.Web.UI.MobileControls.ItemPager.ItemCount%2A>プロパティです。 <xref:System.Web.UI.MobileControls.PagedControl.ItemsPerPage%2A>プロパティは、項目、コントロールごとに表示します ページの数を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.ItemPager.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページで、最初に表示される項目のインデックスを取得します。 項目が表示されていない場合は、値-1 を返します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>現在のページに最初に表示される項目のインデックス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,563 @@
+<Type Name="UIPermission" FullName="System.Security.Permissions.UIPermission">
+  <TypeSignature Language="C#" Value="public sealed class UIPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UIPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.UIPermission" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー インターフェイスとクリップボードに関連したアクセス許可を制御します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows での描画とユーザーの入力イベントは、ユーザー インターフェイスです。  
+  
+ Windows を使用するアクセス許可は、次のいずれかを指定できます: 無制限、限定<xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>、のみ<xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows>、または描画ウィンドウまたはユーザーのイベントのアクセスが許可される入力されません。 <xref:System.Security.Permissions.UIPermissionWindow.SafeTopLevelWindows>および<xref:System.Security.Permissions.UIPermissionWindow.SafeSubWindows>タイトルと有害なコードで可能なスプーフィングを防止するサイズを制限します。  
+  
+ クリップボードを使用するアクセス許可は、次のいずれかを指定できます。 無制限、書き込み専用、またはクリップボードへのアクセスが許可されていません。 貼り付けを制限では、有害な可能性のあるアプリケーションから取得したデータの切り取り、コピー、および貼り付け操作のキーボード コマンドを使用して、ユーザーによって開始される状態のまま、ユーザーの同意なくお客様クリップボードからできないようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state">列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.UIPermission" />指定されたのか、完全に制限されているまたは無制限のアクセスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成するか完全に制限 (`None`) または`Unrestricted`形式のアクセスを許可します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.UIPermission.%23ctor%2A>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#7)]
+ [!code-csharp[System.Security.Permissions.UIPermission#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#7)]
+ [!code-vb[System.Security.Permissions.UIPermission#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="state" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.PermissionState" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIPermission (System.Security.Permissions.UIPermissionClipboard clipboardFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.UIPermissionClipboard clipboardFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.#ctor(System.Security.Permissions.UIPermissionClipboard)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clipboardFlag" Type="System.Security.Permissions.UIPermissionClipboard" />
+      </Parameters>
+      <Docs>
+        <param name="clipboardFlag">列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.UIPermission" />クリップボード]、[windows へのアクセスなしのアクセス許可を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードとウィンドウの両方のアクセス許可を設定するには、両方のパラメーターを受け取るコンス トラクターを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.UIPermission.%23ctor%28System.Security.Permissions.UIPermissionClipboard%29?displayProperty=nameWithType>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#9)]
+ [!code-csharp[System.Security.Permissions.UIPermission#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#9)]
+ [!code-vb[System.Security.Permissions.UIPermission#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="clipboardFlag" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.UIPermissionClipboard" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIPermission (System.Security.Permissions.UIPermissionWindow windowFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.UIPermissionWindow windowFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.#ctor(System.Security.Permissions.UIPermissionWindow)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="windowFlag" Type="System.Security.Permissions.UIPermissionWindow" />
+      </Parameters>
+      <Docs>
+        <param name="windowFlag">列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Permissions.UIPermission" /> windows、および、クリップボードへのアクセスなしのアクセス許可を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クリップボードとウィンドウの両方のアクセス許可を設定するには、両方のパラメーターを受け取るコンス トラクターを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.UIPermission.%23ctor%28System.Security.Permissions.UIPermissionWindow%29?displayProperty=nameWithType>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#8)]
+ [!code-csharp[System.Security.Permissions.UIPermission#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#8)]
+ [!code-vb[System.Security.Permissions.UIPermission#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="windowFlag" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.UIPermissionWindow" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UIPermission (System.Security.Permissions.UIPermissionWindow windowFlag, System.Security.Permissions.UIPermissionClipboard clipboardFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.UIPermissionWindow windowFlag, valuetype System.Security.Permissions.UIPermissionClipboard clipboardFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.#ctor(System.Security.Permissions.UIPermissionWindow,System.Security.Permissions.UIPermissionClipboard)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="windowFlag" Type="System.Security.Permissions.UIPermissionWindow" />
+        <Parameter Name="clipboardFlag" Type="System.Security.Permissions.UIPermissionClipboard" />
+      </Parameters>
+      <Docs>
+        <param name="windowFlag">列挙値の 1 つ。</param>
+        <param name="clipboardFlag">列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.UIPermission" />ウィンドウとクリップボードの指定されたアクセス許可を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.UIPermission.%23ctor%28System.Security.Permissions.UIPermissionWindow%2CSystem.Security.Permissions.UIPermissionClipboard%29?displayProperty=nameWithType>コンス トラクターです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#10)]
+ [!code-csharp[System.Security.Permissions.UIPermission#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#10)]
+ [!code-vb[System.Security.Permissions.UIPermission#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="windowFlag" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.UIPermissionWindow" />値。  
+  
+ または  
+  
+ <paramref name="clipboardFlag" />パラメーターが有効ではありません<see cref="T:System.Security.Permissions.UIPermissionClipboard" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clipboard">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.UIPermissionClipboard Clipboard { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.UIPermissionClipboard Clipboard" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.UIPermission.Clipboard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionClipboard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可で指定されたクリップボードのアクセスを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.UIPermissionClipboard" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns>現在のアクセス許可のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.Copy%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#5)]
+ [!code-csharp[System.Security.Permissions.UIPermission#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#5)]
+ [!code-vb[System.Security.Permissions.UIPermission#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement esd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement esd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="esd" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="esd">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、アクセス許可を再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.FromXml%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#6)]
+ [!code-csharp[System.Security.Permissions.UIPermission#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#6)]
+ [!code-vb[System.Security.Permissions.UIPermission#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="esd" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="esd" />パラメーターが有効なアクセス許可要素ではありません。  
+  
+ -または-  
+  
+ <paramref name="esd" />パラメーターのバージョン番号が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可との共通部分のあるアクセス許可。 現在のアクセス許可と同じ型である必要があります。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>現在のアクセス許可と指定したアクセス許可の共通部分を表す新しいアクセス許可。 この新しいアクセス許可は<see langword="null" />積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、一連の両方に共通する操作を説明する権限です。 具体的には、最も大きい値を表す<xref:System.Security.Permissions.UIPermissionWindow>と<xref:System.Security.Permissions.UIPermissionClipboard>から現在のアクセス許可と、指定した権限です。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.Intersect%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#4)]
+ [!code-csharp[System.Security.Permissions.UIPermission#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#4)]
+ [!code-vb[System.Security.Permissions.UIPermission#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセットの関係にあるかどうかをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可に対して成功したすべての要求は、指定した権限も成功した場合、指定したアクセス許可のサブセットです。 指定した権限には、少なくとも、アクセス許可が含まサブセットに含まれています。 <xref:System.Security.Permissions.UIPermission.IsSubsetOf%2A>を返す`true`の両方を<xref:System.Security.Permissions.UIPermissionWindow>と<xref:System.Security.Permissions.UIPermissionClipboard>現在のアクセス許可の値と等しいか、指定した権限の値より少ない制限を少なくする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.IsSubsetOf%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#2)]
+ [!code-csharp[System.Security.Permissions.UIPermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#2)]
+ [!code-vb[System.Security.Permissions.UIPermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限のアクセス許可は、アクセス許可によって保護されていると、すべてのリソースへのアクセスを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可とその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.ToXml%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#6)]
+ [!code-csharp[System.Security.Permissions.UIPermission#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#6)]
+ [!code-vb[System.Security.Permissions.UIPermission#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.UIPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 現在のアクセス許可と同じ型である必要があります。</param>
+        <summary>アクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Security.Permissions.UIPermission.Union%2A>は、現在のアクセス許可によって表されるすべての操作だけでなく、指定した権限によって表されるすべての操作を表す権限。 具体的には、値を表す<xref:System.Security.Permissions.UIPermissionWindow>と<xref:System.Security.Permissions.UIPermissionClipboard>から現在のアクセス許可と、指定した権限です。  
+  
+   
+  
+## Examples  
+ 次のコード例の動作を示しています、<xref:System.Security.Permissions.UIPermission.Union%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+> [!NOTE]
+>  このコード例は、その使用法を示しますが、メソッドの動作を示したものです。 一般に、アクセス許可クラスのメソッドはインフラストラクチャで使用される、セキュリティ;これらはアプリケーションでは通常使用されません。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#3)]
+ [!code-csharp[System.Security.Permissions.UIPermission#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#3)]
+ [!code-vb[System.Security.Permissions.UIPermission#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="target" />パラメーターではありません<see langword="null" />と現在のアクセス許可と同じ型でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Window">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.UIPermissionWindow Window { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.UIPermissionWindow Window" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.UIPermission.Window" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.UIPermissionWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可で指定されたウィンドウへのアクセスを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.UIPermissionWindow" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.UIPermission.Window%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.UIPermission>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.UIPermission#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CPP/uipermission.cpp#2)]
+ [!code-csharp[System.Security.Permissions.UIPermission#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/CS/uipermission.cs#2)]
+ [!code-vb[System.Security.Permissions.UIPermission#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.UIPermission/VB/uipermission.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

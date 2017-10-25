@@ -1,0 +1,65 @@
+<Type Name="ApplicationScopedSettingAttribute" FullName="System.Configuration.ApplicationScopedSettingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationScopedSettingAttribute : System.Configuration.SettingAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationScopedSettingAttribute extends System.Configuration.SettingAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ApplicationScopedSettingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション設定プロパティがアプリケーションのすべてのユーザーに対して共通の値を持つことを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション設定のプロパティは、アプリケーションまたはユーザー レベルに基づいているスコープを設定します。 示すように、カテゴリ、アプリケーション スコープ設定のプロパティが、ユーザー スコープのプロパティが、アプリケーションのユーザーごとに値を個別、アプリケーションのすべてのユーザーに同じ値を提供します。  
+  
+ <xref:System.Configuration.ApplicationScopedSettingAttribute>ことプロパティ見なす必要がある、アプリケーション レベルの設定と記憶域の適切な意思決定がそれに応じて行われることを示す設定プロバイダー。  
+  
+ スコープ属性は、各設定のプロパティに必要です。 プロパティがいずれかで適用されていない場合、<xref:System.Configuration.ApplicationScopedSettingAttribute>または<xref:System.Configuration.UserScopedSettingAttribute>プロパティが設定プロバイダーで認識されません: シリアル化されていません。 ただし、同じプロパティを両方の属性を適用することはできません。 このようなしようとすると、<xref:System.Configuration.ConfigurationErrorsException>がスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationScopedSettingAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ApplicationScopedSettingAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.ApplicationScopedSettingAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各アプリケーション設定のプロパティを認識し、設定プロバイダーによってシリアル化するためにスコープを 1 つの属性を持つ適用しなければなりません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

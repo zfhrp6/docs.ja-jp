@@ -1,0 +1,295 @@
+<Type Name="CaseInsensitiveComparer" FullName="System.Collections.CaseInsensitiveComparer">
+  <TypeSignature Language="C#" Value="public class CaseInsensitiveComparer : System.Collections.IComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CaseInsensitiveComparer extends System.Object implements class System.Collections.IComparer" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.CaseInsensitiveComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IComparer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つのオブジェクトの文字列の大文字と小文字を無視して等価性を比較します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.CaseInsensitiveComparer>実装する、<xref:System.Collections.IComparer>と同様に、文字列の大文字と小文字の比較をサポートするインターフェイス<xref:System.Collections.CaseInsensitiveHashCodeProvider>を実装する、<xref:System.Collections.IHashCodeProvider>インターフェイスは、文字列の大文字と小文字の比較をサポートします。  
+  
+ <xref:System.Collections.Comparer>クラスは、既定の実装、<xref:System.Collections.IComparer>インターフェイスし、区別する文字列比較を実行します。  
+  
+ キーとして使用されるオブジェクト、<xref:System.Collections.Hashtable>をオーバーライドするために必要な<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IHashCodeProvider>インターフェイス) および<xref:System.Object.Equals%2A?displayProperty=nameWithType>メソッド (または<xref:System.Collections.IComparer>インターフェイス)。 メソッドまたはインターフェイスの両方の実装でも、大文字小文字の区別を同じ方法で処理する必要があります。それ以外の場合、<xref:System.Collections.Hashtable>動作可能性があります。 たとえば、作成するときに、<xref:System.Collections.Hashtable>では、このクラスを使用する必要があります、<xref:System.Collections.CaseInsensitiveHashCodeProvider>クラスまたはそのいずれかの大文字と小文字<xref:System.Collections.IHashCodeProvider>実装します。  
+  
+ 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CaseInsensitiveComparer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveComparer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Collections.CaseInsensitiveComparer" />クラスを使用して、<see cref="P:System.Threading.Thread.CurrentCulture" />現在のスレッド。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.CaseInsensitiveComparer>インスタンスが作成される場合は、このコンス トラクターを使用して、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドを保存します。 比較のプロシージャでは、保存されているカルチャを使用して、並べ替え順序と大文字小文字の規則を決定するにはしたがって、文字列比較には、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CaseInsensitiveComparer (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveComparer.#ctor(System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />に新しい使用<see cref="T:System.Collections.CaseInsensitiveComparer" />です。</param>
+        <summary><see cref="T:System.Collections.CaseInsensitiveComparer" /> を指定して <see cref="T:System.Globalization.CultureInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、指定した<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>並べ替え順序および大文字小文字の規則を指定します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="culture" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (object a, object b);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(object a, object b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.CaseInsensitiveComparer.Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Object" />
+        <Parameter Name="b" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="a">比較する最初のオブジェクト。</param>
+        <param name="b">比較する 2 番目のオブジェクト。</param>
+        <summary>同じ型の 2 つのオブジェクトの大文字と小文字の比較を実行し、1 つが同じか、または他のより大きいよりも小さいかどうかを示す値を返します。</summary>
+        <returns>
+            <paramref name="a" /> と <paramref name="b" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="a" />より小さい<paramref name="b" />、大文字と小文字は無視されます。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="a" />等しい<paramref name="b" />、大文字と小文字は無視されます。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="a" />大きい<paramref name="b" />、大文字と小文字は無視されます。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`a`と`b`は両方とも文字列では、このメソッドを使用して<xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>、大文字と小文字の文字列の比較には無視されます。 それ以外の場合、使用して、<xref:System.IComparable>いずれかのオブジェクトの実装です。 つまり場合、`a`実装<xref:System.IComparable>、このメソッドの結果を返します、`a`です。 `CompareTo`(`b`)、それ以外の場合は`b`実装<xref:System.IComparable>の負数化された結果を返します`b`です。 `CompareTo` (`a`).  
+  
+ 比較する`null`任意の型は許可し、使用する場合は、例外を生成しません、<xref:System.IComparable>です。 ソート時`null`未満であるその他のオブジェクトと見なされます。  
+  
+ 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">どちらも<paramref name="a" />も<paramref name="b" />を実装する、<see cref="T:System.IComparable" />インターフェイスです。  
+  
+ または  
+  
+ <paramref name="a" />および<paramref name="b" />型が異なります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Collections.CaseInsensitiveComparer Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.CaseInsensitiveComparer Default" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CaseInsensitiveComparer.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.CaseInsensitiveComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Collections.CaseInsensitiveComparer" />と関連付けられている、<see cref="P:System.Threading.Thread.CurrentCulture" />ことと、現在のスレッドを常に使用できるのです。</summary>
+        <value>インスタンス<see cref="T:System.Collections.CaseInsensitiveComparer" />と関連付けられている、<see cref="P:System.Threading.Thread.CurrentCulture" />現在のスレッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Collections.CaseInsensitiveComparer>パラメーターなしのコンス トラクターを使用してインスタンスを作成、<xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>現在のスレッドを保存します。 比較のプロシージャでは、保存されているカルチャを使用して、並べ替え順序と大文字小文字の規則を決定するにはしたがって、文字列比較には、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInvariant">
+      <MemberSignature Language="C#" Value="public static System.Collections.CaseInsensitiveComparer DefaultInvariant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.CaseInsensitiveComparer DefaultInvariant" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.CaseInsensitiveComparer.DefaultInvariant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.NonGeneric</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.CaseInsensitiveComparer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Collections.CaseInsensitiveComparer" />と関連付けられている<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />は常に利用するとします。</summary>
+        <value>インスタンス<see cref="T:System.Collections.CaseInsensitiveComparer" />と関連付けられている<see cref="P:System.Globalization.CultureInfo.InvariantCulture" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較のプロシージャを使用して、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>並べ替え順序および大文字小文字の規則を指定します。 文字列比較を行うには、カルチャによって異なる結果があります。 カルチャ固有の比較の詳細については、次を参照してください。、<xref:System.Globalization>名前空間と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、大文字小文字を区別ハッシュ テーブルと、大文字と小文字のハッシュ テーブルを作成し、両方に同じ要素が含まれている場合でも、その動作の違いを示します。  
+  
+ [!code-cpp[System.Collections.CaseInsensitive#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CPP/caseinsensitive.cpp#1)]
+ [!code-csharp[System.Collections.CaseInsensitive#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/CS/caseinsensitive.cs#1)]
+ [!code-vb[System.Collections.CaseInsensitive#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.CaseInsensitive/VB/caseinsensitive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

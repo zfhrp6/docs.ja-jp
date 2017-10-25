@@ -1,0 +1,119 @@
+<Type Name="RichTextBoxFinds" FullName="System.Windows.Forms.RichTextBoxFinds">
+  <TypeSignature Language="C#" Value="public enum RichTextBoxFinds" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RichTextBoxFinds extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.RichTextBoxFinds" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フルテキスト検索の実行方法の指定、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション内のテキストを検索し、<xref:System.Windows.Forms.RichTextBox>コントロールを呼び出して、<xref:System.Windows.Forms.RichTextBox.Find%2A>のメソッド、<xref:System.Windows.Forms.RichTextBox>コントロール。 この列挙体では、検索を実行する方法を指定することができる場合、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドが呼び出されます。 呼び出すときに、1 つ以上の検索オプションを指定するには、この列挙の 1 つまたは複数の値を組み合わせることができます、<xref:System.Windows.Forms.RichTextBox.Find%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例の内容全体を検索、<xref:System.Windows.Forms.RichTextBox>メソッドのテキスト パラメーターに渡された検索文字列の最初のインスタンス。 検索の開始位置は、メソッドの開始パラメーターによって指定されます。 検索文字列が見つかった場合、 <xref:System.Windows.Forms.RichTextBox>-1 の値を返しますそれ以外の場合、;、メソッドが検出された文字列の最初の文字のインデックス位置を返し、見つかったテキストを強調表示します。 例は、指定した検索文字列の大文字と小文字が一致するように、検索にもオプションを指定します。 この例では、このメソッドがクラスに配置されている、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.RichTextBox>という`richTextBox1`です。 この例は、テキストの他のインスタンスを検索する検索テキストの最初のインスタンスが見つかった後は、「次を検索」の種類の操作を実行するときに使用できます。  
+  
+ [!code-cpp[Classic RichTextBox.Find2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RichTextBox.Find2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/CS/source.cs#1)]
+ [!code-vb[Classic RichTextBox.Find2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic RichTextBox.Find2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MatchCase">
+      <MemberSignature Language="C#" Value="MatchCase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxFinds MatchCase = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxFinds.MatchCase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxFinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索テキストの正確な大文字小文字の区別のあるインスタンスだけを検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoHighlight">
+      <MemberSignature Language="C#" Value="NoHighlight" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxFinds NoHighlight = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxFinds.NoHighlight" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxFinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索テキスト場合を発見し、強調表示する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxFinds None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxFinds.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxFinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索で見つかったインスタンスが単語全体検索かどうかは、検索テキストのすべてのインスタンスを検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reverse">
+      <MemberSignature Language="C#" Value="Reverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxFinds Reverse = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxFinds.Reverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxFinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索は、コントロールのドキュメントおよびドキュメントの先頭まで検索の終了から開始します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WholeWord">
+      <MemberSignature Language="C#" Value="WholeWord" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.RichTextBoxFinds WholeWord = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.RichTextBoxFinds.WholeWord" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RichTextBoxFinds</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索テキストの単語であるインスタンスだけを検索します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

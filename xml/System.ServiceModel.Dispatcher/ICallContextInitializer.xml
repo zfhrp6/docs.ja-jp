@@ -1,0 +1,84 @@
+<Type Name="ICallContextInitializer" FullName="System.ServiceModel.Dispatcher.ICallContextInitializer">
+  <TypeSignature Language="C#" Value="public interface ICallContextInitializer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICallContextInitializer" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ICallContextInitializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザー コードを呼び出したスレッドでスレッド ローカル ストレージの初期化およびリサイクルを可能にするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ICallContextInitializer> インターフェイスを実装し、それを <xref:System.ServiceModel.Dispatcher.DispatchOperation.CallContextInitializers%2A?displayProperty=nameWithType> プロパティに追加して、ユーザー コードを呼び出したスレッドのスレッド ローカル ストレージを初期化およびクリーンアップします。 一般的な使用方法は、偽装や、<xref:System.Globalization.CultureInfo?displayProperty=nameWithType> の変更などの値を設定することです。 なんらかのカスタムのコンテキストを設定する場合は、これが静的なコンテキスト プロパティを初期化する拡張ポイントになります。拡張ポイントは、操作中に開発者が利用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AfterInvoke">
+      <MemberSignature Language="C#" Value="public void AfterInvoke (object correlationState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AfterInvoke(object correlationState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="correlationState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="correlationState"><see cref="M:System.ServiceModel.Dispatcher.ICallContextInitializer.BeforeInvoke(System.ServiceModel.InstanceContext,System.ServiceModel.IClientChannel,System.ServiceModel.Channels.Message)" /> メソッドから返された相関オブジェクト。</param>
+        <summary>操作を呼び出したスレッドのクリーンアップに参加するために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作スレッドの必要なクリーンアップを実行するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeInvoke">
+      <MemberSignature Language="C#" Value="public object BeforeInvoke (System.ServiceModel.InstanceContext instanceContext, System.ServiceModel.IClientChannel channel, System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object BeforeInvoke(class System.ServiceModel.InstanceContext instanceContext, class System.ServiceModel.IClientChannel channel, class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.ICallContextInitializer.BeforeInvoke(System.ServiceModel.InstanceContext,System.ServiceModel.IClientChannel,System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="channel" Type="System.ServiceModel.IClientChannel" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">操作のサービス インスタンス。</param>
+        <param name="channel">クライアント チャネル。</param>
+        <param name="message">受信メッセージ。</param>
+        <summary>操作スレッドの初期化に参加するために実装します。</summary>
+        <returns><see cref="M:System.ServiceModel.Dispatcher.ICallContextInitializer.AfterInvoke(System.Object)" /> メソッドのパラメーターとして返された相関オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー コードを呼び出したスレッドのスレッド ローカル ストレージを初期化およびクリーンアップするための <xref:System.ServiceModel.Dispatcher.ICallContextInitializer.BeforeInvoke%2A> メソッドを実装します。 一般的な使用方法は、偽装や、<xref:System.Globalization.CultureInfo?displayProperty=nameWithType> の変更などの値を設定することです。 なんらかのカスタムのコンテキストを設定する場合は、これが静的なコンテキスト プロパティを初期化する拡張ポイントになります。拡張ポイントは、操作中に開発者が利用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

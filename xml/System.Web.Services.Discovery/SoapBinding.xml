@@ -1,0 +1,151 @@
+<Type Name="SoapBinding" FullName="System.Web.Services.Discovery.SoapBinding">
+  <TypeSignature Language="C#" Value="public sealed class SoapBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.SoapBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlRoot("soap", IsNullable=true, Namespace="http://schemas.xmlsoap.org/disco/soap/")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>探索ドキュメント内の SOAP バインドを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP バインディングでは、XML Web サービスのインターフェイスに似ています。 バージョン管理を使用して、特定の SOAP バインドを実装する XML Web サービスを検索すると便利です。 たとえば、探索ドキュメントには、SOAP バインディングは、参照先の Web サービスによって実装される SOAP バインディングの指定に関するオプション情報があります。 追加することで探索ドキュメント内の XML ドキュメント containd 内で SOAP バインドが指定される、 `SOAP` XML 要素と等しい XML 名前空間を持つ、<xref:System.Web.Services.Discovery.SoapBinding.Namespace>定数。 <xref:System.Web.Services.Discovery.SoapBinding.Address%2A>プロパティは、XML Web サービスの URL を指定し、<xref:System.Web.Services.Discovery.SoapBinding.Binding%2A>プロパティは、その XML Web サービスによって実装される SOAP バインディングを指定します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[Discovery_SoapBinding1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Discovery_SoapBinding1/CPP/discovery_soapbinding.cpp#1)]
+ [!code-csharp[Discovery_SoapBinding1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Discovery_SoapBinding1/CS/discovery_soapbinding.cs#1)]
+ [!code-vb[Discovery_SoapBinding1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Discovery_SoapBinding1/VB/discovery_soapbinding.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.SoapBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.SoapBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public string Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Address" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SoapBinding.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("address")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP バインディングを実装する XML Web サービスの URL を設定します。</summary>
+        <value>SOAP バインディングを実装する XML Web サービスの URL です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Discovery_SoapBinding1#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Discovery_SoapBinding1/CPP/discovery_soapbinding.cpp#2)]
+ [!code-csharp[Discovery_SoapBinding1#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Discovery_SoapBinding1/CS/discovery_soapbinding.cs#2)]
+ [!code-vb[Discovery_SoapBinding1#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Discovery_SoapBinding1/VB/discovery_soapbinding.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlQualifiedName Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.SoapBinding.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("binding")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービスによって実装される SOAP バインディングの XML 修飾名を設定します。</summary>
+        <value><see cref="T:System.Xml.XmlQualifiedName" /> XML Web サービスによって実装される SOAP バインディングのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[Discovery_SoapBinding1#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Discovery_SoapBinding1/CPP/discovery_soapbinding.cpp#2)]
+ [!code-csharp[Discovery_SoapBinding1#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Discovery_SoapBinding1/CS/discovery_soapbinding.cs#2)]
+ [!code-vb[Discovery_SoapBinding1#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Discovery_SoapBinding1/VB/discovery_soapbinding.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Discovery.SoapBinding.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>探索ドキュメント内の SOAP バインディングを指定する要素の XML 名前空間。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内で探索ドキュメント内の SOAP バインドが存在する、`SOAP`の XML 名前空間の指定されたメンバーである XML 要素によって、<xref:System.Web.Services.Discovery.SoapBinding.Namespace>定数。  
+  
+   
+  
+## Examples  
+ Discovery_SoapBinding&#1;2  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,379 @@
+<Type Name="OperationBehaviorAttribute" FullName="System.ServiceModel.OperationBehaviorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class OperationBehaviorAttribute : Attribute, System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OperationBehaviorAttribute extends System.Attribute implements class System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.OperationBehaviorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IOperationBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービス メソッドのローカル実行動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用して、操作が実行されるときの操作固有の実行動作を示します  (サービス レベルの実行動作を指定するには、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性を使用します)。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.OperationBehaviorAttribute> を使用して、双方向クライアント アプリケーションでコールバック コントラクト操作を設定することもできます。 コールバック操作で使用する場合は、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None> である必要があります。そうでない場合は、<xref:System.InvalidOperationException> 例外が実行時にスローされます。  
+  
+ <xref:System.ServiceModel.OperationBehaviorAttribute> 属性は、これがなければ開発者が自ら実装する必要のある共通機能を有効にする、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] プログラミング モデル機能です。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.AutoDisposeParameters%2A> プロパティは、操作に渡されたパラメーター オブジェクトを操作の完了時に破棄するかどうかを制御します。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティは、未処理の例外が発生しなかった場合に、メソッドが実行されているトランザクションが自動的にコミットされるかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティは、メソッドをトランザクションの中で実行する必要があるかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティは、サービス操作が、呼び出し元の ID を偽装できるか、偽装する必要があるか、または偽装できないかを指定します。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティは、サービス オブジェクトが、メソッドの呼び出しプロセスの間にリサイクルされるかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 必須の分散トランザクション内で実行する操作のコード例を次に示します。 <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティは、メソッドが呼び出し元のトランザクションの下で実行されることを示し、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティは、未処理の例外が発生しない場合にトランザクションが自動的にコミットすることを示します。 未処理の例外が発生すると、トランザクションは中止されます。  
+  
+ [!code-csharp[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_transaction/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_transaction/vb/services.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OperationBehaviorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationBehaviorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.OperationBehaviorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、次の既定値を使用してこのクラスのインスタンスを作成します。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None> です。  
+  
+-   <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> が <xref:System.ServiceModel.ImpersonationOption.NotAllowed> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoDisposeParameters">
+      <MemberSignature Language="C#" Value="public bool AutoDisposeParameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoDisposeParameters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OperationBehaviorAttribute.AutoDisposeParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パラメーターを自動的に破棄するかどうかを取得または設定します。</summary>
+        <value>
+          パラメーターが自動的に破棄される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、メッセージの処理中に作成された破棄可能なすべてのパラメーター (入力、出力、または参照の各パラメーター) をサービスが破棄するかどうかを決定します。 既定値は `true` です。 システムによる必要に応じたリソースの破棄とキャッシュを回避するには、このプロパティを `false` に設定します。  
+  
+ たとえば、<xref:System.ServiceModel.OperationBehaviorAttribute.AutoDisposeParameters%2A> が `false` の場合は、送信側でストリームを閉じるのは送信者の役割です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ImpersonationOption Impersonation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ImpersonationOption Impersonation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OperationBehaviorAttribute.Impersonation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ImpersonationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作がサポートする呼び出し元の偽装レベルを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.ImpersonationOption" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.ImpersonationOption.NotAllowed" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティ (および偽装をサポートするバインド構成) を使用して、指定したメソッド (<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティを <xref:System.ServiceModel.ImpersonationOption.Allowed> または <xref:System.ServiceModel.ImpersonationOption.Required> を設定することでマークしたメソッド) が、呼び出し元の ID で実行されるようにします。 詳細については、偽装を実行する方法を使用する場合を含む<xref:System.ServiceModel.ImpersonationOption.Allowed>と共に、<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ImpersonateCallerForAllOperations%2A?displayProperty=nameWithType>プロパティを参照してください[委任と偽装](~/docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)と[する方法: サービスでクライアントを偽装](~/docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md)です。  
+  
+> [!NOTE]
+>  偽装を行うサービス エンドポイントをプログラムで追加する場合は、<xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> メソッドのいずれか、または <xref:System.ServiceModel.Description.ContractDescription.GetContract%2A?displayProperty=nameWithType> メソッドを使用して、コントラクトを新しい <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> オブジェクトに適切に読み込む必要があります。 構成ファイルを使用する場合は、追加手順は不要です。  
+  
+ 偽装がサポートされない特別なシナリオがあります。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][サポートされていないシナリオ](~/docs/framework/wcf/feature-details/unsupported-scenarios.md)です。  
+  
+   
+  
+## Examples  
+ 次のサービスのコード例では、<xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> プロパティを <xref:System.ServiceModel.ImpersonationOption.Required> に設定することで、偽装を要求しています。  
+  
+ [!code-csharp[OperationBehaviorAttribute_Impersonation#1](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_impersonation/cs/services.cs#1)]
+ [!code-vb[OperationBehaviorAttribute_Impersonation#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_impersonation/vb/services.vb#1)]  
+  
+ 次のコード例では、<xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> プロパティを使用して、偽装するためにクライアント アプリケーション資格情報を必要とする操作を呼び出す前に、それらの情報を設定しています。  
+  
+ [!code-csharp[OperationBehaviorAttribute_Impersonation#3](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_impersonation/cs/client.cs#3)]
+ [!code-vb[OperationBehaviorAttribute_Impersonation#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_impersonation/vb/client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseInstanceMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ReleaseInstanceMode ReleaseInstanceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ReleaseInstanceMode ReleaseInstanceMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ReleaseInstanceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作呼び出しのどの時点でサービス オブジェクトをリサイクルするかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.ReleaseInstanceMode" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.ReleaseInstanceMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティを使用して、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] でのメソッド実行時にどの時点でサービス オブジェクトをリサイクルするかを指定します。 既定の動作では、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> 値に従ってサービス オブジェクトをリサイクルします。 <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティを設定すると、この既定の動作が変更されます。  
+  
+ <xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> は、スレッドの保証を行いません。 サービスの実行時に、新しい変更されていないオブジェクトを用意する必要がある場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティを <xref:System.ServiceModel.InstanceContextMode.PerCall> に設定します。  
+  
+ トランザクション シナリオでは、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティは、メソッドの呼び出しを処理する前に、サービス オブジェクトに関連付けられた古いデータがクリーンアップされることを保証するためにしばしば使用されます。 <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> プロパティを `true` に設定することで、トランザクションが正常に完了した後で、トランザクションに関連付けられたサービス オブジェクトがリサイクルされることを保証できます。  
+  
+ 次の動作を選択できます。  
+  
+-   操作が呼び出される前に、サービス オブジェクトをリサイクルします。  
+  
+-   操作が呼び出された後で、サービス オブジェクトをリサイクルします。  
+  
+-   操作の呼び出しの前後の両方で、サービス オブジェクトをリサイクルします。  
+  
+-   リサイクル動作はありません。  
+  
+ <xref:System.ServiceModel.OperationBehaviorAttribute> を使用して、双方向クライアント アプリケーションでコールバック コントラクト操作を設定することもできます。 コールバック操作で使用する場合は、<xref:System.ServiceModel.OperationBehaviorAttribute.ReleaseInstanceMode%2A> プロパティが <xref:System.ServiceModel.ReleaseInstanceMode.None> である必要があります。そうでない場合は、<xref:System.InvalidOperationException> 例外が実行時にスローされます。  
+  
+ さらに、サービスがサービス オブジェクトを <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> コンストラクターに渡すことで作成される場合、このプロパティの値は、<xref:System.ServiceModel.ReleaseInstanceMode.None> であるかのように処理されることを認識しておくことが重要です。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.ReleaseInstanceMode> を使用して呼び出しの前後にサービス オブジェクトをリサイクルするコード例を次に示します。  
+  
+ [!code-csharp[OBA.ReleaseInstanceMode#1](~/samples/snippets/csharp/VS_Snippets_CFX/oba.releaseinstancemode/cs/services.cs#1)]
+ [!code-vb[OBA.ReleaseInstanceMode#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/oba.releaseinstancemode/vb/services.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.ReleaseInstanceMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.AddBindingParameters (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationBehaviorAttribute.System#ServiceModel#Description#IOperationBehavior#AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description"><see cref="T:System.ServiceModel.OperationBehaviorAttribute" /> プロパティをサポートするように変更された操作の説明。</param>
+        <param name="parameters">バインドの動作をサポートするために渡されるバインド パラメーターです。</param>
+        <summary><see cref="M:System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" /> メソッドを実装します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyClientBehavior (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Dispatcher.ClientOperation proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Dispatcher.ClientOperation proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationBehaviorAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="proxy" Type="System.ServiceModel.Dispatcher.ClientOperation" />
+      </Parameters>
+      <Docs>
+        <param name="description"><see cref="T:System.ServiceModel.OperationBehaviorAttribute" /> プロパティをサポートするように変更された操作の説明。</param>
+        <param name="proxy">この操作のためのカスタム クライアント変更を挿入する拡張アクセス ポイント。</param>
+        <summary>クライアントのオペレーション動作を実装します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Dispatcher.DispatchOperation dispatch);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Dispatcher.DispatchOperation dispatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationBehaviorAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="dispatch" Type="System.ServiceModel.Dispatcher.DispatchOperation" />
+      </Parameters>
+      <Docs>
+        <param name="description"><see cref="T:System.ServiceModel.OperationBehaviorAttribute" /> プロパティをサポートするように変更された操作の説明。</param>
+        <param name="dispatch">この操作のためのカスタム サービス変更を挿入する拡張ポイント。</param>
+        <summary>サービス操作の動作を実装します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.Validate (System.ServiceModel.Description.OperationDescription description);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.Validate(class System.ServiceModel.Description.OperationDescription description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.OperationBehaviorAttribute.System#ServiceModel#Description#IOperationBehavior#Validate(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="description">検証する操作の説明。</param>
+        <summary>検証動作を実装します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionAutoComplete">
+      <MemberSignature Language="C#" Value="public bool TransactionAutoComplete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionAutoComplete" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外が発生しなかった場合は、現在のトランザクション スコープを自動的にコミットするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          操作の実行が正常に終了した時点でトランザクション スコープを自動的に完了する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作用のコードの中でトランザクションを直接完了または中止するには、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティを `false` に設定します。  
+  
+ 処理済みの例外は、操作の途中で、トランザクションを自動的に中止せずにスローできます。 未処理の例外だけが自動中止をトリガーします。  
+  
+   
+  
+## Examples  
+ 必須の分散トランザクション内で実行する操作のコード例を次に示します。 <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティは、操作がトランザクション スコープの下で実行されることを示し、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティは、未処理の例外が発生しなかった場合はトランザクション スコープが自動的にコミットされることを示します。 未処理の例外が発生すると、トランザクションは中止されます。  
+  
+ [!code-csharp[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_transaction/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_transaction/vb/services.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionScopeRequired">
+      <MemberSignature Language="C#" Value="public bool TransactionScopeRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionScopeRequired" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドが、実行のためにトランザクション スコープを必要とするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          メソッドが実行のためにトランザクション スコープを必要とする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作をトランザクション スコープの中で実行するように要求する場合は、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> を `true` に設定します。 フローされたトランザクションを使用できる場合、操作はそのトランザクションの中で実行されます。 使用できるトランザクションがない場合は、新しいトランザクションが作成され、操作の実行で使用されます。 フローされたトランザクションがサポートされるかどうかは、エンドポイントに指定されたバイディングが制御します。 したがって、正しい動作を取得するには、トランザクション フローがバインドによって許可されているかどうかと <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティの相互関係を理解する必要があります。 次の表に、可能な動作を示します。  
+  
+|TransactionScopeRequired|バインドがトラザクション フローを許可|呼び出し元がトランザクションをフロー|結果|  
+|-|-|-|-|  
+|False|False|いいえ|メソッドは、トランザクションなしで実行されます。|  
+|True|False|いいえ|メソッドは新しいトランザクションを作成し、その中で実行されます。|  
+|True または False|False|はい|トランザクション ヘッダーについての SOAP エラーが返されます。|  
+|False|True|はい|メソッドは、トランザクションなしで実行されます。|  
+|True|True|はい|メソッドは、フローされたトランザクションで実行されます。|  
+  
+   
+  
+## Examples  
+ 必須の分散トランザクション内で実行する操作のコード例を次に示します。 <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> プロパティは、操作がトランザクション スコープの下で実行されることを示し、<xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> プロパティは、未処理の例外が発生しなかった場合はトランザクション スコープが自動的にコミットされることを示します。 未処理の例外が発生すると、トランザクションは中止されます。  
+  
+ [!code-csharp[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute_transaction/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute_Transaction#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute_transaction/vb/services.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

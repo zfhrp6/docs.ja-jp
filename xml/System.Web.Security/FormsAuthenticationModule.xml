@@ -1,0 +1,160 @@
+<Type Name="FormsAuthenticationModule" FullName="System.Web.Security.FormsAuthenticationModule">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthenticationModule : System.Web.IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FormsAuthenticationModule extends System.Object implements class System.Web.IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.FormsAuthenticationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpModule</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>フォーム認証が有効になっている場合は、ASP.NET アプリケーションのユーザーの id を設定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationModule>現在設定<xref:System.Web.HttpContext.User%2A?displayProperty=nameWithType>プロパティを<xref:System.Security.Principal.IPrincipal>を現在のユーザー id を表すオブジェクトを要求時に、認証<xref:System.Web.Configuration.AuthenticationSection.Mode%2A>に設定されている<xref:System.Web.Configuration.AuthenticationMode.Forms>で、[認証要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/27bc0ba9-f23a-45f3-ae42-dbe7916e3ee2)アプリケーションの構成ファイルの要素。  
+  
+ <xref:System.Web.Security.FormsAuthenticationModule>公開、<xref:System.Web.Security.FormsAuthenticationModule.Authenticate>をカスタム提供できるようにイベント<xref:System.Security.Principal.IPrincipal>オブジェクトを<xref:System.Web.HttpContext.User%2A>、現在のプロパティ<xref:System.Web.HttpContext>です。 <xref:System.Web.Security.FormsAuthenticationModule.Authenticate>という名前のサブルーチンを指定することでアクセス イベント**FormsAuthentication_OnAuthenticate** ASP.NET アプリケーションの Global.asax ファイルでします。  
+  
+> [!NOTE]
+>  Iis 7.0 を使用して、<xref:System.Web.Security.WindowsAuthenticationModule>で、<xref:System.Web.Security.FormsAuthenticationModule>はサポートされていません。 統合モードでの互換性の問題に関する詳細については、次を参照してください。 [IIS 6.0 から IIS 7.0 を ASP.NET アプリケーションを移動](http://msdn.microsoft.com/library/76f9cc78-f978-4837-b1c8-51d642ec4847)です。  
+  
+   
+  
+## Examples  
+ 次の例では、 **FormsAuthentication_OnAuthenticate**設定イベントが、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム<xref:System.Security.Principal.IPrincipal>オブジェクト。  
+  
+ [!code-csharp[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthenticationModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.FormsAuthenticationModule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ASP.NET がのインスタンスを作成するこのコンス トラクターを呼び出して、<xref:System.Web.Security.FormsAuthenticationModule>クラスです。 コンス トラクターを呼び出す、<xref:System.Web.Security.FormsAuthenticationModule.Init%2A>新しい初期化するメソッドを<xref:System.Web.Security.FormsAuthenticationModule>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public event System.Web.Security.FormsAuthenticationEventHandler Authenticate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.Security.FormsAuthenticationEventHandler Authenticate" />
+      <MemberSignature Language="DocId" Value="E:System.Web.Security.FormsAuthenticationModule.Authenticate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.FormsAuthenticationEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが現在の要求を認証するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthenticationModule.Authenticate>中にイベントが発生した、<xref:System.Web.HttpApplication.AuthenticateRequest>イベント。  
+  
+ 処理することができます、<xref:System.Web.Security.FormsAuthenticationModule.Authenticate>のイベント、<xref:System.Web.Security.FormsAuthenticationModule>という名前のサブルーチンを指定することによってクラス**FormsAuthentication_OnAuthenticate** ASP.NET アプリケーションの Global.asax ファイルでします。  
+  
+ 使用することができます、 <xref:System.Web.Security.FormsAuthenticationEventArgs> <xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>に指定されたプロパティ、 **FormsAuthentication_OnAuthenticate**設定イベントが、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>をカスタム<xref:System.Security.Principal.IPrincipal>オブジェクト。 値を指定しない場合、<xref:System.Web.Security.FormsAuthenticationEventArgs.User%2A>中にプロパティ、 **FormsAuthentication_OnAuthenticate**イベントは、クッキーまたは URL でフォーム認証チケットが提供する id を使用します。  
+  
+ **FormsAuthentication_OnAuthenticate**認証モードが に設定されているときにのみ、イベントが発生<xref:System.Web.Configuration.AuthenticationMode.Forms>で、[認証要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/27bc0ba9-f23a-45f3-ae42-dbe7916e3ee2)アプリケーションの構成ファイルの要素と<xref:System.Web.Security.FormsAuthenticationModule>されるアプリケーションのアクティブな HTTP モジュールです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 **FormsAuthentication_OnAuthenticate**設定イベントが、 <xref:System.Web.HttpContext.User%2A> 、現在のプロパティ<xref:System.Web.HttpContext>を<xref:System.Security.Principal.GenericPrincipal>を持つカスタム オブジェクト<xref:System.Security.Principal.IPrincipal.Identity%2A>です。  
+  
+ [!code-csharp[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.FormsAuthenticationModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthenticationModule/VB/global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationModule.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるメモリ以外のすべてのリソースを解放、<see cref="T:System.Web.Security.FormsAuthenticationModule" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication app);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication app) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthenticationModule.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="app" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="app">現在の <see cref="T:System.Web.HttpApplication" /> インスタンス。</param>
+        <summary>初期化、<see cref="T:System.Web.Security.FormsAuthenticationModule" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.Security.FormsAuthenticationModule.Init%2A>メソッドにより、<xref:System.Web.Security.FormsAuthenticationModule>の処理に含まれる、<xref:System.Web.HttpApplication.AuthenticateRequest>と<xref:System.Web.HttpApplication.EndRequest>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

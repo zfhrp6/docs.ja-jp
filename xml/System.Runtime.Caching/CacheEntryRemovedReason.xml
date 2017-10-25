@@ -1,0 +1,105 @@
+<Type Name="CacheEntryRemovedReason" FullName="System.Runtime.Caching.CacheEntryRemovedReason">
+  <TypeSignature Language="C#" Value="public enum CacheEntryRemovedReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheEntryRemovedReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.CacheEntryRemovedReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>なぜキャッシュ エントリが削除されたか、エントリを削除する理由を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.CacheEntryRemovedReason>列挙体を使用して、キャッシュ エントリの削除された理由または削除される直前には、上の理由から、定義済みセットを提供します。 <xref:System.Runtime.Caching.CacheEntryRemovedArguments>クラスは、<xref:System.Runtime.Caching.CacheEntryRemovedReason>としてコールバック メソッドに渡すパラメーターのいずれかの値します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CacheSpecificEviction">
+      <MemberSignature Language="C#" Value="CacheSpecificEviction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.CacheEntryRemovedReason CacheSpecificEviction = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.CacheEntryRemovedReason.CacheSpecificEviction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ エントリは、特定のキャッシュ実装によって定義されている理由によって削除されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeMonitorChanged">
+      <MemberSignature Language="C#" Value="ChangeMonitorChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.CacheEntryRemovedReason ChangeMonitorChanged = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.CacheEntryRemovedReason.ChangeMonitorChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(ファイルまたは別のキャッシュ エントリ) などの関連する依存関係には、キャッシュ エントリの削除がトリガーされるため、キャッシュ エントリが削除されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Evicted">
+      <MemberSignature Language="C#" Value="Evicted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.CacheEntryRemovedReason Evicted = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.CacheEntryRemovedReason.Evicted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュの空きメモリにキャッシュ エントリが削除されました。 これは、キャッシュ インスタンスに固有のキャッシュ メモリの制限に近づくと、またはコンピューター全体のメモリの制限に近づくと、処理またはキャッシュ インスタンスに発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="Expired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.CacheEntryRemovedReason Expired = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.CacheEntryRemovedReason.Expired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>期限切れになるために、キャッシュ エントリが削除されました。 有効期限は、絶対時刻または有効期限に基づいてことができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Removed">
+      <MemberSignature Language="C#" Value="Removed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.Caching.CacheEntryRemovedReason Removed = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.Caching.CacheEntryRemovedReason.Removed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Caching.CacheEntryRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用して、キャッシュ エントリが削除された、<see cref="M:System.Runtime.Caching.ObjectCache.Remove(System.String,System.String)" />または<see cref="M:System.Runtime.Caching.ObjectCache.Set(System.String,System.Object,System.DateTimeOffset,System.String)" />メソッドです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

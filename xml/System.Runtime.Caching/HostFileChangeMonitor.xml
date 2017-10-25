@@ -1,0 +1,200 @@
+<Type Name="HostFileChangeMonitor" FullName="System.Runtime.Caching.HostFileChangeMonitor">
+  <TypeSignature Language="C#" Value="public sealed class HostFileChangeMonitor : System.Runtime.Caching.FileChangeMonitor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HostFileChangeMonitor extends System.Runtime.Caching.FileChangeMonitor" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.HostFileChangeMonitor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Caching.FileChangeMonitor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ディレクトリおよびファイル パスを監視し、監視対象の項目への変更のキャッシュに通知します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.HostFileChangeMonitor>クラスの具象実装されて、<xref:System.Runtime.Caching.FileChangeMonitor>型です。 このクラスはシールされているため、拡張することはできません。 このクラスは、既存のキャッシュ実装を使用して、ファイルとディレクトリの変更を監視したい場合に便利です。  
+  
+ 指定したファイルまたはディレクトリのパスごとに、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、次の変更のいずれかが発生した場合に変更通知をトリガーします。  
+  
+-   監視対象のファイルまたはディレクトリの変更の名前。  
+  
+-   指定したファイルまたはディレクトリが、モニターが作成されましたが、後で作成された時にありませんでした。 つまり、ファイルまたはディレクトリは、監視対象のアイテムのスコープで作成されました。  
+  
+-   監視対象のファイルのサイズを変更します。  
+  
+-   監視対象のファイルの内容は次の変更、または、監視対象のディレクトリの内容を変更します。  
+  
+-   ファイルまたはディレクトリのアクセス制御リスト (ACL) が変更されました。  
+  
+-   監視対象のファイルまたはディレクトリが削除されました。  
+  
+ 多くの変更が監視対象のファイルまたはディレクトリの同時に発生した場合、<xref:System.Runtime.Caching.HostFileChangeMonitor>インスタンスに特定の変更の追跡が失われることができます。 このシナリオでは、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、変更通知をトリガーします。 このシナリオは発生する可能性の高いときに、<xref:System.Runtime.Caching.HostFileChangeMonitor>インスタンスは、ディレクトリを監視し、短時間で、ディレクトリ構造のスコープ内の多くの変更が発生します。  
+  
+ の目的、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、何らかの変更セットの監視対象のファイルとディレクトリのうちとは見なされませんの特定の変更に関する詳細が取得されない重要なことを通知するだけです。 目的、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスが通知の状態を変更できるように、キャッシュ エントリ (またはエントリ) を削除することができますを提供することです。 <xref:System.Runtime.Caching.HostFileChangeMonitor>クラスが正確にどのような変更を指定していない、内部変更追跡のオーバーフローは使用されません。  
+  
+ パスを指定するときに、<xref:System.Runtime.Caching.HostFileChangeMonitor>インスタンス、ディレクトリおよびファイルのパスがディレクトリまたはファイルの完全パスにする必要があります。 相対パスとパスでワイルドカード文字は使用できません。  
+  
+ ときに、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、ASP.NET アプリケーションで使用、監視対象のアイテムへのアクセスに使用する Windows id は、ASP.NET アプリケーションのアプリケーション id。 つまり、アプリケーションの id では、次のいずれかになります。  
+  
+-   プロセス id。  
+  
+-   構成済みのアプリケーション id。  
+  
+-   UNC 資格情報が、アプリケーションは、UNC 共有から実行している場合です。  
+  
+ ときに、<xref:System.Runtime.Caching.HostFileChangeMonitor>クラスは、非 ASP.NET アプリケーションで使用、<xref:System.IO.FileSystemWatcher>ファイルを監視するクラスが内部的に使用します。 結果として、監視対象のファイルまたはディレクトリに適用されるどのようなアクセス制御リスト (ACL) は、現在のスレッドの Windows id に適用されます。  
+  
+> [!NOTE]
+>  呼び出し元は、コード アクセス セキュリティ (CAS) アクセス許可の適切なレベルが必要し、すべての監視対象のディレクトリとパスに NTFS アクセス許可が必要です。  
+  
+   
+  
+## Examples  
+ 次の例を使用するキャッシュ項目の作成、<xref:System.Runtime.Caching.HostFileChangeMonitor>ファイル システム上、ソース データ (これは、ファイル) の状態を監視するオブジェクト。 使用して、キャッシュ エントリを定義、<xref:System.Runtime.Caching.CacheItemPolicy>キャッシュ エントリの削除と有効期限の詳細を提供するオブジェクト。  
+  
+ [!code-csharp[CachingASPNetApplications#1](~/samples/snippets/csharp/VS_Snippets_WebNet/cachingaspnetapplications/cs/default.aspx.cs#1)]
+ [!code-vb[CachingASPNetApplications#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/cachingaspnetapplications/vb/default.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostFileChangeMonitor (System.Collections.Generic.IList&lt;string&gt; filePaths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;string&gt; filePaths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.HostFileChangeMonitor.#ctor(System.Collections.Generic.IList{System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filePaths" Type="System.Collections.Generic.IList&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="filePaths">1 つ以上のディレクトリ パスまたは監視へのファイル パスを含むリスト。</param>
+        <summary><see cref="T:System.Runtime.Caching.HostFileChangeMonitor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し、<xref:System.Runtime.Caching.HostFileChangeMonitor.%23ctor%2A>コンス トラクターに null 値を指定する必要があります、`filePaths`パラメーター。 少なくともコンス トラクターに渡され、それらのパスの監視を初期化しているパスのコレクションを検証します。  
+  
+> [!NOTE]
+>  コンス トラクターでは、パス名の文字列の検証のみを実行します。 パスが存在することを検証またはパスの正規化にしません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="filePaths" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filePaths" />0 個の項目が含まれています。  
+  
+ または  
+  
+ パス、<paramref name="filePaths" />リストが<see langword="null" />または空の文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Caching.HostFileChangeMonitor.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePaths">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; FilePaths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; FilePaths" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.HostFileChangeMonitor.FilePaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリおよびに渡されたファイル パスのコレクションを取得、<see cref="M:System.Runtime.Caching.HostFileChangeMonitor.#ctor(System.Collections.Generic.IList{System.String})" />コンス トラクターです。</summary>
+        <value>ディレクトリおよびファイル パスのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastModified">
+      <MemberSignature Language="C#" Value="public override DateTimeOffset LastModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTimeOffset LastModified" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.HostFileChangeMonitor.LastModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTimeOffset</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監視対象のファイルまたはパスの最終書き込み時刻を示す読み取り専用の値を取得します。</summary>
+        <value>最終書き込み時刻の監視対象のファイルまたはパスをします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のファイルまたはパス、ファイルの変更モニターが監視している場合、このプロパティは、すべてのファイルとパスのセットの最終書き込み時刻を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueId">
+      <MemberSignature Language="C#" Value="public override string UniqueId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UniqueId" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Caching.HostFileChangeMonitor.UniqueId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Caching</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別子を取得、<see cref="T:System.Runtime.Caching.HostFileChangeMonitor" />監視対象のディレクトリとファイル パスのセットに基づいているインスタンス。</summary>
+        <value>変更監視機能の識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成する文字列、<xref:System.Runtime.Caching.HostFileChangeMonitor.UniqueId%2A>プロパティの値は、次の部分から構成されます。  
+  
+-   ファイルまたはディレクトリのパス。  
+  
+-   UTC 時刻で最新の書き込み時間は、タイマー刻みとして計測されますが、16 進数文字列として表されます。  
+  
+-   ファイルのサイズを 16 進数文字列として表されます。  
+  
+ ファイルの変更モニターが複数のパスを監視している場合、このプロパティによって返される情報はすべての監視対象のディレクトリとファイル パスの 1 つの文字列に連結されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

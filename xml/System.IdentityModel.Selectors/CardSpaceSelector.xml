@@ -1,0 +1,150 @@
+<Type Name="CardSpaceSelector" FullName="System.IdentityModel.Selectors.CardSpaceSelector">
+  <TypeSignature Language="C#" Value="public static class CardSpaceSelector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed CardSpaceSelector extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.CardSpaceSelector" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マネージ コードでサポートされているすべての CardSpace 公開操作へのアクセスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetToken">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Tokens.GenericXmlSecurityToken GetToken (System.IdentityModel.Selectors.CardSpacePolicyElement[] policyChain, System.IdentityModel.Selectors.SecurityTokenSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Tokens.GenericXmlSecurityToken GetToken(class System.IdentityModel.Selectors.CardSpacePolicyElement[] policyChain, class System.IdentityModel.Selectors.SecurityTokenSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CardSpaceSelector.GetToken(System.IdentityModel.Selectors.CardSpacePolicyElement[],System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.GenericXmlSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="policyChain" Type="System.IdentityModel.Selectors.CardSpacePolicyElement[]" />
+        <Parameter Name="tokenSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="policyChain">クライアントが最終的なトークンにアンワインドを要求するフェデレーション セキュリティ チェーンを説明する <see cref="T:System.IdentityModel.Selectors.CardSpacePolicyElement" /> の配列。</param>
+        <param name="serializer">To be added.</param>
+        <summary>[!INCLUDE[infocard](~/includes/infocard-md.md)] システムを使用し、ポリシー チェーンおよびトークン シリアライザーを指定してセキュリティ トークンを生成します。</summary>
+        <returns>生成されたセキュリティ トークンを表す <see cref="T:System.IdentityModel.Tokens.GenericXmlSecurityToken" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="policyChain" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="policyChain" /> の長さがゼロです。  
+  
+ または  
+  
+ <paramref name="tokenSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToken">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Tokens.GenericXmlSecurityToken GetToken (System.Xml.XmlElement endpoint, System.Collections.Generic.IEnumerable&lt;System.Xml.XmlElement&gt; policy, System.Xml.XmlElement requiredRemoteTokenIssuer, System.IdentityModel.Selectors.SecurityTokenSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Tokens.GenericXmlSecurityToken GetToken(class System.Xml.XmlElement endpoint, class System.Collections.Generic.IEnumerable`1&lt;class System.Xml.XmlElement&gt; policy, class System.Xml.XmlElement requiredRemoteTokenIssuer, class System.IdentityModel.Selectors.SecurityTokenSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CardSpaceSelector.GetToken(System.Xml.XmlElement,System.Collections.Generic.IEnumerable{System.Xml.XmlElement},System.Xml.XmlElement,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.GenericXmlSecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.Xml.XmlElement" />
+        <Parameter Name="policy" Type="System.Collections.Generic.IEnumerable&lt;System.Xml.XmlElement&gt;" />
+        <Parameter Name="requiredRemoteTokenIssuer" Type="System.Xml.XmlElement" />
+        <Parameter Name="tokenSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">トークンの提示先となる受信者のエンドポイント アドレスを表す <see cref="T:System.Xml.XmlElement" />。</param>
+        <param name="policy">受信者が要求しているトークンの種類とクレームを示すポリシー フラグメントを格納している <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.Xml.XmlElement" />。</param>
+        <param name="requiredRemoteTokenIssuer">トークンの発行者を表す <see cref="T:System.Xml.XmlElement" />。</param>
+        <param name="serializer">To be added.</param>
+        <summary>[!INCLUDE[infocard](~/includes/infocard-md.md)] システムを使用し、エンドポイント、ポリシー、およびトークン シリアライザーを指定してセキュリティ トークンを生成します。</summary>
+        <returns>生成されたセキュリティ トークンを表す <see cref="T:System.IdentityModel.Tokens.GenericXmlSecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー発行者が指定したユーザーまたはサード パーティは、セキュリティ トークンを発行することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="endpoint" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="policy" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public static void Import (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Import(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CardSpaceSelector.Import(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">インポートするファイルの名前。</param>
+        <summary>表示、<paramref name="Import Card" />ユーザー インターフェイス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="fileName" /> は <see cref="F:System.String.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Manage">
+      <MemberSignature Language="C#" Value="public static void Manage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Manage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.CardSpaceSelector.Manage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Selectors</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーがカードの作成、削除、名前変更、変更を行うための [!INCLUDE[infocard](~/includes/infocard-md.md)] 管理ユーザー インターフェイスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[infocard](~/includes/infocard-md.md)] では、プライバシー保護およびセキュリティ上の理由から、プログラムでカードにアクセスしてライフサイクル管理を行うことはできません。 たとえば、プログラムでカードを作成、削除、または列挙することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

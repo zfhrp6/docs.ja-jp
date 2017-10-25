@@ -1,0 +1,169 @@
+<Type Name="Effect" FullName="System.Windows.Media.Effects.Effect">
+  <TypeSignature Language="C#" Value="public abstract class Effect : System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract Effect extends System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Effects.Effect" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタムのビットマップ効果を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生して、<xref:System.Windows.Media.Effects.Effect>カスタム ビットマップ効果を実装するクラス。 ほとんどの場合から派生<xref:System.Windows.Media.Effects.ShaderEffect>です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.UIPermission">UI リソースへのフル アクセスできます。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Effect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.Effect.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Effects.Effect" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.Effect Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.Effect Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.Effect.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.Effect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Effects.Effect" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、このオブジェクトの依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>このインスタンスの変更可能な複製。 返される複製は、事実上、現在のオブジェクトの詳細コピーです。 複製の <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Effects.Effect.Clone%2A>の変更可能なコピーを生成するためにメソッドを使用できる固定<xref:System.Windows.Freezable>オブジェクト。 便宜上、このメソッドは、継承されたシャドウ<xref:System.Windows.Freezable.Clone%2A>厳密に型指定された実装を提供するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.Effect CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.Effect CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.Effect.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.Effect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Effects.Effect" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EffectMapping">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Media.GeneralTransform EffectMapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.GeneralTransform EffectMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.Effect.EffectMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeneralTransform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、マウス入力および効果によって、座標系に変換します。</summary>
+        <value>適用する変換です。 既定では、識別情報の変換です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド、<xref:System.Windows.Media.Effects.Effect.EffectMapping%2A>プロパティを既定の id の変換とは異なる変換を割り当てます。  
+  
+ 入力は、この変換の反転によって変換されます。 <xref:System.Windows.Media.Visual.TransformToAncestor%2A>と<xref:System.Windows.Media.Visual.TransformToDescendant%2A>メソッドもが、<xref:System.Windows.Media.Effects.Effect.EffectMapping%2A>適用される変換。  
+  
+ 入力する点がある必要があります [0 - 1] の範囲、および発信のポイントが [0-1] にマップする必要があります範囲です。 <xref:System.Windows.Media.GeneralTransform.Inverse%2A>プロパティを返す必要があります、<xref:System.Windows.Media.GeneralTransform>逆のマッピングを計算します。  
+  
+ 送信、ポイントに効果が適用された後、逆の変換では、マップされたポイントを効果の適用前に、です。 非逆関数では、効果の適用前に、からポイントは効果が適用された後に適用するマップを変換します。  
+  
+ 変換に使用されている物理的なピクセルのサイズに関する情報が含まれていないことに注意してくださいおよび単位の範囲内でのみ動作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImplicitInput">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Brush ImplicitInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Brush ImplicitInput" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.Effect.ImplicitInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Windows.Media.Brush" /> 、用の入力として使用する場合、<see cref="T:System.Windows.Media.Effects.Effect" />のビットマップをにより、<see cref="T:System.Windows.UIElement" />を<see cref="T:System.Windows.Media.Effects.Effect" />その入力に適用します。</summary>
+        <value><see cref="T:System.Windows.Media.Brush" />入力として機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Effects.Effect.ImplicitInput%2A>プロパティへのブラシ値の入力値として、<xref:System.Windows.Media.Effects.ShaderEffect>です。  
+  
+ <xref:System.Windows.Media.Effects.Effect.ImplicitInput%2A>プロパティの表示から取得したシェーダーの入力を表す、<xref:System.Windows.UIElement>を<xref:System.Windows.Media.Effects.Effect>に適用されます。  
+  
+> [!NOTE]
+>  動作は定義されている場合に<xref:System.Windows.Media.Effects.Effect.ImplicitInput%2A>は他の WPF クラスでブラシとして使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,416 @@
+<Type Name="RelationshipManager" FullName="System.Data.Objects.DataClasses.RelationshipManager">
+  <TypeSignature Language="C#" Value="public class RelationshipManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RelationshipManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.RelationshipManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクト間のリレーションシップを追跡するためにオブジェクト コンテキストで使用されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager> は、オブジェクト間のリレーションシップを追跡するためにオブジェクト コンテキストで使用されます。 オブジェクト コンテキストで追跡されるリレーションシップごとに、<xref:System.Data.Objects.DataClasses.RelationshipManager> クラスのインスタンスが 1 つあります。 リレーションシップは、概念モデルのアソシエーションによって定義されます。 詳細については、次を参照してください。 [Association 要素 (CSDL)](http://msdn.microsoft.com/en-us/c305169a-8af7-432f-9ba7-800a163aed41)です。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例で新規追加`SalesOrderHeader`エンティティ、`Contact`エンティティです。 すべての関連 end を取得し、`Contact`エンティティとリレーションシップの名前、ソース ロール名、およびターゲット ロールの名前はそれぞれ関連する end が表示されます。  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Data.Objects.DataClasses.RelationshipManager Create (System.Data.Objects.DataClasses.IEntityWithRelationships owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Objects.DataClasses.RelationshipManager Create(class System.Data.Objects.DataClasses.IEntityWithRelationships owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.Create(System.Data.Objects.DataClasses.IEntityWithRelationships)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.DataClasses.RelationshipManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Data.Objects.DataClasses.IEntityWithRelationships" />
+      </Parameters>
+      <Docs>
+        <param name="owner">このメソッドを呼び出しているエンティティへの参照。</param>
+        <summary>新しい <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" /> オブジェクトを作成します。</summary>
+        <returns>要求された <see cref="T:System.Data.Objects.DataClasses.RelationshipManager" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ The <xref:System.Data.Objects.DataClasses.RelationshipManager.Create%2A> メソッドは、<xref:System.Data.Objects.DataClasses.IEntityWithRelationships> を実装するオブジェクトによって使用されます。 Object Services が <xref:System.Data.Objects.DataClasses.RelationshipManager> を実装するオブジェクトの <xref:System.Data.Objects.DataClasses.IEntityWithRelationships> プロパティを要求したときに、このオブジェクトのリレーションシップ マネージャーがまだ存在していない場合は、<xref:System.Data.Objects.DataClasses.RelationshipManager.Create%2A> メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllRelatedEnds">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Data.Objects.DataClasses.IRelatedEnd&gt; GetAllRelatedEnds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Objects.DataClasses.IRelatedEnd&gt; GetAllRelatedEnds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.GetAllRelatedEnds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Data.Objects.DataClasses.RelationshipManager/&lt;GetAllRelatedEnds&gt;d__40))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Data.Objects.DataClasses.IRelatedEnd&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リレーションシップ マネージャーによって管理されるすべての関連 End の列挙を返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />を実装するオブジェクトの<see cref="T:System.Data.Objects.DataClasses.IRelatedEnd" />します。 リレーションシップがまだ設定されていない場合は、空の列挙が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager.GetAllRelatedEnds%2A>メソッドの列挙を返します<xref:System.Data.Objects.DataClasses.EntityCollection%601>と<xref:System.Data.Objects.DataClasses.EntityReference%601>オブジェクト。 <xref:System.Data.Objects.DataClasses.EntityCollection%601>および<xref:System.Data.Objects.DataClasses.EntityReference%601>から派生した具象型は、<xref:System.Data.Objects.DataClasses.RelatedEnd>です。 <xref:System.Data.Objects.DataClasses.RelatedEnd>クラス実装を抽象化、<xref:System.Data.Objects.DataClasses.IRelatedEnd>インターフェイスです。  
+  
+   
+  
+## Examples  
+ このトピックの例がに基づいて、 [AdventureWorks Sales Model](http://msdn.microsoft.com/en-us/f16cd988-673f-4376-b034-129ca93c7832)です。 この例で新規追加`SalesOrderHeader`エンティティ、`Contact`エンティティです。 すべての関連 end を取得し、`Contact`エンティティとリレーションシップの名前を表示します、ソース ロール名、および各関連 end のターゲット ロール名  
+  
+ [!code-csharp[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/csharp/VS_Snippets_Data/DP ObjectServices Concepts/CS/Source.cs#irelatedend)]
+ [!code-vb[DP ObjectServices Concepts#IRelatedEnd](~/samples/snippets/visualbasic/VS_Snippets_Data/DP ObjectServices Concepts/VB/Source.vb#irelatedend)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelatedCollection&lt;TTargetEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.DataClasses.EntityCollection&lt;TTargetEntity&gt; GetRelatedCollection&lt;TTargetEntity&gt; (string relationshipName, string targetRoleName) where TTargetEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.DataClasses.EntityCollection`1&lt;!!TTargetEntity&gt; GetRelatedCollection&lt;class TTargetEntity&gt;(string relationshipName, string targetRoleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.GetRelatedCollection``1(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.DataClasses.EntityCollection&lt;TTargetEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TTargetEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TTargetEntity">返された <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> の型。</typeparam>
+        <param name="relationshipName">ナビゲートするリレーションシップの名前。 リレーションシップ名は、名前空間で修飾された名前ではありません。</param>
+        <param name="targetRoleName">ナビゲーションのターゲット ロールの名前。 リレーションシップ全体にわたるナビゲーションの方向を示します。</param>
+        <summary>指定されたリレーションシップ名とターゲット ロール名を持つ、関連オブジェクトの <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> を取得します。</summary>
+        <returns>関連オブジェクトの <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたリレーションシップ名とターゲット ロール名を持つ、関連オブジェクトの <xref:System.Data.Objects.DataClasses.EntityCollection%601> を取得します。  
+  
+ リレーションシップ名を名前空間で修飾しないでください。 リレーションシップ名の前に名前空間を付けると、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したロールが <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> ではなく <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> を返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelatedEnd">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.DataClasses.IRelatedEnd GetRelatedEnd (string relationshipName, string targetRoleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.DataClasses.IRelatedEnd GetRelatedEnd(string relationshipName, string targetRoleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.GetRelatedEnd(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.DataClasses.IRelatedEnd</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipName">これで、リレーションシップの名前<c>targetRoleName</c>が定義されています。 リレーションシップ名は、名前空間で修飾された名前ではありません。</param>
+        <param name="targetRoleName">もう一方の端を取得するためにターゲット ロール<c>relationshipName</c>です。</param>
+        <summary>リレーションシップに含まれる指定されたターゲット ロールの適切な型の <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> または <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> を返します。</summary>
+        <returns>
+          取得された <see cref="T:System.Data.Objects.DataClasses.IRelatedEnd" /> または <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> を表す <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ユーザーが完全なメタデータ (リレーションシップの両方の End の静的な型情報など) を所有していないシナリオで使用することを目的としています。 このメタデータは、リレーションシップ内の各エンティティ型の <xref:System.Data.Objects.DataClasses.EdmRelationshipAttribute> オブジェクトで指定されます。これにより、メタデータ システムは、指定されたリレーションシップ名とターゲット ロール名に基づいてメタデータを取得できます。  
+  
+ リレーションシップ名を名前空間で修飾しないでください。 リレーションシップ名の前に名前空間を付けると、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="relationshipName" /> または <paramref name="targetRoleName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ソースの型と所有者の型が一致しません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="targetRoleName" /> が無効です。  
+  
+ または  
+  
+ リレーションシップの種類がメタデータ内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelatedReference&lt;TTargetEntity&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Objects.DataClasses.EntityReference&lt;TTargetEntity&gt; GetRelatedReference&lt;TTargetEntity&gt; (string relationshipName, string targetRoleName) where TTargetEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Objects.DataClasses.EntityReference`1&lt;!!TTargetEntity&gt; GetRelatedReference&lt;class TTargetEntity&gt;(string relationshipName, string targetRoleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.GetRelatedReference``1(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.DataClasses.EntityReference&lt;TTargetEntity&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TTargetEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TTargetEntity">返された <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> の型。</typeparam>
+        <param name="relationshipName">ナビゲートするリレーションシップの名前。 リレーションシップ名は、名前空間で修飾された名前ではありません。</param>
+        <param name="targetRoleName">ナビゲーションのターゲット ロールの名前。 リレーションシップ全体にわたるナビゲーションの方向を示します。</param>
+        <summary>指定されたリレーションシップ名とターゲット ロール名の組み合わせを使用して、関連オブジェクトの <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> を取得します。</summary>
+        <returns>関連オブジェクトの <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップ名を名前空間で修飾しないでください。 リレーションシップ名の前に名前空間を付けると、エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定したロールが <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> ではなく <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> を返しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRelatedCollection&lt;TTargetEntity&gt;">
+      <MemberSignature Language="C#" Value="public void InitializeRelatedCollection&lt;TTargetEntity&gt; (string relationshipName, string targetRoleName, System.Data.Objects.DataClasses.EntityCollection&lt;TTargetEntity&gt; entityCollection) where TTargetEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InitializeRelatedCollection&lt;class TTargetEntity&gt;(string relationshipName, string targetRoleName, class System.Data.Objects.DataClasses.EntityCollection`1&lt;!!TTargetEntity&gt; entityCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedCollection``1(System.String,System.String,System.Data.Objects.DataClasses.EntityCollection{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TTargetEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+        <Parameter Name="entityCollection" Type="System.Data.Objects.DataClasses.EntityCollection&lt;TTargetEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TTargetEntity">初期化される <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> の型。</typeparam>
+        <param name="relationshipName">リレーションシップ名。</param>
+        <param name="targetRoleName">関連 End のロール名。</param>
+        <param name="entityCollection">初期化する <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" />。</param>
+        <summary>既定のコンストラクターを使用して作成された既存の <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedCollection%2A> メソッドは、既定のコンストラクターを使用して作成された既存の <xref:System.Data.Objects.DataClasses.EntityCollection%601> を初期化します。 <xref:System.Data.Objects.DataClasses.EntityCollection%601> は、指定されたリレーションシップ名とターゲット ロール名を使用して初期化されます。  
+  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedCollection%2A> メソッドは、シリアル化解除中にのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した <see cref="T:System.Data.Objects.DataClasses.EntityCollection`1" /> が既に初期化されている場合。  
+  
+ または  
+  
+ リレーションシップ マネージャーが <see cref="T:System.Data.Objects.ObjectContext" /> に既にアタッチされている場合。  
+  
+ または  
+  
+ この名前とターゲット ロールを持つリレーションシップがリレーションシップ マネージャーに既に含まれている場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeRelatedReference&lt;TTargetEntity&gt;">
+      <MemberSignature Language="C#" Value="public void InitializeRelatedReference&lt;TTargetEntity&gt; (string relationshipName, string targetRoleName, System.Data.Objects.DataClasses.EntityReference&lt;TTargetEntity&gt; entityReference) where TTargetEntity : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InitializeRelatedReference&lt;class TTargetEntity&gt;(string relationshipName, string targetRoleName, class System.Data.Objects.DataClasses.EntityReference`1&lt;!!TTargetEntity&gt; entityReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedReference``1(System.String,System.String,System.Data.Objects.DataClasses.EntityReference{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TTargetEntity">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="targetRoleName" Type="System.String" />
+        <Parameter Name="entityReference" Type="System.Data.Objects.DataClasses.EntityReference&lt;TTargetEntity&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TTargetEntity">初期化される <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> の型。</typeparam>
+        <param name="relationshipName">リレーションシップ名。</param>
+        <param name="targetRoleName">関連 End のロール名。</param>
+        <param name="entityReference">初期化する <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" />。</param>
+        <summary>既定のコンストラクターを使用して作成された既存の <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedReference%2A> メソッドは、既定のコンストラクターを使用して作成された既存の <xref:System.Data.Objects.DataClasses.EntityReference%601> を初期化します。 <xref:System.Data.Objects.DataClasses.EntityReference%601> は、指定されたリレーションシップ名とターゲット ロール名を使用して初期化されます。  
+  
+ <xref:System.Data.Objects.DataClasses.RelationshipManager.InitializeRelatedReference%2A> メソッドは、シリアル化解除中にのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">指定した <see cref="T:System.Data.Objects.DataClasses.EntityReference`1" /> が既に初期化されている場合。  
+  
+ または  
+  
+ リレーションシップ マネージャーが <see cref="T:System.Data.Objects.ObjectContext" /> に既にアタッチされている場合。  
+  
+ または  
+  
+ この名前とターゲット ロールを持つリレーションシップがリレーションシップ マネージャーに既に含まれている場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDeserialized">
+      <MemberSignature Language="C#" Value="public void OnDeserialized (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnDeserialized(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.OnDeserialized(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnDeserialized</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">シリアル化されたストリーム。</param>
+        <summary>内部的に使用されると共に、エンティティ オブジェクトを逆シリアル化する、<see cref="T:System.Data.Objects.DataClasses.RelationshipManager" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSerializing">
+      <MemberSignature Language="C#" Value="public void OnSerializing (System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OnSerializing(valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.RelationshipManager.OnSerializing(System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.Serialization.OnSerializing</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">シリアル化された指定のストリームのソースと宛先を記述し、呼び出し元が定義した追加のコンテキストを提供します。</param>
+        <summary>シリアル化されたリレーションシップによる <see cref="T:System.Data.EntityKey" /> のバイナリ シリアル化を準備するために、Object Services によって呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップのシリアル化は、バイナリ シリアル化でのみサポートされます。 リレーションシップを含む完全なオブジェクト グラフは、Windows Communication Foundation シリアル化および XML シリアル化ではサポートされません。 詳細については、次を参照してください。[オブジェクトのシリアル化](http://msdn.microsoft.com/en-us/06c77f9b-5b2e-4c78-b3e3-8c148ba0ea99)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

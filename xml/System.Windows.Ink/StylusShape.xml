@@ -1,0 +1,92 @@
+<Type Name="StylusShape" FullName="System.Windows.Ink.StylusShape">
+  <TypeSignature Language="C#" Value="public abstract class StylusShape" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StylusShape extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Ink.StylusShape" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スタイラスの先端を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Ink.StylusShape>図形、幅、およびスタイラスの先端の高さを指定します。  などのメソッド<xref:System.Windows.Ink.StrokeCollection.Erase%2A>と<xref:System.Windows.Ink.StrokeCollection.HitTest%2A>を使用して、<xref:System.Windows.Ink.StylusShape>にのっとってストロークのスタイラスの先端を決定します。 <xref:System.Windows.Ink.EllipseStylusShape> クラスおよび <xref:System.Windows.Ink.RectangleStylusShape> クラスは、<xref:System.Windows.Ink.StylusShape> を継承しています。  
+  
+<a name="xamlTextUsage_StylusShape"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ 通常、このクラスは XAML では使用されません。  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、<xref:System.Windows.Ink.StylusShape>に渡すと、<xref:System.Windows.Ink.StrokeCollection.GetIncrementalStrokeHitTester%2A>の一部を消去するメソッド、<xref:System.Windows.Ink.Stroke>です。 この例では、<xref:System.Windows.Ink.IncrementalStrokeHitTester>と呼ばれる`eraseTester`とその<xref:System.Windows.Ink.IncrementalStrokeHitTester.StrokeHit>イベントがこの例で定義されたイベント ハンドラーに接続されました。 インクを消去するユーザーを許可する、コントロールを作成するを参照してください。[する方法: カスタム コントロールでインクを消去](~/docs/framework/wpf/advanced/how-to-erase-ink-on-a-custom-control.md)です。  
+  
+ [!code-csharp[InkEraser#4](~/samples/snippets/csharp/VS_Snippets_Wpf/InkEraser/CSharp/InkEraser.cs#4)]
+ [!code-vb[InkEraser#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InkEraser/VisualBasic/InkEraser.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public double Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.StylusShape.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスの高さを取得します。</summary>
+        <value>スタイラスの高さ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotation">
+      <MemberSignature Language="C#" Value="public double Rotation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Rotation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.StylusShape.Rotation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ペンの角度を取得します。</summary>
+        <value>スタイラスの角度。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public double Width { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Ink.StylusShape.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スタイラスの幅を取得します。</summary>
+        <value>スタイラスの幅。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,434 @@
+<Type Name="SamlAuthorizationDecisionStatement" FullName="System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement">
+  <TypeSignature Language="C#" Value="public class SamlAuthorizationDecisionStatement : System.IdentityModel.Tokens.SamlSubjectStatement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAuthorizationDecisionStatement extends System.IdentityModel.Tokens.SamlSubjectStatement" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SamlSubjectStatement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したリソースへのサブジェクトによるアクセスが行われたことに関する承認決定をアサートする <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのクレームを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、SAML アサーションを使用してそれぞれのクレームを指定します。サブジェクトが特定のリソースへのアクセスを承認されるかどうかを指定できます。 SAML アサーション内でクレームは、SAML ステートメントにより表されます。 SAML 仕様では、一連の SAML ステートメントの種類を定義します。また、これらの種類の 1 つが <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement> です。 <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement> は、指定のリソースへのサブジェクトによるアクセスに関する承認決定が実施されたことをアサートします。 承認決定に関連するプロパティの一覧を次の表に示します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A>|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A> プロパティで表されるリソースに関する SAML 証明機関によって与えられた承認許可。|  
+|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Evidence%2A>|SAML 証明機関が承認決定のために依存する SAML アサーション セット。|  
+|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A>|アクセスが探索されるリソースを識別する URI 参照。|  
+|<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions%2A>|サブジェクトが <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A> プロパティによって表されるリソースに対して実行することを許可された一連のアクション。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthorizationDecisionStatement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly%2A> プロパティを `false` に、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ClaimType%2A> プロパティを `http://schemas.microsoft.com/mb/2005/09/ClaimType/SamlAuthorizationDecision` に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthorizationDecisionStatement (System.IdentityModel.Tokens.SamlSubject samlSubject, string resource, System.IdentityModel.Tokens.SamlAccessDecision accessDecision, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAction&gt; samlActions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SamlSubject samlSubject, string resource, valuetype System.IdentityModel.Tokens.SamlAccessDecision accessDecision, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlAction&gt; samlActions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.#ctor(System.IdentityModel.Tokens.SamlSubject,System.String,System.IdentityModel.Tokens.SamlAccessDecision,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlAction})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="samlSubject" Type="System.IdentityModel.Tokens.SamlSubject" />
+        <Parameter Name="resource" Type="System.String" />
+        <Parameter Name="accessDecision" Type="System.IdentityModel.Tokens.SamlAccessDecision" />
+        <Parameter Name="samlActions" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAction&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="samlSubject">クレームのサブジェクトを表す <see cref="T:System.IdentityModel.Tokens.SamlSubject" />。 <see cref="P:System.IdentityModel.Tokens.SamlSubjectStatement.SamlSubject" /> プロパティを設定します。</param>
+        <param name="resource">アクセスが探索されるリソースを識別する URI 参照。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource" /> プロパティを設定します。</param>
+        <param name="accessDecision">指定のリソースへのサブジェクトによるアクセスについて SAML 証明機関により実施された承認決定を指定する <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" />。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision" /> プロパティを設定します。</param>
+        <param name="samlActions">サブジェクトがリソースに対して実行することを許可されるアクション セットを指定する <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAction" />。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> クラスの新しいインスタンスを初期化します。  の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly%2A> プロパティを `false` に、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ClaimType%2A> プロパティを `http://schemas.microsoft.com/mb/2005/09/ClaimType/SamlAuthorizationDecision` に、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Evidence%2A> プロパティを `null` に初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlActions" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="samlActions" /> は、<see langword="null" /> であるメンバーを含みます。  
+  
+ または  
+  
+ <paramref name="samlSubject" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="authorityBindings" /> は、<see langword="null" /> であるメンバーを含みます。  
+  
+ または  
+  
+ <paramref name="resource" /> が <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAuthorizationDecisionStatement (System.IdentityModel.Tokens.SamlSubject samlSubject, string resource, System.IdentityModel.Tokens.SamlAccessDecision accessDecision, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAction&gt; samlActions, System.IdentityModel.Tokens.SamlEvidence samlEvidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SamlSubject samlSubject, string resource, valuetype System.IdentityModel.Tokens.SamlAccessDecision accessDecision, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlAction&gt; samlActions, class System.IdentityModel.Tokens.SamlEvidence samlEvidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.#ctor(System.IdentityModel.Tokens.SamlSubject,System.String,System.IdentityModel.Tokens.SamlAccessDecision,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlAction},System.IdentityModel.Tokens.SamlEvidence)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="samlSubject" Type="System.IdentityModel.Tokens.SamlSubject" />
+        <Parameter Name="resource" Type="System.String" />
+        <Parameter Name="accessDecision" Type="System.IdentityModel.Tokens.SamlAccessDecision" />
+        <Parameter Name="samlActions" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAction&gt;" />
+        <Parameter Name="samlEvidence" Type="System.IdentityModel.Tokens.SamlEvidence" />
+      </Parameters>
+      <Docs>
+        <param name="samlSubject">クレームのサブジェクトを表す <see cref="T:System.IdentityModel.Tokens.SamlSubject" />。 <see cref="P:System.IdentityModel.Tokens.SamlSubjectStatement.SamlSubject" /> プロパティを設定します。</param>
+        <param name="resource">アクセスが探索されるリソースを識別する URI 参照。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource" /> プロパティを設定します。</param>
+        <param name="accessDecision">指定のリソースへのサブジェクトによるアクセスについて SAML 証明機関により実施された承認決定を指定する <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" />。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision" /> プロパティを設定します。</param>
+        <param name="samlActions">サブジェクトがリソースに対して実行することを許可されるアクション セットを指定する <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAction" />。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions" /> プロパティを設定します。</param>
+        <param name="samlEvidence">SAML 証明機関が承認決定のために依存する SAML アサーション セットを含む <see cref="T:System.IdentityModel.Tokens.SamlEvidence" />。 <see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Evidence" /> プロパティを設定します。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> クラスの新しいインスタンスを初期化します。  の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly%2A> プロパティを `false` に、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ClaimType%2A> プロパティを `http://schemas.microsoft.com/mb/2005/09/ClaimType/SamlAuthorizationDecision` に初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessDecision">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlAccessDecision AccessDecision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IdentityModel.Tokens.SamlAccessDecision AccessDecision" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAccessDecision</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定のリソースへのサブジェクトによるアクセスについて SAML 証明機関により実施された承認決定を取得または設定します。</summary>
+        <value>指定のリソースへのサブジェクトによるアクセスについて SAML 証明機関により実施された承認決定を指定する <see cref="T:System.IdentityModel.Tokens.SamlAccessDecision" /> 値のいずれか。  
+  
+ <list type="table"><listheader><term>例外の種類  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term><see cref="T:System.InvalidOperationException" /></term><description><see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision" />プロパティが設定され、<see cref="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly" />プロパティは<see langword="true" />します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `Decision` 要素の `<AuthorizationDecisionStatement>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClaimsToList">
+      <MemberSignature Language="C#" Value="protected override void AddClaimsToList (System.Collections.Generic.IList&lt;System.IdentityModel.Claims.Claim&gt; claims);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddClaimsToList(class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Claims.Claim&gt; claims) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AddClaimsToList(System.Collections.Generic.IList{System.IdentityModel.Claims.Claim})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claims" Type="System.Collections.Generic.IList&lt;System.IdentityModel.Claims.Claim&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="claims">追加する一連のクレームを格納する <see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.IdentityModel.Claims.Claim" />。</param>
+        <summary>このインスタンスのプロパティに基づく要求を、指定したクレームのコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AddClaimsToList%28System.Collections.Generic.IList%7BSystem.IdentityModel.Claims.Claim%7D%29> メソッドは、`claims` プロパティに指定された各アクションのためのクレームを <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions%2A> パラメーターに追加します。 コレクションに追加される各クレームは、アクション、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ClaimType%2A> プロパティ、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A> プロパティ、および <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A> プロパティに基づきます。 クレームのリソース型は <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionClaimResource> です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claims" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimType">
+      <MemberSignature Language="C#" Value="public static string ClaimType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ClaimType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ClaimType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ クレームの種類を取得します。</summary>
+        <value>セキュリティ クレームの種類。 常に<c>http://schemas.microsoft.com/mb/2005/09/ClaimType/SamlAuthorizationDecision</c>です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evidence">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlEvidence Evidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SamlEvidence Evidence" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Evidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlEvidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML 証明機関が承認決定のために依存する証拠を取得または設定します。</summary>
+        <value>SAML 証明機関が承認決定のために依存する SAML アサーション セットを含む <see cref="T:System.IdentityModel.Tokens.SamlEvidence" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A> プロパティは、OASIS Security Assertion Markup Language (SAML) 仕様のアサーションおよびプロトコルで定義されている `<Evidence>` 要素に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public override bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public override void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.MakeReadOnly%2A> メソッドが呼び出される場合は、<xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.IsReadOnly%2A> プロパティが `true` に設定され、このインスタンスのプロパティを設定できなくなります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public override void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, System.IdentityModel.Selectors.SecurityTokenResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader">SAML 承認ステートメントを読み取る <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている、SAML 承認ステートメントの XML 要素を読み取ることができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer">デジタル署名の <see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を読み取る <see langword="KeyInfo" />。</param>
+        <param name="resolver">To be added.</param>
+        <summary>指定した XML リーダーから SAML 承認ステートメントを読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.ReadXml%28System.Xml.XmlDictionaryReader%2CSystem.IdentityModel.Tokens.SamlSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenResolver%29> メソッドは、次のプロパティを設定します。  
+  
+-   <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A>  
+  
+-   <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Evidence%2A>  
+  
+-   <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource%2A>  
+  
+-   <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions%2A>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">
+          <paramref name="reader" /> は、<see langword="Resource" /> と <see langword="Decision" /> の属性を含まない XML 要素を参照します。  
+  
+ または  
+  
+ <paramref name="reader" /> は、<see langword="&lt;saml:Subject&gt;" />、<see langword="&lt;saml:Evidence&gt;" />、および <see langword="&lt;saml:Action&gt;" /> 子要素を持たない XML 要素を参照します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public string Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのサブジェクトによってアクセスが求められているリソース。</summary>
+        <value>アクセスが探索されるリソースを識別する URI 参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.AccessDecision%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `Decision` 要素の `<AuthorizationDecisionStatement>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SamlActions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlAction&gt; SamlActions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Tokens.SamlAction&gt; SamlActions" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlAction&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブジェクトがリソースに対して実行することを許可されるアクション セットを取得します。</summary>
+        <value>サブジェクトがリソースに対して実行することを許可されるアクション セットを指定する <see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SamlAction" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.SamlActions%2A> プロパティは、OASIS Security Assertion Markup Language (SAML) 仕様のアサーションおよびプロトコルで定義されている `<Action>` 要素に対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public override void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer">SAML 承認ステートメントを書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="samlSerializer">XML 要素を SAML アサーションに書き込むことができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoSerializer"><see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" /> 句を書き込むことができる <see langword="KeyInfo" />。</param>
+        <summary>指定した XML シリアライザーに SAML 承認ステートメントを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement.WriteXml%28System.Xml.XmlDictionaryWriter%2CSystem.IdentityModel.Tokens.SamlSerializer%2CSystem.IdentityModel.Selectors.SecurityTokenSerializer%29> メソッドを使用して、現在の <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement> インスタンスを `<AuthorizationDecisionStatement>` 要素に書き込みます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

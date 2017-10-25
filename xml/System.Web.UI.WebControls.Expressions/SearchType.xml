@@ -1,0 +1,82 @@
+<Type Name="SearchType" FullName="System.Web.UI.WebControls.Expressions.SearchType">
+  <TypeSignature Language="C#" Value="public enum SearchType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SearchType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.SearchType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>インスタンスで検索の種類を指定、<see cref="T:System.Web.UI.WebControls.Expressions.SearchExpression" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.SearchExpression>オプションの使用をフィルター処理、<xref:System.Web.UI.WebControls.Expressions.SearchType>列挙型、文字列の比較の実行時にします。 設定する、<xref:System.Web.UI.WebControls.Expressions.SearchExpression.SearchType%2A>プロパティのいずれかを<xref:System.Web.UI.WebControls.Expressions.SearchType>列挙値。  
+  
+   
+  
+## Examples  
+ 次の例は、マークアップを使用して設定する方法を示しています、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>の StartsWith 値にオプションをフィルター処理、<xref:System.Web.UI.WebControls.Expressions.SearchType.StartsWith>列挙します。  
+  
+```  
+<asp:SearchExpression SearchType="StartsWith" DataFields="Name" >  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="Contains" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.SearchType Contains = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.SearchType.Contains" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.SearchType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索のフィールドに任意の場所の文字列が検索文字列に一致するかどうかを調べることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EndsWith">
+      <MemberSignature Language="C#" Value="EndsWith" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.SearchType EndsWith = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.SearchType.EndsWith" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.SearchType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索のフィールドの末尾に文字列が検索文字列に一致するかどうかを調べることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StartsWith">
+      <MemberSignature Language="C#" Value="StartsWith" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.Expressions.SearchType StartsWith = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Expressions.SearchType.StartsWith" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.SearchType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索のフィールドの先頭の文字列が検索文字列に一致するかどうかを調べることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,103 @@
+<Type Name="SelectionMode" FullName="System.Windows.Forms.SelectionMode">
+  <TypeSignature Language="C#" Value="public enum SelectionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SelectionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SelectionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リスト ボックスの選択の動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙はなどのクラスによって使用<xref:System.Windows.Forms.ListBox>と<xref:System.Windows.Forms.CheckedListBox>です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Forms.ListBox.GetSelected%2A>でアイテムを決定する方法、<xref:System.Windows.Forms.ListBox>が選択されていないアイテムを選択し、選択されている項目の選択を解除するために選択します。 例を使用して、<xref:System.Windows.Forms.ListBox.SelectionMode%2A>プロパティを有効にする、<xref:System.Windows.Forms.ListBox>が複数あるを使用して項目を選択、<xref:System.Windows.Forms.ListBox.Sorted%2A>の項目を並べ替える方法を説明するプロパティ、<xref:System.Windows.Forms.ListBox>自動的にします。 この例では、 <xref:System.Windows.Forms.ListBox>、名前付き`listBox1`、ことと、フォームに追加された、`InitializeMyListBox`からこの例で定義されたメソッドを呼び出す、<xref:System.Windows.Forms.Form.Load>フォームのイベントです。  
+  
+ [!code-cpp[ListBox.GetSelected#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListBox.GetSelected/CPP/form1.cpp#1)]
+ [!code-csharp[ListBox.GetSelected#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListBox.GetSelected/CS/form1.cs#1)]
+ [!code-vb[ListBox.GetSelected#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListBox.GetSelected/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MultiExtended">
+      <MemberSignature Language="C#" Value="MultiExtended" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SelectionMode MultiExtended = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SelectionMode.MultiExtended" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数の項目を選択して、ユーザーが項目を選択するし、shift キーを押し、ctrl キーを押し、矢印キーを使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiSimple">
+      <MemberSignature Language="C#" Value="MultiSimple" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SelectionMode MultiSimple = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SelectionMode.MultiSimple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数の項目を選択することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SelectionMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SelectionMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目を選択できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="One">
+      <MemberSignature Language="C#" Value="One" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.SelectionMode One = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.SelectionMode.One" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つの項目を選択することができます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

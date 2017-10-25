@@ -1,0 +1,56 @@
+<Type Name="IOrderedQueryable&lt;T&gt;" FullName="System.Linq.IOrderedQueryable&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IOrderedQueryable&lt;out T&gt; : System.Collections.Generic.IEnumerable&lt;out T&gt;, System.Linq.IOrderedQueryable, System.Linq.IQueryable&lt;out T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IOrderedQueryable`1&lt;+ T&gt; implements class System.Collections.Generic.IEnumerable`1&lt;!T&gt;, class System.Collections.IEnumerable, class System.Linq.IOrderedQueryable, class System.Linq.IQueryable, class System.Linq.IQueryable`1&lt;!T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.IOrderedQueryable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Covariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;T&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IOrderedQueryable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable&lt;T&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">データ ソースのコンテンツの種類。</typeparam>
+    <summary>並べ替え操作の結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.IOrderedQueryable%601>インターフェイスは、クエリ プロバイダーで実装するためです。  
+  
+ このインターフェイスは、メソッドを呼び出す並べ替えクエリの結果を表す<xref:System.Linq.Queryable.OrderBy%2A>、 <xref:System.Linq.Queryable.OrderByDescending%2A>、<xref:System.Linq.Queryable.ThenBy%2A>または<xref:System.Linq.Queryable.ThenByDescending%2A>です。 ときに<xref:System.Linq.IQueryProvider.CreateQuery%60%601%28System.Linq.Expressions.Expression%29>が呼び出され、結果の並べ替えのクエリを表す式ツリーを渡される<xref:System.Linq.IQueryable%601>オブジェクトを実装する型でなければなりません<xref:System.Linq.IOrderedQueryable%601>です。  
+  
+ LINQ プロバイダーを作成する方法の詳細については、次を参照してください。 [LINQ: IQueryable プロバイダーのビルド](http://go.microsoft.com/fwlink/?LinkID=112370)MSDN ブログ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

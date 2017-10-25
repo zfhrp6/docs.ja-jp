@@ -1,0 +1,56 @@
+<Type Name="ExpandCollapsePattern+ExpandCollapsePatternInformation" FullName="System.Windows.Automation.ExpandCollapsePattern+ExpandCollapsePatternInformation">
+  <TypeSignature Language="C#" Value="public struct ExpandCollapsePattern.ExpandCollapsePatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit ExpandCollapsePattern/ExpandCollapsePatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.ExpandCollapsePattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.ExpandCollapsePattern.Current" />または<see cref="P:System.Windows.Automation.ExpandCollapsePattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExpandCollapseState">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ExpandCollapseState ExpandCollapseState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ExpandCollapseState ExpandCollapseState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ExpandCollapsePattern.ExpandCollapsePatternInformation.ExpandCollapseState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ExpandCollapseState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.ExpandCollapseState" /> の <see cref="T:System.Windows.Automation.AutomationElement" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Automation.ExpandCollapseState" /> の <see cref="T:System.Windows.Automation.AutomationElement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.ExpandCollapseState> は、すべての子孫オブジェクトの可視性を表すのではなく、直接の子オブジェクトの可視性のみを表します。  
+  
+ 既定値は <xref:System.Windows.Automation.ExpandCollapseState.Expanded> です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement>展開または折りたたみメニュー項目が現在のに基づいてしようとする関数に渡されるメニュー項目を表す<xref:System.Windows.Automation.ExpandCollapseState>です。  
+  
+ [!code-csharp[UIAExpandCollapsePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/CSharp/UIAExpandCollapsePattern_snippets.cs#101)]
+ [!code-vb[UIAExpandCollapsePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/VisualBasic/UIAExpandCollapsePattern_snippets.vb#101)]  
+[!code-csharp[UIAExpandCollapsePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/CSharp/UIAExpandCollapsePattern_snippets.cs#102)]
+[!code-vb[UIAExpandCollapsePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAExpandCollapsePattern_snip/VisualBasic/UIAExpandCollapsePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

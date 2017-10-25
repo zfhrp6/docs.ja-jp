@@ -1,0 +1,254 @@
+<Type Name="ScrollEventArgs" FullName="System.Windows.Forms.ScrollEventArgs">
+  <TypeSignature Language="C#" Value="public class ScrollEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScrollEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ScrollEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="Scroll" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Scroll`イベント、ユーザーがスクロール バーの値を変更するときに発生します。 このイベントは、各種のスクロール バーの矢印をクリックすると、上向き矢印または下向き矢印を押すかスクロール ボックスをドラッグするなどの操作から発生します。 <xref:System.Windows.Forms.ScrollEventArgs>発生したスクロール イベントの種類と、スクロール バーの新しい値を指定します。 使用して、<xref:System.Windows.Forms.ScrollEventArgs.ScrollOrientation%2A>のスクロール バーの方向を決定するプロパティ、`Scroll`イベント。  
+  
+ `Scroll`イベントが発生した、 <xref:System.Windows.Forms.DataGridView>、 <xref:System.Windows.Forms.ScrollableControl>、 <xref:System.Windows.Forms.ScrollBar>、および<xref:System.Windows.Forms.DataGrid>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/CS/source.cs#1)]
+ [!code-vb[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollEventArgs (System.Windows.Forms.ScrollEventType type, int newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.ScrollEventType type, int32 newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollEventArgs.#ctor(System.Windows.Forms.ScrollEventType,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.ScrollEventType" />
+        <Parameter Name="newValue" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Windows.Forms.ScrollEventType" /> 値のいずれか。</param>
+        <param name="newValue">スクロール バーの新しい値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ScrollEventArgs" />クラスの特定の値を使用して、<see cref="P:System.Windows.Forms.ScrollEventArgs.Type" />と<see cref="P:System.Windows.Forms.ScrollEventArgs.NewValue" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollEventArgs (System.Windows.Forms.ScrollEventType type, int oldValue, int newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.ScrollEventType type, int32 oldValue, int32 newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollEventArgs.#ctor(System.Windows.Forms.ScrollEventType,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.ScrollEventType" />
+        <Parameter Name="oldValue" Type="System.Int32" />
+        <Parameter Name="newValue" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Windows.Forms.ScrollEventType" /> 値のいずれか。</param>
+        <param name="oldValue">スクロール バーの古い値。</param>
+        <param name="newValue">スクロール バーの新しい値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ScrollEventArgs" />クラスの特定の値を使用して、 <see cref="P:System.Windows.Forms.ScrollEventArgs.Type" />、 <see cref="P:System.Windows.Forms.ScrollEventArgs.OldValue" />、および<see cref="P:System.Windows.Forms.ScrollEventArgs.NewValue" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollEventArgs (System.Windows.Forms.ScrollEventType type, int newValue, System.Windows.Forms.ScrollOrientation scroll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.ScrollEventType type, int32 newValue, valuetype System.Windows.Forms.ScrollOrientation scroll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollEventArgs.#ctor(System.Windows.Forms.ScrollEventType,System.Int32,System.Windows.Forms.ScrollOrientation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.ScrollEventType" />
+        <Parameter Name="newValue" Type="System.Int32" />
+        <Parameter Name="scroll" Type="System.Windows.Forms.ScrollOrientation" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Windows.Forms.ScrollEventType" /> 値のいずれか。</param>
+        <param name="newValue">スクロール バーの新しい値。</param>
+        <param name="scroll"><see cref="T:System.Windows.Forms.ScrollOrientation" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ScrollEventArgs" />クラスの特定の値を使用して、 <see cref="P:System.Windows.Forms.ScrollEventArgs.Type" />、 <see cref="P:System.Windows.Forms.ScrollEventArgs.NewValue" />、および<see cref="P:System.Windows.Forms.ScrollEventArgs.ScrollOrientation" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScrollEventArgs (System.Windows.Forms.ScrollEventType type, int oldValue, int newValue, System.Windows.Forms.ScrollOrientation scroll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.ScrollEventType type, int32 oldValue, int32 newValue, valuetype System.Windows.Forms.ScrollOrientation scroll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ScrollEventArgs.#ctor(System.Windows.Forms.ScrollEventType,System.Int32,System.Int32,System.Windows.Forms.ScrollOrientation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Windows.Forms.ScrollEventType" />
+        <Parameter Name="oldValue" Type="System.Int32" />
+        <Parameter Name="newValue" Type="System.Int32" />
+        <Parameter Name="scroll" Type="System.Windows.Forms.ScrollOrientation" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Windows.Forms.ScrollEventType" /> 値のいずれか。</param>
+        <param name="oldValue">スクロール バーの古い値。</param>
+        <param name="newValue">スクロール バーの新しい値。</param>
+        <param name="scroll"><see cref="T:System.Windows.Forms.ScrollOrientation" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ScrollEventArgs" />クラスの特定の値を使用して、 <see cref="P:System.Windows.Forms.ScrollEventArgs.Type" />、 <see cref="P:System.Windows.Forms.ScrollEventArgs.OldValue" />、 <see cref="P:System.Windows.Forms.ScrollEventArgs.NewValue" />、および<see cref="P:System.Windows.Forms.ScrollEventArgs.ScrollOrientation" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public int NewValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ScrollEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい設定を取得または<see cref="P:System.Windows.Forms.ScrollBar.Value" />スクロール バーのです。</summary>
+        <value>数値を<see cref="P:System.Windows.Forms.ScrollBar.Value" />プロパティに変更されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。  
+  
+ [!code-cpp[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/CS/source.cs#1)]
+ [!code-vb[Classic ScrollBar.OnScroll Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ScrollBar.OnScroll Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValue">
+      <MemberSignature Language="C#" Value="public int OldValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OldValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ScrollEventArgs.OldValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、古い<see cref="P:System.Windows.Forms.ScrollBar.Value" />スクロール バーのです。</summary>
+        <value>数値を<see cref="P:System.Windows.Forms.ScrollBar.Value" />変更前に含まれるプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ScrollableControl>、ように、<xref:System.Windows.Forms.Panel>または<xref:System.Windows.Forms.ContainerControl>です。 インスタンスを名前`ScrollableControl1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#74](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#74)]
+ [!code-vb[System.Windows.Forms.EventExamples#74](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#74)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollOrientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ScrollOrientation ScrollOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ScrollOrientation ScrollOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ScrollEventArgs.ScrollOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ScrollOrientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生するスクロール バーの方向を取得、<see langword="Scroll" />イベント。</summary>
+        <value><see cref="T:System.Windows.Forms.ScrollOrientation" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常使用する、<xref:System.Windows.Forms.ScrollEventArgs.ScrollOrientation%2A>発生スクロール バーの方向を決定するプロパティ、`Scroll`イベントなどの<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ScrollableControl>、ように、<xref:System.Windows.Forms.Panel>または<xref:System.Windows.Forms.ContainerControl>です。 インスタンスを名前`ScrollableControl1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#74](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#74)]
+ [!code-vb[System.Windows.Forms.EventExamples#74](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#74)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ScrollEventType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ScrollEventType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ScrollEventArgs.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ScrollEventType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したスクロール イベントの種類を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ScrollEventType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ScrollableControl>、ように、<xref:System.Windows.Forms.Panel>または<xref:System.Windows.Forms.ContainerControl>です。 インスタンスを名前`ScrollableControl1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ScrollableControl.Scroll?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#74](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#74)]
+ [!code-vb[System.Windows.Forms.EventExamples#74](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#74)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

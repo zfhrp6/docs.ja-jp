@@ -1,0 +1,489 @@
+<Type Name="XsdDataContractImporter" FullName="System.Runtime.Serialization.XsdDataContractImporter">
+  <TypeSignature Language="C#" Value="public class XsdDataContractImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XsdDataContractImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.XsdDataContractImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML スキーマ ファイル (.xsd) のセットを共通言語ランタイム (CLR) 型に変換することを可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の Web サービスを組み込む必要がある Web サービス、または XML スキーマからデータ コントラクト型を作成する場合は、<xref:System.Runtime.Serialization.XsdDataContractImporter> を使用します。 <xref:System.Runtime.Serialization.XsdDataContractImporter> は、XML スキーマのセットを変換し、選択したプログラミング言語でデータ コントラクトを表す [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] 型を作成します。 コードを作成するには、<xref:System.CodeDom> 名前空間を使用します。  
+  
+ 逆に、CLR 型で表されるデータを組み込む Web サービスを作成する場合、および他の Web サービスが消費できるように各データ型の XML スキーマをエクスポートする必要がある場合は、<xref:System.Runtime.Serialization.XsdDataContractExporter> クラスを使用します。 つまり、<xref:System.Runtime.Serialization.XsdDataContractExporter> は、CLR 型のセットを XML スキーマのセットに変換します。  
+  
+> [!NOTE]
+>  デザイン時に、XML スキーマから CLR 型を生成するには、使用、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)です。 XSD ファイルからコードを生成するには、`/dataContractOnly`ツールのスイッチ。 この処理をさらに制御する必要がある、またはプログラムによって実行する必要がある場合は、<xref:System.Runtime.Serialization.XsdDataContractImporter> を使用することもできます。  
+  
+   
+  
+## Examples  
+ <xref:System.Xml.Schema.XmlSchemaSet> を作成し、<xref:System.Runtime.Serialization.XsdDataContractImporter.Import%2A> メソッドを呼び出して <xref:System.CodeDom.CodeCompileUnit> を作成する例を次に示します。 その後、<xref:System.CodeDom.CodeCompileUnit> を使用して Visual C# コード ファイルと Visual Basic コード ファイルの両方を作成します。  
+  
+ [!code-csharp[XsdDataContractImporter#0](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#0)]
+ [!code-vb[XsdDataContractImporter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsdDataContractImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.XsdDataContractImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XsdDataContractImporter (System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.#ctor(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeCompileUnit">コードを保存するために使用する <see cref="T:System.CodeDom.CodeCompileUnit" />。</param>
+        <summary>CLR コードを生成するために使用される <see cref="T:System.Runtime.Serialization.XsdDataContractImporter" /> を使用して、<see cref="T:System.CodeDom.CodeCompileUnit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用して、生成済みの <xref:System.CodeDom.CodeCompileUnit> にコードを追加します。  
+  
+   
+  
+## Examples  
+ <xref:System.Xml.Schema.XmlSchemaSet> を作成し、<xref:System.Runtime.Serialization.XsdDataContractImporter.Import%2A> メソッドを呼び出して <xref:System.CodeDom.CodeCompileUnit> を作成する例を次に示します。 その後、<xref:System.CodeDom.CodeCompileUnit> を使用して Visual C# コード ファイルと Visual Basic コード ファイルの両方を作成します。  
+  
+ [!code-csharp[XsdDataContractImporter#1](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#1)]
+ [!code-vb[XsdDataContractImporter#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CanImport">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>スキーマを <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換できるかどうかを示す値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インポート可能な種類の詳細については、次を参照してください。[データ コントラクト シリアライザーでサポートされる型](~/docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CanImport">
+      <MemberSignature Language="C#" Value="public bool CanImport (System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanImport(class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.CanImport(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">変換するスキーマを格納する <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれているスキーマを <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          スキーマをデータ コントラクト型に変換できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> メソッドを呼び出して <xref:System.CodeDom.CodeCompileUnit> を生成できるかどうかを決定する例を次に示します。  
+  
+ [!code-csharp[XsdDataContractImporter#2](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#2)]
+ [!code-vb[XsdDataContractImporter#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">インポートに関連するデータ コントラクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanImport">
+      <MemberSignature Language="C#" Value="public bool CanImport (System.Xml.Schema.XmlSchemaSet schemas, System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt; typeNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanImport(class System.Xml.Schema.XmlSchemaSet schemas, class System.Collections.Generic.ICollection`1&lt;class System.Xml.XmlQualifiedName&gt; typeNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.CanImport(System.Xml.Schema.XmlSchemaSet,System.Collections.Generic.ICollection{System.Xml.XmlQualifiedName})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="typeNames" Type="System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">変換するスキーマを格納する <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="typeNames">インポートするスキーマ型のセットを表す <see cref="T:System.Collections.Generic.ICollection`1" />  の <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれる指定した型のセットが、<see cref="T:System.CodeDom.CodeCompileUnit" /> 内に生成される CLR 型に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          スキーマを変換できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターまたは <paramref name="typeNames" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">インポートに関連するデータ コントラクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanImport">
+      <MemberSignature Language="C#" Value="public bool CanImport (System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.XmlSchemaElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanImport(class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.XmlSchemaElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.CanImport(System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.XmlSchemaElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="element" Type="System.Xml.Schema.XmlSchemaElement" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">インポートする <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="element">スキーマのセットをチェックインする特定の <see cref="T:System.Xml.Schema.XmlSchemaElement" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれる指定したスキーマ要素をインポートできるかどうかを示す値を取得します。</summary>
+        <returns>
+          要素をインポートできる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、型と、その型が参照しているすべてのスキーマ型をチェックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターまたは <paramref name="element" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">インポートに関連するデータ コントラクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanImport">
+      <MemberSignature Language="C#" Value="public bool CanImport (System.Xml.Schema.XmlSchemaSet schemas, System.Xml.XmlQualifiedName typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanImport(class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.XmlQualifiedName typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.CanImport(System.Xml.Schema.XmlSchemaSet,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="typeName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">スキーマ表現が格納されている <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="typeName"><see cref="T:System.Collections.IList" /> からインポートする必要があるスキーマ型の名前を指定する <see cref="T:System.Xml.XmlQualifiedName" /> の <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれているスキーマを <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換できるかどうかを示す値を取得します。</summary>
+        <returns>
+          スキーマをデータ コントラクト型に変換できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インポート可能な種類の詳細については、次を参照してください。[データ コントラクト シリアライザーでサポートされる型](~/docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターまたは <paramref name="typeName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">インポートに関連するデータ コントラクトが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeCompileUnit">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCompileUnit CodeCompileUnit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeCompileUnit CodeCompileUnit" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.XsdDataContractImporter.CodeCompileUnit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成された CLR 型を格納するために使用される <see cref="T:System.CodeDom.CodeCompileUnit" /> を取得します。</summary>
+        <value>生成された CLR 型を格納するために使用される <see cref="T:System.CodeDom.CodeCompileUnit" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter> を使用してスキーマをインポートした後、このプロパティを呼び出して、生成されたすべてのコードがその中に格納されている <xref:System.CodeDom.CodeCompileUnit> にアクセスします。  
+  
+   
+  
+## Examples  
+ <xref:System.CodeDom.CodeCompileUnit> を作成する例を次に示します。 次に、<xref:System.CodeDom.CodeCompileUnit> を使用して Visual C# コードおよび Visual Basic コードの両方のファイルを作成できます。  
+  
+ [!code-csharp[XsdDataContractImporter#1](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#1)]
+ [!code-vb[XsdDataContractImporter#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeTypeReference">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference GetCodeTypeReference (System.Xml.XmlQualifiedName typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.CodeTypeReference GetCodeTypeReference(class System.Xml.XmlQualifiedName typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.GetCodeTypeReference(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">検索するスキーマ型を指定する <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <summary>指定した <see cref="T:System.CodeDom.CodeTypeReference" /> を持つスキーマ型に対して生成された CLR 型への <see cref="T:System.Xml.XmlQualifiedName" /> を返します。</summary>
+        <returns>指定した <see cref="T:System.CodeDom.CodeTypeReference" /> を持つスキーマ型に対して生成された CLR 型への <paramref name="typeName" /> 参照を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%2A> メソッドを呼び出した後、このメソッドを使用して、生成された CLR 型への参照を検索します。 <xref:System.CodeDom.CodeTypeReference> には生成された型の名前が格納され、<xref:System.CodeDom.CodeTypeDeclaration> 内の対応する <xref:System.CodeDom.CodeCompileUnit> を検索するために使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCodeTypeReference">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference GetCodeTypeReference (System.Xml.XmlQualifiedName typeName, System.Xml.Schema.XmlSchemaElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.CodeDom.CodeTypeReference GetCodeTypeReference(class System.Xml.XmlQualifiedName typeName, class System.Xml.Schema.XmlSchemaElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.GetCodeTypeReference(System.Xml.XmlQualifiedName,System.Xml.Schema.XmlSchemaElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.Xml.XmlQualifiedName" />
+        <Parameter Name="element" Type="System.Xml.Schema.XmlSchemaElement" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">検索するスキーマ型の XML 修飾名を指定する <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <param name="element">XML スキーマ内の要素を指定する <see cref="T:System.Xml.Schema.XmlSchemaElement" />。</param>
+        <summary>指定した XML 修飾要素とスキーマ要素の <see cref="T:System.CodeDom.CodeTypeReference" /> を返します。</summary>
+        <returns>指定したスキーマ型のために生成された型を表す <see cref="T:System.CodeDom.CodeTypeReference" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素のスコープで指定された型に関するデータに対するスキーマ要素が必要です。 この代表的な例が XSD 属性である `nillable` です。 スキーマでは、`nillable` への `true` の設定が、含まれているスキーマ要素に対して指定され、null という概念は CLR 型の <xref:System.Nullable%601> で表現されます。 要素は、このインポーターが要素レベルの情報を検索して正しい型参照を返すことを可能にするために渡されます。  
+  
+ WSDL をインポートするとき、各パラメーターは別々にインポートされるため、パラメーター要素を別々に渡す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypeReferences">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.CodeDom.CodeTypeReference&gt; GetKnownTypeReferences (System.Xml.XmlQualifiedName typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class System.CodeDom.CodeTypeReference&gt; GetKnownTypeReferences(class System.Xml.XmlQualifiedName typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.GetKnownTypeReferences(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.CodeDom.CodeTypeReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">既知の型を検索するスキーマ型を表す <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <summary>指定したスキーマ型のコードを生成するときに生成される既知の型を表す <see cref="T:System.CodeDom.CodeTypeReference" /> オブジェクトのリストを返します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IList`1" /> 型の <see cref="T:System.CodeDom.CodeTypeReference" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマ型に対応する CLR 型を生成するときに、スキーマ内に存在するすべての派生型に対応する既知の型も同時に生成されます。 多くの場合、これらの既知の型は、生成されたコードに適用される属性を使用して追加されます  (たとえばを参照してください、<xref:System.Runtime.Serialization.KnownTypeAttribute>クラスです。 ただし、) 最上位レベルの種類では、する必要があります生成された既知の型のセットを返す方法です。 このメソッドは、指定したスキーマ型に対して生成された既知の型の <xref:System.CodeDom.CodeTypeReference> を返します。  
+  
+ 詳細については、次を参照してください。[データ コントラクトの既知の型](~/docs/framework/wcf/feature-details/data-contract-known-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (System.Xml.Schema.XmlSchemaSet schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(class System.Xml.Schema.XmlSchemaSet schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.Import(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">CLR 型を生成するためのスキーマ表現が格納される <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれる指定した XML スキーマのセットを <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> メソッドを使用して、スキーマのセットをインポートできるかどうかをテストする例を次に示します。 <xref:System.Runtime.Serialization.XsdDataContractImporter.CanImport%2A> メソッドが `true` を返した場合、コードは <xref:System.Runtime.Serialization.XsdDataContractImporter.Import%2A> メソッドを呼び出します。  
+  
+ [!code-csharp[XsdDataContractImporter#2](~/samples/snippets/csharp/VS_Snippets_CFX/xsddatacontractimporter/cs/xsddatacontractimporterexample.cs#2)]
+ [!code-vb[XsdDataContractImporter#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/xsddatacontractimporter/vb/xsddatacontractimporterexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (System.Xml.Schema.XmlSchemaSet schemas, System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt; typeNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(class System.Xml.Schema.XmlSchemaSet schemas, class System.Collections.Generic.ICollection`1&lt;class System.Xml.XmlQualifiedName&gt; typeNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.Import(System.Xml.Schema.XmlSchemaSet,System.Collections.Generic.ICollection{System.Xml.XmlQualifiedName})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="typeNames" Type="System.Collections.Generic.ICollection&lt;System.Xml.XmlQualifiedName&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">スキーマ表現が格納されている <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="typeNames">A <see cref="T:System.Collections.Generic.ICollection`1" /> (の<see cref="T:System.Xml.XmlQualifiedName" />) をインポートするスキーマ型のセットを表すです。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれる指定したスキーマ型のセットを、<see cref="T:System.CodeDom.CodeCompileUnit" /> 内に生成される CLR 型に変換します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName Import (System.Xml.Schema.XmlSchemaSet schemas, System.Xml.Schema.XmlSchemaElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName Import(class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.Schema.XmlSchemaElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.Import(System.Xml.Schema.XmlSchemaSet,System.Xml.Schema.XmlSchemaElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="element" Type="System.Xml.Schema.XmlSchemaElement" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">変換するスキーマを格納する <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="element">変換する特定のスキーマ要素を表す <see cref="T:System.Xml.Schema.XmlSchemaElement" />。</param>
+        <summary>指定した XML スキーマのセット内の指定したスキーマ要素を <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換し、指定した要素用のデータ コントラクト名を表す <see cref="T:System.Xml.XmlQualifiedName" /> を返します。</summary>
+        <returns>指定した要素を表す <see cref="T:System.Xml.XmlQualifiedName" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターまたは <paramref name="element" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public void Import (System.Xml.Schema.XmlSchemaSet schemas, System.Xml.XmlQualifiedName typeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Import(class System.Xml.Schema.XmlSchemaSet schemas, class System.Xml.XmlQualifiedName typeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XsdDataContractImporter.Import(System.Xml.Schema.XmlSchemaSet,System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Schema.XmlSchemaSet" />
+        <Parameter Name="typeName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">スキーマ表現が格納されている <see cref="T:System.Xml.Schema.XmlSchemaSet" />。</param>
+        <param name="typeName">インポートする特定のスキーマ型を表す <see cref="T:System.Xml.XmlQualifiedName" />。</param>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSet" /> に含まれる指定した XML スキーマ型を <see cref="T:System.CodeDom.CodeCompileUnit" /> に変換します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemas" /> パラメーターまたは <paramref name="typeName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ImportOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ImportOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.XsdDataContractImporter.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ImportOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インポート操作で設定可能なオプションを含む <see cref="T:System.Runtime.Serialization.ImportOptions" /> を取得または設定します。</summary>
+        <value>設定可能なオプションを含む <see cref="T:System.Runtime.Serialization.ImportOptions" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.ImportOptions> クラスを使用して、スキーマのインポート中の CLR 型の生成方法をカスタマイズします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

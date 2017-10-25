@@ -1,0 +1,157 @@
+<Type Name="EndpointCollectionElement" FullName="System.ServiceModel.Configuration.EndpointCollectionElement">
+  <TypeSignature Language="C#" Value="public abstract class EndpointCollectionElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EndpointCollectionElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.EndpointCollectionElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成ファイル内のサービス エンドポイントのコレクションを管理します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EndpointCollectionElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.EndpointCollectionElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.EndpointCollectionElement" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfiguredEndpoints">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Configuration.StandardEndpointElement&gt; ConfiguredEndpoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.ServiceModel.Configuration.StandardEndpointElement&gt; ConfiguredEndpoints" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.EndpointCollectionElement.ConfiguredEndpoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Configuration.StandardEndpointElement&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.ServiceModel.Configuration.StandardEndpointElement" /> メソッドおよびプロパティの読み取り専用コレクションを提供します。</summary>
+        <value><see cref="T:System.ServiceModel.Configuration.StandardEndpointElement" /> メソッドおよびプロパティの読み取り専用コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public abstract bool ContainsKey (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.EndpointCollectionElement.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンドポイント要素の名前と値を表すキー/値ペアのキーの名前。</param>
+        <summary>構成ファイル内のサービス要素に、指定されている文字列と同じ名前のエンドポイント要素が含まれているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定した文字列には、指定された要素名が含まれている場合それ以外の場合<see langword="false." /></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointName">
+      <MemberSignature Language="C#" Value="public string EndpointName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EndpointName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.EndpointCollectionElement.EndpointName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合、サービス エンドポイント要素の名前属性の値を取得します。</summary>
+        <value>サービス エンドポイント要素内の名前属性の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointType">
+      <MemberSignature Language="C#" Value="public abstract Type EndpointType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EndpointType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.EndpointCollectionElement.EndpointType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合、サービス エンドポイントの型を取得します。</summary>
+        <value>サービス エンドポイントの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultStandardEndpointElement">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Configuration.StandardEndpointElement GetDefaultStandardEndpointElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ServiceModel.Configuration.StandardEndpointElement GetDefaultStandardEndpointElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.EndpointCollectionElement.GetDefaultStandardEndpointElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.StandardEndpointElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、既定の <see cref="T:System.ServiceModel.Configuration.StandardEndpointElement" /> を返します。</summary>
+        <returns>サービス モデルの標準エンドポイント要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryAdd">
+      <MemberSignature Language="C#" Value="protected abstract bool TryAdd (string name, System.ServiceModel.Description.ServiceEndpoint endpoint, System.Configuration.Configuration config);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryAdd(string name, class System.ServiceModel.Description.ServiceEndpoint endpoint, class System.Configuration.Configuration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.EndpointCollectionElement.TryAdd(System.String,System.ServiceModel.Description.ServiceEndpoint,System.Configuration.Configuration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+        <Parameter Name="config" Type="System.Configuration.Configuration" />
+      </Parameters>
+      <Docs>
+        <param name="name">エンドポイントのコレクションを含むサービス エンドポイントの名前。</param>
+        <param name="endpoint">コレクションに追加するサービス エンドポイント要素。</param>
+        <param name="config">サービス エンドポイントを受け取る構成ファイル。</param>
+        <summary>派生クラスとして実装された場合、指定されたエンドポイントを構成ファイル内のサービス エンドポイントのコレクションに追加します。</summary>
+        <returns>
+          <see langword="true" />このエンドポイントは構成ファイルで、コレクションに追加する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

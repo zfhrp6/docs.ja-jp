@@ -1,0 +1,172 @@
+<Type Name="InfiniteTimeSpanConverter" FullName="System.Configuration.InfiniteTimeSpanConverter">
+  <TypeSignature Language="C#" Value="public sealed class InfiniteTimeSpanConverter : System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit InfiniteTimeSpanConverter extends System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.InfiniteTimeSpanConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationConverterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列と無限の標準変換<see cref="T:System.TimeSpan" />値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、他の構成を実行するコンバーターの種類すべて、この型では、関連する厳密に型指定されたプロパティとの間の構成ファイル内で見つかった文字列に変換します。  
+  
+ 具体的には、<xref:System.Configuration.InfiniteTimeSpanConverter>変換、<xref:System.String>値"infinite"標準 infinite 構成プロパティに割り当てられている<xref:System.TimeSpan>およびその逆です。 無限<xref:System.TimeSpan>によって表される値、<xref:System.TimeSpan.MaxValue>列挙値。  
+  
+ このコンバーターを使用してください。<xref:System.TimeSpan>プロパティです。 無限の値は、「無制限」の文字列として保存されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタムのセクションのプロパティを定義する方法を示しています、<xref:System.Configuration.InfiniteTimeSpanConverter>クラスです。  
+  
+ カスタムのセクションを実装する完全なサンプル コードを参照してください、<xref:System.Configuration.ConfigurationConverterBase>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationConvertersCustomSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationConvertersCustomSection/CS/ConfigurationConvertersCustomSection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationConvertersCustomSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationConvertersCustomSection/VB/ConfigurationConvertersCustomSection.vb#3)]  
+  
+ 次のコード例では、前のセクションのカスタム プロパティにアクセスする方法を示します。  
+  
+ [!code-csharp[System.Configuration.InfiniteTimeSpanConverter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.InfiniteTimeSpanConverter/CS/InfiniteTimeSpanConverter.cs#1)]
+ [!code-vb[System.Configuration.InfiniteTimeSpanConverter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.InfiniteTimeSpanConverter/VB/InfiniteTimeSpanConverter.vb#1)]  
+  
+ 次に、前の例で使用されている構成の抜粋を示します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <configSections>  
+    <section name="CustomSection"   
+      type="Samples.AspNet.CustomSection,   
+      ConfigurationConverters,   
+      Version=1.0.0.0, Culture=neutral,   
+      PublicKeyToken=null"   
+      allowDefinition="Everywhere"   
+      allowExeDefinition="MachineToApplication"   
+      restartOnExternalChanges="true" />  
+    </configSections>  
+    <CustomSection fileName="default.txt" maxIdleTime="90" timeDelay="infinite"/>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InfiniteTimeSpanConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.InfiniteTimeSpanConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.InfiniteTimeSpanConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、システムによって提供されるコンバーターの種類を使用します。 使用する必要があるときだけ、<xref:System.Configuration.InfiniteTimeSpanConverter.%23ctor%2A>コンス トラクターは、独自の変換の種類を作成するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.InfiniteTimeSpanConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="data">変換対象の <see cref="T:System.String" /> オブジェクト。</param>
+        <summary><see cref="T:System.String" /> を <see cref="T:System.TimeSpan" /> に変換します。</summary>
+        <returns><see cref="F:System.TimeSpan.MaxValue" />場合は、<paramref name="data" />パラメーターは、<see cref="T:System.String" />無限、それ以外の<see cref="T:System.TimeSpan" />を表す、<paramref name="data" />分単位でのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.InfiniteTimeSpanConverter.ConvertFrom%2A>メソッドに変換する構成ファイルから読み取るときに、<xref:System.String>値を<xref:System.TimeSpan>または<xref:System.String>に「無制限」<xref:System.TimeSpan.MaxValue>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.InfiniteTimeSpanConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />オブジェクトへの変換中に使用します。</param>
+        <param name="value">変換する値。</param>
+        <param name="type">変換の型。</param>
+        <summary><see cref="T:System.TimeSpan" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns><see cref="T:System.String" /> 「無制限」の場合、<paramref name="value" />パラメーターが<see cref="F:System.TimeSpan.MaxValue" />です。 それ以外の場合、<see cref="T:System.String" />を表す、<paramref name="value" />分単位でのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.InfiniteTimeSpanConverter.ConvertTo%2A>メソッドに変換する構成ファイルに属性を書き込むときに、<xref:System.TimeSpan>オブジェクトを<xref:System.String>オブジェクト。  
+  
+ システムを使用して、<xref:System.Configuration.InfiniteTimeSpanConverter.ConvertTo%2A>メソッドに変換する構成ファイルに書き込む際に、<xref:System.TimeSpan>値または<xref:System.TimeSpan.MaxValue>を<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

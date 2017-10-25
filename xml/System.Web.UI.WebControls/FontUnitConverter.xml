@@ -1,0 +1,287 @@
+<Type Name="FontUnitConverter" FullName="System.Web.UI.WebControls.FontUnitConverter">
+  <TypeSignature Language="C#" Value="public class FontUnitConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontUnitConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FontUnitConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />を文字列にします。 文字列も変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FontUnitConverter>との間にデータを変換するクラスが使用される<xref:System.Web.UI.WebControls.FontUnit>と文字列型です。  
+  
+> [!CAUTION]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して<xref:System.ComponentModel.TypeDescriptor?displayProperty=nameWithType>です。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter?displayProperty=nameWithType>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontUnitConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.FontUnitConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>オブジェクト。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクトを実装します。</param>
+        <param name="sourceType">A<see cref="T:System.Type" />を表すデータ型を確認します。</param>
+        <summary>データ型に変換できるかどうかを決定する<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</summary>
+        <returns>
+          <see langword="true" />データ型を指定する場合、<paramref name="sourceType" />パラメーターに変換できる、 <see cref="T:System.Web.UI.WebControls.FontUnit" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.CanConvertFrom%2A>によってデータ型を指定するかどうかを決定するメソッド、`sourceType`パラメーターに変換できる、<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+> [!NOTE]
+>  このメソッドは true を返す場合にのみ、`sourceType`は<xref:System.String>します。 唯一の種類に、このコンバーターが変換できる<xref:System.Web.UI.WebControls.FontUnit>は<xref:System.String>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />変換対象のオブジェクトのコンテキストを示すです。</param>
+        <param name="destinationType">A<see cref="T:System.Type" />に変換するデータ型を表すです。</param>
+        <summary>コンバーターが変換できるかどうかを示す値を返します、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを指定した型にします。</summary>
+        <returns>
+          <see langword="true" />コンバーターが変換をサポートしているかどうか、<see cref="T:System.Web.UI.WebControls.FontUnit" />オブジェクトを移行先の型です。 それ以外の場合、<see langword="false" />です。  
+  
+ <block subset="none" type="note"><para>  
+ このメソッドは true を返す場合にのみ、<paramref name="destinationType" />は<see cref="T:System.String" />します。 このコンバーターが変換できる唯一の種類<see cref="T:System.Web.UI.WebControls.FontUnit" />を<see cref="T:System.String" />です。  
+  
+</para></block></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクトを実装します。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />を表すカルチャを指定する、<see cref="T:System.Web.UI.WebControls.FontUnit" />ポイントで表されます。</param>
+        <param name="value">変換するオブジェクト、<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</param>
+        <summary>オブジェクトに変換します、<see cref="T:System.Web.UI.WebControls.FontUnit" />で特定のカルチャ。</summary>
+        <returns>A<see cref="T:System.Object" />を表す値を変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.ConvertFrom%2A>で指定されたオブジェクトを変換する方法、`value`パラメーターを<xref:System.Web.UI.WebControls.FontUnit>で指定するカルチャで、`culture`パラメーター。  
+  
+> [!NOTE]
+>  指定したオブジェクトが場合`null`、返される値も`null`します。 同様に、指定したオブジェクトが場合<xref:System.String.Empty?displayProperty=nameWithType>、<xref:System.Web.UI.WebControls.FontUnit.Empty>が返されます。  
+  
+> [!NOTE]
+>  このメソッドは、文字列にのみ変換できます、<xref:System.Web.UI.WebControls.FontUnit>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />を実行する型コンバーターのコンテキストに関する情報を提供するオブジェクトを実装します。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />を表すカルチャを指定する、<see cref="T:System.Web.UI.WebControls.FontUnit" />ポイントで表されます。</param>
+        <param name="value">A<see cref="T:System.Object" />を表す、<see cref="T:System.Web.UI.WebControls.FontUnit" />に変換します。</param>
+        <param name="destinationType">A<see cref="T:System.Type" />に変換するデータ型を表すです。</param>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.FontUnit" />の別のデータ型のオブジェクトにします。</summary>
+        <returns>A<see cref="T:System.Object" />を表す値を変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.ConvertTo%2A>に変換する方法、<xref:System.Web.UI.WebControls.FontUnit>によって指定された、`value`パラメーターで指定されたデータ型を持つオブジェクトを`destinationType`パラメーター。  
+  
+> [!NOTE]
+>  <xref:System.String.Empty?displayProperty=nameWithType>場合、このメソッドから返される、`value`パラメーターが含まれる`null`です。 <xref:System.String.Empty?displayProperty=nameWithType>場合も返されます、<xref:System.Web.UI.WebControls.FontUnit.Type%2A>のプロパティ、<xref:System.Web.UI.WebControls.FontUnit>によって指定された、`value`パラメーターには、値が含まれています。`FontSize.NotSet`です。  
+  
+> [!NOTE]
+>  このメソッドにのみ変換できます、<xref:System.Web.UI.WebControls.FontUnit>を文字列にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <summary>返します、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />の標準的な値を含む、 <see cref="T:System.Web.UI.WebControls.FontUnit" />、指定した書式指定コンテキストを使用します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />の標準的な値を含む、<see cref="T:System.Web.UI.WebControls.FontUnit" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.GetStandardValues%2A>を取得する方法、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection?displayProperty=nameWithType>の標準的な値を含む、<xref:System.Web.UI.WebControls.FontUnit>です。 このコレクションには内のすべてのフィールドが含まれています、<xref:System.Web.UI.WebControls.FontUnit>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <summary>返すかどうか、<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />によって返される、<see cref="M:System.Web.UI.WebControls.FontUnitConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />メソッドは、指定した書式指定コンテキストを使用して、値の排他的なリスト。</summary>
+        <returns>
+          <see langword="false" />すべてのケース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.GetStandardValuesExclusive%2A>メソッドを呼び出せば確認するかどうか、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection?displayProperty=nameWithType>によって返される、<xref:System.Web.UI.WebControls.FontUnitConverter.GetStandardValues%2A>メソッドは値の排他的なリスト。 このメソッドをオーバーライドして常に返す`false`値の一覧が、排他的なリストではないことを示すためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.FontUnitConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />型コンバーターのコンテキストに関する情報を提供します。</param>
+        <summary>返すかどうかのインスタンス、<see cref="T:System.Web.UI.WebControls.FontUnitConverter" />からこのメソッドが呼び出されるクラスは、指定した書式指定コンテキストを使用して、一覧から選択できる値の標準セットをサポートしています。</summary>
+        <returns>
+          <see langword="true" />すべてのケース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.FontUnitConverter.GetStandardValuesSupported%2A>メソッドを呼び出せば確認するかどうかのインスタンス、<xref:System.Web.UI.WebControls.FontUnitConverter>からこのメソッドが呼び出されるクラスは、指定した書式指定コンテキストを使用して、一覧から選択できる値の標準セットをサポートします。 このメソッドをオーバーライドして常に返す`true`をこのクラスが、一覧から選択できる値の標準セットをサポートしていることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

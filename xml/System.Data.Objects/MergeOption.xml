@@ -1,0 +1,107 @@
+<Type Name="MergeOption" FullName="System.Data.Objects.MergeOption">
+  <TypeSignature Language="C#" Value="public enum MergeOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MergeOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.MergeOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>オブジェクト コンテキストに読み込まれているオブジェクトを、オブジェクト コンテキストに既に存在するオブジェクトにマージする方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)] では、特定のエンティティ キーを持つオブジェクトの 1 つのみのインスタンスをキャッシュ内に保持します。 <xref:System.Data.EntityKey> オブジェクトは、オブジェクトの ID を表す不変のオブジェクトです。 エンティティ キーは、オブジェクト コンテキスト内の ID 解決を実行するために使用されます。 詳細については、次を参照してください。[エンティティ キーの使用](http://msdn.microsoft.com/en-us/fe3f4206-d277-43a1-a72f-4e86fdf12b9f)です。 データ ソースと、状態マネージャー内の既存のデータから取得したデータがマージに従ってに同じ id を持つエンティティが既に追跡されている場合、<xref:System.Data.Objects.MergeOption>クエリのです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AppendOnly">
+      <MemberSignature Language="C#" Value="AppendOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.MergeOption AppendOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.MergeOption.AppendOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.MergeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストに存在しないオブジェクトは、コンテキストにアタッチされます。 オブジェクトが既にコンテキストに存在する場合、エントリに格納されているオブジェクトのプロパティの現在の値と元の値が、データ ソースの値で上書きされることはありません。 オブジェクトのエントリの状態と、エントリ内にあるオブジェクトのプロパティの状態は変化しません。 <see cref="F:System.Data.Objects.MergeOption.AppendOnly" /> は既定のマージ オプションです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoTracking">
+      <MemberSignature Language="C#" Value="NoTracking" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.MergeOption NoTracking = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.MergeOption.NoTracking" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.MergeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトは、<see cref="F:System.Data.EntityState.Detached" /> 状態で保持され、<see cref="T:System.Data.Objects.ObjectStateManager" /> では追跡されません。 ただし、 [!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]-生成されたエンティティとプロキシ POCO エンティティは、関連オブジェクトの読み込みを容易にするためにオブジェクト コンテキストへの参照を保持します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteChanges">
+      <MemberSignature Language="C#" Value="OverwriteChanges" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.MergeOption OverwriteChanges = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.MergeOption.OverwriteChanges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.MergeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストに存在しないオブジェクトは、コンテキストにアタッチされます。 オブジェクトが既にコンテキストに存在する場合、エントリに格納されているオブジェクトのプロパティの現在の値と元の値が、データ ソースの値で上書きされます。 オブジェクトのエントリの状態は <see cref="F:System.Data.EntityState.Unchanged" /> に設定され、いずれのプロパティも変更済みとしてマークされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveChanges">
+      <MemberSignature Language="C#" Value="PreserveChanges" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.MergeOption PreserveChanges = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.MergeOption.PreserveChanges" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.MergeOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストに存在しないオブジェクトは、コンテキストにアタッチされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンティティの状態が <xref:System.Data.EntityState.Unchanged> の場合、エントリに格納されている現在の値と元の値が、データ ソースの値で上書きされます。 エントリの状態は <xref:System.Data.EntityState.Unchanged> のままとなり、いずれのプロパティも変更済みとしてマークされません。  
+  
+ エンティティの状態が <xref:System.Data.EntityState.Modified> の場合、変更されているプロパティの現在の値は、データ ソースの値で上書きされません。 変更されていないプロパティの元の値は、データ ソースからの値で上書きされます。  
+  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョン 4、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]変更されていないプロパティの現在の値をデータ ソースから返された値を比較します。 両者の値が異なる場合、プロパティは変更済みとしてマークされます。  
+  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] バージョン 3.5 SP1 では、データ ソースの値が異なっていたとしても、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)] によってプロパティが変更済みとしてマークされることはありません。  
+  
+ 変更されているプロパティだけが、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A> を呼び出したときにデータ ソースに永続化されます。  
+  
+ 3.5 SP1 の動作を保持するには、<xref:System.Data.Objects.ObjectContextOptions.UseLegacyPreserveChangesBehavior%2A> を `true` に設定します。 ローカル コンテキストの変更を保持しながら、オプティミスティック同時実行例外を解決するのには、PreserveChanges オプションを使用できます。 詳細については、次を参照してください。[変更を保存および管理する同時実行](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,504 @@
+<Type Name="ConfigurationLockCollection" FullName="System.Configuration.ConfigurationLockCollection">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationLockCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConfigurationLockCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ConfigurationLockCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ロックされた構成オブジェクトのコレクションが含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルで構成セクションには、属性と要素の両方が含まれています。 A<xref:System.Configuration.ConfigurationLockCollection>コレクションの構成セクションのロックされている属性の存在し、を通じてアクセス、<xref:System.Configuration.ConfigurationElement.LockAttributes%2A>のプロパティ、<xref:System.Configuration.ConfigurationElement>クラスです。 別<xref:System.Configuration.ConfigurationLockCollection>コレクションの構成セクションのロックされている要素が存在してを通じてアクセス、<xref:System.Configuration.ConfigurationElement.LockElements%2A>のプロパティ、<xref:System.Configuration.ConfigurationElement>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationLockCollection>型です。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#1)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">構成オブジェクトの名前。</param>
+        <summary>コレクションに追加することで、構成オブジェクトをロックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成オブジェクトを追加する、<xref:System.Configuration.ConfigurationLockCollection>コレクション指定の構成オブジェクトがロックされているし、コレクションから削除されたまでは変更できません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationLockCollection.Add%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#3)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">発生したときに、<paramref name="name" />コレクション内の既存の構成オブジェクトと一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeList">
+      <MemberSignature Language="C#" Value="public string AttributeList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AttributeList" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.AttributeList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに含まれる構成オブジェクトの一覧を取得します。</summary>
+        <value>コレクション内でロック構成オブジェクトの一覧をコンマ区切りの文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationLockCollection.AttributeList%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#5)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての構成オブジェクトをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationLockCollection.Clear%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#11)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証する構成オブジェクトの名前。</param>
+        <summary>特定の構成オブジェクトがロックされているかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationLockCollection" />指定した構成オブジェクトが含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (string[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(string[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.CopyTo(System.String[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.String[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先は、<see cref="T:System.Configuration.ConfigurationLockCollection" />です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>全体をコピー<see cref="T:System.Configuration.ConfigurationLockCollection" />を互換性のある 1 次元コレクション<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションに含まれている構成のロックされたオブジェクトの数を取得します。</summary>
+        <value>コレクションに含まれている構成のロックされたオブジェクトの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationLockCollection.Count%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#4)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerator" />これを反復処理に使用されるオブジェクト<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクション。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasParentElements">
+      <MemberSignature Language="C#" Value="public bool HasParentElements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasParentElements" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.HasParentElements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親要素がロックされているオブジェクトのコレクションであるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクションには、親要素、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationLockCollection.HasParentElements%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#7)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsModified">
+      <MemberSignature Language="C#" Value="public bool IsModified { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsModified" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.IsModified" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが変更されているかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationLockCollection" />変更後、それ以外のコレクションが表示された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ConfigurationLockCollection.IsModified%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#8)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsReadOnly(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.IsReadOnly(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証する構成オブジェクトの名前。</param>
+        <summary>特定の構成オブジェクトは読み取り専用であるかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定された構成オブジェクトの場合、<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクションが読み取り専用です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationLockCollection.IsReadOnly%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#9)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">指定した構成オブジェクトがコレクション内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが同期されているかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクションが同期されている、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">構成オブジェクトの名前。</param>
+        <summary>構成オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationLockCollection.Remove%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#10)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">発生したときに、<paramref name="name" />コレクション内の既存の構成オブジェクトと一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFromList">
+      <MemberSignature Language="C#" Value="public void SetFromList (string attributeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetFromList(string attributeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.SetFromList(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeList" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeList">コンマ区切りの文字列です。</param>
+        <summary>指定されたリストに基づく構成オブジェクトのセットをロックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.ConfigurationLockCollection.SetFromList%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.ConfigurationLockCollection>クラスです。  
+  
+ [!code-csharp[System.Configuration.ConfigurationLockCollection#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/CS/ConfigurationLockCollection.cs#12)]
+ [!code-vb[System.Configuration.ConfigurationLockCollection#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ConfigurationLockCollection/VB/ConfigurationLockCollection.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">内の項目のときに発生、<paramref name="attributeList" />パラメーターが有効な lockable 構成属性ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ConfigurationLockCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用されるオブジェクトを取得<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクション。</summary>
+        <value>アクセスを同期するために使用するオブジェクト<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ConfigurationLockCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />からコピーした要素のコピー先は、<see cref="T:System.Configuration.ConfigurationLockCollection" />コレクション。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>全体をコピー<see cref="T:System.Configuration.ConfigurationLockCollection" />を互換性のある 1 次元コレクション<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

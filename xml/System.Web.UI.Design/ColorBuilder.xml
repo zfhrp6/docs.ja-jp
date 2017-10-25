@@ -1,0 +1,79 @@
+<Type Name="ColorBuilder" FullName="System.Web.UI.Design.ColorBuilder">
+  <TypeSignature Language="C#" Value="public sealed class ColorBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ColorBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ColorBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>により、ユーザーは、色を選択するデザイン時に HTML 色文字列ビルダーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ColorBuilder.BuildColor%2A>メソッドは、色の値を選択するためのユーザー インターフェイスを開始します。  
+  
+ <xref:System.Web.UI.Design.ColorBuilder>クラスは、デザイン時環境の外部で使用するものではありません。 <xref:System.Web.UI.Design.ColorBuilder>必要があります、<xref:System.Web.UI.Design.IWebFormsBuilderUIService>デザイン時に、Web フォーム プロジェクト内で通常使用されます。 HTML 色文字列を作成する場合は、RGB 値に変換するメソッドを実装することがある、<xref:System.Drawing.Color>オブジェクトを HTML と互換性のある RRGGBB 形式文字列。 コントロールを使用する色を選択するか、色を構成する場合、これは、ユーザー インターフェイスを構築することができますまたは使用する場合、<xref:System.Windows.Forms.PropertyGrid>コントロールが編集できる<xref:System.Drawing.Color>既定値を持つプロパティ<xref:System.Drawing.Design.ColorEditor>色の選択 インターフェイスを提供します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ColorBuilderExample#1](~/samples/snippets/cpp/VS_Snippets_WebNet/ColorBuilderExample/CPP/colorbuilderdesigner.cpp#1)]
+ [!code-csharp[ColorBuilderExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ColorBuilderExample/CS/colorbuilderdesigner.cs#1)]
+ [!code-vb[ColorBuilderExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ColorBuilderExample/VB/colorbuilderdesigner.vb#1)]  
+  
+ [!code-cpp[ColorBuilderExample#2](~/samples/snippets/cpp/VS_Snippets_WebNet/ColorBuilderExample/CPP/colorbuilderdesigner.cpp#2)]
+ [!code-csharp[ColorBuilderExample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/ColorBuilderExample/CS/colorbuilderdesigner.cs#2)]
+ [!code-vb[ColorBuilderExample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ColorBuilderExample/VB/colorbuilderdesigner.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuildColor">
+      <MemberSignature Language="C#" Value="public static string BuildColor (System.ComponentModel.IComponent component, System.Windows.Forms.Control owner, string initialColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string BuildColor(class System.ComponentModel.IComponent component, class System.Windows.Forms.Control owner, string initialColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ColorBuilder.BuildColor(System.ComponentModel.IComponent,System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="owner" Type="System.Windows.Forms.Control" />
+        <Parameter Name="initialColor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.ComponentModel.IComponent" />持つサイトは、デザイン時のサービスにアクセスするために使用します。</param>
+        <param name="owner"><see cref="T:System.Web.UI.Control" />の選択 ウィンドウの親に使用します。</param>
+        <param name="initialColor">選択 ウィンドウで、有効な HTML 色の形式で表示される初期の色です。</param>
+        <summary>HTML 色プロパティ値をビルドするための色エディターを起動します。</summary>
+        <returns>HTML 色形式で文字列として表される色の値または<see langword="null" />場合は、ビルダー サービスを取得できませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以外の場合は、返される文字列`null`、有効な HTML 色の形式で使用する色を示します。 有効な形式は、RGB (#RRGGBB) の形式で名前付きの色とカラー コードを含めます。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ColorBuilderExample#1](~/samples/snippets/cpp/VS_Snippets_WebNet/ColorBuilderExample/CPP/colorbuilderdesigner.cpp#1)]
+ [!code-csharp[ColorBuilderExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ColorBuilderExample/CS/colorbuilderdesigner.cs#1)]
+ [!code-vb[ColorBuilderExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ColorBuilderExample/VB/colorbuilderdesigner.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

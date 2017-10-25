@@ -1,0 +1,623 @@
+<Type Name="SqlServices" FullName="System.Web.Management.SqlServices">
+  <TypeSignature Language="C#" Value="public static class SqlServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit SqlServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.SqlServices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートをインストールして、ASP.NET の機能の SQL Server データベースの要素を削除します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL Server データベースを使用して、セッション状態、メンバーシップ、Web パーツのパーソナル化、およびロール管理などの ASP.NET 機能についての情報を格納することができます。 これらの機能では、接続されている SQL Server データベースで使用する前に正しく構成されている必要があります。 ASP.NET 登録 SQL ツール (aspnet_regsql.exe) を使用するには、これを行うかによって公開された静的メソッドを呼び出すことができます、<xref:System.Web.Management.SqlServices>コードから直接クラスです。  
+  
+> [!NOTE]
+>  Aspnet_regsql.exe ツールを使用して、または<xref:System.Web.Management.SqlServices>のみデータベースを構成するクラスをプロバイダーが適切なテーブル、トリガー、およびストアド プロシージャを使用するデータベースを設定します。 この方法でデータベースを構成しても、これらの機能がこれらのサービスの SQL プロバイダーを使用することを指定する構成ファイルは変更されません。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.SqlServices> クラスを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#1)]
+ [!code-vb[System.Web.Management.SqlServices#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GenerateApplicationServicesScripts">
+      <MemberSignature Language="C#" Value="public static string GenerateApplicationServicesScripts (bool install, System.Web.Management.SqlFeatures features, string database);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateApplicationServicesScripts(bool install, valuetype System.Web.Management.SqlFeatures features, string database) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.GenerateApplicationServicesScripts(System.Boolean,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="install" Type="System.Boolean" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+        <Parameter Name="database" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="install">
+          <see langword="true" />指定された機能をインストールするスクリプトを生成するには<see langword="false" />機能を削除するスクリプトを生成します。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />スクリプトを生成する対象の特定の機能を指定する値。</param>
+        <param name="database">生成されたスクリプトで使用する SQL Server データベースの名前。</param>
+        <summary>選択した機能の SQL スクリプトを生成します。 スクリプトは、データベース パラメーターで指定されているデータベースを参照します。</summary>
+        <returns>生成されたスクリプト コードを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateSessionStateScripts">
+      <MemberSignature Language="C#" Value="public static string GenerateSessionStateScripts (bool install, System.Web.Management.SessionStateType type, string customDatabase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateSessionStateScripts(bool install, valuetype System.Web.Management.SessionStateType type, string customDatabase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.GenerateSessionStateScripts(System.Boolean,System.Web.Management.SessionStateType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="install" Type="System.Boolean" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+        <Parameter Name="customDatabase" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="install">
+          <see langword="true" />指定された機能をインストールするスクリプトを生成するには<see langword="false" />機能を削除するスクリプトを生成します。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />スクリプトを生成する対象のセッション状態の種類を指定する値。</param>
+        <param name="customDatabase">生成されたスクリプトで使用する SQL Server データベースの名前。</param>
+        <summary>インストールまたは削除するセッション状態用の SQL スクリプトを生成します。 スクリプトでは、データベース パラメーターで指定されているデータベースを参照します。</summary>
+        <returns>生成されたスクリプト コードを返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public static void Install (string server, string database, System.Web.Management.SqlFeatures features);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string server, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+      </Parameters>
+      <Docs>
+        <param name="server">機能をインストールする先のデータベース サーバーです。</param>
+        <param name="database">機能をインストールするデータベース。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />インストールする機能を指定する値。</param>
+        <summary>SQL Server データベースでの ASP.NET 機能を選択したコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.Install%28System.String%2CSystem.String%2CSystem.Web.Management.SqlFeatures%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#4)]
+ [!code-vb[System.Web.Management.SqlServices#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public static void Install (string database, System.Web.Management.SqlFeatures features, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string database, valuetype System.Web.Management.SqlFeatures features, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="database">機能をインストールするデータベース。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />インストールする機能を指定する値。</param>
+        <param name="connectionString">使用する接続文字列。 接続文字列は、データベース サーバーへの接続を確立するためにのみ使用します。  接続文字列でデータベースを指定しても効果はありません。</param>
+        <summary>SQL Server データベースでの ASP.NET サービスを選択したコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.Install%28System.String%2CSystem.Web.Management.SqlFeatures%2CSystem.String%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#2)]
+ [!code-vb[System.Web.Management.SqlServices#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public static void Install (string server, string user, string password, string database, System.Web.Management.SqlFeatures features);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Install(string server, string user, string password, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Install(System.String,System.String,System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="user" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+      </Parameters>
+      <Docs>
+        <param name="server">機能をインストールする先のデータベース サーバーです。</param>
+        <param name="user">データベースに接続するときに使用するユーザー名。</param>
+        <param name="password">データベースに接続するときに使用するパスワードです。</param>
+        <param name="database">機能をインストールするデータベース。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />インストールする機能を指定する値。</param>
+        <summary>SQL Server データベースでの ASP.NET 機能を選択したコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallSessionState">
+      <MemberSignature Language="C#" Value="public static void InstallSessionState (string server, string customDatabase, System.Web.Management.SessionStateType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string server, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+      </Parameters>
+      <Docs>
+        <param name="server">セッション状態のコンポーネントをインストールする SQL Server インスタンス。</param>
+        <param name="customDatabase">セッション状態のコンポーネントをインストールするデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />をインストールするセッション状態の種類を指定する値。</param>
+        <summary>SQL Server データベースでの ASP.NET セッション状態のコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.InstallSessionState%2A>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#10)]
+ [!code-vb[System.Web.Management.SqlServices#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallSessionState">
+      <MemberSignature Language="C#" Value="public static void InstallSessionState (string customDatabase, System.Web.Management.SessionStateType type, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string customDatabase, valuetype System.Web.Management.SessionStateType type, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.Web.Management.SessionStateType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="customDatabase">セッション状態のコンポーネントをインストールするデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />をインストールするセッション状態の種類を指定する値。</param>
+        <param name="connectionString">使用する接続文字列。 接続文字列は、データベース サーバーへの接続を確立するためにのみ使用します。  接続文字列でデータベースを指定しても効果はありません。</param>
+        <summary>SQL Server データベースでの ASP.NET セッション状態のコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.InstallSessionState%28System.String%2CSystem.Web.Management.SessionStateType%2CSystem.String%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#8)]
+ [!code-vb[System.Web.Management.SqlServices#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallSessionState">
+      <MemberSignature Language="C#" Value="public static void InstallSessionState (string server, string user, string password, string customDatabase, System.Web.Management.SessionStateType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InstallSessionState(string server, string user, string password, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.InstallSessionState(System.String,System.String,System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="user" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+      </Parameters>
+      <Docs>
+        <param name="server">セッション状態のコンポーネントをインストールする SQL Server インスタンス。</param>
+        <param name="user">データベースに接続するときに使用するユーザー名。</param>
+        <param name="password">データベースに接続するときに使用するパスワードです。</param>
+        <param name="customDatabase">セッション状態のコンポーネントをインストールするデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />をインストールするセッション状態の種類を指定する値。</param>
+        <summary>SQL Server データベースでの ASP.NET セッション状態のコンポーネントをインストールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.InstallSessionState%28System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Web.Management.SessionStateType%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#12)]
+ [!code-vb[System.Web.Management.SqlServices#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public static void Uninstall (string server, string database, System.Web.Management.SqlFeatures features);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string server, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+      </Parameters>
+      <Docs>
+        <param name="server">機能を削除する SQL Server インスタンス。</param>
+        <param name="database">機能を削除するデータベースです。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />削除する機能を指定する値。</param>
+        <summary>SQL Server データベースからの ASP.NET 機能を選択したコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.Uninstall%28System.String%2CSystem.String%2CSystem.Web.Management.SqlFeatures%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#5)]
+ [!code-vb[System.Web.Management.SqlServices#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントを処理しようとしました、存在しないデータベースからアンインストールするのにまたは指定されたデータベースでは、機能の 1 つまたは複数のテーブルにデータが含まれている間、例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public static void Uninstall (string database, System.Web.Management.SqlFeatures features, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string database, valuetype System.Web.Management.SqlFeatures features, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.Web.Management.SqlFeatures,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="database">機能を削除するデータベースです。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />削除する機能を指定する値。</param>
+        <param name="connectionString">使用する接続文字列。 接続文字列は、データベース サーバーへの接続を確立するためにのみ使用します。 接続文字列でデータベースを指定しても効果はありません。</param>
+        <summary>SQL Server データベースからの ASP.NET 機能を選択したコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.Uninstall%2A>のメソッド、<xref:System.Web.Management.SqlServices>型です。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#3)]
+ [!code-vb[System.Web.Management.SqlServices#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントを処理しようとしました、存在しないデータベースからアンインストールするのにまたは指定されたデータベースでは、機能の 1 つまたは複数のテーブルにデータが含まれている間、例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public static void Uninstall (string server, string user, string password, string database, System.Web.Management.SqlFeatures features);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Uninstall(string server, string user, string password, string database, valuetype System.Web.Management.SqlFeatures features) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.Uninstall(System.String,System.String,System.String,System.String,System.Web.Management.SqlFeatures)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="user" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="database" Type="System.String" />
+        <Parameter Name="features" Type="System.Web.Management.SqlFeatures" />
+      </Parameters>
+      <Docs>
+        <param name="server">機能を削除する SQL Server インスタンス。</param>
+        <param name="user">データベースに接続するときに使用するユーザー名。</param>
+        <param name="password">データベースに接続するときに使用するパスワードです。</param>
+        <param name="database">機能を削除するデータベースです。</param>
+        <param name="features">ビットごとの組み合わせ、<see cref="T:System.Web.Management.SqlFeatures" />削除する機能を指定する値。</param>
+        <summary>SQL Server データベースからの ASP.NET 機能を選択したコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`database`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定データベースが使用されます`aspnetdb`です。 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+> [!NOTE]
+>  データベース サーバーへの接続は、信頼関係接続で作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="features" />値には、1 つまたは複数の無効なフラグが含まれています。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントを処理しようとしました、存在しないデータベースからアンインストールするのにまたは指定されたデータベースでは、機能の 1 つまたは複数のテーブルにデータが含まれている間、例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallSessionState">
+      <MemberSignature Language="C#" Value="public static void UninstallSessionState (string server, string customDatabase, System.Web.Management.SessionStateType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string server, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+      </Parameters>
+      <Docs>
+        <param name="server">セッション状態のコンポーネントを削除する SQL Server インスタンス。</param>
+        <param name="customDatabase">セッション状態のコンポーネントを削除するデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />を削除するセッション状態の種類を指定する値。</param>
+        <summary>SQL Server データベースからの ASP.NET セッション状態のコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+ **注**データベース サーバーに接続している信頼された接続を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.UninstallSessionState%2A>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#11)]
+ [!code-vb[System.Web.Management.SqlServices#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallSessionState">
+      <MemberSignature Language="C#" Value="public static void UninstallSessionState (string customDatabase, System.Web.Management.SessionStateType type, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string customDatabase, valuetype System.Web.Management.SessionStateType type, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.Web.Management.SessionStateType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="customDatabase">セッション状態のコンポーネントを削除するデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />を削除するセッション状態の種類を指定する値。</param>
+        <param name="connectionString">使用する接続文字列。  接続文字列は、データベース サーバーへの接続を確立するためにのみ使用します。  接続文字列でデータベースを指定しても効果はありません。</param>
+        <summary>SQL Server データベースからの ASP.NET セッション状態のコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.UninstallSessionState%28System.String%2CSystem.String%2CSystem.Web.Management.SessionStateType%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#9)]
+ [!code-vb[System.Web.Management.SqlServices#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallSessionState">
+      <MemberSignature Language="C#" Value="public static void UninstallSessionState (string server, string user, string password, string customDatabase, System.Web.Management.SessionStateType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UninstallSessionState(string server, string user, string password, string customDatabase, valuetype System.Web.Management.SessionStateType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.SqlServices.UninstallSessionState(System.String,System.String,System.String,System.String,System.Web.Management.SessionStateType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="server" Type="System.String" />
+        <Parameter Name="user" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="customDatabase" Type="System.String" />
+        <Parameter Name="type" Type="System.Web.Management.SessionStateType" />
+      </Parameters>
+      <Docs>
+        <param name="server">セッション状態のコンポーネントを削除する SQL Server インスタンス。</param>
+        <param name="user">データベースに接続するときに使用するユーザー名。</param>
+        <param name="password">データベースに接続するときに使用するパスワードです。</param>
+        <param name="customDatabase">セッション状態のコンポーネントを削除するデータベースです。</param>
+        <param name="type">1 つ、<see cref="T:System.Web.Management.SessionStateType" />を削除するセッション状態の種類を指定する値。</param>
+        <summary>SQL Server データベースからの ASP.NET セッション状態のコンポーネントを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`server`は`null`省略したとき、または<xref:System.Web.Management.SqlServices>既定の SQL Server インスタンスが使用されます。  
+  
+ **注**データベース サーバーに接続している信頼された接続を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Management.SqlServices.UninstallSessionState%28System.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Web.Management.SessionStateType%29>のメソッド、<xref:System.Web.Management.SqlServices>クラスです。  
+  
+ [!code-csharp[System.Web.Management.SqlServices#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.SqlServices/CS/usingsqlservices.cs#13)]
+ [!code-vb[System.Web.Management.SqlServices#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.SqlServices/VB/usingsqlservices.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">型は<see langword="Custom" />と<paramref name="customDatabase" />値が指定されていない、またはいずれかの種類は<see langword="Temporary" />または<see langword="Persisted" />と<paramref name="customDatabase" />値が null でないです。</exception>
+        <exception cref="T:System.Web.HttpException">指定されたデータベース サーバーに接続できません。</exception>
+        <exception cref="T:System.Web.Management.SqlExecutionException">操作に必要な SQL ステートメントの処理中に例外が発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

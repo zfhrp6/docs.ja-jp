@@ -1,0 +1,173 @@
+<Type Name="ParallelOptions" FullName="System.Threading.Tasks.ParallelOptions">
+  <TypeSignature Language="C#" Value="public class ParallelOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParallelOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.ParallelOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドの操作を構成するオプションを格納、<see cref="T:System.Threading.Tasks.Parallel" />クラスです。</summary>
+    <remarks>To be added.</remarks>
+    <threadsafe>コンス トラクターは、スレッド セーフであるは、複数のインスタンスを構築するために同時に複数のスレッドで使用可能性があります。 他のパブリック メンバーは、スレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParallelOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ParallelOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.ParallelOptions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、既定値を持つインスタンスを初期化します。 <xref:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism%2A>どの程度の並列処理を使用しないでくださいで上限値のセットがないことを示す、-1 に初期化されます。 <xref:System.Threading.Tasks.ParallelOptions.CancellationToken%2A>キャンセルできないトークンに初期化されると<xref:System.Threading.Tasks.ParallelOptions.TaskScheduler%2A>は既定のスケジューラ (TaskScheduler.Default) に初期化します。  
+  
+ インスタンスのプロパティの set アクセサーを使用してこれらの既定のすべて上書きされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancellationToken">
+      <MemberSignature Language="C#" Value="public System.Threading.CancellationToken CancellationToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken CancellationToken" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelOptions.CancellationToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Threading.CancellationToken" />これに関連付けられている<see cref="T:System.Threading.Tasks.ParallelOptions" />インスタンス。</summary>
+        <value>このインスタンスに関連付けられているトークンです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 提供する、<xref:System.Threading.CancellationToken>を<xref:System.Threading.Tasks.Parallel>メソッドを早期に終了する操作を有効にします。 コードの外部の操作には、トークンを取り消すことをスローすることによって早い段階終了可能性があります、操作が設定されているトークンに従っている場合、<xref:System.OperationCanceledException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDegreeOfParallelism">
+      <MemberSignature Language="C#" Value="public int MaxDegreeOfParallelism { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDegreeOfParallelism" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって有効になっている同時実行タスクの最大数を取得または<see cref="T:System.Threading.Tasks.ParallelOptions" />インスタンス。</summary>
+        <value>並列処理の最大限度を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism%2A>プロパティによって実行する同時実行操作の数に影響を与える<xref:System.Threading.Tasks.Parallel>これを渡されるメソッド呼び出し<xref:System.Threading.Tasks.ParallelOptions>インスタンス。 正の値のプロパティの値は、設定された値への同時実行操作の数を制限します。 -1 の場合、同時に実行している操作の数に制限はありません。  
+  
+ 既定では、<xref:System.Threading.Tasks.Parallel.For%2A>と<xref:System.Threading.Tasks.Parallel.ForEach%2A>が、多くのスレッド、基になるスケジューラでは、変更することを確認して<xref:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism%2A>のみ既定値からの制限数の同時実行タスクが使用されます。  
+  
+ 一般に、この設定を変更する必要はありません。 ただし、ような高度な使用シナリオで明示的に設定してを選択することがあります。  
+  
+-   わかっている場合に使用している特定のアルゴリズムがコア数を超えて拡張されないことです。 追加のコアにサイクルを節約するためにプロパティを設定することができます。  
+  
+-   同時に複数のアルゴリズムを実行しているし、手動で定義する各アルゴリズムが利用できる、システムの量。 設定することができます、<xref:System.Threading.Tasks.ParallelOptions.MaxDegreeOfParallelism%2A>各の値。  
+  
+-   スレッド プールのヒューリスティックを使用するスレッドの数を決定できず、スレッドが多すぎるを挿入することになります。 たとえば、実行時間の長いループ本体のイテレーションでスレッド プールが妥当な進行またはライブロックまたはデッドロックの相違は区別できない可能性があり、パフォーマンスを向上させるために追加されたスレッドを再利用できない可能性があります。 ここでは、スレッドの適切な数よりも多く使用しないことを確認するプロパティを設定できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティは、0 または-1 より小さい値である値に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskScheduler">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskScheduler TaskScheduler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.TaskScheduler TaskScheduler" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ParallelOptions.TaskScheduler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Threading.Tasks.TaskScheduler" />これに関連付けられている<see cref="T:System.Threading.Tasks.ParallelOptions" />インスタンス。 このプロパティを null に設定すると、現在のスケジューラを使用することを示します。</summary>
+        <value>このインスタンスに関連付けられているタスク スケジューラー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

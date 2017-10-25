@@ -1,0 +1,219 @@
+<Type Name="IfElseActivity" FullName="System.Workflow.Activities.IfElseActivity">
+  <TypeSignature Language="C#" Value="public sealed class IfElseActivity : System.Workflow.ComponentModel.CompositeActivity, System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IfElseActivity extends System.Workflow.ComponentModel.CompositeActivity implements class System.Workflow.ComponentModel.IActivityEventListener`1&lt;class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.IfElseActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.CompositeActivity</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.IfElseDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Workflow.Activities.IfElseToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.IfElseActivity), "Resources.Decision.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.IfElseValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>条件に従って、<see cref="T:System.Workflow.Activities.IfElseBranchActivity" /> 型の 2 つ以上のアクティビティの中から 1 つのアクティビティを実行します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このアクティビティは、2 つの `If-ElseIf` ステートメントに類似したセマンティクスを提供します。  
+  
+ <xref:System.Workflow.Activities.IfElseActivity> には <xref:System.Workflow.Activities.IfElseBranchActivity> クラスの順序付き集合が格納され、条件が `true` と評価されたときに最初の分岐が実行されます。 最後の分岐に条件は必要ありません。この場合、必ず `true` と評価されます。  
+  
+ <xref:System.Workflow.Activities.IfElseActivity> は、どの条件も満たされなかった場合は、すべての子アクティビティを実行せずに完了できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Activities.IfElseActivity> クラスの新規インスタンスを作成し、そのインスタンスに 2 つの <xref:System.Workflow.Activities.IfElseBranchActivity> クラスを追加するコード例を次に示します。 このコード例は、SequentialWorkflow.cs ファイルから抜粋した SequentialWorkflowWithParameters SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][パラメーターを含むシーケンシャル ワークフロー](http://msdn.microsoft.com/en-us/17157f2d-8fed-4848-a386-e4efa381b66b)です。  
+  
+ [!code-csharp[wf_samples#194](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#194)]
+ [!code-vb[wf_samples#194](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#194)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IfElseActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.IfElseActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.IfElseActivity> クラスの新規インスタンスを作成し、そのインスタンスに 2 つの <xref:System.Workflow.Activities.IfElseBranchActivity> クラスを追加するコード例を次に示します。 このコード例は、SequentialWorkflow.cs ファイルから抜粋した SequentialWorkflowWithParameters SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][パラメーターを含むシーケンシャル ワークフロー](http://msdn.microsoft.com/en-us/17157f2d-8fed-4848-a386-e4efa381b66b)です。  
+  
+ [!code-csharp[wf_samples#296](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#296)]
+ [!code-vb[wf_samples#296](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#296)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IfElseActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティのユーザー定義名。</param>
+        <summary>アクティビティ名を使用して、<see cref="T:System.Workflow.Activities.IfElseActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBranch">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.IfElseBranchActivity AddBranch (System.Collections.Generic.ICollection&lt;System.Workflow.ComponentModel.Activity&gt; activities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.IfElseBranchActivity AddBranch(class System.Collections.Generic.ICollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.AddBranch(System.Collections.Generic.ICollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.IfElseBranchActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activities" Type="System.Collections.Generic.ICollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="activities">新しい分岐に追加するアクティビティのコレクション。</param>
+        <summary>新しい分岐に追加する新しいアクティビティのコレクションを使用して、新しい分岐を <see cref="T:System.Workflow.Activities.IfElseActivity" /> に追加します。</summary>
+        <returns>新しい分岐で更新された <see cref="T:System.Workflow.Activities.IfElseBranchActivity" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBranch">
+      <MemberSignature Language="C#" Value="public System.Workflow.Activities.IfElseBranchActivity AddBranch (System.Collections.Generic.ICollection&lt;System.Workflow.ComponentModel.Activity&gt; activities, System.Workflow.ComponentModel.ActivityCondition branchCondition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Activities.IfElseBranchActivity AddBranch(class System.Collections.Generic.ICollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activities, class System.Workflow.ComponentModel.ActivityCondition branchCondition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.AddBranch(System.Collections.Generic.ICollection{System.Workflow.ComponentModel.Activity},System.Workflow.ComponentModel.ActivityCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.IfElseBranchActivity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activities" Type="System.Collections.Generic.ICollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+        <Parameter Name="branchCondition" Type="System.Workflow.ComponentModel.ActivityCondition" />
+      </Parameters>
+      <Docs>
+        <param name="activities">新しい分岐に追加するアクティビティのコレクション。</param>
+        <param name="branchCondition">分岐を実行するかどうかを決定する <see cref="T:System.Workflow.ComponentModel.ActivityCondition" />。</param>
+        <summary>新しい分岐に追加する新しいアクティビティのコレクションを使用して、新しい分岐を <see cref="T:System.Workflow.Activities.IfElseActivity" /> に追加します。</summary>
+        <returns>新しい分岐で更新された <see cref="T:System.Workflow.Activities.IfElseBranchActivity" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Cancel (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Cancel(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.Cancel(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;.OnEvent">
+      <MemberSignature Language="C#" Value="void IActivityEventListener&lt;ActivityExecutionStatusChangedEventArgs&gt;.OnEvent (object sender, System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Workflow.ComponentModel.IActivityEventListener&lt;System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs&gt;.OnEvent(object sender, class System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.IfElseActivity.System#Workflow#ComponentModel#IActivityEventListener&lt;System#Workflow#ComponentModel#ActivityExecutionStatusChangedEventArgs&gt;#OnEvent(System.Object,System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.ActivityExecutionStatusChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントを発生させたオブジェクト。</param>
+        <param name="e">型指定されていたイベント引数。</param>
+        <summary>アクティビティ実行ステータスが変化したときの処理プロシージャを定義します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

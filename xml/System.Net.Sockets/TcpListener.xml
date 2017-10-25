@@ -1,0 +1,1137 @@
+<Type Name="TcpListener" FullName="System.Net.Sockets.TcpListener">
+  <TypeSignature Language="C#" Value="public class TcpListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TcpListener extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.TcpListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>TCP ネットワーク クライアントからの接続をリッスンします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener>クラスをリッスンし、同期モードのブロックでの接続要求を受け付けるための簡単な方法を提供します。 使用するか、<xref:System.Net.Sockets.TcpClient>または<xref:System.Net.Sockets.Socket>に接続する、<xref:System.Net.Sockets.TcpListener>です。 作成、<xref:System.Net.Sockets.TcpListener>を使用して、 <xref:System.Net.IPEndPoint>、ローカル IP アドレスとポート番号、またはポート番号だけです。 指定<xref:System.Net.IPAddress.Any>ローカル IP アドレスおよび基になるサービス プロバイダーは、それらの値を割り当てる場合は、ローカル ポート番号を 0 にします。 この方法を選択する場合を使用できます、<xref:System.Net.Sockets.TcpListener.LocalEndpoint%2A>ソケットが接続した後に、割り当てられている情報を識別するプロパティです。  
+  
+ 使用して、<xref:System.Net.Sockets.TcpListener.Start%2A>接続要求のリッスンを開始します。 <xref:System.Net.Sockets.TcpListener.Start%2A>キューに着信接続するかを呼び出すまで、<xref:System.Net.Sockets.TcpListener.Stop%2A>メソッドまたはそれがキューに登録<xref:System.Net.Sockets.SocketOptionName.MaxConnections>です。 いずれかの方法<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>または<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>を着信接続要求のキューからの接続を取得します。 これら 2 つの方法がブロックされます。 使用することができますがブロックされないようにする場合、<xref:System.Net.Sockets.TcpListener.Pending%2A>接続要求がキューで利用可能なかどうかを判断するには、最初のメソッドです。  
+  
+ 呼び出す、<xref:System.Net.Sockets.TcpListener.Stop%2A>を終了するメソッド、<xref:System.Net.Sockets.TcpListener>です。  
+  
+> [!NOTE]
+>  <xref:System.Net.Sockets.TcpListener.Stop%2A>承認済みのすべての接続は閉じられません。 ユーザーは、これらを個別に閉じる担当します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.Sockets.TcpListener>です。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/CPP/tcpserver.cpp#1)]
+ [!code-csharp[System.Net.Sockets.TcpListener#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/CS/tcpserver.cs#1)]
+ [!code-vb[System.Net.Sockets.TcpListener#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/VB/tcpserver.vb#1)]  
+  
+ 参照してください<xref:System.Net.Sockets.TcpClient>クライアントなどです。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Net.SocketPermission">発信接続を確立するか、受信要求を受け入れます。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpListener (int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use TcpListener (IPAddress address, int port) instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="port">着信接続の試行をリッスンするポートです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.TcpListener" />は指定されたポートでリッスンするクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは今後は使用しません。 使用して、<xref:System.Net.Sockets.TcpListener.%23ctor%28System.Net.IPAddress%2CSystem.Int32%29?displayProperty=nameWithType>または<xref:System.Net.Sockets.TcpListener.%23ctor%28System.Net.IPEndPoint%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ このコンス トラクターでは、受信試行の接続をリッスンするポート番号を指定することができます。 このコンス トラクターでは、基になるサービス プロバイダーは、最も適切なネットワーク アドレスを割り当てます。 使用されているローカル ポートを限定しない場合は、ポート番号の場合は 0 を指定できます。 この場合、サービス プロバイダーは 1024 ~ 5000 で、使用可能なポート番号を割り当てます。 このアプローチを使用する場合を使用してどのようなローカル ネットワーク アドレスとポート番号が割り当てられてを検出することができます、<xref:System.Net.Sockets.TcpListener.LocalEndpoint%2A>プロパティです。  
+  
+ 呼び出す、<xref:System.Net.Sockets.TcpListener.Start%2A>着信接続要求のリッスンを開始します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.Sockets.TcpListener>ローカル ポート番号を使用します。  
+  
+ [!code-cpp[Classic TcpListener.PublicMethodsAndPropertiesExample#3](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CPP/source.cpp#3)]
+ [!code-csharp[Classic TcpListener.PublicMethodsAndPropertiesExample#3](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CS/source.cs#3)]
+ [!code-vb[Classic TcpListener.PublicMethodsAndPropertiesExample#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/VB/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" />間<see cref="F:System.Net.IPEndPoint.MinPort" />と<see cref="F:System.Net.IPEndPoint.MaxPort" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpListener (System.Net.IPEndPoint localEP);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPEndPoint localEP) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.#ctor(System.Net.IPEndPoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="localEP" Type="System.Net.IPEndPoint" />
+      </Parameters>
+      <Docs>
+        <param name="localEP"><see cref="T:System.Net.IPEndPoint" />リスナーをバインドするローカル エンドポイントを表す<see cref="T:System.Net.Sockets.Socket" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.TcpListener" />指定したローカル エンドポイントを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、ローカル IP アドレスを指定することができ、着信接続をリッスンするポート番号がしようとします。 このコンス トラクターを使用して、前に作成する必要があります、<xref:System.Net.IPEndPoint>必要なローカル IP アドレスとポート番号を使用します。 これを渡す<xref:System.Net.IPEndPoint>としてコンス トラクターに、`localEP`パラメーター。  
+  
+ ローカル アドレスの割り当てを限定しない場合は、作成、<xref:System.Net.IPEndPoint>を使用して<xref:System.Net.IPAddress.Any?displayProperty=nameWithType>アドレス パラメーターと、基になるサービス プロバイダーは、最も適切なネットワーク アドレスを割り当てます。 これにより、複数のネットワーク インターフェイスがある場合に、アプリケーションを簡略化のに役立ちます。 使用されているローカル ポートを限定しない場合は、作成、<xref:System.Net.IPEndPoint>ポート番号として 0 を使用します。 この場合、サービス プロバイダーは 1024 ~ 5000 で、使用可能なポート番号を割り当てます。 このアプローチを使用する場合を使用してどのようなローカル ネットワーク アドレスとポート番号が割り当てられてを検出することができます、<xref:System.Net.Sockets.TcpListener.LocalEndpoint%2A>プロパティです。  
+  
+ 呼び出す、<xref:System.Net.Sockets.TcpListener.Start%2A>着信接続要求のリッスンを開始します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Net.Sockets.TcpListener>クラス ローカル エンドポイントを使用します。  
+  
+ [!code-cpp[Classic TcpListener.PublicMethodsAndPropertiesExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CPP/source.cpp#1)]
+ [!code-csharp[Classic TcpListener.PublicMethodsAndPropertiesExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CS/source.cs#1)]
+ [!code-vb[Classic TcpListener.PublicMethodsAndPropertiesExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localEP" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TcpListener (System.Net.IPAddress localaddr, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress localaddr, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.#ctor(System.Net.IPAddress,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="localaddr" Type="System.Net.IPAddress" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="localaddr"><see cref="T:System.Net.IPAddress" />ローカル IP アドレスを表すです。</param>
+        <param name="port">着信接続の試行をリッスンするポートです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Sockets.TcpListener" />着信接続をリッスンしているクラスは、指定されたローカル IP アドレスとポート番号に試みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、ローカル IP アドレスを指定することができ、着信接続をリッスンするポート番号がしようとします。 このコンス トラクターを呼び出す前に作成する必要が最初、<xref:System.Net.IPAddress>必要なローカル アドレスを使用します。 これを渡す<xref:System.Net.IPAddress>としてコンス トラクターに、`localaddr`パラメーター。 ローカル アドレスの割り当てを限定しない場合は、指定<xref:System.Net.IPAddress?displayProperty=nameWithType>の`localaddr`パラメーター、および基になるサービス プロバイダーは最も適切なネットワーク アドレスを割り当てます。 これにより、複数のネットワーク インターフェイスがある場合に、アプリケーションを簡略化のに役立ちます。 使用されているローカル ポートを限定しない場合は、ポート番号の場合は 0 を指定できます。 この場合、サービス プロバイダーは 1024 ~ 5000 で、使用可能なポート番号を割り当てます。 このアプローチを使用する場合を使用してどのようなローカル ネットワーク アドレスとポート番号が割り当てられてを検出することができます、<xref:System.Net.Sockets.TcpListener.LocalEndpoint%2A>プロパティです。  
+  
+ 呼び出す、<xref:System.Net.Sockets.TcpListener.Start%2A>着信接続要求のリッスンを開始します。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Net.Sockets.TcpListener>クラス ローカル IP アドレスとポート番号を使用します。  
+  
+ [!code-cpp[Classic TcpListener.PublicMethodsAndPropertiesExample#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CPP/source.cpp#2)]
+ [!code-csharp[Classic TcpListener.PublicMethodsAndPropertiesExample#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CS/source.cs#2)]
+ [!code-vb[Classic TcpListener.PublicMethodsAndPropertiesExample#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="localaddr" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" />間<see cref="F:System.Net.IPEndPoint.MinPort" />と<see cref="F:System.Net.IPEndPoint.MaxPort" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptSocket">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket AcceptSocket ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Sockets.Socket AcceptSocket() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.AcceptSocket" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.Socket</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の接続要求を受け付けます。</summary>
+        <returns>A<see cref="T:System.Net.Sockets.Socket" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>ブロッキング メソッドを返す、<xref:System.Net.Sockets.Socket>データの送受信を行えます。 ブロックされないようにする場合は、使用、<xref:System.Net.Sockets.TcpListener.Pending%2A>接続要求が着信接続のキューで利用可能なかどうかを判断するメソッド。  
+  
+ <xref:System.Net.Sockets.Socket>返されたリモート ホストの IP アドレスとポート番号で初期化されます。 いずれかを使用することができます、<xref:System.Net.Sockets.Socket.Send%2A>と<xref:System.Net.Sockets.Socket.Receive%2A>で使用できるメソッド、<xref:System.Net.Sockets.Socket>リモート ホストと通信するクラス。 終了したらを使用して、 <xref:System.Net.Sockets.Socket>、必ずその<xref:System.Net.Sockets.Socket.Close%2A>メソッドです。 アプリケーションが比較的単純な場合は、使用を検討して、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドではなく、<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。 <xref:System.Net.Sockets.TcpClient>簡単な方法の同期モードのブロックのネットワーク経由でデータを送受信できます。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>を返すメソッドを使用する<xref:System.Net.Sockets.Socket>です。 これは、<xref:System.Net.Sockets.Socket>新しく接続したクライアントと通信するために使用します。  
+  
+ [!code-cpp[Classic TcpListener.PublicMethodsAndPropertiesExample#4](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CPP/source.cpp#4)]
+ [!code-csharp[Classic TcpListener.PublicMethodsAndPropertiesExample#4](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/CS/source.cs#4)]
+ [!code-vb[Classic TcpListener.PublicMethodsAndPropertiesExample#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic TcpListener.PublicMethodsAndPropertiesExample/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して、リスナーが開始されていない<see cref="M:System.Net.Sockets.TcpListener.Start" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptSocketAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt; AcceptSocketAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.Sockets.Socket&gt; AcceptSocketAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.AcceptSocketAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.Socket&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作として、保留中の接続要求を受け入れます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.Sockets.Socket" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、ソケット接続が許可された後に完了します。  
+  
+ <xref:System.Net.Sockets.Socket>で返される<xref:System.Threading.Tasks.Task%601>はリモート ホストの IP アドレスとポート番号で初期化します。 いずれかを使用することができます、<xref:System.Net.Sockets.Socket.Send%2A>と<xref:System.Net.Sockets.Socket.Receive%2A>で使用できるメソッド、<xref:System.Net.Sockets.Socket>リモート ホストと通信するクラス。 終了したらを使用して、 <xref:System.Net.Sockets.Socket>、必ずその<xref:System.Net.Sockets.Socket.Close%2A>メソッドです。 アプリケーションが比較的単純な場合は、使用を検討して、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドではなく、<xref:System.Net.Sockets.TcpListener.AcceptSocketAsync%2A>メソッドです。 <xref:System.Net.Sockets.TcpClient>簡単な方法の同期モードのブロックのネットワーク経由でデータを送受信できます。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して、リスナーが開始されていない<see cref="M:System.Net.Sockets.TcpListener.Start" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptTcpClient">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.TcpClient AcceptTcpClient ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Sockets.TcpClient AcceptTcpClient() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.AcceptTcpClient" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TcpClient</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の接続要求を受け付けます。</summary>
+        <returns>A<see cref="T:System.Net.Sockets.TcpClient" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>ブロッキング メソッドを返す、<xref:System.Net.Sockets.TcpClient>データの送受信を行えます。 使用して、<xref:System.Net.Sockets.TcpListener.Pending%2A>がブロックされないようにする場合は、接続要求が着信接続のキューで利用可能なかどうかを調べます。  
+  
+ 使用して、<xref:System.Net.Sockets.TcpClient.GetStream%2A?displayProperty=nameWithType>メソッドは、基になるかを取得する<xref:System.Net.Sockets.NetworkStream>、返された<xref:System.Net.Sockets.TcpClient>です。 <xref:System.Net.Sockets.NetworkStream>くれますメソッドでのリモート ホストと送受信します。 経由は、 <xref:System.Net.Sockets.TcpClient>、必ずその<xref:System.Net.Sockets.TcpClient.Close%2A>メソッド。 も柔軟性が向上する場合、<xref:System.Net.Sockets.TcpClient>のオファーは、使用を検討して<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>を返すメソッドを使用する<xref:System.Net.Sockets.TcpClient>です。 これは、<xref:System.Net.Sockets.TcpClient>新しく接続したクライアントと通信するために使用します。  
+  
+ [!code-cpp[Classic TcpListenerExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic TcpListenerExample/CPP/source.cpp#1)]
+ [!code-csharp[Classic TcpListenerExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic TcpListenerExample/CS/source.cs#1)]
+ [!code-vb[Classic TcpListenerExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic TcpListenerExample/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して、リスナーが開始されていない<see cref="M:System.Net.Sockets.TcpListener.Start" />です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">使用して、<see cref="P:System.Net.Sockets.SocketException.ErrorCode" />固有のエラー コードを取得するプロパティです。 このコードを取得したときに、Windows ソケット バージョン 2 API エラー コードのドキュメントに MSDN でエラーの詳細な説明を参照できます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptTcpClientAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;System.Net.Sockets.TcpClient&gt; AcceptTcpClientAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;class System.Net.Sockets.TcpClient&gt; AcceptTcpClientAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.AcceptTcpClientAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.Sockets.TcpClient&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作として、保留中の接続要求を受け入れます。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.Sockets.TcpClient" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、TCP 接続が許可された後に完了します。  
+  
+ 使用して、<xref:System.Net.Sockets.TcpClient.GetStream%2A?displayProperty=nameWithType>メソッドは、基になるかを取得する<xref:System.Net.Sockets.NetworkStream>、返された<xref:System.Net.Sockets.TcpClient>で、<xref:System.Threading.Tasks.Task%601>です。 <xref:System.Net.Sockets.NetworkStream>くれますメソッドでのリモート ホストと送受信します。 経由は、 <xref:System.Net.Sockets.TcpClient>、必ずその<xref:System.Net.Sockets.TcpClient.Close%2A>メソッド。 も柔軟性が向上する場合、<xref:System.Net.Sockets.TcpClient>のオファーは、使用を検討して<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>または<xref:System.Net.Sockets.TcpListener.AcceptSocketAsync%2A>です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して、リスナーが開始されていない<see cref="M:System.Net.Sockets.TcpListener.Start" />です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">使用して、<see cref="P:System.Net.Sockets.SocketException.ErrorCode" />固有のエラー コードを取得するプロパティです。 このコードを取得したときに、Windows ソケット バージョン 2 API エラー コードのドキュメントに MSDN でエラーの詳細な説明を参照できます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Active">
+      <MemberSignature Language="C#" Value="protected bool Active { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Active" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpListener.Active" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか<see cref="T:System.Net.Sockets.TcpListener" />クライアント接続のリッスンがアクティブにします。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Net.Sockets.TcpListener" />アクティブにリッスンしている以外の場合は、それ以外の場合は、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生するクラス<xref:System.Net.Sockets.TcpListener>かどうかをこのプロパティを使用することができます、<xref:System.Net.Sockets.Socket>受信接続が試行リッスンします。 <xref:System.Net.Sockets.TcpClient.Active%2A>プロパティは、冗長を避けるために使用できます<xref:System.Net.Sockets.TcpListener.Start%2A>しようとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowNatTraversal">
+      <MemberSignature Language="C#" Value="public void AllowNatTraversal (bool allowed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AllowNatTraversal(bool allowed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.AllowNatTraversal(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="allowed" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allowed">有効にするか、NAT トラバーサルを無効にするかどうかを指定するブール値。</param>
+        <summary>有効または無効にネットワーク アドレス変換 (NAT) トラバーサル、<see cref="T:System.Net.Sockets.TcpListener" />インスタンス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A>メソッドを使用を有効にするにまたは NAT トラバーサルを無効にする、<xref:System.Net.Sockets.TcpListener>インスタンス。 NAT トラバーサルを指定するには、Teredo、6to4、または ISATAP トンネルを使用します。  
+  
+ ときに、`allowed`パラメーターが false の場合、<xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel>に関連付けられているソケットでオプションが設定されている<xref:System.Net.Sockets.IPProtectionLevel.EdgeRestricted>です。 NAT トラバーサルが明示的に無効になります、<xref:System.Net.Sockets.TcpListener>インスタンス。  
+  
+ ときに、`allowed`パラメーターが true の場合、<xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel>に関連付けられているソケットでオプションが設定されている<xref:System.Net.Sockets.IPProtectionLevel.Unrestricted>です。 これは、NAT トラバーサルを許可することがあります、<xref:System.Net.Sockets.TcpListener>システム上でファイアウォール規則によって異なります。  
+  
+ <xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A>メソッドを呼び出す前に呼び出す必要があります、<xref:System.Net.Sockets.TcpListener.Start%2A>メソッド (前に、ソケットをバインドすると)、接続要求のリッスンが開始します。 場合<xref:System.Net.Sockets.TcpListener.AllowNatTraversal%2A>メソッドは、<xref:System.Net.Sockets.TcpListener.Start%2A>メソッド、<xref:System.InvalidOperationException>がスローされます。  
+  
+ Teredo アドレスは、IPv6 アドレス プレフィックスが 2001年::/32 です。 Teredo アドレスは、通常の DNS 名解決によって返されるまたはローカル インターフェイスに割り当てられている IPv6 アドレスとして列挙できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.Sockets.TcpListener.AllowNatTraversal(System.Boolean)" />メソッドを呼び出した後に呼び出された、<see cref="M:System.Net.Sockets.TcpListener.Start" />メソッド</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAcceptSocket">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAcceptSocket (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginAcceptSocket(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.BeginAcceptSocket(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">受信操作に関する情報を含むユーザー定義オブジェクト。 このオブジェクトは、<c>コールバック</c>委任操作が完了するとします。</param>
+        <summary>着信接続の試行をそのまま使用する非同期操作を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />の非同期の作成を参照する、<see cref="T:System.Net.Sockets.Socket" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期の<xref:System.Net.Sockets.TcpListener.BeginAcceptSocket%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Sockets.TcpListener.EndAcceptSocket%2A>メソッドです。 通常、このメソッドはによって、`callback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 操作が完了するまでをブロックするを使用して、<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+> [!NOTE]
+>  呼び出すことができます、 <xref:System.Net.Sockets.Socket.RemoteEndPoint%2A> 、返されたプロパティ<xref:System.Net.Sockets.Socket>をリモート ホストのネットワーク アドレスとポート番号を識別します。  
+  
+> [!NOTE]
+>  表示された場合、<xref:System.Net.Sockets.SocketException>を使用して、<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>プロパティを特定のエラー コードを取得し、MSDN ライブラリで Windows ソケット バージョン 2 API のエラー コード ドキュメントを参照してください[http://msdn.microsoft.com/library/](http://msdn.microsoft.com/library/)エラーの詳細な説明をします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.Sockets.TcpListener.BeginAcceptSocket%2A>メソッドを作成し、ソケットを接続します。 コールバック デリゲートの呼び出し、<xref:System.Net.Sockets.TcpListener.EndAcceptSocket%2A>メソッドの非同期要求を終了します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#4)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#4)]
+ [!code-vb[System.Net.Sockets.TcpListener1#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> が閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAcceptTcpClient">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAcceptTcpClient (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginAcceptTcpClient(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.BeginAcceptTcpClient(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">受信操作に関する情報を含むユーザー定義オブジェクト。 このオブジェクトは、<c>コールバック</c>委任操作が完了するとします。</param>
+        <summary>着信接続の試行をそのまま使用する非同期操作を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />の非同期の作成を参照する、<see cref="T:System.Net.Sockets.TcpClient" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期の<xref:System.Net.Sockets.TcpListener.BeginAcceptTcpClient%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Sockets.TcpListener.EndAcceptTcpClient%2A>メソッドです。 通常、このメソッドはによって、`callback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 操作が完了するまでをブロックするを使用して、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+> [!NOTE]
+>  表示された場合、<xref:System.Net.Sockets.SocketException>を使用して、<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>プロパティを特定のエラー コードを取得し、MSDN ライブラリで Windows ソケット バージョン 2 API のエラー コード ドキュメントを参照してください[http://msdn.microsoft.com/library/](http://msdn.microsoft.com/library/)エラーの詳細な説明をします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.Sockets.TcpListener.BeginAcceptTcpClient%2A>メソッドを作成し、ソケットを接続します。 コールバック デリゲートの呼び出し、<xref:System.Net.Sockets.TcpListener.EndAcceptTcpClient%2A>メソッドの非同期要求を終了します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#5)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#5)]
+ [!code-vb[System.Net.Sockets.TcpListener1#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.Socket" /> が閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Net.Sockets.TcpListener Create (int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.Sockets.TcpListener Create(int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Create(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TcpListener</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="port">着信接続の試行をリッスンするポートです。</param>
+        <summary>新たに作成<see cref="T:System.Net.Sockets.TcpListener" />のインスタンスを指定されたポートでリッスンします。</summary>
+        <returns><see cref="T:System.Net.Sockets.TcpListener" /> を返します。  
+  
+ 新しい<see cref="T:System.Net.Sockets.TcpListener" />のインスタンスを指定されたポートでリッスンします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAcceptSocket">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket EndAcceptSocket (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Sockets.Socket EndAcceptSocket(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.EndAcceptSocket(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.Socket</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返される、<see cref="M:System.Net.Sockets.TcpListener.BeginAcceptSocket(System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <summary>非同期的に受信接続の試行を受け入れるし、新たに作成<see cref="T:System.Net.Sockets.Socket" />をリモート ホスト間の通信を処理します。</summary>
+        <returns><see cref="T:System.Net.Sockets.Socket" />。  
+  
+ <see cref="T:System.Net.Sockets.Socket" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作するまでブロックを完了します。 この操作を同期的に実行するを使用して、<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。  
+  
+> [!NOTE]
+>  呼び出すことができます、 <xref:System.Net.Sockets.Socket.RemoteEndPoint%2A> 、返されたプロパティ<xref:System.Net.Sockets.Socket>をリモート ホストのネットワーク アドレスとポート番号を識別します。  
+  
+> [!NOTE]
+>  表示された場合、<xref:System.Net.Sockets.SocketException>を使用して、<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>プロパティを特定のエラー コードを取得し、MSDN ライブラリで Windows ソケット バージョン 2 API のエラー コード ドキュメントを参照してください[http://msdn.microsoft.com/library/](http://msdn.microsoft.com/library/)エラーの詳細な説明をします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.Sockets.TcpListener.BeginAcceptSocket%2A>メソッドを作成し、ソケットを接続します。 コールバック デリゲートの呼び出し、<xref:System.Net.Sockets.TcpListener.EndAcceptSocket%2A>メソッドの非同期要求を終了します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#4)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#4)]
+ [!code-vb[System.Net.Sockets.TcpListener1#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">基になる<see cref="T:System.Net.Sockets.Socket" />が閉じられました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="asyncResult" />への呼び出しでパラメーターが作成されませんでした、<see cref="M:System.Net.Sockets.TcpListener.BeginAcceptSocket(System.AsyncCallback,System.Object)" />メソッドです。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.Net.Sockets.TcpListener.EndAcceptSocket(System.IAsyncResult)" />メソッドが以前に呼び出されます。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">アクセス中にエラーが発生しました、<see cref="T:System.Net.Sockets.Socket" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAcceptTcpClient">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.TcpClient EndAcceptTcpClient (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.Sockets.TcpClient EndAcceptTcpClient(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.EndAcceptTcpClient(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.TcpClient</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返される、<see cref="M:System.Net.Sockets.TcpListener.BeginAcceptTcpClient(System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <summary>非同期的に受信接続の試行を受け入れるし、新たに作成<see cref="T:System.Net.Sockets.TcpClient" />をリモート ホスト間の通信を処理します。</summary>
+        <returns><see cref="T:System.Net.Sockets.TcpClient" />。  
+  
+ <see cref="T:System.Net.Sockets.TcpClient" />データを送受信するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作するまでブロックを完了します。 この操作を同期的に実行するを使用して、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドです。  
+  
+> [!NOTE]
+>  呼び出すことができます、<xref:System.Net.Sockets.Socket.RemoteEndPoint%2A>基になるソケットのプロパティ (<xref:System.Net.Sockets.TcpClient.Client%2A>) をリモート ホストのネットワーク アドレスとポート番号を識別します。  
+  
+> [!NOTE]
+>  表示された場合、<xref:System.Net.Sockets.SocketException>を使用して、<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>プロパティを特定のエラー コードを取得し、MSDN ライブラリで Windows ソケット バージョン 2 API のエラー コード ドキュメントを参照してください[http://msdn.microsoft.com/library/](http://msdn.microsoft.com/library/)エラーの詳細な説明をします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.Sockets.TcpListener.BeginAcceptTcpClient%2A>メソッドを作成し、ソケットを接続します。 コールバック デリゲートの呼び出し、<xref:System.Net.Sockets.TcpListener.EndAcceptTcpClient%2A>メソッドの非同期要求を終了します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#5)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#5)]
+ [!code-vb[System.Net.Sockets.TcpListener1#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExclusiveAddressUse">
+      <MemberSignature Language="C#" Value="public bool ExclusiveAddressUse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExclusiveAddressUse" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpListener.ExclusiveAddressUse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />値を指定するかどうか、<see cref="T:System.Net.Sockets.TcpListener" />により、特定のポートをリッスンするように基になるソケットを 1 つだけです。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Net.Sockets.TcpListener" />により、1 つだけ<see cref="T:System.Net.Sockets.TcpListener" />特定のポートをリッスンするようにそれ以外の場合、<see langword="false" />です。 」を参照してください。 既定値は、Windows Server 2003 および Windows XP Service Pack 2 以降では <see langword="true" /> で、その他のすべてのバージョンでは <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、複数のリスナーは、特定のポートを聴くことができます。 ただし、リスナーの 1 つだけでは、ポートに送信されるネットワーク トラフィックの操作を実行できます。 複数のリスナーが特定のポートにバインドしようとすると、特定の IP アドレスを持つ 1 つはそのポートに送信されるネットワーク トラフィックを処理します。 使用することができます、<xref:System.Net.Sockets.Socket.ExclusiveAddressUse%2A>プロパティを複数のリスナーが特定のポートをリッスンしていることを防ぐためにします。  
+  
+ 呼び出しの前に、このプロパティ設定<xref:System.Net.Sockets.TcpListener.Start%2A>を呼び出したり、<xref:System.Net.Sockets.TcpListener.Stop%2A>メソッドし、このプロパティを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得および設定、<xref:System.Net.Sockets.TcpListener.ExclusiveAddressUse%2A>プロパティです。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#2)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#2)]
+ [!code-vb[System.Net.Sockets.TcpListener1#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Net.Sockets.TcpListener" />が開始されました。 呼び出す、<see cref="M:System.Net.Sockets.TcpListener.Stop" />メソッドとし、セット、<see cref="P:System.Net.Sockets.Socket.ExclusiveAddressUse" />プロパティです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">基になるソケットにアクセスしようとするときにエラーが発生しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">基になる<see cref="T:System.Net.Sockets.Socket" />が閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~TcpListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalEndpoint">
+      <MemberSignature Language="C#" Value="public System.Net.EndPoint LocalEndpoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.EndPoint LocalEndpoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpListener.LocalEndpoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.EndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる取得<see cref="T:System.Net.EndPoint" />、現在の<see cref="T:System.Net.Sockets.TcpListener" />します。</summary>
+        <value><see cref="T:System.Net.EndPoint" />先、<see cref="T:System.Net.Sockets.Socket" />がバインドされています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Net.Sockets.TcpListener.LocalEndpoint%2A>ソケット接続が確立した後で着信クライアント接続要求をリッスンするように使用されているローカル ネットワーク インターフェイスとポート番号を識別するプロパティです。 これをキャストする必要がありますまず<xref:System.Net.EndPoint>を<xref:System.Net.IPEndPoint>です。 呼び出すことができます、 <xref:System.Net.IPEndPoint.Address%2A?displayProperty=nameWithType> 、ローカル IP アドレスを取得するプロパティと<xref:System.Net.IPEndPoint.Port%2A?displayProperty=nameWithType>ローカル ポート番号を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル IP アドレスとポート番号を表示する、<xref:System.Net.Sockets.TcpListener>が接続要求をリッスンします。  
+  
+ [!code-cpp[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/CPP/source.cpp#1)]
+ [!code-csharp[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/CS/source.cs#1)]
+ [!code-vb[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pending">
+      <MemberSignature Language="C#" Value="public bool Pending ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Pending() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Pending" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の接続要求があるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />接続が保留中の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この非ブロッキング メソッドは、保留中の接続要求があるかを判断します。 <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>と<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドまで実行をブロックする、<xref:System.Net.Sockets.TcpListener.Start%2A>メソッドには、受信接続要求がキューに格納した、<xref:System.Net.Sockets.TcpListener.Pending%2A>メソッドは、ライセンス条項に同意する前に、接続が利用可能なかどうかを判断するために使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例のチェック、<xref:System.Net.Sockets.TcpListener.Pending%2A>メソッドです。 接続要求が受け入れられるを待機している場合への呼び出し、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドが行われます。  
+  
+ [!code-cpp[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/CPP/source.cpp#1)]
+ [!code-csharp[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/CS/source.cs#1)]
+ [!code-vb[TcpListener_Pending_LocalEndPoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/TcpListener_Pending_LocalEndPoint/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">呼び出して、リスナーが開始されていない<see cref="M:System.Net.Sockets.TcpListener.Start" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Server">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.Socket Server { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Sockets.Socket Server" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.TcpListener.Server" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.Socket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるネットワーク取得<see cref="T:System.Net.Sockets.Socket" />です。</summary>
+        <value>基になる <see cref="T:System.Net.Sockets.Socket" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener>作成、<xref:System.Net.Sockets.Socket>着信クライアント接続要求をリッスンします。 派生するクラス<xref:System.Net.Sockets.TcpListener>このプロパティを使用してこの<xref:System.Net.Sockets.Socket>です。 使用して、基になる<xref:System.Net.Sockets.Socket>によって返される、<xref:System.Net.Sockets.TcpListener.Server%2A>をさらにアクセスが必要な場合は、プロパティ<xref:System.Net.Sockets.TcpListener>を提供します。  
+  
+> [!NOTE]
+>  <xref:System.Net.Sockets.TcpListener.Server%2A>プロパティだけを返します、<xref:System.Net.Sockets.Socket>着信クライアント接続要求をリッスンするために使用します。 使用して、 <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> 、保留中の接続要求を受け入れるし、取得する方法、<xref:System.Net.Sockets.Socket>のデータを送受信します。 使用することも、 <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> 、保留中の接続要求を受け入れるし、取得する方法、<xref:System.Net.Sockets.TcpClient>データを送受信するためです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Net.Sockets.TcpListener.Server%2A>プロパティです。 基になる<xref:System.Net.Sockets.Socket>が取得されると、 <xref:System.Net.Sockets.SocketOptionName.Linger> <xref:System.Net.Sockets.Socket>オプションが構成されているタイムアウトを 10 秒後に、接続が閉じられた後、このデータは、まだネットワーク バッファーに残っている場合。  
+  
+ [!code-csharp[TcpListenerProtectedMembers1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/TcpListenerProtectedMembers1/CS/source.cs#1)]
+ [!code-vb[TcpListenerProtectedMembers1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/TcpListenerProtectedMembers1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>接続要求のリッスンを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.Start%2A>メソッドは、基になる、初期化<xref:System.Net.Sockets.Socket>、ローカル エンドポイントにバインドされ、受信接続が試行をリッスンします。 接続要求を受信する場合、<xref:System.Net.Sockets.TcpListener.Start%2A>要求はキューに、継続が呼び出されるまで、追加の要求をリッスンしているメソッドを<xref:System.Net.Sockets.TcpListener.Stop%2A>メソッドです。 場合<xref:System.Net.Sockets.TcpListener>接続要求を受信スローすることにより、接続の最大数が既にキューに、後に、<xref:System.Net.Sockets.SocketException>クライアントにします。  
+  
+ 着信接続のキューからの接続を削除するには、いずれかを使用、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドまたは<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。 <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドは、キューからの接続を削除し、返す、<xref:System.Net.Sockets.TcpClient>データの送受信を行えます。 <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドは、<xref:System.Net.Sockets.Socket>同じ操作を実行に使用することできます。 使用して、アプリケーションには、同期 I/O だけが必要な場合<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>です。 詳細な動作上のコントロールは、使用して<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>です。 これら両方のメソッドは、接続要求が、キューで使用可能になるまでブロックします。  
+  
+ 使用して、<xref:System.Net.Sockets.TcpListener.Stop%2A>を終了するメソッド、<xref:System.Net.Sockets.TcpListener>リッスンし、停止します。 別に、承認済みの接続の終了を担当しています。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例でどのように<xref:System.Net.Sockets.TcpListener.Start%2A>着信クライアント接続要求をリッスンするために使用します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#3)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#3)]
+ [!code-vb[System.Net.Sockets.TcpListener1#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">使用して、<see cref="P:System.Net.Sockets.SocketException.ErrorCode" />固有のエラー コードを取得するプロパティです。 このコードを取得したときに、Windows ソケット バージョン 2 API エラー コードのドキュメントに MSDN でエラーの詳細な説明を参照できます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start (int backlog);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start(int32 backlog) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Start(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="backlog" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="backlog">保留中の接続のキューの最大長。</param>
+        <summary>保留中の接続の数が最大で着信接続要求のリッスンを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.Start%2A>メソッドは、基になる、初期化<xref:System.Net.Sockets.Socket>、ローカル エンドポイントにバインドされ、受信接続が試行をリッスンします。 接続要求が受信した場合、<xref:System.Net.Sockets.TcpListener.Start%2A>は要求はキューにし、呼び出すまで、追加の要求のリッスンを続行、<xref:System.Net.Sockets.TcpListener.Stop%2A>メソッドです。 場合<xref:System.Net.Sockets.TcpListener>が、スローする接続の最大数は、キューに登録した後、接続要求を受信する<xref:System.Net.Sockets.SocketException>クライアントにします。  
+  
+ 着信接続のキューからの接続を削除するには、いずれかを使用、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドまたは<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。 <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>メソッドは、キューからの接続を削除し、返す、<xref:System.Net.Sockets.TcpClient>データの送受信を行えます。 <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドは、<xref:System.Net.Sockets.Socket>同じ操作を実行に使用することできます。 アプリケーションには、同期 I/O しか必要とする場合を使用して、<xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A>です。 詳細な動作上のコントロールは、使用して<xref:System.Net.Sockets.TcpListener.AcceptSocket%2A>メソッドです。 これら両方のメソッドは、接続要求が、キューで使用可能になるまでブロックします。  
+  
+ 使用して、<xref:System.Net.Sockets.TcpListener.Stop%2A>を終了するメソッド、<xref:System.Net.Sockets.TcpListener>リッスンし、停止します。 別に、承認済みの接続の終了を担当しています。  
+  
+> [!NOTE]
+>  使用して、<xref:System.Net.Sockets.SocketException.ErrorCode%2A?displayProperty=nameWithType>プロパティを特定のエラー コードを取得し、MSDN ライブラリで Windows ソケット バージョン 2 API のエラー コード ドキュメントを参照してください[http://msdn.microsoft.com/library/](http://msdn.microsoft.com/library/)エラーの詳細な説明をします。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例でどのように<xref:System.Net.Sockets.TcpListener.Start%2A>着信クライアント接続要求をリッスンするために使用します。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener1#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/cpp/tcpserver.cpp#3)]
+ [!code-csharp[System.Net.Sockets.TcpListener1#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/CS/tcpserver.cs#3)]
+ [!code-vb[System.Net.Sockets.TcpListener1#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener1/VB/tcpserver.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセス中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="backlog" />パラメーターが 0 より小さいか許可されている接続の最大数を超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">基になる<see cref="T:System.Net.Sockets.Socket" />が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.TcpListener.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.TcpListener.Stop%2A>リスナーを閉じます。 キュー内の任意の未承認の接続要求はすべて失われます。 許容されるためにリモート ホスト接続を待機しているがスローされます、<xref:System.Net.Sockets.SocketException>です。 別に、承認済みの接続の終了を担当しています。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースが有効にされている場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Net.Sockets.TcpListener.Stop%2A>メソッドを基になる閉じる<xref:System.Net.Sockets.Socket>です。  
+  
+ [!code-cpp[System.Net.Sockets.TcpListener#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/CPP/tcpserver.cpp#1)]
+ [!code-csharp[System.Net.Sockets.TcpListener#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/CS/tcpserver.cs#1)]
+ [!code-vb[System.Net.Sockets.TcpListener#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Sockets.TcpListener/VB/tcpserver.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">使用して、<see cref="P:System.Net.Sockets.SocketException.ErrorCode" />固有のエラー コードを取得するプロパティです。 このコードを取得したときに、Windows ソケット バージョン 2 API エラー コードのドキュメントに MSDN でエラーの詳細な説明を参照できます。</exception>
+        <block subset="none" type="usage">
+          <para><see cref="M:System.Net.Sockets.TcpListener.Stop" />メソッドも閉じられます、基になる<see cref="T:System.Net.Sockets.Socket" />、新たに作成および<see cref="T:System.Net.Sockets.Socket" />の<see cref="T:System.Net.Sockets.TcpListener" />です。 基になるに任意のプロパティを設定した場合<see cref="T:System.Net.Sockets.Socket" />呼び出しの前に、<see cref="M:System.Net.Sockets.TcpListener.Stop" />メソッド、それらのプロパティに引き継がれない新しい<see cref="T:System.Net.Sockets.Socket" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

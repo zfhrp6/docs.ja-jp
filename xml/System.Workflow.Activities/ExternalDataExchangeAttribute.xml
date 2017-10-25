@@ -1,0 +1,72 @@
+<Type Name="ExternalDataExchangeAttribute" FullName="System.Workflow.Activities.ExternalDataExchangeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ExternalDataExchangeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExternalDataExchangeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.ExternalDataExchangeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Interface, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ローカル サービス インターフェイスとしてインターフェイスをマークします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!WARNING]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ローカル サービス インターフェイスを実装するクラスは、<xref:System.Workflow.Activities.ExternalDataExchangeService> に追加する必要があり、<xref:System.Workflow.Activities.CallExternalMethodActivity> と <xref:System.Workflow.Activities.HandleExternalEventActivity> によって使用できます。  
+  
+ <xref:System.Workflow.Activities.ExternalDataExchangeAttribute> 属性が設定されたインターフェイスのイベントには、<xref:System.Workflow.Activities.ExternalDataEventArgs> から派生したイベント データが必要です。  
+  
+ インターフェイス メソッドとイベント宣言ではジェネリック型をサポートしていますが、インターフェイス宣言自体についてはジェネリック型をサポートしていません。 `ExternalDataExchange` として使用する場合、次のインターフェイスは無効となります。  
+  
+```  
+public interface IInterfaceName<TCommand>  
+{   
+    void MethodName(TCommand Request);  
+}  
+```  
+  
+   
+  
+## Examples  
+ インターフェイスに <xref:System.Workflow.Activities.ExternalDataExchangeAttribute> を設定する方法を次のコード例に示します。 このコード例は、IStartPurchaseOrder.cs ファイルから抜粋した ActiveDirectoryRoles SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][Active Directory の役割を使用して](http://msdn.microsoft.com/en-us/7b1708da-fd2a-47da-902b-3d50580ee781)です。  
+  
+ [!code-csharp[wf_samples#285](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#285)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExternalDataExchangeAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.ExternalDataExchangeAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.Activities.ExternalDataExchangeAttribute" />の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

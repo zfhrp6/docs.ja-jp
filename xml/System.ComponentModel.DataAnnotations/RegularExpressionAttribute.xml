@@ -1,0 +1,198 @@
+<Type Name="RegularExpressionAttribute" FullName="System.ComponentModel.DataAnnotations.RegularExpressionAttribute">
+  <TypeSignature Language="C#" Value="public class RegularExpressionAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegularExpressionAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.RegularExpressionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.ValidationAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET 動的データにデータ フィールドの値が指定された正規表現に一致する必要がありますを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ RegularExpressionAttribute 属性は、正規表現に対するプロパティの値を検証する必要がある場合に、プロパティに適用されます。 正規表現では、非常に正確に有効な値の形式を指定することができます。 パターンのプロパティには、正規表現が含まれています。プロパティの値が null または空の文字列である場合 ("")、値が自動的に RegularExpressionAttribute 属性の検証に合格します。 値がないことを検証する`null`またはを使用して、空の文字列、 **RequiredAttribute**属性。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.ComponentModel.DataAnnotations.RegularExpressionAttribute> FirstName および LastName から構成データ フィールドを検証する属性。 正規表現は、最大 40 文字を大文字と小文字を許可します。 例では、次のタスクを実行します。  
+  
+-   メタデータの部分クラスと関連するメタデータ クラスを実装します。  
+  
+-   関連するメタデータ クラスでは、適用、 <xref:System.ComponentModel.DataAnnotations.RegularExpressionAttribute> FirstName および LastName から構成データ フィールドに、パターンとカスタム エラー メッセージを指定する属性します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RegularExpressionAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RegularExpressionAttribute/CS/Customer.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RegularExpressionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RegularExpressionAttribute/VB/Customer.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegularExpressionAttribute (string pattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string pattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pattern">データ フィールドの値を検証するために使用する正規表現。</param>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.RegularExpressionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に適用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.RegularExpressionAttribute>データ フィールドにします。 検証に失敗した場合の例のコードには、動的なデータによって提供される検証エラー メッセージが表示されます。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.RegularExpressionAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RegularExpressionAttribute/CS/Customer.cs#2)]
+ [!code-vb[System.ComponentModel.DataAnnotations.RegularExpressionAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.RegularExpressionAttribute/VB/Customer.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pattern" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatErrorMessage">
+      <MemberSignature Language="C#" Value="public override string FormatErrorMessage (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string FormatErrorMessage(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証エラーの原因となったフィールドの名前。</param>
+        <summary>正規表現の検証が失敗した場合に表示するエラー メッセージの書式を設定します。</summary>
+        <returns>書式設定されたエラー メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.FormatErrorMessage%2A>は検証の失敗の原因となったデータ フィールドの名前を使用して、エラー メッセージを作成します。 エラーを作成する方法をカスタマイズするかを実行時に評価されるパラメーターを含むより複雑なメッセージを提供して、カスタム検証属性では、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証するデータ フィールドの値。</param>
+        <summary>ユーザーが入力した値が正規表現パターンに一致するかどうかを確認します。</summary>
+        <returns>
+          検証が成功した場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">データ フィールドの値では、正規表現パターンが一致しませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchTimeoutInMilliseconds">
+      <MemberSignature Language="C#" Value="public int MatchTimeoutInMilliseconds { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MatchTimeoutInMilliseconds" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.MatchTimeoutInMilliseconds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作がタイムアウトする前に 1 つの一致操作を実行するミリ秒単位の時間を取得または設定します。</summary>
+        <value>1 つの一致操作を実行するミリ秒単位の時間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.RegularExpressionAttribute.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規表現パターンを取得します。</summary>
+        <value>一致させるパターン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

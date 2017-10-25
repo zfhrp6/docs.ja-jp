@@ -1,0 +1,136 @@
+<Type Name="Renewing" FullName="System.IdentityModel.Protocols.WSTrust.Renewing">
+  <TypeSignature Language="C#" Value="public class Renewing" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Renewing extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.Renewing" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、wst: Ws-trust で内の要素を更新する要求を更新します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素を示し、トークン発行者を許可する属性が true の場合、要求されたトークンを更新することができます [ok] の属性が true の場合は、期限が切れると、トークンを更新することができます。 これらの属性がによって表される、<xref:System.IdentityModel.Protocols.WSTrust.Renewing.AllowRenewal%2A>と<xref:System.IdentityModel.Protocols.WSTrust.Renewing.OkForRenewalAfterExpiration%2A>プロパティそれぞれします。  
+  
+ このクラスが表す要素の詳細については、自分のシナリオに適用される Ws-trust 仕様のバージョンを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Renewing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Renewing.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Protocols.WSTrust.Renewing" /> <see cref="T:System.IdentityModel.Protocols.WSTrust.Renewing" />既定のプロパティ値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Protocols.WSTrust.Renewing>インスタンス。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Protocols.WSTrust.Renewing.AllowRenewal%2A>|`true`|  
+|<xref:System.IdentityModel.Protocols.WSTrust.Renewing.OkForRenewalAfterExpiration%2A>|`false`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Renewing (bool allowRenewal, bool okForRenewalAfterExpiration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool allowRenewal, bool okForRenewalAfterExpiration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.Renewing.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowRenewal" Type="System.Boolean" />
+        <Parameter Name="okForRenewalAfterExpiration" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allowRenewal">
+          <see langword="true" />更新は許可されている場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="okForRenewalAfterExpiration">
+          <see langword="true" />期限が切れる、要求されたトークンを更新できる場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.Protocols.WSTrust.Renewing" /> <see cref="T:System.IdentityModel.Protocols.WSTrust.Renewing" />値を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいプロパティ<xref:System.IdentityModel.Protocols.WSTrust.Renewing>インスタンスは、パラメーターの値に基づいて設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowRenewal">
+      <MemberSignature Language="C#" Value="public bool AllowRenewal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowRenewal" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.Renewing.AllowRenewal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトークンを更新できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />更新は許可されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可する属性の内容を表します。 この省略可能な属性は更新可能なトークンを要求するために使用します。 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OkForRenewalAfterExpiration">
+      <MemberSignature Language="C#" Value="public bool OkForRenewalAfterExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OkForRenewalAfterExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.Renewing.OkForRenewalAfterExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または有効期限が切れた後に、トークンを更新できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />期限が切れる、要求されたトークンを更新できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [Ok] の属性の内容を表します。 この省略可能な属性は更新可能なトークンが、要求された時間が、発行サービスの制限を超えた場合に許容されることを示すために使用されます。 つまり場合、 `true`、その有効期限後に、トークンを更新することができます。 既定値は`false`セキュリティ上の理由。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,160 @@
+<Type Name="WindowInteropHelper" FullName="System.Windows.Interop.WindowInteropHelper">
+  <TypeSignature Language="C#" Value="public sealed class WindowInteropHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WindowInteropHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.WindowInteropHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) と Win32 コード間の相互運用を支援します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのメンバーにより、内部にアクセスする権限が呼び出し元、 [!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)] HWND と親 HWND の[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]<xref:System.Windows.Window>です。  適切なセキュリティ チェックは、それらのメンバーによって実行されます。  
+  
+ 具体的なオブジェクトと hwnd の分離に基づく必要がある場合は、このクラスを使用します。  
+  
+ シナリオの例をホストする必要があるかどうか、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]  ダイアログ ボックスで、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]アプリケーションです。 初期化、<xref:System.Windows.Interop.WindowInteropHelper>で、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]  ダイアログ ボックスのウィンドウのオブジェクト。 表示する、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ウィンドウのハンドル (HWND) から、<xref:System.Windows.Interop.WindowInteropHelper.Handle%2A>プロパティの所有者を指定し、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]  ウィンドウで、<xref:System.Windows.Interop.WindowInteropHelper.Owner%2A>プロパティです。 次のコード例は、使用する方法を示しています。<xref:System.Windows.Interop.WindowInteropHelper>をホストしているときに、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]  ダイアログ ボックスで、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]アプリケーションです。  
+  
+ [!code-csharp[CorePseudocode#WindowInteropHelper](~/samples/snippets/csharp/VS_Snippets_Wpf/CorePseudocode/CSharp/corepseudocode.cs#windowinterophelper)]
+ [!code-vb[CorePseudocode#WindowInteropHelper](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CorePseudocode/visualbasic/corepseudocode.vb#windowinterophelper)]  
+  
+ このクラスでサポートされている別のシナリオは取得するが、<xref:System.Windows.Interop.HwndSource>オブジェクトから、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Window>オブジェクト。 <xref:System.Windows.Interop.HwndSource>によりがの処理を指示[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]を通じてメッセージ、<xref:System.Windows.Interop.HwndSource.AddHook%2A>メソッドです。 使用して<xref:System.Windows.Interop.HwndSource>と<xref:System.Windows.Interop.HwndSource.AddHook%2A>の代わりに、<xref:System.Windows.Window>いいえ同等またはで処理しているメッセージを処理することができますも[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]します。 作成、<xref:System.Windows.Interop.WindowInteropHelper>で、<xref:System.Windows.Window>ソース、し、呼び出す<xref:System.Windows.Interop.WindowInteropHelper.Handle%2A>上、<xref:System.Windows.Interop.WindowInteropHelper>に HWND から取得する<xref:System.Windows.Interop.HwndSource>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowInteropHelper (System.Windows.Window window);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Window window) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.WindowInteropHelper.#ctor(System.Windows.Window)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="window" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="window">A[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ウィンドウ オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.WindowInteropHelper" />の指定されたクラス[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ウィンドウです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウには、ダイアログ ボックスで、またはそれ以外の場合に適していませんの境界内でホストされているウィンドウを指定できます、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]アプリケーションです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureHandle">
+      <MemberSignature Language="C#" Value="public IntPtr EnsureHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance native int EnsureHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.WindowInteropHelper.EnsureHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>HWND はまだ作成されていない場合は、ウィンドウの HWND を作成します。</summary>
+        <returns><see cref="T:System.IntPtr" /> HWND を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッドは、管理対象の実際の表示のウィンドウ ハンドル (HWND) の作成を分割すると<xref:System.Windows.Window>です。 これは、ウィンドウを表示する必要がないタスクを実行するオートメーション クライアントがある場合に便利です。  
+  
+ ネイティブのウィンドウが作成されていない場合、このメソッドはネイティブのウィンドウでは、セットを作成、<xref:System.Windows.Interop.WindowInteropHelper.Handle%2A>プロパティ、および、HWND を返します。 ネイティブのウィンドウは、既に作成されている、既存のネイティブ ウィンドウのハンドルが返されます。  
+  
+ このメソッドの呼び出しの結果として、[ネイティブ] ウィンドウを作成する場合、<xref:System.Windows.Window.SourceInitialized>イベントが発生します。  
+  
+ クエリを実行する、<xref:System.Windows.Interop.WindowInteropHelper.Handle%2A>後プロパティ、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッドが呼び出された既存のウィンドウ ハンドルを返します。 ビジュアル ツリーが後まで、ウィンドウにアタッチされていない、<xref:System.Windows.Window.Show%2A>メソッドが呼び出されます。  
+  
+ 呼び出す、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッドに複数回は新しいウィンドウ ハンドルを作成しません。 呼び出す、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッド ハンドルは既にへの呼び出しによって作成されたときに、<xref:System.Windows.Window.Show%2A>メソッドは新しいウィンドウ ハンドルを作成できません。 ハンドルが存在しない場合にのみ、ネイティブのウィンドウが作成時に、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッドが呼び出されます。  
+  
+ プラットフォーム呼び出しによるネイティブ ウィンドウ Api を使用して設定されているウィンドウのプロパティは、Api の管理 ウィンドウでされない可能性があります。 後にネイティブ MS_EX_TOPMOST フラグを使用して最上位にウィンドウを設定する場合など、<xref:System.Windows.Interop.WindowInteropHelper.EnsureHandle%2A>メソッドが呼び出されると、<xref:System.Windows.Window.Topmost%2A>プロパティは、ネイティブの設定を反映する保証はありません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">作成し、ウィンドウ ハンドルにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.WindowInteropHelper.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ ハンドルを取得、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]これを作成するために使用される<see cref="T:System.Windows.Interop.WindowInteropHelper" />です。</summary>
+        <value>[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ウィンドウ ハンドル (HWND)。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ウィンドウ ハンドルを取得できます。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public IntPtr Owner { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.WindowInteropHelper.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のハンドル、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]オーナー ウィンドウです。</summary>
+        <value>所有者のウィンドウ ハンドル (HWND))。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows の親を変更するには、このプロパティを設定します。 True として一般的な[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]プログラミングと、既に使用されている windows ない親を変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">取得またはこのプロパティの値を設定します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

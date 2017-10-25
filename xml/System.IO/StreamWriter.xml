@@ -1,0 +1,1626 @@
+<Type Name="StreamWriter" FullName="System.IO.StreamWriter">
+  <TypeSignature Language="C#" Value="public class StreamWriter : System.IO.TextWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit StreamWriter extends System.IO.TextWriter" />
+  <TypeSignature Language="DocId" Value="T:System.IO.StreamWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.TextWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して、<see cref="T:System.IO.TextWriter" />を特定のエンコーディングでストリームに文字を書き込むためです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/streamwriter.cs#9e38cb1c84769eba)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.IO.StreamWriter>派生したクラスが特定のエンコーディングで文字出力用に設計されていますが<xref:System.IO.Stream>バイトの入力し、出力用に設計されています。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ <xref:System.IO.StreamWriter>既定値のインスタンスを使用して<xref:System.Text.UTF8Encoding>指定しない限り、します。 このインスタンスの`UTF8Encoding`バイト順マーク (BOM) を使用せずにので作成はその<xref:System.Text.Encoding.GetPreamble%2A>メソッドが空のバイト配列を返します。 このコンス トラクターの既定の utf-8 エンコードでは、無効なバイトで例外をスローします。 この動作のエンコーディング オブジェクトによって提供される動作とは異なります、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。 BOM を指定し、無効なバイトで例外をスローするかどうかを判断などをパラメーターとしてエンコード オブジェクトを受け取るコンス トラクターを使用して<xref:System.IO.StreamWriter.%23ctor%28System.String%2CSystem.Boolean%2CSystem.Text.Encoding%29>または<xref:System.IO.StreamWriter.%23ctor%2A>です。  
+  
+ 既定では、<xref:System.IO.StreamWriter>はスレッド セーフであります。 参照してください<xref:System.IO.TextWriter.Synchronized%2A?displayProperty=nameWithType>スレッド セーフ ラッパー。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.IO.StreamWriter>が C ドライブにディレクトリを一覧表示しを使用してファイルを記述するオブジェクト、<xref:System.IO.StreamReader>読み取りおよび各ディレクトリ名を表示するオブジェクト。 これらのオブジェクトの使用をお勧め、`using`ステートメント アンマネージ リソースが正しく破棄されるようにします。 `using`ステートメントを自動的に呼び出す<xref:System.IDisposable.Dispose%2A>オブジェクトによって使用されているコードが完了したときにします。 使用するこの例で使用するコンス トラクターはサポートされていません[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]アプリ。  
+  
+ [!code-csharp[StreamReadWrite#1](~/samples/snippets/csharp/VS_Snippets_CLR/streamreadwrite/cs/program.cs#1)]
+ [!code-vb[StreamReadWrite#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/streamreadwrite/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">書き込まれるストリーム。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IO.StreamWriter" /> utf-8 エンコードと既定のバッファー サイズを使用して指定したストリーム用のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.IO.StreamWriter>ためエンコードせず、バイト順マーク (BOM)、utf-8 でその<xref:System.Text.Encoding.GetPreamble%2A>メソッドが空のバイト配列を返します。 このコンス トラクターの既定の utf-8 エンコードでは、無効なバイトで例外をスローします。 この動作のエンコーディング オブジェクトによって提供される動作とは異なります、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。 無効なバイトで例外をスローするかどうかを指定するように、パラメーターとしてエンコード オブジェクトを受け取るコンス トラクターを使用して<xref:System.IO.StreamWriter.%23ctor%2A>です。 <xref:System.IO.StreamWriter.BaseStream%2A>プロパティを使用して、初期化、`stream`パラメーター。 ストリームの位置はリセットされません。  
+  
+ <xref:System.IO.StreamWriter>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamWriter.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program1.cs#1)]
+ [!code-vb[System.IO.StreamWriter.ctor#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />書き込みができません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">書き込まれる完全なファイル パス。 <c>パス</c>ファイル名を指定できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />既定のエンコーディングを使用して、指定したファイルのクラスおよびバッファー サイズ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.IO.StreamWriter>ためエンコードせず、バイト順マーク (BOM)、utf-8 でその<xref:System.Text.Encoding.GetPreamble%2A>メソッドが空のバイト配列を返します。 このコンス トラクターの既定の utf-8 エンコードでは、無効なバイトで例外をスローします。 この動作のエンコーディング オブジェクトによって提供される動作とは異なります、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。 BOM を指定し、無効なバイトで例外をスローするかどうかを判断などをパラメーターとしてエンコード オブジェクトを受け取るコンス トラクターを使用して<xref:System.IO.StreamWriter.%23ctor%28System.String%2CSystem.Boolean%2CSystem.Text.Encoding%29>です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。 ファイルが存在する場合は上書きされます。それ以外の場合、新しいファイルが作成されます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program5.cs#5)]
+ [!code-vb[System.IO.StreamWriter.ctor#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program5.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスが拒否されました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" />システムのデバイス (com1、com2) の名前が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベル構文に正しくないか、無効な構文が含まれます。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙値: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (System.IO.Stream stream, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="stream">書き込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />指定されたエンコーディングと既定のバッファー サイズを使用して指定したストリーム用のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを初期化します、<xref:System.IO.StreamWriter.Encoding%2A>エンコーディングのパラメーターを使用してプロパティと<xref:System.IO.StreamWriter.BaseStream%2A>stream パラメーターを使用してプロパティです。 ストリームの位置はリセットされません。 詳細については、「<xref:System.IO.TextWriter.Encoding%2A>」を参照してください。  
+  
+ <xref:System.IO.StreamWriter>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamWriter.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program2.cs#2)]
+ [!code-vb[System.IO.StreamWriter.ctor#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />書き込みができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (string path, bool append);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, bool append) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">書き込まれる完全なファイル パス。</param>
+        <param name="append">
+          <see langword="true" />データ ファイルを追加するには<see langword="false" />ファイルを上書きします。 指定されたファイルが存在しない場合、このパラメーターは無効であり、コンストラクターは新しいファイルを作成します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />既定のエンコーディングを使用して、指定したファイルのクラスおよびバッファー サイズ。 ファイルが存在する場合は、ファイルを上書きするか、またはファイルの末尾に追加できます。 ファイルが存在しない場合は、このコンストラクターが新しいファイルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.IO.StreamWriter>ためエンコードせず、バイト順マーク (BOM)、utf-8 でその<xref:System.Text.Encoding.GetPreamble%2A>メソッドが空のバイト配列を返します。 このコンス トラクターの既定の utf-8 エンコードでは、無効なバイトで例外をスローします。 この動作のエンコーディング オブジェクトによって提供される動作とは異なります、<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>プロパティです。 BOM を指定し、無効なバイトで例外をスローするかどうかを判断などをパラメーターとしてエンコード オブジェクトを受け取るコンス トラクターを使用して<xref:System.IO.StreamWriter.%23ctor%28System.String%2CSystem.Boolean%2CSystem.Text.Encoding%29>です。  
+  
+ `path`パラメーターは、汎用名前付け規則 (UNC) 共有上のファイルを含む、ファイル名を指定できます。  
+  
+ `path`パラメーターは必要ありません、ディスクに格納されたファイル ストリームを使用してアクセスをサポートするシステムの一部であることができます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program6.cs#6)]
+ [!code-vb[System.IO.StreamWriter.ctor#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program6.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスが拒否されました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空です。  
+  
+ または  
+  
+ <paramref name="path" />システムのデバイス (com1、com2) の名前が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベル構文に正しくないか、無効な構文が含まれます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙値: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (System.IO.Stream stream, System.Text.Encoding encoding, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="stream">書き込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />指定されたエンコーディングを使用して指定したストリーム用のクラスおよびバッファー サイズ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.IO.StreamWriter.Encoding%2A>プロパティを使用して、`encoding`パラメーター、および<xref:System.IO.StreamWriter.BaseStream%2A>プロパティを使用して、`stream`パラメーター。 ストリームの位置はリセットされません。 詳細については、「<xref:System.IO.TextWriter.Encoding%2A>」を参照してください。  
+  
+ <xref:System.IO.StreamWriter>オブジェクト呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamWriter.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program3.cs#3)]
+ [!code-vb[System.IO.StreamWriter.ctor#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />書き込みができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (string path, bool append, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, bool append, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="path">書き込まれる完全なファイル パス。</param>
+        <param name="append">
+          <see langword="true" />データ ファイルを追加するには<see langword="false" />ファイルを上書きします。 指定されたファイルが存在しない場合、このパラメーターは無効であり、コンストラクターは新しいファイルを作成します。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />指定されたエンコーディングと既定のバッファーのサイズを使用して、指定したファイルのクラスです。 ファイルが存在する場合は、ファイルを上書きするか、またはファイルの末尾に追加できます。 ファイルが存在しない場合は、このコンストラクターが新しいファイルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.IO.StreamWriter.Encoding%2A> encoding パラメーターを使用してプロパティです。 詳細については、「<xref:System.IO.TextWriter.Encoding%2A>」を参照してください。  
+  
+ `path`汎用名前付け規則 (UNC) 共有上のファイルを含むファイル名を指定することができます。  
+  
+ `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program7.cs#7)]
+ [!code-vb[System.IO.StreamWriter.ctor#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program7.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスが拒否されました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空です。  
+  
+ または  
+  
+ <paramref name="path" />システムのデバイス (com1、com2) の名前が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベル構文に正しくないか、無効な構文が含まれます。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙値: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (System.IO.Stream stream, System.Text.Encoding encoding, int bufferSize, bool leaveOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream, class System.Text.Encoding encoding, int32 bufferSize, bool leaveOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.IO.Stream,System.Text.Encoding,System.Int32,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="leaveOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">書き込まれるストリーム。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。</param>
+        <param name="leaveOpen">
+          <see cref="T:System.IO.StreamWriter" /> オブジェクトを破棄した後にストリームを開いたままにする場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />指定したエンコーディングとバッファー サイズ、および必要に応じて、ストリームを開いたままを使用して、指定したストリーム用のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定しない限り、`leaveOpen`パラメーターを`true`、<xref:System.IO.StreamWriter>オブジェクトの呼び出し<xref:System.IO.Stream.Dispose>で提供されている<xref:System.IO.Stream>オブジェクトと<xref:System.IO.StreamWriter.Dispose%2A?displayProperty=nameWithType>と呼びます。  
+  
+ このコンス トラクター、<xref:System.IO.StreamWriter.Encoding%2A>プロパティを使用して、`encoding`パラメーター、および初期化、<xref:System.IO.StreamWriter.BaseStream%2A>プロパティを使用して、`stream`パラメーター。 ストリームの位置はリセットされません。 詳細については、次を参照してください。、<xref:System.IO.TextWriter.Encoding%2A>プロパティです。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program4.cs#4)]
+ [!code-vb[System.IO.StreamWriter.ctor#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="stream" />書き込みができません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StreamWriter (string path, bool append, System.Text.Encoding encoding, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, bool append, class System.Text.Encoding encoding, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.#ctor(System.String,System.Boolean,System.Text.Encoding,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="append" Type="System.Boolean" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">書き込まれる完全なファイル パス。</param>
+        <param name="append">
+          <see langword="true" />データ ファイルを追加するには<see langword="false" />ファイルを上書きします。 指定されたファイルが存在しない場合、このパラメーターは無効であり、コンストラクターは新しいファイルを作成します。</param>
+        <param name="encoding">使用する文字エンコーディング。</param>
+        <param name="bufferSize">バイト単位のバッファー サイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.StreamWriter" />指定されたエンコーディングを使用して、指定したパスで指定したファイルのクラスおよびバッファー サイズ。 ファイルが存在する場合は、ファイルを上書きするか、またはファイルの末尾に追加できます。 ファイルが存在しない場合は、このコンストラクターが新しいファイルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.IO.StreamWriter.Encoding%2A> encoding パラメーターを使用してプロパティです。 詳細については、「<xref:System.IO.TextWriter.Encoding%2A>」を参照してください。  
+  
+ `path`汎用名前付け規則 (UNC) 共有上のファイルを含むファイル名を指定することができます。  
+  
+ `path`ディスクに格納されているファイルである必要はありません。ストリーム経由でアクセスをサポートするシステムの任意の部分を指定できます。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを示します。  
+  
+ [!code-csharp[System.IO.StreamWriter.ctor#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.streamwriter.ctor/cs/program8.cs#8)]
+ [!code-vb[System.IO.StreamWriter.ctor#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.streamwriter.ctor/vb/program8.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="path" />システムのデバイス (com1、com2) の名前が含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="encoding" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" />ファイル名、ディレクトリ名、またはボリューム ラベル構文に正しくないか、無効な構文が含まれます。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">アクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字以下、ファイル名は 260 文字以下にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルを出力します。 関連する列挙値: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFlush">
+      <MemberSignature Language="C#" Value="public virtual bool AutoFlush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoFlush" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamWriter.AutoFlush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.IO.StreamWriter" />へのすべての呼び出し後のバッファーを基になるストリームをフラッシュ<see cref="M:System.IO.StreamWriter.Write(System.Char)" />です。</summary>
+        <value>
+          <see langword="true" />強制的に<see cref="T:System.IO.StreamWriter" />; バッファーをフラッシュするそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.StreamWriter.Flush%2A>または<xref:System.IO.StreamWriter.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`データからフラッシュされるバッファーのストリームに個々 の書き込み操作の後に、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ ときに`AutoFlush`に設定されている`false`、`StreamWriter`バッファリングのどちらも内部的におよび、エンコーダーに渡されたエンコードからの可能性のある、限られた量の操作を行います。 設定してパフォーマンスを向上させるを取得することができます`AutoFlush`に`false`ことを前提とすると、必ず呼び出して`Close`(または少なくとも`Flush`) 終了するとに書き込み、`StreamWriter`です。  
+  
+ たとえば、設定`AutoFlush`に`true`即時のフィードバックがユーザーに期待されている場所のデバイスに書き込みを行うときにします。 `Console.Out`このような場合の 1 つです。`StreamWriter`に書き込むために内部的に使用される`Console`エンコーダー状態以外のすべての内部状態をすべての呼び出しにフラッシュ<xref:System.IO.StreamWriter.Write%2A?displayProperty=nameWithType>です。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する構文を示しています、`AutoFlush`プロパティです。  
+  
+ [!code-cpp[System.IO.StreamWriter#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamWriter/CPP/logger.cpp#5)]
+ [!code-csharp[System.IO.StreamWriter#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/logger.cs#5)]
+ [!code-vb[System.IO.StreamWriter#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/logger.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseStream">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream BaseStream { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Stream BaseStream" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamWriter.BaseStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッキング ストアと連結する、基になるストリームを取得します。</summary>
+        <value>ストリームこの<see langword="StreamWriter" />を書き込んでいます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の終了<see langword="StreamWriter" />オブジェクトと基になるストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.Stream.Close%2A?displayProperty=nameWithType>します。  
+  
+ この実装<xref:System.IO.StreamWriter.Close%2A>呼び出し、<xref:System.IO.StreamWriter.Dispose%2A>メソッド、`true`値。  
+  
+ 呼び出す必要があります<xref:System.IO.StreamWriter.Close%2A>を基になるストリームに、のすべてのデータを正しく書き込むことを確認します。 呼び出しに続く<xref:System.IO.StreamWriter.Close%2A>、に対するすべての操作、<xref:System.IO.StreamWriter>例外が発生する可能性があります。 ディスクに十分な空き領域がある場合は、呼び出す<xref:System.IO.StreamWriter.Close%2A>で例外が発生します。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.StreamWriter.Flush%2A>または<xref:System.IO.StreamWriter.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、`Close`メソッドです。  
+  
+ [!code-cpp[System.IO.StreamWriter#17](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamWriter/CPP/logger.cpp#17)]
+ [!code-csharp[System.IO.StreamWriter#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/logger.cs#17)]
+ [!code-vb[System.IO.StreamWriter#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/logger.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Text.EncoderFallbackException">現在のエンコーディングも、Unicode のサロゲート ペアの片方の表示とはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.StreamWriter" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.IO.StreamWriter> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Text.EncoderFallbackException">現在のエンコーディングも、Unicode のサロゲート ペアの片方の表示とはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose" />を以前の呼び出しで既に破棄されているオブジェクトを参照しないように注意、<see langword="Dispose" />です。  
+  
+ このメソッドは、基本クラスの dispose メソッドを呼び出す<see cref="M:System.IO.TextWriter.Dispose(System.Boolean)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public override System.Text.Encoding Encoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.IO.StreamWriter.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力の書き込みに使用する <see cref="T:System.Text.Encoding" /> を取得します。</summary>
+        <value><see cref="T:System.Text.Encoding" /> 、現在のインスタンスのコンス トラクターで指定されたまたは<see cref="T:System.Text.UTF8Encoding" />エンコーディングが指定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、一部の XML のシナリオで使用されるエンコーディングを格納している、ヘッダーを書き込む必要があります、必要に応じて、<xref:System.IO.StreamWriter>です。 これにより、任意に使用する XML コード<xref:System.IO.StreamWriter>し、正しい XML ヘッダーを生成します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたエンコーディングを取得します<xref:System.IO.StreamWriter>インスタンス。  
+  
+ [!code-cpp[System.IO.StreamWriter#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamWriter/CPP/logger.cpp#11)]
+ [!code-csharp[System.IO.StreamWriter#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/logger.cs#11)]
+ [!code-vb[System.IO.StreamWriter#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/logger.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のライターで使用したすべてのバッファーをクリアし、バッファー内のすべてのデータを基になるストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextWriter.Flush%2A?displayProperty=nameWithType>します。  
+  
+ 明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません`Flush`または<xref:System.IO.StreamWriter.Close%2A>です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`データからフラッシュされるバッファーのストリームに個々 の書き込み操作の後に、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、特定の文字をエンコードするため、エンコーダーは、隣接する文字または文字列を受信した後に影響します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のライターは閉じられます。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Text.EncoderFallbackException">現在のエンコーディングも、Unicode のサロゲート ペアの片方の表示とはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task FlushAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task FlushAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.FlushAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このストリームのすべてのバッファーを非同期にクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <returns>非同期のフラッシュ操作を表すタスク。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.StreamWriter Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.StreamWriter Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.StreamWriter.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.StreamWriter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッキング ストアを持たない書き込み専用の <see langword="StreamWriter" /> を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`Null`への出力をリダイレクトする、`StreamWriter`するすべてのオペレーティング システム リソースは使用されません。  
+  
+ ときに、`StreamWriter.Write`でメソッドが呼び出される`Null`呼び出しを単純に返します、および、実際にデータは、バッキング ストアに書き込まれません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例での使用、`Null`フィールドです。  
+  
+ [!code-cpp[System.IO.StreamWriter#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.StreamWriter/CPP/logger.cpp#6)]
+ [!code-csharp[System.IO.StreamWriter#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/logger.cs#6)]
+ [!code-vb[System.IO.StreamWriter#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/logger.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Write(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込む文字。</param>
+        <summary>ストリームに文字を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>します。  
+  
+ 指定した文字は、ストリームの末尾に到達しない限り、基になるストリームに書き込まれます。 場合<xref:System.IO.StreamWriter.AutoFlush%2A>は`true`、<xref:System.IO.StreamWriter.Flush%2A>自動的に呼び出されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、現在のライターが閉じられました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、バッファーの内容できないストリームに書き込む、基になる固定サイズのため、<see cref="T:System.IO.StreamWriter" />ストリームの末尾です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (char[] buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(char[] buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Write(System.Char[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むデータを格納する文字配列。 場合<c>バッファー</c>は<see langword="null" />、何も書き込まれません。</param>
+        <summary>ストリームに文字配列を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>します。  
+  
+ 指定された文字は、ストリームの末尾に到達しない限り、基になるストリームに書き込まれます。 場合<xref:System.IO.StreamWriter.AutoFlush%2A>は`true`、<xref:System.IO.StreamWriter.Flush%2A>自動的に呼び出されます。  
+  
+ このメソッドより高速なパフォーマンスを提供可能性があります`Write`(`char[],``int,``int`) を確認する引数が少ないためです。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、現在のライターが閉じられました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、バッファーの内容できないストリームに書き込む、基になる固定サイズのため、<see cref="T:System.IO.StreamWriter" />ストリームの末尾です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込む文字列。 場合<c>値</c>が null の場合、何も書き込まれません。</param>
+        <summary>ストリームに文字列を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>します。  
+  
+ 指定した<xref:System.String>は、ストリームの末尾に到達しない限り、基になるストリームに書き込まれます。  
+  
+ <xref:System.IO.StreamWriter.Flush%2A>場合に自動的に呼び出される<xref:System.IO.StreamWriter.AutoFlush%2A>は`true`します。 場合`value`は`null`エントリが書き込まれません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、現在のライターが閉じられました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、バッファーの内容できないストリームに書き込む、基になる固定サイズのため、<see cref="T:System.IO.StreamWriter" />ストリームの末尾です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.Write(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むデータを格納する文字配列。</param>
+        <param name="index">データの読み取りを開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字の最大数。</param>
+        <summary>ストリームに文字配列の一部を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.IO.TextWriter.Write%2A?displayProperty=nameWithType>します。  
+  
+ 文字を読み取る`buffer`始点`index`まで`index`+ (`count` - 1)。 すべての文字は、基になるストリームの末尾に到達しない限り、基になるストリームに書き込まれます。 <xref:System.IO.StreamWriter.Flush%2A>場合に自動的に呼び出される<xref:System.IO.StreamWriter.AutoFlush%2A>は`true`します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ この例では、配列の 3 番目の要素で始まるファイルに、13 要素を配列から 8 文字を書き込みます。  
+  
+ [!code-cpp[Classic StreamWriter.Write2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic StreamWriter.Write2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic StreamWriter.Write2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic StreamWriter.Write2 Example/CS/source.cs#1)]
+ [!code-vb[Classic StreamWriter.Write2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic StreamWriter.Write2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バッファーの長さマイナス<paramref name="index" />はより小さい<paramref name="count" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、現在のライターが閉じられました。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="P:System.IO.StreamWriter.AutoFlush" />true または<see cref="T:System.IO.StreamWriter" />バッファーがいっぱいになり、バッファーの内容できないストリームに書き込む、基になる固定サイズのため、<see cref="T:System.IO.StreamWriter" />ストリームの末尾です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteAsync(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込む文字。</param>
+        <summary>文字を非同期でストリームに書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、1 つの文字を書き込む方法を示しています。 (文字"a") を使用してテキスト ファイルに、<xref:System.IO.StreamWriter.WriteAsync%28System.Char%29>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamWriter#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example20.cs#20)]
+ [!code-vb[System.IO.StreamWriter#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example20.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込む文字列。 場合<c>値</c>は<see langword="null" />、何も書き込まれません。</param>
+        <summary>文字列をストリームに非同期で書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して文字列をテキスト ファイルに書き込む方法を示しています、<xref:System.IO.StreamWriter.WriteAsync%28System.String%29>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamWriter#21](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example21.cs#21)]
+ [!code-vb[System.IO.StreamWriter#21](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example21.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むデータを格納する文字配列。</param>
+        <param name="index">データの読み取りを開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字の最大数。</param>
+        <summary>文字の部分配列をストリームに非同期で書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、テキスト ファイルに複数の文字を書き込む方法を示しています、<xref:System.IO.StreamWriter.WriteAsync%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamWriter#24](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example24.cs#24)]
+ [!code-vb[System.IO.StreamWriter#24](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example24.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> Plus<paramref name="count" />がバッファーの長さを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteLineAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>行終端記号をストリームに非同期で書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号がによって定義された、<xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteLineAsync(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込む文字。</param>
+        <summary>非同期でストリームに文字を書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号がによって定義された、<xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、1 つの文字を書き込む方法を示しています。 (文字"a")、テキスト ファイルに行を後に 1 つの文字を含む (、文字"b") を使用して、別の行を、<xref:System.IO.StreamWriter.WriteLineAsync%28System.Char%29>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamWriter#22](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example22.cs#22)]
+ [!code-vb[System.IO.StreamWriter#22](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example22.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteLineAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">書き込む文字列。 値が <see langword="null" /> の場合は、行終端記号だけが書き込まれます。</param>
+        <summary>文字列を非同期でストリームに書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号がによって定義された、<xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、テキスト ファイルに文字列の値から成る 2 つの行を記述する方法を示しています、<xref:System.IO.StreamWriter.WriteLineAsync%28System.String%29>メソッドです。  
+  
+ [!code-csharp[System.IO.StreamWriter#23](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example23.cs#23)]
+ [!code-vb[System.IO.StreamWriter#23](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example23.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLineAsync">
+      <MemberSignature Language="C#" Value="public override System.Threading.Tasks.Task WriteLineAsync (char[] buffer, int index, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Threading.Tasks.Task WriteLineAsync(char[] buffer, int32 index, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.StreamWriter.WriteLineAsync(System.Char[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Char[]" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元の文字配列。</param>
+        <param name="index">データの読み取りを開始する、バッファー内の文字位置。</param>
+        <param name="count">書き込む文字の最大数。</param>
+        <summary>文字の部分配列をストリームに非同期で書き込み、続けて行終端記号を書き込みます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行終端記号がによって定義された、<xref:System.IO.TextWriter.NewLine%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、テキスト ファイルに次の 2 つの別々 の行に文字を書き込む方法を示しています、<xref:System.IO.StreamWriter.WriteLineAsync%28System.Char%5B%5D%2CSystem.Int32%2CSystem.Int32%29>メソッドです。 最初の行には、最初の 11 文字文字列 (「最初の行」とそれに続く空白文字) にはが含まれています。 2 番目の行に残りの文字文字列にはが含まれています (文字「と 2 番目の行」) です。  
+  
+ [!code-csharp[System.IO.StreamWriter#25](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamWriter/CS/example25.cs#25)]
+ [!code-vb[System.IO.StreamWriter#25](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamWriter/VB/example25.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="index" /> Plus<paramref name="count" />がバッファーの長さを超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリーム ライターが破棄されます。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリーム ライターは、前の書き込み操作で使用中は現在です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

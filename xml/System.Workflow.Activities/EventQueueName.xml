@@ -1,0 +1,379 @@
+<Type Name="EventQueueName" FullName="System.Workflow.Activities.EventQueueName">
+  <TypeSignature Language="C#" Value="public sealed class EventQueueName : IComparable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit EventQueueName extends System.Object implements class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.EventQueueName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Runtime.WorkflowInstance" /> のイベントに関連付けられたキューの名前を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このクラスは、<xref:System.Workflow.Runtime.WorkflowQueue> または Workflow Foundation (WF) によって使用されるその他のキューに関連付けることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventQueueName (Type interfaceType, string operation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type interfaceType, string operation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="interfaceType" Type="System.Type" />
+        <Parameter Name="operation" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="interfaceType"><see cref="T:System.Type" /> に関連付けるインターフェイスの <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <param name="operation"><see cref="T:System.Workflow.Activities.EventQueueName" /> に関連付けられた操作の名前を含む文字列。</param>
+        <summary>指定した <see cref="T:System.Workflow.Activities.EventQueueName" /> と操作名を使用して、<see cref="T:System.Type" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventQueueName (Type interfaceType, string operation, System.Collections.Generic.ICollection&lt;System.Workflow.Runtime.CorrelationProperty&gt; propertyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type interfaceType, string operation, class System.Collections.Generic.ICollection`1&lt;class System.Workflow.Runtime.CorrelationProperty&gt; propertyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.#ctor(System.Type,System.String,System.Collections.Generic.ICollection{System.Workflow.Runtime.CorrelationProperty})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="interfaceType" Type="System.Type" />
+        <Parameter Name="operation" Type="System.String" />
+        <Parameter Name="propertyValues" Type="System.Collections.Generic.ICollection&lt;System.Workflow.Runtime.CorrelationProperty&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="interfaceType">インターフェイスの <see cref="T:System.Type" />。</param>
+        <param name="operation"><see cref="T:System.Workflow.Activities.EventQueueName" /> に関連付けられた操作の名前を含む文字列。</param>
+        <param name="propertyValues"><see cref="T:System.Workflow.Runtime.CorrelationProperty" /> に関連付けるプロパティ値を定義する <see cref="T:System.Workflow.Activities.EventQueueName" /> コレクション。</param>
+        <summary><see cref="T:System.Workflow.Activities.EventQueueName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object toCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object toCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toCompare" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="toCompare">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> を指定された <see cref="T:System.Workflow.Activities.EventQueueName" /> と比較します。</summary>
+        <returns>比較対象が一致するかどうかを示す 32 ビット符号付き整数。 -1 は、現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> と指定されたオブジェクトが一致しないことを示します。0 は、現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> と指定されたオブジェクトが一致することを示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `toCompare` が <xref:System.Workflow.Activities.EventQueueName> 型でない場合、<xref:System.Workflow.Activities.EventQueueName.CompareTo%2A> は -1 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (System.Workflow.Activities.EventQueueName eventQueueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 CompareTo(class System.Workflow.Activities.EventQueueName eventQueueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.CompareTo(System.Workflow.Activities.EventQueueName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventQueueName" Type="System.Workflow.Activities.EventQueueName" />
+      </Parameters>
+      <Docs>
+        <param name="eventQueueName">現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> と比較する <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> を指定された <see cref="T:System.Workflow.Activities.EventQueueName" /> と比較します。</summary>
+        <returns>比較対象が一致するかどうかを示す 32 ビット符号付き整数。 -1 は、2 つの <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトが一致しないことを示します。0 は、2 つの <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトが一致することを示します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Object" /> と等しい場合は <see cref="T:System.Workflow.Activities.EventQueueName" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCorrelationValues">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.CorrelationProperty[] GetCorrelationValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.Runtime.CorrelationProperty[] GetCorrelationValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.GetCorrelationValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.CorrelationProperty[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.CorrelationProperty" /> に関連付けられたすべての関連付けプロパティを格納している <see cref="T:System.Workflow.Activities.EventQueueName" /> 配列を返します。</summary>
+        <returns><see cref="T:System.Workflow.Runtime.CorrelationProperty" /> に関連付けられたすべての関連付けプロパティを格納している <see cref="T:System.Workflow.Activities.EventQueueName" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> のハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Workflow.Activities.EventQueueName" /> に対して生成されたハッシュ コードを表す整数</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.EventQueueName.GetHashCode%2A> は、現在の <xref:System.Workflow.Activities.EventQueueName> を作成するために使用されたインターフェイス型と操作に基づいてハッシュ値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterfaceType">
+      <MemberSignature Language="C#" Value="public Type InterfaceType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type InterfaceType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.EventQueueName.InterfaceType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> に関連付けられている <see cref="T:System.Workflow.Activities.EventQueueName" /> を取得します。</summary>
+        <value><see cref="T:System.Type" /> に関連付けられている <see cref="T:System.Workflow.Activities.EventQueueName" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.EventQueueName.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.EventQueueName" /> に関連付けられたメソッド名を取得します。</summary>
+        <value><see cref="T:System.Workflow.Activities.EventQueueName" /> に関連付けられたメソッド名を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Workflow.Activities.EventQueueName queueKey1, System.Workflow.Activities.EventQueueName queueKey2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Workflow.Activities.EventQueueName queueKey1, class System.Workflow.Activities.EventQueueName queueKey2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.op_Equality(System.Workflow.Activities.EventQueueName,System.Workflow.Activities.EventQueueName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueKey1" Type="System.Workflow.Activities.EventQueueName" />
+        <Parameter Name="queueKey2" Type="System.Workflow.Activities.EventQueueName" />
+      </Parameters>
+      <Docs>
+        <param name="queueKey1">比較対象となる最初の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <param name="queueKey2">比較対象となる 2 番目の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>2 つの指定した <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトが等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="queueKey1" /> が等しい場合は <paramref name="queueKey2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `queueKey1` と `queueKey2` に null 参照 (Visual Basic の場合は `Nothing`) が含まれる場合、<xref:System.Workflow.Activities.EventQueueName.op_Equality%2A> は `true` を返します。  
+  
+ この演算子を同等の方法は、します。<xref:System.Workflow.Activities.EventQueueName.Equals%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool operator &gt; (System.Workflow.Activities.EventQueueName queueKey1, System.Workflow.Activities.EventQueueName queueKey2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(class System.Workflow.Activities.EventQueueName queueKey1, class System.Workflow.Activities.EventQueueName queueKey2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.op_GreaterThan(System.Workflow.Activities.EventQueueName,System.Workflow.Activities.EventQueueName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueKey1" Type="System.Workflow.Activities.EventQueueName" />
+        <Parameter Name="queueKey2" Type="System.Workflow.Activities.EventQueueName" />
+      </Parameters>
+      <Docs>
+        <param name="queueKey1">比較対象となる最初の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <param name="queueKey2">比較対象となる 2 番目の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>指定した 2 つの <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトのうち、最初のオブジェクトが 2 番目のオブジェクトより大きいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="queueKey1" /> より大きい場合は <paramref name="queueKey2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Workflow.Activities.EventQueueName.CompareTo%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueKey1" /> または <paramref name="queueKey2" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Workflow.Activities.EventQueueName queueKey1, System.Workflow.Activities.EventQueueName queueKey2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Workflow.Activities.EventQueueName queueKey1, class System.Workflow.Activities.EventQueueName queueKey2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.op_Inequality(System.Workflow.Activities.EventQueueName,System.Workflow.Activities.EventQueueName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueKey1" Type="System.Workflow.Activities.EventQueueName" />
+        <Parameter Name="queueKey2" Type="System.Workflow.Activities.EventQueueName" />
+      </Parameters>
+      <Docs>
+        <param name="queueKey1">比較対象となる最初の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <param name="queueKey2">比較対象となる 2 番目の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>2 つの指定した <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトが等しくないかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="queueKey1" /> と <paramref name="queueKey2" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Workflow.Activities.EventQueueName.CompareTo%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static bool operator &lt; (System.Workflow.Activities.EventQueueName queueKey1, System.Workflow.Activities.EventQueueName queueKey2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThan(class System.Workflow.Activities.EventQueueName queueKey1, class System.Workflow.Activities.EventQueueName queueKey2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.op_LessThan(System.Workflow.Activities.EventQueueName,System.Workflow.Activities.EventQueueName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueKey1" Type="System.Workflow.Activities.EventQueueName" />
+        <Parameter Name="queueKey2" Type="System.Workflow.Activities.EventQueueName" />
+      </Parameters>
+      <Docs>
+        <param name="queueKey1">比較対象となる最初の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <param name="queueKey2">比較対象となる 2 番目の <see cref="T:System.Workflow.Activities.EventQueueName" />。</param>
+        <summary>指定した 2 つの <see cref="T:System.Workflow.Activities.EventQueueName" /> オブジェクトのうち、最初のオブジェクトが 2 番目のオブジェクトより小さいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="queueKey1" /> より大きい場合は <paramref name="queueKey2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Workflow.Activities.EventQueueName.CompareTo%2A?displayProperty=nameWithType>]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueKey1" /> または <paramref name="queueKey2" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.EventQueueName.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.String" /> の <see cref="T:System.Workflow.Activities.EventQueueName" /> 表現を返します。</summary>
+        <returns>現在の <see cref="T:System.String" /> の <see cref="T:System.Workflow.Activities.EventQueueName" /> 表現。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.EventQueueName.ToString%2A> が返す文字列は、インターフェイス型、操作、および <xref:System.Workflow.Activities.EventQueueName> の関連付け値で構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

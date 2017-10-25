@@ -1,0 +1,597 @@
+<Type Name="TextRange" FullName="System.Windows.Documents.TextRange">
+  <TypeSignature Language="C#" Value="public class TextRange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TextRange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.TextRange" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの間のコンテンツの選択範囲を表す<see cref="T:System.Windows.Documents.TextPointer" />位置。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.TextRange>クラスは、次の用語を紹介します。  
+  
+-   **選択範囲**- a<xref:System.Windows.Documents.TextRange>によって示される 2 つの位置の間のコンテンツの選択範囲は、 **TextPointers**です。  選択範囲に関して固定アンカーは、他の位置が移動可能なときにこれらのいずれかの配置します。  これは、マウスまたはキーボードを使用して、ユーザーが行った選択の動作方法に似ています。  
+  
+-   **現在の選択**ため、<xref:System.Windows.Documents.TextRange>常に、選択範囲を示すコンテンツでは、合理的で示される、選択範囲を指す、<xref:System.Windows.Documents.TextRange>として、 *selection*です。  
+  
+-   **テキスト コンテナー** - a*テキスト コンテナー*が最終的なフロー コンテンツの境界を形成する要素である、選択範囲で示される、<xref:System.Windows.Documents.TextRange>テキスト コンテナー内に常にします。  現時点では、テキスト コンテナーがある必要があるか、<xref:System.Windows.Documents.FlowDocument>または<xref:System.Windows.Controls.TextBlock>です。  
+  
+-   **ドキュメント**-テキスト コンテナーにまとめて格納されたコンテンツと呼びます、*ドキュメント*です。  
+  
+ 詳細については、他の関連するなどのような*位置*を参照してください<xref:System.Windows.Documents.TextPointer>です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Windows.Documents.TextRange.Text%2A>のプロパティ、<xref:System.Windows.Documents.TextRange>の指定されたプレーン テキスト表現を取得する<xref:System.Windows.Documents.FlowDocument>です。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_text)]
+ [!code-vb[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_text)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TextRange (System.Windows.Documents.TextPointer position1, System.Windows.Documents.TextPointer position2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.TextPointer position1, class System.Windows.Documents.TextPointer position2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.#ctor(System.Windows.Documents.TextPointer,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="position1" Type="System.Windows.Documents.TextPointer" />
+        <Parameter Name="position2" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position1">新しいを形成するために使用する選択範囲の一方の端を示す固定アンカー位置<see cref="T:System.Windows.Documents.TextRange" />です。</param>
+        <param name="position2">新しいを形成するために使用する選択範囲のもう一方の端を示す移動可能な位置<see cref="T:System.Windows.Documents.TextRange" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.TextRange" />クラス、指定した 2 つ<see cref="T:System.Windows.Documents.TextPointer" />新しい範囲の先頭と末尾の位置に位置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.TextRange>によって示される 2 つの位置の間の選択範囲から形成される**TextPointers**です。  これらの位置のいずれか (によって示される`position1`) は他の位置の中に、選択範囲に対して固定 (によって示される`position2`) が移動可能です。  これは、マウスまたはキーボードを使用して、ユーザーが行った選択の動作方法に似ています。  
+  
+ 新しいの実際の端<xref:System.Windows.Documents.TextRange>を含む、新しいドキュメントに適用される選択ヒューリスティックを一致するように調整することが<xref:System.Windows.Documents.TextRange>です。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Windows.Documents.TextRange>コンス トラクターです。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_text)]
+ [!code-vb[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_text)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">発生したときに<paramref name="position1" />と<paramref name="position2" />同じドキュメント内に配置できません。</exception>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="position1" />または<paramref name="position2" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyPropertyValue">
+      <MemberSignature Language="C#" Value="public void ApplyPropertyValue (System.Windows.DependencyProperty formattingProperty, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyPropertyValue(class System.Windows.DependencyProperty formattingProperty, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.ApplyPropertyValue(System.Windows.DependencyProperty,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingProperty" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="formattingProperty">適用する書式設定のプロパティ。</param>
+        <param name="value">書式設定のプロパティの値です。</param>
+        <summary>現在の選択範囲を指定した書式設定プロパティと値を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、適切な挿入することで書式設定を適用<xref:System.Windows.Documents.Inline>要素など<xref:System.Windows.Documents.Bold>と<xref:System.Windows.Documents.Italic>、これによって示される選択範囲に<xref:System.Windows.Documents.TextRange>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.ApplyPropertyValue%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">発生したときに<paramref name="formattingProperty" />、有効な書式設定プロパティで指定されていない、または<paramref name="value" />に対して無効な値を指定します<paramref name="formattingProperty" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="formattingProperty" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanLoad">
+      <MemberSignature Language="C#" Value="public bool CanLoad (string dataFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanLoad(string dataFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.CanLoad(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataFormat">現在の選択範囲に負荷の互換性をチェックするデータ形式。  参照してください<see cref="T:System.Windows.DataFormats" />定義済みのデータ形式の一覧についてはします。</param>
+        <summary>現在の選択範囲を指定したデータ形式でコンテンツを読み込めるかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />は、指定したデータ形式でコンテンツを現在の選択範囲を読み込むことができる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、対応する<xref:System.Windows.Documents.TextRange.Load%2A>実際には、指定したデータ形式で現在の選択範囲にコンテンツを読み込むにはメソッドです。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.CanLoad%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSave">
+      <MemberSignature Language="C#" Value="public bool CanSave (string dataFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanSave(string dataFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.CanSave(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataFormat">確認するデータ形式は、現在の選択範囲との互換性を保存します。  参照してください<see cref="T:System.Windows.DataFormats" />定義済みのデータ形式の一覧についてはします。</param>
+        <summary>現在の選択範囲を指定したデータ形式として保存できるかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />現在の選択は、指定したデータ形式として保存できる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、対応する<xref:System.Windows.Documents.TextRange.Save%2A>メソッドを実際には、指定したデータ形式で現在の選択を保存します。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.CanSave%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changed">
+      <MemberSignature Language="C#" Value="public event EventHandler Changed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Changed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.TextRange.Changed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの新しいスパンをカバーするように範囲の位置が変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearAllProperties">
+      <MemberSignature Language="C#" Value="public void ClearAllProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearAllProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.ClearAllProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての書式設定プロパティを削除します (によって表される<see cref="T:System.Windows.Documents.Inline" />要素) の現在の選択項目からです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけに影響を及ぼす<xref:System.Windows.Documents.Inline>など、要素の書式設定<xref:System.Windows.Documents.Bold>または<xref:System.Windows.Documents.Italic>です。 段落とその他の外側に設定したプロパティ<xref:System.Windows.Documents.Block>要素は変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Windows.Documents.TextPointer textPointer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Windows.Documents.TextPointer textPointer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.Contains(System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textPointer" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="textPointer">現在の選択範囲に含めるようにテストする位置。</param>
+        <summary>位置かどうかをチェック (によって指定された、 <see cref="T:System.Windows.Documents.TextPointer" />) が現在の選択範囲内にあります。</summary>
+        <returns>
+          <see langword="true" />指定した位置の現在の選択範囲内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の選択範囲の一方の端の位置 (によって示される<xref:System.Windows.Documents.TextRange.Start%2A>と<xref:System.Windows.Documents.TextRange.End%2A>) は、現在の選択範囲の一部であると見なされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.Contains%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_startend)]
+ [!code-vb[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_startend)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">発生したときに*textPointer*現在の選択範囲と同じドキュメントに含まれない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="End">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer End { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer End" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextRange.End" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲の終了をマークする位置を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />現在の選択範囲の末尾を指し示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Windows.Documents.TextRange.End%2A>プロパティです。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_startend)]
+ [!code-vb[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_startend)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetPropertyValue (System.Windows.DependencyProperty formattingProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetPropertyValue(class System.Windows.DependencyProperty formattingProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.GetPropertyValue(System.Windows.DependencyProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formattingProperty" Type="System.Windows.DependencyProperty" />
+      </Parameters>
+      <Docs>
+        <param name="formattingProperty">に関しては、現在の選択範囲の値を取得する書式設定のプロパティです。</param>
+        <summary>現在の選択には、指定した書式設定プロパティの有効な値を返します。</summary>
+        <returns>指定した書式設定プロパティの値を指定するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値では、全体を返すために<xref:System.Windows.Documents.TextRange>の値を 1 つだけでテキスト上を拡張する必要があります、`formattingProperty`です。 場合、 <xref:System.Windows.Documents.TextRange> 2 つ以上の値が異なるテキストに拡張すること、 `formattingProperty`、<xref:System.Windows.DependencyProperty.UnsetValue>が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">発生したときに<paramref name="formattingProperty" />、有効な書式設定プロパティで指定されていない、または<paramref name="value" />に対して無効な値を指定します<paramref name="formattingProperty" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="formattingProperty" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextRange.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲が空かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在の選択範囲が空である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.TextRange>場合に、空と見なされますが、<xref:System.Windows.Documents.TextRange.Start%2A>と<xref:System.Windows.Documents.TextRange.End%2A>位置は等しい。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Windows.Documents.TextRange.IsEmpty%2A>プロパティです。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.IO.Stream stream, string dataFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.IO.Stream stream, string dataFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.Load(System.IO.Stream,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="dataFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">現在の選択範囲を読み込むデータを格納している読み取り可能なストリーム。</param>
+        <param name="dataFormat">データを読み込むデータ形式。  現在サポートされているデータの形式は<see cref="F:System.Windows.DataFormats.Rtf" />、 <see cref="F:System.Windows.DataFormats.Text" />、 <see cref="F:System.Windows.DataFormats.Xaml" />、および<see cref="F:System.Windows.DataFormats.XamlPackage" />です。</param>
+        <summary>指定したストリームから指定したデータ形式の現在の選択を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.IO.Stream.CanSeek%2A>は`true`の`stream`ストリームの末尾にコンテンツは、ストリームの先頭から読み込まれます。  それ以外の場合、コンテンツは現在から読み取られます<xref:System.IO.Stream.Position%2A>ストリームの末尾にします。  このメソッドが戻るとき`stream`開く、および内の現在位置のまま`stream`が定義されていません。  
+  
+ 読み込み操作では、新しく読み込まれたコンテンツを持つ現在の選択項目を置き換えます。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.Load%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="stream" />または<paramref name="dataFormat" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">指定したデータ形式はサポートされていないときに発生します。  コンテンツが読み込まれた場合にも発生する可能性があります<paramref name="stream" />指定したデータ形式と一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, string dataFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, string dataFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.Save(System.IO.Stream,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="dataFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">現在の選択を保存するための空で、書き込み可能なストリーム。</param>
+        <param name="dataFormat">現在の選択範囲を保存するデータ形式。  現在サポートされているデータの形式は<see cref="F:System.Windows.DataFormats.Rtf" />、 <see cref="F:System.Windows.DataFormats.Text" />、 <see cref="F:System.Windows.DataFormats.Xaml" />、および<see cref="F:System.Windows.DataFormats.XamlPackage" />です。</param>
+        <summary>現在の選択範囲を指定したデータ形式で指定したストリームに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻るとき`stream`開く、および内の現在位置のまま`stream`が定義されていません。  
+  
+ によって指定されるデータ形式に変換できます操作、現在の選択範囲にコンテンツ保存の一部として`dataFormat`です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.TextRange.Save%2A> メソッドの使用例を次に示します。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_loadsave)]
+ [!code-vb[TextPointer_Snippets#_TextRange_LoadSave](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_loadsave)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> または <paramref name="dataFormat" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定したデータ形式はサポートされていません。  
+  
+ または  
+  
+ コンテンツが読み込まれた<paramref name="stream" />指定したデータ形式と一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.IO.Stream stream, string dataFormat, bool preserveTextElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(class System.IO.Stream stream, string dataFormat, bool preserveTextElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.Save(System.IO.Stream,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="dataFormat" Type="System.String" />
+        <Parameter Name="preserveTextElements" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">現在の選択を保存するための空で、書き込み可能なストリーム。</param>
+        <param name="dataFormat">現在の選択範囲を保存するデータ形式。  現在サポートされているデータの形式は<see cref="F:System.Windows.DataFormats.Rtf" />、 <see cref="F:System.Windows.DataFormats.Text" />、 <see cref="F:System.Windows.DataFormats.Xaml" />、および<see cref="F:System.Windows.DataFormats.XamlPackage" />です。</param>
+        <param name="preserveTextElements">
+          <see langword="true" />ユーザー設定を保持する<see cref="T:System.Windows.Documents.TextElement" />オブジェクト。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>現在の選択をユーザー設定を維持するためのオプションを使用して、指定されたデータの形式で指定したストリームに保存<see cref="T:System.Windows.Documents.TextElement" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`preserveTextElements`は`false`カスタム<xref:System.Windows.Documents.TextElement>既知のオブジェクトが保存される<xref:System.Windows.Documents.TextElement>型です。  たとえば、カスタムを作成する<xref:System.Windows.Documents.TextElement>と呼ばれる`Heading1`から継承される<xref:System.Windows.Documents.Paragraph>です。 このメソッドを呼び出す場合`preserveTextElements`に設定`false`、`Heading1`に変換されます、<xref:System.Windows.Documents.Paragraph>ときに、<xref:System.Windows.Documents.TextRange>を保存します。  このメソッドを呼び出す場合`preserveTextElements`'éý' `true`、`Heading1`は変換されずに保存します。 カスタム テキスト要素を保持するために`dataFormat`に設定する必要があります<xref:System.Windows.DataFormats.Xaml?displayProperty=nameWithType>です。  
+  
+ <xref:System.Windows.Documents.TextRange.Save%28System.IO.Stream%2CSystem.String%2CSystem.Boolean%29>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="stream" />または<paramref name="dataFormat" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">指定したデータ形式はサポートされていないときに発生します。  コンテンツが読み込まれた場合にも発生する可能性があります<paramref name="stream" />指定したデータ形式と一致しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select (System.Windows.Documents.TextPointer position1, System.Windows.Documents.TextPointer position2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select(class System.Windows.Documents.TextPointer position1, class System.Windows.Documents.TextPointer position2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.TextRange.Select(System.Windows.Documents.TextPointer,System.Windows.Documents.TextPointer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position1" Type="System.Windows.Documents.TextPointer" />
+        <Parameter Name="position2" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="position1">更新対象の選択範囲の一方の端を示す固定アンカー位置。</param>
+        <param name="position2">更新対象の選択範囲のもう一方の端を示す移動可能な位置。</param>
+        <summary>2 つを現在の選択を更新<see cref="T:System.Windows.Documents.TextPointer" />範囲を示すために位置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Documents.TextRange>によって示される 2 つの位置の間の選択範囲から形成される**TextPointers**です。  これらの位置のいずれか (によって示される`position1`) は他の位置の中に、選択範囲に対して固定 (によって示される`position2`) が移動可能です。  これは、マウスまたはキーボードを使用して、ユーザーが行った選択の動作方法に似ています。  
+  
+ 新しい選択範囲の実際の端を新しい現在の選択範囲を含むドキュメントに適用される選択ヒューリスティックを一致するように調整される可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">発生したときに<paramref name="position1" />と<paramref name="position2" />同じドキュメント内に配置できません。</exception>
+        <exception cref="T:System.ArgumentNullException">発生したときに<paramref name="position1" />または<paramref name="position2" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.TextPointer Start { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.TextPointer Start" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextRange.Start" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.TextPointer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の選択範囲の開始をマークする位置を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Documents.TextPointer" />現在の選択範囲の先頭を指すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Windows.Documents.TextRange.Start%2A>プロパティです。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_startend)]
+ [!code-vb[TextPointer_Snippets#_TextRange_StartEnd](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_startend)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.TextRange.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の選択範囲のプレーン テキストの内容を設定します。</summary>
+        <value>現在の選択範囲のプレーン テキストの内容を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、存在可能な書式設定に関係なく、現在の選択範囲のプレーン テキスト コンテンツを抽出できます。  
+  
+ 改行文字や段落区切りは、このプロパティに関しては、それと同等として扱われます。  任意の種類のコンテンツの区切りを現在の選択範囲内に存在は、このプロパティを読み取るときに、新しい行に変換されます。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.Windows.Documents.TextRange.Text%2A>プロパティです。  
+  
+ [!code-csharp[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/csharp/VS_Snippets_Wpf/TextPointer_Snippets/CSharp/Window1.xaml.cs#_textrange_text)]
+ [!code-vb[TextPointer_Snippets#_TextRange_Text](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextPointer_Snippets/visualbasic/window1.xaml.vb#_textrange_text)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたがときに発生<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

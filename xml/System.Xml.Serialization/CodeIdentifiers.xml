@@ -1,0 +1,541 @@
+<Type Name="CodeIdentifiers" FullName="System.Xml.Serialization.CodeIdentifiers">
+  <TypeSignature Language="C#" Value="public class CodeIdentifiers" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CodeIdentifiers extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.CodeIdentifiers" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連するコードのエンティティまたは .NET Framework の XML シリアル化インフラストラクチャによって生成される型のマッピングの名前のグループを保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の一覧は、ツールを識別し、クラスを使用する、 <xref:System.Xml.Serialization.CodeIdentifiers>:  
+  
+-   [Web サービス記述言語ツール (Wsdl.exe)](http://msdn.microsoft.com/en-us/b9210348-8bc2-4367-8c91-d1a04b403e88)、または<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラス、Web サービス記述言語 (WSDL) ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときにします。  
+  
+-   [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md) XML スキーマ定義 (XSD) ドキュメントからクラスを生成するときにツールです。  
+  
+-   <xref:System.Web.Services.Description.ServiceDescriptionReflector>クラスの作成中に<xref:System.Web.Services.Description.ServiceDescription>を経由して Web サービスとして識別されるクラスのオブジェクトを<xref:System.Web.Services.WebServiceAttribute>属性。  
+  
+ 使用する代わりに、<xref:System.Xml.Serialization.CodeIdentifiers>クラスに直接、ここに挙げたツールまたはクラスを使用します。 XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用します。  
+  
+ そのスコープに応じて、<xref:System.Xml.Serialization.CodeIdentifiers>インスタンスは、次の一覧内の項目のいずれかの名前を維持するために使用できます。  
+  
+-   型、メソッド、またはフィールド。  
+  
+-   パラメーターと戻り値を WSDL に対応するメソッドの入力し、出力メッセージです。  
+  
+-   内のオブジェクトは、<xref:System.Web.Services.Description.ServiceDescription>を WSDL ドキュメントにシリアル化できるインスタンスです。  
+  
+ 通常、クラスは、名前を含むエンティティの名前の衝突をなど、特定のスコープ内のコードのエンティティ間の競合を防ぐために使用されます。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.CodeIdentifiers" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeIdentifiers (bool caseSensitive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool caseSensitive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="caseSensitive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="caseSensitive">
+          <see langword="true" />識別子は大文字と小文字の区別がある場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />クラスし、コードの識別子が大文字小文字を区別するかどうかを判断します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string identifier, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string identifier, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">コードのエンティティを識別するために使用する名前。</param>
+        <param name="value">コード エンティティ型または型のマッピング情報。</param>
+        <summary>名前付きのコード エンティティ型または型へのマッピングを追加、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A> 、メソッド、<xref:System.Xml.Serialization.CodeIdentifiers.Add%2A>メソッドができない名前の競合。  
+  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddReserved">
+      <MemberSignature Language="C#" Value="public void AddReserved (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddReserved(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.AddReserved(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">内で使用できませんが、名前、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</param>
+        <summary>指定した名前が内で使用されないように、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 予約された名前は、対象のメンバー名も生成する必要がある型などを含むコード エンティティに所属できます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddUnique">
+      <MemberSignature Language="C#" Value="public string AddUnique (string identifier, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AddUnique(string identifier, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.AddUnique(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">名前の候補コード エンティティを識別するために使用します。</param>
+        <param name="value">コード エンティティ型または型のマッピング情報。</param>
+        <summary>名前付きのコード エンティティ型または型へのマッピングを追加、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープ、名前がスコープ内で一意であることを確認します。</summary>
+        <returns>Id パラメーターの値か、名前の競合がある場合、変更後の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id パラメーターの値が内で一意でない場合、<xref:System.Xml.Serialization.CodeIdentifiers>インスタンスのスコープ、新しい一意の文字列が生成され、代わりに使用します。 入力名を追加して、新しい文字列が生成されます。 元の名前は以前に渡された場合は、一意ではありません、 <xref:System.Xml.Serialization.CodeIdentifiers.Add%2A>、 <xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>、または<xref:System.Xml.Serialization.CodeIdentifiers.AddReserved%2A>メソッド、または前回の呼び出しで生成された場合、<xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>メソッドです。 各ケースでは、新しい識別子が一意でない場合、最初に渡されます、<xref:System.Xml.Serialization.CodeIdentifiers.MakeUnique%2A>新しい一意の識別子を作成します。  
+  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのコード エンティティまたはその名前を含む型のマッピングを削除、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって追加されるように予約された名前、<xref:System.Xml.Serialization.CodeIdentifiers.AddReserved%2A>メソッドでは削除されません。  
+  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsInUse">
+      <MemberSignature Language="C#" Value="public bool IsInUse (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsInUse(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.IsInUse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">内で使用するを確認する名前、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</param>
+        <summary>内で指定した名前が既に使用されているかどうかを判断、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</summary>
+        <returns>
+          <see langword="true" />場合は、名前は既に使用中です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力名が以前に渡された場合は、一意ではありません、 <xref:System.Xml.Serialization.CodeIdentifiers.Add%2A>、 <xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>、または<xref:System.Xml.Serialization.CodeIdentifiers.AddReserved%2A>メソッド、またはで生成された場合、<xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>メソッドです。  
+  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MakeRightCase">
+      <MemberSignature Language="C#" Value="public string MakeRightCase (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MakeRightCase(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.MakeRightCase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">場合によっては変更対象の名前。</param>
+        <summary>それにより、入力が小文字の値に基づいて名前を変更することによって、<see cref="P:System.Xml.Serialization.CodeIdentifiers.UseCamelCasing" />プロパティです。</summary>
+        <returns>文字列が入力の識別子と同じか、最初の文字の大文字小文字を変更します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Xml.Serialization.CodeIdentifiers.UseCamelCasing%2A>プロパティは`true`と、入力の最初の文字はアルファベットが小文字で、必要に応じて行われます。 場合の値、<xref:System.Xml.Serialization.CodeIdentifiers.UseCamelCasing%2A>は`false`pascal が有効になり、最初の文字場合、文字が大文字になって、必要な場合です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MakeUnique">
+      <MemberSignature Language="C#" Value="public string MakeUnique (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string MakeUnique(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.MakeUnique(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">一意ではない場合に変更する名前です。</param>
+        <summary>入力の名前は内の別の名前と競合するかどうかを判断、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスは、のスコープし、そのような場合は、変更後の文字列が生成されます。</summary>
+        <returns>Id パラメーターの値か、名前の競合がある場合、変更後の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力名が以前に渡された場合は、一意ではありません、 <xref:System.Xml.Serialization.CodeIdentifiers.Add%2A>、 <xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>、または<xref:System.Xml.Serialization.CodeIdentifiers.AddReserved%2A>メソッド、またはで生成された場合、<xref:System.Xml.Serialization.CodeIdentifiers.AddUnique%2A>メソッドです。 名前が一意でない場合は、元の文字列に追加することによって新しい文字列が生成されます。  
+  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">削除するコードのエンティティ型または型のマッピング情報の名前。</param>
+        <summary>削除、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスの入力名で識別されるコードのエンティティ型または型マッピングのスコープです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveReserved">
+      <MemberSignature Language="C#" Value="public void RemoveReserved (string identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveReserved(string identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.RemoveReserved(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">内で利用可能になります、名、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</param>
+        <summary>入力名を削除、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンス予約された名前です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public object ToArray (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ToArray(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.CodeIdentifiers.ToArray(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">すべてのコード エンティティまたはインスタンスの型マッピングの種類。</param>
+        <summary>コードのエンティティまたは内の型のマッピングの配列を返します、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />インスタンスのスコープです。</summary>
+        <returns>配列のコード エンティティまたは型のマッピングが格納されている、<see cref="T:System.Xml.Serialization.CodeIdentifiers" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML スキーマまたは Web サービスの定義にバインドされているコードのエンティティの名前を制御する場合は、関連付けられている属性を使用してではなくのインスタンスを作成する、<xref:System.Xml.Serialization.CodeIdentifiers>クラスです。 完全な一覧についてを参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UseCamelCasing">
+      <MemberSignature Language="C#" Value="public bool UseCamelCasing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseCamelCasing" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.CodeIdentifiers.UseCamelCasing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインスタンスがキャメル ケースを使用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />インスタンスがキャメル ケースを使用するように指定するには<see langword="false" />インスタンスが pascal を使用することを示すためにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Camel 形式の場合も、識別子の最初の文字が文字にある必要があります小文字です。 Pascal 形式で、最初の文字が文字で、その大文字でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

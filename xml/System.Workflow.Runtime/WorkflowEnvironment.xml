@@ -1,0 +1,85 @@
+<Type Name="WorkflowEnvironment" FullName="System.Workflow.Runtime.WorkflowEnvironment">
+  <TypeSignature Language="C#" Value="public static class WorkflowEnvironment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WorkflowEnvironment extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowEnvironment" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>現在のスレッドで実行されているワークフロー インスタンスのトランザクション環境を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.WorkflowEnvironment> は、現在のスレッドで実行されているワークフロー インスタンスのトランザクション環境を表します。 <xref:System.Workflow.Runtime.WorkflowEnvironment> は 2 つのプロパティを持ちます。1 つは <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> プロパティで、現在の作業バッチを公開するプロパティです。ホストまたはホスト サービスは、このプロパティに <xref:System.Workflow.Runtime.IPendingWork> 項目を追加することにより、現在のトランザクションに参加することができます。もう 1 つは <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkflowInstanceId%2A> プロパティで、このスレッドで現在実行されているワークフロー インスタンスの <xref:System.Guid> を公開するプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="WorkBatch">
+      <MemberSignature Language="C#" Value="public static System.Workflow.Runtime.IWorkBatch WorkBatch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Workflow.Runtime.IWorkBatch WorkBatch" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.IWorkBatch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の作業バッチを取得します。</summary>
+        <value>現在の作業バッチを表す <see cref="T:System.Workflow.Runtime.IWorkBatch" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストまたはホスト サービスは、<xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> プロパティを使用して、保留中の作業項目を現在の作業バッチに追加することにより、現在のトランザクションに参加することができます。 現在のトランザクションに参加するホストまたはホスト サービスは、<xref:System.Workflow.Runtime.IPendingWork> インターフェイスを実装し、<xref:System.Workflow.Runtime.IWorkBatch.Add%2A?displayProperty=nameWithType> を使用して保留中の作業項目を <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に追加する必要があります。 永続的サービスは、自身のデータ ストアの状態をワークフロー インスタンスの状態と整合させておくために、<xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> に項目を追加する必要があります。 そのまますぐに使用できる永続的サービスである <xref:System.Workflow.Runtime.Tracking.SqlTrackingService> と <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> は、どちらもこの機能を実装しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowInstanceId">
+      <MemberSignature Language="C#" Value="public static Guid WorkflowInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Guid WorkflowInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowEnvironment.WorkflowInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドに関連付けられたワークフロー インスタンスの <see cref="T:System.Guid" /> を取得します。</summary>
+        <value>現在のワークフロー インスタンスを識別する <see cref="T:System.Guid" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkflowInstanceId%2A> は、このスレッドで現在実行されているワークフロー インスタンスの <xref:System.Guid> を格納します。 コードがワークフロー スレッド内から実行されるときは、<xref:System.Guid> プロパティを介してワークフロー インスタンスの <xref:System.Workflow.Runtime.WorkflowEnvironment.WorkflowInstanceId%2A> を取得できます。 たとえば、アクティビティによって呼び出されるサービス内にコードがある場合、<xref:System.Workflow.Runtime.WorkflowEnvironment.WorkflowInstanceId%2A> は、呼び出し元アクティビティのワークフロー インスタンスの <xref:System.Guid> を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

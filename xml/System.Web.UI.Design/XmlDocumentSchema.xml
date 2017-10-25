@@ -1,0 +1,84 @@
+<Type Name="XmlDocumentSchema" FullName="System.Web.UI.Design.XmlDocumentSchema">
+  <TypeSignature Language="C#" Value="public sealed class XmlDocumentSchema : System.Web.UI.Design.IDataSourceSchema" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlDocumentSchema extends System.Object implements class System.Web.UI.Design.IDataSourceSchema" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.XmlDocumentSchema" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataSourceSchema</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>構造体、またはスキーマを表す、<see cref="T:System.Xml.XmlDocument" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.XmlDocumentSchema>クラスはデザイン時に、XML ドキュメントの構造体の要素を一覧表示するカスタム コントロール デザイナー コンポーネントによって使用されます。 XmlDocumentSchema クラスを使用すると、ユーザーの UI 機能のデザイン時にドキュメントの要素を選択できるようにするのにドキュメントの要素のリストを設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.Design.XmlDocumentSchema>内の XML ドキュメントの構造を表示するオブジェクト、<xref:System.Web.UI.WebControls.TreeView>コントロール。  
+  
+ [!code-csharp[XmlDocumentSchemaSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/XmlDocumentSchemaSample/CS/XmlDocumentSchemaSample.cs#1)]
+ [!code-vb[XmlDocumentSchemaSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/XmlDocumentSchemaSample/VB/XmlDocumentSchemaSample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDocumentSchema (System.Xml.XmlDocument xmlDocument, string xPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlDocument xmlDocument, string xPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.XmlDocumentSchema.#ctor(System.Xml.XmlDocument,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlDocument" Type="System.Xml.XmlDocument" />
+        <Parameter Name="xPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlDocument">インスタンス、<see cref="T:System.Xml.XmlDocument" />オブジェクト。</param>
+        <param name="xPath">ドキュメントのルートの子ノードを識別する XPath 文字列。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Web.UI.Design.XmlDocumentSchema" />クラスの指定した<see cref="T:System.Xml.XmlDocument" />と XPath 文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`xPath`確認、または空の文字列を指定する XML ドキュメント内で特定のノードを指定するパラメーター ("") を完全なドキュメントを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViews">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IDataSourceViewSchema[] GetViews ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.IDataSourceViewSchema[] GetViews() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.XmlDocumentSchema.GetViews" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開始位置で識別されるノードとして各子ノードに関する情報を含む配列を取得、<paramref name="xPath" />コンス トラクター、またはそれぞれの子ノードを開始位置として、ドキュメント ルート場合のパラメーター、<paramref name="xPath" />パラメーターが空です。</summary>
+        <returns><see cref="T:System.Web.UI.Design.IDataSourceViewSchema" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

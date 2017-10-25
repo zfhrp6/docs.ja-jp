@@ -1,0 +1,252 @@
+<Type Name="ServiceReference" FullName="System.Web.UI.ServiceReference">
+  <TypeSignature Language="C#" Value="public class ServiceReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceReference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ServiceReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Path")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページで使用する Web サービスを登録します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECMAScript (JavaScript) から Web サービス メソッドを呼び出すには、ASP.NET ページ内のサービス参照を含めるを適用する必要があります、<xref:System.Web.Script.Services.ScriptServiceAttribute>属性を Web サービスのクラス定義です。 Web サービスにサービス参照を含めるかどうかは、<xref:System.Web.UI.ScriptManager>または<xref:System.Web.UI.ScriptManagerProxy>オブジェクトは、ブラウザーでインスタンス化する JavaScript、ASP.NET ページ内のコントロールです。  
+  
+ プロキシ オブジェクトは、次の操作に使用されます。  
+  
+-   Web サービス メソッドに JavaScript で非同期要求を行う  
+  
+-   インスタンスを初期化、サーバーのデータ型のプロキシ具体的には使用する Web メソッドを呼び出すための入力パラメーターとして。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.ServiceReference>コントロールは、同じドメイン内のサービスに対してのみ使用できます。  
+  
+ 追加することにより宣言 Web サービスの場所で定義することができます、`<asp:ServiceReference>`要素を`<Services>`内の要素、 `<asp:ScriptManager>`  ページとし、設定に要素の<xref:System.Web.UI.ServiceReference.Path%2A>属性が次の例で示すようにします。  
+  
+```  
+<asp:ScriptManager runat="server" ID="scriptManager">  
+  <Services>  
+    <asp:ServiceReference Path="~/WebServices/SimpleWebService.asmx" />  
+  </Services>  
+</asp:ScriptManager>  
+```  
+  
+ 使用する場合があります、<xref:System.Web.UI.ServiceReference.InlineScript%2A>プロキシ生成スクリプトがインライン スクリプト ブロックとしてそのページに含まれるか、別の要求によって取得されるかを示すプロパティです。  
+  
+ プログラムでも追加することができます、<xref:System.Web.UI.ServiceReference>オブジェクトを介して、<xref:System.Web.UI.ScriptManager.Services%2A?displayProperty=nameWithType>または<xref:System.Web.UI.ScriptManagerProxy.Services%2A?displayProperty=nameWithType>を使用してコレクション、<xref:System.Collections.ObjectModel.Collection%601.Add%2A>のメソッド、<xref:System.Web.UI.ServiceReferenceCollection>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、スクリプトから Web サービス メソッドを呼び出すページ マークアップで Web サービスへの参照を追加する方法を示します。  
+  
+ [!code-aspx-csharp[System.Web.Script.Services.ScriptMethodAttribute#5](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Services.ScriptMethodAttribute/CS/Default.aspx#5)]
+ [!code-aspx-vb[System.Web.Script.Services.ScriptMethodAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Services.ScriptMethodAttribute/VB/Default.aspx#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.ServiceReference" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceReference (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">Web サービスの場所です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ServiceReference" />クラス パスを指定しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxyScript">
+      <MemberSignature Language="C#" Value="protected virtual string GetProxyScript (System.Web.UI.ScriptManager scriptManager, System.Web.UI.Control containingControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetProxyScript(class System.Web.UI.ScriptManager scriptManager, class System.Web.UI.Control containingControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReference.GetProxyScript(System.Web.UI.ScriptManager,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="containingControl" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager">ページ上の <see cref="T:System.Web.UI.ScriptManager" /> コントロール。</param>
+        <param name="containingControl"><see cref="T:System.Web.UI.Control" /> オブジェクト。</param>
+        <summary>カスタマイズとしてオーバーライド可能な派生 <see cref="T:System.Web.UI.ServiceReference" /> オブジェクトからプロキシ スクリプトを提供します。</summary>
+        <returns>プロキシ スクリプト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `containingControl`パラメーターは、<xref:System.Web.UI.ScriptManager>オブジェクトまたは<xref:System.Web.UI.ScriptManagerProxy>対象となるオブジェクト、<xref:System.Web.UI.ServiceReference>オブジェクトを定義します。 相対 URL 解決基準として使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxyUrl">
+      <MemberSignature Language="C#" Value="protected virtual string GetProxyUrl (System.Web.UI.ScriptManager scriptManager, System.Web.UI.Control containingControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetProxyUrl(class System.Web.UI.ScriptManager scriptManager, class System.Web.UI.Control containingControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReference.GetProxyUrl(System.Web.UI.ScriptManager,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="containingControl" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager">ページ上の <see cref="T:System.Web.UI.ScriptManager" /> コントロール。</param>
+        <param name="containingControl"><see cref="T:System.Web.UI.Control" /> オブジェクト。</param>
+        <summary>カスタマイズとしてオーバーライド可能な派生 <see cref="T:System.Web.UI.ServiceReference" /> オブジェクトからプロキシ URL を提供します。</summary>
+        <returns>プロキシ URL。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `containingControl`パラメーターは、<xref:System.Web.UI.ScriptManager>オブジェクトまたは<xref:System.Web.UI.ScriptManagerProxy>対象となるオブジェクト、<xref:System.Web.UI.ServiceReference>オブジェクトが定義されているし、相対 URL 解決の基礎として使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InlineScript">
+      <MemberSignature Language="C#" Value="public virtual bool InlineScript { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InlineScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ServiceReference.InlineScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロキシ生成スクリプトがインライン スクリプト ブロックとしてそのページに含まれるか、別の要求によって取得されるかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロキシ生成スクリプトがページ内のインライン スクリプト ブロックとして含まれている場合<see langword="false" />プロキシ生成スクリプトが別の要求によって取得された場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.ServiceReference.InlineScript%2A>プロパティが宣言されていない、既定値は`false`します。  
+  
+ ときに<xref:System.Web.UI.ServiceReference.InlineScript%2A>に設定されている`false`ECMAScript (JavaScript) プロキシを生成するためのスクリプトがサーバーへの追加要求によって別のスクリプト ファイルとしてダウンロードします。 ブラウザーのキャッシュを使用する場合このオプションは、複数の Web ページが同じサービス参照を使用する場合に便利です。  
+  
+ ときに<xref:System.Web.UI.ServiceReference.InlineScript%2A>に設定されている`true`プロキシの生成のスクリプトは、ページ内のインライン スクリプト ブロックとして含まれています。 これにより、ページに多数のサービス参照があるし、他のページは、同じサービスを参照しない場合は特に、ネットワーク要求の数を減らすことによってサーバー パフォーマンスが向上します。 さらに、<xref:System.Web.UI.ServiceReference.Path%2A>プロパティは、相対パスに設定する必要がありますと<xref:System.Web.UI.ServiceReference.InlineScript%2A>に設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public virtual string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ServiceReference.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または参照先の Web サービスへのパスを設定します。</summary>
+        <value>参照先の Web サービスのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ServiceReference.Path%2A>プロパティには、ローカルのみに Web サービスを指定できます。 つまり、このプロパティでは、AJAX 対応の ASP.NET Web アプリケーションと同じドメイン内の Web サービスを指定できますのみ。 <xref:System.Web.UI.ServiceReference.Path%2A>相対パス、アプリケーション相対、ドメインの相対または絶対パスであることができます。  
+  
+ 場合、<xref:System.Web.UI.ServiceReference.InlineScript%2A>プロパティに設定されている`true`を含むページと同じ Web アプリケーションを指す相対パスを使用する必要があります、<xref:System.Web.UI.ServiceReference>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ServiceReference.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を表す文字列を返します、<see cref="P:System.Web.UI.ServiceReference.Path" />プロパティまたは型名。</summary>
+        <returns>値、<see cref="P:System.Web.UI.ServiceReference.Path" />定義それ以外の場合は、プロパティ、値の<see cref="P:System.Reflection.MemberInfo.Name" />クラスのプロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

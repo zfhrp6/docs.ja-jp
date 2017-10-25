@@ -1,0 +1,82 @@
+<Type Name="ToolboxItemCreator" FullName="System.Drawing.Design.ToolboxItemCreator">
+  <TypeSignature Language="C#" Value="public sealed class ToolboxItemCreator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ToolboxItemCreator extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxItemCreator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カプセル化、<see cref="T:System.Drawing.Design.ToolboxItemCreatorCallback" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItemCreator>クラスは、ツールボックス アイテムの作成者のコールバック関数をカプセル化します。 これらのコールバック関数は、カスタム データ オブジェクトのツールボックス項目を作成する方法を提供する、デザイナーによって使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public System.Drawing.Design.ToolboxItem Create (System.Windows.Forms.IDataObject data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Design.ToolboxItem Create(class System.Windows.Forms.IDataObject data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCreator.Create(System.Windows.Forms.IDataObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Windows.Forms.IDataObject" />
+      </Parameters>
+      <Docs>
+        <param name="data">表すデータ オブジェクト、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</param>
+        <summary><see cref="T:System.Drawing.Design.ToolboxItem" /> から新しい <see cref="T:System.Windows.Forms.IDataObject" /> を作成します。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" /> クラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data`パラメーターによって提供されるデータを含めることがあります、<xref:System.Drawing.Design.ToolboxItemContainer>クラスです。 いずれかで読み取ることができるデータが含まれますが、<xref:System.Drawing.Design.ToolboxItemCreator>ユーザーによって提供されたクラスです。 クリップボードの形式を使用してデータにもあります、<xref:System.Drawing.Design.ToolboxItemCreator>に割り当てられます。 ここで、<xref:System.Drawing.Design.ToolboxItem>オンデマンドで作成します。  
+  
+ <xref:System.Drawing.Design.ToolboxItemCreator.Create%2A>データ オブジェクトにサポートされている形式のデータが含まれていない場合、メソッドが例外を発生させる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItemCreator.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆シリアル化するために必要なデータを表すクリップボード形式を取得、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <value>クリップボードの形式を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドラッグ アンド ドロップ操作が発生すると、デザイン環境へのクエリすべて<xref:System.Drawing.Design.ToolboxItemCreator>インスタンス。 場合、<xref:System.Drawing.Design.ToolboxItemCreator>ドラッグのクリップボード形式のいずれかの操作をサポートしている、<xref:System.Drawing.Design.ToolboxItem>から作成された、<xref:System.Drawing.Design.ToolboxItemCreator>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,142 @@
+<Type Name="IXpsFixedDocumentSequenceReader" FullName="System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader">
+  <TypeSignature Language="C#" Value="public interface IXpsFixedDocumentSequenceReader" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXpsFixedDocumentSequenceReader" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>各部分を読み取るためのメソッドを定義、<see cref="T:System.Windows.Documents.FixedDocumentSequence" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このインターフェイスを実装するオブジェクトへの参照を取得する方法を示します。  
+  
+ [!code-csharp[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDialog.xaml.cs#signaturedefinitioncommandhandler)]
+ [!code-vb[XpsReadWriteSign#SignatureDefinitionCommandHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedialog.xaml.vb#signaturedefinitioncommandhandler)]  
+  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Xps.Packaging.XpsDocument.FixedDocumentSequenceReader%2A>にアクセスするために<xref:System.Windows.Documents.FixedDocument>でパーツ、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FixedDocuments">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.IXpsFixedDocumentReader&gt; FixedDocuments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Windows.Xps.Packaging.IXpsFixedDocumentReader&gt; FixedDocuments" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.FixedDocuments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Windows.Xps.Packaging.IXpsFixedDocumentReader&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Documents.FixedDocument" />内の各ドキュメントの読者、<see cref="T:System.Windows.Documents.FixedDocumentSequence" />です。</summary>
+        <value>コレクション<see cref="T:System.Windows.Documents.FixedDocument" />リーダー、内の各ドキュメントに 1 つ、<see cref="T:System.Windows.Documents.FixedDocumentSequence" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.FixedDocuments%2A>のコレクションを取得するプロパティ<xref:System.Windows.Documents.FixedDocument>リーダー。  
+  
+ [!code-csharp[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/csharp/VS_Snippets_Wpf/DocumentStructure/CSharp/Window1.xaml.cs#docstrucfixeddoc)]
+ [!code-vb[DocumentStructure#DocStrucFixedDoc](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DocumentStructure/visualbasic/window1.xaml.vb#docstrucfixeddoc)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFixedDocument">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.IXpsFixedDocumentReader GetFixedDocument (Uri documentSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Xps.Packaging.IXpsFixedDocumentReader GetFixedDocument(class System.Uri documentSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.GetFixedDocument(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.IXpsFixedDocumentReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="documentSource" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="documentSource">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]固定のドキュメントのです。</param>
+        <summary>用のリーダーを取得、 <see cref="T:System.Windows.Documents.FixedDocument" /> 、指定した[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]です。</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket PrintTicket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket PrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.PrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Printing.PrintTicket" />、いずれかが存在する場合、関連付けられている、<see cref="T:System.Windows.Documents.FixedDocument" />です。</summary>
+        <value>A <see cref="T:System.Printing.PrintTicket" /> ; シーケンスの既定の印刷オプションを格納しているか、<see langword="null" />ドキュメントの印刷チケットが存在しない場合、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Printing.PrintTicket>の一部、[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]シーケンスで第 2 章を参照してください、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]で入手可能仕様[XPS: 仕様とライセンスのダウンロード](http://www.microsoft.com/whdc/xps/downloads.mspx)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumbnail">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.XpsThumbnail Thumbnail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.XpsThumbnail Thumbnail" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.Thumbnail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.XpsThumbnail</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つが存在する場合、関連付けられている、サムネイル画像を取得、<see cref="T:System.Windows.Documents.FixedDocumentSequence" />です。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.XpsThumbnail" />イメージを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)] の <see cref="T:System.Windows.Documents.FixedDocumentSequence" /> を取得します。</summary>
+        <value>A<see cref="T:System.Uri" />を表す、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]のシーケンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

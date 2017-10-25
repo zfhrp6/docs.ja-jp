@@ -1,0 +1,775 @@
+<Type Name="Grid" FullName="System.Windows.Controls.Grid">
+  <TypeSignature Language="C#" Value="public class Grid : System.Windows.Controls.Panel, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Grid extends System.Windows.Controls.Panel implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Grid" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Panel</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>行と列で構成される柔軟性のあるグリッド領域を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Grid>のコレクションを格納<xref:System.Windows.UIElement>では、オブジェクト、<xref:System.Windows.Controls.Panel.Children%2A>プロパティです。  
+  
+ 内で定義されている行と列、<xref:System.Windows.Controls.Grid>活用できる<xref:System.Windows.GridUnitType.Star>残りの領域を比例的に配布するサイズを変更します。 ときに<xref:System.Windows.GridUnitType.Star>高さまたは幅行または列、列または行に残りの空き領域の加重比率が受信するを選択しています。 これは、対照的に<xref:System.Windows.GridUnitType.Auto>、行または列内にあるコンテンツのサイズに基づいて均等に領域を配布します。 この値を表した`*`または`2*`を使用すると[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]です。 最初のケースでは、行または列が 1 回、使用可能な領域、2 番目のケースでは、行の間では受信または列が 2 回、空き領域を受信したりできます。 領域を比例的に配布するには、この手法を組み合わせることによって、<xref:System.Windows.FrameworkElement.HorizontalAlignment%2A>と<xref:System.Windows.FrameworkElement.VerticalAlignment%2A>の値`Stretch`、画面領域の割合で、パーティション レイアウト領域を行うことができます。 <xref:System.Windows.Controls.Grid>この方法で領域を配布することができますのみのレイアウト パネルです。  
+  
+ 既定では、行と列をとって最小限の領域を特定の行または列に格納されている任意のセル内の最も大きいコンテンツに合わせてください。 たとえば、列には長い単語を含む 1 つのセルが、これには、列内のすべてのセル内に含まれる「カバ」および"dog"などの小さい語のように場合、列の幅は、最大 word (カバ) の幅をされます。  
+  
+ 子要素を正確に配置することができます、<xref:System.Windows.Controls.Grid>の組み合わせを使用して、<xref:System.Windows.FrameworkElement.Margin%2A>プロパティと配置プロパティです。  
+  
+ 子要素、<xref:System.Windows.Controls.Grid>マークアップやコード内に出現する順序で描画されます。 その結果、要素が同じ座標を共有する場合は、レイヤー化された順序 (z オーダーのとも呼ばれます) を実現できます。  
+  
+ <xref:System.Windows.Controls.Grid>および<xref:System.Windows.Documents.Table>いくつかの一般的な機能を共有がそれぞれに、組み込みの機能を使うに適切なシナリオに適用できます。 <xref:System.Windows.Controls.Grid>行と列のインデックスに基づいて要素を追加します<xref:System.Windows.Documents.Table>しません。 <xref:System.Windows.Controls.Grid>要素により、コンテンツの重ね順であり、1 つのセル内で複数の要素が存在できます。 <xref:System.Windows.Documents.Table>重ね順をサポートしていません。 子要素、 <xref:System.Windows.Controls.Grid> 「セル」境界外部の左上隅に対する相対絶対位置に配置できます。 <xref:System.Windows.Documents.Table>この機能はサポートしません。 <xref:System.Windows.Controls.Grid>サイズ変更動作のより柔軟な提供も<xref:System.Windows.Documents.Table>します。  
+  
+ <xref:System.Windows.Controls.Grid>使用して、<xref:System.Windows.GridLength>のサイズ変更の特性を定義するオブジェクト、<xref:System.Windows.Controls.RowDefinition>または<xref:System.Windows.Controls.ColumnDefinition>です。 各ユニットの種類の定義を参照してください。<xref:System.Windows.GridUnitType>です。  
+  
+ 内の列に子要素が追加されたかどうか、 <xref:System.Windows.Controls.Grid>、列はその<xref:System.Windows.Controls.ColumnDefinition.Width%2A>プロパティに設定`Auto`、制限なしの子を測定します。 この動作は、水平スクロール バーを防ぐための表示から、<xref:System.Windows.Controls.ScrollViewer>子要素が測定される、使用されているがバインド解除済みとします。 表示の目的で、子はクリップではなくスクロールします。  
+  
+ パネルの要素では、フォーカスは既定では表示されません。 フォーカスを受け取るパネルの要素を強制するには、設定、<xref:System.Windows.UIElement.Focusable%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例では、グリッドを作成する方法を示します。 この例では、3 つの定義、グリッド<xref:System.Windows.Controls.ColumnDefinition>要素と 4 つ<xref:System.Windows.Controls.RowDefinition>子コンテンツをホストする要素。  
+  
+ [!code-csharp[Grid#3](~/samples/snippets/csharp/VS_Snippets_Wpf/Grid/CSharp/Grid_Code.cs#3)]
+ [!code-vb[Grid#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Grid/VisualBasic/grid_vb.vb#3)]
+ [!code-xaml[Grid#3](~/samples/snippets/xaml/VS_Snippets_Wpf/Grid/XAML/default.xaml#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Grid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Controls.Grid" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize">このサイズを指定<see cref="T:System.Windows.Controls.Grid" />をその子要素を整列する要素を使用する必要があります。</param>
+        <summary><see cref="T:System.Windows.Controls.Grid" /> 要素のコンテンツを配置します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Size" />このグリッド要素とその子の配置のサイズを表します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnDefinitions">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.ColumnDefinitionCollection ColumnDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.ColumnDefinitionCollection ColumnDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Grid.ColumnDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ColumnDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Grid" /> の、このインスタンスで定義されている <see cref="T:System.Windows.Controls.ColumnDefinitionCollection" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.Controls.Grid" /> の、このインスタンスで定義されている <see cref="T:System.Windows.Controls.ColumnDefinitionCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_ColumnDefinitions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.ColumnDefinitions>  
+    OneOrMoreColumnDefinitions  
+  </object.ColumnDefinitions>  
+</object>  
+  
+```  
+  
+<a name="xamlValues_ColumnDefinitions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreColumnDefinitions*  
+ 1 つまたは複数<xref:System.Windows.Controls.ColumnDefinition>要素。 これらの各<xref:System.Windows.Controls.ColumnDefinition>最終的なグリッド レイアウトで列を表すプレース ホルダーになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.ColumnProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.Column" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnSpanProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColumnSpanProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColumnSpanProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.ColumnSpanProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.ColumnSpan" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumn">
+      <MemberSignature Language="C#" Value="public static int GetColumn (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetColumn(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetColumn(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Grid.Column" />添付プロパティから、指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Grid.Column" />添付プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetColumnSpan">
+      <MemberSignature Language="C#" Value="public static int GetColumnSpan (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetColumnSpan(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetColumnSpan(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Grid.ColumnSpan" />添付プロパティから、指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Grid.ColumnSpan" />添付プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsSharedSizeScope">
+      <MemberSignature Language="C#" Value="public static bool GetIsSharedSizeScope (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsSharedSizeScope(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetIsSharedSizeScope(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Grid.IsSharedSizeScope" />添付プロパティから、指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Grid.IsSharedSizeScope" />添付プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRow">
+      <MemberSignature Language="C#" Value="public static int GetRow (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetRow(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetRow(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Grid.Row" />添付プロパティから、指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Grid.Row" />添付プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRowSpan">
+      <MemberSignature Language="C#" Value="public static int GetRowSpan (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetRowSpan(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetRowSpan(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForChildren</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となる要素。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Grid.RowSpan" />添付プロパティから、指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>値、<see cref="P:System.Windows.Controls.Grid.RowSpan" />添付プロパティ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">目的の 0 から始まるインデックス位置<see cref="T:System.Windows.Media.Visual" />です。</param>
+        <summary>子を取得します<see cref="T:System.Windows.Media.Visual" />内の指定した<paramref name="index" />位置。</summary>
+        <returns>子<see cref="T:System.Windows.Media.Visual" />内の指定した<paramref name="index" />位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出したときに、ビジュアル ツリーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSharedSizeScopeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsSharedSizeScopeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsSharedSizeScopeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.IsSharedSizeScopeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.IsSharedSizeScope" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Grid.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この論理子を反復処理できる列挙子を取得<see cref="T:System.Windows.Controls.Grid" />です。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size constraint);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size constraint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constraint" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="constraint">上限のサイズが超過していないことを示します。</param>
+        <summary>子の測定、<see cref="T:System.Windows.Controls.Grid" />中の調整に応じるために、<see cref="M:System.Windows.Controls.Grid.ArrangeOverride(System.Windows.Size)" />渡します。</summary>
+        <returns>
+          <see cref="T:System.Windows.Size" />子コンテンツを配置に必要なサイズを表します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualChildrenChanged">
+      <MemberSignature Language="C#" Value="protected override void OnVisualChildrenChanged (System.Windows.DependencyObject visualAdded, System.Windows.DependencyObject visualRemoved);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualChildrenChanged(class System.Windows.DependencyObject visualAdded, class System.Windows.DependencyObject visualRemoved) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.OnVisualChildrenChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visualAdded" Type="System.Windows.DependencyObject" />
+        <Parameter Name="visualRemoved" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="visualAdded">追加されるビジュアルの子を識別します。</param>
+        <param name="visualRemoved">削除されるビジュアルの子を識別します。</param>
+        <summary>ときに呼び出されますのビジュアルの子、<see cref="T:System.Windows.Controls.Grid" />要素変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowDefinitions">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.RowDefinitionCollection RowDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.RowDefinitionCollection RowDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Grid.RowDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.RowDefinitionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Grid" /> の、このインスタンスで定義されている <see cref="T:System.Windows.Controls.RowDefinitionCollection" /> を取得します。</summary>
+        <value>A<see cref="T:System.Windows.Controls.RowDefinitionCollection" />のこのインスタンスで定義されている<see cref="T:System.Windows.Controls.Grid" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_RowDefinitions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.RowDefinitions>  
+    OneOrMoreRowDefinitions  
+  </object.RowDefinitions>  
+</object>  
+```  
+  
+<a name="xamlValues_RowDefinitions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreRowDefinitions*  
+ 1 つまたは複数<xref:System.Windows.Controls.RowDefinition>要素。 これらの各<xref:System.Windows.Controls.RowDefinition>最終的なグリッド レイアウトでの行を表すプレース ホルダーになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.RowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.Row" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowSpanProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RowSpanProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RowSpanProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.RowSpanProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.RowSpan" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumn">
+      <MemberSignature Language="C#" Value="public static void SetColumn (System.Windows.UIElement element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetColumn(class System.Windows.UIElement element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.SetColumn(System.Windows.UIElement,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Grid.Column" />添付プロパティ。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Grid.Column" />添付プロパティを指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetColumnSpan">
+      <MemberSignature Language="C#" Value="public static void SetColumnSpan (System.Windows.UIElement element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetColumnSpan(class System.Windows.UIElement element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.SetColumnSpan(System.Windows.UIElement,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Grid.ColumnSpan" />添付プロパティ。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Grid.ColumnSpan" />添付プロパティを指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsSharedSizeScope">
+      <MemberSignature Language="C#" Value="public static void SetIsSharedSizeScope (System.Windows.UIElement element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsSharedSizeScope(class System.Windows.UIElement element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.SetIsSharedSizeScope(System.Windows.UIElement,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Grid.IsSharedSizeScope" />添付プロパティ。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Grid.IsSharedSizeScope" />添付プロパティを指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRow">
+      <MemberSignature Language="C#" Value="public static void SetRow (System.Windows.UIElement element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetRow(class System.Windows.UIElement element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.SetRow(System.Windows.UIElement,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティを設定する要素。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Grid.Row" />添付プロパティを指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowSpan">
+      <MemberSignature Language="C#" Value="public static void SetRowSpan (System.Windows.UIElement element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetRowSpan(class System.Windows.UIElement element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.SetRowSpan(System.Windows.UIElement,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">設定する対象の要素、<see cref="P:System.Windows.Controls.Grid.RowSpan" />添付プロパティ。</param>
+        <param name="value">設定するプロパティ値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Grid.RowSpan" />添付プロパティを指定された<see cref="T:System.Windows.UIElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeColumnDefinitions">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeColumnDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeColumnDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.ShouldSerializeColumnDefinitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>場合は true を返します<see cref="T:System.Windows.Controls.ColumnDefinitionCollection" />のこのインスタンスに関連付けられている<see cref="T:System.Windows.Controls.Grid" />空ではありません。</summary>
+        <returns>true の場合<see cref="T:System.Windows.Controls.ColumnDefinitionCollection" />のこのインスタンスに関連付けられている<see cref="T:System.Windows.Controls.Grid" />は空である場合は false。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeRowDefinitions">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeRowDefinitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeRowDefinitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.ShouldSerializeRowDefinitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>場合は true を返します<see cref="T:System.Windows.Controls.RowDefinitionCollection" />のこのインスタンスに関連付けられている<see cref="T:System.Windows.Controls.Grid" />空ではありません。</summary>
+        <returns>true の場合<see cref="T:System.Windows.Controls.RowDefinitionCollection" />のこのインスタンスに関連付けられている<see cref="T:System.Windows.Controls.Grid" />は空である場合は false。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowGridLines">
+      <MemberSignature Language="C#" Value="public bool ShowGridLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowGridLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Grid.ShowGridLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グリッド線がこの内で参照可能かどうかを示す値を取得または<see cref="T:System.Windows.Controls.Grid" />です。</summary>
+        <value>
+          <see langword="true" />場合、グリッド線が表示されます。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のすべての要素の周囲に線を作成するグリッド線を有効にすると、<xref:System.Windows.Controls.Grid>です。 このプロパティでは、デザイン ツールのレイアウトの問題をデバッグして、運用品質のコードで使用するためのものではないため点線のみのとおりです。 内の行の場合、 <xref:System.Windows.Controls.Grid>、内の要素のスタイルを設定、<xref:System.Windows.Controls.Grid>罫線にします。  
+  
+<a name="dependencyPropertyInfo_ShowGridLines"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Grid.ShowGridLinesProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowGridLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowGridLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowGridLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Grid.ShowGridLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Grid.ShowGridLines" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Grid.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Grid.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合計数を表す値を取得<see cref="T:System.Windows.Media.Visual" />のこのインスタンス内で子<see cref="T:System.Windows.Controls.Grid" />です。</summary>
+        <value>
+          <see cref="T:System.Int32" />子の合計数を表す<see cref="T:System.Windows.Media.Visual" />オブジェクト。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの呼び出し中に、ビジュアル ツリーを変更しないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

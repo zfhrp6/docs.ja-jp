@@ -1,0 +1,265 @@
+<Type Name="RepeaterItem" FullName="System.Web.UI.WebControls.RepeaterItem">
+  <TypeSignature Language="C#" Value="public class RepeaterItem : System.Web.UI.Control, System.Web.UI.IDataItemContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RepeaterItem extends System.Web.UI.Control implements class System.Web.UI.IDataItemContainer, class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeaterItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataItemContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の項目を表す、<see cref="T:System.Web.UI.WebControls.Repeater" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.RepeaterItem>オブジェクト内のアイテムを表し、<xref:System.Web.UI.WebControls.Repeater>ヘッダー セクション、フッター セクションで、データ項目などのコントロールです。  
+  
+ データ項目、<xref:System.Web.UI.WebControls.Repeater>にコントロールが格納されている、<xref:System.Web.UI.WebControls.RepeaterItemCollection>を使用してアクセスできるオブジェクト、<xref:System.Web.UI.WebControls.Repeater.Items%2A>のプロパティ、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ 使用することができます、<xref:System.Web.UI.WebControls.RepeaterItem>オブジェクト内の項目のプロパティにプログラムでアクセスを<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.RepeaterItem>内の各データ項目の内容を表示するオブジェクト、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[Classic RepeaterItem Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItem Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItem Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RepeaterItem (int itemIndex, System.Web.UI.WebControls.ListItemType itemType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 itemIndex, valuetype System.Web.UI.WebControls.ListItemType itemType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItem.#ctor(System.Int32,System.Web.UI.WebControls.ListItemType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="itemIndex" Type="System.Int32" />
+        <Parameter Name="itemType" Type="System.Web.UI.WebControls.ListItemType" />
+      </Parameters>
+      <Docs>
+        <param name="itemIndex">内の項目のインデックス、<see cref="T:System.Web.UI.WebControls.Repeater" />から制御、<see cref="P:System.Web.UI.WebControls.Repeater.Items" />コントロールのコレクション。</param>
+        <param name="itemType"><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.RepeaterItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.RepeaterItem>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.RepeaterItem>クラスです。  
+  
+ [!code-csharp[Classic RepeaterItem.RepeaterItem Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItem.RepeaterItem Example/CS/source.cs#1)]
+ [!code-vb[Classic RepeaterItem.RepeaterItem Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItem.RepeaterItem Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public virtual object DataItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItem.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられたデータ項目、<see cref="T:System.Web.UI.WebControls.RepeaterItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.Repeater" />コントロール。</summary>
+        <value>A<see cref="T:System.Object" />内のデータ項目を表す、<see cref="T:System.Web.UI.WebControls.Repeater" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeaterItem.DataItem%2A>を指定するかに関連付けられたデータ項目のプロパティを決定するプロパティ、<xref:System.Web.UI.WebControls.RepeaterItem>内のオブジェクト、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+> [!NOTE]
+>  このプロパティは、内のデータ項目にのみ適用されます、<xref:System.Web.UI.WebControls.Repeater>コントロール。 <xref:System.Web.UI.WebControls.RepeaterItem.ItemType%2A>プロパティに設定する必要があります`ListItemType.Item`、 `ListItemType.AlternatingItem`、 `ListItemType.SelectedItem`、または`ListItemType.EditItem`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemIndex">
+      <MemberSignature Language="C#" Value="public virtual int ItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItem.ItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目のインデックスを取得、<see cref="T:System.Web.UI.WebControls.Repeater" />から制御、<see cref="P:System.Web.UI.WebControls.Repeater.Items" />コントロールのコレクション。</summary>
+        <value>内の項目のインデックス、<see cref="T:System.Web.UI.WebControls.Repeater" />から制御、<see cref="P:System.Web.UI.WebControls.Repeater.Items" />コントロールのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeaterItem.ItemIndex%2A>内の項目のインデックスの数を決定するプロパティ、<xref:System.Web.UI.WebControls.Repeater>から制御、<xref:System.Web.UI.WebControls.Repeater.Items%2A>コントロールのコレクション。  
+  
+> [!NOTE]
+>  このプロパティは、内のデータ項目にのみ適用されます、<xref:System.Web.UI.WebControls.Repeater>コントロール。 <xref:System.Web.UI.WebControls.RepeaterItem.ItemType%2A>プロパティに設定する必要があります`ListItemType.Item`、 `ListItemType.AlternatingItem`、 `ListItemType.SelectedItem`、または`ListItemType.EditItem`です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.RepeaterItem.ItemIndex%2A>内の項目のインデックス番号を表示するプロパティを<xref:System.Web.UI.WebControls.Repeater>から制御、<xref:System.Web.UI.WebControls.Repeater.Items%2A>コントロールのコレクション。  
+  
+ [!code-aspx-csharp[Classic RepeaterItem.ItemIndex Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItem.ItemIndex Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterItem.ItemIndex Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItem.ItemIndex Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.ListItemType ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.ListItemType ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItem.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListItemType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目の種類を取得、<see cref="T:System.Web.UI.WebControls.Repeater" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.ListItemType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.RepeaterItem.ItemType%2A>内の項目の種類を決定するプロパティ、<xref:System.Web.UI.WebControls.Repeater>コントロール。 次の表は、さまざまな項目の種類を一覧表示します。  
+  
+|項目の種類|説明|  
+|---------------|-----------------|  
+|ヘッダー|ヘッダー セクション、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|[フッター]|フッター セクション、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|アイテム|内の項目、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|AlternatingItem|交互のアイテム、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|SelectedItem|内の選択項目、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|EditItem|編集用に選択された項目、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|区切り記号|項目間の区切り記号、<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+|[Pager]|ページの選択 セクションの<xref:System.Web.UI.WebControls.Repeater>コントロール。|  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.RepeaterItem.ItemType%2A>内の項目の項目の種類を決定するプロパティ、<xref:System.Web.UI.WebControls.Repeater>コントロール。 項目が作成される順序、<xref:System.Web.UI.WebControls.Repeater>コントロールが項目の種類と共に表示されます。  
+  
+ [!code-aspx-csharp[Classic RepeaterItem.ItemType Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic RepeaterItem.ItemType Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic RepeaterItem.ItemType Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic RepeaterItem.ItemType Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBubbleEvent">
+      <MemberSignature Language="C#" Value="protected override bool OnBubbleEvent (object source, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnBubbleEvent(object source, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.RepeaterItem.OnBubbleEvent(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントのソース。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>イベントとその情報のソースを親に割り当てます<see cref="T:System.Web.UI.WebControls.Repeater" />を制御する場合、<see cref="T:System.EventArgs" />パラメーターのインスタンスは、<see cref="T:System.Web.UI.WebControls.RepeaterCommandEventArgs" />です。</summary>
+        <returns>
+          <see langword="true" />かどうか、親に割り当てられているイベントが発生した、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DataItemIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DataItemIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DataItemIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItem.System#Web#UI#IDataItemContainer#DataItemIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DataItemIndex" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.RepeaterItem.ItemIndex" /> プロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RepeaterItem>にインスタンスをキャスト、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataItemContainer.DisplayIndex">
+      <MemberSignature Language="C#" Value="int System.Web.UI.IDataItemContainer.DisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Web.UI.IDataItemContainer.DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.RepeaterItem.System#Web#UI#IDataItemContainer#DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.IDataItemContainer.DisplayIndex" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.RepeaterItem.ItemIndex" /> プロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.RepeaterItem>にインスタンスをキャスト、<xref:System.Web.UI.IDataItemContainer>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

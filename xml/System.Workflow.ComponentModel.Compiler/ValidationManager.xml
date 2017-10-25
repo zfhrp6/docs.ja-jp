@@ -1,0 +1,204 @@
+<Type Name="ValidationManager" FullName="System.Workflow.ComponentModel.Compiler.ValidationManager">
+  <TypeSignature Language="C#" Value="public sealed class ValidationManager : IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ValidationManager extends System.Object implements class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.ValidationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ検証、親アクティビティなどのコンテキスト情報を、コンパイル時に使うバリデーターすべてが共有できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Compiler.ValidationManager> クラスのインスタンスに関するプロパティの初期値の一覧については、<xref:System.Workflow.ComponentModel.Compiler.ValidationManager.%23ctor%2A> コンストラクターのトピックを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.ValidationManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ValidationManager クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Workflow.ComponentModel.Compiler.ValidationManager.Context%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Workflow.ComponentModel.Compiler.ValidationManager.ValidateChildActivities%2A>|`true`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationManager (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.ValidationManager.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">GUID で識別されるサービスを検索する <see cref="T:System.IServiceProvider" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.ValidationManager" /> クラスの新しいインスタンスを初期化します。サービス プロバイダーを引数として指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Compiler.ValidationManager> クラスのインスタンスに関するプロパティの初期値の一覧については、<xref:System.Workflow.ComponentModel.Compiler.ValidationManager.%23ctor%2A> コンストラクターのトピックを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationManager (IServiceProvider serviceProvider, bool validateChildActivities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider serviceProvider, bool validateChildActivities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.ValidationManager.#ctor(System.IServiceProvider,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+        <Parameter Name="validateChildActivities" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">GUID で識別されるサービスを検索する <see cref="T:System.IServiceProvider" />。</param>
+        <param name="validateChildActivities">
+          現在の <see langword="true" /> の子 <see cref="T:System.Workflow.ComponentModel.Activity" /> を検証する場合は <see cref="T:System.Workflow.ComponentModel.Activity" />、それ以外の場合は <see langword="false" />。</param>
+        <summary>サービス プロバイダーを引数として指定して、<see cref="T:System.Workflow.ComponentModel.Compiler.ValidationManager" /> クラスの新しいインスタンスを初期化し、子 <see cref="T:System.Workflow.ComponentModel.Activity" /> クラスを検証する必要があるかどうかを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Compiler.ValidationManager> クラスのインスタンスに関するプロパティの初期値の一覧については、<xref:System.Workflow.ComponentModel.Compiler.ValidationManager.%23ctor%2A> コンストラクターのトピックを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.Serialization.ContextStack Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.Serialization.ContextStack Context" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.ValidationManager.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.Serialization.ContextStack</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入れ子になったバリデーターに情報を渡すために使う、スタック オブジェクトを表す値を取得します。</summary>
+        <value>入れ子になったバリデーターに情報を渡すために使う <see cref="T:System.ComponentModel.Design.Serialization.ContextStack" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.ValidationManager.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得対象となるサービス オブジェクトの <see cref="T:System.Type" /> を指定するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Type" /> のサービス オブジェクトを取得します。</summary>
+        <returns><paramref name="serviceType" /> 型のサービス オブジェクト。<see langword="Nothing" /> 型のサービス オブジェクトがない場合は null 参照 (Visual Basic の場合は <paramref name="serviceType" />)。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidators">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Compiler.Validator[] GetValidators (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Compiler.Validator[] GetValidators(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.ValidationManager.GetValidators(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.Validator[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">検索する <see cref="T:System.Type" /> クラスの <see cref="T:System.Workflow.ComponentModel.Compiler.Validator" />。</param>
+        <summary>ある型に関連付けられたバリデーターの配列を、この型に適用されるバリデーター属性を調べて返します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Compiler.Validator" /> クラスの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Compiler.Validator> クラスのハッシュ テーブルに、<xref:System.Type> で示される `type` があれば、<xref:System.Workflow.ComponentModel.Compiler.Validator> クラスの配列を返します。  
+  
+ ハッシュ テーブルに、<xref:System.Type> で示される `type` がない場合は、<xref:System.Workflow.ComponentModel.Compiler.Validator> クラスの新しいハッシュ テーブルを作り、<xref:System.Workflow.ComponentModel.Compiler.Validator> クラスの配列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateChildActivities">
+      <MemberSignature Language="C#" Value="public bool ValidateChildActivities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateChildActivities" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.ValidationManager.ValidateChildActivities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子 <see cref="T:System.Workflow.ComponentModel.Activity" /> クラスを検証するかどうかを表す値を取得します。</summary>
+        <value>
+          子 <see langword="true" /> クラスを検証する場合は <see cref="T:System.Workflow.ComponentModel.Activity" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,339 @@
+<Type Name="DesignerRegion" FullName="System.Web.UI.Design.DesignerRegion">
+  <TypeSignature Language="C#" Value="public class DesignerRegion : System.Web.UI.Design.DesignerObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerRegion extends System.Web.UI.Design.DesignerObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DesignerRegion" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DesignerObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられたコントロールのデザイン時のマークアップ内のコンテンツの領域を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegion>オブジェクトによって生成されるデザイン時のマークアップ内のコンテンツの領域を表す、<xref:System.Web.UI.Design.ControlDesigner>実装します。 コントロールの開発者がカスタム デザイナーの領域を使用して<xref:System.Web.UI.Design.ControlDesigner>実装を関連付けられたコントロールのデザイン時のマークアップ内の別の領域を定義し、編集、およびイベントの領域の処理を提供します。 ビジュアル デザイナーなど、[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]領域を使用してデザイナー、デザイン画面上のコントロールの個別の領域を表示するコントロール デザイナー領域のユーザー イベントを発生させます。 デザイナー領域は、多くの地域に基づく機能は基本デザイナー クラスとビジュアルなデザイナーによって提供されるため、コントロールのデザイナーの実装を簡素化できます。  
+  
+ <xref:System.Web.UI.Design.DesignerRegion>  をクリックする機能など、デザイナーの領域を選択し、デザイン画面内の領域を強調表示のクラスが基本機能を提供します。 使用して、<xref:System.Web.UI.Design.DesignerRegion>編集が不要な領域を定義するコントロール デザイナーの実装内のオブジェクト。 派生クラスを使用して<xref:System.Web.UI.Design.EditableDesignerRegion>コントロール デザイナーの実装をデザイン時に編集可能なコンテンツを持つ領域を定義するクラス。 派生クラスを使用して<xref:System.Web.UI.Design.TemplatedEditableDesignerRegion>コントロール デザイナーの実装を表すコントロールのテンプレート編集可能領域を定義するクラス。  
+  
+ 派生したクラス内の領域をサポートするために、 <xref:System.Web.UI.Design.ControlDesigner>、オーバーライド、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A>メソッドを 1 つまたは複数の初期化を追加<xref:System.Web.UI.Design.DesignerRegion>オブジェクトを<xref:System.Web.UI.Design.DesignerRegionCollection>コレクション。 必要に応じて、オーバーライドすることで、デザイン画面上の領域でマウスのクリックを処理できる、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>メソッドです。  
+  
+ プロパティを使用して、<xref:System.Web.UI.Design.DesignerRegion>ビジュアル デザイナーで、領域を表示する方法を決定するオブジェクト。 上書き、<xref:System.Web.UI.Design.DesignerRegion.Selectable%2A>領域をデザイン サーフェイスでのユーザーが選択できることを示すプロパティです。 使用して、<xref:System.Web.UI.Design.DesignerRegion.Highlight%2A>をビジュアル デザイナーでは、デザイナーの領域を強調表示するプロパティをオンに、ユーザーがクリックした後に領域が強調表示できますが、します。 使用して、<xref:System.Web.UI.Design.DesignerRegion.DisplayName%2A>と<xref:System.Web.UI.Design.DesignerRegion.Description%2A>保存または地域についての詳細を取得するプロパティです。 具体的には、<xref:System.Web.UI.Design.DesignerRegion.Description%2A>プロパティはデザイナーの領域上にマウス ポインターを置いたときにツールヒント情報を表示するビジュアル デザイナーによって使用されます。 使用して、<xref:System.Web.UI.Design.DesignerObject.Designer%2A>メソッドとデザイナーの領域を含むコントロール デザイナーのオブジェクトのプロパティにアクセスするプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerRegion (System.Web.UI.Design.ControlDesigner designer, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegion.#ctor(System.Web.UI.Design.ControlDesigner,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="designer">このデザイナーの領域に含まれるコントロール デザイナー。</param>
+        <param name="name">このデザイナーの領域の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.DesignerRegion" />コントロール デザイナーの指定された名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegion> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.Design.DesignerRegion.Description%2A>|空の文字列 ("")。|  
+|<xref:System.Web.UI.Design.DesignerObject.Designer%2A>|入力`designer`オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerRegion.DisplayName%2A>|空の文字列 ("")。|  
+|<xref:System.Web.UI.Design.DesignerRegion.EnsureSize%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Highlight%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerObject.Name%2A>|入力`name`オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerObject.Properties%2A>|空の <xref:System.Collections.Specialized.HybridDictionary> オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Selectable%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Selected%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerRegion.UserData%2A>|`null`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="designer" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="name" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="name" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerRegion (System.Web.UI.Design.ControlDesigner designer, string name, bool selectable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner designer, string name, bool selectable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegion.#ctor(System.Web.UI.Design.ControlDesigner,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Web.UI.Design.ControlDesigner" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="selectable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="designer">このデザイナーの領域に含まれるコントロール デザイナー。</param>
+        <param name="name">このデザイナーの領域の名前。</param>
+        <param name="selectable">
+          <see langword="true" />領域; を選択するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.DesignerRegion" />コントロール デザイナーでは、デザイナーで選択可能な領域としてインスタンスを必要に応じて設定を指定した名前のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegion> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.Design.DesignerRegion.Description%2A>|空の文字列 ("")。|  
+|<xref:System.Web.UI.Design.DesignerObject.Designer%2A>|入力`designer`オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerRegion.DisplayName%2A>|空の文字列 ("")。|  
+|<xref:System.Web.UI.Design.DesignerRegion.EnsureSize%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Highlight%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerObject.Name%2A>|入力`name`オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerObject.Properties%2A>|空の <xref:System.Collections.Specialized.HybridDictionary> オブジェクト。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Selectable%2A>|入力`selectable`値。|  
+|<xref:System.Web.UI.Design.DesignerRegion.Selected%2A>|`false`。|  
+|<xref:System.Web.UI.Design.DesignerRegion.UserData%2A>|`null`。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="designer" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="designer" /> が空の文字列 ("") です。  
+  
+ または  
+  
+ <paramref name="name" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="name" /> が空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーの領域の説明を設定します。</summary>
+        <value>デザイナーの領域の説明文です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegion.Description%2A>プロパティはデザイナーの領域上にマウス ポインターを置いたときにツールヒント情報を表示するデザイン ホストで使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerRegionAttributeName">
+      <MemberSignature Language="C#" Value="public static readonly string DesignerRegionAttributeName;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly string DesignerRegionAttributeName" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Design.DesignerRegion.DesignerRegionAttributeName" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの領域の HTML 属性の名前を定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーの領域の属性名は`_designerRegion`します。 <xref:System.Web.UI.Design.DesignerRegion.DesignerRegionAttributeName>コントロール デザイナーのデザイン時 HTML マークアップ内の領域を識別するフィールドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーの領域の表示名を設定します。</summary>
+        <value>デザイナーの領域のテキストの表示名。 既定値は、空の文字列 ("") です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureSize">
+      <MemberSignature Language="C#" Value="public bool EnsureSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnsureSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.EnsureSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または領域のサイズが、デザイン ホストでデザイナーの領域で明示的に設定するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、デザイン ホストは、デザイナー領域のサイズを設定する必要がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBounds">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle GetBounds ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Drawing.Rectangle GetBounds() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegion.GetBounds" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン サーフェイスにデザイナーの領域のサイズを取得します。</summary>
+        <returns>A<see cref="T:System.Drawing.Rectangle" />デザイン サーフェイスにデザイナーの領域のサイズを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegion.GetBounds%2A>メソッドを呼び出すことと等価の値を返します、<xref:System.Web.UI.Design.IControlDesignerView.GetBounds%2A>メソッドを<xref:System.Web.UI.Design.DesignerObject.Designer%2A>このデザイナーの領域を持つオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Highlight">
+      <MemberSignature Language="C#" Value="public virtual bool Highlight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Highlight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.Highlight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイン サーフェイスにデザイナーの領域を強調表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、ビジュアル デザイナーがデザイン サーフェイスにデザイナーの領域を強調表示する必要がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selectable">
+      <MemberSignature Language="C#" Value="public virtual bool Selectable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selectable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.Selectable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーの領域をデザイン画面で、ユーザーが選択できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、デザイナーの領域をデザイン サーフェイスでのユーザーが選択できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public virtual bool Selected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.Selected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーの領域がデザイン画面で現在選択されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />、デザイナーの領域が、デザイン サーフェイスです。 現在選択されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public object UserData { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegion.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーの領域に関連付けるオプションのユーザー データを設定します。</summary>
+        <value>デザイナーの領域に格納されているユーザー データを格納するオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーの実装内で使用して、<xref:System.Web.UI.Design.DesignerRegion.UserData%2A>プロパティを格納またはデザイナーの領域の追加情報を取得します。  
+  
+ たとえば、コントロール デザイナーの実装では、複数のデザイナー領域から選択することをサポートする場合を使用する、<xref:System.Web.UI.Design.DesignerRegion.UserData%2A>地域ごとに一意のインデックスを格納するコントロール デザイナー内のプロパティです。 使用してできます、<xref:System.Web.UI.Design.DesignerRegion.UserData%2A>に渡される領域のプロパティ、<xref:System.Web.UI.Design.ControlDesigner.OnClick%2A>現在選択されている領域のインデックスを格納するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

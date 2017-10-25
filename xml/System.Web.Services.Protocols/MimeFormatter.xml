@@ -1,0 +1,242 @@
+<Type Name="MimeFormatter" FullName="System.Web.Services.Protocols.MimeFormatter">
+  <TypeSignature Language="C#" Value="public abstract class MimeFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MimeFormatter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.MimeFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのリーダーとライターせずに SOAP Web サービスおよび HTTP を使用して実装されているクライアント用の抽象基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web サービスのライター、リーダー シリアル化および逆、それぞれ、Web メソッドのパラメーターまたは戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 <xref:System.Web.Services.Protocols.MimeFormatter>クラスはクライアントとサービス側の両方で共通のインターフェイスおよびリーダーおよびライターのクラスの機能を確立します。  
+  
+ <xref:System.Web.Services.Protocols.MimeFormatter>クラスは、HTTP GET および HTTP POST 操作を使用して Web サービスの .NET Framework の実装をサポートします。 HTTP GET 操作で要求のパラメーターは、HTTP 要求の Uniform Resource Locator (URL) でエンコードされます。 HTTP POST 操作では、要求パラメーターは、HTTP 要求本文で HTML フォームと同様にエンコードされます。 両方の実装と共に、戻り値として表示されます、HTTP 応答本文で SOAP 以外の XML ドキュメント。  
+  
+ 開発者は通常不要を直接使用する<xref:System.Web.Services.Protocols.MimeFormatter>またはその派生クラス。 代わりに、Wsdl.exe ツールは、HTTP GET または HTTP POST の実装に応じて、クライアント プロキシ コードを生成するときに適用されます、<xref:System.Web.Services.Protocols.HttpMethodAttribute>各 Web メソッドに属性の設定と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>プロパティを適切な型から派生した、<xref:System.Web.Services.Protocols.MimeFormatter>クラスです。 サーバーで、適切な派生型は、ASP.NET 構成ファイル (Web.config) の設定に従って使用されます。 クライアントでは、適切な派生型は、WSDL から決定されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MimeFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.MimeFormatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public static System.Web.Services.Protocols.MimeFormatter CreateInstance (Type type, object initializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Services.Protocols.MimeFormatter CreateInstance(class System.Type type, object initializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.CreateInstance(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.MimeFormatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="initializer" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type">派生した型、<see cref="T:System.Web.Services.Protocols.MimeFormatter" />のインスタンスを作成します。</param>
+        <param name="initializer">インスタンスを初期化するために使用するオブジェクトは、以前の派生クラスの実装を取得、<see cref="M:System.Web.Services.Protocols.MimeFormatter.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />メソッドです。</param>
+        <summary>作成してから派生した具象クラスのインスタンスを初期化<see cref="T:System.Web.Services.Protocols.MimeFormatter" />です。</summary>
+        <returns><see cref="T:System.Web.Services.Protocols.MimeFormatter" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.MimeFormatter.CreateInstance%2A>メソッドは、派生クラスのインスタンスを作成し、抽象型の派生クラスの実装を呼び出します<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。 <xref:System.Web.Services.Protocols.MimeFormatter.CreateInstance%2A>メソッドが要求または応答の処理時に呼び出されます。  
+  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。 パラメーターとして渡された初期化子、<xref:System.Web.Services.Protocols.MimeFormatter.CreateInstance%2A>メソッドが呼び出すことによって、派生クラスの別のインスタンスから取得、<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>クライアントまたはサービスの初期化中にメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public abstract object GetInitializer (System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetInitializer(class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.GetInitializer(System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfo">初期化子を取得する Web メソッドを指定する <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> 。</param>
+        <summary>派生クラスでオーバーライドされると、指定したメソッドの初期化子を返します。</summary>
+        <returns>指定したメソッドの初期化子を含む <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。  
+  
+ 派生クラスの実装、<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>クライアントまたはサービスの初期化中にインスタンス メソッドが呼び出されます。 後で、要求または応答の処理時に、初期化子オブジェクトが渡される、静的な<xref:System.Web.Services.Protocols.MimeFormatter.CreateInstance%2A>、派生クラスの別のオブジェクトのインスタンスを作成するメソッド、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドを初期化します。 その他のオブジェクトは、実際に読み取りまたは書き込みを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializer">
+      <MemberSignature Language="C#" Value="public static object GetInitializer (Type type, System.Web.Services.Protocols.LogicalMethodInfo methodInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetInitializer(class System.Type type, class System.Web.Services.Protocols.LogicalMethodInfo methodInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.GetInitializer(System.Type,System.Web.Services.Protocols.LogicalMethodInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="methodInfo" Type="System.Web.Services.Protocols.LogicalMethodInfo" />
+      </Parameters>
+      <Docs>
+        <param name="type">派生した型、 <see cref="T:System.Web.Services.Protocols.MimeFormatter" />、初期化子が取得されるのです。</param>
+        <param name="methodInfo">初期化子を取得する Web メソッドを指定する <see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" /> 。</param>
+        <summary>指定したメソッドの初期化子を返します。</summary>
+        <returns>A<see cref="T:System.Object" />を指定したメソッドの初期化子を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。  
+  
+ 静的な<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>メソッドを呼び出して、派生クラスの<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>メソッドを暗黙的に派生クラスのインスタンスを作成します。 要求または応答の処理時に初期化子オブジェクトが渡される、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>派生クラスの別のインスタンスのメソッドです。 後者のオブジェクトは、実際に読み取りまたは書き込みを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializers">
+      <MemberSignature Language="C#" Value="public virtual object[] GetInitializers (System.Web.Services.Protocols.LogicalMethodInfo[] methodInfos);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] GetInitializers(class System.Web.Services.Protocols.LogicalMethodInfo[] methodInfos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.GetInitializers(System.Web.Services.Protocols.LogicalMethodInfo[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodInfos" Type="System.Web.Services.Protocols.LogicalMethodInfo[]" />
+      </Parameters>
+      <Docs>
+        <param name="methodInfos">各メソッドで返された初期化子の配列に対応するインデックスのオブジェクトが取得される、Web メソッドの配列。</param>
+        <summary>派生クラスでオーバーライドされるは、メソッド定義の入力を配列に対応するオブジェクト初期化子の配列を返します。</summary>
+        <returns>メソッド定義の入力配列に対応する初期化子オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。  
+  
+ <xref:System.Web.Services.Protocols.MimeFormatter.GetInitializers%2A>インスタンス メソッドを呼び出して、<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>ごとにインスタンス メソッドは、Web メソッドを入力します。 派生したクラスのインスタンスをつまり<xref:System.Web.Services.Protocols.MimeFormatter>既に作成されています。 渡される初期化子の要求または応答の処理時、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>派生クラスの別のインスタンスのメソッドです。 後者のオブジェクトは、実際に読み取りまたは書き込みを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitializers">
+      <MemberSignature Language="C#" Value="public static object[] GetInitializers (Type type, System.Web.Services.Protocols.LogicalMethodInfo[] methodInfos);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object[] GetInitializers(class System.Type type, class System.Web.Services.Protocols.LogicalMethodInfo[] methodInfos) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.GetInitializers(System.Type,System.Web.Services.Protocols.LogicalMethodInfo[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="methodInfos" Type="System.Web.Services.Protocols.LogicalMethodInfo[]" />
+      </Parameters>
+      <Docs>
+        <param name="type">派生した型、 <see cref="T:System.Web.Services.Protocols.MimeFormatter" />、どの初期化子を取得します。</param>
+        <param name="methodInfos">型の配列<see cref="T:System.Web.Services.Protocols.LogicalMethodInfo" />初期化子を取得する対象の Web メソッドを指定します。</param>
+        <summary>指定したクラスから派生したメソッドの定義の入力を配列に対応するオブジェクト初期化子の配列を返します<see cref="T:System.Web.Services.Protocols.MimeFormatter" />です。</summary>
+        <returns>指定したクラスから派生したメソッド定義の入力配列に対応する初期化子オブジェクトの配列<see cref="T:System.Web.Services.Protocols.MimeFormatter" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化子は、パラメーターとして渡されるオブジェクト、<xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>メソッドです。  
+  
+ 静的な<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializers%2A>メソッドの呼び出しによって、<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>メソッドによって指定された派生クラスに属している、`type`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public abstract void Initialize (object initializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(object initializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.MimeFormatter.Initialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="initializer" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="initializer">メソッドの実装が特定のクラスに適切な型のオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.MimeFormatter.Initialize%2A>要求または応答の処理時にメソッドが呼び出されます。 ただし、初期化子が呼び出すことによって取得、<xref:System.Web.Services.Protocols.MimeFormatter.GetInitializer%2A>クライアントまたはサービスの初期化中に別のインスタンス上のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

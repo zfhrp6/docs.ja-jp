@@ -1,0 +1,131 @@
+<Type Name="FontCollection" FullName="System.Drawing.Text.FontCollection">
+  <TypeSignature Language="C#" Value="public abstract class FontCollection : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FontCollection extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Text.FontCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>インストールされているおよびプライベート フォント コレクションの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Text.FontCollection>を使用してコレクションに含まれているフォント ファミリの一覧を取得することができます、<xref:System.Drawing.Text.FontCollection.Families%2A>プロパティです。 フォントとテキスト、コードの例を含むの詳細については、次を参照してください。[を使用するフォントとテキスト](~/docs/framework/winforms/advanced/using-fonts-and-text.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Text.FontCollection.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Text.FontCollection" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Text.FontCollection.Dispose%2A> を使い終わったら <xref:System.Drawing.Text.FontCollection> を呼び出します。 <xref:System.Drawing.Text.FontCollection.Dispose%2A> メソッドによって、<xref:System.Drawing.Text.FontCollection> は使用不可の状態になります。 呼び出した後<xref:System.Drawing.Text.FontCollection.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Drawing.Text.FontCollection>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Drawing.Text.FontCollection>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Drawing.Text.FontCollection.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Drawing.Text.FontCollection> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Drawing.Text.FontCollection> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Text.FontCollection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Drawing.Text.FontCollection" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Drawing.Text.FontCollection>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Families">
+      <MemberSignature Language="C#" Value="public System.Drawing.FontFamily[] Families { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.FontFamily[] Families" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Text.FontCollection.Families" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.FontFamily[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配列を取得<see cref="T:System.Drawing.FontFamily" />オブジェクトに関連付けられた<see cref="T:System.Drawing.Text.FontCollection" />です。</summary>
+        <value><see cref="T:System.Drawing.FontFamily" /> オブジェクトの配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~FontCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Text.FontCollection.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

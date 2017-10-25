@@ -1,0 +1,441 @@
+<Type Name="CombinedGeometry" FullName="System.Windows.Media.CombinedGeometry">
+  <TypeSignature Language="C#" Value="public sealed class CombinedGeometry : System.Windows.Media.Geometry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CombinedGeometry extends System.Windows.Media.Geometry" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.CombinedGeometry" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Geometry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの組み合わせによって定義された 2-d 幾何学図形を表す<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.CombinedGeometry.GeometryCombineMode%2A>プロパティは、2 つのジオメトリの結合方法を指定します。 なお<xref:System.Windows.Media.CombinedGeometry>2 つのジオメトリ、領域がないためジオメトリで指定された領域を結合 (など<xref:System.Windows.Media.LineGeometry>) 組み合わせると非表示になります。  
+  
+ ジオメトリをいくつかの方法で結合できる: を使用して、 <xref:System.Windows.Media.GeometryGroup>、 <xref:System.Windows.Media.CombinedGeometry>、または<xref:System.Windows.Media.Geometry.Combine%2A>のメソッド、<xref:System.Windows.Media.Geometry>クラスです。  
+  
+-   A<xref:System.Windows.Media.GeometryGroup>から 1 つまたは複数の複合ジオメトリを作成<xref:System.Windows.Media.Geometry>オブジェクト。  
+  
+-   A <xref:System.Windows.Media.CombinedGeometry> 2 で説明されている領域を結合する、指定されたブール演算を使用して<xref:System.Windows.Media.Geometry>オブジェクト。  
+  
+-   静的な<xref:System.Windows.Media.Geometry.Combine%2A>のメソッド、<xref:System.Windows.Media.Geometry>クラスの動作とまったく同じ方法で、<xref:System.Windows.Media.CombinedGeometry>オブジェクト。  
+  
+ 使用する場合は、慎重に考慮を関係している必要があります、<xref:System.Windows.Media.CombinedGeometry>に使用する非常に CPU 負荷の高い共用体を実行します。 ほとんどの場合、<xref:System.Windows.Media.GeometryGroup>または<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>にも適しています。  
+  
+ 使用して、<xref:System.Windows.Media.CombinedGeometry>場合にのみ以下のいずれか。  
+  
+-   幾何学模様の操作は、共用体ではありません。  
+  
+-   ジオメトリのいずれかが、<xref:System.Windows.Media.FillRule>の値<xref:System.Windows.Media.FillRule.EvenOdd>、ジオメトリは自己交差して (つまり、<xref:System.Windows.Media.FillRule>実際には重要です)。  
+  
+-   時間は、問題になりませんが、領域が (インスタンスの場合は、geometry は 1 度作成して、その後、キャッシュ)。 通常、<xref:System.Windows.Media.CombinedGeometry>の出力は<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>します。  
+  
+-   結果の形状を描画またはパス アニメーションで使用されると<xref:System.Windows.Media.PathGeometry.AddGeometry%2A>目的のアウトラインは提供されません。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ A<xref:System.Windows.Media.CombinedGeometry>の種類は、<xref:System.Windows.Freezable>オブジェクト。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CombinedGeometry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.CombinedGeometry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CombinedGeometry (System.Windows.Media.Geometry geometry1, System.Windows.Media.Geometry geometry2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Geometry geometry1, class System.Windows.Media.Geometry geometry2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.#ctor(System.Windows.Media.Geometry,System.Windows.Media.Geometry)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="geometry1" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="geometry2" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry1">最初の<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <param name="geometry2">2 番目<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.CombinedGeometry" /> 、指定したクラス<see cref="T:System.Windows.Media.Geometry" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CombinedGeometry (System.Windows.Media.GeometryCombineMode geometryCombineMode, System.Windows.Media.Geometry geometry1, System.Windows.Media.Geometry geometry2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.GeometryCombineMode geometryCombineMode, class System.Windows.Media.Geometry geometry1, class System.Windows.Media.Geometry geometry2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.#ctor(System.Windows.Media.GeometryCombineMode,System.Windows.Media.Geometry,System.Windows.Media.Geometry)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="geometryCombineMode" Type="System.Windows.Media.GeometryCombineMode" />
+        <Parameter Name="geometry1" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="geometry2" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometryCombineMode">ための方法を<c>geometry1</c>と<c>geometry2</c>結合されます。</param>
+        <param name="geometry1">最初の<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <param name="geometry2">2 番目<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.CombinedGeometry" /> 、指定したクラス<see cref="T:System.Windows.Media.Geometry" />オブジェクトおよび<see cref="P:System.Windows.Media.CombinedGeometry.GeometryCombineMode" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CombinedGeometry (System.Windows.Media.GeometryCombineMode geometryCombineMode, System.Windows.Media.Geometry geometry1, System.Windows.Media.Geometry geometry2, System.Windows.Media.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.GeometryCombineMode geometryCombineMode, class System.Windows.Media.Geometry geometry1, class System.Windows.Media.Geometry geometry2, class System.Windows.Media.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.#ctor(System.Windows.Media.GeometryCombineMode,System.Windows.Media.Geometry,System.Windows.Media.Geometry,System.Windows.Media.Transform)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="geometryCombineMode" Type="System.Windows.Media.GeometryCombineMode" />
+        <Parameter Name="geometry1" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="geometry2" Type="System.Windows.Media.Geometry" />
+        <Parameter Name="transform" Type="System.Windows.Media.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="geometryCombineMode">ための方法を<c>geometry1</c>と<c>geometry2</c>結合されます。</param>
+        <param name="geometry1">最初の<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <param name="geometry2">2 番目<see cref="T:System.Windows.Media.Geometry" />を結合します。</param>
+        <param name="transform"><see cref="T:System.Windows.Media.CombinedGeometry" /> に適用される <see cref="P:System.Windows.Media.Geometry.Transform" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.CombinedGeometry" /> 、指定したクラス<see cref="T:System.Windows.Media.Geometry" />オブジェクト、 <see cref="P:System.Windows.Media.CombinedGeometry.GeometryCombineMode" />、および<see cref="P:System.Windows.Media.Geometry.Transform" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Windows.Rect Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CombinedGeometry.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Rect" />これの境界ボックスを指定する<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクト。   **注:**をこのメソッドが、ペンを考慮されません。</summary>
+        <value>境界ボックスのこの<see cref="T:System.Windows.Media.CombinedGeometry" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションが存在する場合、基本の値、<xref:System.Windows.Media.Geometry>オブジェクトを使用して、境界ボックスを計算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.CombinedGeometry Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.CombinedGeometry Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CombinedGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.CombinedGeometry" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.CombinedGeometry CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.CombinedGeometry CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CombinedGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.CombinedGeometry" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Geometry1">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry Geometry1 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry Geometry1" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CombinedGeometry.Geometry1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の設定を取得または<see cref="T:System.Windows.Media.Geometry" />このオブジェクト<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクト。</summary>
+        <value>最初の<see cref="T:System.Windows.Media.Geometry" />結合するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.CombinedGeometry.GeometryCombineMode%2A>プロパティは、2 つのジオメトリの結合方法を指定します。 なお<xref:System.Windows.Media.CombinedGeometry>2 つのジオメトリ、領域がないためジオメトリで指定された領域を結合 (など<xref:System.Windows.Media.LineGeometry>) 組み合わせると非表示になります。  
+  
+<a name="dependencyPropertyInfo_Geometry1"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.CombinedGeometry.Geometry1Property>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Geometry1Property">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty Geometry1Property;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty Geometry1Property" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.CombinedGeometry.Geometry1Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.CombinedGeometry.Geometry1" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Geometry2">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry Geometry2 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Geometry Geometry2" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CombinedGeometry.Geometry2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の設定を取得または<see cref="T:System.Windows.Media.Geometry" />このオブジェクト<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクト。</summary>
+        <value>2 番目の <see cref="T:System.Windows.Media.Geometry" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.CombinedGeometry.GeometryCombineMode%2A>プロパティは、2 つのジオメトリの結合方法を指定します。 なお<xref:System.Windows.Media.CombinedGeometry>2 つのジオメトリ、領域がないためジオメトリで指定された領域を結合 (など<xref:System.Windows.Media.LineGeometry>) 組み合わせると非表示になります。  
+  
+<a name="dependencyPropertyInfo_Geometry2"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.CombinedGeometry.Geometry2Property>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Geometry2Property">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty Geometry2Property;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty Geometry2Property" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.CombinedGeometry.Geometry2Property" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.CombinedGeometry.Geometry2" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeometryCombineMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.GeometryCombineMode GeometryCombineMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.GeometryCombineMode GeometryCombineMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.CombinedGeometry.GeometryCombineMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryCombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、メソッドが 2 つのジオメトリ (によって指定された、<see cref="P:System.Windows.Media.CombinedGeometry.Geometry1" />と<see cref="P:System.Windows.Media.CombinedGeometry.Geometry2" />プロパティ) は組み合わされます。</summary>
+        <value>ための方法を<see cref="P:System.Windows.Media.CombinedGeometry.Geometry1" />と<see cref="P:System.Windows.Media.CombinedGeometry.Geometry2" />結合されます。 既定値は <see cref="F:System.Windows.Media.GeometryCombineMode.Union" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_GeometryCombineMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.CombinedGeometry.GeometryCombineModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeometryCombineModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty GeometryCombineModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty GeometryCombineModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.CombinedGeometry.GeometryCombineModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.CombinedGeometry.GeometryCombineMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArea">
+      <MemberSignature Language="C#" Value="public override double GetArea (double tolerance, System.Windows.Media.ToleranceType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance float64 GetArea(float64 tolerance, valuetype System.Windows.Media.ToleranceType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.GetArea(System.Double,System.Windows.Media.ToleranceType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tolerance" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Media.ToleranceType" />
+      </Parameters>
+      <Docs>
+        <param name="tolerance">エラーの計算の許容範囲です。</param>
+        <param name="type">エラーの許容範囲を解釈する方法を指定します。</param>
+        <summary>塗りつぶされた領域の一部を取得します。</summary>
+        <returns>この結合したジオメトリの塗りつぶし領域の領域。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public override bool IsEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.IsEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうかこの<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクトが空です。</summary>
+        <returns>**true**この<see cref="T:System.Windows.Media.CombinedGeometry" />が空であるそれ以外の場合、 **false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MayHaveCurves">
+      <MemberSignature Language="C#" Value="public override bool MayHaveCurves ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MayHaveCurves() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.CombinedGeometry.MayHaveCurves" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうかこの<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクトが曲線のセグメントを持つことがあります。</summary>
+        <returns>**true**場合は、この<see cref="T:System.Windows.Media.CombinedGeometry" />オブジェクトが曲線のセグメントを持つことがあります。 それ以外の場合、 **false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,86 @@
+<Type Name="InvalidBodyAccessException" FullName="System.ServiceModel.Dispatcher.InvalidBodyAccessException">
+  <TypeSignature Language="C#" Value="public abstract class InvalidBodyAccessException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit InvalidBodyAccessException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>許可されていないときにメッセージ本文へのアクセスが試みられた場合にスローされる例外の <see langword="abstract" /> 基本クラス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvalidBodyAccessException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.InvalidBodyAccessException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムの <see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" /> をビルドする場合は、実装者の責任で、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする際に呼び出されるコンストラクターに適切なパラメーターを渡す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvalidBodyAccessException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.InvalidBodyAccessException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>指定したシリアル化情報とコンテキスト情報を使用して、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムの <see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" /> をビルドする場合は、実装者の責任で、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする際に呼び出されるコンストラクターに適切なパラメーターを渡す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvalidBodyAccessException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.InvalidBodyAccessException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムの <see cref="T:System.ServiceModel.Dispatcher.MessageFilterTable`1" /> をビルドする場合は、実装者の責任で、<see cref="T:System.ServiceModel.Dispatcher.InvalidBodyAccessException" /> をスローする際に呼び出されるコンストラクターに適切なパラメーターを渡す必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,179 @@
+<Type Name="DesignerTransactionCloseEventArgs" FullName="System.ComponentModel.Design.DesignerTransactionCloseEventArgs">
+  <TypeSignature Language="C#" Value="public class DesignerTransactionCloseEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerTransactionCloseEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerTransactionCloseEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosed" /> イベントおよび <see cref="E:System.ComponentModel.Design.IDesignerHost.TransactionClosing" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerHost.TransactionClosed>イベント デザイナー トランザクションを終了するときに発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例で、<xref:System.ComponentModel.Design.DesignerTransactionCloseEventArgs>です。  
+  
+ [!code-cpp[DesignerTransactionCloseEventArgsExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DesignerTransactionCloseEventArgsExample/CPP/designertransactioncloseeventargsexample.cpp#1)]
+ [!code-csharp[DesignerTransactionCloseEventArgsExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DesignerTransactionCloseEventArgsExample/CS/designertransactioncloseeventargsexample.cs#1)]
+ [!code-vb[DesignerTransactionCloseEventArgsExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DesignerTransactionCloseEventArgsExample/VB/designertransactioncloseeventargsexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerTransactionCloseEventArgs (bool commit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool commit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransactionCloseEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This constructor is obsolete. Use DesignerTransactionCloseEventArgs(bool, bool) instead.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="commit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="commit">トランザクションがコミットされたかどうかを示す値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.DesignerTransactionCloseEventArgs" />クラス、デザイナーと呼ばれるかどうかを示す値を指定して<see cref="M:System.ComponentModel.Design.DesignerTransaction.Commit" />トランザクションにします。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerTransactionCloseEventArgs (bool commit, bool lastTransaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool commit, bool lastTransaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransactionCloseEventArgs.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commit" Type="System.Boolean" />
+        <Parameter Name="lastTransaction" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="commit">トランザクションがコミットされたかどうかを示す値。</param>
+        <param name="lastTransaction">
+          <see langword="true" />これは、最後のトランザクションに閉じる場合それ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerTransactionCloseEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`commit`は`true`、<xref:System.ComponentModel.Design.DesignerTransactionCloseEventArgs.LastTransaction%2A>プロパティの既定値`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="LastTransaction">
+      <MemberSignature Language="C#" Value="public bool LastTransaction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LastTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerTransactionCloseEventArgs.LastTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、最後のトランザクションを終了するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、これは、最後のトランザクションに閉じる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionCommitted">
+      <MemberSignature Language="C#" Value="public bool TransactionCommitted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionCommitted" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerTransactionCloseEventArgs.TransactionCommitted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーと呼ばれるかどうかを示す<see cref="M:System.ComponentModel.Design.DesignerTransaction.Commit" />トランザクションにします。</summary>
+        <value>
+          <see langword="true" />デザイナーが呼び出された場合<see cref="M:System.ComponentModel.Design.DesignerTransaction.Commit" />トランザクションです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

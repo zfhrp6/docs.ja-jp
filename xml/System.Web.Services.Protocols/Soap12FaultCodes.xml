@@ -1,0 +1,265 @@
+<Type Name="Soap12FaultCodes" FullName="System.Web.Services.Protocols.Soap12FaultCodes">
+  <TypeSignature Language="C#" Value="public sealed class Soap12FaultCodes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Soap12FaultCodes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.Soap12FaultCodes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP バージョン 1.2 プロトコルを使用する XML Web サービスと通信中にエラーが発生したときに、SOAP メッセージに表示される SOAP エラー コードを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 仕様のバージョン 1.2 の SOAP エラーを含む、`Code`要素および省略可能な特に`Subcode`要素。 
+
+`Code`要素は、事前に定義された一連のコードを 5 つの大きなエラー カテゴリの 1 つに、エラーの原因が受信者に通知する 1 つです。 これらの 5 つのエラー コードがによって表される、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.ReceiverFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.VersionMismatchFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.MustUnderstandFaultCode?displayProperty=nameWithType>、および<xref:System.Web.Services.Protocols.Soap12FaultCodes.DataEncodingUnknownFaultCode?displayProperty=nameWithType>フィールドです。 
+
+`Subcode`要素は、アプリケーション固有のエラー コードを提供する SOAP エラーのセンダを使用します。 ASP.NET によって表されるこのようなコードを次の 4 つの定義、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcProcedureNotPresentFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcBadArgumentsFaultCode?displayProperty=nameWithType>、 <xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingMissingIdFaultCode?displayProperty=nameWithType>、および<xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingUntypedValueFaultCode?displayProperty=nameWithType>フィールドです。  
+  
+ 例外をスローしてセットを XML Web サービス、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティを表します、`Code`場合の新しいインスタンスの要素、<xref:System.Web.Services.Protocols.SoapException>または<xref:System.Web.Services.Protocols.SoapHeaderException>クラスを作成します。 エラーとしてキャッチできる .NET Framework クライアントが SOAP エラーとして、ネットワーク経由で転送する、<xref:System.Web.Services.Protocols.SoapException>または<xref:System.Web.Services.Protocols.SoapHeaderException>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataEncodingUnknownFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName DataEncodingUnknownFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName DataEncodingUnknownFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.DataEncodingUnknownFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="DataEncodingUnknown" />SOAP メッセージを示すエラー コードは、認識されない形式でエンコードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET が自動的にスローしない、<xref:System.Web.Services.Protocols.SoapException>で、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.DataEncodingUnknownFaultCode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodingMissingIdFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName EncodingMissingIdFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName EncodingMissingIdFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.EncodingMissingIdFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エンコーディング データにない ID のエラー コードを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncodingUntypedValueFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName EncodingUntypedValueFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName EncodingUntypedValueFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.EncodingUntypedValueFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="enc:UntypedValue" />エラー サブコード、ことを示す、SOAP メッセージが RPC でエンコードされたエンコードされたグラフ ノードの型名 プロパティが指定されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  ASP.NET が自動的にスローしない、<xref:System.Web.Services.Protocols.SoapException>で、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingUntypedValueFaultCode?displayProperty=nameWithType>です。  
+  
+ <xref:System.Web.Services.Protocols.SoapException>クラスには、<xref:System.Web.Services.Protocols.SoapException.SubCode%2A>型のプロパティ<xref:System.Web.Services.Protocols.SoapFaultSubCode>SOAP エラー サブコードを表すです。 <xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティは、実際の SOAP エラー サブコードの URI を表します。 設定するときに、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.EncodingUntypedValueFaultCode?displayProperty=nameWithType>、設定、<xref:System.Web.Services.Protocols.SoapException.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode?displayProperty=nameWithType>です。  
+    
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MustUnderstandFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName MustUnderstandFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName MustUnderstandFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.MustUnderstandFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="MustUnderstand" />でマークされた SOAP ヘッダーを示すエラー コード、<see langword="MustUnderstand" />属性は処理されませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての SOAP ヘッダーでは、受信側で処理が必要です。 ただし、SOAP ヘッダーが付いている場合、`MustUnderstand`属性が"true"の処理が必要です。 SOAP 1.2 要求内にあります。 その場合、ヘッダーを処理するエラーを生成、<xref:System.Web.Services.Protocols.SoapHeaderException>で、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.MustUnderstandFaultCode?displayProperty=nameWithType>です。 SOAP 1.1 の要求内で SOAP 要求が存在していた場合、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定されている<xref:System.Web.Services.Protocols.SoapException.MustUnderstandFaultCode?displayProperty=nameWithType>です。  
+  
+ SOAP 1.1 と 1.2 の両方を定義`MustUnderstand`SOAP プロトコルのバージョンのみが異なる SOAP エラー コードは、SOAP メッセージの送信に使用します。 このフィールドは、SOAP 1.2 のバージョンを表すし、SOAP 1.1 バージョンがによって表される<xref:System.Web.Services.Protocols.SoapException.MustUnderstandFaultCode?displayProperty=nameWithType>です。 2 つのフィールドが別の修飾名にマップします、ことを確認するかどうか、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティでは、エラー コードのいずれかを呼び出すことによって、<xref:System.Web.Services.Protocols.SoapException.IsMustUnderstandFaultCode%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiverFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName ReceiverFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName ReceiverFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.ReceiverFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="Receiver" />受信者の問題により、サーバー上のクライアント呼び出しを処理中にエラーを示すエラー コードが発生しました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Protocols.SoapException>がスローされ、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.ReceiverFaultCode>ときに、サーバーが呼び出され、ネットワークの問題のため、要求に応答できませんでした。 通常、この種類の例外のでは、クライアント呼び出しが後で成功可能性があります。  
+  
+ `Receiver` SOAP エラー コードがに似ていますが、`Server`で表される、コードの障害、<xref:System.Web.Services.Protocols.SoapException.ServerFaultCode>フィールド、ですが、 `Server` SOAP 1.1 を使用して、SOAP 要求を送信するときに、エラー コードを使用します。 確認するかどうか、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティが、`Receiver`または`Server`SOAP エラー コード、呼び出し、<xref:System.Web.Services.Protocols.SoapException.IsServerFaultCode%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RpcBadArgumentsFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName RpcBadArgumentsFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName RpcBadArgumentsFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.RpcBadArgumentsFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="rpc:BadArguments" />エラー サブコードことを示す XML Web サービス メソッドに送信される引数が正しくなかったを解析できませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET が自動的にスローしない、<xref:System.Web.Services.Protocols.SoapException>で、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcBadArgumentsFaultCode>です。  
+  
+ <xref:System.Web.Services.Protocols.SoapException>クラスには、<xref:System.Web.Services.Protocols.SoapException.SubCode%2A>型のプロパティ<xref:System.Web.Services.Protocols.SoapFaultSubCode>SOAP エラー サブコードを表すです。 <xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティは、実際の SOAP エラー サブコードの URI を表します。 設定するときに、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcBadArgumentsFaultCode>、設定、<xref:System.Web.Services.Protocols.SoapException.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RpcProcedureNotPresentFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName RpcProcedureNotPresentFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName RpcProcedureNotPresentFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.RpcProcedureNotPresentFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="rpc:ProcedureNotPresent" />XML Web サービスを示すエラー サブコードが要求された XML Web サービス メソッドをサポートしていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET が自動的にスローしない、<xref:System.Web.Services.Protocols.SoapException>で、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcProcedureNotPresentFaultCode>です。  
+  
+ <xref:System.Web.Services.Protocols.SoapException>クラスには、<xref:System.Web.Services.Protocols.SoapException.SubCode%2A>型のプロパティ<xref:System.Web.Services.Protocols.SoapFaultSubCode>SOAP エラー サブコードを表すです。 <xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティは、実際の SOAP エラー サブコードの URI を表します。 設定するときに、<xref:System.Web.Services.Protocols.SoapFaultSubCode.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.RpcProcedureNotPresentFaultCode>、設定、<xref:System.Web.Services.Protocols.SoapException.Code%2A?displayProperty=nameWithType>プロパティを<xref:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SenderFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName SenderFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName SenderFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="Sender" />クライアント呼び出しを示すエラー コードが正しくフォーマットされていませんか、適切な情報が含まれていませんでした。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Protocols.SoapException>がスローされ、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.SenderFaultCode>に SOAP 1.2 要求形式が正しくありませんか、パラメーターが不足しています。  
+  
+ `Sender` SOAP エラー コードがに似ていますが、`Client`で表される、コードの障害、<xref:System.Web.Services.Protocols.SoapException.ClientFaultCode>フィールド、ですが、 `Client` SOAP 1.1 を使用して、SOAP 要求を送信するときに、エラー コードを使用します。 確認するかどうか、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティが、`Sender`または`Client`SOAP エラー コード、呼び出し、<xref:System.Web.Services.Protocols.SoapException.IsClientFaultCode%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionMismatchFaultCode">
+      <MemberSignature Language="C#" Value="public static readonly System.Xml.XmlQualifiedName VersionMismatchFaultCode;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Xml.XmlQualifiedName VersionMismatchFaultCode" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Protocols.Soap12FaultCodes.VersionMismatchFaultCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP バージョン 1.2 を表す<see langword="VersionMismatch" />XML Web サービスを示すエラー コードは、SOAP 1.2 仕様に準拠する SOAP メッセージを期待まだ受信 SOAP 1.1 に準拠している 1 つです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.Services.Protocols.SoapException>がスローされ、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.Soap12FaultCodes.VersionMismatchFaultCode?displayProperty=nameWithType>と SOAP 1.2 要求のみを受け入れるに XML Web サービスが構成されているし、SOAP 1.1 メッセージを受信します。 同様に、XML Web サービスが構成されている場合メッセージを SOAP 1.1 のみをそのまま使用して、SOAP 1.2 メッセージを受信、<xref:System.Web.Services.Protocols.SoapException>がスローされ、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティに設定<xref:System.Web.Services.Protocols.SoapException.VersionMismatchFaultCode?displayProperty=nameWithType>です。 XML Web サービスの構成の詳細については、「 [&#91;\<topic://cpconConfigurationOptionsForASPNETWebServices > & #93 です。](http://msdn.microsoft.com/en-us/1f0d71bc-8faa-4730-b500-2a6c7b5d4f6b).  
+  
+ SOAP 1.1 と 1.2 の両方を定義`VersionMismatch`が期待どおり SOAP プロトコルのバージョンに異なる SOAP エラー コード。 このフィールドは、SOAP 1.1 バージョンとして表されますが、SOAP 1.2 のバージョンを表します<xref:System.Web.Services.Protocols.SoapException.VersionMismatchFaultCode>です。 2 つのフィールドが別の修飾名にマップします、ことを確認するかどうか、<xref:System.Web.Services.Protocols.SoapException.Code%2A>プロパティでは、エラー コードのいずれかを呼び出すことによって、<xref:System.Web.Services.Protocols.SoapException.IsVersionMismatchFaultCode%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,92 @@
+<Type Name="IMultiTargetingSupportService" FullName="System.Activities.Presentation.Hosting.IMultiTargetingSupportService">
+  <TypeSignature Language="C#" Value="public interface IMultiTargetingSupportService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMultiTargetingSupportService" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Hosting.IMultiTargetingSupportService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>Windows ワークフロー デザイナー ホストのマルチ ターゲット機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ *マルチ ターゲット*ターゲットに対応する読み込まれたアセンブリの正しいバージョンを見つけることができるは[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]バージョンでは、現在のワークフロー プロジェクトの[!INCLUDE[vs2010](~/includes/vs2010-md.md)]します。  
+  
+ このインターフェイスは、[!INCLUDE[wf1](~/includes/wf1-md.md)] ホスト アプリケーション内で複数バージョン対応方式で [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] アセンブリを解決するために、[!INCLUDE[vs2010](~/includes/vs2010-md.md)] デザイナー コンポーネントによって内部的に実装および使用されます。 [!INCLUDE[wf1](~/includes/wf1-md.md)]デザイナー コンポーネントが追加のアセンブリが、編集を動的に読み込む必要がある場合にのみ、このインターフェイスの実装を使用`AppDomain`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetReflectionAssembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly GetReflectionAssembly (System.Reflection.AssemblyName targetAssemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.Assembly GetReflectionAssembly(class System.Reflection.AssemblyName targetAssemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.IMultiTargetingSupportService.GetReflectionAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetAssemblyName" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="targetAssemblyName">アセンブリ名。</param>
+        <summary>現在読み込まれているアセンブリのうち、指定されたアセンブリ名を持つアセンブリを返します。</summary>
+        <returns>現在読み込まれているアセンブリのうち、指定されたアセンブリ名を持つアセンブリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeType">
+      <MemberSignature Language="C#" Value="public Type GetRuntimeType (Type reflectionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type GetRuntimeType(class System.Type reflectionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.IMultiTargetingSupportService.GetRuntimeType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reflectionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="reflectionType">ランタイム型を取得する型。</param>
+        <summary>指定された型に対応するランタイム型を取得します。</summary>
+        <returns>指定された型に対応するランタイム型。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupportedType">
+      <MemberSignature Language="C#" Value="public bool IsSupportedType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSupportedType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.IMultiTargetingSupportService.IsSupportedType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">検査対象の型。</param>
+        <summary>指定された型がサポートされているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、指定した型がサポートされています。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

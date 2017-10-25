@@ -1,0 +1,105 @@
+<Type Name="TableAttribute" FullName="System.Data.Linq.Mapping.TableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.TableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データベース テーブルに関連付けられているエンティティ クラスとしてクラスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、クラスを、データベース テーブルまたはビューに関連付けられたエンティティ クラスとして指定するために使用します。 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]持つクラスの扱い、<xref:System.Data.Linq.Mapping.TableAttribute>属性として永続的なクラスです。  
+  
+ [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]1 つのテーブルのマッピングのみサポートされます。 つまり、エンティティ クラスは、1 つのデータベース テーブルにマップする必要があります、同時に複数のクラスをデータベース テーブルを割り当てることはできません。  
+  
+ 使用することができます、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>のプロパティ、<xref:System.Data.Linq.Mapping.TableAttribute>テーブルの名前を指定する属性し、必要に応じて、テーブル名を修飾するスキーマ名を使用することができます。 使用して名前を指定しない場合、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>プロパティ、テーブル名がクラス名と同じであると見なされます。  
+  
+## <a name="schema-qualified-names"></a>スキーマ修飾の名前  
+ 必要に応じて、テーブル名を修飾するのにスキーマ名を使用することができます。 既定では、1 番目のピリオドの左側に、トークン、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>文字列は、スキーマ名であると見なされます。 名前の残りの部分は、テーブル名であると見なされます。 プロバイダーは、適切なテーブル名を引用符でいます。 たとえば、 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] for SQL Server プロバイダーは、角かっこを使用するには、少なくとも必要な場所を確認します。  
+  
+> [!NOTE]
+>  SQL Server プロバイダーは自動的に引用符で囲む場合によっては、明示的に属性を引用符で囲む必要があります。 次の表は、いくつかの例を示します。  
+  
+|Case|例: 識別子名|属性で期待される文字列の例:|それ以外の場合.|  
+|----------|------------------------------|--------------------------------------------|----------------|  
+|スキーマ名にピリオドが含まれています|スキーマ:"A.B"<br /><br /> テーブル:"C"|"[A.B] です。C"|最初の期間は、テーブル名から、スキーマ名を分離すると見なされます。|  
+|スキーマとテーブルの名前で始まる`@`|"@SomeName"|"[@SomeName]"|パラメーター名であると見なされます。|  
+|スキーマが始まる`[`で終わる`]`|「[と]」|"[スキーマ] です。[テーブル]]"|囲まれていない識別子では、引用符で囲まれた識別子に似ています。|  
+|テーブルが始まる`[`で終わる`]`|"[Table]"|"[テーブル]]"|囲まれていない識別子では、引用符で囲まれた識別子に似ています。|  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqCustomize#1](~/samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#1)]
+ [!code-vb[DLinqCustomize#1](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TableAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.TableAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.TableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.TableAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、テーブルまたはビューの名前を設定します。</summary>
+        <value>既定では、値とは、クラスの名前と同じです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して名前を指定しない場合<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>テーブル名をクラス名と同じであると見なされます。  
+  
+> [!NOTE]
+>  必要に応じて、テーブル名 (たとえば、Schema3.Table5) を修飾するのにスキーマ名を使用することができます。 既定では、1 番目のピリオドの左側に、トークン、<xref:System.Data.Linq.Mapping.TableAttribute.Name%2A>文字列は、スキーマ名、およびテーブル名を指定する残りの部分であると見なされます。  
+  
+ 次の例では、既定のテーブル名、`Customer`に変更が`Customers`です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DLinqCustomize#1](~/samples/snippets/csharp/VS_Snippets_Data/DLinqCustomize/cs/Program.cs#1)]
+ [!code-vb[DLinqCustomize#1](~/samples/snippets/visualbasic/VS_Snippets_Data/DLinqCustomize/vb/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,88 @@
+<Type Name="IWebApplication" FullName="System.Web.UI.Design.IWebApplication">
+  <TypeSignature Language="C#" Value="public interface IWebApplication : IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebApplication implements class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IWebApplication" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("cff39fa8-5607-4b6d-86f3-cc80b3cfe2dd")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時に Microsoft Visual Studio 2005 などのデザイン ホストで Web アプリケーションにアクセスするためのインターフェイスを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetProjectItemFromUrl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IProjectItem GetProjectItemFromUrl (string appRelativeUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Design.IProjectItem GetProjectItemFromUrl(string appRelativeUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebApplication.GetProjectItemFromUrl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IProjectItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appRelativeUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appRelativeUrl">取得するプロジェクト項目の相対パス。</param>
+        <summary>デザイン ホストではその URL に基づくからプロジェクト項目を返します。</summary>
+        <returns>デザイン ホストではその URL に基づくからプロジェクト項目です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenWebConfiguration">
+      <MemberSignature Language="C#" Value="public System.Configuration.Configuration OpenWebConfiguration (bool isReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.Configuration OpenWebConfiguration(bool isReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.IWebApplication.OpenWebConfiguration(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Configuration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isReadOnly">
+          <see langword="true" />返されたを示すために<see cref="T:System.Configuration.Configuration" />が編集可能であるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>返します、<see cref="T:System.Configuration.Configuration" />デザイン ホストでは、現在の Web アプリケーションを表すオブジェクト。</summary>
+        <returns>デザイン ホストでは、現在の Web アプリケーションを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootProjectItem">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IProjectItem RootProjectItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IProjectItem RootProjectItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IWebApplication.RootProjectItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IProjectItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ホストからルート プロジェクト項目を取得します。</summary>
+        <value>デザイン ホストからルート プロジェクト項目です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

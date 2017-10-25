@@ -1,0 +1,91 @@
+<Type Name="ToolStripDropDownClosedEventArgs" FullName="System.Windows.Forms.ToolStripDropDownClosedEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolStripDropDownClosedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripDropDownClosedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripDropDownClosedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolStripDropDown.Closed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データを使用して、<xref:System.Windows.Forms.ToolStripDropDownClosedEventArgs>ドロップダウン コントロールを閉じるときに実行するアクションに関する意思決定を行うメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripDropDown.Closed>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripDropDown>という`ToolStripDropDown1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripDropDown.Closed>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#177](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#177)]
+ [!code-vb[System.Windows.Forms.EventExamples#177](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#177)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripDropDownClosedEventArgs (System.Windows.Forms.ToolStripDropDownCloseReason reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.ToolStripDropDownCloseReason reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripDropDownClosedEventArgs.#ctor(System.Windows.Forms.ToolStripDropDownCloseReason)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="reason" Type="System.Windows.Forms.ToolStripDropDownCloseReason" />
+      </Parameters>
+      <Docs>
+        <param name="reason"><see cref="T:System.Windows.Forms.ToolStripDropDownCloseReason" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolStripDropDownClosedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripDropDownClosedEventArgs.%23ctor%2A>コンス トラクターを指定した理由のドロップダウン コントロールを閉じるときにアクションに関する意思決定を行います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseReason">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ToolStripDropDownCloseReason CloseReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ToolStripDropDownCloseReason CloseReason" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripDropDownClosedEventArgs.CloseReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripDropDownCloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>理由を取得、<see cref="T:System.Windows.Forms.ToolStripDropDown" />終了します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripDropDownCloseReason" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripDropDown.Closed?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripDropDown>という`ToolStripDropDown1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripDropDown.Closed?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#177](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#177)]
+ [!code-vb[System.Windows.Forms.EventExamples#177](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#177)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

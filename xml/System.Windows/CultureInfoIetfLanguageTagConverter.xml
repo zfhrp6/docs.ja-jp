@@ -1,0 +1,154 @@
+<Type Name="CultureInfoIetfLanguageTagConverter" FullName="System.Windows.CultureInfoIetfLanguageTagConverter">
+  <TypeSignature Language="C#" Value="public class CultureInfoIetfLanguageTagConverter : System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CultureInfoIetfLanguageTagConverter extends System.ComponentModel.TypeConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.CultureInfoIetfLanguageTagConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.TypeConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスに変換します<see cref="T:System.Globalization.CultureInfo" />と他のデータ型の間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスからの 2 つの方法が異なります<xref:System.ComponentModel.CultureInfoConverter>の既定の型コンバーター、<xref:System.Globalization.CultureInfo>クラスです。  
+  
+-   基づく文字列表記を使用して、<xref:System.Globalization.CultureInfo.IetfLanguageTag%2A>プロパティではなく、<xref:System.Globalization.CultureInfo.Name%2A>プロパティ (つまり、RFC 3066 ではない RFC 1766)。  
+  
+-   結果のプロパティ、文字列から変換するときに<xref:System.Globalization.CultureInfo>オブジェクトの文字列にのみ依存し、にないユーザーがコントロール パネルで設定を上書きします。 これによって、ドキュメントの外観はローカル設定に依存しないを作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CultureInfoIetfLanguageTagConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CultureInfoIetfLanguageTagConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.CultureInfoIetfLanguageTagConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CultureInfoIetfLanguageTagConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" /> 値。</param>
+        <param name="sourceType"><see cref="T:System.Type" />変換のサポートについて照会しています。</param>
+        <summary>指定するかどうか<see cref="T:System.Windows.CultureInfoIetfLanguageTagConverter" />指定された型に変換できます。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="T:System.Windows.CultureInfoIetfLanguageTagConverter" />に変換できます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public override bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CultureInfoIetfLanguageTagConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" /> 値。</param>
+        <param name="destinationType"><see cref="T:System.Type" />変換のサポートについて照会しています。</param>
+        <summary>決定するかどうか<see cref="T:System.Windows.CultureInfoIetfLanguageTagConverter" />指定された型に変換できます。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="T:System.Windows.CultureInfoIetfLanguageTagConverter" />に変換できます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CultureInfoIetfLanguageTagConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" /> 値。</param>
+        <param name="cultureInfo"><see cref="T:System.Globalization.CultureInfo" />オブジェクトの変換時に値を持つを尊重します。</param>
+        <param name="source">変換されている <see cref="T:System.Type" />。</param>
+        <summary>指定されたオブジェクト型に変換する<see cref="T:System.Globalization.CultureInfo" />オブジェクト。</summary>
+        <returns><see cref="T:System.Globalization.CultureInfo" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, System.Globalization.CultureInfo cultureInfo, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext typeDescriptorContext, class System.Globalization.CultureInfo cultureInfo, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.CultureInfoIetfLanguageTagConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeDescriptorContext" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="typeDescriptorContext"><see cref="T:System.ComponentModel.ITypeDescriptorContext" /> 値。</param>
+        <param name="cultureInfo"><see cref="T:System.Globalization.CultureInfo" />オブジェクトの変換時に値を持つを尊重します。</param>
+        <param name="value">表すオブジェクトを<see cref="T:System.Globalization.CultureInfo" />に変換します。</param>
+        <param name="destinationType"><see cref="T:System.Type" />変換されたオブジェクトの。</param>
+        <summary>変換、<see cref="T:System.Globalization.CultureInfo" />オブジェクトを指定したオブジェクトの型。</summary>
+        <returns>指定したオブジェクトの種類に変換された CultureInfo オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

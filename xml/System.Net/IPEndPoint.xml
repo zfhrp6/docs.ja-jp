@@ -1,0 +1,538 @@
+<Type Name="IPEndPoint" FullName="System.Net.IPEndPoint">
+  <TypeSignature Language="C#" Value="public class IPEndPoint : System.Net.EndPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit IPEndPoint extends System.Net.EndPoint" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IPEndPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Net.EndPoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク エンドポイントを、IP アドレスとポート番号として表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPEndPoint>クラスには、ホストとホスト上のサービスに接続するアプリケーションで必要なローカルまたはリモートのポート情報が含まれています。 ホストの IP アドレスと、サービスのポート番号を組み合わせることによって、<xref:System.Net.IPEndPoint>クラスのフォームへの接続がサービス をポイントします。  
+  
+   
+  
+## Examples  
+ [!code-cpp[System.Net.IPEndPoint#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#1)]
+ [!code-csharp[System.Net.IPEndPoint#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#1)]
+ [!code-vb[System.Net.IPEndPoint#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPEndPoint (long address, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 address, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.#ctor(System.Int64,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Int64" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address">インターネット ホストの IP アドレス。</param>
+        <param name="port">関連付けられているポート番号、<c>アドレス</c>、または 0 を使用可能なポートを指定します。 <c>ポート</c>ホストの順序で。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.IPEndPoint" />指定したアドレスとポート番号を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、指定された IP アドレスとポート番号を使用して、作成、<xref:System.Net.IPEndPoint>です。  
+  
+ [!code-cpp[IPEndPoint_Properties#4](~/samples/snippets/cpp/VS_Snippets_Remoting/IPEndPoint_Properties/CPP/ipendpoint_properties.cpp#4)]
+ [!code-csharp[IPEndPoint_Properties#4](~/samples/snippets/csharp/VS_Snippets_Remoting/IPEndPoint_Properties/CS/ipendpoint_properties.cs#4)]
+ [!code-vb[IPEndPoint_Properties#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPEndPoint_Properties/VB/ipendpoint_properties.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。  
+  
+ または  
+  
+ <paramref name="port" /> が <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きくなっています。  
+  
+ または  
+  
+ <paramref name="address" />0 未満か、0x00000000FFFFFFFF より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IPEndPoint (System.Net.IPAddress address, int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress address, int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.#ctor(System.Net.IPAddress,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" />。</param>
+        <param name="port">関連付けられているポート番号、<c>アドレス</c>、または 0 を使用可能なポートを指定します。 <c>ポート</c>ホストの順序で。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.IPEndPoint" />指定したアドレスとポート番号を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[System.Net.IPEndPoint#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#2)]
+ [!code-csharp[System.Net.IPEndPoint#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#2)]
+ [!code-vb[System.Net.IPEndPoint#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="port" /> は <see cref="F:System.Net.IPEndPoint.MinPort" /> より小さい値です。  
+  
+ または  
+  
+ <paramref name="port" /> が <see cref="F:System.Net.IPEndPoint.MaxPort" /> より大きくなっています。  
+  
+ または  
+  
+ <paramref name="address" />0 未満か、0x00000000FFFFFFFF より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPEndPoint.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドポイントの IP アドレスを設定します。</summary>
+        <value><see cref="T:System.Net.IPAddress" />インスタンス エンドポイントの IP アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のセット、<xref:System.Net.IPEndPoint.Address%2A>プロパティを使用して、<xref:System.Net.IPAddress>指定します。  
+  
+ [!code-cpp[System.Net.IPEndPoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#3)]
+ [!code-csharp[System.Net.IPEndPoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#3)]
+ [!code-vb[System.Net.IPEndPoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFamily">
+      <MemberSignature Language="C#" Value="public override System.Net.Sockets.AddressFamily AddressFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.AddressFamily AddressFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPEndPoint.AddressFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.AddressFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターネット プロトコル (IP) アドレス ファミリを取得します。</summary>
+        <value><see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPEndPoint.AddressFamily%2A>返されるプロパティを<xref:System.Net.Sockets.AddressFamily>先、<xref:System.Net.IPEndPoint>が属しています。 ここでは、 <xref:System.Net.Sockets.AddressFamily.InterNetwork><xref:System.Net.Sockets.AddressFamily>です。  
+  
+ [!code-cpp[System.Net.IPEndPoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#3)]
+ [!code-csharp[System.Net.IPEndPoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#3)]
+ [!code-vb[System.Net.IPEndPoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public override System.Net.EndPoint Create (System.Net.SocketAddress socketAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.EndPoint Create(class System.Net.SocketAddress socketAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.Create(System.Net.SocketAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.EndPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="socketAddress" Type="System.Net.SocketAddress" />
+      </Parameters>
+      <Docs>
+        <param name="socketAddress"><see cref="T:System.Net.SocketAddress" />エンドポイントに使用します。</param>
+        <summary>ソケット アドレスからエンドポイントを作成します。</summary>
+        <returns><see cref="T:System.Net.EndPoint" />インスタンスの指定したソケット アドレスを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、指定した<xref:System.Net.SocketAddress>を作成する、<xref:System.Net.IPEndPoint>です。  
+  
+ [!code-cpp[System.Net.IPEndPoint#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#5)]
+ [!code-csharp[System.Net.IPEndPoint#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#5)]
+ [!code-vb[System.Net.IPEndPoint#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">AddressFamily<paramref name="socketAddress" />が現在のインスタンスの AddressFamily と等しくありません。  
+  
+ または  
+  
+ <paramref name="socketAddress" />.サイズ&lt;8 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Object" />。</param>
+        <summary>指定した <see cref="T:System.Object" /> が現在の <see cref="T:System.Object" /> と等しいかどうかを示します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Object" /> と等しい場合は <see cref="T:System.Object" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.IPEndPoint" /> インスタンスのハッシュ値を返します。</summary>
+        <returns>整数ハッシュ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IPEndPoint.GetHashCode%2A>メソッド IP エンドポイントのインスタンスのハッシュ コードを返します。 この値は、ハッシュ テーブル内のキーとして使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxPort">
+      <MemberSignature Language="C#" Value="public const int MaxPort = 65535;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MaxPort = (65535)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPEndPoint.MaxPort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>65535</MemberValue>
+      <Docs>
+        <summary>割り当てることができる最大値を指定します、<see cref="P:System.Net.IPEndPoint.Port" />プロパティです。 MaxPort 値は、0x0000FFFF に設定されます。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPEndPoint.MaxPort>プロパティに割り当てることができる最大値を印刷する、<xref:System.Net.IPEndPoint.Port%2A>プロパティです。  
+  
+ [!code-cpp[IPEndPoint_Properties#4](~/samples/snippets/cpp/VS_Snippets_Remoting/IPEndPoint_Properties/CPP/ipendpoint_properties.cpp#4)]
+ [!code-csharp[IPEndPoint_Properties#4](~/samples/snippets/csharp/VS_Snippets_Remoting/IPEndPoint_Properties/CS/ipendpoint_properties.cs#4)]
+ [!code-vb[IPEndPoint_Properties#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPEndPoint_Properties/VB/ipendpoint_properties.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinPort">
+      <MemberSignature Language="C#" Value="public const int MinPort = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MinPort = (0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.IPEndPoint.MinPort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>割り当てることができる最小値を指定、<see cref="P:System.Net.IPEndPoint.Port" />プロパティです。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPEndPoint.MinPort>プロパティに割り当てることができる最小値を印刷する、<xref:System.Net.IPEndPoint.Port%2A>プロパティです。  
+  
+ [!code-cpp[IPEndPoint_Properties#4](~/samples/snippets/cpp/VS_Snippets_Remoting/IPEndPoint_Properties/CPP/ipendpoint_properties.cpp#4)]
+ [!code-csharp[IPEndPoint_Properties#4](~/samples/snippets/csharp/VS_Snippets_Remoting/IPEndPoint_Properties/CS/ipendpoint_properties.cs#4)]
+ [!code-vb[IPEndPoint_Properties#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/IPEndPoint_Properties/VB/ipendpoint_properties.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.IPEndPoint.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドポイントのポート番号を設定します。</summary>
+        <value>範囲の整数値<see cref="F:System.Net.IPEndPoint.MinPort" />に<see cref="F:System.Net.IPEndPoint.MaxPort" />エンドポイントのポート番号を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPEndPoint.Port%2A>の TCP ポート番号を設定するプロパティ、<xref:System.Net.EndPoint>です。  
+  
+ [!code-cpp[System.Net.IPEndPoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#3)]
+ [!code-csharp[System.Net.IPEndPoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#3)]
+ [!code-vb[System.Net.IPEndPoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定操作は指定した値より小さい<see cref="F:System.Net.IPEndPoint.MinPort" />以上<see cref="F:System.Net.IPEndPoint.MaxPort" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public override System.Net.SocketAddress Serialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Net.SocketAddress Serialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.Serialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.SocketAddress</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンドポイント情報を<see cref="T:System.Net.SocketAddress" />インスタンス。</summary>
+        <returns>A<see cref="T:System.Net.SocketAddress" />インスタンス エンドポイントのソケット アドレスを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.IPEndPoint.Serialize%2A>にエンドポイント情報をシリアル化するメソッド、<xref:System.Net.SocketAddress>インスタンス。  
+  
+ [!code-cpp[System.Net.IPEndPoint#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#4)]
+ [!code-csharp[System.Net.IPEndPoint#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#4)]
+ [!code-vb[System.Net.IPEndPoint#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IPEndPoint.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定されたエンドポイントの IP アドレスとポート番号を返します。</summary>
+        <returns>IP アドレスと、指定されたエンドポイント (たとえば、192.168.1.2:80) のポート番号を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、指定した IP アドレスとポート番号の文字列表現を返します<xref:System.Net.IPEndPoint>です。  
+  
+ [!code-cpp[System.Net.IPEndPoint#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.IPEndPoint/CPP/ipendpoint.cpp#3)]
+ [!code-csharp[System.Net.IPEndPoint#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.IPEndPoint/CS/ipendpoint.cs#3)]
+ [!code-vb[System.Net.IPEndPoint#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.IPEndPoint/VB/ipendpoint.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

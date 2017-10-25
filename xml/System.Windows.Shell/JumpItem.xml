@@ -1,0 +1,44 @@
+<Type Name="JumpItem" FullName="System.Windows.Shell.JumpItem">
+  <TypeSignature Language="C#" Value="public abstract class JumpItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit JumpItem extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shell.JumpItem" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Shell.JumpPath" /> および <see cref="T:System.Windows.Shell.JumpTask" /> の基本クラスです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CustomCategory">
+      <MemberSignature Language="C#" Value="public string CustomCategory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.JumpItem.CustomCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定カテゴリの名前、<see cref="T:System.Windows.Shell.JumpItem" />内でグループ化、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーのジャンプ リスト。</summary>
+        <value>カテゴリの名前、<see cref="T:System.Windows.Shell.JumpItem" />でグループ化されます。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Shell.JumpItem.CustomCategory%2A>プロパティは`null`または<xref:System.String.Empty>に項目を追加、**タスク**カテゴリ。 値が指定されている場合、項目が指定の名前を使用するカテゴリに追加されます。 カスタム カテゴリの項目は、ユーザーがジャンプ リストにピン留めできます。 呼ばれる自動のカテゴリに移動するアイテムをピン留めすると、ときに**Pinned**です。 ユーザーは、ジャンプ リストから項目を削除することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

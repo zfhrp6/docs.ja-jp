@@ -1,0 +1,121 @@
+<Type Name="TraversalRequest" FullName="System.Windows.Input.TraversalRequest">
+  <TypeSignature Language="C#" Value="public class TraversalRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit TraversalRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.TraversalRequest" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>別のコントロールにフォーカスを移動する要求を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、入力パラメーターとして使用、<xref:System.Windows.UIElement.MoveFocus%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Windows.UIElement.MoveFocus%2A>メソッドがより実用的な実装を提供する WPF フレームワーク レベルの上書き (<xref:System.Windows.FrameworkElement.MoveFocus%2A?displayProperty=nameWithType>)、並列実装上だけでなく<xref:System.Windows.ContentElement>と<xref:System.Windows.FrameworkContentElement>です。 通常、プロパティを設定して<xref:System.Windows.Input.TraversalRequest>別の要素にフォーカスを移動することを要求するときに、フォーカスの動作をカスタマイズするためにします。  
+  
+ このクラスは、次のメソッドの入力パラメーターとしても使用します。  
+  
+-   <xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A>、との相互運用に使用されるメソッドの実装 (<xref:System.Windows.Forms.Integration.WindowsFormsHost.TabInto%2A>)。  
+  
+-   <xref:System.Windows.Interop.IKeyboardInputSite.OnNoMoreTabStops%2A>。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.TraversalRequest>インスタンスへの入力として、<xref:System.Windows.FrameworkElement.MoveFocus%2A?displayProperty=nameWithType>呼び出します。  
+  
+ [!code-csharp[FocusSample#FocusSampleMoveFocus](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplemovefocus)]
+ [!code-vb[FocusSample#FocusSampleMoveFocus](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplemovefocus)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraversalRequest (System.Windows.Input.FocusNavigationDirection focusNavigationDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.FocusNavigationDirection focusNavigationDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.TraversalRequest.#ctor(System.Windows.Input.FocusNavigationDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="focusNavigationDirection" Type="System.Windows.Input.FocusNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="focusNavigationDirection">列挙体の値としてフォーカスを移動の目的の方向です。</param>
+        <summary><see cref="T:System.Windows.Input.TraversalRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.TraversalRequest>インスタンスへの入力として、<xref:System.Windows.FrameworkElement.MoveFocus%2A?displayProperty=nameWithType>呼び出します。  
+  
+ [!code-csharp[FocusSample#FocusSampleMoveFocus](~/samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplemovefocus)]
+ [!code-vb[FocusSample#FocusSampleMoveFocus](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplemovefocus)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusNavigationDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.FocusNavigationDirection FocusNavigationDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.FocusNavigationDirection FocusNavigationDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TraversalRequest.FocusNavigationDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.FocusNavigationDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動の方向を取得します。</summary>
+        <value>走査の各方向の列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用ため、<xref:System.Windows.Input.FocusNavigationDirection>の必須の入力パラメーターには、<xref:System.Windows.Input.TraversalRequest>クラスのコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrapped">
+      <MemberSignature Language="C#" Value="public bool Wrapped { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Wrapped" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.TraversalRequest.Wrapped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォーカスの移動がフォーカスを持つことができる子要素の終わりに達したかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在の移動がフォーカスを持つことができる子要素の終わりに達した場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーカス可能な要素は、それらの要素を<xref:System.Windows.UIElement.Focusable%2A>プロパティは`true`します。  
+  
+ このパラメーターは、メソッドを呼び出すときにタブを使用したトラバーサルを折り返すかどうかを通信するためのもので、主に<xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A>、 <xref:System.Windows.Forms.Integration.WindowsFormsHost.TabInto%2A>、または。<xref:System.Windows.Interop.IKeyboardInputSite.OnNoMoreTabStops%2A>です。 実装するオブジェクトにフォーカスを渡すかどうか<xref:System.Windows.Interop.IKeyboardInputSink>、true を指定して<xref:System.Windows.Input.TraversalRequest.Wrapped%2A>ことになります`true`に渡される値、<xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A>実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

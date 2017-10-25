@@ -1,0 +1,102 @@
+<Type Name="WebPartTracker" FullName="System.Web.UI.WebControls.WebParts.WebPartTracker">
+  <TypeSignature Language="C#" Value="public sealed class WebPartTracker : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartTracker extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartTracker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>循環接続用の Web パーツの接続を監視します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツの接続は、リンクまたは 2 つの間の関連付け<xref:System.Web.UI.WebControls.WebParts.WebPart>(またはその他のサーバーまたはユーザー) コントロールをデータを共有できるようにします。 すべての Web パーツ接続では、1 つのコントロールは、データとデータのコンシューマーとして別のプロバイダーとして機能します。  
+  
+ Web パーツ コントロールは、プロバイダーおよびコンシューマーの両方と、指定されたデータは、使用したデータによって異なります、Web パーツ コントロールの間で無限ループになる接続を作成する可能性があります。 このループは、循環接続と呼ばれます。 開発者を使用して接続を循環を防ぐことができます、<xref:System.Web.UI.WebControls.WebParts.WebPartTracker>プロバイダー接続ポイントおよび Web パーツ コントロールへの接続の数を追跡するクラス。 プロバイダー接続ポイントと、コントロールが指定されて、<xref:System.Web.UI.WebControls.WebParts.WebPartTracker.%23ctor%2A>コンス トラクターです。  
+  
+ 循環接続が検出された場合、<xref:System.Web.UI.WebControls.WebParts.WebPartTracker>オブジェクト セット、 <xref:System.Web.UI.WebControls.WebParts.WebPart.ConnectErrorMessage%2A?displayProperty=nameWithType> Web パーツ コントロール プロバイダーのプロパティです。 <xref:System.Web.UI.WebControls.WebParts.WebPartTracker.IsCircularConnection%2A>が返される`true`です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartTracker (System.Web.UI.WebControls.WebParts.WebPart webPart, System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart webPart, class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint providerConnectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTracker.#ctor(System.Web.UI.WebControls.WebParts.WebPart,System.Web.UI.WebControls.WebParts.ProviderConnectionPoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webPart" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+        <Parameter Name="providerConnectionPoint" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="webPart">循環接続を追跡するコントロール。</param>
+        <param name="providerConnectionPoint">使用される接続ポイント<c>webPart</c>です。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartTracker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="webPart" />または<paramref name="providerConnectionPoint" />が指定されていません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="providerConnectionPoint" /> は有効な型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCircularConnection">
+      <MemberSignature Language="C#" Value="public bool IsCircularConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCircularConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartTracker.IsCircularConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダー接続ポイントは Web パーツ コントロールと 2 つ以上の接続に関係するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、プロバイダー接続ポイントが Web パーツ コントロールと 2 つ以上の接続で使用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTracker.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースの解放またはリセットに関連付けられているアプリケーション定義のタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,287 @@
+<Type Name="RuleEvaluationIncompatibleTypesException" FullName="System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException">
+  <TypeSignature Language="C#" Value="public class RuleEvaluationIncompatibleTypesException : System.Workflow.Activities.Rules.RuleException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RuleEvaluationIncompatibleTypesException extends System.Workflow.Activities.Rules.RuleException implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Activities.Rules.RuleException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ルールを評価する際、演算子を適用するオペランドに互換性違反があった場合に発生する例外です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleEvaluationIncompatibleTypesException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleEvaluationIncompatibleTypesException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">このインスタンスに関連付けるエラー メッセージを含む <see langword="string" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> の新しいインスタンスを、指定したエラー メッセージを使用して初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、新しいインスタンスの <xref:System.ArgumentException.Message%2A> プロパティを、message パラメーターを使用して初期化します。  
+  
+ Exception のインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RuleEvaluationIncompatibleTypesException (System.Runtime.Serialization.SerializationInfo serializeInfo, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializeInfo, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializeInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializeInfo">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ストリームを介して送信される例外オブジェクトを再構成する逆シリアル化中に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serializeInfo" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">クラス名が null 参照 (Visual Basic の場合は <see langword="Nothing" />)、または <see cref="P:System.Exception.HResult" /> が 0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleEvaluationIncompatibleTypesException (string message, Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">現在の例外を説明するメッセージ。</param>
+        <param name="ex">現在の例外の原因となった <see cref="T:System.Exception" /> インスタンス。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> クラスの新しいインスタンスを初期化します。エラー メッセージと、この <see cref="T:System.Exception" /> の原因となる内部 <see cref="T:System.Exception" /> の参照を、引数として指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前回の <xref:System.Exception> の直接の結果としてスローされる <xref:System.Exception> の <xref:System.Exception.InnerException%2A> プロパティには、前回の例外への参照が含まれます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleEvaluationIncompatibleTypesException (string message, Type left, System.CodeDom.CodeBinaryOperatorType op, Type right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Type left, valuetype System.CodeDom.CodeBinaryOperatorType op, class System.Type right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor(System.String,System.Type,System.CodeDom.CodeBinaryOperatorType,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="left" Type="System.Type" />
+        <Parameter Name="op" Type="System.CodeDom.CodeBinaryOperatorType" />
+        <Parameter Name="right" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="message">現在の <see cref="T:System.Exception" /> について説明するメッセージ。</param>
+        <param name="left">演算子の左辺にある <see cref="T:System.Type" />。</param>
+        <param name="op">互換性に違反している演算子を表す <see cref="T:System.CodeDom.CodeBinaryOperatorType" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.Type" />。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> クラスの新しいインスタンスを初期化します。互換性違反に関する詳細情報を引数として指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す例外インスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|`message` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Left%2A>|`left.` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Operator%2A>|`op.` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Right%2A>|`right.` 引数の値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RuleEvaluationIncompatibleTypesException (string message, Type left, System.CodeDom.CodeBinaryOperatorType op, Type right, Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Type left, valuetype System.CodeDom.CodeBinaryOperatorType op, class System.Type right, class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.#ctor(System.String,System.Type,System.CodeDom.CodeBinaryOperatorType,System.Type,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="left" Type="System.Type" />
+        <Parameter Name="op" Type="System.CodeDom.CodeBinaryOperatorType" />
+        <Parameter Name="right" Type="System.Type" />
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">現在の <see cref="T:System.Exception" /> について説明するメッセージ。</param>
+        <param name="left">演算子の左辺にある <see cref="T:System.Type" />。</param>
+        <param name="op">互換性に違反している演算子を表す <see cref="T:System.CodeDom.CodeBinaryOperatorType" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.Type" />。</param>
+        <param name="ex">現在の例外の原因となった <see cref="T:System.Exception" /> インスタンス。</param>
+        <summary><see cref="T:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException" /> クラスの新しいインスタンスを初期化します。互換性違反に関する詳細情報を引数として指定します。 これには <see cref="P:System.Exception.InnerException" /> が含まれます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスが表す例外インスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|`ex.` 引数の値。|  
+|<xref:System.Exception.Message%2A>|`message` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Left%2A>|`left.` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Operator%2A>|`op.` 引数の値。|  
+|<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Right%2A>|`right.` 引数の値。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>例外に関する情報を含む <see cref="T:System.Runtime.Serialization.SerializationInfo" /> を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.GetObjectData%2A> は、シリアル化する対象のすべての <xref:System.Runtime.Serialization.SerializationInfo> オブジェクト データを使用して、<xref:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException> を設定します。 逆シリアル化中に、ストリームで転送された <xref:System.Runtime.Serialization.SerializationInfo> から例外が再構成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public Type Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Left" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった式の、左オペランドの <see cref="T:System.Type" /> を取得または設定します。</summary>
+        <value>例外の原因となった式の、左オペランドの <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operator">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeBinaryOperatorType Operator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.CodeDom.CodeBinaryOperatorType Operator" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Operator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeBinaryOperatorType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった式の演算子を表す <see cref="T:System.CodeDom.CodeBinaryOperatorType" /> を取得または設定します。</summary>
+        <value>例外の原因になった演算子を表す <see cref="T:System.CodeDom.CodeBinaryOperatorType" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public Type Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Right" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.Rules.RuleEvaluationIncompatibleTypesException.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外の原因となった式の、右オペランドの <see cref="T:System.Type" /> を取得または設定します。</summary>
+        <value>例外の原因となった式の、右オペランドの <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

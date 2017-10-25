@@ -1,0 +1,158 @@
+<Type Name="ColumnReorderedEventArgs" FullName="System.Windows.Forms.ColumnReorderedEventArgs">
+  <TypeSignature Language="C#" Value="public class ColumnReorderedEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ColumnReorderedEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ColumnReorderedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ListView.ColumnReordered" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ColumnReordered>を設定してイベントを取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 ただし、イベントがキャンセルされた場合、<xref:System.Windows.Forms.ColumnReorderedEventArgs.NewDisplayIndex%2A>には変更されません、<xref:System.Windows.Forms.ColumnReorderedEventArgs.OldDisplayIndex%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.ColumnReordered>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.ColumnReordered>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#467](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#467)]
+ [!code-vb[System.Windows.Forms.EventExamples#467](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#467)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ColumnReorderedEventArgs (int oldDisplayIndex, int newDisplayIndex, System.Windows.Forms.ColumnHeader header);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 oldDisplayIndex, int32 newDisplayIndex, class System.Windows.Forms.ColumnHeader header) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ColumnReorderedEventArgs.#ctor(System.Int32,System.Int32,System.Windows.Forms.ColumnHeader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldDisplayIndex" Type="System.Int32" />
+        <Parameter Name="newDisplayIndex" Type="System.Int32" />
+        <Parameter Name="header" Type="System.Windows.Forms.ColumnHeader" />
+      </Parameters>
+      <Docs>
+        <param name="oldDisplayIndex">以前の表示位置、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</param>
+        <param name="newDisplayIndex">表示の新しい位置、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</param>
+        <param name="header"><see cref="T:System.Windows.Forms.ColumnHeader" />の順序を変更します。</param>
+        <summary><see cref="T:System.Windows.Forms.ColumnReorderedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ColumnHeader Header { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ColumnHeader Header" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnReorderedEventArgs.Header" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ColumnHeader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ColumnHeader" />の順序を変更します。</summary>
+        <value><see cref="T:System.Windows.Forms.ColumnHeader" />の順序を変更します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#467](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#467)]
+ [!code-vb[System.Windows.Forms.EventExamples#467](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#467)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewDisplayIndex">
+      <MemberSignature Language="C#" Value="public int NewDisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NewDisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnReorderedEventArgs.NewDisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい位置を取得します<see cref="T:System.Windows.Forms.ColumnHeader" /></summary>
+        <value>新しい位置、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ColumnReordered>を設定してイベントを取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 ただし、イベントがキャンセルされた場合、<xref:System.Windows.Forms.ColumnReorderedEventArgs.NewDisplayIndex%2A>には変更されません、<xref:System.Windows.Forms.ColumnReorderedEventArgs.OldDisplayIndex%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#467](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#467)]
+ [!code-vb[System.Windows.Forms.EventExamples#467](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#467)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldDisplayIndex">
+      <MemberSignature Language="C#" Value="public int OldDisplayIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OldDisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ColumnReorderedEventArgs.OldDisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>以前の表示位置を取得、<see cref="T:System.Windows.Forms.ColumnHeader" />です。</summary>
+        <value>以前の表示位置、<see cref="T:System.Windows.Forms.ColumnHeader" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListView.ColumnReordered>を設定してイベントを取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 ただし、イベントがキャンセルされた場合、<xref:System.Windows.Forms.ColumnReorderedEventArgs.NewDisplayIndex%2A>には変更されません、<xref:System.Windows.Forms.ColumnReorderedEventArgs.OldDisplayIndex%2A>値。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.ColumnReordered?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#467](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#467)]
+ [!code-vb[System.Windows.Forms.EventExamples#467](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#467)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

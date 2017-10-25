@@ -1,0 +1,120 @@
+<Type Name="RibbonScrollButtonVisibilityConverter" FullName="System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter">
+  <TypeSignature Language="C#" Value="public sealed class RibbonScrollButtonVisibilityConverter : System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RibbonScrollButtonVisibilityConverter extends System.Object implements class System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IMultiValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>スクロール バーの可視性とスクロールの位置に変換します<see cref="T:System.Windows.Visibility" />値。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel>と<xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel>リボンの水平方向のスクロール動作を提供します。 スクロールが必要なときに、リボンでは、リボンの両端にあるボタンを繰り返し使用の一般的なスクロール バーが置き換えられます。 このコンバーターは、可視性およびスクロール バーの位置を使用して、各繰り返しのボタンの可視性を決定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RibbonScrollButtonVisibilityConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object[] values, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="values">変換する値。 次の 4 つの値が必要な 1 つ<see cref="T:System.Windows.Visibility" />スクロール バーの表示と 3 つを表すオブジェクト<see cref="T:System.Double" />スクロール バーの位置を表す値です。</param>
+        <param name="targetType">変換する型。 <see cref="T:System.Windows.Visibility" />型が必要です。</param>
+        <param name="parameter">リボンは、スクロール ボタンを非表示にする前に、右にスクロールされて目的のパーセンテージです。 A<see cref="T:System.Double" />が必要です。</param>
+        <param name="culture">変換するときに使用するカルチャ。</param>
+        <summary>変換、スクロール バーの可視性とスクロールの位置を<see cref="T:System.Windows.Visibility" />値。</summary>
+        <returns>A<see cref="T:System.Windows.Visibility" />スクロール ボタンの可視性を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 つ<xref:System.Double>スクロール バーの位置を表す値は、 <xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel.HorizontalOffset%2A>、 <xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel.ExtentWidth%2A>、および<xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel.ViewportWidth%2A>プロパティの値を<xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel>または<xref:System.Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel>です。 これらのプロパティの値を格納、パネルの内部<xref:System.Windows.Controls.ScrollViewer>です。  
+  
+ `parameter`値は、目的のパーセンテージを表すスクロール ボタンを非表示にする前に、リボンが右側のスクロールされています。 既定では、左スクロール ボタンは、パラメーターとして 0 を渡し、リボンとは、右側の 0% がスクロールしたときに表示されません。 右スクロール ボタン 100 は、パラメーターとして渡しし、は非表示、リボン、右側のスクロールの 100% にします。  
+  
+ 渡して`null`の予期しない型のパラメーターを返すには、このメソッドが発生する可能性がありますまたは<xref:System.Windows.DependencyProperty.UnsetValue>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object[] ConvertBack (object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ConvertBack(object value, class System.Type[] targetTypes, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Primitives.RibbonScrollButtonVisibilityConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetTypes" Type="System.Type[]" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">この API は実装されていません。</param>
+        <param name="targetTypes">この API は実装されていません。</param>
+        <param name="parameter">この API は実装されていません。</param>
+        <param name="culture">この API は実装されていません。</param>
+        <summary>この API は実装されていません。</summary>
+        <returns>
+          常に <see cref="F:System.Windows.Data.Binding.DoNothing" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.Binding.DoNothing?displayProperty=nameWithType>バインディングが、フォールバックまたは既定値を使用することを示すために返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

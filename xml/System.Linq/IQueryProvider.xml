@@ -1,0 +1,223 @@
+<Type Name="IQueryProvider" FullName="System.Linq.IQueryProvider">
+  <TypeSignature Language="C#" Value="public interface IQueryProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IQueryProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.IQueryProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>作成し、で説明されているクエリを実行するメソッドを定義、<see cref="T:System.Linq.IQueryable" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.IQueryProvider>インターフェイスは、クエリ プロバイダーで実装するためです。  
+  
+ LINQ プロバイダーを作成する方法の詳細については、次を参照してください。 [LINQ: IQueryable プロバイダーのビルド](http://go.microsoft.com/fwlink/?LinkID=112370)MSDN ブログ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateQuery">
+      <MemberSignature Language="C#" Value="public System.Linq.IQueryable CreateQuery (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IQueryable CreateQuery(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.IQueryProvider.CreateQuery(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">表す式ツリー、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。</param>
+        <summary>構築、<see cref="T:System.Linq.IQueryable" />指定した式ツリーで表されるクエリを評価できるオブジェクト。</summary>
+        <returns><see cref="T:System.Linq.IQueryable" />指定した式ツリーで表されるクエリを評価することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Linq.IQueryable.Expression%2A> 、返されたプロパティ<xref:System.Linq.IQueryable>オブジェクトと等しい`expression`です。  
+  
+ <xref:System.Linq.IQueryProvider.CreateQuery%2A>メソッドの使用を新規作成<xref:System.Linq.IQueryable>式ツリーを指定しているオブジェクト。 返されたオブジェクトで表されるクエリは、特定の LINQ プロバイダーに関連付けられます。  
+  
+ 定義された標準クエリ演算子のメソッドのいくつか<xref:System.Linq.Queryable>など<xref:System.Linq.Queryable.OfType%2A>と<xref:System.Linq.Queryable.Cast%2A>、このメソッドを呼び出します。 通過するとき、<xref:System.Linq.Expressions.MethodCallExpression>を表す、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateQuery&lt;TElement&gt;">
+      <MemberSignature Language="C#" Value="public System.Linq.IQueryable&lt;TElement&gt; CreateQuery&lt;TElement&gt; (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.IQueryable`1&lt;!!TElement&gt; CreateQuery&lt;TElement&gt;(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.IQueryProvider.CreateQuery``1(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable&lt;TElement&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TElement" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TElement">要素の型、<see cref="T:System.Linq.IQueryable`1" />が返されます。</typeparam>
+        <param name="expression">表す式ツリー、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。</param>
+        <summary>構築、<see cref="T:System.Linq.IQueryable`1" />指定した式ツリーで表されるクエリを評価できるオブジェクト。</summary>
+        <returns><see cref="T:System.Linq.IQueryable`1" />指定した式ツリーで表されるクエリを評価することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Linq.IQueryable.Expression%2A> 、返されたプロパティ<xref:System.Linq.IQueryable%601>オブジェクトと等しい`expression`です。  
+  
+ <xref:System.Linq.IQueryProvider.CreateQuery%2A>メソッドの使用を新規作成<xref:System.Linq.IQueryable%601>式ツリーを指定しているオブジェクト。 返されたオブジェクトで表されるクエリは、特定の LINQ プロバイダーに関連付けられます。  
+  
+ ほとんどの<xref:System.Linq.Queryable>列挙可能な結果が返される標準クエリ演算子のメソッドは、このメソッドを呼び出します。 通過するとき、<xref:System.Linq.Expressions.MethodCallExpression>を表す、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public object Execute (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Execute(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.IQueryProvider.Execute(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <param name="expression">表す式ツリー、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。</param>
+        <summary>指定した式ツリーで表されるクエリを実行します。</summary>
+        <returns>この値は、指定されたクエリの実行結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.IQueryProvider.Execute%2A>メソッド (値の列挙可能なシーケンス) ではなく 1 つの値を返すクエリを実行します。 列挙可能な結果を返すクエリを表す式ツリーが実行されるときにそれに関連付けられた<xref:System.Linq.IQueryable>オブジェクトを列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public TResult Execute&lt;TResult&gt; (System.Linq.Expressions.Expression expression);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!TResult Execute&lt;TResult&gt;(class System.Linq.Expressions.Expression expression) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.IQueryProvider.Execute``1(System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TResult</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="expression" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">クエリの実行結果の値の型。</typeparam>
+        <param name="expression">表す式ツリー、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。</param>
+        <summary>指定した式ツリーで表される厳密に型指定されたクエリを実行します。</summary>
+        <returns>この値は、指定されたクエリの実行結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.IQueryProvider.Execute%2A>メソッド (値の列挙可能なシーケンス) ではなく 1 つの値を返すクエリを実行します。 列挙可能な結果を返すクエリを表す式ツリーが実行されるときに、<xref:System.Linq.IQueryable%601>を式ツリーを含むオブジェクトを列挙します。  
+  
+ <xref:System.Linq.Queryable>標準クエリ演算子メソッドを返す単一の結果呼び出し<xref:System.Linq.IQueryProvider.Execute%2A>です。 通過するとき、<xref:System.Linq.Expressions.MethodCallExpression>を表す、[!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]クエリ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

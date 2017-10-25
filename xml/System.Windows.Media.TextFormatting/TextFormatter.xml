@@ -1,0 +1,313 @@
+<Type Name="TextFormatter" FullName="System.Windows.Media.TextFormatting.TextFormatter">
+  <TypeSignature Language="C#" Value="public abstract class TextFormatter : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextFormatter extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.TextFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>テキストの書式設定し、カスタム テキスト レイアウト クライアントを使用してテキスト行の改行のサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TextFormatting.TextFormatter>[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]テキストの書式設定し、テキストの行の重大なサービスを提供するテキスト エンジンです。 <xref:System.Windows.Media.TextFormatting.TextFormatter>別のテキスト文字の書式および段落のスタイルを処理し、国際的なテキスト レイアウトのサポートが含まれています。  
+  
+ 従来のテキストとは異なり[!INCLUDE[TLA#tla_api](~/includes/tlasharptla-api-md.md)]、<xref:System.Windows.Media.TextFormatting.TextFormatter>コールバック メソッドのセットを使用して、テキスト レイアウト クライアントと対話します。 実装でこれらのメソッドを提供するために必要な<xref:System.Windows.Media.TextFormatting.TextSource>クラスです。 次の図は、テキスト フォーマッタ クライアントとテキスト レイアウト クライアントとのやり取りを示しています。  
+  
+ ![テキスト レイアウト クライアントと TextFormatter のダイアグラム](~/add/media/textformatter01.png "テキスト レイアウト クライアントと TextFormatter のダイアグラム")  
+テキスト レイアウト クライアントと TextFormatter オブジェクト間の相互作用  
+  
+## <a name="text-formatting-services"></a>テキストの書式設定サービス  
+ <xref:System.Windows.Media.TextFormatting.TextFormatter>OpenType の文字体裁、できるだけ実行テキスト、線、および段落レベルの機能のサポートなどのテキストの機能のサポートを提供します。  
+  
+ 次の表は、キーのリスト<xref:System.Windows.Media.TextFormatting.TextFormatter>のテキストの特徴のサービスをサポートします。  
+  
+|特性|説明|  
+|-------------|-----------------|  
+|背景ブラシ|<xref:System.Windows.Media.Brush>背景色に使用されます。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.BackgroundBrush%2A> プロパティを参照してください。|  
+|ベースライン配置|行の基準の距離を決定します。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.BaselineAlignment%2A> プロパティを参照してください。|  
+|フォント リンク|フォント コンポジット フォントを使用してリンクを提供します。|  
+|前景ブラシ|<xref:System.Windows.Media.Brush>前景の色に使用されます。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.ForegroundBrush%2A> プロパティを参照してください。|  
+|OpenType|高度な OpenType 傍点を文字の機能、このようなコンテキスト代替グリフおよび標準合字です。 参照してください、<xref:System.Windows.Media.TextFormatting.TextRunTypographyProperties>クラスのプロパティです。|  
+|タイプフェイス|書体と同様に、太さ、スタイル、および stretch を決定します。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.Typeface%2A> プロパティを参照してください。|  
+|テキスト装飾|サポートを提供<xref:System.Windows.TextDecoration>下線または取り消し線などのオブジェクト。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.TextDecorations%2A> プロパティを参照してください。|  
+|テキスト効果|サポートを提供<xref:System.Windows.Media.TextEffect>オブジェクト。 <xref:System.Windows.Media.TextFormatting.TextRunProperties.TextEffects%2A> プロパティを参照してください。|  
+  
+ 次の表は、キーのリスト<xref:System.Windows.Media.TextFormatting.TextFormatter>段落レベルの機能のサービスをサポートします。  
+  
+|特性|説明|  
+|-------------|-----------------|  
+|フローの方向|段落のフロー方向-左から右へ、または右から左。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.FlowDirection%2A> プロパティを参照してください。|  
+|行のインデント|段落内の各行にインデントします。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.Indent%2A> プロパティを参照してください。|  
+|マーカー|段落の最初の行のマーカーの特性。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.TextMarkerProperties%2A> プロパティを参照してください。|  
+|段落のインデント|段落の最初の行のインデント。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.ParagraphIndent%2A> プロパティを参照してください。|  
+|タブ|揃えのタブおよびタブ リーダーのサポートが含まれます。|  
+|幅|最小値と最大の段落の幅を決定します。 参照してください、<xref:System.Windows.Media.TextFormatting.TextFormatter.FormatMinMaxParagraphWidth%2A>メソッドです。|  
+|右端で折り返す|フローの端に達したときのテキストの折り返し方法を決定します。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.TextWrapping%2A> プロパティを参照してください。|  
+  
+ 次の表は、キーのリスト<xref:System.Windows.Media.TextFormatting.TextFormatter>行レベルの機能のサービスをサポートします。  
+  
+|特性|説明|  
+|-------------|-----------------|  
+|アラインメント|テキストの配置-左、右、中央揃え、または両端揃え。 <xref:System.Windows.Media.TextFormatting.TextParagraphProperties.TextAlignment%2A> プロパティを参照してください。|  
+|[行間]|行の高さ。 <xref:System.Windows.Media.TextFormatting.TextLine.Height%2A> プロパティを参照してください。|  
+|行の縮小|行のサポートを縮小します。 参照してください、<xref:System.Windows.Media.TextFormatting.TextLine.Collapse%2A>メソッドです。|  
+|ブラック_ボックス測定|デバイス フォントの文字の配置に使用されるメトリックを表します。 詳細については、<xref:System.Windows.Media.CharacterMetrics> クラスのトピックを参照してください。|  
+|カレットのサポート|キャレット ナビゲーションおよび編集のサポート。 参照してください、<xref:System.Windows.Media.TextFormatting.TextLine>文字などのプロパティをヒット<xref:System.Windows.Media.TextFormatting.TextLine.GetNextCaretCharacterHit%2A>と<xref:System.Windows.Media.TextFormatting.TextLine.GetPreviousCaretCharacterHit%2A>です。|  
+  
+ 次の表は、キーのリスト<xref:System.Windows.Media.TextFormatting.TextFormatter>テキスト実行レベルの機能のサービスをサポートします。  
+  
+|特性|説明|  
+|-------------|-----------------|  
+|非表示の実行|表示されていない文字の範囲です。 参照してください、<xref:System.Windows.Media.TextFormatting.TextHidden>オブジェクト。|  
+|あり|行および段落の改行します。|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.TextFormatting.TextFormatter>描画オブジェクトとして表示されるテキストの書式設定された行を生成するオブジェクト。  
+  
+ [!code-csharp[TextFormattingSnippets#TextFormattingSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/TextFormattingSnippets/CSharp/Window1.xaml.cs#textformattingsnippet1)]
+ [!code-vb[TextFormattingSnippets#TextFormattingSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextFormattingSnippets/visualbasic/window1.xaml.vb#textformattingsnippet1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextFormatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.TextFormatting.TextFormatter Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.TextFormatting.TextFormatter Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextFormatter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextFormatter" /> クラスの新しいインスタンスを作成します。 これは、静的メソッドです。</summary>
+        <returns><see cref="T:System.Windows.Media.TextFormatting.TextFormatter" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.TextFormatting.TextFormatter Create (System.Windows.Media.TextFormattingMode textFormattingMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.TextFormatting.TextFormatter Create(valuetype System.Windows.Media.TextFormattingMode textFormattingMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.Create(System.Windows.Media.TextFormattingMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextFormatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textFormattingMode" Type="System.Windows.Media.TextFormattingMode" />
+      </Parameters>
+      <Docs>
+        <param name="textFormattingMode"><see cref="T:System.Windows.Media.TextFormattingMode" />のテキスト レイアウトを指定する、<see cref="T:System.Windows.Media.TextFormatting.TextFormatter" />です。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Windows.Media.TextFormatting.TextFormatter" />書式設定モードを指定しています。 これは、静的メソッドです。</summary>
+        <returns><see cref="T:System.Windows.Media.TextFormatting.TextFormatter" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるすべてのマネージ コードとアンマネージ リソースを解放、<see cref="T:System.Windows.Media.TextFormatting.TextFormatter" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatLine">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextLine FormatLine (System.Windows.Media.TextFormatting.TextSource textSource, int firstCharIndex, double paragraphWidth, System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, System.Windows.Media.TextFormatting.TextLineBreak previousLineBreak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.TextFormatting.TextLine FormatLine(class System.Windows.Media.TextFormatting.TextSource textSource, int32 firstCharIndex, float64 paragraphWidth, class System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, class System.Windows.Media.TextFormatting.TextLineBreak previousLineBreak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.FormatLine(System.Windows.Media.TextFormatting.TextSource,System.Int32,System.Double,System.Windows.Media.TextFormatting.TextParagraphProperties,System.Windows.Media.TextFormatting.TextLineBreak)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextLine</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textSource" Type="System.Windows.Media.TextFormatting.TextSource" />
+        <Parameter Name="firstCharIndex" Type="System.Int32" />
+        <Parameter Name="paragraphWidth" Type="System.Double" />
+        <Parameter Name="paragraphProperties" Type="System.Windows.Media.TextFormatting.TextParagraphProperties" />
+        <Parameter Name="previousLineBreak" Type="System.Windows.Media.TextFormatting.TextLineBreak" />
+      </Parameters>
+      <Docs>
+        <param name="textSource">A<see cref="T:System.Windows.Media.TextFormatting.TextSource" />行のテキストのデータ ソースを表す値です。</param>
+        <param name="firstCharIndex"><see cref="T:System.Int32" />行の先頭の文字の文字インデックスを指定する値。</param>
+        <param name="paragraphWidth">A<see cref="T:System.Double" />行が入力する段落の幅を指定する値。</param>
+        <param name="paragraphProperties">A<see cref="T:System.Windows.Media.TextFormatting.TextParagraphProperties" />フローの方向、配置、またはインデントなどの段落のプロパティを表す値です。</param>
+        <param name="previousLineBreak">A<see cref="T:System.Windows.Media.TextFormatting.TextLineBreak" />段落の前の行がプロセスを書式設定文字列を別の観点から、テキスト フォーマッタの状態を指定する値。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.TextFormatting.TextLine" />書式設定と、ドキュメントの内容を表示するのに使用します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.TextLine" />を表示できるテキストの行を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A>返す書式設定されたメソッドを<xref:System.Windows.Media.TextFormatting.TextLine>です。  
+  
+ [!code-csharp[TextFormattingSnippets#TextFormattingSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/TextFormattingSnippets/CSharp/Window1.xaml.cs#textformattingsnippet2)]
+ [!code-vb[TextFormattingSnippets#TextFormattingSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextFormattingSnippets/visualbasic/window1.xaml.vb#textformattingsnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatLine">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextLine FormatLine (System.Windows.Media.TextFormatting.TextSource textSource, int firstCharIndex, double paragraphWidth, System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, System.Windows.Media.TextFormatting.TextLineBreak previousLineBreak, System.Windows.Media.TextFormatting.TextRunCache textRunCache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Media.TextFormatting.TextLine FormatLine(class System.Windows.Media.TextFormatting.TextSource textSource, int32 firstCharIndex, float64 paragraphWidth, class System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, class System.Windows.Media.TextFormatting.TextLineBreak previousLineBreak, class System.Windows.Media.TextFormatting.TextRunCache textRunCache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.FormatLine(System.Windows.Media.TextFormatting.TextSource,System.Int32,System.Double,System.Windows.Media.TextFormatting.TextParagraphProperties,System.Windows.Media.TextFormatting.TextLineBreak,System.Windows.Media.TextFormatting.TextRunCache)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextLine</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textSource" Type="System.Windows.Media.TextFormatting.TextSource" />
+        <Parameter Name="firstCharIndex" Type="System.Int32" />
+        <Parameter Name="paragraphWidth" Type="System.Double" />
+        <Parameter Name="paragraphProperties" Type="System.Windows.Media.TextFormatting.TextParagraphProperties" />
+        <Parameter Name="previousLineBreak" Type="System.Windows.Media.TextFormatting.TextLineBreak" />
+        <Parameter Name="textRunCache" Type="System.Windows.Media.TextFormatting.TextRunCache" />
+      </Parameters>
+      <Docs>
+        <param name="textSource">A<see cref="T:System.Windows.Media.TextFormatting.TextSource" />行のテキストのデータ ソースを表すオブジェクト。</param>
+        <param name="firstCharIndex"><see cref="T:System.Int32" />行の先頭の文字の文字インデックスを指定する値。</param>
+        <param name="paragraphWidth">A<see cref="T:System.Double" />行が入力する段落の幅を指定する値。</param>
+        <param name="paragraphProperties">A<see cref="T:System.Windows.Media.TextFormatting.TextParagraphProperties" />フローの方向、配置、またはインデントなどの段落のプロパティを表すオブジェクト。</param>
+        <param name="previousLineBreak">A<see cref="T:System.Windows.Media.TextFormatting.TextLineBreak" />段落の前の行がプロセスを書式設定文字列を別の観点から、テキスト フォーマッタの状態を指定するオブジェクト。</param>
+        <param name="textRunCache">A<see cref="T:System.Windows.Media.TextFormatting.TextRunCache" />テキストのレイアウトのキャッシュ メカニズムを表すオブジェクト。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.TextFormatting.TextLine" />書式設定と、ドキュメントの内容を表示するのに使用します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.TextLine" />を表示できるテキストの行を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがアプリケーションのパフォーマンスを向上させるために使用される場所、<xref:System.Windows.Media.TextFormatting.TextLine>大幅なパフォーマンスに影響を与えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatMinMaxParagraphWidth">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.MinMaxParagraphWidth FormatMinMaxParagraphWidth (System.Windows.Media.TextFormatting.TextSource textSource, int firstCharIndex, System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.MinMaxParagraphWidth FormatMinMaxParagraphWidth(class System.Windows.Media.TextFormatting.TextSource textSource, int32 firstCharIndex, class System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.FormatMinMaxParagraphWidth(System.Windows.Media.TextFormatting.TextSource,System.Int32,System.Windows.Media.TextFormatting.TextParagraphProperties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.MinMaxParagraphWidth</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textSource" Type="System.Windows.Media.TextFormatting.TextSource" />
+        <Parameter Name="firstCharIndex" Type="System.Int32" />
+        <Parameter Name="paragraphProperties" Type="System.Windows.Media.TextFormatting.TextParagraphProperties" />
+      </Parameters>
+      <Docs>
+        <param name="textSource">A<see cref="T:System.Windows.Media.TextFormatting.TextSource" />行のテキストのデータ ソースを表すオブジェクト。</param>
+        <param name="firstCharIndex"><see cref="T:System.Int32" />行の先頭の文字の文字インデックスを指定する値。</param>
+        <param name="paragraphProperties">A<see cref="T:System.Windows.Media.TextFormatting.TextParagraphProperties" />フローの方向、配置、またはインデントなどの段落のプロパティを表すオブジェクト。</param>
+        <summary>指定したテキストの内容を完全に含めることができる最小および最大の段落の幅を表す値を返します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.MinMaxParagraphWidth" />指定したテキストの内容を完全に含めることができる最小および最大の段落の幅を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のテキストは、複数の行として表示されるソース テキストの段落の最小幅を使用します。 段落の最小幅は最大の幅をされている単語に対応しています: この場合は、単語「ジャンプ」です。 幅の合計が段落の最小幅を超えない限り、同じ行に複数の単語を表示できることに注意してください。  
+  
+ ![段落の最小幅を使用するテキスト フォーマッタ](~/add/media/textformatter03.png "段落の最小幅を使用するテキスト フォーマッタ")  
+最小の段落の幅  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.TextFormatting.TextFormatter.FormatMinMaxParagraphWidth%2A>テキストの書式設定された行の段落の最小幅を生成する方法です。  
+  
+ [!code-csharp[TextFormattingSnippets#TextFormattingSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/TextFormattingSnippets/CSharp/Window1.xaml.cs#textformattingsnippet3)]
+ [!code-vb[TextFormattingSnippets#TextFormattingSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TextFormattingSnippets/visualbasic/window1.xaml.vb#textformattingsnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatMinMaxParagraphWidth">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.MinMaxParagraphWidth FormatMinMaxParagraphWidth (System.Windows.Media.TextFormatting.TextSource textSource, int firstCharIndex, System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, System.Windows.Media.TextFormatting.TextRunCache textRunCache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.Windows.Media.TextFormatting.MinMaxParagraphWidth FormatMinMaxParagraphWidth(class System.Windows.Media.TextFormatting.TextSource textSource, int32 firstCharIndex, class System.Windows.Media.TextFormatting.TextParagraphProperties paragraphProperties, class System.Windows.Media.TextFormatting.TextRunCache textRunCache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextFormatter.FormatMinMaxParagraphWidth(System.Windows.Media.TextFormatting.TextSource,System.Int32,System.Windows.Media.TextFormatting.TextParagraphProperties,System.Windows.Media.TextFormatting.TextRunCache)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.MinMaxParagraphWidth</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textSource" Type="System.Windows.Media.TextFormatting.TextSource" />
+        <Parameter Name="firstCharIndex" Type="System.Int32" />
+        <Parameter Name="paragraphProperties" Type="System.Windows.Media.TextFormatting.TextParagraphProperties" />
+        <Parameter Name="textRunCache" Type="System.Windows.Media.TextFormatting.TextRunCache" />
+      </Parameters>
+      <Docs>
+        <param name="textSource">A<see cref="T:System.Windows.Media.TextFormatting.TextSource" />行のテキストのデータ ソースを表すオブジェクト。</param>
+        <param name="firstCharIndex"><see cref="T:System.Int32" />行の先頭の文字の文字インデックスを指定する値。</param>
+        <param name="paragraphProperties">A<see cref="T:System.Windows.Media.TextFormatting.TextParagraphProperties" />フローの方向、配置、またはインデントなどの段落のプロパティを表すオブジェクト。</param>
+        <param name="textRunCache">A<see cref="T:System.Windows.Media.TextFormatting.TextRunCache" />テキストのレイアウトのキャッシュ メカニズムを表すオブジェクト。</param>
+        <summary>指定したテキストの内容を完全に含めることができる最小および最大の段落の幅を表す値を返します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.TextFormatting.MinMaxParagraphWidth" />指定したテキストの内容を完全に含めることができる最小および最大の段落の幅を表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

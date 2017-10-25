@@ -1,0 +1,144 @@
+<Type Name="KeyboardFocusChangedEventArgs" FullName="System.Windows.Input.KeyboardFocusChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class KeyboardFocusChangedEventArgs : System.Windows.Input.KeyboardEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KeyboardFocusChangedEventArgs extends System.Windows.Input.KeyboardEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.KeyboardFocusChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.KeyboardEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供<see cref="E:System.Windows.UIElement.LostKeyboardFocus" />と<see cref="E:System.Windows.UIElement.GotKeyboardFocus" />ルーティング イベントだけでなく関連添付イベントおよびイベントをプレビューします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベント データ クラスは、次の接続されているイベントと共に使用します。  
+  
+-   <xref:System.Windows.Input.Keyboard.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Keyboard.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+ このイベント データ クラスは、基本要素の次のルーティング イベントにも使用されます。 これらのルーティング イベントがより一般的な要素のモデルにアクセスできるようにする上記のアタッチされたイベントを転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+-   <xref:System.Windows.UIElement.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewGotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.GotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.LostKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewGotKeyboardFocus?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>  
+  
+ 添付イベントおよび基本要素のルーティング イベントは、それぞれのイベント データを共有し、バブルとトンネル ルーティング イベントのバージョンは、イベント データを共有もします。 イベント ルートをたどる際は、イベントの処理の特性に影響することができます。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ 場合、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>イベントまたは<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus>イベントが処理される (<xref:System.Windows.RoutedEventArgs.Handled%2A>に設定されている`true`イベント データの)、キーボード フォーカスは変わりません。  
+  
+ 場合、<xref:System.Windows.Input.Keyboard.PreviewGotKeyboardFocus>イベントまたは<xref:System.Windows.Input.Keyboard.PreviewLostKeyboardFocus>イベントが処理される、キーボード フォーカスは変わりません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyboardFocusChangedEventArgs (System.Windows.Input.KeyboardDevice keyboard, int timestamp, System.Windows.IInputElement oldFocus, System.Windows.IInputElement newFocus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.KeyboardDevice keyboard, int32 timestamp, class System.Windows.IInputElement oldFocus, class System.Windows.IInputElement newFocus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyboardFocusChangedEventArgs.#ctor(System.Windows.Input.KeyboardDevice,System.Int32,System.Windows.IInputElement,System.Windows.IInputElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyboard" Type="System.Windows.Input.KeyboardDevice" />
+        <Parameter Name="timestamp" Type="System.Int32" />
+        <Parameter Name="oldFocus" Type="System.Windows.IInputElement" />
+        <Parameter Name="newFocus" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="keyboard">このイベントに関連付けられている論理キーボード デバイス。</param>
+        <param name="timestamp">入力が発生した時刻。</param>
+        <param name="oldFocus">要素は、フォーカスを持っていた。</param>
+        <param name="newFocus">要素は、フォーカスがあるようになりました。</param>
+        <summary><see cref="T:System.Windows.Input.KeyboardFocusChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.KeyboardFocusChangedEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">型固有の方法で呼び出すジェネリック ハンドラー。</param>
+        <param name="genericTarget">ハンドラーを呼び出すターゲット。</param>
+        <summary>イベントのシステムの効率を高めることができます、型固有の方法でイベント ハンドラーを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は、ジェネリック ハンドラーをキャスト、<xref:System.Windows.Input.KeyboardFocusChangedEventHandler>してそれを呼び出します。 この実装パターンとその理由の詳細については、次を参照してください。<xref:System.Windows.RoutedEventArgs.InvokeEventHandler%2A>と[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewFocus">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement NewFocus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement NewFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyboardFocusChangedEventArgs.NewFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスの移動先の要素を取得します。</summary>
+        <value>フォーカスを持つ要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldFocus">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement OldFocus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement OldFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.KeyboardFocusChangedEventArgs.OldFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーカスを持っていた要素を取得します。</summary>
+        <value>フォーカスがあった要素です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

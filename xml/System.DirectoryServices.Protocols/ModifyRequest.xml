@@ -1,0 +1,154 @@
+<Type Name="ModifyRequest" FullName="System.DirectoryServices.Protocols.ModifyRequest">
+  <TypeSignature Language="C#" Value="public class ModifyRequest : System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModifyRequest extends System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.ModifyRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.ModifyRequest" />クラスは、既存のディレクトリ エントリの属性を変更します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModifyRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor" /> コンストラクターは、<see cref="T:System.DirectoryServices.Protocols.ModifyRequest" /> クラスのインスタンスを作成します。 このコンス トラクターでは、空の要求を作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModifyRequest (string distinguishedName, params System.DirectoryServices.Protocols.DirectoryAttributeModification[] modifications);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, class System.DirectoryServices.Protocols.DirectoryAttributeModification[] modifications) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttributeModification[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="modifications" Type="System.DirectoryServices.Protocols.DirectoryAttributeModification[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName">変更するには、オブジェクトの識別名。</param>
+        <param name="modifications">配列<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeModification" />変更内容を指定するオブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttributeModification[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ModifyRequest" />クラスの指定された識別名と変更を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModifyRequest (string distinguishedName, System.DirectoryServices.Protocols.DirectoryAttributeOperation operation, string attributeName, params object[] values);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string distinguishedName, valuetype System.DirectoryServices.Protocols.DirectoryAttributeOperation operation, string attributeName, object[] values) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttributeOperation,System.String,System.Object[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="distinguishedName" Type="System.String" />
+        <Parameter Name="operation" Type="System.DirectoryServices.Protocols.DirectoryAttributeOperation" />
+        <Parameter Name="attributeName" Type="System.String" />
+        <Parameter Name="values" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="distinguishedName">変更するオブジェクトの識別名。</param>
+        <param name="operation">A<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeOperation" />実行する変更を指定するオブジェクト。</param>
+        <param name="attributeName">変更する属性の名前。 このパラメーターを指定できません<see langword="null" />です。</param>
+        <param name="values">属性の新しい値。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyRequest.#ctor(System.String,System.DirectoryServices.Protocols.DirectoryAttributeOperation,System.String,System.Object[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ModifyRequest" />クラスの指定された識別名、変更、属性名、値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DistinguishedName">
+      <MemberSignature Language="C#" Value="public string DistinguishedName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DistinguishedName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyRequest.DistinguishedName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyRequest.DistinguishedName" />プロパティには変更するオブジェクトの識別名が含まれています。</summary>
+        <value>変更するには、オブジェクトの識別名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifications">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DirectoryAttributeModificationCollection Modifications { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.DirectoryAttributeModificationCollection Modifications" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ModifyRequest.Modifications" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DirectoryAttributeModificationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ModifyRequest.Modifications" />プロパティが含まれています、<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeModificationCollection" />属性変更の一覧を指定するオブジェクト。</summary>
+        <value>A<see cref="T:System.DirectoryServices.Protocols.DirectoryAttributeModificationCollection" />属性変更の一覧を指定するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlNode">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlElement ToXmlNode (System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlElement ToXmlNode(class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ModifyRequest.ToXmlNode(System.Xml.XmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="doc"><see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ModifyRequest.ToXmlNode(System.Xml.XmlDocument)" />メソッドから、指定された XML ノードを作成する<see cref="T:System.Xml.XmlDocument" />オブジェクト。</summary>
+        <returns>結果として得られる <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

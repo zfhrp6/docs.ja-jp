@@ -1,0 +1,107 @@
+<Type Name="WorkflowCompiler" FullName="System.Workflow.ComponentModel.Compiler.WorkflowCompiler">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowCompiler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowCompiler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.WorkflowCompiler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>C# または Visual Basic のコードと XAML マークアップを使って開発されたワークフロー用のコンパイラを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler> クラスの新しいインスタンスを作成して <xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler.Compile%2A> メソッドを実行する方法を示しています。 また、このコードでは、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters> クラスの新しいインスタンスを作成して、その値の一部を設定しています。 このコードは `results` が <xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults> 型であることを前提とします。 このコード例は、WizardForm.cs ファイルから抜粋した Outlook ワークフロー ウィザードの SDK サンプルの一部です。 詳細については、次を参照してください。 [Outlook ワークフロー ウィザード](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[WF_Samples#99](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#99)]
+ [!code-vb[WF_Samples#99](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#99)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowCompiler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.WorkflowCompiler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.WorkflowCompiler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler> クラスの新しいインスタンスを作成する方法を示しています。  また、このコードでは、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters> クラスの新しいインスタンスを作成して、その値の一部を設定しています。 このコードは `results` が <xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults> 型であることを前提とします。 このコード例は、WizardForm.cs ファイルから抜粋した Outlook ワークフロー ウィザードの SDK サンプルの一部です。 詳細については、次を参照してください。 [Outlook ワークフロー ウィザード](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+ [!code-csharp[WF_Samples#99](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#99)]
+ [!code-vb[WF_Samples#99](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#99)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compile">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults Compile (System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters parameters, params string[] files);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults Compile(class System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters parameters, string[] files) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.WorkflowCompiler.Compile(System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters" />
+        <Parameter Name="files" Type="System.String[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="parameters"><see cref="T:System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters" />。</param>
+        <param name="files">コンパイルするファイルのパスを表す文字列の配列。 ファイルは、コード ファイル (.vb、.cs など) でもワークフロー マークアップ ファイルでもかまいません。 ワークフロー マークアップ ファイルの拡張子は .xoml として、コンパイラが認識できるようにする必要があります。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters" /> に基づき、指定されたファイルに記述された、ワークフローの一覧をコンパイルします。</summary>
+        <returns>処理結果を表す <see cref="T:System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler.Compile%2A> メソッドの使用方法を示します。 また、このコードでは、<xref:System.Workflow.ComponentModel.Compiler.WorkflowCompiler> クラスと <xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerParameters> クラスの新しいインスタンスを作成して、その値の一部を設定しています。 このコードは `results` が <xref:System.Workflow.ComponentModel.Compiler.WorkflowCompilerResults> 型であることを前提とします。 このコード例は、WizardForm.cs ファイルから抜粋した Outlook ワークフロー ウィザードの SDK サンプルの一部です。 詳細については、次を参照してください。 [Outlook ワークフロー ウィザード](http://msdn.microsoft.com/en-us/7b2ba92b-8456-43f3-87fc-184ffdec4408)です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="files" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

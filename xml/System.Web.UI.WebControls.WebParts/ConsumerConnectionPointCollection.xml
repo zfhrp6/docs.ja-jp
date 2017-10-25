@@ -1,0 +1,254 @@
+<Type Name="ConsumerConnectionPointCollection" FullName="System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection">
+  <TypeSignature Language="C#" Value="public sealed class ConsumerConnectionPointCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConsumerConnectionPointCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンシューマーとして機能する Web パーツ ゾーン内のコントロールの接続ポイントのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンシューマーとして機能する Web パーツ ゾーン内のコントロールは、既定では、1 つのプロバイダーに接続できます。 ただし、ときに、<xref:System.Web.UI.WebControls.WebParts.ConnectionConsumerAttribute.AllowsMultipleConnections%2A>プロパティに設定されている`true`、複数のプロバイダーがコンシューマーに接続できます。  
+  
+ このクラスから継承注、<xref:System.Collections.ReadOnlyCollectionBase>クラス、このコレクションに、厳密に型指定された、非ジェネリック読み取り専用コレクションを作成します。 追加またはインスタンスを作成した後にメンバーを削除することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsumerConnectionPointCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection>コレクション内で項目のないクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsumerConnectionPointCollection (System.Collections.ICollection connectionPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection connectionPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionPoints" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoints">コンシューマー接続ポイントのコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" />クラスの指定したコネクション ポイントのコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection>クラスしに含まれている接続ポイントを追加、`connectionPoints`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionPoints" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">コレクションには、無効な接続ポイントが含まれています。  
+  
+ \- または  
+  
+ コレクションには、重複する ID を持つ項目が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint connectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint connectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.Contains(System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionPoint" Type="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoint">検索する接続ポイント。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />オブジェクトがコレクション内にします。</summary>
+        <returns>
+          <see langword="true" />コンシューマー接続ポイントが、コレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用しているかどうか、 <xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint> 、現在のオブジェクトが含まれている<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection>コレクション。 このメソッドは通常の存在をテストする使用、<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint>にメニュー項目を追加するか、メニュー項目をコレクションから削除するなどのタスクを実行する前にオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.CopyTo(System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる配列<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />現在からコピーされた項目を受け取るオブジェクト<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" />です。</param>
+        <param name="index">コピーされた内容の受信を開始する位置を示す、ターゲット配列内の位置。</param>
+        <summary>すべての項目をコピー、<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" />の場合は、互換性のある 1 次元配列にコレクション<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />オブジェクト、ターゲット配列の指定したインデックスから始まります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、現在の内容をコピーする<xref:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection>に指定した 0 から始まる配列オブジェクト。 項目をコピーするには、対象となる配列の指定したインデックスから始まります。 配列を持つことができますし、構文を使用する配列内の項目にアクセスする、<xref:System.Array>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint Default" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のコンシューマー接続ポイントを取得します。</summary>
+        <value>既定の <see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンシューマー接続を検索する簡単な方法を提供します。 既定の接続ポイントであるコレクションでポイントします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint connectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint connectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.IndexOf(System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionPoint" Type="System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoint">検索する <see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />。</param>
+        <summary>指定したインデックスを決定<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />コレクション内のオブジェクト。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス<paramref name="connectionPoint" />現在内<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection" />、それ以外の場合は、-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたコンシューマー接続ポイント項目がコレクション内に複数ある場合は、最初に見つかった位置のインデックスが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />コレクション内の項目。</param>
+        <summary>整数値で指定された位置に、コレクション内の項目を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、そのインデックス値がわかっている場合、コレクションからの接続ポイントを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ConsumerConnectionPointCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">取得する接続ポイントの接続ポイントの ID を表す文字列値。</param>
+        <summary>指定したコネクション ポイントを取得<see cref="P:System.Web.UI.WebControls.WebParts.ConnectionPoint.ID" />プロパティです。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.ConsumerConnectionPoint" />ID の値に一致するコレクション内で<paramref name="id" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、接続ポイント ID がわかっている場合、接続ポイントをコレクションから取得  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,788 @@
+<Type Name="BaseControlArray" FullName="Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray">
+  <TypeSignature Language="C#" Value="public abstract class BaseControlArray : System.ComponentModel.Component, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract BaseControlArray extends System.ComponentModel.Component implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic 6.0 からアプリケーション内のコントロール配列に共通の基本機能アップグレードを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常から継承していない`BaseControlArray`です。 コントロール配列を作成するにはコントロール配列内のクラスの 1 つから継承、`Microsoft.VisualBasic.Compatibility.VB6`名前空間。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseControlArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyspecialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。 通常、このクラスはクラスのインスタンスを作成するのには使用されない、ため、このコンス トラクターは通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseControlArray (System.ComponentModel.IContainer Container);" />
+      <MemberSignature Language="ILAsm" Value=".method familyspecialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer Container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="Container"><see cref="T:System.ComponentModel.IContainer" />コントロール配列をホストします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray" />クラス、必要に応じて、コンテナーを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 通常、このクラスはクラスのインスタンスを作成するのには使用されない、ため、このコンス トラクターは通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseCanExtend">
+      <MemberSignature Language="C#" Value="protected bool BaseCanExtend (object target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance bool BaseCanExtend(object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseCanExtend(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="target">テスト対象の <see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>コントロールがコントロール配列のメンバーであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />コントロールがコントロール配列のメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの`Protected`メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスを確認してくださいを<paramref name="target" />のコントロール配列の型が正しくです。  
+  
+ オーバーライドする場合<see langword="BaseCanExtend" />派生クラスで呼び出すことはありません、<see langword="BaseCanExtend" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGetIndex">
+      <MemberSignature Language="C#" Value="protected short BaseGetIndex (object ctl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance int16 BaseGetIndex(object ctl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseGetIndex(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctl"><see cref="T:System.Windows.Forms.Control" />インデックスを取得する対象となります。</param>
+        <summary>コントロール配列内のコントロールのインデックスを取得します。</summary>
+        <returns>A<see langword="Short" />コントロール配列内のコントロールのインデックスを表す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの`Protected`メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="BaseGetIndex" />派生クラスで呼び出すことはありません、<see langword="BaseGetIndex" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseGetItem">
+      <MemberSignature Language="C#" Value="protected object BaseGetItem (short Index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance object BaseGetItem(int16 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseGetItem(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Index">コントロール配列内のコントロールのインデックスを表す整数。</param>
+        <summary>コントロール配列内の指定したインデックスのコントロールを取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.Control" />内の指定した<paramref name="Index" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの`Protected`メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="BaseGetItem" />派生クラスで呼び出すことはありません、<see langword="BaseGetItem" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseResetIndex">
+      <MemberSignature Language="C#" Value="protected void BaseResetIndex (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance void BaseResetIndex(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseResetIndex(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>サポートされていません、<see cref="T:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはサポートされていません。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 -  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseSetIndex">
+      <MemberSignature Language="C#" Value="protected void BaseSetIndex (object ctl, short Index, bool fIsDynamic = false);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance void BaseSetIndex(object ctl, int16 Index, bool fIsDynamic) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseSetIndex(System.Object,System.Int16,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctl" Type="System.Object" />
+        <Parameter Name="Index" Type="System.Int16" />
+        <Parameter Name="fIsDynamic" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="ctl"><see cref="T:System.Windows.Forms.Control" />のインデックスを設定します。</param>
+        <param name="Index">A<see langword="Short" />コントロールのインデックスを表す整数。</param>
+        <param name="fIsDynamic">省略可能です。 A<see langword="Boolean" />コントロールがデザイン時に作成されたかどうかを指定する (<see langword="false" />) または実行時に (<see langword="true" />)。</param>
+        <summary>コントロール配列内のコントロールのインデックスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの`Protected`メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="BaseSetIndex" />派生クラスで呼び出すことはありません、<see langword="BaseSetIndex" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseShouldSerializeIndex">
+      <MemberSignature Language="C#" Value="protected bool BaseShouldSerializeIndex (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyinstance bool BaseShouldSerializeIndex(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BaseShouldSerializeIndex(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>コントロールがコントロール配列のメンバーであるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />コントロールがコントロール配列のメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの`Protected`メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="BaseShouldSerialiazeIndex" />派生クラスで呼び出すことはありません、<see langword="BaseShouldSerialiazeIndex" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="components">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.IContainer components;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.ComponentModel.IContainer components" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.components" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール配列のコンテナーを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="controlAddedAtDesignTime">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable controlAddedAtDesignTime;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.Hashtable controlAddedAtDesignTime" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.controlAddedAtDesignTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時または実行時にコントロール配列内のコントロールが作成されたかどうかを追跡するために値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="controls">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable controls;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.Hashtable controls" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.controls" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール配列内のコントロールを表す値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public short Count ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance int16 Count() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.Count" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール配列内のコントロールの数を返します。</summary>
+        <returns>コントロールの数値を含んだ短整数です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用することができます、[をしています.次のステートメントの](~/docs/visual-basic/language-reference/statements/for-next-statement.md)コントロール配列内のコントロールでの操作を実行します。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>コントロール配列内のコントロールによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`disposing パラメーター設定したメソッド`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`disposing パラメーター設定した`false`です。  
+  
+ Disposing パラメーターがの場合`true`、このメソッドは、このコントロールを参照するすべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />、破棄されたのでは、事前に呼び出したオブジェクトを参照しないことを確認<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="fIsEndInitCalled">
+      <MemberSignature Language="C#" Value="protected bool fIsEndInitCalled;" />
+      <MemberSignature Language="ILAsm" Value=".field family bool fIsEndInitCalled" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.fIsEndInitCalled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール配列のコンテナーの初期化コードの実行が完了したかどうかを示す値を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetControlInstanceType">
+      <MemberSignature Language="C#" Value="protected abstract Type GetControlInstanceType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance class System.Type GetControlInstanceType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.GetControlInstanceType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール配列内のコントロールの種類を返します。</summary>
+        <returns>このメソッドはオーバーライドする必要があります。  
+  
+ <see cref="T:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray" />クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。 このクラスは、通常、クラスのインスタンスを作成するのには使用されませんのでこの<see langword="Protected" />メソッドは、通常直接呼び出されることがなく、派生クラスによって呼び出される代わりにします。  
+  
+ <block subset="none" type="note"><para>  
+ 関数し、オブジェクト、<see cref="N:Microsoft.VisualBasic.Compatibility.VB6" />名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+</para></block></returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="GetControlInstanceType" />派生クラスで呼び出すことはありません、<see langword="GetControlInstanceType" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロール配列を反復処理に使用される、列挙子オブジェクトへの参照を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HookUpControlEvents">
+      <MemberSignature Language="C#" Value="protected abstract void HookUpControlEvents (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familynewslot virtual instance void HookUpControlEvents(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.HookUpControlEvents(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Windows.Forms.Control" />。</param>
+        <summary>コントロール配列内のコントロールのイベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはオーバーライドする必要があります。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see langword="HookUpControlEvents" />派生クラスで呼び出すことはありません、<see langword="HookUpControlEvents" />基底クラスのメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="indices">
+      <MemberSignature Language="C#" Value="protected System.Collections.Hashtable indices;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.Collections.Hashtable indices" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.indices" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール配列のインデックスを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LBound">
+      <MemberSignature Language="C#" Value="public short LBound ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance int16 LBound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.LBound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="Short" />コントロール配列の使用できる添字の最小値を格納しています。</summary>
+        <returns>A<see langword="Short" />コントロール配列の下限を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LBound`関数を併用、<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.UBound%2A>コントロール配列のサイズを判断する関数。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (short Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Load(int16 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.Load(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Index">A<see langword="Short" />を表す新しいコントロールのインデックス。</param>
+        <summary>コントロール配列内の新しい要素を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、該当するショートカットは、Visual Basic 6.0 の`Load`新しいコントロール配列要素を動的に作成するための関数。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの初期化を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン環境では、通常、このメソッドを使用してフォームまたは別のコンポーネントで使用するコンポーネントの初期化を開始します。 <xref:MMicrosoft.VisualBasic.Compatibility.VB6.BaseControlArray.System#ComponentModel#ISupportInitialize#EndInit%2A>メソッドが初期化を終了します。 使用して、`BeginInit`と<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.System#ComponentModel#ISupportInitialize#EndInit*>メソッド使用されないように、コントロールが完全に初期化される前にします。 初期化は実行時に発生します。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method newslot virtual instance void EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの初期化を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイン環境では、通常、このメソッドを使用して、フォームまたは別のコンポーネントで使用するコンポーネントの初期化を完了します。 `EndInit`メソッドが初期化を終了します。 使用して、<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.System#ComponentModel#ISupportInitialize#BeginInit>と`EndInit`メソッド使用されないように、コントロールが完全に初期化される前にします。 初期化は実行時に発生します。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UBound">
+      <MemberSignature Language="C#" Value="public short UBound ();" />
+      <MemberSignature Language="ILAsm" Value=".method public instance int16 UBound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.UBound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="Short" />コントロール配列の最も大きいインデックスを格納しています。</summary>
+        <returns>A<see langword="Short" />コントロール配列の上限を格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `UBound`関数を併用、<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.LBound%2A>コントロール配列のサイズを判断する関数。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは Visual Basic 6.0 からアップグレードしたアプリケーションで使用されるすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="public void Unload (short Index);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void Unload(int16 Index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.Unload(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Index" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="Index">A<see langword="Short" />を削除するコントロールのインデックスを表すです。</param>
+        <summary>コントロール配列からコントロールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、該当するショートカットは、Visual Basic 6.0 の`Unload`を動的に制御配列要素を削除する関数。  
+  
+> [!NOTE]
+>  使用して動的に追加されたコントロールのみ、<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray.Load%2A>メソッドは、コントロール配列から削除することができます。  
+  
+ <xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray>クラスは、Visual Basic 6.0 からアップグレードしたアプリケーションで使用されているすべてのコントロール配列の基本クラスです。  
+  
+> [!NOTE]
+>  関数し、オブジェクト、<xref:Microsoft.VisualBasic.Compatibility.VB6>名前空間が使用するために Visual Basic 6.0 からアップグレードするためのツールによって提供されます[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)]です。 ほとんどの場合、これらの関数とオブジェクトの機能と重複を見つけることができる他の名前空間で、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。 必要とされるだけと Visual Basic 6.0 のコード モデルと大きく異なる、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

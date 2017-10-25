@@ -1,0 +1,153 @@
+<Type Name="AttributeInfo" FullName="System.Workflow.ComponentModel.Compiler.AttributeInfo">
+  <TypeSignature Language="C#" Value="public sealed class AttributeInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AttributeInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Compiler.AttributeInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時の型の属性を表すラッパー クラス。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ このクラスを使用して、デザイン時の型 (まだコンパイルされていない型) の属性を表します。 これは、検証がデザイナーからトリガーされた場合にのみ行われます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ArgumentValues">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;object&gt; ArgumentValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;object&gt; ArgumentValues" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.AttributeInfo.ArgumentValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連付けられている各引数を集めたコレクションを取得します。</summary>
+        <value>このインスタンスに関連付けられている各引数の値からなるコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeType">
+      <MemberSignature Language="C#" Value="public Type AttributeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AttributeType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.AttributeInfo.AttributeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスの <see cref="T:System.Type" /> を取得します。</summary>
+        <value>このインスタンスの <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Creatable">
+      <MemberSignature Language="C#" Value="public bool Creatable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Creatable" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Compiler.AttributeInfo.Creatable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスを作成できるかどうかを示す値を取得します。</summary>
+        <value>次のいずれかの条件に一致する場合は <see langword="false" /> を返します。  
+  
+-   この属性を定義している <see cref="T:System.Type" /> の <see cref="P:System.Type.Assembly" /> が null 参照 (Visual Basic では <see langword="Nothing" />) である。  
+  
+-   <see cref="P:System.Workflow.ComponentModel.Compiler.AttributeInfo.ArgumentValues" /> 配列内のいずれかのオブジェクトが <see cref="T:System.Type" /><see cref="T:System.Exception" /> である。  
+  
+ それ以外の場合は、<see langword="true" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttribute">
+      <MemberSignature Language="C#" Value="public Attribute CreateAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Attribute CreateAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.AttributeInfo.CreateAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Attribute</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Compiler.AttributeInfo" /> 型の属性を作成します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Compiler.AttributeInfo" /> 型の属性。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Workflow.ComponentModel.Compiler.AttributeInfo.Creatable" /> は <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetArgumentValueAs">
+      <MemberSignature Language="C#" Value="public object GetArgumentValueAs (IServiceProvider serviceProvider, int argumentIndex, Type requestedType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetArgumentValueAs(class System.IServiceProvider serviceProvider, int32 argumentIndex, class System.Type requestedType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Compiler.AttributeInfo.GetArgumentValueAs(System.IServiceProvider,System.Int32,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+        <Parameter Name="argumentIndex" Type="System.Int32" />
+        <Parameter Name="requestedType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">この操作を補助する <see cref="T:System.IServiceProvider" />。</param>
+        <param name="argumentIndex">引数のコレクションのうち、要求する引数を表す <see langword="integer" /> インデックス。</param>
+        <param name="requestedType">引数の <see cref="T:System.Type" />。</param>
+        <summary>型とインデックスを指定して、このインスタンスの該当する引数を取得します。</summary>
+        <returns>要求された型を <see cref="T:System.Object" /> にキャストしたもの。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="argumentIndex" /> が引数コレクションの範囲を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestedType" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

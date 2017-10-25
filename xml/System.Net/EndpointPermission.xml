@@ -1,0 +1,182 @@
+<Type Name="EndpointPermission" FullName="System.Net.EndpointPermission">
+  <TypeSignature Language="C#" Value="public class EndpointPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit EndpointPermission extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.EndpointPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって承認されているエンドポイントを定義、<see cref="T:System.Net.SocketPermission" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.EndpointPermission>クラスは、ホスト名、ネットワーク ポート番号、および接続するために使用されるトランスポートの種類を含むネットワーク エンドポイントを定義します。  
+  
+> [!NOTE]
+>  これらの名前は、スタックをブロックする IP アドレスに解決する必要があるために、ホスト名を使用してエンドポイントの権限を作成しないでください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.EndpointPermission.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Object" /> と比較する <see langword="Object" />。</param>
+        <summary>指定した <see langword="Object" /> が現在の <see langword="Object" /> と等しいかどうかを示します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see langword="Object" /> と等しい場合は <see langword="Object" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.EndpointPermission.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hostname">
+      <MemberSignature Language="C#" Value="public string Hostname { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Hostname" />
+      <MemberSignature Language="DocId" Value="P:System.Net.EndpointPermission.Hostname" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DNS ホスト名またはこのエンドポイントに関連付けられているサーバーの IP アドレスを取得します。</summary>
+        <value>DNS ホスト名またはサーバーの IP アドレスを表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Port">
+      <MemberSignature Language="C#" Value="public int Port { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Port" />
+      <MemberSignature Language="DocId" Value="P:System.Net.EndpointPermission.Port" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエンドポイントに関連付けられているネットワーク ポート番号を取得します。</summary>
+        <value>この要求に関連付けられているネットワーク ポート番号または<see cref="F:System.Net.SocketPermission.AllPorts" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.EndpointPermission.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Net.EndpointPermission" /> インスタンスを表す文字列を返します。</summary>
+        <returns>現在を表す文字列<see cref="T:System.Net.EndpointPermission" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.EndpointPermission.ToString%2A>メソッドの内容を表す文字列を返します、<xref:System.Net.EndpointPermission>インスタンス。 文字列の形式は<xref:System.Net.EndpointPermission.Hostname%2A>  #  <xref:System.Net.EndpointPermission.Port%2A>  # <xref:System.Net.EndpointPermission.Transport%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.Net.TransportType Transport { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.TransportType Transport" />
+      <MemberSignature Language="DocId" Value="P:System.Net.EndpointPermission.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.TransportType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエンドポイントに関連付けられているトランスポートの種類を取得します。</summary>
+        <value><see cref="T:System.Net.TransportType" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

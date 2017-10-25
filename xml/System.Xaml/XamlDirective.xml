@@ -1,0 +1,663 @@
+<Type Name="XamlDirective" FullName="System.Xaml.XamlDirective">
+  <TypeSignature Language="C#" Value="public class XamlDirective : System.Xaml.XamlMember" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlDirective extends System.Xaml.XamlMember" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlDirective" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlMember</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メンバーは XAML ディレクティブもある場合は、メンバーの XAML 型システム識別子を提供します。 XAML リーダーと XAML ライターを使用して、<see cref="T:System.Xaml.XamlDirective" />メンバー ノードの処理中に識別子。 識別子は、XAML リーダーの位置にある場合、<see cref="F:System.Xaml.XamlNodeType.StartMember" />と<see cref="P:System.Xaml.XamlMember.IsDirective" />は<see langword="true" />します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>メンバーが XAML ディレクティブである場合は、XAML 型システムの予期される値を提供します。 定義上、XAML ディレクティブが常に、同じ結果を返しますのサブセットの特性を持つ、<xref:System.Xaml.XamlMember>プロパティ、および同じ XAML 型システム情報が報告されるすべての可能な XAML ディレクティブです。 内部の動作を使用してまたはのオーバーライドでは実現ディレクティブに固有の XAML 型システムの特性のために報告<xref:System.Xaml.XamlMember>`Lookup*`の仮想メンバー、<xref:System.Xaml.XamlDirective>クラスです。  
+  
+ 次に示します、返される結果の XAML ディレクティブの<xref:System.Xaml.XamlMember>とメンバーは、実際には、 <xref:System.Xaml.XamlDirective>:  
+  
+-   <xref:System.Xaml.XamlMember.LookupCustomAttributeProvider%2A>常に`null`です。  
+  
+-   <xref:System.Xaml.XamlMember.DeferringLoader%2A>常に`null`です。  
+  
+-   <xref:System.Xaml.XamlMember.DependsOn%2A>常に`null`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsAmbient%2A>常に`false`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsAttachable%2A>常に`false`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsDirective%2A>常に`true`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsEvent%2A>常に`false`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsReadOnly%2A>常に`false`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsReadPublic%2A>常に`true`です。  
+  
+-   <xref:System.Xaml.XamlMember.IsWritePublic%2A>常に`true`です。  
+  
+ 内部のバックアップも、<xref:System.Xaml.XamlMember.DeclaringType%2A>が設定されていないと、返す`null`です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlDirective><xref:System.Xaml.XamlMember>サブクラスです。 同様に<xref:System.Xaml.XamlMember>、 <xref:System.Xaml.XamlDirective> XAML 型システムがアクセスを報告する方法に関するセキュリティの考慮事項がします。 「<xref:System.Xaml.XamlMember>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlDirective (string xamlNamespace, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xamlNamespace, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">プライマリの XAML 名前空間でこの<see cref="T:System.Xaml.XamlDirective" />存在できます。</param>
+        <param name="name">識別名、<see cref="T:System.Xaml.XamlDirective" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlDirective" />クラス、名前と単一の XAML 名前空間の値を指定します。 か、想定する場合にのみ、この署名を使用して<see cref="P:System.Xaml.XamlMember.IsUnknown" />レポートに<see langword="true" />ディレクティブにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  コンス トラクターは、この署名は常に、ディレクティブの識別子を生成、<xref:System.Xaml.XamlMember.IsUnknown%2A>レポート`true`xaml 型システム。 必要な情報が利用可能な場合 (バッキング型および変換については、テキスト構文情報項目) ディレクティブを使用して適用可能な識別子をして、<xref:System.Xaml.XamlDirective.%23ctor%2A?displayProperty=nameWithType>コンス トラクター シグネチャ代わりにします。  
+  
+ この署名を使用する場合、<xref:System.Xaml.XamlDirective.AllowedLocation%2A>値、インスタンスは<xref:System.Xaml.Schema.AllowedMemberLocations.Any>; および<xref:System.Xaml.XamlMember.Type%2A>値および<xref:System.Xaml.XamlMember.TypeConverter%2A>値が両方とも`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlDirective (System.Collections.Generic.IEnumerable&lt;string&gt; xamlNamespaces, string name, System.Xaml.XamlType xamlType, System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt; typeConverter, System.Xaml.Schema.AllowedMemberLocations allowedLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;string&gt; xamlNamespaces, string name, class System.Xaml.XamlType xamlType, class System.Xaml.Schema.XamlValueConverter`1&lt;class System.ComponentModel.TypeConverter&gt; typeConverter, valuetype System.Xaml.Schema.AllowedMemberLocations allowedLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.#ctor(System.Collections.Generic.IEnumerable{System.String},System.String,System.Xaml.XamlType,System.Xaml.Schema.XamlValueConverter{System.ComponentModel.TypeConverter},System.Xaml.Schema.AllowedMemberLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlNamespaces" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="xamlType" Type="System.Xaml.XamlType" />
+        <Parameter Name="typeConverter" Type="System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt;" />
+        <Parameter Name="allowedLocation" Type="System.Xaml.Schema.AllowedMemberLocations" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespaces">XAML 名前空間のセットをこの<see cref="T:System.Xaml.XamlDirective" />識別子文字列の列挙可能なセットとして渡される、存在できます。</param>
+        <param name="name">識別名、<see cref="T:System.Xaml.XamlDirective" />です。</param>
+        <param name="xamlType">バックアップする XAML の種類、<see cref="T:System.Xaml.XamlDirective" />です。</param>
+        <param name="typeConverter">型コンバーターは、この<see cref="T:System.Xaml.XamlDirective" />はテキストの構文への変換を使用します。</param>
+        <param name="allowedLocation">値、<see cref="T:System.Xaml.Schema.AllowedMemberLocations" />列挙します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlDirective" />クラス、値の各ケースの値を指定する、<see cref="T:System.Xaml.XamlDirective" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して生成する必要があります、<xref:System.Xaml.XamlDirective>は報告されません<xref:System.Xaml.XamlMember.IsUnknown%2A>として`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="xamlType" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedLocation">
+      <MemberSignature Language="C#" Value="public System.Xaml.Schema.AllowedMemberLocations AllowedLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xaml.Schema.AllowedMemberLocations AllowedLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlDirective.AllowedLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.AllowedMemberLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクティブを指定することができます、XAML ノードの種類を指定する値を取得します。</summary>
+        <value>列挙体の値。 既定値は列挙型の既定値は<see cref="F:System.Xaml.Schema.AllowedMemberLocations.None" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を設定することができます、<xref:System.Xaml.XamlDirective.%23ctor%28System.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.String%2CSystem.Xaml.XamlType%2CSystem.Xaml.Schema.XamlValueConverter%7BSystem.ComponentModel.TypeConverter%7D%2CSystem.Xaml.Schema.AllowedMemberLocations%29>コンス トラクターのシグネチャ。 使用して作成した場合、<xref:System.Xaml.XamlDirective.%23ctor%28System.String%2CSystem.String%29>コンス トラクター シグネチャ、<xref:System.Xaml.XamlDirective.AllowedLocation%2A>値、インスタンスは<xref:System.Xaml.Schema.AllowedMemberLocations.Any>します。 ただし、インスタンス常に報告<xref:System.Xaml.XamlMember.IsUnknown%2A>として`true`です。 通常、この動作に影響オブジェクトは、グラフ化しの他の実際の使用にも影響の書き込み試行、<xref:System.Xaml.XamlMember>値。  
+  
+ 通常は XAML ディレクティブ ケースを構築できません、<xref:System.Xaml.XamlDirective.AllowedLocation%2A>は<xref:System.Xaml.Schema.AllowedMemberLocations?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlNamespaces">
+      <MemberSignature Language="C#" Value="public override System.Collections.Generic.IList&lt;string&gt; GetXamlNamespaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.Generic.IList`1&lt;string&gt; GetXamlNamespaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.GetXamlNamespaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この XAML メンバーが存在できる XAML 名前空間の一覧を返します。</summary>
+        <returns>文字列としての XAML 名前空間の識別子の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML 名前空間の識別子は、XAML および XML 名前空間の通常の規則に従って (Uniform Resource Identifier) の文字列形式に通常表示される文字列です。 一覧に複数の項目が含まれている場合、セットの最初の項目処理する目的で、プライマリ関連の XAML 名前空間は、通常、他のアイテムは代替です。 <xref:System.Xaml.XamlMember.PreferredXamlNamespace%2A?displayProperty=nameWithType>この順序に依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupCustomAttributeProvider">
+      <MemberSignature Language="C#" Value="protected override sealed System.Reflection.ICustomAttributeProvider LookupCustomAttributeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.ICustomAttributeProvider LookupCustomAttributeProvider() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupCustomAttributeProvider" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ICustomAttributeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Reflection.ICustomAttributeProvider" />実装します。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML ディレクティブは、カスタム属性を持つことはできません、ため常にこの実装を返します`null`です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupDeferringLoader">
+      <MemberSignature Language="C#" Value="protected override sealed System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt; LookupDeferringLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.Xaml.XamlDeferringLoader&gt; LookupDeferringLoader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupDeferringLoader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />オブジェクトの XAML 宣言の遅延読み込み中に使用するオブジェクト。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクティブ遅延読み込みができない、ため常にこの実装を返します`null`です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupDependsOn">
+      <MemberSignature Language="C#" Value="protected override sealed System.Collections.Generic.IList&lt;System.Xaml.XamlMember&gt; LookupDependsOn ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlMember&gt; LookupDependsOn() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupDependsOn" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlMember&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一覧を返します<see cref="T:System.Xaml.XamlMember" />オブジェクト。 一覧は、この基準の初期化の順序の依存関係が存在するメンバーを報告<see cref="T:System.Xaml.XamlMember" />です。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML ディレクティブは、初期化の順序を持つことはできません、ため常にこの実装を返します`null`です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupInvoker">
+      <MemberSignature Language="C#" Value="protected override sealed System.Xaml.Schema.XamlMemberInvoker LookupInvoker ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xaml.Schema.XamlMemberInvoker LookupInvoker() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupInvoker" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlMemberInvoker</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlMemberInvoker" />と関連付けられている、<see cref="T:System.Xaml.XamlDirective" />です。</summary>
+        <returns><see cref="T:System.Xaml.Schema.XamlMemberInvoker" />情報<see cref="T:System.Xaml.XamlMember" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出された場合への呼び出しによって<xref:System.Xaml.XamlMember.Invoker%2A>です。  
+  
+ この実装を返します内部静的<xref:System.Xaml.Schema.XamlMemberInvoker>値は、XAML 型システムでディレクティブに固有です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsAmbient">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsAmbient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsAmbient() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsAmbient" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します。 かどうかこの<see cref="T:System.Xaml.XamlMember" />はアンビエント プロパティとして報告します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML ディレクティブは、アンビエント型にすることはできません、ため常にこの実装を返します`false`です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsEvent">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうかこの<see cref="T:System.Xaml.XamlDirective" />イベントを表します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsReadOnly">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します。 かどうかこの<see cref="T:System.Xaml.XamlDirective" />目的の読み取り専用プロパティを表します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義上、ディレクティブは設定可能です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsReadPublic">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsReadPublic ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsReadPublic() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsReadPublic" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうかこの<see cref="T:System.Xaml.XamlDirective" />を持つパブリック プロパティを表す<see langword="get" />アクセサー。</summary>
+        <returns>常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsUnknown">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsUnknown ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsUnknown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsUnknown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうかこの<see cref="T:System.Xaml.XamlDirective" />型およびメンバーの解決に使用されているバックアップ システムによって名前解決ではないメンバーを表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlDirective" />以外で解決可能なメンバーを表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>のみ、この実装では呼び出す基底と以上何も行われません。 基底の実装は、この順序で結果を返します。 結果は内部のリフレクション; に基づいてに並べ替えられます。または、結果が、null 値のチェックに基づいて、<xref:System.Xaml.XamlMember.UnderlyingMember%2A>です。 <xref:System.Xaml.XamlDirective>実装封印この仮想メンバーです。 したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsWriteOnly">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsWriteOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsWriteOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsWriteOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します。 かどうかこの<see cref="T:System.Xaml.XamlDirective" />目的書き込み専用プロパティを表します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsWritePublic">
+      <MemberSignature Language="C#" Value="protected override sealed bool LookupIsWritePublic ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool LookupIsWritePublic() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupIsWritePublic" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返すかどうかこの<see cref="T:System.Xaml.XamlDirective" />を持つパブリック プロパティを表す<see langword="set" />アクセサー。</summary>
+        <returns>常に <see langword="true" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupTargetType">
+      <MemberSignature Language="C#" Value="protected override sealed System.Xaml.XamlType LookupTargetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xaml.XamlType LookupTargetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupTargetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.XamlType" />型の場所、<see cref="T:System.Xaml.XamlMember" />存在できます。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象の種類では無関係ディレクティブです。したがって、この実装は常に返します`null`です。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupType">
+      <MemberSignature Language="C#" Value="protected override sealed System.Xaml.XamlType LookupType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xaml.XamlType LookupType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.XamlType" />メンバーによって使用される型。</summary>
+        <returns><see cref="T:System.Xaml.XamlType" />メンバーによって使用される型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>のみ、この実装では呼び出す基底と以上何も行われません。 基底の実装は、内部リフレクションの場合、またはの null 値のチェックの結果を返します<xref:System.Xaml.XamlMember.UnderlyingMember%2A>、その順序で処理します。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ 「解説」を参照してください<xref:System.Xaml.XamlMember.LookupType%2A?displayProperty=nameWithType>どのような情報の詳細について<xref:System.Xaml.XamlMember.Type%2A>が伴います。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupTypeConverter">
+      <MemberSignature Language="C#" Value="protected override sealed System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt; LookupTypeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.ComponentModel.TypeConverter&gt; LookupTypeConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupTypeConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている型コンバーターの実装を返します<see cref="T:System.Xaml.XamlDirective" />です。</summary>
+        <returns>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />があるインスタンス<see cref="T:System.ComponentModel.TypeConverter" />制約または<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>のみ、この実装では呼び出す基底と以上何も行われません。 「<xref:System.Xaml.XamlMember.LookupTypeConverter%2A?displayProperty=nameWithType>」を参照してください。 <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupUnderlyingGetter">
+      <MemberSignature Language="C#" Value="protected override sealed System.Reflection.MethodInfo LookupUnderlyingGetter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MethodInfo LookupUnderlyingGetter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupUnderlyingGetter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="get" />これに関連付けられているアクセサー<see cref="T:System.Xaml.XamlDirective" />です。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupUnderlyingMember">
+      <MemberSignature Language="C#" Value="protected override sealed System.Reflection.MemberInfo LookupUnderlyingMember ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MemberInfo LookupUnderlyingMember() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupUnderlyingMember" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>CLR 反射を返します<see cref="T:System.Reflection.MemberInfo" />これに関連付けられている<see cref="T:System.Xaml.XamlDirective" />です。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupUnderlyingSetter">
+      <MemberSignature Language="C#" Value="protected override sealed System.Reflection.MethodInfo LookupUnderlyingSetter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Reflection.MethodInfo LookupUnderlyingSetter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.LookupUnderlyingSetter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see langword="set" />これに関連付けられているアクセサー<see cref="T:System.Xaml.XamlDirective" />です。 この実装は常に返します<see langword="null" />です。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlDirective>この仮想メンバーをシールします。したがって、すべて<xref:System.Xaml.XamlDirective>型および定義済みのすべての XAML ディレクティブは、この動作を使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlDirective.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Xaml.XamlDirective" />です。</summary>
+        <returns>この文字列表現<see cref="T:System.Xaml.XamlDirective" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装での文字列の組み合わせが返されます XAML 名前空間情報が利用可能な場合は、<xref:System.Xaml.XamlMember.PreferredXamlNamespace%2A>と<xref:System.Xaml.XamlMember.Name%2A>です。 この実装を返しますのかどうかは XAML 名前空間情報は使用できません、<xref:System.Xaml.XamlMember.Name%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

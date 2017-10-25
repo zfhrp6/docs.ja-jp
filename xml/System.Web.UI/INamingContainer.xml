@@ -1,0 +1,32 @@
+<Type Name="INamingContainer" FullName="System.Web.UI.INamingContainer">
+  <TypeSignature Language="C#" Value="public interface INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.INamingContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>内で新しい ID の名前空間を作成するコンテナー コントロールを識別、<see cref="T:System.Web.UI.Page" />オブジェクトのコントロールの階層です。 これは、マーカー インターフェイスのみです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装する任意のコントロールでは、すべての子コントロールの ID 属性が全体のアプリケーション内で一意である保証は新しい名前空間を作成します。 このインターフェイスによって提供される、マーカーは、データ バインディングをサポートする Web サーバー コントロールに動的に生成されたサーバー コントロールのインスタンスの一意の名前を使用できます。 これらのコントロール、 <xref:System.Web.UI.WebControls.Repeater>、 <xref:System.Web.UI.WebControls.DataGrid>、 <xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.CheckBoxList>、 <xref:System.Web.UI.WebControls.ChangePassword>、 <xref:System.Web.UI.WebControls.LoginView>、 <xref:System.Web.UI.WebControls.Menu>、 <xref:System.Web.UI.WebControls.SiteMapNodeItem>、および<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ テンプレート コントロールを開発する場合は、名前付けのページの競合を回避するには、このインターフェイスを実装する必要があります。 詳細については、次を参照してください。 [ASP.NET コントロール デザイナーの概要](http://msdn.microsoft.com/library/1d5a99d7-0a72-403e-812e-2c1ab595c810)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを実装するカスタム テンプレートのサーバー コントロール、<xref:System.Web.UI.INamingContainer>インターフェイスです。 .Aspx ファイルでこのカスタム サーバー コントロールを使用するときに、一意の名前空間をそれに含まれるサーバー コントロールを提供します。  
+  
+ [!code-csharp[TemplatedDataBoundControl -- RepeaterItem to compile with#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TemplatedDataBoundControl -- RepeaterItem to compile with/CS/repeateritem.cs#1)]
+ [!code-vb[TemplatedDataBoundControl -- RepeaterItem to compile with#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TemplatedDataBoundControl -- RepeaterItem to compile with/VB/repeateritem.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

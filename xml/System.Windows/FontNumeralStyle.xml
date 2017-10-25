@@ -1,0 +1,91 @@
+<Type Name="FontNumeralStyle" FullName="System.Windows.FontNumeralStyle">
+  <TypeSignature Language="C#" Value="public enum FontNumeralStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FontNumeralStyle extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.FontNumeralStyle" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>数字の種類について説明します、<see cref="T:System.Windows.Documents.Typography" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OpenType フォントでは、古いスタイル数字形式をサポートします。 この形式は、もはや標準ではなくなったスタイルで数字を表示するのに便利です。 次のテキストは、Palatino Linotype フォントの標準と古いスタイルの数値表示形式で 18 世紀日付を表示します。  
+  
+ ![OpenType の古いスタイルの数字を使用してテキストを](~/add/media/opentypefont24.gif "OpenType の古いスタイルの数字を使用するテキスト")  
+標準と古いスタイルの数字の例  
+  
+ 次のテキストは、Palatino Linotype フォントの標準の数字と、旧式スタイルの数字を示したものです。  
+  
+ ![OpenType 古いスタイルの数字セットを使用してテキストを](~/add/media/opentypefont13.gif "OpenType 古いスタイルの数字セットを使用するテキスト")  
+標準および古いスタイルの数字セットの例  
+  
+> [!NOTE]
+>  ほとんどの OpenType フォントでは、使用可能な合計 OpenType 機能のサブセットのみを公開します。 指定したフォントが特定の機能をサポートしていない場合は、既定のグリフが代わりに使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを使用して、Palatino Linotype フォントの古いスタイルの数字を定義する方法を示しています、<xref:System.Windows.Documents.Typography>オブジェクト。  
+  
+ [!code-xaml[OpenTypeFontSamples#11](~/samples/snippets/csharp/VS_Snippets_Wpf/OpenTypeFontSamples/CS/PageOne.xaml#11)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Lining">
+      <MemberSignature Language="C#" Value="Lining" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralStyle Lining = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralStyle.Lining" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ライニング数字形式が使用されます。 偶数の高さの数値の形式と既定のグリフを置き換えます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralStyle Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralStyle.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の数字のスタイルが使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OldStyle">
+      <MemberSignature Language="C#" Value="OldStyle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.FontNumeralStyle OldStyle = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.FontNumeralStyle.OldStyle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontNumeralStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>古いスタイルの数字形式が使用されます。 既定のグリフの高さおよび色に小文字に一致するスタイルを図に置き換えます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

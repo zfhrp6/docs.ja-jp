@@ -1,0 +1,1195 @@
+<Type Name="MailMessage" FullName="System.Net.Mail.MailMessage">
+  <TypeSignature Language="C#" Value="public class MailMessage : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MailMessage extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.MailMessage" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>使用して送信される電子メール メッセージを表す、<see cref="T:System.Net.Mail.SmtpClient" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Net.Mail.MailMessage>クラスが配信を使用する SMTP サーバーに送信される電子メール メッセージを構築するために使用される、<xref:System.Net.Mail.SmtpClient>クラスです。  
+  
+ 送信者、受信者、件名、および電子メール メッセージの本文をパラメーターとして指定することがあるときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>初期化するために使用される、<xref:System.Net.Mail.MailMessage>オブジェクト。 これらのパラメーターも設定することがまたはのプロパティを使用してアクセス、<xref:System.Net.Mail.MailMessage>オブジェクト。  
+  
+ 次のプロパティを使用して、プライマリ メール メッセージのヘッダーとメッセージの要素を設定が、<xref:System.Net.Mail.MailMessage>クラスです。  
+  
+|メール ヘッダー全体または一部|プロパティ|  
+|-------------------------|--------------|  
+|Attachments|<xref:System.Net.Mail.MailMessage.Attachments%2A>|  
+|ブラインド カーボン コピー (BCC)|<xref:System.Net.Mail.MailMessage.Bcc%2A>|  
+|カーボン コピー (CC)|<xref:System.Net.Mail.MailMessage.CC%2A>|  
+|コンテンツの種類|<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>|  
+|カスタム ヘッダーのエンコード|<xref:System.Net.Mail.MailMessage.HeadersEncoding%2A>|  
+|メッセージ本文|<xref:System.Net.Mail.MailMessage.Body%2A>|  
+|優先度|<xref:System.Net.Mail.MailMessage.Priority%2A>|  
+|受信者|<xref:System.Net.Mail.MailMessage.To%2A>|  
+|返信先|<xref:System.Net.Mail.MailMessage.ReplyToList%2A>|  
+|送信者|<xref:System.Net.Mail.MailMessage.From%2A>|  
+|Subject|<xref:System.Net.Mail.MailMessage.Subject%2A>|  
+  
+ <xref:System.Net.Mail.MailMessage>クラスでは、アプリケーションを使用して、メッセージのヘッダーのコレクションにアクセスすることもできます、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティです。 このコレクションは読み取り専用 (新しいコレクションされません設定できます)、カスタム ヘッダーに追加できるかをこのコレクションから削除します。 追加された任意のカスタム ヘッダーが含まれます場合に、<xref:System.Net.Mail.MailMessage>インスタンスを送信します。 ヘッダーのみが具体的にはこのコレクションに追加、メッセージを送信する前に、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティがコレクションに含まれています。 後に、<xref:System.Net.Mail.MailMessage>インスタンスを送信すると、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティは、の関連するプロパティを使用して設定されているヘッダーも含まれます、<xref:System.Net.Mail.MailMessage>クラスまたはパラメーターを渡すときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>初期化するために使用される、<xref:System.Net.Mail.MailMessage>オブジェクト。  
+  
+ 一部のメール ヘッダーが正しくない場合は、電子メール メッセージが破損する可能性があります。 ヘッダーのコレクションのプロパティを使用して設定できるため、メール ヘッダー、<xref:System.Net.Mail.MailMessage>を使用してクラスを設定する必要がありますのみ、<xref:System.Net.Mail.MailMessage>クラスのプロパティまたはパラメーターとして渡すときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>を初期化、<xref:System.Net.Mail.MailMessage>オブジェクト。 使用してメール ヘッダーの次の一覧を追加する必要がありますいない、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティおよび任意の値を使用してこれらのヘッダーを設定、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティを破棄またはメッセージが送信されたときに上書きされます。  
+  
+-   [Bcc]  
+  
+-   Cc  
+  
+-   コンテンツ ID  
+  
+-   コンテンツの場所  
+  
+-   コンテンツ転送エンコード  
+  
+-   コンテンツの種類  
+  
+-   日付  
+  
+-   変換前  
+  
+-   重要度  
+  
+-   MIME バージョン  
+  
+-   優先度  
+  
+-   返信先  
+  
+-   送信者  
+  
+-   目的  
+  
+-   優先度の X  
+  
+ かどうか、アプリケーションで指定されない X 送信者ヘッダーを使用して、 <xref:System.Net.Mail.MailMessage.Headers%2A> 、プロパティ、<xref:System.Net.Mail.MailMessage>クラスが作成されます、メッセージが送信されるとします。  
+  
+ 使用して、<xref:System.Net.Mail.MailMessage.AlternateViews%2A>さまざまな形式の電子メール メッセージのコピーを指定するプロパティです。 たとえば、html 形式でメッセージを送信する場合をすることも HTML コンテンツを表示できない電子メール プログラムを使用して一部の受信者場合に、プレーン テキスト バージョンを提供します。 代替ビューでメッセージを作成するかを示す例を次を参照してください。<xref:System.Net.Mail.MailMessage.AlternateViews%2A>です。  
+  
+ 使用して、<xref:System.Net.Mail.MailMessage.Attachments%2A>電子メール メッセージに添付ファイルを追加するプロパティです。 例については、ファイルが添付されたメッセージを作成するかを示す、次を参照してください。<xref:System.Net.Mail.MailMessage.Attachments%2A>です。  
+  
+ 電子メール メッセージをアセンブルするには、後に送信できますを使用して、<xref:System.Net.Mail.SmtpClient.Send%2A>または<xref:System.Net.Mail.SmtpClient.SendAsync%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成、添付ファイルを含む電子メール メッセージを送信する方法について説明します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Mail.MailMessage" /> クラスの空のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MailSettings のネットワーク要素の値に設定されて[&lt;smtp&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/smtp-element-network-settings.md)存在する場合、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessage (System.Net.Mail.MailAddress from, System.Net.Mail.MailAddress to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.Mail.MailAddress from, class System.Net.Mail.MailAddress to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.#ctor(System.Net.Mail.MailAddress,System.Net.Mail.MailAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="from" Type="System.Net.Mail.MailAddress" />
+        <Parameter Name="to" Type="System.Net.Mail.MailAddress" />
+      </Parameters>
+      <Docs>
+        <param name="from">A<see cref="T:System.Net.Mail.MailAddress" />電子メール メッセージの送信者のアドレスを格納しています。</param>
+        <param name="to">A<see cref="T:System.Net.Mail.MailAddress" />電子メール メッセージの受信者のアドレスを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.MailMessage" />クラスを指定して<see cref="T:System.Net.Mail.MailAddress" />クラス オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.From%2A>を使用してプロパティを初期化`from`と<xref:System.Net.Mail.MailMessage.To%2A>を使用してプロパティを初期化`to`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailSync#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#4)]
+ [!code-csharp[NclMailSync#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="from" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="to" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="from" />または<paramref name="to" />形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessage (string from, string to);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string from, string to) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="from" Type="System.String" />
+        <Parameter Name="to" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="from">A<see cref="T:System.String" />電子メール メッセージの送信者のアドレスを格納しています。</param>
+        <param name="to">A<see cref="T:System.String" />電子メール メッセージの受信者のアドレスを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.MailMessage" />クラスを指定して<see cref="T:System.String" />クラス オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.From%2A>を使用してプロパティを初期化`from`と<xref:System.Net.Mail.MailMessage.To%2A>を使用してプロパティを初期化`to`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailSync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#2)]
+ [!code-csharp[NclMailSync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="from" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="to" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="from" /><see cref="F:System.String.Empty" /> ("") です。  
+  
+ または  
+  
+ <paramref name="to" /><see cref="F:System.String.Empty" /> ("") です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="from" />または<paramref name="to" />形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MailMessage (string from, string to, string subject, string body);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string from, string to, string subject, string body) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="from" Type="System.String" />
+        <Parameter Name="to" Type="System.String" />
+        <Parameter Name="subject" Type="System.String" />
+        <Parameter Name="body" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="from">A<see cref="T:System.String" />電子メール メッセージの送信者のアドレスを格納しています。</param>
+        <param name="to">A<see cref="T:System.String" />電子メール メッセージの受信者のアドレスを格納します。</param>
+        <param name="subject">A<see cref="T:System.String" />件名のテキストを格納しています。</param>
+        <param name="body">A<see cref="T:System.String" />メッセージの本文を格納しています。</param>
+        <summary><see cref="T:System.Net.Mail.MailMessage" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいプロパティ<xref:System.Net.Mail.MailMessage>オブジェクトが次のように初期化されます。  
+  
+|パラメーター|プロパティ|  
+|---------------|--------------|  
+|`from`|<xref:System.Net.Mail.MailMessage.From%2A>|  
+|-   `to`|-   <xref:System.Net.Mail.MailMessage.To%2A>|  
+|-   `subject`|-   <xref:System.Net.Mail.MailMessage.Subject%2A>|  
+|-   `body`|-   <xref:System.Net.Mail.MailMessage.Body%2A>|  
+  
+ 既定では、件名と内容とローカル コンピューターの設定に基づいて既定のエンコーディングを使用して判断します。 使用して、<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>と<xref:System.Net.Mail.MailMessage.SubjectEncoding%2A>プロパティをさまざまなエンコードを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailSync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#3)]
+ [!code-csharp[NclMailSync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="from" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="to" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="from" /><see cref="F:System.String.Empty" /> ("") です。  
+  
+ または  
+  
+ <paramref name="to" /><see cref="F:System.String.Empty" /> ("") です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="from" />または<paramref name="to" />形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateViews">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.AlternateViewCollection AlternateViews { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.AlternateViewCollection AlternateViews" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.AlternateViews" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.AlternateViewCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ本文の代替フォームの格納に使用される添付データのコレクションを取得します。</summary>
+        <value>書き込み可能な<see cref="T:System.Net.Mail.AlternateViewCollection" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.Mail.MailMessage.AlternateViews%2A>さまざまな形式の電子メール メッセージのコピーを指定するプロパティです。 たとえば、html 形式でメッセージを送信する場合をすることも HTML コンテンツを表示できない電子メール プログラムを使用して一部の受信者場合に、プレーン テキスト バージョンを提供します。  
+  
+ 代替のビューを追加する、<xref:System.Net.Mail.MailMessage>オブジェクトを作成、<xref:System.Net.Mail.Attachment>ビューでは、ビューによって返されるコレクションに追加し、<xref:System.Net.Mail.MailMessage.AlternateViews%2A>です。 使用して、<xref:System.Net.Mail.MailMessage.Body%2A>テキスト バージョンを指定し、使用するプロパティ、<xref:System.Net.Mail.MailMessage.AlternateViews%2A>ビューを他の MIME の種類を指定するコレクション。 使用して、<xref:System.Net.Mime.MediaTypeNames>クラスのメンバーを別のビューの MIME の種類を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成、プレーン テキストと HTML の代替ビューで電子メール メッセージを送信する方法について説明します。  
+  
+ [!code-cpp[NclMailSync#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#5)]
+ [!code-csharp[NclMailSync#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="none" />
+      </Docs>
+    </Member>
+    <Member MemberName="Attachments">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.AttachmentCollection Attachments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.AttachmentCollection Attachments" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Attachments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.AttachmentCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この電子メール メッセージに添付されているデータの格納に使用される添付データのコレクションを取得します。</summary>
+        <value>書き込み可能な<see cref="T:System.Net.Mail.AttachmentCollection" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるコレクションを使用して、<xref:System.Net.Mail.MailMessage.Attachments%2A>ファイルの内容など、添付ファイルを追加するプロパティ、 <xref:System.IO.Stream>、これを<xref:System.Net.Mail.MailMessage>です。  
+  
+ 作成、<xref:System.Net.Mail.Attachment>が含まれていますか、アタッチしてから、追加データを参照している、<xref:System.Net.Mail.Attachment>によって返されるコレクションに<xref:System.Net.Mail.MailMessage.Attachments%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、作成、ファイルが添付された電子メール メッセージを送信する方法について説明します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None" />
+      </Docs>
+    </Member>
+    <Member MemberName="Bcc">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddressCollection Bcc { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddressCollection Bcc" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Bcc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この電子メール メッセージのブラインド カーボン コピー (BCC) 受信者を格納するアドレスのコレクションを取得します。</summary>
+        <value>書き込み可能な <see cref="T:System.Net.Mail.MailAddressCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 電子メール メッセージには、[bcc] 受信者を追加するには、作成、<xref:System.Net.Mail.MailAddress>の受信者のアドレス、およびによって返されるコレクションにそのオブジェクトを追加、<xref:System.Net.Mail.MailMessage.Bcc%2A>プロパティです。  
+  
+ 受信者に電子メール メッセージを表示するときに、<xref:System.Net.Mail.MailMessage.Bcc%2A>アドレスは通常、表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アドレスを追加することを示しています、<xref:System.Net.Mail.MailMessage.Bcc%2A>アドレスのコレクション。  
+  
+ [!code-cpp[NclMailSync#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#9)]
+ [!code-csharp[NclMailSync#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None" />
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public string Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Body" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージの本文を設定します。</summary>
+        <value>A<see cref="T:System.String" />本文テキストを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentType>の<xref:System.Net.Mail.MailMessage.Body%2A>コンテンツが「テキスト/プレーン」です。 本文で使用されるエンコーディングを指定する、<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>プロパティです。  
+  
+ 使用して、本文の内容の代替ビューを指定するには、本文の内容が豊富なプレゼンテーション オプション、受信者を指定する別の形式で使用可能な場合は、<xref:System.Net.Mail.MailMessage.AlternateViews%2A>プロパティです。 たとえば、アプリケーションは、プレーン テキストの本文とメッセージ本文の HTML のバージョンの両方を送信することもできます。 HTML を表示できる電子メール プログラムに提示できる本文の HTML バージョン受信者、HTML を表示できないリーダーはプレーン テキスト バージョンのメッセージが表示される代わりにします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Net.Mail.MailMessage.Body%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#2)]
+ [!code-csharp[NclMailSync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding BodyEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding BodyEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.BodyEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメッセージ本文をエンコードするために使用するエンコーディングを設定します。</summary>
+        <value><see cref="T:System.Text.Encoding" />の内容に適用する、<see cref="P:System.Net.Mail.MailMessage.Body" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された値、<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>プロパティは、コンテンツ タイプ ヘッダーで、文字セットのフィールドを設定します。 既定の文字セットは`"us-ascii"`します。  
+  
+ 設定した場合、<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>プロパティを<xref:System.Text.Encoding.UTF8%2A>、 <xref:System.Text.Encoding.Unicode%2A>、または<xref:System.Text.Encoding.UTF32%2A>、フレームワークを選択、<xref:System.Net.Mime.TransferEncoding>の<xref:System.Net.Mime.TransferEncoding.Base64>この<xref:System.Net.Mail.MailMessage>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、UTF8 エンコーディングを使用する電子メール メッセージを作成するを示します。  
+  
+ [!code-cpp[NclMailAsync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailASync/cpp/mailasync.cpp#3)]
+ [!code-csharp[NclMailAsync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailASync/CS/mailasync.cs#3)]
+ [!code-vb[NclMailAsync#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclMailASync/vb/mailasync.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BodyTransferEncoding">
+      <MemberSignature Language="C#" Value="public System.Net.Mime.TransferEncoding BodyTransferEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mime.TransferEncoding BodyTransferEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.BodyTransferEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mime.TransferEncoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の転送エンコード メッセージの本文をエンコードするために使用します。</summary>
+        <value><see cref="T:System.Net.Mime.TransferEncoding" /> を返します。  
+  
+ A<see cref="T:System.Net.Mime.TransferEncoding" />の内容に適用する、<see cref="P:System.Net.Mail.MailMessage.Body" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CC">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddressCollection CC { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddressCollection CC" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.CC" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この電子メール メッセージのカーボン コピー (CC) 受信者を格納するアドレスのコレクションを取得します。</summary>
+        <value>書き込み可能な <see cref="T:System.Net.Mail.MailAddressCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 電子メール メッセージには、[cc] 受信者を追加するには、作成、<xref:System.Net.Mail.MailAddress>受信者のアドレスし、によって返されるコレクションにそのオブジェクトを追加、<xref:System.Net.Mail.MailMessage.CC%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アドレスを追加することを示しています、<xref:System.Net.Mail.MailMessage.CC%2A>アドレスのコレクション。  
+  
+ [!code-cpp[NclMailSync#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#10)]
+ [!code-csharp[NclMailSync#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None" />
+      </Docs>
+    </Member>
+    <Member MemberName="DeliveryNotificationOptions">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.DeliveryNotificationOptions DeliveryNotificationOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.DeliveryNotificationOptions DeliveryNotificationOptions" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.DeliveryNotificationOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.DeliveryNotificationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージの配信通知を設定します。</summary>
+        <value>A<see cref="T:System.Net.Mail.DeliveryNotificationOptions" />このメッセージの配信通知を含む値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Net.Mail.MailMessage" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.Dispose%2A> メソッドは、<xref:System.Net.Mail.MailMessage> の使用が完了したときに呼び出します。 <xref:System.Net.Mail.MailMessage.Dispose%2A> メソッドによって、<xref:System.Net.Mail.MailMessage> は使用不可の状態になります。 呼び出した後<xref:System.Net.Mail.MailMessage.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Net.Mail.MailMessage>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Net.Mail.MailMessage>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Net.Mail.MailMessage.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Net.Mail.MailMessage> を呼び出してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、disposing を示しています、<xref:System.Net.Mail.MailMessage>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.MailMessage.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Net.Mail.MailMessage" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.Net.Mail.MailMessage>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddress From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddress From" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、この電子メール メッセージの差出人アドレスです。</summary>
+        <value>A<see cref="T:System.Net.Mail.MailAddress" />を含む、アドレス情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレスが検証されないか、現在ログオンしているユーザーに関連付けられています。  
+  
+   
+  
+## Examples  
+ 値を設定する次のコード例を示します、<xref:System.Net.Mail.MailMessage.From%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#10](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#10)]
+ [!code-csharp[NclMailSync#10](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この電子メール メッセージと共に送信される電子メールのヘッダーを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Specialized.NameValueCollection" />電子メールのヘッダーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.Headers%2A>プロパティでは、メッセージのヘッダーのコレクションにアクセスするアプリケーション。 このコレクションは読み取り専用 (新しいコレクションされません設定できます)、カスタム ヘッダーに追加できるかをこのコレクションから削除します。 追加された任意のカスタム ヘッダーが含まれます場合に、<xref:System.Net.Mail.MailMessage>インスタンスを送信します。 ヘッダーのみが具体的にはこのコレクションに追加、メッセージを送信する前に、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティがコレクションに含まれています。 後に、<xref:System.Net.Mail.MailMessage>インスタンスを送信すると、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティは、の関連するプロパティを使用して設定されているヘッダーも含まれます、<xref:System.Net.Mail.MailMessage>クラスまたはパラメーターを渡すときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>初期化するために使用される、<xref:System.Net.Mail.MailMessage>オブジェクト。  
+  
+ 一部のメール ヘッダーが正しくない場合は、電子メール メッセージが破損する可能性があります。 ヘッダーのコレクションのプロパティを使用して設定できるため、メール ヘッダー、<xref:System.Net.Mail.MailMessage>を使用してクラスを設定する必要がありますのみ、<xref:System.Net.Mail.MailMessage>クラスのプロパティまたはパラメーターとして渡すときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>を初期化、<xref:System.Net.Mail.MailMessage>オブジェクト。 使用してメール ヘッダーの次の一覧を追加する必要がありますいない、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティおよび任意の値を使用してこれらのヘッダーを設定、<xref:System.Net.Mail.MailMessage.Headers%2A>プロパティを破棄またはメッセージが送信されたときに上書きされます。  
+  
+-   [Bcc]  
+  
+-   Cc  
+  
+-   コンテンツ ID  
+  
+-   コンテンツの場所  
+  
+-   コンテンツ転送エンコード  
+  
+-   コンテンツの種類  
+  
+-   日付  
+  
+-   変換前  
+  
+-   重要度  
+  
+-   MIME バージョン  
+  
+-   優先度  
+  
+-   返信先  
+  
+-   送信者  
+  
+-   目的  
+  
+-   優先度の X  
+  
+ かどうか、アプリケーションで指定されない X 送信者ヘッダーを使用して、 <xref:System.Net.Mail.MailMessage.Headers%2A> 、プロパティ、<xref:System.Net.Mail.MailMessage>クラスが作成されます、メッセージが送信されるとします。  
+  
+ 送信者、受信者、件名、および電子メール メッセージの本文をパラメーターとして指定することがあるときに、<xref:System.Net.Mail.MailMessage.%23ctor%2A>初期化するために使用される、<xref:System.Net.Mail.MailMessage>オブジェクト。 これらのパラメーターも設定することがまたはのプロパティを使用してアクセス、<xref:System.Net.Mail.MailMessage>オブジェクト。  
+  
+ 次のプロパティを使用して、プライマリ メール メッセージのヘッダーとメッセージの要素を設定が、<xref:System.Net.Mail.MailMessage>クラスです。  
+  
+|メール ヘッダー全体または一部|プロパティ|  
+|-------------------------|--------------|  
+|Attachments|<xref:System.Net.Mail.MailMessage.Attachments%2A>|  
+|ブラインド カーボン コピー (BCC)|<xref:System.Net.Mail.MailMessage.Bcc%2A>|  
+|カーボン コピー (CC)|<xref:System.Net.Mail.MailMessage.CC%2A>|  
+|コンテンツの種類|<xref:System.Net.Mail.MailMessage.BodyEncoding%2A>|  
+|カスタム ヘッダーのエンコード|<xref:System.Net.Mail.MailMessage.HeadersEncoding%2A>|  
+|メッセージ本文|<xref:System.Net.Mail.MailMessage.Body%2A>|  
+|優先度|<xref:System.Net.Mail.MailMessage.Priority%2A>|  
+|受信者|<xref:System.Net.Mail.MailMessage.To%2A>|  
+|返信先|<xref:System.Net.Mail.MailMessage.ReplyToList%2A>|  
+|送信者|<xref:System.Net.Mail.MailMessage.From%2A>|  
+|Subject|<xref:System.Net.Mail.MailMessage.Subject%2A>|  
+  
+   
+  
+## Examples  
+ 次のコード例では、メール メッセージのヘッダーを表示するを示します。  
+  
+ [!code-cpp[NclMailSync#24](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#24)]
+ [!code-csharp[NclMailSync#24](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeadersEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding HeadersEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding HeadersEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.HeadersEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージのユーザー定義のカスタム ヘッダーに使用されるエンコーディングを設定します。</summary>
+        <value>この電子メール メッセージのユーザー定義のカスタム ヘッダーを使用するエンコーディング。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Net.Mail.MailMessage.HeadersEncoding%2A>プロパティの既定値<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>です。  
+  
+ SMTP メッセージは、ヘッダーと本文の各部分で構成されます。 Smtp 用 IETF Rfc は、ヘッダーと本文部分の名前を ASCII に制限します。 ただし、IETF Rfc には、ヘッダーと本文パーツの値を Unicode 文字を含むことができるようにします。 特定の値で非 ASCII 文字が存在する場合はエンコード値を組み合わせて使用する文字のエンコード (UTF8 または例については、Shift JIS) 続くバイト エンコーディング (<xref:System.Net.Mime.TransferEncoding.Base64>または<xref:System.Net.Mime.TransferEncoding.QuotedPrintable>など)。 結果は、通常の ASCII 文字のみが、ネットワーク転送のストリームであります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBodyHtml">
+      <MemberSignature Language="C#" Value="public bool IsBodyHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBodyHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.IsBodyHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メール メッセージの本文が html 形式であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />メッセージ本文が Html 以外の場合else <see langword="false" />. 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Priority">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailPriority Priority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.MailPriority Priority" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Priority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージの優先順位を設定します。</summary>
+        <value>A<see cref="T:System.Net.Mail.MailPriority" />このメッセージの優先度を格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplyTo">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddress ReplyTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddress ReplyTo" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.ReplyTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use ReplyToList instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメール メッセージの ReplyTo アドレスを設定します。</summary>
+        <value>値を示す MailAddress、<see cref="P:System.Net.Mail.MailMessage.ReplyTo" />フィールドです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.Mail.MailMessage.ReplyTo%2A>プロパティ以外の場合、アドレスを示すために、<xref:System.Net.Mail.MailMessage.From%2A>を使用してこのメッセージに返信するアドレス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplyToList">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddressCollection ReplyToList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddressCollection ReplyToList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.ReplyToList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメール メッセージの返信先アドレスの一覧を設定します。</summary>
+        <value>メール メッセージの返信先アドレスの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.Mail.MailMessage.ReplyToList%2A>プロパティ以外のアドレスの一覧を示すために、<xref:System.Net.Mail.MailMessage.From%2A>を使用してこのメッセージに返信するアドレス。  
+  
+ <xref:System.Net.Mail.MailMessage.ReplyToList%2A>プロパティ置換、<xref:System.Net.Mail.MailMessage.ReplyTo%2A>プロパティのみに応答する 1 つのアドレスを許可します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sender">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddress Sender { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddress Sender" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Sender" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージの送信者のアドレスを設定します。</summary>
+        <value>A<see cref="T:System.Net.Mail.MailAddress" />送信者のアドレス情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信者のアドレスが検証されないか、現在ログオンしているユーザーに関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subject">
+      <MemberSignature Language="C#" Value="public string Subject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Subject" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.Subject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージの件名行を設定します。</summary>
+        <value>A<see cref="T:System.String" />件名の内容を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブジェクトを使用して使用するエンコーディングを指定する、<xref:System.Net.Mail.MailMessage.SubjectEncoding%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Net.Mail.MailMessage.Subject%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#2)]
+ [!code-csharp[NclMailSync#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubjectEncoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding SubjectEncoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding SubjectEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.SubjectEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの電子メール メッセージの件名の内容に使用されるエンコーディングを設定します。</summary>
+        <value><see cref="T:System.Text.Encoding" />エンコードに使用された、<see cref="P:System.Net.Mail.MailMessage.Subject" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メール エージェントに問題がある場合、<xref:System.Net.Mail.MailMessage.SubjectEncoding%2A>の<xref:System.Text.Encoding.Unicode%2A>を使用して<xref:System.Text.Encoding.UTF8%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Net.Mail.MailMessage.SubjectEncoding%2A>プロパティです。  
+  
+ [!code-cpp[NclMailASync#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailASync/cpp/mailasync.cpp#3)]
+ [!code-csharp[NclMailASync#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailASync/CS/mailasync.cs#3)]
+ [!code-vb[NclMailASync#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclMailASync/vb/mailasync.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="To">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.MailAddressCollection To { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.Mail.MailAddressCollection To" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.MailMessage.To" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.MailAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この電子メール メッセージの受信者を格納するアドレスのコレクションを取得します。</summary>
+        <value>書き込み可能な <see cref="T:System.Net.Mail.MailAddressCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.MailMessage.To%2A> 電子メール メッセージの宛先アドレスを指定するプロパティを使用します。 電子メール メッセージに受信者を追加するには、作成、<xref:System.Net.Mail.MailAddress>の受信者のアドレス、および、このプロパティによって返されるコレクションにそのオブジェクトを追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Net.Mail.MailMessage.To%2A>プロパティです。  
+  
+ [!code-cpp[NclMailSync#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#7)]
+ [!code-csharp[NclMailSync#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="None" />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

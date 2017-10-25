@@ -1,0 +1,128 @@
+<Type Name="LogArchiveSnapshot" FullName="System.IO.Log.LogArchiveSnapshot">
+  <TypeSignature Language="C#" Value="public sealed class LogArchiveSnapshot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LogArchiveSnapshot extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.LogArchiveSnapshot" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アーカイブの生成に使用可能な <see cref="T:System.IO.Log.LogStore" /> インスタンスのスナップショットを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.LogArchiveSnapshot> オブジェクトは、<xref:System.IO.Log.LogStore> 内のデータの一貫したバックアップを生成するために必要な情報を格納しています。 実際のデータは、<xref:System.IO.Log.FileRegion> プロパティにより返される <xref:System.IO.Log.LogArchiveSnapshot.ArchiveRegions%2A> オブジェクトの列挙可能なコレクションに格納されています。 各 <xref:System.IO.Log.FileRegion> インスタンスは、アーカイブする必要があるファイル内のバイト シーケンスを表します。  
+  
+ <xref:System.IO.Log.LogArchiveSnapshot.ArchiveTail%2A> プロパティ、<xref:System.IO.Log.LogArchiveSnapshot.BaseSequenceNumber%2A> プロパティ、および <xref:System.IO.Log.LogArchiveSnapshot.LastSequenceNumber%2A> プロパティは、読み取り専用です。 これらのプロパティは、アーカイブ データと共に記録してオプション情報の表示に使用することができますが、データの復元に必須ではありません。  
+  
+   
+  
+## Examples  
+ <xref:System.IO.Log.LogArchiveSnapshot> クラスを使用して <xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ArchiveRegions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.IO.Log.FileRegion&gt; ArchiveRegions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.IO.Log.FileRegion&gt; ArchiveRegions" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogArchiveSnapshot.ArchiveRegions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IO.Log.FileRegion&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際のアーカイブ データを格納する <see cref="T:System.IO.Log.FileRegion" /> インスタンスの列挙可能なコレクションを取得します。</summary>
+        <value>実際のアーカイブ データを格納する <see cref="T:System.IO.Log.FileRegion" /> インスタンスの列挙可能なコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogArchiveSnapshot> クラスを使用して <xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArchiveTail">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber ArchiveTail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber ArchiveTail" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogArchiveSnapshot.ArchiveTail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> のアーカイブ末尾のシーケンス番号を取得します。</summary>
+        <value>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> のアーカイブ末尾のシーケンス番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber BaseSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber BaseSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogArchiveSnapshot.BaseSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> の基本シーケンス番号を取得します。</summary>
+        <value>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> の基本シーケンス番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSequenceNumber">
+      <MemberSignature Language="C#" Value="public System.IO.Log.SequenceNumber LastSequenceNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.SequenceNumber LastSequenceNumber" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.LogArchiveSnapshot.LastSequenceNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.SequenceNumber</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> の最後のシーケンス番号を取得します。</summary>
+        <value>スナップショット取得時の <see cref="T:System.IO.Log.LogStore" /> の最後のシーケンス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.IO.Log.LogArchiveSnapshot> クラスを使用して <xref:System.IO.Log.LogStore> を XML ドキュメントにアーカイブする方法を次の例に示します。  
+  
+ [!code-csharp[logarchievesnapshot#0](~/samples/snippets/csharp/VS_Snippets_CFX/logarchievesnapshot/cs/logarchievesnapshot.cs#0)]
+ [!code-vb[logarchievesnapshot#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/logarchievesnapshot/vb/logarchievesnapshot.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

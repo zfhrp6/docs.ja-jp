@@ -1,0 +1,92 @@
+<Type Name="IDesignerDataSchema" FullName="System.ComponentModel.Design.Data.IDesignerDataSchema">
+  <TypeSignature Language="C#" Value="public interface IDesignerDataSchema" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerDataSchema" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Data.IDesignerDataSchema" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>データ ストアのスキーマ情報を取得するためのメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラス、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema>インターフェイスのデータ ストアからスキーマ情報を取得しに戻す、ユーザー インターフェイスで通常使用すると、データ ストア オブジェクトを指定するユーザーを有効にできる UI 要素を設定します。  
+  
+ <xref:System.ComponentModel.Design.Data.IDesignerDataSchema>インターフェイスには、2 つの方法が用意されています。<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems%2A>要求されたスキーマ オブジェクトを返す、メソッド、および<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.SupportsSchemaClass%2A>メソッドで、指定されたデータとスキーマ オブジェクトがデータ ストアでサポートされているかどうかを示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSchemaItems">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetSchemaItems (System.ComponentModel.Design.Data.DesignerDataSchemaClass schemaClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetSchemaItems(class System.ComponentModel.Design.Data.DesignerDataSchemaClass schemaClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems(System.ComponentModel.Design.Data.DesignerDataSchemaClass)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemaClass" Type="System.ComponentModel.Design.Data.DesignerDataSchemaClass" />
+      </Parameters>
+      <Docs>
+        <param name="schemaClass">返されるスキーマ オブジェクトです。</param>
+        <summary>指定されたスキーマ項目のコレクションを取得します。</summary>
+        <returns>指定した型のスキーマ オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems%2A>メソッドは、データ ストア内のすべての指定されたスキーマ オブジェクトのコレクションを返します。  
+  
+ 参照してください、 <xref:System.ComponentModel.Design.Data.DesignerDataSchemaClass> .NET Framework でサポートされるスキーマ オブジェクトの一覧については、クラスです。 追加できる追加のスキーマ オブジェクト、<xref:System.ComponentModel.Design.Data.DesignerDataSchemaClass>クラスを派生型を作成します。  
+  
+ データ ストアは、要求されたスキーマ オブジェクトをサポートしていない場合、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems%2A>メソッドが返す`null`です。 使用することができます、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.SupportsSchemaClass%2A>メソッドを呼び出す前に、要求されたスキーマ オブジェクトをデータ ストアがサポートするかどうかを確認、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems%2A>返されないようにするメソッド、`null`をアプリケーションにします。  
+  
+ データ ストアは、要求されたオブジェクトをサポートしますが、すべてのインスタンスが含まれていない場合、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.GetSchemaItems%2A>メソッドは、空のコレクションを返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSchemaClass">
+      <MemberSignature Language="C#" Value="public bool SupportsSchemaClass (System.ComponentModel.Design.Data.DesignerDataSchemaClass schemaClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsSchemaClass(class System.ComponentModel.Design.Data.DesignerDataSchemaClass schemaClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.IDesignerDataSchema.SupportsSchemaClass(System.ComponentModel.Design.Data.DesignerDataSchemaClass)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemaClass" Type="System.ComponentModel.Design.Data.DesignerDataSchemaClass" />
+      </Parameters>
+      <Docs>
+        <param name="schemaClass">返されるスキーマ オブジェクトです。</param>
+        <summary>データ ストアに、指定されたデータとスキーマ オブジェクトが含まれるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />データ ストアに、指定されたデータとスキーマ オブジェクトがサポートされている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.IDesignerDataSchema.SupportsSchemaClass%2A>メソッドでは、データ ストアが、指定されたデータとスキーマ オブジェクトをサポートしているかどうかを示します。 データ ストアは、指定されたオブジェクトをサポートしていない場合、<xref:System.ComponentModel.Design.Data.IDesignerDataSchema.SupportsSchemaClass%2A>メソッドが返す`false`です。  
+  
+ 派生することでの他のデータ スキーマ オブジェクトに対してテストを追加することができます、<xref:System.ComponentModel.Design.Data.DesignerDataSchemaClass>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

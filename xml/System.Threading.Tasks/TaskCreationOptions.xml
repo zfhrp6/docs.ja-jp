@@ -1,0 +1,269 @@
+<Type Name="TaskCreationOptions" FullName="System.Threading.Tasks.TaskCreationOptions">
+  <TypeSignature Language="C#" Value="public enum TaskCreationOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed TaskCreationOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskCreationOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タスクの作成および実行に関するオプションの動作を制御するフラグを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Tasks.TaskCreationOptions>列挙は、次の方法で使用します。  
+  
+-   <xref:System.Threading.Tasks.TaskFactory.%23ctor%2A>と<xref:System.Threading.Tasks.TaskFactory%601.%23ctor%2A>を持つコンス トラクター、`creationOptions`パラメーターをタスク ファクトリによって作成されたタスクの既定のオプションを指定します。  
+  
+-   <xref:System.Threading.Tasks.Task.%23ctor%2A>と<xref:System.Threading.Tasks.Task%601.%23ctor%2A>を持つコンス トラクター、`creationOptions`パラメーターをタスクの動作をカスタマイズするために使用するオプションを指定します。  
+  
+-   <xref:System.Threading.Tasks.TaskFactory.StartNew%2A>と<xref:System.Threading.Tasks.TaskFactory%601.StartNew%2A>メソッド、`creationOptions`パラメーターをタスクの動作をカスタマイズするために使用するオプションを指定します。  
+  
+-   <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A>と<xref:System.Threading.Tasks.TaskFactory%601.FromAsync%2A>メソッド、`creationOptions`を指定した場合、end メソッドを実行するタスクの動作をカスタマイズするために使用するオプションを指定するパラメーター、<xref:System.IAsyncResult>が完了します。  
+  
+-   <xref:System.Threading.Tasks.TaskCompletionSource%601.%23ctor%2A>を持つコンス トラクター、`creationOptions`パラメーターを基になるタスクの動作をカスタマイズするために使用するオプションを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AttachedToParent">
+      <MemberSignature Language="C#" Value="AttachedToParent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions AttachedToParent = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.AttachedToParent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクがタスク階層の親にアタッチされることを指定します。 既定では、子タスク (外側のタスクによって作成される内側のタスク) は、親と独立して実行されます。 <see cref="F:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent" /> オプションを使用して、親タスクと子タスクを同期させることもできます。  
+  
+ 親タスクが <see cref="F:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach" /> オプションを指定して構成されている場合、子タスクの <see cref="F:System.Threading.Tasks.TaskCreationOptions.AttachedToParent" /> オプションは無効で、その子タスクはデタッチされた子タスクとして実行されることに注意してください。  
+  
+ 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](~/docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DenyChildAttach">
+      <MemberSignature Language="C#" Value="DenyChildAttach" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions DenyChildAttach = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アタッチされた子タスクとして実行を試みる (<see cref="F:System.Threading.Tasks.TaskCreationOptions.AttachedToParent" /> オプションを使用して作成される) すべての子タスクが、親タスクにアタッチされるのではなく、デタッチされた子タスクとして実行されるように指定します。 詳細については、「[アタッチされた子タスクとデタッチされた子タスク](~/docs/standard/parallel-programming/attached-and-detached-child-tasks.md)」を参照してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HideScheduler">
+      <MemberSignature Language="C#" Value="HideScheduler" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions HideScheduler = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.HideScheduler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンビエント スケジューラが作成されたタスクの現在のスケジューラと見なされることを防止します。 これは、作成されたタスクで実行される StartNew や ContinueWith のような操作で、<see cref="P:System.Threading.Tasks.TaskScheduler.Default" /> が現在のスケジューラと見なされることを意味します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LongRunning">
+      <MemberSignature Language="C#" Value="LongRunning" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions LongRunning = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.LongRunning" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>粒度の細かいシステムではなく、タスクが長時間実行され、少量の大きなコンポーネントを含む粒度の粗い操作とすることを指定します。 これは、<see cref="T:System.Threading.Tasks.TaskScheduler" /> に対し、オーバーサブスクリプションを許可してもよいことを示します。 オーバーサブスクリプションを使用すると、使用可能なハードウェア スレッドよりも多くのスレッドを作成できます。 これは、タスクの処理に追加のスレッドが必要になる可能性があるというヒントをタスク スケジューラに提供し、他のスレッドまたはローカル スレッド プール キューの作業項目の進行をスケジューラがブロックするのを防ぎます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の動作を適用する必要があることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferFairness">
+      <MemberSignature Language="C#" Value="PreferFairness" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions PreferFairness = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.PreferFairness" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.TaskScheduler" /> に対し、できる限り公平にタスクをスケジュールするように指示します。つまり、先にスケジュールされたタスクが先に実行され、後からスケジュールされたタスクは後から実行されるようにします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RunContinuationsAsynchronously">
+      <MemberSignature Language="C#" Value="RunContinuationsAsynchronously" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.Tasks.TaskCreationOptions RunContinuationsAsynchronously = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.Tasks.TaskCreationOptions.RunContinuationsAsynchronously" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskCreationOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のタスクに追加される継続処理を強制的に非同期実行します。  
+  
+ <see cref="T:System.Threading.Tasks.TaskCreationOptions" /> 列挙で <see cref="F:System.Threading.Tasks.TaskCreationOptions.RunContinuationsAsynchronously" /> メンバーが使用できるのは [!INCLUDE[net_v46](~/includes/net-v46-md.md)] 以降であることに注意してください。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

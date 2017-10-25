@@ -1,0 +1,146 @@
+<Type Name="TriggerBase" FullName="System.Windows.TriggerBase">
+  <TypeSignature Language="C#" Value="public abstract class TriggerBase : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TriggerBase extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.TriggerBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内で条件付きの値を指定する基本クラスを表します、<see cref="T:System.Windows.Style" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]スタイルとテンプレートのモデルでは、内でトリガーを指定することができます、 <xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、および<xref:System.Windows.DataTemplate>です。 基本的には、<xref:System.Windows.TriggerBase>できるようにするときに特定の変更を適用するオブジェクトの基本クラスは、条件 (特定のプロパティの値に変わったらなど`true`、イベント発生時または) がなければ。  
+  
+   
+  
+## Examples  
+ トリガーのいくつかの種類があります: <xref:System.Windows.Trigger>、 <xref:System.Windows.MultiTrigger>、 <xref:System.Windows.EventTrigger>、 <xref:System.Windows.DataTrigger>、および<xref:System.Windows.MultiDataTrigger>です。  
+  
+ <xref:System.Windows.Trigger>クラスは、トリガーの最も単純な種類です。 A<xref:System.Windows.Trigger>オブジェクトでは、プロパティの値に基づいて変更を適用することができます。 たとえば、次の例は名前付き<xref:System.Windows.Style>できる<xref:System.Windows.Controls.Button>コントロール。 <xref:System.Windows.Style>定義、<xref:System.Windows.Trigger>要素を変更する、<xref:System.Windows.Controls.Control.Foreground%2A>ボタンのプロパティと、<xref:System.Windows.Controls.Primitives.ButtonBase.IsPressed%2A>プロパティは`true`します。  
+  
+ [!code-xaml[BtnStyles#2](~/samples/snippets/csharp/VS_Snippets_Wpf/BtnStyles/CS/app.xaml#2)]  
+  
+ 使用することができますを複数のプロパティの状態に基づいて、変更を適用する必要がある場合、<xref:System.Windows.MultiTrigger>です。 例については、次を参照してください。、<xref:System.Windows.MultiTrigger>ページ。  
+  
+ <xref:System.Windows.EventTrigger>クラスでは、イベントの発生時に変更を適用することができます。 次の例には 2 つ<xref:System.Windows.EventTrigger>オブジェクト、マウスが要素に入るし、マウスが要素を離れると発生する、他のうちの 1 つ発生します。  
+  
+ [!code-xaml[StyleEventTriggerAnimation#EventTriggerSnippet](~/samples/snippets/csharp/VS_Snippets_Wpf/StyleEventTriggerAnimation/CS/Default.xaml#eventtriggersnippet)]
+  
+ これらはまた、<xref:System.Windows.DataTrigger>と<xref:System.Windows.MultiDataTrigger>クラスです。 似ています<xref:System.Windows.Trigger>と<xref:System.Windows.MultiTrigger>が、データ バインドのプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EnterActions">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerActionCollection EnterActions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerActionCollection EnterActions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TriggerBase.EnterActions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerActionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリガー オブジェクトがアクティブになったときに適用する <see cref="T:System.Windows.TriggerAction" /> オブジェクトのコレクションを取得します。 このプロパティは <see cref="T:System.Windows.EventTrigger" /> クラスには適用されません。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは適用されません、<xref:System.Windows.EventTrigger>クラス イベントは、中に、時間の時点を表すため<xref:System.Windows.TriggerBase.EnterActions%2A>と<xref:System.Windows.TriggerBase.ExitActions%2A>オブジェクトの状態に対応します。 <xref:System.Windows.EventTrigger>オブジェクトを使用して、<xref:System.Windows.EventTrigger.Actions%2A>プロパティ代わりにします。  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]に示すコレクション構文を使用して、またはコレクション オブジェクトにアクセスして追加などのさまざまなメソッドを使用します。 コレクション オブジェクト自体にアクセスするプロパティは読み取り専用で、コレクション自体は読み取り/書き込みです。  
+  
+<a name="xamlPropertyElementUsage_EnterActions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.EnterActions>  
+    OneOrMoreTriggerActions  
+  </object.EnterActions >  
+</object>  
+```  
+  
+<a name="xamlValues_EnterActions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreTriggerActions*  
+ 1 つまたは複数<xref:System.Windows.TriggerAction>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitActions">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerActionCollection ExitActions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerActionCollection ExitActions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.TriggerBase.ExitActions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerActionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トリガー オブジェクトが非アクティブになったときに適用する <see cref="T:System.Windows.TriggerAction" /> オブジェクトのコレクションを取得します。 このプロパティは <see cref="T:System.Windows.EventTrigger" /> クラスには適用されません。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは適用されません、<xref:System.Windows.EventTrigger>クラス イベントは、中に、時間の時点を表すため<xref:System.Windows.TriggerBase.EnterActions%2A>と<xref:System.Windows.TriggerBase.ExitActions%2A>オブジェクトの状態に対応します。 <xref:System.Windows.EventTrigger>オブジェクトを使用して、<xref:System.Windows.EventTrigger.Actions%2A>プロパティ代わりにします。  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]に示すコレクション構文を使用して、またはコレクション オブジェクトにアクセスして追加などのさまざまなメソッドを使用します。 コレクション オブジェクト自体にアクセスするプロパティは読み取り専用で、コレクション自体は読み取り/書き込みです。  
+  
+<a name="xamlPropertyElementUsage_ExitActions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.ExitActions>  
+    OneOrMoreTriggerActions  
+  </object.ExitActions >  
+</object>  
+```  
+  
+<a name="xamlValues_ExitActions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreTriggerActions*  
+ 1 つまたは複数<xref:System.Windows.TriggerAction>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

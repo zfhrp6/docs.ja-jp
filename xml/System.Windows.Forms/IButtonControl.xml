@@ -1,0 +1,141 @@
+<Type Name="IButtonControl" FullName="System.Windows.Forms.IButtonControl">
+  <TypeSignature Language="C#" Value="public interface IButtonControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IButtonControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.IButtonControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントロールがフォーム上のボタンのように動作できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装する場合がありますの例は、既定値と [キャンセル] ボタンの処理です。 既定のボタンは、未処理の ENTER キーを入力して、フォーム、ダイアログ ボックスが閉じられると同様の場合に通知されます。 同様に、キャンセル ボタンが未処理の ESC キーが入力されたときに、フォームにかなり ダイアログ ボックスは破棄するように通知します。  
+  
+   
+  
+## Examples  
+ 次の例が継承、<xref:System.Windows.Forms.ButtonBase>クラスと実装、<xref:System.Windows.Forms.IButtonControl>インターフェイスです。 実装を追加、<xref:System.Windows.Forms.IButtonControl.DialogResult%2A>プロパティおよび<xref:System.Windows.Forms.IButtonControl.NotifyDefault%2A>と<xref:System.Windows.Forms.IButtonControl.PerformClick%2A>メソッドです。  
+  
+ [!code-cpp[IButtonControl Implementation#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IButtonControl Implementation/CPP/mybutton.cpp#1)]
+ [!code-csharp[IButtonControl Implementation#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IButtonControl Implementation/CS/mybutton.cs#1)]
+ [!code-vb[IButtonControl Implementation#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IButtonControl Implementation/VB/mybutton.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>ボタン コントロールとして機能するクラスには、このインターフェイスを実装します。 このインターフェイスのメンバーには、提供などの基本的なボタン機能が用意されて、<see cref="T:System.Windows.Forms.DialogResult" />を親フォームまたはを実行する機能、<see cref="E:System.Windows.Forms.Control.Click" />イベント、またはフォームの既定のボタンとして動作しています。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="DialogResult">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DialogResult DialogResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DialogResult DialogResult" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.IButtonControl.DialogResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DialogResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または親フォームにボタンがクリックされたときに返される値を設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DialogResult" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してダイアログ ボックスとしてフォームが表示されている場合、<xref:System.Windows.Forms.Form.ShowDialog%2A>メソッドとそのボタンのいずれかがクリックされた、ボタンの<xref:System.Windows.Forms.IButtonControl.DialogResult%2A>値は、フォームの<xref:System.Windows.Forms.Form.DialogResult%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例が継承、<xref:System.Windows.Forms.ButtonBase>クラスと実装、<xref:System.Windows.Forms.IButtonControl>インターフェイスです。 実装を追加、<xref:System.Windows.Forms.IButtonControl.DialogResult%2A>プロパティおよび<xref:System.Windows.Forms.IButtonControl.NotifyDefault%2A>と<xref:System.Windows.Forms.IButtonControl.PerformClick%2A>メソッドです。  
+  
+ [!code-cpp[IButtonControl Implementation#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IButtonControl Implementation/CPP/mybutton.cpp#1)]
+ [!code-csharp[IButtonControl Implementation#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IButtonControl Implementation/CS/mybutton.cs#1)]
+ [!code-vb[IButtonControl Implementation#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IButtonControl Implementation/VB/mybutton.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyDefault">
+      <MemberSignature Language="C#" Value="public void NotifyDefault (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void NotifyDefault(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IButtonControl.NotifyDefault(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see langword="true" />コントロールが既定のボタンとして動作する場合それ以外の場合<see langword="false" />です。</param>
+        <summary>コントロールの外観と動作が適切に調整できるように既定のボタンであることを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定のボタン コントロールを作成する親フォームによって呼び出されます。 既定のボタンは、実線の罫線に設定されます。  
+  
+   
+  
+## Examples  
+ 次の例が継承、<xref:System.Windows.Forms.ButtonBase>クラスと実装、<xref:System.Windows.Forms.IButtonControl>インターフェイスです。 実装を追加、<xref:System.Windows.Forms.IButtonControl.DialogResult%2A>プロパティおよび<xref:System.Windows.Forms.IButtonControl.NotifyDefault%2A>と<xref:System.Windows.Forms.IButtonControl.PerformClick%2A>メソッドです。  
+  
+ [!code-cpp[IButtonControl Implementation#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IButtonControl Implementation/CPP/mybutton.cpp#1)]
+ [!code-csharp[IButtonControl Implementation#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IButtonControl Implementation/CS/mybutton.cs#1)]
+ [!code-vb[IButtonControl Implementation#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IButtonControl Implementation/VB/mybutton.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformClick">
+      <MemberSignature Language="C#" Value="public void PerformClick ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PerformClick() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.IButtonControl.PerformClick" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>生成、<see cref="E:System.Windows.Forms.Control.Click" />コントロールのイベントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、フォーカスのあるボタンに対して、または既定のボタンの (他のボタンはフォーカスがない) 場合、ユーザーが ENTER キーを押したときにします。 ボタンが キャンセル ボタンとして設定されている場合、ユーザーが ESC キーを押したときに、このメソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例が継承、<xref:System.Windows.Forms.ButtonBase>クラスと実装、<xref:System.Windows.Forms.IButtonControl>インターフェイスです。 実装を追加、<xref:System.Windows.Forms.IButtonControl.DialogResult%2A>プロパティおよび<xref:System.Windows.Forms.IButtonControl.NotifyDefault%2A>と<xref:System.Windows.Forms.IButtonControl.PerformClick%2A>メソッドです。  
+  
+ [!code-cpp[IButtonControl Implementation#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IButtonControl Implementation/CPP/mybutton.cpp#1)]
+ [!code-csharp[IButtonControl Implementation#1](~/samples/snippets/csharp/VS_Snippets_Winforms/IButtonControl Implementation/CS/mybutton.cs#1)]
+ [!code-vb[IButtonControl Implementation#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IButtonControl Implementation/VB/mybutton.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

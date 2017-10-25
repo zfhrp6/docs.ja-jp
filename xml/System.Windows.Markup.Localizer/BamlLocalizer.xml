@@ -1,0 +1,208 @@
+<Type Name="BamlLocalizer" FullName="System.Windows.Markup.Localizer.BamlLocalizer">
+  <TypeSignature Language="C#" Value="public class BamlLocalizer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BamlLocalizer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Localizer.BamlLocalizer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>BAML ファイルからリソースを抽出し、BAML ソースのローカライズされたバージョンを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、BAML ローカリゼーション API へのプライマリ エントリ ポイントです。 ローカライズする BAML ソースごとにこのクラスのインスタンスを作成する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Markup.Localizer.BamlLocalizer>です。  
+  
+ [!code-csharp[GrabBaml#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GrabBaml/CSharp/GrabBaml.cs#1)]
+ [!code-vb[GrabBaml#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GrabBaml/visualbasic/grabbaml.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizer (System.IO.Stream source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="source">BAML をローカライズする入力を格納するファイル ストリーム。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizer" />指定した BAML ソース ストリーム クラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizer (System.IO.Stream source, System.Windows.Markup.Localizer.BamlLocalizabilityResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream source, class System.Windows.Markup.Localizer.BamlLocalizabilityResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.#ctor(System.IO.Stream,System.Windows.Markup.Localizer.BamlLocalizabilityResolver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.IO.Stream" />
+        <Parameter Name="resolver" Type="System.Windows.Markup.Localizer.BamlLocalizabilityResolver" />
+      </Parameters>
+      <Docs>
+        <param name="source">BAML をローカライズする入力を格納するファイル ストリーム。</param>
+        <param name="resolver"><see cref="T:System.Windows.Markup.Localizer.BamlLocalizabilityResolver" /> のインスタンス。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Markup.Localizer.BamlLocalizer" /> BAML ソース ストリームと指定したローカライズ化の競合回避モジュールでクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BamlLocalizer (System.IO.Stream source, System.Windows.Markup.Localizer.BamlLocalizabilityResolver resolver, System.IO.TextReader comments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream source, class System.Windows.Markup.Localizer.BamlLocalizabilityResolver resolver, class System.IO.TextReader comments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.#ctor(System.IO.Stream,System.Windows.Markup.Localizer.BamlLocalizabilityResolver,System.IO.TextReader)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.IO.Stream" />
+        <Parameter Name="resolver" Type="System.Windows.Markup.Localizer.BamlLocalizabilityResolver" />
+        <Parameter Name="comments" Type="System.IO.TextReader" />
+      </Parameters>
+      <Docs>
+        <param name="source">BAML をローカライズする入力を格納するファイル ストリーム。</param>
+        <param name="resolver"><see cref="T:System.Windows.Markup.Localizer.BamlLocalizabilityResolver" /> のインスタンス。</param>
+        <param name="comments">この BAML 入力に関連付けられているローカライズされた XML のコメントを読み取ります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizer" />ローカライズ化の指定したリゾルバーは BAML ソース ストリームを持つクラスと<see cref="T:System.IO.TextReader" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorNotify">
+      <MemberSignature Language="C#" Value="public event System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventHandler ErrorNotify;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventHandler ErrorNotify" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Markup.Localizer.BamlLocalizer.ErrorNotify" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizer" />異常な状態を検出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常の状況では、<xref:System.Windows.Markup.Localizer.BamlLocalizer>エラーを無視し、ローカライズ BAML 入力ソースが続行されます。 その結果、出力 BAML は部分的にローカライズされます。 エラーをリッスンして、このイベントを使用して停止する、<xref:System.Windows.Markup.Localizer.BamlLocalizer>ソース BAML ファイルの処理を停止します。  
+  
+ 最も一般的なユーザーがケース<xref:System.Windows.Markup.Localizer.BamlLocalizer.ErrorNotify>発生する可能性がありますの結果としては、<xref:System.Windows.Markup.Localizer.BamlLocalizer.UpdateBaml%2A>呼び出し、更新プログラムがエラーに含まれています。 たとえば、または更新の試行が重複キーを設定する場合、イベントが発生元と更新プログラムが整列 UID 値がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractResources">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.Localizer.BamlLocalizationDictionary ExtractResources ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Markup.Localizer.BamlLocalizationDictionary ExtractResources() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.ExtractResources" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.Localizer.BamlLocalizationDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>BAML ストリームからすべてのローカライズ可能なリソースを抽出します。</summary>
+        <returns>形式での BAML ストリームからローカライズ可能なリソースのコピー、<see cref="T:System.Windows.Markup.Localizer.BamlLocalizationDictionary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Markup.Localizer.BamlLocalizer.ExtractResources%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[GrabBaml#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GrabBaml/CSharp/GrabBaml.cs#1)]
+ [!code-vb[GrabBaml#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GrabBaml/visualbasic/grabbaml.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnErrorNotify">
+      <MemberSignature Language="C#" Value="protected virtual void OnErrorNotify (System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnErrorNotify(class System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.OnErrorNotify(System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Markup.Localizer.BamlLocalizerErrorNotifyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントの引数が必要です。</param>
+        <summary><see cref="E:System.Windows.Markup.Localizer.BamlLocalizer.ErrorNotify" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドする場合は、派生クラスのイベントを発生させるしたくない場合を除き、基本、呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateBaml">
+      <MemberSignature Language="C#" Value="public void UpdateBaml (System.IO.Stream target, System.Windows.Markup.Localizer.BamlLocalizationDictionary updates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateBaml(class System.IO.Stream target, class System.Windows.Markup.Localizer.BamlLocalizationDictionary updates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Localizer.BamlLocalizer.UpdateBaml(System.IO.Stream,System.Windows.Markup.Localizer.BamlLocalizationDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.IO.Stream" />
+        <Parameter Name="updates" Type="System.Windows.Markup.Localizer.BamlLocalizationDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="target">更新された BAML を受信するストリーム。</param>
+        <param name="updates">BAML ソースに適用されるリソースを更新します。</param>
+        <summary>BAML ソースにリソースの更新を適用し、ソース BAML のローカライズ バージョンを作成するために、更新されたバージョンを指定したストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" />または<paramref name="updates" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

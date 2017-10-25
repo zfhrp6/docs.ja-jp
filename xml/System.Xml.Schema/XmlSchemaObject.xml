@@ -1,0 +1,289 @@
+<Type Name="XmlSchemaObject" FullName="System.Xml.Schema.XmlSchemaObject">
+  <TypeSignature Language="C#" Value="public abstract class XmlSchemaObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlSchemaObject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ようにクラスの基底クラスとして機能し、Xml スキーマ オブジェクト モデル階層のルート クラスを表します、<see cref="T:System.Xml.Schema.XmlSchema" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、各スキーマ オブジェクトを表示します。  
+  
+ [!code-cpp[Classic WebData XmlSchemaObject Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaObject Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaObject Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaObject Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaObject Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaObject Example/VB/source.vb#1)]  
+  
+ この例は、`example.xsd` ファイルを入力として使用します。  
+  
+ [!code-xml[Classic WebData XmlSchemaObject Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlSchemaObject Example/XML/example.xsd#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlSchemaObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineNumber">
+      <MemberSignature Language="C#" Value="public int LineNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LineNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaObject.LineNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の行番号をファイル、<see langword="schema" />要素は、参照します。</summary>
+        <value>行番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LineNumber`スキーマをファイルから読み取るときに行番号の格納に使用します。 これがを通じて報告される<xref:System.Xml.Schema.XmlSchemaException>エラー処理のためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePosition">
+      <MemberSignature Language="C#" Value="public int LinePosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaObject.LinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ファイル内の行の位置を<see langword="schema" />要素は、参照します。</summary>
+        <value>行の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、スキーマをファイルから読み取るときに、行の位置を格納する使用されます。 これがを通じて報告される<xref:System.Xml.Schema.XmlSchemaException>エラー処理のためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespaces">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSerializerNamespaces Namespaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSerializerNamespaces Namespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaObject.Namespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlNamespaceDeclarations</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializerNamespaces</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />このスキーマ オブジェクトで使用します。</summary>
+        <value><see cref="T:System.Xml.Serialization.XmlSerializerNamespaces" />スキーマ オブジェクトのプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これにより、スキーマ オブジェクト モデル (SOM) は xmlns 宣言を追加する機能。 これは、インポートされたスキーマから宣言を修飾または xs:selector 要素の xpath 属性に使用するプレフィックスを宣言する場合に便利です。  
+  
+ 使用することも、<xref:System.Xml.Schema.XmlSchemaObject.Namespaces%2A>スキーマの名前空間プレフィックスを変更するプロパティです。 たとえば、W3C XML スキーマ名前空間 xs からには次の例に示すように xsd スキーマで使用されるプレフィックスを変更することができます。  
+  
+```vb  
+Dim namespaces As XmlSerializerNamespaces = New XmlSerializerNamespaces()  
+namespaces.Add("myChangedPrefix", "myImportNamespace");  
+s.Namespaces = namespaces;  
+```  
+  
+```csharp  
+XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();  
+namespaces.Add("myChangedPrefix", "myImportNamespace");  
+s.Namespaces = namespaces;  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、スキーマの要素レベルでプレフィックス myImpPrefix が追加されます。 MyImportNamespace からインポートされる定義を修飾するために、プレフィックスを使用します。  
+  
+ [!code-cpp[Classic WebData XmlSchemaObject.Namespaces Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaObject.Namespaces Example/CPP/namespaces.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaObject.Namespaces Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaObject.Namespaces Example/CS/namespaces.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaObject.Namespaces Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaObject.Namespaces Example/VB/namespaces.vb#1)]  
+  
+ この例では、次の XML が生成されます。  
+  
+ [!code-xml[Classic WebData XmlSchemaObject.Namespaces Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlSchemaObject.Namespaces Example/XML/example.xml#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaObject Parent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の親で<see cref="T:System.Xml.Schema.XmlSchemaObject" />です。</summary>
+        <value>親<see cref="T:System.Xml.Schema.XmlSchemaObject" />この<see cref="T:System.Xml.Schema.XmlSchemaObject" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceUri">
+      <MemberSignature Language="C#" Value="public string SourceUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceUri" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaObject.SourceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキーマが読み込まれているファイルのソースの場所を設定します。</summary>
+        <value>ソースの場所 (URI) ファイル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外処理についてを説明します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

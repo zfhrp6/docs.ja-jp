@@ -1,0 +1,469 @@
+<Type Name="InvalidOperationException" FullName="System.InvalidOperationException">
+  <TypeSignature Language="C#" Value="public class InvalidOperationException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit InvalidOperationException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.InvalidOperationException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクトの現在の状態に対して無効なメソッド呼び出しが行われた場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException>無効な引数以外の理由により、メソッドの呼び出しにエラーが発生したときに、ケースで使用されます。 通常、オブジェクトの状態は、メソッドの呼び出しをサポートできない場合にスローされます。 たとえば、<xref:System.InvalidOperationException>例外がなどのメソッドによってスローされます。  
+  
+-   <xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクションのオブジェクトが後に変更された場合は、列挙子が作成されます。 詳細については、次を参照してください。[それを繰り返し処理中にコレクションを変更する](#Iterating)です。  
+  
+-   <xref:System.Resources.ResourceSet.GetString%2A?displayProperty=nameWithType>前に、リソース セットが閉じている場合、メソッドの呼び出しが行われます。  
+  
+-   <xref:System.Xml.Linq.XContainer.Add%2A?displayProperty=nameWithType>、かどうか、オブジェクトを追加することになりますが正しくない構造化された XML ドキュメントです。  
+  
+-   メイン スレッドまたは UI スレッドから UI を操作しようとするメソッド。  
+  
+> [!IMPORTANT]
+>  <xref:System.InvalidOperationException>例外はスローされる状況のさまざまなですることが重要で返される例外メッセージを読み取る、<xref:System.Exception.Message%2A>プロパティです。  
+  
+ このセクションの内容:  
+  
+ [InvalidOperationException 例外の一般的な原因](#Causes)   
+ [UI 以外のスレッドから UI スレッドを更新](#UI)  
+ [これを繰り返し処理中にコレクションを変更します。](#Iterating)  
+ [比較できないオブジェクトを持つ配列またはコレクションの並べ替え](#Sorting)  
+ [キャスト Nullable&lt;T&gt;を基になる型に null であります。](#Nullable)   
+ [空のコレクションに対して System.Linq.Enumerable メソッドを呼び出す](#Empty)  
+ [1 つの要素のないシーケンスで Enumerable.Single または Enumerable.SingleOrDefault を呼び出す](#Single)  
+ [動的アプリケーション間のドメイン フィールド アクセス](#Emit)  
+[InvalidOperationException 例外をスロー](#Throwing)  
+[その他の情報](#Misc)  
+  
+<a name="Causes"></a>   
+## <a name="some-common-causes-of-invalidoperationexception-exceptions"></a>InvalidOperationException 例外の一般的な原因  
+ 次のセクションでは、表示内で共通のいくつかのケース<xref:System.InvalidOperationException>アプリ内で例外がスローされます。 問題の対処方法は、特定の状況によって異なります。 ほとんどの場合、ただしで例外が発生開発者のエラー、および<xref:System.InvalidOperationException>例外を予想して回避できます。  
+  
+<a name="UI"></a>   
+### <a name="updating-a-ui-thread-from-a-non-ui-thread"></a>UI 以外のスレッドから UI スレッドを更新  
+ 多くの場合、ワーカー スレッドを使用して、アプリケーションのユーザー インターフェイスに表示されるデータの収集を含むいくつかのバック グラウンド処理を実行できます。 ただしです。 Windows フォームや Windows Presentation Foundation (WPF) など、.NET Framework のほとんどの GUI (グラフィカル ユーザー インターフェイス) アプリケーションのフレームワークを使用する UI (メインまたは UI スレッド) を管理するスレッドからのみ GUI オブジェクトにアクセスします。 <xref:System.InvalidOperationException> UI スレッド以外のスレッドから UI 要素にアクセスしようとする場合にスローされます。  例外メッセージのテキストは、次の表に表示されます。  
+  
+|[アプリケーションの種類]|メッセージ|  
+|----------------------|-------------|  
+|WPF アプリ|**別のスレッドに所有されているために、呼び出し元のスレッドはこのオブジェクトにアクセスできません。**|  
+|UWP アプリ|**アプリケーションでは、別のスレッドにマーシャ リングされたインターフェイスが呼び出されます。**|  
+|Windows フォーム アプリ|**有効でないスレッド間の操作: コントロール 'TextBox1' 上で作成されたスレッド以外のスレッドからアクセスします。**|  
+  
+ UI フレームワークが .NET Framework の実装、*ディスパッチャー* UI 要素のメンバーへの呼び出しが UI スレッドで実行されているかどうかをチェックするメソッドと、UI スレッドで呼び出しをスケジュールするその他のメソッドを含むパターン。  
+  
+-   WPF アプリで呼び出して、<xref:System.Windows.Threading.Dispatcher.CheckAccess%2A?displayProperty=nameWithType>メソッドが UI 以外のスレッドで実行されているかどうかを調べます。 返します`true`メソッドが UI スレッドで実行されている場合と`false`それ以外の場合。 オーバー ロードの 1 つを呼び出して、 <xref:System.Windows.Threading.Dispatcher.Invoke%2A?displayProperty=nameWithType> UI スレッドで呼び出しをスケジュールする方法です。  
+  
+-   UWP アプリで呼び出して、 [CoreDispatcher.HasThreadAccess](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.hasthreadaccess.aspx)メソッドが UI 以外のスレッドで実行されているかどうかを調べます。 呼び出す、 [CoreDispatcher.RunAsync](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.coredispatcher.runasync.aspx)メソッドを UI スレッドを更新するデリゲートを実行します。 コマンド ラインから  
+  
+-   Windows フォーム アプリで使用して、<xref:System.Windows.Forms.Control.InvokeRequired%2A?displayProperty=nameWithType>メソッドが UI 以外のスレッドで実行されているかどうかを決定するプロパティです。 オーバー ロードの 1 つを呼び出して、<xref:System.Windows.Forms.Control.Invoke%2A?displayProperty=nameWithType>メソッドを UI スレッドを更新するデリゲートを実行します。  
+  
+ 次の例を示しています、<xref:System.InvalidOperationException>作成されたスレッド以外のスレッドから UI 要素を更新しようとする場合にスローされる例外。  それぞれの例では、2 つのコントロールを作成することが必要です。  
+  
+-   という名前のテキスト ボックス コントロール`textBox1`です。  Windows フォーム アプリケーションで、設定する必要があります、<xref:System.Windows.Forms.TextBox.Multiline%2A>プロパティを`true`です。  
+  
+-   という名前のボタン コントロール`threadExampleBtn`です。 例では、提供、ハンドラー `ThreadsExampleBtn_Click`、ボタンの`Click`イベント。  
+  
+ 各ケースで、`threadExampleBtn_Click`イベント ハンドラーの呼び出し、`DoSomeWork`メソッドを 2 回です。 最初の呼び出しは同期的に実行し、成功するとします。 2 番目の呼び出しでは、スレッド プールのスレッドで非同期的に実行されるためしようと、非 UI スレッドから UI を更新します。 これは、結果、<xref:System.InvalidOperationException>例外。  
+  
+ WPF および UWP アプリ  
+ [!code-csharp[System.InvalidOperationException.Threading.WPF1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wpf1/cs/MainWindow.xaml.cs#1)]
+ [!code-vb[System.InvalidOperationException.Threading.WPF1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wpf1/vb/MainWindow.xaml.vb#1)]  
+  
+ 次のバージョンの`DoSomeWork`メソッドは、WPF アプリで例外を排除します。  
+  
+ [!code-csharp[System.InvalidOperationException.Threading.WPF2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wpf2/cs/MainWindowDispatcher.xaml.cs#3)]
+ [!code-vb[System.InvalidOperationException.Threading.WPF2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wpf2/vb/MainWindowDispatcher.xaml.vb#3)]  
+  
+ 次のバージョンの`DoSomeWork`メソッドは、UWP アプリで例外を排除します。  
+  
+ [!code-csharp[System.InvalidOperationException.Threading.UWP#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception.threading.uwp/cs/MainPage.xaml.cs#4)]
+ [!code-vb[System.InvalidOperationException.Threading.UWP#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception.threading.uwp/vb/MainPage.xaml.vb#4)]  
+  
+ Windows フォーム アプリ  
+ [!code-csharp[System.InvalidOperationException.Threading.WF#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wf/cs/Form1.cs#2)]
+ [!code-vb[System.InvalidOperationException.Threading.WF#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wf/vb/Form1.vb#2)]  
+  
+ 次のバージョンの`DoSomeWork`メソッドは、Windows フォーム アプリで例外を排除します。  
+  
+ [!code-csharp[System.InvalidOperationException.Threading.WF2#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wf2/cs/Form1.cs#5)]
+ [!code-vb[System.InvalidOperationException.Threading.WF2#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Invalidoperationexception.threading.wf2/vb/Form1.vb#5)]  
+  
+<a name="Iterating"></a>   
+### <a name="changing-a-collection-while-iterating-it"></a>これを繰り返し処理中にコレクションを変更します。  
+ `foreach` (C#) ステートメントまたは`For Each`コレクションのメンバーを反復処理および読み取り、またはその個々 の要素を変更する Visual Basic でのステートメントを使用します。 ただし、追加またはコレクションから項目を削除するに使用できません。 スローされること、<xref:System.InvalidOperationException>に、次のようなメッセージで例外"**コレクションが変更されました。列挙操作は実行されない可能性があります。**"  
+  
+ 次の例では、各整数の 2 乗をコレクションに追加しようとする整数のコレクションを反復処理します。 例では、スロー、<xref:System.InvalidOperationException>最初の呼び出しで、<xref:System.Collections.Generic.List%601.Add%2A?displayProperty=nameWithType>メソッドです。  
+  
+ [!code-csharp[System.InvalidOperationException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Iterating1.cs#1)]
+ [!code-vb[System.InvalidOperationException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Iterating1.vb#1)]  
+  
+ 2 つの方法のいずれかで例外を除去するには、アプリケーションのロジックに応じて。  
+  
+-   要素は、それを繰り返し処理中にコレクションに追加する必要がある場合、は、インデックスを使用して反復できます、`for`の代わりにステートメント`foreach`または`For Each`です。 次の例では、コレクションにコレクション内の数値の正方形を追加するステートメント。  
+  
+     [!code-csharp[System.InvalidOperationException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Iterating2.cs#2)]
+     [!code-vb[System.InvalidOperationException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Iterating2.vb#2)]  
+  
+     注前、後ろ、反復処理するループ appropraitely を終了するループ内のカウンターを使用するか、コレクションを反復処理するにイテレーションの数を確立する必要がありますから`Count`- 1 を 0 に、または、この例では、配列内の要素の数を変数に代入してループの上限の境界を確立するために使用するとします。 それ以外の場合、要素は、イテレーションごとのコレクションに追加する場合、無限ループになります。  
+  
+-   そうでないことを繰り返し処理中にコレクションに要素を追加するために必要な場合は、コレクションを反復処理の終了時に追加する一時コレクションに追加する要素を格納できます。  次の例では、このアプローチを使用して、一時的なコレクションにコレクションの数の 2 乗を追加して、1 つの配列オブジェクトにコレクションを結合します。  
+  
+     [!code-csharp[System.InvalidOperationException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Iterating3.cs#3)]
+     [!code-vb[System.InvalidOperationException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Iterating3.vb#3)]  
+  
+<a name="Sorting"></a>   
+### <a name="sorting-an-array-or-collection-whose-objects-cannot-be-compared"></a>比較できないオブジェクトを持つ配列またはコレクションの並べ替え  
+ 並べ替え方法など、汎用的な<xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType>メソッドまたは<xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType>メソッド、通常が必要な実装を少なくとも 1 つのオブジェクトに並べ替えられる、<xref:System.IComparable%601>または<xref:System.IComparable>インターフェイスです。 されていない場合、コレクションまたは配列を並べ替えることはできませんがスローされます、<xref:System.InvalidOperationException>例外。 次の例では定義、`Person`クラス、2 つのストア`Person`、一般的なオブジェクト<xref:System.Collections.Generic.List%601>オブジェクト、および並べ替えますしようとします。 例への呼び出しからの出力として、<xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+ [!code-csharp[System.InvalidOperationException#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/List_Sort1.cs#12)]
+ [!code-vb[System.InvalidOperationException#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/List_Sort1.vb#12)]  
+  
+ 3 つの方法のいずれかで例外を排除することができます。  
+  
+-   (ソース コードを制御する) 場合は、並べ替えるしようとしている型を所有する場合を実装することを変更、<xref:System.IComparable%601>または<xref:System.IComparable>インターフェイスです。 実装する必要があります、<xref:System.IComparable%601.CompareTo%2A?displayProperty=nameWithType>または<xref:System.IComparable.CompareTo%2A>メソッドです。 既存の型に、インターフェイスの実装を追加することは、重大な変更ではされません。  
+  
+     次の例では、この方法を使用する場合、<xref:System.IComparable%601>の実装、`Person`クラスです。 コレクションまたは配列の一般的な並べ替え方法を引き続き呼び出すことができ、コレクションが正常に並べ替えます、出力の例に示す。  
+  
+     [!code-csharp[System.InvalidOperationException#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/List_Sort2.cs#13)]
+     [!code-vb[System.InvalidOperationException#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/List_Sort2.vb#13)]  
+  
+-   特殊な並べ替えを実装するクラスを定義できます並べ替えるしようとして型のソース コードを変更することはできない場合、<xref:System.Collections.Generic.IComparer%601>インターフェイスです。  オーバー ロードを呼び出すことができます、`Sort`メソッドを含む、<xref:System.Collections.Generic.IComparer%601>パラメーター。 この方法は複数の条件に基づいてオブジェクトを並べ替えることができます、特殊な並べ替えのクラスを開発する場合に特に便利です。  
+  
+     次の例では、アプローチを使用するカスタムを開発することによって`PersonComparer`の並べ替えに使用されるクラス`Person`コレクション。  これは、後、このクラスのインスタンスを渡します、<xref:System.Collections.Generic.List%601.Sort%28System.Collections.Generic.IComparer%7B%600%7D%29?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.InvalidOperationException#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/List_Sort3.cs#14)]
+     [!code-vb[System.InvalidOperationException#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/List_Sort3.vb#14)]  
+  
+-   並べ替えるしようとして、作成することができる場合は、型のソース コードを変更することはできません、<xref:System.Comparison%601>並べ替えを実行するデリゲート。 デリゲートのシグネチャは、します。  
+  
+    ```vb  
+    Function Comparison(Of T)(x As T, y As T) As Integer  
+    ```  
+  
+    ```csharp  
+    int Comparison<T>(T x, T y)  
+    ```  
+  
+     次の例はアプローチを使用して定義することで、`PersonComparison`と一致するメソッド、<xref:System.Comparison%601>デリゲート シグネチャ。  これは、後、このデリゲートを渡します、<xref:System.Collections.Generic.List%601.Sort%28System.Comparison%7B%600%7D%29?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.InvalidOperationException#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/List_Sort4.cs#15)]
+     [!code-vb[System.InvalidOperationException#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/List_Sort4.vb#15)]  
+  
+<a name="Nullable"></a>   
+### <a name="casting-a-nullablet-that-is-null-to-its-underlying-type"></a>キャスト Nullable\<T > を基になる型に null であります。  
+ キャストしようとすると、<xref:System.Nullable%601>値が`null`基になる型をスロー、<xref:System.InvalidOperationException>例外とエラー メッセージが表示されます"**null 許容のオブジェクトの値が必要です。**  
+  
+ 次の例をスロー、<xref:System.InvalidOperationException>配列を反復処理しようとしたときに例外を含む、`Nullable(Of Integer)`値。  
+  
+ [!code-csharp[System.InvalidOperationException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Nullable1.cs#4)]
+ [!code-vb[System.InvalidOperationException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Nullable1.vb#4)]  
+  
+ 例外を防ぐには。  
+  
+-   使用して、<xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType>いない要素のみを選択するプロパティを`null`です。  
+  
+-   1 つを呼び出して、<xref:System.Nullable%601.GetValueOrDefault%2A?displayProperty=nameWithType>の既定値を提供するオーバー ロード、`null`値。  
+  
+ 次の例では、両方を回避するのには、<xref:System.InvalidOperationException>例外。  
+  
+ [!code-csharp[System.InvalidOperationException#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Nullable2.cs#5)]
+ [!code-vb[System.InvalidOperationException#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Nullable2.vb#5)]  
+  
+<a name="Empty"></a>   
+### <a name="calling-a-systemlinqenumerable-method-on-an-empty-collection"></a>空のコレクションに対して System.Linq.Enumerable メソッドを呼び出す  
+ <xref:System.Linq.Enumerable.Aggregate%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Max%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Min%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>、および<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>メソッドが、シーケンスに対して操作を実行を 1 つの結果を返します。   これらのメソッドの一部のオーバー ロードをスロー、<xref:System.InvalidOperationException>シーケンスが空で、他のオーバー ロードを返す場合に例外`null`です。 <xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>メソッドもスロー、<xref:System.InvalidOperationException>シーケンスに複数の要素が含まれている場合は例外です。  
+  
+> [!NOTE]
+>  スローするメソッドのほとんどが<xref:System.InvalidOperationException>の例外は、オーバー ロードします。 選択したオーバー ロードの動作を理解していることを確認します。  
+  
+ 次の表に、例外のメッセージ、<xref:System.InvalidOperationException>一部への呼び出しによってスローされた例外オブジェクト<xref:System.Linq.Enumerable?displayProperty=nameWithType>メソッドです。  
+  
+|メソッド|メッセージ|  
+|------------|-------------|  
+|`Aggregate` <br /> `Average` <br /> `Last` <br /> `Max` <br /> `Min`|**シーケンスに要素が含まれていません**|  
+|`First`|**シーケンスに一致する要素が含まれていません**|  
+|`Single` <br /> `SingleOrDefault`|**シーケンスには、1 つ以上の一致する要素が含まれています。**|  
+  
+ 排除または例外を処理する方法は、特定のメソッドを呼び出すと、アプリケーションの前提条件に依存します。  
+  
+-   意図的に呼び出すとこれらのメソッドのいずれかの空のシーケンスを確認せず、シーケンスが空でないことと、空のシーケンスが予期しないイベントの発生を想定しています。 この場合、例外を再スローをキャッチまたは適しています。  
+  
+-   不注意による空のシーケンスを確認できなかった場合、1 つのオーバー ロードを呼び出すことができます、<xref:System.Linq.Enumerable.Any%2A?displayProperty=nameWithType>シーケンスがすべての要素を含めるかどうかを決定するオーバー ロードします。  
+  
+    > [!TIP]
+    >  呼び出す、<xref:System.Linq.Enumerable.Any%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%29?displayProperty=nameWithType>データを処理するには、要素や、シーケンスを生成する操作が高いかどうかの数が多い場合がありますが含まれる場合、シーケンスを生成する前にメソッドがパフォーマンスを向上させることができます。  
+  
+-   などのメソッドを呼び出すとした<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType>、または<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>など、別の方法を置き換えることができます<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType>、 <xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=nameWithType>、または<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>シーケンスのメンバーではなく既定値を返します。  
+  
+ 例では、追加の詳細情報を提供します。  
+  
+ 次の例では、<xref:System.Linq.Enumerable.Average%2A?displayProperty=nameWithType>メソッドは、4 より大きい値がシーケンスの平均を計算します。 4 を超える、元の配列からの値がないと、シーケンス内の値が含まれていないがスローされますので、<xref:System.InvalidOperationException>例外。  
+  
+ [!code-csharp[System.InvalidOperationException#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable1.cs#6)]
+ [!code-vb[System.InvalidOperationException#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable1.vb#6)]  
+  
+ 呼び出して例外を取り除くことができます、<xref:System.Linq.Enumerable.Any%2A>シーケンスには、次の例のように、シーケンスを処理するメソッドを呼び出す前に、すべての要素が含まれて かどうかを調べます。  
+  
+ [!code-csharp[System.InvalidOperationException#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable2.cs#7)]
+ [!code-vb[System.InvalidOperationException#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable2.vb#7)]  
+  
+ <xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType>メソッドは、シーケンスを指定した条件を満たす、シーケンスの最初の要素で、最初の項目を返します。 シーケンスが空では、最初の要素設定されていない場合は、スロー、<xref:System.InvalidOperationException>例外。  
+  
+ 次の例で、<xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%29?displayProperty=nameWithType>メソッドがスローされます、<xref:System.InvalidOperationException>例外 dbQueryResults 配列が 4 より大きい要素が含まれていないためです。  
+  
+ [!code-csharp[System.InvalidOperationException#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable3.cs#8)]
+ [!code-vb[System.InvalidOperationException#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable3.vb#8)]  
+  
+ 呼び出すことができます、<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType>メソッドの代わりに<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType>返される、指定したか既定値です。 メソッドが、シーケンスの最初の要素を見つけられない場合は、そのデータ型の既定値を返します。  既定値は`null`参照型の 0、数値データ型と<xref:System.DateTime.MinValue?displayProperty=nameWithType>の<xref:System.DateTime>型です。  
+  
+> [!NOTE]
+>  によって返される値を解釈する、<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType>メソッドは、多くの場合、複雑に型の既定値は、シーケンス内の有効な値であることができます。 この場合は、呼び出しを<xref:System.Linq.Enumerable.Any%2A?displayProperty=nameWithType>シーケンスが呼び出す前に有効なメンバーを持つかどうかを決定するメソッド、<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 次の例では、<xref:System.Linq.Enumerable.FirstOrDefault%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Boolean%7D%29?displayProperty=nameWithType>しないようにする方法、<xref:System.InvalidOperationException>前の例でスローされる例外。  
+  
+ [!code-csharp[System.InvalidOperationException#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable4.cs#9)]
+ [!code-vb[System.InvalidOperationException#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable4.vb#9)]  
+  
+<a name="Single"></a>   
+### <a name="calling-enumerablesingle-or-enumerablesingleordefault-on-a-sequence-without-one-element"></a>1 つの要素のないシーケンスで Enumerable.Single または Enumerable.SingleOrDefault を呼び出す  
+ <xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>メソッドは、シーケンスの唯一の要素または指定した条件を満たすシーケンスの唯一の要素を返します。    シーケンスの要素がないかどうか、または複数の要素がある場合がスローされます、<xref:System.InvalidOperationException>例外。  
+  
+ 使用することができます、<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>シーケンスに要素が含まれていないときに例外をスローする代わりに、既定値を返すメソッド。 ただし、<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>メソッドがスロー、<xref:System.InvalidOperationException>シーケンスに複数の要素が含まれている場合は例外です。  
+  
+ 次の表に、例外のメッセージ、<xref:System.InvalidOperationException>への呼び出しによってスローされた例外オブジェクト、<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>と<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>メソッドです。  
+  
+|メソッド|メッセージ|  
+|------------|-------------|  
+|`Single`|**シーケンスに一致する要素が含まれていません**|  
+|`Single` <br /> `SingleOrDefault`|**シーケンスには、1 つ以上の一致する要素が含まれています。**|  
+  
+ 次の例への呼び出しで、<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>メソッドがスローされます、<xref:System.InvalidOperationException>例外シーケンスは 4 より大きい要素があるないためです。  
+  
+ [!code-csharp[System.InvalidOperationException#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable5.cs#10)]
+ [!code-vb[System.InvalidOperationException#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable5.vb#10)]  
+  
+ 次の例を防ぐためにしようとして、<xref:System.InvalidOperationException>代わりに呼び出すことによって、シーケンスが空の場合にスローされる例外、<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>メソッドです。 ただし、このシーケンスの値が 2 より大きい複数の要素を返すためにもスロー、<xref:System.InvalidOperationException>例外。  
+  
+ [!code-csharp[System.InvalidOperationException#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.invalidoperationexception/cs/Enumerable6.cs#11)]
+ [!code-vb[System.InvalidOperationException#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.invalidoperationexception/vb/Enumerable6.vb#11)]  
+  
+ 呼び出す、<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType>メソッドでは、シーケンスまたは指定した条件を満たす、シーケンスのいずれか 1 つだけの要素が含まれていると想定します。  <xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType>0 個または 1 つの結果は、シーケンスを想定しています。 この想定である、意図的に、これらの条件が満たされていない場合は、再スローまたはキャッチ、結果として得られる<xref:System.InvalidOperationException>が適切です。 それ以外の場合、無効な条件がある程度の頻度で発生する場合は、その他の使用を検討する必要がありますまたは<xref:System.Linq.Enumerable>メソッドなど<xref:System.Linq.Enumerable.FirstOrDefault%2A>または<xref:System.Linq.Enumerable.Where%2A>です。  
+  
+<a name="Emit"></a>   
+### <a name="dynamic-cross-application-domain-field-access"></a>動的アプリケーション間のドメイン フィールド アクセス  
+ <xref:System.Reflection.Emit.OpCodes.Ldflda?displayProperty=nameWithType> Microsoft intermediate language (MSIL) の命令をスロー、<xref:System.InvalidOperationException>取得しようとしているアドレスを持つフィールドを含んでいるオブジェクトが、コードを実行しているアプリケーション ドメイン内にない場合は例外です。 フィールドのアドレスは、格納されているアプリケーション ドメインからのみアクセスできます。  
+  
+<a name="Throwing"></a>   
+## <a name="throwing-an-invalidoperationexception-exception"></a>InvalidOperationException 例外をスロー  
+ スローする必要があります、<xref:System.InvalidOperationException>例外何らかの理由により、オブジェクトの状態は、特定のメソッドの呼び出しをサポートしていない場合にのみです。 メソッドの呼び出しはいくつかの状況またはコンテキストで有効ですが、他のユーザーでは無効です。  
+  
+ 無効な引数は、原因、メソッド呼び出しの失敗である場合<xref:System.ArgumentException>またはその派生クラスの 1 つ<xref:System.ArgumentNullException>または<xref:System.ArgumentOutOfRangeException>、代わりにスローされる必要があります。  
+  
+<a name="Misc"></a>   
+## <a name="miscellaneous-information"></a>その他の情報  
+ <xref:System.InvalidOperationException>値は 0x80131509 HRESULT COR_E_INVALIDOPERATION を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.InvalidOperationException>を参照してください、<xref:System.InvalidOperationException.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidOperationException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidOperationException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.InvalidOperationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> "、要求された操作を実行できません"などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.InvalidOperationException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidOperationException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidOperationException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.InvalidOperationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Exception.Message%2A?displayProperty=nameWithType>の新しい例外を使用して、プロパティ、`message`パラメーター。 コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.InvalidOperationException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InvalidOperationException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidOperationException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.InvalidOperationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InvalidOperationException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.InvalidOperationException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で) で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.InvalidOperationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ <xref:System.InvalidOperationException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

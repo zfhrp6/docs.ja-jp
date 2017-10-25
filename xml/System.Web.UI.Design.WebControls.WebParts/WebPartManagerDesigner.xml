@@ -1,0 +1,107 @@
+<Type Name="WebPartManagerDesigner" FullName="System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner">
+  <TypeSignature Language="C#" Value="public class WebPartManagerDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartManagerDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>に対して、最小限のデザイン時サポートを提供<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner>クラスの必要最低限の最小値デザイン時のレンダリングを提供する、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール。 クラスの名前と現在の ID を示すプレーン灰色のボックスとしてデザイン画面に表示される<xref:System.Web.UI.WebControls.WebParts.WebPartManager>です。 カスタムの表示を変更することができます<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールをオーバーライドすることで、<xref:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.GetDesignTimeHtml%2A>任意の標準と同じ方法でメソッド<xref:System.Web.UI.Design.ControlDesigner>です。 <xref:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.UsePreviewControl%2A>プロパティは常にオーバーライド`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムのデザイン時の外観を変更する方法を示しています。<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールをオーバーライドすることで、<xref:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.GetDesignTimeHtml%2A>デザイナーのメソッドです。  
+  
+ [!code-csharp[WebPartsDesigners_WebPartManagerDesigner_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebPartsDesigners_WebPartManagerDesigner_Overview/CS/PrettyPartManager.cs#1)]
+ [!code-vb[WebPartsDesigners_WebPartManagerDesigner_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebPartsDesigners_WebPartManagerDesigner_Overview/vb/prettypartmanager.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartManagerDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>空の文字列を返します ("")、ビジュアル デ ザイン環境は、既定のコントロールの描画に戻すかを示します。</summary>
+        <returns>空の <see cref="T:System.String" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />デザイナーに関連付けられているコントロール。</param>
+        <summary>デザイナーに関連付けられたバインド<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsePreviewControl">
+      <MemberSignature Language="C#" Value="protected override bool UsePreviewControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsePreviewControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.WebParts.WebPartManagerDesigner.UsePreviewControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時のマークアップを生成するときに、デザイナーに関連付けられた実際のコントロールではなく、一時的なコピーをデザイナーで使用するかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,42 @@
+<Type Name="IBindingMulticastCapabilities" FullName="System.ServiceModel.Channels.IBindingMulticastCapabilities">
+  <TypeSignature Language="C#" Value="public interface IBindingMulticastCapabilities" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindingMulticastCapabilities" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IBindingMulticastCapabilities" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オプションのインターフェイスを定義します。バインドは、このインターフェイスを実装することで、構成するサービスがマルチキャスト機能を備えるかどうかを指定できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのプロパティは 1 つだけで、サービスがマルチキャスト機能を持つかどうかを示すために使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsMulticast">
+      <MemberSignature Language="C#" Value="public bool IsMulticast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMulticast" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.IBindingMulticastCapabilities.IsMulticast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングが構成するサービスがマルチキャスト機能を備えるかどうかを示す値を取得します。</summary>
+        <value>
+          サービスがマルチキャスト機能を持つ場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,212 @@
+<Type Name="WebRequestModuleElement" FullName="System.Net.Configuration.WebRequestModuleElement">
+  <TypeSignature Language="C#" Value="public sealed class WebRequestModuleElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebRequestModuleElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.WebRequestModuleElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>URI プレフィックスとプレフィックスの Web 要求の作成を処理する、関連付けられたクラスを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラス、アプリケーションはリソースを要求できます。 任意の有効な<xref:System.Uri>します。 この構成要素を使用する登録されているモジュールを指定を使用して、<xref:System.Net.WebRequest.Create%2A>新しい要求を作成するオーバー ロードします。  
+  
+ このクラスに対応して、 [&lt;追加&gt;webRequestModules (ネットワーク設定) の要素](~/docs/framework/configure-apps/file-schema/network/add-element-for-webrequestmodules-network-settings.md)構成要素。  
+  
+ 使用した要求の認証に登録されているモジュールを指定するこのクラスは使用、<xref:System.Net.WebRequest>と<xref:System.Net.WebClient>クラスです。  
+  
+ このクラスは、構成ファイルに格納できる情報にプログラムでアクセスを提供します。  
+  
+ .NET Framework version 2.0 には、次のプレフィックスを持つリソースに対する要求を作成する Web 要求モジュールが提供されます。  
+  
+-   HTTP  
+  
+-   HTTPS  
+  
+-   FTP  
+  
+-   ファイル  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebRequestModuleElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.WebRequestModuleElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.WebRequestModuleElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebRequestModuleElement (string prefix, string type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string prefix, string type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.WebRequestModuleElement.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">URI のプレフィックスを含む文字列。</param>
+        <param name="type">作成を処理するクラスを使用するリソースの要求の型とアセンブリ情報を含む文字列、<c>プレフィックス</c>URI プレフィックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Configuration.WebRequestModuleElement" />クラス、指定した URI プレフィックスと型に関する情報を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `type`パラメーターには、完全修飾型名後にコンマ (,) とアセンブリ情報にはが含まれています。 たとえば、アセンブリ情報の要素をコンマで区切られます"`System.Net.DigestClient, System, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"`です。  
+  
+ <xref:System.Net.Configuration.WebRequestModuleElement.Prefix%2A>プロパティに設定されている`prefix`と<xref:System.Net.Configuration.WebRequestModuleElement.Type%2A>プロパティに設定されている`type`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebRequestModuleElement (string prefix, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string prefix, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.WebRequestModuleElement.#ctor(System.String,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">URI のプレフィックスを含む文字列。</param>
+        <param name="type">A<see cref="T:System.Type" />を識別するリソースの作成要求を処理するクラスを使用する、<c>プレフィックス</c>URI プレフィックス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Configuration.WebRequestModuleElement" />クラスの指定した URI プレフィックスを使用して、識別子を入力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Configuration.WebRequestModuleElement.Prefix%2A>プロパティに設定されている`prefix`と<xref:System.Net.Configuration.WebRequestModuleElement.Type%2A>プロパティに設定されている`type`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public string Prefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.WebRequestModuleElement.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("prefix", Options=System.Configuration.ConfigurationPropertyOptions.IsRequired | System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在の Web 要求モジュール URI プレフィックス。</summary>
+        <value>URI のプレフィックスを含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework version 2.0 には、次のプレフィックスを持つリソースに対する要求を作成する Web 要求モジュールが提供されます。  
+  
+-   HTTP  
+  
+-   HTTPS  
+  
+-   FTP  
+  
+-   ファイル  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.WebRequestModuleElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.WebRequestModuleElement.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.TypeConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("type")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web 要求を作成するクラスを設定します。</summary>
+        <value>A <see cref="T:System.Type" /> Web 要求のモジュールを識別するインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Net.WebRequest>と<xref:System.Net.WebResponse>クラス、アプリケーションはリソースを要求できます。 任意の有効な<xref:System.Uri>します。 使用する登録されている型を指定するこのプロパティを使用して、<xref:System.Net.WebRequest.Create%2A>新しい要求を作成します。  
+  
+ .NET Framework version 2.0 には、次のプレフィックスを持つリソースに対する要求を作成する Web 要求モジュールが提供されます。  
+  
+-   HTTP  
+  
+-   HTTPS  
+  
+-   FTP  
+  
+-   ファイル  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

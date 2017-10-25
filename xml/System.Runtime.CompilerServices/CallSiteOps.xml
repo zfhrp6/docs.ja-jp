@@ -1,0 +1,453 @@
+<Type Name="CallSiteOps" FullName="System.Runtime.CompilerServices.CallSiteOps">
+  <TypeSignature Language="C#" Value="public static class CallSiteOps" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CallSiteOps extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.CallSiteOps" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>作成し、バインディング規則をキャッシュします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="AddRule&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void AddRule&lt;T&gt; (System.Runtime.CompilerServices.CallSite&lt;T&gt; site, T rule) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddRule&lt;class T&gt;(class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; site, !!T rule) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.AddRule``1(System.Runtime.CompilerServices.CallSite{``0},``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+        <Parameter Name="rule" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <param name="rule">呼び出しサイトのルールのインスタンス。</param>
+        <summary>動的呼び出しサイトで管理しているキャッシュにルールを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Bind&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Bind&lt;T&gt; (System.Runtime.CompilerServices.CallSiteBinder binder, System.Runtime.CompilerServices.CallSite&lt;T&gt; site, object[] args) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Bind&lt;class T&gt;(class System.Runtime.CompilerServices.CallSiteBinder binder, class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; site, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.Bind``1(System.Runtime.CompilerServices.CallSiteBinder,System.Runtime.CompilerServices.CallSite{``0},System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="binder" Type="System.Runtime.CompilerServices.CallSiteBinder" />
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="binder">呼び出しサイト バインダー。</param>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <param name="args">呼び出しサイトへの引数。</param>
+        <summary>引数に基づいた新しいルールでは、呼び出しサイトのターゲットを更新します。</summary>
+        <returns>新しい呼び出しサイトのターゲットです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ClearMatch">
+      <MemberSignature Language="C#" Value="public static void ClearMatch (System.Runtime.CompilerServices.CallSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearMatch(class System.Runtime.CompilerServices.CallSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.ClearMatch(System.Runtime.CompilerServices.CallSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite" />
+      </Parameters>
+      <Docs>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>早さ呼び出しサイトでフラグをクリアします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMatchmaker&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSite&lt;T&gt; CreateMatchmaker&lt;T&gt; (System.Runtime.CompilerServices.CallSite&lt;T&gt; site) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; CreateMatchmaker&lt;class T&gt;(class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.CreateMatchmaker``1(System.Runtime.CompilerServices.CallSite{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSite&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>キャッシュ参照に使用する動的呼び出しサイトのインスタンスを作成します。</summary>
+        <returns>新しい呼び出しサイトです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetCachedRules&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T[] GetCachedRules&lt;T&gt; (System.Runtime.CompilerServices.RuleCache&lt;T&gt; cache) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T[] GetCachedRules&lt;class T&gt;(class System.Runtime.CompilerServices.RuleCache`1&lt;!!T&gt; cache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.GetCachedRules``1(System.Runtime.CompilerServices.RuleCache{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="cache" Type="System.Runtime.CompilerServices.RuleCache&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="cache">キャッシュします。</param>
+        <summary>動的操作に適用できる規則の動的なルールのキャッシュを検索します。</summary>
+        <returns>適用可能な規則のコレクション。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMatch">
+      <MemberSignature Language="C#" Value="public static bool GetMatch (System.Runtime.CompilerServices.CallSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetMatch(class System.Runtime.CompilerServices.CallSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.GetMatch(System.Runtime.CompilerServices.CallSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite" />
+      </Parameters>
+      <Docs>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>実行されたルールが一致するかどうかを確認します。</summary>
+        <returns>ルールが一致した場合、false それ以外の場合は true。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuleCache&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.RuleCache&lt;T&gt; GetRuleCache&lt;T&gt; (System.Runtime.CompilerServices.CallSite&lt;T&gt; site) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.RuleCache`1&lt;!!T&gt; GetRuleCache&lt;class T&gt;(class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.GetRuleCache``1(System.Runtime.CompilerServices.CallSite{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.RuleCache&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>ルールのキャッシュのバインドを取得します。</summary>
+        <returns>キャッシュします。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetRules&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T[] GetRules&lt;T&gt; (System.Runtime.CompilerServices.CallSite&lt;T&gt; site) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T[] GetRules&lt;class T&gt;(class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.GetRules``1(System.Runtime.CompilerServices.CallSite{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T[]</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>呼び出しサイトからの動的バインド ルールを取得します。</summary>
+        <returns>動的バインド ルールの配列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MoveRule&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void MoveRule&lt;T&gt; (System.Runtime.CompilerServices.RuleCache&lt;T&gt; cache, T rule, int i) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MoveRule&lt;class T&gt;(class System.Runtime.CompilerServices.RuleCache`1&lt;!!T&gt; cache, !!T rule, int32 i) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.MoveRule``1(System.Runtime.CompilerServices.RuleCache{``0},``0,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="cache" Type="System.Runtime.CompilerServices.RuleCache&lt;T&gt;" />
+        <Parameter Name="rule" Type="T" />
+        <Parameter Name="i" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="cache">呼び出しサイトのルールのキャッシュします。</param>
+        <param name="rule">呼び出しサイトのルールのインスタンス。</param>
+        <param name="i">呼び出しサイトのルールのインデックス。</param>
+        <summary>キャッシュ内でバインディング規則に移動します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetNotMatched">
+      <MemberSignature Language="C#" Value="public static bool SetNotMatched (System.Runtime.CompilerServices.CallSite site);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetNotMatched(class System.Runtime.CompilerServices.CallSite site) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.SetNotMatched(System.Runtime.CompilerServices.CallSite)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="site" Type="System.Runtime.CompilerServices.CallSite" />
+      </Parameters>
+      <Docs>
+        <param name="site">動的呼び出しサイトのインスタンス。</param>
+        <summary>動的なサイト更新が要求されるかどうかを確認します。</summary>
+        <returns>ルール必要がない場合更新 false、それ以外の場合は true。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateRules&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static void UpdateRules&lt;T&gt; (System.Runtime.CompilerServices.CallSite&lt;T&gt; this, int matched) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UpdateRules&lt;class T&gt;(class System.Runtime.CompilerServices.CallSite`1&lt;!!T&gt; this, int32 matched) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CallSiteOps.UpdateRules``1(System.Runtime.CompilerServices.CallSite{``0},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="this" Type="System.Runtime.CompilerServices.CallSite&lt;T&gt;" />
+        <Parameter Name="matched" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">デリゲートの型、<see cref="T:System.Runtime.CompilerServices.CallSite" />です。</typeparam>
+        <param name="this">動的呼び出しサイトのインスタンス。</param>
+        <param name="matched">一致したルールのインデックス。</param>
+        <summary>キャッシュ内のルールを更新します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

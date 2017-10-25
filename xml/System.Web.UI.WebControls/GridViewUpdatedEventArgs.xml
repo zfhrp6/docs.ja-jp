@@ -1,0 +1,331 @@
+<Type Name="GridViewUpdatedEventArgs" FullName="System.Web.UI.WebControls.GridViewUpdatedEventArgs">
+  <TypeSignature Language="C#" Value="public class GridViewUpdatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewUpdatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewUpdatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.GridView.RowUpdated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>制御が発生し、<xref:System.Web.UI.WebControls.GridView.RowUpdated>が後イベント時にコントロールでの更新ボタンがクリックされた、<xref:System.Web.UI.WebControls.GridView>コントロールは、レコードを更新します。 (いるボタン コントロールは、更新ボタン`CommandName`プロパティが「更新」に設定します)。更新操作の結果を確認するなど、このイベントが発生するたびに、カスタムのルーチンを実行できます。  
+  
+ A<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs>とが発生する例外の影響を受けたレコードの数を決定することにより、イベント ハンドラーにオブジェクトが渡されます。 更新操作の影響を受けたレコードの数を確認するには<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.AffectedRows%2A>プロパティです。 任意の例外が発生したかどうかを判断するのには、使用、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Exception%2A>プロパティです。 かどうか、例外が処理されたイベントのハンドラーを設定して指定することも、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.ExceptionHandled%2A>プロパティです。  
+  
+ 更新されたレコードのキー フィールドの値にアクセスするには、使用、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Keys%2A>プロパティです。 使用して元の非キー フィールド値にアクセスすることができます、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.OldValues%2A>プロパティです。 使用して、更新された非キー フィールドの値にアクセスすることができます、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.NewValues%2A>プロパティです。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.GridView>更新操作の後、制御が読み取り専用モードに戻ります。 保持することができます、更新操作中に発生した例外を処理する場合、<xref:System.Web.UI.WebControls.GridView>コントロールを設定して編集モードで、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.KeepInEditMode%2A>プロパティを`true`です。  
+  
+ イベントを処理する方法の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、更新操作中に例外が発生したかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewUpdatedEventArgs (int affectedRows, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 affectedRows, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewUpdatedEventArgs.#ctor(System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedRows" Type="System.Int32" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="affectedRows">更新操作によって影響を受けた行の数。</param>
+        <param name="e">更新操作が実行されたときに発生した例外。 例外が発生しなかった場合は使用<see langword="null" />このパラメーターにします。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.GridViewUpdatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.AffectedRows%2A>|`affectedRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Exception%2A>|<xref:System.Exception?displayProperty=nameWithType>に含まれているオブジェクト、`e`パラメーター。|  
+|<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.ExceptionHandled%2A>|初期化された`false`です。|  
+|<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.KeepInEditMode%2A>|初期化された`false`です。|  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作の影響を受けた行の数を取得します。</summary>
+        <value>更新操作によって影響を受けた行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つのレコードが通常に更新されるため、このプロパティは通常 0 または 1 の値を表します。  
+  
+ 例外は発生しません更新操作中にエラーが発生します。 使用することができます、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.AffectedRows%2A>プロパティをレコードが更新されたことを確認してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.AffectedRows%2A>プロパティをレコードが更新されたことを確認します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外を取得します (存在する場合) が更新操作中に発生しました。</summary>
+        <value>更新操作中に発生した例外。 このプロパティを返しますのかどうかは例外が発生しなかった、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に例外が発生し、イベント ハンドラー、設定には、例外を処理するか、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 それ以外の場合、例外がスローされますでもう一度、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例では、更新操作中に例外が発生したかどうかを確認する方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または更新操作中に発生した例外が、イベント ハンドラーで処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合、イベント ハンドラーです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生すると、更新操作中を使用して、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.ExceptionHandled%2A>イベント ハンドラーで例外を処理するかどうかを示すプロパティです。 このプロパティに設定するときに`true`、例外が処理され、もう一度ではスローされませんと見なされます、<xref:System.Web.UI.WebControls.GridView>コントロール。 このプロパティ設定されている場合`false`例外が再度スローされます。 発生した例外を確認するには<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、例外が、イベント ハンドラーで処理されたことを指定する方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepInEditMode">
+      <MemberSignature Language="C#" Value="public bool KeepInEditMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.KeepInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.GridView" />更新操作の後コントロールが編集モードのままにします。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールが編集モードでは更新操作後も維持されます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.GridView>更新操作の後、制御が読み取り専用モードに戻ります。 保持する、<xref:System.Web.UI.WebControls.GridView>編集モードでコントロールを設定、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.KeepInEditMode%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を保持する方法を示しています、<xref:System.Web.UI.WebControls.GridView>例外が発生したときに、編集モードで制御します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新されたレコードのキー フィールドの名前/値ペアを格納するディクショナリを取得します。</summary>
+        <value>更新されたレコードのキー フィールドの名前/値ペアのディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Keys%2A>更新されたレコードのキー フィールドの値にアクセスするプロパティです。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.Keys%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>更新されたレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、更新されたレコードのキー フィールドの値にアクセスする方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary NewValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary NewValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.NewValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新されたレコードの新しいフィールドの名前/値ペアを格納するディクショナリを取得します。</summary>
+        <value>更新されたレコードの新しいフィールドの名前/値ペアのディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.NewValues%2A>更新されたレコードの新しいフィールドの値にアクセスするプロパティです。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.NewValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>更新されたレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、更新されたレコードの非キー フィールドについて、ユーザーが入力した新しい値にアクセスする方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary OldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary OldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewUpdatedEventArgs.OldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新されたレコードの元のフィールドの名前/値ペアを格納するディクショナリを取得します。</summary>
+        <value>更新されたレコードの元のフィールドの名前/値ペアのディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.OldValues%2A>更新されたレコードの元のフィールド値にアクセスするプロパティです。 たとえば、これらの値を使用して、更新されたレコードのログを保持することができます。  
+  
+ <xref:System.Web.UI.WebControls.GridViewUpdatedEventArgs.OldValues%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary?displayProperty=nameWithType>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry?displayProperty=nameWithType>を元の値で更新されたレコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、更新されたレコードのキー以外のフィールドの元の値にアクセスする方法を示します。  
+  
+ [!code-aspx-csharp[GridViewUpdatedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewUpdatedEventArgs/CS/gridviewupdatedeventargscs.aspx#1)]
+ [!code-aspx-vb[GridViewUpdatedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewUpdatedEventArgs/VB/gridviewupdatedeventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

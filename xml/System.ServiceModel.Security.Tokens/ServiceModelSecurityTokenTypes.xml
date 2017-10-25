@@ -1,0 +1,169 @@
+<Type Name="ServiceModelSecurityTokenTypes" FullName="System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes">
+  <TypeSignature Language="C#" Value="public static class ServiceModelSecurityTokenTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ServiceModelSecurityTokenTypes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WCF によって認識されるセキュリティ トークンの種類を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型の静的文字列は、<xref:System.ServiceModel.Security.ServiceCredentialsSecurityTokenManager> および <xref:System.ServiceModel.ClientCredentialsSecurityTokenManager> によって、トークンの種類に基づいて作成するトークン プロバイダーとトークン認証システムを識別するために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AnonymousSslnego">
+      <MemberSignature Language="C#" Value="public static string AnonymousSslnego { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string AnonymousSslnego" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.AnonymousSslnego" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イニシエーターが匿名で、レスポンダーの証明書を SOAP SSL ネゴシエーションの一部として取得できることを示す文字列を取得します。</summary>
+        <value>イニシエーターが匿名で、レスポンダーの証明書を SOAP SSL ネゴシエーションの一部として取得できることを示す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MutualSslnego">
+      <MemberSignature Language="C#" Value="public static string MutualSslnego { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string MutualSslnego" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.MutualSslnego" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イニシエーターとレスポンダーが X.509 証明書を使用して相互に認証することを示す文字列を取得します。</summary>
+        <value>イニシエーターとレスポンダーが X.509 証明書を使用して相互に認証することを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レスポンダーの証明書は、SOAP SSL ネゴシエーションから取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureConversation">
+      <MemberSignature Language="C#" Value="public static string SecureConversation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SecureConversation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.SecureConversation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが WS-SecureConversation 認証を使用するかどうかを示す文字列を取得します。</summary>
+        <value>サービスが WS-SecureConversation 認証を使用するかどうかを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WS-SecureConversation 仕様は、WS-Security 仕様と WS-Policy 仕様に基づいて構築されています。 この仕様は、セキュリティで保護されたサービス間通信を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityContext">
+      <MemberSignature Language="C#" Value="public static string SecurityContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SecurityContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.SecurityContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが SOAP SecurityContext 認証を使用するかどうかを示す文字列を取得します。</summary>
+        <value>サービスが SOAP SecurityContext 認証を使用するかどうかを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、送信者と受信者の間の通信をセキュリティで保護するセキュリティ コンテキストを表すために `SecurityContextToken` が使用されることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Spnego">
+      <MemberSignature Language="C#" Value="public static string Spnego { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Spnego" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows サービスの SP Negotiation (SPNEGO) プロトコルを使用して認証を行うかどうかを示す文字列を取得します。</summary>
+        <value>Windows サービスの SPNEGO プロトコルを使用して認証を行うかどうかを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SPNEGO は、ネイティブな Windows 対 Windows 認証サービスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SspiCredential">
+      <MemberSignature Language="C#" Value="public static string SspiCredential { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SspiCredential" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.SspiCredential" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows 資格情報を使用してクライアント認証を行うかどうかを示す文字列を取得します。</summary>
+        <value>Windows 資格情報を使用してクライアント認証を行うかどうかを示す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSPI により、アプリケーションでは、インターフェイスをセキュリティ システムで変更することなく、コンピューターまたはネットワークで利用可能なさまざまなセキュリティ モデルを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,279 @@
+<Type Name="TrustManagerContext" FullName="System.Security.Policy.TrustManagerContext">
+  <TypeSignature Language="C#" Value="public class TrustManagerContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TrustManagerContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.TrustManagerContext" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>上の新しいセキュリティを設定して、アプリケーションを実行する決定を行うときに考慮する、信頼マネージャーのコンテキストを表します<see cref="T:System.AppDomain" />先となるアプリケーションを実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.TrustManagerContext> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Security.Policy.TrustManagerContext.%23ctor> コンストラクターに関するトピックを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrustManagerContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.TrustManagerContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Policy.TrustManagerContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表の新しいインスタンスの初期プロパティ値、<xref:System.Security.Policy.TrustManagerContext>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Security.Policy.TrustManagerContext.IgnorePersistedDecision%2A>|`false`|  
+|<xref:System.Security.Policy.TrustManagerContext.KeepAlive%2A>|`false`|  
+|<xref:System.Security.Policy.TrustManagerContext.NoPrompt%2A>|`false`|  
+|<xref:System.Security.Policy.TrustManagerContext.Persist%2A>|`true`|  
+|<xref:System.Security.Policy.TrustManagerContext.PreviousApplicationIdentity%2A>|`null`|  
+|<xref:System.Security.Policy.TrustManagerContext.UIContext%2A>|<xref:System.Security.Policy.TrustManagerUIContext.Run>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrustManagerContext (System.Security.Policy.TrustManagerUIContext uiContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Policy.TrustManagerUIContext uiContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.TrustManagerContext.#ctor(System.Security.Policy.TrustManagerUIContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uiContext" Type="System.Security.Policy.TrustManagerUIContext" />
+      </Parameters>
+      <Docs>
+        <param name="uiContext">1 つ、<see cref="T:System.Security.Policy.TrustManagerUIContext" />を使用する信頼マネージャーのユーザー インターフェイスの種類を指定する値。</param>
+        <summary>指定した <see cref="T:System.Security.Policy.TrustManagerUIContext" /> オブジェクトを使用して、<see cref="T:System.Security.Policy.TrustManagerContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、既定のコンス トラクターと同じ設定にプロパティを初期化の例外を除いて、<xref:System.Security.Policy.TrustManagerContext.UIContext%2A>で渡される値に設定されているプロパティ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnorePersistedDecision">
+      <MemberSignature Language="C#" Value="public virtual bool IgnorePersistedDecision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnorePersistedDecision" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.IgnorePersistedDecision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションのセキュリティ マネージャーが永続化の決定事項を無視する、信頼マネージャーを呼び出すかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />信頼マネージャーを呼び出すそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、<xref:System.Security.Policy.ApplicationSecurityManager>アプリケーションの永続化された決定を無視し、信頼マネージャーを呼び出しです。 場合`false`、<xref:System.Security.Policy.ApplicationSecurityManager>ではは、使用可能な場合に、意思決定をキャッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public virtual bool KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、信頼マネージャーがアプリケーションの信頼を決定する今後の要求を容易にするために、このアプリケーションの状態をキャッシュするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />状態データをキャッシュするそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフラグに設定されている`true`かどうか、ホストを呼び出すことの信頼マネージャー何回も、このアプリケーションの信頼の決定します。 場合`true`、信頼マネージャーは、将来の呼び出しの速度を向上する可能性がありますいずれかの状態をキャッシュする、<xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A>メソッドです。 このプロパティに設定`false`ホストは現在の信頼のマネージャーを再度呼び出すを想定していないかどうかは<xref:System.AppDomain>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoPrompt">
+      <MemberSignature Language="C#" Value="public virtual bool NoPrompt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoPrompt" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.NoPrompt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、信頼マネージャーが信頼の決定、ユーザーの入力を求める必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザー プロンプトを表示しません。<see langword="false" />ユーザー入力を求めます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`、信頼マネージャーは、適切なユーザー ダイアログ ボックス、信頼の決定を取得するを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Persist">
+      <MemberSignature Language="C#" Value="public virtual bool Persist { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Persist" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.Persist" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または同意 ダイアログ ボックスに、ユーザーの応答を永続化すべきかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />状態データをキャッシュするそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは`true`同意 ダイアログ ボックスに、ユーザーの応答をさらに新しいアクティブ化要求のたびにユーザー入力を求めないようにする永続化する場合。 このプロパティは`false`ユーザーの応答を永続化しない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousApplicationIdentity">
+      <MemberSignature Language="C#" Value="public virtual ApplicationIdentity PreviousApplicationIdentity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationIdentity PreviousApplicationIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.PreviousApplicationIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または以前のアプリケーション id の id を設定します。</summary>
+        <value><see cref="T:System.ApplicationIdentity" />前を表すオブジェクト<see cref="T:System.ApplicationIdentity" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UIContext">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Policy.TrustManagerUIContext UIContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Policy.TrustManagerUIContext UIContext" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.TrustManagerContext.UIContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.TrustManagerUIContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、信頼マネージャーを表示する必要がありますユーザー インターフェイスの型を設定します。</summary>
+        <value><see cref="T:System.Security.Policy.TrustManagerUIContext" /> 値のいずれか。 既定値は、<see cref="F:System.Security.Policy.TrustManagerUIContext.Run" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.TrustManagerContext.UIContext%2A>プロパティは、信頼マネージャーは、信頼の決定の入力が必要、ユーザー インターフェイスを推奨するためのものです。 信頼マネージャーは、別のインターフェイスを使用して決定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

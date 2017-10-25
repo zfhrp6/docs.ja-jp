@@ -1,0 +1,132 @@
+<Type Name="OleDbException" FullName="System.Data.OleDb.OleDbException">
+  <TypeSignature Language="C#" Value="public sealed class OleDbException : System.Data.Common.DbException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OleDbException extends System.Data.Common.DbException" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>警告またはエラー、OLE DB データ ソースを基になるプロバイダーが返されるときにスローされる例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、.NET Framework Data Provider for OLE DB は、サーバーから生成されたエラーを検出するたびに作成されます。 (クライアント側のエラーは、標準の共通言語ランタイム例外としてスローされます)。<xref:System.Data.OleDb.OleDbException>常に少なくとも 1 つのインスタンスを含む<xref:System.Data.OleDb.OleDbError>です。  
+  
+ エラーの重大度レベルが高すぎる場合、サーバーは <xref:System.Data.OleDb.OleDbConnection> を閉じることがあります。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+ .NET Framework データ プロバイダーの例外の処理の概要については、次を参照してください。<xref:System.Data.SqlClient.SqlException>です。  
+  
+   
+  
+## Examples  
+ 次のコード生成、<xref:System.Data.OleDb.OleDbException>不足しているデータ ソースのためし、その例外を表示します。  
+  
+ [!code-csharp[Classic WebData OleDbException Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbException Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbException Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbException Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ErrorCode">
+      <MemberSignature Language="C#" Value="public override int ErrorCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ErrorCode" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbException.ErrorCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Data.OleDb.OleDbException/ErrorCodeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーの HRESULT を取得します。</summary>
+        <value>エラーの HRESULT です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Errors">
+      <MemberSignature Language="C#" Value="public System.Data.OleDb.OleDbErrorCollection Errors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.OleDb.OleDbErrorCollection Errors" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OleDb.OleDbException.Errors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbErrorCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数のコレクションを取得<see cref="T:System.Data.OleDb.OleDbError" />for OLE DB、.NET Framework データ プロバイダーによって生成される例外に関する詳細な情報を提供するオブジェクト。</summary>
+        <value>収集された、<see cref="T:System.Data.OleDb.OleDbError" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbErrorCollection>クラスには常に少なくとも 1 つのインスタンスが含まれています、<xref:System.Data.OleDb.OleDbError>クラスです。  
+  
+ これは、用のラッパー、<xref:System.Data.OleDb.OleDbErrorCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例では、各が表示されます<xref:System.Data.OleDb.OleDbError>内で、<xref:System.Data.OleDb.OleDbErrorCollection>コレクション。  
+  
+ [!code-csharp[Classic WebData OleDbError.Message Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OleDbError.Message Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData OleDbError.Message Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OleDbError.Message Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OleDb.OleDbException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>このメンバーは <see cref="M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" /> をオーバーライドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcException.GetObjectData%2A> は、シリアル化する対象のすべての例外オブジェクト データを使用して、<xref:System.Runtime.Serialization.SerializationInfo> を設定します。 逆シリアル化中に、ストリームで転送された <xref:System.Runtime.Serialization.SerializationInfo> から例外が再構成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="si" />パラメーターが null 参照 (<see langword="Nothing" /> Visual Basic で)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

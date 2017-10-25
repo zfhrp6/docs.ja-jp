@@ -1,0 +1,982 @@
+<Type Name="ContainerRandomAccessIterator&lt;TValue&gt;" FullName="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;">
+  <TypeSignature Language="C#" Value="public class ContainerRandomAccessIterator&lt;TValue&gt; : Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContainerRandomAccessIterator`1&lt;TValue&gt; extends System.Object implements class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt;" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TValue" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TValue">[!INCLUDE[cpp_iter_arg](~/includes/cpp-iter-arg-md.md)]</typeparam>
+    <summary>次の操作をサポートする反復子を提供: 順方向の位置を 1 つを呼び出すことによって移動<c>operator++</c>を呼び出して 1 つの旧バージョンとの位置を移動<c>演算子--</c>を使用して要素にアクセスします。<c>operator[]</c>ポインターの算術演算を使用して要素にアクセスするとします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[unnamed_parm](~/includes/unnamed-parm-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContainerRandomAccessIterator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" /> オブジェクトを割り当て、初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContainerRandomAccessIterator (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.#ctor(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContainerRandomAccessIterator (Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer&lt;TValue&gt; _Cont, int _Offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer`1&lt;!TValue&gt; _Cont, int32 _Offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.#ctor(Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer{`0},System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="_Cont" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer&lt;TValue&gt;" />
+        <Parameter Name="_Offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="_Cont">既存の<see cref="T:Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer`1" />現在のコンテナーにコピーするオブジェクト。</param>
+        <param name="_Offset">作成した後に、反復子が指す要素のオフセット。</param>
+        <summary>新しい初期化<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />、既存のオブジェクト<see cref="T:Microsoft.VisualC.StlClr.Generic.IRandomAccessContainer`1" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public virtual object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーを作成<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />オブジェクト。</summary>
+        <returns>現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" /> オブジェクトのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="container">
+      <MemberSignature Language="C#" Value="public virtual object container ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object container() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.container" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復子を通過するコンテナーを取得します。</summary>
+        <returns>反復子を通過するコンテナーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="distance">
+      <MemberSignature Language="C#" Value="public int distance (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 distance(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.distance(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="distance">
+      <MemberSignature Language="C#" Value="public virtual int distance (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 distance(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.distance(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の反復子と同じコンテナーを指す有効な反復子。</param>
+        <summary>現在の反復子が指す要素と指定した反復子が指している要素間の距離を決定します。</summary>
+        <returns>個の要素を現在の反復子が指す要素と要素の間の距離を<paramref name="_Right" /> をポイントします。 この番号は負の値になる場合<paramref name="_Right" />を現在の反復子が指す要素の前にある要素を指します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="equal_to">
+      <MemberSignature Language="C#" Value="public bool equal_to (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool equal_to(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.equal_to(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="equal_to">
+      <MemberSignature Language="C#" Value="public virtual bool equal_to (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool equal_to(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.equal_to(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在と同じ<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子は、同じオブジェクトです。 場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public TValue this[int _Pos] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !TValue Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Pos" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="_Pos">アクセスする要素の位置。</param>
+        <summary>コンテナー内の指定位置にある要素にアクセスします。</summary>
+        <value>コンテナー内の指定位置にある要素。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="less_than">
+      <MemberSignature Language="C#" Value="public bool less_than (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool less_than(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.less_than(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="less_than">
+      <MemberSignature Language="C#" Value="public virtual bool less_than (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool less_than(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.less_than(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の反復子と同じコンテナーを指す有効な反復子。</param>
+        <summary>指定された反復子が指す要素の前に、コンテナー内の要素を現在の反復子が指しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在の反復子は、要素の前に付属している要素を指すかどうかを<paramref name="_Right" />以外の場合が指している<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="move">
+      <MemberSignature Language="C#" Value="public virtual int move (int _Offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 move(int32 _Offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.move(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="_Offset">走査する要素の数。 反復子を前方に移動するには、正の数値を指定します。 旧バージョンとの反復子を移動するには、負の値を使用します。</param>
+        <summary>指定した要素数で、反復子を移動します。</summary>
+        <returns>実際の要素数が走査されます。 この数点が異なります<paramref name="_Offset" />目的の要素の数を反復処理する前に、先頭またはコンテナーの末尾に達した場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="next">
+      <MemberSignature Language="C#" Value="public virtual void next ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void next() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.next" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンテナーが完全にスキャンされている場合は、コンテナーの末尾を超えた最初の位置を基になるコンテナーで、[次へ] の位置に反復子をインクリメントします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public void operator + (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; , int _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Addition(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; , int32 _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Addition(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="_Right" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="_Right">インクリメントする要素の数。</param>
+        <summary>指定した要素数によって、反復子をインクリメントします。 加算演算子の右側にある整数パラメーターを指定します。</summary>
+        <returns>反復子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Add%28Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%7B%600%7D%40%2CSystem.Int32%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static void operator + (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; , int _Left, Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Addition(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; , int32 _Left, class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Addition(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@,System.Int32,Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="_Left" Type="System.Int32" />
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="_Left">To be added.</param>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Assign">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator op_Assign (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) op_Assign(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Assign(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Decrement">
+      <MemberSignature Language="C#" Value="public void operator -- (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; );" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Decrement(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Decrement(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <summary>1 要素ずつ反復子をデクリメントします。 これは、デクリメント演算子の前置バージョンです。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Decrement">
+      <MemberSignature Language="C#" Value="public void operator -- (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; , int A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Decrement(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; , int32 A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Decrement(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="A_0" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="A_0">これが後置バージョンの演算子であることを示す未使用のパラメーターです。</param>
+        <summary>1 要素ずつ反復子をデクリメントします。 これは、後置バージョンのデクリメント演算子です。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public bool operator == (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Equality(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Equality(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public bool operator == (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Equality(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Equality(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在と同じ<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子は、同じオブジェクトです。 場合、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Equals%28Microsoft.VisualC.StlClr.Generic.IInputIterator%7B%600%7D%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public bool operator &gt; (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_GreaterThan(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_GreaterThan(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool operator &gt; (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Left, Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Left, class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_GreaterThan(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0},Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public bool operator &gt;= (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_GreaterThanOrEqual(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_GreaterThanOrEqual(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public bool operator &gt;= (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_GreaterThanOrEqual(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_GreaterThanOrEqual(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">左側の反復子と比較する反復子。</param>
+        <summary>左側の反復子の位置がより大きいかを指定の右側の反復子の位置に等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、左側の反復子が以上に特定の右側の反復子です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Compare%28Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator%7B%600%7D%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public implicit operator Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; op_Implicit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Implicit~Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0}" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Increment">
+      <MemberSignature Language="C#" Value="public void operator ++ (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; );" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Increment(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; ) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Increment(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <summary>1 要素ずつ反復子をインクリメントします。 これは、インクリメント演算子の前置バージョンです。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Increment">
+      <MemberSignature Language="C#" Value="public void operator ++ (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; , int A_0);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Increment(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; , int32 A_0) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Increment(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="A_0" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="A_0">これが後置バージョンの演算子であることを示す未使用のパラメーターです。</param>
+        <summary>1 要素ずつ反復子をインクリメントします。 これは、後置バージョンのインクリメント演算子です。</summary>
+        <returns>反復子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public bool operator != (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Inequality(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Inequality(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public bool operator != (Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_Inequality(class Microsoft.VisualC.StlClr.Generic.IInputIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Inequality(Microsoft.VisualC.StlClr.Generic.IInputIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IInputIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">現在の <see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" /> オブジェクトと比較する <see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" /> オブジェクト。</param>
+        <summary>決定するかどうか、指定された<see cref="T:Microsoft.VisualC.StlClr.Generic.IInputIterator`1" />オブジェクトは、現在とは異なる<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />2 つの反復子が別のオブジェクトである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Compare%28Microsoft.VisualC.StlClr.Generic.IInputIterator%7B%600%7D%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public bool operator &lt; (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_LessThan(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_LessThan(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public bool operator &lt; (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_LessThan(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_LessThan(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">左側の反復子と比較する反復子。</param>
+        <summary>左側の反復子の位置が指定の右側の反復子の位置よりも小さいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />左側の反復子が指定の右側の反復子です。 より小さい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Compare%28Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator%7B%600%7D%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public bool operator &lt;= (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance bool op_LessThanOrEqual(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_LessThanOrEqual(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &lt;= (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Left, Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThanOrEqual(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Left, class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_LessThanOrEqual(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0},Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <param name="_Right">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_MemberSelection">
+      <MemberSignature Language="C#" Value="public static TValue op_MemberSelection (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Left);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname !TValue op_MemberSelection(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Left) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_MemberSelection(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TValue@</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_PointerDereference">
+      <MemberSignature Language="C#" Value="public static TValue op_PointerDereference (Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator _Left);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname !TValue op_PointerDereference(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1 modreq(System.Runtime.CompilerServices.IsImplicitlyDereferenced) _Left) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_PointerDereference(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}|System.Runtime.CompilerServices.IsImplicitlyDereferenced)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1000")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>TValue@</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Left" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator" />
+      </Parameters>
+      <Docs>
+        <param name="_Left">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public int operator - (Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt; _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance int32 op_Subtraction(class Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1&lt;!TValue&gt; _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Subtraction(Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator{`0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.TargetedPatchingOptOut("Performance critical to inline this type of method across NGen image boundaries")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="_Right" Type="Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator&lt;TValue&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="_Right"><see cref="T:Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator`1" />現在から減算される<see cref="T:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1" />オブジェクト。</param>
+        <summary>2 つの反復子の違いを判断します。</summary>
+        <returns>2 つの反復子の差 (要素の数)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Subtract%28Microsoft.VisualC.StlClr.Generic.IRandomAccessIterator%7B%600%7D%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public void operator - (ref Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt; , int _Right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname instance class System.Void modreq(System.Runtime.CompilerServices.IsUdtReturn) op_Subtraction(class Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1&lt;!TValue&gt;&amp; , int32 _Right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.op_Subtraction(Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator{`0}@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="" Type="Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator&lt;TValue&gt;&amp;" RefType="ref" />
+        <Parameter Name="_Right" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="">To be added.</param>
+        <param name="_Right">デクリメントする要素の数。</param>
+        <summary>デクリメント反復子を指定した要素数。 減算演算子の右側にある整数パラメーターを指定します。</summary>
+        <returns>反復子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%601.Subtract%28Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator%7B%600%7D%40%2CSystem.Int32%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="prev">
+      <MemberSignature Language="C#" Value="public virtual void prev ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void prev() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.prev" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の要素の直前の要素を指す反復子を配置します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="valid">
+      <MemberSignature Language="C#" Value="public virtual bool valid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool valid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualC.StlClr.Generic.ContainerRandomAccessIterator`1.valid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualC.STLCLR</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復子が有効であり、基になるコンテナーを走査する安全に使用できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、反復子は有効かつ安全に使用します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

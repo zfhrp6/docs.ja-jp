@@ -1,0 +1,189 @@
+<Type Name="GridItemPattern+GridItemPatternInformation" FullName="System.Windows.Automation.GridItemPattern+GridItemPatternInformation">
+  <TypeSignature Language="C#" Value="public struct GridItemPattern.GridItemPatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit GridItemPattern/GridItemPatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.GridItemPattern.GridItemPatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.GridItemPattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.GridItemPattern.Current" />または<see cref="P:System.Windows.Automation.GridItemPattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public int Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Column" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムを含む列の序数を取得します。</summary>
+        <value>セルまたはアイテムを含む列を識別する、0 から始まる序数です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>グリッド コンテナー内のグリッド項目の移動を追跡するためにリスナーが宣言されています。 アイテムのプロパティは、それぞれのフォーカス変更イベントに、コンソールにエコーされます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+[!code-csharp[UIAGridItemPattern_snip#1015](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#1015)]
+[!code-vb[UIAGridItemPattern_snip#1015](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#1015)]  
+[!code-csharp[UIAGridItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#102)]
+[!code-vb[UIAGridItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#103)]
+[!code-vb[UIAGridItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnSpan">
+      <MemberSignature Language="C#" Value="public int ColumnSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.ColumnSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムがまたがる列の数を取得します。</summary>
+        <value>またがる列の数。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>グリッド コンテナー内のグリッド項目の移動を追跡するためにリスナーが宣言されています。 アイテムのプロパティは、それぞれのフォーカス変更イベントに、コンソールにエコーされます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+[!code-csharp[UIAGridItemPattern_snip#1015](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#1015)]
+[!code-vb[UIAGridItemPattern_snip#1015](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#1015)]  
+[!code-csharp[UIAGridItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#102)]
+[!code-vb[UIAGridItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#103)]
+[!code-vb[UIAGridItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingGrid">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement ContainingGrid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.AutomationElement ContainingGrid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.ContainingGrid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素をサポートする<see cref="T:System.Windows.Automation.GridPattern" />セルまたはアイテムのコンテナーを表します。</summary>
+        <value>A[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素を GridPattern をサポートし、テーブルのセルまたはアイテムのコンテナーを表します。 既定値は null 参照 (<see langword="Nothing" /> Microsoft Visual Basic .NET で)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>グリッド コンテナー内のグリッド項目の移動を追跡するためにリスナーが宣言されています。 アイテムのプロパティは、それぞれのフォーカス変更イベントに、コンソールにエコーされます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+[!code-csharp[UIAGridItemPattern_snip#1015](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#1015)]
+[!code-vb[UIAGridItemPattern_snip#1015](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#1015)]  
+[!code-csharp[UIAGridItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#102)]
+[!code-vb[UIAGridItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#103)]
+[!code-vb[UIAGridItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public int Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Row" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたは項目が含まれる行の序数を取得します。</summary>
+        <value>テーブル セルまたはアイテムを含む行を識別する、0 から始まる序数です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>グリッド コンテナー内のグリッド項目の移動を追跡するためにリスナーが宣言されています。 アイテムのプロパティは、それぞれのフォーカス変更イベントに、コンソールにエコーされます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+[!code-csharp[UIAGridItemPattern_snip#1015](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#1015)]
+[!code-vb[UIAGridItemPattern_snip#1015](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#1015)]  
+[!code-csharp[UIAGridItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#102)]
+[!code-vb[UIAGridItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#103)]
+[!code-vb[UIAGridItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowSpan">
+      <MemberSignature Language="C#" Value="public int RowSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.GridItemPattern.GridItemPatternInformation.RowSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムがまたがる行の数を取得します。</summary>
+        <value>またがる行の数。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>グリッド コンテナー内のグリッド項目の移動を追跡するためにリスナーが宣言されています。 アイテムのプロパティは、それぞれのフォーカス変更イベントに、コンソールにエコーされます。  
+  
+ [!code-csharp[UIAGridItemPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#101)]
+ [!code-vb[UIAGridItemPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#101)]  
+[!code-csharp[UIAGridItemPattern_snip#1015](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#1015)]
+[!code-vb[UIAGridItemPattern_snip#1015](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#1015)]  
+[!code-csharp[UIAGridItemPattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#102)]
+[!code-vb[UIAGridItemPattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#102)]  
+[!code-csharp[UIAGridItemPattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAGridItemPattern_snip/CSharp/UIAGridItemPattern_snippets.cs#103)]
+[!code-vb[UIAGridItemPattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAGridItemPattern_snip/VisualBasic/UIAGridItemPattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

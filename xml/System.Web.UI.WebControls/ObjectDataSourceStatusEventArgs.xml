@@ -1,0 +1,273 @@
+<Type Name="ObjectDataSourceStatusEventArgs" FullName="System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectDataSourceStatusEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataSourceStatusEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Selected" />、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Inserted" />、 <see cref="E:System.Web.UI.WebControls.ObjectDataSource.Updated" />、および<see cref="E:System.Web.UI.WebControls.ObjectDataSource.Deleted" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>クラスが使用されて、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnSelected%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnUpdated%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnInserted%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSourceView.OnDeleted%2A>出力パラメーター、戻り値、およびによって呼び出されるメソッドによってスローされる例外へのアクセスを提供するメソッド、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 これらにアクセス、 <xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.OutputParameters%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ReturnValue%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.Exception%2A>プロパティ、それぞれします。 処理するデリゲートを追加することによって、 <xref:System.Web.UI.WebControls.ObjectDataSource.Selected>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Updated>、 <xref:System.Web.UI.WebControls.ObjectDataSource.Inserted>、または<xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>イベント、このデータを確認し、必要な追加の post 処理を実行できます。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロールは、ライフ サイクルのさまざまなタイミングで、基になるビジネス オブジェクトを使用する処理できる多くのイベントを公開します。 次の表は、イベントと関連付けられている<xref:System.EventArgs>クラスとイベント ハンドラー デリゲート。  
+  
+|イベント|EventArgs|EventHandler|  
+|-----------|---------------|------------------|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>。<br /><br /> ビジネス オブジェクトのインスタンスが作成される直前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreated>。<br /><br /> ビジネス オブジェクトのインスタンスが作成された直後後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>。<br /><br /> データが取得される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>。<br /><br /> Insert、update、または削除操作が実行されるまでに発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selected>。<br /><br /> データが取得された後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserted>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updated>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>。<br /><br /> Insert、update、または削除操作が完了した後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>。<br /><br /> ビジネス オブジェクトが破棄される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler>|  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>データを削除するコントロール。 2 番目のコード例では、最初のコード例を使用する中間層ビジネス オブジェクトの例を提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>データを削除するコントロール。 <xref:System.Web.UI.WebControls.GridView>で指定されているメソッドを使用して、すべての従業員のセットが最初に表示されます、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>からデータを取得するプロパティを`EmployeeLogic`オブジェクト。 <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.GridView>コントロールが自動的に表示、**削除**ボタンをクリックします。  
+  
+ クリックした場合、**削除** ボタン、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>で指定されているメソッドを使用してアクションを実行、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod%2A>プロパティおよび任意のパラメーターで指定されている、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>コレクション。 このコード例では、1 つのパラメーターがで指定された、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>従業員 ID に対応するコレクション これは、ために、ID が含まれています、<xref:System.Windows.Forms.DataGridView.Columns%2A>コレクションとして、<xref:System.Web.UI.WebControls.BoundField>オブジェクトを文字列として渡されます、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 明示的に追加することによって、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>使用して、コレクション、<xref:System.Web.UI.WebControls.Parameter.Type%2A>プロパティに設定、<xref:System.TypeCode.Int32>値、合格によって適切、<xref:System.Web.UI.WebControls.ObjectDataSource>文字列ではなく、整数としてメソッドにします。  
+  
+ このコード例ではいくつか前処理および後処理手順も実行されます。 `NorthwindEmployeeDeleting`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>の前にイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションを実行すると、および`NorthwindEmployeeDeleted`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>後のイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションが完了したら、処理すること発生する可能性のある例外。 `NorthwindEmployeeDeleted`デリゲートを使用しているビジネス オブジェクトによってスローされる可能性のある例外にアクセスする、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>オブジェクト。 この例では場合、`NorthwindDataException`がスローされた場合、このデリゲートによって処理されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/CS/objds10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/VB/objds10vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を提供します。 次の一覧には、このコード例で定義されている 2 つの主要なクラスについて説明します。  
+  
+-   `EmployeeLogic`クラスは状態を保持しないと、ビジネス ロジックをカプセル化するクラス。  
+  
+-   `NorthwindEmployee`クラスは、モデル クラスを読み込んで、データ層からデータを永続化に必要な基本的な機能のみを含むです。  
+  
+ さらに、`NorthwindDataException`便宜クラスを提供します。  
+  
+ この例のクラスのセットは、Northwind traders 社、データベースは、データベースは、Microsoft SQL Server および Microsoft Access で使用するサンプル データベースを使用します。 、実際の完全な例については、このコードをライブラリとしてコンパイルし、ASP ページからこれらのクラスを使用してください。 前の例で提供されている ASP ページがこのクラス ライブラリを使用するように構成します。  `UpdateEmployeeInfo`メソッドは完全に実装されていませんはないデータを挿入する、Northwind traders というデータベースにこの例を試す場合にようにします。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_10#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/CS/northwindemployee10.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_10#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/VB/northwindemployee10.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceStatusEventArgs (object returnValue, System.Collections.IDictionary outputParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object returnValue, class System.Collections.IDictionary outputParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.#ctor(System.Object,System.Collections.IDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="returnValue" Type="System.Object" />
+        <Parameter Name="outputParameters" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="returnValue">完了したデータベースの操作の戻り値を表すオブジェクト。</param>
+        <param name="outputParameters"><see cref="T:System.Collections.IDictionary" />パラメーター オブジェクトの名前/値ペアのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs" />クラスの指定された出力パラメーターを使用し、値を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `returnValue`パラメーターは、ビジネス オブジェクト データのメソッドの呼び出しによって返される任意のオブジェクトを指定できます。 `outputParameters`パラメーターは、<xref:System.Collections.IDictionary>のメソッドのシグネチャに一致し、参照によって渡される名前/値ペアのコレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceStatusEventArgs (object returnValue, System.Collections.IDictionary outputParameters, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object returnValue, class System.Collections.IDictionary outputParameters, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.#ctor(System.Object,System.Collections.IDictionary,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="returnValue" Type="System.Object" />
+        <Parameter Name="outputParameters" Type="System.Collections.IDictionary" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="returnValue">完了したデータベースの操作の戻り値を表すオブジェクト。</param>
+        <param name="outputParameters"><see cref="T:System.Collections.IDictionary" />パラメーター オブジェクトの名前/値ペアのです。</param>
+        <param name="exception"><see cref="T:System.Exception" />メソッドの呼び出し中に内部例外をラップします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs" />クラスの指定された出力パラメーターを使用して、値、および例外を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `returnValue`パラメーターは、ビジネス オブジェクト データのメソッドの呼び出しによって返される任意のオブジェクトを指定できます。 `outputParameters`パラメーターは、<xref:System.Collections.IDictionary>のメソッドのシグネチャに一致し、参照によって渡される名前/値ペアのコレクション。 `exception`パラメーターは、<xref:System.Exception>例外によって呼び出されるメソッドによってスローされる例外をラップする、<xref:System.Web.UI.WebControls.ObjectDataSource>データの処理中に制御します。 によって例外が処理されない場合、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnSelected%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnUpdated%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnInserted%2A>、または<xref:System.Web.UI.WebControls.ObjectDataSourceView.OnDeleted%2A>メソッドによってスローされます、<xref:System.Web.UI.WebControls.ObjectDataSource>データ操作から制御が戻た後を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータの操作によって影響を受ける行の数を設定します。</summary>
+        <value>データの操作によって影響を受ける行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.AffectedRows%2A>予期された行数が影響を受けたことを確認する値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって呼び出されるメソッドによってスローされる例外のラッパーを取得、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />データの処理中に制御します。</summary>
+        <value><see cref="T:System.Exception" />でビジネス オブジェクトによってスローされた例外をラップするその<see cref="P:System.Exception.InnerException" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Exception>例外が実際には、ビジネス オブジェクト データのメソッドによってスローされる例外を表していません。 使用することができます、<xref:System.Exception.InnerException%2A>スローされた例外にアクセスするプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>データを削除するコントロール。 <xref:System.Web.UI.WebControls.GridView>で指定されているメソッドを使用して、すべての従業員のセットが最初に表示されます、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>からデータを取得するプロパティを`EmployeeLogic`オブジェクト。 <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.GridView>コントロールが自動的に表示、**削除**ボタンをクリックします。  
+  
+ クリックした場合、**削除** ボタン、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>で指定されているメソッドを使用してアクションを実行、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod%2A>プロパティおよび任意のパラメーターで指定されている、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>コレクション。  
+  
+ このコード例ではいくつか前処理および後処理手順も実行されます。 `NorthwindEmployeeDeleting`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>の前にイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションを実行すると、および`NorthwindEmployeeDeleted`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>後のイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションが完了したらを実行するには任意の例外処理します。 この例では場合、`NorthwindDataException`がスローされると、によって処理される、`NorthwindEmployeeDeleted`を委任します。  
+  
+ 実装を検査する、`EmployeeLogic`このコード例を使用して、中間層のビジネス オブジェクトは、クラスの概要を参照してください。<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/CS/objds10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/VB/objds10vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビジネス オブジェクトによってスローされた例外が処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ビジネス オブジェクトによってスローされる例外は、処理が行われ、スローしない場合、 <see cref="T:System.Web.UI.WebControls.ObjectDataSource" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジネス オブジェクト、例外をスローした場合、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ExceptionHandled%2A>プロパティに設定されている`false`によって例外をラップし、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.Exception%2A>プロパティです。 使用する場合、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>オブジェクトを確認することができます、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.Exception%2A>プロパティと、例外をハンドルします。 例外を処理する場合は、設定、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ExceptionHandled%2A>プロパティを`true`または<xref:System.Web.UI.WebControls.ObjectDataSource>コントロールは例外をスローします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>データを削除するコントロール。 <xref:System.Web.UI.WebControls.GridView>で指定されているメソッドを使用して、すべての従業員のセットが最初に表示されます、<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>からデータを取得するプロパティを`EmployeeLogic`オブジェクト。 <xref:System.Web.UI.WebControls.GridView.AutoGenerateDeleteButton%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.GridView>コントロールが自動的に表示、**削除**ボタンをクリックします。  
+  
+ クリックした場合、**削除** ボタン、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>で指定されているメソッドを使用してアクションを実行、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod%2A>プロパティおよび任意のパラメーターで指定されている、<xref:System.Web.UI.WebControls.ObjectDataSource.DeleteParameters%2A>コレクション。 このコード例ではいくつか前処理および後処理手順も実行されます。 `NorthwindEmployeeDeleting`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>の前にイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションを実行すると、および`NorthwindEmployeeDeleted`を処理するデリゲートが呼び出されて、<xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>後のイベント、<xref:System.Web.UI.WebControls.ObjectDataSource.Delete%2A>アクションが完了したら、処理すること発生する可能性のある例外。 この例では場合、`NorthwindDataException`がスローされると、によって処理される、`NorthwindEmployeeDeleted`を委任します。  
+  
+ 実装を検査する、`EmployeeLogic`このコード例を使用して、中間層のビジネス オブジェクトは、クラスの概要を参照してください。<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/CS/objds10cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_10#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_10/VB/objds10vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary OutputParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary OutputParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.OutputParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビジネス オブジェクト メソッドのパラメーターとその値を格納するコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.IDictionary" />ビジネス オブジェクト メソッドのパラメーターとその対応する値を表す名前/値ペア。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジネス オブジェクトのメソッドに参照によって渡されるパラメーターが返されます、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.OutputParameters%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnValue">
+      <MemberSignature Language="C#" Value="public object ReturnValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ReturnValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ReturnValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトとして存在する場合に、ビジネス オブジェクトのメソッドによって返される戻り値を取得します。</summary>
+        <value>ビジネス オブジェクトのメソッドによって返される戻り値を表すオブジェクトそれ以外の場合、<see langword="null" />ビジネス オブジェクトのメソッドは値を返さない場合は、します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ReturnValue%2A>にプロパティを設定、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>コンス トラクターです。 値は、ビジネス オブジェクト メソッドの呼び出し、リフレクションを使用して呼び出されるの戻り値に設定されます。 ビジネスのメソッドは値を返さない場合 (など、ビジネス オブジェクトのメソッドを返す場合`void`) では、<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs.ReturnValue%2A>にプロパティが評価される`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

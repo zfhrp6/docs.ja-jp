@@ -1,0 +1,2082 @@
+<Type Name="NumberFormatInfo" FullName="System.Globalization.NumberFormatInfo">
+  <TypeSignature Language="C#" Value="public sealed class NumberFormatInfo : ICloneable, IFormatProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit NumberFormatInfo extends System.Object implements class System.ICloneable, class System.IFormatProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.NumberFormatInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormatProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>数値を書式設定および解析するためのカルチャ固有の情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo>クラスには、書式を設定して数値の値を解析するときに使用されるカルチャに固有の情報が含まれています。 この情報には、通貨記号、桁区切り記号、桁区切り記号および正と負の記号のシンボルが含まれています。  
+  
+-   [NumberFormatInfo オブジェクトをインスタンス化します。](#Instantiating)  
+  
+    -   [現在のカルチャ](#Instantiating_Current)  
+  
+    -   [インバリアント カルチャ](#Instantiating_Invariant)  
+  
+    -   [特定のカルチャ](#Instantiating_Specific)  
+  
+    -   [ニュートラル カルチャ](#Instantiating_Neutral)  
+  
+-   [NumberFormatInfo と動的なデータ](#dynamic)  
+  
+-   [IFormatProvider、NumberFormatInfo、および数値の書式設定](#formatProvider)  
+  
+-   [NumberFormatInfo のプロパティおよび書式指定文字列](#properties)  
+  
+-   [NumberFormatInfo のプロパティの変更](#modifying)  
+  
+    -   [通貨記号とパターンを変更します。](#currency)  
+  
+    -   [国民識別番号を書式設定](#id)  
+  
+-   [数値文字列の解析](#parsing)  
+  
+    -   [ユーザー文字列の解析](#ParseUser)  
+  
+    -   [シリアル化して、数値データを逆シリアル化](#ParseSerial)  
+  
+<a name="Instantiating"></a>   
+## <a name="instantiating-a-numberformatinfo-object"></a>NumberFormatInfo オブジェクトをインスタンス化します。  
+ インスタンス化することができます、<xref:System.Globalization.NumberFormatInfo>を現在のカルチャ、インバリアント カルチャ、特定のカルチャまたはニュートラル カルチャの書式指定規則を表すオブジェクト。  
+  
+<a name="Instantiating_Current"></a>   
+## <a name="instantiating-a-numberformatinfo-object-for-the-current-culture"></a>現在のカルチャの NumberFormatInfo オブジェクトをインスタンス化します。  
+ インスタンス化することができます、<xref:System.Globalization.NumberFormatInfo>次の方法のいずれかで現在のスレッド カルチャのオブジェクト。 どの場合も、返された<xref:System.Globalization.NumberFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   取得することによって、<xref:System.Globalization.CultureInfo>から現在のスレッド カルチャを表すオブジェクト、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティ、および取得する、<xref:System.Globalization.CultureInfo>オブジェクトからその<xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   取得することによって、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、 `static` (`Shared` Visual Basic で)<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>プロパティです。  
+  
+-   呼び出して、<xref:System.Globalization.NumberFormatInfo.GetInstance%2A>メソッドを<xref:System.Globalization.CultureInfo>を現在のカルチャを表すオブジェクト。  
+  
+ 次の例では、これら 3 つの方法を作成する<xref:System.Globalization.NumberFormatInfo>を現在のカルチャの書式指定規則を表すオブジェクト。 値を取得、<xref:System.Globalization.NumberFormatInfo.IsReadOnly%2A>プロパティを各オブジェクトは読み取り専用のことを示しています。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate1.vb#1)]  
+  
+ 書き込み可能な作成<xref:System.Globalization.NumberFormatInfo>を次の方法のいずれかで現在のスレッド カルチャの規則を表すオブジェクト。  
+  
+-   取得することによって、<xref:System.Globalization.NumberFormatInfo>前のコード例に示すおよび呼び出し方法のいずれかのオブジェクト、<xref:System.Globalization.NumberFormatInfo.Clone%2A>メソッドで返された<xref:System.Globalization.NumberFormatInfo>オブジェクト。 元のコピーを作成してこの<xref:System.Globalization.NumberFormatInfo>点を除いて、オブジェクト、<xref:System.Globalization.NumberFormatInfo.IsReadOnly%2A>プロパティは`false`です。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>メソッドを作成、 <xref:System.Globalization.CultureInfo> 、現在のカルチャを表すオブジェクトし、を使用してその<xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>取得するプロパティを<xref:System.Globalization.NumberFormatInfo>オブジェクト。  
+  
+ 次の例は、これら 2 つのインスタンス化する方法を示しています、<xref:System.Globalization.NumberFormatInfo>オブジェクト、およびの値を表示、<xref:System.Globalization.NumberFormatInfo.IsReadOnly%2A>プロパティをオブジェクトが読み取り専用ではないことを示しています。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate2.cs#2)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate2.vb#2)]  
+  
+ Windows オペレーティング システムが可能ですが、ユーザーの一部をオーバーライドする、<xref:System.Globalization.NumberFormatInfo>プロパティの値が数値の書式設定および解析での操作で使用される、**地域と言語**コントロール パネル内の項目。 たとえば、カルチャが英語 (米国) は、ユーザーは、$1.1 の既定ではなくとして 1.1 USD 通貨の値を表示することもできます。 <xref:System.Globalization.NumberFormatInfo>説明した方法で取得したオブジェクト以前すべて反映ユーザーによるオーバーライドします。 これが望ましくない場合は、作成、<xref:System.Globalization.NumberFormatInfo>ユーザー オーバーライドが反映されていないオブジェクト (これは読み取り/書き込みでも読み取り専用ではなく) を呼び出して、<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>コンス トラクターの値を渡すと`false`の`useUserOverride`引数。 次の例は、現在のカルチャが英語 (米国) との通貨記号が米ドルに $ の既定値から変更されました、システムの図を提供します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate3.cs#3)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate3.vb#3)]  
+  
+ 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A?displayProperty=nameWithType>プロパティに設定されている`true`、プロパティ<xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType>、 <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>、および<xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType>ものユーザー設定から取得されます。 ユーザーの設定が、カルチャに関連付けられていると互換性がないかどうか、<xref:System.Globalization.CultureInfo>オブジェクト (選択したカレンダーは、によって一覧表示されるカレンダーのいずれかでがない場合など、<xref:System.Globalization.CultureInfo.OptionalCalendars%2A>プロパティ)、メソッドの結果と、プロパティの値が定義されていません。  
+  
+<a name="Instantiating_Invariant"></a>   
+## <a name="instantiating-a-numberformatinfo-object-for-the-invariant-culture"></a>インバリアント カルチャの NumberFormatInfo オブジェクトをインスタンス化します。  
+ インバリアント カルチャでは、カルチャに依存しないられるカルチャを表します。 これは、英語の言語ではなく、英語を話す国や地域に基づいています。 特定のカルチャのデータは、動的であることし、新しい文化的慣習やユーザー設定を反映するように変更することができます、インバリアント カルチャのデータは変わりません。 A<xref:System.Globalization.NumberFormatInfo>カルチャの書式設定操作の結果の文字列に変わらないように、インバリアント カルチャの書式指定規則を表すオブジェクトを使用できます。  
+  
+ インスタンス化することができます、<xref:System.Globalization.NumberFormatInfo>を次のように、インバリアント カルチャの書式指定規則を表すオブジェクト。  
+  
+-   値を取得することによって、<xref:System.Globalization.NumberFormatInfo.InvariantInfo%2A>プロパティです。 返された<xref:System.Globalization.NumberFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   値を取得することによって、<xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>プロパティから、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>プロパティです。 返された<xref:System.Globalization.NumberFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   パラメーターなしで呼び出すことによって<xref:System.Globalization.NumberFormatInfo.%23ctor%2A>クラスのコンス トラクターです。 返された <xref:System.Globalization.NumberFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+ 次の例を使用してこれらのメソッドの各インスタンスを作成する、<xref:System.Globalization.NumberFormatInfo>インバリアント カルチャを表すオブジェクト。 オブジェクトが読み取り専用かどうかを示します  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate4.cs#4)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate4.vb#4)]  
+  
+<a name="Instantiating_Specific"></a>   
+## <a name="instantiating-a-numberformatinfo-object-for-a-specific-culture"></a>特定のカルチャの NumberFormatInfo オブジェクトをインスタンス化します。  
+ 特定のカルチャでは、特定の国/地域で話される言語を表します。 たとえば、EN-US では、特定のカルチャを英語、米国での音声を表す、EN-CA カナダで話される英語の言語を表す特定のカルチャ。 インスタンス化することができます、<xref:System.Globalization.NumberFormatInfo>を次のように、特定のカルチャの書式指定規則を表すオブジェクト。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.GetCultureInfo%28System.String%29?displayProperty=nameWithType>メソッドと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 返された<xref:System.Globalization.NumberFormatInfo>オブジェクトは読み取り専用です。  
+  
+-   渡すことによって、<xref:System.Globalization.CultureInfo>カルチャを表すオブジェクトを<xref:System.Globalization.NumberFormatInfo>オブジェクトの静的なを取得する<xref:System.Globalization.NumberFormatInfo.GetInstance%2A>メソッドです。 返された <xref:System.Globalization.NumberFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+-   呼び出して、<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType>メソッドと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 返された <xref:System.Globalization.NumberFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+-   1 つを呼び出して、<xref:System.Globalization.CultureInfo.%23ctor%2A?displayProperty=nameWithType>クラス コンス トラクターと、返された値を取得する<xref:System.Globalization.CultureInfo>オブジェクトの<xref:System.Globalization.CultureInfo.NumberFormat%2A>プロパティです。 返された <xref:System.Globalization.NumberFormatInfo> オブジェクトは読み取り/書き込み可能です。  
+  
+ 次の例では、これら 4 つの方法を作成する、<xref:System.Globalization.NumberFormatInfo>インドネシア語 (インドネシア) カルチャの書式指定規則を反映するオブジェクト。 また、各オブジェクトは読み取り専用であるかどうかも示します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate5.cs#5)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate5.vb#5)]  
+  
+<a name="Instantiating_Neutral"></a>   
+## <a name="instantiating-a-numberformatinfo-object-for-a-neutral-culture"></a>ニュートラル カルチャの NumberFormatInfo オブジェクトをインスタンス化します。  
+ ニュートラル カルチャは、カルチャまたは言語とは別の国/地域を表します。 1 つまたは複数の特定のカルチャの親では通常です。 たとえば、fr は、フランス語の言語および FR-FR カルチャの親のニュートラル カルチャです。 作成する、<xref:System.Globalization.NumberFormatInfo>を作成するのと同様に、ニュートラル カルチャの書式指定規則を表すオブジェクト、<xref:System.Globalization.NumberFormatInfo>を特定のカルチャの書式指定規則を表すオブジェクト。  
+  
+> [!NOTE]
+>  [!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]を取得中に、以前のバージョン、<xref:System.Globalization.NumberFormatInfo>がニュートラル カルチャの書式指定規則を反映するオブジェクトをスロー、<xref:System.NotSupportedException>例外。  
+  
+ ただし、特定の国/地域に依存しないため、ニュートラル カルチャはカルチャに固有の書式情報がありません。 設定するのではなく、<xref:System.Globalization.NumberFormatInfo>汎用的な値は、オブジェクト、.NET Framework が返されます、<xref:System.Globalization.NumberFormatInfo>ニュートラル カルチャの子である、特定の書式指定規則のカルチャを反映するオブジェクト。 たとえば、 <xref:System.Globalization.NumberFormatInfo> en のニュートラル カルチャは EN-US カルチャの書式指定規則を反映するためのオブジェクトと<xref:System.Globalization.NumberFormatInfo>fr カルチャ FR-FR カルチャの書式指定規則を反映するためのオブジェクトします。  
+  
+ 次のようにコードを使用すると、各ニュートラル カルチャを表すどの特定のカルチャの書式指定規則を決定します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class.Instantiate#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/cs/instantiate6c.cs#6)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class.Instantiate#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class.instantiate/vb/instantiate6c.vb#6)]  
+  
+<a name="dynamic"></a>   
+## <a name="numberformatinfo-and-dynamic-data"></a>NumberFormatInfo と動的なデータ  
+ カルチャに固有のデータによって提供される数値の書式設定を<xref:System.Globalization.NumberFormatInfo>クラスは動的で、カルチャによって提供されるデータと同じように、<xref:System.Globalization.CultureInfo>クラスです。 値の安定性に関する仮定をする必要がありますいない<xref:System.Globalization.NumberFormatInfo>関連付けられているオブジェクトの特定の<xref:System.Globalization.CultureInfo>オブジェクト。 インバリアント カルチャとそれに関連付けられたによって提供されるデータのみ<xref:System.Globalization.NumberFormatInfo>オブジェクトが安定化します。 その他のデータは、アプリケーション セッション間で、または、次の理由の 1 つのセッション内でも変更できます。  
+  
+-   **システムの更新プログラム。** 通貨記号、通貨の書式などのカルチャの設定は、時間の経過と共に変更します。 Windows Update がに対する変更を含むこのような場合は、<xref:System.Globalization.NumberFormatInfo>特定のカルチャのプロパティの値。  
+  
+-   **置換カルチャ。** <xref:System.Globalization.CultureAndRegionInfoBuilder>既存のカルチャのデータを置換するクラスを使用できます。  
+  
+-   **プロパティの値に変更を連鎖します。** これにより、実行時にカルチャ関連のプロパティの数を変更することができます<xref:System.Globalization.NumberFormatInfo>データを変更します。 たとえば、プログラム、またはユーザーの操作によっては、現在のカルチャを変更できます。 この場合、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>プロパティに対する変更を現在のカルチャに関連付けられているオブジェクト。  
+  
+-   **ユーザー設定。** アプリケーションのユーザーには、コントロール パネルの 地域と言語のオプションでは、現在のシステム カルチャに関連付けられている値の一部をオーバーライド可能性があります。 たとえば、異なる通貨記号、または別の小数点の記号は、ユーザーが選択する可能性があります。 場合、<xref:System.Globalization.CultureInfo.UseUserOverride%2A?displayProperty=nameWithType>プロパティに設定されている`true`(その既定値) のプロパティ、<xref:System.Globalization.NumberFormatInfo>オブジェクトは、ユーザーの設定からも取得されます。  
+  
+ すべてのユーザーがオーバーライドできるプロパティ、.NET Framework 2.0 以降で、<xref:System.Globalization.NumberFormatInfo>オブジェクトが、オブジェクトが作成されるときに初期化されます。 可能性がありますが、不整合のため、どちらのオブジェクトの作成もユーザーのオーバーライド処理はアトミックであり、関連する値がオブジェクトの作成中に変更します。 ただし、これらの不整合が非常にまれなする必要があります。  
+  
+ ユーザーのオーバーライドを反映するかどうかを制御する<xref:System.Globalization.NumberFormatInfo>を現在のスレッド カルチャと同じカルチャを表すオブジェクト。 次の表に、方法、<xref:System.Globalization.NumberFormatInfo>オブジェクトを取得して、結果のオブジェクトがユーザーのオーバーライドを反映するかどうかを示します。  
+  
+|CultureInfo と NumberFormatInfo オブジェクトのソース|ユーザー オーバーライドが反映されます。|  
+|-------------------------------------------------------|-----------------------------|  
+|`CultureInfo.CurrentCulture.NumberFormat` プロパティ|はい|  
+|<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> プロパティ|はい|  
+|<xref:System.Globalization.CultureInfo.CreateSpecificCulture%2A?displayProperty=nameWithType> メソッド|はい|  
+|<xref:System.Globalization.CultureInfo.GetCultureInfo%2A?displayProperty=nameWithType> メソッド|いいえ|  
+|<xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> コンストラクター|はい|  
+|<xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> コンストラクター|値に依存`useUserOverride`パラメーター|  
+  
+ 使用するときに、ユーザーのオーバーライドを遵守する必要は、それ以外に特別な理由がある場合を除き、<xref:System.Globalization.NumberFormatInfo>を書式設定し、ユーザー入力を解析または数値データを表示するクライアント アプリケーション内のオブジェクト。 サーバー アプリケーションまたは自動アプリケーションでは、ユーザーのオーバーライドを反映する必要がありますされません。 ただし、使用する場合、<xref:System.Globalization.NumberFormatInfo>いずれかのオブジェクトを明示的または暗黙的にデータを保持する数値を文字列形式で、する必要がありますを使用する、<xref:System.Globalization.NumberFormatInfo>インバリアント カルチャの書式指定規則を反映するオブジェクトはカルチャに関係なく使用されるカスタム数値書式指定文字列を指定する必要があります。  
+  
+<a name="formatProvider"></a>   
+## <a name="iformatprovider-numberformatinfo-and-numeric-formatting"></a>IFormatProvider、NumberFormatInfo、および数値の書式設定  
+ A<xref:System.Globalization.NumberFormatInfo>オブジェクトがすべての数値を書式設定操作の暗黙的または明示的に使用されます。 次のメソッドを呼び出す例を示します。  
+  
+-   など、書式設定メソッド、すべての数値<xref:System.Int32.ToString%2A?displayProperty=nameWithType>、 <xref:System.Double.ToString%2A?displayProperty=nameWithType>、および<xref:System.Convert.ToString%28System.Int32%29?displayProperty=nameWithType>です。  
+  
+-   メジャーの複合書式指定メソッド、<xref:System.String.Format%2A?displayProperty=nameWithType>です。  
+  
+-   など、書式設定メソッド、他の複合<xref:System.Console.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>と<xref:System.Text.StringBuilder.AppendFormat%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>です。  
+  
+ すべての数値書式設定操作のための使用、<xref:System.IFormatProvider>実装します。 <xref:System.IFormatProvider>インターフェイスには、1 つのメソッドが含まれています。<xref:System.IFormatProvider.GetFormat%28System.Type%29>です。 これは、渡されるコールバック メソッド、<xref:System.Type>の書式情報を提供するために必要な型を表すオブジェクト。 その型のインスタンスを返すため、このメソッドはまたは`null`型のインスタンスを提供できない場合、します。 .NET Framework には 2 つ<xref:System.IFormatProvider>数値の書式設定を実装します。  
+  
+-   <xref:System.Globalization.CultureInfo>クラスで、特定のカルチャ (または特定の国/地域における特定の言語) を表します。 型の数値書式設定操作で、<xref:System.Globalization.CultureInfo.GetFormat%2A?displayProperty=nameWithType>メソッドを返します、<xref:System.Globalization.NumberFormatInfo>オブジェクトに関連付けられているその<xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   <xref:System.Globalization.NumberFormatInfo>クラスで、対応するカルチャの書式指定規則に関する情報を提供します。 <xref:System.Globalization.NumberFormatInfo.GetFormat%2A?displayProperty=nameWithType>メソッド自体のインスタンスを返します。  
+  
+ 場合、<xref:System.IFormatProvider>実装が指定されていない書式指定メソッドに明示的に、<xref:System.Globalization.CultureInfo>によって返されるオブジェクト、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>を現在のスレッド カルチャを表すプロパティを使用します。  
+  
+ 次の例の間のリレーションシップを示しています、<xref:System.IFormatProvider>インターフェイスおよび<xref:System.Globalization.NumberFormatInfo>カスタムを定義することによって、書式設定操作でクラス<xref:System.IFormatProvider>実装します。 その<xref:System.IFormatProvider.GetFormat%2A>メソッドには、書式設定操作によって要求されたオブジェクトの型名が表示されます。 インターフェイスを要求している場合、<xref:System.Globalization.NumberFormatInfo>オブジェクト、このメソッドを提供、<xref:System.Globalization.NumberFormatInfo>現在のスレッド カルチャ オブジェクト。 例から出力として、<xref:System.Decimal.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>メソッド要求、<xref:System.Globalization.NumberFormatInfo>一方の書式情報を提供するオブジェクト、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッド要求<xref:System.Globalization.NumberFormatInfo>と<xref:System.Globalization.DateTimeFormatInfo>オブジェクトだけでなく、<xref:System.ICustomFormatter>実装します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/formatprovider1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/formatprovider1.vb#1)]  
+  
+ 場合、<xref:System.IFormatProvider>実装が型の数値書式設定メソッドの呼び出し、このメソッドの呼び出しで明示的に提供されていない、`CultureInfo.CurrentCulture.GetFormat`を返すメソッド、<xref:System.Globalization.NumberFormatInfo>現在のスレッド カルチャに対応するオブジェクト。  
+  
+<a name="properties"></a>   
+## <a name="format-strings-and-numberformatinfo-properties"></a>NumberFormatInfo のプロパティおよび書式指定文字列  
+ すべての書式設定操作は、数値から結果の文字列を生成するために、標準またはカスタム数値書式指定文字列を使用します。 場合によっては、結果の文字列を生成するために書式指定文字列の使用は、次の例のように、明示的なです。 このコードを呼び出す、<xref:System.Decimal.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>に変換する方法、 <xref:System.Decimal> EN-US カルチャの書式指定規則を使用して、別の文字列表現の数の値。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/properties1.cs#2)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/properties1.vb#2)]  
+  
+ その他の場合、書式指定文字列の使用は、暗黙の型です。 たとえば、次のメソッド呼び出しの既定値またはパラメーターなしで<xref:System.Decimal.ToString?displayProperty=nameWithType>メソッドは、の値、<xref:System.Decimal>インスタンスは、[全般] ("G") 書式指定子と、EN-US カルチャをここでは、現在のカルチャの規則を使用して書式設定します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/properties2.cs#3)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/properties2.vb#3)]  
+  
+ 各標準の数値書式指定文字列を使用して 1 つまたは複数<xref:System.Globalization.NumberFormatInfo>プロパティを確認して、パターンまたは結果の文字列で使用する記号。 同様に、各カスタム数値書式指定子「0」と「#」記号を挿入によって定義されている結果の文字列の点を除いて<xref:System.Globalization.NumberFormatInfo>プロパティです。 次の表は、標準およびカスタム数値書式指定子と関連付けられた<xref:System.Globalization.NumberFormatInfo>プロパティです。  特定のカルチャの結果文字列の外観を変更するを参照してください。、[変更 NumberFormatInfo プロパティ](#modifying)セクションです。 これらの使用方法の詳細の書式指定子を参照してください[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。  
+  
+|書式指定子|関連付けられたプロパティ|  
+|----------------------|---------------------------|  
+|"C"または"c"(通貨書式指定子)|<xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A>、小数部桁数の既定値を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>、グループまたは数千の定義に区切り記号。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSizes%2A>、整数のグループのサイズを定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A>、通貨の負の値のパターンを定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A>、通貨の正の値のパターンを定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A>、通貨記号を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。|  
+|"D"または"d"(10 進数の書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。|  
+|"E"または"e"(指数または指数書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>、仮数部および指数で負の記号を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>、指数部の正の記号を定義します。|  
+|"F"または"f"(固定小数点の書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>、小数部桁数の既定値を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。|  
+|"G"または"g"(一般書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>、指数形式で結果文字列の正の記号を定義します。|  
+|"N"または"n"(数値書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>、小数部桁数の既定値を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>、グループの区切り記号 (thousands) 記号を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>、グループ内の整数部の桁の数を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberNegativePattern%2A>、負の値の形式を定義します。|  
+|"P"または"p"(パーセント書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A>、小数部桁数の既定値を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>、桁区切り記号を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>、グループ内の整数部の桁の数を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentNegativePattern%2A>、パーセント記号と負の値を負の符号の位置を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentPositivePattern%2A>、正の値のパーセント記号の位置を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A>、パーセント記号を定義します。|  
+|"R"または"r"(ラウンドト リップ書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A> (マイナス記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>、指数部の正の記号を定義します。|  
+|"X"または"x"(16 進数の書式指定子)|なし。|  
+|"."(小数点のカスタム書式指定子)|<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> (小数点の記号を定義します)。|  
+|"、"(グループの区切り記号のカスタム書式指定子)|<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>、グループ (thousands) の区切り記号を定義します。|  
+|「%」(パーセント プレース ホルダーのカスタム書式指定子)|<xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A>、パーセント記号を定義します。|  
+|「‰」(あたりパーミル プレース ホルダーのカスタム書式指定子)|<xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A>を定義する、パーミル記号。|  
+|"E"(指数表記のカスタム書式指定子)|<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>、仮数部および指数で負の記号を定義します。<br /><br /> <xref:System.Globalization.NumberFormatInfo.PositiveSign%2A>、指数部の正の記号を定義します。|  
+  
+ なお、<xref:System.Globalization.NumberFormatInfo>クラスが含まれています、<xref:System.Globalization.NumberFormatInfo.NativeDigits%2A>特定のカルチャで使用される基本の 10 桁を指定するプロパティです。 ただし、プロパティを書式設定操作; で使用できません。基本的なラテン文字の数字 0 のみ (u+0030) 9 から (u+0039) 結果の文字列で使用されます。 さらに、<xref:System.Single>と<xref:System.Double>の値`NaN`、 `PositiveInfinity`、および`NegativeInfinity`、結果の文字列のみで構成されてによって定義されたシンボル、 <xref:System.Globalization.NumberFormatInfo.NaNSymbol%2A>、 <xref:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol%2A>、および<xref:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol%2A>プロパティ、それぞれします。  
+  
+<a name="modifying"></a>   
+## <a name="modifying-numberformatinfo-properties"></a>NumberFormatInfo のプロパティの変更  
+ プロパティを変更することができます、<xref:System.Globalization.NumberFormatInfo>型の数値書式設定操作で生成される結果の文字列をカスタマイズするオブジェクト。 この操作を行うには、次の手順を実行します。  
+  
+1.  読み取り/書き込みコピーを作成、<xref:System.Globalization.NumberFormatInfo>オブジェクトを書式指定規則を変更します。 詳細については、次を参照してください。、 [NumberFormatInfo オブジェクトをインスタンス化する](#Instantiating)セクションです。  
+  
+2.  プロパティまたは目的の結果の文字列を生成するために使用されるプロパティを変更します。 詳細については、どのように書式設定メソッドの使用に関する<xref:System.Globalization.NumberFormatInfo>結果文字列を定義するプロパティを参照してください、[文字列および NumberFormatInfo のプロパティを書式設定](#properties)セクションです。  
+  
+3.  ユーザー設定を使用して<xref:System.Globalization.NumberFormatInfo>オブジェクトとして、<xref:System.IFormatProvider>書式指定メソッドの呼び出しで引数。  
+  
+> [!NOTE]
+>  動的なアプリケーションを起動するたびのカルチャのプロパティの値を変更、代わりに使用することができます、 <xref:System.Globalization.CultureAndRegionInfoBuilder> (一意の名前を持つし、既存を補足するものをカルチャのカルチャ) カスタム カルチャまたは置換カルチャ (1 つの特定のカルチャの代わりに使用される) のいずれかを定義するクラス。  
+  
+ 次のセクションでは、いくつかの例を提供します。  
+  
+<a name="currency"></a>   
+### <a name="modifying-the-currency-symbol-and-pattern"></a>通貨記号とパターンを変更します。  
+ 次の例を変更、 <xref:System.Globalization.NumberFormatInfo> EN-US カルチャの書式指定規則を表すオブジェクトします。 ISO 4217 通貨記号が割り当てられます、<xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A>プロパティおよび通貨記号の後にスペースと数値の値で構成される通貨の値のパターンを定義します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Customize#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.customize/cs/customize_currency1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Customize#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.customize/vb/customize_currency1.vb#1)]  
+  
+<a name="id"></a>   
+### <a name="formatting-a-national-identification-number"></a>国民識別番号を書式設定  
+ 多くの身分登録番号桁の数字だけで構成され、ので簡単を形式指定できるプロパティの変更によって、<xref:System.Globalization.NumberFormatInfo>オブジェクト。 たとえば、米国の社会保障番号は 9 桁のように配置:`XXX-XX-XXXX`です。 次の例では、整数値、それを適切に書式設定、社会保障番号が格納されていると仮定します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Customize#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.customize/cs/customize_ssn1.cs#2)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Customize#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.customize/vb/customize_ssn1.vb#2)]  
+  
+<a name="parsing"></a>   
+## <a name="parsing-numeric-strings"></a>数値文字列の解析  
+ 解析するには、数値の文字列形式に変換する数値が含まれます。 .NET Framework の各数値型には、次の 2 つのオーバー ロードされた解析メソッドが含まれています:`Parse`と`TryParse`です。 `Parse`メソッドは、文字列を数値に変換し、変換が失敗した場合、例外をスローします。 `TryParse`メソッド文字列を数値に変換を取得する数値を割り当てます、`out`引数を返す、<xref:System.Boolean>変換が成功したかどうかを示す値。  
+  
+ 暗黙的または明示的に使用して、解析メソッド、<xref:System.Globalization.NumberStyles>解析操作が成功する場合は、(桁区切り記号、桁区切り記号、通貨記号など) には、どのようなスタイル要素を文字列内に存在することができますを決定する列挙値。 場合、<xref:System.Globalization.NumberStyles>値が提供されていない場合、既定では、メソッドを呼び出すには、<xref:System.Globalization.NumberStyles>を含む値、<xref:System.Globalization.NumberStyles.Float>と<xref:System.Globalization.NumberStyles.AllowThousands>フラグで、解析された文字列は、グループ記号、桁区切り記号、負の符号および空白文字を含めることができますまたは指数表記の数値の文字列表現ができることを指定します。  
+  
+ 解析メソッドも暗黙的または明示的に使用して、<xref:System.Globalization.NumberFormatInfo>に解析する文字列でオブジェクトを特定のシンボルが定義されるパターンが発生します。 場合、<xref:System.Globalization.NumberFormatInfo>オブジェクトが指定されていない、既定値は、<xref:System.Globalization.NumberFormatInfo>現在のスレッド カルチャ。 解析の詳細についてなど、個々 の解析メソッドを参照してください<xref:System.Int16.Parse%28System.String%29?displayProperty=nameWithType>、 <xref:System.Int32.Parse%28System.String%2CSystem.Globalization.NumberStyles%29?displayProperty=nameWithType>、 <xref:System.Int64.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>、 <xref:System.Decimal.Parse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%29?displayProperty=nameWithType>、 <xref:System.Double.TryParse%28System.String%2CSystem.Double%40%29?displayProperty=nameWithType>、および<xref:System.Numerics.BigInteger.TryParse%28System.String%2CSystem.Globalization.NumberStyles%2CSystem.IFormatProvider%2CSystem.Numerics.BigInteger%40%29?displayProperty=nameWithType>です。  
+  
+ 次の例では、文字列の解析のカルチャの性質を示します。 数千ものを含む文字列を解析しようとすると、EN-US、FR-FR、インバリアント カルチャの規則を使用して区切り記号。 小数点区切り文字が、FR-FR カルチャで解析に失敗したと桁区切り記号、およびピリオドとコンマを含む文字列と桁区切り記号として white space と小数点区切り文字としてコンマ文字列は、EN-US およびインバリアント カルチャの解析に失敗します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/parse1.cs#4)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/parse1.vb#4)]  
+  
+ 通常、解析は、2 つのコンテキストで行われます。  
+  
+-   ユーザー入力を数値に変換するように設計された操作として。  
+  
+-   設計されている操作として数値の値をラウンドト リップさせるつまり、数値の値を文字列としてシリアル化された以前を逆シリアル化します。  
+  
+ 次のセクションより詳細でこれら 2 つの操作について説明します。  
+  
+<a name="ParseUser"></a>   
+### <a name="parsing-user-strings"></a>ユーザー文字列の解析  
+ 常にインスタンス化する必要がある、ユーザーが入力した数値の文字列を解析するときに、<xref:System.Globalization.NumberFormatInfo>ユーザーのカルチャ設定を反映するオブジェクト。 インスタンスを作成する方法については、<xref:System.Globalization.NumberFormatInfo>ユーザーによるカスタマイズを反映するオブジェクトを参照してください、 [NumberFormatInfo と動的データ](#dynamic)セクションです。  
+  
+ 次の例は、ユーザーのカルチャ設定を反映する解析操作としない 1 つの違いを示しています。 この場合、既定のシステムのカルチャが EN-US で、ユーザーが定義されて小数点記号として「,」と"です。"コントロール パネルで、グループの区切り記号として**地域と言語**します。 通常、これらのシンボルは、既定値 EN-US カルチャで予約されています。 ときにユーザーが、ユーザー設定を反映する文字列を入力し、によって文字列が解析、<xref:System.Globalization.NumberFormatInfo>もユーザー設定 (オーバーライド) を反映するオブジェクト、解析操作には、正しい結果が返されます。 ただし、文字列の解析時では<xref:System.Globalization.NumberFormatInfo>標準的な EN-US カルチャの設定を反映するオブジェクト、誤りの桁区切り記号のシンボルはコンマと、不適切な結果を返します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/parseuser1.cs#5)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/parseuser1.vb#5)]  
+  
+<a name="ParseSerial"></a>   
+### <a name="serializing-and-deserializing-numeric-data"></a>シリアル化して、数値データを逆シリアル化  
+ 数値データが文字列の形式でシリアル化し、後で逆シリアル化し解析、文字列を生成され、インバリアント カルチャの規則を使用して解析する必要があります。 書式設定および解析操作では、特定のカルチャの規則が反映されないようにする必要があります。 データの移植性が厳密に制限されます。 カルチャに固有の設定を使用している場合カルチャに固有の設定は、のスレッドのシリアル化したものと同じスレッドでのみ正常に逆シリアル化されたことができます。 場合によっては、データがもできないすることを意味するシリアル化された同じシステムに正常に逆シリアル化されました。  
+  
+ 次の例では、この原則に違反した場合に発生することを示しています。 配列内の浮動小数点値は、現在のスレッドは、EN-US カルチャのカルチャに固有の設定を使用する場合、文字列に変換されます。 EN-GB カルチャのカルチャに固有の設定を使用するスレッドによってデータが解析されます。 この場合、各解析操作は成功しますが、データはラウンドト リップが正常にデータの破損が発生したとします。 解析操作が失敗する場合に、および<xref:System.FormatException>例外がスローされることです。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/cs/parsepersisted.cs#6)]
+ [!code-vb[System.Globalization.NumberFormatInfo.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.class/vb/parsepersisted.vb#6)]  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、 <xref:System.Globalization.NumberFormatInfo> 、対応するためのオブジェクト<xref:System.Globalization.CultureInfo>オブジェクト、およびクエリ数が特定のカルチャの書式設定情報を取得したオブジェクトを使用します。  
+  
+ [!code-cpp[NumberFormatInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberFormatInfo/cpp/NumberFormatInfo.cpp#1)]
+ [!code-csharp[NumberFormatInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberFormatInfo/CS/NumberFormatInfo.cs#1)]
+ [!code-vb[NumberFormatInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberFormatInfo/vb/numberformatinfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NumberFormatInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.NumberFormatInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>カルチャに依存しない (インバリアントな) <see cref="T:System.Globalization.NumberFormatInfo" /> クラスの新しい書き込み可能インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、ユーザー定義の書式設定が必要な場合、新しいインスタンスのプロパティを変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.NumberFormatInfo.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトの簡易コピーを作成します。</summary>
+        <returns>元の <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトからコピーされた新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クローンが書き込み可能な場合でも、元の<xref:System.Globalization.NumberFormatInfo>オブジェクトは読み取り専用です。 そのため、ユーザー定義のパターンを使用、複製のプロパティを変更できます。  
+  
+ オブジェクトのシャロー コピーのみのオブジェクトのコピーであります。 オブジェクトに他のオブジェクトへの参照が含まれている場合、シャロー コピーでは、参照されるオブジェクトのコピーは作成されません。 代わりに元のオブジェクトを参照します。 その一方で、オブジェクトのディープ コピーは、オブジェクトのコピーとそのオブジェクトが直接または間接的に参照するすべてのコピーを作成します。 場合、<xref:System.Globalization.NumberFormatInfo>オブジェクトのシャロー コピーでは、すべてのインスタンスのプロパティをコピーするための十分なオブジェクトの参照を返すすべてのプロパティは`static`(`Shared` Visual Basic で)。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Globalization.NumberFormatInfo.Clone%2A>の読み取り/書き込みコピーを作成する方法、<xref:System.Globalization.NumberFormatInfo>数値を書式設定の現在のスレッド カルチャの規則を表すオブジェクト。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.IsReadOnly#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.isreadonly/cs/isreadonly1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.IsReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.isreadonly/vb/isreadonly1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyDecimalDigits">
+      <MemberSignature Language="C#" Value="public int CurrencyDecimalDigits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrencyDecimalDigits" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨の値で使用する小数点以下の桁数を取得または設定します。</summary>
+        <value>通貨の値で使用する小数点以下の桁数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A>プロパティは、"C"標準書式指定文字列の数値書式指定操作で、精度指定子なしで使用します。 小数部の桁数、小数点区切り文字の後に表示される既定の数を定義します。 精度指定子を使用する場合、この値はオーバーライドされます。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.CurrencyDecimalDigits%2A>プロパティです。  
+  
+ [!code-cpp[CurrencyDecimalDigits#1](~/samples/snippets/cpp/VS_Snippets_CLR/CurrencyDecimalDigits/CPP/currencydecimaldigits.cpp#1)]
+ [!code-csharp[CurrencyDecimalDigits#1](~/samples/snippets/csharp/VS_Snippets_CLR/CurrencyDecimalDigits/CS/currencydecimaldigits.cs#1)]
+ [!code-vb[CurrencyDecimalDigits#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CurrencyDecimalDigits/VB/currencydecimaldigits.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが、0 より小さい値か、99 より大きい値に設定されようとしています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyDecimalSeparator">
+      <MemberSignature Language="C#" Value="public string CurrencyDecimalSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyDecimalSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨の値で桁区切り記号として使用する文字列を取得または設定します。</summary>
+        <value>通貨の値で桁区切り記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "." です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの初期値が設定から派生した、**地域と言語**コントロール パネル内の項目。  
+  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>プロパティは"C"標準書式指定文字列を小数部の桁の整数を区切る記号の定義を使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>プロパティです。  
+  
+ [!code-cpp[CurrencyDecimalSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/CurrencyDecimalSeparator/CPP/currencydecimalseparator.cpp#1)]
+ [!code-csharp[CurrencyDecimalSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/CurrencyDecimalSeparator/CS/currencydecimalseparator.cs#1)]
+ [!code-vb[CurrencyDecimalSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CurrencyDecimalSeparator/VB/currencydecimalseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが空の文字列に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyGroupSeparator">
+      <MemberSignature Language="C#" Value="public string CurrencyGroupSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyGroupSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨の値で小数点の左にある数字のグループを区切る文字列を取得または設定します。</summary>
+        <value>通貨の値で小数点の左にある数字のグループを区切る文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "," です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの初期値が設定から派生した、**地域と言語**コントロール パネル内の項目。  
+  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>プロパティは整数の桁のグループを区切る記号を定義する"C"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator%2A>プロパティです。  
+  
+ [!code-cpp[CurrencyGroupSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/CurrencyGroupSeparator/CPP/currencygroupseparator.cpp#1)]
+ [!code-csharp[CurrencyGroupSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/CurrencyGroupSeparator/CS/currencygroupseparator.cs#1)]
+ [!code-vb[CurrencyGroupSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CurrencyGroupSeparator/VB/currencygroupseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyGroupSizes">
+      <MemberSignature Language="C#" Value="public int[] CurrencyGroupSizes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] CurrencyGroupSizes" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyGroupSizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨の値で小数点の左にある各グループの数字の数を取得または設定します。</summary>
+        <value>通貨の値で小数点の左にある各グループの数字の数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 1 つだけの要素を持つ 1 次元配列であり、その要素は 3 に設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyGroupSizes%2A>プロパティは整数のグループに表示される数字の数を定義する"C"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 1 次元の配列内のすべての要素は、1 から 9 までの整数である必要があります。 最後の要素は、0 にすることができます。  
+  
+ 配列の最初の要素の左側にすぐにある数字の最下位のグループ内の要素の数を定義する、<xref:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator%2A>です。 後続の各要素は、前のグループの左にある数字の次の重要なグループを指します。 場合は、配列の最後の要素が 0 ではなく、残りの桁はに基づいてグループ化、配列の最後の要素。 最後の要素が 0 の場合、残りの部分はグループ化されません。  
+  
+ たとえば、{3, 4, 5} が、配列が含まれる場合、数字は「$55,55555,55555,55555,4444,333.00」のようなグループ化します。 {3, 4, 0} が、配列が含まれる場合、数字は、「$55555555555555555,4444,333.00」のようなグループ化されます。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.CurrencyGroupSizes%2A>プロパティです。  
+  
+ [!code-cpp[CurrencyGroupSizes#1](~/samples/snippets/cpp/VS_Snippets_CLR/CurrencyGroupSizes/CPP/currencygroupsizes.cpp#1)]
+ [!code-csharp[CurrencyGroupSizes#1](~/samples/snippets/csharp/VS_Snippets_CLR/CurrencyGroupSizes/CS/currencygroupsizes.cs#1)]
+ [!code-vb[CurrencyGroupSizes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CurrencyGroupSizes/VB/currencygroupsizes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが設定され、配列には 0 より小さいか、9 よりも大きいエントリが含まれています。  
+  
+ -または-  
+  
+ プロパティが設定され、配列には 0 に設定されているエントリ (最後のエントリ以外) が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyNegativePattern">
+      <MemberSignature Language="C#" Value="public int CurrencyNegativePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrencyNegativePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyNegativePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>負の通貨値の形式パターンを取得または設定します。</summary>
+        <value>負の通貨値の形式パターン。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 0 で、"($n)" を表します。"$" は <see cref="P:System.Globalization.NumberFormatInfo.CurrencySymbol" /> で、<paramref name="n" /> は数値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A>プロパティは負の通貨値のパターンを定義する"C"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 このプロパティは、次の表に、値の 1 つを持ちます。 「$」記号が、 <xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A>、記号"-"が、 <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>、および`n`番号です。  
+  
+|値|関連付けられたパターン|  
+|-----------|------------------------|  
+|0|($n)|  
+|1|-$n|  
+|2|$-n|  
+|3|$n-|  
+|4|(n $)|  
+|5|-n$|  
+|6|n-$|  
+|7|n$-|  
+|8|-n $|  
+|9|-$ n|  
+|10|n $-|  
+|11|$ n-|  
+|12|$ n|  
+|13|n-$|  
+|14|($n)|  
+|15|(n $)|  
+  
+   
+  
+## Examples  
+ 例を次にどのように<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A>プロパティが負の通貨値の書式を定義します。  ホスト コンピューターで定義され、各カルチャの表示されるすべての特定のカルチャを取得<xref:System.Globalization.NumberFormatInfo.CurrencyNegativePattern%2A>プロパティの値、その関連するパターン、および数値を通貨値として書式設定します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.CurrencyNegativePattern#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currencynegativepattern/cs/currencynegativepattern1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.CurrencyNegativePattern#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currencynegativepattern/vb/currencynegativepattern1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 より小さい値か、15 より大きい値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyPositivePattern">
+      <MemberSignature Language="C#" Value="public int CurrencyPositivePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrencyPositivePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencyPositivePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨の正の値の形式パターンを取得または設定します。</summary>
+        <value>通貨の正の値の形式パターン。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 0 で、"$n" を表します。"$" は <see cref="P:System.Globalization.NumberFormatInfo.CurrencySymbol" /> で、<paramref name="n" /> は数値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.CurrencyPositivePattern%2A>プロパティは、通貨の正の値のパターンを定義する"C"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 このプロパティは、次の表に、値の 1 つを持ちます。 「$」記号が、<xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A>と`n`番号です。  
+  
+|値|関連付けられたパターン|  
+|-----------|------------------------|  
+|0|$n|  
+|1|n$|  
+|2|$ n|  
+|3|n $|  
+  
+ パターンでは、正の符号はサポートされていないことに注意してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 より小さい値か、または 3 より大きい値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencySymbol">
+      <MemberSignature Language="C#" Value="public string CurrencySymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrencySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通貨記号として使用する文字列を取得または設定します。</summary>
+        <value>通貨記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "¤" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられた文字列、<xref:System.Globalization.NumberFormatInfo.CurrencySymbol%2A>数値の値が"C"に設定されると、結果の文字列にプロパティが含まれている[標準数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のカルチャの通貨記号を表示し、"C"標準の数値書式指定文字列を使用して通貨値の書式します。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.CurrencySymbol#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currencysymbol/cs/currencysymbolex1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.CurrencySymbol#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currencysymbol/vb/currencysymbolex1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.NumberFormatInfo CurrentInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.NumberFormatInfo CurrentInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.CurrentInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のカルチャに基づいて値を形式指定する読み取り専用 <see cref="T:System.Globalization.NumberFormatInfo" /> を取得します。</summary>
+        <value>現在のスレッドのカルチャに基づく読み取り専用 <see cref="T:System.Globalization.NumberFormatInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する、<xref:System.Globalization.NumberFormatInfo>オブジェクトから、<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>プロパティを取得するのには、<xref:System.Globalization.NumberFormatInfo>オブジェクトから、`CultureInfo.CurrentCulture.NumberFormat`プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例をによって返されるオブジェクト、<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>と`CultureInfo.CurrentCulture.NumberFormat`がプロパティと同じです。 使用して、リフレクションのプロパティ値を表示する、<xref:System.Globalization.NumberFormatInfo>によって返されるオブジェクト、<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>を現在のカルチャが EN-US でシステムのプロパティです。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.CurrentInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currentinfo/cs/currentinfo1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.CurrentInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.currentinfo/vb/currentinfo1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigitSubstitution">
+      <MemberSignature Language="C#" Value="public System.Globalization.DigitShapes DigitSubstitution { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.DigitShapes DigitSubstitution" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.DigitSubstitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DigitShapes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラフィカル ユーザー インターフェイスが数字の形状を表示する方法を指定する値を取得または設定します。</summary>
+        <value>カルチャ固有の数字形状を指定する列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Globalization.NumberFormatInfo.DigitSubstitution%2A>プロパティは将来使用するために予約されています。 現時点では使用されません解析または書式設定、現在の操作のいずれかで<xref:System.Globalization.NumberFormatInfo>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">セット操作の値が正しい <see cref="T:System.Globalization.DigitShapes" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFormat">
+      <MemberSignature Language="C#" Value="public object GetFormat (Type formatType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetFormat(class System.Type formatType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.NumberFormatInfo.GetFormat(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="formatType">要求される形式指定サービスの <see cref="T:System.Type" />。</param>
+        <summary>数値形式指定サービスを提供する指定した型のオブジェクトを取得します。</summary>
+        <returns><paramref name="formatType" /> が現在の <see cref="T:System.Globalization.NumberFormatInfo" /> の型と同じ場合は、現在の <see cref="T:System.Globalization.NumberFormatInfo" />。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Format(String, IFormatProvider)`基本データ型でサポートされるメソッドは、このメソッドを呼び出すときに、現在<xref:System.Globalization.NumberFormatInfo>として渡される、<xref:System.IFormatProvider>パラメーター。 このメソッドは、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> を実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInstance">
+      <MemberSignature Language="C#" Value="public static System.Globalization.NumberFormatInfo GetInstance (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.NumberFormatInfo GetInstance(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.NumberFormatInfo.GetInstance(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider"><see cref="T:System.Globalization.NumberFormatInfo" /> を取得するために使用する <see cref="T:System.IFormatProvider" />。  
+  
+ または  
+  
+ <see cref="P:System.Globalization.NumberFormatInfo.CurrentInfo" /> を取得する <see langword="null" />。</param>
+        <summary>指定された <see cref="T:System.Globalization.NumberFormatInfo" /> に関連付けられている <see cref="T:System.IFormatProvider" /> を取得します。</summary>
+        <returns>指定した <see cref="T:System.Globalization.NumberFormatInfo" /> に関連付けられている <see cref="T:System.IFormatProvider" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>メソッドの`formatProvider`を使用して<xref:System.Globalization.NumberFormatInfo>の型パラメーターとします。 場合`formatProvider`は`null`場合<xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType>返します`null`、このメソッドが戻る<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A>です。  
+  
+ アプリケーションの取得、<xref:System.Globalization.NumberFormatInfo>特定のカルチャを使用して、次のメソッドのいずれかのオブジェクト。  
+  
+-   を介して、<xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   を介して、<xref:System.Globalization.NumberFormatInfo.GetInstance%2A>メソッド場所`provider`は、<xref:System.Globalization.CultureInfo>です。  
+  
+ A<xref:System.Globalization.NumberFormatInfo>を特定のカルチャまたはニュートラル カルチャではなく、インバリアント カルチャにのみ、オブジェクトを作成します。 インバリアント カルチャ、特定のカルチャ ニュートラル カルチャに関する詳細については、次を参照してください。、<xref:System.Globalization.CultureInfo>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvariantInfo">
+      <MemberSignature Language="C#" Value="public static System.Globalization.NumberFormatInfo InvariantInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.NumberFormatInfo InvariantInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.InvariantInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カルチャに依存しない (インバリアントな) 読み取り専用 <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトを取得します。</summary>
+        <value>カルチャに依存しない (インバリアントな) 読み取り専用オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Globalization.NumberFormatInfo>現在のカルチャに関係なく、このプロパティによって返されるオブジェクトが変更されません。 これは、すべての国/地域ではなくが、英語の言語に関連付けられているカルチャは、インバリアント カルチャの書式指定規則を表します。 インバリアント カルチャは、書式設定操作がカルチャに依存しない、または複数のカルチャ間での表示に適した結果文字列を生成で使用されます。  
+  
+   
+  
+## Examples  
+ 次の例の既定のプロパティ値を表示する、<xref:System.Globalization.NumberFormatInfo.InvariantInfo%2A>です。  
+  
+ [!code-cpp[System.Globalization.NumberFormatInfo.InvariantInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.NumberFormatInfo.InvariantInfo/CPP/invariantinfo.cpp#1)]
+ [!code-csharp[System.Globalization.NumberFormatInfo.InvariantInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.NumberFormatInfo.InvariantInfo/CS/invariantinfo.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.InvariantInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.NumberFormatInfo.InvariantInfo/VB/invariantinfo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Globalization.NumberFormatInfo" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用のプロパティへの代入を実行しようとしています。<xref:System.Globalization.NumberFormatInfo>により、<xref:System.InvalidOperationException>です。  
+  
+ 呼び出すことができます、<xref:System.Globalization.NumberFormatInfo.Clone%2A>メソッドを作成、読み取り/書き込み<xref:System.Globalization.NumberFormatInfo>読み取り専用のオブジェクトからオブジェクトの次の例に示すようにします。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.IsReadOnly#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.isreadonly/cs/isreadonly1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.IsReadOnly#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.isreadonly/vb/isreadonly1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NaNSymbol">
+      <MemberSignature Language="C#" Value="public string NaNSymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NaNSymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NaNSymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>IEEE NaN (非数) 値を表す文字列を取得または設定します。</summary>
+        <value>IEEE NaN (非数) 値を表す文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "NaN" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NaN 値の詳細については、次を参照してください。<xref:System.Double>または<xref:System.Single>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeDigits">
+      <MemberSignature Language="C#" Value="public string[] NativeDigits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] NativeDigits" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NativeDigits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>西洋数字 0 ～ 9 に等しいネイティブ数字の文字列配列を取得または設定します。</summary>
+        <value>西洋数字 0 ～ 9 に等しいネイティブ数字を含む文字列配列。 既定値は "0"、"1"、"2"、"3"、"4"、"5"、"6"、"7"、"8"、"9" を要素に持つ配列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  指定されている文字セット、<xref:System.Globalization.NumberFormatInfo.NativeDigits%2A>プロパティが解析または書式設定操作の影響を与えません。 基本的なラテン文字の数字 0 のみ (u+0030) 9 から (u+0039) フォーマットや数値または日付と時刻の値の解析の際に使用されます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Globalization.NumberFormatInfo.NativeDigits%2A>プロパティです。  
+  
+ [!code-cpp[sys.glob.NFI.nativeDigits#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.NFI.nativeDigits/cpp/nd.cpp#1)]
+ [!code-csharp[sys.glob.NFI.nativeDigits#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.NFI.nativeDigits/cs/nd.cs#1)]
+ [!code-vb[sys.glob.NFI.nativeDigits#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.NFI.nativeDigits/vb/nd.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の <see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">設定操作では、値は<see langword="null" />します。  
+  
+ -または-  
+  
+ 設定操作で、値配列の要素が<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">設定操作で値配列に 10 個の要素がありません。  
+  
+ -または-  
+  
+ 設定操作では、値の配列の要素に含めるわけでは、1 つ<see cref="T:System.Char" />オブジェクトまたは組の<see cref="T:System.Char" />サロゲート ペアを構成するオブジェクト。  
+  
+ または  
+  
+ 設定操作で値配列の要素は、番号の数字で定義されている、 [Unicode 標準](http://go.microsoft.com/fwlink/?linkid=37123)です。 つまり、配列要素内の添字が Unicode <see langword="Number, Decimal Digit" /> (Nd) General Category 値。  
+  
+ -または-  
+  
+ 設定操作で、値配列内の要素の数値は配列内の要素の位置に対応していません。 つまり、配列の 1 番目であるインデックス 0 の要素の数値が 0 でなく、インデックス 1 の要素の数値が 1 でありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeInfinitySymbol">
+      <MemberSignature Language="C#" Value="public string NegativeInfinitySymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NegativeInfinitySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NegativeInfinitySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>負の無限大を表す文字列を取得または設定します。</summary>
+        <value>負の無限大を表す文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "-Infinity" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 負の無限大の詳細については、次を参照してください。<xref:System.Double>または<xref:System.Single>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NegativeSign">
+      <MemberSignature Language="C#" Value="public string NegativeSign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NegativeSign" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NegativeSign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた数値が負であることを示す文字列を取得または設定します。</summary>
+        <value>関連付けられた数値が負であることを示す文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "-" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、書式設定と解析操作の両方で使用されます。 書式設定操作で使用する方法の詳細については、次を参照してください。、[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例は、読み取り/書き込みをインスタンス化<xref:System.Globalization.CultureInfo>オブジェクト インバリアント カルチャを表し、上線の文字 (U +0 203E) に割り当てます、<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>プロパティです。 使用して、この<xref:System.Globalization.CultureInfo>負の値の浮動小数点数の配列を書式指定するオブジェクト。  
+  
+ [!code-csharp[System.Globalization.NumberFormatInfo.NegativeSign#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.numberformatinfo.negativesign/cs/negativesign1.cs#1)]
+ [!code-vb[System.Globalization.NumberFormatInfo.NegativeSign#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.numberformatinfo.negativesign/vb/negativesign1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberDecimalDigits">
+      <MemberSignature Language="C#" Value="public int NumberDecimalDigits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberDecimalDigits" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NumberDecimalDigits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値で使用する小数点以下の桁数を取得または設定します。</summary>
+        <value>数値で使用する小数点以下の桁数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>プロパティは、"F"および"N"標準書式指定文字列の数値書式指定操作で、精度指定子なしで使用します。 小数部の桁数、小数点区切り文字の後に表示される既定の数を定義します。 精度指定子を使用する場合、この値はオーバーライドされます。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.NumberDecimalDigits%2A>プロパティです。  
+  
+ [!code-cpp[NumberDecimalDigits#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberDecimalDigits/CPP/numberdecimaldigits.cpp#1)]
+ [!code-csharp[NumberDecimalDigits#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberDecimalDigits/CS/numberdecimaldigits.cs#1)]
+ [!code-vb[NumberDecimalDigits#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberDecimalDigits/VB/numberdecimaldigits.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが、0 より小さい値か、99 より大きい値に設定されようとしています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberDecimalSeparator">
+      <MemberSignature Language="C#" Value="public string NumberDecimalSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NumberDecimalSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NumberDecimalSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値で桁区切り記号として使用する文字列を取得または設定します。</summary>
+        <value>数値で桁区切り記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "." です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>プロパティは"E"、"F"、"G"、"N"、および"R"標準書式指定文字列を小数部の桁の整数を区切る記号の定義を使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+ このプロパティの初期値が設定から派生した、**地域と言語**コントロール パネル内の項目。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>プロパティです。  
+  
+ [!code-cpp[NumberDecimalSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberDecimalSeparator/CPP/numberdecimalseparator.cpp#1)]
+ [!code-csharp[NumberDecimalSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberDecimalSeparator/CS/numberdecimalseparator.cs#1)]
+ [!code-vb[NumberDecimalSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberDecimalSeparator/VB/numberdecimalseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが空の文字列に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberGroupSeparator">
+      <MemberSignature Language="C#" Value="public string NumberGroupSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NumberGroupSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NumberGroupSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値で小数点の左にある数字のグループを区切る文字列を取得または設定します。</summary>
+        <value>数値で小数点の左にある数字のグループを区切る文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "," です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>プロパティは整数の桁のグループを区切る記号を定義する"N"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+ このプロパティの初期値が設定から派生した、**地域と言語**コントロール パネル内の項目。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A>プロパティです。  
+  
+ [!code-cpp[NumberGroupSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberGroupSeparator/CPP/numbergroupseparator.cpp#1)]
+ [!code-csharp[NumberGroupSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberGroupSeparator/CS/numbergroupseparator.cs#1)]
+ [!code-vb[NumberGroupSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberGroupSeparator/VB/numbergroupseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberGroupSizes">
+      <MemberSignature Language="C#" Value="public int[] NumberGroupSizes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] NumberGroupSizes" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NumberGroupSizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値で小数点の左にある各グループの数字の数を取得または設定します。</summary>
+        <value>数値で小数点の左にある各グループの数字の数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 1 つだけの要素を持つ 1 次元配列であり、その要素は 3 に設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>プロパティは"N"を使用してフォーマットされている数値の結果に影響します。 カスタム数値書式文字列、またはその他の標準数値書式指定文字列を使用するの値を設定する場合、<xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>プロパティは無視されます。  
+  
+ 1 次元の配列内のすべての要素は、1 から 9 までの整数である必要があります。 最後の要素は、0 にすることができます。  
+  
+ 配列の最初の要素の左側にすぐにある数字の最下位のグループ内の要素の数を定義する、<xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A>です。 後続の各要素は、前のグループの左にある数字の次の重要なグループを指します。 場合は、配列の最後の要素が 0 ではなく、残りの桁はに基づいてグループ化、配列の最後の要素。 最後の要素が 0 の場合、残りの部分はグループ化されません。  
+  
+ たとえば、{3, 4, 5} が、配列が含まれる場合、数字は「55,55555,55555,55555,4444,333.00」のようなグループ化します。 配列には、{3, 4, 0} が含まれています場合の数字は「55555555555555555,4444,333.00」のようなグループ化します。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>プロパティです。  
+  
+ [!code-cpp[NumberGroupSizes#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberGroupSizes/CPP/numbergroupsizes.cpp#1)]
+ [!code-csharp[NumberGroupSizes#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberGroupSizes/CS/numbergroupsizes.cs#1)]
+ [!code-vb[NumberGroupSizes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberGroupSizes/VB/numbergroupsizes.vb#1)]  
+  
+ 次の例は、異なる値を出力<xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A>配列。  
+  
+ [!code-cpp[Classic NumberFormatInfo.NumberGroupSizes Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberGroupSizes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumberFormatInfo.NumberGroupSizes Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberGroupSizes Example/CS/source.cs#1)]
+ [!code-vb[Classic NumberFormatInfo.NumberGroupSizes Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberGroupSizes Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが設定され、配列には 0 より小さいか、9 よりも大きいエントリが含まれています。  
+  
+ -または-  
+  
+ プロパティが設定され、配列には 0 に設定されているエントリ (最後のエントリ以外) が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberNegativePattern">
+      <MemberSignature Language="C#" Value="public int NumberNegativePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberNegativePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.NumberNegativePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>負の数値の形式パターンを取得または設定します。</summary>
+        <value>負の数値の形式パターン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.NumberNegativePattern%2A>プロパティが負の値の"N"の標準の数値書式指定文字列で書式指定された形式を定義します。 このプロパティは、次の表に、値の 1 つを持ちます。 記号"-"が、<xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>と`n`番号です。  
+  
+|値|関連付けられたパターン|  
+|-----------|------------------------|  
+|0|(n)|  
+|1|-n|  
+|2|-n|  
+|3|n-|  
+|4|n-|  
+  
+ によって返されるインバリアント カルチャの既定値、<xref:System.Globalization.NumberFormatInfo.InvariantInfo%2A>プロパティを表す 1 は、"-n"、どこで* n *番号です。  
+  
+   
+  
+## Examples  
+ 次の例には、異なる値が表示されます。<xref:System.Globalization.NumberFormatInfo.NumberNegativePattern%2A>パターン。  
+  
+ [!code-cpp[Classic NumberFormatInfo.NumberNegativePattern Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberNegativePattern Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic NumberFormatInfo.NumberNegativePattern Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberNegativePattern Example/CS/source.cs#1)]
+ [!code-vb[Classic NumberFormatInfo.NumberNegativePattern Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic NumberFormatInfo.NumberNegativePattern Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが、0 より小さい値か、4 より大きい値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentDecimalDigits">
+      <MemberSignature Language="C#" Value="public int PercentDecimalDigits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PercentDecimalDigits" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentDecimalDigits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーセント値で使用する小数点以下の桁数を取得または設定します。</summary>
+        <value>パーセント値で使用する小数点以下の桁数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 2 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A>プロパティは、"P"標準書式指定文字列の数値書式指定操作で、精度指定子なしで使用します。 小数部の桁数、小数点区切り文字の後に表示される既定の数を定義します。 精度指定子を使用する場合、この値はオーバーライドされます。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.PercentDecimalDigits%2A>プロパティです。  
+  
+ [!code-cpp[PercentDecimalDigits#1](~/samples/snippets/cpp/VS_Snippets_CLR/PercentDecimalDigits/CPP/percentdecimaldigits.cpp#1)]
+ [!code-csharp[PercentDecimalDigits#1](~/samples/snippets/csharp/VS_Snippets_CLR/PercentDecimalDigits/CS/percentdecimaldigits.cs#1)]
+ [!code-vb[PercentDecimalDigits#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PercentDecimalDigits/VB/percentdecimaldigits.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが、0 より小さい値か、99 より大きい値に設定されようとしています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentDecimalSeparator">
+      <MemberSignature Language="C#" Value="public string PercentDecimalSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PercentDecimalSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentDecimalSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーセント値で桁区切り記号として使用する文字列を取得または設定します。</summary>
+        <value>パーセント値で桁区切り記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "." です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentDecimalSeparator%2A>プロパティは"P"標準書式指定文字列を小数部の桁の整数を区切る記号の定義を使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.PercentDecimalSeparator%2A>プロパティです。  
+  
+ [!code-cpp[PercentDecimalSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/PercentDecimalSeparator/CPP/percentdecimalseparator.cpp#1)]
+ [!code-csharp[PercentDecimalSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/PercentDecimalSeparator/CS/percentdecimalseparator.cs#1)]
+ [!code-vb[PercentDecimalSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PercentDecimalSeparator/VB/percentdecimalseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが空の文字列に設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentGroupSeparator">
+      <MemberSignature Language="C#" Value="public string PercentGroupSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PercentGroupSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentGroupSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーセント値で小数点の左にある数字のグループを区切る文字列を取得または設定します。</summary>
+        <value>パーセント値で小数点の左にある数字のグループを区切る文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "," です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>プロパティは"P"標準書式指定文字列を整数のグループを区切る記号の定義を使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.PercentGroupSeparator%2A>プロパティです。  
+  
+ [!code-cpp[PercentGroupSeparator#1](~/samples/snippets/cpp/VS_Snippets_CLR/PercentGroupSeparator/CPP/percentgroupseparator.cpp#1)]
+ [!code-csharp[PercentGroupSeparator#1](~/samples/snippets/csharp/VS_Snippets_CLR/PercentGroupSeparator/CS/percentgroupseparator.cs#1)]
+ [!code-vb[PercentGroupSeparator#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PercentGroupSeparator/VB/percentgroupseparator.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentGroupSizes">
+      <MemberSignature Language="C#" Value="public int[] PercentGroupSizes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32[] PercentGroupSizes" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentGroupSizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーセント値で小数点の左にある各グループの数字の数を取得または設定します。</summary>
+        <value>パーセント値で小数点の左にある各グループの数字の数。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 1 つだけの要素を持つ 1 次元配列であり、その要素は 3 に設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>プロパティは整数のグループに表示される数字の数を定義する"P"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 1 次元の配列内のすべての要素は、1 から 9 までの整数である必要があります。 最後の要素は、0 にすることができます。  
+  
+ 配列の最初の要素の左側にすぐにある数字の最下位のグループ内の要素の数を定義する、<xref:System.Globalization.NumberFormatInfo.PercentDecimalSeparator%2A>です。 後続の各要素は、前のグループの左にある数字の次の重要なグループを指します。 場合は、配列の最後の要素が 0 ではなく、残りの桁はに基づいてグループ化、配列の最後の要素。 最後の要素が 0 の場合、残りの部分はグループ化されません。  
+  
+ たとえば、{3, 4, 5} が、配列が含まれる場合、数字はグループ化のような"55,55555,55555,55555,4444,333.00%"です。 {3, 4, 0} が、配列が含まれる場合、数字グループ化するような"55555555555555555,4444,333.00%"です。  
+  
+   
+  
+## Examples  
+ 次の例では、変更した結果、<xref:System.Globalization.NumberFormatInfo.PercentGroupSizes%2A>プロパティです。  
+  
+ [!code-cpp[PercentGroupSizes#1](~/samples/snippets/cpp/VS_Snippets_CLR/PercentGroupSizes/CPP/percentgroupsizes.cpp#1)]
+ [!code-csharp[PercentGroupSizes#1](~/samples/snippets/csharp/VS_Snippets_CLR/PercentGroupSizes/CS/percentgroupsizes.cs#1)]
+ [!code-vb[PercentGroupSizes#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PercentGroupSizes/VB/percentgroupsizes.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">プロパティが設定され、配列には 0 より小さいか、9 よりも大きいエントリが含まれています。  
+  
+ -または-  
+  
+ プロパティが設定され、配列には 0 に設定されているエントリ (最後のエントリ以外) が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentNegativePattern">
+      <MemberSignature Language="C#" Value="public int PercentNegativePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PercentNegativePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentNegativePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>負のパーセント値の形式パターンを取得または設定します。</summary>
+        <value>負のパーセント値の形式パターン。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 0 で、"-n %" を表します。"%" は <see cref="P:System.Globalization.NumberFormatInfo.PercentSymbol" /> で、<paramref name="n" /> は数値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentNegativePattern%2A>プロパティは負の値の割合の値のパターンを定義する"P"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 このプロパティは、次の表に、値の 1 つを持ちます。 「%」記号が、 <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A>、記号"-"が、 <xref:System.Globalization.NumberFormatInfo.NegativeSign%2A>、および`n`番号です。 値 3 11 では、.NET Framework 2.0 で導入され、以前のバージョンでは使用できません。  
+  
+|値|関連付けられたパターン|  
+|-----------|------------------------|  
+|0|-n %|  
+|1|-n%|  
+|2|-%n|  
+|3|%-n|  
+|4|%n-|  
+|5|n-%|  
+|6|n%-|  
+|7|-%n|  
+|9|n %-|  
+|9|n の %|  
+|10|% n|  
+|11|n %|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティは 0 より小さいか、11 より大きい値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentPositivePattern">
+      <MemberSignature Language="C#" Value="public int PercentPositivePattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PercentPositivePattern" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentPositivePattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正のパーセント値の形式パターンを取得または設定します。</summary>
+        <value>正のパーセント値の形式パターン。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は 0 で、"n %" を表します。"%" は <see cref="P:System.Globalization.NumberFormatInfo.PercentSymbol" /> で、<paramref name="n" /> は数値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberFormatInfo.PercentPositivePattern%2A>プロパティは正のパーセント値のパターンを定義する"P"標準書式指定文字列で使用します。 詳細については、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。 このプロパティは、次の表に、値の 1 つを持ちます。 「%」記号が、<xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A>と`n`番号です。  
+  
+|値|関連付けられたパターン|  
+|-----------|------------------------|  
+|0|n %|  
+|1|n%|  
+|2|%n|  
+|3|%n|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティが 0 より小さい値か、または 3 より大きい値に設定されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PercentSymbol">
+      <MemberSignature Language="C#" Value="public string PercentSymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PercentSymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PercentSymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーセント記号として使用する文字列を取得または設定します。</summary>
+        <value>パーセント記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "%" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられた文字列、 <xref:System.Globalization.NumberFormatInfo.PercentSymbol%2A> "P"または「%」を含む書式指定文字列と数値の値が設定されると、結果の文字列にプロパティが含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PerMilleSymbol">
+      <MemberSignature Language="C#" Value="public string PerMilleSymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PerMilleSymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PerMilleSymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パーミル記号として使用する文字列を取得または設定します。</summary>
+        <value>パーミル記号として使用する文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "‰" です。これは Unicode 文字の U+2030 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられた文字列、 <xref:System.Globalization.NumberFormatInfo.PerMilleSymbol%2A> 「‰」を含む書式指定文字列に数値の値が設定されるプロパティが、結果の文字列に含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PositiveInfinitySymbol">
+      <MemberSignature Language="C#" Value="public string PositiveInfinitySymbol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PositiveInfinitySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PositiveInfinitySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正の無限大を表す文字列を取得または設定します。</summary>
+        <value>正の無限大を表す文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "Infinity" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正の無限大の詳細については、次を参照してください。<xref:System.Double>または<xref:System.Single>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティに設定されている<see langword="null" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PositiveSign">
+      <MemberSignature Language="C#" Value="public string PositiveSign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PositiveSign" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.NumberFormatInfo.PositiveSign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた数値が正であることを示す文字列を取得または設定します。</summary>
+        <value>関連付けられた数値が正であることを示す文字列。 <see cref="P:System.Globalization.NumberFormatInfo.InvariantInfo" /> の既定値は "+" です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは書式設定ではなく、数値の文字列を解析するためだけに使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作で割り当てられる値は<see langword="null" />します。</exception>
+        <exception cref="T:System.InvalidOperationException">このプロパティが設定されていますが、<see cref="T:System.Globalization.NumberFormatInfo" /> オブジェクトは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public static System.Globalization.NumberFormatInfo ReadOnly (System.Globalization.NumberFormatInfo nfi);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Globalization.NumberFormatInfo ReadOnly(class System.Globalization.NumberFormatInfo nfi) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.NumberFormatInfo.ReadOnly(System.Globalization.NumberFormatInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberFormatInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nfi" Type="System.Globalization.NumberFormatInfo" />
+      </Parameters>
+      <Docs>
+        <param name="nfi">ラップする <see cref="T:System.Globalization.NumberFormatInfo" />。</param>
+        <summary>読み取り専用 <see cref="T:System.Globalization.NumberFormatInfo" /> ラッパーを返します。</summary>
+        <returns><paramref name="nfi" /> をラップする読み取り専用の <see cref="T:System.Globalization.NumberFormatInfo" /> ラッパー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このラッパーに`nfi`です。  
+  
+ 読み取り専用のプロパティへの代入を実行しようとしています。<xref:System.Globalization.NumberFormatInfo>により、<xref:System.InvalidOperationException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="nfi" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

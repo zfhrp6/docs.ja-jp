@@ -1,0 +1,247 @@
+<Type Name="ParserContext" FullName="System.Windows.Markup.ParserContext">
+  <TypeSignature Language="C#" Value="public class ParserContext : System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ParserContext extends System.Object implements class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.ParserContext" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>XAML パーサーで必要なコンテキスト情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンテキストを表す、XAML パーサーは、[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]時代 (年号) で公開されていると、WPF 実装に固有である XAML パーサー API<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>と<xref:System.Windows.Markup.XamlWriter?displayProperty=nameWithType>です。  
+  
+ XAML システム[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]より高度な XAML 型システムを使用し、したがって XAML 処理操作用のコンテキストのさまざまな種類にも使用します。 詳細については、「<xref:System.Xaml.XamlSchemaContext>」を参照してください。  
+  
+ A<xref:System.Windows.Markup.ParserContext>を呼び出すのための入力として通常使用される、<xref:System.Windows.Markup.XamlReader>操作します。 オーバー ロードを使用してこのような場合は、<xref:System.Windows.Markup.XamlReader.Load%2A?displayProperty=nameWithType>または<xref:System.Windows.Markup.XamlReader.LoadAsync%2A?displayProperty=nameWithType>指定することで、 <xref:System.Windows.Markup.ParserContext> XAML へのマッピングまたは XML 処理の既定値を変更するかの種類などの要因をより細かく制御を提供します。 使用して、<xref:System.Windows.Markup.ParserContext>を使用してではなく<xref:System.Windows.Markup.XamlReader?displayProperty=nameWithType>既定の動作は高度なシナリオです。  
+  
+ `xml:lang`および`xml:space`動作はオーバーライドできますコンテキストの側面の 1 つです。 既定では、パーサー コンテキストを使用して`en-us`ベース値。 理由の詳細については xaml 言語レベルのコンテキストを使用して`en-us`、カルチャに依存しない値ではなく、次を参照してください。 [WPF のグローバリゼーションおよびローカリゼーションの概要](~/docs/framework/wpf/advanced/wpf-globalization-and-localization-overview.md)です。  
+  
+<a name="xamlTextUsage_ParserContext"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ParserContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.ParserContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ParserContext (System.Xml.XmlParserContext xmlParserContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlParserContext xmlParserContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ParserContext.#ctor(System.Xml.XmlParserContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlParserContext" Type="System.Xml.XmlParserContext" />
+      </Parameters>
+      <Docs>
+        <param name="xmlParserContext">新しいの基に、XML 処理コンテキスト<see cref="T:System.Windows.Markup.ParserContext" />にします。</param>
+        <summary>指定された <see cref="T:System.Windows.Markup.ParserContext" /> を使用して、<see cref="T:System.Xml.XmlParserContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlParserContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ParserContext.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このコンテキストのベース URI を設定します。</summary>
+        <value>文字列としてベース URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.ParserContext.BaseUri%2A> XAML で参照されている外部のリソースの解決に使用します。  
+  
+<a name="xamlTextUsage_BaseUri"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Xml.XmlParserContext (System.Windows.Markup.ParserContext parserContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname class System.Xml.XmlParserContext op_Implicit(class System.Windows.Markup.ParserContext parserContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ParserContext.op_Implicit(System.Windows.Markup.ParserContext)~System.Xml.XmlParserContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlParserContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parserContext" Type="System.Windows.Markup.ParserContext" />
+      </Parameters>
+      <Docs>
+        <param name="parserContext">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlParserContext">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlParserContext ToXmlParserContext (System.Windows.Markup.ParserContext parserContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlParserContext ToXmlParserContext(class System.Windows.Markup.ParserContext parserContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.ParserContext.ToXmlParserContext(System.Windows.Markup.ParserContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlParserContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parserContext" Type="System.Windows.Markup.ParserContext" />
+      </Parameters>
+      <Docs>
+        <param name="parserContext">変換するコンテキスト、<see cref="T:System.Xml.XmlParserContext" />です。</param>
+        <summary>変換、<see cref="T:System.Windows.Markup.ParserContext" />を<see cref="T:System.Xml.XmlParserContext" />です。</summary>
+        <returns>XML パーサー コンテキスト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parserContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlTypeMapper">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.XamlTypeMapper XamlTypeMapper { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.XamlTypeMapper XamlTypeMapper" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ParserContext.XamlTypeMapper" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XamlTypeMapper</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Markup.XamlTypeMapper" />これを利用して<see cref="T:System.Windows.Markup.ParserContext" />です。</summary>
+        <value>XAML 要素を CLR 型にマップするときに使用するタイプ マッパー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlLang">
+      <MemberSignature Language="C#" Value="public string XmlLang { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlLang" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ParserContext.XmlLang" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="xml:lang" />このコンテキストの文字列。</summary>
+        <value><see langword="xml:lang" />文字列値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと似ています<xref:System.Xml.XmlReader.XmlLang%2A?displayProperty=nameWithType>です。  
+  
+<a name="xamlTextUsage_XmlLang"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlnsDictionary">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.XmlnsDictionary XmlnsDictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Markup.XmlnsDictionary XmlnsDictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ParserContext.XmlnsDictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XmlnsDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この XAML パーサー コンテキストの XAML 名前空間のディクショナリを取得します。</summary>
+        <value>XAML 名前空間のディクショナリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の辞書が最初に空<xref:System.Windows.Markup.XmlnsDictionary>です。  
+  
+ <xref:System.Windows.Markup.XmlnsDictionary>キーと、完全な XAML 名前空間の識別子 (通常は文字列形式の URI) として値として XAML 名前空間プレフィックスを使用します。  
+  
+<a name="xamlTextUsage_XmlnsDictionary"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlSpace">
+      <MemberSignature Language="C#" Value="public string XmlSpace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlSpace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.ParserContext.XmlSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の文字<see langword="xml:space" />またはこのコンテキスト。</summary>
+        <value>文字<see langword="xml:space" />またはこのコンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティと似ています<xref:System.Xml.XmlReader.XmlSpace%2A?displayProperty=nameWithType>です。  
+  
+<a name="xamlTextUsage_XmlSpace"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

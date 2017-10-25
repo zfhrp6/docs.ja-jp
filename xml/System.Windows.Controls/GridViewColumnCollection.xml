@@ -1,0 +1,190 @@
+<Type Name="GridViewColumnCollection" FullName="System.Windows.Controls.GridViewColumnCollection">
+  <TypeSignature Language="C#" Value="public class GridViewColumnCollection : System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.GridViewColumn&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit GridViewColumnCollection extends System.Collections.ObjectModel.ObservableCollection`1&lt;class System.Windows.Controls.GridViewColumn&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GridViewColumnCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.ObservableCollection&lt;System.Windows.Controls.GridViewColumn&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.Windows.Controls.GridViewColumn</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Controls.GridViewColumn" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.GridViewColumnCollection>オブジェクトのセットを含む<xref:System.Windows.Controls.GridViewColumn>の列の定義に通常使用されるオブジェクト、<xref:System.Windows.Controls.GridView>オブジェクト。 A<xref:System.Windows.Controls.GridView>は、<xref:System.Windows.Controls.ListView.View%2A>内のデータのレイアウトを定義する、<xref:System.Windows.Controls.ListView>コントロール。  
+  
+ コレクション内の変更通知を受信するには、監視、<xref:System.Collections.ObjectModel.ObservableCollection%601.CollectionChanged>から継承されたイベント<xref:System.Collections.ObjectModel.ObservableCollection%601>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewColumnCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Controls.GridViewColumnCollection" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての削除、<see cref="T:System.Windows.Controls.GridViewColumn" />オブジェクトから、<see cref="T:System.Windows.Controls.GridViewColumnCollection" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, System.Windows.Controls.GridViewColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Windows.Controls.GridViewColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.InsertItem(System.Int32,System.Windows.Controls.GridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="column" Type="System.Windows.Controls.GridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="index">新しいを配置する位置<see cref="T:System.Windows.Controls.GridViewColumn" />です。</param>
+        <param name="column">挿入する <see cref="T:System.Windows.Controls.GridViewColumn" />。</param>
+        <summary>追加、<see cref="T:System.Windows.Controls.GridViewColumn" />コレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで新しい項目を作成、<xref:System.Windows.Controls.GridViewColumnCollection>別のアイテムを置き換える必要はありません。 置き換えるには、コレクション内の項目を新しいアイテムで、使用、<xref:System.Windows.Controls.GridViewColumnCollection.SetItem%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveItem">
+      <MemberSignature Language="C#" Value="protected override void MoveItem (int oldIndex, int newIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void MoveItem(int32 oldIndex, int32 newIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.MoveItem(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldIndex" Type="System.Int32" />
+        <Parameter Name="newIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="oldIndex">元の位置、<see cref="T:System.Windows.Controls.GridViewColumn" />です。</param>
+        <param name="newIndex">新しい位置、<see cref="T:System.Windows.Controls.GridViewColumn" />です。</param>
+        <summary>位置を変更、<see cref="T:System.Windows.Controls.GridViewColumn" />コレクション内で。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollectionChanged">
+      <MemberSignature Language="C#" Value="protected override void OnCollectionChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnCollectionChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.OnCollectionChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント引数。</param>
+        <summary>発生させる、<see cref="E:System.Collections.ObjectModel.ObservableCollection`1.CollectionChanged" />イベント時に、<see cref="T:System.Windows.Controls.GridViewColumnCollection" />変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="protected override void RemoveItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RemoveItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.RemoveItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置、<see cref="T:System.Windows.Controls.GridViewColumn" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Windows.Controls.GridViewColumn" />から、<see cref="T:System.Windows.Controls.GridViewColumnCollection" />指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, System.Windows.Controls.GridViewColumn column);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Windows.Controls.GridViewColumn column) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GridViewColumnCollection.SetItem(System.Int32,System.Windows.Controls.GridViewColumn)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="column" Type="System.Windows.Controls.GridViewColumn" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置、新しい<see cref="T:System.Windows.Controls.GridViewColumn" />古いが置き換えられます<see cref="T:System.Windows.Controls.GridViewColumn" />です。</param>
+        <param name="column"><see cref="T:System.Windows.Controls.GridViewColumn" />を指定した位置に配置します。</param>
+        <summary>置換、<see cref="T:System.Windows.Controls.GridViewColumn" />と他の指定したインデックス位置である<see cref="T:System.Windows.Controls.GridViewColumn" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは内の列に置き換えて、<xref:System.Windows.Controls.GridViewColumnCollection>新しい列を含むです。 別の列を置き換えることがなく、新しい列を挿入するには、使用、<xref:System.Windows.Controls.GridViewColumnCollection.InsertItem%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

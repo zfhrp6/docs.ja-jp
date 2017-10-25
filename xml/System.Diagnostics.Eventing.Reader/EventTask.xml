@@ -1,0 +1,98 @@
+<Type Name="EventTask" FullName="System.Diagnostics.Eventing.Reader.EventTask">
+  <TypeSignature Language="C#" Value="public sealed class EventTask" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventTask extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.Reader.EventTask" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント プロバイダーで定義されているイベント タスクが含まれています。 タスクは、アプリケーションまたはイベントを発行するコンポーネントの部分を識別します。 タスクは、16 ビット値で予約されている 16 個の値です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスをインスタンス化することはできません。 A<xref:System.Diagnostics.Eventing.Reader.ProviderMetadata>オブジェクトの一覧を意識<xref:System.Diagnostics.Eventing.Reader.EventTask>オブジェクト、プロバイダーで定義されているタスクごとに 1 つです。 標準的なタスクの値とその意味がで定義されている、<xref:System.Diagnostics.Eventing.Reader.StandardEventLevel>列挙します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventTask.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのタスクのローカライズされた名前を取得します。</summary>
+        <value>イベントのタスクのローカライズされた名前を表す文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventGuid">
+      <MemberSignature Language="C#" Value="public Guid EventGuid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid EventGuid" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventTask.EventGuid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクに関連付けられているイベント グローバル一意識別子 (GUID) を取得します。</summary>
+        <value>GUID 値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventTask.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントのタスクのローカライズされていない名前を取得します。</summary>
+        <value>イベントのタスクのローカライズされていない名前を含む文字列を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public int Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.Eventing.Reader.EventTask.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクに関連付けられている数値の値を取得します。</summary>
+        <value>整数値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,146 @@
+<Type Name="GridViewSortEventArgs" FullName="System.Web.UI.WebControls.GridViewSortEventArgs">
+  <TypeSignature Language="C#" Value="public class GridViewSortEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GridViewSortEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.GridViewSortEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.GridView.Sorting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.GridView>昇給を制御、<xref:System.Web.UI.WebControls.GridView.Sorting>並べ替えボタンをクリックしたときにイベント (ボタンをその`CommandName`プロパティを"Sort"に設定) がクリックすると、その前に、<xref:System.Web.UI.WebControls.GridView>コントロールは、並べ替え操作を処理します。 これにより、このイベントが発生するたびに、並べ替え操作の取り消しなどのカスタムのルーチンを実行するイベント処理メソッドを提供できます。  
+  
+> [!NOTE]
+>  内でいずれかのボタンが、<xref:System.Web.UI.WebControls.GridView>コントロールをその`CommandName`"Sort"に設定するプロパティが生成されます、<xref:System.Web.UI.WebControls.GridView.Sorting>イベント、並べ替えボタンは通常のヘッダー行で表示されます、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ A<xref:System.Web.UI.WebControls.GridViewSortEventArgs>の並べ替えに使用する式と並べ替えの方向を指定するか、並べ替えを決定することができるイベント処理メソッドにオブジェクトが渡される、<xref:System.Web.UI.WebControls.GridView>コントロール。 並べ替え式を確認するには<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortExpression%2A>プロパティです。 並べ替えの方向を確認するには<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection%2A>プロパティです。 設定して、並べ替え操作をキャンセルすることも、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.GridViewSortEventArgs>を参照してください、<xref:System.Web.UI.WebControls.GridViewSelectEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewSortEventArgs>ユーザーでアドレス列を並べ替えるときに、並べ替え操作をキャンセルするイベント ハンドラー メソッドに渡されるオブジェクト、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[GridViewSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSorting/CS/gridviewsortingcs.aspx#1)]
+ [!code-aspx-vb[GridViewSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSorting/VB/gridviewsortingvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridViewSortEventArgs (string sortExpression, System.Web.UI.WebControls.SortDirection sortDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sortExpression, valuetype System.Web.UI.WebControls.SortDirection sortDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.GridViewSortEventArgs.#ctor(System.String,System.Web.UI.WebControls.SortDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sortExpression" Type="System.String" />
+        <Parameter Name="sortDirection" Type="System.Web.UI.WebControls.SortDirection" />
+      </Parameters>
+      <Docs>
+        <param name="sortExpression">並べ替え式は、コントロール内の項目の並べ替えに使用します。</param>
+        <param name="sortDirection">A<see cref="T:System.Web.UI.WebControls.SortDirection" />をコントロール内の項目を並べ替える方向を示すです。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.GridViewSortEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.GridViewSortEventArgs>クラスです。  
+  
+ <xref:System.Web.UI.WebControls.GridViewSortEventArgs> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection%2A>|`sortDirection` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortExpression%2A>|`sortExpression` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirection">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SortDirection SortDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SortDirection SortDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を並べ替える方向、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.SortDirection" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.GridView.Sorting>イベントは、使用することができます、<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection%2A>する順序を決定するプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールが (並べ替え式に基づく) の項目を並べ替える並べ替え操作が行われる場合。 <xref:System.Web.UI.WebControls.GridView.Sorting>イベントが発生した並べ替え操作の前に使用することも、<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection%2A>プロパティをプログラムで並べ替えの方向を設定します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortDirection%2A>を並べ替える方向を決定するプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。 ユーザーが降順で並べ替えるしようとすると、並べ替え操作が取り消されました。  
+  
+ [!code-aspx-csharp[GridViewSortEventArgsSortDirection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSortEventArgsSortDirection/CS/gridviewsorteventargssortdirectioncs.aspx#1)]
+ [!code-aspx-vb[GridViewSortEventArgsSortDirection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSortEventArgsSortDirection/VB/gridviewsorteventargssortdirectionvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.GridViewSortEventArgs.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の項目の並べ替えに使用される式、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</summary>
+        <value>内の項目の並べ替えに使用される式、<see cref="T:System.Web.UI.WebControls.GridView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.GridView.Sorting>イベントは、使用することができます、<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortExpression%2A>の並べ替えに使用される並べ替え式を確認するには<xref:System.Web.UI.WebControls.GridView>並べ替え操作を実行する時期を制御します。 既定では、<xref:System.Web.UI.WebControls.GridView>コントロールは、一度に 1 つの列を並べ替えます。 並べ替え式には、並べ替えるフィールドの名前にはだけが含まれます。 一度に複数の列を並べ替えると、フィールド名のコンマ区切りの一覧にこのプロパティをプログラムから設定できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.GridViewSortEventArgs.SortExpression%2A>内のどの列を決定するプロパティ、<xref:System.Web.UI.WebControls.GridView>コントロールは並べ替えられています。 ユーザーが、アドレス列を並べ替えるしようとすると、並べ替え操作が取り消されました。  
+  
+ [!code-aspx-csharp[GridViewSorting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSorting/CS/gridviewsortingcs.aspx#1)]
+ [!code-aspx-vb[GridViewSorting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSorting/VB/gridviewsortingvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

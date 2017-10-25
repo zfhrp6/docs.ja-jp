@@ -1,0 +1,1443 @@
+<Type Name="MenuItem" FullName="System.Web.UI.WebControls.MenuItem">
+  <TypeSignature Language="C#" Value="public sealed class MenuItem : ICloneable, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MenuItem extends System.Object implements class System.ICloneable, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MenuItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "ChildItems")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>表示されるメニュー項目を表す、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.Menu>によって表されるメニュー項目の階層のコントロールから成る<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 各メニュー項目が読み取り専用<xref:System.Web.UI.WebControls.MenuItem.Depth%2A>でメニュー項目が表示されます、レベルを指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。 親メニュー項目がない最上位レベル (レベル 0) にメニュー項目には、ルートのメニュー項目が呼び出されます。 親メニュー項目を持つメニュー項目にサブメニュー項目が呼び出されます。 ルートのすべてのメニュー項目が格納されている、<xref:System.Web.UI.WebControls.Menu.Items%2A>コレクション。 親メニュー項目のサブメニュー項目が格納されている<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>コレクション。 使用して、メニュー項目の親メニュー項目にアクセスすることができます、<xref:System.Web.UI.WebControls.MenuItem.Parent%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Menu.Items%2A>と<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>コレクションには、次のレベルのメニュー項目のみが含まれています。 メニュー ツリーをさらに、メニュー項目にアクセスするには、使用、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>それに続くメニュー項目のプロパティです。  
+  
+ メニュー項目を作成する、<xref:System.Web.UI.WebControls.Menu>コントロールを次の方法のいずれかを使用します。  
+  
+ 静的メニュー項目を作成するのにには、宣言の構文を使用します。  
+  
+ 新しいインスタンスを動的に作成するコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 これら<xref:System.Web.UI.WebControls.MenuItem>オブジェクトに追加できます、<xref:System.Web.UI.WebControls.Menu.Items%2A>または<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>コレクション。  
+  
+ バインド、<xref:System.Web.UI.WebControls.Menu>データ ソースを制御します。 ときに、<xref:System.Web.UI.WebControls.Menu>コントロールにバインドする、<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロール、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトが自動的に作成、データ ソース内の項目に対応します。 その他のデータ ソース<xref:System.Web.UI.WebControls.MenuItem>オブジェクトも自動的に作成のデータ ソースの階層構造に一致する。 ただし、する必要がありますもを使用して、<xref:System.Web.UI.WebControls.Menu.DataBindings%2A>メニュー項目とその対応するデータ項目の間のバインディングの関係を指定するメニュー項目のバインディングを定義するコレクション。  
+  
+ メニュー項目は、静的なメニューまたはそのレベルに応じて、動的メニューに表示されます。 静的メニューに表示されます、<xref:System.Web.UI.WebControls.Menu>コントロール。 既定では、最上位レベル (レベル 0) にメニュー項目が静的メニューに表示されます。 静的メニュー内の他のメニュー レベル (静的サブメニュー) を表示するには設定して、<xref:System.Web.UI.WebControls.Menu.StaticDisplayLevels%2A>プロパティです。 メニュー項目 (存在する場合) で指定された値よりも高いレベルで、<xref:System.Web.UI.WebControls.Menu.StaticDisplayLevels%2A>プロパティが動的なサブメニューに表示されます。 動的なサブメニューでは、動的なサブメニューを含む親メニュー項目の上にユーザーがマウス ポインターを置いた場合にのみ表示されます。  
+  
+ ユーザーがメニュー項目をクリックしたときに、<xref:System.Web.UI.WebControls.Menu>コントロールのリンクされた Web ページに移動または単にサーバーに投稿できます。 場合、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>メニュー項目のプロパティが設定されて、<xref:System.Web.UI.WebControls.Menu>がリンク先のページに移動するコントロールです。 それ以外の場合、サーバー処理のために、ページのポストバックします。 同じウィンドウまたはフレームとして既定では、リンク先のページが表示される、<xref:System.Web.UI.WebControls.Menu>コントロール。 表示するにはリンクされたコンテンツの別のウィンドウまたはフレームを使用して、<xref:System.Web.UI.WebControls.Menu.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Menu.Target%2A?displayProperty=nameWithType>プロパティは、コントロール内のすべてのメニュー項目に影響します。 ウィンドウまたは個々 のメニュー項目のフレームを指定するには、設定、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトに直接できます。  
+  
+ 各メニュー項目が、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>と<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティです。 値、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>でプロパティを表示、<xref:System.Web.UI.WebControls.Menu>コントロール中、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>メニュー項目に関連付けられたポストバック イベントに渡されるデータなどのメニュー項目に関するその他のデータを格納するプロパティを使用します。 設定した場合、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>に残しておくにプロパティ、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>設定を解除すると、プロパティ、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティと同じ値に自動的に、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティです。 その反対もです。 設定した場合、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ、ではなく、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティ、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティと同じ値に自動的に、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティです。  
+  
+> [!NOTE]
+>  同じメニュー レベルのメニュー項目それぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.Menu>コントロールは、同じ値を持つ、同じレベルにさまざまなメニュー項目を区別できません。 このシナリオでは、ユーザーが、重複する値を持つメニュー項目をクリックすると、メニューの最初に表示されるメニュー項目が選択されます。  
+  
+ ユーザーがメニュー項目の上にマウス ポインターを置いたときにツールヒントを表示するには、アイテムを設定<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>プロパティです。  
+  
+ A<xref:System.Web.UI.WebControls.Menu>コントロールがさまざまなメニュー項目の種類。 次の表に、プロパティを使用して、別のメニュー項目の種類の (フォント サイズや色) などのスタイルを制御できます。  
+  
+|メニュー項目スタイル プロパティ|説明|  
+|------------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.Menu.DynamicHoverStyle%2A>|マウス ポインターを置いたときに動的メニュー項目のスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.DynamicMenuItemStyle%2A>|個々 の動的メニュー項目のスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.DynamicMenuStyle%2A>|動的メニュー スタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.DynamicSelectedStyle%2A>|現在選択されている動的メニュー項目のスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.StaticHoverStyle%2A>|マウス ポインターを置いたときに、静的メニュー項目のスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.StaticMenuItemStyle%2A>|各静的メニュー項目のスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.StaticMenuStyle%2A>|静的メニューのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.Menu.StaticSelectedStyle%2A>|現在選択されている静的メニュー項目のスタイルの設定。|  
+  
+ 個々 のスタイル プロパティを設定するには、代わりに、次の表に示すようにスタイルのコレクションを使用して、そのレベルに基づいてメニュー項目に適用されるスタイルを指定できます。  
+  
+|スタイル レベルのコレクション|説明|  
+|-----------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.Menu.LevelMenuItemStyles%2A>|コレクション<xref:System.Web.UI.WebControls.MenuItemStyle>レベルに基づいてメニュー項目のスタイルを制御するオブジェクト。|  
+|<xref:System.Web.UI.WebControls.Menu.LevelSelectedStyles%2A>|コレクション<xref:System.Web.UI.WebControls.MenuItemStyle>のスタイルを制御するオブジェクトが、レベルに基づいてメニュー項目を選択します。|  
+|<xref:System.Web.UI.WebControls.Menu.LevelSubMenuStyles%2A>|コレクション<xref:System.Web.UI.WebControls.MenuItemStyle>レベルに基づいてサブメニュー項目のスタイルを制御するオブジェクト。|  
+  
+ コレクション内の最初のスタイルは、ツリーで、メニューの最初の深度レベルにあるメニュー項目のスタイルに対応しています。 コレクション内の 2 番目のスタイルは、メニューのツリーで 2 つ目の深さのレベルにあるメニュー項目のスタイルに対応しています。 これは最もよく使用されるコンテンツ スタイルのナビゲーション メニューのテーブルを生成する特定の深さにあるメニュー項目がサブメニューがあるかどうかに関係なく、同じ外観を持つ必要があります。  
+  
+> [!NOTE]
+>  スタイルを定義する前の表に示すスタイル レベルのコレクションのいずれかを使用する場合、<xref:System.Web.UI.WebControls.Menu>コントロール、これらのスタイル設定は、個々 のメニュー項目のスタイル プロパティをオーバーライドします。  
+  
+ メニュー項目のスタイルをカスタマイズするだけでなくの外観をカスタマイズすることもできます。 次の表に、プロパティを設定して、メニュー項目のさまざまな部分にカスタム イメージを指定できます。  
+  
+|イメージのプロパティ|説明|  
+|--------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>|メニュー項目のテキストの横に表示される省略可能なイメージです。|  
+|<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>|メニュー項目を動的なサブメニューがあることを示すにメニュー項目に表示される省略可能なイメージです。|  
+|<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>|他のメニュー項目と区別するためのメニュー項目の下部に表示される省略可能なイメージです。|  
+  
+ メニュー項目がで現在選択されているかどうかを決定する、<xref:System.Web.UI.WebControls.Menu>コントロールを使用して、<xref:System.Web.UI.WebControls.MenuItem.Selected%2A>プロパティです。 使用して、メニュー項目がデータにバインドするかどうかを確認することも、<xref:System.Web.UI.WebControls.MenuItem.DataBound%2A>プロパティです。 使用することができます、メニュー項目がデータにバインドされている場合、<xref:System.Web.UI.WebControls.MenuItem.DataItem%2A>データ項目の値にアクセスするプロパティ メニュー項目にバインドします。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.MenuItem.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、設定する方法について、<xref:System.Web.UI.WebControls.Menu>静的制御<xref:System.Web.UI.WebControls.MenuItem>オブジェクト宣言の構文を使用します。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ 次の例では、バインド、<xref:System.Web.UI.WebControls.Menu>コントロールを<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロール。 データ ソースにバインドするとき、<xref:System.Web.UI.WebControls.Menu>コントロールが自動的に作成、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。 この例を正しく動作する Web.sitemap をという名前のファイルに以下のサンプル サイト マップ データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuDataBind#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuDataBind/CS/menudatabindcs.aspx#1)]
+ [!code-aspx-vb[MenuDataBind#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuDataBind/VB/menudatabindvb.aspx#1)]  
+  
+ 前の例のサンプル サイト マップ データを次に示します。  
+  
+ `<siteMap>`  
+  
+ `<siteMapNode url="~\Home.aspx"`  
+  
+ `title="Home"`  
+  
+ `description="Home">`  
+  
+ `<siteMapNode url="~\Music.aspx"`  
+  
+ `title="Music"`  
+  
+ `description="Music">`  
+  
+ `<siteMapNode url="~\Classical.aspx"`  
+  
+ `title="Classical"`  
+  
+ `description="Classical"/>`  
+  
+ `<siteMapNode url="~\Rock.aspx"`  
+  
+ `title="Rock"`  
+  
+ `description="Rock"/>`  
+  
+ `<siteMapNode url="~\Jazz.aspx"`  
+  
+ `title="Jazz"`  
+  
+ `description="Jazz"/>`  
+  
+ `</siteMapNode>`  
+  
+ `<siteMapNode url="~\Movies.aspx"`  
+  
+ `title="Movies"`  
+  
+ `description="Movies">`  
+  
+ `<siteMapNode url="~\Action.aspx"`  
+  
+ `title="Action"`  
+  
+ `description="Action"/>`  
+  
+ `<siteMapNode url="~\Drama.aspx"`  
+  
+ `title="Drama"`  
+  
+ `description="Drama"/>`  
+  
+ `<siteMapNode url="~\Musical.aspx"`  
+  
+ `title="Musical"`  
+  
+ `description="Musical"/>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMap>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラス メニュー テキストまたは値がない場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>クラス メニュー テキストまたは値がない場合。  
+  
+> [!NOTE]
+>  このコンス トラクターを使用する場合、すべてのプロパティ、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトは、既定値に設定します。 オブジェクトを作成した後、必要に応じて、プロパティを設定することを確認します。  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtorDefault#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtorDefault/CS/menuitemctordefaultcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtorDefault#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtorDefault/VB/menuitemctordefaultvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラス メニュー テキストを指定を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>クラスで指定されたメニュー テキストを使用して、`text`パラメーター。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.MenuItem>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.Text%2A>|Text パラメーターの値。|  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtor1Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtor1Param/CS/menuitemctor1paramcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtor1Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtor1Param/VB/menuitemctor1paramvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem (string text, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、メニュー項目に関連付けられている補足データ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラス メニュー テキストを指定し、値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>メニュー テキストとで指定された値を使用して、`text`と`value`パラメーター、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.Value%2A>|`value` パラメーターの値。|  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtor2Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtor2Param/CS/menuitemctor2paramcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtor2Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtor2Param/VB/menuitemctor2paramvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem (string text, string value, string imageUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value, string imageUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、メニュー項目に関連付けられている補足データ。</param>
+        <param name="imageUrl">メニュー項目のテキストの横に表示されるイメージの URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラスをイメージに指定されたメニュー テキスト、値、および URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>クラス メニュー テキストの値を使用して、画像の URL で指定された、 `text`、 `value`、および`imageUrl`パラメーター、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.Value%2A>|`value` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>|`imageUrl` パラメーターの値。|  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtor3Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtor3Param/CS/menuitemctor3paramcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtor3Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtor3Param/VB/menuitemctor3paramvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem (string text, string value, string imageUrl, string navigateUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value, string imageUrl, string navigateUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+        <Parameter Name="navigateUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、メニュー項目に関連付けられている補足データ。</param>
+        <param name="imageUrl">メニュー項目のテキストの横に表示されるイメージの URL です。</param>
+        <param name="navigateUrl">メニュー項目がクリックされたときにリンクする URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラス メニュー テキストを指定、値、イメージの URL、およびナビゲーションの URL を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>クラス メニュー テキスト、値、イメージの URL で指定されたナビゲーション URL を使用して、 `text`、 `value`、 `imageUrl`、および`navigateUrl`パラメーター、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.Value%2A>|`value` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>|`imageUrl` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>|`navigateUrl` パラメーターの値。|  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtor4Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtor4Param/CS/menuitemctor4paramcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtor4Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtor4Param/VB/menuitemctor4paramvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuItem (string text, string value, string imageUrl, string navigateUrl, string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, string value, string imageUrl, string navigateUrl, string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.#ctor(System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+        <Parameter Name="navigateUrl" Type="System.String" />
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">メニュー項目に表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</param>
+        <param name="value">ポストバック イベントを処理するために使用されるデータなど、メニュー項目に関連付けられている補足データ。</param>
+        <param name="imageUrl">メニュー項目のテキストの横に表示されるイメージの URL です。</param>
+        <param name="navigateUrl">メニュー項目がクリックされたときにリンクする URL です。</param>
+        <param name="target">ターゲット ウィンドウまたはフレームを Web ページの内容を表示するには、メニュー項目がクリックされたときにメニュー項目にリンクします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuItem" />クラス メニュー テキストを指定、値、イメージの URL、ナビゲーションの URL、およびターゲットを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuItem>を使用してメニュー テキストの値、イメージの URL、ナビゲーション URL で指定したターゲット クラス、 `text`、 `value`、 `imageUrl`、 `navigateUrl`、および`target`パラメーター、それぞれします。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.MenuItem.Text%2A>|`text` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.Value%2A>|`value` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>|`imageUrl` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>|`navigateUrl` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuItem.Target%2A>|`target` パラメーターの値。|  
+  
+ このコンス トラクターは動的に設定するときに、<xref:System.Web.UI.WebControls.Menu.Items%2A>のコレクション、<xref:System.Web.UI.WebControls.Menu>コントロールまたは<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>のコレクション、<xref:System.Web.UI.WebControls.MenuItem>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、新しいインスタンスを作成する方法、<xref:System.Web.UI.WebControls.MenuItem>クラスです。 <xref:System.Web.UI.WebControls.MenuItem>でのメニュー項目を動的に設定するオブジェクトを使用して、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItemCtor5Param#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemCtor5Param/CS/menuitemctor5paramcs.aspx#1)]
+ [!code-aspx-vb[MenuItemCtor5Param#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemCtor5Param/VB/menuitemctor5paramvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildItems">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.MenuItemCollection ChildItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.MenuItemCollection ChildItems" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.ChildItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.MenuItemCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.MenuItemCollection" />現在のメニュー項目のサブメニュー項目を含むオブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.MenuItemCollection" />現在のメニュー項目のサブメニュー項目を格納しています。 既定値は<see langword="null" />、このメニュー項目にサブメニュー項目が含まれていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>存在する場合、現在のメニュー項目のサブメニュー項目にアクセスするプロパティ (コレクション)。 このコレクションには、次のレベルにあるメニュー項目のみが含まれています。 メニュー ツリーをさらに、メニュー項目にアクセスするには、使用、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>それに続くメニュー項目のプロパティです。 場合、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>プロパティは`null`、現在のメニューにサブメニュー項目がありません。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>プロパティは、現在のメニュー項目のサブメニュー項目をプログラムで管理するも使用できます。 ことができますを追加、挿入、削除、取得、および変更<xref:System.Web.UI.WebControls.MenuItem>コレクションからオブジェクト。 コレクションへの更新が自動的に反映されます、 <xref:System.Web.UI.WebControls.Menu> [次へ] のページが更新された日時を制御します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>の項目をメニューを走査するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItems#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItems/CS/menuitemscs.aspx#1)]
+ [!code-aspx-vb[MenuItems#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItems/VB/menuitemsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBound">
+      <MemberSignature Language="C#" Value="public bool DataBound { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DataBound" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.DataBound" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目がデータ バインドによって作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />メニュー項目がデータ バインディングによって作成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItem.DataBound%2A>プログラムで、メニュー項目がデータ バインドによって作成されたかどうかを決定するプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataItem">
+      <MemberSignature Language="C#" Value="public object DataItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.DataItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目にバインドされているデータ項目を取得します。</summary>
+        <value><see cref="T:System.Object" />メニュー項目にバインドされているデータ項目を表すです。 既定値は<see langword="null" />、メニュー項目がどのデータ項目にバインドされていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.Menu>コントロールがなどのデータ ソースにバインドが、<xref:System.Web.UI.WebControls.XmlDataSource>オブジェクト、このプロパティがこの特定のメニュー項目にバインドされているデータ アイテムに設定します。 データ項目の値にアクセスするは、このプロパティは使用が一般的です。  
+  
+> [!NOTE]
+>  このプロパティは、データ バインディングが発生した後にのみ使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataPath">
+      <MemberSignature Language="C#" Value="public string DataPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataPath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.DataPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目にバインドされているデータへのパスを取得します。</summary>
+        <value>ノードにバインドされているデータへのパス。 この値が、階層的なデータ ソース コントロールには、<see cref="T:System.Web.UI.WebControls.Menu" />コントロールがバインドされています。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItem.DataPath%2A>を呼び出すときに、プロパティの値が使用される一般的、<xref:System.Web.UI.IHierarchicalDataSource.GetHierarchicalView%2A?displayProperty=nameWithType>現在のメニュー項目にバインドされているデータへのパスを指定するメソッド。 このメソッドを返します、<xref:System.Web.UI.HierarchicalDataSourceView?displayProperty=nameWithType>指定したパスにデータを含むオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Depth">
+      <MemberSignature Language="C#" Value="public int Depth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Depth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Depth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目が表示されるレベルを取得します。</summary>
+        <value>メニュー項目が表示されるレベルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.Depth%2A>プロパティ メニュー項目の深さを判断をします。 深さは、するメニュー項目が表示され、現在のメニュー項目とルートのメニュー項目間の階層のレベル数を表すレベルを示します。 たとえば、ルート メニュー項目には、0 の深さがあります。 ルートのメニュー項目のサブメニュー項目には、1、およびなどの深さがあります。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.Depth%2A>プロパティ メニュー項目の深さを判断をします。  
+  
+ [!code-aspx-csharp[MenuItemDepth#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemDepth/CS/menuitemdepthcs.aspx#1)]
+ [!code-aspx-vb[MenuItemDepth#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemDepth/VB/menuitemdepthvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトが有効になり、ポップアウト イメージとその子を表示する項目のメニュー項目。</summary>
+        <value>
+          <see langword="true" />メニュー項目が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`false`、メニュー項目が無効になり、子項目を示すポップアウト イメージは表示されません。 このプロパティを設定`false`本質的ににより、ここで詳細レベルが表示されないそのノードから、そのノードの最後の項目、メニューをメニュー項目にします。 既定値は `true` です。  
+  
+ 任意の子項目を表示するには"クリック可能でない"自体には、使用するメニュー項目を使用する場合、<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>プロパティに設定し、`false`です。  
+  
+   
+  
+## Examples  
+ 次の例は、メニュー項目とどのように、<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A>プロパティに設定`false`が表示され、メニューで機能します。  
+  
+ [!code-aspx-csharp[MenuSelectableEnabled#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuSelectableEnabled/CS/menuselectableenabledcs.aspx#1)]
+ [!code-aspx-vb[MenuSelectableEnabled#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuSelectableEnabled/VB/menuselectableenabledvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメニュー項目のテキストの横に表示されるイメージの URL を設定します。</summary>
+        <value>メニュー項目のテキストの横に表示されるカスタム イメージの URL です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>の現在のメニュー項目のカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。 このイメージは、メニュー項目のテキストの横にあるが表示され、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) することができます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>メニュー項目のテキストの横にあるカスタム イメージを表示するプロパティです。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメニュー項目がクリックされたときに移動する URL を設定します。</summary>
+        <value>メニュー項目がクリックされたときに移動する URL です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メニュー項目が 2 つのモードのいずれかになります。 選択モードまたはナビゲーション モード。 既定では、メニュー項目は選択モードです。 メニュー項目をナビゲーション モードにする設定、メニュー項目の<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>プロパティを空の文字列以外の値 ("") です。  
+  
+ メニュー項目は、ナビゲーション モードでは、選択範囲のすべてのイベントがそのメニュー項目に対して無効になります。 指定された URL にユーザーを要するナビゲーション モードでのメニュー項目をクリックします。 必要に応じて設定することができます、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>プロパティ ウィンドウまたはリンクされたコンテンツを表示するフレームを指定します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.NavigateUrl%2A>プロパティをユーザーがメニュー項目をクリックしたときに移動する URL を指定します。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.MenuItem Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.MenuItem Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.MenuItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメニュー項目のメニュー項目の親を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.MenuItem" />現在のメニュー項目の親メニュー項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.Parent%2A>プロパティを親メニュー項目を確認またはそのプロパティにアクセスします。  
+  
+> [!NOTE]
+>  ルートのメニュー項目には、親メニュー項目はありません。  
+  
+ 現在のメニュー項目のサブメニュー項目にアクセスするには、使用、<xref:System.Web.UI.WebControls.MenuItem.ChildItems%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.Parent%2A>子メニュー項目の親メニュー項目にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[MenuItemParent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemParent/CS/menuitemparentcs.aspx#1)]
+ [!code-aspx-vb[MenuItemParent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemParent/VB/menuitemparentvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopOutImageUrl">
+      <MemberSignature Language="C#" Value="public string PopOutImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PopOutImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.PopOutImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメニュー項目を動的なサブメニューがあることを示すにメニュー項目に表示されるイメージの URL を設定します。</summary>
+        <value>メニュー項目を動的なサブメニューがあることを示すにメニュー項目に表示されるイメージの URL です。 既定値は空の文字列 ("") です。このプロパティが設定されていないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Web.UI.WebControls.MenuRenderingMode?displayProperty=nameWithType>に設定されている`List`、または<xref:System.Web.UI.WebControls.MenuRenderingMode?displayProperty=nameWithType>に設定されている`Default`と<xref:System.Web.Configuration.PagesSection.ControlRenderingCompatibilityVersion%2A?displayProperty=nameWithType>に設定されている`4.0`または後で、このプロパティには効果がありません。 使用して、<xref:System.Web.UI.WebControls.Menu.DynamicEnableDefaultPopOutImage%2A?displayProperty=nameWithType>プロパティまたは<xref:System.Web.UI.WebControls.Menu.StaticEnableDefaultPopOutImage%2A?displayProperty=nameWithType>このプロパティではなくプロパティです。  
+  
+ 場合<xref:System.Web.UI.WebControls.MenuRenderingMode?displayProperty=nameWithType>に設定されている`Table`、場合<xref:System.Web.UI.WebControls.MenuRenderingMode?displayProperty=nameWithType>に設定されている`Default`と<xref:System.Web.Configuration.PagesSection.ControlRenderingCompatibilityVersion%2A?displayProperty=nameWithType>に設定されている`3.5`、このプロパティを使用して、メニュー項目を動的なサブメニューがあることを示すにメニュー項目に表示されるカスタム イメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+> [!NOTE]
+>  このプロパティ設定で指定されたイメージ、<xref:System.Web.UI.WebControls.Menu.DynamicPopOutImageUrl%2A?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.Menu.StaticPopOutImageUrl%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 空の文字列と設定をこのプロパティを設定して静的メニューにこのイメージを無効にすることもできます、<xref:System.Web.UI.WebControls.Menu.StaticEnableDefaultPopOutImage%2A>プロパティを`false`です。 このプロパティを空の文字列と設定に設定して動的メニューにこのイメージを無効にする同様に、<xref:System.Web.UI.WebControls.Menu.DynamicEnableDefaultPopOutImage%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.PopOutImageUrl%2A>プロパティ メニュー項目に動的なサブメニューがある場合に、メニュー項目に表示するカスタム イメージを指定します。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selectable">
+      <MemberSignature Language="C#" Value="public bool Selectable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selectable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Selectable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトを選択することができますか、「クリック可能な」。</summary>
+        <value>
+          <see langword="true" />メニュー項目を選択できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`false`メニュー項目のアクションは発生しません、メニュー項目が (選択されている) をクリックするとします。 場合に、1 つは、メニュー項目の子メニュー項目を示すポップアウト イメージが存在するが表示され使用します。  
+  
+ メニュー項目用に表示されるすべての子メニュー項目したくない場合は、設定、<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A>プロパティを`false`です。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>ポストバック メニュー項目をクリックするという意味で、選択できるメニュー項目にのみ適用され、選択された状態でそのアイテムを設定します。 選択することはできませんあるメニュー項目がリンクとしてまだフォーマットされていることを注意してください。 これが設定されてユーザー補助上の理由から、メニュー項目には、アクションを実行する可能性があります。 また、メニュー項目を選択できない場合でもがあります子メニュー項目を選択するかを表示する必要があります。  
+  
+ メニュー項目がクリックしてできないようにする場合は、次のいずれかの操作を行います。  
+  
+-   設定しない<xref:System.Web.UI.WebControls.MenuItemBinding.NavigateUrl%2A>設定と<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>に`false`です。  
+  
+-   メニュー項目の設定<xref:System.Web.UI.WebControls.MenuItem.Enabled%2A>プロパティを`false`です。  
+  
+   
+  
+## Examples  
+ 次の例は、メニュー項目とどのように、<xref:System.Web.UI.WebControls.MenuItem.Selectable%2A>プロパティに設定`false`が表示され、メニューで機能します。  
+  
+ [!code-aspx-csharp[MenuSelectableEnabled#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuSelectableEnabled/CS/menuselectableenabledcs.aspx#1)]
+ [!code-aspx-vb[MenuSelectableEnabled#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuSelectableEnabled/VB/menuselectableenabledvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public bool Selected { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Selected" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Selected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在のメニュー項目が選択されているかどうかを示す値、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <value>
+          <see langword="true" />現在のメニュー項目が選択されていることを示すために、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.Selected%2A>プロパティを指定するか、現在のメニュー項目が選択されているかどうかを確認します。  
+  
+> [!NOTE]
+>  使用する方が一般的では、プロパティは、メニュー項目が選択されているかどうかを決定に使用できますが、<xref:System.Web.UI.WebControls.Menu.SelectedItem%2A>プロパティです。  
+  
+ 一度に 1 つだけのメニュー項目を選択することができます、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.Selected%2A>で特定のメニュー項目を選択するプロパティを<xref:System.Web.UI.WebControls.Menu>ページが最初に読み込まれるときに制御します。 この例を正しく動作する Web.sitemap をという名前のファイルに以下のサンプル サイト マップ データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuItemSelected#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemSelected/CS/menuitemselectedcs.aspx#1)]
+ [!code-aspx-vb[MenuItemSelected#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemSelected/VB/menuitemselectedvb.aspx#1)]  
+  
+ 前の例のサンプル サイト マップ データを次に示します。  
+  
+ `<siteMap>`  
+  
+ `<siteMapNode url="~\Home.aspx"`  
+  
+ `title="Home"`  
+  
+ `description="Home">`  
+  
+ `<siteMapNode url="~\Music.aspx"`  
+  
+ `title="Music"`  
+  
+ `description="Music">`  
+  
+ `<siteMapNode url="~\Classical.aspx"`  
+  
+ `title="Classical"`  
+  
+ `description="Classical"/>`  
+  
+ `<siteMapNode url="~\Rock.aspx"`  
+  
+ `title="Rock"`  
+  
+ `description="Rock"/>`  
+  
+ `<siteMapNode url="~\Jazz.aspx"`  
+  
+ `title="Jazz"`  
+  
+ `description="Jazz"/>`  
+  
+ `</siteMapNode>`  
+  
+ `<siteMapNode url="~\Movies.aspx"`  
+  
+ `title="Movies"`  
+  
+ `description="Movies">`  
+  
+ `<siteMapNode url="~\Action.aspx"`  
+  
+ `title="Action"`  
+  
+ `description="Action"/>`  
+  
+ `<siteMapNode url="~\Drama.aspx"`  
+  
+ `title="Drama"`  
+  
+ `description="Drama"/>`  
+  
+ `<siteMapNode url="~\Musical.aspx"`  
+  
+ `title="Musical"`  
+  
+ `description="Musical"/>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMap>`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeparatorImageUrl">
+      <MemberSignature Language="C#" Value="public string SeparatorImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SeparatorImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または他のメニュー項目と区別するためのメニュー項目の下部に表示されるイメージの URL を設定します。</summary>
+        <value>他のメニュー項目の現在のメニュー項目を区別するために使用されるイメージの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>プロパティを他のメニュー項目と区別するためのメニュー項目の下部に表示されている (行) の通常のカスタム イメージを指定します。 このイメージは、クライアントのブラウザーでサポートされている限り、任意のファイル形式 (.jpg、.gif、.bmp など) でも使用できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.SeparatorImageUrl%2A>で他のメニュー項目と区別するためのメニュー項目の下部に表示するカスタム イメージを指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコピーを作成<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクト。</summary>
+        <returns><see cref="T:System.Object" />のコピーを表す、<see cref="T:System.Web.UI.WebControls.MenuItem" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItem.System%23ICloneable%23Clone%2A>メソッドを使って、<xref:System.Web.UI.WebControls.MenuItem>自体のコピーを作成するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.MenuItem" />オブジェクトのビューステートへ変更を保存します。</summary>
+        <value>
+          <see langword="true" />コントロールがその状態を保存するマークされている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、使用する必要があります、<xref:System.Web.UI.WebControls.MenuItem.System%23Web%23UI%23IStateManager%23IsTrackingViewState%2A>メンバーに確認するかどうか、<xref:System.Web.UI.WebControls.MenuItem>オブジェクトがビュー状態の変更を追跡します。  
+  
+ <xref:System.Web.UI.WebControls.MenuItem.System%23Web%23UI%23IStateManager%23IsTrackingViewState%2A>メンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Web.UI.WebControls.MenuItem>にインスタンスをキャスト、<xref:System.Web.UI.IStateManager>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Object" />保存されているビュー ステートの値を格納しています。</param>
+        <summary>メニュー項目の以前保存したビューステートを読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートの変更を保存、<see cref="T:System.Object" />です。</summary>
+        <returns><see cref="T:System.Object" />ビュー ステートの変化を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuItem.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー ステートへの変更を追跡するように <see cref="T:System.Web.UI.WebControls.MenuItem" /> オブジェクトに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー コントロールでは、このメソッドが呼び出された後、<xref:System.Web.UI.Control.IsTrackingViewState%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メニュー項目に関連付けられている Web ページの内容を表示する対象のウィンドウまたはフレームを取得または設定します。</summary>
+        <value>リンクされた Web ページの内容を表示する対象のウィンドウまたはフレーム。 既定値は空の文字列 ("") です。フォーカスのあるウィンドウまたはフレームが更新されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>ウィンドウまたは Web コンテンツを表示するフレームを指定するには、そのメニュー項目がクリックされたときにメニュー項目にリンクします。 値は、範囲の A ~ Z (大文字)、次の表に示すように、アンダー スコアで始まる特殊な値以外の文字で始まる必要があります。 このプロパティの設定をオーバーライドするメモ、<xref:System.Web.UI.WebControls.Menu.Target%2A>のプロパティ、<xref:System.Web.UI.WebControls.Menu>メニュー項目のコントロールです。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  ブラウザーのマニュアルを参照するかどうかを`_search`値はサポートされています。 たとえば、Microsoft Internet Explorer 5.0、以降のサポート、`_search`ターゲット値。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.MenuItem.Target%2A>としてプロパティが表示される、`target`属性。 `target`アンカー要素の属性は、XHTML 1.1 限定的なドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.HyperLink> XHTML を 1.1 に準拠する必要があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.Target%2A>ウィンドウまたは Web コンテンツを表示するフレームを指定するには、そのメニュー項目がクリックされたときにメニュー項目にリンクします。  
+  
+ [!code-aspx-csharp[MenuItemTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemTarget/CS/menuitemtargetcs.aspx#1)]
+ [!code-aspx-vb[MenuItemTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemTarget/VB/menuitemtargetvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内のメニュー項目に対して表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。</summary>
+        <value>内のメニュー項目に対して表示されるテキスト、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティを指定するか、メニュー項目に対して表示されるテキストを<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティが含まれます`null`、`get`アクセサーの値を返します、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティが含まれています、 `null`、<xref:System.String.Empty>が返されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>内の各メニュー項目に表示するテキストを指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメニュー項目のツールヒントのテキストを設定します。</summary>
+        <value>メニュー項目のツールヒント テキスト。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>プロパティ メニュー項目のツールヒントのテキストを指定します。 メニュー項目の上にマウス ポインターが配置されているときに、ツールヒントのテキストが表示されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.MenuItem.ToolTip%2A>内の各メニュー項目のツールヒントを指定するプロパティ、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+ [!code-aspx-csharp[MenuItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItem/CS/menuitemcs.aspx#1)]
+ [!code-aspx-vb[MenuItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItem/VB/menuitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック イベントを処理するために使用されるデータなど、メニュー項目の追加データを格納するために使用する非表示の値を設定します。</summary>
+        <value>メニュー項目が表示されていないをに関する補足データ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItem.Value%2A>を補足するプロパティが使用される、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティ メニュー項目に関連付けられている追加のデータを格納することによりします。 この値は、コントロールでは表示されず、一般的にポストバック イベントを処理するためのデータを格納するために使用します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティが含まれます`null`、`get`アクセサーの値を返します、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティです。 場合、<xref:System.Web.UI.WebControls.MenuItem.Text%2A>プロパティが含まれています、 `null`、<xref:System.String.Empty>が返されます。  
+  
+ 値、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>値パスで指定されるときに、プロパティは使用も、<xref:System.Web.UI.WebControls.MenuItem.ValuePath%2A>プロパティを生成します。 値パスは、ルートのメニュー項目から現在のメニュー項目へのパスを形成するメニュー項目の値のコンマ区切り一覧を示します。 メニュー項目の位置を示す値のパスが使用される、<xref:System.Web.UI.WebControls.Menu>コントロール。  
+  
+> [!NOTE]
+>  同じメニュー レベルのメニュー項目それぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.Menu>コントロールは、同じ値を持つ、同じレベルにさまざまなメニュー項目を区別できません。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例は、表示する方法を示します、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>のメニュー項目とその親メニュー項目を選択するとします。  
+  
+ [!code-aspx-csharp[MenuItemValue#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemValue/CS/menuitemvaluecs.aspx#1)]
+ [!code-aspx-vb[MenuItemValue#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemValue/VB/menuitemvaluevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValuePath">
+      <MemberSignature Language="C#" Value="public string ValuePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValuePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuItem.ValuePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートのメニュー項目から現在のメニュー項目へのパスを取得します。</summary>
+        <value>ルートのメニュー項目から現在のメニュー項目へのパスを形成するメニュー項目の値のコンマ区切りの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuItem.ValuePath%2A>プロパティには、ルートのメニュー項目から現在のメニュー項目へのパスを形成するメニュー項目の値のコンマ区切りの一覧が含まれています。 メニュー項目の位置を示す値のパスが使用される、<xref:System.Web.UI.WebControls.Menu>コントロール。 使用してメニュー項目の値を区切るために使用する区切り文字を指定することができます、<xref:System.Web.UI.WebControls.Menu.PathSeparator%2A>プロパティです。 引数として渡すまたは個々 の値のリストを解析するときに通常この値は使用、<xref:System.Web.UI.WebControls.Menu.FindItem%2A>のメソッド、<xref:System.Web.UI.WebControls.TreeView>クラスです。 表示される値に応じて、<xref:System.Web.UI.WebControls.Menu>コントロール、区切り文字は、すべての競合を防ぐために変更する必要があります。 たとえば、コンマを区切り文字を設定した場合に表示される値含めることはできませんコンマそれ以外の場合と正確に解析できません、<xref:System.Web.UI.WebControls.MenuItem.ValuePath%2A>プロパティです。  
+  
+> [!NOTE]
+>  値、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>各メニュー項目を現在のメニュー項目をルートのメニュー項目からのプロパティを使用して生成した値パスにします。 同じメニュー レベルのメニュー項目それぞれ、一意の値が必要、<xref:System.Web.UI.WebControls.MenuItem.Value%2A>プロパティ以外の場合は、<xref:System.Web.UI.WebControls.Menu>コントロールは、同じ値を持つ、同じレベルにさまざまなメニュー項目を区別できません。  
+  
+   
+  
+## Examples  
+ 次の例では、値を解析する方法、<xref:System.Web.UI.WebControls.MenuItem.ValuePath%2A>個々 のメニュー項目の値のプロパティです。  
+  
+ [!code-aspx-csharp[MenuItemValuePath#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuItemValuePath/CS/menuitemvaluepathcs.aspx#1)]
+ [!code-aspx-vb[MenuItemValuePath#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuItemValuePath/VB/menuitemvaluepathvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

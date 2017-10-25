@@ -1,0 +1,1454 @@
+<Type Name="DateAndTime" FullName="Microsoft.VisualBasic.DateAndTime">
+  <TypeSignature Language="C#" Value="public sealed class DateAndTime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DateAndTime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.DateAndTime" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.VisualBasic.CompilerServices.StandardModule</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="DateAndTime" />モジュールには、日付と時刻の演算で使用されるプロパティ、プロシージャが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、Visual Basic 言語のキーワードとランタイム ライブラリ メンバーを現在の日付または時刻の取得、日付計算の実行、日付または時刻を返す、日付または時刻を設定または処理の期間を時間をサポートします。  
+  
+   
+  
+## Examples  
+ この例では、`Today`プロパティの現在のシステム日付を返します。  
+  
+```  
+Dim thisDate As Date  
+thisDate = Today   
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DateAdd">
+      <MemberSignature Language="C#" Value="public static DateTime DateAdd (Microsoft.VisualBasic.DateInterval Interval, double Number, DateTime DateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime DateAdd(valuetype Microsoft.VisualBasic.DateInterval Interval, float64 Number, valuetype System.DateTime DateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateAdd(Microsoft.VisualBasic.DateInterval,System.Double,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="Microsoft.VisualBasic.DateInterval" />
+        <Parameter Name="Number" Type="System.Double" />
+        <Parameter Name="DateValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />を追加する時間間隔を表す式。</param>
+        <param name="Number">必須です。 <see langword="Double" />。 追加する間隔の数を表す浮動小数点式です。 <c>数</c>(将来の日付/時刻値を取得) を正または負の値 (過去の日付/時刻値を取得) を指定できます。 含めることができます、小数部パートとき<c>間隔</c>時間、分、または秒を指定します。 他の値の<c>間隔</c>小数の一部<c>数</c>は無視されます。</param>
+        <param name="DateValue">必須です。 <see langword="Date" />。 間隔を追加するときの日時を表す式を指定します。 <c>DateValue</c>自体、呼び出し元のプログラムでは変更されません。</param>
+        <summary>返します、<see langword="Date" />指定の時間間隔が追加された日付と時刻の値を含む値です。</summary>
+        <returns>返します、<see langword="Date" />指定の時間間隔が追加された日付と時刻の値を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DateAdd`関数を追加または特定の日付の指定した時間間隔を減算します。 たとえば、今すぐ今日または時 45 分前に、から 30 日の日付を計算できます。  
+  
+ 日数を加算する`DateValue`、使用することができます`DateInterval.Day`、 `DateInterval.DayOfYear`、または`DateInterval.Weekday`です。 これらとして扱われますと同じのため`DayOfYear`と`Weekday`意味のある時間間隔ではありません。  
+  
+ `DateAdd`関数が無効な日付を返すことはありません。 必要に応じて、その年の月の最終日を結果として得られる日付の日の部分は下方調整されます。 次の例では、1 月 31 日に 1 か月を追加します。  
+  
+```vb  
+Dim NextMonth As Date = DateAdd(DateInterval.Month, 1, #1/31/1995#)  
+```  
+  
+ この例では`DateAdd`返します`#2/28/1995#`ではなく、`#2/31/1995#`です。 場合`DateValue`は`#1/31/1996#`、返します`#2/29/1996#`1996 が閏年であるのためです。  
+  
+> [!NOTE]
+>  `DateAdd`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを与える時間間隔を加算する追加のオプションです。 たとえば、小数の日付をミリ秒単位に丸められますを追加することができます、`Date`次のように変数。  
+  
+```vb  
+Dim NextTime As Date = Now        ' Current date and time.  
+NextTime = NextTime.AddDays(3.4)  ' Increment by 3 2/5 days.  
+```  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|String|追加する時間間隔の単位|  
+|-----------------------|------------|----------------------------------|  
+|`DateInterval.Day`|d|1 日です。整数値に切り捨てられます|  
+|`DateInterval.DayOfYear`|Y|1 日です。整数値に切り捨てられます|  
+|`DateInterval.Hour`|h|1 時間です。ミリ秒単位に丸められます|  
+|`DateInterval.Minute`|n|1 分です。ミリ秒単位に丸められます|  
+|`DateInterval.Month`|m|月です。整数値に切り捨てられます|  
+|`DateInterval.Quarter`|q|四半期です。整数値に切り捨てられます|  
+|`DateInterval.Second`|s|秒です。ミリ秒単位に丸められます|  
+|`DateInterval.Weekday`|週|1 日です。整数値に切り捨てられます|  
+|`DateInterval.WeekOfYear`|ww|1 週間です。整数値に切り捨てられます|  
+|`DateInterval.Year`|yyyy|年。整数値に切り捨てられます|  
+  
+   
+  
+## Examples  
+ この例では、日付と、使用、`DateAdd`関数を指定した数か月間、将来の日付を表示します。  
+  
+ [!code-vb[VbVbalrFunctions#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="DateValue" />強制変換は<see langword="Date" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Interval" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">計算された日付は、1、または年 12 月 31 日 23時 59分: 59 より後の年 1 月 1 日 00時 00分: 00 以前 9999 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateAdd">
+      <MemberSignature Language="C#" Value="public static DateTime DateAdd (string Interval, double Number, object DateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime DateAdd(string Interval, float64 Number, object DateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateAdd(System.String,System.Double,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="System.String" />
+        <Parameter Name="Number" Type="System.Double" />
+        <Parameter Name="DateValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />を追加する時間間隔を表す式。</param>
+        <param name="Number">必須です。 <see langword="Double" />。 追加する間隔の数を表す浮動小数点式です。 <c>数</c>(将来の日付/時刻値を取得) を正または負の値 (過去の日付/時刻値を取得) を指定できます。 含めることができます、小数部パートとき<c>間隔</c>時間、分、または秒を指定します。 他の値の<c>間隔</c>小数の一部<c>数</c>は無視されます。</param>
+        <param name="DateValue">必須です。 <see langword="Date" />。 間隔を追加するときの日時を表す式を指定します。 <c>DateValue</c>自体、呼び出し元のプログラムでは変更されません。</param>
+        <summary>返します、<see langword="Date" />指定の時間間隔が追加された日付と時刻の値を含む値です。</summary>
+        <returns>返します、<see langword="Date" />指定の時間間隔が追加された日付と時刻の値を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DateAdd`関数を追加または特定の日付の指定した時間間隔を減算します。 たとえば、今すぐ今日または時 45 分前に、から 30 日の日付を計算できます。  
+  
+ 日数を加算する`DateValue`、使用することができます`DateInterval.Day`、 `DateInterval.DayOfYear`、または`DateInterval.Weekday`です。 これらとして扱われますと同じのため`DayOfYear`と`Weekday`意味のある時間間隔ではありません。  
+  
+ `DateAdd`関数が無効な日付を返すことはありません。 必要に応じて、その年の月の最終日を結果として得られる日付の日の部分は下方調整されます。 次の例では、1 月 31 日に 1 か月を追加します。  
+  
+```vb  
+Dim NextMonth As Date = DateAdd(DateInterval.Month, 1, #1/31/1995#)  
+```  
+  
+ この例では`DateAdd`返します`#2/28/1995#`ではなく、`#2/31/1995#`です。 場合`DateValue`は`#1/31/1996#`、返します`#2/29/1996#`1996 が閏年であるのためです。  
+  
+> [!NOTE]
+>  `DateAdd`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを与える時間間隔を加算する追加のオプションです。 たとえば、小数の日付をミリ秒単位に丸められますを追加することができます、`Date`次のように変数。  
+  
+```vb  
+Dim NextTime As Date = Now        ' Current date and time.  
+NextTime = NextTime.AddDays(3.4)  ' Increment by 3 2/5 days.  
+```  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|String|追加する時間間隔の単位|  
+|-----------------------|------------|----------------------------------|  
+|`DateInterval.Day`|d|1 日です。整数値に切り捨てられます|  
+|`DateInterval.DayOfYear`|Y|1 日です。整数値に切り捨てられます|  
+|`DateInterval.Hour`|h|1 時間です。ミリ秒単位に丸められます|  
+|`DateInterval.Minute`|n|1 分です。ミリ秒単位に丸められます|  
+|`DateInterval.Month`|m|月です。整数値に切り捨てられます|  
+|`DateInterval.Quarter`|q|四半期です。整数値に切り捨てられます|  
+|`DateInterval.Second`|s|秒です。ミリ秒単位に丸められます|  
+|`DateInterval.Weekday`|週|1 日です。整数値に切り捨てられます|  
+|`DateInterval.WeekOfYear`|ww|1 週間です。整数値に切り捨てられます|  
+|`DateInterval.Year`|yyyy|年。整数値に切り捨てられます|  
+  
+   
+  
+## Examples  
+ この例では、日付と、使用、`DateAdd`関数を指定した数か月間、将来の日付を表示します。  
+  
+ [!code-vb[VbVbalrFunctions#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="DateValue" />強制変換は<see langword="Date" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Interval" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">計算された日付は、1、または年 12 月 31 日 23時 59分: 59 より後の年 1 月 1 日 00時 00分: 00 以前 9999 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateDiff">
+      <MemberSignature Language="C#" Value="public static long DateDiff (Microsoft.VisualBasic.DateInterval Interval, DateTime Date1, DateTime Date2, Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek = Microsoft.VisualBasic.FirstDayOfWeek.Sunday, Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear = Microsoft.VisualBasic.FirstWeekOfYear.Jan1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 DateDiff(valuetype Microsoft.VisualBasic.DateInterval Interval, valuetype System.DateTime Date1, valuetype System.DateTime Date2, valuetype Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek, valuetype Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateDiff(Microsoft.VisualBasic.DateInterval,System.DateTime,System.DateTime,Microsoft.VisualBasic.FirstDayOfWeek,Microsoft.VisualBasic.FirstWeekOfYear)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="Microsoft.VisualBasic.DateInterval" />
+        <Parameter Name="Date1" Type="System.DateTime" />
+        <Parameter Name="Date2" Type="System.DateTime" />
+        <Parameter Name="DayOfWeek" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+        <Parameter Name="WeekOfYear" Type="Microsoft.VisualBasic.FirstWeekOfYear" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />間の差異の単位として使用する時間間隔を表す式<c>Date1</c>と<c>日付 2</c>です。</param>
+        <param name="Date1">必須です。 <see langword="Date" />。 最初の日付/時刻値の計算に使用する場合します。</param>
+        <param name="Date2">必須です。 <see langword="Date" />。 計算で使用する 2 番目の日付/時刻値。</param>
+        <param name="DayOfWeek">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.Sunday" /> が使用されます。</param>
+        <param name="WeekOfYear">省略可能です。 選択した値、<see langword="FirstWeekOfYear" />年の最初の週を指定する列挙です。 指定しない場合は、<see langword="FirstWeekOfYear.Jan1" /> が使用されます。</param>
+        <summary>返します、 <see langword="Long" /> 2 つまでの時間間隔の数を指定する値<see langword="Date" />値。</summary>
+        <returns>返します、 <see langword="Long" /> 2 つまでの時間間隔の数を指定する値<see langword="Date" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DateDiff`関数を指定した時間間隔の数が 2 つの日付/時刻値の存在を確認します。 たとえば、使用する場合があります`DateDiff`を 2 つの日付または現在および年の終わりまでの週の数までの日数の数を計算します。  
+  
+## <a name="behavior"></a>動作  
+  
+-   **パラメーターの扱いです。** `DateDiff`値を減算`Date1`の値から`Date2`の違いを生成するためにします。 どちらの値は、呼び出し元のプログラムで変更されます。  
+  
+-   **値を返します。** `Date1`と`Date2`は、`Date`データ型、日付と時刻の値が格納精度は 100 ナノ秒タイマー刻みシステム タイマーです。 ただし、`DateDiff`として時間間隔の数を常に返します、`Long`値。  
+  
+     場合`Date1`以降の日付とよりも時間を表します`Date2`、`DateDiff`負の数を返します。  
+  
+-   **日の間隔。** 場合`Interval`に設定されている`DateInterval.DayOfYear`、扱われますと同じ`DateInterval.Day`ので、`DayOfYear`の時間間隔の意味のある単体ではありません。  
+  
+-   **週の間隔。** 場合`Interval`に設定されている`DateInterval.WeekOfYear`、戻り値が含まれている週の最初の日までの週の数を表す`Date1`とを含む週の最初の日`Date2`です。 次の例は、異なる結果がどのように生成`DateInterval.Weekday`です。  
+  
+     [!code-vb[VbVbalrFunctions#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#60)]  
+  
+     この例では、`DateDiff`に 0 を返します`wD`であるため、2 つの日付の差未満である 7 日間に 1 を返します`wY`それぞれのカレンダーの週の最初の日の間で 7 日間の相違があるためです。  
+  
+-   **間隔を長くします。** 場合`Interval`に設定されている`DateInterval.Year`、純粋、年の部分からの戻り値が計算される`Date1`と`Date2`です。 同様に、戻り値`DateInterval.Month`は、引数の年と月の部分から純粋な計算`DateInterval.Quarter`2 つの日付を含む四半期からです。  
+  
+     たとえば、次の年の 1 月 1 日に 12 月 31 日を比較するときに`DateDiff`に 1 を返します`DateInterval.Year`、 `DateInterval.Quarter`、または`DateInterval.Month`多くて 1 日が経過した場合でも、します。  
+  
+     持つ複数時代 (年号)、日本語などのカルチャ、`DateDiff`違いは、次の 2 つまたは複数の時代 (年号) にまたがる場合に、メソッドで年の差分が返されません。 によって返される値の差を計算する代わりに、<xref:System.DateTime.Year%2A>プロパティ、次の例のように:`date2.Year - date1.Year`です。  
+  
+-   **その他の間隔。** すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを与える時間間隔を検索する追加のオプションです。 たとえば、使用することができます、`Subtract`メソッド オーバー ロードされた形式のいずれかで:<xref:System.DateTime.Subtract%2A?displayProperty=nameWithType>減算、<xref:System.TimeSpan>から、`Date`を返す別の変数`Date`値、および<xref:System.DateTime.Subtract%2A?displayProperty=nameWithType>減算、`Date`に返す値、<xref:System.TimeSpan>です。 次の例のようににかかる時間をミリ秒単位を調べるには処理時間の計測することができます。  
+  
+     [!code-vb[VbVbalrFunctions#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#61)]  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|文字列値|時間間隔の単位|  
+|-----------------------|------------------|-----------------------------|  
+|`DateInterval.Day`|"d"|Day|  
+|`DateInterval.DayOfYear`|"y"|Day|  
+|`DateInterval.Hour`|"h"|Hour|  
+|`DateInterval.Minute`|"n"|Minute|  
+|`DateInterval.Month`|"m"|月|  
+|`DateInterval.Quarter`|"q"|四半期|  
+|`DateInterval.Second`|"s"|Second|  
+|`DateInterval.Weekday`|"w"|週|  
+|`DateInterval.WeekOfYear`|"ww"|カレンダーの週|  
+|`DateInterval.Year`|"yyyy"|Year|  
+  
+ `DayOfWeek`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システム設定で指定された週の最初の日|  
+|`FirstDayOfWeek.Sunday`|1|日曜日 (既定値)|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+ `WeekOfYear`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstWeekOfYear.System`|0|システムの設定で指定された年の最初の週|  
+|`FirstWeekOfYear.Jan1`|1|週を月 1 日 (既定値)|  
+|`FirstWeekOfYear.FirstFourDays`|2|(ISO 8601 の標準的な 3.17 に準拠している) 新しい年には、少なくとも 4 日間にある最初の週|  
+|`FirstWeekOfYear.FirstFullWeek`|3|新しい年の第 1 週|  
+  
+   
+  
+## Examples  
+ この例では、`DateDiff`関数を指定した日から今日までの日数の数を表示します。  
+  
+ [!code-vb[VbVbalrFunctions#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Date1" />、 <paramref name="Date2" />、または<paramref name="DayofWeek" />が範囲外です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="Date1" />または<paramref name="Date2" />に無効な型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateDiff">
+      <MemberSignature Language="C#" Value="public static long DateDiff (string Interval, object Date1, object Date2, Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek = Microsoft.VisualBasic.FirstDayOfWeek.Sunday, Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear = Microsoft.VisualBasic.FirstWeekOfYear.Jan1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int64 DateDiff(string Interval, object Date1, object Date2, valuetype Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek, valuetype Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateDiff(System.String,System.Object,System.Object,Microsoft.VisualBasic.FirstDayOfWeek,Microsoft.VisualBasic.FirstWeekOfYear)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="System.String" />
+        <Parameter Name="Date1" Type="System.Object" />
+        <Parameter Name="Date2" Type="System.Object" />
+        <Parameter Name="DayOfWeek" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+        <Parameter Name="WeekOfYear" Type="Microsoft.VisualBasic.FirstWeekOfYear" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />間の差異の単位として使用する時間間隔を表す式<c>Date1</c>と<c>日付 2</c>です。</param>
+        <param name="Date1">必須です。 <see langword="Date" />。 最初の日付/時刻値の計算に使用する場合します。</param>
+        <param name="Date2">必須です。 <see langword="Date" />。 計算で使用する 2 番目の日付/時刻値。</param>
+        <param name="DayOfWeek">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.Sunday" /> が使用されます。</param>
+        <param name="WeekOfYear">省略可能です。 選択した値、<see langword="FirstWeekOfYear" />年の最初の週を指定する列挙です。 指定しない場合は、<see langword="FirstWeekOfYear.Jan1" /> が使用されます。</param>
+        <summary>返します、 <see langword="Long" /> 2 つまでの時間間隔の数を指定する値<see langword="Date" />値。</summary>
+        <returns>返します、 <see langword="Long" /> 2 つまでの時間間隔の数を指定する値<see langword="Date" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DateDiff`関数を指定した時間間隔の数が 2 つの日付/時刻値の存在を確認します。 たとえば、使用する場合があります`DateDiff`を 2 つの日付または現在および年の終わりまでの週の数までの日数の数を計算します。  
+  
+## <a name="behavior"></a>動作  
+  
+-   **パラメーターの扱いです。** `DateDiff`値を減算`Date1`の値から`Date2`の違いを生成するためにします。 どちらの値は、呼び出し元のプログラムで変更されます。  
+  
+-   **値を返します。** `Date1`と`Date2`は、`Date`データ型、日付と時刻の値が格納精度は 100 ナノ秒タイマー刻みシステム タイマーです。 ただし、`DateDiff`として時間間隔の数を常に返します、`Long`値。  
+  
+     場合`Date1`以降の日付とよりも時間を表します`Date2`、`DateDiff`負の数を返します。  
+  
+-   **日の間隔。** 場合`Interval`に設定されている`DateInterval.DayOfYear`、扱われますと同じ`DateInterval.Day`ので、`DayOfYear`の時間間隔の意味のある単体ではありません。  
+  
+-   **週の間隔。** 場合`Interval`に設定されている`DateInterval.WeekOfYear`、戻り値が含まれている週の最初の日までの週の数を表す`Date1`とを含む週の最初の日`Date2`です。 次の例は、異なる結果がどのように生成`DateInterval.Weekday`です。  
+  
+     [!code-vb[VbVbalrFunctions#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#60)]  
+  
+     この例では、`DateDiff`に 0 を返します`wD`であるため、2 つの日付の差未満である 7 日間に 1 を返します`wY`それぞれのカレンダーの週の最初の日の間で 7 日間の相違があるためです。  
+  
+-   **間隔を長くします。** 場合`Interval`に設定されている`DateInterval.Year`、純粋、年の部分からの戻り値が計算される`Date1`と`Date2`です。 同様に、戻り値`DateInterval.Month`は、引数の年と月の部分から純粋な計算`DateInterval.Quarter`2 つの日付を含む四半期からです。  
+  
+     たとえば、次の年の 1 月 1 日に 12 月 31 日を比較するときに`DateDiff`に 1 を返します`DateInterval.Year`、 `DateInterval.Quarter`、または`DateInterval.Month`多くて 1 日が経過した場合でも、します。  
+  
+     持つ複数時代 (年号)、日本語などのカルチャ、`DateDiff`違いは、次の 2 つまたは複数の時代 (年号) にまたがる場合に、メソッドで年の差分が返されません。 によって返される値の差を計算する代わりに、<xref:System.DateTime.Year%2A>プロパティ、次の例のように:`date2.Year - date1.Year`です。  
+  
+-   **その他の間隔。** すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを与える時間間隔を検索する追加のオプションです。 たとえば、使用することができます、`Subtract`メソッド オーバー ロードされた形式のいずれかで:<xref:System.DateTime.Subtract%2A?displayProperty=nameWithType>減算、<xref:System.TimeSpan>から、`Date`を返す別の変数`Date`値、および<xref:System.DateTime.Subtract%2A?displayProperty=nameWithType>減算、`Date`に返す値、<xref:System.TimeSpan>です。 次の例のようににかかる時間をミリ秒単位を調べるには処理時間の計測することができます。  
+  
+     [!code-vb[VbVbalrFunctions#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#61)]  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|文字列値|時間間隔の単位|  
+|-----------------------|------------------|-----------------------------|  
+|`DateInterval.Day`|"d"|Day|  
+|`DateInterval.DayOfYear`|"y"|Day|  
+|`DateInterval.Hour`|"h"|Hour|  
+|`DateInterval.Minute`|"n"|Minute|  
+|`DateInterval.Month`|"m"|月|  
+|`DateInterval.Quarter`|"q"|四半期|  
+|`DateInterval.Second`|"s"|Second|  
+|`DateInterval.Weekday`|"w"|週|  
+|`DateInterval.WeekOfYear`|"ww"|カレンダーの週|  
+|`DateInterval.Year`|"yyyy"|Year|  
+  
+ `DayOfWeek`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システム設定で指定された週の最初の日|  
+|`FirstDayOfWeek.Sunday`|1|日曜日 (既定値)|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+ `WeekOfYear`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstWeekOfYear.System`|0|システムの設定で指定された年の最初の週|  
+|`FirstWeekOfYear.Jan1`|1|週を月 1 日 (既定値)|  
+|`FirstWeekOfYear.FirstFourDays`|2|(ISO 8601 の標準的な 3.17 に準拠している) 新しい年には、少なくとも 4 日間にある最初の週|  
+|`FirstWeekOfYear.FirstFullWeek`|3|新しい年の第 1 週|  
+  
+   
+  
+## Examples  
+ この例では、`DateDiff`関数を指定した日から今日までの日数の数を表示します。  
+  
+ [!code-vb[VbVbalrFunctions#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Date1" />、 <paramref name="Date2" />、または<paramref name="DayofWeek" />が範囲外です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="Date1" />または<paramref name="Date2" />に無効な型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DatePart">
+      <MemberSignature Language="C#" Value="public static int DatePart (Microsoft.VisualBasic.DateInterval Interval, DateTime DateValue, Microsoft.VisualBasic.FirstDayOfWeek FirstDayOfWeekValue = Microsoft.VisualBasic.FirstDayOfWeek.Sunday, Microsoft.VisualBasic.FirstWeekOfYear FirstWeekOfYearValue = Microsoft.VisualBasic.FirstWeekOfYear.Jan1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 DatePart(valuetype Microsoft.VisualBasic.DateInterval Interval, valuetype System.DateTime DateValue, valuetype Microsoft.VisualBasic.FirstDayOfWeek FirstDayOfWeekValue, valuetype Microsoft.VisualBasic.FirstWeekOfYear FirstWeekOfYearValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DatePart(Microsoft.VisualBasic.DateInterval,System.DateTime,Microsoft.VisualBasic.FirstDayOfWeek,Microsoft.VisualBasic.FirstWeekOfYear)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="Microsoft.VisualBasic.DateInterval" />
+        <Parameter Name="DateValue" Type="System.DateTime" />
+        <Parameter Name="FirstDayOfWeekValue" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+        <Parameter Name="FirstWeekOfYearValue" Type="Microsoft.VisualBasic.FirstWeekOfYear" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />を取得する日付/時刻値の一部を表す式。</param>
+        <param name="DateValue">必須です。 <see langword="Date" />評価する値。</param>
+        <param name="FirstDayOfWeekValue">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.Sunday" /> が使用されます。</param>
+        <param name="FirstWeekOfYearValue">省略可能です。 選択した値、<see langword="FirstWeekOfYear" />年の最初の週を指定する列挙です。 指定しない場合は、<see langword="FirstWeekOfYear.Jan1" /> が使用されます。</param>
+        <summary>返します、<see langword="Integer" />値の指定したコンポーネントを含む、指定された<see langword="Date" />値。</summary>
+        <returns>返します、<see langword="Integer" />値の指定したコンポーネントを含む、指定された<see langword="Date" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DatePart`を日付/時刻値を評価し、特定のコンポーネントを返す関数。 たとえば、使用する場合があります`DatePart`週や現在の時刻の日を計算します。  
+  
+ 選択した場合`DateInterval.Weekday`の`Interval`引数、戻り値の値と矛盾して、`FirstDayOfWeek`列挙します。 選択した場合`DateInterval.WeekOfYear`、`DatePart`を使用して、<xref:System.Globalization.Calendar>と<xref:System.Globalization.CultureInfo>クラスの<xref:System.Globalization>名前空間を現在の設定を決定します。  
+  
+ `FirstDayOfWeekValue`引数を使用する計算に影響を与える、`DateInterval.Weekday`と`DateInterval.WeekOfYear``Interval`設定します。 `FirstWeekOfYearValue`引数を指定する計算に影響を与える`DateInterval.WeekOfYear`の`Interval`します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを使う日付/時刻の部分を取得する追加のオプションです。 全体の日付の値を取得するなど、`Date`時刻値で、変数が次のように、午前 0 時に設定します。  
+  
+```vb  
+Dim CurrDatTim As Date = Now   ' Current date and time.  
+Dim LastMidnight As Date = CurrDatTim.Date   ' At midnight.  
+```  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|String|返す日付/時刻値の一部|  
+|-----------------------|------------|----------------------------------------|  
+|`DateInterval.Day`|d|日 (1 ～ 31)|  
+|`DateInterval.DayOfYear`|Y|年間通算日 (1 ～ 366)|  
+|`DateInterval.Hour`|h|Hour|  
+|`DateInterval.Minute`|n|Minute|  
+|`DateInterval.Month`|m|月|  
+|`DateInterval.Quarter`|q|四半期|  
+|`DateInterval.Second`|s|Second|  
+|`DateInterval.Weekday`|週|曜日 (1 ～ 7)|  
+|`DateInterval.WeekOfYear`|ww|週 (1 ～ 53)|  
+|`DateInterval.Year`|yyyy|Year|  
+  
+ `FirstDayOfWeekValue`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システム設定で指定された週の最初の日|  
+|`FirstDayOfWeek.Sunday`|1|日曜日 (既定値)|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+ `FirstWeekOfYearValue`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstWeekOfYear.System`|0|システムの設定で指定された年の最初の週|  
+|`FirstWeekOfYear.Jan1`|1|週を月 1 日 (既定値)|  
+|`FirstWeekOfYear.FirstFourDays`|2|(ISO 8601 の標準的な 3.17 に準拠している) 新しい年には、少なくとも 4 日間にある最初の週|  
+|`FirstWeekOfYear.FirstFullWeek`|3|新しい年の第 1 週|  
+  
+   
+  
+## Examples  
+ この例では、日付と、使用、`DatePart`関数をそれが発生した年度の四半期が表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Interval" /> が無効です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="DateValue" />強制変換は<see langword="Date" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DatePart">
+      <MemberSignature Language="C#" Value="public static int DatePart (string Interval, object DateValue, Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek = Microsoft.VisualBasic.FirstDayOfWeek.Sunday, Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear = Microsoft.VisualBasic.FirstWeekOfYear.Jan1);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 DatePart(string Interval, object DateValue, valuetype Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek, valuetype Microsoft.VisualBasic.FirstWeekOfYear WeekOfYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DatePart(System.String,System.Object,Microsoft.VisualBasic.FirstDayOfWeek,Microsoft.VisualBasic.FirstWeekOfYear)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Interval" Type="System.String" />
+        <Parameter Name="DateValue" Type="System.Object" />
+        <Parameter Name="DayOfWeek" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+        <Parameter Name="WeekOfYear" Type="Microsoft.VisualBasic.FirstWeekOfYear" />
+      </Parameters>
+      <Docs>
+        <param name="Interval">必須です。 <see langword="DateInterval" />列挙値または<see langword="String" />を取得する日付/時刻値の一部を表す式。</param>
+        <param name="DateValue">必須です。 <see langword="Date" />評価する値。</param>
+        <param name="DayOfWeek">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.Sunday" /> が使用されます。</param>
+        <param name="WeekOfYear">省略可能です。 選択した値、<see langword="FirstWeekOfYear" />年の最初の週を指定する列挙です。 指定しない場合は、<see langword="FirstWeekOfYear.Jan1" /> が使用されます。</param>
+        <summary>返します、<see langword="Integer" />値の指定したコンポーネントを含む、指定された<see langword="Date" />値。</summary>
+        <returns>返します、<see langword="Integer" />値の指定したコンポーネントを含む、指定された<see langword="Date" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`DatePart`を日付/時刻値を評価し、特定のコンポーネントを返す関数。 たとえば、使用する場合があります`DatePart`週や現在の時刻の日を計算します。  
+  
+ 選択した場合`DateInterval.Weekday`の`Interval`引数、戻り値の値と矛盾して、`FirstDayOfWeek`列挙します。 選択した場合`DateInterval.WeekOfYear`、`DatePart`を使用して、<xref:System.Globalization.Calendar>と<xref:System.Globalization.CultureInfo>クラスの<xref:System.Globalization>名前空間を現在の設定を決定します。  
+  
+ `FirstDayOfWeekValue`引数を使用する計算に影響を与える、`DateInterval.Weekday`と`DateInterval.WeekOfYear``Interval`設定します。 `FirstWeekOfYearValue`引数を指定する計算に影響を与える`DateInterval.WeekOfYear`の`Interval`します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを使う日付/時刻の部分を取得する追加のオプションです。 全体の日付の値を取得するなど、`Date`時刻値で、変数が次のように、午前 0 時に設定します。  
+  
+```vb  
+Dim CurrDatTim As Date = Now   ' Current date and time.  
+Dim LastMidnight As Date = CurrDatTim.Date   ' At midnight.  
+```  
+  
+ `Interval`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|String|返す日付/時刻値の一部|  
+|-----------------------|------------|----------------------------------------|  
+|`DateInterval.Day`|d|日 (1 ～ 31)|  
+|`DateInterval.DayOfYear`|Y|年間通算日 (1 ～ 366)|  
+|`DateInterval.Hour`|h|Hour|  
+|`DateInterval.Minute`|n|Minute|  
+|`DateInterval.Month`|m|月|  
+|`DateInterval.Quarter`|q|四半期|  
+|`DateInterval.Second`|s|Second|  
+|`DateInterval.Weekday`|週|曜日 (1 ～ 7)|  
+|`DateInterval.WeekOfYear`|ww|週 (1 ～ 53)|  
+|`DateInterval.Year`|yyyy|Year|  
+  
+ `FirstDayOfWeekValue`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システム設定で指定された週の最初の日|  
+|`FirstDayOfWeek.Sunday`|1|日曜日 (既定値)|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+ `FirstWeekOfYearValue`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstWeekOfYear.System`|0|システムの設定で指定された年の最初の週|  
+|`FirstWeekOfYear.Jan1`|1|週を月 1 日 (既定値)|  
+|`FirstWeekOfYear.FirstFourDays`|2|(ISO 8601 の標準的な 3.17 に準拠している) 新しい年には、少なくとも 4 日間にある最初の週|  
+|`FirstWeekOfYear.FirstFullWeek`|3|新しい年の第 1 週|  
+  
+   
+  
+## Examples  
+ この例では、日付と、使用、`DatePart`関数をそれが発生した年度の四半期が表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Interval" /> が無効です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="DateValue" />強制変換は<see langword="Date" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateSerial">
+      <MemberSignature Language="C#" Value="public static DateTime DateSerial (int Year, int Month, int Day);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime DateSerial(int32 Year, int32 Month, int32 Day) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateSerial(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Year" Type="System.Int32" />
+        <Parameter Name="Month" Type="System.Int32" />
+        <Parameter Name="Day" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Year">必須です。 <see langword="Integer" />1 から 9999 式です。 ただし、この範囲を下回る値も指定します。 場合<c>年</c>0 ~ 99 は、以下の「解説」セクションで説明したよう 1930 と 2029 間するものとして解釈されます。 場合<c>年</c>1 未満の値は、現在の年から引かれます。</param>
+        <param name="Month">必須です。 <see langword="Integer" />1 ~ 12 の式です。 ただし、この範囲外の値も指定します。 値<c>月</c>は 1 つずつ offset し、計算された年の月に適用します。 つまり、(<c>月</c>- 1) は月 1 日に追加します。 年は、必要な場合に再計算されます。 次の結果は、この特殊効果を示しています。  
+  
+ 場合<c>月</c>1 に設定されて、結果は、計算された年の月です。  
+  
+ 場合<c>月</c>が 0 の結果は前の年の 12 月場合、です。  
+  
+ 場合<c>月</c>-1 で、前の年の 11 月になります。  
+  
+ 場合<c>月</c>13 は、次の年の 1 月になります。</param>
+        <param name="Day">必須です。 <see langword="Integer" />1 ~ 31 の式です。 ただし、この範囲外の値も指定します。 値<c>日</c>は 1 つずつオフセットされ、計算された月の最初の日に適用します。 つまり、(<c>日</c>- 1) に追加された月の最初。 年と月は、必要に応じて再計算されます。 次の結果は、この特殊効果を示しています。  
+  
+ 場合<c>日</c>1 に設定されて、結果は、計算された月の最初の日です。  
+  
+ 場合<c>日</c>が 0 の結果は、前の月の最終日場合、。  
+  
+ 場合<c>日</c>-1 で、結果は、前の月の前月の日です。  
+  
+ 場合<c>日</c>結果、現在の月の最後が、適切な次の月の日を過ぎています。 たとえば場合、<c>月</c>は 4 と<c>日</c>31、結果は、5 月 1日です。</param>
+        <summary>返します、<see langword="Date" />午前 0 時に設定された時刻情報と共に指定した年、月、および日を表す値 (00: 00:00)。</summary>
+        <returns>返します、<see langword="Date" />午前 0 時に設定された時刻情報と共に指定した年、月、および日を表す値 (00: 00:00)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows 98 または Windows 2000 では、下 2 桁の年、`Year`引数は、コンピューターのユーザー定義の設定に基づいて解釈されます。 既定の設定では 0 から 29 までの値は 2000 – 2029 年、30 ~ 99 の値が 1930 – 1999 年として解釈されます。 他のすべての`Year`引数を使用して、4 桁の年、たとえば 1924 です。  
+  
+ 以前のバージョンの Windows には、前述の既定値に基づいて 2 桁の年が解釈されます。 関数が正しい値を返すことを確認、4 桁を使用して`Year`です。  
+  
+ 次の例で負の場合、0、および引数の正の値。 ここでは、`DateSerial`関数が返される、 `Date` 10 年前です。 現在の年に、3 月の最初の日の前日を表す 10 年 2 月の最終日つまり、します。  
+  
+```vb  
+Dim EndFeb As Date = DateSerial(-10, 3, 0)  
+```  
+  
+ いずれか`Month`または`Day`の通常の範囲を超えた場合、単位に適切に適用されます。 たとえば、32 日を指定すると、評価されますと 1 の値に応じて、次の 4 つの日に 1 か月として`Month`です。 場合`Year`が 9999 より大きい場合、または-2,147, 483,648 ~ 2,147, 483,647、範囲外のいずれかの引数が、<xref:System.ArgumentException>エラーが発生します。 3 つの引数で指定された日付よりも前か 1 の場合、または年 12 月 31 日 23時 59分: 59 より後の年 1 月 1 日 00時 00分: 00 ~ 9999 場合、<xref:System.ArgumentOutOfRangeException>エラーが発生します。  
+  
+ `Date`データ型には、時間のコンポーネントが含まれます。 `DateSerial`すべて設定する 0 にこれらのため、返される値が計算された日の開始を表します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime>構造体、そのメソッドを使う追加のオプションをまとめることで、`Date`値。 オーバー ロードされたいずれかを使用するなど、<xref:System.DateTime.%23ctor%2A>を設定するコンス トラクター、`Date`コンポーネントの目的の組み合わせを使用して変数。 次の例のセット`NewDateTime`1978 月 6日 10 分の 1 秒 8:30 の前に。  
+  
+```vb  
+Dim NewDateTime As Date = New Date(1978, 5, 6, 8, 29, 59, 900)  
+```  
+  
+   
+  
+## Examples  
+ この例では、`DateSerial`関数を指定した年、月、および日の日付を返します。  
+  
+ [!code-vb[VbVbalrFunctions#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateString">
+      <MemberSignature Language="C#" Value="public static string DateString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string DateString" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.DateString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すか設定、<see langword="String" />システムの現在の日付を表す値です。</summary>
+        <value>返すか設定、<see langword="String" />システムの現在の日付を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DateString`システム日付を月の省略名を使用して年-月-日形式で返します。 日付の許容される形式は、M-d yyyy, M-y d、m/d/yyyy、および M/d/y です。 これは、2 バイト文字セット (DBCS) を使用するものを除くすべてのシステム ロケールの場合は true です。 システムのロケールが、2 バイト文字セットを使用している場合`DateString`-yyyy-mm-dd の形式で、システムの日付を返します。 使用して、システムのロケールを設定、**時計、言語および地域**内の項目**コントロール パネルの **です。  
+  
+ **注**、`DateString`プロパティでは、システムの日付を返します - yyyy-mm-dd の形式でのみ、 `zh` (中国語簡体字)、 `ko` (韓国語)、および`ja`Silverlight 内での Visual Basic を実行している場合 (日本語) のシステム ロケール。  
+  
+ 取得または設定の現在のシステム時刻として、`String`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.TimeString%2A>プロパティです。  
+  
+ 現在のロケールの形式またはカスタム形式では、現在のシステム日付または時刻を取得、指定、<xref:Microsoft.VisualBasic.DateAndTime.Now%2A>プロパティを<xref:Microsoft.VisualBasic.Strings.Format%2A>関数、またはユーザー定義の定義済み日付/時刻形式を指定します。 次に例を示します。  
+  
+```  
+MsgBox("The formatted date is " & Format(Now, "dddd, d MMM yyyy"))  
+```  
+  
+ 現在のシステム日付にアクセスする、`Date`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.Today%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  システムの日付または時刻を設定すると、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ 次の例では、`DateString`プロパティを現在のシステム日付を表示します。  
+  
+ [!code-vb[VbVbalrDateProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">値を設定するために使用する無効な形式<see langword="DateString" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DateValue">
+      <MemberSignature Language="C#" Value="public static DateTime DateValue (string StringDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime DateValue(string StringDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.DateValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="StringDate" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="StringDate">必須です。 <see langword="String" />9999 年 12 月 31 日の 23時 59分: 59 まで 1 年 1 月 1 日 00時 00分: 00 から日付/時刻値を表す式です。</param>
+        <summary>返します、<see langword="Date" />時間情報が午前 0 時に設定された文字列で表される日付情報を含む値 (00: 00:00)。</summary>
+        <returns>
+          <see langword="Date" />時間の情報が午前 0 時に設定された文字列で表される日付情報を含む値 (00: 00:00)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`StringDate`1 ~ 12 の有効な日付の区切り記号で区切られた数字だけを含む`DateValue`月、日、およびシステムに指定された短い日付形式に従って年の順で認識します。 `DateValue`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。 短い日付形式を上書きするには、設定して、<xref:System.Globalization.DateTimeFormatInfo.ShortDatePattern%2A>のプロパティ、<xref:System.Globalization.DateTimeFormatInfo>クラス内で、<xref:System.Globalization>名前空間。  
+  
+ `DateValue`長、省略形、および数値の形式での月の名前を認識します。 12/30/1991 と 12/30/91 を認識するだけでなく、 `DateValue` 1991 年 12 月 30 日と 1991 年 12 月 30 日にも認識します。  
+  
+ 場合の年の部分`StringDate`を省略すると、`DateValue`コンピューターのシステムの日付から現在の年を使用します。  
+  
+ 場合、`StringDate`引数には、時刻の情報が含まれています。 `DateValue` 、返される値には含まれません。 ただし場合、 `StringDate` 「89: 98」などの無効な時刻の情報が含まれています、<xref:System.InvalidCastException>エラーが発生します。  
+  
+   
+  
+## Examples  
+ この例では、`DateValue`文字列を日付に変換する関数。 日付リテラルの日付を直接割り当てるためも使用できます、`Object`または`Date`変数、たとえば、`oldDate = #2/12/69#`です。  
+  
+ [!code-vb[VbVbalrFunctions#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="StringDate" />無効な時刻情報が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Day">
+      <MemberSignature Language="C#" Value="public static int Day (DateTime DateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Day(valuetype System.DateTime DateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Day(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="DateValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="DateValue">必須です。 <see langword="Date" />日を抽出する値。</param>
+        <summary>返します、 <see langword="Integer" /> 1 ~ 31、月の日付を表す値です。</summary>
+        <returns>返します、 <see langword="Integer" /> 1 ~ 31、月の日付を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、`Day`関数で修飾する必要があります、`Microsoft.VisualBasic`名前空間、ため、<xref:System.Windows.Forms>名前空間を定義<xref:System.Windows.Forms.Day>列挙体として。 例を次にどのように適合`Day`このあいまいさの解決。  
+  
+```vb  
+Dim thisDay As Integer = Microsoft.VisualBasic.DateAndTime.Day(Now)  
+```  
+  
+ 呼び出して、月の日を取得することも`DatePart`を指定して`DateInterval.Day`の*間隔*引数。  
+  
+   
+  
+## Examples  
+ 次の例では、`Day`指定された日付の月の日を取得します。 開発環境では、日付リテラルは、コードのロケール設定を使用して標準の短い形式 (「02/12/1969」) などに表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#30)]  
+  
+ `Day`修飾から区別するためには、<xref:System.Windows.Forms.Day?displayProperty=nameWithType>列挙します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Hour">
+      <MemberSignature Language="C#" Value="public static int Hour (DateTime TimeValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Hour(valuetype System.DateTime TimeValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Hour(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="TimeValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="TimeValue">必須です。 <see langword="Date" />時間を抽出する値。</param>
+        <summary>返します、 <see langword="Integer" /> 0 ~ 23、日の時間を表す値です。</summary>
+        <returns>返します、 <see langword="Integer" /> 0 ~ 23、日の時間を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、1 日の時間を取得することも`DatePart`を指定して`DateInterval.Hour`の`Interval`引数。  
+  
+   
+  
+## Examples  
+ この例では、`Hour`指定された時間から 1 時間を取得します。 開発環境では、時刻リテラルは、コードのロケール設定を使用して短い時刻形式で表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minute">
+      <MemberSignature Language="C#" Value="public static int Minute (DateTime TimeValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Minute(valuetype System.DateTime TimeValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Minute(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="TimeValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="TimeValue">必須です。 <see langword="Date" />分を抽出する値。</param>
+        <summary>返します、 <see langword="Integer" /> 0 ~ 59 分、時間を表す値です。</summary>
+        <returns>返します、 <see langword="Integer" /> 0 ~ 59 分、時間を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、分を取得することも`DatePart`を指定して`DateInterval.Minute`の`Interval`引数。  
+  
+   
+  
+## Examples  
+ この例では、 `Minute` 、指定された時間から、分を取得します。 開発環境では、時刻リテラルは、コードのロケール設定を使用して短い時刻形式で表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Month">
+      <MemberSignature Language="C#" Value="public static int Month (DateTime DateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Month(valuetype System.DateTime DateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Month(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="DateValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="DateValue">必須です。 <see langword="Date" />月を抽出する値。</param>
+        <summary>返します、<see langword="Integer" />から年の月を表す 1 ~ 12 の値。</summary>
+        <returns>返します、<see langword="Integer" />から年の月を表す 1 ~ 12 の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、年の月を取得することも`DatePart`を指定して`DateInterval.Month`の`Interval`引数。  
+  
+   
+  
+## Examples  
+ この例では、`Month`指定された日付の月を取得します。 開発環境で、日付リテラルが表示されます短い日付形式で、コードのロケール設定を使用します。  
+  
+ [!code-vb[VbVbalrFunctions#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#43)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MonthName">
+      <MemberSignature Language="C#" Value="public static string MonthName (int Month, bool Abbreviate = false);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string MonthName(int32 Month, bool Abbreviate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.MonthName(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Month" Type="System.Int32" />
+        <Parameter Name="Abbreviate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Month">必須です。 <see langword="Integer" />。 月、1 ~ 13; の数値の表記1 は年 1 月、12 は 12 月を示します。 13 か月カレンダーで値 13 を使用することができます。 システムが 12 か月カレンダーを使用していると<c>月</c>13、<see langword="MonthName" />空の文字列を返します。</param>
+        <param name="Abbreviate">省略可能です。 <see langword="Boolean" />月の名前を省略するかどうかを示す値です。 省略した場合、既定値は<see langword="False" />、つまり、月の名前は短縮されません。</param>
+        <summary>返します、<see langword="String" />指定した月の名前を格納します。</summary>
+        <returns>返します、<see langword="String" />指定した月の名前を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列`MonthName`異なりますだけでなく、入力引数以外にも、**地域のオプション**、Windows で指定された設定**コントロール パネルの **です。  
+  
+> [!NOTE]
+>  `MonthName`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。  
+  
+   
+  
+## Examples  
+ この例では、`MonthName`指定された整数の月の名前を判断する関数。 ブール値が決定されるかどうか完全名 (`False`) または省略名 (`True`) が表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#44)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Month" />1 より小さいか、13 をよりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Now">
+      <MemberSignature Language="C#" Value="public static DateTime Now { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.DateTime Now" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.Now" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Date" />値が現在の日付とシステム時刻を格納します。</summary>
+        <value>返します、<see langword="Date" />値が現在の日付とシステム時刻を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システム日付を設定するには、使用、<xref:Microsoft.VisualBasic.DateAndTime.Today%2A>プロパティです。 システム時刻を設定するには、使用、<xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、`Now`プロパティ、現在のシステム日付と時刻を取得します。  
+  
+ [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Second">
+      <MemberSignature Language="C#" Value="public static int Second (DateTime TimeValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Second(valuetype System.DateTime TimeValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Second(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="TimeValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="TimeValue">必須です。 <see langword="Date" />2 番目の抽出元となる値です。</param>
+        <summary>返します、 <see langword="Integer" /> 0 ~ 59 秒、分を表す値です。</summary>
+        <returns>返します、 <see langword="Integer" /> 0 ~ 59 秒、分を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、1 分間の秒を取得することも`DatePart`を指定して`DateInterval.Second`の`Interval`引数。  
+  
+   
+  
+## Examples  
+ 次の例では、`Second`分の 2 番目の指定した時刻を取得する関数。 開発環境では、時刻リテラルは、コードのロケール設定を使用して短い時刻形式で表示されます。  
+  
+ [!code-vb[VbVbalrFunctions#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#46)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeOfDay">
+      <MemberSignature Language="C#" Value="public static DateTime TimeOfDay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.DateTime TimeOfDay" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.TimeOfDay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すか設定、<see langword="Date" />システムの現在の時刻を含む値です。</summary>
+        <value>返すか設定、<see langword="Date" />システムの現在の時刻を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Date`データ型には、日付のコンポーネントが含まれます。 システム時刻を返す場合`TimeOfDay`返される値は 1 年の最初の日を表すために、これらすべてを 1 を設定します。 システム時刻を設定するときに`TimeOfDay`日付の構成要素は無視されます。  
+  
+ 現在のシステム時刻としてにアクセスする、`String`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.TimeString%2A>プロパティです。  
+  
+ 取得または現在のシステム日付を設定を使用して、<xref:Microsoft.VisualBasic.DateAndTime.Today%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  システムの日付または時刻を設定すると、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ この例では、`TimeOfDay`プロパティを現在のシステム時刻を返します。  
+  
+ [!code-vb[VbVbalrDateProperties#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timer">
+      <MemberSignature Language="C#" Value="public static double Timer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property float64 Timer" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.Timer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返します、<see langword="Double" />午前 0 時から経過した秒数を表す値です。</summary>
+        <value>返します、<see langword="Double" />午前 0 時から経過した秒数を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Timer`プロパティは、最新の午前 0 時から秒とミリ秒数の両方を返します。 秒は、戻り値の整数部分にあり、小数部がミリ秒。  
+  
+   
+  
+## Examples  
+ この例では、`Timer`プロパティをアプリケーションを一時停止します。 一時停止中に他の処理を実行できます。  
+  
+ [!code-vb[VbVbalrTimerProperty#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTimerProperty/VB/Form1.vb#1)]  
+  
+ 修飾する必要がありますに注意してください、`Timer`を持つプロパティ、<xref:Microsoft.VisualBasic?displayProperty=nameWithType>名前空間、ため`Timer`で定義されたクラスではまた、 <xref:System.Threading?displayProperty=nameWithType>、 <xref:System.Timers?displayProperty=nameWithType>、および<xref:System.Windows.Forms?displayProperty=nameWithType>名前空間。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSerial">
+      <MemberSignature Language="C#" Value="public static DateTime TimeSerial (int Hour, int Minute, int Second);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime TimeSerial(int32 Hour, int32 Minute, int32 Second) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.TimeSerial(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Hour" Type="System.Int32" />
+        <Parameter Name="Minute" Type="System.Int32" />
+        <Parameter Name="Second" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Hour">必須です。 <see langword="Integer" />0 ~ 23 の式です。 ただし、この範囲外の値も指定します。</param>
+        <param name="Minute">必須です。 <see langword="Integer" />0 ~ 59 の式です。 ただし、この範囲外の値も指定します。 値<c>分</c>計算された時刻に追加されるので、負の値は、その時刻より前に、の分を指定します。</param>
+        <param name="Second">必須です。 <see langword="Integer" />0 ~ 59 の式です。 ただし、この範囲外の値も指定します。 値<c>2 番目</c>のため負の値をその分までの秒を指定しますが、計算される 1 分に追加します。</param>
+        <summary>返します、<see langword="Date" />日付情報が 1 月 1 日西暦 1 年の基準とした設定で指定された時間、分、および秒を表す値です。</summary>
+        <returns>返します、<see langword="Date" />日付情報が 1 月 1 日西暦 1 年の基準とした設定で指定された時間、分、および秒を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例で負の場合、0、および引数の正の値。 `TimeSerial`正午、または 8時 45分: 00 AM まで 3 時間まで 15 分を表す時間を返します。  
+  
+```vb  
+Dim alarmTime As Date = TimeSerial(12 - 3, -15, 0)  
+```  
+  
+ いずれか`Minute`または`Second`の通常の範囲を超えた場合、単位に適切に適用されます。 たとえば、75 分を指定する場合は 1 時間 15 分として評価されます。  
+  
+ `TimeSerial`1 日の秒数である 86,400、剰余合計秒数が減少します。 そのため、返される時刻には 00時 00分: 00 ~ 23時 59分: 59 常にします。  
+  
+ `Date`データ型には、日付のコンポーネントが含まれます。 `TimeSerial`返される値は 1 年の最初の日を表すために、これらすべてを 1 を設定します。 ただし、引数の値によって計算された時刻が 24 時間を超える場合、1 日は、必要に応じてが増加します。 次の例では、値で`Hour`と`Minute`合計時間は 24 時間以上が発生します。  
+  
+```vb  
+MsgBox(TimeSerial(23, 75, 0))   
+' The preceding statement displays "1/2/0001 12:15:00 AM".  
+```  
+  
+ 引数の値は、負の値の計算される時間間隔で結果、日付情報は 1/1/0001 を設定し、時刻情報は 00時 00分: 00 ~ 23時 59分: 59 にするのに調整します。 ただし、計算される時間が負の値 24 時間未満の場合、<xref:System.ArgumentOutOfRangeException>エラーが発生します。  
+  
+ すべて`Date`値でサポートされて、<xref:System.DateTime?displayProperty=nameWithType>構造体、そのメソッドを使う追加のオプションをまとめることで、`Date`値。 オーバー ロードされたいずれかを使用するなど、<xref:System.DateTime.%23ctor%2A>を設定するコンス トラクター、`Date`コンポーネントの目的の組み合わせを使用して変数。 次の例のセット`newDateTime`1978 月 6日 10 分の 1 秒 8:30 の前に。  
+  
+```vb  
+Dim newDateTime As Date = New Date(1978, 5, 6, 8, 29, 59, 900)  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、`TimeSerial`関数を指定した時間、分、および秒の時刻を返します。  
+  
+ [!code-vb[VbVbalrFunctions#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数は-2,147, 483,648 ~ 2,147, 483,647 の範囲外</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">計算は負の値の 24 時間未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeString">
+      <MemberSignature Language="C#" Value="public static string TimeString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string TimeString" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.TimeString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すか設定、<see langword="String" />システムの現在の時刻を表す値です。</summary>
+        <value>返すか設定、<see langword="String" />システムの現在の時刻を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `TimeString`常に 24 時間形式は"HH:mm:ss"としてのシステム時刻を返します。 この形式はカルチャに依存しない、変更した場合でもは変わらないため、**地域のオプション**で**コントロール パネルの **です。  
+  
+ 取得またはとして現在のシステム日付を設定する、`String`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.DateString%2A>プロパティです。  
+  
+ 現在のロケールの形式またはカスタム形式では、現在のシステム日付または時刻を取得、指定、<xref:Microsoft.VisualBasic.DateAndTime.Now%2A>プロパティを<xref:Microsoft.VisualBasic.Strings.Format%2A>関数、またはユーザー定義の定義済み日付/時刻形式を指定します。 次に例を示します。  
+  
+```  
+MsgBox("The formatted time is " & Format(Now, "hh.mm.ss.fff tt"))  
+```  
+  
+ 現在のシステム時刻としてにアクセスする、`Date`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  システムの日付または時刻を設定すると、部分的な信頼されている状況での実行に影響を与える可能性がありますアンマネージ コードのアクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ この例では、`TimeString`プロパティを現在のシステム時刻を表示します。  
+  
+ [!code-vb[VbVbalrDateProperties#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">値を設定するために使用する無効な形式<see langword="TimeString" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeValue">
+      <MemberSignature Language="C#" Value="public static DateTime TimeValue (string StringTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static valuetype System.DateTime TimeValue(string StringTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.TimeValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="StringTime" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="StringTime">必須です。 <see langword="String" />9999 年 12 月 31 日の 23時 59分: 59 まで 1 年 1 月 1 日 00時 00分: 00 から日付/時刻値を表す式です。</param>
+        <summary>返します、<see langword="Date" />日付情報が 1 年 1 月 1 日に設定された文字列で表される時刻情報を含む値です。</summary>
+        <returns>返します、<see langword="Date" />日付情報が 1 年 1 月 1 日に設定された文字列で表される時刻情報を含む値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な時刻を入力する 12 時間制または 24 時間制を使用しています。 たとえば、`"2:24 P.M."`と`"14:24"`が両方とも有効な`StringTime`引数。  
+  
+ 場合、`StringTime`引数には、日付情報が含まれています。 `TimeValue` 、返される値には含まれません。 ただし場合、`StringTime`無効な日付についてには、たとえば"年 32年 1 月"が含まれています、<xref:System.InvalidCastException>エラーが発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、`TimeValue`時刻を文字列に変換する関数。 直接割り当てるには時間、日付リテラルを使用することができますも、`Date`変数。  
+  
+ [!code-vb[VbVbalrFunctions#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#51)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="StringTime" />無効な日付の情報が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Today">
+      <MemberSignature Language="C#" Value="public static DateTime Today { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.DateTime Today" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.DateAndTime.Today" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すか設定、<see langword="Date" />システムの現在の日付を含む値です。</summary>
+        <value>返すか設定、<see langword="Date" />システムの現在の日付を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Date`データ型には、時間のコンポーネントが含まれます。 システム日付を返す場合`Today`を 0 にこれらのすべて設定するため、返される値が午前 0 時を表します (00: 00:00)。 システム日付を設定するときに`Today`時コンポーネントは無視されます。  
+  
+ 現在のシステム日付にアクセスする、`String`を使用して、<xref:Microsoft.VisualBasic.DateAndTime.DateString%2A>プロパティです。  
+  
+ 取得または現在のシステム時刻を設定を使用して、<xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>プロパティです。  
+  
+> [!IMPORTANT]
+>  システムの日付または時刻を設定すると、アンマネージ コード アクセス許可が必要です。 詳細については、次を参照してください。<xref:System.Security.Permissions.SecurityPermission>と[コード アクセス許可](http://msdn.microsoft.com/en-us/e5ae402f-6dda-4732-bbe8-77296630f675)です。  
+  
+   
+  
+## Examples  
+ この例では、`Today`プロパティの現在のシステム日付を返します。  
+  
+ [!code-vb[VbVbalrDateProperties#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Weekday">
+      <MemberSignature Language="C#" Value="public static int Weekday (DateTime DateValue, Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek = Microsoft.VisualBasic.FirstDayOfWeek.Sunday);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Weekday(valuetype System.DateTime DateValue, valuetype Microsoft.VisualBasic.FirstDayOfWeek DayOfWeek) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Weekday(System.DateTime,Microsoft.VisualBasic.FirstDayOfWeek)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="DateValue" Type="System.DateTime" />
+        <Parameter Name="DayOfWeek" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+      </Parameters>
+      <Docs>
+        <param name="DateValue">必須です。 <see langword="Date" />週の曜日を決定する値。</param>
+        <param name="DayOfWeek">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.Sunday" /> が使用されます。</param>
+        <summary>返します、<see langword="Integer" />週の曜日を表す数値を含むです。</summary>
+        <returns>返します、<see langword="Integer" />週の曜日を表す数値を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される値、`Weekday`の値に対応する関数、`FirstDayOfWeek`列挙体です。 つまり、1 は日曜日を表し、7 は土曜日を表します。  
+  
+> [!NOTE]
+>  `Weekday`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。  
+  
+ `DayOfWeek`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システム設定で指定された週の最初の日|  
+|`FirstDayOfWeek.Sunday`|1|日曜日 (既定値)|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+   
+  
+## Examples  
+ 次の例では、`Weekday`指定された日付、週の曜日を取得します。  
+  
+ [!code-vb[VbVbalrFunctions#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#57)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="DayOfWeek" />0 未満か、7 よりも詳細です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WeekdayName">
+      <MemberSignature Language="C#" Value="public static string WeekdayName (int Weekday, bool Abbreviate = false, Microsoft.VisualBasic.FirstDayOfWeek FirstDayOfWeekValue = Microsoft.VisualBasic.FirstDayOfWeek.System);" />
+      <MemberSignature Language="ILAsm" Value=".method public static string WeekdayName(int32 Weekday, bool Abbreviate, valuetype Microsoft.VisualBasic.FirstDayOfWeek FirstDayOfWeekValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.WeekdayName(System.Int32,System.Boolean,Microsoft.VisualBasic.FirstDayOfWeek)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Weekday" Type="System.Int32" />
+        <Parameter Name="Abbreviate" Type="System.Boolean" />
+        <Parameter Name="FirstDayOfWeekValue" Type="Microsoft.VisualBasic.FirstDayOfWeek" />
+      </Parameters>
+      <Docs>
+        <param name="Weekday">必須です。 <see langword="Integer" />。 1 ~ 7;、曜日の数値の表記1 は、週の最初の日、7 が週の最終日を示します。 最初と最後の日の id は、の設定によって異なります。 <c>FirstDayOfWeekValue</c>です。</param>
+        <param name="Abbreviate">省略可能です。 <see langword="Boolean" />曜日名を省略するかどうかを示す値です。 省略した場合、既定値は<see langword="False" />、つまり、曜日名は短縮されません。</param>
+        <param name="FirstDayOfWeekValue">省略可能です。 選択した値、<see langword="FirstDayOfWeek" />週の最初の日を指定する列挙です。 指定しない場合は、<see langword="FirstDayOfWeek.System" /> が使用されます。</param>
+        <summary>返します、<see langword="String" />指定した曜日の名前を格納します。</summary>
+        <returns>返します、<see langword="String" />指定した曜日の名前を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列`WeekdayName`異なりますだけでなく、入力引数以外にも、**地域のオプション**、Windows で指定された設定**コントロール パネルの **です。  
+  
+> [!NOTE]
+>  `WeekdayName`現在の予定表の設定を使用して、<xref:System.Globalization.CultureInfo.CurrentCulture%2A>のプロパティ、<xref:System.Globalization.CultureInfo>クラス内で、<xref:System.Globalization>名前空間。 既定値<xref:System.Globalization.CultureInfo.CurrentCulture%2A>値によって決まります**コントロール パネルの **設定します。  
+  
+ `FirstDayOfWeekValue`引数は、次の設定のいずれかを持つことができます。  
+  
+|列挙値|値|説明|  
+|-----------------------|-----------|-----------------|  
+|`FirstDayOfWeek.System`|0|システムで指定された週の最初の日 (既定値) の設定|  
+|`FirstDayOfWeek.Sunday`|1|日曜日|  
+|`FirstDayOfWeek.Monday`|2|月曜日 (ISO 8601 の標準的な 3.17 に準拠している)|  
+|`FirstDayOfWeek.Tuesday`|3|火曜日|  
+|`FirstDayOfWeek.Wednesday`|4|水曜日|  
+|`FirstDayOfWeek.Thursday`|5|木曜日|  
+|`FirstDayOfWeek.Friday`|6|金曜日|  
+|`FirstDayOfWeek.Saturday`|7|土曜日|  
+  
+   
+  
+## Examples  
+ 次の例では、`Weekday`を指定された日付、週の曜日を取得する関数し、`WeekDayName`番号から、曜日の名前を取得します。  
+  
+ [!code-vb[VbVbalrFunctions#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#58)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Weekday" />1 より小さいか、または 7 より大きいまたは<paramref name="FirstDayOfWeekValue" />は 0 より小さいか、7 より大きい。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Year">
+      <MemberSignature Language="C#" Value="public static int Year (DateTime DateValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static int32 Year(valuetype System.DateTime DateValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.DateAndTime.Year(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="DateValue" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="DateValue">必須です。 <see langword="Date" />年を抽出する値。</param>
+        <summary>返します、 <see langword="Integer" /> 1 ~ 9999 年を表す値です。</summary>
+        <returns>返します、 <see langword="Integer" /> 1 ~ 9999 年を表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出して、年を取得することも`DatePart`を指定して`DateInterval.Year`の`Interval`引数。  
+  
+   
+  
+## Examples  
+ 次の例では、`Year`指定された日付の年を取得します。 開発環境で、日付リテラルが表示されます短い日付形式で、コードのロケール設定を使用します。  
+  
+ [!code-vb[VbVbalrFunctions#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrFunctions/VB/Class1.vb#59)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

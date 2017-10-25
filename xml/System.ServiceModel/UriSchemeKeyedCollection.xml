@@ -1,0 +1,135 @@
+<Type Name="UriSchemeKeyedCollection" FullName="System.ServiceModel.UriSchemeKeyedCollection">
+  <TypeSignature Language="C#" Value="public class UriSchemeKeyedCollection : System.Collections.Generic.SynchronizedKeyedCollection&lt;string,Uri&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UriSchemeKeyedCollection extends System.Collections.Generic.SynchronizedKeyedCollection`2&lt;string, class System.Uri&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.UriSchemeKeyedCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Generic.SynchronizedKeyedCollection&lt;System.String,System.Uri&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="K">System.String</BaseTypeArgument>
+      <BaseTypeArgument TypeParamName="T">System.Uri</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トランスポート スキーマ名がキーとして追加された URI を含むスレッド セーフなコレクションを用意します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションは、サービスのベース アドレスをスキーマ名で保存するために、ホストによって使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriSchemeKeyedCollection (params Uri[] uris);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri[] uris) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.UriSchemeKeyedCollection.#ctor(System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="addresses" Type="System.Uri[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="uris">To be added.</param>
+        <summary><see cref="T:System.ServiceModel.UriSchemeKeyedCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uris" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKeyForItem">
+      <MemberSignature Language="C#" Value="protected override string GetKeyForItem (Uri item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetKeyForItem(class System.Uri item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.UriSchemeKeyedCollection.GetKeyForItem(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="item">キーが取得される <see cref="T:System.Uri" />。</param>
+        <summary>指定した URI のキーをコレクションから取得します。</summary>
+        <returns>コレクションから取得した、指定した URI のキー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertItem">
+      <MemberSignature Language="C#" Value="protected override void InsertItem (int index, Uri item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InsertItem(int32 index, class System.Uri item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.UriSchemeKeyedCollection.InsertItem(System.Int32,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の項目の挿入位置を指定する 0 から始まるインデックス。</param>
+        <param name="item">コレクションに挿入される <see cref="T:System.Uri" />。</param>
+        <summary>コレクション内の指定した位置に URI を挿入します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="item" /> URI は絶対 URI ではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="item" /> の URI が、コレクションに既に存在するスキーマ名を含んでいます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="protected override void SetItem (int index, Uri item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItem(int32 index, class System.Uri item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.UriSchemeKeyedCollection.SetItem(System.Int32,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の URI の挿入位置を指定する 0 から始まるインデックス。</param>
+        <param name="item">コレクションに配置される <see cref="T:System.Uri" />。</param>
+        <summary>コレクションの指定した位置にある URI を、新しい URI に置き換えます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="item" /> URI は絶対 URI ではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="item" /> の URI が、コレクションに既に存在するスキーマ名を含んでいます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

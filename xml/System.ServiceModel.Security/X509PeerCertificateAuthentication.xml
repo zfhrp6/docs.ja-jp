@@ -1,0 +1,115 @@
+<Type Name="X509PeerCertificateAuthentication" FullName="System.ServiceModel.Security.X509PeerCertificateAuthentication">
+  <TypeSignature Language="C#" Value="public class X509PeerCertificateAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509PeerCertificateAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.X509PeerCertificateAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア証明書の認証プロパティを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CertificateValidationMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Security.X509CertificateValidationMode CertificateValidationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.X509CertificateValidationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書検証モードを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.X509CertificateValidationMode" /> 内の列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomCertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CustomCertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509PeerCertificateAuthentication.CustomCertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム クライアント証明書検証を取得または設定します。</summary>
+        <value>カスタム クライアント証明書検証コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] は既定のクライアント証明書検証を提供します。証明書検証は、信頼されたユーザー ストアに対しクライアント証明書を検証し、証明書が有効なルートにチェーンされていることを確認します。 カスタム検証を実装して、別の動作を取得することもできます。 このプロパティを使用すれば、カスタム検証を指定できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevocationMode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.X509RevocationMode RevocationMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509PeerCertificateAuthentication.RevocationMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509RevocationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書失効モードを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509RevocationMode" /> のいずれかの値。<see langword="NoCheck" />、<see langword="Online" />、または <see langword="Offline" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証明書を使用するとき、システムは、クライアント証明書が証明書失効リスト内にないことを検証して、クライアント証明書が失効していないことを確認します。 このチェックは、オンラインで、またはキャッシュ内の失効リストに対して実行できます。 失効チェック無効にできます NoCheck にこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustedStoreLocation">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation TrustedStoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.X509PeerCertificateAuthentication.TrustedStoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書を検証する、信頼されているストアの場所を取得または設定します。</summary>
+        <value>クライアント証明書を検証する信頼されたストアの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] セキュリティ システムは、証明書を使用するとき、クライアント証明書を <xref:System.Security.Cryptography.X509Certificates.StoreLocation> と照合します。 ストアの場所はこのパラメーターを使用して指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">資格情報が読み取り専用のときに設定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

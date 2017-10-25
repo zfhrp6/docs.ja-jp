@@ -1,0 +1,131 @@
+<Type Name="ISerializable" FullName="System.Runtime.Serialization.ISerializable">
+  <TypeSignature Language="C#" Value="public interface ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.ISerializable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>独自のシリアル化と逆シリアル化を制御するオブジェクトを許可します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化する可能性がある任意のクラスをマークする必要があります、<xref:System.SerializableAttribute>です。 クラスをシリアル化プロセスを制御する場合を実装できます、<xref:System.Runtime.Serialization.ISerializable>インターフェイスです。 <xref:System.Runtime.Serialization.Formatter>呼び出し、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>シリアル化時に指定された設定と<xref:System.Runtime.Serialization.SerializationInfo>オブジェクトを表すために必要なすべてのデータ。 <xref:System.Runtime.Serialization.Formatter>を作成、<xref:System.Runtime.Serialization.SerializationInfo>グラフ内のオブジェクトの型を使用します。 オブジェクト自体を使用できるは、プロキシを送信する必要がある、<xref:System.Runtime.Serialization.SerializationInfo.FullTypeName%2A>と<xref:System.Runtime.Serialization.SerializationInfo.AssemblyName%2A>メソッドを<xref:System.Runtime.Serialization.SerializationInfo>送信される情報を変更します。  
+  
+ クラスの継承の場合を実装する基本クラスから派生するクラスをシリアル化<xref:System.Runtime.Serialization.ISerializable>です。 この場合、派生クラスがの基本クラス実装を呼び出す必要があります<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>その実装の内部<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>です。 それ以外の場合、基本クラスからのデータはシリアル化されません。  
+  
+ <xref:System.Runtime.Serialization.ISerializable>インターフェイスにコンス トラクター シグネチャのコンス トラクターを持つ (<xref:System.Runtime.Serialization.SerializationInfo>については、<xref:System.Runtime.Serialization.StreamingContext>コンテキスト)。 内のデータの後に逆シリアル化時に、現在のコンス トラクターが呼び出されます、<xref:System.Runtime.Serialization.SerializationInfo>がされたフォーマッタによって逆シリアル化します。 一般に、クラスが封印されていない場合は、このコンス トラクターを保護する必要があります。  
+  
+ オブジェクトが逆シリアル化の順序は保証できません。 たとえば、1 つの型がないされてまだ逆シリアル化する型を参照する場合、例外が発生します。 実装することによって、問題を回避することができます、このような依存関係のある型を作成する場合、`IDeserializationCallback`インターフェイスおよび`OnDeserialization`メソッドです。  
+  
+ シリアル化のアーキテクチャを拡張するオブジェクトの種類を処理する<xref:System.MarshalByRefObject>を拡張する型と同じ<xref:System.Object>です。 これらの型をマークすることができます、<xref:System.SerializableAttribute>を実装し、<xref:System.Runtime.Serialization.ISerializable>他のオブジェクトの種類のインターフェイスです。 そのオブジェクトの状態はキャプチャされ、ストリームに永続化します。  
+  
+ これらの型を使用されているときに<xref:System.Runtime.Remoting>、リモート処理インフラストラクチャよりも一般的なシリアル化し、代わりにプロキシをシリアル化のためのサロゲートの提供、<xref:System.MarshalByRefObject>です。 サロゲートは、および特定の種類のオブジェクトを逆シリアル化する方法を知っているヘルパーです。 型プロキシは、ほとんどの場合、ユーザーに非表示である<xref:System.Runtime.Remoting.ObjRef>です。  
+  
+ 一般的なデザイン パターンとしてではない通常のシリアル化可能な属性でマークする両方および拡張するクラスの<xref:System.MarshalByRefObject>します。 開発者は、これら 2 つの特性を結合するときにシリアル化とリモート処理シナリオについて慎重に検討する必要があります。 1 つの例が、これを適用できますが、<xref:System.IO.MemoryStream>です。 基本クラスの中に<xref:System.IO.MemoryStream>(<xref:System.IO.Stream>) から拡張<xref:System.MarshalByRefObject>の状態をキャプチャすることは、<xref:System.IO.MemoryStream>およびに復元します。 そのため、あります意味のあるデータベースにこのストリームの状態をシリアル化の後で復元します。 ただし、使用すると、リモート処理、この型のオブジェクトはプロキシのようになります。  
+  
+ 拡張するクラスのシリアル化の詳細については<xref:System.MarshalByRefObject>を参照してください<xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>です。 実装の詳細については<xref:System.Runtime.Serialization.ISerializable>を参照してください[カスタム シリアル化](~/docs/standard/serialization/custom-serialization.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Runtime.Serialization.ISerializable>クラスに対してカスタムのシリアル化の動作を定義するインターフェイスです。  
+  
+ [!code-cpp[ISerializable Interface Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ISerializable Interface Example/CPP/iobjectreference.cpp#1)]
+ [!code-csharp[ISerializable Interface Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable Interface Example/CS/iobjectreference.cs#1)]
+ [!code-vb[ISerializable Interface Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable Interface Example/VB/iobjectreference.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>シリアル化および逆シリアル化を行うにオブジェクトを許可するには、このインターフェイスを実装します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.ISerializable.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、対象のオブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれているすべてのオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ 呼び出すコード<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>が必要です、<xref:System.Security.Permissions.SecurityPermission>をシリアル化サービスを提供します。 関連する列挙値:<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  このメソッドは呼び出すこと 1 回だけオブジェクトのインスタンスごとのシリアル化中に限りません。 そのため、その動作がなる呼び出された回数に関係なく同じように、メソッドを実装する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Runtime.Serialization.ISerializable.GetObjectData%2A>シリアル化されたオブジェクトの代替値を設定します。 コードを使用して、<xref:System.Runtime.Serialization.SerializationInfo.AddValue%2A>のメソッド、<xref:System.Runtime.Serialization.SerializationInfo>オブジェクトがシリアル化されるときに、代替値を格納するクラス。 逆のコンス トラクター、`Person`クラスが逆シリアル化中に呼び出されると、使用して、alternatve 値を取得、<xref:System.Runtime.Serialization.SerializationInfo.GetValue%2A>メソッド、オブジェクトのフィールドに再割り当てされるとします。  
+  
+ [!code-csharp[ISerializable_GetObjectData#0](~/samples/snippets/csharp/VS_Snippets_Remoting/ISerializable_GetObjectData/cs/ISerializable_GetObjectData.cs#0)]
+ [!code-vb[ISerializable_GetObjectData#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ISerializable_GetObjectData/vb/ISerializable_GetObjectData.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

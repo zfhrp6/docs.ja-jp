@@ -1,0 +1,119 @@
+<Type Name="DataflowLinkOptions" FullName="System.Threading.Tasks.Dataflow.DataflowLinkOptions">
+  <TypeSignature Language="C#" Value="public class DataflowLinkOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataflowLinkOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.DataflowLinkOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データフロー ブロック間のリンクを構成するために使用されるオプションを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ <xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions>変更可能であり、そのプロパティを構成することができます。  
+  
+ 特定の構成オプションが設定されていないときに次の既定値が使用されます。  
+  
+|オプション|既定|  
+|-------------|-------------|  
+|PropagateCompletion|False|  
+|MaxMessages|DataflowBlockOptions.Unbounded (-1)|  
+|追加|True|  
+  
+ データ フロー ブロックは、リンクにあるオプションの状態をキャプチャします。 指定された後の変更<xref:System.Threading.Tasks.Dataflow.DataflowLinkOptions>インスタンスが、リンクの動作に影響はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataflowLinkOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.DataflowLinkOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.Dataflow.DataflowLinkOptions" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public bool Append { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Append" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.DataflowLinkOptions.Append" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクが、リンクのソースの一覧に追加されるかどうか、またはその前に付加する必要があるかどうかを設定します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxMessages">
+      <MemberSignature Language="C#" Value="public int MaxMessages { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxMessages" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.DataflowLinkOptions.MaxMessages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンク経由で消費されるメッセージの最大数を設定します。</summary>
+        <value><see cref="T:System.Int32" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropagateCompletion">
+      <MemberSignature Language="C#" Value="public bool PropagateCompletion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PropagateCompletion" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.DataflowLinkOptions.PropagateCompletion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクしているターゲットは完了して自動的に反映された通知にエラーが発生するかどうかを設定します。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

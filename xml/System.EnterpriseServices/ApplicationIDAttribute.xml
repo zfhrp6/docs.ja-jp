@@ -1,0 +1,103 @@
+<Type Name="ApplicationIDAttribute" FullName="System.EnterpriseServices.ApplicationIDAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationIDAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationIDAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ApplicationIDAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このアセンブリのアプリケーション ID (GUID) を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ApplicationIDAttribute>コンス トラクターに GUID を取得します。 指定された ID を持つアプリケーションにアセンブリ内のコンポーネントがインストールされて登録が行われる  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.ApplicationIDAttribute>型です。  
+  
+ [!code-csharp[EnterpriseServices.ApplicationIDAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/CS/class1.cs#0)]
+ [!code-vb[EnterpriseServices.ApplicationIDAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/VB/class1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationIDAttribute (string guid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string guid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ApplicationIDAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="guid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="guid">COM + アプリケーションに関連付けられている GUID。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ApplicationIDAttribute" />クラス、COM + アプリケーションのアプリケーション ID を表す GUID を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいを作成する方法を示します<xref:System.EnterpriseServices.ApplicationIDAttribute>です。  
+  
+ [!code-csharp[EnterpriseServices.ApplicationIDAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/CS/class1.cs#1)]
+ [!code-vb[EnterpriseServices.ApplicationIDAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public Guid Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Value" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ApplicationIDAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM + アプリケーションの GUID を取得します。</summary>
+        <value>COM + アプリケーションを表す GUID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ApplicationIDAttribute.Value%2A>パラメーターとして渡された GUID を使用してコンス トラクターによって設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の値を取得する方法を示します、`ApplicationID`属性の<xref:System.EnterpriseServices.ApplicationIDAttribute.Value%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServices.ApplicationIDAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/CS/class1.cs#0)]
+ [!code-vb[EnterpriseServices.ApplicationIDAttribute#0](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices.ApplicationIDAttribute/VB/class1.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

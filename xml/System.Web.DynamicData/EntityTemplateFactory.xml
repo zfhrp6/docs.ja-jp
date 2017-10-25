@@ -1,0 +1,127 @@
+<Type Name="EntityTemplateFactory" FullName="System.Web.DynamicData.EntityTemplateFactory">
+  <TypeSignature Language="C#" Value="public class EntityTemplateFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityTemplateFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.EntityTemplateFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>エンティティ テンプレートを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.EntityTemplateFactory>クラスは使用実行時に動的なデータでのテーブルのエンティティ テンプレートのインスタンスを取得します。 エンティティのテンプレートは、フィールド テンプレートと同様に、1 つのデータ フィールドではなくテーブル全体の行に適用されるユーザー コントロールです。 エンティティのテンプレートを使用して、ページに表示される、<xref:System.Web.DynamicData.DynamicEntity>クラスです。 データ モデルからの値を表示するのにフィールド テンプレートを使用するとします。  
+  
+ 動的データには、既定 ~\DynamicData\EntityTemplates フォルダー内にあるエンティティ テンプレートが用意されています。 これらの既定のエンティティ テンプレートを変更したり、テーブルの動作と外観を変更するカスタム ビューを作成します。 表示、編集、および挿入操作用のテンプレートがあります。  
+  
+   
+  
+## Examples  
+ エンティティのテンプレートを使用する方法の例は、次を参照してください。[チュートリアル: テーブル レイアウトを使用してエンティティ テンプレートのカスタマイズ](http://msdn.microsoft.com/library/03d33a22-d3c0-41df-a717-82ce86329a08)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityTemplateFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.EntityTemplateFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.EntityTemplateFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildEntityTemplateVirtualPath">
+      <MemberSignature Language="C#" Value="public virtual string BuildEntityTemplateVirtualPath (string templateName, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string BuildEntityTemplateVirtualPath(string templateName, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.EntityTemplateFactory.BuildEntityTemplateVirtualPath(System.String,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">パスを作成する対象のエンティティ テンプレートの名前。</param>
+        <param name="mode">エンティティ テンプレートの表示モード。</param>
+        <summary>指定されたテーブルのエンティティ テンプレートのパスを構築します。</summary>
+        <returns>指定されたテーブルのエンティティ テンプレートのパス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="templateName" />は**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEntityTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.DynamicData.EntityTemplateUserControl CreateEntityTemplate (System.Web.DynamicData.MetaTable table, System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.DynamicData.EntityTemplateUserControl CreateEntityTemplate(class System.Web.DynamicData.MetaTable table, valuetype System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.EntityTemplateFactory.CreateEntityTemplate(System.Web.DynamicData.MetaTable,System.Web.UI.WebControls.DataBoundControlMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.EntityTemplateUserControl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="table">エンティティのテンプレートを適用するテーブルのメタデータ。</param>
+        <param name="mode">エンティティ テンプレートの表示モード。</param>
+        <param name="uiHint">使用するテンプレートの名前。</param>
+        <summary>指定されたテーブルのエンティティ テンプレートのインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Web.DynamicData.EntityTemplateUserControl" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">テーブルが**null**です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEntityTemplateVirtualPath">
+      <MemberSignature Language="C#" Value="public virtual string GetEntityTemplateVirtualPath (System.Web.DynamicData.MetaTable table, System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetEntityTemplateVirtualPath(class System.Web.DynamicData.MetaTable table, valuetype System.Web.UI.WebControls.DataBoundControlMode mode, string uiHint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.EntityTemplateFactory.GetEntityTemplateVirtualPath(System.Web.DynamicData.MetaTable,System.Web.UI.WebControls.DataBoundControlMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+        <Parameter Name="uiHint" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="table">エンティティのテンプレートを適用するテーブルのメタデータ。</param>
+        <param name="mode">エンティティ テンプレートの表示モード。</param>
+        <param name="uiHint">使用するテンプレートの名前。</param>
+        <summary>指定されたテーブルのエンティティ テンプレートの仮想パスを取得します。</summary>
+        <returns>指定されたテーブルのエンティティ テンプレートの仮想パス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">テーブルが**null**です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

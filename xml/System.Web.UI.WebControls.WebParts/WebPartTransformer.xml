@@ -1,0 +1,209 @@
+<Type Name="WebPartTransformer" FullName="System.Web.UI.WebControls.WebParts.WebPartTransformer">
+  <TypeSignature Language="C#" Value="public abstract class WebPartTransformer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebPartTransformer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Transformer クラスに次の 2 つの互換性のないコネクション ポイント間でデータを変換するための基本的な実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーを使用して、互換性のない接続ポイントを持つ 2 つの Web パーツ コントロールの間でデータを変換します。 接続ポイントは、提供または別のインターフェイスを使用してデータを使用するときに互換性がありません。 たとえば、型のプロバイダー接続ポイントを実装するプロバイダー<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>型のプロバイダー接続ポイントを予期するコンシューマーに直接接続できませんでした<xref:System.Web.UI.WebControls.WebParts.IWebPartTable>です。 代わりに、トランスフォーマーを使用して、2 つの Web パーツ コントロールを接続する必要があります。  
+  
+ トランスフォーマーは、プロバイダー接続ポイントでサポートされる型のデータを受け入れます。 これは、そのデータのコンシューマー接続ポイントでサポートされる型に変換するために必要な内部処理されます。  
+  
+ トランスフォーマーは、ユーザーが接続モードのときにトランスフォーマーを構成できるようにするユーザー インターフェイス (UI) を提供できます。 構成の制御がを通じて取得される、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer.CreateConfigurationControl%2A>メソッド Web パーツ接続ゾーンが表示されます。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>抽象クラスは、さまざまな種類の接続ポイントの間でカスタマイズした翻訳を提供する拡張する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生したカスタマイズされたトランスフォーマーを作成する方法を示します、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。 という名前のトランスフォーマー `RowToStringTransformer`、Web パーツのプロバイダーとの互換性のないコネクション ポイントと Web パーツのコンシューマーは、接続します。 プロバイダーの種類のデータを表示する<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>、コンシューマーは、型のデータのみを受け入れますが、<xref:System.String>です。 `RowToStringTransformer`クラスは、必要な変換を実行します。  
+  
+ このコード例では、プロバイダーまたはコンシューマーの実装は含まれません。 実装するプロバイダーを作成する必要があります、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイスおよびという名前をカスタマイズしたインターフェイスからデータを期待しているコンシューマー`IString`例を実行します。  
+  
+ [!code-csharp[WebParts_WebPartTransformer_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/TransformerSource.cs#5)]
+ [!code-vb[WebParts_WebPartTransformer_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/TransformerSource.vb#5)]  
+  
+ このコード例の最初のセクションには、プロバイダーとコンシューマー Web パーツ コントロールとトランスフォーマーのコードのコードが含まれています。  
+  
+ [!code-csharp[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/TransformerSource.cs#4)]
+ [!code-vb[WebParts_WebPartTransformer_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/TransformerSource.vb#4)]  
+  
+ コード例の 2 番目のセクション内の宣言構文でトランスフォーマーをインクルードする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>オブジェクト。  
+  
+ [!code-aspx-csharp[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/Transformer.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartTransformer_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/Transformer.aspx#1)]  
+  
+ カスタマイズされたトランスフォーマーを指定する必要があります、 `<transformers>` Web ページで使用できるように Web.config ファイルのセクションでします。 コード例の 3 番目のセクションでは、カスタマイズされたトランスフォーマー、Web.config ファイルを追加する方法を示します。  
+  
+```vb  
+<webParts enableExport="true">  
+    <transformers>  
+       <add name="RowToStringTransformer"  
+          type="Samples.AspNet.VB.Controls.RowToStringTransformer" />  
+    </transformers>  
+</webParts>  
+```  
+  
+```csharp  
+<webParts enableExport="true">  
+    <transformers>  
+       <add name="RowToStringTransformer"  
+          type="Samples.AspNet.CS.Controls.RowToStringTransformer" />  
+    </transformers>  
+</webParts>  
+```  
+  
+ コード例には、ユーザー コントロール [Web パーツ] ページの表示モードを変更することができますが含まれます。 ユーザー コントロールのソース コードの別のトピックに由来します。 ユーザー コントロールの .ascx ファイルを取得する[チュートリアル: Web パーツ ページの表示モードを変更する](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)、.aspx ページと同じフォルダーに配置する必要があります。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>オーバーライドする必要があります、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.Transform(System.Object)" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebPartTransformer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartTransformer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConfigurationControl">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.Control CreateConfigurationControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.Control CreateConfigurationControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.CreateConfigurationControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランスフォーマーを構成する ASP.NET コントロールが表示されます、<see cref="T:System.Web.UI.WebControls.WebParts.ConnectionsZone" />ゾーンです。</summary>
+        <returns>トランスフォーマーを構成する ASP.NET コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーはそれを構成するユーザーを必要とする場合、構成コントロールを表示できます。 構成コントロールは、ユーザーがどの値が変換を選択できるユーザー インターフェイス (UI) を提供します。 接続ゾーンに表示します。 構成の制御を実装する必要があります、<xref:System.Web.UI.WebControls.WebParts.ITransformerConfigurationControl>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadConfigurationState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadConfigurationState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void LoadConfigurationState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.LoadConfigurationState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">使用して保存された構成の状態を格納するオブジェクト<see cref="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.SaveConfigurationState" />です。</param>
+        <summary>と共に保存される構成の状態を読み込み、<see cref="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.SaveConfigurationState" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーの構成に使用される ASP.NET コントロールに保存されている構成の状態を読み込むには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveConfigurationState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveConfigurationState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance object SaveConfigurationState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.SaveConfigurationState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET 構成コントロール内のユーザーによって設定された構成状態を保存します。</summary>
+        <returns>構成の状態を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランスフォーマーの構成に使用される ASP.NET コントロールで構成データのセットを保存するのにには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public abstract object Transform (object providerData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Transform(object providerData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartTransformer.Transform(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="providerData">プロバイダーのデータを変換することです。</param>
+        <summary>実装された場合、データを変換するためのオブジェクトを提供します。</summary>
+        <returns><see cref="T:System.Object" />変換対象のデータを表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する場合は、このメソッドをオーバーライドする必要があります、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer.Transform%2A>メソッドで、カスタマイズされた<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスです。 例については、一部である、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>クラスの概要です。  
+  
+ [!code-csharp[WebParts_WebPartTransformer_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/CS/TransformerSource.cs#3)]
+ [!code-vb[WebParts_WebPartTransformer_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartTransformer_Overview/VB/TransformerSource.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

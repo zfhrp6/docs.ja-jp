@@ -1,0 +1,159 @@
+<Type Name="EventLogWebEventProvider" FullName="System.Web.Management.EventLogWebEventProvider">
+  <TypeSignature Language="C#" Value="public sealed class EventLogWebEventProvider : System.Web.Management.WebEventProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventLogWebEventProvider extends System.Web.Management.WebEventProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.EventLogWebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebEventProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows アプリケーション イベント ログに ASP.NET の稼働状況の監視イベントをログに記録するイベント プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.EventLogWebEventProvider>失敗の監査、および既定では、(有効) イベントの稼働状況の監視が構成されているエラー。 これは、失敗の監査と稼働状況の監視イベントには既定では Windows アプリケーション イベント ログでは、記録されたエラーを意味します。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム プロバイダーの作成の例は、次を参照してください。[する方法: 例を実装、正常性監視カスタム プロバイダー](http://msdn.microsoft.com/library/bbb1c959-e6e4-42b2-be62-49b7ca5ab72c)です。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、型プロバイダーを指定する方法を示します<xref:System.Web.Management.EventLogWebEventProvider>成功の監査イベントを処理します。 <xref:System.Web.Management.EventLogWebEventProvider>を監視するエラー監査正常性イベントの種類が既定で構成されているとします。 監査の成功を監視する、コード例に示すように、それらを構成する必要があります。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartbeatInterval="10">  
+  
+  <rule>  
+    <add name="Success Audits Default"  
+      eventName="Success Audits"  
+      provider="EventLogProvider"  
+      profile="Default"  
+      minInterval="00:01:00" />  
+  </rule>  
+  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.EventLogWebEventProvider.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのバッファーからイベントをイベント ログに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、バッファー内の最後の書き込みまたはイベントの数からプロバイダーのバッファー内のイベントには、Windows アプリケーション イベント ログに、どのくらいの時間に関係なく、直ちに書き込まれますすべてが経過しました。 最後の書き込みの時間は、フラッシュ操作の時間にリセットされます。 バッファー機能が有効でない場合は、このメソッドを呼び出すことはありません効果のいずれか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.EventLogWebEventProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">このプロバイダーを識別する構成ファイルで使用する名前。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />このプロバイダーの構成ファイルに割り当てられている属性を指定します。</param>
+        <summary>このオブジェクトの初期値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化するためにこのメソッドは、<xref:System.Web.Management.EventLogWebEventProvider>構成設定と構成ファイルで指定された名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEvent">
+      <MemberSignature Language="C#" Value="public override void ProcessEvent (System.Web.Management.WebBaseEvent eventRaised);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ProcessEvent(class System.Web.Management.WebBaseEvent eventRaised) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.EventLogWebEventProvider.ProcessEvent(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventRaised" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="eventRaised"><see cref="T:System.Web.Management.WebBaseEvent" />オブジェクトを処理します。</param>
+        <summary>プロバイダーに渡されたイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、イベントの処理を開始するを呼び出す ASP.NET 正常性の監視方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public override void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.EventLogWebEventProvider.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのシャット ダウンに関連付けられているタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.EventLogWebEventProvider.Shutdown%2A>メソッドは、Web アプリケーションをホストしているアプリケーション ドメインが終了するとします。 メソッドは正常に終了するアプリケーションを許可するタスクを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

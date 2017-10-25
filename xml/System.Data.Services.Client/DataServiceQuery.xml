@@ -1,0 +1,187 @@
+<Type Name="DataServiceQuery" FullName="System.Data.Services.Client.DataServiceQuery">
+  <TypeSignature Language="C#" Value="public abstract class DataServiceQuery : System.Data.Services.Client.DataServiceRequest, System.Collections.IEnumerable, System.Linq.IQueryable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataServiceQuery extends System.Data.Services.Client.DataServiceRequest implements class System.Collections.IEnumerable, class System.Linq.IQueryable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.DataServiceQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Services.Client.DataServiceRequest</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Linq.IQueryable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>WCF Data Services を単一のクエリ要求を表す抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、パブリック コンストラクターが定義されていません。 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> クラスの <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> または <xref:System.Data.Services.Client.DataServiceContext> を使用して、オブジェクト インスタンスが作成されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginExecute">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginExecute (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginExecute(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery.BeginExecute(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">クライアントが結果を利用できるようになったときに呼び出すデリゲート。</param>
+        <param name="state">コールバックに渡されるユーザー定義の状態オブジェクト。</param>
+        <summary>データ サービス クエリを実行する要求を非同期に送信します。</summary>
+        <returns>非同期操作の状態を追跡するために使用される <see cref="T:System.IAsyncResult" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.IAsyncResult> オブジェクトは、非同期操作が完了したタイミングを判断するために使用されます。 詳細については、次を参照してください。[非同期操作](~/docs/framework/data/wcf/asynchronous-operations-wcf-data-services.md)です。  
+  
+ <xref:System.Data.Services.Client.DataServiceQuery.BeginExecute%2A> メソッドは <xref:System.Data.Services.Client.DataServiceQuery.Execute%2A> メソッドと同じセマンティクスを使用しますが、サービスからの結果の待機中にこの呼び出しによって処理がブロックされないように、<xref:System.Data.Services.Client.DataServiceQuery.BeginExecute%2A> から要求を非同期的に送信します。 標準の Begin/End 非同期パターンに従って、クエリ結果が取得されたときに、指定されたコールバックが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndExecute">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable EndExecute (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable EndExecute(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery.EndExecute(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">クエリ結果が格納されている、<see cref="M:System.Data.Services.Client.DataServiceQuery.BeginExecute(System.AsyncCallback,System.Object)" /> 操作の結果。</param>
+        <summary>データ サービス クエリを実行する非同期操作を完了するために呼び出されます。</summary>
+        <returns>クエリ操作の結果が格納されている <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">データ サービスが HTTP 404 (リソースが見つからないエラー) を返す場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ サービスに対してクエリを実行します。</summary>
+        <returns>クエリ操作の結果が格納されている <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceQuery.Execute%2A> メソッドは、指定されたデータ サービス クエリの実行に使用されます。  
+  
+ <xref:System.Data.Services.Client.DataServiceQuery.Execute%2A> メソッドは、データ サービスに設定されている HTTP GET 要求を生成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.Services.Client.DataServiceQueryException">データ サービスが HTTP 404 (リソースが見つからないエラー) を返す場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Expression">
+      <MemberSignature Language="C#" Value="public abstract System.Linq.Expressions.Expression Expression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression Expression" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery.Expression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ サービスに対するクエリを含む式を表します。</summary>
+        <value>クエリを表す <see cref="T:System.Linq.Expressions.Expression" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public abstract System.Linq.IQueryProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.IQueryProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.DataServiceQuery.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ プロバイダー インスタンスを表します。</summary>
+        <value>データ ソース プロバイダーを表す <see cref="T:System.Linq.IQueryProvider" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.DataServiceQuery.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリによって返されるコレクションの反復処理に使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクトを取得します。</summary>
+        <returns>クエリ結果に対する列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙子を使用すると、コレクション内のデータを読み取ることができますが、基になるコレクションを変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

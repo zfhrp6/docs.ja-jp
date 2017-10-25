@@ -1,0 +1,131 @@
+<Type Name="SessionPageStateSection" FullName="System.Web.Configuration.SessionPageStateSection">
+  <TypeSignature Language="C#" Value="public sealed class SessionPageStateSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionPageStateSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.SessionPageStateSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see langword="sessionPageState" />セクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SessionPageStateSection>を指す、`sessionPageState`構成ファイルのセクションです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.SessionPageStateSection>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SessionPageStateSection>既存の Web アプリケーションに関連付けられている構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.SessionPageStateSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SessionPageStateSection/CS/sessionpagestatesection.cs#1)]
+ [!code-vb[System.Web.Configuration.SessionPageStateSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SessionPageStateSection/VB/sessionpagestatesection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionPageStateSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.SessionPageStateSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.SessionPageStateSection" /> の新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.SessionPageStateSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.SessionPageStateSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultHistorySize">
+      <MemberSignature Language="C#" Value="public const int DefaultHistorySize = 9;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultHistorySize = (9)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.SessionPageStateSection.DefaultHistorySize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>9</MemberValue>
+      <Docs>
+        <summary>ページの履歴のサイズを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.SessionPageStateSection.DefaultHistorySize>既存の Web アプリケーションに関連付けられている構成ファイルからのプロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.SessionPageStateSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.SessionPageStateSection/CS/sessionpagestatesection.cs#2)]
+ [!code-vb[System.Web.Configuration.SessionPageStateSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.SessionPageStateSection/VB/sessionpagestatesection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HistorySize">
+      <MemberSignature Language="C#" Value="public int HistorySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 HistorySize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionPageStateSection.HistorySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("historySize", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはページの履歴のサイズを設定します。</summary>
+        <value>ページの履歴のサイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.SessionPageStateSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

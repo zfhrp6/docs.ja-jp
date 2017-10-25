@@ -1,0 +1,291 @@
+<Type Name="MetaAssociation" FullName="System.Data.Linq.Mapping.MetaAssociation">
+  <TypeSignature Language="C#" Value="public abstract class MetaAssociation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MetaAssociation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.MetaAssociation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つのエンティティ型の間、アソシエーション リレーションシップを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MetaAssociation ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MetaAssociation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.MetaAssociation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteOnNull">
+      <MemberSignature Language="C#" Value="public abstract bool DeleteOnNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DeleteOnNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.DeleteOnNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けが設定されている場合は、オブジェクトを削除するかどうかを取得を null にします。</summary>
+        <value>場合<see langword="true" />関連付けが設定されている場合、オブジェクトは削除を null にします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRule">
+      <MemberSignature Language="C#" Value="public abstract string DeleteRule { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeleteRule" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.DeleteRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子が削除されたときに、動作を取得します。</summary>
+        <value>ルールを表す文字列または<see langword="null" />削除アクションが指定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルールには、"CASCADE"、"SET NULL"、およびなどがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsForeignKey">
+      <MemberSignature Language="C#" Value="public abstract bool IsForeignKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsForeignKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.IsForeignKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その他の型がこの型の親であるかどうかを取得します。</summary>
+        <value>返します<see langword="true" />は、他の型はこの型の親です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMany">
+      <MemberSignature Language="C#" Value="public abstract bool IsMany { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMany" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.IsMany" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アソシエーションは一対多のリレーションシップを表すかどうかを取得します。</summary>
+        <value>返します<see langword="true" />場合は、アソシエーションは一対多のリレーションシップを表します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public abstract bool IsNullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けを null にすることができるかどうかを取得します。</summary>
+        <value>返します<see langword="true" />場合は、association を null にすることができます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnique">
+      <MemberSignature Language="C#" Value="public abstract bool IsUnique { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnique" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.IsUnique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けが一意かどうかを取得します。</summary>
+        <value>返します<see langword="true" />の関連付けが一意である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データベース内の一意性制約を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OtherKey">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.Mapping.MetaDataMember&gt; OtherKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Linq.Mapping.MetaDataMember&gt; OtherKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.OtherKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.Mapping.MetaDataMember&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アソシエーションの他方の値を表すメンバーの一覧を取得します。</summary>
+        <value>アソシエーションの他方の値を表すコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OtherKeyIsPrimaryKey">
+      <MemberSignature Language="C#" Value="public abstract bool OtherKeyIsPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OtherKeyIsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.OtherKeyIsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか、<see cref="P:System.Data.Linq.Mapping.MetaAssociation.OtherKey" />フォームの他の型の id。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Data.Linq.Mapping.MetaAssociation.OtherKey" />フォームの他の型の id (主キー)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OtherMember">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaDataMember OtherMember { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaDataMember OtherMember" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.OtherMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaDataMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>逆方向の関連付けを表すこの関連付けの反対側のメンバーを取得します。</summary>
+        <value>相手側のメンバーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を null にすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OtherType">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaType OtherType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaType OtherType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.OtherType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アソシエーションの他方の型を取得します。</summary>
+        <value>型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisKey">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.Mapping.MetaDataMember&gt; ThisKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Data.Linq.Mapping.MetaDataMember&gt; ThisKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.ThisKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Data.Linq.Mapping.MetaDataMember&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けのこちら側の値を表すメンバーの一覧を取得します。</summary>
+        <value>コレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisKeyIsPrimaryKey">
+      <MemberSignature Language="C#" Value="public abstract bool ThisKeyIsPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ThisKeyIsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.ThisKeyIsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか<see cref="P:System.Data.Linq.Mapping.MetaAssociation.ThisKey" />この種類の id を形成します。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Data.Linq.Mapping.MetaAssociation.ThisKey" />アソシエーションの id (主キー) を形成します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisMember">
+      <MemberSignature Language="C#" Value="public abstract System.Data.Linq.Mapping.MetaDataMember ThisMember { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.Mapping.MetaDataMember ThisMember" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.Mapping.MetaAssociation.ThisMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaDataMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>こちら側の関連付けを表すメンバーを取得します。</summary>
+        <value>メンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

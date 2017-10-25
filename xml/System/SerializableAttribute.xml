@@ -1,0 +1,94 @@
+<Type Name="SerializableAttribute" FullName="System.SerializableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SerializableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SerializableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.SerializableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Delegate, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラスをシリアル化できることを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型のインスタンスをシリアル化できることを示すには、<xref:System.SerializableAttribute> 属性を適用します。 共通言語ランタイムをスロー<xref:System.Runtime.Serialization.SerializationException>シリアル化されるオブジェクトのグラフで任意の型がないかどうか、<xref:System.SerializableAttribute>属性を適用します。  
+  
+ 適用、<xref:System.SerializableAttribute>属性クラスも実装する場合でも、<xref:System.Runtime.Serialization.ISerializable>シリアル化プロセスを制御するインターフェイスです。  
+  
+ 適用すると、<xref:System.SerializableAttribute>属性型には、すべてのプライベートおよびパブリック フィールドは既定ではシリアル化します。 シリアル化をより細かく制御するには実装することによって、<xref:System.Runtime.Serialization.ISerializable>をシリアル化プロセスをオーバーライドするインターフェイスです。  
+  
+ 適用することによって、シリアル化からフィールドを除外することや、<xref:System.NonSerializedAttribute>属性フィールドにします。 ポインター、ハンドル、またはその他のデータ構造は、特定の環境に固有であり、別の環境で明確再構成できませんをシリアル化可能な型のフィールドが含まれるかどうかは、適用する、<xref:System.NonSerializedAttribute>のフィールドに属性します。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。 シリアル化の詳細については、「<xref:System.Runtime.Serialization>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例でマークされているオブジェクトのシリアル化、<xref:System.SerializableAttribute>属性。 使用する、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>の代わりに、 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>、該当する行のコメントを解除します。  
+  
+ [!code-cpp[SerializationAttributes#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SerializationAttributes/CPP/s.cpp#1)]
+ [!code-csharp[SerializationAttributes#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SerializationAttributes/CS/s.cs#1)]
+ [!code-vb[SerializationAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SerializationAttributes/VB/s.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SerializableAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.SerializableAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.SerializableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

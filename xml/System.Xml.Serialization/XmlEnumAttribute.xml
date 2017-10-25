@@ -1,0 +1,209 @@
+<Type Name="XmlEnumAttribute" FullName="System.Xml.Serialization.XmlEnumAttribute">
+  <TypeSignature Language="C#" Value="public class XmlEnumAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlEnumAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlEnumAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コントロールが、どのように<see cref="T:System.Xml.Serialization.XmlSerializer" />列挙体のメンバーをシリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlEnumAttribute>を制御する属性のファミリに属するどの<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを逆シリアル化またはシリアル化します。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ 使用して、<xref:System.Xml.Serialization.XmlEnumAttribute>列挙体を変更するを<xref:System.Xml.Serialization.XmlSerializer>を生成するか (ときにシリアル化またはそれぞれのクラスを逆シリアル化) を認識します。 例では、列挙体には、という名前のメンバーが含まれている場合の`One`、XML 出力するという名前のしたいが、 `Single`、適用、<xref:System.Xml.Serialization.XmlEnumAttribute>を列挙体のメンバーに設定し、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>プロパティを「単一」にします。  
+  
+ オーバーライドすることができます、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>のプロパティの値、<xref:System.Xml.Serialization.XmlEnumAttribute>のインスタンスを作成することで、<xref:System.Xml.Serialization.XmlEnumAttribute>クラスとに割り当てること、<xref:System.Xml.Serialization.XmlAttributes.XmlEnum%2A>のプロパティ、<xref:System.Xml.Serialization.XmlAttributes>オブジェクト。 詳細については、次を参照してください。、<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスです。  
+  
+> [!NOTE]
+>  語を使用できます`XmlEnum`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlEnumAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlEnumAttribute>列挙体のメンバーにします。 ときに、 <xref:System.Xml.Serialization.XmlSerializer> XML データを生成の値にこの列挙体のデータが準拠している、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>プロパティです。  
+  
+ [!code-cpp[Classic XmlEnumAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlEnumAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlEnumAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlEnumAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlEnumAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlEnumAttribute Example/VB/source.vb#1)]  
+  
+> [!NOTE]
+>  語を使用できます`XmlEnum`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlEnumAttribute>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlEnumAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlEnumAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlEnumAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Xml.Serialization.XmlEnumAttribute.%23ctor%2A>を既存の列挙体をオーバーライドします。  
+  
+> [!NOTE]
+>  語を使用できます`XmlEnum`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlEnumAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前の 2 つのクラスをシリアル化`Food`と`FoodType`です。 `FoodType`クラスがオーバーライドする 2 つの列挙体に含まれ、列挙ごとに、例では、作成、<xref:System.Xml.Serialization.XmlEnumAttribute>に割り当てられているオブジェクト、<xref:System.Xml.Serialization.XmlAttributes.XmlEnum%2A>のプロパティ、<xref:System.Xml.Serialization.XmlAttributes>オブジェクト。 この例で追加し、<xref:System.Xml.Serialization.XmlAttributes>オブジェクトを<xref:System.Xml.Serialization.XmlAttributeOverrides>作成に使用されるオブジェクト、<xref:System.Xml.Serialization.XmlSerializer>です。  
+  
+ [!code-cpp[Classic XmlEnumAttribute.XmlEnumAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlEnumAttribute.XmlEnumAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlEnumAttribute.XmlEnumAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlEnumAttribute.XmlEnumAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlEnumAttribute.XmlEnumAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlEnumAttribute.XmlEnumAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlEnumAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlEnumAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">列挙体メンバーのオーバーライドする名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlEnumAttribute" />クラス、および XML の値を指定します、<see cref="T:System.Xml.Serialization.XmlSerializer" />を生成するか (ときにシリアル化または、それぞれ、列挙体を逆シリアル化) を認識します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  語を使用できます`XmlEnum`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlEnumAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlEnumAttribute>列挙体のメンバーにします。 ときに、 <xref:System.Xml.Serialization.XmlSerializer> XML データを生成の値にこの列挙体のデータが準拠している、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>プロパティです。  
+  
+ [!code-cpp[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlEnumAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML ドキュメントで生成された値を取得または設定をインスタンス化時に、<see cref="T:System.Xml.Serialization.XmlSerializer" />列挙型、または列挙型のメンバーを逆シリアル化時に認識される値をシリアル化します。</summary>
+        <value>XML ドキュメントで生成された値をインスタンス化時に、<see cref="T:System.Xml.Serialization.XmlSerializer" />列挙体、または認識される値をシリアル化列挙型のメンバーを逆シリアル化である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定して、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>する必要がある場合、生成された XML データ列挙体識別子とは異なります。  
+  
+> [!NOTE]
+>  語を使用できます`XmlEnum`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlEnumAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlEnumAttribute>属性の列挙体のメンバーにします。 生成された XML データに設定される値に準拠している、<xref:System.Xml.Serialization.XmlEnumAttribute.Name%2A>プロパティです。  
+  
+ [!code-cpp[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlEnumAttribute.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlEnumAttribute.Name Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

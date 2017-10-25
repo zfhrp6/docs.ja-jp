@@ -1,0 +1,179 @@
+<Type Name="IComPropertyBrowser" FullName="System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser">
+  <TypeSignature Language="C#" Value="public interface IComPropertyBrowser" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComPropertyBrowser" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>により、通信するために内部的に Visual Studio、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロール。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="ComComponentNameChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.ComponentRenameEventHandler ComComponentNameChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.ComponentRenameEventHandler ComComponentNameChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.ComComponentNameChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ComponentRenameEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロールが COM オブジェクトを参照し、ユーザー オブジェクトの名前を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ COM オブジェクトの DISPID_Name に対応するプロパティの値の変更のみを生成、<xref:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.ComComponentNameChanged>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownDone">
+      <MemberSignature Language="C#" Value="public void DropDownDone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DropDownDone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.DropDownDone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>開いているドロップダウン コントロールを閉じ、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EnsurePendingChangesCommitted">
+      <MemberSignature Language="C#" Value="public bool EnsurePendingChangesCommitted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EnsurePendingChangesCommitted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.EnsurePendingChangesCommitted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コミットを保留中の変更をすべて、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロール。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.PropertyGrid" />正常に変更をコミット以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="HandleF4">
+      <MemberSignature Language="C#" Value="public void HandleF4 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void HandleF4() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.HandleF4" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティブ化、 <see cref="T:System.Windows.Forms.PropertyGrid" /> 、ユーザーが選択すると制御**プロパティ**デザイン ビュー内のコントロールのです。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InPropertySet">
+      <MemberSignature Language="C#" Value="public bool InPropertySet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InPropertySet" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.InPropertySet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロールでは、選択したオブジェクトのプロパティのいずれかの設定は現在します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロールでは、選択したオブジェクトのプロパティのいずれかの設定は現在、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="LoadState">
+      <MemberSignature Language="C#" Value="public void LoadState (Microsoft.Win32.RegistryKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadState(class Microsoft.Win32.RegistryKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.LoadState(Microsoft.Win32.RegistryKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="Microsoft.Win32.RegistryKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">ユーザー状態が格納されたレジストリ キーです。</param>
+        <summary>レジストリからユーザー状態を読み込み、<see cref="T:System.Windows.Forms.PropertyGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部を保存することができます、<xref:System.Windows.Forms.PropertyGrid>など、状態を制御、<xref:System.Windows.Forms.PropertyGrid.PropertySort%2A>と<xref:System.Windows.Forms.PropertyGrid.HelpVisible%2A>レジストリをロードして、次回、ユーザー、アプリケーションを実行するためのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SaveState">
+      <MemberSignature Language="C#" Value="public void SaveState (Microsoft.Win32.RegistryKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SaveState(class Microsoft.Win32.RegistryKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComponentModel.Com2Interop.IComPropertyBrowser.SaveState(Microsoft.Win32.RegistryKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="Microsoft.Win32.RegistryKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">ユーザー状態が格納されたレジストリ キーです。</param>
+        <summary>ユーザー状態を保存、<see cref="T:System.Windows.Forms.PropertyGrid" />レジストリを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部を保存することができます、<xref:System.Windows.Forms.PropertyGrid>など、状態を制御、<xref:System.Windows.Forms.PropertyGrid.PropertySort%2A>と<xref:System.Windows.Forms.PropertyGrid.HelpVisible%2A>レジストリをロードして、次回、ユーザー、アプリケーションを実行するためのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

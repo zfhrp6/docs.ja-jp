@@ -1,0 +1,121 @@
+<Type Name="HttpRemotingHandler" FullName="System.Runtime.Remoting.Channels.Http.HttpRemotingHandler">
+  <TypeSignature Language="C#" Value="public class HttpRemotingHandler : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpRemotingHandler extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>HTTP のリモート処理チャネルに要求を転送する ASP.NET ハンドラーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム HTTP ハンドラーは、定義済みの特定の種類の HTTP 要求を処理します。 定義されている実行可能コード、<xref:System.Web.IHttpHandler>これら特定の要求に応答を従来の ASP または ASP.NET Web ページではなく、クラス、します。 HTTP ハンドラーが、低レベルの要求と、IIS Web サーバーの応答サービスと対話する方法を提供しと同様の機能を提供 ISAPI 拡張機能には、プログラミング モデルがより単純です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRemotingHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRemotingHandler (Type type, object srvID);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, object srvID) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler.#ctor(System.Type,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="srvID" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="type">コンス トラクターは無視されます、<c>型</c>パラメーター。</param>
+        <param name="srvID">コンス トラクターは無視されます、 <c>srvID</c>パラメーター。</param>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値を使用して<xref:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler>コンス トラクター代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="public bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示すブール値を取得、<see cref="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler" />です。</summary>
+        <value>
+          <see langword="true" />すべてのインスタンス<see cref="T:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpRemotingHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供する (たとえば、 <see langword="Request" />、 <see langword="Response" />、 <see langword="Session" />、および<see langword="Server" />) HTTP 要求を処理するために使用します。</param>
+        <summary>現在のインスタンスによって HTTP Web 要求の処理を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.Web.IHttpHandler.ProcessRequest%2A>メソッドを参照してください<xref:System.Web.IHttpHandler.ProcessRequest%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

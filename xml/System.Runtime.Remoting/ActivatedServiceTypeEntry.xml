@@ -1,0 +1,152 @@
+<Type Name="ActivatedServiceTypeEntry" FullName="System.Runtime.Remoting.ActivatedServiceTypeEntry">
+  <TypeSignature Language="C#" Value="public class ActivatedServiceTypeEntry : System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivatedServiceTypeEntry extends System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.ActivatedServiceTypeEntry" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.TypeEntry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントからの要求に基づいてアクティブ化可能な 1 つとして、サービス側で登録されているオブジェクトの種類の値を保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、現在のクラスが使用される、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A?displayProperty=nameWithType>サーバー側の対応するメソッドの<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A?displayProperty=nameWithType>メソッドです。 <xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドは、サーバーでリモートからアクティブ化を許可するクライアントによって使用指定したオブジェクトの種類のです。  
+  
+ サーバーにクライアントでアクティブ化されるオブジェクトを作成する必要がありますがわかってその<xref:System.Type>、しを使用してサーバー エンドで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedServiceType%2A>メソッドです。 新しいクライアントでアクティブ化されるオブジェクトのプロキシを取得するには、クライアント登録する必要があります最初のチャネルが<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`または<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、オブジェクトの種類を使用して、クライアントで最初に登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出して<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>リモート アプリケーションの場所をリモート処理インフラストラクチャに付与されます、`new`作成を試みます。 その一方を使用する場合、<xref:System.Activator.CreateInstance%2A>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するため、クライアントで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A>サーバーの URL を持つメソッドするオブジェクトの作成に、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントでアクティブ化されるオブジェクトとリモート オブジェクトのアクティブ化の詳細については、次を参照してください[&#91;\< 。topic://cpconActivation > & #93 です。](http://msdn.microsoft.com/en-us/e90d0c64-00da-4080-ae78-a6c558825c25).  
+  
+   
+  
+## Examples  
+ [!code-cpp[ActivatedServiceTypeEntry_ObjectType_Client#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ActivatedServiceTypeEntry_ObjectType_Client/CPP/activatedservicetypeentry_objecttype_server.cpp#1)]
+ [!code-csharp[ActivatedServiceTypeEntry_ObjectType_Client#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ActivatedServiceTypeEntry_ObjectType_Client/CS/activatedservicetypeentry_objecttype_server.cs#1)]
+ [!code-vb[ActivatedServiceTypeEntry_ObjectType_Client#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ActivatedServiceTypeEntry_ObjectType_Client/VB/activatedservicetypeentry_objecttype_server.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatedServiceTypeEntry (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedServiceTypeEntry.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />クライアントでアクティブ化されるサービスの種類。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.ActivatedServiceTypeEntry" />クラスに、指定された<see cref="T:System.Type" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatedServiceTypeEntry (string typeName, string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedServiceTypeEntry.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">クライアントでアクティブ化されるサービスの種類の型名。</param>
+        <param name="assemblyName">クライアントでアクティブ化されるサービスの種類のアセンブリ名。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.ActivatedServiceTypeEntry" />指定された型名とアセンブリ名を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextAttributes">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedServiceTypeEntry.ContextAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.IContextAttribute[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントでアクティブ化されるサービスの種類のコンテキストの属性を設定します。</summary>
+        <value>クライアントでアクティブ化されるサービスのコンテキスト属性を入力します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、このインデクサーは実装されていませんし、操作では、すべての結果は生成されません。  
+  
+ コンテキスト属性は、コンテキスト プロパティを提供するときに追加コンテキストは同期やトランザクションなどのポリシーを適用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public Type ObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedServiceTypeEntry.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />クライアントでアクティブ化されるサービスの種類。</summary>
+        <value><see cref="T:System.Type" />クライアントでアクティブ化されるサービスの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedServiceTypeEntry.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントのアクティブ化されるサービス型の型とアセンブリ名を返します、<see cref="T:System.String" />です。</summary>
+        <returns>クライアントのアクティブ化されるサービス型の型とアセンブリの名前、<see cref="T:System.String" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

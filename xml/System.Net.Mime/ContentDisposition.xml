@@ -1,0 +1,597 @@
+<Type Name="ContentDisposition" FullName="System.Net.Mime.ContentDisposition">
+  <TypeSignature Language="C#" Value="public class ContentDisposition" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ContentDisposition extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mime.ContentDisposition" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>MIME プロトコル Content-disposition ヘッダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の情報、<xref:System.Net.Mime.ContentDisposition>クラスが宛先に電子メール メッセージを送信するときに、添付ファイルを含む電子メール メッセージに付属しています。 情報は、<xref:System.Net.Mime.ContentDisposition>送信者によって目的の方法で電子メールの添付ファイルを表示する電子メールを表示するソフトウェアによって使用されることができます。  
+  
+ インスタンスを使用して電子メール メッセージが作成された、<xref:System.Net.Mail.MailMessage>クラスです。 インスタンス、<xref:System.Net.Mail.Attachment>電子メール メッセージに添付ファイルを追加するクラスを使用します。 変更する、 <xref:System.Net.Mime.ContentDisposition> 、添付ファイルのインスタンスからの取得、<xref:System.Net.Mail.Attachment.ContentDisposition%2A?displayProperty=nameWithType>プロパティです。  
+  
+ コンテンツを表示するメッセージの一部として本文の処理の型を持つ<xref:System.Net.Mime.ContentDisposition.Inline%2A>します。 コンテンツは表示されませんが、別のファイルに接続されているが、破棄の型を持つ<xref:System.Net.Mime.DispositionTypeNames.Attachment>します。 使用して、<xref:System.Net.Mime.ContentDisposition.Inline%2A>プロパティのインスタンスに関連付けられている添付ファイルの配置の種類を制御する<xref:System.Net.Mime.ContentDisposition>です。  
+  
+ ファイル添付用のプロパティを使用することができます、<xref:System.Net.Mime.ContentDisposition>ファイルのサイズだけでなく、ファイルが作成された日付を設定する最後の読み取り、および最終更新します。 すべての添付ファイルの添付ファイルは、受信側のコンピューターに格納されている、推奨されるファイル名を設定できます。  
+  
+ <xref:System.Net.Mime.ContentDisposition.ToString%2A> Content-disposition ヘッダーを返します。 Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、インライン表示するファイルが添付された電子メール メッセージを作成します。  
+  
+ [!code-cpp[NclMailSync#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#12)]
+ [!code-csharp[NclMailSync#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentDisposition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mime.ContentDisposition.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mime.ContentDisposition" />クラス、<see cref="P:System.Net.Mime.ContentDisposition.DispositionType" />の<see cref="F:System.Net.Mime.DispositionTypeNames.Attachment" />します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって返されるインスタンスには、<xref:System.Net.Mime.ContentDisposition.DispositionType%2A>プロパティに設定<xref:System.Net.Mime.DispositionTypeNames.Attachment>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#33](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#33)]
+ [!code-csharp[NclMailSync#33](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#33)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentDisposition (string disposition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string disposition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mime.ContentDisposition.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="disposition" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="disposition">A<see cref="T:System.Net.Mime.DispositionTypeNames" />ディス ポジションを含む値です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mime.ContentDisposition" />指定された配置情報を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出す方法を示します。  
+  
+ [!code-cpp[NclMailSync#34](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#34)]
+ [!code-csharp[NclMailSync#34](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#34)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="disposition" /><see langword="null" />以上<see cref="F:System.String.Empty" />("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationDate">
+      <MemberSignature Language="C#" Value="public DateTime CreationDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime CreationDate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.CreationDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または添付ファイルの作成日を設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />値を示すファイルの作成日です。 それ以外の場合、<see cref="F:System.DateTime.MinValue" />日が指定されなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.CreationDate>プロパティを使用して、電子メール メッセージで送信されるファイルにタイムスタンプ情報を送信します。 この値は、電子メールで送信される、Content-disposition ヘッダーの作成日付のパラメーターを設定します。  
+  
+ <xref:System.Net.Mail.MailMessage>電子メール メッセージを作成するクラスを使用します。 <xref:System.Net.Mail.Attachment>クラスを使用して、電子メール メッセージにファイルを添付します。 設定する<xref:System.Net.Mime.ContentDisposition.CreationDate>、取得、<xref:System.Net.Mime.ContentDisposition>から添付ファイルの<xref:System.Net.Mail.Attachment.ContentDisposition%2A?displayProperty=nameWithType>プロパティです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DispositionType">
+      <MemberSignature Language="C#" Value="public string DispositionType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DispositionType" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.DispositionType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メールの添付ファイルの配置の種類を設定します。</summary>
+        <value>A<see cref="T:System.String" />配置の種類を格納しています。 値が制限付きではありませんのいずれかでは通常、<see cref="P:System.Net.Mime.ContentDisposition.DispositionType" />値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.DispositionType%2A>プロパティの値は、電子メールの添付ファイルを表示する正しい方法を決定する電子メールを表示するソフトウェアで使用できます。 <xref:System.Net.Mime.DispositionTypeNames.Inline>添付ファイルには、ユーザーが電子メールを開くときに通常表示されます。 <xref:System.Net.Mime.DispositionTypeNames.Attachment>添付ファイルは通常開かれていない添付ファイルを表すアイコンをクリックするなど、何らかのアクションをユーザーが実行されるまでです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#24](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#24)]
+ [!code-csharp[NclMailSync#24](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定操作に指定された値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定された設定操作と等しい値<see cref="F:System.String.Empty" />("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object rparam);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object rparam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mime.ContentDisposition.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rparam" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rparam"><see cref="T:System.Net.Mime.ContentDisposition" />このオブジェクトと比較するオブジェクト。</param>
+        <summary>決定するかどうか、content-disposition ヘッダーの指定した<see cref="T:System.Net.Mime.ContentDisposition" />オブジェクトがこのオブジェクトの content-disposition ヘッダーと等しい。</summary>
+        <returns>
+          <see langword="true" />content-disposition ヘッダーが同一である場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または電子メールの添付ファイルの既定のファイル名を設定します。</summary>
+        <value>A<see cref="T:System.String" />ファイル名を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.FileName%2A>プロパティが、送信者、受信者のコンピューター上の電子メールの添付ファイルの格納に使用する名前を提案することができます。 この名前は提示です。受信側のシステムには、それを無視できます。 名前は、パス情報を含めないでください。受信側のコンピューターで、このような情報は無視されます。  
+  
+ ファイル名の情報を削除するこのプロパティを設定できます`null`または空の文字列 ("") です。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#11)]
+ [!code-csharp[NclMailSync#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mime.ContentDisposition.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したハッシュ コードを決定<see cref="T:System.Net.Mime.ContentDisposition" />オブジェクト</summary>
+        <returns>整数ハッシュ値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inline">
+      <MemberSignature Language="C#" Value="public bool Inline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Inline" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.Inline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />電子メールの添付ファイルの配置の種類 (インラインまたは添付ファイル) を決定する値。</summary>
+        <value>
+          <see langword="true" />添付ファイルの内容には、電子メールの本文の一部としてインラインが表示される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.Inline%2A>プロパティは、電子メール メッセージと共に送信 Content-disposition ヘッダーの配置の種類を設定します。 配置の種類は、電子メールの添付ファイルを表示する正しい方法を決定する電子メールを表示するソフトウェアで使用できます。 処分で添付ファイルの種類の<xref:System.Net.Mime.DispositionTypeNames.Inline?displayProperty=nameWithType>は、ユーザーが電子メールを開くときに通常表示されます。 処分で添付ファイルの種類の<xref:System.Net.Mime.DispositionTypeNames.Attachment?displayProperty=nameWithType>が通常開いていないと、ユーザーは添付ファイルを表すアイコンをクリックするなど、追加アクションを実行するまでです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#12)]
+ [!code-csharp[NclMailSync#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModificationDate">
+      <MemberSignature Language="C#" Value="public DateTime ModificationDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ModificationDate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.ModificationDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または添付ファイルの変更日を設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />ファイル変更日付を示す値それ以外の場合、<see cref="F:System.DateTime.MinValue" />日が指定されなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.ModificationDate%2A>プロパティを使用して、電子メール メッセージで送信されるファイルにタイムスタンプ情報を送信します。 この値は、電子メール メッセージと共に送信 Content-disposition ヘッダーの変更日付のパラメーターを設定します。  
+  
+ <xref:System.Net.Mail.MailMessage>電子メール メッセージを作成するクラスを使用します。 <xref:System.Net.Mail.Attachment>クラスを使用して、電子メール メッセージにファイルを添付します。 設定する、<xref:System.Net.Mime.ContentDisposition.ModificationDate%2A>プロパティ、取得、 <xref:System.Net.Mime.ContentDisposition> 、添付ファイルを使用するため、<xref:System.Net.Mail.Attachment.ContentDisposition%2A?displayProperty=nameWithType>プロパティです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.StringDictionary Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.StringDictionary Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.StringDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスで表される Content-disposition ヘッダーに含まれるパラメーターを取得します。</summary>
+        <value>書き込み可能な<see cref="T:System.Collections.Specialized.StringDictionary" />パラメーターの名前/値ペアを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、パラメーターではそれらにアクセスする必要はありませんので、プロパティの値によって決まります。 によって返されるディクショナリは、パラメーター情報を追加または変更する場合は、変更、<xref:System.Net.Mime.ContentDisposition.Parameters%2A>プロパティです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183、で利用可能な[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Content-disposition ヘッダーに送信されるパラメーターを表示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDate">
+      <MemberSignature Language="C#" Value="public DateTime ReadDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ReadDate" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.ReadDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または添付ファイルの読み取りの日付を設定します。</summary>
+        <value>A<see cref="T:System.DateTime" />ファイルを示す値が日付を読み取り、それ以外の<see cref="F:System.DateTime.MinValue" />日が指定されなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.ReadDate%2A>プロパティを使用して、電子メール メッセージで送信されるファイルにタイムスタンプ情報を送信します。 この値は、電子メール メッセージと共に送信 Content-disposition ヘッダーの読み取り日付のパラメーターを設定します。  
+  
+ <xref:System.Net.Mail.MailMessage>電子メール メッセージを作成するクラスを使用します。 <xref:System.Net.Mail.Attachment>クラスを使用して、電子メール メッセージにファイルを添付します。 設定する<xref:System.Net.Mime.ContentDisposition.ReadDate%2A>、取得、<xref:System.Net.Mime.ContentDisposition>を使用して、添付ファイルの<xref:System.Net.Mail.Attachment.ContentDisposition%2A?displayProperty=nameWithType>プロパティです。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定する方法を示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public long Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mime.ContentDisposition.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または添付ファイルのサイズを設定します。</summary>
+        <value>A<see cref="T:System.Int32" />添付ファイル内のバイト数を指定します。 既定値は-1 をファイルのサイズが既知であることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mime.ContentDisposition.Size%2A>プロパティを使用して、電子メール メッセージで送信されるファイルにタイムスタンプ情報を送信します。 <xref:System.Net.Mail.MailMessage>クラスは、メッセージの作成に使用します。 <xref:System.Net.Mail.Attachment>クラスを使用して、電子メール メッセージにファイルを添付します。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを取得する方法を示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mime.ContentDisposition.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.String" />のこのインスタンスの表現。</summary>
+        <returns>A<see cref="T:System.String" />をこのインスタンスのプロパティの値が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される文字列、<xref:System.Net.Mime.ContentDisposition.ToString%2A>メソッドは、Content-disposition ヘッダー。  
+  
+ Content-disposition ヘッダーについては、「RFC 2183 いただけます[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailSync#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#6)]
+ [!code-csharp[NclMailSync#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

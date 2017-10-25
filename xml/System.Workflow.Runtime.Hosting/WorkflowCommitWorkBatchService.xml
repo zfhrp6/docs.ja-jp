@@ -1,0 +1,81 @@
+<Type Name="WorkflowCommitWorkBatchService" FullName="System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService">
+  <TypeSignature Language="C#" Value="public abstract class WorkflowCommitWorkBatchService : System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WorkflowCommitWorkBatchService extends System.Workflow.Runtime.Hosting.WorkflowRuntimeService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowRuntimeService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>作業バッチのコミットに関するカスタム ロジックが可能になります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 作業バッチがコミットされると、ランタイムは <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> を呼び出し、作業バッチの実際のコミットを行うために、呼び出すデリゲートを与えます。 作業バッチのコミットの中心的な役割がランタイムにあることに変わりありませんが、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> をコミット処理周りのカスタマイズの方法に組み入れることができます。  
+  
+ この方法では、エラー処理のカスタム ロジックが可能です。 <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> は、トランザクションを所有している場合、つまり <xref:System.Transactions.Transaction.Current%2A?displayProperty=nameWithType> プロパティが `null` を返したために新しいアンビエント トランザクションを作成する必要があった場合、デリゲートを複数回呼び出すことができ、呼び出しごとに新しいトランザクションを作成できます。 たとえば、最もよくあるケースが、接続が途切れるネットワークの問題や SQL クラスターのフェイルオーバーの処理です。 <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback> 呼び出しが例外をスローした場合、<xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> がこの例外をキャッチし、新しいトランザクションを開始して、再度デリゲートを呼び出すことができます。 これによりワークフロー インスタンスの実行は回復しますが、それ以外の場合はワークフローは終了します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService> から継承したクラスの例を次に示します。  
+  
+ [!code-csharp[WF_Samples#0](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#0)]
+ [!code-vb[WF_Samples#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WorkflowCommitWorkBatchService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合、<see cref="T:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitWorkBatch">
+      <MemberSignature Language="C#" Value="protected virtual void CommitWorkBatch (System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback commitWorkBatchCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void CommitWorkBatch(class System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService/CommitWorkBatchCallback commitWorkBatchCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatch(System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commitWorkBatchCallback" Type="System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService+CommitWorkBatchCallback" />
+      </Parameters>
+      <Docs>
+        <param name="commitWorkBatchCallback"><see cref="T:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback" />作業バッチをコミットするために呼び出すデリゲート。</param>
+        <summary>作業バッチをコミットするために呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

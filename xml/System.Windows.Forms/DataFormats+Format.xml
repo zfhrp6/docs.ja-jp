@@ -1,0 +1,104 @@
+<Type Name="DataFormats+Format" FullName="System.Windows.Forms.DataFormats+Format">
+  <TypeSignature Language="C#" Value="public class DataFormats.Format" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit DataFormats/Format extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataFormats.Format" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クリップボード形式の種類を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 形式の種類は、テキスト ベース形式の名前と ID 番号で構成されます。 形式名/ID 番号ペアは、システムを定義できます<xref:System.Windows.Forms.Clipboard>またはその他の形式です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Windows.Forms.DataFormats.Format>形式名/ID ペアを表すです。 <xref:System.Windows.Forms.DataFormats.UnicodeText>形式が要求されるとその内容を取得して、<xref:System.Windows.Forms.DataFormats.Format>テキスト ボックスに表示されます。  
+  
+ このコードでは、する必要があります`textBox1`が作成されました。  
+  
+ [!code-cpp[Classic DataFormats.GetFormat Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataFormats.GetFormat Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/CS/source.cs#1)]
+ [!code-vb[Classic DataFormats.GetFormat Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataFormats.GetFormat Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Format (string name, int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataFormats.Format.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">この形式の名前。</param>
+        <param name="id">この形式の ID 番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataFormats.Format" />を示すブール値を持つクラスかどうか、<see langword="Win32" />ハンドルを必要とします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、一意の ID 番号と名前の新しい形式を作成します。 新しい形式には、Windows のハンドルは不要です。 いる必要があります`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic DataFormats.Format.Format Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataFormats.Format.Format Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataFormats.Format.Format Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataFormats.Format.Format Example/CS/source.cs#1)]
+ [!code-vb[Classic DataFormats.Format.Format Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataFormats.Format.Format Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public int Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataFormats.Format.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この形式の ID 番号を取得します。</summary>
+        <value>この形式の ID 番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataFormats.Format.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この形式の名前を取得します。</summary>
+        <value>この形式の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

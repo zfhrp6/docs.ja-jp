@@ -1,0 +1,252 @@
+<Type Name="ListViewInsertedEventArgs" FullName="System.Web.UI.WebControls.ListViewInsertedEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewInsertedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewInsertedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewInsertedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemInserted" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>昇給を制御、<xref:System.Web.UI.WebControls.ListView.ItemInserted>したときに、[挿入] ボタンのイベント、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>テンプレートをクリックすると後、<xref:System.Web.UI.WebControls.ListView>コントロールは、データ ソースのレコードを更新します。 (挿入ボタンは、ボタンが`CommandName`プロパティが"Insert"に設定します)。<xref:System.Web.UI.WebControls.ListView.ItemInserted>イベントでは、挿入されたアイテムのデータベースから自動生成された値を取得するなどのカスタム アクションを実行することができます。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>オブジェクトが挿入されるアイテムと発生する可能性のあるすべての例外の数を決定することにより、イベント処理メソッドに渡されます。 挿入操作によって影響を受ける項目の数を調べるを使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.AffectedRows%2A>プロパティです。 使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Exception%2A>例外が発生したかどうかを決定するプロパティです。 設定して、イベント処理メソッドで例外が処理されたかどうかを指定することも、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.ExceptionHandled%2A>プロパティです。 使用して、データ ソースに送信されていた挿入されたアイテムのフィールドの値にアクセスする必要がある場合、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Values%2A>プロパティです。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.ListView>クリアを制御、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>を挿入する新しい項目の値を追加することができる挿入操作の後のテンプレートです。 挿入操作中に例外が発生する場合を保持できます、<xref:System.Web.UI.WebControls.ListView>コントロールを設定して挿入モードで、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.KeepInInsertMode%2A>プロパティを`true`です。 これは、再バインド数、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>値に項目を挿入する前に試行したときのテンプレートです。  
+  
+ <xref:System.Web.UI.WebControls.ListViewInsertedEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>のハンドラーに渡されるオブジェクト、<xref:System.Web.UI.WebControls.ListView.ItemInserted>イベント。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemInserted#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemInserted#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewInsertedEventArgs (int affectedRows, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 affectedRows, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewInsertedEventArgs.#ctor(System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="affectedRows" Type="System.Int32" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="affectedRows">挿入操作によって影響を受ける行の数。</param>
+        <param name="exception">存在する場合、挿入操作が実行されたときに発生する例外。 例外が発生しなかった場合は使用<see langword="null" />このパラメーターにします。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewInsertedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させるときにコントロールの開発者によって、主に使用します。  
+  
+ <xref:System.Web.UI.WebControls.ListViewInsertedEventArgs> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.AffectedRows%2A>|`affectedRows` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Exception%2A>|<xref:System.Exception?displayProperty=nameWithType>に含まれているオブジェクト、`e`パラメーター。|  
+|<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.ExceptionHandled%2A>|初期化された`false`です。|  
+|<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.KeepInInsertMode%2A>|初期化された`false`です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AffectedRows">
+      <MemberSignature Language="C#" Value="public int AffectedRows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AffectedRows" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertedEventArgs.AffectedRows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入操作によって影響を受ける行の数を取得します。</summary>
+        <value>挿入操作によって影響を受ける行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.AffectedRows%2A>プロパティをデータ ソース コントロールによって返されるように、挿入操作の影響を受けたレコードの数を決定します。 このプロパティは、次のシナリオで通常使用されます。  
+  
+-   単一のレコードだけが挿入されたことを確認します。 正しく記述されていない insert ステートメントは、複数のレコードを挿入することができます。  
+  
+-   挿入操作中にエラーが発生しましたが、例外は発生しなかったために、レコードが挿入されなかったことを確認します。  
+  
+-   競合の検出 (オプティミスティック同時実行) をサポートするデータ ソース コントロールがあるときに、レコードが挿入されたことを確認する、<xref:System.Web.UI.WebControls.SqlDataSource.ConflictDetection%2A>プロパティに設定、`ConflictOptions.CompareAllValues`列挙値。 このプロパティをサポートするコントロールに含まれる、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール。 プロパティがこの値を持つ、レコードが別のユーザーによって挿入されたレコードと同じキー値がある場合は挿入されません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>のハンドラーに渡されるオブジェクト、<xref:System.Web.UI.WebControls.ListView.ItemInserted>挿入操作中に例外が発生したかどうかを決定するイベントです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#3)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外を取得します (存在する場合) が挿入操作中に発生しました。</summary>
+        <value>挿入操作中に発生した例外または<see langword="null" />例外が発生しなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生し、イベント ハンドラー、設定に、例外を処理する場合、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 それ以外の場合、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>のハンドラーに渡されるオブジェクト、<xref:System.Web.UI.WebControls.ListView.ItemInserted>挿入操作中に例外が発生したかどうかを決定するイベントです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#3)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertedEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する挿入操作中に発生した例外が、イベント ハンドラーで処理されたかどうかを示します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合、イベント ハンドラーです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例外が発生すると、挿入操作中を使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.ExceptionHandled%2A>例外が、イベント ハンドラーで処理されたかどうかを示すプロパティです。 このプロパティに設定するときに`true`例外は処理され、再スローするいないと見なされます。 このプロパティ設定されている場合`false`、<xref:System.Web.UI.WebControls.ListView>コントロールは、例外を再スローします。 発生した例外を確認するには<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Exception%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>のハンドラーに渡されるオブジェクト、<xref:System.Web.UI.WebControls.ListView.ItemInserted>挿入操作中に例外が発生したかどうかを決定するイベントです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#3)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepInInsertMode">
+      <MemberSignature Language="C#" Value="public bool KeepInInsertMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepInInsertMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertedEventArgs.KeepInInsertMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内のコントロールの値を保持、ユーザーの入力するかどうかを示す値を設定、<see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレート。</summary>
+        <value>
+          <see langword="true" />かどうか、ユーザー入力内のコントロールの値を保持、<see cref="P:System.Web.UI.WebControls.ListView.InsertItemTemplate" />テンプレートです。<see langword="false" />かどうか、ユーザー入力の値は、コントロールの既定値に置き換えられます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Web.UI.WebControls.ListView>コントロールからのコントロールの値にリセット、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>が既定値は挿入操作の後にテンプレート。 これにより、ユーザーを挿入する新しい項目の値を追加できます。 保持できます挿入操作中に例外が発生する場合、<xref:System.Web.UI.WebControls.ListView>コントロールを設定して挿入モードで、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.KeepInInsertMode%2A>プロパティを`true`です。 内のコントロールの項目を挿入する前に試行したときの値が維持されます、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>テンプレート。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.KeepInInsertMode%2A>挿入操作中にエラーが発生したときに、ユーザーが入力した値を保持するプロパティです。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/CS/ListViewItemInsertedCS.aspx#3)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemInserted#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserted/VB/ListViewItemInsertedVB.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertedEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入されたレコードのフィールドの名前と値のペアを取得します。</summary>
+        <value>挿入したレコードのフィールドの名前/値ペア。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Values%2A>挿入したレコードのフィールドの値にアクセスするプロパティです。 たとえば、これらの値を使用して、挿入されたレコードのログを保持することができます。  
+  
+ <xref:System.Web.UI.WebControls.ListViewInsertedEventArgs.Values%2A>プロパティから返される、<xref:System.Collections.Specialized.OrderedDictionary>を実装するオブジェクト、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 <xref:System.Collections.Specialized.OrderedDictionary>オブジェクトを含む<xref:System.Collections.DictionaryEntry>挿入されたレコードのフィールドを表すオブジェクト。 フィールド名にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクト。 同様を使用して、フィールドの値にアクセスすることができます、<xref:System.Collections.Specialized.OrderedDictionary.Values%2A?displayProperty=nameWithType>プロパティです。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.OrderedDictionary>値を直接フィールドにアクセスするオブジェクト。 インデクサーを使用するメリットは、フィールドの値が直接返されることです。 データ ソースのフィールドの順序に依存するコントロール (など<xref:System.Web.UI.WebControls.AccessDataSource>) フィールドの値をインデックスによってのみアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

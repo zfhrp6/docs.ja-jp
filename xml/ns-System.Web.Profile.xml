@@ -1,0 +1,17 @@
+<Namespace Name="System.Web.Profile">
+  <Docs>
+    <summary><see cref="N:System.Web.Profile" />名前空間には、Web サーバー アプリケーションで ASP.NET ユーザー プロファイルを操作に使用されるクラスが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET プロファイルは、格納およびデータベースなどのデータ ソースのユーザー設定の取得に使用されます。 プロファイル情報およびプロパティの値は、プロファイル プロバイダーを使用して管理します。 プロファイル情報を使用して、Microsoft SQL Server データベースに格納できる、<xref:System.Web.Profile.SqlProfileProvider>クラス、またはカスタム データ ソースの実装を使用して、<xref:System.Web.Profile.ProfileProvider>抽象クラスです。  
+  
+ ASP.NET プロファイルは、構成セクションを使用して構成されます。  
+  
+ ASP.NET が型の新しいクラスを作成するときにプロファイルが有効になっているアプリケーションの起動時、`ProfileCommon`から継承される、<xref:System.Web.Profile.ProfileBase>クラスです。 厳密に型指定されたアクセサーを追加、`ProfileCommon`構成セクションで定義されている各プロパティのクラスです。 インスタンス、`ProfileCommon`クラスは、の値として設定されて、 <xref:System.Web.HttpContext.Profile%2A> 、現在のプロパティ<xref:System.Web.HttpContext>オブジェクト。 継承するカスタム プロファイルの実装を作成することができます、<xref:System.Web.Profile.ProfileBase>抽象クラスを定義する構成要素で指定されていないユーザー プロファイルのプロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

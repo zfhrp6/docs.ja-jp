@@ -1,0 +1,341 @@
+<Type Name="Binder" FullName="Microsoft.CSharp.RuntimeBinder.Binder">
+  <TypeSignature Language="C#" Value="public static class Binder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Binder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.CSharp.RuntimeBinder.Binder" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.CSharp</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>CSharp のサイトのバインダーの動的呼び出しを作成するファクトリ メソッドが含まれています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="BinaryOperation">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder BinaryOperation (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, System.Linq.Expressions.ExpressionType operation, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder BinaryOperation(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, valuetype System.Linq.Expressions.ExpressionType operation, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.BinaryOperation(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Linq.Expressions.ExpressionType,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="operation" Type="System.Linq.Expressions.ExpressionType" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="operation">バイナリ演算の種類。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>新しい CSharp の二項演算のバインダーを初期化します。</summary>
+        <returns>新しい CSharp の二項演算のバインダーを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder Convert (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, Type type, Type context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder Convert(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, class System.Type type, class System.Type context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.Convert(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="context" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="type">変換後の型。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <summary>初期化 CSharp の新しいバインダーに変換します。</summary>
+        <returns>返します CSharp の新しいバインダーに変換します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetIndex">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder GetIndex (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder GetIndex(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.GetIndex(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>インデックスのバインダーを取得する新しい CSharp を初期化します。</summary>
+        <returns>返します CSharp の新しいインデックス バインダーを取得。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder GetMember (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder GetMember(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.GetMember(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.String,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="name">取得するメンバーの名前です。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>メンバー バインダーを取得する新しい CSharp を初期化します。</summary>
+        <returns>返します CSharp の新しいメンバー バインダーを取得。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder Invoke (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder Invoke(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.Invoke(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>初期化 CSharp の新しいバインダーを呼び出します。</summary>
+        <returns>返します CSharp の新しいバインダーを呼び出します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeConstructor">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder InvokeConstructor (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder InvokeConstructor(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.InvokeConstructor(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>初期化 CSharp の新しいコンス トラクターのバインダーを呼び出します。</summary>
+        <returns>返します CSharp の新しいコンス トラクターのバインダーを呼び出します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMember">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder InvokeMember (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, System.Collections.Generic.IEnumerable&lt;Type&gt; typeArguments, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder InvokeMember(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, class System.Collections.Generic.IEnumerable`1&lt;class System.Type&gt; typeArguments, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.InvokeMember(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.String,System.Collections.Generic.IEnumerable{System.Type},System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.Collections.Generic.IEnumerable&lt;System.Type&gt;" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="name">呼び出すメンバーの名前。</param>
+        <param name="typeArguments">この呼び出しに対して指定された型引数のリスト。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>初期化 CSharp の新しいメンバー バインダーを呼び出します。</summary>
+        <returns>返します CSharp の新しいメンバー バインダーを呼び出します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsEvent">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder IsEvent (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, Type context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder IsEvent(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, class System.Type context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.IsEvent(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="context" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="name">検索するイベントの名前。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <summary>新しい CSharp の初期化は、イベント バインダーです。</summary>
+        <returns>新しい CSharp がイベントのバインダーを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetIndex">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder SetIndex (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder SetIndex(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.SetIndex(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>CSharp の新しい設定のインデックスのバインダーを初期化します。</summary>
+        <returns>新しい CSharp インデックス設定バインダーを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetMember">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder SetMember (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder SetMember(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, string name, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.SetMember(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.String,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="name">設定するメンバーの名前。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>CSharp の新しい設定メンバー バインダーを初期化します。</summary>
+        <returns>CSharp の新しいセット メンバー バインダーを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UnaryOperation">
+      <MemberSignature Language="C#" Value="public static System.Runtime.CompilerServices.CallSiteBinder UnaryOperation (Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, System.Linq.Expressions.ExpressionType operation, Type context, System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.CompilerServices.CallSiteBinder UnaryOperation(valuetype Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags flags, valuetype System.Linq.Expressions.ExpressionType operation, class System.Type context, class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt; argumentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.CSharp.RuntimeBinder.Binder.UnaryOperation(Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags,System.Linq.Expressions.ExpressionType,System.Type,System.Collections.Generic.IEnumerable{Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.CSharp</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.CompilerServices.CallSiteBinder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="Microsoft.CSharp.RuntimeBinder.CSharpBinderFlags" />
+        <Parameter Name="operation" Type="System.Linq.Expressions.ExpressionType" />
+        <Parameter Name="context" Type="System.Type" />
+        <Parameter Name="argumentInfo" Type="System.Collections.Generic.IEnumerable&lt;Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="flags">バインダーの初期化に使用するフラグ。</param>
+        <param name="operation">単項演算の種類。</param>
+        <param name="context"><see cref="T:System.Type" />この操作が使用されていることを示します。</param>
+        <param name="argumentInfo">一連の<see cref="T:Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo" />この操作の引数のインスタンス。</param>
+        <summary>新しい CSharp の単項操作バインダーを初期化します。</summary>
+        <returns>新しい CSharp の単項操作バインダーを返します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

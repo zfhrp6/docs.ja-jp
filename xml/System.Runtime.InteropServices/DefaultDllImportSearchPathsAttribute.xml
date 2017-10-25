@@ -1,0 +1,131 @@
+<Type Name="DefaultDllImportSearchPathsAttribute" FullName="System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DefaultDllImportSearchPathsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DefaultDllImportSearchPathsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Method, AllowMultiple=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プラットフォーム呼び出しの機能を提供する DLL の検索に使用されるパスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アセンブリに適用する場合、この属性は、アセンブリ内の任意のコードで、既定では、プラットフォームの関数を提供する DLL を任意の検索に使用されるパスの呼び出しを指定します。 個々 のプラットフォームに適用される場合の起動は、この属性がアセンブリに対して指定されている既定の検索パスをオーバーライドします。  
+  
+ 任意のプラットフォーム呼び出しの絶対パスを指定する、この属性は無視されます。  
+  
+ Win32 を防ぐためにこの属性を使用して`LoadLibraryEx`関数から現在の作業ディレクトリを検索します。 これを使用するどの悪意のあるソフトウェア内の場所に DLL を現在の作業ディレクトリの攻撃からアプリケーションを保護するよう Win32 プラットフォームの起動と呼び出す`LoadLibraryEx`関数、関数の既定の検索順序は、システムを検索する意図された DLL ではなく、悪意のある DLL を検索します。  
+  
+ 共通言語ランタイムへの呼び出しを処理する、 [LoadLibraryEx](http://go.microsoft.com/fwlink/?LinkId=236091)次のアルゴリズムに基づいて機能します。  
+  
+1.  属性は、個々 のプラットフォームに適用される場合の起動は、そのインスタンスの属性で指定された値を使用します。  
+  
+2.  それ以外の場合、プラットフォームを含むアセンブリに起動属性が適用されている場合は、属性のインスタンスで指定された値を使用します。  
+  
+3.  それ以外の場合、アセンブリのディレクトリを検索およびを呼び出す、`LoadLibraryEx`で機能、`LOAD_WITH_ALTERED_SEARCH_PATH`フラグ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultDllImportSearchPathsAttribute (System.Runtime.InteropServices.DllImportSearchPath paths);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.DllImportSearchPath paths) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute.#ctor(System.Runtime.InteropServices.DllImportSearchPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paths" Type="System.Runtime.InteropServices.DllImportSearchPath" />
+      </Parameters>
+      <Docs>
+        <param name="paths">パスを指定する列挙値のビットごとの組み合わせを<c>LoadLibraryEx</c>プラットフォーム中に検索を関数を呼び出します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute" />クラス、プラットフォームのターゲットの検索を呼び出すときに使用するパスを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paths">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.DllImportSearchPath Paths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.DllImportSearchPath Paths" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute.Paths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.DllImportSearchPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスを指定する列挙値のビットごとの組み合わせを取得する、 <c>LoadLibraryEx</c>プラットフォーム中に検索を関数を呼び出します。</summary>
+        <value>プラットフォームの検索パスを指定する列挙値のビットごとの組み合わせを呼び出します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Runtime.InteropServices.DefaultDllImportSearchPathsAttribute>属性がアセンブリに適用される、任意のプラットフォームのターゲットを呼び出すアセンブリ内のコードによって実行されるを検索するパスが既定で使用します。 属性は、個々 のプラットフォームに適用される場合の起動は、個々 のプラットフォームのターゲットが起動し、アセンブリの指定されているパスのオーバーライドを検索する、パスが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

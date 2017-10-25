@@ -1,0 +1,130 @@
+<Type Name="ResourceProviderFactory" FullName="System.Web.Compilation.ResourceProviderFactory">
+  <TypeSignature Language="C#" Value="public abstract class ResourceProviderFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ResourceProviderFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ResourceProviderFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リソース プロバイダーを作成するクラスの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ResourceProviderFactory>グローバルとローカルのリソース プロバイダーを返すオブジェクトの基底クラスとして機能する抽象クラスです。 クラスが派生する必要があります<xref:System.Web.Compilation.ResourceProviderFactory>その機能を実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、キャッシュされた値を取得するカスタマイズされたリソース プロバイダー ファクトリを示します。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ResourceProviderFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceProviderFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスとして実装された場合は、派生クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成できません。 派生したクラス<xref:System.Web.Compilation.ResourceProviderFactory>を任意の既定値を設定するコンス トラクターを実装することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateGlobalResourceProvider">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Compilation.IResourceProvider CreateGlobalResourceProvider (string classKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Compilation.IResourceProvider CreateGlobalResourceProvider(string classKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceProviderFactory.CreateGlobalResourceProvider(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.IResourceProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="classKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="classKey">リソース クラスの名前。</param>
+        <summary>派生クラスでオーバーライドされると、グローバル リソース プロバイダーを作成します。</summary>
+        <returns>グローバル リソース プロバイダーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、このメソッドが戻る、<xref:System.Web.Compilation.IResourceProvider>オブジェクトを指定された`classKey`パラメーター。 メソッドを実装することになるよう`classKey`App_GlobalResources フォルダー内の .resx ファイルの名前を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますカスタマイズされたリソース プロバイダー ファクトリを実装する、<xref:System.Web.Compilation.ResourceProviderFactory.CreateGlobalResourceProvider%2A>キャッシュされた値のメソッドを取得します。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateLocalResourceProvider">
+      <MemberSignature Language="C#" Value="public abstract System.Web.Compilation.IResourceProvider CreateLocalResourceProvider (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.Compilation.IResourceProvider CreateLocalResourceProvider(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ResourceProviderFactory.CreateLocalResourceProvider(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.IResourceProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">リソース ファイルへのパス。</param>
+        <summary>派生クラスでオーバーライドされると、ローカル リソース プロバイダーを作成します。</summary>
+        <returns>ローカル リソース プロバイダーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされると、このメソッドが戻る、<xref:System.Web.Compilation.IResourceProvider>オブジェクトを指定された`virtualPath`パラメーター。 メソッドを実装することになるよう`virtualPath`リソース ファイルにマップします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますカスタマイズされたリソース プロバイダー ファクトリを実装する、<xref:System.Web.Compilation.ResourceProviderFactory.CreateLocalResourceProvider%2A>キャッシュされた値のメソッドを取得します。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#2)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,847 @@
+<Type Name="PathGradientBrush" FullName="System.Drawing.Drawing2D.PathGradientBrush">
+  <TypeSignature Language="C#" Value="public sealed class PathGradientBrush : System.Drawing.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PathGradientBrush extends System.Drawing.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.PathGradientBrush" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カプセル化、<see cref="T:System.Drawing.Brush" />の内部を塗りつぶしますオブジェクト、<see cref="T:System.Drawing.Drawing2D.GraphicsPath" />グラデーションを使用してオブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色のグラデーションは、パスの外側の境界のエッジをパスの中心点から色の網掛けが滑らかなです。 Blend の要因、位置、およびスタイルに与える影響のグラデーションの開始点と終了し速さ網掛けを変更します。  
+  
+ パス グラデーション ブラシに従いません、<xref:System.Drawing.Graphics.SmoothingMode%2A>のプロパティ、<xref:System.Drawing.Graphics>オブジェクトの描画を実行するために使用します。 使用して塗りつぶされる領域、<xref:System.Drawing.Drawing2D.PathGradientBrush>オブジェクトのスムージング モードに関係なく同じ方法 (エイリアス) にレンダリングされます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Drawing.Drawing2D.PathGradientBrush>です。 この例が Windows フォームで使用するために設計されていて、必要があります、 <xref:System.Windows.Forms.PaintEventArgs> e、これは、パラメーターの<xref:System.Windows.Forms.PaintEventHandler>します。  
+  
+ [!code-csharp[System.Drawing.UsingaGradientBrush#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#11)]
+ [!code-vb[System.Drawing.UsingaGradientBrush#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGradientBrush (System.Drawing.Drawing2D.GraphicsPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Drawing2D.GraphicsPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.#ctor(System.Drawing.Drawing2D.GraphicsPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Drawing.Drawing2D.GraphicsPath" />
+      </Parameters>
+      <Docs>
+        <param name="path"><see cref="T:System.Drawing.Drawing2D.GraphicsPath" />この塗りつぶし領域を定義する<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />指定したパスのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGradientBrush (System.Drawing.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.#ctor(System.Drawing.Point[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />パスの頂点を構成する点を表す構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />指定した点を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGradientBrush (System.Drawing.PointF[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.PointF[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.#ctor(System.Drawing.PointF[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />パスの頂点を構成する点を表す構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />指定した点を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGradientBrush (System.Drawing.Point[] points, System.Drawing.Drawing2D.WrapMode wrapMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Point[] points, valuetype System.Drawing.Drawing2D.WrapMode wrapMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.#ctor(System.Drawing.Point[],System.Drawing.Drawing2D.WrapMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.Point[]" />
+        <Parameter Name="wrapMode" Type="System.Drawing.Drawing2D.WrapMode" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.Point" />パスの頂点を構成する点を表す構造体。</param>
+        <param name="wrapMode">A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する方法がいっぱいになったこので描画された<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />並べて表示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />指定して、クラスし、モードをラップします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGradientBrush (System.Drawing.PointF[] points, System.Drawing.Drawing2D.WrapMode wrapMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.PointF[] points, valuetype System.Drawing.Drawing2D.WrapMode wrapMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.#ctor(System.Drawing.PointF[],System.Drawing.Drawing2D.WrapMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="points" Type="System.Drawing.PointF[]" />
+        <Parameter Name="wrapMode" Type="System.Drawing.Drawing2D.WrapMode" />
+      </Parameters>
+      <Docs>
+        <param name="points">配列<see cref="T:System.Drawing.PointF" />パスの頂点を構成する点を表す構造体。</param>
+        <param name="wrapMode">A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する方法がいっぱいになったこので描画された<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />並べて表示します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />指定して、クラスし、モードをラップします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Blend">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Blend Blend { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Blend Blend" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.Blend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Blend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.Blend" />のグラデーションのカスタム減色を定義する位置と係数を指定します。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.Blend" />のグラデーションのカスタムの減色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Drawing.Drawing2D.Blend> blend 要因および位置の対応する配列が含まれています。 Blend の要因は、色の開始と終了日に対応する位置に使用する色の割合を指定します。 位置は、グラデーション パスに沿った距離の割合として指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CenterColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CenterColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CenterColor" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.CenterColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスのグラデーションの中心で色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />パス グラデーションの中心で色を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CenterPoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF CenterPoint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.PointF CenterPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.CenterPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはパスのグラデーションの中心点を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.PointF" />パス グラデーションの中心点を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.PathGradientBrush" /> の同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />オブジェクトとしてキャスト、このメソッドを作成します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusScales">
+      <MemberSignature Language="C#" Value="public System.Drawing.PointF FocusScales { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.PointF FocusScales" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.FocusScales" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.PointF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラデーションの減色フォーカス ポイントを設定します。</summary>
+        <value>A<see cref="T:System.Drawing.PointF" />グラデーションの減色フォーカス ポイントを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolationColors">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.ColorBlend InterpolationColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.ColorBlend InterpolationColors" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.InterpolationColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.ColorBlend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.ColorBlend" />線形グラデーションを定義します。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.ColorBlend" />線形グラデーションを定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Drawing2D.ColorBlend>色および位置の対応する配列が含まれています。 位置は、対応する色が配置されているグラデーション パスに沿った距離の割合を指定する 0 ~ 1 の値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />するブラシの現在の変換行列で乗算されます。</param>
+        <summary>別の行列で乗算ブラシの変換行列の積でブラシの変換行列を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.MultiplyTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />するブラシの現在の変換行列で乗算されます。</param>
+        <param name="order">A<see cref="T:System.Drawing.Drawing2D.MatrixOrder" />で 2 つの行列を乗算する順序を指定します。</param>
+        <summary>別の行列で乗算ブラシの変換行列の積でブラシの変換行列を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスを作成し、四角形を追加します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.PathGradientBrush>パス ポイントから (この例では、ポイントは四角形を形成が、ほとんどの任意の図形がある可能性があります)。  
+  
+-   中心の色を赤と周囲の色を青に設定します。  
+  
+-   描画、<xref:System.Drawing.Drawing2D.PathGradientBrush>乗算変換を適用する前に画面にします。  
+  
+-   ブラシを 90 度回転し、両方の軸に 100 ずつ変換した行列を作成します。  
+  
+-   このマトリックスを使用して、ブラシに適用、<xref:System.Drawing.Drawing2D.PathGradientBrush.MultiplyTransform%2A>メソッドです。  
+  
+-   ブラシを画面に描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicPathGradientBrush#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicPathGradientBrush#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicPathGradientBrush#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF Rectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.RectangleF Rectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.Rectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの外接する四角形を取得<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />です。</summary>
+        <value>A<see cref="T:System.Drawing.RectangleF" />このパスに外接する四角形の領域を表す<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />を塗りつぶします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetTransform">
+      <MemberSignature Language="C#" Value="public void ResetTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetTransform() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.ResetTransform" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Drawing.Drawing2D.PathGradientBrush.Transform" />プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のジオメトリック変換をリセットする`pgBrush`id にします。 ように仮定`myPath`既存は<xref:System.Drawing.Drawing2D.GraphicsPath>します。  
+  
+```csharp  
+PathGradientBrush pgBrush = new PathGradientBrush(myPath);  
+ pgBrush.ResetTransform();  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.RotateTransform(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転の角度 (エクステント)。</param>
+        <summary>指定した量だけローカル ジオメトリック変換を回転します。 このメソッドの前に回転変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.RotateTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.RotateTransform(System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転の角度 (エクステント)。</param>
+        <param name="order">回転行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で指定した量だけローカル ジオメトリック変換を回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスを作成し、四角形を追加します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.PathGradientBrush>パス ポイントから (この例では、ポイントは四角形を形成が、ほとんどの任意の図形がある可能性があります)。  
+  
+-   中心の色を赤と周囲の色を青に設定します。  
+  
+-   描画、<xref:System.Drawing.Drawing2D.PathGradientBrush>回転を適用する前に画面に変換します。  
+  
+-   使用して、ブラシに回転変換を適用します。 その<xref:System.Drawing.Drawing2D.PathGradientBrush.RotateTransform%2A>メソッドです。  
+  
+-   回転後のブラシ (四角形) を画面に描画します。  
+  
+ 下の四角形は、1 つの平行移動する前に描画と比較して 45 度の回転であることを確認します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicPathGradientBrush#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicPathGradientBrush#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicPathGradientBrush#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.ScaleTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向の変換のスケール ファクター。</param>
+        <param name="sy">Y 軸方向の変換のスケール ファクター。</param>
+        <summary>ローカル ジオメトリック変換をスケール、指定した量だけです。 このメソッドの前にスケーリング行列変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.ScaleTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.ScaleTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向の変換のスケール ファクター。</param>
+        <param name="sy">Y 軸方向の変換のスケール ファクター。</param>
+        <param name="order">スケーリング行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>ローカル ジオメトリック変換をスケールを指定した順序で指定した比率。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コード  
+  
+-   グラフィックス パスを作成し、四角形を追加します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.PathGradientBrush>パス ポイントから (この例では、ポイントは四角形を形成が、ほとんどの任意の図形がある可能性があります)。  
+  
+-   中心の色を赤と周囲の色を青に設定します。  
+  
+-   描画、<xref:System.Drawing.Drawing2D.PathGradientBrush>スケール変換を適用する前に画面にします。  
+  
+-   使用して、ブラシにスケール変換を適用します。 その<xref:System.Drawing.Drawing2D.PathGradientBrush.ScaleTransform%2A>メソッドです。  
+  
+-   呼び出し、<xref:System.Drawing.Drawing2D.PathGradientBrush.TranslateTransform%2A>ブラシの四角形を移動して、前の画面に描画される 1 つをオーバーレイことはありませんなどのメソッドです。  
+  
+-   変換されたブラシの四角形を画面に描画します。  
+  
+ 下の四角形は 2 回として x 軸の長さは 1 つの平行移動する前に描画されることを確認します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicPathGradientBrush#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicPathGradientBrush#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicPathGradientBrush#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBlendTriangularShape">
+      <MemberSignature Language="C#" Value="public void SetBlendTriangularShape (float focus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBlendTriangularShape(float32 focus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 の半径に沿ってパスの中心からのパスの境界に、中央の色をする場所の最高強度でを指定する値。 1 (既定値) の値は、パスの中央に最高強度を配置します。</param>
+        <summary>中央の色とに 1 つの周囲の色の線形減色をグラデーションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上の色がある場合、<xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A>終了色の配列、配列内の最初の色が使用されています。 ブラシの境界のパスにある個別の点では、この配列で指定された色が使用されます。  
+  
+   
+  
+## Examples  
+ 例については、次を参照してください。<xref:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape%2A>`.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBlendTriangularShape">
+      <MemberSignature Language="C#" Value="public void SetBlendTriangularShape (float focus, float scale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBlendTriangularShape(float32 focus, float32 scale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+        <Parameter Name="scale" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 の半径に沿ってパスの中心からのパスの境界に、中央の色をする場所の最高強度でを指定する値。 1 (既定値) の値は、パスの中央に最高強度を配置します。</param>
+        <param name="scale">0 ~ 1 の境界の色とブレンド center 色の最大の輝度を指定する値。 値 1 の場合、最も高い可能な色の彩度、center、および既定値は。</param>
+        <summary>中央の色と各周囲の色に線形の減色をグラデーションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上の色がある場合、<xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A>終了色の配列、配列内の最初の色が使用されています。 この配列で指定された色は、ブラシの境界のパス上の個別の点で使用される色です。  
+  
+ 既定では、パスのグラデーションの境界の中心点に移動すると、色が徐々 に変化境界の色から center 色にします。 位置と、このメソッドを呼び出すことによって、境界や center の色の描画をカスタマイズすることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスを作成し、四角形を追加します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.PathGradientBrush>パス ポイントから (この例では、ポイントは四角形を形成が、ほとんどの任意の図形がある可能性があります)。  
+  
+-   中心の色を赤と周囲の色を青に設定します。  
+  
+-   描画、 <xref:System.Drawing.Drawing2D.PathGradientBrush> blend 変換を適用する前に画面にします。  
+  
+-   使用して、ブラシに blend 変換を適用します。 その<xref:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape%2A>メソッドです。  
+  
+-   呼び出し、<xref:System.Drawing.Drawing2D.PathGradientBrush.TranslateTransform%2A>ブラシの四角形を移動して、前の画面に描画される 1 つをオーバーレイことはありませんなどのメソッドです。  
+  
+-   画面に描画するブラシを変換四角形を描画します。  
+  
+ 最大 center 色 (赤) が配置の中間にセンターからのパスのパスの境界に注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicPathGradientBrush#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicPathGradientBrush#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicPathGradientBrush#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSigmaBellShape">
+      <MemberSignature Language="C#" Value="public void SetSigmaBellShape (float focus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSigmaBellShape(float32 focus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.SetSigmaBellShape(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 の半径に沿ってパスの中心からのパスの境界に、中央の色をする場所の最高強度でを指定する値。 1 (既定値) の値は、パスの中央に最高強度を配置します。</param>
+        <summary>パスの境界を外側へのパスの中心から開始色を変更するグラデーション ブラシを作成します。 1 つの色から別の移行は、ベル型の曲線に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上の色がある場合、<xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A>終了色の配列、配列内の最初の色が使用されています。 この配列で指定された色は、ブラシの境界のパス上の個別の点で使用される色です。  
+  
+ 既定では、パスのグラデーションの境界の中心点に移動すると、色が徐々 に変化境界の色から center 色にします。 位置と、このメソッドを呼び出すことによって、境界や center の色の描画をカスタマイズすることができます。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.SetSigmaBellShape%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSigmaBellShape">
+      <MemberSignature Language="C#" Value="public void SetSigmaBellShape (float focus, float scale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSigmaBellShape(float32 focus, float32 scale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.SetSigmaBellShape(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+        <Parameter Name="scale" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 の半径に沿ってパスの中心からのパスの境界に、中央の色をする場所の最高強度でを指定する値。 1 (既定値) の値は、パスの中央に最高強度を配置します。</param>
+        <param name="scale">0 ~ 1 の境界の色とブレンド center 色の最大の輝度を指定する値。 値 1 の場合、最も高い可能な色の彩度、center、および既定値は。</param>
+        <summary>パスの境界を外側へのパスの中心から開始色を変更するグラデーション ブラシを作成します。 1 つの色から別の移行は、ベル型の曲線に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ以上の色がある場合、<xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A>終了色の配列、配列内の最初の色が使用されています。 この配列で指定された色は、ブラシの境界のパス上の個別の点で使用される色です。  
+  
+ 既定では、パスのグラデーションの境界の中心点に移動すると、色が徐々 に変化境界の色から center 色にします。 位置と、このメソッドを呼び出すことによって、境界や center の色の描画をカスタマイズすることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   グラフィックス パスを作成し、四角形を追加します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.PathGradientBrush>パス ポイントから (この例では、ポイントは四角形を形成が、ほとんどの任意の図形がある可能性があります)。  
+  
+-   中心の色を赤と周囲の色を青に設定します。  
+  
+-   描画、 <xref:System.Drawing.Drawing2D.PathGradientBrush> blend 変換を適用する前に画面にします。  
+  
+-   使用して、ブラシに blend 変換を適用します。 その<xref:System.Drawing.Drawing2D.PathGradientBrush.SetSigmaBellShape%2A>メソッドです。  
+  
+-   呼び出し、<xref:System.Drawing.Drawing2D.PathGradientBrush.TranslateTransform%2A>ブラシの四角形を移動して、前の画面に描画される 1 つをオーバーレイことはありませんなどのメソッドです。  
+  
+-   変換されたブラシの四角形を画面に描画します。  
+  
+ 最大 center 色 (赤) が配置の中間にセンターからのパスのパスの境界に注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicPathGradientBrush#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicPathGradientBrush#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicPathGradientBrush#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicPathGradientBrush/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SurroundColors">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color[] SurroundColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color[] SurroundColors" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このパスのポイントに対応する色の配列を取得または<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />を塗りつぶします。</summary>
+        <value>配列<see cref="T:System.Drawing.Color" />それぞれに関連付けられている色を表す構造体がこのパスにポイント<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />を塗りつぶします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Drawing.Color>で、<xref:System.Drawing.Drawing2D.PathGradientBrush.SurroundColors%2A>配列は、パス内のポイントに対応しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Matrix Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Matrix Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコピー、<see cref="T:System.Drawing.Drawing2D.Matrix" />このローカル ジオメトリック変換を定義する<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />です。</summary>
+        <value>コピー、<see cref="T:System.Drawing.Drawing2D.Matrix" />がいっぱいになったこので描画されたにのみ適用されるジオメトリック変換を定義する<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジオメトリック変換は、変換、拡大縮小、回転、または塗りつぶしのグラデーションのずれを使用できます。 マトリックスが返されたため、<xref:System.Drawing.Drawing2D.PathGradientBrush.Transform%2A>プロパティ ブラシのジオメトリック変換のコピーであるが不要になったときに、マトリックスを破棄する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.TranslateTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <summary>ローカル ジオメトリック変換を指定の平行移動を適用します。 このメソッドの前に平行移動、変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.PathGradientBrush.TranslateTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <param name="order">平行移動を適用する順序 (前または後)。</param>
+        <summary>指定した順序でローカル ジオメトリック変換を指定の平行移動を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.PathGradientBrush.SetBlendTriangularShape%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMode">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.WrapMode WrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.WrapMode WrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.PathGradientBrush.WrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.WrapMode" />このラップ モードを示す<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する方法がいっぱいになったこので描画された<see cref="T:System.Drawing.Drawing2D.PathGradientBrush" />並べて表示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,773 @@
+<Type Name="LoginView" FullName="System.Web.UI.WebControls.LoginView">
+  <TypeSignature Language="C#" Value="public class LoginView : System.Web.UI.Control, System.Web.UI.INamingContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LoginView extends System.Web.UI.Control implements class System.Web.UI.INamingContainer" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LoginView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.INamingContainer</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ViewChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("CurrentView")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LoginViewDesigner,System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のユーザーの認証の状態およびロール メンバーシップに基づいて、そのユーザーに適切なコンテンツ テンプレートを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.WebControls.LoginView>異なる Web サイト コンテンツ テンプレート (または「ビュー」) のそれぞれのユーザーのユーザーが認証されたかどうかに基づいてにコントロールが表示され、どの Web サイトの役割をそのため、そのユーザーが属する場合は。  
+  
+> [!NOTE]
+>  ASP.NET で使用できるログイン コントロールのセットに慣れていない場合は、次を参照してください。 [ASP.NET ログイン コントロールの概要](http://msdn.microsoft.com/library/ac032230-6469-4b03-b68d-03ef2643a24d)続行する前にします。 ログイン コントロールおよびメンバーシップに関連するその他のトピックの一覧は、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+ 格納されているテンプレート、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>でログインしていないユーザーの Web サイトの訪問者にプロパティが表示されます。 サイト ユーザーがログインに、ユーザーのロールのいずれかに関連付けられている、テンプレートのいずれかが表示されます、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>プロパティまたはで指定された既定のテンプレート、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.LoginView>の 3 つのテンプレートのプロパティのいずれかにテンプレートを代入すると、さまざまなテンプレート間で切り替えコントロールの管理、<xref:System.Web.UI.WebControls.LoginView>クラス。  
+  
+-   <xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>-Web サイトにログインしていないユーザーに表示するテンプレートを指定します。 ログオンしているユーザーは、このテンプレートは表示されます。  
+  
+-   <xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>-Web サイトにログインしているけれども、定義済みのテンプレートを使用してロール グループに属していないユーザーに表示する既定のテンプレートを指定します。  
+  
+-   <xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>-ロール グループ テンプレートの定義を持つロールのメンバーであるログインしているユーザーに表示するテンプレートを指定します。 テンプレートは、ロール内の特定のセットに関連付けられたコンテンツ<xref:System.Web.UI.WebControls.RoleGroup>インスタンス。  
+  
+ ロール グループ テンプレートは、ソースで定義されている順序で検索されます。 最初に一致するロール グループ テンプレートがユーザーに表示されます。 ユーザーが 1 つ以上のロールのメンバーで、ユーザーのロールのいずれかに一致する最初のロール グループ テンプレートが使用されます。 複数のテンプレートは、1 つのロールに関連付けられて、最初に定義されているテンプレートだけが使用されます。  
+  
+ 次の表の動作、<xref:System.Web.UI.WebControls.LoginView>テンプレートのさまざまな組み合わせを使用する場合を制御します。  
+  
+|当てはまりますテンプレート プロパティ|匿名テンプレートのプロパティ|RoleGroups プロパティ|LoginView 動作|  
+|--------------------------------|---------------------------------|-------------------------|------------------------|  
+|未設定|未設定|未設定|コンテンツを表示しません。|  
+|設定|未設定|未設定|ユーザーがログインした場合にのみ、コンテンツを表示します。|  
+|未設定|設定|未設定|ユーザーがログインしていない場合にのみ、コンテンツを表示します。|  
+|未設定|未設定|設定|最初のテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>ユーザーのロールのいずれかに一致するコレクション。 一致するものが見つからない場合は、コンテンツを表示しません。|  
+|設定|設定|未設定|場合は、ユーザーがログインで指定されたテンプレートを表示、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。 ユーザーにログインしていない場合に指定されたテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティです。|  
+|設定|設定|設定|場合は、ユーザーがログインには、最初のテンプレートを表示、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>ユーザーのロールのいずれかに一致するコレクション。 一致するものが見つからない場合に指定されたテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。 ユーザーがログインしていない場合に指定されたテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティです。|  
+|設定|未設定|設定|場合は、ユーザーがログインには、最初のテンプレートを表示、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>ユーザーのロールのいずれかに一致するコレクション。 一致するものが見つからない場合に指定されたテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。 ユーザーがログインしていない場合は、何も表示されます。|  
+|未設定|設定|設定|場合は、ユーザーがログインには、最初のテンプレートを表示、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>ユーザーのロールのいずれかに一致するコレクション。 一致するものが見つからない場合は、何も表示します。 ユーザーがログインしていない場合に指定されたテンプレートが表示されます、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティです。|  
+  
+ <xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>と<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>を設定する任意の認証スキームで使用できる、<xref:System.Security.Principal.IIdentity.Name%2A>のプロパティ、<xref:System.Web.UI.Page>オブジェクトの<xref:System.Web.UI.Page.User%2A>プロパティです。 使用するロールの管理を構成する必要があります、 <xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A> Web サイトでユーザーのロールの基本テンプレートを定義するプロパティです。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+ <xref:System.Web.UI.Control.Focus%2A>メソッドで、Web ページの初期フォーカスが設定されません、<xref:System.Web.UI.WebControls.LoginView>コントロール、またはその子コントロールのいずれか。 含まれるコントロール、<xref:System.Web.UI.WebControls.LoginView>後にコントロールが作成された、<xref:System.Web.UI.Control.PreRender>イベント。 含まれる子コントロールにフォーカスを設定する、 <xref:System.Web.UI.WebControls.LoginView>、処理、`On_PreRender`呼び出しとその<xref:System.Web.UI.Control.Focus%2A>メソッドです。  使用することも、<xref:System.Web.UI.WebControls.LoginView.ViewChanging>と<xref:System.Web.UI.WebControls.LoginView.ViewChanged>イベント内のコントロールをプログラムでアクセスを<xref:System.Web.UI.WebControls.LoginView>コントロール テンプレート。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:LoginView  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    OnViewChanged="ViewChanged event handler"  
+    OnViewChanging="ViewChanging event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+>  
+        <AnonymousTemplate>  
+            <!-- child controls -->  
+        </AnonymousTemplate>  
+        <LoggedInTemplate>  
+            <!-- child controls -->  
+        </LoggedInTemplate>  
+        <RoleGroups>  
+                <asp:RoleGroup  
+                    Roles="string"  
+                >  
+                        <ContentTemplate>  
+                            <!-- child controls -->  
+                        </ContentTemplate>  
+                </asp:RoleGroup>  
+        </RoleGroups>  
+</asp:LoginView>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例でサポートされている 3 つのテンプレートの種類の各テンプレートを設定する方法を示します、<xref:System.Web.UI.WebControls.LoginView>コントロール。  
+  
+ [!code-aspx-csharp[LoginViewClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginViewClass/CS/loginviewclasscs.aspx#1)]
+ [!code-aspx-vb[LoginViewClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginViewClass/VB/loginviewclassvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LoginView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnonymousTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate AnonymousTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate AnonymousTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.AnonymousTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.LoginView))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web サイトにログインしていないユーザーに表示するテンプレートを設定します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティは、それらはログオンしていないとき、Web サイトに Web サイトのユーザーに表示するコンテンツのテンプレートを指定します。 このテンプレートが表示されるときに、<xref:System.Security.Principal.IIdentity.Name%2A>のプロパティ、 <xref:System.Web.UI.Page> <xref:System.Web.UI.Page.User%2A>プロパティは`null`します。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>テンプレートが認証されたユーザーに表示されることはありません。 場合、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティが空の場合はログインしていないユーザーにコンテンツは表示されません。  
+  
+   
+  
+## Examples  
+ 次のコード例で指定されたテンプレートを使用して、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>サービスにサインアップするための招待を表示するテンプレートの設定を変更します。  
+  
+ [!code-aspx-csharp[LoginViewAnonymousTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginViewAnonymousTemplate/CS/loginviewanonymoustemplatecs.aspx#1)]
+ [!code-aspx-vb[LoginViewAnonymousTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginViewAnonymousTemplate/VB/loginviewanonymoustemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />の子を含むオブジェクトを制御、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</summary>
+        <value>子コントロールのコレクション、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子を構成するコントロールを作成、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.CreateChildControls%2A>メソッドを構成する個々 のコントロールの作成、<xref:System.Web.UI.WebControls.LoginView>コントロール。 作成されたコントロールのセットは、ユーザーに対して表示されるコンテンツ テンプレートによって異なります。 たとえば、ユーザーが Web サイト ログオンしていないとき、テンプレートに含まれているコントロールだけで指定、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースにバインド<see cref="T:System.Web.UI.WebControls.LoginView" />とそのすべての子コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.LoginView.DataBind%2A>をソースからデータをバインドするメソッド、<xref:System.Web.UI.WebControls.LoginView>コントロールとその子。 このメソッド内のすべてのデータ バインディング式を解決する、<xref:System.Web.UI.WebControls.LoginView>コントロールおよび作業中のテンプレートで子コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定にテーマを適用できるかどうかを示す値、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</summary>
+        <value>
+          <see langword="true" />テーマを使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>プロパティは、テーマが有効になっているかどうかを示す、<xref:System.Web.UI.WebControls.LoginView>コントロール。 <xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>プロパティに含まれるコントロールのテーマが有効になっているかどうかにも影響その<xref:System.Web.UI.WebControls.LoginView.Controls%2A>コレクション。 ときに、<xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するテーマのアプリケーションのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。 ときに、<xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>プロパティは`false`、テーマのディレクトリは検索されませんの内容と、<xref:System.Web.UI.WebControls.LoginView.SkinID%2A>プロパティは使用されません。  
+  
+ オーバーライドする、<xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>値の設定、親コントロールにも格納するページ。 たとえば、親コントロールがある場合<xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>に設定`false`、選択的に設定して、親内に含まれる子コントロールにテーマを適用することができます、<xref:System.Web.UI.WebControls.LoginView.EnableTheming%2A>プロパティを`true`個々 の子コントロールにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public override void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>入力コントロールにフォーカスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.Focus%2A>メソッドで、Web ページの初期フォーカスが設定されません、<xref:System.Web.UI.WebControls.LoginView>コントロールまたはその子コントロールのいずれかにします。 コントロールに含まれている、<xref:System.Web.UI.WebControls.LoginView>後にコントロールが作成された、<xref:System.Web.UI.Control.PreRender>イベント。 含まれる子コントロールにフォーカスを設定する、 <xref:System.Web.UI.WebControls.LoginView>、処理、`On_PreRender`呼び出しとその<xref:System.Web.UI.Control.Focus%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">呼び出す、<see cref="M:System.Web.UI.WebControls.LoginView.Focus" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコントロールの状態を表す <see cref="T:System.Object" />。</param>
+        <summary>このメソッドは、<see cref="M:System.Web.UI.Control.LoadControlState(System.Object)" /> を実装します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoggedInTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate LoggedInTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate LoggedInTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.LoggedInTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.LoginView))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が、Web サイトにログインしますが、で指定したロール グループのいずれかのメンバーではない Web サイト ユーザーに表示するテンプレート、<see cref="P:System.Web.UI.WebControls.LoginView.RoleGroups" />プロパティです。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>の両方の次の条件が満たされたときに、Web サイトのユーザーにプロパティが表示されます。  
+  
+-   <xref:System.Security.Principal.IIdentity.Name%2A>のプロパティ、 <xref:System.Web.UI.Page> <xref:System.Web.UI.Page.User%2A>プロパティは使用されません`null`  
+  
+-   ユーザーがで定義されたロール グループに属していない、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティは、認証済みの Web サイトのユーザーの既定のテンプレートを指定します。 ロールの管理を構成していない場合、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>認証されたユーザーに対してのみのテンプレートがあります。 ロール管理の構成の詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>ログイン ユーザーの個人用に設定された情報へのリンクを表示するテンプレートです。  
+  
+ [!code-aspx-csharp[LoginViewAnonymousTemplate#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginViewAnonymousTemplate/CS/loginviewanonymoustemplatecs.aspx#1)]
+ [!code-aspx-vb[LoginViewAnonymousTemplate#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginViewAnonymousTemplate/VB/loginviewanonymoustemplatevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.OnInit%2A>メソッドの初期化を実行する、<xref:System.Web.UI.WebControls.LoginView>コントロール。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.OnInit%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.LoginView.OnInit(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.LoginView.OnInit(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>ログイン ユーザーのロールに基づいて表示するにはロール グループ テンプレートを決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.OnPreRender%2A>中にメソッドが呼び出された、<xref:System.Web.UI.Control.PreRender>イベント、ユーザーに表示するコンテンツ テンプレートを特定します。 場合、<xref:System.Security.Principal.IIdentity.Name%2A>のプロパティ、 <xref:System.Web.UI.Page> <xref:System.Web.UI.Page.User%2A>プロパティは`null`で指定されたテンプレート、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティが表示されます。 それ以外の場合、ユーザーのロールに関連付けられているテンプレートが表示されます。 ユーザーが、定義済みロール グループに属していない場合、またはロールの管理を構成していない場合、<xref:System.Web.UI.WebControls.LoginView>コントロールで指定されたテンプレートを表示、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。 ロール管理の構成の詳細については、次を参照してください。[ロール管理プロバイダー](http://msdn.microsoft.com/library/71ddd651-5f91-471b-ad9f-61249b0bf0d5)です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.OnPreRender%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.LoginView.OnPreRender(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.LoginView.OnPreRender(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.OnViewChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.LoginView.ViewChanged" />後のイベント、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロールがビューを切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.LoginView>コントロールがビューを切り替えると、以前のテンプレートからのコントロールを削除し、新しいテンプレートから新しい子コントロールを作成します。 <xref:System.Web.UI.WebControls.LoginView.OnViewChanged%2A>メソッドが呼び出される新しい子コントロールを作成します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.LoginView.OnViewChanged%2A>データ バインディング、新しいビュー上のコントロールを初期化するために必要ななど、処理を実行するメソッド。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.OnViewChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.LoginView.OnViewChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.LoginView.OnViewChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnViewChanging">
+      <MemberSignature Language="C#" Value="protected virtual void OnViewChanging (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnViewChanging(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.OnViewChanging(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.LoginView.ViewChanging" />前に、イベント、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロールがビューを切り替えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.LoginView>コントロールがビューを切り替えると、以前のテンプレートからのコントロールを削除し、新しいテンプレートから新しい子コントロールを作成します。 <xref:System.Web.UI.WebControls.LoginView.OnViewChanging%2A>以前のコントロールが削除される前に、メソッドが呼び出されます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.LoginView.OnViewChanging%2A>コントロールが削除される前に、コントロールの情報の保存など、必要な処理を実行するメソッド。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.LoginView.OnViewChanging%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.LoginView.OnViewChanging(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.LoginView.OnViewChanging(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />クライアントのブラウザーでサーバー コントロールの内容を表示するために使用します。</param>
+        <summary>Web サーバー コントロールの内容を指定して、クライアントのブラウザーにレンダリング<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.Render%2A>メソッドを指定して、クライアントのブラウザーにサーバー コントロールの内容を表示するために使用<xref:System.Web.UI.HtmlTextWriter?displayProperty=nameWithType>オブジェクト。  
+  
+ **注**を拡張するこのメソッドが、主にコントロールの開発者によって使用される、<xref:System.Web.UI.WebControls.LoginView>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleGroups">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.RoleGroupCollection RoleGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.RoleGroupCollection RoleGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.RoleGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Filterable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RoleGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のロールのテンプレートに関連付けるロール グループのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.RoleGroupCollection" />ロール グループの定義のテンプレートを含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>プロパティには、Web サイトでさまざまなロールに関連付けられているコンテンツのテンプレートが含まれています。 内のコレクション、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>プロパティがテンプレートが、ソースで定義されている順序で検索します。 最初に一致するロール グループ テンプレートがユーザーに表示されます。 ユーザーが 1 つ以上のロールのメンバーで、ユーザーのロールのいずれかに一致する最初のロール グループ テンプレートが使用されます。 複数のテンプレートが単一のロールに関連付けられている場合は、最初に定義されているテンプレートだけが使用されます。  
+  
+ サイトがで指定されたコンテンツのテンプレートを表示するログイン ユーザーがロール グループ コレクションに含まれる任意のロールに属していない場合、<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティです。 匿名ユーザーに含まれているすべてのテンプレートを表示しない、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>コレクション。  
+  
+ 使用するロールの管理を構成する必要があります、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>テンプレートを定義するプロパティは、Web サイトでユーザーのロールに基づいています。 詳細については、次を参照してください。[ロール管理の理解](http://msdn.microsoft.com/library/a0d2f19d-a2a7-496d-88b6-30133f8ea3d6)です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.WebControls.LoginView.RoleGroups%2A>コレクション。 <xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>と<xref:System.Web.UI.WebControls.LoginView.LoggedInTemplate%2A>プロパティが設定されていない、コンテンツが定義されているコンテンツ テンプレートを持つロールに属しているユーザーにのみ表示されます。  
+  
+ [!code-aspx-csharp[LoginViewRoleGroups#1](~/samples/snippets/csharp/VS_Snippets_WebNet/LoginViewRoleGroups/CS/loginviewrolegroupscs.aspx#1)]
+ [!code-aspx-vb[LoginViewRoleGroups#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/LoginViewRoleGroups/VB/loginviewrolegroupsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポスト バックされた時間以降に発生したすべてのサーバー コントロール状態の変化を保存します。</summary>
+        <returns>サーバー コントロールの現在の状態を返します。 このコントロールに関連付けられている状態がない場合、このメソッドは <see langword="null" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override void SetDesignModeState (System.Collections.IDictionary data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDesignModeState(class System.Collections.IDictionary data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LoginView.SetDesignModeState(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="data">コントロールのデザイン時データを格納する <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>コントロールのデザイン時データを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkinID">
+      <MemberSignature Language="C#" Value="public override string SkinID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkinID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LoginView.SkinID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に適用するスキン、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。</summary>
+        <value>適用するスキンの名前、<see cref="T:System.Web.UI.WebControls.LoginView" />コントロール。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで使用できるスキンは、テーマ ディレクトリ内の 1 つまたは複数のスキン ファイルに格納されます。 <xref:System.Web.UI.WebControls.LoginView.SkinID%2A>プロパティでは、これらのコントロールに適用するスキンのどれを指定します。 スキンは、特定のコントロールに固有異なる種類のコントロール間のスキンの設定を共有することはできません。  
+  
+ 設定しない場合、<xref:System.Web.UI.WebControls.LoginView.SkinID%2A>プロパティ、コントロールを使用して既定のスキンが定義されている場合。 たとえば場合、スキンなし ID の定義、<xref:System.Web.UI.WebControls.Image>制御、そのスキンはすべてに適用されます<xref:System.Web.UI.WebControls.Image>コントロールを明示的に参照しない ID によって、スキンとテーマを無効にするには設定されていません。 ID を使用して、スキンが定義されている場合、<xref:System.Web.UI.WebControls.Image>制御、そのスキンにのみ適用されます<xref:System.Web.UI.WebControls.Image>が制御<xref:System.Web.UI.WebControls.WebControl.SkinID%2A>その ID に設定されています。  
+  
+ テーマのディレクトリにスキン ファイルに指定した、スキンが含まれていない場合<xref:System.Web.UI.WebControls.LoginView.SkinID%2A>、<xref:System.ArgumentException>実行時に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたスキン、<see cref="P:System.Web.UI.WebControls.LoginView.SkinID" />テーマのプロパティが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ViewChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ViewChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.LoginView.ViewChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューが変更された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.LoginView>コントロールがビューを切り替えると、以前のテンプレートからのコントロールを削除し、新しいテンプレートから新しい子コントロールを作成します。 <xref:System.Web.UI.WebControls.LoginView.ViewChanged>イベントは、新しい子コントロールが作成された後に発生します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.LoginView.ViewChanged>データ バインディング、新しいビュー上のコントロールを初期化するために必要ななど、処理を実行するイベントです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.LoginView.ViewChanged>ページへのポストバック時に、ユーザーのログイン状態が変更された場合にのみ、イベントが発生します。 <xref:System.Web.UI.WebControls.LoginView.ViewChanged>イベントは発生しません。 ユーザーがログインを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、またはを使用して、ユーザーがログオフする場合、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。 <xref:System.Web.UI.WebControls.LoginView.ViewChanged>イベントも実行されない場合は、ユーザーがログインまたはアウトの後にリダイレクトします。 場合の例、<xref:System.Web.UI.WebControls.LoginView.ViewChanged>呼び出すことによって、ユーザーがログインしたときに、イベントが発生する、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>別のページにリダイレクトされることがなくメソッドです。 ページに次のポストバック時に、<xref:System.Web.UI.WebControls.LoginView>コントロールは、ユーザーのログイン状態で変更が検出され、発生し、<xref:System.Web.UI.WebControls.LoginView.ViewChanged>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewChanging">
+      <MemberSignature Language="C#" Value="public event EventHandler ViewChanging;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ViewChanging" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.LoginView.ViewChanging" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューを変更するまでに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.LoginView>コントロールがビューを切り替えると、以前のテンプレートからのコントロールを削除し、新しいテンプレートから新しい子コントロールを作成します。 <xref:System.Web.UI.WebControls.LoginView.ViewChanging>イベントは、以前のコントロールが削除される前に発生します。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.LoginView.ViewChanging>コントロールが削除される前に、必要な制御情報の保存など、処理を実行するイベントです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.LoginView.ViewChanging>ページへのポストバック時に、ユーザーのログイン状態が変更された場合にのみ、イベントが発生します。 <xref:System.Web.UI.WebControls.LoginView.ViewChanging>イベントは発生しません。 ユーザーがログインを使用する場合、<xref:System.Web.UI.WebControls.Login>コントロール、またはを使用して、ユーザーがログオフする場合、<xref:System.Web.UI.WebControls.LoginStatus>コントロール。 <xref:System.Web.UI.WebControls.LoginView.ViewChanging>イベントも実行されない場合は、ユーザーがログインまたはアウトの後にリダイレクトします。 場合の例、<xref:System.Web.UI.WebControls.LoginView.ViewChanging>呼び出すことによって、ユーザーがログインしたときに、イベントが発生する、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>別のページにリダイレクトされることがなくメソッドです。 ページに次のポストバック時に、<xref:System.Web.UI.WebControls.LoginView>コントロールは、ユーザーのログイン状態で変更が検出され、発生し、<xref:System.Web.UI.WebControls.LoginView.ViewChanging>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,570 @@
+<Type Name="DllImportAttribute" FullName="System.Runtime.InteropServices.DllImportAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DllImportAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DllImportAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DllImportAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性付きメソッドがアンマネージ ダイナミックリンク ライブラリ (DLL) によって静的エントリ ポイントとして公開されることを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドには、この属性を適用することができます。  
+  
+ <xref:System.Runtime.InteropServices.DllImportAttribute>属性は、アンマネージ DLL からエクスポートされた関数の呼び出しに必要な情報を提供します。 最小要件として、エントリ ポイントを含んでいる DLL の名前を指定してください。  
+  
+ C# および C++ のメソッド定義に直接この属性を適用します。ただし、Visual Basic コンパイラは、この属性を使用するときに、`Declare`ステートメントです。 含む複雑なメソッド定義の<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>、 <xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>、 <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>、 <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>、 <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>、または<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドを直接 Visual Basic のメソッドの定義にこの属性を適用します。  
+  
+ **注**JScript では、この属性はサポートされません。 C# または Visual Basic のラッパー クラスを使用して、JScript プログラムからアンマネージ API のメソッドにアクセスすることができます。  
+  
+ 詳細については、プラットフォームを使用して呼び出しのアンマネージ Dll 関数にアクセスするサービスは、「[アンマネージ DLL 関数の使用](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Runtime.InteropServices.DllImportAttribute>はジェネリック型のマーシャ リングをサポートしていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Runtime.InteropServices.DllImportAttribute> Win32 をインポートする属性`MessageBox`関数。  コード例は、インポートされたメソッドを呼び出します。  
+  
+ [!code-csharp[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DllImportAttribute (string dllName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string dllName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.DllImportAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dllName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dllName">アンマネージ メソッドを含んでいる DLL の名前。 DLL がアセンブリに含まれている場合は、このアセンブリの表示名、組み込めます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.DllImportAttribute" />をインポートするメソッドを含む DLL の名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アンマネージ DLL ファイルが含まれているアセンブリでは、たとえば、リンカーを使用している場合、または`/linkresource`コンパイラ オプションの一部としてアセンブリの表示名を指定できます`dllName`です。 たとえば、名前付きアンマネージ DLL`unmanaged.dll`という名前のマネージ アセンブリに含まれる`MyAssembly`、次のコードに示すように、属性を指定する場合があります。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#2)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#2)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#2)]  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Runtime.InteropServices.DllImportAttribute> Win32 をインポートする属性`MessageBox`関数。  コード例は、インポートされたメソッドを呼び出します。  
+  
+ [!code-csharp[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BestFitMapping">
+      <MemberSignature Language="C#" Value="public bool BestFitMapping;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool BestFitMapping" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効または Unicode 文字を ANSI 文字に変換するときに、最適マッピングの動作を無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`true`、最適マッピング動作が有効です。 それ以外の場合、最適マッピングが無効になっています。 <xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>フィールドは`true`既定です。 このフィールドの設定のどのレベルの設定を上書きする、<xref:System.Runtime.InteropServices.BestFitMappingAttribute?displayProperty=nameWithType>属性。  
+  
+ 共通言語ランタイムは、Windows 98 または Windows me で実行するアンマネージ メソッドに渡される Unicode 文字が管理している ANSI 文字に変換します。 最適マッピングを使用すると、完全一致が存在しないときに近いの文字を指定する相互運用マーシャラーです。 たとえば、マーシャラー、Unicode 文字に変換著作権を ANSI 文字を使用するアンマネージ メソッドに対して 'c' です。 一部の文字がない最適形式です。これらの文字といいます。 マップできない文字が、既定値に変換する通常 '?'ANSI 文字です。  
+  
+> [!CAUTION]
+>  特定の Unicode 文字は、円記号など、危険な文字に変換されます '\\' 文字で、パスを不用意に変更できます。 設定して、<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドを`true`例外をスローして、呼び出し元にマップできない文字の存在を通知することができます。  
+  
+> [!CAUTION]
+>  によって提供される既定値を変更することはできません、<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>と<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドのマネージ配列の要素を渡すことが ANSI 文字、または LPSTRs アンマネージのセーフ配列にします。 最適なマッピングが常に有効になっているし、例外はスローされません。 この組み合わせが、セキュリティ モデルを損なうことに注意してください。  
+  
+   
+  
+## Examples  
+ 場合によっては、Visual Basic 開発者が使用して、<xref:System.Runtime.InteropServices.DllImportAttribute>の代わりに、`Declare`ステートメントでは、マネージ コードで DLL 関数を定義します。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>フィールドは、このような場合のいずれか。 次の例は、最も制限の厳しい、適用する方法を示しています。 ANSI 文字セットを指定する、最適マッピングの動作を無効にすると、マップされていない Unicode 文字に例外をスローして文字のマッピングのセキュリティをプラットフォーム呼び出しメソッドの定義。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#3)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#3)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallingConvention">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.CallingConvention CallingConvention;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Runtime.InteropServices.CallingConvention CallingConvention" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.CallingConvention" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CallingConvention</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリ ポイントの呼び出し規約を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドのいずれかを設定する、<xref:System.Runtime.InteropServices.CallingConvention>列挙型メンバー。 既定値、<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>フィールドは<xref:System.Runtime.InteropServices.CallingConvention.Winapi>が既定で使用する<xref:System.Runtime.InteropServices.CallingConvention.StdCall>規則。  
+  
+ 詳細については、MSDN ライブラリの呼び出し規約を参照してください。  
+  
+   
+  
+## Examples  
+ 場合によっては、Visual Basic 開発者が使用して、<xref:System.Runtime.InteropServices.DllImportAttribute>の代わりに、`Declare`ステートメントでは、マネージ コードで DLL 関数を定義します。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.CallingConvention>フィールドは、このような場合のいずれか。  
+  
+ System.Runtime.InteropServices.DllImportAttribute#1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharSet">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.CharSet CharSet;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Runtime.InteropServices.CharSet CharSet" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.CharSet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CharSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドとコントロールの名前を修飾する文字列パラメーターをマーシャ リングする方法を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーを持つこのフィールドを使用して、<xref:System.Runtime.InteropServices.CharSet>文字列パラメーターのマーシャ リング動作を指定して、指定された正確な名前 ("A"または"W"で終わる名前) を呼び出すには、どのエントリ ポイント名を指定する列挙です。 C# および Visual Basic の既定の列挙体メンバーは`CharSet.Ansi`と C++ の既定の列挙型メンバーが`CharSet.None`と同じに`CharSet.Ansi`です。 Visual Basic では使用して、`Declare`ステートメントを指定する、`CharSet`フィールドです。  
+  
+ <xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>フィールドの動作に影響を与えます、`CharSet`を呼び出すには、どのエントリ ポイント名を決定するフィールドです。 詳細な説明と、文字列のマーシャ リングとに関連付けられている動作と一致する名前の例については、`CharSet`フィールドを参照してください[文字セットの指定](~/docs/framework/interop/specifying-a-character-set.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Runtime.InteropServices.DllImportAttribute> Win32 をインポートする属性`MessageBox`関数。  コード例は、インポートされたメソッドを呼び出します。  
+  
+ [!code-csharp[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DllImport.Canonical#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.Canonical/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntryPoint">
+      <MemberSignature Language="C#" Value="public string EntryPoint;" />
+      <MemberSignature Language="ILAsm" Value=".field public string EntryPoint" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.EntryPoint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前または呼び出される DLL エントリ ポイントの序数を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エントリ ポイント名を指定するには、エントリ ポイントを含む DLL の名前を示す文字列を指定することによって、またはをその序数エントリ ポイントを識別することができます。 序数値には、たとえば、1、# 記号が付きます。 共通言語ランタイムとマークされた the.NET メソッドの名前を使用してこのフィールドを省略した場合、<xref:System.Runtime.InteropServices.DllImportAttribute>です。  
+  
+ 詳細については、次を参照してください。 [Dll で関数を識別する](~/docs/framework/interop/identifying-functions-in-dlls.md)です。 使用する方法を示す例については、<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>フィールドを参照してください[エントリ ポイントの指定](~/docs/framework/interop/specifying-an-entry-point.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Runtime.InteropServices.DllImportAttribute> Win32 をインポートする属性`MessageBox`関数。  コードの例では、<xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint>プロパティをインポートする関数を指定する名前を変更し、`MyNewMessageBoxMethod`です。  
+  
+ [!code-csharp[System.Runtime.InteropServices.DllImport.EntryPoint#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.EntryPoint/cs/sample.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DllImport.EntryPoint#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Runtime.InteropServices.DllImport.EntryPoint/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExactSpelling">
+      <MemberSignature Language="C#" Value="public bool ExactSpelling;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool ExactSpelling" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールかどうか、<see cref="F:System.Runtime.InteropServices.DllImportAttribute.CharSet" />フィールド、共通言語ランタイムによって指定されたもの以外のエントリ ポイント名に対するアンマネージ DLL を検索します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`、文字 A で追加されたエントリ ポイント名が呼び出されるときに、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>にフィールドが設定されている`CharSet.Ansi`、W の文字が付いた、エントリ ポイント名が呼び出されるとときに、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet?displayProperty=nameWithType>にフィールドが設定されている、`CharSet.Unicode`です。 通常、マネージ コンパイラは、このフィールドを設定します。  
+  
+ 次の表は、関係を示しています、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>と<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>プログラミング言語によって課される既定値に基づくフィールドです。 既定の設定をオーバーライドできますが、注意が必要でこれを行います。  
+  
+|言語|ANSI|Unicode|自動|  
+|--------------|----------|-------------|----------|  
+|Visual Basic|ExactSpelling: = True|ExactSpelling: = True|ExactSpelling: false|  
+|C#|ExactSpelling = false|ExactSpelling = false|ExactSpelling = false|  
+|C++|ExactSpelling = false|ExactSpelling = false|ExactSpelling = false|  
+  
+   
+  
+## Examples  
+ 場合によっては、Visual Basic 開発者が使用して、 <xref:System.Runtime.InteropServices.DllImportAttribute>、使用する代わりに、`Declare`ステートメントでは、マネージ コードで DLL 関数を定義します。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.ExactSpelling>フィールドは、このような場合のいずれか。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#4)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#4)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveSig">
+      <MemberSignature Language="C#" Value="public bool PreserveSig;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool PreserveSig" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.PreserveSig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうかアンマネージ メソッドがあることを示します<see langword="HRESULT" />または<see langword="retval" />返す値を直接変換するかどうか<see langword="HRESULT" />または<see langword="retval" />返す値は自動的に例外に変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドを`true`がアンマネージの署名を直接変換する`HRESULT`または`retval`値に設定は`false`に自動的に変換する`HRESULT`または`retval`例外の値。 既定では、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドは`true`します。  
+  
+ ときに`true`、結果として得られるメソッドのシグネチャを格納する整数値を返します、`HRESULT`値。  この場合、する必要があります手動で戻り値を検査し、適宜対応アプリケーションでします。  
+  
+ 設定すると、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドを`false`、結果として得られるメソッドのシグネチャには整数ではなく void 戻り値の型が含まれています (`HRESULT`) 型を返します。  アンマネージ メソッドが生成するときに、 `HRESULT`、戻り値のランタイムは自動的に無視`S_OK`(または 0)、例外をスローしません。  `HRESULT`以外の s `S_OK`、ランタイムが自動的に対応する例外をスロー、`HRESULT`です。  なお、<xref:System.Runtime.InteropServices.DllImportAttribute>属性のみを返すメソッドをこの変換を実行する、`HRESULT`です。  
+  
+ 既定のエラー報告の動作を変更することがあります`HRESULT`場所に例外が適してエラー報告、アプリケーションの構造のケースでの例外にします。  
+  
+ このフィールドがに似ていますが、<xref:System.Runtime.InteropServices.PreserveSigAttribute>です。 ただし、対照的に、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドは、既定値は属性が`false`です。  
+  
+ 場合によっては、Visual Basic 開発者が使用して、 <xref:System.Runtime.InteropServices.DllImportAttribute>、使用する代わりに、`Declare`ステートメントでは、マネージ コードで DLL 関数を定義します。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドは、このような場合のいずれか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Runtime.InteropServices.DllImportAttribute>アンマネージをインポートする`SHAutoComplete`に 1 回、動作、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドに設定`true`とを使用して、<xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>フィールドに設定`false`です。  このコード例では、`SHAutoComplete`例外に 1 回でエラーを生成する関数と`HRESULT`次です。  
+  
+ [!code-csharp[Runtime.InteropServices.PreserveSigAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.InteropServices.PreserveSigAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.InteropServices.PreserveSigAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.InteropServices.PreserveSigAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastError">
+      <MemberSignature Language="C#" Value="public bool SetLastError;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool SetLastError" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.SetLastError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し先が呼び出すかどうかを示す、<see langword="SetLastError" />属性付きメソッドから戻る前に Win32 API 関数。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `true`呼び出し先が呼び出すことを示すために`SetLastError`、それ以外の`false`します。 既定値は、`false` です。  
+  
+ ランタイム マーシャラー呼び出し`GetLastError`およびその他の API 呼び出しによって上書きされないようにすることに返される値をキャッシュします。 エラー コードを取得するには呼び出すことによって<xref:System.Runtime.InteropServices.Marshal.GetLastWin32Error%2A>です。  
+  
+   
+  
+## Examples  
+ 場合によっては、Visual Basic 開発者が使用して、 <xref:System.Runtime.InteropServices.DllImportAttribute>、使用する代わりに、`Declare`ステートメントでは、マネージ コードで DLL 関数を定義します。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError>フィールドは、このような場合のいずれか。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#5)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#5)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnUnmappableChar">
+      <MemberSignature Language="C#" Value="public bool ThrowOnUnmappableChar;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool ThrowOnUnmappableChar" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効または無効に ANSI に変換されるマップできない Unicode 文字の例外のスロー"?"文字です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `true`たびを例外がスローされることを示すために、相互運用マーシャラーは; マップできない文字に変換します`false`ことを示す、<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドが無効になります。 このフィールドは`false`既定です。  
+  
+ 共通言語ランタイムは、Windows 98 または Windows me で実行するアンマネージ メソッドに渡される Unicode 文字が管理している ANSI 文字に変換します。 最適マッピングを使用すると、完全一致が存在しないときに近いの文字を指定する相互運用マーシャラーです。 たとえば、マーシャラー、Unicode 文字に変換著作権を ANSI 文字を使用するアンマネージ メソッドに対して 'c' です。 一部の文字がない最適形式です。これらの文字といいます。 マップできない文字が、既定値に変換する通常 '?'ANSI 文字です。  
+  
+> [!CAUTION]
+>  特定の Unicode 文字は、円記号など、危険な文字に変換されます '\\' 文字で、パスを不用意に変更できます。 設定して、<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドを`true`例外をスローして、呼び出し元にマップできない文字の存在を通知することができます。  
+  
+> [!CAUTION]
+>  によって提供される既定値を変更することはできません、<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping>と<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドのマネージ配列の要素を渡すことが ANSI 文字、または LPSTRs アンマネージのセーフ配列にします。 最適なマッピングが常に有効になっているし、例外はスローされません。 この組み合わせが、セキュリティ モデルを損なうことに注意してください。  
+  
+   
+  
+## Examples  
+ 場合によっては、Visual Basic 開発者が使用して、 <xref:System.Runtime.InteropServices.DllImportAttribute> DLL 関数を使用せずに、マネージ コードで定義する、`Declare`ステートメントです。 設定、<xref:System.Runtime.InteropServices.DllImportAttribute.ThrowOnUnmappableChar>フィールドは、このような場合のいずれか。 次の例は、最も制限の厳しい、適用する方法を示しています。 ANSI 文字セットを指定する、最適マッピングの動作を無効にすると、マップされていない Unicode 文字に例外をスローして文字のマッピングのセキュリティをプラットフォーム呼び出しメソッドの定義。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cpp/source.cpp#3)]
+ [!code-csharp[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/cs/source.cs#3)]
+ [!code-vb[System.Runtime.InteropServices.DllImportAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dllimportattribute/vb/source.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.DllImportAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エントリ ポイントを含む DLL ファイルの名前を取得します。</summary>
+        <value>エントリ ポイントを含む DLL ファイルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 完全パスまたは相対パスを指定することができます。 パスを指定しない場合、DLL でなければなりません、現在のパス、実行時にその他の方法によって、DLL が読み込まれていない限り。 ただし、完全修飾パスを使用することが問題が生じる可能性、DLL が移動された場合に注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

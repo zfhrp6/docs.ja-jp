@@ -1,0 +1,127 @@
+<Type Name="XPathFollowingMergeIterator" FullName="System.Xml.Xsl.Runtime.XPathFollowingMergeIterator">
+  <TypeSignature Language="C#" Value="public struct XPathFollowingMergeIterator" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit XPathFollowingMergeIterator extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlXml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XPath の following 軸の規則に従って、後続のすべてのノードを反復処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator>XPath の following 軸の規則に従ってすべてのノードを反復処理し、複数のドキュメントの順序で次のノード セットをマージおよび重複を削除します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public void Create (System.Xml.Xsl.Runtime.XmlNavigatorFilter filter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Create(class System.Xml.Xsl.Runtime.XmlNavigatorFilter filter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Create(System.Xml.Xsl.Runtime.XmlNavigatorFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.Xml.Xsl.Runtime.XmlNavigatorFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter">インスタンス、<see cref="T:System.Xml.Xsl.Runtime.XmlNavigatorFilter" />クラスは、ノード名に基づいてフィルター処理することができます。</param>
+        <summary><see cref="T:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator>複数のドキュメントの順序で次のノード セットをマージし、重複を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.XPathNavigator Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XPath.XPathNavigator Current" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の結果のナビゲーターを返します。</summary>
+        <value>現在の結果のナビゲーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Current%2A>プロパティが変更されたときに、<xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.MoveNext%2A>メソッドのセット、<xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Current%2A>プロパティを [次へ] ノードを返す<xref:System.Xml.Xsl.Runtime.IteratorResult.HaveCurrentNode>です。 それ以外の場合、<xref:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Current%2A>プロパティは変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.IteratorResult MoveNext (System.Xml.XPath.XPathNavigator input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Xml.Xsl.Runtime.IteratorResult MoveNext(class System.Xml.XPath.XPathNavigator input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.MoveNext(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.IteratorResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="input">
+          <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクト。</param>
+        <summary>[次へ] ノードに反復子に移動します。</summary>
+        <returns>返します<see cref="F:System.Xml.Xsl.Runtime.IteratorResult.NoMoreNodes" />次以上のノードがある場合。 返します<see cref="F:System.Xml.Xsl.Runtime.IteratorResult.NeedInputNode" />場合は、まず次の入力ノードをフェッチする必要があります。 返します<see cref="F:System.Xml.Xsl.Runtime.IteratorResult.HaveCurrentNode" />場合、<see cref="P:System.Xml.Xsl.Runtime.XPathFollowingMergeIterator.Current" />プロパティは、次のノードにノードを反復処理するときに設定されました。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

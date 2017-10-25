@@ -1,0 +1,83 @@
+<Type Name="MachineKeySessionSecurityTokenHandler" FullName="System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public class MachineKeySessionSecurityTokenHandler : System.IdentityModel.Tokens.SessionSecurityTokenHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MachineKeySessionSecurityTokenHandler extends System.IdentityModel.Tokens.SessionSecurityTokenHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SessionSecurityTokenHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET で指定された署名と暗号化キーを使用してセッション トークンを処理<see langword="&lt;machineKey&gt;" />構成ファイル内の要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスの使用、<xref:System.IdentityModel.ProtectedDataCookieTransform>クラスは、データ保護 API (DPAPI) を使用して、セッション トークンを保護します。 DPAPI は、ユーザーまたはコンピューターの資格情報を使用して保護を実装し、ユーザー プロファイルにキー データを格納します。 セッション トークンが署名され、1 台のコンピューター上で暗号化することを意味の検証または別のコンピューターでの暗号化を解除できません。  
+  
+ これに対し、<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>クラスの使用、<xref:System.IdentityModel.Services.MachineKeyTransform>で指定された暗号化マテリアルを使用して、セッション cookie のデータを保護するには、クラス、`<machineKey>`構成ファイル内の要素。 これは、同じキー (およびセッション トークン) を複数のコンピューターで使用できることを意味します。 これは、機能は、web ファームでアプリケーションを展開するときに特に重要です。 Windows Identity Foundation を使用して web ファームにデプロイされているアプリケーションを保護する方法の詳細については、次を参照してください。 [WIF および Web ファーム](~/docs/framework/security/wif-and-web-farms.md)です。  
+  
+ トークン ハンドラー コレクションに追加することで、<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> を使用するようにアプリケーションを構成します。 このようなハンドラーが存在する場合は、まず <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> (または <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> クラスから派生した任意のハンドラー) をトークン ハンドラー コレクションから削除する必要があります。 これは、ため<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>から派生した<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークン ハンドラーのコレクションが、指定された型の複数のハンドラーを含めることはできません。  
+  
+   
+  
+## Examples  
+ 次の XML は、ASP.NET を使用する方法を示します`<machineKey>`署名と暗号化キーを明示的に指定する構成要素。 `<machineKey>`下にある要素が指定されて、`<system.web>`構成ファイル内の要素。  
+  
+```xml  
+<machineKey compatibilityMode="Framework45" decryptionKey="CC510D … 8925E6" validationKey="BEAC8 … 6A4B1DE" />  
+```  
+  
+ 次の XML は、<xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> をトークン ハンドラー コレクションに追加する方法を示しています。 既定値<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>は、最初、コレクションから削除します。 トークン ハンドラーが構成されている、 [ &lt;securityTokenHandlers&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)要素。  
+  
+```xml  
+<securityTokenHandlers>  
+  <remove type="System.IdentityModel.Tokens.SessionSecurityTokenHandler, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
+  <add type="System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
+</securityTokenHandlers>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MachineKeySessionSecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MachineKeySessionSecurityTokenHandler (TimeSpan tokenLifetime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan tokenLifetime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tokenLifetime" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="tokenLifetime">トークンの既定の有効期間。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler" />を既定値が指定されたトークンの有効期間を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="tokenLifetime" />も短いか等しい<see cref="F:System.TimeSpan.Zero" /></exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

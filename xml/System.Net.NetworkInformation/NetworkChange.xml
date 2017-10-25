@@ -1,0 +1,184 @@
+<Type Name="NetworkChange" FullName="System.Net.NetworkInformation.NetworkChange">
+  <TypeSignature Language="C#" Value="public sealed class NetworkChange" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NetworkChange extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.NetworkChange" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ネットワーク インターフェイス (ネットワーク カードやアダプターなど) のインターネット プロトコル (IP) アドレスが変更されたときにアプリケーションで通知を受信できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.NetworkChange>クラスでは、アドレスの変更通知を提供させて<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベント。 インターフェイスのアドレスは、ネットワーク ケーブルの切断、ワイヤレス ローカル エリア ネットワーク、またはハードウェアの障害の範囲外の移動など、多くの理由を変更できます。  
+  
+ 通知を受信するには、アプリケーションのイベント ハンドラーをイベントが発生するたびに、アプリケーション固有のタスクを実行する 1 つまたは複数のメソッドを識別する必要があります。 <xref:System.Net.NetworkInformation.NetworkChange>オブジェクトで、イベント処理メソッドを呼び出すときに、<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントが発生するを持つメソッドを関連付ける必要があります、<xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler>を委任して、このデリゲートをイベントに追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アドレスの変更および表示時にネットワークの状態インターフェイスをリッスンする<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントが発生します。  
+  
+ [!code-cpp[NclNetAddressChanged1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetAddressChanged1/CPP/changed.cpp#1)]
+ [!code-csharp[NclNetAddressChanged1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetAddressChanged1/CS/changed.cs#1)]
+ [!code-vb[NclNetAddressChanged1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetAddressChanged1/VB/changed.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetworkChange ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkChange.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.NetworkChange" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkAddressChanged">
+      <MemberSignature Language="C#" Value="public static event System.Net.NetworkInformation.NetworkAddressChangedEventHandler NetworkAddressChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Net.NetworkInformation.NetworkAddressChangedEventHandler NetworkAddressChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.NetworkAddressChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク インターフェイスの IP アドレスが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.NetworkChange>クラスが生成<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>ネットワーク カードやアダプターなどとも呼ばれます、ネットワーク インターフェイスのアドレスが変更されたときにイベント。  
+  
+ <xref:System.Net.NetworkInformation.NetworkChange>オブジェクトがイベント処理メソッドを呼び出すときに、<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントが発生するを使用してメソッドを関連付ける必要があります、<xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler>を委任して、このイベントにこのデリゲートを追加します。  
+  
+ <xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントは、Windows 2000 以降でサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アドレスの変更および表示時にネットワークの状態インターフェイスをリッスンする<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントが発生します。  
+  
+ [!code-cpp[NclNetAddressChanged1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetAddressChanged1/CPP/changed.cpp#1)]
+ [!code-csharp[NclNetAddressChanged1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetAddressChanged1/CS/changed.cs#1)]
+ [!code-vb[NclNetAddressChanged1#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetAddressChanged1/VB/changed.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetworkAvailabilityChanged">
+      <MemberSignature Language="C#" Value="public static event System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler NetworkAvailabilityChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler NetworkAvailabilityChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワークの可用性が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.NetworkChange>クラスが生成<xref:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged>イベント、ネットワークの可用性が変更されたときにします。 ネットワーク使用可能なとが少なくとも 1 つのネットワーク インターフェイス「を」マーク トンネルまたはループバック インターフェイスではありません。  
+  
+ <xref:System.Net.NetworkInformation.NetworkChange>オブジェクトがイベント処理メソッドを呼び出すときに、<xref:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged>イベントが発生するを使用してメソッドを関連付ける必要があります、<xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>を委任して、このイベントにこのデリゲートを追加します。  
+  
+ <xref:System.Net.NetworkInformation.NetworkChange.NetworkAvailabilityChanged>イベントは、Windows 2000 以降でサポートされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterNetworkChange">
+      <MemberSignature Language="C#" Value="public static void RegisterNetworkChange (System.Net.NetworkInformation.NetworkChange nc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterNetworkChange(class System.Net.NetworkInformation.NetworkChange nc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkChange.RegisterNetworkChange(System.Net.NetworkInformation.NetworkChange)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nc" Type="System.Net.NetworkInformation.NetworkChange" />
+      </Parameters>
+      <Docs>
+        <param name="nc">登録するインスタンス。</param>
+        <summary>ネットワークの変更イベントを受信する、ネットワークの変更のインスタンスを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

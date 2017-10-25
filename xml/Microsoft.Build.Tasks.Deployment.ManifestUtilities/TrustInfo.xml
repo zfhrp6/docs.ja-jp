@@ -1,0 +1,450 @@
+<Type Name="TrustInfo" FullName="Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo">
+  <TypeSignature Language="C#" Value="public sealed class TrustInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TrustInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このクラスは、アプリケーションのセキュリティ信頼情報を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TrustInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo" /> オブジェクトを完全な信頼の既定の状態にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasUnmanagedCodePermission">
+      <MemberSignature Language="C#" Value="public bool HasUnmanagedCodePermission { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasUnmanagedCodePermission" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.HasUnmanagedCodePermission" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがアンマネージ コードを呼び出す権限を持っているかどうかを決定します。</summary>
+        <value>アプリケーションがアンマネージ コードを呼び出す権限を持っているかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「アプリケーション」は、マニフェストは読み取られて、アプリケーションを指します。 展開を読み取ることができますを使用してマニフェスト<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>または<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFullTrust">
+      <MemberSignature Language="C#" Value="public bool IsFullTrust { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFullTrust" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.IsFullTrust" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが完全信頼か部分信頼かを決定します。</summary>
+        <value>アプリケーションが完全信頼か部分信頼かを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「アプリケーション」は、マニフェストは読み取られて、アプリケーションを指します。 展開を読み取ることができますを使用してマニフェスト<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>または<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionSet">
+      <MemberSignature Language="C#" Value="public System.Security.PermissionSet PermissionSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.PermissionSet PermissionSet" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.PermissionSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの信頼のアクセス許可セット オブジェクトを取得または設定します。</summary>
+        <value>A<see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.PermissionSet" />のアプリケーションの信頼オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreserveFullTrustPermissionSet">
+      <MemberSignature Language="C#" Value="public bool PreserveFullTrustPermissionSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PreserveFullTrustPermissionSet" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.PreserveFullTrustPermissionSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全信頼フラグが設定されたときに部分信頼アクセス許可を保持するかどうかを取得または設定します。</summary>
+        <value>完全信頼フラグが設定されたときに部分信頼アクセス許可を保持するかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.IsFullTrust%2A>に設定されている`True`、すべてのアクセス許可の設定が削除されます。 アクセス許可を保持するには、このメソッドを呼び出すことができます (通常デザイン時) 中にこれらの設定を保持する場合は、場合でも、設定<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.IsFullTrust%2A>に設定されている`True`です。  
+  
+ `PreserveFullTrustPermissionSet`設定しないで`True`ClickOnce の配置の ClickOnce スキーマの要件に違反するためです。  
+  
+ このプロパティ設定されている場合`False`セット オブジェクトを削除するアクセス許可で定義されているアクセス許可し、指定すると、完全な信頼で保存時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public void Read (System.IO.Stream input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Read(class System.IO.Stream input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.Read(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input">入力ストリームを指定します。</param>
+        <summary>アプリケーションの信頼を XML ファイルから読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ストリームがだけ含める必要があります、 \<TrustInfo > セクションで、その他のデータはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public void Read (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Read(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.Read(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">入力ファイルの名前。</param>
+        <summary>アプリケーションの信頼を XML ファイルから読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ だけ、指定した文字列を含める必要があります、 \<TrustInfo > セクションで、その他のデータはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public void ReadManifest (System.IO.Stream input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadManifest(class System.IO.Stream input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input">入力ストリームを指定します。</param>
+        <summary>ClickOnce アプリケーション マニフェストからアプリケーションの信頼を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadManifest">
+      <MemberSignature Language="C#" Value="public void ReadManifest (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReadManifest(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">入力ファイルの名前。</param>
+        <summary>ClickOnce アプリケーション マニフェストからアプリケーションの信頼を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SameSiteAccess">
+      <MemberSignature Language="C#" Value="public string SameSiteAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SameSiteAccess" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.SameSiteAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが配置元サーバーと通信するアクセス許可を持っているかどうかを指定する、同一サイト アクセスの許可レベルを取得または設定します。</summary>
+        <value>同一サイト アクセスの許可レベルを示す文字列。 値を指定できます<see langword="site" />または<see langword="none" />です。  
+  
+ <see langword="site" />アプリケーションが元の配置です。 同じ URL に Web サービスを呼び出すことができますを指定します共有から展開されている場合、アプリケーションは、その共有からファイルを読み取る権限を持っています。  
+  
+ <see langword="none" />アプリケーションできますもサービスにアクセスできる Web 元となることが配置されたファイルにアクセスしたりが配置された共有から同じ url を指定します。  
+  
+ 「アプリケーション」は、マニフェストは読み取られて、アプリケーションを参照 (を使用して<see cref="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest(System.IO.Stream)" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「アプリケーション」は、マニフェストは読み取られて、アプリケーションを指します。 展開を読み取ることができますを使用してマニフェスト<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>または<xref:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ReadManifest%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションのセキュリティ信頼オブジェクトのすべての情報を文字列として返します。</summary>
+        <returns>アプリケーションのセキュリティ信頼オブジェクトの情報を格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (System.IO.Stream output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(class System.IO.Stream output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.Write(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="output">出力ストリームを指定します。</param>
+        <summary>アプリケーションの信頼を XML ファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけを更新、 \<TrustInfo > のみを含むファイルのセクション、 \<TrustInfo > セクションで、それ以外のものです。  
+  
+ 指定したストリームがだけ含める必要があります、 \<TrustInfo > セクションで、その他のデータはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">出力ファイルの名前。</param>
+        <summary>アプリケーションの信頼を XML ファイルに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけを更新、 \<TrustInfo > のみを含むファイルのセクション、 \<TrustInfo > セクションで、それ以外のものです。  
+  
+ だけ、指定した文字列を含める必要があります、 \<TrustInfo > セクションで、その他のデータはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteManifest">
+      <MemberSignature Language="C#" Value="public void WriteManifest (System.IO.Stream output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteManifest(class System.IO.Stream output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.WriteManifest(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="output">更新したマニフェスト ファイルの書き込み先の出力ストリームを指定します。</param>
+        <summary>アプリケーションの信頼を新しいテンプレート ClickOnce アプリケーション マニフェストに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけを更新、 \<TrustInfo > だけ、最上位マニフェスト ヘッダーを含むファイルのセクションで、 \<TrustInfo > セクション、およびその他に何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteManifest">
+      <MemberSignature Language="C#" Value="public void WriteManifest (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteManifest(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.WriteManifest(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">出力ファイルの名前。</param>
+        <summary>ClickOnce アプリケーション マニフェストにアプリケーションの信頼を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけを更新、 \<TrustInfo > だけ、最上位マニフェスト ヘッダーを含むファイルのセクションで、 \<TrustInfo > セクション、およびその他に何も行われません。  
+  
+ このメソッドのオーバー ロードはインプレースでファイルを更新 (つまり、入力ファイルが出力ファイルと同じ)。 ファイルが存在する場合は、信頼セクションが更新されます。 ファイルが存在しない場合は、指定された信頼を使用して新しいテンプレート マニフェストが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteManifest">
+      <MemberSignature Language="C#" Value="public void WriteManifest (System.IO.Stream input, System.IO.Stream output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteManifest(class System.IO.Stream input, class System.IO.Stream output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.TrustInfo.WriteManifest(System.IO.Stream,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.IO.Stream" />
+        <Parameter Name="output" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input">更新するマニフェストを格納している入力ストリームを指定します。</param>
+        <param name="output">更新したマニフェスト ファイルの書き込み先の出力ストリームを指定します。</param>
+        <summary>既存の ClickOnce アプリケーション マニフェストを、指定した信頼で更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドだけを更新、 \<TrustInfo > だけ、最上位マニフェスト ヘッダーを含むファイルのセクションで、 \<TrustInfo > セクション、およびその他に何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

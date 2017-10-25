@@ -1,0 +1,283 @@
+<Type Name="WorkflowService" FullName="System.ServiceModel.Activities.WorkflowService">
+  <TypeSignature Language="C#" Value="public class WorkflowService : System.Activities.Debugger.IDebuggableWorkflowTree" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowService extends System.Object implements class System.Activities.Debugger.IDebuggableWorkflowTree" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.WorkflowService" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Activities.Debugger.IDebuggableWorkflowTree</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Body")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー サービスのプロパティを作成、構成、およびアクセスできるようになります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.WorkflowService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowBufferedReceive">
+      <MemberSignature Language="C#" Value="public bool AllowBufferedReceive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowBufferedReceive" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.AllowBufferedReceive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー サービスのバッファーされた受信処理が受信メッセージに対して有効になっているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />受信の着信メッセージに対して有効になっている処理のワークフロー サービスがバッファリングされる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファーされた受信機能により、ワークフロー サービスでは、複雑な有害メッセージ処理を使用せずに、順番を無視したメッセージを処理できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Body { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Body" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー サービスのアクティビティ ツリーを取得または設定します。</summary>
+        <value>このワークフロー サービスのアクティビティ ツリー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationName">
+      <MemberSignature Language="C#" Value="public string ConfigurationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.ConfigurationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー サービスの構成名を取得または設定します。</summary>
+        <value>ワークフロー サービスの構成名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefinitionIdentity">
+      <MemberSignature Language="C#" Value="public System.Activities.WorkflowIdentity DefinitionIdentity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.WorkflowIdentity DefinitionIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.DefinitionIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.WorkflowIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワークフロー サービスの定義 id を設定します。</summary>
+        <value>ワークフロー サービスの定義 id。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Endpoints">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Endpoint&gt; Endpoints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Endpoint&gt; Endpoints" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.Endpoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Endpoint&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー サービスのエンドポイントのコレクションを取得します。</summary>
+        <value>このワークフロー サービスのエンドポイントのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContractDescriptions">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.ServiceModel.Description.ContractDescription&gt; GetContractDescriptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, class System.ServiceModel.Description.ContractDescription&gt; GetContractDescriptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowService.GetContractDescriptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.ServiceModel.Description.ContractDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントラクト名によってキー指定されたコントラクトの説明のディクショナリを返します。</summary>
+        <returns>コントラクト名によってキー指定されたコントラクトの説明のディクショナリ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowRoot">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity GetWorkflowRoot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Activity GetWorkflowRoot() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowService.GetWorkflowRoot" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクティビティ ツリーのルートを返します。</summary>
+        <returns>アクティビティ ツリーのルート。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImplementedContracts">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;Type&gt; ImplementedContracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Type&gt; ImplementedContracts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.ImplementedContracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Type&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー サービスによって実装されるコントラクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ObjectModel.Collection`1" />ワークフロー サービスによって実装されるコントラクトを含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public System.Xml.Linq.XName Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Linq.XName Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.XamlIntegration.ServiceXNameTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Linq.XName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー サービスの名前を <see cref="T:System.Xml.Linq.XName" /> オブジェクトとして取得または設定します。</summary>
+        <value>ワークフロー サービスの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateMaps">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Activities.WorkflowIdentity,System.Activities.DynamicUpdate.DynamicUpdateMap&gt; UpdateMaps { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Activities.WorkflowIdentity, class System.Activities.DynamicUpdate.DynamicUpdateMap&gt; UpdateMaps" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.WorkflowService.UpdateMaps" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Activities.WorkflowIdentity,System.Activities.DynamicUpdate.DynamicUpdateMap&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的更新マップを取得します。</summary>
+        <value>A<see cref="T:System.Collections.Generic.IDictionary`2" />動的更新を表すオブジェクトをマップします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public System.Activities.Validation.ValidationResults Validate (System.Activities.Validation.ValidationSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Activities.Validation.ValidationResults Validate(class System.Activities.Validation.ValidationSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.WorkflowService.Validate(System.Activities.Validation.ValidationSettings)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Validation.ValidationResults</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Activities.Validation.ValidationSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">検証プロセスの動作をカスタマイズするカスタム設定。</param>
+        <summary>検証ロジックに従ってワークフロー サービスが正しく構成されていることを確認します。</summary>
+        <returns>検証エラーと検証プロセスの結果として、検証の警告のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

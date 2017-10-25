@@ -1,0 +1,339 @@
+<Type Name="ManipulationDeltaEventArgs" FullName="System.Windows.Input.ManipulationDeltaEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ManipulationDeltaEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManipulationDeltaEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationDeltaEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.UIElement.ManipulationDelta" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDeltaEventArgs>クラスには、操作の位置の変更に関するデータが含まれています。 <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>プロパティには、最後に発生した変更が含まれています。<xref:System.Windows.UIElement.ManipulationDelta>イベントが発生しました。 <xref:System.Windows.Input.ManipulationDeltaEventArgs.CumulativeManipulation%2A>プロパティには、現在の操作で発生した合計の変更が含まれています。 これらのプロパティのいずれかを使用して、操作のオブジェクトを変換します。  
+  
+ 操作を終了するには、呼び出すことによって、<xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A>メソッドまたは操作を呼び出して慣性を強制的に、<xref:System.Windows.Input.ManipulationDeltaEventArgs.StartInertia%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。 この例では、<xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 例も確認するかどうか、<xref:System.Windows.UIElement.ManipulationDelta>慣性とウィンドウの端を四角形がかどうかに触れることの間にイベントが発生しました。 このような場合に当てはまる場合、アプリケーションを四角形がアプリケーションの表示領域を終了するを防ぐために操作を停止します。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDeltaEventArgs.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>操作をキャンセルします。</summary>
+        <returns>
+          <see langword="true" />操作が正常にキャンセルされた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが成功すると、既定値<xref:System.Windows.Input.TouchDevice>将来操作イベントが発生しないとタッチ イベントとマウスまたはマウス移動イベント要素の前に送信します。 タッチの場合、マウス イベントに昇格できません、<xref:System.Windows.UIElement.ManipulationCompleted>慣性中にイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public void Complete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDeltaEventArgs.Complete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>慣性なし操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことができます、<xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A>メソッドを操作を終了します。 たとえば、オブジェクトには、ウィンドウの端に達すると、呼び出せます<xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A>をオブジェクトが画面の外に移動するを防ぐためにします。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。 例のチェックするかどうか、<xref:System.Windows.UIElement.ManipulationDelta>慣性とウィンドウの端を四角形がかどうかに触れることの間にイベントが発生しました。 このような場合に当てはまる場合、アプリケーションを四角形がアプリケーションの表示領域を終了するを防ぐために操作を停止します。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CumulativeManipulation">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationDelta CumulativeManipulation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ManipulationDelta CumulativeManipulation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.CumulativeManipulation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationDelta</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の操作の累積された変更を取得します。</summary>
+        <value>現在の操作の累積された変更します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDeltaEventArgs.CumulativeManipulation%2A>プロパティには、現在の操作で発生した合計の変更が含まれています。 使用することができます<xref:System.Windows.Input.ManipulationDeltaEventArgs.CumulativeManipulation%2A>に操作されたオブジェクトを変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeltaManipulation">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationDelta DeltaManipulation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ManipulationDelta DeltaManipulation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationDelta</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の操作の最新の変更を取得します。</summary>
+        <value>現在の操作の最新の変更。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>プロパティには、最後に発生した変更が含まれています。<xref:System.Windows.UIElement.ManipulationDelta>イベントが発生しました。 このプロパティを使用して、操作のオブジェクトを変換することができます。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。 この例では、<xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A>プロパティを移動、サイズ変更、および回転を<xref:System.Windows.Shapes.Rectangle>です。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDeltaEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInertial">
+      <MemberSignature Language="C#" Value="public bool IsInertial { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInertial" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.IsInertial" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="E:System.Windows.UIElement.ManipulationDelta" />慣性中にイベントが発生します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="E:System.Windows.UIElement.ManipulationDelta" />慣性; 中に発生するイベント<see langword="false" /> 、ユーザーが連絡先があるときにイベントが発生したかどうか、<see cref="T:System.Windows.UIElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 決定するこのメソッドを使用するかどうか、<xref:System.Windows.UIElement.ManipulationDelta>慣性のユーザーが連絡先を受け取る要素があるときに、またはイベントが発生、<xref:System.Windows.UIElement.ManipulationDelta>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>イベント。 例のチェックするかどうか、<xref:System.Windows.UIElement.ManipulationDelta>慣性とウィンドウの端を四角形がかどうかに触れることの間にイベントが発生しました。 このような場合に当てはまる場合、アプリケーションを四角形がアプリケーションの表示領域を終了するを防ぐために操作を停止します。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
+ [!code-vb[BasicManipulation#ManipulationDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManipulationContainer">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement ManipulationContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement ManipulationContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.ManipulationContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の座標を定義するコンテナーを取得します。</summary>
+        <value>操作の座標を定義するコンテナー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManipulationOrigin">
+      <MemberSignature Language="C#" Value="public System.Windows.Point ManipulationOrigin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point ManipulationOrigin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.ManipulationOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の発生元となるポイントを取得します。</summary>
+        <value>操作の発生元となるポイントです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Manipulators">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt; Manipulators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Input.IManipulator&gt; Manipulators" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.Manipulators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作のタッチの連絡先を表すオブジェクトのコレクションを取得します。</summary>
+        <value>操作のタッチの連絡先を表すオブジェクトのコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportBoundaryFeedback">
+      <MemberSignature Language="C#" Value="public void ReportBoundaryFeedback (System.Windows.Input.ManipulationDelta unusedManipulation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReportBoundaryFeedback(class System.Windows.Input.ManipulationDelta unusedManipulation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback(System.Windows.Input.ManipulationDelta)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unusedManipulation" Type="System.Windows.Input.ManipulationDelta" />
+      </Parameters>
+      <Docs>
+        <param name="unusedManipulation">操作の部分を表す境界の外側に移動します。</param>
+        <summary>操作が特定の境界を越えてになったことを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A>メソッド要素が特定の境界を越えて移動されたことを示すためにします。  たとえば、ユーザーが要素の境界外に移動、<xref:System.Windows.Window>ウィンドウを報告するには、このメソッドを呼び出すことができます。  呼び出すと<xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A>、<xref:System.Windows.UIElement.ManipulationBoundaryFeedback>イベントが発生します。  既定では、<xref:System.Windows.Window>をサブスクライブしている、<xref:System.Windows.UIElement.ManipulationBoundaryFeedback>境界に達していることをユーザーに視覚的なフィードバックを提供するイベントです。  サブスクライブする<xref:System.Windows.UIElement.ManipulationBoundaryFeedback>カスタム動作を実装します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Windows.UIElement.ManipulationDelta>を呼び出すイベント、<xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A>メソッドと、ユーザーが、要素をそのコンテナーの端の上に移動します。  この例をテストする手順を[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)し、手順 5 でコードを次のコードに置き換えます。  
+  
+ [!code-csharp[BasicManipulation#ReportBoundaryFeedback](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/reportboundaryfeedbackexample.xaml.cs#reportboundaryfeedback)]
+ [!code-vb[BasicManipulation#ReportBoundaryFeedback](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/reportboundaryfeedbackexample.xaml.vb#reportboundaryfeedback)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="unusedManipulation" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartInertia">
+      <MemberSignature Language="C#" Value="public void StartInertia ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartInertia() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationDeltaEventArgs.StartInertia" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>後続の連絡先の動きを無視して、発生して操作に慣性を起動、<see cref="E:System.Windows.UIElement.ManipulationInertiaStarting" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Velocities">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationVelocities Velocities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ManipulationVelocities Velocities" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationDeltaEventArgs.Velocities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationVelocities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作に対する最新の変更の速度を取得します。</summary>
+        <value>操作に対する最新の変更の速度です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

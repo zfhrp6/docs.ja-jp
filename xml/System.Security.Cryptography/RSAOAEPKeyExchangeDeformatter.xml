@@ -1,0 +1,243 @@
+<Type Name="RSAOAEPKeyExchangeDeformatter" FullName="System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter">
+  <TypeSignature Language="C#" Value="public class RSAOAEPKeyExchangeDeformatter : System.Security.Cryptography.AsymmetricKeyExchangeDeformatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RSAOAEPKeyExchangeDeformatter extends System.Security.Cryptography.AsymmetricKeyExchangeDeformatter" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.AsymmetricKeyExchangeDeformatter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>OAEP (最適非対称暗号化パディング) キー交換データを複合化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの交換は、たとえば秘密情報を作成するセンダ、対称暗号化アルゴリズムのキーとして使用でき、目的の受信者に送信する暗号化を使用するランダムなデータを許可します。  
+  
+ 使用して<xref:System.Security.Cryptography.RSAOAEPKeyExchangeFormatter>とキー交換メッセージを作成する、<xref:System.Security.Cryptography.RSA>アルゴリズムです。  
+  
+> [!CAUTION]
+>  操作の多くの詳細については、キーの交換を成功させるために慎重に行う必要があるために、独自のキーの交換方法を指定すると、基本的な機能から作成していないしようとするを強くお勧めします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter>をメッセージの解読に使用する交換キーを再作成するクラス。  
+  
+ [!code-csharp[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.cryptography.rsaoaepkeyexchangedeformatter2/cs/program.cs#1)]
+ [!code-vb[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.security.cryptography.rsaoaepkeyexchangedeformatter2/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RSAOAEPKeyExchangeDeformatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.SetKey%2A>を呼び出す前に、キーを確立する<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.DecryptKeyExchange%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RSAOAEPKeyExchangeDeformatter (System.Security.Cryptography.AsymmetricAlgorithm key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.AsymmetricAlgorithm key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.AsymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="key">インスタンス、<see cref="T:System.Security.Cryptography.RSA" />秘密キーを保持するアルゴリズム。</param>
+        <summary>指定したキーで、<see cref="T:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptKeyExchange">
+      <MemberSignature Language="C#" Value="public override byte[] DecryptKeyExchange (byte[] rgbData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance unsigned int8[] DecryptKeyExchange(unsigned int8[] rgbData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.DecryptKeyExchange(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbData">機密情報が非表示にされるキー交換データ。</param>
+        <summary>暗号化されたキー交換データから機密情報を抽出します。</summary>
+        <returns>キー交換データから派生する機密情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前に、キーを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.DecryptKeyExchange%2A>をメッセージの送信者から、交換キーを再作成するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.RSAPKCS1KeyExchangeDeformatter>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.cryptography.rsaoaepkeyexchangedeformatter2/cs/program.cs#3)]
+ [!code-vb[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.security.cryptography.rsaoaepkeyexchangedeformatter2/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">キー交換データの検証に失敗しました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicUnexpectedOperationException">キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public override string Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OAEP (最適非対称暗号化パディング) キー交換のパラメーターを取得します。</summary>
+        <value>OAEP キーの交換操作のパラメーターを含む XML 文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.Parameters%2A>パラメーターの XML 表現を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.RSAOAEPKeyExchangeDeformatter/CPP/rsaencoder.cpp#12)]
+ [!code-csharp[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.RSAOAEPKeyExchangeDeformatter/CS/rsaencoder.cs#12)]
+ [!code-vb[System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.RSAOAEPKeyExchangeDeformatter/VB/rsaencoder.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKey">
+      <MemberSignature Language="C#" Value="public override void SetKey (System.Security.Cryptography.AsymmetricAlgorithm key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetKey(class System.Security.Cryptography.AsymmetricAlgorithm key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.AsymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="key">インスタンス、<see cref="T:System.Security.Cryptography.RSA" />秘密キーを保持するアルゴリズム。</param>
+        <summary>機密情報の復号化に使用する秘密キーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前にキーを設定する必要があります<xref:System.Security.Cryptography.RSAOAEPKeyExchangeDeformatter.DecryptKeyExchange%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

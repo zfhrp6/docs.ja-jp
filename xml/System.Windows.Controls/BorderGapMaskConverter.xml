@@ -1,0 +1,119 @@
+<Type Name="BorderGapMaskConverter" FullName="System.Windows.Controls.BorderGapMaskConverter">
+  <TypeSignature Language="C#" Value="public class BorderGapMaskConverter : System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BorderGapMaskConverter extends System.Object implements class System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.BorderGapMaskConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IMultiValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ディメンションを変換するコンバーターを表す、<see cref="T:System.Windows.Controls.GroupBox" />にコントロールを<see cref="T:System.Windows.Media.VisualBrush" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.VisualBrush>コンバーターによって作成された適用、<xref:System.Windows.UIElement.OpacityMask%2A>を<xref:System.Windows.Controls.Border>の<xref:System.Windows.Controls.GroupBox>に対して定義されている領域の表示がされないように、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>の<xref:System.Windows.Controls.GroupBox>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BorderGapMaskConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BorderGapMaskConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.BorderGapMaskConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object[] values, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BorderGapMaskConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="values">3 つの数値を表す配列、<see cref="T:System.Windows.Controls.GroupBox" />パラメーターを制御します。</param>
+        <param name="targetType">このパラメーターは使用されません。</param>
+        <param name="parameter">左側に表示されている行の幅、<see cref="P:System.Windows.Controls.HeaderedContentControl.Header" />で、<see cref="T:System.Windows.Controls.GroupBox" />です。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.VisualBrush" />の境界線を描画する、<see cref="T:System.Windows.Controls.GroupBox" />コントロール。</summary>
+        <returns>A<see cref="T:System.Windows.Media.VisualBrush" />の周りの境界線を描画する、<see cref="T:System.Windows.Controls.GroupBox" />のギャップを含むコントロール、<see cref="P:System.Windows.Controls.HeaderedContentControl.Header" />コンテンツ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内にある 3 つの数値、`values`パラメーターは、次を表す<xref:System.Windows.Controls.GroupBox>パラメーターを制御します。  
+  
+-   幅、 <xref:System.Windows.Controls.GroupBox> <xref:System.Windows.Controls.HeaderedContentControl.Header%2A>コンテンツ。  
+  
+-   幅、<xref:System.Windows.Controls.GroupBox>コントロール。  
+  
+-   高さ、<xref:System.Windows.Controls.GroupBox>コントロール。  
+  
+ 次の図は、のグラフィカル表現を提供する、`values`パラメーター。  
+  
+ ![GroupBox と Convert メソッドの値](~/add/media/bordergapmaskconverterillustration.png "A GroupBox と Convert メソッドの値")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object[] ConvertBack (object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ConvertBack(object value, class System.Type[] targetTypes, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.BorderGapMaskConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetTypes" Type="System.Type[]" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">このパラメーターは使用されません。</param>
+        <param name="targetTypes">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>実装されていません。</summary>
+        <returns>
+          常に <see cref="F:System.Windows.Data.Binding.DoNothing" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

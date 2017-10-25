@@ -1,0 +1,428 @@
+<Type Name="MessageSecurityVersion" FullName="System.ServiceModel.MessageSecurityVersion">
+  <TypeSignature Language="C#" Value="public abstract class MessageSecurityVersion" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract MessageSecurityVersion extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageSecurityVersion" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Security</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまな静的プロパティを使用して実装するときに、セキュリティ コンポーネントのバージョン情報を格納する抽象コンテナー クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、トークンのシリアル化をカスタマイズするための拡張ポイントです。  
+  
+ このクラスは、バインディングでサポートする必要があるセキュリティ仕様 (WS-Security、WS-Trust、WS-Secure Conversation、および WS-Security Policy) のバージョンに関する情報を提供するシングルトンです。  
+  
+ このクラスには、7 つの `static` プロパティが含まれ、それぞれがこのクラスのインスタンスを返します。 これらのプロパティは、それぞれがセキュリティ仕様バージョンの異なる組み合わせを表します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスに対する <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しの中でパラメーターとして使用されます。 <xref:System.ServiceModel.MessageSecurityVersion.Default%2A> プロパティを渡す場合は、標準バージョンのバインド要素を作成します。 非標準バージョンを作成するには、使用するバージョンと一致するプロパティを渡します。  
+  
+ このクラスには、前のインスタンスによって実装される `abstract` プロパティも格納されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BasicSecurityProfileVersion">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Security.BasicSecurityProfileVersion BasicSecurityProfileVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.BasicSecurityProfileVersion BasicSecurityProfileVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.BasicSecurityProfileVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.BasicSecurityProfileVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本セキュリティ プロファイルのバージョン情報を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.BasicSecurityProfileVersion" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すので、このプロパティに異なる値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion Default" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のメッセージ セキュリティのバージョン情報を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" />を既定のメッセージ セキュリティを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のセキュリティ仕様は、WS-Security 1.1、WSTrust (2005 年 2 月版)、WSSecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 です。  
+  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureConversationVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecureConversationVersion SecureConversationVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecureConversationVersion SecureConversationVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.SecureConversationVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecureConversationVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンに対応する WS-SecureConversation バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecureConversationVersion" />メッセージ セキュリティ バージョンに対応するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すため、このプロパティに異なる値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityPolicyVersion">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Security.SecurityPolicyVersion SecurityPolicyVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityPolicyVersion SecurityPolicyVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.SecurityPolicyVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityPolicyVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンに対応する WS-SecurityPolicy バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityPolicyVersion" />メッセージ セキュリティ バージョンに対応するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すため、このプロパティに異なる値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenVersion">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenVersion SecurityTokenVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenVersion SecurityTokenVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.SecurityTokenVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンに対応するセキュリティ トークン バージョンを取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.SecurityTokenVersion" />メッセージ セキュリティ バージョンに対応するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すため、このプロパティに異なる値を返します。  
+  
+ このプロパティを使用して、トークンをシリアル化できるトークン シリアライザー インスタンスの  <xref:System.IdentityModel.Selectors.SecurityTokenVersion> に定義されたトークン シリアライザー ファクトリ インターフェイスを照会します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityVersion SecurityVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityVersion SecurityVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.SecurityVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンに対応する WS-Security バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityVersion" />メッセージ セキュリティ バージョンに対応するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すため、このプロパティに異なる値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.TrustVersion TrustVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.TrustVersion TrustVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.TrustVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.TrustVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ セキュリティのバージョンに対応する WS-Trust バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.TrustVersion" />メッセージ セキュリティ バージョンに対応するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、7 つの静的プロパティから返される、このクラスのインスタンスによって実装されます。 各実装は、仕様バージョンの異なる組み合わせを表すため、このプロパティに異なる値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity10WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity10WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity10WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security 1.0、WS-Trust 1.3、WS-SecureConversation 1.3、および WS-SecurityPolicy 1.2 の各セキュリティ仕様に基づく Basic Security Profile 1.0 を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Basic Security Profile 1.0 を必要とするオブジェクトが Ws-security 1.0、Ws-trust 1.3、Ws-secureconversation 1.3、Ws-securitypolicy 1.2 のセキュリティ仕様に基づいています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity10WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security 1.0、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく Basic Security Profile 1.0 を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Ws-security 1.0、Ws-trust の 2005 年 2 月、Ws-secureconversation の 2005 年 2 月、および Ws-securitypolicy 1.1 の各セキュリティ仕様に基づいて Basic Security Profile 1.0 を必要とするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security 1.1、WS-Trust 1.3、WS-SecureConversation 1.3、および WS-SecurityPolicy 1.2 の各セキュリティ仕様を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Ws-security 1.1、Ws-trust 1.3、Ws-secureconversation 1.3、Ws-securitypolicy 1.2 セキュリティ仕様を必要とするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrust13WSSecureConversation13WSSecurityPolicy12BasicSecurityProfile10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security1.1、WS-Trust 1.3、WS-SecureConversation 1.3、WS-SecurityPolicy 1.2、および BasicSecurityProfile 1.0 の各セキュリティ仕様を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Ws-security1.1、Ws-trust 1.3、Ws-secureconversation 1.3、Ws-securitypolicy 1.2、および BasicSecurityProfile 1.0 セキュリティ仕様を必要とするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様を必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Ws-security 1.1、Ws-trust の 2005 年 2 月、Ws-secureconversation の 2005 年 2 月、および Ws-securitypolicy 1.1 の各セキュリティ仕様を必要とするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.MessageSecurityVersion WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityVersion.WSSecurity11WSTrustFebruary2005WSSecureConversationFebruary2005WSSecurityPolicy11BasicSecurityProfile10" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WS-Security 1.1、WS-Trust (2005 年 2 月版)、WS-SecureConversation (2005 年 2 月版)、および WS-SecurityPolicy 1.1 の各セキュリティ仕様に基づく基本セキュリティ プロファイルを必要とするメッセージ セキュリティ バージョンを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.MessageSecurityVersion" /> Ws-security 1.1、Ws-trust の 2005 年 2 月、Ws-secureconversation の 2005 年 2 月、および Ws-securitypolicy 1.1 の各セキュリティ仕様に基づいて基本セキュリティ プロファイルを必要とするオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この静的プロパティは、このクラスのインスタンスを返します。 このクラスのインスタンスは、`Create…CertificateBindingElement` クラスの <xref:System.ServiceModel.Channels.SecurityBindingElement> メソッド呼び出しでパラメーターとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

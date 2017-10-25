@@ -1,0 +1,201 @@
+<Type Name="OrderByExpression" FullName="System.Web.UI.WebControls.Expressions.OrderByExpression">
+  <TypeSignature Language="C#" Value="public class OrderByExpression : System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit OrderByExpression extends System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.OrderByExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.DataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true, "ThenByExpressions")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>並べ替え式を適用する方法を提供する<see cref="T:System.Linq.IQueryable" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.OrderByExpression>クラスが使用されて、<xref:System.Web.UI.WebControls.QueryExtender>コントロールにデータを昇順または降順で並べ替えます。 並べ替えは、要素の型の既定の比較演算子によって実行されます。  
+  
+ <xref:System.Web.UI.WebControls.QueryExtender>コントロールは、さまざまなデータをフィルター処理に使用できるオプションをサポートしています。 フィルター オプションを使用した後に行うこともできます、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression>オブジェクト データの並べ替えにします。  
+  
+ 使用して並べ替えるデータ フィールドを指定する、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.DataField%2A>プロパティです。 使用して並べ替えの方向を指定する、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.Direction%2A>プロパティです。 後に、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression>オブジェクトが、データ ソースに適用されて、使用することができます、<xref:System.Web.UI.WebControls.Expressions.ThenBy>を別のデータ フィールドに、後続の並べ替えを実行する式。  
+  
+   
+  
+## Examples  
+ 次の例で指定されている文字列で始まる名前を持つ製品用の AdventureWorks データベースの Products テーブルを検索する方法を示しています、`SearchTextBox`テキスト ボックス。 <xref:System.Web.UI.WebControls.Expressions.OrderByExpression>オブジェクトには、ListPrice データ フィールドの順序を降順と昇順に製品 ID フィールドのデータが並べ替えられます。 返されるクエリの結果、<xref:System.Web.UI.WebControls.LinqDataSource>でコントロールが表示される、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ このコード例で提供されている長い例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.OrderByExpression.DataField" /> プロパティが <see langword="null" /> です。</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OrderByExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.OrderByExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Expressions.OrderByExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataField">
+      <MemberSignature Language="C#" Value="public string DataField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.OrderByExpression.DataField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のプロパティ、<see cref="T:System.Linq.IQueryable" />で並べ替えを行うオブジェクト。</summary>
+        <value>プロパティ、<see cref="T:System.Linq.IQueryable" />データ ソース オブジェクトを並べ替えます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.OrderByExpression>オブジェクトには、データ フィールドのデータが並べ替えられます。 後続の並べ替え操作は別のデータ フィールドを使用して、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.ThenByExpressions%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、降順で ListPrice フィールド順で昇順に製品 ID フィールドのデータを並べ替える方法を示します。 このコード例で提供されている長い例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:OrderByExpression DataField="ListPrice"   
+    Direction="Descending">  
+  <asp:ThenBy DataField="ProductID" Direction="Ascending"/>  
+</asp:OrderByExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.SortDirection Direction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.SortDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.OrderByExpression.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SortDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定の並べ替えの方向、<see cref="T:System.Linq.IQueryable" />データ ソース オブジェクト。</summary>
+        <value>データ ソース オブジェクトの並べ替え方向。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.OrderByExpression>クラスが使用されて、<xref:System.Web.UI.WebControls.QueryExtender>コントロールにデータを昇順または降順で並べ替えます。 使用して、並べ替え操作の方向が指定されて、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.Direction%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、降順で ListPrice フィールド順で昇順に ProductID のフィールドのデータを並べ替える方法を示します。 このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:OrderByExpression DataField="ListPrice"   
+    Direction="Descending">  
+  <asp:ThenBy DataField="ProductID" Direction="Ascending"/>  
+</asp:OrderByExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.OrderByExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">並べ替えを適用するデータ ソースを指定します。</param>
+        <summary>並べ替え式を適用、<see cref="T:System.Linq.IQueryable" />オブジェクトに基づいて、<see cref="P:System.Web.UI.WebControls.Expressions.OrderByExpression.DataField" />値と<see cref="P:System.Web.UI.WebControls.Expressions.OrderByExpression.Direction" />値。</summary>
+        <returns>式が適用されていたデータ ソースのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThenByExpressions">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Web.UI.WebControls.Expressions.ThenBy&gt; ThenByExpressions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Web.UI.WebControls.Expressions.ThenBy&gt; ThenByExpressions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.OrderByExpression.ThenByExpressions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Web.UI.WebControls.Expressions.ThenBy&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.Web.UI.WebControls.Expressions.ThenBy" />式を適用した後、<see cref="T:System.Web.UI.WebControls.Expressions.OrderByExpression" />値が、データ ソースに適用します。</summary>
+        <value>コレクション<see cref="T:System.Web.UI.WebControls.Expressions.ThenBy" />式を適用した後、<see cref="T:System.Web.UI.WebControls.Expressions.OrderByExpression" />は、データ ソースに適用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して操作を実行する、並べ替えの後、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression>で、<xref:System.Web.UI.WebControls.QueryExtender>制御、後続の並べ替えを使用して操作を実行することができます、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.ThenByExpressions%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、降順で ListPrice フィールド順で昇順に順序を使用して、製品 ID フィールドのデータを並べ替える方法を示しています、<xref:System.Web.UI.WebControls.Expressions.OrderByExpression.ThenByExpressions%2A>です。 このコード例で提供されている長い例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:OrderByExpression DataField="ListPrice"   
+    Direction="Descending">  
+  <asp:ThenBy DataField="ProductID" Direction="Ascending"/>  
+</asp:OrderByExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

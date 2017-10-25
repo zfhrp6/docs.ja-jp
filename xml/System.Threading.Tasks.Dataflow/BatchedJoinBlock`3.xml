@@ -1,0 +1,474 @@
+<Type Name="BatchedJoinBlock&lt;T1,T2,T3&gt;" FullName="System.Threading.Tasks.Dataflow.BatchedJoinBlock&lt;T1,T2,T3&gt;">
+  <TypeSignature Language="C#" Value="public sealed class BatchedJoinBlock&lt;T1,T2,T3&gt; : System.Threading.Tasks.Dataflow.IReceivableSourceBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;, System.Threading.Tasks.Dataflow.ISourceBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BatchedJoinBlock`3&lt;T1, T2, T3&gt; extends System.Object implements class System.Threading.Tasks.Dataflow.IDataflowBlock, class System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt;, class System.Threading.Tasks.Dataflow.ISourceBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T1" />
+    <TypeParameter Name="T2" />
+    <TypeParameter Name="T3" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Threading.Tasks.Dataflow.IReceivableSourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T1">ブロックの最初のターゲットで受け入れられるデータの種類を指定します。</typeparam>
+    <typeparam name="T2">ブロックの 2 つ目のターゲットで受け入れられるデータの種類を指定します。</typeparam>
+    <typeparam name="T3">ブロックの 3 つ目のターゲットで受け入れられるデータの種類を指定します。</typeparam>
+    <summary>1 つ以上のターゲットに適用された、型が異なる可能性のある指定された数の入力をバッチ処理するデータフロー ブロックを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BatchedJoinBlock (int batchSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 batchSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="batchSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="batchSize">バッチにグループ化する項目の数。</param>
+        <summary>新しい初期化<see cref="T:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3" />指定の構成を持つ。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="batchSize" />正である必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BatchedJoinBlock (int batchSize, System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions dataflowBlockOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 batchSize, class System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions dataflowBlockOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.#ctor(System.Int32,System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="batchSize" Type="System.Int32" />
+        <Parameter Name="dataflowBlockOptions" Type="System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions" />
+      </Parameters>
+      <Docs>
+        <param name="batchSize">バッチにグループ化する項目の数。</param>
+        <param name="dataflowBlockOptions">この構成に使用するオプション<see cref="T:System.Threading.Tasks.Dataflow.BatchedJoinBlock`2" />です。</param>
+        <summary>新しい初期化<see cref="T:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3" />指定の構成を持つ。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="batchSize" />正である必要があります。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="dataflowBlockOptions" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BatchSize">
+      <MemberSignature Language="C#" Value="public int BatchSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BatchSize" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.BatchSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって生成されたバッチのサイズを取得<see cref="T:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3" />です。</summary>
+        <value>バッチ サイズです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public void Complete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Complete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.Complete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>信号を<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />ことにする必要がありますいないを受け入れるも、これ以上メッセージを生成もより延期されたメッセージを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603.Complete%2A>されましたデータフロー ブロックで呼び出されると、そのブロックが完了してその<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603.Completion%2A>タスクは、以前使用可能なすべてのデータを処理した後に、最終的な状態になる、します。 <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603.Complete%2A>発生すると、完了の待機をブロックしませんではなく、要求が開始されますが、実行すると、完了するまで待って、<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603.Completion%2A>タスクを使用することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completion">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task Completion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Task Completion" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.Completion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.Task" />非同期操作や、データ フロー ブロックの完了を表すです。</summary>
+        <value>タスクです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フロー ブロックは、それが処理中でないメッセージと、これ以上メッセージが処理されることを保証がされているときに完了したと見なされます。 返された<xref:System.Threading.Tasks.Task>関連するブロックが完了した場合は、完了した状態に遷移します。 移行、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.RanToCompletion>ブロックには、データ フロー ブロックのに従って正常に処理が完了したときの状態には、セマンティクスが定義されている場合に移行、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.Faulted>状態、データ フロー ブロックが未処理の例外によって処理の途中で処理を完了に移行すると、 <xref:System.Threading.Tasks.TaskStatus> <xref:System.Threading.Tasks.TaskStatus.Canceled>データ フロー ブロックには、キャンセル要求を受信したため途中で処理が完了したときの状態。 タスクが完了した場合、<xref:System.Threading.Tasks.TaskStatus.Faulted>状態、その`Exception`が返される、<xref:System.AggregateException>が失敗するブロックを引き起こした 1 つまたは複数の例外を含んでいます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkTo">
+      <MemberSignature Language="C#" Value="public IDisposable LinkTo (System.Threading.Tasks.Dataflow.ITargetBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; target, System.Threading.Tasks.Dataflow.DataflowLinkOptions linkOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IDisposable LinkTo(class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt; target, class System.Threading.Tasks.Dataflow.DataflowLinkOptions linkOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.LinkTo(System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}},System.Threading.Tasks.Dataflow.DataflowLinkOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+        <Parameter Name="linkOptions" Type="System.Threading.Tasks.Dataflow.DataflowLinkOptions" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />にすると、このソースに接続します。</param>
+        <param name="linkOptions">
+          <see langword="true" />場合は正常に 1 つのメッセージを伝達した後、ソース ターゲットからリンクを解除する必要があります。<see langword="false" /> 1 つのメッセージが反映された後でも、接続されたままにします。</param>
+        <summary>リンク、<see cref="T:System.Threading.Tasks.Dataflow.ISourceBlock`1" />を指定した<see cref="T:System.Threading.Tasks.Dataflow.ITargetBlock`1" />です。</summary>
+        <returns>、Dispose を呼び出すことによって、ターゲットからソースを解除する IDisposable です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" />null (Visual Basic の場合) の場合は Nothing または<paramref name="linkOptions" />が null (Visual Basic の場合) の場合は Nothing です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputCount">
+      <MemberSignature Language="C#" Value="public int OutputCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OutputCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.OutputCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このブロックから受信されるまで利用可能な出力項目の数を取得します。</summary>
+        <value>出力項目の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Threading.Tasks.Dataflow.IDataflowBlock.Fault">
+      <MemberSignature Language="C#" Value="void IDataflowBlock.Fault (Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Threading.Tasks.Dataflow.IDataflowBlock.Fault(class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.System#Threading#Tasks#Dataflow#IDataflowBlock#Fault(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="exception"><see cref="T:System.Exception" />フォールトの原因となった。</param>
+        <summary>により、<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />で完了する、<see cref="F:System.Threading.Tasks.TaskStatus.Faulted" />状態です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後<xref:System.Threading.Tasks.Dataflow.IDataflowBlock.Fault%2A>されましたデータフロー ブロックで呼び出されると、そのブロックが完了してその<xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%603.Completion%2A>タスクは、最終的な状態を入力してください。 ブロックにエラーが発生、としてで、ブロックをキャンセルすると、バッファー内のメッセージ (未処理の入力メッセージと unoffered 出力メッセージ) が失われます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="exception" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ConsumeMessage">
+      <MemberSignature Language="C#" Value="Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt; ISourceBlock&lt;Tuple&lt;IList&lt;T1&gt;,IList&lt;T2&gt;,IList&lt;T3&gt;&gt;&gt;.ConsumeMessage (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; target, out bool messageConsumed);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt; System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ConsumeMessage(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt; target, [out] bool&amp; messageConsumed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock&lt;System#Tuple&lt;System#Collections#Generic#IList&lt;T1&gt;,System#Collections#Generic#IList&lt;T2&gt;,System#Collections#Generic#IList&lt;T3&gt;&gt;&gt;#ConsumeMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}},System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+        <Parameter Name="messageConsumed" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader">To be added.</param>
+        <param name="target">To be added.</param>
+        <param name="messageConsumed">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ReleaseReservation">
+      <MemberSignature Language="C#" Value="void ISourceBlock&lt;Tuple&lt;IList&lt;T1&gt;,IList&lt;T2&gt;,IList&lt;T3&gt;&gt;&gt;.ReleaseReservation (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; target);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ReleaseReservation(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt; target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock&lt;System#Tuple&lt;System#Collections#Generic#IList&lt;T1&gt;,System#Collections#Generic#IList&lt;T2&gt;,System#Collections#Generic#IList&lt;T3&gt;&gt;&gt;#ReleaseReservation(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader">To be added.</param>
+        <param name="target">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ReserveMessage">
+      <MemberSignature Language="C#" Value="bool ISourceBlock&lt;Tuple&lt;IList&lt;T1&gt;,IList&lt;T2&gt;,IList&lt;T3&gt;&gt;&gt;.ReserveMessage (System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, System.Threading.Tasks.Dataflow.ITargetBlock&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; target);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Threading.Tasks.Dataflow.ISourceBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;.ReserveMessage(valuetype System.Threading.Tasks.Dataflow.DataflowMessageHeader messageHeader, class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt; target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.System#Threading#Tasks#Dataflow#ISourceBlock&lt;System#Tuple&lt;System#Collections#Generic#IList&lt;T1&gt;,System#Collections#Generic#IList&lt;T2&gt;,System#Collections#Generic#IList&lt;T3&gt;&gt;&gt;#ReserveMessage(System.Threading.Tasks.Dataflow.DataflowMessageHeader,System.Threading.Tasks.Dataflow.ITargetBlock{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="messageHeader" Type="System.Threading.Tasks.Dataflow.DataflowMessageHeader" />
+        <Parameter Name="target" Type="System.Threading.Tasks.Dataflow.ITargetBlock&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="messageHeader">To be added.</param>
+        <param name="target">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target1">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Dataflow.ITargetBlock&lt;T1&gt; Target1 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!T1&gt; Target1" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.Target1" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Dataflow.ITargetBlock&lt;T1&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の型のメッセージを提供するために使用するターゲットを取得します。</summary>
+        <value>ターゲット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target2">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Dataflow.ITargetBlock&lt;T2&gt; Target2 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!T2&gt; Target2" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.Target2" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Dataflow.ITargetBlock&lt;T2&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の型のメッセージを提供する使用可能性があるターゲットを取得します。</summary>
+        <value>ターゲット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target3">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Dataflow.ITargetBlock&lt;T3&gt; Target3 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Dataflow.ITargetBlock`1&lt;!T3&gt; Target3" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.Target3" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Dataflow.ITargetBlock&lt;T3&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 番目の型のメッセージを提供する使用可能性があるターゲットを取得します。</summary>
+        <value>ターゲット。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この書式設定された名前を表す文字列を返します<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />インスタンス。</summary>
+        <returns>この書式設定された名前を表す文字列<see cref="T:System.Threading.Tasks.Dataflow.IDataflowBlock" />インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReceive">
+      <MemberSignature Language="C#" Value="public bool TryReceive (Predicate&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; filter, out Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt; item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReceive(class System.Predicate`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt; filter, [out] class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.TryReceive(System.Predicate{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}},System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.Predicate&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;" />
+        <Parameter Name="item" Type="System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="filter">述語の値は、受信するために正常に渡す必要があります。  <c>フィルター</c>可能性があります<see langword="null" />場合すべてのアイテムが渡されます。</param>
+        <param name="item">ソースから受信したアイテムです。</param>
+        <summary>使用可能な出力項目を同期的に受信する試みを<see cref="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />です。</summary>
+        <returns>
+          <see langword="true" />項目が受信される可能性があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、項目を提供するソースの待機をブロックしません。  
+  
+ 要素が使用できるかどうかを要素を確認してから返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReceiveAll">
+      <MemberSignature Language="C#" Value="public bool TryReceiveAll (out System.Collections.Generic.IList&lt;Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReceiveAll([out] class System.Collections.Generic.IList`1&lt;class System.Tuple`3&lt;class System.Collections.Generic.IList`1&lt;!T1&gt;, class System.Collections.Generic.IList`1&lt;!T2&gt;, class System.Collections.Generic.IList`1&lt;!T3&gt;&gt;&gt;&amp; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.BatchedJoinBlock`3.TryReceiveAll(System.Collections.Generic.IList{System.Tuple{System.Collections.Generic.IList{`0},System.Collections.Generic.IList{`1},System.Collections.Generic.IList{`2}}}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IList&lt;System.Tuple&lt;System.Collections.Generic.IList&lt;T1&gt;,System.Collections.Generic.IList&lt;T2&gt;,System.Collections.Generic.IList&lt;T3&gt;&gt;&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="items">アイテムのソースから受信されます。</param>
+        <summary>すべての利用可能な項目を同期的に受信しようとしています、<see cref="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />です。</summary>
+        <returns>
+          <see langword="true" />場合は 1 つまたは複数の項目を受信した可能性があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、項目を提供するソースの待機をブロックしません。  
+  
+ 要素が使用できるかどうかを要素を確認してから返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

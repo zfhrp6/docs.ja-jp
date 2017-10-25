@@ -1,0 +1,165 @@
+<Type Name="UseKey" FullName="System.IdentityModel.Protocols.WSTrust.UseKey">
+  <TypeSignature Language="C#" Value="public class UseKey" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UseKey extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Protocols.WSTrust.UseKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Wst:UseKey 要素の内容を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この省略可能な要素は、wst:UseKey 要素の下で指定されている公開キーを含むトークンを発行する id プロバイダーを要求するクライアントを使用します。 ただし、キーを所有していることを証明するために、クライアントがあります。 WS セキュリティ ベースの SOAP メッセージで、クライアントに追加できます自身の証明書保証トークンとしてキーを所有していることを証明するためにセキュリティ ヘッダー。  
+  
+ このクラスが表す要素の詳細については、自分のシナリオに適用される Ws-trust 仕様のバージョンを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UseKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.UseKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Protocols.WSTrust.UseKey" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張機能のコンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UseKey (System.IdentityModel.Tokens.SecurityKeyIdentifier ski);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityKeyIdentifier ski) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.UseKey.#ctor(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ski" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="ski">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を表すために使用される既存のキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.UseKey" />クラス、指定されたセキュリティ キー識別子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リクエスター トークンをセキュリティ キー識別子に変換する方法を知っている場合、または既には、トークンのセキュリティ キー識別子は、このコンス トラクターを使用します。  
+  
+ <xref:System.IdentityModel.Protocols.WSTrust.UseKey.Token%2A>プロパティに設定されている`null`新しい<xref:System.IdentityModel.Protocols.WSTrust.UseKey>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UseKey (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.UseKey.#ctor(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />を表すために使用される既存のキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.UseKey" />クラスの指定したセキュリティ トークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Protocols.WSTrust.UseKey.SecurityKeyIdentifier%2A>プロパティに設定されている`null`新しい<xref:System.IdentityModel.Protocols.WSTrust.UseKey>インスタンス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UseKey (System.IdentityModel.Tokens.SecurityKeyIdentifier ski, System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityKeyIdentifier ski, class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Protocols.WSTrust.UseKey.#ctor(System.IdentityModel.Tokens.SecurityKeyIdentifier,System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="ski" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="ski">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を表すために使用される既存のキー。</param>
+        <param name="token">A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />を表すために使用される既存のキー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Protocols.WSTrust.UseKey" />クラス、指定されたセキュリティ キー識別子とセキュリティ トークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、シリアライザーからセキュリティ トークン サービス (STS) に詳細な情報を渡します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeyIdentifier">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityKeyIdentifier SecurityKeyIdentifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityKeyIdentifier SecurityKeyIdentifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.UseKey.SecurityKeyIdentifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ キー識別子を取得します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を表すセキュリティ キー識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Token">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken Token { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityToken Token" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Protocols.WSTrust.UseKey.Token" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアライザーを使用すると、セキュリティ キー識別子に変換できない場合は、セキュリティ トークンを取得します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />トークンを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

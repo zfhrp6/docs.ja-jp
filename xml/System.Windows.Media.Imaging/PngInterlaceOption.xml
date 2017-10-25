@@ -1,0 +1,82 @@
+<Type Name="PngInterlaceOption" FullName="System.Windows.Media.Imaging.PngInterlaceOption">
+  <TypeSignature Language="C#" Value="public enum PngInterlaceOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PngInterlaceOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.PngInterlaceOption" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>エンコード中に、ポータブル ネットワーク グラフィックス (PNG) 形式のイメージをインター レースするかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インター レースを表示する処理を指す、 [!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)] 2 つのフィールド内のフレームです。 1 つのフィールドには、他のフィールドには、フレームの奇数行が含まれていますが、フレームの偶数行が含まれています。 ときに、[!INCLUDE[TLA2#tla_png](~/includes/tla2sharptla-png-md.md)]は 1 つのフィールド内の行が最初に、表示を表示したりし、2 番目のフィールド内の行が表示されます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Media.Imaging.PngBitmapEncoder.Interlace%2A>のプロパティ、<xref:System.Windows.Media.Imaging.PngBitmapEncoder>クラスです。  
+  
+ [!code-cpp[pngbitmapdecoderencoder#3](~/samples/snippets/cpp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CPP/PngEncoderDecoder.cpp#3)]
+ [!code-csharp[pngbitmapdecoderencoder#3](~/samples/snippets/csharp/VS_Snippets_Wpf/PngBitmapDecoderEncoder/CSharp/PngEncoderDecoder.cs#3)]
+ [!code-vb[pngbitmapdecoderencoder#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PngBitmapDecoderEncoder/VB/PngEncoderDecoder.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.PngInterlaceOption Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.PngInterlaceOption.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.PngInterlaceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Imaging.PngBitmapEncoder" />イメージをインター レースされているかどうかを決定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Off">
+      <MemberSignature Language="C#" Value="Off" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.PngInterlaceOption Off = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.PngInterlaceOption.Off" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.PngInterlaceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果のビットマップ イメージをインター レースしません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="On">
+      <MemberSignature Language="C#" Value="On" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Imaging.PngInterlaceOption On = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Imaging.PngInterlaceOption.On" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.PngInterlaceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果のビットマップ イメージをインター レースします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

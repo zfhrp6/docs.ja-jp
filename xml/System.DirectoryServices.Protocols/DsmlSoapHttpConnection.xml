@@ -1,0 +1,397 @@
+<Type Name="DsmlSoapHttpConnection" FullName="System.DirectoryServices.Protocols.DsmlSoapHttpConnection">
+  <TypeSignature Language="C#" Value="public class DsmlSoapHttpConnection : System.DirectoryServices.Protocols.DsmlSoapConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DsmlSoapHttpConnection extends System.DirectoryServices.Protocols.DsmlSoapConnection" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DsmlSoapConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />クラスは、DSML を HTTP 経由で SOAP を使用してゲートウェイへの接続を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DsmlSoapHttpConnection (System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">A<see cref="T:System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />接続のサーバーを指定するオブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier)" />コンス トラクターの新しいインスタンスを初期化します、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DsmlSoapHttpConnection (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">A<see cref="T:System.Uri" />接続のサーバーを指定するオブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.Uri)" />コンス トラクターの新しいインスタンスを初期化します、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DsmlSoapHttpConnection (System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier, System.Net.NetworkCredential credential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier, class System.Net.NetworkCredential credential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier,System.Net.NetworkCredential)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />
+        <Parameter Name="credential" Type="System.Net.NetworkCredential" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">A<see cref="T:System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />接続のサーバーを指定するオブジェクト。</param>
+        <param name="credential">A<see cref="T:System.Net.NetworkCredential" />ネットワーク資格情報を含むオブジェクトです。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier,System.Net.NetworkCredential)" />コンス トラクターの新しいインスタンスを初期化します、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DsmlSoapHttpConnection (System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier, System.Net.NetworkCredential credential, System.DirectoryServices.Protocols.AuthType authType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.Protocols.DsmlDirectoryIdentifier identifier, class System.Net.NetworkCredential credential, valuetype System.DirectoryServices.Protocols.AuthType authType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier,System.Net.NetworkCredential,System.DirectoryServices.Protocols.AuthType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identifier" Type="System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />
+        <Parameter Name="credential" Type="System.Net.NetworkCredential" />
+        <Parameter Name="authType" Type="System.DirectoryServices.Protocols.AuthType" />
+      </Parameters>
+      <Docs>
+        <param name="identifier">A<see cref="T:System.DirectoryServices.Protocols.DsmlDirectoryIdentifier" />接続のサーバーを指定するオブジェクト。</param>
+        <param name="credential">A<see cref="T:System.Net.NetworkCredential" />ネットワーク資格情報を含むオブジェクトです。</param>
+        <param name="authType"><see cref="T:System.DirectoryServices.Protocols.AuthType" />この接続に使用する認証の種類を指定する値。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.#ctor(System.DirectoryServices.Protocols.DsmlDirectoryIdentifier,System.Net.NetworkCredential,System.DirectoryServices.Protocols.AuthType)" />コンス トラクターを作成しの新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />クラスの指定した識別子、ネットワーク資格情報と認証の種類を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identifier" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="authType" />値は、DSML がサポートされている値のいずれかではありません。 DSML には、匿名、Ntlm、Basic、Negotiate、およびダイジェストのみサポートしています。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="authType" />値で定義されている定数のいずれかではありません、<see cref="T:System.DirectoryServices.Protocols.AuthType" />列挙します。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.Abort(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">派生したオブジェクト<see cref="T:System.IAsyncResult" />非同期要求を参照します。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.Abort(System.IAsyncResult)" />メソッドは、非同期要求をキャンセルします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />対応する呼び出しによって返されませんでした<see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument,System.AsyncCallback,System.Object)" />です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.AuthType AuthType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.AuthType AuthType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.AuthType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.AuthType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.AuthType" />プロパティには値のいずれかが含まれています<see cref="T:System.DirectoryServices.Protocols.AuthType" />認証の種類を指定する列挙です。</summary>
+        <value>値のいずれかの<see cref="T:System.DirectoryServices.Protocols.AuthType" />認証の種類を指定する列挙です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSendRequest">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSendRequest (System.DirectoryServices.Protocols.DsmlRequestDocument request, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSendRequest(class System.DirectoryServices.Protocols.DsmlRequestDocument request, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.DirectoryServices.Protocols.DsmlRequestDocument" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="request"><see cref="T:System.DirectoryServices.Protocols.DsmlRequestDocument" />を送信するオブジェクト。</param>
+        <param name="callback"><see cref="T:System.AsyncCallback" />関数。</param>
+        <param name="state"><see cref="T:System.Object" />この要求の状態データを格納します。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument,System.AsyncCallback,System.Object)" />メソッドは、指定された非同期的に送信を開始<see cref="T:System.DirectoryServices.Protocols.DsmlRequestDocument" />サーバーへのオブジェクト。</summary>
+        <returns>派生したオブジェクト<see cref="T:System.IAsyncResult" />非同期送信を参照します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSession">
+      <MemberSignature Language="C#" Value="public override void BeginSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void BeginSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSession" />メソッド新しいセッションを開始する DSML サーバーに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DSML サーバーからの応答を待機中にブロックし、タイムアウトによると、メソッド、<xref:System.DirectoryServices.Protocols.DirectoryConnection.Timeout%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">セッションを既に接続で開いている場合にスローされます。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.DsmlInvalidDocumentException">XML が、サーバーへの応答から返された場合にスローされます、<see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSession" />形式が正しくありません。</exception>
+        <exception cref="T:System.Net.WebException">DSML サーバーまたはサーバーが利用可能なセッション外との通信障害が発生した場合にスローされます。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSendRequest">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DsmlResponseDocument EndSendRequest (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.Protocols.DsmlResponseDocument EndSendRequest(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.EndSendRequest(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DsmlResponseDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">派生したオブジェクト<see cref="T:System.IAsyncResult" />この要求の状態データを格納しています。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.EndSendRequest(System.IAsyncResult)" />メソッドが非同期の送信要求を完了するとします。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.Protocols.DsmlResponseDocument" />要求の結果を格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">場合にスローされる<paramref name="asyncResult" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">場合にスロー<paramref name="asyncResult" />への呼び出しから現在のインスタンスによって返されませんでした<see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.BeginSendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument,System.AsyncCallback,System.Object)" />です。</exception>
+        <exception cref="T:System.IO.IOException">要求が完了しませんでした。 ストリームはありません。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.DsmlInvalidDocumentException">サーバーによって返される応答が無効である場合にスローされます。</exception>
+        <exception cref="T:System.Net.WebException">Abort が呼び出されたときに、または要求の処理中にエラーが発生したときにスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSession">
+      <MemberSignature Language="C#" Value="public override void EndSession ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndSession() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.EndSession" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.EndSession" />メソッドは、DSML サーバーとのセッションを終了し、クリア、<see cref="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SessionId" />プロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DSML サーバーからの応答を待機中にブロックし、タイムアウトによると、メソッド、<xref:System.DirectoryServices.Protocols.DirectoryConnection.Timeout%2A>プロパティです。  
+  
+ DSML サーバーが既に、それ自体にセッションを終了した場合、<xref:System.Net.WebException>がスローされます。  場合、<xref:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SessionId%2A>は例外がスローされた後は、要求がサーバーに到達しません、接続が有効と見なされますが、現在も有効です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException">DSML サーバーとの通信障害が発生した場合にスローされます。</exception>
+        <exception cref="T:System.InvalidOperationException">開いているセッションがない場合にスローされます。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendRequest">
+      <MemberSignature Language="C#" Value="public override System.DirectoryServices.Protocols.DirectoryResponse SendRequest (System.DirectoryServices.Protocols.DirectoryRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.DirectoryServices.Protocols.DirectoryResponse SendRequest(class System.DirectoryServices.Protocols.DirectoryRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SendRequest(System.DirectoryServices.Protocols.DirectoryRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DirectoryResponse</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.DirectoryServices.Protocols.DirectoryRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">A<see cref="T:System.DirectoryServices.Protocols.DirectoryRequest" />要求を含むオブジェクトです。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SendRequest(System.DirectoryServices.Protocols.DirectoryRequest)" />メソッドは、1 つを送信<see cref="T:System.DirectoryServices.Protocols.DirectoryRequest" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.Protocols.DirectoryResponse" />要求の結果を格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.ErrorResponseException">DSML サーバーには、エラー応答が返されます。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.DirectoryOperationException">操作には、エラー コードが返されます。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendRequest">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.DsmlResponseDocument SendRequest (System.DirectoryServices.Protocols.DsmlRequestDocument request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.Protocols.DsmlResponseDocument SendRequest(class System.DirectoryServices.Protocols.DsmlRequestDocument request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.DsmlResponseDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.DirectoryServices.Protocols.DsmlRequestDocument" />
+      </Parameters>
+      <Docs>
+        <param name="request">A<see cref="T:System.DirectoryServices.Protocols.DsmlRequestDocument" />オブジェクトがサーバーに送信します。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SendRequest(System.DirectoryServices.Protocols.DsmlRequestDocument)" />メソッド送信、 <see cref="T:System.DirectoryServices.Protocols.DsmlRequestDocument" /> DSML サーバー オブジェクトです。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.Protocols.DsmlResponseDocument" />要求の結果を格納しているオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">
+          <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />
+        </permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionId">
+      <MemberSignature Language="C#" Value="public override string SessionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SessionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SessionId" />プロパティには、アクティブなセッション ID が含まれています。</summary>
+        <value>アクティブなセッション id。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapActionHeader">
+      <MemberSignature Language="C#" Value="public string SoapActionHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoapActionHeader" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SoapActionHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.SoapActionHeader" />プロパティには、その他の HTTP ヘッダーと共に送信される SOAP アクション ヘッダーが含まれています。</summary>
+        <value>その他の HTTP ヘッダーと共に送信される SOAP アクション ヘッダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、"#batchRequest"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public override TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DsmlSoapHttpConnection.Timeout" />プロパティが含まれています時間、秒単位の長さにはまで、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />がタイムアウトします。</summary>
+        <value>秒単位の時間の長さの前に、<see cref="T:System.DirectoryServices.Protocols.DsmlSoapHttpConnection" />がタイムアウトします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

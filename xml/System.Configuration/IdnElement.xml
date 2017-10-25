@@ -1,0 +1,167 @@
+<Type Name="IdnElement" FullName="System.Configuration.IdnElement">
+  <TypeSignature Language="C#" Value="public sealed class IdnElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IdnElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.IdnElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成設定の国際化ドメイン名 (IDN) の処理を提供、<see cref="T:System.Uri" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の<xref:System.Uri?displayProperty=nameWithType>RFC 3987 に基づいて国際リソース識別子 (IRI) のサポートを提供するクラスが拡張されています。 現在のユーザーは、自分で明確に IRI を有効にしない限り、.NET Framework 2.0 の動作からは変更に気付きません。 これにより、.NET Framework の以前のバージョンとのアプリケーションの互換性を保証します。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement>によって直接制御されます、 <xref:System.Configuration.IriParsingElement> IRI での処理を制御する構成設定、<xref:System.Uri?displayProperty=nameWithType>クラスです。 IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
+  
+ 国際化ドメイン名 (IDN) の属性は、IDN 処理だけを制御します。 その他のすべての IRI 処理 (文字の正規化の例) は、既定で実行されます。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement>が読み取られる 1 回と最初<xref:System.Uri?displayProperty=nameWithType>クラスを構築します。 それ以降の構成設定の変更は無視されます。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdnElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IdnElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.IdnElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Configuration.IdnElement>インスタンス  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public UriIdnScope Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.UriIdnScope Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IdnElement.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsRequired | System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UriIdnScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の値、<see cref="T:System.Configuration.IdnElement" />構成設定。</summary>
+        <value>A <see cref="T:System.UriIdnScope" /> IDN 処理の現在の構成設定を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 国際化ドメイン名 (IDN) の属性は、IDN 処理だけを制御します。 他のすべてのインターナショナル リソース識別子 (IRI) 処理 (文字の正規化の例) は、既定で実行されます。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement>によって直接制御されます、 <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> IRI での処理を制御する構成設定、<xref:System.Uri?displayProperty=nameWithType>クラスです。 IDN 処理を可能にするためには、IRI 処理を有効にする必要があります。 IRI 処理が無効になっている場合、IDN 処理は既定の設定に設定されます。既定の設定では、互換性のために .NET Framework 2.0 の動作が使用され、IDN 名は使用されません。  
+  
+ 構成の設定、<xref:System.Configuration.IdnElement>が読み取られる 1 回と最初<xref:System.Uri?displayProperty=nameWithType>クラスを構築します。 それ以降の構成設定の変更は無視されます。  
+  
+ IRI サポートの詳細については、「解説」セクションを参照して、<xref:System.Uri?displayProperty=nameWithType>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IdnElement.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.IdnElement.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.IdnElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

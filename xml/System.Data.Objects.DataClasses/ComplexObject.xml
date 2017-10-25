@@ -1,0 +1,129 @@
+<Type Name="ComplexObject" FullName="System.Data.Objects.DataClasses.ComplexObject">
+  <TypeSignature Language="C#" Value="public abstract class ComplexObject : System.Data.Objects.DataClasses.StructuralObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit ComplexObject extends System.Data.Objects.DataClasses.StructuralObject" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.ComplexObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Objects.DataClasses.StructuralObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract(IsReference=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>複合型の基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.ComplexObject>複合型の基本機能を実装します。 詳細については、次を参照してください。[複合型オブジェクト](http://msdn.microsoft.com/en-us/34d5c570-a891-42b8-80ae-20e96eedc3af)です。  
+  
+ 概念モデルでカスタム データ クラスを実装したときをお勧め複合型を表すデータ クラスが継承<xref:System.Data.Objects.DataClasses.ComplexObject>です。 詳細については、次を参照してください。[オブジェクトのカスタマイズ](http://msdn.microsoft.com/en-us/af6f07ce-2261-4c65-87cf-d018ad082921)です。  
+  
+ 複合型は、エンティティ型または別の複合型のプロパティにすることができます。  
+  
+ 複合型は、エンティティ型の非スカラー プロパティによって返されます。 これにより、スカラー プロパティをエンティティ内で整理することができます。 エンティティと同様に、複合型はスカラー プロパティまたは他の複合型プロパティで構成されています。 複合型は、関連付けられたエンティティ型がなければ使用できません。 複合型には、キーがない、ために、関連付けられているエンティティ型を持たない複合型のオブジェクトを管理することはできません。 詳細については、次を参照してください。[複合型オブジェクト](http://msdn.microsoft.com/en-us/34d5c570-a891-42b8-80ae-20e96eedc3af)です。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム データ クラス`OrderInfo`から継承<xref:System.Data.Objects.DataClasses.ComplexObject>にマップし、`OrderInfo`概念モデルで定義されている複合型。  
+  
+ [!code-csharp[DP EntityObject Concepts#EntityObject](~/samples/snippets/csharp/VS_Snippets_Data/DP EntityObject Concepts/CS/SalesObjects.cs#entityobject)]
+ [!code-vb[DP EntityObject Concepts#EntityObject](~/samples/snippets/visualbasic/VS_Snippets_Data/DP EntityObject Concepts/VB/SalesObjects.vb#entityobject)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComplexObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.ComplexObject.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Data.Objects.DataClasses.ComplexObject" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override sealed void ReportPropertyChanged (string property);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ReportPropertyChanged(string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property">変更されたプロパティの名前。</param>
+        <summary>複合オブジェクトのプロパティが変更されたことを変更トラッカーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Entity Data Model ツールによって複合型が生成された場合、プロパティの変更後に <xref:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanged%2A> メソッドが呼び出され、キャッシュされている値がプロパティの元の値として <xref:System.Data.Objects.DataClasses.IEntityChangeTracker> でコミットされます。  
+  
+ このメソッドは、変更トラッカーの <xref:System.Data.Objects.DataClasses.IEntityChangeTracker.EntityComplexMemberChanged%2A> メソッドを呼び出します。  
+  
+ カスタム複合オブジェクトのプロパティに対する変更を追跡する場合は、<xref:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanged%2A> を呼び出す必要があります。 これは、複合オブジェクトを <xref:System.Data.Objects.DataClasses.ComplexObject> から継承している場合に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="property" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportPropertyChanging">
+      <MemberSignature Language="C#" Value="protected override sealed void ReportPropertyChanging (string property);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ReportPropertyChanging(string property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanging(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="property">変更されるプロパティの名前。</param>
+        <summary>プロパティの変更が複合オブジェクトで保留中であることを変更トラッカーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Entity Data Model ツールによって複合型が生成された場合、プロパティの変更前に <xref:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanging%2A> メソッドが呼び出され、プロパティの元の値として使用できるようにプロパティの現在の値が <xref:System.Data.Objects.DataClasses.IEntityChangeTracker> でキャッシュされます。  
+  
+ このメソッドは、変更トラッカーの <xref:System.Data.Objects.DataClasses.IEntityChangeTracker.EntityComplexMemberChanging%2A> メソッドを呼び出します。  
+  
+ カスタム複合オブジェクトのプロパティに対する変更を追跡する場合は、<xref:System.Data.Objects.DataClasses.ComplexObject.ReportPropertyChanging%2A> を呼び出す必要があります。 これは、複合オブジェクトを <xref:System.Data.Objects.DataClasses.ComplexObject> から継承している場合に実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="property" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,107 @@
+<Type Name="FileLevelPageControlBuilder" FullName="System.Web.UI.FileLevelPageControlBuilder">
+  <TypeSignature Language="C#" Value="public class FileLevelPageControlBuilder : System.Web.UI.RootBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FileLevelPageControlBuilder extends System.Web.UI.RootBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.FileLevelPageControlBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.RootBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページのファイルを解析し、既定値は、<see cref="T:System.Web.UI.ControlBuilder" />ページのファイルを解析するためのクラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール ビルダーは、コントロールとその子コントロールに含まれるコントロールを作成でページ パーサーをサポートします。 <xref:System.Web.UI.FileLevelPageControlBuilder>クラスは、既定<xref:System.Web.UI.ControlBuilder>個々 のページのファイルのクラスです。 上書き、<xref:System.Web.UI.FileLevelPageControlBuilder>カスタム ページの解析を提供するメソッド。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLevelPageControlBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelPageControlBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.FileLevelPageControlBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FileLevelPageControlBuilder.%23ctor%2A>コンス トラクターは、ページを解析するときに、ASP.NET で使用され、は、コードで使用するものです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendLiteralString">
+      <MemberSignature Language="C#" Value="public override void AppendLiteralString (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendLiteralString(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelPageControlBuilder.AppendLiteralString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">コントロールに追加するコンテンツ。</param>
+        <summary>指定されたリテラル コンテンツをコントロールに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.FileLevelPageControlBuilder.AppendLiteralString%2A>リテラル コンテンツ コントロールを追加するメソッド。 リテラルのコンテンツはブラウザーによって、サーバー コントロールに渡される任意のテキストを指定できます。 たとえば、任意の HTML 要素とその開始タグと終了タグの間のテキストは、リテラル コンテンツがします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="M:System.Web.UI.FileLevelPageControlBuilder.AppendLiteralString(System.String)" />メソッドは、コンテンツ ページにリテラル文字列を追加することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendSubBuilder">
+      <MemberSignature Language="C#" Value="public override void AppendSubBuilder (System.Web.UI.ControlBuilder subBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AppendSubBuilder(class System.Web.UI.ControlBuilder subBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.FileLevelPageControlBuilder.AppendSubBuilder(System.Web.UI.ControlBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subBuilder" Type="System.Web.UI.ControlBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="subBuilder"><see cref="T:System.Web.UI.ControlBuilder" />子コントロールに割り当てられます。</param>
+        <summary>追加、<see cref="T:System.Web.UI.ControlBuilder" />オブジェクトを<see cref="T:System.Web.UI.FileLevelPageControlBuilder" />すべての子コントロールのコンテナー コントロールに属しているオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.FileLevelPageControlBuilder.AppendSubBuilder%2A>メソッドのオーバーライド、<xref:System.Web.UI.ControlBuilder.AppendSubBuilder%2A?displayProperty=nameWithType>マスター ページとコンテンツ ページを使用する場合は、カスタム ロジックを提供するメソッド。 コンテンツ ページににないもの内側、 <xref:System.Web.UI.WebControls.Content> (を除くサーバー コードのスクリプト ブロック) のコントロールが発生し、<xref:System.Web.HttpParseException>例外。 追加する、<xref:System.Web.UI.ControlBuilder>オブジェクトにある子コントロールを<xref:System.Web.UI.WebControls.Content>昇給を制御、<xref:System.Web.HttpException>例外。 マスター ページとコンテンツ ページの詳細については、次を参照してください。 [ASP.NET マスター ページ](http://msdn.microsoft.com/library/4e53eedf-8304-4e7a-aed1-691a2623b28b)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.UI.ControlBuilder" />に関連付けられている追加された、<see cref="T:System.Web.UI.WebControls.Content" />を制御し、のみを含むページで許可されて<see cref="T:System.Web.UI.WebControls.Content" />コントロール。</exception>
+        <exception cref="T:System.Web.HttpParseException">以外の場合、コンテンツ ページにリテラルが含まれている、<see cref="T:System.Web.UI.WebControls.Content" />コントロール。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

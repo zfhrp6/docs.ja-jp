@@ -1,0 +1,241 @@
+<Type Name="HttpListenerTimeoutsElement" FullName="System.Net.Configuration.HttpListenerTimeoutsElement">
+  <TypeSignature Language="C#" Value="public sealed class HttpListenerTimeoutsElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HttpListenerTimeoutsElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.HttpListenerTimeoutsElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Net.HttpListener" />構成ファイル内の要素をタイムアウトします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウトの要素の dafault 接続タイムアウトの制限を定義する、<xref:System.Net.HttpListener>インスタンス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpListenerTimeoutsElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.HttpListenerTimeoutsElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.HttpListenerTimeoutsElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrainEntityBody">
+      <MemberSignature Language="C#" Value="public TimeSpan DrainEntityBody { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan DrainEntityBody" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.DrainEntityBody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("drainEntityBody", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得時間 (秒)、許可されている、<see cref="T:System.Net.HttpListener" />をキープ アライブ接続でのエンティティ ボディをドレインします。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 時間 (秒)、許可、<see cref="T:System.Net.HttpListener" />をキープ アライブ接続でのエンティティ ボディをドレインします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリは、要求に対する応答を送信し、要求する前にエンティティ ボディが完全に到着した後、Keep-alive の接続で、<xref:System.Net.HttpListener>パイプライン処理クライアントからの要求をドレインして、可能性のある別に到達するエンティティ本体の残りの部分を開始します。 他のエンティティ ボディをドレインする時間が許可されている時間を超えた場合、接続がタイムアウトしました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityBody">
+      <MemberSignature Language="C#" Value="public TimeSpan EntityBody { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan EntityBody" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.EntityBody" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("entityBody", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>到着する要求エンティティ ボディに許可されている時間 (秒単位) を取得します。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 時間を秒単位では、到着する要求エンティティ本体を使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.HttpListener>要求エンティティ本体が含まれる場合、このタイマーをオンにします。 タイマーの期限が構成されている値に初期設定されます。 ときに、<xref:System.Net.HttpListener>受信追加のデータがないか、要求で、接続に別の範囲を提供するタイマーをリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderWait">
+      <MemberSignature Language="C#" Value="public TimeSpan HeaderWait { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan HeaderWait" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.HeaderWait" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("headerWait", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得時間 (秒)、許可されている、<see cref="T:System.Net.HttpListener" />要求ヘッダーを解析します。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 時間 (秒)、許可、<see cref="T:System.Net.HttpListener" />要求ヘッダーを解析します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このタイムアウトは、接続の最初の要求にルーティングした後にのみ適用されますが、<xref:System.Net.HttpListener>です。  
+  
+ システムには、要求キューまたはヘッダーが解析されるまでに、要求が関連付けられている URL グループを特定できません。 したがって、<xref:System.Net.HttpListener>既定値を適用<xref:System.Net.HttpListenerTimeoutManager.HeaderWait%2A>接続での最初の要求のタイマーです。 キープ アライブ接続での後続の要求では、このプロパティで設定された値を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleConnection">
+      <MemberSignature Language="C#" Value="public TimeSpan IdleConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IdleConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.IdleConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("idleConnection", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイドル状態の接続を許可される時間 (秒単位) を取得します。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 時間を秒単位では、アイドル状態の接続を使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このタイムアウトは、接続の最初の要求にルーティングした後にのみ適用されますが、<xref:System.Net.HttpListener>です。  
+  
+ システムには、要求キューまたはヘッダーが解析されるまでに、要求が関連付けられている URL グループを特定できません。 したがって、<xref:System.Net.HttpListener>既定値を適用<xref:System.Net.HttpListenerTimeoutManager.IdleConnection%2A>接続での最初の要求のタイマーです。 キープ アライブ接続での後続の要求では、このプロパティで設定された値を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinSendBytesPerSecond">
+      <MemberSignature Language="C#" Value="public long MinSendBytesPerSecond { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MinSendBytesPerSecond" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.MinSendBytesPerSecond" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minSendBytesPerSecond", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>応答のバイト数-1 秒あたりの内の最小の送信率を取得します。</summary>
+        <value><see cref="T:System.Int64" /> を返します。  
+  
+ 最小値は、バイト数-1 秒あたりの応答ので、レートを送信します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestQueue">
+      <MemberSignature Language="C#" Value="public TimeSpan RequestQueue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RequestQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.HttpListenerTimeoutsElement.RequestQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requestQueue", DefaultValue=Mono.Cecil.CustomAttributeArgument, IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間 (秒) を取得する前に、要求キュー内に存続する要求に対して許可、<see cref="T:System.Net.HttpListener" />がそれを取得します。</summary>
+        <value><see cref="T:System.TimeSpan" /> を返します。  
+  
+ 要求のままにする前に、要求キュー内に許可される時間を秒単位で、<see cref="T:System.Net.HttpListener" />がそれを取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

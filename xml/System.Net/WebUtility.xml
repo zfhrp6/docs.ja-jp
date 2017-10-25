@@ -1,0 +1,426 @@
+<Type Name="WebUtility" FullName="System.Net.WebUtility">
+  <TypeSignature Language="C#" Value="public static class WebUtility" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WebUtility extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.WebUtility" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web 要求を処理する際、URL のエンコーディングおよびデコーディングのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpUtility>クラスには、エンコードとデコード HTML エンコード文字列で使用するためのユーティリティ メソッドが含まれています。 <xref:System.Uri?displayProperty=nameWithType>クラスは、メソッドと同様の目的に使用できるプロパティにも含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public static string HtmlDecode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HtmlDecode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.HtmlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">デコードする文字列。</param>
+        <summary>HTTP での転送用に HTML でエンコードされた文字列をデコードされた文字列に変換します。 </summary>
+        <returns>デコード後の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 HTML エンコーディングは、HTML では使用できない文字エン ティティに変換します。エンコーディングの逆の HTML デコードします。 たとえば、文字、テキストのブロックに埋め込んで\<と > としてエンコードされます&lt;と&gt;HTTP 伝送用です。  
+  
+ 場合、`value`パラメーターは`null`、返されるデコードされた文字列は`null`します。 場合、`value`パラメーターが空の文字列、し、返されるデコードされた文字列が空の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlDecode">
+      <MemberSignature Language="C#" Value="public static void HtmlDecode (string value, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HtmlDecode(string value, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.HtmlDecode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="value">デコードする文字列。</param>
+        <param name="output">A<see cref="T:System.IO.TextWriter" />出力のストリーム。</param>
+        <summary>文字列をデコードされた文字列を HTML エンコードされたし、デコードされた文字列を送信、<see cref="T:System.IO.TextWriter" />出力ストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 HTML エンコーディングは、HTML では使用できない文字エン ティティに変換します。エンコーディングの逆の HTML デコードします。 たとえば、文字、テキストのブロックに埋め込んで\<と > としてエンコードされます&lt;と&gt;HTTP 伝送用です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" />パラメーターを指定できません<see langword="null" />場合、<paramref name="value" />パラメーターではありません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public static string HtmlEncode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HtmlEncode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.HtmlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <summary>文字列を HTML エンコードされた文字列に変換します。</summary>
+        <returns>エンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 HTML エンコーディングは、HTML では使用できない文字エン ティティに変換します。エンコーディングの逆の HTML デコードします。 たとえば、文字、テキストのブロックに埋め込んで\<と > としてエンコードされます&lt;と&gt;HTTP 伝送用です。  
+  
+ 場合、`value`パラメーターは`null`、返される、エンコードされた文字列は`null`します。 場合、`value`パラメーターが空の文字列、し、返される、エンコードされた文字列が空の文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public static void HtmlEncode (string value, System.IO.TextWriter output);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HtmlEncode(string value, class System.IO.TextWriter output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.HtmlEncode(System.String,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="output" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="value">エンコードする文字列。</param>
+        <param name="output"><see cref="T:System.IO.TextWriter" /> 出力ストリーム。</param>
+        <summary>文字列を HTML エンコードされた文字列に変換し、出力の <see cref="T:System.IO.TextWriter" /> ストリームとして出力を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 HTML エンコーディングは、HTML では使用できない文字エン ティティに変換します。エンコーディングの逆の HTML デコードします。 たとえば、文字、テキストのブロックに埋め込んで\<と >、としてエンコードされます&lt;と&gt;HTTP 伝送用です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="output" />パラメーターを指定できません<see langword="null" />場合、<paramref name="value" />パラメーターではありません<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecode">
+      <MemberSignature Language="C#" Value="public static string UrlDecode (string encodedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlDecode(string encodedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.UrlDecode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encodedValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encodedValue">デコードする URL でエンコードされた文字列。</param>
+        <summary>URL での転送用にエンコードされた文字列をデコードされた文字列に変換します。</summary>
+        <returns><see cref="T:System.String" /> を返します。  
+  
+ デコード後の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 URL エンコードには、等価の 16 進数のエスケープ シーケンスに URL で使用できない文字に変換します。 <xref:System.Net.WebUtility.UrlEncode%2A>メソッドは URL でエンコードされた文字列を作成します。  
+  
+ URL デコードすると、16 進数のエスケープ シーケンスを対応する ASCII 文字の値に置き換えます。 たとえば、URL でエンコードされたテキストのブロックに埋め込まれているときに、エスケープ シーケンス`%3c`と`%3e`文字には、デコード`<`と`>`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlDecodeToBytes">
+      <MemberSignature Language="C#" Value="public static byte[] UrlDecodeToBytes (byte[] encodedValue, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlDecodeToBytes(unsigned int8[] encodedValue, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.UrlDecodeToBytes(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encodedValue" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="encodedValue">URL でエンコードされた<see cref="T:System.Byte" />デコードする配列。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<see cref="T:System.Byte" />デコードする配列。</param>
+        <param name="count">デコードするバイト数で、カウント、<see cref="T:System.Byte" />配列。</param>
+        <summary>URL でデコードされたバイト配列への転送用にエンコードされたエンコードされたバイト配列に変換します。</summary>
+        <returns><see cref="T:System.Byte" /> を返します。  
+  
+ デコードされた<see cref="T:System.Byte" />配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 URL エンコードには、等価の 16 進数のエスケープ シーケンスに URL で使用できない文字に変換します。 <xref:System.Net.WebUtility.UrlEncodeToBytes%2A>メソッドは、URL でエンコードされたバイト配列を作成します。  
+  
+ URL デコードすると、16 進数のエスケープ シーケンスを対応する ASCII 文字の値に置き換えます。 たとえば、URL でエンコードされたテキストのブロックに埋め込まれているときに、エスケープ シーケンス`%3c`と`%3e`文字には、デコード`<`と`>`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncode">
+      <MemberSignature Language="C#" Value="public static string UrlEncode (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string UrlEncode(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.UrlEncode(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">URL エンコードするテキスト。</param>
+        <summary>テキスト文字列を URL でエンコードされた文字列に変換します。</summary>
+        <returns><see cref="T:System.String" /> を返します。  
+  
+ URL でエンコードされた文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 URL エンコードすると、同等の文字の 16 進数のエスケープ シーケンスで構成されると、URL で許可されていない文字が置き換えられます。 変換後の文字列は、utf-8 形式に準拠するいると想定されます。  
+  
+ URL エンコードには、アルファベット、数字、および次の区切り文字を除くすべての文字コードが置き換えられます。  
+  
+-   `-`(マイナス記号`)`  
+  
+-   `_`(アンダー スコア`)`  
+  
+-   `.`([期間]`)`  
+  
+-   `!`(感嘆符`)`  
+  
+-   \*(アスタリスク付き)  
+  
+-   `(`および`)`(かっこと右かっこ)  
+  
+ たとえば、文字、URL で送信されるテキストのブロックに埋め込んで`<`と`>`としてエンコードされます`%3c`と`%3e`です。  
+  
+ <xref:System.Net.WebUtility.UrlDecode%2A>エンコーディング メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UrlEncodeToBytes">
+      <MemberSignature Language="C#" Value="public static byte[] UrlEncodeToBytes (byte[] value, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] UrlEncodeToBytes(unsigned int8[] value, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebUtility.UrlEncodeToBytes(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Byte" /> URL エンコードする配列。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<see cref="T:System.Byte" />エンコードする配列。</param>
+        <param name="count">(バイト単位) をエンコードする、カウント、<see cref="T:System.Byte" />配列。</param>
+        <summary>バイト配列を URL でエンコードされたバイト配列に変換します。</summary>
+        <returns><see cref="T:System.Byte" /> を返します。  
+  
+ エンコードされた<see cref="T:System.Byte" />配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTTP ストリームで空白や句読点などの文字が渡されると場合、受信側で誤って解釈される可能性があります。 URL エンコードすると、同等の文字の 16 進数のエスケープ シーケンスで構成されると、URL で許可されていない文字が置き換えられます。 変換後の文字列は、utf-8 形式に準拠するいると想定されます。  
+  
+ URL エンコードには、アルファベット、数字、および次の区切り文字を除くすべての文字コードが置き換えられます。  
+  
+-   `-`(マイナス記号)  
+  
+-   `_`(アンダー スコア)  
+  
+-   `.`(ピリオド)  
+  
+-   `!`(感嘆符)  
+  
+-   ' *' (アスタリスク付き)  
+  
+-   `'`(一重引用符)  
+  
+-   `(`および`)`(かっこと右かっこ)  
+  
+ たとえば、文字、URL で送信されるテキストのブロックに埋め込んで`<`と`>`としてエンコードされます`%3c`と`%3e`です。  
+  
+ <xref:System.Net.WebUtility.UrlDecodeToBytes%2A>エンコーディング メソッドの逆です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

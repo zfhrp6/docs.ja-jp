@@ -1,0 +1,82 @@
+<Type Name="InstanceState" FullName="System.Runtime.DurableInstancing.InstanceState">
+  <TypeSignature Language="C#" Value="public enum InstanceState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InstanceState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.DurableInstancing.InstanceState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>この列挙体にはインスタンスの状態の一覧が含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="Completed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.DurableInstancing.InstanceState Completed = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.DurableInstancing.InstanceState.Completed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスが完了状態であることを示します。 完了したインスタンスを後で再度永続化することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialized">
+      <MemberSignature Language="C#" Value="Initialized" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.DurableInstancing.InstanceState Initialized = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.DurableInstancing.InstanceState.Initialized" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスが初期化されていることを示します。 初期化されたインスタンスとは、少なくとも 1 回永続化され、後で再度永続化できるインスタンスのことです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninitialized">
+      <MemberSignature Language="C#" Value="Uninitialized" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.DurableInstancing.InstanceState Uninitialized = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.DurableInstancing.InstanceState.Uninitialized" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスが初期化されていないことを示します。 初期化されていないインスタンスとは、一度も永続化されたことがないインスタンスのことです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.DurableInstancing.InstanceState Unknown = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.DurableInstancing.InstanceState.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.DurableInstancing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスが不明の状態にあることを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

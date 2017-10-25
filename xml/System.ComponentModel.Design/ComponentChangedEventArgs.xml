@@ -1,0 +1,233 @@
+<Type Name="ComponentChangedEventArgs" FullName="System.ComponentModel.Design.ComponentChangedEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ComponentChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComponentChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanged" /> イベントのデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ComponentChangedEventArgs>データを提供する<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>イベント。 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>イベントは、通知、<xref:System.ComponentModel.Design.IComponentChangeService>され、現在アクティブなドキュメント内の特定のコンポーネントが変更されているイベント ハンドラーを登録します。  
+  
+ A<xref:System.ComponentModel.Design.ComponentChangedEventArgs>次の情報を提供します。  
+  
+-   A<xref:System.ComponentModel.Design.ComponentChangedEventArgs.Component%2A>コンポーネントが変更されたことを示すプロパティです。  
+  
+-   A<xref:System.ComponentModel.Design.ComponentChangedEventArgs.Member%2A>変更されたメンバーを示すプロパティです。  
+  
+-   A<xref:System.ComponentModel.Design.ComponentChangedEventArgs.NewValue%2A>メンバーの新しい値を示すプロパティです。  
+  
+-   <xref:System.ComponentModel.Design.ComponentChangedEventArgs.OldValue%2A>メンバーの古い値を示すプロパティです。  
+  
+ コンポーネント デザイナーを通常発生させる、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>イベント コンポーネントを追加するときに自動的に削除、または変更します。 A<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>この時点での変更が必要であるために、フォームの読み込みとアンロード中にイベントが発生しません。 コンポーネント デザイナーを発生させる可能性があります、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>後にイベントが、コンポーネントのプロパティを変更; これにより、[プロパティ] ウィンドウが更新されるプロパティが表示されます。  
+  
+   
+  
+## Examples  
+ 次の例で作成、<xref:System.ComponentModel.Design.ComponentChangedEventArgs>です。  
+  
+ [!code-cpp[ComponentChangedEventArgsExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ComponentChangedEventArgsExample/CPP/componentchangedeventargsexample.cpp#1)]
+ [!code-csharp[ComponentChangedEventArgsExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ComponentChangedEventArgsExample/CS/componentchangedeventargsexample.cs#1)]
+ [!code-vb[ComponentChangedEventArgsExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComponentChangedEventArgsExample/VB/componentchangedeventargsexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>コンパイラ エラーは、このクラスが別のクラスの基底クラスとして指定されている場合に発生します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentChangedEventArgs (object component, System.ComponentModel.MemberDescriptor member, object oldValue, object newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object component, class System.ComponentModel.MemberDescriptor member, object oldValue, object newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ComponentChangedEventArgs.#ctor(System.Object,System.ComponentModel.MemberDescriptor,System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+        <Parameter Name="oldValue" Type="System.Object" />
+        <Parameter Name="newValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="component">変更されたコンポーネント。</param>
+        <param name="member">A<see cref="T:System.ComponentModel.MemberDescriptor" />変更されたメンバーを表すです。</param>
+        <param name="oldValue">変更されたメンバーの古い値。</param>
+        <param name="newValue">メンバーの変更後の新しい値。</param>
+        <summary><see cref="T:System.ComponentModel.Design.ComponentChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンポーネントのデザイナーは、コンポーネントのプロパティを変更した後に、このコンス トラクターを呼び出します。 これにより、プロパティ ウィンドウが、プロパティの更新後の値に表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Component">
+      <MemberSignature Language="C#" Value="public object Component { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Component" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangedEventArgs.Component" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたコンポーネントを取得します。</summary>
+        <value><see cref="T:System.Object" />が変更されたコンポーネントを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.MemberDescriptor Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.MemberDescriptor Member" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangedEventArgs.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MemberDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されているメンバーを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.MemberDescriptor" />が変更されているメンバーを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定できます`null`メンバーが不明の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewValue">
+      <MemberSignature Language="C#" Value="public object NewValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object NewValue" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangedEventArgs.NewValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーの変更後の新しい値を取得します。</summary>
+        <value>メンバーの変更後の新しい値。 このプロパティを指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、メンバーがない場合にのみ意味を持つ`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldValue">
+      <MemberSignature Language="C#" Value="public object OldValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object OldValue" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangedEventArgs.OldValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更されたメンバーの古い値を取得します。</summary>
+        <value>変更されたメンバーの古い値。 このプロパティを指定できます<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、メンバーがない場合にのみ意味を持つ`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

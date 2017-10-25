@@ -1,0 +1,346 @@
+<Type Name="RequestValidationSource" FullName="System.Web.Util.RequestValidationSource">
+  <TypeSignature Language="C#" Value="public enum RequestValidationSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RequestValidationSource extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Util.RequestValidationSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>検証する HTTP 要求データの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装してカスタムの要求の検証の種類を作成することができます、<xref:System.Web.Util.RequestValidator>型です。 ASP.NET を呼び出すと、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>要求、ASP.NET を検証するメソッドは、`requestValidationSource`パラメーターを検証するデータのソースを指定します。 <xref:System.Web.Util.RequestValidationSource>ソースまたは検証されている要求データの種類を指定する列挙を使用します。 列挙体が渡される HTTP 入力の種類を示す、`value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドです。 列挙体は、カスタム ロジックを使用して検証しないようにする場合、HTTP の入力の基本の要求の検証の実装にフォールバックする手段として使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、クエリ文字列の値の特定の文字列のみを許可するカスタムの要求の検証コントロール クラスを作成する方法を示します。  
+  
+```vb  
+Imports System  
+Imports System.Web  
+Imports System.Web.Util  
+  
+Public Class CustomRequestValidation  
+    Inherits RequestValidator  
+  
+Public Sub New()  
+End Sub  
+  
+Protected Overloads Overrides Function IsValidRequestString( _  
+        ByVal context As HttpContext, _  
+        ByVal value As String, _  
+        ByVal requestValidationSource__1 As RequestValidationSource, _  
+        ByVal collectionKey As String, _  
+        ByRef validationFailureIndex As Integer) As Boolean  
+    validationFailureIndex = -1  
+    ' Set a default value for the out parameter.  
+    ' This application does not use RawUrl directly, so you can   
+    ' ignore the check for RequestValidationSource.RawUrl.  
+    If requestValidationSource = RequestValidationSource.RawUrl Then  
+        Return True  
+    End If  
+  
+    ' Allow the query-string key "data" to have an XML-like value.  
+    If (requestValidationSource = _  
+            (RequestValidationSource.QueryString) AndAlso _  
+            (collectionKey = "data") Then  
+        ' The querystring value "<example>1234</example>" is allowed.  
+        If value = "<example>1234</example>" Then  
+            validationFailureIndex = -1  
+            Return True  
+        Else  
+            ' Leave any further checks to ASP.NET.  
+            Return MyBase.IsValidRequestString(context, value, _  
+                requestValidationSource__1, collectionKey, _  
+                validationFailureIndex)  
+        End If  
+    Else  
+        ' All other HTTP input checks fall back to   
+        ' the base ASP.NET implementation.  
+        Return MyBase.IsValidRequestString(context, value, _  
+            requestValidationSource__1, collectionKey, _  
+            validationFailureIndex)  
+    End If  
+End Function  
+End Class  
+```  
+  
+```csharp  
+using System;  
+using System.Web;  
+using System.Web.Util;  
+  
+public class CustomRequestValidation : RequestValidator  
+{  
+    public CustomRequestValidation() {}  
+  
+    protected override bool IsValidRequestString(  
+        HttpContext context, string value,   
+        RequestValidationSource requestValidationSource, string collectionKey,   
+        out int validationFailureIndex)  
+    {  
+        //Set a default value for the out parameter.  
+        validationFailureIndex = -1;  
+  
+        // This application does not use RawUrl directly,   
+        // so you can ignore the check for RequestValidationSource.RawUrl.  
+        if (requestValidationSource == RequestValidationSource.RawUrl)  
+            return true;  
+  
+        // Allow the query-string key "data" to have an XML-like value.  
+        if (  
+            (requestValidationSource == RequestValidationSource.QueryString) &&  
+            (collectionKey == "data")  
+           )  
+        {  
+            // The querystring value "<example>1234</example>" is allowed.  
+            if (value == "<example>1234</example>")  
+            {  
+                validationFailureIndex = -1;  
+                return true;  
+            }  
+            else  
+           // Leave any further checks to ASP.NET.  
+                return base.IsValidRequestString(context, value,   
+                requestValidationSource, collectionKey, out   
+                validationFailureIndex);  
+        }  
+        // All other HTTP input checks fall back to   
+        // the base ASP.NET implementation.  
+        else  
+        {  
+            return base.IsValidRequestString(context, value,   
+                requestValidationSource, collectionKey,   
+                out validationFailureIndex);  
+        }  
+    }  
+}  
+```  
+  
+ 次の例では、カスタム検証を使用する ASP.NET を構成する方法を示します。  
+  
+```  
+<httpRuntime requestValidationType="CustomRequestValidation" />  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="Cookies" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource Cookies = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.Cookies" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求の cookie。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内の cookie の名前に設定します。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内の値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Files">
+      <MemberSignature Language="C#" Value="Files" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource Files = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.Files" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アップロードされたファイルです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクションにアップロードされたファイルの名前に設定します。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクションにアップロードされたファイルの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Form">
+      <MemberSignature Language="C#" Value="Form" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource Form = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.Form" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内のフォームのパラメーターの名前に設定します。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内のフォームのパラメーターの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="Headers" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource Headers = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.Headers" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求ヘッダー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクションで HTTP ヘッダーの名前に設定します。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内で HTTP ヘッダーの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="Path" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource Path = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.Path" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想パス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドに設定されている`null`(`Path`値のコレクションではありません)。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドが、パスのフィールドの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PathInfo">
+      <MemberSignature Language="C#" Value="PathInfo" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource PathInfo = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.PathInfo" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTTP <see cref="P:System.Web.HttpRequest.PathInfo" /> URL パスへの拡張機能である文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドに設定されている`null`(`PathInfo`値のコレクションではありません)。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>方法が PathInfo フィールドの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryString">
+      <MemberSignature Language="C#" Value="QueryString" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource QueryString = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.QueryString" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ文字列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>方法が、コレクション内のクエリ文字列パラメーターの名前に設定します。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドがコレクション内のクエリ文字列パラメーターの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawUrl">
+      <MemberSignature Language="C#" Value="RawUrl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Util.RequestValidationSource RawUrl = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Util.RequestValidationSource.RawUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Util.RequestValidationSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生の URL。 (ドメイン後 URL の一部です。)</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `collectionKey`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>メソッドに設定されている`null`です。 (`RawUrl`値のコレクションではありません)。  
+  
+ `value`のパラメーター、<xref:System.Web.Util.RequestValidator.IsValidRequestString%2A>方法が RawUrl フィールドの値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

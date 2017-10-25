@@ -1,0 +1,98 @@
+<Type Name="MenuMerge" FullName="System.Windows.Forms.MenuMerge">
+  <TypeSignature Language="C#" Value="public enum MenuMerge" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MenuMerge extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MenuMerge" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>動作を指定します、<see cref="T:System.Windows.Forms.MenuItem" />別のメニュー項目にマージされた時期。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の設定をこの列挙体のメンバーを使用して、<xref:System.Windows.Forms.MenuItem.MergeType%2A>のプロパティ、<xref:System.Windows.Forms.MenuItem>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このバージョンの<xref:System.Windows.Forms.MenuItem.MergeMenu%2A>のコピーを作成する方法、<xref:System.Windows.Forms.MenuItem>と他のマージとします。 統合<xref:System.Windows.Forms.MenuItem>に追加し、<xref:System.Windows.Forms.ContextMenu>コントロール。 この例では、次の 2 つのメニュー項目が呼び出されたが`menuItem1`と`menuItem2`それらに含まれるサブメニュー項目が含まれていると、<xref:System.Windows.Forms.ContextMenu>という名前`contextMenu1`メニュー項目を表示します。 `menuItem1`および`menuItem2`それぞれに含まれる別のメニュー項目があります。 呼び出し後<xref:System.Windows.Forms.MenuItem.MergeMenu%2A>行われると、統合メニューを作成します。  
+  
+ [!code-cpp[Classic MenuItem.MergeMenu1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MenuItem.MergeMenu1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MenuItem.MergeMenu1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MenuItem.MergeMenu1 Example/CS/source.cs#1)]
+ [!code-vb[Classic MenuItem.MergeMenu1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MenuItem.MergeMenu1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="Add" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MenuMerge Add = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MenuMerge.Add" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuMerge</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.MenuItem" />が既存のコレクションに追加<see cref="T:System.Windows.Forms.MenuItem" />マージされたメニュー内のオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeItems">
+      <MemberSignature Language="C#" Value="MergeItems" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MenuMerge MergeItems = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MenuMerge.MergeItems" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuMerge</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このすべてのサブメニュー項目<see cref="T:System.Windows.Forms.MenuItem" />と既存のマージ<see cref="T:System.Windows.Forms.MenuItem" />マージされたメニューの同じ位置にあるオブジェクト。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="Remove" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MenuMerge Remove = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MenuMerge.Remove" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuMerge</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.MenuItem" />マージされたメニューには含まれません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Replace">
+      <MemberSignature Language="C#" Value="Replace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.MenuMerge Replace = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.MenuMerge.Replace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MenuMerge</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.MenuItem" /> 、既存の置換<see cref="T:System.Windows.Forms.MenuItem" />マージされたメニューの同じ位置にあります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

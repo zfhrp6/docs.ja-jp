@@ -1,0 +1,969 @@
+<Type Name="FtpStatusCode" FullName="System.Net.FtpStatusCode">
+  <TypeSignature Language="C#" Value="public enum FtpStatusCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FtpStatusCode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.FtpStatusCode" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ファイル転送プロトコル (FTP) の操作に対して返されるステータス コードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.FtpStatusCode>列挙型で返される値の定義、<xref:System.Net.FtpWebResponse.StatusCode%2A>プロパティです。  
+  
+ FTP サーバーの状態コードの詳細については、RFC 959、「ファイル転送プロトコル」セクション 4.2「FTP 応答、」で使用可能なを参照してください。 [http://www.rfc-editor.org](http://www.ietf.org)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、FTP サーバーで、新しいディレクトリに FTP 要求を送信し、応答で返されるステータス コードを確認します。  
+  
+ [!code-cpp[NclFtpClient#22](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLFtpClient/CPP/ftptests.cpp#22)]
+ [!code-csharp[NclFtpClient#22](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLFtpClient/CS/ftptests.cs#22)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccountNeeded">
+      <MemberSignature Language="C#" Value="AccountNeeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode AccountNeeded = int32(532)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.AccountNeeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー上のユーザー アカウントが必要であるを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionAbortedLocalProcessingError">
+      <MemberSignature Language="C#" Value="ActionAbortedLocalProcessingError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionAbortedLocalProcessingError = int32(451)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionAbortedLocalProcessingError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求された操作の完了を妨げるエラーが発生したことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionAbortedUnknownPageType">
+      <MemberSignature Language="C#" Value="ActionAbortedUnknownPageType" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionAbortedUnknownPageType = int32(551)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionAbortedUnknownPageType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したページの種類が不明であるため、要求された操作を実行することはできませんを指定します。 ページの種類は、RFC 959 のセクションで説明されて 3.1.2.3</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionNotTakenFilenameNotAllowed">
+      <MemberSignature Language="C#" Value="ActionNotTakenFilenameNotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionNotTakenFilenameNotAllowed = int32(553)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionNotTakenFilenameNotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したファイルに、要求された操作を実行できないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionNotTakenFileUnavailable">
+      <MemberSignature Language="C#" Value="ActionNotTakenFileUnavailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionNotTakenFileUnavailable = int32(550)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionNotTakenFileUnavailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが使用できないために、指定したファイルに対して、要求された操作を実行できないするを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionNotTakenFileUnavailableOrBusy">
+      <MemberSignature Language="C#" Value="ActionNotTakenFileUnavailableOrBusy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionNotTakenFileUnavailableOrBusy = int32(450)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionNotTakenFileUnavailableOrBusy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが使用できないか使用されているために、指定したファイルに対して、要求された操作を実行できないするを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionNotTakenInsufficientSpace">
+      <MemberSignature Language="C#" Value="ActionNotTakenInsufficientSpace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ActionNotTakenInsufficientSpace = int32(452)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ActionNotTakenInsufficientSpace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー上に十分な領域がないため、要求された操作を実行できないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ArgumentSyntaxError">
+      <MemberSignature Language="C#" Value="ArgumentSyntaxError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ArgumentSyntaxError = int32(501)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ArgumentSyntaxError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数のコマンド引数に構文エラーがあることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BadCommandSequence">
+      <MemberSignature Language="C#" Value="BadCommandSequence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode BadCommandSequence = int32(503)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.BadCommandSequence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドのシーケンスが正しい順序でないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CantOpenData">
+      <MemberSignature Language="C#" Value="CantOpenData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode CantOpenData = int32(425)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.CantOpenData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ接続を開くことができないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ClosingControl">
+      <MemberSignature Language="C#" Value="ClosingControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ClosingControl = int32(221)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ClosingControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーが制御接続を閉じているを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ClosingData">
+      <MemberSignature Language="C#" Value="ClosingData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ClosingData = int32(226)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ClosingData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは、データを終了することを指定します。 接続と要求されたファイルの操作が成功したことです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandExtraneous">
+      <MemberSignature Language="C#" Value="CommandExtraneous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode CommandExtraneous = int32(202)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.CommandExtraneous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不要であるために、コマンドがサーバーによって実装されないように指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandNotImplemented">
+      <MemberSignature Language="C#" Value="CommandNotImplemented" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode CommandNotImplemented = int32(502)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.CommandNotImplemented" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが FTP サーバーで実装していないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandOK">
+      <MemberSignature Language="C#" Value="CommandOK" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode CommandOK = int32(200)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.CommandOK" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが正常に完了したことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSyntaxError">
+      <MemberSignature Language="C#" Value="CommandSyntaxError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode CommandSyntaxError = int32(500)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.CommandSyntaxError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが構文エラーがあるか、サーバーによって認識されるコマンドではないを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionClosed">
+      <MemberSignature Language="C#" Value="ConnectionClosed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ConnectionClosed = int32(426)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ConnectionClosed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続が閉じられたことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAlreadyOpen">
+      <MemberSignature Language="C#" Value="DataAlreadyOpen" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode DataAlreadyOpen = int32(125)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.DataAlreadyOpen" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ接続が既に要求された転送が開始されているを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryStatus">
+      <MemberSignature Language="C#" Value="DirectoryStatus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode DirectoryStatus = int32(212)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.DirectoryStatus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリの状態を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnteringPassive">
+      <MemberSignature Language="C#" Value="EnteringPassive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode EnteringPassive = int32(227)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.EnteringPassive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーがパッシブ モードを入力することを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FileActionAborted">
+      <MemberSignature Language="C#" Value="FileActionAborted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode FileActionAborted = int32(552)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.FileActionAborted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求された操作を実行できないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FileActionOK">
+      <MemberSignature Language="C#" Value="FileActionOK" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode FileActionOK = int32(250)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.FileActionOK" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたファイルの操作が正常に完了したことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FileCommandPending">
+      <MemberSignature Language="C#" Value="FileCommandPending" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode FileCommandPending = int32(350)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.FileCommandPending" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたファイルのアクションに追加情報が必要なことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FileStatus">
+      <MemberSignature Language="C#" Value="FileStatus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode FileStatus = int32(213)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.FileStatus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの状態を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LoggedInProceed">
+      <MemberSignature Language="C#" Value="LoggedInProceed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode LoggedInProceed = int32(230)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.LoggedInProceed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがログオンしてコマンドを送信できることを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NeedLoginAccount">
+      <MemberSignature Language="C#" Value="NeedLoginAccount" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode NeedLoginAccount = int32(332)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.NeedLoginAccount" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーが使用されるログイン アカウントが必要であるを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotLoggedIn">
+      <MemberSignature Language="C#" Value="NotLoggedIn" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode NotLoggedIn = int32(530)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.NotLoggedIn" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーにログイン情報を送信する必要がありますを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OpeningData">
+      <MemberSignature Language="C#" Value="OpeningData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode OpeningData = int32(150)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.OpeningData" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーがデータ接続を開くことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PathnameCreated">
+      <MemberSignature Language="C#" Value="PathnameCreated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode PathnameCreated = int32(257)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.PathnameCreated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたパス名が作成されたことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartMarker">
+      <MemberSignature Language="C#" Value="RestartMarker" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode RestartMarker = int32(110)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.RestartMarker" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>再起動マーカー返信が応答に含まれることを指定します。 この状態に付属する説明のテキストには、ユーザーのデータ ストリームのマーカーとサーバーのマーカーが含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SendPasswordCommand">
+      <MemberSignature Language="C#" Value="SendPasswordCommand" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode SendPasswordCommand = int32(331)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.SendPasswordCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーが、パスワードの入力を期待しているを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SendUserCommand">
+      <MemberSignature Language="C#" Value="SendUserCommand" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode SendUserCommand = int32(220)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.SendUserCommand" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーがユーザーのログイン操作の準備が整ってことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerWantsSecureSession">
+      <MemberSignature Language="C#" Value="ServerWantsSecureSession" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ServerWantsSecureSession = int32(234)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ServerWantsSecureSession" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ データの交換が完了したら、サーバーは、クライアントによって指定された認証メカニズムを受け入れますことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceNotAvailable">
+      <MemberSignature Language="C#" Value="ServiceNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ServiceNotAvailable = int32(421)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ServiceNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが使用できないことを指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceTemporarilyNotAvailable">
+      <MemberSignature Language="C#" Value="ServiceTemporarilyNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode ServiceTemporarilyNotAvailable = int32(120)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.ServiceTemporarilyNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが使用できないようになりました。 を指定します後でやり直してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemType">
+      <MemberSignature Language="C#" Value="SystemType" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode SystemType = int32(215)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.SystemType" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Internet Assigned Numbers Authority によって発行された Assigned Numbers ドキュメントでパブリッシュされたシステム名を使用して、システム型名を指定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Undefined">
+      <MemberSignature Language="C#" Value="Undefined" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.FtpStatusCode Undefined = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.FtpStatusCode.Undefined" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.FtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全を期すのため含まれている、サーバーによってこの値は返されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

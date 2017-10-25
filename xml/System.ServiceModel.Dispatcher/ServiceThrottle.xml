@@ -1,0 +1,151 @@
+<Type Name="ServiceThrottle" FullName="System.ServiceModel.Dispatcher.ServiceThrottle">
+  <TypeSignature Language="C#" Value="public sealed class ServiceThrottle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceThrottle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ServiceThrottle" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービスのスループットを制御して可用性とパフォーマンスを最適化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスのパフォーマンス特性を調整するには <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を使用します。 サービスの <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を構成する最も簡単な方法は、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> を使用することで、アプリケーション構成ファイルを使用すると、特に簡単です。  
+  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentCalls%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> オブジェクト内のすべてのディスパッチャー オブジェクトをアクティブに処理するメッセージの最大数を表します。  
+  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> プロパティは、サービス内の <xref:System.ServiceModel.InstanceContext> オブジェクトの最大数を表します。  
+  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> が受け入れ可能なセッションの最大数を表します。  
+  
+> [!NOTE]
+>  トレースは、最初の呼び出し、<xref:System.ServiceModel.InstanceContext>、またはセッションが待機リストのキューに置かれたときに出力されます。 最初のトレースは警告として出力されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーション構成ファイル内の <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を参照することにより、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> の典型的な使用方法を表示しています。 このケースでは、指定された値が、任意の一時点において 1 つの接続から 1 つの <xref:System.ServiceModel.InstanceContext> に対して確立するメッセージ処理は、多くとも 1 つです。 実際の使用方法は、経験を通して決定する必要があります。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MaxConcurrentCalls">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentCalls { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentCalls" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentCalls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHost" /> のすべてのディスパッチャー オブジェクトでアクティブに処理中のメッセージの最大数を取得または設定します。</summary>
+        <value>サービス内でアクティブなメッセージの数の上限。 既定値は 16 *、コンピューターのプロセッサの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentCalls%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> オブジェクト内のすべてのディスパッチャー オブジェクトをアクティブに処理するメッセージの最大数を表します。 各チャネルは 1 つの保留メッセージを持つことができます。保留メッセージは、<xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentCalls%2A> がその処理を開始するまで、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] の値にはカウントされません。  
+  
+> [!NOTE]
+>  このプロパティの値を超えるたびにトレースが出力されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーション構成ファイル内の <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を参照することにより、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> の典型的な使用方法を表示しています。 このケースでは、指定された値が、任意の一時点において 1 つの接続から 1 つの <xref:System.ServiceModel.InstanceContext> に対して確立するメッセージ処理は、多くとも 1 つです。 実際の使用方法は、経験を通して決定する必要があります。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentInstances">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentInstances { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentInstances" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一度に実行可能なサービス オブジェクトの最大数を取得または設定します。</summary>
+        <value>任意の一時点におけるサービス内の <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトの最大数。 既定では同時呼び出しの最大 + 同時セッションの最大数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> プロパティは、サービス内の <xref:System.ServiceModel.InstanceContext> オブジェクトの最大数を表します。 <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A> プロパティおよび <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティの間の関係を覚えておくことは重要です。 場合<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A>は<xref:System.ServiceModel.InstanceContextMode.PerSession>結果の値は、セッションの合計数。 <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> が <xref:System.ServiceModel.InstanceContextMode.PerCall> の場合、得られる値は同時呼び出し数です。 <xref:System.ServiceModel.InstanceContext> オブジェクトの数が最大数に達しているときに受信したメッセージは、1 つの <xref:System.ServiceModel.InstanceContext> オブジェクトを閉じるまで保留されます。  
+  
+> [!NOTE]
+>  このプロパティの値を超えるたびにトレースが出力されます。 最初のトレースは警告として出力されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーション構成ファイル内の <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を参照することにより、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> の典型的な使用方法を表示しています。 このケースでは、指定された値が、任意の一時点において 1 つの接続から 1 つの <xref:System.ServiceModel.InstanceContext> に対して確立するメッセージ処理は、多くとも 1 つです。 実際の使用方法は、経験を通して決定する必要があります。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxConcurrentSessions">
+      <MemberSignature Language="C#" Value="public int MaxConcurrentSessions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxConcurrentSessions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceHost" /> オブジェクトが同時に受け入れ可能なセッションの最大数を指定する値を取得または設定します。</summary>
+        <value>1 つのサービス ホストが受け入れ可能なセッションの最大数。 既定値は 100 *、コンピューターのプロセッサの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions%2A> プロパティは、<xref:System.ServiceModel.ServiceHost> が受け入れ可能なチャネルの最大数を表します。 各リスナー オブジェクトは 1 つの保留チャネルを持つことができます。保留チャネルは、<xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentSessions%2A> がそのチャネルを受け入れ、そのチャネルでメッセージの処理を開始するまで、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の値にはカウントされません。 このプロパティは、セッションを使用するシナリオで最も有用です。  
+  
+> [!NOTE]
+>  このプロパティの値を超えるたびにトレースが出力されます。 最初のトレースは警告として出力されます。  
+  
+ セッションの詳細については、次を参照してください。[セッションを使用した](~/docs/framework/wcf/using-sessions.md)です。  
+  
+ 通常、このプロパティは、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A?displayProperty=nameWithType> プロパティを使用して設定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーション構成ファイル内の <xref:System.ServiceModel.Dispatcher.ServiceThrottle> を参照することにより、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior> の典型的な使用方法を表示しています。 このケースでは、指定された値が、任意の一時点において 1 つの接続から 1 つの <xref:System.ServiceModel.InstanceContext> に対して確立するメッセージ処理は、多くとも 1 つです。 実際の使用方法は、経験を通して決定する必要があります。  
+  
+ [!code-xml[ServiceThrottlingBehavior#3](~/samples/snippets/csharp/VS_Snippets_CFX/servicethrottlingbehavior/cs/hostapplication.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

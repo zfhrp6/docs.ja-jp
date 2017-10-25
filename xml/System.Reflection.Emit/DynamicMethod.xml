@@ -1,0 +1,1894 @@
+<Type Name="DynamicMethod" FullName="System.Reflection.Emit.DynamicMethod">
+  <TypeSignature Language="C#" Value="public sealed class DynamicMethod : System.Reflection.MethodInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DynamicMethod extends System.Reflection.MethodInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.Emit.DynamicMethod" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.MethodInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンパイル、実行、および破棄することのできる動的メソッドを定義し、またそれを表現します。 破棄されたメソッドは、ガベージ コレクションのために利用可能です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Reflection.Emit.DynamicMethod>クラスを生成し、メソッドを格納するには、動的アセンブリと動的な型を生成することがなく、実行時にメソッドを実行します。 ・ イン タイム (JIT) コンパイラによって作成された実行可能コードが回収されるときに、<xref:System.Reflection.Emit.DynamicMethod>オブジェクトを解放します。 動的メソッドは、生成し、少量のコードを実行するには、最も効率的な方法です。  
+  
+ 動的メソッドは匿名でホストされることができます、またはモジュールまたは型に関連付けられた belogically ことができます。  
+  
+-   動的メソッドが匿名でホストされている場合は、システム指定のアセンブリ内にあるし、はそのため、他のコードから分離します。 既定がない非パブリック データにアクセスします。 匿名でホストされる動的メソッドを許可されている場合、JIT コンパイラの参照範囲チェックをスキップすることを制限できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 動的メソッドが非パブリック メンバーにアクセスするアセンブリの信頼レベルと同じか、または動的メソッドを出力する呼び出しスタックの信頼レベルのサブセットにする必要があります。 匿名でホストされる動的メソッドの詳細については、次を参照してください。[チュートリアル: 部分信頼シナリオでのコードの生成](~/docs/framework/reflection-and-codedom/walkthrough-emitting-code-in-partial-trust-scenarios.md)です。  
+  
+-   動的メソッドが指定したモジュールに関連付けられている場合は、動的メソッドは実質的にはモジュールに対してグローバルです。 モジュール内のすべての型とそのすべてにアクセスできる`internal`(`Friend` Visual Basic で) 型のメンバーです。 動的なを関連付けることができます、モジュールを作成するかどうかに関係なく、任意のモジュールを持つメソッドを提供の需要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>フラグは、コードが含まれているコール スタックによって満たされることができます。 場合、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>許可フラグを含めると、動的メソッドが JIT コンパイラの参照範囲チェックをスキップし、モジュール、または任意のアセンブリに他のモジュールで宣言されているすべての型のプライベート データにアクセスします。  
+  
+    > [!NOTE]
+    >  動的メソッドが関連付けられているモジュールを指定するときにそのモジュールが匿名のホストに使用されるシステム指定のアセンブリにすることはできません。  
+  
+-   動的メソッドが指定した型と関連付けられている場合は、アクセス レベルに関係なく、型のすべてのメンバーへのアクセスがあります。 さらに、JIT 参照範囲チェックをスキップできます。 これは、ため、動的メソッドにアクセスまたは任意のアセンブリに他のモジュールで、同じモジュールで宣言されているその他の型のプライベート データ。 任意の型、動的メソッドを関連付けることができますが、コードを付与する必要があります<xref:System.Security.Permissions.ReflectionPermission>両方を持つ、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>と<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess>フラグ。  
+  
+ 次の表に、どの型およびメンバーは、匿名でホストされる動的メソッドとかどうかに応じて、JIT 参照範囲チェックなしにアクセスできる<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>フラグが許可されています。  
+  
+||<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> を使用しない場合|<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess> を使用する場合|  
+|-|-|-|  
+|JIT 参照範囲チェックをスキップしないで|任意のアセンブリ内のパブリック型のパブリック メンバーです。|任意のアセンブリ内のパブリック型のパブリック メンバーです。|  
+|スキップ JIT 参照範囲チェック、制限があります。|任意のアセンブリ内のパブリック型のパブリック メンバーです。|信頼レベルが、同じか、または動的メソッドを出力したアセンブリの信頼レベルよりも小さいアセンブリだけで、すべての種類のすべてのメンバー。|  
+  
+> [!NOTE]
+>  前のバージョン、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、必要なコードを出力<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 このアクセス許可は FullTrust および名前付き権限セット、LocalIntranet で既定で含まれていますが、インターネット アクセス許可ではなく設定。 そのため、以前のバージョンのでは、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]がある場合にのみ、インターネット アクセス許可でライブラリを使用できます、<xref:System.Security.SecurityCriticalAttribute>属性を実行しても、<xref:System.Security.PermissionSet.Assert%2A>の<xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit>します。 このようなライブラリでは、コーディング エラーがあるとセキュリティ ホールが発生するおそれがあるため、セキュリティを慎重にレビューする必要があります。 コードの生成は本質的に特権を必要とする操作ではないため、[!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)] はセキュリティ確認要求を発行せずに部分信頼シナリオでコードを出力できます。 これは、生成されたコードには、コードを出力したアセンブリと同等以下のアクセス許可しかないことを意味します。 これにより、コードを出力するライブラリは透過的セキュリティになるため、<xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit> を要求する必要がなくなります。そのため、安全なライブラリを簡単に作成できるようになります。 この機能を使用するアプリケーションを対象する必要があります、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]またはそれ以降。  
+  
+ 次の表に、どの型とメンバーには、モジュールまたはモジュール内の型に関連付けられている動的メソッドにアクセスします。  
+  
+||モジュールに関連付けられています。|型に関連付けられています。|  
+|-|-|-|  
+|JIT 参照範囲チェックをスキップしないで|モジュール内のパブリック、内部、およびプライベートの型のパブリックおよび内部のメンバー。<br /><br /> 任意のアセンブリ内のパブリック型のパブリック メンバーです。|関連付けられている型のすべてのメンバーです。 モジュール内の他のすべての型のパブリックおよび内部のメンバー。<br /><br /> 任意のアセンブリ内のパブリック型のパブリック メンバーです。|  
+|JIT 参照範囲チェックをスキップしています|任意のアセンブリ内のすべての種類のすべてのメンバー。|任意のアセンブリ内のすべての種類のすべてのメンバー。|  
+  
+ モジュールに関連付けられている動的メソッドは、そのモジュールのアクセス許可を付与します。 型に関連付けられている動的メソッドは、その型を含むモジュールのアクセス許可を付与します。  
+  
+ 動的メソッドとそのパラメーターが、名前を指定する必要が、デバッグを支援する名前を指定できます。 動的メソッドまたはそのパラメーターには、カスタム属性はサポートされていません。  
+  
+ 動的メソッドは`static`メソッド (`Shared` Visual Basic でのメソッド) で導入されたデリゲート バインディング規則が緩和、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]デリゲート インスタンスを使用して呼び出されたときに、インスタンス メソッドと同様に動作できるように、オブジェクトにバインドされる動的メソッドを許可します。 その方法を示す例も参考に、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29>メソッドのオーバー ロードします。  
+  
+> [!NOTE]
+>  [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、シンボル情報をローカル変数名と行番号のマップの動的メソッドはサポートされません。 この制限は、将来のバージョンで削除される可能性があります。 使用することができます<xref:System.Reflection.Emit.AssemblyBuilder>開発時に生成された Microsoft intermediate language (MSIL) のデバッグを簡略化し、いるために、最後の展開時に動的メソッドに、スイッチに、<xref:System.Reflection.Emit.ILGenerator>呼び出しは、どちらの場合も同じです。  
+  
+## <a name="verification"></a>検証  
+ 動的メソッドを検証できないコードを含めることができます、条件を次に示します。 (たとえば、動的メソッドは検証可能な場合はその<xref:System.Reflection.Emit.DynamicMethod.InitLocals%2A>プロパティに設定されている`false`)。  
+  
+-   セキュリティ クリティカルなアセンブリに関連付けられている動的メソッドは、セキュリティ クリティカルでも、検証をスキップすることができます。 たとえば、デスクトップ アプリケーションとして実行されるセキュリティ属性のないアセンブリは、ランタイムによってセキュリティ クリティカルとして扱われます。 動的メソッドをアセンブリに関連付ける場合は、動的メソッドは、検証できないコードを含めることができます。  
+  
+-   検証不可能なコードを含む動的メソッドは、レベル 1 の透過性のあるアセンブリに関連付けられて、・ イン タイム (JIT) コンパイラは、セキュリティの要求を挿入します。 要求は、動的メソッドが完全に信頼されたコードによって実行される場合にのみ成功します。 参照してください[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)です。  
+  
+-   動的メソッドを検証できないコードが含まれていますが (mscorlib.dll) などのレベル 2 の透過性のあるアセンブリに関連付けられている場合は、セキュリティの要求を作成せずに (JIT コンパイラによって挿入)、例外をスローします。 参照してください[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+-   常に検証できないコードが含まれた、匿名でホストされる動的メソッドでは、例外をスローします。 検証は、作成され、完全に信頼されたコードによって実行される場合でも、決して省略できます。  
+  
+ 検証不可能なコードに対してスローされる例外は、動的メソッドが呼び出される方法によって異なります。 返されたデリゲートを使用して、動的メソッドを呼び出すかどうか、 <xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A> 、メソッド、<xref:System.Security.VerificationException>がスローされます。 使用して動的メソッドを呼び出す場合、 <xref:System.Reflection.Emit.DynamicMethod.Invoke%2A> 、メソッド、<xref:System.Reflection.TargetInvocationException>内部でがスローされます<xref:System.Security.VerificationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのパラメーターを受け取る動的メソッドを作成します。 例では、コンソールへの最初のパラメーターを出力する単純な関数の本体を出力し、例がメソッドの戻り値として 2 番目のパラメーターを使用します。 例では、デリゲートを作成することで、メソッドが完了する、別のパラメーターを持つデリゲートを呼び出すおよび動的メソッドを使用して、最後に起動、<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#1)]
+ [!code-csharp[Reflection.DynamicMethod.All#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.All#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <summary>メソッド名、戻り値の型、パラメーターの型を指定して、匿名でホストされる動的メソッドを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成される動的メソッドは、既存の型またはモジュールではなく、匿名のアセンブリに関連付けられます。 匿名のアセンブリは、他のコードから分離するには、動的メソッドのサンド ボックス環境を提供することのみ存在します。 この環境では、動的メソッドが出力され、部分信頼コードによって実行するセーフであります。  
+  
+ このコンス トラクターは、・ イン タイム (JIT) 参照範囲が検査する Microsoft intermediate language (MSIL) にも適用されます動的メソッドを指定します。 動的メソッドのコードは、パブリック クラスのパブリック メソッドにアクセスします。 メソッドは、型またはメンバーにアクセスしようとした場合、例外がスローされた`private`、 `protected`、または`internal`(`Friend` Visual Basic で)。 JIT 参照範囲チェックをスキップする機能が制限されている動的メソッドを作成するには、使用、<xref:System.Reflection.Emit.DynamicMethod.%23ctor%28System.String%2CSystem.Type%2CSystem.Type%5B%5D%2CSystem.Boolean%29>コンス トラクターです。  
+  
+ 匿名でホストされる動的メソッドを作成するときは、出力アセンブリの呼び出し履歴が含まれます。 メソッドが呼び出されたときに、出力アセンブリのアクセス許可は、実際の呼び出し元のアクセス許可の代わりに使用されます。 したがって、動的メソッドに渡されるより高い信頼レベルを持つアセンブリによって実行される場合でも、それを出力するアセンブリの場合よりも高い特権レベルで実行できません。  
+  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、および呼び出し規約<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  このコンス トラクターで導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]またはそれ以降。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes, bool restrictedSkipVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes, bool restrictedSkipVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[],System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="restrictedSkipVisibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="restrictedSkipVisibility">
+          動的メソッドの MSIL によりアクセスされる型およびメンバーに対する JIT 参照範囲チェックをスキップする場合は <see langword="true" /> (ただし、それらの型およびメンバーが含まれるアセンブリの信頼レベルは、動的メソッドを出力する呼び出しスタックの信頼レベル以下でなければならないという制限あり)。それ以外の場合は <see langword="false" />。</param>
+        <summary>メソッド名、戻り値の型、パラメーターの型を指定し、さらに Just-In-Time (JIT) 参照範囲チェックが動的メソッドの Microsoft Intermediate Language (MSIL) によりアクセスされる型やメンバーをスキップするかどうかを指定して、匿名ホスト対象の動的メソッドを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成される動的メソッドは、既存の型またはモジュールではなく、匿名のアセンブリに関連付けられます。 匿名のアセンブリは、他のコードから分離するには、動的メソッドのサンド ボックス環境を提供することのみ存在します。 この環境では、動的メソッドが出力され、部分信頼コードによって実行するセーフであります。  
+  
+ 匿名でホストされる動的メソッドには、型またはメンバーに自動的にアクセスはありません。 `private`、 `protected`、または`internal`(`Friend` Visual Basic で)。 これは、動的のメソッド、既存の型またはモジュールに関連付けられている、関連付けられているスコープの非表示のメンバーへのアクセスである必要が異なります。  
+  
+ 指定`true`の`restrictedSkipVisibility`型またはメンバーにアクセスするかどうか、動的メソッドが`private`、 `protected`、または`internal`です。 これは、ため、動的メソッドが制限されたアクセスをこれらのメンバーにします。 つまり、メンバーは、次の条件が満たされた場合にのみアクセスできます。  
+  
+-   ターゲットのメンバーは、動的メソッドを出力する呼び出しスタック以下の信頼のレベルを持つアセンブリに属しています。  
+  
+-   動的メソッドを出力する呼び出しスタックが付与される<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 これは完全信頼でコードが実行されたときに常に true です。 部分的に信頼されたコードは、これは true ホスト権限を明示的に許可する場合にのみです。  
+  
+    > [!IMPORTANT]
+    >  アクセス許可が付与されていない場合、セキュリティ例外がスロー<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>が呼び出されたか、動的メソッドが呼び出されると、ときにこのコンス トラクターは呼び出されません。 動的メソッドの出力には、特殊なアクセス許可は必要ありません。  
+  
+ など、動的メソッドで作成される`restrictedSkipVisibility`'éý'`true`コール スタックに制限付きメンバー アクセスが許可されている場合、呼び出し履歴上の任意のアセンブリのプライベート メンバーにアクセスできます。 動的メソッドを呼び出し履歴に部分的に信頼されたコードで作成すると、内の型のプライベート メンバーにアクセスできません、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]アセンブリ、そのようなアセンブリが完全に信頼されているためです。  
+  
+ 場合`restrictedSkipVisibility`は`false`、JIT 参照範囲チェックが適用されます。 動的メソッドのコードは、パブリック クラスのパブリック メソッドにアクセスし、型またはメンバーにアクセスしようとすると、例外がスローされます`private`、 `protected`、または`internal`です。  
+  
+ 匿名でホストされる動的メソッドを作成するときは、出力アセンブリの呼び出し履歴が含まれます。 メソッドが呼び出されたときに、出力、呼び出し履歴のアクセス許可は、実際の呼び出し元のアクセス許可ではなく使用されます。 したがって、動的メソッドに渡されるより高い信頼レベルを持つアセンブリによって実行される場合でも、それを出力するアセンブリの場合よりも高い特権レベルで実行できません。  
+  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、および呼び出し規約<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  このコンス トラクターで導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]またはそれ以降。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes, System.Reflection.Module m);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes, class System.Reflection.Module m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[],System.Reflection.Module)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="m" Type="System.Reflection.Module" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="m">動的メソッドが論理的に関連付けられるモジュールを表す <see cref="T:System.Reflection.Module" />。</param>
+        <summary>モジュールに対してグローバルに適用される動的メソッドを作成し、メソッド名、戻り値の型、パラメーターの型、およびモジュールを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、呼び出し規約<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>、・ イン タイム (JIT) 参照範囲チェックを省略していないとします。  
+  
+ このコンス トラクターで作成される動的メソッドがパブリックにアクセスし、 `internal` (`Friend` Visual Basic で) モジュールに含まれるすべての型のメンバーを`m`です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`m`モジュールは呼び出し元のモジュール、および必要な以外<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのパラメーターを受け取る動的メソッドを作成します。 例では、コンソールへの最初のパラメーターを出力する単純な関数の本体を出力し、例がメソッドの戻り値として 2 番目のパラメーターを使用します。 例では、デリゲートを作成することで、メソッドが完了する、別のパラメーターを持つデリゲートを呼び出すおよび動的メソッドを使用して、最後に起動、<xref:System.Reflection.Emit.DynamicMethod.Invoke%28System.Object%2CSystem.Reflection.BindingFlags%2CSystem.Reflection.Binder%2CSystem.Object%5B%5D%2CSystem.Globalization.CultureInfo%29>メソッドです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/cpp/source.cpp#1)]
+ [!code-csharp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/CS/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ または  
+  
+ <paramref name="m" /> は、動的メソッドに対して匿名のホストを提供するモジュールです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="m" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュールに関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes, Type owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes, class System.Type owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[],System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="owner" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="owner">動的メソッドが論理的に関連付けられる <see cref="T:System.Type" />。 動的メソッドには、型のすべてのメンバーへのアクセス権があります。</param>
+        <summary>メソッド名、戻り値の型、パラメーターの型、および動的メソッドが論理的に関連付けられる型を指定して、動的メソッドを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで作成される動的メソッドには、型のすべてのメンバーへのアクセス`owner`、および公開して`internal`(`Friend` Visual Basic で) を含むモジュール内の他のすべての型のメンバー`owner`です。  
+  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、呼び出し規約<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>、・ イン タイム (JIT) 参照範囲チェックを省略していないとします。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`owner`以外は、呼び出し元のモジュールと必要なモジュールの<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Reflection.Emit.DynamicMethod>型に論理的に関連付けられています。 この関連付けにより、その型のプライベート メンバーにアクセスします。  
+  
+ という名前のクラスを定義するコード例`Example`プライベート フィールドがクラスを名前付き`DerivedFromxample`最初のクラスから派生するという名前のデリゲート型`UseLikeStatic`を返す<xref:System.Int32>型のパラメーターを持ち、`Example`と<xref:System.Int32>、という名前のデリゲート型と`UseLikeInstance`を返す<xref:System.Int32>型の 1 つのパラメーターが<xref:System.Int32>です。  
+  
+ コード例を作成し、<xref:System.Reflection.Emit.DynamicMethod>のインスタンスのプライベート フィールドを変更する`Example`し、前の値を返します。  
+  
+> [!NOTE]
+>  一般に、クラスの内部フィールドの変更は良くありませんオブジェクト指向のコーディング方法です。  
+  
+ インスタンスを作成するコード例`Example`し、2 つのデリゲートを作成します。 型の 1 つは、 `UseLikeStatic`、動的メソッドと同じパラメーターを持ちます。 型の 2 つ目は、 `UseLikeInstance`、最初のパラメーターがないため (型の`Example`)。 使用してこのデリゲートを作成、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29>以外、2 番目のメソッドのオーバー ロード メソッド オーバー ロードのパラメーターがのインスタンス`Example`ここでは、先ほど作成したインスタンスは、新しく作成するデリゲートにバインドされています。 動的メソッドがのバインドのインスタンスに作用するデリゲートが呼び出されるたびに`Example`です。  
+  
+> [!NOTE]
+>  これで導入されたデリゲート バインディングの余裕のあるルールの例、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]の新しいオーバー ロードと共に、<xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType>メソッドです。 詳細については、<xref:System.Delegate> クラスを参照してください。  
+  
+ `UseLikeStatic`デリゲートが呼び出されるのインスタンスに渡します`Example`にバインドされている、`UseLikeInstance`を委任します。 続いて、`UseLikeInstance`デリゲートが呼び出される、両方のデリゲートがの同じインスタンスに機能するよう`Example`です。 内部フィールドの値の変更は、各呼び出しの後に表示されます。 最後に、`UseLikeInstance`デリゲートがのインスタンスにバインドされている`DerivedFromxample`デリゲートの呼び出しが繰り返されます。  
+  
+ [!code-csharp[Reflection.DynamicMethod.ClosedOver#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.ClosedOver/cs/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.ClosedOver#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.ClosedOver/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> がインターフェイス、配列、オープン ジェネリック型、またはジェネリック型またはメソッドの型パラメーターです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> が <see langword="null" /> であるか、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す対象となる型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュール内の型に関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes, System.Reflection.Module m, bool skipVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes, class System.Reflection.Module m, bool skipVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[],System.Reflection.Module,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="m" Type="System.Reflection.Module" />
+        <Parameter Name="skipVisibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="m">動的メソッドが論理的に関連付けられるモジュールを表す <see cref="T:System.Reflection.Module" />。</param>
+        <param name="skipVisibility">
+          動的メソッドの MSIL によりアクセスされる型とメンバーに対する JIT参照範囲チェックをスキップする場合は <see langword="true" />。</param>
+        <summary>メソッド名、戻り値の型、パラメーターの型、モジュールを指定し、さらに Just-In-Time (JIT) 参照範囲チェックが動的メソッドの Microsoft Intermediate Language (MSIL) によりアクセスされる型やメンバーをスキップするかどうかを指定して、モジュールに対してグローバルな動的メソッドを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、呼び出し規約と<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>です。  
+  
+ このコンス トラクターで作成される動的メソッドがパブリックにアクセスし、 `internal` (`Friend` Visual Basic で) 格納されているモジュール内のすべての型のメンバー`m`です。 コンパイラの参照範囲チェックを JIT をスキップできるよう、動的メソッドは他のすべての種類ものプライベートおよびプロテクト メンバーにアクセスします。 これは、オブジェクトをシリアル化するコードを記述する場合に便利です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`m`モジュールは呼び出し元のモジュール、および必要な以外<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ または  
+  
+ <paramref name="m" /> は、動的メソッドに対して匿名のホストを提供するモジュールです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="m" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュールに関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, Type returnType, Type[] parameterTypes, Type owner, bool skipVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Type returnType, class System.Type[] parameterTypes, class System.Type owner, bool skipVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Type,System.Type[],System.Type,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="owner" Type="System.Type" />
+        <Parameter Name="skipVisibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これには長さ 0 の文字列も可能ですが、<see langword="null" /> にすることはできません。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="owner">動的メソッドが論理的に関連付けられる <see cref="T:System.Type" />。 動的メソッドには、型のすべてのメンバーへのアクセス権があります。</param>
+        <param name="skipVisibility">
+          動的メソッドの MSIL によりアクセスされる型とメンバーに対する JIT参照範囲チェックをスキップする場合は <see langword="true" /> 。それ以外の場合は <see langword="false" />。</param>
+        <summary>メソッド名、戻り値の型、パラメーターの型、動的メソッドが論理的に関連付けられている型を指定し、さらに動的メソッドの Microsoft Intermediate Language (MSIL) によりアクセスされる型やメンバーに対する Just-In-Time (JIT) 参照範囲チェックをスキップするかどうかを指定して、動的メソッドを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで作成される動的メソッドには、型のすべてのメンバーへのアクセス`owner`、および公開して`internal`(`Friend` Visual Basic で) を含むモジュール内の他のすべての型のメンバー`owner`です。 コンパイラの参照範囲チェックを JIT をスキップできるよう、動的メソッドは他のすべての種類ものプライベートおよびプロテクト メンバーにアクセスします。 これは、オブジェクトをシリアル化するコードを記述する場合に便利です。  
+  
+ このコンス トラクター メソッドの属性を指定する<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>と<xref:System.Reflection.MethodAttributes?displayProperty=nameWithType>、呼び出し規約と<xref:System.Reflection.CallingConventions?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`owner`以外は、呼び出し元のモジュールと必要なモジュールの<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> がインターフェイス、配列、オープン ジェネリック型、またはジェネリック型またはメソッドの型パラメーターです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="returnType" /> が <see langword="null" /> であるか、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す対象となる型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュール内の型に関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes, System.Reflection.Module m, bool skipVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes, class System.Reflection.Module m, bool skipVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[],System.Reflection.Module,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="m" Type="System.Reflection.Module" />
+        <Parameter Name="skipVisibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これは、長さ 0 の文字列にできますが、<see langword="null" /> にすることはできません。</param>
+        <param name="attributes">動的メソッドの属性を指定する、<see cref="T:System.Reflection.MethodAttributes" /> 値のビットごとの組み合わせ。 使用できる組み合わせは <see cref="F:System.Reflection.MethodAttributes.Public" /> と <see cref="F:System.Reflection.MethodAttributes.Static" /> だけです。</param>
+        <param name="callingConvention">動的メソッドの呼び出し規則。 <see cref="F:System.Reflection.CallingConventions.Standard" /> にする必要があります。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="m">To be added.</param>
+        <param name="skipVisibility">
+          動的メソッドの MSIL によりアクセスされる型とメンバーに対する JIT参照範囲チェックをスキップする場合は <see langword="true" /> 。それ以外の場合は <see langword="false" />。</param>
+        <summary>メソッド名、属性、呼び出し規約、戻り値の型、パラメーターの型、モジュールを指定し、さらに Just-In-Time (JIT) 参照範囲チェックが動的メソッドの Microsoft Intermediate Language (MSIL) によりアクセスされる型やメンバーをスキップするかどうかを指定して、動的メソッドを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで作成される動的メソッドがパブリックにアクセスし、 `internal` (`Friend` Visual Basic で) モジュールに含まれるすべてのパブリックおよび内部型のメンバーを`m`です。  
+  
+ コンパイラの参照範囲チェックを JIT をスキップできるよう、動的メソッドは他のすべての型および他のすべてのアセンブリも、モジュールでのプライベートおよびプロテクト メンバーにアクセスします。 これは、オブジェクトをシリアル化するコードを記述する場合に便利です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`m`モジュールは呼び出し元のモジュール、および必要な以外<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ または  
+  
+ <paramref name="m" /> は、動的メソッドに対して匿名のホストを提供するモジュールです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="m" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="attributes" /> は、<see cref="F:System.Reflection.MethodAttributes.Public" /> と <see cref="F:System.Reflection.MethodAttributes.Static" /> 以外のフラグの組み合わせです。  
+  
+ または  
+  
+ <paramref name="callingConvention" /> が <see cref="F:System.Reflection.CallingConventions.Standard" /> ではありません。  
+  
+ または  
+  
+ <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュールに関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicMethod (string name, System.Reflection.MethodAttributes attributes, System.Reflection.CallingConventions callingConvention, Type returnType, Type[] parameterTypes, Type owner, bool skipVisibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, valuetype System.Reflection.MethodAttributes attributes, valuetype System.Reflection.CallingConventions callingConvention, class System.Type returnType, class System.Type[] parameterTypes, class System.Type owner, bool skipVisibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.#ctor(System.String,System.Reflection.MethodAttributes,System.Reflection.CallingConventions,System.Type,System.Type[],System.Type,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Reflection.MethodAttributes" />
+        <Parameter Name="callingConvention" Type="System.Reflection.CallingConventions" />
+        <Parameter Name="returnType" Type="System.Type" />
+        <Parameter Name="parameterTypes" Type="System.Type[]" />
+        <Parameter Name="owner" Type="System.Type" />
+        <Parameter Name="skipVisibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">動的メソッドの名前。 これは、長さ 0 の文字列にできますが、<see langword="null" /> にすることはできません。</param>
+        <param name="attributes">動的メソッドの属性を指定する、<see cref="T:System.Reflection.MethodAttributes" /> 値のビットごとの組み合わせ。 使用できる組み合わせは <see cref="F:System.Reflection.MethodAttributes.Public" /> と <see cref="F:System.Reflection.MethodAttributes.Static" /> だけです。</param>
+        <param name="callingConvention">動的メソッドの呼び出し規則。 <see cref="F:System.Reflection.CallingConventions.Standard" /> にする必要があります。</param>
+        <param name="returnType">動的メソッドの戻り値の型を指定する <see cref="T:System.Type" /> オブジェクト。メソッドに戻り値の型がない場合は <see langword="null" />。</param>
+        <param name="parameterTypes">動的メソッドのパラメーターの型を指定する <see cref="T:System.Type" /> オブジェクトの配列。メソッドにパラメーターがない場合は <see langword="null" />。</param>
+        <param name="owner">動的メソッドが論理的に関連付けられる <see cref="T:System.Type" />。 動的メソッドには、型のすべてのメンバーへのアクセス権があります。</param>
+        <param name="skipVisibility">
+          動的メソッドの MSIL によりアクセスされる型とメンバーに対する JIT参照範囲チェックをスキップする場合は <see langword="true" /> 。それ以外の場合は <see langword="false" />。</param>
+        <summary>メソッド名、属性、呼び出し規則、戻り値の型、パラメーターの型、動的メソッドが論理的に関連付けられている型を指定し、さらに Just-In-Time (JIT) 参照範囲チェックが動的メソッドの Microsoft Intermediate Language (MSIL) によりアクセスされる型やメンバーをスキップするかどうかを指定して、動的メソッドを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドが型を含むモジュールに対してグローバル`owner`です。 型のすべてのメンバーにアクセス権を持つ`owner`します。  
+  
+ このコンス トラクターで作成される動的メソッドには、型のすべてのメンバーへのアクセス`owner`、および公開して`internal`(`Friend` Visual Basic で) を含むモジュールに含まれているすべての型のメンバーを`owner`です。 コンパイラの参照範囲チェックを JIT をスキップできるよう、動的メソッドは他のすべての種類ものプライベートおよびプロテクト メンバーにアクセスします。 これは、オブジェクトをシリアル化するコードを記述する場合に便利です。  
+  
+> [!NOTE]
+>  旧バージョンと互換性のため、このコンス トラクターを要求<xref:System.Security.Permissions.SecurityPermission>で、<xref:System.Security.Permissions.SecurityPermissionFlag?displayProperty=nameWithType>フラグを設定する場合は、次の条件が両方とも true:`owner`以外は、呼び出し元のモジュールと必要なモジュールの<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグが失敗しました。 場合の需要<xref:System.Security.Permissions.SecurityPermission>成功すると、操作は許可します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメンバーは不要<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。 (を参照してください[出力リフレクションのセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md))。この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="parameterTypes" /> の要素が <see langword="null" /> または <see cref="T:System.Void" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> がインターフェイス、配列、オープン ジェネリック型、またはジェネリック型またはメソッドの型パラメーターです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="owner" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="attributes" /> は、<see cref="F:System.Reflection.MethodAttributes.Public" /> と <see cref="F:System.Reflection.MethodAttributes.Static" /> 以外のフラグの組み合わせです。  
+  
+ または  
+  
+ <paramref name="callingConvention" /> が <see cref="F:System.Reflection.CallingConventions.Standard" /> ではありません。  
+  
+ または  
+  
+ <paramref name="returnType" /> は、<see cref="P:System.Type.IsByRef" /> が <see langword="true" /> を返す型です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">動的メソッドを呼び出し元のモジュール以外のモジュール内の型に関連付けます。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの作成時に指定された属性を取得します。</summary>
+        <value>メソッドの属性を表す <see cref="T:System.Reflection.MethodAttributes" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、動的メソッドのメソッドの属性は、常に<xref:System.Reflection.MethodAttributes.Public>と<xref:System.Reflection.MethodAttributes.Static>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドのメソッドの属性を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#21](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#21)]
+ [!code-csharp[Reflection.DynamicMethod.All#21](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#21)]
+ [!code-vb[Reflection.DynamicMethod.All#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallingConvention">
+      <MemberSignature Language="C#" Value="public override System.Reflection.CallingConventions CallingConvention { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.CallingConventions CallingConvention" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.CallingConvention" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.CallingConventions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの作成時に指定された呼び出し規則を取得します。</summary>
+        <value>メソッドの呼び出し規則を示す <see cref="T:System.Reflection.CallingConventions" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、動的メソッドの呼び出し規約は、常に<xref:System.Reflection.CallingConventions.Standard>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドの呼び出し規約を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#22](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#22)]
+ [!code-csharp[Reflection.DynamicMethod.All#22](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#22)]
+ [!code-vb[Reflection.DynamicMethod.All#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public override sealed Delegate CreateDelegate (Type delegateType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Delegate CreateDelegate(class System.Type delegateType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.CreateDelegate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delegateType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="delegateType">動的メソッドのシグネチャと一致するシグネチャを持つデリゲート型。</param>
+        <summary>動的メソッドを完了し、それを実行するために使用できるデリゲートを作成します。</summary>
+        <returns>動的メソッドを実行するために使用できる、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>メソッドまたは<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドには、動的メソッドが完了するとします。 さらにパラメーターの定義の変更など、動的メソッドを変更しようとしています。 または複数 Microsoft intermediate language (MSIL) の出力は無視されます。例外はスローされません。  
+  
+ MSIL ジェネレーターがある場合は、動的メソッドのメソッド本体を作成するには、呼び出し、<xref:System.Reflection.Emit.DynamicMethod.GetDynamicILInfo%2A>を取得するメソッド、<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 MSIL ジェネレーターがあるない場合、<xref:System.Reflection.Emit.DynamicMethod.GetILGenerator%2A>を取得するメソッド、<xref:System.Reflection.Emit.ILGenerator>メソッド本体を生成するために使用できるオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのパラメーターを受け取る動的メソッドを作成します。 例では、コンソールへの最初のパラメーターを出力する単純な関数の本体を出力し、例がメソッドの戻り値として 2 番目のパラメーターを使用します。 例では、デリゲートを作成することで、メソッドが完了する、別のパラメーターを持つデリゲートを呼び出すおよび動的メソッドを使用して、最後に起動、<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/cpp/source.cpp#1)]
+ [!code-csharp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/CS/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドにメソッド本体がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="delegateType" /> に含まれるパラメーターの数か型が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDelegate">
+      <MemberSignature Language="C#" Value="public override sealed Delegate CreateDelegate (Type delegateType, object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Delegate CreateDelegate(class System.Type delegateType, object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.CreateDelegate(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Delegate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="delegateType" Type="System.Type" />
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="delegateType">動的メソッドのシグネチャと一致するシグネチャを持つデリゲート型 (最初のパラメーターは除く)。</param>
+        <param name="target">デリゲートをバインドするオブジェクト。 動的メソッドの最初のパラメーターと同じ型でなければなりません。</param>
+        <summary>動的メソッドを完了し、それを実行するために使用できるデリゲートを作成します。作成する際は、デリゲートの型と、デリゲートをバインドするオブジェクトを指定します。</summary>
+        <returns>指定したターゲット オブジェクトで動的メソッドを実行するために使用できる、指定した型のデリゲート。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードでは、特定のオブジェクトにバインドされたデリゲートを作成します。 このようなデリゲートは、最初の引数を終了すると言います。 インスタンス メソッドの場合と同様、メソッドは静的、動作します。インスタンスが`target`です。  
+  
+ このメソッドのオーバー ロードが必要です`target`、動的メソッドの最初のパラメーターと同じ型である、またはその型 (たとえば、派生クラス) に割り当て可能です。  署名`delegateType`が動的メソッドの先頭を除くのすべてのパラメーターです。 たとえば、動的メソッドは、パラメーターを持ち<xref:System.String>、 <xref:System.Int32>、および<xref:System.Byte>、し`delegateType`パラメーターには<xref:System.Int32>と<xref:System.Byte>;`target` is of type <xref:System.String>.  
+  
+ 呼び出す、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>メソッドまたは<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドには、動的メソッドが完了するとします。 さらにパラメーターの定義の変更など、動的メソッドを変更しようとしています。 または複数 Microsoft intermediate language (MSIL) の出力は無視されます。例外はスローされません。  
+  
+ MSIL ジェネレーターがある場合は、動的メソッドのメソッド本体を作成するには、呼び出し、<xref:System.Reflection.Emit.DynamicMethod.GetDynamicILInfo%2A>を取得するメソッド、<xref:System.Reflection.Emit.DynamicILInfo>オブジェクト。 MSIL ジェネレーターがあるない場合、<xref:System.Reflection.Emit.DynamicMethod.GetILGenerator%2A>を取得するメソッド、<xref:System.Reflection.Emit.ILGenerator>メソッド本体を生成するために使用できるオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、バインドするデリゲートを作成、<xref:System.Reflection.Emit.DynamicMethod>型のインスタンスに、メソッドでは、毎回を同じインスタンス上に機能できるようにこれが呼び出されます。  
+  
+ という名前のクラスを定義するコード例`Example`プライベート フィールドがクラスを名前付き`DerivedFromxample`最初のクラスから派生するという名前のデリゲート型`UseLikeStatic`を返す<xref:System.Int32>型のパラメーターを持ち、`Example`と<xref:System.Int32>、という名前のデリゲート型と`UseLikeInstance`を返す<xref:System.Int32>型の 1 つのパラメーターが<xref:System.Int32>です。  
+  
+ コード例を作成し、<xref:System.Reflection.Emit.DynamicMethod>のインスタンスのプライベート フィールドを変更する`Example`し、前の値を返します。  
+  
+> [!NOTE]
+>  一般に、クラスの内部フィールドの変更は良くありませんオブジェクト指向のコーディング方法です。  
+  
+ インスタンスを作成するコード例`Example`し、2 つのデリゲートを作成します。 型の 1 つは、 `UseLikeStatic`、動的メソッドと同じパラメーターを持ちます。 型の 2 つ目は、 `UseLikeInstance`、最初のパラメーターがないため (型の`Example`)。 使用してこのデリゲートを作成、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29>以外、2 番目のメソッドのオーバー ロード メソッド オーバー ロードのパラメーターがのインスタンス`Example`ここでは、先ほど作成したインスタンスは、新しく作成するデリゲートにバインドされています。 動的メソッドがのバインドのインスタンスに作用するデリゲートが呼び出されるたびに`Example`です。  
+  
+> [!NOTE]
+>  これで導入されたデリゲート バインディングの余裕のあるルールの例、[!INCLUDE[dnprdnext](~/includes/dnprdnext-md.md)]の新しいオーバー ロードと共に、<xref:System.Delegate.CreateDelegate%2A?displayProperty=nameWithType>メソッドです。 詳細については、<xref:System.Delegate> クラスを参照してください。  
+  
+ `UseLikeStatic`デリゲートが呼び出されるのインスタンスに渡します`Example`にバインドされている、`UseLikeInstance`を委任します。 続いて、`UseLikeInstance`デリゲートが呼び出される、両方のデリゲートがの同じインスタンスに機能するよう`Example`です。 内部フィールドの値の変更は、各呼び出しの後に表示されます。 最後に、`UseLikeInstance`デリゲートがのインスタンスにバインドされている`DerivedFromxample`デリゲートの呼び出しが繰り返されます。  
+  
+ [!code-csharp[Reflection.DynamicMethod.ClosedOver#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.ClosedOver/cs/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.ClosedOver#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.ClosedOver/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドにメソッド本体がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が動的メソッドの最初のパラメーターと同じ型ではありません。また、その型に代入可能でもありません。  
+  
+ または  
+  
+ <paramref name="delegateType" /> に含まれるパラメーターの数か型が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeclaringType">
+      <MemberSignature Language="C#" Value="public override Type DeclaringType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DeclaringType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.DeclaringType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドを宣言する型を取得します。動的メソッドの場合は常に <see langword="null" /> です。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`null`動的メソッド。 動的メソッドが型に論理的に関連付け場合でも、型によって宣言されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドの型宣言を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#23](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#23)]
+ [!code-csharp[Reflection.DynamicMethod.All#23](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#23)]
+ [!code-vb[Reflection.DynamicMethod.All#23](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefineParameter">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ParameterBuilder DefineParameter (int position, System.Reflection.ParameterAttributes attributes, string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ParameterBuilder DefineParameter(int32 position, valuetype System.Reflection.ParameterAttributes attributes, string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.DefineParameter(System.Int32,System.Reflection.ParameterAttributes,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ParameterBuilder</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+        <Parameter Name="attributes" Type="System.Reflection.ParameterAttributes" />
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="position">パラメーター リストのパラメーターの位置。 最初のパラメーターに対応する 1 から順番にインデックス番号がパラメーターに付けられます。</param>
+        <param name="attributes">パラメーターの属性を指定する、<see cref="T:System.Reflection.ParameterAttributes" /> 値のビットごとの組み合わせ。</param>
+        <param name="parameterName">パラメーターの名前。 長さ 0 の文字列も名前として可能です。</param>
+        <summary>動的メソッドのパラメーターを定義します。</summary>
+        <returns>常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`position`0 の場合は、<xref:System.Reflection.Emit.DynamicMethod.DefineParameter%2A>メソッドが戻り値を参照します。 パラメーター情報を設定しても、戻り値の効果はありません。  
+  
+ かどうか、動的メソッドは既に完了して、呼び出すことによって、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>または<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>、メソッド、<xref:System.Reflection.Emit.DynamicMethod.DefineParameter%2A>メソッドも何も起こりません。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドのパラメーター情報を定義する方法を示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#33](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#33)]
+ [!code-csharp[Reflection.DynamicMethod.All#33](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#33)]
+ [!code-vb[Reflection.DynamicMethod.All#33](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#33)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">メソッドにパラメーターが指定されていません。  
+  
+ -または-  
+  
+ <paramref name="position" /> が 0 未満です。  
+  
+ -または-  
+  
+ <paramref name="position" /> は、メソッドのパラメーターの数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBaseDefinition">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodInfo GetBaseDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.MethodInfo GetBaseDefinition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetBaseDefinition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの基本実装を返します。</summary>
+        <returns>メソッドの基本実装。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在を常に返します`DynamicMethod`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetCustomAttributes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inherit">
+          <see langword="true" />カスタム属性を検索するメソッドの継承チェーンを検索<see langword="false" />を現在のメソッドだけを確認します。</param>
+        <summary>メソッドの定義済みのカスタム属性をすべて返します。</summary>
+        <returns>メソッドのすべてのカスタム属性を表す、オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドは、指定の`true`の`inherit`メソッドが型で宣言されていないため、影響を与えません。  
+  
+> [!NOTE]
+>  カスタム属性は、動的メソッドで現在サポートされていません。 唯一の属性が返される<xref:System.Runtime.CompilerServices.MethodImplAttribute>; すればメソッド実装フラグを使用してより簡単に、<xref:System.Reflection.Emit.DynamicMethod.GetMethodImplementationFlags%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public override object[] GetCustomAttributes (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] GetCustomAttributes(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetCustomAttributes(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">A<see cref="T:System.Type" />返されるカスタム属性の型を表すです。</param>
+        <param name="inherit">
+          <see langword="true" />カスタム属性を検索するメソッドの継承チェーンを検索<see langword="false" />を現在のメソッドだけを確認します。</param>
+        <summary>メソッドに適用されている、指定した型のカスタム属性を返します。</summary>
+        <returns>型のメソッドの属性を表すオブジェクトの配列<paramref name="attributeType" />型から派生または<paramref name="attributeType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドは、指定の`true`の`inherit`メソッドが型で宣言されていないため、影響を与えません。  
+  
+> [!NOTE]
+>  カスタム属性は、動的メソッドで現在サポートされていません。 唯一の属性が返される<xref:System.Runtime.CompilerServices.MethodImplAttribute>; すればメソッド実装フラグを使用してより簡単に、<xref:System.Reflection.Emit.DynamicMethod.GetMethodImplementationFlags%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributeType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDynamicILInfo">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.DynamicILInfo GetDynamicILInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.DynamicILInfo GetDynamicILInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetDynamicILInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.DynamicILInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Reflection.Emit.DynamicILInfo" />メタデータ トークン、スコープ、および Microsoft intermediate language (MSIL) ストリームからメソッドの本体を生成するために使用できるオブジェクト。</summary>
+        <returns>A<see cref="T:System.Reflection.Emit.DynamicILInfo" />メタデータ トークン、スコープ、および MSIL ストリームからメソッドの本体を生成するために使用できるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.DynamicILInfo>クラスがアンマネージ コードの生成をサポートするために用意されています。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを実行します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetILGenerator">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ILGenerator GetILGenerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ILGenerator GetILGenerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetILGenerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの Microsoft Intermediate Language (MSIL) ジェネレーターを返します。これは 64 バイトの既定の MSIL ストリーム サイズを持ちます。</summary>
+        <returns>メソッドの <see cref="T:System.Reflection.Emit.ILGenerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドが完了した後、呼び出すことによって、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>または<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッド、いずれかのさらに追加しようと MSIL は無視されます。 例外をスローすることはありません。  
+  
+> [!NOTE]
+>  検証不可能なコードによって完全に信頼されたシナリオであっても、動的メソッドの制約があります。 <xref:System.Reflection.Emit.DynamicMethod> については、「解説」の「検証」セクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのパラメーターを受け取る動的メソッドを作成します。 例では、コンソールへの最初のパラメーターを出力する単純な関数の本体を出力し、例がメソッドの戻り値として 2 番目のパラメーターを使用します。 例では、デリゲートを作成することで、メソッドが完了する、別のパラメーターを持つデリゲートを呼び出すおよび動的メソッドを使用して、最後に起動、<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/cpp/source.cpp#1)]
+ [!code-csharp[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/CS/source.cs#1)]
+ [!code-vb[Reflection.DynamicMethod.ctor1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.ctor1/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetILGenerator">
+      <MemberSignature Language="C#" Value="public System.Reflection.Emit.ILGenerator GetILGenerator (int streamSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Reflection.Emit.ILGenerator GetILGenerator(int32 streamSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetILGenerator(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Emit.ILGenerator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="streamSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="streamSize">バイト単位の MSIL ストリームのサイズ。</param>
+        <summary>指定した Microsoft Intermediate Language (MSIL) ストリーム サイズの、メソッドの MSIL ジェネレーターを返します。</summary>
+        <returns>指定された MSIL ストリーム サイズの、メソッドの <see cref="T:System.Reflection.Emit.ILGenerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドが完了した後、呼び出すことによって、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>または<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッド、いずれかのさらに追加しようと MSIL は無視されます。 例外をスローすることはありません。  
+  
+> [!NOTE]
+>  検証不可能なコードによって完全に信頼されたシナリオであっても、動的メソッドの制約があります。 <xref:System.Reflection.Emit.DynamicMethod> については、「解説」の「検証」セクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドのオーバー ロードを示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#2](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#2)]
+ [!code-csharp[Reflection.DynamicMethod.All#2](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#2)]
+ [!code-vb[Reflection.DynamicMethod.All#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodImplAttributes GetMethodImplementationFlags ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Reflection.MethodImplAttributes GetMethodImplementationFlags() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetMethodImplementationFlags" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドの実装フラグを返します。</summary>
+        <returns>ビットごとの組み合わせ<see cref="T:System.Reflection.MethodImplAttributes" />メソッドの実装フラグを表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、動的メソッドのメソッド実装の属性は、常に<xref:System.Reflection.MethodImplAttributes.IL>と<xref:System.Reflection.MethodImplAttributes.NoInlining>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameters">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ParameterInfo[] GetParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Reflection.ParameterInfo[] GetParameters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.GetParameters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>動的メソッドのパラメーターを返します。</summary>
+        <returns>動的メソッドのパラメーターを表す <see cref="T:System.Reflection.ParameterInfo" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.ParameterInfo>このメソッドによって返されるオブジェクトは参照するだけです。 使用して、<xref:System.Reflection.Emit.DynamicMethod.DefineParameter%2A>メソッドを設定またはパラメーターの特性を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドのパラメーターを表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#34](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#34)]
+ [!code-csharp[Reflection.DynamicMethod.All#34](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#34)]
+ [!code-vb[Reflection.DynamicMethod.All#34](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitLocals">
+      <MemberSignature Language="C#" Value="public bool InitLocals { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InitLocals" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.InitLocals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドのローカル変数をゼロに初期化するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          メソッドのローカル変数をゼロに初期化する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合`true`、出力された Microsoft intermediate language (MSIL) には、ローカル変数の初期化が含まれています。 設定されている場合`false`、ローカル変数が初期化されていませんし、生成されたコードは、検証できません。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Reflection.Emit.DynamicMethod.InitLocals%2A>動的メソッドのプロパティです。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#24](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#24)]
+ [!code-csharp[Reflection.DynamicMethod.All#24](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#24)]
+ [!code-vb[Reflection.DynamicMethod.All#24](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public override object Invoke (object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object[] parameters, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Invoke(object obj, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object[] parameters, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.Invoke(System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">それらは静的であるため、動的メソッドではこのパラメーターは無視されます。 <see langword="null" /> を指定します。</param>
+        <param name="invokeAttr">ビットごとの組み合わせ<see cref="T:System.Reflection.BindingFlags" />値。</param>
+        <param name="binder">A <see cref="T:System.Reflection.Binder" /> 、バインディング、引数の強制変換を有効にするオブジェクトの種類、メンバーの呼び出し、および取得<see cref="T:System.Reflection.MemberInfo" />リフレクション オブジェクト。 場合<c>バインダー</c>は<see langword="null" />既定のバインダーが使用されます。 詳細については、「<see cref="T:System.Reflection.Binder" />」を参照してください。</param>
+        <param name="parameters">引数リスト。 これは、呼び出されるメソッドのパラメーターと同じ数、順序、型の引数の配列です。 パラメーターがない場合、このパラメーターがあります<see langword="null" />です。</param>
+        <param name="culture">型の強制変換を制御するために使用する <see cref="T:System.Globalization.CultureInfo" /> のインスタンス。 <see langword="null" /> の場合は、現在のスレッドの <see cref="T:System.Globalization.CultureInfo" /> が使用されます。 この情報が正しく変換するために必要ななど、 <see cref="T:System.String" /> 1000 を表す、<see cref="T:System.Double" />値、別のカルチャによって 1000 が異なる方法で表されているためです。</param>
+        <summary>指定されたカルチャ情報を使用し、指定したバインダーの制約の下で、指定したパラメーターを使用して動的メソッドを呼び出します。</summary>
+        <returns>A<see cref="T:System.Object" />呼び出されたメソッドの戻り値を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上記の例外に加えて、動的メソッドでスローされた例外をキャッチする呼び出し元のコードを準備する必要があります。  
+  
+ によって作成されたデリゲートを使用して動的メソッドの実行、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>メソッドが実行することでより効率的、<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドです。  
+  
+ 呼び出す、<xref:System.Reflection.Emit.DynamicMethod.Invoke%2A>メソッドまたは<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%2A>メソッドには、動的メソッドが完了するとします。 さらにパラメーターの定義の変更など、動的メソッドを変更しようとしています。 または複数 Microsoft intermediate language (MSIL) の出力は無視されます。例外はスローされません。  
+  
+ すべての動的メソッドは、静的なので、`obj`パラメーターが常に無視されます。 動的メソッドは、インスタンス メソッドの場合と同様に扱うを使用して、<xref:System.Reflection.Emit.DynamicMethod.CreateDelegate%28System.Type%2CSystem.Object%29>をオブジェクト インスタンスを受け取るオーバー ロードします。  
+  
+ 動的メソッドは、パラメーターの値を持たない場合`parameters`する必要があります`null`です。 それ以外の場合、パラメーター配列内の要素のと同じ数、種類、および動的メソッドのパラメーターの順序にする必要があります。  
+  
+> [!NOTE]
+>  このメソッドのオーバー ロードは、によって呼び出されます。、<xref:System.Reflection.MethodBase.Invoke%28System.Object%2CSystem.Object%5B%5D%29>から継承されたメソッドのオーバー ロード、<xref:System.Reflection.MethodBase>クラスのため、両方のオーバー ロードに、前の「解説が適用されます。  
+  
+ このメソッドを必要としないアクセス許可を直接がセキュリティ確認要求の方法によっては、動的メソッドを呼び出す発生することができます。 たとえば、要求は行われません匿名でホストされる動的メソッドを使用して作成されて、`restrictedSkipVisibility`パラメーターに設定`false`です。 その一方で、使用してメソッドを作成する場合`restrictedSkipVisibility`に設定`true`、メソッドが正符号のターゲット アセンブリのアクセス許可の確認要求では、ターゲット アセンブリの非表示のメンバーにアクセスできる、ように<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグ。  
+  
+> [!NOTE]
+>  前のバージョン、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドが必要な<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例では、英語 (米国) カルチャを使用して、正確なバインディングで、動的メソッドを呼び出します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#4](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#4)]
+ [!code-csharp[Reflection.DynamicMethod.All#4](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#4)]
+ [!code-vb[Reflection.DynamicMethod.All#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="F:System.Reflection.CallingConventions.VarArgs" />呼び出し規約はサポートされていません。</exception>
+        <exception cref="T:System.Reflection.TargetParameterCountException">内の要素の数<paramref name="parameters" />動的メソッドのパラメーターの数と一致しません。</exception>
+        <exception cref="T:System.ArgumentException">1 つまたは複数の要素の型<paramref name="parameters" />動的メソッドの対応するパラメーターの型と一致しません。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException">動的メソッドのモジュールに関連付けられて、匿名でホストされていないとして構築されました<paramref name="skipVisibility" />'éý' <see langword="false" />、動的メソッドにアクセスされていないメンバーが、<see langword="public" />または<see langword="internal" />(<see langword="Friend" /> Visual Basic で)。  
+  
+ -または-  
+  
+ 動的メソッドが匿名でホストされているし、して構築されました<paramref name="skipVisibility" />'éý' <see langword="false" />、されていないメンバーにアクセスするが、<see langword="public" />です。  
+  
+ -または-  
+  
+ 動的メソッドには、検証できないコードが含まれています。 <see cref="T:System.Reflection.Emit.DynamicMethod" /> については、「解説」の「検証」セクションを参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public override bool IsDefined (Type attributeType, bool inherit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefined(class System.Type attributeType, bool inherit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.IsDefined(System.Type,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="inherit" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">A<see cref="T:System.Type" />を検索するカスタム属性の型を表すです。</param>
+        <param name="inherit">
+          <see langword="true" />カスタム属性を検索するメソッドの継承チェーンを検索<see langword="false" />を現在のメソッドだけを確認します。</param>
+        <summary>指定されたカスタム属性の型が定義されているかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定されたカスタム属性の型が定義されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的メソッドは、指定の`true`の`inherit`も何も起こりません。 動的メソッドが継承チェーンをあるありません。  
+  
+> [!NOTE]
+>  カスタム属性は、動的メソッドで現在サポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityCritical">
+      <MemberSignature Language="C#" Value="public override bool IsSecurityCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.IsSecurityCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の動的メソッドがセキュリティ クリティカルまたはセキュリティ セーフ クリティカルであり、重要な操作を実行できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、現在の動的メソッドはセキュリティ クリティカルまたはセキュリティ セーフ クリティカルです。<see langword="false" />透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.DynamicMethod.IsSecurityCritical%2A>、 <xref:System.Reflection.Emit.DynamicMethod.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.Emit.DynamicMethod.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される動的メソッドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用する方が、アセンブリとその型のセキュリティの注釈を調べたり、現在の信頼レベルを確認したり、ランタイムの規則を複製したりするより、はるかに簡単です。  
+  
+ 動的メソッドの透過性は、関連付けられているモジュールに依存します。 動的メソッドは、モジュールではなく型に関連付けられて場合、透過性は型を含むモジュールに依存します。 動的メソッドは、関連付けられているモジュールの既定の透過性が割り当てられているため、セキュリティの注釈がありません。  
+  
+-   匿名でホストされる動的メソッドは、それらを含むシステムで指定されたモジュールが透過的であるために常に、透過的です。  
+  
+-   信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) に関連付けられている動的メソッドの透過性は、次の表に説明します。  
+  
+    |アセンブリの注釈|レベル 1 の透過性|レベル 2 の透過性|  
+    |-------------------------|--------------------------|--------------------------|  
+    |完全に透明|透明|透明|  
+    |完全に重要です|重大|重大|  
+    |混合の透過性|透明|透明|  
+    |セキュリティに依存しません。|セーフ クリティカル|重大|  
+  
+     たとえば、動的メソッドを混在 2 の透過性レベル、mscorlib.dll に含まれる型に関連付ける場合、動的メソッドが透過的なありクリティカルなコードを実行することはできません。 透明度のレベルについては、次を参照してください。[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)と[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+    > [!NOTE]
+    >  System.dll などのセキュリティに依存しない、信頼レベル 1 アセンブリ内のモジュールと、動的メソッドの関連付けでは、信頼の昇格は許可されません。 動的メソッドを呼び出すコードの許可セットに (つまり、完全な信頼)、System.dll の許可セットが含まれていない場合<xref:System.Security.SecurityException>動的メソッドが呼び出されたときにスローされます。  
+  
+-   部分的に信頼されたアセンブリに関連付けられている動的メソッドの透過性は、アセンブリが読み込まれる方法によって異なります。 アセンブリが (たとえば、サンド ボックス アプリケーション ドメイン) に部分信頼で読み込まれている場合は、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリと、その型および動的メソッドを含むメンバーをすべてを透過的に処理されます。 ランタイムは、部分的に信頼されたアセンブリが (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に完全信頼で読み込まれた場合にのみ、セキュリティの注釈に注意を支払います。 その場合は、ランタイムでは、動的メソッドに、アセンブリの注釈に従ってメソッドの既定の透過性が割り当てられます。  
+  
+ 詳細については、リフレクション出力と透明度を参照してください[リフレクション出力のセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドにメソッド本体がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecuritySafeCritical">
+      <MemberSignature Language="C#" Value="public override bool IsSecuritySafeCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecuritySafeCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.IsSecuritySafeCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の動的メソッドが現在の信頼レベルでセキュリティ セーフ クリティカルであるかどうか、つまり、重要な操作を実行でき、透過的なコードからアクセスできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />動的メソッドが現在の信頼レベルでセキュリティ セーフ クリティカルである場合<see langword="false" />セキュリティ クリティカルまたは透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.DynamicMethod.IsSecurityCritical%2A>、 <xref:System.Reflection.Emit.DynamicMethod.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.Emit.DynamicMethod.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される動的メソッドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用する方が、アセンブリとその型のセキュリティの注釈を調べたり、現在の信頼レベルを確認したり、ランタイムの規則を複製したりするより、はるかに簡単です。  
+  
+ 動的メソッドの透過性は、関連付けられているモジュールに依存します。 動的メソッドは、モジュールではなく型に関連付けられて場合、透過性は型を含むモジュールに依存します。 動的メソッドは、関連付けられているモジュールの既定の透過性が割り当てられているため、セキュリティの注釈がありません。  
+  
+-   匿名でホストされる動的メソッドは、それらを含むシステムで指定されたモジュールが透過的であるために常に、透過的です。  
+  
+-   信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) に関連付けられている動的メソッドの透過性は、次の表に説明します。  
+  
+    |アセンブリの注釈|レベル 1 の透過性|レベル 2 の透過性|  
+    |-------------------------|--------------------------|--------------------------|  
+    |完全に透明|透明|透明|  
+    |完全に重要です|重大|重大|  
+    |混合の透過性|透明|透明|  
+    |セキュリティに依存しません。|セーフ クリティカル|重大|  
+  
+     たとえば、動的メソッドを混在 2 の透過性レベル、mscorlib.dll に含まれる型に関連付ける場合、動的メソッドが透過的なありクリティカルなコードを実行することはできません。 透明度のレベルについては、次を参照してください。[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)と[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+    > [!NOTE]
+    >  System.dll などのセキュリティに依存しない、信頼レベル 1 アセンブリ内のモジュールと、動的メソッドの関連付けでは、信頼の昇格は許可されません。 動的メソッドを呼び出すコードの許可セットに (つまり、完全な信頼)、System.dll の許可セットが含まれていない場合<xref:System.Security.SecurityException>動的メソッドが呼び出されたときにスローされます。  
+  
+-   部分的に信頼されたアセンブリに関連付けられている動的メソッドの透過性は、アセンブリが読み込まれる方法によって異なります。 アセンブリが (たとえば、サンド ボックス アプリケーション ドメイン) に部分信頼で読み込まれている場合は、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリと、その型および動的メソッドを含むメンバーをすべてを透過的に処理されます。 ランタイムは、部分的に信頼されたアセンブリが (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に完全信頼で読み込まれた場合にのみ、セキュリティの注釈に注意を支払います。 その場合は、ランタイムでは、動的メソッドに、アセンブリの注釈に従ってメソッドの既定の透過性が割り当てられます。  
+  
+ 詳細については、リフレクション出力と透明度を参照してください[リフレクション出力のセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドにメソッド本体がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityTransparent">
+      <MemberSignature Language="C#" Value="public override bool IsSecurityTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.IsSecurityTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の動的メソッドが現在の信頼レベルで透過的であり、重要な操作を実行できないかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />動的メソッドが現在の信頼レベルでセキュリティ透過的な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.Emit.DynamicMethod.IsSecurityCritical%2A>、 <xref:System.Reflection.Emit.DynamicMethod.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.Emit.DynamicMethod.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される動的メソッドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用する方が、アセンブリとその型のセキュリティの注釈を調べたり、現在の信頼レベルを確認したり、ランタイムの規則を複製したりするより、はるかに簡単です。  
+  
+ 動的メソッドの透過性は、関連付けられているモジュールに依存します。 動的メソッドは、モジュールではなく型に関連付けられて場合、透過性は型を含むモジュールに依存します。 動的メソッドは、関連付けられているモジュールの既定の透過性が割り当てられているため、セキュリティの注釈がありません。  
+  
+-   匿名でホストされる動的メソッドは、それらを含むシステムで指定されたモジュールが透過的であるために常に、透過的です。  
+  
+-   信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) に関連付けられている動的メソッドの透過性は、次の表に説明します。  
+  
+    |アセンブリの注釈|レベル 1 の透過性|レベル 2 の透過性|  
+    |-------------------------|--------------------------|--------------------------|  
+    |完全に透明|透明|透明|  
+    |完全に重要です|重大|重大|  
+    |混合の透過性|透明|透明|  
+    |セキュリティに依存しません。|セーフ クリティカル|重大|  
+  
+     たとえば、動的メソッドを混在 2 の透過性レベル、mscorlib.dll に含まれる型に関連付ける場合、動的メソッドが透過的なありクリティカルなコードを実行することはできません。 透明度のレベルについては、次を参照してください。[透過的セキュリティ コード、レベル 1](~/docs/framework/misc/security-transparent-code-level-1.md)と[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+    > [!NOTE]
+    >  System.dll などのセキュリティに依存しない、信頼レベル 1 アセンブリ内のモジュールと、動的メソッドの関連付けでは、信頼の昇格は許可されません。 動的メソッドを呼び出すコードの許可セットに (つまり、完全な信頼)、System.dll の許可セットが含まれていない場合<xref:System.Security.SecurityException>動的メソッドが呼び出されたときにスローされます。  
+  
+-   部分的に信頼されたアセンブリに関連付けられている動的メソッドの透過性は、アセンブリが読み込まれる方法によって異なります。 アセンブリが (たとえば、サンド ボックス アプリケーション ドメイン) に部分信頼で読み込まれている場合は、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリと、その型および動的メソッドを含むメンバーをすべてを透過的に処理されます。 ランタイムは、部分的に信頼されたアセンブリが (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に完全信頼で読み込まれた場合にのみ、セキュリティの注釈に注意を支払います。 その場合は、ランタイムでは、動的メソッドに、アセンブリの注釈に従ってメソッドの既定の透過性が割り当てられます。  
+  
+ 詳細については、リフレクション出力と透明度を参照してください[リフレクション出力のセキュリティ関連事項](~/docs/framework/reflection-and-codedom/security-issues-in-reflection-emit.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドにメソッド本体がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodHandle">
+      <MemberSignature Language="C#" Value="public override RuntimeMethodHandle MethodHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeMethodHandle MethodHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.MethodHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeMethodHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドはサポートされていません。</summary>
+        <value>動的メソッドはサポートされていません。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">動的メソッドは許可されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodImplementationFlags">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MethodImplAttributes MethodImplementationFlags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MethodImplAttributes MethodImplementationFlags" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.MethodImplementationFlags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodImplAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Module">
+      <MemberSignature Language="C#" Value="public override System.Reflection.Module Module { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Module Module" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.Module" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Module</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドが論理的に関連付けられるモジュールを取得します。</summary>
+        <value><see cref="T:System.Reflection.Module" />現在の動的メソッドが関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ モジュールは、動的メソッドの作成時に指定されている場合、このプロパティは、そのモジュールを返します。 型は、動的メソッドの作成時に所有者として指定されている場合、このプロパティは、その型を格納するモジュールを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Reflection.Emit.DynamicMethod.Module%2A>動的メソッドのプロパティです。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#26](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#26)]
+ [!code-csharp[Reflection.DynamicMethod.All#26](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#26)]
+ [!code-vb[Reflection.DynamicMethod.All#26](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの名前を取得します。</summary>
+        <value>メソッドの単純な名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  動的メソッドの名前をする必要はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドの名前を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#27](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#27)]
+ [!code-csharp[Reflection.DynamicMethod.All#27](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#27)]
+ [!code-vb[Reflection.DynamicMethod.All#27](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectedType">
+      <MemberSignature Language="C#" Value="public override Type ReflectedType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReflectedType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.ReflectedType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メソッドを取得するためにリフレクションで使用されたクラスを取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`null`動的メソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドのリフレクションされた型を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#28](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#28)]
+ [!code-csharp[Reflection.DynamicMethod.All#28](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#28)]
+ [!code-vb[Reflection.DynamicMethod.All#28](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnParameter">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ParameterInfo ReturnParameter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.ParameterInfo ReturnParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.ReturnParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ParameterInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの戻りパラメーターを取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`null`動的メソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public override Type ReturnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの戻り値の型を取得します。</summary>
+        <value>現在のメソッドの戻り値の型を表す <see cref="T:System.Type" />。メソッドに戻り値の型がない場合は <see cref="T:System.Void" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`null`動的メソッドが作成された、このプロパティを返すときに、戻り値の型の指定された<xref:System.Void?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドの戻り値の型を表示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#30](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#30)]
+ [!code-csharp[Reflection.DynamicMethod.All#30](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#30)]
+ [!code-vb[Reflection.DynamicMethod.All#30](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#30)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnTypeCustomAttributes">
+      <MemberSignature Language="C#" Value="public override System.Reflection.ICustomAttributeProvider ReturnTypeCustomAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.ICustomAttributeProvider ReturnTypeCustomAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.Emit.DynamicMethod.ReturnTypeCustomAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ICustomAttributeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>動的メソッドの戻り値の型のカスタム属性を取得します。</summary>
+        <value><see cref="T:System.Reflection.ICustomAttributeProvider" />動的メソッドの戻り値の型のカスタム属性を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム属性の配列がによって返されるようにに、カスタム属性は、動的メソッドの戻り値の型でサポートされていません、<xref:System.Reflection.ICustomAttributeProvider.GetCustomAttributes%2A>メソッドは常に空です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、動的メソッドの戻り値の型のカスタム属性を表示する方法を示します。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#31](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#31)]
+ [!code-csharp[Reflection.DynamicMethod.All#31](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#31)]
+ [!code-vb[Reflection.DynamicMethod.All#31](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.Emit.DynamicMethod.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection.Emit.Lightweight</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列として表される、メソッドの署名を返します。</summary>
+        <returns>メソッドの署名を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シグネチャには、あれば型とメソッド名のみが含まれています。 パラメーター名は含まれません。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Reflection.Emit.DynamicMethod.ToString%2A>動的メソッドのメソッドです。 このコード例に示されている例の一部である、<xref:System.Reflection.Emit.DynamicMethod>クラスです。  
+  
+ [!code-cpp[Reflection.DynamicMethod.All#32](~/samples/snippets/cpp/VS_Snippets_CLR/Reflection.DynamicMethod.All/cpp/source.cpp#32)]
+ [!code-csharp[Reflection.DynamicMethod.All#32](~/samples/snippets/csharp/VS_Snippets_CLR/Reflection.DynamicMethod.All/CS/source.cs#32)]
+ [!code-vb[Reflection.DynamicMethod.All#32](~/samples/snippets/visualbasic/VS_Snippets_CLR/Reflection.DynamicMethod.All/VB/source.vb#32)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

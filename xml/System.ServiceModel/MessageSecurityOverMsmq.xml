@@ -1,0 +1,134 @@
+<Type Name="MessageSecurityOverMsmq" FullName="System.ServiceModel.MessageSecurityOverMsmq">
+  <TypeSignature Language="C#" Value="public sealed class MessageSecurityOverMsmq" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageSecurityOverMsmq extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageSecurityOverMsmq" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.NetMsmqBinding" /> バインドのメッセージレベル セキュリティのプロパティを設定できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオブジェクトは、<xref:System.ServiceModel.NetMsmqBinding.Security%2A> オブジェクトを返す <xref:System.ServiceModel.NetMsmqSecurity> プロパティによって、バインドからアクセスされます。 このオブジェクトには、<xref:System.ServiceModel.NetMsmqSecurity.Message%2A> オブジェクトへの参照を提供する <xref:System.ServiceModel.MessageSecurityOverMsmq> プロパティがあります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMessageSecurityOverMsmq#1](~/samples/snippets/csharp/VS_Snippets_CFX/uemessagesecurityovermsmq/cs/program.cs#1)]
+ [!code-vb[UEMessageSecurityOverMsmq#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemessagesecurityovermsmq/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageSecurityOverMsmq ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageSecurityOverMsmq.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageSecurityOverMsmq" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityOverMsmq.AlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.ServiceModel.Security.SecurityAlgorithmSuite), "Default")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP レベルでのセキュリティ メッセージに使用されるアルゴリズム スイートを指定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> バインドを介して送信されるメッセージの <see cref="T:System.ServiceModel.NetMsmqBinding" /> 設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は、正規化、ダイジェスト、キーラップ、署名、暗号化、およびキー派生の各アルゴリズムなど、さまざまなアルゴリズムを定義します。 このプロパティが最も関連するのは、既定以外のアルゴリズム セットを使用するプラットフォームで作業する場合です。 このプロパティを変更する場合は、関連するアルゴリズムの長所と短所を認識しておく必要があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMessageSecurityOverMsmq#2](~/samples/snippets/csharp/VS_Snippets_CFX/uemessagesecurityovermsmq/cs/program.cs#2)]
+ [!code-vb[UEMessageSecurityOverMsmq#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemessagesecurityovermsmq/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCredentialType">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageCredentialType ClientCredentialType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MessageCredentialType ClientCredentialType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageSecurityOverMsmq.ClientCredentialType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageCredentialType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MSMQ トランスポートを介して送信されるメッセージの <see cref="T:System.ServiceModel.MessageCredentialType" /> セキュリティ設定を取得または設定します。</summary>
+        <value>MSMQ トランスポートを介して送信されるメッセージの <see cref="T:System.ServiceModel.MessageCredentialType" /> セキュリティ設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには次の値のいずれかを設定できます。  
+  
+-   **None**: これにより、匿名クライアントとの対話をサービスします。 サービスとクライアントはいずれも資格情報を要求しません。  
+  
+-   **Windows**: これにより、Windows 資格情報の認証されたコンテキスト下にある SOAP 交換します。 これは、常に Kerberos ベースの認証を実行します。  
+  
+-   **ユーザー名**: これにより、サービスを必要とする UserName 資格情報を使用してクライアントを認証します。 この資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスを使用して指定する必要があります。  
+  
+> [!NOTE]
+>  [!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。 このようにして、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、UserName 資格情報を使用する場合に交換が強制的に保護されるようにします。 このモードを使用して、クライアントでサービス証明書を指定する必要があります`ClientCredential`動作と`serviceCertificate`:  
+  
+-   `Certificate` : 証明書を使用したクライアントの認証を、サービスで要求することが可能になります。 この場合のクライアント資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスまたは `ClientCredentials` 動作を使用して指定する必要があります。 この場合のサービス資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスまたは `ClientCredentials` を指定して `serviceCertificate` 動作を使用して指定する必要があります。  
+  
+-   `InfoCard` : サービスは、InfoCard を使用してクライアントを認証するよう要求します。 `serviceCertificate` は、`ClientCredential` 動作で提供される必要があります。  
+  
+-   `MessageSecurityOverMsmq` に対する証明書資格情報は、セキュリティ モードが `Both` または `Message` である場合にのみ関連します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[UEMessageSecurityOverMsmq#3](~/samples/snippets/csharp/VS_Snippets_CFX/uemessagesecurityovermsmq/cs/program.cs#3)]
+ [!code-vb[UEMessageSecurityOverMsmq#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/uemessagesecurityovermsmq/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

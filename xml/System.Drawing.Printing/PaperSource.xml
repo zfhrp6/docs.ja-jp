@@ -1,0 +1,177 @@
+<Type Name="PaperSource" FullName="System.Drawing.Printing.PaperSource">
+  <TypeSignature Language="C#" Value="public class PaperSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PaperSource extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PaperSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プリンターの用紙の取得元となる、用紙トレイを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスによって使用<xref:System.Drawing.Printing.PrinterSettings.PaperSources%2A?displayProperty=nameWithType>と<xref:System.Drawing.Printing.PageSettings.PaperSource%2A?displayProperty=nameWithType>用紙を取得するプロパティのソースを利用して、ページの給紙方法をそれぞれ設定するプリンターのトレイにセットします。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+   
+  
+## Examples  
+ 次のコード例、`comboPaperSource`コンボ ボックス、プリンターに給紙方法はサポートされています。 <xref:System.Drawing.Printing.PaperSource.SourceName%2A>を通じて追加される項目の表示文字列を提供するプロパティとして識別される、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>コンボ ボックスのプロパティです。 この例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在することと、特定のコンボ ボックスが存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#2)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#2)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PaperSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PaperSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Printing.PaperSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.PaperSource> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Drawing.Printing.PaperSource.Kind%2A>|<xref:System.Drawing.Printing.PaperSourceKind?displayProperty=nameWithType>|  
+|<xref:System.Drawing.Printing.PaperSource.SourceName%2A>|<xref:System.String.Empty?displayProperty=nameWithType>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Kind">
+      <MemberSignature Language="C#" Value="public System.Drawing.Printing.PaperSourceKind Kind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Printing.PaperSourceKind Kind" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PaperSource.Kind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.PaperSourceKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>給紙方法を取得します。</summary>
+        <value><see cref="T:System.Drawing.Printing.PaperSourceKind" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawKind">
+      <MemberSignature Language="C#" Value="public int RawKind { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RawKind" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PaperSource.RawKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のいずれかを表す整数を<see cref="T:System.Drawing.Printing.PaperSourceKind" />値または他の値。</summary>
+        <value>いずれかを表す整数値、<see cref="T:System.Drawing.Printing.PaperSourceKind" />値または他の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、各整数値を示します<xref:System.Drawing.Printing.PaperSourceKind>メンバー。 256 マッピングよりも大きな<xref:System.Drawing.Printing.PaperSourceKind.Custom>で、<xref:System.Drawing.Printing.PaperSourceKind>列挙型、ですが、<xref:System.Drawing.Printing.PaperSource.RawKind%2A>実際の整数値を返します。  
+  
+|整数値|PaperSourceKind メンバー|  
+|-------------------|----------------------------|  
+|1|<xref:System.Drawing.Printing.PaperSourceKind.Upper>|  
+|2|<xref:System.Drawing.Printing.PaperSourceKind.Lower>|  
+|3|<xref:System.Drawing.Printing.PaperSourceKind.Middle>|  
+|4|<xref:System.Drawing.Printing.PaperSourceKind.Manual>|  
+|5|<xref:System.Drawing.Printing.PaperSourceKind.Envelope>|  
+|6|<xref:System.Drawing.Printing.PaperSourceKind.ManualFeed>|  
+|7|<xref:System.Drawing.Printing.PaperSourceKind.AutomaticFeed>|  
+|9|<xref:System.Drawing.Printing.PaperSourceKind.TractorFeed>|  
+|9|<xref:System.Drawing.Printing.PaperSourceKind.SmallFormat>|  
+|10|<xref:System.Drawing.Printing.PaperSourceKind.LargeFormat>|  
+|11|<xref:System.Drawing.Printing.PaperSourceKind.LargeCapacity>|  
+|14|<xref:System.Drawing.Printing.PaperSourceKind.Cassette>|  
+|15|<xref:System.Drawing.Printing.PaperSourceKind.FormSource>|  
+|256 以上|<xref:System.Drawing.Printing.PaperSourceKind.Custom>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceName">
+      <MemberSignature Language="C#" Value="public string SourceName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.PaperSource.SourceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または給紙方法の名前を設定します。</summary>
+        <value>給紙方法の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 給紙方法を表示する必要がある場合は、このプロパティを呼び出します。 給紙方法の名前はに基づいて生成された、<xref:System.Drawing.Printing.PaperSource.Kind%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例、`comboPaperSource`コンボ ボックス、プリンターに給紙方法はサポートされています。 <xref:System.Drawing.Printing.PaperSource.SourceName%2A>を通じて追加される項目の表示文字列を提供するプロパティとして識別される、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>コンボ ボックスのプロパティです。 この例では、する必要があります、<xref:System.Drawing.Printing.PrintDocument>という名前の変数`printDoc`が存在することと、特定のコンボ ボックスが存在します。  
+  
+ [!code-cpp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/cpp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CPP/source.cpp#2)]
+ [!code-csharp[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/csharp/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/CS/source.cs#2)]
+ [!code-vb[PaperSource and PaperSize Example with Resolution#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PaperSource and PaperSize Example with Resolution/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PaperSource.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>に関する情報を提供、<see cref="T:System.Drawing.Printing.PaperSource" />の文字列形式。</summary>
+        <returns>文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

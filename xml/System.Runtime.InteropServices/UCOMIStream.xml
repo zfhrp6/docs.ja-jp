@@ -1,0 +1,379 @@
+<Type Name="UCOMIStream" FullName="System.Runtime.InteropServices.UCOMIStream">
+  <TypeSignature Language="C#" Value="public interface UCOMIStream" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract UCOMIStream" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.UCOMIStream" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("0000000c-0000-0000-c000-000000000046")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>代わりに、<see cref="T:System.Runtime.InteropServices.ComTypes.IStream" /> を使用してください。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream`と`ISequentialStream`MSDN ライブラリの com サブフォルダーにあります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public void Clone (out System.Runtime.InteropServices.UCOMIStream ppstm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clone([out] class System.Runtime.InteropServices.UCOMIStream&amp; ppstm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Clone(System.Runtime.InteropServices.UCOMIStream@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ppstm" Type="System.Runtime.InteropServices.UCOMIStream&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="ppstm">正常に返された、新しいストリーム オブジェクトを格納します。</param>
+        <summary>独自の新しいストリーム オブジェクトを作成元のストリームと同じバイトを参照するポインターをシークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::Clone`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit (int grfCommitFlags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Commit(int32 grfCommitFlags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Commit(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="grfCommitFlags" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="grfCommitFlags">ストリーム オブジェクトの変更がコミットされる方法を制御します。</param>
+        <summary>トランザクション モードで開いたストリーム オブジェクトに加えられた変更が親ストレージに反映されることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::Commit`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Runtime.InteropServices.UCOMIStream pstm, long cb, IntPtr pcbRead, IntPtr pcbWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Runtime.InteropServices.UCOMIStream pstm, int64 cb, native int pcbRead, native int pcbWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.CopyTo(System.Runtime.InteropServices.UCOMIStream,System.Int64,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pstm" Type="System.Runtime.InteropServices.UCOMIStream" />
+        <Parameter Name="cb" Type="System.Int64" />
+        <Parameter Name="pcbRead" Type="System.IntPtr" />
+        <Parameter Name="pcbWritten" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="pstm">コピー先のストリームへの参照。</param>
+        <param name="cb">ソース ストリームからコピーするバイト数。</param>
+        <param name="pcbRead">正常に返された場合は、実際のソースから読み取られたバイト数を格納します。</param>
+        <param name="pcbWritten">正常に返された場合は、実際の変換先に書き込まれたバイト数を格納します。</param>
+        <summary>コピーを現在のバイト数が指定されたシーク ポインターに現在のストリームのシーク ポインターに別のストリーム。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::CopyTo`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LockRegion">
+      <MemberSignature Language="C#" Value="public void LockRegion (long libOffset, long cb, int dwLockType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LockRegion(int64 libOffset, int64 cb, int32 dwLockType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.LockRegion(System.Int64,System.Int64,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="libOffset" Type="System.Int64" />
+        <Parameter Name="cb" Type="System.Int64" />
+        <Parameter Name="dwLockType" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="libOffset">範囲の最初のバイト オフセット。</param>
+        <param name="cb">(バイト単位) を制限する範囲の長さ。</param>
+        <param name="dwLockType">範囲へのアクセスを要求する制限。</param>
+        <summary>指定したストリームにバイト範囲へのアクセスを制限します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::LockRegion`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public void Read (byte[] pv, int cb, IntPtr pcbRead);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Read([out] unsigned int8[] pv, int32 cb, native int pcbRead) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Read(System.Byte[],System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pv" Type="System.Byte[]" />
+        <Parameter Name="cb" Type="System.Int32" />
+        <Parameter Name="pcbRead" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="pv">正常に返された場合は、読み取られたデータ ストリームが含まれています。</param>
+        <param name="cb">ストリーム オブジェクトから読み取るバイト数。</param>
+        <param name="pcbRead">ポインター、<see langword="ULONG" />を実際のバイト数を受け取る変数をストリーム オブジェクトから読み取る。</param>
+        <summary>シーク ポインターを指定したストリームからバイト数のオブジェクトが現在からメモリに読み取ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`ISequentialStream::Read`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Revert">
+      <MemberSignature Language="C#" Value="public void Revert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Revert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Revert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクション ストリームに対して、最後に加えられた変更をすべて破棄<see cref="M:System.Runtime.InteropServices.UCOMIStream.Commit(System.Int32)" />呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::Revert`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (long dlibMove, int dwOrigin, IntPtr plibNewPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Seek(int64 dlibMove, int32 dwOrigin, native int plibNewPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Seek(System.Int64,System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dlibMove" Type="System.Int64" />
+        <Parameter Name="dwOrigin" Type="System.Int32" />
+        <Parameter Name="plibNewPosition" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dlibMove">追加する変位<c>dwOrigin</c>です。</param>
+        <param name="dwOrigin">シークの原点を指定します。 原点は、ファイルの先頭、現在のシーク ポインター、またはファイルの末尾。</param>
+        <param name="plibNewPosition">正常に返された場合は、ストリームの先頭からのシーク ポインターのオフセットが含まれています。</param>
+        <summary>ストリームの先頭からの相対新しい場所に、ストリームの末尾に、または現在のシーク ポインターには、シーク ポインターを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::Seek`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSize">
+      <MemberSignature Language="C#" Value="public void SetSize (long libNewSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetSize(int64 libNewSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.SetSize(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="libNewSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="libNewSize">ストリームの新しいサイズをバイト数として指定します。</param>
+        <summary>ストリーム オブジェクトのサイズを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::SetSize`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stat">
+      <MemberSignature Language="C#" Value="public void Stat (out System.Runtime.InteropServices.STATSTG pstatstg, int grfStatFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Stat([out] valuetype System.Runtime.InteropServices.STATSTG&amp; pstatstg, int32 grfStatFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Stat(System.Runtime.InteropServices.STATSTG@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pstatstg" Type="System.Runtime.InteropServices.STATSTG&amp;" RefType="out" />
+        <Parameter Name="grfStatFlag" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="pstatstg">正常に返された場合は、次が含まれています。、<see langword="STATSTG" />ストリーム オブジェクトを記述する構造体。</param>
+        <param name="grfStatFlag">内のメンバーの一部を指定します、<see langword="STATSTG" />構造でこのメソッドが返されない、したがって、メモリ割り当て操作が節約されます。</param>
+        <summary>取得、<see cref="T:System.Runtime.InteropServices.STATSTG" />このストリームの構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::Stat`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnlockRegion">
+      <MemberSignature Language="C#" Value="public void UnlockRegion (long libOffset, long cb, int dwLockType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UnlockRegion(int64 libOffset, int64 cb, int32 dwLockType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.UnlockRegion(System.Int64,System.Int64,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="libOffset" Type="System.Int64" />
+        <Parameter Name="cb" Type="System.Int64" />
+        <Parameter Name="dwLockType" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="libOffset">範囲の最初のバイト オフセット。</param>
+        <param name="cb">制限する範囲の長さ、(バイト単位)。</param>
+        <param name="dwLockType">アクセスの制限は、以前にこの範囲にします。</param>
+        <summary>アクセス制限を制限しているバイトの範囲を削除<see cref="M:System.Runtime.InteropServices.UCOMIStream.LockRegion(System.Int64,System.Int64,System.Int32)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`IStream::UnlockRegion`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (byte[] pv, int cb, IntPtr pcbWritten);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8[] pv, int32 cb, native int pcbWritten) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.UCOMIStream.Write(System.Byte[],System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pv" Type="System.Byte[]" />
+        <Parameter Name="cb" Type="System.Int32" />
+        <Parameter Name="pcbWritten" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="pv">このストリームを書き込むバッファー。</param>
+        <param name="cb">ストリームに書き込むバイト数。</param>
+        <param name="pcbWritten">正常に返された場合は、実際のストリーム オブジェクトに書き込まれたバイト数を格納します。 呼び出し元のポインターを設定<see langword="null" />、後者このメソッドが実際に書き込まれたバイト数を提供しません。</param>
+        <summary>指定した書き込みバイト数を現在の先頭、ストリーム オブジェクトにシーク ポインター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、の既存のドキュメントを参照してください`ISequentialStream::Write`MSDN ライブラリです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

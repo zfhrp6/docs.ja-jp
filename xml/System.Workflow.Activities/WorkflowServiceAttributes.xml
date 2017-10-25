@@ -1,0 +1,432 @@
+<Type Name="WorkflowServiceAttributes" FullName="System.Workflow.Activities.WorkflowServiceAttributes">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowServiceAttributes : System.Workflow.ComponentModel.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowServiceAttributes extends System.Workflow.ComponentModel.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.WorkflowServiceAttributes" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.DependencyObjectCodeDomSerializer), typeof(System.ComponentModel.Design.Serialization.CodeDomSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.Activities.WorkflowServiceAttributesTypeConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>修飾するワークフロー サービスのサービス動作を作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ WorkflowServiceAttributes クラスは、<xref:System.Workflow.Activities.ReceiveActivity> アクティビティのサービス属性を定義するために使用されます。  
+  
+ 次のように、一部の属性には既定値があります。  
+  
+|||  
+|-|-|  
+|属性|既定値|  
+|AddressFilterMode|Exact|  
+|IgnoreExtensionDataObject|False|  
+|IncludeExceptionDetailInFault|False|  
+|MaxItemsInObjectGraph|2147483647|  
+|UseSynchronizationContext|True|  
+|ValidateMustUnderstand|True|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.WorkflowServiceAttributes.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.WorkflowServiceAttributes" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親 <xref:System.Workflow.Activities.ReceiveActivity> アクティビティが作成される場合に、このコンストラクターは通常呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Activities.WorkflowServiceAttributes> クラスの新しいインスタンスを作成する方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#0](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#0)]
+ [!code-vb[WorkflowServiceAttributes#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFilterMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AddressFilterMode AddressFilterMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AddressFilterMode AddressFilterMode" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.AddressFilterMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AddressFilterMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーが受信メッセージを適切なエンドポイントにルーティングするために使用する <see cref="T:System.ServiceModel.AddressFilterMode" /> 列挙体を取得または設定します。</summary>
+        <value>ディスパッチャーが受信メッセージを適切なエンドポイントにルーティングするために使用する <see cref="T:System.ServiceModel.AddressFilterMode" /> 列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `AddressFilterMode.Exact` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`AddressFilterMode` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#1](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#1)]
+ [!code-vb[WorkflowServiceAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationName">
+      <MemberSignature Language="C#" Value="public string ConfigurationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationName" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.ConfigurationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション構成ファイル内でサービス要素を検索するために使用される値を取得または設定します。</summary>
+        <value>構成ファイル内で検索される値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は NULL です。  
+  
+   
+  
+## Examples  
+ 次の例は、`ConfigurationName` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#2](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#2)]
+ [!code-vb[WorkflowServiceAttributes#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreExtensionDataObject">
+      <MemberSignature Language="C#" Value="public bool IgnoreExtensionDataObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreExtensionDataObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.IgnoreExtensionDataObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明なシリアル化データをネットワークで送信するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          不明なシリアル化データが送信されない場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`IgnoreExtensionDataObject` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#3](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#3)]
+ [!code-vb[WorkflowServiceAttributes#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一般的な未処理の実行例外を <see cref="T:System.ServiceModel.FaultException" /> 型の <see cref="T:System.ServiceModel.ExceptionDetail" /> に変換してエラー メッセージとして送信するように指定する値を取得または設定します。 この属性は、開発時にサービスのトラブルシューティングを行う場合にのみ、<see langword="true" /> に設定します。</summary>
+        <value>
+          未処理の例外を SOAP エラーとして返す場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`IncludeExceptionDetailInFaults` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#4](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#4)]
+ [!code-vb[WorkflowServiceAttributes#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxItemsInObjectGraph">
+      <MemberSignature Language="C#" Value="public int MaxItemsInObjectGraph { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxItemsInObjectGraph" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.MaxItemsInObjectGraph" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(65536)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されるオブジェクトで許可される項目の最大数を取得または設定します。</summary>
+        <value>オブジェクトで許可される最大アイテム数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は <xref:System.Int32.MaxValue> です。  
+  
+   
+  
+## Examples  
+ 次の例は、`MaxItemsInObjectGraph` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#5](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#5)]
+ [!code-vb[WorkflowServiceAttributes#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) でのサービス要素の名前属性の値を取得または設定します。</summary>
+        <value>Name プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応します <`wsdl:service`> 要素のエクスポート時にします。  既定値は NULL です。  
+  
+   
+  
+## Examples  
+ 次の例は、`Name` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#6](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#6)]
+ [!code-vb[WorkflowServiceAttributes#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) でのサービスのターゲット名前属性の値を取得または設定します。</summary>
+        <value>名前空間プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値の値に対応、`targetNamespace`属性を <`wsdl:definitions`> 要素を含む、<`wsdl:service`> 要素のエクスポート時にします。  既定値は NULL です。  
+  
+   
+  
+## Examples  
+ 次の例は、`Namespace` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#7](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#7)]
+ [!code-vb[WorkflowServiceAttributes#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSynchronizationContext">
+      <MemberSignature Language="C#" Value="public bool UseSynchronizationContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.UseSynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の同期コンテキストを使用して実行スレッドを選択するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          サービスのすべての呼び出しが、<see langword="true" /> で指定されたスレッドで実行する必要がある場合は <see cref="T:System.Threading.SynchronizationContext" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`UseSynchronizationContext` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#8](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#8)]
+ [!code-vb[WorkflowServiceAttributes#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateMustUnderstand">
+      <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Activities.WorkflowServiceAttributes.ValidateMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムまたはアプリケーションで SOAP <see langword="MustUnderstand" /> ヘッダー処理を強制的に行うかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          システムが SOAP ヘッダー <see langword="true" /> 処理を実行する場合は <see langword="MustUnderstand" />、それ以外の場合は <see langword="false" />、つまり、アプリケーションがこの処理を実行することを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+   
+  
+## Examples  
+ 次の例は、`ValidateMustUnderstand` プロパティのアクセス方法を示しています。  
+  
+ [!code-csharp[WorkflowServiceAttributes#9](~/samples/snippets/csharp/VS_Snippets_CFX/workflowserviceattributes/cs/snippets.cs#9)]
+ [!code-vb[WorkflowServiceAttributes#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/workflowserviceattributes/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

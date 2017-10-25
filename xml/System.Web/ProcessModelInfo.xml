@@ -1,0 +1,117 @@
+<Type Name="ProcessModelInfo" FullName="System.Web.ProcessModelInfo">
+  <TypeSignature Language="C#" Value="public class ProcessModelInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ProcessModelInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ProcessModelInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワーカー プロセスに関する情報を返すメソッドが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ProcessModelInfo>クラスには、独自のコードでインスタンス化することはできません。 静的なを使用して<xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A>と<xref:System.Web.ProcessModelInfo.GetHistory%2A>格納するメソッド<xref:System.Web.ProcessInfo>オブジェクトし、のプロパティを使用して、<xref:System.Web.ProcessInfo>プロセスに関する情報を取得するオブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A>と<xref:System.Web.ProcessModelInfo.GetHistory%2A>のみで Microsoft インターネット インフォメーション サービス (IIS) バージョン 5.0 を Microsoft Windows 2000 および Windows XP または Windows Server 2003 と IIS 5.0 分離モードを使用して IIS 6.0 では、メソッドを使用できます。 詳細については、次を参照してください。 [NIB: 方法: ASP.NET バージョン用の ASP.NET アプリケーションの構成](http://msdn.microsoft.com/en-us/3e2037d2-61aa-44f3-b84e-d4dab3572ad3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、 <xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A> Web ページで、現在実行されている ASP.NET プロセスに関する統計情報を表示するメソッド。 この例は、Windows 2000 と Windows XP でのインターネット インフォメーション サービス 5.0 または IIS 6.0 では Windows Server 2003 と IIS 5.0 分離モードを使用して機能します。  
+  
+ [!code-aspx-csharp[System.Web.ProcessModelInfo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ProcessModelInfo/CS/processinfo1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.ProcessModelInfo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ProcessModelInfo/VB/processinfo1vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProcessModelInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessModelInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ProcessModelInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentProcessInfo">
+      <MemberSignature Language="C#" Value="public static System.Web.ProcessInfo GetCurrentProcessInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.ProcessInfo GetCurrentProcessInfo() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessModelInfo.GetCurrentProcessInfo" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ProcessInfo</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の要求を実行しているワーカー プロセスに関する情報を返します。</summary>
+        <returns>A<see cref="T:System.Web.ProcessInfo" />現在のプロセスに関する情報を格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A>メソッドは ASP.NET プロセス モデルで実行されているアプリケーションにのみ適用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、 <xref:System.Web.ProcessModelInfo.GetCurrentProcessInfo%2A> Web ページで、現在実行されている ASP.NET プロセスに関する統計情報を表示するメソッド。  
+  
+ [!code-aspx-csharp[System.Web.ProcessModelInfo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ProcessModelInfo/CS/processinfo1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.ProcessModelInfo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ProcessModelInfo/VB/processinfo1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">プロセス情報では、現在の要求に対して使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHistory">
+      <MemberSignature Language="C#" Value="public static System.Web.ProcessInfo[] GetHistory (int numRecords);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.ProcessInfo[] GetHistory(int32 numRecords) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ProcessModelInfo.GetHistory(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ProcessInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="numRecords" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="numRecords">情報が要求されたプロセスの数。</param>
+        <summary>最近のワーカー プロセスに関する情報を返します。</summary>
+        <returns>最新の配列<see cref="T:System.Web.ProcessInfo" />(最大 100) オブジェクトで、それ以外の場合は、使用可能なオブジェクトの数より小さい<paramref name="numRecords" />、使用可能なすべてのオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ProcessModelInfo.GetHistory%2A>メソッドは ASP.NET プロセス モデルで実行されているアプリケーションにのみ適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">プロセス情報は使用できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

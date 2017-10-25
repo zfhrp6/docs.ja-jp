@@ -1,0 +1,95 @@
+<Type Name="IAuthorizationPolicy" FullName="System.IdentityModel.Policy.IAuthorizationPolicy">
+  <TypeSignature Language="C#" Value="public interface IAuthorizationPolicy : System.IdentityModel.Policy.IAuthorizationComponent" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAuthorizationPolicy implements class System.IdentityModel.Policy.IAuthorizationComponent" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Policy.IAuthorizationPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IdentityModel.Policy.IAuthorizationComponent</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>特定のクレームセットについて、ユーザーを承認するためのルールのセットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるクレーム セットを別のクレーム セットにマッピングまたは追加するための、<xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスを実装します。 承認ポリシーは、クレーム セットを調べ、現在のセットに基づいて別のクレームを追加します。 たとえば、承認ポリシーは、生年月日を含む要求を評価し、ユーザーが 21 歳を超えていることをアサートするクレームを追加し、<xref:System.IdentityModel.Policy.EvaluationContext> に Over21 クレームを追加する、といったことを行います。  
+  
+ <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスを実装するクラスはユーザーの承認を行いませんが、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスで承認を行うことができます。 <xref:System.ServiceModel.ServiceAuthorizationManager> は、有効な各承認ポリシーの <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドを呼び出します。 <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドは、現在のコンテキストに基づいて、ユーザーに別のクレームを追加する必要があるかどうかを判断します。 承認ポリシーの <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドは、他の承認ポリシーによってクレームが <xref:System.IdentityModel.Policy.EvaluationContext> に追加されるたびに、複数回呼び出される場合があります。 有効なすべての承認ポリシーの実行後、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスは最後のクレーム セットに基づいて承認決定を行います。 次に、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスは、こうした承認決定を反映した不変のクレーム セットを含む <xref:System.IdentityModel.Policy.AuthorizationContext> を作成します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[C_IAuthorizationPolicy#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_iauthorizationpolicy/cs/service.cs#1)]
+ [!code-vb[C_IAuthorizationPolicy#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_iauthorizationpolicy/vb/myauthorizationpolicy.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="public bool Evaluate (System.IdentityModel.Policy.EvaluationContext evaluationContext, ref object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Evaluate(class System.IdentityModel.Policy.EvaluationContext evaluationContext, object&amp; state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate(System.IdentityModel.Policy.EvaluationContext,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evaluationContext" Type="System.IdentityModel.Policy.EvaluationContext" />
+        <Parameter Name="state" Type="System.Object&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="evaluationContext">承認ポリシーが評価するクレーム セットを格納した <see cref="T:System.IdentityModel.Policy.EvaluationContext" />。</param>
+        <param name="state">この承認ポリシーのカスタム状態を表す <see cref="T:System.Object" />。参照によって渡されます。</param>
+        <summary>ユーザーがこの承認ポリシーの要件を満たすかどうかを評価します。</summary>
+        <returns>
+          他の承認ポリシーによって <see langword="false" /> にクレームが追加されている場合で、この承認ポリシーに対する <see cref="M:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate(System.IdentityModel.Policy.EvaluationContext,System.Object@)" /> メソッドを呼び出す必要がある場合は <paramref name="evaluationContext" />。それ以外の場合で、この承認ポリシーが追加評価を行う必要がない場合は <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスを実装するときは、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドが異なるスレッドによって複数回呼び出されることを想定する必要があります。  
+  
+ <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスの実装では、`state` パラメーターを使用して、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドの呼び出し間の状態を追跡できます。 <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドのある呼び出しの内部で状態オブジェクトが設定されると、現在の評価プロセスの中でそれ以降に <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドが呼び出されるたびに必ず、同じオブジェクト インスタンスが渡されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[C_IAuthorizationPolicy#2](~/samples/snippets/csharp/VS_Snippets_CFX/c_iauthorizationpolicy/cs/service.cs#2)]
+ [!code-vb[C_IAuthorizationPolicy#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_iauthorizationpolicy/vb/myauthorizationpolicy.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Claims.ClaimSet Issuer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Claims.ClaimSet Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.IAuthorizationPolicy.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Claims.ClaimSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>承認ポリシーの発行者を表すクレーム セットを取得します。</summary>
+        <value>承認ポリシーの発行者を表す <see cref="T:System.IdentityModel.Claims.ClaimSet" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

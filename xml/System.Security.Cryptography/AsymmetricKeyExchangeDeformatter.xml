@@ -1,0 +1,215 @@
+<Type Name="AsymmetricKeyExchangeDeformatter" FullName="System.Security.Cryptography.AsymmetricKeyExchangeDeformatter">
+  <TypeSignature Language="C#" Value="public abstract class AsymmetricKeyExchangeDeformatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit AsymmetricKeyExchangeDeformatter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての非対象キーの、交換逆フォーマッタの派生元になる基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非対称キー交換逆フォーマッタは、キー交換データを復号化します。  
+  
+ キーの交換は、対称暗号化アルゴリズムのキーとして使用でき、目的の受信者に送信する暗号化を使用するランダムなデータなどの機密情報を作成するセンダを許可します。  
+  
+> [!CAUTION]
+>  操作の多くの詳細については、キーの交換を成功させるために慎重に行う必要があるために、独自のキーの交換方法を指定すると、基本的な機能から作成していないしようとするを強くお勧めします。  
+  
+   
+  
+## Examples  
+ 次の例を拡張する方法を示しています、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/CS/contosodeformatter.cs#1)]
+ [!code-vb[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/VB/contosodeformatter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AsymmetricKeyExchangeDeformatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。  
+  
+ 実装を使用して<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.SetKey%2A>の実装を呼び出す前に、キーを確立するために<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.DecryptKeyExchange%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptKeyExchange">
+      <MemberSignature Language="C#" Value="public abstract byte[] DecryptKeyExchange (byte[] rgb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DecryptKeyExchange(unsigned int8[] rgb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.DecryptKeyExchange(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgb" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgb">機密情報が非表示にされるキー交換データ。</param>
+        <summary>派生クラスでオーバーライドされると、暗号化されたキー交換データから機密情報を抽出します。</summary>
+        <returns>キー交換データから派生する機密情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装を呼び出す前に、キーを指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.DecryptKeyExchange%2A>メソッドを指定された入力データの暗号化されたキー交換を作成します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/CS/contosodeformatter.cs#4)]
+ [!code-vb[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/VB/contosodeformatter.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public abstract string Parameters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされたときに、非対称キー交換のパラメーターを取得または設定します。</summary>
+        <value>非対称キー交換操作のパラメーターを含む XML 形式の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.Parameters%2A>プロパティをフォーマッタのパラメーターへのアクセスを許可しないようにします。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/CS/contosodeformatter.cs#3)]
+ [!code-vb[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/VB/contosodeformatter.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetKey">
+      <MemberSignature Language="C#" Value="public abstract void SetKey (System.Security.Cryptography.AsymmetricAlgorithm key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetKey(class System.Security.Cryptography.AsymmetricAlgorithm key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.SetKey(System.Security.Cryptography.AsymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.AsymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="key">実装のインスタンス<see cref="T:System.Security.Cryptography.AsymmetricAlgorithm" />秘密キーを保持します。</param>
+        <summary>派生クラスでオーバーライドされるとき、機密情報の復号化に使用する秘密キーを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの前にキーを設定する必要があります、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.DecryptKeyExchange%2A>実装します。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter.SetKey%2A>暗号化操作の公開キーを設定します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.AsymmetricKeyExchangeDeformatter>クラスです。  
+  
+ [!code-csharp[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/CS/contosodeformatter.cs#5)]
+ [!code-vb[System.Security.Cryptography.AsymmetricKeyExchangeDeformatter#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.Security.Cryptography.AsymmetricKeyExchangeDeformatter/VB/contosodeformatter.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

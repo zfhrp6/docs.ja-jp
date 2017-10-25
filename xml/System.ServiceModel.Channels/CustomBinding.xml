@@ -1,0 +1,401 @@
+<Type Name="CustomBinding" FullName="System.ServiceModel.Channels.CustomBinding">
+  <TypeSignature Language="C#" Value="public class CustomBinding : System.ServiceModel.Channels.Binding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomBinding extends System.ServiceModel.Channels.Binding" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.CustomBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.Binding</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインド要素の一覧からバインドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムが提供するバインディングの中にサービスの要件を満たすものがない場合は、カスタム バインディングを使用します。 たとえば、カスタム バインドを使用すると、サービス エンドポイントで新しいトランスポートや新しいエンコーダーを使用できます。  
+  
+ カスタム バインドは、特定の順序で "積み重ねられている" バインド要素のコレクションから <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> の 1 つを使用して作成します。  
+  
+-   最上位にあるのは、トランザクションのフローを可能にするオプションの <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> です。  
+  
+-   その次にあるのは、WS-ReliableMessaging 仕様で定義されているセッションおよび順序指定のメカニズムを提供するオプションの <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> です。 このセッションの概念は、SOAP およびトランスポート中継局を通過できます。  
+  
+-   その次にあるのは、承認、認証、保護、機密性などのセキュリティ機能を提供するオプションのセキュリティ バインド要素です。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] では、次のセキュリティ バインド要素が提供されています。  
+  
+    -   <xref:System.ServiceModel.Channels.SecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>  
+  
+-   その次にあるのは、バインド要素によって指定されるオプションのメッセージ パターンです。  
+  
+-   <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>  
+  
+-   その次にあるのは、オプションのトランスポート アップグレード/ヘルパー バインド要素です。  
+  
+    -   <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
+  
+-   その次にあるのは、必須のメッセージ エンコード バインディング要素です。 独自のトランスポートを使用することも、以下のメッセージ エンコード バインドのいずれかを使用することもできます。  
+  
+    -   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
+  
+-   最下位には、必須のトランスポート要素があります。 独自のトランスポートを使用することも、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] で提供されるトランスポート バインド要素のいずれかを使用することもできます。  
+  
+    -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.HttpTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.MsmqTransportBindingElement>  
+  
+    -   <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement>  
+  
+    -   <xref:System.ServiceModel.Channels.PeerTransportBindingElement>  
+  
+ 各層のオプションの概要を次の表に示します。  
+  
+|レイヤー|オプション|必須|  
+|-----------|-------------|--------------|  
+|トランザクション フロー|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ｘ|  
+|信頼性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ｘ|  
+|セキュリティ|同期、非同期、トランスポート レベル|Ｘ|  
+|形状の変更|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|Ｘ|  
+|トランスポートのアップグレード|SSL ストリーム、Windows ストリーム、ピア リゾルバー|Ｘ|  
+|エンコーディング|テキスト、バイナリ、MTOM、カスタム|はい|  
+|Transport|TCP、名前付きパイプ、HTTP、HTTPS、MSMQ のフレーバー、カスタム|はい|  
+  
+ さらに、独自のバインド要素を定義し、それを定義済みの層のいずれかの間に挿入できます。  
+  
+ カスタム バインドを変更するシステム提供のバインディングを使用する方法の詳細については、次を参照してください。[する方法: システム指定のバインディングをカスタマイズ](~/docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)です。  
+  
+> [!NOTE]
+>  [!INCLUDE[indigo2](~/includes/indigo2-md.md)] 以前を使用して構築された WCF クライアント アプリケーションから .Net Framework 4.0 を使用して構築された [!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] サービスを呼び出す場合、svcutil.exe を使用することによって、または [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)] からのサービス参照を追加することによって生成された構成ファイルのバインド構成には validity 属性が含まれます。 この属性は、[!INCLUDE[netfx35_short](~/includes/netfx35-short-md.md)] ランタイムによって認識されないため、アプリケーションでは <xref:System.Configuration.ConfigurationErrorsException> がスローされ、"認識されない属性 validity" のメッセージが表示されます。 この問題を回避するには、バインド構成から validity 属性を削除します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Channels.CustomBinding> および <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> を使用して <xref:System.ServiceModel.Channels.HttpTransportBindingElement> オブジェクトを作成する方法を示します。  
+  
+ [!code-csharp[S_Imperative#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/service.cs#1)]
+ [!code-vb[S_Imperative#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/service.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 既定のコンストラクターを使用する例を次に示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.BindingElement&gt; bindingElementsInTopDownChannelStackOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Channels.BindingElement&gt; bindingElementsInTopDownChannelStackOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.BindingElement})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindingElementsInTopDownChannelStackOrder" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.BindingElement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="bindingElementsInTopDownChannelStackOrder">トップダウンの順序でチャネル スタックのバインディング要素を格納する <see cref="T:System.Collections.Generic.IEnumerable`1" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" />。</param>
+        <summary>完全なチャネル スタックのバインディング要素を使用して、<see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_Imperative#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/servicesnippets.cs#4)]
+ [!code-vb[S_Imperative#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/servicesnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bindingElementsInTopDownChannelStackOrder" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding (System.ServiceModel.Channels.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor(System.ServiceModel.Channels.Binding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">カスタム バインディングを初期化するために使用する <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <summary>指定したバインディングの値を使用して、<see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="binding" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding (params System.ServiceModel.Channels.BindingElement[] bindingElementsInTopDownChannelStackOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.BindingElement[] bindingElementsInTopDownChannelStackOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor(System.ServiceModel.Channels.BindingElement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindingElementsInTopDownChannelStackOrder" Type="System.ServiceModel.Channels.BindingElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="bindingElementsInTopDownChannelStackOrder">カスタム バインディングを初期化するために使用する <see cref="T:System.Array" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" />。</param>
+        <summary>バインディング要素の配列を使用して <see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_Imperative#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/servicesnippets.cs#3)]
+ [!code-vb[S_Imperative#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/servicesnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bindingElementsInTopDownChannelStackOrder" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="configurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">To be added.</param>
+        <summary><see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定されたバインド要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException"><paramref name="name" /> によって識別されるバインディング属性が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomBinding (string name, string ns, params System.ServiceModel.Channels.BindingElement[] bindingElementsInTopDownChannelStackOrder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string ns, class System.ServiceModel.Channels.BindingElement[] bindingElementsInTopDownChannelStackOrder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.#ctor(System.String,System.String,System.ServiceModel.Channels.BindingElement[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+        <Parameter Name="bindingElementsInTopDownChannelStackOrder" Type="System.ServiceModel.Channels.BindingElement[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="name">バインディングの名前。</param>
+        <param name="ns">バインディングの名前空間。</param>
+        <param name="bindingElementsInTopDownChannelStackOrder">カスタム バインディングを初期化するために使用する <see cref="T:System.Array" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" />。</param>
+        <summary>指定した名前と名前空間を使用して、バインディング要素の配列から <see cref="T:System.ServiceModel.Channels.CustomBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_Imperative#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_imperative/cs/servicesnippets.cs#5)]
+ [!code-vb[S_Imperative#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_imperative/vb/servicesnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="bindingElementsInTopDownChannelStackOrder" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateBindingElements">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElementCollection CreateBindingElements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElementCollection CreateBindingElements() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CustomBinding.CreateBindingElements" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタム バインドのバインド要素のジェネリック コレクションを返します。</summary>
+        <returns>カスタム バインドのバインド要素を含む <see cref="T:System.Collections.Generic.ICollection`1" /> 型の <see cref="T:System.ServiceModel.Channels.BindingElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Elements">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.BindingElementCollection Elements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Channels.BindingElementCollection Elements" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CustomBinding.Elements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム バインドからバインド要素を取得します。</summary>
+        <value>カスタム バインディングのバインディング要素を格納する <see cref="T:System.ServiceModel.Channels.BindingElementCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CustomBinding.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム バインドが使用するトランスポートの URI スキームを取得します。</summary>
+        <value>カスタム バインディングで使用するトランスポートの URI スキーム。または、トランスポートがない場合 (<see cref="T:System.ServiceModel.Channels.TransportBindingElement" /> が <see langword="null" /> である場合) は、空の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ベース アドレスに対するバインディング検証を有効にするために提供されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

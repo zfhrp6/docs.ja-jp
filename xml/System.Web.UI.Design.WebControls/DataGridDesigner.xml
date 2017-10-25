@@ -1,0 +1,443 @@
+<Type Name="DataGridDesigner" FullName="System.Web.UI.Design.WebControls.DataGridDesigner">
+  <TypeSignature Language="C#" Value="public class DataGridDesigner : System.Web.UI.Design.WebControls.BaseDataListDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridDesigner extends System.Web.UI.Design.WebControls.BaseDataListDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DataGridDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.BaseDataListDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.Design.SupportsPreviewControl(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.DataGrid" /> Web サーバー コントロールのデザイン時の動作を拡張します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を拡張する方法を示しています、<xref:System.Web.UI.Design.WebControls.DataGridDesigner>クラスです。 コードは、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetDesignTimeHtml%2A>をカスタマイズする方法、 <xref:System.Web.UI.WebControls.BaseDataList.CellPadding%2A>、<xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>と<xref:System.Web.UI.WebControls.WebControl.BorderColor%2A>プロパティと、<xref:System.Web.UI.WebControls.DataGrid>コントロールをデザイン画面に表示します。  
+  
+ [!code-vb[DataListDesigner_Sample2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListDesigner_Sample2/VB/simpledatalistdesigner.vb#1)]  
+  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DesignerAttribute>属性を使用してデザイナーを関連付ける、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ [!code-vb[DataListDesigner_Sample2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListDesigner_Sample2/VB/simpledatalistdesigner.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataGridDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoFormats">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerAutoFormatCollection AutoFormats" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataGridDesigner.AutoFormats" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerAutoFormatCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />このデザイナーと関連付けられているオブジェクト。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.Web.UI.Design.DesignerAutoFormatCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTemplateEditingFrame">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Design.ITemplateEditingFrame CreateTemplateEditingFrame (System.Web.UI.Design.TemplateEditingVerb verb);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.Design.ITemplateEditingFrame CreateTemplateEditingFrame(class System.Web.UI.Design.TemplateEditingVerb verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.CreateTemplateEditingFrame(System.Web.UI.Design.TemplateEditingVerb)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ITemplateEditingFrame</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="verb" Type="System.Web.UI.Design.TemplateEditingVerb" />
+      </Parameters>
+      <Docs>
+        <param name="verb"><see cref="T:System.Web.UI.Design.TemplateEditingVerb" />テンプレート編集フレームを作成します。</param>
+        <summary>指定された動詞を使用してフレームを編集するテンプレートを作成します。</summary>
+        <returns>テンプレート編集フレーム。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          <see langword="true" />両方のマネージ コードとアンマネージ リソースを解放するには<see langword="false" />アンマネージ リソースだけを解放します。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataGridDesigner" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションでマネージ リソースも解放できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、`disposing`パラメーターは`true`、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.Dispose%2A>メソッドのマネージ オブジェクトによって保持されているすべてのリソースを解放するこの<xref:System.Web.UI.Design.WebControls.DataGridDesigner>オブジェクトが参照します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.WebControls.DataGridDesigner.Dispose(System.Boolean)" />メソッドは、他のオブジェクトから複数回呼び出すことができますされます。 これをオーバーライドする場合に以前の呼び出しで破棄されたオブジェクトを参照しない必ず<see cref="M:System.Web.UI.Design.WebControls.DataGridDesigner.Dispose(System.Boolean)" />です。 このメソッドを実装する方法の詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については、<see cref="M:System.Web.UI.Control.Dispose" />と<see cref="M:System.Object.Finalize" />メソッドを参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCachedTemplateEditingVerbs">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Design.TemplateEditingVerb[] GetCachedTemplateEditingVerbs ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.Design.TemplateEditingVerb[] GetCachedTemplateEditingVerbs() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetCachedTemplateEditingVerbs" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.TemplateEditingVerb[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得キャッシュされたテンプレートは、デザイナーで使用できる動詞を編集します。</summary>
+        <returns>配列<see cref="T:System.Web.UI.Design.TemplateEditingVerb" />編集動詞をデザイナーに利用できるキャッシュされたテンプレートで構成されるオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す HTML マークアップを取得、<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロールをデザイン時です。</summary>
+        <returns>表すために使用される HTML マークアップを<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロールをデザイン時です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetDesignTimeHtml%2A>の外観を変更する方法、<xref:System.Web.UI.WebControls.DataGrid>デザイン サーフェイス上のコントロールです。  
+  
+ コードを使用して`Try...Catch...Finally`に、次の構文。  
+  
+-   `Try`セクションは、データ グリッド コントロールのプロパティの値を変更します。  
+  
+-   `Catch`セクションでは、任意の例外をキャッチしを送って、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetErrorDesignTimeHtml%2A>メソッドです。  
+  
+-   `Finally`セクションでは、元の値にプロパティを設定します。  
+  
+ この例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.DataGridDesigner>クラスです。  
+  
+ [!code-vb[DataListDesigner_Sample2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListDesigner_Sample2/VB/simpledatalistdesigner.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEmptyDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetEmptyDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetEmptyDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetEmptyDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時に空のテンプレートに基づくコントロールを表すために使用する HTML マークアップを取得します。</summary>
+        <returns>デザイン時に空のテンプレートに基づくコントロールを表すために使用する HTML マークアップ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorDesignTimeHtml">
+      <MemberSignature Language="C#" Value="protected override string GetErrorDesignTimeHtml (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetErrorDesignTimeHtml(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetErrorDesignTimeHtml(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生した例外。</param>
+        <summary>コントロールの表示中にエラーが発生した場合に、指定された例外のデザイン時に表示する HTML マークアップを取得します。</summary>
+        <returns>指定された例外のデザイン時に表示する HTML マークアップ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetErrorDesignTimeHtml%2A>の外観を変更する方法、<xref:System.Web.UI.WebControls.DataGrid>例外が発生したときに、デザイン画面上のコントロールです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.DataGridDesigner>クラスです。  
+  
+ [!code-vb[DataListDesigner_Sample2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListDesigner_Sample2/VB/simpledatalistdesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplateContainerDataItemProperty">
+      <MemberSignature Language="C#" Value="public override string GetTemplateContainerDataItemProperty (string templateName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetTemplateContainerDataItemProperty(string templateName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetTemplateContainerDataItemProperty(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">テンプレートの名前。</param>
+        <summary>テンプレート コンテナーのデータ項目のプロパティを取得します。</summary>
+        <returns>テンプレートのコンテナーのデータ項目のプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetTemplateContainerDataItemProperty%2A>メソッドは今後使用しません。 テンプレートのメタデータにアクセスするを参照してください。<xref:System.Web.UI.Design.TemplateDefinition>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplateContent">
+      <MemberSignature Language="C#" Value="public override string GetTemplateContent (System.Web.UI.Design.ITemplateEditingFrame editingFrame, string templateName, out bool allowEditing);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetTemplateContent(class System.Web.UI.Design.ITemplateEditingFrame editingFrame, string templateName, [out] bool&amp; allowEditing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetTemplateContent(System.Web.UI.Design.ITemplateEditingFrame,System.String,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingFrame" Type="System.Web.UI.Design.ITemplateEditingFrame" />
+        <Parameter Name="templateName" Type="System.String" />
+        <Parameter Name="allowEditing" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="editingFrame"><see cref="T:System.Web.UI.Design.ITemplateEditingFrame" />元となるコンテンツを取得します。</param>
+        <param name="templateName">テンプレートの名前。</param>
+        <param name="allowEditing">
+          <see langword="true" />テンプレートの内容を編集できる場合<see langword="false" />コンテンツが読み取り専用の場合。</param>
+        <summary>テンプレートのコンテンツを取得します。</summary>
+        <returns>テンプレートの内容。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplatePropertyParentType">
+      <MemberSignature Language="C#" Value="public override Type GetTemplatePropertyParentType (string templateName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Type GetTemplatePropertyParentType(string templateName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.GetTemplatePropertyParentType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">テンプレートの名前。</param>
+        <summary>取得、<see cref="T:System.Type" />指定されたテンプレートの親に対応するオブジェクト。</summary>
+        <returns><see cref="T:System.Type" />指定されたテンプレートの親に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataGridDesigner.GetTemplatePropertyParentType%2A>メソッドは今後使用しません。 テンプレートのメタデータにアクセスするを参照してください。<xref:System.Web.UI.Design.TemplateDefinition>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">設計中のコントロール要素。</param>
+        <summary>指定したデザイナーを初期化<see cref="T:System.Web.UI.WebControls.DataGrid" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.DataGridDesigner.Initialize%2A>デザイナーがのインスタンスでのみ初期化されていることを確認する方法、`SimpleDataGrid`クラスです。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.Design.WebControls.DataGridDesigner>クラスです。  
+  
+ [!code-vb[DataListDesigner_Sample2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListDesigner_Sample2/VB/simpledatalistdesigner.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnColumnsChanged">
+      <MemberSignature Language="C#" Value="public virtual void OnColumnsChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnColumnsChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.OnColumnsChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テンプレートの列を変更するときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTemplateEditingVerbsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTemplateEditingVerbsChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTemplateEditingVerbsChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.OnTemplateEditingVerbsChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テンプレート編集動詞を変更するときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTemplateContent">
+      <MemberSignature Language="C#" Value="public override void SetTemplateContent (System.Web.UI.Design.ITemplateEditingFrame editingFrame, string templateName, string templateContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetTemplateContent(class System.Web.UI.Design.ITemplateEditingFrame editingFrame, string templateName, string templateContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataGridDesigner.SetTemplateContent(System.Web.UI.Design.ITemplateEditingFrame,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingFrame" Type="System.Web.UI.Design.ITemplateEditingFrame" />
+        <Parameter Name="templateName" Type="System.String" />
+        <Parameter Name="templateContent" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="editingFrame"><see cref="T:System.Web.UI.Design.ITemplateEditingFrame" />のコンテンツを設定します。</param>
+        <param name="templateName">テンプレートの名前。</param>
+        <param name="templateContent">テンプレートの新しいコンテンツ。</param>
+        <summary>指定されたテンプレートおよびフレームのコンテンツを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

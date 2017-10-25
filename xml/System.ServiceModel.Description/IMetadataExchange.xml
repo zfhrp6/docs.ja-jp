@@ -1,0 +1,116 @@
+<Type Name="IMetadataExchange" FullName="System.ServiceModel.Description.IMetadataExchange">
+  <TypeSignature Language="C#" Value="public interface IMetadataExchange" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IMetadataExchange" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IMetadataExchange" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceContract(ConfigurationName="IMetadataExchange", Name="IMetadataExchange", Namespace="http://schemas.microsoft.com/2006/04/mex")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービスに関するメタデータを返すために使用するメソッドを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスのプログラミングを行う場合、サービスに関するメタデータを公開すると便利です。 メタデータには、たとえば、サービスで使用するすべてのメソッドとデータ型を記述する Web サービス記述言語 (WSDL) ドキュメントを指定できます。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスに関するメタデータを返すことにより、サービスのコンシューマーがサービスのクライアントを容易に作成できるようになります。 詳細については[!INCLUDE[indigo2](~/includes/indigo2-md.md)]メタデータ エンドポイントを参照してください[メタデータ](~/docs/framework/wcf/feature-details/metadata.md)です。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] を使用して実装されたサービスは、1 つ以上のメタデータ エンドポイントを公開することにより、メタデータを公開します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] のメタデータ エンドポイントは、他のエンドポイントと同様に、アドレス、バインディング、およびコントラクトを持ちます。  <xref:System.ServiceModel.Description.MetadataReference> インターフェイスは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] のすべてのメタデータ エンドポイントによって実装されたサービス コントラクトを指定します。  
+  
+ サービス実装に <xref:System.ServiceModel.Description.MetadataReference> コントラクトを実装する必要はありません。  その代わり、サービスの説明に <xref:System.ServiceModel.Description.ServiceMetadataBehavior> を追加します。  
+  
+ 構成を使用する場合は、エンドポイント要素の `contract` 属性を `IMetadataExchange` に設定します。 例については、次を参照してください。[する方法: 構成ファイルを使用して、サービスのメタデータを公開](~/docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)です。  
+  
+ メタデータの公開の詳細[!INCLUDE[indigo2](~/includes/indigo2-md.md)]を参照してください[メタデータの公開](~/docs/framework/wcf/feature-details/publishing-metadata.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginGet">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginGet (System.ServiceModel.Channels.Message request, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginGet(class System.ServiceModel.Channels.Message request, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IMetadataExchange.BeginGet(System.ServiceModel.Channels.Message,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract(Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", AsyncPattern=true, ReplyAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="request">返すメタデータを決定するために処理する必要がある <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <param name="callback">メタデータを処理するメソッドを指す <see cref="T:System.AsyncCallback" />。</param>
+        <param name="state">どの非同期呼び出しが返されているかを呼び出し元が確認できるようにするデータ。</param>
+        <summary>メタデータの非同期取得を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" /> メソッドに渡すことができる <see cref="M:System.ServiceModel.Description.IMetadataExchange.EndGet(System.IAsyncResult)" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGet">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message EndGet (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message EndGet(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IMetadataExchange.EndGet(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" />さらに、メタデータを処理するために使用するデータを格納します。</param>
+        <summary>メタデータの取得を終了します。</summary>
+        <returns>処理されたメタデータを含む <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.Message Get (System.ServiceModel.Channels.Message request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.Message Get(class System.ServiceModel.Channels.Message request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IMetadataExchange.Get(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract(Action="http://schemas.xmlsoap.org/ws/2004/09/transfer/Get", ReplyAction="http://schemas.xmlsoap.org/ws/2004/09/transfer/GetResponse")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="request">メタデータの要求を含む <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>サービス メタデータを返します。</summary>
+        <returns>メタデータを含む <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

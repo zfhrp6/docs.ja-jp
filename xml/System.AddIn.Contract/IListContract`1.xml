@@ -1,0 +1,377 @@
+<Type Name="IListContract&lt;T&gt;" FullName="System.AddIn.Contract.IListContract&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IListContract&lt;T&gt; : System.AddIn.Contract.IContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IListContract`1&lt;T&gt; implements class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.IListContract`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.IContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="T">リスト内のオブジェクトのコントラクトの型。</typeparam>
+    <summary>コントラクトによって定義され、ホストとアドインの間でそのコントラクトの型のコレクションを渡すために使用される型のジェネリック リストを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Pipeline.CollectionAdapters>クラスの使用、<xref:System.AddIn.Contract.IListContract%601>ホストとアドインの間のどちらの方向にコレクションを渡すインターフェイス。 使用することをお勧め、<xref:System.AddIn.Pipeline.CollectionAdapters>クラス コード内で直接このクラスを使用する代わりにします。 例については、次を参照してください。[チュートリアル: コレクションのホスト間で渡すとアドイン](http://msdn.microsoft.com/en-us/b532c604-548e-4fab-b11c-377257dd0ee5)です。  
+  
+ このクラスは、アプリケーション ドメイン間でオブジェクトを参照渡しするオブジェクトがシリアル化されないために使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Add(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.Add(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加するオブジェクト。</param>
+        <summary>オブジェクトを追加、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `item`コントラクトで定義されている型のパラメーターがある必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのオブジェクトを削除、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.Contains(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクション内で検索するオブジェクト。</param>
+        <summary>特定の項目がかどうかを決定する<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <returns>
+          <see langword="true" /> がコレクション内に存在する場合は <paramref name="item" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCount">
+      <MemberSignature Language="C#" Value="public int GetCount ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetCount() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.GetCount" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内の項目の数を取得、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <returns>コレクション内の項目数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumeratorContract">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.IEnumeratorContract&lt;T&gt; GetEnumeratorContract ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.AddIn.Contract.IEnumeratorContract`1&lt;!T&gt; GetEnumeratorContract() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.GetEnumeratorContract" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.IEnumeratorContract&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>反復処理する列挙子を返します、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <returns><see cref="T:System.AddIn.Contract.IEnumeratorContract`1" />コレクションを反復処理する列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsReadOnly">
+      <MemberSignature Language="C#" Value="public bool GetIsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetIsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.GetIsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうか、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクションは読み取り専用です。</summary>
+        <returns>
+          コレクションが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItem">
+      <MemberSignature Language="C#" Value="public T GetItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !T GetItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.GetItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する項目の、0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある項目を返します、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <returns>指定したインデックスにある項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.IListContract%601.GetItem%2A>メソッドでは、指定したインデックス位置にある項目は削除されません。 項目を削除する、<xref:System.AddIn.Contract.IListContract%601>収集、使用、<xref:System.AddIn.Contract.IListContract%601.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上<see cref="M:System.AddIn.Contract.IListContract`1.GetCount" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.IndexOf(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクション内の項目。</param>
+        <summary>内の特定の項目のインデックスを返します、<see cref="T:System.AddIn.Contract.Collections.IListContract`1" />コレクション。</summary>
+        <returns>指定した項目のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内の同じ型の複数のオブジェクトがある場合、このメソッドは、コレクション内の指定した型の最初に見つかった位置の項目のインデックスを識別します。  
+  
+ <xref:System.AddIn.Contract.IListContract%601.GetItem%2A>メソッドでは、指定したインデックス位置にある項目は削除されません。 項目を削除する、<xref:System.AddIn.Contract.IListContract%601>収集、使用、<xref:System.AddIn.Contract.IListContract%601.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上、<see cref="M:System.AddIn.Contract.IListContract`1.GetCount" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, !T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.Insert(System.Int32,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス<c>項目</c>です。</param>
+        <param name="item"><see cref="T:System.AddIn.Contract.IContract" />に挿入する、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</param>
+        <summary>指定したインデックス位置に項目を挿入、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、<xref:System.AddIn.Contract.IListContract%601.Insert%2A>に新しい項目の対応するメソッド、カーソルを次の項目を移動します。 移動した項目のインデックスも更新します。 指定したインデックス位置にある項目を置き換えるを使用して、<xref:System.AddIn.Contract.IListContract%601.SetItem%2A>メソッドです。  
+  
+ 確認するかどうか、<xref:System.AddIn.Contract.IListContract%601>コレクションは読み取り専用、呼び出し、<xref:System.AddIn.Contract.IListContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上<see cref="M:System.AddIn.Contract.IListContract`1.GetCount" />です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.IListContract`1" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(!T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションから削除する項目。</param>
+        <summary>項目を削除、<see cref="T:System.AddIn.Contract.IListContract`1" />指定した型のコレクション。</summary>
+        <returns>
+          <see langword="true" />項目が削除された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクション内の特定の型のオブジェクトごとに繰り返す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目のインデックス。</param>
+        <summary>指定されたインデックス位置にある項目を削除、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後<xref:System.AddIn.Contract.IListContract%601.RemoveAt%2A>、削除された項目に続く項目が、繰り上げに移動します。 移動した項目のインデックスも更新します。  
+  
+ 確認するかどうか、<xref:System.AddIn.Contract.IListContract%601>コレクションは読み取り専用、呼び出し、<xref:System.AddIn.Contract.IListContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上、<see cref="M:System.AddIn.Contract.IListContract`1.GetCount" />メソッドです。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.IListContract`1" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItem">
+      <MemberSignature Language="C#" Value="public void SetItem (int index, T item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetItem(int32 index, !T item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.IListContract`1.SetItem(System.Int32,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を設定する位置を示す 0 から始まるインデックス。</param>
+        <param name="item">指定したインデックス位置を設定する項目。</param>
+        <summary>指定したインデックス位置の項目の設定、<see cref="T:System.AddIn.Contract.IListContract`1" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Contract.IListContract%601.SetItem%2A>メソッドが指定したインデックス位置に項目を設定します。 項目を追加する、<xref:System.AddIn.Contract.IListContract%601>収集、使用、<xref:System.AddIn.Contract.IListContract%601.Insert%2A>メソッドです。  
+  
+ 確認するかどうか、<xref:System.AddIn.Contract.IListContract%601>コレクションは読み取り専用、呼び出し、<xref:System.AddIn.Contract.IListContract%601.GetIsReadOnly%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />戻り値以上、<see cref="M:System.AddIn.Contract.IListContract`1.GetCount" />メソッドです。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.AddIn.Contract.IListContract`1" />コレクションは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

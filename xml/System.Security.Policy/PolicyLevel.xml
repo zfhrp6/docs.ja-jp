@@ -1,0 +1,808 @@
+<Type Name="PolicyLevel" FullName="System.Security.Policy.PolicyLevel">
+  <TypeSignature Language="C#" Value="public sealed class PolicyLevel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit PolicyLevel extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.PolicyLevel" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>共通言語ランタイムのセキュリティ ポリシー レベルを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、共通言語ランタイム (CLR) のコンピューターのセキュリティ ポリシーを提供することから離れた場所に移動します。 使用することをお勧め[Windows ソフトウェア制限ポリシー (SRP)](http://go.microsoft.com/fwlink/?LinkId=178101)または[AppLocker](http://go.microsoft.com/fwlink/?LinkId=178102) CLR セキュリティ ポリシーの代わりにします。 このトピックの情報は、.NET Framework バージョン 3.5 以前; に適用されます。適用されません、[!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)]およびそれ以降。 この変更およびその他の変更の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ 最上位レベルのセキュリティ ポリシーは、エンタープライズ全体です。 階層の連続する下位レベルでは、さらに、ポリシーの制限を表しますより高いレベルで許可されている以上のアクセス許可を与えることはできません。 次のポリシー レベルが実装されます。  
+  
+1.  エンタープライズ内のすべてのマネージ コードの Enterprise: セキュリティ ポリシー。  
+  
+2.  マシン: すべてのマネージ コードのセキュリティ ポリシーは、コンピューターで実行します。  
+  
+3.  ユーザー: すべてのマネージ コードのセキュリティ ポリシーは、ユーザーが実行されます。  
+  
+4.  アプリケーション ドメイン: アプリケーション内のすべてのマネージ コードのセキュリティ ポリシー。  
+  
+ ポリシー レベルは、1 つのツリーに編成されたコード グループのセットで構成されます (を参照してください<xref:System.Security.Policy.CodeGroup>)、コード グループに属するコードに付与されるアクセス許可を指定するのには、コード グループによって参照されている名前付き権限セットのセットと完全に信頼されたアセンブリの一覧です。  
+  
+ 使用して<xref:System.Security.SecurityManager.PolicyHierarchy%2A?displayProperty=nameWithType>をポリシー レベルを列挙します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddFullTrustAssembly">
+      <MemberSignature Language="C#" Value="public void AddFullTrustAssembly (System.Security.Policy.StrongName sn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFullTrustAssembly(class System.Security.Policy.StrongName sn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.AddFullTrustAssembly(System.Security.Policy.StrongName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("All GACed assemblies are now fully trusted and all permissions now succeed on fully trusted code.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sn" Type="System.Security.Policy.StrongName" />
+      </Parameters>
+      <Docs>
+        <param name="sn"><see cref="T:System.Security.Policy.StrongName" />作成に使用される、<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />のリストに追加する<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリが評価する必要がないアセンブリのグループのメンバーであるかどうかを判別するために使用します。</param>
+        <summary>追加、<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />を指定された対応する<see cref="T:System.Security.Policy.StrongName" />の一覧に<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリが評価する必要がないアセンブリのグループのメンバーであるかどうかを判別するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.AddFullTrustAssembly%2A>完全信頼アセンブリの一覧は、これらのバージョンでは使用されないために、メソッドは .NET framework 2.0 以降のバージョンでサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sn" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongName" />によって指定された、<paramref name="sn" />パラメーターは既に完全な信頼。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddFullTrustAssembly">
+      <MemberSignature Language="C#" Value="public void AddFullTrustAssembly (System.Security.Policy.StrongNameMembershipCondition snMC);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddFullTrustAssembly(class System.Security.Policy.StrongNameMembershipCondition snMC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.AddFullTrustAssembly(System.Security.Policy.StrongNameMembershipCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("All GACed assemblies are now fully trusted and all permissions now succeed on fully trusted code.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="snMC" Type="System.Security.Policy.StrongNameMembershipCondition" />
+      </Parameters>
+      <Docs>
+        <param name="snMC"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />のリストに追加する<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリが評価する必要がないアセンブリのグループのメンバーであるかどうかを判別するために使用します。</param>
+        <summary>指定した追加<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />の一覧に<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリが評価する必要がないアセンブリのグループのメンバーであるかどうかを判別するために使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.AddFullTrustAssembly%2A>完全信頼アセンブリの一覧は、これらのバージョンでは使用されないために、メソッドは .NET framework 2.0 以降のバージョンでサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="snMC" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />によって指定された、<paramref name="snMC" />パラメーターは既に完全な信頼。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public void AddNamedPermissionSet (System.Security.NamedPermissionSet permSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddNamedPermissionSet(class System.Security.NamedPermissionSet permSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.AddNamedPermissionSet(System.Security.NamedPermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permSet" Type="System.Security.NamedPermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="permSet"><see cref="T:System.Security.NamedPermissionSet" />現在のポリシー レベルに追加します。</param>
+        <summary>追加、<see cref="T:System.Security.NamedPermissionSet" />を現在のポリシー レベルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー レベルでは、名前付き権限セットがスコープ設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="permSet" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="permSet" />パラメーターには、同じ名前の既存<see cref="T:System.Security.NamedPermissionSet" />で、<see cref="T:System.Security.Policy.PolicyLevel" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public System.Security.NamedPermissionSet ChangeNamedPermissionSet (string name, System.Security.PermissionSet pSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.NamedPermissionSet ChangeNamedPermissionSet(string name, class System.Security.PermissionSet pSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.ChangeNamedPermissionSet(System.String,System.Security.PermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="pSet" Type="System.Security.PermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Security.NamedPermissionSet" />を置き換えます。</param>
+        <param name="pSet"><see cref="T:System.Security.PermissionSet" />を置き換える、<see cref="T:System.Security.NamedPermissionSet" />によって指定された、<c>名前</c>パラメーター。</param>
+        <summary>置換、 <see cref="T:System.Security.NamedPermissionSet" /> 、指定した現在のポリシー レベルで<see cref="T:System.Security.PermissionSet" />です。</summary>
+        <returns>コピー、<see cref="T:System.Security.NamedPermissionSet" />が置き換えられました。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="pSet" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは、予約済みのアクセス許可セットの名前と同じです。  
+  
+ または  
+  
+ <see cref="T:System.Security.PermissionSet" />によって指定された、<paramref name="pSet" />パラメーターが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAppDomainLevel">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.PolicyLevel CreateAppDomainLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Policy.PolicyLevel CreateAppDomainLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.CreateAppDomainLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyLevel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインのポリシー レベルで使用するための新しいポリシー レベルを作成します。</summary>
+        <returns>新しく作成された <see cref="T:System.Security.Policy.PolicyLevel" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Security.Policy.PolicyLevel>で、 <xref:System.Security.Policy.PolicyLevel.Label%2A> "AppDomain"です。 新しい<xref:System.Security.Policy.PolicyLevel>同じを最初に含まれて<xref:System.Security.NamedPermissionSet>既定コンピューター ポリシー、およびはのようにオブジェクトを付与する 1 つのルート コード グループがある`FullTrust`すべてのコードにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FromXml(class System.Security.SecurityElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="e">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.SecurityElement" />によって指定された、<paramref name="e" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FullTrustAssemblies">
+      <MemberSignature Language="C#" Value="public System.Collections.IList FullTrustAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList FullTrustAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.FullTrustAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("All GACed assemblies are now fully trusted and all permissions now succeed on fully trusted code.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリがセキュリティ ポリシーの評価に使用されるアセンブリのグループのメンバーであるかどうかを判別するために使用します。</summary>
+        <value>一連の<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />オブジェクトのアセンブリがセキュリティ ポリシーの評価に使用されるアセンブリのグループのメンバーであるかどうかを判別するために使用します。 これらのアセンブリには、一覧にないアセンブリのセキュリティ ポリシーの評価中に完全信頼が与えられます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.FullTrustAssemblies%2A>許可されている完全信頼アセンブリのセキュリティ ポリシーの評価中にではなく ボックスの一覧が自動的に完全に信頼ポリシーのセキュリティ システムによって直接評価されるときにします。  
+  
+ <xref:System.Security.Policy.PolicyLevel.FullTrustAssemblies%2A>完全信頼アセンブリの一覧は、これらのバージョンでは使用されないために、プロパティは、.NET framework 2.0 以降のバージョンでサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public System.Security.NamedPermissionSet GetNamedPermissionSet (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.NamedPermissionSet GetNamedPermissionSet(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.GetNamedPermissionSet(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Security.NamedPermissionSet" />を検索します。</param>
+        <summary>返します、<see cref="T:System.Security.NamedPermissionSet" />指定した名前と現在のポリシー レベルにします。</summary>
+        <returns><see cref="T:System.Security.NamedPermissionSet" /> 、それ以外の場合は、指定した名前と現在のポリシー レベルで<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシー レベルのわかりやすいラベルを取得します。</summary>
+        <value>ポリシー レベルに関連付けられているラベルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ラベルは、ポリシー レベルを識別する管理者のために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamedPermissionSets">
+      <MemberSignature Language="C#" Value="public System.Collections.IList NamedPermissionSets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList NamedPermissionSets" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.NamedPermissionSets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前付き権限セットをポリシー レベルの定義の一覧を取得します。</summary>
+        <value>名前付き権限セットをポリシー レベルの定義の一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recover">
+      <MemberSignature Language="C#" Value="public void Recover ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Recover() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.Recover" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この構成ファイルを置き換えます<see cref="T:System.Security.Policy.PolicyLevel" />(保存された前回の時刻より前にポリシーの状態を反映する) 最後のバックアップを返すと、最後の状態を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在の変更を加えません<xref:System.Security.Policy.PolicyLevel>です。 代わりに、更新、<xref:System.Security.Policy.PolicyLevel>オブジェクトのファイルと<xref:System.Security.Policy.PolicyLevel>ポリシーを評価する、セキュリティ システムを使用しています。  
+  
+ このメソッドは、caspol によって使用-オプションの回復 (を参照してください[Caspol.exe (コード アクセス セキュリティ ポリシー ツール)](~/docs/framework/tools/caspol-exe-code-access-security-policy-tool.md))。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Policy.PolicyException">ポリシー レベルには、有効な構成ファイルはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFullTrustAssembly">
+      <MemberSignature Language="C#" Value="public void RemoveFullTrustAssembly (System.Security.Policy.StrongName sn);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFullTrustAssembly(class System.Security.Policy.StrongName sn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.RemoveFullTrustAssembly(System.Security.Policy.StrongName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("All GACed assemblies are now fully trusted and all permissions now succeed on fully trusted code.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sn" Type="System.Security.Policy.StrongName" />
+      </Parameters>
+      <Docs>
+        <param name="sn"><see cref="T:System.Security.Policy.StrongName" />のポリシーを評価するためのアセンブリの一覧から削除するアセンブリ。</param>
+        <summary>指定したアセンブリを削除<see cref="T:System.Security.Policy.StrongName" />アセンブリの一覧から、ポリシー レベルを使用してポリシーを評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.RemoveFullTrustAssembly%2A>完全信頼アセンブリの一覧は、これらのバージョンでは使用されないために、メソッドは .NET framework 2.0 以降のバージョンでサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sn" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">使用して、アセンブリ、<see cref="T:System.Security.Policy.StrongName" />によって指定された、<paramref name="sn" />パラメーターには、完全な信頼はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFullTrustAssembly">
+      <MemberSignature Language="C#" Value="public void RemoveFullTrustAssembly (System.Security.Policy.StrongNameMembershipCondition snMC);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFullTrustAssembly(class System.Security.Policy.StrongNameMembershipCondition snMC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.RemoveFullTrustAssembly(System.Security.Policy.StrongNameMembershipCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("All GACed assemblies are now fully trusted and all permissions now succeed on fully trusted code.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="snMC" Type="System.Security.Policy.StrongNameMembershipCondition" />
+      </Parameters>
+      <Docs>
+        <param name="snMC"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />のポリシーを評価するためのアセンブリの一覧から削除するアセンブリ。</param>
+        <summary>指定したアセンブリを削除<see cref="T:System.Security.Policy.StrongNameMembershipCondition" />アセンブリの一覧から、ポリシー レベルを使用してポリシーを評価します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.RemoveFullTrustAssembly%2A>完全信頼アセンブリの一覧は、これらのバージョンでは使用されないために、メソッドは .NET framework 2.0 以降のバージョンでサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="snMC" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.Policy.StrongNameMembershipCondition" />によって指定された、<paramref name="snMC" />パラメーターには、完全な信頼はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public System.Security.NamedPermissionSet RemoveNamedPermissionSet (System.Security.NamedPermissionSet permSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.NamedPermissionSet RemoveNamedPermissionSet(class System.Security.NamedPermissionSet permSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.RemoveNamedPermissionSet(System.Security.NamedPermissionSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="permSet" Type="System.Security.NamedPermissionSet" />
+      </Parameters>
+      <Docs>
+        <param name="permSet"><see cref="T:System.Security.NamedPermissionSet" />を現在のポリシー レベルから削除します。</param>
+        <summary>指定された削除<see cref="T:System.Security.NamedPermissionSet" />現在のポリシー レベルから。</summary>
+        <returns><see cref="T:System.Security.NamedPermissionSet" />が削除されました。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Security.NamedPermissionSet" />によって指定された、<paramref name="permSet" />パラメーターが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="permSet" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveNamedPermissionSet">
+      <MemberSignature Language="C#" Value="public System.Security.NamedPermissionSet RemoveNamedPermissionSet (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.NamedPermissionSet RemoveNamedPermissionSet(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.RemoveNamedPermissionSet(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.NamedPermissionSet</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">削除する <see cref="T:System.Security.NamedPermissionSet" /> の名前。</param>
+        <summary>削除、<see cref="T:System.Security.NamedPermissionSet" />現在のポリシー レベルから指定した名前です。</summary>
+        <returns><see cref="T:System.Security.NamedPermissionSet" />が削除されました。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="name" />パラメーターは、予約済みのアクセス許可セットの名前と同じです。  
+  
+ または  
+  
+ A<see cref="T:System.Security.NamedPermissionSet" />指定した名前が見つかりません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定の状態には、現在のポリシー レベルを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の状態は、ポリシー レベルごとに異なります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.PolicyStatement Resolve (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Policy.PolicyStatement Resolve(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.Resolve(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" />解決に使用する、<see cref="T:System.Security.Policy.PolicyLevel" />です。</param>
+        <summary>ポリシー レベルの証拠に基づいてポリシーを解決し、その結果を返します<see cref="T:System.Security.Policy.PolicyStatement" />です。</summary>
+        <returns>その結果、<see cref="T:System.Security.Policy.PolicyStatement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.PolicyLevel.Resolve%2A>基本的なポリシーの評価操作のポリシー レベルです。 入力としての証拠のセットを指定するには、このメソッドは、ルートから開始し、一致するコード グループのメンバーシップ条件をテストします。 一致するコードから結果として得られる権限の組み合わせを生成をグループ化、<xref:System.Security.Policy.PolicyStatement>が返されます。  
+  
+ コードへのアクセス許可を付与するのには、セキュリティ ポリシーは、すべての適用可能なポリシー レベルは、コード アクセス許可の要求と共に、解決済みのポリシー ステートメントを使用します。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.PolicyLevel.Resolve%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.PolicyLevel>クラスです。  
+  
+ [!code-cpp[system.Security.policy.policylevel#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.policy.policylevel/CPP/policylevel.cpp#13)]
+ [!code-csharp[system.Security.policy.policylevel#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.policy.policylevel/CS/policylevel.cs#13)]
+ [!code-vb[system.Security.policy.policylevel#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.policy.policylevel/VB/policylevel.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Policy.PolicyException">ポリシー レベルには、排他的としてマークされている複数の一致するコード グループが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMatchingCodeGroups">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.CodeGroup ResolveMatchingCodeGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Policy.CodeGroup ResolveMatchingCodeGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.ResolveMatchingCodeGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence"><see cref="T:System.Security.Policy.Evidence" />ポリシーを解決するために使用します。</param>
+        <summary>ポリシー レベルでポリシーを解決し、証拠に一致するコード グループ ツリーのルートを返します。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeGroup" />指定した証拠と一致するコード グループのツリーのルートを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、特定の証拠のセットに対してポリシー レベル内のコード グループの効果を分析します。 たとえば、セキュリティ ポリシーは、アセンブリが必要な最小限のコードの要求権限を許可されませんが場合、によって正確な位置、問題がコード グループの検査に指示するが困難ができます。  
+  
+ このメソッドが子コード グループを持つことができるコード グループを返すので、管理者は、コード グループとその子コード グループを確認し、どのコード グループ一致を判断する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Policy.PolicyException">ポリシー レベルには、排他的としてマークされている複数の一致するコード グループが含まれています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootCodeGroup">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.CodeGroup RootCodeGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.CodeGroup RootCodeGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.RootCodeGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポリシー レベルのルート コード グループを設定します。</summary>
+        <value><see cref="T:System.Security.Policy.CodeGroup" />ポリシー レベルのコード グループのツリーのルートはします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのポリシー レベルが 1 つのルート<xref:System.Security.Policy.CodeGroup>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Policy.PolicyLevel.RootCodeGroup" /> の値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreLocation">
+      <MemberSignature Language="C#" Value="public string StoreLocation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StoreLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.StoreLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシー ファイルが格納されているパスを取得します。</summary>
+        <value>ポリシー ファイルの格納場所のパスまたは<see langword="null" />場合、<see cref="T:System.Security.Policy.PolicyLevel" />記憶域の場所はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードでは、レベルのポリシー ストアの場所を表示する方法を示します。 このコード例に示されている例の一部である、<xref:System.Security.Policy.PolicyLevel>クラスです。  
+  
+ [!code-cpp[system.Security.policy.policylevel#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.policy.policylevel/CPP/policylevel.cpp#15)]
+ [!code-csharp[system.Security.policy.policylevel#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.policy.policylevel/CS/policylevel.cs#15)]
+ [!code-vb[system.Security.policy.policylevel#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.policy.policylevel/VB/policylevel.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">プリンシパル オブジェクトを操作する権限です。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.PolicyLevel.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ オブジェクトとその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Security.PolicyLevelType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.PolicyLevelType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.PolicyLevel.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.PolicyLevelType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポリシー レベルの種類を取得します。</summary>
+        <value><see cref="T:System.Security.PolicyLevelType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最上位レベルのセキュリティ ポリシーは、エンタープライズ全体です。 階層の連続する下位レベルでは、さらに、ポリシーの制限を表しますより高いレベルで許可されている以上のアクセス許可を与えることはできません。 次の順序でのポリシー レベルに示します。  
+  
+1.  エンタープライズ  
+  
+2.  コンピューター  
+  
+3.  User  
+  
+4.  アプリケーション ドメイン  
+  
+ 詳細については、「<xref:System.Security.PolicyLevelType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

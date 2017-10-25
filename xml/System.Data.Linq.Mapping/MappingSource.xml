@@ -1,0 +1,85 @@
+<Type Name="MappingSource" FullName="System.Data.Linq.Mapping.MappingSource">
+  <TypeSignature Language="C#" Value="public abstract class MappingSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MappingSource extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.Mapping.MappingSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マッピング情報のソースを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Linq.Mapping.MappingSource> CLR オブジェクトを基になるデータ ソース内のエンティティにマップするクラスを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MappingSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MappingSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Linq.Mapping.MappingSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateModel">
+      <MemberSignature Language="C#" Value="protected abstract System.Data.Linq.Mapping.MetaModel CreateModel (Type dataContextType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Data.Linq.Mapping.MetaModel CreateModel(class System.Type dataContextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MappingSource.CreateModel(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaModel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataContextType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dataContextType">型<see cref="T:System.Data.Linq.DataContext" />マッピングを基になります。</param>
+        <summary>新しいマッピングのモデルを作成します。</summary>
+        <returns>メタモデルが現在のマップ スキームに一致するように作成されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetModel">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.Mapping.MetaModel GetModel (Type dataContextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Linq.Mapping.MetaModel GetModel(class System.Type dataContextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.Mapping.MappingSource.GetModel(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.Mapping.MetaModel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataContextType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="dataContextType">型<see cref="T:System.Data.Linq.DataContext" />返されるモデル。</param>
+        <summary>マッピングのモデルを返します。</summary>
+        <returns>このマッピング ソースに関連付けられているマッピング モデル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

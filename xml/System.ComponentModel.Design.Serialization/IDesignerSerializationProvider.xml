@@ -1,0 +1,76 @@
+<Type Name="IDesignerSerializationProvider" FullName="System.ComponentModel.Design.Serialization.IDesignerSerializationProvider">
+  <TypeSignature Language="C#" Value="public interface IDesignerSerializationProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerSerializationProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>シリアライザーへのアクセスを可能にするインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、1 つのメソッドを持つ<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider.GetSerializer%2A>、なし、プロパティまたはイベント。 このインターフェイスをこのメソッドは、シリアル化マネージャーや他のオブジェクトは、指定したオブジェクトの種類のシリアライザーを取得できるようにに存在します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSerializer">
+      <MemberSignature Language="C#" Value="public object GetSerializer (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object currentSerializer, Type objectType, Type serializerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetSerializer(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager, object currentSerializer, class System.Type objectType, class System.Type serializerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerSerializationProvider.GetSerializer(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="currentSerializer" Type="System.Object" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="serializerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="manager">シリアライザーを要求するシリアル化マネージャー。</param>
+        <param name="currentSerializer">指定した型の現在のシリアライザーのインスタンス。 これは、<see langword="null" />指定した型のシリアライザーが存在しない場合。</param>
+        <param name="objectType">シリアル化するオブジェクトのデータ型。</param>
+        <param name="serializerType">作成するシリアライザーのデータ型。</param>
+        <summary>指定された属性を使用するシリアライザーを取得します。</summary>
+        <returns>要求された型のシリアライザーのインスタンスまたは<see langword="null" />場合は、要求を満たすことはできません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化マネージャーは、オブジェクトの種類のシリアライザーを検索する際に、このメソッドを呼び出します。 このシリアル化プロバイダーは、適切な型のシリアライザーを提供可能な場合は、このプロバイダーを返します。 返しますそれ以外の場合、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

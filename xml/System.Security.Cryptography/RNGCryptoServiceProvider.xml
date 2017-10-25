@@ -1,0 +1,331 @@
+<Type Name="RNGCryptoServiceProvider" FullName="System.Security.Cryptography.RNGCryptoServiceProvider">
+  <TypeSignature Language="C#" Value="public sealed class RNGCryptoServiceProvider : System.Security.Cryptography.RandomNumberGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RNGCryptoServiceProvider extends System.Security.Cryptography.RandomNumberGenerator" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RNGCryptoServiceProvider" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.RandomNumberGenerator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>暗号化サービス プロバイダー (CSP : Cryptographic Service Provider) によって提供された実装を使用して、暗号乱数ジェネレーター (RNG : Random Number Generator) を実装します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例のランダムな数値を作成する方法を示しています、<xref:System.Security.Cryptography.RNGCryptoServiceProvider>クラスです。  
+  
+ [!code-cpp[RNGCSP#1](~/samples/snippets/cpp/VS_Snippets_CLR/RNGCSP/cpp/rngcsp.cpp#1)]
+ [!code-csharp[RNGCSP#1](~/samples/snippets/csharp/VS_Snippets_CLR/RNGCSP/CS/rngcsp.cs#1)]
+ [!code-vb[RNGCSP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RNGCSP/VB/rngcsp.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RNGCryptoServiceProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RNGCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のランダムな数値を作成する方法を示しています、<xref:System.Security.Cryptography.RNGCryptoServiceProvider>クラスです。  
+  
+ [!code-cpp[RNGCSP#1](~/samples/snippets/cpp/VS_Snippets_CLR/RNGCSP/cpp/rngcsp.cpp#1)]
+ [!code-csharp[RNGCSP#1](~/samples/snippets/csharp/VS_Snippets_CLR/RNGCSP/CS/rngcsp.cs#1)]
+ [!code-vb[RNGCSP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RNGCSP/VB/rngcsp.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RNGCryptoServiceProvider (byte[] rgb);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] rgb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rgb" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgb">バイト配列。 この値は無視されます。</param>
+        <summary><see cref="T:System.Security.Cryptography.RNGCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを直接初期化しない、<xref:System.Security.Cryptography.RNGCryptoServiceProvider>クラスです。  呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Security.Cryptography.RNGCryptoServiceProvider.%23ctor%28System.Security.Cryptography.CspParameters%29?title=RNGCryptoServiceProvider(CspParameters)>コンス トラクターを渡して`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RNGCryptoServiceProvider (System.Security.Cryptography.CspParameters cspParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.CspParameters cspParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.#ctor(System.Security.Cryptography.CspParameters)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cspParams" Type="System.Security.Cryptography.CspParameters" />
+      </Parameters>
+      <Docs>
+        <param name="cspParams">暗号化サービス プロバイダー (CSP) に渡すパラメーター。</param>
+        <summary>指定したパラメーターを使用して、<see cref="T:System.Security.Cryptography.RNGCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RNGCryptoServiceProvider (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">文字列入力。 このパラメーターは無視されます。</param>
+        <summary><see cref="T:System.Security.Cryptography.RNGCryptoServiceProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを直接初期化しない、<xref:System.Security.Cryptography.RNGCryptoServiceProvider>クラスです。  呼び出すことと同じではこのメソッドを呼び出す、<xref:System.Security.Cryptography.RNGCryptoServiceProvider.%23ctor%28System.Security.Cryptography.CspParameters%29?title=RNGCryptoServiceProvider(CspParameters)>コンス トラクターを渡して`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~RNGCryptoServiceProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public override void GetBytes (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetBytes(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.GetBytes(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">暗号化に使用するランダムな値の厳密なシーケンスを格納する配列。</param>
+        <summary>バイト配列に、暗号化に使用するランダムな値の厳密なシーケンスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイト配列の長さは、生成される数の暗号強度が高いランダム バイトを決定します。  
+  
+ このメソッドは、スレッド セーフです。  
+  
+   
+  
+## Examples  
+ 次のコード例のランダムな数値を作成する方法を示しています、<xref:System.Security.Cryptography.RNGCryptoServiceProvider>クラスです。  
+  
+ [!code-cpp[RNGCSP#1](~/samples/snippets/cpp/VS_Snippets_CLR/RNGCSP/cpp/rngcsp.cpp#1)]
+ [!code-csharp[RNGCSP#1](~/samples/snippets/csharp/VS_Snippets_CLR/RNGCSP/CS/rngcsp.cs#1)]
+ [!code-vb[RNGCSP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RNGCSP/VB/rngcsp.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号化サービス プロバイダー (CSP) を取得できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNonZeroBytes">
+      <MemberSignature Language="C#" Value="public override void GetNonZeroBytes (byte[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetNonZeroBytes(unsigned int8[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RNGCryptoServiceProvider.GetNonZeroBytes(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Csp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="data">暗号強度が高いランダムな 0 以外の値のシーケンスを格納する配列。</param>
+        <summary>バイト配列に、暗号化に使用するランダムな 0 以外の値の厳密なシーケンスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイト配列の長さは、暗号強度が高いランダムな 0 以外バイト数が生成されるを決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、0 以外の値の 100 バイトのランダム シーケンスを作成しに格納`random`です。  
+  
+ [!code-cpp[Classic RandomNumberGenerator.GetNonZeroBytes Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic RandomNumberGenerator.GetNonZeroBytes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic RandomNumberGenerator.GetNonZeroBytes Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic RandomNumberGenerator.GetNonZeroBytes Example/CS/source.cs#1)]
+ [!code-vb[Classic RandomNumberGenerator.GetNonZeroBytes Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic RandomNumberGenerator.GetNonZeroBytes Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号化サービス プロバイダー (CSP) を取得できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

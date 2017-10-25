@@ -1,0 +1,62 @@
+<Type Name="MemoryMappedFileSecurity" FullName="System.IO.MemoryMappedFiles.MemoryMappedFileSecurity">
+  <TypeSignature Language="C#" Value="public class MemoryMappedFileSecurity : System.Security.AccessControl.ObjectSecurity&lt;System.IO.MemoryMappedFiles.MemoryMappedFileRights&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MemoryMappedFileSecurity extends System.Security.AccessControl.ObjectSecurity`1&lt;valuetype System.IO.MemoryMappedFiles.MemoryMappedFileRights&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.ObjectSecurity&lt;System.IO.MemoryMappedFiles.MemoryMappedFileRights&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.IO.MemoryMappedFiles.MemoryMappedFileRights</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メモリ マップト ファイルに対するファイル アクセスと操作を許可できる権限を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity>クラスは、メモリ マップト ファイルとは、アクセス試行の監査のアクセス権を指定します。  このクラスは、一連のルールとして、アクセスおよび監査権限を表します。  
+  
+ <xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity>クラスは、基になる Microsoft Windows ファイルのセキュリティ システムの抽象化します。 このシステムで。 多くの Dacl と Sacl の詳細が表示されません。  
+  
+ 使用して、<xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity>クラスを取得、追加、または、DACL とパイプの SACL を表すアクセス規則を変更します。  
+  
+ 新しいまたは変更されたアクセスを適用または監査規則、メモリ マップト ファイルを使用して、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl%2A>メソッドです。 既存のファイルからアクセス規則または監査規則を取得するには、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.GetAccessControl%2A> メソッドを使用します。  
+  
+ 次<xref:System.IO.MemoryMappedFiles.MemoryMappedFile>メソッド、<xref:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity>オブジェクトをパラメーターとして。  
+  
+-   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%28System.String%2CSystem.Int64%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileAccess%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileOptions%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileSecurity%2CSystem.IO.HandleInheritability%29>  
+  
+-   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%28System.IO.FileStream%2CSystem.String%2CSystem.Int64%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileAccess%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileSecurity%2CSystem.IO.HandleInheritability%2CSystem.Boolean%29>  
+  
+-   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl%28System.IO.MemoryMappedFiles.MemoryMappedFileSecurity%29>  
+  
+-   <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen%28System.String%2CSystem.Int64%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileAccess%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileOptions%2CSystem.IO.MemoryMappedFiles.MemoryMappedFileSecurity%2CSystem.IO.HandleInheritability%29>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MemoryMappedFileSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

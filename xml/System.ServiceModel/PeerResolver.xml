@@ -1,0 +1,217 @@
+<Type Name="PeerResolver" FullName="System.ServiceModel.PeerResolver">
+  <TypeSignature Language="C#" Value="public abstract class PeerResolver" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PeerResolver extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolver" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア メッシュ ID の登録と、メッシュに参加しているノードからエンドポイント アドレスへのピア メッシュ ID の解決を行うコントラクトを定義するために使用される基本型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、カスタム ピア名リゾルバーを実装するための基本クラスです。 ピア名リゾルバーは、ピア メッシュに参加するピア ノードを検索するためにピア チャネルにより使用される探索サービスです。 またピア名リゾルバーは、ノードをピア メッシュに登録するために使用されます。ピア メッシュは、ピア メッシュからピア ノードを認識し、使用可能にするための機構です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.PeerResolver" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanShareReferrals">
+      <MemberSignature Language="C#" Value="public abstract bool CanShareReferrals { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanShareReferrals" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolver.CanShareReferrals" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ピア名リゾルバーが参照を共有できるかどうかを取得します。</summary>
+        <value>true の場合、ピア名リゾルバーは参照を共有できます。false の場合は共有できません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual void Initialize (System.ServiceModel.EndpointAddress address, System.ServiceModel.Channels.Binding binding, System.ServiceModel.Description.ClientCredentials credentials, System.ServiceModel.PeerResolvers.PeerReferralPolicy referralPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Initialize(class System.ServiceModel.EndpointAddress address, class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.Description.ClientCredentials credentials, valuetype System.ServiceModel.PeerResolvers.PeerReferralPolicy referralPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.Initialize(System.ServiceModel.EndpointAddress,System.ServiceModel.Channels.Binding,System.ServiceModel.Description.ClientCredentials,System.ServiceModel.PeerResolvers.PeerReferralPolicy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="credentials" Type="System.ServiceModel.Description.ClientCredentials" />
+        <Parameter Name="referralPolicy" Type="System.ServiceModel.PeerResolvers.PeerReferralPolicy" />
+      </Parameters>
+      <Docs>
+        <param name="address">
+          このピア リゾルバー インスタンスの新しいエンドポイント アドレスを格納する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="binding">
+          このピア リゾルバーの新しいネットワーク バインドを指定する <see cref="T:System.ServiceModel.Channels.Binding" />。</param>
+        <param name="credentials">
+          このピア リゾルバーの新しいクライアント資格情報を指定する <see cref="T:System.ServiceModel.Description.ClientCredentials" />。</param>
+        <param name="referralPolicy">
+          このピア リゾルバーの新しい参照ポリシーを指定する <see cref="T:System.ServiceModel.PeerResolvers.PeerReferralPolicy" />。</param>
+        <summary>新たに指定されたエンドポイント アドレスと設定を使用して、現在のピア リゾルバー インスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既存のピア リゾルバー インスタンスを初期化するだけであり、新しいピア リゾルバーは作成しません。 新しいピア リゾルバーを作成するには、対応するバインド要素 (<xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement> など) に対して CreatePeerResolver メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public abstract object Register (string meshId, System.ServiceModel.PeerNodeAddress nodeAddress, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Register(string meshId, class System.ServiceModel.PeerNodeAddress nodeAddress, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.Register(System.String,System.ServiceModel.PeerNodeAddress,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="meshId" Type="System.String" />
+        <Parameter Name="nodeAddress" Type="System.ServiceModel.PeerNodeAddress" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="meshId">ピア ノードの登録先であるピア メッシュの ID。</param>
+        <param name="nodeAddress">ピア メッシュに登録される <see cref="T:System.ServiceModel.PeerNodeAddress" />。</param>
+        <param name="timeout">ピア メッシュへの登録の試行が成功するまで待機する時間。この時間が経過すると、登録の試行は中止されます。 この試行が失敗した場合、ピア上で <see cref="T:System.TimeoutException" /> が発生します。</param>
+        <summary><see cref="T:System.ServiceModel.PeerNodeAddress" /> を特定のピア メッシュに登録します。</summary>
+        <returns>登録 ID を表す <see cref="T:System.Object" />。 この登録 ID オブジェクトが、<see cref="M:System.ServiceModel.PeerResolver.Update(System.Object,System.ServiceModel.PeerNodeAddress,System.TimeSpan)" /> メソッドと <see cref="M:System.ServiceModel.PeerResolver.Unregister(System.Object,System.TimeSpan)" /> メソッドに渡されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.PeerNodeAddress&gt; Resolve (string meshId, int maxAddresses, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.ServiceModel.PeerNodeAddress&gt; Resolve(string meshId, int32 maxAddresses, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.Resolve(System.String,System.Int32,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.PeerNodeAddress&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="meshId" Type="System.String" />
+        <Parameter Name="maxAddresses" Type="System.Int32" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="meshId">参加しているノードを表す <see cref="T:System.ServiceModel.PeerNodeAddress" /> オブジェクトを取得するピア メッシュのメッシュ ID。</param>
+        <param name="maxAddresses">返されるエンドポイント アドレスの数。</param>
+        <param name="timeout">ピア メッシュ内のエンドポイント アドレスへの解決の試行が成功するまで待機する時間。この時間が経過すると、解決の試行は中止されます。 この試行が失敗した場合、ピア上で <see cref="T:System.TimeoutException" /> が発生します。</param>
+        <summary>指定したメッシュ ID を、ピア ノードに参加する 0 個以上のノードのエンドポイント アドレスに解決します。</summary>
+        <returns>ピア メッシュに参加しているノードを表す <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクトを格納する <see cref="T:System.ServiceModel.PeerNodeAddress" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unregister">
+      <MemberSignature Language="C#" Value="public abstract void Unregister (object registrationId, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Unregister(object registrationId, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.Unregister(System.Object,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="registrationId" Type="System.Object" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="registrationId"><see cref="M:System.ServiceModel.PeerResolver.Register(System.String,System.ServiceModel.PeerNodeAddress,System.TimeSpan)" /> への前の呼び出しで取得されたノードの登録 ID。</param>
+        <param name="timeout">ピア メッシュからの登録解除の試行が成功するまで待機する時間。 この試行が失敗した場合、ピア上で <see cref="T:System.TimeoutException" /> が発生します。</param>
+        <summary>ピア メッシュからノードの登録エントリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録 ID は、最低でもピア ノード ID とメッシュ ID のタプルを表すピア リゾルバー トークンです。 この ID 値は、<xref:System.ServiceModel.PeerResolver.Register%2A> への前の呼び出しで取得されている必要があります。  
+  
+ <xref:System.ServiceModel.PeerResolver.Unregister%2A> は、次の 2 つの特殊な場合に呼び出されます。  
+  
+-   <xref:System.ServiceModel.PeerNode> がピア メッシュから離れた場合 (通常、これは、最後のピア チャネルを閉じた結果、またはそれに関連付けられたサービス ホストが閉じた結果、発生します)。  
+  
+-   <xref:System.ServiceModel.PeerNode> がピア メッシュに参加している他のノードの使用可能なエンドポイント アドレスを検索できない場合。 この結果、<xref:System.ServiceModel.PeerNode> が到達不能になるので、ノードは <xref:System.ServiceModel.PeerResolver.Unregister%2A> を呼び出して自身を <xref:System.ServiceModel.PeerResolver> から登録解除しようとします。 登録解除後に、メッシュ内の他のピア ノードが使用可能になった場合、ノードは、<xref:System.ServiceModel.PeerResolver.Register%2A> を呼び出して新しい登録 ID を取得することで、自身を再登録できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public abstract void Update (object registrationId, System.ServiceModel.PeerNodeAddress updatedNodeAddress, TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Update(object registrationId, class System.ServiceModel.PeerNodeAddress updatedNodeAddress, valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolver.Update(System.Object,System.ServiceModel.PeerNodeAddress,System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="registrationId" Type="System.Object" />
+        <Parameter Name="updatedNodeAddress" Type="System.ServiceModel.PeerNodeAddress" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="registrationId"><see cref="M:System.ServiceModel.PeerResolver.Register(System.String,System.ServiceModel.PeerNodeAddress,System.TimeSpan)" /> への前の呼び出しで取得されたノードの登録 ID。</param>
+        <param name="updatedNodeAddress">更新されたエンドポイント アドレス (およびその他のマルチホーム IP アドレス)。</param>
+        <param name="timeout">ピア メッシュ内のノードの登録更新の試行が成功するまで待機する時間。この時間が経過すると、更新の試行は中止されます。 この試行が失敗した場合、ピア上で <see cref="T:System.TimeoutException" /> が発生します。</param>
+        <summary>特定のピア メッシュに登録されたノードの <see cref="T:System.ServiceModel.PeerNodeAddress" /> を更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.PeerResolver.Update%2A> は、<xref:System.ServiceModel.PeerNode> のアドレスがローカル コンピューター上で変更されたときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

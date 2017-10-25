@@ -1,0 +1,541 @@
+<Type Name="InputBinding" FullName="System.Windows.Input.InputBinding">
+  <TypeSignature Language="C#" Value="public class InputBinding : System.Windows.Freezable, System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit InputBinding extends System.Windows.Freezable implements class System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputBinding" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Input.ICommandSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>間のバインドを表す、<see cref="T:System.Windows.Input.InputGesture" />とコマンド。 コマンドは、潜在的な<see cref="T:System.Windows.Input.RoutedCommand" />します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー入力が作成することでコマンドを呼び出すことを指定することができます、<xref:System.Windows.Input.InputBinding>です。 ユーザーが、指定された入力を実行するときに、<xref:System.Windows.Input.ICommand>に設定されている、<xref:System.Windows.Input.InputBinding.Command%2A>プロパティを実行します。  
+  
+ 指定することができます、<xref:System.Windows.Input.InputBinding>でバインディングを作成することで、オブジェクトで定義されているコマンドを呼び出す、 <xref:System.Windows.Input.InputBinding.Command%2A>、 <xref:System.Windows.Input.InputBinding.CommandParameter%2A>、および<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティです。 これにより、カスタム コマンドを定義し、ユーザー入力に関連付けることができます。 詳細については、2 番目の例「例」を参照してください。  
+  
+ <xref:System.Windows.Input.InputBinding>登録することによって特定のオブジェクトで、またはクラス レベルで定義できます、<xref:System.Windows.Input.CommandManager.RegisterClassInputBinding%2A>で、<xref:System.Windows.Input.CommandManager>です。  
+  
+ <xref:System.Windows.Input.InputBinding>クラス自体はサポートしません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況、パブリックの既定のコンス トラクターが公開しないため (既定のコンス トラクターがあるが、保護されている)。 ただし、派生クラスのパブリック コンス トラクターを公開でき、そのためのプロパティを設定、派生クラスから継承されている<xref:System.Windows.Input.InputBinding>で、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用します。 既存の 2 つ<xref:System.Windows.Input.InputBinding>-派生クラスでインスタンス化できる[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]でプロパティを設定および[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>です。 一般的なプロパティ[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]で設定されているプログラミング[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]し、1 つまたは複数<xref:System.Windows.Input.InputBinding>オブジェクトの値としては、<xref:System.Windows.UIElement.InputBindings%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="xamlObjectElementUsage_InputBinding"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+ \<*inputBindingDerivedClass.../*>  
+  
+<a name="xamlValues_InputBinding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `inputBindingDerivedClass`  
+ 派生クラス<xref:System.Windows.Input.InputBinding>などオブジェクト要素の構文をサポートする<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。 「解説」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.KeyBinding>にバインドする、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.ApplicationCommands.Open%2A>コマンド。 キーのジェスチャを実行すると、開いているコマンドが呼び出されます。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewXAMLKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlkeybinding)]  
+  
+ 次の例は、カスタム コマンドをバインドする方法を示して<xref:System.Windows.Input.InputBinding>オブジェクト。 これらの例では、ユーザーを次のアクションのいずれかを実行して背景色を変更できるようにアプリケーションを作成します。  
+  
+-   ボタンをクリックします。  
+  
+-   Ctrl キーを押しながら C キーを押してます。  
+  
+-   右クリックし、 <xref:System.Windows.Controls.StackPanel> (外、 <xref:System.Windows.Controls.ListBox>)。  
+  
+ 最初の例では、という名前のクラスを作成する`SimpleDelegateCommand`です。 このクラスは、コマンドを作成するオブジェクトは、コマンドが実行されるときに発生するアクションを定義できるように、デリゲートを受け取ります。 `SimpleDelegateCommand`またキーし、マウスの新機能を指定するプロパティを定義入力は、コマンドを起動します。 `GestureKey`および`GestureModifier`キーボード入力の指定`MouseGesture`マウス入力を指定します。  
+  
+ [!code-csharp[InputCommandBinding#DelegateCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/inputcommandbinding/csharp/mainwindow.xaml.cs#delegatecommand)]
+ [!code-vb[InputCommandBinding#DelegateCommand](~/samples/snippets/visualbasic/VS_Snippets_Wpf/inputcommandbinding/visualbasic/mainwindow.xaml.vb#delegatecommand)]  
+  
+ 次の例を作成して、初期化、 `ColorChangeCommand`、これは、`SimpleDelegateCommand`です。 コマンドが呼び出され、設定したときに実行するメソッドも定義、 `GestureKey`、 `GestureModifier`、および`MouseGesture`プロパティです。 アプリケーションを呼び出すと、`InitializeCommand`メソッドは、プログラムの開始などのコンス トラクターと、<xref:System.Windows.Window>です。  
+  
+ [!code-csharp[InputCommandBinding#InitializeCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/inputcommandbinding/csharp/mainwindow.xaml.cs#initializecommand)]
+ [!code-vb[InputCommandBinding#InitializeCommand](~/samples/snippets/visualbasic/VS_Snippets_Wpf/inputcommandbinding/visualbasic/mainwindow.xaml.vb#initializecommand)]  
+  
+ 最後に、次の例では、ユーザー インターフェイスを作成します。 この例で追加、<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>を<xref:System.Windows.Controls.StackPanel>を格納している、<xref:System.Windows.Controls.Button>と<xref:System.Windows.Controls.ListBox>です。 ユーザーが内の項目を選択すると、 <xref:System.Windows.Controls.ListBox>、そのユーザーは、選択した色を背景の色を変更できます。 各ケースで、`CommandParameter`プロパティが選択した項目にバインドされる、 <xref:System.Windows.Controls.ListBox>、および`Command`プロパティにバインドされる、`ColorChangeCommand`です。 <xref:System.Windows.Input.KeyBinding.Key%2A?displayProperty=nameWithType>、 <xref:System.Windows.Input.KeyBinding.Modifiers%2A?displayProperty=nameWithType>、および<xref:System.Windows.Input.MouseBinding.MouseAction%2A?displayProperty=nameWithType>プロパティ対応するプロパティにバインドされて、`SimpleDelegateCommand`クラスです。  
+  
+ [!code-xaml[InputCommandBinding#UI](~/samples/snippets/csharp/VS_Snippets_Wpf/inputcommandbinding/csharp/mainwindow.xaml#ui)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InputBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生したクラスの基本の初期化は、<see cref="T:System.Windows.Input.InputBinding" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InputBinding>技術的には、抽象クラスではありませんが、既定のコンス トラクターが意図的にはアクセスを保護します。 これは、作成の効果<xref:System.Windows.Input.InputBinding>「抽象」クラス[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 既存のプロパティがある[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]がある[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]型のオブジェクトを想定する使用法<xref:System.Windows.Input.InputBinding>を指定することはできませんが、<xref:System.Windows.Input.InputBinding>インスタンス[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 デバイスに固有のいずれかを指定する代わりに、<xref:System.Windows.Input.InputBinding>値として、派生したクラスは、たとえば<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムを実装する場合<see cref="T:System.Windows.Input.InputBinding" />をサポートする、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用法、基本の初期化をこのコンス トラクターを使用します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InputBinding (System.Windows.Input.ICommand command, System.Windows.Input.InputGesture gesture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.ICommand command, class System.Windows.Input.InputGesture gesture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.#ctor(System.Windows.Input.ICommand,System.Windows.Input.InputGesture)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="command" Type="System.Windows.Input.ICommand" />
+        <Parameter Name="gesture" Type="System.Windows.Input.InputGesture" />
+      </Parameters>
+      <Docs>
+        <param name="command">関連付けるコマンド<c>ジェスチャ</c>です。</param>
+        <param name="gesture">関連付ける入力ジェスチャ<c>コマンド</c>です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.InputBinding" />クラスを指定したコマンドおよび入力ジェスチャを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存の入力バインディング クラスを使用して、ソフトウェア開発者は、カスタム コマンドを定義する場合でも、通常はこのコンス トラクターを使用しません。 派生クラスのコンス トラクターをするか、使用する代わりに、(<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>)、またはこのコンス トラクターをカスタム クラスの基本のインスタンスとして使用されます。 ただし、<xref:System.Windows.Input.InputBinding>クラスは、原則として、実際には、入力バインドを表すどのデバイスを選択する必要がありますのさまざまな入力デバイスをサポートしています。 のみを設定する 1 つだけ<xref:System.Windows.Input.InputBinding.Gesture%2A>入力バインディング、およびジェスチャの値は、デバイスに固有です。  
+  
+   
+  
+## Examples  
+ 次の例に関連付けるには、このコンス トラクターを使用する方法を示しています、<xref:System.Windows.Input.KeyGesture>で、<xref:System.Windows.Input.RoutedCommand>です。  
+  
+ [!code-csharp[commandlibrarysnippets#InputBindingAddingComand](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#inputbindingaddingcomand)]
+ [!code-vb[commandlibrarysnippets#InputBindingAddingComand](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#inputbindingaddingcomand)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="command" /> または <paramref name="gesture" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトのプロパティの基本 (アニメーション化されていない) 値をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトのプロパティの現在の値をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputBinding.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Windows.Input.CommandConverter, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, Custom=null")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この入力バインドに関連付けられる <see cref="T:System.Windows.Input.ICommand" /> を取得または設定します。</summary>
+        <value>関連付けられているコマンド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InputBinding>クラスをサポートしません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況、パブリックの既定のコンス トラクターが公開しないため (既定のコンス トラクターを持つが保護されている)。 ただし、派生クラスのパブリック コンス トラクターを公開できますおよびから継承されたプロパティがそのため、使用できます<xref:System.Windows.Input.InputBinding>です。 既存の 2 つ<xref:System.Windows.Input.InputBinding>でインスタンス化できるクラスを派生[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロパティを設定できる[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]の使用法が<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>です。  
+  
+ <xref:System.Windows.Input.ICommand>既存の特定できるようにする型コンバーターを参照して<xref:System.Windows.Input.ICommand>値を指定する文字列の形式で実装します。 この型変換動作は、このプロパティの属性値の形式を設定します。 バインドすることも、 <xref:System.Windows.Input.InputBinding.Command%2A>、 <xref:System.Windows.Input.InputBinding.CommandParameter%2A>、および<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティを<xref:System.Windows.Input.ICommand>オブジェクトで定義されています。 これにより、カスタム コマンドを定義し、ユーザー入力に関連付けることができます。 詳細については、2 番目の例を参照してください。<xref:System.Windows.Input.InputBinding>です。  
+  
+<a name="xamlAttributeUsage_Command"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <`inputBindingDerivedClass` `Command`="<xref:System.Windows.Input.ICommand>"/>  
+  
+<a name="xamlPropertyElementUsage_Command"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<inputBindingDerivedClass>  
+  <inputBindingDerivedClass.Command>  
+    <iCommandImplementation/>  
+  </inputBindingDerivedClass.Command>  
+</inputBindingDerivedClass>  
+```  
+  
+<a name="xamlValues_Command"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `inputBindingDerivedClass`  
+ 派生クラス<xref:System.Windows.Input.InputBinding>などオブジェクト要素の構文をサポートする<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。 「解説」を参照してください。  
+  
+ `iCommandImplementation`  
+ オブジェクトの実装<xref:System.Windows.Input.ICommand>オブジェクト要素の構文をサポートしている (既定のパブリック コンス トラクターを持つ)。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.KeyBinding>にバインドする、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.ApplicationCommands.Open%2A?displayProperty=nameWithType>コマンド。 キーのジェスチャを実行すると、開いているコマンドが呼び出されます。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewXAMLKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewxamlkeybinding)]  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewkeybinding)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewKeyBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewkeybinding)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Input.InputBinding.Command" /> 値は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameter">
+      <MemberSignature Language="C#" Value="public object CommandParameter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputBinding.CommandParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または特定のコマンドのコマンドに固有のデータを設定します。</summary>
+        <value>コマンド固有のデータ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.InputBinding.CommandParameter%2A>を実行するときに、コマンドに固有の情報を渡すプロパティを使用します。 データの型は、コマンドによって定義されます。 多くのコマンドにはコマンドのパラメーターです。 予期しません。これらのコマンドでは、渡された任意のコマンド パラメーターは無視されます。  
+  
+ 入力バインディングが関連付けられているコマンドが、 <xref:System.Windows.Input.RoutedCommand>、<xref:System.Windows.Input.InputBinding.CommandParameter%2A>に渡される入力バインドの<xref:System.Windows.Input.RoutedCommand>を通じてハンドラー、<xref:System.Windows.Input.ExecutedRoutedEventArgs>と<xref:System.Windows.Input.CanExecuteRoutedEventArgs>コマンドが処理されるときにイベント データ。  
+  
+ データ型とコマンド パラメーターの目的コマンドごとに別々 に定義でき、`null`です。 バインドすることができます、 <xref:System.Windows.Input.InputBinding.Command%2A>、 <xref:System.Windows.Input.InputBinding.CommandParameter%2A>、および<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティを<xref:System.Windows.Input.ICommand>オブジェクトで定義されています。 これにより、カスタム コマンドを定義し、ユーザー入力に関連付けることができます。 詳細については、2 番目の例を参照してください。<xref:System.Windows.Input.InputBinding>です。  
+  
+ <xref:System.Windows.Input.InputBinding>クラスをサポートしません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用状況、パブリックの既定のコンス トラクターが公開しないため (既定のコンス トラクターを持つが保護されている)。 ただし、派生クラスのパブリック コンス トラクターを公開でき、そのためから継承されたプロパティを設定できます<xref:System.Windows.Input.InputBinding>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用します。 既存の 2 つ<xref:System.Windows.Input.InputBinding>でインスタンス化できるクラスを派生[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]でプロパティを設定および[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>です。  
+  
+<a name="xamlAttributeUsage_CommandParameter"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<inputBindingDerivedClass CommandParameter="commandParameterString"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_CommandParameter"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<inputBindingDerivedClass>  
+  <inputBindingDerivedClass.CommandParameter>  
+    <commandParameterObject/>  
+  </inputBindingDerivedClass.CommandParameter>  
+</inputBindingDerivedClass>  
+```  
+  
+<a name="xamlValues_CommandParameter"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `inputBindingDerivedClass`  
+ 派生クラス<xref:System.Windows.Input.InputBinding>などオブジェクト要素の構文をサポートする<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。 「解説」を参照してください。  
+  
+ `commandParameterString`  
+ 特定のコマンドによって処理される文字列。 文字列は、コマンドのパラメーター簡単に設定するために使用される一般的な型[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。 期待される文字列の形式とその目的は、入力バインディングが関連付けられている特定のコマンドのドキュメントを参照してください。 多くのコマンドでは、パラメーターは期待できません。  
+  
+ `commandParameterObject`  
+ 特定のコマンドによって処理されるオブジェクト。 すべての既存[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コマンドは、文字列を使用します。 そのため、このプロパティ要素構文では、カスタム コマンド シナリオに関連するだけです。 この構文をサポートするために、`commandParameterObject`オブジェクトは、オブジェクトの要素の構文 (パブリック既定コンス トラクターがあります) もサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameterProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandParameterProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandParameterProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputBinding.CommandParameterProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputBinding.CommandParameter" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputBinding.CommandProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputBinding.Command" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement CommandTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement CommandTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputBinding.CommandTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコマンドのターゲット要素を設定します。</summary>
+        <value>コマンドのターゲットです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)] 、システムのコマンドを実行、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティを<xref:System.Windows.Input.ICommandSource>オブジェクトは、該当する場合にのみ、<xref:System.Windows.Input.ICommand>は、<xref:System.Windows.Input.RoutedCommand>です。 場合、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>に設定されている、 <xref:System.Windows.Input.ICommandSource> 、対応するコマンドが、<xref:System.Windows.Input.RoutedCommand>コマンドの対象は無視されます。  
+  
+ 使用すると、 <xref:System.Windows.Input.RoutedCommand>、コマンドの対象が対象となるオブジェクト、<xref:System.Windows.Input.CommandManager.Executed>と<xref:System.Windows.Input.CommandManager.CanExecute>イベントが発生します。 場合、<xref:System.Windows.Input.InputBinding.CommandTarget%2A>プロパティが設定されていない、キーボード フォーカスを持つ要素がターゲットとして使用します。  
+  
+ <xref:System.Windows.Input.InputBinding>クラス自体はサポートしません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用法、既定のパブリック コンス トラクターが公開しないため (既定のコンス トラクターがあるが、保護されている)。 ただし、派生クラスは、パブリック コンス トラクターを公開でき、したがってから継承されたプロパティを設定できます<xref:System.Windows.Input.InputBinding>で、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用します。 既存の 2 つ<xref:System.Windows.Input.InputBinding>でインスタンス化できるクラスを派生[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]でプロパティを設定および[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>です。  
+  
+<a name="xamlAttributeUsage_CommandTarget"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<inputBindingDerivedClass CommandTarget="bindingToTarget"/>  
+```  
+  
+<a name="xamlValues_CommandTarget"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `inputBindingDerivedClass`  
+ 派生クラス<xref:System.Windows.Input.InputBinding>などオブジェクト要素の構文をサポートする<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。 「解説」を参照してください。  
+  
+ `bindingToTarget`  
+ 要素の名前付きを既存のオブジェクト参照を返すことができるバインド構文の型を使用する文字列。 「解説」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.InputBinding.CommandTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.InputBinding.CommandTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Windows.Input.InputBinding" />です。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gesture">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Input.InputGesture Gesture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputGesture Gesture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.InputBinding.Gesture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この入力バインドに関連付けられる <see cref="T:System.Windows.Input.InputGesture" /> を取得または設定します。</summary>
+        <value>関連付けられているジェスチャ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力ジェスチャは、コマンドを起動する動作です。 入力ジェスチャの例については[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]は<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.MouseGesture>です。 A<xref:System.Windows.Input.KeyGesture>の組み合わせ、<xref:System.Windows.Input.Key>と一連の<xref:System.Windows.Input.ModifierKeys>します。 A<xref:System.Windows.Input.MouseGesture>の組み合わせ、<xref:System.Windows.Input.MouseAction>と一連の<xref:System.Windows.Input.ModifierKeys>します。  
+  
+ <xref:System.Windows.Input.InputBinding>クラス自体はサポートしません[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用法、既定のパブリック コンス トラクターが公開しないため (既定のコンス トラクターがあるが、保護されている)。 ただし、派生クラスは、パブリック コンス トラクターを公開でき、したがってから継承されたプロパティを設定できます<xref:System.Windows.Input.InputBinding>で、[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]使用します。 既存の 2 つ<xref:System.Windows.Input.InputBinding>でインスタンス化できるクラスを派生[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]でプロパティを設定および[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.KeyBinding>と<xref:System.Windows.Input.MouseBinding>です。  
+  
+<a name="xamlAttributeUsage_gesture"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <<xref:System.Windows.Input.KeyBinding> `Gesture`="<xref:System.Windows.Input.KeyGesture>"/>  
+  
+ \- または  
+  
+ <<xref:System.Windows.Input.MouseBinding> `Gesture`="<xref:System.Windows.Input.MouseGesture>"/>  
+  
+ \- または  
+  
+ <`inputBindingDerivedClass` `Gesture`="<xref:System.Windows.Input.InputGesture>"/>  
+  
+<a name="xamlPropertyElementUsage_gesture"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<inputBindingDerivedClass>  
+  <inputBindingDerivedClass.Gesture>  
+    <inputGestureImplementation/>  
+  </inputBindingDerivedClass.Gesture>  
+</inputBindingDerivedClass>  
+```  
+  
+<a name="xamlValues_gesture"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `inputBindingDerivedClass`  
+ 派生クラス<xref:System.Windows.Input.InputBinding>などオブジェクト要素の構文をサポートする<xref:System.Windows.Input.KeyBinding>または<xref:System.Windows.Input.MouseBinding>です。 「解説」を参照してください。  
+  
+ `inputGestureImplementation`  
+ カスタムの派生クラス<xref:System.Windows.Input.InputGesture>オブジェクト要素の構文をサポートします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.KeyBinding>にバインドする、<xref:System.Windows.Input.KeyGesture>を<xref:System.Windows.Input.RoutedCommand>です。 ときに、 <xref:System.Windows.Input.KeyGesture> alt キーを押しながら L キーが押された、<xref:System.Windows.Input.ApplicationCommands.Close%2A>コマンドが呼び出されます。  
+  
+ [!code-xaml[commandlibrarysnippets#KeyBindingWithKeyAndModifiersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#keybindingwithkeyandmodifiersxaml)]  
+  
+ [!code-csharp[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keybindingwithkeyandmodifiers)]
+ [!code-vb[commandlibrarysnippets#KeyBindingWithKeyAndModifiers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keybindingwithkeyandmodifiers)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>インスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />基本 (アニメーション化されていない) プロパティの値を使用しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.InputBinding.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>現在のインスタンスの指定された固定された複製は、<see cref="T:System.Windows.Freezable" />です。 オブジェクトに、アニメーション化された依存関係プロパティが存在する場合、現在アニメーション化されている値がコピーされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

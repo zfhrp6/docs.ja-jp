@@ -1,0 +1,235 @@
+<Type Name="MultiDataTrigger" FullName="System.Windows.MultiDataTrigger">
+  <TypeSignature Language="C#" Value="public sealed class MultiDataTrigger : System.Windows.TriggerBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MultiDataTrigger extends System.Windows.TriggerBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.MultiDataTrigger" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Setters")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ値を適用またはバインドされたデータは、一連の条件を満たす場合は、アクションを実行するトリガーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.MultiDataTrigger>オブジェクトがに似ていますが、<xref:System.Windows.MultiTrigger>する点を除いての条件、<xref:System.Windows.MultiDataTrigger>の代わりにバインドされたデータのプロパティの値に基づいて、<xref:System.Windows.UIElement>です。 <xref:System.Windows.MultiDataTrigger>、データ項目のプロパティの値が指定された一致する場合に、条件を満たした<xref:System.Windows.Condition.Value%2A>です。 Set アクセス操作子を使用することができますし、または<xref:System.Windows.TriggerBase.EnterActions%2A>と<xref:System.Windows.TriggerBase.ExitActions%2A>プロパティの変更を適用したり、すべての条件が満たされたときにアクションを開始します。  
+  
+ <xref:System.Windows.MultiDataTrigger.Setters%2A>のプロパティ、<xref:System.Windows.MultiDataTrigger>オブジェクトのみで構成できます<xref:System.Windows.Setter>オブジェクト。 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.MultiDataTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.MultiDataTrigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+ トリガーを使用する場合、およびその他の手法を使用する場合については、次を参照してください。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>にバインドされた`Places`、<xref:System.Collections.ObjectModel.ObservableCollection%601>の`Place`オブジェクト。 `Place`オブジェクト プロパティがある`Name`と`State`です。 定義`Place`と`Places`は表示されません。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、`Place`オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。 <xref:System.Windows.Condition>の要素、<xref:System.Windows.MultiDataTrigger>を指定する場合、`Name`と`State`の`Place`データ項目は、`Portland`と`OR`それぞれの背景の対応する<xref:System.Windows.Controls.ListBoxItem>設定されています。`Cyan`です。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MultiDataTrigger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MultiDataTrigger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.MultiDataTrigger" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conditions">
+      <MemberSignature Language="C#" Value="public System.Windows.ConditionCollection Conditions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.ConditionCollection Conditions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.MultiDataTrigger.Conditions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.ConditionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Condition" /> オブジェクトのコレクションを取得します。 コレクション内のすべての条件が満たされたときに、プロパティの値に変更が適用されます。</summary>
+        <value><see cref="T:System.Windows.Condition" /> オブジェクトのコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.MultiDataTrigger>オブジェクトがに似ていますが、<xref:System.Windows.MultiTrigger>する点を除いての条件、<xref:System.Windows.MultiDataTrigger>の代わりにバインドされたデータのプロパティの値に基づいて、<xref:System.Windows.UIElement>です。 <xref:System.Windows.MultiDataTrigger>、データ項目のプロパティの値が指定された一致する場合に、条件を満たした<xref:System.Windows.Condition.Value%2A>です。 、バインディングの値の型に可能であれば、その値は、最初は変換し、し、2 つの値が比較されます、`Object.Equals`メソッドです。 <xref:System.Windows.MultiTrigger>のすべての条件に当てはまる場合に、関連付けられている setter またはアクションに適用されます (バイナリ`AND`操作)。  
+  
+ <xref:System.Windows.MultiDataTrigger>、コレクションの各条件は、両方を設定する必要があります、<xref:System.Windows.Condition.Binding%2A>と<xref:System.Windows.Condition.Value%2A>プロパティです。 詳細については、「<xref:System.Windows.Condition.Binding%2A>」を参照してください。  
+  
+<a name="xamlPropertyElementUsage_Conditions"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Conditions>  
+    zeroOrMoreConditions  
+  </object.Conditions>  
+</object>  
+```  
+  
+<a name="xamlValues_Conditions"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *zeroOrMoreConditions*  
+ 0 個以上<xref:System.Windows.Condition>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>にバインドされた`Places`、<xref:System.Collections.ObjectModel.ObservableCollection%601>の`Place`オブジェクト。 `Place`オブジェクト プロパティがある`Name`と`State`です。 定義`Place`と`Places`は表示されません。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、`Place`オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。 <xref:System.Windows.Condition>の要素、<xref:System.Windows.MultiDataTrigger>を指定する場合、`Name`と`State`の`Place`データ項目は、`Portland`と`OR`それぞれの背景の対応する<xref:System.Windows.Controls.ListBoxItem>設定されています。`Cyan`です。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Setters">
+      <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.MultiDataTrigger.Setters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.SetterBaseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Setter" />ときに適用するプロパティ値を記述するオブジェクトのすべての条件、<see cref="T:System.Windows.MultiDataTrigger" />が満たされています。</summary>
+        <value><see cref="T:System.Windows.Setter" /> オブジェクトのコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.MultiDataTrigger>使用してアクションを開始することができます、<xref:System.Windows.TriggerBase.EnterActions%2A>または<xref:System.Windows.TriggerBase.ExitActions%2A>プロパティ、または値を設定するプロパティを使用して<xref:System.Windows.Setter>オブジェクトをバインドされたデータは、一連の条件を満たす場合です。  
+  
+ 2 つを使用する必要がある場合<xref:System.Windows.Setter>、同じプロパティを設定する同じまたは別の set アクセス操作子のコレクション内のオブジェクト、<xref:System.Windows.Setter>は宣言の最後を使用します。  
+  
+ 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.MultiDataTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.MultiDataTrigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+<a name="xamlPropertyElementUsage_Setters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+    zeroOrMoreSetters  
+</object>  
+```  
+  
+<a name="xamlValues_Setters"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *zeroOrMoreSetters*  
+ 0 個以上<xref:System.Windows.Setter>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.ListBox>にバインドされた`Places`、<xref:System.Collections.ObjectModel.ObservableCollection%601>の`Place`オブジェクト。 `Place`オブジェクト プロパティがある`Name`と`State`です。 定義`Place`と`Places`は表示されません。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、`Place`オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。 <xref:System.Windows.Condition>の要素、<xref:System.Windows.MultiDataTrigger>を指定する場合、`Name`と`State`の`Place`データ項目は、`Portland`と`OR`それぞれの背景の対応する<xref:System.Windows.Controls.ListBoxItem>設定されています。`Cyan`です。  
+  
+ なお`<MultiDataTrigger.Setters>`は暗黙の型。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MultiDataTrigger.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.MultiDataTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.MultiDataTrigger.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.MultiDataTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

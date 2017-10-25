@@ -1,0 +1,331 @@
+<Type Name="TripleDES" FullName="System.Security.Cryptography.TripleDES">
+  <TypeSignature Language="C#" Value="public abstract class TripleDES : System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TripleDES extends System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.TripleDES" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.SymmetricAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての <see cref="T:System.Security.Cryptography.TripleDES" /> 実装の派生元となる Triple DES (Data Encryption Standard) アルゴリズムの基底クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.TripleDES>3 つの連続するイテレーションを使用して、<xref:System.Security.Cryptography.DES>アルゴリズムです。 2 つまたは 3 つの 56 ビット キーを使用できます。  
+  
+> [!NOTE]
+>  新しい対称暗号化アルゴリズムでは、Advanced Encryption Standard (AES) では、使用可能なです。 使用を検討して、<xref:System.Security.Cryptography.Aes>クラスとその派生クラスの代わりに、<xref:System.Security.Cryptography.TripleDES>クラスです。 使用して<xref:System.Security.Cryptography.TripleDES>レガシ アプリケーションとデータとの互換性のみです。  
+  
+ このアルゴリズムには、64 ビット単位での 128 ビットから 192 ビットのキー長がサポートしています。  
+  
+   
+  
+## Examples  
+ 次のコード例のメソッドは<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>指定のキーを持つ (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) で指定されたファイルの暗号化に`inName`です。 暗号化された結果で指定されたファイルを出力`outName`です。  
+  
+ [!code-cpp[Classic TripleDESCryptoServiceProvider Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TripleDESCryptoServiceProvider Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TripleDESCryptoServiceProvider Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TripleDESCryptoServiceProvider Example/CS/source.cs#1)]
+ [!code-vb[Classic TripleDESCryptoServiceProvider Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TripleDESCryptoServiceProvider Example/VB/source.vb#1)]  
+  
+ 復号化は、同じ方法で処理できます。使用して<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateDecryptor%2A>の代わりに<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider.CreateEncryptor%2A>です。 同じキー (<xref:System.Security.Cryptography.SymmetricAlgorithm.Key%2A>) および初期化ベクター (<xref:System.Security.Cryptography.SymmetricAlgorithm.IV%2A>) 暗号化に使用されるファイルを使用して、暗号化を解除する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TripleDES ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDES.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.TripleDES" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。  
+  
+ このメソッドは、保護対象のフィールドを初期化、<xref:System.Security.Cryptography.SymmetricAlgorithm>次の表に、既定値にクラスのリストにします。  
+  
+|フィールド|既定値|  
+|-----------|-------------------|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.KeySizeValue>|192|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue>|64|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSizeValue>|64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.TripleDES Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.TripleDES Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDES.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.TripleDES</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.TripleDES" /> アルゴリズムを実行するための暗号オブジェクトのインスタンスを作成します。</summary>
+        <returns>暗号オブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.TripleDES> クラスの新しいインスタンスを作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.TripleDES>を暗号化して、ファイル内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.3DES.Create.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DES.Create.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DES.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DES.Create.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DES.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DES.Create.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.TripleDES>を暗号化して、メモリ内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.3DES.Create.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DES.Create.Memory/CPP/memoryexample.cpp#1)]
+ [!code-vb[Cryptography.3DES.Create.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DES.Create.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.TripleDES Create (string str);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.TripleDES Create(string str) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDES.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.TripleDES</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="str" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="str">特定の実装の名前<see cref="T:System.Security.Cryptography.TripleDES" />を使用します。</param>
+        <summary>指定した実装を実行する暗号オブジェクトのインスタンスを作成、<see cref="T:System.Security.Cryptography.TripleDES" />アルゴリズムです。</summary>
+        <returns>暗号オブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.TripleDES>を暗号化して、ファイル内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.3DES.Createstring.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DES.Createstring.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.3DES.Createstring.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DES.Createstring.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.3DES.Createstring.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DES.Createstring.File/VB/fileexample.vb#1)]  
+  
+ 次のコード例を作成および使用する方法を示しています、<xref:System.Security.Cryptography.TripleDES>を暗号化して、メモリ内のデータを復号化オブジェクト。  
+  
+ [!code-cpp[Cryptography.3DES.Createstring.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.3DES.Createstring.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.3DES.Createstring.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.3DES.Createstring.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.3DES.Createstring.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.3DES.Createstring.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWeakKey">
+      <MemberSignature Language="C#" Value="public static bool IsWeakKey (byte[] rgbKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsWeakKey(unsigned int8[] rgbKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.TripleDES.IsWeakKey(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rgbKey" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="rgbKey">脆弱性をテストする共有キー。</param>
+        <summary>指定したキーが脆弱であるかどうかを判断します。</summary>
+        <returns>
+          キーが脆弱な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 弱いキーは、キーの暗号を解読しやすい結果です。 テキストが弱いキーで暗号化されている場合、同じ弱いキーなのでで結果の暗号を再度暗号化するは元のテキストを返します。 最初の 64 ビットは、最後の 64 ビットと同じ場合は、128 ビット モードで、キーは脆弱なです。 最初の 64 ビットは、2 番目の 64 ビットと同じ場合、または 2 つ目の 64 ビットは、最後の 64 ビットと同じ場合は 192 ビット モードで、キーは脆弱です。  
+  
+ 弱いキー結果を設定しようとして、<xref:System.Security.Cryptography.CryptographicException>です。 ときに<xref:System.Security.Cryptography.TripleDESCryptoServiceProvider.GenerateKey%2A>が呼び出された、ランダムなキーを作成するには、弱いキーが返されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="rgbKey" /> パラメーターのサイズが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public override byte[] Key { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Key" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDES.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.TripleDES" /> アルゴリズムの秘密鍵を取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.TripleDES" /> アルゴリズムの秘密鍵。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムには、64 ビット単位での 128 ビットから 192 ビットのキー長がサポートしています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">キーを <see langword="null" /> に設定しようとしました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">正しくない長さのキーを設定しようとしました。  
+  
+ または  
+  
+ 弱いキーを設定しようとしました (<see cref="M:System.Security.Cryptography.TripleDES.IsWeakKey(System.Byte[])" /> をご覧ください)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalBlockSizes">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.KeySizes[] LegalBlockSizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalBlockSizes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDES.LegalBlockSizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalKeySizes">
+      <MemberSignature Language="C#" Value="public override System.Security.Cryptography.KeySizes[] LegalKeySizes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.KeySizes[] LegalKeySizes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.TripleDES.LegalKeySizes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.KeySizes[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

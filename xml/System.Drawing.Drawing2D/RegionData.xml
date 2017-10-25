@@ -1,0 +1,68 @@
+<Type Name="RegionData" FullName="System.Drawing.Drawing2D.RegionData">
+  <TypeSignature Language="C#" Value="public sealed class RegionData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RegionData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.RegionData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成するデータをカプセル化、<see cref="T:System.Drawing.Region" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コードは、次のアクションを実行します。  
+  
+-   四角形と描画を作成、黒の画面にします。  
+  
+-   四角形を使用して領域を作成します。  
+  
+-   RegionData を取得します。  
+  
+-   DisplayRegionData ヘルパー関数を使用して、画面に地域のデータ (バイト配列) を描画します。  
+  
+ [!code-cpp[System.Drawing.ClassicRegionExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.ClassicRegionExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.ClassicRegionExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.ClassicRegionExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public byte[] Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Data" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.RegionData.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定するバイトの配列、<see cref="T:System.Drawing.Region" />オブジェクト。</summary>
+        <value>指定するバイトの配列、<see cref="T:System.Drawing.Region" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+-   次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、`Paint`イベント ハンドラー。 コード例を使用する方法を示します、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>いずれかから<xref:System.Drawing.Drawing2D.RegionData>を設定するオブジェクト、<xref:System.Drawing.Drawing2D.RegionData.Data%2A>別<xref:System.Drawing.Drawing2D.RegionData>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#13](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#13)]
+ [!code-csharp[System.Drawing.MiscExamples#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#13)]
+ [!code-vb[System.Drawing.MiscExamples#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

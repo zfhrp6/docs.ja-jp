@@ -1,0 +1,131 @@
+<Type Name="IComparer&lt;T&gt;" FullName="System.Collections.Generic.IComparer&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IComparer&lt;in T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComparer`1&lt;- T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Generic.IComparer`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <summary>2 つのオブジェクトを比較するために型が実装するメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを使用、<xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>と<xref:System.Collections.Generic.List%601.BinarySearch%2A?displayProperty=nameWithType>メソッドです。 コレクションの並べ替え順序をカスタマイズする方法を提供します。 このインターフェイスを実装するクラスに含まれる、<xref:System.Collections.Generic.SortedDictionary%602>と<xref:System.Collections.Generic.SortedList%602>ジェネリック クラスです。  
+  
+ このインターフェイスの既定の実装は、<xref:System.Collections.Generic.Comparer%601>クラスです。 <xref:System.StringComparer>クラス型のこのインターフェイスを実装<xref:System.String>です。  
+  
+ このインターフェイスは、順序の比較をサポートします。 つまり、ときに、 <xref:System.Collections.Generic.Comparer%601.Compare%2A> 0 が返されます、2 つのオブジェクトが同じを並べ替えることを意味します。 によって提供される正確な等価比較の実装、<xref:System.Collections.Generic.IEqualityComparer%601>ジェネリック インターフェイス。  
+  
+ 派生させることをお勧め、<xref:System.Collections.Generic.Comparer%601>クラスの実装ではなく、<xref:System.Collections.Generic.IComparer%601>ため、インターフェイス、<xref:System.Collections.Generic.Comparer%601>クラスの明示的なインターフェイス実装を提供、<xref:System.Collections.Generic.Comparer%601.System%23Collections%23IComparer%23Compare%2A>メソッドおよび<xref:System.Collections.Generic.Comparer%601.Default%2A>オブジェクトの既定の比較子を取得するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、実装、<xref:System.Collections.Generic.IComparer%601>インターフェイス型のオブジェクトを比較する`Box`ディメンションに従ってします。 この例に示されている例の一部である、<xref:System.Collections.Generic.Comparer%601>クラスです。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#7)]
+ [!code-vb[System.Collections.Generic.BoxCompare#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#7)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (T x, T y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(!T x, !T y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Generic.IComparer`1.Compare(`0,`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="T" />
+        <Parameter Name="y" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する最初のオブジェクト。</param>
+        <param name="y">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つのオブジェクトを比較して、一方が他方より小さいか、同じか、または大きいかを示す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタマイズするのには、このメソッドを実装する型の比較で順序を並べ替える`T`です。  
+  
+ 比較する`null`任意の参照を持つ型が許可され、例外を生成しません。 Null 参照が null でない未満である任意の参照であると見なされます。  
+  
+   
+  
+## Examples  
+ 次の例では、実装、<xref:System.Collections.Generic.IComparer%601>インターフェイス型のオブジェクトを比較する`Box`ディメンションに従ってします。 この例に示されている例の一部である、<xref:System.Collections.Generic.Comparer%601>クラスです。  
+  
+ [!code-csharp[System.Collections.Generic.BoxCompare#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.generic.boxcompare/cs/program.cs#7)]
+ [!code-vb[System.Collections.Generic.BoxCompare#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.generic.boxcompare/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

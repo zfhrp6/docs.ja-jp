@@ -1,0 +1,353 @@
+<Type Name="DataTrigger" FullName="System.Windows.DataTrigger">
+  <TypeSignature Language="C#" Value="public class DataTrigger : System.Windows.TriggerBase, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataTrigger extends System.Windows.TriggerBase implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DataTrigger" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.TriggerBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Setters")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.XamlSetMarkupExtension("ReceiveMarkupExtension")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プロパティ値を適用またはバインドされたデータが、指定した条件を満たしている場合に、操作を実行するトリガーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Style>、 <xref:System.Windows.Controls.ControlTemplate>、および<xref:System.Windows.DataTemplate>すべてのトリガーのコレクションであります。 A<xref:System.Windows.DataTrigger>データ オブジェクトのプロパティの値に一致すると、指定したプロパティの値を設定することができます<xref:System.Windows.Condition.Value%2A>です。 一覧を表示する場合など、`Employee`オブジェクト、することが別にする前景色に基づいて各`Employee's`現在出席します。 (たとえば、`Employees`ユーザーは、現在休暇上が紫色前景で表示されます)。一部のシナリオでコンバーターを作成するかを使用する適切な場合があります、<xref:System.Windows.Controls.DataTemplateSelector>です。 詳細については、次を参照してください。、[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.DataTrigger.Binding%2A>と<xref:System.Windows.DataTrigger.Value%2A>プロパティを<xref:System.Windows.DataTrigger>データ トリガーする意味を持つようにします。 プロパティの一方または両方が指定されていない場合、例外がスローされます。  
+  
+ <xref:System.Windows.DataTrigger.Setters%2A>のプロパティ、<xref:System.Windows.DataTrigger>オブジェクトのみで構成できます<xref:System.Windows.Setter>オブジェクト。 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.DataTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.DataTrigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListBox>にバインドされた*場所*、<xref:System.Collections.ObjectModel.ObservableCollection%601>の*場所*オブジェクト。 *場所*オブジェクト プロパティがある*名前*と*状態*です。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、*場所*オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。  
+  
+ <xref:System.Windows.DataTrigger>が指定されているように場合、*状態*の*場所*データ項目が"WA"対応の前景色<xref:System.Windows.Controls.ListBoxItem>赤に設定されています。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.DataTrigger>、<xref:System.Windows.Media.Animation.BeginStoryboard>アクション、および<xref:System.Windows.Media.Animation.Storyboard>バインドされたデータが、指定した条件を満たしている場合に、プロパティをアニメーション化します。 例では、インベントリの情報が表示されます、<xref:System.Windows.Controls.ListBox>コントロール。 使用して、<xref:System.Windows.DataTrigger>アニメーション化する、<xref:System.Windows.UIElement.Opacity%2A>の各<xref:System.Windows.Controls.ListBoxItem>在庫切れの書籍を格納しています。  
+  
+ [!code-xaml[AnimatePropertyStoryboards#GraphicsMMDataTriggerStoryboardWholePage](~/samples/snippets/xaml/VS_Snippets_Wpf/AnimatePropertyStoryboards/XAML/DataTriggerStoryboardExample.xaml#graphicsmmdatatriggerstoryboardwholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTrigger ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.DataTrigger" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.BindingBase Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingBase Binding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ オブジェクトのプロパティ値を作成するバインドを取得または設定します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバインディングによって生成されるプロパティの値がで指定された値と比較、<xref:System.Windows.DataTrigger.Value%2A>プロパティです。 その値は最初 (可能である場合)、バインディングの値の型に変換し、2 つの値が比較されます、`Object.Equals`メソッドです。 2 つの値が等しい場合、関連するアクションまたは set アクセス操作子適用されます。  
+  
+ バインディングを作成して使用する、<xref:System.Windows.Data.Binding.Path%2A>特定のオブジェクト (バインディング ソース オブジェクト) のプロパティにバインドするプロパティです。 バインドする場合など、*優先度*のプロパティ、*タスク*です。 詳しくは、「 [データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.DataTrigger.Binding%2A>と<xref:System.Windows.DataTrigger.Value%2A>プロパティを<xref:System.Windows.DataTrigger>データ トリガーする意味を持つようにします。 1 つまたは両方のプロパティが設定されていない場合、例外がスローされます。  
+  
+<a name="xamlAttributeUsage_PriorityBinding"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="{Binding  declaration}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Binding"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Binding>  
+    <Binding …/>  
+  </object.Binding>  
+</object>  
+```  
+  
+<a name="xamlValues_PriorityBinding"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *declaration*  
+ コンマ (,) で区切られた 0 個以上の属性の割り当て句。 参照してください[マークアップ拡張機能のバインド](~/docs/framework/wpf/advanced/binding-markup-extension.md)詳細についてはします。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.DataTrigger>設定、<xref:System.Windows.Controls.Border.BorderBrush%2A>という名前の要素の`border`に`Yellow`場合、`TaskType`プロパティは`TaskType.Home`します。  
+  
+ [!code-xaml[DataTemplatingIntro#DT](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#dt)]  
+[!code-xaml[DataTemplatingIntro#DataTrigger](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#datatrigger)]  
+[!code-xaml[DataTemplatingIntro#AddingMore2](~/samples/snippets/xaml/VS_Snippets_Wpf/DataTemplatingIntro/xaml/window1.xaml#addingmore2)]  
+  
+ この例の詳細については、次を参照してください。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveMarkupExtension">
+      <MemberSignature Language="C#" Value="public static void ReceiveMarkupExtension (object targetObject, System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReceiveMarkupExtension(object targetObject, class System.Windows.Markup.XamlSetMarkupExtensionEventArgs eventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.ReceiveMarkupExtension(System.Object,System.Windows.Markup.XamlSetMarkupExtensionEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetObject" Type="System.Object" />
+        <Parameter Name="eventArgs" Type="System.Windows.Markup.XamlSetMarkupExtensionEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetObject">マークアップ拡張機能値が設定されるオブジェクト。</param>
+        <param name="eventArgs">マークアップ拡張機能の処理に関連するデータ。</param>
+        <summary>マークアップ拡張機能がのプロパティの値を提供する場合の処理、<see cref="T:System.Windows.DataTrigger" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、適用されているによって参照されるメソッド<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>このメソッドがの値を設定するすべての試行を処理することを意味するクラス レベルで属性<xref:System.Windows.DataTrigger>マークアップ拡張機能でします。 呼び出すことはない通常このメソッド直接。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Setters">
+      <MemberSignature Language="C#" Value="public System.Windows.SetterBaseCollection Setters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.SetterBaseCollection Setters" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Setters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.SetterBaseCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.Setter" />オブジェクトで、データ項目が指定した条件を満たしているときに適用するプロパティの値を説明します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Setters"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Setters>  
+    ZeroOrMoreSetters  
+  </object.Setters>  
+</object>  
+```  
+  
+<a name="xamlValues_Setters"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ZeroOrMoreSetters*  
+ 0 個以上<xref:System.Windows.Setter>オブジェクト。  
+  
+ A<xref:System.Windows.DataTrigger>では、操作を開始するかを使用する<xref:System.Windows.Setter>プロパティを適用する値のデータ項目が、指定した条件を満たす場合です。  
+  
+ 同じ set アクセス操作子コレクション内の同じプロパティの設定に複数の set アクセス操作子は、宣言されている setter 最後が使用されます。  
+  
+ <xref:System.Windows.DataTrigger.Setters%2A>のプロパティ、<xref:System.Windows.DataTrigger>オブジェクトのみで構成できます<xref:System.Windows.Setter>オブジェクト。 追加する、<xref:System.Windows.Setter>に子、<xref:System.Windows.DataTrigger>オブジェクトが暗黙的に追加して、<xref:System.Windows.SetterBaseCollection>の<xref:System.Windows.DataTrigger>オブジェクト。 <xref:System.Windows.EventSetter>オブジェクトはサポートされていません。のみ<xref:System.Windows.Style.Setters%2A?displayProperty=nameWithType>サポート<xref:System.Windows.EventSetter>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は 2 つ<xref:System.Windows.DataTrigger>で定義されているオブジェクト、<xref:System.Windows.DataTemplate>です。 <xref:System.Windows.DataTemplate>に適用される*AuctionItem*データ オブジェクト (この例では表示されません)、プロパティを持つ*SpecialFeatures*です。  
+  
+ 最初の<xref:System.Windows.DataTrigger>が指定されているようにデータ オブジェクトが、 *SpecialFeatures*の値*色*、アイテムが表示され、`DodgerBlue`ネイビー カラーのタイトルの背景。 データ オブジェクトが、 *SpecialFeatures*の値*を強調表示*、秒、<xref:System.Windows.DataTrigger>アクティブ、星のオレンジ色の罫線を表示するアイテムの原因になります。  
+  
+ サンプル全体については、次を参照してください。[データ バインディング デモ](http://go.microsoft.com/fwlink/?LinkID=163703)です。  
+  
+ [!code-xaml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する子オブジェクト。</param>
+        <summary>子オブジェクトを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.DataTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTrigger.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加するテキスト。</param>
+        <summary>オブジェクトにノードのテキスト コンテンツを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.DataTrigger> のインスタンスが <xref:System.Windows.Markup.IAddChild> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTrigger.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Binding")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ オブジェクトのプロパティの値と比較する値を設定します。</summary>
+        <value>既定値は <see langword="null" /> です。 [例外] セクションを参照してください。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Value"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Value>  
+    Value  
+  </object.Value>  
+</object>  
+```  
+  
+ この値がによって生成されるプロパティの値と比較されて、<xref:System.Windows.DataTrigger.Binding%2A>のプロパティ、<xref:System.Windows.DataTrigger>です。 比較では参照等価性のチェックです。 2 つの値が等しい場合、関連するアクションまたは set アクセス操作子適用されます。  
+  
+ 両方を指定する必要があります、<xref:System.Windows.DataTrigger.Binding%2A>と<xref:System.Windows.DataTrigger.Value%2A>プロパティを<xref:System.Windows.DataTrigger>データ トリガーする意味を持つようにします。 1 つまたは両方のプロパティが設定されていない場合、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>の<xref:System.Windows.Controls.ListBox>にバインドされた*場所*、<xref:System.Collections.ObjectModel.ObservableCollection%601>の*場所*オブジェクト。 *場所*オブジェクト プロパティがある*名前*と*状態*です。  
+  
+ 各<xref:System.Windows.Controls.ListBoxItem>の<xref:System.Windows.Controls.ListBox>が表示されます、*場所*オブジェクト。 <xref:System.Windows.Style>の例では、各に適用される<xref:System.Windows.Controls.ListBoxItem>です。  
+  
+ <xref:System.Windows.DataTrigger>が指定されているように場合、*状態*の*場所*データ項目が"WA"対応の前景色<xref:System.Windows.Controls.ListBoxItem>赤に設定されています。  
+  
+ [!code-xaml[DataTrigger#1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTrigger/CSharp/Window1.xaml#1)]  
+  
+ 次の例は 2 つ<xref:System.Windows.DataTrigger>で定義されている、<xref:System.Windows.DataTemplate>です。 <xref:System.Windows.DataTemplate>に適用される*AuctionItem*データ オブジェクト (この例では表示されません)、プロパティを持つ*SpecialFeatures*です。 参照してください[データ バインディング デモ](http://go.microsoft.com/fwlink/?LinkID=163703)完全な例です。  
+  
+ 最初の<xref:System.Windows.DataTrigger>が指定されているようにデータ オブジェクトが、 *SpecialFeatures*の値*色*、ネイビー カラーのタイトルと DodgerBlue 背景を持つ項目が表示されます。 データ オブジェクトが、 *SpecialFeatures*の値*を強調表示*、秒、<xref:System.Windows.DataTrigger>アクティブ、星のオレンジ色の罫線を表示するアイテムの原因になります。  
+  
+ [!code-xaml[DataBindingLab#AuctionItemsDataTriggers](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemsdatatriggers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">式はサポートされていません。 バインドはサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,100 @@
+<Type Name="PeerResolverBindingElement" FullName="System.ServiceModel.Channels.PeerResolverBindingElement">
+  <TypeSignature Language="C#" Value="public abstract class PeerResolverBindingElement : System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PeerResolverBindingElement extends System.ServiceModel.Channels.BindingElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.PeerResolverBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ピア リゾルバー オブジェクトを作成するために使用するバインド要素の抽象基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ピア リゾルバー オブジェクトを作成するために使用するすべてのバインド要素の抽象基本クラスを定義します。 このクラスの具体的な実装については、<xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement> および <xref:System.ServiceModel.Channels.PeerCustomResolverBindingElement> を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerResolverBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.PeerResolverBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.Channels.PeerResolverBindingElement" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PeerResolverBindingElement (System.ServiceModel.Channels.PeerResolverBindingElement other);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.PeerResolverBindingElement other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.PeerResolverBindingElement.#ctor(System.ServiceModel.Channels.PeerResolverBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Channels.PeerResolverBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="other">
+          このクラスのインスタンスを作成するときにコピーする <see cref="T:System.ServiceModel.Channels.PeerResolverBindingElement" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.PeerResolverBindingElement" /> オブジェクトを複製して、<see cref="T:System.ServiceModel.Channels.PeerResolverBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePeerResolver">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.PeerResolver CreatePeerResolver ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.PeerResolver CreatePeerResolver() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.PeerResolverBindingElement.CreatePeerResolver" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolver</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このバインド要素で定義されている設定を使用して、ピア リゾルバー オブジェクトを作成します。</summary>
+        <returns>
+          ピア名をアドレスに解決するために使用する <see cref="T:System.ServiceModel.PeerResolver" /> オブジェクト。 ピア リゾルバーの設定は、バインド要素で定義されている必要があります。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralPolicy">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.PeerResolvers.PeerReferralPolicy ReferralPolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.PeerResolvers.PeerReferralPolicy ReferralPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.PeerResolverBindingElement.ReferralPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerReferralPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスの実装によって作成されたバインド要素で作成されたピア リゾルバーの参照ポリシーを取得または設定します。</summary>
+        <value>
+          このバインド要素で作成されたピア リゾルバーの参照ポリシーを指定する <see cref="T:System.ServiceModel.PeerResolvers.PeerReferralPolicy" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

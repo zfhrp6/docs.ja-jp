@@ -1,0 +1,441 @@
+<Type Name="CodeTypeDeclaration" FullName="System.CodeDom.CodeTypeDeclaration">
+  <TypeSignature Language="C#" Value="public class CodeTypeDeclaration : System.CodeDom.CodeTypeMember" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeTypeDeclaration extends System.CodeDom.CodeTypeMember" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeTypeDeclaration" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeTypeMember</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラス、構造体、インターフェイス、または列挙型の型宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeTypeDeclaration>クラス、構造体、インターフェイス、または列挙型を宣言するコードを表すために使用できます。 <xref:System.CodeDom.CodeTypeDeclaration>別の型の中で入れ子になっている型を宣言するために使用します。  
+  
+ <xref:System.CodeDom.CodeTypeDeclaration.BaseTypes%2A>プロパティは、基本データ型または宣言された型の基本型を指定します。 <xref:System.CodeDom.CodeTypeDeclaration.Members%2A>プロパティを含む型のメンバーでは、メソッド、フィールド、プロパティ、コメント、およびその他の種類に含めることができます。 <xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A>プロパティを示します、<xref:System.Reflection.TypeAttributes>型の宣言の型の型のカテゴリを示す値。 <xref:System.CodeDom.CodeTypeDeclaration.IsClass%2A>、 <xref:System.CodeDom.CodeTypeDeclaration.IsStruct%2A>、 <xref:System.CodeDom.CodeTypeDeclaration.IsEnum%2A>、および<xref:System.CodeDom.CodeTypeDeclaration.IsInterface%2A>メソッドを示すかどうか、型はクラス、構造体、列挙型、またはインターフェイス型は、それぞれします。  
+  
+> [!NOTE]
+>  一部のプログラミング言語は、参照型、またはクラスの宣言をサポートするだけです。 インターフェイス、列挙型、または値の型を宣言するためのサポートの言語固有の CodeDOM コード ジェネレーターを確認するには、呼び出し、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>を適切なテスト メソッド<xref:System.CodeDom.Compiler.GeneratorSupport>フラグ。 <xref:System.CodeDom.Compiler.GeneratorSupport.DeclareInterfaces>インターフェイスのサポートを示す<xref:System.CodeDom.Compiler.GeneratorSupport.DeclareEnums>、列挙型のサポートを示すと<xref:System.CodeDom.Compiler.GeneratorSupport.DeclareValueTypes>構造体などの値の型のサポートを指定します。  
+  
+ クラスまたは構造体の実装、1 つの完全な宣言を構築または実装では、複数の宣言に分散できます。 <xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A>プロパティは、型宣言が完全または部分的なかどうかを示します。 すべてのコード ジェネレーターがため呼び出すことによって、このサポートをテストする必要がありますに、部分的な型宣言をサポート、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>フラグ メソッド<xref:System.CodeDom.Compiler.GeneratorSupport.PartialTypes>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeTypeDeclaration>型を宣言します。  
+  
+ [!code-cpp[CodeTypeDeclarationExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeTypeDeclarationExample/CPP/codetypedeclarationexample.cpp#2)]
+ [!code-csharp[CodeTypeDeclarationExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeTypeDeclarationExample/CS/codetypedeclarationexample.cs#2)]
+ [!code-vb[CodeTypeDeclarationExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeTypeDeclarationExample/VB/codetypedeclarationexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeDeclaration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDeclaration.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeTypeDeclaration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeDeclaration (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDeclaration.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">新しい型の名前です。</param>
+        <summary>指定した名前を使用して、<see cref="T:System.CodeDom.CodeTypeDeclaration" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseTypes">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReferenceCollection BaseTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReferenceCollection BaseTypes" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.BaseTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の基本型を取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReferenceCollection" />型の基本型を示すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本型から継承しないが、1 つまたは複数のインターフェイスを実装しているが、Visual Basic では、クラスを生成する必要があります<xref:System.Object>の最初の項目として、<xref:System.CodeDom.CodeTypeDeclaration.BaseTypes%2A>コレクション。  
+  
+> [!NOTE]
+>  .NET framework version 2.0 が必要としない、<xref:System.CodeDom.CodeTypeReference>の<xref:System.Object>かどうか既にを実装するインターフェイスが存在して、型で参照することです。 たとえば、実装している場合、<xref:System.Collections.ICollection>インターフェイスし、このステートメントを使用してコレクションに追加する`ctd.BaseTypes.Add(New CodeTypeReference(typeof(ICollection)))`、前述の必要はありません`ctd.BaseTypes.Add(New CodeTypeReference(GetType(Object)))`ステートメントです。  
+  
+ 次のコード例の追加、<xref:System.CodeDom.CodeTypeReference>を参照するコレクションに<xref:System.Object>です。  
+  
+```vb  
+Dim ctd As New CodeTypeDeclaration("Class1")  
+ctd.IsClass = True  
+ctd.BaseTypes.Add(New CodeTypeReference(GetType(Object)))  
+ctd.BaseTypes.Add(New CodeTypeReference("Interface1"))  
+```  
+  
+```csharp  
+CodeTypeDeclaration ctd = new CodeTypeDeclaration("Class1");  
+ctd.IsClass = true;  
+ctd.BaseTypes.Add(new CodeTypeReference(typeof(Object)));  
+ctd.BaseTypes.Add(new CodeTypeReference("Interface1"));  
+```  
+  
+ 上記のコードは、該当するショートカットは、次の Visual Basic コードを生成します。  
+  
+```vb  
+Public Class Class1  
+Implements Interface1  
+```  
+  
+ ただし、実際に生成された Visual Basic のコードは次です。  
+  
+```vb  
+Public Class Class1  
+Inherits Object  
+Implements Interface1  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClass">
+      <MemberSignature Language="C#" Value="public bool IsClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClass" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型がクラスまたは参照型であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />型がクラスまたは参照型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnum">
+      <MemberSignature Language="C#" Value="public bool IsEnum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnum" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsEnum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型が列挙型であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />型が列挙体の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInterface">
+      <MemberSignature Language="C#" Value="public bool IsInterface { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInterface" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsInterface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型がインターフェイスであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />型がインターフェイスである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPartial">
+      <MemberSignature Language="C#" Value="public bool IsPartial { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPartial" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsPartial" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型の宣言が完全または部分的なかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クラスまたは構造体の宣言が、実装の部分的な表現の場合<see langword="false" />宣言がクラスまたは構造体の完全な実装である場合。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つの完全な宣言でクラスまたは構造体の実装を構築または実装では、複数の宣言に分散できます。 実装は、通常、1 つの完全な型の宣言で提供されます。 この場合、型宣言を設定<xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A>プロパティを`false`、型宣言がクラスまたは構造体の実装の詳細情報を表すことを示します。  
+  
+ 部分型の宣言では、アプリケーションの異なるモジュールでクラスまたは構造体の実装の異なる部分を構築するやすくなります。 部分型の宣言は、1 つのソース ファイルに格納されているまたは統合型の実装を形成する一緒にコンパイル最終的には、複数のソース ファイルに分散できます。  
+  
+ C# 言語のクラスの部分型の宣言をサポートしているし、を通じて構造体、`partial`キーワード。 Visual Basic のクラスの部分型の宣言をサポートしていると構造体、`Partial`キーワード。 すべてのコード ジェネレーターがため呼び出すことによって、このサポートをテストする必要がありますに、部分的な型宣言をサポート、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>フラグ メソッド<xref:System.CodeDom.Compiler.GeneratorSupport.PartialTypes>です。  
+  
+> [!NOTE]
+>  クラスや構造体は、部分型の宣言がサポートされています。 列挙型またはインターフェイスの部分的な型宣言を指定すると、生成されたコードはコンパイラのエラーを生成します。  
+  
+ クラスまたは構造体の実装を提供する、複数の宣言にわたって、設定、<xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A>プロパティを`true`最初の宣言とすべての補足的な宣言です。 最初の宣言は、型を完全に指定する必要がありますアクセス修飾子を含むシグネチャが継承された型、およびインターフェイスを実装します。 補足の宣言は、型シグネチャを再指定する必要はありません。 コンパイラ エラーは、補足宣言で型のシグネチャを再定義する場合に通常発生します。  
+  
+ Visual Studio 2005 では、デザイナーのコードからユーザーが生成されたコードを分離するのに部分的な型を使用します。 Visual Basic Windows アプリケーション プロジェクトで、ユーザー コードはで修飾されていない部分クラスに配置、`Partial`キーワード以外の場合は、デザイナーによって提供されたコードを持つ部分クラスに表示されます、`Partial`キーワード。 C# の場合、ユーザー コードとデザイナーのコードの両方に表示で識別される部分クラス、`partial`キーワード。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeTypeDeclaration>を複数の宣言にわたってクラスの実装を指定します。 最初のクラスの宣言ステートメントを作成し、設定、<xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A>プロパティを`true`です。  
+  
+ [!code-cpp[CodeDomPartialTypeExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomPartialTypeExample/CPP/source.cpp#3)]
+ [!code-csharp[CodeDomPartialTypeExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomPartialTypeExample/CS/source.cs#3)]
+ [!code-vb[CodeDomPartialTypeExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomPartialTypeExample/VB/source.vb#3)]  
+  
+ 別の方法の例では、クラスの実装を拡張します。 このメソッドが、既存のクラスとセットの新しい型宣言ステートメントを作成、<xref:System.CodeDom.CodeTypeDeclaration.IsPartial%2A>プロパティを`true`です。 コンパイラは、完全なクラスの実装を同時に 2 つの部分型宣言を結合します。  
+  
+ [!code-cpp[CodeDomPartialTypeExample#7](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomPartialTypeExample/CPP/source.cpp#7)]
+ [!code-csharp[CodeDomPartialTypeExample#7](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomPartialTypeExample/CS/source.cs#7)]
+ [!code-vb[CodeDomPartialTypeExample#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomPartialTypeExample/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStruct">
+      <MemberSignature Language="C#" Value="public bool IsStruct { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStruct" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.IsStruct" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型は、値型 (構造体) であるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />型が値型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Members">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeMemberCollection Members { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeMemberCollection Members" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.Members" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeMemberCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表される型のクラス メンバーのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeMemberCollection" />クラス メンバーを示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateBaseTypes">
+      <MemberSignature Language="C#" Value="public event EventHandler PopulateBaseTypes;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateBaseTypes" />
+      <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeTypeDeclaration.PopulateBaseTypes" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.CodeDom.CodeTypeDeclaration.BaseTypes" />コレクションには、最初にアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateMembers">
+      <MemberSignature Language="C#" Value="public event EventHandler PopulateMembers;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PopulateMembers" />
+      <MemberSignature Language="DocId" Value="E:System.CodeDom.CodeTypeDeclaration.PopulateMembers" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.CodeDom.CodeTypeDeclaration.Members" />コレクションには、最初にアクセスします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeAttributes">
+      <MemberSignature Language="C#" Value="public System.Reflection.TypeAttributes TypeAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.TypeAttributes TypeAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.TypeAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.TypeAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または型の属性を設定します。</summary>
+        <value>A<see cref="T:System.Reflection.TypeAttributes" />型の属性を示すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.TypeAttributes>プロパティには、同じによって使用される値の型が含まれています。<xref:System.Reflection>実行時に、型を調査する場合にします。 これらのフラグの多くは、一部の言語の型宣言の構文に対応していません。 その結果、次のフラグのみに有効<xref:System.CodeDom.CodeTypeDeclaration>: <xref:System.Reflection.TypeAttributes.Class>、 <xref:System.Reflection.TypeAttributes.Interface>、 <xref:System.Reflection.TypeAttributes.Abstract>、 <xref:System.Reflection.TypeAttributes.Sealed>、 <xref:System.Reflection.TypeAttributes.Public>、 <xref:System.Reflection.TypeAttributes.NotPublic>、 <xref:System.Reflection.TypeAttributes.NestedPublic>、および<xref:System.Reflection.TypeAttributes.NestedPrivate>です。  
+  
+> [!NOTE]
+>  一部のようにフラグ<xref:System.Reflection.TypeAttributes.Abstract>のフラグの意味と重複している、<xref:System.CodeDom.CodeTypeMember.Attributes%2A>プロパティの<xref:System.CodeDom.CodeTypeDeclaration>から継承されている<xref:System.CodeDom.CodeTypeMember>です。 <xref:System.CodeDom.CodeTypeMember.Attributes%2A>プロパティは、副作用として、<xref:System.CodeDom.CodeTypeDeclaration>クラスから継承する<xref:System.CodeDom.CodeTypeMember>クラスが入れ子にすることができるようにします。 内のフラグ、<xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A>のフラグではなくプロパティを使用する必要があります、<xref:System.CodeDom.CodeTypeMember.Attributes%2A>プロパティです。  
+  
+> [!NOTE]
+>  参照範囲フラグを設定するためのパターン (単語を含むフラグ`Public`または`Nested`) には、すべての可視性をマスク フラグを使用して、<xref:System.Reflection.TypeAttributes.VisibilityMask>し、目的の参照範囲フラグを設定します。 たとえば、c# コード ステートメントを識別する、 <xref:System.CodeDom.CodeTypeDeclaration> (という名前`cd`) は、内部クラスとして`cd.TypeAttributes = (cd.TypeAttributes & ~TypeAttributes.VisibilityMask) | TypeAttributes.NotPublic;`です。  Visual Basic では、同じ値を設定するコードは`cd.TypeAttributes = (cd.TypeAttributes And (TypeAttributes.VisibilityMask Xor -1)) Or TypeAttributes.NotPublic`します。 設定、<xref:System.CodeDom.CodeTypeDeclaration.TypeAttributes%2A>プロパティ参照範囲フラグを直接 (`cd.TypeAttributes = TypeAttributes.NotPublic;`) 設定されているその他のすべてのフラグが消去されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeParameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeParameterCollection TypeParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeParameterCollection TypeParameters" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDeclaration.TypeParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型宣言の型パラメーターを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeParameterCollection" />型の宣言の型パラメーターを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック型宣言を 1 つまたは型パラメーターと呼ばれる型指定されていません。 型パラメーター名は、ジェネリック宣言の本体の種類を表します。 ジェネリック宣言など、<xref:System.Collections.Generic.List%601>クラスには、型パラメーターが含まれています。`T`です。  
+  
+ ジェネリックの詳細については、次を参照してください。 [、.NET Framework クラス ライブラリのジェネリック](~/docs/csharp/programming-guide/generics/generics-in-the-net-framework-class-library.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

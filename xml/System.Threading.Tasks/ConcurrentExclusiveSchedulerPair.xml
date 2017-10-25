@@ -1,0 +1,320 @@
+<Type Name="ConcurrentExclusiveSchedulerPair" FullName="System.Threading.Tasks.ConcurrentExclusiveSchedulerPair">
+  <TypeSignature Language="C#" Value="public class ConcurrentExclusiveSchedulerPair" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConcurrentExclusiveSchedulerPair extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Concurrent={ConcurrentTaskCountForDebugger}, Exclusive={ExclusiveTaskCountForDebugger}, Mode={ModeForDebugger}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Threading.Tasks.ConcurrentExclusiveSchedulerPair/DebugView))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>調整する同時実行タスクが同時に実行され、排他的なタスクをされないことを確認中にタスクを実行するタスク スケジューラを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>クラスです。 リーダーは、スケジューラの同時実行の一部で実行します。 スケジューラの排他部分で、ライターが実行されます。 このコード例に示されている例の一部である、[する方法: データフロー ブロックのタスク スケジューラを指定](~/docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)トピックです。  
+  
+ [!code-csharp[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#4)]
+ [!code-vb[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcurrentExclusiveSchedulerPair ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.%23ctor%2A>を新規作成するコンス トラクター<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair>オブジェクト。 このコード例に示されている例の一部である、[する方法: データフロー ブロックのタスク スケジューラを指定](~/docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)トピックです。  
+  
+ [!code-csharp[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#4)]
+ [!code-vb[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcurrentExclusiveSchedulerPair (System.Threading.Tasks.TaskScheduler taskScheduler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.TaskScheduler taskScheduler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.#ctor(System.Threading.Tasks.TaskScheduler)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="taskScheduler" Type="System.Threading.Tasks.TaskScheduler" />
+      </Parameters>
+      <Docs>
+        <param name="taskScheduler">ターゲット スケジューラは、このペアを実行する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair" />を指定したスケジューラを対象とするクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcurrentExclusiveSchedulerPair (System.Threading.Tasks.TaskScheduler taskScheduler, int maxConcurrencyLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.TaskScheduler taskScheduler, int32 maxConcurrencyLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.#ctor(System.Threading.Tasks.TaskScheduler,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="taskScheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="maxConcurrencyLevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="taskScheduler">ターゲット スケジューラは、このペアを実行する必要があります。</param>
+        <param name="maxConcurrencyLevel">同時に実行するタスクの最大数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair" />最大同時実行レベルを持つ、指定したスケジューラを対象とするクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConcurrentExclusiveSchedulerPair (System.Threading.Tasks.TaskScheduler taskScheduler, int maxConcurrencyLevel, int maxItemsPerTask);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Threading.Tasks.TaskScheduler taskScheduler, int32 maxConcurrencyLevel, int32 maxItemsPerTask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.#ctor(System.Threading.Tasks.TaskScheduler,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="taskScheduler" Type="System.Threading.Tasks.TaskScheduler" />
+        <Parameter Name="maxConcurrencyLevel" Type="System.Int32" />
+        <Parameter Name="maxItemsPerTask" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="taskScheduler">ターゲット スケジューラは、このペアを実行する必要があります。</param>
+        <param name="maxConcurrencyLevel">同時に実行するタスクの最大数。</param>
+        <param name="maxItemsPerTask">ペアで使用される基になる各スケジュールされたタスクを処理するタスクの最大数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair" />を単位として処理がスケジュールされたタスクの最大数と最大の同時実行レベルを指定したスケジューラを対象とするクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Complete">
+      <MemberSignature Language="C#" Value="public void Complete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Complete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.Complete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>任意のタスクの詳細を受け入れないように、スケジューラのペアを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.Complete%2A>は省略可能です。 必要がある依存している場合にのみ、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.Completion%2A>プロパティのすべての処理が完了したことを通知します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Completion">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task Completion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.Task Completion" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.Completion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.Task" />スケジューラが処理を完了したときに完了です。</summary>
+        <value>スケジューラが処理を終了するときに完了する非同期操作です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcurrentScheduler">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskScheduler ConcurrentScheduler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.TaskScheduler ConcurrentScheduler" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ConcurrentScheduler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.TaskScheduler" />このペアの他のタスクと同時に実行できるこのペアにタスクをスケジュール設定を使用できます。</summary>
+        <value>タスクのスケジュールを同時に使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ConcurrentScheduler%2A>プロパティをリーダーを実行します。 このコード例に示されている例の一部である、[する方法: データフロー ブロックのタスク スケジューラを指定](~/docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)トピックです。  
+  
+ [!code-csharp[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#4)]
+ [!code-vb[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExclusiveScheduler">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.TaskScheduler ExclusiveScheduler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.Tasks.TaskScheduler ExclusiveScheduler" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ExclusiveScheduler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.TaskScheduler" />このペアの他のタスクに関してのみ実行する必要がありますこのペアにタスクをスケジュール設定を使用できます。</summary>
+        <value>その他のタスクと同時に実行されているタスクのスケジュールを使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、使用、<xref:System.Threading.Tasks.ConcurrentExclusiveSchedulerPair.ExclusiveScheduler%2A>ライターを実行するプロパティです。 このコード例に示されている例の一部である、[する方法: データフロー ブロックのタスク スケジューラを指定](~/docs/standard/parallel-programming/how-to-specify-a-task-scheduler-in-a-dataflow-block.md)トピックです。  
+  
+ [!code-csharp[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/cs/writerreaderswinforms/form1.cs#4)]
+ [!code-vb[TPLDataflow_WriterReadersWinForms#4](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_writerreaderswinforms/vb/writerreaderswinforms/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

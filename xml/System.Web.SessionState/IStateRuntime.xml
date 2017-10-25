@@ -1,0 +1,152 @@
+<Type Name="IStateRuntime" FullName="System.Web.SessionState.IStateRuntime">
+  <TypeSignature Language="C#" Value="public interface IStateRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStateRuntime" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.IStateRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("7297744b-e188-40bf-b7e9-56698d25cf44")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>セッション データを管理する ASP.NET 状態サービスによって使用されるインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、ASP.NET 状態サービスと呼ばれる Windows サービスを使用して、セッション状態のプロセス外を管理できます。 <xref:System.Web.SessionState.StateRuntime>クラスは、セッション データを管理するアンマネージ コードでこのサービスによって使用されます。 このクラスを ASP.NET 状態サービスの .NET Framework インフラストラクチャの実装をサポートしますが、コードから直接使用を意図したものです。  
+  
+ ASP.NET 状態サービスを使用して ASP.NET; でセッション状態を管理するための既定の方法ではありません。ASP.NET は、既定では、インプロセス セッション状態管理をサポートします。 Microsoft SQL Server データベースのセッションの状態を管理する 2 番目のアウト プロセスのオプションもサポートしています。 でき、カスタム セッション状態管理ソリューションです。 セッション状態の記憶域オプションの詳細については、次を参照してください。[セッション状態モード](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest (IntPtr tracker, int verb, string uri, int exclusive, int timeout, int lockCookieExists, int lockCookie, int contentLength, IntPtr content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest([in]native int tracker, [in]int32 verb, [in]string uri, [in]int32 exclusive, [in]int32 timeout, [in]int32 lockCookieExists, [in]int32 lockCookie, [in]int32 contentLength, [in]native int content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.IStateRuntime.ProcessRequest(System.IntPtr,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tracker" Type="System.IntPtr" />
+        <Parameter Name="verb" Type="System.Int32" />
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="exclusive" Type="System.Int32" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="lockCookieExists" Type="System.Int32" />
+        <Parameter Name="lockCookie" Type="System.Int32" />
+        <Parameter Name="contentLength" Type="System.Int32" />
+        <Parameter Name="content" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="tracker"><see cref="T:System.IntPtr" />アンマネージ ASP.NET 状態サーバーに格納されているオブジェクトへのポインター。</param>
+        <param name="verb">オブジェクトで実行するアクション。</param>
+        <param name="uri">セッションの識別子。</param>
+        <param name="exclusive">ストア内のオブジェクトへのアクセスの種類。</param>
+        <param name="timeout">セッション データが格納されている (分) の数。</param>
+        <param name="lockCookieExists">ASP.NET 状態サーバーに ASP.NET Web サーバーから元の要求でロック cookie が存在するかどうかを示す値。</param>
+        <param name="lockCookie">セッション状態のロックの所有者です。</param>
+        <param name="contentLength">格納されているセッションのデータの長さ、(バイト単位)。</param>
+        <param name="content"><see cref="T:System.IntPtr" />セッション アンマネージ ASP.NET 状態サーバーに格納されているコンテンツへのポインター。</param>
+        <summary>セッション データを処理する ASP.NET 状態サーバーによって使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、ASP.NET 状態サービスと呼ばれる Windows サービスを使用して、セッション状態のプロセス外を管理できます。 <xref:System.Web.SessionState.IStateRuntime.ProcessRequest%2A>メソッドは、セッション データを管理するアンマネージ コードでこのサービスが使用されます。  
+  
+ このメンバーを ASP.NET 状態サービスの .NET Framework インフラストラクチャの実装をサポートしますが、コードから直接使用を意図したものです。 セッション状態の記憶域オプションの詳細については、次を参照してください。[セッション状態モード](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public void ProcessRequest (IntPtr tracker, int verb, string uri, int exclusive, int extraFlags, int timeout, int lockCookieExists, int lockCookie, int contentLength, IntPtr content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessRequest([in]native int tracker, [in]int32 verb, [in]string uri, [in]int32 exclusive, [in]int32 extraFlags, [in]int32 timeout, [in]int32 lockCookieExists, [in]int32 lockCookie, [in]int32 contentLength, [in]native int content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.IStateRuntime.ProcessRequest(System.IntPtr,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tracker" Type="System.IntPtr" />
+        <Parameter Name="verb" Type="System.Int32" />
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="exclusive" Type="System.Int32" />
+        <Parameter Name="extraFlags" Type="System.Int32" />
+        <Parameter Name="timeout" Type="System.Int32" />
+        <Parameter Name="lockCookieExists" Type="System.Int32" />
+        <Parameter Name="lockCookie" Type="System.Int32" />
+        <Parameter Name="contentLength" Type="System.Int32" />
+        <Parameter Name="content" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="tracker"><see cref="T:System.IntPtr" />アンマネージ ASP.NET 状態サーバーに格納されているオブジェクトへのポインター。</param>
+        <param name="verb">オブジェクトで実行するアクション。</param>
+        <param name="uri">セッションの識別子。</param>
+        <param name="exclusive">ストア内のオブジェクトへのアクセスの種類。</param>
+        <param name="extraFlags">現在のセッションが初期化されていない cookie なしのセッションであるかどうかを示す値。</param>
+        <param name="timeout">セッション データが格納されている (分) の数。</param>
+        <param name="lockCookieExists">ASP.NET 状態サーバーに ASP.NET Web サーバーから元の要求でロック cookie が存在するかどうかを示す値。</param>
+        <param name="lockCookie">セッション状態のロックの所有者です。</param>
+        <param name="contentLength">格納されているセッションのデータの長さ、(バイト単位)。</param>
+        <param name="content"><see cref="T:System.IntPtr" />セッション アンマネージ ASP.NET 状態サーバーに格納されているコンテンツへのポインター。</param>
+        <summary>セッション データを処理する ASP.NET 状態サーバーによって使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、ASP.NET 状態サービスと呼ばれる Windows サービスを使用して、セッション状態のプロセス外を管理できます。 <xref:System.Web.SessionState.IStateRuntime.ProcessRequest%2A>メソッドは、セッション データを管理するアンマネージ コードでこのサービスが使用されます。  
+  
+ このメンバーを ASP.NET 状態サービスの .NET Framework インフラストラクチャの実装をサポートしますが、コードから直接使用を意図したものです。 セッション状態の記憶域オプションの詳細については、次を参照してください。[セッション状態モード](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopProcessing">
+      <MemberSignature Language="C#" Value="public void StopProcessing ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopProcessing() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.IStateRuntime.StopProcessing" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET 状態サーバーに格納されているセッション データの処理を停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、ASP.NET 状態サービスと呼ばれる Windows サービスを使用して、セッション状態のプロセス外を管理できます。 <xref:System.Web.SessionState.StateRuntime.StopProcessing%2A>メソッドは、セッション データの処理を停止するアンマネージ コードでこのサービスが使用されます。 このメンバーは ASP.NET 状態サービスの .NET Framework インフラストラクチャの実装をサポートするために提供され、は、コードから直接使用を意図したものです。 セッション状態の記憶域オプションの詳細については、次を参照してください。[セッション状態モード](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

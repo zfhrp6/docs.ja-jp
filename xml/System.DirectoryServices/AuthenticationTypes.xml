@@ -1,0 +1,229 @@
+<Type Name="AuthenticationTypes" FullName="System.DirectoryServices.AuthenticationTypes">
+  <TypeSignature Language="C#" Value="public enum AuthenticationTypes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationTypes extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AuthenticationTypes" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.AuthenticationTypes" />列挙体で使用される認証の種類を指定する<see cref="N:System.DirectoryServices" />です。 この列挙体には、メンバー値のビットごとの組み合わせを可能にする <see cref="T:System.FlagsAttribute" /> 属性があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティで保護されたフラグは、ReadonlyServer、バインドなどの他のフラグと組み合わせて使用できます。  
+  
+ サーバーなしのバインドをクライアントが明示的に指定するバインド文字列で、Active Directory ドメイン サービスのサーバーなしの Active Directory ドメイン サービス オブジェクトにバインドするプロセスを参照します。  
+  
+```  
+LDAP://CN=jsmith,DC=fabrikam,DC=Com  
+```  
+  
+ これには、ライトウェイト ディレクトリ アクセス プロトコル (LDAP) プロバイダーが Windows 2000 クライアントの最適なドメイン コント ローラー (DC) を検索するロケーター サービスに依存するため。 ただし、クライアントは、サーバーなしのバインド機能を活用するために、Active Directory ドメイン サービス ドメイン コント ローラー上にアカウントが必要し、なしのバインドで使用されるドメイン コント ローラーは、既定のドメイン (バインディングを行っているスレッドの現在のセキュリティ コンテキストに関連付けられているドメイン) に常に配置されます。  
+  
+> [!NOTE]
+>  これらのオプションが Novell Netware ディレクトリ サービス (NDS) のシステム プロバイダーによってサポートされていません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Anonymous">
+      <MemberSignature Language="C#" Value="Anonymous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Anonymous = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Anonymous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証は実行されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Delegation">
+      <MemberSignature Language="C#" Value="Delegation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Delegation = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Delegation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドメイン間でオブジェクトを移動するために必要なユーザーのセキュリティ コンテキストを委任する Active Directory サービス インターフェイス (ADSI) を有効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Encryption">
+      <MemberSignature Language="C#" Value="Encryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Encryption = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Encryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ送信者を識別し、メッセージが転送中に変更されていないことを確実に暗号化署名を添付します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FastBind">
+      <MemberSignature Language="C#" Value="FastBind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes FastBind = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.FastBind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Adsi エディターはありませんしようとする Active Directory ドメイン サービス オブジェクト クラスのプロパティのクエリを指定します。  したがって、adsi エディターのすべてのオブジェクトでサポートされている基底インターフェイスが公開されます。  オブジェクトがサポートするその他のインターフェイスは利用できません。 ユーザーは、一連の基本インターフェイスのメソッドだけを含んでいるオブジェクトの操作のパフォーマンスを向上させる、このオプションを使用できます。 ただし、adsi エディターは検証されないかどうか、要求オブジェクトの実際にはサーバーに存在します。 詳細については、MSDN ライブラリで「Fast バインド オプションのバッチ書き込み/変更操作」トピックを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。  ObjectClass プロパティの詳細については、MSDN ライブラリで「オブジェクト クラス」のトピックを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LDAP プロバイダーで基本認証 (簡易バインド) を使用することを意味する 0 に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadonlyServer">
+      <MemberSignature Language="C#" Value="ReadonlyServer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes ReadonlyServer = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.ReadonlyServer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WinNT プロバイダーには、adsi エディターは、ドメイン コント ローラーに接続しようとします。 Active Directory ドメイン サービスでは、このフラグは、書き込み可能なサーバーのサーバーなしのバインドの必要がないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sealing">
+      <MemberSignature Language="C#" Value="Sealing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Sealing = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Sealing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kerberos を使用してデータを暗号化します。 <see cref="F:System.DirectoryServices.AuthenticationTypes.Secure" />フラグは、シーリングを使用する場合にも設定する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Secure">
+      <MemberSignature Language="C#" Value="Secure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Secure = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Secure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティで保護された認証を要求します。 このフラグが設定されている場合、WinNT プロバイダーは、クライアントの認証に NTLM を使用します。 Active Directory ドメイン サービスは、クライアントの認証に Kerberos、および場合によって、NTLM を使用します。 ユーザー名とパスワードがある場合は null 参照 (<see langword="Nothing" /> Visual Basic で)、adsi エディターでは、ユーザー アカウントが、アプリケーションが実行されているか、呼び出し元スレッドが偽装しているクライアントのユーザー アカウントのセキュリティ コンテキストを呼び出し元のスレッドは、いずれかのセキュリティ コンテキストを使用してオブジェクトにバインドします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureSocketsLayer">
+      <MemberSignature Language="C#" Value="SecureSocketsLayer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes SecureSocketsLayer = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.SecureSocketsLayer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ送信者を識別し、メッセージが転送中に変更されていないことを確実に暗号化署名を添付します。 Active Directory ドメイン サービスでは、Secure Sockets Layer (SSL) 暗号化をサポートするために、証明書サーバーをインストールする必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerBind">
+      <MemberSignature Language="C#" Value="ServerBind" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes ServerBind = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.ServerBind" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ADsPath には、サーバー名が含まれている場合は、LDAP プロバイダーを使用する場合、このフラグを指定します。 ドメイン名を含むパスまたはサーバーレス パスは、このフラグを使用しないでください。 このフラグを指定せず、サーバー名を指定すると、不要なネットワーク トラフィックが増大します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Signing">
+      <MemberSignature Language="C#" Value="Signing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.AuthenticationTypes Signing = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.AuthenticationTypes.Signing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AuthenticationTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信したデータが送信されるデータと同じであることを確認するデータの整合性を確認します。 <see cref="F:System.DirectoryServices.AuthenticationTypes.Secure" />フラグは、署名を使用するも設定する必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,201 @@
+<Type Name="HtmlLink" FullName="System.Web.UI.HtmlControls.HtmlLink">
+  <TypeSignature Language="C#" Value="public class HtmlLink : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlLink extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlLink" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーの HTML <see langword="link" /> 要素へのプログラムによるアクセスを可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlLink>コントロールにより、HTML にプログラムでアクセス`link`サーバー上の要素。 <xref:System.Web.UI.HtmlControls.HtmlLink>コントロールを使用してプログラムで Web ページのカスケード スタイル シート (CSS) の参照を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.HtmlControls.HtmlLink>プログラムによって Web ページに、スタイル シートを追加するコントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlLink#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/CS/htmllinkcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlLink#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/VB/htmllinkvb.aspx#1)]  
+  
+ 上記のコード例を実行する必要があります、カスケード スタイル シート (CSS) という`Stylesheet.css`、Web サイトと同じディレクトリに保存されている、次のコードを含むです。  
+  
+```vb  
+body {  
+  padding-left: 11em;  
+  font-family:  Verdana, "Times New Roman",  
+        Times, serif;  
+  color: blue;  
+  background-color: silver }  
+h1 {  
+  font-family: Helvetica, Geneva, Arial,  
+        SunSans-Regular, sans-serif;   
+  color: purple }  
+```  
+  
+```csharp  
+body {  
+  padding-left: 11em;  
+  font-family:  Verdana, "Times New Roman",  
+        Times, serif;  
+  color: blue;  
+  background-color: silver }  
+h1 {  
+  font-family: Helvetica, Geneva, Arial,  
+        SunSans-Regular, sans-serif;   
+  color: purple }  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlLink ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlLink.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlLink" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlLink>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで宣言する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlLink>制御し、そのプロパティを定義します。 完了したら、作業中のコード例は、次を参照してください。、<xref:System.Web.UI.HtmlControls.HtmlLink>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/CS/htmllink.cs#2)]
+ [!code-csharp[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/CS/htmllinkcs.aspx#2)]
+ [!code-vb[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/VB/htmllinkvb.aspx#2)]
+ [!code-vb[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/VB/htmllink.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Href">
+      <MemberSignature Language="C#" Value="public virtual string Href { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Href" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlLink.Href" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定されたリンクの URL 対象、<see cref="T:System.Web.UI.HtmlControls.HtmlLink" />コントロール。</summary>
+        <value>リンクの URL 対象。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlLink.Href%2A>プロパティで指定されたリンクの URL 対象を指定する、<xref:System.Web.UI.HtmlControls.HtmlLink>コントロール。 このプロパティを使用すると、外部カスケード スタイル シート (CSS) の場所を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、 <xref:System.Web.UI.HtmlControls.HtmlLink.Href%2A> Web ページと同じディレクトリに保存されているカスケード スタイル シート (CSS) へのプロパティです。 完了したら、作業中のコード例は、次を参照してください。、<xref:System.Web.UI.HtmlControls.HtmlLink>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/CS/htmllink.cs#2)]
+ [!code-csharp[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/CS/htmllinkcs.aspx#2)]
+ [!code-vb[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/VB/htmllinkvb.aspx#2)]
+ [!code-vb[System.Web.UI.HtmlControls.HtmlLink#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlLink/VB/htmllink.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlLink.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlLink" />を指定したコントロール<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlLink.Render%2A>メソッドでの表示、<xref:System.Web.UI.HtmlTextWriter.SelfClosingTagEnd>閉じかっこ (/>) XHTML 準拠マークアップを表示するために、ASP.NET アプリケーションが構成されている場合。 既定では、ASP.NET ページとコントロールは、XHTML 1.1 規格と互換性のあるマークアップを表示します。 XHTML 非表示の ASP.NET Web サイトを構成する方法については、次を参照してください。 [NIB: 方法: XHTML のレンダリングを構成する ASP.NET Web サイトで](http://msdn.microsoft.com/en-us/42483a54-f1ae-44e1-88e6-4370f8690149)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlLink.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">表示されたコンテンツを受け取る <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlLink" /> コントロールの属性を指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlLink.RenderAttributes%2A>メソッド解決、 <xref:System.Web.UI.HtmlControls.HtmlLink.Href%2A> 、基本クラスを呼び出す前にプロパティ<xref:System.Web.UI.HtmlControls.HtmlControl.RenderAttributes%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

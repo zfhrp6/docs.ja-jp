@@ -1,0 +1,134 @@
+<Type Name="IRowsetChange" FullName="Microsoft.VisualBasic.Compatibility.VB6.IRowsetChange">
+  <TypeSignature Language="C#" Value="public interface IRowsetChange" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRowsetChange" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Compatibility.VB6.IRowsetChange" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("Microsoft.VisualBasic.Compatibility.* classes are obsolete and supported within 32 bit processes only. http://go.microsoft.com/fwlink/?linkid=160862")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("0C733A05-2A1C-11CE-ADE5-00AA0044773D")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>OLE DB の実装を提供<see langword="IRowsetChange" />Visual Basic 6.0 からアップグレードしたアプリケーションで使用するためのインターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DeleteRows">
+      <MemberSignature Language="C#" Value="public void DeleteRows (int hChapterReserved, int cRows, int[] rghRows, out int[] rgRowStatus);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void DeleteRows([in]int32 hChapterReserved, [in]int32 cRows, [in]int32[] rghRows, [out] int32[]&amp; rgRowStatus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowsetChange.DeleteRows(System.Int32,System.Int32,System.Int32[],System.Int32[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hChapterReserved" Type="System.Int32" />
+        <Parameter Name="cRows" Type="System.Int32" />
+        <Parameter Name="rghRows" Type="System.Int32[]" />
+        <Parameter Name="rgRowStatus" Type="System.Int32[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hChapterReserved">チャプター ハンドル。</param>
+        <param name="cRows">削除する行の数。</param>
+        <param name="rghRows">削除する行のハンドルの配列。</param>
+        <param name="rgRowStatus">格納された配列<c>cRows</c>要素で指定された行ごとの状態を示す値を返す<c>rghRows</c>です。</param>
+        <summary>行を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertRow">
+      <MemberSignature Language="C#" Value="public void InsertRow (int hChapterReserved, int hAccessor, IntPtr pData, out int hRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void InsertRow([in]int32 hChapterReserved, [in]int32 hAccessor, [in]native int pData, [out] int32&amp; hRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowsetChange.InsertRow(System.Int32,System.Int32,System.IntPtr,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hChapterReserved" Type="System.Int32" />
+        <Parameter Name="hAccessor" Type="System.Int32" />
+        <Parameter Name="pData" Type="System.IntPtr" />
+        <Parameter Name="hRow" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="hChapterReserved">チャプター ハンドル。</param>
+        <param name="hAccessor">使用するアクセサーのハンドルです。</param>
+        <param name="pData">アクセサー内のバインディングに対応するオフセット位置に、新しいデータ値を含むメモリへのポインター。</param>
+        <param name="hRow">新しい行のハンドルを返すメモリへのポインター。</param>
+        <summary>作成して、新しい行を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetData">
+      <MemberSignature Language="C#" Value="public void SetData (int hRow, int hAccessor, IntPtr pData);" />
+      <MemberSignature Language="ILAsm" Value=".method public newslot virtual instance void SetData([in]int32 hRow, [in]int32 hAccessor, [in]native int pData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Compatibility.VB6.IRowsetChange.SetData(System.Int32,System.Int32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic.Compatibility.Data</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hRow" Type="System.Int32" />
+        <Parameter Name="hAccessor" Type="System.Int32" />
+        <Parameter Name="pData" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hRow">データを設定する対象の行のハンドルです。</param>
+        <param name="hAccessor">使用するアクセサーのハンドルです。</param>
+        <param name="pData">アクセサー内のバインディングに対応するオフセット位置に、新しいデータ値を含むメモリへのポインター。</param>
+        <summary>行の 1 つまたは複数の列のデータ値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[Note_compatibility](~/includes/note-compatibility-md.md)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

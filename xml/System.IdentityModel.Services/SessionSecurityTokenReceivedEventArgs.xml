@@ -1,0 +1,92 @@
+<Type Name="SessionSecurityTokenReceivedEventArgs" FullName="System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs">
+  <TypeSignature Language="C#" Value="public class SessionSecurityTokenReceivedEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionSecurityTokenReceivedEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>内からイベントは、<xref:System.IdentityModel.Services.SessionAuthenticationModule.OnAuthenticateRequest%2A?displayProperty=nameWithType>セッション トークンの後にメソッド (<xref:System.IdentityModel.Tokens.SessionSecurityToken>) セッション cookie から正常に読み取られています。 イベント ハンドラー、パイプラインに沿ってさらに渡されるして、エンティティ (ユーザー) の要求の認証に使用する前に、セッション トークンのプロパティを変更することができます。  
+  
+ を通じてトークンにアクセスすることができます、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.SessionToken%2A>プロパティです。 変更した後、トークン、ことができますを確認することに書き込まれるバックアップ cookie を設定して、<xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie%2A>に`true`です。 最後に、<xref:System.IdentityModel.Services.SessionAuthenticationModule.SessionSecurityTokenReceived>イベントがキャンセル可能なイベント、および設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティ (から継承された<xref:System.ComponentModel.CancelEventArgs>) をさらに、要求の処理を中止します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityTokenReceivedEventArgs (System.IdentityModel.Tokens.SessionSecurityToken sessionToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.#ctor(System.IdentityModel.Tokens.SessionSecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">セッション セキュリティ トークンを受信しました。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SecurityTokenReceivedEventArgs" />を指定したセッション トークンを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.SessionToken%2A>プロパティで指定されたトークンに設定されて、`sessionToken`パラメーター。 <xref:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie%2A> プロパティは `false` に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sessionToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReissueCookie">
+      <MemberSignature Language="C#" Value="public bool ReissueCookie { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReissueCookie" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.ReissueCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答に、セッションの cookie を再発行するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />応答; でセッションの cookie を再発行するにはそれ以外の場合、<see langword="false" />です。 既定値は<see langword="false" />セッションの cookie は応答に再発行されません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SessionSecurityToken SessionToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SessionSecurityToken SessionToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SessionSecurityTokenReceivedEventArgs.SessionToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SessionSecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または受信したセッションのセキュリティ トークンを設定します。</summary>
+        <value>受信したセッション トークンです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

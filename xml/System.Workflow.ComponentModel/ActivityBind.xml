@@ -1,0 +1,369 @@
+<Type Name="ActivityBind" FullName="System.Workflow.ComponentModel.ActivityBind">
+  <TypeSignature Language="C#" Value="public sealed class ActivityBind : System.Workflow.ComponentModel.Serialization.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivityBind extends System.Workflow.ComponentModel.Serialization.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.ActivityBind" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Serialization.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Serialization.BindMarkupExtensionSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ActivityBindTypeConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.ComponentModel.Compiler.ActivityBindValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティのプロパティに、プロパティ、フィールド、インデクサー、メソッド、イベント、他のアクティビティのプロパティをバインドします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.ActivityBind> を使うと、ワークフロー内のアクティビティ間でデータを受け渡しすることができます。 通常であればコードとして記述しなければならないような事項が、<xref:System.Workflow.ComponentModel.ActivityBind> では宣言的に記述できます。したがって、XAML マークアップのみで記述されている多くのワークフローで、重要な役割を果たします。  
+  
+ <xref:System.Workflow.ComponentModel.ActivityBind> は、対象として <xref:System.Workflow.ComponentModel.Activity> メンバーを持つバインド式を表します。 このアクティビティ メンバーは、具体的にはプロパティ、イベント、フィールドのいずれかです。 <xref:System.Workflow.ComponentModel.Activity> のプロパティやメソッドは、<xref:System.Workflow.ComponentModel.ActivityBind> を使って、他の <xref:System.Workflow.ComponentModel.Activity> メンバーにバインドできます。  
+  
+ たとえば activity1 が property1 になんらかの値を設定し、次に activity2 が自分の property1 に Name="activity1"、Path="property1" という指定をした <xref:System.Workflow.ComponentModel.ActivityBind> を設定した場合、activity2.property1 と記述すれば、activity1.property1 の値が得られます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.ActivityBind> を作成、使用する例を以下に示します。  
+  
+ このコード例は、ThrowActivity.cs ファイルから抜粋したスロー アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。 [ThrowActivity アクティビティを使用して](http://msdn.microsoft.com/en-us/82bc0fef-d78a-4750-82b4-e4cb397a10f1)です。  
+  
+ [!code-csharp[WF_Samples#178](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#178)]
+ [!code-vb[WF_Samples#178](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#178)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBind (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.Activity" /> の名前。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> パラメーターを指定して <paramref name="name" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBind (string name, string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.Activity" /> の名前。</param>
+        <param name="path">新しい <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> のパス。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> クラスの新しいインスタンスを初期化します。<paramref name="name" /> と <paramref name="path" /> を引数として指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.ActivityBind> を作成、使用する例を以下に示します。  
+  
+ このコード例は、ThrowActivity.cs ファイルから抜粋したスロー アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。 [ThrowActivity アクティビティを使用して](http://msdn.microsoft.com/en-us/82bc0fef-d78a-4750-82b4-e4cb397a10f1)です。  
+  
+ [!code-csharp[WF_Samples#178](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#178)]
+ [!code-vb[WF_Samples#178](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#178)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetRuntimeValue">
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>バインディングのランタイム値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ランタイム値を返します。  
+  
+> [!CAUTION]
+>  このバインドがメソッドへのバインドの場合、このメソッドが例外をスローし、<xref:System.Workflow.ComponentModel.Compiler.BindValidationContext.TargetType>が指定されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetRuntimeValue">
+      <MemberSignature Language="C#" Value="public object GetRuntimeValue (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetRuntimeValue(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.GetRuntimeValue(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">このバインドを所有している <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <summary>この <see cref="T:System.Object" /> のランタイム値を表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> を取得します。</summary>
+        <returns>この <see cref="T:System.Object" /> のランタイム値を表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeValue">
+      <MemberSignature Language="C#" Value="public object GetRuntimeValue (System.Workflow.ComponentModel.Activity activity, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetRuntimeValue(class System.Workflow.ComponentModel.Activity activity, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.GetRuntimeValue(System.Workflow.ComponentModel.Activity,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="activity">このバインドを所有している <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="targetType"><see cref="T:System.Type" />オブジェクトの場合、<see cref="T:System.Delegate" />以外の場合は null 参照 (<see langword="Nothing" /> Visual Basic で)。 <c>アクティビティ</c>が null です。</param>
+        <summary>この <see cref="T:System.Object" /> のランタイム値を表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> を取得します。</summary>
+        <returns>この <see cref="T:System.Object" /> のランタイム値を表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityBind.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Workflow.ComponentModel.Serialization.ConstructorArgument("name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Activity" /> が表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Activity" /> が表す <see cref="T:System.Workflow.ComponentModel.ActivityBind" /> の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.ActivityBind> を作成、使用し、<xref:System.Workflow.ComponentModel.ActivityBind.Name%2A> を設定する例を以下に示します。  
+  
+ このコード例は、ThrowActivity.cs ファイルから抜粋したスロー アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。 [ThrowActivity アクティビティを使用して](http://msdn.microsoft.com/en-us/82bc0fef-d78a-4750-82b4-e4cb397a10f1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.ReadOnlyException"><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> がデザイン モードでない場合にこの値を設定しようとすると発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityBind.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Workflow.ComponentModel.Design.ActivityBindPathTypeConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象アクティビティのメンバーのパスを取得または設定します。 値の入れ子を表すため、ドット記法を使用できます。 たとえば「A.B.C」と記述すれば、<see cref="T:System.Workflow.ComponentModel.ActivityBind" /> が、対象アクティビティの「A」というフィールドまたはプロパティに属する、「B」というフィールドまたはプロパティの、「C」というフィールドまたはプロパティであることを表します。</summary>
+        <value>選択した <see cref="T:System.Workflow.ComponentModel.Activity" /> のデータ項目のパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  このプロパティは、実行時には設定できません。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.ActivityBind> を作成、使用し、<xref:System.Workflow.ComponentModel.ActivityBind.Name%2A> および <xref:System.Workflow.ComponentModel.ActivityBind.Path%2A> を設定する例を以下に示します。  
+  
+ このコード例は、ThrowActivity.cs ファイルから抜粋したスロー アクティビティの SDK サンプルの一部です。 詳細については、次を参照してください。 [ThrowActivity アクティビティを使用して](http://msdn.microsoft.com/en-us/82bc0fef-d78a-4750-82b4-e4cb397a10f1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.ReadOnlyException"><see cref="T:System.Workflow.ComponentModel.ActivityBind" /> がデザイン モードでない場合にこの値を設定しようとすると発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider"><see cref="T:System.IServiceProvider" />。</param>
+        <summary>このクラスの現在のインスタンスを返します。</summary>
+        <returns>このクラスの現在のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRuntimeValue">
+      <MemberSignature Language="C#" Value="public void SetRuntimeValue (System.Workflow.ComponentModel.Activity activity, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetRuntimeValue(class System.Workflow.ComponentModel.Activity activity, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.SetRuntimeValue(System.Workflow.ComponentModel.Activity,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="activity">このバインドを所有している <see cref="T:System.Workflow.ComponentModel.Activity" />。</param>
+        <param name="value">ランタイム値を設定する <see cref="T:System.Object" />。</param>
+        <summary>ランタイム値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activity" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.ActivityBind.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.ActivityBind.Name" /> および <see cref="P:System.Workflow.ComponentModel.ActivityBind.Path" /> プロパティ文字列を所定の規則で連結したものを返します。</summary>
+        <returns><see cref="P:System.Workflow.ComponentModel.ActivityBind.Name" /> および <see cref="P:System.Workflow.ComponentModel.ActivityBind.Path" /> プロパティ文字列を連結したもの。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserData">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary UserData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary UserData" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.ActivityBind.UserData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスに関連するユーザー データの <see cref="T:System.Collections.IDictionary" /> を取得します。</summary>
+        <value>このインスタンスに関連するユーザー データの <see cref="T:System.Collections.IDictionary" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,133 @@
+<Type Name="ChannelCacheSettings" FullName="System.ServiceModel.Activities.ChannelCacheSettings">
+  <TypeSignature Language="C#" Value="public class ChannelCacheSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelCacheSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.ChannelCacheSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>チャネル キャッシュの操作特性を定義する設定を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.ChannelCacheSettings> インスタンスを作成する方法を示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelCacheSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.ChannelCacheSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activities.ChannelCacheSettings" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.ChannelCacheSettings> インスタンスを作成する方法を示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan IdleTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IdleTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.ChannelCacheSettings.IdleTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュ内のオブジェクトが破棄されるまでアイドル状態を維持できる最大時間を取得します。</summary>
+        <value>時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.ChannelCacheSettings.IdleTimeout%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaseTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan LeaseTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan LeaseTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.ChannelCacheSettings.LeaseTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトがキャッシュから削除されるまでの時間を取得します。</summary>
+        <value>時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.ChannelCacheSettings.LeaseTimeout%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxItemsInCache">
+      <MemberSignature Language="C#" Value="public int MaxItemsInCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxItemsInCache" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュに保持できるオブジェクトの最大数を取得します。</summary>
+        <value>オブジェクトの最大数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.ServiceModel.Activities.ChannelCacheSettings.MaxItemsInCache%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[ChannelCache#0](~/samples/snippets/csharp/VS_Snippets_CFX/channelcache/cs/client.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,152 @@
+<Type Name="KeyReference" FullName="System.Security.Cryptography.Xml.KeyReference">
+  <TypeSignature Language="C#" Value="public sealed class KeyReference : System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit KeyReference extends System.Security.Cryptography.Xml.EncryptedReference" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.KeyReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.EncryptedReference</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="&lt;KeyReference&gt;" /> XML 暗号化に使用される要素。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.KeyReference>クラスを表します、`<KeyReference>`暗号化されたキーの場所に関する情報を含む要素です。  
+  
+ 使用して、`<KeyReference>`要素を指す`<EncryptedKey>`要素の外側で定義されているキーを使用して暗号化された`<EncryptedKey>`要素。 複数回使用することができます`<KeyReference>`要素と複数`<EncryptedKey>`存在する要素は、同じキーを使用して暗号化します。  
+  
+ XPath 変換、圧縮解除変換、または復号化するアプリケーションを支援するドキュメントのストレージ機能から要素を取得する方法に関する情報などの追加情報を含めることができます。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium (W3C) から使用できる XML 暗号化の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.KeyReference> XML ドキュメントの暗号化中にオブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/vb/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Cryptography.Xml.KeyReference" /> XML 暗号化のためのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.KeyReference>を表すクラス、`<KeyReference>`要素。 `<KeyReference>` 要素は、`<ReferenceList>` 要素の子要素です。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium (W3C) から使用できる XML 暗号化の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.KeyReference> XML ドキュメントの暗号化中にオブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyReference (string uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyReference.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">識別子 URI (Uniform Resource) 暗号化されたキーを示すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.KeyReference" />指定された Uniform Resource Identifier () を使用して XML 暗号化のためのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.KeyReference>を表すクラス、`<KeyReference>`要素を指定された Uniform Resource Identifier () を使用します。 URI は、暗号化されたキーの場所を示します。 `<KeyReference>` 要素は、`<ReferenceList>` 要素の子要素です。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium (W3C) から使用できる XML 暗号化の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.KeyReference> XML ドキュメントの暗号化中にオブジェクト。  
+  
+ [!code-csharp[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/cs/sample.cs#1)]
+ [!code-vb[System.Security.Cryptography.Xml.Keyreference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.Keyreference/vb/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyReference (string uri, System.Security.Cryptography.Xml.TransformChain tc);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string uri, class System.Security.Cryptography.Xml.TransformChain tc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.KeyReference.#ctor(System.String,System.Security.Cryptography.Xml.TransformChain)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="uri" Type="System.String" />
+        <Parameter Name="transformChain" Type="System.Security.Cryptography.Xml.TransformChain" />
+      </Parameters>
+      <Docs>
+        <param name="uri">識別子 URI (Uniform Resource) 暗号化されたキーを示すです。</param>
+        <param name="tc">To be added.</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Security.Cryptography.Xml.KeyReference" /> 、指定された Uniform Resource Identifier () を使用した XML 暗号化クラスおよび<see cref="T:System.Security.Cryptography.Xml.TransformChain" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Security.Cryptography.Xml.KeyReference>を表すクラス、`<KeyReference>`要素を指定された (Uniform Resource Identifier) と変換のチェーンを使用します。 URI では、暗号化されたキーと含まれる XPath 変換、圧縮解除変換、またはドキュメント ストレージ機能から、暗号化されたデータを取得する方法に関する情報の変換チェーンの場所を示します。 `<KeyReference>` 要素は、`<ReferenceList>` 要素の子要素です。  
+  
+ XML 暗号化の規格の詳細については、http://www.w3.org/TR/xmlenc-core/ に World Wide Web Consortium (W3C) から使用できる XML 暗号化の仕様を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

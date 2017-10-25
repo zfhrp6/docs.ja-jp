@@ -1,0 +1,608 @@
+<Type Name="ImageList" FullName="System.Windows.Forms.ImageList">
+  <TypeSignature Language="C#" Value="public sealed class ImageList : System.ComponentModel.Component" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImageList extends System.ComponentModel.Component" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ImageList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Images")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer("System.Windows.Forms.Design.ImageListCodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.ComponentModel.Design.Serialization.CodeDomSerializer, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.ImageListDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.ImageListConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コレクションを管理するメソッドを提供<see cref="T:System.Drawing.Image" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ImageList>通常使用して他のコントロールなど、 <xref:System.Windows.Forms.ListView>、 <xref:System.Windows.Forms.TreeView>、または<xref:System.Windows.Forms.ToolBar>です。 ビットマップまたはアイコンを追加することができます、 <xref:System.Windows.Forms.ImageList>、他のコントロールが必要なので、イメージを使用することができます。  
+  
+ <xref:System.Windows.Forms.ImageList>イメージの一覧を管理するのにために、ハンドルを使用します。 <xref:System.Windows.Forms.ImageList.Handle%2A>まで取得などの特定の操作を作成しない、<xref:System.Windows.Forms.ImageList.Handle%2A>呼び出しまたは<xref:System.Windows.Forms.ImageList.Draw%2A>、イメージ リストで実行されます。 設定するなど、他の操作を実行する、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>または<xref:System.Windows.Forms.ImageList.ImageSize%2A>により、<xref:System.Windows.Forms.ImageList.Handle%2A>再作成します。 イメージを追加する前にこれらの操作を実行する必要がありますので、<xref:System.Windows.Forms.ImageList>です。 さらに、ローカライズされるフォームを操作するときは常に追加する、<xref:System.Windows.Forms.ImageList>とイメージ、言語、フォームのプロパティが既定値にします。 アプリケーションのリソース ファイルが破損を追加する前に、フォームの言語を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、選択、削除、およびイメージを表示する方法を示します。  
+  
+ [!code-cpp[Classic ImageList Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ImageList Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ImageList Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ImageList Example/CS/source.cs#1)]
+ [!code-vb[Classic ImageList Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ImageList Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ImageList" />の既定値を持つクラス<see cref="P:System.Windows.Forms.ImageList.ColorDepth" />、 <see cref="P:System.Windows.Forms.ImageList.ImageSize" />、および<see cref="P:System.Windows.Forms.ImageList.TransparentColor" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Windows.Forms.ImageList>です。  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|<xref:System.Windows.Forms.ImageList.ColorDepth%2A>|既定では、.NET Framework version 1.0 で<xref:System.Windows.Forms.ColorDepth.Depth4Bit>です。 .NET Framework version 1.1 以降では、既定値は<xref:System.Windows.Forms.ColorDepth.Depth8Bit>します。|  
+|<xref:System.Windows.Forms.ImageList.ImageSize%2A>|既定値は、 <xref:System.Drawing.Size> 16 で 16 の幅と高さを持つオブジェクト。|  
+|<xref:System.Windows.Forms.ImageList.TransparentColor%2A>|既定値は <xref:System.Drawing.Color.Transparent%2A> です。|  
+  
+   
+  
+## Examples  
+ 構築する次のコード例を示します、 <xref:System.Windows.Forms.ImageList.%23ctor%2A>、画像の追加、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティの設定、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティ、およびを使用して、<xref:System.Windows.Forms.ImageList.Draw%2A>メソッドです。 この例を実行するという名前のボタンを含むフォームに配置`Button1`です。 例では、ことを想定の`FeatherTexture.bmp`と`Gone Fishing.bmp`c:\Windows にある\\です。 ビットマップは、システムに存在しないか、別の場所に存在する場合は、例を適宜変更します。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageList (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container">実装するオブジェクト<see cref="T:System.ComponentModel.IContainer" />のこのインスタンスに関連付ける<see cref="T:System.Windows.Forms.ImageList" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ImageList" />クラス、コンテナーに関連付けることができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ImageList>コンス トラクターは、関連付けることができます、<xref:System.Windows.Forms.ImageList>いずれかを持つ<xref:System.ComponentModel.Container>オブジェクト。 関連付けることにより、<xref:System.Windows.Forms.ImageList>の有効期間の制御を渡す、次のように、<xref:System.Windows.Forms.ImageList>を<xref:System.ComponentModel.Container>です。 これはする、アプリケーションでは多くのコンポーネントを使用していて、それらのすべてを同時に破棄する場合に役立ちます。 関連付ける場合など、 <xref:System.Windows.Forms.ToolTip>、 <xref:System.Windows.Forms.ImageList>、および<xref:System.Windows.Forms.Timer>で、 <xref:System.ComponentModel.Container>、呼び出し元<xref:System.ComponentModel.Container.Dispose%2A>コンテナー上のすべてのコンポーネントも破棄が強制されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorDepth">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ColorDepth ColorDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ColorDepth ColorDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.ColorDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ColorDepth</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ リストの色深度を取得します。</summary>
+        <value>イメージに使用できる色の数。 既定では、.NET Framework version 1.0 で<see cref="F:System.Windows.Forms.ColorDepth.Depth4Bit" />です。 .NET Framework version 1.1 以降では、既定値は<see cref="F:System.Windows.Forms.ColorDepth.Depth8Bit" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色深度を新しい値に設定すると、<xref:System.Windows.Forms.ImageList.Handle%2A>イメージのリストが再作成されます。 設定するため、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>プロパティにより、ハンドルを再作成するのには、設定する必要があります<xref:System.Windows.Forms.ImageList.ColorDepth%2A>設定する前に、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティです。 ときのためのハンドル、<xref:System.Windows.Forms.ImageList>が作成されたら、設定、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>または<xref:System.Windows.Forms.ImageList.ImageSize%2A>設定後のコードでのプロパティ、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティに設定されている画像のコレクションを発生、<xref:System.Windows.Forms.ImageList.Images%2A>を削除するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">色深度が有効ではありません<see cref="T:System.Windows.Forms.ColorDepth" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public void Draw (System.Drawing.Graphics g, System.Drawing.Point pt, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Draw(class System.Drawing.Graphics g, valuetype System.Drawing.Point pt, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.Draw(System.Drawing.Graphics,System.Drawing.Point,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="pt">によって定義された場所、<see cref="T:System.Drawing.Point" />イメージを描画する位置を示すです。</param>
+        <param name="index">内のイメージのインデックス、<see cref="T:System.Windows.Forms.ImageList" />を描画します。</param>
+        <summary>指定した指定されたインデックスで示されているイメージを描画<see cref="T:System.Drawing.Graphics" />指定された場所にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 構築する次のコード例を示します、 <xref:System.Windows.Forms.ImageList.%23ctor%2A>、画像の追加、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティの設定、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティ、およびを使用して、<xref:System.Windows.Forms.ImageList.Draw%2A>メソッドです。 この例を実行するという名前のボタンを含むフォームに配置`Button1`です。 例では、ことを想定の`FeatherTexture.bmp`と`Gone Fishing.bmp`c:\Windows にある\\です。 ビットマップは、システムに存在しないか、別の場所に存在する場合は、例を適宜変更します。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが 0 未満です。  
+  
+ または  
+  
+ インデックスがイメージ リスト内のイメージの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public void Draw (System.Drawing.Graphics g, int x, int y, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Draw(class System.Drawing.Graphics g, int32 x, int32 y, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">イメージを描画する位置を示す水平位置。</param>
+        <param name="y">イメージを描画する位置を示す垂直位置。</param>
+        <param name="index">内のイメージのインデックス、<see cref="T:System.Windows.Forms.ImageList" />を描画します。</param>
+        <summary>指定した特定のインデックスによって示されたイメージを描画<see cref="T:System.Drawing.Graphics" />指定された位置。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが 0 未満です。  
+  
+ または  
+  
+ インデックスがイメージ リスト内のイメージの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Draw">
+      <MemberSignature Language="C#" Value="public void Draw (System.Drawing.Graphics g, int x, int y, int width, int height, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Draw(class System.Drawing.Graphics g, int32 x, int32 y, int32 width, int32 height, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.Draw(System.Drawing.Graphics,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />に描画します。</param>
+        <param name="x">イメージを描画する位置を示す水平位置。</param>
+        <param name="y">イメージを描画する位置を示す垂直位置。</param>
+        <param name="width">コピー先の画像のピクセル単位の幅。</param>
+        <param name="height">コピー先の画像のピクセル単位の高さ。</param>
+        <param name="index">内のイメージのインデックス、<see cref="T:System.Windows.Forms.ImageList" />を描画します。</param>
+        <summary>指定した特定のインデックスによって示されたイメージを描画<see cref="T:System.Drawing.Graphics" />指定した位置とサイズを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージを拡大または指定された領域に合わせて必要に応じて圧縮します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが 0 未満です。  
+  
+ または  
+  
+ インデックスがイメージ リスト内のイメージの数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イメージ リスト オブジェクトのハンドルを取得します。</summary>
+        <value>イメージ リストのハンドルです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、Win32 HIMAGELIST ハンドルに対応します。 ハンドルが作成されるを使用する必要があります。 作成すると、ハンドルの取得されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ためのハンドルを作成する、<see cref="T:System.Windows.Forms.ImageList" />できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HandleCreated">
+      <MemberSignature Language="C#" Value="public bool HandleCreated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandleCreated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.HandleCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる Win32 ハンドルが作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Forms.ImageList.Handle" />が作成された、それ以外のされて<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Images">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImageList.ImageCollection Images { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ImageList/ImageCollection Images" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.Images" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageList+ImageCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ImageList.ImageCollection" />このイメージ リスト。</summary>
+        <value>イメージのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 画像コレクションが作成されていない場合は、このプロパティを取得するときに作成されます。  
+  
+   
+  
+## Examples  
+ 構築する次のコード例を示します、 <xref:System.Windows.Forms.ImageList.%23ctor%2A>、画像の追加、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティの設定、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティ、およびを使用して、<xref:System.Windows.Forms.ImageList.Draw%2A>メソッドです。 この例を実行するという名前のボタンを含むフォームに配置`Button1`です。 例では、ことを想定の`FeatherTexture.bmp`と`Gone Fishing.bmp`c:\Windows にある\\です。 ビットマップは、システムに存在しないか、別の場所に存在する場合は、例を適宜変更します。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageSize">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size ImageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ImageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.ImageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージ リストには、イメージのサイズを設定します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> (ピクセル単位)、リストのイメージの高さと幅を定義します。 既定値は 16 × 16 です。 最大サイズは 256 で 256 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.ImageList.ImageSize%2A>イメージをイメージのコレクションに追加する前にプロパティが指定されたイメージのサイズを変更する場合にイメージをによりします。  
+  
+ 設定すると、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティ、新しい値を<xref:System.Windows.Forms.ImageList.Handle%2A>イメージのリストが再作成されます。  
+  
+ 設定するため、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティにより、ハンドルを再作成するのには、設定する必要があります<xref:System.Windows.Forms.ImageList.ImageSize%2A>設定する前に、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティです。 ときのためのハンドル、<xref:System.Windows.Forms.ImageList>が作成されたら、設定、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>または<xref:System.Windows.Forms.ImageList.ImageSize%2A>設定後のコードでのプロパティ、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティに設定されている画像のコレクションを発生、<xref:System.Windows.Forms.ImageList.Images%2A>を削除するプロパティです。  
+  
+   
+  
+## Examples  
+ 構築する次のコード例を示します、 <xref:System.Windows.Forms.ImageList.%23ctor%2A>、画像の追加、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティの設定、<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティ、およびを使用して、<xref:System.Windows.Forms.ImageList.Draw%2A>メソッドです。 この例を実行するという名前のボタンを含むフォームに配置`Button1`です。 例では、ことを想定の`FeatherTexture.bmp`と`Gone Fishing.bmp`c:\Windows にある\\です。 ビットマップは、システムに存在しないか、別の場所に存在する場合は、例を適宜変更します。  
+  
+ [!code-cpp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HelpProviderAndImageListExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HelpProviderAndImageListExample/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値と等しい<see cref="P:System.Drawing.Size.IsEmpty" />です。  
+  
+ または  
+  
+ 高さまたは幅の値を 0 に等しいまたはそれよりも小さいです。  
+  
+ または  
+  
+ 高さまたは幅の値は、256 を超えています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">新しいサイズは、0 より小さいか、256 より大きいディメンションがします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageStream">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ImageListStreamer ImageStream { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ImageListStreamer ImageStream" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.ImageStream" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageListStreamer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.ImageListStreamer" />このイメージ リストに関連付けられています。</summary>
+        <value>
+          <see langword="null" />イメージ リストが空である場合それ以外の場合、<see cref="T:System.Windows.Forms.ImageListStreamer" />この<see cref="T:System.Windows.Forms.ImageList" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ImageListStreamer>はイメージ リストのデータ部分。 常に追加する必要があるローカライズされるフォームを操作するときに、<xref:System.Windows.Forms.ImageList>とイメージ、言語、フォームのプロパティが既定値にします。 イメージがイメージ ストリームは破損を追加する前に、フォームの言語を変更します。  
+  
+ 別のインスタンスにこのハンドルを渡すことができます、<xref:System.Windows.Forms.ImageList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecreateHandle">
+      <MemberSignature Language="C#" Value="public event EventHandler RecreateHandle;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RecreateHandle" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ImageList.RecreateHandle" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.ImageList.Handle" />が再作成されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、特別な処理を行うにはこのイベントを使用することができます、<xref:System.Windows.Forms.ImageList.Handle%2A>を変更するなどの操作を再作成、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>または<xref:System.Windows.Forms.ImageList.ImageSize%2A>です。 設定するために特別な処理が必要な可能性があります、<xref:System.Windows.Forms.ImageList.ColorDepth%2A>または<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティを設定した後、<xref:System.Windows.Forms.ImageList.Images%2A>プロパティにより、ハンドルを再作成して、イメージが破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ImageList.RecreateHandle>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ImageList>という`ImageList1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ImageList.RecreateHandle>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#160](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#160)]
+ [!code-vb[System.Windows.Forms.EventExamples#160](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#160)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関するその他のデータを格納するオブジェクト、<see cref="T:System.Windows.Forms.ImageList" />です。</summary>
+        <value><see cref="T:System.Object" />に関する追加データを格納、<see cref="T:System.Windows.Forms.ImageList" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImageList.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Forms.ImageList" /> を表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.ImageList" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ImageList.ToString%2A>メソッドを含む文字列を返します、<xref:System.Windows.Forms.ImageList.ImageCollection.Count%2A>と<xref:System.Windows.Forms.ImageList.ImageSize%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color TransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color TransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ImageList.TransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または透明として処理する色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値のいずれか。 既定値は、<see langword="Transparent" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージが描画されると、透明色はレンダリングされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

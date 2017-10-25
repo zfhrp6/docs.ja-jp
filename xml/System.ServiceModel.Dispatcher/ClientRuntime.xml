@@ -1,0 +1,606 @@
+<Type Name="ClientRuntime" FullName="System.ServiceModel.Dispatcher.ClientRuntime">
+  <TypeSignature Language="C#" Value="public sealed class ClientRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClientRuntime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.ClientRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.ClientRuntimeCompatBase</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="xamarinandroid-7.1">System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント アプリケーションによって処理されるすべてのメッセージ用の Windows Communication Foundation (WCF) クライアント オブジェクトの機能を拡張するクラスの挿入ポイントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] クライアント オブジェクトは、<xref:System.ServiceModel.ClientBase%601> の拡張であるか、<xref:System.ServiceModel.IClientChannel> の拡張であるかに関係なく、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] クライアント アプリケーションによって使用され、メソッド呼び出しを送信メッセージに変換したり、受信メッセージをオブジェクトに変換して、実行結果としてクライアント メソッドに渡したりします。  
+  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime> クラスは、メッセージを途中受信したり、すべての操作についてクライアントの動作を拡張したりする拡張オブジェクトを追加できる、拡張ポイントです。 途中受信オブジェクトには、特定のコントラクト内のすべてのメッセージを処理する、特定の操作用のメッセージだけを処理する、カスタムのチャネル初期化を実行する、その他のカスタム クライアント アプリケーションの動作を実行する、などの機能があります。 クライアント アーキテクチャの概要については、次を参照してください。 [WCF クライアント アーキテクチャ](~/docs/framework/wcf/feature-details/client-architecture.md)です。 クライアントのプログラミングの詳細については、次を参照してください。[にアクセスするサービスの WCF クライアントを使用して](~/docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。 カスタマイズとその実行方法に関する詳細については、「[を拡張するクライアント](~/docs/framework/wcf/extending/extending-clients.md)です。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A> プロパティは、サービス側開始のコールバック操作用のディスパッチ ランタイム オブジェクトを返します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.OperationSelector%2A> プロパティは、クライアント メッセージのルーティングを制御するためのカスタム操作セレクター オブジェクトを受け取ります。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ChannelInitializers%2A> プロパティを使用すると、クライアント チャネルを検査または変更できるチャネル初期化子を追加できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.InteractiveChannelInitializers%2A> プロパティを使用すると、チャネルを開く前にユーザーが資格情報を選択できるプロンプトを表示できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> プロパティは、<xref:System.ServiceModel.Dispatcher.ClientOperation> オブジェクトのコレクションを取得します。このコレクションにカスタムのメッセージ インターセプターを追加すれば、その操作のメッセージに固有の機能を提供できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing%2A> プロパティをアプリケーションで使用すると、自動アドレス指定ヘッダーをオフにしてアドレス指定を直接制御できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.MaxFaultSize%2A> プロパティを使用すると、クライアントは、受け取るエラー メッセージのサイズを制限できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> プロパティは、<xref:System.ServiceModel.Dispatcher.IClientMessageInspector> オブジェクトのコレクションを取得します。このコレクションには、クライアント経由のすべてのメッセージに対応するカスタム メッセージ インターセプターを追加できます。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.UnhandledClientOperation%2A> プロパティは、予期しないメッセージが渡された操作を返します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ValidateMustUnderstand%2A> プロパティは、`MustUnderstand` としてマークされた SOAP ヘッダーが間違いなく理解されたことを確認する必要があるかどうかをシステムに通知します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.Via%2A> プロパティは、トランスポート レベルでメッセージの送信先の値を設定して、メッセージの中継者やその他のシナリオをサポートします。  
+  
+ また、クライアント コントラクト情報を取得するその他のプロパティも多数用意されています。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ContractName%2A>  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ContractNamespace%2A>  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.ContractClientType%2A>  
+  
+ クライアントが双方向クライアントの場合は、次のプロパティもクライアント コールバックの型とランタイムを取得します。  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackClientType%2A>  
+  
+-   <xref:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime%2A>  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> は <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> を <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> プロパティに追加することで、クライアント ランタイムに挿入しています。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ つぎのコード例では、エンドポイントの動作をクライアント エンドポイントに読み込む構成ファイルを示します。  
+  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CallbackClientType">
+      <MemberSignature Language="C#" Value="public Type CallbackClientType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CallbackClientType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.CallbackClientType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>双方向クライアントに関連付けられたコールバック コントラクトの型を取得または設定します。</summary>
+        <value>双方向クライアントに関連付けられたコールバック コントラクトを表す <see cref="T:System.Type" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallbackDispatchRuntime">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.DispatchRuntime CallbackDispatchRuntime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.DispatchRuntime CallbackDispatchRuntime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.CallbackDispatchRuntime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.DispatchRuntime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが開始した操作をディスパッチするディスパッチ ランタイムを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.DispatchRuntime" /> オブジェクト。 コントラクトが双方向コントラクトの場合は、ディスパッチ動作にサービス側開始の操作が含まれます。そうでない場合、ディスパッチ動作には何の操作も含まれません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelInitializers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IChannelInitializer&gt; ChannelInitializers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ChannelInitializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IChannelInitializer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントに関連付けられたチャネルをカスタマイズするために使用されるチャネル初期化子オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IChannelInitializer" /> の実装のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.ChannelInitializers%2A> プロパティを使用してカスタムの <xref:System.ServiceModel.Dispatcher.IChannelInitializer> オブジェクトを追加します。このオブジェクトには、作成時にクライアントに関連付けられたチャネルを検査する、チャネル上で発生するイベントを登録する、<xref:System.ServiceModel.IExtension%601> を使用してチャネルに状態を関連付ける、などの機能があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientMessageInspectors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt; ClientMessageInspectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.IClientMessageInspector&gt; ClientMessageInspectors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ClientMessageInspectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のサービス操作のメッセージを表示または変更に使用されるメッセージ インスペクターのオブジェクトのコレクションを取得します。</summary>
+        <value>特定のサービス操作のメッセージを表示または変更に使用されるメッセージ インスペクターのオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ClientMessateInspectors は、スレッド セーフであるコレクションです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientOperations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.ClientOperation&gt; ClientOperations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class System.ServiceModel.Dispatcher.ClientOperation&gt; ClientOperations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ClientOperations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.ServiceModel.Dispatcher.ClientOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検査またはメッセージと特定のサービス操作の動作を変更する、拡張オブジェクトをアタッチするために使用クライアント操作のオブジェクトのコレクションを取得します。</summary>
+        <value>検査またはメッセージと特定のサービス操作の動作を変更する、拡張オブジェクトをアタッチするために使用クライアント操作のオブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ClientOperations は、スレッド セーフであるコレクションです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractClientType">
+      <MemberSignature Language="C#" Value="public Type ContractClientType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContractClientType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractClientType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントに関連付けられているコントラクトの型を設定します。</summary>
+        <value>このクライアントに関連付けられたコントラクトを表す <see cref="T:System.Type" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractName">
+      <MemberSignature Language="C#" Value="public string ContractName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントに関連付けられているコントラクトの名前を取得します。</summary>
+        <value>クライアントのコントラクト名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContractNamespace">
+      <MemberSignature Language="C#" Value="public string ContractNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContractNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ContractNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントに関連付けられているコントラクトの名前空間を取得します。</summary>
+        <value>クライアントに関連付けられているコントラクトの名前空間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InteractiveChannelInitializers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt; InteractiveChannelInitializers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt; InteractiveChannelInitializers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.InteractiveChannelInitializers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IInteractiveChannelInitializer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対話型チャネル初期化子のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IInteractiveChannelInitializer" /> 型の同期されたコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対話型チャネル初期化子を使用する方法の詳細については、次を参照してください。[にアクセスするサービスの WCF クライアントを使用して](~/docs/framework/wcf/feature-details/accessing-services-using-a-client.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対話型チャネル初期化子を挿入するエンドポイントの動作の使用を示します。  
+  
+ [!code-csharp[IInteractiveChannelInitializer#10](~/samples/snippets/csharp/VS_Snippets_CFX/iinteractivechannelinitializer/cs/insertingbehaviors.cs#10)]
+ [!code-vb[IInteractiveChannelInitializer#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/iinteractivechannelinitializer/vb/insertingbehaviors.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManualAddressing">
+      <MemberSignature Language="C#" Value="public bool ManualAddressing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ManualAddressing" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントがアドレス指定ヘッダーを要求/応答メッセージに追加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          クライアントがアドレス指定ヘッダーを追加しない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントが、要求/応答メッセージに、メッセージ ID と Reply-To アドレス指定ヘッダーを追加するのを禁止して、アプリケーションがこれらのヘッダーを制御できるようにする場合は、<xref:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing%2A> プロパティを `true` に設定します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.ClientRuntime.ManualAddressing%2A> が `true` の場合、クライアントは双方向チャネル上での要求/応答操作をサポートしません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxFaultSize">
+      <MemberSignature Language="C#" Value="public int MaxFaultSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxFaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MaxFaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大エラー サイズを取得または設定します。</summary>
+        <value>最大エラー サイズを表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.MaxFaultSize%2A> プロパティを使用すると、クライアント ランタイムが受け取るエラー メッセージのサイズを制限できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageInspectors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt; MessageInspectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedCollection`1&lt;class System.ServiceModel.Dispatcher.IClientMessageInspector&gt; MessageInspectors" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedCollection&lt;System.ServiceModel.Dispatcher.IClientMessageInspector&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントのメッセージ インスペクターの実装のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IClientMessageInspector" /> の実装のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> プロパティを使用して、クライアントを通過するすべてのメッセージを検査または変更するカスタムの <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> の実装を結び付けます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> は <xref:System.ServiceModel.Dispatcher.IClientMessageInspector?displayProperty=nameWithType> を <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> プロパティに追加することで、クライアント ランタイムに挿入しています。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ つぎのコード例では、エンドポイントの動作をクライアント エンドポイントに読み込む構成ファイルを示します。  
+  
+ [!code-xml[Interceptors#3](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/client.exe.config#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageVersionNoneFaultsEnabled">
+      <MemberSignature Language="C#" Value="public bool MessageVersionNoneFaultsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MessageVersionNoneFaultsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.MessageVersionNoneFaultsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または MessageVersionNoneFaultsEnabled プロパティが設定されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />MessageVersionNoneFaultsEnabled プロパティが設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operations">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.SynchronizedKeyedCollection&lt;string,System.ServiceModel.Dispatcher.ClientOperation&gt; Operations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.SynchronizedKeyedCollection`2&lt;string, class System.ServiceModel.Dispatcher.ClientOperation&gt; Operations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.Operations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.SynchronizedKeyedCollection&lt;System.String,System.ServiceModel.Dispatcher.ClientOperation&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントに対するクライアント操作のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.ClientOperation" /> オブジェクトの同期されたコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> プロパティを使用して、このクライアントのすべてのクライアント操作のコレクションを取得します。このコレクションには、特定の操作スコープに限定されたメッセージおよび動作を検査または変更するための拡張オブジェクトを結び付けることができます。 詳細については、「<xref:System.ServiceModel.Dispatcher.ClientOperation>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.Description.IEndpointBehavior?displayProperty=nameWithType> は <xref:System.ServiceModel.Dispatcher.IParameterInspector?displayProperty=nameWithType> を <xref:System.ServiceModel.Dispatcher.ClientOperation> プロパティの各 <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> に追加することで、クライアント ランタイムに挿入しています。  
+  
+ [!code-csharp[Interceptors#2](~/samples/snippets/csharp/VS_Snippets_CFX/interceptors/cs/insertingbehaviors.cs#2)]
+ [!code-vb[Interceptors#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/interceptors/vb/insertingbehaviors.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationSelector">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.IClientOperationSelector OperationSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.IClientOperationSelector OperationSelector" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.OperationSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IClientOperationSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.ServiceModel.Dispatcher.IClientOperationSelector" />選択に使用できる実装、<see cref="T:System.ServiceModel.Dispatcher.ClientOperation" />です。</summary>
+        <value><see cref="T:System.ServiceModel.Dispatcher.IClientOperationSelector" /> を選択する <see cref="T:System.ServiceModel.Dispatcher.ClientOperation" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.OperationSelector%2A> プロパティを使用して、クライアントが特定のメソッドを呼び出すときに選択する操作を変更します。 既定のアルゴリズムは、操作メソッドの <xref:System.ServiceModel.OperationContractAttribute.Name%2A> の名前をキーとして使用し、<xref:System.ServiceModel.Dispatcher.ClientOperation> コレクション内で <xref:System.ServiceModel.Dispatcher.ClientRuntime.Operations%2A> を検索します。 一致する <xref:System.ServiceModel.Dispatcher.ClientOperation> オブジェクトが見つからない場合、呼び出しは <xref:System.ServiceModel.Dispatcher.ClientOperation> プロパティから返された <xref:System.ServiceModel.Dispatcher.ClientRuntime.UnhandledClientOperation%2A> オブジェクトにディスパッチされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledClientOperation">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Dispatcher.ClientOperation UnhandledClientOperation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Dispatcher.ClientOperation UnhandledClientOperation" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.UnhandledClientOperation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.ClientOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ない、対応するメソッドに対してクライアント操作を取得<see cref="T:System.ServiceModel.Dispatcher.ClientOperation" />で、<see cref="P:System.ServiceModel.Dispatcher.ClientRuntime.Operations" />コレクション。</summary>
+        <value>操作セレクターがメッセージに一致する操作を見つけられないときに、現在のメッセージの内容のルーティング先メソッドを表す <see cref="T:System.ServiceModel.Dispatcher.ClientOperation" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateMustUnderstand">
+      <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.ValidateMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムまたはアプリケーションで SOAP <see langword="MustUnderstand" /> ヘッダー処理を強制的に行うかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          システムが SOAP ヘッダー <see langword="true" /> 処理を実行する場合は <see langword="MustUnderstand" />、それ以外の場合は <see langword="false" />、つまり、アプリケーションがこの処理を実行することを示します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.ClientRuntime.ValidateMustUnderstand%2A> プロパティを使用して、到達したメッセージ ヘッダーの検証の実施をオフにします。 通常の実行では、メッセージ ヘッダーを <xref:System.ServiceModel.Channels.MessageHeaders.UnderstoodHeaders%2A> プロパティと比較し、到着したヘッダーがサービスによって明示的に処理されることを確認します。 この確認を無効にするには、このプロパティを `false` に設定します。 `false` に設定すると、アプリケーションは、MustUnderstand="true" とマークされたヘッダーがないか確認し、1 つ以上のヘッダーが理解されなかった場合は、エラーを返す必要があります。 これは、アプリケーションが返される SOAP メッセージをすべて受け入れ (型指定のあるメッセージとないメッセージを使用する場合など)、カスタム ヘッダー処理を行うことになっている場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Via">
+      <MemberSignature Language="C#" Value="public Uri Via { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Via" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Dispatcher.ClientRuntime.Via" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントを通してメッセージを送信するために使用するトランスポート アドレスを取得または設定します。</summary>
+        <value>トランスポートの送信先アドレスを表す <see cref="T:System.Uri" />。 既定値は、クライアントの <see cref="P:System.ServiceModel.EndpointAddress.Uri" /> 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージの直接の送信先がクライアントの <xref:System.ServiceModel.Dispatcher.ClientRuntime.Via%2A> ではないときは、メッセージのトランスポート アドレスを指定する <xref:System.ServiceModel.EndpointAddress.Uri%2A> プロパティを設定します。 これにより、SOAP 中継局の指定が可能となり、クライアントの <xref:System.ServiceModel.EndpointAddress.Uri%2A> プロパティの値が論理名であるケースに対応できます。  
+  
+ <xref:System.ServiceModel.Description.ClientViaBehavior?displayProperty=nameWithType> が構成ファイルから設定するのは、この値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

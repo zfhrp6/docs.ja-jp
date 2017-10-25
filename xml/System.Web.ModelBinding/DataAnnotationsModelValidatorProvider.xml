@@ -1,0 +1,270 @@
+<Type Name="DataAnnotationsModelValidatorProvider" FullName="System.Web.ModelBinding.DataAnnotationsModelValidatorProvider">
+  <TypeSignature Language="C#" Value="public class DataAnnotationsModelValidatorProvider : System.Web.ModelBinding.AssociatedValidatorProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataAnnotationsModelValidatorProvider extends System.Web.ModelBinding.AssociatedValidatorProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.ModelBinding.AssociatedValidatorProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>既定の検証コントロール プロバイダーを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの実装は、<xref:System.Web.ModelBinding.ModelValidatorProvider>から派生する属性の検証コントロールを提供する<xref:System.ComponentModel.DataAnnotations.ValidationAttribute>です。 提供の検証コントロールの種類を実装する<xref:System.ComponentModel.DataAnnotations.IValidatableObject>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataAnnotationsModelValidatorProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddImplicitRequiredAttributeForValueTypes">
+      <MemberSignature Language="C#" Value="public static bool AddImplicitRequiredAttributeForValueTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AddImplicitRequiredAttributeForValueTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.AddImplicitRequiredAttributeForValueTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または null 非許容の値の型が必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />null 非許容の値の型が必要な場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidators">
+      <MemberSignature Language="C#" Value="protected override System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidator&gt; GetValidators (System.Web.ModelBinding.ModelMetadata metadata, System.Web.ModelBinding.ModelBindingExecutionContext context, System.Collections.Generic.IEnumerable&lt;Attribute&gt; attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.ModelBinding.ModelValidator&gt; GetValidators(class System.Web.ModelBinding.ModelMetadata metadata, class System.Web.ModelBinding.ModelBindingExecutionContext context, class System.Collections.Generic.IEnumerable`1&lt;class System.Attribute&gt; attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.GetValidators(System.Web.ModelBinding.ModelMetadata,System.Web.ModelBinding.ModelBindingExecutionContext,System.Collections.Generic.IEnumerable{System.Attribute})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidator&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadata" Type="System.Web.ModelBinding.ModelMetadata" />
+        <Parameter Name="context" Type="System.Web.ModelBinding.ModelBindingExecutionContext" />
+        <Parameter Name="attributes" Type="System.Collections.Generic.IEnumerable&lt;System.Attribute&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="metadata">メタデータ。</param>
+        <param name="context">実行コンテキスト。</param>
+        <param name="attributes">検証の属性です。</param>
+        <summary>モデルの検証コントロールのコレクションを取得します。</summary>
+        <returns>検証コントロールのコレクションです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAdapter">
+      <MemberSignature Language="C#" Value="public static void RegisterAdapter (Type attributeType, Type adapterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterAdapter(class System.Type attributeType, class System.Type adapterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterAdapter(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="adapterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">検証属性の種類。</param>
+        <param name="adapterType">アダプターの型。</param>
+        <summary>クライアント側検証用のアダプターを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAdapterFactory">
+      <MemberSignature Language="C#" Value="public static void RegisterAdapterFactory (Type attributeType, System.Web.ModelBinding.DataAnnotationsModelValidationFactory factory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterAdapterFactory(class System.Type attributeType, class System.Web.ModelBinding.DataAnnotationsModelValidationFactory factory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterAdapterFactory(System.Type,System.Web.ModelBinding.DataAnnotationsModelValidationFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeType" Type="System.Type" />
+        <Parameter Name="factory" Type="System.Web.ModelBinding.DataAnnotationsModelValidationFactory" />
+      </Parameters>
+      <Docs>
+        <param name="attributeType">属性の型。</param>
+        <param name="factory">指定した属性の検証コントロール オブジェクトの作成に使用されるファクトリ。</param>
+        <summary>検証プロバイダー用のアダプター ファクトリを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDefaultAdapter">
+      <MemberSignature Language="C#" Value="public static void RegisterDefaultAdapter (Type adapterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterDefaultAdapter(class System.Type adapterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapter(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="adapterType">アダプターの型。</param>
+        <summary>既定のアダプターを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDefaultAdapterFactory">
+      <MemberSignature Language="C#" Value="public static void RegisterDefaultAdapterFactory (System.Web.ModelBinding.DataAnnotationsModelValidationFactory factory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterDefaultAdapterFactory(class System.Web.ModelBinding.DataAnnotationsModelValidationFactory factory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterDefaultAdapterFactory(System.Web.ModelBinding.DataAnnotationsModelValidationFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="factory" Type="System.Web.ModelBinding.DataAnnotationsModelValidationFactory" />
+      </Parameters>
+      <Docs>
+        <param name="factory">既定のアダプターの検証コントロール オブジェクトの作成に使用されるファクトリ。</param>
+        <summary>既定のアダプター ファクトリを登録します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDefaultValidatableObjectAdapter">
+      <MemberSignature Language="C#" Value="public static void RegisterDefaultValidatableObjectAdapter (Type adapterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterDefaultValidatableObjectAdapter(class System.Type adapterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapter(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="adapterType">アダプターの型。</param>
+        <summary>既定のオブジェクト検証用のアダプターを登録します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">アダプターの種類には、型が 2 つのパラメーターを受け取るパブリック コンス トラクターはありません。<see cref="T:System.Web.ModelBinding.ModelMetadata" />と<see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterDefaultValidatableObjectAdapterFactory">
+      <MemberSignature Language="C#" Value="public static void RegisterDefaultValidatableObjectAdapterFactory (System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory factory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterDefaultValidatableObjectAdapterFactory(class System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory factory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterDefaultValidatableObjectAdapterFactory(System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="factory" Type="System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory" />
+      </Parameters>
+      <Docs>
+        <param name="factory">ファクトリ。</param>
+        <summary>既定のオブジェクト検証プロバイダー用のアダプター ファクトリを登録します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="factory" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterValidatableObjectAdapter">
+      <MemberSignature Language="C#" Value="public static void RegisterValidatableObjectAdapter (Type modelType, Type adapterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterValidatableObjectAdapter(class System.Type modelType, class System.Type adapterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapter(System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="adapterType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="modelType">モデルの型。</param>
+        <param name="adapterType">アダプターの型。</param>
+        <summary>オブジェクトの検証用のアダプターを登録します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="adapterType" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">アダプターの種類には、型指定された 2 つのパラメーターを受け取るパブリック コンス トラクターはありません。<see cref="T:System.Web.ModelBinding.ModelMetadata" />と<see cref="T:System.Web.ModelBinding.ModelBindingExecutionContext" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterValidatableObjectAdapterFactory">
+      <MemberSignature Language="C#" Value="public static void RegisterValidatableObjectAdapterFactory (Type modelType, System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory factory);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterValidatableObjectAdapterFactory(class System.Type modelType, class System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory factory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.DataAnnotationsModelValidatorProvider.RegisterValidatableObjectAdapterFactory(System.Type,System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="factory" Type="System.Web.ModelBinding.DataAnnotationsValidatableObjectAdapterFactory" />
+      </Parameters>
+      <Docs>
+        <param name="modelType">モデルの型。</param>
+        <param name="factory">ファクトリ。</param>
+        <summary>オブジェクト検証プロバイダー用のアダプター ファクトリを登録します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="factory" /> パラメーターまたは <paramref name="type" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">モデルの型を実装しません、<see cref="T:System.ComponentModel.DataAnnotations.IValidatableObject" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,82 @@
+<Type Name="IInvokeProvider" FullName="System.Windows.Automation.Provider.IInvokeProvider">
+  <TypeSignature Language="C#" Value="public interface IInvokeProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInvokeProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IInvokeProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("54fcb24b-e18e-47a2-b4d3-eccbe77599a2")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>明確な 1 つのアクションを開始または実行し、アクティブになったときの状態を保持しないコントロールへの UI オートメーション クライアント アクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.InvokePattern>コントロール パターン。  
+  
+ 別のコントロール パターン プロバイダーを通じて同じ動作が公開されていない場合、コントロールは <xref:System.Windows.Automation.Provider.IInvokeProvider> を実装します。 たとえば、コントロールの <xref:System.Windows.Automation.InvokePattern.Invoke%2A> メソッドが <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> メソッドまたは <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> メソッドと同じ処理を実行する場合、コントロールに <xref:System.Windows.Automation.Provider.IInvokeProvider>を実装しないようにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public void Invoke ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Invoke() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.IInvokeProvider.Invoke" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を送信してコントロールをアクティブ化し、その 1 つの明確なアクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> は非同期呼び出しであるため、クライアントをブロックせずに即座に戻る必要があります。  
+  
+> [!NOTE]
+>  呼び出されたときにモーダル ダイアログを直接的または間接的に表示するコントロールでは、この動作は特に重要です。 イベントを発生させたすべての UI オートメーション クライアントは、モーダル ダイアログが閉じられるまで、ブロックされたままになります。  
+  
+ <xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> は、<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> イベントを発生させます。 可能であれば、コントロールに関連付けられたアクションが完了した後は、イベントを発生させる必要があります。  
+  
+ <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>処理する前に発生させるか、<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>次のシナリオで要求。  
+  
+-   処理が完了するまで待機することが不可能または非現実的である。  
+  
+-   処理にユーザー操作が必要になる。  
+  
+-   アクションは、時間がかかるうえ、呼び出し元のクライアントをブロック時間の大幅な長さになります。  
+  
+   
+  
+## Examples  
+ 次の例では、実装、<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>コントロールの MouseDown イベント ハンドラー メソッドにします。 あると想定`providerControl`メンバー変数クラスの構築時に初期化されたを指定します。  
+  
+ [!code-csharp[UIAProvider_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAProvider_snip/CSharp/Invoker.cs#106)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.Automation.ElementNotEnabledException">コントロールが有効でない場合。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

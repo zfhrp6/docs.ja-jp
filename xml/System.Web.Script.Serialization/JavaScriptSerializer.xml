@@ -1,0 +1,628 @@
+<Type Name="JavaScriptSerializer" FullName="System.Web.Script.Serialization.JavaScriptSerializer">
+  <TypeSignature Language="C#" Value="public class JavaScriptSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit JavaScriptSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Serialization.JavaScriptSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>[Json.NET](http://www.newtonsoft.com/json)に使用されるシリアル化および逆シリアル化する必要があります。 AJAX 対応アプリケーションにシリアル化および逆シリアル化の機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer>クラス、非同期通信レイヤーによってシリアル化し、ブラウザーと Web サーバー間で渡されるデータを逆シリアル化は内部的に使用します。 シリアライザーのインスタンスにアクセスできません。 ただし、このクラスは、パブリック API を公開します。 したがって、マネージ コードでの JavaScript Object Notation (JSON) での作業をするときに、クラスを使用できます。  
+  
+ オブジェクトをシリアル化を使用して、<xref:System.Web.Script.Serialization.JavaScriptSerializer.Serialize%2A>メソッドです。 JSON 文字列を逆シリアル化を使用して、<xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize%2A>または<xref:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject%2A>メソッドです。 シリアル化をネイティブでサポートされていない型を逆シリアル化する<xref:System.Web.Script.Serialization.JavaScriptSerializer>を使用してカスタムのコンバーターを実装する、<xref:System.Web.Script.Serialization.JavaScriptConverter>クラスです。 使用して、コンバーターを登録、<xref:System.Web.Script.Serialization.JavaScriptSerializer.RegisterConverters%2A>メソッドです。  
+  
+## <a name="mapping-between-managed-types-and-json"></a>マネージ型と JSON の間のマッピング  
+ 次の表は、シリアル化のプロセスは、マネージ型と JSON の間のマッピングを示します。 これらのマネージ型がネイティブでサポート<xref:System.Web.Script.Serialization.JavaScriptSerializer>です。 シリアル化する JSON 文字列からマネージ型に、同じマッピングが適用されます。 ただし、逆シリアル化できます非対称です。シリアル化可能なすべてのマネージ型は、JSON から逆シリアル化することができます。  
+  
+> [!NOTE]
+>  多次元配列は 1 次元の配列としてシリアル化して、フラットな配列として使用する必要があります。  
+  
+|マネージ型|該当するショートカットは JSON|  
+|------------------|---------------------|  
+|<xref:System.String>(Utf-8 エンコードのみ)。|文字列型|  
+|<xref:System.Char>|文字列型|  
+|1 つの null 文字 (など、\0)|Null|  
+|<xref:System.Boolean>|ブール型。 として JSON で表される`true`または`false`|  
+|`null`(`null`オブジェクト参照と<xref:System.Nullable>値の型)。|文字列値は null|  
+|<xref:System.DBNull>|文字列値は null|  
+|プリミティブな数値 (または、数値型と互換性のある) の型: <xref:System.Byte>、 <xref:System.SByte>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>、 <xref:System.Double>、および<xref:System.Single>です。 カルチャに依存しない文字列形式が使用されます。|数値|  
+|<xref:System.DateTime>|として JSON で表された日付オブジェクト"\\(タイマー刻みの数) の日付/\\/"です。 タイマー刻みの数は、01、1970 年 1 月 (utc) の午前 0 時から経過したタイマー刻み (ミリ秒) の数を示す正または負 long 値です。<br /><br /> サポートされる値は日付の最大<xref:System.DateTime.MaxValue>(9999/12/31 11時 59分: 59 PM) と、サポートされている日付の最小値は<xref:System.DateTime.MinValue>(1/1/0001 12時 00分: 00 AM)。|  
+|整数型の列挙|等価の列挙値の整数|  
+|型を実装する<xref:System.Collections.IEnumerable>または<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>いるもの実装になっていない<xref:System.Collections.IDictionary>または<xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>です。 これは、型が含まれるように<xref:System.Array>、 <xref:System.Collections.ArrayList>、および<xref:System.Collections.Generic.List%601>です。|JSON 配列の構文を使用する配列|  
+|型を実装する<xref:System.Collections.IDictionary>または<xref:System.Collections.Generic.IDictionary%602?displayProperty=nameWithType>です。 これは、型が含まれるように<xref:System.Collections.Generic.Dictionary%602>と<xref:System.Collections.Hashtable>です。|JSON ディクショナリの構文を使用する JavaScript オブジェクト|  
+|カスタムの具象 (抽象型ではない) 型を持つパブリック インスタンス プロパティを持つは get アクセサーまたはパブリック インスタンス フィールドです。<br /><br /> 書き込み専用のパブリック プロパティ、そのパブリック プロパティまたはパブリック フィールドの属性でマークされたことに注意してください<xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>とでこれらの型のパブリックのインデックス付きプロパティは無視されます。|JSON ディクショナリの構文を使用する JavaScript オブジェクト。 "_ _Type"という名前の特殊なメタデータ プロパティが正しく逆シリアル化を確実に含まれています。 パブリック インスタンス プロパティが get し、set アクセサーを正しく逆シリアル化を確認することを確認してください。|  
+|<xref:System.Guid>|GUID の文字列表現|  
+|<xref:System.Uri>|戻り値の文字列表現<xref:System.Uri.GetComponents%2A>|  
+  
+   
+  
+## Examples  
+ 最初の例では、およびデータ オブジェクトを逆シリアル化する方法の簡単な図を提供します。 クラス名の下に表示されるユーザーが必要です。  
+  
+ [!code-csharp[System.Web.Script.Serialization.JavaScriptSerializer#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.script.serialization.javascriptserializer/cs/default.aspx.cs#1)]
+ [!code-vb[System.Web.Script.Serialization.JavaScriptSerializer#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.script.serialization.javascriptserializer/vb/default.aspx.vb#1)]  
+  
+ [!code-csharp[System.Web.Script.Serialization.JavaScriptSerializer#2](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.script.serialization.javascriptserializer/cs/person.cs#2)]
+ [!code-vb[System.Web.Script.Serialization.JavaScriptSerializer#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.script.serialization.javascriptserializer/vb/person.vb#2)]  
+  
+ 次の例より複雑な完全なプロジェクトを使用する、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスを保存および JSON のシリアル化を使用してオブジェクトの状態を復元します。 このコードの提供されるカスタムのコンバーターを使用して、<xref:System.Web.Script.Serialization.JavaScriptConverter>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.Script.Serialization#4](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization/CS/Default.aspx#4)]
+ [!code-aspx-vb[System.Web.Script.Serialization#4](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization/VB/Default.aspx#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JavaScriptSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>型リゾルバーを持たない <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスの型競合回避モジュールが、シリアル化された JSON 文字列に型のメタデータ プロパティ (名前は"_ _type") を含めないなし。 型のメタデータ プロパティを使って、<xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize%2A>と<xref:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject%2A>メソッドは、適切なマネージを確認するのには、JSON 文字列を変換する型します。 型競合回避モジュールについては、次を参照してください。、<xref:System.Web.Script.Serialization.JavaScriptTypeResolver>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JavaScriptSerializer (System.Web.Script.Serialization.JavaScriptTypeResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.Script.Serialization.JavaScriptTypeResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.#ctor(System.Web.Script.Serialization.JavaScriptTypeResolver)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="resolver" Type="System.Web.Script.Serialization.JavaScriptTypeResolver" />
+      </Parameters>
+      <Docs>
+        <param name="resolver">カスタムの型リゾルバー オブジェクト。</param>
+        <summary>カスタムの型リゾルバーを持つ <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトをシリアル化時に、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスの使用、`resolver`型のメタデータ プロパティ ("_ _type") のシリアル化された JSON 文字列に含める適切な値を決定するパラメーターです。 同様に、時、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスが、JSON 文字列を逆シリアル化、競合回避モジュールのインスタンスを使用して適切なマネージ型に型のメタデータ プロパティの値を解決します。  
+  
+ 設定することができます、`resolver`パラメーターを`null`、呼び出すことと同じである、<xref:System.Web.Script.Serialization.JavaScriptSerializer.%23ctor%2A>コンス トラクターです。  
+  
+ インスタンス<xref:System.Web.Script.Serialization.JavaScriptSerializer>特殊な競合回避モジュールを使用するクライアント スクリプトから Web サービスを呼び出す非同期通信レイヤーで使用されています。 この型の競合回避モジュールの種類を逆シリアル化することができますを Web サービスのメソッドのシグネチャまたは付いてで定義されたに限定する、<xref:System.Web.Script.Services.GenerateScriptTypeAttribute>適用します。 この組み込みの型リゾルバーをプログラムで変更することはできません。  
+  
+> [!IMPORTANT]
+>  カスタムの型リゾルバーで初期化されたこのオブジェクトのインスタンスを使用すると、セキュリティ リスクがあることができます。 このオブジェクトを使用して、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToType">
+      <MemberSignature Language="C#" Value="public object ConvertToType (object obj, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertToType(object obj, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="obj">変換対象のオブジェクト。</param>
+        <param name="targetType">オブジェクトの変換後の型。</param>
+        <summary>指定したオブジェクトを指定した型に変換します。</summary>
+        <returns>シリアル化された JSON 文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスは、シリアライザーの呼び出し、カスタムのコンバーターが登録されている型をシリアル化、 <xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize%2A> JSON 形式の文字列に変換される名前/値ペアのディクショナリを取得します。  
+  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.Serialize%2A>オブジェクト グラフが複雑すぎるため、またはのインスタンスが登録されている場合、メソッドは例外をスローできますできます<xref:System.Web.Script.Serialization.JavaScriptConverter>コンバーター再帰が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">結果として得られる JSON 形式の文字列の値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ <paramref name="obj" />循環参照が含まれています。 循環参照は、子オブジェクトが、親オブジェクトへの参照を親オブジェクトが子オブジェクトへの参照を持つ場合に発生します。</exception>
+        <exception cref="T:System.ArgumentException">定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToType&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T ConvertToType&lt;T&gt; (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T ConvertToType&lt;T&gt;(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType``1(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">型<c>obj</c>変換されます。</typeparam>
+        <param name="obj">変換対象のオブジェクト。</param>
+        <summary>指定したオブジェクトを指定した型に変換します。</summary>
+        <returns>ターゲットの型に変換されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType%2A>メソッドで表されるオブジェクトのインスタンスに変換しようとしました。`obj`型のインスタンスに`T`です。 この変換中には、オブジェクト参照の等価性が維持される保証はありません。 したがってとは限りませんを`obj`と`T`同じオブジェクトを参照してください。  
+  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType%2A>派生するクラスを実装する場合に使用するものでは<xref:System.Web.Script.Serialization.JavaScriptConverter>します。 コンバーター コードが、シリアライザーから渡されるディクショナリ内にある値を取得できるようにして型のインスタンスにその値を変換する必要があります`T`です。 このタスクを実行する変換のカスタム コードを再実装するには、代わりに呼び出すことができます、<xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType%2A>コンバーター コードからメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.Script.Serialization.JavaScriptSerializer.ConvertToType%2A>を取得するメソッド、<xref:System.Web.UI.WebControls.ListItem>コンバーターに渡されるディクショナリの値からのオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスです。  
+  
+ [!code-csharp[System.Web.Script.Serialization#5](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization/CS/App_Code/ListItemCollectionConverter.cs#5)]
+ [!code-vb[System.Web.Script.Serialization#5](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization/VB/App_Code/ListItemCollectionConverter.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="obj" />(またはの入れ子になったメンバー <paramref name="obj" />) を示すカスタムの型はシリアライザーに関連付けられている型の競合回避モジュールは、対応するマネージ型を見つけることができません"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="obj" />(またはの入れ子になったメンバー <paramref name="obj" />) は予想されるターゲット型に割り当てることができませんが、カスタムの型を対応する JSON 文字列を逆シリアル化の結果を示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="obj" />(またはの入れ子になったメンバー <paramref name="obj" />) をいずれかを示す"_ _type"プロパティを含む<see cref="T:System.Object" />または非インスタンス化可能な型 (たとえば、抽象型またはインターフェイス)。  
+  
+ または  
+  
+ 変換しようとしました<paramref name="obj" />を配列に似たマネージ型の場合、サポートされていない、逆シリアル化対象として使用するためです。  
+  
+ または  
+  
+ 変換することはできません<paramref name="obj" />に<paramref name="T" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="obj" />ディクショナリ型は、文字列以外のキー値が検出されました。  
+  
+ または  
+  
+ <paramref name="obj" />型では使用できないメンバーの定義が含まれています<paramref name="T" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (string input, Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Deserialize(string input, class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="input">逆シリアル化する JSON 文字列。</param>
+        <param name="targetType">生成されるオブジェクトの型。</param>
+        <summary>JSON 形式の文字列を指定した型のオブジェクトに変換します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この逆シリアル化メソッドはキャストをする方法、特定の種類のオブジェクト グラフのルートを試みませんを<xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">長さ<paramref name="input" />の値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ 定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。  
+  
+ または  
+  
+ <paramref name="input" />予期しない文字シーケンスが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />ディクショナリ型は、文字列以外のキー値が検出されました。  
+  
+ または  
+  
+ <paramref name="input" />対象の型では使用できないメンバーの定義が含まれます。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="input" />シリアライザーに現在関連付けられている型の競合回避モジュールは、カスタムの型は、対応するマネージ型を見つけることができませんを示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />予想されるターゲットの型に割り当てることができませんが、カスタムの型を対応する JSON 文字列を逆シリアル化の結果を示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />いずれかを示す"_ _type"プロパティを含む<see cref="T:System.Object" />または非インスタンス化可能な型 (たとえば、抽象型またはインターフェイス)。  
+  
+ または  
+  
+ JSON 配列を JSON の逆シリアル化対象として使用するためにサポートされていない配列に似たマネージ型に変換しようとしました。  
+  
+ または  
+  
+ 変換することはできません<paramref name="input" />対象の型にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T Deserialize&lt;T&gt; (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T Deserialize&lt;T&gt;(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">生成されるオブジェクトの型。</typeparam>
+        <param name="input">逆シリアル化する JSON 文字列。</param>
+        <summary>指定した JSON 文字列を指定した型 <paramref name="T" /> のオブジェクトに変換します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize%2A>メソッドを使用して最初には、<xref:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject%2A>メソッドは、オブジェクト グラフしようとして、型に結果をキャストを取得する`T`です。  
+  
+ 逆シリアル化中に、シリアライザーの現在の型競合回避モジュールは、参照される配列およびディクショナリ型の内部にネストする要素を変換するときに使用するマネージ型を決定します。 逆シリアル化プロセスがの入れ子になったすべての要素を反復処理結果として、`input`です。 型競合回避モジュールの詳細については、次を参照してください。、<xref:System.Web.Script.Serialization.JavaScriptTypeResolver>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、およびデータ オブジェクトを逆シリアル化する方法の簡単な図を提供します。 クラス名の下に表示されるユーザーが必要です。  
+  
+<!-- TODO: review snippet reference  [!CODE [System.Web.Script.JavaScriptSerializer#1](System.Web.Script.JavaScriptSerializer#1)]  
+  
+<!-- TODO: review snippet reference  [!CODE [System.Web.Script.JavaScriptSerializer#2](System.Web.Script.JavaScriptSerializer#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="input" />長さの値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ 定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。  
+  
+ または  
+  
+ <paramref name="input" />予期しない文字シーケンスが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />ディクショナリ型は、文字列以外のキー値が検出されました。  
+  
+ または  
+  
+ <paramref name="input" />型では使用できないメンバーの定義が含まれています<paramref name="T" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="input" />シリアライザーに関連付けられている型競合回避モジュールは、カスタムの型は、対応するマネージ型を見つけることができませんを示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />予想されるターゲットの型に割り当てることができませんが、カスタムの型を対応する JSON 文字列を逆シリアル化の結果を示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />いずれかを示す"_ _type"プロパティを含む<see cref="T:System.Object" />または非インスタンス化可能な型 (たとえば、抽象型またはインターフェイス)。  
+  
+ または  
+  
+ JSON 配列を JSON の逆シリアル化対象として使用するためにサポートされていない配列に似たマネージ型に変換しようとしました。  
+  
+ または  
+  
+ 変換することはできません<paramref name="input" />に<paramref name="T" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeObject">
+      <MemberSignature Language="C#" Value="public object DeserializeObject (string input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object DeserializeObject(string input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.DeserializeObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="input">逆シリアル化する JSON 文字列。</param>
+        <summary>指定した JSON 文字列をオブジェクト グラフに変換します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この逆シリアル化メソッドは、特定の種類をオブジェクト グラフのルートのキャストを試みませんと同様、<xref:System.Web.Script.Serialization.JavaScriptSerializer.Deserialize%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="input" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="input" />長さの値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ 定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。  
+  
+ または  
+  
+ <paramref name="input" />予期しない文字シーケンスが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />ディクショナリ型は、文字列以外のキー値が検出されました。  
+  
+ または  
+  
+ <paramref name="input" />対象の型では使用できないメンバーの定義が含まれます。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="input" />シリアライザーに現在関連付けられている型の競合回避モジュールは、カスタムの型は、対応するマネージ型を見つけることができませんを示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />予想されるターゲットの型に割り当てることができませんが、カスタムの型を対応する JSON 文字列を逆シリアル化の結果を示す"_ _type"プロパティが含まれています。  
+  
+ または  
+  
+ <paramref name="input" />いずれかを示す"_ _type"プロパティを含む<see cref="T:System.Object" />または非インスタンス化可能な型 (たとえば、抽象型またはインターフェイス)。  
+  
+ または  
+  
+ JSON 配列を JSON の逆シリアル化対象として使用するためにサポートされていない配列に似たマネージ型に変換しようとしました。  
+  
+ または  
+  
+ 変換することはできません<paramref name="input" />対象の型にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxJsonLength">
+      <MemberSignature Language="C#" Value="public int MaxJsonLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxJsonLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" /> クラスによって受け入れられる JSON 文字列の最大長を取得または設定します。</summary>
+        <value>JSON 文字列の最大長。 既定では 2,097, 152 文字は Unicode 文字列データの 4 MB に相当です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength%2A>プロパティは、のみと明示的にインスタンスを作成するが適用される、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスです。 使用して、`jsonSerialization`非同期通信レイヤーで使用される内部シリアライザー インスタンスの最大の長さを設定する構成ファイルの要素。 シリアル化の構成要素の詳細については、次を参照してください。[する方法: Microsoft Ajax の ASP.NET サービスを構成する](http://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">1 より小さい値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecursionLimit">
+      <MemberSignature Language="C#" Value="public int RecursionLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RecursionLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>処理されるオブジェクト レベル数の制限値を取得または設定します。</summary>
+        <value>オブジェクト レベル数。 既定値は 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit%2A>プロパティは、オブジェクトの階層内のレベル数を参照する<xref:System.Web.Script.Serialization.JavaScriptSerializer>次の場合に処理されます。  
+  
+-   ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスが、JSON 文字列を逆シリアル化します。  
+  
+-   ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスがシリアル化中に、オブジェクト グラフをウォークします。  
+  
+ 値<xref:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit%2A>のみときに明示的にインスタンスを作成するを適用、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスです。 使用して、`jsonSerialization`非同期通信レイヤーで使用される内部シリアライザーのインスタンスを処理するオブジェクトの各レベルの数を設定する構成ファイルの要素。 シリアル化の構成要素の詳細については、次を参照してください。[する方法: Microsoft Ajax の ASP.NET サービスを構成する](http://msdn.microsoft.com/library/ea4fb56e-bc1d-405a-9877-00cf5e552a30)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">1 より小さい値に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterConverters">
+      <MemberSignature Language="C#" Value="public void RegisterConverters (System.Collections.Generic.IEnumerable&lt;System.Web.Script.Serialization.JavaScriptConverter&gt; converters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterConverters(class System.Collections.Generic.IEnumerable`1&lt;class System.Web.Script.Serialization.JavaScriptConverter&gt; converters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.RegisterConverters(System.Collections.Generic.IEnumerable{System.Web.Script.Serialization.JavaScriptConverter})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="converters" Type="System.Collections.Generic.IEnumerable&lt;System.Web.Script.Serialization.JavaScriptConverter&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="converters">登録するカスタムのコンバーターが格納されている配列。</param>
+        <summary>カスタムのコンバーターを <see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" /> インスタンスに登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つまたは複数のカスタムのコンバーターを登録することができます、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスを使用して、<xref:System.Web.Script.Serialization.JavaScriptSerializer.RegisterConverters%2A>メソッドです。 カスタムのコンバーターが登録されると、<xref:System.Web.Script.Serialization.JavaScriptSerializer>マネージ型をシリアル化とマネージ型を JSON 文字列を逆シリアル化するコンバーターを使用します。  
+  
+ 複数のコンバーターは、同じに登録されていることができます<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンス、およびこれらのコンバーターは、同じ型のサポートを指定できます。 特定の種類に対して登録されている最後のコンバーターで使用される 1 つは、その結果、<xref:System.Web.Script.Serialization.JavaScriptSerializer>型をシリアル化します。  
+  
+ カスタムのコンバーターの詳細については、次を参照してください。、<xref:System.Web.Script.Serialization.JavaScriptConverter>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムのコンバーターを登録する方法を示します、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンス。 このコード例に示されている例の一部である、<xref:System.Web.Script.Serialization.JavaScriptSerializer>クラスです。  
+  
+ [!code-csharp[System.Web.Script.Serialization#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization/CS/Default.aspx#1)]
+ [!code-vb[System.Web.Script.Serialization#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization/VB/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="converters" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public string Serialize (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string Serialize(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.Serialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化するオブジェクト。</param>
+        <summary>オブジェクトを JSON 文字列に変換します。</summary>
+        <returns>シリアル化された JSON 文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスは、シリアライザーの呼び出し、カスタムのコンバーターが登録されている型をシリアル化、 <xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize%2A> JSON 文字列に変換される名前/値ペアのディクショナリを取得します。  
+  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.Serialize%2A>オブジェクト グラフが複雑すぎるため、またはのインスタンスが登録されている場合、メソッドは例外をスローできますできます<xref:System.Web.Script.Serialization.JavaScriptConverter>コンバーター再帰が発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、およびデータ オブジェクトを逆シリアル化する方法の簡単な図を提供します。 クラス名の下に表示されるユーザーが必要です。  
+  
+<!-- TODO: review snippet reference  [!CODE [System.Web.Script.JavaScriptSerializer#1](System.Web.Script.JavaScriptSerializer#1)]  
+  
+<!-- TODO: review snippet reference  [!CODE [System.Web.Script.JavaScriptSerializer#2](System.Web.Script.JavaScriptSerializer#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">結果として得られる JSON 文字列の値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ <paramref name="obj" />循環参照が含まれています。 循環参照は、子オブジェクトが、親オブジェクトへの参照を親オブジェクトが子オブジェクトへの参照を持つ場合に発生します。</exception>
+        <exception cref="T:System.ArgumentException">定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (object obj, System.Text.StringBuilder output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(object obj, class System.Text.StringBuilder output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.JavaScriptSerializer.Serialize(System.Object,System.Text.StringBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="output" Type="System.Text.StringBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化するオブジェクト。</param>
+        <param name="output">JSON 文字列を書き込むために使用される <see cref="T:System.Text.StringBuilder" /> オブジェクト。</param>
+        <summary>オブジェクトをシリアル化し、生成された JSON 文字列を指定の <see cref="T:System.Text.StringBuilder" /> オブジェクトに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Script.Serialization.JavaScriptSerializer>インスタンスは、シリアライザーの呼び出し、カスタムのコンバーターが登録されている型をシリアル化、 <xref:System.Web.Script.Serialization.JavaScriptConverter.Serialize%2A> JSON 文字列に変換される名前/値ペアのディクショナリを取得します。  
+  
+ <xref:System.Web.Script.Serialization.JavaScriptSerializer.Serialize%2A>オブジェクト グラフが複雑すぎるため、またはのインスタンスが登録されている場合、メソッドは例外をスローできますできます<xref:System.Web.Script.Serialization.JavaScriptConverter>コンバーター再帰が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">結果として得られる JSON 文字列の値を超える<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.MaxJsonLength" />です。  
+  
+ または  
+  
+ <paramref name="obj" />循環参照が含まれています。 循環参照は、子オブジェクトが、親オブジェクトへの参照を親オブジェクトが子オブジェクトへの参照を持つ場合に発生します。</exception>
+        <exception cref="T:System.ArgumentException">定義されている再帰の制限<see cref="P:System.Web.Script.Serialization.JavaScriptSerializer.RecursionLimit" />を超えました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="output" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

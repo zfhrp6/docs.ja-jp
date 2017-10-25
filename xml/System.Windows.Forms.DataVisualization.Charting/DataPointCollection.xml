@@ -1,0 +1,836 @@
+<Type Name="DataPointCollection" FullName="System.Windows.Forms.DataVisualization.Charting.DataPointCollection">
+  <TypeSignature Language="C#" Value="public class DataPointCollection : System.Windows.Forms.DataVisualization.Charting.ChartElementCollection&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataPointCollection extends System.Windows.Forms.DataVisualization.Charting.ChartElementCollection`1&lt;class System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.DataPointCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataVisualization.Charting.ChartElementCollection&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Windows.Forms.DataVisualization.Charting.DataPoint</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>クラスのコレクションを表します<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトで、さらに含まれるデータ ポイントを表す、<xref:System.Windows.Forms.DataVisualization.Charting.Series>オブジェクト。  
+  
+ としてこのコレクション クラスが実装されている、<xref:System.Windows.Forms.DataVisualization.Charting.Series.Points%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Series>オブジェクト。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトを追加またはの X 値と Y を使用して、コレクションに挿入可能-パラメーターとして既に指定されている値。 追加される自動的に系列がいずれかを使用してデータ ソースにバインドされている場合に注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindY%2A>または<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindXY%2A>メソッドです。  
+  
+ コレクションが属する系列を持つ場合だけこのコレクションに表示される順に描画されるデータ ポイントの<xref:System.Windows.Forms.DataVisualization.Charting.Series.IsXValueIndexed%2A>プロパティに設定`true`(既定値は`false`)、すべてのデータ ポイントの X 値すべてがゼロの場合またはします。 それ以外の場合、X 値でのデータ ポイントがプロットされます。  
+  
+ データ ポイントことができます、配置し操作に基づいて、する最大、最小値または指定した X または Y の値を使用して、オーバー ロードされた`FindMaxValue`、`FindMinValue`または`FindValue`メソッド、それぞれします。  
+  
+ <xref:System.Collections.ObjectModel.Collection%601.Count%2A>プロパティ コレクション内の項目の合計数を示し、コレクションの上限値を検索に一般的に使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint Add (params double[] y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint Add(float64[] y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.Add(System.Double[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="y" Type="System.Double[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="y">データ ポイントの Y 値。</param>
+        <summary>新しく追加<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />オブジェクトをコレクションし、その Y 値を設定します。</summary>
+        <returns>新しく追加された<see cref="T:System.Web.UI.DataVisualization.Charting.DataPoint" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddXY">
+      <MemberSignature Language="C#" Value="public int AddXY (double xValue, double yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 AddXY(float64 xValue, float64 yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddXY(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Double" />
+        <Parameter Name="yValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValue">データ ポイントの Y 値。</param>
+        <summary>追加、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" /> X 値と Y の値を指定して、コレクションの末尾にオブジェクトします。</summary>
+        <returns><see langword="integer" />を表す項目がデータ ポイントのコレクションに挿入された位置の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、追加<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトを<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>; オブジェクトは常に、コレクションの末尾に追加します。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddXY%2A>メソッドのオーバー ロード場合は、データ ポイントが複数の Y 値を必要とします。  
+  
+ かどうか、データ ポイントが X 値必要はありません-は、作成する場合は非 - 散布: を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddY%2A>メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddXY">
+      <MemberSignature Language="C#" Value="public int AddXY (object xValue, params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 AddXY(object xValue, object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddXY(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Object" />
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValue">1 つまたは複数コンマ区切り値を表す Y のデータ ポイントの値。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />指定したコレクションの末尾にオブジェクトの X 値と Y の値します。</summary>
+        <returns><see langword="integer" />項目がコレクションに挿入する位置の 0 から始まるインデックスを表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つ追加<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトを<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>以外の場合は、データ ポイントは常に、コレクションの末尾に追加します。  
+  
+ 少なくとも 1 つ (1) Y 値を指定する必要があります、それ以外の場合、例外がスローされます。 このメソッドも確認、<xref:System.Windows.Forms.DataVisualization.Charting.Series.YValueType%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>オブジェクトにこのデータが属している以外のかどうかは Y 値が多すぎますが指定されて、例外がスローされます。  
+  
+ 順序で<xref:System.DateTime>影響を与える書式設定、値がある必要があります、<xref:System.DateTime>オブジェクト。  
+  
+ かどうか、データ ポイントが X 値必要はありません: つまり、作成する場合は非 - 散布: を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddY%2A>メソッド代わりに  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddY">
+      <MemberSignature Language="C#" Value="public int AddY (double yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 AddY(float64 yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddY(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="yValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="yValue">データ ポイントの Y 値。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />指定の Y 値を持つ、コレクションの末尾にオブジェクト。</summary>
+        <returns><see langword="integer" />を表す項目がデータ ポイントのコレクションに挿入された位置の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つ追加<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトを<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>以外の場合は、データ ポイントは常に、コレクションの末尾に追加します。  
+  
+ データ ポイントが複数の Y 値が必要な場合の Y 値の配列は、メソッドの定義を使用します。  
+  
+ データ ポイントには、X 値が必要がある場合-は、作成する場合は散布: のいずれかを使用して、`AddXY`メソッド代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddY">
+      <MemberSignature Language="C#" Value="public int AddY (params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 AddY(object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.AddY(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="yValue">Y のコンマ区切りの一覧-の値、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />オブジェクトのコレクションに追加します。</param>
+        <summary>追加、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />指定 Y に基づいて、コレクションの末尾にオブジェクトの値します。</summary>
+        <returns><see langword="integer" />項目がコレクションに挿入する位置の 0 から始まるインデックス位置を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、1 つ追加<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>オブジェクトを<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection>以外の場合は、データ ポイントは常に、コレクションの末尾に追加します。  
+  
+ 少なくとも 1 つ (1) Y 値を指定する必要があります、それ以外の場合、例外がスローされます。 このメソッドも確認、<xref:System.Windows.Forms.DataVisualization.Charting.Series.ChartType%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>にこのデータが属しているオブジェクト以外のかどうかは Y 値が多すぎますが指定されて、例外がスローされます。  
+  
+ X 値常に設定されますをゼロ (0) にれてしまう散布図以外の結果として得られます。 データ ポイントが X 値を使用する場合は、いずれかを呼び出して、`AddXY`メソッド代わりにします。  
+  
+ 順序で<xref:System.DateTime>影響を与える書式設定、値がある必要があります、<xref:System.DateTime>オブジェクト。  
+  
+ オブジェクトの型パラメーターに使用できる有効な .NET Framework の型の完全な一覧については、次を参照してください。  
+  
+||||  
+|-|-|-|  
+|String|DateTime|倍精度浮動小数点型|  
+|Decimal (10 進数型)|Single|Int32|  
+|UInt32|Int64|UInt64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearItems">
+      <MemberSignature Language="C#" Value="protected override void ClearItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.ClearItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Collections.ObjectModel.Collection`1" /> からすべての要素を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public void DataBind (System.Collections.IEnumerable dataSource, string xField, string yFields, string otherFields);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBind(class System.Collections.IEnumerable dataSource, string xField, string yFields, string otherFields) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBind(System.Collections.IEnumerable,System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="xField" Type="System.String" />
+        <Parameter Name="yFields" Type="System.String" />
+        <Parameter Name="otherFields" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">X 値と Y がバインドするデータ ソースの値します。</param>
+        <param name="xField">X 値、フィールドの名前。</param>
+        <param name="yFields">Y 値のコンマ区切りのフィールドの名前。</param>
+        <param name="otherFields">その他のデータ ポイントの形式でルールをバインドのプロパティ: PointProperty = [{形式}] のフィールド [、PointProperty = [{形式}] のフィールド] です。  
+  
+ 例:"ツールヒント価格 {C1}、Url を = = WebSiteName"です。</param>
+        <summary>データ バインドの X 値、Y の値と、データ ポイントのツールヒントまたは LabelStyle など、データ ソースにプロパティ値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースには、Ole (SQL) DataReader、DataView、DataSet、DataTable または DataRow を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindXY">
+      <MemberSignature Language="C#" Value="public void DataBindXY (System.Collections.IEnumerable xValue, params System.Collections.IEnumerable[] yValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindXY(class System.Collections.IEnumerable xValue, class System.Collections.IEnumerable[] yValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindXY(System.Collections.IEnumerable,System.Collections.IEnumerable[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Collections.IEnumerable" />
+        <Parameter Name="yValues" Type="System.Collections.IEnumerable[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値を提供するデータ ソース。</param>
+        <param name="yValues">Y のコンマ区切りの一覧-の値、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />オブジェクトのコレクションに追加します。</param>
+        <summary>データは、X 値と、コレクションのデータ ポイントの Y 値を指定したデータ ソースの最初の列にバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、すべてをバインド<xref:System.Windows.Forms.DataVisualization.Charting.DataPoint>内のオブジェクト、 <xref:System.Windows.Forms.DataVisualization.Charting.Series>、し、X と Y のデータ ソースを分離する使用の値します。  
+  
+ データ ソースで利用可能な最初の列が使用されることに注意してください。 テーブルにデータ バインディングの場合。 最初の列以外の列にバインドするには、使用、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindXY%2A>メソッドです。  
+  
+ コンマ区切りの一覧を提供することにより、複数の Y 値にバインドできます<xref:System.Collections.Generic.IEnumerable%601>オブジェクトに対する、`yValues`パラメーター。  
+  
+ Y 値は、データ ソースによって提供されない場合、または間違った数の値を指定する場合は、例外がスローされます。  
+  
+ X と Y 値の両方を使用するの散布図型プロットを表示したくない場合のいずれかを使用、`DataBindY`メソッド代わりにします。  
+  
+ データ ソースのパラメーターとして使用できるオブジェクトの一覧を次に示します。  
+  
+-   DataView  
+  
+-   データ リーダー (SQL、OleDB)  
+  
+-   配列  
+  
+-   表示内容  
+  
+-   使用する他のすべてのオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindXY">
+      <MemberSignature Language="C#" Value="public void DataBindXY (System.Collections.IEnumerable xValue, string xField, System.Collections.IEnumerable yValue, string yFields);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindXY(class System.Collections.IEnumerable xValue, string xField, class System.Collections.IEnumerable yValue, string yFields) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindXY(System.Collections.IEnumerable,System.String,System.Collections.IEnumerable,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xValue" Type="System.Collections.IEnumerable" />
+        <Parameter Name="xField" Type="System.String" />
+        <Parameter Name="yValue" Type="System.Collections.IEnumerable" />
+        <Parameter Name="yFields" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xValue">データ ポイントの X 値を提供するデータ ソース。</param>
+        <param name="xField">データ ポイントの X 値を提供する列の名前。</param>
+        <param name="yValue">Y のコンマ区切りの一覧-の値、<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />オブジェクトのコレクションに追加します。</param>
+        <param name="yFields">データ ポイントの Y 値を提供する列名のコンマ区切りの一覧です。 2 つのコンマを使用して、列名の一部として、カンマを埋め込むことが可能に注意してください。</param>
+        <summary>データは、指定されたデータ ソースの指定した列のコレクション内の X 値と、データ ポイントの Y 値をバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、指定されたデータ ソースの最初の列をコレクション内の X 値と、データ ポイントの Y 値をバインドします。  
+  
+ 設定して複数の Y 値にバインドすることができます、`yFields`複数の列名のパラメーターです。 列名をコンマで区切ります。  
+  
+ Y 値は、データ ソースによって提供されない場合、または間違った数の値を指定する場合は、例外がスローされます。  
+  
+ X と Y 値の両方を使用するの散布図型プロットを表示したくない場合のいずれかを使用、`DataBindY`メソッド代わりにします。  
+  
+ データ ソースのパラメーターとして使用できるオブジェクトの一覧を次に示します。  
+  
+-   DataView  
+  
+-   データ リーダー (SQL、OleDB)  
+  
+-   配列  
+  
+-   表示内容  
+  
+-   使用する他のすべてのオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindY">
+      <MemberSignature Language="C#" Value="public void DataBindY (params System.Collections.IEnumerable[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindY(class System.Collections.IEnumerable[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindY(System.Collections.IEnumerable[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="yValue" Type="System.Collections.IEnumerable[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="yValue">1 つまたは複数コンマ区切り<see cref="T:System.Collections.Generic.IEnumerable`1" />データ ソース。</param>
+        <summary>データ バインド、Y のコレクションのデータの値が指定されたデータ ソースの最初の列を指します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、Y、バインドの指定されたデータ ソースの最初の列に、コレクション内のデータ ポイントの値。  
+  
+ Y 値を使用可能な最初の列ではないデータ ソース列にバインドするには、使用、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindY%2A>メソッドです。  
+  
+ 使用して複数のデータ ソースを指定することによって複数の Y 値をバインドすることができます、`yValue`パラメーター。 各データ ポイントの Y 値の後続の各データ ソースで利用可能な最初の列が使用されることに注意してください。 1 つ目の最初の列など、<xref:System.Collections.Generic.IEnumerable%601>データ ソースは、2 つ目の最初の列のデータ ポイントの最初の Y 値にバインドされます<xref:System.Collections.Generic.IEnumerable%601>データ ソースは、データ ポイントの 2 番目の Y 値にバインドするなどです。  
+  
+ Y 値は、データ ソースによって提供されない場合、または間違った数の値を指定する場合は、例外がスローされます。  
+  
+ データ ソースのパラメーターとして使用できるオブジェクトの一覧を次に示します。  
+  
+ データ ソースとして使用できるオブジェクトの一覧を次に示します。  
+  
+-   DataView  
+  
+-   データ リーダー (SQL、OleDB)  
+  
+-   配列  
+  
+-   表示内容  
+  
+-   使用する他のすべてのオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBindY">
+      <MemberSignature Language="C#" Value="public void DataBindY (System.Collections.IEnumerable yValue, string yFields);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DataBindY(class System.Collections.IEnumerable yValue, string yFields) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindY(System.Collections.IEnumerable,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="yValue" Type="System.Collections.IEnumerable" />
+        <Parameter Name="yFields" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="yValue"><see cref="T:System.Collections.Generic.IEnumerable`1" /> Y を提供するデータ ソース オブジェクトの値します。</param>
+        <param name="yFields">データ ソースのデータ要素をバインドするフィールドです。 2 つのコンマを使用して、列名の一部として、カンマを埋め込むことが可能に注意してください。</param>
+        <summary>データ バインド、Y-指定したデータ ソースの指定された列にデータ ポイントの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクション内のデータ ソースの指定されたフィールド (s) するデータ ポイントの Y 値をバインドします。  
+  
+ データ ソースの最初のフィールドのみにバインドするには、使用、<xref:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.DataBindY%2A>メソッドです。  
+  
+ 設定していくつかのフィールドにバインドすることができます、`yFields`パラメーターはコンマで区切られた複数のフィールド名にします。 データ ポイントの最初の Y 値の最初のフィールドが使用すること、2 番目の名前付きフィールドがデータ ポイントの 2 番目の Y 値に使用するなどに注意してください。  
+  
+ Y 値は、データ ソースによって提供されないか、間違った数の値が提供される、例外がスローされます。  
+  
+ データ ソースとして使用できるオブジェクトの一覧を次に示します。  
+  
+-   DataView  
+  
+-   データ リーダー (SQL、OleDB)  
+  
+-   配列  
+  
+-   表示内容  
+  
+-   使用する他のすべてのオブジェクト、<xref:System.Collections.Generic.IEnumerable%601>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllByValue">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue (double valueToFind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue(float64 valueToFind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindAllByValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <summary>指定した値と等しいすべてのデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />のデータ ポイントが一致する列挙子を表すインターフェイスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllByValue">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue (double valueToFind, string useValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue(float64 valueToFind, string useValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindAllByValue(System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Windows.Forms.DataVisualization.Charting.DataPointCollection/&lt;FindAllByValue&gt;d__23))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+        <Parameter Name="useValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <summary>指定した値と等しいすべてのデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />のデータ ポイントが一致する列挙子を表すインターフェイスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllByValue">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue (double valueToFind, string useValue, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Forms.DataVisualization.Charting.DataPoint&gt; FindAllByValue(float64 valueToFind, string useValue, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindAllByValue(System.Double,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Windows.Forms.DataVisualization.Charting.DataPointCollection/&lt;FindAllByValue&gt;d__22))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Forms.DataVisualization.Charting.DataPoint&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+        <Parameter Name="useValue" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <param name="startIndex">検索を開始するデータ ポイントのインデックス位置。</param>
+        <summary>指定したインデックス位置から始まる、指定した値と等しいすべてのデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Collections.Generic.IEnumerable`1" />のデータ ポイントが一致する列挙子を表すインターフェイスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue (double valueToFind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue(float64 valueToFind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindByValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <summary>指定した値に相当する最初のデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" /> 、指定した値に一致するか、<see langword="null" />一致が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue (double valueToFind, string useValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue(float64 valueToFind, string useValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindByValue(System.Double,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+        <Parameter Name="useValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <summary>指定した値に相当する最初のデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" /> 、指定した値に一致するか、<see langword="null" />一致が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue (double valueToFind, string useValue, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindByValue(float64 valueToFind, string useValue, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindByValue(System.Double,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="valueToFind" Type="System.Double" />
+        <Parameter Name="useValue" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="valueToFind">データ ポイントの検索対象の値。</param>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <param name="startIndex">検索を開始するデータ ポイントのインデックス位置。</param>
+        <summary>指定したインデックス位置から始まる、指定した値に相当する最初のデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" /> 、指定した値に一致するか、<see langword="null" />一致が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMaxByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMaxByValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最大値を持つデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最大値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMaxByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue (string useValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue(string useValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMaxByValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <summary>最大値を持つデータ ポイント値を検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最大値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMaxByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue (string useValue, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMaxByValue(string useValue, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMaxByValue(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useValue" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <param name="startIndex">検索を開始するデータ ポイントのインデックス位置。</param>
+        <summary>指定したインデックス位置から始まる、最大値を持つデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最大値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMinByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMinByValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>最小値を持つデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最小値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMinByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue (string useValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue(string useValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMinByValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <summary>最小値を持つデータ ポイントを検索します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最小値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindMinByValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue (string useValue, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.DataPoint FindMinByValue(string useValue, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.FindMinByValue(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.DataPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useValue" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="useValue">データ ポイントの (X, Y1, Y2...) を使用する値。</param>
+        <param name="startIndex">検索を開始するデータ ポイントのインデックス位置。</param>
+        <summary>指定したインデックス位置から始まる、最小値を持つデータ ポイントを検索します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />最小値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertXY">
+      <MemberSignature Language="C#" Value="public void InsertXY (int index, object xValue, params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertXY(int32 index, object xValue, object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.InsertXY(System.Int32,System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="xValue" Type="System.Object" />
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="index">データ ポイントを挿入する位置のインデックス。</param>
+        <param name="xValue">データ ポイントの X 値。</param>
+        <param name="yValue">データ ポイントの Y 値のコンマ区切りの一覧です。</param>
+        <summary>指定したデータ ポイントを挿入します。 X 値と 1 つまたは複数の Y 値を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertY">
+      <MemberSignature Language="C#" Value="public void InsertY (int index, params object[] yValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertY(int32 index, object[] yValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.DataPointCollection.InsertY(System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="yValue" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="index">データ ポイントを挿入する位置のインデックス。</param>
+        <param name="yValue">データ ポイントの Y 値のコンマ区切りの一覧です。</param>
+        <summary>1 つまたは複数の Y 値を指定してデータ ポイントを挿入します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

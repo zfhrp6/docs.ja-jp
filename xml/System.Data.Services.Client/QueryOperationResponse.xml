@@ -1,0 +1,169 @@
+<Type Name="QueryOperationResponse" FullName="System.Data.Services.Client.QueryOperationResponse">
+  <TypeSignature Language="C#" Value="public class QueryOperationResponse : System.Data.Services.Client.OperationResponse, System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryOperationResponse extends System.Data.Services.Client.OperationResponse implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.QueryOperationResponse" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Services.Client.OperationResponse</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Data.Services.Client.DataServiceQuery" /> に対する応答を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetContinuation">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQueryContinuation GetContinuation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQueryContinuation GetContinuation() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.QueryOperationResponse.GetContinuation" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQueryContinuation</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の結果ページを取得するために使用する URI を含む <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation" /> オブジェクトを取得します。</summary>
+        <returns>次の結果ページを返すために使用する URI を含むオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContinuation">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQueryContinuation GetContinuation (System.Collections.IEnumerable collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQueryContinuation GetContinuation(class System.Collections.IEnumerable collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.QueryOperationResponse.GetContinuation(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQueryContinuation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="collection">読み込まれる関連オブジェクトのコレクション。</param>
+        <summary>指定したコレクション内の関連エンティティの次のページを取得するために使用する URI を含む <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation" /> オブジェクトを取得します。</summary>
+        <returns>コレクションの次のページを指す連結オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> メソッドは、入れ子の結果の次の結果ページを取得するために使用する URI を取得するために使用されます。  
+  
+ 指定して、`null`値`collection`コレクションが最上位のコレクションの場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContinuation&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt; GetContinuation&lt;T&gt; (System.Collections.Generic.IEnumerable&lt;T&gt; collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Services.Client.DataServiceQueryContinuation`1&lt;!!T&gt; GetContinuation&lt;T&gt;(class System.Collections.Generic.IEnumerable`1&lt;!!T&gt; collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.QueryOperationResponse.GetContinuation``1(System.Collections.Generic.IEnumerable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceQueryContinuation&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Collections.Generic.IEnumerable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">コレクション内の項目の型。</typeparam>
+        <param name="collection">読み込まれる関連オブジェクトのコレクション。</param>
+        <summary>指定したコレクション内の関連エンティティの次のページを取得するために使用する URI を含む <see cref="T:System.Data.Services.Client.DataServiceQueryContinuation`1" /> オブジェクトを取得します。</summary>
+        <returns>コレクションの次のページを指す連結オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Client.QueryOperationResponse.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceQuery" /> を実行し、<see cref="T:System.Data.Services.Client.QueryOperationResponse" /> 項目を返します。</summary>
+        <returns><see cref="T:System.Data.Services.Client.QueryOperationResponse" /> 項目のコレクションに対する列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="public System.Data.Services.Client.DataServiceRequest Query { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Services.Client.DataServiceRequest Query" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.QueryOperationResponse.Query" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Services.Client.DataServiceRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceQuery" /> 項目を生成する <see cref="T:System.Data.Services.Client.QueryOperationResponse" /> を取得します。</summary>
+        <value><see cref="T:System.Data.Services.Client.DataServiceQuery" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalCount">
+      <MemberSignature Language="C#" Value="public virtual long TotalCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TotalCount" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.QueryOperationResponse.TotalCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリで値を要求した場合にクエリから返されるサーバーの結果セットのカウント値。</summary>
+        <value>戻り値は、0 またはサーバー上のセット内のエンティティの数を表す正の値になります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の要求にカウントが含まれていない (つまり、応答ストリームに count タグが見つからない) 場合、<xref:System.InvalidOperationException> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">応答ストリームに count タグが見つからない場合にスローされます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

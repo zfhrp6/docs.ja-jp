@@ -1,0 +1,581 @@
+<Type Name="LdapSessionOptions" FullName="System.DirectoryServices.Protocols.LdapSessionOptions">
+  <TypeSignature Language="C#" Value="public class LdapSessionOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LdapSessionOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.LdapSessionOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.LdapSessionOptions" /> クラスは、各種 LDAP セッション オプションを取得または設定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutoReconnect">
+      <MemberSignature Language="C#" Value="public bool AutoReconnect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoReconnect" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.AutoReconnect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.AutoReconnect" /> プロパティは、自動再接続が有効かどうかを示します。</summary>
+        <value>自動再接続が有効である場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomainName">
+      <MemberSignature Language="C#" Value="public string DomainName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DomainName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.DomainName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.DomainName" /> プロパティは、この接続のバインド先となるドメインを返します。</summary>
+        <value>この接続のバインド先となるドメイン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FastConcurrentBind">
+      <MemberSignature Language="C#" Value="public void FastConcurrentBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FastConcurrentBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapSessionOptions.FastConcurrentBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapSessionOptions.FastConcurrentBind" /> メソッドは、高速同時バインドのサポートを有効にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このメソッドは、現在のプラットフォームでは機能しません。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.LdapException">LDAP のエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HostName">
+      <MemberSignature Language="C#" Value="public string HostName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HostName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.HostName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.HostName" /> プロパティは、接続に関連付けられている LDAP サーバーの名前を返します。</summary>
+        <value>接続に関連付けられている LDAP サーバーの名前。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HostReachable">
+      <MemberSignature Language="C#" Value="public bool HostReachable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HostReachable" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.HostReachable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.HostReachable" /> プロパティは、ホストが到達可能であるかどうかを示します。</summary>
+        <value>ホストが到達可能である場合、このプロパティは <see langword="true" /> です。到達可能でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LocatorFlag">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.LocatorFlags LocatorFlag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.LocatorFlags LocatorFlag" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.LocatorFlag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.LocatorFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.LocatorFlag" /> プロパティは、ドメイン コントローラーの検索時に使用される <see cref="T:System.DirectoryServices.Protocols.LocatorFlags" /> 列挙体の値の 1 つを示します。</summary>
+        <value>ドメイン コントローラーの検索時に使用される <see cref="T:System.DirectoryServices.Protocols.LocatorFlags" /> 列挙体の値の 1 つ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PingKeepAliveTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan PingKeepAliveTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PingKeepAliveTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingKeepAliveTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingKeepAliveTimeout" /> プロパティは、サーバーからの最後の応答の後、Keep-alive の ping を送信するまでにクライアントが待機する最小秒数を指定する <see cref="T:System.TimeSpan" /> オブジェクトを格納します。</summary>
+        <value>サーバーからの最後の応答の後、Keep-alive の ping を送信するまでにクライアントが待機する最小秒数を指定する <see cref="T:System.TimeSpan" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentException">指定した期間がより小さい<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PingLimit">
+      <MemberSignature Language="C#" Value="public int PingLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PingLimit" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingLimit" /> プロパティは、接続を閉じるまでにクライアントが送信する応答のない ping の数を格納します。</summary>
+        <value>接続を閉じるまでにクライアントが送信する応答のない ping の数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentException">指定した値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PingWaitTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan PingWaitTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PingWaitTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingWaitTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.PingWaitTimeout" /> プロパティは、クライアントが ping の送信後に応答が返されるまで待機するミリ秒数を指定する <see cref="T:System.TimeSpan" /> オブジェクトを格納します。</summary>
+        <value>クライアントが ping の送信後に応答が返されるまで待機するミリ秒数を指定する <see cref="T:System.TimeSpan" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentException">指定した期間がより小さい<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolVersion">
+      <MemberSignature Language="C#" Value="public int ProtocolVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProtocolVersion" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.ProtocolVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.ProtocolVersion" /> プロパティは、使用する LDAP プロトコルのバージョンを示します。</summary>
+        <value>使用する LDAP プロトコルのバージョン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryClientCertificate">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.QueryClientCertificateCallback QueryClientCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.QueryClientCertificateCallback QueryClientCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.QueryClientCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.QueryClientCertificateCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.QueryClientCertificate" /> プロパティは、SSL 接続の確立時にクライアント証明書を指定するために使用する、既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.QueryClientCertificateCallback" /> オブジェクトを格納します。</summary>
+        <value>SSL 接続の確立時にクライアント証明書を指定するために使用する、既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.QueryClientCertificateCallback" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.DirectoryServices.Protocols.DirectoryConnection.ClientCertificates%2A>プロパティを<xref:System.DirectoryServices.Protocols.LdapConnection>オブジェクトを設定するで指定された証明書、<xref:System.DirectoryServices.Protocols.DirectoryConnection.ClientCertificates%2A>プロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralCallback">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.ReferralCallback ReferralCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.ReferralCallback ReferralCallback" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralCallback" /> プロパティは、参照追跡時に使用する既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.ReferralCallback" /> オブジェクトを格納します。</summary>
+        <value>参照追跡時に使用する既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.ReferralCallback" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralChasing">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.ReferralChasingOptions ReferralChasing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.Protocols.ReferralChasingOptions ReferralChasing" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralChasing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.ReferralChasingOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralChasing" /> プロパティは、LDAP サーバーによって返される参照を LDAP ライブラリが追跡する方法を指定する <see cref="T:System.DirectoryServices.ReferralChasingOption" /> オブジェクトを格納します。</summary>
+        <value>LDAP サーバーによって返される参照を LDAP ライブラリが追跡する方法を指定する <see cref="T:System.DirectoryServices.ReferralChasingOption" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定された値が定義されていない<see cref="T:System.DirectoryServices.ReferralChasingOption" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferralHopLimit">
+      <MemberSignature Language="C#" Value="public int ReferralHopLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReferralHopLimit" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralHopLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.ReferralHopLimit" /> プロパティは、参照追跡時に許容されるホップ数を示します。</summary>
+        <value>参照追跡時に許容されるホップ数。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentException">指定した値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDseCache">
+      <MemberSignature Language="C#" Value="public bool RootDseCache { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RootDseCache" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.RootDseCache" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.RootDseCache" /> プロパティは、内部 RootDSE キャッシュを有効にします。</summary>
+        <value>キャッシュが有効である場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaslMethod">
+      <MemberSignature Language="C#" Value="public string SaslMethod { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SaslMethod" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SaslMethod" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SaslMethod" /> プロパティは、適切な、簡易認証およびセキュリティ層 (SASL: Simple Authentication and Security Layer) のバインド方法を示します。</summary>
+        <value>適切な SASL のバインド方法。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Sealing">
+      <MemberSignature Language="C#" Value="public bool Sealing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sealing" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.Sealing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.Sealing" /> プロパティは、Kerberos 暗号化を有効にします。</summary>
+        <value>Kerberos 暗号化が有効である場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureSocketLayer">
+      <MemberSignature Language="C#" Value="public bool SecureSocketLayer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SecureSocketLayer" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SecureSocketLayer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SecureSocketLayer" /> プロパティは、接続で SSL (Secure Socket Layer) を有効にします。</summary>
+        <value>SSL が有効な場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityContext">
+      <MemberSignature Language="C#" Value="public object SecurityContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SecurityContext" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SecurityContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SecurityContext" /> プロパティは、現在の接続に関連付けられているセキュリティ コンテキストを指定します。</summary>
+        <value>現在の接続に関連付けられているセキュリティ コンテキスト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan SendTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan SendTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SendTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SendTimeout" /> プロパティは、送信タイムアウトを指定する <see cref="T:System.TimeSpan" /> オブジェクトを格納します。</summary>
+        <value>送信タイムアウトを指定する <see cref="T:System.TimeSpan" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentException">指定された値より小さい<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Signing">
+      <MemberSignature Language="C#" Value="public bool Signing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Signing" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.Signing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.Signing" /> プロパティは、Kerberos 暗号化を有効にします。</summary>
+        <value>Kerberos 暗号化が有効である場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SslInformation">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.SecurityPackageContextConnectionInformation SslInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.SecurityPackageContextConnectionInformation SslInformation" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SslInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.SecurityPackageContextConnectionInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SslInformation" /> プロパティは、セキュリティで保護された現在の接続に関するデータを格納している <see cref="T:System.DirectoryServices.Protocols.SecurityPackageContextConnectionInformation" /> オブジェクトを格納します。</summary>
+        <value>セキュリティで保護された現在の接続に関するデータを格納している <see cref="T:System.DirectoryServices.Protocols.SecurityPackageContextConnectionInformation" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SspiFlag">
+      <MemberSignature Language="C#" Value="public int SspiFlag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SspiFlag" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.SspiFlag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.SspiFlag" /> プロパティは、SSPI (Security Support Provider Interface) の InitializeSecurityContext 関数に渡すフラグを示します。  InitializeSecurityContext 関数に関する詳細については、MSDN ライブラリでの InitializeSecurityContext 関数のトピックを参照してください。 [http://msdn.microsoft.com/library](http://msdn.microsoft.com/library)です。</summary>
+        <value>SSPI の InitializeSecurityContext 関数に渡すフラグ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartTransportLayerSecurity">
+      <MemberSignature Language="C#" Value="public void StartTransportLayerSecurity (System.DirectoryServices.Protocols.DirectoryControlCollection controls);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartTransportLayerSecurity(class System.DirectoryServices.Protocols.DirectoryControlCollection controls) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapSessionOptions.StartTransportLayerSecurity(System.DirectoryServices.Protocols.DirectoryControlCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controls" Type="System.DirectoryServices.Protocols.DirectoryControlCollection" />
+      </Parameters>
+      <Docs>
+        <param name="controls">使用するコントロールを格納している <see cref="T:System.DirectoryServices.Protocols.DirectoryControlCollection" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapSessionOptions.StartTransportLayerSecurity(System.DirectoryServices.Protocols.DirectoryControlCollection)" /> メソッドは、トランスポート層セキュリティ暗号化を開始します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.TlsOperationException">要求が失敗しました。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.LdapException">LDAP のエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StopTransportLayerSecurity">
+      <MemberSignature Language="C#" Value="public void StopTransportLayerSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopTransportLayerSecurity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.LdapSessionOptions.StopTransportLayerSecurity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.LdapSessionOptions.StopTransportLayerSecurity" /> メソッドは、トランスポート層セキュリティ暗号化を終了します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+        <exception cref="T:System.DirectoryServices.Protocols.TlsOperationException">要求が失敗しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TcpKeepAlive">
+      <MemberSignature Language="C#" Value="public bool TcpKeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TcpKeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.TcpKeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.TcpKeepAlive" /> プロパティは、TCP の Keep-alive を有効にします。</summary>
+        <value>TCP の Keep-alive が有効である場合、このプロパティは <see langword="true" /> です。有効でない場合は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyServerCertificate">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.Protocols.VerifyServerCertificateCallback VerifyServerCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.Protocols.VerifyServerCertificateCallback VerifyServerCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.LdapSessionOptions.VerifyServerCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.VerifyServerCertificateCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.LdapSessionOptions.VerifyServerCertificate" /> プロパティは、SSL 接続の確立時にサーバー証明書を検証するために使用する、既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.VerifyServerCertificateCallback" /> オブジェクトを格納します。</summary>
+        <value>SSL 接続の確立時にサーバー証明書を検証するために使用する、既定のコールバック関数を指定する <see cref="T:System.DirectoryServices.Protocols.VerifyServerCertificateCallback" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.DirectoryServices.Protocols.LdapConnection" /> オブジェクトが既に破棄されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

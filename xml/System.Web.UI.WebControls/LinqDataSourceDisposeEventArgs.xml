@@ -1,0 +1,75 @@
+<Type Name="LinqDataSourceDisposeEventArgs" FullName="System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceDisposeEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSourceDisposeEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.LinqDataSource.ContextDisposing" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーを作成する、<xref:System.Web.UI.WebControls.LinqDataSource.ContextDisposing>クリーンアップされる固有のデータ コンテキスト オブジェクトをオブジェクトが破棄される前に実行するイベントです。 <xref:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs>オブジェクトには選択すると、更新、挿入、またはデータの削除は、ときに使用されるデータ コンテキスト オブジェクトが含まれています。 <xref:System.Web.UI.WebControls.LinqDataSource.ContextDisposing>中にイベントが発生した、<xref:System.Web.UI.Control.Unload>前に、イベント、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、コンテキスト オブジェクトを破棄します。  
+  
+ データ コンテキスト オブジェクトで指定された型は、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティまたはに設定する型、<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs.ObjectInstance%2A>の<xref:System.Web.UI.WebControls.LinqDataSourceContextEventArgs>クラスです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、データベースと対話、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティに設定されている、<xref:System.Data.Linq.DataContext>データベースを表すオブジェクト。 ときに、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、メモリ内のデータ コレクションと対話、<xref:System.Web.UI.WebControls.LinqDataSource.ContextTypeName%2A>プロパティは、データ コレクションを格納するオブジェクトに設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceDisposeEventArgs (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">破棄するためのデータ コンテキスト オブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectInstance">
+      <MemberSignature Language="C#" Value="public object ObjectInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.ObjectInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>破棄するためのデータ コンテキスト オブジェクトを取得します。</summary>
+        <value>データ コンテキストを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.ObjectInstance%2A>プロパティには、データ コンテキスト オブジェクトが含まれています。 を、<xref:System.Web.UI.WebControls.LinqDataSource>データ操作に対してコントロールを使用します。 使用することができます、<xref:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.ObjectInstance%2A>が破棄される前に、オブジェクトを調べたい場合は、データ コンテキスト オブジェクトを取得するプロパティです。  
+  
+ ときに、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、データベースと対話、<xref:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.ObjectInstance%2A>プロパティに設定されている、<xref:System.Data.Linq.DataContext>データベースを表すオブジェクト。 ときに、<xref:System.Web.UI.WebControls.LinqDataSource>コントロールは、メモリ内のデータ コレクションと対話、<xref:System.Web.UI.WebControls.LinqDataSourceDisposeEventArgs.ObjectInstance%2A>プロパティは、データ コレクションを格納するオブジェクトに設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

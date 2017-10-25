@@ -1,0 +1,162 @@
+<Type Name="ScriptResourceHandler" FullName="System.Web.Handlers.ScriptResourceHandler">
+  <TypeSignature Language="C#" Value="public class ScriptResourceHandler : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScriptResourceHandler extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Handlers.ScriptResourceHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>リソースとしてアセンブリに埋め込まれるスクリプト ファイルの要求を処理するための HTTP ハンドラーを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.ScriptResourceHandler>クラスを通じて参照されている埋め込みのスクリプト ファイルのすべての要求の処理、<xref:System.Web.UI.ScriptManager>クラスです。 <xref:System.Web.Handlers.ScriptResourceHandler>オブジェクトは、埋め込みのスクリプト ライブラリとスクリプト ライブラリのローカライズされたリソースを取得します。 場合、<xref:System.Web.UI.ScriptReference.NotifyScriptLoaded%2A>プロパティに設定されている`true`、<xref:System.Web.Handlers.ScriptResourceHandler>オブジェクトは、オブジェクトのメソッドに、スクリプト ファイルの最後の呼び出しを追加します。  
+  
+ 既定では、<xref:System.Web.Handlers.ScriptResourceHandler>クラスを圧縮し、Internet Explorer 7 の埋め込みのスクリプト ファイルをキャッシュします。 圧縮とオフのキャッシュを有効にすることができます、<xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCompression%2A>と<xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection.EnableCaching%2A>のプロパティ、<xref:System.Web.Configuration.ScriptingScriptResourceHandlerSection>クラスです。 Web.config ファイルでは、これらのプロパティを設定します。  
+  
+> [!NOTE]
+>  圧縮は、Web.config ファイルのセクションで Internet Explorer 7 の別名を作成して以前のバージョンの Internet Explorer のにできます。 次の値がプログラムで設定する、<xref:System.Web.UI.Page.ClientTarget%2A>そのエイリアスをプロパティです。 ただし、お勧めしませんこのアプローチのため、パフォーマンスの低下が発生し、危険度の高いエラーが発生します。  
+  
+ AJAX 対応の ASP.NET Web アプリケーションの既定の Web.config ファイルを追加、<xref:System.Web.Handlers.ScriptResourceHandler>ハンドラーとして。 Web.config ファイルに次の要素を含めることで、アプリケーションに、ハンドラーを手動で追加することができます。  
+  
+```  
+<httpHandlers>  
+  <add verb="GET,HEAD" path="ScriptResource.axd"   
+    type="System.Web.Handlers.ScriptResourceHandler,   
+    System.Web.Extensions, Version=1.0.61025.0, Culture=neutral,   
+    PublicKeyToken=31bf3856ad364e35" validate="false" />  
+</httpHandlers>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 アクセス許可の値。<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptResourceHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.ScriptResourceHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Handlers.ScriptResourceHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="protected virtual bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Handlers.ScriptResourceHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、別の要求がクラスのインスタンスを使用できるかどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.ScriptResourceHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see langword="Request" />、 <see langword="Response" />、 <see langword="Session" />、および<see langword="Server" />) HTTP 要求を処理するために使用されます。</param>
+        <summary>派生クラスでオーバーライドされると、プロセスに対する HTTP Web 要求をリソースとしてアセンブリに埋め込まれているスクリプト ファイル。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.IsReusable">
+      <MemberSignature Language="C#" Value="bool System.Web.IHttpHandler.IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.IHttpHandler.IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Handlers.ScriptResourceHandler.System#Web#IHttpHandler#IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.IHttpHandler" />インスタンス。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Handlers.ScriptResourceHandler> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.ProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpHandler.ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpHandler.ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.ScriptResourceHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />組み込みサーバー オブジェクトへの参照を提供するオブジェクト (たとえば、 <see langword="Request" />、 <see langword="Response" />、 <see langword="Session" />、および<see langword="Server" />) HTTP 要求を処理するために使用されます。</param>
+        <summary>アセンブリにリソースとして埋め込まれているスクリプト ファイルの HTTP Web 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Handlers.ScriptResourceHandler> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">埋め込みのスクリプトのデバッグとリリース バージョンの型名が一致しません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,110 @@
+<Type Name="QualificationDataAttribute" FullName="System.AddIn.Pipeline.QualificationDataAttribute">
+  <TypeSignature Language="C#" Value="public sealed class QualificationDataAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit QualificationDataAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.QualificationDataAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>パイプライン セグメントの開発者が指定したデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を使用して、パイプラインのセグメントに目的を問わず、名前と値の文字列のペアの形式でのデータを割り当てることができます。 たとえば、アドインを読み込むことを外部のプロセスを指定できます。  
+  
+ <xref:System.AddIn.Hosting.AddInStore.Rebuild%2A>と<xref:System.AddIn.Hosting.AddInStore.Update%2A>メソッドで、利用可能なパイプライン セグメントに関する情報のストアを管理するには、この属性を使用して修飾データのあるセグメントを識別します。  
+  
+ パイプライン セグメントの修飾データにアクセスするを参照してください。、<xref:System.AddIn.Hosting.AddInToken.QualificationData%2A>プロパティです。 すべてのパイプライン セグメントのデータを列挙するには、次を参照してください。、<xref:System.AddIn.Hosting.QualificationDataItem>クラスです。  
+  
+ 修飾データは、ホストでの読み取りのみが、他の方法で、アドイン システムで処理されません。  
+  
+ パイプライン セグメントに修飾データを適用するには配置することによって、<xref:System.AddIn.Pipeline.QualificationDataAttribute>セグメント属性の横にある属性です。 パイプライン セグメントとその属性に関する詳細については、次を参照してください。[パイプライン開発](~/docs/framework/add-ins/pipeline-development.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、アドインに修飾データが適用されます。  
+  
+ [!code-csharp[AddInP2AddInCalcV2#2](~/samples/snippets/csharp/VS_Snippets_CLR/AddInP2AddInCalcV2/cs/addincalcv2.cs#2)]
+ [!code-vb[AddInP2AddInCalcV2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInP2AddInCalcV2/vb/AddInCalcV2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QualificationDataAttribute (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.QualificationDataAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">キー/値ペア内のキーとして機能する任意の識別子です。</param>
+        <param name="value">任意の値。</param>
+        <summary><see cref="T:System.AddIn.Pipeline.QualificationDataAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`と`value`任意のテキストを指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Pipeline.QualificationDataAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー/値ペアのキーとして機能する名前を取得します。</summary>
+        <value>属性に割り当てられた名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Pipeline.QualificationDataAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー/値ペアの値を取得します。</summary>
+        <value>属性に割り当てられた値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

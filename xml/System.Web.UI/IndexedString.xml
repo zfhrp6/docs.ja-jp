@@ -1,0 +1,70 @@
+<Type Name="IndexedString" FullName="System.Web.UI.IndexedString">
+  <TypeSignature Language="C#" Value="public sealed class IndexedString" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit IndexedString extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IndexedString" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって使用されるユーティリティ文字列クラスを提供、<see cref="T:System.Web.UI.ObjectStateFormatter" />オブジェクト グラフのシリアル化を最適化するためにクラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IndexedString>クラスを使って、<xref:System.Web.UI.ObjectStateFormatter>文字列テーブルを構築し、オブジェクト グラフのシリアル化を最適化するクラス。 <xref:System.Web.UI.IndexedString>繰り返される文字列を含むページの状態情報を効率的な格納できるようにするための最適化を提供します。 <xref:System.Web.UI.IndexedString>クラスがコードから直接使用するものではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IndexedString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IndexedString.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">文字列。</param>
+        <summary><see cref="T:System.Web.UI.IndexedString" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IndexedString>コンス トラクターにより渡された文字列がない`null`または<xref:System.String.Empty>に割り当てます、<xref:System.Web.UI.IndexedString.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンス トラクターに渡された文字列パラメーターが<see langword="null" />または<see cref="F:System.String.Empty" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IndexedString.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられている文字列を取得、<see cref="T:System.Web.UI.IndexedString" />オブジェクト。</summary>
+        <value>初期化された文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

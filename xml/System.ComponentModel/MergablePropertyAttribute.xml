@@ -1,0 +1,352 @@
+<Type Name="MergablePropertyAttribute" FullName="System.ComponentModel.MergablePropertyAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MergablePropertyAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MergablePropertyAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.MergablePropertyAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このプロパティは、[プロパティ] ウィンドウには、他のオブジェクトに属するプロパティとは組み合わせることができますを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マークされたプロパティ、 <xref:System.ComponentModel.MergablePropertyAttribute> 'éý'`true`プロパティ ウィンドウでその他のオブジェクトに属するプロパティと組み合わせて使用できます。 マークされたプロパティ、 <xref:System.ComponentModel.MergablePropertyAttribute> 'éý'`false`とは別に表示される必要があります。 既定値は、`true` です。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると、 <xref:System.ComponentModel.MergablePropertyAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.MergablePropertyAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.MergablePropertyAttribute>プロパティに設定`false`、値が<xref:System.ComponentModel.MergablePropertyAttribute.No>です。 そのため、コード内でこの属性の値を確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.MergablePropertyAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.MergablePropertyAttribute.No?displayProperty=nameWithType>です。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、マージに該当するプロパティをマークします。  
+  
+ [!code-cpp[Classic MergablePropertyAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MergablePropertyAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic MergablePropertyAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/VB/source.vb#1)]  
+  
+ 次の例の値を確認する方法を示しています、<xref:System.ComponentModel.MergablePropertyAttribute>の`MyProperty`します。 最初に、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 次に、インデックス、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。 このプロパティの属性を返し、属性変数に保存します。  
+  
+ この例の値をチェックする 2 つの異なる方法を表示する、<xref:System.ComponentModel.MergablePropertyAttribute>です。 この例では、2 つ目のコード フラグメントで、<xref:System.ComponentModel.MergablePropertyAttribute.Equals%2A>メソッドを`static`値。 この例では、最後のコード フラグメントで、<xref:System.ComponentModel.MergablePropertyAttribute.AllowMerge%2A>プロパティの値を確認します。  
+  
+ [!code-cpp[Classic MergablePropertyAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic MergablePropertyAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic MergablePropertyAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/VB/source.vb#2)]  
+  
+ 持つクラスをマークした場合、<xref:System.ComponentModel.MergablePropertyAttribute>値を確認し、次のコードを使用します。  
+  
+ [!code-cpp[Classic MergablePropertyAttribute Example#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CPP/source.cpp#3)]
+ [!code-csharp[Classic MergablePropertyAttribute Example#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/CS/source.cs#3)]
+ [!code-vb[Classic MergablePropertyAttribute Example#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MergablePropertyAttribute Example/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MergablePropertyAttribute (bool allowMerge);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool allowMerge) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.MergablePropertyAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="allowMerge" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="allowMerge">
+          <see langword="true" />このプロパティをプロパティ ウィンドウにその他のオブジェクトに属するプロパティと組み合わせることができる場合それ以外の場合、<see langword="false" />です。</param>
+        <summary><see cref="T:System.ComponentModel.MergablePropertyAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、マージに該当するプロパティをマークします。 このコードでは、新しい<xref:System.ComponentModel.MergablePropertyAttribute>、その値に設定<xref:System.ComponentModel.MergablePropertyAttribute?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic MergablePropertyAttribute.MergablePropertyAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MergablePropertyAttribute.MergablePropertyAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MergablePropertyAttribute.MergablePropertyAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MergablePropertyAttribute.MergablePropertyAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic MergablePropertyAttribute.MergablePropertyAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MergablePropertyAttribute.MergablePropertyAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowMerge">
+      <MemberSignature Language="C#" Value="public bool AllowMerge { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowMerge" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.MergablePropertyAttribute.AllowMerge" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティをプロパティ ウィンドウでその他のオブジェクトに属するプロパティと組み合わせることができるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このプロパティをプロパティ ウィンドウにその他のオブジェクトに属するプロパティと組み合わせることができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の確認を表示するかどうか`MyProperty`マージするが適切です。 最初の属性の取得コード`MyProperty`で。  
+  
+-   取得する、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。  
+  
+-   インデックスを付ける、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。  
+  
+-   このプロパティの属性の属性変数に保存します。  
+  
+ コードを設定し、`myAttribute`の値に、<xref:System.ComponentModel.MergablePropertyAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティがマージする適切なかどうかを調べます。  
+  
+ [!code-cpp[Classic MergablePropertyAttribute.AllowMerge Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MergablePropertyAttribute.AllowMerge Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MergablePropertyAttribute.AllowMerge Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MergablePropertyAttribute.AllowMerge Example/CS/source.cs#1)]
+ [!code-vb[Classic MergablePropertyAttribute.AllowMerge Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MergablePropertyAttribute.AllowMerge Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.MergablePropertyAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.MergablePropertyAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MergablePropertyAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MergablePropertyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは既定値を示す<see cref="F:System.ComponentModel.MergablePropertyAttribute.Yes" />、つまりプロパティは、[プロパティ] ウィンドウでその他のオブジェクトに属するプロパティと組み合わせることができます。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性が定数のメンバーに設定されている場合、この値を持つプロパティを設定すると、<xref:System.ComponentModel.MergablePropertyAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.MergablePropertyAttribute?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.MergablePropertyAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のもう 1 つのオブジェクト。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <paramref name="obj" /> がこのインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.MergablePropertyAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.MergablePropertyAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.MergablePropertyAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.MergablePropertyAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.MergablePropertyAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MergablePropertyAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MergablePropertyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[プロパティ] ウィンドウには、その他のオブジェクトに属するプロパティとプロパティを組み合わせることはできませんを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.MergablePropertyAttribute> 'éý' `false`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.MergablePropertyAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.MergablePropertyAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.MergablePropertyAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.MergablePropertyAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.MergablePropertyAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MergablePropertyAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[プロパティ] ウィンドウには、その他のオブジェクトに属するプロパティとプロパティを組み合わせることができますを指定します。 これは、<see langword="static" />フィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドは、この属性の既定の設定です。  
+  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.MergablePropertyAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.MergablePropertyAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.MergablePropertyAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

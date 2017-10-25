@@ -1,0 +1,87 @@
+<Type Name="ClientSettings" FullName="System.Windows.Automation.ClientSettings">
+  <TypeSignature Language="C#" Value="public static class ClientSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ClientSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ClientSettings" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアントをクライアント側プロバイダーを使用できるようにするメソッドが含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RegisterClientSideProviderAssembly">
+      <MemberSignature Language="C#" Value="public static void RegisterClientSideProviderAssembly (System.Reflection.AssemblyName assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClientSideProviderAssembly(class System.Reflection.AssemblyName assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ClientSettings.RegisterClientSideProviderAssembly(System.Reflection.AssemblyName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.Reflection.AssemblyName" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">アセンブリの名前。</param>
+        <summary>クライアント側プロバイダーを格納するアセンブリを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アセンブリから読み込まれるクライアント側 UI オートメーション プロバイダーを使用する UI オートメーション クライアントによって起動時に呼び出されます。 独自のアセンブリで実装されたプロバイダーを使用するアプリケーションを呼び出す必要があります<xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviders%2A>です。  
+  
+   
+  
+## Examples  
+ コード例を参照してください[クライアント側プロバイダー アセンブリの登録](~/docs/framework/ui-automation/register-a-client-side-provider-assembly.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.Automation.ProxyAssemblyNotLoadedException">アセンブリを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClientSideProviders">
+      <MemberSignature Language="C#" Value="public static void RegisterClientSideProviders (System.Windows.Automation.ClientSideProviderDescription[] clientSideProviderDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClientSideProviders(valuetype System.Windows.Automation.ClientSideProviderDescription[] clientSideProviderDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ClientSettings.RegisterClientSideProviders(System.Windows.Automation.ClientSideProviderDescription[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientSideProviderDescription" Type="System.Windows.Automation.ClientSideProviderDescription[]" />
+      </Parameters>
+      <Docs>
+        <param name="clientSideProviderDescription">プロバイダーの説明の配列。</param>
+        <summary>クライアント側プロバイダーを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはスタートアップ時に、独自のクライアント側プロバイダーを実装するクライアントによって呼び出されます。 別のアセンブリからプロバイダーを使用するクライアントを呼び出す必要があります<xref:System.Windows.Automation.ClientSettings.RegisterClientSideProviderAssembly%2A>です。  
+  
+   
+  
+## Examples  
+ コード例を参照してください[クライアント アプリケーションの UI オートメーション プロバイダーを実装](~/docs/framework/ui-automation/implement-ui-automation-providers-in-a-client-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Windows.Automation.ProxyAssemblyNotLoadedException">アセンブリを読み込めませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

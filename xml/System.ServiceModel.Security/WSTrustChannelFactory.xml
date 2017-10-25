@@ -1,0 +1,405 @@
+<Type Name="WSTrustChannelFactory" FullName="System.ServiceModel.Security.WSTrustChannelFactory">
+  <TypeSignature Language="C#" Value="public class WSTrustChannelFactory : System.ServiceModel.ChannelFactory&lt;System.ServiceModel.Security.IWSTrustChannelContract&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSTrustChannelFactory extends System.ServiceModel.ChannelFactory`1&lt;class System.ServiceModel.Security.IWSTrustChannelContract&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.WSTrustChannelFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.ChannelFactory&lt;System.ServiceModel.Security.IWSTrustChannelContract&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TChannel">System.ServiceModel.Security.IWSTrustChannelContract</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>チャネルを生成するファクトリ (<see cref="T:System.ServiceModel.Security.WSTrustChannel" />オブジェクト)、Ws-trust エンドポイントと通信するために使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (System.ServiceModel.Channels.Binding binding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.ServiceModel.Channels.Binding)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+      </Parameters>
+      <Docs>
+        <param name="binding">ファクトリにより作成されるチャネルのために指定する <see cref="T:System.ServiceModel.Channels.Binding" /> 。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" />指定されたバインディングを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">ファクトリにより作成されるチャネルの <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" />指定されたエンドポイントを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (string endpointConfigurationName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">エンドポイントで使用される構成名。</param>
+        <summary>指定したエンドポイントの構成名を使用して、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">ファクトリにより作成されるチャネルのために指定する <see cref="T:System.ServiceModel.Channels.Binding" /> 。</param>
+        <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したバインドとエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (System.ServiceModel.Channels.Binding binding, string remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, string remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.ServiceModel.Channels.Binding,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="remoteAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="binding"><see cref="T:System.ServiceModel.Channels.Binding" />ファクトリによって作成されるチャネルの指定</param>
+        <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したバインドとリモート アドレスを使用して、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSTrustChannelFactory (string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string endpointConfigurationName, class System.ServiceModel.EndpointAddress remoteAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.#ctor(System.String,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="endpointConfigurationName">エンドポイントで使用される構成名。</param>
+        <param name="remoteAddress">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Security.WSTrustChannelFactory" />指定したエンドポイント構成名とエンドポイント アドレスに関連付けられているクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Security.IWSTrustChannelContract CreateChannel (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Security.IWSTrustChannelContract CreateChannel(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.IWSTrustChannelContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">サービスの場所を提供する <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="via">チャネルがメッセージを送信するトランスポート アドレスを含む <see cref="T:System.Uri" />。</param>
+        <summary>作成、<see cref="T:System.ServiceModel.Security.WSTrustChannel" />オブジェクトに指定したトランスポート アドレスを使って特定のエンドポイント アドレスのサービスにメッセージを送信するために使用します。</summary>
+        <returns>A<see cref="P:System.ServiceModel.Security.WSTrustChannel.Contract" />新しいチャネルを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるオブジェクトのインスタンスでは、<xref:System.ServiceModel.Security.WSTrustChannel>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSerializationContext">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext CreateSerializationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext CreateSerializationContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.CreateSerializationContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファクトリによって作成されるチャネルが使用する <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> オブジェクトを作成します。</summary>
+        <returns>信頼できるクライアントのプロパティを使用して初期化される <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ServiceModel.Security.WSTrustChannelFactory.SecurityTokenResolver%2A>プロパティに設定されている`null`リゾルバーの作成に使用される ClientCertificate を工場出荷時のエンドポイントの ClientCredentials 動作を設定します。 このような証明書が見つからない場合、空の競合回避モジュールが使用します。  
+  
+ 場合<xref:System.ServiceModel.Security.WSTrustChannelFactory.UseKeyTokenResolver%2A>に設定されている`null`、空のリゾルバーが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTrustChannel">
+      <MemberSignature Language="C#" Value="protected virtual System.ServiceModel.Security.WSTrustChannel CreateTrustChannel (System.ServiceModel.Security.IWSTrustChannelContract innerChannel, System.ServiceModel.Security.TrustVersion trustVersion, System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context, System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Security.WSTrustChannel CreateTrustChannel(class System.ServiceModel.Security.IWSTrustChannelContract innerChannel, class System.ServiceModel.Security.TrustVersion trustVersion, class System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext context, class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer requestSerializer, class System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer responseSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.WSTrustChannelFactory.CreateTrustChannel(System.ServiceModel.Security.IWSTrustChannelContract,System.ServiceModel.Security.TrustVersion,System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext,System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer,System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.WSTrustChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="innerChannel" Type="System.ServiceModel.Security.IWSTrustChannelContract" />
+        <Parameter Name="trustVersion" Type="System.ServiceModel.Security.TrustVersion" />
+        <Parameter Name="context" Type="System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" />
+        <Parameter Name="requestSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" />
+        <Parameter Name="responseSerializer" Type="System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="innerChannel">メッセージを送受信できる基本クラスによって作成されるチャネル。</param>
+        <param name="trustVersion">使用する必要がある WS-Trust のバージョン。</param>
+        <param name="context">WS-Trust メッセージをシリアル化するために使用する必要がある <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustSerializationContext" /> オブジェクト。</param>
+        <param name="requestSerializer">WS-Trust 要求メッセージをシリアル化するために使用する必要がある <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> オブジェクト。</param>
+        <param name="responseSerializer">WS-Trust 応答メッセージをシリアル化するために使用する必要がある <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" /> オブジェクト。</param>
+        <summary>このファクトリの構成を反映するパラメーターを使用して、<see cref="T:System.ServiceModel.Security.WSTrustChannel" /> オブジェクトを作成します。</summary>
+        <returns>新しいチャネルを表す <see cref="T:System.ServiceModel.Security.WSTrustChannel" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandlerCollectionManager">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager SecurityTokenHandlerCollectionManager" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.SecurityTokenHandlerCollectionManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" />のセットを含む<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />Ws-trust メッセージにシリアル化およびトークンを検証するためには、このファクトリによって作成されるチャネルで使用されるオブジェクトが見つかりませんでした。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollectionManager" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver SecurityTokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver SecurityTokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.SecurityTokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> Ws-trust メッセージ要素の大部分で発見されたセキュリティ トークン参照を解決するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合は、このファクトリによって作成されるチャネルは競合回避モジュールを作成するファクトリのエンドポイントの ClientCredentials 動作を設定 ClientCertificate を使用します。 このような証明書が見つからない場合、空の競合回避モジュールが使用します。  
+  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrustVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.TrustVersion TrustVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.TrustVersion TrustVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.TrustVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.TrustVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファクトリによって作成されたチャネルが、メッセージをシリアル化するために使用する、WS-Trust のバージョンを取得または設定します。</summary>
+        <value>このファクトリによって作成されたチャネルが、メッセージをシリアル化するために使用する、WS-Trust のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合、このファクトリによって作成されるチャネルは使用して、<xref:System.ServiceModel.Security.WSTrustChannelFactory.TrustVersion%2A>いずれに対しても設定<xref:System.ServiceModel.Channels.SecurityBindingElement>が存在する場合、チャネル ファクトリのエンドポイントのオブジェクトで見つかった。  
+  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseKeyTokenResolver">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenResolver UseKeyTokenResolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenResolver UseKeyTokenResolver" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.UseKeyTokenResolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> RST メッセージの wst:UseKey 要素だけでなく、wst:RenewTarget 要素を RST メッセージのセキュリティ トークン参照を解決するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合は、空のリゾルバーが使用されます。  
+  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustRequestSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer WSTrustRequestSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer WSTrustRequestSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.WSTrustRequestSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> wst:RequestSecurityToken メッセージをシリアル化するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustRequestSerializer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合、いずれか、<xref:System.IdentityModel.Protocols.WSTrust.WSTrust13RequestSerializer>オブジェクトまたは<xref:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005RequestSerializer>オブジェクトを使用します。 によって示される Ws-trust のバージョンに対応させるために使用されるシリアライザーには、<xref:System.ServiceModel.Security.WSTrustChannelFactory.TrustVersion%2A>プロパティです。  
+  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WSTrustResponseSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer WSTrustResponseSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer WSTrustResponseSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.WSTrustChannelFactory.WSTrustResponseSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" /> wst:RequestSecurityTokensResponse メッセージをシリアル化するために使用します。</summary>
+        <value><see cref="T:System.IdentityModel.Protocols.WSTrust.WSTrustResponseSerializer" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されていない場合、いずれか、<xref:System.IdentityModel.Protocols.WSTrust.WSTrust13ResponseSerializer>オブジェクトまたは<xref:System.IdentityModel.Protocols.WSTrust.WSTrustFeb2005ResponseSerializer>オブジェクトを使用します。 によって示される Ws-trust のバージョンに対応させるために使用されるシリアライザーには、<xref:System.ServiceModel.Security.WSTrustChannelFactory.TrustVersion%2A>プロパティです。  
+  
+ チャネルが作成された後は、このプロパティの値を変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

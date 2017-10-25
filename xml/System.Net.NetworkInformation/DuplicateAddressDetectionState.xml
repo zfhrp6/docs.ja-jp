@@ -1,0 +1,176 @@
+<Type Name="DuplicateAddressDetectionState" FullName="System.Net.NetworkInformation.DuplicateAddressDetectionState">
+  <TypeSignature Language="C#" Value="public enum DuplicateAddressDetectionState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DuplicateAddressDetectionState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.DuplicateAddressDetectionState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>IP アドレスの現在の状態を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネットワーク上のすべてのインターフェイスは、一意のアドレスであることを確認するには、インターフェイスのホストはユニキャスト アドレスに「重複アドレス検出」のアルゴリズムを実行している担当します。 このアルゴリズムの目的は、ネットワーク上で一意でないアドレスを防止しようとします。 このプロセスは、IETF RFC 1971 で定義されます。  
+  
+ この列挙体を使って、<xref:System.Net.NetworkInformation.UnicastIPAddressInformation>と<xref:System.Net.NetworkInformation.MulticastIPAddressInformation>クラスです。 このクラスのインスタンスが返されるは、ユニキャスト アドレスの情報を取得するときに、<xref:System.Net.NetworkInformation.NetworkInterface>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユニキャスト アドレス情報を決定します。  
+  
+ [!code-cpp[NclNetInfo2#45](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#45)]
+ [!code-csharp[NclNetInfo2#45](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#45)]
+ [!code-vb[NclNetInfo2#45](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#45)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Deprecated">
+      <MemberSignature Language="C#" Value="Deprecated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState Deprecated = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.DuplicateAddressDetectionState.Deprecated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが有効ですが、リース期限が近づいているが、アプリケーションでは使用できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Duplicate">
+      <MemberSignature Language="C#" Value="Duplicate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState Duplicate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.DuplicateAddressDetectionState.Duplicate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが一意ではありません。 このアドレスは、ネットワーク インターフェイスにない割り当てる必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState Invalid = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.DuplicateAddressDetectionState.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが正しくありません。 無効なアドレスの有効期限が切れてし、インターフェイスに割り当てられなくアプリケーションにデータ パケットを送信する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Preferred">
+      <MemberSignature Language="C#" Value="Preferred" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState Preferred = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.DuplicateAddressDetectionState.Preferred" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスが有効であり、使用は制限されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Tentative">
+      <MemberSignature Language="C#" Value="Tentative" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.NetworkInformation.DuplicateAddressDetectionState Tentative = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.NetworkInformation.DuplicateAddressDetectionState.Tentative" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.DuplicateAddressDetectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドレスの重複アドレス検出プロシージャの評価が正常に完了できません。 まだ正しくないと、送信されるパケットが破棄されるため、アプリケーションは、アドレスを使用しないでください。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,871 @@
+<Type Name="DataGridViewLinkCell" FullName="System.Windows.Forms.DataGridViewLinkCell">
+  <TypeSignature Language="C#" Value="public class DataGridViewLinkCell : System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewLinkCell extends System.Windows.Forms.DataGridViewCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewLinkCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>リンクを含むセルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell>クラスは、特殊な種類の<xref:System.Windows.Forms.DataGridViewCell>のリンクを表示するために使用します。  
+  
+ <xref:System.Windows.Forms.DataGridViewLinkColumn>は、この種類のセルを保持するために特化した列の型。 既定では、<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A?displayProperty=nameWithType>を新しい初期化<xref:System.Windows.Forms.DataGridViewLinkCell>です。 既存の後に、列内のセルのパターンに<xref:System.Windows.Forms.DataGridViewLinkCell>、列の設定<xref:System.Windows.Forms.DataGridViewLinkColumn.CellTemplate%2A>プロパティのパターンとして使用するセルをします。  
+  
+ 列のセルに関連するプロパティは、テンプレートのセルの同様の名前付きプロパティのラッパーです。 テンプレート セルのプロパティの値を変更すると、セルのみ、テンプレートに基づいて、変更後に追加されるが影響されます。 列のセルに関連するプロパティ値を変更するには、ただしはテンプレート セルとその他のすべてのセルの列で、更新し、必要な場合は、列の表示を更新します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell>のテンプレートとして、<xref:System.Windows.Forms.DataGridViewColumn>です。 列の任意のセルにスタイルの変更では、すべての列のセルに影響します。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.DataGridViewColumn>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#120)]
+ [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#120)]
+ [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#120)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewLinkCell" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewLinkCell.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewLinkCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewLinkCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewLinkCell" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ActiveLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ActiveLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.ActiveLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブなリンクを表示するために使用する色を取得または設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />が選択されているリンクを表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer 設定のリンクの色のホバー時の状態にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.ActiveLinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.ActiveLinkColor%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のセルの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewLinkCell" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上書き、<xref:System.Windows.Forms.DataGridViewLinkCell.Clone%2A>メソッドから派生するたびに<xref:System.Windows.Forms.DataGridViewLinkCell>し、派生クラスに新しいプロパティを追加します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DataGridViewLinkCell.Clone" />呼び出し、基本クラスの派生クラスで<see cref="M:System.Windows.Forms.DataGridViewLinkCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされも、派生クラスに追加されたプロパティの値をコピーすることを確認するようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewLinkCell" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.DataGridViewLinkCell" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DataGridViewLinkCell.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A>への参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditType">
+      <MemberSignature Language="C#" Value="public override Type EditType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EditType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.EditType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルのホストされる編集コントロールの種類を取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します、このクラスに実装された`null`ため、<xref:System.Windows.Forms.DataGridViewLinkCell>は編集できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormattedValueType">
+      <MemberSignature Language="C#" Value="public override Type FormattedValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FormattedValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.FormattedValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示を取得します<see cref="T:System.Type" />のセルの値。</summary>
+        <value>表示<see cref="T:System.Type" />のセルの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>プロパティ セルの内容の種類を判断します。 この例では、<xref:System.Windows.Forms.DataGridViewCell.FormattedValueType%2A?displayProperty=nameWithType>セルに含まれるかどうかを決定するプロパティが使用される、<xref:System.String>値に変換する前にします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.SelectionChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/CS/form1.cs#10)]
+ [!code-vb[System.Windows.Forms.DataGridViewSelectionSum#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectionSum/VB/form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetContentBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetContentBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.GetContentBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>指定されたを使用して計算されるセルの内容領域を囲んだ外接する四角形を返します<see cref="T:System.Drawing.Graphics" />とセル スタイルです。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />セルの内容領域に外接します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorIconBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetErrorIconBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetErrorIconBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルのエラー アイコンが表示されている場合に、そのエラー アイコンを囲む外接する四角形を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />いずれかが表示されている、それ以外の場合、セルのエラーのアイコンに外接する<see cref="F:System.Drawing.Rectangle.Empty" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex, System.Drawing.Size constraintSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex, valuetype System.Drawing.Size constraintSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="constraintSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルを描画するために使用します。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルのスタイルを表すです。</param>
+        <param name="rowIndex">セルの 0 から始まる行インデックス番号。</param>
+        <param name="constraintSize">セルの最大許容サイズ。</param>
+        <summary>セルの推奨されるサイズをピクセル単位で計算します。</summary>
+        <returns>A <see cref="T:System.Drawing.Size" /> (ピクセル単位) のセルの推奨されるサイズを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected override object GetValue (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetValue(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルの値を取得します。</summary>
+        <returns>含まれる値、<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUpUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool KeyUpUnsharesRow (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool KeyUpUnsharesRow(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.KeyUpUnsharesRow(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.KeyEventArgs" />キーを押すに関するデータを格納します。</param>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>キーが離され、セルにフォーカスがあるときに、セルを含む行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />SPACE キーがリリースされた場合、<see cref="P:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState" />プロパティは<see langword="true" />、<see cref="P:System.Windows.Forms.DataGridViewLinkCell.LinkVisited" />プロパティは<see langword="false" />、し、ctrl キーを押し、alt キーと SHIFT キーは押されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell.KeyUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewLinkCell.OnKeyUp%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewLinkCell.OnKeyUp%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LinkBehavior LinkBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LinkBehavior LinkBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.LinkBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクの動作を表す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.LinkBehavior" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.LinkBehavior.SystemDefault" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リンクの動作には、リンクは、常に下線を表示またはリンクは、上にマウス ポインターを動かしたときにのみ下線を表示するかどうかと、ダブルクリックまたは 1 回のクリックは、リンクをアクティブにするかどうかなどがあります。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkBehavior%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.LinkBehavior%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定時に指定した値が、有効な <see cref="T:System.Windows.Forms.LinkBehavior" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.LinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または非アクティブと未表示のリンクを表示するために使用する色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />リンクが最初に表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer のリンクの色を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.LinkColor%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.LinkColor%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkVisited">
+      <MemberSignature Language="C#" Value="public bool LinkVisited { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LinkVisited" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.LinkVisited" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリンクがアクセスされたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リンクが参照された場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState%2A>プロパティに設定されている`true`、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkVisited%2A>プロパティは、リンクがアクセスしたときに自動的に設定します。  
+  
+ マウスまたはキーボードを選択してアクティブ化されている場合、リンクにアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDownUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseDownUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseDownUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.MouseDownUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>ポインターがセルの上にあるときに、マウス ボタンが押されたときに、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />マウス ポインターが、リンクの上にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell.MouseDownUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseDown%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseDown%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeaveUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseLeaveUnsharesRow (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseLeaveUnsharesRow(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.MouseLeaveUnsharesRow(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行のインデックス。</param>
+        <summary>マウス ポインターをセルから離すときに、セルを含む行の共有を解除するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />セルに表示されたリンクが通常の状態にない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell.MouseLeaveUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseLeave%2A>です。 <xref:System.Windows.Forms.DataGridViewLinkCell.MouseLeaveUnsharesRow%2A>返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseLeave%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMoveUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseMoveUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseMoveUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.MouseMoveUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>マウス ポインターがセル上に移動したときに、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合は、リンク上にマウス ポインターが、リンクがまだ変更されていない、ホバー時の状態を反映するように色それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell.MouseMoveUnsharesRow%2A>メソッドが直前に呼び出されます、<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseMove%2A>メソッドです。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseMove%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUpUnsharesRow">
+      <MemberSignature Language="C#" Value="protected override bool MouseUpUnsharesRow (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool MouseUpUnsharesRow(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.MouseUpUnsharesRow(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />マウス クリックに関するデータを格納します。</param>
+        <summary>離されたときに、マウスのボタンは、ポインターがセル上に、そのセルを含む行を非共有にするかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />マウス ポインターが、リンクの上にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewLinkCell.MouseUpUnsharesRow%2A>直前に呼び出されますが<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseUp%2A>です。 返す必要があります`true`場合への呼び出し<xref:System.Windows.Forms.DataGridViewLinkCell.OnMouseUp%2A>セルを含む行を非共有の効果があります。 返します`false`それ以外の場合。  
+  
+ 行の共有の詳細については、次を参照してください。 [Windows フォーム DataGridView コントロールを拡張するためのベスト プラクティス](~/docs/framework/winforms/controls/best-practices-for-scaling-the-windows-forms-datagridview-control.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Forms.KeyEventArgs e, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Forms.KeyEventArgs e, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.OnKeyUp(System.Windows.Forms.KeyEventArgs,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルにフォーカスがある状態で文字キーを離したときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.OnMouseDown(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>マウス ポインターがセル上にあるときにマウス ボタンを押したままにすると呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.OnMouseLeave(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>マウス ポインターをセルから離すと呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.OnMouseMove(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>マウス ポインターがセル内で移動すると呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseUp (System.Windows.Forms.DataGridViewCellMouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseUp(class System.Windows.Forms.DataGridViewCellMouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.OnMouseUp(System.Windows.Forms.DataGridViewCellMouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DataGridViewCellMouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DataGridViewCellMouseEventArgs" />。</param>
+        <summary>マウス ポインターがセル上にあるときにマウス ボタンを離すと呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates cellState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates cellState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="cellState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="advancedBorderStyle" Type="System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />描画に使用される、<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</param>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</param>
+        <param name="cellBounds">A<see cref="T:System.Drawing.Rectangle" />の境界を格納している、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="cellState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの状態を指定する値。</param>
+        <param name="value">データ、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="formattedValue">書式付きデータ、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="errorText">セルに関連付けられたエラー メッセージ。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに関する書式とスタイル情報を格納します。</param>
+        <param name="advancedBorderStyle">A<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />描画されるセルの境界線スタイルを格納します。</param>
+        <param name="paintParts">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />セルのどの部分を描画する必要がありますを指定する値。</param>
+        <summary>現在の描画<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewLinkCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを説明する文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackVisitedState">
+      <MemberSignature Language="C#" Value="public bool TrackVisitedState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackVisitedState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはそれにアクセスするときに、リンクの色が変化するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />選択されているリンクの色を変更する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに`false`、<xref:System.Windows.Forms.DataGridViewLinkCell.LinkVisited%2A>プロパティは自動的に設定されません`true`訪問したときにします。  
+  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.TrackVisitedState%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.TrackVisitedState%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseColumnTextForLinkValue">
+      <MemberSignature Language="C#" Value="public bool UseColumnTextForLinkValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseColumnTextForLinkValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、列<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />プロパティ値がこのリンク テキストとして表示されます。</summary>
+        <value>
+          <see langword="true" />場合、列<see cref="P:System.Windows.Forms.DataGridViewLinkColumn.Text" />プロパティ値ですこのリンク テキストとして表示されます。<see langword="false" />場合、セル<see cref="P:System.Windows.Forms.DataGridViewCell.FormattedValue" />プロパティ値がこのリンク テキストとして表示されます。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.UseColumnTextForLinkValue%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.UseColumnTextForLinkValue%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueType">
+      <MemberSignature Language="C#" Value="public override Type ValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.ValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セル内の値のデータ型を取得または設定します。</summary>
+        <value>A<see cref="T:System.Type" />セルの値のデータ型を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisitedLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color VisitedLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color VisitedLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewLinkCell.VisitedLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、以前アクセスしたリンクの表示に使用する色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />がアクセスしたリンクを表示するために使用する色を表すです。 既定値は、ユーザーの Internet Explorer を訪問したリンクの色を設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor%2A>も所有している列のプロパティを設定、<xref:System.Windows.Forms.DataGridViewLinkCell.VisitedLinkColor%2A>列と更新のすべてのセルのプロパティ列を表示します。 指定された個々 のセルの値をオーバーライドするには、列の値を設定した後、セルの値を設定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.DataGridViewLinkColumn.VisitedLinkColor%2A?displayProperty=nameWithType>プロパティで、このプロパティに似ています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewComboBoxColumn>クラスの概要に関するトピック。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CPP/employees.cpp#70)]
+ [!code-csharp[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/CS/employees.cs#70)]
+ [!code-vb[System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewColumn_AllColumns_Bound_Employees/VB/employees.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

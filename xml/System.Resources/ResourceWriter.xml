@@ -1,0 +1,684 @@
+<Type Name="ResourceWriter" FullName="System.Resources.ResourceWriter">
+  <TypeSignature Language="C#" Value="public sealed class ResourceWriter : System.Resources.IResourceWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ResourceWriter extends System.Object implements class System.IDisposable, class System.Resources.IResourceWriter" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.ResourceWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Resources.Writer</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Resources.IResourceWriter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>システム既定の形式でリソースを出力ファイルまたは出力ストリームに書き込みます。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceWriter>既定の実装を提供、<xref:System.Resources.IResourceWriter>インターフェイスです。 バイナリ リソース (.resources) ファイルをプログラムで作成することができます。  
+  
+ リソースが使用する名前と値のペアとして指定された、<xref:System.Resources.ResourceWriter.AddResource%2A>メソッドです。 リソースの名前参照については、使用すると大文字小文字が区別されますが、作成ツールをより簡単にサポートおよび、バグを排除できます<xref:System.Resources.ResourceWriter>.resources ファイルの場合のみが異なる名前を持つことはできません。 <xref:System.Resources.ResourceWriter>クラスでは、文字列、オブジェクト、およびバイナリのリソースを作成することができます。 バイナリのリソースは、バイト配列またはストリームとしてリソース ファイルに書き込むことができます。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ リソース ファイルを作成するには、作成、<xref:System.Resources.ResourceWriter>一意のファイル名では、コール<xref:System.Resources.ResourceWriter.AddResource%2A>を少なくとも 1 回呼び出す<xref:System.Resources.ResourceWriter.Generate%2A>リソース ファイルをディスクに書き込むし、呼び出す<xref:System.Resources.ResourceWriter.Close%2A>ファイルを閉じます。 呼び出す<xref:System.Resources.ResourceWriter.Close%2A>が暗黙的に呼び出す<xref:System.Resources.ResourceWriter.Generate%2A>明示的に呼び出さない場合<xref:System.Resources.ResourceWriter.Generate%2A>です。  
+  
+ リソースはない追加されたのと同じ順序で記述とは限りません。  
+  
+ によって作成されたバイナリの .resources ファイルからリソースを取得する、<xref:System.Resources.ResourceWriter>クラスを使用することができます、<xref:System.Resources.ResourceManager>クラスは、名前付きリソースを取得することができます、または<xref:System.Resources.ResourceReader>クラスは、ファイル内のすべてのリソースを列挙することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、myResources.resources ファイルにいくつかの文字列を書き込みます。  
+  
+ [!code-cpp[Classic ResourceWriter Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ResourceWriter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ResourceWriter Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ResourceWriter Example/CS/source.cs#1)]
+ [!code-vb[Classic ResourceWriter Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ResourceWriter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceWriter (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.#ctor(System.IO.Stream)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">出力ストリーム。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Resources.ResourceWriter" />クラス リソースを指定されたストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを定義、<xref:System.Resources.ResourceWriter>クラスを指定したストリームに書き込みます。 コードでは、ライターにリソースを追加し、リソースをストリームに書き込みます。  
+  
+ [!code-cpp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CPP/resourcewritercstr1.cpp#1)]
+ [!code-csharp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CS/resourcewritercstr1.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/VB/resourcewritercstr1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="stream" />パラメーターが書き込み可能ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stream" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ResourceWriter (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">出力ファイル名。</param>
+        <summary>指定したファイルにリソースを書き込む <see cref="T:System.Resources.ResourceWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを定義、<xref:System.Resources.ResourceWriter>クラスを指定したファイルに書き込まれます。 コードでは、ライターにリソースを追加し、リソースをファイルに書き込みます。  
+  
+ [!code-cpp[Classic ResourceWriter Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ResourceWriter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ResourceWriter Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ResourceWriter Example/CS/source.cs#1)]
+ [!code-vb[Classic ResourceWriter Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ResourceWriter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="fileName" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public void AddResource (string name, byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddResource(string name, unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResource(System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="value">8 ビット符号なし整数の配列として、リソースの値です。</param>
+        <summary>書き込むリソースの一覧に、バイト配列として指定された名前付きリソースを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースはまで書き込まれません<xref:System.Resources.ResourceWriter.Generate%2A>と呼びます。  
+  
+ により記述されたリソースを取得することができます、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Byte%5B%5D%29>メソッドを呼び出して、<xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Byte%5B%5D%29>するバイトの配列として読み取られたグラフィック イメージを追加するメソッドを<xref:System.Resources.ResourceWriter>オブジェクト。  
+  
+ [!code-csharp[System.Resources.ResourceWriter.AddResource#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/cs/addresource_byt1.cs#4)]
+ [!code-vb[System.Resources.ResourceWriter.AddResource#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/vb/addresource_byt1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) に既に追加されて<see cref="T:System.Resources.ResourceWriter" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />は閉じられて、そのハッシュ テーブルは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public void AddResource (string name, System.IO.Stream value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddResource(string name, class System.IO.Stream value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResource(System.String,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するリソースの名前。</param>
+        <param name="value">追加するリソースの値。 リソースをサポートする必要があります、<see cref="P:System.IO.Stream.Length" />プロパティです。</param>
+        <summary>書き込むリソースの一覧に、ストリームとして指定された名前付きリソースを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートするすべてのストリームを指定することができます、<xref:System.IO.Stream.Length%2A?displayProperty=nameWithType>プロパティ`value`です。  
+  
+ により記述されたリソースを取得することができます、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%29>メソッドを呼び出して、<xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%29>に保存されているグラフィック イメージを追加する方法、<xref:System.IO.MemoryStream>オブジェクトを<xref:System.Resources.ResourceWriter>オブジェクト。  
+  
+ [!code-csharp[System.Resources.ResourceWriter.AddResource#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/cs/addresource_str1.cs#2)]
+ [!code-vb[System.Resources.ResourceWriter.AddResource#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/vb/addresource_str1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) に既に追加されて<see cref="T:System.Resources.ResourceWriter" />です。  
+  
+ または  
+  
+ ストリームがサポートしていません、<see cref="P:System.IO.Stream.Length" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />が閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public void AddResource (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddResource(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResource(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="value">リソースの値です。</param>
+        <summary>書き込むリソースの一覧に、オブジェクトとして指定された名前付きリソースを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`シリアル化可能である必要があります。  
+  
+ リソースはまで書き込まれません、<xref:System.Resources.ResourceWriter.Generate%2A>メソッドが呼び出されます。  
+  
+ により記述されたリソースを取得することができます、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Object%29>メソッドを呼び出して、<xref:System.Resources.ResourceManager.GetObject%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.Object%29>オブジェクト データをバイナリ リソース ファイルに追加するメソッド。  
+  
+ [!code-csharp[System.Resources.ResourceWriter.AddResource#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/cs/addresource_obj1.cs#1)]  
+  
+ `DonorColumns`ユーザー インターフェイスに表示される列の名前を格納するカスタム クラスです。 クラスが指定されている、<xref:System.SerializableAttribute>属性。 通常は、別のアセンブリには、クラスを定義してへの参照がコンパイル時にコンパイラに提供されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) に既に追加されて<see cref="T:System.Resources.ResourceWriter" />です。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />は閉じられて、そのハッシュ テーブルは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public void AddResource (string name, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddResource(string name, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResource(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">リソースの名前。</param>
+        <param name="value">リソースの値です。</param>
+        <summary>書き込むリソースの一覧には、文字列リソースを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースはまで書き込まれません<xref:System.Resources.ResourceWriter.Generate%2A>と呼びます。  
+  
+ により記述されたリソースを取得することができます、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.String%29>メソッドを呼び出して、<xref:System.Resources.ResourceManager.GetString%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResource%2A>に文字列リソースを追加する方法、<xref:System.Resources.ResourceWriter>オブジェクト。  
+  
+ [!code-cpp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CPP/resourcewritercstr1.cpp#1)]
+ [!code-csharp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CS/resourcewritercstr1.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/VB/resourcewritercstr1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) は、この付けてに既に追加されています。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="name" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />は閉じられて、そのハッシュ テーブルは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResource">
+      <MemberSignature Language="C#" Value="public void AddResource (string name, System.IO.Stream value, bool closeAfterWrite);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddResource(string name, class System.IO.Stream value, bool closeAfterWrite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResource(System.String,System.IO.Stream,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.IO.Stream" />
+        <Parameter Name="closeAfterWrite" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加するリソースの名前。</param>
+        <param name="value">追加するリソースの値。 リソースをサポートする必要があります、<see cref="P:System.IO.Stream.Length" />プロパティです。</param>
+        <param name="closeAfterWrite">
+          <see langword="true" />後にストリームを閉じない、<see cref="M:System.Resources.ResourceWriter.Generate" />メソッドが呼び出される、それ以外の<see langword="false" />します。</param>
+        <summary>書き込まれるリソースの一覧に、ストリームとして指定された名前付きリソースの追加後にストリームを閉じる必要があるかどうかを指定し、<see cref="M:System.Resources.ResourceWriter.Generate" />メソッドが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートするすべてのストリームを指定することができます、<xref:System.IO.Stream.Length%2A?displayProperty=nameWithType>プロパティ`value`です。  
+  
+ により記述されたリソースを取得することができます、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%2CSystem.Boolean%29>メソッドを呼び出して、<xref:System.Resources.ResourceManager.GetStream%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResource%28System.String%2CSystem.IO.Stream%2CSystem.Boolean%29>に保存されているグラフィック イメージを追加する方法、<xref:System.IO.MemoryStream>オブジェクトを<xref:System.Resources.ResourceWriter>オブジェクト。  
+  
+ [!code-csharp[System.Resources.ResourceWriter.AddResource#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/cs/addresource_str2.cs#3)]
+ [!code-vb[System.Resources.ResourceWriter.AddResource#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcewriter.addresource/vb/addresource_str2.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) に既に追加されて<see cref="T:System.Resources.ResourceWriter" />です。  
+  
+ または  
+  
+ ストリームがサポートしていません、<see cref="P:System.IO.Stream.Length" />プロパティです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />が閉じられました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddResourceData">
+      <MemberSignature Language="C#" Value="public void AddResourceData (string name, string typeName, byte[] serializedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddResourceData(string name, string typeName, unsigned int8[] serializedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.AddResourceData(System.String,System.String,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="serializedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">追加対象のデータを含むリソースを識別する名前。</param>
+        <param name="typeName">追加対象のデータの型名。</param>
+        <param name="serializedData">追加対象のデータのバイナリ表記を含むバイト配列。</param>
+        <summary>書き込むリソースのリストに、データ ユニットをリソースとして追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Resources.ResourceWriter.AddResourceData%2A>バイナリ形式のリソースを追加する方法 (つまり、バイトの配列として) 書き込むリソースの一覧にします。 リソース、リソース、およびデータ自体のバイナリ表現に含まれるデータの型名の名前を指定する必要があります。 必要な各リソースを追加した後を使用して、<xref:System.Resources.ResourceWriter.Generate%2A>で指定されたリソース ファイルにリソースの一覧を書き込んだり、ストリームをメソッド、<xref:System.Resources.ResourceWriter.%23ctor%2A>コンス トラクターです。  
+  
+ `typeName`リソースのデータ型を表す文字列です。 次の値のいずれかを指定できます。  
+  
+-   文字列形式を`ResourceTypeCode`リソースのデータ型を示す列挙メンバー。 `ResourceTypeCode`19 の一般的なデータ型のいずれかの格納に特殊なバイナリ形式を使用することを示すために使用されるプライベート列挙です。 .NET Framework のプリミティブ データ型が含まれます (<xref:System.Boolean>、 <xref:System.Byte>、 <xref:System.Char>、 <xref:System.Decimal>、 <xref:System.Double>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.Single>、 <xref:System.SByte>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>)、だけでなく<xref:System.String>、 <xref:System.DateTime>、および<xref:System.TimeSpan>です。 さらに、`ResourceTypeCode`列挙には、次の表に示すように値が含まれています。  
+  
+    |`ResourceTypeCode` の値|説明|  
+    |------------------------------|-----------------|  
+    |`ResourceTypeCode.ByteArray`|データは、バイト配列です。|  
+    |`ResourceTypeCode.Null`|データは、null 参照です。|  
+    |`ResourceTypeCode.Stream`|データは、ストリームに格納されます。|  
+  
+-   バイナリ データを含むが割り当てられている型の完全修飾名を含む文字列、`serializedData`引数 (たとえば、 `System.String`)。 さらに、.NET Framework クラス ライブラリの一部ではない型、文字列が含まれます名前、バージョン、カルチャ、および種類を含むアセンブリの公開キー。 たとえば、次の文字列を示します、シリアル化データがのインスタンスを表すこと、`Person`に入力、`Extensions`ない公開キーとなしの指定されたカルチャを持つユーティリティをという名前のアセンブリのバージョン 1.0 である名前空間。  
+  
+     `Extensions.Person, Utility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`  
+  
+ 記述されたリソース データを読み取る並列メソッド、<xref:System.Resources.ResourceWriter.AddResourceData%2A>メソッドは<xref:System.Resources.ResourceReader.GetResourceData%2A?displayProperty=nameWithType>します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.AddResourceData%2A>に 2 つの整数を書き込みます、.resources ファイルに値を使用して、<xref:System.Resources.ResourceReader>を取得するオブジェクト。  
+  
+ [!code-csharp[System.Resources.ResourceWriter.AddResourceData#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.resources.resourcewriter.addresourcedata/cs/addresourcedata.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter.AddResourceData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.resources.resourcewriter.addresourcedata/vb/addresourcedata.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" />、<paramref name="typeName" />、または <paramref name="serializedData" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />(または大文字と小文字によってのみ変化する名) に既に追加されて<see cref="T:System.Resources.ResourceWriter" />オブジェクト。</exception>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Resources.ResourceWriter" />オブジェクトが初期化されていません。 原因として、<see cref="T:System.Resources.ResourceWriter" /> オブジェクトが閉じていることが考えられます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>出力ストリームにリソースを保存してから閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceWriter.Generate%2A>によって暗黙的と呼ばれる<xref:System.Resources.ResourceWriter.Close%2A>のために必要な場合は、します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Resources.ResourceWriter.Close%2A>内のすべてのリソースの書き込み先メソッドのオブジェクト、<xref:System.Resources.ResourceWriter>を出力ストリーム クラス。 コードは、シャット ダウン、ライター。  
+  
+ [!code-cpp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CPP/resourcewritercstr1.cpp#1)]
+ [!code-csharp[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/CS/resourcewritercstr1.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter Cstr1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceWriter Cstr1 Example/VB/resourcewritercstr1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">オブジェクトのシリアル化中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソース ファイルまたはリソースを明示的に解放するストリームを閉じることができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装が同じ<xref:System.Resources.ResourceWriter.Close%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Resources.ResourceWriter.Dispose%2A>内のすべてのリソースの書き込み先メソッドのオブジェクト、<xref:System.Resources.ResourceWriter>を出力ストリーム クラス。 コードは、ライターをシャット ダウンし、ライターのリソースを他のプロセスを使用できるようにします。  
+  
+ [!code-cpp[System.Resources.ResourceWriter.Dispose Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Dispose Example/CPP/resourcewriterdispose.cpp#1)]
+ [!code-csharp[System.Resources.ResourceWriter.Dispose Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Dispose Example/CS/resourcewriterdispose.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter.Dispose Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Dispose Example/VB/resourcewriterdispose.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">オブジェクトのシリアル化中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Generate">
+      <MemberSignature Language="C#" Value="public void Generate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Generate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.ResourceWriter.Generate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>システム既定の形式で出力ストリームにすべてのリソースを保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Resources.ResourceWriter.Generate%2A>によって暗黙的にメソッドが呼び出される、<xref:System.Resources.ResourceWriter.Close%2A>メソッドの場合は、アプリケーション コードからは呼び出されません。  
+  
+ <xref:System.Resources.ResourceWriter.Generate%2A>一度だけ呼び出すこと、すべての呼び出し後<xref:System.Resources.ResourceWriter.AddResource%2A>と<xref:System.Resources.ResourceWriter.AddResourceData%2A>が加えられました。 リソースの書き込み中に例外が発生する場合は、無効な情報の書き込みを防ぐために出力ストリームが閉じられます。  
+  
+ <xref:System.Resources.ResourceWriter.Generate%2A>通常の出力ストリームは閉じられません。 呼び出す必要があります、.resources ファイルに余分なデータの結合は、またはストリームへのアクセスを後で必要なしない限り<xref:System.Resources.ResourceWriter.Close%2A>呼び出した後<xref:System.Resources.ResourceWriter.Generate%2A>、または単に呼び出す<xref:System.Resources.ResourceWriter.Close%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Resources.ResourceWriter.Generate%2A>内のすべてのリソースの書き込み先メソッドのオブジェクト、<xref:System.Resources.ResourceWriter>を出力ストリーム クラス  
+  
+ [!code-cpp[System.Resources.ResourceWriter.Generate Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Generate Example/CPP/resourcewritergenerate.cpp#1)]
+ [!code-csharp[System.Resources.ResourceWriter.Generate Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Generate Example/CS/resourcewritergenerate.cs#1)]
+ [!code-vb[System.Resources.ResourceWriter.Generate Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Resources.ResourceWriter.Generate Example/VB/resourcewritergenerate.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">オブジェクトのシリアル化中にエラーが発生しました。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Resources.ResourceWriter" />は閉じられて、そのハッシュ テーブルは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeNameConverter">
+      <MemberSignature Language="C#" Value="public Func&lt;Type,string&gt; TypeNameConverter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;class System.Type, string&gt; TypeNameConverter" />
+      <MemberSignature Language="DocId" Value="P:System.Resources.ResourceWriter.TypeNameConverter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Resources.Writer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.Type,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソース アセンブリの書き込みを可能にするデリゲートを対象とするより前のバージョンの .NET Framework のバージョンを取得または設定、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]アセンブリの修飾名を使用しています。</summary>
+        <value>デリゲートによってカプセル化される型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vs_dev10_long](~/includes/vs-dev10-long-md.md)]MSBuild は、.NET Framework の以前のバージョンを対象とする場合にこのプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

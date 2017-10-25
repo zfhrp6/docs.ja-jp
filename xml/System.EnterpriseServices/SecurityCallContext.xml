@@ -1,0 +1,265 @@
+<Type Name="SecurityCallContext" FullName="System.EnterpriseServices.SecurityCallContext">
+  <TypeSignature Language="C#" Value="public sealed class SecurityCallContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SecurityCallContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.SecurityCallContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のメソッド呼び出しに至るまでの呼び出し元のチェーンについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.SecurityCallContext>のメソッドに対する呼び出しのセキュリティ コンテキストを問い合わせるためのクラス、<xref:System.EnterpriseServices.ServicedComponent>クラスです。  
+  
+ [!code-cpp[EnterpriseServices_Security#4](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#4)]
+ [!code-csharp[EnterpriseServices_Security#4](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#4)]
+ [!code-vb[EnterpriseServices_Security#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Callers">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SecurityCallers Callers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.SecurityCallers Callers" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.Callers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SecurityCallers</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.EnterpriseServices.SecurityCallers" />呼び出し元を記述するオブジェクト。</summary>
+        <value><see cref="T:System.EnterpriseServices.SecurityCallers" />呼び出し元を記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.SecurityCallContext.Callers%2A>アクセスする、`Callers`内の項目、 `ISecurityCallContext` COM + でのコレクション。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.InteropServices.COMException">セキュリティ コンテキストがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCall">
+      <MemberSignature Language="C#" Value="public static System.EnterpriseServices.SecurityCallContext CurrentCall { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.EnterpriseServices.SecurityCallContext CurrentCall" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.CurrentCall" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SecurityCallContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.EnterpriseServices.SecurityCallContext" />呼び出しのセキュリティ コンテキストを記述するオブジェクト。</summary>
+        <value><see cref="T:System.EnterpriseServices.SecurityCallContext" />呼び出しのセキュリティ コンテキストを記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.EnterpriseServices.SecurityCallContext.CurrentCall%2A>プロパティは、セキュリティ呼び出しコンテキストにアクセスすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを取得するには、このメソッドの使用、<xref:System.EnterpriseServices.SecurityCallContext>メソッドの呼び出しのセキュリティ コンテキストを記述するオブジェクト。  
+  
+ [!code-cpp[EnterpriseServices_Security#6](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#6)]
+ [!code-csharp[EnterpriseServices_Security#6](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#6)]
+ [!code-vb[EnterpriseServices_Security#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectCaller">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SecurityIdentity DirectCaller { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.SecurityIdentity DirectCaller" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.DirectCaller" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SecurityIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.EnterpriseServices.SecurityIdentity" />をこのメソッドの直接の呼び出し元を記述するオブジェクト。</summary>
+        <value><see cref="T:System.EnterpriseServices.SecurityIdentity" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の直接の呼び出し元の id を確認するには、このメソッドの使用方法を示します、<xref:System.EnterpriseServices.ServicedComponent>メソッドです。  
+  
+ [!code-cpp[EnterpriseServices_Security#7](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#7)]
+ [!code-csharp[EnterpriseServices_Security#7](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#7)]
+ [!code-vb[EnterpriseServices_Security#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCallerInRole">
+      <MemberSignature Language="C#" Value="public bool IsCallerInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsCallerInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SecurityCallContext.IsCallerInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">指定されたロールです。</param>
+        <summary>直接の呼び出し元が指定されたロールのメンバーであることを確認します。</summary>
+        <returns>
+          <see langword="true" />直接の呼び出し元が指定されたロールのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ かどうかをこのメソッドの使用を次のコード例に示しますの呼び出し元、<xref:System.EnterpriseServices.ServicedComponent>メソッドは、指定されたロールです。  
+  
+ [!code-cpp[EnterpriseServices_Security#6](~/samples/snippets/cpp/VS_Snippets_Remoting/EnterpriseServices_Security/CPP/employeeinformation.cpp#6)]
+ [!code-csharp[EnterpriseServices_Security#6](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServices_Security/CS/employeeinformation.cs#6)]
+ [!code-vb[EnterpriseServices_Security#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/EnterpriseServices_Security/VB/employeeinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityEnabled">
+      <MemberSignature Language="C#" Value="public bool IsSecurityEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.IsSecurityEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストでセキュリティ チェックが有効かどうかを判断します。</summary>
+        <value>
+          <see langword="true" />セキュリティ チェックの現在のコンテキストで有効になっている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInRole">
+      <MemberSignature Language="C#" Value="public bool IsUserInRole (string user, string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsUserInRole(string user, string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.SecurityCallContext.IsUserInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="user" Type="System.String" />
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="user">指定したユーザー。</param>
+        <param name="role">指定されたロールです。</param>
+        <summary>指定したユーザーが、指定したロールであることを確認します。</summary>
+        <returns>
+          <see langword="true" />指定したユーザーが指定されたロールのメンバーである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinAuthenticationLevel">
+      <MemberSignature Language="C#" Value="public int MinAuthenticationLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinAuthenticationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.MinAuthenticationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="MinAuthenticationLevel" />値から、 <see langword="ISecurityCallContext" /> COM + でのコレクション。</summary>
+        <value><see langword="MinAuthenticationLevel" />値から、 <see langword="ISecurityCallContext" /> COM + でのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.SecurityCallContext.MinAuthenticationLevel%2A>チェーン内のすべての呼び出し元の最も安全な認証レベルです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumCallers">
+      <MemberSignature Language="C#" Value="public int NumCallers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumCallers" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.NumCallers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="NumCallers" />値から、 <see langword="ISecurityCallContext" /> COM + でのコレクション。</summary>
+        <value><see langword="NumCallers" />値から、 <see langword="ISecurityCallContext" /> COM + でのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.SecurityCallContext.NumCallers%2A>呼び出しチェーン内の呼び出し元の数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalCaller">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SecurityIdentity OriginalCaller { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.SecurityIdentity OriginalCaller" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.SecurityCallContext.OriginalCaller" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SecurityIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.EnterpriseServices.SecurityIdentity" />最初の呼び出し元を記述します。</summary>
+        <value><see cref="T:System.EnterpriseServices.SecurityIdentity" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

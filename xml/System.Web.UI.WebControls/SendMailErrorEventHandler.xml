@@ -1,0 +1,57 @@
+<Type Name="SendMailErrorEventHandler" FullName="System.Web.UI.WebControls.SendMailErrorEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SendMailErrorEventHandler(object sender, SendMailErrorEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SendMailErrorEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SendMailErrorEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.SendMailErrorEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.WebControls.SendMailErrorEventArgs" /> オブジェクト。</param>
+    <summary>処理するメソッドを表す、<see langword="SendMailError" />などのコントロールのイベント、<see cref="T:System.Web.UI.WebControls.ChangePassword" />コントロール、<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール、および<see cref="T:System.Web.UI.WebControls.PasswordRecovery" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SendMailErrorEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付ける、デリゲートのインスタンスをイベントに追加します。 イベントのデリゲートを削除しない限り、イベントが発生するたびに、イベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。[サーバーで ASP.NET Web フォーム ページのイベントの処理](http://msdn.microsoft.com/library/765bfc89-33ee-4d0d-bbe6-3b172c06def9)です。  
+  
+ 処理、`SendMailError`イベントは、電子メール メッセージを送信しようとするときに例外が発生した場合でも、実行を続行する Web アプリケーションを使用します。 たとえば、これは、ユーザーが複数のステップのウィザードで作業しているときに例外が発生した場合に便利です。 エラーを記録、ユーザーに情報メッセージを表示、およびユーザーがアプリケーションを終了するのではなく、ウィザードを完了できるようにすることをお勧めします。  
+  
+ イベント ハンドラーを作成しない場合、<xref:System.Web.UI.WebControls.ChangePassword.SendMailError>イベント、または元のまま残りますイベント ハンドラーを作成する場合、<xref:System.Web.UI.WebControls.SendMailErrorEventArgs.Handled%2A>プロパティに設定`false`Web アプリケーションは、電子メール メッセージを送信するときにエラーが発生した場合に実行を停止、および ASP.NET エラー メッセージが表示されます。  
+  
+ <xref:System.Web.UI.WebControls.ChangePassword.OnSendMailError%2A>メソッドでは、派生クラスの代わりにイベントを処理することもできます、<xref:System.Web.UI.WebControls.SendMailErrorEventHandler>です。 これから派生したクラスでイベントを処理するための手法をお勧め<xref:System.Web.UI.WebControls.ChangePassword>または<xref:System.Web.UI.WebControls.CreateUserWizard>です。  
+  
+ イベント処理の詳細については、次を参照してください。[サーバーで ASP.NET Web フォーム ページのイベントの処理](http://msdn.microsoft.com/library/765bfc89-33ee-4d0d-bbe6-3b172c06def9)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する ASP.NET ページを示しています、 <xref:System.Web.UI.WebControls.ChangePassword> Web コントロール、およびイベント ハンドラーが含まれています、<xref:System.Web.UI.WebControls.ChangePassword.SendMailError>という名前のイベント`SendMailError`です。 このコード例では、ASP.NET メンバーシップとフォーム認証、および、名とパスワードがわかっているユーザーが作成されたを使用する ASP.NET Web サイトが構成されていると仮定します。 詳細については、次を参照してください。[する方法: 単純なフォーム認証を実装する](http://msdn.microsoft.com/library/9522bc8d-1a41-480a-aa11-c389a4ac2d2e)です。  
+  
+ パスワードの変更が成功すると、コードは、SMTP を使用して、変更の確認をユーザーに電子メール メッセージを送信しようとします。 これには、`SendingMail`イベント ハンドラー。 SMTP サーバーを構成する方法については、次を参照してください。 [NIB: 方法: インストールと構成内の SMTP 仮想サーバー IIS 6.0](http://msdn.microsoft.com/en-us/ed204b58-24af-47d0-9687-60e5df5f17f8)です。 この例の目的で、必要はありません。 SMTP サーバーを構成するには電子メール メッセージを送信するエラーをテストする例が構築されます。  
+  
+ メール サーバーが正しく構成されていない場合またはその他のエラーが発生した電子メール メッセージを送信することはできません、`SendMailError`関数が呼び出されます。 メッセージがユーザーに表示されます。 さらに、イベントはイベント ソース MySamplesSite を既にという名前が存在することを想定して Windows アプリケーション イベント ログに記録されます。 指定したイベント ソースを作成するのには、次のコード例を参照してください。 イベント ソースの作成の詳細については、次を参照してください。[サーバーで ASP.NET Web フォーム ページのイベントの処理](http://msdn.microsoft.com/library/765bfc89-33ee-4d0d-bbe6-3b172c06def9)です。 <xref:System.Web.UI.WebControls.SendMailErrorEventArgs.Handled%2A>のプロパティ、<xref:System.Web.UI.WebControls.SendMailErrorEventArgs>にオブジェクトが設定されている`true`エラーが処理されていることを示すためにします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SendMailErrorEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SendMailErrorEventHandler/CS/changepassword_cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SendMailErrorEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SendMailErrorEventHandler/VB/changepassword_vb.aspx#1)]  
+  
+ プログラムによって、アプリケーション ログに MySamplesSite をという名前のイベント ソースを追加する必要がある場合は、次のコード例を使用します。 このイベント ソースは、最初のコード例を正しく動作するために存在する必要があります。 次のコード例では、管理者特権が必要です。  
+  
+ [!code-csharp[System.Diagnostics.EventLog.CreateEventSource#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Diagnostics.EventLog.CreateEventSource/CS/createeventsource.cs#1)]
+ [!code-vb[System.Diagnostics.EventLog.CreateEventSource#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Diagnostics.EventLog.CreateEventSource/VB/createeventsource.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,151 @@
+<Type Name="AsyncLocal&lt;T&gt;" FullName="System.Threading.AsyncLocal&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class AsyncLocal&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AsyncLocal`1&lt;T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.AsyncLocal`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">アンビエント データの型。</typeparam>
+    <summary>非同期メソッドなど、特定の非同期制御フローに対してローカルなアンビエント データを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクベースの非同期プログラミング モデルは、スレッドの使用を抽象化する傾向が高いため<xref:System.Threading.AsyncLocal%601>インスタンスは、スレッド間でデータを保持するために使用できます。  
+  
+ <xref:System.Threading.AsyncLocal%601>クラスは、値に関連付けられている現在のスレッドの変更か、明示的に設定して変更されたため場合にも省略可能な通知を行う、<xref:System.Threading.AsyncLocal%601.Value%2A>プロパティ、または暗黙的に変更、スレッドが発生したときに、`await`またはその他のコンテキスト切り替え効果。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Threading.AsyncLocal%601>非同期フロー間で文字列値を保持するクラス。 使用を対比させても<xref:System.Threading.AsyncLocal%601>で<xref:System.Threading.ThreadLocal%601>です。  
+  
+ [!code-csharp[System.Threading.AsyncLocal#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.asynclocal/cs/Example1.cs#1)]
+ [!code-vb[System.Threading.AsyncLocal#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.asynclocal/vb/Example1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncLocal ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AsyncLocal`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>変更通知を受信しない <see cref="T:System.Threading.AsyncLocal`1" /> インスタンスをインスタンス生成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncLocal (Action&lt;System.Threading.AsyncLocalValueChangedArgs&lt;T&gt;&gt; valueChangedHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Action`1&lt;valuetype System.Threading.AsyncLocalValueChangedArgs`1&lt;!T&gt;&gt; valueChangedHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.AsyncLocal`1.#ctor(System.Action{System.Threading.AsyncLocalValueChangedArgs{`0}})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="valueChangedHandler" Type="System.Action&lt;System.Threading.AsyncLocalValueChangedArgs&lt;T&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="valueChangedHandler">どのスレッド上であっても現在の値が変更されたなら必ず呼び出されるデリゲート。</param>
+        <summary>変更通知を受信する <see cref="T:System.Threading.AsyncLocal`1" /> ローカル インスタンスをインスタンス生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デリゲートのシグネチャは`Action<ASyncLocalValueChangedArgs<T>`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public T Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T Value" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.AsyncLocal`1.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アンビエント データの値を取得または設定します。</summary>
+        <value>アンビエント データの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

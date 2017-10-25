@@ -1,0 +1,125 @@
+<Type Name="SecurityTokenReceivedEventArgs" FullName="System.IdentityModel.Services.SecurityTokenReceivedEventArgs">
+  <TypeSignature Language="C#" Value="public class SecurityTokenReceivedEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityTokenReceivedEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SecurityTokenReceivedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、セキュリティ トークン サービス (STS) から発行されたトークンを受信したときに時に Ws-federation を使用してサインインします。 これは、トークンを検証する前に発生します。 発行されたトークンにアクセスすることができます、<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken%2A>プロパティおよびそのプロパティを変更するか置き換えます。 設定して、サインインが処理を取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenReceivedEventArgs (System.IdentityModel.Tokens.SecurityToken securityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken securityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.#ctor(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">発行されたセキュリティ トークンです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SecurityTokenReceivedEventArgs" />クラスを指定したセキュリティ トークンを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスで、<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken%2A>プロパティで指定されたトークンに設定されて、`securityToken`パラメーターおよび<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SignInContext%2A>プロパティに設定されている`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenReceivedEventArgs (System.IdentityModel.Tokens.SecurityToken securityToken, string signInContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken securityToken, string signInContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.#ctor(System.IdentityModel.Tokens.SecurityToken,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="signInContext" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">発行されたセキュリティ トークンです。</param>
+        <param name="signInContext">コントロールで指定されたサインイン コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SecurityTokenReceivedEventArgs" />クラスを指定したセキュリティ トークンおよびサインイン コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスで、<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken%2A>プロパティで指定されたトークンに設定されて、`securityToken`パラメーターおよび<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SignInContext%2A>の値に設定されて、`signInContext`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken SecurityToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityToken SecurityToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたセキュリティ トークンを設定します。</summary>
+        <value>発行されたセキュリティ トークンです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発行されたセキュリティ トークンのプロパティを変更するか、完全に置き換えます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInContext">
+      <MemberSignature Language="C#" Value="public string SignInContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignInContext" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SignInContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールで指定されたサインイン コンテキストを取得します。</summary>
+        <value>サインイン コンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

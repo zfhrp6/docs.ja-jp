@@ -1,0 +1,2793 @@
+<Type Name="Enum" FullName="System.Enum">
+  <TypeSignature Language="C#" Value="public abstract class Enum : ValueType, IComparable, IConvertible, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Enum extends System.ValueType implements class System.IComparable, class System.IConvertible, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Enum" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IConvertible</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>列挙体の基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙型は、基になる型は任意の整数型、名前付き定数のセットです。 基になる型が明示的に宣言されていない場合<xref:System.Int32>を使用します。 <xref:System.Enum>.NET Framework のすべての列挙体の基本クラスです。 列挙型がで定義されている、`enum`キーワード (C#) および`Enum`しています.`End Enum` Visual Basic で作成します。  
+  
+ <xref:System.Enum>このクラスのインスタンスを比較する、インスタンスの値を文字列形式に変換する、数値の文字列形式をこのクラスのインスタンスに変換すると、指定した列挙体と値のインスタンスを作成するには、メソッドを提供します。  
+  
+ 列挙型ビット フィールドとして扱うこともできます。 詳細については、次を参照してください。、[非排他的なメンバーと Flags 属性](#Flags)セクションおよび<xref:System.FlagsAttribute>トピックです。  
+  
+ このトピックの内容  
+  
+ [列挙型を作成します。](#Creating)   
+ [列挙型をインスタンス化します。](#Instantiating)   
+ [列挙体のベスト プラクティス](#BestPractices)   
+ [列挙体で操作を実行します。](#Operations)   
+ [変換を実行します。](#conversions)  
+ [列挙値の解析](#parsing)  
+ [列挙値の書式設定](#formatting)  
+[列挙型のメンバーを反復処理します。](#iterating)  
+[非排他的なメンバーと Flags 属性](#Flags)  
+[列挙メソッドを追加します。](#methods)  
+  
+<a name="Creating"></a>   
+## <a name="creating-an-enumeration-type"></a>列挙型を作成します。  
+ プログラミング言語は、通常、名前付き定数とその値のセットで構成される列挙体を宣言するための構文を提供します。 次の例は、列挙体を定義する c# および Visual Basic で使用される構文を示しています。 という名前の列挙を作成`ArrivalStatus`3 つのメンバーを持つ: `ArrivalStatus.Early`、 `ArrivalStatus.OnTime`、および`ArrivalStatus.Late`です。 どちらの場合、列挙型に明示的に継承していないことからに注意してください<xref:System.Enum>; コンパイラによって暗黙的に継承関係を処理します。  
+  
+ [!code-csharp[System.Enum.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class1.cs#1)]
+ [!code-vb[System.Enum.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class1.vb#1)]  
+  
+> [!WARNING]
+>  基になる型が整数以外の列挙型は作成しないでまたは<xref:System.Char>です。 列挙型を作成するには、リフレクションを使用して、、追加の例外をスローする可能性がもと、結果の型を使用するメソッド呼び出しは信頼性の高いではありません。  
+  
+<a name="Instantiating"></a>   
+## <a name="instantiating-an-enumeration-type"></a>列挙型をインスタンス化します。  
+ 他の任意の値型のインスタンスを作成すると同様に、列挙型がインスタンス化できます。 変数を宣言すると、そこを割り当てる列挙型の定数のいずれかでします。 次の例のインスタンスを作成、`ArrivalStatus`値がある`ArrivalStatus.OnTime`です。  
+  
+ [!code-csharp[System.Enum.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class1.cs#2)]
+ [!code-vb[System.Enum.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class1.vb#2)]  
+  
+ 次の方法で列挙値をインスタンス化することができますも。  
+  
+-   特定のプログラミング言語の機能を使用する (c# の場合と) にキャスト (Visual Basic の場合) のように整数値の列挙値に変換します。 次の例を作成、`ArrivalStatus`値があるオブジェクト`ArrivalStatus.Early`この方法でします。  
+  
+     [!code-csharp[System.Enum.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class2.cs#4)]
+     [!code-vb[System.Enum.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class2.vb#4)]  
+  
+-   暗黙的な既定のコンス トラクターを呼び出します。 次の例に示す、ここでは、基になるインスタンスの値、列挙が 0 です。 ただし、これとは限りません列挙体の有効な定数の値です。  
+  
+     [!code-csharp[System.Enum.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class2.cs#3)]
+     [!code-vb[System.Enum.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class2.vb#3)]  
+  
+-   呼び出して、<xref:System.Enum.Parse%2A>または<xref:System.Enum.TryParse%2A>列挙体の定数の名前を表す文字列を解析します。 詳細については、次を参照してください。、[列挙値の解析](#parsing)セクションです。  
+  
+-   呼び出して、<xref:System.Enum.ToObject%2A>列挙型を整数値に変換します。 詳細については、次を参照してください。、[を実行する変換](#conversions)セクションです。  
+  
+<a name="BestPractices"></a>   
+## <a name="enumeration-best-practices"></a>列挙体のベスト プラクティス  
+ 列挙型を定義する場合は、次のベスト プラクティスを使用することをお勧めします。  
+  
+-   値が 0 列挙体のメンバーを定義していない場合は、作成することを検討してください、`None`列挙型定数。 既定では、列挙体に使用するメモリが 0 に初期化される、共通言語ランタイムによってです。 その結果、値が 0 の定数を定義していない場合が作成されるとき、列挙体は値が無効含まれます。  
+  
+-   表す列挙を使用して、アプリケーションがある、明確な既定のケースがある場合の値が定数表現するために 0 です。 既定のケースがない場合は、によってその他の列挙定数のいずれかの値が 0 表されないケースを指定する列挙定数の使用を検討してください。  
+  
+-   将来使用するために予約されている列挙型定数は指定しません。  
+  
+-   メソッドまたは値として列挙型定数は、プロパティを定義するときは、値の検証を検討してください。 理由は、その数値の値が列挙体で定義されていない場合でも、列挙型の数値にキャストすることです。  
+  
+ 列挙型の定数はビット フィールドの追加のベスト プラクティスが記載されて、[非排他的なメンバーと Flags 属性](#Flags)セクションです。  
+  
+<a name="Operations"></a>   
+## <a name="performing-operations-with-enumerations"></a>列挙体で操作を実行します。  
+ 列挙体を作成するときに新しいメソッドを定義することはできません。 ただし、列挙型は、静的の完全なセットとからインスタンス メソッドを継承、<xref:System.Enum>クラスです。 次のセクションでは、列挙値を使用する場合によく使用されるその他のいくつかのメソッドだけでなく、これらのメソッドのほとんどを調査します。  
+  
+<a name="conversions"></a>   
+### <a name="performing-conversions"></a>変換を実行します。  
+ キャスト (C# の場合) または (Visual Basic) の変換演算子を使用して、列挙体のメンバーとその基になる型の間で変換することができます。 次の例では、キャスト演算または変換演算子を使用して、列挙値の整数と列挙値を整数に変換を実行します。  
+  
+ [!code-csharp[System.Enum.Class#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class2.cs#5)]
+ [!code-vb[System.Enum.Class#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class2.vb#5)]  
+  
+ <xref:System.Enum>クラスも含まれます、<xref:System.Enum.ToObject%2A>メソッドを任意の整数型の値を列挙値に変換します。 次の例では、<xref:System.Enum.ToObject%28System.Type%2CSystem.Int32%29>に変換する方法、<xref:System.Int32>を`ArrivalStatus`値。 なお、ため、<xref:System.Enum.ToObject%2A>型の値を返します<xref:System.Object>、キャスト演算または変換演算子の使用、オブジェクトは、列挙型にキャストする必要があります。  
+  
+ [!code-csharp[System.Enum.Class#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/class2.cs#6)]
+ [!code-vb[System.Enum.Class#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/class2.vb#6)]  
+  
+ 整数を列挙値に変換するときは、実際には、列挙体のメンバーではない値を代入することです。 これを回避するには整数を渡すことができます、<xref:System.Enum.IsDefined%2A>メソッドの変換を実行する前にします。 次の例では、このメソッドを使用する整数値の配列内の要素を変換できるかどうかを決定する`ArrivalStatus`値。  
+  
+ [!code-csharp[System.Enum.Class#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classconversion1.cs#7)]
+ [!code-vb[System.Enum.Class#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classconversion1.vb#7)]  
+  
+ <xref:System.Enum>クラスの明示的なインターフェイス実装を提供する、<xref:System.IConvertible>インターフェイス列挙値から整数型に変換する、用のメソッドを使用する必要があります、<xref:System.Convert>クラスなど<xref:System.Convert.ToInt32%2A>をこれらの変換を実行します。 次の例を使用する方法を示しています、<xref:System.Enum.GetUnderlyingType%2A>メソッドと共に、<xref:System.Convert.ChangeType%2A?displayProperty=nameWithType>列挙値を基になる型に変換します。 この例に、コンパイル時に既知である列挙体の基になる型が必要としないことに注意してください。  
+  
+ [!code-csharp[System.Enum.Class#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classconversion2.cs#8)]
+ [!code-vb[System.Enum.Class#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classconversion2.vb#8)]  
+  
+<a name="parsing"></a>   
+### <a name="parsing-enumeration-values"></a>列挙値の解析  
+ <xref:System.Enum.Parse%2A>と<xref:System.Enum.TryParse%2A>メソッドを使用すると、その値を列挙値の文字列形式に変換します。 文字列形式には、名前または列挙定数の基になる値のいずれかを指定できます。 解析のメソッドが列挙体の基になる型の値に文字列を変換できる場合、特定の列挙体のメンバーではない数字の文字列形式に変換されますが正常に注意してください。 これを防ぐため、<xref:System.Enum.IsDefined%2A>解析メソッドの結果が有効な列挙値であることを確認するメソッドを呼び出すことができます。 この例は、この方法を示していて、両方への呼び出しを示しています、<xref:System.Enum.Parse%28System.Type%2CSystem.String%29>と<xref:System.Enum.TryParse%60%601%28System.String%2C%60%600%40%29?displayProperty=nameWithType>メソッドです。 非ジェネリックの解析方法がキャスト (c#) または (Visual Basic) の適切な列挙型に変換する必要のあるオブジェクトを返すことに注意してください。  
+  
+ [!code-csharp[System.Enum.Class#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classparse1.cs#9)]
+ [!code-vb[System.Enum.Class#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classparse1.vb#9)]  
+  
+<a name="formatting"></a>   
+### <a name="formatting-enumeration-values"></a>列挙値の書式設定  
+ 列挙値をそれぞれの文字列表現に変換するには、静的なを呼び出すことによって<xref:System.Enum.Format%2A>メソッドだけでなく、インスタンスのオーバー ロード<xref:System.Enum.ToString%2A>メソッドです。 文字列として表される列挙値の正確な方法を制御するのに書式指定文字列を使用することができます。 詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。 次の例を使用して、サポートされている列挙型書式指定文字列 ("G"または"g"、"D"または"d"、"X"または"x"と"F"または"f") の各変換のメンバー、`ArrivalStatus`文字列形式を列挙します。  
+  
+ [!code-csharp[System.Enum.Class#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classformat1.cs#10)]
+ [!code-vb[System.Enum.Class#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classformat1.vb#10)]  
+  
+<a name="iterating"></a>   
+### <a name="iterating-enumeration-members"></a>列挙型のメンバーを反復処理します。  
+ <xref:System.Enum>型を実装しません、<xref:System.Collections.IEnumerable>または<xref:System.Collections.Generic.IEnumerable%601>インターフェイスを使用して、コレクションのメンバーを反復処理することを可能にすると、 `foreach` (C# の場合) または`For Each`(Visual Basic) で構築します。 ただし、2 つの方法のいずれかのメンバーを列挙できます。  
+  
+-   呼び出すことができます、<xref:System.Enum.GetNames%2A>列挙体メンバーの名前を含む文字列配列を取得します。 次に、文字列配列の各要素に対してを呼び出すことができます、<xref:System.Enum.Parse%2A>を等価の列挙の値に文字列に変換します。 このアプローチの例を次に示します。  
+  
+     [!code-csharp[System.Enum.Class#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classiterate.cs#11)]
+     [!code-vb[System.Enum.Class#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classiterate.vb#11)]  
+  
+-   呼び出すことができます、<xref:System.Enum.GetValues%2A>列挙体の値は、基になるを格納する配列を取得します。 次に、配列の各要素に対してを呼び出すことができます、<xref:System.Enum.ToObject%2A>を等価の列挙の値に整数に変換します。 このアプローチの例を次に示します。  
+  
+     [!code-csharp[System.Enum.Class#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classiterate.cs#12)]
+     [!code-vb[System.Enum.Class#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classiterate.vb#12)]  
+  
+<a name="Flags"></a>   
+## <a name="non-exclusive-members-and-the-flags-attribute"></a>非排他的なメンバーと Flags 属性  
+ 列挙型の 1 つの一般的な用途は、相互に排他的な値のセットを表してです。 たとえば、`ArrivalStatus`インスタンスの値をとります。 `Early`、 `OnTime`、または`Late`です。 値の意味がない、`ArrivalStatus`インスタンス 1 つ以上の列挙定数を反映するようにします。  
+  
+ ただし、それ以外の場合、列挙型のオブジェクトの値は、複数の列挙型メンバーを含めることができます、各メンバーは、列挙値のビット フィールドを表します。 <xref:System.FlagsAttribute>属性は、ビット フィールドの列挙体で構成されているを示すために使用できます。 たとえば、という名前の列挙`Pets`世帯でペットの種類を示すために使用される可能性があります。 次のように定義できます。  
+  
+ [!code-csharp[System.Enum.Class#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classbitwise1.cs#13)]
+ [!code-vb[System.Enum.Class#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classbitwise1.vb#13)]  
+  
+ `Pets`列挙体は、次の例で示すようにし、使用できます。  
+  
+ [!code-csharp[System.Enum.Class#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classbitwise1.cs#14)]
+ [!code-vb[System.Enum.Class#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classbitwise1.vb#14)]  
+  
+ ビット単位を定義するときに、次のベスト プラクティスを使用する必要があります列挙体を適用する、<xref:System.FlagsAttribute>属性。  
+  
+-   使用して、<xref:System.FlagsAttribute>ビットごとの演算 (AND、OR の排他的 OR) は、数値の値に対して実行する場合にのみ列挙型のカスタム属性です。  
+  
+-   つまり、1、2、4、8、およびよびな 2 の累乗で列挙定数を定義します。 これは、結合された列挙定数の各フラグが重複しないことを意味します。  
+  
+-   一般的に使用されるフラグの組み合わせに対して列挙定数を作成することを検討します。 たとえば、ファイル I/O 操作に使用する列挙体がある場合を含む列挙型定数`Read = 1`と`Write = 2`、列挙型定数の作成を検討して`ReadWrite = Read OR Write`、どの結合、`Read`と`Write`フラグ。 さらに、フラグの組み合わせに使用されるビットごとの OR 演算することはできません、単純なタスクをいくつかの状況での高度な概念と見なされる可能性があります。  
+  
+-   多くのフラグの位置は 1 では、可能性があります、コードが複雑になる場合容易させ、コーディング エラーに設定する可能性がありますので、フラグの列挙定数として負の数を定義する場合は、注意を使用します。  
+  
+-   数値の値で、フラグが設定されているかどうかをテストする便利な方法は、インスタンスの呼び出しを<xref:System.Enum.HasFlag%2A>メソッドを次の例で示すようにします。  
+  
+     [!code-csharp[System.Enum.Class#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classbitwise1.cs#15)]
+     [!code-vb[System.Enum.Class#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classbitwise1.vb#15)]  
+  
+     これは、数値の値とすべてのビットを設定すると、フラグに対応していないゼロに対応する数値で、フラグ列挙型定数のビットごとの AND 演算を実行して、その操作の結果がフラグの列挙型定数と等しいかどうかをテストしてに相当します。 このことを次の例で説明します。  
+  
+     [!code-csharp[System.Enum.Class#16](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classbitwise1.cs#16)]
+     [!code-vb[System.Enum.Class#16](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classbitwise1.vb#16)]  
+  
+-   使用して`None`フラグの名前は列挙定数の値が 0 として。 使用することはできません、`None`のため、結果は常に 0 フラグをテストするビットごとの AND 演算で列挙型定数。 ただし、行うことができます、論理、数値の値の間でビット演算子、比較ではありません、`None`数値の値のビットを設定するかどうかを決定する列挙型定数。 このことを次の例で説明します。  
+  
+     [!code-csharp[System.Enum.Class#17](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/classbitwise1.cs#17)]
+     [!code-vb[System.Enum.Class#17](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/classbitwise1.vb#17)]  
+  
+-   列挙体自体の状態を反映するだけの列挙値を定義しません。 たとえば、列挙の終了をマークするだけの列挙定数を定義してください。 列挙体の最後の値を決定する必要がある場合は、その値を明示的に確認します。 さらに、範囲内のすべての値は有効な場合は、最初と最後の列挙型定数の範囲チェックを実行できます。  
+  
+<a name="methods"></a>   
+## <a name="adding-enumeration-methods"></a>列挙メソッドを追加します。  
+ 列挙型がなどの言語構造体によって定義されるため`enum`(c#) および`Enum`(Visual Basic) 列挙型から継承されたこれらのメソッド以外のカスタム メソッドを定義することはできません、<xref:System.Enum>クラスです。  ただし、機能を特定の列挙型に追加するのに拡張メソッドを使用することができます。  
+  
+ 次の例では、`Grades` 列挙型は学生が授業で受け取る成績評価を表わしています。 `Passing` という名前の拡張機能メソッドが `Grades` 型に追加されていて、この型の各インスタンスが合格点を表しているかどうかを自ら "認識" できるようになっています。       `Extensions`クラスには、最小合格を定義する静的な読み取り/書き込み変数も含まれています。 戻り値、`Passing`拡張メソッドには、その変数の現在の値が反映されます。  
+  
+ [!code-csharp[System.Enum.Class#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.class/cs/Extensions.cs#18)]
+ [!code-vb[System.Enum.Class#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.class/vb/Extensions.vb#18)]  
+  
+   
+  
+## Examples  
+ 次の例では、名前付きの値と別の名前付きビット フィールドを表す列挙体を表す列挙体を使用してを示しています。  
+  
+ [!code-cpp[enummain#1](~/samples/snippets/cpp/VS_Snippets_CLR/enummain/CPP/EnumMain.cpp#1)]
+ [!code-csharp[enummain#1](~/samples/snippets/csharp/VS_Snippets_CLR/enummain/CS/EnumMain.cs#1)]
+ [!code-vb[enummain#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enummain/VB/EnumMain.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Enum ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Enum" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="target">比較対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>指定したオブジェクトとこのインスタンスを比較し、これらの相対値を示す値を返します。</summary>
+        <returns>このインスタンスの相対値を示す符号付き数値と<paramref name="target" />です。  
+  
+ <list type="table"><listheader><term>値  
+  
+ </term><description>意味  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスの値がの値より小さい<paramref name="target" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスの値がの値と等しい<paramref name="target" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスの値がの値より大きい<paramref name="target" />です。  
+  
+ または  
+  
+ <paramref name="target" /> は <see langword="null" /> です。  
+  
+ </description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の使用を示しています。`CompareTo`のコンテキストで`Enum`です。  
+  
+ [!code-cpp[enumcompareto#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumcompareto/CPP/EnumCompareTo.cpp#1)]
+ [!code-csharp[enumcompareto#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumcompareto/CS/EnumCompareTo.cs#1)]
+ [!code-vb[enumcompareto#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumcompareto/VB/EnumCompareTo.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" />このインスタンスが同じ型ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">このインスタンスが型ではありません<see cref="T:System.SByte" />、 <see cref="T:System.Int16" />、 <see cref="T:System.Int32" />、 <see cref="T:System.Int64" />、 <see cref="T:System.Byte" />、 <see cref="T:System.UInt16" />、 <see cref="T:System.UInt32" />、または<see cref="T:System.UInt64" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> が同じ型の列挙体値で、基になる値がこのインスタンスと同じである場合は <see langword="true" />、それ以外の場合は <see langword="false" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.Equals%28System.Object%29?displayProperty=nameWithType>メソッドのオーバーライド<xref:System.ValueType.Equals%28System.Object%29?displayProperty=nameWithType>を等価の列挙型のメンバーを評価する方法を定義します。  
+  
+   
+  
+## Examples  
+ <xref:System.Enum.Equals%2A> メソッドの使用例を次に示します。  
+  
+ [!code-cpp[enumequals#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumequals/CPP/EnumEquals.cpp#1)]
+ [!code-csharp[enumequals#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumequals/CS/EnumEquals.cs#1)]
+ [!code-vb[enumequals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumequals/VB/EnumEquals.vb#1)]  
+  
+ 次の例は、次の 2 つの列挙型を定義`SledDog`と`WorkDog`です。 `SledDog`列挙体には 2 つのメンバー、`SledDog.AlaskanMalamute`と`SledDog.Malamute`、基になる値が同じであること。 呼び出し、<xref:System.Enum.Equals%2A>メソッドでは、その基になる値が同じなのでこれらの値が等しいことを示します。 `SledDog.Malamute`と`WorkDog.Newfoundland`異なる列挙型であるが、基になる値が同じをメンバーであります。 呼び出し、<xref:System.Enum.Equals%2A>メソッドでは、これらの値が等しくないことを示します。  
+  
+ [!code-csharp[System.Enum.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.equals/cs/enumequals.cs#1)]
+ [!code-vb[System.Enum.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.equals/vb/enumequals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public static string Format (Type enumType, object value, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Format(class System.Type enumType, object value, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Format(System.Type,System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">変換する値の列挙型。</param>
+        <param name="value">変換する値。</param>
+        <param name="format">使用する出力形式。</param>
+        <summary>指定した形式に従って、指定した列挙型の指定した値をそれと等価の文字列形式に変換します。</summary>
+        <returns>文字列表現<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に有効な値を示しています、`format`パラメーター。  
+  
+|形式|説明|  
+|------------|-----------------|  
+|"G" または "g"|場合`value`は名前付きの列挙型定数に等しく、その定数の名前を返します。 それ以外の場合、10 進数表`value`が返されます。<br /><br /> たとえば、唯一の列挙定数が赤をという名前し、その値は 1 です。 場合`value`は 1 で指定、この形式は"Red"を返します。 ただし場合、 `value` 2 として指定されて、この形式は「2」を返します。<br /><br /> または<br /><br /> 場合、<xref:System.FlagsAttribute>カスタム属性が、列挙型に適用される`value`は 1 つ以上のビットで構成される 1 つまたは複数のフラグが含まれているビット フィールドとして扱われます。<br /><br /> 場合`value`列挙定数の名前の組み合わせと等しいかどうかが、これらの定数の名前のコンマ区切りのリストが返されます。 `value`最大値を含むフラグから最小値へと向かうフラグが検索されます。 内のビット フィールドに対応する各フラグの`value`、区切り記号で区切られたリストに定数の名前を連結します。 そのフラグの値は、さらに考慮対象から除外し、次のフラグから検索を続行します。<br /><br /> 場合`value`は等しくありませんの組み合わせと等価の 10 進の等価の列挙定数をという名前`value`が返されます。|  
+|"X" または "x"|表す`value`先頭に"0 x"のない 16 進数形式でします。|  
+|"D" または "d"|表す`value`10 進数。|  
+|"F" または "f"|"G"または"g"、同じように動作する点を除いて、<xref:System.FlagsAttribute>に存在している必要はありません、<xref:System.Enum>宣言します。|  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`Format`のコンテキストで`Enum`です。  
+  
+ [!code-cpp[enumformat#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumformat/CPP/EnumFormat.cpp#1)]
+ [!code-csharp[enumformat#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumformat/CS/EnumFormat.cs#1)]
+ [!code-vb[enumformat#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumformat/VB/EnumFormat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="enumType" />、 <paramref name="value" />、または<paramref name="format" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="enumType" />パラメーターではありません、<see cref="T:System.Enum" />型です。  
+  
+ または  
+  
+ <paramref name="value" />からの型とは異なる列挙体から<paramref name="enumType" />です。  
+  
+ または  
+  
+ 型<paramref name="value" />の基になる型ではない<paramref name="enumType" />です。</exception>
+        <exception cref="T:System.FormatException"><paramref name="format" />パラメーターに無効な値が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="format" />"X"と等しいが、列挙型が既知ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの値のハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetName">
+      <MemberSignature Language="C#" Value="public static string GetName (Type enumType, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetName(class System.Type enumType, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetName(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <param name="value">基になる型に関連する特定の列挙型定数の値。</param>
+        <summary>指定した値を持つ指定した列挙体にある定数の名前を取得します。</summary>
+        <returns>列挙定数の名前を含む文字列<paramref name="enumType" />値がある<paramref name="value" />; または<see langword="null" />そのような定数が見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の列挙メンバー値がある場合、同じ基になる、<xref:System.Enum.GetName%2A>メソッドは、その列挙体メンバーのいずれかの名前が返されることを保証します。 ただし、これは保証されないことが常に返される同じ列挙型メンバーの名前。 結果として、複数の列挙体メンバーの値が同じ場合は、アプリケーション コード必要がありますしないによって異なります特定メンバーの名前を返すメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。`GetName`です。  
+  
+ [!code-cpp[enumgetname#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumgetname/CPP/EnumGetName.cpp#1)]
+ [!code-csharp[enumgetname#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumgetname/CS/EnumGetName.cs#1)]
+ [!code-vb[enumgetname#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumgetname/VB/EnumGetName.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。  
+  
+ -または-  
+  
+ <paramref name="value" />型のどちらも<paramref name="enumType" />と同じ基になる型がも<paramref name="enumType" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNames">
+      <MemberSignature Language="C#" Value="public static string[] GetNames (Type enumType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetNames(class System.Type enumType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetNames(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <summary>指定した列挙体に含まれている定数の名前の配列を取得します。</summary>
+        <returns><paramref name="enumType" /> に含まれている定数の名前の文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の配列の要素は、列挙型定数のバイナリ値で並べ替えられます (つまり、その符号なしの大きさによって)。 次の例は、によって返される配列に関する情報を表示、<xref:System.Enum.GetNames%2A>負の値や 0、正の値を含む列挙体のメソッドです。  
+  
+ [!code-csharp[System.Enum.GetNames#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.getnames/cs/getnames1.cs#1)]
+ [!code-vb[System.Enum.GetNames#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.getnames/vb/getnames1.vb#1)]  
+  
+ 同じ値を持つ列挙定数がある場合は、対応する名前の順序は指定されません。  
+  
+   
+  
+## Examples  
+ <xref:System.Enum.GetNames%2A> メソッドの使用例を次に示します。  
+  
+ [!code-cpp[enumgetnames#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumgetnames/CPP/EnumGetNames.cpp#1)]
+ [!code-csharp[enumgetnames#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumgetnames/CS/EnumGetNames.cs#1)]
+ [!code-vb[enumgetnames#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumgetnames/VB/EnumGetNames.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> パラメーターが <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TypeCode GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この列挙メンバーの基になる型の型コードを返します。</summary>
+        <returns>このインスタンスの基になる型の型コードを返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">列挙型が不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnderlyingType">
+      <MemberSignature Language="C#" Value="public static Type GetUnderlyingType (Type enumType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetUnderlyingType(class System.Type enumType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetUnderlyingType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">基になる型が取得される列挙。</param>
+        <summary>指定した列挙体の基になる型を返します。</summary>
+        <returns>基になる型<paramref name="enumType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum>構造により、名前付き定数として表現されている値。 列挙型の値のデータ型は、基になる型と呼ばれます。 たとえば、基になる型の<xref:System.DayOfWeek>列挙体は、各曜日を表す定数で構成されます (<xref:System.DayOfWeek?displayProperty=nameWithType>、<xref:System.DayOfWeek?displayProperty=nameWithType>など) は<xref:System.Int32>します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Enum.GetUnderlyingType%2A>メソッドをいくつかの列挙メンバーの基になる型を表示します。  
+  
+ [!code-csharp[System.Enum.GetUnderlyingType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.getunderlyingtype/cs/getunderlyingtype1.cs#1)]
+ [!code-vb[System.Enum.GetUnderlyingType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.getunderlyingtype/vb/getunderlyingtype1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValues">
+      <MemberSignature Language="C#" Value="public static Array GetValues (Type enumType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Array GetValues(class System.Type enumType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.GetValues(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Array</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <summary>指定した列挙体に含まれている定数の値の配列を取得します。</summary>
+        <returns>配列内の定数の値を含む<paramref name="enumType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の要素は列挙定数のバイナリ値に基づいて並べ替えられます (つまり、その符号なしの大きさによって)。 次の例は、によって返される配列に関する情報を表示、<xref:System.Enum.GetValues%2A>負の値や 0、正の値を含む列挙体のメソッドです。  
+  
+ [!code-csharp[System.Enum.GetValues#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.getvalues/cs/getvalues1.cs#1)]
+ [!code-vb[System.Enum.GetValues#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.getvalues/vb/getvalues1.vb#1)]  
+  
+ <xref:System.Enum.GetValues%2A>メソッドの各メンバーの値を含む配列を返します、`enumType`列挙します。 複数のメンバーの値が同じ場合は、返される配列には、重複する値が含まれています。 この場合、呼び出し、<xref:System.Enum.GetName%2A>返される配列内の各値を持つメソッドが重複する値を持つメンバーに割り当てられた一意の名前を復元できません。 すべての列挙体メンバーの名前を正常に取得する、<xref:System.Enum.GetNames%2A>メソッドです。  
+  
+ <xref:System.Enum.GetValues%2A>リフレクションのみのコンテキストでリフレクションを使用してメソッドを呼び出すことができません。 使用してすべての列挙体メンバーの値を取得する代わりに、<xref:System.Type.GetFields%2A?displayProperty=nameWithType>の配列を取得するメソッド<xref:System.Reflection.FieldInfo>列挙型のメンバーを表すオブジェクトを呼び出す、<xref:System.Reflection.FieldInfo.GetRawConstantValue%2A?displayProperty=nameWithType>配列の各要素に対してメソッドです。 次の例では、この方法を示します。 これは、Enumerations.dll をという名前のアセンブリでは、次の列挙型を定義することが必要です。  
+  
+ [!code-csharp[System.Enum.GetValues#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.getvalues/cs/getvalues_reflectiononly.cs#2)]
+ [!code-vb[System.Enum.GetValues#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.getvalues/vb/getvalues_reflectiononly.vb#2)]  
+  
+ アセンブリがリフレクションのみのコンテキストに読み込まれている、<xref:System.Type>を表すオブジェクト、`Pets`列挙型がインスタンス化の配列<xref:System.Reflection.FieldInfo>オブジェクトを取得し、フィールドの値がコンソールに表示されます。  
+  
+ [!code-csharp[System.Enum.GetValues#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.getvalues/cs/getvalues_reflectiononly.cs#3)]
+ [!code-vb[System.Enum.GetValues#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.getvalues/vb/getvalues_reflectiononly.vb#3)]  
+  
+   
+  
+## Examples  
+ 次の例は、の使用を示しています。<xref:System.Enum.GetValues%2A>です。  
+  
+ [!code-cpp[enumgetvalues#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumgetvalues/CPP/EnumGetValues.cpp#1)]
+ [!code-csharp[enumgetvalues#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumgetvalues/CS/EnumGetValues.cs#1)]
+ [!code-vb[enumgetvalues#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumgetvalues/VB/EnumGetValues.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">リフレクションのみのコンテキストでのリフレクションによって、メソッドが呼び出されます  
+  
+ -または-  
+  
+ <paramref name="enumType" />リフレクション専用コンテキストに読み込まれたアセンブリから型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFlag">
+      <MemberSignature Language="C#" Value="public bool HasFlag (Enum flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasFlag(class System.Enum flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.HasFlag(System.Enum)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flag" Type="System.Enum" />
+      </Parameters>
+      <Docs>
+        <param name="flag">列挙値。</param>
+        <summary>現在のインスタンスで 1 つ以上のビット フィールドが設定されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、ビット フィールドいるビット フィールドで設定されている<paramref name="flag" />; 現在のインスタンスに設定されてそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.HasFlag%2A>メソッドには、次のブール式の結果が返されます。  
+  
+```  
+thisInstance And flag = flag   
+```  
+  
+ 場合の基になる値`flag`0 の場合は、メソッドが返される`true`です。 この動作が望ましくない場合を使用できます、 <xref:System.Enum.Equals%2A> 0 や呼び出しとの等価性をテストするメソッド<xref:System.Enum.HasFlag%2A>場合にのみの基になる値`flag`0 以外の場合は、次の例に示すようにします。  
+  
+ [!code-csharp[System.Enum.HasFlag#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.hasflag/cs/hasflag0.cs#1)]
+ [!code-vb[System.Enum.HasFlag#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.hasflag/vb/hasflag0.vb#1)]  
+  
+ <xref:System.Enum.HasFlag%2A>でマークされた列挙型で使用するメソッドが設計されています、<xref:System.FlagsAttribute>属性し、複数のビット フィールドが設定されているかどうかを確認するために使用できます。 マークされていない列挙型の<xref:System.FlagsAttribute>属性、いずれかを呼び出す、<xref:System.Enum.Equals%2A>メソッドまたは<xref:System.Enum.CompareTo%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`ItemsOrdered`顧客がレストランで注文できます項目のカテゴリを表す列挙。 この例では、前菜と飲み物の両方の顧客が注文があるかどうかをテストします。  
+  
+ [!code-csharp[System.Enum.HasFlag#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.hasflag/cs/hasflag1.cs#2)]
+ [!code-vb[System.Enum.HasFlag#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.hasflag/vb/hasflag1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="flag" />現在のインスタンスとは異なる型です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefined">
+      <MemberSignature Language="C#" Value="public static bool IsDefined (Type enumType, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDefined(class System.Type enumType, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.IsDefined(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <param name="value">値または定数の名前<c>enumType</c>です。</param>
+        <summary>指定した値を持つ定数が指定した列挙体に存在するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合内の定数<paramref name="enumType" />に相当する値を持つ<paramref name="value" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターには、次のいずれかを指定できます。  
+  
+-   型のメンバーはすべて`enumType`です。  
+  
+-   値が型の列挙体のメンバーである変数`enumType`です。  
+  
+-   列挙体のメンバーの名前の文字列形式。 文字列の文字には、列挙メンバー名として同じ大文字と小文字が必要です。  
+  
+-   基になる型の値`enumType`です。  
+  
+ 場合の定数は、`enumType`ビット フィールドのセットを定義および`value`値、名、または複数のビット フィールドの基になる値が含まれています、<xref:System.Enum.IsDefined%2A>メソッドを返します。`false`です。 つまり、列挙型ビット フィールドのセットを定義するを判断するメソッドのみ 1 ビット フィールドが列挙体に属しているかどうか。 タグ付けされた列挙型で複数のビット フィールドが設定されているかどうかを決定する、<xref:System.FlagsAttribute>呼び出すことができます、属性、<xref:System.Enum.HasFlag%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前の列挙を定義`PetType`個別のフィールドで構成されます。 呼び出して、<xref:System.Enum.IsDefined%2A>列挙値、文字列名、および複数のビット フィールドの設定に起因する複合型の値を基になる、できる限りメソッドです。  
+  
+ [!code-csharp[System.Enum.IsDefined#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined1.cs#1)]
+ [!code-vb[System.Enum.IsDefined#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/IsDefined1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see langword="Enum" /> ではありません。  
+  
+ -または-  
+  
+ 型<paramref name="value" />、列挙体ですが、型の列挙体ではありません<paramref name="enumType" />です。  
+  
+ -または-  
+  
+ 型<paramref name="value" />の基になる型ではない<paramref name="enumType" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="value" />is not type <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" />, or <see cref="T:System.UInt64" />, or <see cref="T:System.String" />.</exception>
+        <block subset="none" type="usage">
+          <para>場合<paramref name="enumType" />を使用して定義されている列挙体です、<see cref="T:System.FlagsAttribute" />属性、メソッドを返します<see langword="false" />場合は、複数のビット フィールドで<paramref name="value" />設定されますが、<paramref name="value" />複合列挙値に対応していない場合、または<paramref name="value" />は、複数のビット フラグの名前の文字列の連結。 次の例で、<c>ペット</c>の列挙が定義されて、<see cref="T:System.FlagsAttribute" />属性。 <see cref="M:System.Enum.IsDefined(System.Type,System.Object)" />メソッドを返します<see langword="false" />を渡す場合、2 つのビット フィールドが含まれる列挙値 (<c>Pets.Dog</c>と<c>Pets.Cat</c>) 設定、やり取りするとき、その文字列形式を、。列挙値 (「Dog, Cat」) です。  
+  
+ [!code-csharp[System.Enum.IsDefined#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.IsDefined/cs/isdefined2.cs#2)]
+ [!code-vb[System.Enum.IsDefined#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.IsDefined/vb/isdefined2.vb#2)]  
+  
+ 呼び出すことによって複数のビット フィールドを設定するかどうかを決定できます、<see cref="M:System.Enum.HasFlag(System.Enum)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static object Parse (Type enumType, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Parse(class System.Type enumType, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Parse(System.Type,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <param name="value">変換する名前または値が含まれている文字列。</param>
+        <summary>文字列形式での 1 つ以上の列挙定数の名前または数値を、等価の列挙オブジェクトに変換します。</summary>
+        <returns>型のオブジェクト<paramref name="enumType" />によって表される値を持つ<paramref name="value" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターには、列挙体のメンバーの基になる値や名前付き定数の文字列表現が含まれているかの一覧がコンマ (,) で区切られた定数をという名前です。 1 つ以上の空白文字が前または次の各値、名前、またはコンマで`value`です。 場合`value`リストで、戻り値は、ビットごとと組み合わせて、指定した名前の値`OR`操作します。  
+  
+ 場合`value`の名前付き定数に対応していない名前は、`enumType`がスローされます、<xref:System.ArgumentException>です。 場合`value`の基になる値を表していないを整数の文字列表現です、`enumType`列挙型、メソッドは、基になる値が列挙体のメンバーを返します`value`整数型に変換します。 この動作が望ましくない場合は、呼び出し、<xref:System.Enum.IsDefined%2A>整数の特定の文字列表現が実際のメンバーであることを確認するメソッド`enumType`です。 次の例では定義、`Colors`列挙型、呼び出し、 <xref:System.Enum.Parse%28System.Type%2CSystem.String%29> 、対応する列挙値、および呼び出し文字列に変換するメソッド、<xref:System.Enum.IsDefined%2A>の値が特定の整数値が基になることを確認する方法、`Colors`列挙します。  
+  
+ [!code-csharp[System.Enum.Parse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.Parse/cs/ParseExample1.cs#1)]
+ [!code-vb[System.Enum.Parse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.Parse/vb/ParseExample1.vb#1)]  
+  
+ この操作は、大文字小文字を区別します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Enum.Parse%28System.Type%2CSystem.String%29>メソッドを呼び出すことによって作成される文字列の配列を解析、<xref:System.Enum.GetNames%2A>メソッドです。 また、使用、<xref:System.Enum.Parse%28System.Type%2CSystem.String%29>ビット フィールドで構成される列挙値を解析します。  
+  
+ [!code-cpp[enumparse#1](~/samples/snippets/cpp/VS_Snippets_CLR/enumparse/CPP/EnumParse.cpp#1)]
+ [!code-csharp[enumparse#1](~/samples/snippets/csharp/VS_Snippets_CLR/enumparse/CS/EnumParse.cs#1)]
+ [!code-vb[enumparse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enumparse/VB/EnumParse.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。  
+  
+ または  
+  
+ <paramref name="value" />空の文字列であるか、または空白しか含まれています。  
+  
+ または  
+  
+ <paramref name="value" />名前は、列挙型に対して定義された名前付き定数のいずれかのないです。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="value" />基になる型の範囲外である<paramref name="enumType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static object Parse (Type enumType, string value, bool ignoreCase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Parse(class System.Type enumType, string value, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Parse(System.Type,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">列挙型。</param>
+        <param name="value">変換する名前または値が含まれている文字列。</param>
+        <param name="ignoreCase">
+          <see langword="true" />無視する場合です。<see langword="false" />区別します。</param>
+        <summary>文字列形式での 1 つ以上の列挙定数の名前または数値を、等価の列挙オブジェクトに変換します。 演算で大文字と小文字を区別しないかどうかをパラメーターで指定します。</summary>
+        <returns>型のオブジェクト<paramref name="enumType" />によって表される値を持つ<paramref name="value" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターには、列挙体のメンバーの基になる値や名前付き定数の文字列表現が含まれているかの一覧がコンマ (,) で区切られた定数をという名前です。 1 つ以上の空白文字が前または次の各値、名前、またはコンマで`value`です。 場合`value`リストで、戻り値は、ビットごとと組み合わせて、指定した名前の値`OR`操作します。  
+  
+ 場合`value`の名前付き定数に対応していない名前は、`enumType`がスローされます、<xref:System.ArgumentException>です。 場合`value`の基になる値を表していないを整数の文字列表現です、`enumType`列挙型、メソッドは、基になる値が列挙体のメンバーを返します`value`整数型に変換します。 この動作が望ましくない場合は、呼び出し、<xref:System.Enum.IsDefined%2A>整数の特定の文字列表現が実際のメンバーであることを確認するメソッド`enumType`です。 次の例では定義、`Colors`列挙型、呼び出し、 <xref:System.Enum.Parse%28System.Type%2CSystem.String%2CSystem.Boolean%29> 、対応する列挙値、および呼び出し文字列に変換するメソッド、<xref:System.Enum.IsDefined%2A>の値が特定の整数値が基になることを確認する方法、`Colors`列挙します。  
+  
+ [!code-csharp[System.Enum.Parse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.Parse/cs/ParseExample2.cs#2)]
+ [!code-vb[System.Enum.Parse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.Parse/vb/ParseExample2.vb#2)]  
+  
+ `ignoreCase`パラメーターは、この操作は、大文字小文字を区別するかどうかを指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Enum.Parse%28System.Type%2CSystem.String%2CSystem.Boolean%29>メソッドを呼び出すことによって作成される文字列の配列を解析、<xref:System.Enum.GetNames%2A>メソッドです。 また、使用、<xref:System.Enum.Parse%28System.Type%2CSystem.String%29>ビット フィールドで構成される列挙値を解析します。  
+  
+ [!code-csharp[System.Enum.Parse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Enum.Parse/cs/ParseExample2.cs#2)]
+ [!code-vb[System.Enum.Parse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Enum.Parse/vb/ParseExample2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。  
+  
+ または  
+  
+ <paramref name="value" />空の文字列であるか、("") または空白しか含まれています。  
+  
+ または  
+  
+ <paramref name="value" />名前は、列挙型に対して定義された名前付き定数のいずれかのないです。</exception>
+        <exception cref="T:System.OverflowException">
+          <paramref name="value" />基になる型の範囲外である<paramref name="enumType" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse&lt;TEnum&gt;">
+      <MemberSignature Language="C#" Value="public static TEnum Parse&lt;TEnum&gt; (string value) where TEnum : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TEnum Parse&lt;struct .ctor (class System.ValueType) TEnum&gt;(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Parse``1(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TEnum</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEnum">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEnum">To be added.</typeparam>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse&lt;TEnum&gt;">
+      <MemberSignature Language="C#" Value="public static TEnum Parse&lt;TEnum&gt; (string value, bool ignoreCase) where TEnum : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!TEnum Parse&lt;struct .ctor (class System.ValueType) TEnum&gt;(string value, bool ignoreCase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.Parse``1(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TEnum</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEnum">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEnum">To be added.</typeparam>
+        <param name="value">To be added.</param>
+        <param name="ignoreCase">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.GetTypeCode">
+      <MemberSignature Language="C#" Value="TypeCode IConvertible.GetTypeCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.TypeCode System.IConvertible.GetTypeCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#GetTypeCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToBoolean">
+      <MemberSignature Language="C#" Value="bool IConvertible.ToBoolean (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.IConvertible.ToBoolean(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToBoolean(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値をブール値に変換します。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToByte">
+      <MemberSignature Language="C#" Value="byte IConvertible.ToByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int8 System.IConvertible.ToByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 8 ビット符号なし整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToChar">
+      <MemberSignature Language="C#" Value="char IConvertible.ToChar (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance char System.IConvertible.ToChar(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToChar(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を Unicode 文字に変換します。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDateTime">
+      <MemberSignature Language="C#" Value="DateTime IConvertible.ToDateTime (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.DateTime System.IConvertible.ToDateTime(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToDateTime(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>現在の値を変換、<see cref="T:System.DateTime" />基になる型に基づいて。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDecimal">
+      <MemberSignature Language="C#" Value="decimal IConvertible.ToDecimal (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance valuetype System.Decimal System.IConvertible.ToDecimal(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToDecimal(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>現在の値を変換、<see cref="T:System.Decimal" />基になる型に基づいて。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToDouble">
+      <MemberSignature Language="C#" Value="double IConvertible.ToDouble (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float64 System.IConvertible.ToDouble(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToDouble(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を倍精度浮動小数点数に変換します。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt16">
+      <MemberSignature Language="C#" Value="short IConvertible.ToInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int16 System.IConvertible.ToInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 16 ビット符号付き整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt32">
+      <MemberSignature Language="C#" Value="int IConvertible.ToInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.IConvertible.ToInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 32 ビット符号付き整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToInt64">
+      <MemberSignature Language="C#" Value="long IConvertible.ToInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int64 System.IConvertible.ToInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 64 ビット符号付き整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSByte">
+      <MemberSignature Language="C#" Value="sbyte IConvertible.ToSByte (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int8 System.IConvertible.ToSByte(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToSByte(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.SByte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 8 ビット符号付き整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToSingle">
+      <MemberSignature Language="C#" Value="float IConvertible.ToSingle (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance float32 System.IConvertible.ToSingle(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToSingle(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を単精度浮動小数点数に変換します。</summary>
+        <returns>このメンバーは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在、実装されていません。 常に例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidCastException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToString">
+      <MemberSignature Language="C#" Value="string IConvertible.ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IConvertible.ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString().")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToType">
+      <MemberSignature Language="C#" Value="object IConvertible.ToType (Type type, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.IConvertible.ToType(class System.Type type, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToType(System.Type,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="type">変換後の型。</param>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を指定した型に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt16">
+      <MemberSignature Language="C#" Value="ushort IConvertible.ToUInt16 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int16 System.IConvertible.ToUInt16(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToUInt16(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 16 ビット符号なし整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt32">
+      <MemberSignature Language="C#" Value="uint IConvertible.ToUInt32 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int32 System.IConvertible.ToUInt32(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToUInt32(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 32 ビット符号なし整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IConvertible.ToUInt64">
+      <MemberSignature Language="C#" Value="ulong IConvertible.ToUInt64 (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance unsigned int64 System.IConvertible.ToUInt64(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IConvertible#ToUInt64(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャ固有の書式情報を提供するオブジェクト。</param>
+        <summary>基になる型に基づいて、現在の値を 64 ビット符号なし整数に変換します。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Convert>変換を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString(String).")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">To be added.</param>
+        <param name="provider">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 8 ビット符号なし整数を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.Byte%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 16 ビット符号付き整数を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.Int16%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 32 ビット符号付き整数を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.Int32%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 64 ビット符号付き整数を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.Int64%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>整数値を持つ指定したオブジェクトを列挙メンバーに変換します。</summary>
+        <returns>値がある列挙オブジェクト<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.Object%29>メソッドは、整数値を変換します。`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> または <paramref name="value" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。  
+  
+ または  
+  
+ <paramref name="value" />is not type <see cref="T:System.SByte" />, <see cref="T:System.Int16" />, <see cref="T:System.Int32" />, <see cref="T:System.Int64" />, <see cref="T:System.Byte" />, <see cref="T:System.UInt16" />, <see cref="T:System.UInt32" />, or <see cref="T:System.UInt64" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, sbyte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.SByte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.SByte" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 8 ビット符号付き整数値を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.SByte%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 16 ビット符号なし整数値を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.UInt16%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 32 ビット符号なし整数値を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.UInt32%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (Type enumType, ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(class System.Type enumType, unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToObject(System.Type,System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">返される列挙型。</param>
+        <param name="value">列挙メンバーへと変換する値。</param>
+        <summary>指定した 64 ビット符号なし整数値を列挙メンバーに変換します。</summary>
+        <returns>設定した列挙体のインスタンス<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.ToObject%28System.Type%2CSystem.UInt64%29>メソッドに変換`value`を基になる値を列挙メンバー`value`です。 値がの境界の外側にある場合でも、変換が成功したことに注意してください`enumType`メンバー。 いることを確認する`value`の有効な基になる値は、`enumType`列挙体に渡すこと、<xref:System.Enum.IsDefined%2A>メソッドです。  
+  
+ この変換メソッドが型の値を返します<xref:System.Object>です。 キャスト、型のオブジェクトに変換したり`enumType`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="enumType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="enumType" /> が <see cref="T:System.Enum" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの値を、それと等価の文字列形式に変換します。</summary>
+        <returns>このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値には、一般書式指定子 ("G") が表示されます。 つまり場合、<xref:System.FlagsAttribute>には適用されませんこの列挙型、名前付き定数と等しい、このインスタンスの値があるし、戻り値は、定数の名前を含む文字列。 場合、<xref:System.FlagsAttribute>が適用される 1 つまたは複数の名前付き定数の組み合わせがある、このインスタンスの値と同じにし、戻り値は、定数の名前のコンマ区切りのリストを含む文字列。 それ以外の場合、戻り値は、このインスタンスの数値の文字列形式です。 列挙値の書式設定の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。 一般に書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、列挙型の値を文字列に変換するを示しています。  
+  
+ [!code-cpp[Classic Enum.ToString2 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Enum.ToString2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Enum.ToString2 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Enum.ToString2 Example/CS/source.cs#1)]
+ [!code-vb[Classic Enum.ToString2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Enum.ToString2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>複数の列挙体メンバーは、同じ基になる値を持つ、その基になる値に基づいた列挙体のメンバーの名前の文字列形式を取得しようとする場合は、コードが、メソッドが返すどの名に関するすべての前提を加えないでください。 たとえば、次の列挙には、2 つのメンバーを定義します。 <c>Shade.Gray</c>と<c>Shade.Grey</c>、基になる値が同じであること。  
+  
+ [!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)]
+ [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)]  
+  
+ 次のメソッド呼び出しのメンバーの名前を取得しようとしています。、<c>網掛け</c>列挙体の基になる値は 1 です。 メソッドは、"Gray"または「灰色」のいずれかを返すことができ、コードはどの文字列が返されるすべての前提にしないようにします。  
+  
+ [!code-csharp[System.Enum.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#2)]
+ [!code-vb[System.Enum.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#2)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString().")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">(互換性のために残されています)</param>
+        <summary>このメソッドのオーバー ロードは使用されなくなりました。use <see cref="M:System.Enum.ToString" />.</summary>
+        <returns>このインスタンスの値の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定文字列。</param>
+        <summary>指定した書式を使用して、このインスタンスの値をそれと等価な文字列形式に変換します。</summary>
+        <returns><paramref name="format" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `format`パラメーターは、"G"または"g"、"D"または"d"、"X"または"x"と"F"または"f"書式指定文字列 (書式指定文字列は区別されません) を含めることができます。 場合`format`は`null`または空の文字列 ("")、一般書式指定子 ("G") を使用します。 列挙型書式指定文字列と書式設定の列挙値の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。 一般に書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、列挙型の値を文字列に変換する方法を示します。  
+  
+ [!code-cpp[enum.tostring#1](~/samples/snippets/cpp/VS_Snippets_CLR/enum.tostring/CPP/tostr.cpp#1)]
+ [!code-csharp[enum.tostring#1](~/samples/snippets/csharp/VS_Snippets_CLR/enum.tostring/CS/tostr.cs#1)]
+ [!code-vb[enum.tostring#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/enum.tostring/VB/tostr.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />無効な指定が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="format" />"X"と等しいが、列挙型が既知ではありません。</exception>
+        <block subset="none" type="usage">
+          <para>複数の列挙体メンバーは、同じ基になる値を持つ、その基になる値に基づいた列挙体のメンバーの名前の文字列形式を取得しようとする場合は、コードが、メソッドが返すどの名に関するすべての前提を加えないでください。 たとえば、次の列挙には、2 つのメンバーを定義します。 <c>Shade.Gray</c>と<c>Shade.Grey</c>、基になる値が同じであること。  
+  
+ [!code-csharp[System.Enum.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#1)]
+ [!code-vb[System.Enum.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#1)]  
+  
+ 次のメソッド呼び出しのメンバーの名前を取得しようとしています。、<c>網掛け</c>列挙体の基になる値は 1 です。 メソッドは、"Gray"または「灰色」のいずれかを返すことができ、コードはどの文字列が返されるすべての前提にしないようにします。  
+  
+ [!code-csharp[System.Enum.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tostring/cs/tostringbyvalue1.cs#3)]
+ [!code-vb[System.Enum.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tostring/vb/tostringbyvalue1.vb#3)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The provider argument is not used. Please use ToString(String).")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">書式指定。</param>
+        <param name="provider">(現在不使用。)</param>
+        <summary>このメソッドのオーバー ロードは使用されなくなりました。use <see cref="M:System.Enum.ToString(System.String)" />.</summary>
+        <returns><paramref name="format" /> で指定された、このインスタンスの値の文字列形式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `format`パラメーターは、"G"または"g"、"D"または"d"、"X"または"x"と"F"または"f"書式指定文字列 (書式指定文字列は区別されません) を含めることができます。 場合`format`は`null`または空の文字列 ("")、一般書式指定子 ("G") を使用します。 列挙型書式指定文字列と書式設定の列挙値の詳細については、次を参照してください。[列挙型書式指定文字列](~/docs/standard/base-types/enumeration-format-strings.md)です。 一般に書式設定に関する詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ のみを指定`format`;`provider`パラメーターは今後使用しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FormatException">
+          <paramref name="format" />有効な書式指定は含まれません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="format" />"X"と等しいが、列挙型が既知ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (Type enumType, string value, out object result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(class System.Type enumType, string value, [out] object&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.TryParse(System.Type,System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="result" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">To be added.</param>
+        <param name="value">To be added.</param>
+        <param name="result">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (Type enumType, string value, bool ignoreCase, out object result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(class System.Type enumType, string value, bool ignoreCase, [out] object&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.TryParse(System.Type,System.String,System.Boolean,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumType" Type="System.Type" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="result" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="enumType">To be added.</param>
+        <param name="value">To be added.</param>
+        <param name="ignoreCase">To be added.</param>
+        <param name="result">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse&lt;TEnum&gt;">
+      <MemberSignature Language="C#" Value="public static bool TryParse&lt;TEnum&gt; (string value, out TEnum result) where TEnum : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse&lt;struct .ctor (class System.ValueType) TEnum&gt;(string value, [out] !!TEnum&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.TryParse``1(System.String,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEnum">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="result" Type="TEnum&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEnum">列挙型に変換する<c>値</c>です。</typeparam>
+        <param name="value">変換する列挙定数の名前または基になる値の文字列形式。</param>
+        <param name="result">このメソッドが戻るとき<c>結果</c>型のオブジェクトを含む<c>TEnum</c>によって表される値を持つ<c>値</c>解析操作が成功した場合。 解析操作が失敗した場合、<c>結果</c>の基になる型の既定値を含む<c>TEnum</c>です。 この値が必要のメンバーではないことに注意してください、 <c>TEnum</c>列挙します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>文字列形式での 1 つ以上の列挙定数の名前または数値を、等価の列挙オブジェクトに変換します。 戻り値は、変換が成功したかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> パラメーターが正常に変換された場合は <paramref name="value" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.TryParse%60%601%28System.String%2C%60%600%40%29>同じですが、<xref:System.Enum.Parse%28System.Type%2CSystem.String%29>以外を返しますが、例外をスローする代わりに、メソッド`false`変換に失敗する場合。 これにより、例外処理の列挙値の文字列形式を解析するときの必要があります。  
+  
+ `value`パラメーターには、列挙体のメンバーの基になる値や名前付き定数の文字列表現が含まれているか、名前付き定数または基になる値の一覧がコンマ (,) で区切られます。 場合`value`が複数には含まれていますという名前の定数または値 1 つ以上の空白文字の前にしたり、以下の各値、名前、またはコンマで`value`です。 場合`value`一覧、 `result` 、指定した名前の値を反映またはビットごとと組み合わせて使用する値を基になる`OR`操作します。 場合`value`列挙値を比較した結果の名前の文字列形式を`value`列挙型名は大文字小文字を区別します。  
+  
+ 場合`value`の名前付き定数に対応していない名前は、 `TEnum`、メソッドを返します`false`です。 場合`value`の基になる値を表していないを整数の文字列表現です、`TEnum`列挙型、メソッドは、基になる値が列挙体のメンバーを返します`value`整数型に変換します。 この動作が望ましくない場合は、呼び出し、<xref:System.Enum.IsDefined%2A>整数の特定の文字列表現が実際のメンバーであることを確認するメソッド`TEnum`です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`Colors`列挙型、呼び出し、 <xref:System.Enum.TryParse%60%601%28System.String%2C%60%600%40%29> 、対応する列挙値、および呼び出し文字列に変換するメソッド、<xref:System.Enum.IsDefined%2A>の値が特定の整数値が基になることを確認する方法、`Colors`列挙します。  
+  
+ [!code-csharp[System.Enum.TryParse#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tryparse/cs/tryparse1.cs#1)]
+ [!code-vb[System.Enum.TryParse#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tryparse/vb/tryparse1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="TEnum" />列挙型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse&lt;TEnum&gt;">
+      <MemberSignature Language="C#" Value="public static bool TryParse&lt;TEnum&gt; (string value, bool ignoreCase, out TEnum result) where TEnum : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse&lt;struct .ctor (class System.ValueType) TEnum&gt;(string value, bool ignoreCase, [out] !!TEnum&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Enum.TryParse``1(System.String,System.Boolean,``0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TEnum">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="ignoreCase" Type="System.Boolean" />
+        <Parameter Name="result" Type="TEnum&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TEnum">列挙型に変換する<c>値</c>です。</typeparam>
+        <param name="value">変換する列挙定数の名前または基になる値の文字列形式。</param>
+        <param name="ignoreCase">
+          <see langword="true" />無視する場合です。<see langword="false" />にケースを検討してください。</param>
+        <param name="result">このメソッドが戻るとき<c>結果</c>型のオブジェクトを含む<c>TEnum</c>によって表される値を持つ<c>値</c>解析操作が成功した場合。 解析操作が失敗した場合、<c>結果</c>の基になる型の既定値を含む<c>TEnum</c>です。 この値が必要のメンバーではないことに注意してください、 <c>TEnum</c>列挙します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>文字列形式での 1 つ以上の列挙定数の名前または数値を、等価の列挙オブジェクトに変換します。 演算で大文字と小文字を区別するかどうかをパラメーターで指定します。 戻り値は、変換が成功したかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> パラメーターが正常に変換された場合は <paramref name="value" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Enum.TryParse%60%601%28System.String%2CSystem.Boolean%2C%60%600%40%29>同じですが、<xref:System.Enum.Parse%28System.Type%2CSystem.String%2CSystem.Boolean%29>以外を返しますが、例外をスローする代わりに、メソッド`false`変換に失敗する場合。 これにより、例外処理の列挙値の文字列形式を解析するときの必要があります。  
+  
+ `value`パラメーターには、列挙体のメンバーの基になる値や名前付き定数の文字列表現が含まれているか、名前付き定数または基になる値の一覧がコンマ (,) で区切られます。 場合`value`が複数には含まれていますという名前の定数または値 1 つ以上の空白文字の前にしたり、以下の各値、名前、またはコンマで`value`です。 場合`value`一覧、 `result` 、指定した名前の値を反映またはビットごとと組み合わせて使用する値を基になる`OR`操作します。 場合`value`列挙値を比較した結果の名前の文字列形式を`value`列挙型名によって異なります、`ignoreCase`パラメーター。 場合`true`、比較では、大文字と小文字以外の場合は`false`は大文字小文字を区別します。  
+  
+ 場合`value`の名前付き定数に対応していない名前は、 `TEnum`、メソッドを返します`false`です。 場合`value`の基になる値を表していないを整数の文字列表現です、`TEnum`列挙型、メソッドは、基になる値が列挙体のメンバーを返します`value`整数型に変換します。 この動作が望ましくない場合は、呼び出し、<xref:System.Enum.IsDefined%2A>整数の特定の文字列表現が実際のメンバーであることを確認するメソッド`TEnum`です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`Colors`列挙型、呼び出し、 <xref:System.Enum.TryParse%60%601%28System.String%2CSystem.Boolean%2C%60%600%40%29> 、対応する列挙値、および呼び出し文字列に変換するメソッド、<xref:System.Enum.IsDefined%2A>の値が特定の整数値が基になることを確認する方法、`Colors`列挙します。 <xref:System.Enum.TryParse%60%601%28System.String%2CSystem.Boolean%2C%60%600%40%29>を等価の列挙値に定数をという名前の文字列形式に変換しようとしています。 メソッドは大文字と小文字を使用します。  
+  
+ [!code-csharp[System.Enum.TryParse#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.enum.tryparse/cs/tryparse2.cs#2)]
+ [!code-vb[System.Enum.TryParse#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.enum.tryparse/vb/tryparse2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="TEnum" />列挙型ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

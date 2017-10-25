@@ -1,0 +1,90 @@
+<Type Name="IBindableTemplate" FullName="System.Web.UI.IBindableTemplate">
+  <TypeSignature Language="C#" Value="public interface IBindableTemplate : System.Web.UI.ITemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBindableTemplate implements class System.Web.UI.ITemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IBindableTemplate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITemplate</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>などの ASP.NET データ バインド コントロールの手段を提供<see cref="T:System.Web.UI.WebControls.DetailsView" />と<see cref="T:System.Web.UI.WebControls.FormView" />、自動的にテンプレートのコンテンツ セクション内での ASP.NET データ ソース コントロールにバインドします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IBindableTemplate>インターフェイスにより、ASP.NET データ バインド コントロールのように<xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.GridView>、および<xref:System.Web.UI.WebControls.FormView>などの ASP.NET データ ソース コントロールによって提供されるデータにバインドする<xref:System.Web.UI.WebControls.ObjectDataSource>または<xref:System.Web.UI.WebControls.SqlDataSource>データ バインド コントロールには、テンプレート コンテンツが含まれている場合、します。  
+  
+> [!NOTE]
+>  ページの開発者が実装していない、<xref:System.Web.UI.IBindableTemplate>インターフェイスです。 カスタムのデータ バインド コントロールを作成する開発者が操作<xref:System.Web.UI.IBindableTemplate>の実装内のオブジェクト、<xref:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding%2A>と<xref:System.Web.UI.WebControls.GridView.ExtractRowValues%2A>メソッドを実装していない、独自ですが<xref:System.Web.UI.IBindableTemplate>オブジェクト。  
+  
+ などのデータ バインド コントロール<xref:System.Web.UI.WebControls.GridView>通常はその子コントロールのツリーの認識できる値をバインドするから値を抽出されデータ バインディングが発生するたびに、データ バインド コントロールとデータ ソース コントロールの間でこれらの値を渡します。 ただし、ページの開発者は、データ バインド コントロールのテンプレートのコンテンツを定義、ときに、テンプレート内の子コントロールに表示されない、親データ バインド コントロール: 親は子を表示できます (ため自体のコントロールを効果的に表示) をコンテンツが、これらの子コントロールに関連付けられているデータ ソース コントロールの更新、挿入、または削除操作に渡す値を抽出できません。 データ バインディングのシナリオでは、テンプレート コンテンツは、親データ バインド コントロールに対して非透過的です。 `Bind`構文により、データ バインド コントロール内のデータ バインド コントロールから値を抽出する、<xref:System.Web.UI.IBindableTemplate>インスタンス。  
+  
+ データ バインディングには、一方向または双方向を指定できます。 (これらのバインドの方向がによって定義された、<xref:System.ComponentModel.BindingDirection>列挙体です)。一方向のデータ バインディングは、データ バインド コントロールをデータ ソース コントロールからの送信方向で実行される任意のデータ バインディングたとえば、どのシナリオでもデータを読み取るには、一方向のデータ バインドが含まれます。 一方向のデータ バインディングの一方向のデータ バインディングの構文を使用することができます (`<%# Eval("fieldname") %>`) テンプレートのコンテンツ内、双方向の ASP.NET データ バインド構文を使用する必要はありません。 双方向データ バインディングでは、データ ソース コントロールにデータ バインド コントロールからの受信方向でのデータ バインディングについて説明します。 自動の編集、挿入、および削除シナリオの ASP.NET を使用してデータ バインドとデータ ソース コントロールが双方向データ バインディング シナリオを示します。 これらのシナリオが双方向データ バインディング式を使用して (`<%# Bind("fieldname") %>`)。 <xref:System.Web.UI.IBindableTemplate>インターフェイスと ASP.NET のインフラストラクチャは、テンプレート化されたコンテンツと ASP.NET のデータ ソース コントロールの間の自動、宣言、双方向データ バインディングをサポートします。 ASP.NET データ バインド式と構文の詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)と[データ バインド式の概要](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a)です。  
+  
+ データ バインド コントロールのテンプレートのコンテンツが宣言によって定義されているほとんどの場合。 次の表では、テンプレート化されたデータをデータ バインド コントロールにバインドする最もよく使用されるプロセスについて説明します。  
+  
+|データ バインド コントロール|プロセス|  
+|-------------------------|-------------|  
+|<xref:System.Web.UI.WebControls.DetailsView>|データ バインド コントロールを使用してデータにバインドする、`DataSourceID`で、データ ソース コントロール、およびテンプレートのコンテンツのプロパティが定義されている、 <xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>、<xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>または<xref:System.Web.UI.WebControls.TemplateField.InsertItemTemplate%2A>プロパティです。|  
+|<xref:System.Web.UI.WebControls.GridView>|データ バインド コントロールを使用してデータにバインドする、`DataSourceID`で、データ ソース コントロール、およびテンプレートのコンテンツのプロパティが定義されている、<xref:System.Web.UI.WebControls.TemplateField.ItemTemplate%2A>または<xref:System.Web.UI.WebControls.TemplateField.EditItemTemplate%2A>プロパティです。 <xref:System.Web.UI.WebControls.GridView>コントロールは、挿入操作をサポートしません。|  
+|<xref:System.Web.UI.WebControls.FormView>|データ バインド コントロールを使用してデータにバインドする、`DataSourceID`プロパティ、およびテンプレートのコンテンツがで定義されている、 <xref:System.Web.UI.WebControls.FormView.ItemTemplate%2A>、 <xref:System.Web.UI.WebControls.FormView.InsertItemTemplate%2A>、または<xref:System.Web.UI.WebControls.FormView.EditItemTemplate%2A>プロパティ、または、<xref:System.Web.UI.WebControls.TemplateField>オブジェクト。|  
+  
+ <xref:System.Web.UI.WebControls.DataList>と<xref:System.Web.UI.WebControls.Repeater>コントロールでは、自動双方向データ バインディングのシナリオをサポートしていません。  
+  
+ ASP.NET を暗黙的に作成、<xref:System.Web.UI.IBindableTemplate>オブジェクト テンプレート内での ASP.NET データ ソース コントロールにバインドするテンプレートのコンテンツが解析されたとき。 具体的には、ASP.NET のパーサーがのインスタンスを作成、<xref:System.Web.UI.CompiledBindableTemplateBuilder>クラスは ASP.NET データ バインドの構文を使用し、データ バインディングをサポートする ASP.NET Web サーバー コントロールを含むテンプレートのコンテンツを解析するとします。 これらの ASP.NET サーバー コントロールによってマークされて、<xref:System.ComponentModel.BindableAttribute>属性。  
+  
+ <xref:System.Web.UI.IBindableTemplate>インターフェイスが 1 つのメソッドを定義<xref:System.Web.UI.IBindableTemplate.ExtractValues%2A>です。 データ バインド コントロールが自動的にテンプレート化されたコンテンツから名前/値ペアを抽出して実行時にデータ ソース コントロールにペアを渡すできるように、このメソッドは、双方向データ バインディングの定義します。 データの自動へのバインドが成功、フィールド名は、コンテンツから抽出された、テンプレートによって、<xref:System.Web.UI.IBindableTemplate.ExtractValues%2A>メソッドが関連付けられているデータ ソース コントロール内のパラメーター名と一致する必要があります。 開発者の呼び出しの制御、<xref:System.Web.UI.IBindableTemplate.ExtractValues%2A>メソッドに明示的の実装内でのみ<xref:System.Web.UI.WebControls.FormView.ExtractRowValues%2A>またはカスタム データ バインド コントロールの他のいくつかのようなメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、<xref:System.Web.UI.WebControls.FormView>コントロールのテンプレートの内容を定義、によって提供されるデータにバインドすることができます宣言によって、<xref:System.Web.UI.WebControls.SqlDataSource>を制御して表示され、既存のレコードを編集します。 ASP.NET のパーサーは、テンプレートのコンテンツを解析し、作成、<xref:System.Web.UI.IBindableTemplate>から値をバインドすることは、実行時にオブジェクト、<xref:System.Web.UI.WebControls.SqlDataSource>一方向の両方の ASP.NET データ バインド構文によって、テンプレートで定義されているデータ領域へのコントロール (`<%# Eval("fieldname") %>`) および双方向データ バインディング構文 (`<%# Bind("fieldname") %>`)。  
+  
+> [!IMPORTANT]
+>  このコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormView#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormView/CS/formvieweditcs.aspx#1)]
+ [!code-aspx-vb[FormView#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormView/VB/formvieweditvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExtractValues">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary ExtractValues (System.Web.UI.Control container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Specialized.IOrderedDictionary ExtractValues(class System.Web.UI.Control container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IBindableTemplate.ExtractValues(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Web.UI.Control" />名前/値ペアを抽出するため、渡しされる、データ バインド コントロール双方向データ バインディングのシナリオに関連付けられているデータ ソース コントロールにします。</param>
+        <summary>クラスに実装すると、テンプレートのコンテンツ内での双方向の ASP.NET データ バインド構文を使用してバインドされた値の名前/値ペアのセットを取得します。</summary>
+        <returns><see cref="T:System.Collections.Specialized.IOrderedDictionary" />名前/値ペア。 名前はテンプレートのコンテンツ内のコントロールの名前を表し、値は双方向の ASP.NET データ バインド構文を使用してバインド プロパティの値の現在の値。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.IBindableTemplate.ExtractValues(System.Web.UI.Control)" />メソッドは、次の規則に従う必要があります。  
+  
+-   特定フィールドの複数のバインドが存在する場合は、発生した最後のバインディングが使用されます。  
+  
+-   内のコントロールの識別子を参照するために、<see cref="M:System.Web.UI.IBindableTemplate.ExtractValues(System.Web.UI.Control)" />メソッド、解析時では、コントロールはユーザー定義の ID プロパティをいる必要がありますもします。 ID が存在しない場合は、解析エラーでこの結果します。  
+  
+-   双方向の ASP.NET データ バインド構文が正しくのみで、<see cref="T:System.Web.UI.ITemplate" />または<see cref="T:System.Web.UI.IBindableTemplate" />データ バインド コントロールのプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

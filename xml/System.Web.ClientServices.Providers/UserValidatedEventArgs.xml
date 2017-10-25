@@ -1,0 +1,82 @@
+<Type Name="UserValidatedEventArgs" FullName="System.Web.ClientServices.Providers.UserValidatedEventArgs">
+  <TypeSignature Language="C#" Value="public class UserValidatedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserValidatedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.Providers.UserValidatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.UserValidated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを検証済みユーザーのユーザー名へのアクセスを提供する、<xref:System.Web.ClientServices.Providers.UserValidatedEventArgs.UserName%2A>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスを使用して、フォームのタイトル バーに、ユーザー名を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#305](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#305)]
+ [!code-vb[ClientApplicationServices#305](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#305)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserValidatedEventArgs (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.UserValidatedEventArgs.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検証済みユーザーのユーザー名。</param>
+        <summary><see cref="T:System.Web.ClientServices.Providers.UserValidatedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.UserValidatedEventArgs.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証済みユーザーのユーザー名を取得します。</summary>
+        <value>検証済みユーザーのユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、フォームのタイトル バーに、ユーザー名を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#305](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#305)]
+ [!code-vb[ClientApplicationServices#305](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#305)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

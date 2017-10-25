@@ -1,0 +1,220 @@
+<Type Name="EventRegistrationTokenTable&lt;T&gt;" FullName="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public sealed class EventRegistrationTokenTable&lt;T&gt; where T : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventRegistrationTokenTable`1&lt;class T&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">イベント ハンドラーの型は、特定のイベントに対するデリゲートです。</typeparam>
+    <summary>マネージ コードでの Windows ランタイム イベントの実装をサポートするには、デリゲートとイベント トークンの間のマッピングを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加とイベントの削除を手動で管理する必要がある場合は、この型を使用します。  
+  
+ このテーブルのインスタンスは、イベントに追加されているイベント ハンドラーを表すデリゲートを格納します。 イベントを発生させるには、によって返されるデリゲートを呼び出す、<xref:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable%601.InvocationList%2A>にない場合は、プロパティ`null`です。 このテーブルのインスタンスが、イベントごとに必要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventRegistrationTokenTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="T" />デリゲート型ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddEventHandler">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken AddEventHandler (T handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken AddEventHandler(!T handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.AddEventHandler(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>テーブルおよび呼び出しリストに指定されたイベント ハンドラーを追加し、イベント ハンドラーを削除するために使用できるトークンを返します。</summary>
+        <returns>テーブルおよび呼び出しリストから、イベント ハンドラーを削除するために使用するトークンです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrCreateEventRegistrationTokenTable">
+      <MemberSignature Language="C#" Value="public static System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable&lt;T&gt; GetOrCreateEventRegistrationTokenTable (ref System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable&lt;T&gt; refEventTable);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1&lt;!T&gt; GetOrCreateEventRegistrationTokenTable(class System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1&lt;!T&gt;&amp; refEventTable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.GetOrCreateEventRegistrationTokenTable(System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="refEventTable" Type="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable&lt;T&gt;&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="refEventTable">イベント登録トークン テーブル、参照によって渡されます。</param>
+        <summary>ない場合は、指定したイベントの登録トークン テーブルを返します<see langword="null" />以外の場合、新しいイベント登録トークン テーブルを返します。</summary>
+        <returns>指定されているイベント登録トークン テーブル<paramref name="refEventTable" />されていない場合、<see langword="null" />以外の場合、新しいイベント登録トークン テーブル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable%601.GetOrCreateEventRegistrationTokenTable%2A>テーブルを作成スレッドのいくつかのいずれかのシナリオでイベント登録トークン テーブルを初期化します。 このメソッドは同時に複数のスレッドで呼び出されると、すべてのスレッドで同じイベント登録トークン テーブルが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvocationList">
+      <MemberSignature Language="C#" Value="public T InvocationList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance !T InvocationList" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.InvocationList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のデリゲートを取得または<paramref name="T" />呼び出しリスト持つにはイベント ハンドラーのデリゲート追加したらとをまだ削除されていないをすべてにはが含まれています。 このデリゲートを呼び出すには、すべてのイベント ハンドラーを呼び出されます。</summary>
+        <value>型のデリゲート<paramref name="T" />を表すイベントの現在登録されているすべてのイベント ハンドラー デリゲート。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEventHandler">
+      <MemberSignature Language="C#" Value="public void RemoveEventHandler (System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEventHandler(valuetype System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.RemoveEventHandler(System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.Runtime.InteropServices.WindowsRuntime.EventRegistrationToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">イベント ハンドラーが追加されたときに返されたトークンです。</param>
+        <summary>テーブルと呼び出しリストから指定したトークンに関連付けられているイベント ハンドラーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンが登録されていない場合、テーブルと呼び出しリストは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveEventHandler">
+      <MemberSignature Language="C#" Value="public void RemoveEventHandler (T handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveEventHandler(!T handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.EventRegistrationTokenTable`1.RemoveEventHandler(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>テーブルと呼び出しリストから指定されたイベント ハンドラーのデリゲートを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーが登録されていない場合、テーブルと呼び出しリストは変更されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

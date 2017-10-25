@@ -1,0 +1,116 @@
+<Type Name="ControlBuilderInterceptor" FullName="System.Web.Compilation.ControlBuilderInterceptor">
+  <TypeSignature Language="C#" Value="public abstract class ControlBuilderInterceptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ControlBuilderInterceptor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.ControlBuilderInterceptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンパイル プロセスのカスタマイズまたは制御を許可します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.ControlBuilderInterceptor> クラスは抽象クラスです。 Web.config ファイルを使用して、このクラスを拡張する型を登録することができます、`ControlBuilderInterceptorType`プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ControlBuilderInterceptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ControlBuilderInterceptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Compilation.ControlBuilderInterceptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnProcessGeneratedCode">
+      <MemberSignature Language="C#" Value="public virtual void OnProcessGeneratedCode (System.Web.UI.ControlBuilder controlBuilder, System.CodeDom.CodeCompileUnit codeCompileUnit, System.CodeDom.CodeTypeDeclaration baseType, System.CodeDom.CodeTypeDeclaration derivedType, System.CodeDom.CodeMemberMethod buildMethod, System.CodeDom.CodeMemberMethod dataBindingMethod, System.Collections.IDictionary additionalState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnProcessGeneratedCode(class System.Web.UI.ControlBuilder controlBuilder, class System.CodeDom.CodeCompileUnit codeCompileUnit, class System.CodeDom.CodeTypeDeclaration baseType, class System.CodeDom.CodeTypeDeclaration derivedType, class System.CodeDom.CodeMemberMethod buildMethod, class System.CodeDom.CodeMemberMethod dataBindingMethod, class System.Collections.IDictionary additionalState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ControlBuilderInterceptor.OnProcessGeneratedCode(System.Web.UI.ControlBuilder,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeMemberMethod,System.CodeDom.CodeMemberMethod,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlBuilder" Type="System.Web.UI.ControlBuilder" />
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+        <Parameter Name="baseType" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="derivedType" Type="System.CodeDom.CodeTypeDeclaration" />
+        <Parameter Name="buildMethod" Type="System.CodeDom.CodeMemberMethod" />
+        <Parameter Name="dataBindingMethod" Type="System.CodeDom.CodeMemberMethod" />
+        <Parameter Name="additionalState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="controlBuilder">コントロール ビルダー インスタンス。</param>
+        <param name="codeCompileUnit">A<see cref="T:System.CodeDom.CodeCompileUnit" />コンパイルによって生成されるオブジェクト。</param>
+        <param name="baseType">クラスまたは派生型のコードの型宣言。</param>
+        <param name="derivedType">最上位レベルのマークアップ要素の型宣言。</param>
+        <param name="buildMethod">コントロールを作成し、コントロールを設定するために必要なコードを持つメソッドのさまざまなプロパティ、イベント、フィールドを行います。</param>
+        <param name="dataBindingMethod">コントロール内のデータ バインディング式を評価するコードを含むメソッドです。</param>
+        <param name="additionalState"><see cref="T:System.Web.Compilation.ControlBuilderInterceptor" /> クラスのいくつかのメソッド内でデータを格納および取得するために使用できる追加の状態。</param>
+        <summary><see cref="T:System.Web.UI.ControlBuilder" /> がコード生成を完了後に呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreControlBuilderInit">
+      <MemberSignature Language="C#" Value="public virtual void PreControlBuilderInit (System.Web.UI.ControlBuilder controlBuilder, System.Web.UI.TemplateParser parser, System.Web.UI.ControlBuilder parentBuilder, Type type, string tagName, string id, System.Collections.IDictionary attributes, System.Collections.IDictionary additionalState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PreControlBuilderInit(class System.Web.UI.ControlBuilder controlBuilder, class System.Web.UI.TemplateParser parser, class System.Web.UI.ControlBuilder parentBuilder, class System.Type type, string tagName, string id, class System.Collections.IDictionary attributes, class System.Collections.IDictionary additionalState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.ControlBuilderInterceptor.PreControlBuilderInit(System.Web.UI.ControlBuilder,System.Web.UI.TemplateParser,System.Web.UI.ControlBuilder,System.Type,System.String,System.String,System.Collections.IDictionary,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlBuilder" Type="System.Web.UI.ControlBuilder" />
+        <Parameter Name="parser" Type="System.Web.UI.TemplateParser" />
+        <Parameter Name="parentBuilder" Type="System.Web.UI.ControlBuilder" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="tagName" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Collections.IDictionary" />
+        <Parameter Name="additionalState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="controlBuilder">初期化されるコントロール ビルダー。</param>
+        <param name="parser"><see cref="T:System.Web.UI.TemplateParser" />マークアップを解析に使用するがします。</param>
+        <param name="parentBuilder">親コントロール ビルダー。</param>
+        <param name="type">このビルダーで作成されるコントロールの型。</param>
+        <param name="tagName">作成するタグの名前。</param>
+        <param name="id">マークアップで要素の ID。</param>
+        <param name="attributes">マークアップで要素の属性の一覧。</param>
+        <param name="additionalState"><see cref="T:System.Web.Compilation.ControlBuilderInterceptor" /> クラスのいくつかのメソッド内でデータを格納および取得するために使用できる追加の状態。</param>
+        <summary>マークアップ内の要素の <see cref="T:System.Web.UI.ControlBuilder" /> が初期化される前に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `parentBuilder`パラメーターは、通常、マークアップ内の親要素に対応するビルダー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

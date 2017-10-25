@@ -1,0 +1,275 @@
+<Type Name="PolicyUnit" FullName="System.IO.Log.PolicyUnit">
+  <TypeSignature Language="C#" Value="public struct PolicyUnit" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit PolicyUnit extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Log.PolicyUnit" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Log</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ログ ストア ポリシーでのサイズ測定値を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Log.PolicyUnit> 構造体は、ログ ストア ポリシーでのサイズ測定値を表します。 <xref:System.IO.Log.PolicyUnitType> 列挙体には、表すことができる単位がリストされます。  
+  
+ 測定値のサイズを確認するには、<xref:System.IO.Log.PolicyUnit.Value%2A> プロパティを使用します。 単位を確認するには、<xref:System.IO.Log.PolicyUnit.Type%2A> プロパティを使用します。 <xref:System.IO.Log.PolicyUnit> メソッドおよび <xref:System.IO.Log.PolicyUnit.Percentage%2A> メソッドを使用して、他のデータ型を <xref:System.IO.Log.PolicyUnit.Extents%2A> に変換できます。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy> クラスおよび <xref:System.IO.Log.PolicyUnit> 構造体を使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PolicyUnit (long value, System.IO.Log.PolicyUnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 value, valuetype System.IO.Log.PolicyUnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.#ctor(System.Int64,System.IO.Log.PolicyUnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="type" Type="System.IO.Log.PolicyUnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.IO.Log.PolicyUnit" /> のサイズ。</param>
+        <param name="type"><see cref="T:System.IO.Log.PolicyUnitType" /> 値のいずれか。</param>
+        <summary>値と型を指定して、<see cref="T:System.IO.Log.PolicyUnit" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、<xref:System.IO.Log.LogPolicy> クラスおよび <xref:System.IO.Log.PolicyUnit> 構造体を使用してログのレコード シーケンスのポリシーを設定する方法を示します。  
+  
+ [!code-csharp[S_UELogRecordSequence#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uelogrecordsequence/cs/mylogrecordsequence.cs#2)]
+ [!code-vb[S_UELogRecordSequence#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uelogrecordsequence/vb/mylogrecordsequence.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" /> または <paramref name="type" /> が有効な値でありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">シーケンスが破棄された後にメソッドが呼び出されました。</exception>
+        <exception cref="T:System.OutOfMemoryException">プログラムの実行を継続する十分なメモリがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">指定されたオブジェクトを確認します。</param>
+        <summary>このインスタンスと指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          このインスタンスと指定したオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extents">
+      <MemberSignature Language="C#" Value="public static System.IO.Log.PolicyUnit Extents (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.IO.Log.PolicyUnit Extents(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.Extents(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.PolicyUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">コンテナー数を表す数値。</param>
+        <summary>指定の番号から <see cref="T:System.IO.Log.PolicyUnit" /> 型の <see cref="F:System.IO.Log.PolicyUnitType.Extents" /> を作成します。</summary>
+        <returns>指定の番号からの <see cref="T:System.IO.Log.PolicyUnit" /> 型の <see cref="F:System.IO.Log.PolicyUnitType.Extents" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの一意のハッシュ コードを取得します。</summary>
+        <returns>ハッシュ コード値を表す整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.IO.Log.PolicyUnit left, System.IO.Log.PolicyUnit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.IO.Log.PolicyUnit left, valuetype System.IO.Log.PolicyUnit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.op_Equality(System.IO.Log.PolicyUnit,System.IO.Log.PolicyUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.IO.Log.PolicyUnit" />
+        <Parameter Name="right" Type="System.IO.Log.PolicyUnit" />
+      </Parameters>
+      <Docs>
+        <param name="left">演算子の左辺にある <see cref="T:System.IO.Log.PolicyUnit" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.IO.Log.PolicyUnit" />。</param>
+        <summary>2 つの <see cref="T:System.IO.Log.PolicyUnit" /> インスタンスを比較し、それらが等しいかどうかを確認します。</summary>
+        <returns>
+          両方の <see langword="true" /> インスタンスが等しい場合は <see cref="T:System.IO.Log.PolicyUnit" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子を使用して、2 つの <xref:System.IO.Log.PolicyUnit> インスタンスが等しいかどうかを比較します。 両方のオブジェクトが等しい場合は、<xref:System.IO.Log.PolicyUnit.Type%2A> プロパティと <xref:System.IO.Log.PolicyUnit.Value%2A> プロパティに同じ値を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.IO.Log.PolicyUnit left, System.IO.Log.PolicyUnit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.IO.Log.PolicyUnit left, valuetype System.IO.Log.PolicyUnit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.op_Inequality(System.IO.Log.PolicyUnit,System.IO.Log.PolicyUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.IO.Log.PolicyUnit" />
+        <Parameter Name="right" Type="System.IO.Log.PolicyUnit" />
+      </Parameters>
+      <Docs>
+        <param name="left">演算子の左辺にある <see cref="T:System.IO.Log.PolicyUnit" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.IO.Log.PolicyUnit" />。</param>
+        <summary>2 つの <see cref="T:System.IO.Log.PolicyUnit" /> インスタンスを比較し、それらが等しくないかどうかを確認します。</summary>
+        <returns>
+          両方の <see langword="true" /> インスタンスが等しくない場合は <see cref="T:System.IO.Log.PolicyUnit" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子を使用して、2 つの <xref:System.IO.Log.PolicyUnit> インスタンスが等しくないかどうかを比較します。 2 つのオブジェクトが等しくならないようにするには、<xref:System.IO.Log.PolicyUnit.Type%2A> プロパティと <xref:System.IO.Log.PolicyUnit.Value%2A> プロパティに異なる値を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Percentage">
+      <MemberSignature Language="C#" Value="public static System.IO.Log.PolicyUnit Percentage (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.IO.Log.PolicyUnit Percentage(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.Percentage(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.PolicyUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">パーセンテージを表す数値。</param>
+        <summary>指定の番号から <see cref="T:System.IO.Log.PolicyUnit" /> 型の <see cref="F:System.IO.Log.PolicyUnitType.Percentage" /> を作成します。</summary>
+        <returns>指定の番号からの <see cref="T:System.IO.Log.PolicyUnit" /> 型の <see cref="F:System.IO.Log.PolicyUnitType.Percentage" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Log.PolicyUnit.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの文字列形式を返します。</summary>
+        <returns>このオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.IO.Log.PolicyUnitType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Log.PolicyUnitType Type" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.PolicyUnit.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Log.PolicyUnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.PolicyUnit" /> の単位型を取得します。</summary>
+        <value><see cref="T:System.IO.Log.PolicyUnitType" /> 値のいずれか。 既定値は、<see cref="F:System.IO.Log.PolicyUnitType.Extents" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public long Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Log.PolicyUnit.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Log</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.Log.PolicyUnit" /> の値を取得します。</summary>
+        <value><see cref="T:System.IO.Log.PolicyUnit" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

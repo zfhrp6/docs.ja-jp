@@ -1,0 +1,469 @@
+<Type Name="RsaProtectedConfigurationProvider" FullName="System.Configuration.RsaProtectedConfigurationProvider">
+  <TypeSignature Language="C#" Value="public sealed class RsaProtectedConfigurationProvider : System.Configuration.ProtectedConfigurationProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RsaProtectedConfigurationProvider extends System.Configuration.ProtectedConfigurationProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.RsaProtectedConfigurationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ProtectedConfigurationProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成データの暗号化と復号化を行うために RSA 暗号方式を使用する <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> インスタンスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.RsaProtectedConfigurationProvider>クラスは、保護するのに役立つ、不正アクセスから、構成ファイルに格納されている機密情報を暗号化する方法を示します。 組み込みを使用して<xref:System.Configuration.RsaProtectedConfigurationProvider>インスタンス プロバイダーを宣言して、このトピックの後半の例で示すように、このクラスのインスタンスを作成する代わりに、構成ファイルで適切な設定を行うことができます。  
+  
+ <xref:System.Configuration.RsaProtectedConfigurationProvider>オブジェクトによって提供される暗号化関数を使用して<xref:System.Security.Cryptography.RSA>を暗号化し、構成セクションを復号化するクラス。  
+  
+> [!NOTE]
+>  ASP.NET は、構成ファイルで暗号化された情報を復号化できる、ASP.NET アプリケーションの id を暗号化し、構成データを復号化に使用する暗号化キーへの読み取りアクセスが必要です。 詳細については、次を参照してください。[チュートリアル: 暗号化の構成情報を使用して保護された構成](http://msdn.microsoft.com/library/e1652f90-eac5-4f51-bff1-cf1acc2e1180)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、標準を使用する方法を示しています。<xref:System.Configuration.RsaProtectedConfigurationProvider>を保護したりする構成セクションの保護を解除します。  
+  
+ [!code-csharp[System.Configuration.RsaProtectedConfigurationProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.RsaProtectedConfigurationProvider/CS/RsaProtectedConfigurationProvider.cs#1)]
+ [!code-vb[System.Configuration.RsaProtectedConfigurationProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.RsaProtectedConfigurationProvider/VB/RsaProtectedConfigurationProvider.vb#1)]  
+  
+ 次の例では、暗号化後に、構成ファイルからの抜粋を示します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8"?>  
+<configuration>  
+  <connectionStrings configProtectionProvider="RsaProtectedConfigurationProvider">  
+    <EncryptedData Type="http://www.w3.org/2001/04/xmlenc#Element"  
+        xmlns="http://www.w3.org/2001/04/xmlenc#">  
+      <EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc" />  
+      <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">  
+        <EncryptedKey xmlns="http://www.w3.org/2001/04/xmlenc#">  
+          <EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5" />  
+          <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">  
+            <KeyName>Rsa Key</KeyName>  
+          </KeyInfo>  
+          <CipherData>  
+            <CipherValue>B702tRDVHJjC3CYXt7I0ucCDjdht/Vyk/DdUhwQyt7vepSD85dwCP8ox9Y1BUdjajFeTFfFBsGypbli5HPGRYamQdrVkPo07bBBXNT5H02qxREguGUU4iDtV1Xp8BLVZjQMV4ZgP6Wbctw2xRvPC7GvKHLI4fUN/Je5LmutsijA=</CipherValue>  
+          </CipherData>  
+        </EncryptedKey>  
+      </KeyInfo>  
+      <CipherData>  
+        <CipherValue>ME+XJA2TAj3QN3yT4pJq3sRArC0i7Cz3Da71BkaRe9QNfuVuUjcv0jeGUN4wDdOAZ7LPq6UpVrpirY3kQcALDvPJ5nKxk++Mw75rjtIO8eh2goTY9rCK6zanfzaDshFy7IqItpvs/y2kmij25nM3ury6uO0hCf0UbEL1mbT2jXDqvcrHZUobO1Ef6bygBZ/8HpU+VfF9CTCob/BBE9zUkK37EQhcduwsnzBvDblYbF/Rd+F4lxAkZnecGLfCZjOzJB4xH1a0vvWtPR7zNwL/7I0uHzQjyMdWrkBnotMjoR70R7NELBotCogWO0MBimncKigdR3dTTdrCd72a7UJ4LMlEQaZXGIJp4PIg6qVDHII=</CipherValue>  
+      </CipherData>  
+    </EncryptedData>  
+  </connectionStrings>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.SecurityPermission">アクセス許可によって保護されているリソースへのフル アクセスできます。 <see cref="F:System.Security.Permissions.SecurityAction.Demand" />。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RsaProtectedConfigurationProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.RsaProtectedConfigurationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.RsaProtectedConfigurationProvider.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddKey">
+      <MemberSignature Language="C#" Value="public void AddKey (int keySize, bool exportable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddKey(int32 keySize, bool exportable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.AddKey(System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keySize" Type="System.Int32" />
+        <Parameter Name="exportable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keySize">追加するキーのサイズ。</param>
+        <param name="exportable">
+          キーをエクスポートできることを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>RSA キー コンテナーにキーを追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CspProviderName">
+      <MemberSignature Language="C#" Value="public string CspProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CspProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.CspProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows Cryptography API (crypto API) 暗号化サービス プロバイダー (CSP: Cryptographic Service Provider) の名前を取得します。</summary>
+        <value>CryptoAPI 暗号化サービス プロバイダーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="encrypted_node">To be added.</param>
+        <summary>渡される XML ノードを復号化します。</summary>
+        <returns>復号化された XML ノードです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteKey">
+      <MemberSignature Language="C#" Value="public void DeleteKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.DeleteKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>RSA キー コンテナーからキーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public override System.Xml.XmlNode Encrypt (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Xml.XmlNode Encrypt(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.Encrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">暗号化する <see cref="T:System.Xml.XmlNode" />。</param>
+        <summary>渡される XML ノードを暗号化します。</summary>
+        <returns>暗号化された <see cref="T:System.Xml.XmlNode" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportKey">
+      <MemberSignature Language="C#" Value="public void ExportKey (string xmlFileName, bool includePrivateParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportKey(string xmlFileName, bool includePrivateParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.ExportKey(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlFileName" Type="System.String" />
+        <Parameter Name="includePrivateParameters" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="xmlFileName">キーのエクスポート先ファイルの名前とパス。</param>
+        <param name="includePrivateParameters">
+          プライベート パラメーターがエクスポートされることを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>RSA キーをキー コンテナーからエクスポートします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときにエラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" /> が読み取り専用のファイルを指定しました。  
+  
+ -または-  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ -または-  
+  
+ <paramref name="path" /> がディレクトリを指定しました。  
+  
+ -または-  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイル<paramref name="path" />が見つかりませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportKey">
+      <MemberSignature Language="C#" Value="public void ImportKey (string xmlFileName, bool exportable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ImportKey(string xmlFileName, bool exportable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.ImportKey(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlFileName" Type="System.String" />
+        <Parameter Name="exportable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="xmlFileName">キーのインポート元ファイルの名前とパス。</param>
+        <param name="exportable">
+          キーをエクスポートできることを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>RSA キーをキー コンテナーにインポートします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列で、空白のみで構成されるか、または <see cref="F:System.IO.Path.InvalidPathChars" /> で定義される 1 つ以上の正しくない文字を含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">マップされていないドライブにあるなど、指定されたパスが無効です。</exception>
+        <exception cref="T:System.IO.IOException">ファイルを開くときにエラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="path" />書き込み専用であるファイルを指定します。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ -または-  
+  
+ <paramref name="path" /> がディレクトリを指定しました。  
+  
+ -または-  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイル<paramref name="path" />が見つかりませんでした。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" /> の形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection configurationValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection configurationValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.RsaProtectedConfigurationProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="configurationValues" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">オブジェクトに対して使用するプロバイダー名。</param>
+        <param name="configurationValues">オブジェクトを初期化するときに使用する値の <see cref="T:System.Collections.Specialized.NameValueCollection" /> コレクション。</param>
+        <summary>既定の設定でプロバイダーを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">
+          <paramref name="configurationValues" />1 つまたは複数の不明な値が含まれます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyContainerName">
+      <MemberSignature Language="C#" Value="public string KeyContainerName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.KeyContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー コンテナーの名前を取得します。</summary>
+        <value>キー コンテナーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RsaPublicKey">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.RSAParameters RsaPublicKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.RSAParameters RsaPublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.RsaPublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RSAParameters</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーが使用するパブリック キーを取得します。</summary>
+        <value>プロバイダーが使用するパブリック キーを格納する <see cref="T:System.Security.Cryptography.RSAParameters" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseFIPS">
+      <MemberSignature Language="C#" Value="public bool UseFIPS { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseFIPS" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.UseFIPS" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーが FIPS を使用するかどうかを示す値を取得します。</summary>
+        <value>
+          プロバイダーが FIPS を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseMachineContainer">
+      <MemberSignature Language="C#" Value="public bool UseMachineContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseMachineContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.UseMachineContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.RsaProtectedConfigurationProvider" /> オブジェクトがコンピューターのキー コンテナーを使用しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" /> オブジェクトがコンピューターのキー コンテナーを使用している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseOAEP">
+      <MemberSignature Language="C#" Value="public bool UseOAEP { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseOAEP" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.RsaProtectedConfigurationProvider.UseOAEP" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーが OAEP (Optimal Asymmetric Encryption Padding) キー交換データを使用しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Configuration.RsaProtectedConfigurationProvider" /> オブジェクトが OAEP キー交換データを使用している場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

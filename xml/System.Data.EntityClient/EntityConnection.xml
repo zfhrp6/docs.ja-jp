@@ -1,0 +1,717 @@
+<Type Name="EntityConnection" FullName="System.Data.EntityClient.EntityConnection">
+  <TypeSignature Language="C#" Value="public sealed class EntityConnection : System.Data.Common.DbConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EntityConnection extends System.Data.Common.DbConnection" />
+  <TypeSignature Language="DocId" Value="T:System.Data.EntityClient.EntityConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbConnection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>概念モデルおよびデータ ソース接続への参照が含まれています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ コード例については、次を参照してください。 [EntityClient 扱う](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ コード例については、次を参照してください。 [EntityClient 扱う](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityConnection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ コード例については、次を参照してください。 [EntityClient 扱う](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityConnection (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">プロバイダー固有の接続文字列。</param>
+        <summary>接続文字列に基づいて、<see cref="T:System.Data.EntityClient.EntityConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションの構成ファイルに格納されている名前付き接続文字列を作成します。 代わりにこの名前付き接続文字列を指定することができます、`connectionString`パラメーターをインスタンス化するときに、<xref:System.Data.EntityClient.EntityConnection>クラスです。  
+  
+ <xref:System.Data.Common.CommandTrees> および <xref:System.Data.Objects.ObjectContext> のオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れるこのコンストラクター (<xref:System.Data.EntityClient.EntityConnection>) によって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築されます。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ コード例については、次を参照してください。 [EntityClient 扱う](http://msdn.microsoft.com/en-us/dec4728c-8dff-4e30-abe0-0f78fb5d5af5)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効な接続文字列キーワードが指定されたか、必要な接続文字列キーワードが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityConnection (System.Data.Metadata.Edm.MetadataWorkspace workspace, System.Data.Common.DbConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Metadata.Edm.MetadataWorkspace workspace, class System.Data.Common.DbConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.#ctor(System.Data.Metadata.Edm.MetadataWorkspace,System.Data.Common.DbConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="workspace" Type="System.Data.Metadata.Edm.MetadataWorkspace" />
+        <Parameter Name="connection" Type="System.Data.Common.DbConnection" />
+      </Parameters>
+      <Docs>
+        <param name="workspace">この <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> に関連付けられた <see cref="T:System.Data.EntityClient.EntityConnection" />。</param>
+        <param name="connection">この <see cref="T:System.Data.EntityClient.EntityConnection" /> オブジェクトの基になるデータ ソース接続。</param>
+        <summary>指定した <see cref="T:System.Data.EntityClient.EntityConnection" /> および <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> を使用して、<see cref="T:System.Data.Common.DbConnection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用すると、ディスク上のファイル、またはアセンブリの埋め込みリソースからではないメタデータから <xref:System.Data.EntityClient.EntityConnection> を作成できます。  
+  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れるこのコンストラクター (<xref:System.Data.Metadata.Edm.MetadataWorkspace>) によって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="workspace" /> パラメーターまたは <paramref name="connection" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">概念モデルがワークスペースから見つかりません。  
+  
+ または  
+  
+ マッピング ファイルがワークスペースから見つかりません。  
+  
+ または  
+  
+ ストレージ モデルがワークスペースから見つかりません。  
+  
+ または  
+  
+ <paramref name="connection" />閉じた状態ではありません。</exception>
+        <exception cref="T:System.Data.ProviderIncompatibleException"><paramref name="connection" /> ADO.NET Entity Framework と互換性のあるプロバイダーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginDbTransaction">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction BeginDbTransaction (System.Data.IsolationLevel isolationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbTransaction BeginDbTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginDbTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolationLevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolationLevel">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityTransaction BeginTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityTransaction BeginTransaction() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginTransaction" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityClient.EntityTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基になるプロバイダーを使用してトランザクションを開始します。</summary>
+        <returns>新しい <see cref="T:System.Data.EntityClient.EntityTransaction" />。 返される <see cref="T:System.Data.EntityClient.EntityTransaction" /> インスタンスを後で <see cref="T:System.Data.EntityClient.EntityCommand" /> と関連付けて、そのトランザクション内でコマンドを実行することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> メソッドは <xref:System.Data.IsolationLevel.Unspecified> トランザクション分離レベルを使用します。 別の分離レベルを指定する場合は、<xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> を呼び出します。 この値は、基になるプロバイダーが変わると異なって解釈されることがあります。 複数のプロバイダーでアプリケーションを移植可能にするには、<xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> を呼び出して、トランザクション分離レベルを明示的に指定する必要があります。  
+  
+ いつでも、<xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> で作成されたアクティブなトランザクションが 2 つ以上存在することはできません。 現在トランザクションが存在する <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> に対して <xref:System.Data.EntityClient.EntityConnection> オーバーロードを呼び出そうとすると、<xref:System.InvalidOperationException> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるプロバイダーが不明です。  
+  
+ または  
+  
+ <see cref="M:System.Data.EntityClient.EntityConnection.BeginTransaction" /> に対する呼び出しが、既に現在のトランザクションが存在する <see cref="T:System.Data.EntityClient.EntityConnection" /> に対して行われました。  
+  
+ または  
+  
+ <see cref="T:System.Data.EntityClient.EntityConnection" /> の状態が <see cref="F:System.Data.ConnectionState.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginTransaction">
+      <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityTransaction BeginTransaction (System.Data.IsolationLevel isolationLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityTransaction BeginTransaction(valuetype System.Data.IsolationLevel isolationLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.BeginTransaction(System.Data.IsolationLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityClient.EntityTransaction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isolationLevel" Type="System.Data.IsolationLevel" />
+      </Parameters>
+      <Docs>
+        <param name="isolationLevel">トランザクションの分離レベル。</param>
+        <summary>基になるプロバイダーを使用して、指定の分離レベルでトランザクションを開始します。</summary>
+        <returns>新しい <see cref="T:System.Data.EntityClient.EntityTransaction" />。 返される <see cref="T:System.Data.EntityClient.EntityTransaction" /> インスタンスを後で <see cref="T:System.Data.EntityClient.EntityCommand" /> と関連付けて、そのトランザクション内でコマンドを実行することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いつでも、<xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> で作成されたアクティブなトランザクションが 2 つ以上存在することはできません。 現在トランザクションが存在する <xref:System.Data.EntityClient.EntityConnection.BeginTransaction%2A> に対して <xref:System.Data.EntityClient.EntityConnection> オーバーロードを呼び出そうとすると、<xref:System.InvalidOperationException> が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるプロバイダーが不明です。  
+  
+ または  
+  
+ <see cref="M:System.Data.EntityClient.EntityConnection.BeginTransaction" /> に対する呼び出しが、既に現在のトランザクションが存在する <see cref="T:System.Data.EntityClient.EntityConnection" /> に対して行われました。  
+  
+ または  
+  
+ <see cref="T:System.Data.EntityClient.EntityConnection" /> の状態が <see cref="F:System.Data.ConnectionState.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeDatabase">
+      <MemberSignature Language="C#" Value="public override void ChangeDatabase (string databaseName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ChangeDatabase(string databaseName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.ChangeDatabase(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="databaseName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="databaseName">サポートされていません。</param>
+        <summary>サポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityClient.EntityConnection.ChangeDatabase%2A>から派生している場合、メソッドが必要な<xref:System.Data.Common.DbConnection>します。 このメソッドはサポートされていませんしが発生、<xref:System.NotSupportedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">メソッドが呼び出されたとき。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データベースへの接続を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるデータ プロバイダーが不明の場合、<xref:System.Data.EntityClient.EntityConnection.Close%2A> を呼び出しても何も行われません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続を閉じるときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public override string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnection" /> 接続文字列を取得または設定します。</summary>
+        <value>データ ソースへの初期接続を確立するために必要な接続文字列。 既定値は空の文字列です。 閉じている接続では、現在の設定値が返されます。 値が設定されていない場合は、空の文字列が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `EntityClient`キーワード/値パラメーターのペアのセミコロンで区切られた一連の接続文字列で構成されます。 それぞれのキーワードと値の関連付けには、等号 (=) が使用されます。 <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> のキーワード値に有効な名前を次の表に示します。  
+  
+|キーワード|説明|  
+|-------------|-----------------|  
+|`Provider`|`Name` キーワードが指定されていない場合に必要です。 基になるプロバイダーの <xref:System.Data.Common.DbProviderFactory> オブジェクトを取得するために使用されるプロバイダー名です。 この値は定数です。<br /><br /> ときに、`Name`キーワードが接続文字列を空でない値に含まれていない、`Provider`キーワードが必要です。 このキーワードは `Name` キーワードと同時に指定できません。|  
+|`Provider Connection String`|省略可能です。 基になるデータ ソースに渡される、プロバイダー固有の接続文字列を指定します。 この接続文字列は、データ プロバイダーの有効なキーワード/値ペアを使用して表されます。 無効な `Provider Connection String` がデータ ソースによって評価されると、ランタイム エラーが発生します。<br /><br /> このキーワードは `Name` キーワードと同時に指定できません。<br /><br /> `Provider Connection String` の値は、引用符で囲む必要があります。 次に例を示します。<br /><br /> `Provider Connection String ="Server=serverName; User ID = userID";`<br /><br /> 次に誤った例を示します。<br /><br /> `Provider Connection String =Server=serverName; User ID = userID`|  
+|`Metadata`|`Name` キーワードが指定されていない場合に必要です。 ディレクトリ、ファイル、およびモデルとマッピング情報を検索するリソースの場所のパイプで区切られたリスト。 次に例を示します。<br /><br /> `Metadata=`<br /><br /> `c:\model &#124; c:\model\sql\mapping.msl;`<br /><br /> パイプ区切り記号の両側の空白は無視されます。<br /><br /> このキーワードは `Name` キーワードと同時に指定できません。|  
+|`Name`|アプリケーションは、オプションで、必要なキーワード/値接続文字列値を提供する接続名をアプリケーション構成ファイル内で指定できます。 その場合は、接続文字列内に値を直接記述することはできません。 `Name` キーワードは、構成ファイル内で使用できません。<br /><br /> `Name` キーワードが接続文字列に含まれていない場合、Provider キーワードの空でない値が必要になります。<br /><br /> このキーワードは他のすべての接続文字列キーワードと同時に指定できません。|  
+  
+ アプリケーションで直接キーワード/値を指定できます、<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>プロパティ、またはそれには、値を指定できます、`Name`キーワード。 場合、`Name`キーワードが指定されている接続文字列キーワード/値が次のように、アプリケーション構成ファイルから取得されます場合、。  
+  
+ `Name=AdventureWorksEntities;`  
+  
+ 場合、`Name`でキーワードを使用、<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>プロパティ、その他のキーワードは許可されていません。 `Name`キーワードに格納されている名前付き接続文字列を指す、`connectionStrings`次の例で示すように、アプリケーション構成ファイル」の「します。 `Provider`、 `Metadata`、および`Provider Connection String`値は、実行時に、構成ファイルから取得されます。  
+  
+  
+  
+ また、キーワード/値ペアは、次の例に示すように、<xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> プロパティで直接指定することもできます。 ここで、`Name`キーワードは使用されません。  
+  
+```  
+"Provider=System.Data.SqlClient;  
+Metadata=c:\metadata|c:\Metadata\Sql;  
+Provider Connection String= 'Data Source=localhost;  
+    Initial Catalog=AdventureWorks;Integrated Security=True;Connection Timeout=60' "  
+```  
+  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.EntityClient.EntityConnectionStringBuilder> と <xref:System.Data.SqlClient.SqlConnectionStringBuilder> を組み合わせて使用しています。 コードのプロパティを設定する、`SqlConnectionStringBuilder`を作成する、<xref:System.Data.SqlClient.SqlConnection>を基になるプロバイダーの接続文字列の一部を提供する文字列。 なお、`Provider`を使用して名前を設定することはできません、`SqlConnectionStringBuilder`を使用していない無効なため、`SqlConnection`構文です。 このコードを作成、<xref:System.Data.EntityClient.EntityConnection>設定によって文字列`EntityConnectionStringBuilder`プロパティです。  
+  
+ [!code-csharp[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/csharp/VS_Snippets_Data/eSQLBasicExamples/CS/Program.cs#buildingconnectionstringwithentitycommand)]
+ [!code-vb[eSQLBasicExamples#BuildingConnectionStringWithEntityCommand](~/samples/snippets/visualbasic/VS_Snippets_Data/eSQLBasicExamples/VB/Program.vb#buildingconnectionstringwithentitycommand)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.EntityClient.EntityConnection.ConnectionString" /> の <see cref="EntityConnection" /> を初期化した後に、<see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> プロパティを設定しようとしました。 <see cref="MetadataWorkspace" /> が初期化されるのは、<see cref="EntityConnection" /> をパラメーターに取るオーバーロードから <see cref="MetadataWorkspace" /> インスタンスを構築した場合か、または <see cref="T:System.Data.EntityClient.EntityConnection" /> インスタンスが開かれた場合のいずれかです。</exception>
+        <exception cref="T:System.ArgumentException">無効な接続文字列キーワードが指定されたか、必要な接続文字列キーワードが指定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionTimeout">
+      <MemberSignature Language="C#" Value="public override int ConnectionTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConnectionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ConnectionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続を確立する際、試行を終了してエラーを生成するまでに待機する秒数を取得します。</summary>
+        <value>接続が開くのを待機する時間 (秒単位)。 既定値は、基になるデータ プロバイダーの既定のタイムアウト値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるデータ プロバイダーが不明の場合は 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">0 より小さい値が設定されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.EntityClient.EntityCommand CreateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.EntityClient.EntityCommand CreateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.CreateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.EntityClient.EntityCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityCommand" /> をこの <see cref="P:System.Data.EntityClient.EntityCommand.Connection" /> に設定して、<see cref="T:System.Data.EntityClient.EntityConnection" /> の新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Data.EntityClient.EntityCommand" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">基になるデータ プロバイダーの名前が不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDbCommand">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbCommand CreateDbCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbCommand CreateDbCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.CreateDbCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Database">
+      <MemberSignature Language="C#" Value="public override string Database { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Database" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.Database" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデータベースの名前、または接続が開かれた後に使用されるデータベースの名前を取得します。</summary>
+        <value>値、<see langword="Database" />基になるデータ プロバイダーのプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、特定のキーワードの値のように`Database`、にマップされる、<xref:System.Data.EntityClient.EntityConnection.Database%2A>プロパティを基になるデータ プロバイダーのマニュアルを参照してください。 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] に相当するキーワードについては、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティのドキュメントを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるデータ プロバイダーが不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public override string DataSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続先のデータ ソースの名前またはネットワーク アドレスを取得します。</summary>
+        <value>データ ソースの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 、特定のキーワードの値のように`DataSource`、にマップされる、<xref:System.Data.EntityClient.EntityConnection.DataSource%2A>プロパティを基になるデータ プロバイダーのマニュアルを参照してください。 [!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)] に相当するキーワードについては、<xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A> プロパティのドキュメントを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になるデータ プロバイダーが不明です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DbProviderFactory">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbProviderFactory DbProviderFactory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbProviderFactory DbProviderFactory" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.DbProviderFactory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbProviderFactory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnlistTransaction">
+      <MemberSignature Language="C#" Value="public override void EnlistTransaction (System.Transactions.Transaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EnlistTransaction(class System.Transactions.Transaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.EnlistTransaction(System.Transactions.Transaction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="transaction" Type="System.Transactions.Transaction" />
+      </Parameters>
+      <Docs>
+        <param name="transaction">登録先のトランザクション オブジェクト。</param>
+        <summary>この <see cref="T:System.Data.EntityClient.EntityConnection" /> を指定されたトランザクションに登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、データ ソース接続呼び出しを転送して、渡される <xref:System.Transactions.Transaction> に明示的に参加させます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Data.EntityClient.EntityConnection" /> の状態が <see cref="F:System.Data.ConnectionState.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataWorkspace">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.MetadataWorkspace GetMetadataWorkspace ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Metadata.Edm.MetadataWorkspace GetMetadataWorkspace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.MetadataWorkspace</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> に関連付けられている <see cref="T:System.Data.EntityClient.EntityConnection" /> を返します。</summary>
+        <returns>この <see cref="T:System.Data.Metadata.Edm.MetadataWorkspace" /> に関連付けられている <see cref="T:System.Data.EntityClient.EntityConnection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.MetadataWorkspace> クラスが作成されると、<xref:System.Data.EntityClient.EntityConnection> が自動的に作成されます。 作成プロセスで、メタデータ固有の例外がスローされることがあります。 メタデータがメモリに読み込まれると、Entity Data Model (EDM) アプリケーションは、そのメタデータを使用して、基になるデータ ソースに関する情報にアクセスします。 詳細については、次を参照してください。 [ADO.NET メタデータ](http://msdn.microsoft.com/en-us/196097a5-a791-4ac4-9e6a-805685d481d5)です。  
+  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> では、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Data.MetadataException">インラインの接続文字列には、無効なが含まれています。<see langword="Metadata" />キーワード値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public override void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.EntityClient.EntityConnection.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出して、基になるデータ プロバイダーのデータ ソースへの接続を確立<see langword="Open" />メソッドです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.CommandTrees> や <xref:System.Data.Objects.ObjectContext> などのオブジェクトが不注意でメタデータと同期しなくなるのを防ぐため、<xref:System.Data.EntityClient.EntityConnection> でそのメタデータをロックする必要があります。 メタデータがロックされると、接続文字列に変更を加えることができなくなります。 メタデータがロックされる 2 つのシナリオを次に示します。  
+  
+-   既定のコンストラクター、または接続文字列を受け入れる <xref:System.Data.EntityClient.EntityConnection> コンストラクターによって <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.String%29> インスタンスが構築された場合。 いずれの場合も、接続が開かれる前に接続文字列が複数回変更される可能性があります。 <xref:System.Data.EntityClient.EntityConnection.Open%2A> または <xref:System.Data.EntityClient.EntityConnection.GetMetadataWorkspace%2A> を呼び出すと、メタデータがロックされます。  
+  
+-   <xref:System.Data.EntityClient.EntityConnection> と <xref:System.Data.EntityClient.EntityConnection.%23ctor%28System.Data.Metadata.Edm.MetadataWorkspace%2CSystem.Data.Common.DbConnection%29> を受け入れる <xref:System.Data.Metadata.Edm.MetadataWorkspace> コンストラクターによって、<xref:System.Data.Common.DbConnection> インスタンスが構築された場合。 この場合、メタデータは構築時にロックされます。 接続文字列に変更を加えることはできません。  
+  
+ メタデータが読み込まれると、<xref:System.Data.EntityClient.EntityConnection> は、概念モデル、ストレージ モデル、およびマッピング ファイルがすべて存在することを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が開いたときにエラーが発生したか、基になるデータ プロバイダーの名前が不明です。</exception>
+        <exception cref="T:System.Data.MetadataException">インラインの接続文字列には、無効なが含まれています。<see langword="Metadata" />キーワード値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerVersion">
+      <MemberSignature Language="C#" Value="public override string ServerVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.ServerVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが接続されているデータ ソースのバージョンを含む文字列を取得します。</summary>
+        <value>プロバイダー接続文字列に含まれるデータ ソースのバージョン。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">接続が閉じています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Data.ConnectionState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.ConnectionState State" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ConnectionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.ConnectionState" /> が開いている場合は、基になるプロバイダーの <see cref="T:System.Data.EntityClient.EntityConnection" /> プロパティを取得します。 それ以外の場合、<see cref="F:System.Data.ConnectionState.Closed" /> を返します。</summary>
+        <value>
+          <see cref="F:System.Data.ConnectionState.Open" /> の内部状態と基になるプロバイダーの <see cref="T:System.Data.EntityClient.EntityConnection" /> が両方開いている場合にのみ <see cref="T:System.Data.ConnectionState" /> になります。 <see cref="T:System.Data.EntityClient.EntityConnection" /> の状態が開いていてもプロバイダーの <see cref="T:System.Data.ConnectionState" /> が閉じている場合、このプロパティは <see cref="F:System.Data.ConnectionState.Broken" /> を返します。 返しますそれ以外の場合、<see cref="F:System.Data.ConnectionState.Closed" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreConnection">
+      <MemberSignature Language="C#" Value="public System.Data.Common.DbConnection StoreConnection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection StoreConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.EntityClient.EntityConnection.StoreConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.EntityClient.EntityConnection" /> オブジェクトで使用される、基になるデータ ソース接続へのアクセスを提供します。</summary>
+        <value>データ ソース接続の <see cref="T:System.Data.Common.DbConnection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.EntityClient.EntityConnection> オブジェクトが閉じている場合、返されるデータ ソース接続は閉じられます。 開いている場合は、開いているデータ ソース接続が返されます。 データ ソース接続情報を設定すると、返される値は常に null 以外になります。 データ ソース接続情報がない (たとえば既定のコンストラクターが使用されたために接続文字列が後で設定されなかったなどの) 場合は、null 参照が返されます。  
+  
+ Entity Framework で使用された同一のデータ ソース接続は、アプリケーションの他の部分と共有できます。 データ ソース接続は、<xref:System.Data.Common.DbConnection> の <xref:System.Data.Objects.ObjectContext.Connection%2A> プロパティ、または <xref:System.Data.Objects.ObjectContext> の <xref:System.Data.EntityClient.EntityConnection.StoreConnection%2A> プロパティからの <xref:System.Data.EntityClient.EntityConnection> オブジェクトとして返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

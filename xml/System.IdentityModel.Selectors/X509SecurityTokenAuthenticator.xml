@@ -1,0 +1,239 @@
+<Type Name="X509SecurityTokenAuthenticator" FullName="System.IdentityModel.Selectors.X509SecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public class X509SecurityTokenAuthenticator : System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509SecurityTokenAuthenticator extends System.IdentityModel.Selectors.SecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenAuthenticator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> を認証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> クラスを使用して、<xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンを認証します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenAuthenticator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドを呼び出してトークンを認証する場合、X.509 証明書は Windows ID に割り当てられず、証明書の検証には証明書チェーンが使われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenAuthenticator (System.IdentityModel.Selectors.X509CertificateValidator validator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Selectors.X509CertificateValidator validator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.#ctor(System.IdentityModel.Selectors.X509CertificateValidator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validator" Type="System.IdentityModel.Selectors.X509CertificateValidator" />
+      </Parameters>
+      <Docs>
+        <param name="validator">証明書が有効であることを確認する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</param>
+        <summary>証明書バリデーターを指定して、<see cref="T:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスには、<xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A> プロパティなどの一連の定義済みの証明書検証モデルがあります。 これらの検証モデルは、`validator` パラメーターに渡すことができます。 アプリケーションにカスタム検証メソッドが必要な場合は、<xref:System.IdentityModel.Selectors.X509CertificateValidator> からクラスを派生させ、<xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドをオーバーライドします。 <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドは、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドによって呼び出されます。  
+  
+ 既定では、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator> は X.509 証明書を Windows ID に割り当てません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenAuthenticator (System.IdentityModel.Selectors.X509CertificateValidator validator, bool mapToWindows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Selectors.X509CertificateValidator validator, bool mapToWindows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.#ctor(System.IdentityModel.Selectors.X509CertificateValidator,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validator" Type="System.IdentityModel.Selectors.X509CertificateValidator" />
+        <Parameter Name="mapToWindows" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validator">証明書が有効であることを確認する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</param>
+        <param name="mapToWindows">
+          証明書の ID を Windows ID にマッピングする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定された証明書検証メソッドを使用し、証明書の ID を Windows ID に割り当てるかどうかを指定して、<see cref="T:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスには、<xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A> プロパティなどの一連の定義済みの証明書検証モデルがあります。 これらの検証モデルは、`validator` パラメーターに渡すことができます。 アプリケーションにカスタム検証メソッドが必要な場合は、<xref:System.IdentityModel.Selectors.X509CertificateValidator> からクラスを派生させ、<xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドをオーバーライドします。 <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドは、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドによって呼び出されます。  
+  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドを呼び出してトークンを認証する場合、`mapToWindows` が `true` であれば、X.509 証明書が Windows アカウントに割り当てられ、そのユーザーが属する Windows グループに関するクレームが <xref:System.IdentityModel.Policy.EvaluationContext> に追加されます。 X.509 証明書の Windows アカウントへの割り当て方法は、セキュリティ トークンの種類によって異なります。  
+  
+-   セキュリティ トークンの種類が <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> の場合、X.509 証明書の割り当てには <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.WindowsIdentity%2A> プロパティを使用します。  
+  
+-   セキュリティ トークンの種類が `X509SecurityToken` の場合、X.509 証明書の Windows アカウントへの割り当てにはユーザー プリンシパル名 (UPN) を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityTokenAuthenticator (System.IdentityModel.Selectors.X509CertificateValidator validator, bool mapToWindows, bool includeWindowsGroups);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Selectors.X509CertificateValidator validator, bool mapToWindows, bool includeWindowsGroups) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.#ctor(System.IdentityModel.Selectors.X509CertificateValidator,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="validator" Type="System.IdentityModel.Selectors.X509CertificateValidator" />
+        <Parameter Name="mapToWindows" Type="System.Boolean" />
+        <Parameter Name="includeWindowsGroups" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="validator">証明書が有効であることを確認する <see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />。</param>
+        <param name="mapToWindows">
+          証明書の ID を Windows ID にマッピングする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="includeWindowsGroups">
+          Windows ユーザーが属するグループを認証プロセス全体に設定される <see langword="true" /> プロパティに含む場合は <see cref="P:System.IdentityModel.Policy.AuthorizationContext.ClaimSets" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>指定された証明書検証メソッドを使用し、証明書の ID を Windows ID および Windows ユーザーが属するグループに割り当てるかどうかを指定して、<see cref="T:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンスの改善に Windows グループ情報が必要ない場合は、`false` パラメーターに `includeWindowsGroups` を渡します。  
+  
+ <xref:System.IdentityModel.Selectors.X509CertificateValidator> クラスは、<xref:System.IdentityModel.Selectors.X509CertificateValidator.ChainTrust%2A> パラメーターに渡すことができる `validator` プロパティなど、いくつかの静的なプロパティを持ちます。 これらのプロパティは、X.509 証明書に共通の検証メソッドを提供します。 カスタム検証メソッドが必要な場合は、<xref:System.IdentityModel.Selectors.X509CertificateValidator> からクラスを派生し、<xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドをオーバーライドします。 <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドは、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドによって呼び出されます。  
+  
+ `true` パラメーターに `mapToWindows` を渡すと、X.509 証明書が Windows アカウントに割り当てられ、該当するクレーム (ユーザーが属する Windows グループなど) が <xref:System.IdentityModel.Policy.EvaluationContext> に追加されます。 セキュリティ トークンの種類が <xref:System.IdentityModel.Tokens.X509WindowsSecurityToken> の場合、<xref:System.IdentityModel.Tokens.X509WindowsSecurityToken.WindowsIdentity%2A> プロパティはトークンに指定された ID を使用します。それ以外の場合、X.509 証明書の Windows ID への割り当てには、X.509 証明書のユーザー プリンシパル名 SubjectAltNames 拡張に基づいた Kerberos S4U ログオンを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override bool CanValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.CanValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンをこのセキュリティ トークン認証システムで検証できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="token" /> セキュリティ トークンである場合、または <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> から派生したクラスである場合は <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.CanValidateTokenCore%2A> メソッドはセキュリティ トークンを認証しません。この認証は、<xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドが実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapCertificateToWindowsAccount">
+      <MemberSignature Language="C#" Value="public bool MapCertificateToWindowsAccount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MapCertificateToWindowsAccount" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.MapCertificateToWindowsAccount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書を Windows アカウントに割り当てるかどうかを示す値を取得します。</summary>
+        <value>
+          X.509 証明書を Windows アカウントに割り当てる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.MapCertificateToWindowsAccount%2A> プロパティは、コンストラクター内でのみ設定できます。  
+  
+ トランスポート レベルの SSL または HTTPS セキュリティが使用されていて、基になるセキュリティ チャネルまたはインターネット インフォメーション サービス (IIS) により割り当てが既に行われている場合、この割り当てが適用されますが、チェーンの検証は行われません。 それ以外の場合、割り当てを実行する前に、証明書チェーンを使用して証明書が検証され、この証明書が必ず NT_AUTHORITY ID にチェーンされます。 定義されている、使用するチェーン構造体が、CERT_CHAIN_POLICY_NT_AUTH に対応する、`CertVerifyCertificateChainPolicy`関数 (を参照してください、 [CertVerifyCertificateChainPolicy](http://go.microsoft.com/fwlink/?LinkId=83570) Cryptography SDK 内の関数)。 この動作は、証明書を Windows アカウントに割り当てた場合にのみ発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateTokenCore(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証する <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</param>
+        <summary>指定したセキュリティ トークンを認証し、セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>このアプリケーションで有効な承認ポリシー セットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドがオーバーライドされる場合は、次のガイドラインに従います。  
+  
+-   `token` パラメーターに渡したセキュリティ トークンを検証できない場合、<xref:System.IdentityModel.Tokens.SecurityTokenValidationException> 例外をスローします。  
+  
+-   このアプリケーションに対して有効な承認ポリシーが存在しない場合、<xref:System.Collections.ObjectModel.ReadOnlyCollection%601> 型の空の <xref:System.IdentityModel.Policy.IAuthorizationPolicy> を返します。  
+  
+ このメソッドで `null` を返した場合、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] により <xref:System.IdentityModel.Tokens.SecurityTokenValidationException> 例外がスローされます。  
+  
+ <xref:System.IdentityModel.Selectors.X509SecurityTokenAuthenticator.ValidateTokenCore%2A> メソッドは、コンストラクターに指定された検証メソッドの <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%28System.Security.Cryptography.X509Certificates.X509Certificate2%29> メソッドを呼び出して、`token` パラメーターを認証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

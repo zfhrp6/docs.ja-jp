@@ -1,0 +1,157 @@
+<Type Name="IInstanceContextProvider" FullName="System.ServiceModel.Dispatcher.IInstanceContextProvider">
+  <TypeSignature Language="C#" Value="public interface IInstanceContextProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IInstanceContextProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.IInstanceContextProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.InstanceContext" /> オブジェクトの作成または選択に参加するために実装します。特に、共有セッションを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> インターフェイスを実装して、システムに適切な <xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType> オブジェクトを提供します。 通常、このインターフェイスの実装では、共有セッションのサポート、サービス インスタンス プールの有効化、サービス インスタンスの有効期間の制御、またはクライアント間でのコンテキストのグループ化を実現します。  
+  
+ たとえば、共有を実装するには、カスタム <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> を挿入して、クライアントからのどのセッションまたは呼び出しをどの <xref:System.ServiceModel.InstanceContext> オブジェクトと関連付けるかを決定します。 インスタンス コンテキストの共有の例は、次を参照してください。 [InstanceContextSharing](http://msdn.microsoft.com/en-us/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230)です。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider> を [!INCLUDE[indigo1](~/includes/indigo1-md.md)] に挿入すると、<xref:System.ServiceModel.InstanceContext> オブジェクトの作成を制御する通常のプロパティ (<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A?displayProperty=nameWithType> プロパティ) は検査されなくなり、効果を持たなくなります。  
+  
+ <xref:System.ServiceModel.InstanceContext> オブジェクトを作成時に初期化できるさらに一般的なメカニズムは (たとえば、各 <xref:System.ServiceModel.InstanceContext> にカスタム拡張機能を関連付けるなど)、<xref:System.ServiceModel.Dispatcher.IInstanceContextInitializer?displayProperty=nameWithType> です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetExistingInstanceContext">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.InstanceContext GetExistingInstanceContext (System.ServiceModel.Channels.Message message, System.ServiceModel.IContextChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.InstanceContext GetExistingInstanceContext(class System.ServiceModel.Channels.Message message, class System.ServiceModel.IContextChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(System.ServiceModel.Channels.Message,System.ServiceModel.IContextChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContext</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="channel" Type="System.ServiceModel.IContextChannel" />
+      </Parameters>
+      <Docs>
+        <param name="message">受信メッセージ。</param>
+        <param name="channel">メッセージを受信したチャネル。</param>
+        <summary>新しいメッセージを受信すると呼び出されます。</summary>
+        <returns>メッセージの処理に使用する <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。新しい <see langword="null" /> オブジェクトを作成するよう [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に指示するには、<see cref="T:System.ServiceModel.InstanceContext" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext%2A> メソッドは、メッセージを受信すると呼び出されます。 メッセージの処理に使用する <xref:System.ServiceModel.InstanceContext> オブジェクト、または `null` を返します。 `null` が返されると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] はメッセージ用に新しい <xref:System.ServiceModel.InstanceContext> オブジェクトを作成してから、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.InitializeInstanceContext%2A> メソッドを呼び出します。  
+  
+ `null` を返すと、新しい <xref:System.ServiceModel.InstanceContext> オブジェクトがスロットル システムに渡って、<xref:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances%2A?displayProperty=nameWithType> のカウントをインクリメントします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeInstanceContext">
+      <MemberSignature Language="C#" Value="public void InitializeInstanceContext (System.ServiceModel.InstanceContext instanceContext, System.ServiceModel.Channels.Message message, System.ServiceModel.IContextChannel channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeInstanceContext(class System.ServiceModel.InstanceContext instanceContext, class System.ServiceModel.Channels.Message message, class System.ServiceModel.IContextChannel channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.InitializeInstanceContext(System.ServiceModel.InstanceContext,System.ServiceModel.Channels.Message,System.ServiceModel.IContextChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="channel" Type="System.ServiceModel.IContextChannel" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">新しい <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+        <param name="message">受信メッセージ。</param>
+        <param name="channel">メッセージを受信したチャネル。</param>
+        <summary><see langword="null" /> メソッドから <see cref="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext(System.ServiceModel.Channels.Message,System.ServiceModel.IContextChannel)" /> が返されると呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.InitializeInstanceContext%2A> が <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.GetExistingInstanceContext%2A> を返し、新しい `null` オブジェクトが作成されると、<xref:System.ServiceModel.InstanceContext> が呼び出されます。 このメソッドは、新しい <xref:System.ServiceModel.InstanceContext> が作成されたことを通知するために呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdle">
+      <MemberSignature Language="C#" Value="public bool IsIdle (System.ServiceModel.InstanceContext instanceContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsIdle(class System.ServiceModel.InstanceContext instanceContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle(System.ServiceModel.InstanceContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+      </Parameters>
+      <Docs>
+        <param name="instanceContext">アイドル状態と見なされる <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+        <summary>すべての <see cref="T:System.ServiceModel.InstanceContext" /> アクティビティが完了すると呼び出され、実装者は <see cref="T:System.ServiceModel.InstanceContext" /> がリサイクルされないようにすることができます。</summary>
+        <returns>
+          <see langword="true" /> が [!INCLUDE[indigo1](~/includes/indigo1-md.md)] オブジェクトを閉じてリサイクルし、<see cref="T:System.ServiceModel.InstanceContext" /> の値を調節する場合は <see cref="P:System.ServiceModel.Dispatcher.ServiceThrottle.MaxConcurrentInstances" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] がアイドル状態の <xref:System.ServiceModel.InstanceContext> オブジェクトを閉じてリサイクルしようとすると呼び出され、それにより、その処理を継続するかどうかをランタイムに通知できます。  
+  
+ インスタンス コンテキストの共有の例は、次を参照してください。 [InstanceContextSharing](http://msdn.microsoft.com/en-us/4a6a46d7-b7d7-4bb5-a0dd-03ffa3cbc230)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyIdle">
+      <MemberSignature Language="C#" Value="public void NotifyIdle (System.ServiceModel.Dispatcher.InstanceContextIdleCallback callback, System.ServiceModel.InstanceContext instanceContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void NotifyIdle(class System.ServiceModel.Dispatcher.InstanceContextIdleCallback callback, class System.ServiceModel.InstanceContext instanceContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.NotifyIdle(System.ServiceModel.Dispatcher.InstanceContextIdleCallback,System.ServiceModel.InstanceContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.ServiceModel.Dispatcher.InstanceContextIdleCallback" />
+        <Parameter Name="instanceContext" Type="System.ServiceModel.InstanceContext" />
+      </Parameters>
+      <Docs>
+        <param name="callback"><see cref="T:System.ServiceModel.Dispatcher.InstanceContextIdleCallback" /> オブジェクトを閉じてリサイクルする時期を [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に通知する <see cref="T:System.ServiceModel.InstanceContext" /> オブジェクト。</param>
+        <param name="instanceContext">現在の <see cref="T:System.ServiceModel.InstanceContext" /> です。</param>
+        <summary><see cref="M:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle(System.ServiceModel.InstanceContext)" /> メソッドが <see langword="false" /> を返すと呼び出されます。これにより、実装者は [!INCLUDE[indigo2](~/includes/indigo2-md.md)] オブジェクトの終了を <see cref="T:System.ServiceModel.InstanceContext" /> に通知するコールバックを提供できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.NotifyIdle%2A> メソッドは <xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> メソッドが `false` を返すと呼び出されます。これにより、実装者が、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] が処理を終了したことをランタイムに通知するために使用する <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> オブジェクトを <xref:System.ServiceModel.InstanceContext> に提供できます。 <xref:System.ServiceModel.Dispatcher.InstanceContextIdleCallback?displayProperty=nameWithType> が作業を完了したことを、<xref:System.ServiceModel.InstanceContext> オブジェクトがランタイムに通知すると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は再度、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> を呼び出します。 このサイクルは、<xref:System.ServiceModel.Dispatcher.IInstanceContextProvider.IsIdle%2A> が `true` を返すまで継続されます。コンテキストはサイクルごとに閉じられ、再利用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

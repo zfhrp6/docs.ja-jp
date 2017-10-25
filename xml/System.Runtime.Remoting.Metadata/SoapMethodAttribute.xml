@@ -1,0 +1,249 @@
+<Type Name="SoapMethodAttribute" FullName="System.Runtime.Remoting.Metadata.SoapMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class SoapMethodAttribute : System.Runtime.Remoting.Metadata.SoapAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapMethodAttribute extends System.Runtime.Remoting.Metadata.SoapAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Metadata.SoapMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.Metadata.SoapAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP の生成とメソッドの処理をカスタマイズします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲット オブジェクトを<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>属性は、リモートで呼び出すことのできるメソッドです。 適用、 <xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute> SOAP の生成および処理をカスタマイズします。 この属性のプロパティでは、プログラマは、SOAP HTTP 要求の目的を示すために SOAPAction HTTP ヘッダー フィールドをカスタマイズできるようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内のメンバーを使用する方法を示しています、 <xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute> SOAP の生成とメソッドの処理をカスタマイズするクラス。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#100](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#100)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#100](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#100)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapMethodAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Metadata.SoapMethodAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Remoting.Metadata.SoapMethodAttribute" /> のインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseXmlElementName">
+      <MemberSignature Language="C#" Value="public string ResponseXmlElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseXmlElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ResponseXmlElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメソッドへの応答対象のメソッドを使用する XML 要素名を設定します。</summary>
+        <value>メソッドへの応答対象のメソッドを使用する XML 要素名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、メソッドの名前に"Response"が追加された文字列です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ResponseXmlElementName%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#110)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseXmlNamespace">
+      <MemberSignature Language="C#" Value="public string ResponseXmlNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResponseXmlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ResponseXmlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のメソッドをメソッドの応答に使用される XML 要素のする名前空間を設定します。</summary>
+        <value>する XML 要素名前空間、対象のメソッドをメソッドの応答に使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ResponseXmlNamespace%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#110)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnXmlElementName">
+      <MemberSignature Language="C#" Value="public string ReturnXmlElementName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReturnXmlElementName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ReturnXmlElementName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のメソッドからの戻り値のために使用する XML 要素名を設定します。</summary>
+        <value>対象のメソッドからの戻り値のために使用する XML 要素名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、"__return"の文字列です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.ReturnXmlElementName%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#110)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapAction">
+      <MemberSignature Language="C#" Value="public string SoapAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoapAction" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.SoapAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このメソッドを使用して送信された HTTP 要求で使用される SOAPAction ヘッダー フィールドを設定します。 このプロパティは現在実装されていません。</summary>
+        <value>このメソッドを使用して送信された HTTP 要求で使用する SOAPAction ヘッダー フィールド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは現在実装されていません。  
+  
+ SOAPAction HTTP 要求ヘッダー フィールドでは、SOAP HTTP 要求の目的を示します。 SOAPAction フィールドの詳細については、www.w3.org/tr/soap/#_Toc478383528 を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.SoapAction%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#110)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAttribute">
+      <MemberSignature Language="C#" Value="public override bool UseAttribute { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.UseAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の属性のターゲットを XML フィールドではなく XML 属性としてシリアル化されるかどうかを示す値を設定します。</summary>
+        <value>現在の実装を常に返します<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Metadata.SoapTypeAttribute.UseAttribute%2A>でプロパティを設定することはできません、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">現在のプロパティを設定しようとしています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespace">
+      <MemberSignature Language="C#" Value="public override string XmlNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Metadata.SoapMethodAttribute.XmlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリモート メソッドの呼び出し対象メソッドのシリアル化中に使用される XML 名前空間を設定します。</summary>
+        <value>リモート メソッドの呼び出し対象メソッドのシリアル化中に使用される XML 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute.XmlNamespace%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Metadata.SoapMethodAttribute>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CPP/demo.cpp#110)]
+ [!code-csharp[System.Runtime.Remoting.Metadata.SoapMethodAttribute#110](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Metadata.SoapMethodAttribute/CS/demo.cs#110)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

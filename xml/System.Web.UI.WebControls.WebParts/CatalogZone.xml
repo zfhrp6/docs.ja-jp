@@ -1,0 +1,210 @@
+<Type Name="CatalogZone" FullName="System.Web.UI.WebControls.WebParts.CatalogZone">
+  <TypeSignature Language="C#" Value="public class CatalogZone : System.Web.UI.WebControls.WebParts.CatalogZoneBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CatalogZone extends System.Web.UI.WebControls.WebParts.CatalogZoneBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.CatalogZone" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.CatalogZoneBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.CatalogZoneDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページ上の <see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" /> コントロールをホストするための、Web パーツ コントロール セットの主なコントロールとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロール セット内では、ゾーンは、Web パーツ コントロールを含む Web ページ上の領域です。 Web パーツ ゾーンは、ゾーンのコントロールは、型作成者の<xref:System.Web.UI.WebControls.CompositeControl>を他のコントロールを格納するよう設計されています。 ゾーンの主な機能は、それに含まれるコントロールのレイアウトにこれらのコントロールの一般的なユーザー インターフェイス (UI) を提供します。 ゾーンおよび Web パーツ アプリケーションでその使用方法に関する全般情報、情報を参照してください。<xref:System.Web.UI.WebControls.WebParts.WebZone>クラス、および[Web パーツ コントロール セット概要](http://msdn.microsoft.com/library/ff0149e4-695a-401a-8cda-53df6d7d2668)です。  
+  
+ Web パーツ コントロールの主な機能は、エンドユーザーの Web ページを変更 (または個人用設定)、優先順位に従って、され、今後のブラウザー セッションのパーソナル化の設定を保存するには。 Web パーツ ページを変更した場合の 1 つの側面には、追加する機能が含まれています。<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールまたはその他のサーバー コントロールを Web パーツ ページにします。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールには、リストまたはユーザーがページに追加できるコントロールのカタログが用意されています。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールは、Web パーツ コントロール セットの基本的なコントロールのいずれか。 派生して、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>クラス、およびその動作のほとんどがそのクラスから継承します。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラス基本的には追加、基底クラスに実装は、ゾーンのテンプレートの<xref:System.Web.UI.ITemplate>インターフェイスです。 ゾーン テンプレート宣言を追加する開発者は<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ページ永続形式で、ゾーンを制御します。  
+  
+> [!IMPORTANT]
+>  A<xref:System.Web.UI.WebControls.WebParts.CatalogZone>ゾーンにのみ含めることができます<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール、およびこれに対し、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>から派生するゾーンにのみのコントロールを配置する、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>クラスなど<xref:System.Web.UI.WebControls.WebParts.CatalogZone>です。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールが表示されるカタログ表示モードに、ユーザーが Web ページを切り替える場合にのみ (<xref:System.Web.UI.WebControls.WebParts.WebPartManager.CatalogDisplayMode>)。 カタログは、いくつかの種類を含めることができます<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 各<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールはユーザーが、ページに追加できるサーバー コントロールを含むコンテナーの一種です。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールが含まれるサーバー コントロールはからアクセスする場所によって異なります。 次の表、 <xref:System.Web.UI.WebControls.WebParts.CatalogPart> Web パーツ コントロール セットにし、各コントロールに対して、どのようなサーバー コントロールの種類が含まれています指定を制御します。  
+  
+|コントロール|説明|  
+|-------------|-----------------|  
+|<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>|ページで閉じられているコントロールへの参照を保持します。 ユーザーによっては、これらのコントロールを (ページに再度追加する) 再度開くことができます。|  
+|<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>|Web パーツのカタログの Web ページのマークアップで宣言されているコントロールへの参照が含まれています。 これらのコントロールは、ユーザーが Web ページに追加できます。|  
+|<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>|ユーザーが、定義ファイルをアップロードするための UI を提供 (XML ファイルは、します。Web パーツの拡張機能と、指定した書式を含む状態の情報を)、カタログにコントロールのコントロールは、Web ページに追加できるようにします。|  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスは、その基本クラスの動作にゾーンのテンプレートのみを追加し、いくつかのメンバーが存在します。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone.%23ctor%2A>コンス トラクターは、既定のコンス トラクター以外の場合は、新しいインスタンスを初期化することができます、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスです。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone.ZoneTemplate%2A>プロパティを取得または設定の参照、<xref:System.Web.UI.ITemplate>ゾーンのコントロールを含むオブジェクトです。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>メソッドが重要です。 すべてのコレクションを作成する基本メソッドをオーバーライドし<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ゾーン テンプレートに含まれるコントロール。  
+  
+> [!NOTE]
+>  内のボタン、 <xref:System.Web.UI.WebControls.WebParts.CatalogZone> UI が正常に動作するためにクライアント側のスクリプトを必要とします。 ブラウザーでスクリプトが無効になっている場合、ユーザーことができなくを通じてアクションを実行する、 <xref:System.Web.UI.WebControls.WebParts.CatalogZone> UI。  
+  
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますの宣言とプログラムを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール。 このコード例では、4 つの部分があります。  
+  
+-   ユーザー コントロールを Web ページの表示モードを変更することができます。  
+  
+-   カスタムのソース コードを持つファイル<xref:System.Web.UI.WebControls.WebParts.CatalogZone>制御、およびカスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログがインポートされ、Web ページに追加するコントロール。  
+  
+-   ユーザー コントロールとカスタムを宣言する Web ページ<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール。  
+  
+-   この例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_CatalogZone_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/CS/displaymodemenucs.ascx#7)]
+ [!code-aspx-vb[WebParts_CatalogZone_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/VB/displaymodemenuvb.ascx#7)]  
+  
+ コード例の 2 番目の部分には、カスタム コードが含まれています。<xref:System.Web.UI.WebControls.WebParts.CatalogZone>と<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コードを<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールから継承する方法を示します、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスし、コンス トラクターでプロパティの値をいくつかの既定値に設定してそのプロパティをカスタマイズします。 ソース コードはカスタムを作成する方法も示します<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のクラス`TextDisplayWebPart`です。 これは、コントロールに関連付けられている、します。このコード例の一部としてインポートする web パーツの説明ファイルです。 使用して記述ファイルをインポートした後、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、Web ページのことができますを追加する、`TextDisplayWebPart`構成ページに、完全にあらかじめ指定された description ファイル内のコントロールです。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例は、動的なコンパイルを使用して、したがって例では、この方法で実行する場合は、ソース コード ファイルの名前を指定し、Web アプリケーションのルート ディレクトリの App_Code サブフォルダーを追加します。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_CatalogZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/CS/catalogSamples.cs#1)]
+ [!code-vb[WebParts_CatalogZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/VB/catalogSamples.vb#1)]  
+  
+ コード例の 3 番目の部分は、コントロールを含む Web ページです。 含まれている、`Register`ユーザー コントロールとカスタム コントロールを含むソース ファイル用に別のディレクティブ。 2 番目のディレクティブでこれを指定しない場合、アセンブリに注意してください。 例は、アセンブリを使用しないので、App_Code サブフォルダーに配置されたソース コードで動的なコンパイルを使用します。 Web ページを宣言、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、およびその子内で`<zonetemplate>`を宣言して、要素、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 これは、標準の ASP.NET コントロール、のであるは完全な Web パーツ機能、実行時に、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>任意のサーバー コントロールの配置でラップの制御、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>で、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクト、他のサーバー コントロールは、Web で参加できるようにパーツ アプリケーションです。 ユーザー設定は、このゾーンの宣言も<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`です。 このコントロールでの属性を持つことに注意してください。`ExportMode="All"`に宣言します。 これにより、エクスポートすることはできます。構成済みのコントロールを他の Web ページに追加するのには、他のユーザーがインポート可能なコントロールのプロパティの値を含む web パーツの説明ファイルです。  
+  
+> [!NOTE]
+>  記述ファイルをエクスポートする Web パーツ アプリケーションのユーザーを有効にする<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールを追加して Web アプリケーションのエクスポート機能を有効にすることも必要があります、`enableExport="true"`属性を`<webParts>`要素 (これは、の子`<system.web>`要素)、Web.config ファイルにします。 エクスポートが既定で無効になっている、ので、アプリケーションのエクスポートをまだ有効な場合、Web.config ファイルを編集し、実行するようになりました。  
+  
+ Web ページは、カスタムも宣言されています。<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールと、その中、`<zonetemplate>`要素を含む、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 ユーザーはこのコントロールを使用して実行時にインポートします。カスタム web パーツの説明ファイル<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ [!code-aspx-csharp[WebParts_CatalogZone_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/CS/catalogzonecs.aspx#2)]
+ [!code-aspx-vb[WebParts_CatalogZone_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/VB/catalogzonevb.aspx#2)]  
+  
+ これで、コード例を実行します。 ブラウザーで Web ページを読み込みます。 エクスポートするのには、まず、します。Web パーツの記述ファイルを`TextDisplayWebPart`コントロール。 (タイトル バーに下向きの矢印で表される)、カスタム コントロールの動詞メニューをクリックし、をクリックして**エクスポート**です。 コントロールの説明ファイルを保存する手順に従います。 開く、します。Web パーツの説明は、ファイルを開き、および、タイトルのプロパティのテキストの値を編集します。 検索、`<property>`要素、属性を持つ`name="Title"`、開始タグと終了の間に含まれているタイトルのテキストを編集および`<property>`タグ。 Web ページを閉じてをエディターでページ ソースを編集します。 削除、`<aspSample:TextDisplayWebPart>`宣言要素を制御し、保存してファイルを閉じます。  
+  
+ ブラウザーに再度 Web ページを読み込みます。 `TextDisplayWebPart`削除したため、コントロールは表示されない必要があります。 使用して、**表示モード**ドロップダウン リスト コントロールと選択**カタログ**モードに切り替えるページ カタログ。 注意して、カスタム<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールが表示され、と共に、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール。 をクリックして、**参照** をクリックします。Web パーツの記述ファイルにエクスポートした、`TextDisplayWebPart`コントロール。 クリックして**アップロード**、インポートされたコントロールの横にあるチェック ボックスを選択して、をクリックして**追加**ページに追加します。 をクリックして**カタログを閉じる**にページを通常のブラウズ モードに戻ります。 インポートされたコントロールがページで、表示されるようになりましたし、コントロールのタイトル バーに表示されるタイトルを追加したタイトルのテキストをする必要があります、します。Web パーツの説明ファイルです。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+    <block subset="none" type="overrides">
+      <para>カスタムを作成することができます<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />カタログ UI の動作とレンダリングより詳細に制御する場合のクラスです。 コントロールのユーザーを追加する機能を提供する必要がない場合<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />から直接継承することができますし、宣言によって、制御、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />クラスです。 継承する simples アプローチは、宣言によって追加されるコントロールを有効にする場合、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />クラス、重要なゾーンのテンプレートを提供するためです。  
+  
+ 継承する場合、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />クラスをオーバーライドできます、<see cref="M:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts" />メソッドおよびユーザー設定を追加するメソッドを使用して<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールを<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />でする場合より詳細なプログラムによる制御を追加するカスタム<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ゾーンへのコントロール.</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogZone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogZone.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロールは、ゾーンのテンプレートを実装して、宣言によって使用される通常およびを使用して、クラスの新しいインスタンスを作成することはほとんどありません必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogZone.%23ctor%2A>コンス トラクターです。 ただしから継承する場合、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>カスタム ゾーンを作成するクラス、コンス トラクターを使用してそのプロパティ値の一部を初期化し、その外観をカスタマイズしたい場合があります。  
+  
+   
+  
+## Examples  
+ プログラムによる使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.CatalogZone.%23ctor%2A>カスタム コンス トラクター<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール。 コンス トラクターを使用して、コントロールの既定プロパティ値の一部を初期化します。 次のコードは、カスタム<xref:System.Web.UI.WebControls.WebParts.CatalogZone>上部にある宣言されたコンス トラクターを持つクラス。 完全なコードとを設定し、例を実行するために必要な手順の「使用例を参照してください。、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスの概要です。  
+  
+ [!code-csharp[WebParts_CatalogZone_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/CS/catalogSamples.cs#1)]
+ [!code-vb[WebParts_CatalogZone_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogZone_Overview/VB/catalogSamples.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCatalogParts">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.WebParts.CatalogPartCollection CreateCatalogParts ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.WebParts.CatalogPartCollection CreateCatalogParts() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogPartCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>それぞれのインスタンスを作成<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ゾーンで宣言されている型。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartCollection" />すべてへの参照と、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ゾーン内のコントロールです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>メソッドは、カタログの表示モードに切り替えた場合、ページ、ときにこのメソッドはすべてを作成するために重要なメソッド、 <xref:System.Web.UI.WebControls.WebParts.CatalogPart> Web パーツのカタログを構成するコントロール。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>メソッドで、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスから継承する任意のサーバー コントロールによって作成できますと Web パーツ コントロール セット、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 したがって、カスタムを作成する場合<xref:System.Web.UI.WebControls.WebParts.CatalogPart>を制御し、ページ内に declare、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール、このメソッドはコントロールを作成、ユーザーがカタログ モードにページを切り替えるときにします。  
+  
+ ただし、さまざまな理由ですることもコントロール経由で、<xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>メソッドです。 作成するためにのみ特定することがあります<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 たとえば、カスタムのセットを作成する<xref:System.Web.UI.WebControls.WebParts.CatalogPart>を一貫した外観を持ち、1 つの製品または組織に属するコントロール。 これらのカスタム コントロールを使用して、カタログ内に制限するページの開発者が必要なかどうかから継承する必要があります、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスをオーバーライド、<xref:System.Web.UI.WebControls.WebParts.CatalogZone.CreateCatalogParts%2A>メソッド、カスタム コントロールと同じ型のコントロールのみを作成するメソッドを使用するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールに、ID がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ZoneTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ZoneTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ZoneTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogZone.ZoneTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.WebParts.CatalogZone))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateInstance(System.Web.UI.TemplateInstance.Single)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定内の子コントロールを格納するテンプレート、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />ページ永続形式で制御します。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />ゾーン内の子コントロールのコンテナーとして機能します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogZone.ZoneTemplate%2A>プロパティ型のテンプレートを参照して<xref:System.Web.UI.ITemplate>格納に使用される、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ゾーン内のコントロールです。 ゾーン テンプレートで宣言するページの開発者は、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>にすべてのコントロールをプログラムで作成することのではなく、永続化の形式で使用するコントロール。  
+  
+ Set アクセサーを<xref:System.Web.UI.WebControls.WebParts.CatalogZone.ZoneTemplate%2A>プロパティの呼び出し、 <xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.InvalidateCatalogParts%2A> 、メソッドのコレクションを強制する<xref:System.Web.UI.WebControls.WebParts.CatalogPart>を更新する ページで、ゾーンのテンプレートで宣言されているコントロール。 これにより、ゾーンによって参照されるコントロールのコレクションが現在のユーザーが実際に ページで、テンプレート内で宣言されているコントロールを変更するたびにこと。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムを作成する場合は、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />ゾーン、する計画を立てますを作成する、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />ページ開発者宣言することを許可すると、するはいない必要があるゾーンのテンプレートのサポートとから直接継承することができますではなく、プログラムでコントロール、 <see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />クラス。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

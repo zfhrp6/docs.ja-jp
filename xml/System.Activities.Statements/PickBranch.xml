@@ -1,0 +1,173 @@
+<Type Name="PickBranch" FullName="System.Activities.Statements.PickBranch">
+  <TypeSignature Language="C#" Value="public sealed class PickBranch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PickBranch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Statements.PickBranch" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Action")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Activities.Statements.Pick" /> アクティビティ内の実行パス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Statements.PickBranch> には、<xref:System.Activities.Statements.PickBranch.Trigger%2A> および <xref:System.Activities.Statements.PickBranch.Action%2A> が含まれます。 <xref:System.Activities.Statements.Pick> 要素の実行の開始時に、すべての <xref:System.Activities.Statements.PickBranch> 要素のすべてのトリガー アクティビティがスケジュールされます。 最初の (左端の) アクティビティが完了したら、対応するアクション アクティビティがスケジュールされ、その他のすべてのトリガー アクティビティが取り消されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Activities.Statements.PickBranch> アクティビティを作成するコード サンプルを次に示します。 この例は、 [Pick アクティビティの使用](~/docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)サンプルです。  
+  
+ [!code-csharp[wfs_Pick#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_pick/cs/program.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PickBranch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Statements.PickBranch.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Statements.PickBranch" /> アクティビティの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.PickBranch> アクティビティを作成するコード サンプルを次に示します。 この例は、 [Pick アクティビティの使用](~/docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)サンプルです。  
+  
+ [!code-csharp[wfs_Pick#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_pick/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Action" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.PickBranch.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Trigger")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この分岐が実行のためにトリガーされる場合に実行する <see cref="T:System.Activities.Activity" />。</summary>
+        <value>実行するアクティビティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.PickBranch> アクティビティの Action プロパティを設定するコード サンプルを次に示します。 この例は、 [Pick アクティビティの使用](~/docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)サンプルです。  
+  
+ [!code-csharp[wfs_Pick#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_pick/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.PickBranch.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("PickBranch")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティビティ デザイナーに表示される、この分岐の名前。</summary>
+        <value>分岐名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trigger">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Trigger { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Trigger" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.PickBranch.Trigger" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Variables")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完了により、この選択分岐をアクティブにするアクティビティ。</summary>
+        <value>トリガーしているアクティビティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Activities.Statements.PickBranch> アクティビティの Trigger プロパティを設定するコード サンプルを次に示します。 この例は、 [Pick アクティビティの使用](~/docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)サンプルです。  
+  
+ [!code-csharp[wfs_Pick#1](~/samples/snippets/csharp/VS_Snippets_CFX/wfs_pick/cs/program.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Variables">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt; Variables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Activities.Variable&gt; Variables" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Statements.PickBranch.Variables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Activities.Variable&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクティビティに関連付けられているユーザー定義変数のコレクション。</summary>
+        <value>変数のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

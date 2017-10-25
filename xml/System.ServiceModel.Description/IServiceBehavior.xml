@@ -1,0 +1,191 @@
+<Type Name="IServiceBehavior" FullName="System.ServiceModel.Description.IServiceBehavior">
+  <TypeSignature Language="C#" Value="public interface IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IServiceBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.ServiceHostBase" /> などの、サービス全体にわたるカスタム拡張機能を変更または挿入するための機構を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス全体にわたる実行の一部の側面を、アプリケーション レベルで変更、確認、または拡張するには、<xref:System.ServiceModel.Description.IServiceBehavior> を実装します。  
+  
+-   <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> メソッドを使用して、ランタイム プロパティの値を変更し、エラー ハンドラー、メッセージ インターセプター、パラメーター インターセプター、セキュリティ拡張などのカスタム拡張オブジェクトを挿入できるようにします。  
+  
+-   <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> メソッドを使用して、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が実行対象のサービスを構築する前に説明を検査し、サービスを正常に実行できることを確認します。  
+  
+-   <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> メソッドを使用して、バインディング要素にサービスのカスタム情報を渡し、バインディング要素がサービスを正しくサポートできるようにします。  
+  
+ <xref:System.ServiceModel.Description.IServiceBehavior> オブジェクトは、これらのメソッドをどれでも使用できますが、通常は、重要なメソッドは 1 つだけです。この場合、使用されないメソッドは、値なしで戻ることができます。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IServiceBehavior> メソッドは <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> オブジェクトおよび <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> オブジェクトをパラメーターとして渡します。 <xref:System.ServiceModel.Description.ServiceDescription> パラメーターは、検査にのみ使用されます。これらのオブジェクトを変更した場合、実行の動作は未定義になります。  
+  
+ 想定されているカスタマイズ タスクを実行するには、サービス ランタイムの構築の前に、<xref:System.ServiceModel.Description.IServiceBehavior> オブジェクトを <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> プロパティに追加しておく必要があります。 これには、次の 3 つの方法があります。  
+  
+-   <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> メソッドが <xref:System.ServiceModel.ICommunicationObject.Open%2A?displayProperty=nameWithType> オブジェクトで呼び出される前に、プログラムを使用して、<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType> プロパティにサービスのカスタム動作を追加します。  
+  
+-   <xref:System.ServiceModel.Description.IServiceBehavior> を実装するカスタム属性を作成し、それを使用して、変更するサービス クラスをマークします。 <xref:System.ServiceModel.ServiceHost> オブジェクトを構築すると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、リフレクションを使用してそのサービス型の属性を検出します。 これらの属性のいずれかが <xref:System.ServiceModel.Description.IServiceBehavior> を実装している場合、<xref:System.ServiceModel.Description.ServiceDescription> の動作コレクションに追加されます。  
+  
+-   <xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> クラスを拡張して、アプリケーションまたはコンピューターの構成ファイルで動作を指定できるようにします。 詳細については、「使用例」を参照してください。  
+  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] のサービスの動作の例として、<xref:System.ServiceModel.ServiceBehaviorAttribute> 属性、<xref:System.ServiceModel.Description.ServiceThrottlingBehavior?displayProperty=nameWithType>、<xref:System.ServiceModel.Description.ServiceDebugBehavior?displayProperty=nameWithType>、<xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> 動作などがあります。  
+  
+   
+  
+## Examples  
+ 構成ファイルで指定されたサービスの動作を使用してカスタム エラー ハンドラーをサービス アプリケーションに挿入する方法を次のコード例に示します。 この例では、エラー ハンドラーがすべての例外をキャッチし、それらを `GreetingFault` SOAP カスタム エラーに変換してからクライアントに返します。  
+  
+ 次の <xref:System.ServiceModel.Description.IServiceBehavior> 実装は、バインディング パラメーター オブジェクトは追加せず、カスタムの <xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType> オブジェクトを各 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A?displayProperty=nameWithType> プロパティに追加します。さらに、サービスの動作が適用され、<xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> 型の `GreetingFault` を持つサービスの各操作を検証します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ この例では、動作クラスは、<xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> も実装します。これで、次のコード例で示すように、サービス動作をアプリケーション構成ファイルで使用するよう挿入できます。  
+  
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddBindingParameters">
+      <MemberSignature Language="C#" Value="public void AddBindingParameters (System.ServiceModel.Description.ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection bindingParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddBindingParameters(class System.ServiceModel.Description.ServiceDescription serviceDescription, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection bindingParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="bindingParameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription">サービスの説明。</param>
+        <param name="serviceHostBase">サービスのホスト。</param>
+        <param name="endpoints">サービス エンドポイント。</param>
+        <param name="bindingParameters">バインド要素がアクセスできるカスタム オブジェクト。</param>
+        <summary>コントラクトの実装をサポートするカスタム データをバインド要素に渡せるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IServiceBehavior.AddBindingParameters%2A> メソッドを使用して、`parameters` コレクションにカスタム データ オブジェクトを追加します。バインディング要素は、このオブジェクトを使用して、コントラクトをサポートするための追加情報を取得します。  
+  
+ このメソッドは、リッスン URI ごとに 1 回呼び出されます。 たとえば、サービスに 4 つのエンドポイントがあり、そのうちの 2 つのリッスン URI が同じである場合は、このメソッドが 3 回呼び出されます。 これは、`bindingParameters` が各チャネル スタックをターゲットとし、リッスン URI ごとに 1 つのチャネル スタックが存在するからです。 呼び出しごとにそのリッスン URI のエンドポイントが取得されるため、2 回の呼び出しでそれぞれ 1 つの <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> が取得され、1 回の呼び出しで 2 つの <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> オブジェクトのコレクションが取得されます。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IServiceBehavior> メソッドは <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> オブジェクトおよび <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> オブジェクトをパラメーターとして渡します。 <xref:System.ServiceModel.Description.ServiceDescription> パラメーターは、カスタマイズの検査および挿入にのみ使用されます。それ以外でこれらのオブジェクトを変更した場合、実行動作は未定義になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="public void ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription serviceDescription, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription">サービスの説明。</param>
+        <param name="serviceHostBase">現在構築中のホスト。</param>
+        <summary>ランタイム プロパティの値を変更したり、エラー ハンドラー、メッセージ インターセプター、パラメーター インターセプター、セキュリティ拡張などのカスタム拡張オブジェクトを挿入したりできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部のカスタム実行シナリオをサポートするために構築される <xref:System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior%2A> オブジェクトを検査または変更するには、<xref:System.ServiceModel.ServiceHostBase> メソッドを実装します。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IServiceBehavior> メソッドは <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> オブジェクトおよび <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> オブジェクトをパラメーターとして渡します。 <xref:System.ServiceModel.Description.ServiceDescription> パラメーターは、カスタマイズの検査および挿入にのみ使用されます。それ以外でこれらのオブジェクトを変更した場合、実行動作は未定義になります。  
+  
+   
+  
+## Examples  
+ 構成ファイルで指定されたサービスの動作を使用してカスタム エラー ハンドラーをサービス アプリケーションに挿入する方法を次のコード例に示します。 この例では、エラー ハンドラーがすべての例外をキャッチし、それらを `GreetingFault` SOAP カスタム エラーに変換してからクライアントに返します。  
+  
+ 次の <xref:System.ServiceModel.Description.IServiceBehavior> 実装は、バインディング パラメーター オブジェクトは追加せず、カスタムの <xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType> オブジェクトを各 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A?displayProperty=nameWithType> プロパティに追加します。さらに、サービスの動作が適用され、<xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> 型の `GreetingFault` を持つサービスの各操作を検証します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ この例では、動作クラスは、<xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> も実装します。これで、次のコード例で示すように、サービス動作をアプリケーション構成ファイルで使用するよう挿入できます。  
+  
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public void Validate (System.ServiceModel.Description.ServiceDescription serviceDescription, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Validate(class System.ServiceModel.Description.ServiceDescription serviceDescription, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IServiceBehavior.Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription">サービスの説明。</param>
+        <param name="serviceHostBase">現在構築中のサービス ホスト。</param>
+        <summary>サービス ホストおよびサービスの説明を検査して、サービスを正常に実行できることを確認できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.IServiceBehavior.Validate%2A> メソッドを使用して、現在のサービスをシナリオに従って正しく実行できるかどうかを確認します。  
+  
+> [!NOTE]
+>  すべての <xref:System.ServiceModel.Description.IServiceBehavior> メソッドは <xref:System.ServiceModel.Description.ServiceDescription?displayProperty=nameWithType> オブジェクトおよび <xref:System.ServiceModel.ServiceHostBase?displayProperty=nameWithType> オブジェクトをパラメーターとして渡します。 <xref:System.ServiceModel.Description.ServiceDescription> パラメーターは、カスタマイズの検査および挿入にのみ使用されます。それ以外でこれらのオブジェクトを変更した場合、実行動作は未定義になります。  
+  
+   
+  
+## Examples  
+ 構成ファイルで指定されたサービスの動作を使用してカスタム エラー ハンドラーをサービス アプリケーションに挿入する方法を次のコード例に示します。 この例では、エラー ハンドラーがすべての例外をキャッチし、それらを `GreetingFault` SOAP カスタム エラーに変換してからクライアントに返します。  
+  
+ 次の <xref:System.ServiceModel.Description.IServiceBehavior> 実装は、バインディング パラメーター オブジェクトは追加せず、カスタムの <xref:System.ServiceModel.Dispatcher.IErrorHandler?displayProperty=nameWithType> オブジェクトを各 <xref:System.ServiceModel.Dispatcher.ChannelDispatcher.ErrorHandlers%2A?displayProperty=nameWithType> プロパティに追加します。さらに、サービスの動作が適用され、<xref:System.ServiceModel.FaultContractAttribute?displayProperty=nameWithType> 型の `GreetingFault` を持つサービスの各操作を検証します。  
+  
+ [!code-csharp[IErrorHandler#7](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#7)]
+ [!code-vb[IErrorHandler#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#7)]  
+  
+ この例では、動作クラスは、<xref:System.ServiceModel.Configuration.BehaviorExtensionElement?displayProperty=nameWithType> も実装します。これで、次のコード例で示すように、サービス動作をアプリケーション構成ファイルで使用するよう挿入できます。  
+  
+ [!code-xml[IErrorHandler#4](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/hostapplication.exe.config#4)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

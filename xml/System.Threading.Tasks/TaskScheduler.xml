@@ -1,0 +1,690 @@
+<Type Name="TaskScheduler" FullName="System.Threading.Tasks.TaskScheduler">
+  <TypeSignature Language="C#" Value="public abstract class TaskScheduler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TaskScheduler extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskScheduler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Id={Id}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Threading.Tasks.TaskScheduler/SystemThreadingTasks_TaskSchedulerDebugView))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スレッドのキューにタスクを置くという下位の作業を処理するオブジェクトを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンス、<xref:System.Threading.Tasks.TaskScheduler>クラスは、タスク スケジューラを表します。 タスク スケジューラは、タスクの作業が最終的に実行されるようにします。  
+  
+ 既定のタスク スケジューラは、負荷分散、スループット最大化のためのスレッドのインジェクション/リタイヤ、および全体のパフォーマンスの向上のためのワーク スティーリングを提供する .NET Framework 4 スレッド プールに基づいています。 ほとんどのシナリオでは、既定のタスク スケジューラで十分です。  
+  
+ <xref:System.Threading.Tasks.TaskScheduler>クラスは、すべてのカスタマイズ可能なスケジュール ロジックの拡張ポイントとしても機能します。  タスクの実行、およびスケジュールされたタスクをスケジュールする方法をデバッガーに公開するなど、メカニズムが含まれます。 特別な機能を必要とする場合は、カスタム スケジューラを作成して、特定のタスクまたはクエリに対して有効にします。  
+  
+ このトピックの内容  
+[既定のタスク スケジューラと、スレッド プール](#Default)  
+ [ローカル キューとの比較にグローバル キュー](#Queues)  
+ [ワーク スティー リング](#Stealing)  
+ [実行時間の長いタスク](#LongRunning)  
+ [タスクのインライン展開](#Inlining)  
+[同期コンテキストの指定](#Sync)  
+  
+<a name="Default"></a>   
+## <a name="the-default-task-scheduler-and-the-thread-pool"></a>既定のタスク スケジューラと、スレッド プール  
+ タスク並列ライブラリおよび PLINQ の既定のスケジューラで表される、.NET Framework スレッド プールを使用して、<xref:System.Threading.ThreadPool>クラス、キューに置き、作業を実行します。 スレッド プールによって提供される情報を使用して、<xref:System.Threading.Tasks.Task>粒度の細かい並列化 (有効期間が短い作業単位) 並列タスクや並列クエリよく表すを効率的にサポートする型。  
+  
+<a name="Queues"></a>   
+### <a name="the-global-queue-vs-local-queues"></a>ローカル キューとの比較にグローバル キュー  
+ スレッド プールでは、グローバル FIFO (先入れ、先出し) 作業の各アプリケーション ドメインのスレッドのキューを保持します。 プログラムを呼び出すたびに、 <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> (または<xref:System.Threading.ThreadPool.UnsafeQueueUserWorkItem%2A?displayProperty=nameWithType>)、メソッドは、この共有キューに配置、および作業最終的にキューから取り出され、次に利用可能になるスレッドにします。 .NET Framework 4 以降ではこのキューが改善されましたに似たロック制御不要のアルゴリズムを使用して、<xref:System.Collections.Concurrent.ConcurrentQueue%601>クラスです。 このロック制御不要の実装を使用するは、スレッド プールは、キューに入れ、作業項目は、キューの場合に、短時間を費やしています。 このパフォーマンスの利点は、スレッド プールを使用するすべてのプログラムで使用可能です。  
+  
+ トップレベル タスクは、別のタスクのコンテキストで作成されないタスクのことで、他の作業項目と同様にグローバル キューに配置されます。 ただし、別のタスクのコンテキストで作成される入れ子のタスクまたは子タスクは、まったく異なる方法で処理されます。 子タスクまたは入れ子のタスクは、親タスクが実行されているスレッドに固有のローカル キューに配置されます。 親タスクはトップレベルのタスクである場合もあれば、別のタスクの子である場合もあります。 このスレッドは、追加の作業を処理する準備が整ったら、最初にローカル キューを検索します。 作業項目がローカル キューで待機している場合は、それらにすばやくアクセスできます。 ローカル キューは、後入れ先出しの順序でキャッシュの局所性を保持し、競合を減らすには、(LIFO) アクセスします。 子タスクと入れ子になったタスクの詳細については、次を参照してください。[アタッチとデタッチされた子タスク](~/docs/standard/parallel-programming/attached-and-detached-child-tasks.md)です。  
+  
+ ローカル キューを使用するにグローバル キューに負荷が減るだけでなく、データの局所性も活用します。 頻繁にキュー、ローカルの作業項目の物理的に近くにあるメモリ参照データ構造です。 このような場合は、データは既にキャッシュ後、最初のタスクは実行し、すばやくアクセスできます。 両方[Parallel LINQ (PLINQ)](~/docs/standard/parallel-programming/parallel-linq-plinq.md)と<xref:System.Threading.Tasks.Parallel>を使用して入れ子になったタスクと子タスクを広範囲に、クラスし、ローカル作業キューを使用する重要なことを実現します。  
+  
+<a name="Stealing"></a>   
+### <a name="work-stealing"></a>ワーク スティー リング  
+ .NET Framework 4 以降では、スレッド プール機能も確認するスレッドがとどまっているないアイドル作業が担当するキューの中に、ワーク スティー リング アルゴリズムです。 スレッド プールのスレッドは、追加の作業を処理する準備が整ったら、最初にローカル キューの先頭を探します。次にグローバル キューを探し、最後に他のスレッドのローカル キューを探します。 別のスレッドのローカル キューで作業項目が見つかった場合、作業を効率的に実行できるように、最初にヒューリスティックを適用します。 できる場合は、キューで FIFO の順序) の末尾から、作業項目。 これにより、各ローカル キューでの競合が減り、データの局所性が保持されます。 このアーキテクチャは、スレッド プール負荷を分散旧バージョンより効率的に作業に役立ちます。  
+  
+<a name="LongRunning"></a>   
+### <a name="long-running-tasks"></a>実行時間の長いタスク  
+ タスクがローカル キューに配置されるのを明示的に防止したい場合があります。 たとえば、特定の作業項目がかなり長い時間実行され、ローカル キューの他の作業項目をすべてブロックする可能性があることがわかっている場合などです。 このような場合は、<xref:System.Threading.Tasks.TaskCreationOptions?displayProperty=nameWithType> オプションを指定できます。このオプションは、タスクの処理に追加のスレッドが必要になる可能性があるというヒントをスケジューラに提供し、他のスレッドまたはローカル キューの作業項目の進行をスケジューラがブロックするのを防ぎます。 このオプションを使用するスレッド プール、完全が含まれないようにグローバルとローカル キュー。  
+  
+<a name="Inlining"></a>   
+### <a name="task-inlining"></a>タスクのインライン展開  
+ 一部の場合に、<xref:System.Threading.Tasks.Task>待機が実行されることが同期的に、待機操作を実行しているスレッドでします。 これによって、追加のスレッドが不要にし、それ以外の場合がブロックされている既存のスレッドを使用して、代わりに、パフォーマンスが向上します。 これは再入によるエラーを防ぐためには、タスクのインライン展開のみが発生した関連するスレッドのローカル キューで待機対象が見つかったときにします。  
+  
+<a name="Sync"></a>   
+## <a name="specifying-a-synchronization-context"></a>同期コンテキストの指定  
+ <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> メソッドを使用すると、タスクが特定のスレッドで実行されるようにスケジュールできます。 これは、Windows フォームや Windows Presentation Foundation などのフレームワークで役立ちます。これらのフレームワークでは、多くの場合、ユーザー インターフェイス オブジェクトへのアクセスが、その UI オブジェクトが作成されたスレッドで実行されているコードに制限されるからです。  
+  
+ 次の例では、 <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> Windows Presentation Foundation (WPF) アプリケーションでは、ユーザー インターフェイス (UI) コントロールが作成された同じスレッドでタスクをスケジュールする方法です。   例では、指定したディレクトリからランダムに選択されているイメージを作成します。 WPF オブジェクトは、読み込みし、画像をサイズ変更に使用されます。 生のピクセルを使用するタスクに渡されて、<xref:System.Threading.Tasks.Parallel.For%2A>ラージ 1 バイト配列にピクセル データを書き込むループします。 同期は必要ありませんので、2 つのタイルが同じ配列の要素を占有します。 その他のいずれかのタイルとは別にそれらの位置が計算されるため、タイルを任意の順序で記述もできます。 大きな配列がイメージ コントロールにピクセル データが読み込まれる場所が UI スレッドで実行されるタスクに渡されます。  
+  
+ 例では、UI スレッドからのデータを移動するには、並列ループを使用して、変更および<xref:System.Threading.Tasks.Task>オブジェクト、し、それを UI スレッドで実行されるタスクに渡します。 この方法は、タスク並列ライブラリを使用して、WPF API でサポートされていないか十分な速さを操作する必要がある場合に便利です。 WPF ではイメージ表さを作成する別の方法を使用して、<xref:System.Windows.Controls.WrapPanel?displayProperty=nameWithType>を制御し、イメージを追加します。 <xref:System.Windows.Controls.WrapPanel>タイルの配置の作業を処理します。 ただし、この作業は、UI スレッドでのみ実行できます。  
+  
+ [!code-csharp[TPL_SyncContext#01](~/samples/snippets/csharp/VS_Snippets_Misc/tpl_synccontext/cs/mainwindow.xaml.cs#01)]
+ [!code-vb[TPL_SyncContext#01](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpl_synccontext/vb/MainWindow.xaml.vb#01)]  
+  
+ 例を作成するには、Visual Studio での WPF アプリケーション プロジェクトを作成し、任意の名前を割り当てます。 次の操作を行います。  
+  
+1.  デザイン ビューで、ドラッグ、<xref:System.Windows.Controls.Image>から制御、**ツールボックス**デザイン画面にします。 XAML ビューで、"Left"と水平方向の配置を指定します サイズは、実行時にコントロールが動的にサイズ変更は、するためには関係ありません。 「イメージ」の既定の名前をそのまま使用します。  
+  
+2.  ドラッグ、<xref:System.Windows.Controls.Button>から制御、**ツールボックス**アプリケーション ウィンドウの左下の部分にします。 追加ボタンをダブルクリックして、<xref:System.Windows.Controls.Primitives.ButtonBase.Click>イベント ハンドラー。 XAML ビューで、指定、 <xref:System.Windows.Controls.ContentControl.Content%2A> 「表さようにする」と"Left"としての水平方向の配置を指定して、ボタンのプロパティです。 "Button"既定の名前をそのまま使用します。  
+  
+3.  この例のコードを MainWindow.xaml.cs または MainWindow.xaml.vb ファイルの内容全体を置き換えます。 ワークスペースの名前がプロジェクト名と一致していることを確認してください。  
+  
+4.  この例では、C:\Users\Public\Pictures\Sample Pictures をという名前のディレクトリから JPEG イメージを読み取り\\です。 ディレクトリを作成および、いくつかのイメージを配置またはイメージを含むその他のディレクトリを参照するパスを変更します。  
+  
+ この例では、いくつかの制限があります。 たとえば、のみ 32 ビットごとのピクセルのイメージがサポートされています。によって他の形式でのイメージが破損している、<xref:System.Windows.Media.Imaging.BitmapImage>サイズ変更操作中にオブジェクト。 また、ソース イメージする必要がありますすべてタイルのサイズよりも大きいです。 これ以上の手順としては、複数のピクセル形式やファイルのサイズを処理する機能を追加できます。  
+  
+   
+  
+## Examples  
+ 次の例から取得、 [、.NET Framework 4 による並列プログラミングのサンプル](http://go.microsoft.com/fwlink/?LinkID=165717)MSDN コード ギャラリー Web サイトです。  アプリで使用されるスレッドの数を制限するカスタムのタスク スケジューラを作成します。 2 つのタスクのセットを起動し、タスクおよびタスクが実行されているスレッドに関する情報を表示します。  
+  
+ [!code-csharp[TPL_Schedulers#02](~/samples/snippets/csharp/VS_Snippets_Misc/tpl_schedulers/cs/limitex1.cs#02)]
+ [!code-vb[TPL_Schedulers#02](~/samples/snippets/visualbasic/VS_Snippets_Misc/tpl_schedulers/vb/module2.vb#02)]  
+  
+ さらに、いくつかのサンプル タスク スケジューラが使用可能なコード ギャラリー: [、.NET Framework 4 による並列プログラミングのサンプル](http://go.microsoft.com/fwlink/?LinkID=165717)です。  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべての抽象メンバー<see cref="T:System.Threading.Tasks.TaskScheduler" />型はスレッド セーフであると同時に複数のスレッドから使用できます。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TaskScheduler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Tasks.TaskScheduler" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.TaskScheduler Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Threading.Tasks.TaskScheduler Current" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskScheduler.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.Tasks.TaskScheduler" />現在実行中のタスクに関連付けられています。</summary>
+        <value>返します、<see cref="T:System.Threading.Tasks.TaskScheduler" />現在実行中のタスクに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスク内で呼び出されていない場合<xref:System.Threading.Tasks.TaskScheduler.Current%2A>が返されます、<xref:System.Threading.Tasks.TaskScheduler.Default%2A>スケジューラです。  
+  
+ 詳細については、「<xref:System.Threading.Tasks.TaskScheduler>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.TaskScheduler Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Threading.Tasks.TaskScheduler Default" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskScheduler.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得<see cref="T:System.Threading.Tasks.TaskScheduler" />.NET Framework で提供されているインスタンス。</summary>
+        <value>既定値を返します<see cref="T:System.Threading.Tasks.TaskScheduler" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromCurrentSynchronizationContext">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.TaskScheduler FromCurrentSynchronizationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.TaskScheduler FromCurrentSynchronizationContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.TaskScheduler</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Threading.SynchronizationContext" /> に関連付けられている <see cref="T:System.Threading.Tasks.TaskScheduler" /> を作成します。</summary>
+        <returns><see cref="P:System.Threading.SynchronizationContext.Current" />による判断として、現在の <see cref="T:System.Threading.SynchronizationContext" /> に関連付けられている <see cref="T:System.Threading.Tasks.TaskScheduler" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべて<xref:System.Threading.Tasks.Task>に返されたインスタンスのキューに置かれたスケジューラを呼び出すことによって実行される、<xref:System.Threading.SynchronizationContext.Post%2A>メソッドのコンテキストでします。  
+  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在の SynchronizationContext を TaskScheduler として使用することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScheduledTasks">
+      <MemberSignature Language="C#" Value="protected abstract System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt; GetScheduledTasks ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Threading.Tasks.Task&gt; GetScheduledTasks() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.GetScheduledTasks" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Threading.Tasks.Task&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デバッガーのサポートが作成されるだけの列挙可能な<see cref="T:System.Threading.Tasks.Task" />インスタンスが実行を待機しているスケジューラを現在キューに登録します。</summary>
+        <returns>現在のタスクを走査するデバッガーを使用する列挙可能なキューに格納されたスケジューラ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Threading.Tasks.TaskScheduler>デバッガーとの統合をサポートするためにこのメソッドを実装します。 デバッガーは、データへのアクセスを要求したときに、.NET Framework はこのメソッドを呼び出すだけです。 列挙子の返されたタスクにアクセスするためのユーティリティをデバッグしてがスキャンされますこのスケジューラはこの情報は、ユーザー インターフェイスでの表現を提供するデバッガーを有効にすると、現在キューに登録します。  
+  
+ ことが重要でこのメソッドが呼び出されると、プロセスの他のすべてのスレッドが凍結されることに注意してください。 そのため、ブロックにつながる可能性のあるその他のスレッドとの同期を避けるために重要なです。 同期が必要です。 このメソッドでロックを取得できない場合は、デバッガーがハングアップしないように例外をスローする必要があります。 次の例では、c# の方法の 1 つを示しています。  
+  
+```  
+protected override IEnumerable<Task> GetScheduledTasks()  
+{  
+    bool lockTaken = false;  
+    try  
+    {  
+        Monitor.TryEnter(_syncObj, ref lockTaken);  
+        if (lockTaken)  
+        {  
+            return _tasks.ToArray();  
+        }  
+        else throw new NotSupportedException();  
+    }  
+    finally  
+    {  
+    if (lockTaken) Monitor.Exit(_syncObj);  
+    }}  
+```  
+  
+ さらに、このメソッドは、返される列挙可能なは、グローバルな表示状態を変更する必要があります。  
+  
+ 返される列挙可能な null ではありません。 現在、キューに置かれたタスクはありません、列挙可能な空が代わりに返されます。  
+  
+ カスタムのデバッガーを実装している開発者は、このメソッドを直接呼び出すべきではありませんが、内部ラッパー メソッドを使用して`GetScheduledTasksForDebugger`代わりに:`internal Task[] GetScheduledTasksForDebugger()`です。 このラッパー メソッドは、列挙可能なのではなくタスクの配列を返します。 アクティブなスケジューラのリストを取得するには、内部のメソッドを使用`internal static TaskScheduler[] GetTaskSchedulersForDebugger()`です。 この静的メソッドは、アクティブなすべての配列を返します<xref:System.Threading.Tasks.TaskScheduler>インスタンス。 使用してできます`GetScheduledTasksForDebugger`スケジュールされたタスクの一覧を取得するには、各スケジューラ インスタンスにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このスケジューラはこの時点でキューに置かれたタスクの一覧を生成できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public int Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Id" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskScheduler.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この一意の ID を取得<see cref="T:System.Threading.Tasks.TaskScheduler" />です。</summary>
+        <value>この一意の ID を返します<see cref="T:System.Threading.Tasks.TaskScheduler" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumConcurrencyLevel">
+      <MemberSignature Language="C#" Value="public virtual int MaximumConcurrencyLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumConcurrencyLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Tasks.TaskScheduler.MaximumConcurrencyLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで、最大の同時実行レベルを示す<see cref="T:System.Threading.Tasks.TaskScheduler" />をサポートすることができます。</summary>
+        <value>最大同時実行レベルを表す整数を返します。 既定のスケジューラを返します<see cref="F:System.Int32.MaxValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueueTask">
+      <MemberSignature Language="C#" Value="protected abstract void QueueTask (System.Threading.Tasks.Task task);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void QueueTask(class System.Threading.Tasks.Task task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.QueueTask(System.Threading.Tasks.Task)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task" />
+      </Parameters>
+      <Docs>
+        <param name="task"><see cref="T:System.Threading.Tasks.Task" />キューに置かれました。</param>
+        <summary>キュー、<see cref="T:System.Threading.Tasks.Task" />スケジューラにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Threading.Tasks.TaskScheduler>スケジューラでスケジュールされているタスクをそのまま使用するには、このメソッドを実装します。  
+  
+ 一般的な実装では、いずれかの時点が後でそれらのタスクが実行されたスレッドにより処理されると、内部データ構造で、タスクに保存します。  
+  
+ このメソッドは、.NET Framework によって呼び出されるだけを目的とし、派生クラスによって直接呼び出すことはできません。 これは、システムの一貫性を維持する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="task" /> 引数が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryDequeue">
+      <MemberSignature Language="C#" Value="protected virtual bool TryDequeue (System.Threading.Tasks.Task task);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool TryDequeue(class System.Threading.Tasks.Task task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.TryDequeue(System.Threading.Tasks.Task)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task" />
+      </Parameters>
+      <Docs>
+        <param name="task"><see cref="T:System.Threading.Tasks.Task" />デキューのためにします。</param>
+        <summary>キューから削除しようとしています、<see cref="T:System.Threading.Tasks.Task" />が以前にこのスケジューラにキューにします。</summary>
+        <returns>ブール値を示すかどうか、<paramref name="task" />引数が正常にキューから取得します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ このメソッド内で実行が、finally ブロックです。したがって、返す必要があります可能な限り早くそのためなどのリソース<xref:System.Threading.CancellationTokenRegistration>オブジェクトは、適切なタイミングで破棄することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="task" /> 引数が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExecuteTask">
+      <MemberSignature Language="C#" Value="protected bool TryExecuteTask (System.Threading.Tasks.Task task);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool TryExecuteTask(class System.Threading.Tasks.Task task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.TryExecuteTask(System.Threading.Tasks.Task)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task" />
+      </Parameters>
+      <Docs>
+        <param name="task">A<see cref="T:System.Threading.Tasks.Task" />を実行するオブジェクト。</param>
+        <summary>指定された実行を試みる<see cref="T:System.Threading.Tasks.Task" />このスケジューラでします。</summary>
+        <returns>ブール値 true の場合は<paramref name="task" />が正常に実行されなかった場合は false。 実行エラーが発生する一般的な理由は、タスクが既に実行されていたか、または別のスレッドにより実行されている処理を行っています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スケジューラの実装が付属して<xref:System.Threading.Tasks.Task>いずれかで実行されるインスタンス、<xref:System.Threading.Tasks.TaskScheduler.QueueTask%2A>メソッドまたは<xref:System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline%2A>メソッドです。 スケジューラと見なさを指定されたタスクを実行する適切なときに<xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask%2A>これを行うために使用する必要があります。 アクションの呼び出し、例外処理、状態管理、およびライフ サイクル管理を含め、タスクの実行のすべての側面を tryexecutetask です。  
+  
+ <xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask%2A>.NET Framework インフラストラクチャによってこのスケジューラに提供されたタスクのみ使用する必要があります。 カスタムのメカニズムを通じて取得した任意のタスクの実行には使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="task" />はこのスケジューラに関連付けられていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryExecuteTaskInline">
+      <MemberSignature Language="C#" Value="protected abstract bool TryExecuteTaskInline (System.Threading.Tasks.Task task, bool taskWasPreviouslyQueued);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TryExecuteTaskInline(class System.Threading.Tasks.Task task, bool taskWasPreviouslyQueued) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task" />
+        <Parameter Name="taskWasPreviouslyQueued" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="task"><see cref="T:System.Threading.Tasks.Task" />を実行します。</param>
+        <param name="taskWasPreviouslyQueued">タスクがキューにいたかどうかを示すブール値。 このパラメーターが True の場合、タスク可能性がありますが以前キューに登録されました (スケジュール) です。False の場合、タスクと認識されているキューに登録されました、およびキューを使用せず、タスクをインラインを実行するためにこの呼び出しが行われています、します。</param>
+        <summary>決定かどうか、提供された<see cref="T:System.Threading.Tasks.Task" />この呼び出しで同期的に実行することができます、できる場合は、実行します。</summary>
+        <returns>タスクがインラインで実行されるかどうかを示すブール値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス<xref:System.Threading.Tasks.TaskScheduler>タスク オブジェクトでの待機を開始したスレッドで、タスクのインラインの実行をサポートするには、この関数を実装します。 インライン実行がオプションであり、false を返すことによって、要求が拒否される可能性があります。 ただしより多くのタスクをことがインライン化できません、ほど、スケジューラは拡大縮小されます。 実際には、スケジューラ インライン展開少なすぎる可能性があるデッドロック発生しやすくします。 適切な実装は、スケジューラによって保証されたポリシーで要求の実行が正常がインライン展開できるようにします。 たとえば、スケジューラは、タスクを実行する専用のスレッドを使用する場合のインライン展開要求したスレッドからは成功します。  
+  
+ スケジューラは、インラインの実行を実行する場合は、その要求を実行、基本の TaskScheduler を呼び出すことによって<xref:System.Threading.Tasks.TaskScheduler.TryExecuteTask%2A>メソッドの戻り値を反映する、指定されたタスク オブジェクト。 インライン展開要求を許可することに決めた場合、その内部データ構造体からインライン展開のタスクを削除するスケジューラに適切な場合もあります。 ただし、こと状況によっては、スケジューラ必要がありますをインライン展開するタスクを使っていない提供されていたを<xref:System.Threading.Tasks.TaskScheduler.QueueTask%2A>メソッドです。  
+  
+ 派生されるスケジューラは、その呼び出し元のスレッドがそれ自身のスケジューリング枝葉と同じ特定のタスクを実行するために適切な実行ポリシーが関係していることを確認します。  
+  
+ 詳細については、次を参照してください。[タスク スケジューラ](http://msdn.microsoft.com/library/638f8ea5-21db-47a2-a934-86e1e961bf65)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="task" /> 引数が null です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="task" />既に実行されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UnobservedTaskException">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Threading.Tasks.UnobservedTaskExceptionEventArgs&gt; UnobservedTaskException;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Threading.Tasks.UnobservedTaskExceptionEventArgs&gt; UnobservedTaskException" />
+      <MemberSignature Language="DocId" Value="E:System.Threading.Tasks.TaskScheduler.UnobservedTaskException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>add: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>remove: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Threading.Tasks.UnobservedTaskExceptionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーが発生したタスクの無視された例外が例外エスカレーション ポリシーをトリガーしようとする場合に発生します。既定では、プロセスを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアプリケーション ドメイン全体のイベントは、トリガーから例外のエスカレーションのポリシー (、既定では、プロセスを終了します) を回避するためのメカニズムを提供します。  
+  
+ タスクに基づく非同期コードを記述する開発者向け容易にできるように、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]観察されない例外の既定の例外動作を変更します。 観察されない例外が発生させる、<xref:System.Threading.Tasks.TaskScheduler.UnobservedTaskException>例外、プロセスは既定でに終了しません。 代わりに、例外は、イベント ハンドラーが例外を監視するかどうかに関係なく、イベントが発生した後、ランタイムによって処理されます。 この動作を構成することができます。 以降で、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]の動作に戻すには、構成要素を使用することができます、[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]およびプロセスを終了します。  
+  
+```xml  
+<configuration>   
+   <runtime>   
+      <ThrowUnobservedTaskExceptions enabled="true"/>   
+   </runtime>   
+</configuration>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

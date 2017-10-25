@@ -1,0 +1,163 @@
+<Type Name="TemplateContainerAttribute" FullName="System.Web.UI.TemplateContainerAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TemplateContainerAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TemplateContainerAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.TemplateContainerAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>返すプロパティのコンテナー コントロールの基本型を宣言、<see cref="T:System.Web.UI.ITemplate" />インターフェイスし、が付いて、<see cref="T:System.Web.UI.TemplateContainerAttribute" />属性。 コントロールに、<see cref="T:System.Web.UI.ITemplate" />プロパティを実装する必要があります、<see cref="T:System.Web.UI.INamingContainer" />インターフェイスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Type>のパラメーターとして渡されるオブジェクト、<xref:System.Web.UI.TemplateContainerAttribute>の種類として、パーサーによってオブジェクトが使用される<xref:System.ComponentModel.Container>データ バインディング式で使用されるオブジェクト。 プロパティが返すコントロール、<xref:System.Web.UI.ITemplate>インターフェイスし、が付いて、 <xref:System.Web.UI.TemplateContainerAttribute>、実装する必要があります、<xref:System.Web.UI.INamingContainer>インターフェイスです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付きテンプレートのコントロールを作成する方法を示します`TemplatedFirstControl`という名前のコンテナーに関連付ける`FirstTemplateContainer`です。 これにより、テンプレートを指定すると、テンプレートが指定されていない場合、サーバーの時刻を表示するカスタム コントロールとテンプレートの内容を作成します。  
+  
+ [!code-csharp[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/CS/templatecontainerattribute.cs#1)]
+ [!code-vb[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/VB/templatecontainerattribute.vb#1)]  
+  
+ 次の Web フォームでは、前のコード例で作成されたカスタム コントロールを使用する方法を示します。 2 つのインスタンス、`TemplatedFirstControl`ページに配置されます。  
+  
+-   最初のインスタンスには、テンプレートが含まれています。`<FirstTemplate>`です。  
+  
+-   2 番目のインスタンスには含まれません`<FirstTemplate>`です。 そのため、時間だけを示しています。  
+  
+ [!code-aspx-csharp[SystemWebUI_TemplateContainerAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/CS/templatecontainerattribute.aspx#2)]
+ [!code-aspx-vb[SystemWebUI_TemplateContainerAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/VB/templatecontainerattribute.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateContainerAttribute (Type containerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type containerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateContainerAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="containerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="containerType"><see cref="T:System.Type" />コンテナー コントロールのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.TemplateContainerAttribute" />クラスの指定されたコンテナーの種類を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、名前付きテンプレートのコントロールを作成する方法を示しています。`TemplatedFirstControl`という名前のコンテナーに関連付ける`FirstTemplateContainer`です。 これにより、テンプレートを指定すると、テンプレートが指定されていない場合、サーバーの時刻を表示するカスタム コントロールとテンプレートの内容を作成します。 <xref:System.Web.UI.TemplateContainerAttribute>のクラスが使用される、`FirstTemplate`プロパティです。  
+  
+ [!code-csharp[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/CS/templatecontainerattribute.cs#1)]
+ [!code-vb[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/VB/templatecontainerattribute.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateContainerAttribute (Type containerType, System.ComponentModel.BindingDirection bindingDirection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type containerType, valuetype System.ComponentModel.BindingDirection bindingDirection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateContainerAttribute.#ctor(System.Type,System.ComponentModel.BindingDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="containerType" Type="System.Type" />
+        <Parameter Name="bindingDirection" Type="System.ComponentModel.BindingDirection" />
+      </Parameters>
+      <Docs>
+        <param name="containerType"><see cref="T:System.Type" />コンテナー コントロールのです。</param>
+        <param name="bindingDirection"><see cref="P:System.Web.UI.TemplateContainerAttribute.BindingDirection" />コンテナー コントロールのです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.TemplateContainerAttribute" />クラスの指定されたコンテナーの種類を使用して、<see cref="P:System.Web.UI.TemplateContainerAttribute.BindingDirection" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingDirection">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.BindingDirection BindingDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.BindingDirection BindingDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateContainerAttribute.BindingDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BindingDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー コントロールのバインドの方向を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.BindingDirection" />方向のバインドのコンテナー コントロールを示すです。 既定値は、<see cref="F:System.ComponentModel.BindingDirection.OneWay" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateContainerAttribute.BindingDirection%2A>プロパティには、いずれかを指定できます、<xref:System.ComponentModel.BindingDirection.OneWay>フィールドに、テンプレートがプロパティの値だけを受け入れることができます、または<xref:System.ComponentModel.BindingDirection.TwoWay>フィールド、テンプレートが場所を受け入れるし、プロパティ値を公開します。 後者のシナリオでのデータ バインド コントロールに自動的に使用できます、update、delete、および挿入操作を使用してデータ ソースの`Bind`データ バインディングの構文。  
+  
+ データ バインディングの詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)と[データ バインド式の概要](http://msdn.microsoft.com/library/14cdd57d-0f82-4667-b503-73e1a96f136a)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付きテンプレートのコントロールを作成する方法を示します`TemplatedFirstControl`という名前のコンテナーに関連付ける`FirstTemplateContainer`です。 これにより、テンプレートを指定すると、テンプレートが指定されていない場合、サーバーの時刻を表示するカスタム コントロールの作成と、テンプレートの内容。 <xref:System.Attribute.GetCustomAttribute%2A>メソッドを判断、<xref:System.Web.UI.TemplateContainerAttribute.BindingDirection%2A>のプロパティ、`FirstTemplate`のプロパティ、`TemplateFirstControl`です。  
+  
+ このコード例に示されている例の一部である、<xref:System.Web.UI.TemplateContainerAttribute>クラスです。  
+  
+ [!code-csharp[SystemWebUI_TemplateContainerAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/CS/templatecontainerattribute.aspx#3)]
+ [!code-vb[SystemWebUI_TemplateContainerAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/VB/templatecontainerattribute.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerType">
+      <MemberSignature Language="C#" Value="public Type ContainerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContainerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateContainerAttribute.ContainerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナー コントロールの種類を取得します。</summary>
+        <value>コンテナー コントロール<see cref="T:System.Type" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、名前付きテンプレートのコントロールを作成する方法を示します`TemplatedFirstControl`という名前のコンテナーに関連付ける`FirstTemplateContainer`です。 これにより、テンプレートを指定すると、テンプレートが指定されていない場合、サーバーの時刻を表示するカスタム コントロールとテンプレートの内容を作成します。 <xref:System.Web.UI.TemplateContainerAttribute>のクラスが使用される、`FirstTemplate`プロパティを指定して、<xref:System.Web.UI.TemplateContainerAttribute.ContainerType%2A>プロパティとして`FirstTemplateContainer`です。  
+  
+ [!code-csharp[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/CS/templatecontainerattribute.cs#1)]
+ [!code-vb[SystemWebUI_TemplateContainerAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI_TemplateContainerAttribute/VB/templatecontainerattribute.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,150 @@
+<Type Name="RegularExpressionValidator" FullName="System.Web.UI.MobileControls.RegularExpressionValidator">
+  <TypeSignature Language="C#" Value="public class RegularExpressionValidator : System.Web.UI.MobileControls.BaseValidator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RegularExpressionValidator extends System.Web.UI.MobileControls.BaseValidator" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.RegularExpressionValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.BaseValidator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem("System.Web.UI.Design.WebControlToolboxItem, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:RegularExpressionValidator runat="server" ErrorMessage="RegularExpressionValidator"&gt;&lt;/{0}:RegularExpressionValidator&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>他のコントロールの値が正規表現に一致するかどうかを検証するコントロール機能を提供します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの動作と同じ ASP.NET<xref:System.Web.UI.WebControls.RegularExpressionValidator?displayProperty=nameWithType>コントロール。  
+  
+ 既定では、<xref:System.Web.UI.MobileControls.Command>フォーム上のコントロールがフォームがサーバーに送信されるときに検証を実行するフォームに検証コントロールを生成します。 自動検証を無効にする設定、<xref:System.Web.UI.MobileControls.Command.CausesValidation%2A>プロパティを<xref:System.Web.UI.MobileControls.Command>に`false`です。  
+  
+   
+  
+## Examples  
+ 次の例は、正規表現のプロパティなどを追加する方法を示しています、<xref:System.Web.UI.MobileControls.RegularExpressionValidator.ValidationExpression%2A>と<xref:System.Web.UI.MobileControls.TextControl.Text%2A>ページの読み込み中にプログラムでのプロパティです。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[MobileRegExprValidatorSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileRegExprValidatorSample/cs/Default.aspx#1)]
+ [!code-aspx-vb[MobileRegExprValidatorSample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobileRegExprValidatorSample/vb/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegularExpressionValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.RegularExpressionValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.RegularExpressionValidator" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWebValidator">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.WebControls.BaseValidator CreateWebValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.WebControls.BaseValidator CreateWebValidator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.RegularExpressionValidator.CreateWebValidator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BaseValidator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラス独自の集計 Web 検証コントロールを作成するための仮想メソッド。 Web 検証コントロールは、Web ベースの検証コントロールに共通のプロパティを取得または設定するためのものです。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>集約された Web 検証コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateIsValid">
+      <MemberSignature Language="C#" Value="protected override bool EvaluateIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool EvaluateIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.RegularExpressionValidator.EvaluateIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ASP.NET が Web ページを処理するときに検証段階で呼び出されます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <returns>
+          検証コントロールが正しい場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationExpression">
+      <MemberSignature Language="C#" Value="public string ValidationExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.RegularExpressionValidator.ValidationExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.WebControls.RegexTypeEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証条件に割り当てられている正規表現を設定します。 既定値は、空の文字列 ("") です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>検証条件に割り当てられている正規表現。  
+  
+ <see cref="T:System.Web.UI.MobileControls.RegularExpressionValidator" />空の文字列の検証は実行されません。 空の文字列をテストするには、使用、<see cref="T:System.Web.UI.MobileControls.RequiredFieldValidator" />と<see cref="T:System.Web.UI.MobileControls.RegularExpressionValidator" />化を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、サンプルの検証式を示しています。  
+  
+|検証の種類|検証の表現|  
+|------------------------|---------------------------|  
+|電子メール|\w+ ([-+ です]。\w+)*@\w+ ([-.]\w+)\*\\\w+ ([-。]。\w+)|  
+|電話番号|((\\(\d{3}\\) ?)(& a) #124;(\d{3}-))? \d\ {3\}-\d\ {4\}|  
+|URL|http://([\w-]+\\.)[\w-] + + (/[\w-./?% (& a) =] *) ですか?|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">割り当てられた正規表現が正しくありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

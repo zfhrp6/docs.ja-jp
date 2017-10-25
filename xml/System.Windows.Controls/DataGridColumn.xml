@@ -1,0 +1,1359 @@
+<Type Name="DataGridColumn" FullName="System.Windows.Controls.DataGridColumn">
+  <TypeSignature Language="C#" Value="public abstract class DataGridColumn : System.Windows.DependencyObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataGridColumn extends System.Windows.DependencyObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridColumn" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.DependencyObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see cref="T:System.Windows.Controls.DataGrid" />列です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この抽象クラスは、すべての基本機能を提供<xref:System.Windows.Controls.DataGrid>列です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataGridColumn ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DataGridColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualWidth">
+      <MemberSignature Language="C#" Value="public double ActualWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ActualWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.ActualWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の現在の幅を取得[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。</summary>
+        <value>内の列の幅[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。 登録済みの既定値は 0 です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Controls.DataGridColumn.ActualWidth%2A>セルと列のヘッダーに配置するプロパティを使用します。 値に収まるように強制変換、<xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A>と<xref:System.Windows.Controls.DataGridColumn.MinWidth%2A>制約。  
+  
+ 表示される列の幅を取得する、<xref:System.Windows.Controls.DataGridLength.DisplayValue%2A>の<xref:System.Windows.Controls.DataGridColumn.Width%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActualWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ActualWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ActualWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.ActualWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.ActualWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCellEdit">
+      <MemberSignature Language="C#" Value="protected virtual void CancelCellEdit (System.Windows.FrameworkElement editingElement, object uneditedValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CancelCellEdit(class System.Windows.FrameworkElement editingElement, object uneditedValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.CancelCellEdit(System.Windows.FrameworkElement,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingElement" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="uneditedValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="editingElement">この要素は、編集モードにあるセルの列に表示されます。</param>
+        <param name="uneditedValue">編集されているセルで、編集前の元の値。</param>
+        <summary>未編集、元の値に戻すには編集されているセルが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserReorder">
+      <MemberSignature Language="C#" Value="public bool CanUserReorder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUserReorder" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.CanUserReorder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが、列ヘッダーをドラッグして列の表示位置を変更できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーが別の位置に列ヘッダーをドラッグできます。それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="true" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての列の並べ替え動作を設定するには、設定を<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Windows.Controls.DataGridColumn.CanUserReorder%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Controls.DataGrid.CanUserReorderColumns%2A?displayProperty=nameWithType>プロパティは、両方の設定の値`false`の値よりも優先`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserReorderProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanUserReorderProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanUserReorderProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.CanUserReorderProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.CanUserReorder" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserResize">
+      <MemberSignature Language="C#" Value="public bool CanUserResize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUserResize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.CanUserResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーがマウスを使用して列幅を調整できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが列のサイズを変更する場合それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="true" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、列の幅はプログラムなどを変更しているかどうかは影響しません、<xref:System.Windows.Controls.DataGridColumn.Width%2A>プロパティです。  
+  
+ すべての列のサイズ変更動作を設定するには、設定を<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Windows.Controls.DataGridColumn.CanUserResize%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Controls.DataGrid.CanUserResizeColumns%2A?displayProperty=nameWithType>プロパティは、両方の設定の値`false`の値よりも優先`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserResizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanUserResizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanUserResizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.CanUserResizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.CanUserResize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserSort">
+      <MemberSignature Language="C#" Value="public bool CanUserSort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanUserSort" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.CanUserSort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザーが列見出しをクリックして、列を並べ替えることができるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーが列を並べ替えることができますそれ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="true" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定できるはすべての列の動作を設定して並べ替え、<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.Windows.Controls.DataGridColumn.CanUserSort%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Controls.DataGrid.CanUserSortColumns%2A?displayProperty=nameWithType>プロパティは、両方の設定の値`false`の値よりも優先`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUserSortProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanUserSortProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanUserSortProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.CanUserSortProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.CanUserSort" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style CellStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style CellStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.CellStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセルを表示するために使用されるスタイルを設定します。</summary>
+        <value>列のセルを表示するために使用されるスタイルです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義する、 <xref:System.Windows.Style> 、セルの指定、<xref:System.Windows.Style.TargetType%2A>の<xref:System.Windows.Controls.DataGridCell>します。  
+  
+ A<xref:System.Windows.Style>テーブル、列、またはセル レベルのセルに適用できます。 適用する、<xref:System.Windows.Style>列内のすべてのセルに次のように設定します。、<xref:System.Windows.Controls.DataGridColumn.CellStyle%2A?displayProperty=nameWithType>プロパティで、よりも優先、<xref:System.Windows.Controls.DataGrid.CellStyle%2A?displayProperty=nameWithType>プロパティです。 適用する、<xref:System.Windows.Style>個々 のセルを設定、<xref:System.Windows.FrameworkElement.Style%2A>プロパティに直接、<xref:System.Windows.Controls.DataGridCell>オブジェクトで、セルに適用するその他のすべてのスタイルよりも優先されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CellStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CellStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CellStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.CellStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.CellStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClipboardContentBinding">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Data.BindingBase ClipboardContentBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Data.BindingBase ClipboardContentBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.ClipboardContentBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を取得またはクリップボードのセルの内容を設定するときに使用するバインディング オブジェクト。</summary>
+        <value>バインディングを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitCellEdit">
+      <MemberSignature Language="C#" Value="protected virtual bool CommitCellEdit (System.Windows.FrameworkElement editingElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool CommitCellEdit(class System.Windows.FrameworkElement editingElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.CommitCellEdit(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingElement" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="editingElement">この要素は、編集モードにあるセルの列に表示されます。</param>
+        <summary>セルの編集モードを終了する前に、必要な検証を実行します。</summary>
+        <returns>
+          <see langword="true" />場合は検証エラーは検出されません。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyingCellClipboardContent">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Controls.DataGridCellClipboardEventArgs&gt; CopyingCellClipboardContent;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Controls.DataGridCellClipboardEventArgs&gt; CopyingCellClipboardContent" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DataGridColumn.CopyingCellClipboardContent" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Controls.DataGridCellClipboardEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルのクリップボードの内容を準備した後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーは、クリップボードに保存する前に、セルの内容を変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataGridOwner">
+      <MemberSignature Language="C#" Value="protected System.Windows.Controls.DataGrid DataGridOwner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataGrid DataGridOwner" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.DataGridOwner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGrid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.DataGrid" />コントロールをこの列が含まれています。</summary>
+        <value><see cref="T:System.Windows.Controls.DataGrid" />コントロールをこの列が含まれています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayIndex">
+      <MemberSignature Language="C#" Value="public int DisplayIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DisplayIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.DisplayIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の他の列の基準とした列の表示位置、<see cref="T:System.Windows.Controls.DataGrid" />です。</summary>
+        <value>列の 0 から始まる位置が表示されます、関連付けられている<see cref="T:System.Windows.Controls.DataGrid" />です。 登録済みの既定値は-1 です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>に追加される前に、プロパティが既定値は-1、<xref:System.Windows.Controls.DataGrid.Columns%2A?displayProperty=nameWithType>コレクション。 この値は更新する列が追加されたときに、<xref:System.Windows.Controls.DataGrid>です。  
+  
+ <xref:System.Windows.Controls.DataGrid>いる必要があります、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>の各列のプロパティは 0 ~ 一意の整数である必要があります、<xref:System.Windows.Controls.ColumnDefinitionCollection.Count%2A>の<xref:System.Windows.Controls.DataGrid.Columns%2A>-1 です。 したがって、ときに、 <xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A> 、1 つの列の変更の変更によって通常、その、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>も変更するには、他の列の。  
+  
+ 制限、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>によって値が適用される、<xref:System.Windows.ValidateValueCallback>メカニズムです。 無効な値を設定しようとすると、実行時例外がスローされます。  
+  
+ ときの値、<xref:System.Windows.Controls.DataGridColumn.DisplayIndex%2A>プロパティが変更された、<xref:System.Windows.Controls.DataGrid.ColumnDisplayIndexChanged?displayProperty=nameWithType>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DisplayIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DisplayIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.DisplayIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.DisplayIndex" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragIndicatorStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style DragIndicatorStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style DragIndicatorStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.DragIndicatorStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドラッグ操作中に、列ヘッダーに適用するスタイル オブジェクトを設定します。</summary>
+        <value>ドラッグ操作中に、列ヘッダーに適用するスタイル オブジェクト。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定を使用して、<xref:System.Windows.Controls.DataGridColumn.DragIndicatorStyle%2A>の個々 の列の<xref:System.Windows.Controls.DataGrid>です。 定義する、<xref:System.Windows.Style>ドラッグ インジケーターを指定する、<xref:System.Windows.Style.TargetType%2A>の<xref:System.Windows.Controls.Control>します。  
+  
+ ドラッグ インジケーターで、列ヘッダーの周りの境界線などの特定の要素の外観を変更するスタイルのプロパティを設定することができます。 ただし、ドラッグ インジケーターの既定のテンプレートを使用して、<xref:System.Windows.Media.VisualBrush>を描画する、<xref:System.Windows.Controls.Canvas>がドラッグされている元の列ヘッダーのイメージにします。 など、独自のスタイルでは、いくつかのプロパティを設定した場合、結果として<xref:System.Windows.Controls.Control.Background%2A>または<xref:System.Windows.Controls.Control.Foreground%2A>、適用されないに表示されます。 既定値を使用しない新しいテンプレートの適用がドラッグされているときに、列ヘッダーの外観を変更するに<xref:System.Windows.Media.VisualBrush>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragIndicatorStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DragIndicatorStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DragIndicatorStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.DragIndicatorStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.DragIndicatorStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateEditingElement">
+      <MemberSignature Language="C#" Value="protected abstract System.Windows.FrameworkElement GenerateEditingElement (System.Windows.Controls.DataGridCell cell, object dataItem);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.FrameworkElement GenerateEditingElement(class System.Windows.Controls.DataGridCell cell, object dataItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.GenerateEditingElement(System.Windows.Controls.DataGridCell,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Windows.Controls.DataGridCell" />
+        <Parameter Name="dataItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="cell">生成された要素を含むセルです。</param>
+        <param name="dataItem">目的のセルを含む行で表されるデータ項目。</param>
+        <summary>派生クラスでオーバーライドされると、取得、編集する要素にバインドされている、<see cref="P:System.Windows.Controls.DataGridBoundColumn.Binding" />列のプロパティの値。</summary>
+        <returns>新しい編集要素にバインドされている、<see cref="P:System.Windows.Controls.DataGridBoundColumn.Binding" />列のプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セルが編集モードのときに、セルの内容のビジュアル ツリーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateElement">
+      <MemberSignature Language="C#" Value="protected abstract System.Windows.FrameworkElement GenerateElement (System.Windows.Controls.DataGridCell cell, object dataItem);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.FrameworkElement GenerateElement(class System.Windows.Controls.DataGridCell cell, object dataItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.GenerateElement(System.Windows.Controls.DataGridCell,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Windows.Controls.DataGridCell" />
+        <Parameter Name="dataItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="cell">生成された要素を含むセルです。</param>
+        <param name="dataItem">目的のセルを含む行で表されるデータ項目。</param>
+        <summary>派生クラスでオーバーライドされると、取得する読み取り専用要素にバインドされている、<see cref="P:System.Windows.Controls.DataGridBoundColumn.Binding" />列のプロパティの値。</summary>
+        <returns>新しい読み取り専用要素にバインドされている、<see cref="P:System.Windows.Controls.DataGridBoundColumn.Binding" />列のプロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セルが表示モードのときに、セルの内容のビジュアル ツリーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCellContent">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElement GetCellContent (object dataItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.FrameworkElement GetCellContent(object dataItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.GetCellContent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataItem">目的のセルを含む行で表されるデータ項目。</param>
+        <summary>取得、<see cref="P:System.Windows.Controls.ContentControl.Content" />この列と、指定されたデータ項目を表す行の交差部分にあるセルのプロパティの値。</summary>
+        <returns>セルの内容です。または<see langword="null" />セルが見つからない場合、します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataItem" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCellContent">
+      <MemberSignature Language="C#" Value="public System.Windows.FrameworkElement GetCellContent (System.Windows.Controls.DataGridRow dataGridRow);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.FrameworkElement GetCellContent(class System.Windows.Controls.DataGridRow dataGridRow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.GetCellContent(System.Windows.Controls.DataGridRow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataGridRow" Type="System.Windows.Controls.DataGridRow" />
+      </Parameters>
+      <Docs>
+        <param name="dataGridRow">この行は、目的のセルが含まれています。</param>
+        <summary>取得、<see cref="P:System.Windows.Controls.ContentControl.Content" />この列と、指定された行の交差部分にあるセルのプロパティの値。</summary>
+        <returns>セルの内容です。または<see langword="null" />セルが見つからない場合、します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataGridRow" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Header">
+      <MemberSignature Language="C#" Value="public object Header { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Header" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.Header" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーの内容を設定します。</summary>
+        <value>列ヘッダーの内容。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.HeaderProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.Header" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStringFormat">
+      <MemberSignature Language="C#" Value="public string HeaderStringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.HeaderStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーの内容に適用する形式パターンを設定します。</summary>
+        <value>書式パターンを表す文字列値。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.HeaderStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.HeaderStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style HeaderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style HeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.HeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーを表示するときに使用されるスタイルを設定します。</summary>
+        <value>列ヘッダーを表示するために使用されているスタイルまたは<see langword="null" />を使用して、<see cref="P:System.Windows.Controls.DataGrid.ColumnHeaderStyle" />設定します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義する、<xref:System.Windows.Style>列ヘッダーを指定、<xref:System.Windows.Style.TargetType%2A>の<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>します。  
+  
+ A<xref:System.Windows.Style>または個々 の列ヘッダーをすべての列ヘッダーに適用できます。 適用する、<xref:System.Windows.Style>個々 のヘッダーを設定、<xref:System.Windows.Controls.DataGridColumn.HeaderStyle%2A?displayProperty=nameWithType>プロパティよりも優先、<xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、内の列ヘッダーのスタイルを変更するスタイル リソースを使用して、<xref:System.Windows.Controls.DataGrid>です。 インライン スタイルをオーバーライドする最初の列ヘッダーのスタイルに設定し、<xref:System.Windows.Controls.DataGrid.ColumnHeaderStyle%2A?displayProperty=nameWithType>です。  
+  
+ [!code-xaml[DataGrid_ColumnHeaderStyle#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_columnheaderstyle/CS/mainwindow.xaml#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.HeaderStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.HeaderStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate HeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate HeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.HeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーのビジュアル表現を定義するテンプレートを設定します。</summary>
+        <value>列ヘッダーのビジュアル表現を定義するオブジェクト。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.HeaderTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.HeaderTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector HeaderTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector HeaderTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.HeaderTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列ヘッダーを使用するテンプレートを選択するオブジェクトを設定します。</summary>
+        <value>テンプレートを選択するオブジェクト。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeaderTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeaderTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.HeaderTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.HeaderTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAutoGenerated">
+      <MemberSignature Language="C#" Value="public bool IsAutoGenerated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAutoGenerated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.IsAutoGenerated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列が自動生成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />列が自動生成された以外の場合それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAutoGeneratedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsAutoGeneratedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsAutoGeneratedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.IsAutoGeneratedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.IsAutoGenerated" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFrozen">
+      <MemberSignature Language="C#" Value="public bool IsFrozen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFrozen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.IsFrozen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列が水平方向にスクロールできないとしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />列を水平方向にスクロールできない場合それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridColumn.IsFrozen%2A>列を固定するのには使用できません。 代わりに、設定、<xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A>プロパティです。 最大で指定されている列の一番左の列、<xref:System.Windows.Controls.DataGrid.FrozenColumnCount%2A>インプレース数が固定されます。  
+  
+   
+  
+## Examples  
+ 次の例から [列の固定] を選択すると、列を固定する方法を示しています、<xref:System.Windows.Controls.ContextMenu>です。 列は、固定された列に含まれるためには、左に移動されます。  
+  
+ [!code-xaml[DataGrid_FrozenColumn#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_frozencolumn/cs/window1.xaml#1)]  
+  
+ [!code-csharp[DataGrid_FrozenColumn#2](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_frozencolumn/cs/window1.xaml.cs#2)]
+ [!code-vb[DataGrid_FrozenColumn#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_frozencolumn/vb/window1.xaml.vb#2)]  
+[!code-csharp[DataGrid_FrozenColumn#3](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_frozencolumn/cs/window1.xaml.cs#3)]
+[!code-vb[DataGrid_FrozenColumn#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_frozencolumn/vb/window1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFrozenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsFrozenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsFrozenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.IsFrozenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.IsFrozen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列のセルを編集できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、列のセルは編集できません。それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Controls.DataGridColumn.IsReadOnly%2A>プロパティを`true`個々 の列のすべてのセルを読み取り専用にします。 設定、<xref:System.Windows.Controls.DataGrid.IsReadOnly%2A?displayProperty=nameWithType>プロパティを`true`内のすべてのセルを作成する、<xref:System.Windows.Controls.DataGrid>読み取り専用です。 設定、<xref:System.Windows.Controls.DataGridCell.IsReadOnly%2A?displayProperty=nameWithType>プロパティを`true`個々 のセルを読み取り専用にします。 設定の間で競合が存在する場合、 <xref:System.Windows.Controls.DataGrid>、列、またはセル レベルでの値`true`の値よりも優先`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnlyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsReadOnlyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsReadOnlyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.IsReadOnlyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.IsReadOnly" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxWidth">
+      <MemberSignature Language="C#" Value="public double MaxWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.MaxWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の幅の最大値の制約を設定します。</summary>
+        <value>最大列幅 [!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]です。 登録済みの既定値は <see cref="F:System.Double.PositiveInfinity" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を設定すると、 <xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A> 0.0 以上にする必要がありますプロパティです。  
+  
+ <xref:System.Double?displayProperty=nameWithType>このプロパティの有効な値ではありません。 値の制限、<xref:System.Double>によって値が適用される、<xref:System.Windows.ValidateValueCallback>メカニズムです。 無効な値を設定しようとすると、実行時例外がスローされます。  
+  
+ <xref:System.Windows.Controls.DataGridLength.DisplayValue%2A>の<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType>プロパティは設定されている場合、優先順位の順序で、次のプロパティによって制限されます。  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MinWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaxWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaxWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.MaxWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.MaxWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidth">
+      <MemberSignature Language="C#" Value="public double MinWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.MinWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の幅の最小値制約を設定します。</summary>
+        <value>列の最小幅の[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]します。 登録済みの既定値は 20 です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を設定すると、<xref:System.Windows.Controls.DataGridColumn.MinWidth%2A>プロパティ、値は 0.0 以上にする必要があります。  
+  
+ <xref:System.Double?displayProperty=nameWithType>および<xref:System.Double?displayProperty=nameWithType>はこのプロパティの値として無効です。 値の制限、<xref:System.Double>によって値が適用される、<xref:System.Windows.ValidateValueCallback>メカニズムです。 無効な値を設定しようとすると、実行時例外がスローされます。  
+  
+ <xref:System.Windows.Controls.DataGridLength.DisplayValue%2A>の<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridColumn.Width%2A?displayProperty=nameWithType>プロパティは設定されている場合、優先順位の順序で、次のプロパティによって制限されます。  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MinWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinWidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinWidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.MinWidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.MinWidth" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyPropertyChanged">
+      <MemberSignature Language="C#" Value="protected void NotifyPropertyChanged (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void NotifyPropertyChanged(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.NotifyPropertyChanged(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">変更された列のプロパティの名前。</param>
+        <summary>通知、<see cref="T:System.Windows.Controls.DataGrid" />この列のプロパティが変更された列を格納しています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCoerceIsReadOnly">
+      <MemberSignature Language="C#" Value="protected virtual bool OnCoerceIsReadOnly (bool baseValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnCoerceIsReadOnly(bool baseValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.OnCoerceIsReadOnly(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">デリゲートに渡された値。</param>
+        <summary>値を決定、<see cref="P:System.Windows.Controls.DataGridColumn.IsReadOnly" />プロパティ、プロパティの規則に基づいて、<see cref="T:System.Windows.Controls.DataGrid" />この列を格納しています。</summary>
+        <returns>
+          <see langword="true" />規則に基づいて、列内のセルを編集できない場合、 <see cref="T:System.Windows.Controls.DataGrid" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCopyingCellClipboardContent">
+      <MemberSignature Language="C#" Value="public virtual object OnCopyingCellClipboardContent (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object OnCopyingCellClipboardContent(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.OnCopyingCellClipboardContent(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">選択した要素のデータ コンテキスト。</param>
+        <summary><see cref="E:System.Windows.Controls.DataGridColumn.CopyingCellClipboardContent" /> イベントを発生させます。</summary>
+        <returns>セルの内容を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定のセル コンテンツの取得を選択した各セルに呼び出されます。 生成し、<xref:System.Windows.Controls.DataGridColumn.CopyingCellClipboardContent>イベント。 返される前に、セルの内容を変更するイベントを処理することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPastingCellClipboardContent">
+      <MemberSignature Language="C#" Value="public virtual void OnPastingCellClipboardContent (object item, object cellContent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void OnPastingCellClipboardContent(object item, object cellContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.OnPastingCellClipboardContent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="cellContent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">選択した要素のデータ コンテキスト。</param>
+        <param name="cellContent">セルに コンテンツ。</param>
+        <summary><see cref="E:System.Windows.Controls.DataGridColumn.PastingCellClipboardContent" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の貼り付けのカスタム実装を提供する場合、ヘルパーとして使用できます、<xref:System.Windows.Controls.DataGrid>です。 セルの内容が格納されている、`item`オブジェクト。  
+  
+ このメソッドを発生させる、<xref:System.Windows.Controls.DataGridColumn.PastingCellClipboardContent>イベント。 セルに貼り付ける前に、セルの内容を変更するイベントを処理することができます。 設定することができます`cellContent`に`null`貼り付け操作をキャンセルします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PastingCellClipboardContent">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Controls.DataGridCellClipboardEventArgs&gt; PastingCellClipboardContent;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Controls.DataGridCellClipboardEventArgs&gt; PastingCellClipboardContent" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DataGridColumn.PastingCellClipboardContent" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Controls.DataGridCellClipboardEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリップボードの内容をセルに移動する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーは、セルの内容で保存する前に、クリップボードの内容を変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareCellForEdit">
+      <MemberSignature Language="C#" Value="protected virtual object PrepareCellForEdit (System.Windows.FrameworkElement editingElement, System.Windows.RoutedEventArgs editingEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object PrepareCellForEdit(class System.Windows.FrameworkElement editingElement, class System.Windows.RoutedEventArgs editingEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.PrepareCellForEdit(System.Windows.FrameworkElement,System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editingElement" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="editingEventArgs" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="editingElement">この要素は、編集モードにあるセルの列に表示されます。</param>
+        <param name="editingEventArgs">編集モードにあるセルを原因となっているユーザー ジェスチャに関する情報です。</param>
+        <summary>派生クラスでオーバーライドされると、編集するために、必要に応じてセルの内容を設定します。</summary>
+        <returns>未編集のセルの値、派生クラスによって返されるとします。 この実装を返します<see langword="null" />常にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生列の型により示されるユーザー ジェスチャに応答するには、このメソッドをオーバーライドする`editingEventArgs`を編集する前に、現在の値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshCellContent">
+      <MemberSignature Language="C#" Value="protected virtual void RefreshCellContent (System.Windows.FrameworkElement element, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void RefreshCellContent(class System.Windows.FrameworkElement element, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridColumn.RefreshCellContent(System.Windows.FrameworkElement,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.FrameworkElement" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="element">更新するセルです。</param>
+        <param name="propertyName">変更された列のプロパティの名前。</param>
+        <summary>派生クラスでオーバーライドされると、変更された列のプロパティ値への応答内の列のセルの内容を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirection">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.ComponentModel.ListSortDirection&gt; SortDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.ComponentModel.ListSortDirection&gt; SortDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.SortDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.ComponentModel.ListSortDirection&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の並べ替えの方向 (昇順または降順) を設定します。</summary>
+        <value>並べ替えの方向を表す値。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SortDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SortDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.SortDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.SortDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortMemberPath">
+      <MemberSignature Language="C#" Value="public string SortMemberPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortMemberPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.SortMemberPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティ名、またはを並べ替えるメンバーを示すプロパティ名のピリオドで区切った階層を設定します。</summary>
+        <value>並べ替えるデータ項目のメンバーのパス。 登録済みの既定値は空の文字列 ("") です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortMemberPathProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SortMemberPathProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SortMemberPathProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.SortMemberPathProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.SortMemberPath" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Visibility Visibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Visibility Visibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.Visibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Visibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の表示を設定します。</summary>
+        <value>列の可視性を指定する列挙値。 登録済みの既定値は <see cref="F:System.Windows.Visibility.Visible" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列を非表示に次のように設定します。 その<xref:System.Windows.Controls.DataGridColumn.Visibility%2A>プロパティを<xref:System.Windows.Visibility.Collapsed>です。  
+  
+   
+  
+## Examples  
+ 次の例では、列の表示を設定する方法を示します。  
+  
+ [!code-xaml[DataGrid_ColumnsManipulation#Visible](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_columnsmanipulation/cs/datagrid_columnsmanipulation/window1.xaml#visible)]  
+[!code-xaml[DataGrid_ColumnsManipulation#DataGrid](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_columnsmanipulation/cs/datagrid_columnsmanipulation/window1.xaml#datagrid)]  
+  
+ [!code-csharp[DataGrid_ColumnsManipulation#Visible2](~/samples/snippets/csharp/VS_Snippets_Wpf/datagrid_columnsmanipulation/cs/datagrid_columnsmanipulation/window1.xaml.cs#visible2)]
+ [!code-vb[DataGrid_ColumnsManipulation#Visible2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datagrid_columnsmanipulation/vb/datagrid_columnsmanipulation_vb/window1.xaml.vb#visible2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.VisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.Visibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridLength Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.DataGridLength Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridColumn.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列の幅または自動サイズ変更モードを設定します。</summary>
+        <value>列の幅または自動サイズ変更モードを表す構造体。 登録済みの既定値は <see cref="P:System.Windows.Controls.DataGridLength.Auto" /> です。 新機能に影響を与える値については、次を参照してください。<see cref="T:System.Windows.DependencyProperty" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DataGridColumn.Width%2A>プロパティを設定すると、個別の<xref:System.Windows.Controls.DataGridColumn>よりも優先、<xref:System.Windows.Controls.DataGrid.ColumnWidth%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Windows.Controls.DataGridLength.DisplayValue%2A>の<xref:System.Windows.Controls.DataGridColumn.Width%2A>プロパティは設定されている場合、優先順位の順序で、次のプロパティによって制限されます。  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MaxWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MaxColumnWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGridColumn.MinWidth%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.DataGrid.MinColumnWidth%2A?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DataGridColumn.WidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DataGridColumn.Width" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

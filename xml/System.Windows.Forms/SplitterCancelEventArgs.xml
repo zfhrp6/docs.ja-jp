@@ -1,0 +1,175 @@
+<Type Name="SplitterCancelEventArgs" FullName="System.Windows.Forms.SplitterCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class SplitterCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SplitterCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SplitterCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スプリッターのイベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.SplitContainer.SplitterMoving>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.SplitContainer>という`SplitContainer1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.SplitContainer.SplitterMoving>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#547](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#547)]
+ [!code-vb[System.Windows.Forms.EventExamples#547](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#547)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SplitterCancelEventArgs (int mouseCursorX, int mouseCursorY, int splitX, int splitY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 mouseCursorX, int32 mouseCursorY, int32 splitX, int32 splitY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SplitterCancelEventArgs.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mouseCursorX" Type="System.Int32" />
+        <Parameter Name="mouseCursorY" Type="System.Int32" />
+        <Parameter Name="splitX" Type="System.Int32" />
+        <Parameter Name="splitY" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="mouseCursorX">クライアント座標でマウス ポインターの X 座標。</param>
+        <param name="mouseCursorY">クライアント座標でマウス ポインターの Y 座標。</param>
+        <param name="splitX">左上隅の X 座標、<see cref="T:System.Windows.Forms.SplitContainer" />クライアント座標でします。</param>
+        <param name="splitY">左上隅の Y 座標、<see cref="T:System.Windows.Forms.SplitContainer" />クライアント座標でします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.SplitterCancelEventArgs" />マウス ポインターとの左上隅の座標を指定してクラス、<see cref="T:System.Windows.Forms.SplitContainer" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseCursorX">
+      <MemberSignature Language="C#" Value="public int MouseCursorX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MouseCursorX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SplitterCancelEventArgs.MouseCursorX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント座標でマウス ポインターの X 座標を取得します。</summary>
+        <value>クライアント座標でマウス ポインターの X 座標を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.SplitContainer>という`SplitContainer1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#547](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#547)]
+ [!code-vb[System.Windows.Forms.EventExamples#547](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#547)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseCursorY">
+      <MemberSignature Language="C#" Value="public int MouseCursorY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MouseCursorY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SplitterCancelEventArgs.MouseCursorY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント座標でマウス ポインターの Y 座標を取得します。</summary>
+        <value>クライアント座標でマウス ポインターの Y 座標を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.SplitContainer>という`SplitContainer1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#547](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#547)]
+ [!code-vb[System.Windows.Forms.EventExamples#547](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#547)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitX">
+      <MemberSignature Language="C#" Value="public int SplitX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SplitX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SplitterCancelEventArgs.SplitX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の左上隅の X 座標、<see cref="T:System.Windows.Forms.SplitContainer" />クライアント座標でします。</summary>
+        <value>左上隅の X 座標を表す整数を<see cref="T:System.Windows.Forms.SplitContainer" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.SplitContainer>という`SplitContainer1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#547](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#547)]
+ [!code-vb[System.Windows.Forms.EventExamples#547](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#547)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SplitY">
+      <MemberSignature Language="C#" Value="public int SplitY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SplitY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SplitterCancelEventArgs.SplitY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の左上隅の Y 座標、<see cref="T:System.Windows.Forms.SplitContainer" />クライアント座標でします。</summary>
+        <value>左上隅の Y 座標を表す整数を<see cref="T:System.Windows.Forms.SplitContainer" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.SplitContainer>という`SplitContainer1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.SplitContainer.SplitterMoving?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#547](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#547)]
+ [!code-vb[System.Windows.Forms.EventExamples#547](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#547)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

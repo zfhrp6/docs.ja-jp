@@ -1,0 +1,118 @@
+<Type Name="Handshake" FullName="System.IO.Ports.Handshake">
+  <TypeSignature Language="C#" Value="public enum Handshake" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Handshake extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Ports.Handshake" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Ports</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.IO.Ports.SerialPort" /> オブジェクトでのシリアル ポート通信の確立に使用する制御プロトコルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は <xref:System.IO.Ports.SerialPort.Handshake%2A> プロパティで使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用できる値の表示、<xref:System.IO.Ports.Handshake>列挙型をコンソールには、ユーザーを 1 つを選択し、メッセージが表示されます。 このコード例に示されている例のコードの一部である、<xref:System.IO.Ports.SerialPort>クラスです。  
+  
+ [!code-cpp[System.IO.Ports.SerialPort#05](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cpp/serialport.cpp#05)]
+ [!code-csharp[System.IO.Ports.SerialPort#05](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/cs/SerialPort.cs#05)]
+ [!code-vb[System.IO.Ports.SerialPort#05](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Ports.SerialPort/vb/SerialPort.vb#05)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Handshake None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Handshake.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Handshake</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドシェイクのコントロールは使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestToSend">
+      <MemberSignature Language="C#" Value="RequestToSend" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Handshake RequestToSend = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Handshake.RequestToSend" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Handshake</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信要求 (RTS) ハードウェアのフロー制御が使用されます。 RTS では、データが伝送に使用できることを通知します。 RTS 行に設定する場合は、入力バッファーがいっぱいになると、<see langword="false" />です。 RTS 行に設定されます<see langword="true" />さらにスペースが入力バッファーで使用できるになります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestToSendXOnXOff">
+      <MemberSignature Language="C#" Value="RequestToSendXOnXOff" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Handshake RequestToSendXOnXOff = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Handshake.RequestToSendXOnXOff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Handshake</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求-送信 (RTS) ハードウェアの制御と XON/XOFF ソフトウェア コントロールの両方が使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="XOnXOff">
+      <MemberSignature Language="C#" Value="XOnXOff" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IO.Ports.Handshake XOnXOff = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Ports.Handshake.XOnXOff" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Ports</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Ports.Handshake</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XON XOFF/ソフトウェア制御のプロトコルが使用されます。 XOFF コントロールは、データの送信を停止に送信されます。 XON コントロールは、転送を再開する送信されます。 これらのソフトウェア コントロールでは、要求を送信 (RTS) の代わりに使用し、送信 (cts:) にハードウェアのコントロールをクリアします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

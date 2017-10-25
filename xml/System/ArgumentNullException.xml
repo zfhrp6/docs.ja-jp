@@ -1,0 +1,266 @@
+<Type Name="ArgumentNullException" FullName="System.ArgumentNullException">
+  <TypeSignature Language="C#" Value="public class ArgumentNullException : ArgumentException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ArgumentNullException extends System.ArgumentException" />
+  <TypeSignature Language="DocId" Value="T:System.ArgumentNullException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ArgumentException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Null 参照の場合にスローされる例外 (<see langword="Nothing" /> Visual Basic で) は有効な引数として受け付けないメソッドに渡されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ArgumentNullException>メソッドが呼び出され、渡された引数の少なくとも 1 つは、例外がスローされます`null`なることはありませんが、`null`です。  
+  
+ <xref:System.ArgumentNullException>次の 2 つメジャー状況、開発者のエラーを反映する実行時に例外がスローされます。  
+  
+-   インスタンス化されていないオブジェクトは、メソッドに渡されます。 エラーを防ぐためには、オブジェクトのインスタンスを作成します。  
+  
+-   メソッドの呼び出しから返されたオブジェクトは、引数として 2 番目のメソッドには、元の返されたオブジェクトの値が`null`です。 ある戻り値をチェックしてエラーを防ぐためには、`null`戻り値がない場合にのみ 2 番目のメソッドを呼び出すと`null`です。  
+  
+ <xref:System.ArgumentNullException> は、<xref:System.ArgumentException> と同じように動作します。 アプリケーション コードによって引き起こされる例外で区別できるように提供されて`null`引数とが null でない引数によって引き起こされる例外。 null 以外の引数によるエラーについては、「<xref:System.ArgumentOutOfRangeException>」を参照してください。  
+  
+ <xref:System.ArgumentNullException>値は 0x80004003 HRESULT E_POINTER を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.ArgumentNullException>を参照してください、<xref:System.ArgumentNullException>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentNullException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentNullException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ArgumentNullException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.ArgumentException.Message%2A> 「値は null にできません」などに、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.ArgumentNullException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.ArgumentException.Message%2A>|ローカライズされたエラー メッセージ文字列、「値は null にできません」など (英語)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentNullException (string paramName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string paramName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentNullException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">例外の原因となったパラメーターの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentNullException" />この例外の原因となるパラメーターの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.ArgumentException.Message%2A>をエラーを説明し、パラメーター名を含むシステム提供のメッセージの新しいインスタンスのプロパティです。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ このコンストラクターは、新しいインスタンスの <xref:System.ArgumentException.ParamName%2A> プロパティを `paramName` パラメーターを使用して初期化します。 コンテンツ`paramName`ユーザーが理解するためのものです。  
+  
+ <xref:System.ArgumentNullException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+  ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ArgumentNullException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentNullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">シリアル化されたデータの転送元または転送先を記述するオブジェクト。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.ArgumentNullException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。 詳細については、次を参照してください。 [XML および SOAP シリアル化](~/docs/standard/serialization/xml-and-soap-serialization.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentNullException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentNullException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">この例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因である例外。内部例外が指定されていない場合は null 参照 (Visual Basic では、<see langword="Nothing" />)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ArgumentNullException" />指定したエラー メッセージ、およびこの例外の原因となった例外を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ArgumentNullException (string paramName, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string paramName, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ArgumentNullException.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="paramName" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="paramName">例外の原因となったパラメーターの名前。</param>
+        <param name="message">エラーについて説明するメッセージ。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.ArgumentNullException" />指定したエラー メッセージと、この例外の原因となるパラメーターの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.ArgumentException.Message%2A>プロパティの値を使用して、新しいインスタンスの`message`パラメーター。 `message` パラメーターの内容は、ユーザーが理解できる内容にします。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ このコンストラクターは、新しいインスタンスの <xref:System.ArgumentException.ParamName%2A> プロパティを `paramName` パラメーターを使用して初期化します。 コンテンツ`paramName`ユーザーが理解するためのものです。  
+  
+ <xref:System.ArgumentNullException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.ArgumentException.Message%2A>|エラー メッセージ文字列。|  
+|<xref:System.ArgumentException.ParamName%2A>|パラメーター名の文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

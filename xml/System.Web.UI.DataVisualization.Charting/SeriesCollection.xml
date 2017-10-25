@@ -1,0 +1,66 @@
+<Type Name="SeriesCollection" FullName="System.Web.UI.DataVisualization.Charting.SeriesCollection">
+  <TypeSignature Language="C#" Value="public class SeriesCollection : System.Web.UI.DataVisualization.Charting.ChartNamedElementCollection&lt;System.Web.UI.DataVisualization.Charting.Series&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SeriesCollection extends System.Web.UI.DataVisualization.Charting.ChartNamedElementCollection`1&lt;class System.Web.UI.DataVisualization.Charting.Series&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.SeriesCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataVisualization.Charting.ChartNamedElementCollection&lt;System.Web.UI.DataVisualization.Charting.Series&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="T">System.Web.UI.DataVisualization.Charting.Series</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.DataVisualization.Charting.Series" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>クラスのコレクションを表します<xref:System.Web.UI.DataVisualization.Charting.Series>、さらに関連するデータ ポイントおよび系列の属性のグループを表すオブジェクト。 としてこのコレクション クラスが実装されている、<xref:System.Web.UI.DataVisualization.Charting.Chart.Series%2A>ルートのコレクション プロパティ<xref:System.Web.UI.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ 一連のオブジェクトの追加、挿入またはデザイン時と実行時の両方でコレクションから削除します。  
+  
+ 自動的に割り当てられている系列がコレクションに追加されると、<xref:System.Web.UI.DataVisualization.Charting.ChartArea>オブジェクトの名前を"Default"または"Default"が存在しない場合、グラフ領域コレクションの最初の利用可能なグラフ領域。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.Series Add (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.DataVisualization.Charting.Series Add(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.SeriesCollection.Add(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.Series</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />を追加します。</param>
+        <summary>追加、<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />コレクションの末尾に指定された名前を持つオブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Web.UI.DataVisualization.Charting.Series" />オブジェクトをコレクションに追加します。 」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目は、コレクション内の最後の項目として常に追加されます。  
+  
+ `name`引数が指す、`Name`追加されるオブジェクトのプロパティです。  
+  
+ **注**場合、このメソッドを使用して追加する<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトを<xref:System.Web.UI.DataVisualization.Charting.SeriesCollection>クラス、関連付けられた<xref:System.Web.UI.DataVisualization.Charting.DataPoint>の新しく追加されたオブジェクト<xref:System.Web.UI.DataVisualization.Charting.Series>オブジェクトは、データ ポイントごとに 1 つ以上の Y 値を持つことはできません。 データ ポイントごとに複数の Y 値を処理できる系列を追加するには、使用、 <xref:System.Web.UI.DataVisualization.Charting.SeriesCollection.Add%2A> System.Int32)?qualifyHint=False & autoUpgrade このオーバー ロードされたメソッドの場合は True。 定義を = です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

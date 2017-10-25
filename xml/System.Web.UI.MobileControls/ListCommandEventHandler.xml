@@ -1,0 +1,46 @@
+<Type Name="ListCommandEventHandler" FullName="System.Web.UI.MobileControls.ListCommandEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ListCommandEventHandler(object sender, ListCommandEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ListCommandEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ListCommandEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.MobileControls.ListCommandEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.MobileControls.List" />コントロール。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.UI.MobileControls.ListCommandEventArgs" /> オブジェクト。</param>
+    <summary><see cref="E:System.Web.UI.MobileControls.List.ItemCommand" /> の <see cref="T:System.Web.UI.MobileControls.List" /> イベントを処理するメソッドを表します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.UI.MobileControls.ListCommandEventHandler>の委任、<xref:System.Web.UI.MobileControls.List>コントロール、イベントを処理するメソッドを指定します。 <xref:System.Web.UI.WebControls.ListControl>項目イベントが生成されたときにハンドラーを通知します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると必ずイベント ハンドラーが呼び出されます。  
+  
+ 既定のレンダリングには、コントロールは、ユーザーが個々 のリスト項目をクリックできる UI を提供します。 ポストバック コントロールを呼び出す、<xref:System.Web.UI.MobileControls.List.OnItemCommand%2A>ソース項目をポイントして引数を指定して、イベント ハンドラー。 <xref:System.Web.UI.MobileControls.Command.CommandName%2A> プロパティの値が `null` です。  
+  
+ テンプレートを使用して表示、ASP.NET のイベントのバブル メカニズム呼び出します、<xref:System.Web.UI.MobileControls.List.OnItemCommand%2A>メソッドです。 イベント ハンドラーが指す、ソース アイテムにされ、パラメーターに渡される、<xref:System.Web.UI.MobileControls.Command.CommandName%2A>イベントを生成したコントロールのプロパティです。 これにより、複数の関連する相互作用の 1 つのリスト項目を表示することができます。  
+  
+ ハイパーリンクとして項目を表示するために設定することができます、<xref:System.Web.UI.MobileControls.List.ItemsAsLinks%2A>プロパティを`true`です。 値、<xref:System.Web.UI.MobileControls.MobileListItem.Text%2A>プロパティは、および表示の内容の使用、<xref:System.Web.UI.MobileControls.MobileListItem.Value%2A>プロパティが選択されているときにリンク アドレスをターゲットとして使用されます。  
+  
+> [!NOTE]
+>  Command イベントは、これらのリンクは生成されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

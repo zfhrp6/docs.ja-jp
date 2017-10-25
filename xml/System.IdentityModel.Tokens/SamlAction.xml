@@ -1,0 +1,298 @@
+<Type Name="SamlAction" FullName="System.IdentityModel.Tokens.SamlAction">
+  <TypeSignature Language="C#" Value="public class SamlAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAction extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したリソースに対するアクションを含む SAML アサーション内の <see langword="&lt;saml:Action&gt;" /> 要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAction> クラスは、OASIS SAML v1.1 仕様で定義されている `<saml:Action>` XML 要素に対応します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlAction> クラスは、サブジェクト <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement> が指定したリソースに対する指定したアクションを実行できるかどうかに関するクレームを指定する場合に使用します。 <xref:System.IdentityModel.Tokens.SamlAction> クラスを使用して目的のアクションを指定し、<xref:System.IdentityModel.Tokens.SamlAccessDecision> クラスを使用してアクセス決定を指定します。 <xref:System.IdentityModel.Tokens.SamlAction.Action%2A> プロパティはアクションを表し、<xref:System.IdentityModel.Tokens.SamlAction.Namespace%2A> プロパティはアクションが定義されている XML 名前空間を指定します。  
+  
+ SAML オブジェクト階層内の <xref:System.IdentityModel.Tokens.SamlAction> 位置を次に示します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken>  
+  
+ <xref:System.IdentityModel.Tokens.SamlAssertion>  
+  
+ <xref:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement>  
+  
+ <xref:System.IdentityModel.Tokens.SamlAction>  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAction ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターを使用する場合に、<xref:System.IdentityModel.Tokens.SamlAction> ステートメントの目的の名前空間を指定するには <xref:System.IdentityModel.Tokens.SamlAction.Namespace%2A> プロパティを設定します。 目的のアクションを指定するには、<xref:System.IdentityModel.Tokens.SamlAction.Action%2A> プロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAction (string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> セキュリティ トークンのサブジェクトが、指定したリソースに対して実行しようとするアクション。</param>
+        <summary>指定したアクションを使用して、<see cref="T:System.IdentityModel.Tokens.SamlAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `action` パラメーターは、<xref:System.IdentityModel.Tokens.SamlAction.Action%2A> プロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="action" /> は <see cref="F:System.String.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAction (string action, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> セキュリティ トークンのサブジェクトが、指定したリソースに対して実行しようとするアクション。</param>
+        <param name="ns">いる XML 名前空間、<c>アクション</c>パラメーターを定義します。</param>
+        <summary>指定したアクションを使用して、<see cref="T:System.IdentityModel.Tokens.SamlAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `action` パラメーターは、<xref:System.IdentityModel.Tokens.SamlAction.Action%2A> プロパティを設定します。  
+  
+ `ns` パラメーターは、<xref:System.IdentityModel.Tokens.SamlAction.Namespace%2A> プロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="action" /> は <see cref="F:System.String.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAction.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" /> のサブジェクトが、指定したリソースに対して実行できるアクションを取得または設定します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのサブジェクトが、指定したリソースに対して実行しようとするアクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAction.Action%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `<saml:Action>` XML のテキストに対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.IdentityModel.Tokens.SamlAction.Action" /> プロパティが <see langword="null" /> に設定されている。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Tokens.SamlAction.Action" /> プロパティが <see cref="F:System.String.Empty" /> に設定されている。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAction.IsReadOnly" /> プロパティの値が <see langword="true" /> であり、<see cref="P:System.IdentityModel.Tokens.SamlAction.Action" /> プロパティが設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAction.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスのプロパティが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          このインスタンスのプロパティが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAction.IsReadOnly%2A> クラスのこのインスタンスを読み取り専用にするために、<xref:System.IdentityModel.Tokens.SamlAction.MakeReadOnly%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAction.MakeReadOnly%2A> メソッドが呼び出されると、<xref:System.IdentityModel.Tokens.SamlAction.IsReadOnly%2A> プロパティが `true` に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAction.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.IdentityModel.Tokens.SamlAction.Action" /> プロパティが定義されている XML 名前空間を取得または設定します。</summary>
+        <value><see cref="P:System.IdentityModel.Tokens.SamlAction.Action" /> プロパティが定義されている XML 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAction.Namespace%2A> プロパティは、OASIS SAML 1.1 仕様で定義されている `Namespace` XML 要素の `<saml:Action>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlAction.IsReadOnly" /> プロパティが <see langword="true" /> ですが、<see cref="P:System.IdentityModel.Tokens.SamlAction.Namespace" /> プロパティが設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public virtual void ReadXml (System.Xml.XmlDictionaryReader reader, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlDictionaryReader reader, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer, class System.IdentityModel.Selectors.SecurityTokenResolver outOfBandTokenResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.ReadXml(System.Xml.XmlDictionaryReader,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+        <Parameter Name="outOfBandTokenResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlDictionaryReader" /> XML 要素を読み取る <see langword="&lt;saml:Action&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている SAML アサーション内の XML 要素の読み取りができる <see cref="T:System.IdentityModel.Tokens.SamlSerializer" />。</param>
+        <param name="keyInfoTokenSerializer">To be added.</param>
+        <param name="outOfBandTokenResolver"><see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" /> XML 要素によって参照されている SAML アサーションのデジタル署名を作成したセキュリティ トークンを決定する <see langword="&lt;saml:Advice&gt;" />。</param>
+        <summary>指定した XML リーダーを使用して <see langword="&lt;saml:Action&gt;" /> 要素を読み取ります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public virtual void WriteXml (System.Xml.XmlDictionaryWriter writer, System.IdentityModel.Tokens.SamlSerializer samlSerializer, System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlDictionaryWriter writer, class System.IdentityModel.Tokens.SamlSerializer samlSerializer, class System.IdentityModel.Selectors.SecurityTokenSerializer keyInfoTokenSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAction.WriteXml(System.Xml.XmlDictionaryWriter,System.IdentityModel.Tokens.SamlSerializer,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="samlSerializer" Type="System.IdentityModel.Tokens.SamlSerializer" />
+        <Parameter Name="keyInfoSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlDictionaryWriter" /> 要素を書き込む <see langword="&lt;saml:Action&gt;" />。</param>
+        <param name="samlSerializer">SAML 仕様で定義されている <see cref="T:System.IdentityModel.Tokens.SamlSerializer" /> 要素およびその子要素と属性を書き込むことができる <see langword="&lt;saml:Action&gt;" />。</param>
+        <param name="keyInfoTokenSerializer">To be added.</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlAction" /> を、指定した XML ライターに <see langword="&lt;saml:Action&gt;" /> 要素として書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="samlSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

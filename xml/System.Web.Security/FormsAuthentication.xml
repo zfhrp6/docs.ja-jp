@@ -1,0 +1,1291 @@
+<Type Name="FormsAuthentication" FullName="System.Web.Security.FormsAuthentication">
+  <TypeSignature Language="C#" Value="public sealed class FormsAuthentication" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FormsAuthentication extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.FormsAuthentication" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションのフォーム認証サービスを管理します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォーム認証では、ユーザーおよび Windows 認証を必要としない Web アプリケーションのパスワードの検証を実現します。 フォーム認証でユーザー情報が格納されている外部データ ソースにあるなど、<xref:System.Web.Security.Membership>データベース、またはアプリケーションの構成ファイル。 ユーザーが認証されると、フォーム認証を保持して、認証チケットをクッキーまたは URL のように、認証されたユーザーが要求のたびに資格情報を指定する必要はありません。  
+  
+ フォーム認証が有効になって、`mode`する構成要素の属性`Forms`です。 アプリケーションへのすべての要求が次の例で示すように、すべての不明なユーザーの要求を拒否する構成要素を使用して、有効なユーザー認証チケットを含めることを要求することができます。  
+  
+```  
+<system.web>  
+  <authentication mode="Forms">  
+    <forms loginUrl="login.aspx" />  
+  </authentication>  
+  <authorization>  
+    <deny users="?" />  
+  </authorization>  
+</system.web>  
+```  
+  
+ 前の例では、アプリケーションの一部である ASP.NET ページのすべての要求には、フォーム認証で指定されている有効なユーザー名が必要です。 ユーザー名が存在しないかどうかは、要求をリダイレクトする、構成された<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>です。  
+  
+ <xref:System.Web.Security.FormsAuthentication>クラス メソッドとユーザーを認証するアプリケーションで使用できるプロパティにアクセスを提供します。 <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドは、構成されたにブラウザーをリダイレクト<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>のユーザーがアプリケーションにログインします。 <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッド、認証されたユーザーが要求された元の保護された URL にリダイレクトにリダイレクト、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>です。 必要な場合に使用すると、フォーム認証チケットを管理する方法もあります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、すべてのユーザーを認証して、フォーム認証の ASP.NET メンバーシップ プロバイダーを使用する ASP.NET アプリケーションの Web.config ファイルを示します。  
+  
+```  
+<configuration>  
+  <connectionStrings>  
+    <add name="SqlServices" connectionString="Data Source=MySqlServer;Integrated Security=SSPI;Initial Catalog=aspnetdb;" />  
+  </connectionStrings>  
+  <system.web>  
+    <membership defaultProvider="SqlProvider" userIsOnlineTimeWindow="20">  
+      <providers>  
+        <add name="SqlProvider"  
+          type="System.Web.Security.SqlMembershipProvider"  
+          connectionStringName="SqlServices"  
+          enablePasswordRetrieval="false"  
+          enablePasswordReset="true"  
+          requiresQuestionAndAnswer="true"  
+          passwordFormat="Hashed"  
+          applicationName="/" />  
+      </providers>  
+    </membership>  
+  </system.web>  
+</configuration>  
+```  
+  
+ 次のコード例は、フォーム認証と ASP.NET メンバーシップを使用する ASP.NET アプリケーションのログイン ページを示しています。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/logincs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/loginvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">使用する、<see cref="T:System.Web.Security.FormsAuthentication" />ホスト環境でのクラスです。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormsAuthentication ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.FormsAuthentication" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public static bool Authenticate (string name, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Authenticate(string name, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.Authenticate(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to use the Membership APIs, such as Membership.ValidateUser. For more information, see http://go.microsoft.com/fwlink/?LinkId=252463.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザー名。</param>
+        <param name="password">ユーザーのパスワード。</param>
+        <summary>ユーザー名とアプリケーションの構成ファイルに格納されている資格情報に照らしてパスワードを検証します。</summary>
+        <returns>
+          <see langword="true" />場合は、ユーザー名とパスワードが無効です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証方法では、アプリケーション構成ファイルのセクションに格納されているユーザーの資格情報を確認します。 代わりに、ASP.NET メンバーシップを使用してユーザーの資格情報と呼び出しを格納することができます、<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>資格情報を確認します。 詳細については、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+ セキュリティを強化を使用して、アプリケーションの構成ファイルに格納されているパスワードを暗号化することができます、<xref:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アプリケーションの Web.config ファイルに格納されているユーザーの資格情報を示します。 使用してパスワードの値がハッシュされて、<xref:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile%2A>メソッドです。  
+  
+ `<authentication mode="Forms">`  
+  
+ `<forms loginUrl="login.aspx">`  
+  
+ `<credentials passwordFormat="SHA1">`  
+  
+ `<user name="user1"   password="27CE4CA7FBF00685AF2F617E3F5BBCAFF7B7403C" />`  
+  
+ `<user name="user2"   password="D108F80936F78DFDD333141EBC985B0233A30C7A" />`  
+  
+ `<user name="user3" password="7BDB09781A3F23885CD43177C0508B375CB1B7E9"/>`  
+  
+ `</credentials>`  
+  
+ `</forms>`  
+  
+ `</authentication>`  
+  
+ 次のコード例を使用するログイン ページを示しています、<xref:System.Web.Security.FormsAuthentication.Authenticate%2A>ユーザーの資格情報を検証するメソッド。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.FormsAuthentication#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/logincs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.FormsAuthentication#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/loginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieDomain">
+      <MemberSignature Language="C#" Value="public static string CookieDomain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CookieDomain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.CookieDomain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証 cookie のドメインの値を取得します。</summary>
+        <value><see cref="P:System.Web.HttpCookie.Domain" />フォーム認証 cookie のです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.CookieDomain%2A>プロパティの値を使用して ASP.NET アプリケーションの構成ファイルで設定されて、`domain`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.CookieDomain%2A>プロパティの値によって、<xref:System.Web.HttpCookie.Domain%2A>の cookie が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 `domain` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseCookies"  
+    domain="contoso.com" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieMode">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpCookieMode CookieMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Web.HttpCookieMode CookieMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.CookieMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが cookie なしのフォーム認証に構成されているかどうかを示す値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Web.HttpCookieMode" />アプリケーションが cookie なしのフォーム認証のために構成されているかどうかを示す値。 既定値は、<see cref="F:System.Web.HttpCookieMode.UseDeviceProfile" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティの値を反映して、`cookieless`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティを決定するかどうか、<xref:System.Web.Security.FormsAuthenticationTicket>値がブラウザーでセッション cookie に格納されているかに格納されている、<xref:System.Web.HttpRequest.QueryString%2A>プロパティです。  
+  
+> [!NOTE]
+>  ときに、 <xref:System.Web.Security.FormsAuthenticationTicket> URI に値が格納されている、生成された URI の長さが許容最大長より長くすることがあります。 発生する可能性があるときに、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティは、アプリケーション名に設定され、アプリケーション名が長 (40 以上の文字の) アプリケーション内のユーザー名と長、または長い場合<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>に文字列が格納されている、<xref:System.Web.Security.FormsAuthenticationTicket>値。 Web サーバーが返すが生成された URI が長すぎる、`400 - Bad Request`エラーです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`cookieless`属性を`AutoDetect`Web.config ファイルにします。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="AutoDetect" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiesSupported">
+      <MemberSignature Language="C#" Value="public static bool CookiesSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool CookiesSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.CookiesSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが cookie なしのフォーム認証をサポートするように構成するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />アプリケーションが cookie なしのフォーム認証をサポートするために構成されている場合それ以外の場合、<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>プロパティに基づいて値を返します、<xref:System.Web.Security.FormsAuthentication.CookieMode%2A>値と、ブラウザーの機能です。  
+  
+-   場合、<xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティに設定されている<xref:System.Web.HttpCookieMode.UseCookies>、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>が返される`true`です。  
+  
+-   場合、<xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティに設定されている<xref:System.Web.HttpCookieMode.UseUri>、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>が返される`false`です。  
+  
+-   場合、<xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティに設定されている<xref:System.Web.HttpCookieMode.AutoDetect>、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>が返される`true`、ブラウザーが cookie をサポートしているし、クッキーが有効になっている、それ以外の場合、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>が返される`false`です。  
+  
+-   場合、<xref:System.Web.Security.FormsAuthentication.CookieMode%2A>プロパティに設定されている<xref:System.Web.HttpCookieMode.UseDeviceProfile>、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>が返される`true`場合、<xref:System.Web.HttpRequest.Browser%2A>現在の<xref:System.Web.HttpContext.Request%2A>cookie と cookie; でのリダイレクトの両方をサポートそれ以外の場合、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>プロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`cookieless`属性を<xref:System.Web.HttpCookieMode.UseUri>Web.config ファイルにします。 この構成にありますが、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>を返すプロパティ`false`です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseUri" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.FormsAuthenticationTicket Decrypt (string encryptedTicket);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.FormsAuthenticationTicket Decrypt(string encryptedTicket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.Decrypt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.FormsAuthenticationTicket</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedTicket" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedTicket">暗号化された認証チケット。</param>
+        <summary>作成、<see cref="T:System.Web.Security.FormsAuthenticationTicket" />オブジェクトが、メソッドに渡されるフォーム認証の暗号化されたチケットに基づきます。</summary>
+        <returns><see cref="T:System.Web.Security.FormsAuthenticationTicket" /> オブジェクト。 場合、<paramref name="encryptedTicket" />パラメーターが有効なチケット<see langword="null" />が返されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="encryptedTicket" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="encryptedTicket" /> が空の文字列 ("") です。  
+  
+ \- または  
+  
+ 長さ<paramref name="encryptedTicket" />が 4096 文字を超えています。  
+  
+ \- または  
+  
+ <paramref name="encryptedTicket" />形式が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultUrl">
+      <MemberSignature Language="C#" Value="public static string DefaultUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string DefaultUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.DefaultUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URL を取得、<see cref="T:System.Web.Security.FormsAuthentication" />クラスをリダイレクトする場合にないリダイレクト URL を指定します。</summary>
+        <value>URL を<see cref="T:System.Web.Security.FormsAuthentication" />クラスをリダイレクトする場合にないリダイレクト URL を指定します。 既定値は"default.aspx"</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティの値を使用して ASP.NET アプリケーションの構成ファイルで設定されて、`defaultUrl`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティを使って、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッド要求の戻り先 URL が含まれていない場合。 同様に、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドは、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>要求で戻り先 URL が含まれていない場合。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 `defaultUrl` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    defaultUrl="index.aspx" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCrossAppRedirects">
+      <MemberSignature Language="C#" Value="public static bool EnableCrossAppRedirects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableCrossAppRedirects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証されたユーザーを他の Web アプリケーションの Url にリダイレクトできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />認証されたユーザーは、他の Web アプリケーションの Url にリダイレクトできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティ値の設定を使用して、`enableCrossAppRedirects`構成要素の属性です。  
+  
+ <xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>内でプロパティがチェックされた、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、リダイレクト URL が、現在のアプリケーション ページを指していないとします。 場合<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>は`true`、リダイレクトを実行します。 場合<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>は`false`、で定義されているページをブラウザーがリダイレクトされる、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。  
+  
+> [!NOTE]
+>  アプリケーション間で、ページにリダイレクトするときに、構成要素の特定の属性が、認証済みのアプリケーション間で重複していることを確認する必要があります。 例および詳細については、次を参照してください。[アプリケーション間でのフォーム認証](http://msdn.microsoft.com/library/99e2f9e8-5b97-4a4d-a4ed-5f93276053b7)です。  
+  
+> [!IMPORTANT]
+>  アプリケーション間のリダイレクトは許可されている場合、サイトは悪意のある Web サイトへのユーザーに指示が、サイトのログイン ページを使用して攻撃に対して脆弱です。 常にいることを確認、リダイレクト URL によって返される、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドは、承認済みの Web サイトにのみリダイレクトを許可することを確認することができるようにと想定している URL。 リダイレクト URL が適切なプロトコル (HTTP または HTTPS) を使用することを確認する必要があります。 これらの検証を実行するポストバック イベントのハンドラーを追加するには、ログイン ページにまたはのハンドラーを追加することができます、<xref:System.Web.UI.WebControls.Login.LoggedIn>のイベント、<xref:System.Web.UI.WebControls.Login>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`enableCrossAppRedirects`属性を`true`ASP.NET アプリケーションの Web.config ファイルにします。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseUri"  
+    requireSSL="true"   
+    enableCrossAppRedirects="true" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableFormsAuthentication">
+      <MemberSignature Language="C#" Value="public static void EnableFormsAuthentication (System.Collections.Specialized.NameValueCollection configurationData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableFormsAuthentication(class System.Collections.Specialized.NameValueCollection configurationData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.EnableFormsAuthentication(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="configurationData" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="configurationData">"DefaultUrl"や"loginUrl"の値を含む名前と値のコレクション。 パラメーターは、既定の URL または login の URL の値がない場合は null にすることはできます。</param>
+        <summary>フォーム認証を有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティは`null`、プロパティが、URL の既定値に設定されている、`configurationData`パラメーター。 場合、<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>プロパティは`null`から、ログイン URL の値にプロパティが設定されている、`configurationData`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションは、開始前の初期化フェーズではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public static string Encrypt (System.Web.Security.FormsAuthenticationTicket ticket);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Encrypt(class System.Web.Security.FormsAuthenticationTicket ticket) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.Encrypt(System.Web.Security.FormsAuthenticationTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ticket" Type="System.Web.Security.FormsAuthenticationTicket" />
+      </Parameters>
+      <Docs>
+        <param name="ticket"><see cref="T:System.Web.Security.FormsAuthenticationTicket" />暗号化された認証チケットの作成に使用するオブジェクト。</param>
+        <summary>HTTP クッキーで使用するのに適した暗号化された認証チケットを含む文字列を作成します。</summary>
+        <returns>暗号化された認証チケットを含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の結果を格納する、<xref:System.Web.Security.FormsAuthentication.Encrypt%2A>メソッドを使用してクッキーに、<xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>プロパティとリダイレクト URL にユーザーがから返される、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketClass/CS/formsauthenticationticketclasscs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketClass/VB/formsauthenticationticketclassvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ticket" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormsCookieName">
+      <MemberSignature Language="C#" Value="public static string FormsCookieName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string FormsCookieName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.FormsCookieName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証チケットを格納するために使用する cookie の名前を取得します。</summary>
+        <value>フォーム認証チケットを格納するために使用する cookie の名前。 既定値は"です。ASPXAUTH"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>プロパティの値を使用して ASP.NET アプリケーションの構成ファイルで設定されて、`name`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>に保存する cookie を参照するため、<xref:System.Web.Security.FormsAuthenticationTicket>情報。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.Security.FormsAuthentication.FormsCookieName%2A>プロパティの値を使用して、 `name` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseCookies"  
+    name=".ASPXFORMSAUTH" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormsCookiePath">
+      <MemberSignature Language="C#" Value="public static string FormsCookiePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string FormsCookiePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.FormsCookiePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証 cookie のパスを取得します。</summary>
+        <value>フォーム認証チケットの情報が格納されているクッキーのパス。 既定値は「/」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティの値は、構成ファイルで設定を使用する ASP.NET アプリケーション、`path`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>を指定します、<xref:System.Web.HttpCookie.Path%2A>に保存する cookie の<xref:System.Web.Security.FormsAuthenticationTicket>情報。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティの値を使用して、 `path` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseCookies"  
+    path="/MyApplication" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuthCookie">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpCookie GetAuthCookie (string userName, bool createPersistentCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.HttpCookie GetAuthCookie(string userName, bool createPersistentCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.GetAuthCookie(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザーの名前です。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>特定のユーザー名、認証 cookie を作成します。 これは未設定、cookie、送信応答の一部としてアプリケーションが cookie を発行する方法より詳細に制御できるようにします。</summary>
+        <returns><see cref="T:System.Web.HttpCookie" />暗号化された認証チケット情報を格納します。 既定値、<see cref="P:System.Web.Security.FormsAuthentication.FormsCookiePath" />プロパティを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クッキーのパスはによって決定されます、<xref:System.Web.Security.FormsAuthentication.FormsCookiePath%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAuthCookie">
+      <MemberSignature Language="C#" Value="public static System.Web.HttpCookie GetAuthCookie (string userName, bool createPersistentCookie, string strCookiePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.HttpCookie GetAuthCookie(string userName, bool createPersistentCookie, string strCookiePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.GetAuthCookie(System.String,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookie</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+        <Parameter Name="strCookiePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザーの名前です。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="strCookiePath"><see cref="P:System.Web.HttpCookie.Path" />認証 cookie のです。</param>
+        <summary>特定のユーザー名、認証 cookie を作成します。 送信応答の一部としては、cookie を設定されません。</summary>
+        <returns><see cref="T:System.Web.HttpCookie" />暗号化された認証チケット情報を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRedirectUrl">
+      <MemberSignature Language="C#" Value="public static string GetRedirectUrl (string userName, bool createPersistentCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetRedirectUrl(string userName, bool createPersistentCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.GetRedirectUrl(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザーの名前です。</param>
+        <param name="createPersistentCookie">このパラメーターは無視されます。</param>
+        <summary>ログイン ページへのリダイレクトの原因となった元の要求のリダイレクト URL を返します。</summary>
+        <returns>リダイレクト URL を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには、使用する代わりに、アプリケーション コードでのリダイレクトを実行するときに、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドです。  
+  
+ <xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドは、クエリ文字列を使用して、指定された URL を返します、`ReturnURL`変数の名前。 たとえば、URL で`http://www.contoso.com/login.aspx?ReturnUrl=caller.aspx`、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>戻り先 URL を返します`caller.aspx`です。 場合、`ReturnURL`変数が存在しない、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>内の URL を返します、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。  
+  
+ ASP.NET は、ログイン ページをブラウザーがリダイレクトされたとき、戻り先 URL を自動的に追加します。  
+  
+ 既定では、`ReturnUrl`変数は、現在のアプリケーション内のページを参照する必要があります。 場合`ReturnUrl`または別のサーバーに別のアプリケーションでページを指す、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッド内の URL が返されます、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。 設定する必要があります、現在のアプリケーション外のページを参照する戻り先 URL を許可する場合、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`を使用して、`enableCrossAppRedirects`構成要素の属性です。  
+  
+> [!IMPORTANT]
+>  設定、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`アプリケーション間のリダイレクトは潜在的なセキュリティの脅威を許可します。 詳細については、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A> プロパティを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例リダイレクト URL に認証されたユーザーから返される、<xref:System.Web.Security.FormsAuthentication.GetRedirectUrl%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormsAuthenticationTicketClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationTicketClass/CS/formsauthenticationticketclasscs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationTicketClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationTicketClass/VB/formsauthenticationticketclassvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HashPasswordForStoringInConfigFile">
+      <MemberSignature Language="C#" Value="public static string HashPasswordForStoringInConfigFile (string password, string passwordFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string HashPasswordForStoringInConfigFile(string password, string passwordFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("The recommended alternative is to use the Membership APIs, such as Membership.CreateUser. For more information, see http://go.microsoft.com/fwlink/?LinkId=252463.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="passwordFormat" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="password">ハッシュするパスワードです。</param>
+        <param name="passwordFormat">使用するハッシュ アルゴリズム。 <c>passwordFormat</c>は、<see langword="String" />の 1 つを表す、<see cref="T:System.Web.Configuration.FormsAuthPasswordFormat" />列挙値。</param>
+        <summary>指定したパスワードとハッシュ アルゴリズムに基づく構成ファイルに保存するのに適したハッシュ パスワードを生成します。</summary>
+        <returns>ハッシュされたパスワードです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile%2A>メソッドは、アプリケーションの構成ファイルに資格情報をフォーム認証を格納するときに使用できるハッシュされたパスワードの値を作成します。  
+  
+ アプリケーションの構成ファイルに格納されている認証の資格情報が使用、<xref:System.Web.Security.FormsAuthentication.Authenticate%2A>アプリケーションのユーザーのパスワードを確認するメソッド。 代わりに、ASP.NET メンバーシップを使用して、ユーザーの資格情報を格納することができます。 詳細については、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ユーザー名、パスワード、およびハッシュの種類を取得し、ユーザー定義とパスワードのハッシュを含む構成のセクションを表示します。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormsAuthenticationHashPassword#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormsAuthenticationHashPassword/CS/formsauthenticationhashpasswordcs.aspx#1)]
+ [!code-aspx-vb[FormsAuthenticationHashPassword#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormsAuthenticationHashPassword/VB/formsauthenticationhashpasswordvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="password" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="passwordFormat" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="passwordFormat" /> は有効な <see cref="T:System.Web.Configuration.FormsAuthPasswordFormat" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public static void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化、<see cref="T:System.Web.Security.FormsAuthentication" />オブジェクトは、アプリケーションの構成設定に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.Initialize%2A>メソッドが呼び出されます、<xref:System.Web.Security.FormsAuthenticationModule>のインスタンスを作成、<xref:System.Web.Security.FormsAuthentication>クラスです。 このメソッドは、コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public static bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証が有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フォーム認証が有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginUrl">
+      <MemberSignature Language="C#" Value="public static string LoginUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string LoginUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.LoginUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ログイン ページの URL を取得、<see cref="T:System.Web.Security.FormsAuthentication" />クラスにリダイレクトされます。</summary>
+        <value>ページのログインの URL、<see cref="T:System.Web.Security.FormsAuthentication" />クラスにリダイレクトされます。 既定値は"login.aspx です"</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>プロパティの値を使用して ASP.NET アプリケーションの構成ファイルで設定されて、`loginUrl`構成要素の属性です。 <xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>によって使用される、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 `loginUrl` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    defaultUrl="index.aspx" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectFromLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectFromLoginPage (string userName, bool createPersistentCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectFromLoginPage(string userName, bool createPersistentCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.RedirectFromLoginPage(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザー名。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>最初に要求された URL または既定の URL に、認証されたユーザーをリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、クエリ文字列を使用して、指定された URL にリダイレクト、`ReturnURL`変数の名前。 たとえば、URL で`http://www.contoso.com/login.aspx?ReturnUrl=caller.aspx`、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、戻り先 URL にリダイレクト`caller.aspx`です。 場合、`ReturnURL`変数が存在しない、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッド内の URL にリダイレクト、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。  
+  
+ ASP.NET は、ログイン ページをブラウザーがリダイレクトされたとき、戻り先 URL を自動的に追加します。  
+  
+ 既定では、`ReturnUrl`変数は、現在のアプリケーション内のページを参照する必要があります。 場合`ReturnUrl`または別のサーバーに別のアプリケーションでページを指す、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドにリダイレクト URL に、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。 設定する必要があります、現在のアプリケーションの外部ページへのリダイレクトを許可する場合、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`を使用して、`enableCrossAppRedirects`構成要素の属性です。  
+  
+> [!IMPORTANT]
+>  設定、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`アプリケーション間のリダイレクトは潜在的なセキュリティの脅威を許可します。 詳細については、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A> プロパティを参照してください。  
+  
+ 場合、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>プロパティは`true`、いずれか、`ReturnUrl`変数は、現在のアプリケーション内では、または<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティは`true`、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドが、認証チケットを発行し、既定の cookie を使用して、配置、<xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドです。  
+  
+ 場合<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`リダイレクト パスは、現在のアプリケーションの URL には、リダイレクト URL の一部として、チケットが発行したとします。 場合<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>は`true`とリダイレクト URL は、現在のアプリケーション内のページを参照していない、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、認証チケットを発行しに格納、<xref:System.Web.HttpRequest.QueryString%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例検証済みユーザーを最初に要求された URL にリダイレクトする、または<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>です。 コード例では、ASP.NET メンバーシップを使用して、ユーザーを検証します。 ASP.NET メンバーシップの詳細については、次を参照してください。[メンバーシップを使用したユーザーを管理する](http://msdn.microsoft.com/library/824c3a24-f0af-427c-a652-0d2d1e9397cd)です。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/CS/logincs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.SqlMembershipProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SqlMembershipProvider/VB/loginvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">クエリ文字列で指定された戻り先 URL には、HTTP 以外のプロトコルが含まれています: または HTTPS: です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectFromLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectFromLoginPage (string userName, bool createPersistentCookie, string strCookiePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectFromLoginPage(string userName, bool createPersistentCookie, string strCookiePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.RedirectFromLoginPage(System.String,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+        <Parameter Name="strCookiePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザー名。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="strCookiePath">フォーム認証チケットの cookie のパス。</param>
+        <summary>最初に要求された URL またはフォーム認証 cookie の指定された cookie のパスを使用して既定の URL に、認証されたユーザーをリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、クエリを使用して文字列で指定された戻り先 URL にリダイレクト、`ReturnURL`変数の名前。 たとえば、URL で`http://www.contoso.com/login.aspx?ReturnUrl=caller.aspx`、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、戻り先 URL にリダイレクト`caller.aspx`です。 場合、`ReturnURL`変数が存在しない、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッド内の URL にリダイレクト、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。  
+  
+ ASP.NET は、ログイン ページをブラウザーがリダイレクトされたとき、戻り先 URL を自動的に追加します。  
+  
+ 既定では、`ReturnUrl`変数は、現在のアプリケーション内のページを参照する必要があります。 場合`ReturnUrl`または別のサーバーに別のアプリケーションでページを指す、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッド内の URL にリダイレクト、<xref:System.Web.Security.FormsAuthentication.DefaultUrl%2A>プロパティです。 設定する必要があります、現在のアプリケーションの外部ページへのリダイレクトを許可する場合、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`を使用して、`enableCrossAppRedirects`構成要素の属性です。  
+  
+> [!IMPORTANT]
+>  設定、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティを`true`アプリケーション間のリダイレクトは潜在的なセキュリティの脅威を許可します。 詳細については、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A> プロパティを参照してください。  
+  
+ 場合、<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>プロパティは`true`、いずれか、`ReturnUrl`変数は、現在のアプリケーション内では、または<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>プロパティは`true`、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、認証チケットを発行しで指定された cookie に格納、`strCookiePath`パラメーターを使用して、<xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドです。  
+  
+ 場合<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`リダイレクト パスは、現在のアプリケーションの URL には、リダイレクト URL の一部として、チケットが発行したとします。 場合<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`、<xref:System.Web.Security.FormsAuthentication.EnableCrossAppRedirects%2A>は`true`とリダイレクト URL は、現在のアプリケーション内のページを参照していない、<xref:System.Web.Security.FormsAuthentication.RedirectFromLoginPage%2A>メソッドは、認証チケットを発行しに格納、<xref:System.Web.HttpRequest.QueryString%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">クエリ文字列で指定された戻り先 URL には、HTTP 以外のプロトコルが含まれています: または HTTPS: です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="RedirectToLoginPage">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ログイン URL にブラウザーをリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドにリダイレクトするブラウザー、<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>です。  
+  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドでは、フォーム認証 cookie は消去されません。 使用することができます、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドと組み合わせて、 <xref:System.Web.Security.FormsAuthentication.SignOut%2A> 1 人のユーザーをログアウトし、別のユーザーをログインできるようにするメソッド。  
+  
+ 異なり、<xref:System.Web.HttpResponse.Redirect%2A?displayProperty=nameWithType>メソッド、このメソッドが呼び出すことにより、要求を終了しない<xref:System.Web.HttpResponse.End%2A?displayProperty=nameWithType>です。 つまり、そのコードに続く、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドの呼び出しが実行されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証 cookie を使用して、クリア、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドと、ユーザーをログイン ページを使用してリダイレクト、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Security.FormsAuthentication#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.FormsAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="RedirectToLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectToLoginPage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLoginPage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.RedirectToLoginPage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ログイン URL にブラウザーをリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドにリダイレクトするブラウザー、<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>です。  
+  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドでは、フォーム認証 cookie は消去されません。 使用することができます、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドと組み合わせて、 <xref:System.Web.Security.FormsAuthentication.SignOut%2A> 1 人のユーザーをログアウトし、別のユーザーをログインできるようにするメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証 cookie を使用して、クリア、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドと、ユーザーをログイン ページを使用してリダイレクト、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Security.FormsAuthentication#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.FormsAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToLoginPage">
+      <MemberSignature Language="C#" Value="public static void RedirectToLoginPage (string extraQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RedirectToLoginPage(string extraQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.RedirectToLoginPage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extraQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="extraQueryString">リダイレクト URL に含めるクエリ文字列。</param>
+        <summary>指定したクエリ文字列でログイン URL にブラウザーをリダイレクトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドにリダイレクトするブラウザー、<xref:System.Web.Security.FormsAuthentication.LoginUrl%2A>が含まれています、`extraQueryString`として値、<xref:System.Management.ManagementQuery.QueryString%2A>リダイレクトされる url です。  
+  
+ <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドでは、フォーム認証 cookie は消去されません。 使用することができます、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドと組み合わせて、 <xref:System.Web.Security.FormsAuthentication.SignOut%2A> 1 人のユーザーをログアウトし、別のユーザーをログインできるようにするメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証 cookie を使用して、クリア、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドと、ユーザーをログイン ページを使用してリダイレクト、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Security.FormsAuthentication#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signout2cs.aspx#3)]
+ [!code-aspx-vb[System.Web.Security.FormsAuthentication#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signout2vb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenewTicketIfOld">
+      <MemberSignature Language="C#" Value="public static System.Web.Security.FormsAuthenticationTicket RenewTicketIfOld (System.Web.Security.FormsAuthenticationTicket tOld);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Security.FormsAuthenticationTicket RenewTicketIfOld(class System.Web.Security.FormsAuthenticationTicket tOld) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.RenewTicketIfOld(System.Web.Security.FormsAuthenticationTicket)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.FormsAuthenticationTicket</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tOld" Type="System.Web.Security.FormsAuthenticationTicket" />
+      </Parameters>
+      <Docs>
+        <param name="tOld">更新するフォーム認証チケット。</param>
+        <summary>更新プログラムのある、発行日と有効期限の日付と時刻の条件付きで、<see cref="T:System.Web.Security.FormsAuthenticationTicket" />です。</summary>
+        <returns>更新された <see cref="T:System.Web.Security.FormsAuthenticationTicket" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RenewTicketIfOld%2A>メソッドは、有効期限の日付と時刻の指定を更新<xref:System.Web.Security.FormsAuthenticationTicket>場合、現在の日付とマイナスの時間、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>値がより大きい、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>現在の日付と時刻を引いた値。  
+  
+ チケットが更新、<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>プロパティの現在の日付と時刻に設定し、<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>プロパティ、現在の日付と時刻と、元に設定する<xref:System.Web.Security.FormsAuthenticationTicket.Expiration%2A>元を引いた値<xref:System.Web.Security.FormsAuthenticationTicket.IssueDate%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireSSL">
+      <MemberSignature Language="C#" Value="public static bool RequireSSL { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RequireSSL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.RequireSSL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォーム認証 cookie がサーバーに返されるために SSL を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />SSL が必要な場合、フォーム認証クッキーをサーバーに戻るにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.RequireSSL%2A>プロパティの値を使用して ASP.NET アプリケーションの構成ファイルで設定されて、`requireSSL`構成要素の属性です。 指定できます、Web.config ファイルで ASP.NET アプリケーションの SSL (Secure Sockets Layer) がサーバーに設定して、フォーム認証 cookie を返す必要かどうか、`requireSSL`属性。 詳細については、「<xref:System.Web.HttpCookie.Secure%2A>」を参照してください。  
+  
+ 推奨を構成する場合`requireSSL`として`false`、構成することも`slidingExpiration`として`false`チケットの有効期限の量を削減するためです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、 `requireSSL` Web.config ファイル内の属性です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    cookieless="UseCookies"  
+    requireSSL="true"  
+    path="/MyApplication" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetAuthCookie">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定されたユーザー名の認証チケットを作成し、追加や、URL、応答のクッキー コレクションに cookie なしの認証を使用している場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドでは場合、cookie のコレクションまたは URL に、フォーム認証チケットを追加<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`します。 フォーム認証チケットは、次のブラウザーによって行われた要求にフォーム認証情報を提供します。 フォーム認証で使用することができます、<xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドは、ユーザーの認証が、リダイレクトの制御を維持するとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetAuthCookie">
+      <MemberSignature Language="C#" Value="public static void SetAuthCookie (string userName, bool createPersistentCookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAuthCookie(string userName, bool createPersistentCookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.SetAuthCookie(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザーの名前。 これを Windows アカウントにマップがありません。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたユーザー名の認証チケットを作成し、追加や、URL、応答のクッキー コレクションに cookie なしの認証を使用している場合。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドの場合に、いずれかのクッキー コレクション、または URL にフォーム認証チケットを追加します<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`します。 フォーム認証チケットは、次のブラウザーによって行われた要求にフォーム認証情報を提供します。 フォーム認証で使用することができます、<xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドは、ユーザーの認証が、リダイレクトの制御を維持するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> が <see langword="true" /> で、<see cref="P:System.Web.HttpRequest.IsSecureConnection" /> が <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAuthCookie">
+      <MemberSignature Language="C#" Value="public static void SetAuthCookie (string userName, bool createPersistentCookie, string strCookiePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAuthCookie(string userName, bool createPersistentCookie, string strCookiePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.SetAuthCookie(System.String,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="createPersistentCookie" Type="System.Boolean" />
+        <Parameter Name="strCookiePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">認証されたユーザーの名前。</param>
+        <param name="createPersistentCookie">
+          <see langword="true" />(1 つは、ブラウザー セッション間で保存されている); 永続的な cookie を作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="strCookiePath">フォーム認証チケットの cookie のパス。</param>
+        <summary>指定されたユーザー名の認証チケットを作成し、指定された cookie のパスを使用または cookie なしの認証を使用している場合は、この URL を使用して、応答のクッキー コレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドでは場合、cookie のコレクションまたは URL に、フォーム認証チケットを追加<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`します。 フォーム認証チケットは、次のブラウザーによって行われた要求にフォーム認証情報を提供します。 フォーム認証で使用することができます、<xref:System.Web.Security.FormsAuthentication.SetAuthCookie%2A>メソッドは、ユーザーの認証が、リダイレクトの制御を維持するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">
+          <see cref="P:System.Web.Security.FormsAuthentication.RequireSSL" /> が <see langword="true" /> で、<see cref="P:System.Web.HttpRequest.IsSecureConnection" /> が <see langword="false" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FormsAuthentication.SignOut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ブラウザーからフォーム認証チケットを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.SignOut%2A>場合、メソッドのクッキーまたは URL からの削除、フォーム認証チケット情報<xref:System.Web.Security.FormsAuthentication.CookiesSupported%2A>は`false`します。 使用することができます、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドと組み合わせて、 <xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A> 1 人のユーザーをログアウトし、別のユーザーをログインできるようにするメソッド。  
+  
+ Cookie なしのモードで排他的に実行するかを明示的に認証と匿名ユーザーの両方をサポートする場合は、匿名 id を削除した結果として実行する特別なビジネス ロジックが必要な場合、ログイン ページへのリダイレクトを制御します。  
+  
+ ときに、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドが呼び出されると、呼び出すことによって、アプリケーションのログイン ページへのリダイレクトが行われた、<xref:System.Web.HttpResponse.Redirect%2A>メソッドを`endResponse`パラメーターに設定`false`です。 リダイレクトは行われず、現在のページの実行が完了するまで追加のコードを実行できるようにします。 コードに別のページへの明示的なリダイレクトが含まれていない場合は、ユーザーがアプリケーションの構成ファイルで構成されたログイン ページにリダイレクトされます。  
+  
+ 呼び出す、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドでは、フォーム認証の cookie のみを削除します。 Web サーバーは、後で比較用に有効であり、有効期限が切れた認証チケットを格納しません。 これにより、サイトを悪意のあるユーザーが、有効なフォーム認証 cookie を取得する場合はリプレイ攻撃に対して脆弱です。 フォーム認証 cookie を使用する場合にセキュリティを強化するには、次の操作を行う必要があります。  
+  
+-   フォーム認証 cookie を設定して絶対有効期限を使用して、<xref:System.Web.Security.FormsAuthentication.SlidingExpiration%2A>プロパティを`false`です。 これにより、乗っ取ら cookie を再生できるウィンドウが制限されます。  
+  
+-   だけを発行しを設定して Secure Sockets Layer (SSL) 経由での認証クッキーを受け入れ、<xref:System.Web.Security.FormsAuthentication.RequireSSL%2A>プロパティを`true`し、Web サイト全体で SSL を実行しています。 設定、<xref:System.Web.Security.FormsAuthentication.RequireSSL%2A>プロパティを`true`により、ASP.NET は送信しません、認証 cookie をブラウザーに非 SSL 接続経由でです。 ただし、クライアントが、設定は無視セキュリティで保護された cookie のことです。 つまり、クライアントが送信するフォーム認証 cookie、非 SSL 接続を経由したがってがハイジャックされる危険にさらさです。 クライアントは、フォーム認証 cookie をクリア テキストで、Web サイト全体で SSL を実行して、送信されないようにできます。  
+  
+-   サーバー上で永続的な記憶域を使用して Web サイトからログオフしたときを記録しなど、アプリケーション イベントを使用し、<xref:System.Web.HttpApplication.PostAuthenticateRequest>現在のユーザーがフォーム認証で認証されたかどうかを決定するイベントです。 場合は、ユーザーがフォーム認証で認証されたユーザーがログアウトして永続的ストレージ内の情報が示されている場合、ただちに認証 cookie をクリアし、ログイン ページに戻る、ブラウザーをリダイレクトします。 ログインに成功した後、ユーザーがログインしていることを反映するように記憶域を更新します。 このメソッドを使用して、アプリケーション ログに記録で、ユーザーのステータスを追跡する必要がアイドル状態のユーザーをログアウトを強制する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フォーム認証 cookie を使用して、クリア、<xref:System.Web.Security.FormsAuthentication.SignOut%2A>メソッドと、ユーザーをログイン ページを使用してリダイレクト、<xref:System.Web.Security.FormsAuthentication.RedirectToLoginPage%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Security.FormsAuthentication#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/CS/signoutcs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.FormsAuthentication#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.FormsAuthentication/VB/signoutvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SlidingExpiration">
+      <MemberSignature Language="C#" Value="public static bool SlidingExpiration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool SlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.SlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スライディング期限を有効にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />スライディング期限が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FormsAuthentication.SlidingExpiration%2A>プロパティ値の設定を使用して、`slidingExpiration`構成要素の属性です。  
+  
+ スライディング期限を有効では、要求が行われ、タイムアウト間隔の半分以上が経過した場合に有効な認証 cookie の有効期限をリセットします。 クッキーの期限が切れると、ユーザー再認証する必要があります。 設定、<xref:System.Web.Security.FormsAuthentication.SlidingExpiration%2A>プロパティを`false`セキュリティを強化できますアプリケーションの認証クッキーの有効期限、時間を制限することによって、構成されたに基づいて`timeout`値。  
+  
+ お勧めを構成する場合`requireSSL`として`false`、構成することも`slidingExpiration`として`false`チケットの有効期限の量を削減するためです。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`slidingExpiration`属性を`false`ASP.NET アプリケーションの Web.config ファイルにします。  
+  
+```  
+<authentication mode="Forms">  
+  <forms loginUrl="member_login.aspx"  
+    name=".ASPXFORMSAUTH"  
+    cookieless="UseCookies"  
+    requireSSL="true"   
+    slidingExpiration="false" />  
+</authentication>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TicketCompatibilityMode">
+      <MemberSignature Language="C#" Value="public static System.Web.Configuration.TicketCompatibilityMode TicketCompatibilityMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Web.Configuration.TicketCompatibilityMode TicketCompatibilityMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.TicketCompatibilityMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TicketCompatibilityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットの有効期限の日付を世界協定時刻 (UTC) または現地時刻を使用するかどうかを示す値を取得します。</summary>
+        <value>チケットの有効期限の日付を世界協定時刻 (UTC) または現地時刻を使用するかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public static TimeSpan Timeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.FormsAuthentication.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証チケットの有効期限が切れるまでの時間を取得します。</summary>
+        <value>認証チケットの前に時間が有効期限です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

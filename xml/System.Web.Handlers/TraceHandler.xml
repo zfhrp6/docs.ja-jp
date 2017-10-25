@@ -1,0 +1,222 @@
+<Type Name="TraceHandler" FullName="System.Web.Handlers.TraceHandler">
+  <TypeSignature Language="C#" Value="public class TraceHandler : System.Web.IHttpHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TraceHandler extends System.Object implements class System.Web.IHttpHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Handlers.TraceHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>トレース情報の要求を処理する同期 HTTP ハンドラーを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Handlers.TraceHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReusable">
+      <MemberSignature Language="C#" Value="protected bool IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Handlers.TraceHandler.IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.Handlers.TraceHandler" />インスタンス。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="protected void ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />現在へのアクセスを提供するオブジェクト<see langword="Request" />と<see langword="Response" />インスタンス。</param>
+        <summary>HTTP 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>メソッドの書き込み、<xref:System.Web.HttpResponse>を現在のすべてのトレース情報が含まれています。 トレース情報にはへの呼び出しが含まれています、 `protected` <xref:System.Web.Handlers.TraceHandler.ShowDetails%2A>、 <xref:System.Web.Handlers.TraceHandler.ShowRequests%2A>、および<xref:System.Web.Handlers.TraceHandler.ShowVersionDetails%2A>メソッドです。  
+  
+ <xref:System.Web.Handlers.TraceHandler>クラスが実装する、<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>の実装に委任する方法、<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>メソッドです。 拡張する場合、<xref:System.Web.Handlers.TraceHandler>クラス、独自に実装<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>メソッドをさまざまなトレース情報を表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDetails">
+      <MemberSignature Language="C#" Value="protected void ShowDetails (System.Data.DataSet data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ShowDetails(class System.Data.DataSet data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.ShowDetails(System.Data.DataSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Data.DataSet" />
+      </Parameters>
+      <Docs>
+        <param name="data">A<see cref="T:System.Data.DataSet" />トレース情報を含むオブジェクト。</param>
+        <summary>現在のシステム状態およびページの情報の詳細を応答ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.TraceHandler.ShowDetails%2A>コントロール ツリーの現在のページ、およびクエリ文字列およびフォーム パラメーターなどの HTTP 要求情報用に作成された、現在のセッションのセッション状態のアプリケーションの状態に関する情報を含むメソッドは、トレースの詳細を応答ストリームに書き込みます。 メソッドによって呼び出されます<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>、オーバーライドすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowRequests">
+      <MemberSignature Language="C#" Value="protected void ShowRequests (System.Collections.IList data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ShowRequests(class System.Collections.IList data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.ShowRequests(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="data">一連の<see cref="T:System.Data.DataSet" />サーバーによって処理された最新の HTTP 要求を表すオブジェクト。</param>
+        <summary>最近使用した HTTP 要求のトラフィックの詳細を応答ストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.TraceHandler.ShowRequests%2A> ASP.NET が、サイトの処理を最新の HTTP 要求に関する情報を含むメソッドは、トレースの詳細を応答ストリームに書き込みます。 メソッドによって呼び出されます<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>、オーバーライドすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowVersionDetails">
+      <MemberSignature Language="C#" Value="protected void ShowVersionDetails ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ShowVersionDetails() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.ShowVersionDetails" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の共通言語ランタイムと ASP.NET の詳細は、Web サーバーを使用しているバージョンをビルドに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Handlers.TraceHandler.ShowVersionDetails%2A>メソッドは、現在使用中の共通言語ランタイム (CLR) と ASP.NET のバージョンでトレースの詳細を書き込みます。 メソッドによって呼び出されます<xref:System.Web.Handlers.TraceHandler.ProcessRequest%2A>、オーバーライドすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.IsReusable">
+      <MemberSignature Language="C#" Value="bool System.Web.IHttpHandler.IsReusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.IHttpHandler.IsReusable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Handlers.TraceHandler.System#Web#IHttpHandler#IsReusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の要求が使用できるかどうかを示す値を取得、<see cref="T:System.Web.Handlers.TraceHandler" />インスタンス。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.Handlers.TraceHandler> のインスタンスが <xref:System.Web.IHttpHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.IHttpHandler.ProcessRequest">
+      <MemberSignature Language="C#" Value="void IHttpHandler.ProcessRequest (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.IHttpHandler.ProcessRequest(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Handlers.TraceHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />現在へのアクセスを提供するオブジェクト<see langword="Request" />と<see langword="Response" />インスタンス。</param>
+        <summary>HTTP 要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを現在のトレース情報をすべて、<xref:System.Web.HttpResponse>です。 トレース情報には、Web サーバー、現在のセッションの現在のページ、HTTP 要求のパラメーター、および最近使用した HTTP 要求がサーバーによって処理されるコントロール ツリーの状態に関する情報が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

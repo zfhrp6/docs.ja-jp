@@ -1,0 +1,263 @@
+<Type Name="StateActivity" FullName="System.Workflow.Activities.StateActivity">
+  <TypeSignature Language="C#" Value="public class StateActivity : System.Workflow.ComponentModel.CompositeActivity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StateActivity extends System.Workflow.ComponentModel.CompositeActivity" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.StateActivity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.CompositeActivity</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Workflow.Activities.StateDesigner), typeof(System.ComponentModel.Design.IDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Workflow.ComponentModel.Design.ActivityToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Workflow.Activities.StateActivity), "Resources.StateActivity.png")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Workflow.ComponentModel.Compiler.ActivityValidator(typeof(System.Workflow.Activities.StateActivityValidator))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.StateMachineWorkflowActivity" /> の状態を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Activities.StateActivity> の状態を表す <xref:System.Workflow.Activities.StateMachineWorkflowActivity>。 State アクティビティは、1 つ以上の <xref:System.Workflow.Activities.EventDrivenActivity> クラスまたは <xref:System.Workflow.Activities.StateActivity> クラス、1 つの <xref:System.Workflow.Activities.StateInitializationActivity> クラス、および 1 つの <xref:System.Workflow.Activities.StateFinalizationActivity> クラスを格納する可能性があります。  SetState アクティビティは、ワークフローの状態を移行するために <xref:System.Workflow.Activities.EventHandlersActivity> と <xref:System.Workflow.Activities.StateInitializationActivity> の内部で使用されます。  
+  
+ <xref:System.Workflow.Activities.StateActivity> の実行中に受信できるイベントは、<xref:System.Workflow.Activities.EventDrivenActivity> の <xref:System.Workflow.Activities.StateActivity> アクティビティ、および囲んでいる <xref:System.Workflow.Activities.EventDrivenActivity> アクティビティとルート <xref:System.Workflow.Activities.StateActivity> に関連付けられた <xref:System.Workflow.ComponentModel.Activity> アクティビティによって処理できるイベントだけです。  
+  
+ <xref:System.Workflow.Activities.StateActivity> は実行を開始したとき、<xref:System.Workflow.Activities.StateActivity> は、<xref:System.Workflow.Activities.StateInitializationActivity> アクティビティが存在するかどうかをチェックします。 <xref:System.Workflow.Activities.StateActivity> には、ゼロまたは 1 つの <xref:System.Workflow.Activities.StateInitializationActivity> アクティビティを設定できます。 <xref:System.Workflow.Activities.StateInitializationActivity> アクティビティが存在する場合、<xref:System.Workflow.Activities.StateInitializationActivity> は実行されます。 <xref:System.Workflow.Activities.StateInitializationActivity> アクティビティが終了するとすぐに、<xref:System.Workflow.Activities.StateActivity> はイベントをブロックして、<xref:System.Workflow.Activities.StateActivity> がその <xref:System.Workflow.Activities.EventDrivenActivity> アクティビティによって処理できるイベントだけを受信できるようにします。  
+  
+ <xref:System.Workflow.Activities.StateActivity> は <xref:System.Workflow.ComponentModel.CompositeActivity> です。つまり、<xref:System.Workflow.Activities.StateActivity> アクティビティには他のアクティビティを含めることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Workflow.Activities.StateActivity> クラスの新しいインスタンスを作成し、3 つの状態間を遷移する簡単なステート マシンを実装する方法を示します。 このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 詳細については、次を参照してください。[簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[wf_samples#181](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#181)]
+ [!code-vb[wf_samples#181](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#181)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StateActivity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.StateActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Activities.StateActivity> クラスの新規インスタンスを作成する方法を、次のコード例に示します。  このコード例は、StateMachineWorkflow.cs ファイルから抜粋した SimpleStateMachineWorkflow SDK サンプルの一部です。 詳細については、次を参照してください。[簡単なステート マシン](http://msdn.microsoft.com/en-us/1974edbd-253d-4e01-9095-38ff9c3e749e)です。  
+  
+ [!code-csharp[WF_Samples#188](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#188)]
+ [!code-vb[WF_Samples#188](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#188)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StateActivity (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティビティのユーザー定義名。</param>
+        <summary>アクティビティ名を使用して、<see cref="T:System.Workflow.Activities.StateActivity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Cancel (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Cancel(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.Cancel(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">アクティビティの実行コンテキスト。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateActivity" /> の実行をキャンセルします。</summary>
+        <returns>実行中ワークフロー インスタンス内の <see cref="T:System.Workflow.ComponentModel.Activity" /> の現在のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.ActivityExecutionStatus Execute (System.Workflow.ComponentModel.ActivityExecutionContext executionContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Workflow.ComponentModel.ActivityExecutionStatus Execute(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.Execute(System.Workflow.ComponentModel.ActivityExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.ActivityExecutionStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">アクティビティの実行コンテキスト。</param>
+        <summary><see cref="T:System.Workflow.Activities.StateActivity" /> を実行します。</summary>
+        <returns>実行中ワークフロー インスタンス内の <see cref="T:System.Workflow.ComponentModel.Activity" /> の現在のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDynamicActivity">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity GetDynamicActivity (string childActivityName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Activity GetDynamicActivity(string childActivityName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.GetDynamicActivity(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childActivityName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="childActivityName">子アクティビティ。</param>
+        <summary>指定された子アクティビティ名に対応する <see cref="T:System.Workflow.ComponentModel.Activity" /> の実行中のインスタンスを取得します。</summary>
+        <returns>動的な子アクティビティ。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">実行可能なアクティビティは <paramref name="childActivityName" /> を含みません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.Initialize(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスの取得元のサービス プロバイダー。</param>
+        <summary>サービス プロバイダーを使用して <see cref="T:System.Workflow.Activities.StateActivity" /> を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivityChangeAdd">
+      <MemberSignature Language="C#" Value="protected override void OnActivityChangeAdd (System.Workflow.ComponentModel.ActivityExecutionContext executionContext, System.Workflow.ComponentModel.Activity addedActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnActivityChangeAdd(class System.Workflow.ComponentModel.ActivityExecutionContext executionContext, class System.Workflow.ComponentModel.Activity addedActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.OnActivityChangeAdd(System.Workflow.ComponentModel.ActivityExecutionContext,System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executionContext" Type="System.Workflow.ComponentModel.ActivityExecutionContext" />
+        <Parameter Name="addedActivity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="executionContext">アクティビティの実行コンテキスト。</param>
+        <param name="addedActivity"><see cref="T:System.Workflow.Activities.StateActivity" /> に追加されるアクティビティ。</param>
+        <summary>追加されるアクティビティが <see cref="T:System.Workflow.Activities.EventDrivenActivity" /> であるかどうかを判断し、そのアクティビティである場合は、新しく追加されるイベント ドリブンを定期受信する必要があるかどうかを検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ユーザーがワークフローの変更によって、子を <xref:System.Workflow.ComponentModel.CompositeActivity> に追加するたびに呼び出されるメソッドです。 このメソッドは、CompositeActivity で定義され、StateActivity によってオーバーライドされます。このメソッドでは、追加されるアクティビティが <xref:System.Workflow.Activities.EventDrivenActivity> であるかどうかをチェックし、そのアクティビティである場合は、新しく追加されるイベント ドリブンを定期受信する必要があるかどうかを検証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected override void OnClosed (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClosed(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Activities.StateActivity.OnClosed(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">サービスの取得元のサービス プロバイダー。</param>
+        <summary><see cref="F:System.Workflow.ComponentModel.ActivityExecutionStatus.Closed" /> 状態へのアクティビティの遷移の一部として、ワークフロー ランタイム エンジンによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChangeTrackingDataKey">
+      <MemberSignature Language="C#" Value="public const string StateChangeTrackingDataKey;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string StateChangeTrackingDataKey" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.StateActivity.StateChangeTrackingDataKey" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の追跡データ キーの文字列値 "StateActivity.StateChange" を保持します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

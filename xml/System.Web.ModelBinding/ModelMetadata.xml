@@ -1,0 +1,669 @@
+<Type Name="ModelMetadata" FullName="System.Web.ModelBinding.ModelMetadata">
+  <TypeSignature Language="C#" Value="public class ModelMetadata" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ModelMetadata extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ModelBinding.ModelMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>モデルのメタデータのコンテナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単語*モデル*別々 に使用されるこのクラスのコンテキストでは、他の場所に使用される通常よりもします。 ASP.NET Web フォーム アプリケーションで、<xref:System.Web.ModelBinding.ModelBindingContext.ModelType%2A>データ バインド コントロールの属性に、データ コントロールがバインドされているデータ要素の型を指定します。 この型は通常と呼ばれ、モデルでは、通常、データベース テーブル内の行に対応しています。 モデルのプロパティは、通常、テーブルの列に対応しています。  
+  
+ A<xref:System.Web.ModelBinding.ModelMetadata>オブジェクトは、モデル自体またはモデルのプロパティまたは複合プロパティのプロパティ メタデータを提供できます。 ときに、<xref:System.Web.ModelBinding.ModelMetadata>オブジェクトは、word、プロパティに関連*モデル*、プロパティ、および単語を指す*コンテナー*モデルを参照します。  
+  
+ たとえば、モデルがあります**にお問い合わせください**を持つ**名前**と**Age**プロパティ、および**名前**プロパティから成る複雑なプロパティである可能性があります**FirstName**と**LastName**です。 ときに、<xref:System.Web.ModelBinding.ModelMetadata>オブジェクトに関連、**連絡先**オブジェクト、モデルの種類は**連絡先**コンテナーが存在しないとします。 ときに、<xref:System.Web.ModelBinding.ModelMetadata>オブジェクトに関連、**名前**プロパティ、モデルの種類は**名前**コンテナーの種類と**にお問い合わせください**です。 ときに、<xref:System.Web.ModelBinding.ModelMetadata>オブジェクトに関連、 **FirstName**プロパティ、モデルの種類は**FirstName**コンテナーの種類と**名前**です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ModelMetadata (System.Web.ModelBinding.ModelMetadataProvider provider, Type containerType, Func&lt;object&gt; modelAccessor, Type modelType, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.ModelBinding.ModelMetadataProvider provider, class System.Type containerType, class System.Func`1&lt;object&gt; modelAccessor, class System.Type modelType, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelMetadata.#ctor(System.Web.ModelBinding.ModelMetadataProvider,System.Type,System.Func{System.Object},System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.ModelBinding.ModelMetadataProvider" />
+        <Parameter Name="containerType" Type="System.Type" />
+        <Parameter Name="modelAccessor" Type="System.Func&lt;System.Object&gt;" />
+        <Parameter Name="modelType" Type="System.Type" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider">プロバイダー オブジェクト。</param>
+        <param name="containerType">コンテナーの種類または<see langword="null" />メタデータ、モデルの種類を作成します。</param>
+        <param name="modelAccessor">モデル アクセサー。</param>
+        <param name="modelType">モデルの型。</param>
+        <param name="propertyName">プロパティの名前または<see langword="null" />メタデータ、モデルの種類を作成します。</param>
+        <summary><see cref="T:System.Web.ModelBinding.ModelMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalValues">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.Dictionary&lt;string,object&gt; AdditionalValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, object&gt; AdditionalValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.AdditionalValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルに関する追加のメタデータを格納するコレクションを取得します。</summary>
+        <value>モデルに関する追加のメタデータを格納するコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerType">
+      <MemberSignature Language="C#" Value="public Type ContainerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContainerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ContainerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーの種類を取得します。</summary>
+        <value>コンテナーの種類または<see langword="null" />コンテナーが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public virtual bool ConvertEmptyStringToNull { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームに送信される空の文字列を変換するかどうかを決定する値の設定を取得または<see langword="null" />です。</summary>
+        <value>
+          <see langword="true" />空の文字列に変換する場合<see langword="null" />、それ以外の<see langword="false" />します。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTypeName">
+      <MemberSignature Language="C#" Value="public virtual string DataTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.DataTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ型の名前を設定します。</summary>
+        <value>データ型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、モデルが格納されているデータの種類に関する追加情報を使用できます。 たとえば場合、<xref:System.Web.ModelBinding.ModelMetadata.ModelType%2A>プロパティに設定されている<xref:System.String>、"EmailAddress"または"Url"、このプロパティがあります: を示すだけで複数のデータが文字列として入力されている名前は、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultOrder">
+      <MemberSignature Language="C#" Value="public const int DefaultOrder = 10000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultOrder = (10000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.ModelBinding.ModelMetadata.DefaultOrder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>10000</MemberValue>
+      <Docs>
+        <summary>常に設定する整数値<c>10000</c>です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルを説明するテキストを設定します。</summary>
+        <value>説明テキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayFormatString">
+      <MemberSignature Language="C#" Value="public virtual string DisplayFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.DisplayFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定ではなく、編集モードで) 表示モードでは、モデルが表示されるときに適用される書式指定文字列。</summary>
+        <value>書式指定文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルの名前が表示されるときに、UI に使用するテキストを設定します。</summary>
+        <value>モデルの名前として使用するテキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditFormatString">
+      <MemberSignature Language="C#" Value="public virtual string EditFormatString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EditFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.EditFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または編集モードで UI に使用する書式指定文字列を設定します。</summary>
+        <value>書式指定文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDisplayName">
+      <MemberSignature Language="C#" Value="public string GetDisplayName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetDisplayName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelMetadata.GetDisplayName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>UI でモデルの名前として表示するテキストを返します。</summary>
+        <returns>UI でモデルの名前として表示するテキスト。 既定の値は、<see cref="P:System.Web.ModelBinding.ModelMetadata.DisplayName" />プロパティがその値がない場合<see langword="null" />です。 場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.DisplayName" />プロパティは<see langword="null" />、既定値の値、<see cref="P:System.Web.ModelBinding.ModelMetadata.PropertyName" />プロパティです。 場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.PropertyName" />プロパティは<see langword="null" />、既定値に由来、<see cref="P:System.Reflection.MemberInfo.Name" />のプロパティ、<see cref="P:System.Web.ModelBinding.ModelMetadata.ModelType" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSimpleDisplayText">
+      <MemberSignature Language="C#" Value="protected virtual string GetSimpleDisplayText ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetSimpleDisplayText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelMetadata.GetSimpleDisplayText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに表示されるモデルのモデルが複雑なオブジェクトを表すテキストを返します。</summary>
+        <returns>プロパティ値は、戻り値が見つかるまで、次の一連の関連する値を調べることによって取得されます。  
+  
+1.  場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.SimpleDisplayText" />プロパティの値が<see langword="null" />、その値が返されます。  
+  
+2.  場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />プロパティは<see langword="null" />、<see cref="P:System.Web.ModelBinding.ModelMetadata.NullDisplayText" />プロパティの値が返されます。  
+  
+3.  変換を試みると、<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />プロパティ文字列を返します<see langword="null" />、空の文字列が返されます。  
+  
+4.  場合の文字列の変換、<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />プロパティの値は同じで、<see cref="P:System.Type.FullName" />のプロパティ、<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />プロパティの型、その値が返されます。  
+  
+5.  プロパティがない場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.Properties" />コレクション、空の文字列が返されます。  
+  
+6.  戻り値に由来で最初のプロパティ値を返される前のテストの場合は、<see cref="P:System.Web.ModelBinding.ModelMetadata.Properties" />コレクション。 場合、<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />最初のプロパティのプロパティは<see langword="null" />、<see cref="P:System.Web.ModelBinding.ModelMetadata.NullDisplayText" />プロパティの値を返します。 それ以外の場合、最初のプロパティに変換した結果<see cref="P:System.Web.ModelBinding.ModelMetadata.Model" />を文字列にプロパティが返されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValidators">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidator&gt; GetValidators (System.Web.ModelBinding.ModelBindingExecutionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.ModelBinding.ModelValidator&gt; GetValidators(class System.Web.ModelBinding.ModelBindingExecutionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ModelBinding.ModelMetadata.GetValidators(System.Web.ModelBinding.ModelBindingExecutionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelValidator&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.ModelBinding.ModelBindingExecutionContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">モデル バインディング実行コンテキスト。</param>
+        <summary>モデルに適用される検証コントロールのコレクションを返します。</summary>
+        <returns>検証コントロールのコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HideSurroundingHtml">
+      <MemberSignature Language="C#" Value="public virtual bool HideSurroundingHtml { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HideSurroundingHtml" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.HideSurroundingHtml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または HTML の周囲を非表示かどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は HTML を囲むは非表示にする必要があります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsComplexType">
+      <MemberSignature Language="C#" Value="public virtual bool IsComplexType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsComplexType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.IsComplexType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルが複合型であるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />モデルが複合型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework の組み込み型では、このプロパティの目的での複合型は考慮されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullableValueType">
+      <MemberSignature Language="C#" Value="public bool IsNullableValueType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullableValueType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.IsNullableValueType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルは、null 許容値型であるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />モデルが null 許容値型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルを更新できるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />モデルが読み取り専用の場合それ以外の場合、<see langword="false" />既定値は<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public virtual bool IsRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.IsRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティが必要であるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティが必要な場合です。それ以外の場合、<see langword="false" />です。 既定値は<see langword="true" />null 非許容値型と<see langword="false" />他のすべての種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public object Model { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、モデル オブジェクトまたは設定します。</summary>
+        <value>モデル オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ModelType">
+      <MemberSignature Language="C#" Value="public Type ModelType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ModelType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ModelType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルの種類を取得します。</summary>
+        <value>モデルの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public virtual string NullDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルは、するときに表示される文字列を取得<see langword="null" />です。</summary>
+        <value>モデルは、するときに表示される文字列<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public virtual int Order { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Order" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Order" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはその他のプロパティに対して相対的には、このプロパティを表示する順序を示す整数を設定します。</summary>
+        <value>このプロパティを表示するための相対的順序。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelMetadata&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.ModelBinding.ModelMetadata&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.ModelBinding.ModelMetadata&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モデルのプロパティを記述するモデル メタデータ オブジェクトのコレクションを取得します。</summary>
+        <value>モデル内のすべてのプロパティのメタデータ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyName">
+      <MemberSignature Language="C#" Value="public string PropertyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.PropertyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの名前を取得します。</summary>
+        <value>モデルは、プロパティ場合、プロパティの名前それ以外の場合、<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="protected System.Web.ModelBinding.ModelMetadataProvider Provider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.ModelBinding.ModelMetadataProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.ModelBinding.ModelMetadataProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このメタデータのプロバイダー オブジェクトを設定します。</summary>
+        <value>このメタデータのプロバイダー オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestValidationEnabled">
+      <MemberSignature Language="C#" Value="public virtual bool RequestValidationEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequestValidationEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.RequestValidationEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求の検証が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />要求の検証が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortDisplayName">
+      <MemberSignature Language="C#" Value="public virtual string ShortDisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShortDisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ShortDisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示名の短いバージョンを設定します。</summary>
+        <value>モデル名の短いバージョンが必要なときに表示されるテキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツールヒントに、または UI で完全な表示名が収まらない場合に、短い表示名を使用できます。 このフィールドは場合`null`、<xref:System.Web.ModelBinding.ModelMetadata.DisplayName%2A>プロパティを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowForDisplay">
+      <MemberSignature Language="C#" Value="public virtual bool ShowForDisplay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowForDisplay" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ShowForDisplay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルが (編集モード) ではなく表示モードでは、UI に表示するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />表示モードでモデルを表示する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowForEdit">
+      <MemberSignature Language="C#" Value="public virtual bool ShowForEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowForEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.ShowForEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 (表示モード) ではなく、編集モードで、プロパティを表示するかどうかを指定する値。</summary>
+        <value>
+          <see langword="true" />編集モードで、プロパティを表示する場合。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SimpleDisplayText">
+      <MemberSignature Language="C#" Value="public virtual string SimpleDisplayText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SimpleDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.SimpleDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に、モデル、モデルが複雑なオブジェクトを表すときに表示するテキスト</summary>
+        <value>複雑なオブジェクトの UI に表示するテキスト。 既定値は呼び出すことによって、<see cref="M:System.Web.ModelBinding.ModelMetadata.GetSimpleDisplayText" />メソッドです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateHint">
+      <MemberSignature Language="C#" Value="public virtual string TemplateHint { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TemplateHint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.TemplateHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルの UI のテンプレート (データ コントロール) を使用するかを示す値を設定します。</summary>
+        <value>モデルの UI のテンプレート (データ コントロール) を使用するかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Watermark">
+      <MemberSignature Language="C#" Value="public virtual string Watermark { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Watermark" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ModelBinding.ModelMetadata.Watermark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはテキスト ボックスの透かしのテキストを設定します。</summary>
+        <value>ウォーターマーク テキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、テキスト ボックスで編集するため、プロパティが表示されるときにウォーターマークとして表示するテキストが含まれています。 既定値は `null` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

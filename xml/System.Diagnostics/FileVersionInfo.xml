@@ -1,0 +1,1396 @@
+<Type Name="FileVersionInfo" FullName="System.Diagnostics.FileVersionInfo">
+  <TypeSignature Language="C#" Value="public sealed class FileVersionInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileVersionInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.FileVersionInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ディスク上の物理ファイルのバージョン情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+ 使用して、<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得するには、このクラスのメソッド、<xref:System.Diagnostics.FileVersionInfo>のファイルに関する情報のプロパティを確認し、ファイルに関する情報を含むです。 <xref:System.Diagnostics.FileVersionInfo.FileVersion%2A>プロパティ ファイルに関するバージョン情報を提供します。 <xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>、 <xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>、 <xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>、 <xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>、および<xref:System.Diagnostics.FileVersionInfo.ProductVersion%2A>プロパティが指定されたファイルの一部である製品のバージョン情報を提供します。 呼び出す<xref:System.Diagnostics.FileVersionInfo.ToString%2A>このファイルのプロパティとその値の一覧の一部を取得します。  
+  
+ <xref:System.Diagnostics.FileVersionInfo>プロパティは、ファイルに組み込まれているバージョン リソースの情報に基づきます。 バージョン リソースが .exe などのバイナリ ファイルまたは .dll ファイルに組み込まれている多くの場合テキスト ファイルには、リソースのバージョン情報はありません。  
+  
+ バージョン リソースは、通常、Win32 リソース ファイルまたはアセンブリの属性で指定します。 たとえば、<xref:System.Diagnostics.FileVersionInfo.IsDebug%2A>プロパティに反映されます、`VS_FF_DEBUG`ファイルの値にフラグを付ける`VS_FIXEDFILEINFO`から構築されたブロック、 `VERSIONINFO` Win32 リソース ファイル内のリソース。  Win32 リソース ファイルにバージョン リソースを指定する方法の詳細については、「リソース ファイルは」と、プラットフォーム SDK の「VERSIONINFO リソース」を参照してください。 .NET モジュールのバージョンのリソースを指定する方法の詳細については、次を参照してください。、[アセンブリ属性の設定](~/docs/framework/app-domains/set-assembly-attributes.md)トピックです。  
+  
+> [!NOTE]
+>  このクラスは、クラス レベルのすべてのメンバーに適用されるリンク確認要求を使用します。 A<xref:System.Security.SecurityException>直前の呼び出し元に完全信頼のアクセス許可があるない場合にスローされます。 詳細については、リンク確認要求は、次を参照してください。[リンク確認要求](~/docs/framework/misc/link-demands.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 後のテキスト ボックスにファイルの説明とバージョン番号を出力します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName="Comments">
+      <MemberSignature Language="C#" Value="public string Comments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comments" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.Comments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルに関連付けられているコメントを取得します。</summary>
+        <value>ファイルに関連付けられているコメント。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、診断目的で表示できる追加情報が含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 後のテキスト ボックス内のコメントを出力します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.Comments Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/Classic FileVersionInfo.Comments Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.Comments Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/Classic FileVersionInfo.Comments Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.Comments Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/Classic FileVersionInfo.Comments Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompanyName">
+      <MemberSignature Language="C#" Value="public string CompanyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CompanyName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.CompanyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルを作成した会社名を取得します。</summary>
+        <value>ファイルを作成した会社名。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.CompanyName%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.CompanyName Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.CompanyName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.CompanyName Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.CompanyName Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.CompanyName Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.CompanyName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileBuildPart">
+      <MemberSignature Language="C#" Value="public int FileBuildPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FileBuildPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileBuildPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのビルド番号を取得します。</summary>
+        <value>ファイルのビルド番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの 3 番目のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FileBuildPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileBuildPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FileBuildPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileBuildPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FileBuildPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileBuildPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileDescription">
+      <MemberSignature Language="C#" Value="public string FileDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの説明を取得します。</summary>
+        <value>ファイルの説明。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FileDescription%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FileDescription Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileDescription Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FileDescription Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileDescription Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FileDescription Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileDescription Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileMajorPart">
+      <MemberSignature Language="C#" Value="public int FileMajorPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FileMajorPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileMajorPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メジャー バージョン番号を取得します。</summary>
+        <value>メジャー バージョン番号を表す値。ファイルにバージョン情報が含まれていない場合は 0。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+ このプロパティは、最初の 16 ビットのセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FileMajorPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMajorPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FileMajorPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMajorPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FileMajorPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMajorPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileMinorPart">
+      <MemberSignature Language="C#" Value="public int FileMinorPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FileMinorPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileMinorPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのマイナー バージョン番号を取得します。</summary>
+        <value>ファイルのマイナー バージョン番号を表す値。ファイルにバージョン情報が含まれていない場合は 0。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの 2 番目のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FileMinorPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMinorPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FileMinorPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMinorPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FileMinorPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileMinorPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.FileVersionInfo" /> のこのインスタンスが記述するファイル名を取得します。</summary>
+        <value><see cref="T:System.Diagnostics.FileVersionInfo" /> のこのインスタンスが記述するファイル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FileName%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FileName Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FileName Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileName Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FileName Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FileName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル名を取得します。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePrivatePart">
+      <MemberSignature Language="C#" Value="public int FilePrivatePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FilePrivatePart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FilePrivatePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのプライベート パート番号を取得します。</summary>
+        <value>ファイルのプライベート パート番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの最後のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.FilePrivatePart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FilePrivatePart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.FilePrivatePart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.FilePrivatePart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.FilePrivatePart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.FilePrivatePart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileVersion">
+      <MemberSignature Language="C#" Value="public string FileVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.FileVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのバージョン番号を取得します。</summary>
+        <value>ファイルのバージョン番号。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 ファイルのバージョン番号は、次のように、ファイルのバージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FileMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.FileBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.FilePrivatePart%2A>数。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 後のテキスト ボックスにファイルの説明とバージョン番号を出力します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[classic fileversioninfo example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[classic fileversioninfo example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CS/source.cs#1)]
+ [!code-vb[classic fileversioninfo example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVersionInfo">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.FileVersionInfo GetVersionInfo (string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Diagnostics.FileVersionInfo GetVersionInfo(string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.FileVersionInfo.GetVersionInfo(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.FileVersionInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">バージョン情報を取得するファイルの絶対パスおよびファイル名。</param>
+        <summary>指定されたファイルに関連付けられているバージョン情報を表す <see cref="T:System.Diagnostics.FileVersionInfo" /> を返します。</summary>
+        <returns>ファイルについての情報が格納されている <see cref="T:System.Diagnostics.FileVersionInfo" />。 ファイルにバージョン情報が含まれていない場合、<see cref="T:System.Diagnostics.FileVersionInfo" /> には要求されたファイルの名前のみが含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳し、表示、ファイルの説明およびバージョン番号のコンソール ウィンドウにします。  
+  
+ [!code-cpp[classic fileversioninfo example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CPP/source.cpp#1)]
+ [!code-csharp[classic fileversioninfo example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/CS/source.cs#1)]
+ [!code-vb[classic fileversioninfo example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定されたファイルが見つかりません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">バージョン情報を取得します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このクラスは、部分的に信頼されたコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalName">
+      <MemberSignature Language="C#" Value="public string InternalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InternalName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.InternalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの内部名が存在する場合に、その内部名を取得します。</summary>
+        <value>ファイルの内部名。 内部名が存在しない場合は、このプロパティには、拡張子が付かない元のファイル名が格納されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.InternalName%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.InternalName Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.InternalName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.InternalName Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.InternalName Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.InternalName Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.InternalName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDebug">
+      <MemberSignature Language="C#" Value="public bool IsDebug { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDebug" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.IsDebug" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルにデバッグ情報を格納するか、またはデバッグ機能を有効にしてファイルをコンパイルするかを指定する値を取得します。</summary>
+        <value>
+          ファイルにデバッグ情報を格納する場合、またはデバッグ機能を有効にしてコンパイルする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Diagnostics.FileVersionInfo>プロパティは、ファイルに組み込まれているバージョン リソースの情報に基づきます。 バージョン リソースが .exe などのバイナリ ファイルまたは .dll ファイルに組み込まれている多くの場合テキスト ファイルには、リソースのバージョン情報はありません。  
+  
+ バージョン リソースは、通常、Win32 リソース ファイルまたはアセンブリの属性で指定します。 <xref:System.Diagnostics.FileVersionInfo.IsDebug%2A>プロパティに反映されます、`VS_FF_DEBUG`ファイルの値にフラグを付ける`VS_FIXEDFILEINFO`から構築されたブロック、 `VERSIONINFO` Win32 リソース ファイル内のリソース。 Win32 リソース ファイルにバージョン リソースを指定する方法の詳細については、プラットフォーム SDK を参照してください。`About Resource Files`トピックおよび`VERSIONINFO Resource`トピックに関するトピック。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 ブール値の状態を表示し、<xref:System.Diagnostics.FileVersionInfo.IsDebug%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.IsDebug Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsDebug Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.IsDebug Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsDebug Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.IsDebug Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsDebug Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPatched">
+      <MemberSignature Language="C#" Value="public bool IsPatched { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPatched" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.IsPatched" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが変更されているかどうか、および同じバージョン番号の出荷時の元のファイルと異なっているかどうかを指定する値を取得します。</summary>
+        <value>
+          ファイルに更新プログラムが適用されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 ブール値の状態を表示し、<xref:System.Diagnostics.FileVersionInfo.IsPatched%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.IsPatched Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPatched Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.IsPatched Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPatched Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.IsPatched Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPatched Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPreRelease">
+      <MemberSignature Language="C#" Value="public bool IsPreRelease { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPreRelease" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.IsPreRelease" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが市販バージョンではない開発用バージョンかどうかを指定する値を取得します。</summary>
+        <value>
+          ファイルがプレリリース版の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 このバージョンが、テキスト ボックス内のプレリリース版であるかどうかが表示されます。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.IsPreRelease Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPreRelease Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.IsPreRelease Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPreRelease Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.IsPreRelease Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPreRelease Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrivateBuild">
+      <MemberSignature Language="C#" Value="public bool IsPrivateBuild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrivateBuild" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.IsPrivateBuild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが標準リリース プロシージャを使用して作成されたものかどうかを指定する値を取得します。</summary>
+        <value>
+          このファイルがプライベートにビルドされたファイルの場合は <see langword="true" />。ファイルが標準リリース プロシージャを使用して作成された場合、またはファイルにバージョン情報が含まれていない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値が場合`true`、<xref:System.Diagnostics.FileVersionInfo.PrivateBuild%2A>は、このバージョンのファイルが標準のバージョンとは異なる方法について説明します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 テキスト ボックスにプライベート ビルド情報が表示されます。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.IsPrivateBuild Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPrivateBuild Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.IsPrivateBuild Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPrivateBuild Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.IsPrivateBuild Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsPrivateBuild Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpecialBuild">
+      <MemberSignature Language="C#" Value="public bool IsSpecialBuild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialBuild" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.IsSpecialBuild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが特殊なビルドかどうかを指定する値を取得します。</summary>
+        <value>
+          ファイルが特殊なビルドの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特殊なビルド ファイルが標準リリース プロシージャを使用してビルドされたが、ファイルと同じバージョン番号の標準的なファイルは異なります。 この値が場合`true`、<xref:System.Diagnostics.FileVersionInfo.SpecialBuild%2A>プロパティでは、このファイルが標準のバージョンとは異なる方法を指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 このバージョンは、特殊なテキスト ボックス内のバージョンをビルドするかどうかが表示されます。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.IsSpecialBuild Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsSpecialBuild Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.IsSpecialBuild Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsSpecialBuild Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.IsSpecialBuild Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.IsSpecialBuild Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public string Language { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Language" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョン情報ブロックの既定の言語識別文字列を取得します。</summary>
+        <value>バージョン リソース内の Microsoft 言語識別子の説明文字列。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalCopyright">
+      <MemberSignature Language="C#" Value="public string LegalCopyright { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LegalCopyright" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.LegalCopyright" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたファイルに適用される著作権表記をすべて取得します。</summary>
+        <value>指定されたファイルに適用される著作権表記。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての通知、法的な記号、著作権の日付、およびなどの完全なテキストが含まれますか`null`ファイルにバージョン情報が含まれていない場合。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.LegalCopyright%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.LegalCopyright Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalCopyright Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.LegalCopyright Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalCopyright Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.LegalCopyright Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalCopyright Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegalTrademarks">
+      <MemberSignature Language="C#" Value="public string LegalTrademarks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LegalTrademarks" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.LegalTrademarks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルに適用される商標と登録商標を取得します。</summary>
+        <value>ファイルに適用される商標と登録商標。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 法的商標には、すべての通知、法的な記号、および商標番号の完全なテキストが含まれます。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.LegalTrademarks%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.LegalTrademarks Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalTrademarks Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.LegalTrademarks Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalTrademarks Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.LegalTrademarks Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.LegalTrademarks Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalFilename">
+      <MemberSignature Language="C#" Value="public string OriginalFilename { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginalFilename" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.OriginalFilename" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルが作成されたときの名前を取得します。</summary>
+        <value>ファイルが作成されたときの名前。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにより、アプリケーションをファイルの名前が変更されたかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.OriginalFilename%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.OriginalFilename Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.OriginalFilename Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.OriginalFilename Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.OriginalFilename Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.OriginalFilename Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.OriginalFilename Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateBuild">
+      <MemberSignature Language="C#" Value="public string PrivateBuild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PrivateBuild" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.PrivateBuild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルのプライベート バージョンについての情報を取得します。</summary>
+        <value>ファイルのプライベート バージョンについての情報。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この情報がある場合に<xref:System.Diagnostics.FileVersionInfo.IsPrivateBuild%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 テキスト ボックス内のプライベート ビルド情報を出力します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.PrivateBuild Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.PrivateBuild Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.PrivateBuild Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.PrivateBuild Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.PrivateBuild Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.PrivateBuild Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductBuildPart">
+      <MemberSignature Language="C#" Value="public int ProductBuildPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProductBuildPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductBuildPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルに関連付けられている製品のビルド番号を取得します。</summary>
+        <value>このファイルに関連付けられている製品のビルド番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 製品のバージョン番号は、次のように、バージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの 3 番目のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductBuildPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductBuildPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductBuildPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductBuildPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductBuildPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductBuildPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductMajorPart">
+      <MemberSignature Language="C#" Value="public int ProductMajorPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProductMajorPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductMajorPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルに関連付けられている製品のメジャー バージョン番号を取得します。</summary>
+        <value>製品のメジャー バージョン番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 製品のバージョン番号は、次のように、バージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>数。  
+  
+ このプロパティは、最初の 16 ビットのセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductMajorPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMajorPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductMajorPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMajorPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductMajorPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMajorPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductMinorPart">
+      <MemberSignature Language="C#" Value="public int ProductMinorPart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProductMinorPart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductMinorPart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルに関連付けられている製品のマイナー バージョン番号を取得します。</summary>
+        <value>製品のマイナー バージョン番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 製品のバージョン番号は、次のように、バージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの 2 番目のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductMinorPart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMinorPart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductMinorPart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMinorPart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductMinorPart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductMinorPart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductName">
+      <MemberSignature Language="C#" Value="public string ProductName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProductName" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルを含む製品の名前を取得します。</summary>
+        <value>このファイルを含む製品の名前。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductName%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductName Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductName Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductName Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductName Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductPrivatePart">
+      <MemberSignature Language="C#" Value="public int ProductPrivatePart { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProductPrivatePart" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductPrivatePart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルに関連付けられている製品のプライベート パート番号を取得します。</summary>
+        <value>このファイルに関連付けられている製品のプライベート パート番号を表す値。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 製品のバージョン番号は、次のように、バージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>数。  
+  
+ このプロパティは、16 ビットの最後のセットを取得します。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductPrivatePart Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductPrivatePart Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductPrivatePart Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductPrivatePart Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductPrivatePart Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductPrivatePart Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductVersion">
+      <MemberSignature Language="C#" Value="public string ProductVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProductVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.ProductVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このファイルを含む製品のバージョンを取得します。</summary>
+        <value>このファイルを含む製品のバージョン。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、バージョン番号は、「メジャー番号 number.build プライベート パート番号」として表示されます。 製品のバージョン番号は、次のように、バージョン番号を保持している 64 ビットの数値を示します。  
+  
+-   最初の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMajorPart%2A>数。  
+  
+-   次の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductMinorPart%2A>数。  
+  
+-   16 ビットの 3 番目のセットは、<xref:System.Diagnostics.FileVersionInfo.ProductBuildPart%2A>数。  
+  
+-   最後の 16 ビットは、<xref:System.Diagnostics.FileVersionInfo.ProductPrivatePart%2A>数。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 出力し、<xref:System.Diagnostics.FileVersionInfo.ProductVersion%2A>テキスト ボックスにします。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ProductVersion Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductVersion Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ProductVersion Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductVersion Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ProductVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ProductVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpecialBuild">
+      <MemberSignature Language="C#" Value="public string SpecialBuild { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SpecialBuild" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.FileVersionInfo.SpecialBuild" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルの特殊ビルド情報を取得します。</summary>
+        <value>ファイルの特殊ビルド情報。ファイルにバージョン情報が含まれていない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Diagnostics.FileVersionInfo.IsSpecialBuild%2A>は`true`、<xref:System.Diagnostics.FileVersionInfo.SpecialBuild%2A>このファイルがファイルの標準のバージョンとは異なる方法を指定する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 テキスト ボックス内の特殊ビルド情報を出力します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.SpecialBuild Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.SpecialBuild Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.SpecialBuild Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.SpecialBuild Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.SpecialBuild Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.SpecialBuild Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.FileVersionInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.FileVersionInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.FileVersionInfo" /> のプロパティの部分リストとその値を返します。</summary>
+        <returns>このクラスの次に示すプロパティのリストとその値。  
+  
+ <see cref="P:System.Diagnostics.FileVersionInfo.FileName" />, <see cref="P:System.Diagnostics.FileVersionInfo.InternalName" />, <see cref="P:System.Diagnostics.FileVersionInfo.OriginalFilename" />, <see cref="P:System.Diagnostics.FileVersionInfo.FileVersion" />, <see cref="P:System.Diagnostics.FileVersionInfo.FileDescription" />, <see cref="P:System.Diagnostics.FileVersionInfo.ProductName" />, <see cref="P:System.Diagnostics.FileVersionInfo.ProductVersion" />, <see cref="P:System.Diagnostics.FileVersionInfo.IsDebug" />, <see cref="P:System.Diagnostics.FileVersionInfo.IsPatched" />, <see cref="P:System.Diagnostics.FileVersionInfo.IsPreRelease" />, <see cref="P:System.Diagnostics.FileVersionInfo.IsPrivateBuild" />, <see cref="P:System.Diagnostics.FileVersionInfo.IsSpecialBuild" />,  
+  
+ <see cref="P:System.Diagnostics.FileVersionInfo.Language" />。  
+  
+ ファイルにバージョン情報が含まれていない場合、一覧には要求されたファイルの名前のみが含まれます。 ブール値は <see langword="false" /> となり、他のすべてのエントリは <see langword="null" /> となります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では<xref:System.Diagnostics.FileVersionInfo.GetVersionInfo%2A>を取得する、<xref:System.Diagnostics.FileVersionInfo>メモ帳にします。 これは呼び出して<xref:System.Diagnostics.FileVersionInfo.ToString%2A>テキスト ボックス内のファイル バージョン情報のリストを印刷します。 このコード`textBox1`がインスタンス化されています。  
+  
+ [!code-cpp[Classic FileVersionInfo.ToString Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ToString Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileVersionInfo.ToString Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileVersionInfo.ToString Example/CS/source.cs#1)]
+ [!code-vb[Classic FileVersionInfo.ToString Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileVersionInfo.ToString Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

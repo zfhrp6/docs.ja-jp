@@ -1,0 +1,146 @@
+<Type Name="ContextInformation" FullName="System.Configuration.ContextInformation">
+  <TypeSignature Language="C#" Value="public sealed class ContextInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContextInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ContextInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けられているコンテキスト情報をカプセル化、<see cref="T:System.Configuration.ConfigurationElement" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.ContextInformation>オブジェクトは、構成の要素に関連する環境の詳細を提供します。 たとえば、使用することができます、<xref:System.Configuration.ContextInformation.IsMachineLevel%2A>プロパティを決定するかどうか、 <xref:System.Configuration.ConfigurationElement> Machine.config で設定されたか、どの階層を指定できます、<xref:System.Configuration.ConfigurationElement>を使用してに属している、<xref:System.Configuration.ContextInformation.HostingContext%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ContextInformation>型です。  
+  
+ [!code-csharp[System.Configuration.ContextInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ContextInformation/CS/ContextInformation.cs#1)]
+ [!code-vb[System.Configuration.ContextInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ContextInformation/VB/ContextInformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public object GetSection (string sectionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetSection(string sectionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ContextInformation.GetSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sectionName">構成セクションの名前。</param>
+        <summary>指定したセクション名に基づいて構成セクションの情報を含むオブジェクトを提供します。</summary>
+        <returns>構成内で指定されたセクションを格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成内のセクションを指定する場合は、構成セクションの名前は大文字小文字を区別する注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostingContext">
+      <MemberSignature Language="C#" Value="public object HostingContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object HostingContext" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ContextInformation.HostingContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成プロパティが評価されている環境のコンテキストを取得します。</summary>
+        <value>構成プロパティが評価されている環境を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 考えられる<xref:System.Configuration.ContextInformation.HostingContext%2A>値は<xref:System.Web.Configuration.WebContext>、 <xref:System.Configuration.ExeContext>、または`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ContextInformation.HostingContext%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.ContextInformation#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ContextInformation/CS/ContextInformation.cs#3)]
+ [!code-vb[System.Configuration.ContextInformation#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ContextInformation/VB/ContextInformation.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMachineLevel">
+      <MemberSignature Language="C#" Value="public bool IsMachineLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMachineLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.ContextInformation.IsMachineLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成プロパティが、コンピューターの構成レベルで評価されるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />コンピューターの構成レベルで構成プロパティが評価されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の戻り値<xref:System.Configuration.ContextInformation.IsMachineLevel%2A>は`false`を使用して、<xref:System.Configuration.ContextInformation.HostingContext%2A>構成階層内のレベルを決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.ContextInformation.HostingContext%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.ContextInformation#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ContextInformation/CS/ContextInformation.cs#2)]
+ [!code-vb[System.Configuration.ContextInformation#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ContextInformation/VB/ContextInformation.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

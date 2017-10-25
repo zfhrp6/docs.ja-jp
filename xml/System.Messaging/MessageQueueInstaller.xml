@@ -1,0 +1,739 @@
+<Type Name="MessageQueueInstaller" FullName="System.Messaging.MessageQueueInstaller">
+  <TypeSignature Language="C#" Value="public class MessageQueueInstaller : System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueInstaller extends System.Configuration.Install.ComponentInstaller" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.ComponentInstaller</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用すると、インストールし、アプリケーションで実行するために必要なキューを構成できます。 このクラスはインストール ユーティリティによってなど、InstallUtil.exe という、インストールするときに、<see cref="T:System.Messaging.MessageQueue" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueInstaller>インストール ユーティリティによって、キューに関連付けられているレジストリ値の書き込みに使用します。 インストール ユーティリティの詳細については、次を参照してください。 [Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。  
+  
+ 継承されるプロジェクト インストーラー クラスを作成、キューをインストールするには<xref:System.Configuration.Install.Installer>、設定と、<xref:System.ComponentModel.RunInstallerAttribute>クラスを`true`です。 プロジェクト内に作成、<xref:System.Messaging.MessageQueueInstaller>インストールでは、各キューのインスタンスし、インスタンス プロジェクト インストーラー クラスに追加します。  
+  
+ 作成するときに、<xref:System.Messaging.MessageQueueInstaller>インスタンスを渡すことができます必要に応じて、既存<xref:System.Messaging.MessageQueue>(たとえばからテスト サーバー) に、<xref:System.Messaging.MessageQueueInstaller.%23ctor%2A>コンス トラクターです。 この方法に渡されたキューの設定を反映して自動的に新しいキューの構成設定を提供します。 プロパティを手動で設定する代わりに、<xref:System.Messaging.MessageQueueInstaller>インスタンスを選択して、既定のコンス トラクターを呼び出す、状態にします。  
+  
+ インストール ユーティリティが呼び出されると、検索、<xref:System.ComponentModel.RunInstallerAttribute>です。 場合は`true`、ユーティリティ内のすべてのキューのインストール、<xref:System.Configuration.Install.Installer.Installers%2A>プロジェクト インストーラーに関連付けられているコレクション。 場合<xref:System.ComponentModel.RunInstallerAttribute>は`false`、プロジェクト インストーラーは無視されます。  
+  
+ 他のプロパティを変更する、<xref:System.Messaging.MessageQueueInstaller>インスタンスの前に、または後にインスタンスを追加する、<xref:System.Configuration.Install.Installer.Installers%2A>プロジェクト インストーラーのコレクション。 たとえば、キューの<xref:System.Messaging.MessageQueue.Path%2A>インストール ユーティリティが実行される前に設定する必要があります。  
+  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが installutil.exe インストール ユーティリティによってのみです。 ユーティリティは、<xref:System.Messaging.MessageQueueInstaller.Install%2A>メソッドの呼び出し、インストール プロセス中に<xref:System.Messaging.MessageQueueInstaller.Commit%2A>場合は、インストールは、例外をスローしませんでした。 バックアップ障害、out、必要に応じて呼び出すことによって<xref:System.Messaging.MessageQueueInstaller.Rollback%2A>の例外を生成したオブジェクト。  
+  
+ アプリケーションのインストールに使用してプロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>が既にインストールされているコンポーネントに関する情報を自動的に維持します。 この状態が継続的に情報として各<xref:System.Messaging.MessageQueueInstaller>ユーティリティによってインスタンスがインストールされています。 通常、コードの状態情報を明示的に変更する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Messaging.MessageQueueInstaller" /> クラスの新しいインスタンスを初期化します。 任意のインスタンスのプロパティを設定しません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueInstaller (System.Messaging.MessageQueue componentToCopy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.MessageQueue componentToCopy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.#ctor(System.Messaging.MessageQueue)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="componentToCopy" Type="System.Messaging.MessageQueue" />
+      </Parameters>
+      <Docs>
+        <param name="componentToCopy"><see cref="T:System.Messaging.MessageQueue" />コンポーネントがインストールされている、新しいキューのプロパティの設定を決定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueueInstaller" />クラス、既存のインストール設定を初期化して<see cref="T:System.Messaging.MessageQueue" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticate">
+      <MemberSignature Language="C#" Value="public bool Authenticate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Authenticate" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Authenticate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはをインストールするキューが認証されたメッセージのみを受け入れるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キューが認証されたメッセージのみを受け入れる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 認証されていないメッセージが認証されたメッセージだけを受け取るキューに送信されると、メッセージは拒否されます。 送信元のアプリケーションは設定してメッセージ却下の通知を要求することができます、<xref:System.Messaging.Message.AcknowledgeType%2A>メッセージ。 それ以外の場合がないメッセージが拒否されたことを示す値ため、配信不能キューに送信する場合を除き、メッセージが失われることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BasePriority">
+      <MemberSignature Language="C#" Value="public short BasePriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int16 BasePriority" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.BasePriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはネットワーク経由でパブリック キューのメッセージのルーティングに使用される基本優先順位を設定します。</summary>
+        <value>パブリック キューに送信されるすべてのメッセージの 1 つの基本優先順位。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueInstaller.BasePriority%2A>ネットワーク経由でキューのメッセージをルーティングのために使用します。 使用して、<xref:System.Messaging.MessageQueueInstaller.BasePriority%2A>高いキューまたは他のキューに送信されたメッセージをより低い優先順位にメッセージを送信するためです。 キューの基本優先順位が設定されている場合に送信されたすべてのメッセージには、基本優先度の低いキューにメッセージを送信する場合よりも高い優先度が与えられます。 キューまたはキューからメッセージを読み取る方法では、キューの基本優先順位を指定しても、メッセージの順序の効果はありません。  
+  
+ <xref:System.Messaging.MessageQueueInstaller.BasePriority%2A>にパブリック キューのみには、ドメイン コント ローラーからアクセスするには適用されます (つまり、public 形式名を使用します)。 直接アクセスされるパブリック キューとプライベート キューの基本の優先順位は常に 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Category">
+      <MemberSignature Language="C#" Value="public Guid Category { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Category" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Category" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.GuidConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、実装に固有のキューの種類を設定します。</summary>
+        <value>A<see cref="T:System.Guid" />キューのカテゴリ (またはメッセージ キューの種類の id) を表すアプリケーションの使用方法に応じて、キューを分類できます。 既定値は、<see langword="Guid.empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューのカテゴリにより、アプリケーションをその使用方法によって関連付けられているキューを分類します。 <xref:System.Messaging.MessageQueue.Category%2A> Null 参照でもかまいません。 新しいカテゴリを定義することもできます。  
+  
+ <xref:System.Messaging.MessageQueue.Category%2A>プロパティは、メッセージ キューの種類の識別子プロパティは、特定のキューに関連付けられ、読み取り/書き込みへのアクセスを提供します。 使用することができます、<xref:System.Guid.NewGuid%2A>すべてにわたって一意であることが保証される、カテゴリの値を作成するメソッド<xref:System.Guid>値。 ただし、必要があるからではなく他のすべての他のカテゴリを異なるカテゴリの値に対してのみ<xref:System.Guid>値。 たとえば、設定することができます、<xref:System.Messaging.MessageQueue.Category%2A>キュー} の 1 つのグループと<xref:System.Messaging.MessageQueue.Category%2A>{00000000-0000-0000-0000-000000000002} を別のグループです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.Commit(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">A<see cref="T:System.Collections.IDictionary" />コンピューターのインストール後の状態を格納しています。</param>
+        <summary>コミットすることによって、インストール プロセスを完了する、<see cref="T:System.Messaging.MessageQueue" />インストール情報を<see cref="M:System.Messaging.MessageQueueInstaller.Install(System.Collections.IDictionary)" />メソッドは、レジストリに書き込みました。 このメソッドは、自動的に適切なメソッドを呼び出すのインストール ツールで使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが installutil.exe インストール ユーティリティによってのみです。 ユーティリティは、<xref:System.Messaging.MessageQueueInstaller.Install%2A>インストール プロセス中にメソッドです。 インストールは、トランザクションが失敗したインストール プロジェクト コンポーネントのインストール中に、以前にインストールされたすべてのコンポーネントがロールバックをインストール前の状態にします。 これは、各コンポーネントを呼び出すことによって実現<xref:System.Messaging.MessageQueueInstaller.Rollback%2A>メソッドです。  
+  
+ インストールのプロジェクトに関連付けられているすべてのコンポーネントのインストールの成功後が発生したインストール ユーティリティは、インストールをコミットします。 <xref:System.Messaging.MessageQueueInstaller.Commit%2A>インストールが完了したら、<xref:System.Messaging.MessageQueue>キューを適切な初期状態に設定します。 によって、キューが指定されている場合、<xref:System.Messaging.MessageQueueInstaller.Path%2A>プロパティは既に存在し、メッセージが表示されて<xref:System.Messaging.MessageQueueInstaller.Commit%2A>メッセージをクリアします。 <xref:System.Messaging.MessageQueueInstaller.Commit%2A>、なく<xref:System.Messaging.MessageQueueInstaller.Install%2A>、、メッセージを削除する操作はロールバックできないため、メッセージを消去します。  
+  
+ アプリケーションのインストールに使用してプロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>が既にインストールされているコンポーネントに関する情報を自動的に維持します。 渡される、この状態情報<xref:System.Messaging.MessageQueueInstaller.Commit%2A>として、`savedState`ユーティリティがコミットされるごとに、パラメーターは引き続き更新<xref:System.Messaging.MessageQueueInstaller>インスタンス。 通常、コードのこの状態情報を明示的に変更する必要はありません。 キューがオフの場合は、<xref:System.Messaging.MessageQueueInstaller.Commit%2A>ログのエントリを投稿、`savedState`インストールに関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFromComponent">
+      <MemberSignature Language="C#" Value="public override void CopyFromComponent (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFromComponent(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.CopyFromComponent(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">A<see cref="T:System.ComponentModel.IComponent" />用のテンプレートとして使用する、<see cref="T:System.Messaging.MessageQueueInstaller" />です。</param>
+        <summary>プロパティ値をコピー、<see cref="T:System.Messaging.MessageQueue" />メッセージ キューのインストール時に必要なコンポーネントです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが installutil.exe インストール ユーティリティによってのみです。 <xref:System.Messaging.MessageQueueInstaller.CopyFromComponent%2A>プロパティの値の設定にインストール ユーティリティによって使用される、 <xref:System.Messaging.MessageQueueInstaller> 、既存の値に<xref:System.Messaging.MessageQueue>です。  
+  
+ 場合、<xref:System.Messaging.MessageQueue.Path%2A>の<xref:System.Messaging.MessageQueue>は、空の文字列は、渡された ("") を設定する必要があります、<xref:System.Messaging.MessageQueue.Path%2A>プロパティをインストーラーが実行される前に、空でない値にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">これに関連付けられたコンポーネント<see cref="T:System.Messaging.MessageQueueInstaller" />されませんが、<see cref="T:System.Messaging.MessageQueue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionRequired">
+      <MemberSignature Language="C#" Value="public System.Messaging.EncryptionRequired EncryptionRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.EncryptionRequired EncryptionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.EncryptionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.EncryptionRequired</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューがプライベート、または暗号化された、のみのメッセージを受け付けるかどうかを示す値を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Messaging.EncryptionRequired" />をキューに送信されたメッセージに必要なレベルの暗号化を示す値。 既定値は、<see langword="Optional" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化が指定されている場合、のみ、<xref:System.Messaging.Message.Body%2A>のメッセージを暗号化します。 その他のプロパティなど、 <xref:System.Messaging.Message.Label%2A>、暗号化されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary stateSaver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary stateSaver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.Install(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stateSaver" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="stateSaver">A<see cref="T:System.Collections.IDictionary" />コミットを実行するために必要な情報を保存するために使用ロールバック、またはアンインストール操作します。</param>
+        <summary>インストールを実行し、メッセージ キューの情報をレジストリに書き込みます。 このメソッドは、自動的に適切なメソッドを呼び出すのインストール ツールで使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueInstaller.Install%2A>メソッドを選択し、メッセージ キュー情報をレジストリに書き込みます関連付けます、<xref:System.Messaging.MessageQueue>によって指定されたパスに配置されているキューのインスタンス、<xref:System.Messaging.MessageQueueInstaller.Path%2A>プロパティです。 キューが既に存在しない場合<xref:System.Messaging.MessageQueueInstaller.Install%2A>トランザクション キューを作成します。 <xref:System.Messaging.MessageQueueInstaller.Install%2A>指定したものに新規または既存のキューのプロパティを設定、<xref:System.Messaging.MessageQueueInstaller>です。 そのプロパティをリセットするキューが既に存在する場合、<xref:System.Messaging.MessageQueueInstaller>です。 既存のキューがトランザクションでない場合は、削除またはトランザクション キューとして再作成します。  
+  
+> [!CAUTION]
+>  キューを再作成する必要がある場合は、キュー内のメッセージが失われます。  
+  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが installutil.exe インストール ユーティリティによってのみです。 ユーティリティは、<xref:System.Messaging.MessageQueueInstaller.Install%2A>インストール中にインストールされているメッセージ キューに関連付けられているレジストリ情報を書き込むためのメソッドです。 インストールは、トランザクションが失敗したインストール プロジェクト コンポーネントのインストール中に、以前にインストールされたすべてのコンポーネントがロールバックをインストール前の状態にします。 これは、各コンポーネントを呼び出すことによって実現<xref:System.Messaging.MessageQueueInstaller.Rollback%2A>メソッドです。  
+  
+ インストールのプロジェクトに関連付けられているすべてのコンポーネントのインストールの成功後が発生したインストール ユーティリティは、インストールをコミットします。 <xref:System.Messaging.MessageQueueInstaller.Commit%2A>インストールが完了したら、<xref:System.Messaging.MessageQueue>キューを適切な初期状態に設定します。 によって、キューが指定されている場合、<xref:System.Messaging.MessageQueueInstaller.Path%2A>プロパティは既に存在し、メッセージが表示されて<xref:System.Messaging.MessageQueueInstaller.Commit%2A>メッセージをクリアします。 <xref:System.Messaging.MessageQueueInstaller.Commit%2A>、なく<xref:System.Messaging.MessageQueueInstaller.Install%2A>、、メッセージを削除する操作はロールバックできないため、メッセージを消去します。  
+  
+ アプリケーションのインストールに使用してプロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>が既にインストールされているコンポーネントに関する情報を自動的に維持します。 渡される、この状態情報<xref:System.Messaging.MessageQueueInstaller.Install%2A>として、`stateSaver`ユーティリティでは、それぞれがインストールされますに、パラメーターは引き続き更新<xref:System.Messaging.MessageQueueInstaller>インスタンス。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEquivalentInstaller">
+      <MemberSignature Language="C#" Value="public override bool IsEquivalentInstaller (System.Configuration.Install.ComponentInstaller otherInstaller);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsEquivalentInstaller(class System.Configuration.Install.ComponentInstaller otherInstaller) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.IsEquivalentInstaller(System.Configuration.Install.ComponentInstaller)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="otherInstaller" Type="System.Configuration.Install.ComponentInstaller" />
+      </Parameters>
+      <Docs>
+        <param name="otherInstaller">比較対象のインストーラーです。</param>
+        <summary>指定したインストーラーが、同じ種類のインストーラーとインストールを処理できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />このインストーラーとで指定された場合、<paramref name="otherInstaller" />パラメーターを処理できる、同じインストールの種類です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、<xref:System.Configuration.Install.ComponentInstaller.IsEquivalentInstaller%2A>返します`true`このインストーラーとで指定された場合にのみ、`otherInstaller`パラメーターが同じ型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューの説明を設定します。</summary>
+        <value>メッセージ キューを説明するラベルです。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueue.Label%2A>プロパティはキューで一意である必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Messaging.MessageQueueInstaller.Label" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumJournalSize">
+      <MemberSignature Language="C#" Value="public long MaximumJournalSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumJournalSize" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.MaximumJournalSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューに関連付けられているジャーナルの最大サイズを設定します。</summary>
+        <value>キューから削除されたメッセージを記録するジャーナル キューの最大サイズ。 メッセージ キューの既定値に制限はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューが作成されると、メッセージ キューに自動的に作成キューのジャーナル、新しいキューと同じ場所です。 キュー ジャーナルは、キューから削除されたメッセージを追跡するために使用されます。  
+  
+ 2 種類のメッセージは追跡されません。 その時に、受信タイマーの期限が切れたため、キューから削除されると、キューから削除します。  
+  
+ アプリケーションは、ジャーナル キューにメッセージを送信することはできません。 ただし、不要になったメッセージを削除するキューを定期的に消去する必要があります。 キューが存在するコンピューターのクォータ ジャーナル キューに格納されているメッセージです。 (コンピューターのクォータは、管理者によって設定します。)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumQueueSize">
+      <MemberSignature Language="C#" Value="public long MaximumQueueSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumQueueSize" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.MaximumQueueSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューの最大サイズを設定します。</summary>
+        <value>キューの最大サイズ。 メッセージ キューの既定値に制限はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、キューの最大サイズはキューの作成時に設定されますが、後でリセットできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MulticastAddress">
+      <MemberSignature Language="C#" Value="public string MulticastAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MulticastAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.MulticastAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MSMQ 3.0 で導入されました。 取得またはキューに関連付けられているマルチキャスト アドレスを設定します。</summary>
+        <value>A <see cref="T:System.String" /> (次に示す形式) で有効なマルチキャスト アドレスを格納しているか、<see langword="null" />キューのマルチキャスト アドレスに関連付けられていないことを示します。  
+  
+```  
+&lt;address&gt;:&lt;port&gt;  
+```</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.PlatformNotSupportedException">MSMQ 3.0 がインストールされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Messaging.Design.QueuePathEditor", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのオブジェクトによって参照されるキューの場所を設定します。</summary>
+        <value>ネットワーク上でキューの場所を表すパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構文、<xref:System.Messaging.MessageQueue.Path%2A>プロパティに依存するキューの種類が参照されます。 さまざまな種類のキューを使用する構文を次の表に示します。  
+  
+|キューの種類|構文|  
+|----------------|------------|  
+|パブリック キュー|`machineName`\\`queueName`|  
+|プライベート キュー|`machineName`\\`Private$`\\`queueName`|  
+|ジャーナル キュー|`machineName`\\`queueName`\\`Journal$`|  
+|コンピューター ジャーナル キュー|`machineName`\\`Journal$`|  
+|コンピューターの配信不能キュー|`machineName`\\`Deadletter$`|  
+|コンピューター トランザクション配信不能キュー|`machineName`\\`XactDeadletter$`|  
+  
+ 使用して"です。"ローカル コンピューター用です。  
+  
+ 使用することも、<xref:System.Messaging.MessageQueue.FormatName%2A>または<xref:System.Messaging.MessageQueue.Label%2A>メッセージ キュー アプリケーション オブジェクトのキューのパスを記述します。 次の表は、参照の種類ごとに適切な構文を示します。  
+  
+|参照|構文|  
+|---------------|------------|  
+|形式名|FormatName: [*形式名*]|  
+|group1|ラベル: [*ラベル*]|  
+  
+ オフラインで作業する場合は、キューを定義する形式名を使用する必要があります<xref:System.Messaging.MessageQueue.Path%2A>です。 プライマリ ドメイン コント ローラーを解決するのには使用できないために、アプリケーションは、例外をスローしない場合、<xref:System.Messaging.MessageQueue.Path%2A>に、<xref:System.Messaging.MessageQueue.FormatName%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Messaging.MessageQueueInstaller.Path" />に設定された無効な値では、可能性のある構文が無効であるためです。  
+  
+ または  
+  
+ <see cref="P:System.Messaging.MessageQueueInstaller.Path" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Permissions">
+      <MemberSignature Language="C#" Value="public System.Messaging.AccessControlList Permissions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.AccessControlList Permissions" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Permissions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Messaging.AccessControlList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューに関連付けられているアクセス許可を設定します。</summary>
+        <value>A<see cref="T:System.Messaging.AccessControlList" />トラスティおよびキューを付与するアクセス許可を指定する 1 つまたは複数のアクセス制御エントリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、パブリックまたはプライベート キューの作成者がフル コントロール、およびキューのプロパティを取得し、アクセス許可を取得し、キューへの書き込みアクセス許可を持つすべてのユーザー、ドメイン グループです。 メッセージ キューが見つかるまで、現在のユーザーと現在のしようとした操作に適用されるアクセス許可リストの各エントリにさらにアクセスします。 許可するように、オペレーティング システム権限を持つユーザーに明示的に拒否する権限よりも優先されます。  
+  
+ 構築する場合、<xref:System.Messaging.MessageQueueInstaller.Permissions%2A>プロパティ、追加<xref:System.Messaging.AccessControlEntry>インスタンスを<xref:System.Messaging.AccessControlList>コレクション。 各アクセス制御エントリを作成する場合は、ジェネリック、または標準のアクセス権を指定できます。 キューの権限は、次の任意の組み合わせを指定できます。  
+  
+-   削除  
+  
+-   セキュリティの読み取り  
+  
+-   セキュリティを書き込み  
+  
+-   同期  
+  
+-   所有者を変更します。  
+  
+-   読み取り  
+  
+-   Write  
+  
+-   実行  
+  
+-   必須  
+  
+-   すべて  
+  
+-   なし  
+  
+ これらの権限は、一連のビット フラグ ビットごとの OR を使用して組み合わせることができます。  
+  
+-   フル コントロール  
+  
+-   メッセージを削除します。  
+  
+-   メッセージが表示されます。  
+  
+-   メッセージをピークします。  
+  
+-   ジャーナル メッセージを受信します。  
+  
+-   キューのプロパティを取得します。  
+  
+-   キューのプロパティを設定します。  
+  
+-   アクセス許可を取得します。  
+  
+-   アクセス許可を設定します。  
+  
+-   キューを所有権します。  
+  
+-   メッセージを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.Rollback(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">A<see cref="T:System.Collections.IDictionary" />コンピューターのインストール前の状態を格納しています。</param>
+        <summary>状態で、インストールする前に、インストール手順をレジストリに作成したキューの情報をロールバックしてにコンピューターを復元します。 このメソッドは、自動的に適切なメソッドを呼び出すのインストール ツールで使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueInstaller.Rollback%2A>メソッドの効果を元に戻します、<xref:System.Messaging.MessageQueueInstaller.Install%2A>メソッドです。 <xref:System.Messaging.MessageQueueInstaller.Rollback%2A>インストールのプロジェクトの任意のコンポーネントのインストールが失敗した場合と呼びます。 <xref:System.Messaging.MessageQueueInstaller.Install%2A>メソッドを作成またはキューのプロパティを設定します。 <xref:System.Messaging.MessageQueueInstaller.Rollback%2A>キューを削除するか、既存のキューのプロパティをインストール前の値にリセットします。  
+  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが InstallUtil.exe インストール ユーティリティによってのみです。 ユーティリティは、<xref:System.Messaging.MessageQueueInstaller.Rollback%2A>を取り消すには、インストールの失敗の変更後に、インストール プロセスが既に行わします。  
+  
+ アプリケーションのインストールに使用してプロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>が既にインストールされているコンポーネントに関する情報を自動的に維持します。 渡される、この状態情報<xref:System.Messaging.MessageQueueInstaller.Rollback%2A>として、`savedState`ユーティリティをロールに、パラメーターは引き続き更新バックアップ<xref:System.Messaging.MessageQueueInstaller>インスタンス。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transactional">
+      <MemberSignature Language="C#" Value="public bool Transactional { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Transactional" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.Transactional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューがトランザクションの一部として送信されたメッセージのみを受け入れるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />キューはトランザクションの一部として送信されたメッセージだけを受け入れることができる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージは、トランザクションを使用せずに、ローカル トランザクション キューから取得できます。 場合は、トランザクション コンテキストを指定しないと、メッセージ キューの 1 つの内部トランザクションを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public override void Uninstall (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Uninstall(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueInstaller.Uninstall(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">A<see cref="T:System.Collections.IDictionary" />コンピューターのインストール後の状態を格納しています。</param>
+        <summary>キューの情報をレジストリから削除して、インストールを削除します。 このメソッドは、自動的に適切なメソッドを呼び出す、アンインストール ツールで使用することはできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Messaging.MessageQueueInstaller.UninstallAction%2A>は`Remove`、<xref:System.Messaging.MessageQueueInstaller.Uninstall%2A>も、関連付けられたキューを削除、<xref:System.Messaging.MessageQueue>です。  
+  
+ メソッドを呼び出すこと、通常は、<xref:System.Messaging.MessageQueueInstaller>から、コード内では一般に呼び出すことが InstallUtil.exe インストール ユーティリティによってのみ (アンインストール モードで)。 ユーティリティは、<xref:System.Messaging.MessageQueueInstaller.Uninstall%2A>のインストールで、インストール前の状態に影響を受けた、システムの部分を復元します。 これには、アンインストールされる MessageQueue に関連付けられているレジストリ情報の削除が含まれます。  
+  
+ アプリケーションのアンインストール ルーチン プロジェクト インストーラーの<xref:System.Configuration.Install.Installer.Context%2A?displayProperty=nameWithType>既にアンインストールされているコンポーネントに関する情報を自動的に維持します。 渡される、この状態情報<xref:System.Messaging.MessageQueueInstaller.Uninstall%2A>として、`savedState`ユーティリティをアンインストールそれぞれに、パラメーターは引き続き更新<xref:System.Messaging.MessageQueueInstaller>インスタンス。 通常、コードのこの状態情報を明示的に変更する必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UninstallAction">
+      <MemberSignature Language="C#" Value="public System.Configuration.Install.UninstallAction UninstallAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Configuration.Install.UninstallAction UninstallAction" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.UninstallAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.Install.UninstallAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定をどのようなインストーラーはでキューをアンインストールするときを示す値。 削除して、インストール前の状態に復元またはのインストールされている現在の状態のままにします。</summary>
+        <value>1 つ、<see cref="T:System.Configuration.Install.UninstallAction" />した場合に、キューのままにする状態を示す値、<see cref="T:System.Messaging.MessageQueue" />をアンインストールします。 既定値は、<see langword="Remove" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューをインストールするときに、必要に応じて既存のキューを使用することができます。 これを行う場合は、キューをインストール前の状態に戻るか、現在のインストール後の状態のままにかどうかを決定する必要があります。 キューをインストール前の状態に戻るオプションを選択する場合は、インストール時に、キューから削除されたメッセージは復元されません。 関連付けられているキューのプロパティのみをリセットすることができます、<xref:System.Messaging.MessageQueueInstaller>インストール前の値にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseJournalQueue">
+      <MemberSignature Language="C#" Value="public bool UseJournalQueue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseJournalQueue" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueInstaller.UseJournalQueue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューから取得したメッセージが関連付けられているジャーナル キューにもコピーするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ジャーナル キューにキューから取得されるメッセージをコピーするにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジャーナル キューを使用しての追跡メッセージをキューから取得した後にもできます。 ただし、2 種類のメッセージは追跡されません。 その時間に-受信タイマーの期限が切れると、キューから削除されると、キューから削除します。  
+  
+ 不要になったメッセージを削除するジャーナル キューを定期的に消去する必要があります。 ジャーナル キューの数、journal が配置されているコンピューターのクォータに格納されたメッセージ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

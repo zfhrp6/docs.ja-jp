@@ -1,0 +1,34 @@
+<Namespace Name="System.Collections.Immutable">
+  <Docs>
+    <summary><see cref="N:System.Collections.Immutable" /> 名前空間には、変更できないコレクションを定義するインターフェイスとクラスが含まれています。 これらのクラスは [!INCLUDE[net_v45](~/includes/net-v45-md.md)] からサポートが開始されます。 それらを使用して、デスクトップ、[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]、[!INCLUDE[net_portable](~/includes/net-portable-md.md)]、および Windows Phone 8 を対象とするアプリをビルドします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[
+## Remarks  
+変更できないコレクションを使用すると、以下のことができます。
+
+- コレクションが決して変化コンシューマーと確信できる方法でコレクションを共有します。
+
+- マルチスレッド アプリケーションで暗黙的なスレッド セーフを提供します (コレクションにアクセスするためにロックは不要)。
+
+- 関数型プログラミングの方法に従います。
+
+- 元のコレクションを維持しながら、列挙中にコレクションを変更します。
+
+変更できないコレクション クラスは、.NET Framework で配布されるコア クラス ライブラリの一部とは違うただし .NET Core では、用意されています。 これらは NuGet 経由で .NET Framework 4.5 以降で利用可能なです。
+
+NuGet 経由での変更できないコレクションをインストールします。
+
+1. Visual Studio でプロジェクトを開き、選択**NuGet パッケージの管理**から、**プロジェクト**メニュー。
+
+2. 必要に応じて、選択、**プレリリースを含める**チェック ボックスをオンします。 このオプションによって、使用可能になったときに、変更できないクラスの新しいプレリリース バージョンにアクセスできます。
+
+3. 使用して、**検索**を検索 ボックス、 **System.Collections.Immutable**パッケージです。
+
+4. 左側のペインで、 **System.Collections.Immutable**パッケージです。 右側のウィンドウで、必要なバージョンを選択し、[インストール] をクリックします。
+
+前述のインストール手順では、Visual Studio 2015 用です。 その他のバージョンの Visual Studio では、手順は、ユーザー インターフェイス (UI) での違いにより若干異なるあります。
+  
+ ]]></format>      
+    </remarks>
+  </Docs>
+</Namespace>

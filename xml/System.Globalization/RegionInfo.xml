@@ -1,0 +1,1132 @@
+<Type Name="RegionInfo" FullName="System.Globalization.RegionInfo">
+  <TypeSignature Language="C#" Value="public class RegionInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable beforefieldinit RegionInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.RegionInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>国/地域についての情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Globalization.CultureInfo>クラス、<xref:System.Globalization.RegionInfo>クラスを表していないユーザー設定は、ユーザーの言語またはカルチャに依存しません。  
+  
+## <a name="names-associated-with-a-regioninfo-object"></a>「に関連付けられている名前  
+ 名前、<xref:System.Globalization.RegionInfo>オブジェクトは、国/地域の ISO 3166 で定義されている 2 文字のコードのいずれか。 場合は、意味はありません。 <xref:System.Globalization.RegionInfo.Name%2A>、 <xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>、および<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティは、大文字で適切なコードを返します。 現在の一覧について<xref:System.Globalization.RegionInfo>名を参照してください[国名は英語し、コード要素](http://go.microsoft.com/fwlink/?LinkId=190591)ISO の web サイトにします。  
+  
+## <a name="instantiating-a-regioninfo-object"></a>「をインスタンス化する  
+ インスタンスを作成、<xref:System.Globalization.RegionInfo>渡したオブジェクト、<xref:System.Globalization.RegionInfo.%23ctor%28System.String%29>コンス トラクターの 2 文字の地域名か、英語 (米国) の"EN-US"など、米国または特定のカルチャの名前を"US"などです。 ただし、ことをお勧め 2 文字の地域名の代わりに、特定のカルチャ名を使用しているため、<xref:System.Globalization.RegionInfo>オブジェクトが完全に言語非依存ではありません。 いくつか<xref:System.Globalization.RegionInfo>を含むプロパティ<xref:System.Globalization.RegionInfo.DisplayName%2A>、 <xref:System.Globalization.RegionInfo.NativeName%2A>、および<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>カルチャ名に依存します。  
+  
+ 次の例は、の違いを示しています。<xref:System.Globalization.RegionInfo>ベルギーを表す 3 つのオブジェクトのプロパティの値。 2 番目と 3 つ目がカルチャ名からインスタンス化中に、地域名 (BE) のみから、最初がインスタンス化 (fr-BE フランス語 (ベルギー) の場合とおよび nl-BE オランダ語 (ベルギー) のそれぞれ)。 この例では、リフレクションを使用して、それぞれのプロパティ値を取得<xref:System.Globalization.RegionInfo>オブジェクト。  
+  
+ [!code-csharp[System.Globalization.RegionInfo#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo/CS/propertyvalues1.cs#2)]
+ [!code-vb[System.Globalization.RegionInfo#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo/VB/propertyvalues1.vb#2)]  
+  
+ シナリオでは、次のようを使用してカルチャ名国/地域名の代わりにインスタンス化するとき、<xref:System.Globalization.RegionInfo>オブジェクト。  
+  
+-   ときに、言語の名前はプライマリ重要です。 たとえば、es 英語 (米国) カルチャ名の場合もあります可能性があります「米国」ではなく"Estados Unidos"を表示するアプリケーション。 (米国) 言語にかかわらず生成「米国」だけで、国/地域名を使用して、ようにする必要がありますを使用するカルチャ名代わりにします。  
+  
+-   ときにスクリプトの相違点を考慮する必要があります。 たとえば、アゼルバイジャンのカルチャ名 az-Latn-AZ と az という-AZ およびラテン文字を扱う、国/地域 AZ し、キリル文字の国/地域の非常に異なる場合があります。  
+  
+-   ときに詳細のメンテナンスが重要です。 によって返される値<xref:System.Globalization.RegionInfo>メンバーかどうかに応じて異なる場合、<xref:System.Globalization.RegionInfo>カルチャまたは地域名を使用して、オブジェクトがインスタンス化します。 たとえば、次の表の違いに値を<xref:System.Globalization.RegionInfo>「米国」地域、"EN-US"カルチャと、「es 英語 (米国)」のカルチャを使用してオブジェクトをインスタンス化します。  
+  
+    |メンバー|"US"|"EN-US"|「es 英語 (米国)」|  
+    |------------|----------|--------------|--------------|  
+    |<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>|米国ドル|米国ドル|Dólar de EE です。UU です。|  
+    |<xref:System.Globalization.RegionInfo.Name%2A>|US|en-US|es 英語 (米国)|  
+    |<xref:System.Globalization.RegionInfo.NativeName%2A>|米国|米国|Estados Unidos|  
+    |<xref:System.Globalization.RegionInfo.ToString%2A>|US|en-US|es 英語 (米国)|  
+  
+   
+  
+## Examples  
+ 次の例での複数のメンバー、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo/CPP/regioninfo.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo/CS/regioninfo.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo/VB/regioninfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegionInfo (int culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.RegionInfo.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="culture">カルチャ識別子です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Globalization.RegionInfo" />クラスが指定されたカルチャ識別子に関連付けられている国/地域に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.RegionInfo.%23ctor%28System.String%29>インスタンス化するための推奨されるコンス トラクター、<xref:System.Globalization.RegionInfo>オブジェクト。 異なり、<xref:System.Globalization.RegionInfo.%23ctor%28System.Int32%29>パラメーター、そのパラメーターとして数値のカルチャ識別子を必要とするコンス トラクターより読みやすい名前または国コードをカルチャします。  
+  
+ カルチャ識別子は、対応するサポート NLS (National Language) ロケール識別子にマップされます。 詳細なカルチャ情報に表示されます、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。  
+  
+ 値、<xref:System.Globalization.RegionInfo.Name%2A>新しいプロパティ<xref:System.Globalization.RegionInfo>このコンス トラクターを呼び出すことによってインスタンス化されるオブジェクトは、結合された言語と国/地域コードではない、国/地域の ISO 3166 の 2 桁文字コード。 たとえば場合、<xref:System.Globalization.RegionInfo>英語 (米国) カルチャの値のカルチャ識別子 0x0409 を持つオブジェクトがインスタンス化される、<xref:System.Globalization.RegionInfo.Name%2A>プロパティが"US"です。 これに対し場合、 <xref:System.Globalization.RegionInfo> 、結合された言語でオブジェクトがインスタンス化され、国/地域コード、英語 (米国) カルチャの値のための EN-US、<xref:System.Globalization.RegionInfo.Name%2A>プロパティは"EN-US"です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つのインスタンスを比較<xref:System.Globalization.RegionInfo>異なる方法で作成されました。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CPP/regioninfo_equals.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CS/regioninfo_equals.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/VB/regioninfo_equals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="culture" />いずれか、ロケールに依存しない、カスタム、またはニュートラル カルチャを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegionInfo (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.RegionInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ISO 3166 で定義された、国/地域の 2 文字のコードを含む文字列。  
+  
+ または  
+  
+ 特定のカルチャ、カスタム カルチャ、または Windows 専用カルチャのカルチャ名を含む文字列。 カルチャ名が RFC 4646 形式でない場合、アプリケーションでは国/地域名だけでなく完全なカルチャ名を指定する必要があります。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Globalization.RegionInfo" />クラス、または基に国/地域名で指定された特定のカルチャ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `name`パラメーターは、国/地域、または特定、カスタム、または Windows 専用カルチャ名に対して定義されているコードのいずれか。 場合は、意味はありません。 ただし、 <xref:System.Globalization.RegionInfo.Name%2A>、 <xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>、および<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティは、大文字で指定したコードまたはカルチャ名を返します。  
+  
+ 定義済み<xref:System.Globalization.RegionInfo>名前にある[国の名前とコード要素](http://go.microsoft.com/fwlink/?LinkId=190591)ISO web サイトでします。  
+  
+ 国/地域名だけではなく、特定のカルチャの名前を指定する必要があります、`name`パラメーター。 たとえば、英語 (米国) の場合は、EN-US または es (米国) のスペイン語 (米国) の場合は米国ことをお勧めためなどのプロパティ<xref:System.Globalization.RegionInfo.NativeName%2A>と<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>特定の言語を反映します。 az Latn-AZ または az という-AZ が AZ を置き換えるためなどのプロパティ<xref:System.Globalization.RegionInfo.NativeName%2A>、 <xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>、および<xref:System.Globalization.RegionInfo.CurrencySymbol%2A>特定のスクリプトを反映します。  定義済みのカルチャの名前にある、 [National 言語サポート (NLS) API リファレンス](http://go.microsoft.com/fwlink/?LinkId=200048)Go Global Developer Center にします。 このコンス トラクターの呼び出しをスローするメモ、<xref:System.ArgumentException>場合`name`ニュートラル カルチャ (英語の en) などです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つのインスタンスを比較<xref:System.Globalization.RegionInfo>異なる方法で作成されました。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CPP/regioninfo_equals.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CS/regioninfo_equals.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/VB/regioninfo_equals.vb#1)]  
+  
+ 次のコード例のインスタンスを作成する<xref:System.Globalization.RegionInfo>カルチャ名を使用します。  
+  
+ [!code-cpp[System.Globalization.RegionInfo.ctorCultureName#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo.ctorCultureName/CPP/regioninfo_ctorculturename.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo.ctorCultureName#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo.ctorCultureName/CS/regioninfo_ctorculturename.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo.ctorCultureName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo.ctorCultureName/VB/regioninfo_ctorculturename.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />有効な国/地域名または特定のカルチャ名ではありません。</exception>
+        <block subset="none" type="usage">
+          <para>このコンス トラクターは、特定のカルチャまたは国/地域コードのみを受け入れます。 ただし、一部のニュートラル カルチャ名は、国/地域コードと同じです。 この場合、<paramref name="name" />は、国/地域コードではなく、ニュートラル カルチャ名、およびこのコンス トラクターをスローしないように解釈されます、<see cref="T:System.ArgumentException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyEnglishName">
+      <MemberSignature Language="C#" Value="public virtual string CurrencyEnglishName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyEnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.CurrencyEnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域で使用される通貨を英語で表した名前を取得します。</summary>
+        <value>国/地域で使用される通貨を英語で表した名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.RegionInfo.CurrencyEnglishName%2A>プロパティです。  
+  
+ [!code-cpp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/cpp/rgn5props.cpp#1)]
+ [!code-csharp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/CS/rgn5props.cs#1)]
+ [!code-vb[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/VB/rgn5props.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencyNativeName">
+      <MemberSignature Language="C#" Value="public virtual string CurrencyNativeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencyNativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.CurrencyNativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域、国/地域のネイティブ言語で書式設定で使用される通貨の名前を取得します。</summary>
+        <value>ISO 3166 の国/地域コードに関連付けられた言語で書式指定された、国/地域で使用される通貨のネイティブな名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.Globalization.RegionInfo>オブジェクトは、特定のカルチャと共に作成され、複数の言語が、対応する国/地域で使用される、<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティは特定のカルチャに関連付けられている通貨名を取得します。  
+  
+ このプロパティの値は、特定の国/地域に関連付けられている言語に依存します。 そのため、使用する場合、<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティをインスタンス化する必要があります、<xref:System.Globalization.RegionInfo>オブジェクトを渡すことによって、<xref:System.Globalization.RegionInfo.%23ctor%28System.String%29>組み合わされた言語および国/地域コード コンス トラクターです。 たとえば場合、 <xref:System.Globalization.RegionInfo> "EN-CA"英語 (カナダ)、値の結合された言語と国/地域コード オブジェクトがインスタンス化されるその<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティが「カナダ」です。 フランス語 (カナダ) の値の"FR-CA"の結合された言語と国/地域コードでインスタンス化した場合、<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティが"ドル canadien"です。 そのため、作成、`RegionInfo`国/地域名 (この場合の"CA") のみを持つオブジェクトが適切なネイティブ通貨名を区別するために十分な固有ではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.RegionInfo.CurrencyNativeName%2A>プロパティです。  
+  
+ [!code-cpp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/cpp/rgn5props.cpp#1)]
+ [!code-csharp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/CS/rgn5props.cs#1)]
+ [!code-vb[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/VB/rgn5props.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrencySymbol">
+      <MemberSignature Language="C#" Value="public virtual string CurrencySymbol { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CurrencySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.CurrencySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域に関連付けられた通貨記号を取得します。</summary>
+        <value>国/地域に関連付けられた通貨記号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、米国の通貨記号は、「$」です。  
+  
+ 場合、現在<xref:System.Globalization.RegionInfo>オブジェクトは、特定のカルチャと共に作成され、複数の言語が、対応する国/地域で使用される、<xref:System.Globalization.RegionInfo.CurrencySymbol%2A>プロパティは特定のカルチャに関連付けられている通貨記号を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentRegion">
+      <MemberSignature Language="C#" Value="public static System.Globalization.RegionInfo CurrentRegion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.RegionInfo CurrentRegion" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.CurrentRegion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.RegionInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Globalization.RegionInfo" />現在のスレッドによって使用される国/地域を表すです。</summary>
+        <value><see cref="T:System.Globalization.RegionInfo" />現在のスレッドによって使用される国/地域を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、コントロール パネルの地域と言語のオプション部分で選択されているカルチャに基づきます。 ただし、その情報を変更できますの有効期間中に、<xref:System.AppDomain>です。 <xref:System.Globalization.RegionInfo>クラスでの変更が自動的に、システムの設定で検出されないが、<xref:System.Globalization.RegionInfo.CurrentRegion%2A>を呼び出すときにプロパティが更新、<xref:System.Globalization.CultureInfo.ClearCachedData%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカライズされたバージョンの .NET Framework の言語で表した国/地域の完全名を取得します。</summary>
+        <value>ローカライズされたバージョンの .NET Framework の言語で表した国/地域の完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.RegionInfo.DisplayName%2A>プロパティには、.NET Framework のローカライズされたバージョンの言語で、国/地域名が表示されます。 たとえば、<xref:System.Globalization.RegionInfo.DisplayName%2A>プロパティは、国/地域を英語で、英語版での .NET Framework、およびスペイン語、スペイン語、.NET Framework のバージョンで表示します。  
+  
+ 値、<xref:System.Globalization.RegionInfo.DisplayName%2A>プロパティは、によって表される現在のユーザー インターフェイス カルチャの言語のリソース ファイルから取得<xref:System.Globalization.CultureInfo.CurrentUICulture%2A>です。 カスタムの領域またはオペレーティング システムから合成がないリソースについては、場合の値を<xref:System.Globalization.RegionInfo.DisplayName%2A>の値と同じでは、<xref:System.Globalization.RegionInfo.NativeName%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnglishName">
+      <MemberSignature Language="C#" Value="public virtual string EnglishName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EnglishName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.EnglishName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>英語で表した国/地域の完全名を取得します。</summary>
+        <value>英語で表した国/地域の完全名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、<xref:System.Globalization.RegionInfo>英語 (米国) カルチャの表示「米国」用に作成されたオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.RegionInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在の <see cref="T:System.Globalization.RegionInfo" /> と比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在と同じインスタンスであるかどうかを判断<see cref="T:System.Globalization.RegionInfo" />です。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="value" />パラメーターは、<see cref="T:System.Globalization.RegionInfo" />オブジェクトとその<see cref="P:System.Globalization.RegionInfo.Name" />プロパティは、同じ、 <see cref="P:System.Globalization.RegionInfo.Name" /> 、現在のプロパティ<see cref="T:System.Globalization.RegionInfo" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Equals%2A?displayProperty=nameWithType>します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、2 つのインスタンスを比較<xref:System.Globalization.RegionInfo>異なる方法で作成されました。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CPP/regioninfo_equals.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/CS/regioninfo_equals.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Equals/VB/regioninfo_equals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeoId">
+      <MemberSignature Language="C#" Value="public virtual int GeoId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GeoId" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.GeoId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>地理的な領域、国、都市、または場所の一意の識別番号を取得します。</summary>
+        <value>地理的な場所を一意に識別する 32 ビットの符号付き数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを使用する必要があります、<xref:System.Globalization.RegionInfo.GeoId%2A>カルチャに固有のサービスをお客様に提供するプロパティです。 たとえば、<xref:System.Globalization.RegionInfo.GeoId%2A>プロパティは、国/地域についての特定の情報を格納するデータベース レコードへのアクセス キーとして使用できます。  
+  
+ このプロパティの値は、Windows に対応`GetUserGeoID`関数。 地理的な識別子の一覧は、次を参照してください。[地理的な場所のテーブル](http://go.microsoft.com/fwlink/?LinkId=191287)、MSDN ライブラリです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.RegionInfo.GeoId%2A>プロパティです。  
+  
+ [!code-cpp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/cpp/rgn5props.cpp#1)]
+ [!code-csharp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/CS/rgn5props.cs#1)]
+ [!code-vb[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/VB/rgn5props.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.RegionInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Globalization.RegionInfo" /> のハッシュ関数として機能します。ハッシュ アルゴリズムや、ハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns>現在の <see cref="T:System.Globalization.RegionInfo" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドは、<xref:System.Globalization.RegionInfo.Equals%2A> メソッドによって等しいと評価された 2 つのオブジェクトに対して同じハッシュ コードを生成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMetric">
+      <MemberSignature Language="C#" Value="public virtual bool IsMetric { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMetric" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.IsMetric" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域で、計測のためにメートル法を使用するかどうかを示す値を取得します。</summary>
+        <value>
+          国/地域で、計測のためにメートル法を使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ISOCurrencySymbol">
+      <MemberSignature Language="C#" Value="public virtual string ISOCurrencySymbol { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ISOCurrencySymbol" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.ISOCurrencySymbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域に関連付けられた 3 文字の ISO 4217 通貨記号を取得します。</summary>
+        <value>国/地域に関連付けられた 3 文字の ISO 4217 通貨記号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例では、によって返される ISO 4217 通貨記号の一部を示します、<xref:System.Globalization.RegionInfo.ISOCurrencySymbol%2A>プロパティです。  
+  
+|国/地域|通貨名|ISO 4217 通貨記号|  
+|---------------------|-------------------|------------------------------|  
+|アルバニア|Albanian Lek|ALL|  
+|アルジェリア|アルジェリア|DZD|  
+|アルゼンチン|アルゼンチン ペソ|ARS|  
+|アルメニア|アルメニア|AMD|  
+|オーストラリア|オーストラリア|AUD|  
+|オーストリア|ユーロの通貨|EUR|  
+|アゼルバイジャン|アゼルバイジャン マナト|AZN|  
+|バーレーン|バーレーン|BHD|  
+|ベラルーシ|ベラルーシ|BYR|  
+|ベルギー|ユーロの通貨|EUR|  
+|ベリーズ|ベリーズ ドル|BZD|  
+|ベネズエラ ボリバル共和国|ベネズエラ ボリバル|VEF|  
+|ボリビア|Boliviano|BOB|  
+|ブラジル|Real|BRL|  
+|ブルネイ|ブルネイ|BND|  
+|ブルガリア|ブルガリア語レフ|BGN|  
+|カナダ|カナダ|CAD|  
+|カリブ海|米国ドル|米国ドル|  
+|チリ|チリ|CLP|  
+|コロンビア|コロンビア|コピー|  
+|コスタリカ|コスタリカ|CRC|  
+|クロアチア|クロアチア語クーナ|HRK|  
+|チェコ共和国|チェコ語 Koruna|CZK|  
+|デンマーク|デンマーク|DKK|  
+|ドミニカ共和国|ドミニカ|DOP|  
+|エクアドル|米国ドル|米国ドル|  
+|エジプト|エジプト|EGP|  
+|エルサルバドル|米国ドル|米国ドル|  
+|エストニア|エストニア語 Kroon|EEK|  
+|エチオピア|エチオピア|ETB|  
+|フェロー諸島|デンマーク|DKK|  
+|フィンランド|ユーロの通貨|EUR|  
+|フランス|ユーロの通貨|EUR|  
+|グルジア|ラリ|GEL|  
+|ドイツ|ユーロの通貨|EUR|  
+|ギリシャ|ユーロの通貨|EUR|  
+|グアテマラ|グアテマラ ケツァル|GTQ|  
+|ホンジュラス|ホンジュラス レンピラ|HNL|  
+|香港特別行政区|香港ドル|HKD|  
+|ハンガリー|ハンガリー語 Forint|HUF|  
+|アイスランド|アイスランド語クローネ|ISK|  
+|インド|インド|使う|  
+|インドネシア|インドネシア語 Rupiah|IDR|  
+|イラン|イラン|IRR|  
+|イラク|イラク|IQD|  
+|アイルランド|ユーロの通貨|EUR|  
+|パキスタン・イスラム共和国|パキスタン|PKR|  
+|イスラエル|新しいシュケル|ILS|  
+|イタリア|ユーロの通貨|EUR|  
+|ジャマイカ|ジャマイカ|してください。|  
+|日本|日本円|JPY|  
+|ヨルダン|ヨルダン|JOD|  
+|カザフスタン|テンゲ|KZT|  
+|ケニア|ケニア|KES|  
+|韓国|韓国語の受注|KRW|  
+|クウェート|クウェート|KWD|  
+|キルギス|som|KG|  
+|ラトビア|ラトビア語ラッツ|LVL|  
+|レバノン|レバノン|LBP|  
+|リビア|リビア|LYD|  
+|リヒテンシュタイン|スイス|「CHF|  
+|リトアニア|リトアニア語 Litas|LTL|  
+|ルクセンブルク|ユーロの通貨|EUR|  
+|マカオ特別行政区|マカオ パタカ|モップ, します。|  
+|マケドニア (FYROM)|マケドニア Denar|MKD|  
+|マレーシア|マレー Ringgit|MYR|  
+|モルディブ|ルフィア|MVR|  
+|メキシコ|メキシコ ペソ|MXN|  
+|モンゴル国|トゥグリク|やり|  
+|モロッコ|モロッコ|MAD|  
+|オランダ|ユーロの通貨|EUR|  
+|ニュージーランド|ニュージーランド|NZD|  
+|ニカラグア|(ニカラグア) Cordoba Oro|NIO|  
+|ノルウェー|ノルウェー語クローネ|NOK です。|  
+|オマーン|オマーン リアル|OMR|  
+|パナマ|パナマ バルボア|個人用アドレス帳|  
+|パラグアイ|パラグアイ グアラニー|PYG|  
+|中華人民共和国|中華人民共和国 Renminbi|CNY|  
+|ペルー|ペルー Nuevo Sol|ペン|  
+|フィリピン|フィリピン|PHP|  
+|ポーランド|ポーランド語ズローティー|PLN|  
+|ポルトガル|ユーロの通貨|EUR|  
+|モナコ公国|ユーロの通貨|EUR|  
+|プエルトリコ|米国ドル|米国ドル|  
+|カタール|カタール|QAR|  
+|ルーマニア|ルーマニア語レイ|RON|  
+|ロシア|ロシア|問題点|  
+|サウジアラビア|サウジイ リアル|行政区|  
+|セルビア|セルビア語ディナール|RSD|  
+|シンガポール|シンガポール|SGD|  
+|スロバキア|ユーロの通貨|EUR|  
+|スロベニア|ユーロの通貨|EUR|  
+|南アフリカ|南アフリカ rand 関数|ZAR|  
+|スペイン|ユーロの通貨|EUR|  
+|スウェーデン|スウェーデン語クローネ|SEK|  
+|スイス|スイス|「CHF|  
+|シリア|シリア|SYP|  
+|台湾|新しい台湾ドル|TWD|  
+|タイ|タイ語バーツ|THB|  
+|トリニダード・トバゴ|トリニダード ドル|TTD|  
+|チュニジア|チュニジア|TND|  
+|トルコ|トルコ|TRY|  
+|ウクライナ|ウクライナ語グリブナ|UAH|  
+|アラブ首長国連邦|アラブ首長国連邦ディルハム|AED|  
+|英国|英国ポンド|GBP|  
+|米国|米国ドル|米国ドル|  
+|ウルグアイ|ペソ Uruguayo|UYU|  
+|ウズベキスタン|ウズベキスタン Som|UZS|  
+|ベトナム|ベトナム語 Dong|VND|  
+|イエメン|イエメン|決して|  
+|ジンバブエ|ジンバブエ|ZWL|  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の名前または ISO 3166 の 2 文字の国/地域コードを取得<see cref="T:System.Globalization.RegionInfo" />オブジェクト。</summary>
+        <value>指定された値、<paramref name="name" />のパラメーター、<see cref="M:System.Globalization.RegionInfo.#ctor(System.String)" />コンス トラクターです。 戻り値は大文字です。  
+  
+ または  
+  
+ 2 文字のコードで指定された国/地域の ISO 3166 で定義されている、<paramref name="culture" />のパラメーター、<see cref="M:System.Globalization.RegionInfo.#ctor(System.Int32)" />コンス トラクターです。 戻り値は大文字です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、現在<xref:System.Globalization.RegionInfo>でオブジェクトを作成、 <xref:System.Globalization.RegionInfo.%23ctor%28System.Int32%29?displayProperty=nameWithType> 、カルチャ識別子パラメーターを受け取るコンス トラクター、<xref:System.Globalization.RegionInfo.Name%2A>プロパティの値の 1 つは国/地域の ISO 3166 で定義されている 2 文字のコードとは大文字で書式設定します。 たとえば、米国の 2 文字のコードでは、"US"です。  
+  
+ 場合、現在<xref:System.Globalization.RegionInfo>でオブジェクトを作成、<xref:System.Globalization.RegionInfo.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクターで"EN-US"などの完全なカルチャ名が渡され、<xref:System.Globalization.RegionInfo.Name%2A>プロパティの値は、完全なカルチャ名と地域名だけでなくです。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeName">
+      <MemberSignature Language="C#" Value="public virtual string NativeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NativeName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.NativeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>国/地域の名前を、その国/地域のネイティブな言語の書式で取得します。</summary>
+        <value>ISO 3166 国/地域コードに関連付けられた言語で書式指定された、国/地域のネイティブな名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Globalization.RegionInfo.NativeName%2A>場合、プロパティは、完全なカルチャ名を取得、`RegionInfo`完全なカルチャ名を使用してオブジェクトを構築します。  
+  
+ カルチャ名を使用することをお勧め — たとえば、"EN-US"英語 (米国) 用: にアクセスする、<xref:System.Globalization.RegionInfo.NativeName%2A>プロパティです。 このプロパティに使用される文字列は、国/地域に関連付けられた言語によって異なります。 など、カルチャ名 EN-US 英語 (米国) と es (米国) のスペイン語 (米国) の場合は、Windows Vista で異なる値を取得できます。 そのため、作成、`RegionInfo`米国の国/地域名のみを持つオブジェクトが適切な文字列を区別するために十分な固有ではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Globalization.RegionInfo.NativeName%2A>プロパティです。  
+  
+ [!code-cpp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/cpp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/cpp/rgn5props.cpp#1)]
+ [!code-csharp[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/csharp/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/CS/rgn5props.cs#1)]
+ [!code-vb[sys.glob.regioninfo.rgn5props#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/sys.glob.regioninfo.rgn5props/VB/rgn5props.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterISORegionName">
+      <MemberSignature Language="C#" Value="public virtual string ThreeLetterISORegionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterISORegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.ThreeLetterISORegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ISO 3166 で定義された国/地域の 3 文字コードを取得します。</summary>
+        <value>ISO 3166 で定義された国/地域の 3 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティには、この国/地域の ISO 3166 で定義されている 3 文字コードが含まれています。 たとえば、米国の 3 文字コードは、"USA"です。  
+  
+ 場合は、意味はありません。 ただし、 <xref:System.Globalization.RegionInfo.Name%2A>、 <xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>、および<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティは、大文字で、適切なコードを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreeLetterWindowsRegionName">
+      <MemberSignature Language="C#" Value="public virtual string ThreeLetterWindowsRegionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreeLetterWindowsRegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.ThreeLetterWindowsRegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表される国/地域に対して Windows が割り当てる 3 文字コードを取得<see cref="T:System.Globalization.RegionInfo" />です。</summary>
+        <value>これによって表される国/地域に対して Windows が割り当てる 3 文字コード<see cref="T:System.Globalization.RegionInfo" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば、米国の 3 文字コードは、"USA"です。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.RegionInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カルチャ名または現在の指定された ISO 3166 の 2 文字の国/地域コードを含む文字列を返します<see cref="T:System.Globalization.RegionInfo" />です。</summary>
+        <returns>現在のカルチャ名または ISO 3166 の 2 文字の国/地域コードを含む文字列が定義されている<see cref="T:System.Globalization.RegionInfo" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.ToString%2A?displayProperty=nameWithType>します。  
+  
+ このメソッドの値を返します、<xref:System.Globalization.RegionInfo.Name%2A>プロパティです。  
+  
+ 場合は、意味はありません。 ただし、 <xref:System.Globalization.RegionInfo.Name%2A>、 <xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>、および<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティは、大文字で、適切なコードを返します。  
+  
+ 定義済み<xref:System.Globalization.RegionInfo>名前にある、<xref:System.Globalization.RegionInfo>クラスに関するトピック。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoLetterISORegionName">
+      <MemberSignature Language="C#" Value="public virtual string TwoLetterISORegionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TwoLetterISORegionName" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.RegionInfo.TwoLetterISORegionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ISO 3166 で定義された国/地域の 2 文字コードを取得します。</summary>
+        <value>ISO 3166 で定義された国/地域の 2 文字コード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.RegionInfo>名は、国/地域の ISO 3166 で定義されている 2 文字のコードのいずれか。 たとえば、米国の 2 文字のコードは、"US"です。  
+  
+> [!IMPORTANT]
+>  場合によっては、<xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>プロパティが 2 文字以上あります。 たとえばの値、<xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>カリブ地域のプロパティが「029」です。  
+  
+ 場合は、意味はありません。 ただし、 <xref:System.Globalization.RegionInfo.Name%2A>、 <xref:System.Globalization.RegionInfo.TwoLetterISORegionName%2A>、および<xref:System.Globalization.RegionInfo.ThreeLetterISORegionName%2A>プロパティは、大文字で、適切なコードを返します。  
+  
+> [!WARNING]
+>  永続化する場合、<xref:System.Globalization.RegionInfo>オブジェクトまたはプロセス間通信、2 文字の ISO 地域コードではなく、完全なカルチャ名を使用してインスタンス化する必要があります。 <xref:System.Globalization.RegionInfo>プロパティは、スクリプトと、言語によって異なります。 インスタンス化する、<xref:System.Globalization.RegionInfo>地域コードのみを使用して、オブジェクトは、コンテキストとデータが失われます。  
+  
+ 定義済み<xref:System.Globalization.RegionInfo>名前にある[国名は英語し、コード要素](http://go.microsoft.com/fwlink/?LinkId=190591)ISO web サイトでします。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Globalization.RegionInfo>クラスです。  
+  
+ [!code-cpp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CPP/regioninfo_properties.cpp#1)]
+ [!code-csharp[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/CS/regioninfo_properties.cs#1)]
+ [!code-vb[System.Globalization.RegionInfo_Properties#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Globalization.RegionInfo_Properties/VB/regioninfo_properties.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

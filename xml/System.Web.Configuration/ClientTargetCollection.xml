@@ -1,0 +1,422 @@
+<Type Name="ClientTargetCollection" FullName="System.Web.Configuration.ClientTargetCollection">
+  <TypeSignature Language="C#" Value="public sealed class ClientTargetCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientTargetCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ClientTargetCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.ClientTarget))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.ClientTarget" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetCollection>型へのアクセスを許可する、<xref:System.Web.Configuration.ClientTarget>の要素、<xref:System.Web.Configuration.ClientTargetSection>セクションの要素のコレクション。  
+  
+ 含むグループに属している<xref:System.Web.Configuration.ClientTarget>と<xref:System.Web.Configuration.ClientTargetSection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetCollection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#1)]
+ [!code-vb[System.Web.Configuration.ClientTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#1)]  
+  
+ 次の例では、構成ファイルからの抜粋を示します。  
+  
+```  
+<clientTarget>  
+  <add alias=  
+    "uplevel"   
+    userAgent="Mozilla/5.0 (compatible;MSIE 6.0;Windows NT 5.1)"/>  
+  <add alias="downlevel" userAgent="Generic Downlevel"/>  
+</clientTarget>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientTargetCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ClientTargetCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetCollection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.ClientTargetCollection>クラスを使用して、<xref:System.Web.Configuration.ClientTargetSection.ClientTargets%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.ClientTarget clientTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.ClientTarget clientTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Add(System.Web.Configuration.ClientTarget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientTarget" Type="System.Web.Configuration.ClientTarget" />
+      </Parameters>
+      <Docs>
+        <param name="clientTarget">コレクションに追加する <see cref="T:System.Web.Configuration.ClientTarget" />。</param>
+        <summary>指定した <see cref="T:System.Web.Configuration.ClientTarget" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントのターゲットをコレクションに追加すると、前に作成する必要があります、<xref:System.Web.Configuration.ClientTarget>オブジェクトを初期化、<xref:System.Web.Configuration.ClientTarget.Alias%2A>と<xref:System.Web.Configuration.ClientTarget.UserAgent%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加、<xref:System.Web.Configuration.ClientTarget>オブジェクトを<xref:System.Web.Configuration.ClientTargetCollection>コレクション。  
+  
+ コレクションを取得する方法についてでのコード例を参照してください、<xref:System.Web.Configuration.ClientTargetCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#5)]
+ [!code-vb[System.Web.Configuration.ClientTarget#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれているすべての構成要素のキーの配列を返します、<see cref="T:System.Web.Configuration.ClientTargetCollection" />コレクション。</summary>
+        <value>すべてのキーの配列、<see cref="T:System.Web.Configuration.ClientTarget" />に含まれるオブジェクト、<see cref="T:System.Web.Configuration.ClientTargetCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを削除、<see cref="T:System.Web.Configuration.ClientTarget" />コレクションからオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、構成ファイルの更新の結果、<xref:System.Web.Configuration.ClientTargetCollection.Clear%2A>メソッドが依存、<xref:System.Configuration.ConfigurationSaveMode>値を選択します。 これら 2 つのメソッドのいずれかの構成ファイルの更新に使用する:<xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType>または<xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  呼び出す<xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType>は呼び出すことと同じ<xref:System.Configuration.Configuration.Save%2A>ときに、<xref:System.Configuration.ConfigurationSaveMode>値が変更されます。  
+  
+ 使用する場合、<xref:System.Configuration.Configuration.Save%2A?displayProperty=nameWithType>メソッドでは、次の条件が適用されます。  
+  
+-   渡す場合、<xref:System.Configuration.ConfigurationSaveMode.Full>または<xref:System.Configuration.ConfigurationSaveMode.Modified>パラメーター値、`clear`要素が挿入、`clientTarget`現在の階層レベルで構成ファイルのセクションです。  
+  
+-   渡す場合、<xref:System.Configuration.ConfigurationSaveMode.Minimal>パラメーター値、一連の`remove`要素に追加されます、`clientTarget`現在の階層レベルで構成ファイルのセクションです。 これによりすべての参照が削除、`add`階層の上位レベル親構成ファイルで定義された要素。 <xref:System.Configuration.ConfigurationSaveMode.Minimal>列挙値は、いずれかのコレクションに追加のプロパティは、構成ファイルにシリアル化を取得する新機能に影響します。 プロパティは<xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>、`false`既定です。 次の条件のいずれかが適用されます。  
+  
+    -   ときに<xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>に設定されている`true`、`clear`要素が挿入、`clientTarget`現在の階層レベルで構成ファイルのセクションです。 これによりすべての参照が削除、`add`階層の上位レベル親構成ファイルで定義された要素。  
+  
+    -   ときに<xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>に設定されている`false`、`clear`から要素を削除、`clientTarget`存在する場合は現在の階層レベルの構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.ClientTargetCollection.Clear%2A>メソッドは実際には、削除、`add`要素で定義されている、`clientTarget`現在の階層レベルで構成ファイルのセクションです。 すべての参照も削除、`add`階層の上位レベル親構成ファイルで定義された要素。  
+  
+> [!NOTE]
+>  `add`から要素が削除されず、`clientTarget`親構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、すべてを削除、<xref:System.Web.Configuration.ClientTarget>オブジェクトから、<xref:System.Web.Configuration.ClientTargetCollection>コレクション。  
+  
+ コレクションを取得する方法についてでのコード例を参照してください、<xref:System.Web.Configuration.ClientTargetCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#6)]
+ [!code-vb[System.Web.Configuration.ClientTarget#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素のコレクションのインデックス。</param>
+        <summary>指定した要素のコレクションのキーを取得します。</summary>
+        <returns>キーの値を含む文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ClientTarget this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ClientTarget Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ClientTarget</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">オブジェクトのコレクションのインデックス。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.ClientTarget" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定したインデックス位置にある <see cref="T:System.Web.Configuration.ClientTarget" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ClientTarget this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ClientTarget Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ClientTarget</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ユーザー エージェントの名前です。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.ClientTarget" />指定の名前を持つオブジェクト。</summary>
+        <value><see cref="T:System.Web.Configuration.ClientTarget" />指定の名前を持つオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">エイリアス、<see cref="T:System.Web.Configuration.ClientTarget" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ClientTarget" />コレクションから指定したエイリアスを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetCollection.Remove%2A>メソッドの削除、`add`内の要素、`clientTarget`セクションには、現在の階層レベルと挿入、`remove`要素。 `remove`要素への参照を実質的になくなりました、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.ClientTarget>オブジェクトから、<xref:System.Web.Configuration.ClientTargetCollection>コレクション。  
+  
+ コレクションを取得する方法についてでのコード例を参照してください、<xref:System.Web.Configuration.ClientTargetCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#8)]
+ [!code-vb[System.Web.Configuration.ClientTarget#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Configuration.ClientTarget clientTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Configuration.ClientTarget clientTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.Remove(System.Web.Configuration.ClientTarget)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientTarget" Type="System.Web.Configuration.ClientTarget" />
+      </Parameters>
+      <Docs>
+        <param name="clientTarget">削除する <see cref="T:System.Web.Configuration.ClientTarget" />。</param>
+        <summary>指定した <see cref="T:System.Web.Configuration.ClientTarget" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetCollection.Remove%2A>メソッドの削除、`add`内の要素、`clientTarget`セクションには、現在の階層レベルと挿入、`remove`要素。 `remove`要素への参照を実質的になくなりました、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.ClientTarget>オブジェクトから、<xref:System.Web.Configuration.ClientTargetCollection>コレクション。  
+  
+ コレクションを取得する方法についてでのコード例を参照してください、<xref:System.Web.Configuration.ClientTargetCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#7)]
+ [!code-vb[System.Web.Configuration.ClientTarget#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのインデックス、<see cref="T:System.Web.Configuration.ClientTarget" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.ClientTarget" />指定されたコレクションのインデックスを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetCollection.RemoveAt%2A>メソッドの削除、`add`内の要素、`clientTarget`セクションには、現在の階層レベルと挿入、`remove`要素。 `remove`要素への参照を実質的になくなりました、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.ClientTarget>オブジェクトから、<xref:System.Web.Configuration.ClientTargetCollection>コレクション。  
+  
+ コレクションを取得する方法についてでのコード例を参照してください、<xref:System.Web.Configuration.ClientTargetCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#9)]
+ [!code-vb[System.Web.Configuration.ClientTarget#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

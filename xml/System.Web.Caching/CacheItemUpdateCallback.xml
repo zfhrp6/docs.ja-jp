@@ -1,0 +1,46 @@
+<Type Name="CacheItemUpdateCallback" FullName="System.Web.Caching.CacheItemUpdateCallback">
+  <TypeSignature Language="C#" Value="public delegate void CacheItemUpdateCallback(string key, CacheItemUpdateReason reason, out object expensiveObject, out CacheDependency dependency, out DateTime absoluteExpiration, out TimeSpan slidingExpiration);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheItemUpdateCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.CacheItemUpdateCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="key" Type="System.String" />
+    <Parameter Name="reason" Type="System.Web.Caching.CacheItemUpdateReason" />
+    <Parameter Name="expensiveObject" Type="System.Object&amp;" RefType="out" />
+    <Parameter Name="dependency" Type="System.Web.Caching.CacheDependency&amp;" RefType="out" />
+    <Parameter Name="absoluteExpiration" Type="System.DateTime&amp;" RefType="out" />
+    <Parameter Name="slidingExpiration" Type="System.TimeSpan&amp;" RefType="out" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="key">キャッシュから削除されるアイテムの識別子。</param>
+    <param name="reason">アイテムがキャッシュから削除される理由。</param>
+    <param name="expensiveObject">このメソッドが呼び出し元に復帰するときに、更新を含むキャッシュされたアイテム オブジェクトが含まれています。</param>
+    <param name="dependency">このメソッドが呼び出し元に復帰するときに、アイテム オブジェクトとファイル、キャッシュ キー、いずれかの配列、または別の <see cref="T:System.Web.Caching.CacheDependency" /> オブジェクト間の依存関係を定義するオブジェクトが含まれています。</param>
+    <param name="absoluteExpiration">このメソッドが呼び出し元に復帰するときに、オブジェクトの有効期限が切れた時刻が含まれています。</param>
+    <param name="slidingExpiration">このメソッドが呼び出し元に復帰するときに、オブジェクトが最後にアクセスされた時刻と、オブジェクトの有効期限が切れた時刻の間隔が含まれています。</param>
+    <summary>キャッシュされたアイテムがキャッシュから削除される前にアプリケーションに通知する、コールバック メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、キャッシュの期限が切れると、ASP.NET を呼び出す、<xref:System.Web.Caching.CacheItemUpdateCallback>キャッシュ アイテムとアイテムを更新するためのキーを持つメソッドです。 このメソッドの他のパラメーターでは、out パラメーターです。 新しいキャッシュされたアイテムと省略可能な有効期限とキャッシュされたアイテムを更新するときに使用する依存関係の値を指定するとします。  
+  
+ キャッシュされた項目がへの呼び出しを使用して明示的に削除された場合は更新コールバックが呼び出されない<xref:System.Web.Caching.Cache.Remove%2A>です。  
+  
+ かどうか、キャッシュから削除するキャッシュされた項目を返す必要があります`null`で、`expensiveObject`パラメーター。 使用して、新しいキャッシュされたデータへの参照を返すそれ以外の場合、`expensiveObject`パラメーター。 有効期限や依存関係の値を指定しない場合、メモリが必要な場合にのみ、項目はキャッシュから削除されます。  
+  
+ コールバック メソッドは、例外をスローする場合、ASP.NET が例外を抑制し、キャッシュされた値を削除します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

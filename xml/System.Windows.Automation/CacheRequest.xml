@@ -1,0 +1,413 @@
+<Type Name="CacheRequest" FullName="System.Windows.Automation.CacheRequest">
+  <TypeSignature Language="C#" Value="public sealed class CacheRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CacheRequest extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.CacheRequest" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティと、UI オートメーション framework がキャッシュされるときにパターンを指定します、<see cref="T:System.Windows.Automation.AutomationElement" />を取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティとパターンを取得する[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]パフォーマンスが低速化できる、プロセス間呼び出しが必要です。 バッチ操作でプロパティおよびパターンの値をキャッシュすることによって、アプリケーションのパフォーマンスを強化できます。  
+  
+ クラスのコンス トラクターを呼び出すことによって、新しいキャッシュ要求を作成します。 繰り返し呼び出すは、要求が表示されます、<xref:System.Windows.Automation.CacheRequest.Add%2A>メソッドです。  
+  
+ 1 つだけ<xref:System.Windows.Automation.CacheRequest>アクティブにすることができます。 これには要求をアクティブ化する 2 つの方法があります。  
+  
+-   呼び出す<xref:System.Windows.Automation.CacheRequest.Activate%2A>に要求します。 要求をスタックにプッシュし、要求がポップされます。 このオブジェクトが破棄されるときにします。 確実に破棄、例外が発生した場合でもからの戻り値を使用して<xref:System.Windows.Automation.CacheRequest.Activate%2A>内で、`using`ブロック (`Using`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+-   内部スタックに呼び出すことによって、要求を保留<xref:System.Windows.Automation.CacheRequest.Push%2A>です。 スタックの最上位の要求がアクティブであり、によってスタックから削除された次のいずれかをする必要があります専用<xref:System.Windows.Automation.CacheRequest.Pop%2A>です。 要求はポップ非アクティブにします。  
+  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要求がアクティブな状態を取得した要素には、プロパティとパターンが指定の値がキャッシュがされます。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Automation.CacheRequest.Activate%2A>キャッシュ パターンおよびプロパティにします。  
+  
+ [!code-csharp[UIAClient_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#107)]
+ [!code-vb[UIAClient_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#107)]  
+  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Automation.CacheRequest.Push%2A>と<xref:System.Windows.Automation.CacheRequest.Pop%2A>キャッシュ パターンおよびプロパティにします。  
+  
+ [!code-csharp[UIAClient_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
+ [!code-vb[UIAClient_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CacheRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.CacheRequest" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Automation.CacheRequest>が作成される、<xref:System.Windows.Automation.AutomationElement.RuntimeIdProperty>識別子は、既定のプロパティとしてキャッシュに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public IDisposable Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IDisposable Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Activate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この設定<see cref="T:System.Windows.Automation.CacheRequest" />ときに返される項目のアクティブな仕様として、<see cref="T:System.Windows.Automation.AutomationElement" />が同じスレッドで要求します。</summary>
+        <returns>破棄するために使用できるオブジェクト、<see cref="T:System.Windows.Automation.CacheRequest" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する方が便利ではこのメソッドを使用して<xref:System.Windows.Automation.CacheRequest.Push%2A>と<xref:System.Windows.Automation.CacheRequest.Pop%2A>をアクティブ化する手段として、<xref:System.Windows.Automation.CacheRequest>です。 オブジェクトがスタックにプッシュされたときに<xref:System.Windows.Automation.CacheRequest.Activate%2A>が呼び出され、破棄されるときにポップされます。 確実に破棄、配置内で戻り値、`using`ブロック (`Using`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Automation.CacheRequest.Activate%2A>キャッシュ パターンおよびプロパティにします。  
+  
+ [!code-csharp[UIAClient_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#107)]
+ [!code-vb[UIAClient_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Add">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>プロパティまたはパターンの識別子を追加、<see cref="T:System.Windows.Automation.CacheRequest" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Automation.CacheRequest>オブジェクトが、作成、<xref:System.Windows.Automation.AutomationElement.RuntimeIdProperty>識別子は、既定のプロパティとしてキャッシュに追加されます。  
+  
+ キャッシュ要求に既に含まれるオブジェクトを追加しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Automation.AutomationPattern pattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.Automation.AutomationPattern pattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Add(System.Windows.Automation.AutomationPattern)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pattern" Type="System.Windows.Automation.AutomationPattern" />
+      </Parameters>
+      <Docs>
+        <param name="pattern">キャッシュへのパターンを指定する識別子です。</param>
+        <summary>指定した追加<see cref="T:System.Windows.Automation.AutomationPattern" />識別子をこの<see cref="T:System.Windows.Automation.CacheRequest" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュ要求に既にあるパターンを追加しても効果はありません。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Automation.CacheRequest>キャッシュに保存するパターンを追加するとします。  
+  
+ [!code-csharp[UIAClient_snip#202](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#202)]
+ [!code-vb[UIAClient_snip#202](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#202)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Automation.CacheRequest" />がアクティブです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Windows.Automation.AutomationProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Windows.Automation.AutomationProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Add(System.Windows.Automation.AutomationProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Windows.Automation.AutomationProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">キャッシュするプロパティ値を指定する識別子。</param>
+        <summary>指定した追加<see cref="T:System.Windows.Automation.AutomationProperty" />識別子をこの<see cref="T:System.Windows.Automation.CacheRequest" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Automation.CacheRequest>が作成される、<xref:System.Windows.Automation.AutomationElement.RuntimeIdProperty>識別子は、既定のプロパティとしてキャッシュに追加されます。  
+  
+ キャッシュ要求に既にあるプロパティを追加しても効果はありません。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Automation.CacheRequest>キャッシュに保存するプロパティを追加します。  
+  
+ [!code-csharp[UIAClient_snip#202](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#202)]
+ [!code-vb[UIAClient_snip#202](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#202)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Automation.CacheRequest" />がアクティブです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomationElementMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElementMode AutomationElementMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.AutomationElementMode AutomationElementMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.CacheRequest.AutomationElementMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElementMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返される要素が、基になる完全参照を含めるかどうかを指定する値の設定を取得または[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]、またはキャッシュされた情報だけです。</summary>
+        <value>
+          <see cref="F:System.Windows.Automation.AutomationElementMode.Full" />返される要素が、基になる完全参照を持つ場合[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]それ以外の<see cref="F:System.Windows.Automation.AutomationElementMode.None" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElementMode.Full>既定値は、返される要素が、基になる完全参照を含むことを指定[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]です。 <xref:System.Windows.Automation.AutomationElementMode.None>返される要素に、基になるへの参照がないことを指定[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]、キャッシュされた情報のみを含めるとします。  
+  
+ などの要素で特定の操作<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>、 <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>、および<xref:System.Windows.Automation.AutomationElement.SetFocus%2A>、完全参照が必要です。 これらに対して実行しようとしています。 を [なし] を持つ要素がの結果、<xref:System.InvalidOperationException>です。  
+  
+ 使用して<xref:System.Windows.Automation.AutomationElementMode.None>する方が効率的プロパティのみが必要な場合にオーバーヘッドを回避できるので完全参照を設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A>に設定されている<xref:System.Windows.Automation.AutomationElementMode.None>、結果をキャッシュにしかプロパティとパターンは、取得したオブジェクトで使用できます。  
+  
+ [!code-csharp[UIAClient_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
+ [!code-vb[UIAClient_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.CacheRequest Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.CacheRequest Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.CacheRequest</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコピーを作成<see cref="T:System.Windows.Automation.CacheRequest" />です。</summary>
+        <returns>現在のオブジェクトの変更可能なコピーです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public static System.Windows.Automation.CacheRequest Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Automation.CacheRequest Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.CacheRequest.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.CacheRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Automation.CacheRequest" />現在のスレッドでアクティブになっています。</summary>
+        <value>アクティブな<see cref="T:System.Windows.Automation.CacheRequest" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pop">
+      <MemberSignature Language="C#" Value="public void Pop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Pop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、アクティブな<see cref="T:System.Windows.Automation.CacheRequest" />現在のスレッドを内部スタックからです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、現在アクティブな要求のみを削除することができます、<xref:System.Windows.Automation.CacheRequest.Pop%2A>メソッドです。 いない、現在 1 つの結果、例外は、要求を削除しようとしています。  
+  
+ 使用することをお勧めはのキャッシュ要求を入れ子にする場合を除き、<xref:System.Windows.Automation.CacheRequest.Activate%2A>スタックに要求を配置します。 その理由は、使用できること<xref:System.Windows.Automation.CacheRequest.Activate%2A>内で、`using`ブロック (`Using`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])、例外が発生した場合でも、スタックから要求がポップされことを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、非アクティブ化する方法を示しています、<xref:System.Windows.Automation.CacheRequest>を使用して<xref:System.Windows.Automation.CacheRequest.Pop%2A>です。  
+  
+ [!code-csharp[UIAClient_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
+ [!code-vb[UIAClient_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">スタックにプッシュされた最後の 1 つキャッシュ要求を削除しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Push">
+      <MemberSignature Language="C#" Value="public void Push ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Push() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.CacheRequest.Push" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>場所、<see cref="T:System.Windows.Automation.CacheRequest" />内部状態スタックのことが現在のスレッドでアクティブな要求です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数<xref:System.Windows.Automation.CacheRequest>状態スタックにオブジェクトを配置することができます。 プッシュされた順序でスタックからのキャッシュ要求を削除する必要があります。それ以外の場合、<xref:System.InvalidOperationException>例外が発生します。  
+  
+ 使用することをお勧めはのキャッシュ要求を入れ子にする場合を除き、<xref:System.Windows.Automation.CacheRequest.Activate%2A>スタックに要求を配置します。 その理由は、使用できること<xref:System.Windows.Automation.CacheRequest.Activate%2A>内で、`using`ブロック (`Using`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])、例外が発生した場合でも、スタックから要求がポップされことを確認します。  
+  
+   
+  
+## Examples  
+ 次の例は、アクティブ化する方法を示しています、<xref:System.Windows.Automation.CacheRequest>を使用して<xref:System.Windows.Automation.CacheRequest.Push%2A>です。  
+  
+ [!code-csharp[UIAClient_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
+ [!code-vb[UIAClient_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TreeFilter">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Condition TreeFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Condition TreeFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.CacheRequest.TreeFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のビューを指定する値、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]キャッシュ時に使用する要素のツリーです。</summary>
+        <value>表示、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリー。 既定の表示は<see cref="F:System.Windows.Automation.Automation.ControlViewCondition" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューの詳細については、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリーを参照してください[UI オートメーション ツリーの概要](~/docs/framework/ui-automation/ui-automation-tree-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Automation.CacheRequest.TreeFilter%2A>に設定されている<xref:System.Windows.Automation.Automation.RawViewCondition>できるように、キャッシュは、コンテンツ ビュー、またはコントロールのビューの一部であるかどうかに関係なく、すべての要素に対して行われます。  
+  
+ [!code-csharp[UIAClient_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#108)]
+ [!code-vb[UIAClient_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TreeScope">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.TreeScope TreeScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.TreeScope TreeScope" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.CacheRequest.TreeScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TreeScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュを実行するか、サブツリーのルートに対してのみ、または子または子孫にも指定する値を設定します。</summary>
+        <value>1 つ以上の<see cref="F:System.Windows.Automation.TreeScope.Element" />、 <see cref="F:System.Windows.Automation.TreeScope.Children" />、 <see cref="F:System.Windows.Automation.TreeScope.Descendants" />、または<see cref="F:System.Windows.Automation.TreeScope.Subtree" />です。 既定値は <see cref="F:System.Windows.Automation.TreeScope.Element" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュのスコープまたは複数のオブジェクトに関連してフェッチされる、対象となるオブジェクトに関連していない<xref:System.Windows.Automation.AutomationElement.FindFirst%2A>または<xref:System.Windows.Automation.AutomationElement.FindAll%2A>と呼びます。 この例を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、リスト ボックス要素は中に、親ウィンドウの要素から取得、<xref:System.Windows.Automation.CacheRequest>アクティブと<xref:System.Windows.Automation.CacheRequest.TreeScope%2A>は<xref:System.Windows.Automation.TreeScope.Children>します。 子要素 (つまり、リスト項目) の指定されたプロパティがキャッシュに格納されから取得できる、<xref:System.Windows.Automation.AutomationElement.CachedChildren%2A>リスト ボックスのです。  
+  
+ [!code-csharp[UIAClient_snip#119](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#119)]
+ [!code-vb[UIAClient_snip#119](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#119)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティを設定しようとしましたが<see cref="F:System.Windows.Automation.TreeScope.Parent" />または<see cref="F:System.Windows.Automation.TreeScope.Ancestors" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

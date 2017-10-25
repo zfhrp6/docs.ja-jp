@@ -1,0 +1,191 @@
+<Type Name="WebServiceAttribute" FullName="System.Web.Services.WebServiceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebServiceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebServiceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.WebServiceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>その機能を説明する文字列など、XML Web サービスに情報を追加するために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.WebServiceAttribute>発行および実行されるように XML Web サービスの必要はありません。 使用することができます、 `WebServiceAttribute` XML Web サービスのサービスの説明と、サービス ヘルプ ページで使用されている共通言語ランタイム識別子の規則により制限されていない XML Web サービスの名前を指定します。  
+  
+ 公開が行われる前に、XML Web サービスは、既定の XML 名前空間を変更する必要があります。 各 XML Web サービスには、クライアント アプリケーションを使用すると、Web 上の他のサービスから識別できるようにそれを識別する一意の XML 名前空間が必要があります。 http://tempuri.org/ は、開発、下にある XML Web サービスで利用できるが、公開済みの XML Web サービスが永続的な名前空間を使用する必要があります。  
+  
+ XML Web サービスは、ユーザーが制御する XML 名前空間によって識別されるようにします。 たとえば、XML 名前空間の一部として、会社のインターネット ドメイン名を使用できます。 多くの XML Web サービスの XML 名前空間の Url に似て、Web 上の実際のリソースを指さない必要があります。 (XML Web サービスの XML 名前空間は Uri です)。ASP.NET を使用して作成された、XML Web サービスの既定の XML 名前空間を変更する使用<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>プロパティです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Web.Services.WebServiceAttribute.Description%2A>のプロパティ、<xref:System.Web.Services.WebServiceAttribute>に" `Common Server Variables` "http://www.microsoft.com/ に XML 名前空間を設定します。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebServiceAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.WebServiceAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.WebServiceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNamespace">
+      <MemberSignature Language="C#" Value="public const string DefaultNamespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string DefaultNamespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.WebServiceAttribute.DefaultNamespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値、<see cref="P:System.Web.Services.WebServiceAttribute.Namespace" />プロパティです。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebServiceAttribute.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスの説明メッセージ。</summary>
+        <value>XML Web サービスの機能を説明するテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ わかりやすいメッセージが表示されます、XML Web サービスのサービスの利用者に XML Web サービスを説明するドキュメントが生成されると、サービスの説明と、サービス ヘルプ ページなど。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Web.Services.WebServiceAttribute.Description%2A>プロパティを" `Common Server Variables` "です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebServiceAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービスの名前を設定します。</summary>
+        <value>XML Web サービスの名前。 既定値は、XML Web サービスを実装するクラスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスの説明は、ユーザーは、XML Web サービスの URL に移動しのクエリ文字列を指定する場合に生成しますか。WSDL です。 サービスの説明、<xref:System.Web.Services.WebServiceAttribute.Name%2A>プロパティは、XML Web サービスの XML 修飾名のローカル部分を識別します。 `Name`プロパティは、サービス ヘルプ ページに、XML Web サービスの名前を表示にも使用します。 使用予定のコンシューマーは、XML Web サービス メソッド名とそのパラメーターを指定せず、XML Web サービスの.asmx ページに移動したときに、サービス ヘルプ ページが表示されます。  
+  
+ XML 修飾名は、XML ドキュメントと同じ名前を持つ要素を区別するために使用されます。 XML 修飾名、コロンで区切られた次の 2 つの部分から成る: 名前空間とローカル部分に関連付けられている名前空間やプレフィックス。 名前空間 URI の参照とサービスの説明の目的の値、<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>プロパティです。 一般に、プレフィックスは、URI のエイリアスと同様は、名前空間に関連付けできるように、後続のすべての XML 修飾名、名前空間を使用するには、簡略化されたプレフィックスを使用してます。 ローカルの部分は、文字またはスペースが含まれていないアンダー スコアで始まる文字列です。 したがって、サービスの説明で XML Web サービスを識別する XML 修飾名は、次の形式では。  
+  
+ <xref:System.Web.Services.WebServiceAttribute.Namespace%2A> : <xref:System.Web.Services.WebServiceAttribute.Name%2A>  
+  
+ 詳細については、XML 修飾名では、http://www.w3.org/TR/REC-xml-names/ を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例のセット<xref:System.Web.Services.WebServiceAttribute.Name%2A>する XML Web サービスの`MyName`します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.WebServiceAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービスを使用する既定の XML 名前空間を設定します。</summary>
+        <value>XML Web サービスを使用する既定の XML 名前空間。 既定値で指定された、<see cref="F:System.Web.Services.WebServiceAttribute.DefaultNamespace" />プロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 名前空間は、統一リソース識別子 (URI) によって識別される XML ドキュメント内の名前を作成する方法を提供します。 XML 名前空間を使用して XML ドキュメントの要素または属性を一意に識別できます。 XML Web サービスのサービスの説明については、XML では、具体的には Web サービス記述言語 (WSDL) で定義されます。  
+  
+ XML Web サービスのサービスの説明内<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>XML Web サービスに直接関連する XML 要素の既定の名前空間として使用されます。 XML Web サービスとその XML Web サービス メソッドの名前がで指定された名前空間に関連するなど、`Namespace`プロパティです。 WSDL に固有の要素は、http://schemas.xmlsoap.org/wsdl/ 名前空間に適用されます。  
+  
+ XML Web サービス クライアントが SOAP XML Web サービスの呼び出しを使用して、必要に応じて追加できます、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>または<xref:System.Web.Services.Protocols.SoapRpcMethodAttribute>XML Web サービス メソッドを呼び出します。 クライアントは、ASP.NET を使用して作成された XML Web サービスを呼び出している場合は、 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.RequestNamespace%2A>、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.ResponseNamespace%2A>と<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティはすべてから派生、<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>既定ではプロパティです。 インスタンスの XML Web サービス メソッド名を指定`Time`と`Namespace`プロパティの`http://www.contoso.com/`、`Action`プロパティは`http://www.contoso.com/Time`既定でします。 既定の設定を変更する`RequestNamespace`、 `ResponseNamespace`、および`Action`XML Web サービス メソッドの場合は、追加することができます、 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute> XML Web サービス メソッドにします。  
+  
+> [!NOTE]
+>  XML 名前空間は、クラスが存在してでの用語で名前空間と異なる、[!INCLUDE[winsdklong](~/includes/winsdklong-md.md)]です。 クラスの名前空間を指定するを参照してください。 [Namespace キーワード](~/docs/csharp/language-reference/keywords/namespace-keywords.md)場合 c# で記述します。  
+  
+   
+  
+## Examples  
+ 次の例のセット<xref:System.Web.Services.WebServiceAttribute.Namespace%2A>に`http://www.contoso.com`とその名前空間を上書き、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute.Action%2A>プロパティを追加することによって、<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>を`Time`XML Web サービス メソッドです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

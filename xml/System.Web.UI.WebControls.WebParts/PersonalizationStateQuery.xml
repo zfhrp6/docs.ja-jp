@@ -1,0 +1,168 @@
+<Type Name="PersonalizationStateQuery" FullName="System.Web.UI.WebControls.WebParts.PersonalizationStateQuery">
+  <TypeSignature Language="C#" Value="public sealed class PersonalizationStateQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PersonalizationStateQuery extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまな取得を使用してパーソナル化プロバイダーに渡すことができ、メソッドを検索するクエリ パラメーターのセットを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスはさまざまな取得を見つけて、パーソナル化プロバイダーのメソッドなどのパラメーター値として使用<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.FindState%2A>と<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.GetCountOfState%2A>です。 既定のインデクサーでは、このオブジェクトによって保持されるクエリ パラメーターに汎用的なアクセスを許可します。 このクラスによって明示的に公開されている 3 つのプロパティ<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>、このクラスのプロパティ名と同じであるクエリ キーの値を使用して格納します。 詳細については、「<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.Item%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PersonalizationStateQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまな取得を見つけて、パーソナル化プロバイダーのメソッドなどのこのクラスのインスタンスがパラメーター値として使用される<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.FindState%2A>と<xref:System.Web.UI.WebControls.WebParts.PersonalizationProvider.GetCountOfState%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string queryKey] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queryKey" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="queryKey">大文字と小文字のクエリ文字列。 値は、次のいずれかを指定する必要があります:"PathToMatch"、"UserInactiveSinceDate"または"UsernameToMatch"です。</param>
+        <summary>取得またはクエリ パラメーターの値を設定します。</summary>
+        <value>示されたクエリ パラメーターの値、<paramref name="queryKey" />パラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、の既定のインデクサー、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery>クラスです。 によって示されるクエリ パラメーターの値を返します`queryKey`です。 使用することができます`PersonalizationStateQuery.this["UsernameToMatch"]`、`PersonalizationStateQuery.this["PathToMatch"]`と`PersonalizationStateQuery.this["UserInactiveSinceDate"]`を設定する、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>、 <xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>、および<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティ、それぞれします。 これら 3 つのプロパティ設定すると、インデクサーでは、適切な型に対して検証されます。  
+  
+ このプロパティを返します`null`場合`queryKey`存在しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queryKey" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="queryKey" /> が空の文字列 ("") です。  
+  
+ \- または  
+  
+ 切り捨てられる場合、<paramref name="queryKey" />空の文字列になります。  
+  
+ \- または  
+  
+ 3 つのプロパティのいずれかで指定された値<see cref="T:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery" />は種類が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PathToMatch">
+      <MemberSignature Language="C#" Value="public string PathToMatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PathToMatch" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリに使用するパスを設定します。</summary>
+        <value>クエリに使用するパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、クエリの実行時に照合するパスが含まれています。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.PathToMatch%2A>ワイルドカード文字を含む、基になるデータ ストアを通じて渡される。 このプロパティに設定することができます`null`パスに基づくクエリのフィルター処理する必要がありますされませんを示すです。 このプロパティがない場合`null`、その値は切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserInactiveSinceDate">
+      <MemberSignature Language="C#" Value="public DateTime UserInactiveSinceDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime UserInactiveSinceDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリで使用されている最後のアクティブな日付を設定します。</summary>
+        <value>クエリで使用する最後のアクティブな日付。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を示します、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>に対してフィルター選択するプロパティです。 正確な比較では、レコードが位置の値<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate%2A>以下の値には、<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UserInactiveSinceDate%2A>プロパティです。  
+  
+ このプロパティに設定することができます<xref:System.DateTime.MaxValue>、最後のアクティビティの日付に基づいて、クエリをフィルター処理を行わないことを示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsernameToMatch">
+      <MemberSignature Language="C#" Value="public string UsernameToMatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UsernameToMatch" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリで、ユーザー名を設定します。</summary>
+        <value>クエリで使用するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、クエリを実行するときにフィルターを適用するユーザー名を表します。 場合<xref:System.Web.UI.WebControls.WebParts.PersonalizationStateQuery.UsernameToMatch%2A>ワイルドカード文字を含む、基になるデータ ストアを通じて渡される。 このプロパティに設定することができます`null`ユーザー名に基づいているクエリをフィルター処理を行わないことを示すです。 このプロパティがない場合`null`、その値は切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

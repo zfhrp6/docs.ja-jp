@@ -1,0 +1,108 @@
+<Type Name="MetadataTypeAttribute" FullName="System.ComponentModel.DataAnnotations.MetadataTypeAttribute">
+  <TypeSignature Language="C#" Value="public sealed class MetadataTypeAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MetadataTypeAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ モデルのクラスに関連付けるメタデータ クラスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.MetadataTypeAttribute>属性は、クラスをデータ モデル部分クラスに関連付けることができます。 この関連付けられているクラスでは、データ モデルに含まれていない追加のメタデータ情報を提供します。  
+  
+ たとえば、関連付けられているクラスに適用できます、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>属性のデータ フィールドにします。 これは、この制約は、データベース スキーマに必要のない場合でも、フィールドの値を指定することを強制します。  
+  
+ 使用する、<xref:System.ComponentModel.DataAnnotations.MetadataTypeAttribute>次のように属性します。  
+  
+-   アプリケーションで変更するデータ モデル部分クラスを作成するファイルを作成します。  
+  
+-   関連するメタデータ クラスを作成します。  
+  
+-   適用、<xref:System.ComponentModel.DataAnnotations.MetadataTypeAttribute>部分的なエンティティ クラスに関連付けられているクラスを指定する属性します。  
+  
+ この属性を適用する場合は、次の使用法の制約に従う必要があります。  
+  
+-   属性は、クラスにのみ適用できます。  
+  
+-   派生クラスでは、属性を継承できません。  
+  
+-   属性は、1 回だけ適用できます。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.MetadataTypeAttribute>に関連付けるエンティティ部分クラスのメタデータ クラス。 例では、適用、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>属性に関連するメタデータ クラスの追加情報を提供する方法を示します。 データ フィールドにします。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.MetadataTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.MetadataTypeAttribute/CS/Customer.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.MetadataTypeAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.MetadataTypeAttribute/VB/Customer.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetadataTypeAttribute (Type metadataClassType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type metadataClassType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="metadataClassType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="metadataClassType">参照するメタデータ クラス。</param>
+        <summary><see cref="T:System.ComponentModel.DataAnnotations.MetadataTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.MetadataTypeAttribute>に関連付けるエンティティ部分クラスのメタデータ クラス。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.MetadataTypeAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.MetadataTypeAttribute/CS/Customer.cs#2)]
+ [!code-vb[System.ComponentModel.DataAnnotations.MetadataTypeAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.MetadataTypeAttribute/VB/Customer.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="metadataClassType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MetadataClassType">
+      <MemberSignature Language="C#" Value="public Type MetadataClassType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type MetadataClassType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.MetadataTypeAttribute.MetadataClassType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ モデル部分クラスに関連付けられているメタデータ クラスを取得します。</summary>
+        <value>メタデータ クラスを表す型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

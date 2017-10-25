@@ -1,0 +1,794 @@
+<Type Name="HttpSessionState" FullName="System.Web.SessionState.HttpSessionState">
+  <TypeSignature Language="C#" Value="public sealed class HttpSessionState : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpSessionState extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.HttpSessionState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セッション状態の値だけでなくセッション レベルの設定と有効期間管理メソッドへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、複数の要求の一意のブラウザー セッションに関連付けられている情報を格納するためにセッション状態管理を提供します。 キーの名前または数値インデックスで参照されている値のコレクションを格納することができます。 セッションの値との機能へのアクセスが利用可能なを使用して、<xref:System.Web.SessionState.HttpSessionState>経由でアクセスできるは、クラス、 <xref:System.Web.HttpContext.Session%2A> 、現在のプロパティ<xref:System.Web.HttpContext>、または<xref:System.Web.UI.Page.Session%2A>のプロパティ、<xref:System.Web.UI.Page>です。  
+  
+ セッション データは、一意の識別子を使用して特定のブラウザー セッションに関連付けられています。 ブラウザーで、期限切れのないセッション cookie に既定では、この識別子が格納されているが、URL に設定してセッションの識別子を格納するアプリケーションを構成することも、`cookieless`属性を`true`または<xref:System.Web.HttpCookieMode.UseUri>アプリケーションの構成の要素でします。 ASP.NET の値を指定することによって、ブラウザーで cookie がサポートされるかどうかを判断することが<xref:System.Web.HttpCookieMode.UseDeviceProfile>の`cookieless`属性。 ASP.NET の値を指定することによって、ブラウザーの cookie を有効にするかどうかを判断することもできます<xref:System.Web.HttpCookieMode.AutoDetect>の`cookieless`属性。 Cookie がサポートされている場合と<xref:System.Web.HttpCookieMode.UseDeviceProfile>指定すると、または有効になっている場合は<xref:System.Web.HttpCookieMode.AutoDetect>が指定されて、セッション識別子がそれ以外の cookie に格納されているセッションの識別子は、URL に格納されます。  
+  
+ セッションが開始される最初の要求時、分単位で指定された数の前に、ブラウザーで新しい要求が行われる限り、セッションの値は保持されます、<xref:System.Web.SessionState.HttpSessionState.Timeout%2A>プロパティ パスです。 新しいセッションを開始するとき、セッション<xref:System.Web.SessionState.SessionStateModule.Start>イベントが発生します。 このイベントを使用して、既定のセッションの値の設定など、セッションの開始時に追加の作業を行うことができます。 セッションがタイムアウトしたときに、<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>メソッドが呼び出されると、か、ASP.NET アプリケーションをシャット ダウン、セッション<xref:System.Web.SessionState.SessionStateModule.End>イベントが発生します。 このイベントを使用して、必要なクリーンアップを実行することができます。 <xref:System.Web.SessionState.SessionStateModule.End>イベントが発生した場合にのみ、セッション状態`mode`に設定されている<xref:System.Web.SessionState.SessionStateMode.InProc>です。  
+  
+ パフォーマンスを向上させるには、クッキーを使用するセッションを割り当てないセッション ストレージで実際にデータが格納されるまで、<xref:System.Web.UI.Page.Session%2A>オブジェクト。 詳細については、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A> プロパティを参照してください。  
+  
+ セッション状態は、ASP.NET アプリケーションの境界を越えては保持されません。 別のアプリケーションに移動する、ブラウザー場合、は、セッション情報は、新しいアプリケーションを使用できません。  
+  
+ セッションの値は、既定では、Web サーバー上のメモリに格納されます。 SQL Server データベース、ASP.NET 状態サーバー、またはカスタムのサーバーでセッションの値を格納することもできます。 これにより、ASP.NET、IIS のプロセス、または ASP.NET アプリケーションを再起動する場合のセッションの値を保持して、Web ファーム内のすべてのサーバー間でセッションの値を使用できるようにすることができます。 この動作の構成には、設定、`mode`属性を有効な<xref:System.Web.SessionState.SessionStateMode>アプリケーションの構成の要素の値。 詳細については、次を参照してください。[セッション状態モード](http://msdn.microsoft.com/library/0bb0a3a3-650f-4c47-a0c5-b08b9b591bb4)です。  
+  
+ セッション状態に代わる手段は、アプリケーションの状態 (を参照してください、<xref:System.Web.HttpApplication.Application%2A>プロパティ) と ASP.NET のキャッシュ (を参照してください、<xref:System.Web.Caching>名前空間)、どのストアの変数、ASP.NET アプリケーションのすべてのユーザーによってアクセスできます ASP.NET プロファイル (を参照してください、<xref:System.Web.Profile>名前空間)、期限切れにすることなく、データ ストア内のユーザーの値を永続化するタイムアウトを使用して。ASP.NET<xref:System.Web.UI.WebControls?displayProperty=nameWithType>でのコントロールの値を保持する、<xref:System.Web.UI.Control.ViewState%2A>です。<xref:System.Web.HttpResponse.Cookies%2A>;<xref:System.Web.HttpRequest.QueryString%2A>プロパティおよび HTTP で使用できる HTML フォームのフィールド`POST`を使用して、<xref:System.Web.HttpRequest.Form%2A>コレクション。 セッション状態とその他の状態管理の選択肢の違いの詳細については、次を参照してください。 [ASP.NET 状態管理に関する推奨事項](http://msdn.microsoft.com/library/af79fa0d-4bc8-47a6-9915-d8e355bfb732)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、設定し、セッション状態から値を取得します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[HttpSessionState#30](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/session2cs.aspx#30)]
+ [!code-aspx-vb[HttpSessionState#30](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/session2vb.aspx#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abandon">
+      <MemberSignature Language="C#" Value="public void Abandon ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abandon() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Abandon" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセッションをキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 回、<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>メソッドが呼び出され、現在のセッションが有効ではなく、新しいセッションを開始することができます。 <xref:System.Web.SessionState.HttpSessionState.Abandon%2A>により、<xref:System.Web.SessionState.SessionStateModule.End>イベントが発生します。 新しい<xref:System.Web.SessionState.SessionStateModule.Start>イベントは、次の要求で発生します。  
+  
+ 既定では、破棄済みまたは期限切れのセッションのセッション識別子をリサイクルします。 セッションの有効期限が切れたか、中止されたセッション識別子を含む要求が行われた場合、新しいセッションが開始同じのセッション識別子を使用します。 設定して無効にすることができます`regenerateExpiredSessionId`する構成要素の属性`true`です。 詳細については、次を参照してください。[セッション識別子](http://msdn.microsoft.com/library/146ca206-d151-4f2e-a548-bcca05ccf0cb)です。  
+  
+ <xref:System.Web.SessionState.SessionStateModule.End>イベントがサポートされている場合にのみ、<xref:System.Web.SessionState.HttpSessionState.Mode%2A>プロパティに設定されている<xref:System.Web.SessionState.SessionStateMode.InProc>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name">セッション状態コレクションに追加する項目の名前。</param>
+        <param name="value">セッション状態コレクションに追加する項目の値。</param>
+        <summary>セッション状態コレクションに新しい項目を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`name`パラメーターは、既存のセッション状態の項目を参照、既存の項目は、指定された上書き`value`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、セッション状態の値を格納する方法を示しています、<xref:System.Web.SessionState.HttpSessionState.Add%2A>メソッドです。 使用して、セッション状態に値を削除する方法も示します、<xref:System.Web.SessionState.HttpSessionState.Remove%2A>メソッドです。 A <xref:System.Web.UI.WebControls.Repeater> Web ページの内容のセッション状態を表示するコントロールを使用します。 <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A>メソッドの使用をセッション状態のコレクションを反復処理し、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッション状態のコレクションからすべてのキーと値を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodePage">
+      <MemberSignature Language="C#" Value="public int CodePage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CodePage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.CodePage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッションの文字セットの識別子を取得または設定します。</summary>
+        <value>現在のセッションの文字セットの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字セット (コード ページ) がマルチ バイト文字データ、文字値の決定を解釈し、並べ替え順序を使用します。 コード ページの設定は、されていない Unicode 文字データへのマルチ バイト文字データにのみ適用されます。  
+  
+ これは、<xref:System.Web.SessionState.IHttpSessionState.CodePage%2A>プロパティは ASP の旧バージョンのみと互換性のために提供します。 ASP ページとの下位互換性を維持する必要がない場合を使用して、<xref:System.Web.HttpResponse.ContentEncoding%2A>プロパティ代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contents">
+      <MemberSignature Language="C#" Value="public System.Web.SessionState.HttpSessionState Contents { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.SessionState.HttpSessionState Contents" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Contents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.HttpSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッション状態オブジェクトへの参照を取得します。</summary>
+        <value>現在の <see cref="T:System.Web.SessionState.HttpSessionState" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.HttpSessionState.Contents%2A>プロパティは、ASP の旧バージョンとの互換性を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、項目名を一覧表示し、の値が、<xref:System.Web.SessionState.HttpSessionState.Contents%2A>プロパティです。  
+  
+ [!code-csharp[HttpSessionState#9](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/snippetscs.aspx#9)]
+ [!code-vb[HttpSessionState#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/snippetsvb.aspx#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieMode">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCookieMode CookieMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.HttpCookieMode CookieMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.CookieMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCookieMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが Cookie なしのセッション用に構成されているかどうかを示す値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Web.HttpCookieMode" />アプリケーションが cookie なしのセッションのように構成するかどうかを示す値。 既定値は、<see cref="F:System.Web.HttpCookieMode.UseCookies" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A>は`true`、<xref:System.Web.SessionState.HttpSessionState.CookieMode%2A>プロパティから返される<xref:System.Web.HttpCookieMode.UseUri>以外の場合、<xref:System.Web.SessionState.HttpSessionState.CookieMode%2A>プロパティから返される<xref:System.Web.HttpCookieMode.UseCookies>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`cookieless`セッション属性を`true`Web.config ファイルにします。 このサンプル アプリケーションの構成には、<xref:System.Web.SessionState.HttpSessionState.CookieMode%2A>プロパティが返す<xref:System.Web.HttpCookieMode.UseUri>です。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <sessionState   
+      mode="InProc"  
+      cookieless="true"  
+      timeout="30" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />セッションの値を受け取る。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>からコピーを開始します。</param>
+        <summary>セッション状態の値のコレクションを 1 次元配列にコピーします。コピー操作は、指定した配列内のインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態コレクション内の項目の数を取得します。</summary>
+        <value>コレクション内の項目数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセッションですべてのセッション状態変数名を読み取るために使用できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />セッション状態コレクション内の変数名を反復処理することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して、セッション状態の値を格納する方法を示しています、<xref:System.Web.SessionState.HttpSessionState.Add%2A>メソッドです。 使用して、セッション状態に値を削除する方法も示します、<xref:System.Web.SessionState.HttpSessionState.Remove%2A>メソッドです。 A <xref:System.Web.UI.WebControls.Repeater> Web ページにセッション状態の内容を表示するコントロールを使用します。 <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A>メソッドの使用をセッション状態のコレクションを反復処理し、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCookieless">
+      <MemberSignature Language="C#" Value="public bool IsCookieless { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCookieless" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsCookieless" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション ID が URL に埋め込まれているか、HTTP cookie に格納されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />セッションが URL に埋め込まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET は、各ブラウザーでセッションを一意に識別します。 既定では、セッションの一意の識別子は、ブラウザーに無期限のセッション cookie に格納されます。 セッション id を格納されないように、cookie に設定して指定することができます、`cookieless`属性を`true`構成要素。  
+  
+> [!NOTE]
+>  アプリケーションのセキュリティを向上させるのには、アプリケーションがこの時点で呼び出す必要がありますをログアウト、ユーザーを許可する必要があります、<xref:System.Web.SessionState.HttpSessionState.Abandon%2A>メソッドです。 これにより、URL の一意識別子を使用して、ユーザーのセッションに格納されているプライベート データを取得する必要のないソースの可能性が減少します。  
+  
+ ASP.NET は、ページの URL に一意のセッション ID を自動的に挿入して cookie なしのセッション状態を保持します。 たとえば、次の URL は一意のセッション ID lit3py55t21z5v55vlm25s55 を含めるように ASP.NET によって変更されています。  
+  
+```  
+http://www.example.com/(S(4danlfat035muve4g0mvgfrr))/orderform.aspx  
+```  
+  
+ ASP.NET では、リンクの各ページをブラウザーに送信する前にセッション ID 値を埋め込むことによって、すべての要求されたページに含まれるリンクを変更します。 ユーザーが、サイトが提供するリンクのパスをたどっている限り、セッション状態が維持されます。 ただし、ユーザー エージェントは、URL をリライト、セッション状態のインスタンスが失われます。  
+  
+ セッション ID は、アプリケーション名に続くスラッシュの後と、残りのファイルまたは仮想ディレクトリ識別子の前に、URL に埋め込まれます。 これにより、ASP.NET に関連する前に、アプリケーション名を解決するのには、<xref:System.Web.SessionState.SessionStateModule>要求にします。  
+  
+ 既定では、cookie なしのセッションで使用されるセッション識別子はリサイクルされます。 つまり、有効期限が切れたセッション ID を持つ要求が行われた場合、新しいセッションが開始要求によって指定したセッション ID を使用します。 この動作は、検索エンジンまたは他のプログラムを複数のブラウザーを cookie なしのセッション ID を含むリンクが共有される場合に、セッション データが不適切に共有になります。 セッション id のリサイクルを無効にして、複数のクライアントで共有されているセッション データの可能性を減らすことができます。 これを行うには、設定、`regenerateExpiredSessionId`する構成要素の属性`true`です。 これは、有効期限が切れたセッション ID を持つ cookie なしのセッションの要求が行われたときに生成される新しいセッション ID になります 有効期限が切れたセッション id が行われた要求が HTTP を使用している場合ことに注意して`POST`メソッドを投稿されたデータが失われる場合`regenerateExpiredSessionId`は`true`ASP.NET がブラウザーが URL で新しいセッション id を持つようにするためのリダイレクトを実行します。  
+  
+> [!NOTE]
+>  設定中に、`regenerateExpiredSessionId`属性を`true`可能性を低減セッション データが共有の不要なは保護されない不適切なソースを取得して別のユーザーのセッションへのアクセスに対して、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>値と、サーバーへの要求に含めます。 プライベートまたは機密性の高い情報を格納する、セッション状態では場合、は、ブラウザーとを含むサーバー間の通信の暗号化に SSL を使用することをお勧めしますが、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`cookieless`セッション属性を Web.config ファイルで true です。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <sessionState   
+      mode="InProc"  
+      cookieless="true"  
+      regenerateExpiredSessionId="true"  
+      timeout="30" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNewSession">
+      <MemberSignature Language="C#" Value="public bool IsNewSession { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNewSession" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsNewSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の要求でセッションが作成されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在の要求でセッションが作成された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、セッションが読み取り専用です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態の値のコレクションへのアクセスが同期されているかどうかを示す値 (スレッド セーフである) を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、コレクションへのアクセスが同期されている (スレッド セーフである)それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">セッションの値の数値インデックス。</param>
+        <summary>取得または数値のインデックスを使用して、セッションの値を設定します。</summary>
+        <value>指定したインデックス位置に格納されているセッション状態値または<see langword="null" />アイテムが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">セッションの値のキー名。</param>
+        <summary>取得または名前で、セッションの値を設定します。</summary>
+        <value>指定の名前を持つセッション状態の値または<see langword="null" />アイテムが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameObjectCollectionBase.KeysCollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameObjectCollectionBase/KeysCollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameObjectCollectionBase+KeysCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態コレクションに格納されているすべての値のキーのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />すべてのセッション キーを格納しています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LCID">
+      <MemberSignature Language="C#" Value="public int LCID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LCID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.LCID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッションのロケール識別子 (LCID) を取得または設定します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />インスタンスが、現在のセッションのカルチャを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.HttpSessionState.LCID%2A>プロパティは ASP の旧バージョンのみと互換性のために提供します。 ASP ページとの下位互換性を維持する必要がない場合を使用して、<xref:System.Globalization.CultureInfo.LCID%2A>プロパティ代わりにします。  
+  
+ ASP.NET では、セッション状態でロケール識別子は保存されません。 <xref:System.Web.SessionState.HttpSessionState.LCID%2A>プロパティへのアクセス、<xref:System.Globalization.CultureInfo.LCID%2A>プロパティを取得し、識別子を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.SessionState.SessionStateMode Mode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.SessionState.SessionStateMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッション状態モードを取得します。</summary>
+        <value><see cref="T:System.Web.SessionState.SessionStateMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーを構成する方法については<xref:System.Web.SessionState.SessionStateMode.StateServer>または<xref:System.Web.SessionState.SessionStateMode.SQLServer>セッション状態ストアの場合を参照してください[ASP.NET セッション状態の概要](http://msdn.microsoft.com/library/6d60d381-6521-4e1d-9089-da6464f2a9bc)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`mode`セッション属性を<xref:System.Web.SessionState.SessionStateMode.SQLServer>Web.config ファイルにします。 SQL Server セッション モードの場合、`sqlConnectionString`属性も必要です。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <sessionState   
+      mode="SQLServer"  
+      sqlConnectionString="Data Source=localhost;Integrated Security=SSPI"  
+      cookieless="true"  
+      timeout="30" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">セッション状態コレクションから削除する項目の名前。</param>
+        <summary>セッション状態のコレクションから項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッション状態コレクションに指定した要素が含まれていないかどうかは`name`コレクションは変更されません。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、セッション状態の値を格納する方法を示しています、<xref:System.Web.SessionState.HttpSessionState.Add%2A>メソッドです。 使用して、セッション状態に値を削除する方法も示します、<xref:System.Web.SessionState.HttpSessionState.Remove%2A>メソッドです。 A <xref:System.Web.UI.WebControls.Repeater> Web ページにセッション状態の内容を表示するコントロールを使用します。 <xref:System.Web.SessionState.HttpSessionState.GetEnumerator%2A>メソッドの使用をセッション状態のコレクションを反復処理し、<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[HttpSessionState#13](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/HttpSessionStateAddCS.aspx#13)]
+ [!code-aspx-vb[HttpSessionState#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/HttpSessionStateAddVB.aspx#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAll">
+      <MemberSignature Language="C#" Value="public void RemoveAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.RemoveAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッション状態のコレクションからすべてのキーと値を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.HttpSessionState.RemoveAll%2A>同じ機能を実行<xref:System.Web.SessionState.HttpSessionState.Clear%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.HttpSessionState.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">セッション状態コレクションから削除する項目のインデックス。</param>
+        <summary>セッション状態コレクションから指定したインデックス位置にある項目を削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /> が <see cref="P:System.Web.SessionState.HttpSessionState.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionID">
+      <MemberSignature Language="C#" Value="public string SessionID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SessionID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.SessionID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションの一意の識別子を取得します。</summary>
+        <value>一意のセッション識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>プロパティは、サーバー上のセッション データと、ブラウザーを一意に識別するために使用します。 <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>値がランダムに ASP.NET によって生成され、ブラウザーで期限切れのないセッション cookie に保存します。 <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>値は、ASP.NET アプリケーションに要求のたびに、cookie に送信されます。  
+  
+ 場合は、ASP.NET アプリケーションでは cookie の使用を無効にし、依然としてセッション状態を使用して、cookie ではなく、URL に設定してセッション識別子を格納するアプリケーションを構成することができます、`cookieless`する構成要素の属性`true`、または<xref:System.Web.HttpCookieMode.UseUri>アプリケーションの Web.config ファイルにします。 ASP.NET の値を指定することによって、ブラウザーで cookie がサポートされるかどうかを判断することが<xref:System.Web.HttpCookieMode.UseDeviceProfile>の`cookieless`属性。 ASP.NET の値を指定することによって、ブラウザーの cookie を有効にするかどうかを判断することもできます<xref:System.Web.HttpCookieMode.AutoDetect>の`cookieless`属性。 Cookie がサポートされている場合と<xref:System.Web.HttpCookieMode.UseDeviceProfile>指定すると、または有効になっている場合は<xref:System.Web.HttpCookieMode.AutoDetect>が指定されて、セッション識別子がそれ以外の cookie に格納されているセッションの識別子は、URL に格納されます。 詳細については、<xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> プロパティを参照してください。  
+  
+ <xref:System.Web.SessionState.HttpSessionState.SessionID%2A>クッキーまたは URL で、クリア テキストで、サーバーとブラウザー間で送信します。 その結果、不適切なソースにアクセスできます別のユーザーのセッションを取得して、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>値と、サーバーへの要求に含めます。 プライベートまたは機密性の高い情報を格納する、セッション状態では場合、は、ブラウザーとを含むサーバー間の通信の暗号化に SSL を使用することをお勧めしますが、<xref:System.Web.SessionState.HttpSessionState.SessionID%2A>です。  
+  
+ ASP.NET までセッション データを記憶域が割り当てられません cookie ベースのセッション状態を使用する場合、<xref:System.Web.UI.Page.Session%2A>オブジェクトを使用します。 その結果、セッション オブジェクトがアクセスされるまでページ要求ごとに新しいセッション ID が生成されます。 いずれかを実装することができます、アプリケーションでは、セッション全体に対して、静的なセッション ID が必要とする場合、`Session_Start`メソッドと、アプリケーションの Global.asax ファイルとストアのデータに、<xref:System.Web.UI.Page.Session%2A>セッション ID を解決するオブジェクト、または明示的にデータを格納する、アプリケーションの別の部分でコードを使用することができます、<xref:System.Web.UI.Page.Session%2A>オブジェクト。  
+  
+ 場合は、アプリケーションが cookie なしのセッション状態を使用セッション ID は最初のページ ビューでが生成され、セッション全体で保持されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、cookie なしのセッション識別子を使用するセッションの状態を構成する Web.config ファイルを示します。 詳細については、<xref:System.Web.SessionState.HttpSessionState.IsCookieless%2A> プロパティを参照してください。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <sessionState   
+      cookieless="true"  
+      regenerateExpiredSessionId="true"  
+      timeout="30" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaticObjects">
+      <MemberSignature Language="C#" Value="public System.Web.HttpStaticObjectsCollection StaticObjects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpStaticObjectsCollection StaticObjects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.StaticObjects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpStaticObjectsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>宣言されたオブジェクトのコレクションを取得<see langword="&lt;object Runat=&quot;Server&quot; Scope=&quot;Session&quot;/&gt;" />Global.asax ASP.NET アプリケーションのファイル内のタグ。</summary>
+        <value><see cref="T:System.Web.HttpStaticObjectsCollection" /> Global.asax ファイルで宣言されたオブジェクトを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページ上のオブジェクトがシリアル化をサポートしていないかどうか、<xref:System.Web.SessionState.HttpSessionState.Mode%2A>はアウト プロセス (<xref:System.Web.SessionState.SessionStateMode.SQLServer>または<xref:System.Web.SessionState.SessionStateMode.StateServer>)、オブジェクトは作成されませんし、このコレクションに追加されません。  
+  
+ <xref:System.Web.SessionState.HttpSessionState.StaticObjects%2A>プロパティは、ASP の旧バージョンとの互換性を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例の一覧、`id`および内のオブジェクトのオブジェクトの種類、<xref:System.Web.SessionState.HttpSessionState.StaticObjects%2A>コレクション。  
+  
+ [!code-csharp[HttpSessionState#10](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpSessionState/CS/snippetscs.aspx#10)]
+ [!code-vb[HttpSessionState#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpSessionState/VB/snippetsvb.aspx#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態値のコレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public int Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.HttpSessionState.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、セッション状態プロバイダーがセッションを終了する前に、要求間で許可される分単位で、時間を設定します。</summary>
+        <value>タイムアウト期間 (分)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.HttpSessionState.Timeout%2A>を使用して、アプリケーションの Web.config ファイルでプロパティを設定することができます、`timeout`構成要素の属性を設定できます、<xref:System.Web.SessionState.HttpSessionState.Timeout%2A>アプリケーション コードを使用して直接プロパティ値。  
+  
+ <xref:System.Web.SessionState.HttpSessionState.Timeout%2A>プロパティに設定できません値 525,600 分 (1 年) を超えています。 既定値は、20 分です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、`timeout`を 30 分に、Web.config ファイルでのセッションの属性です。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <sessionState   
+      mode="InProc"  
+      cookieless="true"  
+      timeout="30" />  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

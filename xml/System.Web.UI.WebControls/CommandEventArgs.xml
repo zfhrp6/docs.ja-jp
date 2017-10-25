@@ -1,0 +1,193 @@
+<Type Name="CommandEventArgs" FullName="System.Web.UI.WebControls.CommandEventArgs">
+  <TypeSignature Language="C#" Value="public class CommandEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CommandEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CommandEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see langword="Command" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Command`イベントが発生したときに、<xref:System.Web.UI.WebControls.Button>または<xref:System.Web.UI.WebControls.ImageButton>コントロールがクリックされました。  
+  
+ <xref:System.Web.UI.WebControls.CommandEventArgs>オブジェクトに関するデータを格納する、`Command`ことができるイベントにアクセス イベントのハンドラー。 使用可能なプロパティを使用して、<xref:System.Web.UI.WebControls.CommandEventArgs>クラスなどを実行するコマンドの名前を決定することができます`Sort`、ように、コマンドを補完する、省略可能な引数だけでなく`Ascending`です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.CommandEventArgs>を参照してください、<xref:System.Web.UI.WebControls.CommandEventArgs.%23ctor%2A>コンス トラクターです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プロパティでアクセスする方法を示します<xref:System.Web.UI.WebControls.CommandEventArgs>を実行するコマンドを決定します。 この例を示す、イベント ハンドラー宣言によってを使用して、<xref:System.Web.UI.WebControls.Button.OnClick%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ 次のコード例は、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法を示します、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[ButtonCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommand/CS/buttoncommandcs.aspx#1)]
+ [!code-aspx-vb[ButtonCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommand/VB/buttoncommandvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommandEventArgs (System.Web.UI.WebControls.CommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.CommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandEventArgs.#ctor(System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.CommandEventArgs" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />と他のクラス<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.CommandEventArgs>クラス<xref:System.Web.UI.WebControls.CommandEventArgs>オブジェクト。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.CommandEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|CommandName|`e.CommandName`パラメーター。|  
+|CommandArgument|`e.CommandArgument`パラメーター。|  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.CommandEventArgs>クラス<xref:System.Web.UI.WebControls.CommandEventArgs>オブジェクト。  
+  
+ [!code-csharp[Classic CommandEventArgs.CommandEventArgs Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CommandEventArgs.CommandEventArgs Example/CS/source.cs#1)]
+ [!code-vb[Classic CommandEventArgs.CommandEventArgs Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CommandEventArgs.CommandEventArgs Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CommandEventArgs (string commandName, object argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string commandName, object argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CommandEventArgs.#ctor(System.String,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandName" Type="System.String" />
+        <Parameter Name="argument" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="commandName">コマンドの名前。</param>
+        <param name="argument">A<see cref="T:System.Object" />コマンドの引数を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />指定されたコマンドの名前と引数を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.CommandEventArgs>クラスの指定されたコマンド名と引数を使用します。  
+  
+ インスタンス<xref:System.Web.UI.WebControls.CommandEventArgs>作成は、このコンス トラクターを呼び出し、次のプロパティが指定された値に初期化されます。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|CommandName|`commandName` パラメーターの値。|  
+|CommandArgument|`argument` パラメーターの値。|  
+  
+   
+  
+## Examples  
+ 次の例で作成しの新しいインスタンスを初期化する方法、<xref:System.Web.UI.WebControls.CommandEventArgs>クラスの指定されたコマンド名と引数を使用します。  
+  
+ [!code-csharp[Classic CommandEventArgs.CommandEventArgs1 Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic CommandEventArgs.CommandEventArgs1 Example/CS/source.cs#1)]
+ [!code-vb[Classic CommandEventArgs.CommandEventArgs1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic CommandEventArgs.CommandEventArgs1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public object CommandArgument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandEventArgs.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドの引数を取得します。</summary>
+        <value>A<see cref="T:System.Object" />コマンドの引数を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>プログラマによって設定任意の文字列を含めることができます。 <xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>プロパティを補完、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>コマンドの追加情報を提供することによりプロパティです。 たとえば、設定することができます、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>プロパティを`Sort`設定と、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>プロパティを`Ascending`を昇順で並べ替えるには、コマンドを指定します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>を実行するコマンドの補足情報を決定するプロパティです。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandName">
+      <MemberSignature Language="C#" Value="public string CommandName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CommandEventArgs.CommandName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンド名を取得します。</summary>
+        <value>実行するコマンドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>を実行するコマンドを決定するプロパティです。 <xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>プロパティは、プログラマによって設定任意の文字列を含めることができます。 プログラマは、コードでコマンド名を識別し、適切なタスクを実行します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>プロパティをプログラムでを実行するコマンドを決定します。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

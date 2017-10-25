@@ -1,0 +1,728 @@
+<Type Name="GenerateResource" FullName="Microsoft.Build.Tasks.GenerateResource">
+  <TypeSignature Language="C#" Value="public sealed class GenerateResource : Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit GenerateResource extends Microsoft.Build.Tasks.TaskExtension" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.GenerateResource" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.Build.Tasks.TaskExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>Microsoft.Build.Framework.RequiredRuntime("v2.0")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装して、 <c>GenerateResource</c>タスク。 使用して、 <c>GenerateResource</c>作成してこのタスクを実行するのには、プロジェクト ファイル内の要素。 使用法とパラメーターについては、次を参照してください。 [GenerateResource タスク](http://msdn.microsoft.com/library/c0aff32f-f2cc-46f6-9c3e-a5c9f8f912b1)です。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenerateResource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GenerateResource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.GenerateResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalInputs">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] AdditionalInputs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] AdditionalInputs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.AdditionalInputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の依存関係のチェックを追加の入力、 <c>GenerateResource</c>タスクを実行します。</summary>
+        <value>依存関係のチェックされるは、追加の入力、 <c>GenerateResource</c>タスクを実行します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例では、プロジェクトおよびターゲット ファイルの場合に、更新を確認する入力であるすべてのリソースを再生成します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EnvironmentVariables">
+      <MemberSignature Language="C#" Value="public string[] EnvironmentVariables { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] EnvironmentVariables" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.EnvironmentVariables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境変数に加え、子の resgen.exe に渡す必要がある (または選択的にオーバーライドする) の名前/値ペアの配列を取得または標準の環境ブロックします。</summary>
+        <value>環境変数の名前/値ペアの配列を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらは使用 resgen をインプロセスでを実行するとします。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludedInputPaths">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] ExcludedInputPaths { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] ExcludedInputPaths" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.ExcludedInputPaths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最新の状態の確認中に無視する追跡対象の入力のパスを指定する項目の配列を設定します。</summary>
+        <value>最新の状態の確認中に無視する追跡対象の入力のパスを指定する項目の配列を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public override bool Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.GenerateResource.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行、 <c>GenerateResource</c>タスク。</summary>
+        <returns>
+          <see langword="true" />場合、 <c>GenerateResource</c>タスクの実行が成功しました。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteAsTool">
+      <MemberSignature Language="C#" Value="public bool ExecuteAsTool { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExecuteAsTool" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.ExecuteAsTool" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ResolveComReferences の複数バージョン対応機能を有効にするプロパティ。 true の場合、tlbimp.exe と適切なターゲット フレームワークから aximp.exe が実行されますアウト オブ必要なラッパー アセンブリを生成します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractResWFiles">
+      <MemberSignature Language="C#" Value="public bool ExtractResWFiles { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExtractResWFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.ExtractResWFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはまたは展開するこのルールが .resources ファイルを生成するかどうかを指定するフラグを設定します。アセンブリから ResW ファイル。</summary>
+        <value>フラグを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加の入力フィルター処理が必要です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="FilesWritten">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] FilesWritten { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] FilesWritten" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.FilesWritten" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスクに書き込んだすべてのファイルの名前を取得または設定します。キャッシュ ファイルが存在する場合は、キャッシュ ファイルも含みます。</summary>
+        <value>ディスクに書き込んだすべてのファイルの名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MinimalRebuildFromTracking">
+      <MemberSignature Language="C#" Value="public bool MinimalRebuildFromTracking { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MinimalRebuildFromTracking" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.MinimalRebuildFromTracking" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡対象のインクリメンタル ビルドを使用するかどうかを指定するスイッチを取得または設定します。 True の場合、インクリメンタル ビルドはオンです。それ以外の場合は、再構築は強制されます。</summary>
+        <value>追跡対象のインクリメンタル ビルドを使用するかどうかを指定するスイッチを返します。 True の場合、インクリメンタル ビルドはオンです。それ以外の場合は、再構築は強制されます。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="NeverLockTypeAssemblies">
+      <MemberSignature Language="C#" Value="public bool NeverLockTypeAssemblies { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NeverLockTypeAssemblies" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.NeverLockTypeAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新規作成するかどうかを指定するブール値の設定を取得または<see cref="T:System.AppDomain" />リソース (.resx) ファイルを評価する (<see langword="true" />) または新しい<see cref="T:System.AppDomain" />のみ、リソース ファイルがユーザーのアセンブリを参照すると (<see langword="false" />)。</summary>
+        <value>
+          <see langword="true" />場合、 <c>GenerateResource</c>新しいタスクを作成する必要があります<see cref="T:System.AppDomain" />リソース (.resx) ファイルを評価するには<see langword="false" />場合、 <c>GenerateResource</c>新しいタスクを作成する必要があります<see cref="T:System.AppDomain" />のみリソース (.resx) ファイルがユーザーのアセンブリを参照するとします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OutputDirectory">
+      <MemberSignature Language="C#" Value="public string OutputDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OutputDirectory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.OutputDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または抽出する場所を指定する値を設定します。ResW ファイル。</summary>
+        <value>値を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 中間ディレクトリである可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="OutputResources">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] OutputResources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] OutputResources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.OutputResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されるファイルの名前を取得または設定します (.resources ファイルなど)。</summary>
+        <value>生成されるファイルの名前 (.resources ファイルなど)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定しなかった場合には、対応する入力ファイルの名前が使用され、.resources ファイルは、入力ファイルが格納されたディレクトリに作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PublicClass">
+      <MemberSignature Language="C#" Value="public bool PublicClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PublicClass" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.PublicClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示すブール値かどうか、 <c>GenerateResource</c>タスクは、パブリック クラスとして厳密に型指定されたリソース クラスを作成する必要があります。</summary>
+        <value>
+          <see langword="true" />場合、 <c>GenerateResource</c>タスクは、パブリック クラスとしての厳密に型指定されたリソース クラスを作成する場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="References">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] References { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] References" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.References" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.resx ファイルの型を読み込むときの参照元を取得または設定します。</summary>
+        <value>.resx ファイルの型を読み込むときの参照元。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ resx ファイルのデータ要素は、.NET 型である場合があります。 この型は、.resx ファイルを読み取るときに、解決される必要があります。 通常は、標準の型の読み込み規則を使用して正常に解決します。 アセンブリを <xref:Microsoft.Build.Tasks.GenerateResource.References%2A> に指定した場合には、そのアセンブリが優先されます。  
+  
+ 厳密に型指定されたリソースの場合、このパラメーターは不要です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SdkToolsPath">
+      <MemberSignature Language="C#" Value="public string SdkToolsPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SdkToolsPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.SdkToolsPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースの生成タスクは、プロセス内で処理を実行、場合でも、ログ メッセージが生成されます。 このログ メッセージには、windows SDK へのパスが含まれます。 ターゲットが渡される Windows SDK のパスからこのログ記録に使用します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Sources">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] Sources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] Sources" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.Sources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Required</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変換する項目を取得または設定します。</summary>
+        <value>変換する項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパラメーターに渡すアイテムの拡張子は、以下のいずれかである必要があります。  
+  
+-   `.txt`: 変換するテキスト ファイルの拡張子を指定します。 テキスト ファイルには、文字列リソースだけを含めることができます。  
+  
+-   `.resx`: 変換を XML ベースのリソース ファイルの拡張子を指定します。  
+  
+-   `.restext`: .Txt として同じ形式を指定します。 この拡張子は、ビルド プロセスで使用するソース ファイルのうち、どのソース ファイルにリソースが含まれているのかを明示する場合に便利です。  
+  
+ `.resources`: 変換にリソース ファイルの拡張子を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StateFile">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem StateFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem StateFile" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StateFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>.resx 入力ファイルに含まれるリンクの依存関係のチェックを高速化するために使用される、省略可能なキャッシュ ファイルのパスを取得または設定します。</summary>
+        <value>.resx 入力ファイルに含まれるリンクの依存関係のチェックを高速化するために使用される、省略可能なキャッシュ ファイルのパス。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StronglyTypedClassName">
+      <MemberSignature Language="C#" Value="public string StronglyTypedClassName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StronglyTypedClassName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StronglyTypedClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密に型指定されたリソース クラスのクラス名を取得または設定します。</summary>
+        <value>厳密に型指定されたリソース クラスのクラス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが指定されていない場合は、リソース ファイルの基本名が使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StronglyTypedFileName">
+      <MemberSignature Language="C#" Value="public string StronglyTypedFileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StronglyTypedFileName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StronglyTypedFileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.Build.Framework.Output</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース ファイルのファイル名を取得または設定します。</summary>
+        <value>ソース ファイルのファイル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが指定されていない場合、クラスの名前は、言語に依存する拡張機能を持つ、基本ファイル名として使用されます。 たとえば、`MyClass.cs` のように指定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StronglyTypedLanguage">
+      <MemberSignature Language="C#" Value="public string StronglyTypedLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StronglyTypedLanguage" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StronglyTypedLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な型のリソースのクラス ソースの生成に使用する言語を取得または設定します。</summary>
+        <value>厳密な型のリソースのクラス ソースの生成に使用する言語。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、CodeDomProvider で使用される言語を 1 つと一致する必要があります。 例 : `VB` または `C#`。  
+  
+ このパラメーターに値を渡すことにより、タスクでは厳密な型のリソースが作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StronglyTypedManifestPrefix">
+      <MemberSignature Language="C#" Value="public string StronglyTypedManifestPrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StronglyTypedManifestPrefix" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StronglyTypedManifestPrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または厳密に型指定されたリソースのクラス ソース生成で使用するリソースの名前空間またはマニフェストのプレフィックスを設定します。</summary>
+        <value>厳密に型指定されたリソースのクラス ソース生成で使用するリソースの名前空間またはマニフェスト プレフィックス。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="StronglyTypedNamespace">
+      <MemberSignature Language="C#" Value="public string StronglyTypedNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StronglyTypedNamespace" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.StronglyTypedNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>厳密な型のリソースのクラス ソースの生成に使用する名前空間を取得または設定します。</summary>
+        <value>厳密な型のリソースのクラス ソースの生成に使用する名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが指定されていない場合、厳密に型指定されたリソースは、グローバル名前空間には。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TLogReadFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] TLogReadFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] TLogReadFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TLogReadFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り追跡ログを表す項目の配列を取得します。</summary>
+        <value>読み取り追跡ログを表す項目の配列を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TLogWriteFiles">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITaskItem[] TLogWriteFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Framework.ITaskItem[] TLogWriteFiles" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TLogWriteFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITaskItem[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込み追跡ログを表す項目の配列を取得します。</summary>
+        <value>書き込み追跡ログを表す項目の配列を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToolArchitecture">
+      <MemberSignature Language="C#" Value="public string ToolArchitecture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolArchitecture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.ToolArchitecture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ResGen.exe の Microsoft.Build.Utilities.ExecutableType します。 Tracker.exe を使用して ResGen.exe を実行する必要があるかどうかを判断するために使用されます。 空の場合は、既定のアーキテクチャを決定するヒューリスティックを使用します。</summary>
+        <value><see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerFrameworkPath">
+      <MemberSignature Language="C#" Value="public string TrackerFrameworkPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrackerFrameworkPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TrackerFrameworkPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>FileTracker.dll を含む .NET Framework の適切な場所へのパス。 設定した場合は、渡される FileTracker.dll のビットが、使用される ResGen.exe のビットと一致していることをユーザーが確認する必要があります。 設定しない場合は、タスクによって現在の .NET Framework のバージョンに基づいて適切な場所が判断されます。</summary>
+        <value><see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerLogDirectory">
+      <MemberSignature Language="C#" Value="public string TrackerLogDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrackerLogDirectory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TrackerLogDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはにこのタスクを実行して追跡ログが配置される中間ディレクトリを設定します。</summary>
+        <value>このタスクを実行して追跡ログを配置する中間ディレクトリを返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackerSdkPath">
+      <MemberSignature Language="C#" Value="public string TrackerSdkPath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrackerSdkPath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TrackerSdkPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Tracker.exe: を含む適切な Windows SDK の場所へのパス。 設定した場合は、渡される Tracker.exe のビットが、使用される ResGen.exe のビットと一致していることをユーザーが確認する必要があります。 設定しない場合は、タスクによって現在の Windows SDK に基づいて適切な場所が判断されます。</summary>
+        <value><see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackFileAccess">
+      <MemberSignature Language="C#" Value="public bool TrackFileAccess { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackFileAccess" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.TrackFileAccess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはファイルのアクセス パターンを追跡するかどうかを指定するスイッチを設定します。</summary>
+        <value>ファイル アクセスのパターンを追跡する場合は true。false それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インクリメンタル ビルドをサポートするには、ファイル アクセス パターンを追跡する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="UseSourcePath">
+      <MemberSignature Language="C#" Value="public bool UseSourcePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSourcePath" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.GenerateResource.UseSourcePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力ファイルのディレクトリを使用して相対ファイル パスを解決するかどうかを示すブール値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />入力ファイルのディレクトリの相対ファイル パスを解決するために使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

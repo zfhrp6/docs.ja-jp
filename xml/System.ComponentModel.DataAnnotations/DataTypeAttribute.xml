@@ -1,0 +1,295 @@
+<Type Name="DataTypeAttribute" FullName="System.ComponentModel.DataAnnotations.DataTypeAttribute">
+  <TypeSignature Language="C#" Value="public class DataTypeAttribute : System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataTypeAttribute extends System.ComponentModel.DataAnnotations.ValidationAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataAnnotations.DataTypeAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.DataAnnotations.ValidationAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドに関連付ける追加の型の名前を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>属性では、データベースの組み込み型より限定的である型を使用してフィールドをマークすることができます。 型名が選択されている、<xref:System.ComponentModel.DataAnnotations.DataType>列挙型。 として電子メール アドレスを含む文字列データ フィールドを指定するなど、<xref:System.ComponentModel.DataAnnotations.DataType.EmailAddress>型です。 この情報はデータ フィールドを処理する方法を変更するフィールド テンプレートによってアクセスされます。  
+  
+ 使用する、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>理由は次の属性。  
+  
+-   データ フィールドの追加の型情報を提供します。 適用することで、これを行う、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>属性から追加の型名を指定してデータ モデル内のデータ フィールドを<xref:System.ComponentModel.DataAnnotations.DataType>列挙します。 データ フィールドを処理するフィールド テンプレートは、フィールドの処理方法を決定するこの追加のメタデータ型の情報にアクセスできます。 テキスト フィールド テンプレートが組み込み型を持つ電子メール アドレスのハイパーリンクを生成するなど、`String`です。  
+  
+-   データ フィールドとカスタム フィールド テンプレートに関連付けます。 データ フィールドを処理する、指定したカスタム フィールド テンプレートを使用し、されます。 これは、使用する代わりに、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性。  
+  
+ 適用すると、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>属性のデータ フィールドには、次を実行する必要があります。  
+  
+-   属性の使用状況規則に従います。  
+  
+-   属性を適用するデータ フィールドを含んでいるメタデータ クラスを実装します。  
+  
+-   必要に応じて検証エラーを発行します。  
+  
+ 詳細については、次を参照してください。 [ASP.NET 動的データ ガイドライン](http://msdn.microsoft.com/en-us/c563bbf3-feb9-484e-81d1-a585f1b0e192)です。  
+  
+ この機能の実行時のコード例を参照してください:[実行](http://go.microsoft.com/fwlink/?LinkId=120736&sref=System.ComponentModel.DataAnnotations.DataTypeAttribute)です。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.ComponentModel.DataAnnotations.DataTypeAttribute> EmailAddress データ フィールドの表示をカスタマイズする属性。 電子メール アドレスは、組み込みのデータ型から推論は動的なデータは、単純なテキストとしてではなく、ハイパーリンクとして表示されます。 コード例は、次の 3 つの部分には、次の手順を実行します。  
+  
+-   これは、メタデータの部分クラスと関連するメタデータ クラスを実装します。  
+  
+-   適用される、関連するメタデータ クラスで、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>属性 EmailAddress データ フィールドを指定することによって、<xref:System.ComponentModel.DataAnnotations.DataType.EmailAddress>列挙値。 これを示します Text.ascx フィールド テンプレートへの電子メール アドレスの表示をカスタマイズすること。  
+  
+-   EmailAddress データ フィールドの表示をカスタマイズする Text.ascx フィールド テンプレートを変更します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DataTypeAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/CS/Customer.cs#1)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DataTypeAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/VB/Customer.vb#1)]  
+  
+ [!code-aspx-csharp[System.ComponentModel.DataAnnotations.DataTypeAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/CS/Text.ascx#2)]
+ [!code-aspx-vb[System.ComponentModel.DataAnnotations.DataTypeAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/VB/Text.ascx#2)]
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DataTypeAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/CS/Text.ascx.cs#3)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DataTypeAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/VB/Text.ascx.vb#3)]  
+  
+ をコンパイルして、コード例を実行するには、次のものが必要。  
+  
+-   Visual Studio 2008 Service Pack 1 または Visual Developer 2008 Express Edition Service Pack 1。  
+  
+-   AdventureWorksLT サンプル データベース。 ダウンロードして、SQL Server サンプル データベースをインストールする方法については、次を参照してください。 [Microsoft SQL Server Product Samples: Database](http://go.microsoft.com/fwlink/?LinkId=117483) CodePlex サイトにします。 (SQL Server 2005 または SQL Server 2008) を実行して SQL Server のバージョンについては、サンプル データベースの正しいバージョンをインストールすることを確認します。  
+  
+-   データ ドリブン Web サイトです。 これにより、データベースのデータ コンテキストを作成し、カスタマイズするデータ フィールドを含むクラスを作成する、ことができます。 詳細については、「`Walkthrough: Creating a New Dynamic Data Web Site using Scaffolding`」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTypeAttribute (System.ComponentModel.DataAnnotations.DataType dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.DataAnnotations.DataType dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.ComponentModel.DataAnnotations.DataType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataType" Type="System.ComponentModel.DataAnnotations.DataType" />
+      </Parameters>
+      <Docs>
+        <param name="dataType">データ フィールドに関連付ける型の名前。</param>
+        <summary>指定した型名を使用して、<see cref="T:System.ComponentModel.DataAnnotations.DataTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって定義されている値のいずれかが、名、<xref:System.ComponentModel.DataAnnotations.DataType?displayProperty=nameWithType>列挙します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute.%23ctor%28System.ComponentModel.DataAnnotations.DataType%29>コンス トラクターを別のデータ フィールドの型を指定します。  
+  
+ [!code-csharp[System.ComponentModel.DataAnnotations.DataTypeAttribute#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/CS/Customer.cs#11)]
+ [!code-vb[System.ComponentModel.DataAnnotations.DataTypeAttribute#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataAnnotations.DataTypeAttribute/VB/Customer.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTypeAttribute (string customDataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string customDataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.DataTypeAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="customDataType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="customDataType">データ フィールドに関連付けるカスタム フィールド テンプレートの名前。</param>
+        <summary>指定されたフィールド テンプレート名を使用して、<see cref="T:System.ComponentModel.DataAnnotations.DataTypeAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、使用する代わりに、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="customDataType" /> は <see langword="null" /> または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomDataType">
+      <MemberSignature Language="C#" Value="public string CustomDataType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomDataType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DataTypeAttribute.CustomDataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに関連付けられているカスタム フィールド テンプレートの名前を取得します。</summary>
+        <value>データ フィールドに関連付けられているカスタム フィールド テンプレートの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.DataAnnotations.DataType DataType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.DataAnnotations.DataType DataType" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DataTypeAttribute.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DataAnnotations.DataType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに関連付けられている型を取得します。</summary>
+        <value><see cref="T:System.ComponentModel.DataAnnotations.DataType" /> 値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayFormat">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.DataAnnotations.DisplayFormatAttribute DisplayFormat { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.DataAnnotations.DisplayFormatAttribute DisplayFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataAnnotations.DataTypeAttribute.DisplayFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DataAnnotations.DisplayFormatAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの表示形式を取得します。</summary>
+        <value>データ フィールドの表示形式。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataTypeName">
+      <MemberSignature Language="C#" Value="public virtual string GetDataTypeName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetDataTypeName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.DataTypeAttribute.GetDataTypeName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ フィールドに関連付けられている型の名前を返します。</summary>
+        <returns>データ フィールドに関連付けられている型の名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ フィールドに関連付けられている型の名前。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public override bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataAnnotations.DataTypeAttribute.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Annotations</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.DataAnnotations</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証するデータ フィールドの値。</param>
+        <summary>データ フィールドの値が有効なことを確認します。</summary>
+        <returns>
+          <see langword="true" />いつも。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに固有の検証ロジックを実装して、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

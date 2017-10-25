@@ -1,0 +1,504 @@
+<Type Name="TimeZone" FullName="System.TimeZone">
+  <TypeSignature Language="C#" Value="public abstract class TimeZone" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit TimeZone extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.TimeZone" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>タイム ゾーンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイム ゾーンは、同じ標準時が使用されている地理的領域です。  
+  
+> [!IMPORTANT]
+>  可能な限り、使用、<xref:System.TimeZoneInfo>クラスの代わりに、<xref:System.TimeZone>クラスです。  
+  
+ 使用することができます、<xref:System.TimeZone>クラスを世界協定時刻 (UTC) またはその逆の現地時刻から時刻を変換して現在のタイム ゾーンに関する情報を取得します。 ただし、使用することはできません、<xref:System.TimeZone>クラス別に 1 つのタイム ゾーンから日付と時刻の変換を処理するまたはローカル ゾーン以外のタイム ゾーンを表示します。 この目的で使用して、<xref:System.TimeZoneInfo>クラスです。 このクラスを使用すると、カスタムのタイム ゾーンを作成し、時刻を別の 1 つのタイム ゾーンに変換するのに、ローカルのシステムで定義されている任意のタイム ゾーンの情報を取得します。  
+  
+ <xref:System.TimeZone>クラスは、ローカル タイム ゾーンの 1 つの夏時間の調整規則のみをサポートしています。 その結果、<xref:System.TimeZone>クラス正確に夏時間情報を報告したり、最新の調整規則の有効期間にのみ、UTC と現地時刻の間で変換します。 これに対し、<xref:System.TimeZoneInfo>クラスは、過去のタイム ゾーン データを操作できるようになります、複数の調整規則をサポートしています。  
+  
+   
+  
+## Examples  
+ 次の例の参照と選択した表示`TimeZone`クラスの要素。  
+  
+ [!code-cpp[System.TimeZone.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.TimeZone.Class/CPP/tzclass.cpp#1)]
+ [!code-csharp[System.TimeZone.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone.Class/CS/tzclass.cs#1)]
+ [!code-vb[System.TimeZone.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone.Class/VB/tzclass.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>実装を提供するだけでなくその<see langword="abstract" />メンバー (マークされている<see langword="MustOverride" />Visual Basic で) から派生するクラスが重要である<see cref="T:System.TimeZone" />の既定の動作をオーバーライド、<see cref="M:System.TimeZone.ToLocalTime(System.DateTime)" />メソッドです。 これは、ための既定の動作<see cref="M:System.TimeZone.ToLocalTime(System.DateTime)" />への呼び出しに依存しないバージョン 2.0、.NET Framework で<see cref="M:System.TimeZone.GetUtcOffset(System.DateTime)" />.NET Framework のバージョン 1.0 および 1.1 の場合と同様、します。  詳細については、次を参照してください。、<see cref="M:System.TimeZone.ToLocalTime(System.DateTime)" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TimeZone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.TimeZone" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTimeZone">
+      <MemberSignature Language="C#" Value="public static TimeZone CurrentTimeZone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.TimeZone CurrentTimeZone" />
+      <MemberSignature Language="DocId" Value="P:System.TimeZone.CurrentTimeZone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeZone</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンピューターのタイム ゾーンを取得します。</summary>
+        <value>A<see cref="T:System.TimeZone" />を現在のローカル タイム ゾーンを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TimeZone.CurrentTimeZone%2A>プロパティに対応して、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>プロパティです。 可能な限り、使用、<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を参照、`CurrentTimeZone`プロパティと、ローカル タイム ゾーンの夏時間と標準時の名が表示されます。  
+  
+ [!code-cpp[System.TimeZone.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.TimeZone.Class/CPP/tzclass.cpp#1)]
+ [!code-csharp[System.TimeZone.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone.Class/CS/tzclass.cs#1)]
+ [!code-vb[System.TimeZone.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone.Class/VB/tzclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para>ローカル タイム ゾーン データは後にキャッシュ<see cref="P:System.TimeZone.CurrentTimeZone" />最初にタイム ゾーン情報を取得するために使用します。 システムのローカル タイム ゾーンは、後で変更を<see cref="P:System.TimeZone.CurrentTimeZone" />プロパティはこの変更を反映しません。 アプリケーションが実行されているときにタイム ゾーンの変更を処理する必要がある場合、使用して、<see cref="T:System.TimeZoneInfo" />クラスと呼び出しの<see cref="M:System.TimeZoneInfo.ClearCachedData" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DaylightName">
+      <MemberSignature Language="C#" Value="public abstract string DaylightName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DaylightName" />
+      <MemberSignature Language="DocId" Value="P:System.TimeZone.DaylightName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>夏時間のタイム ゾーンの名前を取得します。</summary>
+        <value>夏時間のタイム ゾーンの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 夏時間がタイム ゾーン、空の文字列で使用されていない場合 ("") が返されます。  
+  
+ <xref:System.TimeZone.DaylightName%2A>プロパティに対応して、<xref:System.TimeZoneInfo.DaylightName%2A?displayProperty=nameWithType>プロパティです。 可能な限り、使用、<xref:System.TimeZoneInfo.DaylightName%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例の参照と表示、`DaylightName`現在のタイム ゾーンのプロパティです。  
+  
+ [!code-cpp[System.TimeZone.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.TimeZone.Class/CPP/tzclass.cpp#1)]
+ [!code-csharp[System.TimeZone.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone.Class/CS/tzclass.cs#1)]
+ [!code-vb[System.TimeZone.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone.Class/VB/tzclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaylightChanges">
+      <MemberSignature Language="C#" Value="public abstract System.Globalization.DaylightTime GetDaylightChanges (int year);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Globalization.DaylightTime GetDaylightChanges(int32 year) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.GetDaylightChanges(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.DaylightTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">夏時間の期間が適用される年。</param>
+        <summary>特定の年の夏時間の期間を返します。</summary>
+        <returns>A<see cref="T:System.Globalization.DaylightTime" />オブジェクトに夏時間の開始と終了日を含む<paramref name="year" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 年あたり 1 つだけの夏時間期間はサポートされています。  
+  
+ 現在のタイム ゾーンの夏時間の期間を使用しない場合、戻り値は、<xref:System.Globalization.DaylightTime>オブジェクト、場所の値<xref:System.Globalization.DaylightTime.Start%2A>と<xref:System.Globalization.DaylightTime.End%2A>は<xref:System.DateTime.MinValue?displayProperty=nameWithType>の値と<xref:System.Globalization.DaylightTime.Delta%2A?displayProperty=nameWithType>は、<xref:System.TimeSpan>タイマー刻みの 0 に初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" /> が 1 未満であるか、または 9999 を超えています。</exception>
+        <block subset="none" type="usage">
+          <para><see cref="T:System.TimeZone" />クラスには、1 つだけの夏時間の調整規則がサポートしている、<see cref="M:System.TimeZone.GetDaylightChanges(System.Int32)" />メソッドでは、その年にするかどうかように調整規則実際に適用されるかに関係なく、任意の年に現在の調整規則が適用されます。 配列で作業してより正確な結果が利用可能なオペレーティング システム自体は、特定の年のデータの正確性を持つ、想定される<see cref="T:System.TimeZoneInfo.AdjustmentRule" />によって返されるオブジェクト、<see cref="M:System.TimeZoneInfo.GetAdjustmentRules" />メソッドです。 <see cref="P:System.Globalization.DaylightTime.Start" />、 <see cref="P:System.Globalization.DaylightTime.End" />、および<see cref="P:System.Globalization.DaylightTime.Delta" />に対応するプロパティ、 <see cref="P:System.TimeZoneInfo.AdjustmentRule.DateStart" />、 <see cref="P:System.TimeZoneInfo.AdjustmentRule.DateEnd" />、および<see cref="P:System.TimeZoneInfo.AdjustmentRule.DaylightDelta" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUtcOffset">
+      <MemberSignature Language="C#" Value="public abstract TimeSpan GetUtcOffset (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.TimeSpan GetUtcOffset(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.GetUtcOffset(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">日付と時刻の値。</param>
+        <summary>指定したローカル時間の世界協定時刻 (UTC) オフセットを返します。</summary>
+        <returns>世界協定時刻 (UTC) オフセットから<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを返しますのオフセットまたは差を間、`time`パラメーターと世界協定時刻 (UTC)。 つまり、次のようになります。  
+  
+ `time`= (Utc) + オフセット  
+  
+ メソッドのタイム ゾーンは解釈`time`に基づいてその<xref:System.DateTime.Kind%2A>プロパティです。 場合の値、<xref:System.DateTime.Kind%2A>プロパティは<xref:System.DateTimeKind?displayProperty=nameWithType>または<xref:System.DateTimeKind?displayProperty=nameWithType>メソッドは、ローカル タイム ゾーンのオフセットを返します。 場合の値、<xref:System.DateTime.Kind%2A>プロパティは<xref:System.DateTimeKind?displayProperty=nameWithType>を返しますのオフセットに等しい<xref:System.TimeSpan.Zero?displayProperty=nameWithType>です。  
+  
+ 場合は、ローカル タイム ゾーンが夏時間に従って、<xref:System.TimeZone.GetUtcOffset%2A>を現在の調整規則を適用`time`ローカル タイム ゾーンのオフセットを決定するとき。 によって返されたオフセットは、<xref:System.TimeZone.GetUtcOffset%2A>を反映するかどうか`time`がタイム ゾーンの標準時かその夏時間に該当します。  
+  
+> [!NOTE]
+>  <xref:System.TimeZone.GetUtcOffset%2A>メソッドは現在夏時間調整規則のみがローカル タイム ゾーンの認識します。 その結果を正確に最新の調整規則の有効期間中にのみ、UTC のオフセットのローカル時刻を返すことが保証されます。 場合は不正確な結果が返される`time`は過去の日付と時刻の値以前の調整規則の対象となった。  
+  
+ <xref:System.TimeZone.GetUtcOffset%2A>メソッドに対応して、<xref:System.TimeZoneInfo.GetUtcOffset%2A?displayProperty=nameWithType>メソッドです。 可能な限り、使用、<xref:System.TimeZoneInfo.GetUtcOffset%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 日付と時刻の値がによって表されるため`time`および UTC からのこの値のオフセット密結合されていない、特定のローカルまたは未指定の日付と時刻の値と異なるコンピューター上で実行または異なるタイム ゾーンの下にある同じコンピューターで実行すると別のオフセット値を返すことができます。 この動作が望ましくない場合を使用して、<xref:System.DateTimeOffset>値の代わりにします。 <xref:System.DateTimeOffset>データ型と密に日付と時刻の値のオフセットを含む utc を基準とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDaylightSavingTime">
+      <MemberSignature Language="C#" Value="public virtual bool IsDaylightSavingTime (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDaylightSavingTime(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.IsDaylightSavingTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">日付と時刻。</param>
+        <summary>指定した日付と時刻が、夏時間の期間内かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="time" />夏時間タイム期間です。 それ以外の場合には、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 夏時間の期間を適用する年がから派生した、`time`パラメーター。  
+  
+ <xref:System.TimeZone>クラスは、1 つの夏時間の調整規則をサポート、<xref:System.TimeZone.IsDaylightSavingTime%28System.DateTime%29>メソッドがあったかどうか調整規則では有効にその日付に関係なく、任意の日付に現在の調整規則を適用します。 使用してより正確な結果が利用可能な正確な履歴夏時間データは、オペレーティング システム自体では、想定されるので、<xref:System.TimeZoneInfo.IsDaylightSavingTime%2A?displayProperty=nameWithType>メソッドです。 可能な限り、使用、<xref:System.TimeZoneInfo.IsDaylightSavingTime%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDaylightSavingTime">
+      <MemberSignature Language="C#" Value="public static bool IsDaylightSavingTime (DateTime time, System.Globalization.DaylightTime daylightTimes);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsDaylightSavingTime(valuetype System.DateTime time, class System.Globalization.DaylightTime daylightTimes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.IsDaylightSavingTime(System.DateTime,System.Globalization.DaylightTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="daylightTimes" Type="System.Globalization.DaylightTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">日付と時刻。</param>
+        <param name="daylightTimes">To be added.</param>
+        <summary>指定した日付と時刻が、指定の夏時間の期間内かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="time" />に<paramref name="daylightTimes" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TimeZoneInfo.IsDaylightSavingTime%2A?displayProperty=nameWithType>メソッドのこのオーバー ロードと同じ機能を提供する、<xref:System.TimeZone.IsDaylightSavingTime%2A>メソッドです。 可能な限り、使用、<xref:System.TimeZoneInfo.IsDaylightSavingTime%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="daylightTimes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardName">
+      <MemberSignature Language="C#" Value="public abstract string StandardName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StandardName" />
+      <MemberSignature Language="DocId" Value="P:System.TimeZone.StandardName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準時ゾーンの名前を取得します。</summary>
+        <value>標準時ゾーンの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TimeZone.StandardName%2A>プロパティに対応して、<xref:System.TimeZoneInfo.StandardName%2A?displayProperty=nameWithType>プロパティです。 可能な限り、使用、<xref:System.TimeZoneInfo.StandardName%2A?displayProperty=nameWithType>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例の参照と表示、`StandardName`現在のタイム ゾーンのプロパティです。  
+  
+ [!code-cpp[System.TimeZone.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.TimeZone.Class/CPP/tzclass.cpp#1)]
+ [!code-csharp[System.TimeZone.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone.Class/CS/tzclass.cs#1)]
+ [!code-vb[System.TimeZone.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone.Class/VB/tzclass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToLocalTime">
+      <MemberSignature Language="C#" Value="public virtual DateTime ToLocalTime (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.DateTime ToLocalTime(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.ToLocalTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">世界協定時刻 (UTC) 時刻。</param>
+        <summary>指定した日付と時刻の値に対応するローカル時刻を返します。</summary>
+        <returns>A<see cref="T:System.DateTime" />値があるオブジェクトに対応する現地時刻<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、関係を示しています、`time`パラメーターおよび<xref:System.DateTime>このメソッドによって返される値。  
+  
+|`time`パラメーター|動作|戻り値|  
+|----------------------|--------------|------------------|  
+|世界協定時刻 (UTC) 時刻 (<xref:System.DateTimeKind?displayProperty=nameWithType>)。|時間を UTC からのローカル時刻に変換します。|A<xref:System.DateTime>値があるオブジェクトに対応する現地時刻`time`です。|  
+|ローカル時刻 (<xref:System.DateTimeKind?displayProperty=nameWithType>)。|変換は必要ありません。|同じ<xref:System.DateTime>によって表される値、`time`パラメーター。|  
+|指定されていない時刻 (<xref:System.DateTimeKind?displayProperty=nameWithType>)。|で、時間を UTC と UTC からのローカル時刻に変換します。|A<xref:System.DateTime>値があるオブジェクトに対応する現地時刻`time`です。|  
+  
+ 場合は、ローカル タイム ゾーンが夏時間に従って、<xref:System.TimeZone.ToLocalTime%2A>を現在の調整規則を適用`time`変換を実行するときにします。  
+  
+> [!NOTE]
+>  <xref:System.TimeZone.ToLocalTime%2A>メソッドは現在夏時間調整規則のみがローカル タイム ゾーンの認識します。 その結果、最新の調整規則の有効期間中にのみ特定の UTC 時刻に対応するローカル時間を正確に返されることが保証されます。 場合は不正確な結果が返される`time`は過去の日付と時刻の値以前の調整規則の対象となった。  
+  
+ <xref:System.TimeZone.ToLocalTime%2A>メソッドに対応して、<xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A?displayProperty=nameWithType>メソッドをその`destinationTimeZone`パラメーターに設定<xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType>です。 可能な限り、使用、<xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>必要はありません、ほとんどの場合に派生クラスは .NET Framework version 2.0 で実行されている必要がありますオーバーライドこのメソッドの既定の実装。 .NET Framework version 1.0 および 1.1 で、<see langword="ToLocalTime" />呼び出されるメソッド、<see cref="M:System.TimeZone.GetUtcOffset(System.DateTime)" />メソッドのローカル時刻を返す場合、夏時間の調整とします。 ただし、.NET Framework 2.0 以降では、既定の実装の動作に依存、<see cref="P:System.DateTime.Kind" />のプロパティ、<paramref name="time" />パラメーター。 値が場合<see cref="F:System.DateTimeKind.Local" />、このメソッドが戻る<paramref name="time" />変更されません。 いずれかの値が場合<see cref="F:System.DateTimeKind.Utc" />または<see cref="F:System.DateTimeKind.Unspecified" />、この方法では、 <paramref name="time" /> utc し、ローカル システム時刻を呼び出さずに変換します、<see cref="M:System.TimeZone.GetUtcOffset(System.DateTime)" />メソッドです。  
+  
+ 次のコードの既定の実装の単純なオーバーライドを提供する、<see langword="ToLocalTime" />メソッドです。 このコードで、<see langword="internalTimeZone" />変数のプライベート インスタンスを表す、<see langword="TimeZone" />クラス。  
+  
+ [!code-csharp[System.TimeZone.ToLocalTime#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone.ToLocalTime/CS/TimeZone_ToLocalTime.cs#1)]
+ [!code-vb[System.TimeZone.ToLocalTime#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone.ToLocalTime/VB/TimeZone_ToLocalTime.vb#1)]</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUniversalTime">
+      <MemberSignature Language="C#" Value="public virtual DateTime ToUniversalTime (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.DateTime ToUniversalTime(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TimeZone.ToUniversalTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">日付と時刻。</param>
+        <summary>指定された時間を世界協定時刻 (UTC) 対応するを返します。</summary>
+        <returns>A<see cref="T:System.DateTime" />オブジェクト値を持つ、世界協定時刻 (UTC) に対応する<paramref name="time" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、ローカル タイム ゾーンが夏時間に従って、<xref:System.TimeZone.ToUniversalTime%2A>を現在の調整規則の適用、`time`パラメーターの変換を実行するときにします。  
+  
+> [!NOTE]
+>  <xref:System.TimeZone.ToUniversalTime%2A>メソッドは現在夏時間調整規則のみがローカル タイム ゾーンの認識します。 その結果、正確に最新の調整規則の有効期間中にのみ特定のローカル時刻に対応する世界協定時刻 (UTC) を返すことが保証されます。 場合は不正確な結果が返される`time`は過去の日付と時刻の値以前の調整規則の対象となった。  
+  
+ 場合、`time`パラメーターがあいまいな時刻、メソッドは、標準時であることを想定しています。 (あいまいな時刻がいずれかの標準時またはローカルのタイム ゾーンが夏時間のいずれかにマップできます。)場合`time`無効な時間は、メソッドが単純にローカル タイム ゾーンの UTC を返す (utc) オフセットからローカル時刻を減算します。 (無効な時刻は夏時間調整規則の適用のために存在しません。)  
+  
+ `time`解釈が現在のシステムの現在のタイム ゾーンに関連して日付と時刻がこのメソッドによって返されることができる場合、異なる実行するアプリケーションが別のコンピューターまたは同じコンピューターに別のタイム ゾーンを含むです。 日付と時刻の値が時刻で、単一であいまいさを表す必要がありますの場合、使用、<xref:System.DateTimeOffset>ローカル時刻を表す値です。  
+  
+ <xref:System.TimeZone.ToUniversalTime%2A>メソッドに対応して、<xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType>メソッドのオーバー ロードで、<xref:System.DateTime>パラメーターが<xref:System.DateTime.Kind%2A>プロパティが等しくない<xref:System.DateTimeKind?displayProperty=nameWithType>です。 可能な限り、使用、<xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

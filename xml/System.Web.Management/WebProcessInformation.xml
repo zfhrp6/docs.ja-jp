@@ -1,0 +1,222 @@
+<Type Name="WebProcessInformation" FullName="System.Web.Management.WebProcessInformation">
+  <TypeSignature Language="C#" Value="public sealed class WebProcessInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebProcessInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebProcessInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ホストする ASP.NET ワーカー プロセスに関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間をアプリケーションのヘルス状態データをパッケージ化する正常性イベントの種類を格納して、プロバイダーの型をこのデータを処理します。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ インスタンス、<xref:System.Web.Management.WebProcessInformation>クラスにはから派生した型のいずれかを使用して取得される情報が含まれて、<xref:System.Web.Management.WebManagementEvent>型です。  
+  
+ アプリケーションでは、この型によって提供される保護された情報にアクセスする適切なアクセス許可が必要です。  
+  
+ 次の例は、エラー イベントをログにプロセス情報を含む ASP.NET を有効にするを使用すると、構成ファイルの抜粋です。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  
+    <rules>  
+     <add   
+       name="All Errors Default"  
+       eventName="All Errors"  
+       provider="EventLogProvider"  
+       profile="Default"  
+       minInterval="00:01:00" />  
+    </rules>  
+  
+</healthMonitoring>  
+```  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム イベント クラスの作成の例は、例」のセクションを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例には、2 つの部分があります。 1 つは ASP.NET を使用するカスタム イベントを使用できるようにする構成ファイルの抜粋、<xref:System.Web.Management.WebProcessInformation>型です。  
+  
+ 2 つ目は、カスタム イベントを実装する方法を示します。  
+  
+ カスタム イベントは、適切な時点に置き換えられます対応するシステム正常性イベントを発生させるとを確認します。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  
+    <eventMappings>  
+      <add    
+        name="SampleProcessInformation"   
+        type="SamplesAspNet.SampleWebProcessInformation, webprocessinformation, Version=1.0.1585.27289, Culture=neutral, PublicKeyToken=3648e5c763a8239f, processorArchitecture=MSIL"/>  
+    </eventMappings>  
+  
+    <rules>  
+      <add   
+        name="Custom Process Information"  
+        eventName="SampleProcessInformation"   
+        provider="EventLogProvider"  
+        profile="Default"/>  
+    </rules>  
+  
+</healthMonitoring>  
+  
+```  
+  
+ 次の例を使用するカスタム イベントを実装する方法を示しています、<xref:System.Web.Management.WebProcessInformation>型です。  
+  
+ [!code-csharp[System.Web.Management.WebProcessInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/CS/webprocessinformation.cs#1)]
+ [!code-vb[System.Web.Management.WebProcessInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/VB/webprocessinformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AccountName">
+      <MemberSignature Language="C#" Value="public string AccountName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccountName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebProcessInformation.AccountName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワーカー プロセスのアカウント名を取得します。</summary>
+        <value>ワーカー プロセス アカウントの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、このプロパティによって提供される情報にアクセスする適切なアクセス許可が必要です。  
+  
+   
+  
+## Examples  
+ 次の例では、プロセスのアカウント名を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebProcessInformation#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/CS/webprocessinformation.cs#4)]
+ [!code-vb[System.Web.Management.WebProcessInformation#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/VB/webprocessinformation.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatToString">
+      <MemberSignature Language="C#" Value="public void FormatToString (System.Web.Management.WebEventFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FormatToString(class System.Web.Management.WebEventFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebProcessInformation.FormatToString(System.Web.Management.WebEventFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatter" Type="System.Web.Management.WebEventFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="formatter"><see cref="T:System.Web.Management.WebEventFormatter" /> Web 状態のイベント情報を書式設定に使用されるタブとインデントの設定を格納しています。</param>
+        <summary>アプリケーションの情報を書式設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebProcessInformation.FormatToString%2A>メソッドでは、同一の形式を提供イベントについては、イベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利です。 いずれかのプロバイダーが呼び出された場合、メソッドが内部的に呼び出されます、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム情報を書式設定する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebProcessInformation#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/CS/webprocessinformation.cs#7)]
+ [!code-vb[System.Web.Management.WebProcessInformation#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/VB/webprocessinformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessID">
+      <MemberSignature Language="C#" Value="public int ProcessID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProcessID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebProcessInformation.ProcessID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセス識別子を取得します。</summary>
+        <value>プロセス識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ASP.NET をホストするワーカー プロセスの識別子です。  
+  
+   
+  
+## Examples  
+ 次の例では、プロセス id を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebProcessInformation#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/CS/webprocessinformation.cs#5)]
+ [!code-vb[System.Web.Management.WebProcessInformation#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/VB/webprocessinformation.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessName">
+      <MemberSignature Language="C#" Value="public string ProcessName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProcessName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebProcessInformation.ProcessName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスの名前を取得します。</summary>
+        <value>プロセスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ASP.NET をホストするワーカー プロセスの名前です。  
+  
+   
+  
+## Examples  
+ 次の例では、プロセス名を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebProcessInformation#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/CS/webprocessinformation.cs#6)]
+ [!code-vb[System.Web.Management.WebProcessInformation#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebProcessInformation/VB/webprocessinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,145 @@
+<Type Name="EditingScope" FullName="System.Activities.Presentation.Model.EditingScope">
+  <TypeSignature Language="C#" Value="public class EditingScope : System.Activities.Presentation.Model.ModelEditingScope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EditingScope extends System.Activities.Presentation.Model.ModelEditingScope" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Model.EditingScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Presentation.Model.ModelEditingScope</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>編集スコープは、分離できない 1 つの作業単位としてコミットまたはロールバックできる、<see cref="T:System.Activities.Presentation.Model.ModelItem" /> ツリーに加えられた変更のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、複数の <xref:System.Activities.Presentation.Model.ModelItem> オブジェクトに対する一連の変更をまとめるのに有効です。 たとえば、メッセージング アクティビティで、起動したダイアログから加えられた変更は、複数のプロパティ値に影響を与えます。 しかし、すべての変更は起動したダイアログから行われるので、これらの変更を 1 つのまとまりとして考え、1 つの作業単位として取り消す必要があります。 使用方法の詳細については、編集スコープの例を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CanComplete">
+      <MemberSignature Language="C#" Value="protected override bool CanComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.EditingScope.CanComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の編集スコープのインスタンスを完了できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、編集スコープを完了できます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Changes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.List&lt;System.Activities.Presentation.Model.Change&gt; Changes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.Change&gt; Changes" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.EditingScope.Changes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Activities.Presentation.Model.Change&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更の一覧を取得します。</summary>
+        <value>変更内容を含む <see cref="T:System.Collections.Generic.List`1" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasEffectiveChanges">
+      <MemberSignature Language="C#" Value="public bool HasEffectiveChanges { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasEffectiveChanges" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Model.EditingScope.HasEffectiveChanges" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集スコープに変更が適用されているかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />編集スコープ; に変更が適用されている場合それ以外の場合、 <see langword="false" />.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComplete">
+      <MemberSignature Language="C#" Value="protected override void OnComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.EditingScope.OnComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Complete イベントを起動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnException">
+      <MemberSignature Language="C#" Value="protected override bool OnException (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool OnException(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.EditingScope.OnException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e">処理する例外。</param>
+        <summary>指定の例外を処理します。</summary>
+        <returns>
+          <see langword="true" />例外が処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRevert">
+      <MemberSignature Language="C#" Value="protected override void OnRevert (bool finalizing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRevert(bool finalizing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Model.EditingScope.OnRevert(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="finalizing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="finalizing">この実装では使用されません。</param>
+        <summary>Revert イベントを起動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

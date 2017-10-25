@@ -1,0 +1,143 @@
+<Type Name="EmphasisBreak" FullName="System.Speech.Synthesis.TtsEngine.EmphasisBreak">
+  <TypeSignature Language="C#" Value="public enum EmphasisBreak" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EmphasisBreak extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.TtsEngine.EmphasisBreak" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>長さの値を列挙<see langword="EmphasisBreak" />読み上げられる単語の間です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Break 強調されて<xref:System.Speech.Synthesis.TtsEngine.TextFragment>を通じてインスタンス、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>プロパティのインスタンスを<xref:System.Speech.Synthesis.TtsEngine.TextFragment>です。  
+  
+ 各合成の音声認識エンジンが単語の区切り記号をレンダリングする方法を決定するために解放言語や方言、性別、音声で強調の性質は異なります。  
+  
+ 両方<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>と<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>設定または取得する場合に使用できる、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>上、<xref:System.Speech.Synthesis.TtsEngine.FragmentState>インスタンス。  
+  
+ 2 つの値は、ファクトによって区別可能性がありますの実際の値<xref:System.Speech.Synthesis.TtsEngine.EmphasisBreak>すべて 0 未満には、値の<xref:System.Speech.Synthesis.TtsEngine.EmphasisWord>より大きいかゼロとの値を使用して、等しい<xref:System.Speech.Synthesis.TtsEngine.TtsEngineAction>によって返される、<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>プロパティを<xref:System.Speech.Synthesis.TtsEngine.FragmentState>によって返されるオブジェクト、<xref:System.Speech.Synthesis.TtsEngine.TextFragment.State%2A>インスタンスのプロパティです。 詳細についてから、次を参照してください。 <xref:System.Speech.Synthesis.TtsEngine.FragmentState.Action%2A>、および<xref:System.Speech.Synthesis.TtsEngine.FragmentState.Emphasis%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak Default = int32(-7)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常の単語区切りです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraStrong">
+      <MemberSignature Language="C#" Value="ExtraStrong" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak ExtraStrong = int32(-6)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.ExtraStrong" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最も長い単語分割します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraWeak">
+      <MemberSignature Language="C#" Value="ExtraWeak" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak ExtraWeak = int32(-2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.ExtraWeak" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非常に小さいワード区切りです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Medium">
+      <MemberSignature Language="C#" Value="Medium" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak Medium = int32(-4)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.Medium" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中程度のワード区切りです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak None = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>単語区切りはありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Strong">
+      <MemberSignature Language="C#" Value="Strong" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak Strong = int32(-5)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.Strong" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長い単語が改行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Weak">
+      <MemberSignature Language="C#" Value="Weak" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Synthesis.TtsEngine.EmphasisBreak Weak = int32(-3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Synthesis.TtsEngine.EmphasisBreak.Weak" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.TtsEngine.EmphasisBreak</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>小規模のワード区切りです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

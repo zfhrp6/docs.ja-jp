@@ -1,0 +1,315 @@
+<Type Name="Panel" FullName="System.Web.UI.MobileControls.Panel">
+  <TypeSignature Language="C#" Value="public class Panel : System.Web.UI.MobileControls.MobileControl, System.Web.UI.MobileControls.ITemplateable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Panel extends System.Web.UI.MobileControls.MobileControl implements class System.Web.UI.MobileControls.ITemplateable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.Panel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.MobileControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.MobileControls.ITemplateable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Web.UI.Design.MobileControls.PanelDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem("System.Web.UI.Design.WebControlToolboxItem, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.MobileControls.PanelControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.MobileControls.DesignerAdapter(typeof(System.Web.UI.MobileControls.Adapters.HtmlPanelAdapter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Panel runat="server"&gt;&lt;/{0}:Panel&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>モバイル Web フォーム ページのコントロールを整理するためのコンテナーを提供します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パネルは、入れ子にできるコンテナー コントロールです。 パネルで設定した属性は、そのパネルに含まれるコントロールに継承されます。  
+  
+ パネルを使用するには、次の関数のいずれかの。  
+  
+-   表示または非表示にできるようにするコントロールの論理的なグループです。  
+  
+-   コントロールを作成または動的に削除できる便利なコンテナーを定義します。  
+  
+-   単一のポイントを使用してスタイルを適用する属性を一連のコントロール パネルに設定することによりします。 パネルにスタイルの継承が適用される、ために、そのパネルに含まれているコントロールでをパネルに設定されている属性を継承できます。  
+  
+-   改ページ調整時に一緒に保持するコントロールに関する情報を ASP.NET ページ フレームワークを提供します。 既定では、パネルの内容は、ページにまとめられます。 この動作を変更するには、設定、<xref:System.Web.UI.MobileControls.Panel.Paginate%2A>パネルのプロパティです。  
+  
+ テキストの内容にマークアップ タグを伴うと共にリテラル テキストを含めることができます、<xref:System.Web.UI.MobileControls.Panel>です。 詳細については、次を参照してください。[フォーム マークアップ内のテキストのリテラル](http://msdn.microsoft.com/en-us/05e061ed-9916-4ece-bfc8-7bf131fe232e)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、コマンドのクリックに応答するように、パネルのプロパティを操作する関数を定義する方法と、ページの読み込み中にパネルのプロパティを設定する方法を示します。 ページの読み込み時のコードもを検索し、2 番目のパネルで、デバイス固有のコンテンツ テンプレート内のラベルを変更します。  
+  
+ [!code-aspx-csharp[MobilePanelSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobilePanelSample/cs/Default.aspx#1)]  
+  
+ このセクションを Web.config ファイルに追加する必要がありますも。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Panel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Panel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.Panel" /> クラスの新しいインスタンスを初期化します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLinkedForms">
+      <MemberSignature Language="C#" Value="public override void AddLinkedForms (System.Collections.IList linkedForms);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddLinkedForms(class System.Collections.IList linkedForms) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Panel.AddLinkedForms(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="linkedForms" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="linkedForms">指定されたコントロールへのリンクが含まれているフォームのセット。</param>
+        <summary>指定されたコントロールへのリンクが含まれるフォームのセットを、提供された一覧に追加します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BreakAfter">
+      <MemberSignature Language="C#" Value="public override bool BreakAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BreakAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Panel.BreakAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの後ろに追加の後続の区切りをレンダリングするかどうかを決定するプロパティを取得または設定します。 この区切りにより、それ以降のコンテンツは次の行で開始します。 既定値は、<see langword="true" /> です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          コントロールの後ろに追加の後続の改行がレンダリングされる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public System.Web.UI.MobileControls.Panel Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.MobileControls.Panel Content" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Panel.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.MobileControls.Panel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバイス固有のコンテンツを含むパネルを返します。 コンテンツのテンプレートを定義し、ターゲット デバイス用に選択する必要があります。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>デバイス固有のパネルのコンテンツを含むパネルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.MobileControls.Panel.Content%2A>プロパティ ページが読み込まれるときにコントロールを検索します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MobilePanelSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobilePanelSample/cs/Default.aspx#1)]  
+  
+ このセクションを Web.config ファイルに追加する必要がありますも。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultTemplatedUI">
+      <MemberSignature Language="C#" Value="public override void CreateDefaultTemplatedUI (bool doDataBind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateDefaultTemplatedUI(bool doDataBind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Panel.CreateDefaultTemplatedUI(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doDataBind" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="doDataBind">インスタンス化されたテンプレートを使用可能なデータにバインドする必要がある場合 (通常、最初の要求がこれに当たります) は、<see langword="true" /> に設定します。 テンプレートをデータにバインドする必要がなく、代わりに、データを読み込むためにビュー ステートに依存する必要がある場合 (通常、2 回目以降のポストバックがこれに当たります) は、<see langword="false" /> に設定します。</param>
+        <summary>デバイス アダプターによって呼び出され、コントロールの既定のテンプレート ユーザー インターフェイス (UI) を作成します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Panel.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paginate">
+      <MemberSignature Language="C#" Value="public virtual bool Paginate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Paginate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Panel.Paginate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>改ページ調整するかどうかを示すブール値の設定を取得または、<see cref="T:System.Web.UI.MobileControls.Panel" />コントロール。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          <see langword="true" />改ページ調整、 <see cref="T:System.Web.UI.MobileControls.Panel" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MobileControls.Form.Paginated>イベントは、フォームの改ページが発生した後に発生します。  
+  
+> [!NOTE]
+>  場合でも、<xref:System.Web.UI.MobileControls.Panel.Paginate%2A>プロパティに設定されている`false`、改ページも発生する可能性が場合は、フォームの<xref:System.Web.UI.MobileControls.Form.ControlToPaginate%2A>プロパティを設定します。  
+  
+> [!NOTE]
+>  改ページを許可する、<xref:System.Web.UI.MobileControls.Panel>コントロール設定する必要があります、フォーム、<xref:System.Web.UI.MobileControls.Panel.Paginate%2A>に`true`形式と、パネルの両方でします。  
+  
+   
+  
+## Examples  
+ デバイスに、ページの改ページも表示したときに次のコード例では、1 ページに収まるより多くのコントロールを含むパネルができるようにするすべての項目へのアクセス パネルに改ページ調整された方法を示します。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MobilePanelSample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/MobilePanelSample/cs/Default2.aspx#3)]
+ [!code-aspx-vb[MobilePanelSample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MobilePanelSample/vb/Default2.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaginateChildren">
+      <MemberSignature Language="C#" Value="protected override bool PaginateChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PaginateChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Panel.PaginateChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの子を改ページ調整する必要があるかどうかを示す値を取得します。 フォームの改ページ位置の自動修正に使用されます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>
+          <see langword="true" />コントロールの子を改ページ調整する必要があります場合。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaginateRecursive">
+      <MemberSignature Language="C#" Value="public override void PaginateRecursive (System.Web.UI.MobileControls.ControlPager pager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PaginateRecursive(class System.Web.UI.MobileControls.ControlPager pager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Panel.PaginateRecursive(System.Web.UI.MobileControls.ControlPager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pager" Type="System.Web.UI.MobileControls.ControlPager" />
+      </Parameters>
+      <Docs>
+        <param name="pager">ページャー。</param>
+        <summary>コントロールとその子をページに割り当てます。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

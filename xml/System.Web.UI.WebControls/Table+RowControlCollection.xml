@@ -1,0 +1,98 @@
+<Type Name="Table+RowControlCollection" FullName="System.Web.UI.WebControls.Table+RowControlCollection">
+  <TypeSignature Language="C#" Value="protected class Table.RowControlCollection : System.Web.UI.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit Table/RowControlCollection extends System.Web.UI.ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Table.RowControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.TableRow" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.Table" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.Table.RowControlCollection>コレクションは、によって返される、<xref:System.Web.UI.Control.Controls%2A>のプロパティ、<xref:System.Web.UI.WebControls.Table>コントロール。 のみ<xref:System.Web.UI.WebControls.TableRow>をこのオブジェクトを追加できる<xref:System.Web.UI.WebControls.Table.RowControlCollection>です。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Table.RowControlCollection.Add(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="child"><see cref="T:System.Web.UI.Control" /> に追加する <see cref="T:System.Web.UI.WebControls.Table.RowControlCollection" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.Control" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Table.RowControlCollection" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Table.RowControlCollection.Add%2A>に新しいコントロールを追加するメソッドを<xref:System.Web.UI.WebControls.Table.RowControlCollection>コレクション。 指定されたコントロールは、配列の末尾に追加されます。 コントロールのインスタンスのみであることができます、<xref:System.Web.UI.WebControls.TableRow>コントロール。  
+  
+ コントロールを追加する、<xref:System.Web.UI.WebControls.Table.RowControlCollection>コレクション内の特定のインデックス位置を使用して、<xref:System.Web.UI.WebControls.Table.RowControlCollection.AddAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクト<paramref name="child" />されませんが、<see cref="T:System.Web.UI.WebControls.TableRow" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public override void AddAt (int index, System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAt(int32 index, class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Table.RowControlCollection.AddAt(System.Int32,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="index">子コントロールを追加する位置を示す、配列内の位置。</param>
+        <param name="child"><see langword="Control" />に追加するオブジェクト、<see cref="T:System.Web.UI.WebControls.Table.RowControlCollection" />です。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.Control" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Table.RowControlCollection" />コレクション。 新しいコントロールは、指定したインデックス位置にある配列に追加されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Table.RowControlCollection.AddAt%2A>に新しいコントロールを追加するメソッドを<xref:System.Web.UI.WebControls.Table.RowControlCollection>指定位置にあるコレクション。 コントロールのインスタンスのみであることができます、<xref:System.Web.UI.WebControls.TableRow>コントロール。  
+  
+ コントロールを追加する、<xref:System.Web.UI.WebControls.Table.RowControlCollection>の最後に、<xref:System.Web.UI.WebControls.Table.RowControlCollection>を使用して、<xref:System.Web.UI.WebControls.Table.RowControlCollection.Add%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">コントロールは、子コントロールを許可していません。</exception>
+        <exception cref="T:System.ArgumentException">子の値は<see langword="null" />します。  
+  
+ または  
+  
+ オブジェクトは、<see cref="T:System.Web.UI.WebControls.TableRow" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

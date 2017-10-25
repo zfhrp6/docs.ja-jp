@@ -1,0 +1,224 @@
+<Type Name="XmlMembersMapping" FullName="System.Xml.Serialization.XmlMembersMapping">
+  <TypeSignature Language="C#" Value="public class XmlMembersMapping : System.Xml.Serialization.XmlMapping" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlMembersMapping extends System.Xml.Serialization.XmlMapping" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlMembersMapping" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Serialization.XmlMapping</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP Web サービスの .NET Framework Web サービス メソッドと定義されている Web サービス記述言語 (WSDL) メッセージ間のマッピングを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlMembersMapping>クラスは直接使用されません。 代わりに、これが使用されます。  
+  
+-   Wsdl.exe ツールによって、または<xref:System.Web.Services.Description.ServiceDescriptionImporter>WSDL ドキュメントからクライアント プロキシ クラスまたは抽象 server クラスを生成するときに、クラスです。 WSDL ドキュメントでは、SOAP プロトコルの使用を指定します。  
+  
+-   初期化するために<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを SOAP Web サービスまたはクライアントに .NET Framework の初期化中にします。  
+  
+-   によって、<xref:System.Web.Services.Description.ServiceDescriptionReflector>クラスの作成中に<xref:System.Web.Services.Description.ServiceDescription>SOAP Web サービスとして識別されるクラスのオブジェクトをします。  
+  
+ <xref:System.Xml.Serialization.XmlMembersMapping>クラスは、代替には、 <xref:System.Xml.Serialization.XmlTypeMapping> Web サービス メソッドとメッセージ間のマッピングのクラスです。 次の SOAP Web サービス メソッドに属しているエンティティを格納するために使用されます。  
+  
+-   入力パラメーターです。  
+  
+-   出力パラメーターと戻り値。  
+  
+-   SOAP ヘッダーを要求します。  
+  
+-   応答 SOAP ヘッダー。  
+  
+ 具体的には、クラスは、メッセージに従って、次の選択肢の WSDL 定義のマッピングを表します。  
+  
+-   SOAP エンコーディングを使用する Web サービス メソッドの: 最上位レベル<xref:System.Xml.Serialization.XmlMapping.ElementName%2A>と<xref:System.Xml.Serialization.XmlTypeMapping.TypeName%2A>プロパティは、親では、ラッパー要素に適用以外の場合は、メッセージ部分は配列のメンバーによって表されます。 ただし、Web サービス操作は、.NET Framework メソッドと SOAP エンコード、最上位レベルにラップされたバインディングと組み合わせて使用するドキュメントのスタイルを使用する場合は、まれなケースでは、<xref:System.Xml.Serialization.XmlMapping.ElementName%2A>と<xref:System.Xml.Serialization.XmlTypeMapping.TypeName%2A>プロパティは、1 つに適用**一部**生成された WSDL ドキュメントに表示される要素。  
+  
+-   XML スキーマ定義の Web サービスのリテラルは、メソッドを使用して: .NET Framework メソッドにラップされたバインディングを使用して Web サービス メッセージまたは操作、または単なる単一のメッセージ部分、最上位レベルを定義場合<xref:System.Xml.Serialization.XmlMapping.ElementName%2A>と<xref:System.Xml.Serialization.XmlTypeMapping.TypeName%2A>プロパティは、一部に適用します。 複数の部分 (特殊なケース)、最上位レベルがあるかどうかは<xref:System.Xml.Serialization.XmlMapping.ElementName%2A>と<xref:System.Xml.Serialization.XmlTypeMapping.TypeName%2A>プロパティは、親では、ラッパー要素に適用以外の部分がによって表される、<xref:System.Xml.Serialization.XmlMembersMapping.Count%2A>およびインデックス付き配列プロパティにアクセスします。 さらに、XSD`any`要素は、特別な処理を受信します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlMembersMapping.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのマップ先の Web サービス メソッドに属している、.NET Framework コードのエンティティの数を取得します。</summary>
+        <value>コレクション内のマッピングの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかのコレクションを含めることができます。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドは、void ない場合、パラメーター、および戻り値の型の場合は 1 を出力します。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ 参照してください、<xref:System.Xml.Serialization.XmlMembersMapping>をこれらのエンティティに変換する条件のクラス`part`Web サービス記述言語 (WSDL) ドキュメント内の要素。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlMemberMapping this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlMemberMapping Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlMembersMapping.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlMemberMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">返すマッピングのインデックス。</param>
+        <summary>マッピングが SOAP メッセージにマップされている Web サービス メソッドに属している .NET Framework コードのエンティティの情報を内部の型を格納する項目を取得します。</summary>
+        <value>要求された <see cref="T:System.Xml.Serialization.XmlMemberMapping" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックス付き配列アクセス演算子、<xref:System.Xml.Serialization.XmlMembersMapping>クラスは、次のいずれかの配列から指定したエントリを取得します。  
+  
+-   Web サービス メソッドの入力パラメーターです。  
+  
+-   Web サービス メソッドの出力パラメーターおよび戻り値の型 void でない場合にインデックス 0。  
+  
+-   入力の SOAP ヘッダー。  
+  
+-   出力の SOAP ヘッダー。  
+  
+ 参照してください、<xref:System.Xml.Serialization.XmlMembersMapping>をこれらのエンティティに変換する条件のクラス`part`Web サービス記述言語 (WSDL) ドキュメント内の要素。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlMembersMapping.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージを表す XML スキーマ要素のデータ型にマップされている .NET Framework の型の名前を取得します。</summary>
+        <value>.NET Framework の型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して Web サービス記述言語 (WSDL) ドキュメントで、SOAP メッセージが定義されている、`message`要素。  
+  
+ 参照してください、<xref:System.Xml.Serialization.XmlMembersMapping>する条件のクラス、<xref:System.Xml.Serialization.XmlMembersMapping.TypeName%2A>プロパティで定義されている Web サービス メソッド (パラメーターまたは戻り値) の代わりに、余分な親要素またはラッパー要素にコード エンティティを参照します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="TypeNamespace">
+      <MemberSignature Language="C#" Value="public string TypeNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlMembersMapping.TypeNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージを表す XML スキーマ要素のデータ型にマップされている .NET Framework 型の名前空間を取得します。</summary>
+        <value>マッピングの .NET Framework 名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して Web サービス記述言語 (WSDL) ドキュメントで、SOAP メッセージが定義されている、`message`要素。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="WebPartsPersonalizationAuthorization" FullName="System.Web.Configuration.WebPartsPersonalizationAuthorization">
+  <TypeSignature Language="C#" Value="public sealed class WebPartsPersonalizationAuthorization : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebPartsPersonalizationAuthorization extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.WebPartsPersonalizationAuthorization" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プログラムによるアクセスを提供、<see langword="authorization" />セクションに含まれている、<see langword="webParts" />構成セクション。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.WebPartsPersonalizationAuthorization>クラスは、Web パーツのパーソナル化承認の構成サポートを提供します。 このクラスは、Web パーツのリソースへのアクセス許可または拒否に使用できます。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの例は、宣言によってプロパティの値を指定する方法を示しています。、<xref:System.Web.Configuration.WebPartsPersonalizationAuthorization>クラスです。  
+  
+```  
+<system.web>  
+  <webParts>  
+    <personalization>  
+      <authorization>  
+        <deny users="*" verbs="enterSharedScope" />  
+        <allow users="*" verbs="modifyState" />  
+      </authorization>  
+    </personalization>  
+  </webParts>  
+</system.web>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartsPersonalizationAuthorization ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.WebPartsPersonalizationAuthorization.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.WebPartsPersonalizationAuthorization" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 このクラスのインスタンスは、<xref:System.Web.Configuration.WebPartsPersonalizationAuthorization>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsPersonalizationAuthorization.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rules">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.AuthorizationRuleCollection Rules { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.AuthorizationRuleCollection Rules" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.WebPartsPersonalizationAuthorization.Rules" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", IsDefaultCollection=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthorizationRuleCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web パーツに関連するパーソナル化の承認に使用される規則のコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Configuration.AuthorizationRuleCollection" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AuthorizationRuleCollection>から成る<xref:System.Web.Configuration.AuthorizationRule>オブジェクト。 <xref:System.Web.Configuration.AuthorizationRule>オブジェクトが含まれています、 <xref:System.Web.Configuration.AuthorizationRule.Action%2A> 、プロパティ、<xref:System.Web.Configuration.AuthorizationRule.Users%2A>プロパティ、および<xref:System.Web.Configuration.AuthorizationRule.Verbs%2A>プロパティ。 これらのプロパティは、Web パーツのリソースへのアクセス許可または拒否に設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

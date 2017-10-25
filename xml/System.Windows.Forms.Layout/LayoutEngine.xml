@@ -1,0 +1,138 @@
+<Type Name="LayoutEngine" FullName="System.Windows.Forms.Layout.LayoutEngine">
+  <TypeSignature Language="C#" Value="public abstract class LayoutEngine" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit LayoutEngine extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Layout.LayoutEngine" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>レイアウト エンジンを実装するためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.Layout.LayoutEngine>クラスの実行時にカスタム レイアウトの動作を作成するときにします。 独自のクラスを派生させる、<xref:System.Windows.Forms.Layout.LayoutEngine>クラスし、オーバーライド、<xref:System.Windows.Forms.Layout.LayoutEngine.Layout%2A>カスタム レイアウトの動作を定義するメソッド。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.Layout.LayoutEngine>カスタム レイアウトの動作を実装するクラス。  
+  
+ [!code-cpp[System.Windows.Forms.Layout.LayoutEngine#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/cpp/DemoFlowLayout.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Layout.LayoutEngine#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/CS/DemoFlowLayout.cs#1)]
+ [!code-vb[System.Windows.Forms.Layout.LayoutEngine#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/VB/DemoFlowLayout.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LayoutEngine ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Layout.LayoutEngine.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Layout.LayoutEngine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>レイアウトの動作は、レイアウト エンジンに関連するコンテナー クラスのすべてのインスタンスと同じにする必要があります。 このため、レイアウト エンジンのコンス トラクターを宣言することを検討してください<see langword="protected" />または<see langword="private" />、シングルトン クラスとして、レイアウト エンジンを実装するとします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="InitLayout">
+      <MemberSignature Language="C#" Value="public virtual void InitLayout (object child, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitLayout(object child, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Layout.LayoutEngine.InitLayout(System.Object,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Object" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="child">レイアウト エンジンが動作するコンテナーです。</param>
+        <param name="specified">コンテナーのサイズと位置を定義する境界。</param>
+        <summary>レイアウト エンジンを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化ロジックを必要に応じて指定、<xref:System.Windows.Forms.Layout.LayoutEngine.InitLayout%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="child" />対象の型ではありません<see cref="T:System.Windows.Forms.Layout.LayoutEngine" />レイアウトを実行できます。</exception>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Windows.Forms.Layout.LayoutEngine.InitLayout(System.Object,System.Windows.Forms.BoundsSpecified)" />カスタムの初期化の動作を提供するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Layout">
+      <MemberSignature Language="C#" Value="public virtual bool Layout (object container, System.Windows.Forms.LayoutEventArgs layoutEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Layout(object container, class System.Windows.Forms.LayoutEventArgs layoutEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Layout.LayoutEngine.Layout(System.Object,System.Windows.Forms.LayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="layoutEventArgs" Type="System.Windows.Forms.LayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="container">レイアウト エンジンが動作するコンテナーです。</param>
+        <param name="layoutEventArgs">イベント引数から、<see cref="E:System.Windows.Forms.Control.Layout" />イベント。</param>
+        <summary>レイアウト エンジンがレイアウト操作を実行するように要求します。</summary>
+        <returns>
+          <see langword="true" />親でのレイアウトを再度実行する必要があるかどうか<paramref name="container" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、レイアウト エンジンは、レイアウト操作を実行するときに、`container`パラメーター。 値を確認することができます、 <xref:System.Windows.Forms.LayoutEventArgs.AffectedProperty%2A>、 <xref:System.Windows.Forms.LayoutEventArgs.AffectedComponent%2A>、および<xref:System.Windows.Forms.LayoutEventArgs.AffectedControl%2A>プロパティを`layoutEventArgs`レイアウト操作が必要なかどうかを決定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.Layout.LayoutEngine.Layout%2A>カスタム レイアウトの動作を実装するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Layout.LayoutEngine>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.Layout.LayoutEngine#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/cpp/DemoFlowLayout.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Layout.LayoutEngine#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/CS/DemoFlowLayout.cs#4)]
+ [!code-vb[System.Windows.Forms.Layout.LayoutEngine#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Layout.LayoutEngine/VB/DemoFlowLayout.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="container" />対象の型ではありません<see cref="T:System.Windows.Forms.Layout.LayoutEngine" />レイアウトを実行できます。</exception>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Windows.Forms.Layout.LayoutEngine.Layout(System.Object,System.Windows.Forms.LayoutEventArgs)" />カスタム レイアウトの動作を提供するメソッド。  
+  
+ 内容をレイアウトするとき、<paramref name="container" />パラメーターを確認してください、<see cref="P:System.Windows.Forms.Control.Visible" />各子コントロールのプロパティです。  
+  
+ 返す<see langword="true" />かどうかレイアウト エンジンのロジックでは、コンテナーの親によってそのレイアウトを再度実行する必要がありますが決まります。 可能性があります、たとえば、レイアウト エンジンの子コントロールのサイズを変更し、判別に合わせて新しいレイアウト コンテナーを増やす必要。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

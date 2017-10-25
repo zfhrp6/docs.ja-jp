@@ -1,0 +1,155 @@
+<Type Name="RoutingSection" FullName="System.ServiceModel.Routing.Configuration.RoutingSection">
+  <TypeSignature Language="C#" Value="public class RoutingSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RoutingSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Routing.Configuration.RoutingSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ルーティングの構成に使用される要素のコレクションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoutingSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.Configuration.RoutingSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.Configuration.RoutingSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackupLists">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Routing.Configuration.BackupListCollection BackupLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Routing.Configuration.BackupListCollection BackupLists" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.Configuration.RoutingSection.BackupLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("backupLists", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.BackupListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.Configuration.BackupEndpointElement" /> オブジェクトのコレクションを格納する構成要素を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Routing.Configuration.BackupEndpointElement" /> オブジェクトのコレクションを格納する構成セクションを定義するコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterTable">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt; CreateFilterTable (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Dispatcher.MessageFilterTable`1&lt;class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt;&gt; CreateFilterTable(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Routing.Configuration.RoutingSection.CreateFilterTable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.MessageFilterTable&lt;System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">作成するフィルター テーブルの名前。</param>
+        <summary>指定された名前を使用してフィルター テーブルを作成します。</summary>
+        <returns>指定された名前のフィルター テーブル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された名前のルーティング テーブルが現在の AppDomain の構成ファイル内に存在する必要があります。それ以外の場合は、<xref:System.InvalidOperationException> が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Routing.Configuration.FilterElementCollection Filters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Routing.Configuration.FilterElementCollection Filters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.Configuration.RoutingSection.Filters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("filters", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.Configuration.FilterElement" /> オブジェクトのコレクションを格納する構成要素を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Routing.Configuration.FilterElement" /> のコレクションを格納する構成セクションを定義するコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterTables">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Routing.Configuration.FilterTableCollection FilterTables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Routing.Configuration.FilterTableCollection FilterTables" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.Configuration.RoutingSection.FilterTables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("filterTables", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.FilterTableCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.Configuration.FilterTableEntryElement" /> オブジェクトのコレクションを格納する構成要素を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Routing.Configuration.FilterTableEntryElement" /> オブジェクトのコレクションを格納する構成セクションを定義するコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceTable">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Routing.Configuration.NamespaceElementCollection NamespaceTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Routing.Configuration.NamespaceElementCollection NamespaceTable" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Routing.Configuration.RoutingSection.NamespaceTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("namespaceTable", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Routing.Configuration.NamespaceElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Routing.Configuration.NamespaceElement" /> オブジェクトのコレクションを格納する構成要素を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Routing.Configuration.NamespaceElement" /> オブジェクトのコレクションを格納する構成セクションを定義するコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,98 @@
+<Type Name="FormClosedEventArgs" FullName="System.Windows.Forms.FormClosedEventArgs">
+  <TypeSignature Language="C#" Value="public class FormClosedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FormClosedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FormClosedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Form.FormClosed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Form.FormClosed>フォームが閉じられた後、ユーザー インターフェイス (UI)、またはプログラムでは、メソッドを呼び出すことで、ユーザーがいずれかなど、イベントが発生した<xref:System.Windows.Forms.Form.Close%2A>で、<xref:System.Windows.Forms.Form>クラス、または<xref:System.Windows.Forms.Application.Exit%2A>で、<xref:System.Windows.Forms.Application>クラスです。 子または所有しているフォームは、フォームがある場合、<xref:System.Windows.Forms.Form.FormClosed>イベントは、それぞれのも発生します。  
+  
+ <xref:System.Windows.Forms.FormClosedEventArgs>クラスのデータを提供、<xref:System.Windows.Forms.Form.FormClosed>イベント。 <xref:System.Windows.Forms.FormClosedEventArgs.CloseReason%2A>プロパティは、フォームを閉じる理由の理由を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Form.FormClosed>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Form>という`Form1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Form.FormClosed>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#395](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#395)]
+ [!code-vb[System.Windows.Forms.EventExamples#395](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#395)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormClosedEventArgs (System.Windows.Forms.CloseReason closeReason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Forms.CloseReason closeReason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FormClosedEventArgs.#ctor(System.Windows.Forms.CloseReason)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="closeReason" Type="System.Windows.Forms.CloseReason" />
+      </Parameters>
+      <Docs>
+        <param name="closeReason">A<see cref="T:System.Windows.Forms.CloseReason" />フォームが閉じられた理由理由を表す値です。</param>
+        <summary><see cref="T:System.Windows.Forms.FormClosedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `closeReason`パラメーターは初期化するために使用、<xref:System.Windows.Forms.FormClosedEventArgs.CloseReason%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseReason">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CloseReason CloseReason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.CloseReason CloseReason" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FormClosedEventArgs.CloseReason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CloseReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームが閉じられた理由を示す値を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.CloseReason" />列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.Form>さまざまな理由から、ユーザーによって開始されるとプログラムで両方のため閉じることができます。 <xref:System.Windows.Forms.FormClosingEventArgs.CloseReason%2A>プロパティは、クロージャの理由を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Form.FormClosed?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Form>という`Form1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Form.FormClosed?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#395](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#395)]
+ [!code-vb[System.Windows.Forms.EventExamples#395](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#395)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

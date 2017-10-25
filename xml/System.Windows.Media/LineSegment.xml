@@ -1,0 +1,193 @@
+<Type Name="LineSegment" FullName="System.Windows.Media.LineSegment">
+  <TypeSignature Language="C#" Value="public sealed class LineSegment : System.Windows.Media.PathSegment" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LineSegment extends System.Windows.Media.PathSegment" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.LineSegment" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.PathSegment</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの行が作成、<see cref="T:System.Windows.Media.PathFigure" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.PathFigure>を使用して複合図形を作成するオブジェクト<xref:System.Windows.Media.LineSegment>オブジェクトとその他のセグメント。  
+  
+ <xref:System.Windows.Media.LineSegment>クラスには、行の開始点のプロパティが含まれていません。 行の開始点は、前のセグメントの終了点または<xref:System.Windows.Media.PathFigure.StartPoint%2A>の<xref:System.Windows.Media.PathFigure>他のセグメントが存在しない場合。  
+  
+ **Freezable 機能:**ため<xref:System.Windows.Media.LineSegment>オブジェクトの継承、<xref:System.Windows.Freezable>いくつかの特別な機能を提供するクラス、: 複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびできますスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LineSegment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LineSegment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.LineSegment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LineSegment (System.Windows.Point point, bool isStroked);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Point point, bool isStroked) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LineSegment.#ctor(System.Windows.Point,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+        <Parameter Name="isStroked" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="point">これの終点<see cref="T:System.Windows.Media.LineSegment" />です。</param>
+        <param name="isStroked">
+          <see langword="true" />これをストロークを描画する<see cref="T:System.Windows.Media.LineSegment" />、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.LineSegment" />指定の終了を持つクラスである<see cref="T:System.Windows.Point" />およびブール値を決定するかどうかこの<see cref="T:System.Windows.Media.LineSegment" />ストロークを付けます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LineSegment Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.LineSegment Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LineSegment.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LineSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の詳細コピーを作ることにより、この <see cref="T:System.Windows.Media.LineSegment" /> の変更可能なコピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> の場合でも、複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドは、依存関係プロパティをコピーする場合、は、不要になった解決する可能性がありますが、リソース参照とデータ バインディングをコピーします。 アニメーションやその現在の値はコピーされません。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.LineSegment CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.LineSegment CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LineSegment.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.LineSegment</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更可能なコピーを作成<see cref="T:System.Windows.Media.LineSegment" />オブジェクトの値の詳細コピーを作成しています。 このメソッドでは、リソース参照、データ バインディング、アニメーションはコピーされませんが、その現在の値はコピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 <see cref="P:System.Windows.Freezable.IsFrozen" />プロパティは<see langword="false" />場合でも、<see cref="P:System.Windows.Freezable.IsFrozen" />ソースのプロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.LineSegment.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Point { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point Point" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.LineSegment.Point" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>線分の終点を取得または設定します。</summary>
+        <value>線分の終点。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.LineSegment>クラスには、行の開始点のプロパティが含まれていません。 行の開始点は、現在のポイントの<xref:System.Windows.Media.PathFigure>行を追加するオブジェクト。  
+  
+<a name="dependencyPropertyInfo_Point"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.LineSegment.PointProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PointProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PointProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PointProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.LineSegment.PointProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.LineSegment.Point" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,213 @@
+<Type Name="RequestCachePolicy" FullName="System.Net.Cache.RequestCachePolicy">
+  <TypeSignature Language="C#" Value="public class RequestCachePolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RequestCachePolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Cache.RequestCachePolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用して取得したリソースのアプリケーションのキャッシュ要件を定義<see cref="T:System.Net.WebRequest" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、アプリケーションの既定のキャッシュ ポリシーを指定することができます、<xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>プロパティまたはアプリケーションまたはマシン構成ファイル。 詳細については、次を参照してください。 [ &lt;requestCaching&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)です。  
+  
+ 使用して個々 の要求のキャッシュ ポリシーを指定することができます、<xref:System.Net.WebRequest.CachePolicy%2A>プロパティです。  
+  
+ Web サービスのキャッシュはサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してポリシーを作成する<xref:System.Net.Cache.RequestCachePolicy.Level%2A>'éý' <xref:System.Net.Cache.RequestCacheLevel.CacheOnly>、オブジェクトのキャッシュ ポリシー設定を使用して、<xref:System.Net.WebRequest>です。  
+  
+ [!code-cpp[NclSimpleCache#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#13)]
+ [!code-csharp[NclSimpleCache#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestCachePolicy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.RequestCachePolicy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Cache.RequestCachePolicy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.Net.Cache.RequestCachePolicy.Level%2A> プロパティを <xref:System.Net.Cache.RequestCacheLevel.Default> に初期化します。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclSimpleCache#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#11)]
+ [!code-csharp[NclSimpleCache#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RequestCachePolicy (System.Net.Cache.RequestCacheLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Cache.RequestCacheLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.RequestCachePolicy.#ctor(System.Net.Cache.RequestCacheLevel)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="level" Type="System.Net.Cache.RequestCacheLevel" />
+      </Parameters>
+      <Docs>
+        <param name="level">A<see cref="T:System.Net.Cache.RequestCacheLevel" />を使用して取得したリソースのキャッシュ動作を指定する<see cref="T:System.Net.WebRequest" />オブジェクト。</param>
+        <summary><see cref="T:System.Net.Cache.RequestCachePolicy" /> クラスの新しいインスタンスを初期化します。 指定されたキャッシュ ポリシーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.Net.Cache.RequestCachePolicy.Level%2A> プロパティを `level` に初期化します。  
+  
+ <xref:System.Net.Cache.RequestCacheLevel>値を制御するかどうかのキャッシュが有効であり、キャッシュを使用できます。 詳細については、次を参照してください。、<xref:System.Net.Cache.RequestCacheLevel>ドキュメント。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用してポリシーを作成する<xref:System.Net.Cache.RequestCachePolicy.Level%2A>'éý'<xref:System.Net.Cache.RequestCacheLevel.CacheOnly>グループ 1 のキャッシュ ポリシーを設定する、<xref:System.Net.WebRequest>です。  
+  
+ [!code-cpp[NclSimpleCache#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#13)]
+ [!code-csharp[NclSimpleCache#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">レベルが有効ではありません<see cref="T:System.Net.Cache.RequestCacheLevel" />.value です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Level">
+      <MemberSignature Language="C#" Value="public System.Net.Cache.RequestCacheLevel Level { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Cache.RequestCacheLevel Level" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Cache.RequestCachePolicy.Level" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Cache.RequestCacheLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Net.Cache.RequestCacheLevel" />値は、このインスタンスを構築したときを指定します。</summary>
+        <value>A<see cref="T:System.Net.Cache.RequestCacheLevel" />を使用して取得したリソースのキャッシュ動作を指定する値<see cref="T:System.Net.WebRequest" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで通常使用<xref:System.Net.Cache.RequestCacheLevel.Default>キャッシュ ポリシー レベルとして。 使用して、<xref:System.Net.Cache.RequestCacheLevel.Default>レベルで、有効なキャッシュ ポリシーは現在のキャッシュ ポリシーとキャッシュ内のコンテンツの年齢。 <xref:System.Net.WebRequest.CachePolicy%2A?displayProperty=nameWithType>いない場合は、プロパティ`null`、要求に対して有効なキャッシュ ポリシーを決定します。  
+  
+ 使用して、アプリケーション ドメインの既定のポリシーを設定することができます、<xref:System.Net.HttpWebRequest.DefaultCachePolicy%2A>アプリケーションまたはマシン構成ファイル。 詳細については、次を参照してください。 [ &lt;requestCaching&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.Cache.RequestCacheLevel.CacheOnly>ポリシー要求を送信します。  
+  
+ [!code-cpp[NclSimpleCache#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#13)]
+ [!code-csharp[NclSimpleCache#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Cache.RequestCachePolicy.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスの文字列表現を返します。</summary>
+        <returns>A<see cref="T:System.String" />を含む、<see cref="P:System.Net.Cache.RequestCachePolicy.Level" />のこのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.Cache.RequestCacheLevel.NoCacheNoStore>ポリシー要求を送信します。  
+  
+ [!code-cpp[NclSimpleCache#14](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSimpleCache/CPP/NCLSimpleCache.cpp#14)]
+ [!code-csharp[NclSimpleCache#14](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSimpleCache/CS/example.cs#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

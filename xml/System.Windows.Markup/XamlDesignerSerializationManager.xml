@@ -1,0 +1,65 @@
+<Type Name="XamlDesignerSerializationManager" FullName="System.Windows.Markup.XamlDesignerSerializationManager">
+  <TypeSignature Language="C#" Value="public class XamlDesignerSerializationManager : System.Windows.Markup.ServiceProviders" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlDesignerSerializationManager extends System.Windows.Markup.ServiceProviders" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlDesignerSerializationManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.ServiceProviders</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML デザイナー、または高度なシリアル化を必要とする他の呼び出し元で XAML シリアル化のためのサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XamlDesignerSerializationManager>シリアル化プロセス中に頻繁に呼び出されるサービスへのアクセスを最適化しようとしています。  
+  
+ A<xref:System.Windows.Markup.XamlDesignerSerializationManager>の入力が特定の特殊化にも使用`ShouldSerialize`メソッド[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]などのクラス<xref:System.Windows.Controls.TextBlock.ShouldSerializeInlines%2A?displayProperty=nameWithType>とのオーバー ロードの<xref:System.Windows.Markup.XamlWriter.Save%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlDesignerSerializationManager (System.Xml.XmlWriter xmlWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlWriter xmlWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlDesignerSerializationManager.#ctor(System.Xml.XmlWriter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="xmlWriter">XML ライターの実装の基礎として使用する、<see cref="T:System.Windows.Markup.XamlDesignerSerializationManager" />です。</param>
+        <summary><see cref="T:System.Windows.Markup.XamlDesignerSerializationManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XamlWriterMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Markup.XamlWriterMode XamlWriterMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Markup.XamlWriterMode XamlWriterMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlDesignerSerializationManager.XamlWriterMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XamlWriterMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XAML ライターのモードを設定します。</summary>
+        <value>XAML ライターのモードです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">有効なメンバーではない、<see cref="T:System.Windows.Markup.XamlWriterMode" />列挙します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

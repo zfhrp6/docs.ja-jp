@@ -1,0 +1,193 @@
+<Type Name="HandleRef" FullName="System.Runtime.InteropServices.HandleRef">
+  <TypeSignature Language="C#" Value="public struct HandleRef" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit HandleRef extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.HandleRef" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>プラットフォーム呼び出しを使用してアンマネージ コードに渡されるリソースへのハンドルを保持しているマネージ オブジェクトをラップします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  機能、.NET Framework 2.0 以降で、<xref:System.Runtime.InteropServices.HandleRef>クラスが置き換えられました、<xref:System.Runtime.InteropServices.SafeHandle>クラスとその派生クラス、よびとして、<xref:System.Runtime.InteropServices.CriticalHandle>クラスです。  
+  
+ プラットフォームを使用する場合は、呼び出し、マネージ オブジェクトをおよびプラットフォーム呼び出しの呼び出し後、オブジェクトは他の場所で参照されていませんが、ガベージ コレクターがマネージ オブジェクトを終了する可能性がします。 この操作はリソースを解放し、ハンドルを無効になり、プラットフォーム呼び出しは失敗します。 持つハンドルをラップ<xref:System.Runtime.InteropServices.HandleRef>マネージ オブジェクトがガベージ コレクション、プラットフォーム呼び出しでがないことの保証を完了します。 プラットフォームの詳細については、サービスを呼び出しは、「[アンマネージ DLL 関数の使用](~/docs/framework/interop/consuming-unmanaged-dll-functions.md)です。  
+  
+ <xref:System.Runtime.InteropServices.HandleRef>値型のような<xref:System.Runtime.InteropServices.GCHandle>、相互運用マーシャラーによって認識される特殊な型です。 あり、通常<xref:System.Runtime.InteropServices.GCHandle>もまだ予期しないガベージ コレクション実行できなくなる<xref:System.Runtime.InteropServices.HandleRef>パフォーマンスが向上します。 使用する<xref:System.Runtime.InteropServices.HandleRef>プラットフォームの間の呼び出しは、オブジェクトを維持するをお勧め、使用することも、<xref:System.GC.KeepAlive%2A?displayProperty=nameWithType>を同じ目的のメソッドです。  
+  
+ <xref:System.Runtime.InteropServices.HandleRef>コンス トラクターは 2 つのパラメーターを受け取ります。 <xref:System.Object> 、ラッパーを表すと<xref:System.IntPtr>アンマネージ ハンドルを表すです。 相互運用マーシャラーが、アンマネージ コードにハンドルのみを渡すし、ラッパーことが保証されます (最初のパラメーターとしてのコンス トラクターに渡される、 `HandleRef`) 呼び出しの間有効のままです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HandleRef (object wrapper, IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object wrapper, native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.HandleRef.#ctor(System.Object,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="wrapper" Type="System.Object" />
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="wrapper">プラットフォーム呼び出しの呼び出しまで終了しないするマネージ オブジェクトを返します。</param>
+        <param name="handle"><see cref="T:System.IntPtr" />を示す、リソースへのハンドル。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.HandleRef" />クラスをラップするオブジェクトとアンマネージ コードで使用されるリソースへのハンドルを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.HandleRef.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースへのハンドルを取得します。</summary>
+        <value>リソースへのハンドル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator IntPtr (System.Runtime.InteropServices.HandleRef value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname native int op_Explicit(valuetype System.Runtime.InteropServices.HandleRef value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.HandleRef.op_Explicit(System.Runtime.InteropServices.HandleRef)~System.IntPtr" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Runtime.InteropServices.HandleRef" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToIntPtr">
+      <MemberSignature Language="C#" Value="public static IntPtr ToIntPtr (System.Runtime.InteropServices.HandleRef value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int ToIntPtr(valuetype System.Runtime.InteropServices.HandleRef value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.HandleRef.ToIntPtr(System.Runtime.InteropServices.HandleRef)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Runtime.InteropServices.HandleRef" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Runtime.InteropServices.HandleRef" />から内部整数表現を取得するオブジェクト。</param>
+        <summary>内部整数表現を返します、<see cref="T:System.Runtime.InteropServices.HandleRef" />オブジェクト。</summary>
+        <returns><see cref="T:System.IntPtr" />を表すオブジェクト、<see cref="T:System.Runtime.InteropServices.HandleRef" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wrapper">
+      <MemberSignature Language="C#" Value="public object Wrapper { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Wrapper" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.HandleRef.Wrapper" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースへのハンドルを保持しているオブジェクトを取得します。</summary>
+        <value>リソースへのハンドルを保持するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,50 @@
+<Type Name="DoWorkEventHandler" FullName="System.ComponentModel.DoWorkEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DoWorkEventHandler(object sender, DoWorkEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DoWorkEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DoWorkEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.DoWorkEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.DoWorkEventArgs" />。</param>
+    <summary><see cref="E:System.ComponentModel.BackgroundWorker.DoWork" /> イベントを処理するメソッドを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.DoWorkEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生するたびに、イベント ハンドラー メソッドが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.DoWorkEventHandler>を処理するデリゲート、<xref:System.ComponentModel.BackgroundWorker.DoWork>イベント。 完全なコードの一覧については、次を参照してください。[する方法: バック グラウンドで操作を実行](~/docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)です。  
+  
+ [!code-csharp[System.ComponentModel.BackgroundWorker.Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/CS/Form1.cs#2)]
+ [!code-vb[System.ComponentModel.BackgroundWorker.Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.BackgroundWorker.Example/VB/Form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

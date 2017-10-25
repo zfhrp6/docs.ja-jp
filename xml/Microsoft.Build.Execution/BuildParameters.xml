@@ -1,0 +1,589 @@
+<Type Name="BuildParameters" FullName="Microsoft.Build.Execution.BuildParameters">
+  <TypeSignature Language="C#" Value="public class BuildParameters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildParameters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Execution.BuildParameters" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスでは、すべてのビルドを開始する指定する必要がありますのある設定を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildParameters ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildParameters.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>ビルド パラメーターを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての設定に使用するコンス トラクターは、プロパティをプログラムによって構築します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildParameters (Microsoft.Build.Evaluation.ProjectCollection projectCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class Microsoft.Build.Evaluation.ProjectCollection projectCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildParameters.#ctor(Microsoft.Build.Evaluation.ProjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="projectCollection" Type="Microsoft.Build.Evaluation.ProjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="projectCollection">元となるため作成すべき自体 ProjectCollection です。</param>
+        <summary>ビルド パラメーターを作成し、プロジェクト コレクションからそれらを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProcessEnvironment">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; BuildProcessEnvironment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; BuildProcessEnvironment" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.BuildProcessEnvironment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドが作成されたときに設定された環境変数を取得します。</summary>
+        <value>ビルドが作成されたときに設定された環境変数を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildThreadPriority">
+      <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority BuildThreadPriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority BuildThreadPriority" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.BuildThreadPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドに目的のスレッド優先順位を設定します。</summary>
+        <value>ビルドのスレッドの優先順位を返します</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.BuildParameters Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Execution.BuildParameters Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildParameters.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.BuildParameters</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このビルド パラメーター オブジェクトの複製を作成します。</summary>
+        <returns>このビルド パラメーター オブジェクトのクローンを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ロガーのコレクションの複製を作成が内で複数のロガーを深く複製できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド時に使用するカルチャの名前を設定します。</summary>
+        <value>カルチャを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultToolsVersion">
+      <MemberSignature Language="C#" Value="public string DefaultToolsVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultToolsVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.DefaultToolsVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドの既定のツール バージョンを設定します。</summary>
+        <value>ツール バージョンを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetailedSummary">
+      <MemberSignature Language="C#" Value="public bool DetailedSummary { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DetailedSummary" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.DetailedSummary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドでは、ログの最後に詳細な概要を出力するかどうかを指定するスイッチを設定します。</summary>
+        <value>ビルドが、ログの最後に詳細な情報を出力するかどうかを指定するスイッチの値を返します</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableInProcNode">
+      <MemberSignature Language="C#" Value="public bool DisableInProcNode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DisableInProcNode" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.DisableInProcNode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の処理を使用するかどうかを決定するフラグ ノード。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableNodeReuse">
+      <MemberSignature Language="C#" Value="public bool EnableNodeReuse { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableNodeReuse" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.EnableNodeReuse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアウト プロセス ノード必要があります、ビルドの後に永続化し、それ以降のビルドまで待機するかどうかを決定するフラグを設定します。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnvironmentProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; EnvironmentProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; EnvironmentProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.EnvironmentProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>環境のプロパティの変更できないコレクションを取得します。</summary>
+        <value>環境のプロパティの変更できないコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForwardingLoggers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt; ForwardingLoggers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Logging.ForwardingLoggerRecord&gt; ForwardingLoggers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.ForwardingLoggers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Logging.ForwardingLoggerRecord&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または転送ロガーの説明のコレクションを設定します。</summary>
+        <value>転送 logger の説明のコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolset">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.Toolset GetToolset (string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Evaluation.Toolset GetToolset(string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildParameters.GetToolset(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.Toolset</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolsVersion">取得するツールセット。</param>
+        <summary>指定されたツールセットを取得します。</summary>
+        <returns>ツールセットを返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlobalProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; GlobalProperties { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; GlobalProperties" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.GlobalProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグローバル プロパティの変更できないコレクションを設定します。</summary>
+        <value>グローバル プロパティの変更できないコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HostServices">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.HostServices HostServices { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Execution.HostServices HostServices" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.HostServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.HostServices</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド処理をさらに制御を提供するホストを可能にするサービスを設定します。</summary>
+        <value>ホスト サービスを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LegacyThreadingSemantics">
+      <MemberSignature Language="C#" Value="public bool LegacyThreadingSemantics { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LegacyThreadingSemantics" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.LegacyThreadingSemantics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはまたはレガシ スレッド処理のセマンティクスを無効にするスイッチを設定します。</summary>
+        <value>有効またはレガシ スレッド処理のセマンティクス; を無効にするスイッチを返します有効な場合、false それ以外の場合は true。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ レガシ スレッド処理のセマンティクスは、構築する場合、インプロセスのみでノードと、送信が同期的に実行されたその BuildManager が所有するスレッドではなく、ビルドを呼び出すスレッドで、要求をすべてがビルドされますを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Loggers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt; Loggers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class Microsoft.Build.Framework.ILogger&gt; Loggers" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.Loggers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;Microsoft.Build.Framework.ILogger&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド時に使用するロガーのコレクションを設定します。</summary>
+        <value>ビルド時に使用するロガーのコレクションを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogInitialPropertiesAndItems">
+      <MemberSignature Language="C#" Value="public bool LogInitialPropertiesAndItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogInitialPropertiesAndItems" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.LogInitialPropertiesAndItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド入力パラメーターをログに記録するかどうかを決定するフラグを設定します。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogTaskInputs">
+      <MemberSignature Language="C#" Value="public bool LogTaskInputs { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LogTaskInputs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.LogTaskInputs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド タスクのパラメーターをログに記録するかどうかを決定するフラグを設定します。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxNodeCount">
+      <MemberSignature Language="C#" Value="public int MaxNodeCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxNodeCount" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.MaxNodeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのビルドを使用するノードの最大数を設定します。</summary>
+        <value>このビルドを使用するノードの最大数を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryUseLimit">
+      <MemberSignature Language="C#" Value="public int MemoryUseLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MemoryUseLimit" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.MemoryUseLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド上限 (メガバイト単位) を使用するメモリの量を設定します。</summary>
+        <value>ビルド上限 (メガバイト単位) を使用するメモリの量を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeExeLocation">
+      <MemberSignature Language="C#" Value="public string NodeExeLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NodeExeLocation" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.NodeExeLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド ノードの場所を実行可能ファイルに設定します。</summary>
+        <value>実行可能ファイルのビルド ノードの場所を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyLogCriticalEvents">
+      <MemberSignature Language="C#" Value="public bool OnlyLogCriticalEvents { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OnlyLogCriticalEvents" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.OnlyLogCriticalEvents" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または致命的でないログ イベントを破棄するかどうかを決定するフラグを設定します。</summary>
+        <value>致命的でないログ イベントを破棄するかどうかを決定するフラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetCaches">
+      <MemberSignature Language="C#" Value="public bool ResetCaches { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ResetCaches" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.ResetCaches" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドで、構成と結果のキャッシュをリセットするかどうかを指定するスイッチを設定します。</summary>
+        <value>ビルドが、構成と結果のキャッシュをリセットするかどうかを指定するスイッチを返しますキャッシュをリセットする場合は true、false それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveOperatingEnvironment">
+      <MemberSignature Language="C#" Value="public bool SaveOperatingEnvironment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SaveOperatingEnvironment" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.SaveOperatingEnvironment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロジェクトをビルドなど、現在のディレクトリと環境では、この運用環境の保存し、の間で復元する必要がありますを指定するスイッチとタスクの呼び出しを設定します。</summary>
+        <value>この運用環境を保存してプロジェクトのビルドとタスク呼び出しの間で復元するかどうかを示すスイッチを返します環境を保存する場合、false それ以外の場合は true。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、環境を互いに踏み潰す 2 つのビルド マネージャーがないように、システムで実行されている他のビルド マネージャーを false に設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownInProcNodeOnBuildFinish">
+      <MemberSignature Language="C#" Value="public bool ShutdownInProcNodeOnBuildFinish { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShutdownInProcNodeOnBuildFinish" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.ShutdownInProcNodeOnBuildFinish" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定の処理をシャット ダウンするかどうかを決定するフラグを取得またはビルドが終了するときにノードです。 既定値は、<see langword="false" /> です。</summary>
+        <value>フラグを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolsetDefinitionLocations">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Evaluation.ToolsetDefinitionLocations ToolsetDefinitionLocations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype Microsoft.Build.Evaluation.ToolsetDefinitionLocations ToolsetDefinitionLocations" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.ToolsetDefinitionLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Evaluation.ToolsetDefinitionLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはツールセットを検索する場所を設定します。</summary>
+        <value>ツールセットを検索する場所を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Toolsets">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.Toolset&gt; Toolsets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;class Microsoft.Build.Evaluation.Toolset&gt; Toolsets" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.Toolsets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;Microsoft.Build.Evaluation.Toolset&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのツールセットを取得します。</summary>
+        <value>すべてのツールセットを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UICulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo UICulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo UICulture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.UICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルド時に使用する UI カルチャの名前を設定します。</summary>
+        <value>ビルド時に使用する UI カルチャの名前を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSynchronousLogging">
+      <MemberSignature Language="C#" Value="public bool UseSynchronousLogging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSynchronousLogging" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildParameters.UseSynchronousLogging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのプロセスのみがある場合に、同期ログ記録を使用するかどうかを指定するスイッチを設定します。</summary>
+        <value>1 つのプロセスのみがあるときに、同期ログを使用するかどうかを指定するスイッチを返しますtrue の場合、同期ログを使用して、それ以外の場合に非同期のログ記録を使用します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

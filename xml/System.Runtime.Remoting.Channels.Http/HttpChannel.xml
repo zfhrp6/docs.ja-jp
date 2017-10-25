@@ -1,0 +1,589 @@
+<Type Name="HttpChannel" FullName="System.Runtime.Remoting.Channels.Http.HttpChannel">
+  <TypeSignature Language="C#" Value="public class HttpChannel : System.Runtime.Remoting.Channels.BaseChannelWithProperties, System.Runtime.Remoting.Channels.IChannelReceiver, System.Runtime.Remoting.Channels.IChannelReceiverHook, System.Runtime.Remoting.Channels.IChannelSender, System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpChannel extends System.Runtime.Remoting.Channels.BaseChannelWithProperties implements class System.Runtime.Remoting.Channels.IChannel, class System.Runtime.Remoting.Channels.IChannelReceiver, class System.Runtime.Remoting.Channels.IChannelReceiverHook, class System.Runtime.Remoting.Channels.IChannelSender, class System.Runtime.Remoting.Channels.ISecurableChannel" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Remoting</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.Channels.BaseChannelWithProperties</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelReceiver</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelReceiverHook</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelSender</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.ISecurableChannel</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メッセージを送信するプロトコル、HTTP を使用するリモートの呼び出しのクライアントのチャネルを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、(たとえば、コンピューターまたはアプリケーション ドメイン) 間のリモート処理境界を越えてメッセージを転送します。 <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>クラスは、HTTP プロトコルを使用してメッセージを転送します。  
+  
+ チャネルは、リモート呼び出しを転送する、.NET Framework リモート処理インフラストラクチャによって使用されます。 リモート オブジェクトへの呼び出しは、クライアントが、呼び出しは、クライアント チャネルで送信され、サーバー チャネルによって受信されるメッセージにシリアル化されます。 逆シリアル化し、処理されます。 戻り値はすべては、サーバーのチャネルで送信され、クライアント チャネルで受信します。  
+  
+ A<xref:System.Runtime.Remoting.Channels.Http.HttpChannel>オブジェクトで設定できる構成プロパティが関連付けられている構成ファイルのいずれかの実行時間 (静的なを呼び出すことによって<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%2A?displayProperty=nameWithType>メソッド) またはプログラムによって (を渡すことによって、<xref:System.Collections.IDictionary>コレクションに、<xref:System.Runtime.Remoting.Channels.Http.HttpChannel.%23ctor%2A>コンス トラクター)。 これらの構成プロパティの一覧は、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>リモート処理サーバーとそのクライアントを設定します。 この例には、3 つの部分が含まれています。  
+  
+-   サーバー  
+  
+-   クライアント  
+  
+-   サーバーとクライアントによって使用されるリモート オブジェクト  
+  
+ 次のコード例は、サーバーを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#40](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/server.cpp#40)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#40](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/server.cs#40)]  
+  
+ 次のコード例は、このサーバーのクライアントを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/client.cpp#10)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/client.cs#10)]  
+  
+ 次のコード例では、サーバーとクライアントによって使用されるリモート オブジェクトを示します。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#30](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/common.cpp#30)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#30](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/common.cs#30)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成プロパティ、<xref:System.Runtime.Remoting.Channels.Http.HttpChannel>このコンス トラクターによって返されたインスタンスはすべて、既定値に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpChannel (int port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="port">サーバー チャネルがリッスンするポートです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />サーバー チャネルは、指定したポートでリッスンを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合、既定<xref:System.Runtime.Remoting.Channels.IClientChannelSinkProvider>が使用される、<xref:System.Runtime.Remoting.Channels.SoapClientFormatterSinkProvider>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpChannel (System.Collections.IDictionary properties, System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.IDictionary properties, class System.Runtime.Remoting.Channels.IClientChannelSinkProvider clientSinkProvider, class System.Runtime.Remoting.Channels.IServerChannelSinkProvider serverSinkProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.#ctor(System.Collections.IDictionary,System.Runtime.Remoting.Channels.IClientChannelSinkProvider,System.Runtime.Remoting.Channels.IServerChannelSinkProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+        <Parameter Name="clientSinkProvider" Type="System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />
+        <Parameter Name="serverSinkProvider" Type="System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />
+      </Parameters>
+      <Docs>
+        <param name="properties">A<see cref="T:System.Collections.IDictionary" />コレクション チャネルがクライアントとサーバーで使用する構成プロパティの値を指定します。</param>
+        <param name="clientSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IClientChannelSinkProvider" />クライアント チャネルで使用する実装。</param>
+        <param name="serverSinkProvider"><see cref="T:System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />サーバー チャネルが使用する実装。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />シンクと指定された構成プロパティを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルの構成プロパティの詳細については、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 チャネル シンクは、また、クライアントとサーバー間でメッセージを転送します。 チャネル シンクは、一連の相互リンクされているし、すべてのチャネルのメッセージはこのシンク チェーンをメッセージが最後にシリアル化および転送します。 シンクの機能が必要でない場合は、設定、`clientSinkProvider`と`serverSinkProvider`パラメーター`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">構成プロパティの形式が正しくありませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHookChannelUri">
+      <MemberSignature Language="C#" Value="public void AddHookChannelUri (string channelUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddHookChannelUri(string channelUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.AddHookChannelUri(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="channelUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="channelUri">常に null 参照 (Visual Basic では Nothing)<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" /></param>
+        <summary>チャネル フックのリッスンする URI を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コードを呼び出す必要がありますいない、`AddHookChannelUri`メソッドを直接です。  
+  
+ 特定の初期化状態をチャネルに渡すには、データ オブジェクトを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelData">
+      <MemberSignature Language="C#" Value="public object ChannelData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ChannelData" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.ChannelData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル固有のデータを取得します。</summary>
+        <value>チャネルのデータ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティを使用時に<xref:System.Runtime.Remoting.RemotingServices.Marshal%2A>が呼び出されたと<xref:System.Runtime.Remoting.ObjRef>が作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelName">
+      <MemberSignature Language="C#" Value="public string ChannelName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.ChannelName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />チャネルの名前を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録されている各チャネルは、一意の名前を持ちます。 呼び出すときに、特定のチャネルを取得する名前が使用される<xref:System.Runtime.Remoting.Channels.ChannelServices.GetChannel%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelPriority">
+      <MemberSignature Language="C#" Value="public int ChannelPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ChannelPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.ChannelPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルの優先度を取得します。</summary>
+        <value>チャネルに割り当てる優先度を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 優先順位が競合するクライアントが、特定のエンドポイントに接続する順序を制御します。優先順位の高いチャネルは、低い優先順位のチャネルに接続してください。 既定の優先順位が 1 になります。負の値の優先度が許可されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelScheme">
+      <MemberSignature Language="C#" Value="public string ChannelScheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ChannelScheme" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.ChannelScheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(たとえば、"http") にフックするリスナーの種類を取得します。</summary>
+        <value>フックするリスナーの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のプロパティの値は区別されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelSinkChain">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IServerChannelSink ChannelSinkChain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IServerChannelSink ChannelSinkChain" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.ChannelSinkChain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のチャネルを使用しているチャネル シンク チェーンを取得します。</summary>
+        <value>現在のチャネルを使用しているチャネル シンク チェーン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 チャネル シンク プロバイダーのチェーン内のチャネル シンクが相互リンクされているし、すべてのチャネルのメッセージはこのシンク チェーンをメッセージが最後にシリアル化および転送します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMessageSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink (string url, object remoteChannelData, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink CreateMessageSink(string url, object remoteChannelData, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.CreateMessageSink(System.String,System.Object,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="remoteChannelData" Type="System.Object" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">新しいシンクがメッセージを配信する先の URL です。 指定できます<see langword="null" />です。</param>
+        <param name="remoteChannelData">新しいシンクがメッセージを配信する先のリモート ホストのチャネル データ オブジェクト。 指定できます<see langword="null" />です。</param>
+        <param name="objectURI">このメソッドが戻るとき、指定した URL またはチャネル データ オブジェクトにメッセージを配信する、新しいメッセージのチャネル シンクの URI を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。</summary>
+        <returns>指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.Http.HttpChannel.CreateMessageSink%2A>メソッドは、指定した URL またはチャネルのデータ オブジェクトにメッセージを配信するチャネル メッセージ シンクを返します。 場合、`uri`パラメーターは`null`、`remoteChannelData`シンクのターゲットとして使用されます。 いずれか、`url`または`remoteChannelData`パラメーターを指定できます`null`、両方は使用しません。  
+  
+   
+  
+## Examples  
+ <xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel.CreateMessageSink%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#11](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/client.cpp#11)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#11](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/client.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrlsForUri">
+      <MemberSignature Language="C#" Value="public string[] GetUrlsForUri (string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetUrlsForUri(string objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.GetUrlsForUri(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objectURI" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="objectURI">URL が必要であるオブジェクトの URI。</param>
+        <summary>現在でホストされている、指定した URI を持つオブジェクトのすべての Url の配列を返します<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />です。</summary>
+        <returns>現在のホストされている、指定した URI を持つオブジェクトの Url の配列<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して<xref:System.Runtime.Remoting.Channels.ChannelServices.GetUrlsForObject%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecured">
+      <MemberSignature Language="C#" Value="public bool IsSecured { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecured" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.IsSecured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のチャネルがセキュリティで保護されたかどうかを示すブール値を設定します。</summary>
+        <value>現在のインスタンスがセキュリティで保護されたかどうかを示すブール値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが必要ありませんする明示的に設定を設定するだけで十分です<xref:System.Runtime.Remoting.RemotingConfiguration.Configure%28System.String%2CSystem.Boolean%29>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override object this[object key] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するチャネルのプロパティのキー。</param>
+        <summary>指定したチャネルのプロパティを返します。</summary>
+        <value>A<see cref="T:System.Object" />によって指定されたチャネルのプロパティを表す<paramref name="key" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel.Item%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#12](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/client.cpp#12)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#12](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/client.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.ICollection" />チャネルのプロパティに関連付けられているキーです。</summary>
+        <value>A<see cref="T:System.Collections.ICollection" />チャネルのプロパティに関連付けられているキーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルのプロパティは、実行時にチャネルを構成に使用されます。 可能なチャネルのプロパティと例の一覧は、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel.Keys%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#12](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/client.cpp#12)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#12](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/client.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public string Parse (string url, out string objectURI);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Parse(string url, [out] string&amp; objectURI) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.Parse(System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="objectURI" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="url">リモートの既知のオブジェクトの URI を抽出する元の URL です。</param>
+        <param name="objectURI">このメソッドが戻るとき、<see cref="T:System.String" />リモートの既知のオブジェクトの URI を保持します。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定された URL からチャネル URI と URI のリモートのよく知られているオブジェクトを抽出します。</summary>
+        <returns>現在のチャネルの URI または<see langword="null" />場合は、指定された URL は HTTP URL ではありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel.Parse%2A> メソッドを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>クラスです。  
+  
+ [!code-cpp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#13](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CPP/client.cpp#13)]
+ [!code-csharp[System.Runtime.Remoting.Channels.Http.HttpClientChannel#13](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.Channels.Http.HttpClientChannel/CS/client.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public override System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IDictionary" />チャネルのプロパティの現在のチャネルに関連付けられています。</summary>
+        <value>A<see cref="T:System.Collections.IDictionary" />チャネルのプロパティの現在のチャネルに関連付けられています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時にチャネルを構成するのには、チャネル プロパティを使用します。 `Properties`プロパティは、基になるチャネルのプロパティを返します<xref:System.Runtime.Remoting.Channels.Http.HttpServerChannel>と<xref:System.Runtime.Remoting.Channels.Http.HttpClientChannel>です。 可能なチャネルのプロパティと例の一覧は、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="public void StartListening (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StartListening(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">常に null 参照 (Visual Basic では Nothing) の<see cref="T:System.Runtime.Remoting.Channels.Http.HttpChannel" />します。</param>
+        <summary>現在のチャネルの要求のリッスンを開始するように指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の初期化状態をチャネルに渡すには、データ オブジェクトを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="public void StopListening (object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void StopListening(object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.Http.HttpChannel.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="data">チャネル フックがリッスンするチャネル URI です。</param>
+        <summary>現在のチャネルの要求のリッスンを停止するように指示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WantsToListen">
+      <MemberSignature Language="C#" Value="public bool WantsToListen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WantsToListen" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.Http.HttpChannel.WantsToListen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Remoting</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスが外部のリスナー サービスにフックするかどうかを示すブール値を取得します。</summary>
+        <value>ブール値を示すかどうか<see cref="T:System.Runtime.Remoting.Channels.IChannelReceiverHook" />外部リスナー サービスにフックします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

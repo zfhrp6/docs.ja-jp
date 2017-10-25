@@ -1,0 +1,85 @@
+<Type Name="IServiceContractGenerationExtension" FullName="System.ServiceModel.Description.IServiceContractGenerationExtension">
+  <TypeSignature Language="C#" Value="public interface IServiceContractGenerationExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IServiceContractGenerationExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.IServiceContractGenerationExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コントラクトの生成時に呼び出され、サービス コントラクトに生成されるコードを変更するために使用できるメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントラクトまたはエンドポイントがコードにコンパイルされるときに生成されるコードを変更できるようにするには、コントラクトの動作 (<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> 型) に <xref:System.ServiceModel.Description.IContractBehavior?displayProperty=nameWithType> インターフェイスを実装します。  
+  
+ 通常、カスタム <xref:System.ServiceModel.Description.IWsdlImportExtension?displayProperty=nameWithType> は、<xref:System.ServiceModel.Description.ContractDescription.Behaviors%2A?displayProperty=nameWithType> または <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%2A> の呼び出し中に、コントラクトのカスタム動作を <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportEndpoint%2A> コレクションに挿入します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> の呼び出し中に <xref:System.ServiceModel.Description.ContractDescription.Behaviors%2A?displayProperty=nameWithType> を <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%2A> プロパティに追加する方法を示しています。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#4](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#4)]  
+  
+ サービス コントラクト用に生成されるコードにコメントを追加する <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%2A> の実装を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#12](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#12)]  
+  
+ サービス コントラクトで生成されたコメントを表示する例を次に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.cs#3)]
+ [!code-vb[C_CustomWSDLExtensions#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GenerateContract">
+      <MemberSignature Language="C#" Value="public void GenerateContract (System.ServiceModel.Description.ServiceContractGenerationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GenerateContract(class System.ServiceModel.Description.ServiceContractGenerationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract(System.ServiceModel.Description.ServiceContractGenerationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Description.ServiceContractGenerationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">コード ドキュメントを生成前に変更するために使用するコード生成コンテキスト。</param>
+        <summary>コントラクトの生成プロセスの前に Code Document Object Model を変更するために実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.ServiceContractGenerationContext?displayProperty=nameWithType> を使用して、コードの生成前にコントラクト、操作、または <xref:System.ServiceModel.Description.ServiceContractGenerator?displayProperty=nameWithType> を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.Description.IServiceContractGenerationExtension> の呼び出し中に <xref:System.ServiceModel.Description.ContractDescription.Behaviors%2A?displayProperty=nameWithType> を <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%2A> プロパティに追加する方法を示しています。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#4](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#4)]  
+  
+ サービス コントラクト用に生成されるコードにコメントを追加する <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%2A> の実装を次のコード例に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#12](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/wsdldocumentationimporter.cs#12)]  
+  
+ サービス コントラクトで生成されたコメントを表示する例を次に示します。  
+  
+ [!code-csharp[C_CustomWSDLExtensions#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.cs#3)]
+ [!code-vb[C_CustomWSDLExtensions#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_customwsdlextensions/cs/newgeneratedcontract.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

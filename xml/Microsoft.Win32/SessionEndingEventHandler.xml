@@ -1,0 +1,32 @@
+<Type Name="SessionEndingEventHandler" FullName="Microsoft.Win32.SessionEndingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SessionEndingEventHandler(object sender, SessionEndingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionEndingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.SessionEndingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="Microsoft.Win32.SessionEndingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。 このイベントが発生したとき、<see cref="T:Microsoft.Win32.SystemEvents" />クラスでは、このオブジェクトは常に<see langword="null" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:Microsoft.Win32.SessionEndingEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:Microsoft.Win32.SystemEvents.SessionEnding" />オペレーティング システムからのイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.SessionEndingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 関連付けるには、イベントをイベント処理メソッドを使用して、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると、イベント処理メソッドが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

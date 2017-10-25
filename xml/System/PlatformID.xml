@@ -1,0 +1,235 @@
+<Type Name="PlatformID" FullName="System.PlatformID">
+  <TypeSignature Language="C#" Value="public enum PlatformID" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PlatformID extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.PlatformID" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アセンブリでサポートされるオペレーティング システム (プラットフォーム) を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Environment.OSVersion%2A?displayProperty=nameWithType>と<xref:System.OperatingSystem.Platform%2A?displayProperty=nameWithType>プロパティを取得して、<xref:System.PlatformID>現在実行中のオペレーティング システムまたは開発プラットフォームの種類の列挙。 使用して、<xref:System.PlatformID>列挙型を現在のオペレーティング システムまたは開発プラットフォームがアプリケーションをサポートしているかどうかを判断します。  
+  
+ それぞれの基になる整数値を使用する<xref:System.PlatformID>列挙体メンバーとしての表に示すように、`PlatformId`の引数、 [SignTool.exe (署名ツール)](~/docs/framework/tools/signtool-exe.md)ユーティリティです。  
+  
+|メンバー|基になる値|  
+|------------|----------------------|  
+|Win32S|0|  
+|Win32Windows|1|  
+|Win32NT|2|  
+|WinCE|3|  
+|Unix|4|  
+|Xbox|5|  
+|Mac os x|6|  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.PlatformID.Win32S>現在実行中のオペレーティング システムを識別するクラス。  
+  
+ [!code-cpp[PlatformID.class#1](~/samples/snippets/cpp/VS_Snippets_CLR/platformID.class/CPP/pid.cpp#1)]
+ [!code-csharp[PlatformID.class#1](~/samples/snippets/csharp/VS_Snippets_CLR/platformID.class/CS/pid.cs#1)]
+ [!code-vb[PlatformID.class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/platformID.class/VB/pid.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MacOSX">
+      <MemberSignature Language="C#" Value="MacOSX" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID MacOSX = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.MacOSX" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Macintosh です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unix">
+      <MemberSignature Language="C#" Value="Unix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID Unix = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.Unix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Unix です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32NT">
+      <MemberSignature Language="C#" Value="Win32NT" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID Win32NT = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.Win32NT" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Windows NT 以降です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32S">
+      <MemberSignature Language="C#" Value="Win32S" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID Win32S = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.Win32S" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Win32s です。 Win32s は、16 ビット バージョンの Windows 上で、32 ビットのアプリケーションへのアクセスを実現するために用意されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32Windows">
+      <MemberSignature Language="C#" Value="Win32Windows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID Win32Windows = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.Win32Windows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Windows 95 または Windows 98 です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WinCE">
+      <MemberSignature Language="C#" Value="WinCE" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID WinCE = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.WinCE" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムは Windows CE です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Xbox">
+      <MemberSignature Language="C#" Value="Xbox" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.PlatformID Xbox = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.PlatformID.Xbox" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.PlatformID</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発プラットフォームは、Xbox 360 です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,164 @@
+<Type Name="TabControlCancelEventArgs" FullName="System.Windows.Forms.TabControlCancelEventArgs">
+  <TypeSignature Language="C#" Value="public class TabControlCancelEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TabControlCancelEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TabControlCancelEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Windows.Forms.TabControl.Selecting" />と<see cref="E:System.Windows.Forms.TabControl.Deselecting" />のイベント、<see cref="T:System.Windows.Forms.TabControl" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.TabControlCancelEventArgs.Action%2A>プロパティをイベントの発生を確認します。 これにより、1 つのイベント ハンドラーを持つ複数のイベントの種類を処理することができます。  
+  
+ 使用して、<xref:System.Windows.Forms.TabControlCancelEventArgs.TabPage%2A>と<xref:System.Windows.Forms.TabControlCancelEventArgs.TabPageIndex%2A>プロパティを確認している<xref:System.Windows.Forms.TabPage>のイベントが発生しています。  
+  
+ タブの変更をキャンセルする、 <xref:System.Windows.Forms.TabControl>、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TabControl.Selecting>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TabControl>という`TabControl1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TabControl.Selecting>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#557](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#557)]
+ [!code-vb[System.Windows.Forms.EventExamples#557](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#557)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TabControlCancelEventArgs (System.Windows.Forms.TabPage tabPage, int tabPageIndex, bool cancel, System.Windows.Forms.TabControlAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TabPage tabPage, int32 tabPageIndex, bool cancel, valuetype System.Windows.Forms.TabControlAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TabControlCancelEventArgs.#ctor(System.Windows.Forms.TabPage,System.Int32,System.Boolean,System.Windows.Forms.TabControlAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="tabPage" Type="System.Windows.Forms.TabPage" />
+        <Parameter Name="tabPageIndex" Type="System.Int32" />
+        <Parameter Name="cancel" Type="System.Boolean" />
+        <Parameter Name="action" Type="System.Windows.Forms.TabControlAction" />
+      </Parameters>
+      <Docs>
+        <param name="tabPage"><see cref="T:System.Windows.Forms.TabPage" />のイベントが発生しています。</param>
+        <param name="tabPageIndex">0 から始まるインデックス<c>tabPage</c>で、<see cref="P:System.Windows.Forms.TabControl.TabPages" />コレクション。</param>
+        <param name="cancel">
+          <see langword="true" />既定では、タブの変更をキャンセルするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="action"><see cref="T:System.Windows.Forms.TabControlAction" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.TabControlCancelEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しく作成されたインスタンスのプロパティの値は、指定されたパラメーターの値に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TabControlAction Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TabControlAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabControlCancelEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TabControlAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どのイベントが発生していることを示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.TabControlAction" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TabControl>という`TabControl1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#557](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#557)]
+ [!code-vb[System.Windows.Forms.EventExamples#557](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#557)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabPage">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TabPage TabPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TabPage TabPage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabControlCancelEventArgs.TabPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TabPage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.TabPage" />のイベントが発生しています。</summary>
+        <value><see cref="T:System.Windows.Forms.TabPage" />のイベントが発生しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TabControl>という`TabControl1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#557](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#557)]
+ [!code-vb[System.Windows.Forms.EventExamples#557](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#557)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabPageIndex">
+      <MemberSignature Language="C#" Value="public int TabPageIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TabPageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TabControlCancelEventArgs.TabPageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>0 から始まるインデックスを取得、<see cref="P:System.Windows.Forms.TabControlCancelEventArgs.TabPage" />で、<see cref="P:System.Windows.Forms.TabControl.TabPages" />コレクション。</summary>
+        <value>0 から始まるインデックス、<see cref="P:System.Windows.Forms.TabControlCancelEventArgs.TabPage" />で、<see cref="P:System.Windows.Forms.TabControl.TabPages" />コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.TabControl>という`TabControl1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.TabControl.Selecting?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#557](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#557)]
+ [!code-vb[System.Windows.Forms.EventExamples#557](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#557)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

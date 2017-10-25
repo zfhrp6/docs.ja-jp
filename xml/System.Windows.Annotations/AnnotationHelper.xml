@@ -1,0 +1,296 @@
+<Type Name="AnnotationHelper" FullName="System.Windows.Annotations.AnnotationHelper">
+  <TypeSignature Language="C#" Value="public static class AnnotationHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit AnnotationHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Annotations.AnnotationHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーティリティ メソッドとコマンドを作成および削除、強調表示、インク付箋、およびテキスト付箋の注釈を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClearHighlightsForSelection">
+      <MemberSignature Language="C#" Value="public static void ClearHighlightsForSelection (System.Windows.Annotations.AnnotationService service);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ClearHighlightsForSelection(class System.Windows.Annotations.AnnotationService service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.ClearHighlightsForSelection(System.Windows.Annotations.AnnotationService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+      </Parameters>
+      <Docs>
+        <param name="service">注釈サービスを削除するには、注釈が強調表示します。</param>
+        <summary>すべてをクリアに関連付けられているビューアー コントロールの現在の選択範囲からコメントを強調表示、指定された<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューアーの現在の選択範囲の長さが 0 または注釈の強調表示、重複していない場合<xref:System.Windows.Annotations.AnnotationHelper.ClearHighlightsForSelection%2A>操作は実行されません。  
+  
+ ビューアーの現在の選択項目では、部分的にのみ、強調表示が重なっている場合は、重複する選択範囲の部分だけが削除され、注釈の強調表示の選択されていない部分です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHighlightForSelection">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.Annotation CreateHighlightForSelection (System.Windows.Annotations.AnnotationService service, string author, System.Windows.Media.Brush highlightBrush);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.Annotation CreateHighlightForSelection(class System.Windows.Annotations.AnnotationService service, string author, class System.Windows.Media.Brush highlightBrush) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.CreateHighlightForSelection(System.Windows.Annotations.AnnotationService,System.String,System.Windows.Media.Brush)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+        <Parameter Name="author" Type="System.String" />
+        <Parameter Name="highlightBrush" Type="System.Windows.Media.Brush" />
+      </Parameters>
+      <Docs>
+        <param name="service">使用して強調表示の注釈を作成する注釈サービス。</param>
+        <param name="author">注釈の作成者です。</param>
+        <param name="highlightBrush">使用して、選択したコンテンツを強調表示を描画するブラシ。</param>
+        <summary>指定したに関連付けられているビューアー コントロールの現在の選択に強調表示の注釈を作成<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <returns>強調表示の注釈。または<see langword="null" />を強調表示する選択したコンテンツが存在しない場合、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の選択範囲で定義されているコンテンツを強調表示の注釈がアンカーされる、 <xref:System.Windows.Controls.Primitives.DocumentViewerBase>、 <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentPageViewer>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、または<xref:System.Windows.Controls.FlowDocumentReader>に指定されたコントロール、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ 注釈は作成されません (選択範囲の長さが 0) 選択したコンテンツがない場合、<xref:System.InvalidOperationException>がスローされます。  
+  
+ `author`として指定できる`null`後者の作成者が定義されていません。  
+  
+ 場合`highlightBrush`は`null`、既定値が指定された注釈のブラシを強調表示`service`を使用します。  
+  
+ 指定された注釈`service`への呼び出しを使用して有効にする必要があります<xref:System.Windows.Annotations.AnnotationService.Enable%2A?displayProperty=nameWithType>呼び出しの前に<xref:System.Windows.Annotations.AnnotationHelper.CreateHighlightForSelection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。  
+  
+ または  
+  
+ <paramref name="highlightBrush" />されていない、<see cref="T:System.Windows.Media.SolidColorBrush" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">ビューアー コントロールには、コンテンツの選択範囲が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInkStickyNoteForSelection">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.Annotation CreateInkStickyNoteForSelection (System.Windows.Annotations.AnnotationService service, string author);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.Annotation CreateInkStickyNoteForSelection(class System.Windows.Annotations.AnnotationService service, string author) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.CreateInkStickyNoteForSelection(System.Windows.Annotations.AnnotationService,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+        <Parameter Name="author" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="service">インク付箋の注釈の作成に使用する注釈サービス。</param>
+        <param name="author">注釈の作成者です。</param>
+        <summary>ビューアー コントロールの現在の選択に付箋の注釈に指定された関連付けられている、インクが作成<see cref="T:System.Windows.Annotations.AnnotationService" />.</summary>
+        <returns>インク付箋注釈。または<see langword="null" />、選択したコンテンツに注釈を付けるがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の選択範囲で定義されているコンテンツ インク付箋の注釈がアンカーされる、 <xref:System.Windows.Controls.Primitives.DocumentViewerBase>、 <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentPageViewer>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、または<xref:System.Windows.Controls.FlowDocumentReader>に指定されたコントロール、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ 注釈は作成されません (選択範囲の長さが 0)、ユーザーが選択したコンテンツがない場合は、および<xref:System.InvalidOperationException>がスローされます。  
+  
+ `author`として指定できる`null`後者の作成者が定義されていません。  
+  
+ 指定された注釈`service`への呼び出しを使用して有効にする必要があります<xref:System.Windows.Annotations.AnnotationService.Enable%2A?displayProperty=nameWithType>呼び出しの前に<xref:System.Windows.Annotations.AnnotationHelper.CreateInkStickyNoteForSelection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">ビューアー コントロールには、コンテンツの選択範囲が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTextStickyNoteForSelection">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.Annotation CreateTextStickyNoteForSelection (System.Windows.Annotations.AnnotationService service, string author);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.Annotation CreateTextStickyNoteForSelection(class System.Windows.Annotations.AnnotationService service, string author) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.CreateTextStickyNoteForSelection(System.Windows.Annotations.AnnotationService,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.Annotation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+        <Parameter Name="author" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="service">テキスト付箋の注釈の作成に使用する注釈サービス。</param>
+        <param name="author">注釈の作成者です。</param>
+        <summary>ビューアー コントロールの現在の選択に付箋の注釈に指定された関連付けられているテキストを作成<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <returns>テキスト付箋の注釈。または<see langword="null" />、選択したコンテンツに注釈を付けるがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の選択範囲で定義されているコンテンツのテキスト付箋の注釈がアンカーされる、 <xref:System.Windows.Controls.Primitives.DocumentViewerBase>、 <xref:System.Windows.Controls.DocumentViewer>、 <xref:System.Windows.Controls.FlowDocumentPageViewer>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、または<xref:System.Windows.Controls.FlowDocumentReader>に指定されたコントロール、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>コンス トラクターです。  
+  
+ 注釈は作成されません (選択範囲の長さが 0)、ユーザーが選択したコンテンツがない場合は、および<xref:System.InvalidOperationException>がスローされます。  
+  
+ `author`として指定できる`null`後者の作成者が定義されていません。  
+  
+ 指定された注釈`service`への呼び出しを使用して有効にする必要があります<xref:System.Windows.Annotations.AnnotationService.Enable%2A?displayProperty=nameWithType>呼び出しの前に<xref:System.Windows.Annotations.AnnotationHelper.CreateTextStickyNoteForSelection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">ビューアー コントロールには、コンテンツの選択範囲が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteInkStickyNotesForSelection">
+      <MemberSignature Language="C#" Value="public static void DeleteInkStickyNotesForSelection (System.Windows.Annotations.AnnotationService service);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeleteInkStickyNotesForSelection(class System.Windows.Annotations.AnnotationService service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.DeleteInkStickyNotesForSelection(System.Windows.Annotations.AnnotationService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+      </Parameters>
+      <Docs>
+        <param name="service">インク付箋の注釈を削除する注釈サービス。</param>
+        <summary>ビューアー コントロールの現在の選択範囲内に含まれるすべて付箋の注釈に関連付けられているインクの削除、指定された<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューアー コントロールに関連付けられている場合、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>ユーザーが含まれていない選択またはユーザーの選択は完全含まないインク付箋注釈、<xref:System.Windows.Annotations.AnnotationHelper.DeleteInkStickyNotesForSelection%2A>操作は実行されません。  
+  
+ 指定された注釈`service`への呼び出しを使用して有効にする必要があります<xref:System.Windows.Annotations.AnnotationService.Enable%2A?displayProperty=nameWithType>呼び出しの前に<xref:System.Windows.Annotations.AnnotationHelper.DeleteInkStickyNotesForSelection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteTextStickyNotesForSelection">
+      <MemberSignature Language="C#" Value="public static void DeleteTextStickyNotesForSelection (System.Windows.Annotations.AnnotationService service);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeleteTextStickyNotesForSelection(class System.Windows.Annotations.AnnotationService service) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.DeleteTextStickyNotesForSelection(System.Windows.Annotations.AnnotationService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+      </Parameters>
+      <Docs>
+        <param name="service">テキスト付箋の注釈を削除する注釈サービス。</param>
+        <summary>ビューアー コントロールの現在の選択範囲内に含まれるすべて付箋の注釈に関連付けられているテキストを削除、指定された<see cref="T:System.Windows.Annotations.AnnotationService" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビューアー コントロールに関連付けられている場合、<xref:System.Windows.Annotations.AnnotationService.%23ctor%2A>ユーザーが含まれていない選択またはユーザーの選択は完全含まない任意のテキスト付箋の注釈<xref:System.Windows.Annotations.AnnotationHelper.DeleteTextStickyNotesForSelection%2A>操作は実行されません。  
+  
+ 指定された注釈`service`への呼び出しを使用して有効にする必要があります<xref:System.Windows.Annotations.AnnotationService.Enable%2A?displayProperty=nameWithType>呼び出しの前に<xref:System.Windows.Annotations.AnnotationHelper.DeleteTextStickyNotesForSelection%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="service" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="service" />無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAnchorInfo">
+      <MemberSignature Language="C#" Value="public static System.Windows.Annotations.IAnchorInfo GetAnchorInfo (System.Windows.Annotations.AnnotationService service, System.Windows.Annotations.Annotation annotation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Annotations.IAnchorInfo GetAnchorInfo(class System.Windows.Annotations.AnnotationService service, class System.Windows.Annotations.Annotation annotation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Annotations.AnnotationHelper.GetAnchorInfo(System.Windows.Annotations.AnnotationService,System.Windows.Annotations.Annotation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Annotations.IAnchorInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="service" Type="System.Windows.Annotations.AnnotationService" />
+        <Parameter Name="annotation" Type="System.Windows.Annotations.Annotation" />
+      </Parameters>
+      <Docs>
+        <param name="service">この操作に使用する注釈サービス。</param>
+        <param name="annotation">アンカーの情報を取得する注釈。</param>
+        <summary>返します、<see cref="T:System.Windows.Annotations.IAnchorInfo" />指定した注釈のアンカー位置など、固定の情報を提供するオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Annotations.IAnchorInfo" />について、指定した注釈のアンカーの情報を提供するオブジェクトまたは<see langword="null" />解決ができない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Annotations.AnnotationHelper.GetAnchorInfo%2A>導入された、[!INCLUDE[TLA#tla_netframewk](~/includes/tlasharptla-netframewk-md.md)]バージョン 3.5。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ コメント ペインを持つ簡単なドキュメント リーダー アプリケーションを検討してください。 そのコメント ウィンドウにはリスト ボックスがあり、そのリスト ボックスに、ドキュメントに固定されている注釈の一覧からのテキストが表示されます。 リスト ボックスの項目を選択すると、それに対応する注釈オブジェクトが固定されている段落がドキュメントに表示されます。  
+  
+ 次の例を見ると、コメント ウィンドウとして機能するそのようなリスト ボックスのイベント ハンドラーの実装方法がわかります。  
+  
+ [!code-csharp[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/csharp/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/CSharp/Window1.xaml.cs#handler)]
+ [!code-vb[FlowDocumentAnnotatedViewer#Handler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FlowDocumentAnnotatedViewer/visualbasic/window1.xaml.vb#handler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

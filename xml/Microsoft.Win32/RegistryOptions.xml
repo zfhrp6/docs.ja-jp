@@ -1,0 +1,80 @@
+<Type Name="RegistryOptions" FullName="Microsoft.Win32.RegistryOptions">
+  <TypeSignature Language="C#" Value="public enum RegistryOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed RegistryOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.RegistryOptions" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>レジストリ キーを作成するときに使用するオプションを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ内にのみ使用できるし、コンピューターが再起動されるを保持されませんレジストリ キーを作成することができます。 これは、揮発性のキーと呼ばれます。 使用して、揮発性または非揮発性のキーを作成することを指定することができます、<xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A?displayProperty=nameWithType>を受け取るオーバー ロード、`options`パラメーター。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryOptions None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryOptions.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非揮発性のキー。 既定値です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Volatile">
+      <MemberSignature Language="C#" Value="Volatile" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryOptions Volatile = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryOptions.Volatile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>揮発性のキー。 情報は、メモリに格納し、対応するレジストリ ハイブを読み込むときに保持されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

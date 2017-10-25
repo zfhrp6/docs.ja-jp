@@ -1,0 +1,104 @@
+<Type Name="XamlSchemaContextSettings" FullName="System.Xaml.XamlSchemaContextSettings">
+  <TypeSignature Language="C#" Value="public class XamlSchemaContextSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlSchemaContextSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlSchemaContextSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>省略可能な設定を提供する<see cref="T:System.Xaml.XamlSchemaContext" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContextSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContextSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlSchemaContextSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlSchemaContextSettings (System.Xaml.XamlSchemaContextSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlSchemaContextSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlSchemaContextSettings.#ctor(System.Xaml.XamlSchemaContextSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="settings" Type="System.Xaml.XamlSchemaContextSettings" />
+      </Parameters>
+      <Docs>
+        <param name="settings">既存の <see cref="T:System.Xaml.XamlSchemaContextSettings" />。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Xaml.XamlSchemaContextSettings" /> 、既存の値をコピーしてクラス<see cref="T:System.Xaml.XamlSchemaContextSettings" />インスタンス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyQualifyAssemblyNamesInClrNamespaces">
+      <MemberSignature Language="C#" Value="public bool FullyQualifyAssemblyNamesInClrNamespaces { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FullyQualifyAssemblyNamesInClrNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlSchemaContextSettings.FullyQualifyAssemblyNamesInClrNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XAML スキーマとそのコンテキストが検索 API によって返される値に完全修飾アセンブリ名を使用するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />XAML スキーマとそのコンテキストは、完全修飾アセンブリ名を使用して、検索 Api で返される値の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値によって返される文字列に影響を与えます<xref:System.Xaml.XamlSchemaContext.GetAllXamlNamespaces%2A>構築されたスキーマ コンテキスト。 場合<xref:System.Xaml.XamlSchemaContext.FullyQualifyAssemblyNamesInClrNamespaces%2A>は`true`、文字列のアセンブリの一部のレポートの該当するショートカットは、<xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportMarkupExtensionsWithDuplicateArity">
+      <MemberSignature Language="C#" Value="public bool SupportMarkupExtensionsWithDuplicateArity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportMarkupExtensionsWithDuplicateArity" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlSchemaContextSettings.SupportMarkupExtensionsWithDuplicateArity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XAML スキーマ コンテキストは、マークアップ拡張機能のアリティ (入力パラメーターの数) が同じ 2 つのコンス トラクターを持つかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />重複するアリティのマークアップ拡張機能では、スキーマ コンテキスト場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlSchemaContext>設定を直接読み取ることができません。 代わりに、値から受け取った特定の読み取り専用のプロパティなど<xref:System.Xaml.XamlSchemaContext.SupportMarkupExtensionsWithDuplicateArity%2A>、レポートの設定に基づく値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

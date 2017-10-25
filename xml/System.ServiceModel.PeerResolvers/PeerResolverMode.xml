@@ -1,0 +1,81 @@
+<Type Name="PeerResolverMode" FullName="System.ServiceModel.PeerResolvers.PeerResolverMode">
+  <TypeSignature Language="C#" Value="public enum PeerResolverMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PeerResolverMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.PeerResolverMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用するピア リゾルバーの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したピア リゾルバーが使用できない場合、リゾルバーを使用しようとすると <xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.PeerResolvers.PeerResolverMode Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.PeerResolvers.PeerResolverMode.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerResolverMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングで設定されている情報から、使用するリゾルバーの種類を自動的に決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 利用できる場合は、カスタム リゾルバーを使用します。  利用できない場合は、PNRP ピア リゾルバーを使用します。 <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings.Address%2A> プロパティおよび <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings.Binding%2A> プロパティが設定されている場合、ピア リゾルバーは "利用できる" と見なされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.PeerResolvers.PeerResolverMode Custom = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.PeerResolvers.PeerResolverMode.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerResolverMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム リゾルバーを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pnrp">
+      <MemberSignature Language="C#" Value="Pnrp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.PeerResolvers.PeerResolverMode Pnrp = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.PeerResolvers.PeerResolverMode.Pnrp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.PeerResolverMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>PNRP リゾルバーを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

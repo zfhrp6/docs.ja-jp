@@ -1,0 +1,755 @@
+<Type Name="TextRenderer" FullName="System.Windows.Forms.TextRenderer">
+  <TypeSignature Language="C#" Value="public sealed class TextRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TextRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TextRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>測定し、テキストのレンダリングに使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer>クラスのセットを提供`static`を測定し、Windows フォーム コントロールのテキストを描画するために使用できるメソッドです。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer> の <xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドでは、印刷はサポートされていません。 常に使用する必要があります、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText1`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="DrawText">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したデバイス コンテキスト、色、フォントを使用して、指定した場所に、指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Point pt, System.Drawing.Color foreColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Point pt, valuetype System.Drawing.Color foreColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Point,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="pt"><see cref="T:System.Drawing.Point" />を描画するテキストの左上隅を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色を使用して指定した場所に、指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。  
+  
+ 場合`font`は`null`または`forecolor`は<xref:System.Drawing.Color.Empty?displayProperty=nameWithType>、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Point>として描画するテキストの左上隅が正しく表示されません Windows 2000 でします。 アプリケーションを Windows 2000 を実行しているマシンで使用する場合は、いずれかを使用する必要があります、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Rectangle>描画するテキストの境界。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText1`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Rectangle bounds, System.Drawing.Color foreColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color foreColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキストの境界を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色を使用して、指定した範囲内の指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`font`または`forecolor`は`null`または<xref:System.Drawing.Color?displayProperty=nameWithType>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ このメソッドは水平方向および垂直方向に中央揃えで指定された四角形内のテキストになります、`bounds`パラメーター。 テキストの描画方法を変更するには、バージョンを使用<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を受け取る、<xref:System.Windows.Forms.TextFormatFlags>パラメーターの型。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText2`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Point pt, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Point pt, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Point,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="pt"><see cref="T:System.Drawing.Point" />を描画するテキストの左上隅を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />を描画するテキストの背景の領域に適用します。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色、および背景色を使用して、指定した場所に、指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`パラメーターは、描画するテキストを含む四角形の領域に適用します。 場合`font`、`backcolor`または`forecolor`は`null`または<xref:System.Drawing.Color?displayProperty=nameWithType>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Point>として描画するテキストの左上隅が正しく表示されません Windows 2000 でします。 アプリケーションを Windows 2000 を実行しているマシンで使用する場合は、いずれかを使用する必要があります、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Rectangle>描画するテキストの境界。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText3`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#4)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Point pt, System.Drawing.Color foreColor, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Point pt, valuetype System.Drawing.Color foreColor, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Point,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="pt"><see cref="T:System.Drawing.Point" />を描画するテキストの左上隅を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>使用して、指定したデバイス コンテキスト、フォント、色、および書式の指定した場所に、指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+ `backColor`内の領域にパラメーターが適用される、`bounds`パラメーター。 場合`font`または`forecolor`は`null`または<xref:System.Drawing.Color.Empty?displayProperty=nameWithType>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ <xref:System.Windows.Forms.TextRenderer>を使用して既存のタブを展開することができますが、描画するテキストへのタブ位置を追加するサポートされていませんが停止する機能は、<xref:System.Windows.Forms.TextFormatFlags.ExpandTabs>フラグ。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Point>として描画するテキストの左上隅が正しく表示されません Windows 2000 でします。 アプリケーションを Windows 2000 を実行しているマシンで使用する場合は、いずれかを使用する必要があります、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Rectangle>描画するテキストの境界。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText5`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Rectangle bounds, System.Drawing.Color foreColor, System.Drawing.Color backColor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキストの境界を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />によって表される領域に適用する<c>境界</c>です。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色、および背景色を使用して、指定した範囲内で指定されたテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backColor`内の領域にパラメーターが適用される、`bounds`パラメーター。 場合`font`、`backcolor`または`forecolor`は`null`または<xref:System.Drawing.Color.Empty>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ このメソッドは水平方向および垂直方向に中央揃えで指定された四角形内のテキストになります、`bounds`パラメーター。 テキストの描画方法を変更するには、バージョンを使用<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を受け取る、<xref:System.Windows.Forms.TextFormatFlags>パラメーターの型。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText4`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Rectangle bounds, System.Drawing.Color foreColor, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color foreColor, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキストの境界を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />を描画するテキストに適用します。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>使用して、指定したデバイス コンテキスト、フォント、色、および書式の指定した範囲内の指定したテキストを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`font`または`color`は`null`または<xref:System.Drawing.Color.Empty>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ <xref:System.Windows.Forms.TextRenderer>を使用して既存のタブを展開することができますが、描画するテキストへのタブ位置を追加するサポートされていませんが停止する機能は、<xref:System.Windows.Forms.TextFormatFlags.ExpandTabs>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText6`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Point pt, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Point pt, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Point,System.Drawing.Color,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="pt" Type="System.Drawing.Point" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="pt"><see cref="T:System.Drawing.Point" />を描画するテキストの左上隅を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />テキストに適用します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />を描画するテキストの背景の領域に適用します。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色、背景の色を使用して指定した場所に、指定したテキストを描画および書式</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backcolor`パラメーターが適用される描画するテキストを含む四角形の領域。 場合`font`または`forecolor`は`null`または<xref:System.Drawing.Color.Empty>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ <xref:System.Windows.Forms.TextRenderer>を使用して既存のタブを展開することができますが、描画するテキストへのタブ位置を追加するサポートされていませんが停止する機能は、<xref:System.Windows.Forms.TextFormatFlags.ExpandTabs>フラグ。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Point>として描画するテキストの左上隅が正しく表示されません Windows 2000 でします。 アプリケーションを Windows 2000 を実行しているマシンで使用する場合は、いずれかを使用する必要があります、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を指定する方法、<xref:System.Drawing.Rectangle>描画するテキストの境界。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText7`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#8)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawText">
+      <MemberSignature Language="C#" Value="public static void DrawText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Rectangle bounds, System.Drawing.Color foreColor, System.Drawing.Color backColor, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Rectangle bounds, valuetype System.Drawing.Color foreColor, valuetype System.Drawing.Color backColor, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="foreColor" Type="System.Drawing.Color" />
+        <Parameter Name="backColor" Type="System.Drawing.Color" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを描画するためのデバイス コンテキスト。</param>
+        <param name="text">描画するテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />を描画するテキストに適用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキストの境界を表すです。</param>
+        <param name="foreColor"><see cref="T:System.Drawing.Color" />テキストに適用します。</param>
+        <param name="backColor"><see cref="T:System.Drawing.Color" />によって表される領域に適用する<c>境界</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <summary>指定したデバイス コンテキスト、フォント、色、背景の色を使用して、指定した範囲内で、指定したテキストを描画および指示を書式設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `backcolor`内の領域にパラメーターが適用される、`bounds`パラメーター`.`場合`font`、`forecolor`または`backcolor`は`null`または<xref:System.Drawing.Color.Empty>、それぞれ;、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>メソッドは、フォントや色で指定されたデバイス コンテキストで現在選択されている内のテキストを描画`dc`です。 場合`forecolor`は<xref:System.Drawing.Color.Transparent%2A>テキストは描画されません。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+ によって提供されるテキスト レンダリング、<xref:System.Windows.Forms.TextRenderer>クラスは、GDI テキスト レンダリングに基づいており、Windows フォームからの印刷はサポートされていません。 代わりに、使用、<xref:System.Drawing.Graphics.DrawString%2A>のメソッド、<xref:System.Drawing.Graphics>クラスです。  
+  
+ <xref:System.Windows.Forms.TextRenderer>を使用して既存のタブを展開することができますが、描画するテキストへのタブ位置を追加するサポートされていませんが停止する機能は、<xref:System.Windows.Forms.TextFormatFlags.ExpandTabs>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.DrawText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`RenderText8`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#9)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (string text, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(string text, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.String,System.Drawing.Font)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <summary>指定したフォントで描画した場合、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定した単一行で描画<paramref name="font" />です。 いずれかを使用して、テキストを描画する方法を操作することができます、<see cref="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Drawing.Color,System.Windows.Forms.TextFormatFlags)" />を取るオーバー ロード、<see cref="T:System.Windows.Forms.TextFormatFlags" />パラメーター。 既定の動作など、<see cref="T:System.Windows.Forms.TextRenderer" />突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<see cref="M:System.Windows.Forms.TextRenderer.DrawText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Point,System.Drawing.Color)" />と<see cref="M:System.Windows.Forms.TextRenderer.MeasureText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font)" />を受け取る、<see cref="T:System.Drawing.Size" />と<see cref="T:System.Windows.Forms.TextFormatFlags" />パラメーター。 例については、「<see cref="M:System.Windows.Forms.TextRenderer.MeasureText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Size,System.Windows.Forms.TextFormatFlags)" />」を参照してください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドは、1 行にテキストを描画することが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A> メソッドの使用方法を示します。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`MeasureText1`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを測定するためのデバイス コンテキスト。</param>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <summary>指定したデバイス コンテキストで指定されたフォントで描画された、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定した単一の行に描画される<paramref name="font" />指定したデバイス コンテキストでします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドは、1 行にテキストを描画することが必要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いずれかを使用して、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドです。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`DrawALineOfText`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (string text, System.Drawing.Font font, System.Drawing.Size proposedSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(string text, class System.Drawing.Font font, valuetype System.Drawing.Size proposedSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.String,System.Drawing.Font,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="proposedSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <param name="proposedSize"><see cref="T:System.Drawing.Size" />の初期の外接する四角形。</param>
+        <summary>指定したサイズを使用して、初期の外接する四角形を作成する、指定されたフォントで描画した場合、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定された描画<paramref name="font" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドを使用、`proposedSize`テキストのサイズを決定するときの高さと幅の関係を示します。 場合と 1 つの行のテキストを測定、`proposedSize`パラメーターを表します、<xref:System.Drawing.Size>高さディメンションよりも大きい値を持つ<xref:System.Int32.MaxValue?displayProperty=nameWithType>、返された<xref:System.Drawing.Size>実際のテキストの高さを反映するように調整されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いずれかを使用して、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドです。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`DrawALineOfText`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Size proposedSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Size proposedSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="proposedSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを測定するためのデバイス コンテキスト。</param>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <param name="proposedSize"><see cref="T:System.Drawing.Size" />の初期の外接する四角形。</param>
+        <summary>指定したサイズを使用して、テキストの最初の外接する四角形を作成する、指定したデバイス コンテキストで指定されたフォントで描画した場合、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定された描画<paramref name="font" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドを使用、`proposedSize`テキストのサイズを決定するときの高さと幅の関係を示します。 場合と 1 つの行のテキストを測定、`proposedSize`パラメーターを表します、<xref:System.Drawing.Size>高さディメンションよりも大きい値を持つ<xref:System.Int32.MaxValue?displayProperty=nameWithType>、返された<xref:System.Drawing.Size>実際のテキストの高さを反映するように調整されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いずれかを使用して、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドです。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`DrawALineOfText`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (string text, System.Drawing.Font font, System.Drawing.Size proposedSize, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(string text, class System.Drawing.Font font, valuetype System.Drawing.Size proposedSize, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.String,System.Drawing.Font,System.Drawing.Size,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="proposedSize" Type="System.Drawing.Size" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <param name="proposedSize"><see cref="T:System.Drawing.Size" />の初期の外接する四角形。</param>
+        <param name="flags">測定されたテキストに適用する書式設定命令します。</param>
+        <summary>書式設定手順については、指定したサイズを使用して、テキストの最初の外接する四角形を作成する、指定されたフォントで描画した場合、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定された描画<paramref name="font" />と形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>使用して、`proposedSize`と`flags`テキストのサイズを決定するときの高さと幅の関係を示すパラメーターです。 場合と 1 つの行のテキストを測定、`proposedSize`パラメーターを表します、<xref:System.Drawing.Size>高さディメンションよりも大きい値を持つ<xref:System.Int32.MaxValue?displayProperty=nameWithType>、返された<xref:System.Drawing.Size>実際のテキストの高さを反映するように調整されます。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用する必要があります<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 例については、「<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>」を参照してください。  
+  
+> [!NOTE]
+>  このオーバー ロード<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>は無視されます、<xref:System.Windows.Forms.TextFormatFlags>値<xref:System.Windows.Forms.TextFormatFlags.NoPadding>または<xref:System.Windows.Forms.TextFormatFlags.LeftAndRightPadding>です。 既定値以外の余白の値を指定する場合は、オーバー ロードを使用する必要があります<xref:System.Windows.Forms.TextRenderer.MeasureText%28System.Drawing.IDeviceContext%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Size%2CSystem.Windows.Forms.TextFormatFlags%29>を受け取る、<xref:System.Drawing.IDeviceContext>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、いずれかを使用して、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドです。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます`DrawALineOfText`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureText">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size MeasureText (System.Drawing.IDeviceContext dc, string text, System.Drawing.Font font, System.Drawing.Size proposedSize, System.Windows.Forms.TextFormatFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size MeasureText(class System.Drawing.IDeviceContext dc, string text, class System.Drawing.Font font, valuetype System.Drawing.Size proposedSize, valuetype System.Windows.Forms.TextFormatFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextRenderer.MeasureText(System.Drawing.IDeviceContext,System.String,System.Drawing.Font,System.Drawing.Size,System.Windows.Forms.TextFormatFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Drawing.IDeviceContext" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="proposedSize" Type="System.Drawing.Size" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+      </Parameters>
+      <Docs>
+        <param name="dc">テキストを測定するためのデバイス コンテキスト。</param>
+        <param name="text">計測対象のテキスト。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />測定されたテキストに適用します。</param>
+        <param name="proposedSize"><see cref="T:System.Drawing.Size" />の初期の外接する四角形。</param>
+        <param name="flags">測定されたテキストに適用する書式設定命令します。</param>
+        <summary>指定したデバイス コンテキスト、フォント、および書式設定手順については、指定したサイズを使用して、テキストの最初の外接する四角形を作成するで描画した場合、指定したテキストのピクセル単位のサイズを提供します。</summary>
+        <returns><see cref="T:System.Drawing.Size" />、(ピクセル単位) の<paramref name="text" />、指定された描画<paramref name="font" />と形式です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextRenderer.MeasureText%2A>メソッドを使用、`proposedSize`と`flags`テキストのサイズを決定するときの高さと幅の関係を示すパラメーターです。 場合と 1 つの行のテキストを測定、`proposedSize`パラメーターを表します、<xref:System.Drawing.Size>高さディメンションよりも大きい値を持つ<xref:System.Int32.MaxValue?displayProperty=nameWithType>、返された<xref:System.Drawing.Size>実際のテキストの高さを反映するように調整されます。  
+  
+ いずれかを使用して、テキストを描画する方法を操作することができます、<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を取るオーバー ロード、<xref:System.Windows.Forms.TextFormatFlags>パラメーター。 既定の動作など、<xref:System.Windows.Forms.TextRenderer>突出グリフに対応する描画するテキストの外接する四角形に余白を追加することです。 この余分なスペースがない行のテキストを描画する必要がある場合は、バージョンを使用して<xref:System.Windows.Forms.TextRenderer.DrawText%2A>と<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>を受け取る、<xref:System.Drawing.Size>と<xref:System.Windows.Forms.TextFormatFlags>パラメーターの例に示すようにします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Windows.Forms.TextRenderer.MeasureText%2A>と<xref:System.Windows.Forms.TextRenderer.DrawText%2A>を別のフォント スタイルに 1 行のテキストを描画するメソッド。 例を実行するこの貼り付けを次のコードでは、Windows フォームの呼び出し`DrawALineOfText`フォームから<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-csharp[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.TextRendererExamples#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextRendererExamples/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dc" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

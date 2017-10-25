@@ -1,0 +1,523 @@
+<Type Name="RoleProvider" FullName="System.Web.Security.RoleProvider">
+  <TypeSignature Language="C#" Value="public abstract class RoleProvider : System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RoleProvider extends System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.RoleProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web, Version=2.0.0.0, Culture=Neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>カスタム ロール プロバイダーを使用して管理サービスを提供するために、ASP.NET が実装するコントラクトを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET のロール管理は、ASP.NET アプリケーション用の別のロール プロバイダーを使用して簡単にするために設計されています。 .NET Framework に含まれている指定されたロール プロバイダーを使用することができますか、独自のプロバイダーを実装することができます。  
+  
+ カスタム ロール プロバイダーを実装する場合は、継承する必要が、<xref:System.Web.Security.RoleProvider>抽象クラスです。  
+  
+ カスタム ロール プロバイダーを作成する 2 つの主な理由があります。  
+  
+-   FoxPro データベース、Oracle データベース、または他のデータ ソースなど、.NET Framework に付属するロール プロバイダーによってサポートされていないデータ ソースにロール情報を格納する必要があります。  
+  
+-   .NET Framework に付属しているプロバイダーによって使用されるデータベース スキーマとは異なるデータベース スキーマを使用してロール情報を管理する必要があります。 この一般的な例は、会社や Web サイトの SQL Server データベースに既に存在するロールのデータになります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RoleProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.RoleProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承するクラスのコンス トラクターを実装する必要はありません、<xref:System.Web.Security.RoleProvider>抽象クラスです。 初期化の値を<xref:System.Web.Security.RoleProvider>に実装が渡される、<xref:System.Configuration.Provider.ProviderBase.Initialize%2A>メソッドの実装です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddUsersToRoles">
+      <MemberSignature Language="C#" Value="public abstract void AddUsersToRoles (string[] usernames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddUsersToRoles(string[] usernames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.AddUsersToRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">指定したロールに追加するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定したユーザー名の追加先となるロール名の文字列配列。</param>
+        <summary>指定されたユーザー名を構成済みの指定したロールに追加<see langword="applicationName" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.AddUsersToRoles%2A>によって呼び出される、<xref:System.Web.Security.Roles>データ ソースで指定されたロールに指定されたユーザーを関連付けるクラスをします。 ロールが追加される、構成されたに<xref:System.Web.Security.RoleProvider.ApplicationName%2A>です。  
+  
+ 見つかりません。 構成済みの場合、指定したロール名のいずれかが`applicationName`、プロバイダーをスローすることをお勧め、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ かどうか、指定されたユーザー名のいずれかに関連付けられていない構成済みの指定されたロール名のいずれかの`applicationName`、プロバイダーをスローすることをお勧め、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ 指定されたユーザー名のいずれかが場合`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+ 指定されたロール名のいずれかの場合は`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+ 各を含めることをお勧め、データ ソースは、トランザクションをサポートする場合、トランザクションで操作を追加し、トランザクションをロールバックして、いずれかの追加操作が失敗する場合に例外をスローすることです。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.AddUsersToRoles%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#2)]
+ [!code-vb[System.Web.Security.IRoleProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public abstract string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.RoleProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ロール情報を保管および取得するアプリケーションの名前を取得または設定します。</summary>
+        <value>ロール情報を保管および取得するアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.ApplicationName%2A>によって使用される、<xref:System.Web.Security.Roles>にユーザーおよびロールを別のアプリケーションに関連付けるクラスです。 これにより、複数のアプリケーションで重複するユーザー名またはロール名の間の競合を実行しなくてもユーザーとロール情報を保存して、同じデータベースを使用できます。 複数の ASP.NET アプリケーションで同じ値を指定することによって、同じデータベースを使用することができます、<xref:System.Web.Security.Roles.ApplicationName%2A>プロパティです。 <xref:System.Web.Security.Roles.ApplicationName%2A>プログラムでは、プロパティを設定することや、Web アプリケーションを使用して、構成ファイル内で宣言して設定されることができます、`applicationName`属性。  
+  
+ ない場合は<xref:System.Web.Security.RoleProvider.ApplicationName%2A>プロパティを指定すると、ことをお勧め、<xref:System.Web.Hosting.HostingEnvironment.ApplicationVirtualPath%2A>プロパティの値が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.ApplicationName%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#1)]
+ [!code-vb[System.Web.Security.IRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRole">
+      <MemberSignature Language="C#" Value="public abstract void CreateRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CreateRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.CreateRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">作成するロールの名前。</param>
+        <summary>構成された <see langword="applicationName" /> のデータ ソースに新しいロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.CreateRole%2A>によって呼び出される、<xref:System.Web.Security.Roles.CreateRole%2A>のメソッド、<xref:System.Web.Security.Roles>役割を追加する、指定された構成済みのデータ ソースにクラス<xref:System.Web.Security.RoleProvider.ApplicationName%2A>です。  
+  
+ 構成済みの指定されたロール名が既に存在する場合`applicationName`は`null`、空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+ 指定されたロール名にコンマが含まれている場合ことをお勧め、プロバイダー、例外をスローします。  
+  
+ データベースでは、テーブルの固定長の列など、データ ソースは、ロール名の長さを制限、ロール名は、データ ソースで許可された最大の長さを超える場合は、例外をスローすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.CreateRole%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#3)]
+ [!code-vb[System.Web.Security.IRoleProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRole">
+      <MemberSignature Language="C#" Value="public abstract bool DeleteRole (string roleName, bool throwOnPopulatedRole);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool DeleteRole(string roleName, bool throwOnPopulatedRole) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.DeleteRole(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="throwOnPopulatedRole" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">削除するロールの名前。</param>
+        <param name="throwOnPopulatedRole">場合<see langword="true" />、例外をスロー <c>roleName</c>が 1 つまたは複数のメンバーは削除しないでください<c>roleName</c>です。</param>
+        <summary>構成された <see langword="applicationName" /> のデータ ソースからロールを削除します。</summary>
+        <returns>
+          ロールが正常に削除された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.DeleteRole%2A>によって呼び出される、<xref:System.Web.Security.Roles.DeleteRole%2A>と<xref:System.Web.Security.Roles.DeleteRole%2A>のメソッド、<xref:System.Web.Security.Roles>構成済みのデータ ソースから指定されたロールを削除するクラス<xref:System.Web.Security.RoleProvider.ApplicationName%2A>です。  
+  
+ データ ソースからロールを削除するときは、ユーザー名と削除する構成済みのロールとの関連付けを削除することを確認して`applicationName`です。  
+  
+ 場合`throwOnPopulatedRole`は`true`とで識別される役割、`roleName`パラメーターが 1 つまたは複数のメンバーと、スロー、<xref:System.Configuration.Provider.ProviderException>ロールは削除しないでください。 場合`throwOnPopulatedRole`は`false`、空であるかどうかどうか、ロールを削除します。  
+  
+ 指定されたロール名が存在しない場合は、 `null`、空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.DeleteRole%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#4)]
+ [!code-vb[System.Web.Security.IRoleProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersInRole">
+      <MemberSignature Language="C#" Value="public abstract string[] FindUsersInRole (string roleName, string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] FindUsersInRole(string roleName, string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.FindUsersInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">検索範囲とするロール。</param>
+        <param name="usernameToMatch">検索するユーザー名。</param>
+        <summary>指定したユーザー名と一致するユーザー名が含まれる、特定のロールのユーザー名の配列を取得します。</summary>
+        <returns>ユーザー名が一致するすべてのユーザーの名前を含む文字列配列<paramref name="usernameToMatch" />ユーザー指定のロールのメンバーであるとします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.FindUsersInRole%2A>メソッドによって呼び出されます、<xref:System.Web.Security.Roles>クラスをユーザー名が指定された一致を含むロールにユーザーの一覧を返します`usernameToMatch`構成済みの`applicationName`します。 データ ソースに基づくワイルドカードのサポートが含まれます。 ユーザーは、ユーザー名でアルファベット順に返されます。  
+  
+ スローすることをお勧め、<xref:System.Configuration.Provider.ProviderException>場合`roleName`データ ソースに存在しません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サンプルを示しています。<xref:System.Web.Security.RoleProvider.FindUsersInRole%2A>実装します。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#11)]
+ [!code-vb[System.Web.Security.IRoleProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllRoles">
+      <MemberSignature Language="C#" Value="public abstract string[] GetAllRoles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetAllRoles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.GetAllRoles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成済みのすべてのロールの一覧を取得<see langword="applicationName" />です。</summary>
+        <returns>構成済みのデータ ソースに格納されているすべてのロールの名前を含む文字列配列<see langword="applicationName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.GetAllRoles%2A>によって呼び出される、<xref:System.Web.Security.Roles.GetAllRoles%2A>のメソッド、<xref:System.Web.Security.Roles>クラス、データ ソースからロール名の一覧を取得します。 指定されたロールのみ<xref:System.Web.Security.RoleProvider.ApplicationName%2A>が取得されます。  
+  
+ 構成済みのロールが存在しない場合`applicationName`プロバイダーが、要素なしで文字列の配列を返すことをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.GetAllRoles%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#5)]
+ [!code-vb[System.Web.Security.IRoleProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRolesForUser">
+      <MemberSignature Language="C#" Value="public abstract string[] GetRolesForUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetRolesForUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.GetRolesForUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">ロールの一覧を取得するユーザー。</param>
+        <summary>指定したユーザーにある構成済みのロールの一覧を取得<see langword="applicationName" />です。</summary>
+        <returns>指定されたユーザーが、構成されているすべてのロールの名前を含む文字列配列<see langword="applicationName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.GetRolesForUser%2A>によって呼び出される、<xref:System.Web.Security.Roles.GetRolesForUser%2A>のメソッド、<xref:System.Web.Security.Roles>クラスをデータ ソースから指定されたユーザーが関連付けられているロールの名前を取得します。 構成済みのロールのみ<xref:System.Web.Security.RoleProvider.ApplicationName%2A>が取得されます。  
+  
+ 構成済みの指定したユーザーのロールが存在しないかどうかは`applicationName`プロバイダーが、要素なしで文字列の配列を返すことをお勧めします。  
+  
+ 指定されたユーザー名がある場合`null`か、空の文字列は、プロバイダーが例外をスローすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.GetRolesForUser%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#6)]
+ [!code-vb[System.Web.Security.IRoleProvider#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUsersInRole">
+      <MemberSignature Language="C#" Value="public abstract string[] GetUsersInRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string[] GetUsersInRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.GetUsersInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">ユーザーの一覧を取得するロールの名前。</param>
+        <summary>構成済みの指定したロールにユーザーの一覧を取得<see langword="applicationName" />です。</summary>
+        <returns>構成済みの指定したロールのメンバーであるすべてのユーザーの名前を含む文字列配列<see langword="applicationName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.GetUsersInRole%2A>によって呼び出される、<xref:System.Web.Security.Roles.GetUsersInRole%2A>のメソッド、<xref:System.Web.Security.Roles>クラス、データ ソースからのロールに関連付けられているユーザー名を取得します。 構成済みのロールのみ<xref:System.Web.Security.RoleProvider.ApplicationName%2A>が取得されます。  
+  
+ 構成済みの指定されたロール名が存在しないかどうか`applicationName`である場合または`null`または空の文字列をお勧め、プロバイダーが例外をスローします。  
+  
+ ユーザーが構成済みの指定したロールに関連付けられていないかどうかは`applicationName`プロバイダーが、要素なしで文字列の配列を返すことをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.GetUsersInRole%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#7)]
+ [!code-vb[System.Web.Security.IRoleProvider#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInRole">
+      <MemberSignature Language="C#" Value="public abstract bool IsUserInRole (string username, string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUserInRole(string username, string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.IsUserInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検索するユーザー名。</param>
+        <param name="roleName">検索範囲とするロール。</param>
+        <summary>指定したユーザーが構成済みの指定したロールがあるかどうかを示す値を取得<see langword="applicationName" />です。</summary>
+        <returns>
+          <see langword="true" />指定したユーザーが構成済みの指定したロールがかどうか<see langword="applicationName" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.IsUserInRole%2A>メソッドによって呼び出されます、<xref:System.Web.Security.Roles.IsUserInRole%2A>のメソッド、<xref:System.Web.Security.Roles>現在ログオンしているユーザーが構成済みのデータ ソースからロールに関連付けられているかどうかを決めるクラスを<xref:System.Web.Security.Roles.ApplicationName%2A>です。  
+  
+ 指定されたユーザー名がある場合`null`か、空の文字列は、プロバイダーが例外をスローすることをお勧めします。  
+  
+ 指定したロール名が場合`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.IsUserInRole%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#8)]
+ [!code-vb[System.Web.Security.IRoleProvider#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveUsersFromRoles">
+      <MemberSignature Language="C#" Value="public abstract void RemoveUsersFromRoles (string[] usernames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveUsersFromRoles(string[] usernames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.RemoveUsersFromRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">指定したロールから削除するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定したユーザー名を削除するロール名の文字列配列。</param>
+        <summary>指定されたユーザー名を構成済みの指定されたロールから削除<see langword="applicationName" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.RemoveUsersFromRoles%2A>によって呼び出される<xref:System.Web.Security.Roles.RemoveUserFromRole%2A>、 <xref:System.Web.Security.Roles.RemoveUsersFromRole%2A> 、 <xref:System.Web.Security.Roles.RemoveUserFromRoles%2A> 、および<xref:System.Web.Security.Roles.RemoveUsersFromRoles%2A>のメソッド、<xref:System.Web.Security.Roles>データ ソースで指定されたロールから、指定されたユーザーを削除するクラス。 構成済みのロールのみ<xref:System.Web.Security.RoleProvider.ApplicationName%2A>が変更されます。  
+  
+ 見つかりません。 構成済みの場合、指定したロール名のいずれかが`applicationName`、プロバイダーをスローすることをお勧め、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ かどうか、指定されたユーザー名のいずれかに関連付けられていない構成済みの指定されたロール名のいずれかの`applicationName`、プロバイダーをスローすることをお勧め、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ 指定されたユーザー名のいずれかが場合`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+ 指定されたロール名のいずれかの場合は`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+ データ ソースは、トランザクションをサポートする場合は、トランザクションで削除の各操作を含めること、およびそのトランザクションをロールバックして、削除操作が失敗した場合に例外をスローお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.RemoveUsersFromRoles%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#9)]
+ [!code-vb[System.Web.Security.IRoleProvider#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleExists">
+      <MemberSignature Language="C#" Value="public abstract bool RoleExists (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool RoleExists(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.RoleProvider.RoleExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.ApplicationServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">データ ソースで検索するロールの名前。</param>
+        <summary>指定されたロール名が既に構成済みのロールのデータ ソースに存在するかどうかを示す値を取得<see langword="applicationName" />です。</summary>
+        <returns>
+          <see langword="true" />ロール名は既に構成済みのデータ ソースに存在する場合<see langword="applicationName" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleProvider.RoleExists%2A>によって呼び出される、<xref:System.Web.Security.Roles.RoleExists%2A>のメソッド、<xref:System.Web.Security.Roles>ロール名が構成済みのデータ ソースに存在するかどうかを決めるクラスを<xref:System.Web.Security.Roles.ApplicationName%2A>です。  
+  
+ 指定したロール名が場合`null`空の文字列、または、プロバイダーが例外をスローすることをお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例のサンプル実装を示しています、<xref:System.Web.Security.RoleProvider.RoleExists%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.Security.IRoleProvider#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/CS/odbcroleprovidersnippets.cs#10)]
+ [!code-vb[System.Web.Security.IRoleProvider#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.IRoleProvider/VB/odbcroleprovidersnippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

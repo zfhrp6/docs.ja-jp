@@ -1,0 +1,34 @@
+<Type Name="InputEventHandler" FullName="System.Windows.Input.InputEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void InputEventHandler(object sender, InputEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InputEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.InputEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.InputEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>入力関連ルーティング イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存のイベント[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]を使用して、<xref:System.Windows.Input.KeyboardEventHandler>を委任しません。 このクラスのイベントのデータ型を<xref:System.Windows.Input.InputEventArgs>入力のさまざまな特定のイベント データ クラスの基本クラスです。 <xref:System.Windows.Input.InputEventArgs>共通イベントを開始したデバイスに関係なく、入力イベントのイベントのデータ プロパティを定義します。  
+  
+ 使用するデリゲートの使用例<xref:System.Windows.Input.InputEventArgs>派生イベント データと、既存の入力に対応しています。 イベントは<xref:System.Windows.Input.KeyboardFocusChangedEventHandler>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

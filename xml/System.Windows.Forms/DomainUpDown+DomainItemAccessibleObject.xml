@@ -1,0 +1,159 @@
+<Type Name="DomainUpDown+DomainItemAccessibleObject" FullName="System.Windows.Forms.DomainUpDown+DomainItemAccessibleObject">
+  <TypeSignature Language="C#" Value="public class DomainUpDown.DomainItemAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit DomainUpDown/DomainItemAccessibleObject extends System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.AccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.DomainUpDown" /> コントロールの項目に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームでは、ユーザー補助機能が組み込まれているし、ユーザー補助クライアント アプリケーションで使用できるように、アプリケーションに関する情報を提供します。 ユーザー補助クライアント アプリケーションの例は、ツールとレビュー担当者のユーティリティを画面には、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ。 <xref:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject>クラスから継承、<xref:System.Windows.Forms.AccessibleObject>内の項目に関する情報を提供するクラス、<xref:System.Windows.Forms.DomainUpDown>ユーザー補助クライアント アプリケーションに制御します。  
+  
+ インスタンスがあるコントロールの名前や説明、ユーザー補助クライアント アプリケーションなどのカスタム情報を提供する場合。 この情報を提供する 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>、 <xref:System.Windows.Forms.Control.AccessibleDescription%2A>、 <xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>、および<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+ ユーザー補助機能については、コントロールに含まれているを必要とする場合から派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.AccessibleObject>または<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラスです。 たとえば、共通のコントロールから派生していない、独自のコントロールを作成している場合、またはコントロール内でヒット テストなどの操作が必要な作成する必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject>呼び出すことによって、コントロールの<xref:System.Windows.Forms.DomainUpDown.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DomainItemAccessibleObject (string name, System.Windows.Forms.AccessibleObject parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, class System.Windows.Forms.AccessibleObject parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.#ctor(System.String,System.Windows.Forms.AccessibleObject)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="parent" Type="System.Windows.Forms.AccessibleObject" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject" /> の名前。</param>
+        <param name="parent"><see cref="T:System.Windows.Forms.AccessibleObject" />内の項目を格納している、<see cref="T:System.Windows.Forms.DomainUpDown" />コントロール。</param>
+        <summary><see cref="T:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前、<xref:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject>内の項目を表す文字列は、<xref:System.Windows.Forms.DomainUpDown>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト名を取得または設定します。</summary>
+        <value>オブジェクト名または<see langword="null" />プロパティが設定されていない場合。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの親を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.AccessibleObject" /> 、アクセス可能なオブジェクトの親を表すまたは<see langword="null" />親オブジェクトが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Role">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleRole Role { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleRole Role" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.Role" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleRole</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトのロールを取得します。</summary>
+        <value><see cref="F:System.Windows.Forms.AccessibleRole.ListItem" /> 値。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleStates State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AccessibleStates State" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態を取得、<see cref="T:System.Windows.Forms.RadioButton" />コントロール。</summary>
+        <value>場合、<see cref="P:System.Windows.Forms.RadioButton.Checked" />プロパティが true を返します<see cref="F:System.Windows.Forms.AccessibleStates.Checked" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助オブジェクトの値を取得します。</summary>
+        <value>名前プロパティ、<see cref="T:System.Windows.Forms.DomainUpDown.DomainItemAccessibleObject" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

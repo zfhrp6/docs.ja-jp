@@ -1,0 +1,73 @@
+<Type Name="SingleConverter" FullName="System.ComponentModel.SingleConverter">
+  <TypeSignature Language="C#" Value="public class SingleConverter : System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SingleConverter extends System.ComponentModel.BaseNumberConverter" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.SingleConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.BaseNumberConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単精度に変換する型コンバーターを提供浮動小数点数オブジェクトからさまざまな表現。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンバーターは、単精度浮動小数点数オブジェクトから文字列にのみ変換できます。 <xref:System.Single>値型は、負の値 3.402823 e 38 から 3.402823 e 38 までの値を単精度 32 ビットの数値を表します。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.SingleConverter> のインスタンスは作成しないでください。 代わりを呼び出して、<xref:System.ComponentModel.TypeDescriptor.GetConverter%2A>メソッドの<xref:System.ComponentModel.TypeDescriptor>します。 詳細については、例を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターの実装](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+   
+  
+## Examples  
+ 次の例は、型の変数を変換<xref:System.Single>文字列、およびその逆です。  
+  
+ [!code-cpp[Converters#19](~/samples/snippets/cpp/VS_Snippets_Winforms/Converters/CPP/converters.cpp#19)]
+ [!code-csharp[Converters#19](~/samples/snippets/csharp/VS_Snippets_Winforms/Converters/CS/converters.cs#19)]
+ [!code-vb[Converters#19](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Converters/VB/converters.vb#19)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SingleConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.SingleConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.SingleConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

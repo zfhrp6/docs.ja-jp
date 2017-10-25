@@ -1,0 +1,550 @@
+<Type Name="ServiceConfig" FullName="System.EnterpriseServices.ServiceConfig">
+  <TypeSignature Language="C#" Value="public sealed class ServiceConfig" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceConfig extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ServiceConfig" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定し、サービスを呼び出すときに入力するドメインでアクティブにするのを構成<see cref="M:System.EnterpriseServices.ServiceDomain.Enter(System.EnterpriseServices.ServiceConfig)" />したり作成したり、<see cref="T:System.EnterpriseServices.Activity" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceDomain.Enter%2A>および<xref:System.EnterpriseServices.Activity.%23ctor%2A>によって構成されたサービスを使用できるように<xref:System.EnterpriseServices.ServiceConfig>でそれらのサービス コンポーネントに関連付ける必要はありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceConfig ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ServiceConfig.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.EnterpriseServices.ServiceConfig" />クラス、目的のサービスを構成するプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.EnterpriseServices.ServiceConfig>です。  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|`Binding`|<xref:System.EnterpriseServices.BindingOption.NoBinding>|  
+|`BringYourOwnTransaction`|`null`|  
+|`COMTIIntrinsicsEnabled`|`false`|  
+|`IISIntrinsicsEnabled`|`false`|  
+|`Inheritance`|<xref:System.EnterpriseServices.InheritanceOption.Inherit>|  
+|`IsolationLevel`|<xref:System.EnterpriseServices.TransactionIsolationLevel.Any>|  
+|`PartitionId`|0 個の GUID です。|  
+|`PartitionOption`|<xref:System.EnterpriseServices.PartitionOption.Ignore>|  
+|`SxsDirectory`|`null`|  
+|`SxsName`|`null`|  
+|`SxsOption`|<xref:System.EnterpriseServices.SxsOption.Ignore>|  
+|`Synchronization`|<xref:System.EnterpriseServices.SynchronizationOption.Disabled>|  
+|`ThreadPool`|<xref:System.EnterpriseServices.ThreadPoolOption.None>|  
+|`TipUrl`|`null`|  
+|`TrackingAppName`|`null`|  
+|`TrackingComponentName`|`null`|  
+|`TrackingEnabled`|`false`|  
+|`Transaction`|<xref:System.EnterpriseServices.TransactionOption.Disabled>|  
+|`TransactionDescription`|`null`|  
+|`TransactionTimeout`|システムの既定値|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">
+          <see cref="T:System.EnterpriseServices.ServiceConfig" />現在のプラットフォームでサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Binding">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.BindingOption Binding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.BindingOption Binding" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.Binding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.BindingOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクティビティによって送信されたすべての作業が 1 つだけのシングル スレッド アパートメント (STA) にバインドされるかどうかを示す [バインディング] オプションを設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.BindingOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.BindingOption.NoBinding" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceConfig.Binding%2A>マルチ スレッド アパートメント (MTA) に影響を与えません。 このプロパティを使用して作成するときにのみ、スレッド プールの結合を設定を<xref:System.EnterpriseServices.Activity>です。 呼び出すときに、スレッド プールの結合を設定しようとしましたが、エラーが返されます<xref:System.EnterpriseServices.ServiceDomain.Enter%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringYourOwnSystemTransaction">
+      <MemberSignature Language="C#" Value="public System.Transactions.Transaction BringYourOwnSystemTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Transactions.Transaction BringYourOwnSystemTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.BringYourOwnSystemTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.Transaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Transactions.Transaction" />で識別されるトランザクションの実行に使用する設定を提供する既存のトランザクションを表す<see cref="T:System.EnterpriseServices.ServiceConfig" />です。</summary>
+        <value><see cref="T:System.Transactions.Transaction" /> 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceConfig.BringYourOwnSystemTransaction%2A>(BYOT) のコンテキストを提供するトランザクションを識別する、<xref:System.EnterpriseServices.ServiceConfig>トランザクションです。 そのトランザクションの設定がの他のトランザクション設定をオーバーライドして、独自のトランザクションを表示すると、<xref:System.EnterpriseServices.ServiceConfig>オブジェクト。 <xref:System.EnterpriseServices.ServiceConfig.BringYourOwnTransaction%2A> の既定値は `null` です。  
+  
+ BYOT の詳細については、次を参照してください。<xref:System.EnterpriseServices.BYOT>です。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.EnterpriseServices.BYOT" />
+      </Docs>
+    </Member>
+    <Member MemberName="BringYourOwnTransaction">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.ITransaction BringYourOwnTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.EnterpriseServices.ITransaction BringYourOwnTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.BringYourOwnTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ITransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.EnterpriseServices.ITransaction" />で識別されるトランザクションの実行に使用する設定を提供する既存のトランザクションを表す<see cref="T:System.EnterpriseServices.ServiceConfig" />です。</summary>
+        <value><see cref="T:System.EnterpriseServices.ITransaction" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceConfig.BringYourOwnTransaction%2A>(BYOT) のコンテキストを提供するトランザクションを識別する、<xref:System.EnterpriseServices.ServiceConfig>トランザクションです。 そのトランザクションの設定がの他のトランザクション設定をオーバーライドして、独自のトランザクションを表示すると、<xref:System.EnterpriseServices.ServiceConfig>オブジェクト。 <xref:System.EnterpriseServices.ServiceConfig.BringYourOwnTransaction%2A> の既定値は `null` です。  
+  
+ BYOT の詳細については、次を参照してください。<xref:System.EnterpriseServices.BYOT>です。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="T:System.EnterpriseServices.BYOT" />
+      </Docs>
+    </Member>
+    <Member MemberName="COMTIIntrinsicsEnabled">
+      <MemberSignature Language="C#" Value="public bool COMTIIntrinsicsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool COMTIIntrinsicsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.COMTIIntrinsicsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または COM トランザクション インテグレータ (COMTI) 組み込み関数が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />COMTI 組み込み関数は、有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコンテキストに COMTI からコンテキスト プロパティを渡すことができます。 COMTI には、COM コンポーネントとしてメインフレームのトランザクションとビジネス ロジックをラップするタスクが容易になります。  
+  
+ 行われる仕事の COMTI 組み込みを構成します。 COMTI には、メインフレームのトランザクションとトランザクションでのビジネス ロジックをラップするタスクが容易になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IISIntrinsicsEnabled">
+      <MemberSignature Language="C#" Value="public bool IISIntrinsicsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IISIntrinsicsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.IISIntrinsicsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインターネット インフォメーション サービス (IIS) の組み込み関数が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />IIS の組み込み関数は、有効な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのコンテキストに、アプリケーションのセッション オブジェクトまたはユーザーのセッション オブジェクトなどの IIS のコンテキスト プロパティを渡すことができるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inheritance">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.InheritanceOption Inheritance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.InheritanceOption Inheritance" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.Inheritance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.InheritanceOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を現在のコンテキストに基づく新しいコンテキストを構築するかの情報のみに基づいて新しいコンテキストを作成するかを示す値を取得または<see cref="T:System.EnterpriseServices.ServiceConfig" />です。</summary>
+        <value><see cref="T:System.EnterpriseServices.InheritanceOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.InheritanceOption.Inherit" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsolationLevel">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.TransactionIsolationLevel IsolationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.TransactionIsolationLevel IsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.IsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionIsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトランザクションの分離レベルを設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.TransactionIsolationLevel" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.TransactionIsolationLevel.Any" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外側のトランザクションが、指定された分離レベルで実行されていない場合は、新しいトランザクションが作成されます。 <xref:System.EnterpriseServices.ServiceConfig.IsolationLevel%2A>囲まれたコードは、それ以外の場合、トランザクションでは実行されない場合は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartitionId">
+      <MemberSignature Language="C#" Value="public Guid PartitionId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid PartitionId" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.PartitionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を使用して COM + パーティションの guid を指定します。</summary>
+        <value>使用するパーティションの GUID です。 既定値は、ゼロ GUID です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartitionOption">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.PartitionOption PartitionOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.PartitionOption PartitionOption" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.PartitionOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.PartitionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または囲まれた作業のパーティションを使用する方法を示す値を設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.PartitionOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.PartitionOption.Ignore" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SxsDirectory">
+      <MemberSignature Language="C#" Value="public string SxsDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SxsDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.SxsDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または囲まれた作業のサイド バイ サイド アセンブリのディレクトリを設定します。</summary>
+        <value>サイド バイ サイド アセンブリを使用するディレクトリの名前。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このサイド バイ サイド アセンブリが構成<xref:System.EnterpriseServices.ServiceConfig>です。  
+  
+ 設定する必要があります、<xref:System.EnterpriseServices.ServiceConfig.SxsDirectory%2A>を設定して、新しいサイド バイ サイド アセンブリを作成する場合は、プロパティ、<xref:System.EnterpriseServices.ServiceConfig.SxsOption%2A>プロパティを<xref:System.EnterpriseServices.SxsOption.New>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SxsName">
+      <MemberSignature Language="C#" Value="public string SxsName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SxsName" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.SxsName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または囲まれた作業のサイド バイ サイド アセンブリのファイル名を設定します。</summary>
+        <value>サイド バイ サイド アセンブリのファイル名。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SxsOption">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SxsOption SxsOption { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.SxsOption SxsOption" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.SxsOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SxsOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイド バイ サイド アセンブリを構成する方法を示す値を設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.SxsOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.SxsOption.Ignore" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronization">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.SynchronizationOption Synchronization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.SynchronizationOption Synchronization" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.Synchronization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.SynchronizationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する値はコンポーネントに必要な自動同期の種類を示します。</summary>
+        <value><see cref="T:System.EnterpriseServices.SynchronizationOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.SynchronizationOption.Disabled" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadPool">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.ThreadPoolOption ThreadPool { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.ThreadPoolOption ThreadPool" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.ThreadPool" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.ThreadPoolOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクティビティによって送信された作業を実行するスレッド プールを示す値を設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.ThreadPoolOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.ThreadPoolOption.None" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TipUrl">
+      <MemberSignature Language="C#" Value="public string TipUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TipUrl" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TipUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既存のトランザクションで実行する囲まれたコードを許可するトランザクション インターネット プロトコル (TIP) URL を設定します。</summary>
+        <value>ヒントの URL です。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.ServiceConfig.TipUrl%2A>に似ていますが、<xref:System.EnterpriseServices.ServiceConfig.BringYourOwnTransaction%2A>プロパティがヒントの URL で指定されている既存のトランザクションとして実行する囲まれたコードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingAppName">
+      <MemberSignature Language="C#" Value="public string TrackingAppName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrackingAppName" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TrackingAppName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラッカー情報の報告に使用するアプリケーション ID に対応するテキスト文字列を設定します。</summary>
+        <value>トラッカー情報の報告は、アプリケーションの ID。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラッカー アクティビティがで指定された名前を持つコンポーネントから発生したと報告されてこのトラッカー プロパティに関連付けられたコンポーネントがないため、<xref:System.EnterpriseServices.ServiceConfig.TrackingAppName%2A>です。  
+  
+ 詳細については、「<xref:System.EnterpriseServices.ServiceConfig.TrackingEnabled%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <altmember cref="P:System.EnterpriseServices.ServiceConfig.TrackingEnabled" />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingComponentName">
+      <MemberSignature Language="C#" Value="public string TrackingComponentName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TrackingComponentName" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TrackingComponentName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラッカー情報の報告に使用するコンテキストの名前に対応するテキスト文字列を設定します。</summary>
+        <value>トラッカー情報の報告は、コンテキスト名。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+        <altmember cref="P:System.EnterpriseServices.ServiceConfig.TrackingEnabled" />
+      </Docs>
+    </Member>
+    <Member MemberName="TrackingEnabled">
+      <MemberSignature Language="C#" Value="public bool TrackingEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TrackingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または追跡が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />追跡が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トラッカーは、実行中の COM + コンポーネントを監視するアプリケーションの監視で使用されるレポート メカニズムです。 これは、コンポーネント サービス管理ツールのスピン コンポーネント アイコンの背後にあるレポート メカニズムです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.EnterpriseServices.TransactionOption Transaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.EnterpriseServices.TransactionOption Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EnterpriseServices.TransactionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または囲まれた作業でトランザクションを使用する方法を示す値を設定します。</summary>
+        <value><see cref="T:System.EnterpriseServices.TransactionOption" /> 値のいずれか。 既定値は、<see cref="F:System.EnterpriseServices.TransactionOption.Disabled" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionDescription">
+      <MemberSignature Language="C#" Value="public string TransactionDescription { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransactionDescription" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TransactionDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトランザクションの統計情報が表示される場合に使用される名前を設定します。</summary>
+        <value>トランザクションの統計情報が表示されるときに使用する名前。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以外の場合の説明を指定の値場合<xref:System.EnterpriseServices.ServiceConfig.TrackingComponentName%2A>トランザクションを説明するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionTimeout">
+      <MemberSignature Language="C#" Value="public int TransactionTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TransactionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ServiceConfig.TransactionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または新しいトランザクションのトランザクション タイムアウトを設定します。</summary>
+        <value>トランザクションのタイムアウト (秒)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

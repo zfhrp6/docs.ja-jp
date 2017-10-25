@@ -1,0 +1,248 @@
+<Type Name="ReplicationNeighbor" FullName="System.DirectoryServices.ActiveDirectory.ReplicationNeighbor">
+  <TypeSignature Language="C#" Value="public class ReplicationNeighbor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReplicationNeighbor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />クラスには、レプリケーションの近隣ノードに関する情報が含まれています、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamInstance" />または<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />オブジェクト。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ConsecutiveFailureCount">
+      <MemberSignature Language="C#" Value="public int ConsecutiveFailureCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ConsecutiveFailureCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.ConsecutiveFailureCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の正常なレプリケーション サイクル以降、レプリケーション エラーの数を取得します。</summary>
+        <value>失敗したレプリケーションの数は、このソースから最後の正常なレプリケーション試行しようとします。 前回の試行が成功したない場合は、ソースが、近隣ノードとして追加されたため失敗したレプリケーション試行の回数は、戻り値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastAttemptedSync">
+      <MemberSignature Language="C#" Value="public DateTime LastAttemptedSync { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastAttemptedSync" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.LastAttemptedSync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースから最後のレプリケーション試行の時刻を取得します。</summary>
+        <value>最後に試行したレプリケーションの時刻。 レプリケーションの試行が発生していない場合、値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSuccessfulSync">
+      <MemberSignature Language="C#" Value="public DateTime LastSuccessfulSync { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastSuccessfulSync" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.LastSuccessfulSync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースからの最後の正常なレプリケーション サイクルの時刻を取得します。</summary>
+        <value>前回成功した同期の時刻。 レプリケーションが成功した場合されません、値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSyncMessage">
+      <MemberSignature Language="C#" Value="public string LastSyncMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LastSyncMessage" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.LastSyncMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースから最後のレプリケーションの試行に関連付けられているメッセージを取得します。</summary>
+        <value>対応するメッセージが最後のレプリケーションをしようとします。 前回の試行が成功した場合、値は空の文字列がします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSyncResult">
+      <MemberSignature Language="C#" Value="public int LastSyncResult { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LastSyncResult" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.LastSyncResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソースから最後のレプリケーションの試行に関連付けられているエラー コードを取得します。</summary>
+        <value>最後に試行したレプリケーションのエラー コード。 前回の試行が成功した場合は error_success を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PartitionName">
+      <MemberSignature Language="C#" Value="public string PartitionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PartitionName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.PartitionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このパーティションの名前を取得<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />オブジェクト。</summary>
+        <value>このパーティションの名前<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplicationNeighborOption">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.ReplicationNeighborOptions ReplicationNeighborOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.ReplicationNeighbor/ReplicationNeighborOptions ReplicationNeighborOption" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.ReplicationNeighborOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReplicationNeighbor+ReplicationNeighborOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性とオブジェクトの設定を取得<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />オブジェクト。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.ReplicationNeighborOptions" />この属性とオプションの設定を含む値<see cref="T:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceInvocationId">
+      <MemberSignature Language="C#" Value="public Guid SourceInvocationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid SourceInvocationId" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.SourceInvocationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前回の複製の試行でレプリケーションの移行元サーバーで使用された呼び出しの識別子を取得します。</summary>
+        <value>前回の複製の試行でレプリケーションの移行元サーバーで使用された呼び出しの識別子です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceServer">
+      <MemberSignature Language="C#" Value="public string SourceServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceServer" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.SourceServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レプリケーション元サーバーの名前を取得します。</summary>
+        <value>レプリケーション元サーバーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.TransportType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レプリケーション用に使用されるトランスポートの種類を取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />レプリケーション接続用に使用されるトランスポートの種類を示す列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsnAttributeFilter">
+      <MemberSignature Language="C#" Value="public long UsnAttributeFilter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 UsnAttributeFilter" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.UsnAttributeFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の正常なレプリケーション サイクルの更新シーケンス番号 (USN) の値を取得します。</summary>
+        <value>最後の正常なレプリケーション サイクルの USN 値。 レプリケーションが成功した場合されません、値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsnLastObjectChangeSynced">
+      <MemberSignature Language="C#" Value="public long UsnLastObjectChangeSynced { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 UsnLastObjectChangeSynced" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ReplicationNeighbor.UsnLastObjectChangeSynced" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に受信したオブジェクトの更新の更新シーケンス番号 (USN) を取得します。</summary>
+        <value>受信した最後の更新の USN です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

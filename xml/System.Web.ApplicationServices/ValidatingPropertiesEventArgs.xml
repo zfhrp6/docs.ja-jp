@@ -1,0 +1,100 @@
+<Type Name="ValidatingPropertiesEventArgs" FullName="System.Web.ApplicationServices.ValidatingPropertiesEventArgs">
+  <TypeSignature Language="C#" Value="public class ValidatingPropertiesEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidatingPropertiesEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.ValidatingPropertiesEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ApplicationServices.ProfileService.ValidatingProperties" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成する、<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>プロファイル プロパティの値を検証する方法をカスタマイズするイベントです。 <xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>ユーザーのプロファイルのプロパティが設定されているイベントが発生します。 プロパティ値には、検証が失敗した場合、コレクションに追加、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティです。 <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>メソッドのコレクションを返します、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティどのプロパティが検証に失敗を判断できるようにします。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベント。 値が渡されたときに`FirstName`プロパティが空または`null`、`FirstName`にプロパティが追加、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>コレクション。  
+  
+ [!code-csharp[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/cs/Global.asax#1)]
+ [!code-vb[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/vb/Global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FailedProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; FailedProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; FailedProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証に失敗したプロファイルのプロパティを含んでいるコレクションを取得します。</summary>
+        <value>検証に失敗したプロファイルのプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティが検証に失敗したプロパティの名前のコレクションを格納します。 イベント ハンドラーを作成する場合、<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>でコレクションに検証が失敗したプロパティの名前を追加する、イベント、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティです。 <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>メソッドのコレクションを返します、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティどのプロパティが検証に失敗を判断できるようにします。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベント。 値が渡されたときに`FirstName`プロパティが空または`null`、`FirstName`にプロパティが追加、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>コレクション。  
+  
+ [!code-csharp[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/cs/Global.asax#1)]
+ [!code-vb[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,object&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名のコレクションを検証するプロファイルのプロパティの値を取得します。</summary>
+        <value>名前と、プロファイルのプロパティを検証する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.Properties%2A>プロパティから返される、<xref:System.Collections.IDictionary>名とユーザー用に設定するプロファイル プロパティの値を含むオブジェクト。 イベント ハンドラーを作成する場合、<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベントから検証するプロパティを取得することができます、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.Properties%2A>プロパティです。 任意の値には、検証が失敗した場合、追加する、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティです。 <xref:System.Web.ApplicationServices.ProfileService.SetPropertiesForCurrentUser%2A>メソッドのコレクションを返します、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>プロパティどのプロパティが検証に失敗を判断できるようにします。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.ProfileService.ValidatingProperties>イベント。 値が渡されたときに`FirstName`プロパティが空または`null`、`FirstName`にプロパティが追加、<xref:System.Web.ApplicationServices.ValidatingPropertiesEventArgs.FailedProperties%2A>コレクション。  
+  
+ [!code-csharp[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/cs/Global.asax#1)]
+ [!code-vb[System.Web.ApplicationServices.ProfileService#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.ApplicationServices.ProfileService/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

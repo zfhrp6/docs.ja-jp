@@ -1,0 +1,35 @@
+<Type Name="EventArrivedEventHandler" FullName="System.Management.EventArrivedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void EventArrivedEventHandler(object sender, EventArrivedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventArrivedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Management.EventArrivedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Management.EventArrivedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">このメソッドを呼び出す対象となるオブジェクトのインスタンス。</param>
+    <param name="e"><see cref="T:System.Management.EventArrivedEventArgs" />理由イベントが呼び出されたを指定します。</param>
+    <summary><see cref="E:System.Management.ManagementEventWatcher.EventArrived" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の非同期の例では、イベントを発生させる毎秒 WMI タイマーを設定し、不要になった場合は削除されます。 <xref:System.Management.ManagementEventWatcher>いくつか定義[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]WMI イベントが配信されるときに発生するイベントです。 受信データを処理するために、これらのイベントにデリゲートが割り当てられます。  
+  
+ [!code-csharp[wminet_EventArrivedEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventArrivedEventHandler/cs/EventArrivedEventHandler.cs#1)]
+ [!code-vb[wminet_EventArrivedEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventArrivedEventHandler/vb/EventArrivedEventHandler.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

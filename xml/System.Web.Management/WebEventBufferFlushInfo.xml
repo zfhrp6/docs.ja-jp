@@ -1,0 +1,222 @@
+<Type Name="WebEventBufferFlushInfo" FullName="System.Web.Management.WebEventBufferFlushInfo">
+  <TypeSignature Language="C#" Value="public sealed class WebEventBufferFlushInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebEventBufferFlushInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebEventBufferFlushInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フラッシュ バッファーの特性を定義するパラメーターが含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebEventBufferFlushInfo>クラスは、バッファーの現在の状態を識別する値を定義します。 クラスのインスタンスがパラメーターとして渡される、<xref:System.Web.Management.BufferedWebEventProvider.ProcessEventFlush%2A>バッファーに格納されたメッセージを処理するメソッド。 バッファーのフラッシュが必要な場合、このメソッドを呼び出します ASP.NET ヘルスを監視します。 これで定義されたパラメーターによって決定されますが、`bufferModes`内の要素、`healthMonitoring`構成セクション。  
+  
+> [!NOTE]
+>  仕様では、バッファリングの機構は、受信イベントに対応するために一部のイベントを削除する可能性があります。 正しく変更することによってこのメカニズムを調整するには、ユーザーの責任である、`bufferModes`内の要素、`healthMonitoring`構成セクション。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebEventBufferFlushInfo> クラスを使用するコード例を次に示します。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#6)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Events">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebBaseEventCollection Events { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebBaseEventCollection Events" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.Events" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebBaseEventCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のメッセージ内のイベントのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Management.WebBaseEventCollection" />現在のメッセージに含まれるイベント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファー、による複数のイベントは通常 1 つのメッセージで送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.Events%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#11)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventsDiscardedSinceLastNotification">
+      <MemberSignature Language="C#" Value="public int EventsDiscardedSinceLastNotification { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventsDiscardedSinceLastNotification" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.EventsDiscardedSinceLastNotification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の通知から削除されたイベントの数を取得します。</summary>
+        <value>最後の通知以後バッファリング メカニズムによって削除されたイベントの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 仕様では、バッファリングの機構は、受信イベントに対応するために一部のイベントを削除する可能性があります。 正しく変更することによってこのメカニズムを調整するには、ユーザーの責任である、`bufferModes`内の要素、`healthMonitoring`構成セクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.EventsDiscardedSinceLastNotification%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#12)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventsInBuffer">
+      <MemberSignature Language="C#" Value="public int EventsInBuffer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EventsInBuffer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.EventsInBuffer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッファー内のイベントの数を取得します。</summary>
+        <value>バッファー内のイベントの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この番号は、通知の先頭にキャプチャされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.EventsInBuffer%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#13)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastNotificationUtc">
+      <MemberSignature Language="C#" Value="public DateTime LastNotificationUtc { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastNotificationUtc" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.LastNotificationUtc" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の通知の日時を取得します。</summary>
+        <value>日付と最後の通知の時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.LastNotificationUtc%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#14)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotificationSequence">
+      <MemberSignature Language="C#" Value="public int NotificationSequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NotificationSequence" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.NotificationSequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の通知メッセージの順序を取得します。</summary>
+        <value>現在の通知メッセージのシーケンスの順序を示す数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.NotificationSequence%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#15)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotificationType">
+      <MemberSignature Language="C#" Value="public System.Web.Management.EventNotificationType NotificationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Management.EventNotificationType NotificationType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebEventBufferFlushInfo.NotificationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.EventNotificationType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の通知の種類を取得します。</summary>
+        <value><see cref="T:System.Web.Management.EventNotificationType" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventBufferFlushInfo.NotificationType%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Management.BufferedWebEventProvider>クラスです。  
+  
+ [!code-csharp[System.Web.Management.BufferedWebEventProvider#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/CS/bufferedwebeventprovider.cs#16)]
+ [!code-vb[System.Web.Management.BufferedWebEventProvider#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.BufferedWebEventProvider/VB/bufferedwebeventprovider.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,249 @@
+<Type Name="ITableMappingCollection" FullName="System.Data.ITableMappingCollection">
+  <TypeSignature Language="C#" Value="public interface ITableMappingCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITableMappingCollection implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Data.ITableMappingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Tablemapping が見つかりませんオブジェクトのコレクションが含まれており、によって実装される、 <see cref="T:System.Data.Common.DataTableMappingCollection" />、.NET Framework データ プロバイダーで一般的に使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.ITableMappingCollection>インターフェイスが継承する tablemapping が見つかりませんコレクションを実装するクラスを使用します。 詳細については、次を参照してください。 [DataAdapter DataTable と DataColumn のマップ](~/docs/framework/data/adonet/dataadapter-datatable-and-datacolumn-mappings.md)です。  
+  
+ アプリケーションがのインスタンスを作成していない、<xref:System.Data.ITableMappingCollection>インターフェイスを直接が継承するクラスのインスタンスを作成、<xref:System.Data.ITableMappingCollection>です。  
+  
+ 継承するクラス<xref:System.Data.ITableMappingCollection>継承されたメンバーを実装し、通常プロバイダー固有の機能を追加するその他のメンバーを定義する必要があります。 たとえば、<xref:System.Data.ITableMappingCollection>インターフェイスの 1 つの実装を定義する、<xref:System.Data.ITableMappingCollection.RemoveAt%2A>メソッドです。 さらに、<xref:System.Data.Common.DataTableMappingCollection>クラスは、このメソッドを継承し、定義のオーバー ロードを 2 つ追加<xref:System.Data.Common.DataTableMappingCollection.RemoveAt%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、派生クラスのインスタンスを作成<xref:System.Data.Common.DataTableMapping>に追加し、<xref:System.Data.Common.DataTableMappingCollection>コレクション。 これは、ユーザーに通知し、マッピングがコレクションに追加されたことです。  
+  
+ [!code-csharp[Classic WebData DataTableMapping Example#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData DataTableMapping Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData DataTableMapping Example#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData DataTableMapping Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Data.ITableMappingCollection" />インターフェイスでは、次のコンス トラクターを実装する必要があります。  
+  
+ <list type="table"><listheader><term>項目  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>PrvTableMappingCollection()  
+  
+ </term><description>空の PrvTableMappingCollection クラスを作成します。  
+  
+ </description></item></list></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Data.ITableMapping Add (string sourceTableName, string dataSetTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.ITableMapping Add(string sourceTableName, string dataSetTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ITableMappingCollection.Add(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ITableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTableName" Type="System.String" />
+        <Parameter Name="dataSetTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTableName">ソース テーブルの名前。</param>
+        <param name="dataSetTableName">名前、<see cref="T:System.Data.DataSet" />テーブル。</param>
+        <summary>テーブルのマッピングをコレクションに追加します。</summary>
+        <returns>新しくマップへの参照を<see cref="T:System.Data.ITableMapping" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string sourceTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(string sourceTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ITableMappingCollection.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTableName">ソース テーブルの名前。</param>
+        <summary>コレクションに指定されたソース テーブル名を持つテーブル マッピングが含まれているかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定されたソース テーブル名を持つテーブル マッピングが存在するかどうか、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetByDataSetTable">
+      <MemberSignature Language="C#" Value="public System.Data.ITableMapping GetByDataSetTable (string dataSetTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Data.ITableMapping GetByDataSetTable(string dataSetTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ITableMappingCollection.GetByDataSetTable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.ITableMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSetTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataSetTableName">名前、<see langword="DataSet" />コレクション内のテーブルです。</param>
+        <summary>指定した tablemapping が見つかりませんオブジェクトを取得<see cref="T:System.Data.DataSet" />テーブル名。</summary>
+        <returns>指定した tablemapping が見つかりませんオブジェクト<see langword="DataSet" />テーブル名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (string sourceTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(string sourceTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ITableMappingCollection.IndexOf(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTableName">ソース テーブルの名前。</param>
+        <summary>場所を取得、<see cref="T:System.Data.ITableMapping" />コレクション内のオブジェクト。</summary>
+        <returns>0 から始まる場所、<see cref="T:System.Data.ITableMapping" />コレクション内のオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.ITableMappingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="SourceTable" />の名前、<see cref="T:System.Data.ITableMapping" />です。</param>
+        <summary>インスタンス取得または設定<see cref="T:System.Data.ITableMapping" />、指定した<see cref="P:System.Data.ITableMapping.SourceTable" />名。</summary>
+        <value>インスタンス<see cref="T:System.Data.ITableMapping" />、指定した<see langword="SourceTable" />名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (string sourceTableName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(string sourceTableName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.ITableMappingCollection.RemoveAt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceTableName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceTableName">名前、<see langword="SourceTable" />です。</param>
+        <summary>削除、<see cref="T:System.Data.ITableMapping" />指定したオブジェクト<see cref="P:System.Data.ITableMapping.SourceTable" />コレクションの名前。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

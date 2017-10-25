@@ -1,0 +1,534 @@
+<Type Name="OleDbLiteral" FullName="System.Data.OleDb.OleDbLiteral">
+  <TypeSignature Language="C#" Value="public enum OleDbLiteral" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OleDbLiteral extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OleDb.OleDbLiteral" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>テキスト コマンド、データ値、およびデータベース オブジェクトで使用されるリテラルに関する情報を返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.OleDb.OleDbLiteral>列挙には、次のカテゴリのリテラルの情報が返されます。  
+  
+|カテゴリ|戻り値|  
+|--------------|-------------|  
+|特殊文字または文字の識別子を引用するために使用する文字などのテキスト コマンドで使用します。|文字または文字列。|  
+|SQL ステートメント内の文字リテラルなどのリテラル データ値。|文字、リテラルで使用できない文字の一覧およびリテラルの最初の文字として使用できない文字の一覧内のリテラルの最大長。|  
+|列またはテーブルなどのデータベース オブジェクトの名前。|文字、名、使用できない文字の一覧、および名前の最初の文字として使用できない文字の一覧内の名前の最大長。|  
+|多次元の制限列です。|制限値をデータ ソースからキューブ、ディメンション、階層、レベル、および使用できるメンバーに関する情報を返す検索パターンの代わりにリテラルとして扱われます。|  
+  
+ ほとんどのメンバー、<xref:System.Data.OleDb.OleDbLiteral>列挙を DBLITERALINFO 構造体で返される OLE DB DBLITERAL 値のいずれかにマップします。  
+  
+ 多次元の制限列は、スキーマのオブジェクトおよび OLE DB for OLAP IDBSchemaRowset インターフェイスで使用するマップのメンバーです。  
+  
+ A<xref:System.NotSupportedException>リテラルの指定した情報はサポートされていませんし返すことができない場合に生成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Binary_Literal">
+      <MemberSignature Language="C#" Value="Binary_Literal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Binary_Literal = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Binary_Literal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のバイナリ リテラル テキスト コマンドです。 DBLITERAL_BINARY_LITERAL にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Catalog_Name">
+      <MemberSignature Language="C#" Value="Catalog_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Catalog_Name = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Catalog_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のカタログ名。 DBLITERAL_CATALOG_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Catalog_Separator">
+      <MemberSignature Language="C#" Value="Catalog_Separator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Catalog_Separator = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Catalog_Separator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内の識別子の残りの部分からカタログ名を区切る文字です。 場合、DBLITERAL_CATALOG_SEPARATOR にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Char_Literal">
+      <MemberSignature Language="C#" Value="Char_Literal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Char_Literal = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Char_Literal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンドには、リテラル文字です。 DBLITERAL_CHAR_LITERAL にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Column_Alias">
+      <MemberSignature Language="C#" Value="Column_Alias" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Column_Alias = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Column_Alias" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内の列の別名です。 DBLITERAL_COLUMN_ALIAS にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Column_Name">
+      <MemberSignature Language="C#" Value="Column_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Column_Name = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Column_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内またはデータ定義インターフェイスで使用される列の名前。 DBLITERAL_COLUMN_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Correlation_Name">
+      <MemberSignature Language="C#" Value="Correlation_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Correlation_Name = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Correlation_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内の相関関係名 (テーブルの別名)。 DBLITERAL_CORRELATION_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cube_Name">
+      <MemberSignature Language="C#" Value="Cube_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Cube_Name = int32(21)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Cube_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマ (または、カタログのプロバイダーがスキーマをサポートしていない場合) 内のキューブの名前です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cursor_Name">
+      <MemberSignature Language="C#" Value="Cursor_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Cursor_Name = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Cursor_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のカーソル名。 DBLITERAL_CURSOR_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Dimension_Name">
+      <MemberSignature Language="C#" Value="Dimension_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Dimension_Name = int32(22)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Dimension_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディメンションの名前。 ディメンションが複数のキューブの一部である場合は、キューブとディメンションの組み合わせごとに 1 つの行があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Escape_Percent_Prefix">
+      <MemberSignature Language="C#" Value="Escape_Percent_Prefix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Escape_Percent_Prefix = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Escape_Percent_Prefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LIKE 句で DBLITERAL_LIKE_PERCENT リテラルの返される文字をエスケープするために使用する文字。 たとえば、0 個以上の文字と一致するように、パーセント記号 (%) を使用する場合は、円記号 (\\)、文字"abc\\%%"と「abc %」で始まるすべての文字値と一致します。 一部の SQL 言語仕様では、この値をオーバーライドするために使用する句 (エスケープ句) をサポートします。 DBLITERAL_ESCAPE_PERCENT_PREFIX にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Escape_Percent_Suffix">
+      <MemberSignature Language="C#" Value="Escape_Percent_Suffix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Escape_Percent_Suffix = int32(29)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Escape_Percent_Suffix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エスケープ文字存在する場合は、リテラル、DBLITERAL_LIKE_PERCENT に対して返される文字のサフィックスを使用します。 たとえば、パーセント記号 (%) が 0 の一致に使用、または複数の文字とパーセント記号はオープンとクローズの角かっこで囲んだエスケープ、DBLITERAL_ESCAPE_PERCENT_PREFIX は"["、個"]"、「abc [%] %」文字が「abc %」で始まるすべての文字値と一致します。 文字をエスケープして DBLITERAL_ESCAPE_PERCENT サフィックス文字を使用しないプロバイダーは、このリテラル値を返さないし、ことを要求した場合に、lt、DBLITERAL 構造体のメンバーを設定することができます。 個にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Escape_Underscore_Prefix">
+      <MemberSignature Language="C#" Value="Escape_Underscore_Prefix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Escape_Underscore_Prefix = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Escape_Underscore_Prefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LIKE 句で DBLITERAL_LIKE_UNDERSCORE リテラルの返される文字をエスケープするために使用する文字。 たとえば、1 つだけの文字と一致する、アンダー スコア (_) が使用され、これは、円記号 (\\)、文字"abc\\ \_ _"の 5 文字を long されで開始されるすべての文字値と一致"abc\_"です。 一部の SQL 言語仕様では、この値をオーバーライドするために使用する句 (エスケープ句) をサポートします。 DBLITERAL_ESCAPE_UNDERSCORE_PREFIX にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Escape_Underscore_Suffix">
+      <MemberSignature Language="C#" Value="Escape_Underscore_Suffix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Escape_Underscore_Suffix = int32(30)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Escape_Underscore_Suffix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LIKE 句で DBLITERAL_LIKE_UNDERSCORE リテラルの返される文字をエスケープするために使用する文字。 たとえば、1 つだけの文字と一致する、アンダー スコア (_) が使用され、これは、円記号 (\\)、文字"abc\\ \_ _"の 5 文字を long されで開始されるすべての文字値と一致"abc\_"です。 一部の SQL 言語仕様では、この値をオーバーライドするために使用する句 (エスケープ句) をサポートします。 DBLITERAL_ESCAPE_UNDERSCORE_SUFFIX にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Hierarchy_Name">
+      <MemberSignature Language="C#" Value="Hierarchy_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Hierarchy_Name = int32(23)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Hierarchy_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>階層の名前。 ディメンションは、階層が含まれていないか、1 つだけの階層を持つ場合、現在の列には、null 値が含まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Index_Name">
+      <MemberSignature Language="C#" Value="Index_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Index_Name = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Index_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内またはデータ定義インターフェイスで使用されるインデックスの名前。 DBLITERAL_INDEX_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Invalid = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値が無効です。 マップします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Level_Name">
+      <MemberSignature Language="C#" Value="Level_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Level_Name = int32(24)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Level_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のレベルが所属するキューブの名前です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Like_Percent">
+      <MemberSignature Language="C#" Value="Like_Percent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Like_Percent = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Like_Percent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>LIKE 句の 0 個以上の文字と一致するために使用する文字。 たとえば、パーセント記号 (%) の場合は、「abc %」文字は"abc"で始まるすべての文字値と一致します。 DBLITERAL_LIKE_PERCENT にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Like_Underscore">
+      <MemberSignature Language="C#" Value="Like_Underscore" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Like_Underscore = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Like_Underscore" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つだけの文字と一致する LIKE 句で使用される文字。 たとえば、これは、アンダー スコア (_)、文字"abc\_"4 文字をされ、"abc"で開始されるすべての文字値と一致します。 DBLITERAL_LIKE_UNDERSCORE にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Member_Name">
+      <MemberSignature Language="C#" Value="Member_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Member_Name = int32(25)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Member_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーの名前。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Procedure_Name">
+      <MemberSignature Language="C#" Value="Procedure_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Procedure_Name = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Procedure_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のプロシージャの名前。 DBLITERAL_PROCEDURE_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Property_Name">
+      <MemberSignature Language="C#" Value="Property_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Property_Name = int32(26)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Property_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの名前。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Quote_Prefix">
+      <MemberSignature Language="C#" Value="Quote_Prefix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Quote_Prefix = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Quote_Prefix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特殊文字を含む識別子を囲むために開始引用符としてテキスト コマンドで使用される文字。 DBLITERAL_QUOTE_PREFIX にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Quote_Suffix">
+      <MemberSignature Language="C#" Value="Quote_Suffix" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Quote_Suffix = int32(28)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Quote_Suffix" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特殊文字を含む識別子を囲むため閉じの引用符としてテキスト コマンドで使用する文字。 プレフィックスとサフィックスとして、同じ文字を使用する 1.x プロバイダーでは、このリテラル値を返さない可能性があり、要求された場合を DBLITERAL 構造体のメンバーを設定できます。 DBLITERAL_QUOTE_SUFFIX にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema_Name">
+      <MemberSignature Language="C#" Value="Schema_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Schema_Name = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Schema_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のスキーマ名。 DBLITERAL_SCHEMA_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema_Separator">
+      <MemberSignature Language="C#" Value="Schema_Separator" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Schema_Separator = int32(27)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Schema_Separator" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内の識別子の残りの部分から、スキーマ名を区切る文字です。 DBLITERAL_SCHEMA_SEPARATOR にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Table_Name">
+      <MemberSignature Language="C#" Value="Table_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Table_Name = int32(17)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Table_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内、またはデータ定義インターフェイスで使用するテーブル名です。 DBLITERAL_TABLE_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text_Command">
+      <MemberSignature Language="C#" Value="Text_Command" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral Text_Command = int32(18)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.Text_Command" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SQL ステートメントなどのテキスト コマンドです。 DBLITERAL_TEXT_COMMAND にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="User_Name">
+      <MemberSignature Language="C#" Value="User_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral User_Name = int32(19)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.User_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のユーザー名。 DBLITERAL_USER_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="View_Name">
+      <MemberSignature Language="C#" Value="View_Name" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.OleDb.OleDbLiteral View_Name = int32(20)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OleDb.OleDbLiteral.View_Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OleDb.OleDbLiteral</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト コマンド内のビューの名前。 DBLITERAL_VIEW_NAME にマップされます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

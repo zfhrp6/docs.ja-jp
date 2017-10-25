@@ -1,0 +1,76 @@
+<Type Name="GradientSpreadMethod" FullName="System.Windows.Media.GradientSpreadMethod">
+  <TypeSignature Language="C#" Value="public enum GradientSpreadMethod" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GradientSpreadMethod extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GradientSpreadMethod" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>グラデーションのグラデーション ブラシのグラデーション ベクターまたは領域の外側に描画する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図で利用可能なスプレッド メソッドとその効果を示しています。<xref:System.Windows.Media.LinearGradientBrush>と<xref:System.Windows.Media.RadialGradientBrush>です。 赤色の線では、グラデーションの領域を示します。 A<xref:System.Windows.Media.LinearGradientBrush>グラデーションで領域を定義、<xref:System.Windows.Media.LinearGradientBrush.StartPoint%2A>と<xref:System.Windows.Media.LinearGradientBrush.EndPoint%2A>プロパティです。 A<xref:System.Windows.Media.RadialGradientBrush>グラデーションで領域を定義、 <xref:System.Windows.Media.RadialGradientBrush.Center%2A>、 <xref:System.Windows.Media.RadialGradientBrush.RadiusX%2A>、および<xref:System.Windows.Media.RadialGradientBrush.RadiusY%2A>プロパティです。  
+  
+ ![別の GradientSpread 設定](~/add/media/img-mmgraphics-gradientspread.png "の別の GradientSpread 設定")  
+グラデーションの拡散メソッド  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Pad">
+      <MemberSignature Language="C#" Value="Pad" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GradientSpreadMethod Pad = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientSpreadMethod.Pad" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientSpreadMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値です。 グラデーション ベクターの末尾にある色の値は、残りの領域を入力します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Reflect">
+      <MemberSignature Language="C#" Value="Reflect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GradientSpreadMethod Reflect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientSpreadMethod.Reflect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientSpreadMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラデーションが、領域がいっぱいになるまでに、逆方向に繰り返されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Repeat">
+      <MemberSignature Language="C#" Value="Repeat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GradientSpreadMethod Repeat = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GradientSpreadMethod.Repeat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GradientSpreadMethod</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラデーションが、領域がいっぱいになるまでに、元の方向に繰り返されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

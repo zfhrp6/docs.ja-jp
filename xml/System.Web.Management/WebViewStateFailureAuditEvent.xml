@@ -1,0 +1,170 @@
+<Type Name="WebViewStateFailureAuditEvent" FullName="System.Web.Management.WebViewStateFailureAuditEvent">
+  <TypeSignature Language="C#" Value="public class WebViewStateFailureAuditEvent : System.Web.Management.WebFailureAuditEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebViewStateFailureAuditEvent extends System.Web.Management.WebFailureAuditEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebViewStateFailureAuditEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebFailureAuditEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションのビューの状態関連の失敗に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management?displayProperty=nameWithType>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ ASP.NET の種類のイベントを発生させる<xref:System.Web.Management.WebViewStateFailureAuditEvent>ビュー状態エラーが発生したときにします。 このエラーは、ビュー ステートを改ざんしようとすると、または異なるキーを持つ別のコンピューターから、再利用のいずれかを示します。 関連する監査イベントのコードは<xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>します。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。  
+  
+   
+  
+## Examples  
+ 次に構成する方法を示す構成ファイルの抜粋、<xref:System.Web.Management.EventLogWebEventProvider>ビュー状態のエラーをキャプチャします。 完全を期すのための設定を示します、`provider`と`eventMappings`セクションです。 既定では既に設定されます。 行う必要があるですだけのセットアップを提供すること、`rules`セクションです。 詳細については、「`healthMonitoring`」を参照してください。  
+  
+ ビューステート エラーを生成するには次のクエリ文字列で、ブラウザーで URL を入力します。  
+  
+```  
+?__VIEWSTATEFIELDCOUNT=1&__VIEWSTATE=bogus  
+```  
+  
+ 次の構成設定を入力する場合、Windows アプリケーション イベント ログは、ビューステート エラーをキャプチャします。  
+  
+```  
+<healthMonitoring  
+  enabled="true"  
+  heartBeatInterval="0">  
+  <providers>  
+    // Configure the provider to process   
+    // the health events.  
+    <add name="EventLogProvider"  
+       type="System.Web.Management.EventLogWebEventProvider,  
+       System.Web,Version=2.0.3600.0,Culture=neutral,  
+       PublicKeyToken=b03f5f7f11d50a3a"/>  
+  </providers>  
+  
+  <eventMappings>  
+    <clear />  
+    // Configure the WebFailureAuditEvent   
+    // object to handle the Viewstate failures.   
+    <add name="Failure Audits"  
+      type="System.Web.Management.WebFailureAuditEvent,  
+      System.Web,Version=2.0.3600.0,Culture=neutral,  
+      PublicKeyToken=b03f5f7f11d50a3a" />  
+  </eventMappings>  
+  
+  <rules>  
+    <clear/>  
+    // Configure the connection between the   
+    // application lifetime event object   
+    // and the provider that must process it.  
+      <add name="Viewstate Failure Events "  
+        eventName="Failure Events"  
+        provider="EventLogProvider"  
+        profile="Default"  
+        minInterval="00:01:00" />  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebViewStateFailureAuditEvent (string message, object eventSource, int eventCode, System.Web.UI.ViewStateException viewStateException);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, class System.Web.UI.ViewStateException viewStateException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebViewStateFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.Web.UI.ViewStateException)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="viewStateException" Type="System.Web.UI.ViewStateException" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="viewStateException"><see cref="T:System.Web.UI.ViewStateException" />障害に起因します。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebViewStateFailureAuditEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンス化に使用しないが、<xref:System.Web.Management.WebViewStateFailureAuditEvent>が、オブジェクトは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebViewStateFailureAuditEvent (string message, object eventSource, int eventCode, int eventDetailCode, System.Web.UI.ViewStateException viewStateException);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode, class System.Web.UI.ViewStateException viewStateException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebViewStateFailureAuditEvent.#ctor(System.String,System.Object,System.Int32,System.Int32,System.Web.UI.ViewStateException)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+        <Parameter Name="viewStateException" Type="System.Web.UI.ViewStateException" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode">イベントに関連付けられているコード。 カスタム イベントを実装するときにイベントのコードがより大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントの詳細な識別子を指定する値。</param>
+        <param name="viewStateException"><see cref="T:System.Web.UI.ViewStateException" />障害に起因します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebViewStateFailureAuditEvent" />クラス、指定されたパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET の稼働状況の監視システムで内部的に使用します。 インスタンス化に使用しないが、<xref:System.Web.Management.WebViewStateFailureAuditEvent>が、オブジェクトは、このクラスから継承する独自のイベントの種類を実装する場合に、このコンス トラクターに呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewStateException">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ViewStateException ViewStateException { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ViewStateException ViewStateException" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebViewStateFailureAuditEvent.ViewStateException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ViewStateException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>障害の原因となった例外を取得します。</summary>
+        <value><see cref="T:System.Web.UI.ViewStateException" />障害に起因します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ViewStateException>ビュー ステートを改ざんしようか、異なるキーを持つ別のコンピューターから、再利用することを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

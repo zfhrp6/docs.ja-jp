@@ -1,0 +1,360 @@
+<Type Name="GlobalCatalog" FullName="System.DirectoryServices.ActiveDirectory.GlobalCatalog">
+  <TypeSignature Language="C#" Value="public class GlobalCatalog : System.DirectoryServices.ActiveDirectory.DomainController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GlobalCatalog extends System.DirectoryServices.ActiveDirectory.DomainController" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.ActiveDirectory.DomainController</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />クラスは、グローバル カタログ サーバーを表します。 グローバル カタログ サーバーは、グローバル カタログのレプリカをホストするドメイン コント ローラーです。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName="DisableGlobalCatalog">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DomainController DisableGlobalCatalog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.DomainController DisableGlobalCatalog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.DisableGlobalCatalog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DomainController</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>グローバル カタログ サーバーからこのドメイン コント ローラーは降格されます。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.DomainController" />をドメイン コント ローラーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ドメイン コント ローラーがグローバル カタログ サーバーではないまたはグローバル カタログ サーバーが既に無効になっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableGlobalCatalog">
+      <MemberSignature Language="C#" Value="public override System.DirectoryServices.ActiveDirectory.GlobalCatalog EnableGlobalCatalog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.DirectoryServices.ActiveDirectory.GlobalCatalog EnableGlobalCatalog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.EnableGlobalCatalog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サポートされていません、<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />クラスこのドメイン コント ローラーがグローバル カタログ サーバーでは既にためです。</summary>
+        <returns>該当なし。 このメソッドは常にスロー、<see cref="T:System.InvalidOperationException" />例外。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ドメイン コント ローラーはグローバル カタログ サーバーでは既にです。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAll (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAll(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindAll(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。 コンテキストの対象では、フォレストを指定する必要があります。</param>
+        <summary>指定したコンテキスト内のすべてのグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />検索で見つかったグローバル カタログ サーバーを含むオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAll (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAll(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindAll(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。 コンテキストの対象では、フォレストを指定する必要があります。</param>
+        <param name="siteName">グローバル カタログ サーバーを検索するサイトの名前。</param>
+        <summary>指定したコンテキストとサイト内には、すべてのグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection" />検索で見つかったグローバル カタログ サーバーを含むオブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> または <paramref name="siteName" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAllProperties">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindAllProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのグローバル カタログ サーバーに格納されている Active Directory ドメイン サービスのプロパティを取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection" />このグローバル カタログ サーバーに格納されている Active Directory ドメイン サービスのプロパティを含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の c# の例は、指定したグローバル カタログ サーバーを列挙する方法を示します<xref:System.DirectoryServices.ActiveDirectory.DirectoryContext>オブジェクトし、標準のコンソールには、各グローバル カタログ サーバーに格納されている各プロパティの共通名を出力します。  
+  
+```csharp  
+  
+foreach (GlobalCatalog gc in GlobalCatalog.FindAll(context))  
+{  
+    Console.WriteLine(gc.Name);  
+  
+    foreach (ActiveDirectorySchemaProperty prop in gc.FindAllProperties())  
+    {  
+        Console.WriteLine(prop.CommonName);  
+    }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ドメイン コント ローラーがグローバル カタログ サーバーではないまたはグローバル カタログ サーバーを無効になっています。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOne">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindOne(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。</param>
+        <summary>指定したコンテキスト内の単一のグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />検索で見つかったグローバル カタログ サーバーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログ サーバーが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOne">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne (System.DirectoryServices.ActiveDirectory.DirectoryContext context, System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindOne(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。</param>
+        <param name="flag">1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />メンバーを検索するグローバル カタログ サーバーの種類を定義します。</param>
+        <summary>追加の検索オプションのことが、指定されたコンテキスト内の単一のグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />検索で見つかったグローバル カタログ サーバーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログ サーバーが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> または <paramref name="flag" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOne">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindOne(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。</param>
+        <param name="siteName">グローバル カタログ サーバーを検索するサイトの名前。</param>
+        <summary>指定したコンテキストとサイト内には、単一のグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />検索で見つかったグローバル カタログ サーバーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログ サーバーが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> または <paramref name="siteName" /> が有効ではありません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindOne">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalog FindOne(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string siteName, valuetype System.DirectoryServices.ActiveDirectory.LocatorOptions flag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.FindOne(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.LocatorOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="siteName" Type="System.String" />
+        <Parameter Name="flag" Type="System.DirectoryServices.ActiveDirectory.LocatorOptions" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットおよび検索に使用する資格情報を含むオブジェクトです。</param>
+        <param name="siteName">グローバル カタログ サーバーを検索するサイトの名前。</param>
+        <param name="flag">1 つまたは複数の組み合わせ、<see cref="T:System.DirectoryServices.ActiveDirectory.LocatorOptions" />メンバーを検索するグローバル カタログ サーバーの種類を定義します。</param>
+        <summary>追加の検索オプションのことが、指定したコンテキストと、サイト内には、単一のグローバル カタログ サーバーを検索します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />検索で見つかったグローバル カタログ サーバーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">グローバル カタログ サーバーが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" />、 <paramref name="siteName" />、または<paramref name="flag" />が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> または <paramref name="siteName" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectorySearcher">
+      <MemberSignature Language="C#" Value="public override System.DirectoryServices.DirectorySearcher GetDirectorySearcher ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.DirectoryServices.DirectorySearcher GetDirectorySearcher() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.GetDirectorySearcher" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectorySearcher</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.DirectoryServices.DirectorySearcher" />グローバル カタログ サーバーのオブジェクト。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.DirectorySearcher" />グローバル カタログ サーバーのオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">グローバル カタログ サーバーが無効になりました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalCatalog">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.GlobalCatalog GetGlobalCatalog (System.DirectoryServices.ActiveDirectory.DirectoryContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.GlobalCatalog GetGlobalCatalog(class System.DirectoryServices.ActiveDirectory.DirectoryContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.GetGlobalCatalog(System.DirectoryServices.ActiveDirectory.DirectoryContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.GlobalCatalog</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />ターゲットとオブジェクトの取得に使用する資格情報を含むオブジェクト。 コンテキストの対象では、ドメイン コント ローラーを指定する必要があります。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />指定したコンテキストのオブジェクト。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.GlobalCatalog" />発見されたグローバル カタログ サーバーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException">指定されたターゲットへの接続を<paramref name="context" />を確立できませんでした。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="context" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGlobalCatalog">
+      <MemberSignature Language="C#" Value="public override bool IsGlobalCatalog ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsGlobalCatalog() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.GlobalCatalog.IsGlobalCatalog" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このドメイン コント ローラーがグローバル カタログ サーバーであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />このドメイン コント ローラーがグローバル カタログ サーバーです。<see langword="false" />グローバル カタログ サーバーではない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">グローバル カタログ サーバーが無効になりました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のオブジェクトは破棄されました。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

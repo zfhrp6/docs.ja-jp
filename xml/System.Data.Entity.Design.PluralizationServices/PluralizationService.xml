@@ -1,0 +1,217 @@
+<Type Name="PluralizationService" FullName="System.Data.Entity.Design.PluralizationServices.PluralizationService">
+  <TypeSignature Language="C#" Value="public abstract class PluralizationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PluralizationService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単語の複数形と単数形を構築するためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PluralizationService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateService">
+      <MemberSignature Language="C#" Value="public static System.Data.Entity.Design.PluralizationServices.PluralizationService CreateService (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Data.Entity.Design.PluralizationServices.PluralizationService CreateService(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.CreateService(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Entity.Design.PluralizationServices.PluralizationService</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />単語の単数形と複数形のフォームに適用される言語の規則に対応します。</param>
+        <summary>作成、<see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />を指定された対応する言語の規則を適用する<see cref="T:System.Globalization.CultureInfo" />です。</summary>
+        <returns>新しく作成された<see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Culture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo Culture { get; protected set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo Culture" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Entity.Design.PluralizationServices.PluralizationService.Culture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Entity.Design.PluralizationServices.PluralizationService" />カルチャ。</summary>
+        <value>どの言語が単数形と複数形に適用する規則を指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPlural">
+      <MemberSignature Language="C#" Value="public abstract bool IsPlural (string word);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsPlural(string word) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsPlural(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="word" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="word">分析する値。</param>
+        <summary>指定された単語が複数形がかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合は、単語が複数形です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ 両方の<xref:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsPlural%2A>と<xref:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsSingular%2A>メソッドが返すことができます`true`同じ word 用です。 たとえば、両方のメソッドが返されます`true`"fish"という単語をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSingular">
+      <MemberSignature Language="C#" Value="public abstract bool IsSingular (string word);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSingular(string word) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsSingular(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="word" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="word">分析する値。</param>
+        <summary>指定された単語が単数形がかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />単語の単数形; がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ 両方の<xref:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsSingular%2A>と<xref:System.Data.Entity.Design.PluralizationServices.PluralizationService.IsPlural%2A>メソッドが返すことができます`true`同じ word 用です。 たとえば、両方のメソッドが返されます`true`"fish"という単語をします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pluralize">
+      <MemberSignature Language="C#" Value="public abstract string Pluralize (string word);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Pluralize(string word) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.Pluralize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="word" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="word">複数形にする単語。</param>
+        <summary>指定した単語の複数形を返します</summary>
+        <returns>入力パラメーターの複数形です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Singularize">
+      <MemberSignature Language="C#" Value="public abstract string Singularize (string word);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string Singularize(string word) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Entity.Design.PluralizationServices.PluralizationService.Singularize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="word" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="word">単数形にする単語。</param>
+        <summary>指定した単語の単数形を返します。</summary>
+        <returns>入力パラメーターの単数形です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Entity.Design.PluralizationServices.PluralizationService>クラスには、単語の複数形と単数形を構築するための英語のルールが適用されます。 他の言語にサービスを拡張するには、使用、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator.PluralizationService>上、<xref:System.Data.Entity.Design.EntityModelSchemaGenerator>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

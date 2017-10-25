@@ -1,0 +1,248 @@
+<Type Name="XmlSchemaValidationFlags" FullName="System.Xml.Schema.XmlSchemaValidationFlags">
+  <TypeSignature Language="C#" Value="public enum XmlSchemaValidationFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XmlSchemaValidationFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaValidationFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって使用されるスキーマの検証オプションを指定します、<see cref="T:System.Xml.Schema.XmlSchemaValidator" />と<see cref="T:System.Xml.XmlReader" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する際の注意は、次のとおり<xref:System.Xml.Schema.XmlSchemaValidationFlags>の値を使った、<xref:System.Xml.XmlReader>です。  
+  
+-   <xref:System.Xml.Schema.XmlSchemaValidationFlags>値がスキーマ検証で使用される検証オプションを定義する<xref:System.Xml.XmlReader>スキーマに対する XML の検証を実行します。 <xref:System.Xml.Schema.XmlSchemaValidationFlags>検証型の値<xref:System.Xml.XmlReader>を使用して指定された、<xref:System.Xml.XmlReaderSettings.ValidationFlags%2A>プロパティです。  
+  
+ AllowXmlAttributes 値を使用する際に考慮するノートを次に示します。  
+  
+1.  スキーマが Xml 名前空間をインポートしないとします。  
+  
+    1.  AllowXmlAttributes に設定されている場合`true`(既定値)、インスタンス ドキュメントを含む Xml 属性と、検証エンジンが既定の Xml 名前空間のスキーマのスナップショットをロードおよび検証に使用します。 インスタンス ドキュメントで使用される Xml 属性は、既定のスキーマが見つからない場合、ドキュメントは検証されません。  
+  
+    2.  AllowXmlAttributes に設定されている場合`false`インスタンス ドキュメントを含む Xml 属性と、検証エンジンがエラーを報告します。  
+  
+2.  スキーマが Xml 名前空間の場所なしにインポートする場合。  
+  
+    1.  AllowXmlAttributes に設定されている場合`true`(既定値) と、インスタンス ドキュメントには Xml 属性が含まれています、検証エンジンは、検証の既定の Xml 名前空間のスキーマを使用します。 インスタンス ドキュメントで使用される Xml 属性は、既定のスキーマが見つからない場合、ドキュメントは検証されません。  
+  
+    2.  AllowXmlAttributes に設定されている場合`false`インスタンス ドキュメントには、明示的に許可されていません、スキーマで検証エンジンがエラーを報告する Xml 属性が含まれています。  
+  
+    3.  AllowXmlAttributes に設定されている場合`false`インスタンス ドキュメントには検証エンジンが既定の Xml 名前空間のスキーマを使用して他の属性を検証して同じ方法には属性の検証は、スキーマによって許可が明示的に Xml 属性が含まれています。  
+  
+3.  スキーマは、カスタム schemaLocation でカスタム Xml 名前空間のスキーマをインポートする場合。  
+  
+    1.  AllowXmlAttributes に設定されている場合`true`(既定値) と、インスタンス ドキュメントには Xml 属性が含まれています、検証エンジンは検証にカスタムの Xml 名前空間のスキーマを使用します。 指定されたスキーマで、インスタンス ドキュメントで使用される Xml 属性が見つからない場合、ドキュメントは検証されません。  
+  
+    2.  AllowXmlAttributes に設定されている場合`false`インスタンス ドキュメントには、明示的に許可されていません、スキーマで検証エンジンがエラーを報告する Xml 属性が含まれています。  
+  
+    3.  AllowXmlAttributes に設定されている場合`false`インスタンス ドキュメントには検証エンジンは指定された Xml 名前空間のスキーマを使用して他の属性を検証すると同様に、属性に検証、スキーマによって許可が明示的に Xml 属性が含まれています。  
+  
+4.  スキーマが xml を定義する場合: * を使用して属性 ="required"です。  
+  
+    1.  AllowXmlAttributes に設定されている場合に、次が適用されます`true`と`false`です。 必須の xml: * 属性がその他の属性として処理する必要があり、指定された Xml 名前空間のスキーマを使用して検証します。  
+  
+5.  スキーマが xml を定義する場合: * を使用して属性 ="prohibited"です。  
+  
+    1.  AllowXmlAttributes に設定されている場合に、次が適用されます`true`と`false`です。 インスタンス ドキュメントには、xml が含まれている場合: * 明示的には、属性、スキーマによって禁止されている、検証エンジンがエラーを報告します。  
+  
+6.  ときに、スキーマは、属性のワイルドカードを指定します。  
+  
+    1.  インスタンス ドキュメントには、Xml 属性が含まれています。 スキーマ processContents 省略するか、"strict"に設定と属性のワイルドカードを指定する場合は、検証エンジンがスキーマを使用して、Xml 名前空間内に存在、<xref:System.Xml.Schema.XmlSchemaSet>です。 Xml 名前空間のスキーマが指定されていない場合は、検証エンジンがとおりに動作します。  
+  
+    2.  AllowXmlAttributes に設定されている場合`true`検証を実行する検証エンジンが既定の Xml 名前空間のスキーマを使用します。  
+  
+    3.  AllowXmlAttributes に設定されている場合`false`、検証エンジンがエラーを報告します。  
+  
+    4.  インスタンス ドキュメントには、Xml 属性が含まれています。 スキーマ processContents [skip] に設定と属性のワイルドカードを指定する場合は、検証エンジンは、属性の検証をスキップします。  
+  
+    5.  インスタンス ドキュメントには、Xml 属性が含まれています。 スキーマ processContents [lax] に設定と属性のワイルドカードを指定する場合は、検証エンジンがスキーマを使用して、Xml 名前空間内に存在、<xref:System.Xml.Schema.XmlSchemaSet>です。 Xml 名前空間のスキーマが指定されていない場合は、検証エンジンがとおりに動作します。  
+  
+    6.  AllowXmlAttributes に設定されている場合`true`検証を実行する検証エンジンが既定の Xml 名前空間のスキーマを使用します。  
+  
+    7.  AllowXmlAttributes に設定されている場合`false`属性の検証は行われません。  
+  
+7.  ときに、単純型を検証しています。  
+  
+    1.  AllowXmlAttributes に設定すると`true`(既定)、Xml 属性は、単純型の要素に対して許可されます。  
+  
+   
+  
+## Examples  
+ 例については、<xref:System.Xml.Schema.XmlSchemaValidationFlags.AllowXmlAttributes>クラスを参照してください、<xref:System.Xml.Schema.XmlSchemaValidator>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowXmlAttributes">
+      <MemberSignature Language="C#" Value="AllowXmlAttributes" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags AllowXmlAttributes = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.AllowXmlAttributes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Xml を許可する: *、スキーマで定義されていない場合でもの属性です。 属性は、そのデータ型に基づいて検証されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Identity 制約、インライン スキーマ、スキーマの場所のヒント、またはレポート スキーマの検証の警告を処理しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessIdentityConstraints">
+      <MemberSignature Language="C#" Value="ProcessIdentityConstraints" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags ProcessIdentityConstraints = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessIdentityConstraints" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Id 制約を処理 (<c>xs:ID</c>、 <c>xs:IDREF</c>、<c>読み込み</c>、<c>います</c>、 <c>xs: 一意</c>)検証中に発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessInlineSchema">
+      <MemberSignature Language="C#" Value="ProcessInlineSchema" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags ProcessInlineSchema = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessInlineSchema" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証中に発生したインライン スキーマを処理します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSchemaLocation">
+      <MemberSignature Language="C#" Value="ProcessSchemaLocation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags ProcessSchemaLocation = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.ProcessSchemaLocation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スキーマの場所のヒントを処理 (<c>xsi:schemaLocation</c>、 <c>xsi:noNamespaceSchemaLocation</c>) の検証中に発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReportValidationWarnings">
+      <MemberSignature Language="C#" Value="ReportValidationWarnings" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Xml.Schema.XmlSchemaValidationFlags ReportValidationWarnings = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Xml.Schema.XmlSchemaValidationFlags.ReportValidationWarnings" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaValidationFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検証中に発生したスキーマ検証の警告を報告します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

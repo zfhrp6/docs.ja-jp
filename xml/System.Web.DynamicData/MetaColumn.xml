@@ -1,0 +1,982 @@
+<Type Name="MetaColumn" FullName="System.Web.DynamicData.MetaColumn">
+  <TypeSignature Language="C#" Value="public class MetaColumn : System.Web.DynamicData.IFieldFormattingOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MetaColumn extends System.Object implements class System.Web.DynamicData.IFieldFormattingOptions" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.MetaColumn" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IFieldFormattingOptions</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>動的データによって使用されているデータベース列を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 動的データのアプリケーションで、<xref:System.Web.DynamicData.MetaColumn>クラスは、データベース フィールドを表します。 <xref:System.Web.DynamicData.MetaColumn>クラスでは、型およびメタデータの情報などのデータ フィールドに関する情報を取得することができます。  
+  
+ 使用してデータ フィールドが属するテーブルを取得することができます、<xref:System.Web.DynamicData.MetaColumn.Table%2A>プロパティです。 使用して、データ モデルを取得することも、<xref:System.Web.DynamicData.MetaColumn.Model%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MetaColumn (System.Web.DynamicData.MetaTable table, System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.DynamicData.MetaTable table, class System.Web.DynamicData.ModelProviders.ColumnProvider columnProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaColumn.#ctor(System.Web.DynamicData.MetaTable,System.Web.DynamicData.ModelProviders.ColumnProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="table" Type="System.Web.DynamicData.MetaTable" />
+        <Parameter Name="columnProvider" Type="System.Web.DynamicData.ModelProviders.ColumnProvider" />
+      </Parameters>
+      <Docs>
+        <param name="table">列が含まれるメタデータ テーブルです。</param>
+        <param name="columnProvider">列のプロバイダー。</param>
+        <summary><see cref="T:System.Web.DynamicData.MetaColumn" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInitialValue">
+      <MemberSignature Language="C#" Value="public bool AllowInitialValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowInitialValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.AllowInitialValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または列に挿入する値が有効かどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />列が挿入される; 値を有効にした場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は`false`列は読み取り専用の場合と`true`ときに、列は読み取り専用です。 既定値を使用してオーバーライドできます、<xref:System.ComponentModel.DataAnnotations.EditableAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyFormatInEditMode">
+      <MemberSignature Language="C#" Value="public bool ApplyFormatInEditMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyFormatInEditMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.ApplyFormatInEditMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式指定文字列が指定されているかどうかを示す値を取得、<see cref="P:System.Web.DynamicData.MetaColumn.DataFormatString" />データ バインド コントロールにはで表されるデータ フィールドが含まれているときに、フィールドの値にプロパティが適用される、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクトが編集モードにします。</summary>
+        <value>
+          <see langword="true" />書式指定文字列が指定されている場合、<see cref="P:System.Web.DynamicData.MetaColumn.DataFormatString" />データ バインド コントロールにはで表されるデータ フィールドが含まれているときに、フィールドの値にプロパティが適用される、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクトが編集モードです。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.ApplyFormatInEditMode%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ApplyFormatInEditMode%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性が見つからない場合は、このプロパティが検証場合、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>の書式情報を取得する属性を適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるデータ フィールドに適用されるメタデータ属性のコレクションを取得、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクト。</summary>
+        <value>によって表されるデータ フィールドに適用されるメタデータ属性のコレクション、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildAttributeCollection">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.AttributeCollection BuildAttributeCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.AttributeCollection BuildAttributeCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaColumn.BuildAttributeCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>属性のコレクションを取得します。</summary>
+        <returns>属性のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります、<xref:System.Web.DynamicData.MetaColumn.BuildAttributeCollection%2A>メソッドにアクセスする前に、<xref:System.Web.DynamicData.MetaColumn.Attributes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnType">
+      <MemberSignature Language="C#" Value="public Type ColumnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ColumnType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.ColumnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの型を取得します。</summary>
+        <value>データ フィールドの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.ColumnType%2A>プロパティは、データ フィールドの共通言語ランタイム (CLR) 型を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertEmptyStringToNull">
+      <MemberSignature Language="C#" Value="public bool ConvertEmptyStringToNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConvertEmptyStringToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.ConvertEmptyStringToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得する文字列値を空にするかどうか ("") に自動的に変換されます<see langword="null" />値のデータ ソースのデータ フィールドが更新されたときにします。</summary>
+        <value>
+          <see langword="true" />空の文字列値を自動的に変換される場合<see langword="null" />値のデータ フィールドが、それ以外のデータ ソースで更新されたときに<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.ConvertEmptyStringToNull%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.ConvertEmptyStringToNull%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性が見つからない場合は、このプロパティが検証場合、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>の書式情報を取得する属性を適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFormatString">
+      <MemberSignature Language="C#" Value="public string DataFormatString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFormatString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.DataFormatString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値の表示形式を指定する文字列を取得します。</summary>
+        <value>フィールドの値の表示形式を指定する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.DataFormatString%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.DataFormatString%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性が見つからない場合は、このプロパティが検証場合、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>の書式情報を取得する属性を適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTypeAttribute">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.DataAnnotations.DataTypeAttribute DataTypeAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.DataAnnotations.DataTypeAttribute DataTypeAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.DataTypeAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.DataAnnotations.DataTypeAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.ComponentModel.DataAnnotations.DataTypeAttribute" />データ フィールドに適用される属性です。</summary>
+        <value><see cref="T:System.ComponentModel.DataAnnotations.DataTypeAttribute" />データ フィールドに適用される属性です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultValue">
+      <MemberSignature Language="C#" Value="public object DefaultValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DefaultValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.DefaultValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの既定値を取得します。</summary>
+        <value>データ フィールドの既定値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.DefaultValue%2A>プロパティは、通常、新しいエントリが作成されるときに、フィールドの値を事前設定に使用します。 このプロパティが検証の場合、<xref:System.ComponentModel.DefaultValueAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DefaultValueAttribute.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public virtual string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの説明を取得します。</summary>
+        <value>データ フィールドの説明です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.Description%2A>プロパティが検証の場合、<xref:System.ComponentModel.DescriptionAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DescriptionAttribute.Description%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public virtual string DisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの表示名を取得します。</summary>
+        <value>データ フィールドの表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.DisplayName%2A>プロパティを返しますいずれかが設定されている場合は、データ フィールドの表示名またはフィールド名の表示名が指定されていない場合。 <xref:System.Web.DynamicData.MetaColumn.DisplayName%2A>プロパティは、わかりやすい表示名があることを確認して設定されていることを確認、<xref:System.ComponentModel.DisplayNameAttribute>属性は、データ フィールドに適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityTypeProperty">
+      <MemberSignature Language="C#" Value="public System.Reflection.PropertyInfo EntityTypeProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.PropertyInfo EntityTypeProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.EntityTypeProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.PropertyInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティ型のデータ フィールドを表すプロパティの属性を格納しているオブジェクトを取得します。</summary>
+        <value>エンティティ型のデータ フィールドを表すプロパティの属性を格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterUIHint">
+      <MemberSignature Language="C#" Value="public string FilterUIHint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilterUIHint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.FilterUIHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.ComponentModel.DataAnnotations.FilterUIHintAttribute.FilterUIHint" />列に対して使用される値。</summary>
+        <value><see cref="P:System.ComponentModel.DataAnnotations.FilterUIHintAttribute.FilterUIHint" />列に対して使用される値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlEncode">
+      <MemberSignature Language="C#" Value="public bool HtmlEncode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HtmlEncode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.HtmlEncode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値は、データ バインド コントロールに表示される前に HTML でエンコードされた、かどうかを示す値を取得します。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected virtual void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaColumn.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンス トラクターが呼び出されたときに使用できない可能性があるデータを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、直接呼び出すことはできません。 初期化をカスタマイズするには、このクラスから派生し、オーバーライドすることができます、、`Initialize`メソッドです。 このメソッドをオーバーライドする場合は、基本コントロールを呼び出す`Initialize`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBinaryData">
+      <MemberSignature Language="C#" Value="public bool IsBinaryData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBinaryData" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsBinaryData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドがバイナリ データを格納しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドには、バイナリ データが含まれている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCustomProperty">
+      <MemberSignature Language="C#" Value="public bool IsCustomProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCustomProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsCustomProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドが、データベースに存在するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データベースにデータ フィールドが存在しない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.DynamicData.MetaColumn.IsCustomProperty%2A>プロパティをデータ フィールドがデータベースにあるかどうか、またはデータ コンテキスト オブジェクトに追加された余分なプロパティを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFloatingPoint">
+      <MemberSignature Language="C#" Value="public bool IsFloatingPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFloatingPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsFloatingPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドが浮動小数点型であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドが浮動小数点型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 種類`float`、 `double`、および`decimal`は浮動小数点型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsForeignKeyComponent">
+      <MemberSignature Language="C#" Value="public bool IsForeignKeyComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsForeignKeyComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsForeignKeyComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドが外部キーの一部であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドが外部キーの一部である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGenerated">
+      <MemberSignature Language="C#" Value="public bool IsGenerated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGenerated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsGenerated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの値がデータベースで自動的に生成するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドの値が自動的にで生成されるデータベースです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInteger">
+      <MemberSignature Language="C#" Value="public bool IsInteger { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInteger" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsInteger" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの型が整数型であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドの型が整数型です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 種類`byte`、 `short`、 `int`、および`long`は整数型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLongString">
+      <MemberSignature Language="C#" Value="public bool IsLongString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLongString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsLongString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの型が長い文字列を含めることができるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドの型は長さの文字列を含めることができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SQL 型`text`、 `ntext`、 `varchar`、および`nvarchar`長い文字列を含めることができます。 値、<xref:System.Web.DynamicData.MetaColumn.IsLongString%2A>フィールド値を変更するユーザーを有効にする ボックスまたは TextArea フィールド テンプレートを表示するかどうかを決定するプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrimaryKey">
+      <MemberSignature Language="C#" Value="public bool IsPrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsPrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドがテーブルの主キーの一部であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドがテーブルの主キーの一部である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public virtual bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドは読み取り専用です。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequired">
+      <MemberSignature Language="C#" Value="public bool IsRequired { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequired" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに値が必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドに値が必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.Description%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.RequiredAttribute>データ フィールドに属性が適用されるか、データベース スキーマには、データに関する情報が含まれている場合のフィールドでのデータベースにデータ フィールドに値が必要とするかどうかを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsString">
+      <MemberSignature Language="C#" Value="public bool IsString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.IsString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの型が文字列型かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドの型が文字列型である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public int MaxLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに格納できるデータの最大長を示す値を取得します。</summary>
+        <value>データ フィールドに格納できるデータの最大長。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.MaxLength%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute.MaximumLength%2A>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.StringLengthAttribute>属性は、データ フィールドに適用されない、<xref:System.Web.DynamicData.MetaColumn.MaxLength%2A>プロパティでは、データベースの種類を使用して、許容最大長を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Model">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaModel Model { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaModel Model" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Model" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaModel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaModel" />をこのデータ フィールドが属しているデータ モデルを表すオブジェクト。</summary>
+        <value>このデータ フィールドが属しているデータ モデルを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの名前を取得します。</summary>
+        <value>データ フィールドの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NullDisplayText">
+      <MemberSignature Language="C#" Value="public string NullDisplayText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NullDisplayText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.NullDisplayText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値がフィールドの表示されるキャプションを取得<see langword="null" />です。</summary>
+        <value>フィールドの値がフィールドに表示されるキャプション<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.NullDisplayText%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute.NullDisplayText%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.DisplayFormatAttribute>属性が見つからない場合は、このプロパティが検証場合、<xref:System.ComponentModel.DataAnnotations.DataTypeAttribute>の書式情報を取得する属性を適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prompt">
+      <MemberSignature Language="C#" Value="public virtual string Prompt { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prompt" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Prompt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のデータにバインドされている UI 内のウォーターマークとして使用できる値を取得します。</summary>
+        <value>列のデータにバインドされている UI 内のウォーターマークとして使用できる値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`null`または空の文字列が返されることができます。  
+  
+   
+  
+## Examples  
+ このプロパティ、<xref:System.ComponentModel.DataAnnotations.DisplayAttribute>データ エンティティのメタ クラス内の列の定義内の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.ModelProviders.ColumnProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.ModelProviders.ColumnProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.ModelProviders.ColumnProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成に使用される抽象化プロバイダー オブジェクトを取得、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクト。</summary>
+        <value>生成に使用される抽象化プロバイダー オブジェクト、<see cref="T:System.Web.DynamicData.MetaColumn" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredErrorMessage">
+      <MemberSignature Language="C#" Value="public string RequiredErrorMessage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequiredErrorMessage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.RequiredErrorMessage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに値が必要ですが、その値が空のときに表示されるエラー メッセージを取得します。</summary>
+        <value>データ フィールドに値が必要ですが、その値が空のときに表示されるエラー メッセージ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetMetadata">
+      <MemberSignature Language="C#" Value="public void ResetMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResetMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaColumn.ResetMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>列のメタデータをキャッシュされたをクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列のメタデータは、属性から派生して、パフォーマンスをキャッシュする情報です。 このメソッドを呼び出すと、この列のメタデータ キャッシュがクリアします。 メタデータ キャッシュでは、次回のメタデータから派生した任意の情報を要求を再構築されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scaffold">
+      <MemberSignature Language="C#" Value="public virtual bool Scaffold { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Scaffold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Scaffold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドを表示するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ フィールドを表示する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.Scaffold%2A>プロパティは、ASP.NET 動的データが自動的に生成時にデータ フィールドを表示するかどうかを示します。 このプロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute>属性は、データ フィールドに適用されの値を返します、<xref:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute.Scaffold%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.ScaffoldColumnAttribute>属性は、データ フィールドに適用されない、動的なデータでは、次の規則を使用して、列を表示するかどうかを判断します。  
+  
+-   場合、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性が、データ フィールドに適用されると、データ フィールドが表示されます。 このルールは、他のすべてのルールを上書きします。  
+  
+-   場合の値、<xref:System.Web.DynamicData.MetaColumn.IsForeignKeyComponent%2A>プロパティは`true`、データ フィールドは表示されません。 これは、動的なデータが別の方法で外部キー フィールドを処理し、外部キー フィールドの値は通常表示されません。  
+  
+-   場合の値、<xref:System.Web.DynamicData.MetaColumn.IsGenerated%2A>プロパティは`true`、データ フィールドは表示されません。 通常、データベースに自動的に生成されるフィールドには、関連する情報はありません。 適用することを確認してください、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>データ フィールドに属性の場合は、データ フィールドを表示する必要があります。  
+  
+-   場合の値、<xref:System.Web.DynamicData.MetaColumn.IsCustomProperty%2A>プロパティは`true`、データ フィールドは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShortDisplayName">
+      <MemberSignature Language="C#" Value="public virtual string ShortDisplayName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ShortDisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.ShortDisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列の短い名前を取得します。</summary>
+        <value>列の短い名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、の提供<xref:System.Web.UI.WebControls.GridView>コントロールおよびその他のコントロールのための短い名前が必要な場所は、列ヘッダーの空き領域を制限します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public string SortExpression { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの並べ替え順序を決定するために使用される式を取得します。</summary>
+        <value>データ フィールドの並べ替え順序を決定するために使用する式です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.DynamicData.MetaTable" />データ フィールドが属するテーブルを表すオブジェクト。</summary>
+        <value>データ フィールドが属するテーブルを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.MetaColumn.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ フィールド名を取得します。</summary>
+        <returns>これは、列の文字列形式をデータ フィールドの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeCode">
+      <MemberSignature Language="C#" Value="public TypeCode TypeCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TypeCode TypeCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.TypeCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TypeCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドの種類を取得します。</summary>
+        <value>データ フィールドの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.TypeCode%2A>プロパティの値がの値から派生した、<xref:System.Web.DynamicData.MetaColumn.ColumnType%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UIHint">
+      <MemberSignature Language="C#" Value="public virtual string UIHint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UIHint" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.MetaColumn.UIHint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ フィールドに指定されたフィールド テンプレートの名前を取得します。</summary>
+        <value>データ フィールドに指定されたフィールド テンプレートの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.MetaColumn.UIHint%2A>プロパティが検証の場合、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性は、データ フィールドに適用されの値を取得、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute.UIHint%2A?displayProperty=nameWithType>プロパティです。 場合、<xref:System.ComponentModel.DataAnnotations.UIHintAttribute>属性は、データ フィールドに適用されない、<xref:System.Web.DynamicData.MetaColumn.UIHint%2A>プロパティが空の文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,92 @@
+<Type Name="UpDownEventArgs" FullName="System.Windows.Forms.UpDownEventArgs">
+  <TypeSignature Language="C#" Value="public class UpDownEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UpDownEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.UpDownEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生したコントロールのデータを提供、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.UpDownEventArgs>はユーザーから派生したコントロールにボタンをクリックしたときに使用、<xref:System.Windows.Forms.UpDownBase>コントロール。 <xref:System.Windows.Forms.UpDownEventArgs>ボタンがクリックされた情報が含まれています。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpDownEventArgs (int buttonPushed);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 buttonPushed) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.UpDownEventArgs.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="buttonPushed" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buttonPushed">クリックしてされたボタン、<see cref="T:System.Windows.Forms.UpDownBase" />コントロール。</param>
+        <summary>
+          <see cref="T:System.Windows.Forms.UpDownEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、有効な値`buttonPushed`です。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|0|どちらの button がクリックしてされました。|  
+|1|状態の button がクリックしてされました。|  
+|2|下矢印ボタンがクリックしてされました。|  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonID">
+      <MemberSignature Language="C#" Value="public int ButtonID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ButtonID" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.UpDownEventArgs.ButtonID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがボタンを表すした値を取得します。</summary>
+        <value>クリックしたユーザーがボタンを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、値を<xref:System.Windows.Forms.UpDownEventArgs.ButtonID%2A>を返します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|0|どちらの button がクリックしてされました。|  
+|1|状態の button がクリックしてされました。|  
+|2|下矢印ボタンがクリックしてされました。|  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

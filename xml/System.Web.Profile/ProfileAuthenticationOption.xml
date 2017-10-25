@@ -1,0 +1,84 @@
+<Type Name="ProfileAuthenticationOption" FullName="System.Web.Profile.ProfileAuthenticationOption">
+  <TypeSignature Language="C#" Value="public enum ProfileAuthenticationOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProfileAuthenticationOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileAuthenticationOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>検索するユーザー プロファイルの認証の種類について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileAuthenticationOption>プロファイル プロバイダーで列挙を使用し、<xref:System.Web.Profile.ProfileManager>それらを削除したとき、データ ソースでプロファイルを検索する際のクラスです。 <xref:System.Web.Profile.ProfileAuthenticationOption>列挙体を使用して認証されると、専用のみ匿名かどうかを選択またはすべてのプロファイルが検索されます。  
+  
+   
+  
+## Examples  
+ 次のコード例により、ユーザーを表示および削除を含む検索条件に基づいてアクティブおよび非アクティブなプロファイル情報を<xref:System.Web.Profile.ProfileAuthenticationOption>パラメーター。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.Profile.ProfileManager#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/CS/FindProfilesByUserNamecs.aspx#5)]
+ [!code-aspx-vb[System.Web.Profile.ProfileManager#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager/VB/FindProfilesByUserNamevb.aspx#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Profile.ProfileAuthenticationOption All = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Profile.ProfileAuthenticationOption.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileAuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのプロファイルを検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Anonymous">
+      <MemberSignature Language="C#" Value="Anonymous" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Profile.ProfileAuthenticationOption Anonymous = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Profile.ProfileAuthenticationOption.Anonymous" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileAuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>匿名プロファイルのみを検索します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticated">
+      <MemberSignature Language="C#" Value="Authenticated" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Profile.ProfileAuthenticationOption Authenticated = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Profile.ProfileAuthenticationOption.Authenticated" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Profile.ProfileAuthenticationOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証済みのプロファイルのみを検索します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,563 @@
+<Type Name="RelatedObjectQuery" FullName="System.Management.RelatedObjectQuery">
+  <TypeSignature Language="C#" Value="public class RelatedObjectQuery : System.Management.WqlObjectQuery" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RelatedObjectQuery extends System.Management.WqlObjectQuery" />
+  <TypeSignature Language="DocId" Value="T:System.Management.RelatedObjectQuery" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.WqlObjectQuery</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>WQL を表す*関連子の*データ クエリ。 インスタンスとスキーマのクエリの両方を使用できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedObjectQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.RelatedObjectQuery" /> クラスの新しいインスタンスを初期化します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedObjectQuery (string queryOrSourceObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string queryOrSourceObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="queryOrSourceObject" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="queryOrSourceObject">クエリ文字列またはソース オブジェクトのパス。</param>
+        <summary><see cref="T:System.Management.RelatedObjectQuery" /> クラスの新しいインスタンスを初期化します。 指定した文字列は、WQL クエリとして正常に解析できる場合、は、クエリ文字列と見なされますそれ以外の場合、クエリのソース オブジェクトのパスであると見なされます。 この場合、クエリは、インスタンスのクエリと見なされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedObjectQuery (string sourceObject, string relatedClass);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourceObject, string relatedClass) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceObject" Type="System.String" />
+        <Parameter Name="relatedClass" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceObject">このクエリのソース オブジェクトのパス。</param>
+        <param name="relatedClass">関連するオブジェクトのクラスです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.RelatedObjectQuery" />指定されたソース オブジェクトと関連するクラスのクラスです。 クエリは、(スキーマのクエリ) ではなくインスタンス クエリと見なされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedObjectQuery (bool isSchemaQuery, string sourceObject, string relatedClass, string relationshipClass, string relatedQualifier, string relationshipQualifier, string relatedRole, string thisRole);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isSchemaQuery, string sourceObject, string relatedClass, string relationshipClass, string relatedQualifier, string relationshipQualifier, string relatedRole, string thisRole) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.#ctor(System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isSchemaQuery" Type="System.Boolean" />
+        <Parameter Name="sourceObject" Type="System.String" />
+        <Parameter Name="relatedClass" Type="System.String" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relatedQualifier" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="relatedRole" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="isSchemaQuery">
+          <see langword="true" />スキーマのクエリでは; であることを示すそれ以外の場合、<see langword="false" />です。</param>
+        <param name="sourceObject">ソース クラスのパス。</param>
+        <param name="relatedClass">関連するオブジェクトには、基本クラスが必要です。</param>
+        <param name="relationshipClass">リレーションシップ型。</param>
+        <param name="relatedQualifier">関連するオブジェクトに存在している必須修飾子です。</param>
+        <param name="relationshipQualifier">リレーションシップに存在している必須修飾子です。</param>
+        <param name="relatedRole">ロールの関連オブジェクトは、リレーションシップで再生するために必要です。</param>
+        <param name="thisRole">ソース クラスの関係での役割。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.RelatedObjectQuery" />スキーマを指定したパラメーターのセットを使用してクエリのクラスです。 このコンス トラクターはスキーマ クエリだけで使用: に、最初のパラメーターを設定する必要があります<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelatedObjectQuery (string sourceObject, string relatedClass, string relationshipClass, string relatedQualifier, string relationshipQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string sourceObject, string relatedClass, string relationshipClass, string relatedQualifier, string relationshipQualifier, string relatedRole, string thisRole, bool classDefinitionsOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="sourceObject" Type="System.String" />
+        <Parameter Name="relatedClass" Type="System.String" />
+        <Parameter Name="relationshipClass" Type="System.String" />
+        <Parameter Name="relatedQualifier" Type="System.String" />
+        <Parameter Name="relationshipQualifier" Type="System.String" />
+        <Parameter Name="relatedRole" Type="System.String" />
+        <Parameter Name="thisRole" Type="System.String" />
+        <Parameter Name="classDefinitionsOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sourceObject">ソース オブジェクトのパス。</param>
+        <param name="relatedClass">関連するオブジェクトのクラスが必要です。</param>
+        <param name="relationshipClass">リレーションシップ型。</param>
+        <param name="relatedQualifier">関連するオブジェクトに存在している必須修飾子です。</param>
+        <param name="relationshipQualifier">リレーションシップに存在している必須修飾子です。</param>
+        <param name="relatedRole">ロールの関連オブジェクトは、リレーションシップで再生するために必要です。</param>
+        <param name="thisRole">ソース オブジェクトのリレーションシップの役割。</param>
+        <param name="classDefinitionsOnly">
+          <see langword="true" />関連オブジェクトのクラス定義のみを返すそれ以外の場合は false です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.RelatedObjectQuery" />パラメーターの指定されたセットのクラスです。 クエリは、(スキーマのクエリ) ではなくインスタンス クエリと見なされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildQuery">
+      <MemberSignature Language="C#" Value="protected void BuildQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void BuildQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.BuildQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のプロパティ値に従って、クエリ文字列を構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassDefinitionsOnly">
+      <MemberSignature Language="C#" Value="public bool ClassDefinitionsOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ClassDefinitionsOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.ClassDefinitionsOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリに従うすべてのインスタンスを示す値を取得または、そのクラス定義のみが返されます。 このパラメーターがのインスタンスのクエリに対して有効ではのみです。</summary>
+        <value>返します、<see cref="T:System.Boolean" />をクエリに準拠しているすべてのインスタンスには、クラス定義のみが、返されるかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいフラグを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`クエリが結果セットの唯一のクラス定義を要求する場合それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを作成します。</summary>
+        <returns>コピーされるオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSchemaQuery">
+      <MemberSignature Language="C#" Value="public bool IsSchemaQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSchemaQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.IsSchemaQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキーマのクエリまたはインスタンス クエリであるかどうかを示す値を設定します。</summary>
+        <value>返します、<see cref="T:System.Boolean" />スキーマのクエリであるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいクエリの種類を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、スキーマ上でこのクエリを評価する必要があります。`false`場合は、クエリは、インスタンス上で評価する必要があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseQuery">
+      <MemberSignature Language="C#" Value="protected override void ParseQuery (string query);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void ParseQuery(string query) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.RelatedObjectQuery.ParseQuery(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">解析するクエリ文字列。</param>
+        <summary>クエリ文字列を解析し、それに応じて、プロパティの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedClass">
+      <MemberSignature Language="C#" Value="public string RelatedClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelatedClass" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.RelatedClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンドポイント オブジェクト (関連クラス) のクラスを設定します。</summary>
+        <value>返します、<see cref="T:System.String" />関連のクラス名を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい関連クラスを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 関連するクラス名を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例に関連する WMI クラスの設定、<xref:System.Management.RelatedObjectQuery>です。  
+  
+ [!code-csharp[wminet_RelatedObjectQuery_RelatedClass#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_RelatedObjectQuery_RelatedClass/cs/RelatedObjectQuery_RelatedClass.cs#1)]
+ [!code-vb[wminet_RelatedObjectQuery_RelatedClass#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_RelatedObjectQuery_RelatedClass/vb/RelatedObjectQuery_RelatedClass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedQualifier">
+      <MemberSignature Language="C#" Value="public string RelatedQualifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelatedQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.RelatedQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連するオブジェクトで定義するために必要な修飾子を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />関連のオブジェクトで必要な修飾子の名前を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい修飾子を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 関連するオブジェクトで必要な修飾子の名前を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedRole">
+      <MemberSignature Language="C#" Value="public string RelatedRole { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelatedRole" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.RelatedRole" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または返される関連オブジェクトはリレーションシップで再生する必要があります、ロールを設定します。</summary>
+        <value>返します、<see cref="T:System.String" />関連オブジェクトのロールを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいロールを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ 関連オブジェクトのロールを含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipClass">
+      <MemberSignature Language="C#" Value="public string RelationshipClass { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipClass" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.RelationshipClass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリレーションシップ (関連) の種類を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />リレーションシップ クラス名を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいリレーションシップ クラスを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ リレーションシップ クラス名を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、WMI クラス間のリレーションシップの種類を設定し、<xref:System.Management.RelatedObjectQuery>です。  
+  
+ [!code-csharp[wminet_RelatedObjectQuery_RelationshipClass#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_RelatedObjectQuery_RelationshipClass/cs/RelatedObjectQuery_RelationshipClass.cs#1)]
+ [!code-vb[wminet_RelatedObjectQuery_RelationshipClass#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_RelatedObjectQuery_RelationshipClass/vb/RelatedObjectQuery_RelationshipClass.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipQualifier">
+      <MemberSignature Language="C#" Value="public string RelationshipQualifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.RelationshipQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリレーションシップ オブジェクトで定義するために必要な修飾子を設定します。</summary>
+        <value>返します、<see cref="T:System.String" />リレーションシップ オブジェクトで必要な修飾子の名前を含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しい修飾子を反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ リレーションシップ オブジェクトで必要な修飾子の名前を含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceObject">
+      <MemberSignature Language="C#" Value="public string SourceObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceObject" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.SourceObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリに使用するソース オブジェクトを設定します。 インスタンスのクエリでは、これは通常、インスタンスのパスです。 スキーマのクエリでは、これは通常、クラス名です。</summary>
+        <value>返します、<see cref="T:System.String" />クエリに使用するオブジェクトのパスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいソース オブジェクトを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ クエリに使用するオブジェクトのパスを表す文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThisRole">
+      <MemberSignature Language="C#" Value="public string ThisRole { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThisRole" />
+      <MemberSignature Language="DocId" Value="P:System.Management.RelatedObjectQuery.ThisRole" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリレーションシップのソース オブジェクトを再生する必要があります、ロールを設定します。</summary>
+        <value>返します、<see cref="T:System.String" />オブジェクトのロールを含む値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、オブジェクトに格納されている、以前の値が上書きされます。 クエリ文字列は、新しいロールを反映するように再構築されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ このオブジェクトのロールを含む文字列。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

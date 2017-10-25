@@ -1,0 +1,126 @@
+<Type Name="WebBrowserProgressChangedEventArgs" FullName="System.Windows.Forms.WebBrowserProgressChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class WebBrowserProgressChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebBrowserProgressChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.WebBrowserProgressChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.WebBrowser.ProgressChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理することができます、<xref:System.Windows.Forms.WebBrowser.ProgressChanged?displayProperty=nameWithType>のナビゲーション進行状況バーを実装するイベント、 <xref:System.Windows.Forms.WebBrowser> Internet explorer のようなコントロールです。 使用して、<xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs.CurrentProgress%2A>プロパティが正常にダウンロードされているバイト数を決定します。 使用して、<xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs.MaximumProgress%2A>プロパティをダウンロードするために使用できるバイト数を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.WebBrowser.ProgressChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.WebBrowser>という`WebBrowser1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.WebBrowser.ProgressChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#652](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#652)]
+ [!code-vb[System.Windows.Forms.EventExamples#652](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#652)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowserProgressChangedEventArgs (long currentProgress, long maximumProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 currentProgress, int64 maximumProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.WebBrowserProgressChangedEventArgs.#ctor(System.Int64,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="currentProgress" Type="System.Int64" />
+        <Parameter Name="maximumProgress" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="currentProgress">既に読み込まれているバイト数。</param>
+        <param name="maximumProgress">読み込まれるバイトの総数。</param>
+        <summary><see cref="T:System.Windows.Forms.WebBrowserProgressChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentProgress">
+      <MemberSignature Language="C#" Value="public long CurrentProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CurrentProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.WebBrowserProgressChangedEventArgs.CurrentProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロードされているバイト数を取得します。</summary>
+        <value>読み込まれているバイト数またはダウンロードが完了したことを示す-1 の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して現在のナビゲーション進行状況を表示することができます、<xref:System.Windows.Forms.ProgressBar>コントロール。 使用して、<xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs.MaximumProgress%2A>をダウンロードするために使用できるバイト数の合計数を決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.WebBrowser.ProgressChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.WebBrowser>という`WebBrowser1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.WebBrowser.ProgressChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#652](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#652)]
+ [!code-vb[System.Windows.Forms.EventExamples#652](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#652)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumProgress">
+      <MemberSignature Language="C#" Value="public long MaximumProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 MaximumProgress" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.WebBrowserProgressChangedEventArgs.MaximumProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み込まれるドキュメント内の合計バイト数を取得します。</summary>
+        <value>読み込まれるバイトの総数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して現在のナビゲーション進行状況を表示することができます、<xref:System.Windows.Forms.ProgressBar>コントロール。 使用して、<xref:System.Windows.Forms.WebBrowserProgressChangedEventArgs.CurrentProgress%2A>プロパティが正常にダウンロードされているバイト数を決定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.WebBrowser.ProgressChanged?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.WebBrowser>という`WebBrowser1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.WebBrowser.ProgressChanged?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#652](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#652)]
+ [!code-vb[System.Windows.Forms.EventExamples#652](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#652)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

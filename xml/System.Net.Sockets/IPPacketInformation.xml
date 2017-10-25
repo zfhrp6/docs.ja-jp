@@ -1,0 +1,238 @@
+<Type Name="IPPacketInformation" FullName="System.Net.Sockets.IPPacketInformation">
+  <TypeSignature Language="C#" Value="public struct IPPacketInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit IPPacketInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.IPPacketInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>呼び出しからのパケットの情報を提示して<see cref="M:System.Net.Sockets.Socket.ReceiveMessageFrom(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />または<see cref="M:System.Net.Sockets.Socket.EndReceiveMessageFrom(System.IAsyncResult,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public System.Net.IPAddress Address { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.IPAddress Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.IPPacketInformation.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しの結果を受信したパケットの元の情報を取得、<see cref="M:System.Net.Sockets.Socket.ReceiveMessageFrom(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />メソッドまたは<see cref="M:System.Net.Sockets.Socket.EndReceiveMessageFrom(System.IAsyncResult,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />メソッドです。</summary>
+        <value><see cref="T:System.Net.IPAddress" />呼び出しの結果を受信したパケットの元の情報を示す、<see cref="M:System.Net.Sockets.Socket.ReceiveMessageFrom(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />メソッドまたは<see cref="M:System.Net.Sockets.Socket.EndReceiveMessageFrom(System.IAsyncResult,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />メソッドです。 ユニキャスト アドレスから送信されたパケットの<see cref="P:System.Net.Sockets.IPPacketInformation.Address" />が返される、 <see cref="T:System.Net.IPAddress" /> ; マルチキャストまたはブロードキャスト パケットを送信側の<see cref="P:System.Net.Sockets.IPPacketInformation.Address" />マルチキャストまたはブロードキャスト プロパティを返す<see cref="T:System.Net.IPAddress" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPPacketInformation.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="comparand" />のインスタンスは、<see cref="T:System.Net.Sockets.IPPacketInformation" />インスタンスの値に等しいと、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPPacketInformation.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>Int32 ハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値からハッシュ コードが構築された、<xref:System.Net.Sockets.IPPacketInformation.Address%2A>と<xref:System.Net.Sockets.IPPacketInformation.Interface%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interface">
+      <MemberSignature Language="C#" Value="public int Interface { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Interface" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.IPPacketInformation.Interface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しに関連付けられているネットワーク インターフェイスの情報を取得<see cref="M:System.Net.Sockets.Socket.ReceiveMessageFrom(System.Byte[],System.Int32,System.Int32,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />または<see cref="M:System.Net.Sockets.Socket.EndReceiveMessageFrom(System.IAsyncResult,System.Net.Sockets.SocketFlags@,System.Net.EndPoint@,System.Net.Sockets.IPPacketInformation@)" />です。</summary>
+        <value><see cref="T:System.Int32" />値があり、ネットワーク インターフェイスのインデックスを表します。 このインデックスを使用することができます<see cref="M:System.Net.NetworkInformation.NetworkInterface.GetAllNetworkInterfaces" />の詳細については、関連するインターフェイスを取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Net.Sockets.IPPacketInformation packetInformation1, System.Net.Sockets.IPPacketInformation packetInformation2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Net.Sockets.IPPacketInformation packetInformation1, valuetype System.Net.Sockets.IPPacketInformation packetInformation2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPPacketInformation.op_Equality(System.Net.Sockets.IPPacketInformation,System.Net.Sockets.IPPacketInformation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packetInformation1" Type="System.Net.Sockets.IPPacketInformation" />
+        <Parameter Name="packetInformation2" Type="System.Net.Sockets.IPPacketInformation" />
+      </Parameters>
+      <Docs>
+        <param name="packetInformation1"><see cref="T:System.Net.Sockets.IPPacketInformation" />等値演算子の左側にあるインスタンスです。</param>
+        <param name="packetInformation2"><see cref="T:System.Net.Sockets.IPPacketInformation" />等値演算子の右側にあるインスタンスです。</param>
+        <summary>指定した 2 つあるかどうかをテスト<see cref="T:System.Net.Sockets.IPPacketInformation" />が等価です。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="packetInformation1" /> が等しい場合は <paramref name="packetInformation2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子は、両方をテスト、<xref:System.Net.Sockets.IPPacketInformation.Address%2A>と<xref:System.Net.Sockets.IPPacketInformation.Interface%2A>両方の引数の値。  
+  
+ この演算子を同等の方法は<xref:System.Net.Sockets.IPPacketInformation.Equals(System.Object)>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Net.Sockets.IPPacketInformation packetInformation1, System.Net.Sockets.IPPacketInformation packetInformation2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Net.Sockets.IPPacketInformation packetInformation1, valuetype System.Net.Sockets.IPPacketInformation packetInformation2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.IPPacketInformation.op_Inequality(System.Net.Sockets.IPPacketInformation,System.Net.Sockets.IPPacketInformation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="packetInformation1" Type="System.Net.Sockets.IPPacketInformation" />
+        <Parameter Name="packetInformation2" Type="System.Net.Sockets.IPPacketInformation" />
+      </Parameters>
+      <Docs>
+        <param name="packetInformation1"><see cref="T:System.Net.Sockets.IPPacketInformation" />非等値演算子の左側にあるインスタンスです。</param>
+        <param name="packetInformation2"><see cref="T:System.Net.Sockets.IPPacketInformation" />非等値演算子の右側にあるインスタンスです。</param>
+        <summary>指定した 2 つあるかどうかをテスト<see cref="T:System.Net.Sockets.IPPacketInformation" />インスタンスが等しくないです。</summary>
+        <returns>
+          <paramref name="packetInformation1" /> と <paramref name="packetInformation2" /> が等しくない場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子は、両方をテスト、<xref:System.Net.Sockets.IPPacketInformation.Address%2A>と<xref:System.Net.Sockets.IPPacketInformation.Interface%2A>両方の引数の値。  
+  
+ この演算子を同等の方法は<xref:System.Net.Sockets.IPPacketInformation.Equals(System.Object)>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

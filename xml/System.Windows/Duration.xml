@@ -1,0 +1,714 @@
+<Type Name="Duration" FullName="System.Windows.Duration">
+  <TypeSignature Language="C#" Value="public struct Duration" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Duration extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Duration" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.DurationConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Animation.Timeline" /> がアクティブになっている期間を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Duration"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*object* *property*="[*days*.]*hours*:*minutes*:*seconds*[.*fractionalSeconds*]"/>  
+  
+ \- または  
+  
+ \<*object* *property*="[*days*.]*hours*:*minutes*"/>  
+  
+ \- または  
+  
+ \<*object* *property*="<xref:System.Windows.Duration.Automatic%2A>"/>  
+  
+ \- または  
+  
+ \<*object* *property*="<xref:System.Windows.Duration.Forever%2A>"/>  
+  
+<a name="xamlValues_MinWidth"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *日数*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ この期間の日数の数を示す 0 以上の値です。  
+  
+ *時間*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 0 ~ 23 の値では、この期間からの時間数を表します。  
+  
+ *(分)*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 0 ~ 59 の値では、この期間から分単位の時間を表します。  
+  
+ *(秒)*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ この期間の秒数を表す 0 ~ 59 の範囲値  
+  
+ *fractionalSeconds*  
+ <xref:System.Int32?displayProperty=nameWithType>  
+  
+ 秒の小数部を表す 1 ~ 7 桁の数字で構成される値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Duration (TimeSpan timeSpan);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan timeSpan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.#ctor(System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeSpan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeSpan">この期間の最初の時間間隔を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Duration" />指定構造<see cref="T:System.TimeSpan" />値。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">発生したときに<paramref name="timeSpan" />は負の値に初期化します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration Add (System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Duration Add(valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Add(System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="duration">インスタンス<see cref="T:System.Windows.Duration" />プラスの現在のインスタンスの値を表す<c>期間</c>です。</param>
+        <summary>インスタンスを指定の値を加算<see cref="T:System.Windows.Duration" />現在のインスタンスの値にします。</summary>
+        <returns>場合の両方のインスタンス<see cref="T:System.Windows.Duration" />のインスタンスの値を持つ<see cref="T:System.Windows.Duration" />を表す値の組み合わせ。 それ以外の場合、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration Automatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Duration Automatic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Duration.Automatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Duration" />が自動的に決定する値。</summary>
+        <value>A<see cref="T:System.Windows.Duration" />自動値に初期化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Automatic"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Automatic" />  
+```  
+  
+<a name="xamlValues_Automatic"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *プロパティ*  
+ プロパティを受け付ける、<xref:System.Windows.Duration>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public static int Compare (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Compare(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>いずれかを比較して<see cref="T:System.Windows.Duration" />を別の値。</summary>
+        <returns>場合<paramref name="t1" />はより小さい<paramref name="t2" />、負の値の差を表すです。 場合<paramref name="t1" />と等しい<paramref name="t2" />、0 です。 場合<paramref name="t1" />がより大きい<paramref name="t2" />、正の値の差を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Duration>インスタンスのプロパティ値を持つ<xref:System.Windows.Duration.Automatic%2A>は次の戻り値を持つ特殊なケースです。  
+  
+-   場合`t1`自動と`t2`は、-1 が返されます。  
+  
+-   場合`t1`自動と`t2`も自動的に、0 が返されます。  
+  
+-   場合`t1`自動ではないと`t2`自動、1 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクトに等しいかどうかを確認します。</param>
+        <summary>指定したオブジェクトがのインスタンスと等しいかどうかを判断<see cref="T:System.Windows.Duration" />です。</summary>
+        <returns>
+          <see langword="true" />値が期間; の現在のインスタンスに等しい場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Equals(System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="duration">インスタンス<see cref="T:System.Windows.Duration" />に等しいかどうかを確認します。</param>
+        <summary>指定したかどうかを決定<see cref="T:System.Windows.Duration" />がのこのインスタンスと等しい<see cref="T:System.Windows.Duration" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="duration" />がの現在のインスタンスと等しい<see cref="T:System.Windows.Duration" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Equals(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">最初のインスタンス<see cref="T:System.Windows.Duration" />を比較します。</param>
+        <param name="t2">2 つ目の<see cref="T:System.Windows.Duration" />を比較します。</param>
+        <summary>2 つのインスタンスかどうかを判断の<see cref="T:System.Windows.Duration" />が等しい。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="t1" /> に等しい場合は <paramref name="t2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forever">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration Forever { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Duration Forever" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Duration.Forever" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Duration" />無限の間隔を表す値です。</summary>
+        <value>A<see cref="T:System.Windows.Duration" />永続的な値に初期化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Forever"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Forever" />  
+```  
+  
+<a name="xamlValues_Forever"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *プロパティ*  
+ プロパティを受け付ける、<xref:System.Windows.Duration>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを取得します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasTimeSpan">
+      <MemberSignature Language="C#" Value="public bool HasTimeSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasTimeSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Duration.HasTimeSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得する場合は、この<see cref="T:System.Windows.Duration" />を表す、<see cref="T:System.TimeSpan" />値。</summary>
+        <value>この期間がある場合は true、<see cref="T:System.TimeSpan" />値。 それ以外の場合は false。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration operator + (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Duration op_Addition(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_Addition(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">最初のインスタンス<see cref="T:System.Windows.Duration" />を追加します。</param>
+        <param name="t2">2 つ目の<see cref="T:System.Windows.Duration" />を追加します。</param>
+        <summary>2 つのインスタンスを追加<see cref="T:System.Windows.Duration" />一緒にします。</summary>
+        <returns>場合の両方のインスタンス<see cref="T:System.Windows.Duration" />が<see cref="T:System.TimeSpan" />値、このメソッドは、これら 2 つの値の合計を返します。 いずれかの値に設定されている場合<see cref="P:System.Windows.Duration.Automatic" />、メソッドを返します<see cref="P:System.Windows.Duration.Automatic" />です。 いずれかの値に設定されている場合<see cref="P:System.Windows.Duration.Forever" />、メソッドを返します<see cref="P:System.Windows.Duration.Forever" />です。  
+  
+ いずれか<paramref name="t1" />または<paramref name="t2" />値が存在しない、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Duration.Add%28System.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_Equality(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>2 つのインスタンスかどうかを判断の<see cref="T:System.Windows.Duration" />が等しい。</summary>
+        <returns>
+          <see langword="true" />場合の両方のインスタンス<see cref="T:System.Windows.Duration" />と値であるが等しいか、または場合の両方のインスタンス<see cref="T:System.Windows.Duration" />は<see langword="null" />します。 このメソッドを返しますそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Duration.Equals%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static bool operator &gt; (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThan(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_GreaterThan(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>かどうかを 1 つのインスタンス<see cref="T:System.Windows.Duration" />が他よりも大きいです。</summary>
+        <returns>
+          <see langword="true" />両方<paramref name="t1" />と<paramref name="t2" />値を持つと<paramref name="t1" />がより大きい<paramref name="t2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Duration.Forever%2A>任意の最小有限値より大きいと見なされます。 比較した、<xref:System.Windows.Duration.Automatic%2A>値を返します`false`です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Duration.Compare%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &gt;= (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_GreaterThanOrEqual(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_GreaterThanOrEqual(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>インスタンスかどうかを決定<see cref="T:System.Windows.Duration" />がより大きいか、別のインスタンスと等しい。</summary>
+        <returns>
+          <see langword="true" />両方<paramref name="t1" />と<paramref name="t2" />値を持つと<paramref name="t1" />がより大きいまたは等しい<paramref name="t2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Duration.Forever%2A>任意の最小有限値より大きいと見なされます。 比較した、<xref:System.Windows.Duration.Automatic%2A>値を返します`false`です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Duration.Compare%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Windows.Duration (TimeSpan timeSpan);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Duration op_Implicit(valuetype System.TimeSpan timeSpan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_Implicit(System.TimeSpan)~System.Windows.Duration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeSpan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeSpan">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_Inequality(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>2 つのインスタンスが決定の<see cref="T:System.Windows.Duration" />が等しくないです。</summary>
+        <returns>
+          <see langword="true" />1 つだけの場合の<paramref name="t1" />または<paramref name="t2" />、値を表す両者が等しくない。 それ以外の場合、値を表している場合、または<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Duration.Compare%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static bool operator &lt; (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThan(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_LessThan(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>かどうかを 1 つのインスタンスの値<see cref="T:System.Windows.Duration" />が別のインスタンスの値より小さい。</summary>
+        <returns>
+          <see langword="true" />両方<paramref name="t1" />と<paramref name="t2" />値を持つと<paramref name="t1" />はより小さい<paramref name="t2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Duration.Forever%2A>任意の最小有限値より大きいと見なされます。 比較した、<xref:System.Windows.Duration.Automatic%2A>値を返します`false`です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Duration.Compare%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static bool operator &lt;= (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_LessThanOrEqual(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_LessThanOrEqual(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">比較対象の <see cref="T:System.Windows.Duration" /> の第 1 インスタンス。</param>
+        <param name="t2">比較対象の <see cref="T:System.Windows.Duration" /> の第 2 インスタンス。</param>
+        <summary>かどうかを 1 つのインスタンスの値<see cref="T:System.Windows.Duration" />が別のインスタンスの値未満です。</summary>
+        <returns>
+          <see langword="true" />両方<paramref name="t1" />と<paramref name="t2" />値を持つと<paramref name="t1" />と同じかそれよりも少ない<paramref name="t2" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Duration.Forever%2A>任意の最小有限値より大きいと見なされます。 比較した、<xref:System.Windows.Duration.Automatic%2A>値を返します`false`です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Duration.Compare%28System.Windows.Duration%2CSystem.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration operator - (System.Windows.Duration t1, System.Windows.Duration t2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Duration op_Subtraction(valuetype System.Windows.Duration t1, valuetype System.Windows.Duration t2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_Subtraction(System.Windows.Duration,System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t1" Type="System.Windows.Duration" />
+        <Parameter Name="t2" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="t1">最初のインスタンス<see cref="T:System.Windows.Duration" />です。</param>
+        <param name="t2">インスタンス<see cref="T:System.Windows.Duration" />を減算します。</param>
+        <summary>1 つのインスタンスの値を減算<see cref="T:System.Windows.Duration" />別からです。</summary>
+        <returns>場合の両方のインスタンス<see cref="T:System.Windows.Duration" />のインスタンスの値を持つ<see cref="T:System.Windows.Duration" />の値を表す<paramref name="t1" />マイナス<paramref name="t2" />です。 場合<paramref name="t1" />の値を持つ<see cref="P:System.Windows.Duration.Forever" />と<paramref name="t2" />の値を持つ<see cref="P:System.Windows.Duration.TimeSpan" />、このメソッドが戻る<see cref="P:System.Windows.Duration.Forever" />です。 それ以外の場合、このメソッドが戻る<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の計算をすべての値を返す<xref:System.Windows.Duration.Automatic%2A>です。  
+  
+-   <xref:System.Windows.Duration.Forever%2A>マイナス<xref:System.Windows.Duration.Forever%2A>です。  
+  
+-   <xref:System.Windows.Duration.TimeSpan%2A>マイナス<xref:System.Windows.Duration.Forever%2A>です。  
+  
+-   <xref:System.Windows.Duration.TimeSpan%2A>マイナス<xref:System.Windows.Duration.Automatic%2A>です。  
+  
+-   <xref:System.Windows.Duration.Forever%2A>マイナス<xref:System.Windows.Duration.Automatic%2A>です。  
+  
+-   <xref:System.Windows.Duration.Automatic%2A>マイナス<xref:System.Windows.Duration.Automatic%2A>です。  
+  
+-   <xref:System.Windows.Duration.Automatic%2A>マイナス<xref:System.Windows.Duration.Forever%2A>です。  
+  
+-   <xref:System.Windows.Duration.Automatic%2A>マイナス<xref:System.Windows.Duration.TimeSpan%2A>です。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Duration.Subtract%28System.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_UnaryPlus">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration operator + (System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Duration op_UnaryPlus(valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.op_UnaryPlus(System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="duration">インスタンス<see cref="T:System.Windows.Duration" />を取得します。</param>
+        <summary><see cref="T:System.Windows.Duration" /> の指定したインスタンスを返します。</summary>
+        <returns><see cref="T:System.Windows.Duration" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Duration.Plus%28System.Windows.Duration%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Plus">
+      <MemberSignature Language="C#" Value="public static System.Windows.Duration Plus (System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Duration Plus(valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Plus(System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="duration">インスタンス<see cref="T:System.Windows.Duration" />を取得します。</param>
+        <summary><see cref="T:System.Windows.Duration" /> の指定したインスタンスを返します。</summary>
+        <returns><see cref="T:System.Windows.Duration" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public System.Windows.Duration Subtract (System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Duration Subtract(valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.Subtract(System.Windows.Duration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Duration</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="duration">インスタンス<see cref="T:System.Windows.Duration" />を現在のインスタンスから減算します。</param>
+        <summary>インスタンスを指定された値を減算<see cref="T:System.Windows.Duration" />このインスタンスから。</summary>
+        <returns>新しいインスタンスを<see cref="T:System.Windows.Duration" />値がこのインスタンスの値を減算した結果<paramref name="duration" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpan">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Duration.TimeSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.TimeSpan" />値<see cref="T:System.Windows.Duration" />を表します。</summary>
+        <value><see cref="T:System.TimeSpan" />値<see cref="T:System.Windows.Duration" />を表します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">場合に発生<see cref="T:System.Windows.Duration" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Duration.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスに変換します<see cref="T:System.Windows.Duration" />を<see cref="T:System.String" />表現します。</summary>
+        <returns>A<see cref="T:System.String" />のこのインスタンスの表現<see cref="T:System.Windows.Duration" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

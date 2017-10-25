@@ -1,0 +1,245 @@
+<Type Name="MouseGesture" FullName="System.Windows.Input.MouseGesture">
+  <TypeSignature Language="C#" Value="public class MouseGesture : System.Windows.Input.InputGesture" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MouseGesture extends System.Windows.Input.InputGesture" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseGesture" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputGesture</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.MouseGestureConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.MouseGestureValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コマンドの呼び出しに使用できるマウス入力ジェスチャを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Windows.Input.KeyGesture>、<xref:System.Windows.Input.MouseAction>と組で使用する必要はありません<xref:System.Windows.Input.ModifierKeys>を有効な<xref:System.Windows.Input.MouseGesture>します。  
+  
+ A<xref:System.Windows.Input.MouseGesture>にバインドすることができます、 <xref:System.Windows.Input.RoutedCommand> (またはその他の<xref:System.Windows.Input.ICommand>実装) を介して、<xref:System.Windows.Input.MouseBinding>コマンドが呼び出されるようにときに、<xref:System.Windows.Input.MouseGesture>に発生します。  
+  
+ <xref:System.Windows.Input.MouseGesture> [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]属性の使用方法で一般に設定されているプロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]は<xref:System.Windows.Input.MouseBinding.Gesture%2A>ジェスチャがマウス操作と 1 つまたは複数の修飾子キーの両方を表すことができる場合です。 設定することも、<xref:System.Windows.Input.MouseBinding.Gesture%2A>マウス操作だけになるプロパティです。 一般に、お勧めのみに使用する、<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性から[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]、設定ではなく<xref:System.Windows.Input.MouseBinding.MouseAction%2A>修飾子を指定しない場合でも、します。 最も簡潔な構文、説明、およびシリアル化の最も簡単な表現を提供このあいまいさを回避します。  
+  
+ <xref:System.Windows.Input.MouseGesture>[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]オブジェクト要素の使用方法は考えられる珍しいことで、通常は設定できるため、<xref:System.Windows.Input.MouseBinding.Gesture%2A>プロパティ<xref:System.Windows.Input.MouseBinding>プロパティ要素構文を使用せずにインラインです。  
+  
+<a name="xamlAttributeUsage_MouseGesture"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="mouseAction"/>  
+- or -  
+<object property="oneOrMoreModifierKeys+mouseAction"/>  
+```  
+  
+<a name="xamlValues_MouseGesture"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `mouseAction`  
+ <xref:System.Windows.Input.MouseAction>  
+  
+ 単一のマウス操作します。  
+  
+ `oneOrMoreModifierKeys`  
+ によって定義された 1 つまたは複数の修飾子キー、<xref:System.Windows.Input.ModifierKeys>列挙します。 1 つ以上の修飾子キーが提供される場合、各修飾子キーは「+」文字で区切られます。  
+  
+   
+  
+## Examples  
+ 次の例では作成を<xref:System.Windows.Input.MouseGesture>関連付けます、<xref:System.Windows.Input.RoutedCommand>を通じて、<xref:System.Windows.Input.MouseBinding>です。  マウスのホイールがクリックされたとき中に、<xref:System.Windows.Input.ModifierKeys.Control>キーが押された、<xref:System.Windows.Input.ApplicationCommands.Open%2A>が呼び出されます。  
+  
+ [!code-xaml[commandlibrarysnippets#MouseBindingMouseGestureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#mousebindingmousegesturexaml)]  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingaddedtoinputbinding)]
+ [!code-vb[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingaddedtoinputbinding)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseGesture ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGesture.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.MouseGesture" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseGesture (System.Windows.Input.MouseAction mouseAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.MouseAction mouseAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGesture.#ctor(System.Windows.Input.MouseAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mouseAction" Type="System.Windows.Input.MouseAction" />
+      </Parameters>
+      <Docs>
+        <param name="mouseAction">このジェスチャに関連付けられたアクション。</param>
+        <summary><see cref="T:System.Windows.Input.MouseGesture" /> を指定して <see cref="T:System.Windows.Input.MouseAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="mouseAction" /> は有効な <see cref="T:System.Windows.Input.MouseAction" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseGesture (System.Windows.Input.MouseAction mouseAction, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.MouseAction mouseAction, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGesture.#ctor(System.Windows.Input.MouseAction,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mouseAction" Type="System.Windows.Input.MouseAction" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="mouseAction">このジェスチャに関連付けられたアクション。</param>
+        <param name="modifiers">このジェスチャに関連付けられている修飾子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.MouseGesture" />クラス<see cref="T:System.Windows.Input.MouseAction" />と<see cref="T:System.Windows.Input.ModifierKeys" />です。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="mouseAction" />有効ではありません<see cref="T:System.Windows.Input.MouseAction" />値  
+  
+ または  
+  
+ <paramref name="modifiers" /> は有効な <see cref="T:System.Windows.Input.ModifierKeys" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (object targetElement, System.Windows.Input.InputEventArgs inputEventArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(object targetElement, class System.Windows.Input.InputEventArgs inputEventArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseGesture.Matches(System.Object,System.Windows.Input.InputEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetElement" Type="System.Object" />
+        <Parameter Name="inputEventArgs" Type="System.Windows.Input.InputEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="targetElement">ターゲット。</param>
+        <param name="inputEventArgs">このジェスチャと比較する入力イベントのデータ。</param>
+        <summary>指定するかどうか<see cref="T:System.Windows.Input.MouseGesture" />に指定された関連付けられている入力と一致する<see cref="T:System.Windows.Input.InputEventArgs" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />このイベント データに一致する場合<see cref="T:System.Windows.Input.MouseGesture" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をテストする方法を示して かどうか、<xref:System.Windows.Input.MouseGesture>のインスタンスに関連付けられている入力と一致する、<xref:System.Windows.Input.InputEventArgs>です。 A<xref:System.Windows.UIElement.MouseDown>イベント ハンドラーを使用してイベント データを比較し、<xref:System.Windows.Input.MouseGesture>を使用して、<xref:System.Windows.Input.MouseGesture.Matches%2A>メソッドです。  
+  
+ [!code-csharp[commandlibrarysnippets#KeyDownHandlerMouseGestureMatches](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#keydownhandlermousegesturematches)]
+ [!code-vb[commandlibrarysnippets#KeyDownHandlerMouseGestureMatches](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#keydownhandlermousegesturematches)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Modifiers">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ModifierKeys Modifiers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.ModifierKeys Modifiers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseGesture.Modifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに関連付けられている修飾子キーの設定を取得または<see cref="T:System.Windows.Input.MouseGesture" />です。</summary>
+        <value>このジェスチャに関連付けられている修飾子キーです。 既定値は <see cref="F:System.Windows.Input.ModifierKeys.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Windows.Input.KeyGesture>、<xref:System.Windows.Input.MouseAction>と組で使用する必要はありません<xref:System.Windows.Input.ModifierKeys>を有効にするのに<xref:System.Windows.Input.MouseGesture>です。  
+  
+ <xref:System.Windows.Input.ModifierKeys>の複数の修飾子キーを同時に押すことは少しのフィールドの列挙は、します。 押された修飾子キーの正確なセットを決定するビット操作を使用します。  
+  
+<a name="xamlAttributeUsage_Modifiers"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Modifiers="oneOrMoreModifierKeys"/>  
+```  
+  
+<a name="xamlValues_Modifiers"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreModifierKeys*  
+ によって定義された 1 つまたは複数の修飾子キー、<xref:System.Windows.Input.ModifierKeys>列挙型、「+」文字で区切られます。  
+  
+   
+  
+## Examples  
+ 次の例では作成を<xref:System.Windows.Input.MouseGesture>関連付けます、<xref:System.Windows.Input.RoutedCommand>を通じて、<xref:System.Windows.Input.MouseBinding>です。  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingaddedtoinputbinding)]
+ [!code-vb[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingaddedtoinputbinding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseAction">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseAction MouseAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseAction MouseAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseGesture.MouseAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Input.MouseAction" />このジェスチャに関連付けられています。</summary>
+        <value>このジェスチャに関連付けられているマウス操作。 既定値は <see cref="F:System.Windows.Input.MouseAction.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Windows.Input.KeyGesture>、<xref:System.Windows.Input.MouseAction>と組で使用する必要はありません<xref:System.Windows.Input.ModifierKeys>を有効にするのに<xref:System.Windows.Input.MouseGesture>です。  
+  
+   
+  
+## Examples  
+ 次の例では作成を<xref:System.Windows.Input.MouseGesture>関連付けます、<xref:System.Windows.Input.RoutedCommand>を通じて、<xref:System.Windows.Input.MouseBinding>です。  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingaddedtoinputbinding)]
+ [!code-vb[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingaddedtoinputbinding)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

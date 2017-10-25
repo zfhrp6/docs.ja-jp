@@ -1,0 +1,238 @@
+<Type Name="ActivatedClientTypeEntry" FullName="System.Runtime.Remoting.ActivatedClientTypeEntry">
+  <TypeSignature Language="C#" Value="public class ActivatedClientTypeEntry : System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActivatedClientTypeEntry extends System.Runtime.Remoting.TypeEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.Remoting.TypeEntry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーのアクティブ化できる型としてクライアント エンドで登録されているオブジェクトの種類の値を保持します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 知る必要がある、クライアントにクライアントでアクティブ化されるオブジェクトのインスタンスを作成、その<xref:System.Type>ありを使用して、クライアントで登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 プロキシ クライアントを登録する必要がありますまずクライアントでアクティブ化されるオブジェクトの新しいインスタンスを使用してチャネルを取得する<xref:System.Runtime.Remoting.Channels.ChannelServices>を呼び出して、オブジェクトをアクティブ化して`new`です。  
+  
+ クライアントでアクティブ化されるオブジェクトの型をアクティブ化する、`new`キーワード、オブジェクトの種類を使用して、クライアントで最初に登録する必要があります、<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>メソッドです。 呼び出して<xref:System.Runtime.Remoting.RemotingConfiguration.RegisterActivatedClientType%2A>リモート アプリケーションの場所をリモート処理インフラストラクチャに付与されます、`new`作成を試みます。 その一方を使用する場合は、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>メソッドは、クライアントでアクティブ化されるオブジェクトの新しいインスタンスを作成するためクライアント エンドで、事前に登録する必要はありません、リモート アプリケーションの URL をパラメーターとして指定する必要があります。 指定する、<xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType>サーバーの URL を持つメソッドするオブジェクトの作成に、URL のインスタンスにカプセル化する必要があります、<xref:System.Runtime.Remoting.Activation.UrlAttribute>クラスです。  
+  
+ クライアントのアクティブ化されたオブジェクトとリモート オブジェクトのアクティブ化の詳細な説明を参照してください[&#91;\< 。topic://cpconActivation > & #93 です。](http://msdn.microsoft.com/en-us/e90d0c64-00da-4080-ae78-a6c558825c25).  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Runtime.Remoting.ActivatedClientTypeEntry>クライアントを登録するリモート オブジェクトをアクティブ化します。 この例には、3 つの部分、クライアント、サーバー、および、クライアントとサーバーによって使用されるリモート オブジェクトが含まれています。  
+  
+ 次のコード例は、クライアントを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_client.cpp#1)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_client.cs#1)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_client.vb#1)]  
+  
+ 次のコード例では、このクライアントのサーバーを示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_server.cpp#10)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_server.cs#10)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_server.vb#10)]  
+  
+ 次のコード例では、クライアントとサーバーによって使用されるリモート オブジェクトを提供します。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#20](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_share.cpp#20)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#20](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_share.cs#20)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#20](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_share.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatedClientTypeEntry (Type type, string appUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type, string appUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.#ctor(System.Type,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="appUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />クライアントの種類をアクティブ化します。</param>
+        <param name="appUrl">内の型をアクティブにするアプリケーションの URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />クラスに、指定された<see cref="T:System.Type" />およびアプリケーションの URL。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した型のアセンブリ名は、`type`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Runtime.Remoting.ActivatedClientTypeEntry>です。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_client.cpp#2)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_client.cs#2)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_client.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivatedClientTypeEntry (string typeName, string assemblyName, string appUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string typeName, string assemblyName, string appUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="appUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">クライアントの型名には、種類がアクティブになります。</param>
+        <param name="assemblyName">クライアントのアセンブリ名には、種類がアクティブになります。</param>
+        <param name="appUrl">内の型をアクティブにするアプリケーションの URL です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Remoting.ActivatedClientTypeEntry" />クラスが指定された型名、アセンブリ名、およびアプリケーションの URL を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationUrl">
+      <MemberSignature Language="C#" Value="public string ApplicationUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ApplicationUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の型をアクティブにするアプリケーションの URL を取得します。</summary>
+        <value>内の型をアクティブにするアプリケーションの URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.ActivatedClientTypeEntry.ApplicationUrl%2A> プロパティの使用方法を示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_client.cpp#4)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_client.cs#4)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_client.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextAttributes">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Contexts.IContextAttribute[] ContextAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ContextAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Contexts.IContextAttribute[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントでアクティブ化される型のコンテキストの属性を設定します。</summary>
+        <value>クライアントのコンテキストの属性には、種類がアクティブになります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現時点では、このインデクサーは実装されていませんし、操作では、すべての結果は生成されません。  
+  
+ <xref:System.Runtime.Remoting.Contexts.Context>属性コンテキスト プロパティを提供するに追加すると、<xref:System.Runtime.Remoting.Contexts.Context>同期やトランザクションなどのポリシーを適用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public Type ObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.ActivatedClientTypeEntry.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Type" />クライアントでアクティブ化される型。</summary>
+        <value>取得、<see cref="T:System.Type" />クライアントでアクティブ化される型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Runtime.Remoting.ActivatedClientTypeEntry.ObjectType%2A> プロパティの使用方法を示しています。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_client.cpp#3)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_client.cs#3)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_client.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.ActivatedClientTypeEntry.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型名、アセンブリ名、およびアプリケーションとクライアントでアクティブ化される型の URL を返します、<see cref="T:System.String" />です。</summary>
+        <returns>型名、アセンブリ名、およびアプリケーションとクライアントでアクティブ化される型の URL、<see cref="T:System.String" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例に示しますを使用して、<xref:System.Runtime.Remoting.ActivatedClientTypeEntry.ToString%2A>メソッドです。  
+  
+ [!code-cpp[System.Runtime.Remoting.ActivatedClientTypeEntry#5](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CPP/activatedclienttypeentry_client.cpp#5)]
+ [!code-csharp[System.Runtime.Remoting.ActivatedClientTypeEntry#5](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/CS/activatedclienttypeentry_client.cs#5)]
+ [!code-vb[System.Runtime.Remoting.ActivatedClientTypeEntry#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Runtime.Remoting.ActivatedClientTypeEntry/VB/activatedclienttypeentry_client.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

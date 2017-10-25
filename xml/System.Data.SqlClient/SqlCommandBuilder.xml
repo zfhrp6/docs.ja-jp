@@ -1,0 +1,849 @@
+<Type Name="SqlCommandBuilder" FullName="System.Data.SqlClient.SqlCommandBuilder">
+  <TypeSignature Language="C#" Value="public sealed class SqlCommandBuilder : System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SqlCommandBuilder extends System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlCommandBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommandBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>加えられた変更を調整するために使用される単一テーブル コマンドを自動的に生成、 <see cref="T:System.Data.DataSet" /> SQL Server データベースに関連付けられました。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlDataAdapter>に加えられた変更を調整するために必要な TRANSACT-SQL ステートメントを自動的に生成しない、<xref:System.Data.DataSet>関連付けられている SQL Server のインスタンスにします。 ただし、作成することができます、<xref:System.Data.SqlClient.SqlCommandBuilder>設定した場合、1 つのテーブルの更新プログラム用の TRANSACT-SQL ステートメントを自動的に生成するオブジェクト、<xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>のプロパティ、<xref:System.Data.SqlClient.SqlDataAdapter>です。 次に、追加の Transact SQL ステートメントを設定しないことがによって生成される、<xref:System.Data.SqlClient.SqlCommandBuilder>です。  
+  
+ <xref:System.Data.SqlClient.SqlCommandBuilder>自体のリスナーとして登録<xref:System.Data.SqlClient.SqlDataAdapter.RowUpdating>を設定する場合に、イベント、<xref:System.Data.SqlClient.SqlCommandBuilder.DataAdapter%2A>プロパティです。 関連付けることができますのみ<xref:System.Data.SqlClient.SqlDataAdapter>または<xref:System.Data.SqlClient.SqlCommandBuilder>互いにオブジェクトを一度に 1 つです。  
+  
+ INSERT、UPDATE、または DELETE のステートメントを生成する、<xref:System.Data.SqlClient.SqlCommandBuilder>を使用して、<xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>自動的に必要な一連のメタデータを取得するプロパティです。 変更した場合、<xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>呼び出す必要があります最初の更新の後など、メタデータが取得された後、<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>にメタデータを更新する方法です。  
+  
+ `SelectCommand` は少なくとも 1 つの主キーまたは一意の列を返す必要があります。 存在しない場合、 **InvalidOperation**例外が生成され、コマンドは生成されません。  
+  
+ <xref:System.Data.SqlClient.SqlCommandBuilder>も使用して、 <xref:System.Data.SqlClient.SqlCommand.Connection%2A>、 <xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>、および<xref:System.Data.SqlClient.SqlCommand.Transaction%2A>プロパティによって参照される、<xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>です。 ユーザーが呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>1 つ以上のこれらのプロパティを変更すると場合、または、<xref:System.Data.SqlClient.SqlDataAdapter.SelectCommand%2A>自体は置き換えられます。 それ以外の場合、 <xref:System.Data.SqlClient.SqlDataAdapter.InsertCommand%2A>、 <xref:System.Data.SqlClient.SqlDataAdapter.UpdateCommand%2A>、および<xref:System.Data.SqlClient.SqlDataAdapter.DeleteCommand%2A>プロパティは、前回の値を保持します。  
+  
+ 呼び出す場合<xref:System.ComponentModel.Component.Dispose%2A>、<xref:System.Data.SqlClient.SqlCommandBuilder>関連付けが解除され、 <xref:System.Data.SqlClient.SqlDataAdapter>、され、生成されたコマンドは使用されなくです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.SqlClient.SqlCommand>と共に、<xref:System.Data.SqlClient.SqlDataAdapter>と<xref:System.Data.SqlClient.SqlConnection>、データ ソースから行を選択します。 例には、接続文字列は、TRANSACT-SQL SELECT ステートメントでは、クエリ文字列と、データベース テーブルの名前を指定する文字列が渡されます。 作成し、<xref:System.Data.SqlClient.SqlCommandBuilder>です。  
+  
+ [!code-csharp[Classic WebData SqlCommandBuilder#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData SqlCommandBuilder/CS/Source.cs#1)]
+ [!code-vb[Classic WebData SqlCommandBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData SqlCommandBuilder/VB/Source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCommandBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.SqlClient.SqlCommandBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlCommandBuilder (System.Data.SqlClient.SqlDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.SqlClient.SqlDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.#ctor(System.Data.SqlClient.SqlDataAdapter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.SqlClient.SqlDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter"><see cref="T:System.Data.SqlClient.SqlDataAdapter" /> の名前。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.SqlClient.SqlCommandBuilder" /> 、関連付けられているクラス<see cref="T:System.Data.SqlClient.SqlDataAdapter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlCommandBuilder>自体のリスナーとして登録<xref:System.Data.SqlClient.SqlDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.SqlClient.SqlDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.SqlClient.SqlCommandBuilder>、既存<xref:System.Data.SqlClient.SqlCommandBuilder>これに関連付けられている<xref:System.Data.SqlClient.SqlDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyParameterInfo">
+      <MemberSignature Language="C#" Value="protected override void ApplyParameterInfo (System.Data.Common.DbParameter parameter, System.Data.DataRow datarow, System.Data.StatementType statementType, bool whereClause);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyParameterInfo(class System.Data.Common.DbParameter parameter, class System.Data.DataRow datarow, valuetype System.Data.StatementType statementType, bool whereClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.ApplyParameterInfo(System.Data.Common.DbParameter,System.Data.DataRow,System.Data.StatementType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="datarow" Type="System.Data.DataRow" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="whereClause" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">To be added.</param>
+        <param name="datarow">To be added.</param>
+        <param name="statementType">To be added.</param>
+        <param name="whereClause">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogLocation">
+      <MemberSignature Language="C#" Value="public override System.Data.Common.CatalogLocation CatalogLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Common.CatalogLocation CatalogLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.CatalogLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.CatalogLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Common.CatalogLocation" />のインスタンスの<see cref="T:System.Data.SqlClient.SqlCommandBuilder" />クラスです。</summary>
+        <value><see cref="T:System.Data.Common.CatalogLocation" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogSeparator">
+      <MemberSignature Language="C#" Value="public override string CatalogSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.CatalogSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスのカタログの区切り記号として使用する文字列を取得または設定、<see cref="T:System.Data.SqlClient.SqlCommandBuilder" />クラスです。</summary>
+        <value>インスタンスで使用するカタログの区切り記号を示す文字列、<see cref="T:System.Data.SqlClient.SqlCommandBuilder" />クラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAdapter">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlDataAdapter DataAdapter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.SqlClient.SqlDataAdapter DataAdapter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.DataAdapter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlDataAdapter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.SqlClient.SqlDataAdapter" />オブジェクトをどの TRANSACT-SQL ステートメントが自動的に生成します。</summary>
+        <value><see cref="T:System.Data.SqlClient.SqlDataAdapter" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlCommandBuilder>自体のリスナーとして登録<xref:System.Data.SqlClient.SqlDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.SqlClient.SqlDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.SqlClient.SqlCommandBuilder>、既存<xref:System.Data.SqlClient.SqlCommandBuilder>これに関連付けられている<xref:System.Data.SqlClient.SqlDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveParameters">
+      <MemberSignature Language="C#" Value="public static void DeriveParameters (System.Data.SqlClient.SqlCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeriveParameters(class System.Data.SqlClient.SqlCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.DeriveParameters(System.Data.SqlClient.SqlCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.SqlClient.SqlCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.SqlClient.SqlCommand" />が、パラメーター情報の派生元となるストアド プロシージャを参照します。 派生パラメーターに追加されます、<see cref="P:System.Data.SqlClient.SqlCommand.Parameters" />のコレクション、<see cref="T:System.Data.SqlClient.SqlCommand" />です。</param>
+        <summary>指定されたストアド プロシージャからパラメーター情報を取得、<see cref="T:System.Data.SqlClient.SqlCommand" />取り込んで、<see cref="P:System.Data.SqlClient.SqlCommand.Parameters" />の指定されたコレクション<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `DeriveParameters`既存のパラメーター情報を上書き、`SqlDbCommand`です。  
+  
+ `DeriveParameters`情報を取得するデータベースに追加の呼び出しが必要です。 パラメーター情報が事前にわかっている場合は、情報を明示的に設定して、パラメーター コレクションを設定する方が効率的です。  
+  
+ 使用できるだけ`DeriveParameters`ストアド プロシージャを使用します。 使用することはできません`DeriveParameters`拡張ストアド プロシージャでします。 使用することはできません`DeriveParameters`を設定する、<xref:System.Data.SqlClient.SqlParameterCollection>パラメーター化された SELECT ステートメントなど、任意の TRANSACT-SQL ステートメントを使用します。  
+  
+ 詳細については、次を参照してください。[構成パラメーターとパラメーターのデータ型](~/docs/framework/data/adonet/configuring-parameters-and-parameter-data-types.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コマンド テキストは、有効なストアド プロシージャ名ではありません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetDeleteCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト、データベースの削除を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetDeleteCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetDeleteCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト、データベースの削除を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetDeleteCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetDeleteCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合は、列名を一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />削除を実行するデータベースで必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />削除を実行する必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります、SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションが指定されており、その長さが、生成されたパラメーター名以上になるとします。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>正規表現のコレクション。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションを指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetInsertCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />挿入を実行するデータベースで必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetInsertCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetInsertCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />データベースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetInsertCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetInsertCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合は、列名を一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />挿入を実行するデータベースで必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />挿入を実行する必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションが指定されており、その長さが、生成されたパラメーター名以上になるとします。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>正規表現のコレクション。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションを指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetParameterName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetParameterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterPlaceholder">
+      <MemberSignature Language="C#" Value="protected override string GetParameterPlaceholder (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterPlaceholder(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetParameterPlaceholder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchemaTable">
+      <MemberSignature Language="C#" Value="protected override System.Data.DataTable GetSchemaTable (System.Data.Common.DbCommand srcCommand);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.DataTable GetSchemaTable(class System.Data.Common.DbCommand srcCommand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetSchemaTable(System.Data.Common.DbCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.DataTable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="srcCommand" Type="System.Data.Common.DbCommand" />
+      </Parameters>
+      <Docs>
+        <param name="srcCommand">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetUpdateCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetUpdateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetUpdateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />更新を実行する必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.SqlClient.SqlCommand GetUpdateCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.SqlClient.SqlCommand GetUpdateCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合は、列名を一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクト、データベースに対する更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.SqlClient.SqlCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用できます、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.SqlClient.SqlCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.SqlClient.SqlCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.SqlClient.SqlDataAdapter>です。  
+  
+ アプリケーションが明示的に呼び出す必要があります: TRANSACT-SQL ステートメントを生成後<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>正しくない可能性があります、前のステートメントからの情報が使用されます。 TRANSACT-SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.OleDb.OleDbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションが指定されており、その長さが、生成されたパラメーター名以上になるとします。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>正規表現のコレクション。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>から返される、 **GetSchema**メソッドを呼び出すしで見つかった、<xref:System.Data.Common.DbMetaDataCollectionNames.DataSourceInformation>コレクションを指定します。  
+  
+ 詳細については、次を参照してください。 [Commandbuilder でのコマンドを生成する](~/docs/framework/data/adonet/generating-commands-with-commandbuilders.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCommand">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbCommand InitializeCommand (System.Data.Common.DbCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbCommand InitializeCommand(class System.Data.Common.DbCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.InitializeCommand(System.Data.Common.DbCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.Common.DbCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string QuoteIdentifier (string unquotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string QuoteIdentifier(string unquotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.QuoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">元の囲まれていない識別子です。</param>
+        <summary>正しいカタログ ケースで囲まれていない識別子、指定したを返します、正しい形式の id を引用符で囲まれました。 これには、識別子に埋め込まれた引用符は、正しくエスケープが含まれます。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符は、正しくエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuotePrefix">
+      <MemberSignature Language="C#" Value="public override string QuotePrefix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QuotePrefix" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.QuotePrefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開始文字以上のテーブルまたは名前にスペースまたは予約済みトークンなどの文字を含む列などの SQL Server データベース オブジェクトを指定するときに使用する文字を設定します。</summary>
+        <value>先頭の文字または文字を使用します。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  変更することはできません、<xref:System.Data.SqlClient.SqlCommandBuilder.QuotePrefix%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.QuoteSuffix%2A>、挿入後のプロパティを更新、または削除コマンドが生成されて、その設定を変更するには呼び出した後、 `Update` DataAdapter のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、INSERT、UPDATE、後に変更することはできませんまたは DELETE コマンドが生成されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteSuffix">
+      <MemberSignature Language="C#" Value="public override string QuoteSuffix { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string QuoteSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.QuoteSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または終了文字以上のテーブルまたは名前にスペースまたは予約済みトークンなどの文字を含む列などの SQL Server データベース オブジェクトを指定するときに使用する文字を設定します。</summary>
+        <value>最後の文字またはを使用する文字列。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  変更することはできません、<xref:System.Data.SqlClient.SqlCommandBuilder.QuotePrefix%2A>または<xref:System.Data.SqlClient.SqlCommandBuilder.QuoteSuffix%2A>、挿入後のプロパティを更新、または削除操作が生成されて、その設定を変更するには呼び出した後、 `Update` DataAdapter のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Insert、update、または delete コマンドが生成された後に、このプロパティを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaSeparator">
+      <MemberSignature Language="C#" Value="public override string SchemaSeparator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SchemaSeparator" />
+      <MemberSignature Language="DocId" Value="P:System.Data.SqlClient.SqlCommandBuilder.SchemaSeparator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスキーマ識別子とその他の id の間の区切り記号に使用する文字を設定します。</summary>
+        <value>スキーマの区切り記号として使用する文字。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、データベース サーバーは、いくつかの文字を持つ id からスキーマ名を区切ることによって、識別子のスキーマを示します。 たとえば、SQL Server はピリオド、Person.CustomerName、"Person"、スキーマ名があり、識別子は、"CustomerName"などの完全な識別子を作成します。 このプロパティの設定には、開発者はこの動作を変更することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowUpdatingHandler">
+      <MemberSignature Language="C#" Value="protected override void SetRowUpdatingHandler (System.Data.Common.DbDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetRowUpdatingHandler(class System.Data.Common.DbDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.SetRowUpdatingHandler(System.Data.Common.DbDataAdapter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.Common.DbDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string UnquoteIdentifier (string quotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UnquoteIdentifier(string quotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.SqlClient.SqlCommandBuilder.UnquoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <summary>引用符で囲まれた識別子では、指定した識別子の正しい引用符なしの形式を返します。 これには、識別子に埋め込まれた引用符を正しくエスケープ解除が含まれます。</summary>
+        <returns>正しくエスケープ解除された埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

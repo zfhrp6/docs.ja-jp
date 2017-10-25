@@ -1,0 +1,173 @@
+<Type Name="ClaimsPrincipalPermissionAttribute" FullName="System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ClaimsPrincipalPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClaimsPrincipalPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Property, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>によって提供されるロジックに基づくアクセス チェックを割り当てる宣言的に使用されるセキュリティ属性を表す、<see cref="T:System.Security.Claims.ClaimsAuthorizationManager" />アプリケーションの現在のコンテキストでのインスタンス。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言によって構成されたを使用してアクセス チェックを要求するために使用<xref:System.Security.Claims.ClaimsAuthorizationManager>です。  
+  
+ いずれかを指定する必要があります、 <xref:System.Security.Permissions.SecurityAction> 、値、`Resource`と`Operation`で、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言します。 `Resource`と`Operation`プロパティが指定されたリソースとアクションを現在のプリンシパル (<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>) に実行を承認する必要があります。 現在のプリンシパルが、指定したリソースで、指定されたアクション (操作) を実行する権限がない場合、<xref:System.Security.SecurityException>がスローされます。  
+  
+> [!IMPORTANT]
+>  <xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスで構成されている要求の承認マネージャーを使用して、<xref:System.IdentityModel.Configuration.IdentityConfiguration>で設定されている、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType>プロパティです。 これは、Ws-federation が使用されていない; シナリオにおいても、すべてのケースに当てはまりますたとえば、アクティブな (WCF) Web アプリケーションおよびコンソール アプリケーションです。 要求承認マネージャーの構成で、またはプログラムによって指定できます。 要求承認マネージャーを構成ファイルを指定する設定、 [ &lt;claimsAuthorizationManager&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)要素の下、 [ &lt;identityConfiguration&gt;](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)要素でこの id の構成が参照されていることを確認し、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素は、ランタイムによって読み込まれる (たとえばを設定、`identityConfigurationName`属性)。 要求承認マネージャーをプログラムで設定するにはハンドラーを作成して、<xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfigurationCreated?displayProperty=nameWithType>イベント。  
+  
+   
+  
+## Examples  
+ 次の例で修飾することによって、メソッドを保護する方法を示しています、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>属性。 属性は、によって提供されるロジックを活用することにより、現在のプリンシパルにアクセスを付与する必要があるかどうかを評価する、<xref:System.Security.Claims.ClaimsAuthorizationManager>アプリケーションのコンテキスト内のインスタンス。 現在のプリンシパルが、指定したリソースで指定されたアクションの権限がない場合、<xref:System.Security.SecurityException>がスローされた場合に実行されます。  
+  
+ [!code-csharp[WifCppWithCam#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifcppwithcam/cs/wifcppwithcam/program.cs#4)]  
+  
+ 次の XML は、カスタム クレーム承認を使用するために必要な最小構成マネージャーが、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>クラスです。 宣言する必要あります、少なくとも、両方、`system.identityModel`と`system.identityModel.services`セクション、`<configSection>`要素で、承認マネージャーを指定し、 [ &lt;claimsAuthorizationManager&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/claimsauthorizationmanager.md)[既定の id 構成要素。 既定のフェデレーション構成から、承認マネージャーが参照されているようになります。 またで、承認マネージャーを指定する id の構成の名前を指定することができます、`identityConfigurationName`の属性、 [ &lt;federationConfiguration&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)要素。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+  <configSections>  
+    <!-- WIF configuration sections -->  
+    <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>  
+    <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>  
+  </configSections>  
+  
+  <startup>  
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />  
+  </startup>  
+  
+  <system.identityModel>  
+    <identityConfiguration>  
+      <claimsAuthorizationManager type ="MyClaimsAuthorizationManager.MyClaimsAuthorizationManager, MyClaimsAuthorizationManager"/>  
+    </identityConfiguration>  
+  </system.identityModel>  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClaimsPrincipalPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action">宣言セキュリティを使用する場合に実行できるセキュリティ アクションを指定する値のいずれか。</param>
+        <summary><see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する必要があります、`Operation`と`Resource`プロパティで、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言または例外がスローされる場合に、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.CreatePermission%2A>アクセス許可を作成するメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2103:ReviewImperativeSecurity", Justification="It is expected that the runtime’s behavior would rely on changing data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />現在のインスタンスに基づいているクラスです。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Services.ClaimsPrincipalPermission" />操作とこのインスタンスに関連付けられているリソースを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.ClaimsPrincipalPermission>の値を使用してオブジェクトを作成、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.Operation%2A>プロパティおよび<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.Resource%2A>プロパティです。 指定する必要があります、`Operation`と`Resource`プロパティで、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言または例外がスローされる場合に、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.CreatePermission%2A>アクセス許可を作成するメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operation">
+      <MemberSignature Language="C#" Value="public string Operation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Operation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.Operation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したリソースに対して現在のプリンシパルの権限を操作を設定します。</summary>
+        <value>現在のプリンシパルの権限を操作します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作は、指定したリソースに対して現在のプリンシパルを承認する必要がありますアクションです。 設定する必要があります、`Operation`プロパティに、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言または例外がスローされる場合に、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.CreatePermission%2A>メソッドは、アクセス許可を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public string Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、指定されたアクション (操作) を実行するプリンシパルを承認するか、リソースを設定します。</summary>
+        <value>現在のプリンシパルの権限をリソースです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リソースを現在のプリンシパルを指定したアクションを実行する承認が必要です。 設定する必要があります、`Resource`プロパティに、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute>宣言または例外がスローされる場合に、<xref:System.IdentityModel.Services.ClaimsPrincipalPermissionAttribute.CreatePermission%2A>メソッドは、アクセス許可を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

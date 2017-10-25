@@ -1,0 +1,327 @@
+<Type Name="HostProtectionException" FullName="System.Security.HostProtectionException">
+  <TypeSignature Language="C#" Value="public class HostProtectionException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit HostProtectionException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Security.HostProtectionException" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ホスト リソースの拒否が検出されたときにスローされる例外です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Security.Permissions.HostProtectionAttribute>かどうか、型またはメンバーを読み込む、共通言語ランタイムが開始されたときに確立されたホストの保護設定に基づくを決定する属性を使用します。 型またはメンバーをアクティブな場合<xref:System.Security.Permissions.HostProtectionAttribute>が呼び出されると、その保護属性のリンク確認要求が発生します。 呼び出し元が、ホスト保護の需要を満たしていない場合、<xref:System.Security.HostProtectionException>がスローされます。  
+  
+> [!NOTE]
+>  A<xref:System.Security.Permissions.HostProtectionAttribute>リンク確認要求の対象となっている場合でも、アクセス許可ではありません。 <xref:System.Security.HostProtectionException>スローされますが、リンク確認要求用に処理できない場合、およびそのため、できませんトラップし、コードで処理します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.HostProtectionException" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.HostProtectionException> クラスのインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Security.HostProtectionException.ProtectedResources%2A>|<xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>|  
+|<xref:System.Security.HostProtectionException.DemandedResources%2A>|<xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.Security.HostProtectionException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`message`パラメーターは、ユーザーが理解できるものにする必要があります。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HostProtectionException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">ソースまたは転送先に関する文脈情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.HostProtectionException" />クラスの指定したシリアル化情報およびストリーム コンテキスト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームを介して送信された例外オブジェクトを再構築するために呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionException (string message, Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="e">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Security.HostProtectionException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外は、<xref:System.Exception.InnerException%2A> プロパティに前の例外への参照を含んでいる場合があります。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、<xref:System.Exception.InnerException%2A> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionException (string message, System.Security.Permissions.HostProtectionResource protectedResources, System.Security.Permissions.HostProtectionResource demandedResources);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, valuetype System.Security.Permissions.HostProtectionResource protectedResources, valuetype System.Security.Permissions.HostProtectionResource demandedResources) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.#ctor(System.String,System.Security.Permissions.HostProtectionResource,System.Security.Permissions.HostProtectionResource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="protectedResources" Type="System.Security.Permissions.HostProtectionResource" />
+        <Parameter Name="demandedResources" Type="System.Security.Permissions.HostProtectionResource" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="protectedResources">ホストのリソースは、部分的に信頼されたコードにアクセスできませんを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="demandedResources">要求されたホストのリソースを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.HostProtectionException" />指定したエラー メッセージや、保護されているホスト リソースがスローされる例外の原因となったホスト リソースのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `demandedResources`パラメーターが例外をスローする原因となった要求されたホスト保護カテゴリを指定します。 たとえば、メソッドが含まれていること、<xref:System.Security.Permissions.HostProtectionAttribute>メソッドに共有状態が公開することを示す属性です。 メソッドが呼び出されたときに、<xref:System.Security.Permissions.HostProtectionAttribute>共有状態のリンク要求を実行します。 ホストが禁止されているカテゴリ、として共有状態を設定する場合、<xref:System.Security.HostProtectionException>が付いた、`demandedResources`のプロパティの値<xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DemandedResources">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.HostProtectionResource DemandedResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.HostProtectionResource DemandedResources" />
+      <MemberSignature Language="DocId" Value="P:System.Security.HostProtectionException.DemandedResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、例外がスローされる原因となった保護リソースを要求されたホストに設定します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Security.Permissions.HostProtectionResource" />例外をスローする原因となった保護リソースを識別する値。 既定値は、<see cref="F:System.Security.Permissions.HostProtectionResource.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、要求されたホストをスローする例外の原因となった保護カテゴリを返します。 たとえば、メソッドが含まれていること、<xref:System.Security.Permissions.HostProtectionAttribute>メソッドに共有状態が公開することを示す属性です。 メソッドが呼び出されたときに、<xref:System.Security.Permissions.HostProtectionAttribute>共有状態のリンク要求を実行します。 ホストが禁止されているカテゴリ、として共有状態を設定する場合、<xref:System.Security.HostProtectionException>が発生し、値、<xref:System.Security.HostProtectionException.DemandedResources%2A>プロパティは<xref:System.Security.Permissions.HostProtectionResource?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされた例外に関するシリアル化されたオブジェクト データ。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>指定した設定<see cref="T:System.Runtime.Serialization.SerializationInfo" />ホスト保護例外に関する情報を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.HostProtectionException.GetObjectData%2A>メソッドのセット、<xref:System.Runtime.Serialization.SerializationInfo>シリアル化の対象となるすべての例外オブジェクト データを持つオブジェクト。 逆シリアル化中に例外を再構築、<xref:System.Runtime.Serialization.SerializationInfo>ストリームで転送します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="info" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectedResources">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.HostProtectionResource ProtectedResources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.HostProtectionResource ProtectedResources" />
+      <MemberSignature Language="DocId" Value="P:System.Security.HostProtectionException.ProtectedResources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または部分的に信頼されたコードにアクセスできない保護リソースをホストに設定します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Security.Permissions.HostProtectionResource" />アクセスできないホスト保護のカテゴリを識別する値。 既定値は、<see cref="F:System.Security.Permissions.HostProtectionResource.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、指定された、コードにアクセスできないが完全に信頼されていないホスト保護のカテゴリを識別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.HostProtectionException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のホスト保護例外の文字列表現を返します。</summary>
+        <returns>現在の文字列表現<see cref="T:System.Security.HostProtectionException" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される文字列は、例外のテキスト表現です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

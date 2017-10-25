@@ -1,0 +1,2148 @@
+<Type Name="DateTimePicker" FullName="System.Windows.Forms.DateTimePicker">
+  <TypeSignature Language="C#" Value="public class DateTimePicker : System.Windows.Forms.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DateTimePicker extends System.Windows.Forms.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DateTimePicker" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("Value")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ValueChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Value")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.DateTimePickerDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーが日時を選択し、書式を指定して日時を表示できる Windows コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker>を使用する日付と時刻を選択してその日付の表示し、時刻の指定された形式でユーザー コントロールを使用します。 <xref:System.Windows.Forms.DateTimePicker>コントロールの日付を使用するが容易し、多数のデータの検証が自動的に処理するための時間します。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.DateTimePicker>のみがサポートされる構成のグレゴリオ暦カレンダーです。  
+  
+ 日付を表すために使用するとき、<xref:System.Windows.Forms.DateTimePicker>コントロールは、2 つの部分が表示されます: テキスト、および一覧の横の下向きの矢印をクリックするときに表示されるカレンダーで表される日付のドロップダウン リスト。 次のように、カレンダー、<xref:System.Windows.Forms.MonthCalendar>コントロールで、複数の日付を選択するために使用できます。 詳細については、<xref:System.Windows.Forms.MonthCalendar>を制御しを参照してください[MonthCalendar コントロールの概要](~/docs/framework/winforms/controls/monthcalendar-control-overview-windows-forms.md)です。  
+  
+ コントロールの予定表の部分の外観を変更するには設定して、 <xref:System.Windows.Forms.DateTimePicker.CalendarForeColor%2A>、 <xref:System.Windows.Forms.DateTimePicker.CalendarFont%2A>、 <xref:System.Windows.Forms.DateTimePicker.CalendarTitleBackColor%2A>、 <xref:System.Windows.Forms.DateTimePicker.CalendarTitleForeColor%2A>、 <xref:System.Windows.Forms.DateTimePicker.CalendarTrailingForeColor%2A>、および<xref:System.Windows.Forms.DateTimePicker.CalendarMonthBackground%2A>プロパティです。  
+  
+ スピン ボタン コントロール (アップダウン コントロールとも呼ばれます) を使用すると、日付/時刻値を調整して、設定、<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを`true`です。 コントロールが選択されているときに、予定表の削除はできません。 上下の値を変更するボタンを個別に各要素を選択し、上矢印を使用して、日付と時刻を調整できます。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティには、現在の日付と時刻に設定されているコントロールが含まれています。 使用することができます、<xref:System.Windows.Forms.DateTimePicker.Text%2A>プロパティまたはの適切なメンバー<xref:System.Windows.Forms.DateTimePicker.Value%2A>日付と時刻の値を取得します。 詳細については、次を参照してください。[する方法: セットと Windows フォームの DateTimePicker コントロールを使用して日付を返す](~/docs/framework/winforms/controls/how-to-set-and-return-dates-with-the-windows-forms-datetimepicker-control.md)です。 日付を制限して時間を設定して選択できる、<xref:System.Windows.Forms.DateTimePicker.MinDate%2A>と<xref:System.Windows.Forms.DateTimePicker.MaxDate%2A>プロパティです。  
+  
+ によって設定される、4 つの形式で値を表示することができます、<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティ: <xref:System.Windows.Forms.DateTimePickerFormat.Long>、 <xref:System.Windows.Forms.DateTimePickerFormat.Short>、 <xref:System.Windows.Forms.DateTimePickerFormat.Time>、または<xref:System.Windows.Forms.DateTimePickerFormat.Custom>です。 既定の日付<xref:System.Windows.Forms.DateTimePicker.Format%2A>は<xref:System.Windows.Forms.DateTimePickerFormat?displayProperty=nameWithType>します。  
+  
+ 場合は、<xref:System.Windows.Forms.DateTimePicker>ピッキングまたは日付ではなく時間を編集するためのコントロールとして表示するには設定、<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを`true`と<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティを<xref:System.Windows.Forms.DateTimePickerFormat.Time>です。 詳細については、次を参照してください。[する方法: DateTimePicker コントロールに表示時間](~/docs/framework/winforms/controls/how-to-display-time-with-the-datetimepicker-control.md)です。  
+  
+ 場合、<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティに設定されている<xref:System.Windows.Forms.DateTimePickerFormat?displayProperty=nameWithType>を設定して、独自の形式のスタイルを作成することができます、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティと、カスタム書式指定文字列を作成します。 カスタム書式指定文字列には、カスタム フィールドの文字とその他のリテラル文字の組み合わせが可能です。 たとえば、「年 6 月 01、2012-金曜日」として日付を設定して表示できます、 <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> "MMMM dd, yyyy - dddd"をプロパティです。 詳細については、次を参照してください。[する方法: Windows フォームの DateTimePicker コントロールを備えたカスタム形式で日付を表示](~/docs/framework/winforms/controls/display-a-date-in-a-custom-format-with-wf-datetimepicker-control.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+> [!CAUTION]
+>  ときに、<xref:System.Windows.Forms.DateTimePicker>はデータ バインドと、バッキング値に変更されます`null`の値、<xref:System.Windows.Forms.DateTimePicker>は更新されないと、以前の値は保持されます。 ここでこの動作が望ましくない (たとえば、一連のデータ バインド コントロールを使用して、レコード セット内でページを) ときの状況で使用して、<xref:System.Windows.Forms.Binding.Format>のイベント、<xref:System.Windows.Forms.Binding>を設定するクラス、<xref:System.Windows.Forms.DateTimePicker>として認識可能な値に、`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロールとして表示されるようにします。 この例を実行するには、フォームと呼び出しに、次のコードを貼り付けます、`CreateMyDateTimePicker`例フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント メソッドを処理します。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DateTimePicker ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロール (アップダウン コントロールとも呼ばれます) として表示されるようにします。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの背景色を示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DateTimePicker" /> の背景の <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DateTimePicker.BackColor%2A>の外観に影響を与えません、<xref:System.Windows.Forms.DateTimePicker>です。 ドロップダウン カレンダーの背景色を設定する、<xref:System.Windows.Forms.DateTimePicker>を参照してください、<xref:System.Windows.Forms.DateTimePicker.CalendarMonthBackground%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColorChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackColorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackColorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.BackColorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.BackColor" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの背景イメージを取得または設定します。</summary>
+        <value>コントロールの背景イメージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ、メソッド、イベントをこのクラスは無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.BackgroundImage" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの背景イメージのレイアウトを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageLayout" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.ProgressBar.BackgroundImageLayout%2A>プロパティがの外観に影響を与えません、<xref:System.Windows.Forms.DateTimePicker>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.BackgroundImageLayout" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarFont">
+      <MemberSignature Language="C#" Value="public System.Drawing.Font CalendarFont { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Font CalendarFont" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarFont" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AmbientValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Font</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表に適用されるフォント スタイルを取得または設定します。</summary>
+        <value>予定表に適用されるフォント スタイルを表す <see cref="T:System.Drawing.Font" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.DateTimePicker.CalendarFont%2A>プロパティです。 この例で、新しい<xref:System.Windows.Forms.DateTimePicker>コントロールを追加して、<xref:System.Windows.Forms.Control.Controls%2A>のコレクション、 <xref:System.Windows.Forms.Form>、して初期化し、<xref:System.Windows.Forms.DateTimePicker.CalendarFont%2A>プロパティを動的に定義された<xref:System.Drawing.Font>。  
+  
+ [!code-cpp[DateTimePicker.CalendarFont#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DateTimePicker.CalendarFont/CPP/calendarfont.cpp#1)]
+ [!code-csharp[DateTimePicker.CalendarFont#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DateTimePicker.CalendarFont/CS/calendarfont.cs#1)]
+ [!code-vb[DateTimePicker.CalendarFont#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DateTimePicker.CalendarFont/VB/calendarfont.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CalendarForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalendarForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表の前景色を取得または設定します。</summary>
+        <value>予定表の前景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker>が作成されると、このプロパティは最初に設定して、<xref:System.Windows.Forms.Control.ForeColor%2A>プロパティの値。  
+  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.DateTimePicker.CalendarForeColor%2A>プロパティです。 この例で、新しい作成<xref:System.Windows.Forms.DateTimePicker>に追加、<xref:System.Windows.Forms.Control.Controls%2A>コレクション、および、初期化、<xref:System.Windows.Forms.DateTimePicker.CalendarForeColor%2A>プロパティを<xref:System.Drawing.Color.Aqua%2A>定数。  
+  
+ [!code-cpp[DateTimePicker.CalendarForeColor#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DateTimePicker.CalendarForeColor/CPP/calendarforecolor.cpp#1)]
+ [!code-csharp[DateTimePicker.CalendarForeColor#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DateTimePicker.CalendarForeColor/CS/calendarforecolor.cs#1)]
+ [!code-vb[DateTimePicker.CalendarForeColor#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DateTimePicker.CalendarForeColor/VB/calendarforecolor.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarMonthBackground">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CalendarMonthBackground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalendarMonthBackground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarMonthBackground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表の月の背景色を取得または設定します。</summary>
+        <value>予定表の月の背景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker>が作成されると、このプロパティは最初に設定して、<xref:System.Windows.Forms.DateTimePicker.DefaultMonthBackColor>フィールドの値。  
+  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化、<xref:System.Windows.Forms.DateTimePicker.CalendarMonthBackground%2A>プロパティです。 作成した後、<xref:System.Windows.Forms.DateTimePicker>に追加することと、 <xref:System.Windows.Forms.Form>、例では、初期化、<xref:System.Windows.Forms.DateTimePicker.CalendarMonthBackground%2A>プロパティを<xref:System.Drawing.Color>定数。  
+  
+ [!code-cpp[DateTimePicker.CalendarMonthBackground#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DateTimePicker.CalendarMonthBackground/CPP/calendarmonthbackground.cpp#1)]
+ [!code-csharp[DateTimePicker.CalendarMonthBackground#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DateTimePicker.CalendarMonthBackground/CS/calendarmonthbackground.cs#1)]
+ [!code-vb[DateTimePicker.CalendarMonthBackground#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DateTimePicker.CalendarMonthBackground/VB/calendarmonthbackground.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarTitleBackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CalendarTitleBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalendarTitleBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarTitleBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表のタイトルの背景色を取得または設定します。</summary>
+        <value>予定表のタイトルの背景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker>が作成されると、このプロパティは最初に設定して、<xref:System.Windows.Forms.DateTimePicker.DefaultTitleBackColor>フィールドの値。  
+  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarTitleForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CalendarTitleForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalendarTitleForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarTitleForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表のタイトルの前景色を取得または設定します。</summary>
+        <value>予定表のタイトルの前景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker>が作成されると、このプロパティは最初に設定して、<xref:System.Windows.Forms.DateTimePicker.DefaultTitleForeColor>フィールドの値。  
+  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarTrailingForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color CalendarTrailingForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalendarTrailingForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CalendarTrailingForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>予定表に表示される前後の月の数日間の前景色を取得または設定します。</summary>
+        <value>予定表に表示される前後の月の数日間の前景色を表す <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker>が作成されると、このプロパティは最初に設定して、<xref:System.Windows.Forms.DateTimePicker.DefaultTrailingForeColor>フィールドの値。  
+  
+ 末尾の日付は、前の月から終了日または開始日を予定表を埋めるために使用する次の月からです。  
+  
+ 以降、Windows Vista とは、テーマによって、このプロパティの設定可能性がありますいないの外観を変更、カレンダーです。 たとえば、Windows は、Aero のテーマを使用してに設定されている場合このプロパティの設定も何も起こりません。 これは、予定表の更新バージョンが実行時に現在のオペレーティング システムのテーマから派生した外観でレンダリングされているためです。 このプロパティを使用し、カレンダーの以前のバージョンを有効にする場合は、アプリケーションの visual スタイルが無効にできます。 Visual スタイルを無効にすると、アプリケーションでは、その他のコントロールの動作と外観が影響があります。 Visual Basic での visual スタイルを無効にするには、プロジェクト デザイナーを開きをオフにして、**を有効にする XP の視覚スタイル**チェック ボックスをオンします。 C# での visual スタイルを無効にするには、Program.cs を開きをコメント アウト`Application.EnableVisualStyles();`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Checked">
+      <MemberSignature Language="C#" Value="public bool Checked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Checked" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.Checked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.Value" /> プロパティに有効な日付/時刻値が設定されているかどうか、その値を変更できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="P:System.Windows.Forms.DateTimePicker.Value" /> プロパティに有効な <see cref="T:System.DateTime" /> 値が設定されており、その表示された値を更新できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは使用する場合に表示されるチェック ボックスの状態を取得、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティの値が`true`です。 場合、<xref:System.Windows.Forms.DateTimePicker.Checked%2A>プロパティの値が`true`、<xref:System.Windows.Forms.DateTimePicker>コントロールを正しく書式設定された表示<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティの値です。 それ以外の場合、コントロールがに割り当てられている最後の有効な日付/時刻値が表示されます、<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティまたは現在の日付と時刻 (<xref:System.DateTime.Now%2A?displayProperty=nameWithType>) 値がこれまで割り当てられていない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseUp">
+      <MemberSignature Language="C#" Value="public event EventHandler CloseUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CloseUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.CloseUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン形式の予定表が閉じられた場合や、非表示になった場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DateTimePicker.CloseUp>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DateTimePicker.CloseUp>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#376](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#376)]
+ [!code-vb[System.Windows.Forms.EventExamples#376](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#376)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しい <see cref="T:System.Windows.Forms.DateTimePicker.DateTimePickerAccessibleObject" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DateTimePicker.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.Control.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定する、<xref:System.Windows.Forms.Control.AccessibilityObject%2A>プロパティへの参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.CreateAccessibilityInstance" />派生クラスで呼び出す必要はありません、基本クラスの<see cref="M:System.Windows.Forms.DateTimePicker.CreateAccessibilityInstance" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandle">
+      <MemberSignature Language="C#" Value="protected override void CreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.CreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>物理ウィンドウ ハンドルを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomFormat">
+      <MemberSignature Language="C#" Value="public string CustomFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.CustomFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>日付/時刻のカスタム書式指定文字列を取得または設定します。</summary>
+        <value>カスタムの日付/時刻書式を表す文字列。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 日付と時刻の区切り記号が格納されるリテラル文字列を表示する、または書式指定文字列には、部分文字列のエスケープ文字を使用する必要があります。 たとえば、「6 月 15 日午後 12時 00分」として日付を表示する次のように設定します。、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを"MMMM dd 'at' t:mm tt"です。 「アット」部分文字列がエスケープ文字で囲まれていない場合、結果は"年 6 月 15日 aP 12時 00分 PM"、"t"文字が 1 文字表示として読み込まれるためです。 書式指定文字列 (形式の文字列テーブルを参照してください)。  
+  
+ 日付と時刻の書式を設定するのには、書式指定文字列を結合できます。 たとえば、06/15/2001 としての日付と時刻を表示する午後 12時 00分にこのプロパティを設定する必要があります"MM '/' dd '/' yyyy hh': ' mm tt"です。 詳細については、次を参照してください。[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティに設定する必要があります<xref:System.Windows.Forms.DateTimePickerFormat?displayProperty=nameWithType>このプロパティを表示されている日付と時刻の書式に影響します。  
+  
+ 次の表は、すべての有効な書式指定文字列とその説明を示します。  
+  
+|書式文字列|説明|  
+|-------------------|-----------------|  
+|日|1 桁または 2 桁の日です。|  
+|dd|2 桁の日です。 1 桁の日の値には、0 が付きます。|  
+|ddd|3 文字の曜日の省略形にします。|  
+|dddd|完全 - 曜日の名前です。|  
+|時|12 時間形式で 1 または 2 桁の時間。|  
+|hh|12 時間制の 2 桁の時間。 値が 1 桁には、0 が付きます。|  
+|H|24 時間形式で 1 または 2 桁の時間。|  
+|HH|24 時間形式で 2 桁の時間。 値が 1 桁には、0 が付きます。|  
+|分|1 桁または 2 桁の分です。|  
+|mm|2 桁の分です。 値が 1 桁には、0 が付きます。|  
+|M|1 桁または 2 桁の月の数。|  
+|MM|2 桁の月の番号。 値が 1 桁には、0 が付きます。|  
+|MMM|3 桁の月の省略形です。|  
+|MMMM|月の正式名。|  
+|秒|1 桁または 2 桁の秒。|  
+|ss|2 桁の秒。 値が 1 桁には、0 が付きます。|  
+|t|1 文字表示します。 省略形 (a. m. として表示されます"A")。|  
+|tt|2 文字表示します。 省略形 (a. m. 表示されます"AM")。|  
+|y|1 桁の年 (2001 が「1」として表示されます)。|  
+|yy|(2001 は「01」として表示) 年の最後の 2 桁です。|  
+|yyyy|完全な年 (2001 が「2001」として表示されます)。|  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティできるように、 <xref:System.Windows.Forms.DateTimePicker> 「年 6 月 01、2001-金曜日」としての日付が表示されます。 このコードでのインスタンス、<xref:System.Windows.Forms.DateTimePicker>にコントロールが作成されて、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMonthBackColor">
+      <MemberSignature Language="C#" Value="protected static readonly System.Drawing.Color DefaultMonthBackColor;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly valuetype System.Drawing.Color DefaultMonthBackColor" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.DefaultMonthBackColor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの既定の月の背景色を示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定の <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTitleBackColor">
+      <MemberSignature Language="C#" Value="protected static readonly System.Drawing.Color DefaultTitleBackColor;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly valuetype System.Drawing.Color DefaultTitleBackColor" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.DefaultTitleBackColor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールのタイトルの既定の背景色を示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTitleForeColor">
+      <MemberSignature Language="C#" Value="protected static readonly System.Drawing.Color DefaultTitleForeColor;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly valuetype System.Drawing.Color DefaultTitleForeColor" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.DefaultTitleForeColor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールのタイトルの既定の前景色を示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTrailingForeColor">
+      <MemberSignature Language="C#" Value="protected static readonly System.Drawing.Color DefaultTrailingForeColor;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly valuetype System.Drawing.Color DefaultTrailingForeColor" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.DefaultTrailingForeColor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの前後の月の既定の前景色を示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DestroyHandle">
+      <MemberSignature Language="C#" Value="protected override void DestroyHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DestroyHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.DestroyHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>物理ウィンドウ ハンドルを破棄します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleBuffered">
+      <MemberSignature Language="C#" Value="protected override bool DoubleBuffered { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DoubleBuffered" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.DoubleBuffered" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 次バッファーを使用してコントロールの画面を再描画するかどうかを示す値を取得または設定します。 このプロパティを設定しても、<see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールに影響はありません。</summary>
+        <value>
+          コントロールで 2 次バッファーを使用して画面を再描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DateTimePicker.DoubleBuffered%2A>プロパティも何も起こりません、<xref:System.Windows.Forms.DateTimePicker>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClick">
+      <MemberSignature Language="C#" Value="public event EventHandler DoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.DoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがダブルクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、イベント無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDown">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.DropDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップダウン形式の予定表が表示されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.DateTimePicker.DropDown>のイベント、<xref:System.Windows.Forms.DateTimePicker>を使用して、<xref:System.Windows.Forms.DateTimePicker.MinDateTime>と<xref:System.Windows.Forms.DateTimePicker.MaxDateTime>フィールドです。 例を実行するこの貼り付けを次のコードを含むフォームで、<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。  
+  
+ [!code-cpp[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownAlign">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LeftRightAlignment DropDownAlign { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.LeftRightAlignment DropDownAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.DropDownAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LeftRightAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロール上にあるドロップダウン形式の予定表の配置を取得または設定します。</summary>
+        <value>コントロール上のドロップダウン形式の予定表の配置。 既定値は、<see cref="F:System.Windows.Forms.LeftRightAlignment.Left" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの右または左には、ドロップダウン カレンダーを整列することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、<xref:System.Windows.Forms.DateTimePicker>を設定して、 <xref:System.Windows.Forms.DateTimePicker.DropDownAlign%2A>、 <xref:System.Windows.Forms.DateTimePicker.Value%2A>、 <xref:System.Windows.Forms.DateTimePicker.Format%2A>、および<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティです。 この例を実行するには、フォームと呼び出しに、次のコードを貼り付ける`InitializeDateTimePicker`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.DateTimePicker#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.DateTimePicker#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.DateTimePicker#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.LeftRightAlignment" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの前景色を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DateTimePicker" /> の前景の <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DateTimePicker.ForeColor%2A>プロパティがの外観に影響を与えません、<xref:System.Windows.Forms.DateTimePicker>コントロール。  
+  
+ ドロップダウン カレンダーの前景色を設定する、<xref:System.Windows.Forms.DateTimePicker>を参照してください、<xref:System.Windows.Forms.DateTimePicker.CalendarForeColor%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColorChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ForeColorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ForeColorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.ForeColorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.ForeColor" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、<xref:System.Windows.Forms.DateTimePicker.ForeColor%2A>プログラムで修正するか、操作によってプロパティが変更されました。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DateTimePickerFormat Format { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DateTimePickerFormat Format" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DateTimePickerFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに表示される日時の書式を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DateTimePickerFormat" /> 値のいずれか 1 つ。 既定値は、<see cref="F:System.Windows.Forms.DateTimePickerFormat.Long" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで日付が表示される日付/時刻形式を決定します。 日付/時刻の形式は、そのオペレーティング システムでのユーザーの地域設定に基づきます。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティに設定する必要があります<xref:System.Windows.Forms.DateTimePickerFormat?displayProperty=nameWithType>の<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを表示されている日付と時刻の書式に影響します。  
+  
+ 内の唯一の時刻を表示する、 <xref:System.Windows.Forms.DateTimePicker>、設定、<xref:System.Windows.Forms.DateTimePicker.Format%2A>に<xref:System.Windows.Forms.DateTimePickerFormat.Time>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティできるように、 <xref:System.Windows.Forms.DateTimePicker> 「年 6 月 01、2001-金曜日」としての日付が表示されます。 このコードでのインスタンス、<xref:System.Windows.Forms.DateTimePicker>にコントロールが作成されて、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker.CustomFormat Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker.CustomFormat Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられている値は、のいずれかではありません、<see cref="T:System.Windows.Forms.DateTimePickerFormat" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FormatChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FormatChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.FormatChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.Format" /> プロパティ値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DateTimePicker.FormatChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DateTimePicker.FormatChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#374](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#374)]
+ [!code-vb[System.Windows.Forms.EventExamples#374](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#374)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputKey">
+      <MemberSignature Language="C#" Value="protected override bool IsInputKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsInputKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.IsInputKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 値のいずれか。</param>
+        <summary>指定されているキーが、通常の入力キーであるか、またはプリプロセスを必要とする特殊なキーであるかを確認します。</summary>
+        <returns>
+          指定されているキーが通常の入力キーである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ウィンドウ メッセージを前処理、指定したキーがコントロールに直接送信される通常の入力キーまたは特殊なキー (PAGEUP、PAGEDOWN) など必要がある間に処理されたかどうかを決定するときに、このメソッドを呼び出します。 後者の場合に、プリプロセス フェーズで消費されていない場合にのみ、コントロールをキーを送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDate">
+      <MemberSignature Language="C#" Value="public DateTime MaxDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MaxDate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.MaxDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールで選択できる日時の最大値を取得または設定します。</summary>
+        <value>コントロールで選択できる日時の最大値。 既定は、CurrentCulture のカレンダーの <see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" /> プロパティと 9998 年 12 月 31 日午前 12 時の最小値として決定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロール (アップダウン コントロールとも呼ばれます) として表示されるようにします。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられた値が、<see cref="P:System.Windows.Forms.DateTimePicker.MinDate" /> 値より小さいです。</exception>
+        <exception cref="T:System.SystemException">割り当てられた値が、<see cref="F:System.Windows.Forms.DateTimePicker.MaxDateTime" /> 値を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDateTime">
+      <MemberSignature Language="C#" Value="public static readonly DateTime MaxDateTime;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.DateTime MaxDateTime" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.MaxDateTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの日付の最大値を示します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 日付の最大値は、12/31/9998 23時 59分: 59 に設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理を示します、<xref:System.Windows.Forms.DateTimePicker.DropDown>のイベント、<xref:System.Windows.Forms.DateTimePicker>を使用して、<xref:System.Windows.Forms.DateTimePicker.MinDateTime>と<xref:System.Windows.Forms.DateTimePicker.MaxDateTime>フィールドです。 この例を実行するを含むフォームに次のコードを貼り付け、<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。  
+  
+ [!code-cpp[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.DateTimePicker#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DateTimePicker/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumDateTime">
+      <MemberSignature Language="C#" Value="public static DateTime MaximumDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.DateTime MaximumDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.MaximumDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールで使用できる日付の最大値を取得します。</summary>
+        <value><see cref="P:System.Windows.Forms.DateTimePicker.MaximumDateTime" /> コントロールで使用できる日付の最大値を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 日付の最大値に設定されている年 12 月 31 日まで 9998 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinDate">
+      <MemberSignature Language="C#" Value="public DateTime MinDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime MinDate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.MinDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールで選択できる日時の最小値を取得または設定します。</summary>
+        <value>コントロールで選択できる日時の最小値。 既定値は 1/1/1753 00:00:00 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロール (アップダウン コントロールとも呼ばれます) として表示されるようにします。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">割り当てられている値より小さい<see cref="P:System.Windows.Forms.DateTimePicker.MaxDate" />値。</exception>
+        <exception cref="T:System.SystemException">割り当てられた値が、<see cref="F:System.Windows.Forms.DateTimePicker.MinDateTime" /> 値より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MinDateTime">
+      <MemberSignature Language="C#" Value="public static readonly DateTime MinDateTime;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.DateTime MinDateTime" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DateTimePicker.MinDateTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの日付の最小値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最小の日付が 1753/1/1 に設定されている 00時 00分: 00 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumDateTime">
+      <MemberSignature Language="C#" Value="public static DateTime MinimumDateTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.DateTime MinimumDateTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.MinimumDateTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールで使用できる日付の最小値を取得します。</summary>
+        <value><see cref="P:System.Windows.Forms.DateTimePicker.MaximumDateTime" /> コントロールで使用できる日付の最小値を表す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 日付の最小値は、1753 年 1 月 1 日に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.MouseClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがマウスでクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、イベント無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDoubleClick">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MouseEventHandler MouseDoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MouseEventHandler MouseDoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.MouseDoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがマウスでダブルクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、イベント無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCloseUp">
+      <MemberSignature Language="C#" Value="protected virtual void OnCloseUp (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCloseUp(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnCloseUp(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DateTimePicker.CloseUp" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker.CloseUp>イベント ドロップダウン カレンダーが閉じられたし、表示されなくなるときに発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnCloseUp%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnCloseUp(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnCloseUp(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDown">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDown (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDown(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnDropDown(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DateTimePicker.DropDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker.DropDown>イベント ドロップダウン カレンダーが表示されるときに発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnDropDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnDropDown(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnDropDown(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnFontChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnFontChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnFontChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFormatChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnFormatChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFormatChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnFormatChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DateTimePicker.FormatChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker.FormatChanged>イベントが発生したときに、<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティ値が変更されます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnFormatChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnFormatChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnFormatChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnHandleCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnHandleCreated(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnHandleCreated(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleDestroyed">
+      <MemberSignature Language="C#" Value="protected override void OnHandleDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnHandleDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnHandleDestroyed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnHandleDestroyed(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnHandleDestroyed(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRightToLeftLayoutChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnRightToLeftLayoutChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRightToLeftLayoutChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnRightToLeftLayoutChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.RightToLeftLayout" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnRightToLeftLayoutChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnRightToLeftLayoutChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnRightToLeftLayoutChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSystemColorsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSystemColorsChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSystemColorsChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnSystemColorsChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="M:System.Windows.Forms.Control.OnSystemColorsChanged(System.EventArgs)" /> メソッドをオーバーライドします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnValueChanged (EventArgs eventargs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValueChanged(class System.EventArgs eventargs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.OnValueChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventargs" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="eventargs">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DateTimePicker.ValueChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker.ValueChanged>イベント コントロールの値が変更されたときに発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.DateTimePicker.OnValueChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.DateTimePicker.OnValueChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.DateTimePicker.OnValueChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールにおけるコンテンツと縁の間隔を取得または設定します。</summary>
+        <value>
+          常に <see cref="F:System.Windows.Forms.Padding.Empty" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.DateTimePicker.Padding%2A>プロパティも何も起こりません、<xref:System.Windows.Forms.DateTimePicker>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PaddingChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaddingChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.PaddingChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.Padding" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、イベント無効です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.PaintEventHandler Paint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.PaintEventHandler Paint" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.Paint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PaintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールが再描画されると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredHeight">
+      <MemberSignature Language="C#" Value="public int PreferredHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PreferredHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.PreferredHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの適切な高さを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールの適切な高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な高さが割り当てられていると表示されているテキストに合わせて必要な最小の高さ<xref:System.Drawing.Font>適用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeftLayout">
+      <MemberSignature Language="C#" Value="public virtual bool RightToLeftLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RightToLeftLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.RightToLeftLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DateTimePicker" /> のコンテンツが右から左へとレイアウトされるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Windows.Forms.DateTimePicker" /> のコンテンツが右から左へとレイアウトされる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false." /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DateTimePicker.RightToLeftLayout%2A>プロパティは右から左、ヘブライ語やアラビア語などの言語の書き込み先国際対応のアプリケーションに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeftLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler RightToLeftLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RightToLeftLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.RightToLeftLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.RightToLeftLayout" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DateTimePicker.RightToLeftLayoutChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DateTimePicker.RightToLeftLayoutChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#377](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#377)]
+ [!code-vb[System.Windows.Forms.EventExamples#377](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#377)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowCheckBox">
+      <MemberSignature Language="C#" Value="public bool ShowCheckBox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowCheckBox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.ShowCheckBox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択した日付の左側にチェック ボックスが表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          選択した日付の左側にチェック ボックスが表示される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティに設定されている`true`コントロールの日付の左側にチェック ボックスが表示されます。 チェック ボックスがオンの場合は、日付/時刻値を更新できます。 チェック ボックスをオフにすると、日付/時刻値に変更することではありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロール (アップダウン コントロールとも呼ばれます) として表示されるようにします。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowUpDown">
+      <MemberSignature Language="C#" Value="public bool ShowUpDown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowUpDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.ShowUpDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スピン ボタン コントロール (アップダウン コントロール) を使用して、日付/時刻値を調整するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          スピン ボタン コントロールを使用して日付/時刻値を調整する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティに設定されている`true`、スピン ボタン コントロール (アップダウン コントロール)、ドロップダウン カレンダーではなく時刻の値を調整に使用されます。 上下の値を変更するボタンを個別に各要素を選択し、上矢印を使用して、日付と時刻を調整できます。  
+  
+ 内の唯一の時刻を表示する、 <xref:System.Windows.Forms.DateTimePicker>、設定、<xref:System.Windows.Forms.DateTimePicker.Format%2A>プロパティを<xref:System.Windows.Forms.DateTimePickerFormat.Time>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成、<xref:System.Windows.Forms.DateTimePicker>を制御し、それを初期化します。 コントロールの<xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A>プロパティを設定します。 また、<xref:System.Windows.Forms.DateTimePicker.ShowCheckBox%2A>プロパティを設定すると、コントロールが表示されるように、 <xref:System.Windows.Forms.CheckBox>、および<xref:System.Windows.Forms.DateTimePicker.ShowUpDown%2A>プロパティを設定すると、コントロールは、スピン ボタン コントロールとして表示されるようにします。  
+  
+ [!code-cpp[Classic DateTimePicker Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DateTimePicker Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DateTimePicker Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DateTimePicker Example/CS/source.cs#1)]
+ [!code-vb[Classic DateTimePicker Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DateTimePicker Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールに関連付けられているテキストを取得または設定します。</summary>
+        <value>このコントロールに関連付けられているテキストを表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返される文字列は等価、<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティ適切な書式設定またはカスタムの書式設定を適用します。 たとえば場合、 <xref:System.Windows.Forms.DateTimePicker.Value%2A> 06/01/2001 にプロパティが設定されているしながら 12時 00分: 00 AM、 <xref:System.Windows.Forms.DateTimePicker.CustomFormat%2A> 「dddd、MMMM dd, yyyy」に設定されて、<xref:System.Windows.Forms.DateTimePicker.Text%2A>プロパティの値が「金曜日、01、2001 年 6 月」です。  
+  
+ このプロパティを設定するときに文字列がのインスタンスに変換する必要があります、<xref:System.DateTime>クラスです。 有効な変換できない文字列とするカスタム書式を定義することは<xref:System.DateTime>値。 このためから返された文字列、<xref:System.Windows.Forms.DateTimePicker.Text%2A>プロパティに渡される場合に、エラーになる可能性があります、<xref:System.Windows.Forms.DateTimePicker.Text%2A>プロパティです。 文字列は、日付/時刻値に変換できない場合、<xref:System.DateTime>クラスがスローされます、<xref:System.FormatException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.Text" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Windows.Forms.DateTimePicker" /> コントロールを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.DateTimePicker" /> を表す文字列。 コントロールの種類と <see cref="P:System.Windows.Forms.DateTimePicker.Value" /> プロパティを格納する文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public DateTime Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DateTimePicker.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに代入された日付/時刻値を取得または設定します。</summary>
+        <value>コントロールに代入された <see cref="T:System.DateTime" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティが変更されていないコードや、ユーザーが、現在の日付と時刻に設定されている (<xref:System.DateTime.Now%2A?displayProperty=nameWithType>)。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用方法、<xref:System.Windows.Forms.DateTimePicker.Value%2A>現在の日付値を取得するプロパティです。 まず、例で、表示、<xref:System.Windows.Forms.DateTimePicker.Value%2A>プロパティです。 次に、インクリメント、 <xref:System.Windows.Forms.DateTimePicker.Value%2A> 1 日と、プロパティ値をもう一度表示でプロパティをします。  
+  
+ [!code-cpp[DateTimePicker.Value#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DateTimePicker.Value/CPP/value.cpp#1)]
+ [!code-csharp[DateTimePicker.Value#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DateTimePicker.Value/CS/value.cs#1)]
+ [!code-vb[DateTimePicker.Value#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DateTimePicker.Value/VB/value.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定値より小さい<see cref="P:System.Windows.Forms.DateTimePicker.MinDate" />または複数の<see cref="P:System.Windows.Forms.DateTimePicker.MaxDate" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler ValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.DateTimePicker.ValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.DateTimePicker.Value" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは発生する前に、ユーザー入力が検証されます。 入力された日付がより前の場合、このイベントは発生しません<xref:System.Windows.Forms.DateTimePicker.MinDateTime>かそれより遅い<xref:System.Windows.Forms.DateTimePicker.MaxDateTime>です。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DateTimePicker.ValueChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DateTimePicker>という`DateTimePicker1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DateTimePicker.ValueChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#378](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#378)]
+ [!code-vb[System.Windows.Forms.EventExamples#378](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#378)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DateTimePicker.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

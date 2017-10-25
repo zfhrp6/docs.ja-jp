@@ -1,0 +1,148 @@
+<Type Name="PositiveTimeSpanValidator" FullName="System.Configuration.PositiveTimeSpanValidator">
+  <TypeSignature Language="C#" Value="public class PositiveTimeSpanValidator : System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PositiveTimeSpanValidator extends System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.PositiveTimeSpanValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検証を提供する<see cref="T:System.TimeSpan" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.PositiveTimeSpanValidator>を使用して、<xref:System.TimeSpan>オブジェクトが特定の条件を満たしています。 <xref:System.Configuration.PositiveTimeSpanValidator.CanValidate%2A>メソッドでは、オブジェクトの種類の検証中に、予期された型が一致するかどうかを判断します。 検証されるオブジェクトのパラメーターとして渡されます、<xref:System.Configuration.PositiveTimeSpanValidator.Validate%2A>メソッドです。 検証に合格する検証されるオブジェクトが正の値をする必要があります<xref:System.TimeSpan>値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PositiveTimeSpanValidator>型です。  
+  
+ [!code-csharp[System.Configuration.PositiveTimeSpanValidator#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/CS/PositiveTimeSpanValidator.cs#1)]
+ [!code-vb[System.Configuration.PositiveTimeSpanValidator#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/VB/PositiveTimeSpanValidator.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PositiveTimeSpanValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.PositiveTimeSpanValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.PositiveTimeSpanValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.PositiveTimeSpanValidator.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Configuration.PositiveTimeSpanValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.PositiveTimeSpanValidator#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/CS/PositiveTimeSpanValidator.cs#2)]
+ [!code-vb[System.Configuration.PositiveTimeSpanValidator#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/VB/PositiveTimeSpanValidator.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidate">
+      <MemberSignature Language="C#" Value="public override bool CanValidate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanValidate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.PositiveTimeSpanValidator.CanValidate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型。</param>
+        <summary>オブジェクトの種類を検証できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />パラメーターと一致する、<see cref="T:System.TimeSpan" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.PositiveTimeSpanValidator.CanValidate%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.PositiveTimeSpanValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.PositiveTimeSpanValidator#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/CS/PositiveTimeSpanValidator.cs#3)]
+ [!code-vb[System.Configuration.PositiveTimeSpanValidator#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/VB/PositiveTimeSpanValidator.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.PositiveTimeSpanValidator.Validate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクトの値。</param>
+        <summary>オブジェクトの値が有効かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証対象のオブジェクトがのパラメーターとして渡される、<xref:System.Configuration.PositiveTimeSpanValidator.Validate%2A>メソッドです。 検証に合格する検証されるオブジェクトが正の値をする必要があります<xref:System.TimeSpan>値。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.PositiveTimeSpanValidator.Validate%2A> メソッドの使用方法を示します。 このコード例に示されている例の一部である、<xref:System.Configuration.PositiveTimeSpanValidator>クラスです。  
+  
+ [!code-csharp[System.Configuration.PositiveTimeSpanValidator#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/CS/PositiveTimeSpanValidator.cs#4)]
+ [!code-vb[System.Configuration.PositiveTimeSpanValidator#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.PositiveTimeSpanValidator/VB/PositiveTimeSpanValidator.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />正の値として解決できない<see cref="T:System.TimeSpan" />値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

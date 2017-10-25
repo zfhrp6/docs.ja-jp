@@ -1,0 +1,173 @@
+<Type Name="TransferMode" FullName="System.ServiceModel.TransferMode">
+  <TypeSignature Language="C#" Value="public enum TransferMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransferMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.TransferMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>チャネルが要求メッセージと応答メッセージの転送でストリーミング モードとバッファー モードのどちらを使用するかを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] トランスポートでは、それぞれの方向で、次の 2 つのメッセージ転送モードをサポートします。  
+  
+-   バッファー転送では、転送が完了するまで、メッセージ全体がメモリ バッファーに保持されます。  
+  
+-   ストリーミング転送では、メッセージ ヘッダーだけをバッファーし、メッセージ本体をストリームとして公開し、一度に一部分を読み取ることができます。  
+  
+ 転送モードを Streamed に設定すると、双方向のストリーミング通信が有効になります。 転送モードを StreamedRequest または StreamedResponse に設定すると、指定した方向でのみストリーミング通信が有効になります。  
+  
+ ストリーミング転送は、大容量のメモリ バッファーを用意する必要性をなくすことで、サービスのスケーラビリティを向上させます。 転送モードの変更によって実際にスケーラビリティが向上するかどうかは、転送されるメッセージのサイズによって決まります。 スケーラビリティの向上は、大きなメッセージでバッファー転送の代わりにストリーミング転送を使用すると最も明らかになります。  
+  
+ 既定では、HTTP、TCP/IP、および名前付きパイプの各トランスポートでバッファー メッセージ転送が使用されます。 システム指定のバインドである <xref:System.ServiceModel.TransferMode.Streamed>、<xref:System.ServiceModel.BasicHttpBinding>、および <xref:System.ServiceModel.NetTcpBinding> に公開される転送モード プロパティを使用して、<xref:System.ServiceModel.NetNamedPipeBinding> の値を設定できます。 このモードは、たとえば <xref:System.ServiceModel.NetTcpBinding> プロパティを使用することで、<xref:System.ServiceModel.NetTcpBinding.TransferMode%2A> に設定できます。 バインドの構成セクションに設定することもできます。  
+  
+ 転送モード プロパティを公開しないバインドでは、バインド要素に対して転送モードを設定した後、その要素をカスタム バインドに追加できます。 たとえば、<xref:System.ServiceModel.Channels.HttpTransportBindingElement> を作成し、カスタム バインドの作成時に <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.TransferMode%2A> プロパティを使用して転送モードを設定します。 転送モードは、カスタム バインドの構成セクションに設定することもできます。  
+  
+ バッファー転送とストリーミング転送のどちらを使用するかは、HTTP 転送のエンドポイントでローカルに決定します。 HTTP トランスポートの場合、転送モードは、接続、つまりプロキシ サーバーやその他の中継局に伝達されません。 転送モードを設定しても、サービス コントラクトの記述には反映されません。 サービスのプロキシを生成した後、ストリーミング転送を使用するサービスの構成ファイルを編集して、その転送モードを設定できます (これは必須の作業ではありません)。 TCP トランスポートと名前付きパイプ トランスポートの場合、転送モードはポリシー アサーションとして伝達されます。  
+  
+ Streamed 転送モードを使用すると、[!INCLUDE[indigo2](~/includes/indigo2-md.md)]いくつかの制限を適用するランタイム。  
+  
+-   ストリーミング トランスポートで発生する操作は、最大で 1 つの入力パラメーターまたは 1 つの出力パラメーター、あるいはその両方が設定されたコントラクトをプログラミング モデル レイヤーに持つことができます。 設定するパラメーターは、メッセージの本文全体に対応し、<xref:System.ServiceModel.Channels.Message> または <xref:System.IO.Stream> の派生型であるか、<xref:System.Xml.Serialization.IXmlSerializable> インターフェイスを実装する必要があります。 操作の戻り値を取得することは、出力パラメーターを取得することと同じです。  
+  
+-   信頼できるメッセージ機能や SOAP メッセージ レベルのセキュリティなどの一部の [!INCLUDE[indigo2](~/includes/indigo2-md.md)] 機能は、転送するメッセージのバッファーに依存しています。 これらの機能を使用すると、ストリーミングによって得られるパフォーマンス上の利点が減少したり、失われたりする可能性があります。 ストリーミング トランスポートを保護するには、トランスポート レベルのセキュリティだけを使用するか、WS-Security クレームとトランスポート セキュリティを組み合わせた混合モードセキュリティを使用します。  
+  
+-   SOAP ヘッダーは、転送モードが Streamed に設定されている場合でも常にバッファリングされます。 メッセージのヘッダーは、さまざまなバインドとバインド要素に公開される MaxBufferSize トランスポート クォータのサイズを超過してはなりません。  
+  
+ バッファーに格納されたから Streamed に、転送モードを変更すると、TCP、名前付きパイプ トランスポートのネイティブなチャネル形状も変更されます。 バッファー転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IDuplexSessionChannel> です。 ストリーム転送では、ネイティブなチャネル形状は <xref:System.ServiceModel.Channels.IRequestChannel> と <xref:System.ServiceModel.Channels.IReplyChannel> です。 この結果、セッションフル サービス コントラクトは、トランスポート ストリーミングでは使用できません。  
+  
+   
+  
+## Examples  
+ 次のコード サンプルは、設定を示しています、 <xref:System.ServiceModel.TransferMode> Streamed にコードを使用してプロパティ。  
+  
+ **(c#)**  
+  
+```  
+TcpTransportBindingElement transport = new TcpTransportBindingElement();  
+transport.TransferMode = TransferMode.Streamed;  
+BinaryMessageEncodingBindingElement encoder = new BinaryMessageEncodingBindingElement();  
+CustomBinding binding = new CustomBinding(encoder, transport);  
+```  
+  
+ 次のサンプル表示<xref:System.ServiceModel.TransferMode.Streamed>Streamed に構成を使用してプロパティ。  
+  
+```  
+<customBinding>  
+    <binding name="streamingBinding">  
+        <binaryMessageEncoding />  
+            <tcpTransport transferMode="Streamed" />  
+     </binding>  
+</customBinding>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Buffered">
+      <MemberSignature Language="C#" Value="Buffered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransferMode Buffered = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransferMode.Buffered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransferMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求メッセージと応答メッセージの両方をバッファーします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Streamed">
+      <MemberSignature Language="C#" Value="Streamed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransferMode Streamed = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransferMode.Streamed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransferMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求メッセージと応答メッセージの両方をストリーミングします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamedRequest">
+      <MemberSignature Language="C#" Value="StreamedRequest" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransferMode StreamedRequest = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransferMode.StreamedRequest" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransferMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求メッセージをストリーミングし、応答メッセージをバッファーします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StreamedResponse">
+      <MemberSignature Language="C#" Value="StreamedResponse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.TransferMode StreamedResponse = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.TransferMode.StreamedResponse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransferMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求メッセージをバッファーし、応答メッセージをストリーミングします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

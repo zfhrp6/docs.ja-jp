@@ -1,0 +1,3259 @@
+<Type Name="ComboBox" FullName="System.Windows.Forms.ComboBox">
+  <TypeSignature Language="C#" Value="public class ComboBox : System.Windows.Forms.ListControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComboBox extends System.Windows.Forms.ListControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ComboBox" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ListControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultBindingProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("SelectedIndexChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Items")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Windows.Forms.Design.ComboBoxDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows コンボ ボックス コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.ComboBox>と組み合わせて使用するテキスト ボックスが表示されます、 <xref:System.Windows.Forms.ListBox>、これにより、ユーザーを一覧から項目を選択または新しい値を入力します。  
+  
+ <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティ一覧が常に表示されるかどうか、またはドロップダウン リストで、一覧を表示するかどうかを指定します。 <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>もプロパティでは、テキストの部分を編集できるかどうかを指定します。 参照してください<xref:System.Windows.Forms.ComboBoxStyle>の使用可能な設定とその影響します。 常にリストを表示し、新しい値を入力が行われないように設定することはありません。 追加先となる新しい値がない一覧を表示するには、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+ を追加または実行時の一覧でオブジェクトを削除するには、のメソッドを使用して、<xref:System.Windows.Forms.ComboBox.ObjectCollection>クラス (を通じて、<xref:System.Windows.Forms.ComboBox.Items%2A>のプロパティ、 <xref:System.Windows.Forms.ComboBox>)。 オブジェクト参照の配列を割り当てることができます、<xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A>メソッドです。 リストには、各オブジェクトの既定の文字列値が表示されます。 個々 のオブジェクトを追加することができます、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>メソッドです。 項目を削除することができます、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>で全体を一覧表示メソッドまたはオフにして、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Clear%2A>メソッドです。  
+  
+ 表示と選択の機能に加え、<xref:System.Windows.Forms.ComboBox>に項目を効率的に追加するための機能も提供、<xref:System.Windows.Forms.ComboBox>し、一覧の項目内のテキストを検索します。 <xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>メソッド、する項目の数が多いを追加することができます、<xref:System.Windows.Forms.ComboBox>たびに再描画するコントロールを使用しない項目は一覧に追加します。 <xref:System.Windows.Forms.ComboBox.FindString%2A>と<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>メソッドを使用すると、特定の検索文字列を含む、リスト内の項目を検索します。  
+  
+ 一覧で、現在選択されている項目を管理するこれらのプロパティを使用することができます、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティを編集 フィールドに表示される文字列を指定する、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティを取得または設定の現在の項目と<xref:System.Windows.Forms.ComboBox.SelectedItem%2A>プロパティを取得またはオブジェクトへの参照を設定します。  
+  
+> [!NOTE]
+>  ある場合、 <xref:System.Windows.Forms.ListBox>、 <xref:System.Windows.Forms.ComboBox>、または<xref:System.Windows.Forms.CheckedListBox>ベースの Windows フォーム ページや派生フォームでのそれらのコントロールの文字列コレクションを変更するのには、基本フォームでコントロールの文字列コレクションを空にする必要があります。 文字列のコレクションが空でない場合になる読み取り専用で別の形式を派生させる場合。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示す完全なアプリケーション、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>に項目を追加するメソッドを<xref:System.Windows.Forms.ComboBox>では、<xref:System.Windows.Forms.ComboBox.FindString%2A>内の項目を検索するメソッド、 <xref:System.Windows.Forms.ComboBox>、および<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>メソッド多数のアイテムを効率的に追加、<xref:System.Windows.Forms.ComboBox>です。 表示されるテキストとは異なる値を格納する機能を継承<xref:System.Windows.Forms.ListControl>です。 この機能を使用する方法の例は、次を参照してください。、<xref:System.Windows.Forms.ListControl>クラスです。  
+  
+ 参照を追加する必要があります、`System.Drawing`と`System.Windows.Forms`名前空間の次の例を実行します。  
+  
+ [!code-cpp[ComboBox#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxtype.cpp#1)]
+ [!code-csharp[ComboBox#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxtype.cs#1)]
+ [!code-vb[ComboBox#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxtype.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComboBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddItemsCore">
+      <MemberSignature Language="C#" Value="protected virtual void AddItemsCore (object[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddItemsCore(object[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.AddItemsCore(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method has been deprecated.  There is no replacement.  http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する項目。</param>
+        <summary>指定した項目をコンボ ボックスに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoCompleteCustomSource">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.AutoCompleteStringCollection AutoCompleteCustomSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AutoCompleteStringCollection AutoCompleteCustomSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.AutoCompleteCustomSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoCompleteStringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ComboBox.AutoCompleteSource" /> プロパティが <see langword="CustomSource" /> に設定されている場合に使用するカスタム <see cref="T:System.Collections.Specialized.StringCollection" /> を取得または設定します。</summary>
+        <value><see cref="P:System.Windows.Forms.ComboBox.AutoCompleteSource" /> に使用する <see cref="T:System.Collections.Specialized.StringCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>、 <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>、および<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを作成する、<xref:System.Windows.Forms.ComboBox>保持しているソース内のすべての文字列のプレフィックスを入力されているプレフィックスを比較することによって自動的に入力文字列を完了します。 これは便利です<xref:System.Windows.Forms.ComboBox>コントロールを Url、アドレス、ファイル名、またはコマンド頻繁に入力されます。 保持しているソースに重複するエントリがある場合は、オート コンプリートは予期しない動作します。  
+  
+ 使用、<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>プロパティ オプションですが、設定する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを`CustomSource`を使用するために<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>です。  
+  
+ 使用する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>と<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを同時にします。  
+  
+> [!NOTE]
+>  オペレーティング システムでは、一度に表示できるカスタムの文字列の数を制限可能性があります。 スラッシュ (/) または円記号を含む文字列 (\\)、オート コンプリートがのみとスラッシュを含むすべての文字を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoCompleteMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.AutoCompleteMode AutoCompleteMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AutoCompleteMode AutoCompleteMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.AutoCompleteMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoCompleteMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のオート コンプリートの動作を制御するオプションを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.AutoCompleteMode" /> の値の 1 つ。 値は、<see cref="F:System.Windows.Forms.AutoCompleteMode.Append" />、<see cref="F:System.Windows.Forms.AutoCompleteMode.None" />、<see cref="F:System.Windows.Forms.AutoCompleteMode.Suggest" />、および <see cref="F:System.Windows.Forms.AutoCompleteMode.SuggestAppend" /> です。 既定値は、<see cref="F:System.Windows.Forms.AutoCompleteMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>、 <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>、および<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを作成する、<xref:System.Windows.Forms.ComboBox>保持しているソース内のすべての文字列のプレフィックスを入力されているプレフィックスを比較することによって自動的に入力文字列を完了します。 これは便利です<xref:System.Windows.Forms.ComboBox>コントロールを Url、アドレス、ファイル名、またはコマンド頻繁に入力されます。 保持しているソースに重複するエントリがある場合は、オート コンプリートは予期しない動作します。  
+  
+ 設定した場合<xref:System.Windows.Forms.ComboBoxStyle>に<xref:System.Windows.Forms.ComboBoxStyle.DropDownList>場合に、のみ一覧に表示されます<xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>は<xref:System.Windows.Forms.AutoCompleteMode.Suggest>または<xref:System.Windows.Forms.AutoCompleteMode.SuggestAppend>です。  
+  
+ 使用、<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>プロパティ オプションですが、設定する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを<xref:System.Windows.Forms.AutoCompleteSource.CustomSource>を使用するために<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>です。  
+  
+ 使用する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>と<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを同時にします。  
+  
+ <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>に設定<xref:System.Windows.Forms.AutoCompleteMode.SuggestAppend>と<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>に設定<xref:System.Windows.Forms.AutoCompleteSource.ListItems>動作は次のようにします。  
+  
+-   文字列のリストが空の場合は、backspace キーまたは DEL キーを押すと何も行われません。  
+  
+-   1 秒未満では、BACKSPACE キーが押された、前の項目が選択されているか、文字列のリストが空の場合、何も選択します。  
+  
+-   1 秒以上では、BACKSPACE キーが押された、最初の項目が選択されます。  
+  
+-   DEL キーを押すと、最初の項目が選択されます。  
+  
+> [!NOTE]
+>  オペレーティング システムでは、一度に表示できるカスタムの文字列の数を制限可能性があります。 スラッシュ (/) または円記号を含む文字列 (\\)、オート コンプリートがのみとスラッシュを含むすべての文字を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値が 1 つの値の<see cref="T:System.Windows.Forms.AutoCompleteMode" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoCompleteSource">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.AutoCompleteSource AutoCompleteSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AutoCompleteSource AutoCompleteSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.AutoCompleteSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoCompleteSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オート コンプリートで使用する完全な文字列のソースを指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.AutoCompleteSource" /> の値の 1 つ。 オプションは、<see langword="AllSystemSources" />、<see langword="AllUrl" />、<see langword="FileSystem" />、<see langword="HistoryList" />、<see langword="RecentlyUsedList" />、<see langword="CustomSource" />、および <see langword="None" /> です。 既定値は、<see langword="None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>、 <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>、および<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを作成する、<xref:System.Windows.Forms.ComboBox>保持しているソース内のすべての文字列のプレフィックスを入力されているプレフィックスを比較することによって自動的に入力文字列を完了します。 これは便利です<xref:System.Windows.Forms.ComboBox>コントロールを Url、アドレス、ファイル名、またはコマンド頻繁に入力されます。  
+  
+ 使用、<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>プロパティ オプションですが、設定する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを<xref:System.Windows.Forms.AutoCompleteSource.CustomSource>を使用するために<xref:System.Windows.Forms.ComboBox.AutoCompleteCustomSource%2A>です。  
+  
+ 使用する必要があります、<xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>と<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>プロパティを同時にします。  
+  
+ <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A>に設定<xref:System.Windows.Forms.AutoCompleteMode.SuggestAppend>と<xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A>に設定<xref:System.Windows.Forms.AutoCompleteSource.ListItems>動作は次のようにします。  
+  
+-   文字列のリストが空の場合は、backspace キーまたは DEL キーを押すと何も行われません。  
+  
+-   1 秒未満では、BACKSPACE キーが押された、前の項目が選択されているか、文字列のリストが空の場合、何も選択します。  
+  
+-   1 秒以上では、BACKSPACE キーが押された、最初の項目が選択されます。  
+  
+-   DEL キーを押すと、最初の項目が選択されます。  
+  
+> [!NOTE]
+>  オペレーティング システムでは、一度に表示できるカスタムの文字列の数を制限可能性があります。 スラッシュ (/) または円記号を含む文字列 (\\)、オート コンプリートがのみとスラッシュを含むすべての文字を追加します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値が 1 つの値の<see cref="T:System.Windows.Forms.AutoCompleteSource" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの背景色を取得または設定します。</summary>
+        <value>コントロールの背景色を表す色のオブジェクト。 既定値は <see cref="P:System.Windows.Forms.Control.DefaultBackColor" /> プロパティの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImage">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Image BackgroundImage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image BackgroundImage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.BackgroundImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value>コントロールに表示される背景イメージ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.BackgroundImageChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ComboBox.BackgroundImage" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayout">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ImageLayout BackgroundImageLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ImageLayout BackgroundImageLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.BackgroundImageLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImageLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ImageLayout" /> 列挙型で定義される背景画像のレイアウトを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ImageLayout" /> の値の 1 つ (<see langword="Center" />、<see langword="None" />、<see langword="Stretch" />、<see langword="Tile" />、または <see langword="Zoom" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値が 1 つの値の<see cref="T:System.Windows.Forms.ImageLayout" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundImageLayoutChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler BackgroundImageLayoutChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler BackgroundImageLayoutChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.BackgroundImageLayoutChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ComboBox.BackgroundImageLayout" /> プロパティが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginUpdate">
+      <MemberSignature Language="C#" Value="public void BeginUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BeginUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.BeginUpdate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アイテムを一度に <see cref="T:System.Windows.Forms.ComboBox" /> に追加するときにパフォーマンスを維持します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、描画までからコントロールを防止、<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>メソッドが呼び出されます。  
+  
+ 項目を追加することをお勧め、<xref:System.Windows.Forms.ComboBox>を使用して、<xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A>のメソッド、<xref:System.Windows.Forms.ComboBox.ObjectCollection>クラス (を通じて、<xref:System.Windows.Forms.ComboBox.Items%2A>のプロパティ、 <xref:System.Windows.Forms.ComboBox>)。 これにより、一度に 1 つのリストに項目の配列を追加することができます。 ただしを追加する場合は、項目を一度に 1 つを使用して、時間、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ComboBox.ObjectCollection>クラスを使用することができます、<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>メソッドをコントロールが再描画するを防ぐために、<xref:System.Windows.Forms.ComboBox>項目が一覧に追加されるたびにします。 項目を一覧に追加するタスクを完了すると、呼び出し、<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>を有効にする方法、<xref:System.Windows.Forms.ComboBox>に再描画します。 項目を追加するには、この方法は、の描画中のちらつきを防ぐことができます、<xref:System.Windows.Forms.ComboBox>多数のアイテムの一覧に追加するときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用方法を示しています、<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>メソッドです。 この例の完全なコード例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#3)]
+ [!code-csharp[ComboBox#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#3)]
+ [!code-vb[ComboBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns>コントロールの新しいユーザー補助オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandle">
+      <MemberSignature Language="C#" Value="protected override void CreateHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.CreateHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールのハンドルを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでオーバーライド<xref:System.Windows.Forms.ComboBox>理由のためのハンドルの作成時に複数のレイアウトを回避する<xref:System.Windows.Forms.ComboBox>サイズを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParams">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.CreateParams CreateParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CreateParams CreateParams" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.CreateParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CreateParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール ハンドルが作成されるときに必要な作成パラメーターを取得します。</summary>
+        <value>コントロールを識別するハンドルを作成するときに必要な作成パラメーターを格納している <see cref="T:System.Windows.Forms.CreateParams" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AttributeProvider(typeof(System.ComponentModel.IListSource))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.ComboBox" /> のデータ ソースを取得または設定します。</summary>
+        <value><see cref="T:System.Collections.IList" /> インターフェイスを実装するオブジェクトか、または <see cref="T:System.Array" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースには、データベース、Web サービス、またはデータ バインド コントロールを生成するために後で使用するオブジェクトを指定できます。 ときに、<xref:System.Windows.Forms.ComboBox.DataSource%2A>プロパティが設定されて、項目のコレクションを変更することはできません。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.ComboBox.DataSource%2A>に、平日の配列を表示するプロパティを<xref:System.Windows.Forms.ComboBox>です。  
+  
+ [!code-csharp[System.Windows.Forms.ComboBox.DataSource#1](~/samples/snippets/csharp/VS_Snippets_Winforms/system.windows.forms.combobox.datasource/cs/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBox.DataSource#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/system.windows.forms.combobox.datasource/vb/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size DefaultSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size DefaultSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DefaultSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの既定のサイズを取得します。</summary>
+        <value>コントロールの既定のサイズ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.Windows.Forms.ComboBox> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="DoubleClick">
+      <MemberSignature Language="C#" Value="public event EventHandler DoubleClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DoubleClick" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.DoubleClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawItem">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.DrawItemEventHandler DrawItem;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.DrawItemEventHandler DrawItem" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.DrawItem" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DrawItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーナー描画 <see cref="T:System.Windows.Forms.ComboBox" /> のビジュアルな部分を変更すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、オーナー描画で使用<xref:System.Windows.Forms.ComboBox>です。 このイベントを使用するには項目を描画するに必要なタスクを実行する、<xref:System.Windows.Forms.ComboBox>です。 変数のサイズが設定された項目がある場合 (ときに、<xref:System.Windows.Forms.ComboBox.DrawMode%2A?displayProperty=nameWithType>プロパティに設定されている、`OwnerDrawVariable`の値<xref:System.Windows.Forms.DrawMode?displayProperty=nameWithType>)、項目を描画する前に、<xref:System.Windows.Forms.ComboBox.MeasureItem>イベントが発生します。 イベント ハンドラーを作成することができます、<xref:System.Windows.Forms.ComboBox.MeasureItem>しようとする描画イベント ハンドラーで、項目のサイズを指定するイベント、<xref:System.Windows.Forms.ComboBox.DrawItem>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を設定してオーナー描画コンボ ボックスを作成する方法を示しています、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティを`OwnerDrawnVariable`処理し、<xref:System.Windows.Forms.ComboBox.DrawItem>と<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。 また、設定を示します、<xref:System.Windows.Forms.ComboBox.DropDownWidth%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DrawMode DrawMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DrawMode DrawMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DrawMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DrawMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リストの要素の描画を処理するのは、コードとオペレーティング システムのどちらであるかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DrawMode" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.DrawMode.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を設定してオーナー描画コンボ ボックスを作成する方法を示しています、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティを`OwnerDrawnVariable`処理し、<xref:System.Windows.Forms.ComboBox.DrawItem>と<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。 また、設定を示します、<xref:System.Windows.Forms.ComboBox.DropDownWidth%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値が有効な<see cref="T:System.Windows.Forms.DrawMode" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDown">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.DropDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のドロップダウン部分が表示されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を初期化する方法を示しています、 <xref:System.Windows.Forms.ComboBox> text プロパティを設定し、使用してコントロール、<xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A>に挿入する方法、<xref:System.Windows.Forms.ComboBox>です。 処理についても示します、<xref:System.Windows.Forms.ComboBox.DropDown>イベント。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownClosed">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDownClosed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDownClosed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.DropDownClosed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のドロップダウン部分が見えなくなると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ComboBox.DropDownClosed>の状態を復元するイベント、<xref:System.Windows.Forms.ComboBox>への応答で行われた変更によって、<xref:System.Windows.Forms.ComboBox.DropDown>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ComboBox.DropDownClosed>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ComboBox>という`ComboBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ComboBox.DropDownClosed>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#168](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#168)]
+ [!code-vb[System.Windows.Forms.EventExamples#168](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#168)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownHeight">
+      <MemberSignature Language="C#" Value="public int DropDownHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DropDownHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DropDownHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(106)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Always)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のドロップダウン部分の高さをピクセル単位で取得または設定します。</summary>
+        <value>ドロップダウン ボックスの高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.ComboBox.DropDownHeight%2A>プロパティのリセット、<xref:System.Windows.Forms.ComboBox.IntegralHeight%2A>プロパティを`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値は 1 より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ComboBoxStyle DropDownStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ComboBoxStyle DropDownStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DropDownStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBoxStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスのスタイルを指定する値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ComboBoxStyle" /> 値のいずれか 1 つ。 既定値は、<see langword="DropDown" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティ一覧が常に表示されるかどうか、またはドロップダウン リストで、一覧を表示するかどうかを指定します。 <xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>もプロパティでは、テキストの部分を編集できるかどうかを指定します。 参照してください<xref:System.Windows.Forms.ComboBoxStyle>の使用可能な設定とその影響します。 常にリストを表示し、新しい値を入力が行われないように設定することはありません。 追加先となる新しい値がない一覧を表示するには、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定を示します、<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられた値が、<see cref="T:System.Windows.Forms.ComboBoxStyle" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownStyleChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler DropDownStyleChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DropDownStyleChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.DropDownStyleChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ComboBox.DropDownStyle" /> プロパティが変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ComboBox.DropDownStyleChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ComboBox>という`ComboBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ComboBox.DropDownStyleChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#166](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#166)]
+ [!code-vb[System.Windows.Forms.EventExamples#166](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#166)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropDownWidth">
+      <MemberSignature Language="C#" Value="public int DropDownWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DropDownWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DropDownWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスのドロップダウン部分の幅を取得または設定します。</summary>
+        <value>ドロップダウン ボックスの幅 (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値が設定されていない場合、 <xref:System.Windows.Forms.ComboBox.DropDownWidth%2A>、このプロパティを返します、<xref:System.Windows.Forms.Control.Width%2A>コンボ ボックスのです。  
+  
+> [!NOTE]
+>  ドロップダウン リストの幅をより小さくすることはできません、<xref:System.Windows.Forms.ComboBox>幅。  
+  
+   
+  
+## Examples  
+ 次のコード例を設定してオーナー描画コンボ ボックスを作成する方法を示しています、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティを`OwnerDrawnVariable`処理し、<xref:System.Windows.Forms.ComboBox.DrawItem>と<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。 また、設定を示します、<xref:System.Windows.Forms.ComboBox.DropDownWidth%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定した値は 1 より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DroppedDown">
+      <MemberSignature Language="C#" Value="public bool DroppedDown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DroppedDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.DroppedDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスでドロップダウン部分が表示されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ドロップダウン部分が表示されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は false です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndUpdate">
+      <MemberSignature Language="C#" Value="public void EndUpdate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndUpdate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.EndUpdate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Windows.Forms.ComboBox.BeginUpdate" /> メソッドによって描画が中断された後、<see cref="T:System.Windows.Forms.ComboBox" /> コントロールの描画を再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目を追加することをお勧め、<xref:System.Windows.Forms.ComboBox>を使用して、<xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A>のメソッド、<xref:System.Windows.Forms.ComboBox.ObjectCollection>クラス (を通じて、<xref:System.Windows.Forms.ComboBox.Items%2A>のプロパティ、 <xref:System.Windows.Forms.ComboBox>)。 これにより、一度に 1 つのリストに項目の配列を追加することができます。 ただしを追加する場合は、項目を一度に 1 つを使用して、時間、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ComboBox.ObjectCollection>クラスを使用することができます、<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>メソッドをコントロールが再描画するを防ぐために、<xref:System.Windows.Forms.ComboBox>項目が一覧に追加されるたびにします。 項目を一覧に追加するタスクを完了すると、呼び出し、<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>を有効にする方法、<xref:System.Windows.Forms.ComboBox>に再描画します。 この方法で項目を追加するときにちらつきませんの描画、<xref:System.Windows.Forms.ComboBox>多数のアイテムの一覧に追加するときにします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用方法を示しています、<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ComboBox.EndUpdate%2A>メソッドです。 この例のコード例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#3](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#3)]
+ [!code-csharp[ComboBox#3](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#3)]
+ [!code-vb[ComboBox#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindString">
+      <MemberSignature Language="C#" Value="public int FindString (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 FindString(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.FindString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">検索対象の <see cref="T:System.String" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のうち、指定した文字列で始まる最初の項目のインデックスを返します。</summary>
+        <returns>最初に見つかった項目の 0 から始まるインデックス番号。一致する項目が見つからない場合は、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって実行される検索小文字は区別されません。 `s`パラメーターは、コンボ ボックスの一覧内の項目に関連付けられたテキストと比較する部分文字列。 検索では、部分的に一致する、テキストの先頭から開始し、指定された部分文字列に一致するリスト内の最初の項目を返すを実行します。 使用して検索テキストを含む、アイテムの削除などのタスクを行うことができますし、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>メソッドまたは項目のテキストを変更します。 その他のインスタンス内のテキストを検索する場合、指定したテキストが見つかった場合、<xref:System.Windows.Forms.ComboBox>のバージョンを使用する必要があります、<xref:System.Windows.Forms.ComboBox.FindString%2A>内の開始インデックスを指定するためのパラメーターを提供するメソッド、<xref:System.Windows.Forms.ComboBox>です。 部分的な一致ではなく、正確な単語の一致の検索を実行する場合を使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用方法を示しています、<xref:System.Windows.Forms.ComboBox.FindString%2A>メソッドおよび<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティです。 この例の完全なコード例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#4)]
+ [!code-csharp[ComboBox#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#4)]
+ [!code-vb[ComboBox#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindString">
+      <MemberSignature Language="C#" Value="public int FindString (string s, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 FindString(string s, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.FindString(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="s">検索対象の <see cref="T:System.String" />。</param>
+        <param name="startIndex">最初の検索対象項目の前にある項目の 0 から始まるインデックス番号。 コントロールの先頭から検索する場合は -1 を設定します。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> 内の指定されたインデックスより後ろの、指定された文字列を含む最初の項目のインデックスを返します。 検索では、大文字と小文字が区別されません。</summary>
+        <returns>最初に見つかった項目のインデックス (0 から始まる)。一致する項目が見つからない場合は -1。<paramref name="s" /> パラメーターに <see cref="F:System.String.Empty" /> が指定されている場合は 0。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって実行される検索小文字は区別されません。 `s`パラメーターは、コンボ ボックスの一覧内の項目に関連付けられたテキストと比較する部分文字列。 検索では、指定された部分文字列に一致するリスト内の最初の項目を返す、テキストの先頭から始まる部分一致を実行します。 使用して検索テキストを含む、アイテムの削除などのタスクを行うことができますし、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>メソッドまたは項目のテキストを変更します。 このメソッドは通常、この開始インデックスが指定されていないメソッドのバージョンを使用して、呼び出しが行われた後に使用されます。 一覧で、最初の項目が見つかった後、このメソッドを内のインデックス位置を指定することによってさらに、検索テキストのインスタンスを検索する用い、`startIndex`最初に見つかった項目の検索テキストの後の項目のパラメーターです。 部分的な一致ではなく、正確な単語の一致の検索を実行する場合を使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> -1 未満です。  
+  
+ または  
+  
+ <paramref name="startIndex" />がコレクション内の最後のインデックスよりも大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindStringExact">
+      <MemberSignature Language="C#" Value="public int FindStringExact (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 FindStringExact(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.FindStringExact(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">検索対象の <see cref="T:System.String" />。</param>
+        <summary>コンボ ボックス内で、指定した文字列と一致する最初の項目を検索します。</summary>
+        <returns>最初に見つかった項目のインデックス (0 から始まる)。一致する項目が見つからない場合は -1。<paramref name="s" /> パラメーターに <see cref="F:System.String.Empty" /> が指定されている場合は 0。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって実行される検索小文字は区別されません。 `s`パラメーターは、コンボ ボックスの一覧内の項目に関連付けられたテキストと比較する文字列。 指定された部分文字列に一致するリスト内の最初の項目を返す、テキストの先頭から一致を検索します。 使用して検索テキストを含む、アイテムの削除などのタスクを行うことができますし、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>メソッドまたは項目のテキストを変更します。 その他のインスタンス内のテキストを検索する場合、指定したテキストが見つかった場合、<xref:System.Windows.Forms.ComboBox>のバージョンを使用する必要があります、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>内の開始インデックスを指定するためのパラメーターを提供するメソッド、<xref:System.Windows.Forms.ComboBox>です。 Word の正確な一致ではなく単語の一部の検索を実行する場合を使用して、<xref:System.Windows.Forms.ComboBox.FindString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、初期化する方法を示します、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.MaxDropDownItems%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティとを使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>を検索する方法、<xref:System.Windows.Forms.ComboBox>です。 処理も示しています、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CPP/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/VB/form1.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindStringExact">
+      <MemberSignature Language="C#" Value="public int FindStringExact (string s, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 FindStringExact(string s, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.FindStringExact(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="s">検索対象の <see cref="T:System.String" />。</param>
+        <param name="startIndex">最初の検索対象項目の前にある項目の 0 から始まるインデックス番号。 コントロールの先頭から検索する場合は -1 を設定します。</param>
+        <summary>指定したインデックスの後に出現する、指定した文字列と一致する最初の項目を検索します。</summary>
+        <returns>最初に見つかった項目のインデックス (0 から始まる)。一致する項目が見つからない場合は -1。<paramref name="s" /> パラメーターに <see cref="F:System.String.Empty" /> が指定されている場合は 0。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって実行される検索小文字は区別されません。 `s`パラメーターは、コンボ ボックスの一覧内の項目に関連付けられたテキストと比較する文字列。 指定された部分文字列に一致するリスト内の最初の項目を返す、テキストの先頭から一致を検索します。 使用して検索テキストを含む、アイテムの削除などのタスクを行うことができますし、<xref:System.Windows.Forms.ComboBox.ObjectCollection.Remove%2A>メソッドまたは項目のテキストを変更します。 このメソッドは通常、この開始インデックスが指定されていないメソッドのバージョンを使用して、呼び出しが行われた後に使用されます。 一覧で、最初の項目が見つかった後、このメソッドを内のインデックス位置を指定することによってさらに、検索テキストのインスタンスを検索する用い、`startIndex`最初に見つかった項目の検索テキストの後の項目のパラメーターです。 Word の正確な一致ではなく単語の一部の検索を実行する場合を使用して、<xref:System.Windows.Forms.ComboBox.FindString%2A>メソッドです。  
+  
+ このメソッドによって実行される検索では、循環します。 検索の開始後に次のインデックス位置が、`startIndex`パラメーター、検索でコンピューターが再起動 0 コレクションの末尾に達したときにします。 ただし、その場合、`startIndex`自体パラメーターがコレクション内の最後のインデックスと同じで、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、初期化する方法を示します、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.MaxDropDownItems%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティとを使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>を検索する方法、<xref:System.Windows.Forms.ComboBox>です。 処理も示しています、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CPP/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/VB/form1.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex" /> -1 未満です。  
+  
+ または  
+  
+ <paramref name="startIndex" />コレクション内の最後のインデックスと同じです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlatStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FlatStyle FlatStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.FlatStyle FlatStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.FlatStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> の外観を取得または設定します。</summary>
+        <value>コントロールの外観を指定する列挙値の 1 つ。 オプションは、<see langword="Flat" />、<see langword="Popup" />、<see langword="Standard" />、および <see langword="System" /> です。 既定値は、<see langword="Standard" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、.NET Framework 4.5.2、始まる、<xref:System.Windows.Forms.ComboBox.FlatStyle%2A>プロパティに設定されている<xref:System.Windows.Forms.FlatStyle.Flat>または<xref:System.Windows.Forms.FlatStyle.Popup>ドロップダウンの矢印のサイズを変更する可能性があります。 App.config ファイルには、次のエントリが含まれている場合のサイズ変更は、システム DPI 設定によって決まります。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">指定した値が 1 つの値の<see cref="T:System.Windows.Forms.FlatStyle" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Focused">
+      <MemberSignature Language="C#" Value="public override bool Focused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Focused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.Focused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> にフォーカスが設定されているかどうかを示す値を取得します。</summary>
+        <value>
+          このコントロールにフォーカスが設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの前景色を取得または設定します。</summary>
+        <value>コントロールの前景色を指定します。 既定値は <see cref="P:System.Windows.Forms.Control.DefaultForeColor" /> プロパティの値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemHeight">
+      <MemberSignature Language="C#" Value="public int GetItemHeight (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetItemHeight(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.GetItemHeight(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">高さが返される項目のインデックス。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> 内の項目の高さを返します。</summary>
+        <returns>指定したインデックスにある項目の高さ (ピクセル単位)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Forms.ComboBox.DrawMode%2A>に設定されていない`OwnerDrawVariable`の値、`index`パラメーターは無視、標準の項目をすべて<xref:System.Windows.Forms.ComboBox>サイズは同じです。 オーナー描画を使用しているときに、このプロパティを使用することができます<xref:System.Windows.Forms.ComboBox>内の任意のアイテムのサイズを決定する、<xref:System.Windows.Forms.ComboBox>です。  
+  
+ オーナー描画のリストで項目の高さを指定する方法の詳細については、次を参照してください。<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="index" />がリスト内の項目の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IntegralHeight">
+      <MemberSignature Language="C#" Value="public bool IntegralHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IntegralHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.IntegralHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一部の項目しか表示されない状況を避けるために、コントロールのサイズを変更するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          リスト部分に含めることができるのが完了している項目のみの場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`コントロールに自動的にサイズを変更し、項目が部分的に表示されないことを確認してください。 元のサイズを維持する場合、<xref:System.Windows.Forms.ComboBox>にこのプロパティを設定する、フォームの領域の要件に基づき、`false`です。 場合、<xref:System.Windows.Forms.ComboBox>項目が含まれていないこのプロパティは影響を与えません。  
+  
+ 設定、<xref:System.Windows.Forms.ComboBox.DropDownHeight%2A>プロパティのリセット、<xref:System.Windows.Forms.ComboBox.IntegralHeight%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  場合、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティに設定されている`OwnerDrawVariable`、このプロパティは影響を与えません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInputKey">
+      <MemberSignature Language="C#" Value="protected override bool IsInputKey (System.Windows.Forms.Keys keyData);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsInputKey(valuetype System.Windows.Forms.Keys keyData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.IsInputKey(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="keyData"><see cref="T:System.Windows.Forms.Keys" /> 値のいずれか。</param>
+        <summary>指定されているキーが、通常の入力キーであるか、またはプリプロセスを必要とする特殊なキーであるかを確認します。</summary>
+        <returns>
+          指定されているキーが通常の入力キーである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox.IsInputKey%2A>メソッドを返します。`true`ときに、`keyData`パラメーターが含まれています、<xref:System.Windows.Forms.Keys.Return>または<xref:System.Windows.Forms.Keys.Escape>値、および<xref:System.Windows.Forms.ComboBox.DroppedDown%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemHeight">
+      <MemberSignature Language="C#" Value="public int ItemHeight { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ItemHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ItemHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックス内の項目の高さを取得または設定します。</summary>
+        <value>コンボ ボックス内の項目の高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティに設定されている`OwnerDrawFixed`、すべてのアイテムを同じ高さがあります。 ときに、<xref:System.Windows.Forms.DrawMode>プロパティに設定されている`OwnerDrawVariable`、<xref:System.Windows.Forms.ComboBox.ItemHeight%2A>プロパティに追加された各項目の高さを指定する、<xref:System.Windows.Forms.ComboBox>です。 オーナー描画のリスト内の各項目が別の高さを持てないために、使用して、<xref:System.Windows.Forms.ComboBox.GetItemHeight%2A>内の特定の項目の高さを取得するメソッド、<xref:System.Windows.Forms.ComboBox>です。 使用する場合、<xref:System.Windows.Forms.ComboBox.ItemHeight%2A>プロパティを<xref:System.Windows.Forms.ComboBox>可変の高さの項目をこのプロパティは、コントロール内の最初の項目の高さを返します。  
+  
+ オーナー描画のリストで項目の高さを指定する方法の詳細については、次を参照してください。<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">項目の高さの値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Items">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ComboBox.ObjectCollection Items { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ComboBox/ObjectCollection Items" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.Items" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.ListControlStringCollectionEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ComboBox+ObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.ComboBox" /> に含まれている項目のコレクションを表すオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.ComboBox" /> 内の項目を表す <see cref="T:System.Windows.Forms.ComboBox.ObjectCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、この参照に格納されている項目の一覧を取得することができます、<xref:System.Windows.Forms.ComboBox>です。 この参照に項目を追加、アイテムを削除して、コレクション内の項目の数を取得します。  
+  
+ ただし、<xref:System.Windows.Forms.ComboBox>はテキスト アイテムを表示する通常使用するには、任意のオブジェクトを追加できます、<xref:System.Windows.Forms.ComboBox>です。 内のオブジェクトの表現では通常、<xref:System.Windows.Forms.ComboBox>オブジェクトが返される文字列は、<xref:System.Object.ToString%2A>メソッドです。 設定して表示されるメンバーを選択する代わりに表示されているオブジェクトのメンバーが存在する場合、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティを適切なメンバーの名前にします。 設定して、オブジェクトによって返される値を表すオブジェクトのメンバーを選択することもできます、<xref:System.Windows.Forms.ListControl.ValueMember%2A>プロパティです。 詳細については、「<xref:System.Windows.Forms.ListControl>」を参照してください。  
+  
+ 項目のコレクションで実行できるタスクの詳細については、次を参照してください。、<xref:System.Windows.Forms.ComboBox.ObjectCollection?displayProperty=nameWithType>クラスのリファレンス トピックです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、小さな数を追加する方法を示します<xref:System.Windows.Forms.ComboBox>項目。 多数のアイテムを追加する必要がある場合は、例を参照してください<xref:System.Windows.Forms.ComboBox.BeginUpdate%2A>です。 どちらの例で使用できる例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#2)]
+ [!code-csharp[ComboBox#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#2)]
+ [!code-vb[ComboBox#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxDropDownItems">
+      <MemberSignature Language="C#" Value="public int MaxDropDownItems { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxDropDownItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.MaxDropDownItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(8)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のドロップダウン部分に表示される項目の最大数を取得または設定します。</summary>
+        <value>ドロップダウン部分に表示される項目の最大数。 このプロパティの最小値は 1 で、最大値は 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、初期化する方法を示します、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.MaxDropDownItems%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティとを使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>を検索する方法、<xref:System.Windows.Forms.ComboBox>です。 処理も示しています、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CPP/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/VB/form1.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">最大の番号が 1 より小さく設定または 100 より大きいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MaximumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MaximumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.MaximumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)" /> メソッドで指定できる上限のサイズを取得または設定します。</summary>
+        <value>四角形の幅と高さを表す、順序を付与した <see cref="T:System.Drawing.Size" /> 型のペア。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxLength">
+      <MemberSignature Language="C#" Value="public int MaxLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.MaxLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが <see cref="T:System.Windows.Forms.ComboBox" /> に入力できる文字数を取得または設定します。</summary>
+        <value>ユーザーが入力できる最大文字数。 0 未満の値は、既定値の 0 にリセットされます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureItem">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.MeasureItemEventHandler MeasureItem;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.MeasureItemEventHandler MeasureItem" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.MeasureItem" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MeasureItemEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オーナー描画 <see cref="T:System.Windows.Forms.ComboBox" /> の項目を描画する必要があるたびに発生し、また、リスト項目のサイズが判別された時点でも発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 描画する前に、項目が行われたサイズを指定するには、このイベントのイベント ハンドラーを作成することができます、<xref:System.Windows.Forms.ComboBox.DrawItem>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を設定してオーナー描画コンボ ボックスを作成する方法を示しています、<xref:System.Windows.Forms.ComboBox.DrawMode%2A>プロパティを`OwnerDrawnVariable`処理し、<xref:System.Windows.Forms.ComboBox.DrawItem>と<xref:System.Windows.Forms.ComboBox.MeasureItem>イベント。 また、設定を示します、<xref:System.Windows.Forms.ComboBox.DropDownWidth%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティです。 例を実行するには、フォームで、次のコードを貼り付けます。 呼び出す、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxOwnerDrawn#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxOwnerDrawn/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="M:System.Windows.Forms.Control.GetPreferredSize(System.Drawing.Size)" /> メソッドで指定できる下限のサイズを取得または設定します。</summary>
+        <value>四角形の幅と高さを表す、順序を付与した <see cref="T:System.Drawing.Size" /> 型のペア。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDataSourceChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataSourceChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDataSourceChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.ListControl.DataSourceChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDisplayMemberChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDisplayMemberChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDisplayMemberChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDisplayMemberChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.ListControl.DisplayMemberChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDrawItem">
+      <MemberSignature Language="C#" Value="protected virtual void OnDrawItem (System.Windows.Forms.DrawItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDrawItem(class System.Windows.Forms.DrawItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.DrawItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.DrawItemEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.DrawItem" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはオーナー描画されるたびに<xref:System.Windows.Forms.ComboBox>項目を描画する必要があると後<xref:System.Windows.Forms.ComboBox.OnMeasureItem%2A>と呼びます。 詳細については、「<xref:System.Windows.Forms.ComboBox.DrawItem>」を参照してください。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnDrawItem%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnDrawItem(System.Windows.Forms.DrawItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDown">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDown (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDown(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDropDown(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.DropDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントはドロップダウン リストが表示されるたびに発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnDropDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnDropDown(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnDropDown(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownClosed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDownClosed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDropDownClosed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.DropDownClosed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnDropDownClosed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnDropDownClosed(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnDropDownClosed(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDropDownStyleChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDropDownStyleChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDropDownStyleChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnDropDownStyleChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.DropDownStyleChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、このイベントは発生<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>に新しい値。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnDropDownStyleChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnDropDownStyleChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnDropDownStyleChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFontChanged">
+      <MemberSignature Language="C#" Value="protected override void OnFontChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnFontChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnFontChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.FontChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnForeColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnForeColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnForeColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnForeColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.ForeColorChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGotFocus">
+      <MemberSignature Language="C#" Value="protected override void OnGotFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnGotFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnGotFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.GotFocus" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnGotFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnGotFocus(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnGotFocus(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleCreated">
+      <MemberSignature Language="C#" Value="protected override void OnHandleCreated (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleCreated(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnHandleCreated(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleCreated" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnHandleCreated%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnHandleCreated(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnHandleCreated(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnHandleDestroyed">
+      <MemberSignature Language="C#" Value="protected override void OnHandleDestroyed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnHandleDestroyed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnHandleDestroyed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.HandleDestroyed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnHandleDestroyed%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnHandleDestroyed(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnHandleDestroyed(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyDown" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnKeyDown%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnKeyDown(System.Windows.Forms.KeyEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyPress">
+      <MemberSignature Language="C#" Value="protected override void OnKeyPress (System.Windows.Forms.KeyPressEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyPress(class System.Windows.Forms.KeyPressEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnKeyPress(System.Windows.Forms.KeyPressEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Windows.Forms.KeyPressEventArgs.KeyChar%2A>プロパティの`e`は<xref:System.Windows.Forms.Keys.Return>または<xref:System.Windows.Forms.Keys.Escape>と<xref:System.Windows.Forms.ComboBox.DroppedDown%2A>プロパティは`true`、<xref:System.Windows.Forms.ComboBox.OnKeyPress%2A>メソッドのセット<xref:System.Windows.Forms.ComboBox.DroppedDown%2A>に`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLostFocus">
+      <MemberSignature Language="C#" Value="protected override void OnLostFocus (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLostFocus(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnLostFocus(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.LostFocus" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnLostFocus%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnLostFocus(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnLostFocus(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMeasureItem">
+      <MemberSignature Language="C#" Value="protected virtual void OnMeasureItem (System.Windows.Forms.MeasureItemEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMeasureItem(class System.Windows.Forms.MeasureItemEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.MeasureItemEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">発生した <see cref="T:System.Windows.Forms.MeasureItemEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.MeasureItem" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはオーナー描画されるたびに<xref:System.Windows.Forms.ComboBox>項目を描画する必要があるとする前に<xref:System.Windows.Forms.ComboBox.OnDrawItem%2A>と呼びます。 詳細については、「<xref:System.Windows.Forms.ComboBox.MeasureItem>」を参照してください。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnMeasureItem%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnMeasureItem(System.Windows.Forms.MeasureItemEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseEnter">
+      <MemberSignature Language="C#" Value="protected override void OnMouseEnter (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseEnter(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnMouseEnter(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseEnter" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnMouseEnter%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnMouseEnter(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnMouseEnter(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeave">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeave (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseLeave(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnMouseLeave(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.MouseLeave" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnMouseLeave%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnMouseLeave(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnMouseLeave(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnParentBackColorChanged">
+      <MemberSignature Language="C#" Value="protected override void OnParentBackColorChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnParentBackColorChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnParentBackColorChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.BackColorChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnParentBackColorChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnParentBackColorChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnParentBackColorChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResize">
+      <MemberSignature Language="C#" Value="protected override void OnResize (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnResize(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnResize(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Resize" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnResize%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnResize(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnResize(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedIndexChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedIndexChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedIndexChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnSelectedIndexChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.SelectedIndexChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、一覧から、または設定するときに、新しい項目を選択すると、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnSelectedIndexChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnSelectedIndexChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnSelectedIndexChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedItemChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectedItemChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectedItemChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnSelectedItemChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.DomainUpDown.SelectedItemChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、一覧から、または設定するときに、新しい項目を選択すると、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティです。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnSelectedItemChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnSelectedItemChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnSelectedItemChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedValueChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectedValueChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectedValueChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnSelectedValueChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ListControl.SelectedValueChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnSelectedValueChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnSelectedValueChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnSelectedValueChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectionChangeCommitted">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectionChangeCommitted (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectionChangeCommitted(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnSelectionChangeCommitted(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.SelectionChangeCommitted" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>コンボ ボックスの選択を変更したときにのみ、またはを設定するときに発生、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>です。 ただし、方法に応じて<xref:System.Windows.Forms.ComboBox>が構成されている、ユーザーが選択した項目を変更する方法、<xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>イベントを発生させることがない可能性があります。 また、処理することができます、 <xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>、プログラムから、またはユーザーによって、インデックスを変更するかどうかをこのイベントが発生したことに注意してください。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnSelectionChangeCommitted%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>イベントおよび<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティをユーザーが選択されているし、コミットに応じてテキスト ボックスの長さを変更します。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnSelectionChangeCommitted(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnSelectionChangeCommitted(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextChanged">
+      <MemberSignature Language="C#" Value="protected override void OnTextChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnTextChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnTextChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.TextChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnTextChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnTextChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnTextChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTextUpdate">
+      <MemberSignature Language="C#" Value="protected virtual void OnTextUpdate (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTextUpdate(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnTextUpdate(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ComboBox.TextUpdate" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnTextUpdate%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnTextUpdate(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnTextUpdate(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidating">
+      <MemberSignature Language="C#" Value="protected override void OnValidating (System.ComponentModel.CancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidating(class System.ComponentModel.CancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.OnValidating(System.ComponentModel.CancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CancelEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Control.Validating" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+ <xref:System.Windows.Forms.ComboBox.OnValidating%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.ComboBox.OnValidating(System.ComponentModel.CancelEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.ComboBox.OnValidating(System.ComponentModel.CancelEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Padding Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.Padding Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Padding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このプロパティは使用されません。</summary>
+        <value><see cref="T:System.Windows.Forms.Padding" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このプロパティは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaddingChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PaddingChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PaddingChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.PaddingChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスでは、このイベントは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.PaintEventHandler Paint;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.PaintEventHandler Paint" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.Paint" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PaintEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> コントロールが再描画されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、このイベントは使用されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredHeight">
+      <MemberSignature Language="C#" Value="public int PreferredHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PreferredHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.PreferredHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> の適切な高さを取得します。</summary>
+        <value>コンボ ボックスの項目領域の適切な高さ (ピクセル単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適切な高さは、フォントの高さと境界線の調整の際に基づく値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessKeyEventArgs">
+      <MemberSignature Language="C#" Value="protected override bool ProcessKeyEventArgs (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ProcessKeyEventArgs(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ProcessKeyEventArgs(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理するウィンドウ メッセージを表す、参照渡しされたメッセージ オブジェクト。</param>
+        <summary>キー メッセージを処理し、適切なコントロール イベントを生成します。</summary>
+        <returns>
+          メッセージがコントロールによって処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshItem">
+      <MemberSignature Language="C#" Value="protected override void RefreshItem (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RefreshItem(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.RefreshItem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">更新する項目の位置。</param>
+        <summary>指定した位置にある項目を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshItems">
+      <MemberSignature Language="C#" Value="protected override void RefreshItems ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RefreshItems() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.RefreshItems" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のすべての項目を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetText">
+      <MemberSignature Language="C#" Value="public override void ResetText ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ResetText() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ResetText" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.Control.Text" /> プロパティを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleControl">
+      <MemberSignature Language="C#" Value="protected override void ScaleControl (System.Drawing.SizeF factor, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ScaleControl(valuetype System.Drawing.SizeF factor, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ScaleControl(System.Drawing.SizeF,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="factor" Type="System.Drawing.SizeF" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="factor">コントロールの高さと幅のスケールを設定するときのファクター。</param>
+        <param name="specified">コントロールのサイズと位置を定義するときに使用するコントロールの境界を指定する値。</param>
+        <summary>コントロールの位置、サイズ、埋め込み、およびマージンのスケールを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select (int start, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Select(int32 start, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.Select(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="start" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="start">テキスト ボックス内で現在選択されているテキストの最初の文字の位置。</param>
+        <param name="length">選択する文字数。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> の編集できる部分のテキストの範囲を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのテキストの最初の文字を開始位置を設定する場合は、設定、`start`パラメーターを 0 にします。 このメソッドを使用するには、タイミングなどのテキストの部分文字列を選択するコントロールのテキストの検索と情報を交換します。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ComboBox.SelectionStart%2A>現在の選択範囲の下限値を返します。 たとえば、`Select(10, -4)`文字位置 6 文字の位置 10 からからテキストを選択します。 今すぐに入手した場合、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>値、10 ではなく、6 になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="start" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="start" />plus<paramref name="length" />が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAll">
+      <MemberSignature Language="C#" Value="public void SelectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.SelectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> の編集できる部分のテキストをすべて選択します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public override int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されている項目を指定しているインデックスを取得または設定します。</summary>
+        <value>現在選択されている項目の 0 から始まるインデックス番号。 項目が選択されていない場合は、値 -1 が返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンボ ボックスの一覧で現在選択されている項目の 0 から始まるインデックスを示します。 新しいインデックスを設定するが発生し、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>イベント。  
+  
+ <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>、 <xref:System.Windows.Forms.ListControl.SelectedValue%2A>、および<xref:System.Windows.Forms.ListControl.FormattingEnabled%2A>次のように関連します。  
+  
+-   場合<xref:System.Windows.Forms.ListControl.FormattingEnabled%2A>は`false`、 <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> -1 に設定されません<xref:System.Windows.Forms.ListControl.SelectedValue%2A>は空白にします。  
+  
+-   場合<xref:System.Windows.Forms.ListControl.FormattingEnabled%2A>は`true`、 <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> -1 に設定されます<xref:System.Windows.Forms.ListControl.SelectedValue%2A>は空白にします。  
+  
+> [!NOTE]
+>  現在選択されている項目の選択を解除するには、設定、 <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> -1 です。 設定することはできません、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>の<xref:System.Windows.Forms.ComboBox>項目は、データ バインド項目場合は-1 に項目。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します、<xref:System.Windows.Forms.ComboBox.FindString%2A>メソッドおよび<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティです。 この例の完全な例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#4)]
+ [!code-csharp[ComboBox#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#4)]
+ [!code-vb[ComboBox#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたインデックスは、以下を-2 です。  
+  
+ または  
+  
+ 指定されたインデックスは、コンボ ボックス内の項目の数以上です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndexChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectedIndexChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectedIndexChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.SelectedIndexChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ComboBox.SelectedIndex" /> プロパティが変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイミングを決定するには、このイベントのイベント ハンドラーを作成することで選択されたインデックス、<xref:System.Windows.Forms.ComboBox>が変更されました。 これを利用する他のコントロールの現在の選択に基づいて情報を表示する必要がある場合、<xref:System.Windows.Forms.ComboBox>です。 このイベントのイベント ハンドラーを使用して、他のコントロールでの情報を読み込むことができます。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、初期化する方法を示します、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.MaxDropDownItems%2A>と<xref:System.Windows.Forms.ComboBox.DropDownStyle%2A>プロパティとを使用して、<xref:System.Windows.Forms.ComboBox.FindStringExact%2A>を検索する方法、<xref:System.Windows.Forms.ComboBox>です。 処理も示しています、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CPP/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.ComboBoxFindString#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxFindString/VB/form1.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public object SelectedItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> で現在選択されている項目を取得または設定します。</summary>
+        <value>現在選択されている項目であるオブジェクト。または、現在選択されている項目が存在しない場合は <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、<xref:System.Windows.Forms.ComboBox.SelectedItem%2A>プロパティ オブジェクトを<xref:System.Windows.Forms.ComboBox>オブジェクトの一覧で現在選択されている 1 つを実行する試行します。 編集部分に表示されますが、オブジェクトが見つかった場合、一覧で、<xref:System.Windows.Forms.ComboBox>と<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティが、対応するインデックスに設定します。 一覧で、オブジェクトが存在しない場合、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>プロパティは、現在の値のままにします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ComboBox>を使用して、指定したオブジェクトの検索をクラス、<xref:System.Windows.Forms.ComboBox.ObjectCollection.IndexOf%2A>メソッドです。 このメソッドを使用して、<xref:System.Object.Equals%2A>等しいかどうかを調べます。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用方法を示しています、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>と<xref:System.Windows.Forms.ComboBox.SelectedItem%2A>プロパティです。 この例の完全なコード例の一部である、<xref:System.Windows.Forms.ComboBox>クラスの概要です。  
+  
+ [!code-cpp[ComboBox#5](~/samples/snippets/cpp/VS_Snippets_Winforms/ComboBox/CPP/comboboxmembers.cpp#5)]
+ [!code-csharp[ComboBox#5](~/samples/snippets/csharp/VS_Snippets_Winforms/ComboBox/CS/comboboxmembers.cs#5)]
+ [!code-vb[ComboBox#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComboBox/VB/comboboxmembers.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedText">
+      <MemberSignature Language="C#" Value="public string SelectedText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.SelectedText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のうち編集できる部分の中で選択されているテキストを取得または設定します。</summary>
+        <value>コンボ ボックスで現在選択されているテキストを表す文字列。 <see cref="P:System.Windows.Forms.ComboBox.DropDownStyle" /> が <see cref="F:System.Windows.Forms.ComboBoxStyle.DropDownList" /> に設定されている場合、戻り値は空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Forms.ComboBox.SelectedText%2A>プロパティを取得またはで現在選択されているテキストを変更、<xref:System.Windows.Forms.ComboBox>コントロール。 ただし、ユーザーとの対話のため、選択範囲を自動的に変更できることに注意する必要があります。 たとえば、取得する場合、 <xref:System.Windows.Forms.ComboBox.SelectedText%2A> 、ボタンの値<xref:System.Windows.Forms.Control.Click>、イベント ハンドラー、値は空の文字列になります。 入力フォーカスがコンボ ボックス ボタンに移動すると、選択範囲が自動的にクリアするためです。  
+  
+ コンボ ボックスがフォーカスを失ったときに選択ポイントは、テキストの先頭に移動し、選択したテキストの選択が解除します。 この場合、取得、<xref:System.Windows.Forms.ComboBox.SelectedText%2A>プロパティは空の文字列と設定を取得、<xref:System.Windows.Forms.ComboBox.SelectedText%2A>プロパティは、テキストの先頭に指定された値を追加します。  
+  
+ コンボ ボックスがフォーカスを取得するとき、コントロール内のテキスト全体が自動的に選択します。 コントロールを呼び出す場合<xref:System.Windows.Forms.Control.Focus%2A>コントロールが既にフォーカスを持っているかどうかに関係なく、完全なテキストの入力フォーカスを設定するメソッドを選択します。  
+  
+ ユーザーは、ドロップダウン リストから、または ↑ キーおよび ↓ キーを使用して項目を選択するときに、新しい項目のテキストが自動的に選択します。 ただし、取得しようとする場合、<xref:System.Windows.Forms.ComboBox.SelectedText%2A>値で、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>または<xref:System.Windows.Forms.ListControl.SelectedValueChanged>イベント ハンドラーでは、空の文字列が返されます。 これは、理由は、これらのイベントの時点で、以前<xref:System.Windows.Forms.ComboBox.SelectedText%2A>値がクリアされました、新しい値が設定されていません。 現在の値を取得する、<xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>または<xref:System.Windows.Forms.ListControl.SelectedValueChanged>イベント ハンドラーを使用して、<xref:System.Windows.Forms.ComboBox.SelectedItem%2A>プロパティ代わりにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionChangeCommitted">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectionChangeCommitted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectionChangeCommitted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.SelectionChangeCommitted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択されている項目がユーザーによって変更され、その変更が <see cref="T:System.Windows.Forms.ComboBox" /> に表示された時点で発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>イベントは、ユーザーがコンボ ボックスの選択を変更し、に対して特別な処理を提供するには、このイベントのハンドラーを作成する場合にのみ、<xref:System.Windows.Forms.ComboBox>ユーザーが一覧で選択した項目を変更するときにします。 ただし、方法に応じて<xref:System.Windows.Forms.ComboBox>が構成されている、ユーザーが選択した項目を変更する方法、<xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>イベントを発生させることがない可能性があります。 また、処理することができます、 <xref:System.Windows.Forms.ComboBox.SelectedIndexChanged>、プログラムから、またはユーザーによって、インデックスを変更するかどうかをこのイベントが発生したことに注意してください。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ComboBox.SelectionChangeCommitted>イベントおよび<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティをユーザーが選択されているし、コミットに応じてテキスト ボックスの長さを変更します。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ComboBoxSelectedText#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxSelectedText/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionLength">
+      <MemberSignature Language="C#" Value="public int SelectionLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionLength" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.SelectionLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスの編集できる部分で選択されている文字数を取得または設定します。</summary>
+        <value>コンボ ボックス内で選択されている文字数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、任意の文字が、選択したテキストでの操作を実行する前に現在選択、コンボ ボックス コントロールでかどうかを決定することができます。 ときの値、<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>の値、コントロールのテキスト内で文字数よりも大きい値に設定されて、<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティの値を減算コントロール内のテキストの全体の長さに設定されて、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>プロパティ (の任意の値が指定されている場合、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>プロパティ)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値が 0 未満でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionStart">
+      <MemberSignature Language="C#" Value="public int SelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.SelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックスで選択されているテキストの開始インデックスを取得または設定します。</summary>
+        <value>現在選択されているテキストの文字列の最初の文字の、0 から始まるインデックス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールのテキストが選択されていない場合、このプロパティは、新しいテキストの挿入ポイントを示します。 コントロール内のテキストの長さを超えた位置にこのプロパティを設定する場合は、選択の開始位置が、最後の文字の後に配置されます。 このプロパティを変更することができますの値、テキスト ボックス コントロールでテキストを選択すると、リリース、<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティです。 位置の後にコントロール内の残りのテキストが示される場合、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>プロパティは、の値より小さい、<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティ、値の<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティは自動的に小さきます。 値、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>の増加が、プロパティ、<xref:System.Windows.Forms.ComboBox.SelectionLength%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ComboBox.SelectionStart%2A>現在の選択範囲の下限値を返します。 たとえば、`Select(10, -4)`文字位置 6 文字の位置 10 からからテキストを選択します。 今すぐに入手した場合、<xref:System.Windows.Forms.ComboBox.SelectionStart%2A>値、10 ではなく、6 になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBoundsCore">
+      <MemberSignature Language="C#" Value="protected override void SetBoundsCore (int x, int y, int width, int height, System.Windows.Forms.BoundsSpecified specified);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetBoundsCore(int32 x, int32 y, int32 width, int32 height, valuetype System.Windows.Forms.BoundsSpecified specified) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.SetBoundsCore(System.Int32,System.Int32,System.Int32,System.Int32,System.Windows.Forms.BoundsSpecified)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="specified" Type="System.Windows.Forms.BoundsSpecified" />
+      </Parameters>
+      <Docs>
+        <param name="x">コントロールの水平方向の位置 (ピクセル単位)。</param>
+        <param name="y">コントロールの垂直方向の位置 (ピクセル単位)。</param>
+        <param name="width">コントロールの幅 (ピクセル単位)。</param>
+        <param name="height">コントロールの高さ (ピクセル単位)。</param>
+        <param name="specified"><see cref="T:System.Windows.Forms.BoundsSpecified" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> のサイズと位置を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemCore">
+      <MemberSignature Language="C#" Value="protected override void SetItemCore (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItemCore(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.SetItemCore(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">オブジェクトの配列インデックス。</param>
+        <param name="value">オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、指定したインデックスのオブジェクトを派生クラスで設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetItemsCore">
+      <MemberSignature Language="C#" Value="protected override void SetItemsCore (System.Collections.IList value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetItemsCore(class System.Collections.IList value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.SetItemsCore(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="value">項目の配列。</param>
+        <summary>派生クラスでオーバーライドされると、コレクション内の指定したオブジェクトの配列を派生クラスで設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sorted">
+      <MemberSignature Language="C#" Value="public bool Sorted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Sorted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.Sorted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンボ ボックス内の項目が並べ替えられたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          コンボ ボックスが並べ替えられている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定するかどうか、<xref:System.Windows.Forms.ComboBox>既存のエントリの並べ替えを作成して、適切な並べ替えられたリスト内の位置に新しいエントリを追加します。 このプロパティを使用するには自動的にアイテムを並べ替えるには<xref:System.Windows.Forms.ComboBox>します。 項目が追加されると、並べ替えに<xref:System.Windows.Forms.ComboBox>項目が並べ替えられたリスト内の適切な場所に移動されます。 プロパティを設定すると`false`、既存のリストの末尾に新しい項目が追加されます。 並べ替えは区別されず、アルファベットの昇順にします。  
+  
+ 設定しようとすると、<xref:System.Windows.Forms.ComboBox.Sorted%2A>データ バインド コントロールのプロパティを生成、<xref:System.ArgumentException>です。 基になるデータ モデルを使用してデータを並べ替える必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">並べ替えるしようとしましたが、<see cref="T:System.Windows.Forms.ComboBox" />データ ソースに接続されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコントロールに関連付けられているテキストを取得または設定します。</summary>
+        <value>このコントロールに関連付けられたテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティを`null`または空の文字列 ("") を設定、 <xref:System.Windows.Forms.ComboBox.SelectedIndex%2A> -1 です。 設定、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティ内にある値を<xref:System.Windows.Forms.ComboBox.Items%2A>コレクション セット、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>その項目のインデックスにします。 設定、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティ値をコレクションのままに含まれていない、<xref:System.Windows.Forms.ComboBox.SelectedIndex%2A>変更されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を初期化する方法を示しています、<xref:System.Windows.Forms.ComboBox>コントロールを設定して、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティを使用して、<xref:System.Windows.Forms.ComboBox.ObjectCollection.AddRange%2A>に挿入する方法、<xref:System.Windows.Forms.ComboBox>です。 処理についても示します、<xref:System.Windows.Forms.ComboBox.DropDown>イベント。 例を実行するには、フォームと呼び出しで、次のコードを貼り付けます、`InitializeComboBox`フォームのコンス トラクターのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント。  
+  
+ [!code-cpp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CPP/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.ComboBoxDropDown#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComboBoxDropDown/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextUpdate">
+      <MemberSignature Language="C#" Value="public event EventHandler TextUpdate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextUpdate" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ComboBox.TextUpdate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがテキストを書式設定した後、テキストが表示される前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ComboBox.TextUpdate>を実際に表示される前に、テキストを検証するイベントです。 <xref:System.Windows.Forms.ComboBox.TextUpdate>発生した場合、<xref:System.Windows.Forms.ComboBox.Text%2A>プロパティをプログラムに変更します。  
+  
+ イベント処理の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ComboBox.TextUpdate>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ComboBox>という`ComboBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ComboBox.TextUpdate>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#167](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#167)]
+ [!code-vb[System.Windows.Forms.EventExamples#167](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#167)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.ComboBox" /> コントロールを表す文字列を返します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.ComboBox" /> を表す <see cref="T:System.String" />。 この文字列には、<see cref="T:System.Windows.Forms.ComboBox" /> コントロール内の項目の型と数が含まれます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WndProc">
+      <MemberSignature Language="C#" Value="protected override void WndProc (ref System.Windows.Forms.Message m);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void WndProc(valuetype System.Windows.Forms.Message&amp; m) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.WndProc(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="m">処理対象の Windows <see cref="T:System.Windows.Forms.Message" />。</param>
+        <summary>Windows メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメッセージ、<xref:System.Windows.Forms.Control.WndProc%2A>メソッドを通じてフィルター処理を取得した後に、<xref:System.Windows.Forms.Control.PreProcessMessage%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.Control.WndProc%2A> メソッドは、Windows `WindowProc` 関数に正確に対応しています。 Windows メッセージの処理の詳細については、次を参照してください。、`WindowProc`関数のドキュメントを Windows プラットフォーム SDK の参照が http://msdn.microsoft.com/library の MSDN ライブラリに格納します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、オーバーライドを示しています、<xref:System.Windows.Forms.Control.WndProc%2A>で識別されたオペレーティング システムのメッセージを処理するメソッドを<xref:System.Windows.Forms.Message>構造体。 別のアプリケーションがアクティブになる時期を知るには、この例では、WM_ACTIVATEAPP オペレーティング システムのメッセージが処理されます。 MSDN ライブラリを理解、使用可能な http://msdn.microsoft.com/library であるプラットフォーム SDK ドキュメントのリファレンスを参照してください<xref:System.Windows.Forms.Message.Msg%2A?displayProperty=nameWithType>、 <xref:System.Windows.Forms.Message.LParam%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.Message.WParam%2A?displayProperty=nameWithType>値。 これは、MSDN ライブラリ http://msdn.microsoft.com/library でも、プラットフォーム SDK (コア SDK セクション) のダウンロードに含まれる Windows.h ヘッダー ファイルでは、実際の定数値を確認できます。  
+  
+ [!code-cpp[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.Control.WndProc#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.WndProc/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すクラスを継承します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+        <block subset="none" type="overrides">
+          <para>コントロールを継承する、基本クラスを呼び出す必要があります<see cref="M:System.Windows.Forms.Control.WndProc(System.Windows.Forms.Message@)" />処理しないすべてのメッセージを処理するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

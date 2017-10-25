@@ -1,0 +1,88 @@
+<Type Name="LiteralMode" FullName="System.Web.UI.WebControls.LiteralMode">
+  <TypeSignature Language="C#" Value="public enum LiteralMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LiteralMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LiteralMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定方法でコンテンツ、<see cref="T:System.Web.UI.WebControls.Literal" />コントロールを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LiteralMode>列挙型を表す方法を指定できるモード内のコンテンツ、<xref:System.Web.UI.WebControls.Literal>コントロールを表示します。 <xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティでは、これらの列挙値を使用して、セットの内容の動作を<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティに、<xref:System.Web.UI.WebControls.Literal>コントロール。  
+  
+ 指定した場合`PassThrough`のすべての内容、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティは、デバイスまたはブラウザーを変更せずに渡されます。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロールに含まれる、`<hr>`タグ、すべてのデバイスおよびブラウザーはサポートされているかどうかに関係なくに送信されます。  
+  
+ 指定した場合`Encode`の内容、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティをレンダリングする前に、HTML でエンコードされた文字列に変換されます。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Literal>コントロールが含まれています、`<hr>`タグ、それに変換されます`&lt;hr&gt;`され、デバイスまたはブラウザーに送信します。  
+  
+ 指定した場合`Transform`のレンダリング動作、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティは、レンダリングされるマークアップの種類によって異なります。 ときに、<xref:System.Web.UI.WebControls.Literal>デバイスにコントロールを表示またはパススルーを指定すると同じ動作が生成される HTML または XHTML、変換の指定をサポートしているブラウザー。 すべてのマークアップ タグと要素について、<xref:System.Web.UI.WebControls.Literal.Text%2A>要求側のブラウザーのプロパティが表示されます。  
+  
+ ときに、 <xref:System.Web.UI.WebControls.LiteralMode.PassThrough> HTML または WML または cHTML など、XHTML 以外のマークアップ言語にコントロールを表示、サポートされていないマークアップ要素を削除する変換の値を使用することができます。 ここでのマークアップ言語要素があれば、<xref:System.Web.UI.WebControls.Literal.Text%2A>コントロールの対象となるマークアップ言語でサポートされていないプロパティはレンダリングされません。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.LiteralMode.Transform>コントロールが含まれています、 `<hr>` WML デバイスにコンテンツを送信する前に、タグ、タグを削除します。 サポートされていないタグには、コンテンツが含まれています、タグのみが削除され、デバイスまたはブラウザーへのコンテンツを送信します。 たとえば場合、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティには、コンテンツが含まれています。`<XYZ>Test</XYZ>`では、`<XYZ>`と`</XYZ>`タグはテキスト中に削除`Test`デバイスまたはブラウザーに送信します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.Literal.Text%2A>コントロールの<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティです。 <xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティに初期設定`Encode`コントロールの宣言の構文で使用します。 設定するボタン、ページが読み込まれると、ユーザーがクリックする、<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティを`PassThrough`です。 これが原因の内容、<xref:System.Web.UI.WebControls.Literal.Text%2A>プロパティを異なる方法で表示します。  
+  
+ [!code-aspx-vb[Literal.Mode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Literal.Mode/VB/literal.modevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="Encode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LiteralMode Encode = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LiteralMode.Encode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LiteralMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リテラル コントロールの内容では、HTML エンコードです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PassThrough">
+      <MemberSignature Language="C#" Value="PassThrough" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LiteralMode PassThrough = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LiteralMode.PassThrough" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LiteralMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リテラル コントロールの内容は変更されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="Transform" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.LiteralMode Transform = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.LiteralMode.Transform" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LiteralMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リテラル コントロールのマークアップ言語のサポートされていない要素が削除されます。 Literal コントロールは、HTML または XHTML をサポートするブラウザーで表示される、コントロールの内容は変更されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

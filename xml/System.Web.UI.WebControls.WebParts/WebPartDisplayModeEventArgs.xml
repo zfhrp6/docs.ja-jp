@@ -1,0 +1,62 @@
+<Type Name="WebPartDisplayModeEventArgs" FullName="System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs">
+  <TypeSignature Language="C#" Value="public class WebPartDisplayModeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartDisplayModeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs>クラスには情報が含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged>イベント。 <xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs>クラスを提供する前に、Web パーツ コントロールに適用されている表示モードへのアクセス、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged>イベント。 以前の表示モードは、<xref:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs.OldDisplayMode%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartDisplayModeEventArgs (System.Web.UI.WebControls.WebParts.WebPartDisplayMode oldDisplayMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPartDisplayMode oldDisplayMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs.#ctor(System.Web.UI.WebControls.WebParts.WebPartDisplayMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldDisplayMode" Type="System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />
+      </Parameters>
+      <Docs>
+        <param name="oldDisplayMode"><see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />表示モードを変更する前に、Web パーツ コントロールに適用します。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldDisplayMode">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartDisplayMode OldDisplayMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartDisplayMode OldDisplayMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDisplayModeEventArgs.OldDisplayMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web パーツ コントロールの以前の表示モードを設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartDisplayMode" />前に、Web パーツ コントロールに適用される、<see cref="E:System.Web.UI.WebControls.WebParts.WebPartManager.DisplayModeChanged" />イベント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

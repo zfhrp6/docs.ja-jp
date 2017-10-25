@@ -1,0 +1,86 @@
+<Type Name="IWebRequestCreate" FullName="System.Net.IWebRequestCreate">
+  <TypeSignature Language="C#" Value="public interface IWebRequestCreate" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebRequestCreate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.IWebRequestCreate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Requests</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>作成するための基底インターフェイスを提供<see cref="T:System.Net.WebRequest" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebRequestCreate>インターフェイス メソッドを定義している<xref:System.Net.WebRequest>に登録する子を使用する必要があります、<xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 実装するクラス、<xref:System.Net.IWebRequestCreate>にインターフェイスを登録することができます、 <xref:System.Net.WebRequest> 、特定の URI スキームに関連して、クラス、 <xref:System.Net.WebRequest> 、クラスを呼び出し、<xref:System.Net.IWebRequestCreate.Create%2A>メソッドとその体系に一致する URI を要求します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public System.Net.WebRequest Create (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.WebRequest Create(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.IWebRequestCreate.Create(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Requests</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebRequest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">Web リソースの URI (Uniform Resource Identifier)。</param>
+        <summary><see cref="T:System.Net.WebRequest" /> インスタンスを作成します。</summary>
+        <returns><see cref="T:System.Net.WebRequest" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.IWebRequestCreate.Create%2A>メソッドが初期化済みのインスタンスを返す必要があります、<xref:System.Net.WebRequest>しなくても、プロトコル固有のフィールドが変更されたプロトコルの標準的な要求/応答のトランザクションを実行できる子。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><paramref name="uri" /> で指定された要求スキームは、この <see cref="T:System.Net.IWebRequestCreate" /> インスタンスでサポートされていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UriFormatException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.FormatException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ <paramref name="uri" /> で指定された URI は、有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

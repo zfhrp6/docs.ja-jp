@@ -1,0 +1,42 @@
+<Type Name="ClientBase&lt;TChannel&gt;+BeginOperationDelegate" FullName="System.ServiceModel.ClientBase&lt;TChannel&gt;+BeginOperationDelegate">
+  <TypeSignature Language="C#" Value="protected delegate IAsyncResult ClientBase&lt;TChannel&gt;.BeginOperationDelegate(object[] inValues, AsyncCallback asyncCallback, object state) where TChannel : class;" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi sealed ClientBase`1/BeginOperationDelegate&lt;class TChannel&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ClientBase`1.BeginOperationDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="inValues" Type="System.Object[]" />
+    <Parameter Name="asyncCallback" Type="System.AsyncCallback" />
+    <Parameter Name="state" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.IAsyncResult</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="inValues">非同期呼び出しに対する入力値。</param>
+    <param name="asyncCallback">対応する非同期操作が完了したときに呼び出されるメソッドを参照します。</param>
+    <param name="state">クライアントが異なる非同期呼び出しを区別するための <see cref="T:System.Object" />。 クライアントは、イベント完了コールバックの引数パラメーター内でこれを使用できます。</param>
+    <summary>非同期操作を呼び出すために <see cref="M:System.ServiceModel.ClientBase`1.InvokeAsync(System.ServiceModel.ClientBase{`0}.BeginOperationDelegate,System.Object[],System.ServiceModel.ClientBase{`0}.EndOperationDelegate,System.Threading.SendOrPostCallback,System.Object)" />によって使用されるデリゲート。</summary>
+    <returns>To be added.</returns>
+    <remarks>To be added.</remarks>
+  </Docs>
+</Type>

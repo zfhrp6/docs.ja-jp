@@ -1,0 +1,711 @@
+<Type Name="PagedDataSource" FullName="System.Web.UI.WebControls.PagedDataSource">
+  <TypeSignature Language="C#" Value="public sealed class PagedDataSource : System.Collections.ICollection, System.ComponentModel.ITypedList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PagedDataSource extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.ComponentModel.ITypedList" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.PagedDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ITypedList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>データ バインド コントロールのページングに関連するプロパティをカプセル化 (など<see cref="T:System.Web.UI.WebControls.DataGrid" />、 <see cref="T:System.Web.UI.WebControls.GridView" />、 <see cref="T:System.Web.UI.WebControls.DetailsView" />、および<see cref="T:System.Web.UI.WebControls.FormView" />) をページングを実行できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.PagedDataSource>クラスなど、データ ソース コントロールを許可するプロパティをカプセル化、 <xref:System.Web.UI.WebControls.DataGrid>、 <xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>ページングを実行します。 カスタム データ バインド コントロールにページング サポートを提供するときに、このクラスはコントロールの開発者によって使用されます。  
+  
+ このクラスでは、最適な使用可能なメソッドを使用して、現在のページに属しているデータを列挙します。 基になるデータ ソースは、インデックス付きのアクセスをサポートしている場合 (など<xref:System.Array?displayProperty=nameWithType>と<xref:System.Collections.IList?displayProperty=nameWithType>)、このクラスは、それを使用します。 によって作成された列挙子を使用してそれ以外の場合、<xref:System.Collections.IEnumerable.GetEnumerator%2A>メソッドです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.PagedDataSource>を参照してください、<xref:System.Web.UI.WebControls.PagedDataSource.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PagedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.PagedDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.PagedDataSource>クラスです。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.PagedDataSource>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A>|`false`|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A>|`false`|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>|`false`|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex%2A>|0|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.PageSize%2A>|10|  
+|<xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A>|0|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowCustomPaging">
+      <MemberSignature Language="C#" Value="public bool AllowCustomPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowCustomPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ バインド コントロールのカスタム ページングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />カスタム ページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A>カスタム ページングが有効になっているかどうかを示すプロパティです。 カスタム ページングは、省略可能な型によって明示的に指定されたページングの<xref:System.Web.UI.WebControls.DataGrid>コントロール。 ASP.NET version 2.0 のデータ バインド コントロール (など<xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>) サーバー側のページングを使用して、カスタム ページングをサポートしていません。 カスタム ページングとサーバー側のページングは、相互に排他的です。 設定した場合<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A>に`true`ことを確認、<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>に設定されている`false`です。  
+  
+ カスタム ページングの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowPaging">
+      <MemberSignature Language="C#" Value="public bool AllowPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ バインド コントロールでページングが有効かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A>プロパティをデータ バインド コントロールのページングを有効にするかどうかを指定します。 ASP.NET version 2.0 のデータ バインド コントロール (など<xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>) も自動ページング機能を提供するサーバー側のページングを使用します。 サーバー側のページングの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>です。 使用する場合、<xref:System.Web.UI.WebControls.DataGrid>コントロール、カスタム ページング ロジックも提供できます。 カスタム ページングの詳細については、次を参照してください。<xref:System.Web.UI.WebControls.DataGrid.AllowCustomPaging%2A?displayProperty=nameWithType>と<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A?displayProperty=nameWithType>です。  
+  
+ データ バインド コントロールのページングのサポートの詳細については、次を参照してください。、`AllowPaging`データ バインド コントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowServerPaging">
+      <MemberSignature Language="C#" Value="public bool AllowServerPaging { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowServerPaging" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバー側のページングが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サーバー側のページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET version 2.0 のデータ バインド コントロール (など<xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.FormView>) サーバー側のページングを使用して自動ページング機能を提供します。 ASP.NET 2.0 がデータ バインド コントロールを使用する場合は、このプロパティを設定`true`です。  
+  
+> [!NOTE]
+>  サーバー側のページングとカスタム ページングは、相互に排他的です。 設定した場合<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>に`true`ことを確認、<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A>に設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />データ ソースからコピーされた項目を受信します。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受信します。</param>
+        <summary>指定したデータ ソースからのすべての項目をコピー<see cref="T:System.Array" />で指定したインデックスから始まる、<see cref="T:System.Array" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、指定したにデータ ソースの内容をコピー <xref:System.Array?displayProperty=nameWithType>、指定したインデックスから始まります。 <xref:System.Array?displayProperty=nameWithType>多くの場合に、データ ソース内の項目を反復処理するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースから使用するアイテムの数を取得します。</summary>
+        <value>データ ソースから使用する項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.Count%2A>プロパティをデータ ソースから使用するアイテムの数を決定します。 返される値は、ページングが有効になっているかどうかと、カスタム ページングを使用するかどうかによって異なります。  
+  
+-   ページングが無効になっている場合 (設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティを`false`) の値、<xref:System.Web.UI.WebControls.PagedDataSource.DataSourceCount%2A>プロパティが返されます。  
+  
+-   ページングが有効になっている場合 (設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティを`true`) カスタム ページングが有効になっていると (設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled%2A>プロパティに設定`true`) の値、<xref:System.Web.UI.WebControls.PagedDataSource.PageSize%2A>プロパティが返されます。  
+  
+-   ページングが有効になっている場合 (設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティを`true`) および<xref:System.Web.UI.WebControls.PagedDataSource.IsLastPage%2A>プロパティに設定されている`false`の値、<xref:System.Web.UI.WebControls.PagedDataSource.PageSize%2A>プロパティが返されます。  
+  
+-   ページングが有効になっている場合 (設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティを`true`)、カスタム ページングを無効に (を設定して、<xref:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled%2A>プロパティ`false`)、および<xref:System.Web.UI.WebControls.PagedDataSource.IsLastPage%2A>プロパティに設定されている`true`の値、<xref:System.Web.UI.WebControls.PagedDataSource.DataSourceCount%2A>プロパティは、の値から減算されます、<xref:System.Web.UI.WebControls.PagedDataSource.FirstIndexInPage%2A>プロパティが返される前にします。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティが含まれます`null`0 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPageIndex">
+      <MemberSignature Language="C#" Value="public int CurrentPageIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPageIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のページのインデックスを設定します。</summary>
+        <value>現在のページのインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.CurrentPageIndex%2A>プロパティを指定するか、現在のページのインデックスを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースを設定します。</summary>
+        <value>A<see cref="T:System.Collections.IEnumerable" />データ ソースを表すオブジェクトを実装します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティを指定またはページングされるデータ ソースを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceCount">
+      <MemberSignature Language="C#" Value="public int DataSourceCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DataSourceCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.DataSourceCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース内の項目数を取得します。</summary>
+        <value>データ ソース内の項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.DataSourceCount%2A>データ ソース内の項目の数を決定するプロパティです。 カスタム ページングまたはサーバー側のページングを使用する場合の値、<xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A>プロパティが返されます。 それ以外の場合、データ ソース内の項目の合計数が返されます。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティが含まれます`null`0 が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">データ ソースがない、<see cref="T:System.Collections.ICollection" />オブジェクトを実装します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstIndexInPage">
+      <MemberSignature Language="C#" Value="public int FirstIndexInPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FirstIndexInPage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.FirstIndexInPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページに表示される最初のレコードのインデックスを取得します。</summary>
+        <value>ページに表示される最初のレコードのインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.FirstIndexInPage%2A>プロパティを現在のページの最初の項目のインデックスを確認します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティに設定されている`false`、または<xref:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled%2A>または<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>プロパティに設定されます`true`、または<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティが含まれます`null`0 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />データ ソース内のすべての項目を含むオブジェクトを実装します。</summary>
+        <returns>A<see cref="T:System.Collections.IEnumerator" />データ ソース内のすべての項目を含むオブジェクトを実装します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>データ ソース内の各項目を取得する反復することができます。 列挙子の現在位置にあるアイテムにアクセスするには、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティです。 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。 列挙子を初期位置に移動するには、使用、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  ときに最初に列挙子を取得または使用する、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetItemProperties (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetItemProperties(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">配列<see cref="T:System.ComponentModel.PropertyDescriptor" />リストの名前を含まれているオブジェクトが返されます。 これは、<see langword="null" />です。</param>
+        <summary>データ バインドに使用される各項目のプロパティを表す <see cref="T:System.ComponentModel.PropertyDescriptorCollection" /> を返します。</summary>
+        <returns>データ バインドに使用される各項目のプロパティを表す <see cref="T:System.ComponentModel.PropertyDescriptorCollection" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A>メソッドを作成、<xref:System.ComponentModel.PropertyDescriptorCollection?displayProperty=nameWithType>データをバインドするために使用する各項目のプロパティを表すです。 場合、<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティは`null`かではありません、 <xref:System.ComponentModel.ITypedList?displayProperty=nameWithType> 、オブジェクトを実装する`null`が返されます。 詳細については、<xref:System.Web.UI.WebControls.PagedDataSource.GetItemProperties%2A>メソッドを参照してください<xref:System.ComponentModel.ITypedList.GetItemProperties%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="public string GetListName (System.ComponentModel.PropertyDescriptor[] listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetListName(class System.ComponentModel.PropertyDescriptor[] listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.PagedDataSource.GetListName(System.ComponentModel.PropertyDescriptor[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.ComponentModel.PropertyDescriptor[]" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors">配列<see cref="T:System.ComponentModel.PropertyDescriptor" />リストの名前を含まれているオブジェクトが返されます。 これは、<see langword="null" />です。</param>
+        <summary>リストの名前を返します。 このメソッドは、このクラスには適用されません。</summary>
+        <returns>
+          <see cref="F:System.String.Empty" />すべてのケース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの継承元<xref:System.ComponentModel.ITypedList?displayProperty=nameWithType>し、このクラスには適用できません。 実装を返すに<xref:System.String.Empty?displayProperty=nameWithType>すべてのケース。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCustomPagingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsCustomPagingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCustomPagingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム ページングが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />カスタム ページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.IsCustomPagingEnabled%2A>カスタム ページングが有効になっているかどうかを決定するプロパティです。  
+  
+> [!NOTE]
+>  両方の<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>と<xref:System.Web.UI.WebControls.PagedDataSource.AllowCustomPaging%2A>プロパティである必要があります`true`を返すには、このプロパティの`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFirstPage">
+      <MemberSignature Language="C#" Value="public bool IsFirstPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFirstPage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsFirstPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページが最初のページかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のページが最初のページ以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.IsFirstPage%2A>プロパティを現在のページが最初のページであるかどうかを判別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLastPage">
+      <MemberSignature Language="C#" Value="public bool IsLastPage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLastPage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsLastPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページが、最後のページかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のページが、最後のページの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.IsLastPage%2A>プロパティを現在のページが、最後のページであるかどうかを判別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPagingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsPagingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPagingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページングが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ページングが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>ページングが有効になっているかどうかを決定するプロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A>プロパティである必要があります`true`と<xref:System.Web.UI.WebControls.PagedDataSource.PageSize%2A>プロパティは、このプロパティを返す場合は 0 に設定することはできません`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースは読み取り専用であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの実装を常に返すに`false`常に、データ ソースを変更できることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsServerPagingEnabled">
+      <MemberSignature Language="C#" Value="public bool IsServerPagingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsServerPagingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsServerPagingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー側のページングのサポートが有効になっているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ページングが有効になっておりを使用してサーバー側のページングに示されている場合、<see cref="P:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging" />プロパティ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバー側のページングが有効になっているときに、<xref:System.Web.UI.WebControls.PagedDataSource.AllowPaging%2A>と<xref:System.Web.UI.WebControls.PagedDataSource.AllowServerPaging%2A>プロパティに設定されて`true`と 1 つのページで、データ ソースによって取得されるデータの量を表示できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>(スレッド セーフである) データ ソースへのアクセスが同期されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>クラスし、常にオーバーライド`false`をこのクラスがスレッド セーフでないことを示します。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.PagedDataSource.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageCount">
+      <MemberSignature Language="C#" Value="public int PageCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.PageCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース内のすべての項目を表示するために必要なページの合計数を取得します。</summary>
+        <value>データ ソース内のすべての項目を表示するために必要なページ数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.PageCount%2A>プロパティ ページのデータ ソース内のすべての項目を表示するために必要な数を決定します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.UI.WebControls.PagedDataSource.DataSource%2A>プロパティは`null`0 が返されます。 場合、<xref:System.Web.UI.WebControls.PagedDataSource.IsPagingEnabled%2A>プロパティに設定されている`false`または<xref:System.Web.UI.WebControls.PagedDataSource.DataSourceCount%2A>プロパティを設定すると、以下を 0 には、1 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageSize">
+      <MemberSignature Language="C#" Value="public int PageSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.PageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのページに表示する項目の数を設定します。</summary>
+        <value>1 つのページに表示する項目の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.PageSize%2A>プロパティを指定するか、1 つのページに表示する項目の数を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.PagedDataSource>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualCount">
+      <MemberSignature Language="C#" Value="public int VirtualCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VirtualCount" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.PagedDataSource.VirtualCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ページングを使用する場合に、データ ソースの仮想項目数を設定します。</summary>
+        <value>カスタム ページングを使用する場合は、データ ソース内の項目数の仮想です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A>カスタム ページングまたはサーバー側のページングを使用して、データ ソース内のアイテムの仮想の数を決定するプロパティです。 詳細については、<xref:System.Web.UI.WebControls.PagedDataSource.VirtualCount%2A>プロパティを参照してください<xref:System.Web.UI.WebControls.DataGrid.VirtualItemCount%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="ToolboxItemCollection" FullName="System.Drawing.Design.ToolboxItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class ToolboxItemCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ToolboxItemCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ツールボックス項目のコレクションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItemCollection (System.Drawing.Design.ToolboxItem[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Design.ToolboxItem[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCollection.#ctor(System.Drawing.Design.ToolboxItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Design.ToolboxItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.Drawing.Design.ToolboxItem" />コレクションを埋めるツールボックス アイテムを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItemCollection" />クラス ツールボックス項目の指定した配列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 新たに作成するコード例を次に示します<xref:System.Drawing.Design.ToolboxItemCollection>インスタンスの配列を使用して初期化<xref:System.Drawing.Design.ToolboxItem>オブジェクト。  
+  
+ [!code-cpp[ToolboxItemCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[ToolboxItemCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CS/class1.cs#1)]
+ [!code-vb[ToolboxItemCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxItemCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItemCollection (System.Drawing.Design.ToolboxItemCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Design.ToolboxItemCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCollection.#ctor(System.Drawing.Design.ToolboxItemCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Design.ToolboxItemCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Drawing.Design.ToolboxItemCollection" />を使用して、新しいコレクションを入力します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItemCollection" />クラス、指定されたコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 新たに作成するコード例を次に示します<xref:System.Drawing.Design.ToolboxItemCollection>インスタンス別を使用して初期化<xref:System.Drawing.Design.ToolboxItemCollection>です。  
+  
+ [!code-cpp[ToolboxItemCollectionExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CPP/class1.cpp#2)]
+ [!code-csharp[ToolboxItemCollectionExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CS/class1.cs#2)]
+ [!code-vb[ToolboxItemCollectionExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxItemCollectionExample/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Drawing.Design.ToolboxItem value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Drawing.Design.ToolboxItem value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCollection.Contains(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Drawing.Design.ToolboxItem" />コレクションを検索します。</param>
+        <summary>指定した <see cref="T:System.Drawing.Design.ToolboxItem" /> がコレクションに格納されているかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがコレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Drawing.Design.ToolboxItemCollection.Contains%2A>のメソッド、<xref:System.Drawing.Design.ToolboxItemCollection>です。  
+  
+ [!code-cpp[ToolboxItemCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[ToolboxItemCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CS/class1.cs#5)]
+ [!code-vb[ToolboxItemCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxItemCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Drawing.Design.ToolboxItem[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Drawing.Design.ToolboxItem[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCollection.CopyTo(System.Drawing.Design.ToolboxItem[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Drawing.Design.ToolboxItem[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="index">コピーを開始するインデックス。</param>
+        <summary>指定したインデックスを開始位置として、指定した配列にコレクションをコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Drawing.Design.ToolboxItemCollection.CopyTo%2A>のメソッド、<xref:System.Drawing.Design.ToolboxItemCollection>です。  
+  
+ [!code-cpp[ToolboxItemCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[ToolboxItemCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CS/class1.cs#6)]
+ [!code-vb[ToolboxItemCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxItemCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Drawing.Design.ToolboxItem value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Drawing.Design.ToolboxItem value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemCollection.IndexOf(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Drawing.Design.ToolboxItem" />コレクション内のインデックスを取得します。</param>
+        <summary>指定したインデックスを取得<see cref="T:System.Drawing.Design.ToolboxItem" />コレクション内に存在する場合は、します。</summary>
+        <returns>指定したインデックス<see cref="T:System.Drawing.Design.ToolboxItem" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Drawing.Design.ToolboxItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Design.ToolboxItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定するオブジェクトのインデックス。</param>
+        <summary>指定されたインデックス位置にある <see cref="T:System.Drawing.Design.ToolboxItem" /> を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.Design.ToolboxItem" />コレクション内の有効な各インデックスにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、インデクサーの使用方法を示します、<xref:System.Drawing.Design.ToolboxItemCollection>です。  
+  
+ [!code-cpp[ToolboxItemCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[ToolboxItemCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/ToolboxItemCollectionExample/CS/class1.cs#4)]
+ [!code-vb[ToolboxItemCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ToolboxItemCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

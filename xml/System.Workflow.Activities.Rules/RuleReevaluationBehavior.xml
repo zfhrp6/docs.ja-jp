@@ -1,0 +1,57 @@
+<Type Name="RuleReevaluationBehavior" FullName="System.Workflow.Activities.Rules.RuleReevaluationBehavior">
+  <TypeSignature Language="C#" Value="public enum RuleReevaluationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RuleReevaluationBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Activities.Rules.RuleReevaluationBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.Workflow.Activities.Rules.Rule" /> を再評価できるかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙値は、<xref:System.Workflow.Activities.Rules.Rule> の実行回数を制限するために使うもので、主として無限ループの回避が目的です。 このフィールドの既定値は `Always` です。 これは <xref:System.Workflow.Activities.Rules.Rule> の実行回数に制限を設けないことを表します。したがって、<xref:System.Workflow.Activities.Rules.Rule> の実際の実行回数は、<xref:System.Workflow.Activities.Rules.RuleSet> を評価した結果得られる連鎖サイクルによって決まります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Activities.Rules.RuleReevaluationBehavior Always = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.Rules.RuleReevaluationBehavior.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleReevaluationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.Rule" /> を何回でも再評価できることを表します。 既定値は <see cref="F:System.Workflow.Activities.Rules.RuleReevaluationBehavior.Always" /> です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Workflow.Activities.Rules.RuleReevaluationBehavior Never = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Workflow.Activities.Rules.RuleReevaluationBehavior.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Activities.Rules.RuleReevaluationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Activities.Rules.Rule" /> を 1 回だけ実行することを表します。  条件の評価はアクションが実行されるまで何回でも行えますが、ルール自体が繰り返し評価されることはありません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

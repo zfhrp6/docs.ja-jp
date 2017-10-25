@@ -1,0 +1,703 @@
+<Type Name="ItemAutomationPeer" FullName="System.Windows.Automation.Peers.ItemAutomationPeer">
+  <TypeSignature Language="C#" Value="public abstract class ItemAutomationPeer : System.Windows.Automation.Peers.AutomationPeer, System.Windows.Automation.Provider.IVirtualizedItemProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ItemAutomationPeer extends System.Windows.Automation.Peers.AutomationPeer implements class System.Windows.Automation.Provider.IVirtualizedItemProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.ItemAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.AutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IVirtualizedItemProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>公開データ項目を<see cref="P:System.Windows.Controls.ItemsControl.Items" />UI オートメーションを使用するコレクション。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ項目でもない<xref:System.Windows.UIElement>型では、子は必要はありません。 ただし、ことができます、<xref:System.Windows.UIElement>ツリーと対応する[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー。  
+  
+ たとえば、<xref:System.Windows.Controls.ListBox>データ項目を含む文字列のコレクションを持つことができます。 これらの項目を処理するときに、<xref:System.Windows.Controls.ItemsControl>の視覚エフェクトの<xref:System.Windows.UIElement>それらのツリーを作成します。 このツリーは、対応するは[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー。 ツリーの作成後、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]マージ、<xref:System.Windows.UIElement>にツリー、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ツリー。 <xref:System.Windows.Automation.Peers.ItemAutomationPeer>によるその<xref:System.Windows.UIElement>に関する詳細情報を取得する、存在する場合は対応する、<xref:System.Windows.UIElement>ツリー。  
+  
+ 表示されるデータ項目、または具体的には、対応するのみ<xref:System.Windows.UIElement>ツリー、この dualism があります。 非表示のデータ項目に対応する持たない<xref:System.Windows.UIElement>ツリー、ある 1 つだけ<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ItemAutomationPeer (object item, System.Windows.Automation.Peers.ItemsControlAutomationPeer itemsControlAutomationPeer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(object item, class System.Windows.Automation.Peers.ItemsControlAutomationPeer itemsControlAutomationPeer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.#ctor(System.Object,System.Windows.Automation.Peers.ItemsControlAutomationPeer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="itemsControlAutomationPeer" Type="System.Windows.Automation.Peers.ItemsControlAutomationPeer" />
+      </Parameters>
+      <Docs>
+        <param name="item">データ項目に、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</param>
+        <param name="itemsControlAutomationPeer"><see cref="T:System.Windows.Automation.Peers.ItemsControlAutomationPeer" />と関連付けられている、<see cref="T:System.Windows.Controls.ItemsControl" />を保持する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</param>
+        <summary>派生クラスのコンス トラクターによって呼び出されたときに、基本クラスの値の初期化を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAcceleratorKeyCore">
+      <MemberSignature Language="C#" Value="protected override string GetAcceleratorKeyCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAcceleratorKeyCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetAcceleratorKeyCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセラレータ キーを取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>アクセラレータ キー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetAcceleratorKey%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessKeyCore">
+      <MemberSignature Language="C#" Value="protected override string GetAccessKeyCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAccessKeyCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetAccessKeyCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス キーを取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>アクセス キー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetAccessKey%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationIdCore">
+      <MemberSignature Language="C#" Value="protected override string GetAutomationIdCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetAutomationIdCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetAutomationIdCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一意に識別する文字列を取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>含む文字列、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]識別子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]識別子が、<xref:System.Windows.Automation.AutomationProperties.AutomationId%2A>プロパティです。 場合、<xref:System.Windows.Automation.AutomationProperties.AutomationId%2A>プロパティが設定されていない、値は、<xref:System.Windows.FrameworkElement.Name%2A>プロパティです。  
+  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetAutomationId%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundingRectangleCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Rect GetBoundingRectangleCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Rect GetBoundingRectangleCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetBoundingRectangleCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Rect" />の指定された外接する四角形を表す<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>外接する四角形。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.Generic.List`1&lt;class System.Windows.Automation.Peers.AutomationPeer&gt; GetChildrenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetChildrenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.List&lt;System.Windows.Automation.Peers.AutomationPeer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>子要素のコレクションを取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>子要素のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetChildren%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClickablePointCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Point GetClickablePointCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Point GetClickablePointCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetClickablePointCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Point" />を表す、クリック可能な領域を指定した<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>指定したは、クリック可能な領域を表すポイント<see cref="T:System.Windows.UIElement" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetClickablePoint%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHelpTextCore">
+      <MemberSignature Language="C#" Value="protected override string GetHelpTextCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetHelpTextCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetHelpTextCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>機能について説明する文字列を取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>ヘルプ テキスト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetHelpText%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemStatusCore">
+      <MemberSignature Language="C#" Value="protected override string GetItemStatusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetItemStatusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetItemStatusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定した表示状態を表す文字列を取得<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns>ステータス。 例についてには、「ビジー」または"Online"が含まれます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetItemStatus%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemTypeCore">
+      <MemberSignature Language="C#" Value="protected override string GetItemTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetItemTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetItemTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得人間が判読できる文字列の型を含む項目を指定した<see cref="T:System.Windows.UIElement" />を表します。</summary>
+        <returns>項目の種類。 例には、「メッセージ」や「連絡先」が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetItemType%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLabeledByCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer GetLabeledByCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer GetLabeledByCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetLabeledByCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の<see cref="T:System.Windows.Controls.Label" />つまりを指定した対象となる<see cref="T:System.Windows.UIElement" />です。</summary>
+        <returns><see cref="T:System.Windows.Controls.Label" /> によりターゲットとされる要素の <see cref="T:System.Windows.Automation.Peers.LabelAutomationPeer" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetLabeledBy%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト ラベルを取得、<see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <returns>テキスト ラベル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Name プロパティは、ユーザーを使用して参照しているコントロールを説明するテキストの文字列と考えることができます。 すべてのコントロールのテキスト表現があることを確認してください、[!INCLUDE[TLA#tla_gui](~/includes/tlasharptla-gui-md.md)]プログラムにより、ローカライズされた方法でコントロールに参照できるようにします。  
+  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetName%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrientationCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationOrientation GetOrientationCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationOrientation GetOrientationCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetOrientationCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationOrientation</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />が特定の方向にレイアウトします。</summary>
+        <returns>指定した方向<see cref="T:System.Windows.UIElement" />です。 必要に応じて返します<see cref="F:System.Windows.Automation.Peers.AutomationOrientation.None" />場合、<see cref="T:System.Windows.UIElement" />がない特定の方向にレイアウトします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.GetOrientation%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPattern">
+      <MemberSignature Language="C#" Value="public override object GetPattern (System.Windows.Automation.Peers.PatternInterface patternInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetPattern(valuetype System.Windows.Automation.Peers.PatternInterface patternInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternInterface" Type="System.Windows.Automation.Peers.PatternInterface" />
+      </Parameters>
+      <Docs>
+        <param name="patternInterface">コントロール パターンを指定する列挙値。</param>
+        <summary>この automation peer に関連付けられている要素の指定したコントロール パターンをサポートするオブジェクトを返します。</summary>
+        <returns>場合に、コントロール パターンをサポートするオブジェクト<paramref name="patternInterface" />サポートされている値、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`patternInterface`は<xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType>アイテムは、ビジュアル ツリーには、このメソッドが戻ると、`this`ポインター。 場合`patternInterface`equals <xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType>、このメソッドを実装するオブジェクトを返します、<xref:System.Windows.Automation.Provider.ISynchronizedInputProvider>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasKeyboardFocusCore">
+      <MemberSignature Language="C#" Value="protected override bool HasKeyboardFocusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool HasKeyboardFocusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.HasKeyboardFocusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />現在にキーボード入力フォーカスがします。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.UIElement" />にキーボード入力フォーカスが、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.HasKeyboardFocus%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContentElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsContentElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsContentElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsContentElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />をユーザーに表示されるデータが含まれています。</summary>
+        <returns>
+          <see langword="true" />要素のコンテンツ要素である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsContentElement%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsControlElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsControlElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsControlElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsControlElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.UIElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />対話的なものとしてエンドユーザーが認識されます。</summary>
+        <returns>
+          <see langword="true" />要素がコントロールである場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>コレクション。 ユーザーが認識できると、<xref:System.Windows.UIElement>内のコントロールの論理構造に利用できるものとして、[!INCLUDE[TLA2#tla_gui](~/includes/tla2sharptla-gui-md.md)]です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsControlElement%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsEnabledCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsEnabledCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />イベントを送受信できます。</summary>
+        <returns>
+          <see langword="true" />場合、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ピアがイベントを送受信できます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsEnabled%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardFocusableCore">
+      <MemberSignature Language="C#" Value="protected override bool IsKeyboardFocusableCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsKeyboardFocusableCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsKeyboardFocusableCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />キーボード フォーカスを受け取ることができます。</summary>
+        <returns>
+          <see langword="true" />要素がキーボード フォーカスを受け入れることができる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsKeyboardFocusable%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffscreenCore">
+      <MemberSignature Language="C#" Value="protected override bool IsOffscreenCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsOffscreenCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsOffscreenCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />画面に表示されません。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.UIElement" />が画面上にない場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsOffscreen%2A> によって呼び出されます。  
+  
+ このメソッドでは、要素が表示されているかどうかは示されません。 状況によっては、要素は、画面には表示されていないです。 たとえば、要素が他の要素によって隠されている場合に表示されません。 この場合、メソッドを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPasswordCore">
+      <MemberSignature Language="C#" Value="protected override bool IsPasswordCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsPasswordCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsPasswordCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定した<see cref="T:System.Windows.UIElement" />保護されたコンテンツが含まれています。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.UIElement" />保護されたコンテンツが含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsPassword%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequiredForFormCore">
+      <MemberSignature Language="C#" Value="protected override bool IsRequiredForFormCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsRequiredForFormCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.IsRequiredForFormCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか、指定された<see cref="T:System.Windows.UIElement" />フォーム上で完了する必要があります。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.UIElement" />、それ以外の完了に必要な<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.UIElement>内のデータ項目に対応する、<xref:System.Windows.Controls.ItemsControl.Items%2A>これに関連付けられているコレクション<xref:System.Windows.Automation.Peers.ItemAutomationPeer>です。 このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.IsRequiredForForm%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.ItemAutomationPeer.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のデータ項目を取得、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <value>データ項目。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemsControlAutomationPeer">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Peers.ItemsControlAutomationPeer ItemsControlAutomationPeer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Peers.ItemsControlAutomationPeer ItemsControlAutomationPeer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.ItemAutomationPeer.ItemsControlAutomationPeer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.ItemsControlAutomationPeer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Automation.Peers.ItemsControlAutomationPeer" />と関連付けられている、<see cref="T:System.Windows.Controls.ItemsControl" />を保持する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</summary>
+        <value><see cref="T:System.Windows.Automation.Peers.ItemsControlAutomationPeer" />と関連付けられている、<see cref="T:System.Windows.Controls.ItemsControl" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetFocusCore">
+      <MemberSignature Language="C#" Value="protected override void SetFocusCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetFocusCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.SetFocusCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定したキーボード入力フォーカスを設定<see cref="T:System.Windows.UIElement" />です。 <see cref="T:System.Windows.UIElement" />内のデータ項目に対応する、<see cref="P:System.Windows.Controls.ItemsControl.Items" />これに関連付けられているコレクション<see cref="T:System.Windows.Automation.Peers.ItemAutomationPeer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Windows.Automation.Peers.AutomationPeer.SetFocus%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize">
+      <MemberSignature Language="C#" Value="void IVirtualizedItemProvider.Realize ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.ItemAutomationPeer.System#Windows#Automation#Provider#IVirtualizedItemProvider#Realize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仮想項目は、UI オートメーション要素として完全にアクセスできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.ItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IVirtualizedItemProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

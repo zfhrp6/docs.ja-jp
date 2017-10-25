@@ -1,0 +1,73 @@
+<Type Name="ServiceCertificateElement" FullName="System.IdentityModel.Services.ServiceCertificateElement">
+  <TypeSignature Language="C#" Value="public class ServiceCertificateElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceCertificateElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.ServiceCertificateElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、<see langword="&lt;serviceCertificate&gt;" />構成ファイル内の要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<serviceCertificate>`要素の子要素、`<federationConfiguration>`要素してあれば、WS フェデレーションを使用する場合は、トークンを暗号化/暗号化解除に使用される X.509 証明書を構成します。  
+  
+ <xref:System.IdentityModel.Services.Configuration.FederationConfigurationElement.ServiceCertificate%2A?displayProperty=nameWithType>プロパティのインスタンスは、<xref:System.IdentityModel.Services.ServiceCertificateElement>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceCertificateElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.ServiceCertificateElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Services.ServiceCertificateElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateReference">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.CertificateReferenceElement CertificateReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.CertificateReferenceElement CertificateReference" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.ServiceCertificateElement.CertificateReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("certificateReference", IsRequired=false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.CertificateReferenceElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定子<see langword="&lt;certificateReference&gt;" />この要素<see langword="&lt;serviceCertificate&gt;" />要素。</summary>
+        <value><see langword="&lt;certificateReference&gt;" /> 要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `<certificateReference>`要素には、暗号化し、トークン暗号化解除に使用する X.509 証明書の場所と検証のパラメーターを指定する設定が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,458 @@
+<Type Name="DependencyProperty" FullName="System.Workflow.ComponentModel.DependencyProperty">
+  <TypeSignature Language="C#" Value="public sealed class DependencyProperty : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DependencyProperty extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.DependencyProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.DependencyObject" /> に定義または添付できる特別なプロパティ。 依存関係プロパティには、インスタンス プロパティ、メタ プロパティ、添付プロパティの 3 種類があります。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ 依存関係プロパティには 3 とおりの使い方があります。 第 1 に、アクティビティのインスタンス プロパティが依存関係プロパティを使って実装されている場合、このプロパティには、実際の値の代わりに <xref:System.Workflow.ComponentModel.ActivityBind> を設定できます。 第 2 に、メタデータでもあるアクティビティ プロパティ (実行時に値を変更できないもの) は、依存関係プロパティを使い、<xref:System.Workflow.ComponentModel.DependencyPropertyOptions.Metadata> オプションを指定して実装することになります。 第 3 に、依存関係プロパティは添付プロパティとして、依存関係オブジェクトに動的に適用することができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.DependencyProperty> で使用するために <xref:System.Workflow.ComponentModel.DependencyObject> を登録する方法を次の例に示します。 このコード例は、SendMailActivity.cs ファイルから抜粋した電子メール送信の SDK サンプルの一部です。 詳細については、次を参照してください。[送信メールのアクティビティ](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+ [!code-csharp[WF_Samples#230](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#230)]
+ [!code-vb[WF_Samples#230](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#230)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DefaultMetadata">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.PropertyMetadata DefaultMetadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.PropertyMetadata DefaultMetadata" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.DefaultMetadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.PropertyMetadata</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.ComponentModel.PropertyMetadata" /> に与えるユーザー定義のデータを表す、<see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を取得します。</summary>
+        <value>この <see cref="T:System.Workflow.ComponentModel.PropertyMetadata" /> の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromName">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty FromName (string propertyName, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty FromName(string propertyName, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.FromName(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の <see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" />。</param>
+        <param name="ownerType">取得しようとする依存関係プロパティの <see cref="P:System.Workflow.ComponentModel.DependencyProperty.OwnerType" /> の値。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> および <see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" /> が指定に一致する、登録された <see cref="P:System.Workflow.ComponentModel.DependencyProperty.OwnerType" /> を取得します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> および <see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" /> が指定に一致する、登録された <see cref="P:System.Workflow.ComponentModel.DependencyProperty.OwnerType" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromType">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.DependencyProperty&gt; FromType (Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Workflow.ComponentModel.DependencyProperty&gt; FromType(class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.FromType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Workflow.ComponentModel.DependencyProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ownerType"><see cref="T:System.Type" />。</param>
+        <summary>特定の <see cref="T:System.Collections.IList" /> に属する、<see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> 型の <see cref="T:System.Type" /> を作成します。</summary>
+        <returns>
+          特定の <see cref="T:System.Collections.IList" /> に属する <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の <see cref="T:System.Type" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ここで計算されるハッシュ コードは、`bitwise AND` で生成したハッシュコードと、この <xref:System.Workflow.ComponentModel.DependencyProperty.Name%2A> の <xref:System.Workflow.ComponentModel.DependencyProperty.OwnerType%2A> 属性値の、<xref:System.Workflow.ComponentModel.DependencyProperty> を取って求めたものです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAttached">
+      <MemberSignature Language="C#" Value="public bool IsAttached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAttached" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.IsAttached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録によりこの <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> が <see cref="T:System.Workflow.ComponentModel.DependencyObject" /> に対応付けられているかどうかを表すプロパティを取得します。</summary>
+        <value>
+          <see langword="true" /> に添付されている場合は <see cref="T:System.Workflow.ComponentModel.DependencyObject" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は、この <xref:System.Workflow.ComponentModel.DependencyProperty> が <xref:System.Workflow.ComponentModel.DependencyProperty.Register%2A> メソッドで登録されているかどうかを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEvent">
+      <MemberSignature Language="C#" Value="public bool IsEvent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEvent" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.IsEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> がイベント <see cref="T:System.Delegate" /> であるかどうかを表すプロパティを取得します。</summary>
+        <value>
+          <see langword="true" /> がイベント <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> であれば <see cref="T:System.Delegate" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" /> の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の <see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OwnerType">
+      <MemberSignature Language="C#" Value="public Type OwnerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type OwnerType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.OwnerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyType">
+      <MemberSignature Language="C#" Value="public Type PropertyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type PropertyType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.PropertyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> に格納されている値の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を取得します。</summary>
+        <value><see cref="T:System.Type" /> に格納されている値の <see cref="T:System.Workflow.ComponentModel.DependencyProperty" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty Register (string name, Type propertyType, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty Register(string name, class System.Type propertyType, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.Register(System.String,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の名前。</param>
+        <param name="propertyType">
+          プロパティに含めることができる値の <see cref="T:System.Type" />。</param>
+        <param name="ownerType">依存プロパティのオーナーの <see cref="T:System.Type" />。</param>
+        <summary>入力パラメーターに従ってパラメーター化したプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>入力パラメーターに従ってパラメーター化されたプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.DependencyProperty> で使用するために <xref:System.Workflow.ComponentModel.DependencyObject> を登録する方法を次の例に示します。 このコード例は、SendMailActivity.cs ファイルから抜粋した電子メール送信の SDK サンプルの一部です。 詳細については、次を参照してください。[送信メールのアクティビティ](http://msdn.microsoft.com/en-us/bfb5939e-60a9-4037-af4e-2cea9e654669)です。  
+  
+ [!code-csharp[WF_Samples#230](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#230)]
+ [!code-vb[WF_Samples#230](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#230)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty Register (string name, Type propertyType, Type ownerType, System.Workflow.ComponentModel.PropertyMetadata defaultMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty Register(string name, class System.Type propertyType, class System.Type ownerType, class System.Workflow.ComponentModel.PropertyMetadata defaultMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.Register(System.String,System.Type,System.Type,System.Workflow.ComponentModel.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Workflow.ComponentModel.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の名前。</param>
+        <param name="propertyType">
+          プロパティに含めることができる値の <see cref="T:System.Type" />。</param>
+        <param name="ownerType">依存プロパティのオーナーの <see cref="T:System.Type" />。</param>
+        <param name="defaultMetadata">追加のプロパティ オプション。</param>
+        <summary>入力パラメーターに従ってパラメーター化したプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>入力パラメーターに従ってパラメーター化されたプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の名前。</param>
+        <param name="propertyType">
+          プロパティに含めることができる値の <see cref="T:System.Type" />。</param>
+        <param name="ownerType">依存プロパティのオーナーの <see cref="T:System.Type" />。</param>
+        <summary>入力パラメーターに従ってパラメーター化したプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラスの新しいインスタンスを初期化します。 このインスタンスは、所有する型のオブジェクト以外で使うプロパティの宣言を想定したものです。</summary>
+        <returns>入力パラメーターに従ってパラメーター化されたプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType, System.Workflow.ComponentModel.PropertyMetadata defaultMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType, class System.Workflow.ComponentModel.PropertyMetadata defaultMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type,System.Workflow.ComponentModel.PropertyMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Workflow.ComponentModel.PropertyMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の名前。</param>
+        <param name="propertyType">
+          プロパティに含めることができる値の <see cref="T:System.Type" />。</param>
+        <param name="ownerType">依存プロパティのオーナーの <see cref="T:System.Type" />。</param>
+        <param name="defaultMetadata">追加のプロパティ オプション。</param>
+        <summary>入力パラメーターに従ってパラメーター化したプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>入力パラメーターに従ってパラメーター化されたプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAttached">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.DependencyProperty RegisterAttached (string name, Type propertyType, Type ownerType, System.Workflow.ComponentModel.PropertyMetadata defaultMetadata, Type validatorType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.DependencyProperty RegisterAttached(string name, class System.Type propertyType, class System.Type ownerType, class System.Workflow.ComponentModel.PropertyMetadata defaultMetadata, class System.Type validatorType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.RegisterAttached(System.String,System.Type,System.Type,System.Workflow.ComponentModel.PropertyMetadata,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="propertyType" Type="System.Type" />
+        <Parameter Name="ownerType" Type="System.Type" />
+        <Parameter Name="defaultMetadata" Type="System.Workflow.ComponentModel.PropertyMetadata" />
+        <Parameter Name="validatorType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> の名前。</param>
+        <param name="propertyType">
+          プロパティに含めることができる値の <see cref="T:System.Type" />。</param>
+        <param name="ownerType">依存プロパティのオーナーの <see cref="T:System.Type" />。</param>
+        <param name="defaultMetadata">追加のプロパティ オプション。</param>
+        <param name="validatorType">
+          添付プロパティの検証ロジックを実装するオブジェクトの <see cref="T:System.Type" />。</param>
+        <summary>入力パラメーターに従ってパラメーター化したプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns>入力パラメーターに従ってパラメーター化されたプロパティを持つ <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> クラス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データに関連付けられた <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">データを格納している <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、ターゲット オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.DependencyProperty.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Object" /> メソッドをオーバーライドして、<see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" /> プロパティ値を返します。</summary>
+        <returns><see cref="P:System.Workflow.ComponentModel.DependencyProperty.Name" /> プロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Workflow.ComponentModel.DependencyProperty> がミラー化するプロパティまたはイベントの名前を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidatorType">
+      <MemberSignature Language="C#" Value="public Type ValidatorType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ValidatorType" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.DependencyProperty.ValidatorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Type" /> に特有の検証ロジックを実装している <see cref="T:System.Workflow.ComponentModel.DependencyProperty" /> を取得します。</summary>
+        <value>このインスタンスに特有の検証ロジックを実装している <see cref="T:System.Type" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

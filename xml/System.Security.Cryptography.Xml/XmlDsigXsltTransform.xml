@@ -1,0 +1,374 @@
+<Type Name="XmlDsigXsltTransform" FullName="System.Security.Cryptography.Xml.XmlDsigXsltTransform">
+  <TypeSignature Language="C#" Value="public class XmlDsigXsltTransform : System.Security.Cryptography.Xml.Transform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDsigXsltTransform extends System.Security.Cryptography.Xml.Transform" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.Transform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>W3C で定義されているデジタル署名の XSLT 変換を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.XmlDsigXPathTransform>クラスでは、XSLT 変換を使用して XML ドキュメントに対応することができます。  このクラスは、他の XML ノードの署名または暗号化する XML ノードに変換するのに XSLT を使用します。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>署名または XSLT 変換を使用して XML ドキュメントの特定の部分を暗号化するクラス。  
+  
+ Uniform Resource Identifier () を示す、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>によってクラスが定義されている、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigXsltTransformUrl>フィールドです。  
+  
+ XSLT 変換の詳細については www.w3.org/TR/xmldsig-core/ で W3C XMLDSIG の仕様の 6.6.5」セクションを参照してください。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>エンベロープ署名を持つクラス。  2 番目のコード例のメンバーを使用する方法を示します、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ **例 1**  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/VB/sample.vb#1)]  
+  
+ **例 2**  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#2)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigXsltTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>エンベロープ署名を持つクラス。  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigXsltTransform (bool includeComments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool includeComments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="includeComments" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includeComments">
+          <see langword="true" />含めるコメント。それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />指定されている場合、コメント クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInnerXml">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlNodeList GetInnerXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlNodeList GetInnerXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetInnerXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パラメーターの XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクトは、XMLDSIG のサブ要素として含まれるに適した<see langword="&lt;Transform&gt;" />要素。</summary>
+        <returns>現在の記述に必要な変換に固有のコンテンツを表す XML ノードの一覧<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />、XMLDSIG 内のオブジェクト<see langword="&lt;Transform&gt;" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public override object GetOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の出力を返します。<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトの型でなければなりません<xref:System.IO.Stream>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput%2A> 、現在の出力を取得する方法を<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#8)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#8)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public override object GetOutput (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetOutput(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">返される出力の型。 <see cref="T:System.IO.Stream" />このパラメーターの唯一の有効な型です。</param>
+        <summary>現在の出力を返します。<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />型のオブジェクト<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />型のオブジェクト<see cref="T:System.IO.Stream" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトの型でなければなりません<xref:System.IO.Stream>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput%2A> 、現在の出力を取得する方法を<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#7)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#7)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="type" />パラメーターではありません、<see cref="T:System.IO.Stream" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InputTypes">
+      <MemberSignature Language="C#" Value="public override Type[] InputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] InputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.XmlDsigXsltTransform.InputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効な入力値をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</summary>
+        <value>現在の有効な入力の型の配列<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクトです。 これらの種類のいずれかのオブジェクトのみを渡すことができます、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効な入力の型を<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>は<xref:System.IO.Stream>、 <xref:System.Xml.XmlDocument>、および<xref:System.Xml.XmlNodeList>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.InputTypes%2A>現在の変換の有効な入力の型を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#4)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#4)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInnerXml">
+      <MemberSignature Language="C#" Value="public override void LoadInnerXml (System.Xml.XmlNodeList nodeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadInnerXml(class System.Xml.XmlNodeList nodeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInnerXml(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeList" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />に現在読み込む XSLT スタイル シートをカプセル化するオブジェクト<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。 このスタイル シートがによって読み込まれるドキュメントに適用された、<see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" />メソッドです。</param>
+        <summary>解析して、指定した<see cref="T:System.Xml.XmlNodeList" />オブジェクトの変換に固有のコンテンツとして、<see langword="&lt;Transform&gt;" />要素が現在の内部状態を構成および<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />と一致するオブジェクト、<see langword="&lt;Transform&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのサブ要素を処理するために使用する`<Transform>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例は、サインインして使用して XML ドキュメントを検証する方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>エンベロープ署名を持つクラス。  
+  
+ [!code-cpp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/CS/sample.cs#1)]
+ [!code-vb[Cryptography.Xml.XmlDsigXsltTransform#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XmlDsigXsltTransform/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="nodeList" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="nodeList" />パラメーターが含まれていない、<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInput">
+      <MemberSignature Language="C#" Value="public override void LoadInput (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadInput(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在読み込む入力<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</param>
+        <summary>現在、指定された入力に読み込みます<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力オブジェクトの種類は内の型のいずれかを指定する必要があります、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.InputTypes%2A>プロパティです。 有効な入力の型を<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>は<xref:System.IO.Stream>、 <xref:System.Xml.XmlDocument>、および<xref:System.Xml.XmlNodeList>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.LoadInput%2A>メソッドを指定して<xref:System.Xml.XmlDocument>オブジェクトを入力として。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#11)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#11)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputTypes">
+      <MemberSignature Language="C#" Value="public override Type[] OutputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] OutputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.XmlDsigXsltTransform.OutputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能な出力をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</summary>
+        <value>現在の有効な出力型の配列<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト以外のオブジェクトのみを次のいずれかの型はから返されます、 <see cref="M:System.Security.Cryptography.Xml.XmlDsigXsltTransform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.XmlDsigXsltTransform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream>唯一の有効な出力の種類は、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform.OutputTypes%2A>プロパティを現在の変換に有効な出力の種類を取得します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.Xml.XmlDsigXsltTransform>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CPP/members.cpp#5)]
+ [!code-csharp[System.Security.Cryptography.Xml.XmlDsigXsltTransform#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/CS/members.cs#5)]
+ [!code-vb[System.Security.Cryptography.Xml.XmlDsigXsltTransform#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.Xml.XmlDsigXsltTransform/VB/members.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

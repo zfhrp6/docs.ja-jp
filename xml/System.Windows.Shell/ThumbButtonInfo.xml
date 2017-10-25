@@ -1,0 +1,555 @@
+<Type Name="ThumbButtonInfo" FullName="System.Windows.Shell.ThumbButtonInfo">
+  <TypeSignature Language="C#" Value="public sealed class ThumbButtonInfo : System.Windows.Freezable, System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ThumbButtonInfo extends System.Windows.Freezable implements class System.Windows.Input.ICommandSource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shell.ThumbButtonInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Input.ICommandSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Windows 7 のタスクバーのサムネイルで、ボタンを表示する方法についての情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[win7](~/includes/win7-md.md)]タスク バーは、タスク バー ボタンを使用してユーザー状態を通信し、ウィンドウを最小化または非表示にするときに、一般的なタスクを公開することができます拡張機能を提供します。 アプリケーション ウィンドウを切り替えずに一般的なタスクへのアクセスを提供するタスク バーのサムネイルには、ボタンを追加できます。 たとえば、Windows Media Player は、アプリケーションが最小化したときに、タスク バーのサムネイルからメディアの再生を制御するのに使用できるプレイ、一時停止、転送、および戻るボタンを提供します。  
+  
+ <xref:System.Windows.Shell.ThumbButtonInfo>クラスに記述するプロパティが含まれていますが、どのように[!INCLUDE[win7](~/includes/win7-md.md)]シェルには、タスク バーのサムネイルで、ボタンが表示されます。 ネイティブの Windows API のマネージ ラッパーを提供します。 <xref:System.Windows.Shell.ThumbButtonInfo>含まれるオブジェクト、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos%2A?displayProperty=nameWithType>コレクション。  
+  
+ タスク バーの拡張機能では使用できません前のバージョンの Windows より[!INCLUDE[win7](~/includes/win7-md.md)]です。 [!INCLUDE[win7](~/includes/win7-md.md)]、一部の機能をユーザーの設定によっては利用できない可能性があります。 たとえば、ボタンがタスク バーのサムネイルのようにのみと[!INCLUDE[TLA#tla_aero](~/includes/tlasharptla-aero-md.md)]を有効にします。 アプリケーションでは、タスク バーの拡張機能に依存していないユーザーとの対話の別の方法を提供する必要があります。  
+  
+ 次の図は、再生および Stop コマンドへのアクセスを提供する 2 つの親指ボタンとタスク バー プレビューを示します。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーのつまみをボタンします。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.ThumbButtonInfo>マークアップでします。 <xref:System.Windows.Shell.TaskbarItemInfo>のコレクションを格納<xref:System.Windows.Shell.ThumbButtonInfo>タスク バーの項目からの再生と停止のコマンドにアクセスを提供するオブジェクト。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThumbButtonInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.ThumbButtonInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shell.ThumbButtonInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Shell.ThumbButtonInfo.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サムネイルのボタンがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理する場合、<xref:System.Windows.Shell.ThumbButtonInfo.Click>いずれかではなくイベント、イベント ハンドラーが実行される<xref:System.Windows.Shell.ThumbButtonInfo.Command%2A>サムネイル ボタンにバインドされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのサムネイル ボタンがクリックされたときに呼び出すコマンドを設定します。</summary>
+        <value>このサムネイル ボタンがクリックされたときに呼び出されるコマンド。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理する場合、<xref:System.Windows.Shell.ThumbButtonInfo.Click>いずれかではなくイベント、イベント ハンドラーが実行される<xref:System.Windows.Shell.ThumbButtonInfo.Command%2A>サムネイル ボタンにバインドされています。  
+  
+ XAML では、このプロパティが多くの場合にから既存のコマンドのライブラリのいずれかの静的なコマンドの値をする設定、<xref:System.Windows.Input.ApplicationCommands>または<xref:System.Windows.Input.NavigationCommands>ライブラリです。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.ThumbButtonInfo>マークアップでします。 <xref:System.Windows.Shell.ThumbButtonInfo>にバインドされて、<xref:System.Windows.Input.MediaCommands.Stop%2A?displayProperty=nameWithType>コマンド。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#020](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#020)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameter">
+      <MemberSignature Language="C#" Value="public object CommandParameter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.CommandParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に渡すパラメーター、<see cref="P:System.Windows.Shell.ThumbButtonInfo.Command" />プロパティです。</summary>
+        <value>パラメーターに渡す、<see cref="P:System.Windows.Shell.ThumbButtonInfo.Command" />プロパティです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameterProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandParameterProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandParameterProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.CommandParameterProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.CommandParameter" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.CommandProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.Command" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement CommandTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement CommandTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.CommandTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定されたコマンドが実行される上にある要素を設定します。</summary>
+        <value>指定されたコマンドが実行される要素。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.ThumbButtonInfo.CommandTarget%2A>プロパティは、アプリケーションで既に定義されている要素への参照を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.CommandTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.CommandTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.ThumbButtonInfo.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンのツールヒントに表示するテキストを設定します。</summary>
+        <value>サムネイル ボタンのツールヒントに表示するテキスト。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サムネイルのボタンにイメージを追加することができますが、サムネイル ボタンの表面にテキストを設定するためのプロパティは存在しません。 ただし、設定することができます、<xref:System.Windows.Shell.ThumbButtonInfo.Description%2A>サムネイル ボタン上にマウス ポインターが移動したときに、ツールヒントに表示される説明のテキストを追加するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.ThumbButtonInfo>マークアップでします。 <xref:System.Windows.Shell.ThumbButtonInfo>にバインドされて、<xref:System.Windows.Input.MediaCommands.Stop%2A?displayProperty=nameWithType>コマンド。 ツールヒントの説明テキストは**停止**です。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#020](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#020)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DescriptionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DescriptionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.DescriptionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.Description" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DismissWhenClicked">
+      <MemberSignature Language="C#" Value="public bool DismissWhenClicked { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DismissWhenClicked" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.DismissWhenClicked" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンがクリックされたときにタスク バーのサムネイルを閉じるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、サムネイルを閉じます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、タスク バーのサムネイルは引き続きサムネイルのボタンがクリックされたときに表示します。 クリックすると、サムネイル閉じるサムネイルのボタンがクリックされたときに、<xref:System.Windows.Shell.ThumbButtonInfo.DismissWhenClicked%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.ThumbButtonInfo>マークアップでします。 <xref:System.Windows.Shell.ThumbButtonInfo>にバインドされて、<xref:System.Windows.Input.MediaCommands.Stop%2A?displayProperty=nameWithType>コマンド。 閉じるボタンがクリックされたときに構成されます。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#020](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#020)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DismissWhenClickedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DismissWhenClickedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DismissWhenClickedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.DismissWhenClickedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.DismissWhenClicked" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageSource">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ImageSource ImageSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.ImageSource ImageSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.ImageSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ImageSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンに表示されるイメージを設定します。</summary>
+        <value>サムネイルのボタンに表示されるイメージです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な配置したり、アニメーション<xref:System.Windows.Media.ImageSource>サムネイル ボタンにします。 イメージは、適切なサイズでレンダリングされます。 場合、<xref:System.Windows.Media.ImageSource>を表す、 <xref:System.Drawing.Icon>、適切なビットの深さも使用します。  
+  
+ サムネイル ボタンに関する追加のテキスト情報を提供するには、設定、<xref:System.Windows.Shell.ThumbButtonInfo.Description%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.ThumbButtonInfo>マークアップでします。 <xref:System.Windows.Shell.ThumbButtonInfo>にバインドされて、<xref:System.Windows.Input.MediaCommands.Stop%2A?displayProperty=nameWithType>コマンド。 ボタン イメージは、静的リソースとしての XAML で定義されている濃い灰色の四角形です。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#020](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#020)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageSourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ImageSourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ImageSourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.ImageSourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.ImageSource" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundVisible">
+      <MemberSignature Language="C#" Value="public bool IsBackgroundVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBackgroundVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.IsBackgroundVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイルのボタンの周囲の境界線と強調表示を表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />境界線と強調表示が; サムネイルのボタンの周囲に表示されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 罫線は既定では、周囲が表示され、 <xref:System.Windows.Shell.ThumbButtonInfo.ImageSource%2A>、サムネイルのボタンの上にマウス ポインターを移動と強調表示が表示されます。 のみを表示する、<xref:System.Windows.Shell.ThumbButtonInfo.ImageSource%2A>せず、境界線と強調表示設定、<xref:System.Windows.Shell.ThumbButtonInfo.IsBackgroundVisible%2A>プロパティを`false`です。 場合<xref:System.Windows.Shell.ThumbButtonInfo.IsBackgroundVisible%2A>は`false`、<xref:System.Windows.Shell.ThumbButtonInfo.ImageSource%2A>をユーザーに視覚的なフィードバックを提供する、縮小表示 ボタンがクリックされたときにまだシフトします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBackgroundVisibleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsBackgroundVisibleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsBackgroundVisibleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.IsBackgroundVisibleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.IsBackgroundVisible" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サムネイルのボタンが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Shell.ThumbButtonInfo.IsEnabled%2A>プロパティは`false`にサムネイルのボタンが応答しない<xref:System.Windows.Shell.ThumbButtonInfo.Click>イベントおよび<xref:System.Windows.Shell.ThumbButtonInfo.ImageSource%2A>は淡色表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.IsEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.IsEnabled" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInteractive">
+      <MemberSignature Language="C#" Value="public bool IsInteractive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInteractive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.IsInteractive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンと、ユーザーが対話するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サムネイルのボタンで、ユーザーが操作できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Shell.ThumbButtonInfo.IsInteractive%2A>プロパティは`false`、サムネイルのボタンに応答しない<xref:System.Windows.Shell.ThumbButtonInfo.Click>イベント。 ただし、<xref:System.Windows.Shell.ThumbButtonInfo.ImageSource%2A>は淡色表示されます。 ステータス アイコンとして対話型ではないサムネイル ボタンを使用することができます。  
+  
+ 場合、<xref:System.Windows.Shell.ThumbButtonInfo.IsEnabled%2A>プロパティは`false`では、設定の <xref:System.Windows.Shell.ThumbButtonInfo.IsInteractive%2A>何も影響はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInteractiveProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsInteractiveProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsInteractiveProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.IsInteractiveProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.IsInteractive" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Visibility Visibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Visibility Visibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.ThumbButtonInfo.Visibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Visibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサムネイル ボタンの表示状態を示す値を設定します。</summary>
+        <value>サムネイルのボタンの表示状態を指定する列挙値。 既定値は、<see cref="F:System.Windows.Visibility.Visible" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サムネイルのボタンは、既定では、<xref:System.Windows.Visibility.Visible>です。 [!INCLUDE[win7](~/includes/win7-md.md)]タスク バーのサムネイルで、最大で 7 つのボタンを許可します。 ときに、<xref:System.Windows.Shell.ThumbButtonInfo.Visibility%2A>プロパティに設定されている<xref:System.Windows.Visibility.Hidden>、サムネイルのボタンが存在せず、見えない要素は、領域はそのまま保存します。 サムネイルのボタンの場合は<xref:System.Windows.Visibility.Collapsed>可視要素がない、およびその領域が予約されていません。 この場合、追加のサムネイルのボタンをクリックして、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos%2A>コレクションが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.ThumbButtonInfo.VisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.ThumbButtonInfo.Visibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

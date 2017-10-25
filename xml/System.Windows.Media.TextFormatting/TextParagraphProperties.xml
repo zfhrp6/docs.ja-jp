@@ -1,0 +1,277 @@
+<Type Name="TextParagraphProperties" FullName="System.Windows.Media.TextFormatting.TextParagraphProperties">
+  <TypeSignature Language="C#" Value="public abstract class TextParagraphProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextParagraphProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TextFormatting.TextParagraphProperties" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>フローの方向、配置、または段落に適用できるインデントなどのプロパティのセットを提供します。 これは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービスを使用するテキスト レイアウト アプリケーションを作成する、<xref:System.Windows.Media.TextFormatting.TextFormatter>オブジェクトのメソッドを実装する派生クラスを作成する必要があります、<xref:System.Windows.Media.TextFormatting.TextParagraphProperties>抽象クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextParagraphProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TextFormatting.TextParagraphProperties.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TextFormatting.TextParagraphProperties" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlwaysCollapsible">
+      <MemberSignature Language="C#" Value="public virtual bool AlwaysCollapsible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AlwaysCollapsible" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.AlwaysCollapsible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書式設定された行を常に縮小できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は常に、書式設定された行を折りたたむことができます。それ以外の場合、<see langword="false" />段落の幅をオーバーフローする書式設定された行だけが折りたたまれていることを示します。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultIncrementalTab">
+      <MemberSignature Language="C#" Value="public virtual double DefaultIncrementalTab { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DefaultIncrementalTab" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.DefaultIncrementalTab" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の増分タブ距離を取得します。</summary>
+        <value>A<see cref="T:System.Double" />既定増分 タブの距離を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultTextRunProperties">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextRunProperties DefaultTextRunProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextFormatting.TextRunProperties DefaultTextRunProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.DefaultTextRunProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextRunProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のタイプフェイスや前景ブラシなどのテキスト ラン プロパティを取得します。</summary>
+        <value><see cref="T:System.Windows.Media.TextFormatting.TextRunProperties" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstLineInParagraph">
+      <MemberSignature Language="C#" Value="public abstract bool FirstLineInParagraph { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FirstLineInParagraph" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.FirstLineInParagraph" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト ランに段落の最初の行があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、テキスト ランが; 段落の最初の行の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FlowDirection">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.FlowDirection FlowDirection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FlowDirection FlowDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.FlowDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、主要なテキスト方向を進めるかどうかを指定する値は、左から右へ、または右から左でなければいけない。</summary>
+        <value><see cref="T:System.Windows.FlowDirection" /> の列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Indent">
+      <MemberSignature Language="C#" Value="public abstract double Indent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Indent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.Indent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行のインデントの量を取得します。</summary>
+        <value>A<see cref="T:System.Double" />を表す行のインデントの量。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LineHeight">
+      <MemberSignature Language="C#" Value="public abstract double LineHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LineHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.LineHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストの行の高さを取得します。</summary>
+        <value>A<see cref="T:System.Double" />テキストの行の高さを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParagraphIndent">
+      <MemberSignature Language="C#" Value="public virtual double ParagraphIndent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ParagraphIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.ParagraphIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>段落のインデントの量を取得します。</summary>
+        <value>A<see cref="T:System.Double" />段落のインデントのサイズを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tabs">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextTabProperties&gt; Tabs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Windows.Media.TextFormatting.TextTabProperties&gt; Tabs" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.Tabs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.TextFormatting.TextTabProperties&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タブの定義のコレクションを取得します。</summary>
+        <value><see cref="T:System.Windows.Media.TextFormatting.TextTabProperties" /> オブジェクトの一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextAlignment">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.TextAlignment TextAlignment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextAlignment TextAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.TextAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブロックのインライン コンテンツを配置する方法を示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.TextAlignment" /> の列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorations">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.TextDecorationCollection TextDecorations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TextDecorationCollection TextDecorations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.TextDecorations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.TextDecoration" />オブジェクト。</summary>
+        <value><see cref="T:System.Windows.TextDecorationCollection" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextMarkerProperties">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.TextFormatting.TextMarkerProperties TextMarkerProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TextFormatting.TextMarkerProperties TextMarkerProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.TextMarkerProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TextFormatting.TextMarkerProperties</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>段落の最初の行のマーカーの特性を示す値を取得します。</summary>
+        <value><see cref="T:System.Windows.Media.TextFormatting.TextMarkerProperties" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextWrapping">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.TextWrapping TextWrapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.TextWrapping TextWrapping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TextFormatting.TextParagraphProperties.TextWrapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextWrapping</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>格納しているブロック ボックスのフローの端に達したときにテキストを折り返すかどうかを制御する値を取得します。</summary>
+        <value><see cref="T:System.Windows.TextWrapping" /> の列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

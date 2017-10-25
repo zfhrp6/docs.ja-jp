@@ -1,0 +1,123 @@
+<Type Name="TreeViewHitTestInfo" FullName="System.Windows.Forms.TreeViewHitTestInfo">
+  <TypeSignature Language="C#" Value="public class TreeViewHitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TreeViewHitTestInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TreeViewHitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>領域に関する情報が含まれています、<see cref="T:System.Windows.Forms.TreeView" />コントロールまたは<see cref="T:System.Windows.Forms.TreeNode" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeViewHitTestInfo>によって返される、<xref:System.Windows.Forms.TreeView>場合にクラス、<xref:System.Windows.Forms.TreeView.HitTest%2A>メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TreeViewHitTestInfo>クラスです。 この例を実行するを含む Windows フォームに次のコードを貼り付け、<xref:System.Windows.Forms.TreeView>という名前のコントロール`treeView1`、設定と、<xref:System.Windows.Forms.TreeView>項目を含むです。 いることを確認`treeview1`と<xref:System.Windows.Forms.Control.MouseDown>フォームのイベントに関連付けられた、`HandleMouseDown`メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeViewHitTestInfo (System.Windows.Forms.TreeNode hitNode, System.Windows.Forms.TreeViewHitTestLocations hitLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode hitNode, valuetype System.Windows.Forms.TreeViewHitTestLocations hitLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TreeViewHitTestInfo.#ctor(System.Windows.Forms.TreeNode,System.Windows.Forms.TreeViewHitTestLocations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hitNode" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="hitLocation" Type="System.Windows.Forms.TreeViewHitTestLocations" />
+      </Parameters>
+      <Docs>
+        <param name="hitNode">ヒット テストで示される位置にあるツリー ノード。</param>
+        <param name="hitLocation"><see cref="T:System.Windows.Forms.TreeViewHitTestLocations" /> 値のいずれか。</param>
+        <summary><see cref="T:System.Windows.Forms.TreeViewHitTestInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `hitNode`パラメーターを指定できます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeViewHitTestLocations Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.TreeViewHitTestLocations Location" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewHitTestInfo.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeViewHitTestLocations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストの場所を取得、<see cref="T:System.Windows.Forms.TreeView" />に関連する、コントロール、<see cref="T:System.Windows.Forms.TreeView" />とが含まれているノードです。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeViewHitTestLocations" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TreeViewHitTestInfo.Location%2A>プロパティです。 この例を実行するを含む Windows フォームに次のコードを貼り付け、<xref:System.Windows.Forms.TreeView>という名前のコントロール`treeView1`、設定と、<xref:System.Windows.Forms.TreeView>項目を含むです。 いることを確認`treeview1`と<xref:System.Windows.Forms.Control.MouseDown>フォームのイベントに関連付けられた、`HandleMouseDown`メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewPictureBoxWhidbeyMembers/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TreeViewHitTestInfo.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.TreeNode" />ヒットによって示される位置からのテスト、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</summary>
+        <value><see cref="T:System.Windows.Forms.TreeNode" />ヒットによって示される位置からのテスト、<see cref="T:System.Windows.Forms.TreeView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヒット テストの場所に含まれていない場合、 <xref:System.Windows.Forms.TreeNode>、<xref:System.Windows.Forms.TreeViewHitTestInfo.Node%2A>プロパティ`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TreeViewHitTestInfo.Node%2A>プロパティです。 この例を実行するを含む Windows フォームを作成、<xref:System.Windows.Forms.TreeView>という`treeView1`、し、ノードのいくつかのレベルを設定します。 次のコードをフォームに貼り付け、<xref:System.Windows.Forms.Control.MouseDown>のイベント`treeView1`で、`treeView1_MouseDown`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.TreeViewWhidbeyMembers#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/cpp/Form1.cpp#3)]
+ [!code-csharp[System.Windows.Forms.TreeViewWhidbeyMembers#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.TreeViewWhidbeyMembers#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TreeViewWhidbeyMembers/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

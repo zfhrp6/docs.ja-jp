@@ -1,0 +1,87 @@
+<Type Name="CompilationMode" FullName="System.Web.UI.CompilationMode">
+  <TypeSignature Language="C#" Value="public enum CompilationMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CompilationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.CompilationMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>.Aspx ページや .ascx コントロールで ASP.NET をコンパイルする方法を指定する定数を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.CompilationMode>列挙の値は、ページまたはコントロールを実行時にコンパイルするかどうかを示します。 コンパイル モードが指定されていないときに既定値は常にします。 Never 属性を使用してコンパイルされずにページの設定、コンパイル処理の指定されたページを失でのパフォーマンスが向上します。 ページ固有の定義に<xref:System.Web.UI.CompilationMode.Always>.aspx、.ascx、.master ファイルを指定する属性をコンパイルしなくても、ページ レベルで、次のようなディレクティブを使用することができます。  
+  
+ `<%@ page compilationMode="never" %>`  
+  
+ コンパイル モードは、構成ファイルにも指定できます。 <xref:System.Web.Configuration.PagesSection>構成セクションのオブジェクトがページに固有の構成設定を識別します。 構成セクションの要素は、コンピューター、サイト、アプリケーション、および構成ファイルのサブディレクトリの各レベルで宣言できます。  
+  
+ 場合、 <xref:System.Web.UI.CompilationMode> Never に設定されていると、ページには、コンパイルを必要とするスクリプト ブロックまたはコード コンス トラクターが含まれています、ASP.NET が返されますエラーで、ページは実行されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.CompilationMode>ページをコンパイルしないことを示すためにページ ディレクティブ。  
+  
+ [!code-aspx-csharp[CompilationMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CompilationMode/CS/compilationmode_cs.aspx#1)]
+ [!code-aspx-vb[CompilationMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CompilationMode/VB/compilationmode_vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.CompilationMode Always = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.CompilationMode.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CompilationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページは、常にコンパイルする必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="Auto" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.CompilationMode Auto = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.CompilationMode.Auto" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CompilationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページでは、ASP.NET によって可能な場合はコンパイルされません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.CompilationMode Never = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.CompilationMode.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.CompilationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページまたはコントロールする必要がありますしない動的にコンパイルします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

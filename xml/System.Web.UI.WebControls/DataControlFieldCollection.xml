@@ -1,0 +1,514 @@
+<Type Name="DataControlFieldCollection" FullName="System.Web.UI.WebControls.DataControlFieldCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataControlFieldCollection : System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataControlFieldCollection extends System.Web.UI.StateManagedCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlFieldCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.StateManagedCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.GridView" /> や <see cref="T:System.Web.UI.WebControls.DetailsView" /> などのデータ バインド コントロールで使用される <see cref="T:System.Web.UI.WebControls.DataControlField" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldCollection>クラスのコレクションを表します<xref:System.Web.UI.WebControls.DataControlField>その子コントロールがどのように表示されるかを指定するデータ バインドされたコントロールによって使用されるオブジェクト。 <xref:System.Web.UI.WebControls.DataControlFieldCollection>クラスから派生<xref:System.Web.UI.StateManagedCollection>、格納するために使用される抽象基本コレクション クラス<xref:System.Web.UI.IStateManager>オブジェクト。  
+  
+ A<xref:System.Web.UI.StateManagedCollection>オブジェクトの動作に影響する<xref:System.Web.UI.WebControls.DataControlFieldCollection>オブジェクト。 <xref:System.Web.UI.WebControls.DataControlField>コレクションに動的に追加されるオブジェクトは状態を復元するとき、コントロールに再度追加されます。 つまり、ASP.NET のほとんどのコレクション型を必要とに、フィールドが追加、削除、またはポストバックのたびの代わりに 1 回だけ変更する必要があります。  
+  
+ (、<xref:System.Web.UI.WebControls.DataControlField>クラスが実装する、<xref:System.Web.UI.IStateManager>インターフェイス、ASP.NET ビューステートにその状態を格納できるようにします。 )  
+  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlFieldCollection>をプログラムでのセットを管理するクラス<xref:System.Web.UI.WebControls.DataControlField>オブジェクト。 これらのフィールドを宣言して定義する方が一般的であることを注意してください。  
+  
+ 追加、insert、および削除<xref:System.Web.UI.WebControls.DataControlField>オブジェクトの適切なメソッドを使用して、<xref:System.Web.UI.WebControls.DataControlFieldCollection>クラスです。 プログラムで取得する<xref:System.Web.UI.WebControls.DataControlField>をコレクションからオブジェクトを使用して次のいずれか。  
+  
+-   1 つを取得するインデクサーを使用して<xref:System.Web.UI.WebControls.DataControlField>配列表記を使用して、コレクションからオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.StateManagedCollection.GetEnumerator%2A>メソッドを作成、 <xref:System.Collections.IEnumerator?displayProperty=nameWithType>-実装されているオブジェクトをコレクションから項目を取得するために使用されます。  
+  
+ <xref:System.Web.UI.StateManagedCollection.Count%2A>プロパティ、コレクション内のアイテムの合計数を指定およびコレクションの上限を確認に一般的に使用します。 項目を追加およびを使用してコレクションから項目を削除することができます、 <xref:System.Web.UI.WebControls.DataControlFieldCollection.Add%2A>、 <xref:System.Web.UI.WebControls.DataControlFieldCollection.Insert%2A>、 <xref:System.Web.UI.WebControls.DataControlFieldCollection.Remove%2A>、および<xref:System.Web.UI.WebControls.DataControlFieldCollection.RemoveAt%2A>メソッドです。  
+  
+ 使用している場合、<xref:System.Web.UI.WebControls.GridView>または<xref:System.Web.UI.WebControls.DetailsView>コントロール、<xref:System.Web.UI.WebControls.DataControlField>自動的に作成されるオブジェクト (場合など、<xref:System.Web.UI.WebControls.GridView.AutoGenerateColumns%2A>プロパティは`true`) パブリックにアクセスできる fields コレクションに格納されていません。 のみ実行できますへのアクセスし、操作を行う<xref:System.Web.UI.WebControls.DataControlField>オブジェクトが自動的に生成されることはできません。  
+  
+ 次の表は、別のデータ コントロール フィールド クラスとその使用方法を示します。  
+  
+|パラメーター クラス|説明|  
+|---------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.DataControlField>|すべてのフィールドの抽象基本クラスです。|  
+|<xref:System.Web.UI.WebControls.BoundField>|テキストまたは ASP.NET のデータ ソース コントロールから取得されたデータにバインドするために使用するデータ バインド コントロールのフィールドです。|  
+|<xref:System.Web.UI.WebControls.ButtonFieldBase>|[全般] ボタンの機能をカプセル化するデータ バインド コントロールのフィールドです。 <xref:System.Web.UI.WebControls.ButtonField>および<xref:System.Web.UI.WebControls.CheckBoxField>から派生します。|  
+|<xref:System.Web.UI.WebControls.ButtonField>|少なくとも 1 つのボタンを表示するデータ バインド コントロールのフィールド。|  
+|<xref:System.Web.UI.WebControls.CheckBoxField>|データ バインド コントロール フィールドを表示する、<xref:System.Web.UI.WebControls.CheckBox>コントロール。|  
+|<xref:System.Web.UI.WebControls.CommandField>|編集、更新、または削除などの行 (または列) によって表示されるデータで実行できるアクションを表示するデータ バインド コントロールのフィールドです。|  
+|<xref:System.Web.UI.WebControls.HyperLinkField>|データ バインド コントロール フィールドを表示する、<xref:System.Web.UI.WebControls.HyperLink>コントロール。|  
+|<xref:System.Web.UI.WebControls.ImageField>|データ バインド コントロール フィールドを表示する、<xref:System.Web.UI.WebControls.Image>コントロール。|  
+|<xref:System.Web.UI.WebControls.TemplateField>|データ バインド コントロール内のカスタム コンテンツを表示するデータ バインド コントロール フィールド。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataControlFieldCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DataControlFieldCollection>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.UI.WebControls.DataControlField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.UI.WebControls.DataControlField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.Add(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="field"><see cref="T:System.Web.UI.WebControls.DataControlField" />コレクションに追加します。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.WebControls.DataControlField" />コレクションの末尾にオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlFieldCollection.Add%2A>を追加する方法、<xref:System.Web.UI.WebControls.DataControlField>コレクションの末尾にオブジェクト。 このメソッドの実装は、<xref:System.Web.UI.WebControls.DataControlField>で指定されたオブジェクト、`field`パラメーターし、そのコレクションに追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataControlFieldCollection.Add%2A>を動的に追加するメソッド、<xref:System.Web.UI.WebControls.CheckBoxField>オブジェクトを<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[CheckBoxFieldCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CheckBoxFieldCtor/CS/checkboxfieldctorcs.aspx#1)]
+ [!code-aspx-vb[CheckBoxFieldCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CheckBoxFieldCtor/VB/checkboxfieldctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneFields">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataControlFieldCollection CloneFields ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.WebControls.DataControlFieldCollection CloneFields() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.CloneFields" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlFieldCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコレクションのコピーを作成します。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />現在のコレクション内の各データ コントロール フィールドのコピーを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlFieldCollection.CloneFields%2A>メソッドを現在のコレクションのコピーを作成します。 このメソッドは、動作を実装するロールバック操作が取り消されたときにデザイン時のダイアログ ボックスで、主に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.DataControlField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.DataControlField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.Contains(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="field"><see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" /> 内で検索される <see cref="T:System.Web.UI.WebControls.DataControlField" />。</param>
+        <summary>決定するかどうか、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクションには、固有の仕様が含まれている<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />含む、指定されたフィールドです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。 呼び出して等しいかどうかを判定<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.DataControlField[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.DataControlField[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.CopyTo(System.Web.UI.WebControls.DataControlField[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.DataControlField[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>全体をコピー<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />を互換性のある 1 次元コレクション<see cref="T:System.Array" />対象となる配列の指定したインデックスから始まります。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ または  
+  
+ ソース内のフィールド数<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクションがから使用可能な領域よりも大きい<paramref name="index" />コピー先の配列の末尾にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected override object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler FieldsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler FieldsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.DataControlFieldCollection.FieldsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のフィールドを変更したら、通常の結果として発生する、 <see cref="M:System.Web.UI.StateManagedCollection.Clear" />、 <see cref="M:System.Web.UI.WebControls.DataControlFieldCollection.Insert(System.Int32,System.Web.UI.WebControls.DataControlField)" />、<see cref="M:System.Web.UI.WebControls.DataControlFieldCollection.Remove(System.Web.UI.WebControls.DataControlField)" />または<see cref="M:System.Web.UI.WebControls.DataControlFieldCollection.Add(System.Web.UI.WebControls.DataControlField)" />メソッドの呼び出しです。 このイベントは、いつでも発生も、<see cref="T:System.Web.UI.WebControls.DataControlField" />コレクションで発生し、その<see langword="FieldChanged" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlFieldCollection.FieldsChanged>イベントが発生したときに、 <xref:System.Web.UI.StateManagedCollection.Clear%2A>、 <xref:System.Web.UI.WebControls.DataControlFieldCollection.Insert%2A>、または<xref:System.Web.UI.WebControls.DataControlFieldCollection.Remove%2A>メソッドが呼び出されます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected override Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.DataControlField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.DataControlField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.IndexOf(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="field">コレクション内で検索する <see cref="T:System.Web.UI.WebControls.DataControlField" />。</param>
+        <summary>特定のインデックスを決定<see cref="T:System.Web.UI.WebControls.DataControlField" />コレクション内のオブジェクト。</summary>
+        <returns>インデックス、<paramref name="field" />パラメーター コレクション内に見つかった以外の場合、それ以外の場合は-1。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.WebControls.DataControlField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.WebControls.DataControlField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.Insert(System.Int32,System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス、<see cref="T:System.Web.UI.WebControls.DataControlField" />を挿入します。</param>
+        <param name="field">挿入する <see cref="T:System.Web.UI.WebControls.DataControlField" />。</param>
+        <summary>指定した挿入<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクトに、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /> が <see cref="P:System.Web.UI.StateManagedCollection.Count" /> より大きくなっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataControlField this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataControlField Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlFieldCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから取得する <see cref="T:System.Web.UI.WebControls.DataControlField" /> の 0 から始まるインデックス番号。</param>
+        <summary>取得または設定、<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックス位置の <see cref="T:System.Web.UI.WebControls.DataControlField" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.WebControls.DataControlField>オブジェクトから、<xref:System.Web.UI.WebControls.DataControlFieldCollection>配列表記を使用して、指定したインデックス位置のコレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataControlFieldCollection.Item%2A>のフィールドにアクセスするためのインデクサー、<xref:System.Web.UI.WebControls.GridView>ユーザーがコントロールでのボタンをクリックしたときを制御します。  
+  
+ [!code-aspx-csharp[ButtonFieldBaseCausesValidation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/CS/buttonfieldbasecausesvalidationcs.aspx#1)]
+ [!code-aspx-vb[ButtonFieldBaseCausesValidation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonFieldBaseCausesValidation/VB/buttonfieldbasecausesvalidationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearComplete">
+      <MemberSignature Language="C#" Value="protected override void OnClearComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClearComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.OnClearComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected override void OnInsertComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoveComplete">
+      <MemberSignature Language="C#" Value="protected override void OnRemoveComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRemoveComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.OnRemoveComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected override void OnValidate (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnValidate(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.WebControls.DataControlField field);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.WebControls.DataControlField field) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.Remove(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="field" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="field"><see cref="T:System.Web.UI.WebControls.DataControlField" /> から削除する <see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />。</param>
+        <summary>指定された削除<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクトから、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.DataControlField" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.WebControls.DataControlField" />から指定したインデックス位置にオブジェクト、<see cref="T:System.Web.UI.WebControls.DataControlFieldCollection" />コレクション。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected override void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlFieldCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

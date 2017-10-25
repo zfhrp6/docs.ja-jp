@@ -1,0 +1,74 @@
+<Type Name="ICurrencyManagerProvider" FullName="System.Windows.Forms.ICurrencyManagerProvider">
+  <TypeSignature Language="C#" Value="public interface ICurrencyManagerProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICurrencyManagerProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ICurrencyManagerProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネントのカスタム バインド管理を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスでは、提供するコンポーネントの作成者が自分<xref:System.Windows.Forms.CurrencyManager>の Windows フォーム データ バインディング エンジンと対話するコンポーネントです。 これはまれであるため、コンポーネントの作成者にこのインターフェイスを実装する必要があります。  
+  
+ <xref:System.Windows.Forms.BindingSource>クラスの実装例を提供する<xref:System.Windows.Forms.ICurrencyManagerProvider>です。  
+  
+ スマート フォンのアプリケーションでこのクラスが必要である Windows Mobile Version 5.0 ソフトウェア スマート フォン用に注意してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrencyManager">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CurrencyManager CurrencyManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.CurrencyManager CurrencyManager" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CurrencyManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.CurrencyManager" /> に関連付けられている <see cref="T:System.Windows.Forms.ICurrencyManagerProvider" /> を取得します。</summary>
+        <value>この <see cref="T:System.Windows.Forms.CurrencyManager" /> に関連付けられている <see cref="T:System.Windows.Forms.ICurrencyManagerProvider" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelatedCurrencyManager">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.CurrencyManager GetRelatedCurrencyManager (string dataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.CurrencyManager GetRelatedCurrencyManager(string dataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ICurrencyManagerProvider.GetRelatedCurrencyManager(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.CurrencyManager</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="dataMember">ボックスの一覧を取得する、データ ソース内で、列の名前、<see cref="T:System.Windows.Forms.CurrencyManager" />用です。</param>
+        <summary>取得、<see cref="T:System.Windows.Forms.CurrencyManager" />この<see cref="T:System.Windows.Forms.ICurrencyManagerProvider" />と指定したデータ メンバーです。</summary>
+        <returns>関連する<see cref="T:System.Windows.Forms.CurrencyManager" />これから取得した<see cref="T:System.Windows.Forms.ICurrencyManagerProvider" />と指定したデータ メンバーです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`dataMember`は`null`または空の文字列 ("")、<xref:System.Windows.Forms.ICurrencyManagerProvider.GetRelatedCurrencyManager%2A>この主通貨マネージャーを返します<xref:System.Windows.Forms.ICurrencyManagerProvider>、これは同じカレンシー マネージャーから返された、<xref:System.Windows.Forms.ICurrencyManagerProvider.CurrencyManager%2A>プロパティ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

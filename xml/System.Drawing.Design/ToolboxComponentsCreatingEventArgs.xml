@@ -1,0 +1,78 @@
+<Type Name="ToolboxComponentsCreatingEventArgs" FullName="System.Drawing.Design.ToolboxComponentsCreatingEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolboxComponentsCreatingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolboxComponentsCreatingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxComponentsCreatingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Drawing.Design.ToolboxItem.ComponentsCreating" />コンポーネントがツールボックスに追加されたときに発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.ComponentsCreating>コンポーネントがツールボックスに追加しようとしているときにイベントが発生します。 <xref:System.Drawing.Design.ToolboxComponentsCreatingEventArgs>デザイナーのコンポーネントを追加することが要求されることを示すデータを提供します。  
+  
+   
+  
+## Examples  
+ 次の例のメソッドを返します、<xref:System.Drawing.Design.ToolboxComponentsCreatingEventArgs>新しいコンポーネントまたはコンポーネントのセットが表示されるデザイナーのホストを示します。  
+  
+ [!code-cpp[MoreEventArgsExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/MoreEventArgsExamples/CPP/class1.cpp#4)]
+ [!code-csharp[MoreEventArgsExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/MoreEventArgsExamples/CS/class1.cs#4)]
+ [!code-vb[MoreEventArgsExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/MoreEventArgsExamples/VB/class1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxComponentsCreatingEventArgs (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxComponentsCreatingEventArgs.#ctor(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host">要求を行って、デザイナー ホスト。</param>
+        <summary><see cref="T:System.Drawing.Design.ToolboxComponentsCreatingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerHost">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesignerHost DesignerHost { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.IDesignerHost DesignerHost" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxComponentsCreatingEventArgs.DesignerHost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesignerHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンス、<see cref="T:System.ComponentModel.Design.IDesignerHost" />ツールボックスのコンポーネントを作成する要求を作成します。</summary>
+        <value><see cref="T:System.ComponentModel.Design.IDesignerHost" />ツールボックス コンポーネントを作成する要求を作成するか、<see langword="null" />ツールボックス項目をデザイナー ホストが提供されなかった場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定できます`null`ツールボックス項目をデザイナー ホストが提供されなかった場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

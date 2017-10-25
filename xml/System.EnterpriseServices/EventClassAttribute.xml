@@ -1,0 +1,124 @@
+<Type Name="EventClassAttribute" FullName="System.EnterpriseServices.EventClassAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EventClassAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventClassAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.EventClassAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イベント クラスと属性付きクラスをマークします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`EventClass`が指定すると、COM + カタログで無効にしていない必要があります以外の場合は、COM + カタログで有効な場合、コンポーネントでは指定する必要があります。  
+  
+ イベント クラスのメソッド呼び出しが、実装に配信されることはありません。イベントのサブスクライバーに配信される代わりにします。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.EnterpriseServices.EventClassAttribute>を参照してください、<xref:System.EnterpriseServices.EventClassAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventClassAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.EventClassAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.EventClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性の未構成の既定値はありません。 次の表は、構成済みのインスタンスの初期プロパティ値<xref:System.EnterpriseServices.EventClassAttribute>です。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|`FireInParallel`|`false`|  
+|`AllowInProcSubscribers`|`true`|  
+|`PublisherFilter`|`null`|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInprocSubscribers">
+      <MemberSignature Language="C#" Value="public bool AllowInprocSubscribers { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowInprocSubscribers" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.EventClassAttribute.AllowInprocSubscribers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行元のプロセスでサブスクライバーをアクティブにできるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サブスクライバーは、発行元のプロセスでアクティブにすることができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FireInParallel">
+      <MemberSignature Language="C#" Value="public bool FireInParallel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool FireInParallel" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.EventClassAttribute.FireInParallel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントが、並列でサブスクライバーに配信されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントを並列してサブスクライバーに配信する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublisherFilter">
+      <MemberSignature Language="C#" Value="public string PublisherFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PublisherFilter" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.EventClassAttribute.PublisherFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント メソッドのパブリッシャーのフィルターを設定します。</summary>
+        <value>パブリッシャーのフィルター。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

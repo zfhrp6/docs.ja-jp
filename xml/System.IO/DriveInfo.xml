@@ -1,0 +1,616 @@
+<Type Name="DriveInfo" FullName="System.IO.DriveInfo">
+  <TypeSignature Language="C#" Value="public sealed class DriveInfo : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DriveInfo extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.DriveInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ドライブに関する情報へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ドライブをモデル化し、ドライブ情報を照会するメソッドとプロパティを提供します。 使用して<xref:System.IO.DriveInfo>をドライブの種類が使用可能なとドライブの種類を決定します。 容量と、ドライブの空き領域を判断するクエリすることもできます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ情報にアクセスします。 クラスのコンス トラクターには、この権限が必要です。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DriveInfo (string driveName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string driveName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DriveInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="driveName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="driveName">有効なドライブ パスまたはドライブ名。 大文字または小文字の 'a' ～ 'z' を使用できます。 null 値は使用できません。</param>
+        <summary>指定したドライブに関する情報へのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、ドライブ上の情報を取得できます。 ドライブの名前は、'a' から 'z' の大文字または小文字のいずれかの文字をする必要があります。 このメソッドを使用すると、ドライブ名で情報を取得できません`null`か UNC を使用して (\\\server\share) のパス。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">ドライブ文字にすることはできません<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">最初の文字<paramref name="driveName" />はありません、大文字または小文字の文字 'a' ~ 'z' です。  
+  
+ または  
+  
+ <paramref name="driveName" />有効なドライブを参照していません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリ情報にアクセスします。 クラスのコンス トラクターには、この権限が必要です。 関連する列挙値:<see cref="T:System.Security.Permissions.FileIOPermissionAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AvailableFreeSpace">
+      <MemberSignature Language="C#" Value="public long AvailableFreeSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 AvailableFreeSpace" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.AvailableFreeSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブで使用できる空き領域の量 (バイト単位) を示します。</summary>
+        <value>ドライブで使用できる空き領域の量 (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ドライブの空き領域の量を示します。 この数が異なる場合があることに注意してください、<xref:System.IO.DriveInfo.TotalFreeSpace%2A>番号ため、このプロパティはアカウント ディスク クォータを考慮します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ドライブの情報へのアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DriveFormat">
+      <MemberSignature Language="C#" Value="public string DriveFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DriveFormat" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.DriveFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NTFS、FAT32 など、ファイル システムの名前を取得します。</summary>
+        <value>指定したドライブ上のファイル システムの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.IO.DriveInfo.DriveFormat%2A>を使用して、ドライブをフォーマットする新機能を決定します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ドライブの情報へのアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.DriveNotFoundException">ドライブが存在しないか、マップされていません。</exception>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DriveType">
+      <MemberSignature Language="C#" Value="public System.IO.DriveType DriveType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.DriveType DriveType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.DriveType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DriveType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CD-ROM、取り外し可能、ネットアーク、固定など、ドライブの種類を取得します。</summary>
+        <value>ドライブの種類を指定する列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DriveInfo.DriveType%2A>プロパティがあるかどうかは、ドライブが、次のいずれかを示します: `CDRom`、 `Fixed`、 `Network`、 `NoRootDirectory`、 `Ram`、 `Removable`、または`Unknown`です。 これらの値に記載されて、<xref:System.IO.DriveType>列挙します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>を現在のシステムのすべてのドライブについての情報を表示するクラス。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDrives">
+      <MemberSignature Language="C#" Value="public static System.IO.DriveInfo[] GetDrives ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.DriveInfo[] GetDrives() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DriveInfo.GetDrives" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DriveInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンピューター上のすべての論理ドライブのドライブ名を取得します。</summary>
+        <returns>コンピューター上の論理ドライブを表す <see cref="T:System.IO.DriveInfo" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンピューター上のすべての論理ドライブ名を取得します。 この情報を使用するには、配列を反復処理しを使用して他のドライブ上の情報を入手<xref:System.IO.DriveInfo>メソッドとプロパティ。 使用して、<xref:System.IO.DriveInfo.IsReady%2A>をスローできる準備ができていないドライブにこのメソッドを使用するために、ドライブが準備ができているかどうかをテストするプロパティ、<xref:System.IO.IOException>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すためのプラットフォームのネイティブ コードの呼び出しなど呼び出しまたは COM 相互運用。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReady">
+      <MemberSignature Language="C#" Value="public bool IsReady { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReady" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.IsReady" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブの準備ができているかどうかを示す値を取得します。</summary>
+        <value>
+          ドライブの準備ができている場合は <see langword="true" />。ドライブの準備ができていない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.DriveInfo.IsReady%2A>ドライブ準備ができているかどうかを示します。 たとえば、CD を CD ドライブまたはリムーバブル記憶装置が読み取り/書き込み操作の準備ができているかどうかがかどうかを示します。 ドライブを用意し、準備ができていませんかどうかをテストしない場合は、クエリを実行するドライブを使用して、<xref:System.IO.DriveInfo>を発生させる、<xref:System.IO.IOException>です。  
+  
+ 依存しない<xref:System.IO.DriveInfo.IsReady%2A>など他のメンバーからの例外のキャッチを回避する<xref:System.IO.DriveInfo.TotalSize%2A>、 <xref:System.IO.DriveInfo.TotalFreeSpace%2A>、および<xref:System.IO.DriveInfo.DriveFormat%2A>です。 コードをチェックするまでの間<xref:System.IO.DriveInfo.IsReady%2A>にアクセスし、他のプロパティのいずれか (チェック後すぐにアクセスが行われる) 場合でも、ドライブが切断されている、またはディスクが削除された可能性があります。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>C: など、ドライブの名前を取得\\です。</summary>
+        <value>ドライブの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、C:\ など e: ドライブに割り当てられた名前\\です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootDirectory">
+      <MemberSignature Language="C#" Value="public System.IO.DirectoryInfo RootDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.DirectoryInfo RootDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.RootDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブのルート ディレクトリを取得します。</summary>
+        <value>ドライブのルート ディレクトリを含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DriveInfo.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">データを読み込む先のオブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先 (<see cref="T:System.Runtime.Serialization.StreamingContext" /> を参照)。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクトに、対象オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>オブジェクトが自動的に追跡され、フォーマッタでシリアル化します。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.IO.DriveInfo> のインスタンスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.DriveInfo.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ドライブ名を文字列として返します。</summary>
+        <returns>ドライブの名前。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、<xref:System.IO.DriveInfo.Name%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalFreeSpace">
+      <MemberSignature Language="C#" Value="public long TotalFreeSpace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TotalFreeSpace" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.TotalFreeSpace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブで使用できる空き領域の量の合計 (バイト単位) を取得します。</summary>
+        <value>ドライブで使用できる空き領域の合計 (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが現在のユーザーに利用可能な新機能だけでなく、ドライブの空き領域の総量を示します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ドライブの情報へのアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.DriveNotFoundException">ドライブは、マップされていないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalSize">
+      <MemberSignature Language="C#" Value="public long TotalSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TotalSize" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.TotalSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブのストレージ領域の合計サイズ (バイト単位) を取得します。</summary>
+        <value>ドライブの合計サイズ (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在のユーザーに利用可能なものだけでなく、(バイト単位) ドライブの合計サイズを示します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.IO.DriveInfo>クラスを現在のシステム上のすべてのドライブに関する情報を表示します。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">ドライブの情報へのアクセスが拒否されました。</exception>
+        <exception cref="T:System.IO.DriveNotFoundException">ドライブは、マップされていないか、存在しません。</exception>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VolumeLabel">
+      <MemberSignature Language="C#" Value="public string VolumeLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VolumeLabel" />
+      <MemberSignature Language="DocId" Value="P:System.IO.DriveInfo.VolumeLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem.DriveInfo</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライブのボリューム ラベルを取得または設定します。</summary>
+        <value>ボリューム ラベル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ラベルの長さは、オペレーティング システムによって決まります。 たとえば、NTFS では、32 文字以内にボリューム ラベルが使用できます。 なお`null`は有効な<xref:System.IO.DriveInfo.VolumeLabel%2A>します。  
+  
+   
+  
+## Examples  
+ 次の例での使用、<xref:System.IO.DriveInfo>を現在のシステムのすべてのドライブについての情報を表示するクラス。  
+  
+ [!code-csharp[System.IO.DriveInfo#00](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DriveInfo/cs/DriveInfo.cs#00)]
+ [!code-vb[System.IO.DriveInfo#00](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DriveInfo/vb/DriveInfo.vb#00)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">(例、ディスク エラー、またはドライブができていません) については、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.DriveNotFoundException">ドライブは、マップされていないか、存在しません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">CD-ROM ドライブ、ネットワーク上のボリューム ラベルを設定されています。  
+  
+ または  
+  
+ ドライブの情報へのアクセスが拒否されました。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ボリューム ラベルを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

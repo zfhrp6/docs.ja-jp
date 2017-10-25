@@ -1,0 +1,257 @@
+<Type Name="EncoderExceptionFallbackBuffer" FullName="System.Text.EncoderExceptionFallbackBuffer">
+  <TypeSignature Language="C#" Value="public sealed class EncoderExceptionFallbackBuffer : System.Text.EncoderFallbackBuffer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EncoderExceptionFallbackBuffer extends System.Text.EncoderFallbackBuffer" />
+  <TypeSignature Language="DocId" Value="T:System.Text.EncoderExceptionFallbackBuffer" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Text.EncoderFallbackBuffer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>スロー<see cref="T:System.Text.EncoderFallbackException" />入力文字をエンコード済み出力バイト シーケンスに変換できません。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコードまたはデコード操作の失敗の一般的な理由は、基になるエンコード クラスが、文字と等価なバイト シーケンスの間のマッピングを提供しないかどうかです。 エンコード操作を呼び出す場合は、入力文字は、出力バイト シーケンスに変換できない、<xref:System.Text.EncoderExceptionFallbackBuffer.Fallback%2A>をスローするメソッド<xref:System.Text.EncoderFallbackException>です。  
+  
+ <xref:System.Text.EncoderFallbackBuffer?displayProperty=nameWithType>エンコード操作で使用するデータ バッファーを表すクラスが基本クラスを<xref:System.Text.EncoderExceptionFallbackBuffer>クラスです。 ただし、バッファーではなく、データを<xref:System.Text.EncoderExceptionFallbackBuffer>クラスは、エンコード操作が失敗した場合、例外がスローされますが、標準的な動作を表します。 実際のデータ バッファーが存在しないと、このようなバッファーを操作するためのメンバーに大変な作業が行われません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncoderExceptionFallbackBuffer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderExceptionFallbackBuffer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Text.EncoderExceptionFallbackBuffer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public override bool Fallback (char charUnknown, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Fallback(char charUnknown, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderExceptionFallbackBuffer.Fallback(System.Char,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charUnknown" Type="System.Char" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charUnknown">入力文字です。</param>
+        <param name="index">入力バッファー内の文字のインデックス位置。</param>
+        <summary>入力文字をエンコードできないために、例外をスローします。 パラメーターは、変換できない文字の値とインデックスの位置を指定します。</summary>
+        <returns>なし。 値を返さないため、<see cref="M:System.Text.EncoderExceptionFallbackBuffer.Fallback(System.Char,System.Int32)" />メソッドは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetBytes%2A>と<xref:System.Text.Encoder.Convert%2A>メソッド呼び出し<xref:System.Text.EncoderExceptionFallbackBuffer.Fallback%2A>が入力内の不明な文字が発生した場合。 応答として、<xref:System.Text.EncoderExceptionFallbackBuffer.Fallback%2A>は常にスロー<xref:System.Text.EncoderFallbackException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Text.EncoderFallbackException">
+          <paramref name="charUnknown" />エンコードすることはできません。 このメソッドは常の値を報告する例外をスロー、<paramref name="charUnknown" />と<paramref name="index" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Fallback">
+      <MemberSignature Language="C#" Value="public override bool Fallback (char charUnknownHigh, char charUnknownLow, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Fallback(char charUnknownHigh, char charUnknownLow, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderExceptionFallbackBuffer.Fallback(System.Char,System.Char,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="charUnknownHigh" Type="System.Char" />
+        <Parameter Name="charUnknownLow" Type="System.Char" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="charUnknownHigh">入力のペアの上位サロゲート。</param>
+        <param name="charUnknownLow">入力のペアの下位サロゲート。</param>
+        <param name="index">入力バッファー内のサロゲート ペアのインデックス位置。</param>
+        <summary>入力文字をエンコードできないために、例外をスローします。 パラメーターが入力で、サロゲート ペアの値とインデックスの位置を指定して、名目上の戻り値は使用されません。</summary>
+        <returns>なし。 値を返さないため、<see cref="M:System.Text.EncoderExceptionFallbackBuffer.Fallback(System.Char,System.Char,System.Int32)" />メソッドは常に例外をスローします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.Encoding.GetBytes%2A>と<xref:System.Text.Encoder.Convert%2A>メソッド呼び出し<xref:System.Text.EncoderExceptionFallbackBuffer.Fallback%2A>が入力のサロゲート ペアが発生した場合。 応答として、<xref:System.Text.EncoderExceptionFallbackBuffer.Fallback%2A>常に例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Text.EncoderFallbackException">によって表される文字<paramref name="charUnknownHigh" />と<paramref name="charUnknownLow" />エンコードすることはできません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">いずれか<paramref name="charUnknownHigh" />または<paramref name="charUnknownLow" />が無効です。 <paramref name="charUnknownHigh" />u+d800 ~ U+DBFF、包括的ではありませんか<paramref name="charUnknownLow" />u+dc00 ~ U+DFFF、包括的はありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextChar">
+      <MemberSignature Language="C#" Value="public override char GetNextChar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance char GetNextChar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderExceptionFallbackBuffer.GetNextChar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>例外フォールバック バッファー内の次の文字を取得します。</summary>
+        <returns>戻り値は、常に Unicode 文字、NULL (u+0000)。  
+  
+ このメソッドは、抽象メソッドを実装するため、変更はありませんが、戻り値は定義します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.EncoderExceptionFallbackBuffer> 、実際の例外データ バッファーを持たず、<xref:System.Text.EncoderExceptionFallbackBuffer.GetNextChar%2A>メソッドは常に Unicode NULL 文字を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovePrevious">
+      <MemberSignature Language="C#" Value="public override bool MovePrevious ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MovePrevious() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.EncoderExceptionFallbackBuffer.MovePrevious" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次の呼び出しの原因、<see cref="M:System.Text.EncoderExceptionFallbackBuffer.GetNextChar" />が現在の位置より前の例外データ バッファーの文字位置にアクセスするメソッド。</summary>
+        <returns>戻り値は常に<see langword="false" />です。  
+  
+ このメソッドは、抽象メソッドを実装するため、変更はありませんが、戻り値は定義します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.EncoderExceptionFallbackBuffer> 、実際の例外データ バッファーを持たず、<xref:System.Text.EncoderExceptionFallbackBuffer.MovePrevious%2A>メソッドは常に返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remaining">
+      <MemberSignature Language="C#" Value="public override int Remaining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Remaining" />
+      <MemberSignature Language="DocId" Value="P:System.Text.EncoderExceptionFallbackBuffer.Remaining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の文字数を取得<see cref="T:System.Text.EncoderExceptionFallbackBuffer" />を処理するための残存オブジェクト。</summary>
+        <value>戻り値は、常に 0 です。  
+  
+ このメソッドは、抽象メソッドを実装するため、変更はありませんが、戻り値は定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Text.EncoderExceptionFallbackBuffer> 、実際の例外データ バッファーを持たず、<xref:System.Text.EncoderExceptionFallbackBuffer.Remaining%2A>プロパティは常に 0 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

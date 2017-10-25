@@ -1,0 +1,456 @@
+<Type Name="AdvancedFilters" FullName="System.DirectoryServices.AccountManagement.AdvancedFilters">
+  <TypeSignature Language="C#" Value="public class AdvancedFilters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdvancedFilters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.AdvancedFilters" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、ユーザーに渡される「ダミー」プリンシパル オブジェクトの読み取り専用のプロパティを変更できるように、特定の属性への書き込み可能なアクセスを提供する<see cref="T:System.DirectoryServices.AccountManagement.PrincipalSearcher" />オブジェクトを使用するとき[クエリの例で](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.AccountManagement.AdvancedFilters>からクラスをアクセス、<xref:System.DirectoryServices.AccountManagement.UserPrincipal>を介してオブジェクト、<xref:System.DirectoryServices.AccountManagement.UserPrincipal.AdvancedSearchFilter%2A>プロパティ、プロパティのように扱われるを超えて、<xref:System.DirectoryServices.AccountManagement.UserPrincipal>オブジェクト、および独自に使用するためのものではありません。  
+  
+   
+  
+## Examples  
+ 参照してください、[クエリの例で](http://msdn.microsoft.com/en-us/84ac40bb-04c4-4d0b-adaf-0ddb9253599e)トピックのコード例に示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected AdvancedFilters (System.DirectoryServices.AccountManagement.Principal p);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.AccountManagement.Principal p) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.#ctor(System.DirectoryServices.AccountManagement.Principal)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="p" Type="System.DirectoryServices.AccountManagement.Principal" />
+      </Parameters>
+      <Docs>
+        <param name="p"><see cref="T:System.DirectoryServices.AccountManagement.Principal" /> オブジェクト。</param>
+        <summary>新しい <see cref="T:System.DirectoryServices.AccountManagement.AdvancedFilters" /> オブジェクトをインスタンス化します。 直接呼び出すためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションにアクセスする必要があります<xref:System.DirectoryServices.AccountManagement.AdvancedFilters>を通じて、<xref:System.DirectoryServices.AccountManagement.UserPrincipal.AdvancedSearchFilter%2A>ユーザー オブジェクトのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccountExpirationDate">
+      <MemberSignature Language="C#" Value="public void AccountExpirationDate (DateTime expirationTime, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AccountExpirationDate(valuetype System.DateTime expirationTime, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.AccountExpirationDate(System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expirationTime" Type="System.DateTime" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="expirationTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>expirationTime</c>比較に使用する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountExpirationDate" /> 属性のクエリ フィルターを指定された時刻と比較型に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "securlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+usr.AdvancedSearchFilter.AccountExpirationDate(DateTime.Now, MatchType.LessThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+  
+Console.WriteLine("The following users' accounts have expired:");  
+  
+foreach (UserPrincipal u in results)  
+{  
+  Console.WriteLine(u.Name);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccountLockoutTime">
+      <MemberSignature Language="C#" Value="public void AccountLockoutTime (DateTime lockoutTime, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AccountLockoutTime(valuetype System.DateTime lockoutTime, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.AccountLockoutTime(System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lockoutTime" Type="System.DateTime" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="lockoutTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>lockoutTime</c>比較に使用する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.AccountLockoutTime" /> のクエリ フィルターを指定された時刻と比較型に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "SecurlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+usr.AdvancedSearchFilter.AccountLockoutTime(DateTime.Now.AddDays(-1), MatchType.GreaterThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+  
+//Print user names of all accounts locked within the last 24 hours.  
+  
+foreach (UserPrincipal u in results)  
+{  
+  Console.WriteLine(u.Name);  
+ }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvancedFilterSet">
+      <MemberSignature Language="C#" Value="protected void AdvancedFilterSet (string attribute, object value, Type objectType, System.DirectoryServices.AccountManagement.MatchType mt);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void AdvancedFilterSet(string attribute, object value, class System.Type objectType, valuetype System.DirectoryServices.AccountManagement.MatchType mt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.AdvancedFilterSet(System.String,System.Object,System.Type,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="objectType" Type="System.Type" />
+        <Parameter Name="mt" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">属性の名前</param>
+        <param name="value">オブジェクト。</param>
+        <param name="objectType">オブジェクトの種類<c>値</c>です。</param>
+        <param name="mt">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>値</c>属性の値と比較する必要があります。</param>
+        <summary>拡張クラスのプロパティに対してクエリ フィルターを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 拡張クラスで、の高度な検索フィルターを実装する場合があります`LogonCount`:  
+  
+```csharp  
+  
+public class InetOrgPersonSearchFilter : AdvancedFilters  
+{  
+    public InetOrgPersonSearchFilter(Principal p) : base(p) { }  
+  
+    public void LogonCount(int value, MatchType mt)  
+    {  
+        this.AdvancedFilterSet("LogonCount", value, typeof(int), mt);  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BadLogonCount">
+      <MemberSignature Language="C#" Value="public void BadLogonCount (int badLogonCount, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BadLogonCount(int32 badLogonCount, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.BadLogonCount(System.Int32,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="badLogonCount" Type="System.Int32" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="badLogonCount">整数。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>badLogonCount</c>属性の値と比較する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.BadLogonCount" /> 属性のクエリ フィルターを指定された値と比較型に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "SecurlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+int badLogonThreshold = 3;  
+usr.AdvancedSearchFilter.BadLogonCount(badLogonThreshold, MatchType.GreaterThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+Console.WriteLine("The following users have logged on unsuccessfully at more than " + badLogonThreshold.toString + " times:");  
+foreach (UserPrincipal u in results)  
+{  
+  Console.WriteLine(u.Name);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastBadPasswordAttempt">
+      <MemberSignature Language="C#" Value="public void LastBadPasswordAttempt (DateTime lastAttempt, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LastBadPasswordAttempt(valuetype System.DateTime lastAttempt, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.LastBadPasswordAttempt(System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="lastAttempt" Type="System.DateTime" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="lastAttempt"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>lastAttempt</c>比較に使用する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastBadPasswordAttempt" /> 属性のクエリ フィルターを、指定された <see cref="T:System.DateTime" /> と指定された比較値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "SecurlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+usr.AdvancedSearchFilter.LastBadPasswordAttempt(DateTime.Now.AddDays(-1), MatchType.GreaterThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+  
+//Write the name of all users whose most recent incorrect  
+//password entry was within the last day  
+  
+foreach (UserPrincipal u in results)  
+{  
+    Console.WriteLine(u.Name);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastLogonTime">
+      <MemberSignature Language="C#" Value="public void LastLogonTime (DateTime logonTime, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LastLogonTime(valuetype System.DateTime logonTime, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.LastLogonTime(System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logonTime" Type="System.DateTime" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="logonTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>logonTime</c>比較に使用する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastLogon" /> 属性のクエリ フィルターを、指定された <see cref="T:System.DateTime" /> と指定された比較値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "SecurlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+usr.AdvancedSearchFilter.LastLogonTime(DateTime.Now.AddDays(-1), MatchType.GreaterThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+  
+//Write the names of all users who have logged on since yesterday  
+foreach (UserPrincipal u in results)  
+{  
+    Console.WriteLine(u.Name);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastPasswordSetTime">
+      <MemberSignature Language="C#" Value="public void LastPasswordSetTime (DateTime passwordSetTime, System.DirectoryServices.AccountManagement.MatchType match);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void LastPasswordSetTime(valuetype System.DateTime passwordSetTime, valuetype System.DirectoryServices.AccountManagement.MatchType match) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.AdvancedFilters.LastPasswordSetTime(System.DateTime,System.DirectoryServices.AccountManagement.MatchType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="passwordSetTime" Type="System.DateTime" />
+        <Parameter Name="match" Type="System.DirectoryServices.AccountManagement.MatchType" />
+      </Parameters>
+      <Docs>
+        <param name="passwordSetTime"><see cref="T:System.DateTime" /> オブジェクト。</param>
+        <param name="match">A<see cref="T:System.DirectoryServices.AccountManagement.MatchType" />を指定する方法<c>passwordSetTime</c>比較に使用する必要があります。</param>
+        <summary><see cref="P:System.DirectoryServices.AccountManagement.AuthenticablePrincipal.LastPasswordSet" /> 属性のクエリ フィルターを、指定された <see cref="T:System.DateTime" /> と指定された比較値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 時刻は既定で UTC にします。 時間を現地時刻で指定する場合を指定して、<xref:System.DateTime.Kind%2A>のプロパティ、<xref:System.DateTime>オブジェクトとして<xref:System.DateTimeKind?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+  
+```csharp  
+  
+// Create the principal context for the usr object.  
+PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "fabrikam.com", "CN=Users,DC=fabrikam,DC=com", "administrator", "SecurlyStoredPassword");  
+  
+// Create the principal user object from the context  
+UserPrincipal usr = new UserPrincipal(ctx);  
+  
+// Set the advanced query filter  
+usr.AdvancedSearchFilter.LastPasswordSetTime(DateTime.Now.AddDays(-30), MatchType.LessThan);  
+  
+// Create a PrincipalSearcher object.  
+PrincipalSearcher ps = new PrincipalSearcher(usr);  
+PrincipalSearchResult<Principal> results = ps.FindAll();  
+  
+//Force users who have not changed their password in the last  
+//30 days to do so at next logon  
+foreach (UserPrincipal u in results)  
+{  
+    u.ExpirePasswordNow();  
+    u.Save();  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

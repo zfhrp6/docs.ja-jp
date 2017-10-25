@@ -1,0 +1,134 @@
+<Type Name="MessageBodyMemberAttribute" FullName="System.ServiceModel.MessageBodyMemberAttribute">
+  <TypeSignature Language="C#" Value="public class MessageBodyMemberAttribute : System.ServiceModel.MessageContractMemberAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageBodyMemberAttribute extends System.ServiceModel.MessageContractMemberAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MessageBodyMemberAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.MessageContractMemberAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メンバーが SOAP 本文の中の要素としてシリアル化されることを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageBodyMemberAttribute> 属性を使用して、データ メンバーが SOAP 本文の中にシリアル化されることを指定し、一部のシリアル化項目を制御します。  
+  
+ <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> プロパティを使用して、既定のアルファベット順が適切ではない本体の各部分の順序を指定します。  
+  
+ その他のプロパティは、基本クラスである <xref:System.ServiceModel.MessageContractMemberAttribute?displayProperty=nameWithType> から継承されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]既定の SOAP エンベロープ自体を変更せず、SOAP 本体のコンテンツのシリアル化を制御するを参照してください<xref:System.Runtime.Serialization.DataContractAttribute?displayProperty=nameWithType>、[サービス コントラクトのデータ転送を指定する](~/docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)、および[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ [!INCLUDE[crdefault](~/includes/crdefault-md.md)][メッセージ コントラクトを使用して](~/docs/framework/wcf/feature-details/using-message-contracts.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageContractAttribute> を使用して要求メッセージおよび応答メッセージの両方の SOAP エンベロープ構造を制御し、応答メッセージの SOAP ヘッダーを作成するために <xref:System.ServiceModel.MessageHeaderAttribute> を使用し、要求メッセージおよび応答メッセージの両方の本文を指定するために <xref:System.ServiceModel.MessageBodyMemberAttribute> を使用しています。 このコード例には、送信時の各メッセージの例が含まれています。  
+  
+ [!code-csharp[MessageHeaderAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/messageheaderattribute/cs/services.cs#1)]
+ [!code-vb[MessageHeaderAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/messageheaderattribute/vb/services.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageBodyMemberAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MessageBodyMemberAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MessageBodyMemberAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード例全体については、「<xref:System.ServiceModel.MessageBodyMemberAttribute>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Order">
+      <MemberSignature Language="C#" Value="public int Order { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Order" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MessageBodyMemberAttribute.Order" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーがシリアル化される SOAP 本文内の位置を示す値を取得または設定します。</summary>
+        <value>SOAP 本文内の要素の位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> プロパティを使用して、SOAP 本文要素内のデータ メンバーの位置を指定します。 値は、メンバーの位置ではなく、並べ替えキーを表しているだけであるため、連続している必要はありません。  
+  
+ 本文要素の順序は、既定でアルファベット順です。 このプロパティのセマンティクスは、<xref:System.Runtime.Serialization.DataMemberAttribute.Order%2A> プロパティのセマンティクスと同じです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> プロパティを使用して、第 1 に `sourceAccount` 値、第 2 に `targetAccount` 値、第 3 に `amount` 値をシリアル化しています。 <xref:System.ServiceModel.MessageBodyMemberAttribute.Order%2A> プロパティを使用しない場合、既定値は `amount` です。  
+  
+```  
+[MessageContract]  
+public class BankingTransaction  
+{  
+  [MessageHeader] public Operation operation;  
+  [MessageBodyMember(Order=1)] public Account sourceAccount;  
+  [MessageBodyMember(Order=2)] public Account targetAccount;  
+  [MessageBodyMember(Order=3)] public int amount;  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティ Set アクセス操作子に渡された値が負の整数です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,2073 @@
+<Type Name="Stream" FullName="System.IO.Stream">
+  <TypeSignature Language="C#" Value="public abstract class Stream : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit Stream extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Stream" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バイト シーケンスのジェネリック ビューを提供します。 これは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/stream.cs#f956b0c07e86df64)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ <xref:System.IO.Stream>すべてのストリームの抽象基本クラスです。 ストリームとは、ファイル、入出力デバイス、プロセス間通信のパイプ、または TCP/IP ソケットなどのバイト シーケンスを抽象化したものです。 <xref:System.IO.Stream>クラスとその派生クラスのさまざまな種類の入力と出力、汎用的なビューを提供し、プログラマ、オペレーティング システムと基になるデバイスの特定の詳細から分離します。  
+  
+ ストリームには次の 3 つの基本的な操作が含まれます。  
+  
+-   ストリームから取得できます。 読み取りとは、バイト配列などのデータ構造にデータをストリームからの転送です。  
+  
+-   ストリームに記述することができます。 書き込みは、データ構造からストリームにデータの転送です。  
+  
+-   ストリームはシークをサポートできます。 シークは、クエリを実行して、ストリーム内の現在位置の変更を指します。 シーク機能は、ストリームには、バッキング ストアの種類によって異なります。 たとえば、ネットワーク ストリームは、現在の位置の統一された概念をありませんして、したがって通常はシークをサポートします。  
+  
+ 他のよく使用されるストリームから継承する<xref:System.IO.Stream>は<xref:System.IO.FileStream>、および<xref:System.IO.MemoryStream>です。  
+  
+ 基になるデータ ソースまたはリポジトリによってこれらの機能の一部のみストリームがサポートする可能性があります。 そのような機能のストリームをクエリして、 <xref:System.IO.Stream.CanRead%2A>、 <xref:System.IO.Stream.CanWrite%2A>、および<xref:System.IO.Stream.CanSeek%2A>のプロパティ、<xref:System.IO.Stream>クラスです。  
+  
+ <xref:System.IO.Stream.Read%2A>と<xref:System.IO.Stream.Write%2A>メソッドの読み取りし、書き込みデータのさまざまな形式です。 ストリームはシークをサポートする場合を使用して、<xref:System.IO.Stream.Seek%2A>と<xref:System.IO.Stream.SetLength%2A>メソッドおよび<xref:System.IO.Stream.Position%2A>と<xref:System.IO.Stream.Length%2A>クエリや、現在の位置と、ストリームの長さを変更するプロパティです。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ 破棄、<xref:System.IO.Stream>オブジェクトは、バッファー内のデータをフラッシュし、本質的に呼び出して、<xref:System.IO.Stream.Flush%2A>するメソッド。 <xref:System.IO.Stream.Dispose%2A>ファイル ハンドル、ネットワーク接続、または、内部バッファリングの使用メモリなどのオペレーティング システム リソースを解放します。 <xref:System.IO.BufferedStream>クラスは、折り返しの読み取りを改善し、書き込みのパフォーマンスのために別のストリームのバッファー済みストリームの機能を提供します。  
+  
+ 以降で、 [!INCLUDE[net_v45](~/includes/net-v45-md.md)]、<xref:System.IO.Stream>クラスには、非同期操作を簡素化する非同期メソッドが含まれています。 非同期のメソッドを含む`Async`、名前になど<xref:System.IO.Stream.ReadAsync%2A>、 <xref:System.IO.Stream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.Stream.FlushAsync%2A>です。 これらのメソッドを使用すると、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行できます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用する場合、[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]アプリ、 <xref:System.IO.Stream> 2 つの拡張メソッドが含まれています:<xref:System.IO.WindowsRuntimeStreamExtensions.AsInputStream%2A>と<xref:System.IO.WindowsRuntimeStreamExtensions.AsOutputStream%2A>です。 これらのメソッドの変換、<xref:System.IO.Stream>ストリームにオブジェクト、[!INCLUDE[wrt](~/includes/wrt-md.md)]です。 ストリームを変換することも、[!INCLUDE[wrt](~/includes/wrt-md.md)]を<xref:System.IO.Stream>オブジェクトを使用して、<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead%2A>と<xref:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite%2A>メソッドです。 詳細については、次を参照してください[する方法: .NET Framework ストリームとの間の変換と Windows ランタイム ストリーム。](~/docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)  
+  
+ ストリームの実装によっては、パフォーマンスを向上させるために基になるデータのローカル バッファー処理を実行します。 このようなストリームを使用できます、<xref:System.IO.Stream.Flush%2A>または<xref:System.IO.Stream.FlushAsync%2A>内部バッファーをクリアし、基になるデータ ソースまたはリポジトリにすべてのデータが書き込まれたことを確認してください。  
+  
+ バッキング ストアを持たない (ビット バケットとも呼ばれます) のストリームを必要がある場合、<xref:System.IO.Stream.Null>フィールドはこの目的で設計されたストリームのインスタンスを取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する 2 つの方法を示します<xref:System.IO.FileStream>非同期的に別のディレクトリに 1 つのディレクトリからファイルをコピーするオブジェクト。 <xref:System.IO.FileStream> クラスは <xref:System.IO.Stream> クラスから派生します。 非同期のメソッドを呼び出すので、 <xref:System.Web.UI.WebControls.Button.Click> コントロールの <xref:System.Windows.Controls.Button> イベント ハンドラーは `async` 修飾子でマークされていることに注意してください。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#1](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example.cs#1)]
+ [!code-vb[Asynchronous_File_IO_async#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスを実装する場合<see cref="T:System.IO.Stream" />の実装を提供する必要があります、<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />と<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />メソッドです。 非同期のメソッド<see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />、 <see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />、および<see cref="M:System.IO.Stream.CopyToAsync(System.IO.Stream)" />同期メソッドを使用して<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />と<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />実装でします。 そのため、独自<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />と<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />非同期メソッドで正常に動作します。 既定の実装<see cref="M:System.IO.Stream.ReadByte" />と<see cref="M:System.IO.Stream.WriteByte(System.Byte)" />新しいの 1 つの要素のバイト配列を作成しの実装を呼び出す<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />と<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />です。 派生したときに<see cref="T:System.IO.Stream" />、1 つのパフォーマンスを大幅に向上させる必要がある場合、内部バッファーへのアクセスにこれらのメソッドをオーバーライドすることをお勧めします。 実装を提供する必要がありますも<see cref="P:System.IO.Stream.CanRead" />、 <see cref="P:System.IO.Stream.CanSeek" />、 <see cref="P:System.IO.Stream.CanWrite" />、 <see cref="M:System.IO.Stream.Flush" />、 <see cref="P:System.IO.Stream.Length" />、 <see cref="P:System.IO.Stream.Position" />、 <see cref="M:System.IO.Stream.Seek(System.Int64,System.IO.SeekOrigin)" />、および<see cref="M:System.IO.Stream.SetLength(System.Int64)" />です。  
+  
+ オーバーライドしない場合、<see cref="M:System.IO.Stream.Close" />メソッドが代わりに、すべてを配置、<see cref="T:System.IO.Stream" />のクリーンアップ ロジック、<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />メソッドです。 詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Stream ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IO.Stream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream>すべてのストリームの抽象基本クラスです。  
+  
+ 他のよく使用されるストリームから継承する<xref:System.IO.Stream>は<xref:System.IO.FileStream>、および<xref:System.IO.MemoryStream>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRead">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginRead (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを読み込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>ストリームから読み取られるデータの書き込みを開始する位置を示すです。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <param name="callback">読み取り完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期読み取り要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の読み込み動作を開始します。 (使用を検討して<see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />代わりにします)。</summary>
+        <returns>非同期の読み込みを表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 およびそれ以前のバージョンで非同期 I/O 操作を実装するには、 <xref:System.IO.Stream.BeginRead%2A> 、 <xref:System.IO.Stream.EndRead%2A> などのメソッドを使用する必要があります。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.Stream.ReadAsync%2A>、 <xref:System.IO.Stream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.Stream.FlushAsync%2A>、非同期 I/O 操作をより簡単に実装するヘルプ。  
+  
+ 既定の実装`BeginRead`ストリームで呼び出し、<xref:System.IO.Stream.Read%2A>メソッド同期的に、つまり`Read`の一部のストリームをブロックする可能性があります。 ただし、インスタンスなどのクラスの`FileStream`と`NetworkStream`インスタンスを非同期的に開かれている場合、非同期操作を完全にサポートします。 そのため、呼び出し`BeginRead`これらのストリームではブロックされません。 オーバーライドできます`BeginRead`(を使用して非同期デリゲート、たとえば) 非同期動作を提供します。  
+  
+ 渡す、`IAsyncResult`に値を返す、<xref:System.IO.Stream.EndRead%2A>読み取られたバイト数を決定しの読み取りに使用されているオペレーティング システム リソースを解放するストリームのメソッドです。 <xref:System.IO.Stream.EndRead%2A>すべての呼び出しに対して 1 回呼び出す必要があります<xref:System.IO.Stream.BeginRead%2A>です。 これを行うかを呼び出した同じコードを使用して、`BeginRead`またはに渡されたコールバックで`BeginRead`です。  
+  
+ 非同期の読み取りまたは書き込みが発行されると、I/O 操作の完了時ではなく、ストリーム内の現在位置が更新されます。  
+  
+ 複数の非同期要求は、不定の要求の完了の順序をレンダリングします。  
+  
+ 使用して、<xref:System.IO.Stream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ 例外が直ちにスローされる場合は、ストリームが閉じているか、無効な引数を渡す、`BeginRead`です。 I/O 要求時にディスク障害など、非同期読み取り要求中に発生したエラーは、スレッド プールのスレッドで発生し、呼び出すときに例外をスロー`EndRead`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">非同期の読み取り、ストリームの末尾をしようとしました。 または、ディスク エラーが発生します。</exception>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+        <exception cref="T:System.NotSupportedException">現在<see langword="Stream" />実装は、読み取り操作をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWrite">
+      <MemberSignature Language="C#" Value="public virtual IAsyncResult BeginWrite (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元となるバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>書き込みを開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <param name="callback">書き込みの完了時に呼び出されるオプションの非同期コールバック。</param>
+        <param name="state">この特定の非同期書き込み要求を他の要求と区別するために使用するユーザー指定のオブジェクト。</param>
+        <summary>非同期の書き込み操作を開始します。 (使用を検討して<see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />代わりにします)。</summary>
+        <returns>非同期の書き込みを表す <see langword="IAsyncResult" />。まだ保留状態の場合もあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 およびそれ以前のバージョンで非同期 I/O 操作を実装するには、<xref:System.IO.Stream.BeginWrite%2A>、<xref:System.IO.Stream.EndWrite%2A> などのメソッドを使用する必要があります。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.Stream.ReadAsync%2A>、 <xref:System.IO.Stream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.Stream.FlushAsync%2A>、非同期 I/O 操作をより簡単に実装するヘルプ。  
+  
+ 既定の実装`BeginWrite`ストリームで呼び出し、<xref:System.IO.Stream.Write%2A>メソッド同期的に、つまり`Write`の一部のストリームをブロックする可能性があります。 ただし、インスタンスなどのクラスの`FileStream`と`NetworkStream`インスタンスを非同期的に開かれている場合、非同期操作を完全にサポートします。 そのため、呼び出し`BeginWrite`これらのストリームではブロックされません。 オーバーライドできます`BeginWrite`(を使用して非同期デリゲート、たとえば) 非同期動作を提供します。  
+  
+ 渡す、`IAsyncResult`を現在のメソッドによって返される<xref:System.IO.Stream.EndWrite%2A>書き込みが完了して、リソースを適切に解放ことを確認します。 <xref:System.IO.Stream.EndWrite%2A>すべての呼び出しに対して 1 回呼び出す必要があります<xref:System.IO.Stream.BeginWrite%2A>です。 これを行うかを呼び出した同じコードを使用して、`BeginWrite`またはに渡されたコールバックで`BeginWrite`です。 非同期の書き込み中にエラーが発生する場合まで例外はスローされません`EndWrite`してを呼び出すと、`IAsyncResult`このメソッドによって返されます。  
+  
+ ストリームが書き込み可能な場合は、ストリームの末尾に書き込み、ストリームが拡張されます。  
+  
+ ストリームの現在の位置は、I/O 操作の完了時ではなく、非同期の読み取りや書き込みを発行したときに更新されます。 複数の非同期要求は、不定の要求の完了の順序をレンダリングします。  
+  
+ 使用して、<xref:System.IO.Stream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ 例外が直ちにスローされる場合は、ストリームが閉じているか、無効な引数を渡す、`BeginWrite`です。 I/O 要求時にディスク障害など、非同期書き込み要求中に発生したエラーは、スレッド プールのスレッドで発生し、呼び出すときに例外をスロー`EndWrite`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">非同期の書き込み、ストリームの終わりを超えて試行またはディスク エラーが発生します。</exception>
+        <exception cref="T:System.ArgumentException">1 つ以上の引数が無効です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+        <exception cref="T:System.NotSupportedException">現在<see langword="Stream" />実装は、書き込み操作をサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public abstract bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリームが読み取りをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームが読み込みをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>読み取りをサポートしませんへの呼び出し、 <xref:System.IO.Stream.Read%2A>、 <xref:System.IO.Stream.ReadByte%2A>、および<xref:System.IO.Stream.BeginRead%2A>メソッドをスロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次の例に示しますを使用して、`CanRead`プロパティです。  
+  
+ [!code-cpp[Classic FileStream.CanRead Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FileStream.CanRead Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/CS/source.cs#1)]
+ [!code-vb[Classic FileStream.CanRead Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FileStream.CanRead Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public abstract bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリームがシークをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームがシークをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>への呼び出しをシークをサポートしていない<xref:System.IO.Stream.Length%2A>、 <xref:System.IO.Stream.SetLength%2A>、 <xref:System.IO.Stream.Position%2A>、および<xref:System.IO.Stream.Seek%2A>スロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanTimeout">
+      <MemberSignature Language="C#" Value="public virtual bool CanTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.CanTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のストリームがタイムアウトできるかどうかを決定する値を取得します。</summary>
+        <value>現在のストリームがタイムアウトできるかどうかを決定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.CanTimeout%2A>プロパティは常に返します`false`です。 ストリームの実装によってはなどさまざまな動作を必要<xref:System.Net.Sockets.NetworkStream>、これがタイムアウトになるネットワーク接続が中断または消失した場合。 返される、このプロパティをオーバーライドする必要がありますがタイムアウトする必要があるストリームを実装している場合`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public abstract bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリームが書き込みをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          ストリームが書き込みをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したクラス場合<xref:System.IO.Stream>への呼び出しの書き込みをサポートしていません<xref:System.IO.Stream.Write%2A>、 <xref:System.IO.Stream.BeginWrite%2A>、または<xref:System.IO.Stream.WriteByte%2A>をスロー、<xref:System.NotSupportedException>です。  
+  
+ ストリームが閉じられたかどうか、このプロパティを返します`false`です。  
+  
+   
+  
+## Examples  
+ 次の例に示しますを使用して、`CanWrite`プロパティです。  
+  
+ [!code-cpp[Classic Stream.CanWrite Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stream.CanWrite Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stream.CanWrite Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stream.CanWrite Example/CS/source.cs#1)]
+ [!code-vb[Classic Stream.CanWrite Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stream.CanWrite Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public virtual void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のストリームを閉じ、現在のストリームに関連付けられているすべてのリソース (ソケット、ファイル ハンドルなど) を解放します。 このメソッドを呼び出す代わりに、ストリームが適切に破棄されていることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す<xref:System.IO.Stream.Dispose%2A>を指定して、`true`をすべてのリソースを解放します。 特にを呼び出す必要はありません、<xref:System.IO.Stream.Close%2A>メソッドです。 代わりに、必ずすべて<xref:System.IO.Stream>オブジェクトを確実に破棄します。 宣言することができます<xref:System.IO.Stream>内のオブジェクトは、`using`ブロック (または`Using`Visual Basic でのブロック) とそのすべてのリソース ストリームが破棄されると、または明示的に呼び出すことができます、<xref:System.IO.Stream.Dispose%2A>メソッドです。  
+  
+ 実装を明示的に呼び出す場合を除き、ストリームのフラッシュは、基になるエンコーダー フラッシュされません<xref:System.IO.Stream.Flush%2A>または`Close`です。 設定<xref:System.IO.StreamWriter.AutoFlush%2A>に`true`に、ストリーム バッファーからデータがフラッシュされますが、エンコーダーの状態はフラッシュされないことを意味します。 これにより、次の文字のブロックを正常にエンコードできるように (一部の文字) の状態を保持するエンコーダー。 このシナリオでは、UTF8、UTF7、エンコーダーは、隣接する文字または文字列を受信した後にのみ特定の文字をエンコードすることができますに影響します。  
+  
+ ストリームが閉じられた後にストリームを操作する試行をスローする可能性、<xref:System.ObjectDisposedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドしない、<see cref="M:System.IO.Stream.Close" />メソッドを代わりに、すべての配置、<see langword="Stream" />のクリーンアップ ロジック、<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />メソッドです。 詳細については、次を参照してください。 [Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.IO.Stream destination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.IO.Stream destination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CopyTo(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="destination">現在のストリームの内容のコピー先のストリーム。</param>
+        <summary>現在のストリームからバイトを読み取り、別のストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピーと、現在のストリームの現在位置にあるが開始され、コピー操作が完了した後、コピー先のストリームの位置をリセットしません。  
+  
+   
+  
+## Examples  
+ 次の例の内容をコピーする、<xref:System.IO.FileStream>を<xref:System.IO.MemoryStream>です。  
+  
+ [!code-csharp[System.IO.Stream.CopyTo#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.stream.copyto/cs/program.cs#1)]
+ [!code-vb[System.IO.Stream.CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.stream.copyto/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destination" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームは読み取りをサポートしません。  
+  
+ または  
+  
+ <paramref name="destination" />書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームのいずれかまたは<paramref name="destination" />が終了する前に、<see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" />メソッドが呼び出されました。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.IO.Stream destination, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.IO.Stream destination, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CopyTo(System.IO.Stream,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="destination">現在のストリームの内容のコピー先のストリーム。</param>
+        <param name="bufferSize">バッファーのサイズ。 これは、0 より大きい値である必要があります。 既定のサイズは 81920 です。</param>
+        <summary>指定されたバッファー サイズを使用して、現在のストリームからバイトを読み取り、別のストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピーと、現在のストリームの現在位置にあるが開始され、コピー操作が完了した後、コピー先のストリームの位置をリセットしません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destination" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bufferSize" /> が負の値またはゼロです。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームは読み取りをサポートしません。  
+  
+ または  
+  
+ <paramref name="destination" />書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームのいずれかまたは<paramref name="destination" />が終了する前に、<see cref="M:System.IO.Stream.CopyTo(System.IO.Stream)" />メソッドが呼び出されました。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task CopyToAsync (System.IO.Stream destination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task CopyToAsync(class System.IO.Stream destination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CopyToAsync(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="destination">現在のストリームの内容のコピー先のストリーム。</param>
+        <summary>現在のストリームからすべてのバイトを非同期に読み取り、別のストリームに書き込みます。</summary>
+        <returns>非同期のコピー操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.CopyToAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 現在のストリームの現在位置にあるコピーを開始します。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する 2 つの方法を示します<xref:System.IO.FileStream>別に 1 つのディレクトリからファイルを非同期的にコピーするオブジェクト。 <xref:System.IO.FileStream> クラスは <xref:System.IO.Stream> クラスから派生します。  注意して、<xref:System.Web.UI.WebControls.Button.Click>のイベント ハンドラー、<xref:System.Windows.Controls.Button>コントロールが付いて、`async`修飾子非同期メソッドを呼び出すので  
+  
+ [!code-csharp[Asynchronous_File_IO_async#1](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example.cs#1)]
+ [!code-vb[Asynchronous_File_IO_async#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destination" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームまたはコピー先のストリームは破棄されます。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームが読み取りをサポートしていないか、コピー先のストリームが書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task CopyToAsync (System.IO.Stream destination, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task CopyToAsync(class System.IO.Stream destination, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CopyToAsync(System.IO.Stream,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="destination">現在のストリームの内容のコピー先のストリーム。</param>
+        <param name="bufferSize">バッファーのサイズ (バイト数)。 これは、0 より大きい値である必要があります。 既定のサイズは 81920 です。</param>
+        <summary>指定されたバッファー サイズを使用して、現在のストリームからバイトを非同期に読み取り、別のストリームに書き込みます。</summary>
+        <returns>非同期のコピー操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.CopyToAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 現在のストリームの現在位置にあるコピーを開始します。  
+  
+ 2 つのストリーム間のコピーの例は、次を参照してください。、<xref:System.IO.Stream.CopyToAsync%28System.IO.Stream%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destination" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="buffersize" /> が負の値またはゼロです。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームまたはコピー先のストリームは破棄されます。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームが読み取りをサポートしていないか、コピー先のストリームが書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyToAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task CopyToAsync (System.IO.Stream destination, int bufferSize, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task CopyToAsync(class System.IO.Stream destination, int32 bufferSize, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.IO.Stream" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="destination">現在のストリームの内容のコピー先のストリーム。</param>
+        <param name="bufferSize">バッファーのサイズ (バイト数)。 これは、0 より大きい値である必要があります。 既定のサイズは 81920 です。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>指定されたバッファー サイズを使用して、現在のストリームからバイトを非同期に読み取り、指定されたバッファー サイズとキャンセル トークンを使用して、別のストリームに書き込みます。</summary>
+        <returns>非同期のコピー操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.CopyToAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。  
+  
+ 現在のストリームの現在位置にあるコピーを開始します。  
+  
+ 2 つのストリーム間のコピーの例は、次を参照してください。、<xref:System.IO.Stream.CopyToAsync%28System.IO.Stream%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="destination" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="buffersize" /> が負の値またはゼロです。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のストリームまたはコピー先のストリームは破棄されます。</exception>
+        <exception cref="T:System.NotSupportedException">現在のストリームが読み取りをサポートしていないか、コピー先のストリームが書き込みをサポートしません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWaitHandle">
+      <MemberSignature Language="C#" Value="protected virtual System.Threading.WaitHandle CreateWaitHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Threading.WaitHandle CreateWaitHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.CreateWaitHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("CreateWaitHandle will be removed eventually.  Please use "new ManualResetEvent(false)" instead.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.WaitHandle" /> オブジェクトを割り当てます。</summary>
+        <returns>割り当てられた <see langword="WaitHandle" /> への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最初に呼び出されると、現在のメソッドを作成、`WaitHandle`オブジェクトを返します。 後続の呼び出しで`CreateWaitHandle`新しい待機ハンドルへの参照を返します。  
+  
+ 非同期のメソッドを実装ブロッキングの方法を必要とする場合、このメソッドを使用して<xref:System.IO.Stream.EndRead%2A>または<xref:System.IO.Stream.EndWrite%2A>非同期操作が完了するまでです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.Stream" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バッキング ストアへのすべての変更の書き込みとリソースを解放するストリームを終了して、ストリームを破棄します。  
+  
+ 呼び出す`Dispose`によりによって使用されるリソース、<xref:System.IO.Stream>を他の目的に再割り当てされます。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ストリーム オブジェクトのすべてのクリーンアップ ロジックを配置<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />です。 オーバーライドしない<see cref="M:System.IO.Stream.Close" />です。  
+  
+ 旧バージョンとの互換性求められるので、このメソッドの実装が Dispose パターンの推奨されるガイダンスと異なることに注意してください。  このメソッドを呼び出す<see cref="M:System.IO.Stream.Close" />、呼び出す<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.Stream" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定してすべてのリソースを解放する必要があります`true`の`disposing`します。 ときに`disposing`は`true`もに、ストリームにデータを基になるバッファーがフラッシュされ、ファイナライズ可能なその他のオブジェクトへのアクセスを確認できます。  これができないファイナライザー間の順序がなくなったのため、ファイナライザーから呼び出された場合。  
+  
+ ストリームは、オペレーティング システム ハンドルをそのソースとの通信に使用されている場合は、サブクラスを使用することを検討してください<xref:System.Runtime.InteropServices.SafeHandle>この目的のためです。  
+  
+ このメソッドは、パブリック<xref:System.ComponentModel.Component.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.ComponentModel.Component.Dispose%2A>プロテクト呼び出します<xref:System.IO.Stream.Dispose%2A>メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.IO.Stream.Dispose%2A>で`disposing`'éý'`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでオーバーライドしない、<see cref="M:System.IO.Stream.Close" />メソッドが代わりに、すべてのストリームのクリーンアップ ロジックを配置、<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />メソッドです。  
+  
+ <see cref="M:System.ComponentModel.Component.Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see cref="M:System.IO.Stream.Dispose(System.Boolean)" /> をオーバーライドする場合は、以前に <see cref="M:System.ComponentModel.Component.Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see cref="M:System.IO.Stream.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.ComponentModel.Component.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRead">
+      <MemberSignature Language="C#" Value="public virtual int EndRead (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.EndRead(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">終了させる保留状態の非同期リクエストへの参照。</param>
+        <summary>保留中の非同期読み取りが完了するまで待機します。 (使用を検討して<see cref="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />代わりにします)。</summary>
+        <returns>ストリームから読み取ったバイト数 (0 ～要求したバイト数の間の数値)。 ゼロ (0) が返されるのは、ストリームの末尾で読み取ろうとしたときだけです。それ以外の場合は、少なくとも 1 バイトが読み込み可能になるまでブロックします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 およびそれ以前のバージョンで非同期 I/O 操作を実装するには、 <xref:System.IO.Stream.BeginRead%2A> 、 <xref:System.IO.Stream.EndRead%2A> などのメソッドを使用する必要があります。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.Stream.ReadAsync%2A>、 <xref:System.IO.Stream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.Stream.FlushAsync%2A>、非同期 I/O 操作をより簡単に実装するヘルプ。  
+  
+ 呼び出す`EndRead`をストリームから読み取られたバイト数を決定します。  
+  
+ `EndRead`1 回呼び出すことができるすべて<xref:System.IAsyncResult>から<xref:System.IO.Stream.BeginRead%2A>です。  
+  
+ このメソッドは、I/O 操作が完了するまでブロックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">保留中の読み取り操作へのハンドルは使用できません。  
+  
+ または  
+  
+ 保留中の操作は、読み取りをサポートしません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="asyncResult" /> は現在のストリームの <see cref="M:System.IO.Stream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドから取得されませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ストリームが閉じているか、内部エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWrite">
+      <MemberSignature Language="C#" Value="public virtual void EndWrite (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.EndWrite(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留状態の非同期 I/O リクエストへの参照。</param>
+        <summary>非同期書き込み操作を終了します。 (使用を検討して<see cref="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />代わりにします)。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework 4 およびそれ以前のバージョンで非同期 I/O 操作を実装するには、<xref:System.IO.Stream.BeginWrite%2A>、<xref:System.IO.Stream.EndWrite%2A> などのメソッドを使用する必要があります。 これらのメソッドでは使用できます、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]レガシ コードをサポートするただし、新しい非同期メソッドなど<xref:System.IO.Stream.ReadAsync%2A>、 <xref:System.IO.Stream.WriteAsync%2A>、 <xref:System.IO.Stream.CopyToAsync%2A>、および<xref:System.IO.Stream.FlushAsync%2A>、非同期 I/O 操作をより簡単に実装するヘルプ。  
+  
+ `EndWrite`1 回だけ呼び出す必要がありますすべて<xref:System.IAsyncResult>から<xref:System.IO.Stream.BeginWrite%2A>です。  
+  
+ このメソッドは、I/O 操作が完了するまでブロックします。 I/O 要求時にディスク障害など、非同期書き込み要求中に発生したエラーは、スレッド プールのスレッドで発生しへの呼び出しに可視になる`EndWrite`です。 呼び出すときに、スレッド プールのスレッドによってスローされた例外は表示されません`EndWrite`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">保留中の書き込み操作へのハンドルは使用できません。  
+  
+ または  
+  
+ 保留中の操作は、書き込みをサポートしません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="asyncResult" /> は現在のストリームの <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドから取得されませんでした。</exception>
+        <exception cref="T:System.IO.IOException">ストリームが閉じているか、内部エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public abstract void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスによってオーバーライドされた場合は、ストリームに対応するすべてのバッファーをクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド`Flush`ストリームのバッファーを実装します。 基になるバッファーからの移行先への情報の移動、バッファー、またはその両方をオフにするには、このメソッドを使用します。 オブジェクトの状態によっては、(たとえば、基になるストリームのシークをサポートしている) 場合に、ストリーム内の現在位置を変更する必要があります。 詳細についてを参照してください。<xref:System.IO.Stream.CanSeek%2A>です。  
+  
+ 使用する場合、<xref:System.IO.StreamWriter>または<xref:System.IO.BinaryWriter>クラス、基数をフラッシュしない<xref:System.IO.Stream>オブジェクト。 代わりに、クラスの<xref:System.IO.Stream.Flush%2A>または<xref:System.IO.Stream.Close%2A>メソッドをそのデータが最初に基になるストリームにフラッシュし、ファイルに書き込むことを確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task FlushAsync ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task FlushAsync() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.FlushAsync" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームに対応するすべてのバッファーを非同期にクリアし、バッファー内のデータを基になるデバイスに書き込みます。</summary>
+        <returns>非同期のフラッシュ操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスなど<xref:System.IO.Compression.DeflateStream>または<xref:System.IO.Compression.GZipStream>の実装でバッファーをフラッシュしません、 <xref:System.IO.Stream.Flush%2A> 、メソッド、<xref:System.IO.Stream.FlushAsync%2A>メソッドは、バッファーをフラッシュされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FlushAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task FlushAsync (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task FlushAsync(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.FlushAsync(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>ストリームに対応するすべてのバッファーを非同期にクリアし、バッファー内のデータを基になるデバイスに書き込み、キャンセル要求を監視します。</summary>
+        <returns>非同期のフラッシュ操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。  
+  
+ 派生クラスなど<xref:System.IO.Compression.DeflateStream>または<xref:System.IO.Compression.GZipStream>の実装でバッファーをフラッシュしません、 <xref:System.IO.Stream.Flush%2A> 、メソッド、<xref:System.IO.Stream.FlushAsync%2A>メソッドは、バッファーをフラッシュされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public abstract long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、ストリームの長さをバイト単位で取得します。</summary>
+        <value>ストリーム長 (バイト単位) を表す long 値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">派生したクラス<see langword="Stream" />シークをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.IO.Stream Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.IO.Stream Null" />
+      <MemberSignature Language="DocId" Value="F:System.IO.Stream.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッキング ストアを持たない <see langword="Stream" />。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`Null`はすべてのオペレーティング システム リソースを消費していないストリームに出力をリダイレクトします。 ときに、メソッドの`Stream`で書き込みが呼び出されるを提供する`Null`呼び出しを単純に返します、およびデータは書き込まれません。 `Null`実装しても、`Read`データの読み取りに 0 を返すメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectInvariant">
+      <MemberSignature Language="C#" Value="protected virtual void ObjectInvariant ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ObjectInvariant() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.ObjectInvariant" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Do not call or override this method.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Diagnostics.Contracts.Contract" /> のサポートを提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public abstract long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリーム内の位置を取得または設定します。</summary>
+        <value>ストリーム内の現在位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームは、取得または位置を設定するシークをサポートする必要があります。 使用して、<xref:System.IO.Stream.CanSeek%2A>ストリームがシークをサポートしているかどうかを決定するプロパティです。  
+  
+ ストリームの長さを超えた位置へのシークはサポートされています。  
+  
+ `Position`プロパティがないの追跡が消費されている、スキップ、ストリーム、またはその両方からのバイト数。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">このストリームはシークをサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public abstract int Read (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Read([out] unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">バイト配列。 指定したバイト配列の値を持つが、バッファーに含まれているこのメソッドが戻るとき<c>オフセット</c>と (<c>オフセット</c> + <c>カウント</c>- 1) に置き換え、現在のソースから読み取ったバイト数。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>開始位置を示す現在のストリームから読み取ったデータの格納します。</param>
+        <param name="count">現在のストリームから読み取る最大バイト数。</param>
+        <summary>派生クラスによってオーバーライドされた場合は、現在のストリームからバイト シーケンスを読み取り、読み取ったバイト数の分だけストリームの位置を進めます。</summary>
+        <returns>バッファーに読み取られた合計バイト数。 要求しただけのバイト数を読み取ることができなかった場合、この値は要求したバイト数より小さくなります。ストリームの末尾に到達した場合は 0 (ゼロ) になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。 使用して、<xref:System.IO.Stream.ReadAsync%2A>を現在のストリームから非同期的に読み取る方法です。  
+  
+ このメソッドの実装の最大を読み取る`count`現在からのバイト ストリームし、で格納`buffer`始点`offset`です。 読み取りバイト数だけストリーム内の現在位置が高度なただし、例外が発生する場合、ストリーム内の現在の位置は変更されません。 実装は、読み取られたバイト数を返します。 実装は、データがないことには、少なくとも 1 バイトのデータを読み取ることができるまでブロックされます。 <xref:System.IO.Stream.Read%2A>ストリームにデータがあり、(閉じたソケットやファイルの末尾) など他の予定はない場合にのみ、0 を返します。 実装は、ストリームの末尾に達していない場合でも、要求されたより少ないバイト数を返すことです。  
+  
+ 使用して<xref:System.IO.BinaryReader>プリミティブ データ型を読み取るためです。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.IO.Stream.Read%2A>データのブロックを読み取れません。  
+  
+ [!code-cpp[Classic Stream.Read Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic Stream.Read Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Stream.Read Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic Stream.Read Example/CS/source.cs#1)]
+ [!code-vb[Classic Stream.Read Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic Stream.Read Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task&lt;int&gt; ReadAsync (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを書き込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>ストリームからデータを書き込む開始位置を示すです。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <summary>現在のストリームからバイト シーケンスを非同期に読み取り、読み取ったバイト数だけストリーム内の位置を進めます。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 現在使用できるバイト数が要求した数より小さい場合、結果の値は要求したバイト数より小さくなることがあります。また、ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.ReadAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.Stream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次の例では、非同期的に、ファイルを読み取る方法を示します。 この例では、<xref:System.IO.FileStream>から派生するクラス、<xref:System.IO.Stream>クラスです。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#4](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example4.cs#4)]
+ [!code-vb[Asynchronous_File_IO_async#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task&lt;int&gt; ReadAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task`1&lt;int32&gt; ReadAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Int32&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを書き込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>ストリームからデータを書き込む開始位置を示すです。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>現在のストリームからバイト シーケンスを非同期に読み取り、読み取ったバイト数だけストリーム内の位置を進め、キャンセル要求を監視します。</summary>
+        <returns>非同期の読み取り操作を表すタスク。 <paramref name="TResult" /> パラメーターの値には、バッファーに読み込まれるバイトの合計数が含まれます。 現在使用できるバイト数が要求した数より小さい場合、結果の値は要求したバイト数より小さくなることがあります。また、ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.ReadAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.Stream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。  
+  
+ 例については、次を参照してください。、<xref:System.IO.Stream.ReadAsync%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きくなっています。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の読み取り操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadByte">
+      <MemberSignature Language="C#" Value="public virtual int ReadByte ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 ReadByte() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.ReadByte" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ストリームから 1 バイトを読み取り、ストリーム内の位置を 1 バイト進めます。ストリームの末尾の場合は -1 を返します。</summary>
+        <returns><see langword="Int32" /> にキャストされた符号なしバイト。ストリームの末尾の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.CanRead%2A>プロパティを現在のインスタンスが読み取りをサポートするかどうかを判断します。  
+  
+ ストリームが閉じられた後にストリームを操作しようとすると、<xref:System.ObjectDisposedException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">ストリームは読み取りをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+        <block subset="none" type="overrides">
+          <para>既定の実装<see langword="Stream" />新しいシングル バイト配列を作成し、呼び出して<see cref="M:System.IO.Stream.Read(System.Byte[],System.Int32,System.Int32)" />です。 これは、正しい正式には、効率的なことはできません。 内部バッファーと共にストリームは、このメソッドをオーバーライドし、読み取りバッファーを直接呼び出しごとに余分な配列の割り当てを回避するバージョンをはるかに効率的に提供する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadTimeout">
+      <MemberSignature Language="C#" Value="public virtual int ReadTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReadTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.ReadTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームがタイムアウト前に読み取りを試行する期間を決定する値 (ミリ秒単位) を取得または設定します。</summary>
+        <value>ストリームがタイムアウト前に読み取りを試行する期間を決定する値 (ミリ秒単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IO.Stream.ReadTimeout" />メソッドは常にスロー、<see cref="T:System.InvalidOperationException" />です。</exception>
+        <block subset="none" type="overrides">
+          <para><see cref="P:System.IO.Stream.ReadTimeout" />ストリームの適切な動作を提供するプロパティをオーバーライドする必要があります。 このプロパティを発生させる、ストリームがタイムアウトをサポートしていない場合、<see cref="T:System.InvalidOperationException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public abstract long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">相対バイト オフセット、<c>原点</c>パラメーター。</param>
+        <param name="origin">新しい位置を取得するために使用する参照ポイントを示す <see cref="T:System.IO.SeekOrigin" /> 型の値。</param>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリーム内の位置を設定します。</summary>
+        <returns>現在のストリーム内の新しい位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.CanSeek%2A>プロパティを現在のインスタンスがシークをサポートするかどうかを判断します。  
+  
+ 場合`offset`は負の場合、新しい位置が必要で指定した位置の前に`origin`で指定したバイト数だけ`offset`です。 場合`offset`ゼロ (0) は、新しい位置に指定した位置である必要は`origin`します。 場合`offset`が正の値であり、新しい位置は指定した位置に従う必要`origin`で指定したバイト数だけ`offset`です。  
+  
+ 派生したクラス`Stream`サポートを求める必要があります上記の機能を提供するには、このメソッドをオーバーライドします。  
+  
+ ストリームの長さを超えた位置へのシークはサポートされています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームでは、シーク、ストリームがパイプまたはコンソール出力から構築された場合にすることはできません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public abstract void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">現在のストリームの希望の長さ (バイト数)。</param>
+        <summary>派生クラスでオーバーライドされた場合は、現在のストリームの長さを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した値が、ストリームの現在の長さより小さい場合は、ストリームは切り捨てられます。 指定した値が、ストリームの現在の長さより大きい場合は、ストリームが拡張されます。 ストリームが展開されている場合、古いクライアント シークレットと新しい長さの間のストリームの内容が定義されていません。  
+  
+ ストリームは書き込みとシークの両方をサポートする必要があります`SetLength`動作をします。  
+  
+ 使用して、 <xref:System.IO.Stream.CanWrite%2A> 、現在のインスタンスがドキュメントの作成をサポートしているかどうかを決定するプロパティと<xref:System.IO.Stream.CanSeek%2A>シークがサポートされているかどうかを決定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みとシークのストリームがパイプまたはコンソール出力から構築された場合、両方をサポートしていません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronized">
+      <MemberSignature Language="C#" Value="public static System.IO.Stream Synchronized (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.Stream Synchronized(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Synchronized(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">同期する <see cref="T:System.IO.Stream" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.IO.Stream" /> オブジェクトをラップするスレッド セーフな (同期された) ラッパーを作成します。</summary>
+        <returns>スレッド セーフな <see cref="T:System.IO.Stream" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたをラップするクラスを返します<xref:System.IO.Stream>オブジェクトし、複数のスレッドからそれへのアクセスを制限します。 アクセスをすべて、<xref:System.IO.Stream>オブジェクトはスレッド セーフになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="stream" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public abstract void Write (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">バイト配列。 このメソッドは、コピー<c>カウント</c>からバイト<c>バッファー</c>現在のストリームにします。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>現在のストリームにバイトのコピーを開始する位置。</param>
+        <param name="count">現在のストリームに書き込むバイト数。</param>
+        <summary>派生クラスによってオーバーライドされた場合は、現在のストリームにバイト シーケンスを書き込み、書き込んだバイト数の分だけストリームの現在位置を進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。 使用して、<xref:System.IO.Stream.WriteAsync%2A>現在のストリームに非同期的に書き込む方法です。  
+  
+ 書き込み操作が成功した場合、ストリーム内の位置は、書き込まれたバイト数だけ進めます。 例外が発生する場合、ストリーム内の位置は変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">合計<paramref name="offset" />と<paramref name="count" />がバッファーの長さを超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.IO.IOException">指定したファイルが見つからないなど、I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />ストリームが閉じられた後に呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public System.Threading.Tasks.Task WriteAsync (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Threading.Tasks.Task WriteAsync(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元となるバッファー。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>ストリームにバイトのコピー開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <summary>現在のストリームにバイト シーケンスを非同期に書き込み、書き込んだバイト数だけストリーム内の現在位置を進めます。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.WriteAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.Stream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルを非同期的に書き込む方法を示します。 この例では、<xref:System.IO.FileStream>から派生するクラス、<xref:System.IO.Stream>クラスです。  
+  
+ [!code-csharp[Asynchronous_File_IO_async#3](~/samples/snippets/csharp/VS_Snippets_CLR/Asynchronous_File_IO_async/cs/example3.cs#3)]
+ [!code-vb[Asynchronous_File_IO_async#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Asynchronous_File_IO_async/vb/example3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きいです。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の書き込み操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAsync">
+      <MemberSignature Language="C#" Value="public virtual System.Threading.Tasks.Task WriteAsync (byte[] buffer, int offset, int count, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Threading.Tasks.Task WriteAsync(unsigned int8[] buffer, int32 offset, int32 count, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データの書き込み元となるバッファー。</param>
+        <param name="offset">内の 0 から始まるバイト オフセット<c>バッファー</c>ストリームにバイトのコピー開始位置を示すです。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <param name="cancellationToken">キャンセル要求を監視するためのトークン。 既定値は <see cref="P:System.Threading.CancellationToken.None" /> です。</param>
+        <summary>現在のストリームにバイト シーケンスを非同期に書き込み、書き込んだバイト数だけストリーム内の現在位置を進め、キャンセル要求を監視します。</summary>
+        <returns>非同期の書き込み操作を表すタスク。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Stream.WriteAsync%2A>メソッドでは、メイン スレッドをブロックすることがなくリソースを消費する I/O 操作を実行することができます。 このパフォーマンスに関する考慮事項は、時間のかかるストリーム操作によって UI スレッドがブロックされ、アプリが動作していないと見なされる可能性がある [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリまたは[!INCLUDE[desktop_appname](~/includes/desktop-appname-md.md)] アプリで特に重要です。 非同期メソッドと組み合わせてで使用される、`async`と`await`Visual Basic および c# のキーワードです。  
+  
+ 使用して、<xref:System.IO.Stream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ 返されるタスクに含まれる完了前に、操作が取り消された場合、<xref:System.Threading.Tasks.TaskStatus.Canceled>値を<xref:System.Threading.Tasks.Task.Status%2A>プロパティです。  
+  
+ 例については、次を参照してください。、<xref:System.IO.Stream.WriteAsync%28System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%29>オーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" /> または <paramref name="count" /> が負の値です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="offset" /> と <paramref name="count" /> の合計が、バッファーの長さよりも大きいです。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームは書き込みをサポートしません。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームは破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">ストリームは、前の書き込み操作によって現在使用されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteByte">
+      <MemberSignature Language="C#" Value="public virtual void WriteByte (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteByte(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Stream.WriteByte(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">ストリームに書き込むバイト。</param>
+        <summary>ストリームの現在位置にバイトを書き込み、ストリームの位置を 1 バイトだけ進めます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Stream.CanWrite%2A>プロパティを現在のインスタンスが書き込みをサポートするかどうかを判断します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生します。</exception>
+        <exception cref="T:System.NotSupportedException">ストリームが書き込みをサポートしていないか、ストリームは既に閉じられてです。</exception>
+        <exception cref="T:System.ObjectDisposedException">ストリームが閉じた後でメソッドが呼び出されました。</exception>
+        <block subset="none" type="overrides">
+          <para>既定の実装<see langword="Stream" />新しいシングル バイト配列を作成し、呼び出して<see cref="M:System.IO.Stream.Write(System.Byte[],System.Int32,System.Int32)" />です。 これは、正しい正式には、効率的なことはできません。 内部バッファーと共にストリームは、このメソッドをオーバーライドし、バッファーに書き込みますを直接呼び出しごとに余分な配列の割り当てを回避するバージョンをはるかに効率的に提供する必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTimeout">
+      <MemberSignature Language="C#" Value="public virtual int WriteTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WriteTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Stream.WriteTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ストリームがタイムアウト前に書き込みを試行する期間を決定する値 (ミリ秒単位) を取得または設定します。</summary>
+        <value>ストリームがタイムアウト前に書き込みを試行する期間を決定する値 (ミリ秒単位)。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IO.Stream.WriteTimeout" />メソッドは常にスロー、<see cref="T:System.InvalidOperationException" />です。</exception>
+        <block subset="none" type="overrides">
+          <para><see cref="P:System.IO.Stream.WriteTimeout" />ストリームの適切な動作を提供するプロパティをオーバーライドする必要があります。 このプロパティを発生させる、ストリームがタイムアウトをサポートしていない場合、<see cref="T:System.InvalidOperationException" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,233 @@
+<Type Name="AddressHeaderCollection" FullName="System.ServiceModel.Channels.AddressHeaderCollection">
+  <TypeSignature Language="C#" Value="public sealed class AddressHeaderCollection : System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Channels.AddressHeader&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddressHeaderCollection extends System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.ServiceModel.Channels.AddressHeader&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.AddressHeaderCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ServiceModel.Channels.AddressHeader&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="!0">System.ServiceModel.Channels.AddressHeader</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アドレス ヘッダーの、スレッド セーフで読み取り専用のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.AddressHeaderCollection> は、<xref:System.Collections.Generic.IEnumerable%601> オブジェクトの <xref:System.ServiceModel.Channels.AddressHeader> セットで初期化した後、<xref:System.ServiceModel.Channels.AddressHeaderCollection.FindHeader%28System.String%2CSystem.String%29> メソッドを使用して、特定の修飾名を持つヘッダーを検索できます。 特定の修飾名を含むすべてのヘッダーを検索するには、<xref:System.ServiceModel.Channels.AddressHeaderCollection.FindAll%28System.String%2CSystem.String%29> メソッドを使用します。 指定したメッセージのヘッダーにヘッダーを追加するには、<xref:System.ServiceModel.Channels.AddressHeaderCollection.AddHeadersTo%28System.ServiceModel.Channels.Message%29> メソッドを使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddressHeaderCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressHeaderCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.AddressHeaderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、既定のコンストラクターを使用して <xref:System.ServiceModel.Channels.AddressHeaderCollection> クラスのインスタンスを作成する方法を示しています。  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddressHeaderCollection (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.AddressHeader&gt; addressHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Channels.AddressHeader&gt; addressHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressHeaderCollection.#ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.AddressHeader})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="addressHeaders" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Channels.AddressHeader&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="addressHeaders">コレクションの初期化に使用する <see cref="T:System.Collections.Generic.IEnumerable`1" /> オブジェクトの <see cref="T:System.ServiceModel.Channels.AddressHeader" /> セット。</param>
+        <summary>アドレス ヘッダーの列挙可能なセットを使用して、<see cref="T:System.ServiceModel.Channels.AddressHeaderCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.ServiceModel.Channels.AddressHeaderCollection> クラスのインスタンスを作成する方法を示しています。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="addressHeaders" /> パラメーターのいずれかのアドレス ヘッダーが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHeadersTo">
+      <MemberSignature Language="C#" Value="public void AddHeadersTo (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHeadersTo(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressHeaderCollection.AddHeadersTo(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">ヘッダーを追加する <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>コレクション内のヘッダーを、指定したメッセージのヘッダーに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.ServiceModel.Channels.MessageHeaders> に関連付けられており、<xref:System.ServiceModel.Channels.Message> プロパティを使用してアクセスできる <xref:System.ServiceModel.Channels.Message.Headers%2A> に、現在のコレクションのヘッダーを挿入します。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを呼び出す方法を示しています。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindAll">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.AddressHeader[] FindAll (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.AddressHeader[] FindAll(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressHeaderCollection.FindAll(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressHeader[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索されるアドレス ヘッダーの名前。</param>
+        <param name="ns">検索されるアドレス ヘッダーの名前空間。</param>
+        <summary>コレクション内で、指定した名前と名前空間を持つすべてのアドレス ヘッダーを検索します。</summary>
+        <returns>コレクション内に存在する、指定した名前と名前空間を持つすべてのアドレス ヘッダーが格納された、<see cref="T:System.Array" /> 型の <see cref="T:System.ServiceModel.Channels.AddressHeader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、このメソッドを呼び出す方法を示しています。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="ns" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindHeader">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.AddressHeader FindHeader (string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Channels.AddressHeader FindHeader(string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.AddressHeaderCollection.FindHeader(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.AddressHeader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索されるアドレス ヘッダーの名前。</param>
+        <param name="ns">検索されるアドレス ヘッダーの名前空間。</param>
+        <summary>コレクション内で、指定した名前と名前空間を持つ最初のアドレス ヘッダーを検索します。</summary>
+        <returns>コレクション内に存在する、指定した名前と名前空間を持つ <see cref="T:System.ServiceModel.Channels.AddressHeader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した名前と名前空間を持つすべてのアドレス ヘッダーをコレクションで検索する必要がある場合は、代わりに <xref:System.ServiceModel.Channels.AddressHeaderCollection.FindAll%28System.String%2CSystem.String%29> メソッドを使用します。  
+  
+ <xref:System.ArgumentException> は、コレクション内に複数のヘッダーがある場合に適した例外の種類ではありません。 コレクションに同じ名前と名前空間のエントリが複数存在する場合は、このメソッドの呼び出し元で、この例外を適切に処理する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコードは、このメソッドを呼び出す方法を示しています。  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> または <paramref name="ns" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定した <paramref name="name" /> と <paramref name="ns" /> を持つヘッダーが複数存在します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,166 @@
+<Type Name="StreamUpgradeAcceptor" FullName="System.ServiceModel.Channels.StreamUpgradeAcceptor">
+  <TypeSignature Language="C#" Value="public abstract class StreamUpgradeAcceptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StreamUpgradeAcceptor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.StreamUpgradeAcceptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カスタム アップグレード アクセプタを実装するには、この <see langword="abstract" /> 基本クラスから継承します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリーム アップグレードの例は、圧縮ストリームを直接、トランスポート ストリームの上に作成することです。  
+  
+ このクラスは、<xref:System.ServiceModel.Channels.StreamUpgradeInitiator> および <xref:System.ServiceModel.Channels.StreamUpgradeProvider> と共に使用されて、カスタム ストリーム アップグレードを実装します。  
+  
+ アップグレード プロセスの詳細については、<xref:System.ServiceModel.Channels.StreamUpgradeProvider> を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StreamUpgradeAcceptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.StreamUpgradeAcceptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptUpgrade">
+      <MemberSignature Language="C#" Value="public virtual System.IO.Stream AcceptUpgrade (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream AcceptUpgrade(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">アップグレードされるストリーム。</param>
+        <summary>トランスポート ストリームをアップグレードし、アップグレード済みのストリームを返します。</summary>
+        <returns>アップグレードされたストリームを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、追加機能 (ストリームの圧縮など) を提供することで既存のトランスポート ストリームをラップできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAcceptUpgrade">
+      <MemberSignature Language="C#" Value="public abstract IAsyncResult BeginAcceptUpgrade (System.IO.Stream stream, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IAsyncResult BeginAcceptUpgrade(class System.IO.Stream stream, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.BeginAcceptUpgrade(System.IO.Stream,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stream">アップグレードされるストリーム。</param>
+        <param name="callback"><see langword="AcceptUpgrade" /> の呼び出しが完了した時点で呼び出すメソッド。</param>
+        <param name="state"><see langword="AcceptUpgrade" /> の呼び出しに対する状態情報。</param>
+        <summary><see cref="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade(System.IO.Stream)" /> の非同期バージョン。</summary>
+        <returns>アップグレードされたストリームにアクセスするために EndAcceptUpgrade に渡される結果コードを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade%2A> の解説を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanUpgrade">
+      <MemberSignature Language="C#" Value="public abstract bool CanUpgrade (string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanUpgrade(string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.CanUpgrade(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contentType">検査するコンテンツの種類、</param>
+        <summary>要求されたアップグレードをこのアップグレード アクセプタがサポートするかどうかを判断します。</summary>
+        <returns>
+          この種類のアップグレードがサポートされる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求されたコンテンツのタイプを検査し、結果として行われるアップグレードをこのアップグレード アクセプタが実行できるかどうかを判断できます。 コンテンツ タイプは、一致するアップグレード イニシエーターの `GetNextUpgrade` メソッドから提供されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAcceptUpgrade">
+      <MemberSignature Language="C#" Value="public abstract System.IO.Stream EndAcceptUpgrade (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream EndAcceptUpgrade(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.EndAcceptUpgrade(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see langword="BeginAcceptUpgrade" /> から返される IAsyncResult。</param>
+        <summary><see cref="M:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade(System.IO.Stream)" /> の非同期バージョン。</summary>
+        <returns>アップグレードされたストリームを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ServiceModel.Channels.StreamUpgradeAcceptor.AcceptUpgrade%2A> の解説を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

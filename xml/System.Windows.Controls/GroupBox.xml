@@ -1,0 +1,107 @@
+<Type Name="GroupBox" FullName="System.Windows.Controls.GroupBox">
+  <TypeSignature Language="C#" Value="public class GroupBox : System.Windows.Controls.HeaderedContentControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi GroupBox extends System.Windows.Controls.HeaderedContentControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.GroupBox" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.HeaderedContentControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>境界線とユーザー インターフェイス (UI) のコンテンツのヘッダーを持つコンテナーを作成するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.GroupBox><xref:System.Windows.Controls.HeaderedContentControl>、つまりその<xref:System.Windows.Controls.ContentControl.Content%2A>と<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>(文字列、画像、またはパネル) などの任意の型のプロパティを指定できます。  詳細については、<xref:System.Windows.Controls.HeaderedContentControl> クラスを参照してください。  
+  
+ 次の図の例に示します、<xref:System.Windows.Controls.GroupBox>を格納している、<xref:System.Windows.Controls.TabControl>と<xref:System.Windows.Controls.Button>で囲まれている、<xref:System.Windows.Controls.StackPanel>です。  
+  
+ ![GroupBoxImage](~/add/media/groupboximage.JPG "GroupBoxImage")  
+  
+## <a name="customizing-the-groupbox-control"></a>GroupBox コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.GroupBox>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.GroupBox>を参照してください[GroupBox スタイルとテンプレート](~/docs/framework/wpf/controls/groupbox-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.GroupBox>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Controls.GroupBox>のタイトルはコントロール**担当の従業員情報**です。 コントロールを囲む、<xref:System.Windows.Controls.TabControl>と<xref:System.Windows.Controls.Button>で、<xref:System.Windows.Controls.StackPanel>です。 例のセット、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>プロパティを<xref:System.Windows.Controls.Label>です。  
+  
+ [!code-xaml[GroupBoxExample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupBoxExample/CSharp/Page1.xaml#1)]  
+  
+ 処理するために、分離コード ページで、イベント ハンドラーを定義することも必要があります、 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 、ユーザーがクリックしたときに発生するイベント、**の概要の表示**ボタンをクリックします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GroupBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GroupBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.GroupBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAccessKey">
+      <MemberSignature Language="C#" Value="protected override void OnAccessKey (System.Windows.Input.AccessKeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAccessKey(class System.Windows.Input.AccessKeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GroupBox.OnAccessKey(System.Windows.Input.AccessKeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.AccessKeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント情報</param>
+        <summary>応答するときに、<see cref="P:System.Windows.Controls.AccessText.AccessKey" />の<see cref="T:System.Windows.Controls.GroupBox" />が押されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.GroupBox.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実装が作成<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />の<see cref="T:System.Windows.Controls.GroupBox" />コントロール。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.GroupBoxAutomationPeer" /> の <see cref="T:System.Windows.Controls.GroupBox" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

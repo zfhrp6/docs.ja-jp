@@ -1,0 +1,313 @@
+<Type Name="DataControlFieldDesigner" FullName="System.Web.UI.Design.WebControls.DataControlFieldDesigner">
+  <TypeSignature Language="C#" Value="public abstract class DataControlFieldDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataControlFieldDesigner extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.DataControlFieldDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>追加およびなど、データ バインド コントロール内のデータ フィールドを編集、ビジュアル デザイナーでデザイン時サポートを提供<see cref="T:System.Web.UI.WebControls.GridView" />または<see cref="T:System.Web.UI.WebControls.DetailsView" />です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataControlFieldDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.DataControlFieldDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、空のフィールド オブジェクトを作成します。</summary>
+        <returns>空のフィールド オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.WebControls.DataControlField CreateField (System.Web.UI.Design.IDataSourceFieldSchema fieldSchema);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.DataControlField CreateField(class System.Web.UI.Design.IDataSourceFieldSchema fieldSchema) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateField(System.Web.UI.Design.IDataSourceFieldSchema)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fieldSchema" Type="System.Web.UI.Design.IDataSourceFieldSchema" />
+      </Parameters>
+      <Docs>
+        <param name="fieldSchema">データ フィールドの構造を含むスキーマの情報です。</param>
+        <summary>派生クラスでオーバーライドされると、指定したデータ フィールドの情報を使用して新しいフィールド オブジェクトを作成します。</summary>
+        <returns>新しいフィールド オブジェクトです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateTemplateField">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.WebControls.TemplateField CreateTemplateField (System.Web.UI.WebControls.DataControlField dataControlField, System.Web.UI.WebControls.DataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.TemplateField CreateTemplateField(class System.Web.UI.WebControls.DataControlField dataControlField, class System.Web.UI.WebControls.DataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateTemplateField(System.Web.UI.WebControls.DataControlField,System.Web.UI.WebControls.DataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TemplateField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.DataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">データ フィールドです。</param>
+        <param name="dataBoundControl">データ フィールドを格納するデータ バインドされたコントロール。</param>
+        <summary>派生クラスでオーバーライドされると、作成、<see cref="T:System.Web.UI.WebControls.TemplateField" />指定データ フィールドに対応するフィールドです。</summary>
+        <returns>新しいテンプレートのフィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateTemplateField%2A>にデータ フィールドを変換へのリンクをクリックすると、メソッドが呼び出される、<xref:System.Web.UI.WebControls.TemplateField>フィールド エディターにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNodeText">
+      <MemberSignature Language="C#" Value="public abstract string DefaultNodeText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultNodeText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataControlFieldDesigner.DefaultNodeText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、フィールド エディター内のデータ フィールドに表示される既定のテキストを取得します。</summary>
+        <value>フィールドのエディターでのデータ フィールドに表示される既定のテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNewDataSourceName">
+      <MemberSignature Language="C#" Value="protected string GetNewDataSourceName (Type controlType, System.Web.UI.WebControls.DataBoundControlMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance string GetNewDataSourceName(class System.Type controlType, valuetype System.Web.UI.WebControls.DataBoundControlMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetNewDataSourceName(System.Type,System.Web.UI.WebControls.DataBoundControlMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="controlType" Type="System.Type" />
+        <Parameter Name="mode" Type="System.Web.UI.WebControls.DataBoundControlMode" />
+      </Parameters>
+      <Docs>
+        <param name="controlType">作成されるコントロールの型。</param>
+        <param name="mode">コントロールのデータ入力モード。</param>
+        <summary>データ フィールドに変換するときに作成されるコントロールの一意の ID を取得、<see cref="T:System.Web.UI.WebControls.TemplateField" />です。</summary>
+        <returns>コントロールの一意の ID。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetNewDataSourceName%2A>メソッドで使用できるヘルパー メソッド、<xref:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateTemplateField%2A>にデータ フィールドを変換するリンクをクリックしたときに作成されるコントロールの一意の Id を生成する方法を<xref:System.Web.UI.WebControls.TemplateField>フィールド エディターにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNodeText">
+      <MemberSignature Language="C#" Value="public abstract string GetNodeText (System.Web.UI.WebControls.DataControlField dataControlField);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetNodeText(class System.Web.UI.WebControls.DataControlField dataControlField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetNodeText(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">データ フィールドです。</param>
+        <summary>派生クラスでオーバーライドされると、フィールド エディター内のデータ フィールドに表示される名前を取得します。</summary>
+        <returns>フィールドのエディターでのデータ フィールドに表示される名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービス オブジェクトの型。</param>
+        <summary>指定した型のサービス オブジェクトを取得します。</summary>
+        <returns>指定した型のサービス オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplate">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.ITemplate GetTemplate (System.Web.UI.WebControls.DataBoundControl control, string templateContent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.UI.ITemplate GetTemplate(class System.Web.UI.WebControls.DataBoundControl control, string templateContent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetTemplate(System.Web.UI.WebControls.DataBoundControl,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.WebControls.DataBoundControl" />
+        <Parameter Name="templateContent" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">データ バインド コントロールです。</param>
+        <param name="templateContent">テンプレートのマークアップ。</param>
+        <summary>取得、<see cref="T:System.Web.UI.ITemplate" />指定のデータ バインド コントロールのテンプレートのマークアップを含むオブジェクトです。</summary>
+        <returns>指定されたデータ バインド コントロールのテンプレートのマークアップを格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplateField">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.TemplateField GetTemplateField (System.Web.UI.WebControls.DataControlField dataControlField, System.Web.UI.WebControls.DataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Web.UI.WebControls.TemplateField GetTemplateField(class System.Web.UI.WebControls.DataControlField dataControlField, class System.Web.UI.WebControls.DataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetTemplateField(System.Web.UI.WebControls.DataControlField,System.Web.UI.WebControls.DataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TemplateField</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataControlField" Type="System.Web.UI.WebControls.DataControlField" />
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.DataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataControlField">データ フィールドです。</param>
+        <param name="dataBoundControl">データ フィールドを格納するデータ バインドされたコントロール。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.TemplateField" />指定データ フィールドのオブジェクト。</summary>
+        <returns>新しいテンプレートのフィールドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.DataControlFieldDesigner.GetTemplateField%2A>メソッドで使用できるヘルパー メソッド、<xref:System.Web.UI.Design.WebControls.DataControlFieldDesigner.CreateTemplateField%2A>メソッドを作成、新しい<xref:System.Web.UI.WebControls.TemplateField>オブジェクトを指定したデータ フィールドのプロパティを使用してそのプロパティを初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsEnabled (System.Web.UI.WebControls.DataBoundControl parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEnabled(class System.Web.UI.WebControls.DataBoundControl parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.DataControlFieldDesigner.IsEnabled(System.Web.UI.WebControls.DataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.Web.UI.WebControls.DataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="parent">データ フィールドを格納するデータ バインドされたコントロール。</param>
+        <summary>派生クラスでオーバーライドされると、フィールドのエディターで、データ フィールドが有効になっているかどうかを示す値を取得します。</summary>
+        <returns>フィールドのエディターで、データ フィールドが有効になっているかどうかを示す値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceProvider">
+      <MemberSignature Language="C#" Value="protected IServiceProvider ServiceProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IServiceProvider ServiceProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataControlFieldDesigner.ServiceProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IServiceProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドのエディターによって使用されるサービス プロバイダーの実装を取得します。</summary>
+        <value>サービス プロバイダーの実装、通常、追加のデザイン時サービスを取得するために使用できるデザイン ホストで提供します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesSchema">
+      <MemberSignature Language="C#" Value="public abstract bool UsesSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.DataControlFieldDesigner.UsesSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、スキーマ情報はデータ フィールドの読み込みに使用されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />スキーマ情報を使用して、データ フィールドを読み込む場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

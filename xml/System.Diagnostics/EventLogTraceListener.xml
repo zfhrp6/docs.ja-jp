@@ -1,0 +1,487 @@
+<Type Name="EventLogTraceListener" FullName="System.Diagnostics.EventLogTraceListener">
+  <TypeSignature Language="C#" Value="public sealed class EventLogTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventLogTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.EventLogTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トレース出力またはデバッグ出力を転送する単純なリスナーを提供する<see cref="T:System.Diagnostics.EventLog" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインスタンス<xref:System.Diagnostics.EventLogTraceListener>に追加することができます、 <xref:System.Diagnostics.Debug.Listeners%2A?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>、または<xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType>からトレース出力またはデバッグ出力を送信するコレクション、<xref:System.Diagnostics.EventLog>です。 コードでインスタンスを追加したり、アプリケーション構成ファイルで指定することができます。 追加する、 <xref:System.Diagnostics.EventLogTraceListener> 、アプリケーション構成ファイルを使用して、アプリケーションの名前に対応するファイルまたは app.config ファイルを編集、[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]プロジェクト。 このファイル内の要素を挿入、<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>型です。  
+  
+ 次の例では追加、<xref:System.Diagnostics.EventLogTraceListener>という名前のオブジェクト`myListener`を<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション。 `initializeData`パラメーターに渡されるイベント ログのソースの名前を指定する、<xref:System.Diagnostics.EventLogTraceListener.%23ctor%28System.String%29>コンス トラクターです。  
+  
+```  
+<configuration>  
+  <system.diagnostics>  
+    <trace autoflush="false" indentsize="4">  
+      <listeners>  
+        <add name="myListener"  
+          type="System.Diagnostics.EventLogTraceListener"  
+          initializeData="TraceListenerLog" />  
+      </listeners>  
+    </trace>  
+  </system.diagnostics>  
+</configuration>  
+```  
+  
+ アプリケーション構成ファイルにトレース リスナーを追加する方法の詳細については、次を参照してください。 またはします。  
+  
+> [!NOTE]
+>  場合、<xref:System.Diagnostics.EventLog.Source%2A>に関連付けられているイベント ログに対して、<xref:System.Diagnostics.EventLogTraceListener>インスタンスが存在しないか、新しいイベント ソースを作成します。 Windows Vista、Windows XP Professional、または Windows Server 2003 でイベント ソースを作成するには、管理者特権が必要です。  
+>   
+>  この要件の理由では、セキュリティを含む、すべてのイベント ログを検索して、イベント ソースが一意かどうかを確認する必要があります。 Windows Vista でのユーザー権限がありません。 セキュリティ ログにアクセスするにはしたがって、<xref:System.Security.SecurityException>がスローされます。  
+>   
+>  Windows Vista では、ユーザー アカウント制御 (UAC: User Account Control) でユーザーの権限が決定されます。 ユーザーが組み込みの Administrators グループのメンバーである場合、そのユーザーには標準ユーザー アクセス トークンおよび管理者アクセス トークンの 2 つのランタイム アクセス トークンが割り当てられています。 既定では、ユーザーは標準ユーザー ロールに所属します。 セキュリティ ログにアクセスするコードを実行するには、最初に、ユーザーの権限を標準ユーザーから管理者に昇格させる必要があります。 この操作は、アプリケーションの起動時にアプリケーション アイコンを右クリックし、管理者として実行することを指定して行うことができます。  
+  
+ クラスは、提供、<xref:System.Diagnostics.EventLogTraceListener.EventLog%2A>プロパティを取得または設定を受け取るトレース出力またはデバッグ出力をイベント ログと<xref:System.Diagnostics.EventLogTraceListener.Name%2A>プロパティの名前を保持するために、<xref:System.Diagnostics.EventLogTraceListener>です。  
+  
+ <xref:System.Diagnostics.EventLogTraceListener.Close%2A>トレース出力またはデバッグ出力を受信しないように、メソッドは、イベント ログを閉じます。 <xref:System.Diagnostics.EventLogTraceListener.Write%2A>と<xref:System.Diagnostics.EventLogTraceListener.WriteLine%2A>メソッドは、イベント ログにメッセージを書き込みます。  
+  
+> [!NOTE]
+>  イベント ログに大量のデータを書き込む可能性を回避する、<xref:System.Diagnostics.EventLogTraceListener>で指定された、省略可能なトレース データを出力しません、<xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ログに出力を送信するトレース リスナーを作成します。 新しいコードを最初に、作成<xref:System.Diagnostics.EventLogTraceListener>ソースを使用する`myEventLogSource`です。 次に、`myTraceListener`に追加、<xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>コレクション。 最後に、例では、送信する出力の行、<xref:System.Diagnostics.Trace.Listeners%2A>オブジェクト。  
+  
+ [!code-cpp[Classic EventLogTraceListener Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic EventLogTraceListener Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic EventLogTraceListener Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic EventLogTraceListener Example/CS/source.cs#1)]
+ [!code-vb[Classic EventLogTraceListener Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic EventLogTraceListener Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.EventLogTraceListener" />クラス トレース リスナーがない場合。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogTraceListener (System.Diagnostics.EventLog eventLog);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Diagnostics.EventLog eventLog) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.#ctor(System.Diagnostics.EventLog)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="eventLog" Type="System.Diagnostics.EventLog" />
+      </Parameters>
+      <Docs>
+        <param name="eventLog">書き込み先のイベント ログです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.EventLogTraceListener" />クラスの指定されたイベント ログを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventLogTraceListener (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">既存のイベント ログ ソースの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.EventLogTraceListener" />クラス、指定したソースを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public override void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベント ログを終了して、トレース出力またはデバッグ出力を受信しないようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventLog">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.EventLog EventLog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.EventLog EventLog" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogTraceListener.EventLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.EventLog</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、イベント ログに書き込めません。</summary>
+        <value>書き込み先のイベント ログです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.EventLogTraceListener.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これの名前を取得または<see cref="T:System.Diagnostics.EventLogTraceListener" />です。</summary>
+        <value>このトレース リスナーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は、イベント ログのソース名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">プロセス ID、スレッド ID、およびスタック トレース情報を含む現在のオブジェクト。</param>
+        <param name="source">出力を識別するための名前通常のトレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">To be added.</param>
+        <param name="id">イベントの数値識別子。 組み合わせ<c>ソース</c>と<c>id</c>イベントを一意に識別します。</param>
+        <param name="data">出力ファイルまたはストリームに書き込むデータ オブジェクト。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報をイベント ログに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.EventLogTraceListener.TraceData%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを出力するクラスします。  
+  
+ <xref:System.Diagnostics.EventLogTraceListener.TraceData%2A>メソッドと同様、<xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>メソッドは、自動化されたツールが、トレースに、例外インスタンスなど、追加のオブジェクトのアタッチすることもできます。  
+  
+ `eventCache`と`source`かどうか、イベントをトレースするかを決定するパラメーターが使用されます。 `id`作成に使用される、<xref:System.Diagnostics.EventInstance>オブジェクトおよび<xref:System.Diagnostics.TraceEventType>するパフォーマンスは、<xref:System.Diagnostics.EventLogEntryType>の<xref:System.Diagnostics.EventInstance.EntryType%2A>プロパティです。 <xref:System.Diagnostics.EventInstance>でイベント ログに書き込まれる、`data`オブジェクト、文字列として書式設定を使用して、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。  
+  
+> [!NOTE]
+>  最大値、`id`パラメーターは、65,535 です。 場合、`id`指定された値が 65,535 を超える場合、最大値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />指定されていません。  
+  
+ または  
+  
+ ログ エントリの文字列は、32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">プロセス ID、スレッド ID、およびスタック トレース情報を含む現在のオブジェクト。</param>
+        <param name="source">出力を識別するための名前通常のトレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">To be added.</param>
+        <param name="id">イベントの数値識別子。 組み合わせ<c>ソース</c>と<c>id</c>イベントを一意に識別します。</param>
+        <param name="data">データ オブジェクトの配列。</param>
+        <summary>トレース情報、データ オブジェクト、およびイベント情報をイベント ログの配列に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.EventLogTraceListener.TraceData%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによって呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを出力するクラスします。  
+  
+ <xref:System.Diagnostics.EventLogTraceListener.TraceData%2A>メソッドと同様、<xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>メソッドは、自動化されたツールが、トレースに、例外インスタンスなど、追加のオブジェクトのアタッチすることもできます。  
+  
+ `severity`と`id`パラメーター データを使用して、作成、<xref:System.Diagnostics.EventInstance>オブジェクトで、データ オブジェクトの配列からデータをイベント ログに書き込まれます。  
+  
+ `eventCache`と`source`かどうか、イベントをトレースするかを決定するパラメーターが使用されます。 `id`作成に使用される、<xref:System.Diagnostics.EventInstance>オブジェクトおよび<xref:System.Diagnostics.TraceEventType>するパフォーマンスは、<xref:System.Diagnostics.EventLogEntryType>の<xref:System.Diagnostics.EventInstance.EntryType%2A>プロパティです。 <xref:System.Diagnostics.EventInstance>でイベント ログに書き込まれる、`data`オブジェクトの配列を文字列の配列として書式設定を使用して、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。  
+  
+> [!NOTE]
+>  最大値、`id`パラメーターは、65,535 です。 場合、`id`指定された値が 65,535 を超える場合、最大値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />指定されていません。  
+  
+ または  
+  
+ ログ エントリの文字列は、32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">プロセス ID、スレッド ID、およびスタック トレース情報を含む現在のオブジェクト。</param>
+        <param name="source">出力を識別するための名前通常のトレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">To be added.</param>
+        <param name="id">イベントの数値識別子。 組み合わせ<c>ソース</c>と<c>id</c>イベントを一意に識別します。</param>
+        <param name="message">トレース メッセージ。</param>
+        <summary>トレース情報、メッセージ、およびイベント情報をイベント ログに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによってこれらのメソッドが呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ <xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>ツールによって自動的に処理できるイベントをトレースするメソッドです。 たとえば特定のソースから特定のイベントがトレースされる場合、監視ツールは管理者に通知できます。  
+  
+ `eventCache`と`source`かどうか、イベントをトレースするかを決定するパラメーターが使用されます。 `id`作成に使用される、<xref:System.Diagnostics.EventInstance>オブジェクトおよび<xref:System.Diagnostics.TraceEventType>するパフォーマンスは、<xref:System.Diagnostics.EventLogEntryType>の<xref:System.Diagnostics.EventInstance.EntryType%2A>プロパティです。 <xref:System.Diagnostics.EventInstance>でイベント ログに書き込まれる、`message`データを使用して、<xref:System.Diagnostics.EventLog.WriteEvent%2A>メソッドです。  
+  
+> [!NOTE]
+>  最大値、`id`パラメーターは、65,535 です。 場合、`id`指定された値が 65,535 を超える場合、最大値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />指定されていません。  
+  
+ または  
+  
+ ログ エントリの文字列は、32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">プロセス ID、スレッド ID、およびスタック トレース情報を含む現在のオブジェクト。</param>
+        <param name="source">出力を識別するための名前通常のトレース イベントを生成したアプリケーションの名前。</param>
+        <param name="eventType">To be added.</param>
+        <param name="id">イベントの数値識別子。 組み合わせ<c>ソース</c>と<c>id</c>イベントを一意に識別します。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する 0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだ <see langword="object" /> 配列。</param>
+        <summary>トレース情報、書式付き配列、オブジェクト、およびイベント情報をイベント ログに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  <xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>メソッドは、アプリケーション コードによって呼び出されるものではありません。 メソッドによってこれらのメソッドが呼び出される、 <xref:System.Diagnostics.Debug>、 <xref:System.Diagnostics.Trace>、および<xref:System.Diagnostics.TraceSource>トレース データを書き込むクラスです。  
+  
+ <xref:System.Diagnostics.EventLogTraceListener.TraceEvent%2A>ツールによって自動的に処理できるイベントをトレースするメソッドです。 たとえば特定のソースから特定のイベントがトレースされる場合、監視ツールは管理者に通知できます。  
+  
+ `eventCache`と`source`かどうか、イベントをトレースするかを決定するパラメーターが使用されます。 `id`作成に使用される、<xref:System.Diagnostics.EventInstance>オブジェクトおよび<xref:System.Diagnostics.TraceEventType>するパフォーマンスは、<xref:System.Diagnostics.EventLogEntryType>の<xref:System.Diagnostics.EventInstance.EntryType%2A>プロパティです。 <xref:System.Diagnostics.EventInstance>イベント ログに書き込まれるを使用して、<xref:System.Diagnostics.EventLog.WriteEvent%2A>から取得したメッセージと、メソッド、`format`と`args`パラメーター。 `args`オブジェクトの配列を使用して文字列に変換、<xref:System.String.Format%2A>渡して、メソッド、`format`文字列と`args`イベント ログのメッセージとして、文字列の書式を設定する配列。  
+  
+> [!NOTE]
+>  最大値、`id`パラメーターは、65,535 です。 場合、`id`指定された値が 65,535 を超える場合、最大値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />指定されていません。  
+  
+ または  
+  
+ ログ エントリの文字列は、32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>このインスタンスのイベント ログにメッセージを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="message" />32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.EventLogTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>このインスタンスのイベント ログにメッセージを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="message" />32,766 文字を超えています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

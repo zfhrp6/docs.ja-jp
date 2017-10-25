@@ -1,0 +1,190 @@
+<Type Name="KeyValueConfigurationElement" FullName="System.Configuration.KeyValueConfigurationElement">
+  <TypeSignature Language="C#" Value="public class KeyValueConfigurationElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi KeyValueConfigurationElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.KeyValueConfigurationElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キー/値ペアを格納する構成要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.KeyValueConfigurationElement>オブジェクトから継承、<xref:System.Configuration.ConfigurationElement>基本クラスです。 <xref:System.Configuration.ConfigurationElement>オブジェクトは、構成ファイル内の要素を表します。 <xref:System.Configuration.KeyValueConfigurationElement>でオブジェクトが属することができます、<xref:System.Configuration.KeyValueConfigurationCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メンバーを使用して、<xref:System.Configuration.KeyValueConfigurationElement>クラスです。  
+  
+ [!code-csharp[System.Configuration.KeyValueConfigurationCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/CS/KeyValueConfigurationCollection.cs#1)]
+ [!code-vb[System.Configuration.KeyValueConfigurationCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/VB/KeyValueConfigurationCollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KeyValueConfigurationElement (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.KeyValueConfigurationElement.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">キー、<see cref="T:System.Configuration.KeyValueConfigurationElement" />です。</param>
+        <param name="value"><see cref="T:System.Configuration.KeyValueConfigurationElement" /> の値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.KeyValueConfigurationElement" />クラスが、指定されたパラメーターに基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.KeyValueConfigurationElement.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Configuration.KeyValueConfigurationCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.KeyValueConfigurationCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/CS/KeyValueConfigurationCollection.cs#2)]
+ [!code-vb[System.Configuration.KeyValueConfigurationCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/VB/KeyValueConfigurationCollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="protected override void Init ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Init() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.KeyValueConfigurationElement.Init" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see cref="T:System.Configuration.KeyValueConfigurationElement" />を初期状態のオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Key">
+      <MemberSignature Language="C#" Value="public string Key { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Key" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.KeyValueConfigurationElement.Key" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("key", DefaultValue=Mono.Cecil.CustomAttributeArgument, Options=System.Configuration.ConfigurationPropertyOptions.IsKey)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーを取得、<see cref="T:System.Configuration.KeyValueConfigurationElement" />オブジェクト。</summary>
+        <value>キー、<see cref="T:System.Configuration.KeyValueConfigurationElement" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.KeyValueConfigurationElement.Key%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.KeyValueConfigurationCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.KeyValueConfigurationCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/CS/KeyValueConfigurationCollection.cs#5)]
+ [!code-vb[System.Configuration.KeyValueConfigurationCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/VB/KeyValueConfigurationCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.KeyValueConfigurationElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティのコレクションを取得します。</summary>
+        <value>要素のプロパティの <see cref="T:System.Configuration.ConfigurationPropertyCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.KeyValueConfigurationElement.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("value", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.KeyValueConfigurationElement" /> オブジェクトの値を取得または設定します。</summary>
+        <value><see cref="T:System.Configuration.KeyValueConfigurationElement" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.KeyValueConfigurationElement.Value%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Configuration.KeyValueConfigurationCollection>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.KeyValueConfigurationCollection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/CS/KeyValueConfigurationCollection.cs#5)]
+ [!code-vb[System.Configuration.KeyValueConfigurationCollection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.KeyValueConfigurationCollection/VB/KeyValueConfigurationCollection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

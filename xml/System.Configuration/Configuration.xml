@@ -1,0 +1,862 @@
+<Type Name="Configuration" FullName="System.Configuration.Configuration">
+  <TypeSignature Language="C#" Value="public sealed class Configuration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Configuration extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Configuration" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定のコンピューター、アプリケーション、またはリソースに適用される構成ファイルを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成設定は、構成ファイルの階層に格納されます。 <xref:System.Configuration.Configuration>クラスのインスタンスがすべてのコンピューターなどの特定の物理エンティティまたは、アプリケーションまたは Web サイトなどの論理エンティティに適用される構成ファイルから構成設定のマージされたビューを表します。 論理エンティティは、ローカル コンピューターまたはリモート サーバー上に存在します。 構成ファイルについては、次を参照してください。[構成アプリ](http://msdn.microsoft.com/library/86bd26d3-737e-4484-9782-19b17f34cd1f)と[ASP.NET 構成ファイル](http://msdn.microsoft.com/library/01505090-9114-41a7-93ca-068e2283ed3d)です。  
+  
+ 指定されたエンティティの構成ファイルが存在しない場合、<xref:System.Configuration.Configuration>オブジェクトは、Machine.config ファイルで定義されている既定の構成設定を表します。  
+  
+ 取得することができます、<xref:System.Configuration.Configuration>次のクラスを使用してオブジェクト。  
+  
+-   <xref:System.Configuration.ConfigurationManager>クラス、エンティティがクライアント アプリケーションの場合。  
+  
+-   <xref:System.Web.Configuration.WebConfigurationManager>クラス、エンティティが Web アプリケーションの場合。  
+  
+ 返すメソッドの名前、<xref:System.Configuration.Configuration>オブジェクトの「開く」で開始します。  
+  
+ 構成設定を表す構成ファイルを生成することも、<xref:System.Configuration.Configuration>オブジェクト。 そのためには、次のいずれかのメソッドを使用します。  
+  
+-   呼び出す、<xref:System.Configuration.Configuration.Save%2A>メソッドを新しい構成ファイルを作成します。  
+  
+-   呼び出す、<xref:System.Configuration.Configuration.SaveAs%2A>別の場所で新しい構成ファイルを生成する方法です。  
+  
+ 構成ファイルを作成するメソッドの名前は、[保存] で始まります。  
+  
+> [!NOTE]
+>  リモート コンピューター上の構成設定へのアクセスを有効にするには、Aspnet_regiis コマンド ライン ツールを使用します。 このツールの詳細については、次を参照してください。 [ASP.NET IIS 登録ツール (Aspnet_regiis.exe)](http://msdn.microsoft.com/library/6491c41e-e2b0-481f-9863-db3614d5f96b)です。 作成して、組み込みのセクションでは、.NET Framework に含まれる以外のカスタム構成設定へのアクセスについてを参照してください<xref:System.Configuration.ConfigurationSection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration>構成ファイル要素にアクセスするクラス。  
+  
+ [!code-csharp[System.Configuration.Configuration#31](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#31)]
+ [!code-vb[System.Configuration.Configuration#31](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#31)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Configuration.Configuration" />クラスは構成ファイルを編集するためのプログラムによるアクセスを提供します。 によって提供される"Open"メソッドのいずれかを使用する、<see cref="T:System.Web.Configuration.WebConfigurationManager" />クラス Web アプリケーションか、または、<see cref="T:System.Configuration.ConfigurationManager" />クライアント アプリケーションのクラスです。 これらのメソッドが返す、<see cref="T:System.Configuration.Configuration" />メソッドとプロパティを基になる構成ファイルの処理を提供するオブジェクト。 これらのファイルの読み取りまたは書き込みの構成情報にアクセスできます。  
+  
+ 使用する、<see cref="M:System.Configuration.Configuration.GetSection(System.String)" />メソッドまたは<see cref="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />構成情報を読み取ります。 ユーザーまたはプロセスを読み取るいる必要があります、次の権限に注意してください。  
+  
+-   現在の構成階層レベルの構成ファイルに対する読み取り権限。  
+  
+-   すべての親に対する権限の構成ファイルを読み取る。  
+  
+ アプリケーションでは、独自の構成を読み取り専用のアクセスを必要とする場合は、使用することをお勧めしますが、 <see cref="Overload:System.Web.Configuration.WebConfigurationManager.GetSection" /> Web アプリケーションのメソッドのオーバー ロードします。 クライアント アプリケーションを使用して、<see cref="M:System.Configuration.ConfigurationManager.GetSection(System.String)" />メソッドです。  
+  
+ これらのメソッドのアクセスを提供する、キャッシュされた構成値を現在のアプリケーションに対してより優れたパフォーマンスは、<see cref="T:System.Configuration.Configuration" />クラスです。  
+  
+ <block subset="none" type="note"><para>  
+ 静的なを使用する場合<see langword="GetSection" />を path パラメーターを受け取るメソッドを path パラメーターはアプリケーションに参照する必要があります、コードを実行しているそれ以外の場合、パラメーターは無視され、現在実行中のアプリケーションの構成情報が返されます。  
+  
+</para></block>  
+  
+ いずれかを使用する、<see cref="Overload:System.Configuration.Configuration.Save" />構成情報を書き込む方法です。 ユーザーまたはプロセスに書き込み、いる必要があります、次の権限に注意してください。  
+  
+-   構成ファイルおよび現在の構成階層レベルのディレクトリに対するアクセス許可を記述します。  
+  
+-   すべての構成ファイルの読み取り権限。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="AppSettings">
+      <MemberSignature Language="C#" Value="public System.Configuration.AppSettingsSection AppSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.AppSettingsSection AppSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.AppSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.AppSettingsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.AppSettingsSection" />これに適用されるオブジェクトの構成セクション<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value><see cref="T:System.Configuration.AppSettingsSection" />オブジェクトを表す、<see langword="appSettings" />これを適用する構成セクション<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.Configuration.AppSettings%2A>プロパティにアクセスし、変更、`appSettings`既定では、開いている構成ファイルで定義された構成セクション。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.AppSettings%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#5)]
+ [!code-vb[System.Configuration.Configuration#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyStringTransformer">
+      <MemberSignature Language="C#" Value="public Func&lt;string,string&gt; AssemblyStringTransformer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;string, string&gt; AssemblyStringTransformer" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.AssemblyStringTransformer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成ファイル内のアセンブリの文字列の変換に使用する関数デリゲートを指定します。</summary>
+        <value>変換が文字列を入力するデリゲート。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、構成ファイル内で見つかったアセンブリの文字列を変換するために使用する関数デリゲートを設定するには、.NET Framework 構成システムのコンシューマーを使用します。 [!INCLUDE[vs_dev10_long](~/includes/vs-dev10-long-md.md)].NET Framework の以前のバージョンのプロジェクトが対象となる場合は、このプロパティを使用します。 この関数ではアセンブリの文字列がフォーマットされている正しく対象 .NET Framework のバージョンの構成ファイルが更新されたときにことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionStrings">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConnectionStringsSection ConnectionStrings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConnectionStringsSection ConnectionStrings" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.ConnectionStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConnectionStringsSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ConnectionStringsSection" />これに適用する構成セクション オブジェクト<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.ConnectionStringsSection" />構成セクションを表すオブジェクト、<see langword="connectionStrings" />これを適用する構成セクション<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.Configuration.ConnectionStrings%2A>プロパティにアクセスし、変更、`connectionStrings`開いている構成ファイルで定義された構成セクション。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.ConnectionStrings%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#6)]
+ [!code-vb[System.Configuration.Configuration#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluationContext">
+      <MemberSignature Language="C#" Value="public System.Configuration.ContextInformation EvaluationContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ContextInformation EvaluationContext" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.EvaluationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ContextInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ContextInformation" /> オブジェクトの <see cref="T:System.Configuration.Configuration" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Configuration.ContextInformation" />オブジェクトに対して、<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Configuration.ContextInformation>オブジェクトに必要なコンテキストを提供する、<xref:System.Configuration.Configuration>が評価されているに応答するオブジェクトが基づきます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.EvaluationContext%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#7)]
+ [!code-vb[System.Configuration.Configuration#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePath">
+      <MemberSignature Language="C#" Value="public string FilePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.FilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表される、構成ファイルへの物理パスを取得<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>これによって表される、構成ファイルへの物理パス<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のこの値は、<xref:System.Configuration.Configuration.FilePath%2A>プロパティがマージされたビューを表すし、アプリケーションの実際のファイルが存在しない、親の構成ファイルへのパスが返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.FilePath%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#8)]
+ [!code-vb[System.Configuration.Configuration#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSection">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSection GetSection (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSection GetSection(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSection(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">To be added.</param>
+        <summary>指定した <see cref="T:System.Configuration.ConfigurationSection" /> オブジェクトを返します。</summary>
+        <returns>指定した<see cref="T:System.Configuration.ConfigurationSection" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成設定は、便宜上と同様の設定をグループ化したセクション内に格納されます。 <xref:System.Configuration.Configuration.GetSection%2A>メソッドは、名前を使用して、構成セクションを取得します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Configuration.Configuration.GetSection%2A>カスタム セクションにアクセスするメソッド。 情報を格納するクラスを定義する完全なサンプル コードを`CustomSection`セクションを参照してください、<xref:System.Configuration.Configuration>クラスの概要です。  
+  
+ [!code-csharp[System.Configuration.Configuration#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#3)]
+ [!code-vb[System.Configuration.Configuration#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSectionGroup">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup GetSectionGroup (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Configuration.ConfigurationSectionGroup GetSectionGroup(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.GetSectionGroup(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sectionGroupName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">To be added.</param>
+        <summary>指定された取得<see cref="T:System.Configuration.ConfigurationSectionGroup" />オブジェクト。</summary>
+        <returns><see cref="T:System.Configuration.ConfigurationSectionGroup" />指定します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.Configuration.GetSectionGroup%2A>メソッドは、固有の仕様を取得する<xref:System.Configuration.ConfigurationSectionGroup>から、<xref:System.Configuration.Configuration>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFile">
+      <MemberSignature Language="C#" Value="public bool HasFile { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasFile" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.HasFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これによって表されるリソースのファイルが存在するかどうかを示す値を取得<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>
+          <see langword="true" />構成ファイルがある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.HasFile%2A>プロパティも返します`true`リソースがこれによって表される<xref:System.Configuration.Configuration>オブジェクトは、Web.config ファイルから設定を継承します。  
+  
+ <xref:System.Configuration.Configuration.HasFile%2A>プロパティから返される`false`ときにこの<xref:System.Configuration.Configuration>オブジェクトの場所に固有の構成を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.HasFile%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#9)]
+ [!code-vb[System.Configuration.Configuration#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Locations">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationLocationCollection Locations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationLocationCollection Locations" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.Locations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationLocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内で定義されている場所を取得<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Configuration.ConfigurationLocationCollection" />内で定義されている場所を含む<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.Locations%2A>プロパティは適用される場合にのみ、<xref:System.Configuration.Configuration.HasFile%2A>プロパティから返される`true`です。 この構成はすべて、その設定を継承または場所が定義されていない、空のコレクションが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceDeclared">
+      <MemberSignature Language="C#" Value="public bool NamespaceDeclared { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NamespaceDeclared" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.NamespaceDeclared" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または構成ファイルが XML 名前空間を持つかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、構成ファイルがある XML 名前空間です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルは、XML ファイルとして書式設定は、XML 名前空間が必要ではありません。 この値が場合`true`後、<xref:System.Configuration.Configuration>オブジェクトをオープンし、ファイルには、名前空間の参照が含まれています。 設定されている場合`true`する前に、<xref:System.Configuration.Configuration>オブジェクトを保存し、名前空間参照がファイルに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootSectionGroup">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroup RootSectionGroup { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionGroup RootSectionGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.RootSectionGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルートを取得します<see cref="T:System.Configuration.ConfigurationSectionGroup" />この<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>このルート セクション グループ<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが現在の XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.Save%2A>メソッドには、これ以降に変更された構成の設定が引き続き発生する<xref:System.Configuration.Configuration>オブジェクトが作成されました。 かどうか、構成ファイルがによって表される物理的な場所に存在しません、<xref:System.Configuration.Configuration.FilePath%2A>新しい構成ファイルが作成、継承された構成とは異なる設定を格納するプロパティです。  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+> [!NOTE]
+>  構成ファイルの現在のユーザーを含むディレクトリの ACL (アクセス制御リスト) に ' Creator Owner' が表示されたときに<xref:System.Configuration.Configuration.Save%2A>ファイルの新しい所有者になり、' Creator Owner' に許可する権限を継承します。 これは、結果、現在のユーザーの特権の昇格と以前の所有者の特権を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルに書き込めませんでした。  
+  
+ \- または  
+  
+ 構成ファイルが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">To be added.</param>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが現在の XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.Save%2A>メソッドの構成設定が引き続き発生する、<xref:System.Configuration.Configuration>オブジェクトに基づいて、`saveMode`パラメーター。  
+  
+ かどうか、構成ファイルがによって表される物理的な場所に存在しません、<xref:System.Configuration.Configuration.FilePath%2A>新しい構成ファイルが作成、継承された構成とは異なる設定を格納するプロパティです。  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+> [!NOTE]
+>  構成ファイルの現在のユーザーを含むディレクトリの ACL (アクセス制御リスト) に ' Creator Owner' が表示されたときに<xref:System.Configuration.Configuration.Save%2A>ファイルの新しい所有者になり、' Creator Owner' に許可する権限を継承します。 これは、結果、現在のユーザーの特権の昇格と以前の所有者の特権を削除します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.Save%2A>カスタム セクションを保存する方法です。  
+  
+ [!code-csharp[System.Configuration.Configuration#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#2)]
+ [!code-vb[System.Configuration.Configuration#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルに書き込めませんでした。  
+  
+ \- または  
+  
+ 構成ファイルが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.Save(System.Configuration.ConfigurationSaveMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+        <Parameter Name="forceSaveAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode">To be added.</param>
+        <param name="forceUpdateAll">To be added.</param>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが現在の XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.Save%2A>メソッドの構成設定が引き続き発生する、<xref:System.Configuration.Configuration>オブジェクトに基づいて、`saveMode`と`forceSaveAll`パラメーター。  
+  
+ かどうか、構成ファイルがによって表される物理的な場所に存在しません、<xref:System.Configuration.Configuration.FilePath%2A>新しい構成ファイルが作成、継承された構成とは異なる設定を格納するプロパティ、.  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+> [!NOTE]
+>  構成ファイルの現在のユーザーを含むディレクトリの ACL (アクセス制御リスト) に ' Creator Owner' が表示されたときに<xref:System.Configuration.Configuration.Save%2A>ファイルの新しい所有者になり、' Creator Owner' に許可する権限を継承します。 これは、結果、現在のユーザーの特権の昇格と以前の所有者の特権を削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルに書き込めませんでした。  
+  
+ \- または  
+  
+ 構成ファイルが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAs">
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filename">構成ファイルの保存先のパスとファイル名。</param>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが指定された XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.SaveAs%2A>メソッドには、これ以降に変更された構成の設定が引き続き発生する<xref:System.Configuration.Configuration>オブジェクトが新しいファイルに作成されました。  
+  
+ によって表される物理的な場所に、その構成ファイルが存在しないかどうか、  
+  
+ <xref:System.Configuration.Configuration.FilePath%2A>プロパティ、継承された構成とは異なる設定を格納する新しい構成ファイルが作成する.  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルに書き込めませんでした。  
+  
+ \- または  
+  
+ 構成ファイルが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAs">
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="filename">構成ファイルの保存先のパスとファイル名。</param>
+        <param name="mode">To be added.</param>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが指定された XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.SaveAs%2A>メソッドの構成設定が引き続き発生する、<xref:System.Configuration.Configuration>を新しいファイルにオブジェクトに基づいて、`saveMode`パラメーター。  
+  
+ かどうか、構成ファイルがによって表される物理的な場所に存在しません、<xref:System.Configuration.Configuration.FilePath%2A>新しい構成ファイルが作成、継承された構成とは異なる設定を格納するプロパティ、.  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.ConfigurationErrorsException">構成ファイルに書き込めませんでした。  
+  
+ \- または  
+  
+ 構成ファイルが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveAs">
+      <MemberSignature Language="C#" Value="public void SaveAs (string filename, System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SaveAs(string filename, valuetype System.Configuration.ConfigurationSaveMode mode, bool forceUpdateAll) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Configuration.SaveAs(System.String,System.Configuration.ConfigurationSaveMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filename" Type="System.String" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+        <Parameter Name="forceSaveAll" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="filename">構成ファイルの保存先のパスとファイル名。</param>
+        <param name="mode">To be added.</param>
+        <param name="forceUpdateAll">To be added.</param>
+        <summary>これに含まれる構成設定を書き込みます<see cref="T:System.Configuration.Configuration" />オブジェクトが指定された XML 構成ファイルにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Configuration.SaveAs%2A>メソッドの構成設定が引き続き発生する、<xref:System.Configuration.Configuration>を新しいファイルにオブジェクトに基づいて、`saveMode`と`forceSaveAll`パラメーター。  
+  
+ かどうか、構成ファイルがによって表される物理的な場所に存在しません、<xref:System.Configuration.Configuration.FilePath%2A>新しい構成ファイルが作成、継承された構成とは異なる設定を格納するプロパティです。  
+  
+ この構成ファイルが変更された場合<xref:System.Configuration.Configuration>オブジェクトが作成された、実行時エラーが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Configuration.Configuration.SaveAs%2A> メソッドの使用方法を示します。  
+  
+ [!code-csharp[System.Configuration.Configuration#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#4)]
+ [!code-vb[System.Configuration.Configuration#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="filename" />null または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SectionGroups">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionGroupCollection SectionGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionGroupCollection SectionGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.SectionGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionGroupCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この構成で定義されているセクション グループのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Configuration.ConfigurationSectionGroupCollection" />のこのセクション グループのコレクションを表すコレクション<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成セクションでは、利便性のためのグループに結合できるし、機能を追加します。 アクセス、<xref:System.Configuration.Configuration.SectionGroups%2A>取得するプロパティを<xref:System.Configuration.ConfigurationSectionGroupCollection>のこのセクション グループのコレクションを表すオブジェクトを<xref:System.Configuration.Configuration>オブジェクト。 この場合<xref:System.Configuration.Configuration>オブジェクトは、継承されたビューを表しているセクション グループのマージされた一覧が返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Configuration.Configuration.SectionGroups%2A>プロパティです。  
+  
+ [!code-csharp[System.Configuration.Configuration#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#10)]
+ [!code-vb[System.Configuration.Configuration#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Sections">
+      <MemberSignature Language="C#" Value="public System.Configuration.ConfigurationSectionCollection Sections { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationSectionCollection Sections" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.Sections" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationSectionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これで定義されたセクションのコレクションを取得<see cref="T:System.Configuration.Configuration" />オブジェクト。</summary>
+        <value>これで定義されたセクションのコレクション<see cref="T:System.Configuration.Configuration" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス、<xref:System.Configuration.Configuration.Sections%2A>取得するプロパティを<xref:System.Configuration.ConfigurationSectionCollection>のこのセクションのコレクションを表すオブジェクトを<xref:System.Configuration.Configuration>オブジェクト。 この場合<xref:System.Configuration.Configuration>オブジェクトは、マージされた構成を表しているセクションのマージされた一覧が返されます。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Configuration.Configuration.Sections%2A>プロパティの値をコレクション内のセクションでは、数を表示します。  
+  
+ [!code-csharp[System.Configuration.Configuration#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.Configuration/CS/Configuration.cs#11)]
+ [!code-vb[System.Configuration.Configuration#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.Configuration/VB/Configuration.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetFramework">
+      <MemberSignature Language="C#" Value="public System.Runtime.Versioning.FrameworkName TargetFramework { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Versioning.FrameworkName TargetFramework" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.TargetFramework" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.FrameworkName</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョン以前より現在のものが対象となる場合は、.NET Framework の対象とするバージョンを指定します。</summary>
+        <value>.NET Framework の対象とするバージョンの名前。 既定値は<see langword="null" />、現在のバージョンが対象としていることを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成システムには、xml 構成オブジェクトの階層がシリアル化、ときに、このプロパティの値を確認します。 プロパティがない場合`null`、構成システムは、各構成セクション グループと構成セクションのバージョン チェックを実行します。 構成システムでは、バージョン間で変更とマークされている個々 の構成プロパティのバージョン チェックも実行します。 (詳細については、「<xref:System.Configuration.ConfigurationPropertyOptions>」を参照してください)。構成システムでは、構成セクション内の構成要素のバージョン チェックも実行します。  
+  
+ このプロパティの値が場合`null`、構成システムは、シリアル化中に、バージョン チェックを行いません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeStringTransformer">
+      <MemberSignature Language="C#" Value="public Func&lt;string,string&gt; TypeStringTransformer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Func`2&lt;string, string&gt; TypeStringTransformer" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Configuration.TypeStringTransformer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Func&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構成ファイル内の型の文字列の変換に使用する関数デリゲートを指定します。</summary>
+        <value>変換が文字列を入力するデリゲート。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、構成ファイルで見つかった型文字列の変換に使用する関数デリゲートを設定するには、.NET Framework 構成システムのコンシューマーを使用します。 [!INCLUDE[vs_dev10_long](~/includes/vs-dev10-long-md.md)].NET Framework の以前のバージョンのプロジェクトが対象となる場合は、このプロパティを使用します。 この関数では型の文字列がフォーマットされている正しく対象 .NET Framework のバージョンの構成ファイルが更新されたときにことを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

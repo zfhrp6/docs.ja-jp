@@ -1,0 +1,129 @@
+<Type Name="DialogPropertyValueEditor" FullName="System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor">
+  <TypeSignature Language="C#" Value="public class DialogPropertyValueEditor : System.Activities.Presentation.PropertyEditing.PropertyValueEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DialogPropertyValueEditor extends System.Activities.Presentation.PropertyEditing.PropertyValueEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Presentation.PropertyEditing.PropertyValueEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="P:System.Activities.Presentation.PropertyEditing.PropertyContainer.PropertyEntry" /> オブジェクトのすべてのダイアログ編集ロジックのコンテナーです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ダイアログ ボックス エディターを関連付けることができるインライン エディターを表示するには、<xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor> クラスを使用します。  
+  
+ <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor> クラスには、ダイアログ ボックス エディター用の <xref:System.Windows.DataTemplate>、またはダイアログ ボックスが呼び出されたときに呼び出されるカスタム ロジックを保持できます。  
+  
+ カスタムの <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> クラスを呼び出すには、<xref:System.Windows.DataTemplate> で <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor> を使用します。  
+  
+ ホスト ダイアログ ボックスに表示される <xref:System.Windows.DataTemplate> を指定することも、<xref:System.Windows.Forms.Form.ShowDialog> メソッドをオーバーライドして、既存のダイアログ ボックスやシステム ダイアログ ボックスを再利用することもできます。  
+  
+ 次に、<xref:System.Windows.DataTemplate> または <xref:System.Windows.Forms.Form.ShowDialog> メソッドのいずれが使用されるかを決定するルールを示します。  
+  
+ <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.DialogEditorTemplate%2A> プロパティが [!INCLUDE[null](~/includes/null-md.md)] 参照 (Visual Basic では Nothing) ではない場合、ホストのスタイルを提供するホスト固有のダイアログ ボックスに <xref:System.Windows.DataTemplate> がホストされます。 <xref:System.Windows.Forms.Form.ShowDialog> は呼び出されません。  
+  
+ <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.DialogEditorTemplate%2A> プロパティが [!INCLUDE[null](~/includes/null-md.md)] 参照 (Visual Basic では Nothing) である場合、仮想 <xref:System.Windows.Forms.Form.ShowDialog> メソッドが呼び出されます。このメソッドをオーバーライドして、任意のダイアログ ボックスを表示できます。  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogPropertyValueEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>特定のテンプレートを指定しないで、<see cref="T:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DialogPropertyValueEditor (System.Windows.DataTemplate dialogEditorTemplate, System.Windows.DataTemplate inlineEditorTemplate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.DataTemplate dialogEditorTemplate, class System.Windows.DataTemplate inlineEditorTemplate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.#ctor(System.Windows.DataTemplate,System.Windows.DataTemplate)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dialogEditorTemplate" Type="System.Windows.DataTemplate" />
+        <Parameter Name="inlineEditorTemplate" Type="System.Windows.DataTemplate" />
+      </Parameters>
+      <Docs>
+        <param name="dialogEditorTemplate">ホスト固有のダイアログ枠にホストされ、<see cref="T:System.Window.DataTemplate" /> が、編集されるプロパティに対応する <see cref="P:System.Activities.ActivityContext.DataContext" /> に設定された <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" />。</param>
+        <param name="inlineEditorTemplate">インライン エディター ユーザー インターフェイスに使用される <see cref="T:System.Windows.DataTemplate" />。 使用すると、<see cref="P:System.Activities.ActivityContext.DataContext" /> が、編集されるプロパティに対応する <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValue" /> に設定されます。</param>
+        <summary>指定したダイアログ エディターおよびインライン エディターのテンプレートを使用して、<see cref="T:System.Activities.Design.PropertyEditing.DialogPropertyValueEditor" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DialogEditorTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate DialogEditorTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate DialogEditorTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.DialogEditorTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト固有のダイアログによってホストされ、<see cref="T:System.Windows.DataTemplate" /> が <see cref="P:System.Activities.ActivityContext.DataContext" /> に設定された <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyEntry.PropertyValue" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.DataTemplate" />ホスト固有のダイアログによってホストされているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返す場合`null`、<xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.ShowDialog%2A>代わりにメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="public virtual void ShowDialog (System.Activities.Presentation.PropertyEditing.PropertyValue propertyValue, System.Windows.IInputElement commandSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ShowDialog(class System.Activities.Presentation.PropertyEditing.PropertyValue propertyValue, class System.Windows.IInputElement commandSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.ShowDialog(System.Activities.Presentation.PropertyEditing.PropertyValue,System.Windows.IInputElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyValue" Type="System.Activities.Presentation.PropertyEditing.PropertyValue" />
+        <Parameter Name="commandSource" Type="System.Windows.IInputElement" />
+      </Parameters>
+      <Docs>
+        <param name="propertyValue">編集されるプロパティの <see cref="P:System.Activities.Presentation.PropertyEditing.PropertyEntry.PropertyValue" />。</param>
+        <param name="commandSource"><see cref="T:System.Windows.IinputElement" /> の実行のソースとして使用可能な <see cref="T:System.Activities.Presentation.PropertyEditing.PropertyValueEditorCommands" />。</param>
+        <summary><see cref="P:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.DialogEditorTemplate" /> が null であり、ユーザーがダイアログを呼び出した場合に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドはホストによって処理されますが、カスタム ダイアログはホストのビジュアル ツリーの一部とはならないため、`commandSource` によってホストのビジュアル ツリーの一部である <xref:System.Windows.IInputElement> が公開されます。これを使用して、プロパティ編集コマンドを適切に実行できます。 このメソッドをオーバーライドすると、任意のカスタム ダイアログ ロジックを実装できます。たとえば、既存のシステム ダイアログを呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

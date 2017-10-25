@@ -1,0 +1,121 @@
+<Type Name="IWebPartField" FullName="System.Web.UI.WebControls.WebParts.IWebPartField">
+  <TypeSignature Language="C#" Value="public interface IWebPartField" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebPartField" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebPartField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>単一のデータ フィールドを使用して 2 つのサーバー コントロールを接続するためのプロバイダー インターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、Web パーツの接続で使用するよう設計されています。 内に存在する 2 つのサーバー コントロール、Web パーツ接続において、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンは、コンシューマーとして機能する 1 つの制御と、その他のプロバイダーとして機能するコントロール接続と共有のデータを確立します。 Web パーツ接続でデータを共有するためのメカニズムは、コールバック メソッドを使用して、プロバイダーがコンシューマーに機能する、インターフェイス インスタンスです。 接続を確立するためにコンシューマーおよびプロバイダー必要があります両方動作と同じインターフェイスの種類データを共有します。 トランスフォーマーを使用して、コントロールを接続することも可能では、コンシューマーが、プロバイダーによって送信されたインターフェイスの型を認識しない場合 (、<xref:System.Web.UI.WebControls.WebParts.WebPartTransformer>オブジェクト)、コンシューマーによって認識される型に、プロバイダーによって送信されたインターフェイスのインスタンスに変換します。 接続の詳細については、「<xref:System.Web.UI.WebControls.WebParts.WebPartConnection>と[Web パーツ接続の概要](http://msdn.microsoft.com/library/d98cfd0f-ebd6-4871-89d5-abbd2cdef67b)です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスは、Web パーツ コントロールのデータ フィールドに基づく接続を作成するための標準インターフェイスとしてセットに含まれているプロバイダーのインターフェイスです。 Web パーツの接続で使用するカスタムのインターフェイスを作成することもできますが、多くのデータ ドリブンの Web アプリケーション、共通の行に基づいて接続を作成すると便利です (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.IWebPartRow>インターフェイス)、テーブル (詳細については、次を参照してください。、<xref:System.Web.UI.WebControls.WebParts.IWebPartTable>インターフェイス)、またはデータからフィールドを使用して、ソース、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。 一般的な接続で、<xref:System.Web.UI.WebControls.WebParts.WebPart>プロバイダーを実装するように機能を制御、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスし、特殊なコールバック メソッドのコンシューマーにインターフェイスのインスタンスを提供します。 たとえば、プロバイダーを実装する<xref:System.Web.UI.WebControls.WebParts.IWebPartField>Web ユーザーの郵便番号データを含む、ユーザー情報テーブル内のフィールドのインターフェイスです。 別<xref:System.Web.UI.WebControls.WebParts.WebPart>コンシューマー インターフェイス インスタンスが表示される可能性があります郵便番号データを抽出しを検索し、郵便番号に基づく天気情報を表示する特別なメソッドを定義するように動作するを制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスが公開されている 2 つのメンバーです。 <xref:System.Web.UI.WebControls.WebParts.IWebPartField.Schema%2A>にカプセル化されたデータ フィールドに関するスキーマ情報を返します、<xref:System.ComponentModel.PropertyDescriptor>オブジェクト。 <xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A>メソッド (プロバイダー コントロールなど) を実装者が、コールバック メソッドが呼び出されたときに、インターフェイスのインスタンスのフィールドのデータの取得に使用するメソッドを宣言しています。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して 2 つのコントロール間の静的な接続を作成する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。 このコード例では、3 つの部分があります。  
+  
+-   2 つのカスタムのコードをソース<xref:System.Web.UI.WebControls.WebParts.WebPart>接続を使用して、構成できる、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>プロバイダーでは、コンシューマーとして機能する 1 つのコントロールとのインターフェイスです。  
+  
+-   コントロールをホストし、永続化の形式で静的な接続を宣言する Web ページ。  
+  
+-   コード例を実行時の動作の説明です。  
+  
+ コード例の最初の部分では、2 つのカスタム コントロールのソース コードを示します。 実装するプロバイダーのコードを 1 つ目は、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。 例ではわかりやすくするため、プロバイダーは、データベースに接続するのではなく、一部のデータとテーブルを作成します。 `GetConnectionInterface`メソッドは、プロバイダーの接続ポイントをコンシューマーにインターフェイスのインスタンスを返すコールバック メソッドとして機能します。 コンシューマーとそのインターフェイスのインスタンスをプロバイダーから取得という名前のメソッドで`SetConnectionInterface`でマークされている、`ConnectionConsumer`属性。 インターフェイス、コンシューマーのインスタンスを取得した後、`OnPreRender`メソッドの実装を呼び出す、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A>実際のデータを取得する、プロバイダーのメソッドです。  
+  
+ コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的なコンパイルを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_IWebPartField_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/CS/IFieldSample.cs#2)]
+ [!code-vb[WebParts_IWebPartField_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/VB/IFieldSample.vb#2)]  
+  
+ コード例の 2 番目の部分は、静的な接続とホスト コントロールを宣言する Web ページです。 ページの上部には、 `Register` App_Code ディレクトリに含まれるソース コードの名前空間を宣言します。 使用して接続を宣言、`<asp:webpartconnection>`要素。 コンシューマーおよびプロバイダーのカスタム コントロールが宣言されている、`<zonetemplate>`内の要素、`<asp:webpartzone>`接続できるようにするために必要である要素 (から継承するゾーン内に存在する必要がありますが、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>クラス)。  
+  
+ [!code-aspx-csharp[WebParts_IWebPartField_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/CS/defaultcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebPartField_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/VB/Defaultvb.aspx#1)]  
+  
+ ブラウザーでページを読み込みます。 コンシューマー コントロール プロバイダーのインスタンスで使用できる、指定したフィールドから提供されるデータを表示、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetFieldValue">
+      <MemberSignature Language="C#" Value="public void GetFieldValue (System.Web.UI.WebControls.WebParts.FieldCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetFieldValue(class System.Web.UI.WebControls.WebParts.FieldCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue(System.Web.UI.WebControls.WebParts.FieldCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Web.UI.WebControls.WebParts.FieldCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">A<see cref="T:System.Web.UI.WebControls.WebParts.FieldCallback" />データを受け取るメソッドのアドレスが含まれるデリゲート。</param>
+        <summary>インターフェイスによって 2 つの間の接続の基礎として使用されているフィールドの値を返します<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、インターフェイスによって渡されるデータ フィールドの値を取得できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装との使用を示しています。、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A>メソッドです。 完全な例のクラスの概要に表示されます、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。 プロバイダーのコントロールを実装する、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A>データ テーブル内の特定のフィールドの値を返すメソッド。 コンシューマー コントロールは、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.GetFieldValue%2A>メソッドでその`OnPreRender`メソッド、データの値をページに書き込むことができるようにします。  
+  
+ [!code-csharp[WebParts_IWebPartField_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/CS/IFieldSample.cs#2)]
+ [!code-vb[WebParts_IWebPartField_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/VB/IFieldSample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schema">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptor Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.PropertyDescriptor Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebPartField.Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つのデータを共有するために使用されるデータ フィールドのスキーマ情報を取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>A<see cref="T:System.ComponentModel.PropertyDescriptor" />データ フィールドのスキーマ情報を説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、インターフェイスによって渡されるデータのプロパティ情報を提供します。 トランスフォーマーとコンシューマーのコントロールがコンテンツの種類に関する情報を取得するには、このプロパティのクエリを実行しに含まれているフィールドの他の詳細、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>プロバイダーによって送信されたインターフェイスのインスタンス。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装との使用を示しています。、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.Schema%2A>プロパティです。 完全な例のクラスの概要に表示されます、<xref:System.Web.UI.WebControls.WebParts.IWebPartField>インターフェイスです。 プロバイダーのコントロールを実装する、<xref:System.Web.UI.WebControls.WebParts.IWebPartField.Schema%2A>プロパティです。 次に、その`GetFieldValue`メソッド、プロパティを使用して、フィールドの値を取得します。  
+  
+ [!code-csharp[WebParts_IWebPartField_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/CS/IFieldSample.cs#2)]
+ [!code-vb[WebParts_IWebPartField_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebPartField_Overview/VB/IFieldSample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

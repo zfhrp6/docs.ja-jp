@@ -1,0 +1,268 @@
+<Type Name="PrinterUnitConvert" FullName="System.Drawing.Printing.PrinterUnitConvert">
+  <TypeSignature Language="C#" Value="public sealed class PrinterUnitConvert" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PrinterUnitConvert extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.PrinterUnitConvert" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Win32 印刷 API と相互運用するときに役立つ一連の変換メソッドを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このクラスは直接呼び出されません。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static double Convert (double value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Convert(float64 value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Double,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換されている <see cref="T:System.Drawing.Point" />。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>ある <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型の倍精度浮動小数点数を別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型に変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す倍精度浮動小数点数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Point Convert (System.Drawing.Point value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Point Convert(valuetype System.Drawing.Point value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Drawing.Point,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Point" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換されている <see cref="T:System.Drawing.Point" />。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>ある <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型から別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型へと <see cref="T:System.Drawing.Point" /> を変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す <see cref="T:System.Drawing.Point" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Printing.Margins Convert (System.Drawing.Printing.Margins value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Printing.Margins Convert(class System.Drawing.Printing.Margins value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Drawing.Printing.Margins,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Printing.Margins</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Printing.Margins" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換されている <see cref="T:System.Drawing.Printing.Margins" />。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>ある <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型から別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型へと <see cref="T:System.Drawing.Printing.Margins" /> を変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す <see cref="T:System.Drawing.Printing.Margins" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Rectangle Convert (System.Drawing.Rectangle value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Rectangle Convert(valuetype System.Drawing.Rectangle value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Drawing.Rectangle,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Rectangle" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換されている <see cref="T:System.Drawing.Rectangle" />。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>ある <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型から別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型へと <see cref="T:System.Drawing.Rectangle" /> を変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す <see cref="T:System.Drawing.Rectangle" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Size Convert (System.Drawing.Size value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Drawing.Size Convert(valuetype System.Drawing.Size value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Drawing.Size,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Drawing.Size" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換されている <see cref="T:System.Drawing.Size" />。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>ある <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型から別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型へと <see cref="T:System.Drawing.Size" /> を変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す <see cref="T:System.Drawing.Size" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public static int Convert (int value, System.Drawing.Printing.PrinterUnit fromUnit, System.Drawing.Printing.PrinterUnit toUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Convert(int32 value, valuetype System.Drawing.Printing.PrinterUnit fromUnit, valuetype System.Drawing.Printing.PrinterUnit toUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.PrinterUnitConvert.Convert(System.Int32,System.Drawing.Printing.PrinterUnit,System.Drawing.Printing.PrinterUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="fromUnit" Type="System.Drawing.Printing.PrinterUnit" />
+        <Parameter Name="toUnit" Type="System.Drawing.Printing.PrinterUnit" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換される値。</param>
+        <param name="fromUnit">変換前の単位。</param>
+        <param name="toUnit">変換後の単位。</param>
+        <summary>32 ビット符号付き整数を 1 つの <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型から別の <see cref="T:System.Drawing.Printing.PrinterUnit" /> 型に変換します。</summary>
+        <returns>変換された <see cref="T:System.Drawing.Printing.PrinterUnit" /> を表す 32 ビット符号付き整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、<xref:System.Drawing.Printing.PrinterUnit>値。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`Display`|既定の単位 (0.01 インチ)。|  
+|`ThousandthsOfAnInch`|1 つの 10,000 分の 1 インチ (0.001 インチ)。|  
+|`HundredthsOfAMillimeter`|ミリメートル (0.01 mm) の 1/100 です。|  
+|`TenthsOfAMillimeter`|1 つの 10 分のミリメートル (0.1 mm)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

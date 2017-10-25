@@ -1,0 +1,77 @@
+<Type Name="StretchDirection" FullName="System.Windows.Controls.StretchDirection">
+  <TypeSignature Language="C#" Value="public enum StretchDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StretchDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.StretchDirection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>コンテンツにスケーリングがどのように適用されるかを記述し、指定された軸の種類にスケーリングを制限します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、のインスタンスを作成する方法を示しています。<xref:System.Windows.Controls.Viewbox>設定と、<xref:System.Windows.Controls.StretchDirection>コードを使用してコンテンツのです。  
+  
+ [!code-cpp[ViewBoxCode#2](~/samples/snippets/cpp/VS_Snippets_Wpf/ViewBoxCode/CPP/ViewboxCode.cpp#2)]
+ [!code-csharp[ViewBoxCode#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ViewBoxCode/Csharp/ViewboxCode.cs#2)]
+ [!code-vb[ViewBoxCode#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ViewBoxCode/VisualBasic/ViewBoxCodeVB.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Both">
+      <MemberSignature Language="C#" Value="Both" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.StretchDirection Both = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StretchDirection.Both" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StretchDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツによると、親に合わせて拡大、<see cref="T:System.Windows.Media.Stretch" />モード。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DownOnly">
+      <MemberSignature Language="C#" Value="DownOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.StretchDirection DownOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StretchDirection.DownOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StretchDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツが親よりも大きい場合のみ、縮小方向にスケーリングします。 コンテンツの方が親より小さくても、拡大方向にはスケーリングしません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UpOnly">
+      <MemberSignature Language="C#" Value="UpOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Controls.StretchDirection UpOnly = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.StretchDirection.UpOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.StretchDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツが親よりも小さい場合のみ、拡大方向にスケーリングします。 コンテンツの方が親より大きくても、縮小方向にはスケーリングしません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

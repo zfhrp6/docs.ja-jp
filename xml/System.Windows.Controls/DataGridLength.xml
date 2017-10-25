@@ -1,0 +1,510 @@
+<Type Name="DataGridLength" FullName="System.Windows.Controls.DataGridLength">
+  <TypeSignature Language="C#" Value="public struct DataGridLength : IEquatable&lt;System.Windows.Controls.DataGridLength&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit DataGridLength extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Controls.DataGridLength&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridLength" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Controls.DataGridLength&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Controls.DataGridLengthConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内の要素の長さを表す、<see cref="T:System.Windows.Controls.DataGrid" />コントロール。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridLength (double pixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 pixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pixels" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="pixels">初期化する長さを示す絶対ピクセル値 (96 ピクセル/インチ)。</param>
+        <summary>ピクセル単位の絶対値を使用して、<see cref="T:System.Windows.Controls.DataGridLength" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="pixels" /> が <see cref="F:System.Double.NaN" />、<see cref="F:System.Double.NegativeInfinity" />、または <see cref="F:System.Double.PositiveInfinity" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridLength (double value, System.Windows.Controls.DataGridLengthUnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Controls.DataGridLengthUnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.#ctor(System.Double,System.Windows.Controls.DataGridLengthUnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Controls.DataGridLengthUnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value">要素の要求されたサイズ。</param>
+        <param name="type">要素のサイズを計算する方法を決定するために使用する型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.DataGridLength" />指定した値と単位を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="F:System.Double.NaN" />、<see cref="F:System.Double.NegativeInfinity" />、または <see cref="F:System.Double.PositiveInfinity" /> です。  
+  
+ または  
+  
+ <paramref name="type" />is not <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Auto" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Pixel" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Star" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToCells" />, or <see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToHeader" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridLength (double value, System.Windows.Controls.DataGridLengthUnitType type, double desiredValue, double displayValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Controls.DataGridLengthUnitType type, float64 desiredValue, float64 displayValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.#ctor(System.Double,System.Windows.Controls.DataGridLengthUnitType,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.Controls.DataGridLengthUnitType" />
+        <Parameter Name="desiredValue" Type="System.Double" />
+        <Parameter Name="displayValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">要素の要求されたサイズ。</param>
+        <param name="type">要素のサイズを計算する方法を決定するために使用する型。</param>
+        <param name="desiredValue">要素に必要な集計サイズ。</param>
+        <param name="displayValue">要素の割り当てのサイズ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.DataGridLength" />指定された値、単位、目的の値を持つクラスし、値を表示します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" /> が <see cref="F:System.Double.NaN" />、<see cref="F:System.Double.NegativeInfinity" />、または <see cref="F:System.Double.PositiveInfinity" /> です。  
+  
+ または  
+  
+ <paramref name="type" />is not <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Auto" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Pixel" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.Star" />, <see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToCells" />, or <see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToHeader" />.  
+  
+ または  
+  
+ <paramref name="desiredValue" /> は <see cref="F:System.Double.NegativeInfinity" /> または <see cref="F:System.Double.PositiveInfinity" /> です。  
+  
+ または  
+  
+ <paramref name="displayValue" /> は <see cref="F:System.Double.NegativeInfinity" /> または <see cref="F:System.Double.PositiveInfinity" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.DataGridLength Auto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Controls.DataGridLength Auto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.Auto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.DataGridLength" />標準の自動サイズ変更モードを表す構造です。</summary>
+        <value>A<see cref="T:System.Windows.Controls.DataGridLength" />標準の自動サイズ変更モードを表す構造です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準の自動サイズ変更モード サイズ<xref:System.Windows.Controls.DataGrid>セルと列ヘッダーの内容に基づく列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesiredValue">
+      <MemberSignature Language="C#" Value="public double DesiredValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DesiredValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.DesiredValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素に必要な計算されたピクセル値を取得します。</summary>
+        <value>要素のサイズの計算されたピクセルの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayValue">
+      <MemberSignature Language="C#" Value="public double DisplayValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 DisplayValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.DisplayValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のサイズに割り当てられているピクセル値を取得します。</summary>
+        <value>要素に割り当てられたピクセルの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のインスタンスと比較する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Controls.DataGridLength" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Controls.DataGridLength" />と同じ値を現在のサイズ変更モード<see cref="T:System.Windows.Controls.DataGridLength" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Controls.DataGridLength other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Controls.DataGridLength other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.Equals(System.Windows.Controls.DataGridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Windows.Controls.DataGridLength" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Windows.Controls.DataGridLength" />を現在のインスタンスを比較します。</param>
+        <summary>指定した <see cref="T:System.Windows.Controls.DataGridLength" /> が現在の <see cref="T:System.Windows.Controls.DataGridLength" /> と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Controls.DataGridLength" />と同じ値を現在のサイズ変更モード<see cref="T:System.Windows.Controls.DataGridLength" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを取得、<see cref="T:System.Windows.Controls.DataGridLength" />です。</summary>
+        <returns>現在の <see cref="T:System.Windows.Controls.DataGridLength" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbsolute">
+      <MemberSignature Language="C#" Value="public bool IsAbsolute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbsolute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.IsAbsolute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のインスタンス サイズを固定ピクセル値に基づくかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.Pixel" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuto">
+      <MemberSignature Language="C#" Value="public bool IsAuto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.IsAuto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、両方のセルのコンテンツ、および列ヘッダーに基づいて要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.Auto" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSizeToCells">
+      <MemberSignature Language="C#" Value="public bool IsSizeToCells { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSizeToCells" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.IsSizeToCells" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、セルの内容に基づいて要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToCells" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSizeToHeader">
+      <MemberSignature Language="C#" Value="public bool IsSizeToHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSizeToHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.IsSizeToHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、ヘッダーに基づいて要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.SizeToHeader" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStar">
+      <MemberSignature Language="C#" Value="public bool IsStar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.IsStar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインスタンスが、使用可能な領域の加重比率に基づいて要素のサイズを自動的にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.Star" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Controls.DataGridLength gl1, System.Windows.Controls.DataGridLength gl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Controls.DataGridLength gl1, valuetype System.Windows.Controls.DataGridLength gl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.op_Equality(System.Windows.Controls.DataGridLength,System.Windows.Controls.DataGridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gl1" Type="System.Windows.Controls.DataGridLength" />
+        <Parameter Name="gl2" Type="System.Windows.Controls.DataGridLength" />
+      </Parameters>
+      <Docs>
+        <param name="gl1">最初の<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスを比較します。</param>
+        <param name="gl2">2 番目<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.DataGridLength" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスがある、同じ値またはサイズ変更モードです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Windows.Controls.DataGridLength (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Controls.DataGridLength op_Implicit(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.op_Implicit(System.Double)~System.Windows.Controls.DataGridLength" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLength</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Controls.DataGridLength gl1, System.Windows.Controls.DataGridLength gl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Controls.DataGridLength gl1, valuetype System.Windows.Controls.DataGridLength gl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.op_Inequality(System.Windows.Controls.DataGridLength,System.Windows.Controls.DataGridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gl1" Type="System.Windows.Controls.DataGridLength" />
+        <Parameter Name="gl2" Type="System.Windows.Controls.DataGridLength" />
+      </Parameters>
+      <Docs>
+        <param name="gl1">最初の<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスを比較します。</param>
+        <param name="gl2">2 番目<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Controls.DataGridLength" />両者が等しくないかどうかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />場合、2 つ<see cref="T:System.Windows.Controls.DataGridLength" />インスタンスが同じ値またはサイズ変更モードがない場合は、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToCells">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.DataGridLength SizeToCells { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Controls.DataGridLength SizeToCells" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.SizeToCells" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.DataGridLength" />セル ベースの自動サイズ変更モードを表す構造です。</summary>
+        <value>A<see cref="T:System.Windows.Controls.DataGridLength" />セル ベースの自動サイズ変更モードを表す構造です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セルに基づく自動サイズ変更モード サイズ<xref:System.Windows.Controls.DataGrid>列ヘッダーを含まない、列内のセルの内容に基づく列です。 このサイズ変更モードと、コンテンツを展開する列がビューをスクロールして、現在の列のサイズよりも大きい。 コンテンツのスクロールされて見えない後に、列は圧縮されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToHeader">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.DataGridLength SizeToHeader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Controls.DataGridLength SizeToHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.SizeToHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.DataGridLength" />ヘッダー ベースの自動サイズ変更モードを表す構造です。</summary>
+        <value>A<see cref="T:System.Windows.Controls.DataGridLength" />ヘッダー ベースの自動サイズ変更モードを表す構造です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダーに基づく自動サイズ変更モード サイズ<xref:System.Windows.Controls.DataGrid>のみの列ヘッダーの内容に基づく列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridLength.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnitType">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridLengthUnitType UnitType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.DataGridLengthUnitType UnitType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.UnitType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridLengthUnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のサイズを計算する方法を決定するために使用する型を取得します。</summary>
+        <value>サイズを決定する方法を表す型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridLength.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>絶対値の取得、 <see cref="T:System.Windows.Controls.DataGridLength" /> (ピクセル単位)。</summary>
+        <value>絶対値、 <see cref="T:System.Windows.Controls.DataGridLength" /> 1.0 の場合、または (ピクセル単位) で、<see cref="P:System.Windows.Controls.DataGridLength.UnitType" />プロパティに設定されている<see cref="F:System.Windows.Controls.DataGridLengthUnitType.Auto" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

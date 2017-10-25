@@ -1,0 +1,181 @@
+<Type Name="DiscoveryService" FullName="System.ServiceModel.Discovery.DiscoveryService">
+  <TypeSignature Language="C#" Value="public abstract class DiscoveryService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DiscoveryService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryService" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>探索サービスの実装に使用される抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> のサービスへの追加時には、検索要求および解決要求の処理に既定の <xref:System.ServiceModel.Discovery.DiscoveryService> 実装が使用されます。 このクラスを拡張すると、カスタムの一致アルゴリズムを使用した検索要求への応答など、既定の実装とは異なる動作を持つカスタム探索サービスを実装できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryService (System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator discoveryMessageSequenceGenerator);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator discoveryMessageSequenceGenerator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.#ctor(System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryMessageSequenceGenerator" Type="System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryMessageSequenceGenerator">探索メッセージ シーケンス ジェネレーター。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Discovery.DiscoveryService" /> を使用して、<see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryService (System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator discoveryMessageSequenceGenerator, int duplicateMessageHistoryLength);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator discoveryMessageSequenceGenerator, int32 duplicateMessageHistoryLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.#ctor(System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryMessageSequenceGenerator" Type="System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" />
+        <Parameter Name="duplicateMessageHistoryLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryMessageSequenceGenerator">探索メッセージ シーケンス ジェネレーター。</param>
+        <param name="duplicateMessageHistoryLength">重複するメッセージを識別するためにトランスポートで使用されるメッセージ ハッシュの最大数。 既定値は 0 です。</param>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryService" /> と重複するメッセージの履歴の長さを指定して <see cref="T:System.ServiceModel.Discovery.DiscoveryMessageSequenceGenerator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginFind">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginFind (System.ServiceModel.Discovery.FindRequestContext findRequestContext, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginFind(class System.ServiceModel.Discovery.FindRequestContext findRequestContext, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.OnBeginFind(System.ServiceModel.Discovery.FindRequestContext,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="findRequestContext" Type="System.ServiceModel.Discovery.FindRequestContext" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="findRequestContext">探索するサービスを説明する検索要求コンテキスト。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、検索操作を処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索結果は、<xref:System.ServiceModel.Discovery.FindRequestContext.AddMatchingEndpoint%2A> メソッドを 1 回以上呼び出すことによって返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginResolve">
+      <MemberSignature Language="C#" Value="protected abstract IAsyncResult OnBeginResolve (System.ServiceModel.Discovery.ResolveCriteria resolveCriteria, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult OnBeginResolve(class System.ServiceModel.Discovery.ResolveCriteria resolveCriteria, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.OnBeginResolve(System.ServiceModel.Discovery.ResolveCriteria,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resolveCriteria" Type="System.ServiceModel.Discovery.ResolveCriteria" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resolveCriteria">探索するサービスを説明する検索要求コンテキスト。</param>
+        <param name="callback">操作が完了したときに呼び出すコールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>このメソッドをオーバーライドすると、解決操作を処理できます。</summary>
+        <returns>保留中の非同期操作への参照。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndFind">
+      <MemberSignature Language="C#" Value="protected abstract void OnEndFind (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndFind(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.OnEndFind(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、検索操作の完了を処理できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndResolve">
+      <MemberSignature Language="C#" Value="protected abstract System.ServiceModel.Discovery.EndpointDiscoveryMetadata OnEndResolve (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ServiceModel.Discovery.EndpointDiscoveryMetadata OnEndResolve(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryService.OnEndResolve(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.EndpointDiscoveryMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">完了済みの非同期操作への参照。</param>
+        <summary>このメソッドをオーバーライドすると、解決操作の完了を処理できます。</summary>
+        <returns>解決済みのサービスを説明するエンドポイント探索メタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

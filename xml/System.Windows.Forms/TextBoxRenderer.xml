@@ -1,0 +1,312 @@
+<Type Name="TextBoxRenderer" FullName="System.Windows.Forms.TextBoxRenderer">
+  <TypeSignature Language="C#" Value="public sealed class TextBoxRenderer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TextBoxRenderer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.TextBoxRenderer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Visual スタイルを使用して、テキスト ボックス コントロールを表示するために使用されるメソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TextBoxRenderer>クラスのセットを提供`static`オペレーティング システムの現在の visual スタイルでのテキスト ボックス コントロールを表示するために使用できるメソッドです。 コントロールのレンダリングとは、コントロールのユーザー インターフェイスを描画することを意味します。 これは、現在の visual スタイルの外観を持つカスタム コントロールを描画する場合に便利です。 テキスト ボックスを描画するのいずれかの操作を使用して、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>メソッドです。 これらのメソッドは、さまざまなテキストの境界を指定して適用するテキストの書式設定などのオプションを提供します。  
+  
+ オペレーティング システムで visual スタイルが有効になっている visual スタイルがアプリケーション ウィンドウのクライアント領域に適用されている場合<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>テキスト ボックスに現在の visual スタイルが描画されます。 それ以外の場合、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>がスローされます、<xref:System.InvalidOperationException>です。 このクラスのメンバーを使用できるかどうかを判断するのには、値を確認することができます、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティです。  
+  
+ このクラスの機能をラップする、<xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer?displayProperty=nameWithType>の要素のいずれかに設定されている、<xref:System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox.TextEdit?displayProperty=nameWithType>クラスです。 詳細については、次を参照してください。 [Visual スタイルを使用しているコントロールのレンダリング](~/docs/framework/winforms/controls/rendering-controls-with-visual-styles.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用するカスタム コントロールを作成する方法を示しています、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>テキスト ボックスを描画するメソッド。 コントロールでは、ユーザーのいずれかを選択することもできます、<xref:System.Windows.Forms.TextFormatFlags>テキストをボックス、テキストに適用する値。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxRenderer#0](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/cpp/form1.cpp#0)]
+ [!code-csharp[System.Windows.Forms.TextBoxRenderer#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/CS/form1.cs#0)]
+ [!code-vb[System.Windows.Forms.TextBoxRenderer#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/VB/form1.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DrawTextBox">
+      <MemberSignature Language="C#" Value="public static void DrawTextBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, System.Windows.Forms.VisualStyles.TextBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTextBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, valuetype System.Windows.Forms.VisualStyles.TextBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxRenderer.DrawTextBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TextBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TextBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキスト ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキスト ボックスの境界を指定します。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TextBoxState" />テキスト ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と境界のテキスト ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTextBox">
+      <MemberSignature Language="C#" Value="public static void DrawTextBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string textBoxText, System.Drawing.Font font, System.Windows.Forms.VisualStyles.TextBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTextBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string textBoxText, class System.Drawing.Font font, valuetype System.Windows.Forms.VisualStyles.TextBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxRenderer.DrawTextBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.VisualStyles.TextBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TextBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキスト ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキスト ボックスの境界を指定します。</param>
+        <param name="textBoxText"><see cref="T:System.String" />をテキスト ボックスに描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>textBoxText</c>です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TextBoxState" />テキスト ボックスの表示状態を指定する値。</param>
+        <summary>指定したテキストで指定された状態と、境界内のテキスト ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTextBox">
+      <MemberSignature Language="C#" Value="public static void DrawTextBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string textBoxText, System.Drawing.Font font, System.Drawing.Rectangle textBounds, System.Windows.Forms.VisualStyles.TextBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTextBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string textBoxText, class System.Drawing.Font font, valuetype System.Drawing.Rectangle textBounds, valuetype System.Windows.Forms.VisualStyles.TextBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxRenderer.DrawTextBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Windows.Forms.VisualStyles.TextBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TextBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキスト ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキスト ボックスの境界を指定します。</param>
+        <param name="textBoxText"><see cref="T:System.String" />をテキスト ボックスに描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>textBoxText</c>です。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />の境界を指定する<c>textBoxText</c>です。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TextBoxState" />テキスト ボックスの表示状態を指定する値。</param>
+        <summary>指定された状態と境界、および指定したテキストとテキストの境界のテキスト ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTextBox">
+      <MemberSignature Language="C#" Value="public static void DrawTextBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string textBoxText, System.Drawing.Font font, System.Windows.Forms.TextFormatFlags flags, System.Windows.Forms.VisualStyles.TextBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTextBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string textBoxText, class System.Drawing.Font font, valuetype System.Windows.Forms.TextFormatFlags flags, valuetype System.Windows.Forms.VisualStyles.TextBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxRenderer.DrawTextBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Windows.Forms.TextFormatFlags,System.Windows.Forms.VisualStyles.TextBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TextBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキスト ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキスト ボックスの境界を指定します。</param>
+        <param name="textBoxText"><see cref="T:System.String" />をテキスト ボックスに描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>textBoxText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TextBoxState" />テキスト ボックスの表示状態を指定する値。</param>
+        <summary>指定したテキストとテキストの書式設定で指定された状態と、境界内のテキスト ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DrawTextBox">
+      <MemberSignature Language="C#" Value="public static void DrawTextBox (System.Drawing.Graphics g, System.Drawing.Rectangle bounds, string textBoxText, System.Drawing.Font font, System.Drawing.Rectangle textBounds, System.Windows.Forms.TextFormatFlags flags, System.Windows.Forms.VisualStyles.TextBoxState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DrawTextBox(class System.Drawing.Graphics g, valuetype System.Drawing.Rectangle bounds, string textBoxText, class System.Drawing.Font font, valuetype System.Drawing.Rectangle textBounds, valuetype System.Windows.Forms.TextFormatFlags flags, valuetype System.Windows.Forms.VisualStyles.TextBoxState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.TextBoxRenderer.DrawTextBox(System.Drawing.Graphics,System.Drawing.Rectangle,System.String,System.Drawing.Font,System.Drawing.Rectangle,System.Windows.Forms.TextFormatFlags,System.Windows.Forms.VisualStyles.TextBoxState)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="bounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="textBoxText" Type="System.String" />
+        <Parameter Name="font" Type="System.Drawing.Font" />
+        <Parameter Name="textBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="flags" Type="System.Windows.Forms.TextFormatFlags" />
+        <Parameter Name="state" Type="System.Windows.Forms.VisualStyles.TextBoxState" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />テキスト ボックスを描画するために使用します。</param>
+        <param name="bounds"><see cref="T:System.Drawing.Rectangle" />テキスト ボックスの境界を指定します。</param>
+        <param name="textBoxText"><see cref="T:System.String" />をテキスト ボックスに描画します。</param>
+        <param name="font"><see cref="T:System.Drawing.Font" />に適用する<c>textBoxText</c>です。</param>
+        <param name="textBounds"><see cref="T:System.Drawing.Rectangle" />の境界を指定する<c>textBoxText</c>です。</param>
+        <param name="flags"><see cref="T:System.Windows.Forms.TextFormatFlags" /> 値のビットごとの組み合わせ。</param>
+        <param name="state">1 つ、<see cref="T:System.Windows.Forms.VisualStyles.TextBoxState" />テキスト ボックスの表示状態を指定する値。</param>
+        <summary>指定したテキスト、テキストの境界、およびテキストの書式設定で指定された状態と、境界内のテキスト ボックス コントロールを描画します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出す前にする必要があることを確認する、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティから返される`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%28System.Drawing.Graphics%2CSystem.Drawing.Rectangle%2CSystem.String%2CSystem.Drawing.Font%2CSystem.Drawing.Rectangle%2CSystem.Windows.Forms.TextFormatFlags%2CSystem.Windows.Forms.VisualStyles.TextBoxState%29>カスタム コントロールの<xref:System.Windows.Forms.Control.OnPaint%2A>テキスト ボックスを描画するメソッド。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TextBoxRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">オペレーティング システムは、visual スタイルをサポートしていません。  
+  
+ または  
+  
+ Visual スタイルは、オペレーティング システムでユーザーが無効です。  
+  
+ または  
+  
+ Visual スタイルは、アプリケーション ウィンドウのクライアント領域には適用されません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSupported">
+      <MemberSignature Language="C#" Value="public static bool IsSupported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsSupported" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.TextBoxRenderer.IsSupported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Forms.TextBoxRenderer" />クラスを使用して、visual スタイルを使用してテキスト ボックスを描画することです。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーには、オペレーティング システムで visual スタイルが有効にして、visual スタイル; のアプリケーション ウィンドウのクライアント領域に適用されます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、する場合`false`、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.TextBoxRenderer.IsSupported%2A>プロパティを使用するかどうかを決定する、<xref:System.Windows.Forms.TextBoxRenderer.DrawTextBox%2A>メソッドです。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.TextBoxRenderer>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/cpp/form1.cpp#2)]
+ [!code-csharp[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/CS/form1.cs#2)]
+ [!code-vb[System.Windows.Forms.TextBoxRenderer#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.TextBoxRenderer/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

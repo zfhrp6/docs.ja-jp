@@ -1,0 +1,674 @@
+<Type Name="OracleMonthSpan" FullName="System.Data.OracleClient.OracleMonthSpan">
+  <TypeSignature Language="C#" Value="public struct OracleMonthSpan : IComparable, System.Data.SqlTypes.INullable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit OracleMonthSpan extends System.ValueType implements class System.Data.SqlTypes.INullable, class System.IComparable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OracleClient.OracleMonthSpan" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.OracleClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Data.SqlTypes.INullable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IComparable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Oracle 9i に対応して月単位の時間間隔を表す<see langword="INTERVAL YEAR TO MONTH" />データ型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Oracle`INTERVAL YEAR TO MONTH`データ型 (Oracle 9i 以降) 年および月、時間間隔を含み、5 バイトの固定サイズです。  
+  
+ 取得する、<xref:System.Data.OracleClient.OracleMonthSpan>オブジェクトを呼び出し、<xref:System.Data.OracleClient.OracleDataReader.GetOracleMonthSpan%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleMonthSpan (System.Data.OracleClient.OracleMonthSpan from);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Data.OracleClient.OracleMonthSpan from) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.#ctor(System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="from" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="from">既存の<see cref="T:System.Data.OracleClient.OracleMonthSpan" />新しい構造の作成元の構造体。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleMonthSpan" />既存の構造体。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleMonthSpan (int months);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 months) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="months" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="months">月の数です。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造指定月数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OracleMonthSpan (int years, int months);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 years, int32 months) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="years" Type="System.Int32" />
+        <Parameter Name="months" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="years">年の数。</param>
+        <param name="months">月の数です。</param>
+        <summary>新しい初期化<see cref="T:System.Data.OracleClient.OracleMonthSpan" />を指定した年と月の構造体。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">パラメーターを指定して、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />値より小さい<see cref="F:System.Data.OracleClient.OracleMonthSpan.MinValue" />以上<see cref="F:System.Data.OracleClient.OracleMonthSpan.MaxValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareTo">
+      <MemberSignature Language="C#" Value="public int CompareTo (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareTo(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.CompareTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較されるオブジェクト。</param>
+        <summary>これと比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造が指定したオブジェクトをこれらの相対値を示す値を返します。</summary>
+        <returns>インスタンスとオブジェクトの相対値を示す符号付き数値。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>条件  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description>このインスタンスは、オブジェクトより小さいです。  
+  
+ </description></item><item><term>0  
+  
+ </term><description>このインスタンスは、オブジェクトと同じです。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description>このインスタンスが、オブジェクトより大きい  
+  
+ または  
+  
+ オブジェクトが null 参照 (<see langword="Nothing" />)。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">比較されるオブジェクト。</param>
+        <summary>指定したオブジェクトのパラメーターを<see cref="P:System.Data.OracleClient.OracleMonthSpan.Value" />のプロパティ、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />オブジェクトのインスタンスでは場合<see cref="T:System.Data.OracleClient.OracleMonthSpan" />、それ以外の 2 つ<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean Equals (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean Equals(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.Equals(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleMonthSpan" />それらが等しいかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />2 つの値が等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスのハッシュ コードを取得します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThan (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThan(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.GreaterThan(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が 2 番目より大きいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean GreaterThanOrEqual (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.GreaterThanOrEqual(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が 2 番目以上かを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNull">
+      <MemberSignature Language="C#" Value="public bool IsNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNull" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleMonthSpan.IsNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Data.OracleClient.OracleMonthSpan.Value" />のプロパティ、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造が null です。</summary>
+        <value>
+          <see langword="true" />場合<see cref="P:System.Data.OracleClient.OracleMonthSpan.Value" />null、それ以外の場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThan (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThan(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.LessThan(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が少ないかどうかを確認する 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean LessThanOrEqual (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean LessThanOrEqual(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.LessThanOrEqual(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />がかどうか、最初の 1 秒未満にします。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxValue">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleMonthSpan MaxValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleMonthSpan MaxValue" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleMonthSpan.MaxValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleMonthSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効な日付の最大値を表す、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、これは 9999 AD と同じ 176556 で、です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinValue">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleMonthSpan MinValue;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleMonthSpan MinValue" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleMonthSpan.MinValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleMonthSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最小の有効な日付の値を表す、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、これは BC 4172 年と同じ-176556、です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotEquals">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean NotEquals (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleBoolean NotEquals(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.NotEquals(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスの論理比較を実行<see cref="T:System.Data.OracleClient.OracleMonthSpan" />両者が等しくないかどうかを決定します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Null">
+      <MemberSignature Language="C#" Value="public static readonly System.Data.OracleClient.OracleMonthSpan Null;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Data.OracleClient.OracleMonthSpan Null" />
+      <MemberSignature Language="DocId" Value="F:System.Data.OracleClient.OracleMonthSpan.Null" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleMonthSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てることが null 値を表す、<see cref="P:System.Data.OracleClient.OracleMonthSpan.Value" />のインスタンスのプロパティ、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Null`関数の定数として、<xref:System.Data.OracleClient.OracleMonthSpan>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator == (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Equality(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_Equality(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つの論理比較を実行<see cref="T:System.Data.OracleClient.OracleMonthSpan" />それらが等しいかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />2 つの値が等しい場合はそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator int (System.Data.OracleClient.OracleMonthSpan x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname int32 op_Explicit(valuetype System.Data.OracleClient.OracleMonthSpan x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_Explicit(System.Data.OracleClient.OracleMonthSpan)~System.Int32" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Explicit">
+      <MemberSignature Language="C#" Value="public static explicit operator System.Data.OracleClient.OracleMonthSpan (string x);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleMonthSpan op_Explicit(string x) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_Explicit(System.String)~System.Data.OracleClient.OracleMonthSpan" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleMonthSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="x">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt; (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThan(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_GreaterThan(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が 2 番目より大きいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは 2 番目のインスタンスよりも大きいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.GreaterThan%28System.Data.OracleClient.OracleMonthSpan%2CSystem.Data.OracleClient.OracleMonthSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_GreaterThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &gt;= (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_GreaterThanOrEqual(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_GreaterThanOrEqual(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が 2 番目以上かを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスがより大きいか等しい 2 番目のインスタンスでは、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.GreaterThanOrEqual%28System.Data.OracleClient.OracleMonthSpan%2CSystem.Data.OracleClient.OracleMonthSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator != (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_Inequality(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_Inequality(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスの論理比較を実行<see cref="T:System.Data.OracleClient.OracleMonthSpan" />をそれらが等しいかを判断します。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />2 つのインスタンスが等しくない場合または<see cref="F:System.Data.OracleClient.OracleBoolean.False" />2 つのインスタンスが等しい場合。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.NotEquals%28System.Data.OracleClient.OracleMonthSpan%2CSystem.Data.OracleClient.OracleMonthSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThan">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt; (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThan(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_LessThan(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />最初が少ないかどうかを確認する 2 番目よりです。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />場合は、最初のインスタンスは、2 つ目のインスタンスより小さい、それ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.LessThan%28System.Data.OracleClient.OracleMonthSpan%2CSystem.Data.OracleClient.OracleMonthSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_LessThanOrEqual">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleBoolean operator &lt;= (System.Data.OracleClient.OracleMonthSpan x, System.Data.OracleClient.OracleMonthSpan y);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Data.OracleClient.OracleBoolean op_LessThanOrEqual(valuetype System.Data.OracleClient.OracleMonthSpan x, valuetype System.Data.OracleClient.OracleMonthSpan y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.op_LessThanOrEqual(System.Data.OracleClient.OracleMonthSpan,System.Data.OracleClient.OracleMonthSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleBoolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Data.OracleClient.OracleMonthSpan" />
+        <Parameter Name="y" Type="System.Data.OracleClient.OracleMonthSpan" />
+      </Parameters>
+      <Docs>
+        <param name="x"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <param name="y"><see cref="T:System.Data.OracleClient.OracleMonthSpan" /> 構造体。</param>
+        <summary>2 つのインスタンスを比較<see cref="T:System.Data.OracleClient.OracleMonthSpan" />がかどうか、最初の 1 秒未満にします。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleBoolean" />つまり<see cref="F:System.Data.OracleClient.OracleBoolean.True" />かどうか、最初のインスタンスは、2 番目のインスタンスでは、小さいそれ以外の場合<see cref="F:System.Data.OracleClient.OracleBoolean.False" />です。 場合のいずれかのインスタンス<see cref="T:System.Data.OracleClient.OracleMonthSpan" />が null で、<see cref="P:System.Data.OracleClient.OracleBoolean.Value" />の<see cref="T:System.Data.OracleClient.OracleBoolean" />は<see cref="F:System.Data.OracleClient.OracleBoolean.Null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Data.OracleClient.OracleMonthSpan.LessThanOrEqual%28System.Data.OracleClient.OracleMonthSpan%2CSystem.Data.OracleClient.OracleMonthSpan%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Data.OracleClient.OracleMonthSpan Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Data.OracleClient.OracleMonthSpan Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.OracleClient.OracleMonthSpan</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換される <see langword="String" />。</param>
+        <summary>指定された変換<see cref="T:System.String" />形式の日付と時刻をその<see cref="T:System.Data.OracleClient.OracleMonthSpan" />と同等です。</summary>
+        <returns><see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体の指定したによって表される日時と等しい<see langword="String" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.OracleClient.OracleMonthSpan.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変換<see cref="T:System.Data.OracleClient.OracleMonthSpan" />に構造体、<see cref="T:System.String" />です。</summary>
+        <returns>A<see langword="String" />を表す、<see cref="P:System.Data.OracleClient.OracleMonthSpan.Value" />プロパティこの<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public int Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.OracleClient.OracleMonthSpan.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.OracleClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を取得、<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</summary>
+        <value>この値<see cref="T:System.Data.OracleClient.OracleMonthSpan" />構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

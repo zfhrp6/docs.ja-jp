@@ -1,0 +1,274 @@
+<Type Name="IdentitySection" FullName="System.Web.Configuration.IdentitySection">
+  <TypeSignature Language="C#" Value="public sealed class IdentitySection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IdentitySection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.IdentitySection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションの id を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.IdentitySection>プログラムからアクセスし、変更する方法を提供、`identity`構成ファイルのセクションです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.IdentitySection>読み書きできる情報セクション プロパティに従って、構成ファイルの関連するセクションと<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.Everywhere>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.IdentitySection>既存の Web アプリケーションの構成ファイルからのオブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.IdentitySection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/CS/identitysection.cs#1)]
+ [!code-vb[System.Web.Configuration.IdentitySection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/VB/identitysection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IdentitySection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.IdentitySection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Configuration.IdentitySection" />クラスの既定のパラメーターを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは内部でのみ使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.Configuration.IdentitySection>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.IdentitySection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/CS/identitysection.cs#2)]
+ [!code-vb[System.Web.Configuration.IdentitySection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/VB/identitysection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRuntimeObject">
+      <MemberSignature Language="C#" Value="protected override object GetRuntimeObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetRuntimeObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.IdentitySection.GetRuntimeObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Impersonate">
+      <MemberSignature Language="C#" Value="public bool Impersonate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Impersonate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.IdentitySection.Impersonate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("impersonate", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアントの偽装を各要求に対して使用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアントの偽装を使用する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.IdentitySection.Impersonate%2A>プロパティに設定されている`true`、各要求は、クライアントを偽装して Web アプリケーションによって処理されます。 現在ログオンして、ユーザーかによって指定されたユーザー、<xref:System.Web.Configuration.IdentitySection.UserName%2A>と<xref:System.Web.Configuration.IdentitySection.Password%2A>プロパティです。 ときに、<xref:System.Web.Configuration.IdentitySection.Impersonate%2A>プロパティに設定されている`false`アプリケーションは、クライアント ユーザーを偽装しません。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、id セクションでは、暗号化の記憶域をサポート<xref:System.Web.Configuration.IdentitySection.UserName%2A>と<xref:System.Web.Configuration.IdentitySection.Password%2A>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.IdentitySection.Impersonate%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.IdentitySection>セクションにアクセスする方法を説明するクラス。  
+  
+ [!code-csharp[System.Web.Configuration.IdentitySection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/CS/identitysection.cs#5)]
+ [!code-vb[System.Web.Configuration.IdentitySection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/VB/identitysection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.IdentitySection.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("password", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または権限借用のために使用するパスワードを示す値を設定します。</summary>
+        <value>権限借用のために使用するパスワード。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスワードがクリア テキストで格納されているため、サーバーが常駐するドメインの適切な資格情報で認証されたユーザーはそれを読み取ることができます。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、id セクションでは、暗号化の記憶域をサポート<xref:System.Web.Configuration.IdentitySection.UserName%2A>と<xref:System.Web.Configuration.IdentitySection.Password%2A>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.IdentitySection.Password%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.IdentitySection>セクションにアクセスする方法を説明するクラス。  
+  
+ [!code-csharp[System.Web.Configuration.IdentitySection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/CS/identitysection.cs#3)]
+ [!code-vb[System.Web.Configuration.IdentitySection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/VB/identitysection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.IdentitySection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="protected override void Reset (System.Configuration.ConfigurationElement parentElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Reset(class System.Configuration.ConfigurationElement parentElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.IdentitySection.Reset(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unmerge">
+      <MemberSignature Language="C#" Value="protected override void Unmerge (System.Configuration.ConfigurationElement sourceElement, System.Configuration.ConfigurationElement parentElement, System.Configuration.ConfigurationSaveMode saveMode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Unmerge(class System.Configuration.ConfigurationElement sourceElement, class System.Configuration.ConfigurationElement parentElement, valuetype System.Configuration.ConfigurationSaveMode saveMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.IdentitySection.Unmerge(System.Configuration.ConfigurationElement,System.Configuration.ConfigurationElement,System.Configuration.ConfigurationSaveMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+        <Parameter Name="saveMode" Type="System.Configuration.ConfigurationSaveMode" />
+      </Parameters>
+      <Docs>
+        <param name="sourceElement">To be added.</param>
+        <param name="parentElement">To be added.</param>
+        <param name="saveMode">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.IdentitySection.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("userName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または偽装に使用するユーザー名を示す値を設定します。</summary>
+        <value>偽装に使用するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー名がクリア テキストで格納されているため、サーバーが常駐するドメインの適切な資格情報で認証されたユーザーはそれを読み取ることができます。  
+  
+> [!NOTE]
+>  セキュリティ上の理由から、id セクションでは、暗号化の記憶域をサポート<xref:System.Web.Configuration.IdentitySection.UserName%2A>と<xref:System.Web.Configuration.IdentitySection.Password%2A>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.IdentitySection.UserName%2A> プロパティへのアクセス方法を次のコード例に示します。 コード例を参照してください、<xref:System.Web.Configuration.IdentitySection>セクションにアクセスする方法を説明するクラス。  
+  
+ [!code-csharp[System.Web.Configuration.IdentitySection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/CS/identitysection.cs#4)]
+ [!code-vb[System.Web.Configuration.IdentitySection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.IdentitySection/VB/identitysection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

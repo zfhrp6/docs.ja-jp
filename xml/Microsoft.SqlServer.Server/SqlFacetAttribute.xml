@@ -1,0 +1,223 @@
+<Type Name="SqlFacetAttribute" FullName="Microsoft.SqlServer.Server.SqlFacetAttribute">
+  <TypeSignature Language="C#" Value="public class SqlFacetAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlFacetAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.SqlServer.Server.SqlFacetAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>TRANSACT-SQL で使用できる追加の情報を含むユーザー定義型 (UDT) の返された結果の注釈を付けます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlFacetAttribute>void 以外の戻り値にのみ指定できます。  
+  
+ <xref:Microsoft.SqlServer.Server.SqlFacetAttribute>戻り値の型に関する情報の取得にのみ使用しが意図されていない型で格納できるもので、制約の指定します。 したがって、フィールドがある場合、 <xref:Microsoft.SqlServer.Server.SqlFacetAttribute> 2 文字のサイズを示す、SQL Server 型フィールド アクセス式のサイズが 2、ですが、このファセットで、フィールドに割り当てが制限されません。  
+  
+ 次の表は、特定のフィールド型のさまざまなプロパティの有効な値のマトリックスをキャプチャします。 この表で、"Y"ことを示しますプロパティが有効な場合は、"N"は、プロパティが無効であることを示します。  
+  
+ 指定した<xref:Microsoft.SqlServer.Server.SqlFacetAttribute>フィールドの型と互換性があります。 プロパティが有効でない場合は、型の登録で、ユーザーがプロパティの既定以外の値を指定する場合にエラーが報告されます。 最大の値を<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision%2A>と<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale%2A>プロパティは 38 です。 <xref:Microsoft.SqlServer.Server.SqlFacetAttribute.MaxSize%2A>プロパティ、値は 1-8000 バイナリと非 Unicode データの場合、Unicode データの 1-4000 または-1 の範囲にする必要があります。 その他のすべての値が有効ではありません。  
+  
+|型|IsFixedLength|MaxSize|有効桁数|[スケール]|IsNullable|  
+|----------|-------------------|-------------|---------------|-----------|----------------|  
+|<xref:System.Data.SqlTypes.SqlBoolean>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlByte>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlInt16>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlInt32>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlInt64>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlSingle>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlDouble>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlDateTime>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlMoney>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlGuid>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlDecimal>|N|N|Y|Y|Y|  
+|<xref:System.Data.SqlTypes.SqlString>|Y|Y|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlBinary>|Y|Y|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlXml>|N|N|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlBytes>|Y|Y|N|N|Y|  
+|<xref:System.Data.SqlTypes.SqlChars>|Y|Y|N|N|Y|  
+|埋め込まれた Udt|N|N|N|N|Y|  
+|<xref:System.String>|Y|Y|N|N|Y|  
+|Byte[]|Y|Y|N|N|Y|  
+|Char[]|Y|Y|N|N|Y|  
+|<xref:System.DateTime>|N|N|N|Y<sup>1</sup>|N|  
+|<xref:System.Decimal>|N|N|Y|Y|Y|  
+  
+ (1)、DateTime 型の小数点以下桁数を指定すると、TRANSACT-SQL に指定された小数点以下桁数、DateTime2 データ型として返される値が発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlFacetAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.SqlServer.Server.SqlFacetAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>ユーザー定義型 (UDT) の省略可能な属性は、TRANSACT-SQL で使用できる追加の情報を含む返された結果を注釈に使用される型を返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedLength">
+      <MemberSignature Language="C#" Value="public bool IsFixedLength { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedLength" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFacetAttribute.IsFixedLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定長のユーザー定義型の戻り値の型であるかどうかを示します。</summary>
+        <value>
+          <see langword="true" />戻り値の型の場合は、固定長です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定する必要があります`false`場合、<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.MaxSize%2A>プロパティが 1 に設定します。  
+  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFacetAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型の戻り値の型ができるかどうかを示す<see langword="null" />です。</summary>
+        <value>
+          <see langword="true" />ユーザー定義型の戻り値の型があることができるかどうか<see langword="null" />それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSize">
+      <MemberSignature Language="C#" Value="public int MaxSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxSize" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFacetAttribute.MaxSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理単位で、ユーザー定義型の基になるフィールドの型の最大サイズ。</summary>
+        <value><see cref="T:System.Int32" />論理単位で、フィールドの基になる型の最大サイズを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 論理ユニットは、(バイト) (8000 の最大サイズ) のバイナリと非 Unicode データ型、および (4000 の最大サイズ) の文字のフィールドの種類の Unicode 文字の数です。  
+  
+ 値-1 は、大きなサイズの文字とバイナリ型に予約されています。  
+  
+ 既定値は 4000 Unicode 文字型のあり 8000 のバイナリと Unicode 以外の型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Precision">
+      <MemberSignature Language="C#" Value="public int Precision { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Precision" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型の戻り値の型の有効桁数です。</summary>
+        <value><see cref="T:System.Int32" />戻り値の型の有効桁数を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision%2A>プロパティは、数値型に対してのみ有効です。 <xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale%2A>を設定する場合、プロパティを指定する必要がありますも、<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision%2A>プロパティです。  
+  
+ 最大値、<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision%2A>プロパティは 38 です。 既定値は 38 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public int Scale { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Scale" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー定義型の戻り値の型の小数点以下桁数です。</summary>
+        <value><see cref="T:System.Int32" />戻り値の型の小数点以下桁数を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale%2A>プロパティは decimal 型に対してのみ有効です。 <xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Precision%2A>を設定する場合、プロパティを指定する必要がありますも、<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale%2A>プロパティです。  
+  
+ 最大値、<xref:Microsoft.SqlServer.Server.SqlFacetAttribute.Scale%2A>プロパティは 38 です。 既定値は 0 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

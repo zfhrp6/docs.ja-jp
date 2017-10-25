@@ -1,0 +1,82 @@
+<Type Name="IThemeResolutionService" FullName="System.Web.UI.IThemeResolutionService">
+  <TypeSignature Language="C#" Value="public interface IThemeResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IThemeResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IThemeResolutionService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>開発者のセットの指定を使用してそのデザイナー ツールのインターフェイスを提供<see cref="T:System.Web.UI.ThemeProvider" />テーマを適用して、デザイン時環境でのコントロールへのスキンを制御するために使用できるオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの開発者およびコントロールの作成者は使用しないでください、<xref:System.Web.UI.IThemeResolutionService>インターフェイスです。 <xref:System.Web.UI.IThemeResolutionService>インターフェイスを提供するデザイナー ツールの開発者によって実装<xref:System.Web.UI.SkinBuilder>デザイン環境でのビルダーを制御します。  
+  
+ <xref:System.Web.UI.IThemeResolutionService> 1 つまたは複数のコンテナーは、<xref:System.Web.UI.ThemeProvider>さらに指定されたオブジェクトを<xref:System.Web.UI.SkinBuilder>テーマを適用して、デザイナーで作成されるときにコントロール スキンを制御するオブジェクト。 インスタンス、<xref:System.Web.UI.IThemeResolutionService>クラスからアクセスできる、指定された<xref:System.Web.UI.ControlBuilder>インスタンスを使用してその<xref:System.Web.UI.ControlBuilder.ThemeResolutionService%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetAllThemeProviders">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ThemeProvider[] GetAllThemeProviders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.ThemeProvider[] GetAllThemeProviders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IThemeResolutionService.GetAllThemeProviders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeProvider[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Array" />の<see cref="T:System.Web.UI.ThemeProvider" />オブジェクト。</summary>
+        <returns><see cref="T:System.Array" />の<see cref="T:System.Web.UI.ThemeProvider" />オブジェクトに現在関連付けられている<see cref="T:System.Web.UI.IThemeResolutionService" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStylesheetThemeProvider">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ThemeProvider GetStylesheetThemeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.ThemeProvider GetStylesheetThemeProvider() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IThemeResolutionService.GetStylesheetThemeProvider" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ThemeProvider" />スタイル シートからカスタマイズ テーマを表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.ThemeProvider" />により作成されたコントロールに適用されるページのテーマを表す、<see cref="T:System.Web.UI.ControlBuilder" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetThemeProvider">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ThemeProvider GetThemeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.ThemeProvider GetThemeProvider() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IThemeResolutionService.GetThemeProvider" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ThemeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、 <see cref="T:System.Web.UI.ThemeProvider" /> ASP.NET ページ上のカスタマイズのテーマを表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.ThemeProvider" />により作成されたコントロールに適用されるページのテーマを表す、<see cref="T:System.Web.UI.ControlBuilder" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

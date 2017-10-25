@@ -1,0 +1,139 @@
+<Type Name="ListViewInsertEventArgs" FullName="System.Web.UI.WebControls.ListViewInsertEventArgs">
+  <TypeSignature Language="C#" Value="public class ListViewInsertEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListViewInsertEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ListViewInsertEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.ListView.ItemInserting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ListView>制御が発生し、<xref:System.Web.UI.WebControls.ListView.ItemInserting>イベントと、コントロールの挿入 ボタンがクリックすると、その前に、<xref:System.Web.UI.WebControls.ListView>コントロールは、レコードを挿入します。 (挿入ボタンは、ボタンが`CommandName`プロパティが"Insert"に設定します)。これにより、このイベントが発生するたびに、カスタム ルーチンを実行するイベント処理メソッドを提供できます。 検証するなど、データ ソース内に挿入される前に、レコードの値を HTML エンコードします。  
+  
+ A<xref:System.Web.UI.WebControls.ListViewInsertEventArgs>オブジェクトは、イベント処理メソッドに渡されます。 このオブジェクトに送信される省略可能なコマンド引数の値を決定することができます、<xref:System.Web.UI.WebControls.ListView>コントロール。 アクセスすることができます、<xref:System.Web.UI.WebControls.ListViewItem>を使用して、挿入されるオブジェクト、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Item%2A>プロパティです。 読み取りまたはを使用して、新しいレコードのフィールド値を変更することができますも、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Values%2A>プロパティです。 挿入操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ <xref:System.Web.UI.WebControls.ListViewInsertEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs>データ項目には、空の値が含まれている場合に、挿入操作をキャンセルするオブジェクト。  
+  
+> [!IMPORTANT]
+>  この例には、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスが含まれています。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ListView.ItemInserting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserting/CS/ListViewItemInsertingCS.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ListView.ItemInserting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserting/VB/ListViewItemInsertingVB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListViewInsertEventArgs (System.Web.UI.WebControls.ListViewItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.ListViewItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ListViewInsertEventArgs.#ctor(System.Web.UI.WebControls.ListViewItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.ListViewItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">データ ソースに挿入するデータ項目。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.ListViewInsertEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs>クラスです。  
+  
+> [!NOTE]
+>  このコンス トラクターはイベントを発生させる場合にコントロールの開発者によって、主に使用します。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Item%2A>|`item` パラメーターの値。|  
+|<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>|`false`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ListViewItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListViewItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListViewItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.ListViewItem" />を挿入するデータ項目を表すオブジェクト。</summary>
+        <value>挿入するデータ項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Item%2A>からアイテムにアクセスするプロパティ、<xref:System.Web.UI.WebControls.ListView>を挿入するデータへの制御します。 たとえばのコントロールから値にアクセスすることができます、<xref:System.Web.UI.WebControls.ListView.InsertItemTemplate%2A>されているデータ バインドを使用して、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Item%2A>プロパティです。 これを行うを使用して、<xref:System.Web.UI.Control.FindControl%2A>のメソッド、<xref:System.Web.UI.WebControls.ListViewItem>によって参照されるオブジェクト、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Item%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ListViewInsertEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入するレコードの値を取得します。</summary>
+        <value>挿入するレコードの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Values%2A>プロパティを挿入するレコードのフィールドの値にアクセスします。 検証するなど、データ ソースに挿入する前にレコードの値を HTML エンコードします。  
+  
+ <xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Values%2A>プロパティから返される、<xref:System.Collections.Specialized.OrderedDictionary>を実装するオブジェクト、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 <xref:System.Collections.Specialized.OrderedDictionary>オブジェクトを含む<xref:System.Collections.DictionaryEntry>レコードのフィールドを表すオブジェクト。 フィールド名にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Keys%2A>のプロパティ、<xref:System.Collections.Specialized.OrderedDictionary>オブジェクト。 フィールドの値にアクセスするには、使用、<xref:System.Collections.Specialized.OrderedDictionary.Values%2A>プロパティです。  
+  
+> [!NOTE]
+>  インデクサーを使用する簡単な方法として、<xref:System.Collections.Specialized.OrderedDictionary>値を直接フィールドにアクセスするオブジェクト。 インデクサーを使用する利点は、フィールドの値が直接返されることです。 データ ソースのフィールドの順序に依存するコントロール (など<xref:System.Web.UI.WebControls.AccessDataSource>) フィールドの値をインデックスによってのみアクセスできます。  
+  
+   
+  
+## Examples  
+ 次の例を反復処理する方法を示しています、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs.Values%2A>コレクション。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.ListViewInsertEventArgs>クラスです。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ListView.ItemInserting#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserting/CS/ListViewItemInsertingCS.aspx#2)]
+ [!code-vb[System.Web.UI.WebControls.ListView.ItemInserting#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ListView.ItemInserting/VB/ListViewItemInsertingVB.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

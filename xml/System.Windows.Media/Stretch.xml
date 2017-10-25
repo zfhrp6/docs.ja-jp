@@ -1,0 +1,101 @@
+<Type Name="Stretch" FullName="System.Windows.Media.Stretch">
+  <TypeSignature Language="C#" Value="public enum Stretch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Stretch extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Stretch" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>割り当てられた領域を埋めるようにコンテンツのサイズを変更する方法を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、さまざまな<xref:System.Windows.Media.Stretch>値。  
+  
+ ![別の TileBrush Stretch 設定](~/add/media/img-mmgraphics-stretchenum.jpg "別の TileBrush Stretch 設定")  
+ストレッチ値  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成する方法を示しています、<xref:System.Windows.Controls.Viewbox>設定と、<xref:System.Windows.Media.Stretch>コードを使用してその内容のモード。  
+  
+ [!code-cpp[ViewBoxCode#2](~/samples/snippets/cpp/VS_Snippets_Wpf/ViewBoxCode/CPP/ViewboxCode.cpp#2)]
+ [!code-csharp[ViewBoxCode#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ViewBoxCode/Csharp/ViewboxCode.cs#2)]
+ [!code-vb[ViewBoxCode#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ViewBoxCode/VisualBasic/ViewBoxCodeVB.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Fill">
+      <MemberSignature Language="C#" Value="Fill" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Stretch Fill = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Stretch.Fill" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられた広さを埋めるようにコンテンツのサイズを変更します。 縦横比は維持されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Stretch None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Stretch.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテンツの現在のサイズを維持します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Uniform">
+      <MemberSignature Language="C#" Value="Uniform" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Stretch Uniform = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Stretch.Uniform" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられた広さに収まるようにコンテンツのサイズを変更しますが、元の縦横比が維持されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UniformToFill">
+      <MemberSignature Language="C#" Value="UniformToFill" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.Stretch UniformToFill = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Stretch.UniformToFill" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割り当てられた広さを埋めるようにコンテンツのサイズを変更しますが、元の縦横比が維持されます。 ソース コンテンツの縦横比が対象の四角形の縦横比と異なる場合は、ソース コンテンツが対象の四角形に収まるように切り取られます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

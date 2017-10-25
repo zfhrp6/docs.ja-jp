@@ -1,0 +1,34 @@
+<Type Name="SourceChangedEventHandler" FullName="System.Windows.SourceChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void SourceChangedEventHandler(object sender, SourceChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SourceChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.SourceChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.SourceChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントが発生し、イベント ハンドラーがアタッチされているオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary>特定のリスナー要素の "SourceChanged" イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、のハンドラーを表す"SourceChanged"イベントがパブリックとして公開されていない[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]イベント、最もルーティング イベントの場合と同様です。 代わりに、プライベートに残っているルーティング イベントは、"SourceChanged"、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]インフラストラクチャは直接ルーティングします。 なっているため直接ルーティングすると、`sender`と<xref:System.Windows.RoutedEventArgs.Source%2A>イベントのデータは常に同じオブジェクトです。 リストにログインを追加したり、パブリック メソッドを使用して、イベント自体のプライベート アクセス レベルに関係なく、このイベントにハンドラーを削除する<xref:System.Windows.PresentationSource.AddSourceChangedHandler%2A>と<xref:System.Windows.PresentationSource.RemoveSourceChangedHandler%2A>です。  
+  
+ `sender`イベントの派生クラスである、<xref:System.Windows.PresentationSource>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,125 @@
+<Type Name="HashAlgorithm" FullName="System.Messaging.HashAlgorithm">
+  <TypeSignature Language="C#" Value="public enum HashAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed HashAlgorithm extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.HashAlgorithm" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>メッセージを認証するときにメッセージ キューで使用するハッシュ アルゴリズムを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージの認証は、2 つのサービスを提供します。 メッセージの整合性を確保する方法と、メッセージを送信したユーザーを確認する方法を提供します。 認証を要求するには、送信元アプリケーションは認証され、セキュリティ証明書をメッセージに添付するメッセージの認証レベルを設定する必要があります。  
+  
+ メッセージを認証するためにメッセージ キュー ランタイム DLL は、ソース コンピューターで使用ハッシュ アルゴリズム メッセージのデジタル署名を作成するときにします。 ターゲット キュー マネージャーは、同じハッシュ アルゴリズムを使用して、受信されるときにメッセージを認証します。  
+  
+ 認証プロセスの詳細については、メッセージ キュー認証トピックでは、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Mac">
+      <MemberSignature Language="C#" Value="Mac" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm Mac = int32(32773)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.Mac" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MAC キー付きハッシュ アルゴリズム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Md2">
+      <MemberSignature Language="C#" Value="Md2" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm Md2 = int32(32769)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.Md2" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MD2 ハッシュ アルゴリズム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Md4">
+      <MemberSignature Language="C#" Value="Md4" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm Md4 = int32(32770)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.Md4" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MD4 ハッシュ アルゴリズム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Md5">
+      <MemberSignature Language="C#" Value="Md5" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm Md5 = int32(32771)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.Md5" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MD5 ハッシュ アルゴリズム。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハッシュ アルゴリズムなし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Sha">
+      <MemberSignature Language="C#" Value="Sha" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.HashAlgorithm Sha = int32(32772)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.HashAlgorithm.Sha" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA ハッシュ アルゴリズム。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

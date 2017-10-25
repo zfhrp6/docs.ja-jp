@@ -1,0 +1,363 @@
+<Type Name="ActiveDirectorySiteLinkBridge" FullName="System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge">
+  <TypeSignature Language="C#" Value="public class ActiveDirectorySiteLinkBridge : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectorySiteLinkBridge extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />クラスは、トランスポート経由で通信するサイト リンクのセットを表します。</summary>
+    <remarks>To be added.</remarks>
+    <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /></permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySiteLinkBridge (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="bridgeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">この <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトのコンテキストを指定する <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> オブジェクト。</param>
+        <param name="bridgeName">A<see cref="T:System.String" />これの名前を指定する<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />クラス<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクトと名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType>型が RPC です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、次のいずれかの理由で発生します。  
+  
+-   <paramref name="context" />パラメーターが有効なフォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーを参照していません。  
+  
+-   <paramref name="bridgeName" />パラメーターが空の文字列。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" />パラメーターまたは<paramref name="bridgeName" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectorySiteLinkBridge (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName, System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName, valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="bridgeName" Type="System.String" />
+        <Parameter Name="transport" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />
+      </Parameters>
+      <Docs>
+        <param name="context">この <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトのコンテキストを指定する <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> オブジェクト。</param>
+        <param name="bridgeName">A<see cref="T:System.String" />これの名前を指定する<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</param>
+        <param name="transport">A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />を使用するトランスポートの種類を示す値。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />クラスの指定して<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />オブジェクト、名、およびトランスポートを入力します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、次のいずれかの理由で発生します。  
+  
+-   <paramref name="context" />パラメーターが有効なフォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーを参照していません。  
+  
+-   <paramref name="bridgeName" />パラメーターが空の文字列。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" />パラメーターまたは<paramref name="bridgeName" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.Security.Authentication.AuthenticationException">指定された資格情報が無効です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="transport" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" /> 値ではありません。</exception>
+        <exception cref="T:System.NotSupportedException">指定されたトランスポートの種類、<paramref name="transport" />パラメーターはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サイト リンク ブリッジを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクトが Active Directory ドメイン サービスに保存されていないを格納します。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトによって使用されているリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースを解放する必要がある場合は <see langword="true" />、アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトによって使用されているアンマネージ リソースを解放します。オプションでアンマネージ リソースも解放できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByName">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge FindByName (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge FindByName(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.FindByName(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="bridgeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">検索のコンテキストを指定する <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> オブジェクト。</param>
+        <param name="bridgeName">A<see cref="T:System.String" />の名前を指定する、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />検索するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />指定したディレクトリ コンテキストと、RPC のトランスポート プロトコルに対してのみの名前に一致するオブジェクト。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクト。 <see langword="null" />場合は、オブジェクトは見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="context" />指定されたパラメーターの場合は、サイト リンク ブリッジで見つかりませんでしたの指定された<paramref name="bridgeName" />パラメーター。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、以下の理由のうちいずれかによって発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="bridgeName" />パラメーターが空の文字列。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" />または<paramref name="bridgeName" />パラメーターは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindByName">
+      <MemberSignature Language="C#" Value="public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge FindByName (System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName, System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge FindByName(class System.DirectoryServices.ActiveDirectory.DirectoryContext context, string bridgeName, valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType transport) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.FindByName(System.DirectoryServices.ActiveDirectory.DirectoryContext,System.String,System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+        <Parameter Name="bridgeName" Type="System.String" />
+        <Parameter Name="transport" Type="System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />
+      </Parameters>
+      <Docs>
+        <param name="context">検索のコンテキストを指定する <see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" /> オブジェクト。</param>
+        <param name="bridgeName">A<see cref="T:System.String" />の名前を指定する、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />検索するオブジェクト。</param>
+        <param name="transport">A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />を検索するオブジェクトのトランスポートの種類を指定する値。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />指定したディレクトリ コンテキスト、名前、およびトランスポートに一致するオブジェクトを入力します。</summary>
+        <returns><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクト。 <see langword="null" />場合は、オブジェクトは見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException"><paramref name="context" />指定されたパラメーターの場合は、サイト リンク ブリッジで見つかりませんでしたの指定された<paramref name="bridgeName" />パラメーター。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーは、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ArgumentException">この例外は、次のいずれかの理由で発生します。  
+  
+-   ターゲット、<paramref name="context" />パラメーターは、フォレスト、構成セット、ドメイン コント ローラーまたは AD LDS サーバーではありません。  
+  
+-   <paramref name="bridgeName" />パラメーターが空の文字列。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="context" />または<paramref name="bridgeName" />パラメーターは<see langword="null" />します。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="transport" />パラメーターが有効ではありません<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryEntry">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryEntry GetDirectoryEntry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.DirectoryServices.DirectoryEntry GetDirectoryEntry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.GetDirectoryEntry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryEntry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryEntry" /> オブジェクトの <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトを取得します。</summary>
+        <returns>A<see cref="T:System.DirectoryServices.DirectoryEntry" />サイト リンク ブリッジ オブジェクトのディレクトリ エントリを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクトが Active Directory ドメイン サービスに保存されていないを格納します。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</summary>
+        <value>A<see cref="T:System.String" />の現在のサイト リンク ブリッジ オブジェクトの名前を表します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" /> オブジェクトに対するすべての変更を、基になるディレクトリ ストアにコミットします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException">サイト リンク ブリッジ オブジェクトは既に存在します。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">指定されたアカウントには、この操作を実行するためのアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteLinks">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection SiteLinks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection SiteLinks" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.SiteLinks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンク オブジェクトに関連付けられているサイトのコレクションを取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection" />オブジェクトを含む<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink" />の現在のサイト リンク ブリッジ オブジェクトに関連付けられているオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException">対象サーバーが、ビジー状態か、または使用できません。</exception>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</summary>
+        <returns>A <see cref="T:System.String" /> 、現在の名前を表す<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge.TransportType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランスポートの種類を取得、<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge" />オブジェクト。</summary>
+        <value>A<see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType" />を現在のサイト リンク ブリッジ オブジェクトによって使用されるトランスポートの種類を表す値です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">オブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

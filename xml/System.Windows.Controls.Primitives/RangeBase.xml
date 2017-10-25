@@ -1,0 +1,552 @@
+<Type Name="RangeBase" FullName="System.Windows.Controls.Primitives.RangeBase">
+  <TypeSignature Language="C#" Value="public abstract class RangeBase : System.Windows.Controls.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract RangeBase extends System.Windows.Controls.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.RangeBase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ValueChanged")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Value")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定の範囲内の値を持つ要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Primitives.RangeBase>コントロールが、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>間に設定できる、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>と<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>プロパティです。  <xref:System.Windows.Controls.Primitives.RangeBase>視覚的に示すその<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>です。  場合によっては、ユーザー対話形式で値を設定できます。それ以外の場合に、値をプログラムでのみ設定できます。  ユーザーが設定できる、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>の<xref:System.Windows.Controls.Primitives.ScrollBar>と<xref:System.Windows.Controls.Slider>、ではなく、<xref:System.Windows.Controls.ProgressBar>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RangeBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.RangeBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.RangeBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeChange">
+      <MemberSignature Language="C#" Value="public double LargeChange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 LargeChange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.RangeBase.LargeChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を追加またはから減算する値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.RangeBase" />コントロール。</summary>
+        <value>
+          <see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />加算または減算する、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.RangeBase" />要素。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承されたコントロール<xref:System.Windows.Controls.Primitives.RangeBase>このプロパティの使用方法を決定します。  
+  
+ ユーザーがクリックしたとき、<xref:System.Windows.Controls.Primitives.Track>の<xref:System.Windows.Controls.Primitives.ScrollBar>、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティだけ増加または減少の値<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>です。  
+  
+ ユーザーが呼び出す場合、<xref:System.Windows.Controls.Slider.DecreaseLarge%2A>または<xref:System.Windows.Controls.Slider.IncreaseLarge%2A>コマンドを使って、 <xref:System.Windows.Controls.Slider>、<xref:System.Windows.Controls.Primitives.RangeBase.ValueProperty>の値によってスライダーの変更の<xref:System.Windows.Controls.Primitives.RangeBase.LargeChange%2A>します。  
+  
+ <xref:System.Windows.Controls.ProgressBar>このプロパティは使用しません。  
+  
+<a name="dependencyPropertyInfo_LargeChange"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.LargeChangeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeChangeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty LargeChangeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty LargeChangeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.LargeChangeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.RangeBase.LargeChange" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public double Maximum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定可能な最高レベル<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />範囲要素。</summary>
+        <value>最も可能性のある<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />範囲要素。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Slider>このプロパティのメタデータをオーバーライドし、その既定値を 10 に設定します。 <xref:System.Windows.Controls.ProgressBar>このプロパティのメタデータをオーバーライドし、その既定値を 100 に設定します。 依存関係プロパティの詳細については、「[依存関係プロパティの概要](~/docs/framework/wpf/advanced/dependency-properties-overview.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_Maximum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.MaximumProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Primitives.RangeBase>などのコントロール<xref:System.Windows.Controls.Slider>と<xref:System.Windows.Controls.ProgressBar>継承、<xref:System.Windows.Controls.Primitives.RangeBase>プロパティです。 次の例は、<xref:System.Windows.Controls.Slider>を使用して、<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>プロパティです。  
+  
+ [!code-csharp[Slider#Basic](~/samples/snippets/csharp/VS_Snippets_Wpf/Slider/CSharp/Pane1.xaml.cs#basic)]
+ [!code-vb[Slider#Basic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Slider/VisualBasic/Pane1.xaml.vb#basic)]
+ [!code-xaml[Slider#Basic](~/samples/snippets/xaml/VS_Snippets_Wpf/Slider/xaml/window1.xaml#basic)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaximumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaximumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.MaximumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public double Minimum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />考えられる<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />範囲要素。</summary>
+        <value>
+          <see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />考えられる<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />範囲要素。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Minimum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.MinimumProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Primitives.RangeBase>などのコントロール<xref:System.Windows.Controls.Slider>と<xref:System.Windows.Controls.ProgressBar>継承、<xref:System.Windows.Controls.Primitives.RangeBase>プロパティです。 次の例は、<xref:System.Windows.Controls.Slider>を使用して、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>プロパティです。  
+  
+ [!code-csharp[Slider#Basic](~/samples/snippets/csharp/VS_Snippets_Wpf/Slider/CSharp/Pane1.xaml.cs#basic)]
+ [!code-vb[Slider#Basic](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Slider/VisualBasic/Pane1.xaml.vb#basic)]
+ [!code-xaml[Slider#Basic](~/samples/snippets/xaml/VS_Snippets_Wpf/Slider/xaml/window1.xaml#basic)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinimumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinimumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.MinimumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMaximumChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnMaximumChanged (double oldMaximum, double newMaximum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMaximumChanged(float64 oldMaximum, float64 newMaximum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.RangeBase.OnMaximumChanged(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldMaximum" Type="System.Double" />
+        <Parameter Name="newMaximum" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="oldMaximum">前の値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />プロパティです。</param>
+        <param name="newMaximum">新しい値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />プロパティです。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Maximum" />プロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラス、 <xref:System.Windows.Controls.Primitives.RangeBase> value プロパティがオーバーライドする代わりに変更されたときに応答にこのメソッドを使用できます、<xref:System.Windows.FrameworkPropertyMetadata>新しいを提供する<xref:System.Windows.PropertyChangedCallback>関数。 詳しくは、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMinimumChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnMinimumChanged (double oldMinimum, double newMinimum);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnMinimumChanged(float64 oldMinimum, float64 newMinimum) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.RangeBase.OnMinimumChanged(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldMinimum" Type="System.Double" />
+        <Parameter Name="newMinimum" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="oldMinimum">前の値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />プロパティです。</param>
+        <param name="newMinimum">新しい値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />プロパティです。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Minimum" />プロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラス、 <xref:System.Windows.Controls.Primitives.RangeBase> value プロパティがオーバーライドする代わりに変更されたときに応答にこのメソッドを使用できます、<xref:System.Windows.FrameworkPropertyMetadata>新しいを提供する<xref:System.Windows.PropertyChangedCallback>関数。 詳しくは、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValueChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnValueChanged (double oldValue, double newValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValueChanged(float64 oldValue, float64 newValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.RangeBase.OnValueChanged(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldValue" Type="System.Double" />
+        <Parameter Name="newValue" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="oldValue">前の値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />プロパティ</param>
+        <param name="newValue">新しい値、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />プロパティ</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.Primitives.RangeBase.ValueChanged" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラス、 <xref:System.Windows.Controls.Primitives.RangeBase> value プロパティがオーバーライドする代わりに変更されたときに応答にこのメソッドを使用できます、<xref:System.Windows.FrameworkPropertyMetadata>新しいを提供する<xref:System.Windows.PropertyChangedCallback>関数。 詳しくは、「[依存関係プロパティのコールバックと検証](~/docs/framework/wpf/advanced/dependency-property-callbacks-and-validation.md)」を参照してください。  
+  
+ <xref:System.Windows.Controls.Primitives.RangeBase.OnValueChanged%2A> メソッドは、<xref:System.Windows.Controls.Primitives.RangeBase.ValueChanged> イベントを発生させます。 オーバーライドする場合<xref:System.Windows.Controls.Primitives.RangeBase.OnValueChanged%2A>派生クラスでは、基本クラスの呼び出しを必ず<xref:System.Windows.Controls.Primitives.RangeBase.OnValueChanged%2A>デリゲートを登録するためのメソッドがイベントを受信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallChange">
+      <MemberSignature Language="C#" Value="public double SmallChange { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SmallChange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.RangeBase.SmallChange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />を追加またはから減算する、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.RangeBase" />コントロール。</summary>
+        <value>
+          <see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />加算または減算する、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.RangeBase" />要素。 既定値は 0.1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 継承されたコントロール<xref:System.Windows.Controls.Primitives.RangeBase>このプロパティの使用方法を決定します。  
+  
+ ユーザーがクリックしたとき、<xref:System.Windows.Controls.Primitives.Track>の<xref:System.Windows.Controls.Primitives.ScrollBar>、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティだけ増加または減少の値<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>です。  
+  
+ ユーザーが呼び出す場合、<xref:System.Windows.Controls.Slider.DecreaseSmall%2A>または<xref:System.Windows.Controls.Slider.IncreaseSmall%2A>コマンドを<xref:System.Windows.Controls.Slider>、<xref:System.Windows.Controls.Primitives.RangeBase.ValueProperty>の値によってスライダーの変更の<xref:System.Windows.Controls.Primitives.RangeBase.SmallChange%2A>します。  
+  
+ <xref:System.Windows.Controls.ProgressBar>このプロパティは使用しません。  
+  
+<a name="dependencyPropertyInfo_SmallChange"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.SmallChangeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallChangeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SmallChangeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SmallChangeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.SmallChangeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.RangeBase.SmallChange" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.RangeBase.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>文字列表現を提供する<see cref="T:System.Windows.Controls.Primitives.RangeBase" />オブジェクト。</summary>
+        <returns>文字列表現を返します、<see cref="T:System.Windows.Controls.Primitives.RangeBase" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの値を提供する文字列を返します、 <xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>、 <xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>、および<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.RangeBase.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または範囲コントロールの現在の大きさを設定します。</summary>
+        <value>範囲コントロールの現在の大きさ。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.RangeBase>コントロールは視覚的に示す、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>何らかの方法でプロパティです。 たとえば、スライダーとスクロール バー コントロールがあると同期される thumb、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>コントロールのです。  
+  
+ 設定した場合<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>をある数より小さい<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>プロパティ、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>に設定されている<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>です。 設定した場合<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>数を超えること、<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>プロパティ、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>に設定されている<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>です。  
+  
+<a name="dependencyPropertyInfo_Value"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.ValueProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>, <xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedPropertyChangedEventHandler&lt;double&gt; ValueChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedPropertyChangedEventHandler`1&lt;float64&gt; ValueChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.RangeBase.ValueChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedPropertyChangedEventHandler&lt;System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>範囲の値が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_ValueChanged"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.RangeBase.ValueChangedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedPropertyChangedEventHandler%601>、で制約<xref:System.Double>|  
+  
+<a name="xamlAttributeUsage_ValueChanged"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ValueChanged="RoutedPropertyChangedEventHandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ValueChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ValueChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.ValueChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Primitives.RangeBase.ValueChanged" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ValueProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ValueProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.RangeBase.ValueProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

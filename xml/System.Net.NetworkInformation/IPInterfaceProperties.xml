@@ -1,0 +1,588 @@
+<Type Name="IPInterfaceProperties" FullName="System.Net.NetworkInformation.IPInterfaceProperties">
+  <TypeSignature Language="C#" Value="public abstract class IPInterfaceProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IPInterfaceProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.IPInterfaceProperties" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット プロトコル バージョン 4 (IPv4) またはインターネット プロトコル バージョン 6 (IPv6) をサポートするネットワーク インターフェイスについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、IPv4 または IPv6 をサポートするネットワーク インターフェイスの構成情報とアドレス情報へのアクセスを提供します。 このクラスのインスタンスを作成しません。によって返される、<xref:System.Net.NetworkInformation.NetworkInterface.GetIPProperties%2A>メソッドです。  
+  
+ IPv4 固有のプロパティにアクセスするには、によって返されるオブジェクトを使用して、<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties%2A>メソッドです。 IPv6 に固有のプロパティにアクセスするには、によって返されるオブジェクトを使用して、<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv6Properties%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アドレス情報を表示します。  
+  
+ [!code-cpp[NclNetInfoReport#8](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfoReport/CPP/netinfo.cpp#8)]
+ [!code-csharp[NclNetInfoReport#8](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfoReport/CS/netinfo.cs#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IPInterfaceProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.IPInterfaceProperties.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.IPInterfaceProperties" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはから派生したクラスからのみ呼び出すことができます<xref:System.Net.NetworkInformation.IPInterfaceProperties>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnycastAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPAddressInformationCollection AnycastAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.IPAddressInformationCollection AnycastAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.AnycastAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPAddressInformationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスに割り当てられているエニー キャスト アドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.IPAddressInformationCollection" />このインターフェイスのエニー キャスト アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エニー キャスト アドレスは、複数のコンピューターを識別します。 エニー キャスト アドレスに送信されたパケットは、アドレスによって識別されるコンピューターのいずれかに送信されます。 エニー キャスト アドレスは、テーブルを更新するルーターのホスト グループに対して使用される IPv6 機能です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル コンピューターのネットワーク インターフェイスのエニー キャスト アドレスが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#43](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#43)]
+ [!code-csharp[NclNetInfo2#43](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#43)]
+ [!code-vb[NclNetInfo2#43](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#43)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DhcpServerAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPAddressCollection DhcpServerAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.IPAddressCollection DhcpServerAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.DhcpServerAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスの動的ホスト構成プロトコル (DHCP) サーバーのアドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.IPAddressCollection" />の DHCP サーバーのアドレス情報を含むまたはサーバーのない場合は空の配列が見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的ホスト構成プロトコル (DHCP) では、コンピューターがネットワーク アドレスを DHCP (固定)、静的なを使用するのではなく、サーバー ネットワーク アドレスから取得できるようにします。 DHCP サーバーがアドレスを完全に割り当てられません代わりに、一時的に使用してコンピューターに利用可能なアドレスの数のいずれか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル コンピューターのネットワーク インターフェイスの DHCP のアドレス情報が表示されます。  
+  
+ [!code-cpp[NclNetInfo2#46](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#46)]
+ [!code-csharp[NclNetInfo2#46](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#46)]
+ [!code-vb[NclNetInfo2#46](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#46)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DnsAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPAddressCollection DnsAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.IPAddressCollection DnsAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.DnsAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスのドメイン ネーム システム (DNS) サーバーのアドレスを取得します。</summary>
+        <value>A <see cref="T:System.Net.NetworkInformation.IPAddressCollection" /> DNS サーバー アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS は、階層の名前付けシステムのホスト名を IP アドレスにマップするために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル コンピューターのネットワーク インターフェイスの DNS アドレスが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#42](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#42)]
+ [!code-csharp[NclNetInfo2#42](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#42)]
+ [!code-vb[NclNetInfo2#42](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#42)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DnsSuffix">
+      <MemberSignature Language="C#" Value="public abstract string DnsSuffix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DnsSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.DnsSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスに関連付けられているドメイン ネーム システム (DNS) サフィックスを取得します。</summary>
+        <value>A<see cref="T:System.String" />このインターフェイスの DNS サフィックスを含むまたは<see cref="F:System.String.Empty" />インターフェイス用の DNS サフィックスがない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS サフィックスは、DNS 名クエリに適した完全修飾ドメイン名 (FQDN) を取得する、非修飾ホスト名に追加されるドメイン名 (たとえば、"contoso.com"など) を識別します。 たとえば、ローカル コンピューターでは、"contoso.com"を持つとしてその<xref:System.Net.NetworkInformation.IPInterfaceProperties.DnsSuffix%2A>、および"www.contoso.com"の非修飾ホスト名"www"、クエリに FQDN が解決する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、DNS サフィックスが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#41](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#41)]
+ [!code-csharp[NclNetInfo2#41](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#41)]
+ [!code-vb[NclNetInfo2#41](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.PlatformNotSupportedException">このプロパティは、Windows 2000 より前のオペレーティング システムを実行しているコンピューターでは有効ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.GatewayIPAddressInformationCollection GatewayAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.GatewayIPAddressInformationCollection GatewayAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.GatewayAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.GatewayIPAddressInformationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスの IPv4 ネットワークのゲートウェイ アドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.GatewayIPAddressInformationCollection" />ネットワーク ゲートウェイのアドレス情報を含むまたはないゲートウェイの場合は空の配列が見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インターネット プロトコル バージョン 4 (IPv4) のネットワーク間でパケットを転送を実装しているゲートウェイがこのプロパティによって返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ローカル コンピューター上のネットワーク インターフェイスのゲートウェイ アドレスを表示します。  
+  
+ [!code-cpp[NclNetInfo2#47](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#47)]
+ [!code-csharp[NclNetInfo2#47](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#47)]
+ [!code-vb[NclNetInfo2#47](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#47)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIPv4Properties">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPv4InterfaceProperties GetIPv4Properties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.NetworkInformation.IPv4InterfaceProperties GetIPv4Properties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPv4InterfaceProperties</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このネットワーク インターフェイスのインターネット プロトコル バージョン 4 (IPv4) の構成データを提供します。</summary>
+        <returns><see cref="T:System.Net.NetworkInformation.IPv4InterfaceProperties" /> IPv4 構成データを格納しているオブジェクトまたは<see langword="null" />インターフェイスの使用可能なデータがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`null`の<xref:System.Net.NetworkInformation.NetworkInterfaceType.Loopback>インターフェイスです。  
+  
+ IPv4 をサポートするインターフェイスを使用できる情報の詳細については、次を参照してください。、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>クラスのドキュメントです。 によって返されるオブジェクトを<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties%2A>メソッドには、オブジェクトが作成された時点で、構成が反映されます。 この情報は動的に更新されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">インターフェイスは、IPv4 プロトコルをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIPv6Properties">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPv6InterfaceProperties GetIPv6Properties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Net.NetworkInformation.IPv6InterfaceProperties GetIPv6Properties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv6Properties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPv6InterfaceProperties</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このネットワーク インターフェイスのインターネット プロトコル バージョン 6 (IPv6) の構成データを提供します。</summary>
+        <returns><see cref="T:System.Net.NetworkInformation.IPv6InterfaceProperties" /> IPv6 構成データを格納しているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IPv6 をサポートするインターフェイスを使用できる情報の詳細については、次を参照してください。、<xref:System.Net.NetworkInformation.IPv6InterfaceProperties>ドキュメント。 によって返されるオブジェクトを<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv6Properties%2A>メソッドには、オブジェクトが作成された時点で、構成が反映されます。 この情報は動的に更新されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.NetworkInformation.NetworkInformationException">インターフェイスは、IPv6 プロトコルをサポートしていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDnsEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsDnsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDnsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.IsDnsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Boolean" /> NetBt がこのインターフェイスで DNS 名前解決を使用するよう構成するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />このインターフェイスで DNS 名前解決を使用する NetBt が構成されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DNS は、階層の名前付けシステムのホスト名を IP アドレスにマップするために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclNetInfo2#41](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#41)]
+ [!code-csharp[NclNetInfo2#41](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#41)]
+ [!code-vb[NclNetInfo2#41](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDynamicDnsEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsDynamicDnsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDynamicDnsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.IsDynamicDnsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />ドメイン ネーム システム (DNS) で IP アドレス情報を自動的に登録するこのインターフェイスが構成されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />このインターフェイスは自動的に構成する場合は、その動的 IP アドレスと静的なドメイン名の間のマッピングを登録します。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的 DNS では、クライアントがその動的 IP アドレスが、静的なホスト名にマップされている DNS サーバーに通知できるようにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclNetInfo2#41](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#41)]
+ [!code-csharp[NclNetInfo2#41](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#41)]
+ [!code-vb[NclNetInfo2#41](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#41)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MulticastAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.MulticastIPAddressInformationCollection MulticastAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.MulticastIPAddressInformationCollection MulticastAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.MulticastAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.MulticastIPAddressInformationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスに割り当てられているマルチキャスト アドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.MulticastIPAddressInformationCollection" />このインターフェイスのマルチキャスト アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト アドレスでは、複数のコンピューターを識別します。 マルチキャスト アドレスに送信されたパケットは、アドレスによって識別されるすべてのコンピューターに送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ローカル コンピューターのネットワーク インターフェイスのマルチキャスト アドレスを表示します。  
+  
+ [!code-cpp[NclNetInfo2#44](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#44)]
+ [!code-csharp[NclNetInfo2#44](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#44)]
+ [!code-vb[NclNetInfo2#44](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#44)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnicastAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.UnicastIPAddressInformationCollection UnicastAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.UnicastIPAddressInformationCollection UnicastAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.UnicastAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.UnicastIPAddressInformationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このインターフェイスに割り当てられたユニキャスト アドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.UnicastIPAddressInformationCollection" />このインターフェイスのユニキャスト アドレスを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユニキャスト アドレスは、1 台のコンピューターを識別します。 ユニキャスト アドレスに送信されたパケットは、アドレスによって識別されるコンピューターに送信されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ローカル コンピューターのネットワーク インターフェイスのユニキャスト アドレスが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#45](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#45)]
+ [!code-csharp[NclNetInfo2#45](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#45)]
+ [!code-vb[NclNetInfo2#45](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#45)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WinsServersAddresses">
+      <MemberSignature Language="C#" Value="public abstract System.Net.NetworkInformation.IPAddressCollection WinsServersAddresses { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.NetworkInformation.IPAddressCollection WinsServersAddresses" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPInterfaceProperties.WinsServersAddresses" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.IPAddressCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows インターネット ネーム サービス (WINS) サーバーのアドレスを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.IPAddressCollection" /> WINS サーバーのアドレス情報を含むまたはサーバーのない場合は空の配列が見つかりました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WINS は、登録および動的の NetBIOS 名を IP アドレスのマッピングを照会するための分散データベースを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

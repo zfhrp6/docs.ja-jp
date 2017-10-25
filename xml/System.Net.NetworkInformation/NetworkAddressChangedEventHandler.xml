@@ -1,0 +1,49 @@
+<Type Name="NetworkAddressChangedEventHandler" FullName="System.Net.NetworkInformation.NetworkAddressChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void NetworkAddressChangedEventHandler(object sender, EventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NetworkAddressChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.NetworkAddressChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.EventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e"><see cref="T:System.EventArgs" />イベントに関するデータを格納しているオブジェクト。</param>
+    <summary>ネットワーク インターフェイスのアドレスが変更されたときに呼び出される 1 つ以上のメソッドを参照します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートによって処理<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>によってイベントが発生した、<xref:System.Net.NetworkInformation.NetworkChange>クラスです。 変更イベントのネットワーク インターフェイスのアドレスの通知の受信の詳細についてを参照してください、<xref:System.Net.NetworkInformation.NetworkChange>クラスの概要ドキュメント。  
+  
+ <xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントは、Windows 2000 以降でサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アドレスの変更および表示時にネットワークの状態インターフェイスをリッスンする<xref:System.Net.NetworkInformation.NetworkChange.NetworkAddressChanged>イベントが発生します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

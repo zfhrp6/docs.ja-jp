@@ -1,0 +1,82 @@
+<Type Name="ElapsedEventArgs" FullName="System.Timers.ElapsedEventArgs">
+  <TypeSignature Language="C#" Value="public class ElapsedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ElapsedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Timers.ElapsedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Timers.Timer.Elapsed" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SignalTime">
+      <MemberSignature Language="C#" Value="public DateTime SignalTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime SignalTime" />
+      <MemberSignature Language="DocId" Value="P:System.Timers.ElapsedEventArgs.SignalTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Timers.Timer.Elapsed" /> イベントが発生した日付/時刻を取得します。</summary>
+        <value><see cref="E:System.Timers.Timer.Elapsed" /> イベントが発生した時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>にイベントが発生、<xref:System.Threading.ThreadPool>スレッド、ため、同時に 1 つのスレッドが実行されるイベント処理メソッドにへの呼び出し、<xref:System.Timers.Timer.Stop%2A?displayProperty=nameWithType>メソッドの別のスレッドで実行します。 これは、結果、な<xref:System.Timers.Timer.Elapsed>後に発生するイベント、<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されます。 この競合状態を比較するだけで防止できない、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A>時間を持つプロパティときに、<xref:System.Timers.Timer.Stop%2A>イベント処理メソッドが既に実行されている場合にあるために、メソッドが呼び出されます、<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されると、または時点の間の実行を開始する可能性があるときに、<xref:System.Timers.Timer.Stop%2A>メソッドが呼び出されると停止時刻を保存すると、現在します。 呼び出すスレッドを防ぐために重要な場合、<xref:System.Timers.Timer.Stop%2A>から続行して、イベント処理メソッドはまだ実行中、メソッドより堅牢な同期機構の使用、<xref:System.Threading.Monitor>クラスまたは<xref:System.Threading.Interlocked.CompareExchange%2A>メソッドです。 使用するコード、<xref:System.Threading.Interlocked.CompareExchange%2A>の例ではメソッドが見つかりません、<xref:System.Timers.Timer.Stop%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを作成、<xref:System.Timers.Timer>を発生させるオブジェクト、<xref:System.Timers.Timer.Elapsed?displayProperty=nameWithType>イベントすべて 2 秒 (2000 ミリ秒) が、イベントのイベント ハンドラーを設定し、タイマーを開始します。 イベント ハンドラーの値を表示する、<xref:System.Timers.ElapsedEventArgs.SignalTime%2A?displayProperty=nameWithType>プロパティが発生するたびにします。  
+  
+ [!code-cpp[System.Timers.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.timers.timer/cpp/timer1.cpp#1)]
+ [!code-csharp[System.Timers.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.timers.timer/cs/timer1.cs#1)]
+ [!code-vb[System.Timers.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.timers.timer/vb/timer1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

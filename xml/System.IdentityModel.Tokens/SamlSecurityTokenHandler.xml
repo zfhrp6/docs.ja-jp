@@ -1,0 +1,2399 @@
+<Type Name="SamlSecurityTokenHandler" FullName="System.IdentityModel.Tokens.SamlSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public class SamlSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityTokenHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SAML 1.1 アサーションからセキュリティ トークンを作成するセキュリティ トークン ハンドラーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>および SAML 1.1 アサーションに基づくセキュリティ トークンを逆シリアル化をクラス<xref:System.IdentityModel.Tokens.SamlSecurityToken>オブジェクト。 セキュリティ トークン ハンドラーは、作成、読み取り、書き込み、およびトークンの検証を行います。  
+  
+ 証明書利用者 (RP) のインスタンスを追加することによってトークンの SAML 1.1 アサーションに基づくセキュリティを処理するアプリケーションまたはセキュリティ トークン サービス (STS) を構成することができます、<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>クラスを<xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollection>サービス (またはアプリケーション) 用に構成されたオブジェクト。 これは、ため、プログラムまたは構成ファイルにします。 コレクションのコレクションの指定された構成からハンドラー自体が構成されている<xref:System.IdentityModel.Tokens.SecurityTokenHandlerCollection.Configuration%2A>プロパティをコレクションに追加されたとき。 設定して、ハンドラーを個別に構成することができますが、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティ、これは通常は不要です。 ただし、場合は、ハンドラーを個別に構成する必要があります、プロパティ必要がありますする設定、ハンドラーをコレクションに追加した後です。  
+  
+ 多くのシナリオでの<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>としてクラスを使用できます-です。 ただし、クラスは、多くの拡張機能ポイント メソッドを介して公開します。 派生することによって、<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>と固有のメソッドをオーバーライドするには、既定の実装で提供されるトークンの処理の機能を変更するか、一部のカスタムのシナリオで必要な場合が SAML アサーションの仕様に拡張機能の処理を追加することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlSecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SamlSecurityTokenHandler" />既定セキュリティ トークン要件を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.SamlSecurityTokenRequirement%2A>プロパティのインスタンスに設定されて<xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement>は既定のコンス トラクターで作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlSecurityTokenHandler (System.IdentityModel.Tokens.SamlSecurityTokenRequirement samlSecurityTokenRequirement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SamlSecurityTokenRequirement samlSecurityTokenRequirement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.#ctor(System.IdentityModel.Tokens.SamlSecurityTokenRequirement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="samlSecurityTokenRequirement" Type="System.IdentityModel.Tokens.SamlSecurityTokenRequirement" />
+      </Parameters>
+      <Docs>
+        <param name="samlSecurityTokenRequirement"><see cref="T:System.IdentityModel.Tokens.SamlSecurityTokenRequirement" />トークンを検証するときに、このインスタンスで使用します。 <see cref="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.SamlSecurityTokenRequirement" /> プロパティを設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SamlSecurityTokenHandler" />指定したセキュリティ トークンの要件を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlSecurityTokenRequirement" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDelegateToAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void AddDelegateToAttributes (System.Security.Claims.ClaimsIdentity subject, System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt; attributes, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddDelegateToAttributes(class System.Security.Claims.ClaimsIdentity subject, class System.Collections.Generic.ICollection`1&lt;class System.IdentityModel.Tokens.SamlAttribute&gt; attributes, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.AddDelegateToAttributes(System.Security.Claims.ClaimsIdentity,System.Collections.Generic.ICollection{System.IdentityModel.Tokens.SamlAttribute},System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="attributes" Type="System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt;" />
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="subject">このデリゲート<see cref="T:System.Security.Claims.ClaimsIdentity" />オブジェクトをシリアル化する、<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />です。 デリゲートがで指定された、<see cref="P:System.Security.Claims.ClaimsIdentity.Actor" />プロパティです。</param>
+        <param name="attributes">ActAs トークンをシリアル化属性のコレクション。</param>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>すべての属性のコレクションに ActAs サブジェクトに関連付けられているデリゲートを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subject" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Assertion">
+      <MemberSignature Language="C#" Value="public const string Assertion;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Assertion" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SamlSecurityTokenHandler.Assertion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>urn: oasis: 名前: tc: SAML:1.0:assertion</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BearerConfirmationMethod">
+      <MemberSignature Language="C#" Value="public const string BearerConfirmationMethod;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string BearerConfirmationMethod" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SamlSecurityTokenHandler.BearerConfirmationMethod" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>urn: oasis: 名前: tc: SAML:1.0:cm:bearer</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadToken">
+      <MemberSignature Language="C#" Value="public override bool CanReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CanReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">開始要素に配置されている XML リーダーです。 リーダーはない高度な必要があります。</param>
+        <summary>現在の XML 要素をこのインスタンスによって処理される型のトークンとして読み取れるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />メソッドは、要素を読み取ることができます。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidateToken">
+      <MemberSignature Language="C#" Value="public override bool CanValidateToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanValidateToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CanValidateToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーが型のトークンを検証できるかどうかを示す値を取得<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />です。</summary>
+        <value>
+          <see langword="true" />、、ハンドラーが型のトークンを検証できるということを示します<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本クラスのメソッドをオーバーライドし、常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteToken">
+      <MemberSignature Language="C#" Value="public override bool CanWriteToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CanWriteToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーが型のトークンをシリアル化できるかどうかを示す値を取得<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />です。</summary>
+        <value>
+          <see langword="true" />;ハンドラーが型のトークンをシリアル化できることを示す<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本クラスのメソッドをオーバーライドし、常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CertificateValidator">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.X509CertificateValidator CertificateValidator" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CertificateValidator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.X509CertificateValidator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または X.509 証明書の検証に現在のインスタンスによって使用される X.509 証明書検証コントロールを設定します。</summary>
+        <value><see cref="T:System.IdentityModel.Selectors.X509CertificateValidator" />検証コントロールを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectAttributeValues">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt; CollectAttributeValues (System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt; attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.ICollection`1&lt;class System.IdentityModel.Tokens.SamlAttribute&gt; CollectAttributeValues(class System.Collections.Generic.ICollection`1&lt;class System.IdentityModel.Tokens.SamlAttribute&gt; attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CollectAttributeValues(System.Collections.Generic.ICollection{System.IdentityModel.Tokens.SamlAttribute})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Collections.Generic.ICollection&lt;System.IdentityModel.Tokens.SamlAttribute&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型のコレクション<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />クレームから生成された属性を格納しています。</param>
+        <summary>複数値を持つ 1 つの属性には、一般的な要求の種類、クレーム値の型、および発行元の属性を収集します。</summary>
+        <returns>コレクション<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />入力コレクションから抽出された属性を格納しています。 入力コレクション内の属性、一般的な要求の種類を共有する要求の値、および出力コレクション内の複数の値を持つ 1 つの属性に統合されます。 その他の属性を持つ発行元。 出力コレクション内で変更されていないその他の属性を持つクレームの種類、要求の値、または発行元を共有しない入力のコレクション内の属性が表示されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAdvice">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAdvice CreateAdvice (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAdvice CreateAdvice(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateAdvice(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAdvice</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>派生クラスでオーバーライドされると、作成、<see cref="T:System.IdentityModel.Tokens.SamlAdvice" />アサーションのオブジェクト。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SamlAdvice" /> オブジェクト。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このメソッドが戻る`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAssertion">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAssertion CreateAssertion (string issuer, System.IdentityModel.Tokens.SamlConditions conditions, System.IdentityModel.Tokens.SamlAdvice advice, System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt; statements);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAssertion CreateAssertion(string issuer, class System.IdentityModel.Tokens.SamlConditions conditions, class System.IdentityModel.Tokens.SamlAdvice advice, class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlStatement&gt; statements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateAssertion(System.String,System.IdentityModel.Tokens.SamlConditions,System.IdentityModel.Tokens.SamlAdvice,System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlStatement})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAssertion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="conditions" Type="System.IdentityModel.Tokens.SamlConditions" />
+        <Parameter Name="advice" Type="System.IdentityModel.Tokens.SamlAdvice" />
+        <Parameter Name="statements" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="issuer">アサーションの発行者。</param>
+        <param name="conditions"><see cref="T:System.IdentityModel.Tokens.SamlConditions" />アサーションを追加します。</param>
+        <param name="advice"><see cref="T:System.IdentityModel.Tokens.SamlAdvice" />アサーションを追加します。</param>
+        <param name="statements">コレクション<see cref="T:System.IdentityModel.Tokens.SamlStatement" />アサーションを追加します。</param>
+        <summary>作成、<see cref="T:System.IdentityModel.Tokens.SamlAssertion" />指定発行者、条件、アドバイスおよびステートメントを使用してオブジェクト。 アサーションを作成するために使用するパラメーターをカスタマイズするには、このメソッドをオーバーライドすることができます。</summary>
+        <returns>作成された SAML アサーションです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アサーションの一意なランダム id が作成され、<xref:System.IdentityModel.Tokens.SamlAssertion.AssertionId%2A>プロパティがこの値に設定します。 <xref:System.IdentityModel.Tokens.SamlAssertion.IssueInstant%2A> に <xref:System.DateTime.UtcNow%2A> が設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttribute">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAttribute CreateAttribute (System.Security.Claims.Claim claim, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAttribute CreateAttribute(class System.Security.Claims.Claim claim, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateAttribute(System.Security.Claims.Claim,System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claim" Type="System.Security.Claims.Claim" />
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="claim"><see cref="T:System.Security.Claims.Claim" /> SAML 属性を生成するからです。</param>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>作成、<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />要求からのオブジェクト。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />変換後のクレームを格納しています。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claim" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAttributeStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAttributeStatement CreateAttributeStatement (System.IdentityModel.Tokens.SamlSubject samlSubject, System.Security.Claims.ClaimsIdentity subject, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAttributeStatement CreateAttributeStatement(class System.IdentityModel.Tokens.SamlSubject samlSubject, class System.Security.Claims.ClaimsIdentity subject, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateAttributeStatement(System.IdentityModel.Tokens.SamlSubject,System.Security.Claims.ClaimsIdentity,System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAttributeStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlSubject" Type="System.IdentityModel.Tokens.SamlSubject" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="samlSubject"><see cref="T:System.IdentityModel.Tokens.SamlSubject" />で使用する、<see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />で作成します。</param>
+        <param name="subject"><see cref="T:System.Security.Claims.ClaimsIdentity" /> SAML 属性に変換されるクレームを格納しているオブジェクト。</param>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>作成、<see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />トークン記述子オブジェクト。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />変換されたクレームを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが返す可能性があります`null`トークン記述子には、任意のサブジェクトが含まれていないか、サブジェクトには、いずれの要求はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAuthenticationStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAuthenticationStatement CreateAuthenticationStatement (System.IdentityModel.Tokens.SamlSubject samlSubject, System.Security.Claims.AuthenticationInformation authInfo, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAuthenticationStatement CreateAuthenticationStatement(class System.IdentityModel.Tokens.SamlSubject samlSubject, class System.Security.Claims.AuthenticationInformation authInfo, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateAuthenticationStatement(System.IdentityModel.Tokens.SamlSubject,System.Security.Claims.AuthenticationInformation,System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAuthenticationStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlSubject" Type="System.IdentityModel.Tokens.SamlSubject" />
+        <Parameter Name="authInfo" Type="System.Security.Claims.AuthenticationInformation" />
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="samlSubject">ステートメントの SamlSubject します。</param>
+        <param name="authInfo"><see cref="T:System.Security.Claims.AuthenticationInformation" /> SAML 認証ステートメントを生成するからです。</param>
+        <param name="tokenDescriptor">トークンの発行に使用されるその他のすべての情報が含まれています。</param>
+        <summary>指定された認証情報を SAML 1.1 認証ステートメントを作成します。</summary>
+        <returns>作成された SAML 認証ステートメントです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlSubject" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateClaims">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.Claims.ClaimsIdentity CreateClaims (System.IdentityModel.Tokens.SamlSecurityToken samlSecurityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Claims.ClaimsIdentity CreateClaims(class System.IdentityModel.Tokens.SamlSecurityToken samlSecurityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateClaims(System.IdentityModel.Tokens.SamlSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlSecurityToken" Type="System.IdentityModel.Tokens.SamlSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="samlSecurityToken">A<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />からクレームを作成するセキュリティ トークンを表すです。</param>
+        <summary>SAML 1.1 トークンからクレームを作成します。</summary>
+        <returns>A<see cref="T:System.Security.Claims.ClaimsIdentity" />トークンから抽出されたクレームを格納します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlSecurityToken" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="samlSecurityToken" /> の <see cref="P:System.IdentityModel.Tokens.SamlSecurityToken.Assertion" /> プロパティが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ハンドラーが構成されていないか、ハンドラーの発行者名レジストリが構成されていません。 (、<see cref="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.Configuration" />プロパティは<see langword="null" />に設定されているか、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration" />で、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerNameRegistry" />であるプロパティ<see langword="null" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">セキュリティ トークンの構成済みの発行者名レジストリによって返される発行者名 (<paramref name="samlSecurityToken" />) は<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConditions">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlConditions CreateConditions (System.IdentityModel.Protocols.WSTrust.Lifetime tokenLifetime, string relyingPartyAddress, System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlConditions CreateConditions(class System.IdentityModel.Protocols.WSTrust.Lifetime tokenLifetime, string relyingPartyAddress, class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateConditions(System.IdentityModel.Protocols.WSTrust.Lifetime,System.String,System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlConditions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenLifetime" Type="System.IdentityModel.Protocols.WSTrust.Lifetime" />
+        <Parameter Name="relyingPartyAddress" Type="System.String" />
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenLifetime">トークンの有効期間。</param>
+        <param name="relyingPartyAddress">トークンの作成対象のエンドポイント アドレス。 アドレスは、AudienceRestriction 条件としてモデル化されます。</param>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>アサーションの条件を作成します。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlConditions" />アサーションの条件を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、条件は、アサーション、アサーションの悪用の影響を抑えるために含める必要があります。 NotBefore と NotOnOrAfter 条件を指定する場合は、侵害されたアサーションの脆弱性の期間を制限できます。 AudienceRestrictionCondition は、目的の証明書利用者のパーティを明示的に記述するために使用できますか、証明書利用者に適切な対象者制限の強制と組み合わせると、アサーションのパーティに証明書利用者の間のなりすましによる攻撃を軽減するために役立ちます。  
+  
+ 既定の実装がに基づいて NotBefore と NotOnOrAfter の条件を作成、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.Lifetime%2A>のプロパティ、`tokenDescriptor`です。 アサーションの消費量を制限する、AudienceRestrictionCondition も生成されます、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.AppliesToAddress%2A>のプロパティ、`tokenDescriptor`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSamlSubject">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlSubject CreateSamlSubject (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlSubject CreateSamlSubject(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateSamlSubject(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlSubject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">サブジェクトの作成元のセキュリティ トークン記述子。</param>
+        <summary>SAML 1.1 アサーションのサブジェクトを作成します。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlSubject" />アサーションのサブジェクトを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSecurityTokenReference">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityKeyIdentifierClause CreateSecurityTokenReference (System.IdentityModel.Tokens.SecurityToken token, bool attached);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifierClause CreateSecurityTokenReference(class System.IdentityModel.Tokens.SecurityToken token, bool attached) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateSecurityTokenReference(System.IdentityModel.Tokens.SecurityToken,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+        <Parameter Name="attached" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="token">SAML トークンです。</param>
+        <param name="attached">添付または結び付けられていない参照を作成するかどうかを示す値。</param>
+        <summary>トークンがメッセージにアタッチされていない場合は、セキュリティ トークンへの参照を作成します。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />を表すトークンへの参照。 (インスタンスの<see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" />が実際に返されます)。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStatements">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt; CreateStatements (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlStatement&gt; CreateStatements(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateStatements(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlStatement&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">ステートメントを作成するトークンの記述子。</param>
+        <summary>アサーションに含まれる SAML 1.1 ステートメントを作成します。</summary>
+        <returns>列挙体<see cref="T:System.IdentityModel.Tokens.SamlStatement" />ステートメントを格納しています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ステートメントは、SAML 1.1 アサーションで必要はありません。 このメソッドは、空のコレクションを返す可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken CreateToken (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken CreateToken(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateToken(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">セキュリティ トークンを作成するトークンの記述子。</param>
+        <summary>トークンの記述子に基づくセキュリティ トークンを作成します。</summary>
+        <returns>A <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> SAML 1.1 セキュリティ トークンを表すです。 (返されたトークンのインスタンスでは実際には、 <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />)。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateWindowsIdentity">
+      <MemberSignature Language="C#" Value="protected virtual System.Security.Principal.WindowsIdentity CreateWindowsIdentity (string upn);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Security.Principal.WindowsIdentity CreateWindowsIdentity(string upn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateWindowsIdentity(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Principal.WindowsIdentity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="upn" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="upn">Id の作成に使用する UPN です。</param>
+        <summary>作成、<see cref="T:System.Security.Principal.WindowsIdentity" />オブジェクト指定されたユーザー プリンシパル名 (UPN) を使用します。</summary>
+        <returns>作成した Windows id。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="upn" /> が <see langword="null" /> または空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateXmlStringFromAttributes">
+      <MemberSignature Language="C#" Value="protected virtual string CreateXmlStringFromAttributes (System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAttribute&gt; attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string CreateXmlStringFromAttributes(class System.Collections.Generic.IEnumerable`1&lt;class System.IdentityModel.Tokens.SamlAttribute&gt; attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.CreateXmlStringFromAttributes(System.Collections.Generic.IEnumerable{System.IdentityModel.Tokens.SamlAttribute})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Collections.Generic.IEnumerable&lt;System.IdentityModel.Tokens.SamlAttribute&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の列挙体<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />属性を格納しています。</param>
+        <summary>アクターを表す SAML 1.1 属性のコレクションから、XML 形式の文字列を構築します。</summary>
+        <returns>属性を使用して構築整形式の XML 文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式は、"\<アクター >\<属性名、ns >\<AttributeValue >.\</AttributeValue >、.\<属性/>.\</Actor >"  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DenormalizeAuthenticationType">
+      <MemberSignature Language="C#" Value="protected virtual string DenormalizeAuthenticationType (string normalizedAuthenticationType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string DenormalizeAuthenticationType(string normalizedAuthenticationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.DenormalizeAuthenticationType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedAuthenticationType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedAuthenticationType">正規化された値。 <see cref="T:System.IdentityModel.Tokens.AuthenticationMethods" /> 値のいずれか。</param>
+        <summary>SAML 認証方法の指定した正規化された値に一致する SAML11 認証メソッド識別子を返します。</summary>
+        <returns>SAML11 認証メソッド識別子 (URI)、指定した正規化された識別子に一致します。 一致する SAML11 認証メソッドが見つからない場合、 <paramref name="normalizedAuthenticationType" /> URI が変更されていないに返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.DenormalizeAuthenticationType%2A>メソッドは、指定された一致 SAML11 認証メソッド識別子 URI の正規化を返します。 たとえば場合、<xref:System.IdentityModel.Tokens.AuthenticationMethods.X509>が指定されて`normalizedAuthenticationType`、次の URI が返されます:`urn:oasis:names:tc:SAML:1.0:am:X509-PKI`です。 マッピングが存在しない場合`normalizedAuthenticationType`、変更されていないが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetectReplayedToken">
+      <MemberSignature Language="C#" Value="protected override void DetectReplayedToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DetectReplayedToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.DetectReplayedToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">A <see cref="T:System.IdentityModel.Tokens.SecurityToken" /> SAML 1.1 セキュリティ トークンを表す (トークンは、型でなければなりません<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />) をチェックします。</param>
+        <summary>指定したトークンはトークン リプレイ キャッシュに既に存在する場合に例外をスローします。それ以外の場合、トークンがキャッシュに追加されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作では、のみベアラー トークン (キーがないトークン) を確認します。 トークン リプレイ キャッシュは、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.Caches%2A>オブジェクトを使用してこのハンドラー用に構成された、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.TokenReplayCacheExpirationPeriod*>のプロパティ、<xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration>を通じて参照されるオブジェクト、<xref:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.Caches" />ハンドラーの構成のプロパティ (を使用してアクセス、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" />プロパティ) は<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="token" />インスタンスとしてキャストすることはできません<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenValidationException">トークンに関連付けられているアサーションの ID が<see langword="null" />または空です。 (、<see cref="P:System.IdentityModel.Tokens.SamlSecurityToken.Assertion" />トークンの参照のプロパティ、<see cref="T:System.IdentityModel.Tokens.SamlAssertion" />を持つ、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Id" />を参照するプロパティ、<see cref="T:System.IdentityModel.Tokens.SamlId" />で、<see cref="P:System.IdentityModel.Tokens.SamlId.Value" />であるプロパティ<see langword="null" />または空です)。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenReplayDetectedException">トークンは既に、<see cref="T:System.IdentityModel.Tokens.TokenReplayCache" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUpn">
+      <MemberSignature Language="C#" Value="protected virtual string FindUpn (System.Security.Claims.ClaimsIdentity claimsIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string FindUpn(class System.Security.Claims.ClaimsIdentity claimsIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.FindUpn(System.Security.Claims.ClaimsIdentity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="claimsIdentity" Type="System.Security.Claims.ClaimsIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="claimsIdentity">目的の UPN 要求が含まれているクレーム id のオブジェクト。</param>
+        <summary>UPN 要求の値が指定された検索<see cref="T:System.Security.Claims.ClaimsIdentity" />に id をマッピングするためにオブジェクト、<see cref="T:System.Security.Claims.WindowsClaimsIdentity" />オブジェクト。</summary>
+        <returns>UPN を含む文字列の要求の値が見つかりました。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEncryptingCredentials">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.EncryptingCredentials GetEncryptingCredentials (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.EncryptingCredentials GetEncryptingCredentials(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.GetEncryptingCredentials(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">スコープのオブジェクトから資格情報を暗号化いくつかのスコープを取得します。</param>
+        <summary>資格情報を暗号化トークンを取得します。 資格情報を暗号化トークンを変更するには、このメソッドをオーバーライドします。</summary>
+        <returns><see cref="T:System.IdentityModel.SecurityTokenService.EncryptingCredentials" />資格情報が暗号化されたトークンを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装から暗号化資格情報を取得する、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.EncryptingCredentials%2A>のプロパティ、`tokenDescriptor`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">トークンの記述子から取得した暗号化の資格情報は非対称です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSigningCredentials">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SigningCredentials GetSigningCredentials (System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SigningCredentials GetSigningCredentials(class System.IdentityModel.Tokens.SecurityTokenDescriptor tokenDescriptor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.GetSigningCredentials(System.IdentityModel.Tokens.SecurityTokenDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SigningCredentials</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tokenDescriptor" Type="System.IdentityModel.Tokens.SecurityTokenDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="tokenDescriptor">トークンの記述子。</param>
+        <summary>アサーションに署名するための資格情報を取得します。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SigningCredentials" />アサーションに署名するための資格情報を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ トークンとして使用される SAML2 アサーションに署名を付けます。  
+  
+ 既定の実装を使用して、<xref:System.IdentityModel.Tokens.SecurityTokenDescriptor.SigningCredentials%2A>のプロパティ、`tokenDescriptor`資格情報を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="tokenDescriptor" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenReplayCacheEntryExpirationTime">
+      <MemberSignature Language="C#" Value="protected virtual DateTime GetTokenReplayCacheEntryExpirationTime (System.IdentityModel.Tokens.SamlSecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.DateTime GetTokenReplayCacheEntryExpirationTime(class System.IdentityModel.Tokens.SamlSecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.GetTokenReplayCacheEntryExpirationTime(System.IdentityModel.Tokens.SamlSecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SamlSecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">有効期限を取得するトークンです。</param>
+        <summary>これまでは、トークン リプレイ キャッシュにトークンを保持する時間を返します。</summary>
+        <returns>A<see cref="T:System.DateTime" />有効期限の時刻を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、存在する場合、このメソッドは、SAML 条件の NotOnOrAfter を返します。  
+  
+ その値が存在しない場合は、最初の SubjectConfirmationData の NotOnOrAfter を返します。  
+  
+ この関数は、現在の時刻から値を返すことはありません (<xref:System.DateTime.Now%2A>) Configuration.TokenReplayCacheExpirationPeriod よりもします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="token" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenTypeIdentifiers">
+      <MemberSignature Language="C#" Value="public override string[] GetTokenTypeIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetTokenTypeIdentifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.GetTokenTypeIdentifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このハンドラーでサポートされているトークンの種類の識別子を取得します。</summary>
+        <returns>トークンを含む文字列の配列は、このハンドラーでサポートされている識別子を入力します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyInfoSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenSerializer KeyInfoSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenSerializer KeyInfoSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.KeyInfoSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定およびキー識別子を逆シリアル化に使用されるセキュリティ トークン シリアライザー。</summary>
+        <value>A<see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" />シリアライザーを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化および逆シリアル化<xref:System.IdentityModel.Tokens.SecurityKeyIdentifier>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値を設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCustomConfiguration">
+      <MemberSignature Language="C#" Value="public override void LoadCustomConfiguration (System.Xml.XmlNodeList customConfigElements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void LoadCustomConfiguration(class System.Xml.XmlNodeList customConfigElements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.LoadCustomConfiguration(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="customConfigElements" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="customConfigElements"><see cref="T:System.Xml.XmlNodeList" /> SAML トークンの認証要件を指定します。</param>
+        <summary>XML からカスタム構成を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="customConfigElements" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定された構成<paramref name="customConfigElements" />が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SamlSecurityTokenHandler.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>urn: oasis: 名前: tc: SAML:1.0</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NormalizeAuthenticationType">
+      <MemberSignature Language="C#" Value="protected virtual string NormalizeAuthenticationType (string saml11AuthenticationMethod);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string NormalizeAuthenticationType(string saml11AuthenticationMethod) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.NormalizeAuthenticationType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="saml11AuthenticationMethod" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="saml11AuthenticationMethod">SAML 1.1 認証メソッド識別子 (URI) を正規化します。</param>
+        <summary>SAML 1.1 認証メソッド識別子に一致する正規化された値を返します。</summary>
+        <returns>1 つは、正規化された値の<see cref="T:System.IdentityModel.Tokens.AuthenticationMethods" />値。 一致する値が存在しない場合<paramref name="saml11AuthenticationMethod" />が返されますが、変更されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.NormalizeAuthenticationType%2A>メソッドを返します、 <xref:System.IdentityModel.Tokens.AuthenticationMethods> SAML11 認証方法の指定した識別子に一致する値。 たとえば場合、`urn:oasis:names:tc:SAML:1.0:am:X509-PKI`が指定されて`saml11AuthenticationMethod`、<xref:System.IdentityModel.Tokens.AuthenticationMethods.X509>が返されます。 マッピングが存在しない場合`saml11AuthenticationMethod`、変更されていないが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessAttributeStatement">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessAttributeStatement (System.IdentityModel.Tokens.SamlAttributeStatement samlStatement, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessAttributeStatement(class System.IdentityModel.Tokens.SamlAttributeStatement samlStatement, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ProcessAttributeStatement(System.IdentityModel.Tokens.SamlAttributeStatement,System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlStatement" Type="System.IdentityModel.Tokens.SamlAttributeStatement" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="samlStatement"><see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />からクレームが作成されます。</param>
+        <param name="subject">クレームを追加する件名。</param>
+        <param name="issuer">発行者。</param>
+        <summary>SAML 1.1 属性ステートメントからの要求を作成し、指定されたサブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成された要求は、サブジェクトに追加されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlStatement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="subject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessAuthenticationStatement">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessAuthenticationStatement (System.IdentityModel.Tokens.SamlAuthenticationStatement samlStatement, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessAuthenticationStatement(class System.IdentityModel.Tokens.SamlAuthenticationStatement samlStatement, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ProcessAuthenticationStatement(System.IdentityModel.Tokens.SamlAuthenticationStatement,System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlStatement" Type="System.IdentityModel.Tokens.SamlAuthenticationStatement" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="samlStatement"><see cref="T:System.IdentityModel.Tokens.SamlAuthenticationStatement" />からクレームが作成されます。</param>
+        <param name="subject">クレームを追加する件名。</param>
+        <param name="issuer">発行者。</param>
+        <summary>SAML 1.1 認証ステートメントからクレームを作成し、指定されたサブジェクトに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlStatement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="subject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessAuthorizationDecisionStatement">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessAuthorizationDecisionStatement (System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement samlStatement, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessAuthorizationDecisionStatement(class System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement samlStatement, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ProcessAuthorizationDecisionStatement(System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement,System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlStatement" Type="System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="samlStatement"><see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" />からクレームが作成されます。</param>
+        <param name="subject">クレームを追加する件名。</param>
+        <param name="issuer">発行者。</param>
+        <summary>SAML 1.1 承認決定ステートメントからの要求を作成し、指定されたサブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSamlSubject">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessSamlSubject (System.IdentityModel.Tokens.SamlSubject samlSubject, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessSamlSubject(class System.IdentityModel.Tokens.SamlSubject samlSubject, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ProcessSamlSubject(System.IdentityModel.Tokens.SamlSubject,System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="samlSubject" Type="System.IdentityModel.Tokens.SamlSubject" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="samlSubject"><see cref="T:System.IdentityModel.Tokens.SamlSubject" />からクレームが作成されます。</param>
+        <param name="subject">クレームを追加する件名。</param>
+        <param name="issuer">発行者。</param>
+        <summary>SAML 1.1 サブジェクトからクレームを作成し、指定されたサブジェクトに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="samlSubject" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessStatement">
+      <MemberSignature Language="C#" Value="protected virtual void ProcessStatement (System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlStatement&gt; statements, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ProcessStatement(class System.Collections.Generic.IList`1&lt;class System.IdentityModel.Tokens.SamlStatement&gt; statements, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ProcessStatement(System.Collections.Generic.IList{System.IdentityModel.Tokens.SamlStatement},System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="statements" Type="System.Collections.Generic.IList&lt;System.IdentityModel.Tokens.SamlStatement&gt;" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="statements">要求の作成元の SAML ステートメントです。</param>
+        <param name="subject">クレームを追加する件名。</param>
+        <param name="issuer">発行者。</param>
+        <summary>SAML 1.1 ステートメントのコレクションからの要求を作成し、指定されたサブジェクトに追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="statements" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAction">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAction ReadAction (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAction ReadAction(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAction(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAction</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Action&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAction" />読み取られるアクション要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAdvice">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAdvice ReadAdvice (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAdvice ReadAdvice(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAdvice(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAdvice</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Advice&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAdvice" />読み取られる Advice 要素を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドバイス要素には、含まれる SAML 1.1 以外の名前空間からの XML 要素を許可する機能拡張ポイントがあります。 既定では、アドバイスは、アサーションのセマンティクスに影響を与えずに無視される可能性がありますので、このような要素は無視されます。 これらの要素の処理を処理するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAssertion">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAssertion ReadAssertion (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAssertion ReadAssertion(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAssertion(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAssertion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Assertion&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAssertion" />読み取られるアサーション要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttribute">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAttribute ReadAttribute (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAttribute ReadAttribute(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAttribute(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Attribute&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAssertion" />読み取られるアサーション要素を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、属性要素のコンテンツが単純な文字列である必要があります。 複雑なコンテンツまたは xs:string 以外の宣言された単純型のコンテンツを処理するためには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttributeStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAttributeStatement ReadAttributeStatement (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAttributeStatement ReadAttributeStatement(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAttributeStatement(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAttributeStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:AttributeStatement&gt;要素、または&lt;saml:Statement&gt; saml:AttributeStatementType の xsi:type を指定する要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />読み取られる要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAttributeValue">
+      <MemberSignature Language="C#" Value="protected virtual string ReadAttributeValue (System.Xml.XmlReader reader, System.IdentityModel.Tokens.SamlAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string ReadAttributeValue(class System.Xml.XmlReader reader, class System.IdentityModel.Tokens.SamlAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAttributeValue(System.Xml.XmlReader,System.IdentityModel.Tokens.SamlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="attribute" Type="System.IdentityModel.Tokens.SamlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <param name="attribute">読み取り中の属性です。</param>
+        <summary>属性値を読み取ります。</summary>
+        <returns>属性の値を含む文字列です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAudienceRestrictionCondition">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAudienceRestrictionCondition ReadAudienceRestrictionCondition (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAudienceRestrictionCondition ReadAudienceRestrictionCondition(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAudienceRestrictionCondition(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAudienceRestrictionCondition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダーに配置されて、 &lt;saml:AudienceRestrictionCondition&gt;読み取り対象の要素。</param>
+        <summary>読み取り、 &lt;saml:AudienceRestrictionCondition&gt;指定した XML リーダーからの要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />読み取られた要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAuthenticationStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAuthenticationStatement ReadAuthenticationStatement (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAuthenticationStatement ReadAuthenticationStatement(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAuthenticationStatement(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAuthenticationStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:AuthnStatement&gt;要素または&lt;saml:Statement&gt; saml:AuthnStatementType の xsi:type を指定する要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAuthenticationStatement" />読み取られる要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAuthorityBinding">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAuthorityBinding ReadAuthorityBinding (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAuthorityBinding ReadAuthorityBinding(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAuthorityBinding(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAuthorityBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダーに配置されて、 &lt;saml:AuthorityBinding&gt;要素</param>
+        <summary>読み取り、 &lt;saml:AuthorityBinding&gt;要素。</summary>
+        <returns>読み込まれた <see cref="T:System.IdentityModel.Tokens.SamlAuthorityBinding" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="reader" />saml:AuthorityBinding 要素に配置されていないか、認識できない子要素、または無効な子要素を含んでいます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadAuthorizationDecisionStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement ReadAuthorizationDecisionStatement (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement ReadAuthorizationDecisionStatement(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadAuthorizationDecisionStatement(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:AuthzDecisionStatement&gt;要素または&lt;saml:Statement&gt; saml:AuthzDecisionStatementType の xsi:type を指定する要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlAuthorizationStatement" />読み取られる要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadCondition">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlCondition ReadCondition (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlCondition ReadCondition(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadCondition(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlCondition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">元の要素を読み取るリーダー。</param>
+        <summary>指定したリーダーから、saml:AudienceRestrictionCondition または、saml:DoNotCacheCondition を読み取ります</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SamlCondition" /> XML から読み取ることができます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="reader" />不明な要素に配置されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadConditions">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlConditions ReadConditions (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlConditions ReadConditions(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadConditions(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlConditions</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Conditions&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlConditions" />読み取られる条件要素を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー設定を処理する\<saml:Condition > 要素は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="reader" />条件要素に配置されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadDoNotCacheCondition">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlDoNotCacheCondition ReadDoNotCacheCondition (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlDoNotCacheCondition ReadDoNotCacheCondition(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadDoNotCacheCondition(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlDoNotCacheCondition</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">Saml:DoNotCacheCondition 要素に配置する XML リーダー</param>
+        <summary>指定した XML リーダーから saml:DoNotCacheCondition 要素を読み取ります。</summary>
+        <returns>読み込まれた <see cref="T:System.IdentityModel.Tokens.SamlDoNotCacheCondition" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="reader" />saml:DoNotCacheCondition 要素に配置されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadEvidence">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlEvidence ReadEvidence (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlEvidence ReadEvidence(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadEvidence(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlEvidence</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Evidence&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlEvidence" />読み取られる証拠要素を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSigningKeyInfo">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityKeyIdentifier ReadSigningKeyInfo (System.Xml.XmlReader reader, System.IdentityModel.Tokens.SamlAssertion assertion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifier ReadSigningKeyInfo(class System.Xml.XmlReader reader, class System.IdentityModel.Tokens.SamlAssertion assertion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadSigningKeyInfo(System.Xml.XmlReader,System.IdentityModel.Tokens.SamlAssertion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifier</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.SamlAssertion" />
+      </Parameters>
+      <Docs>
+        <param name="reader">Ds:KeyInfo 要素に位置する XmlReader です。</param>
+        <param name="assertion">オンになって、署名されたアサーションです。</param>
+        <summary>必要な KeyInfo が署名 SAML を逆シリアル化します。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を表すに使用するキーの署名を確認します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadStatement">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlStatement ReadStatement (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlStatement ReadStatement(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadStatement(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Statement&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlStatement" />読み取られたステートメント要素を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、saml:AttributeStatementType、saml:AuthnStatementType、および saml:AuthzDecisionStatementType の xsi:type を指定するステートメント要素のみを処理します。 カスタム ステートメントを処理するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSubject">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SamlSubject ReadSubject (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SamlSubject ReadSubject(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadSubject(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlSubject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />読み取る要素に配置します。</param>
+        <summary>読み取り、 &lt;saml:Subject&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SamlSubject" />読み取られたサブジェクト要素を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、省略可能な処理しない\<EncryptedID > 要素。 サブジェクトの Id で暗号化されている、処理するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSubjectKeyInfo">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityKeyIdentifier ReadSubjectKeyInfo (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifier ReadSubjectKeyInfo(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadSubjectKeyInfo(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifier</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />に配置されている、 &lt;ds:KeyInfo&gt;要素。</param>
+        <summary>SAML サブジェクトを逆シリアル化&lt;ds:KeyInfo&gt;要素。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />の内容を表す、 &lt;ds:KeyInfo&gt;要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">A <see cref="T:System.Xml.XmlReader" /> SAML 1.1 のセキュリティ トークンへのストリーム。</param>
+        <summary>SAML 1.1 トークンを指定したストリームから読み取ります。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.IssuerTokenResolver" />で指定された構成のプロパティ、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" />プロパティは<see langword="null" />します。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.ServiceTokenResolver" />で指定された構成のプロパティ、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" />プロパティは<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveIssuerToken">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityToken ResolveIssuerToken (System.IdentityModel.Tokens.SamlAssertion assertion, System.IdentityModel.Selectors.SecurityTokenResolver issuerResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ResolveIssuerToken(class System.IdentityModel.Tokens.SamlAssertion assertion, class System.IdentityModel.Selectors.SecurityTokenResolver issuerResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ResolveIssuerToken(System.IdentityModel.Tokens.SamlAssertion,System.IdentityModel.Selectors.SecurityTokenResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.SamlAssertion" />
+        <Parameter Name="issuerResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+      </Parameters>
+      <Docs>
+        <param name="assertion"><see cref="T:System.IdentityModel.Tokens.SamlAssertion" />解決するのには、発行者トークンです。</param>
+        <param name="issuerResolver">現在<see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />このハンドラーに関連付けられています。</param>
+        <summary>署名キーの Id を解決する、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />です。</summary>
+        <returns>A<see cref="T:System.IdentityModel.Tokens.SecurityToken" />解決済みのトークンを表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assertion" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">ハンドラーは、トークンを解決するのにはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveSubjectKeyIdentifier">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityKey ResolveSubjectKeyIdentifier (System.IdentityModel.Tokens.SecurityKeyIdentifier subjectKeyIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKey ResolveSubjectKeyIdentifier(class System.IdentityModel.Tokens.SecurityKeyIdentifier subjectKeyIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ResolveSubjectKeyIdentifier(System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="subjectKeyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="subjectKeyIdentifier">キーに解決するのにはキーの識別子。</param>
+        <summary>解決、 <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" /> saml:Subject 要素で指定します。</summary>
+        <returns>キーの識別子から解決するキー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SamlSecurityTokenRequirement">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SamlSecurityTokenRequirement SamlSecurityTokenRequirement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SamlSecurityTokenRequirement SamlSecurityTokenRequirement" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.SamlSecurityTokenRequirement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SamlSecurityTokenRequirement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのインスタンスのトークンの要件のセキュリティを設定します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Tokens.SamlSecurityTokenRequirement" />要件を指定します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">値を設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDelegateFromAttribute">
+      <MemberSignature Language="C#" Value="protected virtual void SetDelegateFromAttribute (System.IdentityModel.Tokens.SamlAttribute attribute, System.Security.Claims.ClaimsIdentity subject, string issuer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetDelegateFromAttribute(class System.IdentityModel.Tokens.SamlAttribute attribute, class System.Security.Claims.ClaimsIdentity subject, string issuer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.SetDelegateFromAttribute(System.IdentityModel.Tokens.SamlAttribute,System.Security.Claims.ClaimsIdentity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attribute" Type="System.IdentityModel.Tokens.SamlAttribute" />
+        <Parameter Name="subject" Type="System.Security.Claims.ClaimsIdentity" />
+        <Parameter Name="issuer" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attribute">使用する <see cref="T:System.IdentityModel.Tokens.SamlAttribute" />。</param>
+        <param name="subject"><see cref="T:System.Security.Claims.ClaimsIdentity" />このトークンのサブジェクト。</param>
+        <param name="issuer">要求の発行者。</param>
+        <summary>特殊な種類の場合にこのメソッドが呼び出されます<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />が検出されました。 <see cref="T:System.IdentityModel.Tokens.SamlAttribute" />ラップで渡される、<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />属性値のコレクションを含む (で、<see cref="P:System.IdentityModel.Tokens.SamlAttribute.Values" />プロパティ)、それぞれが、要求にマッピングを取得します。 すべての要求で返されます、<see cref="T:System.Security.Claims.ClaimsIdentity" />指定した発行者にします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.IdentityModel.Tokens.SamlAttribute" />任意の有効な属性値が含まれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public override Type TokenType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlSecurityTokenHandler.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このハンドラーでサポートされているトークンの種類を取得します。</summary>
+        <value><see cref="T:System.Type" />の<see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" />クラスです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryResolveIssuerToken">
+      <MemberSignature Language="C#" Value="protected virtual bool TryResolveIssuerToken (System.IdentityModel.Tokens.SamlAssertion assertion, System.IdentityModel.Selectors.SecurityTokenResolver issuerResolver, out System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TryResolveIssuerToken(class System.IdentityModel.Tokens.SamlAssertion assertion, class System.IdentityModel.Selectors.SecurityTokenResolver issuerResolver, [out] class System.IdentityModel.Tokens.SecurityToken&amp; token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.TryResolveIssuerToken(System.IdentityModel.Tokens.SamlAssertion,System.IdentityModel.Selectors.SecurityTokenResolver,System.IdentityModel.Tokens.SecurityToken@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.SamlAssertion" />
+        <Parameter Name="issuerResolver" Type="System.IdentityModel.Selectors.SecurityTokenResolver" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="assertion"><see cref="T:System.IdentityModel.Tokens.SamlAssertion" />解決するのには、発行者トークンです。</param>
+        <param name="issuerResolver">現在<see cref="T:System.IdentityModel.Selectors.SecurityTokenResolver" />このハンドラーに関連付けられています。</param>
+        <param name="token">このメソッドが戻るときに、トークンが正常に解決された場合、解決されたセキュリティ トークンが含まれます。</param>
+        <summary>署名キー識別子を SecurityToken に解決します。</summary>
+        <returns>
+          <see langword="true" />場合は、トークンに解決されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnspecifiedAuthenticationMethod">
+      <MemberSignature Language="C#" Value="public const string UnspecifiedAuthenticationMethod;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string UnspecifiedAuthenticationMethod" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Tokens.SamlSecurityTokenHandler.UnspecifiedAuthenticationMethod" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>urn:oasis:names:tc:SAML:1.0:am:unspecified</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateConditions">
+      <MemberSignature Language="C#" Value="protected virtual void ValidateConditions (System.IdentityModel.Tokens.SamlConditions conditions, bool enforceAudienceRestriction);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateConditions(class System.IdentityModel.Tokens.SamlConditions conditions, bool enforceAudienceRestriction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ValidateConditions(System.IdentityModel.Tokens.SamlConditions,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="conditions" Type="System.IdentityModel.Tokens.SamlConditions" />
+        <Parameter Name="enforceAudienceRestriction" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="conditions">検証に使用する SAML 1.1 条件です。</param>
+        <param name="enforceAudienceRestriction">
+          <see langword="true" />対象者制限状態を確認します。</param>
+        <summary>指定された検証<see cref="T:System.IdentityModel.Tokens.SamlConditions" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 条件が有効でない場合は、適切な例外をスローします。 トークンが無効であるさまざまな理由からです。 たとえば、トークンの有効期間内で現在の時刻ができない可能性があります、トークンが矛盾していますか、無効であるデータを含む可能性があります。 またはトークンには、サポートされていない SAML 1.1 要素が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ValidateToken(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="token">検証に使用する SAML 1.1 トークンです。</param>
+        <summary>トークン データを検証し、その要求を返します。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トークンが有効でない場合は、適切な例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAction">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAction (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAction(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAction(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAction)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="action" Type="System.IdentityModel.Tokens.SamlAction" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="action">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Action&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="action" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAdvice">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAdvice (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAdvice advice);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAdvice(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAdvice advice) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAdvice(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAdvice)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="advice" Type="System.IdentityModel.Tokens.SamlAdvice" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="advice">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Advice&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="advice" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAssertion">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAssertion (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAssertion assertion);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAssertion(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAssertion assertion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAssertion(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAssertion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="assertion" Type="System.IdentityModel.Tokens.SamlAssertion" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />のシリアル化を使用します。</param>
+        <param name="assertion">A<see cref="T:System.IdentityModel.Tokens.SamlAssertion" />をシリアル化するアサーションを表すです。</param>
+        <summary>指定した XML ライターに指定した SAML アサーションをシリアル化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="assertion" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定されたアサーション<paramref name="assertion" />両方を持つ、<see cref="T:System.IdentityModel.SecurityTokenService.EncryptingCredentials" />と<see cref="T:System.IdentityModel.Tokens.SamlSecurityTokenHandler.ReceivedEncryptingCredentials" />プロパティに設定<see langword="null" />です。  
+  
+ または  
+  
+ ステートメントであり、なしで指定されたアサーションがある<paramref name="data" />です。 (両方、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Subject" />プロパティおよび<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Statements" />プロパティには<see langword="null" />)。アサーションにステートメントが含まれていない場合、サブジェクトでなければなりません。  
+  
+ または  
+  
+ 指定されたアサーション<paramref name="assertion" />認証、属性、または承認決定ステートメントとなしのサブジェクトが含まれています: これらのステートメントには、サブジェクトが必要とします。 (、<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Statements" />プロパティには、型のステートメントが含まれている<see cref="T:System.IdentityModel.Tokens.SamlAttributeStatement" />、 <see cref="T:System.IdentityModel.Tokens.SamlAuthenticationStatement" />、または<see cref="T:System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" />と<see cref="P:System.IdentityModel.Tokens.SamlAssertion.Subject" />プロパティは<see langword="null" />)。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">トークンの暗号化の資格情報には、指定された対称キーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttribute">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAttribute (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAttribute(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAttribute(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="attribute" Type="System.IdentityModel.Tokens.SamlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="attribute">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Attribute&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attribute" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeStatement">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAttributeStatement (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAttributeStatement statement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAttributeStatement(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAttributeStatement statement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAttributeStatement(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAttributeStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="statement" Type="System.IdentityModel.Tokens.SamlAttributeStatement" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="statement">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:AttributeStatement&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="statement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAttributeValue">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAttributeValue (System.Xml.XmlWriter writer, string value, System.IdentityModel.Tokens.SamlAttribute attribute);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAttributeValue(class System.Xml.XmlWriter writer, string value, class System.IdentityModel.Tokens.SamlAttribute attribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAttributeValue(System.Xml.XmlWriter,System.String,System.IdentityModel.Tokens.SamlAttribute)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="attribute" Type="System.IdentityModel.Tokens.SamlAttribute" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />書き込みに使用します。</param>
+        <param name="value">書き込まれる属性の値を含む文字列です。</param>
+        <param name="attribute">A<see cref="T:System.IdentityModel.Tokens.SamlAttribute" />値が書き込まれる属性を表すです。</param>
+        <summary>Saml:Attribute 値を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、メソッドは、文字列として値を書き込みます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAudienceRestrictionCondition">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAudienceRestrictionCondition (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAudienceRestrictionCondition condition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAudienceRestrictionCondition(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAudienceRestrictionCondition condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAudienceRestrictionCondition(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAudienceRestrictionCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="condition" Type="System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="condition">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:AudienceRestriction&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SamlConditions.Conditions" />のプロパティ、<see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />で指定された<paramref name="condition" />は<see langword="null" />または空のコレクション。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAuthenticationStatement">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAuthenticationStatement (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAuthenticationStatement statement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAuthenticationStatement(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAuthenticationStatement statement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAuthenticationStatement(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAuthenticationStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="statement" Type="System.IdentityModel.Tokens.SamlAuthenticationStatement" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="statement">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:AuthnStatement&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="statement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAuthorityBinding">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAuthorityBinding (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAuthorityBinding authorityBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAuthorityBinding(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAuthorityBinding authorityBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAuthorityBinding(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAuthorityBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="authorityBinding" Type="System.IdentityModel.Tokens.SamlAuthorityBinding" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="authorityBinding">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:AuthorityBinding&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="authorityBinding" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteAuthorizationDecisionStatement">
+      <MemberSignature Language="C#" Value="protected virtual void WriteAuthorizationDecisionStatement (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement statement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteAuthorizationDecisionStatement(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement statement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAuthorizationDecisionStatement(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="statement" Type="System.IdentityModel.Tokens.SamlAuthorizationDecisionStatement" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="statement">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:AuthzDecisionStatement&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="statement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteCondition">
+      <MemberSignature Language="C#" Value="protected virtual void WriteCondition (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlCondition condition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteCondition(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlCondition condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteCondition(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="condition" Type="System.IdentityModel.Tokens.SamlCondition" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="condition">書き込むデータ。 既定では、のみ<see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />と<see cref="T:System.IdentityModel.Tokens.SamlDoNotCacheCondition" />はサポートされています。</param>
+        <summary>指定したシリアル化<see cref="T:System.IdentityModel.Tokens.SamlCondition" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、メソッドを呼び出すか、<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteAudienceRestrictionCondition%2A>または<xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteDoNotCacheCondition%2A>の種類に基づいて、条件をシリアル化するメソッド<xref:System.IdentityModel.Tokens.SamlCondition>指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="condition" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">
+          <paramref name="condition" /> がサポートされていません。 」を参照してください。 既定では、のみ<see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" />と<see cref="T:System.IdentityModel.Tokens.SamlDoNotCacheCondition" />はサポートされています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteConditions">
+      <MemberSignature Language="C#" Value="protected virtual void WriteConditions (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlConditions conditions);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteConditions(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlConditions conditions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteConditions(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlConditions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="conditions" Type="System.IdentityModel.Tokens.SamlConditions" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="conditions">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Conditions&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="conditions" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteDoNotCacheCondition">
+      <MemberSignature Language="C#" Value="protected virtual void WriteDoNotCacheCondition (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlDoNotCacheCondition condition);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteDoNotCacheCondition(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlDoNotCacheCondition condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteDoNotCacheCondition(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlDoNotCacheCondition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="condition" Type="System.IdentityModel.Tokens.SamlDoNotCacheCondition" />
+      </Parameters>
+      <Docs>
+        <param name="writer">データの書き込みに使用する XML ライター。</param>
+        <param name="condition">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:DoNotCacheCondition&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="condition" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEvidence">
+      <MemberSignature Language="C#" Value="protected virtual void WriteEvidence (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlEvidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteEvidence(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlEvidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteEvidence(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlEvidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="evidence" Type="System.IdentityModel.Tokens.SamlEvidence" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="evidence">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Evidence&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="evidence" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSigningKeyInfo">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSigningKeyInfo (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityKeyIdentifier signingKeyIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSigningKeyInfo(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityKeyIdentifier signingKeyIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteSigningKeyInfo(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="signingKeyIdentifier" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />キー識別子をシリアル化するときに使用します。</param>
+        <param name="signingKeyIdentifier"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を記述するキー識別子を表すです。</param>
+        <summary>署名を書き込みます&lt;ds:KeyInfo&gt;要素が指定した XML ライターを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signingKeyIdentifier" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">ハンドラーがで指定されたキー識別子をシリアル化できません<paramref name="signingKeyIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStatement">
+      <MemberSignature Language="C#" Value="protected virtual void WriteStatement (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlStatement statement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteStatement(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlStatement statement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteStatement(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlStatement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="statement" Type="System.IdentityModel.Tokens.SamlStatement" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="statement">書き込むデータ。</param>
+        <summary>SamlStatement を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを書き込むことが、 \<saml:AttributeStatement >、 \<saml:AuthnStatement >、または\<saml:AuthzDecisionStatement > 要素。 カスタム処理を<xref:System.IdentityModel.Tokens.SamlStatement>書き込みのためのクラス、 \<saml:Statement > 要素では、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="statement" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSubject">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSubject (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SamlSubject subject);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSubject(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SamlSubject subject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteSubject(System.Xml.XmlWriter,System.IdentityModel.Tokens.SamlSubject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="subject" Type="System.IdentityModel.Tokens.SamlSubject" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="subject">書き込むデータ。</param>
+        <summary>書き込みます、 &lt;saml:Subject&gt;要素。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subject" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSubjectKeyInfo">
+      <MemberSignature Language="C#" Value="protected virtual void WriteSubjectKeyInfo (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityKeyIdentifier subjectSki);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void WriteSubjectKeyInfo(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityKeyIdentifier subjectSki) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteSubjectKeyInfo(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityKeyIdentifier)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="subjectSki" Type="System.IdentityModel.Tokens.SecurityKeyIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />キー識別子をシリアル化するときに使用します。</param>
+        <param name="subjectSki"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />を記述するキー識別子を表すです。</param>
+        <summary>サブジェクトをシリアル化&lt;ds:KeyInfo&gt;要素が指定した XML ライターを使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="subjectSki" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public override void WriteToken (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteToken(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlSecurityTokenHandler.WriteToken(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Xml.XmlWriter" />データの書き込みに使用します。</param>
+        <param name="token">書き込むトークンです。</param>
+        <summary>Saml トークンを指定した XML ライターに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="data" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="writer" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="token" /> は <see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> オブジェクトではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

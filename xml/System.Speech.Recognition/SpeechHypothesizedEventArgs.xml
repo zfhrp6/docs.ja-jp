@@ -1,0 +1,50 @@
+<Type Name="SpeechHypothesizedEventArgs" FullName="System.Speech.Recognition.SpeechHypothesizedEventArgs">
+  <TypeSignature Language="C#" Value="public class SpeechHypothesizedEventArgs : System.Speech.Recognition.RecognitionEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SpeechHypothesizedEventArgs extends System.Speech.Recognition.RecognitionEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SpeechHypothesizedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.RecognitionEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>通知を返します<see cref="E:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized" />または<see cref="E:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized" />イベント。  
+  
+ このクラスは、.NET Framework インフラストラクチャをサポートしているし、アプリケーション コードから直接使用するものではありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`SpeechHypothesized`によってイベントが発生した、<xref:System.Speech.Recognition.SpeechRecognizer>と<xref:System.Speech.Recognition.SpeechRecognitionEngine>クラスです。  
+  
+ 使用して仮認識された語句に関する詳細情報を取得することができます、<xref:System.Speech.Recognition.RecognitionEventArgs.Result%2A>プロパティです。  
+  
+ さまざまな`SpeechHypothesized`イベントが生成されるとして認識エンジンが入力のフレーズを特定ましょう。 通常、これらのイベントの処理は、のみのデバッグに役立ちます。  
+  
+ `SpeechHypothesizedEventArgs` は、<xref:System.Speech.Recognition.RecognitionEventArgs> から派生します。  
+  
+   
+  
+## Examples  
+ 次の例のハンドラーを作成する<xref:System.Speech.Recognition.SpeechRecognizer.SpeechHypothesized?displayProperty=nameWithType>または<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized?displayProperty=nameWithType>イベント。 ハンドラーのインスタンスを使用する`SpeechHypothesizedEventArgs`を返して、暫定的に認識された語句に関する情報を表示します。  
+  
+```  
+// Create a handler for the SpeechHypothesized event.  
+recognizer.SpeechHypothesized += new EventHandler<SpeechHypothesizedEventArgs>(recognizer_SpeechHypothesized);  
+  
+// Handle the event and display the hypothesized result.  
+void recognizer_SpeechHypothesized (object sender, SpeechHypothesizedEventArgs e)  
+  {  
+    Console.WriteLine("Hypothesized text: " + e.Result.Text);  
+  }  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

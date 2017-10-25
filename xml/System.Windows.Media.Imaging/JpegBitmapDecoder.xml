@@ -1,0 +1,121 @@
+<Type Name="JpegBitmapDecoder" FullName="System.Windows.Media.Imaging.JpegBitmapDecoder">
+  <TypeSignature Language="C#" Value="public sealed class JpegBitmapDecoder : System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit JpegBitmapDecoder extends System.Windows.Media.Imaging.BitmapDecoder" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.JpegBitmapDecoder" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Imaging.BitmapDecoder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Joint Photographics JPEG (Experts Group) でエンコードされたイメージのデコーダーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表の一覧、<xref:System.Windows.Media.PixelFormats>でサポートされている、<xref:System.Windows.Media.Imaging.JpegBitmapDecoder>クラスです。  
+  
+|指定された PixelFormat|PixelFormat にデコードされます。|  
+|--------------------------|----------------------------|  
+|<xref:System.Windows.Media.PixelFormats.Gray8%2A>|<xref:System.Windows.Media.PixelFormats.Gray8%2A>|  
+|<xref:System.Windows.Media.PixelFormats.Rgb24%2A>|<xref:System.Windows.Media.PixelFormats.Rgb24%2A>|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JpegBitmapDecoder (System.IO.Stream bitmapStream, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Stream bitmapStream, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.JpegBitmapDecoder.#ctor(System.IO.Stream,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="bitmapStream" Type="System.IO.Stream" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapStream">デコードするビットマップのストリーム。</param>
+        <param name="createOptions">ビットマップ イメージの初期化オプションです。</param>
+        <param name="cacheOption">ビットマップ イメージに使用するキャッシュ メソッド。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.JpegBitmapDecoder" />クラスを指定して、指定されたファイル ストリームから<paramref name="createOptions" />と<paramref name="cacheOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnLoad>を終了する場合の cache オプション、`bitmapStream`デコーダーが作成された後です。 既定値<xref:System.Windows.Media.Imaging.BitmapCacheOption.OnDemand>キャッシュ オプションは、ビットマップが必要なクリーンアップは、ガベージ コレクターによって処理されるまで、ストリームへのアクセスが保持されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成および使用する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapDecoder>ファイル ストリームからです。 デコードされたイメージのソースとして使用されます、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#1](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#1)]
+ [!code-csharp[jpegbitmapdecoderencoder#1](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#1)]
+ [!code-vb[jpegbitmapdecoderencoder#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapStream" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileFormatException"><paramref name="bitmapStream" />されませんが、[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]でエンコードされたイメージ。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public JpegBitmapDecoder (Uri bitmapUri, System.Windows.Media.Imaging.BitmapCreateOptions createOptions, System.Windows.Media.Imaging.BitmapCacheOption cacheOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri bitmapUri, valuetype System.Windows.Media.Imaging.BitmapCreateOptions createOptions, valuetype System.Windows.Media.Imaging.BitmapCacheOption cacheOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.JpegBitmapDecoder.#ctor(System.Uri,System.Windows.Media.Imaging.BitmapCreateOptions,System.Windows.Media.Imaging.BitmapCacheOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="bitmapUri" Type="System.Uri" />
+        <Parameter Name="createOptions" Type="System.Windows.Media.Imaging.BitmapCreateOptions" />
+        <Parameter Name="cacheOption" Type="System.Windows.Media.Imaging.BitmapCacheOption" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapUri"><see cref="T:System.Uri" />デコードにビットマップを識別します。</param>
+        <param name="createOptions">ビットマップ イメージの初期化オプションです。</param>
+        <param name="cacheOption">ビットマップ イメージに使用するキャッシュ メソッド。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.JpegBitmapDecoder" />から、指定したクラス<see cref="T:System.Uri" />、指定した<paramref name="createOptions" />と<paramref name="cacheOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デコーダーは、指定されたを読み込めなかった場合に、例外が発生`bitmapUri`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成および使用する方法を示します、<xref:System.Windows.Media.Imaging.JpegBitmapDecoder>から、<xref:System.Uri>です。 デコードされたイメージのソースとして使用されます、<xref:System.Windows.Controls.Image>コントロール。  
+  
+ [!code-cpp[jpegbitmapdecoderencoder#5](~/samples/snippets/cpp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CPP/jpegencoderdecoder.cpp#5)]
+ [!code-csharp[jpegbitmapdecoderencoder#5](~/samples/snippets/csharp/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/CSharp/JpegEncoderDecoder.cs#5)]
+ [!code-vb[jpegbitmapdecoderencoder#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/JpegBitmapDecoderEncoder/VB/JpegEncoderDecoder.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapUri" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileFormatException"><paramref name="bitmapUri" />されませんが、[!INCLUDE[TLA#tla_jpegorg](~/includes/tlasharptla-jpegorg-md.md)]でエンコードされたイメージ。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

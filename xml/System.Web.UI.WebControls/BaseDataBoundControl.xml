@@ -1,0 +1,643 @@
+<Type Name="BaseDataBoundControl" FullName="System.Web.UI.WebControls.BaseDataBoundControl">
+  <TypeSignature Language="C#" Value="public abstract class BaseDataBoundControl : System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseDataBoundControl extends System.Web.UI.WebControls.WebControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BaseDataBoundControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("DataSourceID")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET データ ソース コントロールを使用して、データにバインドするコントロールの基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、Web サーバー コントロールの一貫した方法でデータをバインドできるようにするコントロールのアーキテクチャをサポートします。 データにバインドする web サーバー コントロールは、データ バインド コントロールとバインディングは、という名前のデータ ソース コントロールを促進するクラスと呼ばれます。 ASP.NET データ ソース コントロールを使用するように設計されたデータ バインド コントロールから派生されて、<xref:System.Web.UI.WebControls.BaseDataBoundControl>基本のデータ バインド コントロールの機能を定義するクラスを制御します。  
+  
+ ASP.NET で提供されているデータ バインド コントロールを使用することができますを含む<xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、および<xref:System.Web.UI.WebControls.TreeView>をデータの表示が関係するほとんどの Web 開発タスクを実行します。 これらのコントロールに渡さないように必要とする機能のシナリオでは、ベースから継承できます<xref:System.Web.UI.WebControls.DataBoundControl>と<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>を独自のカスタム データを実装するクラスのソース管理します。  
+  
+ サポートする任意のクラスの中に、`DataSource`と`DataSourceID`プロパティおよび`DataBind`メソッドは、データ バインド コントロールでは、ほとんどの ASP.NET データ バインド コントロールを拡張、抽象<xref:System.Web.UI.WebControls.BaseDataBoundControl>と<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。 注目すべき例外を含める<xref:System.Web.UI.WebControls.DataGrid>、 <xref:System.Web.UI.WebControls.Repeater>、および<xref:System.Web.UI.WebControls.DropDownList>コントロール。 データ バインディングの詳細については、次を参照してください。 [ASP.NET データ アクセス コンテンツ マップ](http://msdn.microsoft.com/en-us/f9219396-a0fa-481f-894d-e3d9c67d64f2)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseDataBoundControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスは抽象クラスを作成することはできません、<xref:System.Web.UI.WebControls.BaseDataBoundControl>オブジェクトに直接できます。 このコンス トラクターは、一般的に定義されたプロパティを初期化するために派生クラスのコンス トラクターによって呼び出されます。、<xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfirmInitState">
+      <MemberSignature Language="C#" Value="protected void ConfirmInitState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ConfirmInitState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.ConfirmInitState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインド コントロールの初期化状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.ConfirmInitState%2A>メソッドは、データ バインド コントロールの初期化状態を設定します。 メソッドを呼び出す、<xref:System.Web.UI.WebControls.DataBoundControl>クラス内でその<xref:System.Web.UI.WebControls.DataBoundControl.OnLoad%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出されたサーバー コントロールとそのすべての子コントロールにデータ ソースをバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスのオーバーライド、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>データ バインド コントロールにバインドされ、適切なコントロール ツリーを構築するデータ ソースを識別するメソッド。 データ ソースがによって識別されるデータ ソースを解決するときに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>プロパティが優先されます。 場合<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>が設定されていないで識別されるオブジェクト、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティを使用します。  
+  
+ `DataBind`から派生したすべての ASP.NET データ バインド コントロールでメソッドをシール<xref:System.Web.UI.WebControls.BaseDataBoundControl>です。 データ バインド コントロールから派生した、<xref:System.Web.UI.WebControls.DataBoundControl>と<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスでオーバーライドする必要があります、`PerformDataBinding`メソッドの代わりに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>データにバインドするメソッド。 場合<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>がオーバーライドされて、<xref:System.Web.UI.Control.OnDataBinding%2A>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound%2A>順序のイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBound">
+      <MemberSignature Language="C#" Value="public event EventHandler DataBound;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler DataBound" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.BaseDataBoundControl.DataBound" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー コントロールのデータ ソースにバインドした後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、サーバー コントロールに書き込まれるデータのバインド ロジックが完了したことを通知します。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public virtual object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ バインド コントロールのデータ項目の一覧の取得元となるオブジェクト。</summary>
+        <value>データ バインド コントロールのデータの取得元となるデータ ソースを表すオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A> 、プロパティ、<xref:System.Web.UI.WebControls.BaseDataBoundControl.ValidateDataSource%2A>メソッドが呼び出されます。 また、データ バインド コントロールは既に初期化されている場合、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>を設定するメソッドは、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますが、どのように<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>データ バインド コントロールのプロパティを使用します。 この例では、<xref:System.Web.UI.WebControls.GridView>コントロールにバインドする、<xref:System.Data.DataSet>オブジェクト。 後に、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティが設定されて、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッドは明示的に呼び出されます。  
+  
+ [!code-aspx-csharp[GridViewDataBind#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewDataBind/CS/gridviewdatabindcs.aspx#1)]
+ [!code-aspx-vb[GridViewDataBind#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewDataBind/VB/gridviewdatabindvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public virtual string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールによるデータ項目の一覧の取得元となるコントロールの ID を取得または設定します。</summary>
+        <value>データ バインド コントロールによるデータの取得元となるデータ ソースを表すコントロールの ID。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールは既に初期化されて (、<xref:System.Web.UI.WebControls.BaseDataBoundControl.ConfirmInitState%2A>メソッドが呼び出されるまたは<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad%2A>イベントが処理される) を設定すると、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>プロパティ、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>メソッドは、設定する、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますが、どのように<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>データ バインド コントロールのプロパティを使用します。 <xref:System.Web.UI.WebControls.GridView>コントロールに関連付けられている、<xref:System.Web.UI.WebControls.SqlDataSource>コントロールを設定してその<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>プロパティの ID である"AuthorsSqlDataSource"を<xref:System.Web.UI.WebControls.SqlDataSource>コントロール。 ときに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>プロパティ (の代わりに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティ)、データ バインド コントロールが自動的に実行時に、データ ソース コントロールにバインドします。  
+  
+ [!code-aspx-csharp[GridViewSimple#1](~/samples/snippets/csharp/VS_Snippets_WebNet/GridViewSimple/CS/displaycustomers.aspx#1)]
+ [!code-aspx-vb[GridViewSimple#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/GridViewSimple/VB/displaycustomers.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureDataBound">
+      <MemberSignature Language="C#" Value="protected virtual void EnsureDataBound ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EnsureDataBound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼び出し、<see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.DataBind" />メソッド場合、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID" />プロパティが設定され、バインドを要求するように、データ バインド コントロールをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound%2A>中にメソッドが呼び出された、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPreRender%2A> 、呼び出すメソッドを<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッド、データ バインド コントロールがまだバインドされていない場合。  
+  
+ これは、同じ動作がパターンを<xref:System.Web.UI.WebControls.BaseDataList>(など、どのクラスから<xref:System.Web.UI.WebControls.DataGrid>派生) と<xref:System.Web.UI.WebControls.Repeater>クラスに従ってください。 `EnsureDataBound`の呼び出し中にメソッドを呼び出すことがありますも`CreateChildControls`と`LoadPostData`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialized">
+      <MemberSignature Language="C#" Value="protected bool Initialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Initialized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.Initialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールが初期化されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ バインド コントロールが初期化されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.ConfirmInitState%2A>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad%2A>両方のメソッドを明示的に設定、<xref:System.Web.UI.WebControls.BaseDataBoundControl.Initialized%2A>プロパティを`true`です。 <xref:System.Web.UI.WebControls.BaseDataBoundControl.ConfirmInitState%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.DataBoundControl.OnLoad%2A?displayProperty=nameWithType>メソッド中に<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad%2A>時に呼び出される、<xref:System.Web.UI.Page.PreLoad>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データ バインド コントロールの派生クラスに属しているプロパティを示します。 例では、データ バインド コントロールがどのように呼び出すことができます、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>メソッド、データ バインド コントロールが初期化された後、データ ソースを識別するプロパティが変更された場合。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.TextBoxSet#7](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/CS/textboxset.cs#7)]
+ [!code-vb[Samples.AspNet.TextBoxSet#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/VB/textboxset.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBoundUsingDataSourceID">
+      <MemberSignature Language="C#" Value="protected bool IsBoundUsingDataSourceID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBoundUsingDataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.IsBoundUsingDataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID" />プロパティを設定します。</summary>
+        <value>値<see langword="true" />場合に返される、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID" />プロパティが以外の値に設定<see cref="F:System.String.Empty" />、それ以外の値が<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのコントロール<xref:System.Web.UI.WebControls.GridView>、 <xref:System.Web.UI.WebControls.DetailsView>、 <xref:System.Web.UI.WebControls.FormView>、および<xref:System.Web.UI.WebControls.Menu>を使用して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.IsBoundUsingDataSourceID%2A>データ バインド コントロールが、ASP.NET 2.0 のデータ ソース コントロールなどバインドされているかどうかを決定するプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSource>または<xref:System.Web.UI.WebControls.SqlDataSource>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.WebControls.BaseDataBoundControl.IsBoundUsingDataSourceID%2A>プロパティは、データ バインド コントロールの派生クラスによって使用します。 <xref:System.Web.UI.WebControls.BaseDataBoundControl.IsBoundUsingDataSourceID%2A>でプロパティを使用、<xref:System.Web.UI.WebControls.BaseDataBoundControl.PerformSelect%2A>メソッドの実装を決定するかどうか、<xref:System.Web.UI.Control.DataBinding>イベントを発生させる必要があります。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.TextBoxSet#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/CS/textboxset.cs#3)]
+ [!code-vb[Samples.AspNet.TextBoxSet#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/VB/textboxset.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDataBindingAutomatic">
+      <MemberSignature Language="C#" Value="protected bool IsDataBindingAutomatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDataBindingAutomatic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.IsDataBindingAutomatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングが自動かどうか示す値を取得します。</summary>
+        <value>
+          <see langword="true" />データ バインディングが自動以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインディングが自動の場合は、コントロールを使用して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>プロパティまたはコントロールを使用してかどうか`SelectMethod`、 `UpdateMethod`、 `DeleteMethod`、または`InsertMethod`データ バインドのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUsingModelBinders">
+      <MemberSignature Language="C#" Value="protected virtual bool IsUsingModelBinders { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUsingModelBinders" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.IsUsingModelBinders" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスとして実装された場合は、コントロールがモデル バインダーを使用するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />モデル バインダー; コントロールが使用されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataBound">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataBound (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataBound(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.WebControls.BaseDataBoundControl.DataBound" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、サーバー コントロール、コントロールに関連付けられたデータのバインド ロジックが完了したことを通知します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>から派生したすべてのコントロールにメソッドをシール<xref:System.Web.UI.WebControls.BaseDataBoundControl>です。 データ バインド コントロールは`PerformDataBinding`の代わりに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>データにバインドするメソッド。 場合<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>がオーバーライドされて、<xref:System.Web.UI.Control.OnDataBinding%2A>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound%2A>順序のイベントが発生します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound%2A>させるメソッドを使用、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBound>データ バインド コントロールの派生クラスでイベント。 使用した後、<xref:System.Web.UI.WebControls.DataBoundControl.GetData%2A>と<xref:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding%2A>データ コントロール、データ バインド コントロールをバインドする方法、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBound>データ バインディングをすることを通知するイベントが完了しました。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.TextBoxSet#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/CS/textboxset.cs#3)]
+ [!code-vb[Samples.AspNet.TextBoxSet#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/VB/textboxset.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.OnDataBound(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataPropertyChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataPropertyChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataPropertyChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインド コントロールをデータには、基になるデータのいずれかのソースの id プロパティの変更後に再バインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>メソッドが呼び出されます、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>、 <xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>、または`DataMember`プロパティ値の変更 ページの後にいつでも<xref:System.Web.UI.Control.PreRender>イベントが発生しました。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データ バインド コントロールの派生クラスに属しているプロパティを示します。 例では、データ バインド コントロールがどのように呼び出すことができます、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>メソッド、データ バインド コントロールが初期化された後、データ ソースを識別するプロパティが変更された場合。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.TextBoxSet#7](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/CS/textboxset.cs#7)]
+ [!code-vb[Samples.AspNet.TextBoxSet#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/VB/textboxset.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">フェーズでは、データ バインディング コントロールのプロパティの値を変更しようとしました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>処理、<see cref="E:System.Web.UI.Control.Init" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.OnInit%2A>メソッドには、基本クラスが最初<xref:System.Web.UI.Control.OnInit%2A>メソッドを呼び出し、続いて、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad%2A>を処理するメソッド、<xref:System.Web.UI.Page.PreLoad?displayProperty=nameWithType>イベント。 ページがポストバックであると、ビュー ステートが有効になっている場合は、HTTP 要求にさらに、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnInit%2A>メソッドのセット、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPagePreLoad">
+      <MemberSignature Language="C#" Value="protected virtual void OnPagePreLoad (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPagePreLoad(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの発生元の <see cref="T:System.Web.UI.Page" />。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>コントロールが読み込まれる前に、データ バインド コントロールの初期化状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl.OnPagePreLoad%2A>イベント ハンドラーは、ページのライフ サイクル内のデータ バインディングのタイミングを制御するために使用します。 この機能を使用するには、データ バインド コントロールの内部初期化状態を設定します。 コントロールの状態が初期化ために、中に設定されて、<xref:System.Web.UI.Page.PreLoad>ページのライフ サイクルの段階、<xref:System.Web.UI.WebControls.BaseDataBoundControl.OnDataPropertyChanged%2A>イベント ハンドラーが呼び出された任意コントロールのデータ プロパティは、コントロールをレンダリングする前にそのデータを再バインドする必要があることを通知する、そのフェーズ後に変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>処理、<see cref="E:System.Web.UI.Control.PreRender" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BaseDataBoundControl>クラスのオーバーライド、<xref:System.Web.UI.Control.OnPreRender%2A?displayProperty=nameWithType>イベント ハンドラーを呼び出す<xref:System.Web.UI.WebControls.BaseDataBoundControl.EnsureDataBound%2A>基底クラスを呼び出す前に<xref:System.Web.UI.Control.OnPreRender%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformSelect">
+      <MemberSignature Language="C#" Value="protected abstract void PerformSelect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PerformSelect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.PerformSelect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データが取得され、コントロールにバインドする方法を制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生型では、データ ソースからデータを取得するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresDataBinding">
+      <MemberSignature Language="C#" Value="protected bool RequiresDataBinding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresDataBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.DataBind" />メソッドを呼び出す必要があります。</summary>
+        <value>返される値は<see langword="true" />場合、データ バインド コントロールの<see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.DataBind" />コントロールが表示される前に、メソッドを呼び出す必要があります以外の値は、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定した場合、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`データ バインド コントロールがページにその出力を表示するために既に開始されて、現在の HTTP 要求がない場合、コールバックおよび使用している、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSourceID%2A>をバインドするデータ ソース コントロールを使用するには、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッドはすぐに呼び出されます。 ここで、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>にプロパティが実際に設定されていない`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示していますが、どのように<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティは、データ バインド コントロールの派生クラスによって使用します。 によってデータが取得された後、<xref:System.Web.UI.WebControls.DataBoundControl.GetData%2A>メソッドとコントロールにバインド、<xref:System.Web.UI.WebControls.DataBoundControl.PerformDataBinding%2A>メソッド、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティに設定されている`false`と<xref:System.Web.UI.WebControls.DataBoundControl.MarkAsDataBound%2A>メソッドは、コントロールのバインドが完了したことを通知すると呼ばれるおよびしません。現在のページのライフ サイクル中にこのプロパティが必要です。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.TextBoxSet#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/CS/textboxset.cs#3)]
+ [!code-vb[Samples.AspNet.TextBoxSet#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.TextBoxSet/VB/textboxset.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BaseDataBoundControl.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateDataSource">
+      <MemberSignature Language="C#" Value="protected abstract void ValidateDataSource (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ValidateDataSource(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BaseDataBoundControl.ValidateDataSource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">検証するオブジェクト。 インスタンスでは通常<see cref="T:System.Collections.IEnumerable" />、 <see cref="T:System.ComponentModel.IListSource" />、 <see cref="T:System.Web.UI.IDataSource" />、または<see cref="T:System.Web.UI.IHierarchicalDataSource" />です。</param>
+        <summary>派生クラスでオーバーライドされると、データ バインド コントロールのバインド先のオブジェクトがいずれかで使用することを確認します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.BaseDataBoundControl.ValidateDataSource(System.Object)" />メソッドが呼び出されるのみ、<see cref="T:System.Web.UI.WebControls.BaseDataBoundControl" />のクラスのミューテーター (set アクセス操作子)、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />プロパティです。 派生クラスに設定されているオブジェクトの種類を確認するメソッドを実装、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />プロパティ、型と、データ バインド コントロールを操作できることを確認してください。 型が認識されない場合、派生型の実装は例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

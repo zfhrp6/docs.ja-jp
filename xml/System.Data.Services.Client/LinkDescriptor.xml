@@ -1,0 +1,97 @@
+<Type Name="LinkDescriptor" FullName="System.Data.Services.Client.LinkDescriptor">
+  <TypeSignature Language="C#" Value="public sealed class LinkDescriptor : System.Data.Services.Client.Descriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LinkDescriptor extends System.Data.Services.Client.Descriptor" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Client.LinkDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services.Client</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Services.Client.Descriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("State = {state}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Data.Services.Client.DataServiceResponse" /> で返される操作でエンティティに加えられた変更の説明を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> メソッドは、一連の <xref:System.Data.Services.Client.DataServiceResponse> オブジェクトが含まれている <xref:System.Data.Services.Client.OperationResponse> オブジェクトを返します。一連のオブジェクトそれぞれには、永続化された変更を表す <xref:System.Data.Services.Client.EntityDescriptor> または <xref:System.Data.Services.Client.LinkDescriptor> インスタンスのシーケンスが含まれます。  
+  
+ 操作を適切に実行するため、記述子の <xref:System.Data.Services.Client.Descriptor.State*> プロパティは Unchanged に設定され、挿入操作と更新操作の新しい値はマージ設定に従ってマージされます。  
+  
+ 操作でエラーが発生した場合、記述子の <xref:System.Data.Services.Client.Descriptor.State*> は、<xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> が呼び出される前と同じままになります。  
+  
+ 操作中にエラーが発生し、処理が停止すると、<xref:System.Data.Services.Client.Descriptor.State*> は変更されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public object Source { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Source" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.LinkDescriptor.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceResponse" /> によって返されたリンクのソース エンティティ。</summary>
+        <value>
+          <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceProperty">
+      <MemberSignature Language="C#" Value="public string SourceProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SourceProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.LinkDescriptor.SourceProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceResponse" /> によって返されるリンク内のソース エンティティの識別子プロパティ。</summary>
+        <value>ソース エンティティ内の ID プロパティの文字列識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public object Target { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Target" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Client.LinkDescriptor.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services.Client</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Client.DataServiceResponse" /> によって返されたリンクのソース エンティティ。</summary>
+        <value>
+          <see cref="T:System.Object" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

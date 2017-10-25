@@ -1,0 +1,175 @@
+<Type Name="DynamicRouteExpression" FullName="System.Web.DynamicData.DynamicRouteExpression">
+  <TypeSignature Language="C#" Value="public class DynamicRouteExpression : System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicRouteExpression extends System.Web.UI.WebControls.Expressions.DataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicRouteExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.DataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データのフィルター処理を実行するために、ルーティング情報から主キーを取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicRouteExpression>クラスが使用されて、<xref:System.Web.UI.WebControls.QueryExtender>ページ マークアップ内のコントロールです。 <xref:System.Web.DynamicData.DynamicRouteExpression>クラスは、Web 要求に含まれているルーティング情報から主キーを取得します。 <xref:System.Web.UI.WebControls.QueryExtender>コントロール内のキーを使用して、`Where`句。 これは、データ ソースには、キーによってフィルター選択されたテーブルの行を返すクエリを変更します。  
+  
+ 使用して指定した外部キーを使用してデータを抽出することも、<xref:System.Web.DynamicData.DynamicRouteExpression.ColumnName%2A>プロパティです。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DynamicRouteExpression  
+  ColumnName="Name of the foreign key column"/>  
+```  
+  
+   
+  
+## Examples  
+ Visual Studio プロジェクトとソース コードは、このトピックで使用可能な:[スキャフォールディング動的データ](http://go.microsoft.com/fwlink/?LinkId=168914)です。  
+  
+ 次の例では、Products テーブルのカスタム List.aspx ページ テンプレートを示します。 使用して、<xref:System.Web.DynamicData.DynamicRouteExpression.ColumnName%2A>製品の行をフィルター処理、ProductCategory の外部キーを指定するプロパティです。  
+  
+ カスタムの List.aspx ページには、外部キーの ProductCategory 列に含まれるカテゴリのリンクを含む列が表示されます。 ユーザーをクリックすると、これらのリンクのいずれかが、List.aspx ページは、選択したカテゴリを含む行のみを表示します。  
+  
+ 次の例が必要です。  
+  
+-   動的データ Web サイトです。 詳細については、次を参照してください。[チュートリアル: 作成、新しい動的データ Web サイトを使用してスキャフォールディング](http://msdn.microsoft.com/library/1564aef2-9103-436a-9806-c8ad7abd616a)です。  
+  
+-   AdventureWorksLT サンプル データベース。 詳細については、次を参照してください。[する方法: を使用して、AdventureWorksLT データベースへの接続にします。MDF ファイル](http://msdn.microsoft.com/library/d34ffbac-607d-40f1-b088-0a3304ea032b)です。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicRouteExpression#1](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.dynamicdata.dynamicrouteexpression/cs/list.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicRouteExpression#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.dynamicdata.dynamicrouteexpression/vb/list.aspx#1)]  
+  
+ [!code-csharp[System.Web.DynamicData.DynamicRouteExpression#3](~/samples/snippets/csharp/VS_Snippets_WebNet/system.web.dynamicdata.dynamicrouteexpression/cs/list.aspx.cs#3)]
+ [!code-vb[System.Web.DynamicData.DynamicRouteExpression#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/system.web.dynamicdata.dynamicrouteexpression/vb/list.aspx.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicRouteExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicRouteExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicRouteExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常呼び出す必要はありません、<xref:System.Web.DynamicData.DynamicRouteExpression.%23ctor%2A>コンス トラクターです。 代わりに、使用する、<xref:System.Web.DynamicData.DynamicRouteExpression>ページ マークアップ内のクラスとクラスには、ページが読み込まれるときに初期化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnName">
+      <MemberSignature Language="C#" Value="public string ColumnName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ColumnName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicRouteExpression.ColumnName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースをクエリに使用される外部キーを含む列の名前を設定します。</summary>
+        <value>外部キー列の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicRouteExpression.ColumnName%2A>プロパティが外部キーを表します。 このキーは、データ ソースのクエリを編集する使用されます。  
+  
+   
+  
+## Examples  
+ 次の例では、ProductCategory の外部キー列を表示する製品をフィルター処理を指定する方法を示します。 この例の提供される例の一部である、<xref:System.Web.DynamicData.DynamicRouteExpression>クラスです。  
+  
+```  
+<asp:QueryExtender TargetControlID="GridDataSource"   
+    ID="GridQueryExtender" runat="server">  
+  <asp:DynamicRouteExpression ColumnName="ProductCategory" />  
+</asp:QueryExtender>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicRouteExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">変更するクエリ。</param>
+        <summary>データ ソースからクエリを取得する.</summary>
+        <returns>変更後のクエリのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される、データ ソースからのクエリ、`source`プライマリ キーまたは外部キーは、現在のルート情報を適用することで、パラメーターを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetContext">
+      <MemberSignature Language="C#" Value="public override void SetContext (System.Web.UI.Control owner, System.Web.HttpContext context, System.Web.UI.WebControls.IQueryableDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetContext(class System.Web.UI.Control owner, class System.Web.HttpContext context, class System.Web.UI.WebControls.IQueryableDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicRouteExpression.SetContext(System.Web.UI.Control,System.Web.HttpContext,System.Web.UI.WebControls.IQueryableDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Control" />
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="dataSource" Type="System.Web.UI.WebControls.IQueryableDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="owner">含むコントロール、<see cref="T:System.Web.DynamicData.DynamicRouteExpression" />インスタンス。 これは、<see cref="T:System.Web.UI.WebControls.QueryExtender" />コントロール。</param>
+        <param name="context">Web 要求コンテキスト。</param>
+        <param name="dataSource">ターゲット データ ソース、<see cref="T:System.Web.DynamicData.DynamicRouteExpression" />インスタンス。</param>
+        <summary>HTTP コンテキストを設定、<see cref="T:System.Web.DynamicData.DynamicRouteExpression" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

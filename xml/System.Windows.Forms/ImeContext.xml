@@ -1,0 +1,160 @@
+<Type Name="ImeContext" FullName="System.Windows.Forms.ImeContext">
+  <TypeSignature Language="C#" Value="public static class ImeContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ImeContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ImeContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>IME API を直接操作する静的メソッドが含まれています。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Disable">
+      <MemberSignature Language="C#" Value="public static void Disable (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Disable(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.Disable(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">無効にする IME へのポインター。</param>
+        <summary>指定した IME を無効にします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Enable">
+      <MemberSignature Language="C#" Value="public static void Enable (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Enable(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.Enable(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">有効にする IME へのポインター。</param>
+        <summary>指定した IME を有効にします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetImeMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ImeMode GetImeMode (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Forms.ImeMode GetImeMode(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.GetImeMode(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ImeMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">クエリに IME へのポインター。</param>
+        <summary>返します、<see cref="T:System.Windows.Forms.ImeMode" />指定 IME のです。</summary>
+        <returns><see cref="T:System.Windows.Forms.ImeMode" />指定 IME のです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpen">
+      <MemberSignature Language="C#" Value="public static bool IsOpen (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsOpen(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.IsOpen(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">クエリに IME へのポインター。</param>
+        <summary>指定した IME が開いているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定した IME が開いている場合です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetImeStatus">
+      <MemberSignature Language="C#" Value="public static void SetImeStatus (System.Windows.Forms.ImeMode imeMode, IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetImeStatus(valuetype System.Windows.Forms.ImeMode imeMode, native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.SetImeStatus(System.Windows.Forms.ImeMode,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="imeMode" Type="System.Windows.Forms.ImeMode" />
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="imeMode">状態を設定します。</param>
+        <param name="handle">状態を設定するには、IME へのポインター。</param>
+        <summary>指定した IME の状態を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="SetOpenStatus">
+      <MemberSignature Language="C#" Value="public static void SetOpenStatus (bool open, IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetOpenStatus(bool open, native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ImeContext.SetOpenStatus(System.Boolean,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="open" Type="System.Boolean" />
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="open">
+          <see langword="true" />開くには、IME または<see langword="false" />を閉じます。</param>
+        <param name="handle">開くまたは閉じる IME へのポインター。</param>
+        <summary>IME のコンテキストを開いたり閉じたりするには。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

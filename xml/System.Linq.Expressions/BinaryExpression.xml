@@ -1,0 +1,471 @@
+<Type Name="BinaryExpression" FullName="System.Linq.Expressions.BinaryExpression">
+  <TypeSignature Language="C#" Value="public class BinaryExpression : System.Linq.Expressions.Expression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BinaryExpression extends System.Linq.Expressions.Expression" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.Expressions.BinaryExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Expressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Linq.Expressions.Expression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(System.Linq.Expressions.Expression/BinaryExpressionProxy))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 項演算子を持つ式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、ファクトリ メソッドの作成に使用できますが、<xref:System.Linq.Expressions.BinaryExpression>によって表される、特定のノード型を持つ、<xref:System.Linq.Expressions.Expression.NodeType%2A>プロパティです。 各テーブルには、操作またはビットごとの演算などの特定のクラスの情報が含まれています。  
+  
+## <a name="binary-arithmetic-operations"></a>二項算術演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.Add>|<xref:System.Linq.Expressions.Expression.Add%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.AddChecked>|<xref:System.Linq.Expressions.Expression.AddChecked%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Divide>|<xref:System.Linq.Expressions.Expression.Divide%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Modulo>|<xref:System.Linq.Expressions.Expression.Modulo%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Multiply>|<xref:System.Linq.Expressions.Expression.Multiply%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.MultiplyChecked>|<xref:System.Linq.Expressions.Expression.MultiplyChecked%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Power>|<xref:System.Linq.Expressions.Expression.Power%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Subtract>|<xref:System.Linq.Expressions.Expression.Subtract%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.SubtractChecked>|<xref:System.Linq.Expressions.Expression.SubtractChecked%2A>|  
+  
+## <a name="bitwise-operations"></a>ビット処理演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.And>|<xref:System.Linq.Expressions.Expression.And%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.Or>|<xref:System.Linq.Expressions.Expression.Or%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.ExclusiveOr>|<xref:System.Linq.Expressions.Expression.ExclusiveOr%2A>|  
+  
+## <a name="shift-operations"></a>シフト演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.LeftShift>|<xref:System.Linq.Expressions.Expression.LeftShift%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.RightShift>|<xref:System.Linq.Expressions.Expression.RightShift%2A>|  
+  
+## <a name="conditional-boolean-operations"></a>条件付きのブール演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.AndAlso>|<xref:System.Linq.Expressions.Expression.AndAlso%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.OrElse>|<xref:System.Linq.Expressions.Expression.OrElse%2A>|  
+  
+## <a name="comparison-operations"></a>比較演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.Equal>|<xref:System.Linq.Expressions.Expression.Equal%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.NotEqual>|<xref:System.Linq.Expressions.Expression.NotEqual%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.GreaterThanOrEqual>|<xref:System.Linq.Expressions.Expression.GreaterThanOrEqual%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.GreaterThan>|<xref:System.Linq.Expressions.Expression.GreaterThan%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.LessThan>|<xref:System.Linq.Expressions.Expression.LessThan%2A>|  
+|<xref:System.Linq.Expressions.ExpressionType.LessThanOrEqual>|<xref:System.Linq.Expressions.Expression.LessThanOrEqual%2A>|  
+  
+## <a name="coalescing-operations"></a>合体演算  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.Coalesce>|<xref:System.Linq.Expressions.Expression.Coalesce%2A>|  
+  
+## <a name="array-indexing-operations"></a>配列のインデックス作成操作  
+  
+|ノード型|ファクトリ メソッド|  
+|---------------|--------------------|  
+|<xref:System.Linq.Expressions.ExpressionType.ArrayIndex>|<xref:System.Linq.Expressions.Expression.ArrayIndex%2A>|  
+  
+ さらに、<xref:System.Linq.Expressions.Expression.MakeBinary%2A>メソッドを使用して作成することもできます、<xref:System.Linq.Expressions.BinaryExpression>です。 これらのファクトリ メソッドを作成に使用できる、<xref:System.Linq.Expressions.BinaryExpression>二項演算を表す任意のノード型のです。 これらのメソッドの型のパラメーター<xref:System.Linq.Expressions.Expression.NodeType%2A>目的のノードの種類を指定します。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Linq.Expressions.BinaryExpression>を別の 1 つの数値の減算を表すオブジェクト。  
+  
+ [!code-csharp[System.Linq.Expressions.Expression#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Linq.Expressions.Expression/CS/Expression.cs#8)]
+ [!code-vb[System.Linq.Expressions.Expression#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Linq.Expressions.Expression/VB/Expression.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="protected override System.Linq.Expressions.Expression Accept (System.Linq.Expressions.ExpressionVisitor visitor);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Linq.Expressions.Expression Accept(class System.Linq.Expressions.ExpressionVisitor visitor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.BinaryExpression.Accept(System.Linq.Expressions.ExpressionVisitor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visitor" Type="System.Linq.Expressions.ExpressionVisitor" />
+      </Parameters>
+      <Docs>
+        <param name="visitor">このノードを走査するビジター。</param>
+        <summary>このノード型の特定の Visit メソッドにデスパッチします。 たとえば、<see cref="T:System.Linq.Expressions.MethodCallExpression" /> は <see cref="M:System.Linq.Expressions.ExpressionVisitor.VisitMethodCall(System.Linq.Expressions.MethodCallExpression)" /> を呼び出します。</summary>
+        <returns>このノードの走査結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定の実装の<xref:System.Linq.Expressions.ExpressionType.Extension>ノード呼び出し<xref:System.Linq.Expressions.ExpressionVisitor.VisitExtension%2A>です。 訪問者の派生クラスで複数の特定のメソッドを呼び出すには、このメソッドをオーバーライドして、<xref:System.Linq.Expressions.ExpressionVisitor>クラスです。 ただし、サポートすることがまだ不明な訪問者を呼び出して<xref:System.Linq.Expressions.ExpressionVisitor.VisitExtension%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReduce">
+      <MemberSignature Language="C#" Value="public override bool CanReduce { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReduce" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.CanReduce" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式ツリー ノードを縮小できるかどうかを示す値を取得します。</summary>
+        <value>True の場合、式ツリー ノードを単純化することができます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Conversion">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.LambdaExpression Conversion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.LambdaExpression Conversion" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.Conversion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.LambdaExpression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>合体演算または複合代入演算で使用される型変換関数を取得します。</summary>
+        <value>型変換関数を表す <see cref="T:System.Linq.Expressions.LambdaExpression" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Linq.Expressions.BinaryExpression.Conversion%2A>プロパティは`null`のいずれか<xref:System.Linq.Expressions.BinaryExpression>が<xref:System.Linq.Expressions.Expression.NodeType%2A>プロパティは使用されません<xref:System.Linq.Expressions.ExpressionType.Coalesce>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLifted">
+      <MemberSignature Language="C#" Value="public bool IsLifted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLifted" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.IsLifted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式ツリー ノードが表すかどうかを示す値を取得、*リフト*オペレーターへの呼び出しです。</summary>
+        <value>
+          <see langword="true" />ノードがリフトの呼び出しを表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 演算子呼び出しは、演算子、null 非許容のオペランドが必要ですが、null 許容型のオペランドが渡された場合にリフトされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiftedToNull">
+      <MemberSignature Language="C#" Value="public bool IsLiftedToNull { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLiftedToNull" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.IsLiftedToNull" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>式ツリー ノードが表すかどうかを示す値を取得、*リフト*戻り値の型は、null 許容型にリフト オペレーターに呼び出します。</summary>
+        <value>
+          <see langword="true" />型が null 許容型であるにリフトされた場合は、演算子の戻り値それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 演算子呼び出しは、演算子、null 非許容のオペランドが必要ですが、null 許容型のオペランドが渡された場合にリフトされます。 場合の値<xref:System.Linq.Expressions.BinaryExpression.IsLiftedToNull%2A>は`true`、演算子は、null 許容型を返しますに null 許容型のオペランドが評価されると`null`、演算子を返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression Left { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression Left" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>二項演算の左オペランドを取得します。</summary>
+        <value><see cref="T:System.Linq.Expressions.Expression" />二項演算の左オペランドを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Method">
+      <MemberSignature Language="C#" Value="public System.Reflection.MethodInfo Method { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.MethodInfo Method" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.Method" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MethodInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バイナリ演算メソッドの実装を取得します。</summary>
+        <value>メソッドの実装を表す <see cref="T:System.Reflection.MethodInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Linq.Expressions.BinaryExpression>定義済の演算子を使用する操作を表す、<xref:System.Linq.Expressions.BinaryExpression.Method%2A>プロパティは`null`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reduce">
+      <MemberSignature Language="C#" Value="public override System.Linq.Expressions.Expression Reduce ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.Expressions.Expression Reduce() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.BinaryExpression.Reduce" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>二項式ノードをより単純な式に減らします。</summary>
+        <returns>単純化された式。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CanReduce が true を返す場合、これは有効な式を返します。  
+  
+ このメソッドは、それ自体も単純化する必要がある別のノードを返す場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression Right { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Linq.Expressions.Expression Right" />
+      <MemberSignature Language="DocId" Value="P:System.Linq.Expressions.BinaryExpression.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>二項演算の右オペランドを取得します。</summary>
+        <value><see cref="T:System.Linq.Expressions.Expression" />二項演算の右オペランドを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.BinaryExpression Update (System.Linq.Expressions.Expression left, System.Linq.Expressions.LambdaExpression conversion, System.Linq.Expressions.Expression right);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Linq.Expressions.BinaryExpression Update(class System.Linq.Expressions.Expression left, class System.Linq.Expressions.LambdaExpression conversion, class System.Linq.Expressions.Expression right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Linq.Expressions.BinaryExpression.Update(System.Linq.Expressions.Expression,System.Linq.Expressions.LambdaExpression,System.Linq.Expressions.Expression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Expressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.BinaryExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Linq.Expressions.Expression" />
+        <Parameter Name="conversion" Type="System.Linq.Expressions.LambdaExpression" />
+        <Parameter Name="right" Type="System.Linq.Expressions.Expression" />
+      </Parameters>
+      <Docs>
+        <param name="left"><see cref="P:System.Linq.Expressions.BinaryExpression.Left" />結果のプロパティです。</param>
+        <param name="conversion"><see cref="P:System.Linq.Expressions.BinaryExpression.Conversion" />結果のプロパティです。</param>
+        <param name="right"><see cref="P:System.Linq.Expressions.BinaryExpression.Right" />結果のプロパティです。</param>
+        <summary>これに似た式ですが、指定された子を使用する、新しい式を作成します。 すべての子が同じである場合、この式を返します。</summary>
+        <returns>子が変更されていない場合はこの式。あるいは、更新された子を持つ式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

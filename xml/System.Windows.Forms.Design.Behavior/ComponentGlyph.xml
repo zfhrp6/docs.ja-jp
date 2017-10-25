@@ -1,0 +1,139 @@
+<Type Name="ComponentGlyph" FullName="System.Windows.Forms.Design.Behavior.ComponentGlyph">
+  <TypeSignature Language="C#" Value="public class ComponentGlyph : System.Windows.Forms.Design.Behavior.Glyph" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentGlyph extends System.Windows.Forms.Design.Behavior.Glyph" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.Behavior.ComponentGlyph" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Design.Behavior.Glyph</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連付けます、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />そのコンポーネントを含むです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.Behavior.ComponentGlyph>クラスに含まれる、<xref:System.Windows.Forms.Design.Behavior.ComponentGlyph.RelatedComponent%2A>プロパティ、グリフの関連するコンポーネントを指しています。 このプロパティは、トレースに使用できる<xref:System.Windows.Forms.Design.Behavior.Glyph>オブジェクトをコンポーネントなど、ドラッグ操作中にします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentGlyph (System.ComponentModel.IComponent relatedComponent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent relatedComponent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.ComponentGlyph.#ctor(System.ComponentModel.IComponent)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relatedComponent" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="relatedComponent">使用して、コンポーネント、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />が関連付けられています。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.ComponentGlyph" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentGlyph (System.ComponentModel.IComponent relatedComponent, System.Windows.Forms.Design.Behavior.Behavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IComponent relatedComponent, class System.Windows.Forms.Design.Behavior.Behavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.ComponentGlyph.#ctor(System.ComponentModel.IComponent,System.Windows.Forms.Design.Behavior.Behavior)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relatedComponent" Type="System.ComponentModel.IComponent" />
+        <Parameter Name="behavior" Type="System.Windows.Forms.Design.Behavior.Behavior" />
+      </Parameters>
+      <Docs>
+        <param name="relatedComponent">使用して、コンポーネント、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />が関連付けられています。</param>
+        <param name="behavior"><see cref="T:System.Windows.Forms.Design.Behavior.Behavior" />いる、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />が関連付けられています。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.Behavior.ComponentGlyph" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHitTest">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.Cursor GetHitTest (System.Drawing.Point p);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.Cursor GetHitTest(valuetype System.Drawing.Point p) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.ComponentGlyph.GetHitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Cursor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="p" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="p">ヒット テストをポイントします。</param>
+        <summary>指定したポイントでのマウス クリックを処理するかどうかを示す、<see cref="T:System.Windows.Forms.Design.Behavior.ComponentGlyph" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Cursor" />場合、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />に関連付けられている<paramref name="p" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は何もしませんし、返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="public override void Paint (System.Windows.Forms.PaintEventArgs pe);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Paint(class System.Windows.Forms.PaintEventArgs pe) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.Behavior.ComponentGlyph.Paint(System.Windows.Forms.PaintEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pe" Type="System.Windows.Forms.PaintEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="pe">A<see cref="T:System.Windows.Forms.PaintEventArgs" />を含む、<see cref="P:System.Windows.Forms.Design.Behavior.BehaviorService.AdornerWindowGraphics" />の<see cref="T:System.Windows.Forms.Design.Behavior.BehaviorService" />です。</param>
+        <summary>描画ロジックを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装では、何も行われません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelatedComponent">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.IComponent RelatedComponent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.IComponent RelatedComponent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.Behavior.ComponentGlyph.RelatedComponent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているコンポーネントを取得、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</summary>
+        <value><see cref="T:System.ComponentModel.IComponent" />に関連付けられている、<see cref="T:System.Windows.Forms.Design.Behavior.Glyph" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,534 @@
+<Type Name="ListBox" FullName="System.Windows.Controls.ListBox">
+  <TypeSignature Language="C#" Value="public class ListBox : System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ListBox extends System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ListBox" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.Selector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.ListBox)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(System.Windows.Controls.ListBoxItem))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>選択可能な項目の一覧が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ListBox><xref:System.Windows.Controls.ItemsControl>、つまり、任意の型 (文字列、画像、またはパネル) などのオブジェクトのコレクションを含めることができます。 詳細については、<xref:System.Windows.Controls.ItemsControl> クラスを参照してください。  
+  
+ 内の 1 つ以上の項目、<xref:System.Windows.Controls.ListBox>が表示されるとは異なり、 <xref:System.Windows.Controls.ComboBox>、しない限り、のみ、選択した表示されるアイテムは、<xref:System.Windows.Controls.ComboBox.IsDropDownOpen%2A>プロパティは`true`します。  <xref:System.Windows.Controls.ListBox.SelectionMode%2A>プロパティで 1 つの項目かどうか、複数の決定、<xref:System.Windows.Controls.ListBox>が一度に選択可能な。  
+  
+ <xref:System.Windows.Controls.ListBox.SelectionMode%2A>プロパティは、ユーザー項目の数は一度に 1 つを選択できますを決定します。 プロパティを設定することができます<xref:System.Windows.Controls.SelectionMode.Single>(既定)、 <xref:System.Windows.Controls.SelectionMode.Multiple>、または<xref:System.Windows.Controls.SelectionMode.Extended>です。 次の表では、これらの列挙値の動作について説明します。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|<xref:System.Windows.Controls.SelectionMode.Single>|ユーザーは、一度に 1 つだけの項目を選択できます。|  
+|<xref:System.Windows.Controls.SelectionMode.Multiple>|ユーザーは、修飾子キーを保持することがなく、複数の項目を選択できます。|  
+|<xref:System.Windows.Controls.SelectionMode.Extended>|ユーザーは、CTRL キーを押したまま項目をクリックして、SHIFT キーまたは連続していない項目を押しながら複数の連続する項目を選択できます。|  
+  
+ <xref:System.Windows.Controls.ListBox>コントロールは、データ バインディングでよく使用されます。  詳しくは、「 [データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)」をご覧ください。  
+  
+ 多数のアイテムを表示すると、パフォーマンスの問題が発生する可能性があります。  参照してください[のパフォーマンスの最適化: コントロール](~/docs/framework/wpf/advanced/optimizing-performance-controls.md)詳細についてはします。  
+  
+## <a name="customizing-the-listbox-control"></a>ListBox コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.ListBox>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.ListBox>を参照してください[リスト ボックス スタイルとテンプレート](~/docs/framework/wpf/controls/listbox-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.ListBox>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ListBox>をサブスクライブして、<xref:System.Windows.Controls.Primitives.Selector.SelectionChanged>イベント。  
+  
+ [!code-xaml[ListBoxEvent#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxEvent/CSharp/Pane1.xaml#1)]  
+  
+ [!code-csharp[ListBoxEvent#2](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxEvent/CSharp/Pane1.xaml.cs#2)]
+ [!code-vb[ListBoxEvent#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxEvent/VisualBasic/Pane1.xaml.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListBox ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ListBox" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AnchorItem">
+      <MemberSignature Language="C#" Value="protected object AnchorItem { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AnchorItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ListBox.AnchorItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目の初期値を取得または設定時に選択<see cref="P:System.Windows.Controls.ListBox.SelectionMode" />は<see cref="F:System.Windows.Controls.SelectionMode.Extended" />します。</summary>
+        <value>項目の初期値を選択したときに<see cref="P:System.Windows.Controls.ListBox.SelectionMode" />は<see cref="F:System.Windows.Controls.SelectionMode.Extended" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成または指定したアイテムの表示に使用する要素を識別します。</summary>
+        <returns>指定したアイテムの表示に使用される要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlesScrolling">
+      <MemberSignature Language="C#" Value="protected override bool HandlesScrolling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandlesScrolling" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ListBox.HandlesScrolling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.ListBox" />スクロールをサポートします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.ListBox" />スクロールをサポートしています。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールがある場合、<xref:System.Windows.Controls.ScrollViewer>スタイルにあり、スクロール動作、カスタム キーボード<xref:System.Windows.Controls.ListBox.HandlesScrolling%2A>返す必要があります`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected override bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">指定した項目。</param>
+        <summary>かどうかを指定した項目が (または対象である) 独自<c>ItemContainer</c>です。</summary>
+        <returns>
+          <see langword="true" />項目が独自の場合<see langword="ItemContainer" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.ListBoxAutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]オートメーション インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsMouseCapturedChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsMouseCapturedChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsMouseCapturedChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.OnIsMouseCapturedChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供、<see cref="T:System.Windows.DependencyPropertyChangedEventArgs" />です。</param>
+        <summary>ときに呼び出されます、<see cref="P:System.Windows.UIElement.IsMouseCaptured" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Input.KeyEventArgs" />です。</param>
+        <summary>応答する、<see cref="E:System.Windows.UIElement.KeyDown" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseMove">
+      <MemberSignature Language="C#" Value="protected override void OnMouseMove (System.Windows.Input.MouseEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseMove(class System.Windows.Input.MouseEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.OnMouseMove(System.Windows.Input.MouseEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Input.MouseEventArgs" />です。</param>
+        <summary>ときに呼び出されます、<see cref="T:System.Windows.Controls.ListBox" />マウスの移動を報告します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectionChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectionChanged (System.Windows.Controls.SelectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectionChanged(class System.Windows.Controls.SelectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.SelectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Controls.SelectionChangedEventArgs" />です。</param>
+        <summary>リスト ボックスの選択に応答を発生させることによって変更、<see cref="E:System.Windows.Controls.Primitives.Selector.SelectionChanged" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">指定した項目を表示するために使用する要素。</param>
+        <param name="item">指定した項目。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の準備可能性があります、バインドの設定、スタイルの適用を必要とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollIntoView">
+      <MemberSignature Language="C#" Value="public void ScrollIntoView (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollIntoView(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.ScrollIntoView(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">スクロールするオブジェクトします。</param>
+        <summary>により、スクロールして表示するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトが表示されない場合は、上またはビューポートの底辺に揃えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectAll">
+      <MemberSignature Language="C#" Value="public void SelectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.SelectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべての項目を選択、<see cref="T:System.Windows.Controls.ListBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ListBox.SelectAll%2A>メソッドを選択し、リスト ボックス内のすべての項目を強調表示します。  
+  
+ [!code-csharp[ListBox_snip#ListBoxSelectAll](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBox_snip/CSharp/Window1.xaml.cs#listboxselectall)]
+ [!code-vb[ListBox_snip#ListBoxSelectAll](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBox_snip/visualbasic/window1.xaml.vb#listboxselectall)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="P:System.Windows.Controls.ListBox.SelectionMode" /> プロパティが <see cref="F:System.Windows.Controls.SelectionMode.Single" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItems">
+      <MemberSignature Language="C#" Value="public System.Collections.IList SelectedItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList SelectedItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ListBox.SelectedItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されている項目を取得します。</summary>
+        <value>現在選択されている項目のコレクションを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは目的として際に使用される<xref:System.Windows.Controls.ListBox.SelectionMode%2A>と等しくない<xref:System.Windows.Controls.SelectionMode.Single>です。 選択モードが場合<xref:System.Windows.Controls.SelectionMode.Single>正しいプロパティを使用するは<xref:System.Windows.Controls.Primitives.Selector.SelectedItem%2A>します。  
+  
+<a name="dependencyPropertyInfo_SelectedItems"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ListBox.SelectedItemsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ListBox.SelectedItems%2A>ボックスの一覧が、いずれかであるかどうかを決定するプロパティには、項目が選択されています。  
+  
+ [!code-csharp[ListBox_snip#ListBoxSelectedItems](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBox_snip/CSharp/Window1.xaml.cs#listboxselecteditems)]
+ [!code-vb[ListBox_snip#ListBoxSelectedItems](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBox_snip/visualbasic/window1.xaml.vb#listboxselecteditems)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.Controls.ListBox.SelectionMode" /> プロパティが <see cref="F:System.Windows.Controls.SelectionMode.Single" /> に設定されている。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ListBox.SelectedItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ListBox.SelectedItems" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.SelectionMode SelectionMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.SelectionMode SelectionMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ListBox.SelectionMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.SelectionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の選択の動作、<see cref="T:System.Windows.Controls.ListBox" />です。</summary>
+        <value><see cref="T:System.Windows.Controls.SelectionMode" /> 値のいずれか。 既定値は<see cref="F:System.Windows.Controls.SelectionMode.Single" />選択します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_SelectionMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ListBox.SelectionModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Controls.ListBox.SelectionMode%2A>プロパティを<xref:System.Windows.Controls.SelectionMode.Multiple>です。  
+  
+ [!code-xaml[ListBoxEvent#4](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxEvent/CSharp/Pane1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectionModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectionModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ListBox.SelectionModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ListBox.SelectionMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSelectedItems">
+      <MemberSignature Language="C#" Value="protected bool SetSelectedItems (System.Collections.IEnumerable selectedItems);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance bool SetSelectedItems(class System.Collections.IEnumerable selectedItems) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.SetSelectedItems(System.Collections.IEnumerable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectedItems" Type="System.Collections.IEnumerable" />
+      </Parameters>
+      <Docs>
+        <param name="selectedItems">選択する項目のコレクションです。</param>
+        <summary>選択した項目のコレクションを設定します。</summary>
+        <returns>
+          <see langword="true" />すべての項目が存在する場合は選択された;それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnselectAll">
+      <MemberSignature Language="C#" Value="public void UnselectAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UnselectAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ListBox.UnselectAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内のすべての選択を解除、<see cref="T:System.Windows.Controls.ListBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ListBox.UnselectAll%2A>リスト ボックス内のすべての項目の選択を解除するメソッド。  
+  
+ [!code-csharp[ListBox_snip#ListBoxUnselectAll](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBox_snip/CSharp/Window1.xaml.cs#listboxunselectall)]
+ [!code-vb[ListBox_snip#ListBoxUnselectAll](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBox_snip/visualbasic/window1.xaml.vb#listboxunselectall)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

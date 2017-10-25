@@ -1,0 +1,229 @@
+<Type Name="X509Certificate2UI" FullName="System.Security.Cryptography.X509Certificates.X509Certificate2UI">
+  <TypeSignature Language="C#" Value="public static class X509Certificate2UI" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit X509Certificate2UI extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.X509Certificate2UI" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>選択し、X.509 証明書を表示するためのユーザー インターフェイス ダイアログを表示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを使用して、 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI> X.509 証明書に関する詳細情報を表示または X.509 証明書のコレクションから 1 つまたは複数の証明書を選択できるようにするユーザー インターフェイス ダイアログの存在するクラス。  
+  
+   
+  
+## Examples  
+ 次のコード例を選択し、X.509 証明書を表示するユーザー インターフェイス ダイアログを表示する方法を示します。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="DisplayCertificate">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>X.509 証明書と関連付けられた証明書チェーンのプロパティを含むダイアログ ボックスが表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定された X.509 証明書の詳細情報をダイアログ ボックスを表示します。 ダイアログ ボックスには、インストールまたは証明書をコピーするためのボタンが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DisplayCertificate">
+      <MemberSignature Language="C#" Value="public static void DisplayCertificate (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisplayCertificate(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2UI.DisplayCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を表示します。</param>
+        <summary>X.509 証明書と関連付けられた証明書チェーンのプロパティを含むダイアログ ボックスが表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.DisplayCertificate%2A>メソッドは、指定された X.509 証明書の詳細情報をダイアログ ボックスを表示します。 ダイアログ ボックスには、インストールまたは証明書をコピーするためのボタンが含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例を選択し、X.509 証明書を表示するユーザー インターフェイス ダイアログを表示する方法を示します。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="certificate" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificate" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayCertificate">
+      <MemberSignature Language="C#" Value="public static void DisplayCertificate (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, IntPtr hwndParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DisplayCertificate(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, native int hwndParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2UI.DisplayCertificate(System.Security.Cryptography.X509Certificates.X509Certificate2,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="hwndParent" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を表示します。</param>
+        <param name="hwndParent">ダイアログの表示に使用する親ウィンドウへのハンドル。</param>
+        <summary>X.509 証明書と親ウィンドウへのハンドルを使用して関連する証明書チェーンのプロパティを含むダイアログ ボックスが表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.DisplayCertificate%2A>メソッドは、指定された X.509 証明書の詳細情報をダイアログ ボックスを表示します。 このメソッドは、入れ子に証明書の情報が表示されるダイアログ ボックスを使用できます。 ダイアログ ボックスには、インストールまたは証明書をコピーするためのボタンが含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="certificate" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificate" />パラメーターが無効です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SelectFromCollection">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>証明書のコレクションから X.509 証明書を選択するためのダイアログ ボックスが表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがダイアログ ボックスを使用して X.509 証明書を手動で選択を必要とする場合は、このメソッドを使用します。 ユーザーとの対話が不要な場合を使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SelectFromCollection">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.X509Certificates.X509Certificate2Collection SelectFromCollection (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates, string title, string message, System.Security.Cryptography.X509Certificates.X509SelectionFlag selectionFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.X509Certificates.X509Certificate2Collection SelectFromCollection(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates, string title, string message, valuetype System.Security.Cryptography.X509Certificates.X509SelectionFlag selectionFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.String,System.String,System.Security.Cryptography.X509Certificates.X509SelectionFlag)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="selectionFlag" Type="System.Security.Cryptography.X509Certificates.X509SelectionFlag" />
+      </Parameters>
+      <Docs>
+        <param name="certificates">選択する X.509 証明書のコレクション。</param>
+        <param name="title">ダイアログ ボックスのタイトルです。</param>
+        <param name="message">使用して、ユーザーの説明メッセージ。  ダイアログ ボックスで、メッセージが表示されます。</param>
+        <param name="selectionFlag">1 つ、 <see cref="T:System.Security.Cryptography.X509Certificates.X509SelectionFlag" /> 1 つまたは複数選択が許可されているかどうかを指定する値。</param>
+        <summary>証明書のコレクションから X.509 証明書を選択するためのダイアログ ボックスが表示されます。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />選択した証明書または証明書を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection%2A>メソッド ダイアログ ボックスを使用して X.509 証明書を手動で選択をユーザーが必要な場合です。 ユーザーとの対話が不要な場合を使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を選択し、X.509 証明書を表示するユーザー インターフェイス ダイアログを表示する方法を示します。  
+  
+ [!code-cpp[CertSelect#1](~/samples/snippets/cpp/VS_Snippets_CLR/CertSelect/CPP/certselect.cpp#1)]
+ [!code-csharp[CertSelect#1](~/samples/snippets/csharp/VS_Snippets_CLR/CertSelect/CS/certselect.cs#1)]
+ [!code-vb[CertSelect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CertSelect/VB/certselect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="selectionFlag" />パラメーターは、有効なフラグではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="certificates" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificates" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectFromCollection">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.X509Certificates.X509Certificate2Collection SelectFromCollection (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates, string title, string message, System.Security.Cryptography.X509Certificates.X509SelectionFlag selectionFlag, IntPtr hwndParent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.X509Certificates.X509Certificate2Collection SelectFromCollection(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates, string title, string message, valuetype System.Security.Cryptography.X509Certificates.X509SelectionFlag selectionFlag, native int hwndParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection(System.Security.Cryptography.X509Certificates.X509Certificate2Collection,System.String,System.String,System.Security.Cryptography.X509Certificates.X509SelectionFlag,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="selectionFlag" Type="System.Security.Cryptography.X509Certificates.X509SelectionFlag" />
+        <Parameter Name="hwndParent" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="certificates">選択する X.509 証明書のコレクション。</param>
+        <param name="title">ダイアログ ボックスのタイトルです。</param>
+        <param name="message">使用して、ユーザーの説明メッセージ。  ダイアログ ボックスで、メッセージが表示されます。</param>
+        <param name="selectionFlag">1 つ、 <see cref="T:System.Security.Cryptography.X509Certificates.X509SelectionFlag" /> 1 つまたは複数選択が許可されているかどうかを指定する値。</param>
+        <param name="hwndParent">ダイアログ ボックスの表示に使用する親ウィンドウへのハンドル。</param>
+        <summary>親ウィンドウへのハンドルを使用して証明書コレクションから X.509 証明書を選択するためのダイアログ ボックスが表示されます。</summary>
+        <returns><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />選択した証明書または証明書を含むオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2UI.SelectFromCollection%2A>メソッド ダイアログ ボックスを使用して X.509 証明書を手動で選択をユーザーが必要な場合です。 ユーザーとの対話が不要な場合を使用して、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2Collection.Find%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="selectionFlag" />パラメーターは、有効なフラグではありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="certificates" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="certificates" />パラメーターが無効です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,361 @@
+<Type Name="KerberosRequestorSecurityToken" FullName="System.IdentityModel.Tokens.KerberosRequestorSecurityToken">
+  <TypeSignature Language="C#" Value="public class KerberosRequestorSecurityToken : System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit KerberosRequestorSecurityToken extends System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP 要求内に送信された Kerberos チケットに基づくセキュリティ トークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーション開発者は、<xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> クラスを使用する必要はありません。ただし、Web サービスで、Kerberos チケットに関連付けられているサービス プリンシパル名を取得する必要がある場合は、この限りではありません。 サービス プリンシパル名の値を取得するには、<xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ServicePrincipalName%2A> プロパティの値を取得します。  
+  
+ Kerberos チケットに基づくセキュリティ トークンを表すクラスには、<xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> と <xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken> の 2 つがあります。 <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> セキュリティ トークンは、送信 SOAP メッセージ内で <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> セキュリティ トークンを使用するクライアントによって使用され、<xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken> セキュリティ トークンは、このセキュリティ トークンを含む SOAP メッセージを受信する Web サービスによって使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosRequestorSecurityToken (string servicePrincipalName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string servicePrincipalName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servicePrincipalName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="servicePrincipalName"><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名。 <see cref="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ServicePrincipalName" /> プロパティを設定します。</param>
+        <summary>指定したサービス プリンシパル名に関連するサービスを使用して、<see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プリンシパル名は、次のいずれかの形式にする必要があります。`host/<hostname>@<domain>` または `<hostname>`。`hostname` はターゲット Web サービスをホストするコンピューターの名前であり、`domain` はホスト コンピューターが存在する Kerberos レルムの完全修飾ドメイン名です。 サービス プリンシパル名はサービスを実行中のアカウントに関連付けられ、このマッピングが Kerberos ドメイン コントローラー (KDC) に保存されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="servicePrincipalName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">現在のユーザーの Kerberos チケットを取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public KerberosRequestorSecurityToken (string servicePrincipalName, System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel, System.Net.NetworkCredential networkCredential, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string servicePrincipalName, valuetype System.Security.Principal.TokenImpersonationLevel tokenImpersonationLevel, class System.Net.NetworkCredential networkCredential, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.#ctor(System.String,System.Security.Principal.TokenImpersonationLevel,System.Net.NetworkCredential,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="servicePrincipalName" Type="System.String" />
+        <Parameter Name="tokenImpersonationLevel" Type="System.Security.Principal.TokenImpersonationLevel" />
+        <Parameter Name="networkCredential" Type="System.Net.NetworkCredential" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="servicePrincipalName"><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名。 <see cref="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ServicePrincipalName" /> プロパティを設定します。</param>
+        <param name="tokenImpersonationLevel">クライアントの <see cref="T:System.Security.Principal.TokenImpersonationLevel" /> セキュリティ トークンをどのように偽装できるかを指定する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> 値のいずれか。</param>
+        <param name="networkCredential"><see cref="T:System.Net.NetworkCredential" /> セキュリティ トークンを取得するユーザーを指定する <see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" />。</param>
+        <param name="id">セキュリティ トークンの一意の識別子。 <see cref="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.Id" /> プロパティの値を設定します。</param>
+        <summary><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プリンシパル名は、次のいずれかの形式にする必要があります。`host/<hostname>@<domain>` または `<hostname>`。`hostname` はターゲット Web サービスをホストするコンピューターの名前であり、`domain` はホスト コンピューターが存在する Kerberos レルムの完全修飾ドメイン名です。 サービス プリンシパル名はサービスを実行中のアカウントに関連付けられ、このマッピングが Kerberos ドメイン コントローラー (KDC) に保存されます。  
+  
+ `null` パラメーターに `networkCredential` が渡された場合は、現在のユーザーに対する <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> セキュリティ トークンが取得されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="servicePrincipalName" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="id" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="networkCredential" /> が <see langword="null" /> ではなく、<see cref="P:System.Net.CredentialCache.DefaultNetworkCredentials" /> に等しくありません。<see cref="P:System.Net.NetworkCredential.UserName" /> プロパティが空または <see langword="null" /> です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">指定されたユーザーの Kerberos チケットを取得できません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="tokenImpersonationLevel" /> が、<see langword="Impersonation" /> でも <see langword="Identity" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanCreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanCreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.CanCreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>このセキュリティ トークンが、指定したキー識別子を作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> の型が <paramref name="T" /> の場合は <see cref="T:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー識別句を作成するには、<xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.CreateKeyIdentifierClause%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T CreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T CreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.CreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>指定したキー識別句を作成します。</summary>
+        <returns>セキュリティ トークンのキー識別子句である <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken> クラスで、指定したキー識別子句を作成できるかどうかを確認するには、<xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.CanCreateKeyIdentifierClause%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequest">
+      <MemberSignature Language="C#" Value="public byte[] GetRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetRequest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.GetRequest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Kerberos チケット要求を取得します。</summary>
+        <returns>Kerberos チケット要求の結果を含む <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Kerberos チケット要求は、`InitializeSecurityContext` API を使用して行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンの一意の識別子を取得します。</summary>
+        <value>セキュリティ トークンの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override bool MatchesKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MatchesKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="skiClause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別子と一致するどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="skiClause" /> 型であり、Kerberos チケット要求の結果と一致する場合は <see cref="T:System.IdentityModel.Tokens.KerberosTicketHashKeyIdentifierClause" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKey">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SymmetricSecurityKey SecurityKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SymmetricSecurityKey SecurityKey" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.SecurityKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SymmetricSecurityKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンに関連付けられている Kerberos チケットの対称セッション キーを取得します。</summary>
+        <value>このセキュリティ トークンに関連付けられている Kerberos チケットの対称セッション キーが格納される <see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.SecurityKey%2A> プロパティは、指定のユーザーに対して取得された Kerberos チケットの対称セッション キーを使用してコンストラクターのいずれかを呼び出したときに設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられた暗号化キーを取得します。</summary>
+        <value>セキュリティ トークンに関連付けられている一連のキーを含む、<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.SecurityKeys%2A> プロパティには、<xref:System.IdentityModel.Tokens.KerberosReceiverSecurityToken.SecurityKey%2A> プロパティの対称セッション キーが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServicePrincipalName">
+      <MemberSignature Language="C#" Value="public string ServicePrincipalName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServicePrincipalName" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ServicePrincipalName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名を取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.KerberosRequestorSecurityToken" /> セキュリティ トークンのサービス プリンシパル名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プリンシパル名は、次のいずれかの形式が可能です。`host/<hostname>@<domain>` または `<hostname>`。`hostname` はターゲット Web サービスをホストする コンピューターの名前であり、`domain` はホスト  コンピューターが存在する Kerberos レルムの完全修飾ドメイン名です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public override DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の開始時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の開始時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ValidFrom%2A> プロパティには、Kerberos チケットの取得時間が協定世界時刻 (UTC) で設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public override DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の終了時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の終了の時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.KerberosRequestorSecurityToken.ValidFrom%2A> プロパティには、Kerberos チケットの終了時間が協定世界時刻 (UTC) で設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

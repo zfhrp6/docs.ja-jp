@@ -1,0 +1,122 @@
+<Type Name="DataGridViewRowsAddedEventArgs" FullName="System.Windows.Forms.DataGridViewRowsAddedEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowsAddedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowsAddedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowsAddedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.DataGridView.RowsAdded" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView.RowsAdded>イベントに行を追加するときに発生する<xref:System.Windows.Forms.DataGridView>コントロール。 ユーザーが、新しいレコードの行を使用して新しい行を追加したときに、<xref:System.Windows.Forms.DataGridViewRowsAddedEventArgs.RowIndex%2A>追加行よりも大きい値の 1 つである、このイベントは、新しいレコードの行の新しい場所のインデックスと等しい、ハンドラーの値します。 行を追加するプログラムで、ただし、ときに、<xref:System.Windows.Forms.DataGridViewRowsAddedEventArgs.RowIndex%2A>値は、追加された最初の行のインデックス。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のハンドル、<xref:System.Windows.Forms.DataGridView.RowsAdded>仮想内の行の番号をインクリメントするイベント<xref:System.Windows.Forms.DataGridView>です。 行の数がで使用される、<xref:System.Windows.Forms.DataGridView.CellValueNeeded>ハンドラーの新しい行の初期化のセルと空白のセルを表示するタイミングを認識できるようにします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridView.VirtualMode%2A>リファレンス トピックを参照します。  
+  
+ [!code-cpp[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CPP/virtual.cpp#20)]
+ [!code-csharp[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/CS/virtual.cs#20)]
+ [!code-vb[System.Windows.Forms.DataGridView._Virtual#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._Virtual/VB/virtual.vb#20)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewRowsAddedEventArgs (int rowIndex, int rowCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 rowIndex, int32 rowCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowsAddedEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="rowCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">追加された最初の行のインデックス。</param>
+        <param name="rowCount">追加された行の数。</param>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowsAddedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowCount">
+      <MemberSignature Language="C#" Value="public int RowCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowsAddedEventArgs.RowCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加された行の数を取得します。</summary>
+        <value>追加された行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowsAdded?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowsAdded?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#357](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#357)]
+ [!code-vb[System.Windows.Forms.EventExamples#357](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#357)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewRowsAddedEventArgs.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加された最初の行のインデックスを取得します。</summary>
+        <value>追加された最初の行のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーは、新しいレコードの行を使用して新しい行を追加するときにこのプロパティの値は、新しいレコードの行の新しい場所のインデックスと同じあるいずれかの追加行より大きいです。 プログラムで行を追加するときに、このプロパティの値が追加された最初の行のインデックスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.RowsAdded?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.RowsAdded?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#357](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#357)]
+ [!code-vb[System.Windows.Forms.EventExamples#357](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#357)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

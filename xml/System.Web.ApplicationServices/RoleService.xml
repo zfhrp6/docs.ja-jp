@@ -1,0 +1,170 @@
+<Type Name="RoleService" FullName="System.Web.ApplicationServices.RoleService">
+  <TypeSignature Language="C#" Value="public class RoleService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RoleService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.RoleService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode=System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(ConcurrencyMode=System.ServiceModel.ConcurrencyMode.Multiple, InstanceContextMode=System.ServiceModel.InstanceContextMode.Single, Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceContract(Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WCF Web サービスとして ASP.NET ロール プロバイダーにアクセスできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.RoleService>オブジェクトは、Windows Communication Foundation (WCF) サービスを介してユーザーのロールを読み取ることができます。 役割サービスを使用するには Web サーバーの役割サービスを有効にし、Web サービスに WCF と互換性のあるクライアント アプリケーションに接続します。 役割サービスを構成する方法については、次を参照してください。[する方法: WCF の役割サービスを有効にする](http://msdn.microsoft.com/library/d021aa39-4cbf-4450-a3c1-d5573ca7ce8c)です。  
+  
+ ユーザーのロールの読み取りには、ユーザーを認証する必要があります。 役割サービスは、任意の種類の ASP.NET 認証で使用できます。 WCF サービスを通じてユーザーのログイン方法については、次を参照してください。 [Windows Communication Foundation 認証サービスの概要](http://msdn.microsoft.com/library/6e121a28-89e8-4974-88a8-70aaa6a7d52b)です。  
+  
+ <xref:System.Web.ApplicationServices.RoleService>クラスは、WCF サービスを介してのみアクセスは 2 つのメソッドを公開:<xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>メソッドおよび<xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A>メソッドです。 <xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>メソッドは、ログイン ユーザーのすべてのロールを返します。 <xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A>メソッドは、ユーザーが指定されたロールがあるかどうかを判断します。  
+  
+ <xref:System.Web.ApplicationServices.RoleService>オブジェクト、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。 イベント ハンドラーを作成する、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベントを実行時に使用するロール プロバイダーを選択します。  
+  
+ コンソール アプリケーションから WCF の役割サービスを使用する方法の例は、次を参照してください。[チュートリアル: ASP.NET アプリケーション サービスを使用する](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.RoleService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ApplicationServices.RoleService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRolesForCurrentUser">
+      <MemberSignature Language="C#" Value="public string[] GetRolesForCurrentUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] GetRolesForCurrentUser() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ログイン ユーザーのすべてのロールを返します。</summary>
+        <returns>ユーザーが属しているロールの名前の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>メソッドは、ユーザーのすべてのロールを返します。 使用する、<xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>メソッドと、確認するか、ユーザーが利用できるリソースを指定するすべてのユーザーのロールを保持する必要があります。 このメソッドを使用するには複数の呼び出しを避けるために、<xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A>メソッドです。  
+  
+ 呼び出す、<xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A>メソッドが発生し、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.RoleService.GetRolesForCurrentUser%2A> WCF サービスの一部としてのみメソッドです。 Web サーバー上で実行されるコードでユーザーのロールの読み取り方法の詳細については、次を参照してください。、<xref:System.Web.Security.Roles.GetRolesForUser%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">ロール管理が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrentUserInRole">
+      <MemberSignature Language="C#" Value="public bool IsCurrentUserInRole (string role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsCurrentUserInRole(string role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="role">確認するロールの名前。</param>
+        <summary>指定されたロールにログインしたユーザーが属しているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが指定されたロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A>メソッドでは、指定されたロールにログインしたユーザーが属しているかどうかを確認します。 <xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A> メソッドは、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider> イベントを発生させます。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.RoleService.IsCurrentUserInRole%2A> WCF サービスの一部としてのみメソッドです。 Web サーバーで実行中のコードと、そのユーザーが、指定されたグループに属しているかどうかを確認する方法についての詳細については、次を参照してください。、<xref:System.Web.Security.Roles.IsUserInRole%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="role" /><see langword="null" />か、ユーザーがログインしていません。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">ロール管理が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectingProvider">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Web.ApplicationServices.SelectingProviderEventArgs&gt; SelectingProvider;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ApplicationServices.SelectingProviderEventArgs&gt; SelectingProvider" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ApplicationServices.RoleService.SelectingProvider" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ApplicationServices.SelectingProviderEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Web.ApplicationServices.RoleService" />インスタンスは、ユーザーのロールをチェックするのに使用するには、どのロール プロバイダーを決定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.RoleService>クラスが生成、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベント、ユーザーのロールを取得するために使用するロール プロバイダーを決定する場合。 イベント ハンドラーを作成することができます、<xref:System.Web.ApplicationServices.RoleService.SelectingProvider>イベントを使用するロール プロバイダーを実行時に選択します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーにバインドする方法を示しています、 <xref:System.Web.ApplicationServices.RoleService.SelectingProvider> Global.asax ファイル内のイベントです。 イベント ハンドラーでは、ユーザー名に基づいて、使用するには、どのロール プロバイダーを実行時に決定します。  
+  
+ [!code-csharp[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.SelectingProviderEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.SelectingProviderEventHandler/vb/Global.asax#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

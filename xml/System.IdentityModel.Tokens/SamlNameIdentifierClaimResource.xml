@@ -1,0 +1,199 @@
+<Type Name="SamlNameIdentifierClaimResource" FullName="System.IdentityModel.Tokens.SamlNameIdentifierClaimResource">
+  <TypeSignature Language="C#" Value="public class SamlNameIdentifierClaimResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlNameIdentifierClaimResource extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サブジェクトの名前をアサートする SAML セキュリティ トークンのクレームを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource> クラスを使用して、<xref:System.IdentityModel.Claims.Claim> サブジェクト名クレームの <xref:System.IdentityModel.Tokens.SamlSecurityToken> インスタンスを作成します。 <xref:System.IdentityModel.Claims.Claim> クラスにはリソースを必要とするコンストラクターがあり、このクラスを渡すことができます。  
+  
+ <xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンは、SAML アサーションを使用してそのクレームを指定します。SAML アサーションでは、セキュリティ トークンのサブジェクトを指定できます。 SAML アサーション内でクレームは、SAML ステートメントにより表されます。 SAML 仕様では、一連の SAML ステートメントの種類を定義します。また、これらの種類の 1 つが <xref:System.IdentityModel.Tokens.SamlSubjectStatement> です。 <xref:System.IdentityModel.Tokens.SamlSubjectStatement> は、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンのサブジェクトであるプリンシパルをアサートします。 このプリンシパルは、<xref:System.IdentityModel.Tokens.SamlSubject> クラスを使用して指定します。  <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource> クラスは、<xref:System.IdentityModel.Tokens.SamlSubject> の名前識別子を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlNameIdentifierClaimResource (string name, string nameQualifier, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string nameQualifier, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="nameQualifier" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">サブジェクト名。 <see cref="P:System.IdentityModel.Tokens.SamlSubject.Name" /> プロパティを設定します。</param>
+        <param name="nameQualifier">これで、ドメイン、<c>名前</c>パラメーターが存在します。 <see cref="P:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.NameQualifier" /> プロパティを設定します。</param>
+        <param name="format">形式を表す URI 参照を<c>名前</c>パラメーターします。 <see cref="P:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Format" /> プロパティを設定します。</param>
+        <summary>指定した名前、名前が存在するドメイン、および名前の形式を使用して、<see cref="T:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前を指定するための形式は拡張可能ですが、次の表に SAML 仕様により定義された形式の一覧を示します。  
+  
+|形式|説明|  
+|------------|-----------------|  
+|<xref:System.IdentityModel.Tokens.SamlConstants.EmailNamespace%2A>|SAML アサーションのサブジェクトが電子メール アドレスとして指定されることを示す URI。|  
+|<xref:System.IdentityModel.Tokens.SamlConstants.UserNameNamespace%2A>|SAML アサーションのサブジェクトが Windows ドメイン アカウントにより指定されることを示す URI。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> が <see langword="null" /> または <see cref="F:System.String.Empty" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="obj" /> でこのインスタンスと同じ値を保持している場合は <see cref="T:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Format">
+      <MemberSignature Language="C#" Value="public string Format { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Format" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Format" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML セキュリティ トークンのサブジェクト名の形式を表す URI 参照を取得します。</summary>
+        <value>SAML セキュリティ トークンのサブジェクト名の形式を表す URI 参照。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Format%2A> プロパティは、<xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name%2A> プロパティの形式を指定します。  
+  
+ 名前を指定するための形式は拡張可能ですが、次の表に SAML 仕様により定義された形式の一覧を示します。  
+  
+|形式|説明|  
+|------------|-----------------|  
+|<xref:System.IdentityModel.Tokens.SamlConstants.EmailNamespace%2A>|SAML アサーションのサブジェクトが電子メール アドレスとして指定されることを示す URI。|  
+|<xref:System.IdentityModel.Tokens.SamlConstants.UserNameNamespace%2A>|SAML アサーションのサブジェクトが Windows ドメイン アカウントにより指定されることを示す URI。|  
+  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Format%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `Format` 要素の `<saml:NameIdentifier>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource" /> のハッシュ コードを返します。</summary>
+        <returns><see cref="T:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML セキュリティ トークンのサブジェクト名を取得します。</summary>
+        <value><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンのサブジェクト名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Format%2A> プロパティは、<xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name%2A> プロパティの形式を指定します。また、<xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.NameQualifier%2A> プロパティは、<xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name%2A> プロパティが存在するドメインを指定します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `Format` 要素の `<saml:NameIdentifier>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameQualifier">
+      <MemberSignature Language="C#" Value="public string NameQualifier { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NameQualifier" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.NameQualifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SAML セキュリティ トークンのサブジェクト名が存在するドメインを取得します。</summary>
+        <value>SAML セキュリティ トークンのサブジェクト名が存在するドメイン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.NameQualifier%2A> プロパティは、<xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.Name%2A> プロパティが存在するドメインを指定します。  
+  
+ <xref:System.IdentityModel.Tokens.SamlNameIdentifierClaimResource.NameQualifier%2A> プロパティは、『Assertions and Protocol for the OASIS Security Assertion Markup Language (SAML)』の仕様で定義されている `NameQualifier` 要素の `<saml:NameIdentifier>` 属性に対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

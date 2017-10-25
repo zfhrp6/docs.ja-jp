@@ -1,0 +1,167 @@
+<Type Name="DataGrid+HitTestType" FullName="System.Windows.Forms.DataGrid+HitTestType">
+  <TypeSignature Language="C#" Value="public enum DataGrid.HitTestType" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed DataGrid/HitTestType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGrid.HitTestType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>部分を示す、<see cref="T:System.Windows.Forms.DataGrid" />コントロール、ユーザーがクリックしました。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体のメンバーを使用すると、グリッドのどの部分がクリックしてされたかを判断します。 <xref:System.Windows.Forms.DataGrid.HitTestInfo.Type%2A>のプロパティ、<xref:System.Windows.Forms.DataGrid.HitTestInfo>を返します、<xref:System.Windows.Forms.DataGrid.HitTestType>です。 <xref:System.Windows.Forms.DataGrid.HitTestInfo>を呼び出すことによって作成された、<xref:System.Windows.Forms.DataGrid.HitTest%2A>のメソッド、<xref:System.Windows.Forms.DataGrid?displayProperty=nameWithType>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Forms.DataGrid.HitTest%2A>メソッドで、<xref:System.Windows.Forms.Control.MouseDown>に返すイベント、<xref:System.Windows.Forms.DataGrid.HitTestInfo>です。 行、列、およびグリッドの一部が出力されます。  
+  
+ [!code-cpp[Classic DataGrid.HitTestType Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic DataGrid.HitTestType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic DataGrid.HitTestType Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic DataGrid.HitTestType Example/CS/source.cs#1)]
+ [!code-vb[Classic DataGrid.HitTestType Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic DataGrid.HitTestType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="Caption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType Caption = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.Caption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャプション、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Cell">
+      <MemberSignature Language="C#" Value="Cell" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType Cell = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.Cell" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のセル、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnHeader">
+      <MemberSignature Language="C#" Value="ColumnHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType ColumnHeader = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.ColumnHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列ヘッダーを<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnResize">
+      <MemberSignature Language="C#" Value="ColumnResize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType ColumnResize = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.ColumnResize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列ヘッダーの間に表示される列の境界線です。 これは、列の幅のサイズを変更するドラッグできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バック グラウンド領域では、コントロールには、テーブルを持たない、いくつかの行が含まれている場合、またはその下にテーブルをスクロールするときに表示されています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentRows">
+      <MemberSignature Language="C#" Value="ParentRows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType ParentRows = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.ParentRows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親行のセクション、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。 親の行には、または、親テーブルの名前、列名、親レコードの値など、現在表示されている子テーブルの親テーブルに関する情報が表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RowHeader">
+      <MemberSignature Language="C#" Value="RowHeader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType RowHeader = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.RowHeader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行ヘッダーに、<see cref="T:System.Windows.Forms.DataGrid" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RowResize">
+      <MemberSignature Language="C#" Value="RowResize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DataGrid/HitTestType RowResize = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DataGrid.HitTestType.RowResize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGrid+HitTestType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>行ヘッダーの間に表示される行の境界線です。 これは、行の高さのサイズを変更するドラッグできます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

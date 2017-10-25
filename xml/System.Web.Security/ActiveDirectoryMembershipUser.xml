@@ -1,0 +1,328 @@
+<Type Name="ActiveDirectoryMembershipUser" FullName="System.Web.Security.ActiveDirectoryMembershipUser">
+  <TypeSignature Language="C#" Value="public class ActiveDirectoryMembershipUser : System.Web.Security.MembershipUser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActiveDirectoryMembershipUser extends System.Web.Security.MembershipUser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.ActiveDirectoryMembershipUser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Security.MembershipUser</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開し、Active Directory データ ストアに格納されているメンバーシップ ユーザーの情報を更新します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser> Active Directory メンバーシップ データ ストア内の単一のメンバーシップ ユーザーを表すオブジェクトを使用します。 電子メール アドレスなど、メンバーシップ ユーザーに関する情報を公開し、変更または自分のパスワードをリセットする機能など、メンバーシップ ユーザーの機能を提供します。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>アプリケーションは、Active Directory データ ストアを使用するように構成されるたびに、アプリケーションのメンバーシップ プロバイダーによってオブジェクトが返されます。 構成できるアプリケーションで別のデータを使用するを格納、または複数のデータ ストアを使用するアプリケーションでは、基本クラスを参照することができます<xref:System.Web.Security.MembershipUser>です。 <xref:System.Web.Security.ActiveDirectoryMembershipUser>オブジェクトが実装されていません、<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>プロパティ、する必要がありますを処理する準備、<xref:System.NotSupportedException>でこれらのメンバーがアクセスするときにスローされる、<xref:System.Web.Security.ActiveDirectoryMembershipUser>オブジェクト。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスによって使用される内部の最適化、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>を呼び出すときに発生する属性更新の数を最小限に抑えるクラス、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドです。 シリアル化、<xref:System.Security.Principal.SecurityIdentifier>表現 (で利用可能な<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>プロパティ) できるように、<xref:System.Web.Security.ActiveDirectoryMembershipUser>オブジェクトをシリアル化および例外をスローすることがなく逆シリアル化します。  
+  
+ A<xref:System.Web.Security.ActiveDirectoryMembershipUser>によってオブジェクトが返される、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>メソッドの一部として、<xref:System.Web.Security.MembershipUserCollection>によって返される、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>、および<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>メソッドです。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>によってオブジェクトが必要な<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドは、既存のメンバーシップ ユーザーの情報を更新するとします。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>プロパティは、Active Directory の属性にマップされます。 次の表、<xref:System.Web.Security.ActiveDirectoryMembershipUser>属性マッピングのプロパティとその既定値です。  
+  
+|プロパティ|既定のディレクトリ属性|マップすることができますか。|  
+|--------------|---------------------------------|--------------------|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>|`securityIdentifier`|いいえ|  
+|<xref:System.Web.Security.MembershipUser.UserName%2A>|`userPrincipalName`|可、ただし userPrincipalName または sam アカウント名のいずれかにする必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>|`comment`|いいえ|  
+|<xref:System.Web.Security.MembershipUser.CreationDate%2A>|`whenCreated`|いいえ|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.Email%2A>|`mail`|可、ただし、Unicode 文字列型の単一値属性である必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>|適用なし|サポートされていません。<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>|適用なし|サポートされていません。<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。|  
+|<xref:System.Web.Security.MembershipUser.LastPasswordChangedDate%2A>|`pwdLastSet`|いいえ|  
+|<xref:System.Web.Security.MembershipUser.PasswordQuestion%2A>|none、ですが、パスワードのリセットや取得のための質問と回答のセキュリティを使用する場合、属性にマップする必要があります。|可、ただし、Unicode 文字列型の単一値属性である必要があります。|  
+|<xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>|`User-Account-Control`(AD)<br /><br /> `mDS-UserAccountDisabled`(ADAM)|いいえ|  
+|<xref:System.Web.Security.MembershipUser.IsLockedOut%2A>|計算された`lockoutTime`と AD ロックアウト期間 (Windows 2000 で AD)<br /><br /> `msDS-User-Account-Control-Computed`(Windows server 2003 AD)<br /><br /> `msDS-User-Account-Control-Computed`(ADAM)|いいえ|  
+|<xref:System.Web.Security.MembershipUser.LastLockoutDate%2A>|不正なパスワードの回数が多すぎるためロックアウト、ロックアウト時刻属性が返されます。<br /><br /> 間違ったパスワード入力の多すぎるためロックアウトされた場合の試行、によって定義された属性に格納されている値`attributeMapFailedPasswordAnswerLockoutTime`が返されます。<br /><br /> ロックアウトされた不正なパスワードと多数の不正なパスワードの両方のための試行、最新の日付/時刻値が返されます。<br /><br /> アカウントがロックアウトされていない場合は、1/1/1753 SQL との互換性を返します。|いいえ|  
+  
+   
+  
+## Examples  
+ 次のコード例では、上のプロパティの使用方法を示します、<xref:System.Web.Security.ActiveDirectoryMembershipUser>を複数のメンバーシップ データ ストアからユーザー情報を返すことがあります Web ページ上のオブジェクト。 <xref:System.Web.Security.ActiveDirectoryMembershipUser>の基になるオブジェクト、<xref:System.Web.Security.MembershipUser>メンバーシップ プロバイダーによって返されるオブジェクトを実装しません、<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>と<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>プロパティ、コードはまずメンバーシップから返されるユーザー オブジェクトの種類これらのプロパティの内容を表示する前にプロバイダーです。  
+  
+ [!code-aspx-csharp[System.Web.Security.ActiveDirectoryMembershipUser#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/CS/admuClassExamplecs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.ActiveDirectoryMembershipUser#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/VB/admuClassExamplevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ActiveDirectoryMembershipUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipUser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Security.ActiveDirectoryMembershipUser" />継承するクラスのオブジェクト、<see cref="T:System.Web.Security.ActiveDirectoryMembershipUser" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.%23ctor%2A>コンス トラクターが、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDirectoryMembershipUser (string providerName, string name, object providerUserKey, string email, string passwordQuestion, string comment, bool isApproved, bool isLockedOut, DateTime creationDate, DateTime lastLoginDate, DateTime lastActivityDate, DateTime lastPasswordChangedDate, DateTime lastLockoutDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string providerName, string name, object providerUserKey, string email, string passwordQuestion, string comment, bool isApproved, bool isLockedOut, valuetype System.DateTime creationDate, valuetype System.DateTime lastLoginDate, valuetype System.DateTime lastActivityDate, valuetype System.DateTime lastPasswordChangedDate, valuetype System.DateTime lastLockoutDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.ActiveDirectoryMembershipUser.#ctor(System.String,System.String,System.Object,System.String,System.String,System.String,System.Boolean,System.Boolean,System.DateTime,System.DateTime,System.DateTime,System.DateTime,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="providerUserKey" Type="System.Object" />
+        <Parameter Name="email" Type="System.String" />
+        <Parameter Name="passwordQuestion" Type="System.String" />
+        <Parameter Name="comment" Type="System.String" />
+        <Parameter Name="isApproved" Type="System.Boolean" />
+        <Parameter Name="isLockedOut" Type="System.Boolean" />
+        <Parameter Name="creationDate" Type="System.DateTime" />
+        <Parameter Name="lastLoginDate" Type="System.DateTime" />
+        <Parameter Name="lastActivityDate" Type="System.DateTime" />
+        <Parameter Name="lastPasswordChangedDate" Type="System.DateTime" />
+        <Parameter Name="lastLockoutDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="providerName"><see cref="P:System.Web.Security.MembershipUser.ProviderName" />メンバーシップ ユーザー。</param>
+        <param name="name"><see cref="P:System.Web.Security.MembershipUser.UserName" />メンバーシップ ユーザー。</param>
+        <param name="providerUserKey"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey" />メンバーシップ ユーザー。</param>
+        <param name="email"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.Email" />メンバーシップ ユーザーのアドレス。</param>
+        <param name="passwordQuestion"><see cref="P:System.Web.Security.MembershipUser.PasswordQuestion" />メンバーシップ ユーザー。</param>
+        <param name="comment"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.Comment" />メンバーシップ ユーザー。</param>
+        <param name="isApproved"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved" />メンバーシップ ユーザーの値。</param>
+        <param name="isLockedOut"><see cref="P:System.Web.Security.MembershipUser.IsLockedOut" />メンバーシップ ユーザーの値。</param>
+        <param name="creationDate"><see cref="P:System.Web.Security.MembershipUser.CreationDate" />メンバーシップ ユーザー。</param>
+        <param name="lastLoginDate"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate" />メンバーシップ ユーザー。 このパラメーターは使用されません。</param>
+        <param name="lastActivityDate"><see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate" />メンバーシップ ユーザー。 このパラメーターは使用されません。</param>
+        <param name="lastPasswordChangedDate"><see cref="P:System.Web.Security.MembershipUser.LastPasswordChangedDate" />メンバーシップ ユーザー。</param>
+        <param name="lastLockoutDate"><see cref="P:System.Web.Security.MembershipUser.LastLockoutDate" />メンバーシップ ユーザー。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.Security.ActiveDirectoryMembershipUser" />指定したプロパティ値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新たに作成する<xref:System.Web.Security.ActiveDirectoryMembershipUser>オブジェクトがメンバーシップ データ ストアに新しいメンバーシップ ユーザー オブジェクトを追加できません。 メンバーシップ データ ストアに新しいメンバーシップ ユーザーを追加するには、使用、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>メソッドです。 なお、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>メソッドを返します、<xref:System.Web.Security.ActiveDirectoryMembershipUser>データ ストアに追加するメンバーシップ ユーザーに対するオブジェクト。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>アプリケーション コードで使用するためにオブジェクトが構築される一般的な<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドを渡すこともできますが、<xref:System.Web.Security.ActiveDirectoryMembershipUser>から返されたオブジェクト、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>、または<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>メソッドを<xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>メソッドもします。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>オブジェクトが構築のメンバーシップ プロバイダーの実装もよく、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.CreateUser%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetUser%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.GetAllUsers%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.UpdateUser%2A>、 <xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByName%2A>、および<xref:System.Web.Security.ActiveDirectoryMembershipProvider.FindUsersByEmail%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="providerUserKey" /> は <see cref="T:System.Security.Principal.SecurityIdentifier" /> オブジェクトではありません。  
+  
+ \- または  
+  
+ <paramref name="providerName" /><see langword="null" />プロバイダーがアプリケーションの構成ファイルで設定されていないとします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Comment">
+      <MemberSignature Language="C#" Value="public override string Comment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Comment" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.Comment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーシップ ユーザーのアプリケーション固有情報を取得または設定します。</summary>
+        <value>アプリケーション固有の情報に格納されている Active Directory メンバーを<see langword="Comment" />ディレクトリの属性です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>メンバーシップ ユーザーはアプリケーションに固有のカスタム情報を格納するプロパティを使用できます。 格納できる情報の量、`Comment`プロパティを<xref:System.Web.Security.ActiveDirectoryMembershipUser>によって定義された、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.Comment%2A>プロパティのマップ先、`Comment`既定の Active Directory 属性です。 このプロパティは、別の属性に再マップすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Email">
+      <MemberSignature Language="C#" Value="public override string Email { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Email" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.Email" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーシップ ユーザーの電子メール アドレスを設定します。</summary>
+        <value>メンバーシップ ユーザーの電子メール アドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.Email%2A>プロパティのマップ先、`Mail`ディレクトリの属性です。 このプロパティは、Web.config ファイルで設定して再割り当てされることができます、`attributeMapUserName`属性、[プロバイダー要素 (ASP.NET 設定スキーマ) のプロファイルの](http://msdn.microsoft.com/en-us/9e998377-b07f-44c1-ad9b-20a60e83c18f)プロファイルの要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsApproved">
+      <MemberSignature Language="C#" Value="public override bool IsApproved { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsApproved" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはメンバーシップ ユーザーを認証できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、ユーザーを認証できます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser>値への呼び出し中にメンバーシップ ユーザーがチェックされて<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>によって、<xref:System.Web.Security.ActiveDirectoryMembershipProvider>です。 場合、<xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>プロパティから返される`false`、<xref:System.Web.Security.ActiveDirectoryMembershipProvider.ValidateUser%2A>メソッドを返します。`false`場合でも、指定されたユーザー名とパスワードが正しい。  
+  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.IsApproved%2A>プロパティは、次の Active Directory 属性のいずれかにマップします。  
+  
+|||  
+|-|-|  
+|Active Directory|`User-Account-Control`|  
+|Active Directory アプリケーション モード|`msDS-UserAccountDisabled`|  
+  
+ このプロパティは、別の属性に再マップすることはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastActivityDate">
+      <MemberSignature Language="C#" Value="public override DateTime LastActivityDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastActivityDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スロー、<see cref="T:System.NotSupportedException" />常に例外</summary>
+        <value>常にスロー、<see cref="T:System.NotSupportedException" />例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>でプロパティがサポートされていない、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスです。 常にスローされますを取得または値を設定しようとすると、<xref:System.NotSupportedException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メンバーシップ ユーザーの基になる型があるかどうかを判断する方法を示します<xref:System.Web.Security.ActiveDirectoryMembershipUser>がスローされないようにして、<xref:System.NotSupportedException>にアクセスするため、<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate%2A>プロパティです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Security.ActiveDirectoryMembershipUser#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/CS/admuClassExamplecs.aspx#2)]
+ [!code-vb[System.Web.Security.ActiveDirectoryMembershipUser#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/VB/admuClassExamplevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">取得または設定しようとすると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.LastActivityDate" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastLoginDate">
+      <MemberSignature Language="C#" Value="public override DateTime LastLoginDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastLoginDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に例外 <see cref="T:System.NotSupportedException" /> をスローします。</summary>
+        <value>常にスロー、<see cref="T:System.NotSupportedException" />例外。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>でプロパティがサポートされていない、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスです。 常にスローされますを取得または値を設定しようとすると、<xref:System.NotSupportedException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、メンバーシップ ユーザーの基になる型があるかどうかを判断する方法を示します<xref:System.Web.Security.ActiveDirectoryMembershipUser>がスローされないようにして、<xref:System.NotSupportedException>にアクセスするため、<xref:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate%2A>プロパティです。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Security.ActiveDirectoryMembershipUser#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/CS/admuClassExamplecs.aspx#2)]
+ [!code-vb[System.Web.Security.ActiveDirectoryMembershipUser#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/VB/admuClassExamplevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">取得または設定しようとすると、<see cref="P:System.Web.Security.ActiveDirectoryMembershipUser.LastLoginDate" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderUserKey">
+      <MemberSignature Language="C#" Value="public override object ProviderUserKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ProviderUserKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Active Directory データ ストアからメンバーシップ ユーザーのユーザー識別子を取得します。</summary>
+        <value>メンバーシップ ユーザーの Active Directory データ内のユーザー id を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>プロパティとしてデータ ソースが汎用的に型指定されたメンバーシップから識別子を公開する、`object`です。 <xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>としてクラスをキャストすることができます、<xref:System.Security.Principal.SecurityIdentifier>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では表示、<xref:System.Web.Security.ActiveDirectoryMembershipUser.ProviderUserKey%2A>プロパティに変換することでセキュリティ記述子定義言語 (SDDL) 形式で、<xref:System.Security.Principal.SecurityIdentifier>オブジェクト。 例を実行するために必要な完全なコードのセクションの例を参照してください、<xref:System.Web.Security.ActiveDirectoryMembershipUser>クラスの概要に関するトピック。  
+  
+ [!code-csharp[System.Web.Security.ActiveDirectoryMembershipUser#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/CS/admuClassExamplecs.aspx#3)]
+ [!code-vb[System.Web.Security.ActiveDirectoryMembershipUser#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.ActiveDirectoryMembershipUser/VB/admuClassExamplevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

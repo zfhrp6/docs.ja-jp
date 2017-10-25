@@ -1,0 +1,487 @@
+<Type Name="JsonReaderWriterFactory" FullName="System.Runtime.Serialization.Json.JsonReaderWriterFactory">
+  <TypeSignature Language="C#" Value="public static class JsonReaderWriterFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit JsonReaderWriterFactory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Json.JsonReaderWriterFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+    <AssemblyVersion>4.0.4.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.ServiceModel.Web, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ストリームまたはバッファーから JSON (JavaScript Object Notation) でエンコードされたデータを読み取り、XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> のインスタンスと、XML Infoset を JSON にマップし、JSON エンコードされたデータをストリームに書き込むことができる <see cref="T:System.Xml.XmlDictionaryWriter" /> のインスタンスを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] は、JSON データと XML Infoset との間のマッピングを使用して、JSON メッセージを処理します。 通常、このマッピングは表示されません。 ただし、一部の高度なシナリオでは、JSON と XML 間の変換を手動で行う必要がある場合があります。 この場合、<xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> クラスを使用して、必要な XML リーダーおよび XML ライターを作成できます。 すべての XML Infoset 要素を JSON にマップできるわけではありません。 [!INCLUDE[crabout](~/includes/crabout-md.md)]マッピングを参照してください[する方法: シリアル化データと JSON データの逆シリアル化](~/docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="CreateJsonReader">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたストリームまたはバッファーを XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各オーバーロードは、信頼できないデータを読み取るときに、<xref:System.Xml.XmlDictionaryReaderQuotas> を使用してサービス拒否 (DoS) 攻撃を防ぎます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateJsonReader">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, System.Xml.XmlDictionaryReaderQuotas quotas);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">読み込み元の入力 <see cref="T:System.Byte" /> バッファー配列。</param>
+        <param name="quotas">信頼できないデータを読み取るときに、サービス拒否 (DoS) 攻撃を防ぐために使用される <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</param>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたバッファーを XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <returns>JSON (JavaScript Object Notation) データを処理できる <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーロードは、<xref:System.Text.Encoding> パラメーターを受け入れません。 文字エンコーディング (UTF-8、Unicode または Big-Endian Unicode) は、データが読み込まれるときに自動検出されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonReader">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (System.IO.Stream stream, System.Xml.XmlDictionaryReaderQuotas quotas);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(class System.IO.Stream stream, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.IO.Stream,System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込み元の入力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="quotas">信頼できないデータを読み取るときに、サービス拒否 (DoS) 攻撃を防ぐために使用される <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</param>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたストリームを XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <returns>JSON (JavaScript Object Notation) を読み取ることができる <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーロードは、<xref:System.Text.Encoding> パラメーターを使用しません。 文字エンコーディング (UTF-8、Unicode または Big-Endian Unicode) は、データが読み込まれるときに自動検出されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonReader">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, int offset, int count, System.Xml.XmlDictionaryReaderQuotas quotas);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, int32 offset, int32 count, class System.Xml.XmlDictionaryReaderQuotas quotas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Int32,System.Int32,System.Xml.XmlDictionaryReaderQuotas)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">読み込み元の入力 <see cref="T:System.Byte" /> バッファー配列。</param>
+        <param name="offset">読み取りの開始位置<c>バッファー</c>です。</param>
+        <param name="count">読み込み可能バイト数<c>バッファー</c>です。</param>
+        <param name="quotas">信頼できないデータを読み取るときに、サービス拒否 (DoS) 攻撃を防ぐために使用される <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</param>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたバッファーを、サイズおよびオフセットを指定して、XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <returns>JSON (JavaScript Object Notation) を読み取ることができる <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバーロードは、<xref:System.Text.Encoding> パラメーターを使用しません。 文字エンコーディング (UTF-8、Unicode または Big-Endian Unicode) は、データが読み込まれるときに自動検出されます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonReader">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (System.IO.Stream stream, System.Text.Encoding encoding, System.Xml.XmlDictionaryReaderQuotas quotas, System.Xml.OnXmlDictionaryReaderClose onClose);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(class System.IO.Stream stream, class System.Text.Encoding encoding, class System.Xml.XmlDictionaryReaderQuotas quotas, class System.Xml.OnXmlDictionaryReaderClose onClose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.IO.Stream,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+        <Parameter Name="onClose" Type="System.Xml.OnXmlDictionaryReaderClose" />
+      </Parameters>
+      <Docs>
+        <param name="stream">読み込み元の入力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="encoding">リーダーによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 値として <see langword="null" /> が指定されている場合、リーダーは、エンコーディングを自動検出します。</param>
+        <param name="quotas">信頼できないデータを読み取るときに、サービス拒否 (DoS) 攻撃を防ぐために使用される <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</param>
+        <param name="onClose">リーダーが閉じられたときに呼び出す <see cref="T:System.Xml.OnXmlDictionaryReaderClose" /> デリゲート。</param>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたストリームを、サイズおよびオフセットを指定して、XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <returns>JSON (JavaScript Object Notation) を読み取ることができる <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonReader">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryReader CreateJsonReader (byte[] buffer, int offset, int count, System.Text.Encoding encoding, System.Xml.XmlDictionaryReaderQuotas quotas, System.Xml.OnXmlDictionaryReaderClose onClose);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryReader CreateJsonReader(unsigned int8[] buffer, int32 offset, int32 count, class System.Text.Encoding encoding, class System.Xml.XmlDictionaryReaderQuotas quotas, class System.Xml.OnXmlDictionaryReaderClose onClose) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonReader(System.Byte[],System.Int32,System.Int32,System.Text.Encoding,System.Xml.XmlDictionaryReaderQuotas,System.Xml.OnXmlDictionaryReaderClose)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="quotas" Type="System.Xml.XmlDictionaryReaderQuotas" />
+        <Parameter Name="onClose" Type="System.Xml.OnXmlDictionaryReaderClose" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">読み込み元の入力 <see cref="T:System.Byte" /> バッファー配列。</param>
+        <param name="offset">読み取りの開始位置<c>バッファー</c>です。</param>
+        <param name="count">読み込み可能バイト数<c>バッファー</c>です。</param>
+        <param name="encoding">リーダーによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 値として <see langword="null" /> が指定されている場合、リーダーは、エンコーディングを自動検出します。</param>
+        <param name="quotas">信頼できないデータを読み取るときに、サービス拒否 (DoS) 攻撃を防ぐために使用される <see cref="T:System.Xml.XmlDictionaryReaderQuotas" />。</param>
+        <param name="onClose">リーダーが閉じられたときに呼び出す <see cref="T:System.Xml.OnXmlDictionaryReaderClose" /> デリゲート。 既定値は <see langword="null" /> です。</param>
+        <summary>JSON (JavaScript Object Notation) でエンコードされたバッファーを、サイズとオフセットおよび文字エンコーディングを指定して、XML Infoset にマップできる <see cref="T:System.Xml.XmlDictionaryReader" /> を作成します。</summary>
+        <returns>JSON (JavaScript Object Notation) を読み取ることができる <see cref="T:System.Xml.XmlDictionaryReader" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]使用して<xref:System.Xml.XmlDictionaryReaderQuotas>サービス拒否攻撃を防ぐためには、信頼されていないデータを読み取るときに、次を参照してください。[データのセキュリティに関する考慮事項](~/docs/framework/wcf/feature-details/security-considerations-for-data.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateJsonWriter">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>JSON でエンコードされたデータをストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter%2A> 静的メソッドは、XML Infoset を JSON ストリームにマップできる <xref:System.Xml.XmlDictionaryWriter> のインスタンスを返します。 <xref:System.Xml.XmlDictionaryWriter> が有効な JSON を作成することは保証されていません。 JSON と XML 間のマッピングでサポートされていない方法で使用すると、例外をスローするか、無効な JSON ドキュメントを書き込む可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateJsonWriter">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">JSON ライターの出力 <see cref="T:System.IO.Stream" />。</param>
+        <summary>JSON でエンコードされたデータをストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> を作成します。</summary>
+        <returns>JSON でエンコードされたデータを、XML Infoset に基づいてストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の文字エンコーディングは UTF-8 です。 ライターが閉じられると、ストリームも閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonWriter">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+      </Parameters>
+      <Docs>
+        <param name="stream">JSON ライターの出力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="encoding">ライターによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 既定のエンコーディングは UTF-8 です。</param>
+        <summary>JSON でエンコードされたデータを、文字エンコーディングを指定してストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> を作成します。</summary>
+        <returns>JSON でエンコードされたデータを、XML Infoset に基づいてストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ライターが閉じられると、ストリームも閉じられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonWriter">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="ownsStream" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">JSON ライターの出力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="encoding">ライターによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 既定のエンコーディングは UTF-8 です。</param>
+        <param name="ownsStream">完了時に出力ストリームがライターによって閉じられる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</param>
+        <summary>JSON でエンコードされたデータを、文字エンコーディングを指定してストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" /> を作成します。</summary>
+        <returns>JSON でエンコードされたデータを、XML Infoset に基づいてストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonWriter">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream, bool indent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream, bool indent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="ownsStream" Type="System.Boolean" />
+        <Parameter Name="indent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="stream">JSON ライターの出力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="encoding">ライターによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 既定のエンコーディングは UTF-8 です。</param>
+        <param name="ownsStream">完了時に出力ストリームがライターによって閉じられる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</param>
+        <param name="indent">場合<see langword="true" />、出力が正しく、それ以外の各レベルをインデント、複数行の形式を使用して<see langword="false" />です。</param>
+        <summary>作成、<see cref="T:System.Xml.XmlDictionaryWriter" />指定された文字のストリームを JSON でエンコードされたデータを書き込みます。</summary>
+        <returns>JSON でエンコードされたデータを、XML Infoset に基づいてストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateJsonWriter">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlDictionaryWriter CreateJsonWriter (System.IO.Stream stream, System.Text.Encoding encoding, bool ownsStream, bool indent, string indentChars);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlDictionaryWriter CreateJsonWriter(class System.IO.Stream stream, class System.Text.Encoding encoding, bool ownsStream, bool indent, string indentChars) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Json.JsonReaderWriterFactory.CreateJsonWriter(System.IO.Stream,System.Text.Encoding,System.Boolean,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Json</AssemblyName>
+        <AssemblyVersion>4.0.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="encoding" Type="System.Text.Encoding" />
+        <Parameter Name="ownsStream" Type="System.Boolean" />
+        <Parameter Name="indent" Type="System.Boolean" />
+        <Parameter Name="indentChars" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stream">JSON ライターの出力 <see cref="T:System.IO.Stream" />。</param>
+        <param name="encoding">ライターによって使用される文字エンコーディングを指定する <see cref="T:System.Text.Encoding" />。 既定のエンコーディングは UTF-8 です。</param>
+        <param name="ownsStream">完了時に出力ストリームがライターによって閉じられる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</param>
+        <param name="indent">場合<see langword="true" />、出力が正しく、それ以外の各レベルをインデント、複数行の形式を使用して<see langword="false" />です。</param>
+        <param name="indentChars">各レベルにインデントを設定するために使用する文字列。</param>
+        <summary>作成、<see cref="T:System.Xml.XmlDictionaryWriter" />指定された文字のストリームを JSON でエンコードされたデータを書き込みます。</summary>
+        <returns>JSON でエンコードされたデータを、XML Infoset に基づいてストリームに書き込む <see cref="T:System.Xml.XmlDictionaryWriter" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

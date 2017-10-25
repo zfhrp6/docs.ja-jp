@@ -1,0 +1,612 @@
+<Type Name="CriticalHandle" FullName="System.Runtime.InteropServices.CriticalHandle">
+  <TypeSignature Language="C#" Value="public abstract class CriticalHandle : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CriticalHandle extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.CriticalHandle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Handles</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.Runtime.ConstrainedExecution.CriticalFinalizerObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ハンドル リソースのラッパー クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.CriticalHandle>クラスがに似ていますが、<xref:System.Runtime.InteropServices.SafeHandle>点を除いて、クラス<xref:System.Runtime.InteropServices.SafeHandle>参照カウントを実装します。 使用することができます<xref:System.Runtime.InteropServices.CriticalHandle>の代わりに<xref:System.Runtime.InteropServices.SafeHandle>必要な同期の詳細を提供するときに、アドレスのパフォーマンスに関する考慮事項を効率的に自分でします。  
+  
+ <xref:System.Runtime.InteropServices.CriticalHandle>クラスは、参照カウントを実行していない、ハンドル リサイクルのセキュリティ攻撃から保護は提供されません。 参照カウント アルゴリズムは暗黙的には、操作がシリアル化、ため、一定量のスレッドの安全性は失われますも。 呼び出す場合は、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>または<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>メソッドを呼び出す場合は別のスレッドで未処理のハンドルを使用している処理の実行中または<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>または<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>同時に 2 つのスレッドからは、結果は非決定的です。 <xref:System.Runtime.InteropServices.CriticalHandle>クラスがまだによって提供される、保証された重要な終了処理を提供、<xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>クラスです。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+    <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このクラスは、部分的に信頼されているまたは透過的なコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CriticalHandle (IntPtr invalidHandleValue);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(native int invalidHandleValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="invalidHandleValue" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="invalidHandleValue">無効なハンドルの値 (通常は 0 または -1)。</param>
+        <summary>指定した無効なハンドル値を使用して、<see cref="T:System.Runtime.InteropServices.CriticalHandle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.TypeLoadException">派生クラスがアンマネージ コードのアクセス許可なしにアセンブリに存在しています。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このクラスは、部分的に信頼されているまたは透過的なコードでは使用できません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソースを解放するためのハンドルをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドにより、リソースを解放します。 異なり、<xref:System.Runtime.InteropServices.SafeHandle>クラス、これは常に他のスレッドがこのハンドルを使用していることを示すために参照カウントがないためにすぐにします。 そのため、安全に呼び出すことを確認する同期メカニズムを採用する必要があります、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>メソッドです。 ほとんどのクラスを使用するが、<xref:System.Runtime.InteropServices.CriticalHandle>クラスは、この操作は、必要に応じて、ファイナライザーを用意する必要はありません (たとえば、ファイル バッファーをフラッシュするかを記述するいくつかのデータ バックアップをメモリに)。 この例では、クラスが前に実行することが保証が不要なファイナライザーを提供できます、<xref:System.Runtime.InteropServices.CriticalHandle>クリティカル ファイナライザーを実行します。  
+  
+ 呼び出す、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>が完了したら、メソッドを使用して、<xref:System.Runtime.InteropServices.CriticalHandle>オブジェクト。 <xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>メソッドによって、<xref:System.Runtime.InteropServices.CriticalHandle>使用不可の状態オブジェクト。  
+  
+ **注**常に呼び出し<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>への参照を解放する前に、<xref:System.Runtime.InteropServices.CriticalHandle>オブジェクト。 そうしないと、ガベージ コレクターが <xref:System.Runtime.InteropServices.CriticalHandle> オブジェクトの <xref:System.Runtime.InteropServices.CriticalHandle.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.CriticalHandle" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドにより、リソースを解放します。 異なり、<xref:System.Runtime.InteropServices.SafeHandle>クラス、これは常に他のスレッドがこのハンドルを使用していることを示すために参照カウントがないためにすぐにします。 そのため、安全に呼び出すことを確認する同期メカニズムを採用する必要があります、<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドです。 ほとんどのクラスを使用するが、<xref:System.Runtime.InteropServices.CriticalHandle>クラスは、この操作は、必要に応じて、ファイナライザーを用意する必要はありません (たとえば、ファイル バッファーをフラッシュするかを記述するいくつかのデータ バックアップをメモリに)。 この例では、クラスが前に実行することが保証が不要なファイナライザーを提供できます、<xref:System.Runtime.InteropServices.CriticalHandle>クリティカル ファイナライザーを実行します。  
+  
+ 呼び出す、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>が完了したら、メソッドを使用して、<xref:System.Runtime.InteropServices.CriticalHandle>オブジェクト。 <xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>メソッドによって、<xref:System.Runtime.InteropServices.CriticalHandle>使用不可の状態オブジェクト。  
+  
+ **注**常に呼び出し、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドへの参照を解放する前に、<xref:System.Runtime.InteropServices.CriticalHandle>オブジェクト。 そうしないと、ガベージ コレクターが <xref:System.Runtime.InteropServices.CriticalHandle> オブジェクトの <xref:System.Runtime.InteropServices.CriticalHandle.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          通常の破棄操作を実行する場合は <see langword="true" />。ハンドルを終了する場合は <see langword="false" />。</param>
+        <summary>通常の破棄操作を実行するかどうかを指定して、<see cref="T:System.Runtime.InteropServices.CriticalHandle" /> クラスによって使用されているアンマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドを`disposing`パラメーターに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~CriticalHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハンドルに関連付けられたすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.CriticalHandle.Finalize%2A>メソッドは、デストラクター、<xref:System.Runtime.InteropServices.CriticalHandle>クラスです。 アプリケーション コードでは、このメソッドを直接呼び出さないでください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="handle">
+      <MemberSignature Language="C#" Value="protected IntPtr handle;" />
+      <MemberSignature Language="ILAsm" Value=".field family native int handle" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.CriticalHandle.handle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラップするハンドルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルをパブリックに公開しません (つまり、派生クラスの外部で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.CriticalHandle.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドルが閉じているかどうかを示す値を取得します。</summary>
+        <value>
+          ハンドルが閉じている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.CriticalHandle.IsClosed%2A>メソッドを示す値を返すかどうか、<xref:System.Runtime.InteropServices.CriticalHandle>オブジェクトのハンドルは、ネイティブ リソースに関連付けが不要になった。 これの定義とは異なります、<xref:System.Runtime.InteropServices.CriticalHandle.IsInvalid%2A>プロパティで、かどうか、指定されたハンドルは常に無効とみなさを計算します。 <xref:System.Runtime.InteropServices.CriticalHandle.IsClosed%2A>メソッドを返します、`true`値は、次の場合。  
+  
+-   <xref:System.Runtime.InteropServices.CriticalHandle.SetHandleAsInvalid%2A>メソッドが呼び出されました。  
+  
+-   <xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドまたは<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>メソッドが呼び出されへの参照がない、<xref:System.Runtime.InteropServices.CriticalHandle>他のスレッド上のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvalid">
+      <MemberSignature Language="C#" Value="public abstract bool IsInvalid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvalid" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.CriticalHandle.IsInvalid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ハンドル値が無効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ハンドルが無効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスを実装する必要があります、<xref:System.Runtime.InteropServices.CriticalHandle.IsInvalid%2A>プロパティ、共通言語ランタイムでは、重要な終了処理が必要かどうかを確認できるようにします。 派生クラスは、一般的な種類のハンドルをサポートするのに適した実装を提供する必要があります (0 または-1 が無効)。 これらのクラスは、特定のセーフ ハンドルの種類をさらに派生します。  
+  
+ 異なり、<xref:System.Runtime.InteropServices.CriticalHandle.IsClosed%2A>プロパティで、報告するかどうか、 <xref:System.Runtime.InteropServices.CriticalHandle> 、基になるハンドルを使用してオブジェクトが完了した、<xref:System.Runtime.InteropServices.CriticalHandle.IsInvalid%2A>プロパティを計算するかどうか、指定したハンドルの値は常に無効とみなさです。 したがって、<xref:System.Runtime.InteropServices.CriticalHandle.IsInvalid%2A>プロパティは常に任意の 1 つのハンドル値に対して同じ値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHandle">
+      <MemberSignature Language="C#" Value="protected abstract bool ReleaseHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReleaseHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ハンドルを解放するために必要なコードを実行します。</summary>
+        <returns>
+          <see langword="true" />ハンドルが正常に解放された場合それ以外の場合、重大なエラーが発生した場合<see langword="false" />です。 この場合、生成、 [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md)マネージ デバッグ アシスタントします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>を 1 つだけ呼び出すことを確認する適切な同期メカニズムを採用することは、メソッドを 1 回だけ呼び出される保証、<xref:System.Runtime.InteropServices.CriticalHandle.Close%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.Dispose%2A>メソッドが行われます。 <xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>場合、メソッドは呼び出されません、<xref:System.Runtime.InteropServices.CriticalHandle.IsInvalid%2A>または<xref:System.Runtime.InteropServices.CriticalHandle.IsClosed%2A>プロパティは`true`します。 このメソッドの実装、<xref:System.Runtime.InteropServices.CriticalHandle>ハンドルを解放するために必要なすべてのコードを実行するクラスを派生します。 の関数の 1 つ<xref:System.Runtime.InteropServices.CriticalHandle>、コードの実装で、リソース リークの防止を保証するためには、<xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>失敗しない必要があります。 ガベージ コレクター<xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>ガベージ コレクション、同時になったオブジェクトの通常のファイナライザーが実行されているし、リソースを呼び出すことは中断されず while、保証が進行中です。 このメソッドは、(その静的に確定呼び出し先のすべてのメソッド) およびインスタンスの構築時に、制約された実行領域 (CER) として準備されます。 オーバーライドされたどのエラー パスを導入しないように注意する必要がありますが、これには、スレッドの中止割り込みが防止されますが、<xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>メソッドです。 具体的には、適用、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute>から呼び出すメソッドが存在する属性<xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>です。 ほとんどの場合、このコードがあります。  
+  
+ `ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)`  
+  
+ 簡単なクリーンアップをさらに、(たとえば、Win32 API の呼び出し`CloseHandle`ファイル ハンドルの) 1 つのプラットフォーム呼び出しの戻り値を確認することができます。 複雑なクリーンアップは、多くのプログラム ロジックとこれらの一部が失敗する多くのメソッド呼び出しがあります。 プログラム ロジックでこのような場合の各フォールバック コードはことを確認する必要があります。  
+  
+ 場合、<xref:System.Runtime.InteropServices.CriticalHandle.ReleaseHandle%2A>メソッドを返します。`false`生成何らかの理由で、 [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md)マネージ デバッグ アシスタントします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHandle">
+      <MemberSignature Language="C#" Value="protected void SetHandle (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetHandle(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.SetHandle(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">使用する既存のハンドル。</param>
+        <summary>ハンドルを指定した既存のハンドルに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.InteropServices.CriticalHandle.SetHandle%2A>構造体のメソッドは .NET Framework の COM 相互運用インフラストラクチャは、マーシャ リングをサポートしていないため (たとえば、ハンドルは、構造体で返される) 場合、既存のハンドルをサポートする必要がある場合にのみを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHandleAsInvalid">
+      <MemberSignature Language="C#" Value="public void SetHandleAsInvalid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHandleAsInvalid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.CriticalHandle.SetHandleAsInvalid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハンドルを無効としてマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.CriticalHandle.SetHandleAsInvalid%2A>メソッド ハンドルが無効であり、そのようなマークすることがわかっている場合のみです。 これは、値を変更しない、<xref:System.Runtime.InteropServices.CriticalHandle.handle>フィールド; 無効なハンドルをマークするだけです。 ハンドルは、値が古い可能性のある値を含めるし可能性があります。 この呼び出しの影響は、ことは行われません、リソースを解放します。  
+  
+ 同様、<xref:System.Runtime.InteropServices.CriticalHandle.SetHandle%2A>メソッドを使用して<xref:System.Runtime.InteropServices.CriticalHandle.SetHandleAsInvalid%2A>を既存のハンドルをサポートする必要がある場合のみです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

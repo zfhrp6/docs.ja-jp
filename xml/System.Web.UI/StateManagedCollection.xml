@@ -1,0 +1,957 @@
+<Type Name="StateManagedCollection" FullName="System.Web.UI.StateManagedCollection">
+  <TypeSignature Language="C#" Value="public abstract class StateManagedCollection : System.Collections.IList, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit StateManagedCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.StateManagedCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.IStateManager" /> オブジェクトを管理する厳密に型指定されたすべてのコレクションの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection>クラスを格納するすべての厳密に型指定されたコレクションの基底クラスは、<xref:System.Web.UI.IStateManager>などの要素が<xref:System.Web.UI.WebControls.DataControlFieldCollection>、 <xref:System.Web.UI.WebControls.ParameterCollection>、 <xref:System.Web.UI.WebControls.StyleCollection>、 <xref:System.Web.UI.WebControls.TreeNodeBindingCollection>、およびその他。 <xref:System.Web.UI.StateManagedCollection>コレクションが含まれている要素の状態と同様に、独自の状態を管理します。 そのため、呼び出しを<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A>コレクションの状態、および現在コレクションに含まれているすべての要素の状態を保存します。  
+  
+ 派生している場合に考慮すべき最も重要なメソッド、<xref:System.Web.UI.StateManagedCollection>クラスが<xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>、 <xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>、 <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>、 <xref:System.Web.UI.StateManagedCollection.SetDirty%2A>、および<xref:System.Web.UI.StateManagedCollection.SetDirtyObject%2A>です。 <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>と<xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>ビュー ステートに格納されている要素の種類のインデックスを格納するメソッドが使用されます。 完全修飾型名ではなく、インデックスを格納すると、パフォーマンスが向上します。 <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>メソッドは、コレクションの要素を操作すると、およびビジネス ルールに従って要素を検証します。 実装では現在、<xref:System.Web.UI.StateManagedCollection.OnValidate%2A>メソッドを禁止`null`のオブジェクトをコレクションに格納されているただし、派生型で、独自の検証動作を定義するには、このメソッドをオーバーライドすることができます。 <xref:System.Web.UI.StateManagedCollection.SetDirty%2A>メソッド強制的にコレクション全体をビューステートにシリアル化、前回の状態に加えられた変更をシリアル化するだけではなく読み込まれました。 <xref:System.Web.UI.StateManagedCollection.SetDirtyObject%2A>メソッドは、抽象メソッドが要素レベルでこの同じ動作を実行するために実装できます。  
+  
+> [!IMPORTANT]
+>  <xref:System.Web.UI.StateManagedCollection>アセンブリ修飾のストアは、コレクション項目をビュー ステートの名前を入力します。 サイトの利用者はでしたビュー ステートをデコードし、型名を取得します。 このシナリオでは、Web サイトのセキュリティ上の問題を作成する場合は、ビュー ステートに配置する前に、型名を手動で暗号化できます。  
+  
+   
+  
+## Examples  
+ 次のコード例から厳密に型指定されたコレクション クラスを派生<xref:System.Web.UI.StateManagedCollection>を含む<xref:System.Web.UI.IStateManager>オブジェクト。 この例では、`CycleCollection`抽象のインスタンスを含めるには派生`Cycle`クラスは、いずれかになります`Bicycle`または`Tricycle`オブジェクト。 `Cycle`クラスが実装する、<xref:System.Web.UI.IStateManager>の値を格納するためのインターフェイス、`CycleColor`プロパティ ビュー ステートにします。  
+  
+ [!code-csharp[Samples.AspNet.CycleCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs#1)]
+ [!code-vb[Samples.AspNet.CycleCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected StateManagedCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでは、カスタマイズされた実装を提供するコンス トラクターをオーバーライドできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnClear%2A>メソッドは、前に呼び出されます、<xref:System.Web.UI.StateManagedCollection.Clear%2A>メソッドが呼び出されると、<xref:System.Web.UI.StateManagedCollection.OnClearComplete%2A>後にメソッドが呼び出されます<xref:System.Web.UI.StateManagedCollection.Clear%2A>コレクションから要素を削除が完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">
+          <see cref="T:System.Array" /> からコピーされる要素のコピー先となる 1 次元の <see cref="T:System.Web.UI.StateManagedCollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>特定の配列インデックスを開始位置として、配列に <see cref="T:System.Web.UI.StateManagedCollection" /> コレクションの要素をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された配列は、互換性のある型でなければなりません。  
+  
+ 要素は、列挙子が <xref:System.Array> コレクションを反復処理するのと同じ順序で、<xref:System.Web.UI.StateManagedCollection> にコピーされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="array" /> が多次元です。  
+  
+ \- または  
+  
+ <paramref name="index" />長さ以上<paramref name="array" />です。  
+  
+ \- または  
+  
+ ソース内の要素の数<see cref="T:System.Web.UI.StateManagedCollection" />から使用可能な領域よりも大きい、<paramref name="index" />変換先の末尾に<paramref name="array" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションに格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Web.UI.StateManagedCollection" /> に格納されている要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKnownType">
+      <MemberSignature Language="C#" Value="protected virtual object CreateKnownType (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object CreateKnownType(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.CreateKnownType(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see cref="M:System.Web.UI.StateManagedCollection.GetKnownTypes" /> から返される、順番に並べられた型リストに含まれる作成対象の <see cref="T:System.Web.UI.IStateManager" /> の型のインデックス。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="T:System.Web.UI.IStateManager" /> を実装するクラスのインスタンスを作成します。 作成されるオブジェクトの型は、<see cref="M:System.Web.UI.StateManagedCollection.GetKnownTypes" /> メソッドから返されるコレクションの指定されたメンバーに基づきます。</summary>
+        <returns>指定された <paramref name="index" /> に基づいた <see cref="T:System.Web.UI.IStateManager" /> の派生クラスのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>メソッドがによって内部的には、<xref:System.Web.UI.StateManagedCollection>の実装でのコレクション、<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23LoadViewState%2A?displayProperty=nameWithType>メソッドです。 派生コレクション、<xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>の既定のインスタンスを返すメソッドを<xref:System.Web.UI.IStateManager>、提供されたで識別される型`index`、によって返される型のいずれかに対応する、<xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、厳密に型指定方法について説明します。<xref:System.Web.UI.StateManagedCollection>クラスが実装する、<xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>メソッドです。 `CycleCollection`の実装<xref:System.Web.UI.StateManagedCollection.CreateKnownType%2A>いずれかの既定のインスタンスを返します、`Bicycle`または`Tricycle`渡されたインデックスによってオブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.StateManagedCollection>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.CycleCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs#2)]
+ [!code-vb[Samples.AspNet.CycleCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">派生クラスでオーバーライドされていないすべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションを反復処理する反復子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> を反復処理するために使用できる <see cref="T:System.Web.UI.StateManagedCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKnownTypes">
+      <MemberSignature Language="C#" Value="protected virtual Type[] GetKnownTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type[] GetKnownTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.GetKnownTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="T:System.Web.UI.IStateManager" /> コレクションに格納できる <see cref="T:System.Web.UI.StateManagedCollection" /> 型の配列を取得します。</summary>
+        <returns>コレクションに格納できる <see cref="T:System.Web.UI.IStateManager" /> オブジェクトの型を識別する <see cref="T:System.Type" /> オブジェクトの順番に並べられた配列。 既定の実装では、<see langword="null" /> が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>メソッドがによって内部的には、<xref:System.Web.UI.StateManagedCollection>の実装でのコレクション、<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドです。 派生コレクション、<xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>の配列を返すメソッドを<xref:System.Type>コレクションに格納できる型を表すオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、厳密に型指定方法について説明します。<xref:System.Web.UI.StateManagedCollection>クラスが実装する、<xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>メソッドです。 `CycleCollection`の実装<xref:System.Web.UI.StateManagedCollection.GetKnownTypes%2A>を返します、<xref:System.Type>など、既知の型の配列`Bicycle`と`Tricycle`型です。 このコード例に示されている例の一部である、<xref:System.Web.UI.StateManagedCollection>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.CycleCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs#2)]
+ [!code-vb[Samples.AspNet.CycleCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClear">
+      <MemberSignature Language="C#" Value="protected virtual void OnClear ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnClear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.Clear" /> メソッドによってコレクションからすべての項目が削除される前の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnClear%2A>を使用してコレクションからすべてのアイテムを削除する前に、追加の作業を実行するメソッドを<xref:System.Web.UI.StateManagedCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClearComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnClearComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClearComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnClearComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.Clear" /> メソッドによってコレクションからすべての項目が削除された後の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnClearComplete%2A>を使用してコレクションからすべての項目が削除された後に、追加の作業を実行するメソッドを<xref:System.Web.UI.StateManagedCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsert">
+      <MemberSignature Language="C#" Value="protected virtual void OnInsert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnInsert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>を挿入する、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />メソッドです。</param>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> に挿入するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" /> メソッドまたは <see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" /> メソッドによってコレクションに項目が追加される前の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnInsert%2A>を使用してコレクションにアイテムを追加する前に、追加の作業を実行するメソッドを<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Add%2A>または<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnInsertComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnInsertComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>によって挿入された、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />メソッドです。</param>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> に挿入するオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" /> メソッドまたは <see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" /> メソッドによってコレクションに項目が追加された後の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnInsertComplete%2A>メソッドを使用してコレクションにアイテムを追加した後、追加の作業を実行する、<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Add%2A>または<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemove">
+      <MemberSignature Language="C#" Value="protected virtual void OnRemove (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemove(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnRemove(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス番号。<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" /> が呼び出されたときに使用されます。</param>
+        <param name="value"><see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" /> が呼び出されたときに使用される、<see cref="T:System.Web.UI.StateManagedCollection" /> から削除されるオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" /> メソッドまたは <see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" /> メソッドによって、指定された項目がコレクションから削除される前の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnRemove%2A>を使用してコレクションから項目を削除する前に、追加の作業を実行するメソッドを<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Remove%2A>または<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRemoveComplete">
+      <MemberSignature Language="C#" Value="protected virtual void OnRemoveComplete (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRemoveComplete(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnRemoveComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス番号。<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" /> が呼び出されたときに使用されます。</param>
+        <param name="value"><see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" /> が呼び出されたときに使用される、<see cref="T:System.Web.UI.StateManagedCollection" /> から削除されるオブジェクト。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" /> メソッドまたは <see cref="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" /> メソッドによって、指定された項目がコレクションから削除された後の補足作業を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライドできる、<xref:System.Web.UI.StateManagedCollection.OnRemoveComplete%2A>メソッドを使用してコレクションから項目を削除した後、追加の作業を実行する、<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Remove%2A>または<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnValidate">
+      <MemberSignature Language="C#" Value="protected virtual void OnValidate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnValidate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.OnValidate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">検証対象の <see cref="T:System.Web.UI.IStateManager" />。</param>
+        <summary>派生クラスでオーバーライドされた場合、<see cref="T:System.Web.UI.StateManagedCollection" /> コレクションの要素を検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>を通じて操作のオブジェクトを検証するメソッドが呼び出された、<xref:System.Web.UI.StateManagedCollection>の実装、<xref:System.Collections.IList>インターフェイスのメソッドです。 既定の実装は、コレクションによって操作されるオブジェクトがないことを確認する`null`。 ただし、から派生したコレクション<xref:System.Web.UI.StateManagedCollection>オーバーライド、<xref:System.Web.UI.StateManagedCollection.OnValidate%2A>型チェックなど、追加の検証を実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirty">
+      <MemberSignature Language="C#" Value="public void SetDirty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetDirty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.SetDirty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的に <see cref="T:System.Web.UI.StateManagedCollection" /> コレクション全体をビューステートにシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.SetDirty%2A>メソッド フォース、<xref:System.Web.UI.StateManagedCollection>完全にシリアル化するコレクション (一方、<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドは、変更情報だけを保存) します。 これは、機能は、有意な方法で、コレクションが変更された、変更情報が状態の表示からメモリ内のオブジェクトを再作成するための十分な場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDirtyObject">
+      <MemberSignature Language="C#" Value="protected abstract void SetDirtyObject (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void SetDirtyObject(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.SetDirtyObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">自身を完全にシリアル化する必要のある <see cref="T:System.Web.UI.IStateManager" />。</param>
+        <summary>派生クラスでオーバーライドされた場合、コレクションに格納されている <see langword="object" /> に、変更情報だけでなく、その状態全体をビューステートに記録するよう指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.SetDirtyObject%2A>メソッドがによって内部的には、 <xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A>、 <xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Add%2A>、および<xref:System.Web.UI.StateManagedCollection.System%23Collections%23IList%23Insert%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、厳密に型指定方法について説明します。<xref:System.Web.UI.StateManagedCollection>クラス、抽象<xref:System.Web.UI.StateManagedCollection.SetDirtyObject%2A>メソッドです。 `CycleCollection`を使用して、<xref:System.Web.UI.StateBag>がビュー状態情報を格納するオブジェクトし、する呼び出しを代行、<xref:System.Web.UI.StateBag.SetDirty%2A>のメソッド、<xref:System.Web.UI.StateBag>オブジェクト。 このコード例に示されている例の一部である、<xref:System.Web.UI.StateManagedCollection>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.CycleCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/CS/statemanagedcollectionsample.cs#2)]
+ [!code-vb[Samples.AspNet.CycleCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.CycleCollection/VB/statemanagedcollectionsample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションに格納されている要素の数を取得します。</summary>
+        <value><see cref="T:System.Web.UI.StateManagedCollection" /> にある要素の数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションが同期されている (スレッド セーフである) かどうかを示す値を取得します。 このメソッドは、常に <see langword="false" /> を返します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションへのアクセスを同期するために使用できるオブジェクトを取得します。 このメソッドは、常に <see langword="null" /> を返します。</summary>
+        <value>
+          常に <see langword="null" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションを反復処理する反復子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" /> を反復処理するために使用できる <see cref="T:System.Web.UI.StateManagedCollection" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see langword="object" /> に追加する <see cref="T:System.Web.UI.StateManagedCollection" />。</param>
+        <summary>項目を <see cref="T:System.Web.UI.StateManagedCollection" /> コレクションに追加します。</summary>
+        <returns>新しい要素が挿入された位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>と<xref:System.Web.UI.StateManagedCollection.OnInsert%2A>要素は、このコレクションに追加される前に、メソッドが呼び出されると、<xref:System.Web.UI.StateManagedCollection.OnInsertComplete%2A>要素が追加された後にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnClear%2A>メソッドは、前に呼び出されます、<xref:System.Web.UI.StateManagedCollection.Clear%2A>メソッドが呼び出されると、<xref:System.Web.UI.StateManagedCollection.OnClearComplete%2A>後にメソッドが呼び出されます<xref:System.Web.UI.StateManagedCollection.Clear%2A>コレクションから要素を削除が完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> 内で検索される <see langword="object" />。</param>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションに特定の値が格納されているかどうかを判断します。</summary>
+        <returns>
+          そのオブジェクトが <see cref="T:System.Web.UI.StateManagedCollection" /> に存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 値パラメーターに <see langword="null" /> が渡された場合、<see langword="false" /> が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>を検証するメソッドが呼び出された`value`コレクションをチェックする前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> 内で検索するオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクション内での指定した項目のインデックスを調べます。</summary>
+        <returns>リストに存在する場合は <paramref name="value" /> のインデックス。それ以外の場合は -1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>を検証するメソッドが呼び出された`value`インデックスが返される前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">位置の 0 から始まるインデックス<c>値</c>挿入する必要があります。</param>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> に挿入するオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクション内の指定したインデックスの位置に項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`index`-1 で、`value`の先頭に追加されますが、<xref:System.Web.UI.StateManagedCollection>コレクション。 場合`index`、コレクション内の項目数に等しければ`value`がコレクションの末尾に追加されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した <paramref name="index" /> はコレクションの範囲外です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.UI.StateManagedCollection" /> は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションが固定サイズかどうかを示す値を取得します。 このメソッドは、常に <see langword="false" /> を返します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用である場合は <see cref="T:System.Web.UI.StateManagedCollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Web.UI.IStateManager" /> 要素を取得します。</summary>
+        <value>指定したインデックス位置にある要素。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した <paramref name="index" /> はコレクションの範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Web.UI.StateManagedCollection" /> から削除するオブジェクト。</param>
+        <summary>指定したオブジェクトのうち、<see cref="T:System.Web.UI.StateManagedCollection" /> コレクションで最初に出現したオブジェクトを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>を検証するメソッドが呼び出された`value`値がコレクションから削除する前にします。 <xref:System.Web.UI.StateManagedCollection.OnRemove%2A>メソッドは、オブジェクトが削除される前に、<xref:System.Web.UI.StateManagedCollection.OnRemoveComplete%2A>オブジェクトが削除された後にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.UI.StateManagedCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>指定したインデックス位置にある <see cref="T:System.Web.UI.IStateManager" /> 要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.StateManagedCollection.OnValidate%2A>を検証するメソッドが呼び出された`value`値がコレクションから削除する前にします。 <xref:System.Web.UI.StateManagedCollection.OnRemove%2A>メソッドは、オブジェクトが削除される前に、<xref:System.Web.UI.StateManagedCollection.OnRemoveComplete%2A>オブジェクトが削除された後にメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Web.UI.StateManagedCollection" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションがビューステートへの変更を保存しているかどうかを示す値を取得します。</summary>
+        <value>
+          コレクションが、その自身の状態と、そのコレクションに格納されているすべての <see cref="T:System.Web.UI.IStateManager" /> 項目の状態を保存するようにマークされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元するコレクションとコレクション要素の状態を表すオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションと、そのコレクションに格納されている <see cref="T:System.Web.UI.IStateManager" /> 項目の以前に保存されたビューステートを復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドによって保存されたビュー ステート情報を復元する、<xref:System.Web.UI.StateManagedCollection.System%23Web%23UI%23IStateManager%23SaveViewState%2A>メソッドです。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。 詳細については、次を参照してください。 [NIB: ASP.NET Web サーバー コントロール](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1)です。  
+  
+ このメソッドは、主にコントロールの開発者によって使用されます。 カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ページがサーバーにポストバックされた時間以降に発生した、<see cref="T:System.Web.UI.StateManagedCollection" /> コレクションとその各 <see cref="T:System.Web.UI.IStateManager" /> オブジェクトへの変更を保存します。</summary>
+        <returns><see cref="T:System.Web.UI.StateManagedCollection" /> とそれに含まれる項目のビューステートへの変更を格納しているオブジェクト。 ビューステートがコレクションとその要素に関連付けられていない場合、このメソッドは <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。 詳細については、次を参照してください。 [NIB: ASP.NET Web サーバー コントロール](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1)です。  
+  
+ ビューステートを保存すると、この文字列として返されるオブジェクトをクライアントに HTML 非表示の要素に格納されている変数 (`<input type="hidden">`)。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます<xref:System.Web.UI.Control.ViewState%2A>プロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET Web サーバー コントロール](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1)と[ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.StateManagedCollection.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.StateManagedCollection" /> コレクションとその各 <see cref="T:System.Web.UI.IStateManager" /> オブジェクトに自身のビューステートへの変更を追跡させ、同じページに対する要求間でこれらが永続化されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。 詳細については、次を参照してください。 [NIB: ASP.NET Web サーバー コントロール](http://msdn.microsoft.com/en-us/e18eb2f2-cf00-47ae-b1a1-dfc188a6dea1)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

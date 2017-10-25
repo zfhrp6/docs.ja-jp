@@ -1,0 +1,93 @@
+<Type Name="DefaultInterfaceAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DefaultInterfaceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DefaultInterfaceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Interface, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ Windows ランタイム クラスの既定のインターフェイスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発する際に[!INCLUDE[wrt](~/includes/wrt-md.md)]に属性が適用されるクラスをマーシャ リングに使用される既定のインターフェイスを指定するときに、コンポーネントがこの属性を使用します。 これは、自動的に生成されるクラス インターフェイスを許可する場合は必要はありません。  
+  
+ A[!INCLUDE[wrt](~/includes/wrt-md.md)]クラスには既定のインターフェイスが必要です。 作成するときに、WinMdExp.exe ユーティリティでクラスの既定のインターフェイスが検出されない場合、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネント、選択したインターフェイス次のようにします。  
+  
+-   クラスは、インターフェイスを自動的に生成は、既定値として 1 つ目が使用されます。  
+  
+-   クラス持っていない場合、自動的に生成されたインターフェイス、クラスのインターフェイスの実装の一覧の先頭のインターフェイスを使用します。  
+  
+ 適用することができます、<xref:System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute>クラスに属性に適用するか、`Windows.Foundations.Metadata.DefaultAttribute`属性をインターフェイスにします。 後者が優先されます両方の属性を指定した場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultInterfaceAttribute (Type defaultInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type defaultInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="defaultInterface" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="defaultInterface">クラス、属性の既定のインターフェイスとして指定するインターフェイスの型が適用されます。</param>
+        <summary><see cref="T:System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultInterface">
+      <MemberSignature Language="C#" Value="public Type DefaultInterface { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DefaultInterface" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.WindowsRuntime.DefaultInterfaceAttribute.DefaultInterface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のインターフェイスの種類を取得します。</summary>
+        <value>既定のインターフェイスの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

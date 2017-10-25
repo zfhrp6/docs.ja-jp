@@ -1,0 +1,548 @@
+<Type Name="CodeDomDesignerLoader" FullName="System.ComponentModel.Design.Serialization.CodeDomDesignerLoader">
+  <TypeSignature Language="C#" Value="public abstract class CodeDomDesignerLoader : System.ComponentModel.Design.Serialization.BasicDesignerLoader, System.ComponentModel.Design.Serialization.IDesignerSerializationService, System.ComponentModel.Design.Serialization.INameCreationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CodeDomDesignerLoader extends System.ComponentModel.Design.Serialization.BasicDesignerLoader implements class System.ComponentModel.Design.Serialization.IDesignerSerializationService, class System.ComponentModel.Design.Serialization.INameCreationService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.Serialization.BasicDesignerLoader</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.Serialization.IDesignerSerializationService</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.Serialization.INameCreationService</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>CodeDOM ベースのデザイナー ローダーを実装するためには、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>完全デザイナー ローダーを提供する抽象クラスは、Code Document Object Model (CodeDOM) に基づいています。 CodeDOM パーサーとジェネレーター、および型解決サービスを提供します。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeDomDesignerLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeDomProvider">
+      <MemberSignature Language="C#" Value="protected abstract System.CodeDom.Compiler.CodeDomProvider CodeDomProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CodeDomProvider CodeDomProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider" />このデザイナー ローダーを使用します。</summary>
+        <value><see cref="P:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider" />このデザイナー ローダーが使用されます</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ローダーが解析またはから返されたコードを生成していない<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider%2A>、プロバイダーを使用して取得するが、<xref:System.CodeDom.Compiler.ICodeGenerator>名前作成サービスの識別子の検証に使用できることです。 デザイナー ローダーもチェック、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider%2A>を実装するかどうかに表示する、<xref:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload>インターフェイスです。 解析やコードを生成する方法については、次を参照してください。、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Parse%2A>と<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public override void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader" /> クラスによって使用されているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose%2A>メソッドによって追加されるサービスの削除、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Initialize%2A>メソッドです。  
+  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose%2A> を使い終わったら <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader> を呼び出します。 <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose%2A> メソッドによって、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader> は使用不可の状態になります。 呼び出した後<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に、置き換え可能な説明されるサービスは、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>サービス コンテナーに追加します。  
+  
+|用語|定義|  
+|----------|----------------|  
+|<xref:System.ComponentModel.Design.Serialization.INameCreationService>|オブジェクトの名前を作成するためのセマンティクスを提供します。 サービスは CodeDOM プロバイダーを使用して<xref:System.CodeDom.Compiler.ICodeGenerator>言語の有効な識別子名を作成するインターフェイスです。 さらに、名前作成サービスは、空の名前をサポートします。 空の名前は、シリアル化中に一時的なローカル変数として解釈する必要があります。|  
+|<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>|その他のオブジェクトをシリアル化コンポーネントのグループにバイナリ オブジェクトを使用します。 このサービスは、コピーと貼り付けや取り消しとやり直しなどの機能でよく使用されます。 <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>クラスは、オブジェクトの CodeDOM ツリーの作成に基づいているデザイナーのシリアル化サービスを提供します。|  
+|<xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>|このサービスの代わりに<xref:System.ComponentModel.Design.Serialization.IDesignerSerializationService>コンポーネント バイナリ オブジェクトをシリアル化するための手段として。|  
+  
+ 置き換え可能および非置換可能なサービスの詳細については、「<xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerLoaderHost" />初期化されていないか、デザイナー ローダーは、CodeDom シリアル化に必要な型解決サービスを提供しませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReloadNeeded">
+      <MemberSignature Language="C#" Value="protected override bool IsReloadNeeded ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsReloadNeeded() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.IsReloadNeeded" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>再読み込みが必要かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider" />再読み込みは必須です。 それ以外の場合、決定<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.IsReloadNeeded%2A>メソッドの存在を確認、<xref:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload>インターフェイスを<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.CodeDomProvider%2A>です。 プロバイダーは、CodeDOM ツリーには再解析およびに解析ツリーを渡す、<xref:System.ComponentModel.Design.Serialization.ICodeDomDesignerReload.ShouldReloadDesigner%2A>メソッドです。 このメソッドが戻る場合`false`デザイナーが再読み込みされません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">言語は、このファイルのコード パーサーを提供しませんでした。このファイルの種類は、デザイナーをサポートしていません。</exception>
+        <exception cref="T:System.InvalidOperationException">クラスにデザインできるようにする、またはファイル内の最初のクラスではないことも、デザイナーを表示できませんでしたこのファイルのためにデザインできるクラスがないことができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginLoad">
+      <MemberSignature Language="C#" Value="protected override void OnBeginLoad ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBeginLoad() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnBeginLoad" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>読み込みが開始することをデザイナー ローダーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnBeginLoad%2A>メソッドを参照してください<xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginLoad%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginUnload">
+      <MemberSignature Language="C#" Value="protected override void OnBeginUnload ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnBeginUnload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnBeginUnload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイナー ローダーをアンロード通知を開始しようとします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnBeginUnload%2A>メソッドを参照してください<xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnBeginUnload%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentRename">
+      <MemberSignature Language="C#" Value="protected virtual void OnComponentRename (object component, string oldName, string newName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnComponentRename(object component, string oldName, string newName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnComponentRename(System.Object,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="oldName" Type="System.String" />
+        <Parameter Name="newName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="component">名前を変更するコンポーネント。</param>
+        <param name="oldName">コンポーネントの元の名前。</param>
+        <param name="newName">コンポーネントの新しい名前。</param>
+        <summary><see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentRename" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndLoad">
+      <MemberSignature Language="C#" Value="protected override void OnEndLoad (bool successful, System.Collections.ICollection errors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndLoad(bool successful, class System.Collections.ICollection errors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnEndLoad(System.Boolean,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="successful" Type="System.Boolean" />
+        <Parameter Name="errors" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="successful">
+          <see langword="true" />負荷が正常に完了したことを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="errors"><see cref="T:System.Collections.ICollection" />のエラーとして報告されたオブジェクト (通常は例外)。</param>
+        <summary>読み込みが完了したことをデザイナー ローダーに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.OnEndLoad%2A>メソッドを参照してください<xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.OnEndLoad%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="protected abstract System.CodeDom.CodeCompileUnit Parse ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.CodeDom.CodeCompileUnit Parse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Parse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキストまたはその他の永続的なストレージを解析し、返します、<see cref="T:System.CodeDom.CodeCompileUnit" />です。</summary>
+        <returns>A<see cref="T:System.CodeDom.CodeCompileUnit" />解析操作からの結果します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Parse%2A>メソッドが呼び出されます、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>ソース コードを解析する必要があります。 クラスを派生させることにより、ソース コードの場所と形式を指定してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformFlush">
+      <MemberSignature Language="C#" Value="protected override void PerformFlush (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformFlush(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformFlush(System.ComponentModel.Design.Serialization.IDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />シリアライザーを要求するからです。</param>
+        <summary>デザイナーのルート コンポーネントのシリアル化を要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformFlush%2A>メソッドは、ルートを取得<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>デザイナーのルート コンポーネントに対応し、コンポーネントをシリアル化するシリアライザーを呼び出します。 この操作の結果は場合、 <xref:System.CodeDom.CodeTypeDeclaration>、し<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformFlush%2A>統合、 <xref:System.CodeDom.CodeTypeDeclaration> (既存の codedom による) ツリーします。 結果は、元の CodeDOM ツリーと一致するメンバーとステートメントが置き換えられます。 最後に、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformFlush%2A>抽象を呼び出して<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write%2A>この CodeDOM ツリーを保存します。  
+  
+ かどうか、ルート デザイナー コンポーネントのシリアル化の原因にならない、 <xref:System.CodeDom.CodeTypeDeclaration>、し<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformFlush%2A>さらに何も行われません。  
+  
+> [!IMPORTANT]
+>  CodeDOM が信頼できるソースから送信されたことを確認する呼び出し元の役割です。 信頼されていないパーティからの CodeDOM オブジェクトを受け入れると、悪意のあるコードを実行するには、そのパーティを許可できます。 ファイルに CodeDOM をフラッシュするには、ときに、フレームワークは、CodeDOM オブジェクトと指定されているオブジェクトのシリアル化されたコンテンツで表されるコードを実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">言語は、このファイルのコード パーサーを提供しませんでした。このファイルの種類は、デザイナーをサポートしていません。</exception>
+        <exception cref="T:System.InvalidOperationException">クラスにデザインできるようにする、またはファイル内の最初のクラスではないことも、デザイナーを表示できませんでしたこのファイルのためにデザインできるクラスがないことができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformLoad">
+      <MemberSignature Language="C#" Value="protected override void PerformLoad (System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformLoad(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad(System.ComponentModel.Design.Serialization.IDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager"><see cref="T:System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />シリアライザーを要求するからです。</param>
+        <summary>CodeDOM プロバイダーからコードを解析します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad%2A>メソッドは、取得、 <xref:System.CodeDom.Compiler.ICodeParser> CodeDOM プロバイダーから、コードを解析します。 <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad%2A>ファイル内の最初のクラスを検索し、ルートを取得<xref:System.ComponentModel.Design.Serialization.CodeDomSerializer>データ型にして、データ型を逆シリアル化するシリアライザーを呼び出します。 <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad%2A>このプロセスで必要なすべてのコンポーネントを作成することを前提としています、<xref:System.ComponentModel.IContainer>の<xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.LoaderHost%2A>プロパティです。 最後に、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.PerformLoad%2A>呼び出し、 <xref:System.ComponentModel.Design.Serialization.BasicDesignerLoader.SetBaseComponentClassName%2A> CodeDOM シリアライザーに渡された型の完全修飾名を持つメソッドです。  
+  
+> [!IMPORTANT]
+>  CodeDOM が信頼できるソースから送信されたことを確認する呼び出し元の役割です。 信頼されていないパーティからの CodeDOM オブジェクトを受け入れると、悪意のあるコードを実行するには、そのパーティを許可できます。 デザイン画面に、CodeDOM を読み込むときに、フレームワークは、CodeDOM オブジェクトと指定されているオブジェクトのシリアル化されたコンテンツで表されるコードを実行します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">言語は、このファイルのコード パーサーを提供しませんでした。このファイルの種類は、デザイナーをサポートしていません。</exception>
+        <exception cref="T:System.InvalidOperationException">クラスにデザインできるようにする、またはファイル内の最初のクラスではないことも、デザイナーを表示できませんでしたこのファイルのためにデザインできるクラスがないことができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationService.Deserialize">
+      <MemberSignature Language="C#" Value="System.Collections.ICollection IDesignerSerializationService.Deserialize (object serializationData);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.ICollection System.ComponentModel.Design.Serialization.IDesignerSerializationService.Deserialize(object serializationData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.System#ComponentModel#Design#Serialization#IDesignerSerializationService#Deserialize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationData">シリアル化されたデータで構成されるオブジェクト。</param>
+        <summary>指定したシリアル化データ オブジェクトを逆シリアル化し、そのデータによって表されるオブジェクトのコレクションを返します。</summary>
+        <returns>によって表されるオブジェクトのコレクション<paramref name="serializationData" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="serializationData" /> が <see cref="T:System.ComponentModel.Design.Serialization.SerializationStore" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.IDesignerSerializationService.Serialize">
+      <MemberSignature Language="C#" Value="object IDesignerSerializationService.Serialize (System.Collections.ICollection objects);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.Serialization.IDesignerSerializationService.Serialize(class System.Collections.ICollection objects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.System#ComponentModel#Design#Serialization#IDesignerSerializationService#Serialize(System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objects" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="objects">シリアル化されるオブジェクトのコレクション。</param>
+        <summary>指定されたオブジェクトのコレクションをシリアル化およびシリアル化データ オブジェクトに格納します。</summary>
+        <returns>指定されたオブジェクトのコレクションのシリアル化された状態を格納するオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ComponentModel.Design.Serialization.ComponentSerializationService" />が見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.INameCreationService.CreateName">
+      <MemberSignature Language="C#" Value="string INameCreationService.CreateName (System.ComponentModel.IContainer container, Type dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.Design.Serialization.INameCreationService.CreateName(class System.ComponentModel.IContainer container, class System.Type dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.System#ComponentModel#Design#Serialization#INameCreationService#CreateName(System.ComponentModel.IContainer,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+        <Parameter Name="dataType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="container">新しいオブジェクトを追加する場所のコンテナーです。</param>
+        <param name="dataType">名前を受け取るオブジェクトのデータ型。</param>
+        <summary>指定されたコンテナーのすべてのコンポーネントに一意の新しい名前を作成します。</summary>
+        <returns>データ型の一意の名前。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dataType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.INameCreationService.IsValidName">
+      <MemberSignature Language="C#" Value="bool INameCreationService.IsValidName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.ComponentModel.Design.Serialization.INameCreationService.IsValidName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.System#ComponentModel#Design#Serialization#INameCreationService#IsValidName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証対象の名前。</param>
+        <summary>指定した名前が有効かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />名前が無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.Serialization.INameCreationService.ValidateName">
+      <MemberSignature Language="C#" Value="void INameCreationService.ValidateName (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.Serialization.INameCreationService.ValidateName(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.System#ComponentModel#Design#Serialization#INameCreationService#ValidateName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検証対象の名前。</param>
+        <summary>指定した名前が有効かどうかを示す値を取得します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" />有効な識別子ではありませんか、同じ名前のコンポーネントが既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeResolutionService">
+      <MemberSignature Language="C#" Value="protected abstract System.ComponentModel.Design.ITypeResolutionService TypeResolutionService { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.ITypeResolutionService TypeResolutionService" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.TypeResolutionService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ITypeResolutionService</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナー ローダーで処理するための型解決サービスを取得します。</summary>
+        <value><see cref="T:System.ComponentModel.Design.ITypeResolutionService" />型を解決するときに、CodeDOM シリアライザーが使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>これを自動的に追加<xref:System.ComponentModel.Design.ITypeResolutionService>サービス コンテナーと、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Initialize%2A>メソッドが呼び出されます。 型解決サービスは多くのシナリオでは省略可能が、コードの解釈に必要なソース コードには、型が含まれているため、名前が、アセンブリ参照がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="protected abstract void Write (System.CodeDom.CodeCompileUnit unit);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Write(class System.CodeDom.CodeCompileUnit unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="unit"><see cref="T:System.CodeDom.CodeCompileUnit" />永続化します。</param>
+        <summary>コンパイル単位の変更を永続的ストレージに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write%2A>メソッド保存、<xref:System.CodeDom.CodeCompileUnit>永続的ストレージにします。 派生クラスを呼び出す、<xref:System.CodeDom.Compiler.ICodeGenerator>コードを保存、該当するテキスト ライター。 <xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader>により、CodeDOM オブジェクトに渡される<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write%2A>から取得されたオブジェクトの同じインスタンスである<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Parse%2A>、シリアル化プロセスが、コードを変更しなければ場合は除きます。 これにより、追加データを格納するのに最適化されたデザイナー ローダー、<xref:System.CodeDom.CodeObject.UserData%2A>コード要素のプロパティです。 このデータを中に使用できる、<xref:System.ComponentModel.Design.Serialization.CodeDomDesignerLoader.Write%2A>シリアル化プロセスによって置換されなかったすべての要素のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

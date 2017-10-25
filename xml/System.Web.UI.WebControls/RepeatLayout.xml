@@ -1,0 +1,218 @@
+<Type Name="RepeatLayout" FullName="System.Web.UI.WebControls.RepeatLayout">
+  <TypeSignature Language="C#" Value="public enum RepeatLayout" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RepeatLayout extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.RepeatLayout" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>リスト コントロール項目のレイアウトを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.RepeatLayout>列挙リスト コントロールの別のレイアウト オプションを表します。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[DataListLayout#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListLayout/CS/datalistlayoutcs.aspx#1)]
+ [!code-aspx-vb[DataListLayout#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListLayout/VB/datalistlayoutvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Flow">
+      <MemberSignature Language="C#" Value="Flow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatLayout Flow = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatLayout.Flow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非テーブル構造は、アイテムが表示されます。 レンダリングされるマークアップから成る、<see langword="span" />要素およびアイテムは区切ら<see langword="br" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、について表示されるマークアップを示しています、<xref:System.Web.UI.WebControls.CheckBoxList>いるコントロール<xref:System.Web.UI.WebControls.CheckBoxList.RepeatLayout%2A>フローにプロパティを設定します。  
+  
+```  
+<span id="ctl00_MainContent_CheckBoxList1">  
+  <input id="ctl00_MainContent_CheckBoxList1_0" type="checkbox"   
+    name="ctl00$MainContent$CheckBoxList1$0" value="Item 1" />  
+  <label for="ctl00_MainContent_CheckBoxList1_0">Item 1</label>  
+  <br />  
+  <input id="ctl00_MainContent_CheckBoxList1_1" type="checkbox"  
+    name="ctl00$MainContent$CheckBoxList1$1" value="Item 2"/>  
+  <label for="ctl00_MainContent_CheckBoxList1_1">Item 2</label>  
+  <br />  
+  <input id="ctl00_MainContent_CheckBoxList1_2" type="checkbox"  
+    name="ctl00$MainContent$CheckBoxList1$2" value="Item 2" />  
+  <label for="ctl00_MainContent_CheckBoxList1_2">Item 2</label>  
+</span>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrderedList">
+      <MemberSignature Language="C#" Value="OrderedList" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatLayout OrderedList = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatLayout.OrderedList" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非テーブル構造は、アイテムが表示されます。 レンダリングされるマークアップから成る、<see langword="ol" />要素を含む<see langword="li" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、について表示されるマークアップを示しています、<xref:System.Web.UI.WebControls.CheckBoxList>いるコントロール<xref:System.Web.UI.WebControls.CheckBoxList.RepeatLayout%2A>OrderedList にプロパティが設定されています。  
+  
+```  
+<ol id="ctl00_MainContent_CheckBoxList3">  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList3_0" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList3$0" value="Item 1" />  
+    <label for="ctl00_MainContent_CheckBoxList3_0">Item 1</label>  
+  </li>  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList3_1" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList3$1" value="Item 2" />  
+    <label for="ctl00_MainContent_CheckBoxList3_1">Item 2</label>  
+  </li>  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList3_2" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList3$2" value="Item 2" />  
+    <label for="ctl00_MainContent_CheckBoxList3_2">Item 2</label>  
+  </li>  
+</ol>  
+```  
+  
+> [!NOTE]
+>  このフィールドは、ASP.NET 4 の時点で新しいはれ、に対してのみ有効なオプション、<xref:System.Web.UI.WebControls.CheckBoxList>と<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="Table" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatLayout Table = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatLayout.Table" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーブルには、項目が表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、について表示されるマークアップを示しています、<xref:System.Web.UI.WebControls.CheckBoxList>いるコントロール<xref:System.Web.UI.WebControls.CheckBoxList.RepeatLayout%2A>プロパティがテーブルに設定します。  
+  
+> [!NOTE]
+>  このオプションは、可能性がありますユーザー補助の標準に準拠していない HTML を表示するコントロールです。 詳細については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)します。  
+  
+```  
+<table id="ctl00_MainContent_CheckBoxList2">  
+  <tr>  
+    <td>  
+      <input id="ctl00_MainContent_CheckBoxList2_0" type="checkbox"  
+        name="ctl00$MainContent$CheckBoxList2$0" value="Item 1" />  
+      <label for="ctl00_MainContent_CheckBoxList2_0">Item 1</label>  
+    </td>  
+  </tr>  
+  <tr>  
+    <td>  
+      <input id="ctl00_MainContent_CheckBoxList2_1" type="checkbox"  
+        name="ctl00$MainContent$CheckBoxList2$1" value="Item 2" />  
+      <label for="ctl00_MainContent_CheckBoxList2_1">Item 2</label>  
+    </td>  
+  </tr>  
+  <tr>  
+    <td>  
+      <input id="ctl00_MainContent_CheckBoxList2_2" type="checkbox"  
+        name="ctl00$MainContent$CheckBoxList2$2" value="Item 3" />  
+      <label for="ctl00_MainContent_CheckBoxList2_2">Item 3</label>  
+    </td>  
+  </tr>  
+</table>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnorderedList">
+      <MemberSignature Language="C#" Value="UnorderedList" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.RepeatLayout UnorderedList = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.RepeatLayout.UnorderedList" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.RepeatLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非テーブル構造は、アイテムが表示されます。 レンダリングされるマークアップから成る、<see langword="ul" />要素を含む<see langword="li" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、について表示されるマークアップを示しています、<xref:System.Web.UI.WebControls.CheckBoxList>いるコントロール<xref:System.Web.UI.WebControls.CheckBoxList.RepeatLayout%2A>プロパティがしています。  
+  
+```  
+<ul id="ctl00_MainContent_CheckBoxList4">  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList4_0" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList4$0" value="Item 1" />  
+    <label for="ctl00_MainContent_CheckBoxList4_0">Item 1</label>  
+  </li>  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList4_1" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList4$1" value="Item 2" />  
+    <label for="ctl00_MainContent_CheckBoxList4_1">Item 2</label>  
+  </li>  
+  <li>  
+    <input id="ctl00_MainContent_CheckBoxList4_2" type="checkbox"  
+      name="ctl00$MainContent$CheckBoxList4$2" value="Item 2" />  
+    <label for="ctl00_MainContent_CheckBoxList4_2">Item 2</label>  
+  </li>  
+</ul>  
+```  
+  
+> [!NOTE]
+>  このフィールドは、ASP.NET 4 の時点で新しいはれ、に対してのみ有効なオプション、<xref:System.Web.UI.WebControls.CheckBoxList>と<xref:System.Web.UI.WebControls.RadioButtonList>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

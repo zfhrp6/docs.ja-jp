@@ -1,0 +1,260 @@
+<Type Name="CatalogPartChrome" FullName="System.Web.UI.WebControls.WebParts.CatalogPartChrome">
+  <TypeSignature Language="C#" Value="public class CatalogPartChrome" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CatalogPartChrome extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>開発者の選択した部分のみを表示する準備のオーバーライドを<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールで、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />ゾーンです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Chrome では、そのフレームを各 Web パーツ コントロールまたはサーバー コントロールは、ゾーンに含まれている周辺機器のユーザー インターフェイス (UI) 要素を指します。 コントロールのクロムには、境界線、タイトル バー、およびアイコン、タイトルのテキストをおよび動詞メニュー タイトル バー内に表示されるが含まれています。 Chrome の外観は、ゾーン レベルが設定され、ゾーン内のすべてのコントロールに適用されます。  
+  
+ Web パーツ コントロール セットの使用、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>用の chrome を表示するためにクラス<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 さらに、このクラスでは、任意の表示をカスタマイズする開発者向け<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>ゾーンです。 たとえば、オーバーライドすることができます、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle%2A>をいくつかの特定のスタイル属性をカスタマイズするメソッドに適用、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>ゾーンです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスには、レンダリングをオーバーライドするときに使用されるいくつかの重要なメソッドが含まれています。<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 1 つは、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.%23ctor%2A>コンス トラクターは、オーバーライドするときに使用する、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogPartChrome%2A>カスタム メソッド<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>、カスタムのインスタンスを作成するゾーン<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>オブジェクト。 他の便利な方法は、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents%2A>メソッドで、(ヘッダー、フッター、およびタイトル バーなどの chrome 要素) ではなく、ゾーン内のコントロールのコンテンツ エリアの表示の制御に使用することができます。 最後に、レンダリングのすべての側面を完全にプログラムで制御する場合、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>オーバーライドすることができます、コントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderCatalogPart%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>の既定のレンダリングをオーバーライドするクラス<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>ゾーンです。  
+  
+ このコード例では、3 つの部分があります。  
+  
+-   ユーザー コントロールを Web パーツ ページの表示モードを変更することができます。  
+  
+-   例では、すべてのコントロールをホストする Web ページ。  
+  
+-   ユーザー定義のソース コードを含むクラス<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスと<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>ゾーンです。  
+  
+ このコード例の最初の部分は、ユーザー コントロールです。 ユーザー コントロールのソース コードの別のトピックに由来します。 このコード例を実行するには、.ascx ファイルからユーザー コントロールを取得する必要があります、[チュートリアル: Web パーツ ページの表示モードを変更する](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)」および「このコード例では、.aspx ページと同じフォルダーにファイルの場所。  
+  
+ この例の 2 番目の部分は、Web ページです。 あることに注意してください、`Register`コンパイル済みのコンポーネントと、タグ プレフィックスを登録するファイルの先頭付近にあるディレクティブです。 なお、ページを参照している、要素を使用してカスタム カタログ ゾーン`<aspSample:MyCatalogZone>`です。  
+  
+ [!code-aspx-csharp[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/CatalogPartDemo.aspx#1)]
+ [!code-aspx-vb[WebParts_CatalogPartChrome_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/CatalogPartDemo.aspx#1)]  
+  
+ この例の 3 番目の部分には、カスタムのカタログ パーツのクロムとカタログ パーツ領域の実装が含まれています。 `MyCatalogZone`拡張<xref:System.Web.UI.WebControls.WebParts.CatalogZone>と上書き<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogPartChrome%2A>をカスタム カタログ パーツのクロムを返します。 `MyCatalogPartChrome`カタログ内のコントロールの背景色を変更、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle%2A>メソッドです。 ゾーンの背景色が変更された、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender%2A>メソッド、およびテキストが追加されている場合にカタログ部分を<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents%2A>メソッドです。  
+  
+ [!code-csharp[WebParts_CatalogPartChrome_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/source2.cs#2)]
+ [!code-vb[WebParts_CatalogPartChrome_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/source2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />クラスを作成する必要が、カスタマイズされた<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />を返す、カスタマイズされたゾーン<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />クラスです。 このクラスの概要の例のセクションがカスタマイズを作成する方法を示します<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZone" />を返す、カスタマイズされたゾーン<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />クラスです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CatalogPartChrome (System.Web.UI.WebControls.WebParts.CatalogZoneBase zone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.CatalogZoneBase zone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.#ctor(System.Web.UI.WebControls.WebParts.CatalogZoneBase)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="zone" Type="System.Web.UI.WebControls.WebParts.CatalogZoneBase" />
+      </Parameters>
+      <Docs>
+        <param name="zone">関連付けられた <see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.%23ctor%2A>コンス トラクターの新しいインスタンスを初期化します、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスです。 主にで使用、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>でゾーンの<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase.CreateCatalogPartChrome%2A>のインスタンスを作成する方法、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クロムの表示との任意のカスタム表示を処理するオブジェクト<xref:System.Web.UI.WebControls.WebParts.CatalogPart>ゾーン内のコントロールです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />を<paramref name="zone" />参照には<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCatalogPartChromeStyle">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.Style CreateCatalogPartChromeStyle (System.Web.UI.WebControls.WebParts.CatalogPart catalogPart, System.Web.UI.WebControls.WebParts.PartChromeType chromeType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.Style CreateCatalogPartChromeStyle(class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart, valuetype System.Web.UI.WebControls.WebParts.PartChromeType chromeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle(System.Web.UI.WebControls.WebParts.CatalogPart,System.Web.UI.WebControls.WebParts.PartChromeType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="catalogPart" Type="System.Web.UI.WebControls.WebParts.CatalogPart" />
+        <Parameter Name="chromeType" Type="System.Web.UI.WebControls.WebParts.PartChromeType" />
+      </Parameters>
+      <Docs>
+        <param name="catalogPart">現在レンダリングされているコントロール。</param>
+        <param name="chromeType">特定のコントロールのクロムの種類1 つ、<see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" />列挙値。</param>
+        <summary>各スタイル属性を提供するスタイル オブジェクトを作成<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />によってコントロールが表示される、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Style" />のスタイル属性を格納している<paramref name="catalogPart" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle%2A>メソッドを作成、<xref:System.Web.UI.WebControls.Style>オブジェクトによって使用される、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>オブジェクトを表示するために、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle%2A>カタログ パーツ コントロールの背景色を変更するメソッド。 完全なコード例を実行するために必要なこれらのコントロールをホストする Web ページを含むについてのセクションの例、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスの概要です。  
+  
+ [!code-csharp[WebParts_CatalogPartChrome_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/source2.cs#3)]
+ [!code-vb[WebParts_CatalogPartChrome_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/source2.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コントロールを<paramref name="catalogPart" />参照には<see langword="null" />します。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="chromeType" /> が <see cref="T:System.Web.UI.WebControls.WebParts.PartChromeType" /> ではありません。</exception>
+        <block subset="none" type="overrides">
+          <para>継承する場合、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />クラス、必要に応じてオーバーライドできます、<see cref="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.CreateCatalogPartChromeStyle(System.Web.UI.WebControls.WebParts.CatalogPart,System.Web.UI.WebControls.WebParts.PartChromeType)" />メソッド、およびマージは、基本メソッドのカスタム スタイルのスタイル情報属性を追加することです。 例については、例」のセクションを参照してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformPreRender">
+      <MemberSignature Language="C#" Value="public virtual void PerformPreRender ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PerformPreRender() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>レンダリングの前に行う必要があるタスクを実行します<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender%2A>メソッドでは、中に行う必要があるタスクを実行できます。<xref:System.Web.UI.Control.PreRender>コントロールにスタイル シートを適用するなど、コントロールが表示されるときには実行できません。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.PerformPreRender%2A>カタログ ゾーンの背景色を変更するメソッド。 完全なコード例を実行するために必要なこれらのコントロールをホストする Web ページを含むについてのセクションの例、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスの概要です。  
+  
+ [!code-csharp[WebParts_CatalogPartChrome_Overview#4](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/source2.cs#4)]
+ [!code-vb[WebParts_CatalogPartChrome_Overview#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/source2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderCatalogPart">
+      <MemberSignature Language="C#" Value="public virtual void RenderCatalogPart (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RenderCatalogPart(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderCatalogPart(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="catalogPart" Type="System.Web.UI.WebControls.WebParts.CatalogPart" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />を受け取る、 <c>catalogPart</c>コンテンツ。</param>
+        <param name="catalogPart">現在レンダリングされているコントロール。</param>
+        <summary>完全なレンダリング<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールのすべてのセクションでします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderCatalogPart%2A>メソッドは、完全なレンダリング<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール、ヘッダー、内容、およびページ フッターを使用します。 このメソッドは、開発者のすべての側面を表示するプログラムによる制御の完了をオーバーライドする`catalogPart`; そのため、非常に複雑なは、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コントロールを<paramref name="catalogPart" />参照には<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderPartContents">
+      <MemberSignature Language="C#" Value="protected virtual void RenderPartContents (System.Web.UI.HtmlTextWriter writer, System.Web.UI.WebControls.WebParts.CatalogPart catalogPart);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderPartContents(class System.Web.UI.HtmlTextWriter writer, class System.Web.UI.WebControls.WebParts.CatalogPart catalogPart) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.CatalogPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+        <Parameter Name="catalogPart" Type="System.Web.UI.WebControls.WebParts.CatalogPart" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />を受け取る、 <c>catalogPart</c>コンテンツ。</param>
+        <param name="catalogPart">現在レンダリングされているコントロール。</param>
+        <summary>メイン コンテンツ領域を表示、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール、ヘッダーとフッターを除外します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents%2A>メソッドでは、本体領域のレンダリングを上書きできます。 `catalogPart`、既定の描画にヘッダーとページ フッターのレンダリングを維持したままです。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents%2A>カタログ パーツにテキストを追加するメソッド。 完全なコード例を実行するために必要なこれらのコントロールをホストする Web ページを含むについてのセクションの例、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>クラスの概要です。  
+  
+ [!code-csharp[WebParts_CatalogPartChrome_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/CS/source2.cs#5)]
+ [!code-vb[WebParts_CatalogPartChrome_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPartChrome_Overview/VB/source2.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コントロールを<paramref name="catalogPart" />参照には<see langword="null" />します。</exception>
+        <block subset="none" type="overrides">
+          <para>必要に応じてオーバーライドできます、<see cref="M:System.Web.UI.WebControls.WebParts.CatalogPartChrome.RenderPartContents(System.Web.UI.HtmlTextWriter,System.Web.UI.WebControls.WebParts.CatalogPart)" />メソッドです。 カスタマイズがレンダリングを単に実行するため、場合の<paramref name="catalogPart" />、まずその<see cref="M:System.Web.UI.Control.RenderControl(System.Web.UI.HtmlTextWriter)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPartChrome.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogZoneBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたへの参照を取得<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />ゾーンです。</summary>
+        <value>参照、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />と関連付けられている、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome.Zone%2A>プロパティへの参照を提供する、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>を対象のコントロールを含むゾーン、<xref:System.Web.UI.WebControls.WebParts.CatalogPartChrome>オブジェクトがレンダリングを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

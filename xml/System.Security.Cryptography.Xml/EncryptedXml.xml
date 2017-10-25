@@ -1,0 +1,1924 @@
+<Type Name="EncryptedXml" FullName="System.Security.Cryptography.Xml.EncryptedXml">
+  <TypeSignature Language="C#" Value="public class EncryptedXml" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EncryptedXml extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.EncryptedXml" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML 暗号化を実装するためのプロセス モデルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml>クラスは、.NET Framework における XML の暗号化に使用するメイン クラスです。 XML 暗号化は、XML ドキュメントまたは任意のデータの一部またはすべてを暗号化する、標準ベースの相互運用可能な方法です。 .NET Framework XML の暗号化クラスは、http://www.w3.org/TR/xmlenc-core/ にある XML 暗号化の World Wide Web Consortium (W3C) 仕様を実装します。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスの標準的な方法でアプリケーションまたは組織の間で暗号化された XML データを共有する必要がある場合。 このクラスを使用して暗号化されたデータは、XML の暗号化は、W3C 仕様の実装によって暗号化解除できます。  
+  
+ XML 暗号化では任意のプレーン テキストの XML 要素またはドキュメントで、`<EncryptedData>`要素を含む、暗号化された (または暗号テキスト) プレーン テキストの XML 表現または任意のデータ。 `<EncryptedData>`要素では、暗号テキストを復号化キーを検索する場所についての情報を含めることができます必要に応じてされ、プレーン テキストの暗号化に使用されている暗号アルゴリズム。  
+  
+ `<EncryptedKey>`要素がに似ていますが、`<EncryptedData>`内の要素のスタイルおよび使用状況、許可することの値を復号化キーを暗号化する点を除いて、`<EncryptedData>`要素。 なお、`<EncryptedKey>`要素および`<EncryptedData>`要素は暗号化されていないキーを含めることはありません。  
+  
+ キー情報を交換するのにには、次のいずれかを使用します。  
+  
+-   キー情報を含めないでください。 このオプションを選択する場合は、暗号化されたデータを交換する前にアルゴリズムとキーの双方が合意する必要があります。  
+  
+-   キーの場所、(Uniform Resource Identifier) の属性に含める、`<RetrievalMethod>`要素。 前もってキーの場所の双方が合意する必要があり、この場所は、秘密保持する必要があります。  
+  
+-   文字列名をキーにマップを追加、`<KeyName>`要素。 暗号化されたデータを交換して、このマッピングは、秘密保持する必要がある前にキー名のマッピングの双方が合意する必要があります。  
+  
+-   暗号化されたキーを含める、`<EncryptedKey>`要素。 暗号化されたデータを交換する前に、暗号化されたキーを復号化キーの双方が合意する必要があります。 名前または内のキーは復号化キーの場所を含めることができます必要に応じて、`<EncryptedKey>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する単純なユーティリティ クラスを作成する方法を示しています、 <xref:System.Security.Cryptography.TripleDES> XML ドキュメントを暗号化するためのアルゴリズムです。  
+  
+ [!code-cpp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.MainXMLEncDecryptDataOOP#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.MainXMLEncDecryptDataOOP/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、.NET Framework における XML の暗号化のメイン クラスの既定のコンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedXml (System.Xml.XmlDocument document);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlDocument document) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.#ctor(System.Xml.XmlDocument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="document"><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> オブジェクトを初期化するために使用する <see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary>指定した XML ドキュメントを使用して、<see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.Xml.EncryptedXml>オブジェクトを暗号化する XML ドキュメントを指定するとき。  `document`パラメーターは後で、暗号化された XML を形成する XML 要素で構成します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedXml (System.Xml.XmlDocument document, System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlDocument document, class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.#ctor(System.Xml.XmlDocument,System.Security.Policy.Evidence)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.XmlDocument" />
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="document"><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> オブジェクトを初期化するために使用する <see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <param name="evidence"><see cref="T:System.Xml.XmlDocument" /> オブジェクトに関連付けられている <see cref="T:System.Security.Policy.Evidence" /> オブジェクト。</param>
+        <summary>指定した XML ドキュメントおよび証拠を使用して、<see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.Xml.EncryptedXml>オブジェクトを暗号化し、セキュリティ証拠を提供する XML ドキュメントを指定するとき。 `document`パラメーターは後で、暗号化された XML を形成する XML 要素で構成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddKeyNameMapping">
+      <MemberSignature Language="C#" Value="public void AddKeyNameMapping (string keyName, object keyObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddKeyNameMapping(string keyName, object keyObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.AddKeyNameMapping(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="keyObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">マップする名前<c>keyObject</c>です。</param>
+        <param name="keyObject">対称キーにマップする<c>keyName</c>です。</param>
+        <summary>キー名と対称キーまたは非対称キーとの間のマップを定義します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.AddKeyNameMapping%2A>メソッドでは、対称キーまたは非対称キーを文字列名にマップすることができます。 このメソッドは、の値を追加、`keyName`と`keyObject`有効なキーのテーブルへのパラメーターのマッピングの名前します。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.ClearKeyNameMappings%2A>キー名のマッピング テーブルをクリアします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CPP/Cryptography.XML.XMLEncMinimalDecrypt.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keyName" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="keyObject" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="keyObject" />パラメーターは、RSA アルゴリズムまたは対称キーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearKeyNameMappings">
+      <MemberSignature Language="C#" Value="public void ClearKeyNameMappings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ClearKeyNameMappings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.ClearKeyNameMappings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのキー名マップをリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して設定したすべてのキー名マッピングが消去を使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.AddKeyNameMapping%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptData">
+      <MemberSignature Language="C#" Value="public byte[] DecryptData (System.Security.Cryptography.Xml.EncryptedData encryptedData, System.Security.Cryptography.SymmetricAlgorithm symAlg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] DecryptData(class System.Security.Cryptography.Xml.EncryptedData encryptedData, class System.Security.Cryptography.SymmetricAlgorithm symAlg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.DecryptData(System.Security.Cryptography.Xml.EncryptedData,System.Security.Cryptography.SymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Security.Cryptography.Xml.EncryptedData" />
+        <Parameter Name="symmetricAlgorithm" Type="System.Security.Cryptography.SymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">復号化するデータ。</param>
+        <param name="symAlg">To be added.</param>
+        <summary>指定した対称アルゴリズムを使用して <see langword="&lt;EncryptedData&gt;" /> 要素を復号化します。</summary>
+        <returns>生の復号化されたプレーン テキストを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptData%2A>を復号化、<xref:System.Security.Cryptography.Xml.EncryptedData>対称キーを使用して要素。  
+  
+ なお、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptData%2A>メソッドのみを復号化トップレベル <`EncryptedData`> タグです。  場合、1 つまたは複数 <`EncryptedData`> タグが暗号化されているしより高いレベルに含まれる <`EncryptedData`> タグに呼び出すことができます、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>メソッドごとに個別にします。  参照してください、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>コード例のメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="symmetricAlgorithm" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptDocument">
+      <MemberSignature Language="C#" Value="public void DecryptDocument ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DecryptDocument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> クラスの初期化時に指定された、XML ドキュメントのすべての <see langword="&lt;EncryptedData&gt;" /> 要素を復号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>メソッドには、すべてが復号化`<EncryptedData>`の初期化中に、XML ドキュメントの要素が読み込まれます。 このメソッドを呼び出した後すべて`<EncryptedData>`ドキュメント内の要素はテキスト形式のバージョンに置き換えられます。  
+  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>メソッドが最上位レベルのみ復号化`<EncryptedData>`要素。  スーパーで暗号化されたドキュメント (複数回暗号化するドキュメント) の暗号化を解除する必要がある場合を呼び出す必要があります、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>すべてまで繰り返しメソッド、`<EncryptedData>`要素が復号化されています。  
+  
+> [!NOTE]
+>  <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A>メソッドには、有効な XML データのみが復号化します。 任意のデータの暗号化を解除するには、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptData%2A>メソッドです。  
+  
+ X.509 証明書で XML の暗号化を使用するには、Microsoft Enhanced Cryptographic Provider がインストールされているが必要し、X.509 証明書は、拡張プロバイダーを使用する必要があります。 Microsoft Enhanced Cryptographic Provider がインストールされているがないか、または X.509 証明書は、拡張プロバイダーを使用しない場合、 <xref:System.Security.Cryptography.CryptographicException> "Unknown Error"の場合にスローされる XML ドキュメントを復号化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ 次のコード例では、高レベルの暗号化を解除 <`EncryptedData`> タグを含む暗号化別 <`EncryptedData`> タグです。  
+  
+ [!code-csharp[Cryptography.XML.EncryptedDocument.DecryptDocument-SuperEncryption#1](~/samples/snippets/csharp/VS_Snippets_Misc/Cryptography.XML.EncryptedDocument.DecryptDocument-SuperEncryption/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.EncryptedDocument.DecryptDocument-SuperEncryption#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/Cryptography.XML.EncryptedDocument.DecryptDocument-SuperEncryption/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">ドキュメントを復号化に使用する暗号化キーが見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptEncryptedKey">
+      <MemberSignature Language="C#" Value="public virtual byte[] DecryptEncryptedKey (System.Security.Cryptography.Xml.EncryptedKey encryptedKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] DecryptEncryptedKey(class System.Security.Cryptography.Xml.EncryptedKey encryptedKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.DecryptEncryptedKey(System.Security.Cryptography.Xml.EncryptedKey)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedKey" Type="System.Security.Cryptography.Xml.EncryptedKey" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedKey">取得するキーを格納している <see cref="T:System.Security.Cryptography.Xml.EncryptedKey" /> オブジェクト。</param>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedKey" /> 要素によって表されるキーを決定します。</summary>
+        <returns>キーを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptEncryptedKey%2A>メソッド内に含まれる暗号化キーを復号化、 `<EncryptedKey>` XML ドキュメントの要素。  
+  
+ この再帰的な方法で表されるキーの検索、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクト。 なお、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクトは別に含めることができます<xref:System.Security.Cryptography.Xml.EncryptedKey>を指定するオブジェクト、<xref:System.Security.Cryptography.Xml.KeyInfo>値。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="encryptedKey" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="encryptedKey" />パラメーターは、Triple DES キー ラップ アルゴリズムまたは、Advanced Encryption Standard (AES) キー ラップ アルゴリズム (Rijndael とも呼ばれます)。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="DecryptKey">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see langword="&lt;EncryptedKey&gt;" /> 要素を復号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptKey%2A>を復号化、`<EncryptedKey>`要素とその要素を復号化に使用するキーを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="DecryptKey">
+      <MemberSignature Language="C#" Value="public static byte[] DecryptKey (byte[] keyData, System.Security.Cryptography.SymmetricAlgorithm symAlg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] DecryptKey(unsigned int8[] keyData, class System.Security.Cryptography.SymmetricAlgorithm symAlg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.DecryptKey(System.Byte[],System.Security.Cryptography.SymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Byte[]" />
+        <Parameter Name="symmetricAlgorithm" Type="System.Security.Cryptography.SymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">暗号化された <see langword="&lt;EncryptedKey&gt;" /> 要素を表すバイト配列。</param>
+        <param name="symAlg">To be added.</param>
+        <summary>対称アルゴリズムを使用して <see langword="&lt;EncryptedKey&gt;" /> 要素を復号化します。</summary>
+        <returns>プレーン テキストのキーを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptKey%2A>メソッド内に含まれる暗号化キーを復号化、 `<EncryptedKey>` XML ドキュメントの要素。 このメソッドは、の値を受け取り、`symmetricAlgorithm`トリプル DES アルゴリズムまたは AES キー ラップ アルゴリズム (Rijndael とも呼ばれます) のいずれかを表すパラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keyData" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="symmetricAlgorithm" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="symmetricAlgorithm" />要素は、Triple DES キー ラップ アルゴリズムや、高度暗号化標準 (AES) キー ラップ アルゴリズム (Rijndael とも呼ばれます) ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DecryptKey">
+      <MemberSignature Language="C#" Value="public static byte[] DecryptKey (byte[] keyData, System.Security.Cryptography.RSA rsa, bool fOAEP);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] DecryptKey(unsigned int8[] keyData, class System.Security.Cryptography.RSA rsa, bool fOAEP) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.DecryptKey(System.Byte[],System.Security.Cryptography.RSA,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Byte[]" />
+        <Parameter Name="rsa" Type="System.Security.Cryptography.RSA" />
+        <Parameter Name="useOAEP" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">暗号化された <see langword="&lt;EncryptedKey&gt;" /> 要素を表すバイト配列。</param>
+        <param name="rsa">復号化に使用する非対称キー<c>キーのデータ</c>です。</param>
+        <param name="fOAEP">To be added.</param>
+        <summary>非対称アルゴリズムを使用して <see langword="&lt;EncryptedKey&gt;" /> 要素を復号化します。</summary>
+        <returns>プレーン テキストのキーを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptKey%2A>メソッド内に含まれる暗号化キーを復号化、 `<EncryptedKey>` XML ドキュメントの要素。 このメソッドは、の値を受け取り、 `rsa` RSA PKCS #1 v1.5 アルゴリズムまたは RSA PKCS #1 タイプ 2 アルゴリズム (OAEP パディングとも呼ばれます) のいずれかを表すパラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keyData" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="rsa" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentEvidence">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.Evidence DocumentEvidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.Evidence DocumentEvidence" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.DocumentEvidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.Evidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構築する <see cref="T:System.Security.Cryptography.Xml.EncryptedXml" /> オブジェクトの元になる <see cref="T:System.Xml.XmlDocument" /> オブジェクトの証拠を取得または設定します。</summary>
+        <value><see cref="T:System.Security.Policy.Evidence" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML ドキュメントを作成するために使用する場合、<xref:System.Security.Cryptography.Xml.EncryptedXml>オブジェクトには、セキュリティ証拠、証拠を追加する必要があります、<xref:System.Security.Cryptography.Xml.EncryptedXml.DocumentEvidence%2A>プロパティです。  このプロパティは、関連付けられているいずれかが設定されていない場合<xref:System.Security.Cryptography.Xml.CipherReference>オブジェクトが逆参照しないでこれらはで許可されていなかったため、必要なアクセス許可セット。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public System.Text.Encoding Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Text.Encoding Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Text.Encoding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化に使用するエンコーディングを取得または設定します。</summary>
+        <value><see cref="T:System.Text.Encoding" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 暗号化の既定のエンコーディングは、utf-8 エンコードします。 このプロパティを使用してエンコードからの他の種類を指定することができます、 <xref:System.Text.Encoding> utf-16 や ASCII などのクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Encrypt">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>キー マップ テーブル内の指定された証明書またはキーを使用して、要素の外側の XML を暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CPP/Cryptography.XML.XMLEncMinimalDecrypt.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/VB/sample.vb#1)]  
+  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.EncryptedData Encrypt (System.Xml.XmlElement inputElement, System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.Xml.EncryptedData Encrypt(class System.Xml.XmlElement inputElement, class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.Encrypt(System.Xml.XmlElement,System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.EncryptedData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputElement" Type="System.Xml.XmlElement" />
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="inputElement">暗号化する XML 要素。</param>
+        <param name="certificate">暗号化に使用する X.509 証明書。</param>
+        <summary>指定した X.509 証明書を使用して、要素の外側の XML を暗号化します。</summary>
+        <returns>暗号化された XML データを表す <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> 要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A>メソッドは、証明書を使用して、要素の外側の XML を暗号化する便利な方法です。 このメソッドで XML 要素を暗号化するには、256 ビット高度暗号化標準 (AES) セッション キーが生成されますとし、暗号化して AES キーを使用して、署名、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2>オブジェクト。 <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A>メソッドでは、結果として得られる XML としてしを返します、<xref:System.Security.Cryptography.Xml.EncryptedData>要素。  
+  
+ 暗号化より詳細に制御する場合は、することが行われるのでに暗号化された情報、`<CipherReference>`要素全体の XML 要素またはその内容だけができるかどうかを指定するか、暗号化を使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A>メソッドのオーバー ロードします。  
+  
+ X.509 証明書で XML の暗号化を使用するには、Microsoft Enhanced Cryptographic Provider がインストールされているが必要し、X.509 証明書は、拡張プロバイダーを使用する必要があります。 Microsoft Enhanced Cryptographic Provider がインストールされているがないか、または X.509 証明書は、拡張プロバイダーを使用しない場合、 <xref:System.Security.Cryptography.CryptographicException> "Unknown Error"の場合にスローされる XML ドキュメントを復号化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、X.509 証明書を使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、X.509 証明書を使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CPP/Cryptography.XML.XMLEncMapKeyX509.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKeyX509#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKeyX509/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputElement" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="certificate" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">値、<paramref name="certificate" />パラメーターには、RSA キーのアルゴリズムは表しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Xml.EncryptedData Encrypt (System.Xml.XmlElement inputElement, string keyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.Cryptography.Xml.EncryptedData Encrypt(class System.Xml.XmlElement inputElement, string keyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.Encrypt(System.Xml.XmlElement,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Xml.EncryptedData</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputElement" Type="System.Xml.XmlElement" />
+        <Parameter Name="keyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputElement">暗号化する XML 要素。</param>
+        <param name="keyName">キー マップ テーブルにあるキー名。</param>
+        <summary>キー マップ テーブル内の指定されたキーを使用して、要素の外側の XML を暗号化します。</summary>
+        <returns>暗号化された XML データを表す <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、キー名を使用して、要素の外側の XML を暗号化する便利な方法です。 暗号化より詳細に制御する場合は、することが行われるのでに暗号化された情報、`<CipherReference>`要素全体の XML 要素またはその内容だけができるかどうかを指定するか、暗号化を使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptData%2A>メソッドのオーバー ロードします。  
+  
+ サポートされているすべてのアルゴリズムの一覧に関連付けられている定数のフィールドの一覧を参照して、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CPP/Cryptography.XML.XMLEncMinimalDecrypt.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecrypt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecrypt/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputElement" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="keyName" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="keyName" />パラメーターが登録されているキーの名前の組み合わせと一致しません。  
+  
+ または  
+  
+ により記述された暗号化キー、<paramref name="keyName" />パラメーターはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EncryptData">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>対称アルゴリズムを使用して、XML データを暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EncryptData">
+      <MemberSignature Language="C#" Value="public byte[] EncryptData (byte[] plainText, System.Security.Cryptography.SymmetricAlgorithm symAlg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] EncryptData(unsigned int8[] plainText, class System.Security.Cryptography.SymmetricAlgorithm symAlg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.EncryptData(System.Byte[],System.Security.Cryptography.SymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="plaintext" Type="System.Byte[]" />
+        <Parameter Name="symmetricAlgorithm" Type="System.Security.Cryptography.SymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="plainText">To be added.</param>
+        <param name="symAlg">To be added.</param>
+        <summary>指定したバイト配列内のデータを、指定した対称アルゴリズムを使用して暗号化します。</summary>
+        <returns>暗号化されたデータのバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるバイト配列に配置できる、`<CipherValue>`要素。 このメソッドは、データがで指定されている前提としています。、`plaintext`パラメーターは、XML データを格納するバイト配列。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、復号化するメソッドを使用して、適切な復号化キーを検索する暗号化された XML ドキュメントのキー名が埋め込まれます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CPP/Cryptography.XML.XMLEncMapKey.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMapKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMapKey/VB/sample.vb#1)]  
+  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="plaintext" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="symmetricAlgorithm" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">指定されたパラメーターを使用してデータを暗号化できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptData">
+      <MemberSignature Language="C#" Value="public byte[] EncryptData (System.Xml.XmlElement inputElement, System.Security.Cryptography.SymmetricAlgorithm symAlg, bool content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] EncryptData(class System.Xml.XmlElement inputElement, class System.Security.Cryptography.SymmetricAlgorithm symAlg, bool content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.EncryptData(System.Xml.XmlElement,System.Security.Cryptography.SymmetricAlgorithm,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputElement" Type="System.Xml.XmlElement" />
+        <Parameter Name="symmetricAlgorithm" Type="System.Security.Cryptography.SymmetricAlgorithm" />
+        <Parameter Name="content" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inputElement">暗号化する要素またはその内容。</param>
+        <param name="symAlg">To be added.</param>
+        <param name="content">
+          要素の内容のみを暗号化する場合は <see langword="true" />。要素全体を暗号化する場合は <see langword="false" />。</param>
+        <summary>指定した要素またはその内容を、指定した対称アルゴリズムを使用して暗号化します。</summary>
+        <returns>暗号化されたデータを格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるバイト配列のデータの値、`<CipherValue>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputElement" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="symmetricAlgorithm" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="EncryptKey">
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see langword="&lt;EncryptedData&gt;" /> 要素を復号化するために受信者が使用するキーを暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey%2A>受信者が復号化に使用するキーを暗号化する方法、`<EncryptedData>`要素。 このメソッドは、暗号化キー、`<EncryptedKey>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="EncryptKey">
+      <MemberSignature Language="C#" Value="public static byte[] EncryptKey (byte[] keyData, System.Security.Cryptography.SymmetricAlgorithm symAlg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] EncryptKey(unsigned int8[] keyData, class System.Security.Cryptography.SymmetricAlgorithm symAlg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey(System.Byte[],System.Security.Cryptography.SymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Byte[]" />
+        <Parameter Name="symmetricAlgorithm" Type="System.Security.Cryptography.SymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">暗号化するキー。</param>
+        <param name="symAlg">To be added.</param>
+        <summary><see langword="&lt;EncryptedData&gt;" /> 要素を復号化するために受信者が使用する対称アルゴリズムを使用して、キーを暗号化します。</summary>
+        <returns><paramref name="keyData" /> パラメーターの暗号化された値を表すバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey%2A>受信者が復号化に使用するキーを暗号化する方法、`<EncryptedData>`要素。 このメソッドは、の値を受け取り、`symmetricAlgorithm`トリプル DES アルゴリズムまたは AES キー ラップ アルゴリズム (Rijndael とも呼ばれます) のいずれかを表すパラメーター。  
+  
+ このメソッドが、暗号化キーを自動的に配置していないことに注意してください、`<EncryptedKey>`要素。  手動で作成する必要があります、`<EncryptedKey>`ドキュメント内の要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keyData" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="symmetricAlgorithm" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="symmetricAlgorithm" />パラメーターは、Triple DES キー ラップ アルゴリズムまたは、Advanced Encryption Standard (AES) キー ラップ アルゴリズム (Rijndael とも呼ばれます)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptKey">
+      <MemberSignature Language="C#" Value="public static byte[] EncryptKey (byte[] keyData, System.Security.Cryptography.RSA rsa, bool fOAEP);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] EncryptKey(unsigned int8[] keyData, class System.Security.Cryptography.RSA rsa, bool fOAEP) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey(System.Byte[],System.Security.Cryptography.RSA,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyData" Type="System.Byte[]" />
+        <Parameter Name="rsa" Type="System.Security.Cryptography.RSA" />
+        <Parameter Name="useOAEP" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keyData">暗号化するキー。</param>
+        <param name="rsa">暗号化に使用する非対称キー<c>キーのデータ</c>です。</param>
+        <param name="fOAEP">To be added.</param>
+        <summary><see langword="&lt;EncryptedData&gt;" /> 要素を復号化するために受信者が使用するキーを暗号化します。</summary>
+        <returns><paramref name="keyData" /> パラメーターの暗号化された値を表すバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.EncryptKey%2A>受信者が復号化に使用するキーを暗号化する方法、`<EncryptedData>`要素。 このメソッドは、の値を受け入れる`rsa`RSA PKCS #1 v1.5 アルゴリズムまたは RSA PKCS #1 タイプ 2 アルゴリズム (OAEP とも呼ばれます) のいずれかを表すです。  
+  
+ このメソッドが、暗号化キーを自動的に配置していないことに注意してください、`<EncryptedKey>`要素。  手動で作成する必要があります、`<EncryptedKey>`ドキュメント内の要素。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="keyData" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="rsa" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecryptionIV">
+      <MemberSignature Language="C#" Value="public virtual byte[] GetDecryptionIV (System.Security.Cryptography.Xml.EncryptedData encryptedData, string symAlgUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetDecryptionIV(class System.Security.Cryptography.Xml.EncryptedData encryptedData, string symAlgUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.GetDecryptionIV(System.Security.Cryptography.Xml.EncryptedData,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Security.Cryptography.Xml.EncryptedData" />
+        <Parameter Name="symmetricAlgorithmUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">取得する初期化ベクター (IV) を格納している <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクト。</param>
+        <param name="symAlgUri">To be added.</param>
+        <summary><see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクトから復号化初期化ベクター (IV: initialization vector) を取得します。</summary>
+        <returns>復号化初期化ベクター (IV) を格納するバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された、<xref:System.Security.Cryptography.Xml.EncryptedData>オブジェクト、このメソッドは、復号化初期化ベクター (IV) を取得します。 既定の動作の最初のバイトとしての IV の取得、<xref:System.Security.Cryptography.Xml.CipherData.CipherValue%2A>バイト配列。  
+  
+ サポートされている (Uniform Resource Identifier) の値の一覧については、`symmetricAlgorithmUri`パラメーター、定数フィールドの一覧に関連付けられているを参照してください、<xref:System.Security.Cryptography.Xml.EncryptedXml>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">値、<paramref name="encryptedData" />パラメーターには、<see cref="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod" />プロパティが null です。  
+  
+ または  
+  
+ 値、<paramref name="symmetricAlgorithmUrisymAlgUri" />パラメーターはサポートされているアルゴリズムではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDecryptionKey">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.SymmetricAlgorithm GetDecryptionKey (System.Security.Cryptography.Xml.EncryptedData encryptedData, string symAlgUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.SymmetricAlgorithm GetDecryptionKey(class System.Security.Cryptography.Xml.EncryptedData encryptedData, string symAlgUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.GetDecryptionKey(System.Security.Cryptography.Xml.EncryptedData,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.SymmetricAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedData" Type="System.Security.Cryptography.Xml.EncryptedData" />
+        <Parameter Name="symmetricAlgorithmUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="encryptedData">取得する復号化キーを格納している <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクト。</param>
+        <param name="symAlgUri">To be added.</param>
+        <summary>指定した <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクトから復号化キーを取得します。</summary>
+        <returns>復号化キーに関連付けられている <see cref="T:System.Security.Cryptography.SymmetricAlgorithm" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された、<xref:System.Security.Cryptography.Xml.EncryptedData>オブジェクト、このメソッドはプレーン テキスト データを取得するために使用する暗号化解除キーを検索します。 キー名が指定されている場合、メソッドは、対称アルゴリズムまたはキー名のマッピングで定義されているキーの名前に関連付けられている非対称アルゴリズムを検索します。 それ以外の場合、取得メソッドか、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクトが指定されている場合、メソッドのロード、<xref:System.Security.Cryptography.Xml.EncryptedKey>オブジェクトと呼び出し、<xref:System.Security.Cryptography.Xml.EncryptedXml.GetDecryptionKey%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="encryptedData" /> パラメーターの値が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">EncryptedData パラメーターには、<see cref="P:System.Security.Cryptography.Xml.EncryptedType.EncryptionMethod" />プロパティが null です。  
+  
+ または  
+  
+ 指定されたパラメーターを使用して、暗号化されたキーを取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIdElement">
+      <MemberSignature Language="C#" Value="public virtual System.Xml.XmlElement GetIdElement (System.Xml.XmlDocument document, string idValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlElement GetIdElement(class System.Xml.XmlDocument document, string idValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.GetIdElement(System.Xml.XmlDocument,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="document" Type="System.Xml.XmlDocument" />
+        <Parameter Name="idValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="document">ID 値を持つ要素を格納している <see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <param name="idValue">ID 値を表す文字列。</param>
+        <summary>内部 URI (Uniform Resource Identifier) 参照を解決する方法を確認します。</summary>
+        <returns>内部 URI (Uniform Resource Identifier) を解決する方法を示す ID を格納する <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.GetIdElement%2A>メソッドは、内部の Uniform Resource Identifier (Uri) を解決する方法を決定します。 値を指定して要素または指定された値を持つ ID 属性を持つ要素を検索します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CipherMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CipherMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CipherMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化に使用する暗号モードを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.CipherMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号ブロック チェーン (CBC) モードは、XML 暗号化の既定の暗号モードです。 場合は、その他の暗号モードを指定するこのプロパティを使用することができます、<xref:System.Security.Cryptography.CipherMode>暗号フィードバック (CFB) モードなどの列挙。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Padding">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.PaddingMode Padding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.PaddingMode Padding" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.Padding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.PaddingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化に使用するパディング モードを取得または設定します。</summary>
+        <value>暗号化に使用するパディングの種類を指定する <see cref="T:System.Security.Cryptography.PaddingMode" /> 値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Iso-10126 パディングは、XML 暗号化の既定のパディング モードです。 場合は、その他のパディング モードを指定するこのプロパティを使用することができます、 <xref:System.Security.Cryptography.PaddingMode> ANSI X9.23 または PKCS #5 などの列挙。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recipient">
+      <MemberSignature Language="C#" Value="public string Recipient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Recipient" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.Recipient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化されたキー情報の受信者を取得または設定します。</summary>
+        <value>暗号化されたキー情報の受信者。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスすることができます、<xref:System.Security.Cryptography.Xml.EncryptedXml>確認するには、キー名によって参照されるオブジェクト、<xref:System.Security.Cryptography.Xml.EncryptedKey.CarriedKeyName%2A>プロパティです。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.EncryptedXml.Recipient%2A>プロパティを識別する、<xref:System.Security.Cryptography.Xml.EncryptedXml>要素を復号化キーを取得する現在の受信者の暗号化を解除できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceData">
+      <MemberSignature Language="C#" Value="public void ReplaceData (System.Xml.XmlElement inputElement, byte[] decryptedData);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReplaceData(class System.Xml.XmlElement inputElement, unsigned int8[] decryptedData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.ReplaceData(System.Xml.XmlElement,System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputElement" Type="System.Xml.XmlElement" />
+        <Parameter Name="decryptedData" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="inputElement">置換する <see langword="&lt;EncryptedData&gt;" /> 要素。</param>
+        <param name="decryptedData">復号化されたデータを交換できる<c>inputElement</c>とします。</param>
+        <summary><see langword="&lt;EncryptedData&gt;" /> 要素を、指定した復号化されたバイト シーケンスで置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.ReplaceData%2A>メソッド置換、`<EncryptedData>`の値を持つ要素、`decryptedData`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputElement" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="decryptedData" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplaceElement">
+      <MemberSignature Language="C#" Value="public static void ReplaceElement (System.Xml.XmlElement inputElement, System.Security.Cryptography.Xml.EncryptedData encryptedData, bool content);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReplaceElement(class System.Xml.XmlElement inputElement, class System.Security.Cryptography.Xml.EncryptedData encryptedData, bool content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.EncryptedXml.ReplaceElement(System.Xml.XmlElement,System.Security.Cryptography.Xml.EncryptedData,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputElement" Type="System.Xml.XmlElement" />
+        <Parameter Name="encryptedData" Type="System.Security.Cryptography.Xml.EncryptedData" />
+        <Parameter Name="content" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inputElement"><see langword="&lt;EncryptedData&gt;" /> 要素と置き換える要素。</param>
+        <param name="encryptedData"><see cref="T:System.Security.Cryptography.Xml.EncryptedData" />置換するオブジェクト、 <c>inputElement</c>パラメーターにします。</param>
+        <param name="content">
+          要素の内容のみを置き換える場合は <see langword="true" />。要素全体を置き換える場合は <see langword="false" />。</param>
+        <summary>指定した要素を指定した <see cref="T:System.Security.Cryptography.Xml.EncryptedData" /> オブジェクトで置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.EncryptedXml.ReplaceElement%2A>メソッド置換、`inputElement`パラメーターで指定された値と、`encryptedData`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputElement" /> パラメーターの値が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="encryptedData" /> パラメーターの値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolver">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlResolver Resolver { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver Resolver" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.Resolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部 XML 参照を解決するためにドキュメント オブジェクト モデル (DOM) によって使用される <see cref="T:System.Xml.XmlResolver" /> オブジェクトを取得または設定します。</summary>
+        <value><see cref="T:System.Xml.XmlResolver" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが含まれています、<xref:System.Xml.XmlResolver>エンティティ、ドキュメント型定義 (Dtd) やスキーマなどの外部の XML リソースの解決に使用されるオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlDSigSearchDepth">
+      <MemberSignature Language="C#" Value="public int XmlDSigSearchDepth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 XmlDSigSearchDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.EncryptedXml.XmlDSigSearchDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無限再帰とスタック オーバーフローが発生しないように、XML デジタル署名再帰深度を取得または設定します。 無限再帰とスタック オーバーフローは、デジタル署名の XML に URI が含まれ、それが元の XML をポイントしている場合に発生することがあります。</summary>
+        <value><see cref="T:System.Int32" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES128KeyWrapUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES128KeyWrapUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES128KeyWrapUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES128KeyWrapUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>128 ビット 高度暗号化標準 (AES) キー ラップ アルゴリズム (Rijndael キー ラップ アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES128KeyWrapUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#kw-aes128"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES128Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES128Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES128Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES128Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>128 ビット 高度暗号化標準 (AES) アルゴリズム (Rijndael アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES128Url>フィールドは"http://www.w3.org/2001/04/xmlenc#aes128-cbc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES192KeyWrapUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES192KeyWrapUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES192KeyWrapUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES192KeyWrapUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>192 ビット 高度暗号化標準 (AES) キー ラップ アルゴリズム (Rijndael キー ラップ アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES192KeyWrapUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#kw-aes192"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES192Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES192Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES192Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES192Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>192 ビット 高度暗号化標準 (AES) アルゴリズム (Rijndael アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES192Url>フィールドは"http://www.w3.org/2001/04/xmlenc#aes192-cbc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES256KeyWrapUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES256KeyWrapUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES256KeyWrapUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES256KeyWrapUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>256 ビット 高度暗号化標準 (AES) キー ラップ アルゴリズム (Rijndael キー ラップ アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES256KeyWrapUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#kw-aes256"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncAES256Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncAES256Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncAES256Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES256Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>256 ビット 高度暗号化標準 (AES) アルゴリズム (Rijndael アルゴリズムとも呼ばれます) の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncAES256Url>フィールドは"http://www.w3.org/2001/04/xmlenc#aes256-cbc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncDESUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncDESUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncDESUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncDESUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>DES (Digital Encryption Standard) アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncDESUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#des-cbc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncElementContentUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncElementContentUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncElementContentUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementContentUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化要素の内容の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementContentUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#Content"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncElementUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncElementUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncElementUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化要素の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#Element"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncEncryptedKeyUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncEncryptedKeyUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncEncryptedKeyUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncEncryptedKeyUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化 <see langword="&lt;EncryptedKey&gt;" /> 要素の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncEncryptedKeyUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#EncryptedKey"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncNamespaceUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncNamespaceUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncNamespaceUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncNamespaceUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 暗号化の構文および処理の名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncNamespaceUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncRSA15Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncRSA15Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncRSA15Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RSA PKCS (Public Key Cryptography Standard) Version 1.5 アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSA15Url>フィールドは"http://www.w3.org/2001/04/xmlenc#rsa-1_5"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、非対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、ドキュメントを暗号化する対称セッション キーを作成し、非対称キーを使用して XML ドキュメントに暗号化されたバージョンのセッション キーを埋め込みます。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CPP/sample.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncImbedKey#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncImbedKey/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncRSAOAEPUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncRSAOAEPUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncRSAOAEPUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>RSA OAEP (Optimal Asymmetric Encryption Padding) 暗号化アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncRSAOAEPUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncSHA256Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncSHA256Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncSHA256Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncSHA256Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA-256 アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncSHA256Url>フィールドは"http://www.w3.org/2001/04/xmlenc#sha256"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncSHA512Url">
+      <MemberSignature Language="C#" Value="public const string XmlEncSHA512Url;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncSHA512Url" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncSHA512Url" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHA-512 アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncSHA512Url>フィールドは"http://www.w3.org/2001/04/xmlenc#sha512"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncTripleDESKeyWrapUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncTripleDESKeyWrapUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncTripleDESKeyWrapUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncTripleDESKeyWrapUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Triple DES キー ラップ アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncTripleDESKeyWrapUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#kw-tripledes"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlEncTripleDESUrl">
+      <MemberSignature Language="C#" Value="public const string XmlEncTripleDESUrl;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string XmlEncTripleDESUrl" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.Xml.EncryptedXml.XmlEncTripleDESUrl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Triple DES アルゴリズムの名前空間 URI (Uniform Resource Identifier) を表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncTripleDESUrl>フィールドは"http://www.w3.org/2001/04/xmlenc#tripledes-cbc"です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、対称キーを使用して XML ドキュメントを暗号化する方法を示します。 この例では、暗号化された XML ドキュメント内のキー情報は含まれません。  
+  
+ [!code-cpp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CPP/Cryptography.XML.XMLEncMinimalDecryptData.cpp#1)]
+ [!code-csharp[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/CS/sample.cs#1)]
+ [!code-vb[Cryptography.XML.XMLEncMinimalDecryptData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.XML.XMLEncMinimalDecryptData/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

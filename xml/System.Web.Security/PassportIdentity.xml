@@ -1,0 +1,2065 @@
+<Type Name="PassportIdentity" FullName="System.Web.Security.PassportIdentity">
+  <TypeSignature Language="C#" Value="public sealed class PassportIdentity : IDisposable, System.Security.Principal.IIdentity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PassportIdentity extends System.Object implements class System.IDisposable, class System.Security.Principal.IIdentity" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.PassportIdentity" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Security.Principal.IIdentity</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("This type is obsolete. The Passport authentication product is no longer supported and has been superseded by Live ID.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Security.PassportAuthenticationModule" /> が使用するクラスを提供します。 このクラスでは、アプリケーションが <see cref="M:System.Web.Security.PassportIdentity.Ticket(System.String)" /> メソッドにアクセスする手段を提供します。 このクラスは継承できません。 このクラスは使用されていません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[PassportIdentityExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#1)]
+ [!code-aspx-vb[PassportIdentityExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#1)]  
+[!code-aspx-csharp[PassportIdentityExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#3)]
+[!code-aspx-vb[PassportIdentityExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PassportIdentity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.PassportIdentity" /> クラスの新しいインスタンスを初期化します。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーを識別するために使用する認証の種類を取得します。 このクラスは使用されていません。</summary>
+        <value>文字列 "Passport"。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl">
+      <MemberSignature Language="C#" Value="public string AuthUrl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報を含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.AuthUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.AuthUrl/CS/passportidentity_authurl.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.AuthUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.AuthUrl/VB/passportidentity_authurl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl">
+      <MemberSignature Language="C#" Value="public string AuthUrl (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報も含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl">
+      <MemberSignature Language="C#" Value="public string AuthUrl (string strReturnUrl, int iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int iLangID, string strNameSpace, int iKPP, bool bUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl(string strReturnUrl, int32 iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int32 iLangID, string strNameSpace, int32 iKPP, bool bUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl(System.String,System.Int32,System.Boolean,System.String,System.Int32,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Boolean" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="bUseSecureAuth" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターが使用されます。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素の初期登録時に指定されたコブランディング テンプレート スクリプト ページの URL に追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">要求されたドメイン権限ページの表示に使用する言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="bUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>メンバーの認証サーバーの URL を返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl">
+      <MemberSignature Language="C#" Value="public string AuthUrl (string strReturnUrl, int iTimeWindow, int iForceLogin, string strCoBrandedArgs, int iLangID, string strNameSpace, int iKPP, int iUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl(string strReturnUrl, int32 iTimeWindow, int32 iForceLogin, string strCoBrandedArgs, int32 iLangID, string strNameSpace, int32 iKPP, int32 iUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl(System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="iForceLogin" Type="System.Int32" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターが使用されます。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素の初期登録時に指定されたコブランディング テンプレート スクリプト ページの URL に追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">要求されたドメイン権限ページの表示に使用する言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iUseSecureAuth">実際のログイン UI が、Passport ドメイン権限から HTTPS を提供されるかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報も含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl2">
+      <MemberSignature Language="C#" Value="public string AuthUrl2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl2() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報を含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.AuthUrl2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.AuthUrl2/CS/passportidentity_authurl2.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.AuthUrl2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.AuthUrl2/VB/passportidentity_authurl2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl2">
+      <MemberSignature Language="C#" Value="public string AuthUrl2 (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl2(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl2(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報を含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl2">
+      <MemberSignature Language="C#" Value="public string AuthUrl2 (string strReturnUrl, int iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int iLangID, string strNameSpace, int iKPP, bool bUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl2(string strReturnUrl, int32 iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int32 iLangID, string strNameSpace, int32 iKPP, bool bUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl2(System.String,System.Int32,System.Boolean,System.String,System.Int32,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Boolean" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="bUseSecureAuth" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターが使用されます。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素の初期登録時に指定されたコブランディング テンプレート スクリプト ページの URL に追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">要求されたドメイン権限ページの表示に使用する言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="bUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報を含めて返します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthUrl2">
+      <MemberSignature Language="C#" Value="public string AuthUrl2 (string strReturnUrl, int iTimeWindow, int iForceLogin, string strCoBrandedArgs, int iLangID, string strNameSpace, int iKPP, int iUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string AuthUrl2(string strReturnUrl, int32 iTimeWindow, int32 iForceLogin, string strCoBrandedArgs, int32 iLangID, string strNameSpace, int32 iKPP, int32 iUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.AuthUrl2(System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="iForceLogin" Type="System.Int32" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">ログオン完了後に Login サーバーがリダイレクトする場所を示す URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターが使用されます。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素の初期登録時に指定されたコブランディング テンプレート スクリプト ページの URL に追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">要求されたドメイン権限ページの表示に使用する言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>メンバーの Login サーバーの URL を含む文字列に、クエリ文字列内の Login サーバーに送られたオプションの情報を含めて取得します。 このクラスは使用されていません。</summary>
+        <returns>メンバーの Login サーバーの URL、およびクエリ文字列内の Login サーバーに送られたオプションの情報。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Compress">
+      <MemberSignature Language="C#" Value="public static string Compress (string strData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Compress(string strData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Compress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strData">圧縮されるデータ。</param>
+        <summary>データを圧縮します。 このクラスは使用されていません。</summary>
+        <returns>圧縮されたデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptIsValid">
+      <MemberSignature Language="C#" Value="public static bool CryptIsValid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CryptIsValid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.CryptIsValid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Passport マネージャーが暗号化に有効な状態かどうかを示すフラグの状態を取得します。 このクラスは使用されていません。</summary>
+        <returns>
+          暗号化と複合化に使用されるキーが有効で、Passport マネージャーが暗号化を有効とする状態である場合は <see langword="true" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptPutHost">
+      <MemberSignature Language="C#" Value="public static int CryptPutHost (string strHost);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 CryptPutHost(string strHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.CryptPutHost(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strHost" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strHost">ホスト名または IP アドレス。</param>
+        <summary>Passport の暗号化と複合化に使用されるキーを設定します。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CryptPutSite">
+      <MemberSignature Language="C#" Value="public static int CryptPutSite (string strSite);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 CryptPutSite(string strSite) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.CryptPutSite(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strSite" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strSite">サイトのラベル。</param>
+        <summary>キーが最初にインストールされたときにキーに割り当てられたサイト名のラベルを参照して、Passport の暗号化と複合化に使用されるキーを設定します。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decompress">
+      <MemberSignature Language="C#" Value="public static string Decompress (string strData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Decompress(string strData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Decompress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strData">圧縮解除されるデータ。</param>
+        <summary><see cref="M:System.Web.Security.PassportIdentity.Compress(System.String)" /> メソッドで圧縮されたデータを圧縮解除します。 このクラスは使用されていません。</summary>
+        <returns>圧縮解除されたデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public static string Decrypt (string strData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Decrypt(string strData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Decrypt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strData">復号化するデータ。</param>
+        <summary>現在のサイトの Passport 参加要素キーを使用してデータを複号化します。 このクラスは使用されていません。</summary>
+        <returns>現在のサイトの Passport 参加要素キーを使用して複合化されたデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public static string Encrypt (string strData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Encrypt(string strData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Encrypt(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strData" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strData">暗号化するデータ。</param>
+        <summary>現在のサイトの Passport 参加要素キーを使用してデータを暗号化します。 このクラスは使用されていません。</summary>
+        <returns>現在のサイトの Passport 参加要素キーを使用して暗号化されたデータ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public int Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Error" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.Error" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の Passport チケットに関連付けられたエラー状態を示す値を取得します。 このクラスは使用されていません。</summary>
+        <value>現在のエラー状態を示す 32 ビット符号付き整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~PassportIdentity ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Passport ID がガベージ コレクションにより収集される前に、リソースを解放し、その他のクリーンアップ操作を実行できるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentConfig">
+      <MemberSignature Language="C#" Value="public object GetCurrentConfig (string strAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetCurrentConfig(string strAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetCurrentConfig(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strAttribute" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strAttribute">レジストリ キーの名前。</param>
+        <summary>HKLM\SW\Microsoft\Passport ハイブ下にあるレジストリ キーの内容を取得します。 このクラスは使用されていません。</summary>
+        <returns>レジストリ キーの内容。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDomainAttribute">
+      <MemberSignature Language="C#" Value="public string GetDomainAttribute (string strAttribute, int iLCID, string strDomain);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetDomainAttribute(string strAttribute, int32 iLCID, string strDomain) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetDomainAttribute(System.String,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strAttribute" Type="System.String" />
+        <Parameter Name="iLCID" Type="System.Int32" />
+        <Parameter Name="strDomain" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strAttribute">取得する属性値の名前。</param>
+        <param name="iLCID">各種 Passport ネットワーク ページをメンバーに表示するときに使用する言語。</param>
+        <param name="strDomain">属性を照会するドメイン権限名。</param>
+        <summary>要求されたドメイン属性を Passport マネージャーに照会して、Passport ドメインの情報を提供します。 このクラスは使用されていません。</summary>
+        <returns>要求された属性を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDomainFromMemberName">
+      <MemberSignature Language="C#" Value="public string GetDomainFromMemberName (string strMemberName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetDomainFromMemberName(string strMemberName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetDomainFromMemberName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strMemberName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strMemberName">Passport メンバーの名前。</param>
+        <summary>メンバー名文字列から Passport ドメインを返します。 このクラスは使用されていません。</summary>
+        <returns>指定されたメンバーの Passport ドメイン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.GetDomainFromMemberName#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.GetDomainFromMemberName/CS/passportidentity_getdomainfrommembername.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.GetDomainFromMemberName#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.GetDomainFromMemberName/VB/passportidentity_getdomainfrommembername.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFromNetworkServer">
+      <MemberSignature Language="C#" Value="public bool GetFromNetworkServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GetFromNetworkServer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.GetFromNetworkServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Passport のサーバー接続とクエリ文字列に関する情報を取得します。 このクラスは使用されていません。</summary>
+        <value>
+          接続が Passport サーバーから戻り (ログオン、更新、または登録)、クエリ文字列に格納されている Passport データが有効である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetIsAuthenticated">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>ユーザーが Passport 権限で認証されているかどうかを示します。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetIsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool GetIsAuthenticated (int iTimeWindow, bool bForceLogin, bool bCheckSecure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIsAuthenticated(int32 iTimeWindow, bool bForceLogin, bool bCheckSecure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetIsAuthenticated(System.Int32,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="bForceLogin" Type="System.Boolean" />
+        <Parameter Name="bCheckSecure" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="iTimeWindow">メンバーが呼び出し元のドメインに最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="bForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。</param>
+        <param name="bCheckSecure">暗号化されたログオンかどうかを確認できます。 現在のバージョンの Login サーバーでは、SSL サインインはオプションとして利用できないため、渡した値はサーバーでは無視されます。</param>
+        <summary>ユーザーが Passport 認証を行う中央サイトで認証されているかどうかを示します。 このクラスは使用されていません。</summary>
+        <returns>
+          ユーザーが Passport 権限で認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool GetIsAuthenticated (int iTimeWindow, int iForceLogin, int iCheckSecure);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetIsAuthenticated(int32 iTimeWindow, int32 iForceLogin, int32 iCheckSecure) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetIsAuthenticated(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="iForceLogin" Type="System.Int32" />
+        <Parameter Name="iCheckSecure" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="iTimeWindow">メンバーが呼び出し元のドメインに最後にログオンした間隔を指定します。 -1 は、Passport で既定値を使用することを示します。0 は <see langword="false" /> を表します。1 は <see langword="true" /> を表します。</param>
+        <param name="iForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。 -1 は、Passport で既定値を使用することを示します。0 は <see langword="false" /> を表します。1 は <see langword="true" /> を表します。</param>
+        <param name="iCheckSecure">暗号化されたログオンかどうかを確認できます。 -1 は、Passport で既定値を使用することを示します。0 は <see langword="false" /> を表します。1 は <see langword="true" /> を表します。  
+  
+ 値は 10 または 100 Passport version 2.1 の Login サーバーの指定<c>安全レベル</c>10 や 100、Passport マネージャーの<c>IsAuthenticated</c>メソッドです。 詳細については､Passport Version 2.1 SDK のドキュメントを参照してください。  
+  
+ Passport Version 1.4 Login サーバーでは、SSL サインインはオプションとして利用できません。 値<c>iCheckSecure</c>サーバーでは無視されます。</param>
+        <summary>ユーザーが Passport 権限で認証されているかどうかを示します。 このクラスは使用されていません。</summary>
+        <returns>
+          ユーザーが Passport 認証を行う中央サイトで認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[PassportIdentityExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#1)]
+ [!code-aspx-vb[PassportIdentityExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#1)]  
+[!code-aspx-csharp[PassportIdentityExample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#2)]
+[!code-aspx-vb[PassportIdentityExample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#2)]  
+[!code-csharp[PassportIdentityExample#4](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#4)]
+[!code-vb[PassportIdentityExample#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoginChallenge">
+      <MemberSignature Language="C#" Value="public string GetLoginChallenge ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLoginChallenge() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetLoginChallenge" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>Passport ログイン チャレンジを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoginChallenge">
+      <MemberSignature Language="C#" Value="public string GetLoginChallenge (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLoginChallenge(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetLoginChallenge(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>302 リダイレクト URL、または Passport を認識するクライアント認証交換の実行に適切なヘッダーを出力して、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>Passport ログイン チャレンジを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLoginChallenge">
+      <MemberSignature Language="C#" Value="public string GetLoginChallenge (string szRetURL, int iTimeWindow, int fForceLogin, string szCOBrandArgs, int iLangID, string strNameSpace, int iKPP, int iUseSecureAuth, object oExtraParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetLoginChallenge(string szRetURL, int32 iTimeWindow, int32 fForceLogin, string szCOBrandArgs, int32 iLangID, string strNameSpace, int32 iKPP, int32 iUseSecureAuth, object oExtraParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetLoginChallenge(System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szRetURL" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Int32" />
+        <Parameter Name="szCOBrandArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+        <Parameter Name="oExtraParams" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="szRetURL">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="szCOBrandArgs">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iUseSecureAuth">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="oExtraParams">IPassportManager3.GetLoginChallenge については、Passport のドキュメントを参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>Passport ログイン チャレンジを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOption">
+      <MemberSignature Language="C#" Value="public object GetOption (string strOpt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetOption(string strOpt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetOption(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strOpt" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strOpt">問い合わせるログオン オプション。</param>
+        <summary>特定の Passport のログオン オプションを取得します。 このクラスは使用されていません。</summary>
+        <returns>Passport のログオン オプション <paramref name="strOpt" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProfileObject">
+      <MemberSignature Language="C#" Value="public object GetProfileObject (string strProfileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetProfileObject(string strProfileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.GetProfileObject(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strProfileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strProfileName">返される Passport プロファイル属性。</param>
+        <summary>指定したプロファイル属性に関する Passport プロファイル情報を返します。 このクラスは使用されていません。</summary>
+        <returns><paramref name="strProfileName" /> パラメーターで指定した Passport プロファイルの属性値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFlag">
+      <MemberSignature Language="C#" Value="public bool HasFlag (int iFlagMask);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasFlag(int32 iFlagMask) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.HasFlag(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iFlagMask" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="iFlagMask">問い合わせる Passport プロファイル フラグ。</param>
+        <summary>特定のフラグがユーザーのプロファイルに設定されているかどうかを示します。 このクラスは使用されていません。</summary>
+        <returns>
+          このユーザーのプロパティに Passport プロファイル フラグ <paramref name="iFlagMask" /> が設定されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProfile">
+      <MemberSignature Language="C#" Value="public bool HasProfile (string strProfile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasProfile(string strProfile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.HasProfile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strProfile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strProfile">問い合わせる Passport プロファイル属性。</param>
+        <summary>ユーザーのプロファイルに特定のプロファイル属性が存在するかどうかを示します。 このクラスは使用されていません。</summary>
+        <returns>
+          ユーザーのプロファイルにプロファイル属性 <paramref name="strProfile" /> が存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[PassportIdentityExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#1)]
+ [!code-aspx-vb[PassportIdentityExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#1)]  
+[!code-aspx-csharp[PassportIdentityExample#2](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#2)]
+[!code-aspx-vb[PassportIdentityExample#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#2)]  
+[!code-csharp[PassportIdentityExample#5](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#5)]
+[!code-vb[PassportIdentityExample#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasSavedPassword">
+      <MemberSignature Language="C#" Value="public bool HasSavedPassword { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasSavedPassword" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.HasSavedPassword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Passport メンバーのパスワードが保存されたかどうかに関する情報を取得します。 このクラスは使用されていません。</summary>
+        <value>
+          Passport メンバーのチケットによって、最後の更新のときに Passport のログオン ページでパスワードが保存されたことを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.HasSavedPassword#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.HasSavedPassword/CS/passportidentity_hassavedpassword.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.HasSavedPassword#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.HasSavedPassword/VB/passportidentity_hassavedpassword.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasTicket">
+      <MemberSignature Language="C#" Value="public bool HasTicket { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.HasTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ文字列に Passport チケットがクッキーとして含まれているかどうかを示す値を取得します。 このクラスは使用されていません。</summary>
+        <value>
+          クエリ文字列に Passport チケットがクッキーとして含まれている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[PassportIdentityExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#1)]
+ [!code-aspx-vb[PassportIdentityExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#1)]  
+[!code-aspx-csharp[PassportIdentityExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#3)]
+[!code-aspx-vb[PassportIdentityExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HaveConsent">
+      <MemberSignature Language="C#" Value="public bool HaveConsent (bool bNeedFullConsent, bool bNeedBirthdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HaveConsent(bool bNeedFullConsent, bool bNeedBirthdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.HaveConsent(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bNeedFullConsent" Type="System.Boolean" />
+        <Parameter Name="bNeedBirthdate" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bNeedFullConsent">
+          Passport 認証に完全な承認が必要なことを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <param name="bNeedBirthdate">
+          Passport 認証にユーザーの誕生日が必要なことを示す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>ユーザーのプロファイルに完全な承認が与えられるかどうかを示します。 このクラスは使用されていません。</summary>
+        <returns>
+          ユーザーのプロファイルに完全な承認が与えられる場合は <see langword="true" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HexPUID">
+      <MemberSignature Language="C#" Value="public string HexPUID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HexPUID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.HexPUID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在認証されているユーザーの、16 進形式で表された Passport 一意識別子 (PUID: Passport Unique Identifier) を取得します。 このクラスは使用されていません。</summary>
+        <value>現在認証されているユーザーの、16 進形式の PUID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuthenticated">
+      <MemberSignature Language="C#" Value="public bool IsAuthenticated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuthenticated" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.IsAuthenticated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが Passport 権限で認証されているかどうかを示す値を取得します。 このクラスは使用されていません。</summary>
+        <value>
+          ユーザーが Passport 認証を行う中央サイトで認証されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.IsAuthenticated#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.IsAuthenticated/CS/passportidentity_isauthenticated.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.IsAuthenticated#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.IsAuthenticated/VB/passportidentity_isauthenticated.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string strProfileName] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strProfileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strProfileName">返される Passport プロファイル属性。</param>
+        <summary>Passport プロファイルの属性を取得します。 このクラスは使用されていません。</summary>
+        <value>Passport プロファイルの属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LoginUser">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LoginUser">
+      <MemberSignature Language="C#" Value="public int LoginUser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 LoginUser() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LoginUser" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginUser">
+      <MemberSignature Language="C#" Value="public int LoginUser (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 LoginUser(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LoginUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">サインインの完了後に Login サーバーがユーザーをリダイレクトする場所の URL。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginUser">
+      <MemberSignature Language="C#" Value="public int LoginUser (string szRetURL, int iTimeWindow, bool fForceLogin, string szCOBrandArgs, int iLangID, string strNameSpace, int iKPP, bool fUseSecureAuth, object oExtraParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 LoginUser(string szRetURL, int32 iTimeWindow, bool fForceLogin, string szCOBrandArgs, int32 iLangID, string strNameSpace, int32 iKPP, bool fUseSecureAuth, object oExtraParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LoginUser(System.String,System.Int32,System.Boolean,System.String,System.Int32,System.String,System.Int32,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szRetURL" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Boolean" />
+        <Parameter Name="szCOBrandArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="fUseSecureAuth" Type="System.Boolean" />
+        <Parameter Name="oExtraParams" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="szRetURL">サインインの完了後に Login サーバーがユーザーをリダイレクトする場所の URL。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">時刻値 (秒単位)。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">
+          <see langword="true" />比較の Login サーバーに、 <c>iTimeWindow</c>パラメーターの最後にサインインするユーザーからの経過時間<see langword="false" />比較の Login サーバーに<c>iTimeWindow</c>に対する前回のチケットが更新されました。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="szCOBrandArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定する文字列。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">ログイン ページを表示するときに使用する言語を指定するロケール識別子 (LCID: locale identifier)。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport を登録せずにユーザーを転送する場所のドメイン名空間。 指定した名前空間は、Partner.xml コンポーネント構成ドキュメント (CCD: Component Configuration Document) の "ドメイン名" エントリとして表示される必要があります。 通常、既定の名前空間は "passport.com" です。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">Passport に既定値を使用する場合、-1 を渡します。 このパラメーターは、Kids Passport サービスを実装する場合にだけ使用されます。ただし、Kids Passport サービスは、現在このメソッドの使用をサポートしていません。</param>
+        <param name="fUseSecureAuth">現在のバージョンの Login サーバーでは、SSL サインインはオプションとして利用できません。 Passport マネージャーのメソッドには、SSL サインイン パラメーターがあります。このパラメーターは構文上必要な場合がありますが、現在はサーバーでは無視されます。 SSL サインインに関する最新の更新情報については、Passport の Web サイトを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="oExtraParams">チャレンジ認証ヘッダーに直接挿入する名前と値の組み合わせ。具体的には、Passport を認識する認証との対話で使用します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[PassportIdentityExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#1)]
+ [!code-aspx-vb[PassportIdentityExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#1)]  
+[!code-aspx-csharp[PassportIdentityExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/PassportIdentityExample/CS/passportidentitycs.aspx#3)]
+[!code-aspx-vb[PassportIdentityExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/PassportIdentityExample/VB/passportidentityvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoginUser">
+      <MemberSignature Language="C#" Value="public int LoginUser (string szRetURL, int iTimeWindow, int fForceLogin, string szCOBrandArgs, int iLangID, string strNameSpace, int iKPP, int iUseSecureAuth, object oExtraParams);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 LoginUser(string szRetURL, int32 iTimeWindow, int32 fForceLogin, string szCOBrandArgs, int32 iLangID, string strNameSpace, int32 iKPP, int32 iUseSecureAuth, object oExtraParams) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LoginUser(System.String,System.Int32,System.Int32,System.String,System.Int32,System.String,System.Int32,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szRetURL" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Int32" />
+        <Parameter Name="szCOBrandArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+        <Parameter Name="oExtraParams" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="szRetURL">サインインの完了後に Login サーバーがユーザーをリダイレクトする場所の URL。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">時刻値 (秒単位)。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">Login サーバーが比較する必要があるかどうかを示す、 <c>iTimeWindow</c>ユーザー最後署名された後で、または前回のチケット時間に対してパラメーターが更新されました。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="szCOBrandArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定する文字列。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">ログイン ページを表示するときに使用する言語を指定するロケール識別子 (LCID: locale identifier)。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport を登録せずにユーザーを転送する場所のドメイン名空間。 指定した名前空間は、Partner.xml コンポーネント構成ドキュメント (CCD: Component Configuration Document) の "ドメイン名" エントリとして表示される必要があります。 通常、既定の名前空間は "passport.com" です。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">Passport に既定値を使用する場合、-1 を渡します。 このパラメーターは、Kids Passport サービスを実装する場合にだけ使用されます。ただし、Kids Passport サービスは、現在このメソッドの使用をサポートしていません。</param>
+        <param name="iUseSecureAuth">現在のバージョンの Login サーバーでは、SSL サインインはオプションとして利用できません。 Passport マネージャーのメソッドには、SSL サインイン パラメーターがあります。このパラメーターは構文上必要な場合がありますが、現在はサーバーでは無視されます。 SSL サインインに関する最新の更新情報については、Passport の Web サイトを参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="oExtraParams">チャレンジ認証ヘッダーに直接挿入する名前と値の組み合わせ。具体的には、Passport を認識する認証との対話で使用します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>302 リダイレクト URL の生成、または Passport を認識するクライアント認証交換の実行によって、ユーザーをログオンします。 このクラスは使用されていません。</summary>
+        <returns>整数の結果コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LogoTag">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LogoTag">
+      <MemberSignature Language="C#" Value="public string LogoTag ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Passport リンクでイメージ タグを含んでいる HTML フラグメントを返します。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.LogoTag#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.LogoTag/CS/passportidentity_logotag.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.LogoTag#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.LogoTag/VB/passportidentity_logotag.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag">
+      <MemberSignature Language="C#" Value="public string LogoTag (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag">
+      <MemberSignature Language="C#" Value="public string LogoTag (string strReturnUrl, int iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int iLangID, bool fSecure, string strNameSpace, int iKPP, bool bUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag(string strReturnUrl, int32 iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int32 iLangID, bool fSecure, string strNameSpace, int32 iKPP, bool bUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag(System.String,System.Int32,System.Boolean,System.String,System.Int32,System.Boolean,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Boolean" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="fSecure" Type="System.Boolean" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="bUseSecureAuth" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">メンバーに表示されるログオン ページに使用される言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fSecure">このメソッドが HTTPS (SSL) ページから呼び出されているかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="bUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag">
+      <MemberSignature Language="C#" Value="public string LogoTag (string strReturnUrl, int iTimeWindow, int iForceLogin, string strCoBrandedArgs, int iLangID, int iSecure, string strNameSpace, int iKPP, int iUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag(string strReturnUrl, int32 iTimeWindow, int32 iForceLogin, string strCoBrandedArgs, int32 iLangID, int32 iSecure, string strNameSpace, int32 iKPP, int32 iUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="iForceLogin" Type="System.Int32" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="iSecure" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">メンバーに表示されるログオン ページに使用される言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iSecure">このメソッドが HTTPS (SSL) ページから呼び出されているかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LogoTag2">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LogoTag2">
+      <MemberSignature Language="C#" Value="public string LogoTag2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag2() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag2" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Passport リンクでイメージ タグを含んでいる HTML フラグメントを返します。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.LogoTag2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.LogoTag2/CS/passportidentity_logotag2.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.LogoTag2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.LogoTag2/VB/passportidentity_logotag2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag2">
+      <MemberSignature Language="C#" Value="public string LogoTag2 (string strReturnUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag2(string strReturnUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag2(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag2">
+      <MemberSignature Language="C#" Value="public string LogoTag2 (string strReturnUrl, int iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int iLangID, bool fSecure, string strNameSpace, int iKPP, bool bUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag2(string strReturnUrl, int32 iTimeWindow, bool fForceLogin, string strCoBrandedArgs, int32 iLangID, bool fSecure, string strNameSpace, int32 iKPP, bool bUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag2(System.String,System.Int32,System.Boolean,System.String,System.Int32,System.Boolean,System.String,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="fForceLogin" Type="System.Boolean" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="fSecure" Type="System.Boolean" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="bUseSecureAuth" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">メンバーに表示されるログオン ページに使用される言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="fSecure">このメソッドが HTTPS (SSL) ページから呼び出されているかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="bUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoTag2">
+      <MemberSignature Language="C#" Value="public string LogoTag2 (string strReturnUrl, int iTimeWindow, int iForceLogin, string strCoBrandedArgs, int iLangID, int iSecure, string strNameSpace, int iKPP, int iUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoTag2(string strReturnUrl, int32 iTimeWindow, int32 iForceLogin, string strCoBrandedArgs, int32 iLangID, int32 iSecure, string strNameSpace, int32 iKPP, int32 iUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoTag2(System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strReturnUrl" Type="System.String" />
+        <Parameter Name="iTimeWindow" Type="System.Int32" />
+        <Parameter Name="iForceLogin" Type="System.Int32" />
+        <Parameter Name="strCoBrandedArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="iSecure" Type="System.Int32" />
+        <Parameter Name="strNameSpace" Type="System.String" />
+        <Parameter Name="iKPP" Type="System.Int32" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="strReturnUrl">メンバーがログオンした後に、Login サーバーがメンバーをリダイレクトする場所の URL を設定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iTimeWindow">メンバーが最後にログオンした間隔を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iForceLogin">決定する方法、 <c>iTimeWindow</c>パラメーターを使用します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strCoBrandedArgs">参加要素のコブランディング テンプレート スクリプト ページの URL に、クエリ文字列変数として追加される変数を指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">メンバーに表示されるログオン ページに使用される言語を指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iSecure">このメソッドが HTTPS (SSL) ページから呼び出されているかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strNameSpace">Passport の作成先のドメインを指定します。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iKPP">児童オンライン プライバシー保護法 (COPPA: Children's Online Privacy Protection Act) に準拠する、データ コレクション ポリシーを指定します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="iUseSecureAuth">実際のログオン UI が、Passport ドメイン権限から HTTPS を提供するかどうかを宣言します。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>HTML を含んでいる HTML フラグメントを返します&lt;img&gt; Passport リンクでタグ。 このクラスは使用されていません。</summary>
+        <returns>Passport リンクでイメージ タグを含んでいる HTML フラグメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="LogoutURL">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>Passport のログアウト用 URL 文字列を返します。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="LogoutURL">
+      <MemberSignature Language="C#" Value="public string LogoutURL ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoutURL() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoutURL" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Passport のログアウト用 URL 文字列を返します。 このクラスは使用されていません。</summary>
+        <returns>Passport のログアウト用 URL 文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogoutURL">
+      <MemberSignature Language="C#" Value="public string LogoutURL (string szReturnURL, string szCOBrandArgs, int iLangID, string strDomain, int iUseSecureAuth);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string LogoutURL(string szReturnURL, string szCOBrandArgs, int32 iLangID, string strDomain, int32 iUseSecureAuth) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.LogoutURL(System.String,System.String,System.Int32,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="szReturnURL" Type="System.String" />
+        <Parameter Name="szCOBrandArgs" Type="System.String" />
+        <Parameter Name="iLangID" Type="System.Int32" />
+        <Parameter Name="strDomain" Type="System.String" />
+        <Parameter Name="iUseSecureAuth" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="szReturnURL">詳細については、IPassportManager3.LogoutUrl を参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="szCOBrandArgs">詳細については、IPassportManager3.LogoutUrl を参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iLangID">詳細については、IPassportManager3.LogoutUrl を参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <param name="strDomain">詳細については、IPassportManager3.LogoutUrl を参照してください。 Passport に既定値を使用する場合、<see langword="null" /> を渡します。</param>
+        <param name="iUseSecureAuth">詳細については、IPassportManager3.LogoutUrl を参照してください。 Passport に既定値を使用する場合、-1 を渡します。</param>
+        <summary>指定されたパラメーターを使用して、Passport のログアウト用 URL 文字列を返します。 このクラスは使用されていません。</summary>
+        <returns>Passport のログアウト用 URL 文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のユーザーの名前を取得します。 このクラスは使用されていません。</summary>
+        <value>Passport 一意識別子 (PUID: Passport Unique Identifier) を表す、現在のユーザーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.Name#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.Name/CS/passportidentity_name.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.Name#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.Name/VB/passportidentity_name.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOption">
+      <MemberSignature Language="C#" Value="public void SetOption (string strOpt, object vOpt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOption(string strOpt, object vOpt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.SetOption(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strOpt" Type="System.String" />
+        <Parameter Name="vOpt" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="strOpt">設定する値。</param>
+        <param name="vOpt">設定する値。</param>
+        <summary>特定の Passport のログオン オプションを設定します。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public static void SignOut (string strSignOutDotGifFileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SignOut(string strSignOutDotGifFileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.SignOut(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strSignOutDotGifFileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strSignOutDotGifFileName">サインアウトするときクリックするイメージを含む HTML フラグメント。</param>
+        <summary>指定した Passport メンバーを現在のセッションからログオフします。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.SignOut#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.SignOut/CS/passportidentity_signout.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.SignOut#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.SignOut/VB/passportidentity_signout.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.PassportIdentity" /> クラスによって使用されているすべてのリソースを解放します。 このクラスは使用されていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ticket">
+      <MemberSignature Language="C#" Value="public object Ticket (string strAttribute);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Ticket(string strAttribute) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.PassportIdentity.Ticket(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="strAttribute" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="strAttribute">返す Passport 認証チケットを識別する文字列。</param>
+        <summary>Passport 認証チケットの、特定の属性に関する情報を取得します。 このクラスは使用されていません。</summary>
+        <returns>Passport 認証チケットの属性を表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TicketAge">
+      <MemberSignature Language="C#" Value="public int TicketAge { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TicketAge" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.TicketAge" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チケットが最後に発行または更新されてからの経過した時間を秒単位で取得します。 このクラスは使用されていません。</summary>
+        <value>チケットに最後に発行または更新されてから経過した時間 (秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.TicketAge#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.TicketAge/CS/passportidentity_ticketage.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.TicketAge#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.TicketAge/VB/passportidentity_ticketage.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSinceSignIn">
+      <MemberSignature Language="C#" Value="public int TimeSinceSignIn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TimeSinceSignIn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.PassportIdentity.TimeSinceSignIn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メンバーが Passport ログオン サーバーにログオンしてから経過した時間 (秒単位) を取得します。 このクラスは使用されていません。</summary>
+        <value>メンバーが Passport ログオン サーバーにログオンしてから経過した時間 (秒単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは廃止されており、現在サポートされていません。 Microsoft Passport Network 置き換えられました。 Windows Live ID Windows Live ID を使用して、Web アプリケーションでユーザーを認証する方法の詳細については、次を参照してください。 [Windows Live ID SDK](http://go.microsoft.com/fwlink/?LinkId=106346)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Web.Security.PassportIdentity.TimeSinceSignIn#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.TimeSinceSignIn/CS/passportidentity_timesincesignin.cs#1)]
+ [!code-vb[System.Web.Security.PassportIdentity.TimeSinceSignIn#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.PassportIdentity.TimeSinceSignIn/VB/passportidentity_timesincesignin.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,116 @@
+<Type Name="XmlUrlEditor" FullName="System.Web.UI.Design.XmlUrlEditor">
+  <TypeSignature Language="C#" Value="public class XmlUrlEditor : System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlUrlEditor extends System.Web.UI.Design.UrlEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.XmlUrlEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.UrlEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML ファイルの場所を示す URL を選択するためには、ユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.XmlUrlEditor><xref:System.Drawing.Design.UITypeEditor>の XML ファイルの場所を示す URL を選択するダイアログ ボックスを提供します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[WebUITypeEditorsExample#3](~/samples/snippets/cpp/VS_Snippets_WebNet/WebUITypeEditorsExample/CPP/webcustomcontrol1.cpp#3)]
+ [!code-csharp[WebUITypeEditorsExample#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebUITypeEditorsExample/CS/webcustomcontrol1.cs#3)]
+ [!code-vb[WebUITypeEditorsExample#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebUITypeEditorsExample/VB/webcustomcontrol1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlUrlEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.XmlUrlEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Web.UI.Design.XmlUrlEditor" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Caption">
+      <MemberSignature Language="C#" Value="protected override string Caption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Caption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.XmlUrlEditor.Caption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択ダイアログ ウィンドウに表示するキャプションを取得します。</summary>
+        <value>選択ダイアログ ウィンドウに表示するキャプションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="protected override string Filter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.XmlUrlEditor.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディターのファイル名のフィルター文字列を取得します。 これについては、ファイル ダイアログ ボックスの一覧に表示される項目を決定に使用します。</summary>
+        <value>ファイルのフィルター処理 ダイアログ ボックスで使用可能なオプションに関する情報を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.XmlUrlEditor.Filter%2A>プロパティは、次の 2 つのフィルター オプションで、フィルター文字列を指定します。 XML ファイル (*.xml) を、すべてのファイルの 1 つ (\*。\*)。  
+  
+ フィルター文字列には、1 つまたは複数のフィルター オプションが含まれています。 各フィルター オプションには、垂直バー (&#124;) を続けて、フィルターの説明が含まれています。 およびフィルター パターン。 異なるフィルター オプションの文字列は、縦棒で区切られます。  
+  
+ 2 つのフィルター オプションを含むフィルター文字列の例を次に示します:"`XML Files (*.xml)|*.xml|All Files (*.*)|*.*`"です。  
+  
+ フィルタ パターンをセミコロンで区切りますフィルター オプションで複数のフィルター パターンを指定できます。 最初のフィルター オプションが 2 つのフィルター パターンが指定されたフィルター文字列の例を次に示します:"`Custom XML Files (*.xml;*.xlst)|*.xml;*.xlst|All Files (*.*)|*.*`"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.Design.UrlBuilderOptions Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.Design.UrlBuilderOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.XmlUrlEditor.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.UrlBuilderOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用する URL ビルダーのオプションを取得します。</summary>
+        <value>A <see cref="T:System.Web.UI.Design.UrlBuilderOptions" /> URL ビルダーを使用するためのオプションを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

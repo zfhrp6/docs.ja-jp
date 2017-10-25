@@ -1,0 +1,98 @@
+<Type Name="BindingMode" FullName="System.Windows.Data.BindingMode">
+  <TypeSignature Language="C#" Value="public enum BindingMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BindingMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.BindingMode" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>バインディングのデータ フローの方向を記述します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.BindingMode Default = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.BindingMode.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング ターゲットの既定の <see cref="P:System.Windows.Data.Binding.Mode" /> 値を使用します。 既定値は、各依存関係プロパティによって異なります。 一般に、ユーザーが編集できる、テキスト ボックスやチェック ボックスなどのコントロール プロパティは既定で双方向のバインディングであり、それ以外のほとんどのプロパティは既定で一方向のバインドになります。 依存関係プロパティが既定で一方向と双方向のどちらでバインドされるかをプログラムで判断する 1 つの方法として、<see cref="M:System.Windows.DependencyProperty.GetMetadata(System.Type)" /> を使用してそのプロパティのプロパティ メタデータを取得してから、<see cref="P:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault" /> プロパティのブール値を確認することがきます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OneTime">
+      <MemberSignature Language="C#" Value="OneTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.BindingMode OneTime = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.BindingMode.OneTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの起動時またはデータ コンテキストの変更時にバインディング ターゲットを更新します。 この型のバインディングは、現在の状態のスナップショットが用途に合っている場合や、データが完全に静的である場合に適しています。 また、ソース プロパティの値を使用してターゲット プロパティを初期化するときにデータ コンテキストが事前にわからない場合にも、この型のバインディングは便利です。 基本的に、この型のバインディングは、ソース値が変わらない場合にパフォーマンスを向上させる <see cref="F:System.Windows.Data.BindingMode.OneWay" /> バインディングを簡易化したものです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWay">
+      <MemberSignature Language="C#" Value="OneWay" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.BindingMode OneWay = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.BindingMode.OneWay" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディング ソース (ソース) の変更時にバインディング ターゲット (ターゲット) プロパティが更新されます。 この型のバインディングは、バインドされているコントロールが暗黙的な読み取り専用の場合に適しています。 たとえば、株価情報などのソースにバインドする場合です。 また、ターゲット プロパティには、データ バインドされたテーブルの背景色などのように、変更用コントロール インターフェイスがない可能性もあります。 ターゲット プロパティの変更を監視する必要がない場合は、<see cref="F:System.Windows.Data.BindingMode.OneWay" /> バインディング モードを使うことにより、<see cref="F:System.Windows.Data.BindingMode.TwoWay" /> バインディング モードのオーバーヘッドを回避できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWayToSource">
+      <MemberSignature Language="C#" Value="OneWayToSource" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.BindingMode OneWayToSource = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.BindingMode.OneWayToSource" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット プロパティが変更されると、ソース プロパティを更新します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoWay">
+      <MemberSignature Language="C#" Value="TwoWay" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Data.BindingMode TwoWay = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Data.BindingMode.TwoWay" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.BindingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース プロパティまたはターゲット プロパティのいずれかが変更され、もう一方も自動的に更新されます。 この型のバインディングは、編集可能なフォームや完全対話型の [!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)] シナリオに適しています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,73 @@
+<Type Name="ParameterTypeSemantics" FullName="System.Data.Metadata.Edm.ParameterTypeSemantics">
+  <TypeSignature Language="C#" Value="public enum ParameterTypeSemantics" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ParameterTypeSemantics extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.ParameterTypeSemantics" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>関数のオーバーロードを解決する際に使用される型のセマンティクスを指定します。 各ストア プロバイダーのプロバイダー マニフェスト ファイルでは、すべての関数定義について、これらの列挙フラグが使用されている必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.ParameterTypeSemantics>クラスは昇格可能性、暗黙的な変換、およびプロバイダーのプリミティブ型の明示的な変換の型のセマンティクスを指定します。 [!INCLUDE[vstecado](~/includes/vstecado-md.md)]記憶域プロバイダーのマニフェスト ファイルからこの情報を読み取り、<xref:System.Data.Metadata.Edm.ParameterTypeSemantics>クラスです。 その後、この [!INCLUDE[vstecado](~/includes/vstecado-md.md)] クラスは、<xref:System.Data.Metadata.Edm.ParameterTypeSemantics> がパラメーターの型に基づいて、適切な関数定義を判断するために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowImplicitConversion">
+      <MemberSignature Language="C#" Value="AllowImplicitConversion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Metadata.Edm.ParameterTypeSemantics AllowImplicitConversion = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Metadata.Edm.ParameterTypeSemantics.AllowImplicitConversion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ParameterTypeSemantics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された引数の型と仮引数の型との間の暗黙的な変換を示すフラグです。 これが既定の変換の種類です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowImplicitPromotion">
+      <MemberSignature Language="C#" Value="AllowImplicitPromotion" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Metadata.Edm.ParameterTypeSemantics AllowImplicitPromotion = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Metadata.Edm.ParameterTypeSemantics.AllowImplicitPromotion" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ParameterTypeSemantics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定された引数の型と仮引数の型との間に生じる型の昇格を示すフラグです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExactMatchOnly">
+      <MemberSignature Language="C#" Value="ExactMatchOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Metadata.Edm.ParameterTypeSemantics ExactMatchOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Metadata.Edm.ParameterTypeSemantics.ExactMatchOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.ParameterTypeSemantics</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型が厳密に一致している必要があることを示すフラグです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

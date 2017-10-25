@@ -1,0 +1,167 @@
+<Type Name="ClientSideProviderDescription" FullName="System.Windows.Automation.ClientSideProviderDescription">
+  <TypeSignature Language="C#" Value="public struct ClientSideProviderDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit ClientSideProviderDescription extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ClientSideProviderDescription" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クライアント側 UI オートメーション プロバイダーのスコープを表し、このプロバイダーを UI オートメーション クライアント アプリケーションに登録できるようにします。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientSideProviderDescription (System.Windows.Automation.ClientSideProviderFactoryCallback clientSideProviderFactoryCallback, string className);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Automation.ClientSideProviderFactoryCallback clientSideProviderFactoryCallback, string className) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ClientSideProviderDescription.#ctor(System.Windows.Automation.ClientSideProviderFactoryCallback,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clientSideProviderFactoryCallback" Type="System.Windows.Automation.ClientSideProviderFactoryCallback" />
+        <Parameter Name="className" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientSideProviderFactoryCallback">ウィンドウのクライアント側プロバイダーを作成するメソッド。</param>
+        <param name="className">プロバイダーに使用される windows のクラス名。</param>
+        <summary><see cref="T:System.Windows.Automation.ClientSideProviderDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI オートメーションがウィンドウのクラスを検出すると`className`、呼び出して`clientSideProviderFactoryCallback`クライアント側プロバイダーのインスタンスを作成します。  
+  
+ 場合`className`は`null`、対象のもう一方のプロバイダが見つからないすべての windows 用プロバイダーを使用します。  
+  
+   
+  
+## Examples  
+ コード例を参照してください[クライアント側 UI オートメーション プロバイダーを作成する](~/docs/framework/ui-automation/create-a-client-side-ui-automation-provider.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientSideProviderDescription (System.Windows.Automation.ClientSideProviderFactoryCallback clientSideProviderFactoryCallback, string className, string imageName, System.Windows.Automation.ClientSideProviderMatchIndicator flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Automation.ClientSideProviderFactoryCallback clientSideProviderFactoryCallback, string className, string imageName, valuetype System.Windows.Automation.ClientSideProviderMatchIndicator flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.ClientSideProviderDescription.#ctor(System.Windows.Automation.ClientSideProviderFactoryCallback,System.String,System.String,System.Windows.Automation.ClientSideProviderMatchIndicator)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clientSideProviderFactoryCallback" Type="System.Windows.Automation.ClientSideProviderFactoryCallback" />
+        <Parameter Name="className" Type="System.String" />
+        <Parameter Name="imageName" Type="System.String" />
+        <Parameter Name="flags" Type="System.Windows.Automation.ClientSideProviderMatchIndicator" />
+      </Parameters>
+      <Docs>
+        <param name="clientSideProviderFactoryCallback">ウィンドウのクライアント側プロバイダーを作成するメソッド。</param>
+        <param name="className">プロバイダーに使用されるウィンドウのクラス名。</param>
+        <param name="imageName">ウィンドウが存在するプロセスの DLL または実行可能ファイルの名前。</param>
+        <param name="flags">ウィンドウ クラス名を照合するときの動作を指定するフラグ。</param>
+        <summary><see cref="T:System.Windows.Automation.ClientSideProviderDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]クラスのウィンドウを検出`className`で指定されたプロセス内で`imageName`、呼び出します`clientSideProviderFactoryCallback`クライアント側プロバイダーのインスタンスを作成します。  
+  
+ 場合`className`は`null`、対象のもう一方のプロバイダが見つからないすべての windows 用プロバイダーを使用します。  
+  
+ 場合`imageName`は`null`、ウィンドウ クラスを含むすべてのプロセス、プロバイダーを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ClientSideProviderDescription.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロバイダーに使用される windows のクラス名を取得します。</summary>
+        <value>ウィンドウ クラスの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Automation.ClientSideProviderDescription.ClassName%2A>は`null`プロバイダーが対象のもう一方のプロバイダが検出されないすべてのウィンドウに対して呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientSideProviderFactoryCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ClientSideProviderFactoryCallback ClientSideProviderFactoryCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.ClientSideProviderFactoryCallback ClientSideProviderFactoryCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ClientSideProviderDescription.ClientSideProviderFactoryCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ClientSideProviderFactoryCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント側プロバイダーを作成するメソッドを取得します。</summary>
+        <value>コールバック メソッド。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ClientSideProviderMatchIndicator Flags { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.ClientSideProviderMatchIndicator Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ClientSideProviderDescription.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ClientSideProviderMatchIndicator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ クラス名を照合するときの動作を指定するフラグを取得します。</summary>
+        <value>値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageName">
+      <MemberSignature Language="C#" Value="public string ImageName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ClientSideProviderDescription.ImageName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行可能ファイルの名前を取得または[!INCLUDE[TLA#tla_dll](~/includes/tlasharptla-dll-md.md)]ウィンドウが存在するプロセスです。</summary>
+        <value>イメージの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,136 @@
+<Type Name="ReturnValueNameAttribute" FullName="System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ReturnValueNameAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ReturnValueNameAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Delegate | System.AttributeTargets.ReturnValue, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows ランタイム コンポーネントでメソッドの戻り値の名前を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネント、メソッド、および戻り値のすべてのパラメーターには、名前が必要です。 既定では、 [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](~/docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) "value"という名前の戻り値を提供します。 内のコンポーネントを使用すると、[!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)]この名前を使用するには、戻り値を取得する、JavaScript で記述されたアプリ。 たとえば、コンポーネントは、戻り値と 2 を持つメソッドを定義`out`パラメーター (`ByRef`を持つパラメーター、 <xref:System.Runtime.InteropServices.OutAttribute> Visual Basic での属性)。  
+  
+```csharp  
+public static int ComputeAverage([ReadOnlyArray()] int[] input,  
+    out int minValue, out int maxValue)  
+{  
+    …  
+}  
+```  
+  
+```vb  
+Public Shared Function ComputeAverage( _  
+        <ReadOnlyArray()> ByVal input As Integer, _  
+        <Out()> ByRef minValue As Integer, _  
+        <Out()> ByRef maxValue As Integer) As Integer  
+    …  
+End Function  
+  
+```  
+  
+ JavaScript から関数を呼び出すときに、既定の名前で戻り値の値にアクセスすることができます (`value`)。  
+  
+```javascript  
+var data = [5, 13, 23, 37];  
+var results = SampleComponent.TestStuff.computeAverage(data);  
+var formattedResults = "Min=" + results.minValue + ", Avg=" +   
+    results.value + ", Max=" + results.maxValue;  
+  
+```  
+  
+ "Value"という名前のパラメーターがある場合は、戻り値別の名前を 必要があります。 または (「平均」この例では) などのわかりやすい名前を使用する場合があるだけです。 適用、<xref:System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute>メソッドに属性を新しい名前を指定します。  
+  
+```csharp  
+[return: ReturnValueName("average")]  
+public static int ComputeAverage([ReadOnlyArray()] int[] input,  
+    out int minValue, out int maxValue)  
+{  
+    …  
+}  
+  
+```  
+  
+```vb  
+Public Shared Function ComputeAverage( _  
+        <ReadOnlyArray()> ByVal input As Integer, _  
+        <Out()> ByRef minValue As Integer, _  
+        <Out()> ByRef maxValue As Integer) _  
+            As <ReturnValueName("average")> Integer  
+    …  
+End Function  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ReturnValueNameAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">戻り値の名前です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute" />クラス、および戻り値の名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices.WindowsRuntime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内のメソッドの戻り値の指定された名前を取得、[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネントです。</summary>
+        <value>メソッドの戻り値の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

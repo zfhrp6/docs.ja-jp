@@ -1,0 +1,522 @@
+<Type Name="Paragraph" FullName="System.Windows.Documents.Paragraph">
+  <TypeSignature Language="C#" Value="public class Paragraph : System.Windows.Documents.Block" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Paragraph extends System.Windows.Documents.Block" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Paragraph" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Block</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Inlines")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツをグループ化して段落にするために使用される、ブロックレベルのフロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Paragraph>子コンテンツの強力なコンテンツ モデルを適用します。 参照してください[TextElement コンテンツ モデルの概要](~/docs/framework/wpf/advanced/textelement-content-model-overview.md)の詳細については、<xref:System.Windows.Documents.Paragraph>コンテンツ モデルです。  
+  
+ プレーン テキストに加え、<xref:System.Windows.Documents.Paragraph>要素には、他のホストできる<xref:System.Windows.Documents.Inline>要素。  有効な子要素は次のとおりです。  
+  
+-   <xref:System.Windows.Documents.Bold>  
+  
+-   <xref:System.Windows.Documents.Figure>  
+  
+-   <xref:System.Windows.Documents.Floater>  
+  
+-   <xref:System.Windows.Documents.Hyperlink>  
+  
+-   <xref:System.Windows.Documents.InlineUIContainer>  
+  
+-   <xref:System.Windows.Documents.Italic>  
+  
+-   <xref:System.Windows.Documents.LineBreak>  
+  
+-   <xref:System.Windows.Documents.Run>  
+  
+-   <xref:System.Windows.Documents.Span>  
+  
+-   <xref:System.Windows.Documents.Underline>  
+  
+ 参照してください[フロー ドキュメントの概要](~/docs/framework/wpf/advanced/flow-document-overview.md)詳細については、このオブジェクトに含めることができ、それに何を含めることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Paragraph ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Paragraph.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Windows.Documents.Paragraph" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Paragraph (System.Windows.Documents.Inline inline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline inline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Paragraph.#ctor(System.Windows.Documents.Inline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="inline" Type="System.Windows.Documents.Inline" />
+      </Parameters>
+      <Docs>
+        <param name="inline"><see cref="T:System.Windows.Documents.Inline" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Paragraph" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Paragraph" />クラス、指定した<see cref="T:System.Windows.Documents.Inline" />初期内容としてオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用方法を示します。  
+  
+ [!code-csharp[SpanSnippets#_Paragraph_Const1](~/samples/snippets/csharp/VS_Snippets_Wpf/SpanSnippets/CSharp/Window1.xaml.cs#_paragraph_const1)]
+ [!code-vb[SpanSnippets#_Paragraph_Const1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/SpanSnippets/visualbasic/window1.xaml.vb#_paragraph_const1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inlines">
+      <MemberSignature Language="C#" Value="public System.Windows.Documents.InlineCollection Inlines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Documents.InlineCollection Inlines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.Inlines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Documents.InlineCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Documents.InlineCollection" />最上位レベルを含む<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Documents.Paragraph" />です。</summary>
+        <value><see cref="T:System.Windows.Documents.InlineCollection" />を含む、<see cref="T:System.Windows.Documents.Inline" />要素の内容を構成する、<see cref="T:System.Windows.Documents.Paragraph" />です。  
+  
+ このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Documents.InlineCollection>列挙またはの内容を操作するには、このプロパティによって返される、<xref:System.Windows.Documents.Paragraph>要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepTogether">
+      <MemberSignature Language="C#" Value="public bool KeepTogether { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.KeepTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または改ページまたは段区切り、段落のテキストを区切ることができるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />区切らない段落のテキストを防ぐためにそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_KeepTogether"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.KeepTogetherProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepTogetherProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeepTogetherProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeepTogetherProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.KeepTogetherProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.KeepTogether" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepWithNext">
+      <MemberSignature Language="C#" Value="public bool KeepWithNext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepWithNext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.KeepWithNext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこの段落と次の段落、中断が発生するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />この段落と次の段落の間で発生してから中断を防ぐためにそれ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_KeepWithNext"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.KeepWithNextProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepWithNextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty KeepWithNextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty KeepWithNextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.KeepWithNextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.KeepWithNext" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinOrphanLines">
+      <MemberSignature Language="C#" Value="public int MinOrphanLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinOrphanLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.MinOrphanLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中断する前に残すことができる行の最小数を指定する値の設定を取得またはときに、<see cref="T:System.Windows.Documents.Paragraph" />は改ページまたは段区切りを分割します。</summary>
+        <value>中断する前に残すことができる行の最小数を指定する整数ときに、<see cref="T:System.Windows.Documents.Paragraph" />は改ページまたは段区切りを分割します。 値 0 は、最小値がないことを示します。  
+  
+ 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_MinOrphanLines"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.MinOrphanLinesProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinOrphanLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinOrphanLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinOrphanLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.MinOrphanLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.MinOrphanLines" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidowLines">
+      <MemberSignature Language="C#" Value="public int MinWidowLines { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinWidowLines" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.MinWidowLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中断後に配置可能な行の最小数を指定する値の設定を取得またはときに、<see cref="T:System.Windows.Documents.Paragraph" />は改ページまたは段区切りを分割します。</summary>
+        <value>中断後に配置可能な行の最小数を指定する整数ときに、<see cref="T:System.Windows.Documents.Paragraph" />は改ページまたは段区切りを分割します。  値 0 は、最小値がないことを示します。  
+  
+ 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_MinWidowLines"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.MinWidowLinesProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWidowLinesProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinWidowLinesProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinWidowLinesProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.MinWidowLinesProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.MinWidowLines" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeInlines">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeInlines (System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeInlines(class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Paragraph.ShouldSerializeInlines(System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="manager">このオブジェクトのシリアル化サービス マネージャー オブジェクトです。</param>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.Inlines" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Documents.Paragraph.Inlines%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Documents.Paragraph>やコントロールを組み込む独自の開発、<xref:System.Windows.Documents.Paragraph>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException">
+          <paramref name="manager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorations">
+      <MemberSignature Language="C#" Value="public System.Windows.TextDecorationCollection TextDecorations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TextDecorationCollection TextDecorations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.TextDecorations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.TextDecorationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.TextDecorationCollection" />この要素に適用するテキスト装飾を格納しています。</summary>
+        <value>A<see cref="T:System.Windows.TextDecorationCollection" />をこの要素に適用するテキスト装飾を含むコレクション。 値<see langword="null" />テキスト装飾は適用されませんを意味します。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.TextDecoration>オブジェクトがテキストに追加できるビジュアルの装飾します。 文字の装飾の 4 つの種類があります: 下線、基準、取り消し線、および上線。  テキスト装飾の詳細については、次を参照してください。[する方法: テキスト装飾を作成する](~/docs/framework/wpf/advanced/how-to-create-a-text-decoration.md)です。  
+  
+<a name="dependencyPropertyInfo_TextDecorations"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.TextDecorationsProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Documents.Paragraph.TextDecorations%2A> の <xref:System.Windows.Documents.Paragraph> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-xaml[InlineSnippets#_Paragraph_TextDecXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml#_paragraph_textdecxaml)]  
+  
+ [!code-csharp[InlineSnippets#_Paragraph_TextDec](~/samples/snippets/csharp/VS_Snippets_Wpf/InlineSnippets/CSharp/Window1.xaml.cs#_paragraph_textdec)]
+ [!code-vb[InlineSnippets#_Paragraph_TextDec](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InlineSnippets/visualbasic/window1.xaml.vb#_paragraph_textdec)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: 既定の取り消し線が適用されたテキスト](~/add/media/inline-textdec-strike.png "スクリーン ショット: 既定取り消し線が適用されたテキスト")  
+  
+ 次の図方法、**上線**、**基準**、および**下線**、それぞれします。  
+  
+ ![スクリーン ショット: TextDecorator を上線](~/add/media/inline-textdec-over.png "スクリーン ショット: TextDecorator の上線")  
+  
+ ![スクリーン ショット: 既定のテキストのベースライン効果](~/add/media/inline-textdec-base.png "スクリーン ショット: 既定のテキストのベースライン効果")  
+  
+ ![スクリーン ショット: 既定の下線が適用されたテキスト](~/add/media/inline-textdec-under.png "スクリーン ショット: 既定の下線が適用されたテキスト")  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextDecorationsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextDecorationsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextDecorationsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.TextDecorationsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.TextDecorations" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextIndent">
+      <MemberSignature Language="C#" Value="public double TextIndent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 TextIndent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Paragraph.TextIndent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの最初の行のインデントを示す値を設定、<see cref="T:System.Windows.Documents.Paragraph" />です。</summary>
+        <value>デバイス非依存ピクセルでの段落の最初の行をインデントする量を指定する double 値。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_TextIndent"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object TextIndent="double"/>  
+- or -  
+<object TextIndent="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_TextIndent"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値より小さくなります 0.0 以上<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A `double` 、上記で説明したように値 (を除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_TextIndent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Paragraph.TextIndentProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>, <xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextIndentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextIndentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextIndentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Paragraph.TextIndentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Paragraph.TextIndent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

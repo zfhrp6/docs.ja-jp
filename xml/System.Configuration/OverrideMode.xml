@@ -1,0 +1,89 @@
+<Type Name="OverrideMode" FullName="System.Configuration.OverrideMode">
+  <TypeSignature Language="C#" Value="public enum OverrideMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OverrideMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.OverrideMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>子ディレクトリ内の構成要素の構成要素のオーバーライド動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Configuration.OverrideMode>列挙の値を設定、<xref:System.Configuration.SectionInformation.OverrideMode%2A>のプロパティ、<xref:System.Configuration.SectionInformation>クラスです。 プログラムで構成要素またはグループの上書き動作を指定するためには、このプロパティを設定します。 要素内のすべての構成要素のオーバーライド動作を宣言して設定するを使用して、`allowOverride`属性。 <xref:System.Configuration.SectionInformation.OverrideMode%2A>プロパティは、内の要素をより細かく制御を提供する、`location`要素。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Allow">
+      <MemberSignature Language="C#" Value="Allow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.OverrideMode Allow = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.OverrideMode.Allow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素またはグループの構成設定は、子ディレクトリ内にある構成設定によってオーバーライドできます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Deny">
+      <MemberSignature Language="C#" Value="Deny" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.OverrideMode Deny = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.OverrideMode.Deny" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子ディレクトリ内の構成設定によっては、要素またはグループの構成設定をオーバーライドできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherit">
+      <MemberSignature Language="C#" Value="Inherit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Configuration.OverrideMode Inherit = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Configuration.OverrideMode.Inherit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.OverrideMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素またはグループの構成設定は、現在の構成要素またはグループの親要素で明示的に許可されている場合、子ディレクトリ内にある構成設定によってオーバーライドされます。 使用して上書きするアクセス許可が指定されて、<see langword="OverrideMode" />属性。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

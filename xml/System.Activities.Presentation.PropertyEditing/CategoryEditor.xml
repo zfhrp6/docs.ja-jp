@@ -1,0 +1,166 @@
+<Type Name="CategoryEditor" FullName="System.Activities.Presentation.PropertyEditing.CategoryEditor">
+  <TypeSignature Language="C#" Value="public abstract class CategoryEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CategoryEditor extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> に表示されるプロパティをグループ化するために使用するカスタム <see cref="T:System.Windows.Forms.PropertyGrid" /> を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CategoryEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.CategoryEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConsumesProperty">
+      <MemberSignature Language="C#" Value="public abstract bool ConsumesProperty (System.Activities.Presentation.PropertyEditing.PropertyEntry propertyEntry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ConsumesProperty(class System.Activities.Presentation.PropertyEditing.PropertyEntry propertyEntry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.CategoryEditor.ConsumesProperty(System.Activities.Presentation.PropertyEditing.PropertyEntry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyEntry" Type="System.Activities.Presentation.PropertyEditing.PropertyEntry" />
+      </Parameters>
+      <Docs>
+        <param name="propertyEntry"><see cref="T:System.Activities.Presentation.PropertyEditing.PropertyEntry" /> によって編集されるプロパティに含まれているかどうかを判断する際に確認する <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> インスタンス。</param>
+        <summary><see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> でどのプロパティが編集されるかを判断します。</summary>
+        <returns>
+          <see langword="true" />このエディターは、指定したプロパティを編集する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEditorAttribute">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EditorAttribute CreateEditorAttribute (System.Activities.Presentation.PropertyEditing.CategoryEditor editor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EditorAttribute CreateEditorAttribute(class System.Activities.Presentation.PropertyEditing.CategoryEditor editor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.CategoryEditor.CreateEditorAttribute(System.Activities.Presentation.PropertyEditing.CategoryEditor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EditorAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editor" Type="System.Activities.Presentation.PropertyEditing.CategoryEditor" />
+      </Parameters>
+      <Docs>
+        <param name="editor">新しい <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> を作成する対象の <see cref="T:System.ComponentModel.EditorAttribute" />。</param>
+        <summary>指定した <see cref="T:System.ComponentModel.EditorAttribute" /> に対して新しい <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EditorAttribute" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateEditorAttribute">
+      <MemberSignature Language="C#" Value="public static System.ComponentModel.EditorAttribute CreateEditorAttribute (Type categoryEditorType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ComponentModel.EditorAttribute CreateEditorAttribute(class System.Type categoryEditorType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.CategoryEditor.CreateEditorAttribute(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EditorAttribute</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="categoryEditorType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="categoryEditorType">新しい <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> を作成する対象の <see cref="T:System.ComponentModel.EditorAttribute" /> 型。</param>
+        <summary>指定した <see cref="T:System.ComponentModel.EditorAttribute" /> 型に対して新しい <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> を作成します。</summary>
+        <returns>新しい <see cref="T:System.ComponentModel.EditorAttribute" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditorTemplate">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.DataTemplate EditorTemplate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate EditorTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.CategoryEditor.EditorTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ インスペクターによってホストされ、<see cref="T:System.Windows.DataTemplate" /> のユーザー インターフェイスを提供する <see cref="T:System.Activities.Presentation.PropertyEditing.CategoryEditor" /> を取得します。</summary>
+        <value><see cref="T:System.Windows.DataTemplate" /> ユーザー インターフェイス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImage">
+      <MemberSignature Language="C#" Value="public abstract object GetImage (System.Windows.Size desiredSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetImage(valuetype System.Windows.Size desiredSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.PropertyEditing.CategoryEditor.GetImage(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="desiredSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="desiredSize">返すイメージについて必要とされている <see cref="T.Systems.Windows.Size" />。</param>
+        <summary>ホストが <see cref="T:System.Object" /> で表示可能な <see cref="T:System.Windows.Controls.ContentControl" /> を返します。</summary>
+        <returns><see cref="T:System.Object" /> に表示される <see cref="T:System.Windows.Controls.ContentControl" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetCategory">
+      <MemberSignature Language="C#" Value="public abstract string TargetCategory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetCategory" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.PropertyEditing.CategoryEditor.TargetCategory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エディターが属するカテゴリを示すローカライズされた文字列を取得します。</summary>
+        <value>エディター カテゴリを表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カテゴリ エディターはカテゴリの種類に応じて定義されているため、読み込み時に、属するカテゴリを示す必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

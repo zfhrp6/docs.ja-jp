@@ -1,0 +1,357 @@
+<Type Name="TraceContext" FullName="System.Web.TraceContext">
+  <TypeSignature Language="C#" Value="public sealed class TraceContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TraceContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.TraceContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キャプチャし、Web 要求に関する実行の詳細を表示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用すると、メッセージを特定のトレース カテゴリに追加します。 たとえばのインスタンスを作成する場合は、<xref:System.Web.UI.WebControls.Calendar>クラス、アプリケーションにする可能性があります「を開始するレンダリング」のトレース メッセージに含めるレンダリング プロシージャ、および「OnChange イベントを発生させる」イベント ハンドラーのプロシージャでします。  
+  
+ 使用することも、<xref:System.Web.TraceContext>クラス、カスタム処理の要求の実行の最後のトレース レコードのセットを取得します。 詳細については、次を参照してください。 [ASP.NET のトレースの概要](http://msdn.microsoft.com/library/1552561d-887c-4002-8770-f92662cdf416)です。  
+  
+ トレースを有効にするには設定、`Trace`属性、 [@ Page](http://msdn.microsoft.com/en-us/f06cf9e5-22bb-461d-8b8f-549e53ff40a4)ディレクティブまたは<xref:System.Web.TraceContext.IsEnabled%2A>プロパティを`true`です。 ユーザーが指定したトレースのコンテンツの表示に加えて、トレースが有効にすると、<xref:System.Web.UI.Page>クラスは、パフォーマンス データ、情報をコントロール ツリー構造、および状態管理コンテンツの要求ごとに自動的に含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceContext (System.Web.HttpContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.#ctor(System.Web.HttpContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Web.HttpContext" />現在の Web 要求に関する情報を格納します。</param>
+        <summary><see cref="T:System.Web.TraceContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContext.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の Web 要求のトレースが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />トレースが有効である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、ページまたはアプリケーション トレース情報を出力何をトレース ログに書き込む前に確認するのにには、このフラグを使用します。  
+  
+ 値、<xref:System.Web.TraceContext.IsEnabled%2A>プロパティのサブセクションで、設定に依存、`system.web`および構成セクションの値、`trace`ディレクティブの属性です。 ページ ディレクティブで設定されたトレース オプションは、構成ファイルで設定されたオプションよりも優先されます。 設定、<xref:System.Web.TraceContext.IsEnabled%2A>値プログラムで優先ページ ディレクティブの属性と、構成設定の両方です。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Web.TraceContext.IsEnabled%2A>プロパティを`true`アプリケーション全体このプロパティを明示的に設定する必要があります`false`トレース情報を表示しないアプリケーションの任意のページにします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページのトレースが有効になっているかどうかを判断する方法を示します。 コードは、そのデータセットで行ごとにトレース ステートメントを作成、データセット内の行を反復処理します。  
+  
+ [!code-csharp[Classic TraceContext.IsEnabled Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic TraceContext.IsEnabled Example/CS/source.cs#1)]
+ [!code-vb[Classic TraceContext.IsEnabled Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic TraceContext.IsEnabled Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceFinished">
+      <MemberSignature Language="C#" Value="public event System.Web.TraceContextEventHandler TraceFinished;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.TraceContextEventHandler TraceFinished" />
+      <MemberSignature Language="DocId" Value="E:System.Web.TraceContext.TraceFinished" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.TraceContextEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって発生した、<see cref="T:System.Web.TraceContext" />トレースを公開するオブジェクトがすべての要求情報を収集した後にメッセージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.TraceContext.TraceFinished>中にイベントが発生した、 `EndRequest` HTTP 要求の処理の段階です。 によって生成される、<xref:System.Web.TraceContext>オブジェクトのコレクションを公開するすべての要求情報を収集したら<xref:System.Web.TraceContextRecord>登録メッセージ<xref:System.Web.TraceContextEventHandler>デリゲート。  
+  
+   
+  
+## Examples  
+ 次のコード例では、登録する方法を示しています、<xref:System.Web.TraceContextEventHandler>を処理する、<xref:System.Web.TraceContext.TraceFinished>イベント。 この例では、デリゲートはトレース メッセージを反復処理し、応答ストリームに書き込みますただし、データベースまたはプロファイリング ツールのコンシューマーに同じ情報を記述することもできます。  
+  
+ [!code-aspx-csharp[System.Web.Trace_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_3/CS/form3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_3/VB/form3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceMode">
+      <MemberSignature Language="C#" Value="public System.Web.TraceMode TraceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.TraceMode TraceMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.TraceContext.TraceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.TraceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトレース メッセージが、要求元のブラウザーに出力する必要があります、並べ替え順序を設定します。</summary>
+        <value><see cref="T:System.Web.TraceMode" /> 列挙値のいずれか。 既定値は指定された設定、<see langword="traceMode" />属性、<see langword="trace" />が既定値は、構成ファイルのセクション<see langword="SortByTime" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トレース メッセージは、処理された順序で、またはユーザー定義のカテゴリでアルファベット順に並べ替えることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ページのトレース ステートメントをステートメントが割り当てられているカテゴリ別アルファベット順で並べ替える方法を示します。  
+  
+ [!code-aspx-csharp[Classic TraceContext.TraceMode Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic TraceContext.TraceMode Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic TraceContext.TraceMode Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic TraceContext.TraceMode Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Web.TraceMode" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Warn">
+      <MemberSignature Language="C#" Value="public void Warn (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warn(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Warn(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <summary>トレース ログに、トレース メッセージを書き込みます。 すべての警告は、赤いテキストとしてログに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Warn%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`true`とその<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティに設定`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warn">
+      <MemberSignature Language="C#" Value="public void Warn (string category, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warn(string category, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Warn(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="category">メッセージを受信するトレース カテゴリ。</param>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <summary>書き込みは、トレース情報を任意のユーザー定義のカテゴリを含む、トレース ログに、トレース メッセージ。 すべての警告は、赤いテキストとしてログに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Warn%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`true`とその<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティに設定`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Warn">
+      <MemberSignature Language="C#" Value="public void Warn (string category, string message, Exception errorInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Warn(string category, string message, class System.Exception errorInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Warn(System.String,System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="errorInfo" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="category">メッセージを受信するトレース カテゴリ。</param>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <param name="errorInfo"><see cref="T:System.Exception" />エラーに関する情報を格納します。</param>
+        <summary>トレース情報をユーザー定義のカテゴリをトレース メッセージおよびエラー情報を含む、トレース ログに書き込みます。 すべての警告は、赤いテキストとしてログに表示されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Warn%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`true`、および<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティによって渡されるオブジェクトに設定されて、`errorInfo`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.TraceContext.Write%2A>トレース ログにエラー トレース メッセージを書き込みます。 この例では、さまざまな例外はエラーと警告として追跡されます。 ページがスローした場合、<xref:System.ArgumentException>を使用して警告メッセージを書き込みます、<xref:System.Web.TraceContext.Warn%2A>メソッドです。 ページがスローした場合、<xref:System.InvalidOperationException>を使用してエラー メッセージを書き込みます、<xref:System.Web.TraceContext.Write%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Trace_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_4/CS/form4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_4/VB/form4vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <summary>トレース ログに、トレース メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Write%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`false`とその<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティに設定`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string category, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string category, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Write(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="category">メッセージを受信するトレース カテゴリ。</param>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <summary>トレース情報をメッセージと、ユーザー定義のカテゴリを含む、トレース ログに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Write%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`false`とその<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティに設定`null`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.TraceContext.Write%2A>トレース ログにエラー トレース メッセージを書き込みます。 この例では、デリゲートは、トレース メッセージを反復処理し、; HTML テーブルとして書き込みますただし、データベースまたはプロファイリング ツールのコンシューマーに同じ情報を記述することができます。  
+  
+ [!code-aspx-csharp[System.Web.Trace_5#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_5/CS/form5cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_5#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_5/VB/form5vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string category, string message, Exception errorInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string category, string message, class System.Exception errorInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.TraceContext.Write(System.String,System.String,System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="category" Type="System.String" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="errorInfo" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="category">メッセージを受信するトレース カテゴリ。</param>
+        <param name="message">ログに書き込むトレース メッセージ。</param>
+        <param name="errorInfo"><see cref="T:System.Exception" />エラーに関する情報を格納します。</param>
+        <summary>トレース情報をユーザー定義のカテゴリをトレース メッセージおよびエラー情報を含む、トレース ログに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たびに、<xref:System.Web.TraceContext.Write%2A>メソッドが呼び出されると、<xref:System.Web.TraceContext>にトレース メッセージを追加、<xref:System.Web.TraceContextEventArgs.TraceRecords%2A>メッセージを処理するときにアクセスできるは、コレクション、<xref:System.Web.TraceContext.TraceFinished>イベント。 メッセージが追加されたその<xref:System.Web.TraceContextRecord.IsWarning%2A>プロパティに設定`false`、および<xref:System.Web.TraceContextRecord.ErrorInfo%2A>プロパティによって渡されるオブジェクトに設定されて、`errorInfo`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例を呼び出す方法を示しています、<xref:System.Web.TraceContext.Write%2A>トレース ログにエラー トレース メッセージを書き込みます。 この例では、さまざまな例外はエラーと警告として追跡されます。 ページがスローした場合、<xref:System.ArgumentException>を使用して警告メッセージを書き込みます、<xref:System.Web.TraceContext.Warn%2A>メソッドです。 ページがスローした場合、<xref:System.InvalidOperationException>を使用してエラー メッセージを書き込みます、<xref:System.Web.TraceContext.Write%2A>メソッドです。  
+  
+ [!code-aspx-csharp[System.Web.Trace_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_4/CS/form4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_4/VB/form4vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

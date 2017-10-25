@@ -1,0 +1,131 @@
+<Type Name="IComparer" FullName="System.Collections.IComparer">
+  <TypeSignature Language="C#" Value="public interface IComparer" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IComparer" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IComparer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 つのオブジェクトを比較するメソッドを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスと組み合わせて使用、<xref:System.Array.Sort%2A?displayProperty=nameWithType>と<xref:System.Array.BinarySearch%2A?displayProperty=nameWithType>メソッドです。 コレクションの並べ替え順序をカスタマイズする方法を提供します。 参照してください、<xref:System.Collections.IComparer.Compare%2A>パラメーターと戻り値のノート用のメソッドです。  
+  
+ このインターフェイスの既定の実装は、<xref:System.Collections.Comparer>クラスです。 このインターフェイスのジェネリック バージョンは、<xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Collections.IComparer>を並べ替えるインターフェイス、<xref:System.Collections.ArrayList>オブジェクト。 この例では、<xref:System.Collections.IComparer>を使用してインターフェイスを実装、<xref:System.Collections.CaseInsensitiveComparer>クラスの内容の順序を逆に、<xref:System.Collections.ArrayList>です。  
+  
+ [!code-cpp[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/CPP/arraylist_sort2.cpp#1)]
+ [!code-csharp[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/CS/arraylist_sort2.cs#1)]
+ [!code-vb[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/VB/arraylist_sort2.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compare">
+      <MemberSignature Language="C#" Value="public int Compare (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Compare(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IComparer.Compare(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">比較する最初のオブジェクト。</param>
+        <param name="y">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つのオブジェクトを比較して、一方が他方より小さいか、同じか、または大きいかを示す値を返します。</summary>
+        <returns>
+            <paramref name="x" /> と <paramref name="y" /> の相対値を示す符号付き整数。次の表を参照してください。  
+ 
+  <list type="table"><listheader><term>値  
+ 
+  </term><description>意味  
+ 
+  </description></listheader><item><term>0 より小さい値  
+ 
+  </term><description><paramref name="x" /> は <paramref name="y" /> より小さい値です。  
+ 
+  </description></item><item><term>0  
+ 
+  </term><description><paramref name="x" /> と <paramref name="y" /> は等しい。  
+ 
+  </description></item><item><term>0 より大きい値  
+ 
+  </term><description><paramref name="x" /> が <paramref name="y" /> より大きくなっています。  
+ 
+</description></item></list></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 推奨される実装を使用して、<xref:System.IComparable.CompareTo%2A>パラメーターのいずれかのメソッドです。  
+  
+ 比較する`null`任意の型は許可し、使用する場合は、例外を生成しません、<xref:System.IComparable>です。 ソート時`null`未満であるその他のオブジェクトと見なされます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Collections.IComparer>を並べ替えるインターフェイス、<xref:System.Collections.ArrayList>オブジェクト。 この例では、<xref:System.Collections.IComparer>を使用してインターフェイスを実装、<xref:System.Collections.CaseInsensitiveComparer>クラスの内容の順序を逆に、<xref:System.Collections.ArrayList>です。  
+  
+ [!code-cpp[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/CPP/arraylist_sort2.cpp#1)]
+ [!code-csharp[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/CS/arraylist_sort2.cs#1)]
+ [!code-vb[System.Collections.ArrayList.Sort_2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Collections.ArrayList.Sort_2/VB/arraylist_sort2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">どちらも<paramref name="x" />も<paramref name="y" />を実装する、<see cref="T:System.IComparable" />インターフェイスです。  
+  
+ または  
+  
+ <paramref name="x" />および<paramref name="y" />さまざまな種類は、いずれかのどちらが、他の比較を処理できます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

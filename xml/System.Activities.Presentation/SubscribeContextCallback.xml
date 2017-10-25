@@ -1,0 +1,30 @@
+<Type Name="SubscribeContextCallback" FullName="System.Activities.Presentation.SubscribeContextCallback">
+  <TypeSignature Language="C#" Value="public delegate void SubscribeContextCallback(ContextItem item);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SubscribeContextCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.SubscribeContextCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="item" Type="System.Activities.Presentation.ContextItem" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="item">変更されたコンテキスト項目。</param>
+    <summary>コンテキスト項目が変更された場合に呼び出されるコールバック メソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバックは、ホストおよびワークフロー デザイナーの関係者が、ワークフロー デザイナーの編集コンテキストに発行された <xref:System.Activities.Presentation.ContextItem> の更新を定期受信する仕組みを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

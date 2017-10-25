@@ -1,0 +1,120 @@
+<Type Name="OperationFlow" FullName="System.Web.Services.Description.OperationFlow">
+  <TypeSignature Language="C#" Value="public enum OperationFlow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OperationFlow extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.OperationFlow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>XML Web サービスのエンドポイントがサポートできる転送の種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求-応答または送信請求-応答操作は、Web サービス記述言語 (WSDL) ドキュメントで論理的に関連付けられる、具体的な相関関係情報は、バインディングによって指定されます。 たとえば、1 つまたは 2 つの実際の HTTP 通信の一部として要求および応答メッセージを交換できます。  
+  
+   
+  
+## Examples  
+ 次の例では、使用、`OperationFlow`列挙します。  
+  
+ [!code-cpp[OperationFlow_Enum#1](~/samples/snippets/cpp/VS_Snippets_Remoting/OperationFlow_Enum/CPP/operationflow_enum.cpp#1)]
+ [!code-csharp[OperationFlow_Enum#1](~/samples/snippets/csharp/VS_Snippets_Remoting/OperationFlow_Enum/CS/operationflow_enum.cs#1)]
+ [!code-vb[OperationFlow_Enum#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/OperationFlow_Enum/VB/operationflow_enum.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.OperationFlow None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.OperationFlow.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFlow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスのエンドポイントに送信が行われないことを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Notification">
+      <MemberSignature Language="C#" Value="Notification" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.OperationFlow Notification = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.OperationFlow.Notification" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFlow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスのエンドポイントがメッセージを送信することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OneWay">
+      <MemberSignature Language="C#" Value="OneWay" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.OperationFlow OneWay = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.OperationFlow.OneWay" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFlow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスのエンドポイントがメッセージを受信することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestResponse">
+      <MemberSignature Language="C#" Value="RequestResponse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.OperationFlow RequestResponse = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.OperationFlow.RequestResponse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFlow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスのエンドポイントがメッセージを受信し、関連するメッセージを送信することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SolicitResponse">
+      <MemberSignature Language="C#" Value="SolicitResponse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Services.Description.OperationFlow SolicitResponse = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.OperationFlow.SolicitResponse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationFlow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML Web サービスのエンドポイントがメッセージを送信し、関連するメッセージを受信することを示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

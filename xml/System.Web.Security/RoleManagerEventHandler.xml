@@ -1,0 +1,42 @@
+<Type Name="RoleManagerEventHandler" FullName="System.Web.Security.RoleManagerEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void RoleManagerEventHandler(object sender, RoleManagerEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RoleManagerEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.RoleManagerEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.Security.RoleManagerEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender"><see cref="T:System.Web.Security.RoleManagerModule" />を発生させた、<see cref="E:System.Web.Security.RoleManagerModule.GetRoles" />イベント。</param>
+    <param name="e">イベント データを含んでいる <see cref="T:System.Web.Security.RoleManagerEventArgs" /> オブジェクト。</param>
+    <summary>デリゲートを定義、<see cref="E:System.Web.Security.RoleManagerModule.GetRoles" />のイベント、<see cref="T:System.Web.Security.RoleManagerModule" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.RoleManagerEventHandler>のデリゲートを定義、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、<xref:System.Web.Security.RoleManagerModule>クラスです。 アクセスすることができます、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、 <xref:System.Web.Security.RoleManagerModule> ASP.NET アプリケーションの Global.asax ファイルでクラスのこのトピックの例に示すようにします。  
+  
+ 使用することができます、<xref:System.Web.Security.RoleManagerEventHandler>の作成を置換する、<xref:System.Web.Security.RolePrincipal>オブジェクトを<xref:System.Web.Security.RoleManagerModule>独自のカスタム オブジェクトを使用します。 これを行うを使用してデリゲートを定義、<xref:System.Web.Security.RoleManagerEventHandler>に割り当てると、<xref:System.Web.Security.RoleManagerModule.GetRoles>のイベント、<xref:System.Web.Security.RoleManagerModule>です。  
+  
+   
+  
+## Examples  
+ 次の例は、 <xref:System.Web.Security.RoleManagerModule.GetRoles> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。 <xref:System.Web.Security.RoleManagerModule.GetRoles>イベントは、Web.config ファイルでトレースが有効になっているアプリケーションのトレース通知を追加します。  
+  
+ [!code-csharp[System.Web.Security.RoleManagerModule#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.RoleManagerModule/CS/global.asax#1)]
+ [!code-vb[System.Web.Security.RoleManagerModule#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.RoleManagerModule/VB/global.asax#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

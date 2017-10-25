@@ -1,0 +1,594 @@
+<Type Name="SizeAnimation" FullName="System.Windows.Media.Animation.SizeAnimation">
+  <TypeSignature Language="C#" Value="public class SizeAnimation : System.Windows.Media.Animation.SizeAnimationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi SizeAnimation extends System.Windows.Media.Animation.SizeAnimationBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.SizeAnimation" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.SizeAnimationBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定した <see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> に対する線形補間を使用して、2 つのターゲット値の間の <see cref="T:System.Windows.Size" /> プロパティの値をアニメーション化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションは、期間のプロパティの値を更新します。  アニメーション効果は、移動など、微妙な<xref:System.Windows.Shapes.Shape>左と右、または回転させ、その色の変更中に元のサイズの 200 回にオブジェクトを拡大するなど、大きないくつかのピクセルです。 アニメーションを作成する[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]オブジェクトのプロパティの値を持つアニメーションを関連付ける必要があります。  
+  
+## <a name="target-values"></a>ターゲット値  
+ <xref:System.Windows.Media.Animation.SizeAnimation>クラスは 2 つのターゲット値の間の遷移を作成します。 ターゲット値を設定するを使用してその<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、および<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。  次の表方法、 <xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、および<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは一緒に使用される可能性がありますまたは単独で、アニメーションのターゲットを決定する値します。  
+  
+|指定するプロパティ|結果として生じる動作|  
+|--------------------------|------------------------|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティをアニメーション化されているプロパティのベース値または前のアニメーションの前のアニメーションの構成方法に応じて、値を出力します。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティで指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティの合計で指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|アニメーションがアニメーション化されたプロパティの基本値から移行するか、前のアニメーションの出力値を指定する値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|出力で指定された値とその値を合計する値をアニメーション化されているプロパティのベース値からアニメーション、または前のアニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+  
+> [!NOTE]
+>  両方を設定する場合、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>、プロパティ、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティが優先されます、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは無視されます。  
+  
+ その他の補間メソッドを使用して 3 つ以上のターゲット値の間のアニメーション化を使用してまたは、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>オブジェクト。  
+  
+ 1 つのプロパティを複数のアニメーションを適用する方法については、次を参照してください。[キー フレーム アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)です。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ <xref:System.Windows.Media.Animation.SizeAnimation>クラスから継承<xref:System.Windows.Freezable>、<xref:System.Windows.Media.Animation.SizeAnimation>オブジェクトを取得、次を含めるいくつかの特別な機能、: 複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびできますスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeAnimation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.SizeAnimation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeAnimation (System.Windows.Size toValue, System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Size toValue, valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.#ctor(System.Windows.Size,System.Windows.Duration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="toValue" Type="System.Windows.Size" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="toValue">アニメーションの宛先値。</param>
+        <param name="duration">アニメーションが最初から最後まで 1 回再生されるのにかかる時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <summary>指定された期間にわたって指定された値にアニメーションを付ける、<see cref="T:System.Windows.Media.Animation.SizeAnimation" /> クラスの新しいインスタンスを初期化します。 アニメーションの開始値は、アニメーションを付けるプロパティの基準値か、別のアニメーションからの出力になります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeAnimation (System.Windows.Size toValue, System.Windows.Duration duration, System.Windows.Media.Animation.FillBehavior fillBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Size toValue, valuetype System.Windows.Duration duration, valuetype System.Windows.Media.Animation.FillBehavior fillBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.#ctor(System.Windows.Size,System.Windows.Duration,System.Windows.Media.Animation.FillBehavior)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="toValue" Type="System.Windows.Size" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+        <Parameter Name="fillBehavior" Type="System.Windows.Media.Animation.FillBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="toValue">アニメーションの宛先値。</param>
+        <param name="duration">アニメーションが最初から最後まで 1 回再生されるのにかかる時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <param name="fillBehavior">アクティブでないときのアニメーションの動作を指定します。</param>
+        <summary>指定された期間にわたって指定された値までアニメーションを付け、指定された塗りつぶし動作がある、<see cref="T:System.Windows.Media.Animation.SizeAnimation" /> クラスの新しいインスタンスを初期化します。 アニメーションの開始値は、アニメーションを付けるプロパティの基準値か、別のアニメーションからの出力になります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeAnimation (System.Windows.Size fromValue, System.Windows.Size toValue, System.Windows.Duration duration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Size fromValue, valuetype System.Windows.Size toValue, valuetype System.Windows.Duration duration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.#ctor(System.Windows.Size,System.Windows.Size,System.Windows.Duration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fromValue" Type="System.Windows.Size" />
+        <Parameter Name="toValue" Type="System.Windows.Size" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+      </Parameters>
+      <Docs>
+        <param name="fromValue">アニメーションの開始値。</param>
+        <param name="toValue">アニメーションの宛先値。</param>
+        <param name="duration">アニメーションが最初から最後まで 1 回再生されるのにかかる時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <summary>指定した開始値から指定した宛先値まで、指定された期間にわたってアニメーションを付ける、<see cref="T:System.Windows.Media.Animation.SizeAnimation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SizeAnimation (System.Windows.Size fromValue, System.Windows.Size toValue, System.Windows.Duration duration, System.Windows.Media.Animation.FillBehavior fillBehavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Size fromValue, valuetype System.Windows.Size toValue, valuetype System.Windows.Duration duration, valuetype System.Windows.Media.Animation.FillBehavior fillBehavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.#ctor(System.Windows.Size,System.Windows.Size,System.Windows.Duration,System.Windows.Media.Animation.FillBehavior)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fromValue" Type="System.Windows.Size" />
+        <Parameter Name="toValue" Type="System.Windows.Size" />
+        <Parameter Name="duration" Type="System.Windows.Duration" />
+        <Parameter Name="fillBehavior" Type="System.Windows.Media.Animation.FillBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="fromValue">アニメーションの開始値。</param>
+        <param name="toValue">アニメーションの宛先値。</param>
+        <param name="duration">アニメーションが最初から最後まで 1 回再生されるのにかかる時間の長さ。 詳細については、<see cref="P:System.Windows.Media.Animation.Timeline.Duration" /> プロパティに関するトピックを参照してください。</param>
+        <param name="fillBehavior">アクティブでないときのアニメーションの動作を指定します。</param>
+        <summary>指定した開始値から指定した宛先値まで、指定された期間にわたってアニメーションを付け、指定された塗りつぶし動作がある、<see cref="T:System.Windows.Media.Animation.SizeAnimation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="By">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Windows.Size&gt; By { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Windows.Size&gt; By" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.By" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Windows.Size&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの開始値の変化値の総量を取得または設定します。</summary>
+        <value>アニメーションの開始値の変化値の総量。     既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティ「によって」を開始または終了値を指定するのではなく、一定の時間値をアニメーション化するときにします。 使用することも、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>を持つプロパティ、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティです。 次の表方法、 <xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、および<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは一緒に使用される可能性がありますまたは単独で、アニメーションのターゲットを決定する値します。  
+  
+|指定したプロパティ|結果の動作|  
+|--------------------------|------------------------|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティをアニメーション化されているプロパティのベース値または前のアニメーションの前のアニメーションの構成方法に応じて、値を出力します。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティで指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティの合計で指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|アニメーションがアニメーション化されたプロパティの基本値から移行するか、前のアニメーションの出力値を指定する値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|出力で指定された値とその値を合計する値をアニメーション化されているプロパティのベース値からアニメーション、または前のアニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+  
+ **注**両方を設定する場合、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティ、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティが優先されます、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは無視されます。  
+  
+ その他の補間メソッドを使用して 3 つ以上のターゲット値の間のアニメーション化を使用してまたは、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>オブジェクト。  
+  
+<a name="xamlAttributeUsage_By"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*object* `By`="<xref:System.Windows.Size>"/>  
+  
+ \- または  
+  
+ <*オブジェクト* `By`="{[X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md)}"/>  
+  
+<a name="xamlPropertyElementUsage_By"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+ \<*オブジェクト*>  
+  
+ <*オブジェクト*です。`By`>  
+  
+ \<<xref:System.Windows.Size> />  
+  
+ </*オブジェクト*です。`By`>  
+  
+ \</*オブジェクト*>  
+  
+<a name="dependencyPropertyInfo_By"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.SizeAnimation.ByProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ByProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ByProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ByProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.SizeAnimation.ByProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.SizeAnimation.By" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.SizeAnimation Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Animation.SizeAnimation Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.SizeAnimation</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Animation.SizeAnimation" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Windows.Media.Animation.SizeAnimation" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingFunction">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.IEasingFunction EasingFunction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.IEasingFunction EasingFunction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.EasingFunction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.IEasingFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアニメーションに適用されているイージング機能を取得または設定します。</summary>
+        <value>このアニメーションに適用されているイージング機能。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イージング関数を使用すると、さまざまなバウンスを含む特殊なアニメーション効果を作成、揺れやさまざまな大きさのアクセラレータと減速のアニメーションのスプリングできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingFunctionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EasingFunctionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EasingFunctionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.SizeAnimation.EasingFunctionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.SizeAnimation.EasingFunction" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="From">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Windows.Size&gt; From { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Windows.Size&gt; From" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.From" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Windows.Size&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの開始値を取得または設定します。</summary>
+        <value>アニメーションの開始の値。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表方法、 <xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、および<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは一緒に使用される可能性がありますまたは単独で、アニメーションのターゲットを決定する値します。  
+  
+|指定したプロパティ|結果の動作|  
+|--------------------------|------------------------|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティをアニメーション化されているプロパティのベース値または前のアニメーションの前のアニメーションの構成方法に応じて、値を出力します。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティで指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティの合計で指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|アニメーションがアニメーション化されたプロパティの基本値から移行するか、前のアニメーションの出力値を指定する値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|出力で指定された値とその値を合計する値をアニメーション化されているプロパティのベース値からアニメーション、または前のアニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+  
+ **注**両方を設定する場合、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティ、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティが優先されます、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは無視されます。  
+  
+ その他の補間メソッドを使用して 3 つ以上のターゲット値の間のアニメーション化を使用してまたは、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>オブジェクト。  
+  
+<a name="xamlAttributeUsage_From"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*object* `From`="<xref:System.Windows.Size>"/>  
+  
+ \- または  
+  
+ <*オブジェクト* `From`="{[X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md)}"/>  
+  
+<a name="xamlPropertyElementUsage_From"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+ \<*オブジェクト*>  
+  
+ <*オブジェクト*です。`By`>  
+  
+ \<<xref:System.Windows.Size> />  
+  
+ </*オブジェクト*です。`By`>  
+  
+ \</*オブジェクト*>  
+  
+<a name="dependencyPropertyInfo_From"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.SizeAnimation.FromProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FromProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FromProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.SizeAnimation.FromProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.SizeAnimation.From" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size GetCurrentValueCore (System.Windows.Size defaultOriginValue, System.Windows.Size defaultDestinationValue, System.Windows.Media.Animation.AnimationClock animationClock);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size GetCurrentValueCore(valuetype System.Windows.Size defaultOriginValue, valuetype System.Windows.Size defaultDestinationValue, class System.Windows.Media.Animation.AnimationClock animationClock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.SizeAnimation.GetCurrentValueCore(System.Windows.Size,System.Windows.Size,System.Windows.Media.Animation.AnimationClock)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultOriginValue" Type="System.Windows.Size" />
+        <Parameter Name="defaultDestinationValue" Type="System.Windows.Size" />
+        <Parameter Name="animationClock" Type="System.Windows.Media.Animation.AnimationClock" />
+      </Parameters>
+      <Docs>
+        <param name="defaultOriginValue">アニメーションに独自の明示的な開始値が設定されていない場合に使用される、起点の推奨値。</param>
+        <param name="defaultDestinationValue">アニメーションが独自の明示的な終了値を持たない場合に使用される、終点の推奨値。</param>
+        <param name="animationClock"><see cref="T:System.Windows.Media.Animation.AnimationClock" />を生成する、<see cref="P:System.Windows.Media.Animation.Clock.CurrentTime" />または<see cref="P:System.Windows.Media.Animation.Clock.CurrentProgress" />アニメーションで使用します。</param>
+        <summary>によって決定されたように、アニメーションを付けるプロパティの現在の値を表す値を計算、<see cref="T:System.Windows.Media.Animation.SizeAnimation" />です。</summary>
+        <returns>現在のアニメーションで決定されたとおりに計算されたプロパティ値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`defaultOriginValue`最初のスナップショット値 (1 つある場合) または基本プロパティ値、複合チェーンでこの値になります。 それ以外の場合この値はチェーンの前のアニメーションによって返される値、<xref:System.Windows.Media.Animation.AnimationClock>外にある<xref:System.Windows.Media.Animation.Clock.Stopped%2A>です。  
+  
+ `defaultDestinationValue`は基本値の場合、プロパティにアニメーションの最初のコンポジション レイヤーには、アニメーションのそれ以外の値はプロパティのアニメーションの前の構成のレイヤーからの出力値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAdditive">
+      <MemberSignature Language="C#" Value="public bool IsAdditive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAdditive" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.IsAdditive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象プロパティの現在の値をこのアニメーションの開始値に追加するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />対象プロパティの現在場合は、値がこのアニメーションの開始値に追加する必要があります。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションがある 1 つだけの場合、 <xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、または<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>このプロパティの設定のプロパティを設定が影響を与えません。  
+  
+<a name="dependencyPropertyInfo_Additive"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.AnimationTimeline.IsAdditiveProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+> [!NOTE]
+>  この依存関係プロパティは、その識別子のフィールドに由来点で、通常<xref:System.Windows.Media.Animation.AnimationTimeline>、さまざまな派生クラスで共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCumulative">
+      <MemberSignature Language="C#" Value="public bool IsCumulative { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCumulative" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.IsCumulative" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションが繰り返されるときに、その値を累計するかどうかを指定する値を取得または設定します。</summary>
+        <value>**true**アニメーションがその値を累計する場合とその<see cref="P:System.Windows.Media.Animation.Timeline.RepeatBehavior" />プロパティにより一定時間の再生を繰り返すようにします。 それ以外の場合、 **false**です。 既定値は**false**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると**true**、値のみ蓄積されるときに、アニメーションの出力アニメーションの<xref:System.Windows.Media.Animation.Timeline.RepeatBehavior%2A>プロパティにより一定時間の再生を繰り返すようにします。 親が再起動すると、またはそのクロックがから再開されたためにその値が蓄積されない、<xref:System.Windows.Media.Animation.ClockController.Begin%2A>呼び出します。  
+  
+<a name="dependencyPropertyInfo_Cumulative"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.AnimationTimeline.IsCumulativeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+> [!NOTE]
+>  この依存関係プロパティは、その識別子のフィールドに由来点で、通常<xref:System.Windows.Media.Animation.AnimationTimeline>、さまざまな派生クラスで共有します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="To">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.Windows.Size&gt; To { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Windows.Size&gt; To" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.SizeAnimation.To" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Windows.Size&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの終了値を取得または設定します。</summary>
+        <value>アニメーションの終了値。 既定値は NULL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表方法、 <xref:System.Windows.Media.Animation.SizeAnimation.From%2A>、 <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>、および<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは一緒に使用される可能性がありますまたは単独で、アニメーションのターゲットを決定する値します。  
+  
+|指定したプロパティ|結果の動作|  
+|--------------------------|------------------------|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティをアニメーション化されているプロパティのベース値または前のアニメーションの前のアニメーションの構成方法に応じて、値を出力します。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティで指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.From%2A> および <xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|指定された値、アニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>プロパティの合計で指定された値を<xref:System.Windows.Media.Animation.SizeAnimation.From%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>|アニメーションがアニメーション化されたプロパティの基本値から移行するか、前のアニメーションの出力値を指定する値を<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティです。|  
+|<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>|出力で指定された値とその値を合計する値をアニメーション化されているプロパティのベース値からアニメーション、または前のアニメーション、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティです。|  
+  
+ **注**両方を設定する場合、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>と<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティ、<xref:System.Windows.Media.Animation.SizeAnimation.To%2A>プロパティが優先されます、<xref:System.Windows.Media.Animation.SizeAnimation.By%2A>プロパティは無視されます。  
+  
+ その他の補間メソッドを使用して 3 つ以上のターゲット値の間のアニメーション化を使用してまたは、<xref:System.Windows.Media.Animation.SizeAnimationUsingKeyFrames>オブジェクト。  
+  
+<a name="xamlAttributeUsage_To"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ <*object* `To`="<xref:System.Windows.Size>"/>  
+  
+ \- または  
+  
+ <*オブジェクト* `To`="{[X:null マークアップ拡張機能](~/docs/framework/xaml-services/x-null-markup-extension.md)}"/>  
+  
+<a name="xamlPropertyElementUsage_To"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+ \<*オブジェクト*>  
+  
+ <*オブジェクト*です。`By`>  
+  
+ \<<xref:System.Windows.Size> />  
+  
+ </*オブジェクト*です。`By`>  
+  
+ \</*オブジェクト*>  
+  
+<a name="dependencyPropertyInfo_To"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Animation.SizeAnimation.ToProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ToProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ToProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.SizeAnimation.ToProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.SizeAnimation.To" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

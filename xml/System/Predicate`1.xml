@@ -1,0 +1,71 @@
+<Type Name="Predicate&lt;T&gt;" FullName="System.Predicate&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public delegate bool Predicate&lt;in T&gt;(T obj);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed Predicate`1&lt;- T&gt; extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Predicate`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <ParameterAttribute>Contravariant</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="obj" Type="T" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Boolean</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <typeparam name="T">比較するオブジェクトの型。</typeparam>
+    <param name="obj">このデリゲートによって表されるメソッド内で定義された条件と比較するオブジェクト。</param>
+    <summary>条件のセットを定義し、指定されたオブジェクトがその条件を満たしているかどうかを判断するメソッドを表わします。</summary>
+    <returns>
+      <see langword="true" />場合<paramref name="obj" />; このデリゲートによって表されるメソッド内で定義された条件を満たしている場合は、<see langword="false" />です。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、いくつかの方法で使用、<xref:System.Array>と<xref:System.Collections.Generic.List%601>コレクション内の要素を検索するクラス。  
+  
+ 通常、<xref:System.Predicate%601>デリゲートは、ラムダ式によって表されます。 ローカル スコープの変数は、ラムダ式に使用可能なであるために、コンパイル時に正確に知られていない状況をテストする簡単なです。 これは、シミュレートを定義する次の例で、 `HockeyTeam` National Hockey リーグ チームとが設立された年に関する情報を含むクラスです。 例では、年を表す整数値の配列を定義し、配列の 1 つの要素をランダムに割り当てられます`foundedBeforeYear`、これは、例の対象とするローカル変数`Main`メソッドです。 渡されるラムダ式にローカル スコープの変数がラムダ式に使用できるため、<xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType>メソッドが戻ることは、`HockeyTeam`以前その年の設立チームごとにオブジェクト。  
+  
+ [!code-csharp[System.Predicate\`1#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Predicate`1/cs/predicate1.cs#3)]
+ [!code-vb[System.Predicate\`1#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Predicate`1/vb/predicate1.vb#3)]  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Predicate%601>を持つデリゲート、<xref:System.Array.Find%2A?displayProperty=nameWithType>メソッドの配列を検索する<xref:System.Drawing.Point>構造体。 例では、明示的に定義、<xref:System.Predicate%601>という名前のデリゲート`predicate`という名前のメソッドを割り当てます`FindPoints`を返す`true`場合の製品、<xref:System.Drawing.Point.X%2A?displayProperty=nameWithType>と<xref:System.Drawing.Point.Y%2A?displayProperty=nameWithType>フィールドが 100,000 より大きい。 型のデリゲートを明示的に定義するのではなく、ラムダ式を使用する一般的なであることに注意してください<xref:System.Predicate%601>、2 番目の例に示すようにします。  
+  
+ [!code-csharp[System.Predicate\`1#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Predicate`1/cs/predicateex2.cs#4)]
+ [!code-vb[System.Predicate\`1#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Predicate`1/vb/predicateex2.vb#4)]  
+  
+ 表すラムダ式を使用する点を除いて、次の例は、前の例と同じ、<xref:System.Predicate%601>を委任します。  各要素、`points`式は、検索条件を満たす要素を検索するまで、ラムダ式に配列が渡されます。 この場合、ラムダ式を返します`true`X と Y のフィールドの製品が 100,000 より大きい場合。  
+  
+ [!code-csharp[System.Predicate\`1#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Predicate`1/cs/predicateex1.cs#2)]
+ [!code-vb[System.Predicate\`1#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Predicate`1/vb/predicateex1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

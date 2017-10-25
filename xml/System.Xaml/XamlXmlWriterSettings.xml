@@ -1,0 +1,105 @@
+<Type Name="XamlXmlWriterSettings" FullName="System.Xaml.XamlXmlWriterSettings">
+  <TypeSignature Language="C#" Value="public class XamlXmlWriterSettings : System.Xaml.XamlWriterSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlXmlWriterSettings extends System.Xaml.XamlWriterSettings" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlXmlWriterSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlWriterSettings</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>初期化の設定を提供、 <see cref="T:System.Xaml.XamlXmlWriter" /> XAML ライターの実装です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値をすべて<xref:System.Xaml.XamlXmlWriterSettings>値は`false`します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlXmlWriterSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlXmlWriterSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.XamlXmlWriterSettings" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssumeValidInput">
+      <MemberSignature Language="C#" Value="public bool AssumeValidInput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AssumeValidInput" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlWriterSettings.AssumeValidInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="T:System.Xaml.XamlXmlWriter" />常に、重複する解像度またはその他のエラー チェックのための有効なの XAML 入力を想定する必要があります。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Xaml.XamlXmlWriter" />重複するメンバーに対して例外のスローなど特定の検証やエラーのチェックをスキップします。 <see langword="false" />場合、<see cref="T:System.Xaml.XamlXmlWriter" />が無効な XAML が発生したときに例外をスローします。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseOutput">
+      <MemberSignature Language="C#" Value="public bool CloseOutput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CloseOutput" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlXmlWriterSettings.CloseOutput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="T:System.Xaml.XamlXmlWriter" />ですぐに閉じる必要があります<see langword="Dispose" />またはその他の操作かどうか XAML ライターが代わりに、バッファー出力を書き込みます。 閉じる前にまたはします。 この設定を使用して、注意が必要です。すぐに閉じると、無効な XAML 再度読み込むことができないことがあります。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Xaml.XamlXmlWriter" />ですぐに閉じ、<see langword="Dispose" />または同様の操作です。 <see langword="false" />残りのバッファーの出力が前に記述されている場合、<see cref="T:System.Xaml.XamlXmlWriter" />を解放します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定のロジックに影響を与えます<xref:System.Xaml.XamlXmlWriter.Dispose%2A?displayProperty=nameWithType>、呼び出し`Close`、基になるの<xref:System.Xml.XmlWriter>または<xref:System.IO.TextWriter>ときに<xref:System.Xaml.XamlXmlWriterSettings.CloseOutput%2A>は`true`; 呼び出しまたは<xref:System.Xaml.XamlXmlWriter.Flush%2A>(基になるもう一度関連付けられている<xref:System.Xml.XmlWriter>または<xref:System.IO.TextWriter>) 場合<xref:System.Xaml.XamlXmlWriterSettings.CloseOutput%2A>は`false`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlXmlWriterSettings Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlXmlWriterSettings Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlXmlWriterSettings.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlXmlWriterSettings</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコピーを返します<see cref="T:System.Xaml.XamlXmlWriterSettings" />インスタンス。</summary>
+        <returns>返されたコピーします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

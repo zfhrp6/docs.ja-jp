@@ -1,0 +1,325 @@
+<Type Name="AsyncOperation" FullName="System.ComponentModel.AsyncOperation">
+  <TypeSignature Language="C#" Value="public sealed class AsyncOperation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AsyncOperation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AsyncOperation" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期操作の有効期間を追跡します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ に従ってクラスを実装する場合、[イベント ベースの非同期パターン概要](~/docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)クラスのインスタンスで呼び出される各非同期操作の有効期間を追跡する必要があります。 <xref:System.ComponentModel.AsyncOperation>クラスには、追跡して、非同期タスクの進行状況をレポートする方法が用意されています。  
+  
+ 次の一覧が使用する方法を示して、<xref:System.ComponentModel.AsyncOperation>オブジェクト。  
+  
+-   進行状況と中間結果をクライアントに報告する呼び出し<xref:System.ComponentModel.AsyncOperation.Post%2A>非同期ワーカー コードからです。  
+  
+-   非同期タスクが完了したことを示すために、または保留中の非同期タスクをキャンセルするには、呼び出す<xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>です。  
+  
+ クラスを取得する必要があります、<xref:System.ComponentModel.AsyncOperation>オブジェクトを呼び出すことによって各非同期タスク<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A?displayProperty=nameWithType>各タスクの開始時です。 別の非同期タスクを区別するためにクライアントを許可する<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A?displayProperty=nameWithType>一意クライアントに用意されているトークンになりますパラメーターを受け取り、<xref:System.ComponentModel.AsyncOperation.UserSuppliedState%2A>プロパティです。 これは、進行中または完了のイベントを発生させる特定の非同期タスクを識別のクライアント コードで使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation>非同期操作の有効期間を追跡するオブジェクト。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+ 完全なコードの一覧については、次を参照してください。[する方法: イベント ベースの非同期パターンをサポートするコンポーネントを実装する](http://msdn.microsoft.com/library/3c1aa4d4-da87-4a03-b812-3d167b8c57cf)です。 クライアントの完全なコードについては、次を参照してください。[する方法: イベント ベースの非同期パターンのクライアントを実装する](~/docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)です。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#3)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>実装時は、必ず、<see cref="M:System.ComponentModel.AsyncOperation.PostOperationCompleted(System.Threading.SendOrPostCallback,System.Object)" />と<see cref="M:System.ComponentModel.AsyncOperation.Post(System.Threading.SendOrPostCallback,System.Object)" />は非同期に呼び出し、特定のアプリケーション内の非同期動作であると、潜在的なスタックがオーバーフローできるように、クラス ライブラリのプロバイダーを意識する必要はありません同期することで発生したモデルです。  
+  
+ 非同期のクラスの実装の詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](~/docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~AsyncOperation ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncOperation.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作の終了処理を行います。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OperationCompleted">
+      <MemberSignature Language="C#" Value="public void OperationCompleted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void OperationCompleted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncOperation.OperationCompleted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作の有効期間を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.ComponentModel.AsyncOperation.OperationCompleted%2A>メソッドを非同期操作の有効期間を終了します。 このメソッドは特定のタスクに対して呼び出されると、それに対応する呼び出し<xref:System.ComponentModel.AsyncOperation>で例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.ComponentModel.AsyncOperation.OperationCompleted" />このタスクの以前呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Post">
+      <MemberSignature Language="C#" Value="public void Post (System.Threading.SendOrPostCallback d, object arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Post(class System.Threading.SendOrPostCallback d, object arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncOperation.Post(System.Threading.SendOrPostCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Threading.SendOrPostCallback" />
+        <Parameter Name="arg" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="d">操作終了時に呼び出されるデリゲートをラップする <see cref="T:System.Threading.SendOrPostCallback" /> オブジェクト。</param>
+        <param name="arg">格納されているデリゲートの引数、 <c>d</c>パラメーター。</param>
+        <summary>アプリケーション モデルに適したスレッドまたはコンテキストでデリゲートを呼び出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.AsyncOperation.Post%2A>メソッドによって指定されたデリゲートを呼び出す、`arg`非同期操作の有効期間を終了せずにパラメーター。  
+  
+ 呼び出すことができます、<xref:System.ComponentModel.AsyncOperation.Post%2A>メソッドへの呼び出しによって、非同期操作の有効期間が終了されていません、好きなように、多くの場合、<xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>です。 進行状況や中間結果を戻すクライアントに報告するのにメソッドを使用できます。  
+  
+ `d`パラメーターは、非同期タスクの状態に関する更新を投稿するときに呼び出される必要のあるデリゲートをラップします。 <xref:System.ComponentModel.AsyncOperation>オブジェクトはスレッドまたはアプリケーション モデルに適切なコンテキストで、デリゲートが呼び出されることを確認してください。 メソッドは、状態の変更、進行状況の更新、または新しく使用可能な増分の結果のクライアントに通知イベントを発生させる必要に応じてことができます。  
+  
+ `arg`と状態をによってラップされたデリゲートに渡すパラメーターを使用する必要があります、`d`パラメーター。 参照があります、 <xref:System.ComponentModel.AsyncOperation>、またはその可能性があります、<xref:System.ComponentModel.ProgressChangedEventArgs?displayProperty=nameWithType>オブジェクト。 独自のクラスを派生させることが望ましい場合があります<xref:System.ComponentModel.ProgressChangedEventArgs?displayProperty=nameWithType>追加の状態の記憶域を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation.Post%2A>の進行状況と非同期操作のインクリメンタル結果をレポートします。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#5)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="M:System.ComponentModel.AsyncOperation.PostOperationCompleted(System.Threading.SendOrPostCallback,System.Object)" />このタスクのメソッドが既に呼び出されています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>継承元が行う必要があります、<see cref="M:System.ComponentModel.AsyncOperation.Post(System.Threading.SendOrPostCallback,System.Object)" />できるように、クラス ライブラリのプロバイダーは、潜在的なスタックを考慮する必要はありませんは、非同期呼び出しには、非同期処理が前提としていますが、特定のアプリケーション モデルの処理は同期している場合がオーバーフローが発生します。  
+  
+ <block subset="none" type="note"><para>  
+ コンソール アプリケーションは <see cref="M:System.ComponentModel.AsyncOperation.Post(System.Threading.SendOrPostCallback,System.Object)" /> 呼び出しの実行を同期しません。 これが原因で、<see langword="ProgressChanged" /> イベントが正しくない順序で発生することがあります。 <see cref="M:System.ComponentModel.AsyncOperation.Post(System.Threading.SendOrPostCallback,System.Object)" /> 呼び出しを順次実行するには、<see cref="T:System.Threading.SynchronizationContext" /> クラスを実装およびインストールします。  
+  
+</para></block>  
+  
+ 非同期のクラスの実装の詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](~/docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PostOperationCompleted">
+      <MemberSignature Language="C#" Value="public void PostOperationCompleted (System.Threading.SendOrPostCallback d, object arg);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void PostOperationCompleted(class System.Threading.SendOrPostCallback d, object arg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncOperation.PostOperationCompleted(System.Threading.SendOrPostCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="d" Type="System.Threading.SendOrPostCallback" />
+        <Parameter Name="arg" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="d">操作終了時に呼び出されるデリゲートをラップする <see cref="T:System.Threading.SendOrPostCallback" /> オブジェクト。</param>
+        <param name="arg">格納されているデリゲートの引数、 <c>d</c>パラメーター。</param>
+        <summary>非同期操作の有効期間を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>メソッドを非同期操作の有効期間を終了します。 このメソッドは特定のタスクに対して呼び出されると、それに対応する呼び出し<xref:System.ComponentModel.AsyncOperation>オブジェクトには、例外が発生します。  
+  
+ `d`パラメーター クラス完了、取り消し、またはタスクのエラーにより、タスクの有効期間が終了したときに呼び出すデリゲートをラップします。 <xref:System.ComponentModel.AsyncOperation>オブジェクトはスレッドまたはアプリケーション モデルに適切なコンテキストで、デリゲートが呼び出されることを確認してください。 デリゲートは、非同期タスクの有効期間が終了したことをクライアントに通知イベントを発生させる必要に応じてことができます。  
+  
+ `arg`完了デリゲートに状態情報を渡すパラメーターが使用される`d`です。 使用することができます、<xref:System.ComponentModel.AsyncOperation>オブジェクト、または<xref:System.ComponentModel.AsyncCompletedEventArgs?displayProperty=nameWithType>パラメーター値としてオブジェクト。 代わりに、追加の状態の記憶域を提供する場合から派生したクラスのインスタンスを使用できる、<xref:System.ComponentModel.AsyncCompletedEventArgs?displayProperty=nameWithType>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation.PostOperationCompleted%2A>メソッドを非同期操作の有効期間を終了します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#4)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.ComponentModel.AsyncOperation.OperationCompleted" />このタスクの以前呼び出されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="d" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>継承元が行う必要があります、<see cref="M:System.ComponentModel.AsyncOperation.PostOperationCompleted(System.Threading.SendOrPostCallback,System.Object)" />できるように、クラス ライブラリのプロバイダーは、潜在的なスタックを考慮する必要はありませんは、非同期呼び出しには、非同期処理が前提としていますが、特定のアプリケーション モデルの処理は同期している場合がオーバーフローが発生します。 メソッドは、「有効期間の終了」の呼び出し、つまり、実装は、アプリケーション モデルに適切なことを行う必要があるとして解釈する必要があります。 たとえば、ASP.NET では、未処理の非同期操作ののカウントがデクリメントされます。 これもする必要があります、操作状態に後続の呼び出しが失敗するようが今すぐに完了したためです。  
+  
+ 非同期のクラスの実装の詳細については、次を参照してください。[イベント ベースの非同期パターンを実装する](~/docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SynchronizationContext">
+      <MemberSignature Language="C#" Value="public System.Threading.SynchronizationContext SynchronizationContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.SynchronizationContext SynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncOperation.SynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.SynchronizationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンストラクターに渡された <see cref="T:System.Threading.SynchronizationContext" /> オブジェクトを取得します。</summary>
+        <value>コンストラクターに渡された <see cref="T:System.Threading.SynchronizationContext" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserSuppliedState">
+      <MemberSignature Language="C#" Value="public object UserSuppliedState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserSuppliedState" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncOperation.UserSuppliedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作を一意に識別するために使用するオブジェクトを取得または設定します。</summary>
+        <value>非同期メソッド呼び出しに渡される状態オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、複数の非同期メソッド、または 1 つの非同期メソッドの複数の呼び出しをサポートする場合、クライアントは、非同期タスクがイベントを発生させるかを決定する方法を必要があります。 `MethodNameAsync`メソッドは、型のパラメーターを受け取る必要があります<xref:System.Object>タスク ID として動作します。 呼び出すときにこのタスクの ID を使用する、<xref:System.ComponentModel.AsyncOperationManager.CreateOperation%2A?displayProperty=nameWithType>メソッドが、これは、非同期操作の特定の呼び出しで、クライアントのタスクの ID を関連付けます。 このタスクの ID はを通じて実装に使用可能になります、<xref:System.ComponentModel.AsyncOperation.UserSuppliedState%2A>プロパティです。  
+  
+> [!CAUTION]
+>  クライアント コードは一意の値を指定するように注意する必要があります、<xref:System.ComponentModel.AsyncOperation.UserSuppliedState%2A>プロパティです。 タスク Id が一意でない進行状況とその他のイベントを正しくレポートする、実装があります。 一意でないタスク id をチェックして発生させるコード、<xref:System.ArgumentException>いずれかが検出された場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.ComponentModel.AsyncOperation.UserSuppliedState%2A>を非同期操作の有効期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#4)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

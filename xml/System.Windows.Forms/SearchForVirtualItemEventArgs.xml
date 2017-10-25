@@ -1,0 +1,349 @@
+<Type Name="SearchForVirtualItemEventArgs" FullName="System.Windows.Forms.SearchForVirtualItemEventArgs">
+  <TypeSignature Language="C#" Value="public class SearchForVirtualItemEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchForVirtualItemEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.SearchForVirtualItemEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ListView.SearchForVirtualItem" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SearchForVirtualItemEventArgs>が構築されに渡される、<xref:System.Windows.Forms.ListView.SearchForVirtualItem>イベントを呼び出すとき、<xref:System.Windows.Forms.ListView.FindItemWithText%2A>または<xref:System.Windows.Forms.ListView.FindNearestItem%2A>のメソッド、<xref:System.Windows.Forms.ListView>仮想モードでのコントロールです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SearchForVirtualItemEventArgs (bool isTextSearch, bool isPrefixSearch, bool includeSubItemsInSearch, string text, System.Drawing.Point startingPoint, System.Windows.Forms.SearchDirectionHint direction, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isTextSearch, bool isPrefixSearch, bool includeSubItemsInSearch, string text, valuetype System.Drawing.Point startingPoint, valuetype System.Windows.Forms.SearchDirectionHint direction, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.SearchForVirtualItemEventArgs.#ctor(System.Boolean,System.Boolean,System.Boolean,System.String,System.Drawing.Point,System.Windows.Forms.SearchDirectionHint,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isTextSearch" Type="System.Boolean" />
+        <Parameter Name="isPrefixSearch" Type="System.Boolean" />
+        <Parameter Name="includeSubItemsInSearch" Type="System.Boolean" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="startingPoint" Type="System.Drawing.Point" />
+        <Parameter Name="direction" Type="System.Windows.Forms.SearchDirectionHint" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="isTextSearch">検索ではフルテキスト検索、かどうかを示す値。</param>
+        <param name="isPrefixSearch">プレフィックス検索は、検索にするかどうかを示す値。</param>
+        <param name="includeSubItemsInSearch">リスト項目のサブ項目を検索に含めるかどうかを示す値。</param>
+        <param name="text">検索対象の項目のテキスト。</param>
+        <param name="startingPoint">検索の開始位置とする <see cref="T:System.Drawing.Point" />。</param>
+        <param name="direction"><see cref="T:System.Windows.Forms.SearchDirectionHint" /> 値のいずれか。</param>
+        <param name="startIndex">インデックス、<see cref="T:System.Windows.Forms.ListViewItem" />検索を開始する位置を示すです。</param>
+        <summary><see cref="T:System.Windows.Forms.SearchForVirtualItemEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.SearchDirectionHint Direction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.SearchDirectionHint Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.SearchDirectionHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索を実行する現在の項目から方向を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.SearchDirectionHint" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も近い項目を識別する、<xref:System.Windows.Forms.ListView>コントロールは、アプリケーションがで実行されているオペレーティング システムに応じて変化です。 したがって、、、検索の方向ヒントであり、結果の絶対的な保証されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeSubItemsInSearch">
+      <MemberSignature Language="C#" Value="public bool IncludeSubItemsInSearch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeSubItemsInSearch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.IncludeSubItemsInSearch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索がリスト項目のサブ項目を含めるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サブ項目を検索に含める必要がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、サブ項目際に使用される、<xref:System.Windows.Forms.ListView>に<xref:System.Windows.Forms.View.Details>ビュー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public int Index { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインデックス、<see cref="T:System.Windows.Forms.ListViewItem" />で見つかった、<see cref="T:System.Windows.Forms.ListView" />です。</summary>
+        <value>インデックス、<see cref="T:System.Windows.Forms.ListViewItem" />で見つかった、<see cref="T:System.Windows.Forms.ListView" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Windows.Forms.SearchForVirtualItemEventArgs.Index%2A>プロパティを処理するときに検索条件に一致する項目のインデックス、<xref:System.Windows.Forms.ListView.SearchForVirtualItem>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrefixSearch">
+      <MemberSignature Language="C#" Value="public bool IsPrefixSearch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrefixSearch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.IsPrefixSearch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのテキストが検索文字列で始まる場合に、検索が項目を返すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />検索する項目のテキストを検索文字列で始まる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.SearchForVirtualItemEventArgs.Text%2A>プロパティは、目的のテキストの部分文字列を指定できます。 <xref:System.Windows.Forms.SearchForVirtualItemEventArgs.IsPrefixSearch%2A>プロパティは、検索テキストで始まるアイテムを検索するかどうかを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTextSearch">
+      <MemberSignature Language="C#" Value="public bool IsTextSearch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTextSearch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.IsTextSearch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索ではフルテキスト検索、かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />検索では、フルテキスト検索; 場合<see langword="false" />検索場所の検索では、場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索することができます、<xref:System.Windows.Forms.ListView>コントロールを使用して場所を<xref:System.Windows.Forms.ListView.FindNearestItem%2A>を使用してテキスト検索を実行できるメソッド、または、<xref:System.Windows.Forms.ListView.FindItemWithText%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartIndex">
+      <MemberSignature Language="C#" Value="public int StartIndex { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 StartIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.StartIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、<see cref="T:System.Windows.Forms.ListViewItem" />検索を開始します。</summary>
+        <value>インデックス、<see cref="T:System.Windows.Forms.ListViewItem" />検索の開始位置を示す</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、場所の検索に使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartingPoint">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point StartingPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point StartingPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.StartingPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>検索の開始位置を取得します。</summary>
+        <value><see cref="T:System.Drawing.Point" />検索の開始位置を示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索することができます、<xref:System.Windows.Forms.ListView>コントロールを使用して場所を<xref:System.Windows.Forms.ListView.FindNearestItem%2A>を使用してテキスト検索を実行できるメソッド、または、<xref:System.Windows.Forms.ListView.FindItemWithText%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.SearchForVirtualItemEventArgs.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内の項目を検索するために使用するテキストを取得、<see cref="T:System.Windows.Forms.ListView" />コントロール。</summary>
+        <value>内の項目の検索に使用されるテキスト、<see cref="T:System.Windows.Forms.ListView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索することができます、<xref:System.Windows.Forms.ListView>コントロールを使用して場所を<xref:System.Windows.Forms.ListView.FindNearestItem%2A>を使用してテキスト検索を実行できるメソッド、または、<xref:System.Windows.Forms.ListView.FindItemWithText%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ListView>という`ListView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ListView.SearchForVirtualItem?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#480](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#480)]
+ [!code-vb[System.Windows.Forms.EventExamples#480](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#480)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

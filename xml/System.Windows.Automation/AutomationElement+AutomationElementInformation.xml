@@ -1,0 +1,702 @@
+<Type Name="AutomationElement+AutomationElementInformation" FullName="System.Windows.Automation.AutomationElement+AutomationElementInformation">
+  <TypeSignature Language="C#" Value="public struct AutomationElement.AutomationElementInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit AutomationElement/AutomationElementInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.AutomationElement.AutomationElementInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>によって使用されるプロパティのアクセサーを含む、<see cref="P:System.Windows.Automation.AutomationElement.Cached" />または<see cref="P:System.Windows.Automation.AutomationElement.Current" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティから直接アクセスできる<xref:System.Windows.Automation.AutomationElement.Cached%2A>と<xref:System.Windows.Automation.AutomationElement.Current%2A>; を取得する必要はありません、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation>自体を構成します。  
+  
+ この構造体で指定したプロパティを使用しても取得できます<xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A>と<xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>から対応する識別子を使用して<xref:System.Windows.Automation.AutomationElement>です。 たとえば、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AcceleratorKey%2A?displayProperty=nameWithType>でプロパティを識別、<xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty?displayProperty=nameWithType>フィールドです。 個々 のプロパティの詳細については、それぞれの識別子のリファレンス ページで使用できます。各リファレンス トピックの「解説」セクションのリンクを参照してください。  
+  
+   
+  
+## Examples  
+ 例を次にどのように<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>プロパティは、この構造体から取得されます。  
+  
+ [!code-csharp[UIAClient_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#106)]
+ [!code-vb[UIAClient_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#106)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AcceleratorKey">
+      <MemberSignature Language="C#" Value="public string AcceleratorKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AcceleratorKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.AcceleratorKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のアクセラレータ キーの組み合わせを含む文字列を取得します。</summary>
+        <value>要素に関連付けられているアクションを呼び出すのキーの組み合わせのシーケンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセラレータ キーの組み合わせでは、アクションを呼び出します。 たとえば、ctrl キーを押しながら O は、多くの場合、呼び出しに使用、**ファイルを開く** ダイアログ ボックス。 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]アクセラレータ キー プロパティが常に設定されている要素を実装して、<xref:System.Windows.Automation.InvokePattern>クラスです。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessKey">
+      <MemberSignature Language="C#" Value="public string AccessKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccessKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.AccessKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のアクセス キーの文字を含む文字列を取得します。</summary>
+        <value>その要素をアクティブ化に使用される要素に関連付けられている文字。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス キーは、メニューのメニュー項目または関連付けられたメニュー機能をアクティブにするボタンなどのコントロールのラベルのテキスト内の文字です。 呼び出す文字"O"が多くの場合、使用するなど、**開く**からファイル コモン ダイアログ ボックス、**ファイル**メニュー。  [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]アクセス キー プロパティが常に設定されている要素を実装して、<xref:System.Windows.Automation.InvokePattern>クラスです。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomationId">
+      <MemberSignature Language="C#" Value="public string AutomationId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AutomationId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含む文字列を取得、 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]要素。</summary>
+        <value>[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]コンテナー内の兄弟間で一意である要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用可能な場合、<xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>常にローカルの言語に関係なく、アプリケーションの任意のインスタンスで同じ値を要素が必要です。 値は、デスクトップ全体で、兄弟要素間で一意であるが、必ずしも一意ではありませんをする必要があります。 たとえば、アプリケーションの複数のインスタンスまたは Microsoft Windows エクスプ ローラーで、複数のフォルダー ビュー要素が含まれますが同じ<xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>、や"です。  
+  
+ サポートを中に、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>常にお勧めテストの容易性が向上させる場合、このプロパティは必須ではありません。 これはサポートされている場合、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>は UI の言語に関係なく実行するスクリプトを自動テストの作成に便利です。 クライアントでは何も想定しないように注意してに関して、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>他のアプリケーションによって公開されています。 <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>は必ずしも限りません安定した異なるリリース間であるか、アプリケーションのビルドします。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoundingRectangle">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect BoundingRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect BoundingRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>完全に要素を囲む四角形の座標を取得します。</summary>
+        <value>それを囲む四角形の座標。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される四角形は、クリック可能なポイントを含めることができます。 ときに、これが発生するインスタンスは、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]項目は、不規則な形状またはクリック可能な領域、または他のことが隠される[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClassName">
+      <MemberSignature Language="C#" Value="public string ClassName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClassName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.ClassName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの開発者によって割り当てられている要素のクラス名を含む文字列を取得します。</summary>
+        <value>コントロールの開発者によって割り当てられたクラス名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は、実装によって異なります。 プロパティは、テスト環境で役に立ちます。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.ClassNameProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlType">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.ControlType ControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.ControlType ControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.ControlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の <see cref="T:System.Windows.Automation.ControlType" /> を取得します。</summary>
+        <value>この要素の相互作用モデル。 既定値は <see cref="F:System.Windows.Automation.ControlType.Custom" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの種類の説明の既知の相互作用モデル任意[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ローカライズされたコントロール型や複雑なロジック ルールの組み合わせに頼ることがなく要素。  
+  
+ このプロパティが実行時に変更できますのみケースをサポートするコントロール<xref:System.Windows.Automation.MultipleViewPattern>です。 例は、 [!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)] ListView コントロールからに変更できます<xref:System.Windows.Automation.ControlType.DataGrid>に<xref:System.Windows.Automation.ControlType.List>に現在のビューに依存します。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameworkId">
+      <MemberSignature Language="C#" Value="public string FrameworkId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FrameworkId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.FrameworkId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になる UI フレームワークの名前を取得します。</summary>
+        <value>"Win32"、"WinForm"、"DirectUI"などの UI フレームワークの名前。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティの値の種類は返す<xref:System.String>です。 既定値は空の文字列です。  
+  
+ このプロパティは、全体の UI フレームワークに特殊なケースを適用するアプリケーションを使用します。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.FrameworkIdProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasKeyboardFocus">
+      <MemberSignature Language="C#" Value="public bool HasKeyboardFocus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.HasKeyboardFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素にキーボード フォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素にキーボード フォーカスがある場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナー内の要素がフォーカス<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HasKeyboardFocus%2A>はコンテナー要素にも当てはまります。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.HasKeyboardFocusProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpText">
+      <MemberSignature Language="C#" Value="public string HelpText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素に関連付けられているヘルプ テキストを取得します。</summary>
+        <value>要素のツールヒント ヘルプ テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.HelpTextProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContentElement">
+      <MemberSignature Language="C#" Value="public bool IsContentElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsContentElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素は、コンテンツ要素であるかどうかを指定する値を取得します。</summary>
+        <value>
+          <see langword="true" />要素のコンテンツ要素である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツの要素には、ユーザーに表示されるデータが含まれています。 リスト ボックスまたはダイアログ ボックスのボタンの項目は、コンテンツ要素の例を示します。 非コンテンツ要素、周辺機器の要素とも呼ばれます。 通常を使用して、複合コントロールのコンテンツの操作たとえば、ドロップダウン コントロールのボタンです。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsContentElementProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsControlElement">
+      <MemberSignature Language="C#" Value="public bool IsControlElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsControlElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素は、コントロールとして表示されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素は、コントロールとして表示される場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsControlElementProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabled">
+      <MemberSignature Language="C#" Value="public bool IsEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]によって参照された項目、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素が有効にします。</summary>
+        <value>
+          <see langword="true" />コントロールが有効である場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled%2A>のために変更するプロパティ[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]の相互作用します。 呼び出して更新されたキャッシュを取得する必要があります<xref:System.Windows.Automation.AutomationElement.GetUpdatedCache%2A>場合の値、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsEnabled%2A>プロパティはキャッシュ要求を発行した後に変更された可能性があります。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKeyboardFocusable">
+      <MemberSignature Language="C#" Value="public bool IsKeyboardFocusable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsKeyboardFocusable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsKeyboardFocusable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素がキーボード フォーカスを受け入れることができます。</summary>
+        <value>
+          <see langword="true" />コントロールがキーボード フォーカスを受け取る場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsKeyboardFocusableProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOffscreen">
+      <MemberSignature Language="C#" Value="public bool IsOffscreen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOffscreen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsOffscreen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素が画面に表示します。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールが非表示です。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素が完全にスクロールされる基準かどうかを示すブール値 (たとえば、リスト ボックス内のアイテムはコンテナー オブジェクトのビューポートの外側) またはビューから外れて (たとえば、ツリー ビュー、メニューのまたは最小化ウィンドウ内の項目) 折りたたんだ状態です。  
+  
+ 要素にフォーカスするを原因となるクリック可能なポイントがある場合は、要素の一部が画面外にある場合でも、画面上と見なされます。  
+  
+ プロパティの値は、他のウィンドウで、または要素が特定のモニターに表示されるかどうかによってオクルー ジョンの影響を受けません。  
+  
+ IsOffscreen が場合`true,`要素がスクロールされる基準または見えない、折りたたまれているが、まだの UI でのエンドユーザーに対する認識を戻すことのできるビューにスクロールするか、ドロップダウン コントロールをクリックしてなどの簡単な操作でします。  
+  
+ 要素が、エンドユーザーが認識していないまたは「プログラムで非表示」(たとえば、ダイアログ ボックスが閉じられたが、基礎となるオブジェクトが、アプリケーションによってキャッシュされている) と呼びますものである場合、これから削除するか、要素ツリーに IsOffscreen の値を設定するのではなく`true`です。  
+  
+ 値が`true`、コンテナーに対しても`true`のコンテナー要素の子孫です。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPassword">
+      <MemberSignature Language="C#" Value="public bool IsPassword { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPassword" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsPassword" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素には、保護されたコンテンツが含まれています。</summary>
+        <value>
+          <see langword="true" />要素には、保護されたコンテンツが含まれている場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールのテキスト コンテンツを読み上げる必要があるかどうかを決定するスクリーン リーダーなどのアプリケーションを使用します。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsPasswordProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRequiredForForm">
+      <MemberSignature Language="C#" Value="public bool IsRequiredForForm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRequiredForForm" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsRequiredForForm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素は、フォームに記入するために必要です。</summary>
+        <value>
+          <see langword="true" />要素が必要な場合に記入します。それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.IsRequiredForFormProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStatus">
+      <MemberSignature Language="C#" Value="public string ItemStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.ItemStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素内の項目の状態の説明を取得します。</summary>
+        <value>状態の説明です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、要素が、その項目に関する状態を示しているかどうかを確認するためにクライアントを使用します。 たとえば、メッセージング アプリケーション内の連絡先に関連付けられている項目には、「ビジー」または「接続済み」があります。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.ItemStatusProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public string ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目の種類の説明を取得します。</summary>
+        <value>アイテムを説明するローカライズされた文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、リスト、ツリー ビュー、またはデータ グリッド内の項目に関する情報を取得します。 たとえば、ディレクトリ、ファイル ビュー内の項目には、"ドキュメント File"または「フォルダー」があります。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.ItemTypeProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabeledBy">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement LabeledBy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.AutomationElement LabeledBy" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.LabeledBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この要素のテキスト ラベルを格納する要素を取得します。</summary>
+        <value>この要素のラベルとなる要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、たとえば、コンボ ボックスの静的なテキスト ラベルを取得するために可能性があります。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.LabeledByProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalizedControlType">
+      <MemberSignature Language="C#" Value="public string LocalizedControlType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LocalizedControlType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.LocalizedControlType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール型の説明を取得します。</summary>
+        <value>"ボタン" など、コントロール型のローカライズされた説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.LocalizedControlTypeProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の名前を取得します。</summary>
+        <value>名前、[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の要素を検索する要素の名前を使用できます、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリーの場合、<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>要素のプロパティがサポートされていません。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.NameProperty>」を参照してください。  
+  
+   
+  
+## Examples  
+ 例を次にどのように<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>プロパティを取得します。  
+  
+ [!code-csharp[UIAClient_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#106)]
+ [!code-vb[UIAClient_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NativeWindowHandle">
+      <MemberSignature Language="C#" Value="public int NativeWindowHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NativeWindowHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.NativeWindowHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のウィンドウのハンドルを取得します。</summary>
+        <value>1 つが存在する場合は、ウィンドウのハンドルそれ以外の場合 0 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.NativeWindowHandleProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.OrientationType Orientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.OrientationType Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.OrientationType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの向きを取得します。</summary>
+        <value>方向です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スクロール バーと垂直方向または水平方向のいずれかを持つことができますスライダーなどのコントロールでは、このプロパティがサポートされています。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.OrientationProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessId">
+      <MemberSignature Language="C#" Value="public int ProcessId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProcessId" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.AutomationElement.AutomationElementInformation.ProcessId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスを取得[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]この要素のです。</summary>
+        <value>[!INCLUDE[TLA2#tla_id](~/includes/tla2sharptla-id-md.md)]の要素をホストするプロセスです。 プロパティの既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロセス[!INCLUDE[TLA#tla_id](~/includes/tlasharptla-id-md.md)]はオペレーティング システムによって割り当てられます。 内に表示されることができます、 **PID**の列、**プロセス**タスク マネージャー タブ。  
+  
+ 詳細については、「<xref:System.Windows.Automation.AutomationElement.ProcessIdProperty>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

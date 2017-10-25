@@ -1,0 +1,390 @@
+<Type Name="SessionStateItemCollection" FullName="System.Web.SessionState.SessionStateItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class SessionStateItemCollection : System.Collections.Specialized.NameObjectCollectionBase, System.Collections.ICollection, System.Web.SessionState.ISessionStateItemCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SessionStateItemCollection extends System.Collections.Specialized.NameObjectCollectionBase implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Web.SessionState.ISessionStateItemCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.SessionState.SessionStateItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.Specialized.NameObjectCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.SessionState.ISessionStateItemCollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セッション状態に格納されているオブジェクトのコレクション。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemCollection>セッション状態変数の値は変数の名前または数値インデックスでインデックス作成を管理するクラスを使用します。 セッション状態変数は、ASP.NET アプリケーションを使用してコードに公開されます、<xref:System.Web.SessionState.HttpSessionState>を使用してアクセスは、クラス、 <xref:System.Web.HttpContext.Session%2A> 、現在のプロパティ<xref:System.Web.HttpContext>または<xref:System.Web.UI.Page>です。 <xref:System.Web.SessionState.HttpSessionState>クラスの呼び出し、<xref:System.Web.SessionState.HttpSessionStateContainer>セッション状態変数の値を使用して管理するクラス、<xref:System.Web.SessionState.SessionStateItemCollection>です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Web.SessionState.SessionStateItemCollection>オブジェクトし設定を名前で、コレクション内の値を取得します。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#1)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>基づくカスタム セッション状態プロバイダーを作成する場合、<see cref="T:System.Web.SessionState.SessionStateStoreProviderBase" />クラスを使用して、<see cref="T:System.Web.SessionState.SessionStateItemCollection" />をセッション状態に格納されているアイテムを管理するクラス。 セッション状態のアイテムの管理を実装するカスタム オブジェクトを作成する必要がある場合、<see cref="T:System.Web.SessionState.ISessionStateItemCollection" />インターフェイスです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionStateItemCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい空の作成<see cref="T:System.Web.SessionState.SessionStateItemCollection" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemCollection>セッション状態変数の値は変数の名前または数値インデックスでインデックス作成を管理するクラスを使用します。 セッション状態変数は、ASP.NET アプリケーションを使用してコードに公開されます、<xref:System.Web.SessionState.HttpSessionState>を使用してアクセスは、クラス、 <xref:System.Web.HttpContext.Session%2A> 、現在のプロパティ<xref:System.Web.HttpContext>または<xref:System.Web.UI.Page>です。 <xref:System.Web.SessionState.HttpSessionState>クラスの呼び出し、<xref:System.Web.SessionState.HttpSessionStateContainer>セッション状態変数の値を使用して管理するクラス、<xref:System.Web.SessionState.SessionStateItemCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.Web.SessionState.SessionStateItemCollection>オブジェクトし設定を名前で、コレクション内の値を取得します。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#1)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッション状態コレクションからすべての値とキーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public static System.Web.SessionState.SessionStateItemCollection Deserialize (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.SessionState.SessionStateItemCollection Deserialize(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.Deserialize(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.SessionState.SessionStateItemCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.IO.BinaryReader" />ストリームからのシリアル化されたコレクションの読み取りに使用される、エンコードされた文字列。</param>
+        <summary>作成、<see cref="T:System.Web.SessionState.SessionStateItemCollection" />コレクションを使用してに書き込まれる記憶域の場所から、<see cref="M:System.Web.SessionState.SessionStateItemCollection.Serialize(System.IO.BinaryWriter)" />メソッドです。</summary>
+        <returns>A<see cref="T:System.Web.SessionState.SessionStateItemCollection" />コレクションを使用してに書き込まれる記憶域の場所からコンテンツが設定されます、<see cref="M:System.Web.SessionState.SessionStateItemCollection.Serialize(System.IO.BinaryWriter)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemCollection.Deserialize%2A>の内容を読み取るメソッドを使用することができます、<xref:System.Web.SessionState.SessionStateItemCollection>セッション ストアからのコレクション。  
+  
+ 内容の書き込み、<xref:System.Web.SessionState.SessionStateItemCollection>セッション ストア、使用するオブジェクト、<xref:System.Web.SessionState.SessionStateItemCollection.Serialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションを使用して作成されたファイルから、<xref:System.Web.SessionState.SessionStateItemCollection.Serialize%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/serializecs.aspx#4)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/serializevb.aspx#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">セッション状態の情報が無効か破損しています</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dirty">
+      <MemberSignature Language="C#" Value="public bool Dirty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Dirty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateItemCollection.Dirty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコレクションが変更されたものとしてマークされているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Web.SessionState.SessionStateItemCollection" /> 、それ以外の変更内容であった<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemCollection.Dirty%2A>を示すためにプロパティを使用するかどうかの内容、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションが変更されました。  
+  
+ <xref:System.Web.SessionState.SessionStateItemCollection.Dirty%2A>プロパティに設定されている`true`オブジェクトの値を設定またはを使用してコレクションに追加する場合、<xref:System.Web.SessionState.SessionStateItemCollection.Item%2A>プロパティと 1 つまたは複数のオブジェクトの値が使用してコレクションから削除されたとき、 <xref:System.Web.SessionState.SessionStateItemCollection.Remove%2A>、 <xref:System.Web.SessionState.SessionStateItemCollection.RemoveAt%2A>、または<xref:System.Web.SessionState.SessionStateItemCollection.Clear%2A>メソッドです。  
+  
+ <xref:System.Web.SessionState.SessionStateItemCollection.Dirty%2A>プロパティに設定されても`true`を使用してコレクションから変更可能なオブジェクトを取得するときに、<xref:System.Web.SessionState.SessionStateItemCollection.Item%2A>プロパティです。  
+  
+ 呼び出す、<xref:System.Web.SessionState.SessionStateItemCollection.Deserialize%2A>に挿入する方法、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションの結果、<xref:System.Web.SessionState.SessionStateItemCollection.Dirty%2A>に設定されるプロパティ`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクション内のすべてのキー名の読み取りに使用できる列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />セッション状態コレクション内の変数名を反復処理することができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の変数名を取得、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションを使用して、<xref:System.Web.SessionState.SessionStateItemCollection.GetEnumerator%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#1)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の値の数値インデックス。</param>
+        <summary>取得または数値のインデックスを使用して、コレクション内の値を設定します。</summary>
+        <value>指定したインデックスに格納されているコレクション内の値。 返しますを取得しようとして、指定したキーが見つからない場合<see langword="null" />、し、指定したキーを使用して、新しい要素を作成するように設定しようとしています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を設定し、内の値を取得、<xref:System.Web.SessionState.SessionStateItemCollection>数値インデックスによってコレクション。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#2)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[string name] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateItemCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクション内の値のキー名。</param>
+        <summary>取得または名前で、コレクション内の値を設定します。</summary>
+        <value>指定した名前を持つコレクション内の値です。 返しますを取得しようとして、指定したキーが見つからない場合<see langword="null" />、し、指定したキーを使用して、新しい要素を作成するように設定しようとしています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を設定し、内の値を取得、<xref:System.Web.SessionState.SessionStateItemCollection>名のコレクション。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#1)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public override System.Collections.Specialized.NameObjectCollectionBase.KeysCollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameObjectCollectionBase/KeysCollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.SessionState.SessionStateItemCollection.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameObjectCollectionBase+KeysCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての値のコレクションに格納されている変数名のコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.NameObjectCollectionBase.KeysCollection" />をコレクションのすべてのキーを含むコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各キーは、コレクションに格納されている値の変数名を表す文字列です。  
+  
+   
+  
+## Examples  
+ 次のコード例の変数名を取得、<xref:System.Web.SessionState.SessionStateItemCollection>によって返される変数名を使用して、コレクション、<xref:System.Web.SessionState.SessionStateItemCollection.Keys%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/keyscs.aspx#1)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/keysvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクションから削除する項目の名前。</param>
+        <summary>コレクションから項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションに指定した要素が含まれていない`name`コレクションは変更されません。 例外をスローすることはありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションから削除する項目のインデックス。</param>
+        <summary>指定したインデックス位置にある項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションに指定した要素が含まれていない`name`コレクションは変更されません。 例外をスローすることはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" /> が <see cref="P:System.Collections.ICollection.Count" /> 以上になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.BinaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Serialize(class System.IO.BinaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.SessionState.SessionStateItemCollection.Serialize(System.IO.BinaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.IO.BinaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.IO.BinaryWriter" />をストリームにシリアル化されたコレクションを記述するために使用またはエンコードされた文字列。</param>
+        <summary>コレクションの内容を書き込みます、<see cref="T:System.IO.BinaryWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.SessionState.SessionStateItemCollection.Serialize%2A>メソッドは、の内容の書き込みを使用することができます、<xref:System.Web.SessionState.SessionStateItemCollection>セッション ストアへのコレクション。  
+  
+ 取得、シリアル化された<xref:System.Web.SessionState.SessionStateItemCollection>オブジェクトを使用して、セッション ストアから、<xref:System.Web.SessionState.SessionStateItemCollection.Deserialize%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成し、設定、<xref:System.Web.SessionState.SessionStateItemCollection>コレクションと書き込みを使用してファイルの内容、<xref:System.Web.SessionState.SessionStateItemCollection.Serialize%2A>メソッドです。  
+  
+ [!code-csharp[System.Web.SessionState.SessionStateItemCollection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/CS/serializecs.aspx#3)]
+ [!code-vb[System.Web.SessionState.SessionStateItemCollection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.SessionState.SessionStateItemCollection/VB/serializevb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,90 @@
+<Type Name="PagesEnableSessionState" FullName="System.Web.Configuration.PagesEnableSessionState">
+  <TypeSignature Language="C#" Value="public enum PagesEnableSessionState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PagesEnableSessionState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.PagesEnableSessionState" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>単一の Web ページまたは Web アプリケーション全体のセッション状態のアクティベーションを決定するために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体では、Web アプリケーション全体のセッション状態のアクティベーションを決定します。 この値で使用できる、 `pages` Web アプリケーション構成ファイルのスコープ内のすべての .aspx ページに影響する構成ファイル セクションです。 <xref:System.Web.Configuration.PagesSection>型へのプログラムによるアクセスを許可する、`pages`構成セクション。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、宣言によっての値を使用する方法を示します、<xref:System.Web.Configuration.PagesEnableSessionState>セッション状態が有効になっているかどうかを指定する列挙体です。  
+  
+```  
+<system.web>  
+  <pages enableSessionState="true" />  
+</system.web>  
+  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.PagesEnableSessionState>列挙が、<xref:System.Web.Configuration.PagesSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.PagesSection#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/CS/usingpagessection.cs#14)]
+ [!code-vb[System.Web.Configuration.PagesSection#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.PagesSection/VB/usingpagessection.vb#14)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="False">
+      <MemberSignature Language="C#" Value="False" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.PagesEnableSessionState False = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.PagesEnableSessionState.False" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.PagesEnableSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態が無効です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.PagesEnableSessionState ReadOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.PagesEnableSessionState.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.PagesEnableSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態は、有効ですが、書き込み禁止になってです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="True">
+      <MemberSignature Language="C#" Value="True" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Configuration.PagesEnableSessionState True = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Configuration.PagesEnableSessionState.True" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.PagesEnableSessionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション状態を有効にします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

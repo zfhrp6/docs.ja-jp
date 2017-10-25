@@ -1,0 +1,393 @@
+<Type Name="DataGridColumnHeaderItemAutomationPeer" FullName="System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer">
+  <TypeSignature Language="C#" Value="public class DataGridColumnHeaderItemAutomationPeer : System.Windows.Automation.Peers.ItemAutomationPeer, System.Windows.Automation.Provider.IInvokeProvider, System.Windows.Automation.Provider.IScrollItemProvider, System.Windows.Automation.Provider.ITransformProvider, System.Windows.Automation.Provider.IVirtualizedItemProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridColumnHeaderItemAutomationPeer extends System.Windows.Automation.Peers.ItemAutomationPeer implements class System.Windows.Automation.Provider.IInvokeProvider, class System.Windows.Automation.Provider.IScrollItemProvider, class System.Windows.Automation.Provider.ITransformProvider, class System.Windows.Automation.Provider.IVirtualizedItemProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.ItemAutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IInvokeProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IScrollItemProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.ITransformProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Automation.Provider.IVirtualizedItemProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>公開、<see cref="P:System.Windows.Controls.DataGridColumn.Header" />の<see cref="T:System.Windows.Controls.DataGridColumn" />内にある、 <see cref="T:System.Windows.Controls.DataGrid" /> UI オートメーションを使用します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridColumnHeaderItemAutomationPeer (object item, System.Windows.Controls.DataGridColumn column, System.Windows.Automation.Peers.DataGridColumnHeadersPresenterAutomationPeer peer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object item, class System.Windows.Controls.DataGridColumn column, class System.Windows.Automation.Peers.DataGridColumnHeadersPresenterAutomationPeer peer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.#ctor(System.Object,System.Windows.Controls.DataGridColumn,System.Windows.Automation.Peers.DataGridColumnHeadersPresenterAutomationPeer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="column" Type="System.Windows.Controls.DataGridColumn" />
+        <Parameter Name="peer" Type="System.Windows.Automation.Peers.DataGridColumnHeadersPresenterAutomationPeer" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="P:System.Windows.Controls.DataGridColumn.Header" />で、<see cref="T:System.Windows.Controls.DataGridColumn" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />です。</param>
+        <param name="column">関連付けられている列、<see cref="P:System.Windows.Controls.DataGridColumn.Header" />です。</param>
+        <param name="peer">オートメーション ピア、<see cref="T:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter" />と関連付けられている、<see cref="T:System.Windows.Controls.DataGrid" />です。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationControlTypeCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.GetAutomationControlTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationControlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられているヘッダーのコントロールの種類を取得<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> によって呼び出されます。</summary>
+        <returns><see cref="F:System.Windows.Automation.Peers.AutomationControlType.HeaderItem" /> 列挙型値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetClassNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetClassNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.GetClassNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これで表されるヘッダーを区別する名前を取得<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> によって呼び出されます。</summary>
+        <returns>型名、<see cref="P:System.Windows.Controls.DataGridColumn.Header" />これに関連付けられているプロパティ<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPattern">
+      <MemberSignature Language="C#" Value="public override object GetPattern (System.Windows.Automation.Peers.PatternInterface patternInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetPattern(valuetype System.Windows.Automation.Peers.PatternInterface patternInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.GetPattern(System.Windows.Automation.Peers.PatternInterface)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="patternInterface" Type="System.Windows.Automation.Peers.PatternInterface" />
+      </Parameters>
+      <Docs>
+        <param name="patternInterface">コントロール パターンを指定する列挙値。</param>
+        <summary>この automation peer に関連付けられている要素の指定したコントロール パターンをサポートするオブジェクトを返します。</summary>
+        <returns>現在<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />場合<paramref name="patternInterface" />サポートされている値、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次のいずれかが発生した場合、このメソッドは、現在を返します<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer>オブジェクト。  
+  
+-   `patternInterface`<xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridColumn>これに関連付けられているオブジェクト<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer>並べ替えることができます。  
+  
+-   `patternInterface`<xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType>と<xref:System.Windows.Controls.DataGridColumn>これに関連付けられているオブジェクト<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer>ユーザーの幅を変更できます。  
+  
+-   `patternInterface` は <xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType> です。  
+  
+-   `patternInterface` は <xref:System.Windows.Automation.Peers.PatternInterface?displayProperty=nameWithType> です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsContentElementCore">
+      <MemberSignature Language="C#" Value="protected override bool IsContentElementCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsContentElementCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.IsContentElementCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この Automation Peer に関連付けられている要素が、ユーザーに提示されるデータを含むかどうかを示す値を取得します。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IInvokeProvider.Invoke">
+      <MemberSignature Language="C#" Value="void IInvokeProvider.Invoke ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.IInvokeProvider.Invoke() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#IInvokeProvider#Invoke" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を送信してコントロールをアクティブ化し、その 1 つの明確なアクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IInvokeProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView">
+      <MemberSignature Language="C#" Value="void IScrollItemProvider.ScrollIntoView ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.IScrollItemProvider.ScrollIntoView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#IScrollItemProvider#ScrollIntoView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ヘッダーと関連付けられている列をスクロール、<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />表示にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IScrollItemProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.CanMove">
+      <MemberSignature Language="C#" Value="bool System.Windows.Automation.Provider.ITransformProvider.CanMove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Windows.Automation.Provider.ITransformProvider.CanMove" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#CanMove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列を移動できるかどうかを指定する値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITransformProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.CanResize">
+      <MemberSignature Language="C#" Value="bool System.Windows.Automation.Provider.ITransformProvider.CanResize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Windows.Automation.Provider.ITransformProvider.CanResize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#CanResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>列のサイズを変更できるかどうかを指定する値を取得します。</summary>
+        <value>
+          要素のサイズを変更できる場合は <see langword="true" />。変更できない場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITransformProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.CanRotate">
+      <MemberSignature Language="C#" Value="bool System.Windows.Automation.Provider.ITransformProvider.CanRotate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Windows.Automation.Provider.ITransformProvider.CanRotate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#CanRotate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールを回転できるかどうかを指定する値を取得します。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITransformProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.Move">
+      <MemberSignature Language="C#" Value="void ITransformProvider.Move (double x, double y);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.ITransformProvider.Move(float64 x, float64 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Move(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Double" />
+        <Parameter Name="y" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">このパラメーターは使用されません。</param>
+        <param name="y">このパラメーターは使用されません。</param>
+        <summary>すべてのケースでは、例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これに関連付けられている列<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer>移動することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.Resize">
+      <MemberSignature Language="C#" Value="void ITransformProvider.Resize (double width, double height);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.ITransformProvider.Resize(float64 width, float64 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Resize(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Double" />
+        <Parameter Name="height" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="width">ピクセル単位で、列の新しい幅。</param>
+        <param name="height">このパラメーターは使用されません。</param>
+        <summary>関連付けられている列の幅にサイズ変更、<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.ITransformProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">これに関連付けられている列<see cref="T:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer" />サイズを変更できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.ITransformProvider.Rotate">
+      <MemberSignature Language="C#" Value="void ITransformProvider.Rotate (double degrees);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.ITransformProvider.Rotate(float64 degrees) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#ITransformProvider#Rotate(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="degrees" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="degrees">このパラメーターは使用されません。</param>
+        <summary>すべてのケースでは、例外をスローします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 関連付けられている列、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer>回転することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize">
+      <MemberSignature Language="C#" Value="void IVirtualizedItemProvider.Realize ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Automation.Provider.IVirtualizedItemProvider.Realize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer.System#Windows#Automation#Provider#IVirtualizedItemProvider#Realize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仮想列は、UI オートメーション要素として完全にアクセスできるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Automation.Peers.DataGridColumnHeaderItemAutomationPeer> のインスタンスが <xref:System.Windows.Automation.Provider.IVirtualizedItemProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

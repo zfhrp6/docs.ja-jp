@@ -1,0 +1,373 @@
+<Type Name="ToolboxItemContainer" FullName="System.Drawing.Design.ToolboxItemContainer">
+  <TypeSignature Language="C#" Value="public class ToolboxItemContainer : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ToolboxItemContainer extends System.Object implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Design.ToolboxItemContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>カプセル化、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItemContainer>カプセル化するための単純なクラス、<xref:System.Drawing.Design.ToolboxItem>効率を上げるのためです。 読み込みを延期する読み込まれた常に 1 つのクラスを用意することによって、<xref:System.Drawing.Design.ToolboxItem>が必要になるまでです。 新しいクラスから派生できるため<xref:System.Drawing.Design.ToolboxItem>に読み込むことが、<xref:System.Drawing.Design.ToolboxItem>既にメモリされていないアセンブリの読み込みをさらに、します。 大規模なコレクションに対して<xref:System.Drawing.Design.ToolboxItem>オブジェクトをこの多数のアセンブリを読み込む、パフォーマンスが低下する可能性があります。 代わりに、ツールボックス サービスだけを取り扱います<xref:System.Drawing.Design.ToolboxItemContainer>オブジェクトおよび取得が含まれている<xref:System.Drawing.Design.ToolboxItem>必要な場合のみです。  
+  
+ <xref:System.Drawing.Design.ToolboxItemContainer>からキャッシュされたデータを保持するように設計された、<xref:System.Drawing.Design.ToolboxItem>です。 既定の実装では、フィルターのみが保持、<xref:System.Drawing.Design.ToolboxItem>が、名前、イメージ、およびその他の情報をキャッシュする選択クラスを派生させる可能性があります。 <xref:System.Drawing.Design.ToolboxItemContainer>オブジェクトのシリアル化の 2 つの形式のサポート: 標準的なランタイムのシリアル化を通じてシリアル化することができ、読み込むしからそれ自体を保存することができます、<xref:System.Windows.Forms.IDataObject?displayProperty=nameWithType>です。 前者を保存する簡単な方法を提供する<xref:System.Drawing.Design.ToolboxItemContainer>永続的ストレージへのオブジェクト。 後者に統合する方法を提供<xref:System.Drawing.Design.ToolboxItemContainer>混在データ ストレージ形式を持つオブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItemContainer (System.Drawing.Design.ToolboxItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Design.ToolboxItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.#ctor(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Drawing.Design.ToolboxItem" />を作成する対象の<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />クラス、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテナーのキャッシュの情報がプロパティにアクセスするので埋められた、<xref:System.Drawing.Design.ToolboxItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolboxItemContainer (System.Windows.Forms.IDataObject data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.IDataObject data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.#ctor(System.Windows.Forms.IDataObject)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="data" Type="System.Windows.Forms.IDataObject" />
+      </Parameters>
+      <Docs>
+        <param name="data">表すデータ オブジェクト、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />クラス、<see cref="T:System.Windows.Forms.IDataObject" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `data`パラメーターによって提供されるデータを含めることがあります、<xref:System.Drawing.Design.ToolboxItemContainer>クラスです。 いずれかで読み取ることができるデータを含めることがあります、<xref:System.Drawing.Design.ToolboxItem>作成元のユーザーが指定されています。 クリップボードの形式を使用してデータの場合もあります、<xref:System.Drawing.Design.ToolboxItem>作成者が割り当てられます。 ここで、<xref:System.Drawing.Design.ToolboxItem>オンデマンドで作成します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>一般のシリアル化機構をオーバーライドする必要はありません、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。 <see cref="T:System.Drawing.Design.ToolboxItemContainer" />オブジェクトが保存によるシリアル化を実装、<see cref="T:System.Windows.Forms.IDataObject" />から返される、<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />プロパティです。 オーバーライドする場合<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />独自のカスタム データを提供し、このデータは、既定値に含まれて<see cref="T:System.Runtime.Serialization.ISerializable" />実装します。 プライベート詳細を格納する場合にのみ、既定のシリアル化の実装をオーバーライド<see cref="T:System.Drawing.Design.ToolboxItemContainer" />ではパブリック データ オブジェクトを公開する必要がありません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ToolboxItemContainer (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報に渡されたシリアライザーによってシリアル化解除時に、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</param>
+        <param name="context">ストリーミング コンテキストに渡されたシリアライザーが逆シリアル化時に、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />シリアル化ストリームからのクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="T:System.Drawing.Design.ToolboxItemContainer" />オブジェクトをシリアル化できます。 一般のシリアル化機構をオーバーライドする必要はありません、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。 <see cref="T:System.Drawing.Design.ToolboxItemContainer" />オブジェクトが保存によるシリアル化を実装、<see cref="T:System.Windows.Forms.IDataObject" />から返される、<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />プロパティです。 オーバーライドする場合<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />独自のカスタム データを提供し、このデータは、既定値に含まれて<see cref="T:System.Runtime.Serialization.ISerializable" />実装します。 プライベート詳細を格納する場合にのみ、既定のシリアル化の実装をオーバーライド<see cref="T:System.Drawing.Design.ToolboxItemContainer" />ではパブリック データ オブジェクトを公開する必要がありません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Drawing.Design.ToolboxItemContainer" /> と比較する <see cref="T:System.Drawing.Design.ToolboxItemContainer" />。</param>
+        <summary>2 つの <see cref="T:System.Drawing.Design.ToolboxItemContainer" /> インスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Drawing.Design.ToolboxItemContainer" /> と等しい場合は <see cref="T:System.Drawing.Design.ToolboxItemContainer" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFilter">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection GetFilter (System.Collections.ICollection creators);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.ICollection GetFilter(class System.Collections.ICollection creators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.GetFilter(System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="creators" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="creators"><see cref="T:System.Drawing.Design.ToolboxItemCreator" /> オブジェクトのコレクション。</param>
+        <summary>コレクションを返します<see cref="T:System.ComponentModel.ToolboxItemFilterAttribute" />を現在のフィルターを表すオブジェクト、<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+        <returns><see cref="T:System.ComponentModel.ToolboxItemFilterAttribute" /> オブジェクトのコレクション。 これを返しません<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `creators`パラメーターのコレクションは、<xref:System.Drawing.Design.ToolboxItemCreator>を表す任意のカスタム オブジェクト<xref:System.Drawing.Design.ToolboxItem>フィルターが生成されたときに含める必要がある作成者です。 カスタムの作成者は、フィルターに影響可能性があります。 このパラメーターを指定できます`null`作成者が必要ない場合。  
+  
+ 格納されている型、<xref:System.Drawing.Design.ToolboxItem>それらに関連付けられているフィルターがあります。 デザイナーに配置できるツールを制限するフィルターを使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Drawing.Design.ToolboxItemContainer" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報渡されたシリアライザーでこのオブジェクトのシリアル化します。</param>
+        <param name="context">ストリーミング渡されるコンテキストで、シリアライザーによるこのオブジェクトのシリアル化します。</param>
+        <summary>オブジェクトのシリアル化の状態を保存します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>一般のシリアル化機構をオーバーライドする必要はありません、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />クラスです。 代わりに、オーバーライド、<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />プロパティのデータ オブジェクトを独自のデータを追加します。 <see cref="M:System.Drawing.Design.ToolboxItemContainer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />メソッドは内部的に使用して、<see cref="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />プロパティをシリアル化情報を作成します。 オーバーライド<see cref="M:System.Drawing.Design.ToolboxItemContainer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />に関する秘密情報を保存する場合にのみ、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />をパブリック データ オブジェクトの一部として保存できません必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolboxItem">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Design.ToolboxItem GetToolboxItem (System.Collections.ICollection creators);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Drawing.Design.ToolboxItem GetToolboxItem(class System.Collections.ICollection creators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.GetToolboxItem(System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.ToolboxItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="creators" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="creators"><see cref="T:System.Drawing.Design.ToolboxItemCreator" /> オブジェクトのコレクション。</param>
+        <summary>返します、<see cref="T:System.Drawing.Design.ToolboxItem" />に含まれている、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</summary>
+        <returns><see cref="T:System.Drawing.Design.ToolboxItem" />に含まれている、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `creators`パラメーターのコレクションは、<xref:System.Drawing.Design.ToolboxItemCreator>を表す任意のカスタム オブジェクト<xref:System.Drawing.Design.ToolboxItem>作成者組み込む必要がある場合に、<xref:System.Drawing.Design.ToolboxItem>を取得します。 このパラメーターを指定できます`null`作成者が必要ない場合。  
+  
+ <xref:System.Drawing.Design.ToolboxItemContainer.GetToolboxItem%2A>メソッドを返します、<xref:System.Drawing.Design.ToolboxItem>に格納されたデータを表す、<xref:System.Drawing.Design.ToolboxItemContainer>です。 <xref:System.Drawing.Design.ToolboxItemContainer.GetToolboxItem%2A>返さない`null`は、これまで例外を発生させる、以外 (たとえば、メモリ不足) の極端な場合もします。 場合、<xref:System.Drawing.Design.ToolboxItem>することはできません作成、適切な例外に埋め込まれて、特殊な<xref:System.Drawing.Design.ToolboxItem>します。 例外がスローされたときに、<xref:System.Drawing.Design.ToolboxItem.CreateComponents%2A>メソッドをこの特殊<xref:System.Drawing.Design.ToolboxItem>と呼びます。 これにより、ユーザーの操作の時点では、例外を追加します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCreated">
+      <MemberSignature Language="C#" Value="public bool IsCreated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCreated" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItemContainer.IsCreated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるツールボックス項目が逆シリアル化されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />基になるツールボックス項目が逆シリアル化されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransient">
+      <MemberSignature Language="C#" Value="public bool IsTransient { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransient" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItemContainer.IsTransient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>どうかを示す値を取得、<see cref="T:System.Drawing.Design.ToolboxItem" />に含まれている、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />は一時的なものです。</summary>
+        <value>
+          <see langword="true" />、場合、<see cref="T:System.Drawing.Design.ToolboxItem" />に含まれている、<see cref="T:System.Drawing.Design.ToolboxItemContainer" />がマークされていると、それ以外の一時的な<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化情報渡されたシリアライザーでこのオブジェクトのシリアル化します。</param>
+        <param name="context">ストリーミング渡されるコンテキストで、シリアライザーによるこのオブジェクトのシリアル化します。</param>
+        <summary>このメンバーの説明については、<see cref="M:System.Drawing.Design.ToolboxItemContainer.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" /> メソッドのトピックを参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Drawing.Design.ToolboxItemContainer> のインスタンスが <xref:System.Runtime.Serialization.ISerializable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolboxData">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.IDataObject ToolboxData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.IDataObject ToolboxData" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Design.ToolboxItemContainer.ToolboxData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.IDataObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.IDataObject" />これを説明する<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.IDataObject" />これを説明する<see cref="T:System.Drawing.Design.ToolboxItemContainer" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItemContainer.ToolboxData%2A>プロパティのシリアル化されたバージョンを作成する、<xref:System.Drawing.Design.ToolboxItem>です。 データ オブジェクトは、このスナップショットを格納するアプリケーションで使用できます<xref:System.Drawing.Design.ToolboxItem>です。 このデータ オブジェクトを作成、<xref:System.Drawing.Design.ToolboxItem>必要に応じて、します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>実装でオーバーライド データ オブジェクトに追加の記憶域の情報を提供することがあります。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateFilter">
+      <MemberSignature Language="C#" Value="public void UpdateFilter (System.Drawing.Design.ToolboxItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateFilter(class System.Drawing.Design.ToolboxItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Design.ToolboxItemContainer.UpdateFilter(System.Drawing.Design.ToolboxItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Drawing.Design.ToolboxItem" />
+      </Parameters>
+      <Docs>
+        <param name="item">コンテナーのフィルターと結合するフィルターのソース。</param>
+        <summary>指定された項目からフィルターを使用して、コンテナーのフィルターをマージします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要があります、<xref:System.Drawing.Design.ToolboxItemContainer.UpdateFilter%2A>メソッドは、ツールボックス項目が変更または構成されているとします。 新しい場合も呼び出す必要があります<xref:System.ComponentModel.TypeDescriptionProvider>する、変更、フィルターが追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

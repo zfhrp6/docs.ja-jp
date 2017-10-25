@@ -1,0 +1,149 @@
+<Type Name="GenericRootAutomationPeer" FullName="System.Windows.Automation.Peers.GenericRootAutomationPeer">
+  <TypeSignature Language="C#" Value="public class GenericRootAutomationPeer : System.Windows.Automation.Peers.UIElementAutomationPeer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GenericRootAutomationPeer extends System.Windows.Automation.Peers.UIElementAutomationPeer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.UIElementAutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開<see cref="T:System.Windows.Interop.HwndSource" />UI オートメーションを使用する型。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.Peers.GenericRootAutomationPeer>ピアとして使用される<xref:System.Windows.Interop.HwndSource>次のようなツリーが含まれている場合。  
+  
+ ![HwndSource &#45;、&#62;。Visual &#45;、&#62; 2 つの UIElement オブジェクト](~/add/media/apgenericroot.png "HwndSource -> Visual -> 2 つの UIElement オブジェクト。")  
+  
+ のみ<xref:System.Windows.UIElement>ピア、型と型のビジュアルは<xref:System.Windows.UIElement>型、共通の親にない、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]のツリー、<xref:System.Windows.UIElement>型です。 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]アプリケーションから 1 つのルートのピアが必要です。したがって、[!INCLUDE[TLA#tla_avalonwinfx](~/includes/tlasharptla-avalonwinfx-md.md)]を作成、<xref:System.Windows.Automation.Peers.GenericRootAutomationPeer>の<xref:System.Windows.Interop.HwndSource>、2 つの親のピアに単一のルートのピアとして機能するために<xref:System.Windows.UIElement>型です。  
+  
+ 通常、ルートのピアは、<xref:System.Windows.Automation.Peers.WindowAutomationPeer>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GenericRootAutomationPeer (System.Windows.UIElement owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.UIElement owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GenericRootAutomationPeer.#ctor(System.Windows.UIElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この <see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.UIElement" />。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAutomationControlTypeCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Automation.Peers.AutomationControlType GetAutomationControlTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GenericRootAutomationPeer.GetAutomationControlTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationControlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールの種類を取得、<see cref="T:System.Windows.UIElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetAutomationControlType" /> によって呼び出されます。</summary>
+        <returns><see cref="F:System.Windows.Automation.Peers.AutomationControlType.Pane" /> 列挙型値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBoundingRectangleCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Rect GetBoundingRectangleCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Rect GetBoundingRectangleCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GenericRootAutomationPeer.GetBoundingRectangleCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" /> に関連付けられている <see cref="T:System.Windows.UIElement" /> の外接する四角形を表す <see cref="T:System.Windows.Rect" /> を取得します。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetBoundingRectangle" /> によって呼び出されます。</summary>
+        <returns>外接する四角形。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetClassNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetClassNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GenericRootAutomationPeer.GetClassNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前を取得、<see cref="T:System.Windows.UIElement" />これに関連付けられている<see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" />です。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetClassName" /> によって呼び出されます。</summary>
+        <returns>"Pane"を含む文字列です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.GenericRootAutomationPeer.GetNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Automation.Peers.GenericRootAutomationPeer" /> と関連付けられた <see cref="T:System.Windows.UIElement" /> のテキスト ラベルを取得します。 このメソッドは <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName" /> によって呼び出されます。</summary>
+        <returns>ラベルを含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Name プロパティは、ユーザーを使用して参照しているコントロールを説明するテキストの文字列と考えることができます。 すべてのコントロールのテキスト表現があることを確認してください、[!INCLUDE[TLA#tla_gui](~/includes/tlasharptla-gui-md.md)]プログラムにより、ローカライズされた方法でコントロールに参照できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

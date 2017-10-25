@@ -1,0 +1,63 @@
+<Type Name="IContributeEnvoySink" FullName="System.Runtime.Remoting.Contexts.IContributeEnvoySink">
+  <TypeSignature Language="C#" Value="public interface IContributeEnvoySink" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IContributeEnvoySink" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Contexts.IContributeEnvoySink" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアント エンドで envoy メッセージ シンクを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContributeEnvoySink>インターフェイスは、サーバー内のコンテキスト プロパティによって実装<xref:System.Runtime.Remoting.Contexts.Context>クライアント エンドでは、envoy メッセージ シンクを投稿するクラス。 Server envoy のチェーンが実装するコンテキスト プロパティから構成される<xref:System.Runtime.Remoting.Contexts.IContributeEnvoySink>です。 Envoy チェーンは、クライアント エンド上に存在し、サーバーのコンテキスト プロパティからシンクの対応するメッセージの代表的な役割を果たします。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetEnvoySink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Messaging.IMessageSink GetEnvoySink (MarshalByRefObject obj, System.Runtime.Remoting.Messaging.IMessageSink nextSink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Runtime.Remoting.Messaging.IMessageSink GetEnvoySink(class System.MarshalByRefObject obj, class System.Runtime.Remoting.Messaging.IMessageSink nextSink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Contexts.IContributeEnvoySink.GetEnvoySink(System.MarshalByRefObject,System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+        <Parameter Name="nextSink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="obj">チェーンの作成対象のサーバー オブジェクト。</param>
+        <param name="nextSink">シンク チェーンがこれまでで構成されます。</param>
+        <summary>これまでに作成されたシンク チェーン内の最初のシンクを受け取るし、既に形成されたチェーンの前にそのメッセージ シンクをチェーンします。</summary>
+        <returns>複合シンク チェーン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Contexts.IContributeEnvoySink.GetEnvoySink%2A>メソッドは、宛先が同じアプリケーション ドメイン内の別のコンテキストがあり、Wrap 操作で使用されるときに、エンボイ シンクを作成する最適化として使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

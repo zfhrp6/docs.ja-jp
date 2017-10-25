@@ -1,0 +1,263 @@
+<Type Name="ProviderConnectionPointCollection" FullName="System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection">
+  <TypeSignature Language="C#" Value="public sealed class ProviderConnectionPointCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ProviderConnectionPointCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべてのコレクションを含む<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />に特定の関連付けられたオブジェクト<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />または接続のプロバイダーとして機能しているサーバー コントロールです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPart>またはサーバー コントロールとして機能する場合、プロバイダー Web パーツ接続においては、複数のプロバイダー接続ポイントを持つことができます。 1 つ<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>プロバイダー内のオブジェクトが 1 つまたは複数のコンシューマーに渡すプライマリ インターフェイスのインスタンスとして機能している、特定の接続の接続ポイントとして機能します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>クラスには、プロバイダーのコントロールに関連付けられているすべてのコネクション ポイントのコレクションが含まれています。 Web パーツ コントロール セットのいくつかのクラスがプロバイダー コントロールで利用できるどのような接続ポイントを判断する必要があるあり、場合は、通常を呼び出すことが、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints%2A>を返すメソッド、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>コレクション。  
+  
+> [!NOTE]
+>  このクラスから継承、<xref:System.Collections.ReadOnlyCollectionBase>クラス、このコレクションに、厳密に型指定された、非ジェネリック読み取り専用コレクションを作成します。 追加またはインスタンスを作成した後にメンバーを削除することはできません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成することは、 <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection> 、コードから直接クラスからクラスを継承するので、<xref:System.Collections.ReadOnlyCollectionBase>クラス、新しいコレクションは読み取り専用と追加または作成した後にメンバーを削除することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProviderConnectionPointCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空の新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>コレクション内で項目のないクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProviderConnectionPointCollection (System.Collections.ICollection connectionPoints);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection connectionPoints) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionPoints" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoints"><see cref="T:System.Collections.ICollection" />の<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />オブジェクトのコレクションを作成するために使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" />クラスの指定されたプロバイダー接続ポイントのコレクションを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターの新しいインスタンスを作成する、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>クラスしに含まれている接続ポイントを追加、`connectionPoints`パラメーター。  
+  
+ このコンス トラクターを使用して作成することで、独自のコレクション オブジェクト プロバイダーの接続ポイントを作成することができます、<xref:System.Collections.ICollection>既存のコレクション<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>オブジェクト、およびそのコレクションを渡す、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.%23ctor%28System.Collections.ICollection%29>コンス トラクターです。 ただし、ほとんどの場合必要ため、コントロールを拡張する場合を除き、独自のコレクションを作成する、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールなど、プロバイダー接続ポイントに関連する最も一般的な操作のために必要なメソッドを提供する、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.GetProviderConnectionPoints%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connectionPoints" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">コレクションには、null 接続ポイントが含まれています。  
+  
+ \- または  
+  
+ コレクションにはない型のオブジェクトが含まれています<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />です。  
+  
+ \- または  
+  
+ 接続ポイントのコレクションには、重複した Id があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.ProviderConnectionPoint connectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint connectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.Contains(System.Web.UI.WebControls.WebParts.ProviderConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionPoint" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoint">検索対象の <see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />。</param>
+        <summary>特定のかどうかを示す値を返します<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />オブジェクトがコレクション内に存在します。</summary>
+        <returns>
+          <see langword="true" />プロバイダー接続ポイントが、コレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.ProviderConnectionPoint[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.CopyTo(System.Web.UI.WebControls.WebParts.ProviderConnectionPoint[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />コレクションのコピーされた項目を受信するオブジェクト。</param>
+        <param name="index">コレクションの内容を挿入する位置を示す、配列内の開始点です。</param>
+        <summary>コレクションの配列にコピーします<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.CopyTo%2A>メソッドのすべてのメンバーのコピー、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>の互換性のある、1 次元配列にコレクション<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>で指定された配列内の位置から始まる、オブジェクト、`index`パラメーター。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.CopyTo%2A>メソッドは、1 つの互換性のある配列に別のコレクションからオブジェクトを結合し、配列のメソッドを使用して配列内の項目にアクセスできるしたいときに便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProviderConnectionPoint Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint Default" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProviderConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の接続ポイントを特定のコントロールに関連付けられているプロバイダー接続ポイントのコレクションから取得します。</summary>
+        <value>既定値<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />から、<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは内で既定の接続ポイントであるプロバイダー接続ポイントにすばやくアクセスを提供する、<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection>コレクション。 既定のプロバイダー接続ポイントは、確立およびコンシューマーとの接続を維持するために使用プライマリ インターフェイスです。 コレクション内の他のプロバイダー接続ポイントは、コンシューマーにセカンダリ インターフェイスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.ProviderConnectionPoint connectionPoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint connectionPoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.IndexOf(System.Web.UI.WebControls.WebParts.ProviderConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionPoint" Type="System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="connectionPoint">検索する <see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />。</param>
+        <summary>特定の位置を返します<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />コレクション内のオブジェクト。</summary>
+        <returns>指定した 0 から始まるインデックス位置を示す整数<paramref name="connectionPoint" />内で、<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.IndexOf%2A>メソッドは、複数のインスタンスがある場合に役立ちます<xref:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint>ページ、およびコード上のオブジェクトをコレクション内の他の基準とした 1 つの接続ポイント オブジェクトの場所 (またはインデックス) を知る必要があります。  
+  
+ 指定されたプロバイダー接続ポイント オブジェクトには、コレクション内で複数回が表示され、最初に見つかった位置のインデックスが返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProviderConnectionPoint this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProviderConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />コレクション内で。</param>
+        <summary>コレクション内での位置に基づいて、コレクションのメンバーを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />指定されたインデックス位置。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.ProviderConnectionPoint this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.ProviderConnectionPoint Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.ProviderConnectionPointCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.ProviderConnectionPoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">A <see cref="T:System.String" /> 、特定の一意識別子として機能している<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />コレクション内で。</param>
+        <summary>一意の文字列識別子に基づくコレクションのメンバーを取得します。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.ProviderConnectionPoint" />ID の値に等しい<paramref name="id" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

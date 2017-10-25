@@ -1,0 +1,228 @@
+<Type Name="SrgsSemanticInterpretationTag" FullName="System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag">
+  <TypeSignature Language="C#" Value="public class SrgsSemanticInterpretationTag : System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SrgsSemanticInterpretationTag extends System.Speech.Recognition.SrgsGrammar.SrgsElement" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Recognition.SrgsGrammar.SrgsElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{DebuggerDisplayString ()}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>含むタグを表す[ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-327.htm)ルールの照合時に実行されています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ System.Speech の既定のセマンティック形式は W3C に準拠している[音声認識 (SISR) バージョン 1.0 のセマンティクス解釈](http://go.microsoft.com/fwlink/?LinkId=201765)ここの形式`tag`スクリプトが含まれる要素は`semantics/1.0`します。 スクリプトを指定する必要があります<xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag>オブジェクトをこの形式を使用します。 構文で`semantics/1.0`:  
+  
+-   ルール変数の親の rule 要素は、"out"によって識別されます。  
+  
+-   ルール要素を含むルール要素の外側のルール変数へのアクセス権を持つオブジェクトの名前は、「ルール」によって識別されます。  
+  
+-   最新参照されているルールから、発話に一致する結果は、"rules.latest()"で表すことができます。  
+  
+ 関連付けることができますもセマンティック値、文法におけるフレーズ スクリプトを使用することがなくを使用して、<xref:System.Speech.Recognition.SrgsGrammar.SrgsNameValueTag>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、フライトの都市を選択するための文法を作成します。 この例では<xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag>都市ごとに、都市の空港のコードにセマンティックの値を割り当てます。 また、例では<xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag>によって行われた 2 つの参照ごとに個別のセマンティック キーを割り当てるには、<xref:System.Speech.Recognition.SrgsGrammar.SrgsRuleRef>という名前のオブジェクト`cityRef`を<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>という名前のオブジェクト`cities`です。 セマンティック キーでは、出発都市や、航空券の到着市区町村として認識されている、市区町村を識別します。 ハンドラーを<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>イベントでは、キーを使用して認識結果からセマンティクスを取得します。  
+  
+ コード例では、"out"を指すルール変数を含むの<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule>します。 式"はタイムアウトします。LeavingFrom"という名前のプロパティを指す`LeavingFrom`という名前のルールのルール、Variable の`bookFlight`します。  
+  
+ 式"rules.flightCities"が参照するルールのルール変数が<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Id%2A>は`flightCities`ルールの参照の対象であるとします。 例では、式"はタイムアウトします。LeavingFrom=rules.flightCities;"ルールから値を割り当てますが<xref:System.Speech.Recognition.SrgsGrammar.SrgsRule.Id%2A>は`flightCities`という名前のプロパティを`LeavingFrom`という名前のルールのルール、Variable の`bookFlight`します。 参照してください[セマンティック結果コンテンツ](http://msdn.microsoft.com/en-us/622291af-615c-4a15-9014-2933aa3f89fe)、[文法ルール名を参照する](http://msdn.microsoft.com/en-us/0777e975-8665-4cc3-957b-752743cb1bb9)、および[文法ルールの参照が参照する](http://msdn.microsoft.com/en-us/dec3a809-9aa2-4139-893f-3a549ca1e03e)詳細についてはします。  
+  
+```  
+using System;  
+using System.Speech.Recognition;  
+using System.Speech.Recognition.SrgsGrammar;  
+  
+namespace SampleRecognition  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+  
+    // Initialize a SpeechRecognitionEngine object.  
+    {  
+      using (SpeechRecognitionEngine recognizer =  
+         new SpeechRecognitionEngine(new System.Globalization.CultureInfo("en-US")))  
+      {  
+  
+        // Create a rule for the cities, assign a semantic value to each city.  
+        SrgsRule cities = new SrgsRule("flightCities");  
+        SrgsItem chi = new SrgsItem("Chicago");  
+        chi.Add(new SrgsSemanticInterpretationTag("out = \"ORD\";"));  
+        SrgsItem bos = new SrgsItem("Boston");  
+        bos.Add(new SrgsSemanticInterpretationTag("out = \"BOS\";"));  
+        SrgsItem mia = new SrgsItem("Miami");  
+        mia.Add(new SrgsSemanticInterpretationTag("out = \"MIA\";"));  
+        SrgsItem dal = new SrgsItem("Dallas");  
+        dal.Add(new SrgsSemanticInterpretationTag("out = \"DFW\";"));  
+  
+        SrgsOneOf airports = new SrgsOneOf(chi, bos, mia, dal);  
+        cities.Add(airports);  
+        cities.Scope = SrgsRuleScope.Private;  
+  
+        // Create a rule reference to the rule for cities.  
+        SrgsRuleRef cityRef = new SrgsRuleRef(cities);  
+  
+        // Create the root rule for the grammar.  
+        SrgsRule bookFlight = new SrgsRule("flightBooker");  
+        bookFlight.Add(new SrgsItem("I want to fly from"));  
+        bookFlight.Add(cityRef);  
+        bookFlight.Add(new SrgsSemanticInterpretationTag("out.LeavingFrom=rules.flightCities;"));  
+        bookFlight.Add(new SrgsItem("to"));  
+        bookFlight.Add(cityRef);  
+        bookFlight.Add(new SrgsSemanticInterpretationTag("out.GoingTo=rules.flightCities;"));  
+        bookFlight.Scope = SrgsRuleScope.Public;  
+  
+        // Initialize the SrgsDocument, set the root rule, add rules to the collection.  
+        SrgsDocument itinerary = new SrgsDocument(bookFlight);  
+        itinerary.Rules.Add(cities);  
+  
+        // Create a Grammar object and load it to the recognizer.  
+        Grammar g = new Grammar(itinerary);  
+        g.Name = ("City Chooser");  
+        recognizer.LoadGrammarAsync(g);  
+  
+        // Configure recognizer input.                  
+        recognizer.SetInputToDefaultAudioDevice();  
+  
+        // Attach a handler for the SpeechRecognized event.  
+        recognizer.SpeechRecognized +=  
+          new EventHandler<SpeechRecognizedEventArgs>(recognizer_SpeechRecognized);  
+  
+        // Start recognition.  
+        recognizer.RecognizeAsync();  
+        Console.WriteLine("Starting asynchronous recognition...");  
+  
+        // Keep the console window open.  
+        Console.ReadLine();  
+      }  
+    }  
+  
+    // Write to the console the text and the semantics from the recognition result.  
+    static void recognizer_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)  
+    {  
+      Console.WriteLine("Speech recognized: " + e.Result.Text);  
+      Console.WriteLine();  
+      Console.WriteLine("Semantic results:");  
+      Console.WriteLine("  The departure city is: " + e.Result.Semantics["LeavingFrom"].Value);  
+      Console.WriteLine("  The arrival city is: " + e.Result.Semantics["GoingTo"].Value);  
+    }  
+  }  
+}  
+  
+```  
+  
+ 上記の例のコードで生成された文法の XML 形式を次に示します。  
+  
+```xml  
+<?xml version="1.0" encoding="utf-8"?>  
+<grammar xml:lang="en-US" root="flightBooker" tag-format="semantics/1.0"   
+version="1.0" xmlns="http://www.w3.org/2001/06/grammar">  
+  
+  <rule id="flightBooker" scope="public">  
+    <item> I want to fly from </item>  
+    <ruleref uri="#flightCities" />   
+    <tag> out.LeavingFrom=rules.flightCities; </tag>  
+    <item> to </item>  
+    <ruleref uri="#flightCities" />   
+    <tag> out.GoingTo=rules.flightCities; </tag>  
+  </rule>  
+  
+  <rule id="flightCities" scope="private">  
+    <one-of>  
+      <item> Chicago <tag> out="ORD"; </tag></item>  
+      <item> Boston <tag> out="BOS"; </tag></item>  
+      <item> Miami <tag> out="MIA"; </tag></item>  
+      <item> Dallas <tag> out="DFW"; </tag></item>  
+    </one-of>  
+  </rule>  
+  
+</grammar>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsSemanticInterpretationTag ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成するセマンティック解釈タグを持つ<xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag.Script%2A>プロパティには、空の文字列が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SrgsSemanticInterpretationTag (string script);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string script) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="script" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="script">含む文字列、 [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-327.htm)のタグ。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag" />クラス、タグのスクリプトの内容を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成するセマンティック解釈タグを持つ<xref:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag.Script%2A>プロパティの値に`script`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="script" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Script">
+      <MemberSignature Language="C#" Value="public string Script { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Script" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.SrgsGrammar.SrgsSemanticInterpretationTag.Script" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-327.htm)のタグ。</summary>
+        <value>タグのセマンティクス解釈スクリプトを含む文字列です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">設定しようとしましたが**スクリプト**に<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

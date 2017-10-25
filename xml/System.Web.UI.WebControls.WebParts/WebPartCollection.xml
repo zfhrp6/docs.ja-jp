@@ -1,0 +1,309 @@
+<Type Name="WebPartCollection" FullName="System.Web.UI.WebControls.WebParts.WebPartCollection">
+  <TypeSignature Language="C#" Value="public sealed class WebPartCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebPartCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを格納<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール追跡および関連するコントロール グループを管理するために使用します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection>クラスは、読み取り専用のコレクションで通常使用される、コントロールの<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>と<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールのセットを管理する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ A<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>すべての一覧を保持するオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>ページでは、コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>を追跡するオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>が含まれているコントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.WebPartCollection>コレクションには、両方が含まれている<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールおよびに配置されているその他のサーバー コントロール (ユーザー コントロール、カスタム コントロールを ASP.NET コントロールや)<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>領域および Web パーツ アプリケーションの一部として使用します。 したがって、たとえば、使用していれば、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone>  ページでは、ゾーンし、カスタムの宣言内に<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールと、ASP.NET<xref:System.Web.UI.WebControls.Calendar>コントロール、両方のコントロールになります、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>によって参照されるコレクション、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection> Web パーツ コントロール セットは、厳密に型指定されたコレクションを使用できるように、オブジェクトが存在します。 同様に、一連の一括操作を実行するかどうかは<xref:System.Web.UI.WebControls.WebParts.WebPart>、コントロールへの参照を取得できます、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクトを使用して、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A>プロパティです。 すべてをループするなど、<xref:System.Web.UI.WebControls.WebParts.WebPart>ページ上のコントロールし、何らかの方法でその外観を変更します。 場合でも、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクトは読み取り専用、コレクション内で参照されている基になるコントロールのプロパティにプログラムで変更を加えることができます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartCollection> Web パーツ ページ上のオブジェクト。 この例では、3 つの部分があります。  
+  
+-   部分クラス内のページのコードです。  
+  
+-   コントロールを含む Web ページ。  
+  
+-   ブラウザーでの例の動作についての説明です。  
+  
+ このコード例の最初の部分には、部分クラス内のページのコードが含まれています。 注意してください、`Button1_Click`メソッドを作成、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>は、すべてのオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>で参照されているコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A?displayProperty=nameWithType>すべて含まれているプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPart>ページ上のコントロールです。 メソッドは、すべてのコントロールを反復処理し、各コントロールを切り替えます<xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeState%2A>プロパティで、そのコントロールが通常または最小化されているかどうかを判断します。  
+  
+ [!code-csharp[WebParts_WebPartCollection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollection.cs#1)]
+ [!code-vb[WebParts_WebPartCollection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollection.vb#1)]  
+  
+ コード例の 2 番目の部分は、コントロールを含む Web ページです。 コントロールが宣言されていることを確認`WebPartZone1`は標準の ASP.NET サーバー コントロールとしてラップされるので、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> 、実行時にコントロールと<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスから継承、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、コントロールは自動的にとして扱われます<xref:System.Web.UI.WebControls.WebParts.WebPart>におけるコントロールの実行時とに含まれるため、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[WebParts_WebPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollectioncs.aspx#2)]
+ [!code-aspx-vb[WebParts_WebPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollectionvb.aspx#2)]  
+  
+ クリックするとブラウザー ページの読み込み後、**トグル ChromeState**ボタン、部分クラスでループ処理、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト、またはコントロールを最小限に抑えられますか標準に戻されます。 や、繰り返しクリックした場合、**トグル BulletedList1 タイトル**ボタン、上端のコントロールのタイトルが代替値に変更します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>空の新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartCollection" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.%23ctor%2A>コンス トラクターの空のインスタンスを初期化します、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>クラスです。 オブジェクト自体は読み取り専用と、個々 に追加するメソッドを持たない<xref:System.Web.UI.WebControls.WebParts.WebPart>それへのコントロールのあまりこのコンス トラクターを使用する必要がそのため、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartCollection (System.Collections.ICollection webParts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ICollection webParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCollection.#ctor(System.Collections.ICollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="webParts" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="webParts"><see cref="T:System.Collections.ICollection" />の<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartCollection" />オブジェクトを渡すことによって、<see cref="T:System.Collections.ICollection" />のコレクション<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.%23ctor%2A>コンス トラクターのインスタンスを初期化します、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>クラスのコレクションを渡すことによって<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+ ただし、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクトは読み取り専用として個々 のコントロールを追加するためのメソッドはありません、独自に作成することができます<xref:System.Collections.ICollection>、コントロールのコレクションを渡すと、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection.%23ctor%2A>コンス トラクターです。 これにより、カスタム コレクションを作成し、それらに対して一括操作を実行することができます。 コレクションの基になるコントロールにアクセスし、そのプロパティ値をプログラムで変更できます。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.%23ctor%2A> Web パーツ ページのコンス トラクターです。 この例では、3 つの部分があります。  
+  
+-   部分クラス内のページのコードです。  
+  
+-   コントロールを含む Web ページ。  
+  
+-   ブラウザーでの例の動作についての説明です。  
+  
+ このコード例の最初の部分には、部分クラス内のページのコードが含まれています。 注意してください、`Button1_Click`メソッドを作成、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>は、すべてのオブジェクト、<xref:System.Web.UI.WebControls.WebParts.WebPart>で参照されているコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartManager.WebParts%2A?displayProperty=nameWithType>すべて含まれているプロパティ、<xref:System.Web.UI.WebControls.WebParts.WebPart>ページ上のコントロールです。 メソッドは、すべてのコントロールを反復処理し、各コントロールを切り替えます<xref:System.Web.UI.WebControls.WebParts.WebPart.ChromeState%2A>プロパティで、そのコントロールが通常または最小化されているかどうかを判断します。  
+  
+ [!code-csharp[WebParts_WebPartCollection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollection.cs#1)]
+ [!code-vb[WebParts_WebPartCollection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollection.vb#1)]  
+  
+ コード例の 2 番目の部分は、コントロールを含む Web ページです。 コントロールが宣言されていることを確認`WebPartZone1`は標準の ASP.NET サーバー コントロールとしてラップされるので、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> 、実行時にコントロールと<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスから継承、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、コントロールは自動的にとして扱われます<xref:System.Web.UI.WebControls.WebParts.WebPart>におけるコントロールの実行時とに含まれるため、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[WebParts_WebPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollectioncs.aspx#2)]
+ [!code-aspx-vb[WebParts_WebPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込んだ後、**トグル ChromeState**ボタンをクリックし、部分クラスにコードがループすることに注意してください、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト、またはコントロールを最小限に抑えられますか標準に戻されます。 や、繰り返しクリックした場合、**トグル BulletedList1 タイトル**ボタン、上端のコントロールのタイトルが代替値に変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="webParts" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">内のオブジェクト、<paramref name="webParts" />コレクションが<see langword="null" />です。  
+  
+ \- または  
+  
+ 内のオブジェクト、<paramref name="webParts" />コレクションは、型の<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.WebControls.WebParts.WebPart value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.WebControls.WebParts.WebPart value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCollection.Contains(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />は、チェックをコレクション内にあるかどうかを判断します。</param>
+        <summary>コレクション内の特定のコントロールが存在するかどうかを示す値を返します。</summary>
+        <returns>特定のコントロールがコレクション内にあるかどうかを示すブール値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.Contains%2A>メソッドでは、特定を確認することができます<xref:System.Web.UI.WebControls.WebParts.WebPart>オブジェクトし、の一部であるかどうかを判断、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.UI.WebControls.WebParts.WebPart[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.UI.WebControls.WebParts.WebPart[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCollection.CopyTo(System.Web.UI.WebControls.WebParts.WebPart[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.UI.WebControls.WebParts.WebPart[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コピーされたコレクションを格納するオブジェクト。</param>
+        <param name="index">コレクションの内容を格納する配列内の開始点です。</param>
+        <summary>コレクションの配列にコピーします<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.CopyTo%2A>メソッドは、含めることができるカスタムの配列を構築する場合に便利です、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト、それらのコントロールのスーパー セットや、これらのコントロールのサブセットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.WebControls.WebParts.WebPart value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.WebControls.WebParts.WebPart value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartCollection.IndexOf(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コレクションのメンバーであります。</param>
+        <summary>コレクションの特定のメンバーの位置を返します。</summary>
+        <returns>コレクション内の特定のオブジェクトの位置を示す整数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.IndexOf%2A>メソッドが複数ある場合に役立ちます。 <xref:System.Web.UI.WebControls.WebParts.WebPart> Web パーツ ページには、他と比較した 1 つのコントロールの序数の位置を知る必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">特定のインデックス<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コレクション内のコントロールです。</param>
+        <summary>コレクション内での位置に基づいてコレクションのメンバーを返します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コレクション内の指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.Item%2A>インデクサー アクセスできるように、基になる<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールで、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>インデックスでオブジェクトしプロパティ値を変更またはメソッドを呼び出します。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、 <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.Item%2A> Web パーツ ページ上のインデクサーです。 この例では、3 つの部分があります。  
+  
+-   部分クラス内のページのコードです。  
+  
+-   コントロールを含む Web ページ。  
+  
+-   ブラウザーでの例の動作についての説明です。  
+  
+ このコード例の最初の部分には、部分クラス内のページのコードが含まれています。 なお、`Button2_Click`メソッドは、空を作成<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト、し、それを割り当てます、<xref:System.Web.UI.WebControls.WebParts.WebPart>から制御、`WebPartZone1.WebParts`プロパティです。 メソッドは、インデックスを使用して、コレクションの最初のコントロールにアクセスしを切り替えます、<xref:System.Web.UI.WebControls.WebParts.WebPart.Title%2A>プロパティの値。  
+  
+ [!code-csharp[WebParts_WebPartCollection_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollection.cs#1)]
+ [!code-vb[WebParts_WebPartCollection_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollection.vb#1)]  
+  
+ コード例の 2 番目の部分は、コントロールを含む Web ページです。 コントロールが宣言されていることを確認`WebPartZone1`は標準の ASP.NET サーバー コントロールとしてラップされるので、 <xref:System.Web.UI.WebControls.WebParts.GenericWebPart> 、実行時にコントロールと<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>クラスから継承、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラス、としてコントロールを扱うことができます<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時に行われた一部のコントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>オブジェクト。  
+  
+ [!code-aspx-csharp[WebParts_WebPartCollection_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/CS/webpartcollectioncs.aspx#2)]
+ [!code-aspx-vb[WebParts_WebPartCollection_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartCollection_Overview/VB/webpartcollectionvb.aspx#2)]  
+  
+ ブラウザーでページを読み込んだ後、**トグル BulletedList1 タイトル** ボタン、およびコードは次の 2 つのタイトルが使用可能な選択肢のコントロールのタイトルを切り替えますことに注意してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPart this[string id] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPart Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">特定の一意識別子<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コレクション内のコントロールです。</param>
+        <summary>一意の文字列識別子に基づくコレクションのメンバーを返します。</summary>
+        <value>最初の<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />ID を持つコレクション内の値に等しい<paramref name="id" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.Item%2A>インデクサーでは、アクセスすることができます、<xref:System.Web.UI.WebControls.WebParts.WebPart>内の制御、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>に従って一意の識別子のオブジェクト。  
+  
+> [!NOTE]
+>  Web パーツ コントロール セットは、大文字小文字の区別は、一意の一部ではないため、このプロパティで大文字と小文字一致を実行`id`値。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartCollection.Item%2A>のメンバーを識別するプロパティの動作も、<xref:System.Web.UI.WebControls.WebParts.WebPartCollection>場合によっては特殊なオブジェクトです。 場合、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>インデクサーがによってラップされた基になる子コントロールの識別子と一致することでは、コントロール、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>コントロール。 場合、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart>コントロール、インデクサーの大文字と小文字に基づいてコントロールの識別子と一致する、`id`パラメーターとするか、<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart.OriginalID%2A>または<xref:System.Web.UI.WebControls.WebParts.ProxyWebPart.GenericWebPartID%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

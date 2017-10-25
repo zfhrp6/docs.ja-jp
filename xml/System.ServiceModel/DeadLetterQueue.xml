@@ -1,0 +1,105 @@
+<Type Name="DeadLetterQueue" FullName="System.ServiceModel.DeadLetterQueue">
+  <TypeSignature Language="C#" Value="public enum DeadLetterQueue" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DeadLetterQueue extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.DeadLetterQueue" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用する配信不能キューの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信不能キューは、配信に失敗した期限切れメッセージに対する送信元アプリケーションのキュー マネージャーのキューです。 配信不能キュー列挙体 <xref:System.ServiceModel.DeadLetterQueue> は、使用する配信不能キューの型を指定します。 次の値があります。  
+  
+-   None: 配信不能キューは必要ありません。 メッセージの配信に失敗した場合、そのメッセージのレコードは配信不能キュー内では維持されません。 これは、<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> を `false` に設定した場合の既定値です。  
+  
+-   System: システム全体をスコープとする配信不能キューを使用して、配信に失敗したメッセージが記録されます。 MSMQ にはトランザクション システム配信不能キューおよび非トランザクション システム配信不能キューがあり、それぞれトランザクション キューからの配信に失敗した期限切れメッセージおよび非トランザクション キューからの配信に失敗したメッセージを記録します。 これは、<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> を `true` に設定した場合の既定値です。  
+  
+-   Custom: <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> で指定されたキューが、配信に失敗したメッセージの記録に使用されます。  
+  
+ 次のいずれかの理由で、メッセージが受信側アプリケーションに到達できない可能性があります。  
+  
+-   トランザクション メッセージが、非トランザクション キューに送信されています。  
+  
+-   非トランザクション メッセージが、トランザクション キューに送信されています。  
+  
+-   認証されていないメッセージが、認証されたメッセージだけを受け取るキューに送信されています。  
+  
+-   暗号化されていないメッセージが、暗号化されたメッセージだけを受け取るキューに送信されています。  
+  
+-   受信側に配信される前に、メッセージの有効期限が切れました。  
+  
+-   ターゲット コンピューターのメッセージ ストレージ クォータ、または送信先のキューのストレージ クォータを超えているか、メッセージが到達したときにターゲット コンピューターに使用可能なストレージ スペースがありませんでした。  
+  
+-   送信者がない、[アクセス権を](http://go.microsoft.com/fwlink/?LinkID=96167)送信先キューにメッセージを配置するために必要です。  
+  
+-   メッセージに結び付けられているデジタル署名が無効です。  
+  
+-   暗号化されているメッセージを、送信先のキュー マネージャーが解読できません。  
+  
+-   送信先のキューは、メッセージが取得される前に完全削除または削除されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Custom">
+      <MemberSignature Language="C#" Value="Custom" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.DeadLetterQueue Custom = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.DeadLetterQueue.Custom" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.DeadLetterQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム配信不能キューです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.DeadLetterQueue None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.DeadLetterQueue.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.DeadLetterQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>配信不能キューは使用されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.DeadLetterQueue System = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.DeadLetterQueue.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.DeadLetterQueue</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム全体の配信不能キューを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

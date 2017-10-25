@@ -1,0 +1,309 @@
+<Type Name="ManipulationProcessor2D" FullName="System.Windows.Input.Manipulations.ManipulationProcessor2D">
+  <TypeSignature Language="C#" Value="public class ManipulationProcessor2D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManipulationProcessor2D extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.Manipulations.ManipulationProcessor2D" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>共有の座標空間に複数の入力、単一の出力のコンポジターの 2 次元 (2-d) の変換を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D>オブジェクト、マニピュレーターのコレクションを複合オブジェクトとして扱われます。 アプリケーションは、追跡、および個々 のマニピュレーターを管理する必要はありませんが解放されます。  
+  
+ 単独で操作プロセッサには、要素の移動は行われません。 アプリケーションが、必要に応じて操作を開始しを聞くことにより操作プロセッサから情報を受信、 <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started>、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta>と<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed>イベント。 これらのイベント経由で受信した値には、場所、サイズ、または必要に応じて要素の向きを変更することができます。  
+  
+ 操作の種類が許可されている操作プロセッサに通知する (翻訳、拡大縮小、回転) を設定して、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.SupportedManipulations%2A>プロパティです。 操作中、要素の変換に非条件付きロジックを提供できます。 たとえば、要素の向きを変更する前に回転が有効になっているかを確認するには、代わりに無条件で適用できます操作プロセッサ; から受信した回転率回転が有効でない場合、回転の変更が発生していない操作プロセッサが報告されます。  
+  
+ 操作する要素がリリースされたとき (すべてのマニピュレーターは削除されます) 摩擦をシミュレートし、徐々 に停止する前にその動作を遅く要素に慣性の処理を行うこともできます。 詳細については、<xref:System.Windows.Input.Manipulations.InertiaProcessor2D> クラスを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationProcessor2D (System.Windows.Input.Manipulations.Manipulations2D supportedManipulations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.Manipulations.Manipulations2D supportedManipulations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationProcessor2D.#ctor(System.Windows.Input.Manipulations.Manipulations2D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportedManipulations" Type="System.Windows.Input.Manipulations.Manipulations2D" />
+      </Parameters>
+      <Docs>
+        <param name="supportedManipulations">サポートされている操作の初期セットです。</param>
+        <summary>新しい <see cref="T:System.Windows.Input.Manipulations.ManipulationProcessor2D" /> オブジェクトを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="supportedManipulations" />パラメーターがの有効な組み合わせではありません、<see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManipulationProcessor2D (System.Windows.Input.Manipulations.Manipulations2D supportedManipulations, System.Windows.Input.Manipulations.ManipulationPivot2D pivot);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Input.Manipulations.Manipulations2D supportedManipulations, class System.Windows.Input.Manipulations.ManipulationPivot2D pivot) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationProcessor2D.#ctor(System.Windows.Input.Manipulations.Manipulations2D,System.Windows.Input.Manipulations.ManipulationPivot2D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="supportedManipulations" Type="System.Windows.Input.Manipulations.Manipulations2D" />
+        <Parameter Name="pivot" Type="System.Windows.Input.Manipulations.ManipulationPivot2D" />
+      </Parameters>
+      <Docs>
+        <param name="supportedManipulations">サポートされている操作の初期セットです。</param>
+        <param name="pivot">単一マニピュレーターの回転の情報をピボットします。</param>
+        <summary>新しい <see cref="T:System.Windows.Input.Manipulations.ManipulationProcessor2D" /> オブジェクトを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="supportedManipulations" />パラメーターがの有効な組み合わせではありません、<see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt; Completed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt; Completed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の完了と発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompleteManipulation">
+      <MemberSignature Language="C#" Value="public void CompleteManipulation (long timestamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CompleteManipulation(int64 timestamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationProcessor2D.CompleteManipulation(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timestamp" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="timestamp">100 ナノ秒タイマー刻み単位で操作を完了するタイムスタンプ。</param>
+        <summary>強制的に現在の操作を完了させ、<see cref="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed" />イベント。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムスタンプは、現在の操作の前のタイムスタンプより小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Delta">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt; Delta;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt; Delta" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の起点が変更されたとき、または平行移動、拡大/縮小、または回転が発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta?displayProperty=nameWithType>イベントおよび<xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta?displayProperty=nameWithType>イベントは、同じ型です。 通常、両方のイベントの同じイベント ハンドラーを使用することができます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnManipulationOrInertiaDelta](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onmanipulationorinertiadelta)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumScaleRotateRadius">
+      <MemberSignature Language="C#" Value="public float MinimumScaleRotateRadius { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 MinimumScaleRotateRadius" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationProcessor2D.MinimumScaleRotateRadius" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または座標単位のマニピュレーター スケールおよび回転で参加するために必要な最小の半径を設定します。</summary>
+        <value>マニピュレーター スケールおよび回転で参加するために必要な座標単位の最小半径。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マニピュレーターは、現在処理中、マニピュレーターの重心の近くに非常には、マニピュレーターが非常に小さなモーション回転やスケーリングに非常に大きな変更になります。 この問題を避けるためには、次のように設定します。 <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.MinimumScaleRotateRadius%2A> 0 より大きい値にします。 その距離より近く of 質量中心にあるすべてのマニピュレーターは、回転やスケーリングの操作には含まれません。  
+  
+ 使用する一般的な値は、マニピュレーター「偶発的な」運動のありそうな大きさに基づく必要があります。 たとえば、マニピュレーターが画面に接触ヒューマン指の場合は、センチメートルなどに対応する radius が適しています。  
+  
+ 値は、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.MinimumScaleRotateRadius%2A>有限の正の数値を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pivot">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.ManipulationPivot2D Pivot { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.Manipulations.ManipulationPivot2D Pivot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationProcessor2D.Pivot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.ManipulationPivot2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作プロセッサのピボット情報を設定します。</summary>
+        <value>操作プロセッサのピボット情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Pivot%2A>プロパティを使用する単一マニピュレーターの回転のピボット情報を指定します。 このプロパティを null に設定すると、単一マニピュレーターの回転が無効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessManipulators">
+      <MemberSignature Language="C#" Value="public void ProcessManipulators (long timestamp, System.Collections.Generic.IEnumerable&lt;System.Windows.Input.Manipulations.Manipulator2D&gt; manipulators);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ProcessManipulators(int64 timestamp, class System.Collections.Generic.IEnumerable`1&lt;valuetype System.Windows.Input.Manipulations.Manipulator2D&gt; manipulators) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators(System.Int64,System.Collections.Generic.IEnumerable{System.Windows.Input.Manipulations.Manipulator2D})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timestamp" Type="System.Int64" />
+        <Parameter Name="manipulators" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Input.Manipulations.Manipulator2D&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="timestamp">100 ナノ秒タイマー刻みで、バッチのタイムスタンプです。</param>
+        <param name="manipulators">現在スコープ内にあるマニピュレーターのセット。</param>
+        <summary>単一のバッチ操作として指定されたマニピュレーターを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーター`manipulators`リストが空または null にすることがあります。 この結果、0 に到達するマニピュレーターの数の場合、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Completed>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.UIElement.OnLostMouseCapture%2A>のメソッド、<xref:System.Windows.UIElement>を呼び出すオブジェクトがオーバーライドされる、<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A>のリストを持つメソッド<xref:System.Windows.Input.Manipulations.Manipulator2D>オブジェクトを null に設定します。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnLostMouseCapture](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onlostmousecapture)]  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_Timestamp](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_timestamp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">タイムスタンプは、現在の操作の前のタイムスタンプより小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParameters">
+      <MemberSignature Language="C#" Value="public void SetParameters (System.Windows.Input.Manipulations.ManipulationParameters2D parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetParameters(class System.Windows.Input.Manipulations.ManipulationParameters2D parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.Manipulations.ManipulationProcessor2D.SetParameters(System.Windows.Input.Manipulations.ManipulationParameters2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Windows.Input.Manipulations.ManipulationParameters2D" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">設定するパラメーター。</param>
+        <summary>操作プロセッサにパラメーターを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Started">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DStartedEventArgs&gt; Started;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Input.Manipulations.Manipulation2DStartedEventArgs&gt; Started" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Input.Manipulations.Manipulation2DStartedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい操作が開始されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、イベント ハンドラーを<xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started>慣性の処理が実行されている場合と必要な場合は、表示するイベントのチェックを停止します。  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_OnManipulationStarted](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_onmanipulationstarted)]  
+  
+ [!code-csharp[ManipulationAPI#_ManipulationItem_Timestamp](~/samples/snippets/csharp/VS_Snippets_Misc/manipulationapi/cs/manipulationitem.xaml.cs#_manipulationitem_timestamp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedManipulations">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.Manipulations.Manipulations2D SupportedManipulations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.Manipulations.Manipulations2D SupportedManipulations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.Manipulations.ManipulationProcessor2D.SupportedManipulations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Input.Manipulations</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Manipulations.Manipulations2D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサポートされている操作の現在のセットを設定します。</summary>
+        <value>サポートされている操作の現在のセット。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">プロパティの有効な組み合わせではない値を設定しようとする、<see cref="T:System.Windows.Input.Manipulations.Manipulations2D" />  
+  
+ 列挙型値。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

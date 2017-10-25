@@ -1,0 +1,348 @@
+<Type Name="IUpdatable" FullName="System.Data.Services.IUpdatable">
+  <TypeSignature Language="C#" Value="public interface IUpdatable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUpdatable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.IUpdatable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>HTTP POST メソッドによってリソースを挿入または更新するためのインターフェイス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.IUpdatable> インターフェイスはリソースに依存しません。 リソースを表すオブジェクトを返すメソッドは、あらゆるデータを返すことができます。  
+  
+ 返されるオブジェクトは、リソースを表す不透明なオブジェクトです。 その参照を使用して値を読み取ったり更新したりするために、同じ不透明なオブジェクトが <xref:System.Data.Services.IUpdatable> に戻されます。  
+  
+ <xref:System.Data.Services.IUpdatable> の実装は、この不透明なオブジェクトとそれが表しているオブジェクトとのマッピングを追跡する必要があります。 リソースをシリアル化したり、正しい型の共通言語ランタイム (CLR) インスタンスが必要なときは、その不透明なオブジェクトを引数として <xref:System.Data.Services.IUpdatable> の ResolveResource メソッドが呼び出されます。  
+  
+ オブジェクトをシリアル化するには、<xref:System.Data.Services.IUpdatable.ResolveResource%2A> の <xref:System.Data.Services.IUpdatable> メソッドを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddReferenceToCollection">
+      <MemberSignature Language="C#" Value="public void AddReferenceToCollection (object targetResource, string propertyName, object resourceToBeAdded);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddReferenceToCollection(object targetResource, string propertyName, object resourceToBeAdded) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.AddReferenceToCollection(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="resourceToBeAdded" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">プロパティを定義する対象オブジェクト。</param>
+        <param name="propertyName">リソースの追加先となるコレクション プロパティの名前。</param>
+        <param name="resourceToBeAdded">追加するリソースを表す不透明なオブジェクト。</param>
+        <summary>指定された値をコレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearChanges">
+      <MemberSignature Language="C#" Value="public void ClearChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ClearChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.ClearChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データに対する変更を取り消します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateResource">
+      <MemberSignature Language="C#" Value="public object CreateResource (string containerName, string fullTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateResource(string containerName, string fullTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.CreateResource(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containerName" Type="System.String" />
+        <Parameter Name="fullTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="containerName">リソースが属しているエンティティ セットの名前。</param>
+        <param name="fullTypeName">名前空間で修飾された、リソースの完全な型名。</param>
+        <summary>指定されたコンテナーに属する指定された型のリソースを作成します。</summary>
+        <returns>指定されたコンテナーに属する指定された型のリソースを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.IUpdatable.CreateResource%2A> は、HTTP POST メソッドで新しいリソースを挿入するときに呼び出します。 第 1 パラメーターは、リソースの従属先となるコンテナーを指します。第 2 パラメーターは、作成するリソースの、名前空間で修飾された型名です。  
+  
+ 第 2 パラメーターで継承を有効に活用することができます。 戻り値の型は、リソースの実際の CLR インスタンスである必要はありません。 たとえば、クッキーなど、実装上必要なあらゆるデータを戻り値とすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteResource">
+      <MemberSignature Language="C#" Value="public void DeleteResource (object targetResource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DeleteResource(object targetResource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.DeleteResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">削除するリソース。</param>
+        <summary>指定されたリソースを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `targetResource` は、<xref:System.Data.Services.IUpdatable.GetResource%2A> または <xref:System.Data.Services.IUpdatable.CreateResource%2A> から返される不透明なオブジェクトです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResource">
+      <MemberSignature Language="C#" Value="public object GetResource (System.Linq.IQueryable query, string fullTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetResource(class System.Linq.IQueryable query, string fullTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.GetResource(System.Linq.IQueryable,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="query" Type="System.Linq.IQueryable" />
+        <Parameter Name="fullTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="query">特定のリソースを指す統合言語クエリ (LINQ)。</param>
+        <param name="fullTypeName">リソースの完全修飾型名。</param>
+        <summary>クエリと型名で識別される指定された型のリソースを取得します。</summary>
+        <returns>指定されたクエリによって参照される指定された型のリソースを表す不透明なオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public object GetValue (object targetResource, string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object targetResource, string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.GetValue(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">リソースを表す不透明なオブジェクト。</param>
+        <param name="propertyName">値を取得するプロパティの名前。</param>
+        <summary>対象オブジェクトの指定されたプロパティの値を取得します。</summary>
+        <returns>オブジェクトの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スカラー プロパティまたは複合プロパティに対して呼び出すことができます。 スカラー プロパティの場合、返されるオブジェクトは実際の値になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveReferenceFromCollection">
+      <MemberSignature Language="C#" Value="public void RemoveReferenceFromCollection (object targetResource, string propertyName, object resourceToBeRemoved);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveReferenceFromCollection(object targetResource, string propertyName, object resourceToBeRemoved) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.RemoveReferenceFromCollection(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="resourceToBeRemoved" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">プロパティを定義する対象オブジェクト。</param>
+        <param name="propertyName">値を更新するプロパティの名前。</param>
+        <param name="resourceToBeRemoved">削除するプロパティ値。</param>
+        <summary>指定した値をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 対象オブジェクトのナビゲーション プロパティで識別される指定されたリソースをコレクションから削除します。 この操作は、リレーションシップによってバインドされている 2 つのリソース オブジェクト間の関係を削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetResource">
+      <MemberSignature Language="C#" Value="public object ResetResource (object resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ResetResource(object resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.ResetResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resource">更新対象のリソース。</param>
+        <summary>パラメーターによって識別されるリソースをリセット<paramref name="resource" />を既定値にします。</summary>
+        <returns>既定値にリセットされたリソース。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveResource">
+      <MemberSignature Language="C#" Value="public object ResolveResource (object resource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ResolveResource(object resource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.ResolveResource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="resource">取得するインスタンスのリソースを表すオブジェクト。</param>
+        <summary>指定されたリソース オブジェクトによって表されるリソースのインスタンスを返します。</summary>
+        <returns>指定されたリソース オブジェクトによって表されるリソースのインスタンスを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Data.Services.IUpdatable.CreateResource%2A> または <xref:System.Data.Services.IUpdatable.GetResource%2A> の API によって返された不透明なオブジェクトを CLR インスタンスに解決する目的で呼び出されます。 通常、POST メソッドのリソースをシリアル化するために <xref:System.Data.Services.IUpdatable.SaveChanges%2A> の後で呼び出されます。  
+  
+ 共通言語ランタイム (CLR) リソース インスタンスを引数として呼び出される更新インターセプターが存在する場合にも、このメソッドが呼び出されます。 このメソッドを使用するためには、プロバイダーがオプティミスティック同時実行制御をサポートしており、なおかつ、そのリソース型に割り当てられている同時実行制御トークンが、CLR ベースのプロバイダーの <xref:System.Data.Services.ETagAttribute> によって定義されている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveChanges">
+      <MemberSignature Language="C#" Value="public void SaveChanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SaveChanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.SaveChanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.IUpdatable" /> の API を使って実行されたすべての変更を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Services.IUpdatable> の実装は、<xref:System.Data.Services.IUpdatable.SaveChanges%2A> が呼び出されるまですべての変更を追跡し、<xref:System.Data.Services.IUpdatable.SaveChanges%2A> が呼び出された時点ですべての変更を保存する必要があります。 <xref:System.Data.Services.IUpdatable> の実装は、すべての変更を保存するか、すべての変更を拒否することが想定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetReference">
+      <MemberSignature Language="C#" Value="public void SetReference (object targetResource, string propertyName, object propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetReference(object targetResource, string propertyName, object propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.SetReference(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">プロパティを定義する対象オブジェクト。</param>
+        <param name="propertyName">値を更新するプロパティの名前。</param>
+        <param name="propertyValue">更新するプロパティ値。</param>
+        <summary>対象オブジェクトの指定された参照プロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object targetResource, string propertyName, object propertyValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object targetResource, string propertyName, object propertyValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.IUpdatable.SetValue(System.Object,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetResource" Type="System.Object" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="propertyValue" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="targetResource">プロパティを定義する対象オブジェクト。</param>
+        <param name="propertyName">値を更新するプロパティの名前。</param>
+        <param name="propertyValue">更新に使用するプロパティ値。</param>
+        <summary>対象リソース上の指定された名前のプロパティを、指定された値に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

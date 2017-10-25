@@ -1,0 +1,81 @@
+<Type Name="MsmqAuthenticationMode" FullName="System.ServiceModel.MsmqAuthenticationMode">
+  <TypeSignature Language="C#" Value="public enum MsmqAuthenticationMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MsmqAuthenticationMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqAuthenticationMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>バインドに使用する認証の種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体の値は、以下のものによって使用されます。  
+  
+ <xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A> プロパティは、MSMQ トランスポートによるメッセージの認証方法を示します。  
+  
+ 設定して、セキュリティがオフの場合、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode%2A>を [なし]、<xref:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel%2A>プロパティを設定する必要がありますも<xref:System.Net.Security.ProtectionLevel>一貫性を保つのためです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Certificate">
+      <MemberSignature Language="C#" Value="Certificate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.MsmqAuthenticationMode Certificate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.MsmqAuthenticationMode.Certificate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqAuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントは、X.509 証明書を使用して認証されます。 クライアント証明書が、サーバーの証明書ストアに存在する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.MsmqAuthenticationMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.MsmqAuthenticationMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqAuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドでは、セキュリティを使用しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowsDomain">
+      <MemberSignature Language="C#" Value="WindowsDomain" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.MsmqAuthenticationMode WindowsDomain = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.MsmqAuthenticationMode.WindowsDomain" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqAuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Kerberos が認証に使用されます。 クライアントとサーバーは、信頼されたドメインに参加している必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

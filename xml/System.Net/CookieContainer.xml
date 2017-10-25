@@ -1,0 +1,757 @@
+<Type Name="CookieContainer" FullName="System.Net.CookieContainer">
+  <TypeSignature Language="C#" Value="public class CookieContainer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CookieContainer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.CookieContainer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>3.9.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションのコンテナーを提供<see cref="T:System.Net.CookieCollection" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Net.CookieContainer>の記憶域を提供するデータ構造は、のインスタンス、<xref:System.Net.Cookie>クラス、およびこれにはデータベースのような方法でアクセスします。 <xref:System.Net.CookieContainer>容量の制限が、コンテナーが作成またはプロパティで変更されたときに設定されています。  
+  
+ インスタンス、<xref:System.Net.Cookie>クラスが、元の URI に基づいて、コンテナーに追加します。 内部に追加される<xref:System.Net.CookieCollection>URI に関連付けられています。 A<xref:System.Net.Cookie>として URI に基づいて、コンテナーから取得した、 <xref:System.Net.CookieCollection>、または HTTP WebRequests を送信するために使用する文字列。  
+  
+ <xref:System.Net.CookieContainer>は、コンテナーのコンテンツの量を制御する 3 つのプロパティがあります: <xref:System.Net.CookieContainer.Capacity%2A>、 <xref:System.Net.CookieContainer.MaxCookieSize%2A>、および<xref:System.Net.CookieContainer.PerDomainCapacity%2A>です。 これらの値が 300 の既定の設定がある、4096、および 20 それぞれします。 ときに、<xref:System.Net.Cookie>これらのプロパティを使用して判断、コンテナーに追加するかどうか、<xref:System.Net.Cookie>に既に含まれている、<xref:System.Net.CookieContainer>新しい確保するために破棄する必要があります。 <xref:System.Net.CookieContainer>追跡ことを確認するには、各追加のどちらも、<xref:System.Net.CookieContainer.Capacity%2A>も<xref:System.Net.CookieContainer.PerDomainCapacity%2A>の制限を超えています。 1 つまたは両方を超えた場合、し<xref:System.Net.Cookie>によって保持されているインスタンス、<xref:System.Net.CookieContainer>が削除されます。 まず、その有効期限が切れた<xref:System.Net.Cookie>を削除します。 さらに容量を再キャプチャする必要がある場合、最も最近使用した、<xref:System.Net.CookieCollection>を消去します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CookieContainer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.CookieContainer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、すべてのフィールドを既定値を初期化します。 <xref:System.Net.CookieContainer.DefaultCookieLimit>初期化するために使用される<xref:System.Net.CookieContainer.Capacity%2A>、<xref:System.Net.CookieContainer.DefaultCookieLengthLimit>のために使用<xref:System.Net.CookieContainer.MaxCookieSize%2A>、および<xref:System.Net.CookieContainer.DefaultPerDomainCookieLimit>は使用<xref:System.Net.CookieContainer.PerDomainCapacity%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CookieContainer (int capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.CookieContainer" />クラス数の値を指定して<see cref="T:System.Net.Cookie" />コンテナーが保持できるインスタンスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.CookieContainer.PerDomainCapacity%2A>20 に初期化し、 <xref:System.Net.CookieContainer.MaxCookieSize%2A> 4096 に初期化されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="capacity" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CookieContainer (int capacity, int perDomainCapacity, int maxCookieSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 capacity, int32 perDomainCapacity, int32 maxCookieSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="capacity" Type="System.Int32" />
+        <Parameter Name="perDomainCapacity" Type="System.Int32" />
+        <Parameter Name="maxCookieSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="capacity">数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。</param>
+        <param name="perDomainCapacity">数<see cref="T:System.Net.Cookie" />ドメインごとのインスタンス。</param>
+        <param name="maxCookieSize">任意の 1 つのバイト単位の最大サイズ<see cref="T:System.Net.Cookie" />で、<see cref="T:System.Net.CookieContainer" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.CookieContainer" />固有のプロパティを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パラメーターの値を指定する<xref:System.Net.CookieContainer.Capacity%2A>、 <xref:System.Net.CookieContainer.MaxCookieSize%2A>、および<xref:System.Net.CookieContainer.PerDomainCapacity%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="perDomainCapacity" />等しくない<see cref="F:System.Int32.MaxValue" />です。  
+  
+ および  
+  
+ <paramref name="(perDomainCapacity" />0 未満または<paramref name="perDomainCapacity" />がより大きい<paramref name="capacity)" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="maxCookieSize" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Net.Cookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Net.Cookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.Add(System.Net.Cookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookie" Type="System.Net.Cookie" />
+      </Parameters>
+      <Docs>
+        <param name="cookie"><see cref="T:System.Net.Cookie" /> に追加される <see cref="T:System.Net.CookieContainer" />。</param>
+        <summary>追加、<see cref="T:System.Net.Cookie" />を<see cref="T:System.Net.CookieContainer" />です。 このメソッドからドメインを使用して、<see cref="T:System.Net.Cookie" />に関連付けるにはどのドメインのコレクションを決定する、<see cref="T:System.Net.Cookie" />とします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.CookieContainer.Count%2A>プロパティに等しいかを超える、<xref:System.Net.CookieContainer.Capacity%2A>プロパティを 1 つまたは複数<xref:System.Net.Cookie>インスタンスが追加する前に、コンテナーから削除、`cookie`パラメーター。 十分な<xref:System.Net.Cookie>インスタンスを削除して<xref:System.Net.CookieContainer.Count%2A>下<xref:System.Net.CookieContainer.Capacity%2A>次のように: 指定されたスコープで有効期限が切れたインスタンスがある場合は、クリーンアップします。 使用しない場合、し、最も最近<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookie" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">ドメインを<paramref name="cookie" />は<see langword="null" />または空の文字列 ("") です。</exception>
+        <exception cref="T:System.Net.CookieException">
+          <paramref name="cookie" /> が <paramref name="maxCookieSize" /> を超えています。  
+  
+ または  
+  
+ ドメインを<paramref name="cookie" />は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Net.CookieCollection cookies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Net.CookieCollection cookies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.Add(System.Net.CookieCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cookies" Type="System.Net.CookieCollection" />
+      </Parameters>
+      <Docs>
+        <param name="cookies"><see cref="T:System.Net.CookieCollection" /> に追加される <see cref="T:System.Net.CookieContainer" />。</param>
+        <summary>内容を追加、<see cref="T:System.Net.CookieCollection" />を<see cref="T:System.Net.CookieContainer" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Net.CookieContainer.Count%2A>プロパティ equals、<xref:System.Net.CookieContainer.Capacity%2A>プロパティを 1 つまたは複数<xref:System.Net.Cookie>の内容を追加する前に、コンテナーからのインスタンスが削除、`cookies`パラメーター。 十分な<xref:System.Net.Cookie>確保するためにインスタンスが削除`cookies`よう: 有効期限が切れたインスタンスがある場合は、それらがクリーンアップされます。 ない場合、または、さらにスペースが必要な場合は、し、最も最近使用した<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookies" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, System.Net.Cookie cookie);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, class System.Net.Cookie cookie) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.Add(System.Uri,System.Net.Cookie)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="cookie" Type="System.Net.Cookie" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI、<see cref="T:System.Net.Cookie" />に追加する、<see cref="T:System.Net.CookieContainer" />です。</param>
+        <param name="cookie"><see cref="T:System.Net.Cookie" /> に追加される <see cref="T:System.Net.CookieContainer" />。</param>
+        <summary>追加、<see cref="T:System.Net.Cookie" />を<see cref="T:System.Net.CookieContainer" />の特定の URI。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する場合、<xref:System.Net.Cookie>インスタンスの特定のホストを 1 つだけの場合、設定しないでください、<xref:System.Net.Cookie.Domain%2A>のプロパティ、<xref:System.Net.Cookie>インスタンス。 これは自動的に設定、URI に基づいています。  
+  
+ 場合は、URI では、ローカル ドメインに対応しており、ローカル ドメイン上のすべてのホストに送信、設定、 <xref:System.Net.Cookie> <xref:System.Net.Cookie.Domain%2A>プロパティが".local"です。 それ以外の場合、URI で使用されるホスト名と一致することを確認します。  
+  
+ 場合、<xref:System.Net.Cookie.Version%2A>のプロパティ、 <xref:System.Net.Cookie> Netscape は、<xref:System.Net.Cookie.Path%2A>のプロパティ、<xref:System.Net.Cookie>以外の場合、セットは、明示的には、URI から派生し、ページ名を含む、URI から完全なパスです。  
+  
+ 場合、<xref:System.Net.CookieContainer.Count%2A>プロパティ equals、<xref:System.Net.CookieContainer.Capacity%2A>プロパティを 1 つまたは複数<xref:System.Net.Cookie>インスタンスが追加する前に、コンテナーから削除、`cookie`パラメーター。 十分な<xref:System.Net.Cookie>インスタンスを削除して<xref:System.Net.CookieContainer.Count%2A>下<xref:System.Net.CookieContainer.Capacity%2A>次のように: スコープに有効期限が切れたインスタンスがある場合は、それらがクリーンアップされます。 使用しない場合、し、最も最近<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> が <see langword="null" /> または <paramref name="cookie" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.CookieException">
+          <paramref name="cookie" /> が <paramref name="maxCookieSize" /> を超えています。  
+  
+ または  
+  
+ ドメインを<paramref name="cookie" />は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (Uri uri, System.Net.CookieCollection cookies);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Uri uri, class System.Net.CookieCollection cookies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.Add(System.Uri,System.Net.CookieCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="cookies" Type="System.Net.CookieCollection" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI、<see cref="T:System.Net.CookieCollection" />に追加する、<see cref="T:System.Net.CookieContainer" />です。</param>
+        <param name="cookies"><see cref="T:System.Net.CookieCollection" /> に追加される <see cref="T:System.Net.CookieContainer" />。</param>
+        <summary>内容を追加、<see cref="T:System.Net.CookieCollection" />を<see cref="T:System.Net.CookieContainer" />の特定の URI。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する場合、<xref:System.Net.Cookie>インスタンスの特定のホストを 1 つだけの場合、設定しないでください、<xref:System.Net.Cookie.Domain%2A>のプロパティ、<xref:System.Net.Cookie>インスタンス。 これは自動的に設定、URI に基づいています。  
+  
+ 場合は、URI では、ローカル ドメインに対応しており、ローカル ドメイン上のすべてのホストに送信、設定、 <xref:System.Net.Cookie> <xref:System.Net.Cookie.Domain%2A>プロパティが".local"です。 それ以外の場合、URI で使用されるホスト名と一致することを確認します。  
+  
+ 場合<xref:System.Net.CookieContainer.Count%2A>equals <xref:System.Net.CookieContainer.Capacity%2A>、1 つまたは複数<xref:System.Net.Cookie>インスタンスが追加する前に、コンテナーから削除、`cookie`パラメーター。 十分な<xref:System.Net.Cookie>インスタンスを削除して<xref:System.Net.CookieContainer.Count%2A>下<xref:System.Net.CookieContainer.Capacity%2A>よう: スコープがクリーンアップの有効期限が切れたインスタンスがある場合。 使用しない場合、し、最も最近<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookies" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">いずれかの cookie のドメイン<paramref name="cookies" />は<see langword="null" />します。</exception>
+        <exception cref="T:System.Net.CookieException">Cookie のいずれかの<paramref name="cookies" />無効なドメインが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Capacity">
+      <MemberSignature Language="C#" Value="public int Capacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Capacity" />
+      <MemberSignature Language="DocId" Value="P:System.Net.CookieContainer.Capacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定の数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。</summary>
+        <value>数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。 これはハード制限であり、追加することによって超過することはできません、<see cref="T:System.Net.Cookie" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Net.CookieContainer.Count%2A>に等しいかを超える<xref:System.Net.CookieContainer.Capacity%2A>、1 つまたは複数<xref:System.Net.Cookie>インスタンスが、コンテナーから削除します。 十分なインスタンスを削除して<xref:System.Net.CookieContainer.Count%2A>下<xref:System.Net.CookieContainer.Capacity%2A>次のように: が有効期限が切れた場合<xref:System.Net.Cookie>スコープ内のインスタンス、それらがクリーンアップされます。 使用しない場合、し、最も最近<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ <xref:System.Net.CookieContainer.Capacity%2A>以上にする必要があります<xref:System.Net.CookieContainer.PerDomainCapacity%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="Capacity" />0 未満または (値より小さい<see cref="P:System.Net.CookieContainer.PerDomainCapacity" />と<see cref="P:System.Net.CookieContainer.PerDomainCapacity" />は等しくありません<see cref="F:System.Int32.MaxValue" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Net.CookieContainer.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />現在保持しています。</summary>
+        <value>数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />現在保持しています。 これは、合計<see cref="T:System.Net.Cookie" />のすべてのドメイン内のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は <xref:System.Net.CookieContainer.DefaultCookieLimit> です。 場合<xref:System.Net.CookieContainer.Count%2A>に等しいかを超える<xref:System.Net.CookieContainer.Capacity%2A>、1 つまたは複数<xref:System.Net.Cookie>インスタンスが、コンテナーから削除します。 十分なインスタンスを削除して<xref:System.Net.CookieContainer.Count%2A>下<xref:System.Net.CookieContainer.Capacity%2A>次のように: が有効期限が切れた場合<xref:System.Net.Cookie>スコープ内のインスタンス、それらがクリーンアップされます。 使用しない場合、し、最も最近<xref:System.Net.CookieCollection>が検出され、コンテナーから削除します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCookieLengthLimit">
+      <MemberSignature Language="C#" Value="public const int DefaultCookieLengthLimit = 4096;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultCookieLengthLimit = (4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.CookieContainer.DefaultCookieLengthLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4096</MemberValue>
+      <Docs>
+        <summary>既定の最大サイズ (バイト単位) を表す、<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の最大値<xref:System.Net.Cookie>サイズは、4096 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCookieLimit">
+      <MemberSignature Language="C#" Value="public const int DefaultCookieLimit = 300;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultCookieLimit = (300)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.CookieContainer.DefaultCookieLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>300</MemberValue>
+      <Docs>
+        <summary>既定の最大数を表す<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />を保持できます。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の最大数<xref:System.Net.Cookie>インスタンスが 300 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPerDomainCookieLimit">
+      <MemberSignature Language="C#" Value="public const int DefaultPerDomainCookieLimit = 20;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultPerDomainCookieLimit = (20)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.CookieContainer.DefaultPerDomainCookieLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>20</MemberValue>
+      <Docs>
+        <summary>既定の最大数を表す<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />ドメインごとに参照できます。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の最大数<xref:System.Net.Cookie>ドメインごとのインスタンスは 20 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCookieHeader">
+      <MemberSignature Language="C#" Value="public string GetCookieHeader (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetCookieHeader(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.GetCookieHeader(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI、<see cref="T:System.Net.Cookie" />インスタンスが必要です。</param>
+        <summary>表す HTTP クッキーを格納する HTTP クッキー ヘッダーを取得、<see cref="T:System.Net.Cookie" />特定の URI に関連付けられているインスタンス。</summary>
+        <returns>表す文字列で、HTTP クッキー ヘッダー<see cref="T:System.Net.Cookie" />インスタンス セミコロンで区切られます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.CookieContainer.GetCookieHeader%2A>用の HTTP クッキー ヘッダーを保持する文字列を返します、<xref:System.Net.Cookie>によって指定されたインスタンス`uri`です。 HTTP ヘッダーがそれぞれの文字列表現を追加することによって構築された<xref:System.Net.Cookie>に関連付けられている`uri`です。 いる文字列の正確な形式が RFC に依存する、<xref:System.Net.Cookie>に準拠しています。 すべての文字列、<xref:System.Net.Cookie>インスタンスに関連付けられている`uri`が結合され、セミコロンで区切られます。  
+  
+ この文字列は、正しい形式の 2 番目のパラメーターとして使用するため、<xref:System.Net.CookieContainer.SetCookies%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCookies">
+      <MemberSignature Language="C#" Value="public System.Net.CookieCollection GetCookies (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Net.CookieCollection GetCookies(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.GetCookies(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.CookieCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI、<see cref="T:System.Net.Cookie" />インスタンスが必要です。</param>
+        <summary>取得、<see cref="T:System.Net.CookieCollection" />を格納している、<see cref="T:System.Net.Cookie" />特定の URI に関連付けられているインスタンス。</summary>
+        <returns>A<see cref="T:System.Net.CookieCollection" />を格納している、<see cref="T:System.Net.Cookie" />特定の URI に関連付けられているインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを<xref:System.Net.CookieCollection>を作成します。 続いて、<xref:System.Net.Cookie>指定された URI に関連付けられている内部コレクション内のインスタンスが読み取られてされを新しい追加<xref:System.Net.CookieCollection>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uri" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCookieSize">
+      <MemberSignature Language="C#" Value="public int MaxCookieSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxCookieSize" />
+      <MemberSignature Language="DocId" Value="P:System.Net.CookieContainer.MaxCookieSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最大の長さを表す、<see cref="T:System.Net.Cookie" />です。</summary>
+        <value>許容最大長をバイト単位での<see cref="T:System.Net.Cookie" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の新しい値<xref:System.Net.CookieContainer.MaxCookieSize%2A>いずれが現在の値より小さい<xref:System.Net.Cookie>を新しい値を超える長さは切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="MaxCookieSize" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PerDomainCapacity">
+      <MemberSignature Language="C#" Value="public int PerDomainCapacity { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 PerDomainCapacity" />
+      <MemberSignature Language="DocId" Value="P:System.Net.CookieContainer.PerDomainCapacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得および設定の数<see cref="T:System.Net.Cookie" />インスタンスで、<see cref="T:System.Net.CookieContainer" />ドメインごとに保持できます。</summary>
+        <value>数<see cref="T:System.Net.Cookie" />ドメインごとに許可されているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、新しい<xref:System.Net.CookieContainer.PerDomainCapacity%2A>値が現在の値より小さい場合は、ドメインのコレクションが含まれている詳細と<xref:System.Net.Cookie>インスタンスに合わせて新しい値よりも、コレクションの排除します。 これは、使用、同じ基本的な規則」の説明に従って、<xref:System.Net.CookieContainer.Capacity%2A>プロパティです。 ただし、これは、クリーンアップをこのドメインのコレクションでのみです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="PerDomainCapacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="(PerDomainCapacity" />クッキーの最大許容数 300 のインスタンスし、等しくないするよりも大きい<see cref="F:System.Int32.MaxValue" />)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCookies">
+      <MemberSignature Language="C#" Value="public void SetCookies (Uri uri, string cookieHeader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetCookies(class System.Uri uri, string cookieHeader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.CookieContainer.SetCookies(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>3.9.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="cookieHeader" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">URI、<see cref="T:System.Net.CookieCollection" />です。</param>
+        <param name="cookieHeader">HTTP セット cookie の内容と、HTTP サーバーによって返されるヘッダー<see cref="T:System.Net.Cookie" />コンマで区切られたインスタンス。</param>
+        <summary>追加<see cref="T:System.Net.Cookie" />HTTP クッキー ヘッダーを 1 つまたは複数の cookie のインスタンス、<see cref="T:System.Net.CookieContainer" />の特定の URI。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.CookieContainer.SetCookies%2A>HTTP クッキー ヘッダーからのすべての HTTP クッキーを取り出す、ビルド、 <xref:System.Net.Cookie> 、それぞれにし、各追加<xref:System.Net.Cookie>内蔵<xref:System.Net.CookieCollection>URI に関連付けられています。 HTTP の cookie、`cookieHeader`文字列は、コンマで区切る必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="cookieHeader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.CookieException">Cookie のいずれかが正しくありません。  
+  
+ または  
+  
+ Cookie の 1 つのコンテナーに追加中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

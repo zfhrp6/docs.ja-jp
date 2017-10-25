@@ -1,0 +1,168 @@
+<Type Name="TargetFrameworkAttribute" FullName="System.Runtime.Versioning.TargetFrameworkAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TargetFrameworkAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TargetFrameworkAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.TargetFrameworkAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>特定のアセンブリがコンパイルされた対象の .NET Framework のバージョンを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.TargetFrameworkAttribute>クラスには、対象となるアセンブリがビルドされた .NET Framework ランタイムのバージョンを示すためにアセンブリに適用可能な属性が用意されています。 たとえば、次の例が適用されます、`TargetFrameworkAttribute`を使用してビルドされたことを示すためにアセンブリを[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]です。  
+  
+ [!code-csharp[System.Runtime.Versioning.TargetFrameworkAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.targetframeworkattribute/cs/declare1.cs#1)]
+ [!code-vb[System.Runtime.Versioning.TargetFrameworkAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.targetframeworkattribute/vb/declare1.vb#1)]  
+  
+ <xref:System.Runtime.Versioning.TargetFrameworkAttribute>クラスのコンス トラクターは、単一のパラメーターを持つ`frameworkName`、対象となるアセンブリがビルドされた .NET Framework のバージョンを指定します。 このパラメーターにマップ、<xref:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkName%2A>プロパティです。 さらに、<xref:System.Runtime.Versioning.TargetFrameworkAttribute>属性を指定できます、<xref:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkDisplayName%2A>プロパティをアセンブリのクライアントに表示するのに適したわかりやすい .NET Framework のバージョン文字列を指定します。 次の例に適用されます、`TargetFrameworkAttribute`アセンブリを使用して、アセンブリがビルドされたことを示すために両方のプロパティ値を代入して[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]です。  
+  
+ [!code-csharp[System.Runtime.Versioning.TargetFrameworkAttribute#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.targetframeworkattribute/cs/declare2.cs#2)]
+ [!code-vb[System.Runtime.Versioning.TargetFrameworkAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.targetframeworkattribute/vb/declare2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TargetFrameworkAttribute (string frameworkName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string frameworkName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.TargetFrameworkAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="frameworkName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="frameworkName">対象となるアセンブリがビルドされた .NET Framework のバージョン。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Runtime.Versioning.TargetFrameworkAttribute" />クラスを対象となるアセンブリがビルドされた .NET Framework のバージョンを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられている文字列、`frameworkName`パラメーターによって返される文字列と同じ形式には、通常、<xref:System.Runtime.Versioning.FrameworkName.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="frameworkName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameworkDisplayName">
+      <MemberSignature Language="C#" Value="public string FrameworkDisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FrameworkDisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkDisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となるアセンブリがビルドされた .NET Framework のバージョンの表示名を取得します。</summary>
+        <value>.NET Framework のバージョンの表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkDisplayName%2A>プロパティは通常、ユーザーに表示するために適切なわかりやすい比較的長い文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameworkName">
+      <MemberSignature Language="C#" Value="public string FrameworkName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FrameworkName" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対象となる特定のアセンブリがコンパイルされた .NET Framework のバージョンの名前を取得します。</summary>
+        <value>アセンブリがコンパイルされている .NET Framework のバージョンの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.TargetFrameworkAttribute.FrameworkName%2A>プロパティにマップ、`frameworkName`のパラメーター、<xref:System.Runtime.Versioning.TargetFrameworkAttribute.%23ctor%2A>コンス トラクターです。 コンパクト形式の .NET Framework のバージョンを表し、通常によって返される文字列に対応していますが、<xref:System.Runtime.Versioning.FrameworkName.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

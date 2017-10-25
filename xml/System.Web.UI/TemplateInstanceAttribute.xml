@@ -1,0 +1,250 @@
+<Type Name="TemplateInstanceAttribute" FullName="System.Web.UI.TemplateInstanceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TemplateInstanceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TemplateInstanceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.TemplateInstanceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレートの許可されているインスタンスの数を指定するために使用されるメタデータ属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.TemplateInstanceAttribute>クラスでは、テンプレート プロパティにより、1 つを 1 つまたは複数のインスタンスとしてマークすることができます。 のみ単一のインスタンス化できるようにするテンプレートには、参照されているその内部に含まれるコントロールを持つことができます。 <xref:System.Web.UI.WebControls.WebParts.WebPartZone.ZoneTemplate%2A>プロパティがインスタンス化された 1 回だけ使用可能なプロパティの例を示します。  
+  
+ これは、<xref:System.Web.UI.TemplateInstanceAttribute>クラスは省略可能です。 テンプレートのプロパティが拡張されていない場合、<xref:System.Web.UI.TemplateInstanceAttribute>クラス、既定値は、<xref:System.Web.UI.TemplateInstanceAttribute.Multiple>フィールドを使用します。 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateInstance>列挙型、および<xref:System.Web.UI.TemplateInstanceAttribute>クラスです。 カスタム<xref:System.Web.UI.WebControls.LoginView>という名前のコントロール`MyLoginViewA`よりも優先、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティと使用、<xref:System.Web.UI.TemplateInstanceAttribute>クラスの 1 つのインスタンスを指定する、<xref:System.Web.UI.WebControls.LoginView.AnonymousTemplate%2A>プロパティを作成します。  
+  
+ [!code-csharp[System.Web.UI.TemplateInstanceAttribute#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/cs/templateinstanceattribute.cs#1)]
+ [!code-vb[System.Web.UI.TemplateInstanceAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/vb/templateinstanceattribute.vb#1)]  
+  
+ 次のコード例は、使用する ASPX ファイル、`MyLoginViewA`を制御し、プロパティにアクセスする方法を示します、<xref:System.Web.UI.TemplateInstanceAttribute>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.TemplateInstanceAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/cs/templateinstanceattribute.aspx#2)]
+ [!code-aspx-vb[System.Web.UI.TemplateInstanceAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/vb/templateinstanceattribute.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplateInstanceAttribute (System.Web.UI.TemplateInstance instances);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.UI.TemplateInstance instances) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateInstanceAttribute.#ctor(System.Web.UI.TemplateInstance)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instances" Type="System.Web.UI.TemplateInstance" />
+      </Parameters>
+      <Docs>
+        <param name="instances"><see cref="T:System.Web.UI.TemplateInstance" /> 列挙値。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.TemplateInstanceAttribute" /> 、指定したクラス<see cref="T:System.Web.UI.TemplateInstance" />列挙値。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.TemplateInstanceAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.TemplateInstanceAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.TemplateInstanceAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstanceAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を定義、<see cref="T:System.Web.UI.TemplateInstanceAttribute" />クラスです。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の動作がのテンプレートを使用して、複数のインスタンスを作成するには、<xref:System.Web.UI.TemplateInstance.Multiple>列挙値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateInstanceAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テスト対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したオブジェクトがあるかどうかを示す、<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクトと同一ではこの<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクト。</summary>
+        <returns>
+          <see langword="true" />値が両方の場合、<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクトと同一ではこの<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクト。 それ以外の場合<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateInstanceAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これのハッシュ コードを取得<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクト。</summary>
+        <returns>ハッシュ コードをこの<see cref="T:System.Web.UI.TemplateInstanceAttribute" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instances">
+      <MemberSignature Language="C#" Value="public System.Web.UI.TemplateInstance Instances { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.TemplateInstance Instances" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.TemplateInstanceAttribute.Instances" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstance</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.TemplateInstance" />現在のテンプレート インスタンスを表す列挙値。</summary>
+        <value>A<see cref="T:System.Web.UI.TemplateInstance" />テンプレートの現在のインスタンスを表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれかの値には、<xref:System.Web.UI.TemplateInstanceAttribute.Single>フィールドまたは<xref:System.Web.UI.TemplateInstance.Multiple>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.TemplateInstanceAttribute.Instances%2A>プロパティです。 `Page_Load` ASPX ページのイベント、`MyLoginViewA`カスタム コントロールの<xref:System.Web.UI.TemplateInstanceAttribute>のクラス、`AnonymousTemplate`プロパティのクエリを実行します。  
+  
+ 定義の`MyLoginViewA`を制御しを参照してください<xref:System.Web.UI.TemplateInstanceAttribute>です。  
+  
+ [!code-csharp[System.Web.UI.TemplateInstanceAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/cs/templateinstanceattribute.aspx#3)]
+ [!code-vb[System.Web.UI.TemplateInstanceAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/vb/templateinstanceattribute.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.TemplateInstanceAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Web.UI.TemplateInstanceAttribute" /> オブジェクトが既定の<see cref="T:System.Web.UI.TemplateInstanceAttribute" /> オブジェクトと同じかどうかを示す値を返します。</summary>
+        <returns>
+          <see cref="T:System.Web.UI.TemplateInstanceAttribute" /> の現在のインスタンスの値が既定の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Web.UI.TemplateInstanceAttribute>クラスは、<xref:System.Web.UI.TemplateInstanceAttribute.Multiple>フィールドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.TemplateInstanceAttribute.IsDefaultAttribute%2A> メソッドの使用方法を示します。 `Page_Load` ASPX ページのイベント、`MyLoginViewA`カスタム コントロールの<xref:System.Web.UI.TemplateInstanceAttribute>のクラス、`AnonymousTemplate`プロパティのクエリを実行します。  
+  
+ 定義については、`MyLoginViewA`を制御しを参照してください<xref:System.Web.UI.TemplateInstanceAttribute>です。  
+  
+ [!code-csharp[System.Web.UI.TemplateInstanceAttribute#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/cs/templateinstanceattribute.aspx#3)]
+ [!code-vb[System.Web.UI.TemplateInstanceAttribute#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.TemplateInstanceAttribute/vb/templateinstanceattribute.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiple">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.TemplateInstanceAttribute Multiple;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.TemplateInstanceAttribute Multiple" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.TemplateInstanceAttribute.Multiple" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstanceAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Web.UI.TemplateInstanceAttribute" />として複数回インスタンス化されるテンプレートを 1 つを表すクラス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.TemplateInstanceAttribute.Multiple>フィールドは、新しいテンプレート インスタンスが複数回をインスタンス化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Single">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.TemplateInstanceAttribute Single;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Web.UI.TemplateInstanceAttribute Single" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.TemplateInstanceAttribute.Single" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.TemplateInstanceAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Web.UI.TemplateInstanceAttribute" />として 1 つに、1 回インスタンス化されるテンプレートを表すクラス。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.TemplateInstanceAttribute.Single>フィールドは、新しいテンプレート インスタンスが 1 回をインスタンス化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,329 @@
+<Type Name="ManipulationInertiaStartingEventArgs" FullName="System.Windows.Input.ManipulationInertiaStartingEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ManipulationInertiaStartingEventArgs : System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ManipulationInertiaStartingEventArgs extends System.Windows.Input.InputEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ManipulationInertiaStartingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.UIElement.ManipulationInertiaStarting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs>慣性の操作の動作を指定するオブジェクト。 使用して個別に操作の種類ごとに慣性の動作を指定することができます、 <xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.TranslationBehavior%2A>、 <xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.ExpansionBehavior%2A>、および<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.RotationBehavior%2A>プロパティです。 各ケースと、慣性の動作を表すオブジェクトの型の各プロパティは、次を指定できます。  
+  
+-   慣性の開始時の初期速度。  
+  
+-   慣性が終了したときの操作の目的の位置。  
+  
+-   慣性の必要な減速します。  
+  
+ 通常、慣性が終了したときの操作の目的の位置または両方ではなく、慣性の必要な減速のいずれかを指定します。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.UIElement.ManipulationInertiaStarting>イベント ハンドラーおよび必要な減速翻訳、拡張、および回転慣性の中で使用されるを設定します。 この例のサンプルが大きくの一部である[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ [!code-csharp[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationinertiastarting)]
+ [!code-vb[BasicManipulation#ManipulationInertiaStarting](~/samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationInertiaStartingEventArgs.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>操作をキャンセルします。</summary>
+        <returns>
+          <see langword="true" />操作が正常にキャンセルされた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドが成功すると、既定値<xref:System.Windows.Input.TouchDevice>将来操作イベントが発生しないとタッチとマウスの移動、下のマウス イベントまたはイベント要素をマウスの前に送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpansionBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InertiaExpansionBehavior ExpansionBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InertiaExpansionBehavior ExpansionBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.ExpansionBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InertiaExpansionBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または拡張慣性の移動の速度の低下率を設定します。</summary>
+        <value>拡張慣性の移動の速度の低下率</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.ExpansionBehavior%2A>プロパティを次の操作します。  
+  
+-   最初に設定するときに、慣性の初期速度を指定、<xref:System.Windows.Input.InertiaExpansionBehavior.InitialVelocity%2A>プロパティです。  
+  
+-   設定して慣性の終了時に操作の必要な拡張を指定、<xref:System.Windows.Input.InertiaExpansionBehavior.DesiredExpansion%2A>プロパティです。  
+  
+-   設定して慣性の必要な減速を指定、<xref:System.Windows.Input.InertiaExpansionBehavior.DesiredDeceleration%2A>プロパティです。  
+  
+ 通常は設定、<xref:System.Windows.Input.InertiaExpansionBehavior.DesiredExpansion%2A>または<xref:System.Windows.Input.InertiaExpansionBehavior.DesiredDeceleration%2A>、両方は使用しません。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialVelocities">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ManipulationVelocities InitialVelocities { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ManipulationVelocities InitialVelocities" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.InitialVelocities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ManipulationVelocities</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>慣性が開始する前に、操作で行われた変更の速度を取得します。</summary>
+        <value>慣性が開始する前に発生する変更操作の速度です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeEventHandler">
+      <MemberSignature Language="C#" Value="protected override void InvokeEventHandler (Delegate genericHandler, object genericTarget);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InvokeEventHandler(class System.Delegate genericHandler, object genericTarget) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationInertiaStartingEventArgs.InvokeEventHandler(System.Delegate,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="genericHandler" Type="System.Delegate" />
+        <Parameter Name="genericTarget" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="genericHandler">To be added.</param>
+        <param name="genericTarget">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManipulationContainer">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement ManipulationContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement ManipulationContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.ManipulationContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーを取得、<see cref="P:System.Windows.Input.ManipulationStartedEventArgs.ManipulationOrigin" />に相対的であるプロパティ。</summary>
+        <value>コンテナーを<see cref="P:System.Windows.Input.ManipulationStartedEventArgs.ManipulationOrigin" />に相対的であるプロパティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManipulationOrigin">
+      <MemberSignature Language="C#" Value="public System.Windows.Point ManipulationOrigin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Point ManipulationOrigin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.ManipulationOrigin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または操作の発生元となるポイントを設定します。</summary>
+        <value>操作の発生元となるポイントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 連絡先の 1 つ以上のポイントが、操作を開始した場合、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.ManipulationOrigin%2A>プロパティは、すべての連絡先のポイント間のポイント。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Manipulators">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt; Manipulators { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Input.IManipulator&gt; Manipulators" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.Manipulators" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Input.IManipulator&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作のタッチの連絡先を表すオブジェクトのコレクションを取得します。</summary>
+        <value>操作のタッチの連絡先を表すオブジェクトのコレクションです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotationBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InertiaRotationBehavior RotationBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InertiaRotationBehavior RotationBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.RotationBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InertiaRotationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または回転慣性運動の速度の低下率を設定します。</summary>
+        <value>回転慣性運動の速度の低下の比率。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.RotationBehavior%2A>プロパティを次の操作します。  
+  
+-   最初に設定するときに、慣性の初期速度を指定、<xref:System.Windows.Input.InertiaRotationBehavior.InitialVelocity%2A>プロパティです。  
+  
+-   設定して慣性の終了時に操作の必要な回転を指定、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>プロパティです。  
+  
+-   設定して慣性の必要な減速を指定、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>プロパティです。  
+  
+ 通常は設定、<xref:System.Windows.Input.InertiaRotationBehavior.DesiredRotation%2A>または<xref:System.Windows.Input.InertiaRotationBehavior.DesiredDeceleration%2A>、両方は使用しません。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetInertiaParameter">
+      <MemberSignature Language="C#" Value="public void SetInertiaParameter (System.Windows.Input.Manipulations.InertiaParameters2D parameter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetInertiaParameter(class System.Windows.Input.Manipulations.InertiaParameters2D parameter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.ManipulationInertiaStartingEventArgs.SetInertiaParameter(System.Windows.Input.Manipulations.InertiaParameters2D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Windows.Input.Manipulations.InertiaParameters2D" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">慣性の中の操作の動作を指定するオブジェクト。</param>
+        <summary>慣性の中の操作の動作を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドを呼び出す必要はありません。 プロパティを使用して、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameter" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslationBehavior">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.InertiaTranslationBehavior TranslationBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InertiaTranslationBehavior TranslationBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.ManipulationInertiaStartingEventArgs.TranslationBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InertiaTranslationBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、慣性の線形の移動の速度の低下率を設定します。</summary>
+        <value>慣性の直線運動の速度の低下の比率。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Input.ManipulationInertiaStartingEventArgs.TranslationBehavior%2A>プロパティを次の操作します。  
+  
+-   最初に設定するときに、慣性の初期速度を指定、<xref:System.Windows.Input.InertiaTranslationBehavior.InitialVelocity%2A>プロパティです。  
+  
+-   設定して慣性の終了時に操作の目的の位置を指定、<xref:System.Windows.Input.InertiaTranslationBehavior.DesiredDisplacement%2A>プロパティです。  
+  
+-   設定して慣性の必要な減速を指定、<xref:System.Windows.Input.InertiaTranslationBehavior.DesiredDeceleration%2A>プロパティです。  
+  
+ 通常は設定、<xref:System.Windows.Input.InertiaTranslationBehavior.DesiredDisplacement%2A>または<xref:System.Windows.Input.InertiaTranslationBehavior.DesiredDeceleration%2A>、両方は使用しません。  
+  
+ 操作の詳細については、次を参照してください。、[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。 操作に応答するアプリケーションの例は、次を参照してください。[チュートリアル: 初めて、タッチ アプリケーションの作成](~/docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

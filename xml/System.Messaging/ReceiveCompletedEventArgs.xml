@@ -1,0 +1,94 @@
+<Type Name="ReceiveCompletedEventArgs" FullName="System.Messaging.ReceiveCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class ReceiveCompletedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ReceiveCompletedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.ReceiveCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Messaging.MessageQueue.ReceiveCompleted" /> イベントのデータを提供します。 非同期の受信操作は、イベント ハンドラーを呼び出す、このクラスのインスタンスは、ハンドラーに渡されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューからメッセージを非同期的に受信するイベント通知を使用する場合は、メッセージを処理するメソッドを作成する必要があります。 コードを呼び出す必要があります<xref:System.Messaging.MessageQueue.BeginReceive%2A>非同期処理を開始します。 を介して、アプリケーションが通知メッセージを受信すると、<xref:System.Messaging.MessageQueue.ReceiveCompleted>イベント。 インスタンス<xref:System.Messaging.ReceiveCompletedEventArgs>はイベント ハンドラーを呼び出してイベント デリゲートに渡されます。 関連付けられているデータ、<xref:System.Messaging.MessageQueue.ReceiveCompleted>のデリゲートのイベントが含まれている<xref:System.Messaging.ReceiveCompletedEventArgs.AsyncResult%2A>パラメーター。  
+  
+ イベントの完了通知を提供する 2 つの方法: イベント通知とコールバック。 <xref:System.Messaging.ReceiveCompletedEventArgs>イベント通知と共にのみ使用されます。 コールバックとイベント通知の比較については、「イベントとを参照してください。 します。MSDN で"コールバック。  
+  
+ <xref:System.Messaging.ReceiveCompletedEventArgs>アクセスを提供、非同期の終了を開始したメッセージを受信操作、を通じて、<xref:System.Messaging.ReceiveCompletedEventArgs.Message%2A>メンバー。 これは、メッセージへのアクセスを代替であり、動作への呼び出しとほぼ同じ<xref:System.Messaging.MessageQueue.EndReceive%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のイベント ハンドラーを作成、<xref:System.Messaging.MessageQueue.ReceiveCompleted>イベントと関連コンポーネントを使用して委任イベントと共に、<xref:System.Messaging.ReceiveCompletedEventHandler>です。 イベント ハンドラー `MyReceiveCompleted`、キューからメッセージを受信し、画面に、本文を書き込みます。  
+  
+ [!code-cpp[MessageQueue.ReceiveCompleted#1](~/samples/snippets/cpp/VS_Snippets_Remoting/MessageQueue.ReceiveCompleted/CPP/mqreceivecompletedeventhandler.cpp#1)]
+ [!code-csharp[MessageQueue.ReceiveCompleted#1](~/samples/snippets/csharp/VS_Snippets_Remoting/MessageQueue.ReceiveCompleted/CS/mqreceivecompletedeventhandler.cs#1)]
+ [!code-vb[MessageQueue.ReceiveCompleted#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/MessageQueue.ReceiveCompleted/VB/mqreceivecompletedeventhandler.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncResult">
+      <MemberSignature Language="C#" Value="public IAsyncResult AsyncResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IAsyncResult AsyncResult" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.ReceiveCompletedEventArgs.AsyncResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求された非同期操作の結果を設定します。</summary>
+        <value>A<see cref="T:System.IAsyncResult" />受信操作に関連付けられているデータを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.ReceiveCompletedEventArgs.AsyncResult%2A>進行中または完了した非同期操作を識別します。 プロパティが完了するにはいくつかの潜在的な非同期操作を特定するのに役立つデータを格納でき、イベント ハンドラーに渡されると、<xref:System.Messaging.MessageQueue.EndReceive%2A>完了した操作に関連付けられているメッセージにアクセスします。  
+  
+ 呼び出すと<xref:System.Messaging.MessageQueue.BeginReceive%2A>、<xref:System.IAsyncResult>場合でも、メッセージ、1 つ存在する場合、まだ取得されていません、操作が完了していないため、すぐに返されます。 <xref:System.Messaging.ReceiveCompletedEventArgs.AsyncResult%2A>非同期操作の状態を示します。 <xref:System.Messaging.MessageQueue.BeginReceive%2A>まで、操作全体にわたって変更されると、オブジェクトを作成<xref:System.Messaging.MessageQueue.EndReceive%2A>それを完了します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.Messaging.Message Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Messaging.Message Message" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.ReceiveCompletedEventArgs.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.Message</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作を受信するメッセージが非同期に関連付けられている取得します。</summary>
+        <value>A<see cref="T:System.Messaging.Message" />末尾を表す非同期の結果には、操作が表示されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.ReceiveCompletedEventArgs.Message%2A>プロパティは、非同期の終了を開始したメッセージを取得するための手段を提供操作を受信します。  
+  
+ <xref:System.Messaging.MessageQueue.EndReceive%2A?displayProperty=nameWithType>初めてと呼びます、<xref:System.Messaging.ReceiveCompletedEventArgs.Message%2A>を呼び出す必要はありませんので、プロパティは読み取り<xref:System.Messaging.MessageQueue.EndReceive%2A>前に、このプロパティの値を取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Messaging.MessageQueueException"><see cref="P:System.Messaging.ReceiveCompletedEventArgs.Message" />を取得できませんでした。 非同期操作のタイムアウト時間は過ぎています可能性があります。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

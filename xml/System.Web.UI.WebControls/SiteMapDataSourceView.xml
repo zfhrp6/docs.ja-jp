@@ -1,0 +1,169 @@
+<Type Name="SiteMapDataSourceView" FullName="System.Web.UI.WebControls.SiteMapDataSourceView">
+  <TypeSignature Language="C#" Value="public class SiteMapDataSourceView : System.Web.UI.DataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapDataSourceView extends System.Web.UI.DataSourceView" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SiteMapDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataSourceView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型指定されている <see cref="T:System.Web.UI.HierarchicalDataSourceView" /> のオブジェクトを<see cref="T:System.Web.UI.WebControls.SiteMapDataSource" /> コントロールに提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSource>コントロールなど、ASP.NET データ バインド コントロールは有効、<xref:System.Web.UI.WebControls.TreeView>と<xref:System.Web.UI.WebControls.Menu>コントロールのサイト マップ データにバインドします。 <xref:System.Web.UI.WebControls.SiteMapDataSourceView>クラスは、コントロールの開発者によって使用が、ページのコードでないか、ページの開発者によっては使用されません。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapDataSource>を返します、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>指定階層パスの場合、<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A>メソッドが呼び出されます。 などのすべての階層的なデータ ソース ビュー オブジェクト、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>いないという名前です。 代わりに、その一意の階層パスで識別されます。  
+  
+ <xref:System.Web.UI.WebControls.SiteMapDataSourceView>のラッパー クラスは、<xref:System.Web.SiteMapNodeCollection>コレクション。 <xref:System.Web.SiteMapNodeCollection>クラスが実装する、<xref:System.Web.UI.IHierarchicalEnumerable>が、インターフェイス、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>への呼び出しからクラスを返します`Select`メソッドです。 <xref:System.Web.UI.WebControls.SiteMapDataSource>と<xref:System.Web.UI.WebControls.SiteMapDataSourceView>と協力して<xref:System.Web.SiteMapNode>オブジェクト、ビューを保持する内部<xref:System.Web.SiteMapNodeCollection>それらを格納します。 ビューのコンス トラクターの使用とでアクセスされるコレクションが初期化されて、<xref:System.Web.UI.WebControls.SiteMapDataSourceView.Select%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapDataSourceView (System.Web.UI.WebControls.SiteMapDataSource owner, string name, System.Web.SiteMapNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.SiteMapDataSource owner, string name, class System.Web.SiteMapNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapDataSourceView.#ctor(System.Web.UI.WebControls.SiteMapDataSource,System.String,System.Web.SiteMapNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.SiteMapDataSource" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="node" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.SiteMapDataSource" /> が関連付けられる <see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />。</param>
+        <param name="name">ビューの名前。</param>
+        <param name="node"><see cref="T:System.Web.SiteMapNode" />内部に追加する<see cref="T:System.Web.SiteMapNodeCollection" />です。</param>
+        <summary>新しい名前付きのインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />クラス、ノードの内部コレクションに指定された 1 つのノードを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSourceView>クラスは、ラッパー クラスを使用で、<xref:System.Web.SiteMapNodeCollection>オブジェクト。 作成する、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>を使用して、<xref:System.Web.UI.WebControls.SiteMapDataSourceView.%23ctor%2A>コンス トラクターは、1 つを使用して、内部ノード コレクションを初期化します<xref:System.Web.SiteMapNode>オブジェクト。 サイト マップ構造を移動するには、参照のポイントとして、ノードを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapDataSourceView (System.Web.UI.WebControls.SiteMapDataSource owner, string name, System.Web.SiteMapNodeCollection collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.SiteMapDataSource owner, string name, class System.Web.SiteMapNodeCollection collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapDataSourceView.#ctor(System.Web.UI.WebControls.SiteMapDataSource,System.String,System.Web.SiteMapNodeCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.WebControls.SiteMapDataSource" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="collection" Type="System.Web.SiteMapNodeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Web.UI.WebControls.SiteMapDataSource" /> が関連付けられる <see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />。</param>
+        <param name="name">ビューの名前。</param>
+        <param name="collection">A<see cref="T:System.Web.SiteMapNodeCollection" />ノードを<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />のビューを提供します。</param>
+        <summary>新しい名前付きのインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SiteMapDataSourceView" />クラス、ノードの内部コレクションを指定したノードのコレクションに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSourceView>クラスは、ラッパー クラスを使用で、<xref:System.Web.SiteMapNodeCollection>オブジェクト。 作成する、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>を使用して、<xref:System.Web.UI.WebControls.SiteMapDataSourceView.%23ctor%2A>コンス トラクターを使用して、内部ノード コレクションを初期化、<xref:System.Web.SiteMapNodeCollection>コンス トラクターに渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteSelect">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerable ExecuteSelect (System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Collections.IEnumerable ExecuteSelect(class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapDataSourceView.ExecuteSelect(System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータの操作を要求に使用されます。</param>
+        <summary>コレクションを取得、<see cref="T:System.Web.SiteMapNode" />を現在のユーザーのサイト ナビゲーション構造を表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.SiteMapNodeCollection" />現在のユーザー サイト ナビゲーション構造を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSourceView>クラスを継承した実装<xref:System.Web.UI.WebControls.SiteMapDataSourceView.ExecuteSelect%2A>を現在の ASP.NET アプリケーションに対してサイト ナビゲーション構造を表す一連のノードを取得します。 ページの開発者およびデータ バインド コントロールの作成者が呼び出す必要はありません、<xref:System.Web.UI.WebControls.SiteMapDataSourceView.ExecuteSelect%2A>メソッド直接。 代わりに、使用して公開される<xref:System.Web.UI.WebControls.SiteMapDataSourceView.Select%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><paramref name="arguments" />に渡される、<see cref="M:System.Web.UI.WebControls.SiteMapDataSourceView.Select(System.Web.UI.DataSourceSelectArguments)" />データ ソースはページングまたは取得したデータの並び替えを有効にするデータの取得中にいくつか追加の作業を実行する必要がありますが、データ ソース コントロールが要求された機能をサポートしていないことを指定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceViewChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDataSourceViewChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataSourceViewChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapDataSourceView.OnDataSourceViewChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.DataSourceView.DataSourceViewChanged" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable Select (System.Web.UI.DataSourceSelectArguments arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerable Select(class System.Web.UI.DataSourceSelectArguments arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapDataSourceView.Select(System.Web.UI.DataSourceSelectArguments)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arguments" Type="System.Web.UI.DataSourceSelectArguments" />
+      </Parameters>
+      <Docs>
+        <param name="arguments">A<see cref="T:System.Web.UI.DataSourceSelectArguments" />基本的なデータの取得を超えたデータの操作を要求に使用されます。</param>
+        <summary>コレクションを取得、<see cref="T:System.Web.SiteMapNode" />を現在のユーザーのサイト ナビゲーション構造を表すオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.SiteMapNodeCollection" />現在のユーザー サイト ナビゲーション構造を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSourceView.Select%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.SiteMapDataSourceView.ExecuteSelect%2A>渡して、メソッド、`arguments`パラメーター。 <xref:System.Web.UI.WebControls.SiteMapDataSourceView.Select%2A>メソッドは、コントロールの開発者によって使用が、ページのコードでないか、ページの開発者によっては使用されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><paramref name="arguments" />に渡される、<see cref="M:System.Web.UI.WebControls.SiteMapDataSourceView.Select(System.Web.UI.DataSourceSelectArguments)" />データ ソースはページングまたは取得したデータの並び替えを有効にするデータの取得中にいくつか追加の作業を実行する必要がありますが、データ ソース コントロールが要求された機能をサポートしていないことを指定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

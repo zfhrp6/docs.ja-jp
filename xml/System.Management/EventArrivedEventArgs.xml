@@ -1,0 +1,59 @@
+<Type Name="EventArrivedEventArgs" FullName="System.Management.EventArrivedEventArgs">
+  <TypeSignature Language="C#" Value="public class EventArrivedEventArgs : System.Management.ManagementEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventArrivedEventArgs extends System.Management.ManagementEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Management.EventArrivedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント データを保持、<see cref="E:System.Management.ManagementEventWatcher.EventArrived" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の非同期の例では、イベントを発生させる毎秒 WMI タイマーを設定し、不要になった場合は削除されます。 <xref:System.Management.ManagementEventWatcher>いくつか定義[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]WMI イベントが配信されるときに発生するイベントです。 受信データを処理するために、これらのイベントにデリゲートが割り当てられます。  
+  
+ [!code-csharp[wminet_EventArrivedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_EventArrivedEventArgs/cs/EventArrivedEventArgs.cs#1)]
+ [!code-vb[wminet_EventArrivedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_EventArrivedEventArgs/vb/EventArrivedEventArgs.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NewEvent">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject NewEvent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementBaseObject NewEvent" />
+      <MemberSignature Language="DocId" Value="P:System.Management.EventArrivedEventArgs.NewEvent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>提供された WMI イベントを取得します。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementBaseObject" />配信された WMI イベントを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ WMI イベントを表すオブジェクト。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

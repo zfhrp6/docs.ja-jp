@@ -1,0 +1,267 @@
+<Type Name="WsdlExporter" FullName="System.ServiceModel.Description.WsdlExporter">
+  <TypeSignature Language="C#" Value="public class WsdlExporter : System.ServiceModel.Description.MetadataExporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WsdlExporter extends System.ServiceModel.Description.MetadataExporter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.WsdlExporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.MetadataExporter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス、コントラクト、およびエンドポイントの情報を、メタデータ ドキュメントに変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter> クラスを使用して、<xref:System.ServiceModel.Description.ContractDescription> または <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトを、<xref:System.ServiceModel.Description.MetadataSection> オブジェクトによって表されるメタデータに変換します。  
+  
+ <xref:System.ServiceModel.Description.WsdlExporter> は、3 つの手順からなるプロセスで使用されます。  
+  
+1.  <xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A> メソッド、<xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A> メソッド、<xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoints%2A> メソッドのいずれかを、適切なパラメーターを指定して呼び出します。  
+  
+2.  基本の <xref:System.ServiceModel.Description.MetadataExporter.Errors%2A> プロパティを調べて、エクスポート エラーがあるかどうかを判断します。  
+  
+3.  エラーがない場合は、<xref:System.ServiceModel.Description.WsdlExporter.GetGeneratedMetadata%2A> を使用して、<xref:System.ServiceModel.Description.MetadataSection> オブジェクトのコレクションを取得するか、<xref:System.ServiceModel.Description.WsdlExporter.GeneratedWsdlDocuments%2A> または <xref:System.ServiceModel.Description.WsdlExporter.GeneratedXmlSchemas%2A> プロパティを使用して、メタデータの具体的なバージョンを取得します。  
+  
+ <xref:System.ServiceModel.Description.IWsdlExportExtension> インターフェイスを実装することによってカスタム WSDL 拡張のエクスポートをサポートできます。また、<xref:System.ServiceModel.Description.IPolicyExportExtension> インターフェイスを実装することによってカスタム ポリシー アサーションのエクスポートをサポートできます。 詳細については、それぞれのインターフェイスのドキュメントを参照してください。  
+  
+> [!NOTE]
+>  `WsdlExporter` は、`ContractDescription` メソッドを使用するか、`ContractDescription` インスタンスの `ContractDescription.GetContract` の一部として作成された `ServiceDescription` インスタンスなど、共通言語ランタイム (CLR) の型情報を含む `ServiceHost` インスタンスからメタデータをエクスポートする場合にのみ使用できます。 `WsdlExporter` インスタンスをサービス メタデータからインポートした場合や、型情報を使用せずに作成した場合は、`ContractDescription` を使用してメタデータをエクスポートできません。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A> メソッドを使用して、<xref:System.ServiceModel.Description.MetadataSection> と呼ばれる <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクション内のエンドポイントから一連の `myServiceEndpoints` オブジェクトを生成する方法を次のコード例に示します。  
+  
+ [!code-csharp[S_UEWsdlExporter#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#0)]
+ [!code-vb[S_UEWsdlExporter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WsdlExporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlExporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Description.WsdlExporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter> オブジェクトを作成するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportContract">
+      <MemberSignature Language="C#" Value="public override void ExportContract (System.ServiceModel.Description.ContractDescription contract);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExportContract(class System.ServiceModel.Description.ContractDescription contract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlExporter.ExportContract(System.ServiceModel.Description.ContractDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contract" Type="System.ServiceModel.Description.ContractDescription" />
+      </Parameters>
+      <Docs>
+        <param name="contract">メタデータの生成元の <see cref="T:System.ServiceModel.Description.ContractDescription" />。</param>
+        <summary>指定したコントラクトの説明から、コントラクト情報のみを記述するメタデータをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A> メソッドを使用して、1 つのコントラクトだけからメタデータをエクスポートします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A> を呼び出してコントラクト情報だけをエクスポートする方法を次のコード例に示します。  
+  
+ [!code-csharp[S_UEWsdlExporter#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#1)]
+ [!code-vb[S_UEWsdlExporter#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">エクスポーターにエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">コントラクトが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportEndpoint">
+      <MemberSignature Language="C#" Value="public override void ExportEndpoint (System.ServiceModel.Description.ServiceEndpoint endpoint);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void ExportEndpoint(class System.ServiceModel.Description.ServiceEndpoint endpoint) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlExporter.ExportEndpoint(System.ServiceModel.Description.ServiceEndpoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoint" Type="System.ServiceModel.Description.ServiceEndpoint" />
+      </Parameters>
+      <Docs>
+        <param name="endpoint">メタデータを返す対象の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" />。</param>
+        <summary>指定したエンドポイントについてのメタデータを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A> メソッドを使用して、1 つのエンドポイントについてのメタデータを作成します。  
+  
+   
+  
+## Examples  
+ 単一のエンドポイントをエクスポートする方法を次のコード例に示します。  
+  
+ [!code-csharp[S_UEWsdlExporter#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#2)]
+ [!code-vb[S_UEWsdlExporter#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">エクスポーターにエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="endpoint" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バインディングが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportEndpoints">
+      <MemberSignature Language="C#" Value="public void ExportEndpoints (System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.Xml.XmlQualifiedName wsdlServiceQName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportEndpoints(class System.Collections.Generic.IEnumerable`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.Xml.XmlQualifiedName wsdlServiceQName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpoints" Type="System.Collections.Generic.IEnumerable&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="wsdlServiceQName" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="endpoints">メタデータを生成する対象の <see cref="T:System.ServiceModel.Description.ServiceEndpoint" /> オブジェクト。</param>
+        <param name="wsdlServiceQName">サービスの名前。</param>
+        <summary>指定したサービスから、エンドポイントのグループについてのメタデータを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoints%2A> メソッドを使用して、指定されたサービスから一連のエンドポイントについてのメタデータを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">エクスポーターにエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="wsdlServiceQName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">バインディングが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedWsdlDocuments">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescriptionCollection GeneratedWsdlDocuments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionCollection GeneratedWsdlDocuments" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlExporter.GeneratedWsdlDocuments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポート メソッドの 1 つを呼び出した後で、<see cref="T:System.Web.Services.Description.ServiceDescription" /> オブジェクトのコレクションを取得します。</summary>
+        <value><see cref="T:System.Web.Services.Description.ServiceDescription" /> オブジェクトのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.GeneratedWsdlDocuments%2A> プロパティは、<xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A>、<xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A>、または <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoints%2A> の呼び出しの結果としてのみ、ドキュメントを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedXmlSchemas">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchemaSet GeneratedXmlSchemas { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaSet GeneratedXmlSchemas" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.WsdlExporter.GeneratedXmlSchemas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エクスポート メソッドの 1 つを呼び出した後で、一連の <see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクトを取得します。</summary>
+        <value>一連の <see cref="T:System.Xml.Schema.XmlSchema" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.GeneratedXmlSchemas%2A> プロパティは、<xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A>、<xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A>、または <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoints%2A> の呼び出しの結果としてのみ、ドキュメントを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneratedMetadata">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Description.MetadataSet GetGeneratedMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Description.MetadataSet GetGeneratedMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.WsdlExporter.GetGeneratedMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MetadataSet</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>生成された <see cref="T:System.ServiceModel.Description.MetadataSection" /> オブジェクトの列挙可能なコレクションを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Description.MetadataSection" />、<see cref="M:System.ServiceModel.Description.WsdlExporter.ExportContract(System.ServiceModel.Description.ContractDescription)" />、または <see cref="M:System.ServiceModel.Description.WsdlExporter.ExportEndpoint(System.ServiceModel.Description.ServiceEndpoint)" /> を呼び出した結果として生成されたメタデータを表す、生成された <see cref="M:System.ServiceModel.Description.WsdlExporter.ExportEndpoints(System.Collections.Generic.IEnumerable{System.ServiceModel.Description.ServiceEndpoint},System.Xml.XmlQualifiedName)" /> オブジェクトの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.WsdlExporter.GetGeneratedMetadata%2A> プロパティを使用して、<xref:System.ServiceModel.Description.WsdlExporter.ExportContract%2A>、<xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A>、または <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoints%2A> を任意の回数呼び出した結果として生成されたすべてのメタデータのコレクションを取得します。  
+  
+ メタデータを取得する前に、基本の <xref:System.ServiceModel.Description.MetadataExporter.Errors%2A> プロパティを調べて、エラーが発生しているかどうかを確認することをお勧めします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.WsdlExporter.ExportEndpoint%2A> メソッドを使用して、<xref:System.ServiceModel.Description.MetadataSection> と呼ばれる <xref:System.ServiceModel.Description.ServiceEndpoint> オブジェクトのコレクション内のエンドポイントから一連の `myServiceEndpoints` オブジェクトを生成する方法を次のコード例に示します。  
+  
+ [!code-csharp[S_UEWsdlExporter#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_uewsdlexporter/cs/program.cs#0)]
+ [!code-vb[S_UEWsdlExporter#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/s_uewsdlexporter/vb/program.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

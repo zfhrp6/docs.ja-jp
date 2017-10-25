@@ -1,0 +1,411 @@
+<Type Name="RegexMatchTimeoutException" FullName="System.Text.RegularExpressions.RegexMatchTimeoutException">
+  <TypeSignature Language="C#" Value="public class RegexMatchTimeoutException : TimeoutException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit RegexMatchTimeoutException extends System.TimeoutException implements class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.TimeoutException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>正規表現パターン マッチング メソッドの実行時間が、タイムアウト間隔を超えた場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>例外が一般に、次の条件のいずれかを示します。  
+  
+-   正規表現エンジンは過度にバックトラッ キング正規表現パターンに入力テキストに一致するものとします。  
+  
+-   タイムアウト間隔が設定されて不足、特に高いマシンの負荷を指定します。  
+  
+ 例外ハンドラーが例外を処理する方法は、例外の原因によって異なります。  
+  
+-   タイムアウトは、過度なバックトラッ キングから結果を例外ハンドラーは、しようとすると、入力と照合し、正規表現パターン一致メソッドでタイムアウトが発生したことをユーザーに通知を放棄する必要があります。 可能であればから利用できる正規表現パターンについては、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern%2A>プロパティ、および、入力、過度なバックトラッ キングの原因となったから利用できる、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.Input%2A>問題を調査して、正規表現パターンを変更できるように、プロパティを記録する必要があります。 過度なバックトラッ キングのためのタイムアウトは再現可能では常にします。  
+  
+-   結果する場合は、タイムアウト設定のタイムアウトしきい値が低すぎるから、タイムアウト間隔を長くして、一致操作を再試行してください。 現在のタイムアウト間隔はから利用可能な<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout%2A>プロパティです。 ときに、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>例外がスローされます、正規表現エンジンは、その状態を保持、以降の呼び出しが、同じ結果を返すように、例外が発生しなかったかのようです。 推奨パターンに一致するメソッドを再度呼び出す前に、例外がスローされた後に、簡単なランダムな時間間隔の待機を開始します。 これは複数回繰り返すことができます。 ただし、過度なバックトラッ キングによって、タイムアウトが原因となった場合に、繰り返し回数は小さなはずです。  
+  
+ 例では、次のセクションを処理するための 2 つの方法、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>です。  
+  
+   
+  
+## Examples  
+ 次の例では、処理する 2 つの可能なアプローチ、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>例外。 2 秒の値が定数では、最大のタイムアウト間隔を定義します。 <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType>最初にメソッドは 1 秒のタイムアウト時間を使用します。 各<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>例外発生タイムアウト間隔を 1 秒増加して別の呼び出しの結果、<xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType>メソッド、現在のタイムアウト間隔が最大タイムアウト間隔よりも小さい場合。 ただし、現在のタイムアウト間隔を超えた場合、最大のタイムアウト間隔、例外ハンドラーが情報、イベント ログに書き込まれます、正規表現の処理を中止します。  
+  
+ [!code-csharp[System.Text.RegularExpressions.RegexMatchTimeoutException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.regexmatchtimeoutexception/cs/class1.cs#1)]
+ [!code-vb[System.Text.RegularExpressions.RegexMatchTimeoutException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.regexmatchtimeoutexception/vb/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexMatchTimeoutException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />するシステム提供のメッセージを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、既定のコンス トラクター、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>クラスです。 このコンストラクターは、新しいインスタンスの <xref:System.Exception.Message%2A> プロパティをシステム提供のエラー記述メッセージに初期化します。 このメッセージは、現在のシステムのカルチャにローカライズされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexMatchTimeoutException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />指定したメッセージ文字列を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `message`に文字列が割り当てられている、<xref:System.Exception.Message%2A?displayProperty=nameWithType>プロパティです。 文字列は、現在のカルチャにローカライズする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RegexMatchTimeoutException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたデータを格納するオブジェクト。</param>
+        <param name="context">シリアル化されたデータを格納するストリーム。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成するようにコードから直接このコンス トラクターは呼び出されません、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>オブジェクト。 代わりに、によって呼び出されますが、<xref:System.Runtime.Serialization.IFormatter.Deserialize%2A?displayProperty=nameWithType>メソッドを逆シリアル化時に、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>ストリームからのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexMatchTimeoutException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外を説明する文字列。</param>
+        <param name="inner">現在の例外の原因となった例外。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このオーバー ロードで例外を処理する使用、`try/catch`ブロックします。 `innerException`パラメーターで処理される例外オブジェクトへの参照を指定する必要があります、`catch`ブロック、またはそのできます`null`です。 この値を代入し、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>オブジェクトの<xref:System.Exception.InnerException%2A?displayProperty=nameWithType>プロパティです。  
+  
+ `message`に文字列が割り当てられている、<xref:System.Exception.Message%2A?displayProperty=nameWithType>プロパティです。 文字列は、現在のカルチャにローカライズする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RegexMatchTimeoutException (string regexInput, string regexPattern, TimeSpan matchTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string regexInput, string regexPattern, valuetype System.TimeSpan matchTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="regexInput" Type="System.String" />
+        <Parameter Name="regexPattern" Type="System.String" />
+        <Parameter Name="matchTimeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="regexInput">タイムアウトが発生したときに、正規表現エンジンによって処理される入力テキストです。</param>
+        <param name="regexPattern">タイムアウトが発生したときに、正規表現エンジンによって使用パターンです。</param>
+        <param name="matchTimeout">タイムアウト間隔。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />正規表現パターン、入力テキスト、およびタイムアウト時間に関する情報を含むクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `regexInput`、 `regexPattern`、および`matchTimeout`値が割り当てられます、 <xref:System.Text.RegularExpressions.RegexMatchTimeoutException.Input%2A>、 <xref:System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern%2A>、および<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout%2A>新しいプロパティ<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Input">
+      <MemberSignature Language="C#" Value="public string Input { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Input" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.RegexMatchTimeoutException.Input" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウトが発生したときに、正規表現エンジンが処理される入力テキストを取得します。</summary>
+        <value>正規表現の入力テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値の反映、`regexInput`のパラメーター、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.%23ctor%28System.String%2CSystem.String%2CSystem.TimeSpan%29>コンス トラクターです。 このパラメーターがコンス トラクターの呼び出しで明示的に初期化されていない場合、値は<xref:System.String.Empty?displayProperty=nameWithType>します。  
+  
+ 正規表現によって例外がスローされた場合にエンジンでの値、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.Input%2A>プロパティは、正規表現エンジンに渡される入力文字列全体を反映します。 メソッドへの呼び出しでなど、エンジンを検索するサブスト リングなどの部分文字列が反映されない<xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.Int32%29?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan MatchTimeout { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MatchTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規表現の一致のタイムアウト間隔を取得します。</summary>
+        <value>タイムアウト間隔。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値の反映、`matchTimeout`のパラメーター、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.%23ctor%28System.String%2CSystem.String%2CSystem.TimeSpan%29>コンス トラクターです。 コンス トラクターの呼び出しでパラメーターが正しく初期化されていない場合、値は`Timespan.FromTicks(-1)`します。  
+  
+ このプロパティの値への呼び出しで設定するタイムアウト間隔を反映する、<xref:System.Text.RegularExpressions.Regex>コンス トラクターまたは静的メソッドです。 例外がスローされた時刻に、メソッド呼び出しの先頭から経過した正確な間隔は反映されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public string Pattern { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Pattern" />
+      <MemberSignature Language="DocId" Value="P:System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイムアウトが発生したときに、一致操作で使用された正規表現パターンを取得します。</summary>
+        <value>正規表現パターン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値の反映、`regexPattern`のパラメーター、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException.%23ctor%28System.String%2CSystem.String%2CSystem.TimeSpan%29>コンス トラクターです。 コンス トラクターの呼び出しでパラメーターが正しく初期化されていない場合、値は<xref:System.String.Empty?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo si, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo si, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Text.RegularExpressions.RegexMatchTimeoutException.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Text.RegularExpressions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="si" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="si">データを読み込む先のオブジェクト。</param>
+        <param name="context">このシリアル化のシリアル化先。</param>
+        <summary>追加、<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトをシリアル化するために必要なデータを<see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 使用する場合にのみ、<xref:System.Text.RegularExpressions.RegexMatchTimeoutException>にインスタンスをキャスト、<xref:System.Runtime.Serialization.ISerializable>インターフェイス オブジェクト。  
+  
+ 含まれているすべてのオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>オブジェクトが自動的に追跡され、フォーマッタでシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

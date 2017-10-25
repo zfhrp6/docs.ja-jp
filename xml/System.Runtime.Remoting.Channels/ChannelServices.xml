@@ -1,0 +1,438 @@
+<Type Name="ChannelServices" FullName="System.Runtime.Remoting.Channels.ChannelServices">
+  <TypeSignature Language="C#" Value="public sealed class ChannelServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChannelServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.ChannelServices" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リモート処理チャネルの登録、解決、および URL の検出を支援する静的メソッドを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、アプリケーション ドメイン、プロセス、およびコンピューターとしてこのようなリモート処理境界を越えて、アプリケーション間でメッセージを転送します。 このような転送は、受信および送信できます。 チャネルが受信メッセージのエンドポイントでリッスン、送信メッセージ、またはその両方のエンドポイントに送信できます。 これにより、チャネルのもう一方の端に、ランタイムが存在しない場合でも、広範なプロトコル、プラグをランタイムの機能拡張ポイントが提供されます。 さまざまなセマンティクスとエンティティを公開するランタイム オブジェクトを使用できます。 チャネルは、特定のプロトコルとの間、メッセージに変換する機能拡張ポイントを提供します。  
+  
+ チャネルを公開する必要があります、<xref:System.Runtime.Remoting.Channels.IChannel>などの情報のプロパティを提供するインターフェイス、<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A>と<xref:System.Runtime.Remoting.Channels.IChannel.ChannelPriority%2A>です。 使用してチャネルが登録されて、<xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A?displayProperty=nameWithType>メソッドです。 チャネルは、リモート処理の構成から読み込むこともできます。 (を参照してください[\<チャネル > 要素 (テンプレート)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce)詳細についてはします)。  
+  
+ クライアント側でメッセージに渡されますクライアント チャネル シンク チェーン クライアントを通過した後<xref:System.Runtime.Remoting.Contexts.Context>チェーン。 最初のチャネル シンクは、通常、 <xref:System.Runtime.Remoting.Channels.IClientFormatterSink>、クライアント転送シンクをシンク チェーン内のチャネルに渡されるストリームにメッセージをシリアル化します。 その後、クライアント転送シンクは、このストリームをネットワークに送出します。  
+  
+ サーバー側では、サーバー転送シンクは、ネットワークから要求を読み取りし、サーバー チャネル シンク チェーンに、要求のストリームを渡します。 このチェーンの末尾にあるサーバー フォーマッタ シンクは、メッセージに、要求を逆シリアル化されます。 これは、このメッセージに渡す、リモート処理インフラストラクチャ、サーバーにディスパッチする<xref:System.Runtime.Remoting.Contexts.Context>チェーン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncDispatchMessage">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMessageCtrl AsyncDispatchMessage (System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Messaging.IMessageSink replySink);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMessageCtrl AsyncDispatchMessage(class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Messaging.IMessageSink replySink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.AsyncDispatchMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessageSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessageCtrl</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="replySink" Type="System.Runtime.Remoting.Messaging.IMessageSink" />
+      </Parameters>
+      <Docs>
+        <param name="msg">ディスパッチするメッセージ。</param>
+        <param name="replySink">応答メッセージの処理がない場合は、シンク<see langword="null" />です。</param>
+        <summary>非同期的に URI に基づいてサーバー側 chain(s) に指定されたメッセージに埋め込まれたディスパッチ メッセージ。</summary>
+        <returns>A<see cref="T:System.Runtime.Remoting.Messaging.IMessageCtrl" />オブジェクトが非同期的にディスパッチされたメッセージを制御するために使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のメソッドは、サーバーは、指定したメッセージを処理するかどうかどうか、すぐに返ります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="msg" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServerChannelSinkChain">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IServerChannelSink CreateServerChannelSinkChain (System.Runtime.Remoting.Channels.IServerChannelSinkProvider provider, System.Runtime.Remoting.Channels.IChannelReceiver channel);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Channels.IServerChannelSink CreateServerChannelSinkChain(class System.Runtime.Remoting.Channels.IServerChannelSinkProvider provider, class System.Runtime.Remoting.Channels.IChannelReceiver channel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.CreateServerChannelSinkChain(System.Runtime.Remoting.Channels.IServerChannelSinkProvider,System.Runtime.Remoting.Channels.IChannelReceiver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IServerChannelSink</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Runtime.Remoting.Channels.IServerChannelSinkProvider" />
+        <Parameter Name="channel" Type="System.Runtime.Remoting.Channels.IChannelReceiver" />
+      </Parameters>
+      <Docs>
+        <param name="provider">チャネル シンク チェーンを作成する、シンク プロバイダーのチェーンの最初のプロバイダー。</param>
+        <param name="channel"><see cref="T:System.Runtime.Remoting.Channels.IChannelReceiver" />チャネル シンク チェーンを作成します。</param>
+        <summary>指定したチャネルのチャネル シンク チェーンを作成します。</summary>
+        <returns>指定したチャネルの新しいチャネル シンク チェーンです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DispatchMessage">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.ServerProcessing DispatchMessage (System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, System.Runtime.Remoting.Messaging.IMessage msg, out System.Runtime.Remoting.Messaging.IMessage replyMsg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Runtime.Remoting.Channels.ServerProcessing DispatchMessage(class System.Runtime.Remoting.Channels.IServerChannelSinkStack sinkStack, class System.Runtime.Remoting.Messaging.IMessage msg, [out] class System.Runtime.Remoting.Messaging.IMessage&amp; replyMsg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Messaging.IMessage@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.ServerProcessing</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IServerChannelSinkStack" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="replyMsg" Type="System.Runtime.Remoting.Messaging.IMessage&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">サーバー チャネル シンクのスタック、メッセージが既に通過します。</param>
+        <param name="msg">ディスパッチするメッセージ。</param>
+        <param name="replyMsg">このメソッドが戻るとき、<see cref="T:System.Runtime.Remoting.Messaging.IMessage" />に含まれているメッセージには、サーバーからの応答を保持する、 <c>msg</c>パラメーター。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>受信リモート呼び出しをディスパッチします。</summary>
+        <returns>A <see cref="T:System.Runtime.Remoting.Channels.ServerProcessing" /> server メッセージ処理の状態を提供します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルはこのメソッドを使用して、着信リモート呼び出しをディスパッチします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="msg" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannel">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IChannel GetChannel (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Channels.IChannel GetChannel(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetChannel(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">チャネル名。</param>
+        <summary>指定した名前の登録のチャネルを返します。</summary>
+        <returns>登録済みのチャネルへのインターフェイスまたは<see langword="null" />チャネルが登録されていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_GetChannel#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_GetChannel/CPP/channelservices_getchannel_client.cpp#1)]
+ [!code-csharp[ChannelServices_GetChannel#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_GetChannel/CS/channelservices_getchannel_client.cs#1)]
+ [!code-vb[ChannelServices_GetChannel#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_GetChannel/VB/channelservices_getchannel_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannelSinkProperties">
+      <MemberSignature Language="C#" Value="public static System.Collections.IDictionary GetChannelSinkProperties (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IDictionary GetChannelSinkProperties(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetChannelSinkProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">プロパティを取得するプロキシ。</param>
+        <summary>返します、<see cref="T:System.Collections.IDictionary" />の特定のプロキシのプロパティです。</summary>
+        <returns>プロパティのディクショナリへのインターフェイスまたは<see langword="null" />プロパティが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_GetChannel#2](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_GetChannel/CPP/channelservices_getchannel_client.cpp#2)]
+ [!code-csharp[ChannelServices_GetChannel#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_GetChannel/CS/channelservices_getchannel_client.cs#2)]
+ [!code-vb[ChannelServices_GetChannel#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_GetChannel/VB/channelservices_getchannel_client.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">リモート処理の型とチャネルを構成する権限が呼び出し履歴内の上位の呼び出し元の少なくとも 1 つはありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUrlsForObject">
+      <MemberSignature Language="C#" Value="public static string[] GetUrlsForObject (MarshalByRefObject obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetUrlsForObject(class System.MarshalByRefObject obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.GetUrlsForObject(System.MarshalByRefObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.MarshalByRefObject" />
+      </Parameters>
+      <Docs>
+        <param name="obj">URL の配列を取得するオブジェクト。</param>
+        <summary>指定したオブジェクトに到達するために使用するすべての Url の配列を返します。</summary>
+        <returns>リモートで、オブジェクトの識別に使用できる Url を含む文字列の配列または<see langword="null" />何も検出されなかった場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_RegisteredChannels#4](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CPP/channelservices_registeredchannels_client.cpp#4)]
+ [!code-csharp[ChannelServices_RegisteredChannels#4](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CS/channelservices_registeredchannels_client.cs#4)]
+ [!code-vb[ChannelServices_RegisteredChannels#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/VB/channelservices_registeredchannels_client.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterChannel">
+      <MemberSignature Language="C#" Value="public static void RegisterChannel (System.Runtime.Remoting.Channels.IChannel chnl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use RegisterChannel(IChannel,Boolean)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chnl" Type="System.Runtime.Remoting.Channels.IChannel" />
+      </Parameters>
+      <Docs>
+        <param name="chnl">登録するチャネル。</param>
+        <summary>チャネルのサービスをチャネルを登録します。 <see cref="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel)" /> は互換性のために残されています。 代わりに、<see cref="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel,System.Boolean)" /> を使用してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%29> は互換性のために残されています。 代わりに、<xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%2CSystem.Boolean%29> を使用してください。  
+  
+ <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%2A>メソッドは、<xref:System.Runtime.Remoting.Channels.IChannel>チャネル オブジェクトからのインターフェイスです。 チャネルの<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A>一意である必要がありますか、チャネルは、匿名である必要があります。 チャネルが匿名場合、<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=nameWithType>に設定されている`null`または<xref:System.String.Empty>を使用して、`name`構成プロパティ。  
+  
+ 同じ名前の 2 つのチャネルを登録することはできません、<xref:System.AppDomain>です。 既定では、名前、<xref:System.Runtime.Remoting.Channels.Http.HttpChannel>が"http"の名前、 <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> "tcp" したがって、同じ型の 2 つのチャネルを登録する場合は、構成プロパティを使用して 1 つの別の名前を指定する必要があります。  
+  
+ チャネルの構成プロパティの詳細については、次を参照してください。 <xref:System.Runtime.Remoting.Channels.Http.HttpChannel>、および[\<チャネル > 要素 (テンプレート)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[HttpChannel#1](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpChannel/CPP/server.cpp#1)]
+ [!code-csharp[HttpChannel#1](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpChannel/CS/server.cs#1)]
+ [!code-vb[HttpChannel#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpChannel/VB/server.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chnl" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">チャネルは既に登録されています。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterChannel">
+      <MemberSignature Language="C#" Value="public static void RegisterChannel (System.Runtime.Remoting.Channels.IChannel chnl, bool ensureSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl, bool ensureSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel(System.Runtime.Remoting.Channels.IChannel,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chnl" Type="System.Runtime.Remoting.Channels.IChannel" />
+        <Parameter Name="ensureSecurity" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="chnl">登録するチャネル。</param>
+        <param name="ensureSecurity">
+          <see langword="true" />セキュリティが有効であることを確認します。それ以外の場合<see langword="false" />です。 値に設定<see langword="false" />TCP または IPC チャネルのセキュリティの設定は影響しません。</param>
+        <summary>チャネルのサービスをチャネルを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.ChannelServices.RegisterChannel%28System.Runtime.Remoting.Channels.IChannel%2CSystem.Boolean%29>メソッドは受信、<xref:System.Runtime.Remoting.Channels.IChannel>チャネル オブジェクトからのインターフェイスです。 チャネルの<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A>一意である必要がありますか、チャネルは、匿名である必要があります。 チャネルが匿名場合、<xref:System.Runtime.Remoting.Channels.IChannel.ChannelName%2A?displayProperty=nameWithType>に設定されている`null`または<xref:System.String.Empty>を使用して、`name`構成プロパティ。  
+  
+ 同じ名前の 2 つのチャネルを登録することはできません、<xref:System.AppDomain>です。 既定では、名前、<xref:System.Runtime.Remoting.Channels.Http.HttpChannel>が"http"の名前、 <xref:System.Runtime.Remoting.Channels.Tcp.TcpChannel> "tcp"です。 したがって、同じ型の 2 つのチャネルを登録する場合は、構成プロパティを使用して 1 つの別の名前を指定する必要があります。  
+  
+ チャネルの構成プロパティの詳細については、次を参照してください。[チャネルとフォーマッタの構成プロパティ](http://msdn.microsoft.com/en-us/226ecf74-ebbd-4ea0-a701-dcf4441deefe)と[\<チャネル > 要素 (テンプレート)](http://msdn.microsoft.com/en-us/73399d48-f0fd-46e9-828b-6cdafde5ffce)です。  
+  
+ 場合、`ensureSecurity`にパラメーターが設定されている`true`、リモート処理システムでは、チャネルが実装するかどうかを判断<xref:System.Runtime.Remoting.Channels.ISecurableChannel>、でき、必要な場合は、暗号化とデジタル署名します。 チャネルを実装しない場合、例外がスローされます<xref:System.Runtime.Remoting.Channels.ISecurableChannel>です。  
+  
+> [!NOTE]
+>  設定`ensureSecurity`に`true`をスロー、<xref:System.Runtime.Remoting.RemotingException>の<xref:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel>Windows 98 で (Windows 9x では、セキュリティで保護された tcp チャネルはサポートされていないため x)、および、 <xref:System.Runtime.Remoting.Channels.Http.HttpServerChannel> (でホストする IIS のサービスをセキュリティで保護された http チャネルを使用する場合)、すべてのプラットフォームでします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chnl" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Remoting.RemotingException">チャネルは既に登録されています。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し履歴の上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <exception cref="T:System.NotSupportedException">Windows 98 ではサポートされていません<see cref="T:System.Runtime.Remoting.Channels.Tcp.TcpServerChannel" />とのすべてのプラットフォームで<see cref="T:System.Runtime.Remoting.Channels.Http.HttpServerChannel" />です。 セキュリティで保護された HTTP チャネルを必要とする場合は、インターネット インフォメーション サービス (IIS) を使用して、サービスをホストします。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisteredChannels">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Channels.IChannel[] RegisteredChannels { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Runtime.Remoting.Channels.IChannel[] RegisteredChannels" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.ChannelServices.RegisteredChannels" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IChannel[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在登録されているチャネルのリストを取得します。</summary>
+        <value>現在登録されているすべてのチャネルの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_RegisteredChannels#2](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CPP/channelservices_registeredchannels_server.cpp#2)]
+ [!code-csharp[ChannelServices_RegisteredChannels#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CS/channelservices_registeredchannels_server.cs#2)]
+ [!code-vb[ChannelServices_RegisteredChannels#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/VB/channelservices_registeredchannels_server.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncDispatchMessage">
+      <MemberSignature Language="C#" Value="public static System.Runtime.Remoting.Messaging.IMessage SyncDispatchMessage (System.Runtime.Remoting.Messaging.IMessage msg);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Runtime.Remoting.Messaging.IMessage SyncDispatchMessage(class System.Runtime.Remoting.Messaging.IMessage msg) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.SyncDispatchMessage(System.Runtime.Remoting.Messaging.IMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Messaging.IMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+      </Parameters>
+      <Docs>
+        <param name="msg">ディスパッチするメッセージ。</param>
+        <summary>同期的に、URI に基づくサーバー側 chain(s) への受信メッセージに埋め込まれたディスパッチ メッセージ。</summary>
+        <returns>応答メッセージは、サーバー側チェーンへの呼び出しで返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/CPP/channelservices_syncdispatchmessage_client.cpp#1)]
+ [!code-csharp[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/CS/channelservices_syncdispatchmessage_client.cs#1)]
+ [!code-vb[ChannelServices_SyncDispatchMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_SyncDispatchMessage/VB/channelservices_syncdispatchmessage_client.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="msg" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterChannel">
+      <MemberSignature Language="C#" Value="public static void UnregisterChannel (System.Runtime.Remoting.Channels.IChannel chnl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterChannel(class System.Runtime.Remoting.Channels.IChannel chnl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.ChannelServices.UnregisterChannel(System.Runtime.Remoting.Channels.IChannel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="chnl" Type="System.Runtime.Remoting.Channels.IChannel" />
+      </Parameters>
+      <Docs>
+        <param name="chnl">登録を解除するチャネル。</param>
+        <summary>登録済みのチャネルのリストから特定のチャネルを登録解除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ChannelServices_RegisteredChannels#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CPP/channelservices_registeredchannels_server.cpp#3)]
+ [!code-csharp[ChannelServices_RegisteredChannels#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/CS/channelservices_registeredchannels_server.cs#3)]
+ [!code-vb[ChannelServices_RegisteredChannels#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ChannelServices_RegisteredChannels/VB/channelservices_registeredchannels_server.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="chnl" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">チャネルが登録されていません。</exception>
+        <exception cref="T:System.Security.SecurityException">コール スタックの上位の呼び出し元の少なくとも 1 つに、リモート処理の型とチャネルを構成するアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">リモート処理インフラストラクチャを構成します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.RemotingConfiguration" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,692 @@
+<Type Name="TreeWalker" FullName="System.Windows.Automation.TreeWalker">
+  <TypeSignature Language="C#" Value="public sealed class TreeWalker" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeWalker extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.TreeWalker" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メソッドと、UI オートメーション ツリーの移動に使用されるプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI オートメーション クライアントは、表示、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素のセットとしてデスクトップ<xref:System.Windows.Automation.AutomationElement>ツリー構造にオブジェクトを配置します。  
+  
+ 使用して、<xref:System.Windows.Automation.TreeWalker>クラス、クライアント アプリケーションが移動できる、 [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 、ツリーのビューを選択し、いずれかからのステップ インしてツリー<xref:System.Windows.Automation.AutomationElement>間を使用して、指定した方向で、 <xref:System.Windows.Automation.TreeWalker.GetFirstChild%2A>、 <xref:System.Windows.Automation.TreeWalker.GetLastChild%2A>、 <xref:System.Windows.Automation.TreeWalker.GetPreviousSibling%2A>、 <xref:System.Windows.Automation.TreeWalker.GetNextSibling%2A>、および<xref:System.Windows.Automation.TreeWalker.GetParent%2A>メソッドです。  
+  
+ 移動する、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を使用してツリー <xref:System.Windows.Automation.TreeWalker> 、プロセス間呼び出しにより、要素を使用して、検索すると効率的ではない、<xref:System.Windows.Automation.AutomationElement.FindAll%2A>または<xref:System.Windows.Automation.AutomationElement.FindFirst%2A>メソッドです。  
+  
+ 場合は、クライアント アプリケーションは、独自のユーザー インターフェイス内の要素を検索しようとする可能性があります、する必要がありますすべて[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を別のスレッドで呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeWalker (System.Windows.Automation.Condition condition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Automation.Condition condition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.#ctor(System.Windows.Automation.Condition)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="condition" Type="System.Windows.Automation.Condition" />
+      </Parameters>
+      <Docs>
+        <param name="condition">表示、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素ツリーで、<see cref="T:System.Windows.Automation.TreeWalker" />を移動します。</param>
+        <summary><see cref="T:System.Windows.Automation.TreeWalker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素と一致しない`condition`ときをスキップが<xref:System.Windows.Automation.TreeWalker>要素ツリーを移動するために使用します。  
+  
+ 場合は、クライアント アプリケーションは、独自のユーザー インターフェイス内の要素を検索しようとする可能性があります、する必要がありますすべて[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を別のスレッドで呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Automation.TreeWalker>のみ有効な要素間を移動します。  
+  
+ [!code-csharp[UIAClient_snip#174](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#174)]
+ [!code-vb[UIAClient_snip#174](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#174)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Condition Condition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Condition Condition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.TreeWalker.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Condition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューを定義するオブジェクトを取得、<see cref="T:System.Windows.Automation.TreeWalker" />オブジェクト。</summary>
+        <value>ビューを定義する条件です。 これは、コンス トラクターに渡された値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentViewWalker">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.TreeWalker ContentViewWalker;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.TreeWalker ContentViewWalker" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TreeWalker.ContentViewWalker" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TreeWalker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Windows.Automation.TreeWalker" />ツリー内のコンテンツ コントロールとマークされている要素のビューを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、クライアント アプリケーションは、独自のユーザー インターフェイス内の要素を検索しようとする可能性があります、する必要がありますすべて[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を別のスレッドで呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.ControlViewWalker>サブツリー内の要素のツリー ビューを構築するために使用されています。 使用状況、<xref:System.Windows.Automation.TreeWalker.ContentViewWalker>と同じです。  
+  
+ [!code-csharp[UIAClient_snip#171](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#171)]
+ [!code-vb[UIAClient_snip#171](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlViewWalker">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.TreeWalker ControlViewWalker;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.TreeWalker ControlViewWalker" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TreeWalker.ControlViewWalker" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TreeWalker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Windows.Automation.TreeWalker" />コントロールとしてマークされているツリー内の要素のビューを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、クライアント アプリケーションは、独自のユーザー インターフェイス内の要素を検索しようとする可能性があります、する必要がありますすべて[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を別のスレッドで呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.ControlViewWalker>サブツリー内の要素のツリー ビューを構築するために使用されています。  
+  
+ [!code-csharp[UIAClient_snip#171](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#171)]
+ [!code-vb[UIAClient_snip#171](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetFirstChild">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した最初の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が最初の子要素が返される最初の子として後続のパスとは限りません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetFirstChild">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetFirstChild (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetFirstChild(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetFirstChild(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">最初の子を取得する対象の要素。</param>
+        <summary>指定した最初の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <returns>最初の子要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が最初の子要素が返される最初の子として後続のパスとは限りません。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.GetFirstChild%2A>サブツリー内の要素のツリー ビューを構築するために使用されています。  
+  
+ [!code-csharp[UIAClient_snip#171](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#171)]
+ [!code-vb[UIAClient_snip#171](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFirstChild">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetFirstChild (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetFirstChild(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetFirstChild(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">最初の子を取得する対象の要素。</param>
+        <param name="request">返されたプロパティとパターンを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>指定した最初の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>最初の子要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が最初の子要素が返される最初の子として後続のパスとは限りません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetLastChild">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した最後の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの最後の子として最後の子要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetLastChild">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetLastChild (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetLastChild(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetLastChild(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">最後の子を取得する対象の要素。</param>
+        <summary>指定した最後の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <returns><see cref="T:System.Windows.Automation.AutomationElement" />つまり最後の子要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの最後の子として最後の子要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastChild">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetLastChild (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetLastChild(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetLastChild(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">最後の子を取得する対象の要素。</param>
+        <param name="request">返されたプロパティとパターンを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>指定した最後の子要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>最後の要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際に追加の子要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの最後の子として最後の子要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetNextSibling">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定したは、次の兄弟要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスに次の兄弟として次の兄弟要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetNextSibling">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetNextSibling (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetNextSibling(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetNextSibling(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element"><see cref="T:System.Windows.Automation.AutomationElement" />元となると、次の兄弟を取得します。</param>
+        <summary>指定したは、次の兄弟要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <returns>次の兄弟要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスに次の兄弟として次の兄弟要素が返されることは保証されません。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.GetNextSibling%2A>サブツリー内の要素のツリー ビューを構築するために使用されています。  
+  
+ [!code-csharp[UIAClient_snip#171](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#171)]
+ [!code-vb[UIAClient_snip#171](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSibling">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetNextSibling (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetNextSibling(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetNextSibling(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">次の兄弟を取得する対象の要素。</param>
+        <param name="request">返されたプロパティとパターンを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>指定したは、次の兄弟要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>次の兄弟要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスに次の兄弟として次の兄弟要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetParent">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した親要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの親として、親要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetParent (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetParent(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetParent(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">親が返される要素です。</param>
+        <summary>指定した親要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <returns>親要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) 指定した要素がツリーで、ルート要素である場合、または親要素が現在のビューに表示されない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.GetParent%2A>を指定された要素を格納するウィンドウ要素を検索するために使用されています。  
+  
+ [!code-csharp[UIAFocusTracker_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAFocusTracker_snip/CSharp/FocusTracker.cs#102)]
+ [!code-vb[UIAFocusTracker_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAFocusTracker_snip/VisualBasic/FocusTracker.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetParent (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetParent(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetParent(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">親が返される要素です。</param>
+        <param name="request">返されたでメンバーを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>指定した親要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>親要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) か、指定した要素が、ツリーのルート要素の親要素はこのビューに表示されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの親として、親要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetPreviousSibling">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した前の兄弟を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの前の兄弟として前の兄弟要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetPreviousSibling">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetPreviousSibling (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetPreviousSibling(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetPreviousSibling(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">前の兄弟を取得する対象の要素。</param>
+        <summary>指定した前の兄弟を取得<see cref="T:System.Windows.Automation.AutomationElement" />です。</summary>
+        <returns>前の兄弟要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの前の兄弟として前の兄弟要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviousSibling">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement GetPreviousSibling (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement GetPreviousSibling(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.GetPreviousSibling(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">前の兄弟を取得する対象の要素。</param>
+        <param name="request">返されたプロパティとパターンを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>指定した前の兄弟を取得<see cref="T:System.Windows.Automation.AutomationElement" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>前の兄弟要素、または null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)]) このような要素が存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Automation.AutomationElement>を現在のビュー状態が一致しませんし、したがっては返されません、要素ツリーを移動する際にその他の兄弟要素を持つことができます。  
+  
+ 構造、<xref:System.Windows.Automation.AutomationElement>ツリーに表示[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]デスクトップ上の要素。 返された要素が後続のパスの前の兄弟として前の兄弟要素が返されることは保証されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Normalize">
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された最も近い先祖の要素を取得<see cref="T:System.Windows.Automation.AutomationElement" />のこのインスタンスによって使用されるツリー ビューで<see cref="T:System.Windows.Automation.TreeWalker" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリーの親チェーンの上のビューの条件を満たす要素まで移動して、要素が正規化されて、<xref:System.Windows.Automation.TreeWalker>オブジェクトに到達します。 ルート要素に達すると、ビューの条件を満たしていない場合でも、ルート要素が返されます。  
+  
+ このメソッドはアプリケーションへの参照を取得するのに役立ちます[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ヒット テストでの要素。 アプリケーションが、要素の特定の種類でのみ動作することもし、使用できる<xref:System.Windows.Automation.TreeWalker.Normalize%2A>(コンテンツの要素) などの目的の要素のみが最終的に取得されたことを確認 (たとえば、スクロール バーは、入力フォーカスを取得) ときにどのような要素が最初に取得したに関係なく、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement Normalize (System.Windows.Automation.AutomationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement Normalize(class System.Windows.Automation.AutomationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.Normalize(System.Windows.Automation.AutomationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">正規化を起点になる要素。</param>
+        <summary>ノードを取得します自体、満たす場合、 <see cref="P:System.Windows.Automation.TreeWalker.Condition" />、または、最も近い親または先祖ノードを満たす、<see cref="P:System.Windows.Automation.TreeWalker.Condition" />です。</summary>
+        <returns>最も近い<see cref="T:System.Windows.Automation.AutomationElement" />現在のビューにします。 先祖チェーンの上のナビゲーションには、ルート要素に達すると、ルート要素が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリーの親チェーンの上のビューの条件を満たす要素まで移動して、要素が正規化されて、<xref:System.Windows.Automation.TreeWalker>オブジェクトに到達します。 ルート要素に達すると、ビューの条件を満たしていない場合でも、ルート要素が返されます。  
+  
+ このメソッドはアプリケーションへの参照を取得するのに役立ちます[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ヒット テストでの要素。 アプリケーションが、要素の特定の種類でのみ動作することもし、使用できる<xref:System.Windows.Automation.TreeWalker.Normalize%2A>(コンテンツの要素) などの目的の要素のみが最終的に取得されたことを確認 (たとえば、スクロール バーは、入力フォーカスを取得) ときにどのような要素が最初に取得したに関係なく、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Normalize">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.AutomationElement Normalize (System.Windows.Automation.AutomationElement element, System.Windows.Automation.CacheRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Automation.AutomationElement Normalize(class System.Windows.Automation.AutomationElement element, class System.Windows.Automation.CacheRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.TreeWalker.Normalize(System.Windows.Automation.AutomationElement,System.Windows.Automation.CacheRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.Automation.AutomationElement" />
+        <Parameter Name="request" Type="System.Windows.Automation.CacheRequest" />
+      </Parameters>
+      <Docs>
+        <param name="element">正規化を起点になる要素。</param>
+        <param name="request">返されたプロパティとパターンを指定するキャッシュ要求オブジェクト<see cref="T:System.Windows.Automation.AutomationElement" />をキャッシュします。</param>
+        <summary>満たす場合に、ノード自体を取得、 <see cref="P:System.Windows.Automation.TreeWalker.Condition" />、または、最も近い親または先祖ノードを満たす、<see cref="P:System.Windows.Automation.TreeWalker.Condition" />プロパティとパターンがキャッシュされます。</summary>
+        <returns>最も近い<see cref="T:System.Windows.Automation.AutomationElement" />現在のビューにします。 先祖チェーンの上のナビゲーションには、ルート要素に達すると、ルート要素が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ツリーの親チェーンの上のビューの条件を満たす要素まで移動して、要素が正規化されて、<xref:System.Windows.Automation.TreeWalker>オブジェクトに到達します。 ルート要素に達すると、ビューの条件を満たしていない場合でも、ルート要素が返されます。  
+  
+ このメソッドはアプリケーションへの参照を取得するのに役立ちます[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]ヒット テストでの要素。 アプリケーションが、要素の特定の種類でのみ動作することもし、使用できる<xref:System.Windows.Automation.TreeWalker.Normalize%2A>(コンテンツの要素) などの目的の要素のみが最終的に取得されたことを確認 (たとえば、スクロール バーは、入力フォーカスを取得) ときにどのような要素が最初に取得したに関係なく、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawViewWalker">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.TreeWalker RawViewWalker;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.TreeWalker RawViewWalker" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.TreeWalker.RawViewWalker" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.TreeWalker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>事前に定義を表す<see cref="T:System.Windows.Automation.TreeWalker" />ツリー内のすべての要素のビューを格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、クライアント アプリケーションは、独自のユーザー インターフェイス内の要素を検索しようとする可能性があります、する必要がありますすべて[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を別のスレッドで呼び出します。  
+  
+   
+  
+## Examples  
+ 次の例は<xref:System.Windows.Automation.TreeWalker.ControlViewWalker>サブツリー内の要素のツリー ビューを構築するために使用されています。 使用状況、<xref:System.Windows.Automation.TreeWalker.RawViewWalker>と同じです。  
+  
+ [!code-csharp[UIAClient_snip#171](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#171)]
+ [!code-vb[UIAClient_snip#171](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#171)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

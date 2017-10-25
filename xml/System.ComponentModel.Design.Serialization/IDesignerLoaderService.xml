@@ -1,0 +1,148 @@
+<Type Name="IDesignerLoaderService" FullName="System.ComponentModel.Design.Serialization.IDesignerLoaderService">
+  <TypeSignature Language="C#" Value="public interface IDesignerLoaderService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerLoaderService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Serialization.IDesignerLoaderService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>外部コンポーネントの非同期読み込みをサポートするためにデザイナー ローダーを拡張できるインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.Design.Serialization.DesignerLoader>外部コンポーネントは、デザイナーの読み込みを管理するには、このインターフェイスを実装することができます。 このインターフェイスでは、外部のコンポーネントを呼び出すことによって、デザイン画面の再読み込みを開始することもできます<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.Reload%2A>です。 デザイナー ローダーは、非同期の読み込みのためのサポートは必要ない場合は、このインターフェイスを実装する必要はありません。  
+  
+ デザイナーのカスタム実装を使用して読み込む、<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService>さまざまな方法で発生することができます。 読み込みプロセスには、場合によって外部コンポーネントが関わります。 外部の依存関係と読み込みを容易には、デザイナー ローダー サービス インターフェイスは、読み込みが完了し、各部分の読み込みが完了したことを通知を決定するメカニズムを提供します。 <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService>通常の読み込みが完了すると残りの読み込みの依存関係の数を追跡するカウンターをテストすることによってによって決まります。 各部分の読み込みが完了したら、<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete%2A>が呼び出されると、およびサービス デクリメント カウンターです。 依存読み込みプロセスの数を設定するには、呼び出す<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency%2A>を呼び出す負荷プロセスごとに 1 回<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete%2A>の読み込みが完了するとします。 最終の読み込みが完了すると、サービスの呼び出し<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderHost.EndLoad%2A>ローダー ホストにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddLoadDependency">
+      <MemberSignature Language="C#" Value="public void AddLoadDependency ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddLoadDependency() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインターフェイスで管理されている、読み込みプロセスの一部として、外部コンポーネントを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency%2A>読み込みプロセスに参加している外部オブジェクトごとに 1 回です。 <xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete%2A>読み込みプロセスの作業が終わったときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DependentLoadComplete">
+      <MemberSignature Language="C#" Value="public void DependentLoadComplete (bool successful, System.Collections.ICollection errorCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void DependentLoadComplete(bool successful, class System.Collections.ICollection errorCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete(System.Boolean,System.Collections.ICollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="successful" Type="System.Boolean" />
+        <Parameter Name="errorCollection" Type="System.Collections.ICollection" />
+      </Parameters>
+      <Docs>
+        <param name="successful">
+          <see langword="true" />デザイナーの読み込みが成功した場合<see langword="false" />エラーからの負荷を持たない場合に終了します。</param>
+        <param name="errorCollection">存在する場合、読み込み中に発生したエラーのコレクション。 エラーが発生しなかった場合は、いずれか、空のコレクションを渡すまたは<see langword="null" />です。</param>
+        <summary>依存の読み込みが完了したことを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、依存読み込み操作が完了したことを通知します。 呼び出す<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.DependentLoadComplete%2A>呼び出すことによって登録されたすべてのプロセスに対して 1 回<xref:System.ComponentModel.Design.Serialization.IDesignerLoaderService.AddLoadDependency%2A>、既に完了しています。  
+  
+ かどうか、依存する読み込みが成功した、呼び出し元のセット、`successful`パラメーターを`true`か空のコレクションを渡すとまたは`null`を`errorCollection`パラメーター。 依存の読み込みには、エラーが発生すると、呼び出し元の設定、`successful`パラメーターを`false`理由などへのエラーの理由を示す例外のコレクションを渡すと、`errorCollection`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reload">
+      <MemberSignature Language="C#" Value="public bool Reload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Reload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Serialization.IDesignerLoaderService.Reload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン ドキュメントを再読み込みします。</summary>
+        <returns>
+          <see langword="true" />再読み込み要求が受け入れられた場合、または<see langword="false" />ローダーは、再読み込みを許可していない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意のオブジェクトは、設計ドキュメント ローダーの再読み込みを要求するには、このメソッドを呼び出すことができます。 デザイナー ローダーを返すことができるかどうか、ローダー読み込みをサポートして、再読み込みに準拠している`true`です。 返しますそれ以外の場合、`false`の再読み込みが実行されないことを示します。 呼び出し元が直ちに行われている再読み込みに依存できません。デザイナー ローダー、他の時間をスケジュールするか、すぐに再読み込みを試みることができます。  
+  
+ 呼び出し元は、デザイナーを再読み込みすることはできない場合、ユーザーにメッセージを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

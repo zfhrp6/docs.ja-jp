@@ -1,0 +1,71 @@
+<Type Name="BuildProviderAppliesToAttribute" FullName="System.Web.Compilation.BuildProviderAppliesToAttribute">
+  <TypeSignature Language="C#" Value="public sealed class BuildProviderAppliesToAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BuildProviderAppliesToAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildProviderAppliesToAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リソースがあるときに、ビルド プロバイダーを適用するスコープを指定する属性を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildProvider>クラスが解析され、特定のファイル拡張子付きリソースのコンパイル時にコードを生成します。 <xref:System.Web.Compilation.BuildProviderAppliesToAttribute>属性を定義する場所のスコープ、<xref:System.Web.Compilation.BuildProvider>オブジェクトが呼び出されます。  
+  
+ 設定して、<xref:System.Web.Compilation.BuildProviderAppliesToAttribute>制限することができます、属性、 <xref:System.Web.Compilation.BuildProvider> \App_Code などの特定の予約済み ASP.NET をディレクトリ オブジェクト。  
+  
+ 適用しない場合、<xref:System.Web.Compilation.BuildProviderAppliesToAttribute>属性を<xref:System.Web.Compilation.BuildProvider>クラス、既定値は<xref:System.Web.Compilation.BuildProviderAppliesTo.All>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildProviderAppliesToAttribute (System.Web.Compilation.BuildProviderAppliesTo appliesTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Web.Compilation.BuildProviderAppliesTo appliesTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.BuildProviderAppliesToAttribute.#ctor(System.Web.Compilation.BuildProviderAppliesTo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesTo" Type="System.Web.Compilation.BuildProviderAppliesTo" />
+      </Parameters>
+      <Docs>
+        <param name="appliesTo"><see cref="T:System.Web.Compilation.BuildProviderAppliesTo" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.BuildProviderAppliesToAttribute" />指定されたリソースの場所に適用されるクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppliesTo">
+      <MemberSignature Language="C#" Value="public System.Web.Compilation.BuildProviderAppliesTo AppliesTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Compilation.BuildProviderAppliesTo AppliesTo" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.BuildProviderAppliesToAttribute.AppliesTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildProviderAppliesTo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場所を示す値を取得、指定した<see cref="T:System.Web.Compilation.BuildProvider" />クラスは、適切な拡張機能を持つリソースが検出されると、適用されます。</summary>
+        <value>A<see cref="T:System.Web.Compilation.BuildProviderAppliesTo" />場所を示す値、指定した<see cref="T:System.Web.Compilation.BuildProvider" />クラスは、適切な拡張機能を持つリソースが検出されると、適用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

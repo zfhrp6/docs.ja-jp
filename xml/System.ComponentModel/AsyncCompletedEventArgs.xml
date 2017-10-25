@@ -1,0 +1,305 @@
+<Type Name="AsyncCompletedEventArgs" FullName="System.ComponentModel.AsyncCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class AsyncCompletedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AsyncCompletedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.AsyncCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 *MethodName* <see langword="Completed" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラスを使用している場合、[イベント ベースの非同期パターン概要](~/docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)、クラスが用意されて、 *MethodName* `Completed`イベント。 インスタンスを追加する場合、<xref:System.ComponentModel.AsyncCompletedEventHandler?displayProperty=nameWithType>デリゲート、イベントでの非同期操作の結果に関する情報を受信します、<xref:System.ComponentModel.AsyncCompletedEventArgs>対応するイベント ハンドラー メソッドのパラメーターです。  
+  
+ クライアント アプリケーションのイベント ハンドラーのデリゲートを確認できる、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>非同期のタスクが取り消されたかどうかを決定するプロパティです。  
+  
+ クライアント アプリケーションのイベント ハンドラーのデリゲートを確認できる、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>非同期タスクの実行中に例外が発生したかどうかを決定するプロパティです。  
+  
+ クラスは、複数の非同期メソッド、または同じの非同期メソッドに複数の呼び出しをサポートする場合、どのタスクが発生したを決定できます、 *MethodName* `Completed`イベントの値をチェックして、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 コードは、対応する非同期タスクが開始および完了すると、タスク Id と呼ばれるこれらのトークンを追跡する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation>を非同期操作の有効期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#11)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#11)]  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#12)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#12)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>イベント ベースの非同期パターンに従うクラスは、保留中の非同期操作の状態に関するクライアントに通知するイベントを発生させることができます。 クラスを提供する場合、 *MethodName* <see langword="Completed" />イベント、行うこともできます、<see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />への非同期操作の結果に関するクライアントを通知します。  
+  
+ クライアントと通信するよりも非同期操作の結果についての詳細については、<see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />に対応します。 この場合、派生クラスから、<see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />クラスし、その他のプライベート インスタンス変数と対応する読み取り専用のパブリック プロパティを提供します。 呼び出す、<see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" />メソッド操作が取り消されたか、エラーが発生した場合、プロパティの値を返す前にします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncCompletedEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AsyncCompletedEventArgs (Exception error, bool cancelled, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Exception error, bool cancelled, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncCompletedEventArgs.#ctor(System.Exception,System.Boolean,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="error" Type="System.Exception" />
+        <Parameter Name="cancelled" Type="System.Boolean" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="error">非同期操作中に発生したエラーです。</param>
+        <param name="cancelled">非同期操作がキャンセルされたかどうかを示す値です。</param>
+        <param name="userState">渡される省略可能なユーザーが指定する状態オブジェクト、<see cref="M:System.ComponentModel.BackgroundWorker.RunWorkerAsync(System.Object)" />メソッドです。</param>
+        <summary><see cref="T:System.ComponentModel.AsyncCompletedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancelled">
+      <MemberSignature Language="C#" Value="public bool Cancelled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancelled" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作が取り消されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />バック グラウンド処理が取り消された場合それ以外の場合<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>プロパティは`true`、非同期操作が中断されました。  
+  
+ クライアント アプリケーションのイベント ハンドラーのデリゲートを確認する必要があります、<xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A>から派生したクラスの任意のプロパティにアクセスする前に、プロパティ<xref:System.ComponentModel.AsyncCompletedEventArgs>、それ以外のプロパティを発生させる、<xref:System.InvalidOperationException>非同期操作が中断された場合。  
+  
+   
+  
+## Examples  
+ 使用して、次のコード例を示します、<xref:System.ComponentModel.AsyncOperation>を非同期操作の有効期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#11)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#11)]  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#12)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでの読み取り専用のプロパティを提供する場合を呼び出すことを確認する、<see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" />メソッドです。 これはクライアントがない可能性がある非同期の操作中のエラーにより有効なプロパティへのアクセスすることを防ぎます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public Exception Error { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Error" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期操作中に発生したエラーを示す値を取得します。</summary>
+        <value><see cref="T:System.Exception" />インスタンスの場合は、非同期操作中にエラーが発生しました。 それ以外の場合<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスが例外を割り当てるための非同期操作中に例外が発生する場合、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティです。 クライアント アプリケーションのイベント ハンドラーのデリゲートを確認する必要があります、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>から派生したクラスの任意のプロパティにアクセスする前に、プロパティ<xref:System.ComponentModel.AsyncCompletedEventArgs>、それ以外のプロパティが生成されます、<xref:System.Reflection.TargetInvocationException>でその<xref:System.Exception.InnerException%2A>プロパティへの参照を保持している<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>です。  
+  
+ 値、<xref:System.ComponentModel.AsyncCompletedEventArgs.Error%2A>プロパティは`null`操作が取り消された場合。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation>を非同期操作の有効期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#11)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#11)]  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#12)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスでの読み取り専用のプロパティを提供する場合を呼び出すことを確認する、<see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" />メソッド、プロパティの実装にします。 これはクライアントがない可能性がある非同期の操作中のエラーにより有効なプロパティへのアクセスすることを防ぎます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseExceptionIfNecessary">
+      <MemberSignature Language="C#" Value="protected void RaiseExceptionIfNecessary ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaiseExceptionIfNecessary() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>非同期操作が失敗した場合は、ユーザーが指定した例外を発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します<xref:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary%2A>で派生したクラスのプロパティです。  
+  
+  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#6)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" /> プロパティが <see langword="true" /> です。</exception>
+        <exception cref="T:System.Reflection.TargetInvocationException"><see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />非同期操作でプロパティが設定されています。 <see cref="P:System.Exception.InnerException" />プロパティへの参照を保持する<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>独自のクラスから派生した場合、<see cref="T:System.ComponentModel.AsyncCompletedEventArgs" />クラス、読み取り専用のプロパティを呼び出す必要があります、<see cref="M:System.ComponentModel.AsyncCompletedEventArgs.RaiseExceptionIfNecessary" />メソッド、プロパティ値を返す前にします。 ワーカーのコードが例外を割り当てますコンポーネントに非同期の場合、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Error" />プロパティまたはセット、<see cref="P:System.ComponentModel.AsyncCompletedEventArgs.Cancelled" />プロパティを<see langword="true" />プロパティは、クライアントは、その値を読み取るしようとした場合、例外が発生します。 これはクライアントがない可能性がある非同期の操作中のエラーにより有効なプロパティへのアクセスすることを防ぎます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UserState">
+      <MemberSignature Language="C#" Value="public object UserState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object UserState" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.AsyncCompletedEventArgs.UserState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.EventBasedAsync</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期タスクの一意の識別子を取得します。</summary>
+        <value>非同期タスクを一意に識別するオブジェクト参照それ以外の場合、<see langword="null" />値が設定されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスは、複数の非同期メソッド、または 1 つのメソッドの複数の呼び出しをサポートする場合、どのタスクが発生したを決定できます、 *MethodName* `Completed`イベントの値をチェックして、<xref:System.ComponentModel.AsyncCompletedEventArgs.UserState%2A>プロパティです。 これらのトークンは、対応する非同期タスクが開始および完了すると、タスク Id と呼ばれますが、コードを追跡する必要があります。  
+  
+ このプロパティの値は、元のタスクが開始される非同期メソッドの呼び出し中に設定されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.ComponentModel.AsyncOperation>を非同期操作の有効期間を追跡します。 このコード例に示されている例の一部である、<xref:System.ComponentModel.AsyncOperationManager?displayProperty=nameWithType>クラスです。  
+  
+ [!code-csharp[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#11)]
+ [!code-vb[System.ComponentModel.AsyncOperationManager#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#11)]  
+[!code-csharp[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#12)]
+[!code-vb[System.ComponentModel.AsyncOperationManager#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

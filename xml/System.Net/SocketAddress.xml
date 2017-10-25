@@ -1,0 +1,330 @@
+<Type Name="SocketAddress" FullName="System.Net.SocketAddress">
+  <TypeSignature Language="C#" Value="public class SocketAddress" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SocketAddress extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.SocketAddress" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>シリアル化からの情報を格納<see cref="T:System.Net.EndPoint" />クラスを派生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基になるバッファーの最初の 2 バイトは予約されている、<xref:System.Net.Sockets.AddressFamily>列挙値。 ときに、 <xref:System.Net.SocketAddress> 、シリアル化された格納に使用されます<xref:System.Net.IPEndPoint>、ポート番号の情報を格納する 3 番目と 4 番目のバイトが使用されます。 次のバイトを使用して、IP アドレスを格納します。 インデックス位置を参照してこの基になるバイト バッファー内にあるすべての情報にアクセスすることができます。バイト バッファーは、0 から始まるインデックスを使用します。 使用することも、<xref:System.Net.SocketAddress.Family%2A>と<xref:System.Net.SocketAddress.Size%2A>を取得するプロパティ、<xref:System.Net.Sockets.AddressFamily>値と、バッファーのサイズをそれぞれします。 表示するには任意の文字列としてこの情報を使用して、<xref:System.Net.SocketAddress.ToString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.SocketAddress>のインスタンスをシリアル化する、<xref:System.Net.EndPoint>クラスです。 シリアル化、基になるバイト バッファーの後に、<xref:System.Net.SocketAddress>をすべて含む、<xref:System.Net.IPEndPoint>状態情報。  
+  
+ [!code-cpp[Classic SocketAddressExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SocketAddressExample/CPP/source.cpp#1)]
+ [!code-csharp[Classic SocketAddressExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SocketAddressExample/CS/source.cs#1)]
+ [!code-vb[Classic SocketAddressExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SocketAddressExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketAddress (System.Net.Sockets.AddressFamily family);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Sockets.AddressFamily family) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="family" Type="System.Net.Sockets.AddressFamily" />
+      </Parameters>
+      <Docs>
+        <param name="family"><see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.SocketAddress" />特定のアドレス ファミリ用のクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードでは、基になるバッファー サイズを 32 バイトに設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SocketAddress (System.Net.Sockets.AddressFamily family, int size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Sockets.AddressFamily family, int32 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketAddress.#ctor(System.Net.Sockets.AddressFamily,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="family" Type="System.Net.Sockets.AddressFamily" />
+        <Parameter Name="size" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="family"><see cref="T:System.Net.Sockets.AddressFamily" /> 列挙値。</param>
+        <param name="size">基になるバッファーに割り当てるバイト数。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Net.SocketAddress" />クラスの指定されたアドレスが属するファミリとバッファー サイズを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用して、新しいインスタンスを作成する、<xref:System.Net.SocketAddress>基になるバッファー サイズが特定のクラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="size" />2 より小さいです。 これらの 2 バイトが格納に必要な<paramref name="family" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketAddress.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="comparand">現在の <see cref="T:System.Object" /> と比較する <see langword="Object" />。</param>
+        <summary>指定した <see langword="Object" /> が現在の <see langword="Object" /> と等しいかどうかを示します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see langword="Object" /> と等しい場合は <see langword="Object" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Family">
+      <MemberSignature Language="C#" Value="public System.Net.Sockets.AddressFamily Family { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Sockets.AddressFamily Family" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketAddress.Family" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.AddressFamily</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.Net.Sockets.AddressFamily" /> 、現在の値を列挙<see cref="T:System.Net.SocketAddress" />です。</summary>
+        <value>1 つ、<see cref="T:System.Net.Sockets.AddressFamily" />列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、取得、<xref:System.Net.Sockets.AddressFamily>列挙値を現在のアドレス指定スキームを表す<xref:System.Net.SocketAddress>です。 対応する文字列形式を表示するかどうかは<xref:System.Net.Sockets.AddressFamily>を使用して、<xref:System.Net.SocketAddress.ToString%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketAddress.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能し、ハッシュ アルゴリズムやハッシュ テーブルのようなデータ構造での使用に適しています。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public byte this[int offset] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketAddress.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="offset">必要な情報の配列インデックスの要素です。</param>
+        <summary>取得または指定したインデックスの要素を基になるバッファーに設定します。</summary>
+        <value>基になるバッファーで指定したインデックスの要素の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを取得または基になるバッファーで指定したバイトの位置を設定します。  
+  
+> [!NOTE]
+>  呼び出すことを確認する<xref:System.Net.SocketAddress.Size%2A>基になるバッファー内の要素を参照する前にします。 存在しないインデックスを参照すると、<xref:System.Net.SocketAddress>をスローする、<xref:System.IndexOutOfRangeException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定したインデックスには、バッファーがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public int Size { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Size" />
+      <MemberSignature Language="DocId" Value="P:System.Net.SocketAddress.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるバッファー サイズを取得、<see cref="T:System.Net.SocketAddress" />です。</summary>
+        <value>基になるバッファー サイズ、<see cref="T:System.Net.SocketAddress" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの基になるバッファーのサイズを取得、 <xref:System.Net.SocketAddress> (バイト単位)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.SocketAddress.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ソケット アドレスに関する情報を返します。</summary>
+        <returns>に関する情報を含む文字列、<see cref="T:System.Net.SocketAddress" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketAddress.ToString%2A>メソッドを含む文字列を返します、<xref:System.Net.Sockets.AddressFamily>の基になるバッファーのサイズ、列挙値、<xref:System.Net.SocketAddress>構造、およびバッファーの残りの内容。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

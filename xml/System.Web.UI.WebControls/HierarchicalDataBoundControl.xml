@@ -1,0 +1,408 @@
+<Type Name="HierarchicalDataBoundControl" FullName="System.Web.UI.WebControls.HierarchicalDataBoundControl">
+  <TypeSignature Language="C#" Value="public abstract class HierarchicalDataBoundControl : System.Web.UI.WebControls.BaseDataBoundControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit HierarchicalDataBoundControl extends System.Web.UI.WebControls.BaseDataBoundControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.BaseDataBoundControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データを階層形式で表示する ASP.NET Version 2.0 のデータ バインド コントロールすべての基底クラスとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスは ASP.NET コントロール ASP.NET 階層データのソース管理からデータを取得し、そのデータを表示するコントロールのユーザー インターフェイス要素をバインドに使用する基本クラスです。 <xref:System.Web.UI.WebControls.TreeView>と<xref:System.Web.UI.WebControls.Menu>クラスから派生<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>です。  
+  
+ ページの開発者は使用しないで、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスの直接。 代わりに、このクラスから派生したコントロールを使用します。  
+  
+ コントロールの開発者が実装するクラスを使用するデータ バインド コントロールを作成するには、このクラスを拡張する、<xref:System.Web.UI.IHierarchicalDataSource>インターフェイスとクラスから派生する、<xref:System.Web.UI.HierarchicalDataSourceControl>と<xref:System.Web.UI.HierarchicalDataSourceView>クラスです。 クラスを派生している場合、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラス、オーバーライド、 <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A> 、コントロールのユーザー インターフェイス要素によって取得されたデータにバインドするメソッド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData%2A>メソッドです。 ほとんどの場合、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A>メソッドは、唯一の方法は、派生クラスでオーバーライドされます。  
+  
+ ASP.NET 2.0 のデータ バインド コントロールに対して、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect%2A>メソッドは、それと同等の<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッド、実行時にデータをバインドするために呼び出されるとします。 <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData%2A>と<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例からクラスを派生、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>カスタム データ バインド コントロールを作成するクラス。 `GeneologyTree`レンダリングを制御する`pre`関連付けられたデータ ソース コントロールから取得されたデータのテキスト ツリーに HTML セクションです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#2)]
+ [!code-vb[Samples.AspNet.GeneologyTree#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#2)]  
+  
+ 次のコード例を使用する方法を示しています、`GeneologyTree`コントロール、前の例で定義されているしにバインドする<xref:System.Web.UI.WebControls.XmlDataSource>コントロール。  
+  
+ [!code-aspx-csharp[Samples.AspNet.GeneologyTree#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/rootviewcs.aspx#1)]
+ [!code-aspx-vb[Samples.AspNet.GeneologyTree#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/rootviewvb.aspx#1)]  
+  
+ コード例ではアクセス geneology.xml ファイルには、次のデータが含まれています。  
+  
+```  
+<family>  
+  <member title="great-grandfather">  
+    <member title="grandfather" >  
+      <member title="child" />  
+      <member title="father" >  
+         <member title="son" />  
+      </member>  
+    </member>  
+  </member>  
+</family>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected HierarchicalDataBoundControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public override string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty(typeof(System.Web.UI.HierarchicalDataSourceControl))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインド コントロールによるデータ項目の一覧の取得元となるコントロールの ID を取得または設定します。</summary>
+        <value>データ バインド コントロールによるデータの取得元となるデータ ソースを表すコントロールの ID。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetData">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.HierarchicalDataSourceView GetData (string viewPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.HierarchicalDataSourceView GetData(string viewPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HierarchicalDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewPath">取得するビューの階層パス。</param>
+        <summary>取得、<see cref="T:System.Web.UI.HierarchicalDataSourceView" />データ操作を実行する、データ バインド コントロールを使用するオブジェクトします。</summary>
+        <returns><see cref="T:System.Web.UI.HierarchicalDataSourceView" />データ操作を実行する、データ バインド コントロールを使用するオブジェクトします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData%2A>メソッドの取得、<xref:System.Web.UI.HierarchicalDataSourceView>オブジェクトを呼び出すことによって、関連付けられたデータ ソース コントロールから、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetDataSource%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を示す方法、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData%2A>を取得するメソッドが呼び出された、<xref:System.Web.UI.HierarchicalDataSourceView>オブジェクト、関連付けられているデータ ソース コントロールから方法、および<xref:System.Web.UI.HierarchicalDataSourceView.Select%2A?displayProperty=nameWithType>データを取得するメソッドが呼び出されます。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#4)]
+ [!code-vb[Samples.AspNet.GeneologyTree#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">A<see cref="T:System.Web.UI.HierarchicalDataSourceView" />を取得できませんでした、指定された<paramref name="viewPath" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDataSource">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.IHierarchicalDataSource GetDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.IHierarchicalDataSource GetDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalDataSource</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.IHierarchicalDataSource" />データ バインド コントロールは、存在する場合に、関連付けられています。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchicalDataSource" />によって識別されるデータ ソースを表すインスタンス、<see cref="P:System.Web.UI.WebControls.DataBoundControl.DataSourceID" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetData%2A>メソッドの呼び出し、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.GetDataSource%2A>メソッド内部でします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">データ ソース コントロールによって識別される、<see cref="P:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID" />プロパティは、現在のコンテナーに存在しません。  
+  
+ \- または  
+  
+ データ ソース コントロールによって識別される、<see cref="P:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID" />プロパティを実装していません、<see cref="T:System.Web.UI.IHierarchicalDataSource" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkAsDataBound">
+      <MemberSignature Language="C#" Value="protected void MarkAsDataBound ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void MarkAsDataBound() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.MarkAsDataBound" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>としてデータを正常にバインドされたコントロールの状態をビュー ステートを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ バインド コントロールでは、ビュー状態にあるデータに現在バインドされているかどうかを示す値を保持します。 <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.MarkAsDataBound%2A>メソッドでは、値を設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataPropertyChanged">
+      <MemberSignature Language="C#" Value="protected override void OnDataPropertyChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDataPropertyChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnDataPropertyChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>基本のデータ ソースの id プロパティのいずれかの変更されると、そのデータをデータ バインド コントロールを再バインドするときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnDataPropertyChanged%2A>メソッドが呼び出されます、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>または<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>が変更されたページの後にいつでも<xref:System.Web.UI.Control.PreRender>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データ バインド コントロールを呼び出して方法を示しています、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnDataPropertyChanged%2A>メソッド、データ バインド コントロールが初期化された後、データ ソースを識別するプロパティが変更された場合。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#3)]
+ [!code-vb[Samples.AspNet.GeneologyTree#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceChanged (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDataSourceChanged(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnDataSourceChanged(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース、<see cref="T:System.Web.UI.IHierarchicalDataSource" />オブジェクト。</param>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>ときに呼び出されます、<see cref="T:System.Web.UI.IHierarchicalDataSource" />を発生させますで、データ バインド コントロールが動作するインスタンス、<see cref="E:System.Web.UI.IDataSource.DataSourceChanged" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスのハンドル、<xref:System.Web.UI.IHierarchicalDataSource.DataSourceChanged>設定イベントが、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>処理、<see cref="E:System.Web.UI.Control.Load" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>を設定する負荷イベントを処理する、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`の HTTP 要求はポストバックではない場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPagePreLoad">
+      <MemberSignature Language="C#" Value="protected override void OnPagePreLoad (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPagePreLoad(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnPagePreLoad(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの発生元の <see cref="T:System.Web.UI.Page" />。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>コントロールが読み込まれる前に、データ バインド コントロールの初期化状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.OnPagePreLoad%2A>設定、<xref:System.Web.UI.WebControls.BaseDataBoundControl.RequiresDataBinding%2A>プロパティを`true`場合、HTTP 要求は、ポストバックされビュー ステートが有効になっているが、データ バインド コントロールがバインドされていません。 このシナリオはなどのコントロールでは一般的な<xref:System.Web.UI.WebControls.Wizard>と<xref:System.Web.UI.WebControls.MultiView>実行時に、コントロールの表示が変更されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformDataBinding">
+      <MemberSignature Language="C#" Value="protected virtual void PerformDataBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void PerformDataBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データ ソースからデータをコントロールにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 代わりにこのメソッドを実装して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>メソッドからのデータ バインド コントロールを派生させる場合、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。 コントロールのデータ バインディングのロジックを配置する<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A>保持、<xref:System.Web.UI.Control.DataBinding>と<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBound>から間違った順序で発生するイベントです。  
+  
+ ときに、ベース<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスは、このメソッドの特定の実装を提供、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A>メソッドによって呼び出されます、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect%2A>によって取得されるデータに任意のユーザー インターフェイス コントロールの値をバインドするメソッド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformDataBinding%2A>から派生したクラスのメソッド<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>です。 `GeneologyTree`をコントロールが反復処理、<xref:System.Web.UI.IHierarchicalEnumerable>と<xref:System.Web.UI.IHierarchyData>オブジェクトがそれに関連付けられたから取得した<xref:System.Web.UI.HierarchicalDataSourceView>にバインドされているデータのテキストのツリー構造を作成します。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.GeneologyTree#4](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/CS/geneologytree.cs#4)]
+ [!code-vb[Samples.AspNet.GeneologyTree#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.GeneologyTree/VB/geneologytree.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformSelect">
+      <MemberSignature Language="C#" Value="protected override void PerformSelect ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PerformSelect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連するデータ ソースからデータを取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.PerformSelect%2A>データが取得されると、データ バインド コントロールの要素にデータをバインドするメソッドが呼び出されます。 派生型では、既定の実装が適切でない場合にのみデータを取得するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateDataSource">
+      <MemberSignature Language="C#" Value="protected override void ValidateDataSource (object dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateDataSource(object dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.HierarchicalDataBoundControl.ValidateDataSource(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">オブジェクトに設定、<see cref="P:System.Web.UI.WebControls.BaseDataBoundControl.DataSource" />プロパティです。</param>
+        <summary>データ バインド コントロールのバインド先のオブジェクトがいずれかで使用することを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.ValidateDataSource%2A>メソッドでのみ呼び出すことは、<xref:System.Web.UI.WebControls.BaseDataBoundControl>のクラスのミューテーター (set アクセス操作子)、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>プロパティです。 <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスに対して設定されているオブジェクトの種類のチェック、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>のインスタンスであることを確認するプロパティ、<xref:System.Web.UI.IHierarchicalEnumerable>または<xref:System.Web.UI.IHierarchicalDataSource>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="dataSource" /><see langword="null" />どちらを実装して、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />も<see cref="T:System.Web.UI.IHierarchicalDataSource" />インターフェイスです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,123 @@
+<Type Name="DynamicQueryStringParameter" FullName="System.Web.DynamicData.DynamicQueryStringParameter">
+  <TypeSignature Language="C#" Value="public class DynamicQueryStringParameter : System.Web.UI.WebControls.Parameter, System.Web.DynamicData.IWhereParametersProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicQueryStringParameter extends System.Web.UI.WebControls.Parameter implements class System.Web.DynamicData.IWhereParametersProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicQueryStringParameter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Parameter</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IWhereParametersProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>クエリ文字列値を取得することによって、データ ソース コントロールの <see langword="Where" /> 句の作成に使用するパラメーターのコレクションを自動的に生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicQueryStringParameter>クラスは ASP.NET Dynamic Data 機能を使用しているページで使用します。 <xref:System.Web.DynamicData.DynamicQueryStringParameter>クラスのコレクションが生成されます<xref:System.Web.UI.WebControls.Parameter>主キー、外部キー、およびクエリ文字列の値を取得することによって、テーブルのブール型の列のオブジェクト。  
+  
+ 主キーは、単に追加できます、<xref:System.Web.DynamicData.DynamicQueryStringParameter>他のパラメーターを指定せずオブジェクト。 主キーまたはキーのパラメーターは、動的なデータが生成されます。 外部キーまたはブール型の列は、設定する必要があります、<xref:System.Web.UI.WebControls.Parameter.Name%2A>プロパティ フィルターを適用する列の名前にします。  
+  
+ 使用するために、<xref:System.Web.DynamicData.DynamicQueryStringParameter>クラスを追加する必要がある、<xref:System.Web.DynamicData.DynamicDataManager>コントロールをページにデータ バインド コントロールを登録する必要がありますと、<xref:System.Web.DynamicData.DynamicDataManager>コントロールを使用して、<xref:System.Web.DynamicData.DynamicDataManager.RegisterControl%2A?displayProperty=nameWithType>メソッドです。  
+  
+ この機能の実行時のコード例を参照してください:[実行](http://go.microsoft.com/fwlink/?LinkId=120736&sref=System.Web.DynamicData.DynamicQueryStringParameter)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.DynamicQueryStringParameter>オブジェクト内のデータを表示するときにフィルターとして、<xref:System.Web.UI.WebControls.GridView>コントロール。 <xref:System.Web.UI.WebControls.GridView>コントロールに含まれる、<xref:System.Web.UI.WebControls.TemplateField>外部キーの値を使用してクエリ文字列の値を設定するリンクを作成するオブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicQueryStringParameter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicQueryStringParameter/CS/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicQueryStringParameter#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.DynamicQueryStringParameter/VB/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicQueryStringParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicQueryStringParameter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.DynamicData.DynamicQueryStringParameter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Evaluate">
+      <MemberSignature Language="C#" Value="protected override object Evaluate (System.Web.HttpContext context, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object Evaluate(class System.Web.HttpContext context, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicQueryStringParameter.Evaluate(System.Web.HttpContext,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpContext" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="context">HTTP 要求に関する情報。</param>
+        <param name="control">コントロール パラメーターにバインドされます。</param>
+        <summary>スロー、<see cref="T:System.InvalidOperationException" />常に例外です。</summary>
+        <returns>スロー、<see cref="T:System.InvalidOperationException" />常に例外です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.DynamicData.DynamicQueryStringParameter.Evaluate%2A>メソッドは、ASP.NET によって呼び出される、すべての場合、なって例外をスローします。 これは、次の条件のいずれかが満たされているために発生します。  
+  
+-   ページを含まない、<xref:System.Web.DynamicData.DynamicDataManager>コントロール。  
+  
+-   使用するため、データ バインド コントロールが登録されていない、<xref:System.Web.DynamicData.DynamicDataManager>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWhereParameters">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.WebControls.Parameter&gt; GetWhereParameters (System.Web.DynamicData.IDynamicDataSource dataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.WebControls.Parameter&gt; GetWhereParameters(class System.Web.DynamicData.IDynamicDataSource dataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicQueryStringParameter.GetWhereParameters(System.Web.DynamicData.IDynamicDataSource)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.WebControls.Parameter&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSource" Type="System.Web.DynamicData.IDynamicDataSource" />
+      </Parameters>
+      <Docs>
+        <param name="dataSource">データ ソース オブジェクト。</param>
+        <summary>コレクションを返します<see cref="T:System.Web.UI.WebControls.Parameter" />クエリ文字列値を取得することによって、テーブルの列に対して自動的に生成されるオブジェクト。</summary>
+        <returns>クエリ文字列の値を取得することによって、テーブルの列に対して自動的に生成されるパラメーターのコレクション</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicQueryStringParameter>クラスのコレクションが生成されます<xref:System.Web.UI.WebControls.Parameter>主キー、外部キー、およびクエリ文字列の値を取得することによって、テーブルのブール型の列のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

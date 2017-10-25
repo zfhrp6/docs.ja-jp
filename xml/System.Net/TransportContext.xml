@@ -1,0 +1,131 @@
+<Type Name="TransportContext" FullName="System.Net.TransportContext">
+  <TypeSignature Language="C#" Value="public abstract class TransportContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TransportContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.TransportContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Primitives</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Net.TransportContext" />クラスは、基になるトランスポート層に関する追加のコンテキストを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.TransportContext>クラスとクラスが使用される、<xref:System.Security.Authentication.ExtendedProtection>名前空間を使用して認証をサポートする拡張アプリケーションを保護します。  
+  
+ 統合 Windows 認証の設計では、一部の資格情報のチャレンジ応答をユニバーサルにすることを許可しています。つまり、これらを再利用または転送することができます。 この特定の設計機能が不要な場合、チャレンジ応答をする必要があります、構築時に、少なくともターゲット固有の情報し、最高でもいくつかのチャネル固有の情報です。 サービスに資格情報のチャレンジ応答サービス固有の情報、サービス プロバイダー名 (SPN) が含まれてし、必要に応じて、チャネル固有の拡張保護を提供できます (チャネル バインド トークン (CBT) の情報です。 資格情報の交換にこの情報は、サービスが不正に取得した資格情報のチャレンジ応答の悪用に対する保護を強化することです。  
+  
+ <xref:System.Net.HttpWebRequest>唯一のクラスから派生<xref:System.Net.WebRequest>IWA を使用できるクラスです。 <xref:System.Net.FtpWebRequest>クラスが唯一の FTP クリア テキスト認証します。 <xref:System.Net.FileWebRequest>クラスは任意の認証を実行します。  
+  
+ いくつかの方法をアプリケーションが取得することがありますが、<xref:System.Net.TransportContext>インスタンス。 使用するアプリケーション<xref:System.Net.Security.SslStream>を取得できます、<xref:System.Net.TransportContext>を使用して、<xref:System.Net.Security.SslStream.TransportContext%2A>プロパティです。 使用するアプリケーション<xref:System.Net.HttpWebRequest>を取得できます、<xref:System.Net.TransportContext>を使用して、<xref:System.Net.HttpWebRequest.GetRequestStream%2A>または<xref:System.Net.HttpWebRequest.EndGetRequestStream%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TransportContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.TransportContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.TransportContext" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChannelBinding">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Authentication.ExtendedProtection.ChannelBinding GetChannelBinding (System.Security.Authentication.ExtendedProtection.ChannelBindingKind kind);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Authentication.ExtendedProtection.ChannelBinding GetChannelBinding(valuetype System.Security.Authentication.ExtendedProtection.ChannelBindingKind kind) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.TransportContext.GetChannelBinding(System.Security.Authentication.ExtendedProtection.ChannelBindingKind)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Primitives</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.ExtendedProtection.ChannelBinding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="kind" Type="System.Security.Authentication.ExtendedProtection.ChannelBindingKind" />
+      </Parameters>
+      <Docs>
+        <param name="kind">取得するチャネル バインディングの種類。</param>
+        <summary>要求されたチャネル バインドを取得します。</summary>
+        <returns>要求された<see cref="T:System.Security.Authentication.ExtendedProtection.ChannelBinding" />、または<see langword="null" />かどうか、現在のトランスポートまたはオペレーティング システムによって、チャネル バインドはサポートされません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、使用可能な`kind`パラメーターは<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint>または<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Unique>です。  
+  
+ アプリケーションがチャネル バインディング トークン (CBT) を取得を試みると、<xref:System.Net.HttpListenerRequest.TransportContext%2A>プロパティを使用して、<xref:System.Net.TransportContext.GetChannelBinding%2A>メソッドおよび<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind>は<xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint>、<xref:System.Net.HttpListenerRequest>がスローされます<xref:System.NotSupportedException>です。 <xref:System.Net.HttpListenerRequest>よりも優先、<xref:System.Net.TransportContext.GetChannelBinding%2A>内部実装を持つメソッド  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="kind" />する必要がありますする<see cref="F:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint" />で使用するため、<see cref="T:System.Net.TransportContext" />から取得した、<see cref="P:System.Net.HttpListenerRequest.TransportContext" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTlsTokenBindings">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Security.Authentication.ExtendedProtection.TokenBinding&gt; GetTlsTokenBindings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Security.Authentication.ExtendedProtection.TokenBinding&gt; GetTlsTokenBindings() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.TransportContext.GetTlsTokenBindings" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Security.Authentication.ExtendedProtection.TokenBinding&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランスポート セキュリティ層のトークンのバインドを取得します。</summary>
+        <returns>トランスポート セキュリティ層のトークンのバインド。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

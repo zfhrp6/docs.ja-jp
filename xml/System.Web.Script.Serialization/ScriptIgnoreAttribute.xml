@@ -1,0 +1,79 @@
+<Type Name="ScriptIgnoreAttribute" FullName="System.Web.Script.Serialization.ScriptIgnoreAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ScriptIgnoreAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ScriptIgnoreAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Script.Serialization.ScriptIgnoreAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field, AllowMultiple=false, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指定する<see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />はパブリック プロパティまたはパブリック フィールドをシリアル化できません。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用する場合<xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>パブリック プロパティまたは クラスのパブリック フィールドに<xref:System.Web.Script.Serialization.JavaScriptSerializer>無視、または JavaScript Object Notation (JSON) 形式にクラスのインスタンスをシリアル化するときに、メンバーをスキップします。  
+  
+ <xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>効果はない場合、<xref:System.Web.Script.Services.ScriptMethodAttribute.ResponseFormat%2A>プロパティに設定されている`Xml`です。 XML 形式にシリアル化するときの動作は同じにする場合<xref:System.Xml.Serialization.XmlIgnoreAttribute>プロパティまたはフィールドに適用する代わりにします。 これを使用して、クラスをシリアル化されるため<xref:System.Xml.Serialization.XmlSerializer>の代わりに<xref:System.Web.Script.Serialization.JavaScriptSerializer>です。  
+  
+ 両方を適用することも<xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>と<xref:System.Xml.Serialization.XmlIgnoreAttribute>プロパティまたはフィールドにします。 この場合、プロパティまたはフィールドでは JSON および XML の形式の応答無視されます。  
+  
+ 属性を使用する方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、適用<xref:System.Web.Script.Serialization.ScriptIgnoreAttribute>を`Comment`フィールドという名前のカスタム クラスに`Group`です。 これにより、指示<xref:System.Web.Script.Serialization.JavaScriptSerializer>を JSON 形式にクラスのインスタンスをシリアル化するときに、フィールドを無視します。  
+  
+ [!code-csharp[System.Web.Script.Serialization.ScriptIgnoreAttribute#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.Script.Serialization.ScriptIgnoreAttribute/CS/App_Code/ScriptIgnoreSample.cs#1)]
+ [!code-vb[System.Web.Script.Serialization.ScriptIgnoreAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.Script.Serialization.ScriptIgnoreAttribute/VB/App_Code/ScriptIgnoreSample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptIgnoreAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Script.Serialization.ScriptIgnoreAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Script.Serialization.ScriptIgnoreAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyToOverrides">
+      <MemberSignature Language="C#" Value="public bool ApplyToOverrides { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ApplyToOverrides" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Script.Serialization.ScriptIgnoreAttribute.ApplyToOverrides" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を上書きするかどうか、<see cref="T:System.Web.Script.Serialization.ScriptIgnoreAttribute" />できるように、<see cref="T:System.Web.Script.Serialization.JavaScriptSerializer" />パブリック プロパティまたはパブリック フィールドのシリアル化を検討してください。</summary>
+        <value>
+          <see langword="true" />オーバーライドする、 <see cref="T:System.Web.Script.Serialization.ScriptIgnoreAttribute" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

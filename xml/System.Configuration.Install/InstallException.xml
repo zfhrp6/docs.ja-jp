@@ -1,0 +1,144 @@
+<Type Name="InstallException" FullName="System.Configuration.Install.InstallException">
+  <TypeSignature Language="C#" Value="public class InstallException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit InstallException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.InstallException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インストールのコミット、ロールバック、またはアンインストールの各フェーズでエラーが発生したときにスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、プラスの例で、<xref:System.Configuration.Install.InstallException.%23ctor%2A>コンス トラクターは、独自のインストーラーを持つアセンブリを示す例を構成します。 インストーラーが名前付き`MyInstaller`、属性を持つ`RunInstallerAttribute`、インストーラーによって呼び出されることを示す[Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)です。 [Installutil.exe (インストーラー ツール)](~/docs/framework/tools/installutil-exe-installer-tool.md)メソッドを呼び出して、 <xref:System.Configuration.Install.Installer.Commit%2A>、 <xref:System.Configuration.Install.Installer.Rollback%2A>、<xref:System.Configuration.Install.Installer.Install%2A>と<xref:System.Configuration.Install.Installer.Uninstall%2A>です。 内のコード<xref:System.Configuration.Install.Installer.Commit%2A>という名前のファイルを前提`FileDoesNotExist.txt`アセンブリのインストールをコミットする前に存在します。 場合、ファイル`FileDoesNotExist.txt`が存在しない<xref:System.Configuration.Install.Installer.Commit%2A>を生成、<xref:System.Configuration.Install.InstallException>です。 場合は、同じ<xref:System.Configuration.Install.Installer.Uninstall%2A>がアンインストールされる場合にのみ起こりますという名前のファイルで`FileDoesNotExist.txt`が存在します。 それ以外の場合を発生させる、<xref:System.Configuration.Install.InstallException>です。 <xref:System.Configuration.Install.Installer.Rollback%2A>コードを実行すると、例外が発生する可能性があります。 キャッチ、例外が発生した場合、<xref:System.Configuration.Install.InstallException>それに渡される、その例外が発生します。  
+  
+> [!NOTE]
+>  Installutil.exe のヘルプで次の例を実行します。 コマンド プロンプトで入力します。  
+  
+ `Installutil InstallException.exe`  
+  
+ または  
+  
+ `Installutil /u InstallException.exe`  
+  
+ [!code-cpp[InstallException#1](~/samples/snippets/cpp/VS_Snippets_CLR/InstallException/CPP/installexception.cpp#1)]
+ [!code-csharp[InstallException#1](~/samples/snippets/csharp/VS_Snippets_CLR/InstallException/CS/installexception.cs#1)]
+ [!code-vb[InstallException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallException/VB/installexception.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Install.InstallException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallException.%23ctor%2A>コンス トラクターです。 例の一部では、<xref:System.Configuration.Install.InstallException>クラスです。  
+  
+ Installutil.exe を呼び出して、この例では、<xref:System.Configuration.Install.Installer.Commit%2A>メソッドです。 内のコード<xref:System.Configuration.Install.Installer.Commit%2A>という名前のファイルを前提`FileDoesNotExist.txt`アセンブリのインストールをコミットする前に存在します。 場合、ファイル`FileDoesNotExist.txt`が存在しない<xref:System.Configuration.Install.Installer.Commit%2A>を生成、<xref:System.Configuration.Install.InstallException>です。  
+  
+> [!NOTE]
+>  この例では、いずれかのオーバー ロードされたバージョンを使用して、<xref:System.Configuration.Install.InstallException>コンス トラクターです。 使用可能な可能性のあるその他の例は、個々 のオーバー ロードのトピックを参照してください。  
+  
+ [!code-cpp[InstallException#2](~/samples/snippets/cpp/VS_Snippets_CLR/InstallException/CPP/installexception.cpp#2)]
+ [!code-csharp[InstallException#2](~/samples/snippets/csharp/VS_Snippets_CLR/InstallException/CS/installexception.cs#2)]
+ [!code-vb[InstallException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallException/VB/installexception.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">ユーザーに表示するメッセージ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.InstallException" />クラス、およびユーザーに表示するメッセージを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.InstallException.%23ctor%2A>コンス トラクターです。 例の一部では、<xref:System.Configuration.Install.InstallException>クラスです。  
+  
+ Installutil.exe を呼び出して、この例では、<xref:System.Configuration.Install.Installer.Uninstall%2A>メソッドです。 アンインストールは、という名前のファイルの場合にのみ起こります`FileDoesNotExist.txt`が存在します。 それ以外の場合を発生させる、<xref:System.Configuration.Install.InstallException>です。  
+  
+> [!NOTE]
+>  この例では、いずれかのオーバー ロードされたバージョンを使用して、<xref:System.Configuration.Install.InstallException>コンス トラクターです。 使用可能な可能性のあるその他の例は、個々 のオーバー ロードのトピックを参照してください。  
+  
+ [!code-cpp[InstallException#4](~/samples/snippets/cpp/VS_Snippets_CLR/InstallException/CPP/installexception.cpp#4)]
+ [!code-csharp[InstallException#4](~/samples/snippets/csharp/VS_Snippets_CLR/InstallException/CS/installexception.cs#4)]
+ [!code-vb[InstallException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/InstallException/VB/installexception.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected InstallException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.Configuration.Install.InstallException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public InstallException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.InstallException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">ユーザーに表示するメッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.InstallException" />クラス、および、ユーザーおよびこの例外の原因となった内部例外への参照を表示するメッセージを指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

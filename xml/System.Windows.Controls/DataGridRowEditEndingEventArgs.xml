@@ -1,0 +1,94 @@
+<Type Name="DataGridRowEditEndingEventArgs" FullName="System.Windows.Controls.DataGridRowEditEndingEventArgs">
+  <TypeSignature Language="C#" Value="public class DataGridRowEditEndingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridRowEditEndingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DataGridRowEditEndingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Controls.DataGrid.RowEditEnding" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridRowEditEndingEventArgs (System.Windows.Controls.DataGridRow row, System.Windows.Controls.DataGridEditAction editAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Controls.DataGridRow row, valuetype System.Windows.Controls.DataGridEditAction editAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DataGridRowEditEndingEventArgs.#ctor(System.Windows.Controls.DataGridRow,System.Windows.Controls.DataGridEditAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="row" Type="System.Windows.Controls.DataGridRow" />
+        <Parameter Name="editAction" Type="System.Windows.Controls.DataGridEditAction" />
+      </Parameters>
+      <Docs>
+        <param name="row">イベントが発生した行。</param>
+        <param name="editAction">編集がキャンセルまたはコミットするかどうかを示す値。</param>
+        <summary><see cref="T:System.Windows.Controls.DataGridRowEditEndingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public bool Cancel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cancel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridRowEditEndingEventArgs.Cancel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントを取り消す必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />イベントをキャンセルする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditAction">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridEditAction EditAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.DataGridEditAction EditAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridRowEditEndingEventArgs.EditAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridEditAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集がキャンセルまたはコミットするかどうかを示す値を取得します。</summary>
+        <value>編集がキャンセルまたはコミットするかどうかを示す値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataGridRow Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataGridRow Row" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DataGridRowEditEndingEventArgs.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataGridRow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した行を取得します。</summary>
+        <value>イベントが発生した行。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

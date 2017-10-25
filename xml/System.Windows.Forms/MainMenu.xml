@@ -1,0 +1,390 @@
+<Type Name="MainMenu" FullName="System.Windows.Forms.MainMenu">
+  <TypeSignature Language="C#" Value="public class MainMenu : System.Windows.Forms.Menu" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MainMenu extends System.Windows.Forms.Menu" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MainMenu" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.Menu</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms.MainMenu")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォームのメニュー構造を表します。 <see cref="T:System.Windows.Forms.MenuStrip" />置換し、する機能を追加、<see cref="T:System.Windows.Forms.MainMenu" />以前のバージョンでのコントロール<see cref="T:System.Windows.Forms.MainMenu" />を選択した場合に、旧バージョンとの互換性と将来の使用の両方の保持されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MainMenu>コントロールがフォームのメニュー構造のコンテナーを表します。 メニューから成るは<xref:System.Windows.Forms.MenuItem>メニュー構造内の個々 のメニュー コマンドを表すオブジェクト。 各<xref:System.Windows.Forms.MenuItem>アプリケーションのコマンドやその他のサブメニュー項目の親メニューにすることができます。 バインドする、<xref:System.Windows.Forms.MainMenu>を<xref:System.Windows.Forms.Form>表示、割り当てることは、<xref:System.Windows.Forms.MainMenu>を<xref:System.Windows.Forms.Form.Menu%2A>のプロパティ、<xref:System.Windows.Forms.Form>です。  
+  
+ 複数の言語をサポートしているアプリケーション、使用することができます、<xref:System.Windows.Forms.MainMenu.RightToLeft%2A>右から左にアラビア語などの言語をサポートするために、メニューのテキストを表示するプロパティです。  
+  
+ さまざまな作成<xref:System.Windows.Forms.MainMenu>フォームの別のメニュー構造を表すオブジェクト。 内に特定のメニュー構造を再利用するかどうかは<xref:System.Windows.Forms.MainMenu>、使用することができます、<xref:System.Windows.Forms.MainMenu.CloneMenu%2A>コピーを作成する方法です。 メニュー構造のコピーを作成したら、新しいメニュー構造の適切な変更をすることができます。  
+  
+> [!NOTE]
+>  メニュー項目をデザイナー内の別の 1 つのフォームから可能性がありますいないは期待どおりに貼り付けるフォームに定義されたメニュー項目がないかどうかを切り取ってです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.MainMenu>、2 つ割り当てます<xref:System.Windows.Forms.MenuItem>オブジェクトを<xref:System.Windows.Forms.MainMenu>され、フォームにバインドします。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>作成されたという`Form1`です。  
+  
+ [!code-cpp[Classic MainMenu.MainMenu Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.MainMenu Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.MainMenu Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MainMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MainMenu" />メニュー項目を指定したなしのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このバージョンのコンス トラクターを作成、<xref:System.Windows.Forms.MainMenu>指定なし<xref:System.Windows.Forms.MenuItem>オブジェクト。 コントロールへのメニュー項目の配列を受け入れるこのコンス トラクターの他のバージョンを使用して追加する<xref:System.Windows.Forms.MenuItem>オブジェクトを使用してそのパラメーターとして、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.MainMenu>、2 つ割り当てます<xref:System.Windows.Forms.MenuItem>オブジェクトを<xref:System.Windows.Forms.MainMenu>され、フォームにバインドします。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>作成されたという`Form1`です。  
+  
+ [!code-cpp[Classic MainMenu.MainMenu Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.MainMenu Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.MainMenu Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.MainMenu Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MainMenu (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />のコンテナーを表す、<see cref="T:System.Windows.Forms.MainMenu" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.MainMenu" />指定したコンテナー クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MainMenu (System.Windows.Forms.MenuItem[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.MenuItem[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.#ctor(System.Windows.Forms.MenuItem[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Windows.Forms.MenuItem[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">配列<see cref="T:System.Windows.Forms.MenuItem" />に追加されるオブジェクト、<see cref="T:System.Windows.Forms.MainMenu" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.MainMenu" /> 、指定された一連の<see cref="T:System.Windows.Forms.MenuItem" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列を割り当ててこのコンス トラクターを使用することができます<xref:System.Windows.Forms.MenuItem>オブジェクトを<xref:System.Windows.Forms.MainMenu>は、作成時にします。 後に、<xref:System.Windows.Forms.MainMenu>が作成された追加を追加する<xref:System.Windows.Forms.MenuItem>オブジェクトを<xref:System.Windows.Forms.MainMenu>を使用して、<xref:System.Windows.Forms.Menu.MenuItemCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.Menu.MenuItems%2A>プロパティ。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Windows.Forms.MainMenu>、2 つの割り当てと<xref:System.Windows.Forms.MenuItem>オブジェクトを<xref:System.Windows.Forms.MainMenu>コンス トラクターのこのバージョンを使用します。 例では、バインド、<xref:System.Windows.Forms.MainMenu>を<xref:System.Windows.Forms.Form>です。 この例では、ある必要があります、<xref:System.Windows.Forms.Form>作成されたという`Form1`です。  
+  
+ [!code-cpp[Classic MainMenu.MainMenu1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.MainMenu1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.MainMenu1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.MainMenu1 Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.MainMenu1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.MainMenu1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneMenu">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.MainMenu CloneMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Forms.MainMenu CloneMenu() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.CloneMenu" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MainMenu</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:System.Windows.Forms.MainMenu" />、現在の複製である<see cref="T:System.Windows.Forms.MainMenu" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.MainMenu" />複製されたメニューを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用してに格納されているメニュー構造のコピーを作成することができます、<xref:System.Windows.Forms.MainMenu>です。 このメソッドを使用してに格納されているメニュー構造を再利用することができます、<xref:System.Windows.Forms.MainMenu>新しいの基盤として<xref:System.Windows.Forms.MainMenu>です。 などのメニュー構造を作成する場合を含む既存のメニュー項目が同じ<xref:System.Windows.Forms.MainMenu>追加必要がありますが、<xref:System.Windows.Forms.MenuItem>オブジェクトに追加し、使用することができます、 <xref:System.Windows.Forms.MainMenu.CloneMenu%2A> 、元のコピーを作成するメソッド<xref:System.Windows.Forms.MainMenu>し、追加、新しい<xref:System.Windows.Forms.MenuItem>、複製されたオブジェクト<xref:System.Windows.Forms.MainMenu>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MainMenu.GetForm%2A>メソッドかどうかを<xref:System.Windows.Forms.MainMenu>をフォームには、現在の親です。 場合は、呼び出しの例のコードを<xref:System.Windows.Forms.MainMenu.GetForm%2A>返さない`null`、コード クローンのメニュー構造を作成し、<xref:System.Windows.Forms.MainMenu>を使用して、<xref:System.Windows.Forms.MainMenu.CloneMenu%2A>メソッドです。 コードを設定し、<xref:System.Windows.Forms.MainMenu.RightToLeft%2A>プロパティの新しいコピーは true を<xref:System.Windows.Forms.MainMenu>を作成する、<xref:System.Windows.Forms.MainMenu>右左のテキストからをサポートする言語を使用できます。 この例では、ある必要があります、<xref:System.Windows.Forms.MainMenu>作成されたという`mainMenu1`です。  
+  
+ [!code-cpp[Classic MainMenu.GetForm Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.GetForm Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.GetForm Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapse">
+      <MemberSignature Language="C#" Value="public event EventHandler Collapse;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Collapse" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.MainMenu.Collapse" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メイン メニューを折りたたむときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.MainMenu.Collapse>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.MainMenu>という`MainMenu1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.MainMenu.Collapse>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#483](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#483)]
+ [!code-vb[System.Windows.Forms.EventExamples#483](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#483)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateMenuHandle">
+      <MemberSignature Language="C#" Value="protected override IntPtr CreateMenuHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance native int CreateMenuHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.CreateMenuHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メニューへの新しいハンドルを作成します。</summary>
+        <returns>メソッドが正常に実行された場合はメニューへのハンドル。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Windows.Forms.MainMenu" /> によって使用されているリソース (メモリを除く) を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MainMenu.Dispose%2A> を使い終わったら <xref:System.Windows.Forms.MainMenu> を呼び出します。 <xref:System.Windows.Forms.MainMenu.Dispose%2A> メソッドによって、<xref:System.Windows.Forms.MainMenu> は使用不可の状態になります。 呼び出した後<xref:System.Windows.Forms.MainMenu.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.Windows.Forms.MainMenu>が使用していたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.MainMenu.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Windows.Forms.MainMenu> を呼び出してください。 それ以外の場合、リソース、<xref:System.Windows.Forms.MainMenu>を使用しては解放されませんガベージ コレクション呼び出すまで、<xref:System.Windows.Forms.MainMenu>オブジェクトのデストラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetForm">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Form GetForm ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.Form GetForm() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.GetForm" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Form</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.Form" />このコントロールを格納しています。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.Form" />はこのコントロールのコンテナーです。 返します<see langword="null" />場合、<see cref="T:System.Windows.Forms.MainMenu" />フォームで現在ホストされていません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用する場合は、固有の仕様を決定する<xref:System.Windows.Forms.MainMenu>をフォームに親があります。 通常、プロパティは際に使用される複数<xref:System.Windows.Forms.MainMenu>オブジェクトは、フォームで使用されていると、フォームで現在使用されているいずれかを決定する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MainMenu.GetForm%2A>メソッドかどうかを<xref:System.Windows.Forms.MainMenu>をフォームには、現在の親です。 場合は、呼び出しの例のコードを<xref:System.Windows.Forms.MainMenu.GetForm%2A>返さない`null`、コード クローンのメニュー構造を作成し、<xref:System.Windows.Forms.MainMenu>を使用して、<xref:System.Windows.Forms.MainMenu.CloneMenu%2A>メソッドです。 コードを設定し、<xref:System.Windows.Forms.MainMenu.RightToLeft%2A>プロパティの新しいコピーは true を<xref:System.Windows.Forms.MainMenu>を作成する、<xref:System.Windows.Forms.MainMenu>右左のテキストからをサポートする言語を使用できます。 この例では、ある必要があります、<xref:System.Windows.Forms.MainMenu>作成されたという`mainMenu1`です。  
+  
+ [!code-cpp[Classic MainMenu.GetForm Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.GetForm Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.GetForm Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.GetForm Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCollapse">
+      <MemberSignature Language="C#" Value="protected virtual void OnCollapse (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnCollapse(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.OnCollapse(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.MainMenu.Collapse" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.MainMenu.OnCollapse%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.MainMenu.OnCollapse(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.MainMenu.OnCollapse(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public virtual System.Windows.Forms.RightToLeft RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.RightToLeft RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.MainMenu.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AmbientValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.RightToLeft</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがテキストを右から左に表示するかどうかを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.RightToLeft" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、右から左に記述されている言語をサポートするメニューを使用します。 このプロパティに設定するときに`RightToLeft.Yes`、メニュー項目のテキストが右から左から右のメソッドに既定ではなく左に表示されます。  
+  
+> [!NOTE]
+>  右から左への配置を有効にすると、Windows フォーム コントロールにどのように影響する方法の詳細については、次を参照してください。、<xref:System.Windows.Forms.Control.RightToLeft%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.MainMenu.GetForm%2A>メソッドかどうかを<xref:System.Windows.Forms.MainMenu>をフォームには、現在の親です。 場合は、呼び出しの例のコードを<xref:System.Windows.Forms.MainMenu.GetForm%2A>返さない`null`、コード クローンのメニュー構造を作成し、<xref:System.Windows.Forms.MainMenu>を使用して、<xref:System.Windows.Forms.MainMenu.CloneMenu%2A>メソッドです。 コード例を設定し、<xref:System.Windows.Forms.MainMenu.RightToLeft%2A>プロパティを`RightToLeft.Yes`の新しいコピーで、<xref:System.Windows.Forms.MainMenu>を作成する、<xref:System.Windows.Forms.MainMenu>右左のテキストからをサポートする言語を使用できます。 この例では、ある必要があります、<xref:System.Windows.Forms.MainMenu>作成されたという`mainMenu1`です。  
+  
+ [!code-cpp[Classic MainMenu.RightToLeft Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic MainMenu.RightToLeft Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic MainMenu.RightToLeft Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic MainMenu.RightToLeft Example/CS/source.cs#1)]
+ [!code-vb[Classic MainMenu.RightToLeft Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic MainMenu.RightToLeft Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">プロパティに割り当てられた値がの有効なメンバーではない、<see cref="T:System.Windows.Forms.RightToLeft" />列挙します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.MainMenu.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.Forms.MainMenu" />です。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.MainMenu" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値の文字列には、種類とによって返される文字列が含まれている、<xref:System.Windows.Forms.Form.ToString%2A>メソッド場合、<xref:System.Windows.Forms.MainMenu>フォームに割り当てられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

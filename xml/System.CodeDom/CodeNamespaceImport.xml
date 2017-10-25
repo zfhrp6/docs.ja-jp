@@ -1,0 +1,137 @@
+<Type Name="CodeNamespaceImport" FullName="System.CodeDom.CodeNamespaceImport">
+  <TypeSignature Language="C#" Value="public class CodeNamespaceImport : System.CodeDom.CodeObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeNamespaceImport extends System.CodeDom.CodeObject" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeNamespaceImport" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用する名前空間を示す名前空間のインポート ディレクティブを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeNamespaceImport>名前空間のインポート ディレクティブを表すために使用できます。  
+  
+ 多くの言語では、名前空間のインポート ディレクティブは、インポートされた名前空間の型を参照するコードにインポートされた名前空間内の型の可視性をさせます。  
+  
+> [!NOTE]
+>  潜在的なあいまいさを回避するには、型の参照を使用して完全修飾します。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますの使用、<xref:System.CodeDom.CodeNamespaceImport>をインポートする、<xref:System.CodeDom.CodeNamespaceImport>名前空間。  
+  
+ [!code-cpp[CodeNamespaceImportExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeNamespaceImportExample/CPP/codenamespaceimportexample.cpp#2)]
+ [!code-csharp[CodeNamespaceImportExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeNamespaceImportExample/CS/codenamespaceimportexample.cs#2)]
+ [!code-vb[CodeNamespaceImportExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeNamespaceImportExample/VB/codenamespaceimportexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeNamespaceImport ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceImport.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeNamespaceImport" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeNamespaceImport (string nameSpace);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string nameSpace) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeNamespaceImport.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nameSpace" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="nameSpace">インポートする名前空間の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeNamespaceImport" />クラスをインポートする指定された名前空間を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePragma">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeLinePragma LinePragma { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeLinePragma LinePragma" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeNamespaceImport.LinePragma" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeLinePragma</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはステートメントのあるファイルと行を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeLinePragma" />ステートメントのコンテキストを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeNamespaceImport.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインポートする名前空間を設定します。</summary>
+        <value>インポートする名前空間の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

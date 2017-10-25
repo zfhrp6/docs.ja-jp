@@ -1,0 +1,95 @@
+<Type Name="ExcludePathInfo" FullName="System.Web.Services.Discovery.ExcludePathInfo">
+  <TypeSignature Language="C#" Value="public sealed class ExcludePathInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExcludePathInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Discovery.ExcludePathInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サービス探索ドキュメントに追加への参照を検索しないファイル システムのディレクトリ パスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Discovery.ExcludePathInfo>でクラスが採用されている、<xref:System.Web.Services.Discovery.DiscoveryRequestHandler>クラスの<xref:System.Web.Services.Discovery.DiscoveryRequestHandler.ProcessRequest%2A>探索ドキュメントに対する HTTP 要求を処理するメソッド。 <xref:System.Web.Services.Discovery.DynamicDiscoveryDocument>クラスの<xref:System.Web.Services.Discovery.DynamicDiscoveryDocument.ExcludePaths%2A>プロパティのコレクションを格納する<xref:System.Web.Services.Discovery.ExcludePathInfo>インスタンス。  
+  
+ 通常、これらのクラスのいずれも開発者が直接使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExcludePathInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.ExcludePathInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Discovery.ExcludePathInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExcludePathInfo (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Discovery.ExcludePathInfo.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索から除外するパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Services.Discovery.ExcludePathInfo" />クラスし、検索から除外するファイル システム パスを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、`path`パラメーターの戻り値になります、<xref:System.Web.Services.Discovery.ExcludePathInfo.Path%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Discovery.ExcludePathInfo.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("path")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または探索ドキュメントに追加への参照を検索しないファイル システム ディレクトリ パスを設定します。</summary>
+        <value>検索から除外するファイル システム ディレクトリのパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,218 @@
+<Type Name="StandardAccessRights" FullName="System.Messaging.StandardAccessRights">
+  <TypeSignature Language="C#" Value="public enum StandardAccessRights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed StandardAccessRights extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.StandardAccessRights" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ほとんどのセキュリティ保護可能なオブジェクトの種類に共通する操作に対応する標準的なアクセス権のセットを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.StandardAccessRights>クラスは、削除、読み取り、書き込みなどの一般的な操作のアクセス権を提供します。 各メンバーの正確な意味は、適用するオブジェクトの種類に固有です。  
+  
+ <xref:System.Messaging.StandardAccessRights>2 つの列挙値のいずれかが、<xref:System.Messaging.GenericAccessRights>広範な列挙型のマップの読み取り、書き込み、または機能を実行します。 <xref:System.Messaging.StandardAccessRights>により、ほとんどのオブジェクトに一般的な権限を指定するたとえば、オブジェクトを削除するまたはセキュリティ記述子を読み取ってできます。  
+  
+ 両方<xref:System.Messaging.StandardAccessRights>と<xref:System.Messaging.MessageQueueAccessRights>のキューを削除するメンバーを提供します。 アプリケーションのニーズは、使用するフラグのセットを定義します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights All = int32(2031616)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結合<see langword="Delete" />、 <see langword="ReadSecurity" />、 <see langword="WriteSecurity" />、 <see langword="ModifyOwner" />、および<see langword="Synchronize" />アクセスします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Delete = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを削除する権限。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="Execute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Execute = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Execute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのセキュリティ記述子の情報を読み取る権限。 Windows 2000 および Windows NT では、セキュリティ記述子には、セキュリティ保護可能なオブジェクトのセキュリティ情報が含まれています。 オブジェクトの所有者、プライマリ グループを識別します。 <see langword="Execute" />同じに現在定義されている<see langword="ReadSecurity" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ModifyOwner">
+      <MemberSignature Language="C#" Value="ModifyOwner" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights ModifyOwner = int32(524288)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.ModifyOwner" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのセキュリティ記述子に所有者を変更する権限。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Read = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのセキュリティ記述子の情報を読み取る権限。 <see langword="Read" />同じに現在定義されている<see langword="ReadSecurity" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSecurity">
+      <MemberSignature Language="C#" Value="ReadSecurity" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights ReadSecurity = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.ReadSecurity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのセキュリティ記述子の情報を読み取る権限。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Required">
+      <MemberSignature Language="C#" Value="Required" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Required = int32(851968)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Required" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結合<see langword="Delete" />、 <see langword="ReadSecurity" />、 <see langword="WriteSecurity" />、および<see langword="ModifyOwner" />アクセスします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronize">
+      <MemberSignature Language="C#" Value="Synchronize" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Synchronize = int32(1048576)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Synchronize" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期のオブジェクトを使用する権限。 これにより、スレッドは、オブジェクトが特定の状態になるまで待機します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="Write" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights Write = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.Write" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトのセキュリティ記述子の情報を読み取る権限。 <see langword="Write" />同じに現在定義されている<see langword="ReadSecurity" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSecurity">
+      <MemberSignature Language="C#" Value="WriteSecurity" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.StandardAccessRights WriteSecurity = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.StandardAccessRights.WriteSecurity" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.StandardAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ記述子の随意アクセス制御リスト (DACL) を変更する権限。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DACL は、オブジェクトへのアクセスを制御します。 DACL に書き込むことができます、ユーザー オブジェクトのセキュリティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

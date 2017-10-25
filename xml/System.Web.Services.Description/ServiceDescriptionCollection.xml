@@ -1,0 +1,533 @@
+<Type Name="ServiceDescriptionCollection" FullName="System.Web.Services.Description.ServiceDescriptionCollection">
+  <TypeSignature Language="C#" Value="public sealed class ServiceDescriptionCollection : System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceDescriptionCollection extends System.Web.Services.Description.ServiceDescriptionBaseCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.ServiceDescriptionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionBaseCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのコレクションを表す、<see cref="T:System.Web.Services.Description.ServiceDescription" />クラスです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection/CPP/servicedescriptioncollection.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection/CS/servicedescriptioncollection.cs#1)]
+ [!code-vb[ServiceDescriptionCollection#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection/VB/servicedescriptioncollection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceDescriptionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Constructor_Add_Item#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CPP/sdcollection_constructor_add_item.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_Constructor_Add_Item#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CS/servicedescriptioncollection_constructor_add_item.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_Constructor_Add_Item#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/VB/servicedescriptioncollection_constructor_add_item.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.Add(System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription">コレクションに追加する <see cref="T:System.Web.Services.Description.ServiceDescription" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.ServiceDescription" />の末尾に、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />です。</summary>
+        <returns>0 から始まるインデックス位置、<see cref="T:System.Web.Services.Description.ServiceDescription" />パラメーターが追加されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Constructor_Add_Item#2](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CPP/sdcollection_constructor_add_item.cpp#2)]
+ [!code-csharp[ServiceDescriptionCollection_Constructor_Add_Item#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CS/servicedescriptioncollection_constructor_add_item.cs#2)]
+ [!code-vb[ServiceDescriptionCollection_Constructor_Add_Item#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/VB/servicedescriptioncollection_constructor_add_item.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.Contains(System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription"><see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションのメンバーシップをチェックします。</param>
+        <summary>示す値を返すかどうか、指定した<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションのメンバーであります。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="serviceDescription" />パラメーターのメンバーである、 <see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionCollection_Contains_IndexOf_Remove#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/CS/servicedescriptioncollection_contains_indexof_remove.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_Contains_IndexOf_Remove#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/VB/servicedescriptioncollection_contains_indexof_remove.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Web.Services.Description.ServiceDescription[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Web.Services.Description.ServiceDescription[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.CopyTo(System.Web.Services.Description.ServiceDescription[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Web.Services.Description.ServiceDescription[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">型の配列<see cref="T:System.Web.Services.Description.ServiceDescription" />コピー操作のコピー先として機能します。</param>
+        <param name="index">コピーされたコレクションの配置を開始する位置を示す 0 から始まるインデックス。</param>
+        <summary>全体をコピー<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />型の 1 次元配列に<see cref="T:System.Web.Services.Description.ServiceDescription" />対象となる配列の指定した 0 から始まるインデックスで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Insert_Item_CopyTo#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CPP/sdcollection_insert_item_copyto.cpp#3)]
+ [!code-csharp[ServiceDescriptionCollection_Insert_Item_CopyTo#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CS/servicedescriptioncollection_insert_item_copyto.cs#3)]
+ [!code-vb[ServiceDescriptionCollection_Insert_Item_CopyTo#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/VB/servicedescriptioncollection_insert_item_copyto.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Binding GetBinding (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.Binding GetBinding(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.GetBinding(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Binding</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.XmlQualifiedName" />が<see cref="P:System.Xml.XmlQualifiedName.Name" />プロパティが取得に使用される、<see cref="T:System.Web.Services.Description.Binding" />インスタンス。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を返します、 <see cref="T:System.Web.Services.Description.Binding" /> 、指定されたメンバーに名前は、いずれかの<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションに含まれているインスタンス。</summary>
+        <returns>指定した名前にバインドします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_GetBinding#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetBinding/CPP/servicedescriptioncollection_getbinding.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_GetBinding#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetBinding/CS/servicedescriptioncollection_getbinding.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_GetBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_GetBinding/VB/servicedescriptioncollection_getbinding.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した<see langword="Binding" />いずれかのメンバーではない<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクション内のインスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="protected override string GetKey (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetKey(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.GetKey(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMessage">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Message GetMessage (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.Message GetMessage(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.GetMessage(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Message</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.XmlQualifiedName" />によって渡された、参照する場合に、ある<see cref="P:System.Xml.XmlQualifiedName.Name" />で共有されるプロパティは、<see cref="T:System.Web.Services.Description.Message" />が返されます。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を返します、 <see cref="T:System.Web.Services.Description.Message" /> 、指定されたメンバーに名前は、いずれかの<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションに含まれているインスタンス。</summary>
+        <returns>指定した名前付きメッセージです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_GetMessage#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetMessage/CPP/servicedescriptioncollection_getmessage.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_GetMessage#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetMessage/CS/servicedescriptioncollection_getmessage.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_GetMessage#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_GetMessage/VB/servicedescriptioncollection_getmessage.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した<see langword="Message" />いずれかのメンバーではない<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクション内のインスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPortType">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.PortType GetPortType (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.PortType GetPortType(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.GetPortType(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.PortType</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.XmlQualifiedName" />によって渡された、参照する場合に、ある<see cref="P:System.Xml.XmlQualifiedName.Name" />で共有されるプロパティは、<see cref="T:System.Web.Services.Description.PortType" />が返されます。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を返します、 <see cref="T:System.Web.Services.Description.PortType" /> 、指定されたメンバーに名前は、いずれかの<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションに含まれているインスタンス。</summary>
+        <returns>指定された名前の <see langword="PortType" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_GetPortType#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetPortType/CPP/servicedescriptioncollection_getporttype.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_GetPortType#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetPortType/CS/servicedescriptioncollection_getporttype.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_GetPortType#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_GetPortType/VB/servicedescriptioncollection_getporttype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した<see langword="PortType" />いずれかのメンバーではない<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクション内のインスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.Service GetService (System.Xml.XmlQualifiedName name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Services.Description.Service GetService(class System.Xml.XmlQualifiedName name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.GetService(System.Xml.XmlQualifiedName)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.Service</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.Xml.XmlQualifiedName" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see cref="T:System.Xml.XmlQualifiedName" />によって渡された、参照する場合に、ある<see cref="P:System.Xml.XmlQualifiedName.Name" />で共有されるプロパティは、<see cref="T:System.Web.Services.Description.Service" />が返されます。</param>
+        <summary>検索、<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />を返します、 <see cref="T:System.Web.Services.Description.Service" /> 、指定されたメンバーに名前は、いずれかの<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクションに含まれているインスタンス。</summary>
+        <returns>指定した名前のサービスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_GetService#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetService/CPP/servicedescriptioncollection_getservice.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_GetService#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_GetService/CS/servicedescriptioncollection_getservice.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_GetService#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_GetService/VB/servicedescriptioncollection_getservice.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定した<see langword="Service" />いずれかのメンバーではない<see cref="T:System.Web.Services.Description.ServiceDescription" />コレクション内のインスタンス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.IndexOf(System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription"><see cref="T:System.Web.Services.Description.ServiceDescription" />コレクション内で検索します。</param>
+        <summary>指定された検索<see cref="T:System.Web.Services.Description.ServiceDescription" />し、コレクション内で最初に見つかった位置の 0 から始まるインデックスを返します。</summary>
+        <returns>指定されたサービスの説明、またはコレクションに要素が見つからなかった場合は-1 の 0 から始まるインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionCollection_Contains_IndexOf_Remove#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/CS/servicedescriptioncollection_contains_indexof_remove.cs#2)]
+ [!code-vb[ServiceDescriptionCollection_Contains_IndexOf_Remove#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/VB/servicedescriptioncollection_contains_indexof_remove.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.Insert(System.Int32,System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="index">挿入する位置の 0 から始まるインデックス、 <c>serviceDescription</c>パラメーター。</param>
+        <param name="serviceDescription">コレクションに追加する <see cref="T:System.Web.Services.Description.ServiceDescription" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.Services.Description.ServiceDescription" />インスタンスを<see cref="T:System.Web.Services.Description.ServiceDescriptionCollection" />指定した 0 から始まるインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にコレクション内の項目の数が等しい場合、コレクションの容量は、新しい要素が挿入される前に、内部の配列を自動的に再割り当てすることによって、容量が倍になります。  
+  
+ 場合、`index`パラメーターと等しい<xref:System.Collections.CollectionBase.Count%2A>、`serviceDescription`パラメーターがの末尾に追加された、<xref:System.Web.Services.Description.ServiceDescriptionCollection>です。  
+  
+ 挿入位置より後に要素が新しい要素のために下に移動します。  
+  
+   
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Insert_Item_CopyTo#1](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CPP/sdcollection_insert_item_copyto.cpp#1)]
+ [!code-csharp[ServiceDescriptionCollection_Insert_Item_CopyTo#1](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CS/servicedescriptioncollection_insert_item_copyto.cs#1)]
+ [!code-vb[ServiceDescriptionCollection_Insert_Item_CopyTo#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/VB/servicedescriptioncollection_insert_item_copyto.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />パラメーターがより大きい<see cref="P:System.Collections.CollectionBase.Count" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.Services.Description.ServiceDescription" />値が変更または返されます。</param>
+        <summary>取得または設定の値、<see cref="T:System.Web.Services.Description.ServiceDescription" />指定した 0 から始まるインデックス位置。</summary>
+        <value>値、<see cref="T:System.Web.Services.Description.ServiceDescription" />指定したインデックス位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Constructor_Add_Item#3](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CPP/sdcollection_constructor_add_item.cpp#3)]
+ [!code-csharp[ServiceDescriptionCollection_Constructor_Add_Item#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/CS/servicedescriptioncollection_constructor_add_item.cs#3)]
+ [!code-vb[ServiceDescriptionCollection_Constructor_Add_Item#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Constructor_Add_Item/VB/servicedescriptioncollection_constructor_add_item.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription this[string ns] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.ServiceDescriptionCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">名前空間、<see cref="T:System.Web.Services.Description.ServiceDescription" />が返されます。</param>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />によって指定されたその<see cref="P:System.Web.Services.Description.ServiceDescription.TargetNamespace" />プロパティです。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.ServiceDescription" />その名前空間のプロパティで指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[ServiceDescriptionCollection_Insert_Item_CopyTo#2](~/samples/snippets/cpp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CPP/sdcollection_insert_item_copyto.cpp#2)]
+ [!code-csharp[ServiceDescriptionCollection_Insert_Item_CopyTo#2](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/CS/servicedescriptioncollection_insert_item_copyto.cs#2)]
+ [!code-vb[ServiceDescriptionCollection_Insert_Item_CopyTo#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Insert_Item_CopyTo/VB/servicedescriptioncollection_insert_item_copyto.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInsertComplete">
+      <MemberSignature Language="C#" Value="protected override void OnInsertComplete (int index, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInsertComplete(int32 index, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.OnInsertComplete(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">To be added.</param>
+        <param name="item">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Services.Description.ServiceDescription serviceDescription);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Services.Description.ServiceDescription serviceDescription) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.Remove(System.Web.Services.Description.ServiceDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceDescription" Type="System.Web.Services.Description.ServiceDescription" />
+      </Parameters>
+      <Docs>
+        <param name="serviceDescription">コレクションから削除する <see cref="T:System.Web.Services.Description.ServiceDescription" />。</param>
+        <summary>コレクションから、最初に出現する指定した <see cref="T:System.Web.Services.Description.ServiceDescription" /> を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、一方向の検索を実行します。したがって、平均実行時間に比例して<xref:System.Collections.CollectionBase.Count%2A>です。  
+  
+ 削除された後にある要素<xref:System.Web.Services.Description.ServiceDescription>繰りを上へ移動します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[ServiceDescriptionCollection_Contains_IndexOf_Remove#3](~/samples/snippets/csharp/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/CS/servicedescriptioncollection_contains_indexof_remove.cs#3)]
+ [!code-vb[ServiceDescriptionCollection_Contains_IndexOf_Remove#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/ServiceDescriptionCollection_Contains_IndexOf_Remove/VB/servicedescriptioncollection_contains_indexof_remove.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetParent">
+      <MemberSignature Language="C#" Value="protected override void SetParent (object value, object parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetParent(object value, object parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.ServiceDescriptionCollection.SetParent(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="parent" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <param name="parent">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

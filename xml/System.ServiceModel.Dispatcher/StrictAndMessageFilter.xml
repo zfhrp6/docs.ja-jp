@@ -1,0 +1,139 @@
+<Type Name="StrictAndMessageFilter" FullName="System.ServiceModel.Dispatcher.StrictAndMessageFilter">
+  <TypeSignature Language="C#" Value="public class StrictAndMessageFilter : System.ServiceModel.Dispatcher.MessageFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit StrictAndMessageFilter extends System.ServiceModel.Dispatcher.MessageFilter" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Dispatcher.StrictAndMessageFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Dispatcher.MessageFilter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定した両方の <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクトの条件をメッセージが満たすかどうかをテストするクエリを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィルターで行われる照合では、常に両方の <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトが評価されてから結果が返されます。  
+  
+ 最初に評価される <xref:System.ServiceModel.Dispatcher.MessageFilter> が false を返す場合、この AND 演算はショート サーキットを行いません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StrictAndMessageFilter (System.ServiceModel.Dispatcher.MessageFilter filter1, System.ServiceModel.Dispatcher.MessageFilter filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Dispatcher.MessageFilter filter1, class System.ServiceModel.Dispatcher.MessageFilter filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.StrictAndMessageFilter.#ctor(System.ServiceModel.Dispatcher.MessageFilter,System.ServiceModel.Dispatcher.MessageFilter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+        <Parameter Name="filter2" Type="System.ServiceModel.Dispatcher.MessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">最初の <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクト。</param>
+        <param name="filter2">2 番目の <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクト。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.ServiceModel.Dispatcher.StrictAndMessageFilter" />クラス<see cref="T:System.ServiceModel.Dispatcher.MessageFilter" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFilterTable&lt;TFilterData&gt;">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt; CreateFilterTable&lt;TFilterData&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.ServiceModel.Dispatcher.IMessageFilterTable`1&lt;!!TFilterData&gt; CreateFilterTable&lt;TFilterData&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.StrictAndMessageFilter.CreateFilterTable``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Dispatcher.IMessageFilterTable&lt;TFilterData&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TFilterData" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="TFilterData">フィルターに関連付けられているデータの型。</typeparam>
+        <summary>新しい <see cref="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" /> を作成します。</summary>
+        <returns>新しく作成した <see cref="T:System.ServiceModel.Dispatcher.IMessageFilterTable`1" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Match">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メッセージまたはバッファー内のメッセージが、フィルターに一致するかどうかをテストします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一致条件についてテストする場合、両方の <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトが評価されてから結果が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.StrictAndMessageFilter.Match(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">テスト対象の <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>メッセージが、このフィルターに指定されている両方の <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクトと一致するかどうかをテストします。</summary>
+        <returns>**true**バッファーに格納されているメッセージには、両方のメッセージ フィルターが一致する場合は、それ以外の場合、 **false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Match">
+      <MemberSignature Language="C#" Value="public override bool Match (System.ServiceModel.Channels.MessageBuffer buffer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Match(class System.ServiceModel.Channels.MessageBuffer buffer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Dispatcher.StrictAndMessageFilter.Match(System.ServiceModel.Channels.MessageBuffer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Routing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.ServiceModel.Channels.MessageBuffer" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">テスト対象の <see cref="T:System.ServiceModel.Channels.MessageBuffer" />。</param>
+        <summary>バッファー内のメッセージが、このフィルターに指定されている両方の <see cref="T:System.ServiceModel.Dispatcher.MessageFilter" /> オブジェクトと一致するかどうかをテストします。</summary>
+        <returns>**true**バッファーに格納されているメッセージには、両方のメッセージ フィルターが一致する場合は、それ以外の場合、 **false**です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一致条件についてテストする場合、両方の <xref:System.ServiceModel.Dispatcher.MessageFilter> オブジェクトが評価されてから結果が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

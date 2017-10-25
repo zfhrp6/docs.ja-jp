@@ -1,0 +1,170 @@
+<Type Name="MsmqMessageProperty" FullName="System.ServiceModel.Channels.MsmqMessageProperty">
+  <TypeSignature Language="C#" Value="public sealed class MsmqMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqMessageProperty extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MsmqMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.Channels.MsmqMessageProperty" /> クラスは、キューから読み取ったメッセージのプロパティをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MsmqMessageProperty> クラスは、チャネル コンテキストから取得され、主としてエラー処理に使用されます。 たとえば、アプリケーションでは、配信不能キューからメッセージを読み取る場合、<xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> や <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A> などのプロパティを検査する必要があります。 アプリケーションで独自の有害メッセージ処理を実行する場合は、<xref:System.ServiceModel.Channels.MsmqMessageProperty.AbortCount%2A> などのプロパティを検査する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbortCount">
+      <MemberSignature Language="C#" Value="public int AbortCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AbortCount" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqMessageProperty.AbortCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>中止されたトランザクションにメッセージが参加した回数を示す <see cref="T:System.Int32" /> 値を取得します。この値は、つまり、チャネルの試行回数から 1 を引いた値です。</summary>
+        <value>チャネルがこのメッセージの読み取りを試みた回数を示す <see cref="T:System.Int32" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、有害メッセージ処理で使用されます。 有害メッセージ処理の詳細については、次を参照してください。[有害メッセージ処理](~/docs/framework/wcf/feature-details/poison-message-handling.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliveryFailure">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.ServiceModel.Channels.DeliveryFailure&gt; DeliveryFailure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.ServiceModel.Channels.DeliveryFailure&gt; DeliveryFailure" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.ServiceModel.Channels.DeliveryFailure&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの配信が失敗した理由を示す値を、<see cref="T:System.ServiceModel.Channels.DeliveryFailure" /> 列挙体から取得します。</summary>
+        <value>メッセージの配信が失敗した理由を示す <see cref="T:System.ServiceModel.Channels.DeliveryFailure" /> 列挙体の値。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配信不能キューのメッセージを読み取ってメッセージ配信が失敗した原因を調べる場合に、このプロパティを <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus%2A> と一緒に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeliveryStatus">
+      <MemberSignature Language="C#" Value="public Nullable&lt;System.ServiceModel.Channels.DeliveryStatus&gt; DeliveryStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.ServiceModel.Channels.DeliveryStatus&gt; DeliveryStatus" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.ServiceModel.Channels.DeliveryStatus&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの配信ステータスを示す値を、<see cref="T:System.ServiceModel.Channels.DeliveryStatus" /> 列挙体から取得します。</summary>
+        <value>メッセージの配信ステータスを示す <see cref="T:System.ServiceModel.Channels.DeliveryStatus" /> 列挙体の値。 <see langword="null" /> でもかまいません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージの配信ステータスが <xref:System.ServiceModel.Channels.DeliveryStatus.InDoubt> または <xref:System.ServiceModel.Channels.DeliveryStatus.NotDelivered> になっている場合があります。 メッセージが配信されなかったことをメッセージ キュー (MSMQ) が確認できない場合、メッセージの配信ステータスは <xref:System.ServiceModel.Channels.DeliveryStatus.InDoubt> になります。確認できた場合は、配信ステータスは <xref:System.ServiceModel.Channels.DeliveryStatus.NotDelivered> になります。  
+  
+ メッセージが配信されたかどうか不明になるのは、メッセージの有効期限が切れた場合などです。 メッセージ キューは、メッセージの有効期限が切れた後にメッセージがアプリケーションに配信されたかどうかを判断できません。  
+  
+ 配信不能キューのメッセージを読み取ってメッセージ配信が失敗した原因を調べる場合に、このプロパティを <xref:System.ServiceModel.Channels.MsmqMessageProperty.DeliveryFailure%2A> と一緒に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Get">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MsmqMessageProperty Get (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MsmqMessageProperty Get(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MsmqMessageProperty.Get(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MsmqMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">プロパティを取得する <see cref="T:System.ServiceModel.Channels.Message" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MsmqMessageProperty" /> の <see cref="T:System.ServiceModel.Channels.Message" /> を取得します。</summary>
+        <returns>指定した <see cref="T:System.ServiceModel.Channels.MsmqMessageProperty" /> の <see cref="T:System.ServiceModel.Channels.Message" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">値が null、またはメッセージのプロパティ コレクションが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCount">
+      <MemberSignature Language="C#" Value="public int MoveCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MoveCount" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MsmqMessageProperty.MoveCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージがメイン キューからサブキューに、またはその逆に移動した回数を示す <see cref="T:System.Int32" /> 値を取得します。</summary>
+        <value>このメッセージが移動された回数を示す <see cref="T:System.Int32" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public const string Name;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Name" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.MsmqMessageProperty.Name" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列 "MsmqMessageProperty" を含む <see cref="T:System.String" /> を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列 "MsmqMessageProperty" を含む <xref:System.String>。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

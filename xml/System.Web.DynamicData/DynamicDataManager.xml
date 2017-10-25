@@ -1,0 +1,411 @@
+<Type Name="DynamicDataManager" FullName="System.Web.DynamicData.DynamicDataManager">
+  <TypeSignature Language="C#" Value="public class DynamicDataManager : System.Web.UI.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DynamicDataManager extends System.Web.UI.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.DynamicDataManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.DynamicData.Design.DynamicDataManagerDesigner, System.Web.DynamicData.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.DynamicData.DynamicDataManager), "DynamicDataManager.bmp")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.NonVisualControl</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET 動的データをサポートする ASP.NET Web コントロールの動的な動作を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.DynamicData.DynamicDataManager>コントロールでは、次のように、データ バインド コントロール、データ ソースの管理と動的なデータの間でグルーが用意されています。  
+  
+-   適切な列を作成するデータ バインド コントロールのフィールド ジェネレーター設定時に<xref:System.Web.UI.WebControls.GridView.AutoGenerateColumns%2A>に設定されている`true`です。 データ バインド コントロールであることができます、<xref:System.Web.UI.WebControls.GridView>コントロール、<xref:System.Web.UI.WebControls.DetailsView>コントロール、または<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+-   データ ソース コントロールのコンテキストの種類とテーブル名を設定します。 LINQ to SQL のデータ ソース コントロールが<xref:System.Web.UI.WebControls.LinqDataSource>です。 ADO Entity Framework のデータ ソース コントロールが<xref:System.Web.UI.WebControls.EntityDataSource>です。  
+  
+-   セット、<xref:System.Web.DynamicData.IDynamicDataSource.AutoGenerateWhereClause%2A>に`true`場所が存在しない場合、データ ソースの句。  
+  
+-   などの特殊な動的パラメーターを展開<xref:System.Web.DynamicData.DynamicControlParameter>データ ソースを使用できるパラメーターにします。  
+  
+-   場合は、LINQ to SQL<xref:System.Web.DynamicData.DynamicDataManager.AutoLoadForeignKeys%2A>プロパティに設定されている`true`、外部キーを読み込みます。  
+  
+ <xref:System.Web.DynamicData.DynamicDataManager>データ コントロールを動的データ サポートを使用するためのページにコントロールを含める必要があります。 マークアップ、<xref:System.Web.DynamicData.DynamicDataManager>動的なデータを使用するコントロールをサポートするコントロールのマークアップを前にする必要があります。  
+  
+> [!NOTE]
+>  A<xref:System.Web.DynamicData.DynamicDataManager>コントロールは、内側に配置することはできません、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:DynamicDataManager  
+    AutoLoadForeignKeys="True|False"  
+    EnableQueryStringSelection="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+>  
+</asp:DynamicDataManager>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Web.DynamicData.DynamicDataManager>コントロールのインスタンスの動的な動作を有効にする、<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicDataManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataManager/cs/List.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicDataManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataManager/vb/List.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DynamicDataManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoLoadForeignKeys">
+      <MemberSignature Language="C#" Value="public bool AutoLoadForeignKeys { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoLoadForeignKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataManager.AutoLoadForeignKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または LINQ to SQL データ コンテキストの外部キーが自動的に読み込まれるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />外部キーは自動的に読み込まれます。 場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ モデルは、LINQ to SQL に基づいていません、このプロパティは無視されます。 プロパティに設定すると`true`、最初のクエリで読み込まれる関連エンティティになります。 プロパティを設定すると`false`、LINQ to SQL は、要求されると、関連オブジェクトに読み込まれます。 このプロパティは、読み込み最適化にのみ、表示される内容には影響しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientID">
+      <MemberSignature Language="C#" Value="public override string ClientID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClientID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataManager.ClientID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="P:System.Web.UI.Control.ClientID" /> ASP.NET によって生成されるプロパティです。</summary>
+        <value><see cref="P:System.Web.UI.Control.ClientID" /> ASP.NET によって生成されるプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.UI.Control.ClientID%2A>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientIDMode">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ClientIDMode ClientIDMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ClientIDMode ClientIDMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataManager.ClientIDMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ClientIDMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値を生成するために使用されるアルゴリズムを取得、<see cref="P:System.Web.UI.Control.ClientID" />プロパティです。</summary>
+        <value>示す値が、どのように<see cref="P:System.Web.UI.Control.ClientID" />プロパティを生成します。 このプロパティを設定することはできません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataControls">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.DataControlReferenceCollection DataControls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.DataControlReferenceCollection DataControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataManager.DataControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.DataControlReferenceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロール内の参照一覧を取得、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</summary>
+        <value>データ コントロール内の参照一覧、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する動的なデータ ページのテンプレートからのマークアップを示しています、<xref:System.Web.DynamicData.DynamicDataManager.DataControls%2A>プロパティです。  
+  
+```  
+<asp:DynamicDataManager ID="DDM1" runat="server">  
+  <DataControls>  
+    <asp:DataControlReference ControlID="FormView1" />  
+  </DataControls>  
+</asp:DynamicDataManager>  
+  
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">  
+  <ContentTemplate>  
+  
+    <asp:FormView runat="server" ID="FormView1" DataSourceID="DDS">  
+        <!-- Items omitted for clarity. -->  
+    </asp:FormView>  
+  
+  </ContentTemplate>  
+</asp:UpdatePanel>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataManager.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Init" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataManager.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.Load" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterControl">
+      <MemberSignature Language="C#" Value="public void RegisterControl (System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterControl(class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataManager.RegisterControl(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">登録するデータ コントロール。</param>
+        <summary>使用して、コントロールを登録、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールの動的な動作を有効にすることを登録する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例は、登録する方法を示します、<xref:System.Web.UI.WebControls.GridView?displayProperty=nameWithType>内の制御、 `Page_Init` ASP.NET Web ページのメソッドです。  
+  
+ [!code-aspx-csharp[System.Web.DynamicData.DynamicDataManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataManager/cs/List.aspx#1)]
+ [!code-aspx-vb[System.Web.DynamicData.DynamicDataManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.DynamicData.DynamicDataManager/vb/List.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterControl">
+      <MemberSignature Language="C#" Value="public void RegisterControl (System.Web.UI.Control control, bool setSelectionFromUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RegisterControl(class System.Web.UI.Control control, bool setSelectionFromUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.DynamicDataManager.RegisterControl(System.Web.UI.Control,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="setSelectionFromUrl" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="control">登録するデータ コントロール。</param>
+        <param name="setSelectionFromUrl">
+          <see langword="true" />選択した項目の設定に主キーを使用するにはそれ以外の場合、選択した項目は設定されていません。</param>
+        <summary>使用して、コントロールを登録、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールを登録すると、その動的な動作が、します。 場合、`setSelectionFromUrl`パラメーターは`true`おり、主キーの値がルートの値で主キーを選択した項目を設定するために使用されます。 主キーの値は、要求 URL にクエリ文字列を使用して、通常、ルート上で渡されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.DynamicDataManager.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.DynamicData.DynamicDataManager" />コントロールが表示されます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.DynamicData.DynamicDataManager" />が表示されている場合は<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.DynamicData.DynamicDataManager>表示の実行時コントロールではありません。 プロパティは、デザイナーでデザイン時にのみ使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

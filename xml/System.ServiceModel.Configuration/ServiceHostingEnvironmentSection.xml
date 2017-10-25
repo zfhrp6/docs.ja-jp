@@ -1,0 +1,262 @@
+<Type Name="ServiceHostingEnvironmentSection" FullName="System.ServiceModel.Configuration.ServiceHostingEnvironmentSection">
+  <TypeSignature Language="C#" Value="public sealed class ServiceHostingEnvironmentSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceHostingEnvironmentSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>環境をホストするサービスがインスタンス化する特定のトランスポートの型を定義する、構成セクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセクションが空の場合は、既定の型が使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceHostingEnvironmentSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AspNetCompatibilityEnabled">
+      <MemberSignature Language="C#" Value="public bool AspNetCompatibilityEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AspNetCompatibilityEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.AspNetCompatibilityEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("aspNetCompatibilityEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET の互換モードが現在のアプリケーションに対して有効かどうかを指定するブール値を取得または設定します。</summary>
+        <value>
+          ASP.NET の互換モードが現在のアプリケーションに対して有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが `true` に設定されている場合、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスに対する要求は ASP.NET HTTP パイプラインを通過し、HTTP プロトコル以外を介した通信は禁止されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseAddressPrefixFilters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.BaseAddressPrefixFilterElementCollection BaseAddressPrefixFilters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.BaseAddressPrefixFilterElementCollection BaseAddressPrefixFilters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.BaseAddressPrefixFilters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("baseAddressPrefixFilters", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.BaseAddressPrefixFilterElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス ホストによって使用されるベース アドレスのプレフィックス フィルターを指定する構成要素のコレクションを取得します。</summary>
+        <value>サービス ホストによって使用されるベース アドレスのプレフィックスを指定する構成要素のコレクションをフィルター処理します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloseIdleServicesAtLowMemory">
+      <MemberSignature Language="C#" Value="public bool CloseIdleServicesAtLowMemory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CloseIdleServicesAtLowMemory" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.CloseIdleServicesAtLowMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("closeIdleServicesAtLowMemory", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか<see cref="T:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection" />メモリ不足でアイドル状態のサービスを閉じます。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection" />でメモリ不足です。 アイドル状態のサービスを閉じる場合は、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinFreeMemoryPercentageToActivateService">
+      <MemberSignature Language="C#" Value="public int MinFreeMemoryPercentageToActivateService { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinFreeMemoryPercentageToActivateService" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.MinFreeMemoryPercentageToActivateService" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minFreeMemoryPercentageToActivateService", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=99, MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスをアクティブにするために、システムに必要な最小限の空きメモリの容量を指定する整数を取得または設定します。</summary>
+        <value>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスをアクティブにする前に、システムに必要な最小限の空きメモリの容量を指定する整数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipleSiteBindingsEnabled">
+      <MemberSignature Language="C#" Value="public bool MultipleSiteBindingsEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MultipleSiteBindingsEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.MultipleSiteBindingsEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("multipleSiteBindingsEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサイトごとに複数の IIS バインディングが有効になっているかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />サイトごとに複数の IIS バインディングは、有効な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ IIS は、仮想ディレクトリを含む仮想アプリケーションのコンテナーとしての Web サイトで構成されています。 サイト内のアプリケーションに、1 つ以上の IIS バインディングからアクセスできます。 IIS バインディングは、バインディング プロトコルとバインディング情報という 2 つの情報を提供します。 バインディング プロトコルは通信を行うスキームを定義するもので、バインディング情報はサイトにアクセスするために使用する情報です。 バインディング プロトコルの例には HTTP があり、一方、バインディング情報には IP アドレス、ポート、ホスト ヘッダーなどを含めることができます。  
+  
+ IIS ではサイトごとに複数の IIS バインディングを指定でき、これによりスキームごとに複数のベース アドレスをサポートできます。 ただし、サイトでホストされている [!INCLUDE[indigo1](~/includes/indigo1-md.md)] サービスでは、1 つのスキームあたり 1 つのみの baseAddress へのバインディングが許可されています。  
+  
+ サイトごとに複数の IIS バインディングを有効にする、[!INCLUDE[indigo1](~/includes/indigo1-md.md)]サービス型で、このプロパティを設定`true`です。 複数のサイト バインディングは HTTP プロトコルに対してのみサポートされています。 構成ファイル内のエンドポイントのアドレスには完全な URI を指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostDeserialize">
+      <MemberSignature Language="C#" Value="protected override void PostDeserialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PostDeserialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.PostDeserialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceActivations">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.ServiceActivationElementCollection ServiceActivations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.ServiceActivationElementCollection ServiceActivations" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.ServiceActivations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("serviceActivations", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.ServiceActivationElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスをアクティブにし、構成ファイルの階層全体でマージできる構成要素のコレクションを取得します。</summary>
+        <value>サービスをアクティブにし、構成ファイルの階層全体でマージできる構成要素のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportConfigurationTypes">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.TransportConfigurationTypeElementCollection TransportConfigurationTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.TransportConfigurationTypeElementCollection TransportConfigurationTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.TransportConfigurationTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", Options=System.Configuration.ConfigurationPropertyOptions.IsDefaultCollection)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.TransportConfigurationTypeElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のトランスポートを実装する型のコレクションを取得します。</summary>
+        <value>特定のトランスポートを実装するすべての型を格納する <see cref="T:System.ServiceModel.Configuration.TransportConfigurationTypeElementCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

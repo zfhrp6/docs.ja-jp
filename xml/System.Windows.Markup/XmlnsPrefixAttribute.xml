@@ -1,0 +1,103 @@
+<Type Name="XmlnsPrefixAttribute" FullName="System.Windows.Markup.XmlnsPrefixAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XmlnsPrefixAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlnsPrefixAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XmlnsPrefixAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XAML ファイルに要素と属性を書き込む (シリアル化する) ときや、XAML 編集機能を持つデザイン環境とやり取りするときに、XAML で使用するために XAML 名前空間に関連付ける推奨プレフィックスを示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML プロセッサまたは、XAML または XAML シリアル化を実行する任意のプロセスを組み込むフレームワークは、一般に推奨されるプレフィックスを優先します。 プレフィックスは、いずれの場合元の XAML ソースに固有のマッピングからプレフィックスがなんらかの理由でランタイム オブジェクト グラフ内に保持されますか、または必要フレームワークまたはテクノロジによって格納されるそれ以外の場合可能性があります。 フレームワークは、独自のアセンブリから推奨されるプレフィックスを無視する、独自の型をシリアル化する方法について特定の設定がある可能性があります。一貫して既定の XAML 名前空間を昇格させるのには、これを行う可能性があります。 ただし、このようなフレームワーク必要があります推奨プレフィックスを提供、XAML 型の可能なサード パーティおよびツール使用時にします。 以下のセクションの「ベスト プラクティスの XAML デザイナーのサポートまたは一般的なシリアル化」を参照してください。  
+  
+ プレフィックスの一般的な推奨事項では、短い文字列を使用するプレフィックスは、通常 XAML 名前空間からのシリアル化されたすべての要素に適用します。 プレフィックス文字列の長さには、シリアル化された XAML 出力のサイズに大きな影響が及ぶことができます。  
+  
+ 要求されているプレフィックスが既に以前発生/シリアル化する他の XAML 名前空間識別子によって使用されている場合、動作は指定されていません (動作は、最大で各個々 の XAML プロセッサの実装です)。  
+  
+ 適用するほとんどの場合、<xref:System.Windows.Markup.XmlnsPrefixAttribute>少なくとも 1 つを適用した場合にのみ<xref:System.Windows.Markup.XmlnsDefinitionAttribute>その同じ XAML 名前空間のアセンブリにします。  
+  
+ .NET Framework の以前のバージョンでは、このクラスは WindowsBase WPF 固有のアセンブリに存在しています。 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.Windows.Markup.XmlnsPrefixAttribute>は System.Xaml アセンブリにします。 詳細については、次を参照してください。 [WPF から System.Xaml に移行した型](~/docs/framework/xaml-services/types-migrated-from-wpf-to-system-xaml.md)です。  
+  
+## <a name="best-practice-for-xaml-designer-support-or-general-serialization"></a>XAML デザイナーのサポートまたは一般的なシリアル化のベスト プラクティス  
+ フレームワークまたはライブラリのほとんどの使用状況の場合、既定の XAML 名前空間に関連付けられた XAML 名前空間を意図している場合でも、空でない文字列を指定することをお勧め XAML 名前空間のプレフィックスとして必要があります。 既定の XAML 名前空間の詳細については、個々 の XAML ファイルと XAML ノード ストリームで実行されます。 既定の XAML 名前空間とどのように特定の XAML ソースで定義されていることができます簡単にする永続的なもののケースのシリアル化を使用せず<xref:System.Windows.Markup.XmlnsPrefixAttribute>です。 ただし、 <xref:System.Windows.Markup.XmlnsPrefixAttribute> XAML 作成者が他のものに既定の XAML 名前空間をマップする選択した場合に便利です。 このシナリオの設計に埋め込まれている XAML テキスト エディターで環境を使用できます<xref:System.Windows.Markup.XmlnsPrefixAttribute>初期の XAML 名前空間のヒントとして`xmlns`マッピングします。 または、デザイン環境がツールボックス アウトし、ビジュアル デザイン画面にオブジェクトをドラッグするなどのデザイン要素のバッキング XAML に・ イン タイムのマッピングを追加できます。 また、考えられるは、デザイナー、XAML の有効化の複数のフレームワークを同時にサポートすることがあり、フレームワーク固有のシリアル化ではなく、.NET Framework XAML サービスに依存する一般的な XAML シリアライザーであることです。 指定する、<xref:System.Windows.Markup.XmlnsPrefixAttribute>これらのシナリオにすることで、XAML の使用方法の型に対する移植性と堅牢な XAML デザイン ツール間で交換されるか、XAML エディターやマークアップ コンパイラやその他のシリアル化などの他のコンシューマーの間のラウンド トリップが加えられた場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlnsPrefixAttribute (string xmlNamespace, string prefix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xmlNamespace, string prefix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XmlnsPrefixAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="prefix" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlNamespace">XAML 名前空間識別子。</param>
+        <param name="prefix">推奨されるプレフィックス文字列。</param>
+        <summary><see cref="T:System.Windows.Markup.XmlnsPrefixAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlNamespace" /> または <paramref name="prefix" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Prefix">
+      <MemberSignature Language="C#" Value="public string Prefix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Prefix" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsPrefixAttribute.Prefix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられているお勧めのプレフィックスを取得します。</summary>
+        <value>推奨されるプレフィックス文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlNamespace">
+      <MemberSignature Language="C#" Value="public string XmlNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XmlnsPrefixAttribute.XmlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に関連付けられた XAML 名前空間識別子を取得します。</summary>
+        <value>XAML 名前空間識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

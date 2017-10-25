@@ -1,0 +1,589 @@
+<Type Name="CustomLabel" FullName="System.Windows.Forms.DataVisualization.Charting.CustomLabel">
+  <TypeSignature Language="C#" Value="public class CustomLabel : System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CustomLabel extends System.Windows.Forms.DataVisualization.Charting.ChartNamedElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataVisualization.Charting.ChartNamedElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>軸のカスタム ラベルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>オブジェクトが格納されている、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection>として公開されるクラス、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.CustomLabels%2A>のプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>クラスです。  
+  
+ 使用してカスタム ラベルが指定されていない限り、最初のラベル行軸のラベルが自動的に生成、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.CustomLabels%2A>プロパティです。 最初のラベル行に沿ってカスタム ラベルを指定すると、全体の最初の行の軸ラベルは自動的には生成されません。  
+  
+ 2 番目のラベル行は、カスタム ラベルのみを使用できます。  
+  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToPosition%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition%2A>プロパティはラベルを適用する軸の範囲を決定します。  
+  
+ 使用してカスタムの軸ラベルのグリッド線、ティックのマークを表示できます、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.GridTicks%2A>プロパティです。 このプロパティにカスタムのグリッド線と目盛りマークがラベルの範囲の途中で描画されるかどうかを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomLabel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomLabel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成しの新しいインスタンスを初期化するこのコンス トラクターを使用することができます、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>クラスです。  
+  
+ ただし、これはお勧めのいずれかを使用すること、`Add`内のメソッド、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabelsCollection>カスタム ラベルを追加するクラス。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomLabel (double fromPosition, double toPosition, string text, int labelRow, System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle markStyle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 fromPosition, float64 toPosition, string text, int32 labelRow, valuetype System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle markStyle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomLabel.#ctor(System.Double,System.Double,System.String,System.Int32,System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fromPosition" Type="System.Double" />
+        <Parameter Name="toPosition" Type="System.Double" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="labelRow" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle" />
+      </Parameters>
+      <Docs>
+        <param name="fromPosition">軸ラベルの範囲の先頭に適用されます。</param>
+        <param name="toPosition">軸ラベルの範囲の最後に適用されます。</param>
+        <param name="text">ラベルのテキスト。</param>
+        <param name="labelRow">ラベルの行インデックス。</param>
+        <param name="markStyle">ラベル マークのスタイル。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" /> 、指定したクラス<paramref name="fromPosition" />、 <paramref name="toPosition" />、 <paramref name="text" />、 <paramref name="labelRow" />、および<paramref name="markStyle" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CustomLabel (double fromPosition, double toPosition, string text, int labelRow, System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle markStyle, System.Windows.Forms.DataVisualization.Charting.GridTickTypes gridTick);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 fromPosition, float64 toPosition, string text, int32 labelRow, valuetype System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle markStyle, valuetype System.Windows.Forms.DataVisualization.Charting.GridTickTypes gridTick) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomLabel.#ctor(System.Double,System.Double,System.String,System.Int32,System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle,System.Windows.Forms.DataVisualization.Charting.GridTickTypes)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fromPosition" Type="System.Double" />
+        <Parameter Name="toPosition" Type="System.Double" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="labelRow" Type="System.Int32" />
+        <Parameter Name="markStyle" Type="System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle" />
+        <Parameter Name="gridTick" Type="System.Windows.Forms.DataVisualization.Charting.GridTickTypes" />
+      </Parameters>
+      <Docs>
+        <param name="fromPosition">軸ラベルの範囲の先頭に適用されます。</param>
+        <param name="toPosition">軸ラベルの範囲の最後に適用されます。</param>
+        <param name="text">ラベルのテキスト。</param>
+        <param name="labelRow">ラベルの行インデックス。</param>
+        <param name="markStyle">ラベル マークのスタイル。</param>
+        <param name="gridTick">カスタムのグリッド線や目盛りマーク フラグを設定します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" /> 、指定したクラス<paramref name="fromPosition" />、 <paramref name="toPosition" />、 <paramref name="text" />、 <paramref name="labelRow" />、<paramref name="markStyle" />と<paramref name="gridTick" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Axis Axis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Axis Axis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>軸を取得この<see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" />オブジェクトに属しています。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />軸を表すオブジェクトをこの<see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" />オブジェクトに属しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して決定<xref:System.Windows.Forms.DataVisualization.Charting.Axis>オブジェクト、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>オブジェクトに属しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.CustomLabel Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.DataVisualization.Charting.CustomLabel Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.CustomLabel</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>複製されたラベル オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.CustomLabel" />を現在のカスタム ラベルのコピーを表すオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのラベルのテキストの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />カスタム ラベルのテキストの色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ForeColor%2A>プロパティは、カスタム ラベルのテキストの色を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPosition">
+      <MemberSignature Language="C#" Value="public double FromPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 FromPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisLabelDateValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または先頭の位置を軸座標のカスタム ラベルを設定します。</summary>
+        <value>A<see langword="double" />にラベルが適用されている軸の範囲の始まりを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition%2A>プロパティが軸のラベルを適用する範囲の開始位置を決定します。  
+  
+ 値の差、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToPosition%2A>と<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition%2A>プロパティは、ラベルのテキストが表示される場所を決定します。 たとえば、x 軸に 1 ~ 5 (1、2、3、4, 5) の範囲をスケールがあるとします。 設定すると、2 番目のポイントのすぐ下にカスタム ラベルを表示するために、 <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToPosition%2A> 1.5 プロパティおよび<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition%2A>2.5 プロパティです。  
+  
+ 場合、 <xref:System.Windows.Forms.DataVisualization.Charting.Series.XValueType%2A>— または<xref:System.Windows.Forms.DataVisualization.Charting.Series.YValueType%2A>対象の軸で、に基づいて — に設定されている、<xref:System.DateTime>値、この<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.FromPosition%2A>プロパティとして表示されます、<xref:System.DateTime>デザイナー内の値。  
+  
+ 同じ値に、このプロパティを設定しない必要があります、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToPosition%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridTicks">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.GridTickTypes GridTicks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.GridTickTypes GridTicks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.GridTicks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.GridTickTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのティックおよびグリッド線が、ラベルの中央に描画するかどうかを指定するプロパティを設定します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.DataVisualization.Charting.GridTickTypes" />カスタムのティックおよびグリッド線が、ラベルの中央に描画するかどうかを指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Image">
+      <MemberSignature Language="C#" Value="public string Image { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Image" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Image" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ImageValueEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ラベルのイメージを設定します。</summary>
+        <value>A<see langword="string" />カスタム ラベル イメージの名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageTransparentColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ImageTransparentColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ImageTransparentColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ImageTransparentColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ラベルのイメージが描画されるときに、透明色に置き換え、色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />値のカスタム ラベルのイメージが描画されるときに、透明色に置き換えられています。 既定値は <see cref="P:System.Drawing.Color.Magenta" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LabelMark">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle LabelMark { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle LabelMark" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.LabelMark" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのラベルのラベルのマークを設定します。 これは、最初の行以外の行のラベルに適用されます。</summary>
+        <value>A <see cref="T:System.Windows.Forms.DataVisualization.Charting.LabelMarkStyle" /> 、存在するために使用する場合は、ラベルの記号の種類を決定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ラベル マーク 2 番目の行のラベルにのみ使用でき、、通常一緒に使用をグループ ラベルに最初の行からです。  
+  
+ 主要な目盛りの線のスタイルの関連<xref:System.Windows.Forms.DataVisualization.Charting.Axis>AxisX.MajorTickMark.LineDashStyle プロパティなどで、マークの線の種類のオブジェクトを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color MarkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color MarkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.MarkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataVisualization.Charting.ChartColorEditor, System.Windows.Forms.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのラベルのマーカーの色を設定します。</summary>
+        <value>A<see cref="T:System.Drawing.Color" />カスタム ラベルのマーカーの色を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.MarkColor%2A>プロパティは、カスタム ラベルのマーカーの色を決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("Custom LabelStyle")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのラベルの名前を設定します。</summary>
+        <value>A<see langword="string" />カスタム ラベルのテキストの名前を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アイテムのテキストの名前を表す文字列値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowIndex">
+      <MemberSignature Language="C#" Value="public int RowIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.RowIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ラベルの行のインデックスを設定します。</summary>
+        <value><see langword="integer" /> 0 ~ 10 のカスタム ラベルの行のインデックスを指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.RowIndex%2A>プロパティは、ゼロが 10 では、さらに多くの軸ラベル、軸に最も近い行ラベルが行ラベルのインデックスを指定します。  
+  
+ 最初の行を超えるラベル行には、カスタム ラベルのみを使用できます。  
+  
+ その全体の軸のラベルは自動的に生成されませんカスタム ラベルが最初の行に使用されている場合この場合、最初の行のすべてのラベル カスタム ラベルにする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ラベルのテキストを設定します。</summary>
+        <value>A<see langword="string" />ラベルのテキストを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel.Text%2A>プロパティを取得または設定のラベルのテキスト、<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>オブジェクト。  
+  
+ 最初のラベル行の軸ラベルが自動的に生成されますを使用してオーバーライドできます<xref:System.Windows.Forms.DataVisualization.Charting.CustomLabel>オブジェクト。 最初の行の軸に沿ったカスタム ラベルを指定すると、全体の最初の行の軸ラベルは自動的には生成されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTip">
+      <MemberSignature Language="C#" Value="public string ToolTip { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ToolTip" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToolTip" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタムのラベルのツールヒント テキストを設定します。</summary>
+        <value>A<see langword="string" />ツールヒント テキストを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToPosition">
+      <MemberSignature Language="C#" Value="public double ToPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ToPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CustomLabel.ToPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Forms.DataVisualization.Charting.AxisLabelDateValueConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または軸座標で、カスタム ラベルの開始位置を設定します。</summary>
+        <value>A<see langword="double" />を開始位置を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

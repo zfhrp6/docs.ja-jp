@@ -1,0 +1,553 @@
+<Type Name="UdpSingleSourceMulticastClient" FullName="System.Net.Sockets.UdpSingleSourceMulticastClient">
+  <TypeSignature Language="C#" Value="public class UdpSingleSourceMulticastClient : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UdpSingleSourceMulticastClient extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>単一のソースとも呼ばれるソース特定マルチキャスト (SSM) からのマルチキャスト トラフィックをクライアント受信者です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マルチキャスト グループのアドレスとセンダ ソースのアドレスは認識されている必要があります。  
+  
+ 特定の差出人からマルチキャスト データを受け取るだけでなく、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>クライアントは、送信者に送り返すユニキャスト データも送信します。  
+  
+ 複数のソースからのマルチキャストの受信、またはソースは、事前にわかっている場合に使用する、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>クラスの代わりにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UdpSingleSourceMulticastClient (System.Net.IPAddress sourceAddress, System.Net.IPAddress groupAddress, int localPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Net.IPAddress sourceAddress, class System.Net.IPAddress groupAddress, int32 localPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="sourceAddress" Type="System.Net.IPAddress" />
+        <Parameter Name="groupAddress" Type="System.Net.IPAddress" />
+        <Parameter Name="localPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sourceAddress">この受信者にとってサブスクライブ先となる送信者の発信元アドレス。</param>
+        <param name="groupAddress">この受信者にとってサブスクライブ先となるマルチキャスト グループのアドレス。</param>
+        <param name="localPort">この受信者がバインドするローカルのポート。</param>
+        <summary>新たに作成<see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />UDP クライアントをグループ アドレスにサブスクライブし、1 つのソースからデータグラムを受信できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.%23ctor%2A>コンス トラクターをグループ アドレスとポート、UDP マルチキャスト ソケットに関連付けますが、バインドまたはしませんそれ以外の場合、ソケットを使用します。  
+  
+ `groupAddress`パラメーターには、IPv4 または IPv6 のマルチキャスト アドレス。 ただしのアドレス ファミリ、`sourceAddress`と`groupAddress`パラメーターでは、同じ必要があります。  
+  
+ `localPort` 1,024 未満のポート パラメーターを指定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceAddress" />および<paramref name="groupAddress" />同じアドレス ファミリをする必要があります。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceAddress" /> が null 参照 (Visual Basic では Nothing) です。  
+  
+ または  
+  
+ <paramref name="groupAddress" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="localPort" />0 より小さい  
+  
+ または  
+  
+ <paramref name="localPort" />65,535 を超えています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">
+          <paramref name="localPort" />1024 より小さい値には</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginJoinGroup">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginJoinGroup (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginJoinGroup(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">操作の完了時に呼び出されるコールバック メソッド。</param>
+        <param name="state">省略可能な状態に渡す情報を<c>コールバック</c>のこの操作のメソッドです。</param>
+        <summary>ソケットをバインドし、マルチキャスト グループへの結合操作を開始して、単一の始点アドレスからデータグラムを受信できるようにします。</summary>
+        <returns><see cref="T:System.IAsyncResult" /> を返します。  
+  
+ <see cref="T:System.IAsyncResult" />この操作を参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup%2A>メソッドは、ローカル ポートに UDP マルチキャスト ソケットをバインドし、マルチキャスト データグラムを 1 つのソース アドレスから受信できるを許可するグループに参加します。 マルチキャスト グループのアドレス、1 つのソース アドレスにバインドするローカル ポートがで指定された、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.%23ctor%2A>コンス トラクターです。  
+  
+ 指定する方法、`callback`パラメーターがマルチキャスト グループへの参加操作が完了したときに呼び出されます。  
+  
+ ランタイムで必要な場合、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginJoinGroup%2A>メソッドも、クライアントがマルチキャスト グループへのアクセスを許可されていることを確認するポリシー チェックを実行します。 クライアントがアクセスを許可されていない場合、<xref:System.Net.Sockets.SocketException>でがスローされます<xref:System.Net.Sockets.SocketError.AccessDenied>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループは、既に結合されているか、または結合操作が現在進行中です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試行しているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginReceiveFromSource">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginReceiveFromSource (byte[] buffer, int offset, int count, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginReceiveFromSource(unsigned int8[] buffer, int32 offset, int32 count, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">受信したデータを格納するバッファー。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<c>バッファー</c>データを格納します。</param>
+        <param name="count">受信および格納するバイトの最大数、<c>バッファー</c>です。</param>
+        <param name="callback">操作の完了時に呼び出されるコールバック メソッド。</param>
+        <param name="state">省略可能な状態に渡す情報を<c>コールバック</c>のこの操作のメソッドです。</param>
+        <summary>参加したマルチキャスト グループからのパケットを受信する操作を開始し、指定された送信元からグループにパケットが届いたときに、指定されたコールバックを呼び出します。</summary>
+        <returns><see cref="T:System.IAsyncResult" /> を返します。  
+  
+ <see cref="T:System.IAsyncResult" />この操作を参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource%2A>メソッドは、単一の送信者からに参加しているマルチキャスト グループから UDP パケットの受信の操作を開始します。 ローカル ポート、マルチキャスト グループは、および送信者の発信元アドレスがで指定された、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.%23ctor%2A>コンス トラクターです。 マルチキャストのクライアントで、マルチキャスト グループに結合が完了しましたもする必要があります。  
+  
+ 指定する方法、`callback`パラメーターが、パケットが受信したときに呼び出されます。  
+  
+ UDP では一般的ななくても、受信操作が同期的に、失敗した場合は、ソケット エラーを設定することができます。 ソケット エラーが発生した場合、<xref:System.Net.Sockets.SocketException>がスローされます。 受信したエラーがのメンバーとして指定された、<xref:System.Net.Sockets.SocketError>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />0 より小さい  
+  
+ または  
+  
+ <paramref name="offset" />長さより大きい、<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="count" />0 より小さい  
+  
+ または  
+  
+ <paramref name="offset" />カウントを加算がの長さより大きい、<paramref name="buffer" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">受信のためにソケットにアクセスしようとして、エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginSendToSource">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginSendToSource (byte[] buffer, int offset, int count, int remotePort, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginSendToSource(unsigned int8[] buffer, int32 offset, int32 count, int32 remotePort, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource(System.Byte[],System.Int32,System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+        <Parameter Name="remotePort" Type="System.Int32" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">送信するデータが格納されているバッファー。</param>
+        <param name="offset">先頭からのバイト単位のオフセット、<c>バッファー</c>送信されるデータを読み取れません。</param>
+        <param name="count">送信するバイト数、<c>バッファー</c>です。</param>
+        <param name="remotePort">パケットを送信するリモート ポート。 リモート アドレスが指定された、<see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.#ctor(System.Net.IPAddress,System.Net.IPAddress,System.Int32)" />コンス トラクターです。</param>
+        <param name="callback">操作の完了時に呼び出されるコールバック メソッド。</param>
+        <param name="state">省略可能な状態に渡す情報を<c>コールバック</c>のこの操作のメソッドです。</param>
+        <summary>前に指定された送信元にユニキャスト パケットを送信する操作を開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" /> を返します。  
+  
+ <see cref="T:System.IAsyncResult" />この操作を参照します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource%2A>メソッドは、以前に指定したソースに UDP パケットを送信する操作を開始します。  
+  
+ 一部のプロトコルでは、この情報を使用して、サービスの統計、または復旧メッセージの品質のフロー制御を渡します。  
+  
+ 指定する方法、`callback`パケットが送信されたときにパラメーターが呼び出されます。  
+  
+ クライアントで、マルチキャスト グループに結合が完了しました必要があります。  
+  
+ 宛先ポートが指定されている場合、`remotePort`パラメーターより小さい数は 1,024、<xref:System.Net.Sockets.SocketException>でがスローされます<xref:System.Net.Sockets.SocketError.AccessDenied>です。  
+  
+ これは、UDP では一般的ななくても、送信操作が同期的に、失敗した場合は、ソケット エラーを設定することです。 ソケット エラーが発生した場合、<xref:System.Net.Sockets.SocketException>がスローされます。 受信したエラーがのメンバーとして指定された、<xref:System.Net.Sockets.SocketError>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="buffer" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />0 より小さい  
+  
+ または  
+  
+ <paramref name="offset" />長さより大きい、<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="count" />0 より小さい  
+  
+ または  
+  
+ <paramref name="offset" />カウントを加算がの長さより大きい、<paramref name="buffer" />です。  
+  
+ または  
+  
+ <paramref name="remotePort" />0 より小さいか、65,535 より大きい値です。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試行しているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マルチキャスト グループへの参加を終了し、<see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> クラスの現在のインスタンスによって使用されたリソースと、基になる <see cref="T:System.Net.Sockets.Socket" /> によって使用されたリソースをすべて解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose%2A> を使い終わったら <xref:System.Net.Sockets.UdpSingleSourceMulticastClient> を呼び出します。 <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose%2A> メソッドによって、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient> は使用不可の状態になります。 呼び出した後<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>占有されていた。  
+  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Net.Sockets.UdpSingleSourceMulticastClient> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Net.Sockets.UdpSingleSourceMulticastClient> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndJoinGroup">
+      <MemberSignature Language="C#" Value="public void EndJoinGroup (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndJoinGroup(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期の参加操作の結果。</param>
+        <summary>マルチキャスト グループに対する非同期のグループ参加操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup%2A>メソッドは、マルチキャスト グループへのソケットと結合操作に非同期のバインドを完了するとします。  
+  
+ ランタイムで必要な場合、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.EndJoinGroup%2A>メソッドも、クライアントがマルチキャスト グループへのアクセスを許可されていることを確認するポリシー チェックを実行します。 クライアントがアクセスを許可されていない場合、<xref:System.Net.Sockets.SocketException>でがスローされます<xref:System.Net.Sockets.SocketError.AccessDenied>です。  
+  
+ 結合のグループの操作を実行中にソケット エラーがある場合、<xref:System.Net.Sockets.SocketException>がスローされます。 受信したエラーがのメンバーとして指定された、<xref:System.Net.Sockets.SocketError>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="result" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試行しているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndReceiveFromSource">
+      <MemberSignature Language="C#" Value="public int EndReceiveFromSource (IAsyncResult result, out int sourcePort);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 EndReceiveFromSource(class System.IAsyncResult result, [out] int32&amp; sourcePort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource(System.IAsyncResult,System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+        <Parameter Name="sourcePort" Type="System.Int32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期の受信操作の結果。</param>
+        <param name="sourcePort">パケットの受信元のソース エンドポイント。</param>
+        <summary>参加しているマルチキャスト グループからパケットを受信する非同期の操作を完了し、受信した情報を提供します。</summary>
+        <returns><see cref="T:System.Int32" /> を返します。  
+  
+ <see cref="M:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> メソッドに渡される <paramref name="buffer" /> パラメーターに格納されたメッセージの長さ (バイト単位)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource%2A>メソッドは、マルチキャスト グループの 1 つのソースからのパケットを受信する非同期操作を完了します。  
+  
+ 受信操作の実行中にソケット エラーがある場合、<xref:System.Net.Sockets.SocketException>がスローされます。 受信したエラーがのメンバーとして指定された、<xref:System.Net.Sockets.SocketError>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="result" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試行しているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSendToSource">
+      <MemberSignature Language="C#" Value="public void EndSendToSource (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndSendToSource(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.UdpSingleSourceMulticastClient.EndSendToSource(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result">非同期の送信操作の結果。</param>
+        <summary>単一のソースにユニキャスト パケットを送信する操作を完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.EndSendToSource%2A>メソッドは、以前に指定した 1 つのソースにパケットを送信する非同期操作を完了します。  
+  
+ 受信操作の実行中にソケット エラーがある場合、<xref:System.Net.Sockets.SocketException>がスローされます。 受信したエラーがのメンバーとして指定された、<xref:System.Net.Sockets.SocketError>列挙します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="result" /> が null 参照 (Visual Basic では Nothing) です。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">ソケットへのアクセスを試行しているときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveBufferSize">
+      <MemberSignature Language="C#" Value="public int ReceiveBufferSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ReceiveBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.UdpSingleSourceMulticastClient.ReceiveBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (バイト単位) の受信バッファーのサイズを設定、<see cref="T:System.Net.Sockets.Socket" />このマルチキャストの受信操作に使用される<see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />インスタンス。</summary>
+        <value><see cref="T:System.Int32" /> を返します。  
+  
+ 受信バッファー サイズ (バイト単位)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ReceiveBufferSize`プロパティを取得または基になるの受信バッファーのバイト単位のサイズを設定<xref:System.Net.Sockets.Socket>このマルチキャストの受信操作に使用される<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>インスタンス。 具体的には、`ReceiveBufferSize`プロパティは、パケットが到着すると、アプリケーションがまだ呼び出さいないときに、スタックによって使われるバッファーのサイズを制御、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource%2A>メソッドです。 このバッファーがいっぱいにし、アプリケーションの呼び出しの前にパケットを受け取った場合、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource%2A>と<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.EndReceiveFromSource%2A>メソッド、古いパケットが削除されます。 アプリケーションが、古いパケットを受信できなくし、呼び出したときに新しいパケットの受信が代わりに、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginReceiveFromSource%2A>メソッドです。  
+  
+ Windows 上の受信バッファーの既定のサイズは 8,192 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズは 0 より小さいです。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendBufferSize">
+      <MemberSignature Language="C#" Value="public int SendBufferSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SendBufferSize" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API supports the .NET Framework infrastructure and is not intended to be used directly from your code.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または (バイト単位) の送信バッファーのサイズを設定、<see cref="T:System.Net.Sockets.Socket" />このマルチキャスト送信操作に使用される<see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" />インスタンス。</summary>
+        <value><see cref="T:System.Int32" /> を返します。  
+  
+ 送信バッファーのバイト単位のサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SendBufferSize プロパティを取得または基になるの送信バッファーのバイト単位のサイズを設定<xref:System.Net.Sockets.Socket>このマルチキャスト送信操作に使用される<xref:System.Net.Sockets.UdpSingleSourceMulticastClient>インスタンス。  
+  
+ Mac OS x、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize%2A>プロパティ コントロールへの呼び出しを追加する前に、ネットワーク スタックの待機中---を送信するバッファーのバイト数を指定できます、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource%2A>メソッドが失敗し始めます。 Mac OS X 上のアプリケーションは、短い期間に多数の UDP パケットを送信する場合に、このプロパティで考慮する必要があります。  
+  
+ Windows では、呼び出し、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.BeginSendToSource%2A>メソッドがの値に応じてコールバックを呼び出します。 長い時間がかかり、<xref:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize%2A>プロパティ送信バッファーがいっぱいの場合。 <xref:System.Net.Sockets.UdpSingleSourceMulticastClient.SendBufferSize%2A>プロパティ コントロールのみが、送信が完了するまでに物理メモリにロックされているユーザーのバッファーのままかどうか。  
+  
+ Windows 上の送信バッファーの既定のサイズは 8,192 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定されたバッファー サイズは 0 より小さいです。</exception>
+        <exception cref="T:System.InvalidOperationException">マルチキャスト グループはまだ結合されていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Net.Sockets.UdpSingleSourceMulticastClient" /> は破棄されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,136 @@
+<Type Name="ThemeDictionaryExtension" FullName="System.Windows.ThemeDictionaryExtension">
+  <TypeSignature Language="C#" Value="public class ThemeDictionaryExtension : System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ThemeDictionaryExtension extends System.Windows.Markup.MarkupExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.ThemeDictionaryExtension" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Uri))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装により、コントロールのスタイルをカスタマイズするアプリケーションの作成者、マークアップ拡張機能は、現在のシステムのテーマに基づいています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、マークアップ拡張機能の実装です。 マークアップ拡張機能クラスの存在の一部の側面のインフラストラクチャをサポートするには、主に、 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装と、マークアップ拡張機能によって公開されるメンバーは通常呼び出されませんユーザー コードからです。 この拡張機能をサポートしている、 [ThemeDictionary マークアップ拡張機能](~/docs/framework/wpf/advanced/themedictionary-markup-extension.md)から使用状況[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。  
+  
+<a name="xamlTextUsage_ThemeDictionaryExtension"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ThemeDictionary マークアップ拡張機能](~/docs/framework/wpf/advanced/themedictionary-markup-extension.md)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThemeDictionaryExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ThemeDictionaryExtension.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.ThemeDictionaryExtension" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ThemeDictionaryExtension (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ThemeDictionaryExtension.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">アセンブリ名の文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.ThemeDictionaryExtension" />クラス、指定したアセンブリ名を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyName">
+      <MemberSignature Language="C#" Value="public string AssemblyName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssemblyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.ThemeDictionaryExtension.AssemblyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または特定のテーマに適用するディクショナリを識別する特定の名前付け規則を設定する文字列を設定します。</summary>
+        <value>アセンブリ名の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_AssemblyName"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[ThemeDictionary マークアップ拡張機能](~/docs/framework/wpf/advanced/themedictionary-markup-extension.md)します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.ThemeDictionaryExtension.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。 このサービスがの結果を提供する予定が<see cref="T:System.Windows.Markup.IXamlTypeResolver" />です。</param>
+        <summary>この拡張機能を適用するプロパティで設定するオブジェクトを返します。 <see cref="T:System.Windows.ThemeDictionaryExtension" />、これは、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]特定のテーマ ディクショナリ拡張機能の値。</summary>
+        <returns>拡張機能が適用されたプロパティで設定するオブジェクト値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをサポートしている[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装を直接呼び出すことはありません。 [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]プロセッサの実装の適切な処理のこのメソッドを使用して`ThemeResourceDictionary`オブジェクトの作成中に拡張機能の値。  
+  
+ この実装は、渡されたに基づくサービス`serviceProvider`です。 なければなりません`null`です。 `serviceProvider`を実装するオブジェクトが期待どおり<xref:System.Windows.Markup.IXamlTypeResolver>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Windows.ThemeDictionaryExtension.AssemblyName" /> プロパティが <see langword="null" /> です。 構築時に、または使用する前に、この値を設定する必要があります、<see cref="M:System.Windows.ThemeDictionaryExtension.ProvideValue(System.IServiceProvider)" />メソッドです。  
+  
+ または  
+  
+ <paramref name="serviceProvider" /><see langword="null" />のサービスを提供しないまたは<see cref="T:System.Windows.Markup.IXamlTypeResolver" />です。  
+  
+ または  
+  
+ <paramref name="serviceProvider" />一致しないターゲットの種類を指定<see cref="P:System.Windows.ResourceDictionary.Source" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

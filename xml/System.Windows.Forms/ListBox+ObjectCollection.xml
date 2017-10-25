@@ -1,0 +1,710 @@
+<Type Name="ListBox+ObjectCollection" FullName="System.Windows.Forms.ListBox+ObjectCollection">
+  <TypeSignature Language="C#" Value="public class ListBox.ObjectCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit ListBox/ObjectCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ListBox.ObjectCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ListBindable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.ListBox" /> 内の項目のコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListBox.ObjectCollection>クラスに表示される項目を格納する、<xref:System.Windows.Forms.ListBox>です。 内で定義されているその他の 2 つのコレクションがある、<xref:System.Windows.Forms.ListBox>をこのコレクション内でどのような項目が選択されているかを決定できるクラスです。 <xref:System.Windows.Forms.ListBox.SelectedObjectCollection>クラスには、プロパティと内でどのような項目が選択を確認するためのメソッドが用意されています、<xref:System.Windows.Forms.ListBox.ObjectCollection>中、<xref:System.Windows.Forms.ListBox.SelectedIndexCollection>クラスでは、内でインデックスを決定することができます、<xref:System.Windows.Forms.ListBox.ObjectCollection>が選択されています。  
+  
+ コレクションに項目を追加する方法の数があります。 <xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>メソッドが 1 つのオブジェクトをコレクションに追加する機能を提供します。 をコレクションにオブジェクトの数を追加する項目の配列を作成してに割り当てる、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>メソッドです。 コレクション内で特定の場所にオブジェクトを挿入する場合は、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A>メソッドです。 項目を削除する、いずれかを使用できる、<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>メソッドまたは<xref:System.Windows.Forms.ListBox.ObjectCollection.RemoveAt%2A>メソッド、項目がコレクション内に配置されていることがわかっている場合。 <xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A>メソッドを使用せずにコレクションからすべての項目を削除することができます、<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>一度に 1 つの項目を削除する方法です。  
+  
+ 項目を操作することも、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Windows.Forms.ListControl.DataSource%2A>プロパティです。 使用する場合、<xref:System.Windows.Forms.ListControl.DataSource%2A>に項目を追加するプロパティ、 <xref:System.Windows.Forms.ListBox>、内の項目を表示することができます、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Windows.Forms.ListBox.Items%2A>プロパティが追加または削除できないアイテムのメソッドを使用してリストから、<xref:System.Windows.Forms.ListBox.ObjectCollection>です。  
+  
+ メソッドとプロパティを追加して、項目を削除するのに加え、<xref:System.Windows.Forms.ListBox.ObjectCollection>コレクション内の項目を検索するメソッドも提供します。 <xref:System.Windows.Forms.ListBox.ObjectCollection.Contains%2A>メソッドでは、オブジェクト コレクションのメンバーであるかどうかを判断することができます。 使用することができます、項目がコレクション内にあることがわかれば、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A>項目がコレクション内に配置を決定するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますオーナー描画<xref:System.Windows.Forms.ListBox>を設定して、<xref:System.Windows.Forms.ListBox.DrawMode%2A>プロパティを`OwnerDrawVariable`値と処理、<xref:System.Windows.Forms.ListBox.DrawItem>と<xref:System.Windows.Forms.ListBox.MeasureItem>イベント。 設定についても示します、<xref:System.Windows.Forms.ListBox.BorderStyle%2A>と<xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A>プロパティとを使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>メソッドです。  
+  
+ この例を実行するインポートの空のフォームに貼り付け、<xref:System.Drawing>名前空間および<xref:System.Windows.Forms>名前空間。 呼び出す`InitializeOwnerDrawnListBox`フォームのコンス トラクターからまたは`Load`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectCollection (System.Windows.Forms.ListBox owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListBox owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.#ctor(System.Windows.Forms.ListBox)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListBox" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.ListBox" />コレクションを所有しています。</param>
+        <summary>
+          <see cref="T:System.Windows.Forms.ListBox.ObjectCollection" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定せずにこのクラスのインスタンスを作成することはできません、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectCollection (System.Windows.Forms.ListBox owner, object[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListBox owner, object[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.#ctor(System.Windows.Forms.ListBox,System.Object[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListBox" />
+        <Parameter Name="value" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.ListBox" />コレクションを所有しています。</param>
+        <param name="value">コレクションに追加するオブジェクトの配列。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />オブジェクトの配列を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定せずにこのクラスのインスタンスを作成することはできません、<xref:System.Windows.Forms.ListBox>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectCollection (System.Windows.Forms.ListBox owner, System.Windows.Forms.ListBox.ObjectCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ListBox owner, class System.Windows.Forms.ListBox/ObjectCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.#ctor(System.Windows.Forms.ListBox,System.Windows.Forms.ListBox.ObjectCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ListBox" />
+        <Parameter Name="value" Type="System.Windows.Forms.ListBox+ObjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.ListBox" />コレクションを所有しています。</param>
+        <param name="value">A<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />からこのコレクションにコピーする内容。</param>
+        <summary>新しいインスタンスを初期化<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />別に基づく<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定せずにこのクラスのインスタンスを作成することはできません、<xref:System.Windows.Forms.ListBox>コントロール。 このバージョンのコンス トラクターを使用する既存のインスタンスで指定された項目を使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection>が作成されるときに、コレクションに項目を追加するクラス。 このコンス トラクターを使用するには別に指定された項目を使用して<xref:System.Windows.Forms.ListBox>このコレクションにコントロールです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクションに追加する項目を表すオブジェクト。</param>
+        <summary>項目のリストに項目を追加、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <returns>-1 の場合、コレクション内の項目の 0 から始まるインデックス<see cref="M:System.Windows.Forms.ListBox.BeginUpdate" />が呼び出されています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListBox.Sorted%2A>のプロパティ、<xref:System.Windows.Forms.ListBox>に設定されている`true`一覧に項目がアルファベット順に挿入します。 それ以外の場合、項目は、リストの末尾に挿入されます。 特定の位置にあるリスト ボックスに項目を挿入するには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.Insert%2A>メソッドです。 単一の操作で、リスト ボックスに、一連の項目を追加するには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>メソッドです。 使用する場合、<xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>を多数のアイテムを一覧に追加する方法、<xref:System.Windows.Forms.ListBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ListBox.EndUpdate%2A>ようにする方法、<xref:System.Windows.Forms.ListBox>すべての項目が一覧に追加されるまでは、項目を一覧に追加するようたびに再描画するからです。 項目を追加するときに、 <xref:System.Windows.Forms.ListBox>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。  
+  
+ オブジェクトが、このコレクションに追加されたときに、<xref:System.Windows.Forms.ListBox>かどうかを最初に確認し、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>のプロパティ、<xref:System.Windows.Forms.ListControl>クラスには、項目のテキストを取得するときに、参照に指定されたオブジェクトからメンバーの名前。 場合、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティに指定すると、メンバーがない、<xref:System.Windows.Forms.ListBox>を呼び出して、<xref:System.Object.ToString%2A>一覧に表示するテキストを取得するオブジェクトのメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Windows.Forms.ListBox>コントロールの列に複数の項目を表示し、コントロールの一覧で選択した 1 つ以上の項目を持つことができます。 例のコードに 50 個の項目の追加、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.Add%2A>のメソッド、<xref:System.Windows.Forms.ListBox.ObjectCollection>を使用して、一覧から項目を 3 つのクラスと、選択、<xref:System.Windows.Forms.ListBox.SetSelected%2A>メソッドです。 コードからの値を表示、<xref:System.Windows.Forms.ListBox.SelectedObjectCollection>コレクション (を通じて、<xref:System.Windows.Forms.ListBox.SelectedItems%2A>プロパティ) および<xref:System.Windows.Forms.ListBox.SelectedIndexCollection>(を通じて、<xref:System.Windows.Forms.ListBox.SelectedIndices%2A>プロパティ)。 この例は、コードにありから呼び出すことが必要です、<xref:System.Windows.Forms.Form>です。  
+  
+ [!code-cpp[Classic ListBox Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ListBox Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ListBox Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ListBox Example/CS/source.cs#1)]
+ [!code-vb[Classic ListBox Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ListBox Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.SystemException">十分な領域が一覧に新しい項目を追加できます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (object[] items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(object[] items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.AddRange(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="items">一覧に追加するオブジェクトの配列。</param>
+        <summary>項目の配列の項目のリストに追加、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListBox.Sorted%2A>のプロパティ、<xref:System.Windows.Forms.ListBox>に設定されている`true`アイテムがアルファベット順の一覧に挿入されます。 それ以外の場合、項目は、配列内の出現順序で挿入されます。 このメソッドは通常の配列に渡されます<xref:System.String>オブジェクトではなく任意の型のオブジェクトの配列は、このメソッドに渡すことができます。 オブジェクトが、このコレクションに追加されたときに、<xref:System.Windows.Forms.ListBox>かどうかを最初に確認し、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>のプロパティ、<xref:System.Windows.Forms.ListControl>クラスには、項目のテキストを取得するときに、参照に指定されたオブジェクトからメンバーの名前。 場合、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティに指定すると、メンバーがない、<xref:System.Windows.Forms.ListBox>を呼び出して、<xref:System.Object.ToString%2A>一覧に表示するテキストを取得するオブジェクトのメソッドです。 このメソッドを使用して項目を追加する場合、<xref:System.Windows.Forms.ListBox>を呼び出す必要はありません、<xref:System.Windows.Forms.ListBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ListBox.EndUpdate%2A>パフォーマンスを最適化する方法です。 項目を追加するときに、 <xref:System.Windows.Forms.ListBox>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。 このメソッドを使用するには、リストに項目のグループを追加するか、別に保存された項目を再利用する<xref:System.Windows.Forms.ListBox>です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますオーナー描画<xref:System.Windows.Forms.ListBox>を設定して、<xref:System.Windows.Forms.ListBox.DrawMode%2A>プロパティを`OwnerDrawVariable`値と処理、<xref:System.Windows.Forms.ListBox.DrawItem>と<xref:System.Windows.Forms.ListBox.MeasureItem>イベント。 設定についても示します、<xref:System.Windows.Forms.ListBox.BorderStyle%2A>と<xref:System.Windows.Forms.ListBox.ScrollAlwaysVisible%2A>プロパティとを使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>メソッドです。  
+  
+ この例を実行するインポートの空のフォームに貼り付け、<xref:System.Drawing>名前空間および<xref:System.Windows.Forms>名前空間。 呼び出す`InitializeOwnerDrawnListBox`フォームのコンス トラクターからまたは`Load`メソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ListBoxExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListBoxExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Windows.Forms.ListBox.ObjectCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Windows.Forms.ListBox/ObjectCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.AddRange(System.Windows.Forms.ListBox.ObjectCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.ListBox+ObjectCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />をこのコレクションに読み込みます。</param>
+        <summary>既存の項目を追加<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />内の項目の一覧に、<see cref="T:System.Windows.Forms.ListBox" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.ListBox.Sorted%2A>のプロパティ、<xref:System.Windows.Forms.ListBox>に設定されている`true`アイテムがアルファベット順の一覧に挿入されます。 それ以外の場合、項目は、配列内の出現順序で挿入されます。 このメソッドは通常の配列に渡されます<xref:System.String>オブジェクトではなく任意の型のオブジェクトの配列は、このメソッドに渡すことができます。 オブジェクトが、このコレクションに追加されたときに、<xref:System.Windows.Forms.ListBox>かどうかを最初に確認し、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>のプロパティ、<xref:System.Windows.Forms.ListControl>クラスには、項目のテキストを取得するときに、参照に指定されたオブジェクトからメンバーの名前。 場合、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティに指定すると、メンバーがない、<xref:System.Windows.Forms.ListBox>を呼び出して、<xref:System.Object.ToString%2A>一覧に表示するテキストを取得するオブジェクトのメソッドです。  
+  
+ このメソッドを使用して項目を追加する場合、<xref:System.Windows.Forms.ListBox>を呼び出す必要はありません、<xref:System.Windows.Forms.ListBox.BeginUpdate%2A>と<xref:System.Windows.Forms.ListBox.EndUpdate%2A>パフォーマンスを最適化する方法です。 項目を追加するときに、 <xref:System.Windows.Forms.ListBox>、最初の項目を並べ替えるし、新しい項目を追加する方が効率的です。 このメソッドを使用するには別に保存された項目を再利用する<xref:System.Windows.Forms.ListBox>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧から項目を削除するときに削除された項目についての情報は失われます。 1 つの項目を削除する、<xref:System.Windows.Forms.ListBox>を使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>または<xref:System.Windows.Forms.ListBox.ObjectCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する項目を表すオブジェクト。</param>
+        <summary>指定した項目がコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />項目がコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListBox.ObjectCollection.Contains%2A>メソッドでは、オブジェクト コレクションのメンバーであるかどうかを判断することができます。 使用することができます、項目がコレクション内にあることがわかれば、<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A>項目がコレクション内に配置を決定するメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (object[] destination, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(object[] destination, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.CopyTo(System.Object[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Object[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="destination">コレクションから項目にコピーされるオブジェクトの配列。</param>
+        <param name="arrayIndex">コレクションから項目をコピーするコピー先の配列内の位置。</param>
+        <summary>配列内の指定した位置にあるオブジェクトの既存の配列にコレクション全体をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、単一の配列に複数のコレクションから項目を組み合わせて使用できます。 コンテンツの別の入力に、この配列を使用することができますし、<xref:System.Windows.Forms.ListBox>制御を使用して、<xref:System.Windows.Forms.ListBox.ObjectCollection.AddRange%2A>のメソッド、<xref:System.Windows.Forms.ListBox.ObjectCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目の数を取得します。</summary>
+        <value>コレクション内の項目数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、内の項目の数を決定することができます、<xref:System.Windows.Forms.ListBox>です。 この値は、コレクションの値をループすると、ループの反復回数を指定する必要があります。 場合に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して項目のコレクションを反復処理する列挙子を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />を表す項目のコレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 IndexOf(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する項目を表すオブジェクト。</param>
+        <summary>指定した項目のコレクション内のインデックスを返します。</summary>
+        <returns>項目がコレクション内に存在する 0 から始まるインデックスそれ以外の場合、負の 1 (-1)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A>メソッドでは、項目がコレクション内にある場所を確認することができます。 項目がこのメソッドを呼び出す前に、コレクション内にあるかどうかを判断するのには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.Contains%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="value" />パラメーターが null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 index, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目を挿入する、0 から始まるインデックス位置。</param>
+        <param name="item">挿入する項目を表示するオブジェクト。</param>
+        <summary>リスト ボックス内の指定したインデックスに項目を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、特定の位置に項目を挿入することができます、<xref:System.Windows.Forms.ListBox>です。 場合、<xref:System.Windows.Forms.ListBox.Sorted%2A>のプロパティ、<xref:System.Windows.Forms.ListBox>に設定されている場合は true、アイテムが追加で指定された値に関係なく、並べ替えられたリスト内の正しい位置に、`index`パラメーター。 オブジェクトが、このコレクションに追加されたときに、<xref:System.Windows.Forms.ListBox>かどうかを最初に確認し、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>のプロパティ、<xref:System.Windows.Forms.ListControl>クラスには、項目のテキストを取得するときに、参照に指定されたオブジェクトからメンバーの名前。 場合、<xref:System.Windows.Forms.ListControl.DisplayMember%2A>プロパティに指定すると、メンバーがない、<xref:System.Windows.Forms.ListBox>を呼び出して、<xref:System.Object.ToString%2A>一覧に表示するテキストを取得するオブジェクトのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> パラメーターが 0 以下か、または <see cref="T:System.Windows.Forms.ListBox.ObjectCollection" /> クラスの<see cref="P:System.Windows.Forms.ListBox.ObjectCollection.Count" /> プロパティの値を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このコレクションが読み取り専用の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に`false`このコレクションにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得または設定するコレクション内の項目のインデックス。</param>
+        <summary>取得またはコレクション内の指定したインデックス位置の項目を設定します。</summary>
+        <value>コレクション内の指定したインデックス位置にある項目を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用させることができます、<xref:System.Windows.Forms.ListBox>コレクション内で特定の場所に格納されている項目。 コレクション内の特定の項目のインデックスを確認するには<xref:System.Windows.Forms.ListBox.ObjectCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ゼロ未満かより大きいかの値と等しい、<see cref="P:System.Windows.Forms.ListBox.ObjectCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する項目を表すオブジェクト。</param>
+        <summary>指定されたオブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧から項目を削除するときに、リスト内の後続の項目のインデックスが変わります。 削除された項目に関するすべての情報が削除されます。 このメソッドを使用して、一覧から削除する実際の項目を指定することで、一覧から特定の項目を削除することができます。 項目自体ではなく削除する項目のインデックスを指定するには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.RemoveAt%2A>メソッドです。 一覧からすべての項目を削除するには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の 0 から始まるインデックス。</param>
+        <summary>コレクション内の指定したインデックス位置にある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一覧から項目を削除するときに、リスト内の後続の項目のインデックスが変わります。 削除された項目に関するすべての情報が削除されます。 このメソッドを使用して、一覧から削除する項目のインデックスを指定することで、一覧から特定の項目を削除することができます。 項目のインデックスではなく削除する項目を指定する、<xref:System.Windows.Forms.ListBox.ObjectCollection.Remove%2A>メソッドです。 一覧からすべての項目を削除するには、使用、<xref:System.Windows.Forms.ListBox.ObjectCollection.Clear%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.ListBox.SelectedIndex%2A>を持つプロパティ、<xref:System.Windows.Forms.ListBox.TopIndex%2A>プロパティの表示領域内の項目の一覧の一番上に、現在選択されている項目を移動する、<xref:System.Windows.Forms.ListBox>です。 さらに例を使用して項目を削除する方法を示します、<xref:System.Windows.Forms.ListBox.ObjectCollection.RemoveAt%2A>のメソッド、<xref:System.Windows.Forms.ListBox.ObjectCollection?displayProperty=nameWithType>クラス、およびすべての選択を使用して項目をクリアする方法、<xref:System.Windows.Forms.ListBox.ClearSelected%2A>メソッドです。 コードは最初、現在選択されている項目を移動、<xref:System.Windows.Forms.ListBox>一覧の先頭にします。 コードは、現在選択されている項目の前にすべての項目を削除し、すべての選択項目をクリア、<xref:System.Windows.Forms.ListBox>です。 この例では、する必要があります、<xref:System.Windows.Forms.ListBox>項目を含むが、フォームに追加されで選択した項目が現在は、<xref:System.Windows.Forms.ListBox>です。  
+  
+ [!code-cpp[ListBox.SelectedIndex#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ListBox.SelectedIndex/CPP/form1.cpp#1)]
+ [!code-csharp[ListBox.SelectedIndex#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ListBox.SelectedIndex/CS/form1.cs#1)]
+ [!code-vb[ListBox.SelectedIndex#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ListBox.SelectedIndex/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ゼロ未満かより大きいかの値と等しい、<see cref="P:System.Windows.Forms.ListBox.ObjectCollection.Count" />のプロパティ、<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />クラスです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array destination, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array destination, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="destination"><see cref="T:System.Collections.ICollection" /> から要素がコピーされる 1 次元の配列。 配列には、0 から始まるインデックスが設定されている必要があります。</param>
+        <param name="index">配列内のコピーを開始する位置を示す、0 から始まるインデックスです。</param>
+        <summary>特定の配列インデックスを開始位置として、配列にコレクションの要素をコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.ListBox.ObjectCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArrayTypeMismatchException">配列型の項目に互換性がありません、<see cref="T:System.Windows.Forms.ListBox.ObjectCollection" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」をご覧ください。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.ListBox.ObjectCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.SyncRoot" />」を参照してください。</summary>
+        <value><see cref="T:System.Windows.Forms.ListBox.ObjectCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.ListBox.ObjectCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ListBox.ObjectCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">
+          <see cref="T:System.Windows.Forms.ListBox" /> に追加するオブジェクト。</param>
+        <summary>オブジェクトを追加、<see cref="T:System.Windows.Forms.ListBox" />クラスです。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.ListBox.ObjectCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="item" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">現在<see cref="T:System.Windows.Forms.ListBox" />にデータ ソースがあります。</exception>
+        <exception cref="T:System.SystemException">十分な領域が、新しい項目を格納するためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ListBox.ObjectCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsFixedSize" />」をご覧ください。</summary>
+        <value>
+          常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.ListBox.ObjectCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

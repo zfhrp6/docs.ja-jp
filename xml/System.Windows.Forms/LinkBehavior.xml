@@ -1,0 +1,98 @@
+<Type Name="LinkBehavior" FullName="System.Windows.Forms.LinkBehavior">
+  <TypeSignature Language="C#" Value="public enum LinkBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed LinkBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LinkBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>内のリンクの動作を指定します、<see cref="T:System.Windows.Forms.LinkLabel" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の設定をこの列挙体のメンバーを使用して、<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>のプロパティ、<xref:System.Windows.Forms.LinkLabel>です。  
+  
+   
+  
+## Examples  
+ 次の例では、設定、<xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A?displayProperty=nameWithType>プロパティを使用して、<xref:System.Windows.Forms.LinkBehavior>列挙します。 これは、alsodemonstrates 設定、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A?displayProperty=nameWithType>、<xref:System.Windows.Forms.LinkLabel.Text%2A>と<xref:System.Windows.Forms.LinkLabel.LinkVisited%2A>プロパティです。 このサンプルを実行する、空のフォームに挿入し、フォームのコンス トラクターまたは Load メソッドからこのコード メソッドを呼び出します。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabelExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabelExample/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabelExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabelExample/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabelExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabelExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlwaysUnderline">
+      <MemberSignature Language="C#" Value="AlwaysUnderline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.LinkBehavior AlwaysUnderline = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.LinkBehavior.AlwaysUnderline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクは、常に下線付きテキストを表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HoverUnderline">
+      <MemberSignature Language="C#" Value="HoverUnderline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.LinkBehavior HoverUnderline = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.LinkBehavior.HoverUnderline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクは、リンク テキストの上にマウスが置かれている場合にのみ、下線付きテキストを表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NeverUnderline">
+      <MemberSignature Language="C#" Value="NeverUnderline" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.LinkBehavior NeverUnderline = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.LinkBehavior.NeverUnderline" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このリンク テキストは下線が付きません。 リンクも区別できるその他のテキストを使用して、<see cref="P:System.Windows.Forms.LinkLabel.LinkColor" />のプロパティ、<see cref="T:System.Windows.Forms.LinkLabel" />コントロール。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemDefault">
+      <MemberSignature Language="C#" Value="SystemDefault" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.LinkBehavior SystemDefault = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.LinkBehavior.SystemDefault" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この設定の動作は、コントロール パネルまたは Internet Explorer で [インターネット オプション] ダイアログ ボックスで設定されているオプションによって異なります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

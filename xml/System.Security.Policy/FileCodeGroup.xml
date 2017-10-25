@@ -1,0 +1,474 @@
+<Type Name="FileCodeGroup" FullName="System.Security.Policy.FileCodeGroup">
+  <TypeSignature Language="C#" Value="public sealed class FileCodeGroup : System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit FileCodeGroup extends System.Security.Policy.CodeGroup" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.FileCodeGroup" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Policy.CodeGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メンバーシップ条件に一致するコード アセンブリにコード アセンブリ内にあるファイルを操作するアクセス許可を付与します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード グループとは、コード アクセス セキュリティ ポリシーの構成要素です。 各ポリシー レベルは、子コード グループを持つことができるルート コード グループで構成されます。 各子コード グループは、独自の子コード グループを持つことができます。この動作は、任意のツリーを形成するレベル数を拡張します。 各コード グループには、そのアセンブリの証拠に基づいてそこに、特定のアセンブリが属しているかを決定するメンバーシップ条件があります。 メンバーシップ条件を持つ指定したアセンブリと一致する唯一のコード グループとその子コード グループは、ポリシーを適用します。  
+  
+ <xref:System.Security.Policy.FileCodeGroup>セマンティクスに一致する同じ子を持つ<xref:System.Security.Policy.UnionCodeGroup>します。 ただし、<xref:System.Security.Policy.FileCodeGroup>アクセス許可が動的に計算を含むセットを返します<xref:System.Security.Permissions.FileIOPermission>元となるコードの実行が; ディレクトリにファイル アクセスを付与します。<xref:System.Security.Policy.UnionCodeGroup>のみ、静的なアクセス許可セットが返されます。 ファイル アクセス許可の種類は、コンス トラクターにパラメーターとして渡されます。  
+  
+ このコード グループには、ファイル プロトコルでは、ファイルまたは UNC パスを指す Url を持つアセンブリは、実行アセンブリのみと一致します。  
+  
+   
+  
+## Examples  
+ 次の例では、メンバーの使用、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#1)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#1)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileCodeGroup (System.Security.Policy.IMembershipCondition membershipCondition, System.Security.Permissions.FileIOPermissionAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Policy.IMembershipCondition membershipCondition, valuetype System.Security.Permissions.FileIOPermissionAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.#ctor(System.Security.Policy.IMembershipCondition,System.Security.Permissions.FileIOPermissionAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="membershipCondition" Type="System.Security.Policy.IMembershipCondition" />
+        <Parameter Name="access" Type="System.Security.Permissions.FileIOPermissionAccess" />
+      </Parameters>
+      <Docs>
+        <param name="membershipCondition">このコード グループにポリシーが適用されるかどうかを決定する証拠をテストするメンバーシップ条件です。</param>
+        <param name="access"><see cref="T:System.Security.Permissions.FileIOPermissionAccess" /> 値のいずれか。 この値が構築するために使用される、<see cref="T:System.Security.Permissions.FileIOPermission" />に付与します。</param>
+        <summary><see cref="T:System.Security.Policy.FileCodeGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターでは、基本的なコード グループを作成します。 子コード グループを追加することができます、<xref:System.Security.Policy.CodeGroup.AddChild%2A>メソッドです。  
+  
+ <xref:System.Security.Policy.FileCodeGroup>アクセス許可が動的に計算を含むセットを返します<xref:System.Security.Permissions.FileIOPermission>コードの実行元となるディレクトリにファイル アクセスを付与します。 付与されるアクセスの型によって決定されます、`access`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#2)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#2)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="membershipCondition" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">型、<paramref name="membershipCondition" />パラメーターが無効です。  
+  
+ または  
+  
+ 型、<paramref name="access" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeString">
+      <MemberSignature Language="C#" Value="public override string AttributeString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AttributeString" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.FileCodeGroup.AttributeString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード グループのポリシー ステートメントの属性の文字列表現を取得します。</summary>
+        <value>常に <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.FileCodeGroup>使用しません<xref:System.Security.Policy.FileCodeGroup.AttributeString%2A>なので、このプロパティは常に`null`です。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.AttributeString%2A>コード グループの属性を取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#5)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#5)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコード グループのディープ コピーを作成します。</summary>
+        <returns>メンバーシップ条件と子コード グループを含む、現在のコード グループの同等のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード グループに含まれるすべてのオブジェクトのコピーは作成もできるように、コード グループの詳細コピーを作成します。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.Copy%2A>コード グループの詳細コピーを作成する方法です。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#18](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#18)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#18](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#18)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#18](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateXml">
+      <MemberSignature Language="C#" Value="protected override void CreateXml (System.Security.SecurityElement element, System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateXml(class System.Security.SecurityElement element, class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Security.SecurityElement" />
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <param name="level">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在のコード グループと比較するコード グループです。</param>
+        <summary>指定されたコード グループが現在のコード グループと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定されたコード グループは、現在のコード グループと同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.Equals%2A>かどうか、2 つのコード グループを決定するメソッドが等しい。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#20](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#20)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#20](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#20)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#20](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコード グループのハッシュ コードを取得します。</summary>
+        <returns>現在のコード グループのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.GetHashCode%2A>現在のコード グループのハッシュ コードを取得します。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#14](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#14)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#14)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeLogic">
+      <MemberSignature Language="C#" Value="public override string MergeLogic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MergeLogic" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.FileCodeGroup.MergeLogic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マージ ロジックを取得します。</summary>
+        <value>文字列"Union"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.MergeLogic%2A>このコード グループのマージ ロジックを取得するプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#15)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#15)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected override void ParseXml (System.Security.SecurityElement e, System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ParseXml(class System.Security.SecurityElement e, class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="e">To be added.</param>
+        <param name="level">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionSetName">
+      <MemberSignature Language="C#" Value="public override string PermissionSetName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PermissionSetName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.FileCodeGroup.PermissionSetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード グループの名前付き権限セットの名前を取得します。</summary>
+        <value>文字列"同じ directory FileIO -"の concatenatation とアクセスの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.PermissionSetName%2A>コード グループの名前付きのアクセス許可の名前を取得するプロパティを設定します。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#13)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#13)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.PolicyStatement Resolve (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.PolicyStatement Resolve(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.Resolve(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>コード グループのポリシーと証拠のセットをその子孫を解決します。</summary>
+        <returns>省略可能な属性は、コード グループによって付与された権限で構成されるポリシー ステートメントまたは<see langword="null" />コード グループが適用されない場合 (メンバーシップ条件は、指定した証拠を一致していません)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、子コード グループの評価を含む、コード グループのポリシー ステートメントを返します。  
+  
+ .NET Framework セキュリティ システムを使用して<xref:System.Security.Policy.FileCodeGroup.Resolve%2A>アセンブリで、結果として得られる、ポリシー ステートメントと、コードから読み込まれているコードに与えるアクセス許可を要求を決定するポリシー レベル上。  
+  
+ <xref:System.Security.Policy.FileCodeGroup>共用体のセマンティクスを使用して、に基づいてアクセス許可セットを形成、<xref:System.Security.Policy.Url>によって指定された`evidence`です。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.Resolve%2A>コード グループのポリシーを解決するメソッド。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#19](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#19)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#19](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#19)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#19](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Policy.PolicyException">現在のポリシーは<see langword="null" />します。  
+  
+ または  
+  
+ (親コード グループとすべての子コード グループを含む) 2 つ以上のコード グループはマークされて<see cref="F:System.Security.Policy.PolicyStatementAttribute.Exclusive" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMatchingCodeGroups">
+      <MemberSignature Language="C#" Value="public override System.Security.Policy.CodeGroup ResolveMatchingCodeGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.Policy.CodeGroup ResolveMatchingCodeGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.FileCodeGroup.ResolveMatchingCodeGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>一致するコード グループを解決します。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeGroup" />一致するコード グループのツリーのルートはします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、最初に指定された証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、ルート コード グループを返します。 返される、コード グループには、さらに、指定された証拠と一致したコード グループの完全なセットを反映するために必要に応じて、子コード グループを持つことができる子コード グループが含まれています。  
+  
+ <xref:System.Security.Policy.FileCodeGroup>共用体のセマンティクスを使用して、に基づいてアクセス許可セットを形成、<xref:System.Security.Policy.Url>によって指定された`evidence`です。  
+  
+   
+  
+## Examples  
+ 次のコードの使用を示しています、<xref:System.Security.Policy.FileCodeGroup.ResolveMatchingCodeGroups%2A>一致するコード グループを解決する方法です。 このコード例に示されている例の一部である、<xref:System.Security.Policy.FileCodeGroup>クラスです。  
+  
+ [!code-cpp[System.Security.Policy.FileCodeGroup_Evt#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CPP/members.cpp#9)]
+ [!code-csharp[System.Security.Policy.FileCodeGroup_Evt#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/CS/members.cs#9)]
+ [!code-vb[System.Security.Policy.FileCodeGroup_Evt#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.FileCodeGroup_Evt/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="evidence" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

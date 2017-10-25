@@ -1,0 +1,97 @@
+<Type Name="Pair" FullName="System.Web.UI.Pair">
+  <TypeSignature Language="C#" Value="public sealed class Pair" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit Pair extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Pair" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>2 つの関連オブジェクトを格納するために使用する基本ユーティリティ クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Pair>クラスは、次の 2 つの関連オブジェクトを格納する基本的な構造体として使用します。 これは、ページの状態の管理タスクの中に、または構成セクション ハンドラーなどの ASP.NET でさまざまな方法で使用されるユーティリティ クラスです。 使用することができます、<xref:System.Web.UI.Pair>独自のコードを任意の場所でクラスの 2 つの関連するオブジェクトとデータの非表示が必須ではありませんを格納する構造体をする必要があります。 <xref:System.Web.UI.Pair>クラスは、オブジェクト参照をカプセル化しない<xref:System.Web.UI.Pair.First>と<xref:System.Web.UI.Pair.Second>プロパティに、すべての呼び出し元コードに直接として公開パブリック クラスのフィールドです。  
+  
+ <xref:System.Web.UI.Pair>ページの状態の永続化の実装ではいくつかの方法でクラスを使用できます。 最も一般的な用途は、両方のコンテナーとして、<xref:System.Web.UI.Control.ViewState%2A>と<xref:System.Web.UI.PageStatePersister.ControlState%2A>コレクション。 ここで、<xref:System.Web.UI.Pair.First>プロパティは使用<xref:System.Web.UI.Control.ViewState%2A>、および<xref:System.Web.UI.Pair.Second>の<xref:System.Web.UI.PageStatePersister.ControlState%2A>します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pair ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Pair.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化されていない新しいインスタンスを作成、<see cref="T:System.Web.UI.Pair" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Pair (object x, object y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object x, object y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Pair.#ctor(System.Object,System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Object" />
+        <Parameter Name="y" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="x">オブジェクト。</param>
+        <param name="y">オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Pair" />クラス、指定したオブジェクトのペアを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="First">
+      <MemberSignature Language="C#" Value="public object First;" />
+      <MemberSignature Language="ILAsm" Value=".field public object First" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Pair.First" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのペアの最初のオブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Second">
+      <MemberSignature Language="C#" Value="public object Second;" />
+      <MemberSignature Language="ILAsm" Value=".field public object Second" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.Pair.Second" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはオブジェクトのペアの 2 番目のオブジェクトを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

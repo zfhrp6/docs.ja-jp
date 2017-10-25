@@ -1,0 +1,563 @@
+<Type Name="HtmlAnchor" FullName="System.Web.UI.HtmlControls.HtmlAnchor">
+  <TypeSignature Language="C#" Value="public class HtmlAnchor : System.Web.UI.HtmlControls.HtmlContainerControl, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlAnchor extends System.Web.UI.HtmlControls.HtmlContainerControl implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlAnchor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlContainerControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("ServerClick")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーの HTML <see langword="&lt;a&gt;" /> 要素へのプログラムによるアクセスを可能にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの方法を使用する、<xref:System.Web.UI.HtmlControls.HtmlAnchor>クラスです。 1 つは、ナビゲーション: を使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor.HRef%2A>にリンクするページの位置を定義するプロパティです。 2 つ目は、ポストバック イベント: を使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>プログラムによって、ユーザーを処理するイベントのリンクをクリックするとします。  
+  
+> [!CAUTION]
+>  このコントロールは、悪意のあるクライアント スクリプトが含まれる可能性があります、ユーザー入力を表示する使用できます。 スクリプトの実行可能ファイル、SQL ステートメント、またはその他のコードをアプリケーションに表示する前に、クライアントから送信される情報を確認します。 ASP.NET は、入力要求の検証機能があり、ユーザー入力の中のスクリプトのブロックと HTML を提供します。 検証サーバー コントロールは、ユーザー入力を評価するも提供されます。 詳細については、次を参照してください。[検証サーバー コントロール構文](http://msdn.microsoft.com/en-us/96d2c59e-693c-4079-9b53-b3ff0d9e9133)です。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.HtmlControls.HtmlAnchor>を参照してください、<xref:System.Web.UI.HtmlControls.HtmlAnchor.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント メッセージを表示するときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールがクリックされました。  
+  
+ [!code-aspx-csharp[HtmlAnchor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchor/CS/htmlanchorcs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchor/VB/htmlanchorvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlAnchor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロール。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlAnchor>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|"A"リテラル文字列。|  
+  
+   
+  
+## Examples  
+ 次のコード例は、動的に追加する方法を示します、 <xref:System.Web.UI.HtmlControls.HtmlAnchor> Web フォーム ページを制御します。  
+  
+ [!code-aspx-csharp[HtmlAnchorConstructor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchorConstructor/CS/htmlanchorconstructorcs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchorConstructor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchorConstructor/VB/htmlanchorconstructorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証を実行するかどうかを示す値を設定するときに、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />コントロールがクリックされました。</summary>
+        <value>
+          <see langword="true" />検証を実行する場合と、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />がクリックされた場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ページの検証が実行されるときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールがクリックされました。 ページの検証は、かどうかのコントロールに関連付けられている検証コントロールによって指定されている検証規則を合格すべてページ上の検証コントロールを決定します。  
+  
+ 指定するか、クライアントとサーバーの両方で検証を実行するかどうかを判断するときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>を使用してコントロールがクリックされた、<xref:System.Web.UI.HtmlControls.HtmlAnchor.CausesValidation%2A>プロパティです。 検証が実行されるを防ぐためには、設定、<xref:System.Web.UI.HtmlControls.HtmlAnchor.CausesValidation%2A>プロパティを false にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HRef">
+      <MemberSignature Language="C#" Value="public string HRef { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HRef" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.HRef" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で指定されたリンクの URL 対象、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />サーバー コントロールです。</summary>
+        <value>リンクの URL 対象。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにリンクする URL を指定するこのプロパティを使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールをクリックします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.HRef%2A>ときに移動する Web ページを指定するプロパティ、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールをクリックします。  
+  
+ [!code-aspx-csharp[Classic HtmlAnchor.HRef Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlAnchor.HRef Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlAnchor.HRef Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlAnchor.HRef Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で定義されているブックマーク名、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />サーバー コントロールです。</summary>
+        <value>ブックマーク名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、名前を持つ Web ページのセクションをマークできます。 これによりどこからでもこのセクションへのリンクを同じページにします。 たとえば、ページ上のトピックに直接リンクするページの上部にあるコンテンツのテーブルを指定できます。  
+  
+ マークされたセクションにリンクするには、使用、<xref:System.Web.UI.HtmlControls.HtmlAnchor>と制御、 <xref:System.Web.UI.HtmlControls.HtmlAnchor.HRef%2A> # 記号で前に、セクションの名前に設定するプロパティ (\<a HRef ="#Topic1"/>)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Name%2A>プロパティを Web ページ上のさまざまなセクションをマークし、コンテンツのテーブルからのリンクを設定します。  
+  
+ [!code-aspx-csharp[Classic HtmlAnchor.Name Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlAnchor.Name Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlAnchor.Name Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlAnchor.Name Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Control.PreRender" />ポストバックを生成するためのイベントとレジスタのクライアント スクリプトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.OnPreRender%2A>メソッドことが常に表示できるように、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Title%2A>カスタム タグ<xref:System.Web.UI.HtmlControls.HtmlAnchor>サーバー コントロールです。  
+  
+ [!code-aspx-csharp[CustomHtmlAnchorOnPreRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlAnchorOnPreRender/CS/custom_htmlanchor_onprerendercs.aspx#1)]
+ [!code-aspx-vb[CustomHtmlAnchorOnPreRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlAnchorOnPreRender/VB/custom_htmlanchor_onprerendervb.aspx#1)]  
+  
+ [!code-csharp[CustomHtmlAnchorOnPreRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlAnchorOnPreRender/CS/custom_htmlanchor_onprerender.cs#2)]
+ [!code-vb[CustomHtmlAnchorOnPreRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlAnchorOnPreRender/VB/custom_htmlanchor_onprerender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnServerClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnServerClick (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnServerClick(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.OnServerClick(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick" /> イベントを発生させます。 これにより、イベントのカスタム ハンドラーを作成できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベントが発生したときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールをクリックします。 このサーバーのイベントは、サーバーとクライアントから発生する可能性へのラウンド トリップをさせます。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.OnServerClick%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 次のコード例を指定して、コードのイベント ハンドラーを宣言する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント。 ときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールがクリックされると、メッセージが表示されます。  
+  
+ [!code-aspx-csharp[HtmlAnchorServerClickDeclarative#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchorServerClickDeclarative/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchorServerClickDeclarative#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchorServerClickDeclarative/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例をプログラムで指定し、イベント ハンドラーのコード例を変更する、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント。  
+  
+ [!code-aspx-csharp[HtmlAnchorServerClick#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchorServerClick/CS/htmlanchorserverclickcs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchorServerClick#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchorServerClick/VB/htmlanchorserverclickvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.HtmlControls.HtmlAnchor.OnServerClick(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.HtmlControls.HtmlAnchor.OnServerClick(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数。</param>
+        <summary>サーバーへのポストバック時に、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" /> コントロールのイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.RaisePostBackEvent%2A>がメソッドを使用、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロール、発生させる、クリックしてされたとき、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント。  
+  
+ このメソッドは、主の機能を拡張するコントロールの開発者によって使用、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderAttributes">
+      <MemberSignature Language="C#" Value="protected override void RenderAttributes (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RenderAttributes(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.RenderAttributes(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" /> コントロールの属性を指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトにレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の値、<xref:System.Web.UI.HtmlControls.HtmlAnchor.HRef%2A>プロパティが正しくない形式の URL、<xref:System.Web.UI.HtmlControls.HtmlAnchor.RenderAttributes%2A>メソッドがスローされます、<xref:System.Web.HttpException>例外。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.RenderAttributes%2A>の特定のソフトウェア タイトルのテキストがツールヒントとしてアクセスできるが常に表示されるようにカスタム サーバー内のメソッドが制御、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロール。  
+  
+ [!code-aspx-csharp[CustomHtmlAnchorRenderAttributes#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlAnchorRenderAttributes/CS/custom_htmlanchor_renderattributescs.aspx#1)]
+ [!code-aspx-vb[CustomHtmlAnchorRenderAttributes#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlAnchorRenderAttributes/VB/custom_htmlanchor_renderattributesvb.aspx#1)]  
+  
+ [!code-csharp[CustomHtmlAnchorRenderAttributes#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlAnchorRenderAttributes/CS/custom_htmlanchor_renderattributes.cs#2)]
+ [!code-vb[CustomHtmlAnchorRenderAttributes#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlAnchorRenderAttributes/VB/custom_htmlanchor_renderattributes.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="P:System.Web.UI.HtmlControls.HtmlAnchor.HRef" />間違った形式の URL が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerClick">
+      <MemberSignature Language="C#" Value="public event EventHandler ServerClick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ServerClick" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" /> コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベントが発生したときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールをクリックします。 このサーバーのイベントは、サーバーとクライアントから発生する可能性へのラウンド トリップをさせます。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を指定して、コードのイベント ハンドラーを宣言する方法を示します、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント。 ときに、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールがクリックされると、メッセージが表示されます。  
+  
+ [!code-aspx-csharp[HtmlAnchorServerClickDeclarative#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchorServerClickDeclarative/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchorServerClickDeclarative#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchorServerClickDeclarative/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例を前の例をプログラムで指定し、イベント ハンドラーのコードを変更、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ServerClick>イベント。  
+  
+ [!code-aspx-csharp[HtmlAnchorServerClick#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HtmlAnchorServerClick/CS/htmlanchorserverclickcs.aspx#1)]
+ [!code-aspx-vb[HtmlAnchorServerClick#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HtmlAnchorServerClick/VB/htmlanchorserverclickvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlAnchor.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント引数。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.Page.RaisePostBackEvent(System.Web.UI.IPostBackEventHandler,System.String)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.System%23Web%23UI%23IPostBackEventHandler%23RaisePostBackEvent%2A> メソッドは <xref:System.Web.UI.HtmlControls.HtmlAnchor.RaisePostBackEvent%2A> メソッドを呼び出します。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.HtmlControls.HtmlAnchor> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはブラウザー ウィンドウまたはときにリンクされている Web ページの内容を表示するフレームの名前を設定、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />コントロールをクリックします。</summary>
+        <value>ブラウザー ウィンドウまたはフレームの Web ページの内容を表示するときにリンクされている、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />をクリックします。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>プロパティを指定するターゲット ウィンドウかフレームするときにリンクされている Web ページの内容を表示する、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールをクリックします。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`a`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.HtmlControls.HtmlAnchor> XHTML 1.1 に準拠している必要があります。 詳細については、次を参照してください。 [Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成する場合は、使用しないでください。、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [NIB: ASP.NET のユーザー補助](http://msdn.microsoft.com/en-us/9b5f3e05-e88d-4248-a5f4-9e64850fa0ae)です。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>値は、範囲の A ~ Z (大文字)、次の特殊な値を除く、アンダー スコアで始まるの文字で始める必要があります。  
+  
+|対象の値|説明|  
+|------------------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直前のフレーム セットの親に内容を表示します。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  ブラウザーのマニュアルを参照するかどうかを`_search`値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、`_search`ターゲット値。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Target%2A>ときに移動 ページを表示するプロパティを<xref:System.Web.UI.HtmlControls.HtmlAnchor>フレームなしに新しいウィンドウでコントロールをクリックします。  
+  
+ [!code-aspx-csharp[Classic HtmlAnchor.Target Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlAnchor.Target Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlAnchor.Target Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlAnchor.Target Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウス ポインターが上に表示されるツールヒント テキストを取得または、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />コントロール。</summary>
+        <value>マウス ポインターが上にある場合に表示されるテキスト、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティにカスタム ツールヒントを使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロール。 このテキストは、マウス ポインターがコントロール上に置いたときに表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.HtmlControls.HtmlAnchor.Title%2A>ツールヒントのカスタム テキストを提供するプロパティです。  
+  
+ [!code-aspx-csharp[Classic HtmlAnchor.Title Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic HtmlAnchor.Title Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic HtmlAnchor.Title Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic HtmlAnchor.Title Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlAnchor.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のコントロールのグループを設定、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />サーバーへのポストバック時にコントロールによって検証されます。</summary>
+        <value>対象のコントロールのグループ、<see cref="T:System.Web.UI.HtmlControls.HtmlAnchor" />が原因で、サーバーへのポストバック時に検証します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.HtmlControls.HtmlAnchor>サーバーへのポストバック時にコントロールによって検証されます。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlAnchor.ValidationGroup%2A>プロパティは、有効される場合にのみの値、<xref:System.Web.UI.HtmlControls.HtmlAnchor.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.HtmlControls.HtmlAnchor.ValidationGroup%2A>プロパティ、指定されたグループの一部である検証コントロールだけは、検証、<xref:System.Web.UI.HtmlControls.HtmlAnchor>コントロールは、サーバーに再度ポストします。 このプロパティの値を指定しないかどうか、<xref:System.Web.UI.HtmlControls.HtmlAnchor.CausesValidation%2A>プロパティに設定されている`true`サーバーへのコントロールのポストバック時に検証グループに割り当てられていないページ上のすべての検証コントロールが検証されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

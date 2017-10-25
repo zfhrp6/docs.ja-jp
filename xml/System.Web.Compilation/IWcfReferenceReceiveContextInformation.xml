@@ -1,0 +1,61 @@
+<Type Name="IWcfReferenceReceiveContextInformation" FullName="System.Web.Compilation.IWcfReferenceReceiveContextInformation">
+  <TypeSignature Language="C#" Value="public interface IWcfReferenceReceiveContextInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWcfReferenceReceiveContextInformation" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.IWcfReferenceReceiveContextInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>追加のコンテキスト情報を取得するために実装するインターフェイスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスにより、WSDL インポーター mechanismto がプロキシの生成およびより優れた開発者が Visual Studio で発生する、追加のコンテキスト情報を受信します。 WSDL インポーターを実装する場合、 <xref:System.Web.Compilation.IWcfReferenceReceiveContextInformation> 、インターフェイス、`ReceiveImportContextInformation`の任意のメソッドの前に、WCF プロキシのジェネレーターでメソッドが呼び出される<xref:System.ServiceModel.Description.IWsdlImportExtension>と<xref:System.ServiceModel.Description.IPolicyImportExtension>と呼ばれます。  
+  
+ 追加のコンテキスト情報が渡されたパラメーターを指す、`ReceiveImportContextInformation`メソッドです。 パラメーターには、すべての拡張ファイルおよび実装するオブジェクトへの参照の内容が含まれます。、<xref:System.IServiceProvider>インターフェイスです。 メソッドに渡されるすべての拡張ファイルはインポーターに固有であり、必要な追加情報を格納するために使用します。 つまり、Visual Studio では、これらのファイルの内容を制御しませんしに直接は使用しません。  
+  
+> [!NOTE]
+>  インポーターは、WCF 機能拡張機構を参照してください。 このメカニズムでは、サービスを記述するメタデータ (WSDL または XSD) ドキュメントからプロキシ コードを生成する方法をカスタマイズすることができます。 詳細については、次を参照してください。 [WCF 拡張機能のカスタム メタデータのインポート](http://go.microsoft.com/fwlink/?LinkId=92310)msdn です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ReceiveImportContextInformation">
+      <MemberSignature Language="C#" Value="public void ReceiveImportContextInformation (System.Collections.Generic.IDictionary&lt;string,byte[]&gt; serviceReferenceExtensionFileContents, IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReceiveImportContextInformation(class System.Collections.Generic.IDictionary`2&lt;string, unsigned int8[]&gt; serviceReferenceExtensionFileContents, class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.IWcfReferenceReceiveContextInformation.ReceiveImportContextInformation(System.Collections.Generic.IDictionary{System.String,System.Byte[]},System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceReferenceExtensionFileContents" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Byte[]&gt;" />
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceReferenceExtensionFileContents">WCF サービス参照の .svcmap ファイルに関連付けられているすべての拡張ファイルの内容を提供します。</param>
+        <param name="serviceProvider">追加情報に対してクエリを実行する Visual Studio サービス プロバイダーへの参照。</param>
+        <summary>追加のコンテキスト情報を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `serviceReferenceExtensionFileContents`パラメーターが Reference.config や機能拡張で追加されているカスタム拡張ファイルなどの WCF サービス参照の .svcmap ファイルに関連付けられているすべての拡張ファイルの内容を提供します。  
+  
+> [!NOTE]
+>  ASP.NET ビルド プロバイダーのコンテキストで実行されている場合、Visual Studio に固有であるサービス プロバイダーから受信したすべてのインターフェイスはインポート拡張に利用できません。 これは、WCF サービス参照を ASP.NET プロジェクトでコンパイルする場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

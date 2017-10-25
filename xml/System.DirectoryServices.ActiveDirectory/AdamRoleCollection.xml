@@ -1,0 +1,135 @@
+<Type Name="AdamRoleCollection" FullName="System.DirectoryServices.ActiveDirectory.AdamRoleCollection">
+  <TypeSignature Language="C#" Value="public class AdamRoleCollection : System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AdamRoleCollection extends System.Collections.ReadOnlyCollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.AdamRoleCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.ReadOnlyCollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.AdamRoleCollection" />クラスは読み取り専用コレクションを含む<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />項目。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.DirectoryServices.ActiveDirectory.AdamRoleCollection>クラス参照を Active Directory アプリケーション モード (ADAM) を Active Directory ライトウェイト ディレクトリ サービス (AD LDS) に変更されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.DirectoryServices.ActiveDirectory.AdamRole role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(valuetype System.DirectoryServices.ActiveDirectory.AdamRole role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamRoleCollection.Contains(System.DirectoryServices.ActiveDirectory.AdamRole)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.DirectoryServices.ActiveDirectory.AdamRole" />
+      </Parameters>
+      <Docs>
+        <param name="role"><see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />このコレクション内で検索する項目。</param>
+        <summary>指定した <see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" /> 項目がこのコレクション内にあるかどうかを判断します。</summary>
+        <returns>
+          <see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" /> 項目がこのコレクション内にある場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="role" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="role" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.ActiveDirectory.AdamRole[] roles, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(valuetype System.DirectoryServices.ActiveDirectory.AdamRole[] roles, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamRoleCollection.CopyTo(System.DirectoryServices.ActiveDirectory.AdamRole[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roles" Type="System.DirectoryServices.ActiveDirectory.AdamRole[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="roles">配列<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />項目をこのコレクションの要素を受け取ります。</param>
+        <param name="index">内の 0 から始まるインデックス<c>ロール</c>このメソッドがこのコレクションのコピーを開始します。</param>
+        <summary>すべてコピー<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />対象となる配列の指定したインデックスから始まる、指定した配列には、このコレクション内の項目。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">コピー先の配列の大きさが十分でないため、必要な数の要素を保持できません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="roles" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />指定されているパラメーターはコピー先の配列の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.DirectoryServices.ActiveDirectory.AdamRole role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(valuetype System.DirectoryServices.ActiveDirectory.AdamRole role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.AdamRoleCollection.IndexOf(System.DirectoryServices.ActiveDirectory.AdamRole)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="role" Type="System.DirectoryServices.ActiveDirectory.AdamRole" />
+      </Parameters>
+      <Docs>
+        <param name="role"><see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />このコレクション内で検索する項目。</param>
+        <summary>最初に出現する指定した<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />このコレクション内の項目。</summary>
+        <returns>最初に一致する項目の 0 から始まるインデックス。 このコレクションのメンバーのと同じですが存在しない場合は-1、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />項目。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="role" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="role" /> は有効な <see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AdamRole this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.AdamRole Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.AdamRoleCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AdamRole</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する <see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />このコレクション内の項目。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AdamRole" />指定したインデックス位置に存在するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />が指定されたコレクションの範囲外です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

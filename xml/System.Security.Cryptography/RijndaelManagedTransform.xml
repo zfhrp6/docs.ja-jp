@@ -1,0 +1,306 @@
+<Type Name="RijndaelManagedTransform" FullName="System.Security.Cryptography.RijndaelManagedTransform">
+  <TypeSignature Language="C#" Value="public sealed class RijndaelManagedTransform : System.Security.Cryptography.ICryptoTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RijndaelManagedTransform extends System.Object implements class System.IDisposable, class System.Security.Cryptography.ICryptoTransform" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RijndaelManagedTransform" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Cryptography.ICryptoTransform</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Rijndael アルゴリズムを使用してデータを暗号変換を実行します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このクラスを使用することは推奨されません。 使用することをお勧め<xref:System.Security.Cryptography.RijndaelManaged>で、<xref:System.Security.Cryptography.CryptoStream>オブジェクト。 <xref:System.Security.Cryptography.CryptoStream>オブジェクトが処理を使用する場合に発生する可能性があるパディング問題<xref:System.Security.Cryptography.RijndaelManagedTransform>直接です。 例については、次を参照してください。、<xref:System.Security.Cryptography.RijndaelManaged>クラスです。  
+  
+ 両方の<xref:System.Security.Cryptography.RijndaelManaged.CreateEncryptor%2A>と<xref:System.Security.Cryptography.RijndaelManaged.CreateDecryptor%2A>メソッドのインスタンスを返す、 <xref:System.Security.Cryptography.RijndaelManagedTransform> 、現在のキーの情報に初期化されているクラス<xref:System.Security.Cryptography.RijndaelManaged>オブジェクト。  暗号化または Rijndael アルゴリズムを使用してデータを復号化に渡す、<xref:System.Security.Cryptography.RijndaelManagedTransform>にこれらのメソッドによって返されるオブジェクト、<xref:System.Security.Cryptography.CryptoStream>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlockSizeValue">
+      <MemberSignature Language="C#" Value="public int BlockSizeValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlockSizeValue" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RijndaelManagedTransform.BlockSizeValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブロック サイズを取得します。</summary>
+        <value>データ ブロックのサイズ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReuseTransform">
+      <MemberSignature Language="C#" Value="public bool CanReuseTransform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanReuseTransform" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RijndaelManagedTransform.CanReuseTransform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の変換を再利用できるかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanTransformMultipleBlocks">
+      <MemberSignature Language="C#" Value="public bool CanTransformMultipleBlocks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanTransformMultipleBlocks" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RijndaelManagedTransform.CanTransformMultipleBlocks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数のブロックを変換できるかどうかを示す値を取得します。</summary>
+        <value>
+          複数のブロックを変換できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RijndaelManagedTransform.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RijndaelManagedTransform" /> クラスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、単純に<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>クラスです。  
+  
+ 呼び出す`Dispose`によりによって使用されるリソース、<xref:System.Security.Cryptography.RijndaelManagedTransform>を他の目的に再割り当てされます。 詳細については`Dispose`を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RijndaelManagedTransform.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RijndaelManagedTransform" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Security.Cryptography.RijndaelManagedTransform> を呼び出します。 `Dispose` メソッドによって、<xref:System.Security.Cryptography.RijndaelManagedTransform> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Security.Cryptography.RijndaelManagedTransform>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Security.Cryptography.RijndaelManagedTransform>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Security.Cryptography.RijndaelManagedTransform> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Security.Cryptography.RijndaelManagedTransform> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputBlockSize">
+      <MemberSignature Language="C#" Value="public int InputBlockSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 InputBlockSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RijndaelManagedTransform.InputBlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>入力ブロック サイズを取得します。</summary>
+        <value>入力データ ブロックのサイズ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputBlockSize">
+      <MemberSignature Language="C#" Value="public int OutputBlockSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 OutputBlockSize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RijndaelManagedTransform.OutputBlockSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ブロック サイズを取得します。</summary>
+        <value>出力データ ブロックのサイズ (バイト単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RijndaelManagedTransform.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部状態をリセット<see cref="T:System.Security.Cryptography.RijndaelManagedTransform" />を別の暗号化または復号化を行うには再度使用できるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.RijndaelManagedTransform.Reset%2A>を呼び出すときに、メソッドが自動的に呼び出される<xref:System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock%2A>です。 <xref:System.Security.Cryptography.RijndaelManagedTransform.Reset%2A>と、たとえば、暗号化された入力データは、ガベージ復号化することはできませんが、メソッドは呼び出されません。 この場合、例外をスローし、<xref:System.Security.Cryptography.RijndaelManagedTransform.Reset%2A>は呼び出されません。 手動で呼び出すことができます、<xref:System.Security.Cryptography.RijndaelManagedTransform.Reset%2A>ここではメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformBlock">
+      <MemberSignature Language="C#" Value="public int TransformBlock (byte[] inputBuffer, int inputOffset, int inputCount, byte[] outputBuffer, int outputOffset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 TransformBlock(unsigned int8[] inputBuffer, int32 inputOffset, int32 inputCount, unsigned int8[] outputBuffer, int32 outputOffset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RijndaelManagedTransform.TransformBlock(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputBuffer" Type="System.Byte[]" />
+        <Parameter Name="inputOffset" Type="System.Int32" />
+        <Parameter Name="inputCount" Type="System.Int32" />
+        <Parameter Name="outputBuffer" Type="System.Byte[]" />
+        <Parameter Name="outputOffset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="inputBuffer">操作の実行を入力します。</param>
+        <param name="inputOffset">データの使用を開始する入力バイト配列へのオフセット。</param>
+        <param name="inputCount">データとして使用する入力バイト配列内のバイト数。</param>
+        <param name="outputBuffer">データを書き込む出力します。</param>
+        <param name="outputOffset">データの書き込みを開始する出力バイト配列へのオフセット。</param>
+        <summary>入力バイト配列の指定した領域の変換を計算し、その結果の変換を出力バイト配列の指定した領域にコピーします。</summary>
+        <returns>書き込むバイト数。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputBuffer" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="outputBuffer" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">入力バッファーの長さは、入力のオフセット、および入力の数の合計よりも小さいです。  
+  
+ または  
+  
+ 値、<paramref name="inputCount" />パラメーターが 0 未満です。  
+  
+ または  
+  
+ 値、<paramref name="inputCount" />パラメーターがの長さより大きい、<paramref name="inputBuffer" />パラメーター。  
+  
+ または  
+  
+ 長さ、<paramref name="inputCount" />パラメーターは入力ブロック サイズで均等に devisable ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="inputOffset" />パラメーターが負の値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformFinalBlock">
+      <MemberSignature Language="C#" Value="public byte[] TransformFinalBlock (byte[] inputBuffer, int inputOffset, int inputCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] TransformFinalBlock(unsigned int8[] inputBuffer, int32 inputOffset, int32 inputCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputBuffer" Type="System.Byte[]" />
+        <Parameter Name="inputOffset" Type="System.Int32" />
+        <Parameter Name="inputCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="inputBuffer">操作の実行を入力します。</param>
+        <param name="inputOffset">データの使用を開始するバイト配列へのオフセット。</param>
+        <param name="inputCount">バイト配列内でデータとして使用されるバイトの数。</param>
+        <summary>指定したバイト配列の指定した領域の変換を計算します。</summary>
+        <returns>計算に変換します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputBuffer" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">値、<paramref name="inputCount" />パラメーターが 0 未満です。  
+  
+ または  
+  
+ 値、<paramref name="inputCount" />パラメーターがの長さよりもそれより大きく<paramref name="inputBuffer" />パラメーター。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<paramref name="inputOffset" />パラメーターが負の値。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">長さ、<paramref name="inputCount" />パラメーターは入力ブロック サイズで均等に devisable ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

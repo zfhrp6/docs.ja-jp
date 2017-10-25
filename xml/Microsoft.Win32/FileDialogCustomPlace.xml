@@ -1,0 +1,105 @@
+<Type Name="FileDialogCustomPlace" FullName="Microsoft.Win32.FileDialogCustomPlace">
+  <TypeSignature Language="C#" Value="public sealed class FileDialogCustomPlace" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileDialogCustomPlace extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.FileDialogCustomPlace" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のエントリを表す、<see cref="T:Microsoft.Win32.FileDialog" />カスタム プレースのリスト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で[!INCLUDE[TLA#tla_winvista](~/includes/tlasharptla-winvista-md.md)]が保存ファイル ダイアログ ボックスを開き、**お気に入りリンク**ユーザーが別の場所にすばやく移動できるダイアログ ボックスの左側のパネルです。 これらのリンクは、カスタムの場所と呼ばれます。 このクラスでは、アプリケーション ファイル ダイアログ ボックスを使用するときに表示されるリストを変更することができます。 カスタム プレイス用既知のフォルダーの一覧では、次を参照してください。<xref:Microsoft.Win32.FileDialogCustomPlaces>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileDialogCustomPlace (Guid knownFolder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid knownFolder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.FileDialogCustomPlace.#ctor(System.Guid)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="knownFolder" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="knownFolder">既知のフォルダーの GUID です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Win32.FileDialogCustomPlace" />指定した既知のフォルダーの GUID を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileDialogCustomPlace (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Win32.FileDialogCustomPlace.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">フォルダーのパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Win32.FileDialogCustomPlace" />指定したパスのクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KnownFolder">
+      <MemberSignature Language="C#" Value="public Guid KnownFolder { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid KnownFolder" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.FileDialogCustomPlace.KnownFolder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム プレースの既知のフォルダーの GUID を取得します。</summary>
+        <value>既知のフォルダーの GUID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Guid は、既知のフォルダーに関連付けられます。 既知のフォルダーの一覧では、次を参照してください。<xref:Microsoft.Win32.FileDialogCustomPlaces>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Win32.FileDialogCustomPlace.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム プレースのファイルのパスを取得します。</summary>
+        <value>カスタムの場所のパス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

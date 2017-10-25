@@ -1,0 +1,2186 @@
+<Type Name="WSFederationAuthenticationModule" FullName="System.IdentityModel.Services.WSFederationAuthenticationModule">
+  <TypeSignature Language="C#" Value="public class WSFederationAuthenticationModule : System.IdentityModel.Services.HttpModuleBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WSFederationAuthenticationModule extends System.IdentityModel.Services.HttpModuleBase" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Services.HttpModuleBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />着信要求のフェデレーション認証設定を適用することで、ASP.NET アプリケーションをセキュリティで保護するために使用する HTTP モジュールです。 <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> WIF 対応 ASP.NET アプリケーションでクレーム ベース id アクセスなしで提供されるメイン モジュールです。  
+  
+ <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" /> ASP.NET 開発者が、既定の動作を変更し、どのように認証とクレーム処理が行わの詳細を制御するいくつかのイベントを発生させます。 <see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />機能は、タスク固有のメソッドに分割されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule>クラス Ws-federation 認証モジュール (WSFAM) と呼ばれる HTTP モジュールを実装します。 Windows Identity Foundation (WIF) によって、すぐ、WSFAM が実装されます。 WSFAM は、web.config ファイルにエントリを行うことにより、ASP.NET パイプラインに追加されます。 派生して<xref:System.IdentityModel.Services.HttpModuleBase>を実装する<xref:System.Web.IHttpModule>です。 リッスンするために、ASP.NET ランタイムに登録すると、<xref:System.Web.HttpApplication.EndRequest>と<xref:System.Web.HttpApplication.AuthenticateRequest>イベント。 リッスンする、<xref:System.Web.HttpApplication.EndRequest>イベント、により、セキュリティ トークン サービス (STS) が要求されたリソースの承認に失敗した場合に、セキュリティ トークンを取得するクライアントをリダイレクト WSFAM です。 リッスンする、<xref:System.Web.HttpApplication.AuthenticateRequest>イベントにより、要求されたトークンを含む、STS からの応答の HTTP 要求を監視する WSFAM です。 インスタンスを作成するようなトークンが存在し、有効の場合は、<xref:System.Security.Claims.ClaimsPrincipal>承認済みのユーザーは、トークン内に存在するクレームを使用します。  
+  
+ セッションの管理がインスタンスであるセッションの認証モジュール (SAM) によって提供される、WSFAM を使用する場合の<xref:System.IdentityModel.Services.SessionAuthenticationModule>クラス、またはクラスから派生します。 SAM は、構成ファイル内の ASP.NET パイプラインにも追加されます。 SAM は、(セッション) の認証クッキーの要求を監視します。 これらの cookie が存在し、有効な場合、モジュールを抽出し、<xref:System.Security.Claims.ClaimsPrincipal>から認証済みユーザーの<xref:System.IdentityModel.Tokens.SessionSecurityToken>設定と、<xref:System.Web.HttpContext.User%2A?displayProperty=nameWithType>プロパティおよびスレッドのプリンシパル<xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType>プロパティです。  
+  
+ WSFAM を提供します。  
+  
+-   Ws-federation プロトコルを使用してセキュリティ トークン サービス (STS) への認証を外注する ASP.NET アプリケーションの権限です。 Id は、1 つまたは複数の identity 領域間でフェデレーションすることができ、複数の Sts を含むです。  
+  
+-   ASP.NET アプリケーションでクレーム ベース id。 認証時に、WSFAM は STS によって送信されたセキュリティ トークンの要求元のプリンシパルを作成し、スレッドのプリンシパルとしてこの要求プリンシパルを設定します。 このプリンシパルは、さらに加える承認、プレゼンテーション、およびロジック意思決定が表すユーザーについて、コードで使用できます。  
+  
+ WSFAM は、Ws-federation のサインインおよびサインアウト要求で使用するメッセージのパラメーターの既定値を提供するいくつかのプロパティを公開します。 これらのプロパティは通常の初期化、 [ &lt;wsFederation&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)構成ファイル内の要素。 これらのプロパティの中で最も重要なは。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティで、Ws-federation のサインインおよびサインアウト要求を送信するセキュリティ トークン サービス (STS) のアドレスを指定します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm%2A>プロパティを Ws-federation サインイン要求で使用する wtrealm パラメーターを指定します。 Wtrealm パラメーターは、STS 証明書利用者 (rp) アプリケーションのセキュリティの領域を識別します。  
+  
+ イベント ハンドラーのデリゲートを提供することによって、サインイン メッセージ パラメーター要求ごとの変更することも、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。  
+  
+ 2 つのプロパティは、モジュールの動作を制御します。 これらのプロパティの両方がから初期化されるも通常、`<wsFederation>`構成内の要素。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled%2A>プロパティは、モジュールが認証のために、STS へのパッシブ リダイレクトを実行する必要があるかどうかを指定します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PersistentCookiesOnPassiveRedirects%2A>プロパティは、セッションを継続するかどうかを指定します。 このプロパティを true に設定されている場合、SAM はセッションの cookie をクライアントに書き込むに使用されます。 クライアントからの後続の要求では、SAM はセッションの cookie でトークンを使用して認証が永続化を提供します。  
+  
+ WSFAM サインイン時にいくつかのイベントを発生させるし、サインアウト、これにより、ASP.NET 開発者をモジュールの既定の動作を変更し、どのように認証とクレーム処理が行わの詳細を制御します。  
+  
+ Ws-federation サインイン要求が STS に送信される前に、次のイベントが発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>: 受動リダイレクトが有効になっており、要求されたリソースの承認に失敗したときに発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>: STS に Ws-federation サインイン要求を送信、WSFAM 直前に発生します。 このイベントを使用して、サインイン要求では、パラメーターを変更することができます。  
+  
+ (セキュリティ トークンを発行) サインイン応答が、STS から受信したときに、次のイベントが発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived>: STS によって送信されたセキュリティ トークンが、応答から読み取られた後にだけ発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>: トークンが検証された直後後に発生します。 このイベントをフィルター処理、変換、または要求プリンシパルに信頼性情報の追加を使用することができます (<xref:System.Security.Claims.ClaimsPrincipal>) セキュリティ トークンからを作成します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>: セッション トークンの直前に発生します。 (<xref:System.IdentityModel.Tokens.SessionSecurityToken>)、プリンシパルが、スレッドのプリンシパルを設定するための要求と現在のユーザーから作成され、セッションの cookie に書き込まれます。 セッション トークンまたは有効化または無効にする、セッションの cookie を記述を変更する機会を提供します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>: スレッドのプリンシパルと現在のユーザーが設定されている直後に、認証の最後に発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError>: サインイン時に例外が発生した場合に発生します。 要求をキャンセルし、例外が呼び出し元に返されるようにできます。  
+  
+ 署名する、セッションから Ws-federation サインアウト クリーンアップ要求 (wsignoutcleanup1.0) を処理するときに、次のイベントが発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>: 使用するセッションに依存している任意のクリーンアップを実行したり、サインアウトをキャンセルするセッションが削除される直前に発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>: セッションが削除された直後後に発生します。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>: サインアウト時に例外が発生した場合に発生します。サインアウトをキャンセルし、例外が呼び出し元に返されるようにできます。  
+  
+> [!NOTE]
+>  呼び出して、STS でサインアウト時に、サインアウトのイベントは発生しませんが、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ WSFAM を使用して、STS へのサインインの 2 つの方法はあります。 1 つはパッシブ リダイレクトを有効にすると、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled%2A>プロパティです。 要求されたリソースに認証が失敗した場合にこの例では、返すのではなく、 `401:Access Denied` WSFAM、クライアントへの応答がそのプロパティから Ws-federation サインイン要求メッセージを作成し、セキュリティ トークンを取得するための STS にクライアントをリダイレクトします。 2 番目の方法が明示的に呼び出すことによって、クライアントを STS にリダイレクトするには、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A>メソッドから、web ページや、アプリケーションでカスタム コントロールです。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A>メソッドがサインイン要求を構築するためにも、WSFAM のプロパティを使用します。  
+  
+ いずれかのオーバー ロードされた<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%2A>セッションからサインアウトするメソッドを使用することができます。 これは、クライアント上のセッションの cookie を削除します。 Sts Ws-federation サインアウト メッセージ ("wsignout1.0") は送信しません。 STS でサインアウトに使用する必要があります、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ WSFAM は、クライアントでそのセッションを削除して Ws-federation サインアウト クリーンアップ要求 ("wsignoutcleanup1.0") を処理します。 サインアウト クリーンアップ メッセージ内の wreply パラメーターが設定されていない場合、WSFAM はメッセージを送信した STS に緑のチェック マークのイメージを返します。 この機能は、RP が完了している、サインアウト、確認として、STS により使用できます。  
+  
+ WSFAM では、--など、その要求処理パイプライン--機能を公開する、タスク固有のいくつかのメソッドを使用します。 WSFAM の動作を変更する派生クラスでこれらのメソッドをオーバーライドすることができます。  
+  
+ 使用するには、次の XML と同様にパイプラインにモジュールを追加する必要があります。  
+  
+```  
+<configuration>  
+  <system.webServer>  
+    <modules>  
+      <add name="WsFederationAuthenticationModule" type="System.IdentityModel.Services.WSFederationAuthenticationModule, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>  
+    </modules>  
+  </system.webServer>  
+</configuration>  
+```  
+  
+ 構成後、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> HTTP 要求の処理のさまざまな段階でイベントを発生させます。 ASP.NET 開発者は global.asax ファイルでこれらのイベントを処理できます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSFederationAuthenticationModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために派生クラスのコンス トラクターによって呼び出される、<see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationType">
+      <MemberSignature Language="C#" Value="public string AuthenticationType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AuthenticationType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthenticationType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wauth パラメーターの値を設定します。</summary>
+        <value>認証の種類を指定する URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wauth パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthenticationType%2A>プロパティに設定されている`null`wauth パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthorizationFailed">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.AuthorizationFailedEventArgs&gt; AuthorizationFailed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.AuthorizationFailedEventArgs&gt; AuthorizationFailed" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.AuthorizationFailedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールが認証に構成されている発行元に、ユーザーをリダイレクトする必要があるかどうかを判断する場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>イベントは、HTTP 要求の承認が失敗したときに発生します。 内から生成される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest%2A>イベント ハンドラーのデリゲートを呼び出すことによって、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthorizationFailed%2A>メソッドです。  
+  
+ 設定することができます、<xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider%2A?displayProperty=nameWithType>を id プロバイダーに要求をリダイレクトするかどうかを制御するプロパティです。 初期化するには、このプロパティのフレームワーク`false`ユーザーが既に認証されている場合。 この場合、プロパティを設定`true`STS で循環ループが発生する可能性があります。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>する URL を変更するか、リダイレクトをキャンセル イベントを使用できます。  
+  
+ ASP.NET アプリケーションでは、このイベントを処理するという名前のメソッドを作成する`WSFederationAuthentication_AuthorizationFailed`global.asax ファイルでします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#7](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CanReadSignInResponse">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定された HTTP 要求が Ws-federation サインイン応答メッセージであるかどうかを示す値を返します。 メッセージが Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") の場合は、このメソッドは、要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サインイン応答メッセージは、サインイン要求メッセージに対する応答でセキュリティ トークン サービス (STS) によって、証明書利用者 (RP) に送信されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CanReadSignInResponse">
+      <MemberSignature Language="C#" Value="public bool CanReadSignInResponse (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanReadSignInResponse(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">受信 HTTP 要求。</param>
+        <summary>指定された HTTP 要求が Ws-federation サインイン応答メッセージであるかどうかを示す値を返します。 メッセージが Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") の場合は、このメソッドは、要求を処理します。</summary>
+        <returns>
+          <see langword="true" />指定された HTTP 要求には、wa パラメーターが"wsignout1.0"に設定し、wresult パラメーターが空でないポストされたフォームが含まれている場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、要求処理パイプラインから受信 HTTP 要求が Ws-federation サインイン応答メッセージを含むフォーム ポストかどうかを判別します。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%28System.Web.HttpRequestBase%2CSystem.Boolean%29?displayProperty=nameWithType>を持つオーバー ロード、`onPage`パラメーター セット`false`呼び出しは、ページの処理中に取得されてことを示すためにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadSignInResponse">
+      <MemberSignature Language="C#" Value="public virtual bool CanReadSignInResponse (System.Web.HttpRequestBase request, bool onPage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanReadSignInResponse(class System.Web.HttpRequestBase request, bool onPage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse(System.Web.HttpRequestBase,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+        <Parameter Name="onPage" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="request">受信 HTTP 要求。</param>
+        <param name="onPage">
+          <see langword="true" />場合は、呼び出しは、ページ要求の処理中に発生します。 <see langword="false" />呼び出し元が HTTP モジュールの場合は。 このパラメーターは、処理を終了または受信メッセージが Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") の場合、リダイレクトを送信する方法を決定します。</param>
+        <summary>指定された HTTP 要求が Ws-federation サインイン応答メッセージであるかどうかを示す値を返します。 メッセージが Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") の場合は、このメソッドは、要求を処理します。</summary>
+        <returns>
+          <see langword="true" />指定された HTTP 要求には、"wsignout1.0"および wresult パラメーター wa パラメーターが設定されているポストされたフォームが含まれている場合は空です。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求処理パイプラインを介してこのメソッドが呼び出されて、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%28System.Web.HttpRequestBase%29?displayProperty=nameWithType>受信 HTTP 要求が Ws-federation サインイン応答メッセージが含まれる投稿フォームであるかどうかを判別するオーバー ロードします。  
+  
+ 既定の実装では、次の項目を実行します。  
+  
+-   入力方向の要求がフォームの POST の場合は、呼び出し、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.IsSignInResponse%2A>フォーム POST にサインイン応答が含まれるかどうかを調べます。  
+  
+-   入力方向の要求がフォーム POST、および要求には、Ws-federation サインアウト クリーンアップ要求に (wa パラメーターは、"wsignoutcleanup1.0") が含まれています、サインアウト クリーンアップが実行されます。 この場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>メソッドが呼び出されます (パラメーターを設定した`true`サインアウト クリーンアップを示すために)、セッションからサインアウトします。 これも、サインアウトによりイベントが発生します。  
+  
+     次に、サインアウト クリーンアップ要求 wreply パラメーターが含まれている場合、クライアントがによって返される URL にリダイレクトは、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSignOutRedirectUrl%2A>メソッドです。 それ以外の場合、緑のチェック マークのイメージが、STS へに返されます。 このイメージの受信は、サインアウト クリーンアップ要求が受信され、RP によって正常に処理されたことの確認として、STS により使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateSignInRequest">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Services.SignInRequestMessage CreateSignInRequest (string uniqueId, string returnUrl, bool rememberMeSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Services.SignInRequestMessage CreateSignInRequest(string uniqueId, string returnUrl, bool rememberMeSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SignInRequestMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+        <Parameter Name="returnUrl" Type="System.String" />
+        <Parameter Name="rememberMeSet" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">WSFAM Ws-federation サインイン要求; wctx パラメーターでこの値を保存します。ただし、モジュール使用しませんサインイン要求またはサインイン応答を処理するときにします。 任意の値に設定できます。 一意であることはありません。</param>
+        <param name="returnUrl">認証時に返す必要があります、モジュールを URL です。</param>
+        <param name="rememberMeSet">WSFAM Ws-federation サインイン要求; wctx パラメーターでこの値を保存します。ただし、モジュール使用しませんサインイン要求またはサインイン応答を処理するときにします。 設定するか、<see langword="true" />または<see langword="false" />です。</param>
+        <summary>要求メッセージ内で、モジュールで構成されている WS フェデレーション パラメーターを使用して Ws-federation サインインを作成します。</summary>
+        <returns>Ws-federation サインイン要求メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって表される Ws-federation サインイン要求を作成、<xref:System.IdentityModel.Services.SignInRequestMessage>オブジェクト。 新しいプロパティ<xref:System.IdentityModel.Services.SignInRequestMessage>オブジェクトが次のように設定されます。  
+  
+-   <xref:System.IdentityModel.Services.WSFederationMessage.Context%2A>プロパティ (wctx パラメーター) がメソッドのパラメーターを使用して作成された値に設定します。  
+  
+-   <xref:System.IdentityModel.Services.SignInRequestMessage.CurrentTime%2A>プロパティ (wct パラメーター) が、現在の時刻に設定します。  
+  
+-   その他のすべてのプロパティは、現在のインスタンスと同じプロパティを使用して設定されます。  
+  
+ メソッドに渡されるパラメーターは、wctx メッセージ パラメーターの作成に使用されます。 これは、次の形式の文字列:`ru=returnUrl&cx=SignInContext&rm=rememberMeSet&id=uniqueId`です。  
+  
+-   `ru`の値に値が設定されている、`returnUrl`メソッドに渡される入力パラメーターと、モジュールがブラウザーで次の認証の成功を問い合わせる必要があります URL を指定します。 これは、WSFAM によって使用される wctx 文字列に格納されている唯一の値です。 モジュールの呼び出し、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReturnUrlFromResponse%2A> Ws-federation サインイン応答を処理するときに、この値を wctx パラメーターから抽出するメソッド。 これは、必要がありますと混同しないで、wreply メッセージ、パラメーターで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply%2A>プロパティおよびセキュリティ トークン サービス (STS) がその応答を問い合わせる必要があります、RP にアドレスを提供します。  
+  
+-   `cx`パラメーターがの値に設定されている、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext%2A>プロパティです。 アプリケーション定義のコンテキスト wctx 文字列に保存するかを設定するためにこのプロパティが公開されています。ただし、WSFAM は応答では、この値を抽出するメソッドを公開しません。 値は、アプリケーションで必要がある場合は、wctx 文字列を解析し、応答を処理するときに、この値を読み取るコードを指定する必要があります。 これを行うオーバーライドすることで、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReturnUrlFromResponse%2A>メソッドです。  
+  
+-   どちらも、`rm`の値に設定されている値、`rememberMeSet`パラメーターも`id`パラメーターの値に設定されているが、 `uniqueId` WSFAM、パラメーターを使用します。 これらは、任意の値に設定することができます。  
+  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>からメソッドを呼び出した、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" />プロパティは<see langword="null" />または空の文字列。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" />プロパティは<see langword="null" />または空の文字列。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FederatedSignOut">
+      <MemberSignature Language="C#" Value="public static void FederatedSignOut (Uri signOutUrl, Uri replyUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void FederatedSignOut(class System.Uri signOutUrl, class System.Uri replyUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signOutUrl" Type="System.Uri" />
+        <Parameter Name="replyUrl" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="signOutUrl">Ws-federation サインアウト要求メッセージを受信する STS の URL です。 ことはできません<see langword="null" />です。</param>
+        <param name="replyUrl">サインアウト要求メッセージ内の wreply 値として送信される URL です。</param>
+        <summary>Ws-federation プロトコルを使用して指定されたセキュリティ トークン サービス (STS) にサイン アウトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出して、指定した STS に Ws-federation サインアウト要求メッセージを送信します。 オプションでサインアウト要求で wreply パラメーターの値を指定することができます。  
+  
+ メソッドは、次のこと。  
+  
+1.  指定されたパラメーターを使用して Ws-federation サインアウト要求メッセージを作成します。  
+  
+2.  呼び出し、<xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie%2A?displayProperty=nameWithType>メソッド SAM はセッションの cookie を削除します。  
+  
+3.  最初の手順からサインアウト要求メッセージを使用して STS にリダイレクトします。  
+  
+ サインアウトのイベントの [なし]: <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>、または<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>このメソッドで発生します。 を STS にサインアウト要求メッセージを送信せずにセッションを削除するには、オーバー ロードされたのいずれかを呼び出して<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%2A>メソッドです。  
+  
+> [!NOTE]
+>  実行するにはサインアウトのパッシブ セッション トークンを使用して、モジュールに保存されている値に依存、<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A?displayProperty=nameWithType>サインイン時に、詳細については、プロパティを参照してください、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="signOutUrl" /><see langword="null" />絶対 URI ではなくとします。  
+  
+ または  
+  
+ <paramref name="replyUrl" /><see langword="null" />絶対 URI ではなくとします。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="signOutUrl" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Freshness">
+      <MemberSignature Language="C#" Value="public string Freshness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Freshness" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Freshness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wfresh パラメーターの値を設定します。</summary>
+        <value>目的の最大期間、認証要求 (分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wfresh パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Freshness%2A>プロパティに設定されている`null`wfresh パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFederationPassiveSignOutUrl">
+      <MemberSignature Language="C#" Value="public static string GetFederationPassiveSignOutUrl (string issuer, string signOutReply, string signOutQueryString);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFederationPassiveSignOutUrl(string issuer, string signOutReply, string signOutQueryString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetFederationPassiveSignOutUrl(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="issuer" Type="System.String" />
+        <Parameter Name="signOutReply" Type="System.String" />
+        <Parameter Name="signOutQueryString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="issuer">発行者のアドレス。 セキュリティのアドレスはトークンを要求を送るするサービス (STS) です。</param>
+        <param name="signOutReply">返すを after にアドレスを指定する URL サインアウトします。これは、サインアウト要求で wreply パラメーターを設定します。 指定できます<see langword="null" />または生成されたサインアウト要求で wreply パラメーターを含める必要はない場合は空です。 これは、絶対 URI でなければなりません。</param>
+        <param name="signOutQueryString">サインアウト要求に含まれる追加のクエリ文字列パラメーター。 指定できます<see langword="null" />または空の場合はこれ以上の生成されたサインアウト要求に含まれるパラメーターであります。 これは、相対 URI でなければなりません。</param>
+        <summary>アドレス指定される Ws-federation サインアウト要求を指定した発行者を表すし、指定した wreply パラメーターと指定した追加のパラメーターを格納している URL を返します。</summary>
+        <returns>指定されたパラメーターを使用して構築された Ws-federation のパッシブ サインアウト要求を含む URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返された URL で: URI に設定されているベース`issuer`以外の場合は、wa パラメーターが"wsignout1.0"に設定されている以外の場合は wreply パラメーターに設定されて`signOutReply`; とで指定されたパラメーター`signOutQueryString`は追加のクエリ文字列パラメーターとして存在します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="issuer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedResult">
+      <MemberSignature Language="C#" Value="protected virtual string GetReferencedResult (string resultPtr);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetReferencedResult(string resultPtr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReferencedResult(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="resultPtr" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="resultPtr">発行の結果のアドレスを指定する URL です。</param>
+        <summary>指定された URL から発行結果 (通常、発行されたトークン) を取得します。 サインイン応答メッセージの wresultptr パラメーターで指定された URL を解決します。</summary>
+        <returns>URL によって参照されている発行結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage%28System.IdentityModel.Services.SignInResponseMessage%29?displayProperty=nameWithType>からセキュリティ トークン サービス (STS) から受信したサインイン応答メッセージの wresultptr パラメーターで指定された URL を解決するのには、処理パイプライン内のメソッドです。  
+  
+ 既定では、このメソッドをスロー、<xref:System.NotSupportedException>です。 Wresultptr パラメーターをサポートするために派生クラスでこのメソッドをオーバーライドします。 Url は、発行の結果では、次のいずれかを指定する必要がありますには、:`<wst:RequestSecurityTokenResponse>`要素、`<wst:RequestSecurityTokenResponseCollection>`要素、SOAP 応答、または SOAP`<S:Fault>`要素。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは、基底クラスではサポートされていません。 派生クラスでメソッドをオーバーライドする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReturnUrlFromResponse">
+      <MemberSignature Language="C#" Value="protected virtual string GetReturnUrlFromResponse (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetReturnUrlFromResponse(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReturnUrlFromResponse(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">POST で、Ws-federation サインイン応答メッセージを含むフォームを含む HTTP 要求。</param>
+        <summary>最初にサインイン応答から要求されたページの URL を抽出します。</summary>
+        <returns>最初に、クライアントによって要求されたページの URL です。 これは、先クライアント リダイレクトされる次の成功したサインイン (時、証明書利用者) の URL です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが要求処理パイプラインから呼び出されます (、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>メソッド) を成功したサインインの後に、証明書利用者 (RP) にクライアントを送信するためにページの URL を取得します。 これは、通常、RP 先クライアントもともと要求リソース アクセスの URL です。  
+  
+ 既定では、セキュリティ トークン サービス (STS) に Ws-federation サインイン要求を送信するとき、WSFAM は wctx メッセージ パラメーターの内部戻り先 URL を保存します。 エンティティが使用されるメッセージに移り、Ws-federation 仕様に従って wctx パラメーターが保持されます、STS によって送信される Ws-federation サインイン応答メッセージのまま返されます。  
+  
+ 既定の実装では、サインイン応答の wctx パラメーターから戻り先 URL を取得します。 WSFAM によって使用される wctx パラメーターの書式設定に関する詳細については、次を参照してください。、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSecurityToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken GetSecurityToken (System.IdentityModel.Services.SignInResponseMessage message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken GetSecurityToken(class System.IdentityModel.Services.SignInResponseMessage message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.IdentityModel.Services.SignInResponseMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.IdentityModel.Services.SignInResponseMessage" />
+      </Parameters>
+      <Docs>
+        <param name="message">トークンの読み取りからサインイン応答のメッセージ。</param>
+        <summary>指定した Ws-federation サインイン応答メッセージからセキュリティ トークンを読み取ります。</summary>
+        <returns>メッセージから読み取られたセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を呼び出します、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage%28System.IdentityModel.Services.SignInResponseMessage%2CSystem.IdentityModel.Services.WSFederationSerializer%29?displayProperty=nameWithType>トークンを取得し、構成されているセキュリティ トークン ハンドラーから適切なハンドラーを使用して読み取ります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSecurityToken">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityToken GetSecurityToken (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken GetSecurityToken(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">トークンを読み取り元の HTTP 要求。</param>
+        <summary>指定された HTTP 要求からセキュリティ トークンを読み取ります。</summary>
+        <returns>読み取られたセキュリティ トークン。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Ws-federation サインイン要求メッセージを取得する要求処理パイプラインから呼び出される、<xref:System.IdentityModel.Tokens.SecurityToken>オブジェクト。  
+  
+ 既定の実装を呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSignInResponseMessage%2A>取得するメソッド、<xref:System.IdentityModel.Services.SignInResponseMessage>オブジェクトし、が呼び出され、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken%28System.IdentityModel.Services.SignInResponseMessage%29?displayProperty=nameWithType>オーバー ロードします。  
+  
+ 派生クラスを使用すると、特定の種類の要求を解釈できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSessionTokenContext">
+      <MemberSignature Language="C#" Value="protected virtual string GetSessionTokenContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetSessionTokenContext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セッション cookie を使用して永続化する文字列を取得、<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.Context" />プロパティです。</summary>
+        <returns>セッション cookie に保存される文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSessionTokenContext%2A>メソッドは、要求処理パイプラインからに格納する値を取得する Ws-federation サインイン応答メッセージを処理するときに、<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A?displayProperty=nameWithType>セッション cookie 内のプロパティです。  
+  
+ Cookie に格納されるアプリケーション固有の値を提供するには、このメソッドをオーバーライドすることができます。 WSFAM は cookie の値を取得するメソッドを公開しません。 値を読み取る cookie から返信が必要な場合、アプリケーションでロジックを提供する必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignInResponseMessage">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Services.SignInResponseMessage GetSignInResponseMessage (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Services.SignInResponseMessage GetSignInResponseMessage(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSignInResponseMessage(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SignInResponseMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">サインイン応答メッセージを読み取り元の HTTP 要求。 要求は、フォーム ポストを表す必要があります。</param>
+        <summary>読み取り、 <see cref="T:System.IdentityModel.Services.SignInResponseMessage" /> form POST が指定された HTTP 要求で表されるオブジェクト。</summary>
+        <returns>作成されたサインイン応答メッセージ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken%28System.Web.HttpRequestBase%29?displayProperty=nameWithType>メソッド、要求を処理パイプラインで、フォームの HTTP 要求に含まれる投稿からサインイン応答メッセージを取得します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">指定された要求から、サインイン応答メッセージを読み取れませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSignOutRedirectUrl">
+      <MemberSignature Language="C#" Value="protected virtual string GetSignOutRedirectUrl (System.IdentityModel.Services.SignOutCleanupRequestMessage signOutMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetSignOutRedirectUrl(class System.IdentityModel.Services.SignOutCleanupRequestMessage signOutMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSignOutRedirectUrl(System.IdentityModel.Services.SignOutCleanupRequestMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signOutMessage" Type="System.IdentityModel.Services.SignOutCleanupRequestMessage" />
+      </Parameters>
+      <Docs>
+        <param name="signOutMessage">サインアウト クリーンアップ要求します。</param>
+        <summary>Ws-federation サインアウト クリーンアップ要求 (wsignoutcleanup1.0) wreply パラメーターを含むを処理するときにリダイレクトする URL を決定します。</summary>
+        <returns>リダイレクトする URL。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%2A> Ws-federation サインアウト クリーンアップ要求を処理した後にリダイレクトする URL を特定の要求処理パイプライン内のメソッドです。 メッセージは wreply パラメーターを持つ場合のみ呼び出されます (、`signOutMessage`パラメーターには、<xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply%2A>どちらであるプロパティ`null`も空でも)。  
+  
+ 既定の実装を検証、メッセージに含まれている応答 URL (、<xref:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply%2A?displayProperty=nameWithType>プロパティ) で指定されているセキュリティ トークン サービス (STS) のアドレスに対して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。 次の条件は、応答 URL を有効にするのには true である必要があります。  
+  
+1.  応答 URL は、絶対 URL です。  
+  
+2.  応答 URL は、発行者と同じ構成がします。  
+  
+3.  応答 URL は、発行者と同じポートがします。  
+  
+4.  応答 URL は、発行者と同じホストか、応答 URL は、発行者のサブドメインを指定します。  
+  
+ すべての条件に当てはまる場合、応答 URL (応答) が返されます。指定された URL のそれ以外の場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティが返されます。  
+  
+ 応答 URL の追加の検証を提供するには、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="signOutMessage" /><see cref="P:System.IdentityModel.Services.SignOutCleanupRequestMessage.Reply" />であるプロパティ<see langword="null" />または空です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signOutMessage" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlTokenFromMessage">
+      <MemberSignature Language="C#" Value="public virtual string GetXmlTokenFromMessage (System.IdentityModel.Services.SignInResponseMessage message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetXmlTokenFromMessage(class System.IdentityModel.Services.SignInResponseMessage message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.IdentityModel.Services.SignInResponseMessage" />
+      </Parameters>
+      <Docs>
+        <param name="message">トークンを抽出するサインイン応答メッセージ。 サインイン応答には、STS によって発行されたトークンが含まれています。</param>
+        <summary>指定した Ws-federation サインイン応答メッセージから発行されたトークンを抽出します。</summary>
+        <returns>発行済みトークンを表す XML を含む文字列です。 これは、<see langword="&lt;wst:RequestSecurityTokenResponse&gt;" />要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サインイン応答メッセージに wresult パラメーターがない場合、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReferencedResult%2A> wresultptr パラメーターを使用してトークンを取得しようとするメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="message" />トークンは含まれません。 (がない、有効な wresult または wresultptr パラメーターです。)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXmlTokenFromMessage">
+      <MemberSignature Language="C#" Value="public virtual string GetXmlTokenFromMessage (System.IdentityModel.Services.SignInResponseMessage message, System.IdentityModel.Services.WSFederationSerializer federationSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetXmlTokenFromMessage(class System.IdentityModel.Services.SignInResponseMessage message, class System.IdentityModel.Services.WSFederationSerializer federationSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.GetXmlTokenFromMessage(System.IdentityModel.Services.SignInResponseMessage,System.IdentityModel.Services.WSFederationSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.IdentityModel.Services.SignInResponseMessage" />
+        <Parameter Name="federationSerializer" Type="System.IdentityModel.Services.WSFederationSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="message">トークンを抽出するサインイン応答メッセージ。 サインイン応答には、STS によって発行されたトークンが含まれています。</param>
+        <param name="federationSerializer">使用してサインイン応答メッセージを逆シリアル化する Ws-federation シリアライザー。</param>
+        <summary>指定した Ws-federation シリアライザーを使用して、指定した Ws-federation サインイン応答メッセージから発行されたトークンを抽出します。</summary>
+        <returns>発行済みトークンを表す XML を含む文字列です。 これは、<see langword="&lt;wst:RequestSecurityTokenResponse&gt;" />要素。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="message" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HomeRealm">
+      <MemberSignature Language="C#" Value="public string HomeRealm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HomeRealm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.HomeRealm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する whr パラメーターの値を設定します。</summary>
+        <value>Id プロバイダーのアドレス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Whr パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.HomeRealm%2A>プロパティに設定されている`null`whr パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeModule">
+      <MemberSignature Language="C#" Value="protected override void InitializeModule (System.Web.HttpApplication context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializeModule(class System.Web.HttpApplication context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializeModule(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="context">このモジュールを含む HTTP アプリケーション オブジェクト。</param>
+        <summary>モジュールを初期化し、モジュールからイベントを処理するために準備[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーション オブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表に従って ASP.NET パイプライン イベントのハンドラーを追加します。  
+  
+|イベント|ハンドラー|  
+|-----------|-------------|  
+|<xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType>|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>|  
+|<xref:System.Web.HttpApplication.EndRequest?displayProperty=nameWithType>|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest%2A>|  
+|<xref:System.Web.HttpApplication.PostAuthenticateRequest?displayProperty=nameWithType>|<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnPostAuthenticateRequest%2A>|  
+  
+> [!NOTE]
+>  モジュールのプロパティなど<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>から初期化される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializePropertiesFromConfiguration%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializePropertiesFromConfiguration">
+      <MemberSignature Language="C#" Value="protected override void InitializePropertiesFromConfiguration ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InitializePropertiesFromConfiguration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializePropertiesFromConfiguration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを初期化しますモジュールで指定された構成に基づいて、<see cref="P:System.IdentityModel.Services.HttpModuleBase.FederationConfiguration" />モジュールのプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同等のプロパティを使用してモジュールのプロパティが初期化されて、<xref:System.IdentityModel.Services.Configuration.WsFederationConfiguration>で指定されたオブジェクト、<xref:System.IdentityModel.Services.Configuration.FederationConfiguration.WsFederationConfiguration%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 構成ファイルで設定を指定することができます、 [ &lt;wsFederation&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSignInResponse">
+      <MemberSignature Language="C#" Value="public virtual bool IsSignInResponse (System.Web.HttpRequestBase request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSignInResponse(class System.Web.HttpRequestBase request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.IsSignInResponse(System.Web.HttpRequestBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequestBase" />
+      </Parameters>
+      <Docs>
+        <param name="request">受信 HTTP 要求。</param>
+        <summary>指定された要求が Ws-federation サインイン応答メッセージであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />要求が Ws-federation サインイン応答メッセージの場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%2A>メソッド、要求を処理パイプラインで受信 HTTP 要求が Ws-federation サインイン応答メッセージであるかどうかを判別します。  
+  
+ 既定の実装を返します`true`wa パラメーターが"wsignin1.0"で、wreq と wreqptr パラメーターが設定されていないかどうか。  
+  
+ 派生クラスを追加の検証を実行するには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Issuer">
+      <MemberSignature Language="C#" Value="public string Issuer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Issuer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ トークンの目的の発行者を識別する URI を設定します。</summary>
+        <value>セキュリティ トークン サービス (STS) を識別する URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは必須です。 パッシブ リダイレクトが有効になっている場合に設定する必要があります。 Ws-federation 要求を発行するセキュリティ トークン サービス (STS) の URL を指定します。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティを設定しようとすると、<see langword="null" />または空の文字列が発生します。  
+  
+ または  
+  
+ プロパティは、有効な絶対 URI ではない値に設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAuthenticateRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnAuthenticateRequest (object sender, EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAuthenticateRequest(object sender, class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。 これになります、<see cref="T:System.Web.HttpApplication" />オブジェクト。</param>
+        <param name="args">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.HttpApplication.AuthenticateRequest" />からイベントを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]パイプライン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>メソッドは、Ws-federation 要求処理パイプラインを実装します。 追加されて、<xref:System.Web.HttpApplication.AuthenticateRequest?displayProperty=nameWithType>内のイベント、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]によってパイプライン、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.InitializeModule%2A>メソッドです。  
+  
+ メソッドは、次を実行します。  
+  
+1.  呼び出し、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%28System.Web.HttpRequestBase%29> Ws-federation サインイン応答メッセージ ("wsignin1.0") が受信されたかどうかを調べます。 応答が Ws-federation サインアウト クリーンアップ要求 ("wsignoutcleanup1.0") の場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%28System.Web.HttpRequestBase%29>メッセージを処理し、要求を終了し、要求で Ws-federation パラメーターに従ってクライアントをリダイレクトします。 メッセージがない場合、サインイン応答またはサインアウト クリーンアップ要求では、モジュールだけを返します。それ以外の場合、サインイン応答を処理する次の手順を実行します。  
+  
+2.  呼び出し、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetSecurityToken%28System.Web.HttpRequestBase%29>逆シリアル化するメソッド、<xref:System.IdentityModel.Tokens.SecurityToken>要求からのオブジェクト。  
+  
+3.  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived> イベントを発生させます。 さらに処理を取り消すまたはこのイベントのハンドラーで受信したセキュリティ トークンを変更することができます。 通常、更新ハンドラーは変更に使用、<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A?displayProperty=nameWithType>または<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A?displayProperty=nameWithType>プロパティです。  
+  
+4.  セキュリティ トークンを検証し、作成、<xref:System.Security.Claims.ClaimsPrincipal>セキュリティ トークンの要求からのオブジェクト。  
+  
+5.  <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated> イベントを発生させます。 さらに処理を取り消すまたはこのイベントのハンドラーの要求プリンシパルを変更することができます。  
+  
+6.  作成する構成済みのセッションの認証モジュール (SAM) を使用して、<xref:System.IdentityModel.Tokens.SessionSecurityToken>オブジェクト。 (構成されている、SAM は、<xref:System.IdentityModel.Services.SessionAuthenticationModule>によって返されるオブジェクト、<xref:System.IdentityModel.Services.FederatedAuthentication.SessionAuthenticationModule%2A?displayProperty=nameWithType>プロパティです)。セッション トークンを作成するには、手順 5. で返される要求プリンシパルを使用します。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A?displayProperty=nameWithType>と<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A?displayProperty=nameWithType>プロパティは設定を使用して、<xref:System.IdentityModel.Tokens.SecurityToken.ValidFrom%2A>と<xref:System.IdentityModel.Tokens.SecurityToken.ValidTo%2A>のプロパティ、<xref:System.IdentityModel.Tokens.SecurityToken>手順 3. で返され、いずれかで指定されたトークンの有効期間と現在の時刻が検証されます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A>または<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.TokenLifetime%2A>のプロパティ、 <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> WSFAM によって使用されているトークン ハンドラーはコレクション内のオブジェクト。 セッション トークン ハンドラーのトークンの有効期間はを介して構成で指定することができます、 [ &lt;sessionTokenRequirement&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/sessiontokenrequirement.md)要素。 注: <xref:System.IdentityModel.Services.CookieHandler.PersistentSessionLifetime%2A> SAM は使用されません用に構成されたクッキー ハンドラーのプロパティです。  
+  
+7.  呼び出し、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A>セッションの cookie を作成するセッション トークンを持つメソッドです。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken%2A>メソッドの最初の発生、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>イベント。 セッション トークンのプロパティを変更したり、cookie は、このイベントのハンドラーで保持するかどうかを変更することができます。 イベントが発生した後、メソッドは、SAM を使用して cookie を書き込みます。  
+  
+    > [!NOTE]
+    >  <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クッキーを作成する構成セットは使用されません。  
+  
+8.  呼び出し、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedIn%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn>イベント。  
+  
+9. 呼び出し、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetReturnUrlFromResponse%2A>クライアントをリダイレクトする RP ページを取得します。 既定では、このメソッドは、サインイン応答で wctx パラメーターからの戻り先 URL を読み込みます。 WSFAM が戻り先 URL を格納する方法の詳細については、次を参照してください。、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAuthorizationFailed">
+      <MemberSignature Language="C#" Value="protected virtual void OnAuthorizationFailed (System.IdentityModel.Services.AuthorizationFailedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnAuthorizationFailed(class System.IdentityModel.Services.AuthorizationFailedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthorizationFailed(System.IdentityModel.Services.AuthorizationFailedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IdentityModel.Services.AuthorizationFailedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest%2A>承認が失敗すると、イベント ハンドラーのデリゲート。  
+  
+ 初期化、<xref:System.IdentityModel.Services.AuthorizationFailedEventArgs.RedirectToIdentityProvider%2A?displayProperty=nameWithType>を発生させる前に、プロパティ、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.AuthorizationFailed>イベント、ユーザーが既に認証されている場合、リダイレクトの循環を防ぐためにします。 プロパティを初期化する場合は、ユーザーは既に認証されて、`false`を防ぐためにリダイレクトです。 それ以外の場合に初期化される`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnEndRequest (object sender, EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnEndRequest(object sender, class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。 これになります、<see cref="T:System.Web.HttpApplication" />オブジェクト。</param>
+        <param name="args">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.HttpApplication.EndRequest" />からイベントを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]パイプライン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ しない限り、イベントは無視されます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled%2A>プロパティは`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPostAuthenticateRequest">
+      <MemberSignature Language="C#" Value="protected virtual void OnPostAuthenticateRequest (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPostAuthenticateRequest(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnPostAuthenticateRequest(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントのソース。 これになります、<see cref="T:System.Web.HttpApplication" />オブジェクト。</param>
+        <param name="e">イベントのデータ。</param>
+        <summary>処理、<see cref="E:System.Web.HttpApplication.PostAuthenticateRequest" />からイベントを[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]パイプライン。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、これは、空のイベント ハンドラーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRedirectingToIdentityProvider">
+      <MemberSignature Language="C#" Value="protected virtual void OnRedirectingToIdentityProvider (System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRedirectingToIdentityProvider(class System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider(System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSessionSecurityTokenCreated">
+      <MemberSignature Language="C#" Value="protected virtual void OnSessionSecurityTokenCreated (System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSessionSecurityTokenCreated(class System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSessionSecurityTokenCreated(System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignedIn">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignedIn (EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignedIn(class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedIn(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignedOut">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignedOut (EventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignedOut(class System.EventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>メソッド、セッションを削除した直後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignInError">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignInError (System.IdentityModel.Services.ErrorEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignInError(class System.IdentityModel.Services.ErrorEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignInError(System.IdentityModel.Services.ErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.ErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSigningOut">
+      <MemberSignature Language="C#" Value="protected virtual void OnSigningOut (System.IdentityModel.Services.SigningOutEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSigningOut(class System.IdentityModel.Services.SigningOutEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut(System.IdentityModel.Services.SigningOutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.SigningOutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>メソッド、セッションが削除される直前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSignOutError">
+      <MemberSignature Language="C#" Value="protected virtual void OnSignOutError (System.IdentityModel.Services.ErrorEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSignOutError(class System.IdentityModel.Services.ErrorEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError(System.IdentityModel.Services.ErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.IdentityModel.Services.ErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベントのデータ。</param>
+        <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>メソッドの処理中に例外が発生した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PassiveRedirectEnabled">
+      <MemberSignature Language="C#" Value="public bool PassiveRedirectEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PassiveRedirectEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation プロトコル リダイレクトを開始する、モジュールが有効になっているかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />有効にする次のようにリダイレクトします。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモードが有効でない場合、モジュールが、Ws-federation プロトコル リダイレクトを開始しません。 このプロパティは、する場合`true`、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>のセキュリティ トークン サービス (STS)、呼び出し元のリダイレクト先 URL にプロパティを設定する必要があります。  
+  
+> [!WARNING]
+>  アプリケーション コードを使用して Ws-federation サインイン要求を明示的に発行できます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A>の値に関係なく、メソッド、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.PassiveRedirectEnabled%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PersistentCookiesOnPassiveRedirects">
+      <MemberSignature Language="C#" Value="public bool PersistentCookiesOnPassiveRedirects { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PersistentCookiesOnPassiveRedirects" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.PersistentCookiesOnPassiveRedirects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証が成功した上で、永続的なセッションの cookie が発行するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />永続的なセッション cookie を発行するにはそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>イベント。 このイベントは処理パイプラインをセキュリティ トークン サービス (STS) から Ws-federation サインイン応答メッセージを処理するときに要求から発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Policy">
+      <MemberSignature Language="C#" Value="public string Policy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Policy" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Policy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用される wp パラメーターの値を設定します。</summary>
+        <value>使用するポリシーを識別する URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wp パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Policy%2A>プロパティに設定されている`null`か空の文字列、wp パラメーターがサインイン要求に含まれていません。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Realm">
+      <MemberSignature Language="C#" Value="public string Realm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Realm" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") に使用する wtrealm パラメーターの値を設定します。</summary>
+        <value>セキュリティ トークン サービス (STS) に、証明書利用者 (RP) を識別する URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、Ws-federation サインイン要求に必要なプロパティです。 パッシブ リダイレクトが有効になっている場合に設定する必要があります。 URI では、STS を RP を識別します。 (は RP に STS を識別するには、参照してください、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティ)。  
+  
+ このプロパティの値は、Ws-federation プロトコルの wtrealm クエリ文字列パラメーターとしてシリアル化します。 STS に RP を識別します。 トークンの発行とトークンの発行後にユーザーをリダイレクトする場所に適用するには、どのようなポリシーを決定する STS によって使用されます。 (RP に STS を識別するため、次を参照してください<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>。)。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティを設定しようとすると、<see langword="null" />または空の文字列が発生します。  
+  
+ または  
+  
+ プロパティは、有効な絶対 URI ではない値に設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectingToIdentityProvider">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs&gt; RedirectingToIdentityProvider;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs&gt; RedirectingToIdentityProvider" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モジュールは、ユーザーを id プロバイダーにリダイレクトするときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスして Ws-federation サインイン要求を通じてを変更することができます、<xref:System.IdentityModel.Services.RedirectingToIdentityProviderEventArgs.SignInRequestMessage%2A?displayProperty=nameWithType>プロパティです。 たとえば、変更することができます、<xref:System.IdentityModel.Services.FederationMessage.BaseUri%2A>サインイン メッセージを要求をリダイレクトする id プロバイダーを変更するプロパティです。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベントがキャンセル可能なイベントおよび設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`リダイレクトをキャンセルします。  
+  
+ このイベントは内部、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A>メソッドを呼び出すことによって、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider%2A>メソッドです。  
+  
+ ASP.NET アプリケーションでは、このイベントを処理するために呼び出されるメソッドを作成`WSFederationAuthentication_RedirectingToIdentityProvider`global.asax ファイルでします。  
+  
+   
+  
+## Examples  
+ 次のコードのハンドラーを追加する方法を示しています、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>内のイベント、 `Application_Init` global.asax ファイル内のイベントです。 コードがから取得した、`FederationForWebApps`サンプルです。 このサンプルの詳細については、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+  
+  
+ 次のコードに対応するハンドラーを示しています、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>内のイベント、RP の global.asax ファイルにします。 コードは、受信 HTTP 要求に whr パラメーターが含まれており、STS に送信される Ws-federation サインイン要求でこのパラメーターを設定場合は、かどうかを確認します。 コードがから取得した、`FederationForWebApps`サンプルです。 このサンプルの詳細については、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+  
+  
+ 次のコードに対応するハンドラーを示しています、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベントに、フェデレーション プロバイダー STS の global.asax ファイルでします。 コードは、受信 HTTP 要求に whr パラメーターが含まれているかどうかを確認します。 クライアントはサインイン; の IP STS に送られますが、要求に whr パラメーターが含まれている場合それ以外の場合は、クライアントが誘導されたホーム領域検出ページにサインインする位置を示す IP STS を選択します。 コードがから取得した、`FederationForWebApps`サンプルです。 このサンプルの詳細については、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RedirectToIdentityProvider">
+      <MemberSignature Language="C#" Value="public virtual void RedirectToIdentityProvider (string uniqueId, string returnUrl, bool persist);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RedirectToIdentityProvider(string uniqueId, string returnUrl, bool persist) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uniqueId" Type="System.String" />
+        <Parameter Name="returnUrl" Type="System.String" />
+        <Parameter Name="persist" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="uniqueId">WSFAM Ws-federation サインイン要求; wctx パラメーターでこの値を保存します。ただし、モジュール使用しませんサインイン要求またはサインイン応答を処理するときにします。 任意の値に設定できます。 一意であることはありません。 詳細については、<see cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest(System.String,System.String,System.Boolean)" /> メソッドを参照してください。</param>
+        <param name="returnUrl">認証時に返す必要があります、モジュールを URL です。</param>
+        <param name="persist">WSFAM Ws-federation サインイン要求; wctx パラメーターでこの値を保存します。ただし、モジュール使用しませんサインイン要求またはサインイン応答を処理するときにします。 設定するか、<see langword="true" />または<see langword="false" />です。</param>
+        <summary>指定されたセキュリティ トークン サービス (STS) にユーザーをリダイレクト、 <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> Ws-federation プロトコルを使用してセキュリティ トークンを取得するプロパティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A>からメソッドを呼び出した、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A>メソッドは、証明書利用者 (RP)、または上で表示される web ページから、要求が発行されると、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnEndRequest%2A>承認エラーに対して、id プロバイダーへのパッシブ リダイレクトを実行するイベント ハンドラー デリゲート。  
+  
+ メソッドに渡されるパラメーターは、wctx メッセージ パラメーターの作成に使用されます。 唯一の大きなパラメーターは、`returnUrl`パラメーター。 これには、RP がブラウザーで次の認証の成功を問い合わせる必要があります、URL を指定します。 これは、必要がありますと混同しないで、wreply メッセージ、パラメーターで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply%2A>プロパティおよびセキュリティ トークン サービス (STS) がその応答を問い合わせる必要があります、RP にアドレスを提供します。  
+  
+ メソッドは、次を実行します。  
+  
+1.  呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.VerifyProperties%2A>メソッドをモジュールによって、有効なサインイン要求を発行することを確認してください。  
+  
+2.  呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>メソッドをモジュールで構成されているプロパティからサインイン要求を作成します。  
+  
+3.  呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnRedirectingToIdentityProvider%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 リダイレクトをキャンセルしたり、このイベントのイベント ハンドラーでサインイン要求メッセージを変更できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <see cref="P:System.Web.HttpContext.Current" />プロパティは<see langword="null" />または空です。  
+  
+ または  
+  
+ <see cref="P:System.Web.HttpContext.Response" />プロパティによって返されるコンテキストの<see cref="P:System.Web.HttpContext.Current" />は<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reply">
+      <MemberSignature Language="C#" Value="public string Reply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reply" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreply パラメーターの値を設定します。</summary>
+        <value>これで、証明書利用者 (RP) アプリケーションにはセキュリティ トークン サービス (STS) からの応答を受信するアドレスを識別する URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wreply パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Reply%2A>プロパティに設定されている`null`か空の文字列、wreply パラメーターがサインイン要求に含まれていません。  
+  
+ Wreply パラメーターは、トークンの発行後にユーザーをリダイレクトする場所を決定する、STS が使用されます。 無条件アドレスを使用して、このようなリダイレクトがあるセキュリティの脆弱性と、ユーザーをリダイレクトする STS のことはお勧めできません。 返信先アドレスは、認識のよく知られている、セキュリティで保護された場所の応答が送信されているかどうかを確認する (可能性がありますで比較する一連の事前構成済みの返信アドレスを目的またはその他の方法で)、STS によって検証があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティは、有効な絶対 URI ではない値に設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public string Request { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Request" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreq パラメーターの値を設定します。</summary>
+        <value>トークン発行要求で表した、<see langword="&lt;wst:RequestSecurityToken&gt;" />要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wreq パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Request%2A>プロパティに設定されている`null`wreq パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestPtr">
+      <MemberSignature Language="C#" Value="public string RequestPtr { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestPtr" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequestPtr" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wreqptr パラメーターの値を設定します。</summary>
+        <value>として表現されるトークンの発行要求の場所を指定する URL、<see langword="&lt;wst:RequestSecurityToken&gt;" />要素</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Wreqptr パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RequestPtr%2A>プロパティに設定されている`null`wreq パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティは、有効な絶対 URI ではない値に設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireHttps">
+      <MemberSignature Language="C#" Value="public bool RequireHttps { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireHttps" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセキュリティ トークン サービス (STS) との通信で HTTPS プロトコルを使用する必要があるかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は HTTPS を使用する STS との通信を保護する必要がありますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="public string Resource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Resource" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Resource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で使用する wres パラメーターの値を設定します。</summary>
+        <value>証明書利用者 (RP)、アクセスされるリソースを識別する URI をセキュリティ トークン サービス (STS) にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって設定されている wtrealm パラメーター、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm%2A>プロパティは、このパラメーターの代わりに使用する必要があります。  
+  
+ Wres パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Resource%2A>プロパティに設定されている`null`wres パラメーター、空の文字列は、サインイン要求に含まれていないか。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenReceived">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SecurityTokenReceivedEventArgs&gt; SecurityTokenReceived;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SecurityTokenReceivedEventArgs&gt; SecurityTokenReceived" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SecurityTokenReceivedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークン サービス (STS) からセキュリティ トークンを受け取った場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証する前に、トークンを変更するイベント ハンドラーを追加することができます。 イベントのハンドラーを表示する、セキュリティ トークンを<xref:System.IdentityModel.Services.SecurityTokenReceivedEventArgs.SecurityToken%2A?displayProperty=nameWithType>プロパティです。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenReceived>イベントがキャンセル可能なイベントは、設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`Ws-federation サインイン応答メッセージの処理を終了するイベント ハンドラーでします。  
+  
+ このイベントは、内部、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>セキュリティ トークン サービス (STS) から受信した Ws-federation サインイン応答メッセージ ("wsignin1.0") を処理するときにイベント ハンドラーのデリゲート。 これは、wresult または wresultptr パラメーター サインイン応答メッセージには、セキュリティ トークンを検証する前にからセキュリティ トークンが逆シリアル化された直後後に発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#6](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenValidated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SecurityTokenValidatedEventArgs&gt; SecurityTokenValidated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SecurityTokenValidatedEventArgs&gt; SecurityTokenValidated" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SecurityTokenValidatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークン サービス (STS) から受信したセキュリティ トークンが検証されましたが、セッション セキュリティの前にトークンが作成された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッション トークンの作成に使用する前に、セキュリティ トークン サービス (STS) から Ws-federation サインイン応答メッセージを処理中に作成したプリンシパルを変更するイベント ハンドラーを追加することができます。 イベント ハンドラー、アクセスできるを通じてプリンシパル、<xref:System.IdentityModel.Services.SecurityTokenValidatedEventArgs.ClaimsPrincipal%2A>プロパティです。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SecurityTokenValidated>イベントがキャンセル可能なイベントは、設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`Ws-federation サインイン応答メッセージの処理を終了するイベント ハンドラーでします。  
+  
+ このイベントは、内部、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>セキュリティ トークン サービス (STS) から受信した Ws-federation サインイン応答メッセージ ("wsignin1.0") を処理するときにイベント ハンドラーのデリゲート。 発生直後に、wresult から逆シリアル化されたセキュリティ トークンまたはサインイン応答メッセージの wresultptr パラメーターを検証するとトークンが作成されたセッションのセキュリティの前にします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#5](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SessionSecurityTokenCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt; SessionSecurityTokenCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt; SessionSecurityTokenCreated" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークン サービス (STS) から受信したセキュリティ トークンからセッションのセキュリティ トークンが作成されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スレッドのプリンシパルを設定するために使用し、セッションの cookie に書き込まれる前にセッション トークンを変更するイベント ハンドラーを追加することができます。 イベント ハンドラー、アクセスできるセッション トークンから、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 設定して、セッションの cookie を書き込む必要があるかどうかを指定することができます、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.WriteSessionCookie%2A?displayProperty=nameWithType>プロパティです。  
+  
+ このイベントは、内部、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>セキュリティ トークン サービス (STS) から受信した Ws-federation サインイン応答メッセージ ("wsignin1.0") を処理するときにイベント ハンドラーのデリゲート。 発生直後に、wresult から逆シリアル化されたセキュリティ トークンまたはサインイン応答メッセージの wresultptr パラメーターを検証するとに要求する前にプリンシパルを設定、 <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> (および、<xref:System.Web.HttpContext.User%2A>プロパティ<xref:System.Web.HttpContext.Current%2A?displayProperty=nameWithType>)。  
+  
+> [!IMPORTANT]
+>  ハンドラーを提供することをお勧め参照モードでセッションを動作する、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> global.asax.cs ファイルと設定でイベント、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A?displayProperty=nameWithType>に渡されたトークンのプロパティ、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 セッション トークンが要求ごとに参照モードで動作し、単なる設定が優先これにより、<xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A?displayProperty=nameWithType>セッション認証モジュールのプロパティです。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#4](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPrincipalAndWriteSessionToken">
+      <MemberSignature Language="C#" Value="public void SetPrincipalAndWriteSessionToken (System.IdentityModel.Tokens.SessionSecurityToken sessionToken, bool isSession);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetPrincipalAndWriteSessionToken(class System.IdentityModel.Tokens.SessionSecurityToken sessionToken, bool isSession) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SetPrincipalAndWriteSessionToken(System.IdentityModel.Tokens.SessionSecurityToken,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sessionToken" Type="System.IdentityModel.Tokens.SessionSecurityToken" />
+        <Parameter Name="isSession" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="sessionToken">STS から Ws-federation サインイン応答のメッセージから作成されたセッション セキュリティ トークンです。</param>
+        <param name="isSession">
+          <see langword="true" />応答に含まれているセッションを表すクッキーを作成するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>スレッドのプリンシパルを設定し、必要に応じて、セッションの cookie を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求処理パイプラインで実装から呼び出される、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnAuthenticateRequest%2A>イベント ハンドラーのデリゲート。 このメソッドは、次のこと。  
+  
+1.  呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSessionSecurityTokenCreated%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated>イベント。 スレッドのプリンシパルを設定するため、セッション cookie に書き込まれる前にセッション トークンを変更して、セッションの cookie を書き込むかどうかを指定するには、このイベントを使用します。  
+  
+2.  呼び出す、<xref:System.IdentityModel.Services.SessionAuthenticationModule.AuthenticateSessionSecurityToken%2A>構成されているセッションの認証モジュールのメソッド (<xref:System.IdentityModel.Services.SessionAuthenticationModule>) スレッドのプリンシパルを設定し、必要に応じて、セッションの cookie を記述します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sessionToken" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedIn">
+      <MemberSignature Language="C#" Value="public event EventHandler SignedIn;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SignedIn" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedIn" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがサインインした後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求は、ログイン ページにポストされたが、ページ上のコントロールがこのモジュールではなく、このイベントを発生します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[WifWSFAM#3](~/samples/snippets/csharp/VS_Snippets_Misc/wifwsfam/cs/webapplication1/global.asax.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedOut">
+      <MemberSignature Language="C#" Value="public event EventHandler SignedOut;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SignedOut" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインアウト時にセッションを削除した直後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによってこのイベントは、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut%2A>内からのメソッド、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>証明書利用者 (RP) にあるセッションからサインアウト中にメソッドです。 実行のフェデレーションからサインアウト時に、イベントは発生しません、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ セッションの cookie を削除した後する追加の処理を実行するイベント ハンドラーが、アプリケーションで必要なを追加することができます。  
+  
+ このイベントは、すべてのセッションに対して呼び出されるようには保証されません。 Cookie 削除できますクライアント側では、たとえば、このイベントが発生しないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignIn">
+      <MemberSignature Language="C#" Value="public virtual void SignIn (string ControlId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignIn(string ControlId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ControlId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ControlId">WSFAM Ws-federation サインイン要求; wctx パラメーターでこの値を保存します。ただし、モジュール使用しませんサインイン要求またはサインイン応答を処理するときにします。 任意の値に設定できます。 一意であることはありません。 詳細については、<see cref="M:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest(System.String,System.String,System.Boolean)" /> メソッドを参照してください。</param>
+        <summary>Ws-federation プロトコルを使ってセキュリティ トークン サービス (STS) にサインインを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A>サインインを実行するメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInContext">
+      <MemberSignature Language="C#" Value="public string SignInContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignInContext" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ws-federation サインイン要求の wctx パラメーターに含まれるアプリケーション特定のコンテキスト値の取得または設定します。</summary>
+        <value>サインイン要求の wctx パラメーターに含まれるアプリケーションの特定のコンテキスト値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>メソッドが呼び出され、生成されるサインイン メッセージには、次の形式を持つ wctx パラメーターが含まれています:`ru=returnUrl&cx=SignInContext&rm=rememberMeSet&id=uniqueId`です。 値、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext%2A>に格納されて、`cx`パラメーター。 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>コードから直接呼び出すことができます。 WSFAM はパッシブ リダイレクトを実行するときにも呼び出されますもときにいずれか、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignIn%2A>メソッドまたは<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectToIdentityProvider%2A>アプリケーション コードでメソッドが呼び出されます。  
+  
+ WSFAM が保存されますが、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInContext%2A>応答処理中に、アプリケーションによって値が使用されている場合、サインイン要求メッセージ内の値、サインイン応答メッセージの wctx パラメーターから抽出するためのロジックを指定する必要があります。  
+  
+ 形式と wctx パラメーターの処理の詳細については、次を参照してください。、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CreateSignInRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInError">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt; SignInError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.ErrorEventArgs&gt; SignInError" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインイン時にエラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求は、ログイン ページにポストされたが、ページ上のコントロールがこのモジュールではなく、このイベントを発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningOut">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.SigningOutEventArgs&gt; SigningOut;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.SigningOutEventArgs&gt; SigningOut" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.SigningOutEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインアウト時にセッションを削除する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによってこのイベントは、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut%2A>内からのメソッド、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>証明書利用者 (RP) にあるセッションからサインアウト中にメソッドです。 実行のフェデレーションからサインアウト時に、イベントは発生しません、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ セッションの cookie が削除される前に、アプリケーションが必要とする追加の処理を実行するイベント ハンドラーを追加することができます。 読み取ることができます、<xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated*>かどうか、サインアウト、Ws-federation サインアウト クリーンアップ要求メッセージを受け取る ("wsignoutcleanup1.0") の結果、セキュリティ トークン サービス (STS) から、RP に開始されたかどうかを決定する、イベント ハンドラーのプロパティです。  
+  
+ このイベントは、すべてのセッションに対して呼び出されるようには保証されません。 Cookie 削除できますクライアント側では、たとえば、このイベントが発生しないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignInQueryString">
+      <MemberSignature Language="C#" Value="public string SignInQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignInQueryString" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.SignInQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインイン要求 ("wsignin1.0") で送信されるその他のパラメーターを含むクエリ文字列を設定します。</summary>
+        <value>次の形式で追加のメッセージ パラメーターを含む URL フラグメント: <c>param1 = value1&amp;param2 = value2&amp;paramN の値を =</c>です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、サインイン要求に追加のパラメーターを送信することができます。 Ws-federation プロトコルによって指定されたパラメーターのいずれかではないアプリケーション固有のパラメーターになります。 要求から追加のパラメーターを削除するには、空の文字列にプロパティを設定します。  
+  
+ ハンドラーを追加することによって各 HTTP 要求では、この設定をオーバーライドすることができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.RedirectingToIdentityProvider>イベント。 モジュールは、Ws-federation サインイン要求メッセージをセキュリティ トークン サービス (STS) にリダイレクトする前に、このイベントが発生します。 STS がで指定された、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SignOut">
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在のセッションからサインアウトします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のセッションを削除します。  
+  
+ セキュリティ トークン サービス (STS) には、サインアウト要求メッセージ ("wsignout1.0") は送信されません。 Ws-federation プロトコルを使用して STS でサインアウトを使用して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public virtual void SignOut ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignOut() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセッションおよび要求から記号がリダイレクトは、現在の HTTP 要求で指定された URL にバックアップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のセッションを削除し、ブラウザーを現在の HTTP 要求で指定された URL にリダイレクトします。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.String%29?displayProperty=nameWithType>メソッドを`redirectUrl`パラメーターの現在の要求の URL に設定します。  
+  
+ セキュリティ トークン サービス (STS) には、サインアウト要求メッセージ ("wsignout1.0") は送信されません。 Ws-federation プロトコルを使用して STS でサインアウトを使用して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public virtual void SignOut (bool isIPRequest);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignOut(bool isIPRequest) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="isIPRequest" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isIPRequest">
+          <see langword="true" />Ws-federation サインアウト クリーンアップ要求メッセージ ("wsignoutcleanup1.0"); を介して IP STS によって要求が開始された場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>現在のセッションのサインアウトし、適切なイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、現在のセッションを削除して、適切なサインアウト イベントを発生させるの実際の作業を実行します。 メソッドは、次のこと。  
+  
+1.  呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSigningOut%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut>イベント。 イベント ハンドラーは、セッションが削除される前に、必要な処理を提供できます。 <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A?displayProperty=nameWithType>プロパティに従って設定されて、`isIPRequest`パラメーター。  
+  
+2.  呼び出し、<xref:System.IdentityModel.Services.SessionAuthenticationModule.DeleteSessionTokenCookie%2A?displayProperty=nameWithType>セッション cookie を削除する現在のセッションの認証マネージャーのメソッドです。  
+  
+     呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignedOut%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignedOut>イベント。  
+  
+3.  サインアウト処理中にエラーが発生する場合を呼び出して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError%2A>させる方法、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>イベント。 イベント ハンドラーが処理を取り消すし、例外が呼び出し元に返されるように<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%2A>  
+  
+ 呼び出すことができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%2A?displayProperty=nameWithType>メソッドを`isIPRequest`パラメーター セット`false`的なリダイレクトを実行せずに、セッションからサインアウトします。 により、すべての他のオーバー ロードされたメソッドを呼び出した最終的に<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%2A>メソッド (で、`isIPRequest`パラメーターに設定`false`) サインアウト処理を実行します。 メソッドを呼び出した、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.CanReadSignInResponse%28System.Web.HttpRequestBase%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドを`isIPRequest`パラメーター セット`true`Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") を処理しているときに、セッションからサインアウトします。  
+  
+ セキュリティ トークン サービス (STS) には、サインアウト要求メッセージ ("wsignout1.0") は送信されません。 Ws-federation プロトコルを使用して STS でサインアウトを使用して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public virtual void SignOut (string redirectUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignOut(string redirectUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="redirectUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="redirectUrl">セッションの終了後、ブラウザーをリダイレクトする URL が削除されます。</param>
+        <summary>現在のセッションのサインアウトし、指定された URL にリダイレクトを要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のセッションを削除し、ブラウザーを指定した URL にリダイレクトします。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType>メソッドを`redirectUrl`パラメーターを使用して、`initiateSignoutCleanup`設定`false`です。  
+  
+ セキュリティ トークン サービス (STS) には、サインアウト要求メッセージ ("wsignout1.0") は送信されません。 Ws-federation プロトコルを使用して STS でサインアウトを使用して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="redirectUrl" /> は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOut">
+      <MemberSignature Language="C#" Value="public virtual void SignOut (string redirectUrl, bool initiateSignoutCleanup);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SignOut(string redirectUrl, bool initiateSignoutCleanup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="redirectUrl" Type="System.String" />
+        <Parameter Name="initiateSignoutCleanup" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="redirectUrl">後にブラウザーをリダイレクトする URL サインアウトします。</param>
+        <param name="initiateSignoutCleanup">常に設定<see langword="false" />です。 このパラメーターを設定<see langword="true" />はサポートされていません。</param>
+        <summary>現在のセッションのサインアウトし、指定された URL にリダイレクトを要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のセッションを削除し、ブラウザーを指定した URL にリダイレクトします。  
+  
+ 呼び出す、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>メソッドを`initiateSignoutCleanup`パラメーター セット`false`です。  
+  
+ セキュリティ トークン サービス (STS) には、サインアウト要求メッセージ ("wsignout1.0") は送信されません。 Ws-federation プロトコルを使用して STS でサインアウトを使用して、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="redirectUrl" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.NotImplementedException"><see cref="T:System.IdentityModel.Services.WSFederationAuthenticationModule" />場合、クラスがこの例外をスロー<paramref name="initiateSignoutCleanup" />は<see langword="true" />します。 このパラメーターを設定しないで<see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutError">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt; SignOutError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.IdentityModel.Services.ErrorEventArgs&gt; SignOutError" />
+      <MemberSignature Language="DocId" Value="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.IdentityModel.Services.ErrorEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サインアウト時にエラーが発生したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すことによってこのイベントは、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.OnSignOutError%2A>内からのメソッド、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOut%28System.Boolean%29?displayProperty=nameWithType>証明書利用者 (RP) にあるセッションからサインアウト中にメソッドです。 実行のフェデレーションからサインアウト時に、イベントは発生しません、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドです。  
+  
+ <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutError>イベントがキャンセル可能なイベントです。 設定することができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>からサインアウトの発信側に返されるエラーの原因となった例外を防ぐために、イベント ハンドラーのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutQueryString">
+      <MemberSignature Language="C#" Value="public string SignOutQueryString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignOutQueryString" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutQueryString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインアウト要求 ("wsignout1.0") で送信されるその他のパラメーターを含むクエリ文字列を設定します。</summary>
+        <value>次の形式で追加のメッセージ パラメーターを含む URL フラグメント: <c>param1 = value1&amp;param2 = value2&amp;paramN の値を =</c>です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティは、初期化から、`signOutQueryString`の属性、 [ &lt;wsFederation&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)構成ファイル内の要素。 Ws-federation サインアウト要求で送信される、アプリケーション固有のパラメーターを格納するものでは。 これらのパラメーターを削除するには、空の文字列にプロパティを設定できます。  
+  
+ WSFAM がこのプロパティを直接使用できません。ただしを渡すことができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetFederationPassiveSignOutUrl%2A>メソッドを完了したら、コードで使用することができますし、Ws-federation サインアウト URL を作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignOutReply">
+      <MemberSignature Language="C#" Value="public string SignOutReply { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignOutReply" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutReply" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Ws-federation サインアウト要求 ("wsignout1.0") の中に使用する wreply パラメーターの値を設定します。</summary>
+        <value>Ws-federation プロトコルを介してサインアウトに従ってセキュリティ トークン サービス (STS) によって、クライアントをリダイレクトする URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、このプロパティは、初期化から、`signOutReply`の属性、 [ &lt;wsFederation&gt; ](~/docs/framework/configure-apps/file-schema/windows-identity-foundation/wsfederation.md)構成ファイル内の要素。 Ws-federation サインアウト要求で wreply パラメーターを表すものではします。  
+  
+ Wreply パラメーターは省略できます。 場合、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SignOutReply%2A>プロパティに設定されている`null`サインアウト要求で空の文字列、wreply パラメーターが含まれていないか。  
+  
+ WSFAM では、このプロパティを直接使用しません。 ただしを渡すことができます、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.FederatedSignOut%2A>メソッドから、コードまたは Ws-federation サインアウトを実行することができますに渡すときに、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule.GetFederationPassiveSignOutUrl%2A>メソッドを完全な Ws-federation サインアウト URL を作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyProperties">
+      <MemberSignature Language="C#" Value="public void VerifyProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VerifyProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.WSFederationAuthenticationModule.VerifyProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>確認、<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" />と<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" />プロパティが空でない、して場合、<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" />プロパティは<see langword="true" />の Uri が指定されている<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" />と<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" />HTTPS に準拠していません。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /><see langword="true" />と<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Issuer" />HTTPS 準拠していません。  
+  
+ または  
+  
+ <see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.RequireHttps" /><see langword="true" />と<see cref="P:System.IdentityModel.Services.WSFederationAuthenticationModule.Realm" />HTTPS 準拠していません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlDictionaryReaderQuotas">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlDictionaryReaderQuotas XmlDictionaryReaderQuotas" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.WSFederationAuthenticationModule.XmlDictionaryReaderQuotas" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReaderQuotas</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlDictionaryReaderQuotas" />セキュリティ トークン サービス (STS) によって発行されたトークンを取得する Ws-federation サインイン応答のメッセージを逆シリアル化に使用するオブジェクト。</summary>
+        <value><see cref="T:System.Xml.XmlDictionaryReaderQuotas" />セキュリティ トークン サービス (STS) によって発行されたトークンを取得する Ws-federation サインイン応答のメッセージを逆シリアル化に使用するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

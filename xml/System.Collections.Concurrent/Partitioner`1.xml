@@ -1,0 +1,192 @@
+<Type Name="Partitioner&lt;TSource&gt;" FullName="System.Collections.Concurrent.Partitioner&lt;TSource&gt;">
+  <TypeSignature Language="C#" Value="public abstract class Partitioner&lt;TSource&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Partitioner`1&lt;TSource&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.Concurrent.Partitioner`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Collections.Concurrent</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.14.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TSource" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TSource">コレクション内の要素の型。</typeparam>
+    <summary>データ ソースを複数のパーティションに分割する特定の方法を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例では、一度に 1 つの要素を返すパーティショナーを実装する方法を示します。  
+  
+ [!code-csharp[System.Collections.Concurrent.Partitioner#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.concurrent.partitioner/cs/partitioner.cs#1)]
+ [!code-vb[System.Collections.Concurrent.Partitioner#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.concurrent.partitioner/vb/partitioner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>静的メソッドを<see cref="T:System.Collections.Concurrent.Partitioner`1" />はすべてスレッド セーフであると、複数のスレッドから同時に使用される可能性があります。 ただし、作成されたパーティショナーを使用しているときに、基になるデータ ソース変更しないで、かどうか、同じスレッドからパーティショナーを使用しているか、別のスレッドからです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Partitioner ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.Partitioner`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>パーティショナーの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDynamicPartitions">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;TSource&gt; GetDynamicPartitions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;!TSource&gt; GetDynamicPartitions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.Partitioner`1.GetDynamicPartitions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;TSource&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>可変個のパーティションに基になるコレクションを分割できるオブジェクトを作成します。</summary>
+        <returns>基になるデータ ソースに対してパーティションを作成するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオブジェクトを実装して、<xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>インターフェイスです。 呼び出す<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>オブジェクトのシーケンスを別のパーティションを作成します。  
+  
+ <xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A>場合にのみ、メソッドがサポート、<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>プロパティが true を返します。 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">基本クラスによっては、動的なパーティション分割はサポートされていません。 派生クラスで実装する必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPartitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;TSource&gt;&gt; GetPartitions (int partitionCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Collections.Generic.IEnumerator`1&lt;!TSource&gt;&gt; GetPartitions(int32 partitionCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.Concurrent.Partitioner`1.GetPartitions(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Collections.Generic.IEnumerator&lt;TSource&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="partitionCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="partitionCount">作成するパーティションの数。</param>
+        <summary>基になるコレクションを指定された数のパーティションをパーティション分割します。</summary>
+        <returns>含むリスト<paramref name="partitionCount" />列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを実装するクラスが正確に指定されているパーティションの数を返すと想定`partitionCount`です。 パーティションに要素が含まれていない場合は、し、null (Visual Basic では Nothing) ではなく、空の列挙子を返します。 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDynamicPartitions">
+      <MemberSignature Language="C#" Value="public virtual bool SupportsDynamicPartitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDynamicPartitions" />
+      <MemberSignature Language="DocId" Value="P:System.Collections.Concurrent.Partitioner`1.SupportsDynamicPartitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Collections.Concurrent</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.14.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加のパーティションを動的に作成できるかどうかを取得します。</summary>
+        <value>true の場合、 <see cref="T:System.Collections.Concurrent.Partitioner`1" /> ; 要求されたパーティションを動的に作成できる場合は false、<see cref="T:System.Collections.Concurrent.Partitioner`1" />パーティションを静的に割り当てることのできるだけです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスがオーバーライドおよび実装していない場合<xref:System.Collections.Concurrent.Partitioner%601.GetDynamicPartitions%2A>、 <xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A> false を返す必要があります。 値<xref:System.Collections.Concurrent.Partitioner%601.SupportsDynamicPartitions%2A>のこのインスタンスの有効期間にわたって変化してはなりません。 詳細については、「[Custom Partitioners for PLINQ and TPL (PLINQ および TPL 用のカスタム パーティショナー)](~/docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

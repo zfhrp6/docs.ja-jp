@@ -1,0 +1,135 @@
+<Type Name="ActiveDirectoryReplicationMetadata" FullName="System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata">
+  <TypeSignature Language="C#" Value="public class ActiveDirectoryReplicationMetadata : System.Collections.DictionaryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDirectoryReplicationMetadata extends System.Collections.DictionaryBase" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.DictionaryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata" /> クラスには、一連の Active Directory Domain Services の属性のレプリケーション情報が含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AttributeNames">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection AttributeNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection AttributeNames" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata.AttributeNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションに含まれている名前を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> LDAP を格納しているオブジェクトがこのコレクション内の属性の名前を表示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (string attributeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(string attributeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata.Contains(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="attributeName">LDAP は、検索対象の属性の名前を表示します。</param>
+        <summary>指定した属性がこのコレクション内にかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />このコレクション内の属性がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.DirectoryServices.ActiveDirectory.AttributeMetadata[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.DirectoryServices.ActiveDirectory.AttributeMetadata[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata.CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.DirectoryServices.ActiveDirectory.AttributeMetadata[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">このコレクションの要素を受け取る <see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" /> オブジェクトの配列。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>このメソッドがこのコレクションのコピーを開始します。</param>
+        <summary>このコレクション内のすべての <see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" /> オブジェクトを、特定の配列にコピーします。コピー先の配列の指定したインデックスからコピーが開始されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException">基になるディレクトリ サービスの呼び出しでエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">コピー先の配列の大きさが十分でないため、必要な数の要素を保持できません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="array" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />コピー先の配列の範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AttributeMetadata this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AttributeMetadata Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AttributeMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得する属性の LDAP 表示名。</param>
+        <summary>取得、<see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" />このコレクション内のオブジェクト。</summary>
+        <value><see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" />を指定した属性を表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクションに含まれている値を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" />オブジェクトを含む、<see cref="T:System.DirectoryServices.ActiveDirectory.AttributeMetadata" />このコレクション内のオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

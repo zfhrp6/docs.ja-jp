@@ -1,0 +1,53 @@
+<Type Name="SqlConnectionColumnEncryptionSetting" FullName="System.Data.SqlClient.SqlConnectionColumnEncryptionSetting">
+  <TypeSignature Language="C#" Value="public enum SqlConnectionColumnEncryptionSetting" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlConnectionColumnEncryptionSetting extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlConnectionColumnEncryptionSetting" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>接続で [常に暗号化] 機能が有効であることを指定します。 暗号化を回避したり、プレーンテキスト データにアクセスしたりするためにこれらの設定値を使用することはできません。 詳細については、「 [Always Encrypted (データベース エンジン)](https://msdn.microsoft.com/library/mt163865.aspx)です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="Disabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlConnectionColumnEncryptionSetting Disabled = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlConnectionColumnEncryptionSetting.Disabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlConnectionColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続で [常に暗号化] を使用しないことを指定します。 接続を通じて送信されるどのクエリも暗号化された列にアクセスしない場合に使用する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="Enabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlConnectionColumnEncryptionSetting Enabled = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlConnectionColumnEncryptionSetting.Enabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlConnectionColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続の [常に暗号化] 機能を有効にします。 暗号化された列に対応するクエリ パラメーターは透過的に暗号化され、暗号化された列からのクエリ結果は透過的に暗号化解除されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

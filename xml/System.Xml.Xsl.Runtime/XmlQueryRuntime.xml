@@ -1,0 +1,1134 @@
+<Type Name="XmlQueryRuntime" FullName="System.Xml.Xsl.Runtime.XmlQueryRuntime">
+  <TypeSignature Language="C#" Value="public sealed class XmlQueryRuntime" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlQueryRuntime extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.Runtime.XmlQueryRuntime" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlXml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>XSLT プロセッサをサポートするメソッドとプロパティを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddNewIndex">
+      <MemberSignature Language="C#" Value="public void AddNewIndex (System.Xml.XPath.XPathNavigator context, int indexId, System.Xml.Xsl.Runtime.XmlILIndex index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddNewIndex(class System.Xml.XPath.XPathNavigator context, int32 indexId, class System.Xml.Xsl.Runtime.XmlILIndex index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.AddNewIndex(System.Xml.XPath.XPathNavigator,System.Int32,System.Xml.Xsl.Runtime.XmlILIndex)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="indexId" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Xml.Xsl.Runtime.XmlILIndex" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <param name="indexId"><see langword="int" /> 型の値。</param>
+        <param name="index"><see cref="T:System.Xml.Xsl.Runtime.XmlILIndex" /> クラスのインスタンス。</param>
+        <summary>指定のコンテキスト ドキュメントを対象に新たに構築したインデックスを、既存のインデックス コレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeTypeXsltArgument">
+      <MemberSignature Language="C#" Value="public object ChangeTypeXsltArgument (int indexType, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ChangeTypeXsltArgument(int32 indexType, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ChangeTypeXsltArgument(System.Int32,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="indexType" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="indexType"><see langword="Int32" /> 型の値。</param>
+        <param name="value"><see langword="object" /> 型の値。</param>
+        <param name="destinationType"><see langword="Type" /> 型の値。</param>
+        <summary>値の CLR 型から変換、 <paramref name="value" /> CLR パラメーター <paramref name="destinationType" /> V1 XSLT 規則を使用しています。 結果として得られたツリー フラグメントの値はすべてノードに変換されます。</summary>
+        <returns><see langword="object" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChangeTypeXsltResult">
+      <MemberSignature Language="C#" Value="public object ChangeTypeXsltResult (int indexType, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ChangeTypeXsltResult(int32 indexType, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ChangeTypeXsltResult(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="indexType" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="indexType"><see langword="int" /> 型の値。</param>
+        <param name="value"><see langword="object" /> 型の値。</param>
+        <summary>CLR 型から変換、<paramref name="value" />中間言語生成が XML 型を表す、既定の CLR 型にパラメーターの XML 型の変換規則に基づいています。</summary>
+        <returns><see langword="object" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComparePosition">
+      <MemberSignature Language="C#" Value="public int ComparePosition (System.Xml.XPath.XPathNavigator navigatorThis, System.Xml.XPath.XPathNavigator navigatorThat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 ComparePosition(class System.Xml.XPath.XPathNavigator navigatorThis, class System.Xml.XPath.XPathNavigator navigatorThat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ComparePosition(System.Xml.XPath.XPathNavigator,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigatorThis" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="navigatorThat" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigatorThis"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <param name="navigatorThat"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <summary>2 つのナビゲーターの相対位置を比較します。</summary>
+        <returns>場合は-1<paramref name="navigatorThis" />する前に<paramref name="navigatorThat" />; 場合は、1<paramref name="navigatorThis" />後<paramref name="navigatorThat" />。 0 両方ナビゲーターが同じノードに配置されている場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCollation">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlCollation CreateCollation (string collation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Xsl.Runtime.XmlCollation CreateCollation(string collation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.CreateCollation(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlCollation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="collation" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="collation"><see langword="string" /> 型の値。</param>
+        <summary>文字列から照合順序を作成します。</summary>
+        <returns><see cref="T:System.Xml.Xsl.Runtime.XmlCollation" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugGetGlobalNames">
+      <MemberSignature Language="C#" Value="public string[] DebugGetGlobalNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string[] DebugGetGlobalNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.DebugGetGlobalNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このクエリに使用されているすべてのグローバル変数およびパラメーターの名前を格納する配列を返します。</summary>
+        <returns>配列<see langword="string" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される配列の形式が`{namespace}prefix:local-name`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugGetGlobalValue">
+      <MemberSignature Language="C#" Value="public System.Collections.IList DebugGetGlobalValue (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IList DebugGetGlobalValue(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.DebugGetGlobalValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see langword="string" /> 型の値。</param>
+        <summary>指定された名前を持つグローバル値の値を取得します。</summary>
+        <returns>一連の<see cref="T:System.Xml.XPath.XPathItem" />インスタンス、または<see langword="null" />を指定した名前を持つグローバル値が存在しない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugGetXsltValue">
+      <MemberSignature Language="C#" Value="public object DebugGetXsltValue (System.Collections.IList seq);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object DebugGetXsltValue(class System.Collections.IList seq) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.DebugGetXsltValue(System.Collections.IList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="seq" Type="System.Collections.IList" />
+      </Parameters>
+      <Docs>
+        <param name="seq"><see cref="T:System.Collections.IList" /> クラスのインスタンス。</param>
+        <summary>特定のシーケンスをその適切な XSLT 型に変換します。</summary>
+        <returns><see langword="object" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DebugSetGlobalValue">
+      <MemberSignature Language="C#" Value="public void DebugSetGlobalValue (string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DebugSetGlobalValue(string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.DebugSetGlobalValue(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="name"><see langword="string" /> 型の値。</param>
+        <param name="value"><see langword="object" /> 型の値。</param>
+        <summary>指定された名前を持つグローバル値の値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocOrderDistinct">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt; DocOrderDistinct (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt; seq);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathNavigator&gt; DocOrderDistinct(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathNavigator&gt; seq) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.DocOrderDistinct(System.Collections.Generic.IList{System.Xml.XPath.XPathNavigator})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="seq" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathNavigator&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="seq">一連の<see cref="T:System.Xml.XPath.XPathNavigator" />インスタンス。</param>
+        <summary>指定されたシーケンスから個別の並べ替えられたノードを取得します。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクトの <see cref="T:System.Collections.IList" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EarlyBoundFunctionExists">
+      <MemberSignature Language="C#" Value="public bool EarlyBoundFunctionExists (string name, string namespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool EarlyBoundFunctionExists(string name, string namespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.EarlyBoundFunctionExists(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="namespaceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメソッド名。</param>
+        <param name="namespaceUri">事前バインディングされたオブジェクトを識別します。</param>
+        <summary>事前バインディングされた指定のオブジェクトに、指定された名前のメソッドが存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />事前バインディングされたオブジェクトによって識別する場合<paramref name="namespaceUri" />と一致するメソッドが含まれています<paramref name="name" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRtfConstruction">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.XPathNavigator EndRtfConstruction (out System.Xml.Xsl.Runtime.XmlQueryOutput output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XPath.XPathNavigator EndRtfConstruction([out] class System.Xml.Xsl.Runtime.XmlQueryOutput&amp; output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.EndRtfConstruction(System.Xml.Xsl.Runtime.XmlQueryOutput@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Xml.Xsl.Runtime.XmlQueryOutput&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="output"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" /> クラスのインスタンス。</param>
+        <summary>RTF の構築を完了します。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndSequenceConstruction">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; EndSequenceConstruction (out System.Xml.Xsl.Runtime.XmlQueryOutput output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; EndSequenceConstruction([out] class System.Xml.Xsl.Runtime.XmlQueryOutput&amp; output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.EndSequenceConstruction(System.Xml.Xsl.Runtime.XmlQueryOutput@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Xml.Xsl.Runtime.XmlQueryOutput&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="output"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" /> クラスのインスタンス。</param>
+        <summary>入れ子になった項目のシーケンスの構築を完了します。</summary>
+        <returns>インスタンスのシーケンス、<see cref="T:System.Xml.XPath.XPathItem" />クラスです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalContext">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlQueryContext ExternalContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Xsl.Runtime.XmlQueryContext ExternalContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.Runtime.XmlQueryRuntime.ExternalContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlQueryContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソース、パラメーター、拡張オブジェクトなど、外部のユーザー コンテキスト情報を管理するオブジェクトを返します。</summary>
+        <value><see cref="T:System.Xml.Xsl.Runtime.XmlQueryContext" /> クラスのインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindIndex">
+      <MemberSignature Language="C#" Value="public bool FindIndex (System.Xml.XPath.XPathNavigator context, int indexId, out System.Xml.Xsl.Runtime.XmlILIndex index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool FindIndex(class System.Xml.XPath.XPathNavigator context, int32 indexId, [out] class System.Xml.Xsl.Runtime.XmlILIndex&amp; index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.FindIndex(System.Xml.XPath.XPathNavigator,System.Int32,System.Xml.Xsl.Runtime.XmlILIndex@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="indexId" Type="System.Int32" />
+        <Parameter Name="index" Type="System.Xml.Xsl.Runtime.XmlILIndex&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">コンテキスト ドキュメント。</param>
+        <param name="indexId">検索するインデックスの ID。</param>
+        <param name="index">取得するインデックス。</param>
+        <summary>返します、指定されたドキュメントで既に作成されている場合は、指定した ID を持つインデックスを返します<see langword="true" />です。 それ以外の場合、新しい空のインデックスを作成し、返します<see langword="false" />です。</summary>
+        <returns><see cref="T:System.Xml.Xsl.Runtime.XmlILIndex" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateId">
+      <MemberSignature Language="C#" Value="public string GenerateId (System.Xml.XPath.XPathNavigator navigator);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateId(class System.Xml.XPath.XPathNavigator navigator) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GenerateId(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <summary>指定されたノードの一意の文字列 ID を生成します。</summary>
+        <returns><see langword="string" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAtomizedName">
+      <MemberSignature Language="C#" Value="public string GetAtomizedName (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetAtomizedName(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetAtomizedName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>指定されたインデックス位置にある最小単位に分割した名前を名前の配列から取得します。</summary>
+        <returns><see langword="string" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCollation">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlCollation GetCollation (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Xsl.Runtime.XmlCollation GetCollation(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetCollation(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlCollation</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>静的に作成される照合順序を取得します。</summary>
+        <returns><see cref="T:System.Xml.Xsl.Runtime.XmlCollation" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEarlyBoundObject">
+      <MemberSignature Language="C#" Value="public object GetEarlyBoundObject (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetEarlyBoundObject(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetEarlyBoundObject(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>事前バインディングされた指定の拡張オブジェクトを取得します。 このオブジェクトがまだ存在しない場合、対応するインスタンスが作成<see cref="T:System.Reflection.ConstructorInfo" />です。</summary>
+        <returns><see langword="object" /> 型の値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalValue">
+      <MemberSignature Language="C#" Value="public object GetGlobalValue (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetGlobalValue(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetGlobalValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>指定のグローバル変数にバインドされた値を返します。 この値がまだ計算されていない場合は、計算してグローバル変数に格納します。</summary>
+        <returns>指定のグローバル変数にバインドされた値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameFilter">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlNavigatorFilter GetNameFilter (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Xsl.Runtime.XmlNavigatorFilter GetNameFilter(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetNameFilter(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlNavigatorFilter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>指定されたインデックス位置にある名前フィルターをフィルターの配列から取得します。</summary>
+        <returns><see cref="T:System.Xml.Xsl.Runtime.XmlNavigatorFilter" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTypeFilter">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlNavigatorFilter GetTypeFilter (System.Xml.XPath.XPathNodeType nodeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.Xsl.Runtime.XmlNavigatorFilter GetTypeFilter(valuetype System.Xml.XPath.XPathNodeType nodeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetTypeFilter(System.Xml.XPath.XPathNodeType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlNavigatorFilter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeType" Type="System.Xml.XPath.XPathNodeType" />
+      </Parameters>
+      <Docs>
+        <param name="nodeType"><see cref="T:System.Xml.XPath.XPathNodeType" /> クラスのインスタンス。</param>
+        <summary>指定された型のノードをフィルター処理するフィルターを取得します。</summary>
+        <returns><see cref="T:System.Xml.Xsl.Runtime.XmlNavigatorFilter" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGlobalComputed">
+      <MemberSignature Language="C#" Value="public bool IsGlobalComputed (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsGlobalComputed(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.IsGlobalComputed(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <summary>指定されたグローバル値が既に計算されている場合に true を返します。</summary>
+        <returns>
+          <see langword="true" />値がある場合を計算します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsQNameEqual">
+      <MemberSignature Language="C#" Value="public bool IsQNameEqual (System.Xml.XPath.XPathNavigator n1, System.Xml.XPath.XPathNavigator n2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsQNameEqual(class System.Xml.XPath.XPathNavigator n1, class System.Xml.XPath.XPathNavigator n2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.IsQNameEqual(System.Xml.XPath.XPathNavigator,System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n1" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="n2" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="n1"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <param name="n2"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <summary>比較、<see cref="P:System.Xml.XPath.XPathNavigator.LocalName" />と<see cref="P:System.Xml.XPath.XPathNavigator.NamespaceURI" />2 つのプロパティ<see cref="T:System.Xml.XPath.XPathNavigator" />それらが等しいかを確認するインスタンス。</summary>
+        <returns>
+          <see langword="true" />名前が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsQNameEqual">
+      <MemberSignature Language="C#" Value="public bool IsQNameEqual (System.Xml.XPath.XPathNavigator navigator, int indexLocalName, int indexNamespaceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsQNameEqual(class System.Xml.XPath.XPathNavigator navigator, int32 indexLocalName, int32 indexNamespaceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.IsQNameEqual(System.Xml.XPath.XPathNavigator,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="navigator" Type="System.Xml.XPath.XPathNavigator" />
+        <Parameter Name="indexLocalName" Type="System.Int32" />
+        <Parameter Name="indexNamespaceUri" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="navigator"><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</param>
+        <param name="indexLocalName"><see langword="int" /> 型の値。</param>
+        <param name="indexNamespaceUri"><see langword="int" /> 型の値。</param>
+        <summary>決定するかどうか、<see cref="P:System.Xml.XPath.XPathNavigator.LocalName" />と<see cref="P:System.Xml.XPath.XPathNavigator.NamespaceURI" />の指定したプロパティ<see cref="T:System.Xml.XPath.XPathNavigator" />パラメーターで指定された名前と同じです。</summary>
+        <returns>
+          <see langword="true" />名前が等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.Runtime.XmlQueryRuntime.IsQNameEqual%2A>メソッドの呼び出し、<xref:System.Xml.Xsl.Runtime.XmlQueryRuntime.GetAtomizedName%2A>ローカル名と名前空間 URI を取得するメソッドがに基づいて、`indexLocalName`と`indexNamespaceUri`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesXmlType">
+      <MemberSignature Language="C#" Value="public bool MatchesXmlType (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; seq, int indexType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MatchesXmlType(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; seq, int32 indexType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.MatchesXmlType(System.Collections.Generic.IList{System.Xml.XPath.XPathItem},System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="seq" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+        <Parameter Name="indexType" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="seq"><see cref="T:System.Xml.XPath.XPathItem" /> オブジェクトの <see cref="T:System.Collections.Generic.IList`1" />。</param>
+        <param name="indexType">インデックス。</param>
+        <summary>返します<see langword="true" />指定されたシーケンス内のすべての項目の種類には、指定したインデックスを識別する XML 型が一致する場合。</summary>
+        <returns>
+          <see langword="true" />場合の種類<paramref name="seq" />のサブタイプである、 <paramref name="indexType" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesXmlType">
+      <MemberSignature Language="C#" Value="public bool MatchesXmlType (System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt; seq, System.Xml.Schema.XmlTypeCode code);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MatchesXmlType(class System.Collections.Generic.IList`1&lt;class System.Xml.XPath.XPathItem&gt; seq, valuetype System.Xml.Schema.XmlTypeCode code) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.MatchesXmlType(System.Collections.Generic.IList{System.Xml.XPath.XPathItem},System.Xml.Schema.XmlTypeCode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="seq" Type="System.Collections.Generic.IList&lt;System.Xml.XPath.XPathItem&gt;" />
+        <Parameter Name="code" Type="System.Xml.Schema.XmlTypeCode" />
+      </Parameters>
+      <Docs>
+        <param name="seq">一連の<see cref="T:System.Xml.XPath.XPathItem" />インスタンス。</param>
+        <param name="code">シングルトン型。</param>
+        <summary>指定されたシーケンスの型が、指定されたシングルトン型のサブタイプであるかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合の種類<paramref name="seq" />サブタイプで指定された型である<paramref name="code" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesXmlType">
+      <MemberSignature Language="C#" Value="public bool MatchesXmlType (System.Xml.XPath.XPathItem item, int indexType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MatchesXmlType(class System.Xml.XPath.XPathItem item, int32 indexType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.MatchesXmlType(System.Xml.XPath.XPathItem,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Xml.XPath.XPathItem" />
+        <Parameter Name="indexType" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Xml.XPath.XPathItem" /> クラスのインスタンス。</param>
+        <param name="indexType">XML 型の配列内のインデックス。</param>
+        <summary>返します<see langword="true" />場合の指定した種類<see cref="T:System.Xml.XPath.XPathItem" />オブジェクトが指定した XML 型に一致します。</summary>
+        <returns>
+          <see langword="true" />場合の指定した種類<see cref="T:System.Xml.XPath.XPathItem" />指定した XML 型と一致する、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesXmlType">
+      <MemberSignature Language="C#" Value="public bool MatchesXmlType (System.Xml.XPath.XPathItem item, System.Xml.Schema.XmlTypeCode code);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool MatchesXmlType(class System.Xml.XPath.XPathItem item, valuetype System.Xml.Schema.XmlTypeCode code) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.MatchesXmlType(System.Xml.XPath.XPathItem,System.Xml.Schema.XmlTypeCode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Xml.XPath.XPathItem" />
+        <Parameter Name="code" Type="System.Xml.Schema.XmlTypeCode" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Xml.XPath.XPathItem" /> クラスのインスタンス。</param>
+        <param name="code"><see cref="T:System.Xml.Schema.XmlTypeCode" /> クラスのインスタンス。</param>
+        <summary>返します<see langword="true" />場合の種類、<see cref="T:System.Xml.XPath.XPathItem" />オブジェクトが、指定したで識別される型のサブタイプ<see cref="T:System.Xml.Schema.XmlTypeCode" />です。</summary>
+        <returns>返します<see langword="true" />場合の種類、<see cref="T:System.Xml.XPath.XPathItem" />オブジェクトが、指定したで識別される型のサブタイプ<see cref="T:System.Xml.Schema.XmlTypeCode" />、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameTable">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlNameTable NameTable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlNameTable NameTable" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.Runtime.XmlQueryRuntime.NameTable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNameTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリによって使用されるすべての名前を最小単位に分割するための名前テーブルを返します。</summary>
+        <value><see cref="T:System.Xml.XmlNameTable" /> クラスのインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCurrentNodeChanged">
+      <MemberSignature Language="C#" Value="public static int OnCurrentNodeChanged (System.Xml.XPath.XPathNavigator currentNode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 OnCurrentNodeChanged(class System.Xml.XPath.XPathNavigator currentNode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.OnCurrentNodeChanged(System.Xml.XPath.XPathNavigator)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="currentNode" Type="System.Xml.XPath.XPathNavigator" />
+      </Parameters>
+      <Docs>
+        <param name="currentNode">
+          <see cref="T:System.Xml.XPath.XPathNavigator" />ノードを識別するオブジェクト。</param>
+        <summary>Visual Studio でのデバッグに使用します。 現在のノードが変更された後で呼び出されます。</summary>
+        <returns>変更の状態を示す整数。 内部的なテスト用途でのみ使用されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Output">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XmlQueryOutput Output { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Xsl.Runtime.XmlQueryOutput Output" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.Runtime.XmlQueryRuntime.Output" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XmlQueryOutput</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力ライター オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" /> クラスのインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTagName">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName ParseTagName (string tagName, int indexPrefixMappings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName ParseTagName(string tagName, int32 indexPrefixMappings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ParseTagName(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tagName" Type="System.String" />
+        <Parameter Name="indexPrefixMappings" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="tagName">タグ名。</param>
+        <param name="indexPrefixMappings">インデックス。</param>
+        <summary>指定されたタグ名を解析し、結果のプレフィックスを解決します。 プレフィックスを解決できない場合、エラーがスローされます。</summary>
+        <returns><see cref="T:System.Xml.XmlQualifiedName" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseTagName">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName ParseTagName (string tagName, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName ParseTagName(string tagName, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ParseTagName(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tagName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagName">タグ名。</param>
+        <param name="ns">名前空間。</param>
+        <summary>指定されたタグ名を解析します。 返します、<see cref="T:System.Xml.XmlQualifiedName" />解析されたローカル名と指定した名前空間で構成されます。</summary>
+        <returns><see cref="T:System.Xml.XmlQualifiedName" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendMessage">
+      <MemberSignature Language="C#" Value="public void SendMessage (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendMessage(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.SendMessage(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see langword="string" /> 型の値。</param>
+        <summary>クエリの実行情報をイベント ハンドラーに報告します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGlobalValue">
+      <MemberSignature Language="C#" Value="public void SetGlobalValue (int index, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetGlobalValue(int32 index, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.SetGlobalValue(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index"><see langword="int" /> 型の値。</param>
+        <param name="value"><see langword="object" /> 型の値。</param>
+        <summary>指定のグローバル変数またはパラメーターにバインドされた値を返します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartRtfConstruction">
+      <MemberSignature Language="C#" Value="public void StartRtfConstruction (string baseUri, out System.Xml.Xsl.Runtime.XmlQueryOutput output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartRtfConstruction(string baseUri, [out] class System.Xml.Xsl.Runtime.XmlQueryOutput&amp; output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.StartRtfConstruction(System.String,System.Xml.Xsl.Runtime.XmlQueryOutput@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.String" />
+        <Parameter Name="output" Type="System.Xml.Xsl.Runtime.XmlQueryOutput&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri"><see langword="string" /> 型の値。</param>
+        <param name="output"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" /> クラスのインスタンス。</param>
+        <summary>RTF の構築を開始し、新しいを返します<see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" />この RTF を構築するために使用されるオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartSequenceConstruction">
+      <MemberSignature Language="C#" Value="public void StartSequenceConstruction (out System.Xml.Xsl.Runtime.XmlQueryOutput output);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StartSequenceConstruction([out] class System.Xml.Xsl.Runtime.XmlQueryOutput&amp; output) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.StartSequenceConstruction(System.Xml.Xsl.Runtime.XmlQueryOutput@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="output" Type="System.Xml.Xsl.Runtime.XmlQueryOutput&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="output"><see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" /> クラスのインスタンス。</param>
+        <summary>入れ子になった項目シーケンスの構築を開始します。 新しいを返します<see cref="T:System.Xml.Xsl.Runtime.XmlQueryOutput" />ですが、この新しいシーケンスを構築するために使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextRtfConstruction">
+      <MemberSignature Language="C#" Value="public System.Xml.XPath.XPathNavigator TextRtfConstruction (string text, string baseUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XPath.XPathNavigator TextRtfConstruction(string text, string baseUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.TextRtfConstruction(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="baseUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text"><see langword="string" /> 型の値。</param>
+        <param name="baseUri"><see langword="string" /> 型の値。</param>
+        <summary>新しい<see cref="T:System.Xml.XPath.XPathNavigator" />指定したテキストからです。</summary>
+        <returns><see cref="T:System.Xml.XPath.XPathNavigator" /> クラスのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowException">
+      <MemberSignature Language="C#" Value="public void ThrowException (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ThrowException(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.Runtime.XmlQueryRuntime.ThrowException(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text"><see langword="string" /> 型の値。</param>
+        <summary>指定されたメッセージ テキストを持つ XML 例外をスローします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XsltFunctions">
+      <MemberSignature Language="C#" Value="public System.Xml.Xsl.Runtime.XsltLibrary XsltFunctions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Xsl.Runtime.XsltLibrary XsltFunctions" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.Runtime.XmlQueryRuntime.XsltFunctions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.SqlXml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Xsl.Runtime.XsltLibrary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態を管理するオブジェクトを返します。 状態オブジェクトは、各種の XSLT 関数を実装する際に必要となります。</summary>
+        <value><see cref="T:System.Xml.Xsl.Runtime.XsltLibrary" /> クラスのインスタンス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

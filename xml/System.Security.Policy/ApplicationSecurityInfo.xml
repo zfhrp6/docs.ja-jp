@@ -1,0 +1,174 @@
+<Type Name="ApplicationSecurityInfo" FullName="System.Security.Policy.ApplicationSecurityInfo">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationSecurityInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationSecurityInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.ApplicationSecurityInfo" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションのセキュリティ証拠を保持します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationSecurityInfo>アプリケーションのマニフェストから取得した情報を使用して、マニフェストでアクティブ化されるアプリケーションに関するセキュリティ情報を提供し、その<xref:System.ActivationContext>です。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ApplicationSecurityInfo (ActivationContext activationContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ActivationContext activationContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationSecurityInfo.#ctor(System.ActivationContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext"><see cref="T:System.ActivationContext" />対象アプリケーションを一意に識別するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Policy.ApplicationSecurityInfo" />クラスの指定されたアクティベーション コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ActivationContext>オブジェクトが含まれています、<xref:System.ApplicationIdentity>アプリケーションの完全な名前と場所によって、アプリケーションを一意に識別するオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="activationContext" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationEvidence">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.Evidence ApplicationEvidence { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.Evidence ApplicationEvidence" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityInfo.ApplicationEvidence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.Evidence</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの証拠を設定します。</summary>
+        <value><see cref="T:System.Security.Policy.Evidence" />アプリケーションのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 証拠は、コードに付与するアクセス許可を決定するなど、セキュリティ ポリシー決定の入力を構成する情報のセットです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Security.Policy.ApplicationSecurityInfo.ApplicationEvidence" /> が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationId">
+      <MemberSignature Language="C#" Value="public ApplicationId ApplicationId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationId ApplicationId" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityInfo.ApplicationId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションの id 情報を設定します。</summary>
+        <value><see cref="T:System.ApplicationId" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション id は、発行者の公開キー、アプリケーションの名前、ターゲット プロセッサ アーキテクチャ、アプリケーションのカルチャ、およびアプリケーションのバージョンで構成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Security.Policy.ApplicationSecurityInfo.ApplicationId" /> が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultRequestSet">
+      <MemberSignature Language="C#" Value="public System.Security.PermissionSet DefaultRequestSet { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.PermissionSet DefaultRequestSet" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityInfo.DefaultRequestSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.PermissionSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定の権限セットを設定します。</summary>
+        <value>A<see cref="T:System.Security.PermissionSet" />アプリケーションの既定のアクセス許可を表すオブジェクト。 既定値は、<see cref="T:System.Security.PermissionSet" />でのアクセス許可の状態<see cref="F:System.Security.Permissions.PermissionState.None" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティが設定されていないかどうか、get アクセサーが返されます、<xref:System.Security.PermissionSet>のアクセス許可の状態と<xref:System.Security.Permissions.PermissionState.None>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Security.Policy.ApplicationSecurityInfo.DefaultRequestSet" /> が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeploymentId">
+      <MemberSignature Language="C#" Value="public ApplicationId DeploymentId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationId DeploymentId" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityInfo.DeploymentId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または配置 id は記載されているアプリケーションの最上位の要素を設定します。</summary>
+        <value><see cref="T:System.ApplicationId" />アプリケーションの最上位の要素を記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置 id は、発行者の公開キー、アプリケーションの名前、ターゲット プロセッサ アーキテクチャ、アプリケーションのカルチャ、およびアプリケーションのバージョンで構成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <see cref="P:System.Security.Policy.ApplicationSecurityInfo.DeploymentId" /> が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

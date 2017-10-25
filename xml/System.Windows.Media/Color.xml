@@ -1,0 +1,1056 @@
+<Type Name="Color" FullName="System.Windows.Media.Color">
+  <TypeSignature Language="C#" Value="public struct Color : IEquatable&lt;System.Windows.Media.Color&gt;, IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit Color extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Media.Color&gt;, class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Color" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Media.Color&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.ColorConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アルファ、赤、緑、および青のチャネルで色を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Color"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="predefinedColor"/>  
+- or -  
+<object property="#rgb"/>  
+- or -  
+<object property="#argb"/>  
+- or -  
+<object property="#rrggbb"/>  
+- or -  
+<object property="#aarrggbb"/>  
+- or -  
+<object property="sc# scA,scR,scG,scB"/>  
+- or -  
+<object property="ContextColor profileUri alphaValue,colorValue"/>  
+  
+```  
+  
+<a name="xamlValues_Color"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *predefinedColor*  
+ 定義済みの色の 1 つ、<xref:System.Windows.Media.Colors>クラスです。  
+  
+ *rgb*  
+ 3 桁の 16 進数。 最初の桁を指定、色の<xref:System.Windows.Media.Color.R%2A>値、2 番目の数字を指定します、<xref:System.Windows.Media.Color.G%2A>値、および 3 番目の桁を指定します、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`00F` のようにします。  
+  
+ *argb*  
+ 4 桁の 16 進数。 最初の桁を指定、色の<xref:System.Windows.Media.Color.A%2A>値、2 番目の数字を指定します、<xref:System.Windows.Media.Color.R%2A>値に設定する次の桁を指定します、<xref:System.Windows.Media.Color.G%2A>値、および最後の桁を指定します、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`F00F` のようにします。  
+  
+ *rrggbb*  
+ 6 桁の 16 進数。 最初の 2 桁の指定、色の<xref:System.Windows.Media.Color.R%2A>値に設定する次の 2 つの指定、<xref:System.Windows.Media.Color.G%2A>値、および最後の 2 つを指定、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`0000FF` のようにします。  
+  
+ *aarrggbb*  
+ 8 桁 16 進数。 最初の 2 桁の指定、色の<xref:System.Windows.Media.Color.A%2A>値に設定する次の 2 つの指定、<xref:System.Windows.Media.Color.R%2A>値に設定する次の 2 つの指定その<xref:System.Windows.Media.Color.G%2A>値、および最後の 2 つを指定その<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`FF0000FF` のようにします。  
+  
+ *scA*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ 色の<xref:System.Windows.Media.Color.ScA%2A>値。  
+  
+ *scR*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ 色の<xref:System.Windows.Media.Color.ScR%2A>値。  
+  
+ *scG*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ 色の<xref:System.Windows.Media.Color.ScG%2A>値。  
+  
+ *scB*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ 色の<xref:System.Windows.Media.Color.ScB%2A>値。  
+  
+ *は*  
+ <xref:System.Uri?displayProperty=nameWithType>  
+  
+ [!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー プロファイル。  
+  
+ *alphaValue*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ アルファ チャネルのカラー値。 値の範囲は、0.0 ~ 1.0 です。  
+  
+ *colorValue*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ カラー プロファイルのカラー チャネルを表す値を 3 ~ 8 個のコンマ区切りの一覧。 値の範囲は、0.0 ~ 1.0 です。  
+  
+   
+  
+## Examples  
+ この例では、sRGB、ScRGB、およびカラー プロファイルの値を使用して色を青に作成する方法を示します。  
+  
+ [!code-xaml[GraphicsMMMiscSnippets_snip#ColorExample](~/samples/snippets/csharp/VS_Snippets_Wpf/GraphicsMMMiscSnippets_snip/CS/ColorExample.xaml#colorexample)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="A">
+      <MemberSignature Language="C#" Value="public byte A { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 A" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.A" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="sRGB" />色のアルファ チャネルの値。</summary>
+        <value><see langword="sRGB" />色、0 ~ 255 の値のアルファ チャネルの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アルファ チャネル、<xref:System.Windows.Media.Color>構造体の透過性の量を決定する、<xref:System.Windows.Media.Color>がします。  アルファ値は 255、<xref:System.Windows.Media.Color>が完全に不透明を示し、値が 0 の色は完全に透過的です。  
+  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) と ScRGB チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえば、 <xref:System.Windows.Media.Color.A%2A>、`sRGB`アルファ チャネルを変更すると、`ScRGB`アルファ チャネルは、<xref:System.Windows.Media.Color.ScA%2A>はそれと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color Add (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color Add(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Add(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">最初の<see cref="T:System.Windows.Media.Color" />構造を追加します。</param>
+        <param name="color2">2 番目<see cref="T:System.Windows.Media.Color" />構造を追加します。</param>
+        <summary>2 つ追加<see cref="T:System.Windows.Media.Color" />構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値が加算演算の結果である構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color>構造体は、2 番目の色のアルファ、赤、緑、および青のチャネルの最初の色のアルファ、赤、緑、および青のチャネルを追加することで一緒に追加されます。 アルファ チャネルなど`color1`およびのアルファ チャネル`color2`は追加して結果の色のアルファ チャネルを生成します。 同じでは、新しい色の赤、緑、および青のチャネルを生成するために、赤、緑、および青のチャネルで行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreClose">
+      <MemberSignature Language="C#" Value="public static bool AreClose (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool AreClose(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.AreClose(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">比較する最初の色。</param>
+        <param name="color2">比較する 2 番目の色。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.Media.Color" />あいまい等しいかどうかの構造体。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="color1" />と<paramref name="color2" />ほぼ同じである、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この等値メソッドは、浮動小数点値が操作したときにエラーの量が少ないを取得できるという事実を補正します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="B">
+      <MemberSignature Language="C#" Value="public byte B { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 B" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.B" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="sRGB" />青の色のチャネルの値。</summary>
+        <value><see langword="sRGB" />青のチャネルの値、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 255 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえばときに、 <xref:System.Windows.Media.Color.B%2A>、`sRGB`青のチャネルと、変更は、`ScRGB`青のチャネル<xref:System.Windows.Media.Color.ScB%2A>は、それと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clamp">
+      <MemberSignature Language="C#" Value="public void Clamp ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clamp() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Clamp" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セット、<see langword="ScRGB" />範囲内にいる場合、0 ~ 1 の範囲内に色のチャネル。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色域、`ScRGB`色空間は、クランプ範囲より大きいため、このメソッドの使用は、色の情報の損失、可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorContext">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ColorContext ColorContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.ColorContext ColorContext" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.ColorContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ColorContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]色のプロファイルの色します。</summary>
+        <value>[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]色のプロファイルの色します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー プロファイルには、特定のアプリケーションまたはカラー プリンターなどのデバイスのカラー システム プロファイルが含まれています。 このプロファイルは、さらに、他のデバイスの個々 のプロファイルにマップできる一般的なプロファイルに照合されます。 これにより、他のアプリケーションと同じまたは別のコンピューター システム上のデバイスから色を一致するように、1 台のコンピューター デバイスで使用する色のシステムです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">これと比較するオブジェクト<see cref="T:System.Windows.Media.Color" />構造体。</param>
+        <summary>指定したオブジェクトがあるかどうかをテストする<see cref="T:System.Windows.Media.Color" />構造体し、は、この色に相当します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Windows.Media.Color" />構造体し、は、現在と同じ<see cref="T:System.Windows.Media.Color" />構造体です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点値は、時に稼働しているときに、エラーのある程度の小規模を取得できます。  <xref:System.Windows.Media.Color.Equals%2A> 、メソッド、<xref:System.Windows.Media.Color.op_Equality%2A>演算子、および<xref:System.Windows.Media.Color.op_Inequality%2A>演算子は、この補正実行されないしたがって予期されるブール型の結果を返す可能性がありますいません。  
+  
+ <xref:System.Windows.Media.Color.AreClose%2A>メソッドが返すことによってこの浮動小数点算術演算エラーを補正するあいまい等値アルゴリズムを使用して`true`2 つの比較について<xref:System.Windows.Media.Color>構造ほぼ同一であるが、値を持つが、わずかな時間によって異なる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Media.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Equals(System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color">現在の <see cref="T:System.Windows.Media.Color" /> 構造体と比較する <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <summary>テストするかどうか、指定した<see cref="T:System.Windows.Media.Color" />構造体がこの色と同じです。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.Media.Color" />構造体は、現在と同じ<see cref="T:System.Windows.Media.Color" />構造体です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Equals(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">比較する最初の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <param name="color2">比較する 2 番目の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <summary>2 つあるかどうかをテスト<see cref="T:System.Windows.Media.Color" />構造は同じです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="color1" />と<paramref name="color2" />同じである、それ以外の場合は、まったく<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点値は、時に稼働しているときに、エラーのある程度の小規模を取得できます。  <xref:System.Windows.Media.Color.Equals%2A> 、メソッド、<xref:System.Windows.Media.Color.op_Equality%2A>演算子、および<xref:System.Windows.Media.Color.op_Inequality%2A>演算子は、この補正実行されないしたがって予期されるブール型の結果を返す可能性がありますいません。  
+  
+ <xref:System.Windows.Media.Color.AreClose%2A>メソッドが返すことによってこの浮動小数点算術演算エラーを補正するあいまい等値アルゴリズムを使用して`true`2 つの比較について<xref:System.Windows.Media.Color>構造ほぼ同一であるが、値を持つが、わずかな時間によって異なる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromArgb">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color FromArgb (byte a, byte r, byte g, byte b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color FromArgb(unsigned int8 a, unsigned int8 r, unsigned int8 g, unsigned int8 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.FromArgb(System.Byte,System.Byte,System.Byte,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Byte" />
+        <Parameter Name="r" Type="System.Byte" />
+        <Parameter Name="g" Type="System.Byte" />
+        <Parameter Name="b" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="a">アルファ チャネル<see cref="P:System.Windows.Media.Color.A" />、新しい色のです。</param>
+        <param name="r">赤のチャネル<see cref="P:System.Windows.Media.Color.R" />、新しい色のです。</param>
+        <param name="g">緑のチャネル<see cref="P:System.Windows.Media.Color.G" />、新しい色のです。</param>
+        <param name="b">青のチャネル<see cref="P:System.Windows.Media.Color.B" />、新しい色のです。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Color" />構造体を指定して<see langword="sRGB" />アルファ チャネルおよびカラー チャネル値。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Color" />値を指定して構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color.FromArgb%2A>メソッドでは、アルファ チャネルを指定することができます、<xref:System.Windows.Media.Color.FromRgb%2A>アルファ チャネルのメソッドは、既定値は 255 を使用します。  
+  
+ 色のアルファ チャネルでは、色の透明度の量を決定します。 アルファ値は 255 ことを示し、色が完全に不透明な値 0 は、色が完全に透明であることを示します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#FromArgbExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/CreateColorsFromExample.cs#fromargbexample)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#FromArgbExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/createcolorsfromexample.vb#fromargbexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromAValues">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color FromAValues (float a, float[] values, Uri profileUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color FromAValues(float32 a, float32[] values, class System.Uri profileUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.FromAValues(System.Single,System.Single[],System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Single" />
+        <Parameter Name="values" Type="System.Single[]" />
+        <Parameter Name="profileUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="a">新しい色、0 ~ 1 の値のアルファ チャネル。</param>
+        <param name="values">新しい色のカラー チャネルを指定する値のコレクション。 これらの値をマップする、<c>は</c>します。</param>
+        <param name="profileUri">[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー新しい色のプロファイルです。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Color" />構造体を指定されたアルファ チャネル、カラー チャネル値、およびカラー プロファイルを使用します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Color" />値を指定して構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー プロファイルには、特定のアプリケーションまたはカラー プリンターなどのデバイスのカラー システム プロファイルが含まれています。 このプロファイルは、さらに、他のデバイスの個々 のプロファイルにマップできる一般的なプロファイルに照合されます。 これにより、他のアプリケーションと同じまたは別のコンピューター システム上のデバイスから色を一致するように、1 台のコンピューター デバイスで使用する色のシステムです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Color.FromAValues%2A>メソッドを作成、<xref:System.Windows.Media.Color>構造体。  
+  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#FromAValuesExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/CreateColorsFromExample.cs#fromavaluesexample)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#FromAValuesExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/createcolorsfromexample.vb#fromavaluesexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromRgb">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color FromRgb (byte r, byte g, byte b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color FromRgb(unsigned int8 r, unsigned int8 g, unsigned int8 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.FromRgb(System.Byte,System.Byte,System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="r" Type="System.Byte" />
+        <Parameter Name="g" Type="System.Byte" />
+        <Parameter Name="b" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="r"><see langword="sRGB" />赤チャネルは、 <see cref="P:System.Windows.Media.Color.R" />、新しい色のです。</param>
+        <param name="g"><see langword="sRGB" />緑チャネルは、 <see cref="P:System.Windows.Media.Color.G" />、新しい色のです。</param>
+        <param name="b"><see langword="sRGB" />青のチャネル<see cref="P:System.Windows.Media.Color.B" />、新しい色のです。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Color" />構造体を指定して<see langword="sRGB" />のカラー チャネル値。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Color" />構造体で指定された値とアルファ チャネル値は 255 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color.FromArgb%2A>メソッドでは、アルファ チャネルを指定することができます、<xref:System.Windows.Media.Color.FromRgb%2A>アルファ チャネルのメソッドは、既定値は 1 を使用します。  
+  
+ 色のアルファ チャネルでは、色の透明度の量を決定します。 アルファ値は 1 ことを示し、色が完全に不透明な値 0 は、色が完全に透明であることを示します。  
+  
+ SRGB チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) と ScRGB チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえばときに、 <xref:System.Windows.Media.Color.R%2A>、sRGB 赤チャネルには、赤い ScRGB チャネルが変更された<xref:System.Windows.Media.Color.ScR%2A>、等価の値に変換します。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Color.FromRgb%2A>メソッドを作成、<xref:System.Windows.Media.Color>構造体。  
+  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#FromRgbExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/CreateColorsFromExample.cs#fromrgbexample)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#FromRgbExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/createcolorsfromexample.vb#fromrgbexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromScRgb">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color FromScRgb (float a, float r, float g, float b);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color FromScRgb(float32 a, float32 r, float32 g, float32 b) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.FromScRgb(System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Single" />
+        <Parameter Name="r" Type="System.Single" />
+        <Parameter Name="g" Type="System.Single" />
+        <Parameter Name="b" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="a"><see langword="ScRGB" />アルファ チャネル<see cref="P:System.Windows.Media.Color.ScA" />、新しい色のです。</param>
+        <param name="r"><see langword="ScRGB" />赤チャネルは、 <see cref="P:System.Windows.Media.Color.ScR" />、新しい色のです。</param>
+        <param name="g"><see langword="ScRGB" />緑チャネルは、 <see cref="P:System.Windows.Media.Color.ScG" />、新しい色のです。</param>
+        <param name="b"><see langword="ScRGB" />青のチャネル<see cref="P:System.Windows.Media.Color.ScB" />、新しい色のです。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Color" />構造体を指定して<see langword="ScRGB" />アルファ チャネルおよびカラー チャネル値。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Color" />値を指定して構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 色のアルファ チャネルでは、色の透明度の量を決定します。 アルファ値は 1 ことを示し、色が完全に不透明な値 0 は、色が完全に透明であることを示します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#FromScRgbExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/CreateColorsFromExample.cs#fromscrgbexample)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#FromScRgbExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/createcolorsfromexample.vb#fromscrgbexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromValues">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color FromValues (float[] values, Uri profileUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color FromValues(float32[] values, class System.Uri profileUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.FromValues(System.Single[],System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Single[]" />
+        <Parameter Name="profileUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="values">新しい色のカラー チャネルを指定する値のコレクション。 これらの値をマップする、<c>は</c>します。</param>
+        <param name="profileUri">[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー新しい色のプロファイルです。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Color" />指定のカラー チャネル値とカラー プロファイルを使用して構造体。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Color" />指定された値とアルファ チャネル値 1 を含む構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A[!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー プロファイルには、特定のアプリケーションまたはカラー プリンターなどのデバイスのカラー システム プロファイルが含まれています。 このプロファイルは、さらに、他のデバイスの個々 のプロファイルにマップできる一般的なプロファイルに照合されます。 これにより、他のアプリケーションと同じまたは別のコンピューター システム上のデバイスから色を一致するように、1 台のコンピューター デバイスで使用する色のシステムです。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Color.FromValues%2A>メソッドを作成、<xref:System.Windows.Media.Color>構造体。  
+  
+ [!code-csharp[BrushesMiscSnippets_procedural_snip#FromValuesExample](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/CSharp/CreateColorsFromExample.cs#fromvaluesexample)]
+ [!code-vb[BrushesMiscSnippets_procedural_snip#FromValuesExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushesMiscSnippets_procedural_snip/visualbasic/createcolorsfromexample.vb#fromvaluesexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="G">
+      <MemberSignature Language="C#" Value="public byte G { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 G" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.G" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="sRGB" />緑色の色のチャネルの値。</summary>
+        <value><see langword="sRGB" />のチャネルの値が緑、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 255 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえばときに、<xref:System.Windows.Media.Color.G%2A>では、`sRGB`緑色のチャネルと、変更は、`ScRGB`緑チャネルは、 <xref:System.Windows.Media.Color.ScG%2A>、それと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これのハッシュ コードを取得<see cref="T:System.Windows.Media.Color" />構造体。</summary>
+        <returns>このハッシュ コード<see cref="T:System.Windows.Media.Color" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNativeColorValues">
+      <MemberSignature Language="C#" Value="public float[] GetNativeColorValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance float32[] GetNativeColorValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.GetNativeColorValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>色のカラー チャネル値を取得します。</summary>
+        <returns>チャネルのカラー値の配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color Multiply (System.Windows.Media.Color color, float coefficient);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color Multiply(valuetype System.Windows.Media.Color color, float32 coefficient) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Multiply(System.Windows.Media.Color,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.Windows.Media.Color" />
+        <Parameter Name="coefficient" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="color"><see cref="T:System.Windows.Media.Color" />を乗算します。</param>
+        <param name="coefficient">乗算する値。</param>
+        <summary>指定されたアルファ、赤、青、および緑チャネルを乗算<see cref="T:System.Windows.Media.Color" />指定した値による構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値を持つ乗算演算の結果である構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Addition">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color operator + (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Color op_Addition(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.op_Addition(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">最初の<see cref="T:System.Windows.Media.Color" />構造を追加します。</param>
+        <param name="color2">2 番目<see cref="T:System.Windows.Media.Color" />構造を追加します。</param>
+        <summary>2 つ追加<see cref="T:System.Windows.Media.Color" />構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値が加算演算の結果である構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color>構造体は、2 番目の色のアルファ、赤、緑、および青のチャネルの最初の色のアルファ、赤、緑、および青のチャネルを追加することで一緒に追加されます。  アルファ チャネルなど`color1`およびのアルファ チャネル`color2`は追加して結果の色のアルファ チャネルを生成します。  同じでは、新しい色の赤、緑、および青のチャネルを生成するために、赤、緑、および青のチャネルで行われます。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Media.Color.Add%28System.Windows.Media.Color%2CSystem.Windows.Media.Color%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.op_Equality(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">比較する最初の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <param name="color2">比較する 2 番目の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <summary>2 つあるかどうかをテスト<see cref="T:System.Windows.Media.Color" />構造は同じです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="color1" />と<paramref name="color2" />同じである、それ以外の場合は、まったく<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点値は、時に稼働しているときに、エラーのある程度の小規模を取得できます。  <xref:System.Windows.Media.Color.Equals%2A> 、メソッド、<xref:System.Windows.Media.Color.op_Equality%2A>演算子、および<xref:System.Windows.Media.Color.op_Inequality%2A>演算子は、この補正実行されないしたがって予期されるブール型の結果を返す可能性がありますいません。  
+  
+ <xref:System.Windows.Media.Color.AreClose%2A>メソッドが返すことによってこの浮動小数点算術演算エラーを補正するあいまい等値アルゴリズムを使用して`true`2 つの比較について<xref:System.Windows.Media.Color>構造ほぼ同一であるが、値を持つが、わずかな時間によって異なる場合があります。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Media.Color.Equals%28System.Windows.Media.Color%2CSystem.Windows.Media.Color%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.op_Inequality(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1">比較する最初の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <param name="color2">比較する 2 番目の <see cref="T:System.Windows.Media.Color" /> 構造体。</param>
+        <summary>2 つあるかどうかをテスト<see cref="T:System.Windows.Media.Color" />構造体が同じではありません。</summary>
+        <returns>
+          <paramref name="color1" /> と <paramref name="color2" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 浮動小数点値は、時に稼働しているときに、エラーのある程度の小規模を取得できます。  <xref:System.Windows.Media.Color.Equals%2A> 、メソッド、<xref:System.Windows.Media.Color.op_Equality%2A>演算子、および<xref:System.Windows.Media.Color.op_Inequality%2A>演算子は、この補正実行されないしたがって予期されるブール型の結果を返す可能性がありますいません。  
+  
+ <xref:System.Windows.Media.Color.AreClose%2A>メソッドが返すことによってこの浮動小数点算術演算エラーを補正するあいまい等値アルゴリズムを使用して`true`2 つの比較について<xref:System.Windows.Media.Color>構造ほぼ同一であるが、値を持つが、わずかな時間によって異なる場合があります。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Media.Color.Equals%28System.Windows.Media.Color%2CSystem.Windows.Media.Color%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color operator * (System.Windows.Media.Color color, float coefficient);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Color op_Multiply(valuetype System.Windows.Media.Color color, float32 coefficient) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.op_Multiply(System.Windows.Media.Color,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color" Type="System.Windows.Media.Color" />
+        <Parameter Name="coefficient" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="color"><see cref="T:System.Windows.Media.Color" />を乗算します。</param>
+        <param name="coefficient">乗算する値。</param>
+        <summary>指定されたアルファ、赤、青、および緑チャネルを乗算<see cref="T:System.Windows.Media.Color" />指定した値による構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値を持つ乗算演算の結果である構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Media.Color.Multiply%28System.Windows.Media.Color%2CSystem.Single%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Subtraction">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color operator - (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Color op_Subtraction(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.op_Subtraction(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1"><see cref="T:System.Windows.Media.Color" />から減算される構造です。</param>
+        <param name="color2"><see cref="T:System.Windows.Media.Color" />から減算する構造体<c>color1</c>です。</param>
+        <summary>減算、<see cref="T:System.Windows.Media.Color" />から構造体、<see cref="T:System.Windows.Media.Color" />構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値が減算演算の結果である構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color>最初の色のアルファ、赤、緑、および青のチャネルから 2 番目の色のアルファ、赤、緑、および青のチャネルを差し引くことで、構造体は互いから差し引かれます。  などのアルファ チャネル`color2`のアルファ チャネルから差し引かれます`color1`結果のアルファ チャネルを生成するために<xref:System.Windows.Media.Color>構造体。  新しいの赤、緑、および青のチャネルを生成するために、赤、緑、および青のチャネルを使用して行われます同じ<xref:System.Windows.Media.Color>構造体。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Media.Color.Subtract%28System.Windows.Media.Color%2CSystem.Windows.Media.Color%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="R">
+      <MemberSignature Language="C#" Value="public byte R { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 R" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.R" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="sRGB" />色の赤チャネルの値。</summary>
+        <value><see langword="sRGB" />の赤チャネルの値、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 255 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえば、 <xref:System.Windows.Media.Color.R%2A>、`sRGB`赤のチャネルを変更すると、`ScRGB`赤チャネルは、<xref:System.Windows.Media.Color.ScR%2A>はそれと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScA">
+      <MemberSignature Language="C#" Value="public float ScA { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ScA" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.ScA" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="ScRGB" />色のアルファ チャネルの値。</summary>
+        <value><see langword="ScRGB" />のアルファ チャネルの値、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 1 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アルファ チャネル、<xref:System.Windows.Media.Color>構造体の透過性の量を決定する、<xref:System.Windows.Media.Color>がします。  アルファ値は 1 を示し、<xref:System.Windows.Media.Color>が完全に不透明を示し、値が 0 の色は完全に透過的です。  
+  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえば、 <xref:System.Windows.Media.Color.A%2A>、`sRGB`アルファ チャネルを変更すると、`ScRGB`アルファ チャネルは、<xref:System.Windows.Media.Color.ScA%2A>はそれと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScB">
+      <MemberSignature Language="C#" Value="public float ScB { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ScB" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.ScB" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または色の ScRGB 青のチャネル値を設定します。</summary>
+        <value>ScRGB 赤チャネルの値、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 1 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえばときに、 <xref:System.Windows.Media.Color.B%2A>、`sRGB`青のチャネルと、変更は、`ScRGB`青のチャネル<xref:System.Windows.Media.Color.ScB%2A>は、それと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScG">
+      <MemberSignature Language="C#" Value="public float ScG { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ScG" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.ScG" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="ScRGB" />緑色の色のチャネルの値。</summary>
+        <value><see langword="ScRGB" />のチャネルの値が緑、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 1 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえばときに、 <xref:System.Windows.Media.Color.G%2A>、`sRGB`緑色のチャネルと、変更は、`ScRGB`緑チャネルは、<xref:System.Windows.Media.Color.ScG%2A>はそれと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScR">
+      <MemberSignature Language="C#" Value="public float ScR { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 ScR" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Color.ScR" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="ScRGB" />色の赤チャネルの値。</summary>
+        <value><see langword="ScRGB" />の赤チャネルの値、<see cref="T:System.Windows.Media.Color" />構造体、0 ~ 1 の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `sRGB`チャネル (<xref:System.Windows.Media.Color.A%2A>、 <xref:System.Windows.Media.Color.R%2A>、 <xref:System.Windows.Media.Color.G%2A>、 <xref:System.Windows.Media.Color.B%2A>) および`ScRGB`チャネル (<xref:System.Windows.Media.Color.ScA%2A>、 <xref:System.Windows.Media.Color.ScR%2A>、 <xref:System.Windows.Media.Color.ScG%2A>、 <xref:System.Windows.Media.Color.ScB%2A>) の<xref:System.Windows.Media.Color>構造体は、プロパティを同期します。  たとえば、 <xref:System.Windows.Media.Color.R%2A>、`sRGB`赤のチャネルを変更すると、`ScRGB`赤チャネルは、<xref:System.Windows.Media.Color.ScR%2A>はそれと同等に変換されます 0-1 を使用して値の範囲を`Sc`スキームのサポート。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Subtract">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Color Subtract (System.Windows.Media.Color color1, System.Windows.Media.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Color Subtract(valuetype System.Windows.Media.Color color1, valuetype System.Windows.Media.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.Subtract(System.Windows.Media.Color,System.Windows.Media.Color)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="color1" Type="System.Windows.Media.Color" />
+        <Parameter Name="color2" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color1"><see cref="T:System.Windows.Media.Color" />から減算される構造です。</param>
+        <param name="color2"><see cref="T:System.Windows.Media.Color" />から減算する構造体<c>color1</c>です。</param>
+        <summary>減算、<see cref="T:System.Windows.Media.Color" />から構造体、<see cref="T:System.Windows.Media.Color" />構造体。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Color" />色値が減算演算の結果である構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Color>最初の色のアルファ、赤、緑、および青のチャネルから 2 番目の色のアルファ、赤、緑、および青のチャネルを差し引くことで、構造体は互いから差し引かれます。  などのアルファ チャネル`color2`のアルファ チャネルから差し引かれます`color1`結果のアルファ チャネルを生成するために<xref:System.Windows.Media.Color>構造体。  新しいの赤、緑、および青のチャネルを生成するために、赤、緑、および青のチャネルを使用して行われます同じ<xref:System.Windows.Media.Color>構造体。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用して、色の文字列表現を作成、<see langword="sRGB" />チャネル。</summary>
+        <returns>色の文字列形式。 既定の実装を表す、 <see cref="T:System.Byte" /> 16 進数形式で値は、プレフィックス、 <c> # </c>文字、およびアルファ チャネルを開始します。 たとえば、<see cref="M:System.Windows.Media.Color.ToString" />値<see cref="P:System.Windows.Media.Colors.AliceBlue" />は<c>#fff0f8ff</c>です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Color.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>使用して、色の文字列表現を作成、<see langword="sRGB" />チャネルと指定された書式プロバイダー。</summary>
+        <returns>色の文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,149 @@
+<Type Name="HttpMethodAttribute" FullName="System.Web.Services.Protocols.HttpMethodAttribute">
+  <TypeSignature Language="C#" Value="public sealed class HttpMethodAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpMethodAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.HttpMethodAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, Inherited=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この属性は、HTTP GET または HTTP POST のパラメーターをシリアル化する型が XML Web サービス メソッドに送信され、XML Web サービス メソッドから応答の読み取りセットを使用して XML Web サービス クライアントに適用します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントは、HTTP-GET を使用して、XML Web サービス メソッドを呼び出す場合<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>に設定する必要があります`XmlReturnReader`と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>'éý'`UrlParameterWriter`です。 XML Web サービス クライアントが HTTP POST を使用して XML Web サービス呼び出しを設定する必要があります<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>に`XmlReturnReader`と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>に`HtmlFormParameterWriter`です。  
+  
+   
+  
+## Examples  
+ 次の例は、HTTP POST を使用して XML Web サービス ユーティリティを呼び出すための Wsdl.exe ユーティリティによって生成されたプロキシ クラスです。 Wsdl.exe の正しい型を自動的に提供する<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>と<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>、プロキシ クラスから継承することを指定すると共に<xref:System.Web.Services.Protocols.HttpPostClientProtocol>です。  
+  
+ [!code-cpp[Classic HttpMethodAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpMethodAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpMethodAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpMethodAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpMethodAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpMethodAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpMethodAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpMethodAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.HttpMethodAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpMethodAttribute (Type returnFormatter, Type parameterFormatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type returnFormatter, class System.Type parameterFormatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.HttpMethodAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="returnFormatter" Type="System.Type" />
+        <Parameter Name="parameterFormatter" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="returnFormatter">初期化、<see cref="P:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter" />プロパティを<see cref="T:System.Type" />XML Web サービス メソッドからの応答を逆シリアル化します。</param>
+        <param name="parameterFormatter">初期化、<see cref="P:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter" />プロパティを<see cref="T:System.Type" />XML Web サービス メソッドへの XML Web サービス クライアントから送信されるパラメーターをシリアル化します。</param>
+        <summary>
+          <see cref="T:System.Web.Services.Protocols.HttpMethodAttribute" />の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParameterFormatter">
+      <MemberSignature Language="C#" Value="public Type ParameterFormatter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ParameterFormatter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Type" /> XML Web サービス メソッドへの XML Web サービス クライアントから送信されるパラメーターをシリアル化します。</summary>
+        <value>A <see cref="T:System.Type" /> XML Web サービス メソッドへの XML Web サービス クライアントから送信されるパラメーターをシリアル化します。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントが HTTP GET または HTTP POST を使用して、XML Web サービス メソッドを呼び出す場合<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>する必要があります`XMLReturnReader`です。  
+  
+   
+  
+## Examples  
+ この例は、HTTP GET、設定を使用する XML Web サービス クライアントの Wsdl.exe ユーティリティによって生成されたプロキシ クラス<xref:System.Web.Services.Protocols.HttpMethodAttribute.ParameterFormatter%2A>の必要な値に`XMLReturnReader`です。  
+  
+ [!code-cpp[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnFormatter">
+      <MemberSignature Language="C#" Value="public Type ReturnFormatter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ReturnFormatter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Type" /> XML Web サービス メソッドからの応答を逆シリアル化します。</summary>
+        <value>A <see cref="T:System.Type" /> XML Web サービス メソッドからの応答を逆シリアル化します。 既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントが HTTP GET を使用して、XML Web サービス メソッドを呼び出す場合<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>する必要があります`UrlParameterWriter`HTTP POST を使用してクライアントを設定する必要がありますが、<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>に`HtmlFormParameterWriter`です。  
+  
+   
+  
+## Examples  
+ この例は、HTTP GET、設定を使用する XML Web サービス クライアントの Wsdl.exe ユーティリティによって生成されたプロキシ クラス<xref:System.Web.Services.Protocols.HttpMethodAttribute.ReturnFormatter%2A>の必要な値に`UrlParameterWriter`です。  
+  
+ [!code-cpp[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/CS/source.cs#1)]
+ [!code-vb[Classic HttpMethodAttribute.ReturnFormatter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic HttpMethodAttribute.ReturnFormatter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

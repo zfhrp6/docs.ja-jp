@@ -1,0 +1,721 @@
+<Type Name="OdbcCommandBuilder" FullName="System.Data.Odbc.OdbcCommandBuilder">
+  <TypeSignature Language="C#" Value="public sealed class OdbcCommandBuilder : System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcCommandBuilder extends System.Data.Common.DbCommandBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcCommandBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommandBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>加えられた変更を調整するために使用される単一テーブル コマンドを自動的に生成、<see cref="T:System.Data.DataSet" />関連付けられているデータ ソースとします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcDataAdapter>に加えられた変更を調整するために必要な SQL ステートメントを自動的に生成しない、<xref:System.Data.DataSet>データ ソースに関連付けられています。 ただし、作成することができます、<xref:System.Data.Odbc.OdbcCommandBuilder>を設定して 1 つのテーブルの更新プログラムの SQL ステートメントを生成するオブジェクト、<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>のプロパティ、<xref:System.Data.Odbc.OdbcDataAdapter>です。 <xref:System.Data.Odbc.OdbcCommandBuilder>を設定しない追加の SQL ステートメントを生成します。  
+  
+ 間のリレーションシップ、<xref:System.Data.Odbc.OdbcDataAdapter>とそれに対応する<xref:System.Data.Odbc.OdbcCommandBuilder>1 対 1 では常にします。 この対応関係を作成するに設定する、<xref:System.Data.Odbc.OdbcDataAdapter>のプロパティ、<xref:System.Data.Odbc.OdbcCommandBuilder>オブジェクト。 これにより、<xref:System.Data.Odbc.OdbcCommandBuilder>自体の出力が生成されるリスナーとして登録する<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>に影響するイベント、<xref:System.Data.DataSet>です。  
+  
+ INSERT、UPDATE、または DELETE のステートメントを生成する、<xref:System.Data.Odbc.OdbcCommandBuilder>を使用して、<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>必要な一連のメタデータを取得するプロパティです。 値を変更する場合<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>など、最初の更新後に呼び出す必要は、メタデータが取得された後、<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>にメタデータを更新する方法です。  
+  
+> [!NOTE]
+>  SELECT ステートメントが割り当てられている場合、<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>プロパティで使用されてエイリアス列名、結果として得られる INSERT、UPDATE、および DELETE ステートメントが不正確にまたは失敗する可能性があります。 基になる ODBC ドライバーは、別名の列の適切なベースの列名を提供できない場合 (の SQL_DESC_BASE_COLUMN_NAME 値を使用して`SQLColAttribute`)、生成された INSERT、UPDATE、および DELETE ステートメントで、別名を使用する可能性があります。 たとえば、Microsoft ODBC Driver for Oracle は、ベースの列名としてエイリアス名を返します。 そのため、生成された INSERT、UPDATE、および DELETE ステートメントでは、エラーが発生します。  
+  
+ <xref:System.Data.Odbc.OdbcCommandBuilder>も使用して、 <xref:System.Data.Odbc.OdbcCommand.Connection%2A>、 <xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>、および<xref:System.Data.Odbc.OdbcCommand.Transaction%2A>プロパティによって参照される、<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>です。 ユーザーが呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>1 つ以上のこれらのプロパティを変更すると場合、またはの値、<xref:System.Data.Odbc.OdbcDataAdapter.SelectCommand%2A>プロパティ自体を変更します。 それ以外の場合、 <xref:System.Data.Odbc.OdbcDataAdapter.InsertCommand%2A>、 <xref:System.Data.Odbc.OdbcDataAdapter.UpdateCommand%2A>、および<xref:System.Data.Odbc.OdbcDataAdapter.DeleteCommand%2A>プロパティは、前回の値を保持します。  
+  
+ 呼び出す場合<xref:System.ComponentModel.Component.Dispose%2A>、<xref:System.Data.Odbc.OdbcCommandBuilder>関連付けが解除され、 <xref:System.Data.Odbc.OdbcDataAdapter>、され、生成されたコマンドは使用されなくです。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Data.Odbc.OdbcCommand>と連携して、<xref:System.Data.Odbc.OdbcDataAdapter>と<xref:System.Data.Odbc.OdbcConnection>、データ ソースから行を選択します。 例が初期化された渡された<xref:System.Data.DataSet>、接続文字列、クエリ文字列では、SQL SELECT ステートメント、およびデータ ソース テーブルの名前を指定する文字列。 作成し、<xref:System.Data.Odbc.OdbcCommandBuilder>です。  
+  
+ [!code-csharp[Classic WebData OdbcCommandBuilder#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcCommandBuilder/CS/mysample.cs#1)]
+ [!code-vb[Classic WebData OdbcCommandBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcCommandBuilder/VB/mysample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommandBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcCommandBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本コンス トラクターは、すべてのフィールドを既定値を初期化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommandBuilder (System.Data.Odbc.OdbcDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.Odbc.OdbcDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.#ctor(System.Data.Odbc.OdbcDataAdapter)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.Odbc.OdbcDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter"><see cref="T:System.Data.Odbc.OdbcDataAdapter" />オブジェクトに関連付けられているこの<see cref="T:System.Data.Odbc.OdbcCommandBuilder" />です。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Data.Odbc.OdbcCommandBuilder" /> 、関連付けられているクラス<see cref="T:System.Data.Odbc.OdbcDataAdapter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommandBuilder>自体のリスナーとして登録<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.Odbc.OdbcDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.Odbc.OdbcCommandBuilder>、既存<xref:System.Data.Odbc.OdbcCommandBuilder>これに関連付けられている<xref:System.Data.Odbc.OdbcDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyParameterInfo">
+      <MemberSignature Language="C#" Value="protected override void ApplyParameterInfo (System.Data.Common.DbParameter parameter, System.Data.DataRow datarow, System.Data.StatementType statementType, bool whereClause);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ApplyParameterInfo(class System.Data.Common.DbParameter parameter, class System.Data.DataRow datarow, valuetype System.Data.StatementType statementType, bool whereClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.ApplyParameterInfo(System.Data.Common.DbParameter,System.Data.DataRow,System.Data.StatementType,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameter" Type="System.Data.Common.DbParameter" />
+        <Parameter Name="datarow" Type="System.Data.DataRow" />
+        <Parameter Name="statementType" Type="System.Data.StatementType" />
+        <Parameter Name="whereClause" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="parameter">To be added.</param>
+        <param name="datarow">To be added.</param>
+        <param name="statementType">To be added.</param>
+        <param name="whereClause">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataAdapter">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcDataAdapter DataAdapter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcDataAdapter DataAdapter" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommandBuilder.DataAdapter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcDataAdapter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Data.Odbc.OdbcDataAdapter" />対象のオブジェクト<see cref="T:System.Data.Odbc.OdbcCommandBuilder" />オブジェクトが SQL ステートメントを生成します。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcDataAdapter" />これに関連付けられているオブジェクト<see cref="T:System.Data.Odbc.OdbcCommandBuilder" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommandBuilder>自体のリスナーとして登録<xref:System.Data.Odbc.OdbcDataAdapter.RowUpdating>によって生成されるイベント、<xref:System.Data.Odbc.OdbcDataAdapter>このプロパティで指定します。  
+  
+ 新しいインスタンスを作成する場合<xref:System.Data.Odbc.OdbcCommandBuilder>、既存<xref:System.Data.Odbc.OdbcCommandBuilder>これに関連付けられている<xref:System.Data.Odbc.OdbcDataAdapter>を解放します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveParameters">
+      <MemberSignature Language="C#" Value="public static void DeriveParameters (System.Data.Odbc.OdbcCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DeriveParameters(class System.Data.Odbc.OdbcCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.DeriveParameters(System.Data.Odbc.OdbcCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.Data.Odbc.OdbcCommand" />
+      </Parameters>
+      <Docs>
+        <param name="command"><see cref="T:System.Data.Odbc.OdbcCommand" />が、パラメーター情報の派生元となるストアド プロシージャを参照します。 派生パラメーターに追加されます、<see cref="P:System.Data.Odbc.OdbcCommand.Parameters" />のコレクション、<see cref="T:System.Data.Odbc.OdbcCommand" />です。</param>
+        <summary>指定されたストアド プロシージャからパラメーター情報を取得、<see cref="T:System.Data.Odbc.OdbcCommand" />取り込んで、<see cref="P:System.Data.Odbc.OdbcCommand.Parameters" />の指定されたコレクション<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommandBuilder.DeriveParameters%2A>既存のパラメーター情報を上書き、<xref:System.Data.Odbc.OdbcCommand>です。  
+  
+ <xref:System.Data.Odbc.OdbcCommandBuilder.DeriveParameters%2A>情報を取得するデータ ソースに追加の呼び出しが必要です。 パラメーター情報が事前にわかっている場合は、情報を明示的に設定して、パラメーター コレクションを設定する方が効率的です。  
+  
+ 使用できるだけ<xref:System.Data.Odbc.OdbcCommandBuilder.DeriveParameters%2A>ストアド プロシージャを使用します。 使用することはできません<xref:System.Data.Odbc.OdbcCommandBuilder.DeriveParameters%2A>を設定する、<xref:System.Data.Odbc.OdbcParameterCollection>パラメーター化された SELECT ステートメントなど、任意の TRANSACT-SQL ステートメントを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">基になる ODBC ドライバーはストアド プロシージャのパラメーター情報を返すことをサポートしていないか、コマンド テキストが有効なストアド プロシージャ名、または<see cref="T:System.Data.CommandType" />が指定された<see langword="CommandType.StoredProcedure" />です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetDeleteCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>まだがある情報を使用して前のステートメントは、正しくない可能性があります。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetDeleteCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetDeleteCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeleteCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetDeleteCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetDeleteCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースの削除を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />削除を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetDeleteCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.Odbc.OdbcCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetInsertCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetInsertCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetInsertCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>まだがある情報を使用して前のステートメントは、正しくない可能性があります。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInsertCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetInsertCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetInsertCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />データ ソースでの挿入を実行するために必要なオブジェクトです。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />挿入を実行するために必要なオブジェクトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetInsertCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.Common.DbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetParameterName(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterName">
+      <MemberSignature Language="C#" Value="protected override string GetParameterName (string parameterName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterName(string parameterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetParameterName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parameterName">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParameterPlaceholder">
+      <MemberSignature Language="C#" Value="protected override string GetParameterPlaceholder (int parameterOrdinal);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetParameterPlaceholder(int32 parameterOrdinal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetParameterPlaceholder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterOrdinal" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterOrdinal">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetUpdateCommand">
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクト、データ ソースの更新を実行するために必要です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>正しくない可能性があります、前のステートメントからの情報を使用します。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetUpdateCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetUpdateCommand() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクト、データ ソースの更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>まだがある情報を使用して前のステートメントは、正しくない可能性があります。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUpdateCommand">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcCommand GetUpdateCommand (bool useColumnsForParameterNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcCommand GetUpdateCommand(bool useColumnsForParameterNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcCommand</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useColumnsForParameterNames" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useColumnsForParameterNames">場合<see langword="true" />、可能な場合に、列名に一致するパラメーター名を生成します。 場合<see langword="false" />、生成@p1、@p2のようにします。</param>
+        <summary>自動的に生成された取得<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクト、データ ソースの更新を実行するために必要です。</summary>
+        <returns>自動的に生成された<see cref="T:System.Data.Odbc.OdbcCommand" />オブジェクトの更新を実行するために必要です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>メソッド情報やトラブルシューティングの目的を返すので、<xref:System.Data.Odbc.OdbcCommand>を実行するオブジェクト。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>変更されたコマンドの基礎として。 たとえば、呼び出すことができます<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>および変更、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>値に設定してで明示的に設定する、<xref:System.Data.Odbc.OdbcDataAdapter>です。  
+  
+ SQL ステートメントを生成した後に明示的に呼び出す必要があります<xref:System.Data.Common.DbCommandBuilder.RefreshSchema%2A>場合は任意の方法でステートメントを変更します。 それ以外の場合、<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>まだがある情報を使用して前のステートメントは、正しくない可能性があります。 SQL ステートメントは、アプリケーションがいずれかの<xref:System.Data.Common.DbDataAdapter.Update%2A>または<xref:System.Data.Odbc.OdbcCommandBuilder.GetUpdateCommand%2A>です。  
+  
+ 使用するパラメーター名を生成するときに、既定の動作は、 @p1、 @p2、さまざまなパラメーターについてです。 渡す`true`の`useColumnsForParameterNames`パラメーターさせることができます、<xref:System.Data.Common.DbCommandBuilder>を代わりに、列名に基づいたパラメーターを生成します。 次は、次の条件が満たされた場合にのみ成功します。  
+  
+-   <xref:System.Data.Common.DbMetaDataColumnNames.ParameterNameMaxLength>が指定されている、生成されたパラメーター名以上の長さ。  
+  
+-   生成されたパラメーター名で指定した条件を満たしている、<xref:System.Data.Common.DbMetaDataColumnNames.ParameterNamePattern>正規表現。  
+  
+-   A<xref:System.Data.Common.DbMetaDataColumnNames.ParameterMarkerFormat>を指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string QuoteIdentifier (string unquotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string QuoteIdentifier(string unquotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.QuoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">元の囲まれていない識別子です。</param>
+        <summary>正しいカタログ ケースで囲まれていない識別子、指定したを返します、正しい形式の id を引用符で囲まれました。 これには、識別子に埋め込まれた引用符は、正しくエスケープが含まれます。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符は、正しくエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuoteIdentifier">
+      <MemberSignature Language="C#" Value="public string QuoteIdentifier (string unquotedIdentifier, System.Data.Odbc.OdbcConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string QuoteIdentifier(string unquotedIdentifier, class System.Data.Odbc.OdbcConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.QuoteIdentifier(System.String,System.Data.Odbc.OdbcConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unquotedIdentifier" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.Odbc.OdbcConnection" />
+      </Parameters>
+      <Docs>
+        <param name="unquotedIdentifier">元の囲まれていない識別子です。</param>
+        <param name="connection">接続が渡されると、SQLGetInfo(SQL_IDENTIFIER_QUOTE_CHAR) の呼び出し、ODBC ドライバーから引用文字を取得するマネージ ラッパーが行われます。 接続が渡されない場合、文字列は引用符で囲まれた値を使用して<see cref="P:System.Data.Common.DbCommandBuilder.QuotePrefix" />と<see cref="P:System.Data.Common.DbCommandBuilder.QuoteSuffix" />です。</param>
+        <summary>正しいカタログ ケースで囲まれていない識別子、指定したを返します、正しい形式の id を引用符で囲まれました。 これには、識別子に埋め込まれた引用符は、正しくエスケープが含まれます。</summary>
+        <returns>引用符で囲まれた識別子のバージョンです。 Id 内に埋め込まれた引用符は、正しくエスケープします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRowUpdatingHandler">
+      <MemberSignature Language="C#" Value="protected override void SetRowUpdatingHandler (System.Data.Common.DbDataAdapter adapter);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetRowUpdatingHandler(class System.Data.Common.DbDataAdapter adapter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.SetRowUpdatingHandler(System.Data.Common.DbDataAdapter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="adapter" Type="System.Data.Common.DbDataAdapter" />
+      </Parameters>
+      <Docs>
+        <param name="adapter">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public override string UnquoteIdentifier (string quotedIdentifier);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string UnquoteIdentifier(string quotedIdentifier) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.UnquoteIdentifier(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <summary>識別子に埋め込まれた引用符を正しくなど、その識別子の引用符形式が正しくエスケープ解除した引用符で囲まれた識別子を返します。</summary>
+        <returns>正しくエスケープ解除された埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnquoteIdentifier">
+      <MemberSignature Language="C#" Value="public string UnquoteIdentifier (string quotedIdentifier, System.Data.Odbc.OdbcConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string UnquoteIdentifier(string quotedIdentifier, class System.Data.Odbc.OdbcConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommandBuilder.UnquoteIdentifier(System.String,System.Data.Odbc.OdbcConnection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="quotedIdentifier" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.Odbc.OdbcConnection" />
+      </Parameters>
+      <Docs>
+        <param name="quotedIdentifier">埋め込まれた引用符が削除される id。</param>
+        <param name="connection"><see cref="T:System.Data.Odbc.OdbcConnection" />。</param>
+        <summary>識別子に埋め込まれた引用符を正しくなど、その識別子の引用符形式が正しくエスケープ解除した引用符で囲まれた識別子を返します。</summary>
+        <returns>正しくエスケープ解除された埋め込み文字を引用符で囲まれていない識別子です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

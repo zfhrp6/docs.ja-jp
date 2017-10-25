@@ -1,0 +1,68 @@
+<Type Name="ConnectivityStatus" FullName="System.Web.ClientServices.ConnectivityStatus">
+  <TypeSignature Language="C#" Value="public static class ConnectivityStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ConnectivityStatus extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.ConnectivityStatus" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションのネットワーク接続の状態を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.ClientServices.ConnectivityStatus>クラスがクライアント アプリケーション サービスを使用する Windows ベースのアプリケーションのネットワーク接続を指定します。 設定すると、<xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A>プロパティを`true`、クライアント サービス プロバイダーは、対応する Web サービスにアクセスしようとしてではなくオフライン キャッシュを使用します。 オフラインの状態は、ユーザー単位およびアプリケーションごとに格納されます。 詳細については、「[How to: Work Offline with Client Application Services](http://msdn.microsoft.com/en-us/f792cb16-8520-4a0f-9dc9-07bfbc454e38)」(方法: クライアント アプリケーション サービスをオフライン モードで操作する) を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスを使用して、チェック ボックスの値によって、オフラインの状態を更新する方法を示します。 この例では、<xref:System.Windows.Forms.CheckBox.CheckedChanged>イベント ハンドラーがオフラインの状態を更新します。 ユーザーは、アプリケーションをオンライン状態を設定、イベント ハンドラーは、ユーザーの再検証しようとします。 ただし、認証サーバーが使用できない場合、イベント ハンドラーは、アプリケーションをオフラインの状態を返します。  
+  
+ [!code-csharp[ClientApplicationServices#315](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#315)]
+ [!code-vb[ClientApplicationServices#315](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#315)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsOffline">
+      <MemberSignature Language="C#" Value="public static bool IsOffline { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsOffline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションがオフライン モードかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />アプリケーションがオフライン モードである場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定すると、 <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> 、プロパティ、<xref:System.Web.ClientServices.ConnectivityStatus>クラスのローカル ファイル システムに値をキャッシュします。 内のクライアントのサービス プロバイダー、<xref:System.Web.ClientServices.Providers>名前空間に関連付けられているアクセスしようとしてではなく、オフライン データ キャッシュを使用するかどうかを決定するには、この値をチェックする[!INCLUDE[ajax_current_short](~/includes/ajax-current-short-md.md)]認証、ロール、およびプロファイル サービス。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、チェック ボックスの値によって、オフラインの状態を更新する方法を示します。 この例では、<xref:System.Windows.Forms.CheckBox.CheckedChanged>イベント ハンドラーがオフラインの状態を更新します。 ユーザーは、アプリケーションをオンライン状態を設定、イベント ハンドラーは、ユーザーの再検証しようとします。 ただし、認証サーバーが使用できない場合、イベント ハンドラーは、アプリケーションをオフラインの状態を返します。  
+  
+ [!code-csharp[ClientApplicationServices#315](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#315)]
+ [!code-vb[ClientApplicationServices#315](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#315)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

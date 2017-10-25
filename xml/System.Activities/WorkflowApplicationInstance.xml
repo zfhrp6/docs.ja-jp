@@ -1,0 +1,233 @@
+<Type Name="WorkflowApplicationInstance" FullName="System.Activities.WorkflowApplicationInstance">
+  <TypeSignature Language="C#" Value="public class WorkflowApplicationInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowApplicationInstance extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowApplicationInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワークフロー アプリケーション インスタンスに関する情報を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Abandon">
+      <MemberSignature Language="C#" Value="public void Abandon ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abandon() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.Abandon" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ステート マシンを破棄済み状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abandon">
+      <MemberSignature Language="C#" Value="public void Abandon (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abandon(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.Abandon(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">破棄操作のタイムアウトを完了します。</param>
+        <summary>指定したタイムアウト値を使用して、ステート マシンを破棄済み状態に遷移させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAbandon">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAbandon (AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginAbandon(class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.BeginAbandon(System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">非同期操作完了の通知を受信する非同期コールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>非同期の破棄操作を開始します。</summary>
+        <returns>非同期の破棄操作。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginAbandon">
+      <MemberSignature Language="C#" Value="public IAsyncResult BeginAbandon (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IAsyncResult BeginAbandon(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.BeginAbandon(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">このタイムアウトは、破棄操作の理由が含まれます。</param>
+        <param name="callback">非同期操作完了の通知を受信する非同期コールバック デリゲート。</param>
+        <param name="state">ユーザー定義の状態データ。</param>
+        <summary>非同期の破棄操作を開始します。</summary>
+        <returns>非同期の破棄操作。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanApplyUpdate">
+      <MemberSignature Language="C#" Value="public bool CanApplyUpdate (System.Activities.DynamicUpdate.DynamicUpdateMap updateMap, out System.Collections.Generic.IList&lt;System.Activities.DynamicUpdate.ActivityBlockingUpdate&gt; activitiesBlockingUpdate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanApplyUpdate(class System.Activities.DynamicUpdate.DynamicUpdateMap updateMap, [out] class System.Collections.Generic.IList`1&lt;class System.Activities.DynamicUpdate.ActivityBlockingUpdate&gt;&amp; activitiesBlockingUpdate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.CanApplyUpdate(System.Activities.DynamicUpdate.DynamicUpdateMap,System.Collections.Generic.IList{System.Activities.DynamicUpdate.ActivityBlockingUpdate}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="updateMap" Type="System.Activities.DynamicUpdate.DynamicUpdateMap" />
+        <Parameter Name="activitiesBlockingUpdate" Type="System.Collections.Generic.IList&lt;System.Activities.DynamicUpdate.ActivityBlockingUpdate&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="updateMap">マップを更新します。</param>
+        <param name="activitiesBlockingUpdate">ブロックのアクティビティを更新します。</param>
+        <summary>WorkflowApplicationInstance が更新プログラムを適用するかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="True" />場合は、WorkflowApplicationInstance は更新を適用できます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefinitionIdentity">
+      <MemberSignature Language="C#" Value="public System.Activities.WorkflowIdentity DefinitionIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.WorkflowIdentity DefinitionIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationInstance.DefinitionIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.WorkflowIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワークフローの定義 id を設定します。</summary>
+        <value>ワークフローの定義 id。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndAbandon">
+      <MemberSignature Language="C#" Value="public void EndAbandon (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndAbandon(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowApplicationInstance.EndAbandon(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">BeginAbandon メソッドのいずれかへの呼び出しによって返される IAsyncResult。</param>
+        <summary>非同期の破棄操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationInstance.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの一意の識別子を取得します。</summary>
+        <value>ワークフロー インスタンスの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceStore">
+      <MemberSignature Language="C#" Value="public System.Runtime.DurableInstancing.InstanceStore InstanceStore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.DurableInstancing.InstanceStore InstanceStore" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.WorkflowApplicationInstance.InstanceStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.DurableInstancing.InstanceStore</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー アプリケーションの現在のインスタンスの永続化された状態へのアクセスを提供するオブジェクトを取得または設定します。</summary>
+        <value>ワークフロー アプリケーションの現在のインスタンスの永続化された状態へのアクセスを提供するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

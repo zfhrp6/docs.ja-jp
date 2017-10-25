@@ -1,0 +1,194 @@
+<Type Name="Saml2SubjectConfirmationData" FullName="System.IdentityModel.Tokens.Saml2SubjectConfirmationData">
+  <TypeSignature Language="C#" Value="public class Saml2SubjectConfirmationData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Saml2SubjectConfirmationData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.Saml2SubjectConfirmationData" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>定義されている関連付けられた KeyInfoConfirmationDataType および SubjectConfirmationData 要素を表します [Saml2Core、2.4.1.2-2.4.1.3] です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SubjectConfirmationData 要素によって表される SubjectConfirmation 要素のサブ要素は、<xref:System.IdentityModel.Tokens.Saml2SubjectConfirmation>クラスです。  
+  
+ このクラスが表す要素の詳細については、SAML V2.0 のコア仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Saml2SubjectConfirmationData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.Saml2SubjectConfirmationData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public string Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Address" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、ネットワークのアドレス/場所の attesting エンティティがアサーションを提示できます。 [Saml2Core、2.4.1.2]</summary>
+        <value>アドレスを含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アドレスの属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InResponseTo">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.Saml2Id InResponseTo { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.Saml2Id InResponseTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.InResponseTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.Saml2Id</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または attesting エンティティがアサーションを提供できる応答で SAML プロトコル メッセージの ID を設定します。 [Saml2Core、2.4.1.2]</summary>
+        <value>A <see cref="T:System.IdentityModel.Tokens.Saml2Id" /> ID を表す</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ InResponseTo 属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyIdentifiers">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.SecurityKeyIdentifier&gt; KeyIdentifiers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.IdentityModel.Tokens.SecurityKeyIdentifier&gt; KeyIdentifiers" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.KeyIdentifiers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.IdentityModel.Tokens.SecurityKeyIdentifier&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Attesting エンティティを認証するために使用される暗号化キーのコレクションを取得します。 [Saml2Core、2.4.1.3]</summary>
+        <value>型のコレクションを返します<see cref="T:Microsoft.IdentityModel.Tokens.SecurityKeyIdentifier" />キーを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ KeyInfoConfirmationDataType で制約される SubjectConfirmationData 要素の内容。 このデータ型は、要素が 1 つまたは複数の ds:KeyInfo 要素に表示される暗号化キーが含まれていることを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotBefore">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; NotBefore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; NotBefore" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.NotBefore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定時インスタントの前にあるサブジェクトを確認することはできません。 [Saml2Core、2.4.1.2]</summary>
+        <value>Null 許容型<see cref="T:System.DateTime" />インスタント (utc) 時刻を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NotBefore の属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NotOnOrAfter">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; NotOnOrAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; NotOnOrAfter" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.NotOnOrAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時間取得または設定、インスタントをサブジェクト不要になった確認できます。 [Saml2Core、2.4.1.2]</summary>
+        <value>Null 許容型<see cref="T:System.DateTime" />インスタント (utc) 時刻を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NotOnOrAfter 属性です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Recipient">
+      <MemberSignature Language="C#" Value="public Uri Recipient { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Recipient" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.Saml2SubjectConfirmationData.Recipient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはエンティティまたは attesting エンティティがアサーションを提供できる場所を指定する URI を設定します。 [Saml2Core、2.4.1.2]</summary>
+        <value>A<see cref="T:System.Uri" />エンティティまたは場所を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信者の属性です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">はない値を設定しようとすると、<see langword="null" />がない場合は絶対 URI の発生とします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

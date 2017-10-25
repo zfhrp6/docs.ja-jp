@@ -1,0 +1,160 @@
+<Type Name="FileAuthorizationModule" FullName="System.Web.Security.FileAuthorizationModule">
+  <TypeSignature Language="C#" Value="public sealed class FileAuthorizationModule : System.Web.IHttpModule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit FileAuthorizationModule extends System.Object implements class System.Web.IHttpModule" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.FileAuthorizationModule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.IHttpModule</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ユーザーが要求されたファイルにアクセスする権限を持っていることを確認します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このモジュールは、アクセス制御リスト (Acl) にファイル システムに対する承認サービスを提供します。 ときに、`mode`の属性、[認証要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/27bc0ba9-f23a-45f3-ae42-dbe7916e3ee2)に設定されている構成要素`Windows`できるように、 <xref:System.Web.Security.WindowsAuthenticationModule> 、アプリケーションで使用されている、<xref:System.Web.Security.FileAuthorizationModule>モジュールにより、要求元のユーザーが許可されている読み取りまたは書き込みアクセス、要求の動詞に応じて、リソースに要求を実行する前にします。 詳細については、<xref:System.Web.Security.FileAuthorizationModule.CheckFileAccessForUser%2A> メソッドを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileAuthorizationModule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FileAuthorizationModule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.FileAuthorizationModule" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ASP.NET がのインスタンスを作成するこのコンス トラクターを呼び出して、<xref:System.Web.Security.FileAuthorizationModule>クラスです。 コンス トラクターを呼び出す、<xref:System.Web.Security.FileAuthorizationModule.Init%2A>新しい初期化するメソッドを<xref:System.Web.Security.FileAuthorizationModule>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckFileAccessForUser">
+      <MemberSignature Language="C#" Value="public static bool CheckFileAccessForUser (string virtualPath, IntPtr token, string verb);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CheckFileAccessForUser(string virtualPath, native int token, string verb) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FileAuthorizationModule.CheckFileAccessForUser(System.String,System.IntPtr,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="token" Type="System.IntPtr" />
+        <Parameter Name="verb" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">ファイルへの仮想パス。</param>
+        <param name="token">ユーザーを表す Windows アクセス トークンです。</param>
+        <param name="verb">HTTP 動詞の要求を行うために使用します。</param>
+        <summary>ユーザーが要求されたファイルへのアクセスを持つかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />によって表される、現在の Windows ユーザー場合<paramref name="token" />指定された HTTP 動詞を使用して、ファイルへのアクセス権場合、または、<see cref="T:System.Web.Security.FileAuthorizationModule" />モジュールがアプリケーションの構成ファイルで定義されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.FileAuthorizationModule.CheckFileAccessForUser%2A>メソッドは、Windows のアクセス トークンによって表される、現在のユーザーがファイル システム アクセス制御リスト (Acl) で要求されたファイルへのアクセスを許可しているかどうかを確認します。 仮想パスは、チェックが行われる前に、物理ファイル システム パスにマップされます。  
+  
+ かどうか、要求に使用される HTTP 動詞は`GET`、 `POST`、または`HEAD`、<xref:System.Web.Security.FileAuthorizationModule.CheckFileAccessForUser%2A>メソッドは、ファイルへの読み取りアクセスを確認します。 その他の動詞を使用する場合、<xref:System.Web.Security.FileAuthorizationModule.CheckFileAccessForUser%2A>メソッドは、ファイルへの読み取り/書き込み権限をチェックします。  
+  
+ **セキュリティに関する注意**場合、<xref:System.Web.Security.FileAuthorizationModule>でモジュールが定義されていない、 `httpModules` 、アプリケーションの構成セクション、<xref:System.Web.Security.FileAuthorizationModule>モジュールが常に返す`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="virtualPath" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="token" /> は <see cref="F:System.IntPtr.Zero" /> です。  
+  
+ -または-  
+  
+ <paramref name="verb" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="virtualPath" />Web アプリケーションのアプリケーションのディレクトリ構造ではありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException"><paramref name="virtualPath" /> で指定されたファイルが存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FileAuthorizationModule.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されるメモリ以外のすべてのリソースを解放、<see cref="T:System.Web.Security.FileAuthorizationModule" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Init">
+      <MemberSignature Language="C#" Value="public void Init (System.Web.HttpApplication app);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Init(class System.Web.HttpApplication app) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.FileAuthorizationModule.Init(System.Web.HttpApplication)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="app" Type="System.Web.HttpApplication" />
+      </Parameters>
+      <Docs>
+        <param name="app">現在の <see cref="T:System.Web.HttpApplication" /> インスタンス。</param>
+        <summary>初期化、<see cref="T:System.Web.Security.FileAuthorizationModule" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードから呼び出されるものではありません。  
+  
+ <xref:System.Web.Security.FileAuthorizationModule.Init%2A>メソッドにより、<xref:System.Web.Security.FileAuthorizationModule>の処理に含まれる、<xref:System.Web.HttpApplication.AuthorizeRequest>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

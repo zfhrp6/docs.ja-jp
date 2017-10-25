@@ -1,0 +1,206 @@
+<Type Name="ContentInfo" FullName="System.Security.Cryptography.Pkcs.ContentInfo">
+  <TypeSignature Language="C#" Value="public sealed class ContentInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ContentInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Pkcs.ContentInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" /> CMS/PKCS #7 標準ドキュメントで定義されているクラスを CMS/PKCS #7 ContentInfo データ構造体を表します。 このデータ構造体は、すべての CMS/PKCS #7 メッセージの基盤です。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentInfo (byte[] content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8[] content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="content" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="content">作成元のデータを表すバイト値の配列、<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />オブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Byte[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />バイト値の配列をデータおよび、既定値を使用してクラス<paramref name="object identifier" />(OID) を表すコンテンツの種類。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.ContentInfo>クラスには次の既定のプロパティ値。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Security.Cryptography.Pkcs.ContentInfo.ContentType%2A>|1.2.840.113549.1.7.1 (データ)|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentInfo (System.Security.Cryptography.Oid contentType, byte[] content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.Oid contentType, unsigned int8[] content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Security.Cryptography.Oid,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentType" Type="System.Security.Cryptography.Oid" />
+        <Parameter Name="content" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="contentType"><see cref="T:System.Security.Cryptography.Oid" />オブジェクトを含む、<c>オブジェクト識別子</c>(OID)、コンテンツのコンテンツの種類を指定します。 データ、digestedData、encryptedData、envelopedData、hashedData、signedAndEnvelopedData、または signedData を指定できます。  詳細については、「解説」を参照してください。</param>
+        <param name="content">作成元のデータを表すバイト値の配列、<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />オブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.#ctor(System.Security.Cryptography.Oid,System.Byte[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />データとして指定されたコンテンツ タイプとバイト値の配列を使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ DigestedData と encryptedData コンテンツの種類、CMS/PKCS #7 標準ドキュメントに表示されは、この実装によって作成できるコンテンツの型ではありません。 ただしこれらのコンテンツ タイプは、このコンス トラクターに渡すことができます。  
+  
+ 引数として、次の OID 文字列を使用して、<xref:System.Security.Cryptography.Pkcs.ContentInfo.%23ctor%28System.Security.Cryptography.Oid%2CSystem.Byte%5B%5D%29>を構築するコンス トラクター、`contentType`コンテンツの種類のパラメーターです。  
+  
+|`contentType`コンテンツの種類|OID 文字列|  
+|--------------------------------|----------------|  
+|データ|1.2.840.113549.1.7.1|  
+|digestedData|1.2.840.113549.1.7.5|  
+|encryptedData|1.2.840.113549.1.7.6|  
+|envelopedData|1.2.840.113549.1.7.3|  
+|hashedData|1.2.840.113549.1.7.5|  
+|signedAndEnvelopedData|1.2.840.113549.1.7.4|  
+|signedData|1.2.840.113549.1.7.2|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public byte[] Content { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Content" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.ContentInfo.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.ContentInfo.Content" />プロパティが CMS/PKCS #7 メッセージのコンテンツを取得します。</summary>
+        <value>コンテンツのデータを表すバイト値の配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Oid ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Oid ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.ContentInfo.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Oid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.ContentInfo.ContentType" />プロパティの取得、<see cref="T:System.Security.Cryptography.Oid" />オブジェクトを含む、 <paramref name="object identifier" /> (OID) CMS/PKCS #7 メッセージの内部コンテンツのコンテンツの種類のです。</summary>
+        <value><see cref="T:System.Security.Cryptography.Oid" />コンテンツの種類を表す OID の値を含むオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ContentInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.ContentInfo.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アンマネージ リソースを解放し、前に他のクリーンアップ操作を実行、<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />インスタンスがガベージ コレクションによって回収されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentType">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.Oid GetContentType (byte[] encodedMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.Oid GetContentType(unsigned int8[] encodedMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.ContentInfo.GetContentType(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Oid</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encodedMessage" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encodedMessage">表すエンコード済みバイト値配列<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />外部コンテンツ タイプを取得する対象のメッセージ。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.ContentInfo.GetContentType(System.Byte[])" />静的メソッドは、エンコード済みの外部コンテンツ タイプを取得します。<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />バイト値の配列によって表されるメッセージ。</summary>
+        <returns>メソッドが成功したかどうか、メソッドが返されます、<see cref="T:System.Security.Cryptography.Oid" />でエンコードされた指定の外部コンテンツ タイプを格納しているオブジェクト<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />メッセージ。  
+  
+ メソッドが失敗した場合、例外がスローされます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,182 @@
+<Type Name="EvaluationContext" FullName="System.IdentityModel.Policy.EvaluationContext">
+  <TypeSignature Language="C#" Value="public abstract class EvaluationContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit EvaluationContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Policy.EvaluationContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>派生クラスでオーバーライドされると、評価された承認ポリシーの結果を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クレームは、承認ポリシーによって <xref:System.IdentityModel.Policy.EvaluationContext> に追加されます。 承認ポリシーは、セキュリティ トークンで見つかるものなどのクレーム セットを取得し、現在のセットに基づいて新しいクレームを追加します。 たとえば、承認ポリシーは、生年月日を含むクレームを評価し、ユーザーが 21 歳を超えていることを表明するクレームを追加して、<xref:System.IdentityModel.Policy.EvaluationContext> に Over21 クレームを追加する、といったことを行います。  
+  
+ <xref:System.IdentityModel.Policy.IAuthorizationPolicy> インターフェイスを実装するクラスはユーザーの承認を行いませんが、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスで承認を行うことができます。 <xref:System.ServiceModel.ServiceAuthorizationManager> は、有効な各承認ポリシーの <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドを呼び出します。 <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドは、現在のクレームに基づいて、ユーザーに別のクレームを追加する必要があるかどうかを判断します。 承認ポリシーの <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドは、他の承認ポリシーによってクレームが <xref:System.IdentityModel.Policy.EvaluationContext> に追加されるたびに、複数回呼び出される場合があります。 有効なすべての承認ポリシーの実行後、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスは最後のクレーム セットに基づいて承認決定を行います。 次に、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスは、こうした承認決定を反映した不変のクレーム セットを含む <xref:System.IdentityModel.Policy.AuthorizationContext> を作成します。  
+  
+ 評価コンテキストには、<xref:System.IdentityModel.Claims.ClaimSet> オブジェクトのセット、評価コンテキストの有効期間を指定する有効期限、および一意の識別子が含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected EvaluationContext ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.EvaluationContext.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Policy.EvaluationContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddClaimSet">
+      <MemberSignature Language="C#" Value="public abstract void AddClaimSet (System.IdentityModel.Policy.IAuthorizationPolicy authorizationPolicy, System.IdentityModel.Claims.ClaimSet claimSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddClaimSet(class System.IdentityModel.Policy.IAuthorizationPolicy authorizationPolicy, class System.IdentityModel.Claims.ClaimSet claimSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.EvaluationContext.AddClaimSet(System.IdentityModel.Policy.IAuthorizationPolicy,System.IdentityModel.Claims.ClaimSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="policy" Type="System.IdentityModel.Policy.IAuthorizationPolicy" />
+        <Parameter Name="claimSet" Type="System.IdentityModel.Claims.ClaimSet" />
+      </Parameters>
+      <Docs>
+        <param name="authorizationPolicy">To be added.</param>
+        <param name="claimSet">クレーム セットを格納する <see cref="T:System.IdentityModel.Claims.ClaimSet" />。</param>
+        <summary>評価コンテキストにクレーム セットを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Policy.EvaluationContext.ClaimSets%2A> プロパティに格納されているクレーム セットに、要求を追加します。  
+  
+ <xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%2A> メソッドを呼び出して評価コンテキストにクレームを追加するたびに、<xref:System.IdentityModel.Policy.EvaluationContext.Generation%2A> プロパティをインクリメントする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimSets">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Claims.ClaimSet&gt; ClaimSets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Claims.ClaimSet&gt; ClaimSets" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.EvaluationContext.ClaimSets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Claims.ClaimSet&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価済みの承認ポリシーによって追加されたクレームを格納する <see cref="T:System.IdentityModel.Claims.ClaimSet" /> オブジェクトの読み取り専用コレクションを取得します。</summary>
+        <value>評価済みの承認ポリシーによって追加されたクレームを格納する <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ たとえば承認ポリシーなどから、このコレクションにクレームを追加するには、<xref:System.IdentityModel.Policy.EvaluationContext.AddClaimSet%2A> メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Generation">
+      <MemberSignature Language="C#" Value="public abstract int Generation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Generation" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.EvaluationContext.Generation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価コンテキストにクレームが追加された回数を取得します。</summary>
+        <value>評価コンテキストにクレームが追加された回数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceAuthorizationManager> クラスは、<xref:System.IdentityModel.Policy.EvaluationContext.Generation%2A> プロパティを使用して、別の評価ラウンドが必要かどうかを判断します。 承認ポリシーが `AddToTarget` メソッドを呼び出して評価コンテキストにクレームを追加するたびに、<xref:System.IdentityModel.Policy.EvaluationContext.Generation%2A> プロパティがインクリメントされます。  
+  
+ <xref:System.ServiceModel.ServiceAuthorizationManager> クラスは、すべての承認ポリシーで <xref:System.IdentityModel.Policy.EvaluationContext.Generation%2A> メソッドを再度呼び出した後、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> プロパティを評価します。 評価の間に <xref:System.IdentityModel.Policy.EvaluationContext.Generation%2A> プロパティがインクリメントされていた場合、<xref:System.ServiceModel.ServiceAuthorizationManager> クラスは、承認ポリシーで <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドを最後に呼び出したときに `false` を返した承認ポリシーに対して、<xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IDictionary&lt;string,object&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Policy.EvaluationContext.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.IdentityModel.Policy.EvaluationContext" /> と関連付けられているクレーム以外のプロパティのコレクションを取得します。</summary>
+        <value>非クレームプロパティのコレクションを指定する <see cref="T:System.Collections.Generic.Dictionary`2" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors> インターフェイス (承認ポリシー) を実装する <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 名前空間内のクラスにより、`Identities` という名前のプロパティが <xref:System.IdentityModel.Policy.AuthorizationContext.Properties%2A> コレクションに追加されます。 `Identities` プロパティには、承認ポリシーによって提供される ID 情報を表す 1 つ以上の <xref:System.Collections.Generic.IList%601> インスタンスを格納する <xref:System.Security.Principal.IIdentity> 型のオブジェクトが含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RecordExpirationTime">
+      <MemberSignature Language="C#" Value="public abstract void RecordExpirationTime (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RecordExpirationTime(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Policy.EvaluationContext.RecordExpirationTime(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expirationTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">To be added.</param>
+        <summary>この <see cref="T:System.IdentityModel.Policy.EvaluationContext" /> が有効ではなくなる日時を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Policy.EvaluationContext.RecordExpirationTime%2A> メソッドを複数回呼び出したとき、設定が有効になるのは、`expirationTime` パラメーターの値がそれまでに指定されている値より早い場合だけです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

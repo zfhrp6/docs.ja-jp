@@ -1,0 +1,163 @@
+<Type Name="FontFamilyValueSerializer" FullName="System.Windows.Media.FontFamilyValueSerializer">
+  <TypeSignature Language="C#" Value="public class FontFamilyValueSerializer : System.Windows.Markup.ValueSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FontFamilyValueSerializer extends System.Windows.Markup.ValueSerializer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.FontFamilyValueSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.ValueSerializer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.String" /> のインスタンスと <see cref="T:System.Windows.Media.FontFamily" /> のインスタンスを相互に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、通常のみで使用される、<xref:System.Windows.Markup.Primitives.MarkupWriter>シリアル化のためです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FontFamilyValueSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyValueSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.FontFamilyValueSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFromString">
+      <MemberSignature Language="C#" Value="public override bool CanConvertFromString (string value, System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertFromString(string value, class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyValueSerializer.CanConvertFromString(System.String,System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換の評価する文字列。</param>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary>かどうかをからの変換、指定された<see cref="T:System.String" />のインスタンスに<see cref="T:System.Windows.Media.FontFamily" />ことができます。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />変換後、それ以外は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に `true` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertToString">
+      <MemberSignature Language="C#" Value="public override bool CanConvertToString (object value, System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanConvertToString(object value, class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyValueSerializer.CanConvertToString(System.Object,System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="value">インスタンス<see cref="T:System.Windows.Media.FontFamily" />変換の評価対象にします。</param>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary>インスタンスの場合を決定<see cref="T:System.Windows.Media.FontFamily" />に変換できる、<see cref="T:System.String" />です。</summary>
+        <returns>
+          <paramref name="value" /> を <see cref="T:System.String" /> に変換できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換が可能な場合にのみ、`value`は、<xref:System.Windows.Media.FontFamily>型です。 さらに、<xref:System.Windows.Media.FontFamily.Source%2A>プロパティ`value`することはできません`null`以上<xref:System.String.Empty>、識別`value`匿名として<xref:System.Windows.Media.FontFamily>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromString">
+      <MemberSignature Language="C#" Value="public override object ConvertFromString (string value, System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFromString(string value, class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyValueSerializer.ConvertFromString(System.String,System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="value">
+          <see cref="T:System.String" />変換する値、<see cref="T:System.Windows.Media.FontFamily" />です。</param>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary><see cref="T:System.String" /> を <see cref="T:System.Windows.Media.FontFamily" /> に変換します。</summary>
+        <returns>指定された <see cref="T:System.Windows.Media.FontFamily" /> に基づいた、<paramref name="value" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">発生したときに<paramref name="value" />は<see langword="null" />以上<see cref="F:System.String.Empty" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToString">
+      <MemberSignature Language="C#" Value="public override string ConvertToString (object value, System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ConvertToString(object value, class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.FontFamilyValueSerializer.ConvertToString(System.Object,System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="value">インスタンス<see cref="T:System.Windows.Media.FontFamily" />変換の評価対象にします。</param>
+        <param name="context">変換に使用されるコンテキスト情報。</param>
+        <summary><see cref="T:System.Windows.Media.FontFamily" /> のインスタンスを <see cref="T:System.String" /> に変換します。</summary>
+        <returns>A<see cref="T:System.String" />の指定された表現<see cref="T:System.Windows.Media.FontFamily" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換が可能な場合にのみ、`value`は、<xref:System.Windows.Media.FontFamily>型です。 さらに、<xref:System.Windows.Media.FontFamily.Source%2A>プロパティ`value`することはできません`null`、識別`value`匿名として<xref:System.Windows.Media.FontFamily>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">発生したときに<paramref name="value" />は<see langword="null" />以上<see cref="F:System.String.Empty" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

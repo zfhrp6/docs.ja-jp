@@ -1,0 +1,151 @@
+<Type Name="ImageClickEventArgs" FullName="System.Web.UI.ImageClickEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ImageClickEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImageClickEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ImageClickEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーがなどでイメージ ベースの ASP.NET サーバー コントロールをクリックしたときに発生するイベントのデータを提供、<see cref="T:System.Web.UI.HtmlControls.HtmlInputImage" />または<see cref="T:System.Web.UI.WebControls.ImageButton" />サーバー コントロールです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、ユーザーがクリックした場所を渡します、<xref:System.Web.UI.HtmlControls.HtmlInputImage>サーバー コントロールまたは<xref:System.Web.UI.WebControls.ImageButton>Web サーバー コントロールです。 クリックすると、<xref:System.Web.UI.HtmlControls.HtmlInputImage>サーバー コントロールが原因で、<xref:System.Web.UI.HtmlControls.HtmlInputImage.ServerClick>ながらクリックすると、発生するイベント、<xref:System.Web.UI.WebControls.ImageButton>サーバー コントロールが原因で、<xref:System.Web.UI.WebControls.ImageButton.Click>イベントが発生します。 イベント ハンドラーを使用してプログラムでこれらの座標の値に基づいて、イベントに応答できます。  
+  
+> [!NOTE]
+>  原点の座標 (0, 0) は、イメージの左上隅にあります。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスによって提供される情報を使用してイメージをユーザーのクリックの座標を表示する ASP.NET ページを示します。  
+  
+ [!code-csharp[SystemWebUI.ImageClickEventArgs Sample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SystemWebUI.ImageClickEventArgs Sample/CS/imageclickeventargscs.aspx#1)]
+ [!code-vb[SystemWebUI.ImageClickEventArgs Sample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SystemWebUI.ImageClickEventArgs Sample/VB/imageclickeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageClickEventArgs (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ImageClickEventArgs.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の x 座標。</param>
+        <param name="y">ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の y 座標。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ImageClickEventArgs" />クラスを使用して、<paramref name="x" />と<paramref name="y" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageClickEventArgs (int x, int y, double xRaw, double yRaw);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 x, int32 y, float64 xRaw, float64 yRaw) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ImageClickEventArgs.#ctor(System.Int32,System.Int32,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="xRaw" Type="System.Double" />
+        <Parameter Name="yRaw" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="x">ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の x 座標。</param>
+        <param name="y">ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の y 座標。</param>
+        <param name="xRaw">Raw x 座標、ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックします。</param>
+        <param name="yRaw">Raw y 座標、ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.ImageClickEventArgs" />クラスを使用して、 <paramref name="x" />、 <paramref name="y" />、 <paramref name="xRaw" />、および<paramref name="yRaw" />パラメーター。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="X">
+      <MemberSignature Language="C#" Value="public int X;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 X" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ImageClickEventArgs.X" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の x 座標を表す整数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XRaw">
+      <MemberSignature Language="C#" Value="public double XRaw;" />
+      <MemberSignature Language="ILAsm" Value=".field public float64 XRaw" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ImageClickEventArgs.XRaw" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした生 x 座標を表す整数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Y">
+      <MemberSignature Language="C#" Value="public int Y;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 Y" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ImageClickEventArgs.Y" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした位置の y 座標を表す整数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="YRaw">
+      <MemberSignature Language="C#" Value="public double YRaw;" />
+      <MemberSignature Language="ILAsm" Value=".field public float64 YRaw" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.ImageClickEventArgs.YRaw" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがイメージ ベースの ASP.NET サーバー コントロールをクリックした生 y 座標を表す整数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,382 @@
+<Type Name="XpsDigitalSignature" FullName="System.Windows.Xps.Packaging.XpsDigitalSignature">
+  <TypeSignature Language="C#" Value="public class XpsDigitalSignature" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsDigitalSignature extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsDigitalSignature" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デジタル署名を表す、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Windows.Xps.Packaging.XpsDigitalSignature>の代わりに<xref:System.IO.Packaging.PackageDigitalSignature>操作する際に、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメント。  <xref:System.IO.Packaging.PackageDigitalSignature>[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]-対応しておりの部分すべてが保証されていません、[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]ドキュメントが完全に署名されています。  
+  
+ デジタル署名の詳細については、MSDN の記事を参照してください。 *Open Packaging Conventions のデジタル署名 Framework*いただけます[http://go.microsoft.com/fwlink/?LinkId=74494](http://go.microsoft.com/fwlink/?LinkId=74494)です。  
+  
+ 詳細については[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]を参照してください、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XpsDigitalSignature (System.IO.Packaging.PackageDigitalSignature packageSignature, System.Windows.Xps.Packaging.XpsDocument package);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.PackageDigitalSignature packageSignature, class System.Windows.Xps.Packaging.XpsDocument package) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDigitalSignature.#ctor(System.IO.Packaging.PackageDigitalSignature,System.Windows.Xps.Packaging.XpsDocument)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="packageSignature" Type="System.IO.Packaging.PackageDigitalSignature" />
+        <Parameter Name="package" Type="System.Windows.Xps.Packaging.XpsDocument" />
+      </Parameters>
+      <Docs>
+        <param name="packageSignature">パッケージに関連付けられているデジタル署名。</param>
+        <param name="package">関連付けられているパッケージ。</param>
+        <summary><see cref="T:System.Windows.Xps.Packaging.XpsDigitalSignature" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocumentPropertiesRestricted">
+      <MemberSignature Language="C#" Value="public bool DocumentPropertiesRestricted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DocumentPropertiesRestricted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.DocumentPropertiesRestricted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのプロパティを変更する、デジタル署名が無効かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ドキュメントのプロパティを変更する場合、署名を無効になります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public Nullable&lt;Guid&gt; Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.Guid&gt; Id" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Guid&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_guid](~/includes/tla2sharptla-guid-md.md)]の署名。</summary>
+        <value>[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)]の署名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDigitalSignature.Id%2A>プロパティを表示し、署名情報を更新します。  
+  
+ [!code-csharp[XpsReadWriteSign#IterateSignatureDefinitions](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsReadWriteSign/CSharp/SignatureDefinitionsAndSigning.cs#iteratesignaturedefinitions)]
+ [!code-vb[XpsReadWriteSign#IterateSignatureDefinitions](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsReadWriteSign/visualbasic/signaturedefinitionsandsigning.vb#iteratesignaturedefinitions)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCertificateAvailable">
+      <MemberSignature Language="C#" Value="public bool IsCertificateAvailable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCertificateAvailable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.IsCertificateAvailable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名者の X.509 証明書がドキュメントに含まれているかどうかを示す値を取得<see cref="T:System.IO.Packaging.Package" />です。</summary>
+        <value>
+          <see langword="true" />かどうか、署名者の X.509 証明書がドキュメントに埋め込まれます<see cref="T:System.IO.Packaging.Package" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、署名者の X.509 証明書が埋め込まれている、<xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>メソッドで呼び出すときに、`embedCertificate`パラメーターに設定`true`です。  
+  
+ デジタル署名と証明書の詳細については、のセクション 3.3 のデジタル署名を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureOriginRestricted">
+      <MemberSignature Language="C#" Value="public bool SignatureOriginRestricted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SignatureOriginRestricted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SignatureOriginRestricted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デジタル署名が無効になる場合、他のユーザーがパッケージに署名するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />追加のデジタル署名が適用される場合、署名が無効になった場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 署名の元の制限は設定されて、<xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>メソッドで呼び出すときに、`restrictions`パラメーターの設定を除外する、<xref:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.SignatureOrigin>一部です。  
+  
+ ドキュメントの複数のユーザーで署名する場合、<xref:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.SignatureOrigin>一部は、ドキュメントが署名、署名から除外する必要があります。  (で除外が指定されて、`restrictions`への呼び出しのパラメーター <xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>)。場合、<xref:System.Windows.Xps.Packaging.XpsDigSigPartAlteringRestrictions.SignatureOrigin>一部が除外されていない、追加の署名は、最初の署名者の署名を無効にします。  
+  
+ Core Properties と署名の発行元のパーツの詳細については、の第 3 章を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureType">
+      <MemberSignature Language="C#" Value="public string SignatureType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SignatureType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SignatureType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_url](~/includes/tla2sharptla-url-md.md)]署名の種類を識別する文字列。</summary>
+        <value>A[!INCLUDE[TLA2#tla_url](~/includes/tla2sharptla-url-md.md)]署名の種類を識別する文字列。 既定の署名の種類は<see cref="F:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NTransformUrl" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureValue">
+      <MemberSignature Language="C#" Value="public byte[] SignatureValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] SignatureValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SignatureValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名の暗号化ハッシュ値を取得します。</summary>
+        <value>A<see cref="T:System.Byte" />署名の暗号化ハッシュ値を格納する配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignedDocumentSequence">
+      <MemberSignature Language="C#" Value="public System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader SignedDocumentSequence { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader SignedDocumentSequence" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SignedDocumentSequence" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名付きのドキュメント シーケンスのドキュメント シーケンスのリーダーを取得します。</summary>
+        <value><see cref="T:System.Windows.Xps.Packaging.IXpsFixedDocumentSequenceReader" />; または<see langword="null" />すべて有効ではない場合[!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)]部分をドキュメントに署名されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignerCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate SignerCertificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate SignerCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SignerCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名者の X.509 証明書を取得します。</summary>
+        <value>署名者の X.509 証明書または<see langword="null" />ドキュメント パッケージに埋め込まれている証明書がない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、署名者の X.509 証明書が埋め込まれている、<xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>メソッドで呼び出すときに、`embedCertificate`パラメーターに設定`true`です。  
+  
+ デジタル署名と証明書の詳細については、のセクション 3.3 のデジタル署名を参照してください、 *Open Packaging Conventions*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningTime">
+      <MemberSignature Language="C#" Value="public DateTime SigningTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime SigningTime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsDigitalSignature.SigningTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名が作成された日時を取得します。</summary>
+        <value>日付と時刻のページがドキュメント、またはドキュメント シーケンスは署名されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsDigitalSignature.SigningTime%2A>ここで、署名が行われたコンピューターのシステム時刻に基づきます。  
+  
+ <xref:System.Windows.Xps.Packaging.XpsDigitalSignature.SigningTime%2A>「セキュリティで保護されたタイムスタンプ」ではありませんし、タイム スタンプの信頼された証明機関ではないです。  セキュリティで保護されたタイムスタンプを入手して、信頼されているタイム スタンプ機関を使用して適用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.VerifyResult Verify ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.Packaging.VerifyResult Verify() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDigitalSignature.Verify" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>埋め込まれている X.509 証明書に対してドキュメントのデジタル署名を検証、 [!INCLUDE[TLA2#tla_xps](~/includes/tla2sharptla-xps-md.md)] <see cref="T:System.IO.Packaging.Package" />です。</summary>
+        <returns>1 つ、<see cref="T:System.IO.Packaging.VerifyResult" />検証試行の結果を指定する列挙値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード メソッドがで埋め込まれている X.509 証明書に対してドキュメントのデジタル署名を検証、<xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>メソッドで呼び出すときに、`embedCertificate`パラメーターに設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verify">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.VerifyResult Verify (System.Security.Cryptography.X509Certificates.X509Certificate certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.IO.Packaging.VerifyResult Verify(class System.Security.Cryptography.X509Certificates.X509Certificate certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDigitalSignature.Verify(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.VerifyResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">署名者の Certificate of Authenticity。</param>
+        <summary>ドキュメントのデジタル署名を、指定した X.509 証明書に対して検証します。</summary>
+        <returns>1 つ、<see cref="T:System.IO.Packaging.VerifyResult" />検証試行の結果を指定する列挙値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyCertificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509ChainStatusFlags VerifyCertificate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Security.Cryptography.X509Certificates.X509ChainStatusFlags VerifyCertificate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDigitalSignature.VerifyCertificate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509ChainStatusFlags</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パッケージに埋め込まれている X.509 証明書を検証します。</summary>
+        <returns>検証を試みた結果を指定する列挙値のビットごとの組み合わせ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、証明書の検証の重要なフラグを決定する必要があります。  
+  
+ 証明書の検証には、インターネット接続が必要です。  
+  
+ によって、署名者の X.509 証明書が埋め込まれている、<xref:System.Windows.Xps.Packaging.XpsDocument.SignDigitally%2A>メソッドで呼び出すときに、`embedCertificate`パラメーターに設定`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerifyCertificate">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.X509Certificates.X509ChainStatusFlags VerifyCertificate (System.Security.Cryptography.X509Certificates.X509Certificate certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Security.Cryptography.X509Certificates.X509ChainStatusFlags VerifyCertificate(class System.Security.Cryptography.X509Certificates.X509Certificate certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsDigitalSignature.VerifyCertificate(System.Security.Cryptography.X509Certificates.X509Certificate)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509ChainStatusFlags</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">信頼性の証明書。</param>
+        <summary>指定された X.509 証明書を確認します。</summary>
+        <returns>検証を試みた結果を指定する列挙値のビットごとの組み合わせ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションは、証明書の検証の重要なフラグを決定する必要があります。  
+  
+ 証明書の検証には、インターネット接続が必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

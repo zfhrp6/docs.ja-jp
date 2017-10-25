@@ -1,0 +1,100 @@
+<Type Name="QuestionEventArgs" FullName="System.Windows.Forms.QuestionEventArgs">
+  <TypeSignature Language="C#" Value="public class QuestionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QuestionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.QuestionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>必要があるイベントのデータを提供、<see langword="true" />または<see langword="false" />質問に回答します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して現在、<xref:System.Windows.Forms.DataGridView.CancelRowEdit>と<xref:System.Windows.Forms.DataGridView.RowDirtyStateNeeded>のイベント、<xref:System.Windows.Forms.DataGridView>コントロール。 コントロールには、質問に対する回答が必要がある場合に発生するイベントに応答を指定することができます。 設定して、質問に対する回答が指定されて、<xref:System.Windows.Forms.QuestionEventArgs.Response%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.CancelRowEdit>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.CancelRowEdit>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#281](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#281)]
+ [!code-vb[System.Windows.Forms.EventExamples#281](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#281)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QuestionEventArgs ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.QuestionEventArgs.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.QuestionEventArgs" /> 、既定値を使用してクラス<see cref="P:System.Windows.Forms.QuestionEventArgs.Response" />のプロパティの値<see langword="false" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QuestionEventArgs (bool response);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.QuestionEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="response" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="response"><see cref="P:System.Windows.Forms.QuestionEventArgs.Response" /> プロパティの既定値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.QuestionEventArgs" />クラスの指定された既定値を使用して、<see cref="P:System.Windows.Forms.QuestionEventArgs.Response" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Response">
+      <MemberSignature Language="C#" Value="public bool Response { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Response" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QuestionEventArgs.Response" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベントによって表される質問への応答を示す値を設定します。</summary>
+        <value>
+          <see langword="true" />肯定応答です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.DataGridView.CancelRowEdit?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.DataGridView>という`DataGridView1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.DataGridView.CancelRowEdit?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#281](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#281)]
+ [!code-vb[System.Windows.Forms.EventExamples#281](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#281)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

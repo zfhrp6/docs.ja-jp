@@ -1,0 +1,89 @@
+<Type Name="HostObjectInitializationStatus" FullName="Microsoft.Build.Utilities.HostObjectInitializationStatus">
+  <TypeSignature Language="C#" Value="public enum HostObjectInitializationStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed HostObjectInitializationStatus extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Utilities.HostObjectInitializationStatus" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>次のアクションを定義<see cref="T:Microsoft.Build.Utilities.ToolTask" />後、そのホスト オブジェクトを初期化しようとします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.Utilities.HostObjectInitializationStatus>戻り値の型は、<xref:Microsoft.Build.Utilities.ToolTask.InitializeHostObject%2A>のメソッド、<xref:Microsoft.Build.Utilities.ToolTask>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoActionReturnFailure">
+      <MemberSignature Language="C#" Value="NoActionReturnFailure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Utilities.HostObjectInitializationStatus NoActionReturnFailure = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.HostObjectInitializationStatus.NoActionReturnFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Utilities.HostObjectInitializationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タスクに渡されるパラメーターの一部が無効であり、タスクが即座に失敗することを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoActionReturnSuccess">
+      <MemberSignature Language="C#" Value="NoActionReturnSuccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Utilities.HostObjectInitializationStatus NoActionReturnSuccess = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.HostObjectInitializationStatus.NoActionReturnSuccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Utilities.HostObjectInitializationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト オブジェクトが最新であり、それ以上のアクションは不要であることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseAlternateToolToExecute">
+      <MemberSignature Language="C#" Value="UseAlternateToolToExecute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Utilities.HostObjectInitializationStatus UseAlternateToolToExecute = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.HostObjectInitializationStatus.UseAlternateToolToExecute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Utilities.HostObjectInitializationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホスト オブジェクトを使用できないか、またはこのビルドで必要なすべての機能をホスト オブジェクトでサポートできないことを示します。 したがって、<see cref="T:Microsoft.Build.Utilities.ToolTask" />フォールバックな代替手段はコマンド ライン ツールを起動するなど、ビルドを実行する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseHostObjectToExecute">
+      <MemberSignature Language="C#" Value="UseHostObjectToExecute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Build.Utilities.HostObjectInitializationStatus UseHostObjectToExecute = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Utilities.HostObjectInitializationStatus.UseHostObjectToExecute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Utilities.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Utilities.HostObjectInitializationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このタスクに適したホスト オブジェクトが存在することを示します。このホスト オブジェクトは、渡されるすべてのパラメーターをサポート可能で、タスクを実際に実行するためにこれを起動する必要があります。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,272 @@
+<Type Name="WebControlToolboxItem" FullName="System.Web.UI.Design.WebControlToolboxItem">
+  <TypeSignature Language="C#" Value="public class WebControlToolboxItem : System.Drawing.Design.ToolboxItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WebControlToolboxItem extends System.Drawing.Design.ToolboxItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControlToolboxItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.ToolboxItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サーバー コントロールの基底クラスを提供<see cref="T:System.Drawing.Design.ToolboxItem" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControlToolboxItem>Web サーバー コントロールを作成したツールボックス アイテムの基本クラスを提供します。 このクラスは拡張<xref:System.Drawing.Design.ToolboxItem>し、次の追加のメソッドを提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControlToolboxItem.GetToolAttributeValue%2A>ツールボックス項目の属性の値を取得します。  
+  
+-   <xref:System.Web.UI.Design.WebControlToolboxItem.GetToolHtml%2A>コントロールの初期状態を表す HTML を取得します。  
+  
+-   <xref:System.Web.UI.Design.WebControlToolboxItem.GetToolType%2A>関連付けられているランタイム コンポーネントの種類を取得します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControlToolboxItem ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControlToolboxItem" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>型名の短いバージョンに設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebControlToolboxItem (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />このツールボックス項目のツールです。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.Design.WebControlToolboxItem" />クラス、指定された型を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Design.ToolboxItem.DisplayName%2A>型名の短いバージョンに設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebControlToolboxItem (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">逆シリアル化を使用して Web コントロールをインスタンス化に必要な情報を含む SerializationInfo オブジェクト。</param>
+        <param name="context">StreamingContext オブジェクト。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.Design.WebControlToolboxItem" />クラスの指定されたを使用して<see cref="T:System.Runtime.Serialization.SerializationInfo" />オブジェクトおよび<see cref="T:System.Runtime.Serialization.StreamingContext" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateComponentsCore">
+      <MemberSignature Language="C#" Value="protected override System.ComponentModel.IComponent[] CreateComponentsCore (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ComponentModel.IComponent[] CreateComponentsCore(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.IComponent[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <summary>これに含まれる各型からオブジェクトを作成<see cref="T:System.Drawing.Design.ToolboxItem" />、し、指定したデザイナーに追加します。</summary>
+        <returns>作成された <see cref="T:System.ComponentModel.IComponent" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControlToolboxItem.CreateComponentsCore%2A>常に、メソッドはから継承されていることを示す、例外がスロー<xref:System.Drawing.Design.ToolboxItem>のみ Windows フォームで使用するとします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception"><see cref="M:System.Web.UI.Design.WebControlToolboxItem.CreateComponentsCore(System.ComponentModel.Design.IDesignerHost)" />メソッドは、Windows フォームで使用できるのみです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="protected override void Deserialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Deserialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.Deserialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" /> を説明する <see cref="T:System.Web.UI.Design.WebControlToolboxItem" />。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化ストリームの特性を示すです。</param>
+        <summary>指定したシリアル化情報オブジェクトから、このツールボックス項目の状態を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolAttributeValue">
+      <MemberSignature Language="C#" Value="public object GetToolAttributeValue (System.ComponentModel.Design.IDesignerHost host, Type attributeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetToolAttributeValue(class System.ComponentModel.Design.IDesignerHost host, class System.Type attributeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.GetToolAttributeValue(System.ComponentModel.Design.IDesignerHost,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+        <Parameter Name="attributeType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <param name="attributeType">値を取得する属性の型。</param>
+        <summary>指定したツールボックス項目の属性の型の値を取得します。</summary>
+        <returns>指定した型の属性の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装がスローされます、<xref:System.ArgumentException>場合、`attributeType`パラメーターが何も以外の場合に、<xref:System.Web.UI.PersistChildrenAttribute>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="attributeType" />パラメーターではありません、<see cref="T:System.Web.UI.PersistChildrenAttribute" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolHtml">
+      <MemberSignature Language="C#" Value="public string GetToolHtml (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetToolHtml(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.GetToolHtml(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <summary>このツールを作成する Web コントロールの HTML を取得します。</summary>
+        <returns>このツールを作成する Web コントロールの HTML。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolType">
+      <MemberSignature Language="C#" Value="public Type GetToolType (System.ComponentModel.Design.IDesignerHost host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetToolType(class System.ComponentModel.Design.IDesignerHost host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.GetToolType(System.ComponentModel.Design.IDesignerHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.ComponentModel.Design.IDesignerHost" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.ComponentModel.Design.IDesignerHost" />の現在のデザイン ドキュメント。</param>
+        <summary>このツールボックス項目の種類を取得します。</summary>
+        <returns><see cref="T:System.Type" />このツールボックス項目の。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.Initialize(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" /> Web サーバー コントロールのツールボックス項目の。</param>
+        <summary>このツールボックス項目を初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="protected override void Serialize (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Serialize(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControlToolboxItem.Serialize(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info"><see cref="T:System.Runtime.Serialization.SerializationInfo" />の状態を保存するために使用、<see cref="T:System.Web.UI.Design.WebControlToolboxItem" />です。</param>
+        <param name="context">A<see cref="T:System.Runtime.Serialization.StreamingContext" />シリアル化ストリームの特性を示すです。</param>
+        <summary>指定したシリアル化情報オブジェクトに、このツールボックス項目の状態を保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,154 @@
+<Type Name="VirtualPathExtension" FullName="System.ServiceModel.Activation.VirtualPathExtension">
+  <TypeSignature Language="C#" Value="public sealed class VirtualPathExtension : System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit VirtualPathExtension extends System.Object implements class System.ServiceModel.IExtension`1&lt;class System.ServiceModel.ServiceHostBase&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.VirtualPathExtension" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.IExtension&lt;System.ServiceModel.ServiceHostBase&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>サービスがインターネット インフォメーション サービス (IIS) または Windows プロセス アクティブ化サービス (WAS) でホストされている場合の、サービスの仮想パスを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この拡張は、IIS または WAS でホストされるサービスにのみ存在します。 サービスは、次の例に示すように、この拡張を各自の <xref:System.ServiceModel.ServiceHostBase> から取得することで、IIS または WAS でホストされているかどうかを決定できます。  
+  
+   
+  
+## Examples  
+ サービス ホストから <xref:System.ServiceModel.Activation.VirtualPathExtension> を回復し、IIS または WAS でホストされている値を返す方法の例を次に示します。  
+  
+```csharp  
+bool isHosted = false;  
+ServiceHostBase host = OperationContext.Current.Host;  
+VirtualPathExtension vpe = host.Extentions.Find<VirtualPathExtension>();  
+  
+if( vpe != null )  
+Console.WriteLine("The virtualPath of the hosted Service is  {0}", vpe.VirtualPath);  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationVirtualPath">
+      <MemberSignature Language="C#" Value="public string ApplicationVirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationVirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.VirtualPathExtension.ApplicationVirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスをホストする IIS または WAS アプリケーションの仮想パスを取得します。</summary>
+        <value>サービスをホストする IIS または WAS アプリケーションの仮想パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (System.ServiceModel.ServiceHostBase owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Attach(class System.ServiceModel.ServiceHostBase owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.VirtualPathExtension.Attach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="owner">仮想パスを使用する <see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>このメソッドは、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] インフラストラクチャをサポートするために用意されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは [!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャをサポートします。コードから直接呼び出すためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="public void Detach (System.ServiceModel.ServiceHostBase owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Detach(class System.ServiceModel.ServiceHostBase owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.VirtualPathExtension.Detach(System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="owner">仮想パスを使用する <see cref="T:System.ServiceModel.ServiceHostBase" />。</param>
+        <summary>このメソッドは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャをサポートするために用意されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは [!INCLUDE[indigo2](~/includes/indigo2-md.md)] インフラストラクチャをサポートします。コードから直接呼び出すためのものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SiteName">
+      <MemberSignature Language="C#" Value="public string SiteName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SiteName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.VirtualPathExtension.SiteName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo2](~/includes/indigo2-md.md)] サービスをホストする IIS または WAS アプリケーションのサイト名を取得します。</summary>
+        <value>サービスをホストする IIS または WAS アプリケーションのサイト名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VirtualPath">
+      <MemberSignature Language="C#" Value="public string VirtualPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VirtualPath" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.VirtualPathExtension.VirtualPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスによって使用される仮想パスを取得します。</summary>
+        <value>サービスによって使用される仮想パス。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

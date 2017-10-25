@@ -1,0 +1,115 @@
+<Type Name="AxHost+ConnectionPointCookie" FullName="System.Windows.Forms.AxHost+ConnectionPointCookie">
+  <TypeSignature Language="C#" Value="public class AxHost.ConnectionPointCookie" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit AxHost/ConnectionPointCookie extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.AxHost.ConnectionPointCookie" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ActiveX コントロールをコントロールのイベントを処理するクライアントに接続します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ActiveX コントロールは、COM インターフェイスを通じてクライアントと通信します。 <xref:System.Windows.Forms.AxHost.ConnectionPointCookie>クラス間のリンクを提供する、<xref:System.Windows.Forms.AxHost>クラスと、ActiveX コントロール。  
+  
+ 詳細については、"イベントの COM および接続可能なオブジェクト"http://msdn.microsoft.com/library の MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectionPointCookie (object source, object sink, Type eventInterface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object source, object sink, class System.Type eventInterface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ConnectionPointCookie.#ctor(System.Object,System.Object,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+        <Parameter Name="sink" Type="System.Object" />
+        <Parameter Name="eventInterface" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="source">接続ポイントを含む接続可能オブジェクト。</param>
+        <param name="sink">接続ポイントから送信を受信するクライアントのシンクを呼び出します。</param>
+        <param name="eventInterface">コネクション ポイントを持つオブジェクト アウトゴーイング インターフェイスが要求されています。</param>
+        <summary><see cref="T:System.Windows.Forms.AxHost.ConnectionPointCookie" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.AxHost.ConnectionPointCookie.%23ctor%2A>コンス トラクターは、ActiveX コントロールとクライアント間の接続を確立します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="source" />実装していません<paramref name="eventInterface" />です。</exception>
+        <exception cref="T:System.InvalidCastException">
+          <paramref name="sink" />実装していません<paramref name="eventInterface" />です。  
+  
+ または  
+  
+ <paramref name="source" />実装していません<see cref="T:System.Runtime.InteropServices.ComTypes.IConnectionPointContainer" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">接続ポイントは、接続の上限に既に達してし、以上を受け入れることはできません。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Disconnect">
+      <MemberSignature Language="C#" Value="public void Disconnect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Disconnect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ConnectionPointCookie.Disconnect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントからの ActiveX コントロールを切断します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ConnectionPointCookie ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.AxHost.ConnectionPointCookie.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.AxHost.ConnectionPointCookie" /> クラスによって使用されているアンマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A>します。 アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの`Finalize`への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

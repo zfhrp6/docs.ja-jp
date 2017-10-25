@@ -1,0 +1,882 @@
+<Type Name="SafeHandle" FullName="System.Runtime.InteropServices.SafeHandle">
+  <TypeSignature Language="C#" Value="public abstract class SafeHandle : System.Runtime.ConstrainedExecution.CriticalFinalizerObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi abstract beforefieldinit SafeHandle extends System.Runtime.ConstrainedExecution.CriticalFinalizerObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.SafeHandle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Handles</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.Runtime.ConstrainedExecution.CriticalFinalizerObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オペレーティング システム ハンドルのラッパー クラスを表します。 このクラスは継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle>クラスは、およびガベージ コレクションによって処理の途中で解放されてから意図しないアンマネージ オブジェクトを参照する Windows では、リサイクル中にハンドルを防止ハンドル リソースの重要な終了処理を提供します。  
+  
+ このトピックには、次のセクションがあります。  
+  
+ [なぜ SafeHandle しますか?](#Why)   
+ [SafeHandle の動作](#Does)   
+ [SafeHandle から派生したクラス](#Derived)  
+  
+<a name="Why"></a>   
+## <a name="why-safehandle"></a>なぜ SafeHandle しますか?  
+ .NET Framework version 2.0 では、すべてのオペレーティング システムでハンドルをカプセル化でしただけ前に、<xref:System.IntPtr>マネージ ラッパー オブジェクト。 これには、ネイティブ コードと相互運用する便利な手段がでしたが、ハンドルが予期せず中止スレッドまたはスタック オーバーフローなど、非同期の例外によってリークする可能性があります。 これらの非同期の例外は、オペレーティング システム リソースのクリーンアップに支障をきたすと、アプリでほぼどこでも発生することができます。  
+  
+ 上書きを<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドがアンマネージ リソースのクリーンアップを許可するときにオブジェクトがガベージ コレクション、状況によっては、ファイナライズ可能なオブジェクトを再要求できるガベージによって、プラットフォーム内のメソッドの実行中にコレクションが呼び出しです。 ファイナライザーは、そのプラットフォームに渡されたハンドルを解放呼び出し、破損を処理する可能性があります。 プラットフォームの中に、メソッドがブロックされている間、ハンドルを解放もでしたなど、ファイルの読み取り中に呼び出しを起動します。  
+  
+ ほど、Windows では、積極的にハンドルを再利用、ためハンドルでしたリサイクルされ機密データを含めることができる他のリソースをポイントします。 これは、リサイクル攻撃と呼ばれますとことができますデータが破損する可能性のあるセキュリティの脅威となります。  
+  
+<a name="Does"></a>   
+## <a name="what-safehandle-does"></a>SafeHandle の動作  
+ <xref:System.Runtime.InteropServices.SafeHandle>クラスは、これらのオブジェクトの有効期間の問題のいくつかを簡略化し、プラットフォームと統合されたオペレーティング システムのリソースが漏洩しないようにを起動します。 <xref:System.Runtime.InteropServices.SafeHandle>クラスは、割り当てと解放を中断することがなくハンドルによってオブジェクトの有効期間に関する問題を解決します。 ハンドルが閉じているして中に予期しない実行することが保証されるようにする重要なファイナライザーが含まれている<xref:System.AppDomain>アンロードされると、プラットフォーム呼び出しの状況であってもが破損した状態であると見なされます。  
+  
+ <xref:System.Runtime.InteropServices.SafeHandle>から継承<xref:System.Runtime.ConstrainedExecution.CriticalFinalizerObject>、重要でないすべてのファイナライザーがクリティカル ファイナライザーのいずれかの前に呼び出されます。 同じガベージ コレクションの実行中にライブが不要になったオブジェクトでは、ファイナライザーが呼び出されます。 たとえば、<xref:System.IO.FileStream>オブジェクトはハンドルのリークまたはリサイクルされるリスクを避けてバッファー内の既存のデータをフラッシュする標準のファイナライザーを実行できます。 一般的な用途は、重大かつ重要でないファイナライザー間この非常に弱い順序付けすることはありません。 使用するこれらのライブラリを許可することで既存のライブラリの移行を支援するには、主に存在する<xref:System.Runtime.InteropServices.SafeHandle>のセマンティクスを変更することがなくです。 さらに、クリティカル ファイナライザーと何も呼び出して、ように、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle?displayProperty=nameWithType>メソッドが制約された実行領域である必要があります。 これには、ファイナライザーの呼び出し先内でどのようなコードを記述する制約が適用されます。  
+  
+ プラットフォームが自動的に操作を呼び出しによってカプセル化されたハンドルの参照カウントをインクリメント、<xref:System.Runtime.InteropServices.SafeHandle>と完了したときにそれらをデクリメントします。 ハンドルがありませんするリサイクルされるかになりますが異常終了しました。  
+  
+ 基になるハンドルの所有権を指定するには、構築するときに<xref:System.Runtime.InteropServices.SafeHandle>オブジェクトに値を指定して、`ownsHandle`の引数、<xref:System.Runtime.InteropServices.SafeHandle>クラスのコンス トラクターです。 これを制御するかどうか、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクトは、オブジェクトが破棄された後に、ハンドルを解放します。  これは例外的な有効期間の要件を持つハンドルまたはその有効期間が他のユーザーによって制御されますハンドルを使用するために役立ちます。  
+  
+<a name="Derived"></a>   
+## <a name="classes-derived-from-safehandle"></a>SafeHandle から派生したクラス  
+ <xref:System.Runtime.InteropServices.SafeHandle>オペレーティング システム ハンドルのラッパーの抽象クラスです。 このクラスからの派生は困難です。 代わりに、次のセーフ ハンドルを提供する <xref:Microsoft.Win32.SafeHandles> 名前空間の派生クラスを使用してください。  
+  
+-   ファイル (、<xref:Microsoft.Win32.SafeHandles.SafeFileHandle>クラス)。  
+  
+-   メモリ マップト ファイル (、<xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle>クラス)。  
+  
+-   パイプ (、<xref:Microsoft.Win32.SafeHandles.SafePipeHandle>クラス)。  
+  
+-   メモリ ビュー (、<xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>クラス)。  
+  
+-   暗号化の構成体 (、 <xref:Microsoft.Win32.SafeHandles.SafeNCryptHandle>、 <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>、 <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle>、および<xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle>クラス)。  
+  
+-   プロセス (、<xref:Microsoft.Win32.SafeHandles.SafeProcessHandle>クラス)。  
+  
+-   レジストリ キー (、<xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>クラス)。  
+  
+-   待機ハンドル (、<xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>クラス)。  
+  
+   
+  
+## Examples  
+ 派生する、オペレーティング システム ファイル ハンドル用のカスタムのセーフ ハンドルを作成するコード例を次<xref:Microsoft.Win32.SafeHandles.SafeHandleZeroOrMinusOneIsInvalid>です。 ファイルからバイトを読み取り、16 進数値が表示されます。 テスト ハーネス エラーも含まれています。 中止するには、スレッドを原因となったが、ハンドル値を解放します。  使用する場合、<xref:System.IntPtr>ハンドルを表す、ハンドルが非同期スレッドの中止のためリーク場合があります。  
+  
+ コンパイル済みのアプリケーションと同じフォルダー内のテキスト ファイルを必要があります。 コマンドラインの使用方法は、"hexviewer"だアプリケーションの名前を入力する場合です。  
+  
+ `HexViewer <filename> -Fault`  
+  
+ 必要に応じて指定`-Fault`意図的に特定のウィンドウでスレッドを中止することで、ハンドルのリークしようとします。 Windows Perform.exe ツールを使用すると、エラーを挿入中にハンドル数を監視できます。  
+  
+ [!code-csharp[SafeHandle#1](~/samples/snippets/csharp/VS_Snippets_CLR/SafeHandle/CS/program.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+    <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+    <block subset="none" type="overrides">
+      <para>派生したクラスを作成する<see cref="T:System.Runtime.InteropServices.SafeHandle" />、作成し、オペレーティング システム ハンドルを解放する方法を理解する必要があります。 別のハンドル型の一部を使用しているために、このプロセスは異なる、 [CloseHandle](https://msdn.microsoft.com/library/windows/desktop/ms724211.aspx)関数は、具体的な関数をなど使用して他のユーザーに対し[UnmapViewOfFile](https://msdn.microsoft.com/library/windows/desktop/aa366882.aspx)または[FindClose](https://msdn.microsoft.com/library/windows/desktop/aa364413.aspx). このための派生クラスを作成する必要があります<see cref="T:System.Runtime.InteropServices.SafeHandle" />にセーフ ハンドルをラップするオペレーティング システム ハンドルの種類ごとにします。  
+  
+ <see cref="T:System.Runtime.InteropServices.SafeHandle" /> から継承する場合は、<see cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" /> メンバーと <see cref="M:System.Runtime.InteropServices.SafeHandle.ReleaseHandle" /> メンバーをオーバーライドする必要があります。  
+  
+ 無効なハンドル値を表す値を持つ基底コンス トラクターを呼び出す既定のコンス トラクターを提供することも必要があります、<see cref="T:System.Boolean" />ネイティブ ハンドルが所有しているかどうかを示す値、<see cref="T:System.Runtime.InteropServices.SafeHandle" />し、その結果、ときに解放する必要があります<see cref="T:System.Runtime.InteropServices.SafeHandle" />は破棄されました。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SafeHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SafeHandle (IntPtr invalidHandleValue, bool ownsHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(native int invalidHandleValue, bool ownsHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.#ctor(System.IntPtr,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="invalidHandleValue" Type="System.IntPtr" />
+        <Parameter Name="ownsHandle" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="invalidHandleValue">無効なハンドルの値 (通常は 0 または -1)。  <see cref="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" /> の実装では、この値に対して <see langword="true" /> を返す必要があります。</param>
+        <param name="ownsHandle">
+          終了処理中に <see langword="true" /> によってハンドルを確実に解放する場合は <see cref="T:System.Runtime.InteropServices.SafeHandle" />。それ以外の場合は <see langword="false" /> (お勧めしません)。</param>
+        <summary>指定した無効なハンドル値を使用して、<see cref="T:System.Runtime.InteropServices.SafeHandle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`ownsHandle`パラメーターは`false`、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>ことはありませんが呼び出されます。 したがって、これはお勧めできませんリソース リークが発生するコードと、このパラメーター値を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.TypeLoadException">派生クラスがアンマネージ コードのアクセス許可なしにアセンブリに存在しています。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 このメンバーは、部分的に信頼されたコードでは継承できません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソースを解放するためのハンドルをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>メソッドにより、リソースを解放します。 これにより、他のスレッドが同じオブジェクトのセーフ ハンドルを使用している場合は直ちにに実行されない可能性がありますが、されなくなるとすぐに実行されます。 ほとんどのクラスを使用するが、<xref:System.Runtime.InteropServices.SafeHandle>クラスは、この操作は、必要に応じて、ファイナライザーを用意する必要はありません (たとえば、ファイル バッファーをフラッシュするかを記述するいくつかのデータ バックアップをメモリに)。 この例では、クラスが前に実行することが保証が不要なファイナライザーを提供できます、<xref:System.Runtime.InteropServices.SafeHandle>クリティカル ファイナライザーを実行します。  
+  
+ 呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>が完了したら、メソッドを使用して、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクト。  
+  
+> [!NOTE]
+>  常に呼び出す<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>への参照を解放する前に、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクト。 そうしないと、ガベージ コレクターが <xref:System.Runtime.InteropServices.SafeHandle> オブジェクトの <xref:System.Runtime.InteropServices.SafeHandle.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DangerousAddRef">
+      <MemberSignature Language="C#" Value="public void DangerousAddRef (ref bool success);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DangerousAddRef(bool&amp; success) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.DangerousAddRef(System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="success" Type="System.Boolean&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="success">
+          参照カウンターが正常にインクリメントされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Runtime.InteropServices.SafeHandle" /> インスタンスの参照カウンターを手動でインクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>メソッドでは、共通言語ランタイムを防止をハンドルによって使用されるメモリを再利用 (ランタイムが呼び出す場合に発生する、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>メソッド)。 参照カウントを手動でインクリメントするには、このメソッドを使用することができます、<xref:System.Runtime.InteropServices.SafeHandle>インスタンス。 <xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>使用して、ブール値を返します、`ref`パラメーター (`success`)、参照カウントが正常にインクリメントされたかどうかを示すです。 これにより、障害の発生バックアップするのには、プログラム ロジックです。 設定する必要があります`success`に`false`呼び出す前に<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>です。 場合`success`は`true`への呼び出しを照合することによってリソースのリークの回避<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>への対応する呼び出しで<xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>です。  
+  
+> [!CAUTION]
+>  このメソッドは上級ユーザー向けにあり、常に慎重に使用する必要があります。 ハンドル リソースのリークを避けるためには、常に、制約された実行領域 (CER)、スレッドの中断が処理を中断できない内部このメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DangerousGetHandle">
+      <MemberSignature Language="C#" Value="public IntPtr DangerousGetHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance native int DangerousGetHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="F:System.Runtime.InteropServices.SafeHandle.handle" /> フィールドの値を戻します。</summary>
+        <returns><see langword="IntPtr" /> フィールドの値を表す <see cref="F:System.Runtime.InteropServices.SafeHandle.handle" />。 ハンドルが <see cref="M:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid" /> で無効としてマークされている場合にも、このメソッドは元のハンドル値を返すため、返される値が古い値である可能性があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用するには値を取得、実際のハンドルのインスタンスから、<xref:System.Runtime.InteropServices.SafeHandle>クラスを派生します。 このメソッドは、必要なの旧バージョンとの互換性、.NET Framework のプロパティの多くを返すため`IntPtr`型を処理します。 `IntPtr`ハンドル型は、プラットフォーム固有の型のポインターまたはハンドルを表すために使用します。  
+  
+> [!CAUTION]
+>  使用して、<xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A>ために、メソッドはセキュリティ上のリスクをもたらすことができます、ハンドルが設定されている場合とが無効、 <xref:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid%2A>、<xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A>も古い可能性がある、元のハンドル値を返します。 返されるハンドルは、任意の時点でリサイクルされることもできます。 最高、つまり、ハンドルが突然動作を停止した可能性があります。 最悪の場合、ハンドル、またはハンドルが表すリソースが信頼できないコードに公開されている場合は、再利用または返されるハンドルのリサイクル セキュリティ攻撃に対してこの可能性があります。 など、信頼されていない呼び出し元はハンドルでのデータが返されるクエリを実行し、まったく関係のないリソースの情報を取得できます。 参照してください、<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>と<xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>メソッドを使用しての詳細については、 <xref:System.Runtime.InteropServices.SafeHandle.DangerousGetHandle%2A> methodsafely です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DangerousRelease">
+      <MemberSignature Language="C#" Value="public void DangerousRelease ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DangerousRelease() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.DangerousRelease" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.SafeHandle" /> インスタンスの参照カウンターを手動でデクリメントします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>メソッドに対応するは<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>します。 呼び出しを常に一致する必要があります、<xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>メソッド呼び出しは成功を<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>です。  
+  
+> [!CAUTION]
+>  このメソッドは上級ユーザー向けにあり、常に慎重に使用する必要があります。 ハンドル リソースのリークを避けるためには、常に、制約された実行領域 (CER)、スレッドの中断が処理を中断できない内部このメソッドを呼び出します。 同じ方法を一致しない<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>呼び出しが一致しないリソース リークを起こすことができます<xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>呼び出しを他のスレッドを表示するに無効なハンドルの状態が発生することができます。 公開しない<xref:System.Runtime.InteropServices.SafeHandle.DangerousAddRef%2A>または<xref:System.Runtime.InteropServices.SafeHandle.DangerousRelease%2A>信頼されていないコードへの呼び出しです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.InteropServices.SafeHandle" /> クラスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>メソッドにより、リソースを解放します。 これにより、他のスレッドは、セーフ ハンドルの同じインスタンスを使用している場合は直ちにに実行されない可能性がありますが、されなくなるとすぐに実行されます。 クラスの使用の最も<xref:System.Runtime.InteropServices.SafeHandle>ファイナライザーを提供する必要はありません、これは (たとえば、ファイル バッファーをフラッシュするか、一部のデータをメモリに書き戻す) 必要があります。 この例では、前に実行することが保証が不要なファイナライザーを提示できます、<xref:System.Runtime.InteropServices.SafeHandle>クリティカル ファイナライザーを実行します。  
+  
+ 呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>が完了したら、メソッドを使用して、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクト。 <xref:System.Runtime.InteropServices.SafeHandle.Close%2A>メソッドによって、<xref:System.Runtime.InteropServices.SafeHandle>使用不可の状態オブジェクト。  
+  
+> [!NOTE]
+>  常に呼び出し、<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>または<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>メソッドへの参照を解放する前に、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクト。 そうしないと、ガベージ コレクターが <xref:System.Runtime.InteropServices.SafeHandle> オブジェクトの <xref:System.Runtime.InteropServices.SafeHandle.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          通常の破棄操作を実行する場合は <see langword="true" />。ハンドルを終了する場合は <see langword="false" />。</param>
+        <summary>通常の破棄操作を実行するかどうかを指定して、<see cref="T:System.Runtime.InteropServices.SafeHandle" /> クラスによって使用されているアンマネージ リソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に呼び出す必要があります、<xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>メソッドを`disposing`パラメーターに設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~SafeHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハンドルに関連付けられたすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle.Finalize%2A>メソッドは、デストラクター、<xref:System.Runtime.InteropServices.SafeHandle>クラスです。 アプリケーション コードでは、このメソッドを直接呼び出さないでください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="handle">
+      <MemberSignature Language="C#" Value="protected IntPtr handle;" />
+      <MemberSignature Language="ILAsm" Value=".field family native int handle" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.SafeHandle.handle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラップするハンドルを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルをパブリックに公開しません (つまり、派生クラスの外部で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.SafeHandle.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドルが閉じているかどうかを示す値を取得します。</summary>
+        <value>
+          ハンドルが閉じている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle.IsClosed%2A>メソッドを示す値を返すかどうか、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクトのハンドルは、ネイティブ リソースに関連付けが不要になった。 これの定義とは異なります、<xref:System.Runtime.InteropServices.SafeHandle.IsInvalid%2A>プロパティで、かどうか、指定されたハンドルは常に無効とみなさを計算します。 <xref:System.Runtime.InteropServices.SafeHandle.IsClosed%2A>メソッドを返します、`true`値は、次の場合。  
+  
+-   <xref:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid%2A>メソッドが呼び出されました。  
+  
+-   <xref:System.Runtime.InteropServices.SafeHandle.Dispose%2A>メソッドまたは<xref:System.Runtime.InteropServices.SafeHandle.Close%2A>メソッドが呼び出されへの参照がない、<xref:System.Runtime.InteropServices.SafeHandle>他のスレッド上のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvalid">
+      <MemberSignature Language="C#" Value="public abstract bool IsInvalid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvalid" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.SafeHandle.IsInvalid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ハンドル値が無効かどうかを示す値を取得します。</summary>
+        <value>
+          ハンドル値が無効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスを実装する必要があります、<xref:System.Runtime.InteropServices.SafeHandle.IsInvalid%2A>プロパティ、共通言語ランタイムでは、重要な終了処理が必要かどうかを確認できるようにします。 派生クラスは、一般的な種類のハンドルをサポートするのに適した実装を提供する必要があります (0 または-1 が無効)。 これらのクラスは、特定のセーフ ハンドルの種類をさらに派生します。  
+  
+ 異なり、<xref:System.Runtime.InteropServices.SafeHandle.IsClosed%2A>プロパティで、報告するかどうか、 <xref:System.Runtime.InteropServices.SafeHandle> 、基になるハンドルを使用してオブジェクトが完了した、<xref:System.Runtime.InteropServices.SafeHandle.IsInvalid%2A>プロパティを計算するかどうか、指定したハンドルの値は常に無効とみなさです。 したがって、<xref:System.Runtime.InteropServices.SafeHandle.IsInvalid%2A>プロパティは常に任意の 1 つのハンドル値に対して同じ値を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、ファイルが正常に開かれたかどうかを確認します。 このコード例に示されている例の一部である、<xref:System.Runtime.InteropServices.SafeHandle>クラスです。  
+  
+ [!code-csharp[SafeHandle#2](~/samples/snippets/csharp/VS_Snippets_CLR/SafeHandle/CS/program.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseHandle">
+      <MemberSignature Language="C#" Value="protected abstract bool ReleaseHandle ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ReleaseHandle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.ReleaseHandle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ハンドルを解放するために必要なコードを実行します。</summary>
+        <returns>
+          <see langword="true" />ハンドルが正常に解放された場合それ以外の場合、重大なエラーが発生した場合<see langword="false" />です。 この場合、生成、 [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md)マネージ デバッグ アシスタントします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>メソッドを呼び出すだけで 1 回場合にのみ、ハンドルが有効で定義されていることが保証、<xref:System.Runtime.InteropServices.SafeHandle.IsInvalid%2A>プロパティです。 このメソッドの実装、<xref:System.Runtime.InteropServices.SafeHandle>ハンドルを解放するために必要なすべてのコードを実行するクラスを派生します。 の関数の 1 つ<xref:System.Runtime.InteropServices.SafeHandle>、コードの実装で、リソース リークの防止を保証するためには、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>失敗しない必要があります。 ガベージ コレクター<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>ガベージ コレクション、同時になったオブジェクトの通常のファイナライザーを実行した後です。 ガベージ コレクターがこのメソッドを呼び出すためのリソースを保証するが進行している間に、メソッドは中断されません。 このメソッドは、(その静的に確定呼び出し先のすべてのメソッド) およびインスタンスの構築時に、制約された実行領域 (CER) として準備されます。 オーバーライドされたどのエラー パスを導入しないように注意する必要がありますが、これには、スレッドの中止割り込みが防止されますが、<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>メソッドです。 具体的には、適用、<xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute>から呼び出すメソッドが存在する属性<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>です。 ほとんどの場合、このコードがあります。  
+  
+ `ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success)`  
+  
+ 簡単なクリーンアップをさらに、(たとえば、Win32 API の呼び出し`CloseHandle`ファイル ハンドルの) 1 つのプラットフォーム呼び出しの戻り値を確認することができます。 複雑なクリーンアップは、多くのプログラム ロジックとこれらの一部が失敗する多くのメソッド呼び出しがあります。 プログラム ロジックでこのような場合の各フォールバック コードはことを確認する必要があります。  
+  
+ 場合<xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>返します`false`生成何らかの理由で、 [releaseHandleFailed](~/docs/framework/debug-trace-profile/releasehandlefailed-mda.md)マネージ デバッグ アシスタントします。  これにより、リソースを解放しようとすると、失敗した場合を検出できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ハンドルを解放し、示されている例の一部である、<xref:System.Runtime.InteropServices.SafeHandle>クラスです。  
+  
+ [!code-csharp[SafeHandle#3](~/samples/snippets/csharp/VS_Snippets_CLR/SafeHandle/CS/program.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHandle">
+      <MemberSignature Language="C#" Value="protected void SetHandle (IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void SetHandle(native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.SetHandle(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="handle">使用する既存のハンドル。</param>
+        <summary>ハンドルを指定した既存のハンドルに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Runtime.InteropServices.SafeHandle.SetHandle%2A>メソッドは .NET Framework の COM 相互運用インフラストラクチャは、マーシャ リングをサポートしていないため (たとえば、ハンドルは、構造体で返される) 場合、既存のハンドルをサポートする必要がある場合にのみ出力、構造内のハンドル。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHandleAsInvalid">
+      <MemberSignature Language="C#" Value="public void SetHandleAsInvalid ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetHandleAsInvalid() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Handles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>今後は使用しないものとしてハンドルをマークします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid%2A>メソッド ハンドルが不要になったリソースを参照していることがわかっている場合にのみです。 これは、値を変更しない、<xref:System.Runtime.InteropServices.SafeHandle.handle>フィールド; 終了としてのみのハンドルをマークにします。 ハンドルは、値が古い可能性のある値を含めるし可能性があります。 この呼び出しの影響は、ことは行われません、リソースを解放します。  
+  
+ 同様、<xref:System.Runtime.InteropServices.SafeHandle.SetHandle%2A>メソッドを使用して<xref:System.Runtime.InteropServices.SafeHandle.SetHandleAsInvalid%2A>を既存のハンドルをサポートする必要がある場合のみです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

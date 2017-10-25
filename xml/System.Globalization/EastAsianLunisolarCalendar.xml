@@ -1,0 +1,940 @@
+<Type Name="EastAsianLunisolarCalendar" FullName="System.Globalization.EastAsianLunisolarCalendar">
+  <TypeSignature Language="C#" Value="public abstract class EastAsianLunisolarCalendar : System.Globalization.Calendar" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit EastAsianLunisolarCalendar extends System.Globalization.Calendar" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.EastAsianLunisolarCalendar" />
+  <AssemblyInfo>
+    <AssemblyName>System.Globalization.Calendars</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Globalization.Calendar</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>月、日、年、および時代 (年号)、時間を分割を太陽と月の周期に基づきます日付を持つ暦を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.EastAsianLunisolarCalendar>クラス太陽年年と旧暦月だけでなく、干支サイクル年間の (年ごとに 60 が繰り返されます) をサポートしています。 予定表に各太陽年が関連付けられている (を参照してください<xref:System.Globalization.EastAsianLunisolarCalendar.GetSexagenaryYear%2A>)、宇宙空間に関するステム (を参照してください<xref:System.Globalization.EastAsianLunisolarCalendar.GetCelestialStem%2A>)、および地上波の分岐 (を参照してください<xref:System.Globalization.EastAsianLunisolarCalendar.GetTerrestrialBranch%2A>)。  
+  
+> [!NOTE]
+>  使用方法について、<xref:System.Globalization.HebrewCalendar>クラスと、その他の .NET Framework のクラスを予定表を参照してください[カレンダーの使用](~/docs/standard/datetime/working-with-calendars.md)です。  
+  
+ 年、月、年の後に閏月を持つことができ、1 か月が閏日を持つことができます。 たとえば、<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>メソッドが、指定した日に関連付けられている月を示す正の整数を返します。 場合は、その年の 8 と 9 番目の月が閏月、<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>メソッド leap 8 番目の月を 9 と 10 の 9 番目の月の 8 番目の月の 8 が返されます。  
+  
+ 各<xref:System.Globalization.CultureInfo>予定表のセットをサポートしています。 現時点では、どの太陰太陽暦クラスから派生する<xref:System.Globalization.EastAsianLunisolarCalendar>でサポートされるカルチャのいずれかで使用される、<xref:System.Globalization.CultureInfo>クラスです。 そのため、このクラスとそこから派生したものを日本の太陰太陽暦の日付の計算にのみ使用できます。 このクラスについて説明するいくつかの"get"メソッドをサポート、<xref:System.DateTime>の太陰太陽暦が使用される用語で、<xref:System.Globalization.EastAsianLunisolarCalendar.ToDateTime%2A>太陰太陽暦データから変換する方法、<xref:System.DateTime>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddMonths">
+      <MemberSignature Language="C#" Value="public override DateTime AddMonths (DateTime time, int months);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddMonths(valuetype System.DateTime time, int32 months) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.AddMonths(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="months" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time"><see cref="T:System.DateTime" />を追加する<c>月</c>です。</param>
+        <param name="months">追加する月数です。</param>
+        <summary>指定した日付から離れた場所の指定月数をある日を計算します。</summary>
+        <returns>新しい<see cref="T:System.DateTime" />に指定された月数を追加した結果生成された、<paramref name="time" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の日の部分<xref:System.DateTime>日が結果として得られる結果の年の月の有効な曜日ではない場合に影響します。 この例では、日の部分は、結果として得られる結果の年の月の最後の有効日に変更されます。 結果の年の部分<xref:System.DateTime>が影響を受けるは、その月が指定した年を超えた場合<xref:System.DateTime>です。 この実装では、現在の時代のみをサポートします。 したがって、<xref:System.ArgumentException>結果の年が指定した時代 (年号) を超えた場合にスローされる<xref:System.DateTime>です。 結果の時刻の部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。  
+  
+ たとえば、指定した月が年 10 月 31 日まである場合、指定した日がの値と、その月の最初から 30 日、`months`パラメーターは、6、結果として得られる、年は 1 つ以上の指定した年、月、年 4 月、日は 30 日、年 4 月の末日であります。  
+  
+ 場合の値、`months`パラメーターが負の場合、結果として得られる<xref:System.DateTime>指定よりも前か<xref:System.DateTime>です。  
+  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#5)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果は、サポートされている範囲外の<see cref="T:System.DateTime" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="months" />-120000 120000 より大きいか未満です。  
+  
+ または  
+  
+ <paramref name="time" /> は <see cref="P:System.Globalization.Calendar.MinSupportedDateTime" /> 未満か、または <see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddYears">
+      <MemberSignature Language="C#" Value="public override DateTime AddYears (DateTime time, int years);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime AddYears(valuetype System.DateTime time, int32 years) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.AddYears(System.DateTime,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+        <Parameter Name="years" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="time"><see cref="T:System.DateTime" />を追加する<c>年</c>です。</param>
+        <param name="years">追加する年の数。</param>
+        <summary>指定した日付から離れた場所の指定年数をある日を計算します。</summary>
+        <returns>新しい<see cref="T:System.DateTime" />に指定年数を追加した結果生成された、<paramref name="time" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の日の部分<xref:System.DateTime>日が結果として得られる結果の年の月の有効な曜日ではない場合に影響します。 この例では、日の部分は、結果として得られる結果の年の月の最後の有効日に変更されます。 結果の月部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。 この実装では、現在の時代のみをサポートします。 したがって、<xref:System.ArgumentException>結果の年が指定した時代 (年号) を超えた場合にスローされる<xref:System.DateTime>です。 結果の時刻の部分<xref:System.DateTime>は、指定したのと同じ<xref:System.DateTime>です。  
+  
+ たとえば、年 2 月が 28 の日を除く平年の場合は 29 日。 指定した日付がうるう年に年 2 月の 29 番目日との値かどうか、`years`パラメーターが 1 の場合、結果として得られる日付は次の年 2 月 28 日になります。  
+  
+ 場合`years`は負の値、結果として得られる<xref:System.DateTime>指定よりも前か<xref:System.DateTime>です。  
+  
+ <xref:System.DateTime.Kind%2A> 、返されたプロパティ<xref:System.DateTime>常に equals を値<xref:System.DateTimeKind?displayProperty=nameWithType>です。 保持する、<xref:System.DateTime.Kind%2A>のプロパティ、`time`を呼び出してパラメーター、<xref:System.DateTime.SpecifyKind%2A?displayProperty=nameWithType>メソッドを次の例のようにします。  
+  
+ [!code-csharp[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/cs/add1.cs#8)]
+ [!code-vb[System.Globalization.Calendar.AddMethods#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.calendar.addmethods/vb/add1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">結果は、サポートされている範囲外の<see cref="T:System.DateTime" />です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="time" /> は <see cref="P:System.Globalization.Calendar.MinSupportedDateTime" /> 未満か、または <see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmType">
+      <MemberSignature Language="C#" Value="public override System.Globalization.CalendarAlgorithmType AlgorithmType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Globalization.CalendarAlgorithmType AlgorithmType" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.EastAsianLunisolarCalendar.AlgorithmType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CalendarAlgorithmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の暦の太陽暦、太陰暦、または両方の組み合わせを示す値を取得します。</summary>
+        <value>常に <see cref="F:System.Globalization.CalendarAlgorithmType.LunisolarCalendar" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCelestialStem">
+      <MemberSignature Language="C#" Value="public int GetCelestialStem (int sexagenaryYear);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetCelestialStem(int32 sexagenaryYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetCelestialStem(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sexagenaryYear" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sexagenaryYear">1 ~ 60 干支における年を表す整数。</param>
+        <summary>干支 (60 年) の指定した年の宇宙空間に関するステムを計算します。</summary>
+        <returns>1 ~ 10 の数値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sexagenaryYear" />1 より小さいか、60 よりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfMonth">
+      <MemberSignature Language="C#" Value="public override int GetDayOfMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetDayOfMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した日付の月の日を計算します。</summary>
+        <returns>指定された月の日を表す 1 ~ 31 の整数、<paramref name="time" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfWeek">
+      <MemberSignature Language="C#" Value="public override DayOfWeek GetDayOfWeek (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DayOfWeek GetDayOfWeek(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetDayOfWeek(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DayOfWeek</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した日付の曜日を計算します。</summary>
+        <returns>1 つ、<see cref="T:System.DayOfWeek" />値で指定された週の日を表す、<paramref name="time" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="time" /> は <see cref="P:System.Globalization.Calendar.MinSupportedDateTime" /> 未満か、または <see cref="P:System.Globalization.Calendar.MaxSupportedDateTime" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDayOfYear">
+      <MemberSignature Language="C#" Value="public override int GetDayOfYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDayOfYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetDayOfYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した日付の年の日を計算します。</summary>
+        <returns>整数の共通の年度 354 を介して 1 または 1 ~ で指定された年の日を表すうるう年 384、<paramref name="time" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その年の日付は、その年の最初の日付から日数として定義されます。 たとえば、<xref:System.Globalization.EastAsianLunisolarCalendar.GetDayOfYear%2A>最初の月の最初の日が 1 を返しますと<xref:System.Globalization.EastAsianLunisolarCalendar.GetDayOfYear%2A>先月の最終日は、その年の日数の合計数を返しますの値が同じから返される<xref:System.Globalization.EastAsianLunisolarCalendar.GetDaysInYear%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInMonth">
+      <MemberSignature Language="C#" Value="public override int GetDaysInMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetDaysInMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">月を表す 1 ~ 12、1 年に共通の 1 ~ 13 閏年の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した年と時代 (年号) の指定した月の日数を計算します。</summary>
+        <returns>指定した年と時代 (年号) の指定した月の日数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ その`month`パラメーターが 2 番目の月、 <xref:System.Globalization.EastAsianLunisolarCalendar.GetDaysInMonth%2A> 28 または 29、かどうかに応じて、メソッドが返されます、`year`パラメーターが閏年であります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDaysInYear">
+      <MemberSignature Language="C#" Value="public override int GetDaysInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetDaysInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetDaysInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した年と時代 (年号) の日数を計算します。</summary>
+        <returns>指定した年と時代 (年号) の日数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.EastAsianLunisolarCalendar.GetDaysInYear%2A>メソッドを返します 365 366、かどうかに応じて、`year`パラメーターが閏年であります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLeapMonth">
+      <MemberSignature Language="C#" Value="public override int GetLeapMonth (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetLeapMonth(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetLeapMonth(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した年と時代 (年号) の閏月を計算します。</summary>
+        <returns>1 ~ 13 を指定した年と時代 (年号) の閏月を示す正の整数。  
+  
+ または  
+  
+ このカレンダーは閏月をサポートしていない場合や、<paramref name="year" />と<paramref name="era" />パラメーターが閏年であるを指定しないでください。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 閏月をサポートするカレンダー、閏月は特定の月の後、または年のすべての月の後にことができます。 たとえば、<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>メソッドは、1 ~ 13 を指定した日に関連付けられている月を示す番号を返します。 場合は、その年の 8 と 9 番目の月が閏月、<xref:System.Globalization.EastAsianLunisolarCalendar.GetMonth%2A>メソッド leap 8 番目の月を 9 と 10 の 9 番目の月の 8 番目の月の 8 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonth">
+      <MemberSignature Language="C#" Value="public override int GetMonth (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonth(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetMonth(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した日付の月を返します。</summary>
+        <returns>1 ~ 13 の整数で指定された月を表す、<paramref name="time" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMonthsInYear">
+      <MemberSignature Language="C#" Value="public override int GetMonthsInYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetMonthsInYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetMonthsInYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した年と時代 (年号) の数を計算します。</summary>
+        <returns>指定した時代 (年号) の指定した年の月数です。 戻り値は、うるう年に 13 か月間または 12 か月間です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSexagenaryYear">
+      <MemberSignature Language="C#" Value="public virtual int GetSexagenaryYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetSexagenaryYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetSexagenaryYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">A<see cref="T:System.DateTime" />を読み取れません。</param>
+        <summary>指定した日付に対応する干支 (60 年) の年を計算します。</summary>
+        <returns>1 ~ 60 に対応する干支における数、<paramref name="date" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTerrestrialBranch">
+      <MemberSignature Language="C#" Value="public int GetTerrestrialBranch (int sexagenaryYear);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetTerrestrialBranch(int32 sexagenaryYear) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetTerrestrialBranch(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sexagenaryYear" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="sexagenaryYear">1 ~ 60 干支における年を表す整数。</param>
+        <summary>干支 (60 年) の指定した年の地上波の分岐を計算します。</summary>
+        <returns>1 ~ 12 の整数。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="sexagenaryYear" />1 より小さいか、60 よりも大きい値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetYear">
+      <MemberSignature Language="C#" Value="public override int GetYear (DateTime time);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetYear(valuetype System.DateTime time) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.GetYear(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="time" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="time">読み取る対象の <see cref="T:System.DateTime" />。</param>
+        <summary>指定した日付の年を返します。</summary>
+        <returns>指定した年を表す整数<see cref="T:System.DateTime" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapDay">
+      <MemberSignature Language="C#" Value="public override bool IsLeapDay (int year, int month, int day, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapDay(int32 year, int32 month, int32 day, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.IsLeapDay(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">1 ~ 13 の月を表す整数。</param>
+        <param name="day">日を表す 1 ～ 31 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した日付が閏日であるかどうかを判断します。</summary>
+        <returns>
+          指定した日が閏日である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、 <paramref name="day" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapMonth">
+      <MemberSignature Language="C#" Value="public override bool IsLeapMonth (int year, int month, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapMonth(int32 year, int32 month, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.IsLeapMonth(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">1 ~ 13 の月を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した年と時代 (年号) の指定した月が閏月かどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="month" />パラメーターは閏月、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLeapYear">
+      <MemberSignature Language="C#" Value="public override bool IsLeapYear (int year, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsLeapYear(int32 year, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.IsLeapYear(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>指定した時代 (年号) の指定した年が閏年かどうかを確認します。</summary>
+        <returns>
+          指定した年が閏年である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDateTime">
+      <MemberSignature Language="C#" Value="public override DateTime ToDateTime (int year, int month, int day, int hour, int minute, int second, int millisecond, int era);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.DateTime ToDateTime(int32 year, int32 month, int32 day, int32 hour, int32 minute, int32 second, int32 millisecond, int32 era) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+        <Parameter Name="month" Type="System.Int32" />
+        <Parameter Name="day" Type="System.Int32" />
+        <Parameter Name="hour" Type="System.Int32" />
+        <Parameter Name="minute" Type="System.Int32" />
+        <Parameter Name="second" Type="System.Int32" />
+        <Parameter Name="millisecond" Type="System.Int32" />
+        <Parameter Name="era" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">年を表す整数。</param>
+        <param name="month">1 ~ 13 の月を表す整数。</param>
+        <param name="day">日を表す 1 ～ 31 の整数。</param>
+        <param name="hour">時間を表す 0 ～ 23 の整数。</param>
+        <param name="minute">分を表す 0 ～ 59 の整数。</param>
+        <param name="second">秒を表す 0 ～ 59 の整数。</param>
+        <param name="millisecond">ミリ秒を表す 0 ～ 999 の整数。</param>
+        <param name="era">時代 (年号) を表す整数。</param>
+        <summary>返します、<see cref="T:System.DateTime" />指定した日付、時刻、および時代 (年号) に設定されています。</summary>
+        <returns>A<see cref="T:System.DateTime" />指定した日付、時刻、および時代 (年号) に設定されています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.EastAsianLunisolarCalendar.ToDateTime%2A>メソッドは、グレゴリオ暦の日付を現在の暦で日付を変換できます。 グレゴリオ暦の日付、後で使用できます、たとえば、さまざまなカレンダーの日付を比較または等価の日付を特定の暦で作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />、 <paramref name="month" />、 <paramref name="day" />、 <paramref name="hour" />、 <paramref name="minute" />、 <paramref name="second" />、 <paramref name="millisecond" />、または<paramref name="era" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToFourDigitYear">
+      <MemberSignature Language="C#" Value="public override int ToFourDigitYear (int year);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ToFourDigitYear(int32 year) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Globalization.EastAsianLunisolarCalendar.ToFourDigitYear(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="year" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="year">変換する年を表す 2 桁または 4 桁の整数。</param>
+        <summary>指定した年を 4 桁の年に変換します。</summary>
+        <returns>整数の 4 桁表記を含んでいる、<paramref name="year" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.EastAsianLunisolarCalendar.ToFourDigitYear%2A>メソッドを使用、<xref:System.Globalization.EastAsianLunisolarCalendar.TwoDigitYearMax%2A>プロパティを適切な世紀を決定します。  
+  
+ <xref:System.Globalization.EastAsianLunisolarCalendar.ToFourDigitYear%2A>2 桁または 4 桁の年のいずれかをサポートしています。 値によると 4 桁の値に変換するメソッドを 2 桁の年の値 (100 よりも小さい) を渡すと、<xref:System.Globalization.EastAsianLunisolarCalendar.TwoDigitYearMax%2A>適切な 4 桁の年を表す値です。 アプリケーションがサポートされているカレンダーの範囲内にある 4 桁の年の値が指定した場合<xref:System.Globalization.EastAsianLunisolarCalendar.ToFourDigitYear%2A>、実際の入力値を返します。 アプリケーションはサポートされているカレンダー範囲では、4 桁の値が指定した場合、または負の値が渡された場合は、メソッドは例外をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="year" />このカレンダーでサポートされる範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TwoDigitYearMax">
+      <MemberSignature Language="C#" Value="public override int TwoDigitYearMax { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TwoDigitYearMax" />
+      <MemberSignature Language="DocId" Value="P:System.Globalization.EastAsianLunisolarCalendar.TwoDigitYearMax" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Globalization.Calendars</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年を取得または設定します。</summary>
+        <value>年の 2 桁表記で表すことができる 100 年間の範囲内で最後に当たる年。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、2 桁の年を 4 桁の年に適切に変換を使用します。 たとえば、構成のグレゴリオ暦カレンダーにおける 2029年にこのプロパティが設定されている場合、100 年範囲は 1930年 2029 です。 そのため、30 の 2 桁の値は 2029 29 の 2 桁の値を解釈中に、1930、として解釈されます。  
+  
+ このプロパティの初期値は、コントロール パネルの地域と言語のオプション部分の設定から取得されます。 ただし、その情報を変更できますの有効期間中に、<xref:System.AppDomain>です。 <xref:System.Globalization.EastAsianLunisolarCalendar>クラスには、システム設定の変更は検出されません自動的にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在<see cref="T:System.Globalization.EastAsianLunisolarCalendar" />は読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">セット操作の値は、99 より小さいか、現在の暦でサポートされている年の最大値より大きい値です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

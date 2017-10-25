@@ -1,0 +1,514 @@
+<Type Name="DesignerTransaction" FullName="System.ComponentModel.Design.DesignerTransaction">
+  <TypeSignature Language="C#" Value="public abstract class DesignerTransaction : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerTransaction extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerTransaction" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>パフォーマンスを向上し、ほとんどの変更内容を元に戻せるようにするために、デザイン時の一連の操作をグループ化する手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションは、ことのできる完了した後で操作を追跡できます。 前の変更の値に変更された各プロパティを設定して各変更を破棄しようとして自動的にトランザクションをキャンセルして、トランザクション中に行われた変更を取り消すことができます。 トランザクションのトランザクションが完了するまで画面への更新を遅らせることで、一連の操作中にパフォーマンスを改善できます。  
+  
+ 一部のコンポーネントを聞くことにより、トランザクションが完了するまで、その処理を遅延トランザクションが実行中のときに、<xref:System.ComponentModel.Design.IDesignerHost.TransactionOpening>と<xref:System.ComponentModel.Design.IDesignerHost.TransactionClosed>イベント。 [プロパティ] ウィンドウは更新されませんの表示が、トランザクションが閉じられるまで、トランザクションが開いた後。  
+  
+ 可逆または複数の操作のトランザクションを使用するには、作成、デザイナーを持つ、<xref:System.ComponentModel.Design.DesignerTransaction>の各操作または一連の操作を元に戻すことがあります。 元に戻すイベントのシーケンスが正常に完了するを妨げる可能性があるトランザクションの外部アクションを実行しないように注意します。  
+  
+ 新しいを取得する<xref:System.ComponentModel.Design.DesignerTransaction>を呼び出して、<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A>のメソッド、<xref:System.ComponentModel.Design.IDesignerHost>です。 各を入手してください<xref:System.ComponentModel.Design.DesignerTransaction>アクティブから<xref:System.ComponentModel.Design.IDesignerHost>新たに作成するのではなく、処理メカニズムでは、デザイナーのトランザクションを正しく統合するために<xref:System.ComponentModel.Design.DesignerTransaction>直接です。  
+  
+ トランザクション内でアクションを実行するには、まずにトランザクションを作成する必要があります。 呼び出す必要があります、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanging%2A>メソッドのそれぞれの変更または変更のセットが発生すると、前に、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanged%2A>メソッド各変更または一連の変更した後に発生します。 最後に完了しを呼び出して、トランザクションを終了、<xref:System.ComponentModel.Design.DesignerTransaction.Commit%2A>メソッドです。  
+  
+> [!NOTE]
+>  プロパティの値に変更を加える際に使用、<xref:System.ComponentModel.PropertyDescriptor.SetValue%2A>のメソッド、<xref:System.ComponentModel.PropertyDescriptor>のコンポーネントの変更メソッドを呼び出しますが、<xref:System.ComponentModel.Design.IComponentChangeService>を作成し、<xref:System.ComponentModel.Design.DesignerTransaction>自動的に変更を表すです。  
+  
+ トランザクションを実行するには、次の手順を実行します。  
+  
+1.  呼び出す<xref:System.ComponentModel.Design.IDesignerHost.CreateTransaction%2A>を取得する、<xref:System.ComponentModel.Design.DesignerTransaction>を使用して、トランザクションを制御できます。  
+  
+2.  内で、`try`で追跡するアクションごとに、ブロック、 <xref:System.ComponentModel.Design.DesignerTransaction>、呼び出し、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanging%2A>メソッドを呼び出すし、変更または変更、<xref:System.ComponentModel.Design.IComponentChangeService.OnComponentChanged%2A>変更または変更が行われたことを通知するメソッド。  
+  
+3.  トランザクションを完了するには、呼び出す<xref:System.ComponentModel.Design.DesignerTransaction.Commit%2A>内から、`finally`ブロックします。  
+  
+ C# の場合は、使用することができます、`using`ステートメントではなく、`try/finally`ブロックする場合に、次の例のようにします。  
+  
+```  
+using (host.CreateTransaction() {  
+// Insert your code here.  
+}  
+```  
+  
+ [キャンセル] を前に、コミットされたトランザクションをロールバックしようとしています。 は、呼び出し、<xref:System.ComponentModel.Design.DesignerTransaction.Cancel%2A>メソッドです。 ときに、<xref:System.ComponentModel.Design.DesignerTransaction.Cancel%2A>メソッドが呼び出され、アクションがによって追跡、<xref:System.ComponentModel.Design.DesignerTransaction>が逆に、変更をロールバックしようとします。 以前のトランザクションの一部として発生したアクションを元に戻すには、開発環境で提供元に戻すコマンドを使用する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例のプログラムを作成する方法を示しています、<xref:System.ComponentModel.Design.DesignerTransaction>デザイナーから。 このサンプルを実行するには、ソース コードをコンパイルしてクラス ライブラリです。 System.Design アセンブリへの参照を追加する必要があります。 新しいプロジェクトにコンパイル済み DLL への参照を追加してライブラリでは、コンポーネントを追加、**ツールボックス**です。  
+  
+ Visual Studio では、この機能の広範なサポートがあります。  
+  
+ 参照してください[チュートリアル: カスタム コンポーネントを使用して、ツールボックスが自動的に入力](http://msdn.microsoft.com/library/fw694kde\(v=vs.110\).aspx)です。  
+  
+ デザイナーは、デザイナーのトランザクションのイベントに関する通知を必要に応じて表示できます。 インスタンスを追加する場合、`DTComponent`フォームをデザイン モードでは、メッセージ ボックスが表示されますかを確認するデザイナー トランザクションのイベント通知を受信するかどうか。 インスタンスを右クリックしたときに表示されるショートカット メニューを使用してこれらの通知を切り替えることが、`DTComponent`です。 [プロパティ] ウィンドウを使用して値を変更すると、トランザクションが作成されます。 クリックして、トランザクションを実行するデザイナーを用意することも**トランザクション例を実行**コンポーネントのショートカット メニューの します。  
+  
+ [!code-cpp[DesignerTransaction Sample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/DesignerTransaction Sample/CPP/source.cpp#1)]
+ [!code-csharp[DesignerTransaction Sample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/DesignerTransaction Sample/CS/source.cs#1)]
+ [!code-vb[DesignerTransaction Sample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/DesignerTransaction Sample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>説明を指定せずに <see cref="T:System.ComponentModel.Design.DesignerTransaction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerTransaction (string description);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="description">このトランザクションの説明。</param>
+        <summary>トランザクションの説明を指定して、<see cref="T:System.ComponentModel.Design.DesignerTransaction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、指定された説明を使用してトランザクションを初期化します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションをキャンセルし、そのトランザクションのイベントによって行われた変更をすべて元に戻そうとします。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Canceled">
+      <MemberSignature Language="C#" Value="public bool Canceled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Canceled" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerTransaction.Canceled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションがキャンセルされたかどうかを示す値を取得します。</summary>
+        <value>
+          トランザクションがキャンセルされた場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのトランザクションが取り消されると、トランザクション処理機構は、トランザクションでこれまでに行われた変更をロールバックしようとします。 これが成功したかどうかは、干渉して関連するコードの状態のいずれかの他の操作かどうかと、一連の必要な操作を完了できなかったかどうか、各操作の種類などの要因によって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのトランザクションがコミットされると、トランザクションが完了したと見なす詳細の変更は追跡されません。  
+  
+ トランザクションがコミットされた後さらにこのメソッドの呼び出しを何もありません。 常に、トランザクションが正常に閉じることを確認するトランザクションの作成後にこのメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Committed">
+      <MemberSignature Language="C#" Value="public bool Committed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Committed" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerTransaction.Committed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションがコミットされたかどうかを示す値を取得します。</summary>
+        <value>
+          トランザクションがコミットされた場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのトランザクションがコミットされると、トランザクションが完了したと見なす詳細の変更は追跡されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerTransaction.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションの説明を取得します。</summary>
+        <value>トランザクションの説明。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションは、操作の性質を特定するに役に立つ説明を持つことができます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerTransaction" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ `disposing` パラメーターが `true` の場合、このメソッドは、この <xref:System.ComponentModel.Design.DesignerTransaction> が参照しているすべてのマネージ オブジェクトによって保持されているリソースをすべて解放します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see langword="Dispose(Boolean)" /> をオーバーライドする場合は、以前に <see langword="Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~DesignerTransaction ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトと関連付けられたリソースを解放します。 このトランザクションがまだコミットされていなかった場合、このオーバーライドがこのトランザクションをコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.Finalize%2A?displayProperty=nameWithType>を呼び出してリソースをクリーンアップし、`Dispose(false)`です。 `Dispose(Boolean)` をオーバーライドしてクリーンアップをカスタマイズします。  
+  
+ アプリケーション コードではこのメソッドを呼び出す必要がありますいません。オブジェクトの`Finalize`への呼び出しによって、ガベージ コレクターによって終了処理が無効になっていない限り、ガベージ コレクション中にメソッドが自動的に起動、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 詳細については、次を参照してください。 [Finalize メソッドおよびデストラクター](http://msdn.microsoft.com/en-us/fd376774-1643-499b-869e-9546a3aeea70)、[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)、および[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCancel">
+      <MemberSignature Language="C#" Value="protected abstract void OnCancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.OnCancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="Cancel" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのトランザクションが取り消されると、トランザクション処理機構は、トランザクションでこれまでに行われた変更をロールバックしようとします。 これが成功したかどうかは、干渉して関連するコードの状態のいずれかの他の操作かどうかと、一連の必要な操作を完了できなかったかどうか、各操作の種類などの要因によって異なります。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+        <block subset="none" type="overrides">
+          <para>派生クラスで実装された場合、このメソッドは、トランザクションをキャンセルします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCommit">
+      <MemberSignature Language="C#" Value="protected abstract void OnCommit ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCommit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.OnCommit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>トランザクションの実際のコミット処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのトランザクションがコミットされると、トランザクションが完了したと見なす詳細の変更は追跡されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+        <block subset="none" type="overrides">
+          <para>派生クラスで実装された場合、このメソッドは、トランザクションの処理に関連付けられている作業を実行します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerTransaction.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ComponentModel.Design.DesignerTransaction" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションが破棄されると、それがコミットされます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

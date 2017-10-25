@@ -1,0 +1,233 @@
+<Type Name="WebThreadInformation" FullName="System.Web.Management.WebThreadInformation">
+  <TypeSignature Language="C#" Value="public sealed class WebThreadInformation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WebThreadInformation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebThreadInformation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET プロセス内のスレッドの状態に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ インスタンス、<xref:System.Web.Management.WebThreadInformation>クラスには、いずれかを使用して取得される情報が含まれて、<xref:System.Web.Management.WebErrorEvent>型または<xref:System.Web.Management.WebRequestErrorEvent>型です。  
+  
+ アプリケーションでは、この型によって提供される保護された情報にアクセスする適切なアクセス許可が必要です。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 カスタム イベント クラスの作成の例は、このトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、次の 2 つの部分です。 1 つは ASP.NET を使用するカスタム イベントを使用できるようにする構成ファイルの抜粋、<xref:System.Web.Management.WebThreadInformation>型です。 2 つ目を使用するカスタム イベントを実装する方法を示します、<xref:System.Web.Management.WebThreadInformation>型です。  
+  
+ カスタム イベントは、適切な時点に置き換えられます対応するシステム正常性イベントを発生させるとを確認します。  
+  
+```  
+<healthMonitoring  
+    heartBeatInterval="0" enabled="true">  
+  
+  <profiles>  
+    <add name="Custom"   
+      minInstances="1"   
+      maxLimit="Infinite"   
+      minInterval="00:00:00" />  
+  </profiles>  
+  
+  <eventMappings>  
+  
+    <add   
+      name="SampleWebThreadInformation"   
+type="SamplesAspNet.SampleWebThreadInformation,webthreadinformation, Version=1.0.1782.29648, Culture=neutral, PublicKeyToken=b3283a2de7dd3f27, processorArchitecture=MSIL" />  
+  
+  </eventMappings>  
+  
+  <rules>  
+  
+    <add name="Custom Web Thread Info Event"   
+      eventName="SampleWebThreadInformation"   
+      provider="EventLogProvider"  
+      profile="Custom" />  
+  
+  </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#1)]
+ [!code-vb[System.Web.Management.WebThreadInformation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FormatToString">
+      <MemberSignature Language="C#" Value="public void FormatToString (System.Web.Management.WebEventFormatter formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FormatToString(class System.Web.Management.WebEventFormatter formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebThreadInformation.FormatToString(System.Web.Management.WebEventFormatter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatter" Type="System.Web.Management.WebEventFormatter" />
+      </Parameters>
+      <Docs>
+        <param name="formatter"><see cref="T:System.Web.Management.WebEventFormatter" /> Web 状態のイベント情報を書式設定に使用されるタブとインデントの設定を格納しています。</param>
+        <summary>スレッドに関連する情報を書式設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebThreadInformation.FormatToString%2A>メソッドでは、同一の形式を提供イベントについては、イベント データをログに記録され後で、ユーザーに提示する必要がある場合に便利です。 プロバイダーは、のいずれかを呼び出したときに内部的に呼び出されます、<xref:System.Web.Management.WebBaseEvent.ToString%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタム情報を書式設定する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#8)]
+ [!code-vb[System.Web.Management.WebThreadInformation#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImpersonating">
+      <MemberSignature Language="C#" Value="public bool IsImpersonating { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImpersonating" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebThreadInformation.IsImpersonating" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドの権限借用モードを取得します。</summary>
+        <value>
+          <see langword="true" />スレッドは、権限借用モードで実行されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、スレッドの権限借用モードを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#4)]
+ [!code-vb[System.Web.Management.WebThreadInformation#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StackTrace">
+      <MemberSignature Language="C#" Value="public string StackTrace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StackTrace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebThreadInformation.StackTrace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドで管理されたスタック トレースを取得します。</summary>
+        <value>スレッドで管理されたスタック トレース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、スレッドのスタック トレースを取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#5)]
+ [!code-vb[System.Web.Management.WebThreadInformation#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadAccountName">
+      <MemberSignature Language="C#" Value="public string ThreadAccountName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ThreadAccountName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebThreadInformation.ThreadAccountName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッド アカウント名を取得します。</summary>
+        <value>スレッド アカウント名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるアカウントは、スレッドは、権限借用モードで実行されている場合は、任意である可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、スレッド アカウント名を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#6)]
+ [!code-vb[System.Web.Management.WebThreadInformation#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadID">
+      <MemberSignature Language="C#" Value="public int ThreadID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ThreadID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebThreadInformation.ThreadID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドの識別子を取得します。</summary>
+        <value>現在のスレッドの識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ スレッドがデバッグのため、OS スレッドへ直接マッピングがあるない場合でも問題があるスレッドを特定すると便利ですが常にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、スレッド識別子を取得する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebThreadInformation#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/CS/webthreadinformation.cs#7)]
+ [!code-vb[System.Web.Management.WebThreadInformation#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebThreadInformation/VB/webthreadinformation.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

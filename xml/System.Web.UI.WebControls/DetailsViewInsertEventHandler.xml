@@ -1,0 +1,47 @@
+<Type Name="DetailsViewInsertEventHandler" FullName="System.Web.UI.WebControls.DetailsViewInsertEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DetailsViewInsertEventHandler(object sender, DetailsViewInsertEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DetailsViewInsertEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewInsertEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.DetailsViewInsertEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.DetailsViewInsertEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.DetailsView.ItemInserting" />のイベント、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>制御を発生させます、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>挿入ボタンをクリックしたときにイベント (ボタンがその`CommandName`プロパティを"Insert"に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、レコードを挿入します。 これにより、HTML エンコード方式などのカスタムのルーチンを実行するイベント ハンドラーを提供するこのイベントが発生するたびに、データ ソースに挿入する前にレコードの値。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewInsertEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.DetailsViewInsertEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>のイベント、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[DetailsViewInsertEventHandlerInline#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewInsertEventHandlerInline/CS/detailsviewinserteventhandlerinlinecs.aspx#1)]
+ [!code-aspx-vb[DetailsViewInsertEventHandlerInline#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewInsertEventHandlerInline/VB/detailsviewinserteventhandlerinlinevb.aspx#1)]  
+  
+ 次のコード例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.DetailsViewInsertEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>のイベント、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[DetailsViewInsertEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewInsertEventHandler/CS/detailsviewinserteventhandlercs.aspx#1)]
+ [!code-aspx-vb[DetailsViewInsertEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewInsertEventHandler/VB/detailsviewinserteventhandlervb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

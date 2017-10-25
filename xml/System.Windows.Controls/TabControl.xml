@@ -1,0 +1,822 @@
+<Type Name="TabControl" FullName="System.Windows.Controls.TabControl">
+  <TypeSignature Language="C#" Value="public class TabControl : System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi TabControl extends System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.TabControl" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.Selector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(System.Windows.Controls.TabItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_SelectedContentHost", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>画面上の同じ領域を共有する複数の項目を含むコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TabControl>は大量のデータを公開するアプリケーションを許可するときに画面領域の使用量を最小限に抑えるために便利です。 A<xref:System.Windows.Controls.TabControl>複数から成る<xref:System.Windows.Controls.TabItem>画面領域の同じを共有するオブジェクト。 1 つだけ<xref:System.Windows.Controls.TabItem>で、<xref:System.Windows.Controls.TabControl>は、一度に表示します。  ユーザーがのタブを選択すると、 <xref:System.Windows.Controls.TabItem>、その内容<xref:System.Windows.Controls.TabItem>見えるようになりますとその他のコンテンツ<xref:System.Windows.Controls.TabItem>オブジェクトが非表示にします。  
+  
+ <xref:System.Windows.Controls.TabControl><xref:System.Windows.Controls.ItemsControl>、つまり、任意の型 (文字列、画像、またはパネル) などのオブジェクトのコレクションを含めることができます。 詳細については、<xref:System.Windows.Controls.ItemsControl> クラスを参照してください。  
+  
+## <a name="customizing-the-tabcontrol-control"></a>TabControl コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.TabControl>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.TabControl>を参照してください[TabControl スタイルとテンプレート](~/docs/framework/wpf/controls/tabcontrol-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.TabControl>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.TabControl>し、バインド、 <xref:System.Windows.Controls.TextBlock> 、2 番目の<xref:System.Windows.Controls.TabItem>を<xref:System.Windows.Controls.TextBox>、最初の<xref:System.Windows.Controls.TabItem>します。  
+  
+ [!code-xaml[ControlContentOverviewSnippets#16](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlContentOverviewSnippets/CSharp/Window1.xaml#16)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TabControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Controls.TabControl" />。 クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStringFormat">
+      <MemberSignature Language="C#" Value="public string ContentStringFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.ContentStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内容を書式設定する方法を指定する複合文字列を取得、<see cref="T:System.Windows.Controls.TabItem" />オブジェクトを文字列として表示されるかどうか。</summary>
+        <value>内容を書式設定する方法を指定する複合文字列、<see cref="T:System.Windows.Controls.TabItem" />オブジェクトを文字列として表示されるかどうか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TabControl.ContentStringFormat%2A>定義済み、複合、またはカスタムの文字列形式にすることができます。 文字列形式の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。 設定した場合、<xref:System.Windows.Controls.TabControl.ContentTemplate%2A>または<xref:System.Windows.Controls.TabControl.ContentTemplateSelector%2A>の<xref:System.Windows.Controls.TabControl>、<xref:System.Windows.Controls.TabControl.ContentStringFormat%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次の例ではバインド、<xref:System.Windows.Controls.TabControl>のコレクションに`Student`オブジェクト。  `Student`クラスには、`Name`プロパティ、コレクションの`Course`オブジェクト、および実装する、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>いずれかを返すメソッドを`Name`の受講者またはスチューデントのコースを一覧表示する文字列。  この例では<xref:System.Windows.Controls.HeaderedContentControl.HeaderStringFormat%2A?displayProperty=nameWithType>に受講者の名前を格納する、<xref:System.Windows.Controls.HeaderedContentControl.Header%2A>それぞれの<xref:System.Windows.Controls.TabItem>(から継承される<xref:System.Windows.Controls.HeaderedContentControl>)、および<xref:System.Windows.Controls.TabControl.ContentStringFormat%2A>コンテンツ内の各受講者コース一覧を表示する、<xref:System.Windows.Controls.TabItem>です。  
+  
+ [!code-xaml[ContentStringSnippets#TabControl](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml#tabcontrol)]  
+  
+ 次の例を実装して、<xref:System.IFormattable.ToString%2A?displayProperty=nameWithType>いずれかを返すメソッドを`Name`の受講者またはスチューデントのコースを一覧表示する文字列。  
+  
+ [!code-csharp[ContentStringSnippets#TabControlToString](~/samples/snippets/csharp/VS_Snippets_Wpf/ContentStringSnippets/CSharp/Window1.xaml.cs#tabcontroltostring)]
+ [!code-vb[ContentStringSnippets#TabControlToString](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContentStringSnippets/visualbasic/window1.xaml.vb#tabcontroltostring)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.ContentStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.ContentStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate ContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate ContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.ContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.DataTemplate" />いずれかに適用する<see cref="T:System.Windows.Controls.TabItem" />を持たない、<see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" />または<see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" />プロパティが定義されています。</summary>
+        <value><see cref="T:System.Windows.DataTemplate" />いずれかに適用する<see cref="T:System.Windows.Controls.TabItem" />を持たない、<see cref="P:System.Windows.Controls.ContentControl.ContentTemplate" />または<see cref="P:System.Windows.Controls.ContentControl.ContentTemplateSelector" />プロパティが定義されています。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_ContentTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ContentTemplate="{ResourceExtension TemplateResourceKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_ContentTemplate"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+<a name="xamlValues_ContentTemplate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *TemplateResourceKey*  
+ 要求されているテンプレートを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+> [!NOTE]
+>  プロパティ要素構文は、技術的に可能ですが、推奨されません。 参照してください[インライン スタイルとテンプレート](~/docs/framework/wpf/advanced/inline-styles-and-templates.md)です。  
+  
+<a name="dependencyPropertyInfo_ContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.ContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、2 つ作成されます<xref:System.Windows.DataTemplate>オブジェクト。  <xref:System.Windows.DataTemplate>と呼ばれる`contentTemplate`に割り当てられている、<xref:System.Windows.Controls.TabControl.ContentTemplate%2A>の<xref:System.Windows.Controls.TabControl>と<xref:System.Windows.DataTemplate>と呼ばれる`tabItemTemplate`に割り当てられている、 <xref:System.Windows.Controls.ContentControl.ContentTemplate%2A> 、2 つ目の<xref:System.Windows.Controls.TabItem>します。  すべて<xref:System.Windows.Controls.TabItem>オブジェクトで定義されている白い四角形に含める`contentTemplate`、もう 1 つを除く<xref:System.Windows.Controls.TabItem>、灰色の長方形で定義されています`tabItemTemplate`です。  
+  
+ [!code-xaml[TabControlContentTemplate_snip#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplate_snip/CS/page1.xaml#1)]
+ [!code-xaml[TabControlContentTemplate_snip#2](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplate_snip/CS/page1.xaml#2)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.ContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.ContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector ContentTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector ContentTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.ContentTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.DataTemplateSelector" />コントロールの内容を表示するために使用するテンプレートを選択するためのカスタム ロジックを提供します。</summary>
+        <value><see cref="P:System.Windows.Controls.TabControl.ContentTemplateSelector" /> 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、作成、 <xref:System.Windows.Controls.DataTemplateSelector> 1 つ以上ある場合<xref:System.Windows.DataTemplate>オブジェクトの同じ型を選択する、独自のロジックを指定する、<xref:System.Windows.DataTemplate>各データ オブジェクトのプロパティに基づいて適用します。 さまざまな種類のオブジェクトがあれば、設定することできますに注意してください、<xref:System.Windows.DataTemplate.DataType%2A>プロパティを<xref:System.Windows.DataTemplate>です。 実行するかどうかは、作成する必要はありません、<xref:System.Windows.Controls.DataTemplateSelector>です。 さらに、さまざまなプロパティを持つ同じ型のオブジェクトがある場合は、することができますも検討を使用して、<xref:System.Windows.DataTrigger>またはデータ コンバーター。 詳しくは「 [データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)」をご覧ください。  
+  
+ テンプレート セレクターを作成するから継承するクラスを作成<xref:System.Windows.Controls.DataTemplateSelector>をオーバーライドし、<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>メソッドです。 クラスを定義した後は、要素のテンプレート セレクター プロパティに、クラスのインスタンスを割り当てることができます。  
+  
+ 両方の<xref:System.Windows.Controls.TabControl.ContentTemplateSelector%2A>と<xref:System.Windows.Controls.TabControl.ContentTemplate%2A>プロパティを設定し、このプロパティは無視されます。  
+  
+<a name="xamlAttributeUsage_ContentTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object ContentTemplateSelector="{ResourceExtension DataTemplateSelectorClassKey}"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_ContentTemplateSelector"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.ContentTemplateSelector>  
+    <MyDataTemplateSelectorImplementation .../>  
+  </object.ContentTemplateSelector>  
+</object>  
+```  
+  
+<a name="xamlValues_ContentTemplateSelector"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ResourceExtension*  
+ 次のいずれかの: `StaticResource`、または`DynamicResource`です。 参照してください[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)です。  
+  
+ *DataTemplateSelectorClassKey*  
+ 要求されているセレクターの実装を識別するキー。 このキーは、実際に実装する派生クラス<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>をオーバーライドします。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。 インスタンスを追加することができますもプログラムによって、<xref:System.Windows.Controls.DataTemplateSelector>リソース ディクショナリへのリソースとしてのクラスです。  
+  
+ *MyDataTemplateSelectorImplementation*  
+ 派生したクラス<xref:System.Windows.Controls.DataTemplateSelector>と上書き<xref:System.Windows.Controls.DataTemplateSelector.SelectTemplate%2A>です。 カスタム クラスをマップする方法については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+<a name="dependencyPropertyInfo_ContentTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.ContentTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.TabControl.ContentTemplateSelector%2A>の内容を表示するプロパティを<xref:System.Windows.Controls.TabItem>選択した個人の出身に応じて異なる方法で、します。  
+  
+ [!code-xaml[TabControlContentTemplateSelector#1](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplateSelector/CSharp/Window1.xaml#1)]  
+[!code-xaml[TabControlContentTemplateSelector#2](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplateSelector/CSharp/Window1.xaml#2)]  
+  
+ [!code-csharp[TabControlContentTemplateSelector#3](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplateSelector/CSharp/Window1.xaml.cs#3)]
+ [!code-vb[TabControlContentTemplateSelector#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TabControlContentTemplateSelector/VisualBasic/Window1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContentTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContentTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.ContentTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.ContentTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成または指定した項目の表示に使用する要素を識別します。</summary>
+        <returns>指定した項目を表示するために使用する要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected override bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">指定した項目。</param>
+        <summary>かどうかを指定した項目が (または対象である) 独自<see langword="ItemContainer" />です。</summary>
+        <returns>返します<see langword="true" />項目が独自の場合<see langword="ItemContainer" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ときに呼び出されます<see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />と呼びます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、更新、 <xref:System.Windows.Controls.TabControl.SelectedContent%2A>、 <xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>、および<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティが選択されているによって使用されるオブジェクトに<xref:System.Windows.Controls.TabItem>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>適切な提供<see cref="T:System.Windows.Automation.Peers.TabControlAutomationPeer" />の一部として、このコントロールの実装、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]オートメーション インフラストラクチャです。</summary>
+        <returns>型固有の <see cref="T:System.Windows.Automation.Peers.AutomationPeer" /> 実装。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInitialized">
+      <MemberSignature Language="C#" Value="protected override void OnInitialized (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInitialized(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnInitialized(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="E:System.Windows.FrameworkElement.Initialized" /> イベントのデータを提供します。</param>
+        <summary>ときに呼び出されます<see cref="P:System.Windows.FrameworkElement.IsInitialized" />に設定されている**true**です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで発生し、<xref:System.Windows.FrameworkElement.IsInitialized%2A>を呼び出してイベント<xref:System.Windows.UIElement.RaiseEvent%2A>です。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.TabControl.OnInitialized(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.TabControl.OnInitialized(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Controls.ItemContainerGenerator.ItemsChanged" />イベント。</param>
+        <summary>アイテムの変更時に現在の選択範囲を更新するには、呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Input.KeyEventArgs" />です。</param>
+        <summary>クラス処理を提供、<see cref="E:System.Windows.ContentElement.KeyDown" />キーを押したときに発生するイベントをルーティングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装を示します、<xref:System.Windows.ContentElement.KeyDown>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`間を移動するには、ctrl キーを押しながら TAB、CTRL + SHIFT + TAB、自宅、または END キーが押されたとき<xref:System.Windows.Controls.TabItem>オブジェクト。 それ以外の場合、この実装には、処理済みの状態は変わりません (、<xref:System.Windows.RoutedEventArgs.Handled%2A>プロパティ) の<xref:System.Windows.ContentElement.KeyDown>イベント データ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合は<see cref="M:System.Windows.Controls.TabControl.OnKeyDown(System.Windows.Input.KeyEventArgs)" />、常の基本実装を呼び出す、<see cref="M:System.Windows.Controls.TabControl.OnKeyDown(System.Windows.Input.KeyEventArgs)" />実装します。 基底の実装の呼び出しに失敗すると、基本クラスが、最終的なクラスの実行時の動作を変更する可能性があります、クラスのハンドラーでイベントを処理できなくなります。 要件に応じて、特別な処理の前後の基本実装を呼び出すことができます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectionChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectionChanged (System.Windows.Controls.SelectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectionChanged(class System.Windows.Controls.SelectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.TabControl.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.SelectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">データを提供<see cref="T:System.Windows.Controls.SelectionChangedEventArgs" />です。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.Primitives.Selector.SelectionChanged" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TabControl>更新プログラム、 <xref:System.Windows.Controls.TabControl.SelectedContent%2A>、 <xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>、および<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティが選択されているによって使用されるオブジェクトに<xref:System.Windows.Controls.TabItem>です。  
+  
+ コントロールで発生し、<xref:System.Windows.Controls.Primitives.Selector.SelectionChanged>を呼び出してイベント<xref:System.Windows.UIElement.RaiseEvent%2A>です。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.TabControl.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.TabControl.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContent">
+      <MemberSignature Language="C#" Value="public object SelectedContent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectedContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.SelectedContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されているのコンテンツを取得<see cref="T:System.Windows.Controls.TabItem" />です。</summary>
+        <value>現在選択されているコンテンツ<see cref="T:System.Windows.Controls.TabItem" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが更新される参照を<xref:System.Windows.Controls.ContentControl.Content%2A>のアクティブな<xref:System.Windows.Controls.TabItem>タブの選択が変更されたとき。  
+  
+ <xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>を使用して、<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>バインドするプロパティ、<xref:System.Windows.Controls.ContentPresenter.Content%2A?displayProperty=nameWithType>プロパティをこのプロパティにします。 新規に作成する場合<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>、バインドを必ず、<xref:System.Windows.Controls.ContentPresenter.Content%2A?displayProperty=nameWithType>プロパティを設定してこのプロパティを<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>プロパティ"SelectedContent"をまたはを使用して[TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+<a name="xamlAttributeUsage_SelectedContent"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="{TemplateBinding SelectedContent}"/>  
+```  
+  
+<a name="dependencyPropertyInfo_SelectedContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.SelectedContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.TabControl.SelectedContent%2A>を取得するプロパティ、`Person`で現在選択されている<xref:System.Windows.Controls.TabItem>です。  
+  
+ [!code-csharp[TabControlContentTemplateSelector#4](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplateSelector/CSharp/Window1.xaml.cs#4)]
+ [!code-vb[TabControlContentTemplateSelector#4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TabControlContentTemplateSelector/VisualBasic/Window1.xaml.vb#4)]  
+  
+ 次の例を作成、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>です。 設定、 <xref:System.Windows.Controls.ContentPresenter.ContentSource%2A> "SelectedContent"をプロパティにエイリアスを作成する、 <xref:System.Windows.Controls.TabControl.SelectedContent%2A>、 <xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>、および<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tabcontrol.xaml#13)]  
+  
+ 次の例ではバインド、<xref:System.Windows.Controls.TabControl.SelectedContent%2A>プロパティを<xref:System.Windows.Controls.ContentPresenter.Content%2A?displayProperty=nameWithType>プロパティを使用して、 [TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+ [!code-xaml[TabControlContentTemplate_snip#TabControlContentPresenter](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplate_snip/CS/myapp.xaml#tabcontrolcontentpresenter)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.SelectedContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.SelectedContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentStringFormat">
+      <MemberSignature Language="C#" Value="public string SelectedContentStringFormat { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedContentStringFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.SelectedContentStringFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在選択されているの内容を書式設定する方法を指定する複合文字列を取得<see cref="T:System.Windows.Controls.TabItem" />を文字列として表示されている場合。</summary>
+        <value>現在選択されているの内容を書式設定する方法を指定する複合文字列<see cref="T:System.Windows.Controls.TabItem" />を文字列として表示されている場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentStringFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedContentStringFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedContentStringFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.SelectedContentStringFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.SelectedContentStringFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate SelectedContentTemplate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate SelectedContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.SelectedContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.DataTemplate" />現在選択されている項目の。</summary>
+        <value><see cref="T:System.Windows.DataTemplate" />選択された項目の。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TabControl>を参照するには、このプロパティを更新、<xref:System.Windows.DataTemplate>アクティブな<xref:System.Windows.Controls.TabItem>タブの選択が変更されたとき。 設定<xref:System.Windows.Controls.TabControl.ContentTemplate%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>プロパティを<xref:System.Windows.Controls.TabItem>を指定する、<xref:System.Windows.DataTemplate>の<xref:System.Windows.Controls.TabItem>です。  
+  
+ <xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>を使用して、<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>バインドするプロパティ、<xref:System.Windows.Controls.ContentPresenter.ContentTemplate%2A?displayProperty=nameWithType>プロパティをこのプロパティにします。 新規に作成する場合<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>、バインドを必ず、<xref:System.Windows.Controls.ContentPresenter.Content%2A?displayProperty=nameWithType>プロパティを設定してこのプロパティを<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>プロパティ"SelectedContent"をまたはを使用して[TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+<a name="xamlAttributeUsage_SelectedContentTemplate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="{TemplateBinding SelectedContentTemplate}"/>  
+```  
+  
+<a name="dependencyPropertyInfo_SelectedContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.SelectedContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>です。 設定、<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A>プロパティを`"SelectedContent"`にエイリアスを作成、 <xref:System.Windows.Controls.TabControl.SelectedContent%2A>、 <xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>、および<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tabcontrol.xaml#13)]  
+  
+ 次の例ではバインド、<xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>プロパティを<xref:System.Windows.Controls.ContentPresenter.ContentTemplate%2A?displayProperty=nameWithType>プロパティを使用して、 [TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+ [!code-xaml[TabControlContentTemplate_snip#TabControlContentPresenter](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplate_snip/CS/myapp.xaml#tabcontrolcontentpresenter)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.SelectedContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.SelectedContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector SelectedContentTemplateSelector { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector SelectedContentTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.SelectedContentTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.DataTemplateSelector" />現在選択されている項目の。</summary>
+        <value><see cref="T:System.Windows.Controls.DataTemplateSelector" />現在選択されている項目の。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.TabControl>を参照するには、このプロパティを更新、<xref:System.Windows.Controls.DataTemplateSelector>アクティブな<xref:System.Windows.Controls.TabItem>タブの選択が変更されたとき。 設定<xref:System.Windows.Controls.TabControl.ContentTemplateSelector%2A?displayProperty=nameWithType>または<xref:System.Windows.Controls.ContentControl.ContentTemplateSelector%2A>プロパティを<xref:System.Windows.Controls.TabItem>を指定する、<xref:System.Windows.Controls.DataTemplateSelector>の<xref:System.Windows.Controls.TabItem>です。  
+  
+ <xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>を使用して、<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>バインドするプロパティ、<xref:System.Windows.Controls.ContentPresenter.ContentTemplateSelector%2A?displayProperty=nameWithType>プロパティをこのプロパティにします。 新規に作成する場合<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>、バインドを必ず、<xref:System.Windows.Controls.ContentPresenter.Content%2A?displayProperty=nameWithType>プロパティを設定してこのプロパティを<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A?displayProperty=nameWithType>プロパティ"SelectedContent"をまたはを使用して、 [TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+<a name="xamlAttributeUsage_SelectedContentTemplateSelector"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="{TemplateBinding SelectedContentTemplateSelector}"/>  
+```  
+  
+<a name="dependencyPropertyInfo_SelectedContentTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.TabControl>です。 設定、<xref:System.Windows.Controls.ContentPresenter.ContentSource%2A>プロパティを`"SelectedContent"`にエイリアスを作成、 <xref:System.Windows.Controls.TabControl.SelectedContent%2A>、 <xref:System.Windows.Controls.TabControl.SelectedContentTemplate%2A>、および<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティです。  
+  
+ [!code-xaml[ControlTemplateExamples#13](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tabcontrol.xaml#13)]  
+  
+ 次の例ではバインド、<xref:System.Windows.Controls.TabControl.SelectedContentTemplateSelector%2A>プロパティを<xref:System.Windows.Controls.ContentPresenter.ContentTemplateSelector%2A?displayProperty=nameWithType>プロパティを使用して、 [TemplateBinding マークアップ拡張機能](~/docs/framework/wpf/advanced/templatebinding-markup-extension.md)します。  
+  
+ [!code-xaml[TabControlContentTemplate_snip#TabControlContentPresenter](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContentTemplate_snip/CS/myapp.xaml#tabcontrolcontentpresenter)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedContentTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedContentTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedContentTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.SelectedContentTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.SelectedContentTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabStripPlacement">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Dock TabStripPlacement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Dock TabStripPlacement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.TabControl.TabStripPlacement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Dock</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタブのコンテンツの基準としたタブ ヘッダーの配置を設定します。</summary>
+        <value>タブのコンテンツの基準としたタブ ヘッダーの配置です。 既定値は、<see cref="F:System.Windows.Controls.Dock.Top" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TabStripPlacement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.TabControl.TabStripPlacementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、左側にあるタブを配置するタブ コントロールを作成します。  
+  
+ [!code-xaml[TabControl#3](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControl/CSharp/Pane1.xaml#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabStripPlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TabStripPlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TabStripPlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.TabControl.TabStripPlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.TabControl.TabStripPlacement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

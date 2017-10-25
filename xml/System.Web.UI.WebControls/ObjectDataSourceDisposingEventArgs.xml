@@ -1,0 +1,106 @@
+<Type Name="ObjectDataSourceDisposingEventArgs" FullName="System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectDataSourceDisposingEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectDataSourceDisposingEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing" />のイベント、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>クラスが使用されて、<xref:System.Web.UI.WebControls.ObjectDataSourceView.OnObjectDisposing%2A>を使用しているデータ操作の後にビジネス オブジェクトのインスタンスへのアクセスを提供するメソッドを<xref:System.Web.UI.WebControls.ObjectDataSource>制御とビジネス オブジェクトは実行されますが、ビジネスの前にオブジェクトが破棄されます。 使用して、ビジネス オブジェクトをアクセス、<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs.ObjectInstance%2A>プロパティです。 処理するデリゲートを追加することによって、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>イベント、最終的な作業を実行またはクリーンアップするビジネス オブジェクトの公開されるメンバーにアクセスすることができます。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSourceView.OnObjectDisposing%2A>メソッドが呼び出されない、<xref:System.Web.UI.WebControls.ObjectDataSource>データ操作を実行するメソッドの場合、制御、`static`メソッドです。 メソッドが静的な場合は、ビジネス オブジェクトのインスタンスは作成されません。  
+  
+ <xref:System.Web.UI.WebControls.ObjectDataSource>コントロールは、ライフ サイクルのさまざまなタイミングで、基になるビジネス オブジェクトを使用する処理できる多くのイベントを公開します。 次の表は、イベントと関連付けられている<xref:System.EventArgs>クラスとイベント ハンドラー デリゲート。  
+  
+|イベント|EventArgs|EventHandler|  
+|-----------|---------------|------------------|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>。<br /><br /> ビジネス オブジェクトのインスタンスが作成される直前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreated>。<br /><br /> ビジネス オブジェクトのインスタンスが作成された直後後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceObjectEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selecting>。<br /><br /> データが取得される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceSelectingEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserting>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updating>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleting>。<br /><br /> Insert、update、または削除操作が実行されるまでに発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceMethodEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Selected><br /><br /> データが取得された後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.Inserted>、<xref:System.Web.UI.WebControls.ObjectDataSource.Updated>、および <xref:System.Web.UI.WebControls.ObjectDataSource.Deleted>。<br /><br /> Insert、update、または削除操作が完了した後に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceStatusEventHandler>|  
+|<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>。<br /><br /> ビジネス オブジェクトが破棄される前に発生します。|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>|<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventHandler>|  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>情報を表示するコントロール。 2 番目のコード例では、最初のコード例を使用する中間層ビジネス オブジェクトの例を提供します。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>情報を表示するコントロール。 Web ページで実行される各データ操作を作成する (時間またはリソース) 観点から非常に不経済されるビジネス オブジェクトを操作する場合があります。 負荷の高いオブジェクトを使用する方法の 1 つは、1 回、そのインスタンスを作成して、それを作成および操作するたびにデータを破棄する代わりに後続の操作をキャッシュすることです。 この例では、このパターンを示します。 処理することができます、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>イベントを最初に、オブジェクトのキャッシュをチェックし、いずれかが既にキャッシュされていない場合にのみ、インスタンスを作成します。 次に、処理、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>イベントを破棄するのではなく、将来使用するためのビジネス オブジェクトをキャッシュします。 この例では、<xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>にオブジェクトが設定されている`true`、送信するため、<xref:System.Web.UI.WebControls.ObjectDataSource>を呼び出していない、<xref:System.IDisposable.Dispose%2A>インスタンスに対してこのメソッドです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/CS/objds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/VB/objds16vb.aspx#1)]  
+  
+ 次のコード例では、前のコード例を使用する中間層ビジネス オブジェクトの例を提供します。 コード例は、基本的なビジネス オブジェクトによって定義された、`EmployeeLogic`クラスは、状態を維持し、ビジネス ロジックをカプセル化するクラスです。 、実際の完全な例については、このコードをライブラリとしてコンパイルし、ASP ページからこれらのクラスを使用してください。  
+  
+ [!code-csharp[System.Web.UI.WebControls.ObjectDataSource_16#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/CS/northwindemployee16.cs#2)]
+ [!code-vb[System.Web.UI.WebControls.ObjectDataSource_16#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/VB/northwindemployee16.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ObjectDataSourceDisposingEventArgs (object objectInstance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object objectInstance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="objectInstance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objectInstance">ビジネス オブジェクトを<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />データ操作を実行する操作します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs" />クラス、指定したオブジェクトを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectInstance">
+      <MemberSignature Language="C#" Value="public object ObjectInstance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectInstance" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs.ObjectInstance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用するビジネス オブジェクトを表すオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />コントロールはデータの操作を実行します。</summary>
+        <value>ビジネス オブジェクト、<see cref="T:System.Web.UI.WebControls.ObjectDataSource" />を使用してデータの操作です。 それ以外の場合、<see langword="null" />場合は、<see langword="null" />に渡される、<see cref="T:System.Web.UI.WebControls.ObjectDataSourceEventArgs" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合のデータ操作のメソッド (<xref:System.Web.UI.WebControls.ObjectDataSource.SelectMethod%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.UpdateMethod%2A>、 <xref:System.Web.UI.WebControls.ObjectDataSource.DeleteMethod%2A>、および<xref:System.Web.UI.WebControls.ObjectDataSource.InsertMethod%2A>) は、インスタンス メソッド、ビジネスのインスタンス オブジェクト、メソッドを実行する前に作成します。 ビジネス オブジェクトが呼び出しごとにオブジェクトを保存することによって作成されないように、<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs.ObjectInstance%2A>プロパティに、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>イベント ハンドラー。 後続の<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>イベントからビジネス オブジェクトを取得することができます、<xref:System.Web.UI.WebControls.ObjectDataSourceEventArgs.ObjectInstance%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.ObjectDataSource>ビジネス オブジェクトを持つコントロールと<xref:System.Web.UI.WebControls.GridView>情報を表示するコントロール。 Web ページで実行される各データ操作を作成する (時間またはリソース) 観点から非常に不経済されるビジネス オブジェクトを操作する場合があります。 負荷の高いオブジェクトを使用する方法の 1 つは、1 回、そのインスタンスを作成して、それを作成および操作するたびにデータを破棄する代わりに後続の操作をキャッシュすることです。 この例では、このパターンを示します。 処理することができます、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectCreating>イベントを最初に、オブジェクトのキャッシュをチェックし、いずれかが既にキャッシュされていない場合にのみ、インスタンスを作成します。 次に、処理、<xref:System.Web.UI.WebControls.ObjectDataSource.ObjectDisposing>イベントを破棄するのではなく、将来使用するためのビジネス オブジェクトをキャッシュします。 この例では、<xref:System.ComponentModel.CancelEventArgs.Cancel?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.WebControls.ObjectDataSourceDisposingEventArgs>クラスに設定されている`true`、送信するため、<xref:System.Web.UI.WebControls.ObjectDataSource>を呼び出していない<xref:System.IDisposable.Dispose%2A>インスタンスでします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/CS/objds16cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.ObjectDataSource_16#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.ObjectDataSource_16/VB/objds16vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

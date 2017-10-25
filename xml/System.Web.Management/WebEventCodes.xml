@@ -1,0 +1,1716 @@
+<Type Name="WebEventCodes" FullName="System.Web.Management.WebEventCodes">
+  <TypeSignature Language="C#" Value="public sealed class WebEventCodes" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebEventCodes extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebEventCodes" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET の状態イベントの監視に関連するコードを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ <xref:System.Web.Management.WebEventCodes>クラスには、稼働状況の監視の種類を識別するコードが含まれるイベント。 2 つの種類のコードは、クラス内で定義された: 主要なコードは、ASP.NET の稼働状況の監視イベントです識別。詳細のコードは、関連する主要なコードの詳細について説明します。 これらのコードは、拡張性のため、列挙体としてではなく、整数として実装されます。  
+  
+ 稼働状況の監視イベントが発生したときに、主要なイベントのコードに関連付けられます。 次の一覧内で定義されている主なイベント コードのカテゴリを識別する、<xref:System.Web.Management.WebEventCodes>クラス。  
+  
+-   **アプリケーション コード**です。 アプリケーション コードでは、スタートアップなどのアプリケーションの有効期間内のイベントとシャット ダウン イベントを識別します。 その値がより大きい、<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>フィールド定数。 関連付けられている、<xref:System.Web.Management.WebApplicationLifetimeEvent>イベントの種類。 ハートビート イベントは、特別な種類のアプリケーションのイベントです。 実行中のプロセスの状態の基準とした情報を提供するために定期的に発生するイベントを識別します。 関連付けられていること、<xref:System.Web.Management.WebHeartbeatEvent>イベントの種類。  
+  
+-   **要求コード**です。 要求のコードでは、要求ごとの情報を提供するエラーのないイベントを識別します。 その値がより大きい、<xref:System.Web.Management.WebEventCodes.RequestCodeBase>フィールド定数。 関連付けられている、<xref:System.Web.Management.WebRequestEvent>イベントの種類。  
+  
+-   **エラー コード**です。 エラー コードは、次の 2 つの種類のエラーに関する情報を含むイベントを識別します。 具体的には、Web 要求エラー、およびシステムに関連するエラーです。 Web 要求に関連するエラーには、未処理の例外、ビューステート エラー、および入力の検証エラーが含まれます。 関連付けられている、<xref:System.Web.Management.WebRequestErrorEvent>イベントの種類。 全社的なエラーは、パーサー エラーおよびコンパイル エラーを含む、構成またはアプリケーションのコードに関連します。 関連付けられている、<xref:System.Web.Management.WebErrorEvent>イベントの種類。 両方の種類のエラーのある値より大きい、<xref:System.Web.Management.WebEventCodes.ErrorCodeBase>フィールド定数。  
+  
+-   **監査コード**です。 監査コードでは、ログイン、アクセス セキュリティ違反、および承認違反などの監査可能な情報が含まれているイベントを識別します。 その値がより大きい<xref:System.Web.Management.WebEventCodes.AuditCodeBase>です。 関連付けられている<xref:System.Web.Management.WebAuditEvent>とその派生イベントの種類。  
+  
+-   **その他のコード**です。 その他のコードでは、イベントを識別できませんが、非標準のイベント情報をフラグとして使用します。 その値がより大きい<xref:System.Web.Management.WebEventCodes.MiscCodeBase>です。 参照にも<xref:System.Web.Management.WebEventCodes.WebEventProviderInformation>詳細についてはします。  
+  
+ 上記のコードの値を選択して、独自のカスタム イベントのコードを作成することができます<xref:System.Web.Management.WebEventCodes.WebExtendedBase>です。  
+  
+ `eventMappings`稼働状況の監視の構成要素では、必要に応じて、イベント コードの範囲を指定することができます。  イベント コードの範囲が指定されている場合、マッピングはその範囲内のイベント コードを持つイベントにのみ適用されます。それ以外の場合、すべてのイベント コードに適用されます。 次の構成ファイルの抜粋、<xref:System.Web.Management.EventLogWebEventProvider>を処理するように構成<xref:System.Web.Management.WebFailureAuditEvent>を監査するカテゴリに属しているイベント コードを持つイベント。  
+  
+```  
+<healthMonitoring>  
+  <eventMappings>   
+    <add name="Failure Audits" type=  
+      "System.Web.Management.WebFailureAuditEvent,System.Web, Version=2.0.3600.0,Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />  
+  </eventMappings>  
+  
+  <rules>  
+    <add name="Failure Audits Default"  
+      eventName="Failure Audits"  
+      provider="EventLogProvider"  
+      profile="Default"  
+      minInterval="00:01:00" />  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ 上記のコードの値を選択して、独自のカスタム イベントのコードを作成することができます<xref:System.Web.Management.WebEventCodes.WebExtendedBase>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationCodeBase">
+      <MemberSignature Language="C#" Value="public const int ApplicationCodeBase = 1000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationCodeBase = (1000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1000</MemberValue>
+      <Docs>
+        <summary>ASP.NET アプリケーション イベントの稼働状況の監視コードのオフセットを識別します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>に関連付けられたメジャー イベント コードの値がオフセットを表す、<xref:System.Web.Management.WebApplicationLifetimeEvent>型です。 すべてのアプリケーション コードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationCompilationEnd">
+      <MemberSignature Language="C#" Value="public const int ApplicationCompilationEnd = 1004;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationCompilationEnd = (1004)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationCompilationEnd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1004</MemberValue>
+      <Docs>
+        <summary>アプリケーションのコンパイルが完了したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationCompilationEnd>値は、主要なコードとその値がより大きい、<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>値。 ASP.NET は、関連する<xref:System.Web.Management.WebApplicationLifetimeEvent>イベント、アプリケーションのコンパイルが終了するとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationCompilationStart">
+      <MemberSignature Language="C#" Value="public const int ApplicationCompilationStart = 1003;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationCompilationStart = (1003)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationCompilationStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1003</MemberValue>
+      <Docs>
+        <summary>アプリケーションのコンパイルが開始されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationCompilationStart>値は、主要なコードとその値がより大きい、<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>値。 ASP.NET は、関連する<xref:System.Web.Management.WebApplicationLifetimeEvent>イベント、アプリケーションのコンパイルの開始時にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationDetailCodeBase">
+      <MemberSignature Language="C#" Value="public const int ApplicationDetailCodeBase = 50000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationDetailCodeBase = (50000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationDetailCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50000</MemberValue>
+      <Docs>
+        <summary>アプリケーション詳細のイベント コードのオフセットを示します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationDetailCodeBase>に関連付けられた詳細イベント コードの範囲の値がオフセットを表す、<xref:System.Web.Management.WebApplicationLifetimeEvent>型です。 アプリケーション詳細のすべてのコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.ApplicationDetailCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationHeartbeat">
+      <MemberSignature Language="C#" Value="public const int ApplicationHeartbeat = 1005;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationHeartbeat = (1005)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationHeartbeat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1005</MemberValue>
+      <Docs>
+        <summary>ハートビート イベントが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationHeartbeat>主要なコードは、その値より大きい<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>です。 ASP.NET は、関連する<xref:System.Web.Management.WebHeartbeatEvent>定期的な間隔で、構成ファイルで定義されているイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdown">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdown = 1002;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdown = (1002)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1002</MemberValue>
+      <Docs>
+        <summary>アプリケーションがシャット ダウンしたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdown>主要なコードは、その値より大きい<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>です。 ASP.NET は、関連する<xref:System.Web.Management.WebApplicationLifetimeEvent>アプリケーションのシャット ダウンしたときにイベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownBinDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownBinDirChangeOrDirectoryRename = 50007;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownBinDirChangeOrDirectoryRename = (50007)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownBinDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50007</MemberValue>
+      <Docs>
+        <summary>アプリケーションの Bin ディレクトリのサブディレクトリが変更されたか、名前が変更を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownBinDirChangeOrDirectoryRename>をシャット ダウンの原因を示す詳細コードに示します。  
+  
+ アプリケーションの Bin ディレクトリのサブディレクトリを変更または名前を変更すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownBinDirChangeOrDirectoryRename>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownBrowsersDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownBrowsersDirChangeOrDirectoryRename = 50008;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownBrowsersDirChangeOrDirectoryRename = (50008)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownBrowsersDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50008</MemberValue>
+      <Docs>
+        <summary>Browsers アプリケーション ディレクトリのサブディレクトリが変更されたか、名前が変更を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownBrowsersDirChangeOrDirectoryRename>シャット ダウンの原因を示す詳細コードです。  
+  
+ Browsers アプリケーション ディレクトリのサブディレクトリを変更または名前を変更すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownBrowsersDirChangeOrDirectoryRename>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownBuildManagerChange">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownBuildManagerChange = 50017;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownBuildManagerChange = (50017)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownBuildManagerChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50017</MemberValue>
+      <Docs>
+        <summary>ビルド マネージャーがシャット ダウンするアプリケーション ドメインに必要な変更を行ったことを示すイベントのコードを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownBuildManagerChange>シャット ダウンの原因を示す詳細コードです。  
+  
+ ASP.NET が発生し、シャット ダウンするアプリケーション ドメインが必要だときに、ビルド マネージャーが行った変更を<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownBuildManagerChange>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownChangeInGlobalAsax">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownChangeInGlobalAsax = 50003;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownChangeInGlobalAsax = (50003)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInGlobalAsax" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50003</MemberValue>
+      <Docs>
+        <summary>Global.asax ファイルが変更されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInGlobalAsax>シャット ダウンの原因を示す詳細コードです。  
+  
+ Global.asax ファイルが変更されると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInGlobalAsax>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownChangeInSecurityPolicyFile">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownChangeInSecurityPolicyFile = 50006;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownChangeInSecurityPolicyFile = (50006)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInSecurityPolicyFile" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50006</MemberValue>
+      <Docs>
+        <summary>セキュリティ ポリシー ファイルが変更されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInSecurityPolicyFile>シャット ダウンの原因を示す詳細コードです。  
+  
+ セキュリティ ポリシー ファイルが変更されると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownChangeInSecurityPolicyFile>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownCodeDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownCodeDirChangeOrDirectoryRename = 50009;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownCodeDirChangeOrDirectoryRename = (50009)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownCodeDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50009</MemberValue>
+      <Docs>
+        <summary>App_Code ディレクトリのサブディレクトリが変更されたか、名前が変更を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownCodeDirChangeOrDirectoryRename>シャット ダウンの原因を示す詳細コードです。  
+  
+ App_Code ディレクトリのサブディレクトリを変更または名前を変更すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownCodeDirChangeOrDirectoryRename>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownConfigurationChange">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownConfigurationChange = 50004;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownConfigurationChange = (50004)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownConfigurationChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50004</MemberValue>
+      <Docs>
+        <summary>構成ファイルが変更されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownConfigurationChange>シャット ダウンの原因を示す詳細コードです。  
+  
+ ASP.NET には、構成ファイルが変更されたときに、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownConfigurationChange>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownHostingEnvironment">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownHostingEnvironment = 50002;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownHostingEnvironment = (50002)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownHostingEnvironment" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50002</MemberValue>
+      <Docs>
+        <summary>ホスティング環境がシャット ダウンしていることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownHostingEnvironment>シャット ダウンの原因を示す詳細コードに示します。  
+  
+ ホスティング環境がシャット ダウン、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownHostingEnvironment>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownHttpRuntimeClose">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownHttpRuntimeClose = 50013;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownHttpRuntimeClose = (50013)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownHttpRuntimeClose" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50013</MemberValue>
+      <Docs>
+        <summary>ASP.NET ランタイムが明示的に閉じられたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownHttpRuntimeClose>シャット ダウンの原因を示す詳細コードです。  
+  
+ ASP.NET ランタイムを明示的に閉じると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownHttpRuntimeClose>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownIdleTimeout">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownIdleTimeout = 50011;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownIdleTimeout = (50011)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownIdleTimeout" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50011</MemberValue>
+      <Docs>
+        <summary>アイドル タイムアウトを超過したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownIdleTimeout>シャット ダウンの原因を示す詳細コードに示します。  
+  
+ アイドル タイムアウトを超えた場合、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownIdleTimeout>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownInitializationError">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownInitializationError = 50014;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownInitializationError = (50014)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownInitializationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50014</MemberValue>
+      <Docs>
+        <summary>アプリケーションの初期化エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownInitializationError>シャット ダウンの原因を示す詳細コードです。  
+  
+ アプリケーションの初期化エラーが発生した、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownInitializationError>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownMaxRecompilationsReached">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownMaxRecompilationsReached = 50015;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownMaxRecompilationsReached = (50015)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownMaxRecompilationsReached" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50015</MemberValue>
+      <Docs>
+        <summary>再コンパイルの最大数に達したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownMaxRecompilationsReached>シャット ダウンの原因を示す詳細コードです。  
+  
+ 再コンパイルの最大数に達すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownMaxRecompilationsReached>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownPhysicalApplicationPathChanged">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownPhysicalApplicationPathChanged = 50012;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownPhysicalApplicationPathChanged = (50012)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownPhysicalApplicationPathChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50012</MemberValue>
+      <Docs>
+        <summary>アプリケーションの物理パスが変更されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownPhysicalApplicationPathChanged>シャット ダウンの原因を示す詳細コードです。  
+  
+ アプリケーションの物理パスを変更すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownPhysicalApplicationPathChanged>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownResourcesDirChangeOrDirectoryRename">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownResourcesDirChangeOrDirectoryRename = 50010;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownResourcesDirChangeOrDirectoryRename = (50010)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownResourcesDirChangeOrDirectoryRename" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50010</MemberValue>
+      <Docs>
+        <summary>App_Resources ディレクトリのサブディレクトリが変更されたか、名前が変更を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownResourcesDirChangeOrDirectoryRename>シャット ダウンの原因を示す詳細コードです。  
+  
+ App_Resources ディレクトリのサブディレクトリを変更または名前を変更すると、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownResourcesDirChangeOrDirectoryRename>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownUnknown">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownUnknown = 50001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownUnknown = (50001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownUnknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50001</MemberValue>
+      <Docs>
+        <summary>アプリケーションのシャット ダウンの理由が不明であることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownUnknown>シャット ダウンの原因を示す詳細コードに示します。  
+  
+ 不明な理由により、アプリケーションがシャット ダウン、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownUnknown>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationShutdownUnloadAppDomainCalled">
+      <MemberSignature Language="C#" Value="public const int ApplicationShutdownUnloadAppDomainCalled = 50005;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationShutdownUnloadAppDomainCalled = (50005)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationShutdownUnloadAppDomainCalled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50005</MemberValue>
+      <Docs>
+        <summary>アプリケーション ドメインが明示的に読み込まれなかったことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationShutdownUnloadAppDomainCalled>シャット ダウンの原因を示す詳細コードです。  
+  
+ アプリケーション ドメインが明示的にアンロード、ASP.NET は、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationShutdown>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ApplicationShutdownUnloadAppDomainCalled>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationStart">
+      <MemberSignature Language="C#" Value="public const int ApplicationStart = 1001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ApplicationStart = (1001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ApplicationStart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>1001</MemberValue>
+      <Docs>
+        <summary>アプリケーションが開始されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ApplicationStart>アプリケーションの開始を表す主要なコードに示します。 ASP.NET には、アプリケーションの起動時、<xref:System.Web.Management.WebApplicationLifetimeEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.ApplicationStart>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditCodeBase">
+      <MemberSignature Language="C#" Value="public const int AuditCodeBase = 4000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditCodeBase = (4000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4000</MemberValue>
+      <Docs>
+        <summary>ASP.NET の監査イベントの稼働状況の監視コードのオフセットを識別します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditCodeBase>に関連付けられたメジャー イベント コードの範囲の値がオフセットを表す、 <xref:System.Web.Management.WebAuthenticationSuccessAuditEvent>、 <xref:System.Web.Management.WebSuccessAuditEvent>、 <xref:System.Web.Management.WebAuthenticationFailureAuditEvent>、 <xref:System.Web.Management.WebFailureAuditEvent>、および<xref:System.Web.Management.WebViewStateFailureAuditEvent>型です。  
+  
+ 監査のすべてのコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.AuditCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditDetailCodeBase">
+      <MemberSignature Language="C#" Value="public const int AuditDetailCodeBase = 50200;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditDetailCodeBase = (50200)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditDetailCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50200</MemberValue>
+      <Docs>
+        <summary>ASP.NET 監査詳細イベント コードに対してオフセットを示します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditDetailCodeBase>監査イベントに関連付けられている詳細イベント コードの範囲のオフセットを表します。 すべての監査の詳細のコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.AuditDetailCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditFileAuthorizationFailure">
+      <MemberSignature Language="C#" Value="public const int AuditFileAuthorizationFailure = 4008;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditFileAuthorizationFailure = (4008)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditFileAuthorizationFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4008</MemberValue>
+      <Docs>
+        <summary>Web 要求中にファイル承認エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditFileAuthorizationFailure>承認が与えられていないファイルのアクセスに関連するヘルス イベントの主要なコードに示します。 ASP.NET を発生させますファイル承認エラーが発生すると、<xref:System.Web.Management.WebFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFileAuthorizationFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditFileAuthorizationSuccess">
+      <MemberSignature Language="C#" Value="public const int AuditFileAuthorizationSuccess = 4004;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditFileAuthorizationSuccess = (4004)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditFileAuthorizationSuccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4004</MemberValue>
+      <Docs>
+        <summary>ファイルの承認の成功が Web 要求中に発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditFileAuthorizationSuccess>承認が与えられているファイルへのアクセスに関連するヘルス イベントの主要なコードに示します。 ファイルの承認が成功すると ASP.NET は、<xref:System.Web.Management.WebSuccessAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFileAuthorizationSuccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditFormsAuthenticationFailure">
+      <MemberSignature Language="C#" Value="public const int AuditFormsAuthenticationFailure = 4005;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditFormsAuthenticationFailure = (4005)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4005</MemberValue>
+      <Docs>
+        <summary>Web 要求中に発生したフォーム認証の失敗を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>ユーザーの認証の失敗に関連するヘルス イベントの主要なコードに示します。 このイベントが発生した、ASP.NET は、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditFormsAuthenticationSuccess">
+      <MemberSignature Language="C#" Value="public const int AuditFormsAuthenticationSuccess = 4001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditFormsAuthenticationSuccess = (4001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditFormsAuthenticationSuccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4001</MemberValue>
+      <Docs>
+        <summary>Web 要求中に発生した、フォーム認証の成功を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationSuccess>ユーザーの認証の成功に関連する正常性イベントの主要なコードに示します。 このイベントが発生すると、ASP.NET は、<xref:System.Web.Management.WebAuthenticationSuccessAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationSuccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditInvalidViewStateFailure">
+      <MemberSignature Language="C#" Value="public const int AuditInvalidViewStateFailure = 4009;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditInvalidViewStateFailure = (4009)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4009</MemberValue>
+      <Docs>
+        <summary>ビュー ステート検証が失敗したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>ビュー ステート検証エラーに関連するヘルス イベントの主要なコードに示します。 このイベントが発生すると、ASP.NET は、<xref:System.Web.Management.WebViewStateFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditMembershipAuthenticationFailure">
+      <MemberSignature Language="C#" Value="public const int AuditMembershipAuthenticationFailure = 4006;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditMembershipAuthenticationFailure = (4006)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4006</MemberValue>
+      <Docs>
+        <summary>Web 要求中にメンバーシップ認証エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationFailure>ユーザーのメンバーシップ認証失敗に関連する正常性イベントの主要なコードに示します。 このイベントが発生すると、ASP.NET は、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditMembershipAuthenticationSuccess">
+      <MemberSignature Language="C#" Value="public const int AuditMembershipAuthenticationSuccess = 4002;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditMembershipAuthenticationSuccess = (4002)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationSuccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4002</MemberValue>
+      <Docs>
+        <summary>メンバーシップ認証成功が Web 要求中に発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationSuccess>ユーザーのメンバーシップ、認証の成功に関連するヘルス イベントの主要なコードです。 このイベントが発生すると、ASP.NET は、<xref:System.Web.Management.WebAuthenticationSuccessAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditMembershipAuthenticationSuccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditUnhandledAccessException">
+      <MemberSignature Language="C#" Value="public const int AuditUnhandledAccessException = 4011;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditUnhandledAccessException = (4011)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditUnhandledAccessException" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4011</MemberValue>
+      <Docs>
+        <summary>Web 要求中にハンドルされていないアクセス例外が発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditUnhandledAccessException>承認が許可されていない対象のリソースへのアクセスに関連する未処理の状態イベントの主要なコードに示します。 このイベントが発生すると、ASP.NET は、<xref:System.Web.Management.WebFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditUnhandledAccessException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditUnhandledSecurityException">
+      <MemberSignature Language="C#" Value="public const int AuditUnhandledSecurityException = 4010;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditUnhandledSecurityException = (4010)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditUnhandledSecurityException" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4010</MemberValue>
+      <Docs>
+        <summary>Web 要求中にハンドルされていないセキュリティ例外が発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditUnhandledSecurityException>セキュリティ違反に関連する未処理の状態イベントの主要なコードです。 ハンドルされていないセキュリティ例外をスローすると、ASP.NET は、<xref:System.Web.Management.WebFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditUnhandledSecurityException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditUrlAuthorizationFailure">
+      <MemberSignature Language="C#" Value="public const int AuditUrlAuthorizationFailure = 4007;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditUrlAuthorizationFailure = (4007)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditUrlAuthorizationFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4007</MemberValue>
+      <Docs>
+        <summary>Web 要求中に、URL 承認エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditUrlAuthorizationFailure>承認が与えられていない URL の使用に関連するヘルス イベントの主要なコードに示します。 URL 承認エラーが発生した、ASP.NET は、<xref:System.Web.Management.WebFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditUrlAuthorizationFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuditUrlAuthorizationSuccess">
+      <MemberSignature Language="C#" Value="public const int AuditUrlAuthorizationSuccess = 4003;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 AuditUrlAuthorizationSuccess = (4003)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.AuditUrlAuthorizationSuccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4003</MemberValue>
+      <Docs>
+        <summary>Web 要求中に発生した URL 承認の成功を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.AuditUrlAuthorizationSuccess>承認が与えられている URL の使用に関連するヘルス イベントの主要なコードに示します。 URL が正常に承認されると、ASP.NET は、<xref:System.Web.Management.WebSuccessAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditUrlAuthorizationSuccess>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ErrorCodeBase">
+      <MemberSignature Language="C#" Value="public const int ErrorCodeBase = 3000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ErrorCodeBase = (3000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ErrorCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3000</MemberValue>
+      <Docs>
+        <summary>コードのオフセット、ASP.NET 稼働状況の監視エラー イベントを識別します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ErrorCodeBase>に関連付けられたメジャー イベント コードの範囲の値がオフセットを表す、<xref:System.Web.Management.WebRequestErrorEvent>と<xref:System.Web.Management.WebErrorEvent>型です。 すべてのエラー コードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.ErrorCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpiredTicketFailure">
+      <MemberSignature Language="C#" Value="public const int ExpiredTicketFailure = 50202;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 ExpiredTicketFailure = (50202)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.ExpiredTicketFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50202</MemberValue>
+      <Docs>
+        <summary>指定されたチケットが有効期限が切れていることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.ExpiredTicketFailure>ユーザーの認証の失敗の原因を示す詳細コードです。  
+  
+ 期限切れのチケットによって、ユーザーの認証が失敗すると、ASP.NET は、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>と詳細のコードの<xref:System.Web.Management.WebEventCodes.ExpiredTicketFailure>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidEventCode">
+      <MemberSignature Language="C#" Value="public const int InvalidEventCode = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidEventCode = (-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.InvalidEventCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>イベント コードの値が許可されていないことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.InvalidEventCode>はシステムによって許可されないコードの値の使用を表します。 たとえば、ASP.NET 正常性監視イベントの発生をカスタマイズして、システムによって既に割り当てられているコード値を使用する場合に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidTicketFailure">
+      <MemberSignature Language="C#" Value="public const int InvalidTicketFailure = 50201;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidTicketFailure = (50201)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.InvalidTicketFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50201</MemberValue>
+      <Docs>
+        <summary>指定されたチケットが無効であることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.InvalidTicketFailure>ユーザーの認証の失敗の原因を示す詳細コードです。  
+  
+ 無効なチケットのため、ユーザーの認証が失敗すると、ASP.NET は、<xref:System.Web.Management.WebAuthenticationFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditFormsAuthenticationFailure>と詳細のコードの<xref:System.Web.Management.WebEventCodes.InvalidTicketFailure>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidViewState">
+      <MemberSignature Language="C#" Value="public const int InvalidViewState = 50204;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidViewState = (50204)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.InvalidViewState" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50204</MemberValue>
+      <Docs>
+        <summary>指定されたビュー ステートが無効であることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.InvalidViewState>ビューステート エラーの原因を示す詳細コードに示します。  
+  
+ ビューステート エラーが発生すると ASP.NET を発生させます、<xref:System.Web.Management.WebViewStateFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>と詳細のコードの<xref:System.Web.Management.WebEventCodes.InvalidViewState>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidViewStateMac">
+      <MemberSignature Language="C#" Value="public const int InvalidViewStateMac = 50203;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidViewStateMac = (50203)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.InvalidViewStateMac" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50203</MemberValue>
+      <Docs>
+        <summary>指定されたビュー ステートに整合性チェックが失敗したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.InvalidViewStateMac>ビューステート エラーの原因を示す詳細コードに示します。  
+  
+ 指定されたビュー ステートには、整合性チェックが失敗すると、ASP.NET は、<xref:System.Web.Management.WebViewStateFailureAuditEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.AuditInvalidViewStateFailure>と詳細のコードの<xref:System.Web.Management.WebEventCodes.InvalidViewStateMac>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MiscCodeBase">
+      <MemberSignature Language="C#" Value="public const int MiscCodeBase = 6000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 MiscCodeBase = (6000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.MiscCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>6000</MemberValue>
+      <Docs>
+        <summary>ASP.NET Web その他のイベントの稼働状況の監視コードのオフセットを識別します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.MiscCodeBase>値が分類されていない正常性イベントに関連付けられている、主要なイベント コードの範囲のオフセットを表します。 その他のすべてのコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.MiscCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestCodeBase">
+      <MemberSignature Language="C#" Value="public const int RequestCodeBase = 2000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RequestCodeBase = (2000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RequestCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2000</MemberValue>
+      <Docs>
+        <summary>ASP.NET Web 要求イベントの稼働状況の監視コードのオフセットを識別します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RequestCodeBase>に関連付けられたメジャー イベント コードの範囲の値がオフセットを表す、<xref:System.Web.Management.WebRequestEvent>型です。 要求のすべてのコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.RequestCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestTransactionAbort">
+      <MemberSignature Language="C#" Value="public const int RequestTransactionAbort = 2002;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RequestTransactionAbort = (2002)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RequestTransactionAbort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2002</MemberValue>
+      <Docs>
+        <summary>Web 要求が中止されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RequestTransactionAbort>Web 要求の異常終了を示す主要なコードに示します。 Web 要求が中止されると、ASP.NET は、<xref:System.Web.Management.WebRequestEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RequestTransactionAbort>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestTransactionComplete">
+      <MemberSignature Language="C#" Value="public const int RequestTransactionComplete = 2001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RequestTransactionComplete = (2001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RequestTransactionComplete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2001</MemberValue>
+      <Docs>
+        <summary>Web 要求が完了したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RequestTransactionComplete>Web 要求の通常の終了を示す主要なコードに示します。 Web 要求が完了すると通常は、ASP.NET が発生し、<xref:System.Web.Management.WebRequestEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RequestTransactionComplete>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorPostTooLarge">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorPostTooLarge = 3004;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorPostTooLarge = (3004)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorPostTooLarge" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3004</MemberValue>
+      <Docs>
+        <summary>ポストされた情報のサイズが許容範囲を超えていることを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RuntimeErrorPostTooLarge>投稿サイズがデータを参照する主なコードが許容制限を超えています。 フォームには、許可された制限を超えるデータが投稿記事、ASP.NET は、<xref:System.Web.Management.WebRequestErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RuntimeErrorPostTooLarge>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorRequestAbort">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorRequestAbort = 3001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorRequestAbort = (3001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorRequestAbort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3001</MemberValue>
+      <Docs>
+        <summary>Web 要求が中止されたことを示すイベントのコードを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RuntimeErrorRequestAbort>Web 要求の異常終了を示す主要なコードに示します。 Web 要求が中止されると、ASP.NET は、<xref:System.Web.Management.WebRequestErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RuntimeErrorRequestAbort>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorUnhandledException">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorUnhandledException = 3005;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorUnhandledException = (3005)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorUnhandledException" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3005</MemberValue>
+      <Docs>
+        <summary>未処理の例外の発生を示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RuntimeErrorUnhandledException>ASP.NET によって処理されていない例外の発生を表す主要なコードに示します。 ASP.NET には、例外が発生したときに、<xref:System.Web.Management.WebRequestErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RuntimeErrorUnhandledException>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorValidationFailure">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorValidationFailure = 3003;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorValidationFailure = (3003)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorValidationFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3003</MemberValue>
+      <Docs>
+        <summary>検証エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RuntimeErrorValidationFailure>ASP.NET によって処理されていない検証例外の発生を表す主要なコードに示します。 この例外が発生した、ASP.NET は、<xref:System.Web.Management.WebRequestErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RuntimeErrorValidationFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorViewStateFailure">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorViewStateFailure = 3002;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorViewStateFailure = (3002)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorViewStateFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3002</MemberValue>
+      <Docs>
+        <summary>ビュー ステートの障害が発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.RuntimeErrorViewStateFailure>ビューステート エラーを参照する主なコードに示します。 この場合、ASP.NET を発生させます、<xref:System.Web.Management.WebRequestErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.RuntimeErrorViewStateFailure>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RuntimeErrorWebResourceFailure">
+      <MemberSignature Language="C#" Value="public const int RuntimeErrorWebResourceFailure = 3012;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 RuntimeErrorWebResourceFailure = (3012)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.RuntimeErrorWebResourceFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3012</MemberValue>
+      <Docs>
+        <summary>Web リソースへのアクセス エラーがあったことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SqlProviderEventsDropped">
+      <MemberSignature Language="C#" Value="public const int SqlProviderEventsDropped = 50301;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 SqlProviderEventsDropped = (50301)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.SqlProviderEventsDropped" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50301</MemberValue>
+      <Docs>
+        <summary>SQL プロバイダーでイベントが削除されたことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通知が発生するイベントが破棄された後、警告の特殊な行は、SQL server に書き込まれます。 この行が、通知内の他のすべてのイベントの前に書き込まれ、限りフラッシュ サイズの設定は、イベントの合計数でカウントされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateServerConnectionError">
+      <MemberSignature Language="C#" Value="public const int StateServerConnectionError = 50016;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 StateServerConnectionError = (50016)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.StateServerConnectionError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50016</MemberValue>
+      <Docs>
+        <summary>状態サーバーと通信中にエラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 状態サーバーと通信中に、接続エラーが発生した、ASP.NET は、<xref:System.Web.Management.WebErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.WebErrorOtherError>のコードの詳細と<xref:System.Web.Management.WebEventCodes.StateServerConnectionError>です。  
+  
+ <xref:System.Web.Management.WebEventCodes.StateServerConnectionError>詳細コードは、その値より大きい、<xref:System.Web.Management.WebEventCodes.ApplicationCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndefinedEventCode">
+      <MemberSignature Language="C#" Value="public const int UndefinedEventCode = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 UndefinedEventCode = (0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.UndefinedEventCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>主要なイベント コードの値が定義されていないことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.UndefinedEventCode>システムによって定義されていない主なコード値の使用を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndefinedEventDetailCode">
+      <MemberSignature Language="C#" Value="public const int UndefinedEventDetailCode = 0;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 UndefinedEventDetailCode = (0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.UndefinedEventDetailCode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>0</MemberValue>
+      <Docs>
+        <summary>イベント コードの詳細の値が定義されていないことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.UndefinedEventCode>システムによって定義されていない詳細コード値の使用を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorCompilationError">
+      <MemberSignature Language="C#" Value="public const int WebErrorCompilationError = 3007;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorCompilationError = (3007)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorCompilationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3007</MemberValue>
+      <Docs>
+        <summary>コンパイル エラーが発生したことを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebErrorCompilationError>アプリケーションのコンパイル フェーズ中に発生したエラーを参照する主なコードに示します。 このエラーが発生した、ASP.NET は、<xref:System.Web.Management.WebErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.WebErrorCompilationError>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorConfigurationError">
+      <MemberSignature Language="C#" Value="public const int WebErrorConfigurationError = 3008;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorConfigurationError = (3008)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorConfigurationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3008</MemberValue>
+      <Docs>
+        <summary>構成エラーが発生したことを示します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebErrorConfigurationError>アプリケーション構成フェーズ中に発生したエラーを参照する主なコードに示します。 このエラーが発生した、ASP.NET は、<xref:System.Web.Management.WebErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.WebErrorConfigurationError>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorObjectStateFormatterDeserializationError">
+      <MemberSignature Language="C#" Value="public const int WebErrorObjectStateFormatterDeserializationError = 3011;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorObjectStateFormatterDeserializationError = (3011)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorObjectStateFormatterDeserializationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3011</MemberValue>
+      <Docs>
+        <summary>型の逆シリアル化またはオブジェクトの値の中にエラーがあったことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorOtherError">
+      <MemberSignature Language="C#" Value="public const int WebErrorOtherError = 3009;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorOtherError = (3009)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorOtherError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3009</MemberValue>
+      <Docs>
+        <summary>未分類エラーが発生したことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebErrorOtherError>未分類エラーの主要なコードに示します。 このエラーが発生した、ASP.NET は、<xref:System.Web.Management.WebErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.WebErrorOtherError>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorParserError">
+      <MemberSignature Language="C#" Value="public const int WebErrorParserError = 3006;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorParserError = (3006)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorParserError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3006</MemberValue>
+      <Docs>
+        <summary>パーサー エラーが発生したことを示すイベントのコードを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebErrorParserError>アプリケーション解析フェーズ中に発生したエラーを参照する主なコードに示します。 このエラーが発生した、ASP.NET は、<xref:System.Web.Management.WebErrorEvent>の主要なコードで<xref:System.Web.Management.WebEventCodes.WebErrorParserError>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebErrorPropertyDeserializationError">
+      <MemberSignature Language="C#" Value="public const int WebErrorPropertyDeserializationError = 3010;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebErrorPropertyDeserializationError = (3010)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebErrorPropertyDeserializationError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>3010</MemberValue>
+      <Docs>
+        <summary>プロパティの逆シリアル化中にエラーがあったことを示すイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebEventDetailCodeBase">
+      <MemberSignature Language="C#" Value="public const int WebEventDetailCodeBase = 50300;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebEventDetailCodeBase = (50300)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebEventDetailCodeBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>50300</MemberValue>
+      <Docs>
+        <summary>ASP.NET Web 詳細イベントの稼働状況の監視コードのオフセットを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebEventDetailCodeBase>に関連付けられた詳細イベント コードの範囲の値がオフセットを表す、<xref:System.Web.Management.WebApplicationLifetimeEvent>型です。 アプリケーション詳細のすべてのコードがより大きい値を割り当てられている<xref:System.Web.Management.WebEventCodes.ApplicationDetailCodeBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebEventProviderInformation">
+      <MemberSignature Language="C#" Value="public const int WebEventProviderInformation = 6001;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebEventProviderInformation = (6001)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebEventProviderInformation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>6001</MemberValue>
+      <Docs>
+        <summary>非標準イベントに関する情報を記録するプロバイダーで使用されるイベントのコードを表します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventCodes.WebEventProviderInformation>主要なコード プロバイダーによって使用非標準の正常性イベントの情報を格納します。 その値がより大きい<xref:System.Web.Management.WebEventCodes.MiscCodeBase>です。  
+  
+ たとえば、ASP.NET の正常性イベントが、バッファー処理中に削除された場合、<xref:System.Web.Management.SimpleMailWebEventProvider>を使用せず、メッセージの先頭に警告を追加、<xref:System.Web.Management.WebEventCodes.WebEventProviderInformation>です。唯一の方法ですが、<xref:System.Web.Management.SqlWebEventProvider>書き込む、この警告は、データベースにレコードを作成します。 プロバイダーを使用して、データベースのすべてのレコードにイベント ID が必要があるため、<xref:System.Web.Management.WebEventCodes.WebEventProviderInformation>の主要なコードとしてと<xref:System.Web.Management.WebEventCodes.SqlProviderEventsDropped>この ID を作成する詳細コードとして  
+  
+> [!NOTE]
+>  上の説明からわかるように、<xref:System.Web.Management.WebEventCodes.WebEventProviderInformation>は、ASP.NET の正常性イベントに関連付けられていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebExtendedBase">
+      <MemberSignature Language="C#" Value="public const int WebExtendedBase = 100000;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 WebExtendedBase = (100000)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Management.WebEventCodes.WebExtendedBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>100000</MemberValue>
+      <Docs>
+        <summary>カスタム イベント コードに対してオフセットを示します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自のカスタム イベントを作成する場合より大きい値を持つイベントのコードを使用する必要があります<xref:System.Web.Management.WebEventCodes.WebExtendedBase>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,295 @@
+<Type Name="WebPartDescription" FullName="System.Web.UI.WebControls.WebParts.WebPartDescription">
+  <TypeSignature Language="C#" Value="public class WebPartDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPartDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>に関する情報を提供する<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのインスタンスを作成することがなく、Web パーツ コントロールのカタログで表示できるコントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、ユーザーがページに追加できるコントロールのカタログに表示される、各コントロールに関する基本的な情報が必要です。 たとえばは、コントロール、および説明のタイトルをすると便利にページにコントロールを追加するかどうかを決定するのに十分な情報を持つユーザー カタログを表示するようにします。 ただしのカタログ<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールでは、多くのコントロールを含めることができます可能性があるのインスタンスの場合、アプリケーションのパフォーマンスに影響ことでしたすべて<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログに表示する情報を抽出するコントロールを作成する必要があります。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription>のインスタンスを作成する必要がないように、クラスが存在する、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールのカタログに表示されるコントロールの概要情報を取得するコントロール。 Web パーツ コントロール セットを<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトは、さまざまなと組み合わせて使用も<xref:System.Web.UI.WebControls.WebParts.CatalogPart>モードを表示するページは、カタログのタイミングを制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスを受け取る 1 つのコンス トラクターの 2 つのオーバー ロードには、<xref:System.Web.UI.WebControls.WebParts.WebPart>インスタンスが使用可能な場合に、パラメーターとしてコントロール (、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>コンス トラクター)、およびパラメーターとして、コントロールの概要情報を含む文字列を受け取るいくつかのいずれか (、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>コンス トラクター)。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスにもいくつかのプロパティの説明情報を入れることがあります<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 次の表、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>プロパティ、およびそれぞれどのようなプロパティに対応する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+|Description プロパティ|関連する一部のコントロール プロパティ|  
+|--------------------------|-----------------------------------|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>|<xref:System.Web.UI.Control.ID%2A>|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>|<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Description%2A>|<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>|  
+|<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl%2A>|<xref:System.Web.UI.WebControls.WebParts.WebPart.CatalogIconImageUrl%2A>|  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスです。 通常、この型は、主に Web パーツ コントロール セットによって使用が、このコード例は、主要な説明のプロパティの基本的なプログラムによる使用法を示すだけでします。  
+  
+ このコード例では、4 つの部分があります。  
+  
+-   ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。  
+  
+-   カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。  
+  
+-   その他のコントロールをホストする Web ページです。  
+  
+-   コード例の動作についての説明。  
+  
+ このコード例の最初の部分は、ユーザー コントロールです。 ユーザー コントロールのソース コードの別のトピックに由来します。 ユーザー コントロールの詳細については、トピックを参照してください。[チュートリアル: Web パーツ ページの表示モードを変更する](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_WebPartDescription_Overview#7](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/DisplayModeMenuCS.ascx#7)]
+ [!code-aspx-vb[WebParts_WebPartDescription_Overview#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/DisplayModeMenuVB.ascx#7)]  
+  
+ コード例の 2 番目の部分は、カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 このコード例では、動的コンパイルのアプローチを使用します。 コンパイルする方法について説明するチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ [!code-csharp[WebParts_WebPartDescription_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/textdisplaywebpart.cs#3)]
+ [!code-vb[WebParts_WebPartDescription_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/textdisplaywebpart.vb#3)]  
+  
+ コード例の 3 番目の部分は、Web ページです。 上部には、2 つ`Register`ディレクティブ: いずれかのユーザー コントロールとその他のユーザー設定を登録する登録<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールのソース ファイルは、サイトの App_Code フォルダーにあります。 ページが含まれています、`<asp:catalogzone>`要素が 2 つのコントロールへの宣言型の参照が含まれています: カスタム<xref:System.Web.UI.WebControls.WebParts.WebPart>という名前のコントロール`TextDisplayWebPart`、および<xref:System.Web.UI.WebControls.BulletedList>Web サーバー コントロールとして扱われる、<xref:System.Web.UI.WebControls.WebParts.WebPart>実行時コントロール今回、<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロールをラップには、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>オブジェクト。 コードでは、ことに注意してください。、`Button1_Click`メソッドを、使用可能な<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトに対する、<xref:System.Web.UI.WebControls.WebParts.WebPart>を使用して、カタログ内のコントロールを取得、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、および、説明の詳細はすべてに書き込むページ。  
+  
+ [!code-aspx-csharp[WebParts_WebPartDescription_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/wpDescriptioncs.aspx#1)]
+ [!code-aspx-vb[WebParts_WebPartDescription_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/wpDescriptionvb.aspx#1)]  
+  
+ ブラウザーでページを読み込んだ後を使用して、**表示モード**ドロップダウン リスト コントロールを選択**カタログ**カタログ表示モードにページを変更します。 カタログに表示できるページに追加する 2 つのコントロールが表示されます。 をクリックして、 **WebPartDescription 情報を一覧表示** ボタン、および利用可能なすべての値をコード書き込みます<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>ページにオブジェクト。 これは、説明の詳細を取得することを示して<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール自体のインスタンスを作成することがなく、カタログ内のコントロールです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>特定の情報を含むクラスの新しいインスタンスを初期化<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロード、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>の新しいインスタンスを返す各コンス トラクター、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>特定に関する情報を保持しているクラス<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 オーバー ロードの違いは、新しいインスタンスを作成するシナリオです。 場合によっては、アプリケーションがある使用可能なインスタンスの場合に、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>コンス トラクターを使用します。 アプリケーションがいないとき、コントロールのインスタンスでは、同様に、コントロールの説明ファイルからインポートされるときに、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロール、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>コンス トラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartDescription (System.Web.UI.WebControls.WebParts.WebPart part);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.WebParts.WebPart part) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescription.#ctor(System.Web.UI.WebControls.WebParts.WebPart)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="part" Type="System.Web.UI.WebControls.WebParts.WebPart" />
+      </Parameters>
+      <Docs>
+        <param name="part">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />にその情報が含まれるコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />です。</param>
+        <summary>クラスの新しいインスタンスを初期化時に、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールのインスタンスを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>コンス トラクターは、新しいを作成するため使用<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>、既存のオブジェクトが基づく<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 このコンス トラクターは、他のオーバー ロードを呼び出すだけ、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%28System.String%2CSystem.String%2CSystem.String%2CSystem.String%29>コンス トラクター、プロパティの必須のパラメーター値を取得するのには`part`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Web.UI.Control.ID" />プロパティ<paramref name="part" />は<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPartDescription (string id, string title, string description, string imageUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string id, string title, string description, string imageUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.WebPartDescription.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+        <Parameter Name="title" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="imageUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">代入する値、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDescription.ID" />です。</param>
+        <param name="title">代入する値、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDescription.Title" />です。</param>
+        <param name="description">代入する値、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDescription.Description" />です。</param>
+        <param name="imageUrl">代入する値、<see cref="P:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl" />です。</param>
+        <summary>説明情報を含むいくつかの文字列を使用して、クラスの新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.%23ctor%2A>の新しいインスタンスを作成するコンス トラクターが使用される、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>場合にクラス、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは使用できません。 たとえばの場合、これが発生した、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>制御の記述ファイルをインポートする場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 これを作成する必要がある情報を取得、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>からオブジェクトを直接記述ファイルと<xref:System.Web.UI.WebControls.WebParts.WebPart>インスタンスは存在しません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="id" />または<paramref name="title" />は<see langword="null" />または空の文字列 ("") です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CatalogIconImageUrl">
+      <MemberSignature Language="C#" Value="public string CatalogIconImageUrl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CatalogIconImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アイコンとして使用するイメージへのパスを含む URL を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>。 URL を含む文字列既定値は空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl%2A>プロパティに直接対応しています、<xref:System.Web.UI.WebControls.WebParts.WebPart.CatalogIconImageUrl%2A?displayProperty=nameWithType>プロパティです。 そのプロパティに設定されている場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、対応するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトには、値があります。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl%2A>プロパティは、ページが、カタログの表示モードが場合にのみ適用されます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがコントロールのカタログに表示されます。 コントロールにプロパティの値に割り当てられたアイコンがある場合は、コントロールの横にある、カタログにアイコンが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl%2A>プロパティです。 このコード例を実行するために必要な完全なコードの例」のセクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスの概要に関するトピック。  
+  
+ 次のコードで、 `Button1_Click` Web ページのメソッドは、のコレクションを取得する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>を使用して、カタログ内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、それぞれの詳細を表示し、<xref:System.Web.UI.WebControls.WebParts.WebPart>ループによって、カタログ内のコントロールを介して、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト。 なお、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.CatalogIconImageUrl%2A>次のコードでプロパティ値を取得します。  
+  
+ [!code-csharp[WebParts_WebPartDescription_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/wpDescriptioncs.aspx#2)]
+ [!code-vb[WebParts_WebPartDescription_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/wpDescriptionvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescription.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明のテキストを取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>説明を含む文字列、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール以外の既定値は空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Description%2A>プロパティに直接対応しています、<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A?displayProperty=nameWithType>プロパティです。 そのプロパティに設定されている場合、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、対応するプロパティ<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトには、値があります。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Description%2A>プロパティは、ページが、カタログの表示モードが場合にのみ適用されます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがコントロールのカタログに表示されます。 コントロールに割り当てられた説明がある場合に、カタログの説明、コントロールにツールヒントとしてが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Description%2A>プロパティです。 このコード例を実行するために必要な完全なコードの例」のセクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスの概要に関するトピック。  
+  
+ 次のコードで、 `Button1_Click` Web ページのメソッドは、のコレクションを取得する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>を使用して、カタログ内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、それぞれの詳細を表示し、<xref:System.Web.UI.WebControls.WebParts.WebPart>ループによって、カタログ内のコントロールを介して、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト。 なお、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Description%2A>次のコードでプロパティ値を取得します。  
+  
+ [!code-csharp[WebParts_WebPartDescription_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/wpDescriptioncs.aspx#2)]
+ [!code-vb[WebParts_WebPartDescription_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/wpDescriptionvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public string ID { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescription.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応する ID を取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>コントロールの ID を表す文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>プロパティは、 `null`; 値が常に必要です。 <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>プロパティに直接対応しています、<xref:System.Web.UI.Control.ID%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>プロパティは、ページが、カタログの表示モードが場合にのみ適用されます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがコントロールのカタログに表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>プロパティです。 このコード例を実行するために必要な完全なコードの例」のセクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスの概要に関するトピック。  
+  
+ 次のコードで、 `Button1_Click` Web ページのメソッドは、のコレクションを取得する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>を使用して、カタログ内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、それぞれの詳細を表示し、<xref:System.Web.UI.WebControls.WebParts.WebPart>ループによって、カタログ内のコントロールを介して、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト。 なお、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.ID%2A>次のコードでプロパティ値を取得します。  
+  
+ [!code-csharp[WebParts_WebPartDescription_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/wpDescriptioncs.aspx#2)]
+ [!code-vb[WebParts_WebPartDescription_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/wpDescriptionvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.WebPartDescription.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するのタイトルのテキストを取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール。</summary>
+        <value>対応するコントロールのタイトルを含む文字列です。 既定値は、.NET Framework によって提供される計算される文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>プロパティに直接対応しています、<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A?displayProperty=nameWithType>プロパティです。 どのような対応する<xref:System.Web.UI.WebControls.WebParts.WebPart>用のコントロールがその<xref:System.Web.UI.WebControls.WebParts.WebPart.DisplayTitle%2A>プロパティなどの値になります、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>プロパティです。 それ以外の場合は、タイトルは計算された値。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>プロパティは、ページが、カタログの表示モードが場合にのみ適用されます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールがコントロールのカタログに表示されます。 割り当てられているどのようなタイトル、<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログ内のコントロールの横にあるコントロールが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>プロパティです。 このコード例を実行するために必要な完全なコードの例」のセクションを参照してください、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>クラスの概要に関するトピック。  
+  
+ 次のコードで、 `Button1_Click` Web ページのメソッドは、のコレクションを取得する方法を示します<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>を使用して、カタログ内のオブジェクト、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッド、それぞれの詳細を表示し、<xref:System.Web.UI.WebControls.WebParts.WebPart>ループによって、カタログ内のコントロールを介して、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクト。 なお、<xref:System.Web.UI.WebControls.WebParts.WebPartDescription.Title%2A>次のコードでプロパティ値を取得します。  
+  
+ [!code-csharp[WebParts_WebPartDescription_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/CS/wpDescriptioncs.aspx#2)]
+ [!code-vb[WebParts_WebPartDescription_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_WebPartDescription_Overview/VB/wpDescriptionvb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

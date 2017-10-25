@@ -1,0 +1,232 @@
+<Type Name="QualificationDataItem" FullName="System.AddIn.Hosting.QualificationDataItem">
+  <TypeSignature Language="C#" Value="public struct QualificationDataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit QualificationDataItem extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.QualificationDataItem" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ホストで使用するためのパイプライン セグメントの開発者から提供された情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾データの各項目を使用してパイプライン セグメントに適用されている名前/値ペアから成る、<xref:System.AddIn.Pipeline.QualificationDataAttribute>属性、セグメント (たとえば、セグメントの推奨される分離レベル) の使用を修飾する情報を提供します。 <xref:System.AddIn.Hosting.QualificationDataItem>構造には、1 つの名前と値のペアとパイプライン セグメントの適用先の型が含まれています。  
+  
+ 使用して、<xref:System.AddIn.Hosting.AddInToken.QualificationData%2A?displayProperty=nameWithType>を含む、入れ子になったディクショナリのセットを取得するプロパティ<xref:System.AddIn.Hosting.QualificationDataItem>に関連付けられたパイプライン セグメントの構造体、<xref:System.AddIn.Hosting.AddInToken>です。  
+  
+ または、使用して、<xref:System.AddIn.Hosting.AddInToken.GetEnumerator%2A?displayProperty=nameWithType>の列挙子を取得するメソッド、<xref:System.AddIn.Hosting.QualificationDataItem>パイプライン セグメントの構造とそれに関連付けトークン、または単に使用する、`foreach`ステートメント (`For Each` Visual basic で`for each`Visual C で) のコレクションの場合と同様に、トークンを扱う<xref:System.AddIn.Hosting.QualificationDataItem>構造体。  
+  
+   
+  
+## Examples  
+ 次の例は、それぞれに関連付けられているパイプライン セグメントの修飾データを表示<xref:System.AddIn.Hosting.AddInToken>トークンのコレクション。  
+  
+ [!code-csharp[AddInP3Host#12](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#12)]
+ [!code-vb[AddInP3Host#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#12)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.QualificationDataItem.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の修飾データ項目と等しいかどうかを判断します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.QualificationDataItem.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この修飾データ項目のハッシュ コードを取得します。</summary>
+        <returns>ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.QualificationDataItem.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾データ項目の名前を取得します。</summary>
+        <value>修飾データ項目の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾データの各項目を使用してパイプライン セグメントに適用されている名前/値ペアから成る、<xref:System.AddIn.Pipeline.QualificationDataAttribute>属性、アドインのコンシューマーに情報を提供します。 <xref:System.AddIn.Hosting.QualificationDataItem.Name%2A>プロパティ名を取得します。 使用して、<xref:System.AddIn.Hosting.QualificationDataItem.Value%2A>プロパティ値を取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、それぞれに関連付けられているパイプライン セグメントの修飾データを表示<xref:System.AddIn.Hosting.AddInToken>トークンのコレクション。 <xref:System.AddIn.Hosting.QualificationDataItem.Name%2A>プロパティの使用に各項目の名前を表示します。  
+  
+ [!code-csharp[AddInP3Host#12](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#12)]
+ [!code-vb[AddInP3Host#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.AddIn.Hosting.QualificationDataItem item1, System.AddIn.Hosting.QualificationDataItem item2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.AddIn.Hosting.QualificationDataItem item1, valuetype System.AddIn.Hosting.QualificationDataItem item2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.QualificationDataItem.op_Equality(System.AddIn.Hosting.QualificationDataItem,System.AddIn.Hosting.QualificationDataItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item1" Type="System.AddIn.Hosting.QualificationDataItem" />
+        <Parameter Name="item2" Type="System.AddIn.Hosting.QualificationDataItem" />
+      </Parameters>
+      <Docs>
+        <param name="item1">比較対象となる最初の <see cref="T:System.AddIn.Hosting.QualificationDataItem" />。</param>
+        <param name="item2">比較対象となる 2 番目の <see cref="T:System.AddIn.Hosting.QualificationDataItem" />。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.AddIn.Hosting.QualificationDataItem" />構造体が等しい。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="item1" /> が等しい場合は <paramref name="item2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.AddIn.Hosting.QualificationDataItem item1, System.AddIn.Hosting.QualificationDataItem item2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.AddIn.Hosting.QualificationDataItem item1, valuetype System.AddIn.Hosting.QualificationDataItem item2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.QualificationDataItem.op_Inequality(System.AddIn.Hosting.QualificationDataItem,System.AddIn.Hosting.QualificationDataItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item1" Type="System.AddIn.Hosting.QualificationDataItem" />
+        <Parameter Name="item2" Type="System.AddIn.Hosting.QualificationDataItem" />
+      </Parameters>
+      <Docs>
+        <param name="item1">比較対象となる最初の <see cref="T:System.AddIn.Hosting.QualificationDataItem" />。</param>
+        <param name="item2">比較対象となる 2 番目の <see cref="T:System.AddIn.Hosting.QualificationDataItem" />。</param>
+        <summary>2 つあるかどうかを決定<see cref="T:System.AddIn.Hosting.QualificationDataItem" />構造は異なります。</summary>
+        <returns>
+          <paramref name="item1" /> と <paramref name="item2" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Segment">
+      <MemberSignature Language="C#" Value="public System.AddIn.Hosting.AddInSegmentType Segment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.AddIn.Hosting.AddInSegmentType Segment" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.QualificationDataItem.Segment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInSegmentType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ項目が適用された修飾子をパイプライン セグメントを識別する値を取得します。</summary>
+        <value>パイプライン セグメントのデータ項目の種類に適用されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾データを列挙するときに、このプロパティを使用して、パイプラインの特定のセグメントが属している修飾データを識別します。  
+  
+> [!NOTE]
+>  アドイン モデルでは、アドインのホスト ビューに適用される修飾データは使用しません。 その結果は見つかりません修飾データを列挙するときにいずれかの項目が<xref:System.AddIn.Hosting.QualificationDataItem.Segment%2A>プロパティは<xref:System.AddIn.Hosting.AddInSegmentType.HostViewOfAddIn>します。  
+  
+   
+  
+## Examples  
+ 次の例は、それぞれに関連付けられているパイプライン セグメントの修飾データを表示<xref:System.AddIn.Hosting.AddInToken>トークンのコレクション。 <xref:System.AddIn.Hosting.QualificationDataItem.Segment%2A>セグメントの種類を表示するプロパティを使用します。  
+  
+ [!code-csharp[AddInP3Host#12](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#12)]
+ [!code-vb[AddInP3Host#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.QualificationDataItem.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾データ項目の値を取得します。</summary>
+        <value>項目の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 修飾データの各項目を使用してパイプライン セグメントに適用されている名前/値ペアから成る、<xref:System.AddIn.Pipeline.QualificationDataAttribute>属性、アドインのコンシューマーに情報を提供します。 <xref:System.AddIn.Hosting.QualificationDataItem.Value%2A>プロパティ値を取得します。 使用して、<xref:System.AddIn.Hosting.QualificationDataItem.Name%2A>プロパティ名を取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、それぞれに関連付けられているパイプライン セグメントの修飾データを表示<xref:System.AddIn.Hosting.AddInToken>トークンのコレクション。 <xref:System.AddIn.Hosting.QualificationDataItem.Value%2A>項目の値を表示するプロパティを使用します。  
+  
+ [!code-csharp[AddInP3Host#12](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#12)]
+ [!code-vb[AddInP3Host#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

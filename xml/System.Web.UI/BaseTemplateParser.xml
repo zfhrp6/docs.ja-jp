@@ -1,0 +1,113 @@
+<Type Name="BaseTemplateParser" FullName="System.Web.UI.BaseTemplateParser">
+  <TypeSignature Language="C#" Value="public abstract class BaseTemplateParser : System.Web.UI.TemplateParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseTemplateParser extends System.Web.UI.TemplateParser" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.BaseTemplateParser" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.TemplateParser</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>テンプレート ファイルの解析 ASP.NET テンプレートを実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.BaseTemplateParser>パーサー機能を提供するクラス、<xref:System.Web.UI.TemplateControl>と<xref:System.Web.UI.PageTheme>クラスです。 <xref:System.Web.UI.BaseTemplateParser>が抽象クラスで、このクラスのインスタンスが直接作成されません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseTemplateParser ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BaseTemplateParser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.BaseTemplateParser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetReferencedType">
+      <MemberSignature Language="C#" Value="protected Type GetReferencedType (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Type GetReferencedType(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BaseTemplateParser.GetReferencedType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス、<see cref="T:System.Web.UI.Page" />または<see cref="T:System.Web.UI.UserControl" />です。</param>
+        <summary>コンパイルしの型を返します、<see cref="T:System.Web.UI.Page" />または<see cref="T:System.Web.UI.UserControl" />仮想パスで指定されているコントロール。</summary>
+        <returns>ページやユーザー コントロールの型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.PageParserFilter>オブジェクトが定義されていると、その<xref:System.Web.UI.PageParserFilter.AllowVirtualReference%2A>プロパティは`false`、<xref:System.Web.UI.BaseTemplateParser.GetUserControlType%2A>メソッドを発生させます、<xref:System.Web.HttpException>例外。  
+  
+ <xref:System.Web.UI.BaseTemplateParser.GetUserControlType%2A>メソッドのラッパーは、<xref:System.Web.UI.BaseTemplateParser.GetReferencedType%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">パーサーがで指定されたリソースへの仮想参照を許可しない<paramref name="virtualPath" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetUserControlType">
+      <MemberSignature Language="C#" Value="protected Type GetUserControlType (string virtualPath);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Type GetUserControlType(string virtualPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.BaseTemplateParser.GetUserControlType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="virtualPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="virtualPath">仮想パス、<see cref="T:System.Web.UI.UserControl" />です。</param>
+        <summary>コンパイルしの型を返します、<see cref="T:System.Web.UI.UserControl" />仮想パスで指定されているオブジェクト。</summary>
+        <returns>ユーザー コントロールの型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.PageParserFilter>オブジェクトが定義されていると、その<xref:System.Web.UI.PageParserFilter.AllowVirtualReference%2A>プロパティは`false`、<xref:System.Web.UI.BaseTemplateParser.GetUserControlType%2A>メソッドを発生させます、<xref:System.Web.HttpException>例外。  
+  
+ また場合、<xref:System.Web.UI.UserControl>仮想パスで参照されるオブジェクトが、コンパイルなしのコントロールとしてマークされている、<xref:System.Web.HttpException>例外がスローされます。 強制的に、 <xref:System.Web.UI.UserControl> 、コンパイル対象コンパイル モード属性を設定します。 その[@ Control](http://msdn.microsoft.com/en-us/5fd824c2-7d70-4f8a-ab47-0c7e0e43578b)ディレクティブを、<xref:System.Web.UI.CompilationMode.Always>フィールドです。 を、アプリケーション全体でページおよびコントロールのコンパイル モードを設定する、`compilationMode`の属性、[要素 (ASP.NET 設定スキーマ) のページ](http://msdn.microsoft.com/en-us/4123bb66-3fe4-4d62-b70e-33758656b458)Web.config ファイルにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="T:System.Web.UI.UserControl" />によって指定された<paramref name="virtualPath" />なしのコンパイルとしてマークされています。  
+  
+ \- または  
+  
+ パーサーがへの仮想参照を許可しない、<see cref="T:System.Web.UI.UserControl" />です。</exception>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

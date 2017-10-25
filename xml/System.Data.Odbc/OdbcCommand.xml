@@ -1,0 +1,1008 @@
+<Type Name="OdbcCommand" FullName="System.Data.Odbc.OdbcCommand">
+  <TypeSignature Language="C#" Value="public sealed class OdbcCommand : System.Data.Common.DbCommand, ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit OdbcCommand extends System.Data.Common.DbCommand implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Odbc.OdbcCommand" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Odbc</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Common.DbCommand</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("RecordsAffected")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("Microsoft.VSDesigner.Data.VS.OdbcCommandDesigner, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ ソースに対して実行する SQL ステートメントまたはストアド プロシージャを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommand>クラスは、データ ソースに対してコマンドを実行するための次のメソッドを提供します。  
+  
+|アイテム|説明|  
+|----------|-----------------|  
+|<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>|行を返すコマンドを実行します。|  
+|<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>|SQL の INSERT、DELETE、UPDATE、および一連のステートメントなどのコマンドを実行します。|  
+|<xref:System.Data.Odbc.OdbcCommand.ExecuteScalar%2A>|データベースから単一の値など、集計値を取得します。|  
+  
+ リセットすることができます、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティと再利用、<xref:System.Data.Odbc.OdbcCommand>オブジェクト。 ただし、閉じる必要があります、<xref:System.Data.Odbc.OdbcDataReader>新しいまたは前のコマンドを実行する前にします。  
+  
+ コマンドの実行によって致命的なエラーが生じた場合<xref:System.Data.Odbc.OdbcException>20 以上の SQL Server の重大度レベルなど<xref:System.Data.Odbc.OdbcConnection>閉じることがあります。 ただし、ユーザーは接続を再び開き、続行できます。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>です。  
+  
+ [!code-csharp[Classic WebData OdbcCommand#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/Classic WebData OdbcCommand/CS/source.cs#1)]
+ [!code-vb[Classic WebData OdbcCommand#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/Classic WebData OdbcCommand/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcCommand" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本コンス トラクターは、すべてのフィールドを既定値を初期化します。 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Data.Odbc.OdbcCommand>です。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>|空の文字列 ("")|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>|30|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>|`Text`|  
+|<xref:System.Data.Odbc.OdbcCommand.Connection%2A>|null|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommand (string cmdText);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cmdText) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cmdText" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="cmdText">クエリのテキスト。</param>
+        <summary>クエリ テキストを指定して、<see cref="T:System.Data.Odbc.OdbcCommand" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommand (string cmdText, System.Data.Odbc.OdbcConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cmdText, class System.Data.Odbc.OdbcConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.#ctor(System.String,System.Data.Odbc.OdbcConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cmdText" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.Odbc.OdbcConnection" />
+      </Parameters>
+      <Docs>
+        <param name="cmdText">クエリのテキスト。</param>
+        <param name="connection">データ ソースへの接続を表す <see cref="T:System.Data.Odbc.OdbcConnection" /> オブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Data.Odbc.OdbcCommand" />クエリのテキストを持つクラスおよび<see cref="T:System.Data.Odbc.OdbcConnection" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OdbcCommand (string cmdText, System.Data.Odbc.OdbcConnection connection, System.Data.Odbc.OdbcTransaction transaction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string cmdText, class System.Data.Odbc.OdbcConnection connection, class System.Data.Odbc.OdbcTransaction transaction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.#ctor(System.String,System.Data.Odbc.OdbcConnection,System.Data.Odbc.OdbcTransaction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="cmdText" Type="System.String" />
+        <Parameter Name="connection" Type="System.Data.Odbc.OdbcConnection" />
+        <Parameter Name="transaction" Type="System.Data.Odbc.OdbcTransaction" />
+      </Parameters>
+      <Docs>
+        <param name="cmdText">クエリのテキスト。</param>
+        <param name="connection">データ ソースへの接続を表す <see cref="T:System.Data.Odbc.OdbcConnection" /> オブジェクト。</param>
+        <param name="transaction"><see cref="T:System.Data.Odbc.OdbcCommand" /> が実行するトランザクション。</param>
+        <summary>クエリのテキスト、<see cref="T:System.Data.Odbc.OdbcConnection" /> オブジェクト、および <see cref="P:System.Data.Odbc.OdbcCommand.Transaction" /> を指定して、<see cref="T:System.Data.Odbc.OdbcCommand" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のこの実装のインスタンスの初期プロパティ値、<xref:System.Data.Odbc.OdbcCommand>です。  
+  
+|プロパティ|初期値|  
+|----------------|-------------------|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>|`cmdText`|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>|30|  
+|<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>|`Text`|  
+|<xref:System.Data.Odbc.OdbcCommand.Connection%2A>|新しい<xref:System.Data.Odbc.OdbcConnection>の値である、`connection`パラメーター。|  
+  
+ これらのパラメーターのいずれかの値を変更するには、関連するプロパティを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="public override void Cancel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Cancel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.Cancel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行をキャンセルしようとする、<see cref="T:System.Data.Odbc.OdbcCommand" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャンセルする対象がない場合は、何も行われません。 ただし、プロセスでは、コマンドがあるし、キャンセルが失敗して、例外は生成されません。  
+  
+ 1 つのスレッドでクエリをキャンセルする<xref:System.Data.Odbc.OdbcCommand.Cancel%2A>別のスレッドから呼び出す必要があります。 使用した非同期のコマンドを実行することはできませんので<xref:System.Data.Odbc.OdbcCommand>、別のスレッドからコマンドを取り消す 1 つのスレッドを同期的に実行する必要があります。 つまり、<xref:System.Data.Odbc.OdbcCommand>オブジェクトは、両方のスレッドからアクセス可能である必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandText">
+      <MemberSignature Language="C#" Value="public override string CommandText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandText" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.CommandText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Odbc.Design.OdbcCommandTextEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに対して実行する SQL ステートメントまたはストアド プロシージャを取得または設定します。</summary>
+        <value>実行する SQL ステートメントまたはストアド プロシージャ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.IDbCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>標準 ODBC ストアド プロシージャのエスケープ シーケンスを使用してプロパティを設定する必要があります。 設定、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>ストアド プロシージャの名前に機能しない他の .NET Framework データ プロバイダーの場合と同様です。  
+  
+ 外部結合およびスカラー関数の呼び出しなど、多くの言語機能は、一般に、データ ソースによって実装されます。 これらの機能の構文でもは、一般にデータ ソースに固有です。 したがって、ODBC では、次の言語機能の標準構文を含むエスケープ シーケンスが定義されています。  
+  
+-   日付、時刻、タイムスタンプ、および日時の間隔のリテラル  
+  
+-   数値などのスカラー関数、文字列、およびデータ型変換関数  
+  
+-   などの述語のエスケープ文字  
+  
+-   外部結合  
+  
+-   プロシージャ呼び出し  
+  
+ ODBC で使用されるエスケープ シーケンスは次のとおりです。  
+  
+```  
+{extension}  
+```  
+  
+ このエスケープ シーケンスが認識し、ODBC ドライバーによって解析します。 それらは、データ ソースに固有の文法でエスケープ シーケンスを置き換えます。  
+  
+ プロシージャは、データ ソースに格納されている実行可能なオブジェクトです。 これは通常、プリコンパイルされた 1 つまたは複数の SQL ステートメントです。 プロシージャを呼び出すためのエスケープ シーケンスは、します。  
+  
+```  
+{[?=]call procedure-name[([parameter][,[parameter]]...)]}  
+```  
+  
+ ここで`procedure-name`プロシージャの名前を指定し、`parameter`プロシージャのパラメーターを指定します。  
+  
+ コマンドでは、Execute メソッドの 1 つを呼び出すときにこのストアド プロシージャが実行される (たとえば、<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>または<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>)。  
+  
+ 設定することはできません、 <xref:System.Data.Odbc.OdbcCommand.Connection%2A>、<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>と<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティの場合は、現在の接続で実行またはフェッチ操作が実行されます。  
+  
+ ODBC.NET プロバイダーが SQL ステートメントまたは呼び出されるストアド プロシージャにパラメーターを渡すの名前付きパラメーターをサポートしていません、<xref:System.Data.Odbc.OdbcCommand>とき<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>に設定されている`Text`です。 この場合、疑問符 (?) プレース ホルダーを使用する必要があります。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = ?  
+```  
+  
+ そのため、順序<xref:System.Data.Odbc.OdbcParameter>オブジェクトに追加されます、<xref:System.Data.Odbc.OdbcParameterCollection>パラメーターの疑問符 (?) プレース ホルダーの位置に直接対応する必要があります。  
+  
+ パラメーターに null 値が含まれている場合、.NET Framework Data Provider for ODBC はまだそのパラメーターをバインドが、SQL_DEFAULT_PARAM を使用して、null 値ではなく 1 つ定義されている場合に既定のパラメーターを使用します。 たとえば、 <xref:System.Data.Odbc.OdbcParameterCollection>:  
+  
+```  
+{1, null, 2}  
+```  
+  
+ 渡される、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティ。  
+  
+```  
+{call sp(?, ?, ?)}  
+```  
+  
+ .NET Framework Data Provider は、odbc の最初のパラメーター値を 1 に、値 2、3 番目のパラメーターと SQL_DEFAULT_PARAM として 2 番目のパラメーター バインドさせます。 ただし、この動作は、ドライバーによって異なります。 ドライバーがこの機能をサポートしていない場合だけを渡さないでください値でパラメーター。 たとえば、使用して、 <xref:System.Data.Odbc.OdbcParameterCollection>:  
+  
+```  
+{1, 2}  
+```  
+  
+ 設定と、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>には、次のプロパティ。  
+  
+```  
+{call sp(?, null, ?)}  
+```  
+  
+> [!NOTE]
+>  パラメーターを省略すると、その他のパラメーターを区切るコンマが引き続き表示されます必要があります。 パラメーターまたは入出力パラメーターを省略した場合、プロシージャは、パラメーターの既定値を使用します。 長さ/インジケーター バッファーの値を設定するパラメーターまたは入出力パラメーターの既定値を指定する別の方法は、SQL_DEFAULT_PARAM をパラメーターにバインドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTimeout">
+      <MemberSignature Language="C#" Value="public override int CommandTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CommandTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.CommandTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコマンドを実行する試行を終了し、エラーを生成するまでの待機時間を設定します。</summary>
+        <value>コマンドの実行を待機する時間 (秒単位)。 既定値は 30 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値がゼロ (0) の指定、待機時間ではなく、待機時間を制限していないため、避ける必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandType">
+      <MemberSignature Language="C#" Value="public override System.Data.CommandType CommandType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.CommandType CommandType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.CommandType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Data.Odbc.OdbcCommand.CommandText" /> プロパティをどのように解釈するかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Data.CommandType" /> 値のいずれか。 既定値は、<see langword="Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>プロパティに設定されている`StoredProcedure`、設定する必要があります、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティ完全 ODBC call 構文をします。 コマンドは、Execute メソッドの 1 つを呼び出すときに、このストアド プロシージャを実行 (たとえば、<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>または<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>)。  
+  
+ <xref:System.Data.Odbc.OdbcCommand.Connection%2A>、<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>と<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>現在の接続が実行または fetch 操作を実行している場合、プロパティを設定することはできません。  
+  
+ 名前付きの引き渡しは、.NET Framework Data Provider for ODBC でサポートされません呼び出されるストアド プロシージャを SQL ステートメントにパラメーター、<xref:System.Data.Odbc.OdbcCommand>です。 いずれのケースでは、疑問符 (?) プレース ホルダーを使用します。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = ?  
+```  
+  
+ 順序<xref:System.Data.Odbc.OdbcParameter>オブジェクトに追加されます、<xref:System.Data.Odbc.OdbcParameterCollection>パラメーターの疑問符 (?) プレース ホルダーの位置に直接対応する必要があります。  
+  
+> [!NOTE]
+>  .NET Framework Data Provider for ODBC がサポートしていません、<xref:System.Data.CommandType>設定`TableDirect`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">値が正しい <see cref="T:System.Data.CommandType" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connection">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcConnection Connection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcConnection Connection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.Connection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("Microsoft.VSDesigner.Data.Design.DbConnectionEditor, Microsoft.VSDesigner, Version=0.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Odbc.OdbcCommand" /> のインスタンスで使用する <see cref="T:System.Data.Odbc.OdbcConnection" /> を取得または設定します。</summary>
+        <value>データ ソースへの接続。 既定は null 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することはできません、 <xref:System.Data.Odbc.OdbcCommand.Connection%2A>、 <xref:System.Data.Odbc.OdbcCommand.CommandType%2A>、および<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティの場合は、現在の接続で実行またはフェッチ操作が実行されます。  
+  
+ トランザクションの進行中に <xref:System.Data.Odbc.OdbcCommand.Connection%2A> を設定した場合、<xref:System.Data.Odbc.OdbcCommand.Transaction%2A> プロパティが NULL でなければ、<xref:System.InvalidOperationException> が生成されます。 設定した場合<xref:System.Data.Odbc.OdbcCommand.Connection%2A>トランザクションがコミットまたはロールバックされた後、<xref:System.Data.Odbc.OdbcCommand.Transaction%2A>プロパティが null でない、<xref:System.Data.Odbc.OdbcCommand.Transaction%2A>プロパティが null 値に設定し、します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">トランザクションの進行中に <see cref="P:System.Data.Odbc.OdbcCommand.Connection" /> プロパティが変更されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDbParameter">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameter CreateDbParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbParameter CreateDbParameter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.CreateDbParameter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateParameter">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcParameter CreateParameter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcParameter CreateParameter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.CreateParameter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcParameter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcParameter" /> オブジェクトの新しいインスタンスを作成します。</summary>
+        <returns><see cref="T:System.Data.Odbc.OdbcParameter" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommand.CreateParameter%2A>メソッドは、厳密に型指定されたバージョンの<xref:System.Data.IDbCommand.CreateParameter%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbConnection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbConnection DbConnection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbConnection DbConnection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.DbConnection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbConnection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbParameterCollection">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbParameterCollection DbParameterCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbParameterCollection DbParameterCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.DbParameterCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DbTransaction">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbTransaction DbTransaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Common.DbTransaction DbTransaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.DbTransaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignTimeVisible">
+      <MemberSignature Language="C#" Value="public override bool DesignTimeVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignTimeVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.DesignTimeVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コマンド オブジェクトをカスタマイズしたインターフェイスのコントロールに表示するかどうかを示す値を設定します。</summary>
+        <value>**true**コマンド オブジェクトは、それ以外のコントロールに表示されている必要がある場合、 **false**です。 既定値は**true**です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteDbDataReader">
+      <MemberSignature Language="C#" Value="protected override System.Data.Common.DbDataReader ExecuteDbDataReader (System.Data.CommandBehavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Data.Common.DbDataReader ExecuteDbDataReader(valuetype System.Data.CommandBehavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ExecuteDbDataReader(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Common.DbDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteNonQuery">
+      <MemberSignature Language="C#" Value="public override int ExecuteNonQuery ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ExecuteNonQuery() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ExecuteNonQuery" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>に対して SQL ステートメントを実行、<see cref="P:System.Data.Odbc.OdbcCommand.Connection" />影響を受ける行の数を返します。</summary>
+        <returns>UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 その他のすべての種類のステートメントは、戻り値は-1 です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>(データベースの構造をクエリやテーブルなどのデータベース オブジェクトを作成するなど); カタログ操作を実行するか、データベース内のデータの変更を使用せずに、<xref:System.Data.DataSet>で実行する、更新、挿入、または DELETE ステートメント。  
+  
+ 使用することも<xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>を基になる ODBC ドライバーは、この機能をサポートしている場合は、複数の SQL ステートメントを実行します。 この場合、戻り値は、コマンドのすべてのステートメントによって影響を受ける行の数  
+  
+ <xref:System.Data.Odbc.OdbcCommand.ExecuteNonQuery%2A>行がない、すべての出力パラメーターを返しますまたは、返すデータ パラメーターにマップされている値が設定されます。  
+  
+ UPDATE、INSERT、および DELETE ステートメントでは、戻り値は、コマンドによって影響を受ける行の数です。 その他のすべての種類のステートメントは、戻り値は-1 です。 ロールバックが発生した場合、戻り値も-1 にです。  
+  
+ トリガーが存在する場合にテーブルとデータは追加またはテーブルで変更されるは、戻り値には、insert または update 操作とトリガーの影響を受ける行の数の両方の影響を受ける行の数が含まれています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">接続が存在しません。  
+  
+ または  
+  
+ 接続が開かれていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcDataReader ExecuteReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcDataReader ExecuteReader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ExecuteReader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>送信、<see cref="P:System.Data.Odbc.OdbcCommand.CommandText" />を<see cref="P:System.Data.Odbc.OdbcCommand.Connection" />をビルドし、<see cref="T:System.Data.Odbc.OdbcDataReader" />です。</summary>
+        <returns><see cref="T:System.Data.Odbc.OdbcDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定する必要があります、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティをストアド プロシージャの完全な ODBC 呼び出し構文。 コマンドを呼び出すときにこのストアド プロシージャが実行される<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>です。  
+  
+ 中に、<xref:System.Data.Odbc.OdbcDataReader>を使用する、関連付けられている<xref:System.Data.Odbc.OdbcConnection>がビジー状態であるサービス、<xref:System.Data.Odbc.OdbcDataReader>です。 この状態では、その他の操作はありません、<xref:System.Data.Odbc.OdbcConnection>閉じる以外です。 これは、まで続きます、<xref:System.Data.Odbc.OdbcDataReader.Close%2A>のメソッド、<xref:System.Data.Odbc.OdbcDataReader>と呼びます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteReader">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcDataReader ExecuteReader (System.Data.CommandBehavior behavior);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Data.Odbc.OdbcDataReader ExecuteReader(valuetype System.Data.CommandBehavior behavior) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ExecuteReader(System.Data.CommandBehavior)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcDataReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="behavior" Type="System.Data.CommandBehavior" />
+      </Parameters>
+      <Docs>
+        <param name="behavior"><see langword="System.Data.CommandBehavior" /> 値のいずれか。</param>
+        <summary>送信、<see cref="P:System.Data.Odbc.OdbcCommand.CommandText" />を<see cref="P:System.Data.Odbc.OdbcCommand.Connection" />、およびビルド、<see cref="T:System.Data.Odbc.OdbcDataReader" />のいずれかを使用して、<see langword="CommandBehavior" />値。</summary>
+        <returns><see cref="T:System.Data.Odbc.OdbcDataReader" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定する 1 つの行のみを返す SQL ステートメントの場合、`SingleRow`として、<xref:System.Data.CommandBehavior>値は、アプリケーションのパフォーマンスを向上させることがあります。  
+  
+ 設定する必要があります、<xref:System.Data.Odbc.OdbcCommand.CommandText%2A>プロパティをストアド プロシージャの完全な ODBC 呼び出し構文。 コマンドを呼び出すときにこのストアド プロシージャが実行される<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>です。  
+  
+ <xref:System.Data.Odbc.OdbcDataReader>を効率的に読み込まれる大きなバイナリ値を有効にする、特殊なモードをサポートしています。 詳細については、次を参照してください。、`SequentialAccess`設定<xref:System.Data.CommandBehavior>です。  
+  
+> [!NOTE]
+>  `SequentialAccess`の値<xref:System.Data.CommandBehavior>がいないを制限する設定は、単に意味への少なくとも順次アクセスすること、<xref:System.Data.Odbc.OdbcDataReader>です。 SQL Server ODBC Driver を使用する場合など、`SequentialAccess`モードでは、まだに移動できますの最初の列、<xref:System.Data.Odbc.OdbcDataReader>順番に他のすべての列を参照した後に行です。  
+  
+ 中に、<xref:System.Data.Odbc.OdbcDataReader>を使用する、関連付けられている<xref:System.Data.Odbc.OdbcConnection>がビジー状態であるサービス、<xref:System.Data.Odbc.OdbcDataReader>です。 この状態では、その他の操作はありません、<xref:System.Data.Odbc.OdbcConnection>閉じる以外です。 呼び出されるまで、そうでは、<xref:System.Data.Odbc.OdbcDataReader.Close%2A?displayProperty=nameWithType>メソッドです。 場合、<xref:System.Data.Odbc.OdbcDataReader>で作成された<xref:System.Data.CommandBehavior>'éý'`CloseConnection`を閉じて、<xref:System.Data.Odbc.OdbcDataReader>接続を自動的に閉じます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteScalar">
+      <MemberSignature Language="C#" Value="public override object ExecuteScalar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ExecuteScalar() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ExecuteScalar" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クエリを実行し、そのクエリが返す結果セットの最初の行にある最初の列を返します。 以降の列または行は無視されます。</summary>
+        <returns>結果の最初の行の最初の列は、次の設定、または null 参照場合、結果セットは空にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Data.Odbc.OdbcCommand.ExecuteScalar%2A>データ ソースから単一の値 (たとえば、集計値) を取得します。 使用するよりも少ないコードが必要です、<xref:System.Data.Odbc.OdbcCommand.ExecuteReader%2A>メソッド、および、によって返されるデータから 1 つの値を生成するために必要な操作の実行、<xref:System.Data.Odbc.OdbcDataReader>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcParameterCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcParameterCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcParameterCollection" /> を取得します。</summary>
+        <value>SQL ステートメントまたはストアド プロシージャのパラメーター。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Data.Odbc.OdbcCommand.CommandType%2A>に設定されている`Text`、名前付きの引き渡しは、.NET Framework Data Provider for ODBC でサポートされません呼び出されるストアド プロシージャを SQL ステートメントにパラメーター、<xref:System.Data.Odbc.OdbcCommand>です。 いずれのケースでは、疑問符 (?) プレース ホルダーを使用します。 例:  
+  
+```  
+SELECT * FROM Customers WHERE CustomerID = ?  
+```  
+  
+ 順序<xref:System.Data.Odbc.OdbcParameter>オブジェクトに追加されます、<xref:System.Data.Odbc.OdbcParameterCollection>コマンド テキスト内のパラメーターの疑問符 (?) プレース ホルダーの位置に直接対応する必要があります。  
+  
+> [!NOTE]
+>  コレクション内のパラメーターが実行されるクエリの要件が一致しない場合、エラーが表示される場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepare">
+      <MemberSignature Language="C#" Value="public override void Prepare ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Prepare() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.Prepare" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースにコマンドの準備済みまたはコンパイル済みバージョンを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Odbc.OdbcCommand.Prepare%2A>メソッドを呼び出す ODBC`SQLPrepare`関数。 データ ソースの基になる ODBC ドライバーの機能、によってステートメントが準備された、すべてのパラメーターがバインドされている場合、またはすべてのパラメーターがバインドされていない場合に実行されるときにデータ型などのパラメーター情報をチェックする可能性があります。 相互運用性を最大にするため、アプリケーションが、同じ新しい SQL ステートメントを準備する前に、以前の SQL ステートメントに適用されるすべてのパラメーターを解除する必要があります<xref:System.Data.Odbc.OdbcCommand>です。 これにより、新しい SQL ステートメントに適用される前のパラメーター情報によって引き起こされるエラーです。  
+  
+ 呼び出した後に、Execute メソッドを呼び出す場合は、 <xref:System.Data.Odbc.OdbcCommand.Prepare%2A>、パラメーターの値がで指定された値より大きい、<xref:System.Data.Odbc.OdbcParameter.Size%2A>プロパティは、パラメーターの指定した元のサイズを自動的に切り捨てられます、切り捨てエラーは返されません。  
+  
+ 出力では、(準備またはない) かどうかをパラメーター ユーザー指定のデータ型である必要があります。 可変長データ型を指定する場合は、最大値も指定する必要があります<xref:System.Data.Odbc.OdbcParameter.Size%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Data.Odbc.OdbcCommand.Connection" /> が設定されていません。  
+  
+ または  
+  
+ <see cref="P:System.Data.Odbc.OdbcCommand.Connection" /> が <see cref="M:System.Data.Odbc.OdbcConnection.Open" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetCommandTimeout">
+      <MemberSignature Language="C#" Value="public void ResetCommandTimeout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetCommandTimeout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.ResetCommandTimeout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Data.Odbc.OdbcCommand.CommandTimeout" />プロパティを既定値にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値、<xref:System.Data.Odbc.OdbcCommand.CommandTimeout%2A>は 30 秒です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Odbc.OdbcCommand.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ICloneable.Clone" />」をご覧ください。</summary>
+        <returns>新しい<see cref="T:System.Object" />のこのインスタンスのコピーであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Odbc.OdbcCommand> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transaction">
+      <MemberSignature Language="C#" Value="public System.Data.Odbc.OdbcTransaction Transaction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Odbc.OdbcTransaction Transaction" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.Transaction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.Odbc.OdbcTransaction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Odbc.OdbcTransaction" /> が実行される <see cref="T:System.Data.Odbc.OdbcCommand" /> を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Odbc.OdbcTransaction" />。 既定は null 値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することはできません、<xref:System.Data.Odbc.OdbcCommand.Transaction%2A>場合は、既に特定の値に設定し、コマンドが実行中はプロパティです。 トランザクションのプロパティを設定する場合、<xref:System.Data.Odbc.OdbcTransaction>に同じ接続されていないオブジェクト<xref:System.Data.Odbc.OdbcConnection>として、<xref:System.Data.Odbc.OdbcCommand>オブジェクト、次回ステートメントを実行するときに、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedRowSource">
+      <MemberSignature Language="C#" Value="public override System.Data.UpdateRowSource UpdatedRowSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.UpdateRowSource UpdatedRowSource" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Odbc.OdbcCommand.UpdatedRowSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Odbc</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Data.UpdateRowSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値、**更新**メソッドにコマンドの結果を適用する必要があります、 **DataRow**です。</summary>
+        <value><see cref="T:System.Data.UpdateRowSource" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Data.UpdateRowSource>値は**両方**コマンドは自動的に生成しない限りと同様、<xref:System.Data.Odbc.OdbcCommandBuilder>の場合、既定値は**None**です。  
+  
+ 使用する方法についての詳細、<xref:System.Data.Odbc.OdbcCommand.UpdatedRowSource%2A>プロパティを参照してください[DataAdapter パラメーター](~/docs/framework/data/adonet/dataadapter-parameters.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

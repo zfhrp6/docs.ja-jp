@@ -1,0 +1,264 @@
+<Type Name="ScriptManagerDesigner" FullName="System.Web.UI.Design.ScriptManagerDesigner">
+  <TypeSignature Language="C#" Value="public class ScriptManagerDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScriptManagerDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ScriptManagerDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時サポートを提供、<see cref="T:System.Web.UI.ScriptManager" />ビジュアル デザイナーで制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。、<xref:System.Web.UI.Design.ControlDesigner>クラスのドキュメントです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScriptManagerDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ScriptManagerDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]内部での新しいインスタンスを構築、<xref:System.Web.UI.Design.ScriptManagerDesigner>クラスの関連付けの作成時に<xref:System.Web.UI.ScriptManager>コントロールまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationServices">
+      <MemberSignature Language="C#" Value="public static string GetApplicationServices (System.Web.UI.ScriptManager scriptManager, System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt; proxies);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetApplicationServices(class System.Web.UI.ScriptManager scriptManager, class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptManagerProxy&gt; proxies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetApplicationServices(System.Web.UI.ScriptManager,System.Collections.Generic.IEnumerable{System.Web.UI.ScriptManagerProxy})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="proxies" Type="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see cref="T:System.Web.UI.ScriptManager" /> Web ページに関連付けられているコントロール。</param>
+        <param name="proxies">コレクション<see cref="T:System.Web.UI.ScriptManagerProxy" />Web ページに関連付けられているコントロール。</param>
+        <summary>Web ページの <see cref="T:System.Web.UI.ScriptManager" /> コントロールと <see cref="T:System.Web.UI.ScriptManagerProxy" /> コントロールで定義されているプロファイル サービスのプロパティを表す、ECMAScript (JavaScript) コードを返します。</summary>
+        <returns>プロファイル サービスのプロパティを定義する JavaScript コードです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scriptManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetDesignTimeHtml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表すマークアップを返します、HTML、<see cref="T:System.Web.UI.ScriptManager" />コントロールをデザイン時です。</summary>
+        <returns>マークアップを表示するために使用される、<see cref="T:System.Web.UI.ScriptManager" />デザイン時にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 生成された HTML を変更するには、このメソッドをオーバーライドして、<xref:System.Web.UI.ScriptManager>コントロールをデザイン時です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxyScript">
+      <MemberSignature Language="C#" Value="public static string GetProxyScript (System.Web.UI.ScriptManager scriptManager, System.Web.UI.ServiceReference serviceReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetProxyScript(class System.Web.UI.ScriptManager scriptManager, class System.Web.UI.ServiceReference serviceReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetProxyScript(System.Web.UI.ScriptManager,System.Web.UI.ServiceReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="serviceReference" Type="System.Web.UI.ServiceReference" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager">ページ上の <see cref="T:System.Web.UI.ScriptManager" /> コントロール。</param>
+        <param name="serviceReference"><see cref="T:System.Web.UI.ServiceReference" />  ページで使用する Web サービスの登録に使用するコントロール。</param>
+        <summary>派生からプロキシ スクリプトを提供<see cref="T:System.Web.UI.ServiceReference" />オブジェクト。</summary>
+        <returns>プロキシ スクリプト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxyUrl">
+      <MemberSignature Language="C#" Value="public static string GetProxyUrl (System.Web.UI.ScriptManager scriptManager, System.Web.UI.ServiceReference serviceReference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetProxyUrl(class System.Web.UI.ScriptManager scriptManager, class System.Web.UI.ServiceReference serviceReference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetProxyUrl(System.Web.UI.ScriptManager,System.Web.UI.ServiceReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="serviceReference" Type="System.Web.UI.ServiceReference" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager">ページ上の <see cref="T:System.Web.UI.ScriptManager" /> コントロール。</param>
+        <param name="serviceReference"><see cref="T:System.Web.UI.ServiceReference" />  ページで使用する Web サービスの登録に使用するコントロール。</param>
+        <summary>派生するプロキシの URL を提供<see cref="T:System.Web.UI.ServiceReference" />オブジェクト。</summary>
+        <returns>プロキシ URL。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptFromWebResource">
+      <MemberSignature Language="C#" Value="public static string GetScriptFromWebResource (System.Reflection.Assembly assembly, string resourceName, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetScriptFromWebResource(class System.Reflection.Assembly assembly, string resourceName, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetScriptFromWebResource(System.Reflection.Assembly,System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="resourceName" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="assembly">リソースを格納しているアセンブリ。</param>
+        <param name="resourceName">アセンブリ内のリソースの完全修飾名。</param>
+        <param name="culture">リソースが指定されているカルチャです。</param>
+        <summary>定義されているように ECMAScript (JavaScript) コードを返します、<see cref="T:System.Web.UI.ScriptResourceAttribute" />属性。</summary>
+        <returns>JavaScript のリソースです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptReferences">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.UI.ScriptReference&gt; GetScriptReferences (System.Web.UI.ScriptManager scriptManager, System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt; proxies);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Web.UI.ScriptReference&gt; GetScriptReferences(class System.Web.UI.ScriptManager scriptManager, class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptManagerProxy&gt; proxies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetScriptReferences(System.Web.UI.ScriptManager,System.Collections.Generic.IEnumerable{System.Web.UI.ScriptManagerProxy})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="proxies" Type="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see cref="T:System.Web.UI.ScriptManager" /> Web ページに関連付けられているコントロール。</param>
+        <param name="proxies">コレクション<see cref="T:System.Web.UI.ScriptManagerProxy" />Web ページに関連付けられているコントロール。</param>
+        <summary>すべてのコレクションを返します<see cref="T:System.Web.UI.ScriptReference" />Web ページので定義されているコントロール<see cref="T:System.Web.UI.ScriptManager" />コントロールと<see cref="T:System.Web.UI.ScriptManagerProxy" />コントロール。</summary>
+        <returns>読み取り専用コレクション<see cref="T:System.Web.UI.ScriptReference" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションになど AJAX 機能をサポートするために、クライアントに自動的に送信される framework スクリプトが含まれています、<xref:System.Web.UI.ScriptManager>と<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ 使用すると、<xref:System.Web.UI.Design.ScriptManagerDesigner.GetScriptReferences%2A>メソッドを次のガイドラインに注意してください。  
+  
+-   <xref:System.Web.UI.ScriptReference>オブジェクトが同じ<xref:System.Web.UI.ScriptReference.Name%2A>と<xref:System.Web.UI.ScriptReference.Assembly%2A>プロパティが重複として削除されます。  
+  
+-   <xref:System.Web.UI.ScriptReference>オブジェクトが同じ<xref:System.Web.UI.ScriptReferenceBase.Path%2A>はデザイン時に重複として削除されません。 ただし、重複として実行時に削除されます。  
+  
+-   <xref:System.Web.UI.Control.ResolveClientUrl%2A>メソッドを使用しての完全修飾 URL を返す、<xref:System.Web.UI.ScriptReferenceBase.Path%2A>のプロパティ、<xref:System.Web.UI.ScriptReference>オブジェクト。  
+  
+-   <xref:System.Web.UI.ScriptReference>返されるコレクション内のオブジェクトが元のスクリプト参照の複製である、したがってこのコレクションを使用してデザイナー コードで変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scriptManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetServiceReferences">
+      <MemberSignature Language="C#" Value="public static System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.UI.ServiceReference&gt; GetServiceReferences (System.Web.UI.ScriptManager scriptManager, System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt; proxies);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Web.UI.ServiceReference&gt; GetServiceReferences(class System.Web.UI.ScriptManager scriptManager, class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptManagerProxy&gt; proxies) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.GetServiceReferences(System.Web.UI.ScriptManager,System.Collections.Generic.IEnumerable{System.Web.UI.ScriptManagerProxy})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Web.UI.ServiceReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptManager" Type="System.Web.UI.ScriptManager" />
+        <Parameter Name="proxies" Type="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptManagerProxy&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="scriptManager"><see cref="T:System.Web.UI.ScriptManager" /> Web ページに関連付けられているコントロール。</param>
+        <param name="proxies">コレクション<see cref="T:System.Web.UI.ScriptManagerProxy" />Web ページに関連付けられているコントロール。</param>
+        <summary>すべてのコレクションを返します<see cref="T:System.Web.UI.ServiceReference" />Web ページので定義されているコントロール<see cref="T:System.Web.UI.ScriptManager" />コントロールと<see cref="T:System.Web.UI.ScriptManagerProxy" />コントロール。</summary>
+        <returns>読み取り専用コレクション<see cref="T:System.Web.UI.ServiceReference" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="scriptManager" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ScriptManagerDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">A<see cref="T:System.Web.UI.ScriptManager" />を実装するコンポーネント、<see cref="T:System.ComponentModel.IComponent" />インターフェイスです。</param>
+        <summary>指定したコンポーネントを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

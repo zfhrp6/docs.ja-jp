@@ -1,0 +1,528 @@
+<Type Name="Timer" FullName="System.Web.UI.Timer">
+  <TypeSignature Language="C#" Value="public class Timer : System.Web.UI.Control, System.Web.UI.IPostBackEventHandler, System.Web.UI.IScriptControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Timer extends System.Web.UI.Control implements class System.Web.UI.IPostBackEventHandler, class System.Web.UI.IScriptControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Timer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IScriptControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Tick")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Interval")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.TimerDesigner, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(EmbeddedResourceFinder), "System.Web.Resources.Timer.bmp")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.NonVisualControl</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>非同期または同期の Web ページのポストバックを定義された間隔で実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.Timer>コントロールでは、指定された間隔でポストバックを実行することができます。 使用する場合、<xref:System.Web.UI.Timer>コントロールのトリガーとして、<xref:System.Web.UI.UpdatePanel>コントロール、<xref:System.Web.UI.UpdatePanel>非同期、部分ページ更新プログラムを使用してコントロールを更新します。 含める必要があります、<xref:System.Web.UI.ScriptManager>を使用する Web ページ内のオブジェクト、<xref:System.Web.UI.Timer>コントロール。  
+  
+ 使用する、<xref:System.Web.UI.Timer>を更新するコントロール、<xref:System.Web.UI.UpdatePanel>コントロール内のタイマーを含めることによって、<xref:System.Web.UI.UpdatePanel>コントロール。 外部タイマーを配置する代わりに、<xref:System.Web.UI.UpdatePanel>を制御し、タイマーをトリガーとして設定します。  
+  
+ 含めることで、完全な Web ページの完全なポストバックを開始することも、 <xref:System.Web.UI.Timer> Web ページを制御し、トリガーとして設定されていない、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ サーバー コードを実行するには、イベント ハンドラーを作成することで、タイマーの間隔が経過すると、<xref:System.Web.UI.Timer.Tick>イベント。 イベント ハンドラーでコードを記述できますの動作を動的に調整される、<xref:System.Web.UI.Timer>コントロール。  
+  
+ 設定、<xref:System.Web.UI.Timer.Interval%2A>どのくらいの頻度を指定するプロパティのポストバックが発生します。 設定、<xref:System.Web.UI.Timer.Enabled%2A>プロパティを有効にする、<xref:System.Web.UI.Timer>オンまたはオフします。  
+  
+> [!NOTE]
+>  場合の精度、 <xref:System.Web.UI.Timer> Web サーバーへのコントロール投稿は、ECMAScript (JavaScript) の精度によって決まります。`window.setTimeout`ブラウザーで実行されている関数です。  
+  
+ <xref:System.Web.UI.Timer.Interval%2A>ミリ秒単位でプロパティを定義します。 設定する必要があります、<xref:System.Web.UI.Timer.Interval%2A>プロパティにできるように、少なくとも 1 つの非同期ポストバック値を次のポストバックが開始される前に完了します。 ときに、<xref:System.Web.UI.Timer>コントロールが範囲外、<xref:System.Web.UI.UpdatePanel>コントロール、タイマーは引き続き実行中のコンテンツに、<xref:System.Web.UI.UpdatePanel>コントロールが更新されます。 ポストバックの処理中に新しいポストバックが開始されると、最初のポストバックが取り消されます。 既定値は 60,000 ミリ秒 (60 秒) です。  
+  
+> [!NOTE]
+>  追加する、<xref:System.Web.UI.Timer>で小さな値を持つコントロール、<xref:System.Web.UI.Timer.Interval%2A>プロパティは、Web サーバーとの間に大量のトラフィックを生成できます。 使用して、<xref:System.Web.UI.Timer>コントロールのみ必要に応じて、コンテンツを更新します。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Timer  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    Interval="integer"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnTick="Tick event handler"  
+    OnUnload="Unload handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.UpdatePanel>をランダムに生成された株価と株価が生成された時刻を表示するコントロール。 <xref:System.Web.UI.Timer>コントロール内のコンテンツの更新、 <xref:System.Web.UI.UpdatePanel> 10 秒ごとの制御します。  
+  
+> [!NOTE]
+>  この例では例を実行するときに、結果を表示する時間を待機する必要があるないように、タイマーの間隔は 10 秒に設定します。 各タイマーの間隔には、ネットワーク トラフィックの原因となるポストバックが発生するため、実稼働アプリケーションで設定してください、間隔には、アプリケーションの実用的なする最長時間。  
+  
+ [!code-aspx-csharp[System.Web.UI.Controls.Timer#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/cs/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Controls.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/vb/Default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Timer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Timer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Timer.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.Timer" />コントロールで指定されたミリ秒数の後にサーバーへのポストバックを開始する、<see cref="P:System.Web.UI.Timer.Interval" />プロパティが経過しました。</summary>
+        <value>
+          <see langword="true" />場合<see cref="T:System.Web.UI.Timer" />ポストバックが開始されます。 それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Timer.Enabled%2A>プロパティを有効にする、<xref:System.Web.UI.Timer>オンとオフを制御します。 設定すると<xref:System.Web.UI.Timer.Enabled%2A>に`true`、 <xref:System.Web.UI.Timer> Web ページがレンダリングされるときに、コントロールがカウント ダウン タイマーを開始します。  
+  
+ ポストバックでのプロパティ値を変更することができます、<xref:System.Web.UI.Timer.Enabled%2A>ブラウザーで Web ページの内容が表示されるときに、プロパティ、および変更が反映されます。 変更した場合、<xref:System.Web.UI.Timer.Enabled%2A>プロパティと同じのポストバック時に元の値に戻す変更し、<xref:System.Web.UI.Timer>が変更されていないかのように実行を制御します。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.UpdatePanel>をランダムに生成された株価と株価が生成された時刻を表示するコントロール。 既定では、<xref:System.Web.UI.Timer>コントロール内のコンテンツの更新、 <xref:System.Web.UI.UpdatePanel> 10 秒ごとの制御します。 ユーザーは、株価 60 秒ごとに、10 秒ごとに更新することができますか、またはまったくありません。 株式の価格を更新しないように、ユーザーが決定したら、<xref:System.Web.UI.Timer.Enabled%2A>プロパティに設定されている`false`です。  
+  
+ [!code-aspx-csharp[System.Web.UI.Controls.Timer.Interval#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.Controls.Timer.Interval/cs/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Controls.Timer.Interval#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.Controls.Timer.Interval/vb/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.GetScriptDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Web.UI.Timer/&lt;GetScriptDescriptors&gt;d__22))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを取得、<see cref="T:System.Web.UI.Timer" />ブラウザーでタイマー ロジックを実装するクライアント コンポーネントに渡されるオブジェクト。</summary>
+        <returns><see cref="T:System.Web.UI.ScriptDescriptor" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Timer.GetScriptDescriptors%2A>メソッドを追加、<xref:System.Web.UI.Timer.Interval%2A>と<xref:System.Web.UI.Timer.Enabled%2A>のインスタンスからのプロパティ、<xref:System.Web.UI.Timer>クラスを<xref:System.Web.UI.ScriptDescriptor>オブジェクト。 クライアント コンポーネントは、値にアクセスし、スクリプトに対応する値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptReferences">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Web.UI.Timer/&lt;GetScriptReferences&gt;d__23))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアント スクリプトを取得、<see cref="T:System.Web.UI.Timer" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ScriptReference" />用のクライアント スクリプトを格納しているオブジェクト、<see cref="T:System.Web.UI.Timer" />コントロール。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Interval">
+      <MemberSignature Language="C#" Value="public int Interval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Interval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Timer.Interval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(60000)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバックを開始する前に待機するミリ秒数を設定します。</summary>
+        <value>ポストバックを開始する前に待機するミリ秒数。 既定値は 60,000 (60 秒) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Timer.Interval%2A>どのくらいの頻度を設定するプロパティ、<xref:System.Web.UI.Timer>サーバーへのポストバックが発生します。 値を変更することができます、<xref:System.Web.UI.Timer.Interval%2A>プロパティなどのイベント ハンドラーのように、ポストバック後にサーバー コードで、<xref:System.Web.UI.Timer.Tick>イベント。 場合の精度、 <xref:System.Web.UI.Timer> Web サーバーへのコントロール投稿は、ECMAScript (JavaScript) の精度によって決まります。`window.setTimeout`ブラウザーで実行される関数。  
+  
+> [!NOTE]
+>  設定、<xref:System.Web.UI.Timer.Interval%2A>プロパティ値を小さい値には、Web サーバーとの間に大量のトラフィックを生成できます。 使用して、<xref:System.Web.UI.Timer>コントロールのみ必要に応じて、コンテンツを更新します。  
+  
+ 値を変更すると、<xref:System.Web.UI.Timer.Interval%2A>プロパティ、ECMAScript の更新プログラムが表示されるときに、ブラウザーで実行されるタイミング コードがリセットされます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.UpdatePanel>をランダムに生成された株価と株価が生成された時刻を表示するコントロール。 既定では、<xref:System.Web.UI.Timer>コントロール内のコンテンツの更新、 <xref:System.Web.UI.UpdatePanel> 10 秒ごとの制御します。 ユーザーは、株価 60 秒ごとに、10 秒ごとに更新することができますか、またはまったくありません。 <xref:System.Web.UI.Timer.Interval%2A>プロパティがユーザーの選択に設定します。  
+  
+ [!code-aspx-csharp[System.Web.UI.Controls.Timer.Interval#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.Controls.Timer.Interval/cs/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Controls.Timer.Interval#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.Controls.Timer.Interval/vb/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した値は、0 に等しいまたはそれよりも小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Control.PreRender" />のイベント、<see cref="T:System.Web.UI.Timer" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTick">
+      <MemberSignature Language="C#" Value="protected virtual void OnTick (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTick(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.OnTick(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Timer.Tick" />のイベント、<see cref="T:System.Web.UI.Timer" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Timer.Tick>でミリ秒単位の数を指定するときにイベントが発生、<xref:System.Web.UI.Timer.Interval%2A>プロパティは、Web ページがレンダリングされた後または前の以降のいずれかに経過<xref:System.Web.UI.Timer.Tick>イベント。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.UpdatePanel>をランダムに生成された株価と株価が生成された時刻を表示するコントロール。 <xref:System.Web.UI.Timer>コントロール内のコンテンツの更新、 <xref:System.Web.UI.UpdatePanel> 10 秒ごとの制御します。 株価と時間が設定されている場合のハンドラーで、<xref:System.Web.UI.Timer.Tick>イベント。  
+  
+ [!code-aspx-csharp[System.Web.UI.Controls.Timer#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/cs/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Controls.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/vb/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント ハンドラーに渡される省略可能な引数を持つ文字列です。</param>
+        <summary>により、<see cref="T:System.Web.UI.Timer" />させるコントロール、<see cref="E:System.Web.UI.Timer.Tick" />ページがサーバーにポストされたときにイベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />表示するために使用されるオブジェクト、<see cref="T:System.Web.UI.Timer" />ブラウザーにコンテンツを制御します。</param>
+        <summary>表示、<see cref="T:System.Web.UI.Timer" />指定を使用して、ブラウザーにコンテンツを制御<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント ハンドラーに渡される省略可能な引数を持つ文字列です。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.Timer.Tick" />ページがサーバーにポストされたときにイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Timer> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IScriptControl.GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; IScriptControl.GetScriptDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; System.Web.UI.IScriptControl.GetScriptDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.System#Web#UI#IScriptControl#GetScriptDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを取得、<see cref="T:System.Web.UI.Timer" />クライアント コンポーネントに渡されるオブジェクト。</summary>
+        <returns><see cref="T:System.Web.UI.ScriptDescriptor" /> 型の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Timer> のインスタンスが <xref:System.Web.UI.IScriptControl> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ <xref:System.Web.UI.Timer.GetScriptDescriptors%2A>メソッドを追加、<xref:System.Web.UI.Timer.Interval%2A>と<xref:System.Web.UI.Timer.Enabled%2A>のインスタンスからのプロパティ、<xref:System.Web.UI.Timer>クラスを<xref:System.Web.UI.ScriptDescriptor>オブジェクト。 クライアント コンポーネントは、値を取得し、スクリプトに対応する値を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IScriptControl.GetScriptReferences">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; IScriptControl.GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; System.Web.UI.IScriptControl.GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Timer.System#Web#UI#IScriptControl#GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアント スクリプトを取得、<see cref="T:System.Web.UI.Timer" />コントロール。</summary>
+        <returns>A<see cref="T:System.Web.UI.ScriptReference" />用のクライアント スクリプトを格納しているオブジェクト、<see cref="T:System.Web.UI.Timer" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Timer> のインスタンスが <xref:System.Web.UI.IScriptControl> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tick">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;EventArgs&gt; Tick;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.EventArgs&gt; Tick" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.Timer.Tick" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.EventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ミリ秒単位の数がで指定されたときに発生、<see cref="P:System.Web.UI.Timer.Interval" />プロパティが経過し、ページがサーバーにポストします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Timer.Tick>でミリ秒単位の数を指定するときにイベントが発生、<xref:System.Web.UI.Timer.Interval%2A>プロパティは、Web ページが最後にレンダリングされた後または前の以降のいずれかが経過<xref:System.Web.UI.Timer.Tick>イベント。 処理、<xref:System.Web.UI.Timer.Tick>イベントごとのポストバック時にアクションを実行する必要があるとします。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Web.UI.UpdatePanel>をランダムに生成された株価と株価が生成された時刻を表示するコントロール。 <xref:System.Web.UI.Timer>コントロール内のコンテンツの更新、 <xref:System.Web.UI.UpdatePanel> 10 秒ごとの制御します。 株価と時間が設定されている場合のハンドラーで、<xref:System.Web.UI.Timer.Tick>イベント。  
+  
+ [!code-aspx-csharp[System.Web.UI.Controls.Timer#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/cs/Default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.Controls.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.Controls.Timer/vb/Default.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public override bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Timer.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上書き、<see cref="P:System.Web.UI.Control.Visible" />のプロパティ、<see cref="T:System.Web.UI.Control" />クラスをこの値が設定されていることを防ぐためにします。</summary>
+        <value>
+          <see langword="true" />コントロールがページに表示される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Visible`プロパティでオーバーライドされて、<xref:System.Web.UI.Timer>クラスがこのプロパティが設定されないようにします。 `Visible`プロパティから返される`true`場合のクライアント コンポーネント、 <xref:System.Web.UI.Timer> Web ページのクラスが含まれている場合でも<xref:System.Web.UI.Timer.Enabled%2A>に設定されている`false`です。 `Visible`プロパティから返される`false`である場合、コンテナーの内部など、<xref:System.Web.UI.UpdatePanel>いるコントロール`Visible`プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">値が割り当てられた、 <c>Visible</c>プロパティです。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

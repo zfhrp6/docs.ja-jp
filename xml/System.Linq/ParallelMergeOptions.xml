@@ -1,0 +1,143 @@
+<Type Name="ParallelMergeOptions" FullName="System.Linq.ParallelMergeOptions">
+  <TypeSignature Language="C#" Value="public enum ParallelMergeOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ParallelMergeOptions extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.ParallelMergeOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Parallel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>推奨される種類の指定*出力マージを*クエリで使用します。 つまり、さまざまなパーティションから返された結果を PLINQ がどのように単一の結果シーケンスにマージするかを示します。 これはヒントにすぎないため、すべてのクエリが並列化される場合に、システムによって適用されるとは限りません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`NotBuffered`消費およびストリームとして出力されるクエリ、これが最初のクエリの実行と生成される要素間の最短の待機時間。 クエリによっては、(OrderBy、OrderByDescending) の並べ替えに関連するなど、バッファリングが不可欠と NotBuffered または AutoBuffered のヒントは無視されます。 ただし、クエリ自体内でさらに並べ替えが行われない限り、AsOrdered 演算子を使用して作成したクエリをストリーミングすることができます。  
+  
+ 使用して`AutoBuffered`ほとんどの場合です。 これは既定値です。 これにより、待機時間と全体的なパフォーマンスのバランスが取れてます。  
+  
+ 使用して`FullyBuffered`クエリと、情報が必要な前に、全体の出力を処理することができます。 このオプションは、中間クエリの結果があるストリームを処理または表示部分に適したの情報を生成する前にすべての出力蓄積できるときに、最適なパフォーマンスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutoBuffered">
+      <MemberSignature Language="C#" Value="AutoBuffered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelMergeOptions AutoBuffered = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelMergeOptions.AutoBuffered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelMergeOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムによって選択したサイズの出力バッファーを使用してマージします。 結果は、クエリのコンシューマーに使用される前に、出力バッファーに蓄積されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelMergeOptions Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelMergeOptions.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelMergeOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>AutoBuffered は、既定のマージの種類を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FullyBuffered">
+      <MemberSignature Language="C#" Value="FullyBuffered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelMergeOptions FullyBuffered = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelMergeOptions.FullyBuffered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelMergeOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべての出力バッファーでのマージを使用します。 システムは、クエリのコンシューマーに使用できるようにするいずれかの前にすべての結果が蓄積されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NotBuffered">
+      <MemberSignature Language="C#" Value="NotBuffered" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelMergeOptions NotBuffered = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelMergeOptions.NotBuffered" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelMergeOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>出力バッファーなしのマージを使用します。 結果の要素の計算が終了するとすぐにその要素使用できるように、クエリのコンシューマー。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

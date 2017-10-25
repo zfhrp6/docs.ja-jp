@@ -1,0 +1,407 @@
+<Type Name="UrlMappingCollection" FullName="System.Web.Configuration.UrlMappingCollection">
+  <TypeSignature Language="C#" Value="public sealed class UrlMappingCollection : System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UrlMappingCollection extends System.Configuration.ConfigurationElementCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.UrlMappingCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElementCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Configuration.ConfigurationCollection(typeof(System.Web.Configuration.UrlMapping))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.UrlMapping" /> オブジェクトのコレクションを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMappingCollection>型へのアクセスを許可する、<xref:System.Web.Configuration.UrlMappingsSection.UrlMappings%2A>の要素、<xref:System.Web.Configuration.UrlMappingsSection>セクションの要素のコレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.UrlMappingCollection>既存の Web アプリケーションの構成ファイルからのオブジェクト。 また、構成ファイルの抜粋です。  
+  
+```  
+<urlMappings enabled="true">  
+  <add url= "~/home.aspx"  
+    mappedUrl="~/default.aspx?parm1=1"/>  
+  <add url= "~/products.aspx"  
+    mappedUrl="~/default.aspx?parm1=2"/>  
+</urlMappings>  
+```  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#1)]
+ [!code-vb[System.Web.Configuration.UrlMapping#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlMappingCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.UrlMappingCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMappingCollection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.UrlMappingCollection>クラスを使用して<xref:System.Web.Configuration.UrlMappingsSection.UrlMappings%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Web.Configuration.UrlMapping urlMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Web.Configuration.UrlMapping urlMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.Add(System.Web.Configuration.UrlMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlMapping" Type="System.Web.Configuration.UrlMapping" />
+      </Parameters>
+      <Docs>
+        <param name="urlMapping">コレクションに追加する <see cref="T:System.Web.Configuration.UrlMapping" /> オブジェクト。</param>
+        <summary>指定された <see cref="T:System.Web.Configuration.UrlMapping" /> をコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では追加、<xref:System.Web.Configuration.UrlMapping>オブジェクトを<xref:System.Web.Configuration.UrlMappingCollection>です。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.UrlMappingCollection>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#3)]
+ [!code-vb[System.Web.Configuration.UrlMapping#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllKeys">
+      <MemberSignature Language="C#" Value="public string[] AllKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] AllKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMappingCollection.AllKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる構成要素のすべてのキーの配列を取得、<see cref="T:System.Web.Configuration.UrlMappingCollection" />です。</summary>
+        <value>すべてのキーの配列、<see cref="T:System.Web.Configuration.UrlMapping" />に含まれるオブジェクト、<see cref="T:System.Web.Configuration.UrlMappingCollection" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてを削除、<see cref="T:System.Web.Configuration.UrlMapping" />コレクションからオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、構成ファイルを保存する場合、<xref:System.Web.Configuration.UrlMappingCollection.Clear%2A>メソッド、結果は、選択した依存なります<xref:System.Configuration.ConfigurationSaveMode>です。  
+  
+ 次の一覧を使用する場合に適用する条件の説明、<xref:System.Configuration.Configuration.Save%2A>ファイルを保存する方法。  
+  
+-   渡す場合<xref:System.Configuration.ConfigurationSaveMode.Full>または<xref:System.Configuration.ConfigurationSaveMode?displayProperty=nameWithType>パラメーター値として、`clear`要素が挿入、`urlMappings`現在の階層レベルで構成ファイルのセクションです。  
+  
+-   渡す場合<xref:System.Configuration.ConfigurationSaveMode.Minimal>、一連のパラメーター値として`remove`要素に追加されます、`urlMappings`の現在の階層レベルで構成ファイル。 これら`remove`要素へのすべての参照を削除する、`add`階層の上位レベル親構成ファイルで定義された要素。 <xref:System.Configuration.ConfigurationSaveMode.Minimal>列挙値の場合は、構成ファイルにシリアル化を取得する新機能に影響するコレクションである 1 つのプロパティを追加します。 プロパティは<xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>、`false`既定です。 次の条件のいずれかが適用されます。  
+  
+    -   <xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>設定`true`です。 A`clear`要素が挿入、`urlMappings`現在の階層レベルで構成ファイルのセクションです。 これによりすべての参照が削除、`add`階層の上位レベル親構成ファイルで定義された要素。  
+  
+    -   <xref:System.Configuration.ConfigurationElementCollection.EmitClear%2A>設定されているフラグ`false`です。 これは、削除の影響、`clear`から要素を`urlMappings`存在する場合は現在の階層レベルの構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.UrlMappingCollection.Clear%2A>メソッドは実際には、削除、`add`要素で定義されている、`urlMappings`現在の階層レベルで構成ファイルのセクションです。 すべての参照も削除、`add`親の構成で定義された要素が上位レベルの階層にあるファイルしますが、それらを削除しません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、すべてを削除します<xref:System.Web.Configuration.UrlMapping>オブジェクトから、<xref:System.Web.Configuration.UrlMappingCollection>です。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.UrlMappingCollection>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#4)]
+ [!code-vb[System.Web.Configuration.UrlMapping#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNewElement">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElement CreateNewElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Configuration.ConfigurationElement CreateNewElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.CreateNewElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementKey">
+      <MemberSignature Language="C#" Value="protected override object GetElementKey (System.Configuration.ConfigurationElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetElementKey(class System.Configuration.ConfigurationElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.GetElementKey(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetKey">
+      <MemberSignature Language="C#" Value="public string GetKey (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetKey(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.GetKey(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得する要素のコレクションのインデックス。</param>
+        <summary>指定した要素のコレクションのキーを取得します。</summary>
+        <returns>キーの値を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.UrlMapping this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.UrlMapping Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMappingCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.UrlMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">取得するオブジェクトのインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.Web.Configuration.UrlMapping" />指定したインデックスにあるオブジェクト。</summary>
+        <value>指定したインデックス位置にあるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.UrlMapping this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.UrlMapping Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMappingCollection.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.UrlMapping</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">コレクション オブジェクトの名前。</param>
+        <summary>取得、<see cref="T:System.Web.Configuration.UrlMapping" />指定の名前を持つオブジェクト。</summary>
+        <value>指定した名前を持つコレクション オブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.UrlMappingCollection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Configuration.UrlMapping" />コレクションから削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.UrlMapping" />コレクションから指定した名前を持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMappingCollection.Remove%2A>メソッドの削除、`add`内の要素、`urlMappings`セクションには、現在の階層レベルと挿入、`remove`要素。 Remove 要素は、実質的にへの参照を削除、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.UrlMapping>オブジェクトから、<xref:System.Web.Configuration.UrlMappingCollection>です。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.UrlMappingCollection>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#6)]
+ [!code-vb[System.Web.Configuration.UrlMapping#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.Configuration.UrlMapping urlMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.Configuration.UrlMapping urlMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.Remove(System.Web.Configuration.UrlMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlMapping" Type="System.Web.Configuration.UrlMapping" />
+      </Parameters>
+      <Docs>
+        <param name="urlMapping">コレクションから削除する <see cref="T:System.Web.Configuration.UrlMapping" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Web.Configuration.UrlMapping" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMappingCollection.Remove%2A>メソッドの削除、`add`内の要素、`urlMappings`セクションには、現在の階層レベルと挿入、`remove`要素。 Remove 要素は、実質的にへの参照を削除、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.UrlMapping>オブジェクトから、<xref:System.Web.Configuration.UrlMappingCollection>です。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.UrlMappingCollection>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#5)]
+ [!code-vb[System.Web.Configuration.UrlMapping#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.UrlMappingCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクションのインデックス、<see cref="T:System.Web.Configuration.UrlMapping" />削除するオブジェクト。</param>
+        <summary>削除、<see cref="T:System.Web.Configuration.UrlMapping" />コレクションから指定したインデックスを持つオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.UrlMappingCollection.RemoveAt%2A>メソッドの削除、`add`内の要素、`urlMappings`セクションには、現在の階層レベルと挿入、`remove`要素。 Remove 要素は、実質的にへの参照を削除、`add`親の構成で定義されている要素の上位レベルの階層にあるファイルします、は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を削除、<xref:System.Web.Configuration.UrlMapping>オブジェクトから、<xref:System.Web.Configuration.UrlMappingCollection>です。  
+  
+ コード例を参照してください、<xref:System.Web.Configuration.UrlMappingCollection>コレクションを取得する方法についてのクラスに関するトピック。  
+  
+ [!code-csharp[System.Web.Configuration.UrlMapping#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/CS/urlmapping.cs#7)]
+ [!code-vb[System.Web.Configuration.UrlMapping#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.UrlMapping/VB/urlmapping.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

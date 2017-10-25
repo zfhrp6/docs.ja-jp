@@ -1,0 +1,112 @@
+<Type Name="SendContent" FullName="System.ServiceModel.Activities.SendContent">
+  <TypeSignature Language="C#" Value="public abstract class SendContent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SendContent extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activities.SendContent" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ワークフロー サービスに送信するデータを表すクラスの抽象基本クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendContent> クラスを使用して <xref:System.ServiceModel.Activities.SendMessageContent> アクティビティの <xref:System.ServiceModel.Activities.Send> を指定する方法を示します。  
+  
+ [!code-csharp[ContentBasedCorrelation#1](~/samples/snippets/csharp/VS_Snippets_CFX/contentbasedcorrelation/cs/client.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Activities.SendMessageContent Create (System.Activities.InArgument message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Activities.SendMessageContent Create(class System.Activities.InArgument message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendContent.Create(System.Activities.InArgument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activities.SendMessageContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Activities.InArgument" />
+      </Parameters>
+      <Docs>
+        <param name="message">送信するデータ。</param>
+        <summary>指定したメッセージを使用して、新しい <see cref="T:System.ServiceModel.Activities.SendMessageContent" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Activities.SendMessageContent" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.ServiceModel.Activities.SendContent> クラスを使用して <xref:System.ServiceModel.Activities.SendMessageContent> アクティビティの <xref:System.ServiceModel.Activities.SendReply> を指定する方法を示します。 この例では、<xref:System.Activities.InArgument> を指定するためにラムダ式が使用されます。 [!INCLUDE[crabout](~/includes/crabout-md.md)]ラムダ式を参照してください[ラムダ式](http://go.microsoft.com/fwlink/?LinkId=182082)  
+  
+ [!code-csharp[ContentBasedCorrelation#2](~/samples/snippets/csharp/VS_Snippets_CFX/contentbasedcorrelation/cs/service.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Activities.SendParametersContent Create (System.Collections.Generic.IDictionary&lt;string,System.Activities.InArgument&gt; parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Activities.SendParametersContent Create(class System.Collections.Generic.IDictionary`2&lt;string, class System.Activities.InArgument&gt; parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendContent.Create(System.Collections.Generic.IDictionary{System.String,System.Activities.InArgument})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activities.SendParametersContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Generic.IDictionary&lt;System.String,System.Activities.InArgument&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">パラメーター名を含むキーと引数を含む値で構成された、名前と値のペアのコレクション。</param>
+        <summary>指定したパラメーターを使用して、新しい <see cref="T:System.ServiceModel.Activities.SendParametersContent" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Activities.SendParametersContent" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Activities.SendMessageContent Create (System.Activities.InArgument message, Type declaredMessageType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Activities.SendMessageContent Create(class System.Activities.InArgument message, class System.Type declaredMessageType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activities.SendContent.Create(System.Activities.InArgument,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activities.SendMessageContent</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Activities.InArgument" />
+        <Parameter Name="declaredMessageType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="message">送信するデータ。</param>
+        <param name="declaredMessageType">サービスの説明および WSDL に表示されるデータ型。 メッセージの引数の型と同じか、またはその基本データ型である必要があります。</param>
+        <summary>指定したメッセージとその型を使用して、新しい <see cref="T:System.ServiceModel.Activities.SendMessageContent" /> のインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Activities.SendMessageContent" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 宣言されたメッセージの型[!INCLUDE[crabout](~/includes/crabout-md.md)]、「<xref:System.ServiceModel.Activities.SendMessageContent.DeclaredMessageType%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

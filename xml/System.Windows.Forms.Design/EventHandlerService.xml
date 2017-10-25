@@ -1,0 +1,174 @@
+<Type Name="EventHandlerService" FullName="System.Windows.Forms.Design.EventHandlerService">
+  <TypeSignature Language="C#" Value="public sealed class EventHandlerService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EventHandlerService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.EventHandlerService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のドキュメントのイベント ハンドラーを管理する体系的な方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者は、特定の種類のイベントを処理する 1 つの場所にコードを記述できるようにすることがあります。  
+  
+ また、開発者は、グローバルに特定のイベントの種類がデザイナーのコンポーネント間で配布されるイベントのハンドラーの動作を変更する必要があります。  
+  
+ 一般的なプロジェクトのデザイナーは、一覧表示し、共通の場所からこれらのイベントへの参照を格納すると便利にするために多数の異なるオブジェクトがします。  
+  
+ このサービスは、"イベント"が格納されるスタックのイベント ハンドラーの現在のセットを実装します。 スタック、スタックのさまざまな異なる種類のハンドラーがあります。  
+  
+ たとえば、デザイナーは、プッシュ、または、キーボード ハンドラーと、スタック上にマウスのハンドラーを追加します。 デザイナーでは、イベント ハンドラーを要求するときにサービスは要求したクラスに一致するスタックの最上位のハンドラーを見つけます。  
+  
+ こうすると、サービスは、任意のイベント スキームに拡張でき、特定の種類のイベント ハンドラーを置き換えることもできます。 たとえば、イベント ハンドラーのメニューやキーボード イベント ハンドラーの影響を与えずにマウス イベント ハンドラーを置き換えることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventHandlerService (System.Windows.Forms.Control focusWnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Control focusWnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.EventHandlerService.#ctor(System.Windows.Forms.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="focusWnd" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="focusWnd"><see cref="T:System.Windows.Forms.Control" />されるなっています。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.EventHandlerService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventHandlerChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler EventHandlerChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EventHandlerChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Design.EventHandlerService.EventHandlerChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>OnEventHandlerChanged イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusWindow">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.Control FocusWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.Control FocusWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.EventHandlerService.FocusWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーが関連付けられているコントロールを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.Control" />がコンス トラクターで接続されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHandler">
+      <MemberSignature Language="C#" Value="public object GetHandler (Type handlerType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetHandler(class System.Type handlerType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.EventHandlerService.GetHandler(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handlerType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="handlerType">取得するハンドラーの型。</param>
+        <summary>指定した型の現在アクティブなイベント ハンドラーを取得します。</summary>
+        <returns>ハンドラーのインスタンスまたは<see langword="null" />要求された種類のハンドラーがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 他のコンポーネントは自由に変更するために、この値をキャッシュする必要があることはありません。 この呼び出しは、常に同じ種類のハンドラーを要求している場合に特にただしで非常に高速です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopHandler">
+      <MemberSignature Language="C#" Value="public void PopHandler (object handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PopHandler(object handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.EventHandlerService.PopHandler(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="handler">スタックから削除するハンドラー。</param>
+        <summary>によって指定されたハンドラーをスタックからポップされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドラーがスタックの最上位のコンポーネントでない場合は、すべてのハンドラーをしてそのハンドラーこれが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushHandler">
+      <MemberSignature Language="C#" Value="public void PushHandler (object handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void PushHandler(object handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.EventHandlerService.PushHandler(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handler" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="handler">スタックに追加するハンドラー。</param>
+        <summary>新しいイベント ハンドラーをスタックにプッシュします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このハンドラーは、互換性のあるハンドラーの型を要求するすべてのコンポーネントが使用されます。 このハンドラーが要求された型をサポートしていない場合は、スタック上の次のハンドラーが使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

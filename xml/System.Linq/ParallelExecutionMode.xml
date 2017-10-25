@@ -1,0 +1,80 @@
+<Type Name="ParallelExecutionMode" FullName="System.Linq.ParallelExecutionMode">
+  <TypeSignature Language="C#" Value="public enum ParallelExecutionMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ParallelExecutionMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Linq.ParallelExecutionMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Linq.Parallel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>クエリ実行モードは、システムがクエリの並列化時にパフォーマンス上のトレードオフを処理する方法を指定するヒントです。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelExecutionMode Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelExecutionMode.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelExecutionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これは、既定の設定です。 PLINQ クエリの構造を調べるし、クエリの並列化のみがかどうかが発生する可能性が高速化します。 クエリ構造がそのにより高速化可能性は高くありません取得されるを示している場合、PLINQ は通常の LINQ to Objects クエリとしてクエリが実行されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ForceParallelism">
+      <MemberSignature Language="C#" Value="ForceParallelism" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Linq.ParallelExecutionMode ForceParallelism = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Linq.ParallelExecutionMode.ForceParallelism" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Linq.Parallel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.ParallelExecutionMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高いオーバーヘッドのアルゴリズムを使用していることを意味する場合でも、全体のクエリを並列化します。 クエリの並列実行が高速化になりますが、既定のモードで PLINQ を使用するとシーケンシャルに実行されることの場合は、このフラグを使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

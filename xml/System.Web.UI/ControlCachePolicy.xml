@@ -1,0 +1,348 @@
+<Type Name="ControlCachePolicy" FullName="System.Web.UI.ControlCachePolicy">
+  <TypeSignature Language="C#" Value="public sealed class ControlCachePolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ControlCachePolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ControlCachePolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET ユーザー コントロールの出力キャッシュを設定するには、プログラムによるアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ControlCachePolicy>クラスは、ユーザー コントロール (.ascx ファイル) の出力キャッシュ設定を指定するユーザーのプログラムによる制御のシナリオでは開発者によって使用されます。 ASP.NET 内でユーザー コントロールが埋め込まれます、<xref:System.Web.UI.BasePartialCachingControl>インスタンス。 <xref:System.Web.UI.BasePartialCachingControl>クラスは、キャッシュが有効な出力がユーザー コントロールを表します。 アクセスするときに、<xref:System.Web.UI.BasePartialCachingControl.CachePolicy%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.PartialCachingControl>コントロール、有効なは常に受け取る<xref:System.Web.UI.ControlCachePolicy>オブジェクト。 ただし、アクセスする場合、<xref:System.Web.UI.UserControl.CachePolicy%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Web.UI.UserControl>コントロールが表示されたら、有効な<xref:System.Web.UI.ControlCachePolicy>オブジェクトのみのかどうか、ユーザー コントロールがでまだラップ、<xref:System.Web.UI.BasePartialCachingControl>コントロール。 ラップされていない場合、<xref:System.Web.UI.ControlCachePolicy>プロパティによって返されるオブジェクトが関連付けられていないために操作しようとしたときに例外がスローされます<xref:System.Web.UI.BasePartialCachingControl>です。 確認するかどうか、<xref:System.Web.UI.UserControl>インスタンスは例外を生成せずにキャッシュをサポートする、検査、<xref:System.Web.UI.ControlCachePolicy.SupportsCaching%2A>プロパティです。  
+  
+ 使用して、<xref:System.Web.UI.ControlCachePolicy>クラスは、出力キャッシュを有効にするいくつかの方法のいずれか。 次に、出力キャッシュの有効化に使用できる方法を説明します。  
+  
+-   ディレクティブを使用して、出力は、宣言型のシナリオでキャッシュを有効にします。  
+  
+-   使用して、<xref:System.Web.UI.PartialCachingAttribute>分離コード ファイル内のユーザー コントロールのキャッシュを有効にする属性。  
+  
+-   使用して、<xref:System.Web.UI.ControlCachePolicy>クラスを使用しているプログラムのシナリオでキャッシュの設定を指定する<xref:System.Web.UI.BasePartialCachingControl>にキャッシュが有効な前のメソッドのいずれかを使用しを使用して動的に読み込むインスタンス、<xref:System.Web.UI.TemplateControl.LoadControl%2A?displayProperty=nameWithType>メソッドです。 A<xref:System.Web.UI.ControlCachePolicy>インスタンスが正常に操作できる間でのみ、`Init`と`PreRender`コントロール ライフ サイクルの段階です。 変更する場合、<xref:System.Web.UI.ControlCachePolicy>オブジェクトの後に、`PreRender`フェーズでは、ASP.NET が例外をスロー、コントロールが表示された後、すべての変更が行われるため実際に影響することキャッシュの設定 (中に、コントロールがキャッシュされる、`Render`ステージ)。 最後に、ユーザー コントロールのインスタンス (およびその<xref:System.Web.UI.ControlCachePolicy>オブジェクト) が実際に表示される場合は、プログラムによる操作に使用できるのみです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールを動的に読み込まれ、実行時にプログラムで操作する方法を示します。 <xref:System.Web.UI.PartialCachingAttribute>という名前のユーザー コントロールに属性が適用される`SimpleControl`、つまり、ユーザー コントロールによってラップされて、<xref:System.Web.UI.PartialCachingControl>実行時にコントロール。 `SimpleControl`オブジェクトのキャッシュ設定をプログラムで指定できますを通じてそれに関連する操作<xref:System.Web.UI.ControlCachePolicy>への参照によって使用されるオブジェクト、<xref:System.Web.UI.PartialCachingControl>コントロールをラップします。 この例では、<xref:System.Web.UI.ControlCachePolicy.Duration%2A>プロパティがページの初期化および変更を使用する際に調べることで、<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>と<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>メソッドのいくつかの条件が満たされた場合。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/Default2.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/Default2.aspx#1)]  
+  
+ 次のコード例では、使用方法を示します、 `SimpleControl` Web フォーム ページからユーザー コントロールです。 この例を正常に実行するには、ユーザー コントロール ファイル (.ascx)、その分離コード ファイル (.cs または .vb) およびユーザー コントロール (.aspx) をホストする Web フォーム ページは同じディレクトリになっていることを確認します。  
+  
+ [!code-csharp[System.Web.UI.ControlCachePolicy_2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/SimpleControl.ascx.cs#2)]
+ [!code-vb[System.Web.UI.ControlCachePolicy_2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/SimpleControl.ascx.vb#2)]  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy_2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/SimpleControl.ascx#3)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy_2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/SimpleControl.ascx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public bool Cached { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー コントロールのフラグメント キャッシュが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ユーザー コントロールの出力をキャッシュがの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.ControlCachePolicy.Cached" />初期化と、コントロールのレンダリング段階の外部でプロパティを設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dependency">
+      <MemberSignature Language="C#" Value="public System.Web.Caching.CacheDependency Dependency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Caching.CacheDependency Dependency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.Dependency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheDependency</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のインスタンス、<see cref="T:System.Web.Caching.CacheDependency" />キャッシュされたユーザー コントロールの出力に関連付けられているクラスです。</summary>
+        <value>コントロールに関連付けられた <see cref="T:System.Web.Caching.CacheDependency" />。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ControlCachePolicy.Dependency%2A>プロパティを委任する場合、<xref:System.Web.UI.BasePartialCachingControl.Dependency%2A>のプロパティ、<xref:System.Web.UI.BasePartialCachingControl>ユーザー コントロールをラップするコントロール。 ときに、<xref:System.Web.Caching.CacheDependency>インスタンスが無効になって、ユーザー コントロールは、キャッシュから削除します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.ControlCachePolicy.Dependency" />初期化と、コントロールのレンダリング段階の外部でプロパティを設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public TimeSpan Duration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュされたアイテムの出力キャッシュ内に存続時間を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />ユーザー コントロールは、出力キャッシュ内に存続時間を表すです。 既定値は、<see cref="F:System.TimeSpan.Zero" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して絶対有効期限ポリシーが設定されている場合、 <xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A> 、メソッド、<xref:System.Web.UI.ControlCachePolicy.Duration%2A>のキャッシュ エントリの有効期限までの残り時間を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールを動的に読み込まれ、実行時にプログラムで操作する方法を示します。 <xref:System.Web.UI.PartialCachingAttribute>という名前のユーザー コントロールに属性が適用される`SimpleControl`、によってラップされてになっており、<xref:System.Web.UI.PartialCachingControl>実行時にコントロールです。 `SimpleControl`オブジェクトのキャッシュ設定をプログラムで指定できますを通じてそれに関連する操作<xref:System.Web.UI.ControlCachePolicy>への参照によって使用されるオブジェクト、<xref:System.Web.UI.PartialCachingControl>コントロールをラップします。 この例では、<xref:System.Web.UI.ControlCachePolicy.Duration%2A>ページの初期化中にプロパティが確認され、キャッシュの有効期限が変更されるは、いくつかの条件が満たされた場合。 この例に示されている例の一部である、<xref:System.Web.UI.ControlCachePolicy>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/Default2.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/Default2.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.ControlCachePolicy.Duration" />初期化と、コントロールのレンダリング段階の外部でプロパティを設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのインスタンスに関連付けられている出力キャッシュ プロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.ControlCachePolicy.ProviderName%2A>プロパティを使用して、コントロールに関連付けられている現在の出力キャッシュ プロバイダーを指定することができます、<xref:System.Web.UI.ControlCachePolicy>インスタンス。 このプロパティは前にのみ設定することができます、<xref:System.Web.UI.Control.PreRender>コントロールの有効期間でイベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">プロバイダー名が見つかりませんでした。</exception>
+        <exception cref="T:System.Web.HttpException">設定しようとしましたが、<see cref="P:System.Web.UI.ControlCachePolicy.ProviderName" />プロパティ中または後に、<see cref="E:System.Web.UI.Control.PreRender" />イベント。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetExpires">
+      <MemberSignature Language="C#" Value="public void SetExpires (DateTime expirationTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetExpires(valuetype System.DateTime expirationTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlCachePolicy.SetExpires(System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="expirationTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="expirationTime">A<see cref="T:System.DateTime" />キャッシュ エントリが期限切れの後にします。</param>
+        <summary>指示、<see cref="T:System.Web.UI.BasePartialCachingControl" />キャッシュ エントリを指定した日付と時刻に有効期限が切れるユーザー コントロールをラップするコントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>と<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>メソッド (渡す`true`) に指示するため、<xref:System.Web.UI.BasePartialCachingControl>キャッシュ絶対有効期限ポリシーではなくポリシー スライド式有効期限を使用するユーザー コントロールをラップするコントロール。 使用して、<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>メソッドおよび<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>メソッド (渡す`false`) 絶対有効期限ポリシーを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールを動的に読み込まれ、実行時にプログラムで操作する方法を示します。 <xref:System.Web.UI.PartialCachingAttribute>という名前のユーザー コントロールに属性が適用される`SimpleControl`、つまり、ユーザー コントロールによってラップされて、<xref:System.Web.UI.PartialCachingControl>実行時にコントロール。 `SimpleControl`オブジェクトのキャッシュ設定をプログラムで指定できますを通じてそれに関連する操作<xref:System.Web.UI.ControlCachePolicy>への参照によって使用されるオブジェクト、<xref:System.Web.UI.PartialCachingControl>コントロールをラップします。 この例では、<xref:System.Web.UI.ControlCachePolicy.Duration%2A>プロパティがページの初期化および変更を使用する際に調べることで、<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>と<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>メソッドのいくつかの条件が満たされた場合。 この例に示されている例の一部である、<xref:System.Web.UI.ControlCachePolicy>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/Default2.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/Default2.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSlidingExpiration">
+      <MemberSignature Language="C#" Value="public void SetSlidingExpiration (bool useSlidingExpiration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSlidingExpiration(bool useSlidingExpiration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlCachePolicy.SetSlidingExpiration(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="useSlidingExpiration" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useSlidingExpiration">
+          <see langword="true" />スライド式キャッシュ有効期限を絶対有効期限の代わりに使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指示、<see cref="T:System.Web.UI.BasePartialCachingControl" />スライディングまたは絶対有効期限を使用するユーザー コントロールのキャッシュ エントリを設定するユーザー コントロールをラップするコントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>と<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>メソッド (渡す`true`) に指示するため、<xref:System.Web.UI.BasePartialCachingControl>キャッシュ絶対有効期限ポリシーではなくポリシー スライド式有効期限を使用するユーザー コントロールをラップするコントロール。 使用して、<xref:System.Web.UI.ControlCachePolicy.SetExpires%2A>メソッドおよび<xref:System.Web.UI.ControlCachePolicy.SetSlidingExpiration%2A>メソッド (渡す`false`) 絶対有効期限ポリシーを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザー コントロールを動的に読み込まれ、実行時にプログラムで操作する方法を示します。 という名前のユーザー コントロール`SimpleControl`で修飾された、<xref:System.Web.UI.PartialCachingAttribute>属性、これによってラップされて、<xref:System.Web.UI.PartialCachingControl>実行時に制御します。 `SimpleControl`オブジェクトのキャッシュ設定をプログラムで指定できますを通じてそれに関連する操作<xref:System.Web.UI.ControlCachePolicy>への参照によって使用されるオブジェクト、<xref:System.Web.UI.PartialCachingControl>コントロールをラップします。 この例ではキャッシュの設定はページの初期化中に確認して、いくつかの条件が満たされた場合に変更します。 この例に示されている例の一部である、<xref:System.Web.UI.ControlCachePolicy>クラスです。  
+  
+ [!code-aspx-csharp[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/CS/Default2.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.ControlCachePolicy_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.ControlCachePolicy_2/VB/Default2.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVaryByCustom">
+      <MemberSignature Language="C#" Value="public void SetVaryByCustom (string varyByCustom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetVaryByCustom(string varyByCustom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.ControlCachePolicy.SetVaryByCustom(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="varyByCustom" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="varyByCustom">カスタム文字列のリスト。</param>
+        <summary>ユーザー コントロールを変更するため、出力キャッシュに使用するカスタム文字列のリストを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として"browser"を渡す場合、`varyByCustom`パラメーター、ブラウザーの種類とメジャー バージョン番号により、ユーザー コントロールが変更されます。 オーバーライドする必要がある別のカスタム文字列が入力した場合、<xref:System.Web.HttpApplication.GetVaryByCustomString%2A>アプリケーションの Global.asax ファイル内のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCaching">
+      <MemberSignature Language="C#" Value="public bool SupportsCaching { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCaching" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.SupportsCaching" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー コントロールはキャッシュをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ユーザー コントロールは、キャッシュをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザー コントロールに関連付けられている場合に、キャッシュをサポートしている、 <xref:System.Web.UI.BasePartialCachingControl> ASP.NET パーサーによって、ディレクティブが解析されたかまたはユーザー コントロールがで装飾されたことを示すインスタンス、<xref:System.Web.UI.PartialCachingAttribute>属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByControl">
+      <MemberSignature Language="C#" Value="public string VaryByControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string VaryByControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.VaryByControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはによってキャッシュされた出力を変化させるコントロール id の一覧を設定します。</summary>
+        <value>ユーザー コントロールを変更するために使用する文字列のセミコロンで区切られた一覧には、キャッシュを出力します。 これらの文字列を表す、<see cref="P:System.Web.UI.Control.ID" />ユーザー コントロールでの ASP.NET サーバー コントロールのプロパティ値が宣言されています。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。  
+  
+ \- または  
+  
+ <see cref="P:System.Web.UI.ControlCachePolicy.VaryByControl" />初期化と、コントロールのレンダリング段階の外部でプロパティを設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VaryByParams">
+      <MemberSignature Language="C#" Value="public System.Web.HttpCacheVaryByParams VaryByParams { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.HttpCacheVaryByParams VaryByParams" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ControlCachePolicy.VaryByParams" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.HttpCacheVaryByParams</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の一覧<see langword="GET" />または<see langword="POST" />によってキャッシュされた出力を変化させるパラメーターの名前。</summary>
+        <value>出力キャッシュの変更に使用される文字列のセミコロンで区切った一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、これらの文字列には、GET メソッドを使用して送信されたクエリ文字列値または POST メソッドを使用して送信されるパラメーターが対応しています。 ときに、<xref:System.Web.UI.ControlCachePolicy.VaryByParams%2A>プロパティが複数のパラメーター、パラメーターを指定された各の出力キャッシュには要求ドキュメントの別のバージョンが含まれます。 指定できる値は"none"、"*"と有効なクエリ文字列またはポスト パラメーターの名前。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">ユーザー コントロールに関連付けられていない、<see cref="T:System.Web.UI.BasePartialCachingControl" />はキャッシュされません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,111 @@
+<Type Name="RootedPathValidator" FullName="System.Xml.Serialization.Configuration.RootedPathValidator">
+  <TypeSignature Language="C#" Value="public class RootedPathValidator : System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RootedPathValidator extends System.Configuration.ConfigurationValidatorBase" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.Configuration.RootedPathValidator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationValidatorBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>使用を制御するルールの検証、 <c>tempFilesLocation</c>構成スイッチ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加するときに、 `WebReference` Web サービスにオブジェクト、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]ファイルは、Web サービスの検出プロセスによって作成されます。  
+  
+ Web サービス クライアントを追加することで、Web サービス記述言語 (WSDL) ドキュメントを検索する場所の説明、`WebReference`オブジェクト。 Web サービス クライアント、検出されたドキュメントをディスクに保存を使用して、`WriteAll`メソッドです。 たとえば、検出されたドキュメントには、スキーマの .xsd ファイルまたはサービスの説明があります。 プロセスの最後に、クライアントは、ファイルを削除します。 使用して、一時フォルダー内のファイルの既定の場所を変更することができます、`tempFilesLocation`に切り替え、 `<xmlSerializer>` Machine.config 構成ファイルの次の例のようにで指定された要素。  
+  
+```  
+<configuration>  
+  <system.web>  
+  <system.xml.serialization>  
+    <xmlSerializer tempFilesLocation=".."/>  
+  </system.xml.serialization>  
+</configuration>  
+```  
+  
+ 値`tempFilesLocation`絶対パスである必要があります。 指定されたパスが絶対、ない場合、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]が生成されます、<xref:System.Configuration.ConfigurationErrorsException>構成セクションを参照する場合は例外です。  
+  
+ 先頭および末尾の空白を削除するプロパティの値が切り捨てられます。  
+  
+ 場合の値、`tempFilesLocation`プロパティが空白文字で構成される、既定 %TMP% 場所が、コンパイルに使用されます。 ない場合、同じ既定の動作が発生した`tempFilesLocation`スイッチを指定します。  
+  
+ <xref:System.Xml.Serialization.XmlSerializer>パスが存在するかどうかはチェックされません。 いない場合、<xref:System.IO.DirectoryNotFoundException>が生成されます。 これは既定の動作と同じ、 `XmlSerializer` TMP パスが存在しない場合。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RootedPathValidator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.Configuration.RootedPathValidator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.Configuration.RootedPathValidator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanValidate">
+      <MemberSignature Language="C#" Value="public override bool CanValidate (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanValidate(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.Configuration.RootedPathValidator.CanValidate(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">オブジェクトの型。</param>
+        <summary>オブジェクトの型を検証できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="type" />パラメーターに有効な一致<see langword="XMLSerializer" />オブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override void Validate (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Validate(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.Configuration.RootedPathValidator.Validate(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">オブジェクトの値。</param>
+        <summary>オブジェクトの値が有効かどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `XmlSerializer`を検証するオブジェクトのパラメーターとして渡されます、`Validate`メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

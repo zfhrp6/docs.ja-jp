@@ -1,0 +1,199 @@
+<Type Name="IXmlSerializable" FullName="System.Xml.Serialization.IXmlSerializable">
+  <TypeSignature Language="C#" Value="public interface IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.IXmlSerializable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XML シリアル化および逆シリアル化のカスタム書式を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスを実装する 2 つの理由があります。 1 つ目は、オブジェクトをシリアル化またはによって逆シリアル化する方法を制御する、<xref:System.Xml.Serialization.XmlSerializer>です。 など、大きなデータ セットをバッファー処理ではなくバイトにデータをチャンクでき、またデータは Base64 エンコードを使用してエンコードされたときに発生するが増加しないようにできます。 シリアル化を制御するには、実装、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A>と<xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>コントロールするメソッド、<xref:System.Xml.XmlReader>と<xref:System.Xml.XmlWriter>クラスの XML を読み書きするために使用します。 この例は、次を参照してください。[する方法: シリアル化データのチャンク](~/docs/standard/serialization/how-to-chunk-serialized-data.md)です。  
+  
+ 2 つ目の理由、スキーマを制御できるためです。 これを有効にするに適用する必要があります、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute>シリアル化する型、およびスキーマを返す静的メンバーの名前を指定します。 参照してください、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute>例についてはします。  
+  
+ インターフェイスを実装するクラスには、パラメーターなしのコンス トラクターが必要です。 要件は、これは、<xref:System.Xml.Serialization.XmlSerializer>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Xml.Serialization.IXmlSerializable>プライベート フィールドをシリアル化するインターフェイスです。  
+  
+ [!code-cpp[XmlSerialization_IXmlSerializable#0](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CPP/person.cpp#0)]
+ [!code-csharp[XmlSerialization_IXmlSerializable#0](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CS/person.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.IXmlSerializable.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは予約されているため、使用できません。 実装する場合、<see langword="IXmlSerializable" />を返すように、インターフェイス<see langword="null" />(<see langword="Nothing" /> Visual Basic で) このメソッドからカスタム スキーマが必要なを指定する場合を適用する代わりに、および、<see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" />クラスにします。</summary>
+        <returns><see cref="T:System.Xml.Schema.XmlSchema" />によって生成されるオブジェクトの XML 表現を表す、<see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" />メソッドによって消費されると、<see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" />メソッドです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを逆シリアル化またはシリアル化するときに、<xref:System.Xml.Serialization.XmlSerializer>クラスでは、XML の検証は実行されません。 このため、多くの場合も安全ですなどを返すことによって、このメソッドの単純な実装を提供することによって、スキーマ情報を省略する`null`(`Nothing` Visual Basic で)。  
+  
+ 使用する必要がありますスキーマ情報を提供することが必要な場合、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute>属性。 `GetSchema`メソッドが返すまだ`null`(または`Nothing`)。  
+  
+ いくつか[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]を実装するレガシのカスタム型と同じように、型、`IXmlSerializable`インターフェイスを使用している可能性`GetSchema`の代わりに`XmlSchemaProvider`です。 この場合、メソッドがによって生成されたオブジェクトの XML 表現を記述する正確な XML スキーマを返します、<xref:System.Data.DataSet.WriteXml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader"><see cref="T:System.Xml.XmlReader" />オブジェクトが逆シリアル化するストリームします。</param>
+        <summary>オブジェクトの XML 表現からオブジェクトを生成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A>メソッドによって書き込まれた情報を使用して、オブジェクトを構築する必要があります、<xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>メソッドです。  
+  
+ このメソッドが呼び出されると、リーダーは、型の情報をラップする開始タグ上。 つまり、開始タグ上で直接、シリアル化されたオブジェクトの先頭を示すです。 このメソッドが戻るときにする必要がありますが要素全体を読み取る最初から最後まで、すべての内容を含むです。 異なり、<xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>メソッド、フレームワークがラッパー要素を自動的に処理されません。 実装には、これを実行する必要があります。 これらの配置ルールに従わなかった場合と、予期しない実行時例外または破損したデータを生成するコードが生じる場合があります。  
+  
+ このメソッドを実装する場合、可能性を考慮する必要があります悪意のあるユーザーが無効にするか、それ以外の場合、アプリケーションの動作を変更するために適切な形式が無効な XML 表現を提供可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A>メソッドです。  
+  
+ [!code-cpp[XmlSerialization_IXmlSerializable#2](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CPP/person.cpp#2)]
+ [!code-csharp[XmlSerialization_IXmlSerializable#2](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CS/person.cs#2)]  
+  
+ 次の例では、使用、<xref:System.Xml.Serialization.XmlSerializer>このオブジェクトを逆シリアル化するクラス。  
+  
+ [!code-cpp[XmlSerialization_IXmlSerializable#20](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CPP/reader.cpp#20)]
+ [!code-csharp[XmlSerialization_IXmlSerializable#20](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CS/reader.cs#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">オブジェクトのシリアル化先の <see cref="T:System.Xml.XmlWriter" /> ストリーム。</param>
+        <summary>オブジェクトを XML 表現に変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>実装を提供するがオブジェクトの XML 表現を記述する必要があります。 フレームワークは、ラッパー要素を書き込み、その開始後に、XML ライターを配置します。 実装には、子要素を含む、その内容を書き込むことがあります。 フレームワークでは、ラッパー要素が閉じられます。  
+  
+ ための十分な情報を書き込む、<xref:System.Xml.XmlWriter>ストリームを許可する、<xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A>メソッド、オブジェクトを再構成します。  
+  
+ たとえば、オブジェクトの状態には、配列変数が含まれている場合、配列の長さを書き込むことを確認するまたはオブジェクトが再構成時点を確認する値の数を知ることは、配列の値を説明する要素を格納する親要素を使用します。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>メソッドです。  
+  
+ [!code-cpp[XmlSerialization_IXmlSerializable#1](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CPP/person.cpp#1)]
+ [!code-csharp[XmlSerialization_IXmlSerializable#1](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CS/person.cs#1)]  
+  
+ 次の例では、使用、<xref:System.Xml.Serialization.XmlSerializer>このオブジェクトを逆シリアル化するクラス。  
+  
+ [!code-cpp[XmlSerialization_IXmlSerializable#10](~/samples/snippets/cpp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CPP/writer.cpp#10)]
+ [!code-csharp[XmlSerialization_IXmlSerializable#10](~/samples/snippets/csharp/VS_Snippets_Remoting/XmlSerialization_IXmlSerializable/CS/writer.cs#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

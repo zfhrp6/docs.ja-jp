@@ -1,0 +1,284 @@
+<Type Name="TransactionFlowAttribute" FullName="System.ServiceModel.TransactionFlowAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TransactionFlowAttribute : Attribute, System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TransactionFlowAttribute extends System.Attribute implements class System.ServiceModel.Description.IOperationBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.TransactionFlowAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IOperationBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアントからの受信トランザクションをサービス操作が受け入れるかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.TransactionFlowAttribute> は、特定のトランザクション フロー ポリシーをサービス操作に対して宣言的に関連付けるために使用されます。 この属性の <xref:System.ServiceModel.TransactionFlowOption> プロパティは、該当する操作が、クライアントからフローされるトランザクションを受け入れるかどうか、または、操作がクライアントに、トランザクションを常にフローするように要求するかどうかを指定します。 <xref:System.ServiceModel.TransactionFlowAttribute> は、特定の操作に対してプログラムによって関連付ける操作動作として、トランザクション フロー ポリシーを使用することもできます。 この場合は、操作の説明の `Behaviors` コレクションに追加する必要があります。  
+  
+> [!NOTE]
+>  `OperationContract` を使用する各メソッドの <xref:System.ServiceModel.TransactionFlowAttribute> には、完全修飾された `Action` 文字列を用意する必要があります。 値 "*" はサポートされません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、操作レベルで <xref:System.ServiceModel.TransactionFlowOption> クラスと共にこの列挙体を使用しています。  
+  
+```  
+using System;  
+using System.ServiceModel;  
+using System.Transactions;  
+  
+namespace Microsoft.WCF.Documentation  
+{  
+  [ServiceContract(  
+    Namespace="http://microsoft.wcf.documentation",   
+    SessionMode=SessionMode.Required  
+  )]  
+  public interface IBehaviorService  
+  {  
+    [OperationContract]  
+    [TransactionFlow(TransactionFlowOption.Mandatory)]  
+    string TxWork(string message);  
+  }  
+  
+  // Note: To use the TransactionIsolationLevel property, you   
+  // must add a reference to the System.Transactions.dll assembly.  
+  /* The following service implementation:  
+   *   -- Processes messages on one thread at a time  
+   *   -- Creates one service object per session  
+   *   -- Releases the service object when the transaction commits  
+   */  
+  [ServiceBehavior(  
+    ConcurrencyMode=ConcurrencyMode.Single,  
+    InstanceContextMode=InstanceContextMode.PerSession,  
+    ReleaseServiceInstanceOnTransactionComplete=true  
+  )]  
+  public class BehaviorService : IBehaviorService, IDisposable  
+  {  
+    Guid myID;  
+  
+    public BehaviorService()  
+    {  
+      myID = Guid.NewGuid();  
+      Console.WriteLine(  
+        "Object "  
+        + myID.ToString()  
+        + " created.");  
+    }  
+  
+    /*  
+    / * The following operation-level behaviors are specified:  
+    / * Always executes under a transaction scope.  
+    / * The transaction scope is completed when the operation  
+    / * terminates without an unhandled exception.  
+    /*  
+    [OperationBehavior(  
+      TransactionAutoComplete = true,  
+      TransactionScopeRequired = true  
+    )]  
+    public string TxWork(string message)  
+    {  
+      // Do some transactable work.  
+      Console.WriteLine("TxWork called with: " + message);  
+      // Display transaction information.  
+  
+      TransactionInformation info = Transaction.Current.TransactionInformation;  
+      Console.WriteLine("The distributed tx ID: {0}.", info.DistributedIdentifier);  
+      Console.WriteLine("The tx status: {0}.", info.Status);  
+      return String.Format("Hello. This was object {0}.",myID.ToString()) ;  
+    }  
+  
+    public void Dispose()  
+    {  
+      Console.WriteLine(  
+        "Service "  
+        + myID.ToString()  
+        + " is being recycled."  
+      );  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TransactionFlowAttribute (System.ServiceModel.TransactionFlowOption transactions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ServiceModel.TransactionFlowOption transactions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.TransactionFlowAttribute.#ctor(System.ServiceModel.TransactionFlowOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="transactions" Type="System.ServiceModel.TransactionFlowOption" />
+      </Parameters>
+      <Docs>
+        <param name="transactions"><see cref="T:System.ServiceModel.TransactionFlowOption" />。</param>
+        <summary><see cref="T:System.ServiceModel.TransactionFlowAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、操作レベルで <xref:System.ServiceModel.TransactionFlowOption> クラスと共にこの列挙体を使用しています。  
+  
+ [!code-csharp[OperationBehaviorAttribute1#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute1#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute1/vb/services.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.AddBindingParameters (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.AddBindingParameters(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.TransactionFlowAttribute.System#ServiceModel#Description#IOperationBehavior#AddBindingParameters(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">属性が機能を追加する操作の説明。</param>
+        <param name="parameters">バインド コンテキストのパラメーター オブジェクトのコレクション。</param>
+        <summary>この操作の動作をサポートするための追加パラメーター (設定) をバインド コンテキストに追加します。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、この操作にとって必要な動作をサポートするための追加パラメーター (設定) をバインド コンテキストに提供します。 これは、サービスの作成時にインフラストラクチャによって内部的に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyClientBehavior (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Dispatcher.ClientOperation proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyClientBehavior(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Dispatcher.ClientOperation proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.TransactionFlowAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyClientBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.ClientOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="proxy" Type="System.ServiceModel.Dispatcher.ClientOperation" />
+      </Parameters>
+      <Docs>
+        <param name="description">属性により機能を結び付ける操作。</param>
+        <param name="proxy">現在の操作を表す <see cref="T:System.ServiceModel.Dispatcher.ClientOperation" /> オブジェクト。</param>
+        <summary>属性がマークするメソッドの <see langword="ProxyOperation" /> オブジェクトに、属性の機能を結び付けます。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、すべてのメッセージまたは特定の操作について、クライアント ランタイムを表示または変更したり、クライアント ランタイムにカスタム拡張を追加したりできます。 <xref:System.ServiceModel.TransactionFlowAttribute> の場合、このメソッドの実装は空であることに注意してください。 このメソッドは、サービス プロキシの作成時にインフラストラクチャによって内部的に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.OperationDescription description, System.ServiceModel.Dispatcher.DispatchOperation dispatch);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.OperationDescription description, class System.ServiceModel.Dispatcher.DispatchOperation dispatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.TransactionFlowAttribute.System#ServiceModel#Description#IOperationBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.OperationDescription,System.ServiceModel.Dispatcher.DispatchOperation)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+        <Parameter Name="dispatch" Type="System.ServiceModel.Dispatcher.DispatchOperation" />
+      </Parameters>
+      <Docs>
+        <param name="description">この操作の説明。</param>
+        <param name="dispatch">この操作の <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" /> オブジェクト。</param>
+        <summary>属性がマークするメソッドの <see cref="T:System.ServiceModel.Dispatcher.DispatchOperation" /> オブジェクトに、属性の機能を結び付けます。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、すべてのメッセージまたは特定の操作について、クライアント ランタイムを表示または変更したり、クライアント ランタイムにカスタム拡張を追加したりできます。 <xref:System.ServiceModel.TransactionFlowAttribute> の場合、このメソッドの実装は空であることに注意してください。 このメソッドは、サービスの作成時にインフラストラクチャによって内部的に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IOperationBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IOperationBehavior.Validate (System.ServiceModel.Description.OperationDescription description);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IOperationBehavior.Validate(class System.ServiceModel.Description.OperationDescription description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.TransactionFlowAttribute.System#ServiceModel#Description#IOperationBehavior#Validate(System.ServiceModel.Description.OperationDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.OperationDescription" />
+      </Parameters>
+      <Docs>
+        <param name="description">検証する操作。</param>
+        <summary>操作がこの動作をサポートできることを検証します。 このメソッドは継承できません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作の説明がトランザクション フロー動作をサポートするのに十分であるかどうかを検証します。 <xref:System.ServiceModel.TransactionFlowAttribute> の場合、このメソッドの実装は空であることに注意してください。 このメソッドは、サービスの作成時にインフラストラクチャによって内部的に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transactions">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.TransactionFlowOption Transactions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.TransactionFlowOption Transactions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.TransactionFlowAttribute.Transactions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TransactionFlowOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信トランザクションがサポートされるかどうかを示す値を取得します。</summary>
+        <value>受信トランザクションがサポートされるかどうかを示す <see cref="T:System.ServiceModel.TransactionFlowOption" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

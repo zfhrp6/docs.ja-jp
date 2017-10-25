@@ -1,0 +1,1029 @@
+<Type Name="PackagePart" FullName="System.IO.Packaging.PackagePart">
+  <TypeSignature Language="C#" Value="public abstract class PackagePart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PackagePart extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Packaging.PackagePart" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.Packaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>格納されている部分の基本クラスを提供する<see cref="T:System.IO.Packaging.Package" />です。  このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.IO.Packaging.PackagePart> 3 つの基本的な要素で構成されています。  
+  
+|Access|説明|  
+|------------|-----------------|  
+|<xref:System.IO.Packaging.PackagePart.Uri%2A>|[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]部品のです。|  
+|<xref:System.IO.Packaging.PackagePart.ContentType%2A>|[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツ ストリームの種類。|  
+|<xref:System.IO.Packaging.PackagePart.GetStream%2A>|パーツのコンテンツのデータ ストリーム。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.IO.Packaging.PackagePart" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [WPF におけるパッケージの URI](~/docs/framework/wpf/app-development/pack-uris-in-wpf.md)  
+  
+ [Open Packaging Conventions 仕様](http://go.microsoft.com/fwlink/?LinkID=71255)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PackagePart (System.IO.Packaging.Package package, Uri partUri);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package, class System.Uri partUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.#ctor(System.IO.Packaging.Package,System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="partUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="package">親<see cref="T:System.IO.Packaging.Package" />部品のです。</param>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]親を基準に、一部の<see cref="T:System.IO.Packaging.Package" />ルート。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Packaging.PackagePart" />指定された親を持つクラス<see cref="P:System.IO.Packaging.PackagePart.Package" />と一部[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `partUri`有効にする必要があります<xref:System.IO.Packaging.PackagePart>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に従って形成、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様と[Open Packaging Conventions](http://go.microsoft.com/fwlink/?LinkID=71255)仕様です。  
+  
+ このコンス トラクターを使用するときに、<xref:System.IO.Packaging.PackagePart.ContentType%2A>部分のすぐに既知ではありませんしは後の設定と<xref:System.IO.Packaging.Package.CreatePart%2A>と呼びます。  
+  
+ 既定では、<xref:System.IO.Packaging.PackagePart.CompressionOption%2A>にパーツのプロパティを初期化<xref:System.IO.Packaging.CompressionOption.NotCompressed>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="package" /> または <paramref name="partUri" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PackagePart (System.IO.Packaging.Package package, Uri partUri, string contentType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package, class System.Uri partUri, string contentType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.#ctor(System.IO.Packaging.Package,System.Uri,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="partUri" Type="System.Uri" />
+        <Parameter Name="contentType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="package">親<see cref="T:System.IO.Packaging.Package" />部品のです。</param>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]親を基準に、一部の<see cref="T:System.IO.Packaging.Package" />ルート。</param>
+        <param name="contentType">[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツの一部のデータ ストリームの種類。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Packaging.PackagePart" />指定された親を持つクラス<see cref="P:System.IO.Packaging.PackagePart.Package" />、パーツ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、および[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツの種類。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `partUri`有効にする必要があります<xref:System.IO.Packaging.PackagePart>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に従って形成、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様と[Open Packaging Conventions](http://go.microsoft.com/fwlink/?LinkID=71255)仕様です。  
+  
+ 既定では、<xref:System.IO.Packaging.PackagePart.CompressionOption%2A>にパーツのプロパティを初期化<xref:System.IO.Packaging.CompressionOption.NotCompressed>です。  
+  
+ `contentType`必要があります、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]型の形式に従って、 [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616.html) *ハイパー テキスト転送プロトコルで HTTP*3.7 を参照します。  次の表は、コンテンツの例を示します[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]で使用される型[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+|説明|コンテンツ タイプ|  
+|-----------------|------------------|  
+|フォント|アプリケーション/vnd.ms-opentype|  
+|ICC プロファイル|application/vnd.ms-color.iccprofile|  
+|JPEG イメージ|/jpeg イメージ|  
+|あいまいなフォント|application/vnd.ms-package.obfuscated-opentype|  
+|PNG イメージ|イメージまたは png|  
+|PrintTicket|application/vnd.ms-printing.printticket+xml|  
+|TIFF イメージ|tiff/image|  
+|Windows Media フォト イメージ|vnd.ms 画像/|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="package" /> または <paramref name="partUri" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="partUri" />有効ではありません<see cref="T:System.IO.Packaging.PackagePart" />[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PackagePart (System.IO.Packaging.Package package, Uri partUri, string contentType, System.IO.Packaging.CompressionOption compressionOption);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IO.Packaging.Package package, class System.Uri partUri, string contentType, valuetype System.IO.Packaging.CompressionOption compressionOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.#ctor(System.IO.Packaging.Package,System.Uri,System.String,System.IO.Packaging.CompressionOption)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="package" Type="System.IO.Packaging.Package" />
+        <Parameter Name="partUri" Type="System.Uri" />
+        <Parameter Name="contentType" Type="System.String" />
+        <Parameter Name="compressionOption" Type="System.IO.Packaging.CompressionOption" />
+      </Parameters>
+      <Docs>
+        <param name="package">親<see cref="T:System.IO.Packaging.Package" />部品のです。</param>
+        <param name="partUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]親を基準に、一部の<see cref="T:System.IO.Packaging.Package" />ルート。</param>
+        <param name="contentType">[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツの一部のデータ ストリームの種類。</param>
+        <param name="compressionOption">部分データ ストリームの圧縮オプション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.Packaging.PackagePart" />指定された親を持つクラス<see cref="P:System.IO.Packaging.PackagePart.Package" />、パーツ[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツの種類、および<see cref="T:System.IO.Packaging.CompressionOption" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `partUri`有効にする必要があります<xref:System.IO.Packaging.PackagePart>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に従って形成、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様と[Open Packaging Conventions](http://go.microsoft.com/fwlink/?LinkID=71255)仕様です。  
+  
+ `contentType`必要があります、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]型の形式に従って、 [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616.html) *ハイパー テキスト転送プロトコルで HTTP*3.7 を参照します。  次の表は、コンテンツの例を示します[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]で使用される型[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+|説明|コンテンツ タイプ|  
+|-----------------|------------------|  
+|フォント|アプリケーション/vnd.ms-opentype|  
+|ICC プロファイル|application/vnd.ms-color.iccprofile|  
+|JPEG イメージ|/jpeg イメージ|  
+|あいまいなフォント|application/vnd.ms-package.obfuscated-opentype|  
+|PNG イメージ|イメージまたは png|  
+|PrintTicket|application/vnd.ms-printing.printticket+xml|  
+|TIFF イメージ|tiff/image|  
+|Windows Media フォト イメージ|vnd.ms 画像/|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="package" /> または <paramref name="partUri" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="partUri" />有効ではありません<see cref="T:System.IO.Packaging.PackagePart" />[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="compressionOption" />値が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompressionOption">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.CompressionOption CompressionOption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.IO.Packaging.CompressionOption CompressionOption" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackagePart.CompressionOption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.CompressionOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一部のコンテンツ ストリームの圧縮オプションを取得します。</summary>
+        <value>一部のコンテンツ ストリームの圧縮オプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackagePart.CompressionOption%2A>読み取り専用プロパティでアクセスできる場合にのみ、親<xref:System.IO.Packaging.Package>が開いています。  
+  
+ <xref:System.IO.Packaging.PackagePart.CompressionOption%2A>によって自動的に設定されたプロパティ、<xref:System.IO.Packaging.PackagePart.%23ctor%2A>コンス トラクターです。  それは、コンス トラクターで設定した後、<xref:System.IO.Packaging.PackagePart.CompressionOption%2A>は変更できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentType">
+      <MemberSignature Language="C#" Value="public string ContentType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContentType" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackagePart.ContentType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツ ストリームの種類。</summary>
+        <value>[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]パーツのコンテンツのデータ ストリームの種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackagePart.ContentType%2A>読み取り専用プロパティでアクセスできる場合にのみ、親<xref:System.IO.Packaging.Package>が開いています。  
+  
+ <xref:System.IO.Packaging.PackagePart.ContentType%2A>によって自動的に設定されたプロパティ、<xref:System.IO.Packaging.PackagePart.%23ctor%2A>コンス トラクターです。  それは、コンス トラクターで設定した後、<xref:System.IO.Packaging.PackagePart.ContentType%2A>は変更できません。  
+  
+ <xref:System.IO.Packaging.PackagePart.ContentType%2A>プロパティは、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]型の形式に従って、 [RFC 2616](http://www.w3.org/Protocols/rfc2616/rfc2616.html) *ハイパー テキスト転送プロトコルで HTTP*3.7 を参照します。  次の表は、コンテンツの例を示します[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]で使用される型[!INCLUDE[TLA#tla_xps](~/includes/tlasharptla-xps-md.md)]ドキュメント。  
+  
+|説明|コンテンツ タイプ|  
+|-----------------|------------------|  
+|フォント|アプリケーション/vnd.ms-opentype|  
+|ICC プロファイル|application/vnd.ms-color.iccprofile|  
+|JPEG イメージ|/jpeg イメージ|  
+|あいまいなフォント|application/vnd.ms-package.obfuscated-opentype|  
+|PNG イメージ|イメージまたは png|  
+|PrintTicket|application/vnd.ms-printing.printticket+xml|  
+|TIFF イメージ|tiff/image|  
+|Windows Media フォト イメージ|vnd.ms 画像/|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。  
+  
+ または  
+  
+ 派生クラスによって返される文字列<see cref="M:System.IO.Packaging.PackagePart.GetContentTypeCore" />メソッドが空です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="CreateRelationship">
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>このパーツ レベル関係を作成します<see cref="T:System.IO.Packaging.PackagePart" />指定したターゲット<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ レベルのリレーションシップでは、この部分とターゲットのパーツまたはリソース間のアソシエーションを定義します。  部品レベル リレーションシップには、2 つの形式のいずれかを指定できます。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>をターゲット<xref:System.IO.Packaging.PackagePart>内、<xref:System.IO.Packaging.Package>です。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>パッケージの外部のターゲット リソースにします。  
+  
+ 部分の関係では、ソースの一部が、リレーションシップの「所有者」と見なされます。  ソースの一部が削除されると、パーツによって所有されているすべてのリレーションシップも削除されます。  作成するか、リレーションシップの削除のプロセスも物理的に、ターゲットのパーツまたは任意の方法でリソースは変更されません。  
+  
+ <xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>メソッドは物理的に変わりませんソース部分またはターゲットのパーツまたは任意の方法でリソースのいずれか。  
+  
+ リレーションシップのターゲットは、別のリレーションシップをすることはできません。  
+  
+ パッケージのリレーションシップの詳細については、セクション 1.3 を参照してください、 *Open Packaging Conventions (OPC)*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ 詳細については、XPS ドキュメントを参照してください、*開いている XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=67000](http://go.microsoft.com/fwlink/?LinkID=67000)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="CreateRelationship">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationship CreateRelationship (Uri targetUri, System.IO.Packaging.TargetMode targetMode, string relationshipType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.PackageRelationship CreateRelationship(class System.Uri targetUri, valuetype System.IO.Packaging.TargetMode targetMode, string relationshipType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.CreateRelationship(System.Uri,System.IO.Packaging.TargetMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetUri" Type="System.Uri" />
+        <Parameter Name="targetMode" Type="System.IO.Packaging.TargetMode" />
+        <Parameter Name="relationshipType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ターゲット部品のです。</param>
+        <param name="targetMode">列挙値の 1 つ。 たとえば、<see cref="F:System.IO.Packaging.TargetMode.Internal" />ターゲット部品が内部にある場合、 <see cref="T:System.IO.Packaging.Package" />; または<see cref="F:System.IO.Packaging.TargetMode.External" />ターゲットが外部のリソースの場合、<see cref="T:System.IO.Packaging.Package" />です。</param>
+        <param name="relationshipType">リレーションシップのロール。</param>
+        <summary>このパーツ レベル関係を作成します<see cref="T:System.IO.Packaging.PackagePart" />指定したターゲット<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</summary>
+        <returns>このパーツ レベル関係<see cref="T:System.IO.Packaging.PackagePart" />ターゲットに<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ レベルのリレーションシップでは、この部分とターゲットのパーツまたはリソース間のアソシエーションを定義します。  部品レベル リレーションシップには、2 つの形式のいずれかを指定できます。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>をターゲット<xref:System.IO.Packaging.PackagePart>内、<xref:System.IO.Packaging.Package>です。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>パッケージの外部のターゲット リソースにします。  
+  
+ 部分の関係では、ソースの一部が、リレーションシップの「所有者」と見なされます。  ソースの一部が削除されると、パーツによって所有されているすべてのリレーションシップも削除されます。  作成するか、リレーションシップの削除のプロセスも物理的に、ターゲットのパーツまたは任意の方法でリソースは変更されません。  
+  
+ <xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>メソッドは物理的に変わりませんソース部分またはターゲットのパーツまたは任意の方法でリソースのいずれか。  
+  
+ リレーションシップのターゲットは、別のリレーションシップをすることはできません。  
+  
+ 場合`targetMode`として指定された<xref:System.IO.Packaging.TargetMode.Internal>、`targetUri`に従って形成される相対 URI である必要があります、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  内部の相対 URI か、絶対パスを指定できますなどの文字をスラッシュ (「/」) で起動"/page1.xaml"または"/images/picture4.jpg"、またはなどの相対パス"../imagespicture1.jpg"パッケージのルートに対して (「/」) として、ベース URI を解決します。  
+  
+ 場合`targetMode`として指定された<xref:System.IO.Packaging.TargetMode.External>、`targetUri`は、絶対または相対 URI の形式に従って、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  "http://www.microsoft.com/page2.xml"は、外部の対象リソース「page2.xml」を参照する絶対 URI の例を示します。  "images/picture1.jpg"は、外部の対象リソース"1.jpg"が解決される、に対して、パッケージ自体の URI を参照する相対 URI の例を示します。  
+  
+ `relationshipType`必要があります、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に従って形式ですが、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  パッケージの種類は、さまざまなパーツ レベルのリレーションシップの種類を定義できます。  次の表に、パーツ レベル`relationshipType`に準拠しているドキュメントの Uri が定義されている、*オープン仕様 XPS (XML Paper)*です。  
+  
+|XPS ドキュメント パーツ レベルのリレーションシップ|リレーションシップ型の URI|  
+|-------------------------------------------|---------------------------|  
+|デジタル署名の定義|[http://schemas.microsoft.com/xps/2005/06/signature-definitions](http://schemas.microsoft.com/xps/2005/06/signature-definitions)|  
+|DiscardControl|http://schemas.microsoft.com/xps/2005/06/discard-control|  
+|DocumentStructure|http://schemas.microsoft.com/xps/2005/06/documentstructure|  
+|PrintTicket|http://schemas.microsoft.com/xps/2005/06/printticket|  
+|必要なリソース|http://schemas.microsoft.com/xps/2005/06/required-resource|  
+|Restricted Font|http://schemas.microsoft.com/xps/2005/06/restricted-font|  
+|StartPart|http://schemas.microsoft.com/xps/2005/06/fixedrepresentation|  
+|StoryFragments|http://schemas.microsoft.com/xps/2005/06/storyfragments|  
+  
+ パッケージのリレーションシップの詳細については、セクション 1.3 を参照してください、 *Open Packaging Conventions (OPC)*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ 詳細については、XPS ドキュメントを参照してください、*開いている XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=67000](http://go.microsoft.com/fwlink/?LinkID=67000)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetUri" /> または <paramref name="relationshipType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="targetMode" />パラメーターが有効ではありません<see cref="T:System.IO.Packaging.TargetMode" />列挙値。</exception>
+        <exception cref="T:System.ArgumentException">によって識別される一部の<paramref name="targetUri" />(リレーションシップのターゲットは、別のリレーションシップをすることはできません) のリレーションシップです。  
+  
+ または  
+  
+ <paramref name="targetMode" />として指定された<see cref="F:System.IO.Packaging.TargetMode.Internal" />が<paramref name="targetUri" />絶対外部[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは読み取り専用 (新しいリレーションシップを追加することはできません)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRelationship">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationship CreateRelationship (Uri targetUri, System.IO.Packaging.TargetMode targetMode, string relationshipType, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.PackageRelationship CreateRelationship(class System.Uri targetUri, valuetype System.IO.Packaging.TargetMode targetMode, string relationshipType, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.CreateRelationship(System.Uri,System.IO.Packaging.TargetMode,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetUri" Type="System.Uri" />
+        <Parameter Name="targetMode" Type="System.IO.Packaging.TargetMode" />
+        <Parameter Name="relationshipType" Type="System.String" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetUri">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ターゲット部品のです。</param>
+        <param name="targetMode">列挙値の 1 つ。 たとえば、<see cref="F:System.IO.Packaging.TargetMode.Internal" />ターゲット部品が内部にある場合、 <see cref="T:System.IO.Packaging.Package" />; または<see cref="F:System.IO.Packaging.TargetMode.External" />ターゲットが外部のリソースの場合、<see cref="T:System.IO.Packaging.Package" />です。</param>
+        <param name="relationshipType">リレーションシップのロール。</param>
+        <param name="id">リレーションシップの一意の ID。</param>
+        <summary>このパーツ レベル関係を作成します<see cref="T:System.IO.Packaging.PackagePart" />指定したターゲット<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</summary>
+        <returns>このパーツ レベル関係<see cref="T:System.IO.Packaging.PackagePart" />ターゲットに<see cref="T:System.IO.Packaging.PackagePart" />または外部のリソース。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ レベルのリレーションシップでは、この部分とターゲットのパーツまたはリソース間のアソシエーションを定義します。  部品レベル リレーションシップには、2 つの形式のいずれかを指定できます。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>をターゲット<xref:System.IO.Packaging.PackagePart>内、<xref:System.IO.Packaging.Package>です。  
+  
+-   ソースの間で<xref:System.IO.Packaging.PackagePart>パッケージの外部のターゲット リソースにします。  
+  
+ 部分の関係では、ソースの一部が、リレーションシップの「所有者」と見なされます。  ソースの一部が削除されると、パーツによって所有されているすべてのリレーションシップも削除されます。  作成するか、リレーションシップの削除のプロセスも物理的に、ターゲットのパーツまたは任意の方法でリソースは変更されません。  
+  
+ `id`有効な XML 識別子である必要があります。  `id`型 xsd:ID し、に規定された名前付け規則に従う必要があります、 *XML Schema Part 2: Datatypes*仕様 (を参照してください[http://www.w3.org/TR/xmlschema-2/#ID](http://www.w3.org/TR/xmlschema-2/))。  
+  
+ <xref:System.IO.Packaging.PackagePart.CreateRelationship%2A>メソッドは物理的に変わりませんソース部分またはターゲットのパーツまたは任意の方法でリソースのいずれか。  
+  
+ リレーションシップのターゲットは、別のリレーションシップをすることはできません。  
+  
+ 場合`targetMode`として指定された<xref:System.IO.Packaging.TargetMode.Internal>、`targetUri`に従って形成される相対 URI である必要があります、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  内部の相対 URI か、絶対パスを指定できますなどの文字をスラッシュ (「/」) で起動"/page1.xaml"または"/images/picture4.jpg"、またはなどの相対パス"../imagespicture1.jpg"パッケージのルートに対して (「/」) として、ベース URI を解決します。  
+  
+ 場合`targetMode`として指定された<xref:System.IO.Packaging.TargetMode.External>、`targetUri`は、絶対または相対 URI の形式に従って、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  "http://www.microsoft.com/page2.xml"は、外部の対象リソース「page2.xml」を参照する絶対 URI の例を示します。  "images/picture1.jpg"は、外部の対象リソース"1.jpg"が解決される、に対して、パッケージ自体の URI を参照する相対 URI の例を示します。  
+  
+ `relationshipType`必要があります、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に従って形式ですが、 [RFC 3986](http://tools.ietf.org/html/rfc3986) *(Uniform Resource Identifier) の一般的な構文*仕様です。  パッケージの種類は、さまざまなパーツ レベルのリレーションシップの種類を定義できます。  次の表に、パーツ レベル`relationshipType`に準拠しているドキュメントの Uri が定義されている、*オープン仕様 XPS (XML Paper)*です。  
+  
+|XPS ドキュメント パーツ レベルのリレーションシップ|リレーションシップ型の URI|  
+|-------------------------------------------|---------------------------|  
+|デジタル署名の定義|http://schemas.microsoft.com/xps/2005/06/signature-definitions|  
+|DiscardControl|http://schemas.microsoft.com/xps/2005/06/discard-control|  
+|DocumentStructure|http://schemas.microsoft.com/xps/2005/06/documentstructure|  
+|PrintTicket|http://schemas.microsoft.com/xps/2005/06/printticket|  
+|必要なリソース|http://schemas.microsoft.com/xps/2005/06/required-resource|  
+|Restricted Font|http://schemas.microsoft.com/xps/2005/06/restricted-font|  
+|StartPart|http://schemas.microsoft.com/xps/2005/06/fixedrepresentation|  
+|StoryFragments|http://schemas.microsoft.com/xps/2005/06/storyfragments|  
+  
+ パッケージのリレーションシップの詳細については、セクション 1.3 を参照してください、 *Open Packaging Conventions (OPC)*仕様ダウンロード[http://go.microsoft.com/fwlink/?LinkID=71255](http://go.microsoft.com/fwlink/?LinkID=71255)です。  
+  
+ 詳細については、XPS ドキュメントを参照してください、*開いている XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=67000](http://go.microsoft.com/fwlink/?LinkID=67000)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetUri" /> または <paramref name="relationshipType" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="targetMode" />パラメーターが有効ではありません<see cref="T:System.IO.Packaging.TargetMode" />列挙値。</exception>
+        <exception cref="T:System.ArgumentException">によって識別される一部の<paramref name="targetUri" />(リレーションシップのターゲットは、別のリレーションシップをすることはできません) のリレーションシップです。  
+  
+ または  
+  
+ <paramref name="targetMode" />として指定された<see cref="F:System.IO.Packaging.TargetMode.Internal" />が<paramref name="targetUri" />絶対外部[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]です。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは読み取り専用 (新しいリレーションシップを追加することはできません)。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="id" />有効な XML 識別子ではありません。  
+  
+ または  
+  
+ 指定した部分<paramref name="id" />既に存在します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRelationship">
+      <MemberSignature Language="C#" Value="public void DeleteRelationship (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DeleteRelationship(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.DeleteRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id"><see cref="P:System.IO.Packaging.PackageRelationship.Id" />のリレーションシップを削除します。</param>
+        <summary>指定された一部のレベルを削除<see cref="T:System.IO.Packaging.PackageRelationship" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `id`有効な XML 識別子である必要があります。  `id`型 xsd:ID し、に規定された名前付け規則に従う必要があります、 *XML Schema Part 2: Datatypes*仕様 (を参照してください[http://www.w3.org/TR/xmlschema-2/#ID](http://www.w3.org/TR/xmlschema-2/))。  
+  
+ 場合、指定した`id`と一致しません、<xref:System.IO.Packaging.PackageRelationship.Id%2A>のこの部分が所有しているリレーションシップのいずれか、リレーションシップは削除されず、例外はスローされません。  
+  
+ 指定されたリレーションシップを削除する以外、<xref:System.IO.Packaging.PackagePart.DeleteRelationship%2A>メソッドに物理的に変わらないのでこのパーツまたは、ターゲット要素で構成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="id" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは読み取り専用 (リレーションシップを削除することはできません)。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="id" />有効な XML 識別子ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentTypeCore">
+      <MemberSignature Language="C#" Value="protected virtual string GetContentTypeCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetContentTypeCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetContentTypeCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]パーツのコンテンツの種類。</summary>
+        <returns>[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]パーツのコンテンツの種類。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackagePart.GetContentTypeCore%2A>仮想メソッド、<xref:System.IO.Packaging.PackagePart>抽象基本クラスです。 、構築時に、コンテンツの種類の値を指定することはできませんの派生型でのみこのメソッドを実装するか入力内容を計算する場合は値負荷やコストのかかる操作です。 戻り値は、有効なである必要があります[!INCLUDE[TLA2#tla_mime](~/includes/tla2sharptla-mime-md.md)]コンテンツの種類。  
+  
+ 派生クラスを呼び出すことができます<xref:System.IO.Packaging.PackagePart.GetContentTypeCore%2A>初期化するために、<xref:System.IO.Packaging.PackagePart.ContentType%2A>既定値の派生クラスのプロパティです。  後に、<xref:System.IO.Packaging.PackagePart.ContentType%2A>プロパティが設定されて、変更できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">派生クラスに必要なオーバーライドの実装を提供していない、<see cref="M:System.IO.Packaging.PackagePart.GetContentTypeCore" />メソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationship">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationship GetRelationship (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.PackageRelationship GetRelationship(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetRelationship(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationship</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id"><see cref="P:System.IO.Packaging.PackageRelationship.Id" />を返す、リレーションシップのです。</param>
+        <summary>指定された間の関係を返します<see cref="P:System.IO.Packaging.PackageRelationship.Id" />です。</summary>
+        <returns>指定された一致するリレーションシップ<paramref name="id" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `id`有効な XML 識別子である必要があります。  `id`型 xsd:ID し、に規定された名前付け規則に従う必要があります、 *XML Schema Part 2: Datatypes*仕様 (を参照してください[http://www.w3.org/TR/xmlschema-2/#ID](http://www.w3.org/TR/xmlschema-2/))。  
+  
+ 使用することができます、<xref:System.IO.Packaging.PackagePart.RelationshipExists%2A>場合と指定したリレーションシップを調べます<xref:System.IO.Packaging.PackageRelationship.Id%2A>この部分が所有します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="id" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="id" />有効な XML 識別子ではありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="relationshipType" /> が空の文字列です。</exception>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。  
+  
+ または  
+  
+ 指定されたリレーションシップ<paramref name="id" />パッケージに存在しません。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは書き込み専用 (リレーションシップ情報を読み取ることができません)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationships">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationshipCollection GetRelationships ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.PackageRelationshipCollection GetRelationships() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetRelationships" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationshipCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この部分が所有するすべてのリレーションシップのコレクションを返します。</summary>
+        <returns>部分で所有されているすべてのリレーションシップのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションは決して`null`。 ただし、部分では、リレーションシップが定義されていない場合は、コレクションに要素がゼロが含まれる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは書き込み専用 (リレーションシップ情報を読み取ることができません)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRelationshipsByType">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.PackageRelationshipCollection GetRelationshipsByType (string relationshipType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Packaging.PackageRelationshipCollection GetRelationshipsByType(string relationshipType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetRelationshipsByType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.PackageRelationshipCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relationshipType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipType"><see cref="P:System.IO.Packaging.PackageRelationship.RelationshipType" />を見つけて返すコレクションに関係します。</param>
+        <summary>指定された一致するリレーションシップのコレクションを返します<see cref="P:System.IO.Packaging.PackageRelationship.RelationshipType" />です。</summary>
+        <returns>指定されたリレーションシップのコレクション<paramref name="relationshipType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションは決して`null`。 ただし、リレーションシップと、指定した一致しない場合は、コレクションに要素がゼロが含まれる可能性があります`relationshipType`パートに対して定義されています。  
+  
+ 先頭または末尾にスペース、`relationshipType`文字列は自動的に切り捨てられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="relationshipType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="relationshipType" /> が空の文字列です。</exception>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは書き込み専用 (リレーションシップ情報を読み取ることができません)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一部のコンテンツのデータ ストリームを返します。</summary>
+        <returns>パーツのコンテンツのデータ ストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、使用してコンテンツ ストリームを開きます<xref:System.IO.FileMode>の<xref:System.IO.FileMode.OpenOrCreate>と<xref:System.IO.FileAccess>は親と同じ権限<xref:System.IO.Packaging.Package>です。  
+  
+ オーバー ロードは、<xref:System.IO.Packaging.PackagePart.GetStream%2A>メソッドを使用する特定の設定<xref:System.IO.FileMode>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.IO.IOException">によって返されるストリーム オブジェクト、<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />派生のサブクラスのメソッドは<see langword="null" />します。</exception>
+        <block subset="none" type="usage">
+          <para>
+            <see cref="M:System.IO.Packaging.PackagePart.GetStream" />派生クラスを内部的に呼び出して<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />メソッドを実際に開くし、部分データ ストリームを返す形式に基づく、物理的な派生クラスで実装します。  
+  
+ 既定では、<see cref="T:System.IO.Packaging.ZipPackagePart" />抽象のサブクラス実装<see cref="T:System.IO.Packaging.PackagePart" />クラスが提供される、使用できます。  既定の操作で<see cref="M:System.IO.Packaging.PackagePart.GetStream" />内部的に呼び出す<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />の<see cref="T:System.IO.Packaging.ZipPackagePart" />クラスを開き、ZIP ファイルから、部分データ ストリームを返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream (System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream(valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">コンテンツ ストリームを開くときに I/O モードです。</param>
+        <summary>返します。 指定した I/O のコンテンツのストリームが開かれている<see cref="T:System.IO.FileMode" />です。</summary>
+        <returns>パーツのコンテンツのストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.FileAccess>返されるコンテンツ ストリームの権限は、親のアクセス許可と同じ<xref:System.IO.Packaging.Package>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="mode" />パラメーターが有効ではありません<see cref="T:System.IO.FileMode" />列挙値。</exception>
+        <exception cref="T:System.IO.IOException"><paramref name="mode" />パラメーターは、パッケージと一部のストリームと互換性がありません。  
+  
+ または  
+  
+ によって返されるストリーム オブジェクト、<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />派生のサブクラスのメソッドは<see langword="null" />します。</exception>
+        <block subset="none" type="usage">
+          <para>
+            <see cref="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode)" />派生クラスを内部的に呼び出して<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />メソッドを実際に開くし、部分データ ストリームを返す形式に基づく、物理的な派生クラスで実装します。  
+  
+ 既定では、<see cref="T:System.IO.Packaging.ZipPackagePart" />抽象のサブクラス実装<see cref="T:System.IO.Packaging.PackagePart" />クラスが提供される、使用できます。  既定の操作で<see cref="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode)" />内部的に呼び出す<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />の<see cref="T:System.IO.Packaging.ZipPackagePart" />クラスを開き、ZIP ファイルから、部分データ ストリームを返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetStream (System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetStream(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mode">コンテンツ ストリームを開くときに I/O モードです。</param>
+        <param name="access">コンテンツ ストリームを開くときに使用するアクセス許可です。</param>
+        <summary>指定した開いている一部のコンテンツ ストリームを返します<see cref="T:System.IO.FileMode" />と<see cref="T:System.IO.FileAccess" />です。</summary>
+        <returns>パーツのコンテンツのストリーム。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="mode" />パラメーターが有効ではありません<see cref="T:System.IO.FileMode" />列挙値。  
+  
+ または  
+  
+ <paramref name="access" />パラメーターが有効ではありません<see cref="T:System.IO.FileAccess" />列挙値。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="mode" />または<paramref name="access" />パッケージとパーツ ストリームと互換性がありません。  
+  
+ または  
+  
+ <paramref name="access" />としてパラメーターが指定されて<see cref="F:System.IO.FileAccess.Read" />ですが、<paramref name="mode" />パラメーターには、書き込みアクセス権が必要です。  (<see cref="T:System.IO.FileMode" />の値<see cref="F:System.IO.FileMode.Create" />、 <see cref="F:System.IO.FileMode.CreateNew" />、 <see cref="F:System.IO.FileMode.Truncate" />、および<see cref="F:System.IO.FileMode.Append" />必要<see cref="F:System.IO.FileAccess.Write" />または<see cref="F:System.IO.FileAccess.ReadWrite" />アクセスします)。  
+  
+ または  
+  
+ によって返されるストリーム オブジェクト、<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />派生のサブクラスのメソッドは<see langword="null" />します。</exception>
+        <block subset="none" type="usage">
+          <para>
+            <see cref="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode,System.IO.FileAccess)" />派生クラスを内部的に呼び出して<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />メソッドを実際に開くし、部分データ ストリームを返す形式に基づく、物理的な派生クラスで実装します。  
+  
+ 既定では、<see cref="T:System.IO.Packaging.ZipPackagePart" />抽象のサブクラス実装<see cref="T:System.IO.Packaging.PackagePart" />クラスが提供される、使用できます。  既定の操作で<see cref="M:System.IO.Packaging.PackagePart.GetStream(System.IO.FileMode,System.IO.FileAccess)" />内部的に呼び出す<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />の<see cref="T:System.IO.Packaging.ZipPackagePart" />クラスを開き、ZIP ファイルから、部分データ ストリームを返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStreamCore">
+      <MemberSignature Language="C#" Value="protected abstract System.IO.Stream GetStreamCore (System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IO.Stream GetStreamCore(valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mode">コンテンツ ストリームを開くときに I/O モードです。</param>
+        <param name="access">コンテンツ ストリームを開くときに使用するアクセス許可です。</param>
+        <summary>派生クラスでオーバーライドされると、指定した開いている一部のコンテンツ ストリームを返します<see cref="T:System.IO.FileMode" />と<see cref="T:System.IO.FileAccess" />です。</summary>
+        <returns>パーツのコンテンツのデータ ストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを呼び出す必要がありますいない<xref:System.IO.Packaging.PackagePart.GetStreamCore%2A>直接、代わりに呼び出す必要がありますが、<xref:System.IO.Packaging.PackagePart.GetStream%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生した<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />実装することは避けて推測で処理順序で実行される操作、<see cref="Overload:System.IO.Packaging.PackagePart.GetStream" />メソッドを呼び出すことです。</para>
+        </block>
+        <block subset="none" type="usage">
+          <para>派生した<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />メソッドによって呼び出されます、<see cref="Overload:System.IO.Packaging.PackagePart.GetStream" />を開き、部分データ ストリームを返す方法、物理フォーマットを派生クラスで実装に基づいています。  
+  
+ 既定では、<see cref="T:System.IO.Packaging.ZipPackagePart" />抽象のサブクラス実装<see cref="T:System.IO.Packaging.PackagePart" />クラスが提供される、使用できます。  既定の操作で<see cref="Overload:System.IO.Packaging.PackagePart.GetStream" />内部的に呼び出す<see cref="M:System.IO.Packaging.PackagePart.GetStreamCore(System.IO.FileMode,System.IO.FileAccess)" />の<see cref="T:System.IO.Packaging.ZipPackagePart" />クラスを開き、ZIP ファイルから、部分データ ストリームを返します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Package">
+      <MemberSignature Language="C#" Value="public System.IO.Packaging.Package Package { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IO.Packaging.Package Package" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackagePart.Package" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Packaging.Package</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親を取得します<see cref="T:System.IO.Packaging.Package" />部品のです。</summary>
+        <value>パートの親パッケージです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackagePart.Package%2A>読み取り専用プロパティでアクセスできる場合にのみ、親<xref:System.IO.Packaging.Package>が開いています。  
+  
+ <xref:System.IO.Packaging.PackagePart.Package%2A>によって自動的に設定されたプロパティ、<xref:System.IO.Packaging.PackagePart.%23ctor%2A>コンス トラクターです。  親、コンス トラクターによって設定された後<xref:System.IO.Packaging.PackagePart.Package%2A>部分を変更できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipExists">
+      <MemberSignature Language="C#" Value="public bool RelationshipExists (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RelationshipExists(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Packaging.PackagePart.RelationshipExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id"><see cref="P:System.IO.Packaging.PackageRelationship.Id" />リレーションシップを確認するのです。</param>
+        <summary>この部分を指定されたリレーションシップを所有しているかどうかを示す値を返します<see cref="P:System.IO.Packaging.PackageRelationship.Id" />です。</summary>
+        <returns>
+          <see langword="true" />この部分は、指定されたリレーションシップを所有している場合<paramref name="id" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `id`有効な XML 識別子である必要があります。  `id`型 xsd:ID し、に規定された名前付け規則に従う必要があります、 *XML Schema Part 2: Datatypes*仕様 (を参照してください[http://www.w3.org/TR/xmlschema-2/#ID](http://www.w3.org/TR/xmlschema-2/))。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="id" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.XmlException">
+          <paramref name="id" />有効な XML 識別子ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+        <exception cref="T:System.IO.IOException">パッケージは書き込み専用 (リレーションシップ情報を読み取ることができません)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.IO.Packaging.PackagePart.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.Packaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]部品のです。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]パッケージ ルートに対する相対部分。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Packaging.PackagePart.Uri%2A>読み取り専用プロパティでアクセスできる場合にのみ、親<xref:System.IO.Packaging.Package>が開いています。  
+  
+ <xref:System.IO.Packaging.PackagePart.Uri%2A>によって自動的に設定されたプロパティ、<xref:System.IO.Packaging.PackagePart.%23ctor%2A>コンス トラクターです。  それは、コンス トラクターで設定した後、<xref:System.IO.Packaging.PackagePart.Uri%2A>の部分は変更できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">部分は削除されました。  
+  
+ または  
+  
+ <see cref="P:System.IO.Packaging.PackagePart.Package" />が開かれていない (<see cref="M:System.IO.Packaging.Package.Dispose(System.Boolean)" />または<see cref="M:System.IO.Packaging.Package.Close" />が呼び出された)。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,176 @@
+<Type Name="CodeComment" FullName="System.CodeDom.CodeComment">
+  <TypeSignature Language="C#" Value="public class CodeComment : System.CodeDom.CodeObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeComment extends System.CodeDom.CodeObject" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeComment" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeComment>単一行コメントを表すために使用できます。  
+  
+ A<xref:System.CodeDom.CodeCommentStatement>含めることができます、<xref:System.CodeDom.CodeComment>し、ステートメントとして扱われ、ステートメントのコレクション内のコードとして生成を許可します。 複数の複数行コメントを表せる<xref:System.CodeDom.CodeCommentStatement>オブジェクト。  
+  
+ ソース コードを生成できる CodeDOM グラフのコメントを含めるには追加、<xref:System.CodeDom.CodeComment>を<xref:System.CodeDom.CodeCommentStatement>、この、ステートメントのコレクションに追加し、<xref:System.CodeDom.CodeMemberMethod>またはの注釈のコレクションを<xref:System.CodeDom.CodeNamespace>または任意のオブジェクトから派生した<xref:System.CodeDom.CodeTypeMember>です。  
+  
+   
+  
+## Examples  
+ この例では、<xref:System.CodeDom.CodeComment>をソース コード内のコメントを表します。  
+  
+ [!code-cpp[CodeCommentExample#2](~/samples/snippets/cpp/VS_Snippets_CLR/CodeCommentExample/CPP/codecommentexample.cpp#2)]
+ [!code-csharp[CodeCommentExample#2](~/samples/snippets/csharp/VS_Snippets_CLR/CodeCommentExample/CS/codecommentexample.cs#2)]
+ [!code-vb[CodeCommentExample#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeCommentExample/VB/codecommentexample.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeComment ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeComment.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeComment" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeComment (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeComment.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">コメントの内容です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeComment" />内容として、指定したテキストを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeComment (string text, bool docComment);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string text, bool docComment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeComment.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="docComment" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="text">コメントの内容です。</param>
+        <param name="docComment">
+          <see langword="true" />場合は、コメント、ドキュメントのコメントです。それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeComment" />クラスの指定されたテキストおよびドキュメントのコメントのフラグを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DocComment">
+      <MemberSignature Language="C#" Value="public bool DocComment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DocComment" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeComment.DocComment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコメントがドキュメント コメントであるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、コメント、ドキュメントのコメントです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一部の言語では、特殊な種類のドキュメントでは、ソース コードを自動的に抽出できるコメントをサポートします。 コメントが別の構文を生成する可能性があります、ドキュメントのコメントであるかどうかを指定するのには、このプロパティを使用できます。 この例は、C# の場合を使用して"//"通常のコメントおよび「//」ドキュメント コメント用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeComment.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコメントのテキストを設定します。</summary>
+        <value>コメント テキストを含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのテキストでは、改行を含めることはできません。 複数の行が必要な場合、複数<xref:System.CodeDom.CodeComment>オブジェクトを定義する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

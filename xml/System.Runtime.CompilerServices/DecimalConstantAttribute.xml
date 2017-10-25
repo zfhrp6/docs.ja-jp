@@ -1,0 +1,169 @@
+<Type Name="DecimalConstantAttribute" FullName="System.Runtime.CompilerServices.DecimalConstantAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DecimalConstantAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DecimalConstantAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.DecimalConstantAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Field | System.AttributeTargets.Parameter, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値を格納、<see cref="T:System.Decimal" />メタデータ内で一定です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性を使用して、コンパイル時に、10 進値が定数値であるを指定します。  
+  
+ フィールドまたはパラメーターには、この属性を適用できます。  
+  
+ 定数の属性の詳細については、次を参照してください。、<xref:System.Runtime.CompilerServices.CustomConstantAttribute>クラスです。  
+  
+ クラスは、<xref:System.Runtime.CompilerServices>は、コンパイラ ライターのみです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DecimalConstantAttribute (byte scale, byte sign, int hi, int mid, int low);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8 scale, unsigned int8 sign, int32 hi, int32 mid, int32 low) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.DecimalConstantAttribute.#ctor(System.Byte,System.Byte,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="scale" Type="System.Byte" />
+        <Parameter Name="sign" Type="System.Byte" />
+        <Parameter Name="hi" Type="System.Int32" />
+        <Parameter Name="mid" Type="System.Int32" />
+        <Parameter Name="low" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="scale">スケール ファクターを小数点の右側にある数字の数を示す 10 の累乗します。 有効な値は、0 ~ 28 以下です。</param>
+        <param name="sign">値 0 は、正の値を示し、1 の値が負の値を示します。</param>
+        <param name="hi">96 ビットの上位 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <param name="mid">中間 96 ビットの 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <param name="low">96 ビットの下位 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.CompilerServices.DecimalConstantAttribute" />符号付きの整数値を指定したクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DecimalConstantAttribute (byte scale, byte sign, uint hi, uint mid, uint low);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(unsigned int8 scale, unsigned int8 sign, unsigned int32 hi, unsigned int32 mid, unsigned int32 low) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.DecimalConstantAttribute.#ctor(System.Byte,System.Byte,System.UInt32,System.UInt32,System.UInt32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="scale" Type="System.Byte" />
+        <Parameter Name="sign" Type="System.Byte" />
+        <Parameter Name="hi" Type="System.UInt32" />
+        <Parameter Name="mid" Type="System.UInt32" />
+        <Parameter Name="low" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="scale">スケール ファクターを小数点の右側にある数字の数を示す 10 の累乗します。 有効な値は、0 ~ 28 以下です。</param>
+        <param name="sign">値 0 は、正の値を示し、1 の値が負の値を示します。</param>
+        <param name="hi">96 ビットの上位 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <param name="mid">中間 96 ビットの 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <param name="low">96 ビットの下位 32 ビット<see cref="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.CompilerServices.DecimalConstantAttribute" />指定の符号なし整数値を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="scale" /> &gt; 28.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public decimal Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Decimal Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.DecimalConstantAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Decimal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この属性に格納された 10 進定数を取得します。</summary>
+        <value>この属性に格納された 10 進定数です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

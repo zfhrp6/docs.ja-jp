@@ -1,0 +1,212 @@
+<Type Name="LingerOption" FullName="System.Net.Sockets.LingerOption">
+  <TypeSignature Language="C#" Value="public class LingerOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LingerOption extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.LingerOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Net.Sockets.Socket" />呼び出しの後に接続されたまま、<see cref="M:System.Net.Sockets.Socket.Close" />または<see cref="M:System.Net.Sockets.TcpClient.Close" />送信されるデータが残っている場合、メソッドとの時間は引き続き接続します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ありますデータ送信のネットワーク バッファーで使用できるアプリケーションの呼び出し後、<xref:System.Net.Sockets.Socket>または<xref:System.Net.Sockets.TcpClient>メソッドです。 量を指定する場合に、<xref:System.Net.Sockets.Socket>終了後に未送信のデータを送信する、作成を試みます、<xref:System.Net.Sockets.LingerOption>で、`enable`パラメーターに設定`true`、および`seconds`パラメーターが必要な時間数に設定します。 `seconds`パラメーターを使用するを指定する時間を<xref:System.Net.Sockets.Socket>タイムアウトするまでに接続したままにします。たくない場合、 <xref:System.Net.Sockets.Socket> 、期間終了後に接続したまま、作成、<xref:System.Net.Sockets.LingerOption>インスタンスを使用、`enable`パラメーターに設定`true`と`seconds`パラメーター 0 に設定します。 ここで、<xref:System.Net.Sockets.Socket>は直ちに終了し、未送信のすべてのデータは失われます。 作成されると、渡す、<xref:System.Net.Sockets.LingerOption>を<xref:System.Net.Sockets.Socket.SetSocketOption%2A?displayProperty=nameWithType>メソッドです。 使用してデータを送受信する場合、 <xref:System.Net.Sockets.TcpClient>、し、設定、<xref:System.Net.Sockets.LingerOption>インスタンス、<xref:System.Net.Sockets.TcpClient.LingerState%2A?displayProperty=nameWithType>プロパティです。  
+  
+ IP スタックは、接続のラウンド トリップ時間に基づいて使用する既定の IP プロトコルのタイムアウト期間を計算します。 ほとんどの場合、スタックによって計算されたタイムアウトは、アプリケーションで定義された 1 より関連性が高いです。 既定の動作は、この、<xref:System.Net.Sockets.Socket>ときに、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティが設定されていないと、<xref:System.Net.Sockets.TcpClient>ときに、<xref:System.Net.Sockets.TcpClient.LingerState%2A>プロパティが設定されていません。  
+  
+   
+  
+## Examples  
+ 次の例は、以前に作成した設定<xref:System.Net.Sockets.Socket>呼び出した後に 1 秒間の待機、<xref:System.Net.Sockets.Socket.Close%2A>メソッドです。  
+  
+ [!code-cpp[Classic LingerOption Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic LingerOption Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LingerOption Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic LingerOption Example/CS/source.cs#1)]
+ [!code-vb[Classic LingerOption Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic LingerOption Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LingerOption (bool enable, int seconds);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enable, int32 seconds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Sockets.LingerOption.#ctor(System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enable" Type="System.Boolean" />
+        <Parameter Name="seconds" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="enable">
+          <see langword="true" />後に接続されたままにして、<see cref="M:System.Net.Sockets.Socket.Close" />メソッドが呼び出される、それ以外の<see langword="false" />します。</param>
+        <param name="seconds">後に接続されているままにしておく秒数、<see cref="M:System.Net.Sockets.Socket.Close" />メソッドが呼び出されます。</param>
+        <summary><see cref="T:System.Net.Sockets.LingerOption" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ありますデータ送信のネットワーク バッファーで使用できるを閉じた後、<xref:System.Net.Sockets.Socket>です。 使用して、`enable`かどうかを指定するパラメーター、 <xref:System.Net.Sockets.Socket> close メソッドが呼び出された後に未送信のデータの送信を続行します。 使用して、`seconds`時間かを示すためにパラメーター、<xref:System.Net.Sockets.Socket>タイムアウトするまでに未送信のデータの転送を試行します。指定する場合`true`の`enable`パラメーターとの場合は 0、`seconds`パラメーター、<xref:System.Net.Sockets.Socket>出力方向のネットワーク バッファーにデータの左側がなくなるまで、データを送信します。 指定した場合`false`の`enable`、パラメーター、<xref:System.Net.Sockets.Socket>は直ちに終了し、未送信のすべてのデータは失われます。  
+  
+ 動作を次の表に示します、<xref:System.Net.Sockets.Socket.Close%2A?displayProperty=nameWithType>と<xref:System.Net.Sockets.TcpClient.Close%2A?displayProperty=nameWithType>方法で使用できる値に基づいて、`enable`と`seconds`閉じてインスタンスが作成されで設定する場合のパラメーター、<xref:System.Net.Sockets.Socket.LingerState%2A?displayProperty=nameWithType>または<xref:System.Net.Sockets.TcpClient.LingerState%2A?displayProperty=nameWithType>プロパティです。  
+  
+|`enable`|`seconds`|動作|  
+|--------------|---------------|--------------|  
+|`false`(無効)、既定値|タイムアウトは適用、されません (既定値)。|既定値まで IP プロトコル タイムアウト保留中の接続指向のソケット (たとえば、TCP) のデータ送信を試みます期限が切れます。|  
+|`true`(有効)|0 以外のタイムアウト|指定したタイムアウトが経過するまでの試行が失敗した場合は、Winsock 接続がリセット保留中のデータ送信を試みます。|  
+|`true`(有効)|0 のタイムアウト|保留中のデータを破棄します。 接続志向ソケット (たとえば、TCP) の場合は、Winsock は接続をリセットします。|  
+  
+ IP スタックは、接続のラウンド トリップ時間に基づいて使用する既定の IP プロトコルのタイムアウト期間を計算します。 ほとんどの場合、スタックによって計算されたタイムアウトは、アプリケーションで定義された 1 より関連性が高いです。 ソケットの既定の動作は、このとき、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティが設定されていません。  
+  
+ ときに、<xref:System.Net.Sockets.LingerOption.LingerTime%2A>に格納されているプロパティ、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティは、既定の IP プロトコル タイムアウトよりも大きい設定、既定の IP プロトコル タイムアウトを引き続き適用を上書きします。  
+  
+   
+  
+## Examples  
+ 次の例は、以前に作成した設定<xref:System.Net.Sockets.Socket>呼び出した後に 1 秒間の待機、<xref:System.Net.Sockets.Socket.Close%2A>メソッドです。  
+  
+ [!code-cpp[Classic LingerOption Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic LingerOption Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic LingerOption Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic LingerOption Example/CS/source.cs#1)]
+ [!code-vb[Classic LingerOption Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic LingerOption Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.LingerOption.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または後に待機するかどうかを示す値を設定、<see cref="T:System.Net.Sockets.Socket" />が閉じられます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Net.Sockets.Socket" />後に待機する必要があります<see cref="M:System.Net.Sockets.Socket.Close" />が呼び出された場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Net.Sockets.LingerOption.Enabled%2A>プロパティを決定するかどうか、<xref:System.Net.Sockets.Socket>終了後に待機されます。 この値に変更`true`または`false`させ、変更された<xref:System.Net.Sockets.LingerOption>を<xref:System.Net.Sockets.Socket.SetSocketOption%2A>メソッドまたはセット、<xref:System.Net.Sockets.TcpClient.LingerState%2A>または<xref:System.Net.Sockets.Socket.LingerState%2A>property.to が接続を維持を有効または無効にします。  
+  
+ 次の表に、使用できる値の動作、<xref:System.Net.Sockets.LingerOption.Enabled%2A>プロパティおよび<xref:System.Net.Sockets.LingerOption.LingerTime%2A>に格納されているプロパティ、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティです。  
+  
+|`enable`|`seconds`|動作|  
+|--------------|---------------|--------------|  
+|`false`(無効)、既定値|タイムアウトは適用、されません (既定値)。|既定値まで IP プロトコル タイムアウト保留中の接続指向のソケット (たとえば、TCP) のデータ送信を試みます期限が切れます。|  
+|`true`(有効)|0 以外のタイムアウト|指定したタイムアウトが経過するまでの試行が失敗した場合は、Winsock 接続がリセット保留中のデータ送信を試みます。|  
+|`true`(有効)|0 のタイムアウト|保留中のデータを破棄します。 接続志向ソケット (たとえば、TCP) の場合は、Winsock は接続をリセットします。|  
+  
+ IP スタックは、接続のラウンド トリップ時間に基づいて使用する既定の IP プロトコルのタイムアウト期間を計算します。 ほとんどの場合、スタックによって計算されたタイムアウトは、アプリケーションで定義された 1 より関連性が高いです。 ソケットの既定の動作は、このとき、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティが設定されていません。  
+  
+ ときに、<xref:System.Net.Sockets.LingerOption.LingerTime%2A>に格納されているプロパティ、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティは、既定の IP プロトコル タイムアウトよりも大きい設定、既定の IP プロトコル タイムアウトを引き続き適用を上書きします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LingerTime">
+      <MemberSignature Language="C#" Value="public int LingerTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 LingerTime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Sockets.LingerOption.LingerTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を呼び出した後に接続しておく時間、<see cref="M:System.Net.Sockets.Socket.Close" />メソッドに送信されるデータが残っている場合。</summary>
+        <value>呼び出した後に接続されたままにする秒単位の時間<see cref="M:System.Net.Sockets.Socket.Close" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 長時間閉じた方法を決定する場合、この値を使用して<xref:System.Net.Sockets.Socket>タイムアウトするまでに未送信のデータ転送を試みます。この値は秒単位で、目的のタイムアウト期間に設定することもできます。  
+  
+ 場合、<xref:System.Net.Sockets.LingerOption.Enabled%2A>プロパティは`true`に設定して<xref:System.Net.Sockets.LingerOption.LingerTime%2A>を 0 に、<xref:System.Net.Sockets.Socket>保留中の出力方向のネットワーク バッファーに送信するデータをすべて破棄します。 この値を変更する場合は、渡す必要があります、変更された<xref:System.Net.Sockets.LingerOption>インスタンスを<xref:System.Net.Sockets.Socket.SetSocketOption%2A>メソッドまたはセット、<xref:System.Net.Sockets.TcpClient.LingerState%2A>または<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティです。  
+  
+ 次の表に、使用できる値の動作、<xref:System.Net.Sockets.LingerOption.Enabled%2A>プロパティおよび<xref:System.Net.Sockets.LingerOption.LingerTime%2A>に格納されているプロパティ、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティです。  
+  
+|`enable`|`seconds`|動作|  
+|--------------|---------------|--------------|  
+|`false`(無効)、既定値|タイムアウトは適用、されません (既定値)。|既定値まで IP プロトコル タイムアウト保留中の接続指向のソケット (たとえば、TCP) のデータ送信を試みます期限が切れます。|  
+|`true`(有効)|0 以外のタイムアウト|指定したタイムアウトが経過するまでの試行が失敗した場合は、Winsock 接続がリセット保留中のデータ送信を試みます。|  
+|`true`(有効)|0 のタイムアウト|保留中のデータを破棄します。 接続志向ソケット (たとえば、TCP) の場合は、Winsock は接続をリセットします。|  
+  
+ IP スタックは、接続のラウンド トリップ時間に基づいて使用する既定の IP プロトコルのタイムアウト期間を計算します。 ほとんどの場合、スタックによって計算されたタイムアウトは、アプリケーションで定義された 1 より関連性が高いです。 ソケットの既定の動作は、このとき、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティが設定されていません。  
+  
+ ときに、<xref:System.Net.Sockets.LingerOption.LingerTime%2A>に格納されているプロパティ、<xref:System.Net.Sockets.Socket.LingerState%2A>プロパティは、既定の IP プロトコル タイムアウトよりも大きい設定、既定の IP プロトコル タイムアウトを引き続き適用を上書きします。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの値を表示します。  
+  
+ [!code-cpp[Socket_Socket_Options#2](~/samples/snippets/cpp/VS_Snippets_Remoting/Socket_Socket_Options/CPP/source.cpp#2)]
+ [!code-csharp[Socket_Socket_Options#2](~/samples/snippets/csharp/VS_Snippets_Remoting/Socket_Socket_Options/CS/source.cs#2)]
+ [!code-vb[Socket_Socket_Options#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Socket_Socket_Options/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

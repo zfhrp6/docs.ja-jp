@@ -1,0 +1,61 @@
+<Type Name="IDataKeysControl" FullName="System.Web.UI.IDataKeysControl">
+  <TypeSignature Language="C#" Value="public interface IDataKeysControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataKeysControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IDataKeysControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET を作成する方法クライアント Id のデータ バインド コントロールを指定するプロパティを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IDataKeysControl>インターフェイスは、クライアント ID を作成する方法を指定するためにデータ バインド コントロールを実装する 2 つのプロパティを定義します。 コントロールの複数のインスタンスを表示するデータ バインド コントロールには、コントロールの各インスタンスの ID を作成する必要があります。 その ID は、クライアント スクリプトからコントロールへのアクセスを有効にするのには一意である必要があります。  
+  
+ <xref:System.Web.UI.IDataKeysControl.ClientIDRowSuffix%2A>プロパティの値を持つが、生成の値に含まれるデータ フィールドの名前を指定できます、<xref:System.Web.UI.Control.ClientID%2A>プロパティです。 これらの値は、コントロールがページに表示される順序などの任意の値の代わりに、意味のあるデータ値に対応する方法でコントロールの各インスタンスを一意に識別に使用されます。 たとえば、製品データ テーブルからレコードを表示するときに割り当てることができます`ProductID`を<xref:System.Web.UI.IDataKeysControl.ClientIDRowSuffix%2A>プロパティです。 データ バインド コントロールの各インスタンスを識別してからの値によってその場合は、`ProductID`フィールドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClientIDRowSuffix">
+      <MemberSignature Language="C#" Value="public string[] ClientIDRowSuffix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] ClientIDRowSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDataKeysControl.ClientIDRowSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET によって生成されるときに、データ バインド コントロールの各インスタンスを一意に識別するための値を持つデータ フィールドの名前を取得、<see cref="P:System.Web.UI.Control.ClientID" />値を使用して、<see cref="F:System.Web.UI.ClientIDMode.Predictable" />アルゴリズムです。</summary>
+        <value>データ フィールド名のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientIDRowSuffixDataKeys">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataKeyArray ClientIDRowSuffixDataKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataKeyArray ClientIDRowSuffixDataKeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.IDataKeysControl.ClientIDRowSuffixDataKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataKeyArray</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ASP.NET によって生成されるときに、データ バインド コントロールの各インスタンスを一意に識別するために使用するデータ値のコレクションを取得、<see cref="P:System.Web.UI.Control.ClientID" />値。</summary>
+        <value>データ フィールドの値のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

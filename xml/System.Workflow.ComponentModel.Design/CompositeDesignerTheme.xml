@@ -1,0 +1,478 @@
+<Type Name="CompositeDesignerTheme" FullName="System.Workflow.ComponentModel.Design.CompositeDesignerTheme">
+  <TypeSignature Language="C#" Value="public class CompositeDesignerTheme : System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CompositeDesignerTheme extends System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.ActivityDesignerTheme</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> オブジェクトのテーマ設定を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスは、ワークフロー デザイン サーフェイス上の <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> オブジェクトの外観を制御します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompositeDesignerTheme (System.Workflow.ComponentModel.Design.WorkflowTheme theme);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.WorkflowTheme theme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="theme" Type="System.Workflow.ComponentModel.Design.WorkflowTheme" />
+      </Parameters>
+      <Docs>
+        <param name="theme">複合デザイナー テーマに関連付ける <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorEndCap">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.LineAnchor ConnectorEndCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.LineAnchor ConnectorEndCap" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.ConnectorEndCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(12)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.LineAnchor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクタの終了部分の表示形状を決定する値を取得または設定します。</summary>
+        <value>コネクタの終了部分の表示形状を定義する <see cref="T:System.Workflow.ComponentModel.Design.LineAnchor" /> 列挙値。 既定値は <see cref="F:System.Workflow.ComponentModel.Design.LineAnchor.ArrowAnchor" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size ConnectorSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ConnectorSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.ConnectorSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクタの <see cref="T:System.Drawing.Size" /> を取得します。</summary>
+        <value>コネクタの高さと幅に関する情報が格納される <see cref="T:System.Drawing.Size" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorStartCap">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.LineAnchor ConnectorStartCap { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.LineAnchor ConnectorStartCap" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.ConnectorStartCap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(11)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.LineAnchor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コネクタの開始部分の表示形状を決定する値を取得または設定します。</summary>
+        <value>コネクタの開始部分の表示形状を定義する <see cref="T:System.Workflow.ComponentModel.Design.LineAnchor" /> 列挙値。 既定値は <see cref="F:System.Workflow.ComponentModel.Design.LineAnchor.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandButtonSize">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Size ExpandButtonSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size ExpandButtonSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.ExpandButtonSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合アクティビティ デザイナーでの展開ボタンの <see cref="T:System.Drawing.Size" /> を取得します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> での展開ボタンの高さと幅に関する情報が格納された <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpandButtonBackgroundBrush">
+      <MemberSignature Language="C#" Value="public System.Drawing.Brush GetExpandButtonBackgroundBrush (System.Drawing.Rectangle rectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Brush GetExpandButtonBackgroundBrush(valuetype System.Drawing.Rectangle rectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.GetExpandButtonBackgroundBrush(System.Drawing.Rectangle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="rectangle"><see cref="T:System.Drawing.Rectangle" /> での展開ボタンの境界を定義する <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</param>
+        <summary>複合アクティビティ デザイナーでの展開ボタンの背景表示プロパティを定義するブラシを取得します。</summary>
+        <returns>ボタン領域を定義する <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" /> パラメーターを使用する <paramref name="rectangle" /> オブジェクト。ブラシはこの領域内の展開ボタンの左上隅から右下隅に向かって 2 色の線形グラデーションを適用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `null` が呼び出される前に展開ボタンの背景ブラシが `Nothing` (Visual Basic の場合は <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.GetExpandButtonBackgroundBrush%2A>) に設定されていない場合、このメソッドはそれまでのブラシを破棄して新しいブラシを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.Initialize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.#ctor(System.Workflow.ComponentModel.Design.WorkflowTheme)" /> コンストラクターが提供しない追加の初期化タスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.UseOperatingSystemSettings%2A> プロパティを `true` に設定した場合、<xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.Initialize%2A> メソッドは、<xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> オブジェクトの設定をオペレーティング システムから取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAmbientPropertyChanged">
+      <MemberSignature Language="C#" Value="public override void OnAmbientPropertyChanged (System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnAmbientPropertyChanged(valuetype System.Workflow.ComponentModel.Design.AmbientProperty ambientProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.OnAmbientPropertyChanged(System.Workflow.ComponentModel.Design.AmbientProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ambientProperty" Type="System.Workflow.ComponentModel.Design.AmbientProperty" />
+      </Parameters>
+      <Docs>
+        <param name="ambientProperty">複合デザイナー テーマが現在使用する必要がある <see cref="T:System.Workflow.ComponentModel.Design.AmbientProperty" /> 列挙値。</param>
+        <summary>デザイナーのアンビエント プロパティ設定が変更されたことを <see cref="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" /> オブジェクトに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すと、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorStart%2A> および <xref:System.Workflow.ComponentModel.Design.ActivityDesignerTheme.BackColorEnd%2A> プロパティが <xref:System.Drawing.Color.Empty> に設定されます。  
+  
+ <xref:System.Workflow.ComponentModel.Design.AmbientProperty> 列挙体は、デザイナー テーマがどこからアンビエント プロパティ設定を取得するかどうかを決定します。 <xref:System.Workflow.ComponentModel.Design.AmbientProperty.DesignerSize> の値を設定すると、デザイナー テーマ クラスはそのアンビエント設定を <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.AmbientTheme%2A> プロパティから取得します。 <xref:System.Workflow.ComponentModel.Design.AmbientProperty.DesignerSize> の値を設定すると、デザイナー テーマ クラスは、そのアンビエント設定をデザイナーがインストールされているオペレーティング システムから取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDropShadow">
+      <MemberSignature Language="C#" Value="public virtual bool ShowDropShadow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowDropShadow" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.ShowDropShadow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(10)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合デザイナー テーマが複合アクティビティ デザイナーの周りにドロップ シャドウを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> が <see cref="T:System.Workflow.ComponentModel.Design.CompositeDesignerTheme" /> の周りにドロップ シャドウを表示する場合は <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WatermarkAlignment">
+      <MemberSignature Language="C#" Value="public virtual System.Workflow.ComponentModel.Design.DesignerContentAlignment WatermarkAlignment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.DesignerContentAlignment WatermarkAlignment" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.WatermarkAlignment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(9)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.DesignerContentAlignment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> 内のウォーターマーク イメージの配置を取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.DesignerContentAlignment" /> 内のウォーターマーク イメージが配置される場所を示す <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> 列挙値。 既定値は <see cref="F:System.Workflow.ComponentModel.Design.DesignerContentAlignment.BottomRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#30](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#30)]
+ [!code-vb[WF_Samples#30](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#30)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WatermarkImage">
+      <MemberSignature Language="C#" Value="public System.Drawing.Image WatermarkImage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Image WatermarkImage" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.WatermarkImage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Image</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合アクティビティ デザイナーで使用するウォーターマーク イメージを取得します。</summary>
+        <value><see cref="T:System.Drawing.Image" /> のウォーターマークとして使用する <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.WatermarkImagePath%2A> プロパティの値が `null` (Visual Basic の場合は `Nothing`) の場合に、このプロパティはウォーターマーク用イメージを提供します。 <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.WatermarkImagePath%2A> プロパティが有効値に設定されている場合、このプロパティは `null` (`Nothing`) に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WatermarkImagePath">
+      <MemberSignature Language="C#" Value="public virtual string WatermarkImagePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string WatermarkImagePath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.CompositeDesignerTheme.WatermarkImagePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Workflow.ComponentModel.Design.ImageBrowserEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.DispId(8)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複合アクティビティ デザイナーで使用するウォーターマーク イメージへの相対パスを取得または設定します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" /> で使用するウォーターマーク イメージへの相対パスを表す文字列値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> クラスを派生させて新しいテーマに適したプロパティを設定することによってカスタム <xref:System.Workflow.ComponentModel.Design.CompositeDesignerTheme> を作成する方法の例を、次に示します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> でテーマを使用するには、<xref:System.Workflow.ComponentModel.Design.ActivityDesignerThemeAttribute> クラスに <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> を適用します。  
+  
+ [!code-csharp[WF_Samples#24](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#24)]
+ [!code-vb[WF_Samples#24](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

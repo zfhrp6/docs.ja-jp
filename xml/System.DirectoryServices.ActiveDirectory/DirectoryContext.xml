@@ -1,0 +1,209 @@
+<Type Name="DirectoryContext" FullName="System.DirectoryServices.ActiveDirectory.DirectoryContext">
+  <TypeSignature Language="C#" Value="public class DirectoryContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DirectoryContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />クラスは、特定のディレクトリとディレクトリへのアクセスに使用される資格情報を識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディレクトリ コンテキストは、メソッドと、ドメインまたはフォレストなど System.DirectoryServices.ActiveDirectory ディレクトリ オブジェクトのプロパティにアクセスする前に作成する必要があります。  
+  
+ ディレクトリ コンテキストを作成するときにプロセスの現在の資格情報または代替の資格情報をそのコンテキストに適用して適切なコンス トラクターを使用します。  これらの資格情報は、プログラムがディレクトリ オブジェクトにアクセスするときに有効になっているアクセス許可を確認します。  Active Directory ドメイン サービス オブジェクトは、管理者以外のユーザーによって取得や変更から保護されている可能性があります、ため、対象オブジェクトにアクセスする権限を持つ別の資格情報の使用は適切なプログラムの機能に必要があります。  
+  
+ 次の表には、許可されている対象の種類の一覧と、ターゲット文字列の形式の説明が含まれています。  
+  
+|変換後の型|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType> のメンバー|ターゲット名フォーマット|  
+|-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|  
+|ドメイン コント ローラー|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.DirectoryServer>|ドメイン コント ローラーの DNS 名。|  
+|AD LDS インスタンス|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.DirectoryServer>|AD LDS サーバーと LDAP の DNS 名はポート番号、ad_lds_instance.fabrikam.com:389 などです。|  
+|ドメイン|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Domain>|たとえば、sales.corp.fabrikam.com のドメインの DNS 名。|  
+|フォレスト|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Forest>|たとえば、corp.fabrikam.com、フォレストの DNS 名。|  
+|アプリケーション パーティション|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.ApplicationPartition>|アプリケーション パーティションの DNS 名。|  
+|AD LDS 構成セット|<xref:System.DirectoryServices.ActiveDirectory.DirectoryContextType.ConfigurationSet>|構成セットの AD LDS インスタンスで登録されているサービス接続ポイントに関連付けられているキーワードのいずれか。|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />を作成するコンテキストの種類を指定します。  このコンス トラクターのコンテキスト型がある必要があります<see cref="F:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Domain" />または<see cref="F:System.DirectoryServices.ActiveDirectory.DirectoryContextType.Forest" />です。  その他の種類には、ディレクトリまたはターゲットの名前を指定するパラメーターが含まれるコンス トラクターが必要とするために、このコンス トラクターを使用して、その他の種類のディレクトリ コンテキストを作成できません。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />を現在のユーザー コンテキストの資格情報を含む指定した型のクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contextType" /> が無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このクラスは、現在のプラットフォームでは機能しません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />を作成するコンテキストの種類を指定します。</param>
+        <param name="name">ディレクトリ コンテキストのターゲットです。 この文字列がかかるの「解説」セクションで定義されている形式のいずれか、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />トピックです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />指定した名前と現在のユーザー コンテキストの資格情報を含む指定した型のクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="contextType" /> が無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このクラスは、現在のプラットフォームでは機能しません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />を作成するコンテキストの種類を指定します。 このコンス トラクターで、このパラメーターを指定する必要があります<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />または<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />です。</param>
+        <param name="username">アクセスに使用するユーザー名。</param>
+        <param name="password">アクセスに使用するパスワードです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />を指定されたユーザー名とパスワードを含む指定した型のクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="contextType" /> が無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このクラスは、現在のプラットフォームでは機能しません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryContext (System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name, string username, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType contextType, string name, string username, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.ActiveDirectory.DirectoryContext.#ctor(System.DirectoryServices.ActiveDirectory.DirectoryContextType,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.ActiveDirectory.DirectoryContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />を作成するコンテキストの種類を指定します。</param>
+        <param name="name">ディレクトリ コンテキストのターゲットです。 この文字列がかかるの「解説」セクションで定義されている形式のいずれか、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />トピックです。</param>
+        <param name="username">アクセスに使用するユーザー名。</param>
+        <param name="password">アクセスに使用するパスワードです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContext" />を指定されたターゲット、ユーザー名とパスワードを含む指定した型のクラスです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が無効です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">
+          <paramref name="contextType" /> が無効です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">このクラスは、現在のプラットフォームでは機能しません。</exception>
+        <permission cref="T:System.DirectoryServices.DirectoryServicesPermission">要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.ActiveDirectory.DirectoryContextType ContextType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.ActiveDirectory.DirectoryContextType ContextType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.ContextType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.ActiveDirectory.DirectoryContextType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト オブジェクトの種類を取得します。</summary>
+        <value>1 つ、<see cref="T:System.DirectoryServices.ActiveDirectory.DirectoryContextType" />をコンテキストの種類を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキストの名前を取得します。</summary>
+        <value>コンテキストの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.ActiveDirectory.DirectoryContext.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキストのユーザー名を取得します。</summary>
+        <value>このコンテキストでアクセスに使用するユーザー名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

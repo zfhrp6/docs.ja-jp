@@ -1,0 +1,295 @@
+<Type Name="PartConventionBuilder&lt;T&gt;" FullName="System.Composition.Convention.PartConventionBuilder&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public class PartConventionBuilder&lt;T&gt; : System.Composition.Convention.PartConventionBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PartConventionBuilder`1&lt;T&gt; extends System.Composition.Convention.PartConventionBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Composition.Convention.PartConventionBuilder`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Composition.Convention</AssemblyName>
+    <AssemblyVersion>1.0.31.0</AssemblyVersion>
+    <AssemblyVersion>1.0.32.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Composition.Convention.PartConventionBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">パートの型。</typeparam>
+    <summary>厳密に型指定の戻り値を持つ、Managed Extensibility Framework (MEF) の一部として、型を構成します。</summary>
+    <remarks>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExportProperty">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ExportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ExportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertySelector">エクスポート対象のプロパティを選択する関数。</param>
+        <summary>指定したプロパティをエクスポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ExportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector, Action&lt;System.Composition.Convention.ExportConventionBuilder&gt; exportConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ExportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector, class System.Action`1&lt;class System.Composition.Convention.ExportConventionBuilder&gt; exportConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ExportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.Composition.Convention.ExportConventionBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="exportConfiguration" Type="System.Action&lt;System.Composition.Convention.ExportConventionBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertySelector">エクスポート対象のプロパティを選択する関数。</param>
+        <param name="exportConfiguration">エクスポートされたプロパティを構成するアクション。</param>
+        <summary>指定した構成を使用して、指定したプロパティをエクスポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="propertySelector" />式でなければなりません、<see cref="T:System.Linq.Expressions.MemberExpression" />プロパティにアクセスするためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ExportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ExportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertySelector">エクスポート対象のプロパティを選択する関数。</param>
+        <summary>指定したプロパティを、指定したコントラクト型という形でエクスポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="propertySelector" />式でなければなりません、<see cref="T:System.Linq.Expressions.MemberExpression" />プロパティにアクセスするためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ExportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector, Action&lt;System.Composition.Convention.ExportConventionBuilder&gt; exportConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ExportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector, class System.Action`1&lt;class System.Composition.Convention.ExportConventionBuilder&gt; exportConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ExportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.Composition.Convention.ExportConventionBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="exportConfiguration" Type="System.Action&lt;System.Composition.Convention.ExportConventionBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertySelector">エクスポート対象のプロパティを選択する関数。</param>
+        <param name="exportConfiguration">エクスポートされたプロパティを構成するアクション。</param>
+        <summary>指定したプロパティを、指定した構成を使用して、指定したコントラクト型という形でエクスポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ImportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ImportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertySelector">インポート対象のプロパティを選択する関数。</param>
+        <summary>指定したプロパティをインポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ImportProperty (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector, Action&lt;System.Composition.Convention.ImportConventionBuilder&gt; importConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ImportProperty(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector, class System.Action`1&lt;class System.Composition.Convention.ImportConventionBuilder&gt; importConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ImportProperty(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.Composition.Convention.ImportConventionBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="importConfiguration" Type="System.Action&lt;System.Composition.Convention.ImportConventionBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="propertySelector">インポート対象のプロパティを選択する関数。</param>
+        <param name="importConfiguration">インポートされたプロパティを構成するアクション。</param>
+        <summary>指定した構成を使用して、指定したプロパティをインポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="propertySelector" />式でなければなりません、<see cref="T:System.Linq.Expressions.MemberExpression" />プロパティにアクセスするためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ImportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ImportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertySelector">インポート対象のプロパティを選択する関数。</param>
+        <summary>指定したコントラクト型で、指定のプロパティをインポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportProperty&lt;TContract&gt;">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; ImportProperty&lt;TContract&gt; (System.Linq.Expressions.Expression&lt;Func&lt;T,object&gt;&gt; propertySelector, Action&lt;System.Composition.Convention.ImportConventionBuilder&gt; importConfiguration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; ImportProperty&lt;TContract&gt;(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;!T, object&gt;&gt; propertySelector, class System.Action`1&lt;class System.Composition.Convention.ImportConventionBuilder&gt; importConfiguration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.ImportProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Object}},System.Action{System.Composition.Convention.ImportConventionBuilder})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TContract" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="propertySelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;T,System.Object&gt;&gt;" />
+        <Parameter Name="importConfiguration" Type="System.Action&lt;System.Composition.Convention.ImportConventionBuilder&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TContract">コントラクトの型。</typeparam>
+        <param name="propertySelector">インポート対象のプロパティを選択する関数。</param>
+        <param name="importConfiguration">インポートされたプロパティを構成するアクション。</param>
+        <summary>指定したコントラクト型と構成で、指定のプロパティをインポートします。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="propertySelector" />式でなければなりません、<see cref="T:System.Linq.Expressions.MemberExpression" />プロパティにアクセスするためです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NotifyImportsSatisfied">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; NotifyImportsSatisfied (System.Linq.Expressions.Expression&lt;Action&lt;T&gt;&gt; methodSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; NotifyImportsSatisfied(class System.Linq.Expressions.Expression`1&lt;class System.Action`1&lt;!T&gt;&gt; methodSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.NotifyImportsSatisfied(System.Linq.Expressions.Expression{System.Action{`0}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodSelector" Type="System.Linq.Expressions.Expression&lt;System.Action&lt;T&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="methodSelector">呼び出すメソッドを選択するアクション。</param>
+        <summary>合成が完了した時点で呼び出すメソッドを選択します。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。</returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="methodSelector" />式でなければなりません、<see langword="void" />引数なしでのメソッドです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectConstructor">
+      <MemberSignature Language="C#" Value="public System.Composition.Convention.PartConventionBuilder&lt;T&gt; SelectConstructor (System.Linq.Expressions.Expression&lt;Func&lt;System.Composition.Convention.ParameterImportConventionBuilder,T&gt;&gt; constructorSelector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Composition.Convention.PartConventionBuilder`1&lt;!T&gt; SelectConstructor(class System.Linq.Expressions.Expression`1&lt;class System.Func`2&lt;class System.Composition.Convention.ParameterImportConventionBuilder, !T&gt;&gt; constructorSelector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Composition.Convention.PartConventionBuilder`1.SelectConstructor(System.Linq.Expressions.Expression{System.Func{System.Composition.Convention.ParameterImportConventionBuilder,`0}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Composition.Convention</AssemblyName>
+        <AssemblyVersion>1.0.31.0</AssemblyVersion>
+        <AssemblyVersion>1.0.32.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Composition.Convention.PartConventionBuilder&lt;T&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructorSelector" Type="System.Linq.Expressions.Expression&lt;System.Func&lt;System.Composition.Convention.ParameterImportConventionBuilder,T&gt;&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="constructorSelector">1 つのコンストラクターを選択する関数。</param>
+        <summary>合成で使用されるコンストラクターを選択します。</summary>
+        <returns>パートを詳細に構成するために使用できるオブジェクト。 </returns>
+        <remarks>
+        </remarks>
+        <exception cref="T:System.Argument"><paramref name="constructorSelector" />式を使用する必要があります、<see langword="new" />演算子。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

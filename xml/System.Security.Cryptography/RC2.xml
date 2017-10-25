@@ -1,0 +1,285 @@
+<Type Name="RC2" FullName="System.Security.Cryptography.RC2">
+  <TypeSignature Language="C#" Value="public abstract class RC2 : System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RC2 extends System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RC2" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.SymmetricAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての実装から基本クラスを表す、<see cref="T:System.Security.Cryptography.RC2" />アルゴリズムが派生する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  新しい対称暗号化アルゴリズムでは、Advanced Encryption Standard (AES) では、使用可能なです。 使用を検討して、<xref:System.Security.Cryptography.Aes>アルゴリズムとその派生クラスの代わりに、<xref:System.Security.Cryptography.RC2>クラスです。 使用して<xref:System.Security.Cryptography.RC2>レガシ アプリケーションとデータとの互換性のみです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RC2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RC2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.Cryptography.RC2" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。  
+  
+ このアルゴリズムは、40 ビットから 1024 ビットのキー長を 8 のビット単位でサポートされていますが、<xref:System.Security.Cryptography.RC2CryptoServiceProvider>実装では、8 ビット単位で 40 ビットから 128 ビットのキー長のみがサポートしています。  
+  
+ このメソッドは、保護対象のフィールドを初期化します。<xref:System.Security.Cryptography.SymmetricAlgorithm>を次の表に一覧表示の既定値です。  
+  
+|フィールド|既定値|  
+|-----------|-------------------|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.KeySizeValue>|128|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue>|64|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSizeValue>|64|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RC2 Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.RC2 Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RC2.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RC2</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RC2" /> アルゴリズムを実行するための暗号オブジェクトのインスタンスを作成します。</summary>
+        <returns>暗号オブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、暗号化し、データを復号化に使用できる RC2 クラスのインスタンスを作成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、作成し、RC2 オブジェクトを使用して暗号化して、ファイル内のデータの暗号化を解除する方法を示します。  
+  
+ [!code-cpp[Cryptography.RC2.Create.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.RC2.Create.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.RC2.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.RC2.Create.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.RC2.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.RC2.Create.File/VB/fileexample.vb#1)]  
+  
+ 次の例では、作成し、RC2 オブジェクトを使用して暗号化して、メモリ内のデータの暗号化を解除する方法を示します。  
+  
+ [!code-cpp[Cryptography.RC2.Create.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.RC2.Create.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.RC2.Create.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.RC2.Create.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.RC2.Create.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.RC2.Create.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">連邦情報処理標準 (FIPS) モードが有効にされた状態でアルゴリズムが使用されましたが、このアルゴリズムは FIPS 準拠ではありません。 </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RC2 Create (string AlgName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.RC2 Create(string AlgName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RC2.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RC2</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="AlgName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="AlgName">特定の実装の名前<see cref="T:System.Security.Cryptography.RC2" />を使用します。</param>
+        <summary>指定した実装を実行する暗号オブジェクトのインスタンスを作成、<see cref="T:System.Security.Cryptography.RC2" />アルゴリズムです。</summary>
+        <returns>暗号オブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、暗号化し、データを復号化に使用できる RC2 クラスのインスタンスを作成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、作成し、RC2 オブジェクトを使用して暗号化して、ファイル内のデータの暗号化を解除する方法を示します。  
+  
+ [!code-cpp[Cryptography.RC2.Createstring.File#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.RC2.Createstring.File/CPP/fileexample.cpp#1)]
+ [!code-csharp[Cryptography.RC2.Createstring.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.RC2.Createstring.File/CS/fileexample.cs#1)]
+ [!code-vb[Cryptography.RC2.Createstring.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.RC2.Createstring.File/VB/fileexample.vb#1)]  
+  
+ 次の例では、作成し、RC2 オブジェクトを使用して暗号化して、メモリ内のデータの暗号化を解除する方法を示します。  
+  
+ [!code-cpp[Cryptography.RC2.Createstring.Memory#1](~/samples/snippets/cpp/VS_Snippets_CLR/Cryptography.RC2.Createstring.Memory/CPP/memoryexample.cpp#1)]
+ [!code-csharp[Cryptography.RC2.Createstring.Memory#1](~/samples/snippets/csharp/VS_Snippets_CLR/Cryptography.RC2.Createstring.Memory/CS/memoryexample.cs#1)]
+ [!code-vb[Cryptography.RC2.Createstring.Memory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.RC2.Createstring.Memory/VB/memoryexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">によって説明されているアルゴリズム、<paramref name="algName" />パラメーターが有効になっている、連邦情報処理規格 (FIPS) モードで使用されましたが、FIPS 対応ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EffectiveKeySize">
+      <MemberSignature Language="C#" Value="public virtual int EffectiveKeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 EffectiveKeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RC2.EffectiveKeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RC2" /> アルゴリズムで使用する有効な秘密鍵のサイズ (ビット単位) を取得または設定します。</summary>
+        <value><see cref="T:System.Security.Cryptography.RC2" /> アルゴリズムで使用する有効な鍵のサイズ。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">有効な鍵のサイズが正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EffectiveKeySizeValue">
+      <MemberSignature Language="C#" Value="protected int EffectiveKeySizeValue;" />
+      <MemberSignature Language="ILAsm" Value=".field family int32 EffectiveKeySizeValue" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Cryptography.RC2.EffectiveKeySizeValue" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用される秘密キーの有効なサイズを表す、<see cref="T:System.Security.Cryptography.RC2" />ビット単位のアルゴリズムです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このフィールドには、<xref:System.Security.Cryptography.RC2.EffectiveKeySize%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public override int KeySize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.RC2.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定が使用する秘密キーのサイズ、<see cref="T:System.Security.Cryptography.RC2" />ビット単位のアルゴリズムです。</summary>
+        <value>使用される秘密キーのサイズ、<see cref="T:System.Security.Cryptography.RC2" />アルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムでは、8 のビット単位で 40 ビットから 1024 ビットのキー長がサポートされていますが、RC2CryptoServiceProvider 実装では、40 ビットから 128 ビットのキー長を 8 ビット単位でのみがサポートします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">RC2 キー サイズの値は、有効なキー サイズの値より小さくなります。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

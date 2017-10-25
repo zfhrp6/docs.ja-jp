@@ -1,0 +1,182 @@
+<Type Name="NodeLabelEditEventArgs" FullName="System.Windows.Forms.NodeLabelEditEventArgs">
+  <TypeSignature Language="C#" Value="public class NodeLabelEditEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NodeLabelEditEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.NodeLabelEditEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.TreeView.BeforeLabelEdit" /> イベントおよび <see cref="E:System.Windows.Forms.TreeView.AfterLabelEdit" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.TreeView.AfterLabelEdit>イベント、ユーザーは、ツリー ノードのテキストの編集が終了したときに発生します。 <xref:System.Windows.Forms.TreeView.BeforeLabelEdit>イベント、ユーザーがツリー ノードのテキストの編集を開始するときに発生します。 A<xref:System.Windows.Forms.NodeLabelEditEventArgs>オブジェクトのツリー ノードを編集するラベルが含まれているツリー ノードに関連付けられる新しいテキストを指定し、編集操作が取り消されたかどうか。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例では使用してルート ツリー ノードを編集するユーザー、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NodeLabelEditEventArgs (System.Windows.Forms.TreeNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NodeLabelEditEventArgs.#ctor(System.Windows.Forms.TreeNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">編集するテキストを含むツリー ノードです。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.TreeNode" /> の <see cref="T:System.Windows.Forms.NodeLabelEditEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NodeLabelEditEventArgs.Node%2A>プロパティが割り当てられている、`node`パラメーターの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NodeLabelEditEventArgs (System.Windows.Forms.TreeNode node, string label);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.TreeNode node, string label) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.NodeLabelEditEventArgs.#ctor(System.Windows.Forms.TreeNode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Windows.Forms.TreeNode" />
+        <Parameter Name="label" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="node">編集するテキストを含むツリー ノードです。</param>
+        <param name="label">ツリー ノードに関連付けられる新しいテキスト。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Forms.NodeLabelEditEventArgs" /> 、指定されたクラス<see cref="T:System.Windows.Forms.TreeNode" />と、指定したテキスト ツリー ノードのラベルを更新するときに使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.NodeLabelEditEventArgs.Node%2A>プロパティが割り当てられている、`node`パラメーター値、および<xref:System.Windows.Forms.NodeLabelEditEventArgs.Label%2A>プロパティが割り当てられている、`label`パラメーターの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelEdit">
+      <MemberSignature Language="C#" Value="public bool CancelEdit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CancelEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NodeLabelEditEventArgs.CancelEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集がキャンセルされたかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />編集がキャンセルされた場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では使用してルート ツリー ノードを編集するユーザー、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Label">
+      <MemberSignature Language="C#" Value="public string Label { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Label" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NodeLabelEditEventArgs.Label" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ツリー ノードに関連付ける新しいテキストを取得します。</summary>
+        <value>文字列値を表す新しい<see cref="T:System.Windows.Forms.TreeNode" />ラベルまたは<see langword="null" />場合は、ユーザーが、編集をキャンセルします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値は`null`ユーザーが、編集をキャンセルするには ESC を押すか、ラベルのテキストを変更することがなく ENTER キーを押した場合。 ユーザーは、ラベルのテキストを編集する場合、このプロパティの値は、新しいラベル テキストです。 これは、編集したラベルのテキストの最終的な値が元の値と同じ場合でも当てはまります。  
+  
+   
+  
+## Examples  
+ 次の例では使用してルート ツリー ノードを編集するユーザー、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.NodeLabelEditEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集するテキストを保持しているツリー ノードを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.TreeNode" />を編集するテキストを含むツリー ノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では使用してルート ツリー ノードを編集するユーザー、<xref:System.Windows.Forms.ContextMenu>です。 ユーザーには、マウスを右クリックしたときに、<xref:System.Windows.Forms.TreeNode>位置の決定し、という名前の変数に格納されているその`mySelectedNode`です。 ツリーのルート ノードを選択した場合そこに格納されます編集可能な状態をノードのラベルを編集するユーザーを許可します。 ユーザーは、ツリー ノードのラベルの編集を停止する、新しいラベル テキストが評価され、保存します。 この例では、いくつかの文字と見なされましていないラベルのテキストでは有効。 ラベル文字列が、無効な文字のいずれかの文字列か、または空の場合は、ユーザーに通知するエラーのされ、その前のテキストにラベルが返されます。  
+  
+ [!code-cpp[classic treenode.beginedit example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CPP/source.cpp#1)]
+ [!code-csharp[classic treenode.beginedit example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/CS/source.cs#1)]
+ [!code-vb[classic treenode.beginedit example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic TreeNode.BeginEdit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

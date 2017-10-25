@@ -1,0 +1,152 @@
+<Type Name="ControlPropertyNameConverter" FullName="System.Web.UI.WebControls.ControlPropertyNameConverter">
+  <TypeSignature Language="C#" Value="public class ControlPropertyNameConverter : System.ComponentModel.StringConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlPropertyNameConverter extends System.ComponentModel.StringConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.ControlPropertyNameConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.StringConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のコントロールのプロパティ名の一覧を取得する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlPropertyNameConverter>クラスから派生します<xref:System.ComponentModel.StringConverter>クラスし、デザイン時環境でのプロパティ グリッド コントロールに表示するプロパティ名の一覧を示します。  
+  
+> [!CAUTION]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor?displayProperty=nameWithType>クラスです。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlPropertyNameConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlPropertyNameConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.ControlPropertyNameConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、直接呼び出すものではありません。 実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor?displayProperty=nameWithType>クラスです。 詳細については、例を参照してください、<xref:System.ComponentModel.TypeConverter>基本クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>実装するデザイナー内のコントロールのプロパティ名のコレクションを返します<see cref="T:System.ComponentModel.Design.IDesignerHost" />フォーマット コンテキストが提供されている場合。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" />現在のコントロールのプロパティ名を表す文字列のセットを格納しています。 現在のコントロールがある場合<see langword="null" />、空のコレクションが返されます。 場合、<paramref name="context" />パラメーターは<see langword="null" />、<see langword="null" />が返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValues%2A>メソッドを返します、<xref:System.ComponentModel.TypeConverter.StandardValuesCollection>を現在のコントロールのプロパティの名前を表す文字列のセットを含むコレクション。  
+  
+ 使用して、`context`パラメーターをこのコンバーターが呼び出されて、デザイン時環境に関する追加情報を抽出します。 このパラメーターを指定できます`null`、コンテキスト オブジェクトのプロパティを返すと`null`です。 場合、`context`パラメーターは`null`、このメソッドが戻る`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>標準値のコレクションがによって返されるかどうかを示す値を返します、<see cref="Overload:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValues" />メソッドは、指定したコンテキストを使用して、指定できる値の排他的なリスト。</summary>
+        <returns>
+          <see langword="false" />すべて場合、リストが排他的でないことを示します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValuesExclusive%2A>メソッドは常に返します`false`プロパティの値の一覧がによって返されることを示すために、<xref:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValues%2A>メソッドは使用可能な値の排他的なリストではありません。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、コンテキスト オブジェクトのプロパティを返すと`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public override bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>このオブジェクトが指定したコンテキストを使用して、一覧から選択できる値の標準セットをサポートしているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="context" />パラメーターではありません<see langword="null" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.ControlPropertyNameConverter.GetStandardValuesSupported%2A>メソッドをこのオブジェクトが標準値セットをサポートしているかどうかを示す値を返します。  
+  
+ `context`パラメーターは、このコンバーターが呼び出されて、デザイン時環境に関する追加情報を抽出します。 このパラメーターを指定できます`null`、コンテキスト オブジェクトのプロパティを返すと`null`です。 場合、`context`パラメーターは`null`、このメソッドが戻る`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

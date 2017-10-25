@@ -1,0 +1,79 @@
+<Type Name="AudienceUriMode" FullName="System.IdentityModel.Selectors.AudienceUriMode">
+  <TypeSignature Language="C#" Value="public enum AudienceUriMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AudienceUriMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.AudienceUriMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.IdentityModel.Tokens.SamlSecurityToken" /> セキュリティ トークンの <see cref="T:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition" /> を検証するかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェデレーション アプリケーションの <xref:System.IdentityModel.Selectors.AudienceUriMode> プロパティを指定します。これは、<xref:System.IdentityModel.Tokens.SamlSecurityToken> セキュリティ トークンを発行するセキュリティ トークン サービス (STS) を利用します。 STS がセキュリティ トークンを発行する場合、このセキュリティ トークンに <xref:System.IdentityModel.Tokens.SamlAudienceRestrictionCondition> を追加して、セキュリティ トークンの提供先となる Web サービスの URI を指定できます。 これにより、受け取り側 <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator> Web サービスは、次のようにしてこのチェックが行われるように指定することで、発行されたセキュリティ トークンがこの Web サービスを対象としていることを確認できます。  
+  
+-   設定、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AudienceUriMode%2A>が Always または BearerKeyOnly プロパティです。  
+  
+-   <xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.AllowedAudienceUris%2A> コレクションに有効な URI のセットを追加して、これらの URI を指定します。  
+  
+ オプションで、<xref:System.IdentityModel.Selectors.SamlSecurityTokenAuthenticator.ValidateAudienceRestriction%2A> メソッドをオーバーライドし、許可された URI で使用する検証アルゴリズムを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Always">
+      <MemberSignature Language="C#" Value="Always" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Selectors.AudienceUriMode Always = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Selectors.AudienceUriMode.Always" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.AudienceUriMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>常に。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BearerKeyOnly">
+      <MemberSignature Language="C#" Value="BearerKeyOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Selectors.AudienceUriMode BearerKeyOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Selectors.AudienceUriMode.BearerKeyOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.AudienceUriMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンのキー タイプが BearerKey で、セキュリティ トークンに所有の証明キーがない場合のみ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Never">
+      <MemberSignature Language="C#" Value="Never" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.IdentityModel.Selectors.AudienceUriMode Never = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.IdentityModel.Selectors.AudienceUriMode.Never" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.AudienceUriMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不可</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

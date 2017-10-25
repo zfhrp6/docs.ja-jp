@@ -1,0 +1,1349 @@
+<Type Name="HwndSource" FullName="System.Windows.Interop.HwndSource">
+  <TypeSignature Language="C#" Value="public class HwndSource : System.Windows.PresentationSource, IDisposable, System.Windows.Interop.IKeyboardInputSink, System.Windows.Interop.IWin32Window" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi HwndSource extends System.Windows.PresentationSource implements class System.IDisposable, class System.Windows.Interop.IKeyboardInputSink, class System.Windows.Interop.IWin32Window" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.HwndSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.PresentationSource</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Interop.IKeyboardInputSink</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Interop.IWin32Window</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>Win32 ウィンドウ内の Windows Presentation Foundation (WPF) コンテンツを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネットのセキュリティ ゾーンでは、このクラスの多くのメンバーを使用できません。  
+  
+ <xref:System.Windows.Interop.HwndSource>を実装する、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]含めることができるウィンドウ[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コンテンツ。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ウィンドウにコンテンツが配置されている、評価しレンダリングされ、対話形式を入力します。 <xref:System.Windows.Interop.HwndSource>と相互運用する特化[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]、このクラスでは、いくつかの低レベルでは公開[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]機能します。 このクラスを使用すると、次の操作を行います。  
+  
+-   ウィンドウ クラス スタイルのウィンドウ スタイルを指定して、拡張ウィンドウ スタイル。  
+  
+-   ウィンドウ プロシージャをフックします。  
+  
+-   ウィンドウ ハンドル (HWND) へのアクセスを提供します。  
+  
+-   ウィンドウを破棄します。  
+  
+ <xref:System.Windows.Interop.HwndSource>クラスの一般的な相互運用性を目的し、マネージ HWND ラッパーとして設計されていません。 一般に、ウィンドウまたはプロパティの状態を調べることを操作するための管理対象のメソッドは提供しません。 代わりに、<xref:System.Windows.Interop.HwndSource>クラスへのアクセスを提供する、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウ ハンドル (HWND)) を通じて、<xref:System.Windows.Interop.HwndSource.Handle%2A>プロパティを渡すことができますをする方法は PInvoke を使用して[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)][!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]ウィンドウを操作するためにします。  
+  
+ **構築**  
+  
+ 多くの側面、<xref:System.Windows.Interop.HwndSource>構築時にのみ指定できます。 作成する、 <xref:System.Windows.Interop.HwndSource>、最初に作成、<xref:System.Windows.Interop.HwndSourceParameters>を構造化し、目的のパラメーターを設定します。 これらのパラメーターを以下に示します。  
+  
+-   クラス、ウィンドウ、および拡張ウィンドウ スタイル。 PInvoke を使用して、ウィンドウが作成された後にスタイルを変更する必要があります。 ウィンドウを作成した後、すべてのスタイルを変更できます。 参照してください、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウ スタイルを変更する前にドキュメント。  
+  
+-   ウィンドウの最初の位置。  
+  
+-   サイズが指定されているかの決定されるサイズから決定する必要があるかどうかが含まれています ウィンドウの初期サイズ、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コンテンツ。  
+  
+-   親ウィンドウです。  
+  
+-   <xref:System.Windows.Interop.HwndSourceHook>ウィンドウ プロシージャのチェーンに含める。 構築時にフックを指定する場合は、ウィンドウのすべてのメッセージを受信します。 使用することができます<xref:System.Windows.Interop.HwndSource.AddHook%2A>ウィンドウが作成された後にフックを追加します。  
+  
+-   透過性の設定。 Blend のピクセルごとに透明度に従ってデスクトップ上の他のウィンドウとするトップレベル ウィンドウを構成できます、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]コンテンツ。 これを有効にするには設定、<xref:System.Windows.Interop.HwndSourceParameters.UsesPerPixelOpacity%2A>プロパティに、<xref:System.Windows.Interop.HwndSourceParameters>に`true`です。 構築時に、を通してのみ、このプロパティを指定することができますのみ、<xref:System.Windows.Interop.HwndSource.%23ctor%28System.Windows.Interop.HwndSourceParameters%29>コンス トラクターのシグネチャとそのいくつかの制限が生じます。  
+  
+ 設定した後、<xref:System.Windows.Interop.HwndSourceParameters>構造体に渡すこと、<xref:System.Windows.Interop.HwndSource.%23ctor%28System.Windows.Interop.HwndSourceParameters%29>のコンス トラクター、<xref:System.Windows.Interop.HwndSource>です。  
+  
+ **オブジェクトの有効期間**  
+  
+ <xref:System.Windows.Interop.HwndSource> 、通常は、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]オブジェクト、およびその有効期間は、ガベージ コレクターによって管理されます。 <xref:System.Windows.Interop.HwndSource> 、アンマネージ リソースを表す<xref:System.Windows.Interop.HwndSource>実装<xref:System.IDisposable>です。 同期的に呼び出して<xref:System.Windows.Interop.HwndSource.Dispose%2A>を即座に破棄、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウ所有者スレッドから呼び出された場合。 別のスレッドから呼び出された場合、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウが非同期的に破棄します。 呼び出す<xref:System.Windows.Interop.HwndSource.Dispose%2A>明示的に相互運用コードから必要があります、特定の相互運用シナリオです。  
+  
+ **ウィンドウ プロシージャ**  
+  
+ <xref:System.Windows.Interop.HwndSource>クラスは、独自のウィンドウ プロシージャを実装します。 このウィンドウ プロシージャが、レイアウト、レンダリングに関連するものなどの重要なウィンドウ メッセージを処理するために使用し、入力します。 ただし、独自のウィンドウ プロシージャをフックすることもできます。 構築時に、独自のフックを設定して指定できます、<xref:System.Windows.Interop.HwndSourceParameters.HwndSourceHook%2A?displayProperty=nameWithType>プロパティを使用するかも<xref:System.Windows.Interop.HwndSource.AddHook%2A>と<xref:System.Windows.Interop.HwndSource.RemoveHook%2A>を追加して、ウィンドウを作成した後、フック関数を削除します。 後入れ先出しの順序にフックを組み込みの処理の前に実行できるように、フックを呼び出します。 実際のフック関数は、弱い参照によって保持されます。 したがって、フック デリゲートの有効期間を管理することを確認します。  
+  
+ 詳細については<xref:System.Windows.Interop.HwndSource>し、その他の相互運用のクラスを参照してください[WPF および Win32 の相互運用](~/docs/framework/wpf/advanced/wpf-and-win32-interoperation.md)です。  
+  
+ 通知方法のコンス トラクター<xref:System.Windows.Interop.HwndSource>のパラメーターのようにパラメーターを受け取る[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]などの関数[について](http://go.microsoft.com/fwlink/?LinkID=98462)です。  
+  
+ スケール変換を適用する必要があります、<xref:System.Windows.Interop.HwndSource.RootVisual%2A>の<xref:System.Windows.Interop.HwndSource>です。 「解説」を参照してください<xref:System.Windows.Interop.HwndSource.RootVisual%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.Windows.Interop.HwndSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HwndSource (System.Windows.Interop.HwndSourceParameters parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Interop.HwndSourceParameters parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.#ctor(System.Windows.Interop.HwndSourceParameters)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Windows.Interop.HwndSourceParameters" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">ウィンドウを作成するために必要なパラメーターを格納する構造体。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.HwndSource" />初期設定を格納する構造体を使用して、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ 既定の構造には、いくつかの適切な既定の初期値が含まれているために、このコンス トラクターのシグネチャが特定の状況で方が便利な可能性があります。  
+  
+> [!IMPORTANT]
+>  この署名を使用する場合、既定値は使用しないでください<xref:System.Windows.Interop.HwndSourceParameters>構築するコンス トラクター、<xref:System.Windows.Interop.HwndSourceParameters>の構造体、`parameters`値。 使用する必要があります、<xref:System.Windows.Interop.HwndSourceParameters>コンス トラクター [初期] ウィンドウの名前を指定することができます。 既定値を使用する場合<xref:System.Windows.Interop.HwndSourceParameters>コンス トラクターを作成し、 <xref:System.Windows.Interop.HwndSource> 、いる<xref:System.Windows.Interop.HwndSource>初期ウィンドウ名が表現されている HWND の構築要件のためには表示されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスのインスタンスを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HwndSource (int classStyle, int style, int exStyle, int x, int y, string name, IntPtr parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 classStyle, int32 style, int32 exStyle, int32 x, int32 y, string name, native int parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="classStyle" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="exStyle" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="parent" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="classStyle">[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]クラスのウィンドウのスタイル。</param>
+        <param name="style">[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="exStyle">拡張[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="x">ウィンドウの位置の左のエッジ。</param>
+        <param name="y">ウィンドウの上端の位置。</param>
+        <param name="name">ウィンドウの名前。</param>
+        <param name="parent">ウィンドウの親ウィンドウのハンドル。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.HwndSource" />指定したクラス スタイルをスタイル、スタイル、x と y 位置、名、および親ウィンドウを拡張します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスのインスタンスを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HwndSource (int classStyle, int style, int exStyle, int x, int y, int width, int height, string name, IntPtr parent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 classStyle, int32 style, int32 exStyle, int32 x, int32 y, int32 width, int32 height, string name, native int parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="classStyle" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="exStyle" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="parent" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="classStyle">[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]クラスのウィンドウのスタイル。</param>
+        <param name="style">[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="exStyle">拡張[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="x">ウィンドウの位置の左のエッジ。</param>
+        <param name="y">ウィンドウの上端の位置。</param>
+        <param name="width">ウィンドウの幅。</param>
+        <param name="height">ウィンドウの高さ。</param>
+        <param name="name">ウィンドウの名前。</param>
+        <param name="parent">ウィンドウの親ウィンドウのハンドル。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.HwndSource" />指定したクラス スタイルをスタイル、スタイル、x と y 位置、幅、高さ、名、および親ウィンドウを拡張します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスのインスタンスを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HwndSource (int classStyle, int style, int exStyle, int x, int y, int width, int height, string name, IntPtr parent, bool adjustSizingForNonClientArea);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 classStyle, int32 style, int32 exStyle, int32 x, int32 y, int32 width, int32 height, string name, native int parent, bool adjustSizingForNonClientArea) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.String,System.IntPtr,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="classStyle" Type="System.Int32" />
+        <Parameter Name="style" Type="System.Int32" />
+        <Parameter Name="exStyle" Type="System.Int32" />
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="parent" Type="System.IntPtr" />
+        <Parameter Name="adjustSizingForNonClientArea" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="classStyle">[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]クラスのウィンドウのスタイル。</param>
+        <param name="style">[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="exStyle">拡張[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]ウィンドウのスタイル。</param>
+        <param name="x">ウィンドウの位置の左のエッジ。</param>
+        <param name="y">ウィンドウの上端の位置。</param>
+        <param name="width">ウィンドウの幅。</param>
+        <param name="height">ウィンドウの高さ。</param>
+        <param name="name">ウィンドウの名前。</param>
+        <param name="parent">ウィンドウの親ウィンドウのハンドル。</param>
+        <param name="adjustSizingForNonClientArea">
+          <see langword="true" />レイアウトにマネージャーが、非クライアント領域のサイズ設定を含めるそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Interop.HwndSource" />クラスの指定したクラスのスタイルと、スタイル、スタイル、x と y 位置、幅、高さ、名、および親ウィンドウを拡張し、ウィンドウは、自動的に設定するかどうかを指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このクラスのインスタンスを作成します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AcquireHwndFocusInMenuMode">
+      <MemberSignature Language="C#" Value="public bool AcquireHwndFocusInMenuMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AcquireHwndFocusInMenuMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.AcquireHwndFocusInMenuMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウを含む WPF の Win32 フォーカスを取得するかどうかを決定する値を取得<see cref="T:System.Windows.Interop.HwndSource" />です。</summary>
+        <value>
+          ユーザーがメニューを操作するときにウィンドウを含む WPF の Win32 フォーカスを取得する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定は作成するときに、<xref:System.Windows.Interop.HwndSource>を設定して、<xref:System.Windows.Interop.HwndSourceParameters.AcquireHwndFocusInMenuMode%2A>パラメーター。  
+  
+ 既定値は、によって決まりますが、<xref:System.Windows.Interop.HwndSource.DefaultAcquireHwndFocusInMenuMode%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddHook">
+      <MemberSignature Language="C#" Value="public void AddHook (System.Windows.Interop.HwndSourceHook hook);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddHook(class System.Windows.Interop.HwndSourceHook hook) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.AddHook(System.Windows.Interop.HwndSourceHook)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hook" Type="System.Windows.Interop.HwndSourceHook" />
+      </Parameters>
+      <Docs>
+        <param name="hook">ハンドラーの実装 (に基づいて、<see cref="T:System.Windows.Interop.HwndSourceHook" />デリゲート) のウィンドウ メッセージを受け取る。</param>
+        <summary>すべてのウィンドウ メッセージを受信するイベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ほとんど[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]に到達したメッセージ、<xref:System.Windows.Interop.HwndSource>概算値がある[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]と同等です。 使用する<xref:System.Windows.Interop.HwndSource.AddHook%2A>メッセージがない場合を処理する[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]と同等です。  
+  
+ <xref:System.Windows.Interop.HwndSourceHook>デリゲートのパラメーターのプロファイルのようになります、[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]メイン ウィンドウ プロシージャ。 メッセージのすべてのウィンドウのメイン ウィンドウ プロシージャ、<xref:System.Windows.Interop.HwndSource>親ウィンドウに転送されても、<xref:System.Windows.Interop.HwndSourceHook>デリゲート。  
+  
+ フック関数は、追加された順序で呼び出されます。 いずれかのフックを返します場合、 `handled` = `true`メッセージは、呼び出しの順序で後にフック関数が呼び出されないとメッセージに対応します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">処理を追加します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoResized">
+      <MemberSignature Language="C#" Value="public event System.Windows.AutoResizedEventHandler AutoResized;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.AutoResizedEventHandler AutoResized" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.HwndSource.AutoResized" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.AutoResizedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レイアウトによって、<see cref="T:System.Windows.Interop.HwndSource" />自動的にサイズ変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネイティブの動作<xref:System.Windows.Interop.HwndSource>コンテンツおよびから報告された変更に基づいてウィンドウ領域に自動的にサイズを変更するには、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]レイアウト システムです。 ウィンドウが現在最小化した場合、またはサイズ変更されない<xref:System.Windows.Interop.HwndSource.SizeToContent%2A>に設定されている<xref:System.Windows.SizeToContent.Manual>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildKeyboardInputSinks">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerable&lt;System.Windows.Interop.IKeyboardInputSink&gt; ChildKeyboardInputSinks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Interop.IKeyboardInputSink&gt; ChildKeyboardInputSinks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.ChildKeyboardInputSinks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Windows.Interop.HwndSource/&lt;get_ChildKeyboardInputSinks&gt;d__29))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Interop.IKeyboardInputSink&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録済みの入力シンクのシーケンスを取得します。</summary>
+        <value>キーボード入力の列挙体は、次のシンクします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompositionTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.Interop.HwndTarget CompositionTarget { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Interop.HwndTarget CompositionTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.CompositionTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.HwndTarget</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされたウィンドウのビジュアル マネージャーを取得します。</summary>
+        <value>ビジュアル マネージャー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライド<xref:System.Windows.Interop.HwndSource.GetCompositionTargetCore%2A>値をオーバーライドするためを<xref:System.Windows.Interop.HwndSource.CompositionTarget%2A>を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHandleRef">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.HandleRef CreateHandleRef ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Runtime.InteropServices.HandleRef CreateHandleRef() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.CreateHandleRef" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.HandleRef</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウ ハンドルを取得、<see cref="T:System.Windows.Interop.HwndSource" />です。 ウィンドウ ハンドルがの一部としてパッケージ化、<see cref="T:System.Runtime.InteropServices.HandleRef" />構造体。</summary>
+        <returns>このウィンドウ ハンドルを格納する構造体<see cref="T:System.Windows.Interop.HwndSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得されるハンドルを使用することができます<xref:System.Windows.Interop.HwndSource.CreateHandleRef%2A>参照に、<xref:System.Windows.Interop.HwndSource>から[!INCLUDE[TLA2#tla_win32](~/includes/tla2sharptla-win32-md.md)]コード。 メッセージの処理やウィンドウの動作などの操作には、ハンドルを使用します。  
+  
+ 同様のハンドルを取得する<xref:System.Windows.Interop.HwndSource.Handle%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAcquireHwndFocusInMenuMode">
+      <MemberSignature Language="C#" Value="public static bool DefaultAcquireHwndFocusInMenuMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool DefaultAcquireHwndFocusInMenuMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.DefaultAcquireHwndFocusInMenuMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値の設定を取得または<see cref="P:System.Windows.Interop.HwndSource.AcquireHwndFocusInMenuMode" />の新しいインスタンスの値<see cref="T:System.Windows.Interop.HwndSource" />です。</summary>
+        <value>
+          ユーザーがメニューを操作するときにウィンドウを含む WPF の Win32 フォーカスを取得する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンス<xref:System.Windows.Interop.HwndSource>が<xref:System.Windows.Interop.HwndSource.AcquireHwndFocusInMenuMode%2A>へのパラメーターとして別の値が渡されていない限り、この既定値に設定、<xref:System.Windows.Interop.HwndSource>コンス トラクターを使用して、特定のインスタンスに対して、<xref:System.Windows.Interop.HwndSourceParameters.AcquireHwndFocusInMenuMode%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">このプロパティを取得します。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって使用されているすべてのマネージ リソースを解放、 <see cref="T:System.Windows.Interop.HwndSource" />、発生させると、<see cref="E:System.Windows.Interop.HwndSource.Disposed" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ <xref:System.Windows.Interop.HwndSource.Dispose%2A>HWND のクリーンアップ作業を開始に関連します。 場合<xref:System.Windows.Interop.HwndSource.Dispose%2A>と呼ばれますが、メイン UI スレッドにポストするまでメイン UI スレッドとは異なるスレッドからクリーンアップ作業を延期する可能性があります。  
+  
+ 呼び出す<xref:System.Windows.Interop.HwndSource.Dispose%2A>明示的に相互運用コードから可能性があります、特定の相互運用シナリオでは、必要なため、<xref:System.Windows.Interop.HwndSource>いくつかの相互運用シナリオで適切なガベージ コレクションを妨げる可能性のある相互運用の境界を越えてへの参照をいくつかを生成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Disposed">
+      <MemberSignature Language="C#" Value="public event EventHandler Disposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Disposed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.HwndSource.Disposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="M:System.Windows.Interop.HwndSource.Dispose" />このオブジェクトのメソッドが呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.HwndSource.Disposed>によってされたリソースを解放する前に、イベントが発生した、<xref:System.Windows.Interop.HwndSource>です。 <xref:System.Windows.Interop.HwndSource.Disposed>イベントは、イベントを発生させるオブジェクトの期限をすべての参照を削除することを示します。  
+  
+ 使用して<xref:System.Windows.Interop.HwndSource.Disposed>と<xref:System.Windows.Interop.HwndSource.IsDisposed%2A>プロパティを呼び出すことを回避する<xref:System.Windows.Interop.HwndSource.Dispose%2A>2 回 (例外が発生する)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DpiChanged">
+      <MemberSignature Language="C#" Value="public event System.Windows.HwndDpiChangedEventHandler DpiChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.HwndDpiChangedEventHandler DpiChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.HwndSource.DpiChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.HwndDpiChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この Hwnd のモニターの DPI が変更された場合、または Hwnd がさまざまな DPI のモニターに移動された場合に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromHwnd">
+      <MemberSignature Language="C#" Value="public static System.Windows.Interop.HwndSource FromHwnd (IntPtr hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Interop.HwndSource FromHwnd(native int hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.FromHwnd(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.HwndSource</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">指定されたウィンドウのハンドルです。</param>
+        <summary>返します、<see cref="T:System.Windows.Interop.HwndSource" />指定したウィンドウのオブジェクト。</summary>
+        <returns><see cref="T:System.Windows.Interop.HwndSource" />で指定されているウィンドウのオブジェクト、<paramref name="hwnd" />ウィンドウ ハンドル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このメソッドは使用できません、インターネットのセキュリティ ゾーンまたは部分信頼の一般にします。  
+  
+ このメソッドを使用するを返す、<xref:System.Windows.Interop.HwndSource>明示的に相互運用のウィンドウではないウィンドウのです。 この手順です。  
+  
+1.  作成、<xref:System.Windows.Interop.WindowInteropHelper>インスタンス (メインを提供する<xref:System.Windows.Window>コンス トラクターのパラメーターとして)。  
+  
+2.  値を取得、<xref:System.Windows.Interop.WindowInteropHelper.Handle%2A>プロパティをから<xref:System.Windows.Interop.WindowInteropHelper>インスタンス。  
+  
+3.  その HWND 値へのパラメーターとして渡す<xref:System.Windows.Interop.HwndSource.FromHwnd%2A>です。  
+  
+ この方法は、[全般] を追加する場合に便利です、<xref:System.Windows.Interop.HwndSource.AddHook%2A>メッセージ ウィンドウに処理します。 ただし、ときに作成する、 <xref:System.Windows.Interop.HwndSource>、破棄を行う必要があります。 これは、true の場合でも、<xref:System.Windows.Application>アプリケーションのオブジェクト<xref:System.Windows.Interop.HwndSource>が破棄されます。 詳細についてで「解説」を参照してください。<xref:System.Windows.Interop.HwndSource>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCompositionTargetCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.CompositionTarget GetCompositionTargetCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.CompositionTarget GetCompositionTargetCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.GetCompositionTargetCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CompositionTarget</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウのビジュアルのターゲットを取得します。</summary>
+        <returns>ウィンドウのビジュアルのターゲットを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装と同じ結果が返されます<xref:System.Windows.Interop.HwndSource.CompositionTarget%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>型固有のビジュアルのターゲットを返すには、このメソッドを実装します。 <see cref="T:System.Windows.Interop.HwndSource" />返すには、このメソッドを実装<see cref="T:System.Windows.Interop.HwndTarget" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウ ハンドルを取得<see cref="T:System.Windows.Interop.HwndSource" />です。</summary>
+        <value>ウィンドウ ハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  このプロパティはインターネット ゾーンのセキュリティは使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このポインターにアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HasFocusWithinCore">
+      <MemberSignature Language="C#" Value="protected virtual bool HasFocusWithinCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool HasFocusWithinCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.HasFocusWithinCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シンクまたはそのに含まれるコンポーネントのいずれかにフォーカスがあるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />シンクまたはそのに含まれるコンポーネントのいずれかのフォーカスがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDisposed">
+      <MemberSignature Language="C#" Value="public override bool IsDisposed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDisposed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.IsDisposed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか<see cref="M:System.Windows.Interop.HwndSource.Dispose" />でこれが呼び出されて<see cref="T:System.Windows.Interop.HwndSource" />です。</summary>
+        <value>
+          <see langword="true" />オブジェクトがあった場合<see cref="M:System.Windows.Interop.HwndSource.Dispose" />と呼ばれる、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.HwndSource.Dispose%2A>HWND のクリーンアップ作業を開始に関連します。 場合<xref:System.Windows.Interop.HwndSource.Dispose%2A>と呼ばれますが、メイン UI スレッドにポストするまでメイン UI スレッドとは異なるスレッドからクリーンアップ作業を延期する可能性があります。 <xref:System.Windows.Interop.HwndSource.Disposed>イベントが発生し、値<xref:System.Windows.Interop.HwndSource.IsDisposed%2A>なります`false`とすぐに<xref:System.Windows.Interop.HwndSource.Dispose%2A>と呼びます。 呼び出す場合は、この期間中に<xref:System.Windows.Interop.HwndSource.Dispose%2A>もう一度、<xref:System.Windows.Interop.HwndSource.Dispose%2A>例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardInputSiteCore">
+      <MemberSignature Language="C#" Value="protected System.Windows.Interop.IKeyboardInputSite KeyboardInputSiteCore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Interop.IKeyboardInputSite KeyboardInputSiteCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.KeyboardInputSiteCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントのコンテナーへの参照を取得または<see cref="T:System.Windows.Interop.IKeyboardInputSite" />インターフェイスです。</summary>
+        <value>コンテナーへの参照を<see cref="T:System.Windows.Interop.IKeyboardInputSite" />; インターフェイスまたは<see langword="null" />サイトが割り当てられていない場合。 既定値は、<see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDpiChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDpiChanged (System.Windows.HwndDpiChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDpiChanged(class System.Windows.HwndDpiChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.OnDpiChanged(System.Windows.HwndDpiChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.HwndDpiChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント引数</param>
+        <summary>ウィンドウの DPI が変更されるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WPF のユーザーは、このイベントを処理する場合に、ビジュアルが拡張しません。  
+  
+> [!IMPORTANT]
+>  このメソッドは、重要なデータをアクセスする<xref:System.Windows.Interop.HwndTarget>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMnemonicCore">
+      <MemberSignature Language="C#" Value="protected virtual bool OnMnemonicCore (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool OnMnemonicCore(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.OnMnemonicCore(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">ニーモニックと関連付けられているデータに関するメッセージ。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>このシンクのニーモニック (アクセス キー) のいずれかが呼び出されると呼び出されます。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="msg" />WM_KEYDOWN、WM_SYSKEYDOWN、WM_CHAR、または WM_DEADCHAR ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterKeyboardInputSinkCore">
+      <MemberSignature Language="C#" Value="protected System.Windows.Interop.IKeyboardInputSite RegisterKeyboardInputSinkCore (System.Windows.Interop.IKeyboardInputSink sink);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Windows.Interop.IKeyboardInputSite RegisterKeyboardInputSinkCore(class System.Windows.Interop.IKeyboardInputSink sink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.RegisterKeyboardInputSinkCore(System.Windows.Interop.IKeyboardInputSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sink" Type="System.Windows.Interop.IKeyboardInputSink" />
+      </Parameters>
+      <Docs>
+        <param name="sink"><see cref="T:System.Windows.Interop.IKeyboardInputSink" />含まれているコンポーネントのシンク。</param>
+        <summary>登録、<see cref="T:System.Windows.Interop.IKeyboardInputSink" />含まれているコンポーネントのインターフェイスです。</summary>
+        <returns><see cref="T:System.Windows.Interop.IKeyboardInputSite" />含まれているコンポーネントのサイトです。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHook">
+      <MemberSignature Language="C#" Value="public void RemoveHook (System.Windows.Interop.HwndSourceHook hook);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveHook(class System.Windows.Interop.HwndSourceHook hook) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.RemoveHook(System.Windows.Interop.HwndSourceHook)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hook" Type="System.Windows.Interop.HwndSourceHook" />
+      </Parameters>
+      <Docs>
+        <param name="hook">削除するイベント ハンドラー。</param>
+        <summary>によって追加されたイベント ハンドラーを削除します<see cref="M:System.Windows.Interop.HwndSource.AddHook(System.Windows.Interop.HwndSourceHook)" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  インターネット ゾーンのセキュリティは、このメソッドを使用できません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">ハンドラーを削除します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreFocusMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.RestoreFocusMode RestoreFocusMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.RestoreFocusMode RestoreFocusMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.RestoreFocusMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RestoreFocusMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Input.RestoreFocusMode" />ウィンドウです。</summary>
+        <value><see cref="T:System.Windows.Input.RestoreFocusMode" />ウィンドウです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみこのプロパティを設定することができます、<xref:System.Windows.Interop.HwndSource.%23ctor%28System.Windows.Interop.HwndSourceParameters%29?displayProperty=nameWithType>コンス トラクターを使用して、<xref:System.Windows.Interop.HwndSourceParameters.RestoreFocusMode%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RootVisual">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Visual RootVisual { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Visual RootVisual" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.RootVisual" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Media.CompositionTarget.RootVisual" />ウィンドウのです。</summary>
+        <value>ウィンドウのルート visual オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して接続する、<xref:System.Windows.Controls.Page>またはビジュアルを別のルート、<xref:System.Windows.Interop.HwndSource>です。  
+  
+ スケール変換を適用する必要があります、<xref:System.Windows.Interop.HwndSource.RootVisual%2A>の<xref:System.Windows.Interop.HwndSource>これを無効にすることができますので<xref:System.Windows.Interop.HwndSource.SizeToContent%2A>動作します。 コンテンツは拡大縮小が外側のウィンドウは表示されません。 あるオブジェクトへの変換を適用する代わりに、<xref:System.Windows.Interop.HwndSource.RootVisual%2A>の子要素であるオブジェクトに変換を適用、<xref:System.Windows.Interop.HwndSource.RootVisual%2A>です。 それを囲む要素を追加する必要があります、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]スケーリング可能なオブジェクトを提供するために、パネルなどのコンテンツ。  
+  
+ 追加することができます、 <xref:System.Windows.Window> (WS_OVERLAPPED) のトップレベル ウィンドウとしてのみが、子ウィンドウとしてではなく、ルート visual として。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToContent">
+      <MemberSignature Language="C#" Value="public System.Windows.SizeToContent SizeToContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.SizeToContent SizeToContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.SizeToContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.SizeToContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容をウィンドウのサイズはかどうかおよびどのようにします。</summary>
+        <value>列挙値の 1 つ。 既定値は<see cref="F:System.Windows.SizeToContent.Manual" />、そのコンテンツへのウィンドウのサイズではないを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンドユーザーが間接的に設定アプリケーション UI を使用してこのプロパティ場合機能は、アプリケーションによって公開されています。  
+  
+ スケール変換を適用する必要があります、<xref:System.Windows.Interop.HwndSource.RootVisual%2A>の<xref:System.Windows.Interop.HwndSource>これを無効にすることができますので、<xref:System.Windows.Interop.HwndSource.SizeToContent%2A>動作します。 「解説」を参照してください<xref:System.Windows.Interop.HwndSource.RootVisual%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SizeToContentChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SizeToContentChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SizeToContentChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Interop.HwndSource.SizeToContentChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Interop.HwndSource.SizeToContent" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.HwndSource.SizeToContentChanged>ユーザー操作によって、変更したときにのみ、イベントが発生します。 設定した場合<xref:System.Windows.Window.SizeToContent%2A>コードでは、<xref:System.Windows.Interop.HwndSource.SizeToContentChanged>イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.HasFocusWithin">
+      <MemberSignature Language="C#" Value="bool IKeyboardInputSink.HasFocusWithin ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Interop.IKeyboardInputSink.HasFocusWithin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#HasFocusWithin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Media.FamilyTypefaceCollection.System#Collections#IList#Remove(System.Object)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />シンクまたはそのに含まれるコンポーネントのいずれかのフォーカスがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite">
+      <MemberSignature Language="C#" Value="System.Windows.Interop.IKeyboardInputSite System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Interop.IKeyboardInputSite System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#KeyboardInputSite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />」をご覧ください。</summary>
+        <value>コンテナーへの参照を<see cref="T:System.Windows.Interop.IKeyboardInputSite" />インターフェイスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このプロパティを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.OnMnemonic">
+      <MemberSignature Language="C#" Value="bool IKeyboardInputSink.OnMnemonic (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Interop.IKeyboardInputSink.OnMnemonic(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">ニーモニックと関連付けられているデータに関するメッセージ。 このメッセージの構造は変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />」をご覧ください。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink">
+      <MemberSignature Language="C#" Value="System.Windows.Interop.IKeyboardInputSite IKeyboardInputSink.RegisterKeyboardInputSink (System.Windows.Interop.IKeyboardInputSink sink);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Windows.Interop.IKeyboardInputSite System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(class System.Windows.Interop.IKeyboardInputSink sink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sink" Type="System.Windows.Interop.IKeyboardInputSink" />
+      </Parameters>
+      <Docs>
+        <param name="sink"><see cref="T:System.Windows.Interop.IKeyboardInputSink" />含まれているコンポーネントのシンク。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Windows.Interop.IKeyboardInputSite" />含まれているコンポーネントのサイトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.TabInto">
+      <MemberSignature Language="C#" Value="bool IKeyboardInputSink.TabInto (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Interop.IKeyboardInputSink.TabInto(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#TabInto(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">フォーカスを最初のページまたは最後のタブ ストップを設定するかどうかを指定します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Interop.IKeyboardInputSink.TabInto(System.Windows.Input.TraversalRequest)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />フォーカスが要求どおりに設定されている場合<see langword="false" />タブ ストップが存在しない場合、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator">
+      <MemberSignature Language="C#" Value="bool IKeyboardInputSink.TranslateAccelerator (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />メソッドの実装によって、メッセージが処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Interop.IKeyboardInputSink.TranslateChar">
+      <MemberSignature Language="C#" Value="bool IKeyboardInputSink.TranslateChar (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.Interop.IKeyboardInputSink.TranslateChar(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.System#Windows#Interop#IKeyboardInputSink#TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Windows.Interop.IKeyboardInputSink.TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />メッセージが処理された場合と<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />と呼ばれる、それ以外を使用することはできません<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Interop.HwndSource> のインスタンスが <xref:System.Windows.Interop.IKeyboardInputSink> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIntoCore">
+      <MemberSignature Language="C#" Value="protected virtual bool TabIntoCore (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TabIntoCore(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.TabIntoCore(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">フォーカスを最初のページまたは最後のタブ ストップを設定するかどうかを指定します。</param>
+        <summary>最初のタブ位置またはシンクの最後のタブ位置のいずれかにフォーカスを設定します。</summary>
+        <returns>
+          <see langword="true" />フォーカスが要求どおりに設定されている場合<see langword="false" />タブ ストップが存在しない場合、します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateAcceleratorCore">
+      <MemberSignature Language="C#" Value="protected virtual bool TranslateAcceleratorCore (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TranslateAcceleratorCore(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.TranslateAcceleratorCore(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>キー ダウン メッセージのレベルでのキーボード入力を処理します。</summary>
+        <returns>
+          <see langword="true" />メソッドの実装によって、メッセージが処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateCharCore">
+      <MemberSignature Language="C#" Value="protected virtual bool TranslateCharCore (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool TranslateCharCore(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.HwndSource.TranslateCharCore(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>前に、WM_CHAR、wm_syschar です、WM_DEADCHAR、および WM_SYSDEADCHAR 入力メッセージを処理、<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />メソッドが呼び出されます。</summary>
+        <returns>
+          <see langword="true" />メッセージが処理された場合と<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />と呼ばれる、それ以外を使用することはできません<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesPerPixelOpacity">
+      <MemberSignature Language="C#" Value="public bool UsesPerPixelOpacity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesPerPixelOpacity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.HwndSource.UsesPerPixelOpacity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソース ウィンドウ コンテンツのピクセルごとの不透明度を使用するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />システムは、ピクセルごとの不透明度を使用している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセルごとの不透明度を有効にすると、システムは不要になった非クライアント領域を描画します。 これは、ための本来の目的<xref:System.Windows.Interop.HwndSource.UsesPerPixelOpacity%2A>は相互運用シナリオで動作する四角形以外の最上位レベルの UI を表示します。 そのため、そのような目的の四角形の非クライアント領域損なわを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,303 @@
+<Type Name="FormatException" FullName="System.FormatException">
+  <TypeSignature Language="C#" Value="public class FormatException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit FormatException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.FormatException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>引数の形式が有効でないとき、またはときにスローされる例外を[複合書式指定文字列](~/docs/standard/base-types/composite-formatting.md)形式が正しくありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.FormatException>原因は次のいずれかの例外がスローされます。  
+  
+-   その他の任意のデータ型に文字列を変換するメソッドを呼び出し、文字列は、必要なパターンに準拠していません。 これは一部のメソッドを呼び出すときに通常に発生、<xref:System.Convert>クラスおよび`Parse`と`ParseExact`いくつかの型のメソッドです。  
+  
+     ほとんどの場合、変換する文字列がユーザーによって入力またはファイルから読み取られた場合に特にを使用して、`try/catch`をブロックし、処理、<xref:System.FormatException>変換が成功した場合に例外です。 呼び出して変換メソッドの呼び出しを置き換えることも、`TryParse`または`TryParseExact`メソッドを 1 つが存在する場合。 ただし、<xref:System.FormatException>定義済みまたはハード コーディングされた文字列を解析しようとしている場合にスローされる例外は、プログラム エラーを示します。 この場合、エラーを修正しないで、例外を処理します。  
+  
+     文字列で、次の種類への変換、<xref:System>名前空間をスローすることが、<xref:System.FormatException>例外。  
+  
+    -   <xref:System.Boolean>。 <xref:System.Boolean.Parse%28System.String%29?displayProperty=nameWithType>と<xref:System.Convert.ToBoolean%28System.String%29?displayProperty=nameWithType>メソッドには、文字列"True"、"true"に変換する、"False"または"false"が必要とします。 その他の値をスロー、<xref:System.FormatException>例外。  
+  
+    -   <xref:System.DateTime> および <xref:System.DateTimeOffset>。 すべての日付と時刻のデータは特定のカルチャの書式指定規則に基づいて解釈されます。 現在のスレッド カルチャ (または、場合によっては、アプリケーション ドメインの現在のカルチャ) で、インバリアント カルチャまたは指定されたカルチャ。 呼び出すと、<xref:System.DateTime.ParseExact%28System.String%2CSystem.String%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>と<xref:System.DateTimeOffset.ParseExact%28System.String%2CSystem.String%5B%5D%2CSystem.IFormatProvider%2CSystem.Globalization.DateTimeStyles%29?displayProperty=nameWithType>メソッド、日付と時刻のデータが従う必要がありますも*正確に*1 つまたは複数が指定したパターンに[標準書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)または[カスタム書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)メソッドの呼び出しで引数として提供します。 予期されたカルチャ固有のパターンに準拠していない場合、<xref:System.FormatException>例外がスローされます。 つまり、1 つのシステムのカルチャに固有の書式に保存された日付と時刻のデータは、別のシステムで正常に解析できません可能性があります。  
+  
+         日付と時刻の解析の詳細については、次を参照してください。[解析の日付と時刻文字列](~/docs/standard/base-types/parsing-datetime.md)と例外をスローしたメソッドのドキュメントをします。  
+  
+    -   **Guid。** GUID の文字列形式の 32 の 16 進数字 (0 から F) で構成されている必要があり、によって 5 つの形式の出力のいずれかである必要があります、<xref:System.Guid.ToString%2A?displayProperty=nameWithType>メソッドです。 詳細については、<xref:System.Guid.Parse%2A?displayProperty=nameWithType> メソッドを参照してください。  
+  
+    -   **すべて署名済みの整数、符号なし整数、および浮動小数点型を含む数値型。** 解析する文字列は必要がありますラテン文字の数字 0 ~ 9 で構成されます。 正または負の記号、桁区切り記号、桁区切り記号および通貨記号を許可されても可能性があります。 常にスローの文字を含むその他の文字列を解析しようとしています、<xref:System.FormatException>例外。  
+  
+         すべての数値の文字列は、特定のカルチャの書式指定規則に基づいて解釈されます。 現在のスレッド カルチャ (または、場合によっては、アプリケーション ドメインの現在のカルチャ) で、インバリアント カルチャまたは指定されたカルチャ。 その結果、1 つのカルチャの規則を使用して解析される数値の文字列が別の規則を使用する場合に失敗します。  
+  
+         数値の文字列の解析の詳細については、次を参照してください。[数値文字列の解析](~/docs/standard/base-types/parsing-numeric.md)と例外をスローした特定のメソッドのドキュメントをします。  
+  
+    -   **時間間隔。** 固定のカルチャに依存しない形式で、または現在のスレッド カルチャによって (または、場合によっては、アプリケーション ドメインの現在のカルチャ) で定義されているカルチャ形式で解析する文字列がある必要があります、インバリアント カルチャまたは指定されたカルチャ。 文字列は、適切な形式は、または場合は、最低限、日数、時間単位ではありません、時間間隔の分のコンポーネントが存在しない場合は、解析メソッドをスロー、<xref:System.FormatException>例外。 詳細については、ドキュメントを参照して、<xref:System.TimeSpan>例外をスローしたメソッドを解析します。  
+  
+-   型が実装する、<xref:System.IFormattable>インターフェイス オブジェクトを文字列形式に変換する方法を定義する書式指定文字列をサポートして、無効な形式の文字列を使用します。 これは、書式設定操作で最も一般的なです。 次の例では、"Q"標準書式指定文字列は、複合書式指定文字列、数値の書式設定に使用されます。 ただし、"Q"が無効です[標準書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)です。  
+  
+     [!code-csharp[System.FormatException#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/iformattable1.cs#7)]
+     [!code-vb[System.FormatException#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/iformattable1.vb#7)]  
+  
+     コードのエラーでは、この例外が発生します。 エラーを解決するには、書式指定文字列を削除するか、有効なものを置き換えます。 次の例では、"C"(通貨) 書式指定文字列に無効な書式指定文字列を置き換えることで、エラーを修正します。  
+  
+     [!code-csharp[System.FormatException#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/iformattable2.cs#8)]
+     [!code-vb[System.FormatException#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/iformattable2.vb#8)]  
+  
+     A<xref:System.FormatException>などのメソッドを解析して例外をスローすることも<xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType>と<xref:System.Guid.ParseExact%2A?displayProperty=nameWithType>、書式指定文字列で指定されたパターンに正確に準拠するように解析する文字列を必要とします。 次の例では、"G"標準書式指定文字列で指定されたパターンに準拠するように GUID の文字列形式が必要です。 ただし、<xref:System.Guid>の構造体の実装<xref:System.IFormattable>"G"書式指定文字列をサポートしていません。  
+  
+     [!code-csharp[System.FormatException#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/iformattable3.cs#9)]
+     [!code-vb[System.FormatException#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/iformattable3.vb#9)]  
+  
+     この例外は、コーディング エラーによっても発生します。 これを修正するなど、正確な形式を必要としない解析メソッドを呼び出します<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>または<xref:System.Guid.Parse%2A?displayProperty=nameWithType>、または有効な書式文字列を置換します。 次の例は、呼び出すことによって、エラーを修正、<xref:System.Guid.Parse%2A?displayProperty=nameWithType>メソッドです。  
+  
+     [!code-csharp[System.FormatException#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/iformattable4.cs#10)]
+     [!code-vb[System.FormatException#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/iformattable4.vb#10)]  
+  
+-   1 つ以上の書式項目のインデックスの[複合書式指定文字列](~/docs/standard/base-types/composite-formatting.md)がオブジェクトのリストまたはパラメーターの配列内の項目のインデックスよりも大きいです。 次の例では、書式指定文字列で書式指定項目の最大インデックスは 3 です。 オブジェクトの一覧内の項目のインデックスが 0 から始まるため、この書式指定文字列には、オブジェクトの一覧には次の 4 つの項目が必要です。 その代わりに、3 つだけ`dat`、 `temp`、および`scale`でコードを実行しているため、<xref:System.FormatException>実行時に例外: です。  
+  
+     [!code-csharp[System.FormatException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/example1.cs#1)]
+     [!code-vb[System.FormatException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/example1.vb#1)]  
+  
+     ここで、<xref:System.FormatException>例外は、開発者のエラーの結果。 なくするように修正で処理される、`try/catch`オブジェクトの一覧内の各項目が、書式指定項目のインデックスに対応していることを確認することによりブロックされます。 この例を修正するを参照する 2 番目の書式指定項目のインデックスを変更、`dat`変数、およびデクリメントいずれかでは、各後続の書式項目のインデックス。  
+  
+     [!code-csharp[System.FormatException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/example2.cs#2)]
+     [!code-vb[System.FormatException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/example2.vb#2)]  
+  
+-   複合書式指定文字列は、適切な形式はありません。 この場合、<xref:System.FormatException>例外は、開発者のエラーの結果では常にします。 これは、必要がある修正ではなくで処理される、`try/catch`ブロックします。  
+  
+     ように次の例には、例外がスローされます、文字列リテラルに中かっこを指定しようとしています。  
+  
+     [!code-csharp[System.String.Format#23](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Format/cs/qa3.cs#23)]
+     [!code-vb[System.String.Format#23](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Format/vb/qa3.vb#23)]  
+  
+     複合書式指定文字列にリテラルのかっこを含めるための推奨される手法は、オブジェクトの一覧に追加し、書式項目を使用して、結果の文字列に挿入するにです。 たとえば、次に示すように以前の複合書式指定文字列を変更できます。  
+  
+     [!code-csharp[System.String.Format#24](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.String.Format/cs/qa3.cs#24)]
+     [!code-vb[System.String.Format#24](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.String.Format/vb/qa3.vb#24)]  
+  
+     例外は、書式指定文字列には、入力ミスが含まれている場合にもスローされます。 次の呼び出し、<xref:System.String.Format%2A?displayProperty=nameWithType>メソッドは、右中かっこを省略し、右角かっこで始めかっこのペアします。  
+  
+     [!code-csharp[System.FormatException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/example3.cs#3)]
+     [!code-vb[System.FormatException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/example3.vb#3)]  
+  
+     エラーを修正するには、すべてを開くと、終わりかっこと一致することを確認します。  
+  
+     [!code-csharp[System.FormatException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/example3.cs#4)]
+     [!code-vb[System.FormatException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/example3.vb#4)]  
+  
+-   複合書式指定を厳密に型指定されたパラメーター配列としてのメソッドでオブジェクトの一覧を指定した、<xref:System.FormatException>例外は、1 つまたは複数の書式項目のインデックスがオブジェクトの一覧の引数の数を超えたことを示します。 これは、配列型の間の明示的な変換が存在しないため、そのため、コンパイラはパラメーター配列ではなく、単一の引数として、配列を扱いますが発生します。 たとえば、次の呼び出し、<xref:System.Console.WriteLine%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType>メソッドがスローされます、<xref:System.FormatException>例外、書式指定項目のインデックスの最大値は 3、および型のパラメーター配列が<xref:System.Int32>は 4 つの要素があります。  
+  
+     [!code-csharp[System.FormatException#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/qa1.cs#5)]
+     [!code-vb[System.FormatException#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/qa1.vb#5)]  
+  
+     この例外を処理するには、代わりにするには、その原因を排除する必要があります。 Visual Basic でも C# の場合は、整数の配列をオブジェクト配列に変換できます、ため、複合書式指定メソッドを呼び出す前に自分で変換を実行する必要があります。 次の例では、1 つの実装を提供します。  
+  
+     [!code-csharp[System.FormatException#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.formatexception/cs/qa2.cs#6)]
+     [!code-vb[System.FormatException#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.formatexception/vb/qa2.vb#6)]  
+  
+ <xref:System.FormatException>値は 0x80131537 HRESULT COR_E_FORMAT を使用します。  
+  
+ <xref:System.FormatException>クラスから派生<xref:System.Exception>し、一意のメンバーは追加されません。 インスタンスの初期プロパティ値の一覧については<xref:System.FormatException>を参照してください、<xref:System.FormatException.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormatException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.FormatException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.FormatException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、 <xref:System.Exception.Message%2A> 「形式が無効です」など、エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティ。 このメッセージには、現在のシステムのカルチャが考慮されます。  
+  
+ <xref:System.FormatException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormatException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.FormatException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明するメッセージ。</param>
+        <summary>指定したエラー メッセージを使用して、<see cref="T:System.FormatException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.Exception.Message%2A?displayProperty=nameWithType>の新しい例外を使用して、プロパティ、`message`パラメーター。 コンテンツ`message`ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。  
+  
+ <xref:System.FormatException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|null 参照 (Visual Basic の場合は `Nothing`)。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FormatException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.FormatException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データを保持するオブジェクト。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.FormatException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、逆シリアル化中に、ストリームで送信された例外オブジェクトを再構築するために呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FormatException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.FormatException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で) で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.FormatException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ <xref:System.FormatException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|エラー メッセージ文字列。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

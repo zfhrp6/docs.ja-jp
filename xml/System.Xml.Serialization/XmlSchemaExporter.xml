@@ -1,0 +1,300 @@
+<Type Name="XmlSchemaExporter" FullName="System.Xml.Serialization.XmlSchemaExporter">
+  <TypeSignature Language="C#" Value="public class XmlSchemaExporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchemaExporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSchemaExporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>設定<see cref="T:System.Xml.Schema.XmlSchema" />マッピング オブジェクトの種類のオブジェクト内にある XML スキーマ要素宣言を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSchemaExporter>クラスは、XML スキーマ定義言語 (XSD) ドキュメントのプログラム表現を提供します。 使用せずに<xref:System.Xml.Serialization.XmlSchemaExporter>を直接使用して、<xref:System.Web.Services.Description.ServiceDescriptionReflector>クラスまたは[XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)です。  
+  
+ <xref:System.Web.Services.Description.ServiceDescriptionReflector>クラス作成<xref:System.Web.Services.Description.ServiceDescription>Web サービスとして識別されるクラスのオブジェクトをします。 使用して、<xref:System.Xml.Serialization.XmlSchemaExporter>クラスの Web サービス クラスを指定する場合。  
+  
+-   リテラルを使用して、XML スキーマ定義で、SOAP メッセージのパラメーターと戻り値 (または要求と応答のドキュメント) の内容がそのまま指定されていることを示すです。  
+  
+-   HTTP GET 要求および HTTP POST 操作を使用する Web サービスの非 SOAP 実装します。  
+  
+ Xsd.exe を使用して、ランタイム アセンブリ ファイルに 1 つまたは複数の種類からの XML スキーマ ドキュメントの生成、<xref:System.Xml.Serialization.XmlSchemaExporter>クラスとリフレクションします。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaExporter (System.Xml.Serialization.XmlSchemas schemas);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.Serialization.XmlSchemas schemas) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.#ctor(System.Xml.Serialization.XmlSchemas)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="schemas" Type="System.Xml.Serialization.XmlSchemas" />
+      </Parameters>
+      <Docs>
+        <param name="schemas">コレクション<see cref="T:System.Xml.Schema.XmlSchema" />のどの要素には、型のマッピングから取得した宣言が追加されたオブジェクト。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlSchemaExporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlSchemaExporter>クラスのコレクションを提供します。<xref:System.Xml.Schema.XmlSchema>どの xml スキーマの要素の宣言に追加するオブジェクト。 インスタンスを作成する必要はありません、<xref:System.Xml.Serialization.XmlSchemaExporter>クラスに直接できます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportAnyType">
+      <MemberSignature Language="C#" Value="public string ExportAnyType (string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ExportAnyType(string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportAnyType(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ns">追加する XML スキーマ ドキュメントの名前空間、 **&lt;任意&gt;**要素。</param>
+        <summary>エクスポート、 **&lt;任意&gt;**要素を<see cref="T:System.Xml.Schema.XmlSchema" />指定した名前空間によって識別されるオブジェクト。</summary>
+        <returns>割り当てられている任意の名前、 **&lt;任意&gt;**要素宣言します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドを直接呼び出す必要はありません。  
+  
+ <xref:System.Web.Services.Description.ServiceDescriptionReflector>作成<xref:System.Web.Services.Description.ServiceDescription>Web サービスとして識別されるクラスのオブジェクトをします。  
+  
+ フィールドまたはプロパティの型の<xref:System.Xml.XmlElement>、属性を持つ<xref:System.Xml.Serialization.XmlAnyElementAttribute>に変換される、 **\<任意 >**要素。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportAnyType">
+      <MemberSignature Language="C#" Value="public string ExportAnyType (System.Xml.Serialization.XmlMembersMapping members);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ExportAnyType(class System.Xml.Serialization.XmlMembersMapping members) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportAnyType(System.Xml.Serialization.XmlMembersMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="members" Type="System.Xml.Serialization.XmlMembersMapping" />
+      </Parameters>
+      <Docs>
+        <param name="members"><see cref="T:System.Xml.Serialization.XmlMembersMapping" />エクスポートへのマッピングを格納しています。</param>
+        <summary>オブジェクトまたは SOAP メッセージをまたは型の要素宣言を追加、<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクト。</summary>
+        <returns>文字列の"any"に追加した整数。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportMembersMapping">
+      <MemberSignature Language="C#" Value="public void ExportMembersMapping (System.Xml.Serialization.XmlMembersMapping xmlMembersMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportMembersMapping(class System.Xml.Serialization.XmlMembersMapping xmlMembersMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportMembersMapping(System.Xml.Serialization.XmlMembersMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlMembersMapping" Type="System.Xml.Serialization.XmlMembersMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlMembersMapping">Web サービス記述言語 (WSDL) メッセージの定義の要素の部分の内部の .NET Framework 型マッピング。</param>
+        <summary>要素の宣言に、適用可能な追加<see cref="T:System.Xml.Schema.XmlSchema" />リテラル SOAP メッセージの定義の要素の部分ごとです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP メッセージの部分ごとに、<xref:System.Xml.Serialization.XmlSchemaExporter.ExportMembersMapping%2A>メソッドは、XML スキーマ要素の宣言を追加、<xref:System.Xml.Schema.XmlSchema>の一部として、同じ名前空間を使用しています。 通常、リテラル メッセージの定義には、1 つのパーツが含まれています。  
+  
+ 代わりに <xref:System.Web.Services.Description.ServiceDescriptionReflector> クラスを使用してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportMembersMapping">
+      <MemberSignature Language="C#" Value="public void ExportMembersMapping (System.Xml.Serialization.XmlMembersMapping xmlMembersMapping, bool exportEnclosingType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportMembersMapping(class System.Xml.Serialization.XmlMembersMapping xmlMembersMapping, bool exportEnclosingType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportMembersMapping(System.Xml.Serialization.XmlMembersMapping,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlMembersMapping" Type="System.Xml.Serialization.XmlMembersMapping" />
+        <Parameter Name="exportEnclosingType" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="xmlMembersMapping">.NET Framework 型と XML スキーマ要素間の内部マッピング。</param>
+        <param name="exportEnclosingType">
+          <see langword="true" />スキーマを囲んでいるスキーマ要素を含める場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>適用可能な要素宣言を追加<see cref="T:System.Xml.Schema.XmlSchema" />リテラルの SOAP メッセージの定義の要素の部分ごとと外側の要素が含まれているかどうかを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportTypeMapping">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlQualifiedName ExportTypeMapping (System.Xml.Serialization.XmlMembersMapping xmlMembersMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlQualifiedName ExportTypeMapping(class System.Xml.Serialization.XmlMembersMapping xmlMembersMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportTypeMapping(System.Xml.Serialization.XmlMembersMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlMembersMapping" Type="System.Xml.Serialization.XmlMembersMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlMembersMapping">Web サービス記述言語 (WSDL) メッセージの定義の要素の一部の .NET Framework 型マッピングが内部。</param>
+        <summary>要素の宣言に、適用可能な追加<see cref="T:System.Xml.Schema.XmlSchema" />リテラル SOAP メッセージの定義の 1 つの要素の一部のオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlQualifiedName" />エクスポートされた要素の宣言の修飾 XML 名を表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを追加するには、XML スキーマ要素宣言、 <xref:System.Xml.Schema.XmlSchema> SOAP メッセージの一部として、同じ名前空間を使用しています。 リテラルのメッセージ定義には、1 つのパーツを含める必要があります。  
+  
+ 代わりに <xref:System.Web.Services.Description.ServiceDescriptionReflector> クラスを使用してください。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ExportTypeMapping">
+      <MemberSignature Language="C#" Value="public void ExportTypeMapping (System.Xml.Serialization.XmlTypeMapping xmlTypeMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExportTypeMapping(class System.Xml.Serialization.XmlTypeMapping xmlTypeMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaExporter.ExportTypeMapping(System.Xml.Serialization.XmlTypeMapping)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlTypeMapping" Type="System.Xml.Serialization.XmlTypeMapping" />
+      </Parameters>
+      <Docs>
+        <param name="xmlTypeMapping">.NET Framework 型と XML スキーマ要素間の内部マッピング。</param>
+        <summary>.NET Framework 型の要素宣言に、適用可能な追加<see cref="T:System.Xml.Schema.XmlSchema" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

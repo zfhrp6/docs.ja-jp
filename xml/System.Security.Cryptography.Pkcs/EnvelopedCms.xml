@@ -1,0 +1,721 @@
+<Type Name="EnvelopedCms" FullName="System.Security.Cryptography.Pkcs.EnvelopedCms">
+  <TypeSignature Language="C#" Value="public sealed class EnvelopedCms" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnvelopedCms extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />クラスは、エンベロープ データの CMS/PKCS #7 構造体を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 暗号化メッセージ構文 RFC は、これらのコンテンツ タイプで、次の MIME の種類と CMS/PKCS #7 メッセージのファイル名拡張子を指定します。  
+  
+|コンテンツの種類|MIME の種類|拡張子|  
+|------------------|---------------|---------------|  
+|envelopedData|アプリケーション/pkcs7 mime|.p7m|  
+|signedData|アプリケーション/pkcs7 で署名|。 p7s.p7c|  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedCms ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor" /> コンストラクターは、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms>クラスには次の既定のプロパティ値。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo%2A>|1.2.840.113549.1.7.1 (データ) の長さ: 0|  
+|<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentEncryptionAlgorithm%2A>|1.2.840.113549.3.7 (RSA_DES_EDE3_CBC)|  
+  
+ 既定値<xref:System.Security.Cryptography.Pkcs.SubjectIdentifierType>受信者は<xref:System.Security.Cryptography.Pkcs.SubjectIdentifierType.IssuerAndSerialNumber>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedCms (System.Security.Cryptography.Pkcs.ContentInfo contentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.Pkcs.ContentInfo contentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentInfo" Type="System.Security.Cryptography.Pkcs.ContentInfo" />
+      </Parameters>
+      <Docs>
+        <param name="contentInfo">インスタンス、<see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo" />コンテンツとその型を表すクラスです。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />クラス内部のコンテンツの種類として指定したコンテンツ情報を使用しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで使用される既定のプロパティ値を参照してください。<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedCms (System.Security.Cryptography.Pkcs.ContentInfo contentInfo, System.Security.Cryptography.Pkcs.AlgorithmIdentifier encryptionAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.Pkcs.ContentInfo contentInfo, class System.Security.Cryptography.Pkcs.AlgorithmIdentifier encryptionAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contentInfo" Type="System.Security.Cryptography.Pkcs.ContentInfo" />
+        <Parameter Name="encryptionAlgorithm" Type="System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="contentInfo">A<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />コンテンツとその型を表すオブジェクト。</param>
+        <param name="encryptionAlgorithm"><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />暗号化アルゴリズムを指定するオブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />クラスを指定したコンテンツ情報および暗号化アルゴリズムを使用します。 指定したコンテンツ情報は、内部のコンテンツの種類として使用するのにです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで使用される既定のプロパティ値を参照してください。<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedCms (System.Security.Cryptography.Pkcs.SubjectIdentifierType recipientIdentifierType, System.Security.Cryptography.Pkcs.ContentInfo contentInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.Pkcs.SubjectIdentifierType recipientIdentifierType, class System.Security.Cryptography.Pkcs.ContentInfo contentInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="recipientIdentifierType" Type="System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+        <Parameter Name="contentInfo" Type="System.Security.Cryptography.Pkcs.ContentInfo" />
+      </Parameters>
+      <Docs>
+        <param name="recipientIdentifierType">メンバー、<see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />受信者を識別する手段を指定する列挙です。</param>
+        <param name="contentInfo">A<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />コンテンツとその型を表すオブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />指定されたサブジェクト識別子の型とコンテンツ情報を使用してクラスです。 指定したコンテンツ情報は、内部のコンテンツの種類として使用するのにです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターで使用される既定のプロパティ値を参照してください。<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor>です。  
+  
+ 発行者と公開キー証明書のシリアル番号のいずれかまたはその公開キー証明書のキー識別子、サブジェクトを識別できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedCms (System.Security.Cryptography.Pkcs.SubjectIdentifierType recipientIdentifierType, System.Security.Cryptography.Pkcs.ContentInfo contentInfo, System.Security.Cryptography.Pkcs.AlgorithmIdentifier encryptionAlgorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.Pkcs.SubjectIdentifierType recipientIdentifierType, class System.Security.Cryptography.Pkcs.ContentInfo contentInfo, class System.Security.Cryptography.Pkcs.AlgorithmIdentifier encryptionAlgorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="recipientIdentifierType" Type="System.Security.Cryptography.Pkcs.SubjectIdentifierType" />
+        <Parameter Name="contentInfo" Type="System.Security.Cryptography.Pkcs.ContentInfo" />
+        <Parameter Name="encryptionAlgorithm" Type="System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />
+      </Parameters>
+      <Docs>
+        <param name="recipientIdentifierType">メンバー、<see cref="T:System.Security.Cryptography.Pkcs.SubjectIdentifierType" />受信者を識別する手段を指定する列挙です。</param>
+        <param name="contentInfo">A<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />コンテンツとその型を表すオブジェクト。</param>
+        <param name="encryptionAlgorithm"><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />暗号化アルゴリズムを指定するオブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.#ctor(System.Security.Cryptography.Pkcs.SubjectIdentifierType,System.Security.Cryptography.Pkcs.ContentInfo,System.Security.Cryptography.Pkcs.AlgorithmIdentifier)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />指定された件名識別子の型、コンテンツ情報は、および暗号化アルゴリズムを使用してクラスです。 指定したコンテンツ情報は、内部のコンテンツの種類として使用するのにです。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Certificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Certificates" />プロパティは、一連のエンベロープの CMS/PKCS #7 メッセージに関連付けられている証明書を取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />エンベロープの CMS/PKCS #7 メッセージで使用される X.509 証明書を表すコレクション。 証明書が存在しない場合、プロパティの値は空のコレクションがします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentEncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.AlgorithmIdentifier ContentEncryptionAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.AlgorithmIdentifier ContentEncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentEncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.AlgorithmIdentifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentEncryptionAlgorithm" />プロパティは、コンテンツの暗号化に使用されるアルゴリズムの識別子を取得します。</summary>
+        <value><see cref="T:System.Security.Cryptography.Pkcs.AlgorithmIdentifier" />アルゴリズム識別子を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アルゴリズム識別子がコンス トラクターで設定されていない場合、このプロパティには、既定値が含まれています。 使用される既定のプロパティ値、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms>クラスを参照してください<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.%23ctor>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentInfo">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.ContentInfo ContentInfo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.ContentInfo ContentInfo" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.ContentInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.ContentInfo" />プロパティがエンベロープの CMS/PKCS #7 メッセージの内部コンテンツ情報を取得します。</summary>
+        <value>A<see cref="T:System.Security.Cryptography.Pkcs.ContentInfo" />エンベロープの CMS/PKCS #7 メッセージから内部のコンテンツ情報を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出したかどうか、暗号化解除のいずれかのように<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt>、このプロパティを表示する前に返されるコンテンツを暗号化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Decode">
+      <MemberSignature Language="C#" Value="public void Decode (byte[] encodedMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decode(unsigned int8[] encodedMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encodedMessage" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="encodedMessage">デコードする情報を表すバイト値の配列。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode(System.Byte[])" />メソッドは、指定のエンベロープ CMS/PKCS #7 メッセージをデコードし、内のすべてのメンバー変数をリセット、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、前に呼び出す必要があります<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt?displayProperty=nameWithType>またはその他の EnvelopedCms.Decrypt メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public void Decrypt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt" />メソッドは、デコードされたのエンベロープ CMS/PKCS #7 メッセージの内容を復号化します。 <see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt" />メソッドが、My ストア、適切な証明書と秘密キーの現在のユーザーとコンピューターを検索します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decode%2A?displayProperty=nameWithType>前に呼び出す必要があります<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt?displayProperty=nameWithType>または他の<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt%2A>メソッドです。  
+  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt>メソッド検索しません、コンピューターの My ストアにアクセスできない場合。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 復号化キーにアクセスするには、次のアクセス許可が必要です。  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの呼び出しは、オブジェクトの現在の状態に対して無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public void Decrypt (System.Security.Cryptography.Pkcs.RecipientInfo recipientInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt(class System.Security.Cryptography.Pkcs.RecipientInfo recipientInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipientInfo" Type="System.Security.Cryptography.Pkcs.RecipientInfo" />
+      </Parameters>
+      <Docs>
+        <param name="recipientInfo">A<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />を復号化に使用する秘密キーに関連付けられている証明書を識別する受信者の情報を表すオブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo)" />メソッドは、指定した受信者情報で識別される証明書に関連付けられている秘密キーを使用してデコードのエンベロープ CMS/PKCS #7 メッセージの内容を復号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 復号化キーにアクセスするには、次のアクセス許可が必要です。  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの呼び出しは、オブジェクトの現在の状態に対して無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public void Decrypt (System.Security.Cryptography.X509Certificates.X509Certificate2Collection extraStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection extraStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extraStore" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />を復号化に使用する追加の証明書を表すコレクション。 <see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、この証明書のコレクションを検索し、復号化に使用する適切な証明書の場合は、My 証明書ストア。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、指定された証明書のコレクションを使用してデコードのエンベロープ CMS/PKCS #7 メッセージの内容を復号化します。 <see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、指定された証明書のコレクションを検索し、復号化に使用する適切な証明書の場合は、My 証明書ストア。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 復号化キーにアクセスするには、次のアクセス許可が必要です。  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの呼び出しは、オブジェクトの現在の状態に対して無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public void Decrypt (System.Security.Cryptography.Pkcs.RecipientInfo recipientInfo, System.Security.Cryptography.X509Certificates.X509Certificate2Collection extraStore);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Decrypt(class System.Security.Cryptography.Pkcs.RecipientInfo recipientInfo, class System.Security.Cryptography.X509Certificates.X509Certificate2Collection extraStore) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipientInfo" Type="System.Security.Cryptography.Pkcs.RecipientInfo" />
+        <Parameter Name="extraStore" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="recipientInfo">A<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfo" />を復号化に使用する受信者の情報を表すオブジェクト。</param>
+        <param name="extraStore"><see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />を復号化に使用する追加の証明書を表すコレクション。 <see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、この証明書のコレクションを検索し、復号化に使用する適切な証明書の場合は、My 証明書ストア。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、指定された証明書のコレクションを使用して、指定した受信者情報で識別証明書に関連付けられている秘密キーを使用してデコードのエンベロープ CMS/PKCS #7 メッセージの内容を復号化します。  <see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Decrypt(System.Security.Cryptography.Pkcs.RecipientInfo,System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />メソッドは、指定された証明書のコレクションを検索し、復号化に使用する適切な証明書の場合は、My 証明書ストア。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 復号化キーにアクセスするには、次のアクセス許可が必要です。  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+-   <xref:System.Security.Permissions.KeyContainerPermissionFlags?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドの呼び出しは、オブジェクトの現在の状態に対して無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encode">
+      <MemberSignature Language="C#" Value="public byte[] Encode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Encode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encode" />メソッドは、エンベロープの CMS/PKCS #7 メッセージの内容をエンコードし、バイト値の配列として返します。 暗号化は、エンコード前に行う必要があります。</summary>
+        <returns>メソッドが成功した場合、メソッドは、エンコードされた情報を表すバイト値の配列を返します。  
+  
+ メソッドが失敗した場合、例外がスローされます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt?displayProperty=nameWithType>もう 1 つまたは<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt%2A>メソッドは、このメソッドの前に呼び出す必要があります。  
+  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encode%2A>メソッドは行われません、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos%2A?displayProperty=nameWithType>が設定されるプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドの呼び出しは、オブジェクトの現在の状態に対して無効でした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public void Encrypt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Encrypt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt" />メソッドが CMS/PKCS #7 メッセージの内容を暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、メッセージを暗号化する対象の受信者を選択するユーザー インターフェイスを表示します。 現在のプロセスが実行されている必要があります*ユーザー対話モード*つまりを<xref:System.Environment.UserInteractive%2A?displayProperty=nameWithType>プロパティに設定されている`true`です。 サービスのプロセスまたは Web アプリケーション内の実行中である場合を除き、プロセスはユーザー対話モードで通常です。  
+  
+ ユーザー インターフェイスには、有効期間内にあるし、キーの暗号化またはキー使用法に含まれるキーのライセンス条項がある証明書だけが表示されます。  
+  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt>メソッドは行われません、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos%2A?displayProperty=nameWithType>が設定されるプロパティです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ ユーザー インターフェイスを表示するのには、次のアクセス許可が必要です。  
+  
+-   <xref:System.Security.Permissions.UIPermissionWindow?displayProperty=nameWithType>  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public void Encrypt (System.Security.Cryptography.Pkcs.CmsRecipient recipient);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Encrypt(class System.Security.Cryptography.Pkcs.CmsRecipient recipient) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipient)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipient" Type="System.Security.Cryptography.Pkcs.CmsRecipient" />
+      </Parameters>
+      <Docs>
+        <param name="recipient">A<see cref="T:System.Security.Cryptography.Pkcs.CmsRecipient" />受信者の情報を表すオブジェクト。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipient)" />メソッドは、指定した受信者情報を使用して CMS/PKCS #7 メッセージの内容を暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt%28System.Security.Cryptography.Pkcs.CmsRecipient%29>メソッドは行われません、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos%2A?displayProperty=nameWithType>が設定されるプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public void Encrypt (System.Security.Cryptography.Pkcs.CmsRecipientCollection recipients);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Encrypt(class System.Security.Cryptography.Pkcs.CmsRecipientCollection recipients) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipientCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="recipients" Type="System.Security.Cryptography.Pkcs.CmsRecipientCollection" />
+      </Parameters>
+      <Docs>
+        <param name="recipients">A<see cref="T:System.Security.Cryptography.Pkcs.CmsRecipientCollection" />受信者の一覧については、情報を表すコレクション。</param>
+        <summary><see cref="M:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt(System.Security.Cryptography.Pkcs.CmsRecipientCollection)" />メソッドは、指定した受信者の一覧の情報を使用して CMS/PKCS #7 メッセージの内容を暗号化します。 メッセージは、triple DES などの対称暗号化アルゴリズムで、メッセージの暗号化キーを使用して暗号化されます。 メッセージの暗号化キーは、各受信者の公開キーで暗号化されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encrypt%28System.Security.Cryptography.Pkcs.CmsRecipientCollection%29>メソッドは行われません、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos%2A?displayProperty=nameWithType>が設定されるプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">Null 参照は、有効な引数として受け付けないメソッドに渡されました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">暗号操作を完了できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RecipientInfos">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.Pkcs.RecipientInfoCollection RecipientInfos { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.Pkcs.RecipientInfoCollection RecipientInfos" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Pkcs.RecipientInfoCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos" />プロパティがエンベロープの CMS/PKCS #7 メッセージに関連付けられている受信者の情報を取得します。</summary>
+        <value>A<see cref="T:System.Security.Cryptography.Pkcs.RecipientInfoCollection" />受信者の情報を表すコレクション。 受信者が存在しない場合、プロパティの値は空のコレクションがします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用に変更を<xref:System.Security.Cryptography.Pkcs.RecipientInfo>内のオブジェクト、<xref:System.Security.Cryptography.Pkcs.RecipientInfoCollection>そのプロパティを使用して行うことができます。  
+  
+ <xref:System.Security.Cryptography.Pkcs.EnvelopedCms.RecipientInfos%2A>呼び出しの結果プロパティは設定されません、<xref:System.Security.Cryptography.Pkcs.EnvelopedCms.Encode%2A?displayProperty=nameWithType>メソッドもオーバー ロードされた EnvelopedCms.Encrypt メソッドのいずれか。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnprotectedAttributes">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CryptographicAttributeObjectCollection UnprotectedAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CryptographicAttributeObjectCollection UnprotectedAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.UnprotectedAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CryptographicAttributeObjectCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.UnprotectedAttributes" />プロパティがエンベロープの CMS/PKCS #7 メッセージに関連付けられている保護されていない (暗号化されていない) 属性を取得します。 保護されていない属性は暗号化されていない、内のデータの機密性がないため、<see cref="T:System.Security.Cryptography.Pkcs.EnvelopedCms" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Security.Cryptography.CryptographicAttributeObjectCollection" />保護されていない属性を表すコレクション。 保護されていない属性が存在しない場合、プロパティの値は空のコレクションがします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Pkcs</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Security.Cryptography.Pkcs.EnvelopedCms.Version" />プロパティがエンベロープの CMS/PKCS #7 メッセージのバージョンを取得します。</summary>
+        <value>エンベロープの CMS/PKCS #7 メッセージのバージョンを表す整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンは、メッセージが PKCS #7 メッセージまたは Cryptographic Message Syntax (CMS) のメッセージかどうかを判断します。 CMS は、PKCS #7 の新しいスーパー セットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

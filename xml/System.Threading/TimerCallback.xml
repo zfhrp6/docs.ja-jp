@@ -1,0 +1,59 @@
+<Type Name="TimerCallback" FullName="System.Threading.TimerCallback">
+  <TypeSignature Language="C#" Value="public delegate void TimerCallback(object state);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TimerCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.TimerCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Timer</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="state" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="state">このデリゲートによって呼び出されるメソッドに関連するアプリケーションに固有の情報を格納するオブジェクトまたは<see langword="null" />です。</param>
+    <summary>呼び出しを処理するメソッドを表す、<see cref="T:System.Threading.Timer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`TimerCallback`によって呼び出されるメソッドを指定するデリゲート、<xref:System.Threading.Timer>です。 このメソッドは、タイマー; を作成したスレッドで実行しません。システムによって提供される個別のスレッド プールのスレッドで実行します。 `TimerCallback`デリゲートは、開始時間が経過後に 1 回メソッドを呼び出すし、タイマー間隔まであたり 1 回呼び出すことは引き続き、<xref:System.Threading.Timer.Dispose%2A>メソッドを呼び出すまで、または、<xref:System.Threading.Timer.Change%2A?displayProperty=nameWithType>間隔値を持つメソッドが呼び出されます<xref:System.Threading.Timeout.Infinite>です。  
+  
+> [!NOTE]
+>  コールバックが後に発生することが、<xref:System.Threading.Timer.Dispose>メソッドのオーバー ロードが呼び出されたため、タイマー キューにスレッド プールのスレッドでコールバックを実行します。 使用することができます、<xref:System.Threading.Timer.Dispose%28System.Threading.WaitHandle%29>メソッドのオーバー ロードは、すべてのコールバックが完了するまで待機します。  
+  
+ タイマーのデリゲートは、タイマーが構築され、変更できないときに指定します。 開始時刻、`Timer`に渡される、`dueTime`のパラメーター、`Timer`コンス トラクター、および期間が渡された、`period`パラメーター。 作成と使用を示す例については、`TimerCallback`デリゲートは、「<xref:System.Threading.Timer?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例で使用されるデリゲートを作成する方法を示しています、`Timer`クラスです。  
+  
+ [!code-cpp[System.Threading.Timer#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Timer/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Timer#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Timer/CS/source.cs#1)]
+ [!code-vb[System.Threading.Timer#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Timer/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

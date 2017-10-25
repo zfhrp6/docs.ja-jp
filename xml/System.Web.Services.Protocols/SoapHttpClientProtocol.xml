@@ -1,0 +1,457 @@
+<Type Name="SoapHttpClientProtocol" FullName="System.Web.Services.Protocols.SoapHttpClientProtocol">
+  <TypeSignature Language="C#" Value="public class SoapHttpClientProtocol : System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapHttpClientProtocol extends System.Web.Services.Protocols.HttpWebClientProtocol" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapHttpClientProtocol" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.HttpWebClientProtocol</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>SOAP を使用する場合に、プロキシがから派生するクラスのクライアントを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントを構築する場合、プロキシ クラスから派生した直接または間接的に<xref:System.Web.Services.Protocols.WebClientProtocol>XML Web サービス用に作成する必要があります。 プロキシ クラスを派生する必要があります XML Web サービス クライアントを呼び出すし、SOAP を使用して、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol>から派生した<xref:System.Web.Services.Protocols.HttpWebClientProtocol>です。 <xref:System.Web.Services.Protocols.HttpWebClientProtocol>、から派生、<xref:System.Web.Services.Protocols.WebClientProtocol>です。  
+  
+ XML Web サービスと通信するためから直接または間接的に派生するプロキシ クラスを作成<xref:System.Web.Services.Protocols.WebClientProtocol>XML Web サービスを呼び出したいのです。 プロキシ クラスを手動で作成するには、代わりに、Web サービス記述言語ツール (Wsdl.exe) を使用して、指定された XML Web サービスのサービスの説明用のプロキシ クラスを作成します。 を介して XML Web サービス メソッドへの同期呼び出しが行われる SOAP プロトコルのプロキシ クラスを生成すると、ときに、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.Invoke%2A>メソッドを使用して非同期呼び出しが行われた一方、<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.BeginInvoke%2A>メソッドおよび<xref:System.Web.Services.Protocols.HttpSimpleClientProtocol.EndInvoke%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の Wsdl.exe で生成されたプロキシ クラス、 `Math` XML Web サービスです。 プロキシ クラスの派生元<xref:System.Web.Services.Protocols.SoapHttpClientProtocol>、抽象から派生した<xref:System.Web.Services.Protocols.WebClientProtocol>クラスです。  
+  
+ [!code-cpp[Classic SoapHttpClientProtocol Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHttpClientProtocol Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHttpClientProtocol Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHttpClientProtocol Example/VB/source.vb#1)]  
+  
+ 次のコード例は、 `Math` XML Web サービス、前述のプロキシ クラスの生成元となります。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para>このクラスをオーバーライドする場合は、XML Web サービスの特定の種類に固有である、派生クラスでメソッドを導入できます。 メソッドは、パラメーターをキャプチャし、XML Web サービスと通信中の作業を行うための基本クラスを呼び出します。 導入されたメソッドが非同期の場合は、呼び出し、<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />メソッドおよび<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke(System.IAsyncResult)" />メソッドです。 導入されたメソッドが同期の場合は、呼び出し、<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(System.String,System.Object[])" />メソッドです。 通常、オーバーライドされるコンス トラクターを設定、<see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" />プロパティを XML Web サービス メソッドの URL。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapHttpClientProtocol ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapHttpClientProtocol" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginInvoke">
+      <MemberSignature Language="C#" Value="protected IAsyncResult BeginInvoke (string methodName, object[] parameters, AsyncCallback callback, object asyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.IAsyncResult BeginInvoke(string methodName, object[] parameters, class System.AsyncCallback callback, object asyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="asyncState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出している派生クラスで XML Web サービス メソッドの名前、<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <param name="parameters">XML Web サービスに渡すパラメーターを格納するオブジェクトの配列。 配列内の値の順序は、派生クラスの呼び出し元のメソッド パラメーター順序に対応します。</param>
+        <param name="callback">非同期呼び出しが完了したときに呼び出すデリゲート。 場合<c>コールバック</c>は<see langword="null" />デリゲートは呼び出されません。</param>
+        <param name="asyncState">呼び出し元によって提供される追加情報。</param>
+        <summary>SOAP を使用して、XML Web サービス メソッドの非同期呼び出しを開始します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />に渡される、<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke(System.IAsyncResult)" />リモート メソッドの呼び出しからの戻り値を取得します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、するは呼び出しません、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>メソッドを直接、XML Web サービス用の独自のプロキシ クラスを構築する場合を除き、します。  
+  
+ サービスの説明から Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラスは、XML Web サービス メソッドを同期的に呼び出すプロキシ クラスから派生する名前として、XML Web サービス メソッドを公開します。 各 XML Web サービス メソッドの 1 つのプロキシ クラスに追加の 2 つのメソッドを追加する XML Web サービス メソッドを非同期に呼び出す、 `Begin` XML Web サービス メソッドと 1 つの名前に追加するプレフィックス、`End`プレフィックスを追加します。  
+  
+ プロキシ クラスの呼び出し、 <xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A> XML Web サービス メソッドへの非同期呼び出し呼び出しを開始するメソッド。 たとえば、XML Web サービスは、という名前の XML Web サービス メソッドを公開`Add`、プロキシ クラスには、という名前のメソッドが含まれています。 `BeginAdd`、XML Web への呼び出しを開始するためのサービス メソッドです。 コード内で、`BeginAdd`への呼び出しが行われた、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>メソッドと、結果が予期される戻り値の型に配置されます`Add`です。  
+  
+ `methodName`可能性がありますに追加されている、メソッドなど、カスタム属性を見つけるため<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>です。 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>派生メソッドは SOAP プロトコルに必要なに関する追加情報を提供します。  
+  
+ `asyncState`渡される`callback`に含まれています、<xref:System.IAsyncResult>から返された、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>メソッドです。 `asyncState`で指定して非同期呼び出しのコンテキストに関する情報を渡すパラメーターを使用することができます、`callback`パラメーター、結果を処理するデリゲート。  
+  
+   
+  
+## Examples  
+ 次のコード例は、Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラス、 `Math` XML Web サービスです。 内で、`BeginAdd`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke%2A>メソッドへの非同期呼び出しを開始して、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-cpp[Classic SoapHttpClientProtocol.BeginInvoke Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.BeginInvoke Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHttpClientProtocol.BeginInvoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.BeginInvoke Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHttpClientProtocol.BeginInvoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.BeginInvoke Example/VB/source.vb#1)]  
+  
+ 次のコード例は、`Math`前述のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">要求は、サーバー コンピューターに到達が正常に処理されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">要求は、オブジェクトの現在の状態に対して無効でした。</exception>
+        <exception cref="T:System.Net.WebException">ネットワークへのアクセス中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Discover">
+      <MemberSignature Language="C#" Value="public void Discover ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Discover() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.Discover" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>探索ドキュメントで説明されている XML Web サービスを動的にバインド<see cref="P:System.Web.Services.Protocols.WebClientProtocol.Url" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML Web サービス クライアントは、XML Web サービス プロキシ クラスを使用して、参照されているもの以外に動的にバインドできます、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Discover%2A>メソッドです。 通常、<xref:System.Web.Services.Protocols.WebClientProtocol.Url%2A>プロパティは、XML Web サービスのベース アドレスを参照します。 呼び出す前に、ただし、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Discover%2A>方法、設定、<xref:System.Web.Services.Protocols.WebClientProtocol.Url%2A>プロパティを探索ドキュメントの URL。 <xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Discover%2A>メソッドは、プロキシ クラスで定義されているバインディングに探索ドキュメントで一致が見つからないし、して動的にバインドするを試みます。 成功した場合、後続のメソッド呼び出しは、探索ドキュメントで説明されている XML Web サービスに送られます。  
+  
+ プロキシ クラスが、XML Web サービス メソッドを使用してを呼び出すによって実装されるバインドを定義して Web サービス記述言語ツール (Wsdl.exe) を使用してプロキシ クラスを構築した場合、<xref:System.Web.Services.WebServiceBindingAttribute>です。 XML Web サービスには、複数のバインドが実装される場合、Wsdl.exe は各バインドのプロキシ クラスを作成します。 各プロキシ クラスが適用されている、<xref:System.Web.Services.WebServiceBindingAttribute>バインディングとその名前空間の名前を定義します。 設定した探索ドキュメント、<xref:System.Web.Services.Protocols.WebClientProtocol.Url%2A>プロパティには、同じバインディング名と名前空間を実装する XML Web サービスへの参照を含める必要がありますか、例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の Wsdl.exe ユーティリティを使用して生成されたプロキシ クラス、 `Math` XML Web サービスです。 A<xref:System.Web.Services.WebServiceBindingAttribute>に適用される、`Math`プロキシ クラスのバインディング名に設定`MathSoap`とその名前空間に`http://tempuri.org/`です。  
+  
+ [!code-cpp[SoapHttpClientProtocol.Discover Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapHttpClientProtocol.Discover Example/CPP/source.cpp#1)]
+ [!code-csharp[SoapHttpClientProtocol.Discover Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHttpClientProtocol.Discover Example/CS/source.cs#1)]
+ [!code-vb[SoapHttpClientProtocol.Discover Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHttpClientProtocol.Discover Example/VB/source.vb#1)]  
+  
+ 次のコード例は、前述のプロキシ クラスを使用して Web サービス クライアントです。 内で、 `EnterBtn_Click` Web フォーム、XML Web サービス クライアントの呼び出しのイベント、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Discover%2A>メソッド、ユーザーが指定した URL に動的にバインドしようとしています。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-csharp[SoapHttpClientProtocol.Discover Example#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHttpClientProtocol.Discover Example/CS/sourcecs.aspx#2)]
+ [!code-vb[SoapHttpClientProtocol.Discover Example#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHttpClientProtocol.Discover Example/VB/sourcevb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">プロキシ クラスには、定義されているバインドがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndInvoke">
+      <MemberSignature Language="C#" Value="protected object[] EndInvoke (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object[] EndInvoke(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" /> メソッドから返された <see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />。</param>
+        <summary>SOAP を使用して、XML Web サービス メソッドの非同期呼び出しを終了します。</summary>
+        <returns>戻り値と、参照渡しを含むオブジェクトの配列または<see langword="out" />派生クラスのメソッドのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、するは呼び出しません、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke%2A>メソッドを直接、XML Web サービス用の独自のプロキシ クラスを構築する場合を除き、します。  
+  
+ XML Web サービスの Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラスは、XML Web サービス メソッドを同期的に呼び出すためのプロキシ クラスの名前として、XML Web サービス メソッドを公開します。 XML Web サービス メソッドの非同期呼び出し、2 つのメソッドが追加で各 XML Web サービス メソッドのプロキシ クラスを`Begin`XML Web サービス メソッドと 1 つの名前に追加するプレフィックス、`End`プレフィックスを追加します。  
+  
+ プロキシ クラスの呼び出し、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke%2A>メソッドが、XML Web サービス メソッドへの非同期呼び出し呼び出しを完了します。 たとえば、XML Web サービスは、という名前の XML Web サービス メソッドを公開`Add`、プロキシ クラスには、という名前のメソッドが含まれています。 `EndAdd`、XML Web の非同期呼び出しを完了するためのサービス メソッドです。 コード内で、`EndAdd`への呼び出しが行われた、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke%2A>メソッドと結果が予期される戻り値の型に配置されます`Add`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の Wsdl.exe で生成されたプロキシ クラス、 `Math` XML Web サービスです。 内で、`EndAdd`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.EndInvoke%2A>メソッドへの非同期呼び出しを完了すると、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-cpp[Classic SoapHttpClientProtocol.EndInvoke Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.EndInvoke Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHttpClientProtocol.EndInvoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.EndInvoke Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHttpClientProtocol.EndInvoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.EndInvoke Example/VB/source.vb#1)]  
+  
+ 次のコード例は、`Math`前述のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="asyncResult" />戻り値ではありません、<see cref="M:System.Web.Services.Protocols.SoapHttpClientProtocol.BeginInvoke(System.String,System.Object[],System.AsyncCallback,System.Object)" />メソッドです。</exception>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">要求は、サーバー コンピューターに到達が正常に処理されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">要求は、オブジェクトの現在の状態に対して無効でした。</exception>
+        <exception cref="T:System.Net.WebException">ネットワークへのアクセス中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderForMessage">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.XmlReader GetReaderForMessage (System.Web.Services.Protocols.SoapClientMessage message, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.XmlReader GetReaderForMessage(class System.Web.Services.Protocols.SoapClientMessage message, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.GetReaderForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Protocols.SoapClientMessage" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />を提供する、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />初期化するために、<see cref="T:System.Xml.XmlReader" />です。</param>
+        <param name="bufferSize">初期のバッファー サイズ、<see cref="T:System.IO.StreamReader" />によって使用される、<see cref="T:System.Xml.XmlReader" />です。</param>
+        <summary>返します、<see cref="T:System.Xml.XmlReader" />による初期化を行う、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />のプロパティ、<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />パラメーター。</summary>
+        <returns>A<see cref="T:System.Xml.XmlReader" />による初期化を行う、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />のプロパティ、<paramref name="message" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebRequest">
+      <MemberSignature Language="C#" Value="protected override System.Net.WebRequest GetWebRequest (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Net.WebRequest GetWebRequest(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.GetWebRequest(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebRequest</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri"><see cref="T:System.Uri" />を作成するときに使用する、<see cref="T:System.Net.WebRequest" />です。</param>
+        <summary>指定した <paramref name="uri" /> に対して <see cref="T:System.Net.WebRequest" /> を作成します。</summary>
+        <returns><see cref="T:System.Net.WebRequest" />指定した URI 用です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドをオーバーライドして、カスタマイズ、<xref:System.Net.WebRequest>前 XML Web に、サービス要求が行われます。 たとえば、要求にカスタム ヘッダーを追加する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><paramref name="uri" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWriterForMessage">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.XmlWriter GetWriterForMessage (System.Web.Services.Protocols.SoapClientMessage message, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.XmlWriter GetWriterForMessage(class System.Web.Services.Protocols.SoapClientMessage message, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.GetWriterForMessage(System.Web.Services.Protocols.SoapClientMessage,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Web.Services.Protocols.SoapClientMessage" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />を提供する、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />初期化するために、<see cref="T:System.Xml.XmlWriter" />です。</param>
+        <param name="bufferSize">初期のバッファー サイズ、<see cref="T:System.IO.StreamWriter" />によって使用される、<see cref="T:System.Xml.XmlWriter" />です。</param>
+        <summary>返します、<see cref="T:System.Xml.XmlWriter" />による初期化を行う、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />のプロパティ、<see cref="T:System.Web.Services.Protocols.SoapClientMessage" />パラメーター。</summary>
+        <returns>A<see cref="T:System.Xml.XmlWriter" />による初期化を行う、<see cref="P:System.Web.Services.Protocols.SoapMessage.Stream" />のプロパティ、<paramref name="message" />パラメーター。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="protected object[] Invoke (string method_name, object[] parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object[] Invoke(string method_name, object[] parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="method_name">To be added.</param>
+        <param name="parameters">XML Web サービスに渡すパラメーターを格納するオブジェクトの配列。 配列内の値の順序は、派生クラスの呼び出し元のメソッド パラメーター順序に対応します。</param>
+        <summary>SOAP を同期的に使用する XML Web サービス メソッドを呼び出します。</summary>
+        <returns>オブジェクトの配列を戻り値とを含む<see langword="reference" />または<see langword="out" />派生クラスのメソッドのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、呼び出すことはありません、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke%2A>メソッドを直接、XML Web サービス用の独自のプロキシ クラスを作成する場合を除き、します。  
+  
+ XML Web サービスの Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラスは、プロキシ クラスの名前として、XML Web サービス メソッドを公開します。 プロキシ クラスの呼び出し、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke%2A>メソッドを呼び出して XML Web サービス メソッド呼び出しです。 たとえば、XML Web サービスは、という名前の XML Web サービス メソッドを公開`Add`、プロキシ クラスは、という名前のメソッドも含まれています。`Add`です。 コード内で、`Add`プロキシ クラスのメソッドを同期呼び出しが行われますを介して XML Web サービス メソッドに、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke%2A>メソッドと結果が予期される戻り値の型に配置されます`Add`です。  
+  
+ `methodName`パラメーターは、カスタム属性が追加されている、メソッドになどを見つける使用<xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>です。 <xref:System.Web.Services.Protocols.SoapDocumentMethodAttribute>SOAP プロトコルに必要な派生メソッドの追加情報を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の Wsdl.exe で生成されたプロキシ クラス、 `Math` XML Web サービスです。 内で、`Add`プロキシ クラスのメソッド、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke%2A>メソッドを呼び出して、 `Add` XML Web サービス メソッドです。  
+  
+ [!code-cpp[Classic SoapHttpClientProtocol.Invoke Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.Invoke Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic SoapHttpClientProtocol.Invoke Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.Invoke Example/CS/source.cs#1)]
+ [!code-vb[Classic SoapHttpClientProtocol.Invoke Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic SoapHttpClientProtocol.Invoke Example/VB/source.vb#1)]  
+  
+ 次のコード例は、`Math`前述のプロキシ クラスの作成元の XML Web サービスです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.Services.Protocols.SoapException">要求は、サーバー コンピューターに到達が正常に処理されませんでした。</exception>
+        <exception cref="T:System.InvalidOperationException">要求は、オブジェクトの現在の状態に対して無効でした。</exception>
+        <exception cref="T:System.Net.WebException">ネットワークへのアクセス中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="protected void InvokeAsync (string methodName, object[] parameters, System.Threading.SendOrPostCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvokeAsync(string methodName, object[] parameters, class System.Threading.SendOrPostCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.InvokeAsync(System.String,System.Object[],System.Threading.SendOrPostCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.Threading.SendOrPostCallback" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="parameters">メソッドに渡すパラメーター。</param>
+        <param name="callback">デリゲートは、メソッドの呼び出しが完了したときに呼び出されます。</param>
+        <summary>指定したメソッドを非同期的に呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeAsync">
+      <MemberSignature Language="C#" Value="protected void InvokeAsync (string methodName, object[] parameters, System.Threading.SendOrPostCallback callback, object userState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void InvokeAsync(string methodName, object[] parameters, class System.Threading.SendOrPostCallback callback, object userState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapHttpClientProtocol.InvokeAsync(System.String,System.Object[],System.Threading.SendOrPostCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+        <Parameter Name="parameters" Type="System.Object[]" />
+        <Parameter Name="callback" Type="System.Threading.SendOrPostCallback" />
+        <Parameter Name="userState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">呼び出すメソッドの名前。</param>
+        <param name="parameters">メソッドに渡すパラメーター。</param>
+        <param name="callback">デリゲートは、メソッドの呼び出しが完了したときに呼び出されます。</param>
+        <param name="userState">状態情報を渡すために使用されるオブジェクト、<c>コールバック</c>を委任します。</param>
+        <summary>指定したメソッドを非同期的に呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapVersion">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Protocols.SoapProtocolVersion SoapVersion { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Services.Protocols.SoapProtocolVersion SoapVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapHttpClientProtocol.SoapVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Protocols.SoapProtocolVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または XML Web サービスに SOAP 要求に使用される SOAP プロトコルのバージョンを設定します。</summary>
+        <value><see cref="T:System.Web.Services.Protocols.SoapProtocolVersion" /> 値のいずれか。 既定値は、<see cref="F:System.Web.Services.Protocols.SoapProtocolVersion.Soap11" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.SoapHttpClientProtocol.SoapVersion%2A>を Web サービス記述言語ツール (Wsdl.exe) によって生成されたプロキシ クラスにプロパティを設定<xref:System.Web.Services.Protocols.SoapProtocolVersion.Soap11>既定では、XML Web サービスの WSDL ドキュメントは、SOAP 1.1 をサポートするいるとします。 ただし、ときに XML Web サービスのみをサポートしている SOAP 1.2、Wsdl.exe セット、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.SoapVersion%2A>プロパティを<xref:System.Web.Services.Protocols.SoapProtocolVersion.Soap12>です。 Wsdl.exe とプロキシ クラスを生成するときに、SOAP プロトコルのバージョンを選択するには、使用、`/protocol`に切り替えて、`SOAP`または`SOAP12`を設定、<xref:System.Web.Services.Protocols.SoapHttpClientProtocol.SoapVersion%2A>プロパティを<xref:System.Web.Services.Protocols.SoapProtocolVersion.Soap11>と<xref:System.Web.Services.Protocols.SoapProtocolVersion.Soap12>、それぞれします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、SOAP 1.2 を XML Web サービスとの通信に使用するプロトコルのバージョンを設定します。  
+  
+ [!code-aspx-csharp[SoapHttpClientProtocol.SoapVersion#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapHttpClientProtocol.SoapVersion/CS/serverusageclientcs.aspx#1)]
+ [!code-aspx-vb[SoapHttpClientProtocol.SoapVersion#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapHttpClientProtocol.SoapVersion/VB/serverusageclientvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

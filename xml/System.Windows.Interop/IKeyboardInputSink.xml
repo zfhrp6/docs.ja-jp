@@ -1,0 +1,271 @@
+<Type Name="IKeyboardInputSink" FullName="System.Windows.Interop.IKeyboardInputSink">
+  <TypeSignature Language="C#" Value="public interface IKeyboardInputSink" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IKeyboardInputSink" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.IKeyboardInputSink" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>相互運用の境界を越えてと Hwnd の間では、tab キーを管理するコンポーネント、アクセラレータ、および ニーモニックのキーボード シンクを提供します。 このインターフェイスは、WPF の Win32 相互運用シナリオで、キーボード メッセージの管理を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーボード シンクの全般的なキーボードの入力モデルの特定のサブセットから入力を処理する[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]と[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]、でき、一部はキーボード入力を処理して、現在のキーボード フォーカスを持つ 1 つ以外 Hwnd に送られます。  
+  
+ コンポーネントが、他のコンポーネントが含まれています、タブの順序を維持する場合は、コンポーネントを実装する必要がありますも<xref:System.Windows.Interop.IKeyboardInputSite>のどのコンポーネントがフォーカスを追跡することです。  
+  
+ については、入力のアーキテクチャを具体的には実装されている[!INCLUDE[TLA#tla_winforms](~/includes/tlasharptla-winforms-md.md)]相互運用性を参照してください[Windows フォームと WPF の相互運用性入力アーキテクチャ](~/docs/framework/wpf/advanced/windows-forms-and-wpf-interoperability-input-architecture.md)です。  
+  
+ <xref:System.Windows.Interop.HwndSource>および<xref:System.Windows.Interop.HwndHost>各実装、<xref:System.Windows.Interop.IKeyboardInputSink>インターフェイスは、明示的なインターフェイスの定義を使用します。 明示的な定義は、既定の動作を指定で必要な場合にもアクセスできると、<xref:System.Windows.Interop.IKeyboardInputSink>のインターフェイスにキャスト<xref:System.Windows.Interop.HwndSource>または<xref:System.Windows.Interop.HwndHost>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HasFocusWithin">
+      <MemberSignature Language="C#" Value="public bool HasFocusWithin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool HasFocusWithin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>シンクまたはそのに含まれるコンポーネントのいずれかにフォーカスがあるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />シンクまたはそのに含まれるコンポーネントのいずれかのフォーカスがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、転送するために必要な<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>内からフォーカスを持つ子コンポーネントへの呼び出し、<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>実装します。 呼び出す<xref:System.Windows.Interop.IKeyboardInputSink.HasFocusWithin%2A>特定フォーカスと転送のレベルに到達するまで再帰的に<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyboardInputSite">
+      <MemberSignature Language="C#" Value="public System.Windows.Interop.IKeyboardInputSite KeyboardInputSite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Interop.IKeyboardInputSite KeyboardInputSite" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントのコンテナーへの参照を取得または<see cref="T:System.Windows.Interop.IKeyboardInputSite" />インターフェイスです。</summary>
+        <value>コンテナーへの参照を<see cref="T:System.Windows.Interop.IKeyboardInputSite" />インターフェイスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに最初に設定する必要があります`null`です。 シンク コンポーネント リストを追加するすべてのコンテナーは、設定<xref:System.Windows.Interop.IKeyboardInputSink.KeyboardInputSite%2A>他のメソッドが呼び出され、その後複数回を設定できる前にします。 プロパティを設定する必要があります`null`処分する前にもう一度です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMnemonic">
+      <MemberSignature Language="C#" Value="public bool OnMnemonic (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool OnMnemonic(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">ニーモニックと関連付けられているデータに関するメッセージ。 このメッセージの構造は変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>このシンクのニーモニック (アクセス キー) のいずれかが呼び出されると呼び出されます。</summary>
+        <returns>
+          メッセージが処理された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_win](~/includes/tlasharptla-win-md.md)] WM_CHAR、wm_syschar です、WM_DEADCHAR または WM_SYSDEADCHAR メッセージがある必要があります。  
+  
+ コンポーネントでは、含まれている各呼び出すことによって実装の場合は、コンポーネントには、コンポーネントが含まれているが、メッセージを渡す必要があります<xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic%2A>メソッドです。  
+  
+ 返すインターフェイス`true`から<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>を呼び出しません<xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic%2A>です。 実装がすべて特定のキーの組み合わせでの処理を実行するを選択できます<xref:System.Windows.Interop.IKeyboardInputSink.TranslateChar%2A>グループ 1 をバイパス<xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterKeyboardInputSink">
+      <MemberSignature Language="C#" Value="public System.Windows.Interop.IKeyboardInputSite RegisterKeyboardInputSink (System.Windows.Interop.IKeyboardInputSink sink);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Interop.IKeyboardInputSite RegisterKeyboardInputSink(class System.Windows.Interop.IKeyboardInputSink sink) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.RegisterKeyboardInputSink(System.Windows.Interop.IKeyboardInputSink)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Interop.IKeyboardInputSite</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sink" Type="System.Windows.Interop.IKeyboardInputSink" />
+      </Parameters>
+      <Docs>
+        <param name="sink"><see cref="T:System.Windows.Interop.IKeyboardInputSink" />含まれているコンポーネントのシンク。</param>
+        <summary>登録、<see cref="T:System.Windows.Interop.IKeyboardInputSink" />含まれているコンポーネントのインターフェイスです。</summary>
+        <returns><see cref="T:System.Windows.Interop.IKeyboardInputSite" />含まれているコンポーネントのサイトです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子コンポーネントとコンポーネントは、サイトの内部コレクションを保持し、このメソッドを使用して新しいシンクを追加および新しいサイトを返す必要があります。 だけで済みますサイト コレクションを維持するため、シンクは、サイトから取得することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabInto">
+      <MemberSignature Language="C#" Value="public bool TabInto (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TabInto(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.TabInto(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">フォーカスを最初のページまたは最後のタブ ストップを設定するかどうかを指定します。</param>
+        <summary>最初のタブ位置またはシンクの最後のタブ位置のいずれかにフォーカスを設定します。</summary>
+        <returns>
+          <see langword="true" />フォーカスが要求どおりに設定されている場合<see langword="false" />タブ ストップが存在しない場合、します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.FocusNavigationDirection.First>および<xref:System.Windows.Input.FocusNavigationDirection.Last>でこのメソッドに渡す必要があるだけに関連する値が格納されて、<xref:System.Windows.Input.TraversalRequest>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateAccelerator">
+      <MemberSignature Language="C#" Value="public bool TranslateAccelerator (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TranslateAccelerator(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>Keydown メッセージ レベルでのキーボード入力を処理します。</summary>
+        <returns>
+          <see langword="true" />メソッドの実装によって、メッセージが処理された場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WM_KEYDOWN または WM_SYSKEYDOWN メッセージでなければなりません。  
+  
+ コンポーネントが入力の変換を処理するようになっていて、翻訳を含めることがありますの子コンポーネントが場合、通常、呼び出します<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>メソッド結果を返す前に、現在のフォーカスを保持している子コンポーネントにします。  
+  
+ 場合は、メッセージは、すぐに処理できない場合、再ディスパッチできる、内から、<xref:System.Windows.Interop.IKeyboardInputSink.TranslateAccelerator%2A>実装が必要であれば、戻って`false`です。  
+  
+ アクセラレータ キーを変換するための主なシナリオが VK_TAB keydown メッセージを処理しを呼び出して、コンポーネント内でフォーカスを設定するかどうかを決定する<xref:System.Windows.Interop.IKeyboardInputSink.TabInto%2A>子コンポーネントにまたは呼び出しを行う<xref:System.Windows.Interop.IKeyboardInputSite.OnNoMoreTabStops%2A>親サイト タブ シーケンス境界の先頭または末尾に達したためです。 特定のコンポーネントは、この方法で tab キーを処理できないことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateChar">
+      <MemberSignature Language="C#" Value="public bool TranslateChar (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TranslateChar(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.IKeyboardInputSink.TranslateChar(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">メッセージと関連付けられているデータ。 この構造体を変更しないでください。 パフォーマンス上の理由からのみ参照によって渡されます。</param>
+        <param name="modifiers">修飾子キーです。</param>
+        <summary>前に、WM_CHAR、wm_syschar です、WM_DEADCHAR、および WM_SYSDEADCHAR 入力メッセージを処理<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />と呼びます。</summary>
+        <returns>
+          <see langword="true" />メッセージが処理された場合と<see cref="M:System.Windows.Interop.IKeyboardInputSink.OnMnemonic(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />と呼ばれる、それ以外を使用することはできません<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返すには、このメソッドを実装する場合`true`、入力のアーキテクチャを呼び出しません<xref:System.Windows.Interop.IKeyboardInputSink.OnMnemonic%2A>キー メッセージに対応します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

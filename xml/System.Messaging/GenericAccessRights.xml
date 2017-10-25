@@ -1,0 +1,112 @@
+<Type Name="GenericAccessRights" FullName="System.Messaging.GenericAccessRights">
+  <TypeSignature Language="C#" Value="public enum GenericAccessRights" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed GenericAccessRights extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.GenericAccessRights" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows 2000 および Windows NT アクセス形式を使用すると、メッセージ キューを読み取り、書き込み、および実行の両方の standard およびオブジェクト固有のアクセス権に割り当てられる一般的なアクセス権限のセットを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.GenericAccessRights>列挙体は、どのようなことを指定するは、通常、すべて、対応する標準および特定の権限を指定するよりも簡単に以下の詳細を提供します。 各オブジェクトの種類には、一連の標準 (ほとんどのセキュリティ保護可能なオブジェクトの種類に共通) への汎用的なアクセス権およびオブジェクト固有の権限をマップできます。  
+  
+ たとえば、読み取り、ユーザーに付与し、メッセージ キューへの書き込みアクセスにより、送信、ピーク、およびキューからメッセージを受信します。 ただし、さらに細かくアクセス権の制御、使用できます、<xref:System.Messaging.StandardAccessRights>と<xref:System.Messaging.MessageQueueAccessRights>列挙型を指定して、たとえば、ユーザーがここに表示できるけれども、メッセージが表示されないことをキューやメッセージを削除できますまたはキューのプロパティを設定できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.GenericAccessRights All = int32(268435456)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.GenericAccessRights.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り、書き込み、およびアクセスを実行します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="Execute" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.GenericAccessRights Execute = int32(536870912)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.GenericAccessRights.Execute" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを実行します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.GenericAccessRights None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.GenericAccessRights.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="Read" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.GenericAccessRights Read = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.GenericAccessRights.Read" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りアクセス。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="Write" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Messaging.GenericAccessRights Write = int32(1073741824)" />
+      <MemberSignature Language="DocId" Value="F:System.Messaging.GenericAccessRights.Write" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.GenericAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込みアクセス。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

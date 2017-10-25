@@ -1,0 +1,126 @@
+<Type Name="LinearColorKeyFrame" FullName="System.Windows.Media.Animation.LinearColorKeyFrame">
+  <TypeSignature Language="C#" Value="public class LinearColorKeyFrame : System.Windows.Media.Animation.ColorKeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinearColorKeyFrame extends System.Windows.Media.Animation.ColorKeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.LinearColorKeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.ColorKeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アニメーション化、 <see cref="T:System.Windows.Media.Color" /> 、それぞれに前のキー フレームの値<see cref="P:System.Windows.Media.Animation.ColorKeyFrame.Value" />線形補間を使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.ColorKeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>アニメーション化する、<xref:System.Windows.Media.Color>一連のキー フレームに沿って。  
+  
+ キー フレームのセグメントを定義する、<xref:System.Windows.Media.Animation.ColorAnimationUsingKeyFrames>属しています。 各キー フレームがターゲット<xref:System.Windows.Media.Animation.ColorKeyFrame.Value%2A>と<xref:System.Windows.Media.Animation.ColorKeyFrame.KeyTime%2A>です。 <xref:System.Windows.Media.Animation.ColorKeyFrame.KeyTime%2A>どの時点を指定します、キー フレームの<xref:System.Windows.Media.Animation.ColorKeyFrame.Value%2A>に到達します。 キー フレームは、前のキー フレームのターゲット値から独自のターゲット値をアニメーション化します。 前のキー フレームが終了し、独自のキーの日時に達したときに終了時に開始します。  
+  
+ などの線形のキー フレーム<xref:System.Windows.Media.Animation.LinearColorKeyFrame>滑らかで線形補間を作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearColorKeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearColorKeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearColorKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearColorKeyFrame (System.Windows.Media.Color value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Color value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearColorKeyFrame.#ctor(System.Windows.Media.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <summary>指定した終了値を使用して、<see cref="T:System.Windows.Media.Animation.LinearColorKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearColorKeyFrame (System.Windows.Media.Color value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Color value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearColorKeyFrame.#ctor(System.Windows.Media.Color,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Color" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">キー フレームの終了値 (「ターゲット値」)。</param>
+        <param name="keyTime">キー フレームのキー時刻。 キー時刻によりターゲット値に到達する時点が決まります。この時刻はキー フレームが終了する時点にもなります。</param>
+        <summary>指定した終了値とキー時刻を使用して <see cref="T:System.Windows.Media.Animation.LinearColorKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearColorKeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.LinearColorKeyFrame" /> の新しいインスタンスを作成します。</summary>
+        <returns>新しい <see cref="T:System.Windows.Media.Animation.LinearColorKeyFrame" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Color InterpolateValueCore (System.Windows.Media.Color baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Media.Color InterpolateValueCore(valuetype System.Windows.Media.Color baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.LinearColorKeyFrame.InterpolateValueCore(System.Windows.Media.Color,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Windows.Media.Color" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>指定された進行状況の増分を使用して、以前のキー フレーム値と現在のキー フレーム値の間の線形補間を実行します。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

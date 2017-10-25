@@ -1,0 +1,1105 @@
+<Type Name="WebBrowser" FullName="System.Windows.Controls.WebBrowser">
+  <TypeSignature Language="C#" Value="public sealed class WebBrowser : System.Windows.Interop.ActiveXHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WebBrowser extends System.Windows.Interop.ActiveXHost" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.WebBrowser" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Interop.ActiveXHost</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ホストし、HTML ドキュメント間を移動します。 WPF のマネージ コードと HTML スクリプトの間の相互運用性を有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.WebBrowser>コントロールには、次の機能が用意されています。  
+  
+ **ナビゲーション**: <xref:System.Windows.Controls.WebBrowser.Source%2A>、 <xref:System.Windows.Controls.WebBrowser.Navigate%2A>、 <xref:System.Windows.Controls.WebBrowser.NavigateToStream%2A>、 <xref:System.Windows.Controls.WebBrowser.NavigateToString%2A>、 <xref:System.Windows.Controls.WebBrowser.Refresh%2A>。  
+  
+ **ナビゲーションの有効期間**: <xref:System.Windows.Controls.WebBrowser.Navigating>、 <xref:System.Windows.Controls.WebBrowser.Navigated>、および<xref:System.Windows.Controls.WebBrowser.LoadCompleted>です。  
+  
+ **ナビゲーション履歴の作成**: <xref:System.Windows.Controls.WebBrowser.CanGoBack%2A>、 <xref:System.Windows.Controls.WebBrowser.GoBack%2A>、 <xref:System.Windows.Controls.WebBrowser.CanGoForward%2A>、および<xref:System.Windows.Controls.WebBrowser.GoForward%2A>です。  
+  
+ **WPF/HTML 相互運用性**:<xref:System.Windows.Controls.WebBrowser.InvokeScript%2A>と<xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A>、および<xref:System.Windows.Controls.WebBrowser.Document%2A>です。  
+  
+ <xref:System.Windows.Controls.WebBrowser>セキュリティ上の制約によってバインドされる、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]をホストしているアプリケーション、 <xref:System.Windows.Controls.WebBrowser>:  
+  
+-   ときに<xref:System.Windows.Controls.WebBrowser>が完全信頼でホストされている[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーション (スタンドアロン アプリケーションなど)、<xref:System.Windows.Controls.WebBrowser>をホストできる[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]任意の場所からドキュメント。  
+  
+-   ときに<xref:System.Windows.Controls.WebBrowser>が部分信頼でホストされている[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アプリケーション (、[!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]など)、<xref:System.Windows.Controls.WebBrowser>いるドキュメントがホストできる**配信元のサイト**アプリケーション データ ファイル。 詳細については、「[WPF アプリケーションのリソース、コンテンツ ファイル、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md)」を参照してください。  
+  
+> [!CAUTION]
+>  <xref:System.Windows.Controls.WebBrowser>コントロールが内部でネイティブの WebBrowser ActiveX コントロールをインスタンス化します。 WPF では、WebBrowser ActiveX コントロールにコントロールの機能を適用することでセキュリティ機能を使用します。 適用されている機能のコントロールは、Xbap とスタンドアロン アプリケーションで異なります。 一部のアプリケーションでは、悪意のあるコンテンツが実行されないようにする追加の機能のコントロールを適用する必要があります。 詳細についてを参照してください「WebBrowser コントロールおよび機能のコントロール」[セキュリティ (WPF)](~/docs/framework/wpf/security-wpf.md)と[WebBrowser コントロールの概要とチュートリアル](http://go.microsoft.com/fwlink/?LinkId=179388)です。  
+  
+   
+  
+## Examples  
+ 次の例は、構成する方法を示しています。<xref:System.Windows.Controls.WebBrowser>に移動する、[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]マークアップのみを使用してドキュメント。  
+  
+```xaml  
+<!-- Web Browser Control that hosts a web page. -->  
+<WebBrowser x:Name="webBrowser" Source="http://msdn.com"   
+  Width="600" Height="600"  />  
+```  
+  
+ 次の例は、構成する方法を示しています。<xref:System.Windows.Controls.WebBrowser>マークアップと分離コードを使用してドキュメントに移動します。  
+  
+```xaml  
+<StackPanel>  
+    <StackPanel Orientation="Horizontal">  
+        <TextBox x:Name="addressTextBox" Width="200" />  
+        <Button Click="goNavigateButton_Click">Go</Button>  
+    </StackPanel>  
+    <WebBrowser x:Name="myWebBrowser" />  
+</StackPanel>  
+```  
+  
+```csharp  
+private void goNavigateButton_Click(object sender, RoutedEventArgs e)  
+{  
+    // Get URI to navigate to  
+    Uri uri = new Uri(this.addressTextBox.Text, UriKind.RelativeOrAbsolute);  
+  
+    // Only absolute URIs can be navigated to  
+    if (!uri.IsAbsoluteUri)  
+    {  
+        MessageBox.Show("The Address URI must be absolute eg 'http://www.microsoft.com'");  
+        return;  
+    }  
+  
+    // Navigate to the desired URL by calling the .Navigate method  
+    this.myWebBrowser.Navigate(uri);  
+}  
+```  
+  
+ 次の例は、処理する方法を示しています、`NewWindow2`イベントおよび類似のイベントを使用して、<xref:System.Windows.Controls.WebBrowser>コントロール。 この例への参照が必要があります**SHDocVw.dll**、`using System.Runtime.InteropServices;`ステートメント、および<xref:System.Windows.Controls.WebBrowser>という名前のコントロール`webBrowser1`です。  
+  
+```csharp  
+public MainWindow()  
+{  
+    InitializeComponent();  
+  
+    var serviceProvider = (IServiceProvider)webBrowser1.Document;  
+    if (serviceProvider != null)  
+    {  
+        Guid serviceGuid = new Guid("0002DF05-0000-0000-C000-000000000046");  
+        Guid iid = typeof(SHDocVw.WebBrowser).GUID;  
+        var webBrowserPtr = (SHDocVw.WebBrowser)serviceProvider  
+            .QueryService(ref serviceGuid, ref iid);  
+        if (webBrowserPtr != null)  
+        {  
+            webBrowserPtr.NewWindow2 += webBrowser1_NewWindow2;  
+        }  
+    }  
+}  
+  
+private void webBrowser1_NewWindow2(ref object ppDisp, ref bool Cancel)  
+{  
+    // Handle the event.  
+}  
+  
+[ComImport, InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]  
+[Guid("6d5140c1-7436-11ce-8034-00aa006009fa")]  
+internal interface IServiceProvider  
+{  
+    [return: MarshalAs(UnmanagedType.IUnknown)]  
+    object QueryService(ref Guid guidService, ref Guid riid);  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebBrowser ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.WebBrowser" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.WebBrowserPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.WebBrowserPermissionLevel.Safe" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoBack">
+      <MemberSignature Language="C#" Value="public bool CanGoBack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoBack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.WebBrowser.CanGoBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>戻り先のドキュメントがあるかどうかを示す値を取得します。</summary>
+        <value>A<see cref="T:System.Boolean" />に戻るにドキュメントがあるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、呼び出すことによって、前のドキュメントに移動する方法を示しています。<xref:System.Windows.Controls.WebBrowser.GoBack%2A>です。 例では、最初に確認がドキュメントをチェックしてに戻るにこと<xref:System.Windows.Controls.WebBrowser.CanGoBack%2A>です。  
+  
+```csharp  
+private void backButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Navigate to the previous HTML document, if there is one  
+  if (this.webBrowser.CanGoBack)  
+  {  
+    this.webBrowser.GoBack();  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGoForward">
+      <MemberSignature Language="C#" Value="public bool CanGoForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGoForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.WebBrowser.CanGoForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>進み先のドキュメントがあるかどうかを示す値を取得します。</summary>
+        <value>A<see cref="T:System.Boolean" />移動先のドキュメントがあるかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、次に前方に移動する方法を示します[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]を呼び出してドキュメント<xref:System.Windows.Controls.WebBrowser.GoForward%2A>です。 例では、最初に確認をチェックして移動先のドキュメントが<xref:System.Windows.Controls.WebBrowser.CanGoForward%2A>です。  
+  
+```csharp  
+private void forwardButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Navigate to the next HTML document, if there is one  
+  if (this.webBrowser.CanGoForward)  
+  {  
+    this.webBrowser.GoForward();  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public object Document { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.WebBrowser.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストを表すドキュメント オブジェクトを取得[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]ページ。</summary>
+        <value>Document オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメント オブジェクトを必要とする COM インターフェイスにキャストする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このプロパティを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GoBack">
+      <MemberSignature Language="C#" Value="public void GoBack ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoBack() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.GoBack" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>前のドキュメントがある場合は、そのドキュメントに戻ります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す場合<xref:System.Windows.Controls.WebBrowser.GoBack%2A>に戻るにすべてのドキュメントが存在しないと<xref:System.Windows.Controls.WebBrowser>ナビゲーションは行われません、例外がスローされます。 値を検査することができますをする必要がある場合、<xref:System.Windows.Controls.WebBrowser.CanGoBack%2A>に戻るにドキュメントがあるかどうかを決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、前に移動する方法を示しています。[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]を呼び出してドキュメント<xref:System.Windows.Controls.WebBrowser.GoBack%2A>です。 例では、最初に確認がある[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]をチェックするドキュメントを移動するとバックアップ<xref:System.Windows.Controls.WebBrowser.CanGoBack%2A>です。  
+  
+```csharp  
+private void backButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Navigate to the previous HTML document, if there is one  
+  if (this.webBrowser.CanGoBack)  
+  {  
+    this.webBrowser.GoBack();  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">ドキュメントに戻るにはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GoForward">
+      <MemberSignature Language="C#" Value="public void GoForward ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GoForward() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.GoForward" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次のページに進む[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]いずれかを使用する必要がある場合に、文書化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す場合<xref:System.Windows.Controls.WebBrowser.GoForward%2A>前へ移動するには、すべてのドキュメントが存在しないと<xref:System.Windows.Controls.WebBrowser>ナビゲーションは行われません、例外がスローされます。 値を検査することができますをする必要がある場合、<xref:System.Windows.Controls.WebBrowser.CanGoForward%2A>移動先のドキュメントがあるかどうかを決定するプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、呼び出すことによって次のドキュメントに前方に移動する方法を示しています。<xref:System.Windows.Controls.WebBrowser.GoForward%2A>です。 例では、最初に確認をチェックして移動先のドキュメントが<xref:System.Windows.Controls.WebBrowser.CanGoForward%2A>です。  
+  
+```csharp  
+private void forwardButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Navigate to the next HTML document, if there is one  
+  if (this.webBrowser.CanGoForward)  
+  {  
+    this.webBrowser.GoForward();  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">移動先のドキュメントはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeScript">
+      <MemberSignature Language="C#" Value="public object InvokeScript (string scriptName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeScript(string scriptName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.InvokeScript(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scriptName">実行するスクリプト関数の名前。</param>
+        <summary>現在読み込まれているドキュメントによって実装されているスクリプト関数を実行します。</summary>
+        <returns>アクティブ スクリプト呼び出しによって返されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.WebBrowser.InvokeScript%28System.String%29>呼び出すことはできません前に、それを実装するドキュメントの読み込みが完了します。 ドキュメントが処理することにより読み込みを完了したときに検出することができます、<xref:System.Windows.Controls.WebBrowser.LoadCompleted>イベント。  
+  
+   
+  
+## Examples  
+ 次の例からのドキュメントにスクリプト関数を呼び出す方法を示しています、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]を使用してアプリケーション<xref:System.Windows.Controls.WebBrowser.InvokeScript%28System.String%29>です。 この例では、スクリプト関数にはパラメーターがありません。  
+  
+ 次に、[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]から呼び出されるスクリプト関数を実装するドキュメント[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]です。  
+  
+```html  
+<html>  
+    <head>  
+        <script type="text/javascript">  
+            // Function Without Parameters  
+            function JavaScriptFunctionWithoutParameters()    
+            {  
+              outputID.innerHTML = "JavaScript function called!";  
+            }  
+        </script>  
+    </head>  
+    <body>  
+    <div id="outputID" style="color:Red; font-size:16">  
+        Hello from HTML document with script!  
+    </div>  
+    </body>  
+</html>  
+```  
+  
+ 次に示す、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]実装にスクリプト関数を呼び出す、[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]ドキュメント。  
+  
+```csharp  
+private void callScriptFunctionNoParamButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Make sure the HTML document has loaded before attempting to  
+  // invoke script of the document page. You could set loadCompleted  
+  // to true when the LoadCompleted event on the WebBrowser fires.  
+  if (this.loadCompleted)  
+  {  
+    try  
+    {  
+      this.webBrowser.InvokeScript("JavaScriptFunctionWithoutParameters");  
+    }  
+    catch (Exception ex)  
+    {  
+      string msg = "Could not call script: " +  
+                   ex.Message +  
+                  "\n\nPlease click the 'Load HTML Document with Script' button to load.";  
+      MessageBox.Show(msg);  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スクリプト関数が存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeScript">
+      <MemberSignature Language="C#" Value="public object InvokeScript (string scriptName, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeScript(string scriptName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.InvokeScript(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="scriptName">実行するスクリプト関数の名前。</param>
+        <param name="args">スクリプト関数に渡すパラメーター。</param>
+        <summary>現在読み込まれているドキュメントで定義されているスクリプト関数を実行します。</summary>
+        <returns>アクティブ スクリプト呼び出しによって返されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.WebBrowser.InvokeScript%28System.String%2CSystem.Object%5B%5D%29>呼び出すことはできません前に、それを実装するドキュメントの読み込みが完了します。 ドキュメントが処理することにより読み込みを完了したときに検出することができます、<xref:System.Windows.Controls.WebBrowser.LoadCompleted>イベント。  
+  
+ 呼び出そうとするスクリプトに十分なパラメーター値を渡さない場合、値を渡すことのできないパラメーターは、未定義の値があります。 多くのパラメーター値を渡すと、余分な値は無視されます。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、アプリケーションからドキュメントでスクリプト関数を呼び出す方法を示しています。<xref:System.Windows.Controls.WebBrowser.InvokeScript%28System.String%2CSystem.Object%5B%5D%29>です。 この例では、スクリプト関数には、パラメーターが必要があります。  
+  
+ 呼び出されるスクリプト関数を実装するドキュメントを次に示します[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]です。  
+  
+```html  
+<html>  
+    <head>  
+        <script type="text/javascript">  
+            // Function Without Parameters  
+            function JavaScriptFunctionWithoutParameters()    
+            {  
+              outputID.innerHTML = "JavaScript function 'called: " + message + ".";  
+            }  
+        </script>  
+    </head>  
+    <body>  
+    <div id="outputID" style="color:Red; font-size:16">  
+        Hello from HTML document with script!  
+    </div>  
+    </body>  
+</html>  
+```  
+  
+ 次に示す、[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]実装をスクリプトを呼び出す関数、[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]ドキュメント。  
+  
+```csharp  
+private void callScriptFunctionNoParamButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Make sure the HTML document has loaded before attempting to  
+  // invoke script of the document page. You could set loadCompleted  
+  // to true when the LoadCompleted event on the WebBrowser fires.  
+  if (this.loadCompleted)  
+  {  
+    try  
+    {  
+      this.webBrowser.InvokeScript("JavaScriptFunctionWithoutParameters", this.messageTextBox.Text);  
+    }  
+    catch (Exception ex)  
+    {  
+      string msg = "Could not call script: " +  
+                   ex.Message +  
+                  "\n\nPlease click the 'Load HTML Document with Script' button to load.";  
+      MessageBox.Show(msg);  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Runtime.InteropServices.COMException">スクリプト関数が存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadCompleted">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.LoadCompletedEventHandler LoadCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.WebBrowser.LoadCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.LoadCompletedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のドキュメントのダウンロードが完了すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスが移動イベント ハンドラーに渡されましたが、 <xref:System.Windows.Navigation.NavigationEventArgs> Web 応答の詳細を含む、ナビゲーションに関するコンテキスト情報を提供するクラス。  
+  
+ このイベントは、最上位のナビゲーションに対してのみ発生されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Navigate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">移動先の URL。</param>
+        <summary>指定された URL にあるドキュメントに非同期に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.String%29>メソッド エスケープ文字を含む可能性のある URL に移動します。 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%29>に移動する方法、<xref:System.Uri>エスケープ文字は含まれていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (Uri source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(class System.Uri source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Navigate(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Uri" />に移動します。</param>
+        <summary>指定した位置のドキュメントに非同期に移動<see cref="T:System.Uri" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%29>設定と同じ効果を持つ、<xref:System.Windows.Controls.WebBrowser.Source%2A>プロパティです。 <xref:System.Windows.Controls.WebBrowser.Source%2A>マークアップからドキュメントの最初の宣言によって指定する必要とする開発者によって使用<xref:System.Windows.Controls.WebBrowser>が移動するときに<xref:System.Windows.Controls.WebBrowser>が初期化されています。  
+  
+ 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.String%29>メソッド エスケープ文字を含む可能性のある URL に移動します。 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%29>に移動する方法、<xref:System.Uri>エスケープ文字は含まれていません。  
+  
+   
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Windows.Controls.WebBrowser>を使用してドキュメントに移動する、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%29>メソッドです。  
+  
+```xaml  
+<StackPanel>  
+    <StackPanel Orientation="Horizontal">  
+        <TextBox x:Name="addressTextBox" Width="200" />  
+        <Button Click="goNavigateButton_Click">Go</Button>  
+    </StackPanel>  
+    <WebBrowser x:Name="myWebBrowser" />  
+</StackPanel>  
+```  
+  
+```csharp  
+private void goNavigateButton_Click(object sender, RoutedEventArgs e)  
+{  
+    // Get URI to navigate to  
+    Uri uri = new Uri(this.addressTextBox.Text, UriKind.RelativeOrAbsolute);  
+  
+    // Only absolute URIs can be navigated to  
+    if (!uri.IsAbsoluteUri)  
+    {  
+        MessageBox.Show("The Address URI must be absolute eg 'http://www.microsoft.com'");  
+        return;  
+    }  
+  
+    // Navigate to the desired URL by calling the .Navigate method  
+    this.myWebBrowser.Navigate(uri);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼で実行されているアプリケーションからの移動、<see cref="T:System.Uri" />外にある配置元のサイトにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (string source, string targetFrameName, byte[] postData, string additionalHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(string source, string targetFrameName, unsigned int8[] postData, string additionalHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Navigate(System.String,System.String,System.Byte[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="targetFrameName" Type="System.String" />
+        <Parameter Name="postData" Type="System.Byte[]" />
+        <Parameter Name="additionalHeaders" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">移動先の URL。</param>
+        <param name="targetFrameName">ドキュメントのコンテンツを表示するフレームの名前。</param>
+        <param name="postData">ソースが要求されたときにサーバーに送信する HTTP POST データ。</param>
+        <param name="additionalHeaders">ソースが要求されたときにサーバーに送信する HTTP ヘッダー。</param>
+        <summary>指定された URL にあるドキュメントに非同期に移動し、ドキュメントのコンテンツを読み込むターゲット フレームを指定します。 追加の HTTP POST データおよび HTTP ヘッダーを、ナビゲーション要求の一部としてサーバーに送信できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.String%2CSystem.String%2CSystem.Byte%5B%5D%2CSystem.String%29>メソッド エスケープ文字を含む可能性のある URL に移動します。 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%2CSystem.String%2CSystem.Byte%5B%5D%2CSystem.String%29>に移動する方法、<xref:System.Uri>エスケープ文字は含まれていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (Uri source, string targetFrameName, byte[] postData, string additionalHeaders);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(class System.Uri source, string targetFrameName, unsigned int8[] postData, string additionalHeaders) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Navigate(System.Uri,System.String,System.Byte[],System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Uri" />
+        <Parameter Name="targetFrameName" Type="System.String" />
+        <Parameter Name="postData" Type="System.Byte[]" />
+        <Parameter Name="additionalHeaders" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.Uri" />に移動します。</param>
+        <param name="targetFrameName">ドキュメントのコンテンツを表示するフレームの名前。</param>
+        <param name="postData">ソースが要求されたときにサーバーに送信する HTTP POST データ。</param>
+        <param name="additionalHeaders">ソースが要求されたときにサーバーに送信する HTTP ヘッダー。</param>
+        <summary>指定した位置のドキュメントに非同期に移動<see cref="T:System.Uri" />し、ドキュメントの内容を読み込むターゲット フレームを指定します。 追加の HTTP POST データおよび HTTP ヘッダーを、ナビゲーション要求の一部としてサーバーに送信できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.String%2CSystem.String%2CSystem.Byte%5B%5D%2CSystem.String%29>メソッド エスケープ文字を含む可能性のある URL に移動します。 使用して、<xref:System.Windows.Controls.WebBrowser.Navigate%28System.Uri%2CSystem.String%2CSystem.Byte%5B%5D%2CSystem.String%29>に移動する方法、<xref:System.Uri>エスケープ文字は含まれていません。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントに移動しを指定して新しいブラウザー ウィンドウで開く方法、"に関する: 空白"ターゲットです。  
+  
+```xaml  
+<StackPanel>  
+    <StackPanel Orientation="Horizontal">  
+        <TextBox x:Name="addressTextBox" Width="200" />  
+        <Button Click="goNavigateButton_Click">Go</Button>  
+    </StackPanel>  
+    <WebBrowser x:Name="myWebBrowser" />  
+</StackPanel>  
+```  
+  
+```csharp  
+private void goNavigateButton_Click(object sender, RoutedEventArgs e)  
+{  
+    // Get URI to navigate to  
+    Uri uri = new Uri(this.addressTextBox.Text, UriKind.RelativeOrAbsolute);  
+  
+    // Only absolute URIs can be navigated to  
+    if (!uri.IsAbsoluteUri)  
+    {  
+        MessageBox.Show("The Address URI must be absolute eg 'http://www.microsoft.com'");  
+        return;  
+    }  
+  
+    // Navigate to the desired URL by calling the .Navigate method  
+    this.myWebBrowser.Navigate(uri, "_blank", null, null);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼で実行されているアプリケーションからの移動:  
+  
+-   <see cref="T:System.Uri" />外にある配置されて、元のサイトで、または  
+  
+-   <paramref name="targetFrameName" />名前が<see langword="null" />または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigated">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatedEventHandler Navigated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatedEventHandler Navigated" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.WebBrowser.Navigated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>移動先のドキュメントがあり、ダウンロードを開始したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスが移動イベント ハンドラーに渡されましたが、 <xref:System.Windows.Navigation.NavigationEventArgs> Web 応答の詳細を含む、ナビゲーションに関するコンテキスト情報を提供するクラス。  
+  
+ このイベントは、最上位のナビゲーションに対してのみ発生されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateToStream">
+      <MemberSignature Language="C#" Value="public void NavigateToStream (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NavigateToStream(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.NavigateToStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream"><see cref="T:System.IO.Stream" />ドキュメントのコンテンツを格納しています。</param>
+        <summary>非同期的に移動、<see cref="T:System.IO.Stream" />ドキュメントのコンテンツを格納しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`stream`パラメーターは`null`、<xref:System.Windows.Controls.WebBrowser>が空白のドキュメントに移動 ("に関する: 空白") です。  
+  
+ Stream パラメーターにない場合、有効な[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]形式がプレーン テキストとして表示されます。  
+  
+ ナビゲーションの後に<xref:System.Windows.Controls.WebBrowser.Source%2A>なります`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントを格納しているストリームに移動する方法を示します。  
+  
+```csharp  
+private void goNavigateToStreamButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Load HTML document as a stream  
+  Uri uri = new Uri(@"pack://application:,,,/HTMLDocumentWithScript.html", UriKind.Absolute);  
+  Stream source = Application.GetResourceStream(uri).Stream;  
+  
+  // Navigate to HTML document stream  
+  this.webBrowser.NavigateToStream(source);  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateToString">
+      <MemberSignature Language="C#" Value="public void NavigateToString (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void NavigateToString(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.NavigateToString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text"><see cref="T:System.String" />ドキュメントのコンテンツを格納しています。</param>
+        <summary>非同期的に移動、<see cref="T:System.String" />ドキュメントのコンテンツを格納しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`text`パラメーターは`null`、<xref:System.Windows.Controls.WebBrowser>が空白のドキュメントに移動 ("に関する: 空白") です。  
+  
+ Text パラメーターが有効でない場合[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]形式がプレーン テキストとして表示されます。  
+  
+ ナビゲーションの後に<xref:System.Windows.Controls.WebBrowser.Source%2A>なります`null`です。  
+  
+   
+  
+## Examples  
+ 次の例では、ドキュメントを含む文字列を移動する方法を示します。  
+  
+```csharp  
+private void goNavigateToStringButton_Click(object sender, RoutedEventArgs e)  
+{  
+  // Load HTML document as a string  
+  Uri uri = new Uri(@"pack://application:,,,/HTMLDocumentWithoutScript.html", UriKind.Absolute);  
+  Stream stream = Application.GetResourceStream(uri).Stream;  
+  using (StreamReader reader = new StreamReader(stream))  
+  {  
+    // Navigate to HTML document string  
+    this.webBrowser.NavigateToString(reader.ReadToEnd());  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigating">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.NavigatingCancelEventHandler Navigating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.NavigatingCancelEventHandler Navigating" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.WebBrowser.Navigating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.NavigatingCancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントに移動する直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーの間を移動するには、インスタンスが渡される、<xref:System.Windows.Navigation.NavigatingCancelEventArgs>クラスです。 設定して、ナビゲーションを取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Windows.Navigation.NavigatingCancelEventArgs>オブジェクトを`true`です。  
+  
+ このイベントは、最上位のナビゲーションに対してのみ発生されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectForScripting">
+      <MemberSignature Language="C#" Value="public object ObjectForScripting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ObjectForScripting" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.WebBrowser.ObjectForScripting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストされているドキュメントからスクリプトでアクセスできる、ホスト アプリケーションによって実装されているパブリック クラスのインスタンスを取得または設定します。</summary>
+        <value><see cref="T:System.Object" />のインスタンスである、<see langword="public" />クラス、ホストされているドキュメントからスクリプトでアクセスできるホスト アプリケーションによって実装されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、そのパブリック プロパティとメソッドのスクリプト コードを使用する任意の COM から参照できるオブジェクトを設定できます。 マークすることによって COM 参照可能クラスを行うことができます、<xref:System.Runtime.InteropServices.ComVisibleAttribute>です。  
+  
+ スクリプトは、現在のドキュメントに公開されるに対して設定されているオブジェクト、 [!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)] DOM を使用して、`window.external`プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Controls.WebBrowser.ObjectForScripting" />はない型のインスタンスに設定されている<see langword="COMVisible" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のページを再読み込みします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public void Refresh (bool noCache);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Refresh(bool noCache) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.Refresh(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="noCache" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="noCache">キャッシュ検証を行わずに最新の情報に更新するかどうかを指定します。</param>
+        <summary>オプションのキャッシュ検証を使用して現在のページを再読み込みします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`noCache`は`true`、<xref:System.Windows.Controls.WebBrowser>キャッシュ検証を伴わない更新を送信することによって制御、"Pragma:no-キャッシュ"ヘッダー、サーバーにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public Uri Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Source" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.WebBrowser.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Uri" />でホストされている現在のドキュメントの<see cref="T:System.Windows.Controls.WebBrowser" />です。</summary>
+        <value><see cref="T:System.Uri" />現在の[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]ドキュメント。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース プロパティの原因を設定<xref:System.Windows.Controls.WebBrowser>で指定されたドキュメントに移動する、<xref:System.Uri>です。 場合、<xref:System.Uri>は`null`、空白の文書が表示されます ("に関する: 空白") です。  
+  
+   
+  
+## Examples  
+ 次の例は、構成する方法を示しています。<xref:System.Windows.Controls.WebBrowser>に移動する、[!INCLUDE[TLA2#tla_html](~/includes/tla2sharptla-html-md.md)]マークアップのみを使用してドキュメント。  
+  
+```xaml  
+<!-- Web Browser Control that hosts a web page. -->  
+<WebBrowser x:Name="webBrowser" Source="http://msdn.com"   
+  Width="600" Height="600"  />  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.Windows.Controls.WebBrowser" />インスタンスが有効ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">基になるネイティブへの参照を<c>WebBrowser</c>を取得できませんでした。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼で実行されているアプリケーションからの移動、<see cref="T:System.Uri" />外にある配置元のサイトにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TabIntoCore">
+      <MemberSignature Language="C#" Value="protected override bool TabIntoCore (System.Windows.Input.TraversalRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool TabIntoCore(class System.Windows.Input.TraversalRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.TabIntoCore(System.Windows.Input.TraversalRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Windows.Input.TraversalRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateAcceleratorCore">
+      <MemberSignature Language="C#" Value="protected override bool TranslateAcceleratorCore (ref System.Windows.Interop.MSG msg, System.Windows.Input.ModifierKeys modifiers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool TranslateAcceleratorCore(valuetype System.Windows.Interop.MSG&amp; msg, valuetype System.Windows.Input.ModifierKeys modifiers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.WebBrowser.TranslateAcceleratorCore(System.Windows.Interop.MSG@,System.Windows.Input.ModifierKeys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Windows.Interop.MSG&amp;" RefType="ref" />
+        <Parameter Name="modifiers" Type="System.Windows.Input.ModifierKeys" />
+      </Parameters>
+      <Docs>
+        <param name="msg">To be added.</param>
+        <param name="modifiers">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

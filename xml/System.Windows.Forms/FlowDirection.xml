@@ -1,0 +1,102 @@
+<Type Name="FlowDirection" FullName="System.Windows.Forms.FlowDirection">
+  <TypeSignature Language="C#" Value="public enum FlowDirection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FlowDirection extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FlowDirection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>線形のレイアウト コンテナーに連続するユーザー インターフェイス (UI) 要素が配置される方向を指定する定数を定義します</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FlowDirection>列挙体を連続する UI 要素のフローの方向を説明します。 通常コントロールのデザイン画面またはフォームなどのコンテナーです。 この列挙はなどの線形のレイアウト コンテナーによって使用<xref:System.Windows.Forms.FlowLayoutPanel>、内部にこの情報を格納する、<xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Windows.Forms.FlowDirection>配置場所を指定、新しいコントロールが既定ではサポートするコンテナーに追加されたとき。 コンテナー内のフローの方向と組み合わせて、<xref:System.Windows.Forms.Control.Anchor%2A>と<xref:System.Windows.Forms.Control.Dock%2A>の各プロパティには、コントロールが含まれている、そのコンテナーのサイズが変更されるときに、コントロールの再配置を決定します。  
+  
+ <xref:System.Windows.Forms.FlowLayoutPanel>コントロールには、`FlowBreak`の子コントロールのプロパティです。 値を設定、`FlowBreak`プロパティを`true`により、<xref:System.Windows.Forms.FlowLayoutPanel>コントロールで現在のフロー方向および次の行または列にラップするコントロールのレイアウト操作を停止します。  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A>プロパティを<xref:System.Windows.Forms.FlowLayoutPanel>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.FlowLayoutPanel>コントロール。  
+  
+ [!code-cpp[System.Windows.Forms.FlowLayoutPanel#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FlowLayoutPanel/cpp/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.FlowLayoutPanel#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FlowLayoutPanel/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.FlowLayoutPanel#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FlowLayoutPanel/VB/form1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BottomUp">
+      <MemberSignature Language="C#" Value="BottomUp" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlowDirection BottomUp = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlowDirection.BottomUp" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素のフローは、デザイン画面の下部にある最上位にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftToRight">
+      <MemberSignature Language="C#" Value="LeftToRight" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlowDirection LeftToRight = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlowDirection.LeftToRight" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素は、デザイン サーフェイスの左エッジから右に並べられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="RightToLeft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlowDirection RightToLeft = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlowDirection.RightToLeft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素は、デザイン画面の右エッジから左に並べられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TopDown">
+      <MemberSignature Language="C#" Value="TopDown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.FlowDirection TopDown = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FlowDirection.TopDown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FlowDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素は、デザイン画面の最上位から最下位に並べられます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

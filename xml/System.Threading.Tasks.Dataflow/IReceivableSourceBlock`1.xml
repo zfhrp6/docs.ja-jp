@@ -1,0 +1,105 @@
+<Type Name="IReceivableSourceBlock&lt;TOutput&gt;" FullName="System.Threading.Tasks.Dataflow.IReceivableSourceBlock&lt;TOutput&gt;">
+  <TypeSignature Language="C#" Value="public interface IReceivableSourceBlock&lt;TOutput&gt; : System.Threading.Tasks.Dataflow.ISourceBlock&lt;TOutput&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IReceivableSourceBlock`1&lt;TOutput&gt; implements class System.Threading.Tasks.Dataflow.IDataflowBlock, class System.Threading.Tasks.Dataflow.ISourceBlock`1&lt;!TOutput&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+    <AssemblyVersion>4.6.0.0</AssemblyVersion>
+    <AssemblyVersion>4.6.1.0</AssemblyVersion>
+    <AssemblyVersion>4.6.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TOutput" />
+  </TypeParameters>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Threading.Tasks.Dataflow.ISourceBlock&lt;TOutput&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TOutput">により提供されるデータの種類を指定、<see cref="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />です。</typeparam>
+    <summary>リンクせずにメッセージの受信をサポートするデータフロー ブロックを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  TPL データ フローのライブラリ (<xref:System.Threading.Tasks.Dataflow> 名前空間) は [!INCLUDE[net_v45](~/includes/net-v45-md.md)] と一緒に配布されません。 インストールする、<xref:System.Threading.Tasks.Dataflow>名前空間でプロジェクトを開く[!INCLUDE[vs_dev11_long](~/includes/vs-dev11-long-md.md)]、選択**NuGet パッケージの管理**プロジェクト メニューのおよびオンラインで検索から、`Microsoft.Tpl.Dataflow`パッケージ。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TryReceive">
+      <MemberSignature Language="C#" Value="public bool TryReceive (Predicate&lt;TOutput&gt; filter, out TOutput item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReceive(class System.Predicate`1&lt;!TOutput&gt; filter, [out] !TOutput&amp; item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceive(System.Predicate{`0},`0@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter" Type="System.Predicate&lt;TOutput&gt;" />
+        <Parameter Name="item" Type="TOutput&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="filter">述語の値は、受信するために正常に渡す必要があります。  <c>フィルター</c>可能性があります<see langword="null" />、後者のすべての項目が渡されます。</param>
+        <param name="item">ソースから受信したアイテムです。</param>
+        <summary>使用可能な出力項目を同期的に受信する試みを<see cref="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />です。</summary>
+        <returns>
+          <see langword="true" />項目が受信される可能性があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、項目を提供するソースの待機をブロックしません。  
+  
+ 要素が使用できるかどうかを要素を確認してから返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryReceiveAll">
+      <MemberSignature Language="C#" Value="public bool TryReceiveAll (out System.Collections.Generic.IList&lt;TOutput&gt; items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReceiveAll([out] class System.Collections.Generic.IList`1&lt;!TOutput&gt;&amp; items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1.TryReceiveAll(System.Collections.Generic.IList{`0}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks.Dataflow</AssemblyName>
+        <AssemblyVersion>4.6.0.0</AssemblyVersion>
+        <AssemblyVersion>4.6.1.0</AssemblyVersion>
+        <AssemblyVersion>4.6.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.Generic.IList&lt;TOutput&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="items">アイテムのソースから受信されます。</param>
+        <summary>すべての利用可能な項目を同期的に受信しようとしています、<see cref="T:System.Threading.Tasks.Dataflow.IReceivableSourceBlock`1" />です。</summary>
+        <returns>
+          <see langword="true" />場合は 1 つまたは複数の項目を受信した可能性があります。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、項目を提供するソースの待機をブロックしません。  
+  
+ 要素が使用できるかどうかを要素を確認してから返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

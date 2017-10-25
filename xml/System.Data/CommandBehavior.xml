@@ -1,0 +1,247 @@
+<Type Name="CommandBehavior" FullName="System.Data.CommandBehavior">
+  <TypeSignature Language="C#" Value="public enum CommandBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CommandBehavior extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.CommandBehavior" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クエリの結果と、データベースに対するその影響についての説明を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.CommandBehavior>値が使用、<xref:System.Data.IDbCommand.ExecuteReader%2A>メソッドの<xref:System.Data.IDbCommand>およびそれから派生した任意のクラスです。  
+  
+ これらの値のビットごとの組み合わせを使用することがあります。  
+  
+ <xref:System.Data.CommandBehavior>定義に使用する場合は無視されます、<xref:System.Data.Sql.SqlNotificationRequest>または<xref:System.Data.SqlClient.SqlDependency>はそのため、使用できません。 必要としないコンス トラクターを使用して、`CommandBehavior`これら 2 つのケースのパラメーターです。  
+  
+> [!NOTE]
+>  SequentialAccess を使用して、値が大きいとバイナリ データを取得します。 それ以外の場合、<xref:System.OutOfMemoryException>が発生して、接続は閉じられます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CloseConnection">
+      <MemberSignature Language="C#" Value="CloseConnection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior CloseConnection = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.CloseConnection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが実行されると、関連付けられた<see langword="Connection" />オブジェクトが閉じられるときに、関連付けられている<see langword="DataReader" />オブジェクトは閉じられます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリでは、複数の結果セットを返す可能性があります。 クエリの実行、データベースの状態に影響を与える可能性があります。 <see langword="Default" />no を設定<see cref="T:System.Data.CommandBehavior" />を呼び出すためのフラグ<see langword="ExecuteReader(CommandBehavior.Default)" />機能的には、呼び出し元は<see langword="ExecuteReader()" />します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyInfo">
+      <MemberSignature Language="C#" Value="KeyInfo" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior KeyInfo = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.KeyInfo" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリでは、列と主キーの情報を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コマンドの実行で必要な KeyInfo を使用すると、プロバイダーは、既存の主キーの結果セットに列を追加し、timestamp 列に追加されます。  
+  
+ 必要な KeyInfo を使用する場合、.NET Framework Data Provider for SQL Server には、SET FMTONLY OFF、SET NO_BROWSETABLE ON を実行中のステートメントが前に付きます。 ユーザーは、SET FMTONLY ON ステートメントの使用を妨害など、潜在的な副作用を認識する必要があります。 詳細については SQL Server オンライン ブックを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaOnly">
+      <MemberSignature Language="C#" Value="SchemaOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior SchemaOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.SchemaOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリでは、列情報だけを返します。 使用する場合<see cref="F:System.Data.CommandBehavior.SchemaOnly" />、SET FMTONLY ON を実行中のステートメントの前に、.NET Framework Data Provider for SQL Server。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SequentialAccess">
+      <MemberSignature Language="C#" Value="SequentialAccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior SequentialAccess = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.SequentialAccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>方法を提供、<see langword="DataReader" />大きなバイナリ値を含む列を含む行を処理します。 行全体の読み込みではなく<see langword="SequentialAccess" />により、<see langword="DataReader" />をストリームとしてデータを読み込みます。 使用してできます、<see langword="GetBytes" />または<see langword="GetChars" />メソッドを読み取り操作と返されるデータの制限されたバッファー サイズを開始するバイトの場所を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定すると`SequentialAccess`、各列を読み取る必要はありませんが、返される順序で列から読み取る必要があります。 過去のデータの返されたストリーム内の場所を読んだ後データまたはその場所の前に不要になった読み取ることができます、`DataReader`です。 使用する場合、 <xref:System.Data.OleDb.OleDbDataReader>、を越えて読み取りまで、現在の列の値を再度読み取ることができます。 使用する場合、<xref:System.Data.SqlClient.SqlDataReader>列の値を 1 度しか読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleResult">
+      <MemberSignature Language="C#" Value="SingleResult" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior SingleResult = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.SingleResult" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリでは、単一の結果セットを返します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleRow">
+      <MemberSignature Language="C#" Value="SingleRow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.CommandBehavior SingleRow = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.CommandBehavior.SingleRow" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.CommandBehavior</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリは、最初の結果セットの 1 つの行を返すと想定されます。 クエリの実行、データベースの状態に影響を与える可能性があります。 一部の .NET Framework データ プロバイダーは、可能性がありますが、コマンドのパフォーマンスを最適化するためにこの情報を使用する必要はありません。 指定すると<see cref="F:System.Data.CommandBehavior.SingleRow" />で、<see cref="M:System.Data.OleDb.OleDbCommand.ExecuteReader" />のメソッド、<see cref="T:System.Data.OleDb.OleDbCommand" />オブジェクト、.NET Framework Data Provider for OLE DB、OLE DB を使用してバインドを実行する<see langword="IRow" />インターフェイスの使用可能になる場合。 それ以外の場合、使用して、<see langword="IRowset" />インターフェイスです。 SQL ステートメントが 1 つの行のみを返すと予想される場合を指定する<see cref="F:System.Data.CommandBehavior.SingleRow" />もアプリケーションのパフォーマンスを向上させることができます。 指定することは<see langword="SingleRow" />を複数の結果セットを返すと予想されるクエリを実行するときにします。  その場合は、ここで複数の結果セットの SQL クエリとの両方 1 つの行が指定されて、返される結果にはは最初の結果セットの最初の行のみが含まれます。 クエリの他の結果セットは返されません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

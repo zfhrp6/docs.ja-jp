@@ -1,0 +1,1632 @@
+<Type Name="XslCompiledTransform" FullName="System.Xml.Xsl.XslCompiledTransform">
+  <TypeSignature Language="C#" Value="public sealed class XslCompiledTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed XslCompiledTransform extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Xsl.XslCompiledTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XSLT スタイル シートを使用して、XML データを変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートする XSLT プロセッサです。 これには、新たに実装されてを古い形式と比較した場合、パフォーマンスの向上を含めた<xref:System.Xml.Xsl.XslTransform>クラスです。 構造、<xref:System.Xml.Xsl.XslCompiledTransform>クラスとよく似ています、<xref:System.Xml.Xsl.XslTransform>クラスです。 <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドの読み込みおよびスタイルをコンパイル中に、シート、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドは、XSLT 変換を実行します。  
+  
+ XSLT のサポート`document()`関数と埋め込みのスクリプト ブロックは、既定で無効にします。 作成することで、これらの機能を有効にすることができます、<xref:System.Xml.Xsl.XsltSettings>オブジェクトを渡すと、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドです。  
+  
+ 詳細については、次を参照してください。 [XslCompiledTransform クラスを使用して](~/docs/standard/data/xml/using-the-xslcompiledtransform-class.md)と[XslTransform クラスからの移行](~/docs/standard/data/xml/migrating-from-the-xsltransform-class.md)です。  
+  
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ <xref:System.Xml.Xsl.XslCompiledTransform> クラスを使用するアプリケーションを作成するときには、次の項目とその関連事項に注意する必要があります。  
+  
+-   XSLT スクリプトは既定で無効になっています。 XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。  
+  
+-   XSLT `document()` 関数は既定で無効になっています。 `document()` 関数を有効にした場合は、<xref:System.Xml.XmlSecureResolver> オブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡すことによって、アクセス可能なリソースを制限してください。  
+  
+-   拡張オブジェクトは既定で有効になっています。 拡張オブジェクトを含む <xref:System.Xml.Xsl.XsltArgumentList> オブジェクトが <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡されると、拡張オブジェクトは使用されます。  
+  
+-   XSLT スタイル シートには、他のファイルへの参照や埋め込みのスクリプト ブロックを含めることができます。 悪意のあるユーザーがこれを悪用して、コンピューターがリソース不足に陥るまでシステムに処理を行わせようとするデータやスタイル シートを提供する可能性があります。  
+  
+-   混在信頼環境で動作する XSLT アプリケーションは、スタイル シートのなりすましを引き起こす可能性があります。 たとえば、悪意のあるユーザーは、有害なスタイル シートを含むオブジェクトを読み込み、それを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドを呼び出して変換を実行する別のユーザーに渡す可能性があります。  
+  
+ これらのセキュリティ上の問題は、スタイル シートが信頼されたソースからのものでない限り、スクリプトや `document()` 関数を有効にしないこと、および信頼されていないソースからの <xref:System.Xml.Xsl.XslCompiledTransform> オブジェクト、XSLT スタイル シート、または XML ソース データを受け入れないことによって軽減できます。  
+  
+   
+  
+## Examples  
+ 次の例では、変換を実行して、ファイルに出力します。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#1](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#1)]
+ [!code-vb[XslCompiledTransform.Transform#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#1)]  
+  
+ このサンプルでは、次の 2 つの入力ファイルを使用します。  
+  
+ `books.xml`  
+  
+ [!code-xml[Classic WebData XslTransform.Transform7 Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XslTransform.Transform7 Example/XML/books.xml#2)]  
+  
+ `output.xsl`  
+  
+ [!code-xml[Classic WebData XslTransform.Transform7 Example#3](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XslTransform.Transform7 Example/XML/output.xsl#3)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe><see cref="T:System.Xml.Xsl.XslCompiledTransform" />が読み込まれる、オブジェクトはスレッド セーフであります。 つまり、後に、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />メソッドが正常に完了すると、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Transform" />メソッドは複数のスレッドから同時に呼び出すことができます。  
+  
+ 場合、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />中に 1 つのスレッドでメソッドが再度呼び出さ、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Transform" />メソッドが別のスレッドで呼び出される、<see cref="T:System.Xml.Xsl.XslCompiledTransform" />オブジェクトは、実行が完了したら、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Transform" />を引き続き以前の状態を使用して呼び出します。 新しい状態が使用されるときに、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />メソッドが正常に完了するとします。  
+  
+ <block subset="none" type="note"><para>  
+ <see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />メソッドはスレッド セーフの複数のスレッドから同時に呼び出されたときにではありません。  
+  
+</para></block></threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XslCompiledTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Xsl.XslCompiledTransform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XslCompiledTransform (bool enableDebug);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool enableDebug) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="enableDebug" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="enableDebug">
+          <see langword="true" />デバッグ情報を生成するにはそれ以外の場合<see langword="false" />です。 これを設定する<see langword="true" />Microsoft Visual Studio デバッガーでスタイル シートをデバッグすることができます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Xsl.XslCompiledTransform" />指定されたデバッグ設定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コードにステップ インし、スタイル シートをデバッグするためには、次の条件を満たす必要があります。  
+  
+-   `enableDebug` パラメーターを `true` に設定します。  
+  
+-   スタイル シートは、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッド、URI と、実装のどちらかとして、<xref:System.Xml.XmlReader>を実装するクラス、<xref:System.Xml.IXmlLineInfo>インターフェイスです。 <xref:System.Xml.IXmlLineInfo>インターフェイスは、すべてのテキストの解析中に実装<xref:System.Xml.XmlReader>オブジェクト。  
+  
+     つまりを使用して、スタイル シートが読み込まれた場合、<xref:System.Xml.XPath.IXPathNavigable>などのオブジェクト、<xref:System.Xml.XmlDocument>または<xref:System.Xml.XPath.XPathDocument>、または<xref:System.Xml.XmlReader>実装していない実装、<xref:System.Xml.IXmlLineInfo>インターフェイス、スタイル シートをデバッグすることはできません。  
+  
+-   <xref:System.Xml.XmlResolver>スタイルの読み込みに使用されるシートはファイル ベース<xref:System.Xml.XmlResolver>など、 <xref:System.Xml.XmlUrlResolver> (これは、既定値<xref:System.Xml.XmlResolver>によって使用される、<xref:System.Xml.Xsl.XslCompiledTransform>クラス)。  
+  
+-   スタイル シートがローカル コンピューター上またはイントラネット上に配置します。  
+  
+   
+  
+## Examples  
+ 次の例では、XSLT のデバッグを有効にする方法を示します。  
+  
+ [!code-csharp[XslCompiledTransform.Load#10](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#10)]
+ [!code-vb[XslCompiledTransform.Load#10](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompileToType">
+      <MemberSignature Language="C#" Value="public static System.CodeDom.Compiler.CompilerErrorCollection CompileToType (System.Xml.XmlReader stylesheet, System.Xml.Xsl.XsltSettings settings, System.Xml.XmlResolver stylesheetResolver, bool debug, System.Reflection.Emit.TypeBuilder typeBuilder, string scriptAssemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.CodeDom.Compiler.CompilerErrorCollection CompileToType(class System.Xml.XmlReader stylesheet, class System.Xml.Xsl.XsltSettings settings, class System.Xml.XmlResolver stylesheetResolver, bool debug, class System.Reflection.Emit.TypeBuilder typeBuilder, string scriptAssemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.CompileToType(System.Xml.XmlReader,System.Xml.Xsl.XsltSettings,System.Xml.XmlResolver,System.Boolean,System.Reflection.Emit.TypeBuilder,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CompilerErrorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheet" Type="System.Xml.XmlReader" />
+        <Parameter Name="settings" Type="System.Xml.Xsl.XsltSettings" />
+        <Parameter Name="stylesheetResolver" Type="System.Xml.XmlResolver" />
+        <Parameter Name="debug" Type="System.Boolean" />
+        <Parameter Name="typeBuilder" Type="System.Reflection.Emit.TypeBuilder" />
+        <Parameter Name="scriptAssemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheet"><see cref="T:System.Xml.XmlReader" />コンパイルするスタイル シートの先頭に配置します。</param>
+        <param name="settings"><see cref="T:System.Xml.Xsl.XsltSettings" />をスタイル シートに適用できます。 これは、する場合<see langword="null" />、<see cref="P:System.Xml.Xsl.XsltSettings.Default" />適用されます。</param>
+        <param name="stylesheetResolver"><see cref="T:System.Xml.XmlResolver" />で参照されているスタイル シート モジュールを解決するのには使用<see langword="xsl:import" />と<see langword="xsl:include" />要素。 これは、する場合<see langword="null" />、外部リソースを解決できません。</param>
+        <param name="debug">これを設定する<see langword="true" />デバッガーを使用して、スタイル シートのデバッグを有効にします。</param>
+        <param name="typeBuilder"><see cref="T:System.Reflection.Emit.TypeBuilder" />スタイル シートのコンパイルに使用します。 指定された TypeBuilder を使用して、結果の型を生成します。</param>
+        <param name="scriptAssemblyPath">に対して生成されたアセンブリのベース パス<see langword="msxsl:script" />要素。 生成されるスクリプト アセンブリが 1 つだけの場合、このパラメーターはそのアセンブリのパスを指定します。 スクリプト アセンブリの生成が複数にわたる場合、アセンブリ名が一意になるよう、区別のためのサフィックスがファイル名に追加されます。</param>
+        <summary>XSLT スタイル シートを指定された型にコンパイルします。</summary>
+        <returns>A<see cref="T:System.CodeDom.Compiler.CompilerErrorCollection" />コンパイラ エラーと、コンパイルの結果を示す警告を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `xsltc.exe`ツールをラップするラッパーは、<xref:System.Xml.Xsl.XslCompiledTransform.CompileToType%2A>メソッドです。 スタイル シートをコンパイル、`xsltc.exe`コンパイル済みスタイル シートの使用を利用するほとんどのアプリケーションの要件を満たしています。 <xref:System.Xml.Xsl.XslCompiledTransform.CompileToType%2A>カスタム コンパイル ツールを構築するときに、メソッドを使用する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Load">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>スタイル シートをコンパイルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 全体的なパフォーマンスは <xref:System.Xml.Xsl.XslCompiledTransform> クラスの方が <xref:System.Xml.Xsl.XslTransform> クラスより優れていますが、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslCompiledTransform> メソッドが変換で初めて呼び出されたときは、<xref:System.Xml.Xsl.XslTransform.Load%2A> クラスの <xref:System.Xml.Xsl.XslTransform> メソッドよりパフォーマンスが劣る場合があります。 これは、XSLT ファイルを読み込む前にコンパイルする必要があるためです。 詳細については、次のブログの投稿を参照してください: [XslCompiledTransform は XslTransform より遅いですか?](http://go.microsoft.com/fwlink/?LinkId=130590)  
+  
+> [!NOTE]
+>  デバッグ モードでコンパイルされた XSLT と、リリース モードでコンパイルされた XSLT には違いがあります。 状況によっては、デバッグ モードでコンパイルされたスタイル シートが、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> の間にはエラーをスローしないが、その後の <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> の間にエラーとなります。 同じスタイル シートをリリース モードでコンパイルすると、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> の間にエラーが発生します。 このような動作の 1 つの例は、ノード セット型ではない変数を、ノード セット型が必要な式に代入する場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (string stylesheetUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(string stylesheetUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheetUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheetUri">スタイル シートの URI。</param>
+        <summary>指定された URI にあるスタイル シートの読み込みおよびコンパイルを行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+ このメソッドには、次の動作があります。  
+  
+-   <xref:System.Xml.XmlUrlResolver>スタイル シートの URI を解決するには、いずれかの処理に資格情報を使用ユーザーがいない`xsl:import`または`xsl:include`要素。  
+  
+-   <xref:System.Xml.XmlReader>既定値の設定は、スタイル シートの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドです。  
+  
+-   `document()`関数が無効になっています。  
+  
+-   埋め込みスクリプトがサポートされていません。  
+  
+ 使用することができます、<xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.String%2CSystem.Xml.Xsl.XsltSettings%2CSystem.Xml.XmlResolver%29>を指定するオーバー ロード、<xref:System.Xml.XmlResolver>必要な認証資格情報を持つ、または別の XSLT 設定を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、変換を実行して、ファイルに出力します。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#1](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#1)]
+ [!code-vb[XslCompiledTransform.Transform#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheetUri" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">スタイル シートが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="stylesheetUri" />ファイル名またはディレクトリが見つかりません、値が含まれます。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="stylesheetUri" />値を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="stylesheetUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">スタイル シートの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (Type compiledStylesheet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Type compiledStylesheet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="compiledStylesheet" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="compiledStylesheet">コンパイル済みスタイル シートを含むクラスの名前。  
+  
+ これは、通常、スタイル シート名です。 別途指定しない限り、xsltc.exe ツールはスタイル シート名をクラス名およびアセンブリ名に使用します。</param>
+        <summary>使用して作成されたコンパイル済みスタイル シートを読み込み、 [XSLT コンパイラ (xsltc.exe)](~/docs/standard/data/xml/xslt-compiler-xsltc-exe.md)です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Xsltc.exe ツールはスタイル シートをコンパイルし、スタイル シートからアセンブリを生成するために使用します。 <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドは、アセンブリから、コンパイル済みスタイル シートを読み込みます。  
+  
+> [!NOTE]
+>  XSLT アセンブリを参照としては、アプリケーションにも含める必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、XSLT アセンブリからコンパイル済みスタイル シートを読み込む方法を示します。 例では、xsltc.exe ツールが bookOrders をという名前のクラスと bookOrders.dll をという名前のアセンブリの作成に使用されたことを前提としています。  
+  
+> [!NOTE]
+>  コードをコンパイルするときに、XSLT アセンブリを参照する必要があります。 たとえば、`csc /r:system.dll;system.xml.dll;bookOrders.dll myCode.cs` のようにします。  
+  
+```  
+// Load the type of the class.  
+XslCompiledTransform xslt = new XslCompiledTransform();  
+xslt.Load(typeof(bookOrders));  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Xml.XmlReader stylesheet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Xml.XmlReader stylesheet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheet" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheet"><see cref="T:System.Xml.XmlReader" />スタイル シートを含むです。</param>
+        <summary>含まれているスタイル シートをコンパイル、<see cref="T:System.Xml.XmlReader" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+ 現在のノードからスタイル シートを読み込み、<xref:System.Xml.XmlReader>を介してすべての子です。 これにより、スタイル シートとして、ドキュメントの一部を使用することができます。 後に、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドが完了すると、<xref:System.Xml.XmlReader>スタイル シートの終了後に次のノードに配置されています。 ドキュメントの末尾に到達すると、<xref:System.Xml.XmlReader> はファイルの末尾 (EOF) に位置します。  
+  
+ このメソッドには、次の動作があります。  
+  
+-   <xref:System.Xml.XmlUrlResolver>資格情報の使用を処理するユーザーがいない`xsl:import`または`xsl:include`要素。  
+  
+-   `document()`関数が無効になっています。  
+  
+-   埋め込みスクリプトがサポートされていません。  
+  
+ 使用することができます、<xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Xml.XmlReader%2CSystem.Xml.Xsl.XsltSettings%2CSystem.Xml.XmlResolver%29>を指定するオーバー ロード、<xref:System.Xml.XmlResolver>必要な認証資格情報を持つ、または別の XSLT 設定を指定します。  
+  
+   
+  
+## Examples  
+ 次の例に含まれているスタイル シートを読み込み、<xref:System.Xml.XmlReader>オブジェクト。  
+  
+ [!code-csharp[XslCompiledTransform.Load#5](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#5)]
+ [!code-vb[XslCompiledTransform.Load#5](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheet" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Xml.XPath.IXPathNavigable stylesheet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Xml.XPath.IXPathNavigable stylesheet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Xml.XPath.IXPathNavigable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheet" Type="System.Xml.XPath.IXPathNavigable" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheet">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />スタイル シートを含むです。</param>
+        <summary>含まれているスタイル シートをコンパイル、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+ このメソッドには、次の動作があります。  
+  
+-   <xref:System.Xml.XmlUrlResolver>資格情報の使用を処理するユーザーがいない`xsl:import`または`xsl:include`要素。  
+  
+-   `document()`関数が無効になっています。  
+  
+-   埋め込みスクリプトがサポートされていません。  
+  
+ 使用することができます、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>を指定するオーバー ロード、<xref:System.Xml.XmlResolver>必要な認証資格情報を持つ、または別の XSLT 設定を指定します。  
+  
+   
+  
+## Examples  
+ 次の例に含まれているスタイル シートを読み込み、<xref:System.Xml.XPath.XPathDocument>オブジェクト。  
+  
+ [!code-csharp[XslCompiledTransform.Load#1](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#1)]
+ [!code-vb[XslCompiledTransform.Load#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheet" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Reflection.MethodInfo executeMethod, byte[] queryData, Type[] earlyBoundTypes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Reflection.MethodInfo executeMethod, unsigned int8[] queryData, class System.Type[] earlyBoundTypes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Reflection.MethodInfo,System.Byte[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="executeMethod" Type="System.Reflection.MethodInfo" />
+        <Parameter Name="queryData" Type="System.Byte[]" />
+        <Parameter Name="earlyBoundTypes" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="executeMethod">A<see cref="T:System.Reflection.MethodInfo" />コンパイラによって生成されたを表すオブジェクトを<c>実行</c>コンパイル済みスタイル シートのメソッドです。</param>
+        <param name="queryData">シリアル化されたデータのバイト配列が構造体に、 <c>staticData</c>で生成されたコンパイル済みスタイル シートのフィールド、<see cref="M:System.Xml.Xsl.XslCompiledTransform.CompileToType(System.Xml.XmlReader,System.Xml.Xsl.XsltSettings,System.Xml.XmlResolver,System.Boolean,System.Reflection.Emit.TypeBuilder,System.String)" />メソッドです。</param>
+        <param name="earlyBoundTypes">コンパイラによって生成されたに格納されている型の配列<c>ebTypes</c>コンパイル済みスタイル シートのフィールドです。</param>
+        <summary>使用してコンパイルされたスタイル シートからメソッドを読み込み、<see langword="XSLTC.exe" />ユーティリティです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、の形式でのコンパイル済みスタイル シートを受け入れる、<xref:System.Reflection.MethodInfo>オブジェクト、バイト配列、および配列の型。 <xref:System.Reflection.Emit.DynamicMethod>オブジェクトがコンパイル済みスタイル シートのメソッドであるを許可するため破棄されたときに、<xref:System.Xml.Xsl.XslCompiledTransform>オブジェクトを解放します。  
+  
+   
+  
+## Examples  
+ 使用して次のコード例、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>コンパイル済みスタイル シートを読み込めません。 変換の値が減少、`Price`要素を 10% です。  
+  
+ [!code-csharp[XsltDynamicMethodLoad#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltDynamicMethodLoad/CS/XsltDynamicMethodLoad.cs#1)]
+ [!code-vb[XsltDynamicMethodLoad#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltDynamicMethodLoad/VB/XsltDynamicMethodLoad.vb#1)]  
+  
+> [!NOTE]
+>  この例では使用されている"Transform"アセンブリは、xsltc.exe ユーティリティを使用してビルドされました。 このコマンド ライン ツールの使用方法の詳細については、次を参照してください。[する方法: アセンブリを使用して XSLT 変換を実行](~/docs/standard/data/xml/how-to-perform-an-xslt-transformation-by-using-an-assembly.md)です。  
+  
+ 上記のコード例は、次の変換を使用してください。  
+  
+```  
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
+  xmlns:msxsl="urn:schemas-microsoft-com:xslt"  
+  xmlns:user="urn:my-scripts">  
+  <msxsl:script language="C#" implements-prefix="user">  
+    <![CDATA[  
+  public double modifyPrice(double price){  
+    price*=0.9;  
+    return price;  
+  }  
+  ]]]><![CDATA[]>  
+  </msxsl:script>  
+  <xsl:template match="Root">  
+    <Root xmlns="">  
+      <Price><xsl:value-of select="user:modifyPrice(Price)"/></Price>  
+    </Root>  
+  </xsl:template>  
+</xsl:stylesheet>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (string stylesheetUri, System.Xml.Xsl.XsltSettings settings, System.Xml.XmlResolver stylesheetResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(string stylesheetUri, class System.Xml.Xsl.XsltSettings settings, class System.Xml.XmlResolver stylesheetResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.String,System.Xml.Xsl.XsltSettings,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheetUri" Type="System.String" />
+        <Parameter Name="settings" Type="System.Xml.Xsl.XsltSettings" />
+        <Parameter Name="stylesheetResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheetUri">スタイル シートの URI。</param>
+        <param name="settings"><see cref="T:System.Xml.Xsl.XsltSettings" />スタイル シートに適用します。 これは、する場合<see langword="null" />、<see cref="P:System.Xml.Xsl.XsltSettings.Default" />設定が適用されます。</param>
+        <param name="stylesheetResolver"><see cref="T:System.Xml.XmlResolver" />スタイル シートの URI および XSLT で参照されているすべてのスタイル シートを解決するために使用<c>インポート</c>と<c>含める</c>要素。</param>
+        <summary>URI で指定された XSLT スタイル シートの読み込みおよびコンパイルを行います。 <see cref="T:System.Xml.XmlResolver" /> XSLT を解決<c>インポート</c>または<c>含める</c>要素と、XSLT 設定は、スタイル シートのアクセス許可を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は、スタイル シートの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、ネットワーク リソースに格納されているスタイル シートを読み込みます。 <xref:System.Xml.XmlSecureResolver> オブジェクトには、スタイル シートにアクセスするのに必要な資格情報を指定します。  
+  
+ [!code-csharp[XslCompiledTransform.Load#2](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#2)]
+ [!code-vb[XslCompiledTransform.Load#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheetUri" />または<paramref name="stylesheetResolver" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">スタイル シートが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="stylesheetUri" />ファイル名またはディレクトリが見つかりません、値が含まれます。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="stylesheetUri" />値を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="stylesheetUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">スタイル シートの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Xml.XmlReader stylesheet, System.Xml.Xsl.XsltSettings settings, System.Xml.XmlResolver stylesheetResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Xml.XmlReader stylesheet, class System.Xml.Xsl.XsltSettings settings, class System.Xml.XmlResolver stylesheetResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Xml.XmlReader,System.Xml.Xsl.XsltSettings,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheet" Type="System.Xml.XmlReader" />
+        <Parameter Name="settings" Type="System.Xml.Xsl.XsltSettings" />
+        <Parameter Name="stylesheetResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheet"><see cref="T:System.Xml.XmlReader" />スタイル シートを含むです。</param>
+        <param name="settings"><see cref="T:System.Xml.Xsl.XsltSettings" />スタイル シートに適用します。 これは、する場合<see langword="null" />、<see cref="P:System.Xml.Xsl.XsltSettings.Default" />設定が適用されます。</param>
+        <param name="stylesheetResolver"><see cref="T:System.Xml.XmlResolver" /> XSLT で参照されているすべてのスタイル シートを解決するために使用<c>インポート</c>と<c>含める</c>要素。 これは、する場合<see langword="null" />、外部のリソースが解決されません。</param>
+        <summary>格納されている XSLT スタイル シートをコンパイル、<see cref="T:System.Xml.XmlReader" />です。 <see cref="T:System.Xml.XmlResolver" /> XSLT を解決<c>インポート</c>または<c>含める</c>要素と、XSLT 設定は、スタイル シートのアクセス許可を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+ 現在のノードからスタイル シートを読み込み、<xref:System.Xml.XmlReader>を介してすべての子です。 これにより、スタイル シートとして、ドキュメントの一部を使用することができます。 後に、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドが完了すると、<xref:System.Xml.XmlReader>スタイル シートの終了後に次のノードに配置されています。 ドキュメントの末尾に到達すると、<xref:System.Xml.XmlReader> はファイルの末尾 (EOF) に位置します。  
+  
+   
+  
+## Examples  
+ 次の例では、スタイル シートを読み込みし、XSLT スクリプトのサポートを有効にします。  
+  
+ [!code-csharp[XslCompiledTransform.Load#3](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#3)]
+ [!code-vb[XslCompiledTransform.Load#3](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheet" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load (System.Xml.XPath.IXPathNavigable stylesheet, System.Xml.Xsl.XsltSettings settings, System.Xml.XmlResolver stylesheetResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load(class System.Xml.XPath.IXPathNavigable stylesheet, class System.Xml.Xsl.XsltSettings settings, class System.Xml.XmlResolver stylesheetResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Load(System.Xml.XPath.IXPathNavigable,System.Xml.Xsl.XsltSettings,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stylesheet" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="settings" Type="System.Xml.Xsl.XsltSettings" />
+        <Parameter Name="stylesheetResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="stylesheet">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />スタイル シートを含むです。</param>
+        <param name="settings"><see cref="T:System.Xml.Xsl.XsltSettings" />スタイル シートに適用します。 これは、する場合<see langword="null" />、<see cref="P:System.Xml.Xsl.XsltSettings.Default" />設定が適用されます。</param>
+        <param name="stylesheetResolver"><see cref="T:System.Xml.XmlResolver" /> XSLT で参照されているすべてのスタイル シートを解決するために使用<c>インポート</c>と<c>含める</c>要素。 これは、する場合<see langword="null" />、外部のリソースが解決されません。</param>
+        <summary>格納されている XSLT スタイル シートをコンパイル、<see cref="T:System.Xml.XPath.IXPathNavigable" />です。 <see cref="T:System.Xml.XmlResolver" /> XSLT を解決<c>インポート</c>または<c>含める</c>要素と、XSLT 設定は、スタイル シートのアクセス許可を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Xsl.XslCompiledTransform>クラスは、XSLT 1.0 の構文をサポートします。 XSLT スタイル シートを使用する必要があります、`http://www.w3.org/1999/XSL/Transform`名前空間。  
+  
+   
+  
+## Examples  
+ 次の例では、スタイル シートを読み込みます。 <xref:System.Xml.XmlSecureResolver>オブジェクトが他にアクセスするために必要な資格情報を含む`import`または`include`要素スタイル シートに存在します。  
+  
+ [!code-csharp[XslCompiledTransform.Load#4](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#4)]
+ [!code-vb[XslCompiledTransform.Load#4](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="stylesheet" /> 値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">スタイル シートには、エラーが含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputSettings">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlWriterSettings OutputSettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlWriterSettings OutputSettings" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlWriterSettings</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xml.XmlWriterSettings" />から派生したオブジェクトを出力情報を含む、 <c>xsl:output</c>スタイル シートの要素。</summary>
+        <value>読み取り専用<see cref="T:System.Xml.XmlWriterSettings" />から派生したオブジェクトを出力情報を含む、 <c>xsl:output</c>スタイル シートの要素。 この値は、<see langword="null" /> の場合もあります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しは成功後にこのプロパティが設定、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A>メソッドです。 派生した情報が含まれている、`xsl:output`コンパイル済みスタイル シートの要素。 これは、<xref:System.Xml.XmlWriterSettings>にオブジェクトを渡すことができます、<xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType>メソッドを作成、<xref:System.Xml.XmlWriter>出力するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A>プロパティを作成する、<xref:System.Xml.XmlWriter>テキストをコンソールに出力するオブジェクト。  
+  
+ [!code-csharp[XslCompiledTransform.OutputSettings#1](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.OutputSettings/CS/xslt_OutputSettings.cs#1)]
+ [!code-vb[XslCompiledTransform.OutputSettings#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.OutputSettings/VB/xslt_OutputSettings.vb#1)]  
+  
+ この例では、`books.xml`と`outputConsole.xsl`ファイルを入力として。  
+  
+ `books.xml`  
+  
+ [!code-xml[XslCompiledTransform.OutputSettings#2](~/samples/snippets/xml/VS_Snippets_Data/XslCompiledTransform.OutputSettings/XML/books.xml#2)]  
+  
+ `outputConsole.xsl`  
+  
+ [!code-xml[XslCompiledTransform.OutputSettings#3](~/samples/snippets/xml/VS_Snippets_Data/XslCompiledTransform.OutputSettings/XML/outputConsole.xsl#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemporaryFiles">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.TempFileCollection TemporaryFiles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.TempFileCollection TemporaryFiles" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Xsl.XslCompiledTransform.TemporaryFiles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.TempFileCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.CodeDom.Compiler.TempFileCollection" />呼び出しに成功した後、ディスクに生成された一時ファイルを格納している、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />メソッドです。</summary>
+        <value><see cref="T:System.CodeDom.Compiler.TempFileCollection" />ディスクで生成された一時ファイルを格納しています。 この値は<see langword="null" />場合、<see cref="Overload:System.Xml.Xsl.XslCompiledTransform.Load" />メソッドが正常に呼び出されていない、またはデバッグが有効になっていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを識別 XSLT 中に生成されたファイルを処理します。 ファイルを配置している XSLT 処理が完了した後、Temp ディレクトリ (%TEMP% 環境変数で指定) でこれらのファイルを削除することができます。  
+  
+   
+  
+## Examples  
+ 次の例は、一時ファイルの名前をコンソールに出力します。  
+  
+> [!NOTE]
+>  スタイル シートを読み込む場合にのみ、一時ファイルが作成された\<msxsl:script > ブロックします。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#8](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#8)]
+ [!code-vb[XslCompiledTransform.Transform#8](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Transform">
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>XSLT 変換を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  デバッグ モードでコンパイルされた XSLT と、リリース モードでコンパイルされた XSLT には違いがあります。 状況によっては、デバッグ モードでコンパイルされたスタイル シートが、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> の間にはエラーをスローしないが、その後の <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> の間にエラーとなります。 同じスタイル シートをリリース モードでコンパイルすると、<xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> の間にエラーが発生します。 このような動作の 1 つの例は、ノード セット型ではない変数を、ノード セット型が必要な式に代入する場合です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (string inputUri, string resultsFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(string inputUri, string resultsFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputUri" Type="System.String" />
+        <Parameter Name="resultsFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="inputUri">入力ドキュメントの URI。</param>
+        <param name="resultsFile">出力ファイルの URI。</param>
+        <summary>URI で指定された入力ドキュメントを使用して変換を実行し、結果をファイルに出力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定<xref:System.Xml.XmlUrlResolver>入力と出力のドキュメントを解決するのにはないユーザー資格情報を使用します。 受け取るオーバー ロードを使用してこれらのリソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は入力ドキュメントの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、変換を実行して、ファイルに出力します。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#1](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#1)]
+ [!code-vb[XslCompiledTransform.Transform#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#1)]  
+  
+ このサンプルでは、次の 2 つの入力ファイルを使用します。  
+  
+ `books.xml`  
+  
+ [!code-xml[Classic WebData XslTransform.Transform7 Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XslTransform.Transform7 Example/XML/books.xml#2)]  
+  
+ `output.xsl`  
+  
+ [!code-xml[Classic WebData XslTransform.Transform7 Example#3](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XslTransform.Transform7 Example/XML/output.xsl#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" />または<paramref name="resultsFile" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">入力ドキュメントが見つかりません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="inputUri" />または<paramref name="resultsFile" />値には、ファイル名が含まれています。 または、ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="inputUri" />または<paramref name="resultsFile" />値を解決することはできません。  
+  
+ または  
+  
+ 要求の処理中にエラーが発生しました</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="inputUri" />または<paramref name="resultsFile" />は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">入力ドキュメントの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (string inputUri, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(string inputUri, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.String,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputUri" Type="System.String" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="inputUri">入力ドキュメントの URI。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>URI で指定された入力ドキュメントを使用して変換を実行し、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない入力ドキュメントと XSLT のすべてのインスタンスを解決するのには`document()`スタイル シートである関数。 受け取るオーバー ロードを使用してこれらのリソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は入力ドキュメントの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+ この方法がサポートされていません、`xsl:strip-space`要素。 コンパイル済みスタイル シートが含まれている場合、`xsl:strip-space`要素が使用する必要があります、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>オーバー ロードの受け取り、<xref:System.Xml.XmlReader>は入力引数として。  
+  
+   
+  
+## Examples  
+ 次の例は、XSLT 変換を実行し、出力、<xref:System.Xml.XmlWriter>オブジェクト。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#2](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#2)]
+ [!code-vb[XslCompiledTransform.Transform#2](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="inputUri" />値には、ファイル名が含まれています。 または、ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="inputUri" />値を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="inputUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">入力ドキュメントの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XmlReader input, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XmlReader input, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XmlReader,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XmlReader" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input"><see cref="T:System.Xml.XmlReader" />入力ドキュメントを格納します。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XmlReader" />オブジェクトし、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、XSLT`document()`機能が有効では解決を使用して、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、books.xml ファイルの最初の書籍を変換します。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#7](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#7)]
+ [!code-vb[XslCompiledTransform.Transform#7](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XPath.IXPathNavigable input, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XPath.IXPathNavigable input, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XPath.IXPathNavigable,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />変換対象のデータを格納します。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクトし、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、XSLT`document()`機能が有効では解決を使用して、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ この方法がサポートされていません、`xsl:strip-space`要素。 コンパイル済みスタイル シートが含まれている場合、`xsl:strip-space`要素が使用する必要があります、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>オーバー ロードの受け取り、<xref:System.Xml.XmlReader>は入力引数として。  
+  
+ <xref:System.Xml.XPath.IXPathNavigable> インターフェイスは、<xref:System.Xml.XmlNode> および <xref:System.Xml.XPath.XPathDocument> クラスに実装されています。 これらのクラスは XML データのメモリ内のキャッシュを表します。  
+  
+-   <xref:System.Xml.XmlNode> クラスは W3C ドキュメント オブジェクト モデル (DOM) を基礎とし、編集機能も含んでいます。  
+  
+-   <xref:System.Xml.XPath.XPathDocument> クラスは、XPath データ モデルに基づいた読み取り専用のデータ ストアです。 <xref:System.Xml.XPath.XPathDocument> は、XSLT 処理に推奨されるクラスです。 これは、<xref:System.Xml.XmlNode> クラスと比較して、より高速なパフォーマンスを提供します。  
+  
+ 変換はドキュメント全体に対して行われます。 つまり、ドキュメント ルート ノード以外のノードを指定しても、変換処理では、読み込んだドキュメントのすべてのノードがアクセスされます。 ノード フラグメントを変換するには、ノード フラグメントだけを含むオブジェクトを作成し、そのオブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡します。 詳細については、次を参照してください。[する方法: ノード フラグメントを変換](~/docs/standard/data/xml/how-to-transform-a-node-fragment.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、XSLT 変換を実行し、出力、<xref:System.Xml.XmlWriter>オブジェクト。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#5](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#5)]
+ [!code-vb[XslCompiledTransform.Transform#5](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (string inputUri, System.Xml.Xsl.XsltArgumentList arguments, System.IO.Stream results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(string inputUri, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.Stream results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.String,System.Xml.Xsl.XsltArgumentList,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputUri" Type="System.String" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="inputUri">入力ドキュメントの URI。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先のストリーム。</param>
+        <summary>URI で指定された入力ドキュメントを使用して変換を実行し、結果をストリームに出力します。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない入力ドキュメントと XSLT のすべてのインスタンスを解決するのには`document()`スタイル シートである関数。 受け取るオーバー ロードを使用してこれらのリソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は入力ドキュメントの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="inputUri" />値には、ファイル名が含まれています。 または、ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="inputUri" />値を解決することはできません。  
+  
+ または  
+  
+ 要求の処理中にエラーが発生しました</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="inputUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">入力ドキュメントの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (string inputUri, System.Xml.Xsl.XsltArgumentList arguments, System.IO.TextWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(string inputUri, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.TextWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.String,System.Xml.Xsl.XsltArgumentList,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputUri" Type="System.String" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="inputUri">入力ドキュメントの URI。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.IO.TextWriter" />。</param>
+        <summary>URI で指定された入力ドキュメントを使用して変換を実行し、結果を出力、<see cref="T:System.IO.TextWriter" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない入力ドキュメントと XSLT のすべてのインスタンスを解決するのには`document()`スタイル シートである関数。 受け取るオーバー ロードを使用してこれらのリソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は入力ドキュメントの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、XSLT 変換を実行し、文字列を出力します。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#3](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#3)]
+ [!code-vb[XslCompiledTransform.Transform#3](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="inputUri" />値には、ファイル名が含まれています。 または、ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="inputUri" />値を解決することはできません。  
+  
+ または  
+  
+ 要求の処理中にエラーが発生しました</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="inputUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">入力ドキュメントの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (string inputUri, System.Xml.Xsl.XsltArgumentList arguments, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(string inputUri, class System.Xml.Xsl.XsltArgumentList arguments, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.String,System.Xml.Xsl.XsltArgumentList,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inputUri" Type="System.String" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="inputUri">入力ドキュメントの URI。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>URI で指定された入力ドキュメントを使用して変換を実行し、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、既定<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない入力ドキュメントと XSLT のすべてのインスタンスを解決するのには`document()`スタイル シートである関数。 受け取るオーバー ロードを使用してこれらのリソースがある場合、認証が必要なネットワーク リソースには、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ <xref:System.Xml.XmlReader>既定値の設定は入力ドキュメントの読み込みに使用します。 DTD の処理が無効になって、<xref:System.Xml.XmlReader>です。 DTD の処理が必要な場合は、作成、<xref:System.Xml.XmlReader>に渡すし、この機能を有効にする、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.Xsl.XsltArgumentList>を現在の日付と時刻を表すパラメーターを作成するオブジェクト。  
+  
+ [!code-csharp[XsltArgumentList.AddParam#1](~/samples/snippets/csharp/VS_Snippets_Data/XsltArgumentList.AddParam/CS/addparam.cs#1)]
+ [!code-vb[XsltArgumentList.AddParam#1](~/samples/snippets/visualbasic/VS_Snippets_Data/XsltArgumentList.AddParam/VB/addparam.vb#1)]  
+  
+ 例では、入力として、次の 2 つのデータ ファイルを使用します。  
+  
+ order.xml  
+  
+ [!code-xml[XsltArgumentList.AddParam#2](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddParam/XML/order.xml#2)]  
+  
+ order.xsl  
+  
+ [!code-xml[XsltArgumentList.AddParam#3](~/samples/snippets/xml/VS_Snippets_Data/XsltArgumentList.AddParam/XML/order.xsl#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="inputUri" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException"><paramref name="inputtUri" />値には、ファイル名が含まれています。 または、ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.Net.WebException"><paramref name="inputUri" />値を解決することはできません。  
+  
+ または  
+  
+ この要求の処理中にエラーが発生しました。</exception>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="inputUri" /> は有効な URI ではありません。</exception>
+        <exception cref="T:System.Xml.XmlException">入力ドキュメントの読み込み中に解析エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XmlReader input, System.Xml.Xsl.XsltArgumentList arguments, System.IO.Stream results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XmlReader input, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.Stream results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XmlReader,System.Xml.Xsl.XsltArgumentList,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XmlReader" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input"><see cref="T:System.Xml.XmlReader" />入力ドキュメントを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先のストリーム。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XmlReader" />オブジェクトし、結果ストリームを出力します。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタイル シートには、XSLT が含まれている場合`document()`関数を使用して解決されて、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XmlReader input, System.Xml.Xsl.XsltArgumentList arguments, System.IO.TextWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XmlReader input, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.TextWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XmlReader,System.Xml.Xsl.XsltArgumentList,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XmlReader" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input"><see cref="T:System.Xml.XmlReader" />入力ドキュメントを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.IO.TextWriter" />。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XmlReader" />オブジェクトし、結果を出力、<see cref="T:System.IO.TextWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタイル シートには、XSLT が含まれている場合`document()`関数を使用して解決されて、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XmlReader input, System.Xml.Xsl.XsltArgumentList arguments, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XmlReader input, class System.Xml.Xsl.XsltArgumentList arguments, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XmlReader,System.Xml.Xsl.XsltArgumentList,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XmlReader" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input"><see cref="T:System.Xml.XmlReader" />入力ドキュメントを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XmlReader" />オブジェクトし、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタイル シートには、XSLT が含まれている場合`document()`関数を使用して解決されて、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XPath.IXPathNavigable input, System.Xml.Xsl.XsltArgumentList arguments, System.IO.Stream results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XPath.IXPathNavigable input, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.Stream results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XPath.IXPathNavigable,System.Xml.Xsl.XsltArgumentList,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="input">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />変換対象のデータを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先のストリーム。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクトし、結果ストリームを出力します。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加のランタイム引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、XSLT`document()`機能が有効では解決を使用して、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ この方法がサポートされていません、`xsl:strip-space`要素。 コンパイル済みスタイル シートが含まれている場合、`xsl:strip-space`要素が使用する必要があります、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>オーバー ロードの受け取り、<xref:System.Xml.XmlReader>は入力引数として。  
+  
+ <xref:System.Xml.XPath.IXPathNavigable> インターフェイスは、<xref:System.Xml.XmlNode> および <xref:System.Xml.XPath.XPathDocument> クラスに実装されています。 これらのクラスは XML データのメモリ内のキャッシュを表します。  
+  
+-   <xref:System.Xml.XmlNode> クラスは W3C ドキュメント オブジェクト モデル (DOM) を基礎とし、編集機能も含んでいます。  
+  
+-   <xref:System.Xml.XPath.XPathDocument> クラスは、XPath データ モデルに基づいた読み取り専用のデータ ストアです。 <xref:System.Xml.XPath.XPathDocument> は、XSLT 処理に推奨されるクラスです。 これは、<xref:System.Xml.XmlNode> クラスと比較して、より高速なパフォーマンスを提供します。  
+  
+ 変換はドキュメント全体に対して行われます。 つまり、ドキュメント ルート ノード以外のノードを指定しても、変換処理では、読み込んだドキュメントのすべてのノードがアクセスされます。 ノード フラグメントを変換するには、ノード フラグメントだけを含むオブジェクトを作成し、そのオブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡します。 詳細については、次を参照してください。[する方法: ノード フラグメントを変換](~/docs/standard/data/xml/how-to-transform-a-node-fragment.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、XSLT 変換を実行し、出力、<xref:System.IO.FileStream>です。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#6](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#6)]
+ [!code-vb[XslCompiledTransform.Transform#6](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XPath.IXPathNavigable input, System.Xml.Xsl.XsltArgumentList arguments, System.IO.TextWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XPath.IXPathNavigable input, class System.Xml.Xsl.XsltArgumentList arguments, class System.IO.TextWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XPath.IXPathNavigable,System.Xml.Xsl.XsltArgumentList,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />変換対象のデータを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.IO.TextWriter" />。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクトし、結果を出力、<see cref="T:System.IO.TextWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、XSLT`document()`機能が有効では解決を使用して、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ この方法がサポートされていません、`xsl:strip-space`要素。 コンパイル済みスタイル シートが含まれている場合、`xsl:strip-space`要素が使用する必要があります、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>オーバー ロードの受け取り、<xref:System.Xml.XmlReader>は入力引数として。  
+  
+ <xref:System.Xml.XPath.IXPathNavigable> インターフェイスは、<xref:System.Xml.XmlNode> および <xref:System.Xml.XPath.XPathDocument> クラスに実装されています。 これらのクラスは XML データのメモリ内のキャッシュを表します。  
+  
+-   <xref:System.Xml.XmlNode> クラスは W3C ドキュメント オブジェクト モデル (DOM) を基礎とし、編集機能も含んでいます。  
+  
+-   <xref:System.Xml.XPath.XPathDocument> クラスは、XPath データ モデルに基づいた読み取り専用のデータ ストアです。 <xref:System.Xml.XPath.XPathDocument> は、XSLT 処理に推奨されるクラスです。 これは、<xref:System.Xml.XmlNode> クラスと比較して、より高速なパフォーマンスを提供します。  
+  
+ 変換はドキュメント全体に対して行われます。 つまり、ドキュメント ルート ノード以外のノードを指定しても、変換処理では、読み込んだドキュメントのすべてのノードがアクセスされます。 ノード フラグメントを変換するには、ノード フラグメントだけを含むオブジェクトを作成し、そのオブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡します。 詳細については、次を参照してください。[する方法: ノード フラグメントを変換](~/docs/standard/data/xml/how-to-transform-a-node-fragment.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XPath.IXPathNavigable input, System.Xml.Xsl.XsltArgumentList arguments, System.Xml.XmlWriter results);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XPath.IXPathNavigable input, class System.Xml.Xsl.XsltArgumentList arguments, class System.Xml.XmlWriter results) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XPath.IXPathNavigable,System.Xml.Xsl.XsltArgumentList,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="input">実装するオブジェクト、<see cref="T:System.Xml.XPath.IXPathNavigable" />インターフェイスです。 Microsoft .NET framework では、このいずれかになります、 <see cref="T:System.Xml.XmlNode" /> (通常、 <see cref="T:System.Xml.XmlDocument" />)、または<see cref="T:System.Xml.XPath.XPathDocument" />変換対象のデータを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクトし、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、XSLT`document()`機能が有効では解決を使用して、<xref:System.Xml.XmlUrlResolver>ユーザー資格情報を持たない。 外部のリソースがある場合、認証が必要なネットワーク リソースに、使用するオーバー ロードを使用して、 <xref:System.Xml.XmlResolver> 、引数の 1 つとしてを指定し、<xref:System.Xml.XmlResolver>必要な資格情報を使用します。  
+  
+ この方法がサポートされていません、`xsl:strip-space`要素。 コンパイル済みスタイル シートが含まれている場合、`xsl:strip-space`要素が使用する必要があります、<xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A>オーバー ロードの受け取り、<xref:System.Xml.XmlReader>は入力引数として。  
+  
+ <xref:System.Xml.XPath.IXPathNavigable> インターフェイスは、<xref:System.Xml.XmlNode> および <xref:System.Xml.XPath.XPathDocument> クラスに実装されています。 これらのクラスは XML データのメモリ内のキャッシュを表します。  
+  
+-   <xref:System.Xml.XmlNode> クラスは W3C ドキュメント オブジェクト モデル (DOM) を基礎とし、編集機能も含んでいます。  
+  
+-   <xref:System.Xml.XPath.XPathDocument> クラスは、XPath データ モデルに基づいた読み取り専用のデータ ストアです。 <xref:System.Xml.XPath.XPathDocument> は、XSLT 処理に推奨されるクラスです。 これは、<xref:System.Xml.XmlNode> クラスと比較して、より高速なパフォーマンスを提供します。  
+  
+ 変換はドキュメント全体に対して行われます。 つまり、ドキュメント ルート ノード以外のノードを指定しても、変換処理では、読み込んだドキュメントのすべてのノードがアクセスされます。 ノード フラグメントを変換するには、ノード フラグメントだけを含むオブジェクトを作成し、そのオブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡します。 詳細については、次を参照してください。[する方法: ノード フラグメントを変換](~/docs/standard/data/xml/how-to-transform-a-node-fragment.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XmlReader input, System.Xml.Xsl.XsltArgumentList arguments, System.Xml.XmlWriter results, System.Xml.XmlResolver documentResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XmlReader input, class System.Xml.Xsl.XsltArgumentList arguments, class System.Xml.XmlWriter results, class System.Xml.XmlResolver documentResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XmlReader,System.Xml.Xsl.XsltArgumentList,System.Xml.XmlWriter,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XmlReader" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+        <Parameter Name="documentResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="input"><see cref="T:System.Xml.XmlReader" />入力ドキュメントを格納します。</param>
+        <param name="arguments"><see cref="T:System.Xml.Xsl.XsltArgumentList" />トランス フォームへの入力として使用される名前空間で修飾された引数を格納します。 この値は、<see langword="null" /> の場合もあります。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、 <c>xsl:output</c>要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されたオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <param name="documentResolver"><see cref="T:System.Xml.XmlResolver" /> XSLT を解決するために使用<c>document()</c>関数。 これは、する場合<see langword="null" />、 <c>document()</c>関数は解決されません。</param>
+        <summary>指定された入力ドキュメントを使用して変換を実行、<see cref="T:System.Xml.XmlReader" />オブジェクトし、結果を出力、<see cref="T:System.Xml.XmlWriter" />です。 <see cref="T:System.Xml.Xsl.XsltArgumentList" /> 、実行時引数の追加と XmlResolver 解決 XSLT <c>document()</c>関数。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、 <xref:System.Xml.XmlSecureResolver> XSLT を解決するのには`document()`関数。  
+  
+ [!code-csharp[XslCompiledTransform.Transform#4](~/samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Transform/CS/Xslt_Transform_v2.cs#4)]
+ [!code-vb[XslCompiledTransform.Transform#4](~/samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Transform/VB/Xslt_Transform_v2.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="input" />または<paramref name="results" />値は<see langword="null" />します。</exception>
+        <exception cref="T:System.Xml.Xsl.XsltException">XSLT 変換を実行中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Xml.XPath.IXPathNavigable input, System.Xml.Xsl.XsltArgumentList arguments, System.Xml.XmlWriter results, System.Xml.XmlResolver documentResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(class System.Xml.XPath.IXPathNavigable input, class System.Xml.Xsl.XsltArgumentList arguments, class System.Xml.XmlWriter results, class System.Xml.XmlResolver documentResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Xsl.XslCompiledTransform.Transform(System.Xml.XPath.IXPathNavigable,System.Xml.Xsl.XsltArgumentList,System.Xml.XmlWriter,System.Xml.XmlResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="input" Type="System.Xml.XPath.IXPathNavigable" />
+        <Parameter Name="arguments" Type="System.Xml.Xsl.XsltArgumentList" />
+        <Parameter Name="results" Type="System.Xml.XmlWriter" />
+        <Parameter Name="documentResolver" Type="System.Xml.XmlResolver" />
+      </Parameters>
+      <Docs>
+        <param name="input">変換するドキュメントを指定、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト。</param>
+        <param name="arguments">引数リストも<see cref="T:System.Xml.Xsl.XsltArgumentList" />します。</param>
+        <param name="results">出力先の <see cref="T:System.Xml.XmlWriter" />。  
+  
+ スタイル シートが含まれている場合、<see langword="xsl:output" />要素を作成する必要がある、<see cref="T:System.Xml.XmlWriter" />を使用して、<see cref="T:System.Xml.XmlWriterSettings" />から返されるオブジェクト、<see cref="P:System.Xml.Xsl.XslCompiledTransform.OutputSettings" />プロパティです。 これにより、<see cref="T:System.Xml.XmlWriter" />は正しい出力設定があります。</param>
+        <param name="documentResolver"><see cref="T:System.Xml.XmlResolver" /> XSLT を解決するために使用<see langword="document()" />関数。 これは、する場合<see langword="null" />、<see langword="document()" />関数は解決されません。</param>
+        <summary><see cref="T:System.Xml.XPath.IXPathNavigable" /> オブジェクトで指定された入力ドキュメントを使用して変換を実行し、結果を <see cref="T:System.Xml.XmlWriter" /> に出力します。 <see cref="T:System.Xml.Xsl.XsltArgumentList" />追加の実行時引数を提供し、 <see cref="T:System.Xml.XmlResolver" /> XSLT を解決<see langword="document()" />関数。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

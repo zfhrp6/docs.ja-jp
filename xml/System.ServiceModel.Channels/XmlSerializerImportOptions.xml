@@ -1,0 +1,133 @@
+<Type Name="XmlSerializerImportOptions" FullName="System.ServiceModel.Channels.XmlSerializerImportOptions">
+  <TypeSignature Language="C#" Value="public class XmlSerializerImportOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSerializerImportOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.XmlSerializerImportOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Xml.Serialization.XmlSerializer" /> および <see cref="T:System.Web.Services.Description.ServiceDescriptionImporter" /> インフラストラクチャを使用して、スキーマのインポートを実行するために必要な情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.XmlSerializerImportOptions> は、<xref:System.ServiceModel.Description.XmlSerializerMessageContractImporter> が使用します。 併用しても、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)で、 `/useXmlSerializer` (`/uxs)`スイッチします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerImportOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.XmlSerializerImportOptions.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.XmlSerializerImportOptions" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSerializerImportOptions (System.CodeDom.CodeCompileUnit codeCompileUnit);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeCompileUnit codeCompileUnit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.XmlSerializerImportOptions.#ctor(System.CodeDom.CodeCompileUnit)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="codeCompileUnit" Type="System.CodeDom.CodeCompileUnit" />
+      </Parameters>
+      <Docs>
+        <param name="codeCompileUnit"><see cref="N:System.CodeDom" /> プログラム グラフ用のコンテナーを提供するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.XmlSerializerImportOptions" /> を使用して、<see cref="T:System.CodeDom.CodeCompileUnit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrNamespace">
+      <MemberSignature Language="C#" Value="public string ClrNamespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClrNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.XmlSerializerImportOptions.ClrNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML 名前空間に割り当てられる型を格納する <see cref="P:System.ServiceModel.Channels.XmlSerializerImportOptions.ClrNamespace" /> プロパティを取得または設定します。</summary>
+        <value>割り当てられる型を格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeCompileUnit">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeCompileUnit CodeCompileUnit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeCompileUnit CodeCompileUnit" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.XmlSerializerImportOptions.CodeCompileUnit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeCompileUnit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeCompileUnit" /> プログラム グラフ用のコンテナーを提供する <see cref="N:System.CodeDom" /> オブジェクトを取得します。</summary>
+        <value>プログラム グラフ用のコンテナーを提供するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodeProvider">
+      <MemberSignature Language="C#" Value="public System.CodeDom.Compiler.CodeDomProvider CodeProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.Compiler.CodeDomProvider CodeProvider" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.XmlSerializerImportOptions.CodeProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.Compiler.CodeDomProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲット言語に対する特定のオプションがサポートされているかどうかをチェックする <see cref="T:System.CodeDom.Compiler.CodeDomProvider" /> オブジェクトを取得または設定します。</summary>
+        <value>ターゲット言語オプションをチェックするオブジェクト</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebReferenceOptions">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.WebReferenceOptions WebReferenceOptions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.WebReferenceOptions WebReferenceOptions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.XmlSerializerImportOptions.WebReferenceOptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.WebReferenceOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>XML テキスト ファイルで指定されたコード生成オプションを格納する <see cref="T:System.Web.Services.Description.WebReferenceOptions" /> オブジェクトを取得または設定します。</summary>
+        <value>コード生成オプションを格納するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

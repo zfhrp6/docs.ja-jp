@@ -1,0 +1,1088 @@
+<Type Name="Matrix" FullName="System.Drawing.Drawing2D.Matrix">
+  <TypeSignature Language="C#" Value="public sealed class Matrix : MarshalByRefObject, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Matrix extends System.MarshalByRefObject implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.Matrix" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ジオメトリック変換を表現する 3 × 3 のアフィン行列をカプセル化します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]でアフィン変換を格納することができます、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。 表すアフィン変換行列の 3 番目の列は常にあるため (0, 0, 1) を構築するとき、最初の 2 つの列で 6 つの数字のみを指定する、<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。 ステートメント`Matrix myMatrix = new Matrix(0, 1, -1, 0, 3, 4)`次の図に示すように、マトリックスを構築します。  
+  
+ ![変換](~/add/media/aboutgdip05-art10.gif "変換")  
+  
+## <a name="composite-transformations"></a>複合変換  
+ 複合変換とは、変換後、その他の 1 つのシーケンスです。 マトリックスおよび次の一覧内の変換を考慮してください。  
+  
+|||  
+|-|-|  
+|行列 A|90 度回転します。|  
+|マトリックス B|X 軸方向の 2 倍の拡大縮小します。|  
+|マトリックス C|Y 方向の 3 つの単位に変換します。|  
+  
+ かどうかはまず、点 (2, 1): [2 1 1] マトリックスで表される — しを a、B、C、点 (2, 1) が使用される順番で 3 つの変換し、します。  
+  
+ [2 1 1]ABC [-2 5 1] を =  
+  
+ はなく 3 つの独立した行列に複合変換の 3 つの部分を格納は、A を掛けることができますを複合変換全体を格納する 1 つの 3 倍 3 行列を取得するには、同時に、B、および C です。 たとえば、ABC D. を =D を掛けたポイントが A、B、C を掛けたポイントと同じ結果を提供し、  
+  
+ [2 1 1]D = [-2 5 1]  
+  
+ 次の図に、A、B、C および D のマトリックス  
+  
+ ![変換](~/add/media/aboutgdip05-art12.gif "変換")  
+  
+ 複合変換の行列を個々 の変換行列を乗算することによって作成できますが、ファクトは 1 つのアフィン変換の任意のシーケンスを格納できることを意味<xref:System.Drawing.Drawing2D.Matrix>オブジェクト。  
+  
+> [!CAUTION]
+>  複合変換の順序が重要です。 一般に、回転してから、スケールを設定し、変換が同じではありません、スケーリング、回転、しに変換します。 同様に、行列乗算の順序が重要です。 一般に、ABC はいない BAC と同じです。  
+  
+ <xref:System.Drawing.Drawing2D.Matrix>クラスが複合変換を作成するためのいくつかのメソッドを提供します。 <xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Rotate%2A>、 <xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Scale%2A>、 <xref:System.Drawing.Drawing2D.Matrix.Shear%2A>、および<xref:System.Drawing.Drawing2D.Matrix.Translate%2A>です。 次の例では、回転角度 (30) し、y 方向の 2 倍のスケールを設定し、x 軸方向に 5 単位に変換する複合変換の行列を作成します。  
+  
+ [!code-csharp[System.Drawing.CoordinateSystems#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/CS/Class1.cs#11)]
+ [!code-vb[System.Drawing.CoordinateSystems#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.CoordinateSystems/VB/Class1.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Matrix ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Drawing.Drawing2D.Matrix" /> クラスの新しいインスタンスを単位行列として初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Matrix (System.Drawing.Rectangle rect, System.Drawing.Point[] plgpts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle rect, valuetype System.Drawing.Point[] plgpts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.#ctor(System.Drawing.Rectangle,System.Drawing.Point[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="plgpts" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="rect">変換する四角形を表す <see cref="T:System.Drawing.Rectangle" /> 構造体。</param>
+        <param name="plgpts">四角形の左上、右上、左下の各隅の変換先となる平行四辺形の点を表す 3 つの <see cref="T:System.Drawing.Point" /> 構造体の配列。 平行四辺形の右下隅は、最初の 3 点から導き出されます。</param>
+        <summary><see cref="T:System.Drawing.Drawing2D.Matrix" /> クラスの新しいインスタンスを初期化し、指定した四角形および点の配列で定義されたジオメトリック変換に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって指定される四角形をマップするジオメトリック変換を表すように、このメソッドがマトリックスの新規作成を初期化、`rect`パラメーターに 3 つの点によって定義された平行四辺形を`plgpts`パラメーター。 四角形の左上隅は最初の要素にマップされて、`plgpts`配列は、右上隅は 2 番目のポイントにマップされ、左下隅は、3 番目のポイントにマップされます。 平行四辺形の右下隅の点は、最初の 3 つによって暗黙的に指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Matrix (System.Drawing.RectangleF rect, System.Drawing.PointF[] plgpts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.RectangleF rect, valuetype System.Drawing.PointF[] plgpts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.#ctor(System.Drawing.RectangleF,System.Drawing.PointF[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="plgpts" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="rect">変換する四角形を表す <see cref="T:System.Drawing.RectangleF" /> 構造体。</param>
+        <param name="plgpts">四角形の左上、右上、左下の各隅の変換先となる平行四辺形の点を表す 3 つの <see cref="T:System.Drawing.PointF" /> 構造体の配列。 平行四辺形の右下隅は、最初の 3 点から導き出されます。</param>
+        <summary><see cref="T:System.Drawing.Drawing2D.Matrix" /> クラスの新しいインスタンスを初期化し、指定した四角形および点の配列で定義されたジオメトリック変換に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい初期化<xref:System.Drawing.Drawing2D.Matrix>などを表すジオメトリック変換によって指定される四角形のマップを`rect`パラメーターに 3 つの点によって定義された平行四辺形を`plgpts`パラメーター。 四角形の左上隅は最初の要素にマップされて、`plgpts`配列は、右上隅は 2 番目のポイントにマップされ、左下隅は、3 番目のポイントにマップされます。 平行四辺形の右下隅の点は、最初の 3 つによって暗黙的に指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Matrix (float m11, float m12, float m21, float m22, float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float32 m11, float32 m12, float32 m21, float32 m22, float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="m11" Type="System.Single" />
+        <Parameter Name="m12" Type="System.Single" />
+        <Parameter Name="m21" Type="System.Single" />
+        <Parameter Name="m22" Type="System.Single" />
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="m11">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の最初の行の最初の列の値。</param>
+        <param name="m12">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の最初の行の 2 番目の列の値。</param>
+        <param name="m21">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の 2 番目の行の最初の列の値。</param>
+        <param name="m22">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の 2 番目の行の 2 番目の列の値。</param>
+        <param name="dx">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の 3 番目の行の最初の列の値。</param>
+        <param name="dy">新しい <see cref="T:System.Drawing.Drawing2D.Matrix" /> の 3 番目の行の 2 番目の列の値。</param>
+        <summary>指定した要素を使用して、<see cref="T:System.Drawing.Drawing2D.Matrix" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Matrix Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Drawing.Drawing2D.Matrix Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Matrix</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の同一コピーを作成します。</summary>
+        <returns>このメソッドが作成する <see cref="T:System.Drawing.Drawing2D.Matrix" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す`Dispose`により、これによって使用されるリソース<xref:System.Drawing.Drawing2D.Matrix>を他の目的を再割り当てするオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Elements">
+      <MemberSignature Language="C#" Value="public float[] Elements { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32[] Elements" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Matrix.Elements" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の要素を表す浮動小数点値の配列を取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の要素を表す浮動小数点値の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素 m11、m12、m21、m22、dx と dy の<xref:System.Drawing.Drawing2D.Matrix>をこの順序で配列内の値によって表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テストするオブジェクト。</param>
+        <summary>指定されたオブジェクトが <see cref="T:System.Drawing.Drawing2D.Matrix" /> であるかどうか、またこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> と同一であるかどうかをテストします。</summary>
+        <returns>このメソッドは、<paramref name="obj" /> がこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> と同じオブジェクトで、指定した <see cref="T:System.Drawing.Drawing2D.Matrix" /> と同一である場合は <see langword="true" /> を返します。それ以外の場合は <see langword="false" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Matrix ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invert">
+      <MemberSignature Language="C#" Value="public void Invert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Invert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> が反転できる場合に反転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、行列を作成し、それを反転します。  
+  
+```csharp  
+Matrix myMatrix = new Matrix(3, 5, 1, 2, 2, 4);  
+ myMatrix.Invert();  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdentity">
+      <MemberSignature Language="C#" Value="public bool IsIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Matrix.IsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> が単位行列かどうかを示す値を取得します。</summary>
+        <value><see cref="T:System.Drawing.Drawing2D.Matrix" /> が単位行列の場合、このプロパティは <see langword="true" /> になります。それ以外の場合は <see langword="false" /> になります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInvertible">
+      <MemberSignature Language="C#" Value="public bool IsInvertible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInvertible" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Matrix.IsInvertible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> が反転できるかどうかを示す値を取得します。</summary>
+        <value><see cref="T:System.Drawing.Drawing2D.Matrix" /> が反転できる場合、このプロパティは <see langword="true" /> になります。それ以外の場合は <see langword="false" /> になります。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public void Multiply (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Multiply(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Multiply(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> と乗算する <see cref="T:System.Drawing.Drawing2D.Matrix" />。</param>
+        <summary>指定した <see cref="T:System.Drawing.Drawing2D.Matrix" /> を前に付加することで、この <see cref="T:System.Drawing.Drawing2D.Matrix" /> と <paramref name="matrix" /> パラメーターで指定した行列を乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.Multiply%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public void Multiply (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Multiply(class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Multiply(System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="matrix">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> と乗算する <see cref="T:System.Drawing.Drawing2D.Matrix" />。</param>
+        <param name="order">乗算の順序を表す <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> と <paramref name="matrix" /> パラメーターで指定した行列を、<paramref name="order" /> パラメーターで指定した順序で乗算します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した順序が場合<xref:System.Drawing.Drawing2D.MatrixOrder.Prepend>、この<xref:System.Drawing.Drawing2D.Matrix>が先頭に追加された順序で指定した行列乗算します。 指定した順序が場合<xref:System.Drawing.Drawing2D.MatrixOrder.Append>、この<xref:System.Drawing.Drawing2D.Matrix>が追加された順序で指定した行列乗算します。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   3 つの行列を作成します。  
+  
+-   画面にマトリックス 1 の内容を一覧表示します。  
+  
+-   行列 1 と 2 の行列を乗算し、マトリックス 1 で、結果を格納します。  
+  
+-   画面にマトリックス 1 の内容を一覧表示します。  
+  
+-   行列 1 と第 3 の行列に格納されている結果を乗算し、もう一度行列 1 で、結果を格納します。  
+  
+-   画面にマトリックス 1 の内容を一覧表示します。  
+  
+-   1 の行列変換 (青い四角形) を適用する前に画面に四角形を描画します。  
+  
+-   四角形に、変換を適用します。  
+  
+-   前の四角形として同じ座標を使用して、画面 (赤い四角形) に変換された四角形を描画します。  
+  
+ 水平方向の 2 つの要素で赤色の四角形を大きさが変更されたことに注意してくださいでは、し、90 ° を回転して、y 軸方向の x 方向、50 ポイント (翻訳) 250 のポイントを移動します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetX">
+      <MemberSignature Language="C#" Value="public float OffsetX { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 OffsetX" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Matrix.OffsetX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の x 方向の平行移動値 (dx 値、すなわち 3 番目の行の最初の列の要素) を取得します。</summary>
+        <value>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の x 方向の平行移動値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetY">
+      <MemberSignature Language="C#" Value="public float OffsetY { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 OffsetY" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.Matrix.OffsetY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の y 方向の平行移動値 (dy 値、すなわち 3 番目の行の 2 番目の列の要素) を取得します。</summary>
+        <value><see cref="T:System.Drawing.Drawing2D.Matrix" /> の y 方向の平行移動値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>単位行列の要素を持つように対象の <see cref="T:System.Drawing.Drawing2D.Matrix" /> をリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単位行列のメイン対角線上の要素は 1 です。 単位行列の他のすべての要素は、0 です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   拡大縮小行列を作成します。  
+  
+-   画面にマトリックス要素の一覧を示します。  
+  
+-   Id に、マトリックスをリセットします。  
+  
+-   画面に要素を一覧表示します。  
+  
+-   50 のポイントの x 軸と y 軸に 40 ポイントによって、マトリックスを変換します。  
+  
+-   画面に翻訳済みの行列の要素を一覧表示します。  
+  
+-   行列変換 (青い四角形) を適用する前に画面に描画する四角形を描画します。  
+  
+-   四角形に、変換を適用します。  
+  
+-   描画 (赤い四角形)、前の四角形として同じ座標を使用して、画面に変換された四角形を描画します。  
+  
+ 赤色の四角形が、(リセット) のためには拡大縮小されませんが、x 軸と y 軸に変換されたことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate">
+      <MemberSignature Language="C#" Value="public void Rotate (float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Rotate(float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Rotate(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <summary>原点を中心とする指定した角度の時計回りの回転を、この <see cref="T:System.Drawing.Drawing2D.Matrix" /> の前に付加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.Rotate%28System.Single%2CSystem.Drawing.Drawing2D.MatrixOrder%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate">
+      <MemberSignature Language="C#" Value="public void Rotate (float angle, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Rotate(float32 angle, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Rotate(System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転の角度 (エクステント)。</param>
+        <param name="order">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> に回転を適用する順序 (前後どちらに付加するか) を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary><paramref name="angle" /> パラメーターで指定した量の、原点 (x 座標と y 座標が 0) を中心とする時計回りの回転を、この <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   回転変換 (青い四角形) を適用する前に画面に四角形を描画します。  
+  
+-   行列を作成し、それを 45 度回転します。  
+  
+-   四角形に、この行列変換を適用します。  
+  
+-   画面 (赤色の四角形) に変換された四角形を描画します。  
+  
+ 赤色の四角形を回転されていることに注意してください。 0 を、0 の周囲には、画面の座標。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateAt">
+      <MemberSignature Language="C#" Value="public void RotateAt (float angle, System.Drawing.PointF point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateAt(float32 angle, valuetype System.Drawing.PointF point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.RotateAt(System.Single,System.Drawing.PointF)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転の角度 (エクステント)。</param>
+        <param name="point">回転の中心を表す <see cref="T:System.Drawing.PointF" />。</param>
+        <summary>回転を前に付加することで、<paramref name="point" /> パラメーターで指定した点を中心とする時計回りの回転を、この <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Drawing.Drawing2D.Matrix>と<xref:System.Drawing.Drawing2D.GraphicsPath.Transform%2A>文字列を回転するメソッド。 この例は、Windows フォームで使用するよう設計されています。 フォームを作成し、次のコードを貼り付けます。 呼び出す、`DrawVerticalStringFromBottomUp`メソッドで、フォームの<xref:System.Windows.Forms.Control.Paint>イベント ハンドラーを渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.MiscExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.MiscExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.MiscExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.MiscExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.MiscExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateAt">
+      <MemberSignature Language="C#" Value="public void RotateAt (float angle, System.Drawing.PointF point, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateAt(float32 angle, valuetype System.Drawing.PointF point, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.RotateAt(System.Single,System.Drawing.PointF,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="point" Type="System.Drawing.PointF" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <param name="point">回転の中心を表す <see cref="T:System.Drawing.PointF" />。</param>
+        <param name="order">回転を適用する順序 (前後どちらに付加するか) を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した点を中心とする時計回りの回転を、指定した順序でこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   回転変換 (青い四角形) を適用する前に画面に四角形を描画します。  
+  
+-   行列を作成し、指定した点を中心 45 度回転させます。  
+  
+-   この行列を適用する変換とは、四角形にします。  
+  
+-   画面 (赤色の四角形) に変換された四角形を描画します。  
+  
+ 赤色の四角形の四角形の左上隅の周囲回転されていることに注意してください (指定した回転点、<xref:System.Drawing.Drawing2D.Matrix.RotateAt%2A>メソッド)。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public void Scale (float scaleX, float scaleY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Scale(float32 scaleX, float32 scaleY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Scale(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Single" />
+        <Parameter Name="scaleY" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を x 軸方向にスケールする値。</param>
+        <param name="scaleY">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を y 軸方向にスケールする値。</param>
+        <summary>スケール ベクターを前に付加することで、指定したスケール ベクターをこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.Scale%28System.Single%2CSystem.Single%2CSystem.Drawing.Drawing2D.MatrixOrder%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public void Scale (float scaleX, float scaleY, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Scale(float32 scaleX, float32 scaleY, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Scale(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Single" />
+        <Parameter Name="scaleY" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を x 軸方向にスケールする値。</param>
+        <param name="scaleY">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を y 軸方向にスケールする値。</param>
+        <param name="order">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> にスケール ベクターを適用する順序 (前後どちらに付加するか) を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序を使用して、指定したスケール ベクター (<paramref name="scaleX" /> と <paramref name="scaleY" />) をこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   拡大縮小変換 (青い四角形) を適用する前に画面に四角形を描画します。  
+  
+-   行列を作成し、3、x 軸にして 2 y 軸のスケールを設定します。  
+  
+-   四角形に、この行列変換を適用します。  
+  
+-   画面 (赤色の四角形) に変換された四角形を描画します。  
+  
+ 赤色の四角形のサイズを変更および 2 (四角形の開始点) の四角形の左上隅を含め、y 軸の x 軸の 3 倍によってに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shear">
+      <MemberSignature Language="C#" Value="public void Shear (float shearX, float shearY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shear(float32 shearX, float32 shearY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Shear(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shearX" Type="System.Single" />
+        <Parameter Name="shearY" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="shearX">水平方向の傾斜係数。</param>
+        <param name="shearY">垂直方向の傾斜係数。</param>
+        <summary>傾斜変換を前に付加することで、指定した傾斜ベクターをこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに適用される変換は、0 は、パラメーターのいずれかの場合にのみ、純粋な傾斜です。 原点に四角形に適用されるときに、`shearY`要素が 0 の場合、変換、下端をで水平方向に移動する`shearX`四角形の高さがタイムアウトします。 ときに、`shearX`要素が 0 の場合、垂直方向に右のエッジを移動`shearY`四角形の幅がタイムアウトします。 注意は順序では、結果は予測できないために、両方のパラメーターが 0 でない場合です。 たとえば、両方の要素が 1 の場合は、変換は特異な (したがって押しつぶされて)、なり、平面全体を 1 行です。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードでは、次の操作を実行します。  
+  
+-   スケーリングの変換を適用する前に、緑のペンを使用して、画面に四角形を描画します。  
+  
+-   作成、<xref:System.Drawing.Drawing2D.Matrix>の世界座標変換の設定を使用して、<xref:System.Drawing.Graphics>です。  
+  
+-   赤のペンを使用して別の四角形を描画します。  
+  
+-   青のペンを使用して、楕円を描画します。  
+  
+ 緑色の四角形、赤い平行四辺形および変換された、青い楕円になります。 (トランス フォームを設定する前に描画される)、緑色の四角形に注意してくださいで指定された座標を使用して直接、<xref:System.Drawing.Graphics.DrawRectangle%2A>呼び出します。 その他の 2 つの図は、描画する前に変換されます。 四角形が (赤)、平行四辺形に変換され、省略記号ボタン (青) は変換された平行四辺形に収まるように変換します。 四角形の下部に注意してください (傾斜)、平行四辺形の四角形の高さの 2 倍の係数で x 軸に移動します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shear">
+      <MemberSignature Language="C#" Value="public void Shear (float shearX, float shearY, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shear(float32 shearX, float32 shearY, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Shear(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shearX" Type="System.Single" />
+        <Parameter Name="shearY" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="shearX">水平方向の傾斜係数。</param>
+        <param name="shearY">垂直方向の傾斜係数。</param>
+        <param name="order">傾斜を適用する順序 (前後どちらに付加するか) を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で、指定した傾斜ベクターをこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに適用される変換は、0 は、パラメーターのいずれかの場合にのみ、純粋な傾斜です。 原点に四角形に適用されるときに、`shearY`要素が 0 の場合、変換、下端をで水平方向に移動する`shearX`四角形の高さがタイムアウトします。 ときに、`shearX`要素が 0 の場合、垂直方向に右のエッジを移動`shearY`四角形の幅がタイムアウトします。 注意は順序では、結果は予測できないために、両方のパラメーターが 0 でない場合です。 たとえば、両方の要素が 1 の場合は、変換は特異な (したがって押しつぶされて)、なり、平面全体を 1 行です。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.Shear%28System.Single%2CSystem.Single%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformPoints">
+      <MemberSignature Language="C#" Value="public void TransformPoints (System.Drawing.Point[] pts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransformPoints(valuetype System.Drawing.Point[] pts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.TransformPoints(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">変換する複数の点を表す <see cref="T:System.Drawing.Point" /> 構造体の配列。</param>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> が表すジオメトリック変換を、指定した点の配列に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   四角形を形成する点の配列を作成します。  
+  
+-   (スケーリングの変換 (青い四角形) を適用する前に画面この点の配列に描画です。  
+  
+-   行列を作成し、3、x 軸にして 2 y 軸のスケールを設定します。  
+  
+-   この行列変換を点の配列に適用します。  
+  
+-   画面 (赤色の四角形) に変換された配列を描画します。  
+  
+ 赤色の四角形のサイズを変更および 2 (四角形の開始点) の四角形の左上隅を含め、y 軸の x 軸の 3 倍によってに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformPoints">
+      <MemberSignature Language="C#" Value="public void TransformPoints (System.Drawing.PointF[] pts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransformPoints(valuetype System.Drawing.PointF[] pts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.TransformPoints(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">変換する複数の点を表す <see cref="T:System.Drawing.PointF" /> 構造体の配列。</param>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> が表すジオメトリック変換を、指定した点の配列に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.TransformPoints%28System.Drawing.Point%5B%5D%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformVectors">
+      <MemberSignature Language="C#" Value="public void TransformVectors (System.Drawing.Point[] pts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransformVectors(valuetype System.Drawing.Point[] pts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.TransformVectors(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">変換する複数の点を表す <see cref="T:System.Drawing.Point" /> 構造体の配列。</param>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.Matrix" /> のスケールおよび回転の成分だけを、指定した点の配列に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   四角形を形成する点の配列を作成します。  
+  
+-   この点の配列を拡大縮小変換 (青い四角形) を適用する前に画面に描画します。  
+  
+-   行列を作成し、3 x 軸にして、y 軸のスケールを設定し、両方の軸に 100 ずつ変換します。  
+  
+-   画面にマトリックス要素の一覧を示します。  
+  
+-   この行列変換を点の配列に適用します。  
+  
+-   画面 (赤色の四角形) に変換された配列を描画します。  
+  
+ 平行移動ベクター (マトリックスの最後の 2 つの要素) は無視されますが赤い四角形のサイズを変更および 2 (四角形の開始点) の四角形の左上隅を含め、y 軸の x 軸の 3 倍によってに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformVectors">
+      <MemberSignature Language="C#" Value="public void TransformVectors (System.Drawing.PointF[] pts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TransformVectors(valuetype System.Drawing.PointF[] pts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.TransformVectors(System.Drawing.PointF[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.PointF[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">変換する複数の点を表す <see cref="T:System.Drawing.Point" /> 構造体の配列。</param>
+        <summary>配列内の各ベクターを行列で乗算します。 この行列の平行移動要素 (3 番目の行) は無視されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.TransformVectors%28System.Drawing.Point%5B%5D%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public void Translate (float offsetX, float offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Translate(float32 offsetX, float32 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Translate(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Single" />
+        <Parameter Name="offsetY" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を平行移動する x の値。</param>
+        <param name="offsetY">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を平行移動する y の値。</param>
+        <summary>平行移動ベクターを前に付加することで、指定した平行移動ベクター (<paramref name="offsetX" /> と <paramref name="offsetY" />) をこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.Matrix.Translate%28System.Single%2CSystem.Single%2CSystem.Drawing.Drawing2D.MatrixOrder%29>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public void Translate (float offsetX, float offsetY, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Translate(float32 offsetX, float32 offsetY, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.Translate(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Single" />
+        <Parameter Name="offsetY" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を平行移動する x の値。</param>
+        <param name="offsetY">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> を平行移動する y の値。</param>
+        <param name="order">この <see cref="T:System.Drawing.Drawing2D.Matrix" /> に平行移動を適用する順序 (前後どちらに付加するか) を指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で、指定した平行移動ベクターをこの <see cref="T:System.Drawing.Drawing2D.Matrix" /> に適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Control.Paint>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   平行移動の変換 (青い四角形) を適用する前に画面に四角形を描画します。  
+  
+-   行列を作成し、両方の軸に 100 ずつ変換します。  
+  
+-   この行列変換を四角形に適用します。  
+  
+-   画面 (赤色の四角形) に変換された四角形を描画します。  
+  
+ 赤色の四角形の先頭は、青色の三角形の先頭からの両方の軸である 100 ポイントであることを確認します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicMatrixExamples#9](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CPP/form1.cpp#9)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicMatrixExamples#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/CS/form1.cs#9)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicMatrixExamples#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicMatrixExamples/VB/form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VectorTransformPoints">
+      <MemberSignature Language="C#" Value="public void VectorTransformPoints (System.Drawing.Point[] pts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void VectorTransformPoints(valuetype System.Drawing.Point[] pts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.Matrix.VectorTransformPoints(System.Drawing.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pts" Type="System.Drawing.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="pts">変換する複数の点を表す <see cref="T:System.Drawing.Point" /> 構造体の配列。</param>
+        <summary>配列内の各ベクターを行列で乗算します。 この行列の平行移動要素 (3 番目の行) は無視されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

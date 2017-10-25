@@ -1,0 +1,688 @@
+<Type Name="Figure" FullName="System.Windows.Documents.Figure">
+  <TypeSignature Language="C#" Value="public class Figure : System.Windows.Documents.AnchoredBlock" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Figure extends System.Windows.Documents.AnchoredBlock" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Figure" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.AnchoredBlock</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>図のホストに使用されるインライン レベル フロー コンテンツ要素。  A*図*フローの一部は、内のプライマリ コンテンツ フローから個別にカスタマイズを可能する配置プロパティを持つコンテンツ、<see cref="T:System.Windows.Documents.FlowDocument" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Figure>子コンテンツの強力なコンテンツ モデルを適用します。 参照してください[TextElement コンテンツ モデルの概要](~/docs/framework/wpf/advanced/textelement-content-model-overview.md)の詳細については、<xref:System.Windows.Documents.Figure>コンテンツ モデルです。  
+  
+ <xref:System.Windows.Documents.Figure>または<xref:System.Windows.Documents.Floater>要素が強調表示や、イメージまたはメイン コンテンツのフロー内の他のコンテンツをサポートするホストへのコンテンツの一部を強調したりに使用する多くの場合、または疎を挿入する関連するコンテンツの提供情報などです。  
+  
+ <xref:System.Windows.Documents.Figure>および<xref:System.Windows.Documents.Floater>いくつかの方法が異なるし、さまざまなシナリオが使用されます。  
+  
+ **Figure:**  
+  
+-   配置可能です。水平方向および垂直方向のアンカーを設定することによって、ページ、コンテンツ、列、または段落に対して相対的にドッキングできます。 使用することもその<xref:System.Windows.Documents.Figure.HorizontalOffset%2A>と<xref:System.Windows.Documents.Figure.VerticalOffset%2A>プロパティを任意のオフセットを指定します。  
+  
+-   1 つ以上の列にかなりの数: 設定することができます<xref:System.Windows.Documents.Figure>高さと幅のページ、コンテンツまたは列の高さまたは幅の倍数をします。 ページおよびコンテンツの場合は、1 より大きい倍数は指定できない点に注意してください。 たとえばの幅を設定することができます、 <xref:System.Windows.Documents.Figure> 「0.5 ページ」または"0.25 content"または「2 列」を指定します。 高さと幅は、絶対ピクセル値で指定することもできます。  
+  
+-   改ページ調整ではありません: 場合内のコンテンツ、<xref:System.Windows.Documents.Figure>内に一致しない、 <xref:System.Windows.Documents.Figure>、あらゆるコンテンツに合わせて、表示して、残りのコンテンツは失われます  
+  
+ **Floater:**  
+  
+-   配置できません。必要なスペースを確保できる場所に描画されます。 オフセットまたはアンカーを設定することはできません、<xref:System.Windows.Documents.Floater>です。  
+  
+-   複数の列にサイズを変更できません: 既定では、 <xref:System.Windows.Documents.Floater> 1 つの列のサイズ。 <xref:System.Windows.Documents.Floater.Width%2A> 1 つの列のサイズはこの値は 1 つの列の幅は無視され、フローターより大きい場合は、絶対ピクセル値を設定できるプロパティです。 正しいピクセル幅を設定して未満である 1 つの列サイズできますが、サイズ変更はない列の相対のため"はできないの有効な式<xref:System.Windows.Documents.Floater>幅。 <xref:System.Windows.Documents.Floater>高さのプロパティを持たないであり、高さを設定することはできませんの高さは、内容によって異なります。  
+  
+-   <xref:System.Windows.Documents.Floater>改ページも: フローターが中断し、次の列では、次のページなどの改ページも 1 つ以上の列の高さを指定した幅にコンテンツが拡張される場合。  
+  
+ <xref:System.Windows.Documents.Figure>サイズを制御するスタンドアロンのコンテンツを配置する適切な場所と配置、およびコンテンツは、指定されたサイズに収まるかどうかを確信します。 <xref:System.Windows.Documents.Floater>フロー メイン ページのコンテンツに似ていますが、そこからは分離されているより多くの自由なコンテンツを配置する適切な場所です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、<xref:System.Windows.Documents.FlowDocument>両方を含む<xref:System.Windows.Documents.Floater>と<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FloaterFigureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_floaterfigurexaml)]  
+  
+ この例の表示結果を次の図に示します。  
+  
+ ![スクリーン ショット: Floater と Figure FlowDocument 内](~/add/media/floaterfigure.png "スクリーン ショット: Floater と Figure FlowDocument 内")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Figure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Figure.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい、空のインスタンスを初期化、<see cref="T:System.Windows.Documents.Figure" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Figure (System.Windows.Documents.Block childBlock);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Block childBlock) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Figure.#ctor(System.Windows.Documents.Block)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childBlock" Type="System.Windows.Documents.Block" />
+      </Parameters>
+      <Docs>
+        <param name="childBlock">A<see cref="T:System.Windows.Documents.Block" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Figure" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Figure" />クラス、指定した<see cref="T:System.Windows.Documents.Block" />オブジェクトを新しいの初期コンテンツとして<see cref="T:System.Windows.Documents.Figure" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureConst1](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureconst1)]
+ [!code-vb[FloaterFigureSnippets#_FigureConst1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureconst1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Figure (System.Windows.Documents.Block childBlock, System.Windows.Documents.TextPointer insertionPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Block childBlock, class System.Windows.Documents.TextPointer insertionPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Figure.#ctor(System.Windows.Documents.Block,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childBlock" Type="System.Windows.Documents.Block" />
+        <Parameter Name="insertionPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="childBlock">A<see cref="T:System.Windows.Documents.Block" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Figure" />です。  このパラメーターがあります<see langword="null" />、後者ありません<see cref="T:System.Windows.Documents.Block" />を挿入します。</param>
+        <param name="insertionPosition">A<see cref="T:System.Windows.Documents.TextPointer" />を挿入する位置の挿入位置を指定する、<see cref="T:System.Windows.Documents.Figure" />要素は、その作成した後または<see langword="null" />ありませんを自動挿入するためです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Figure" />クラス、指定した<see cref="T:System.Windows.Documents.Block" />オブジェクトとして、新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Figure" />、および<see cref="T:System.Windows.Documents.TextPointer" />挿入位置を指定する、新しい<see cref="T:System.Windows.Documents.Figure" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用を示します。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureConst2](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureconst2)]
+ [!code-vb[FloaterFigureSnippets#_FigureConst2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureconst2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDelayPlacement">
+      <MemberSignature Language="C#" Value="public bool CanDelayPlacement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanDelayPlacement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.CanDelayPlacement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この図でコンテンツのフロー内の位置を遅延できるかどうかを示す値を設定します。</summary>
+        <value>**true**次の図は、配置を遅延できる場合は、それ以外の場合、 **false**です。  
+  
+ 既定値は**true**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CanDelayPlacement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.CanDelayPlacementProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanDelayPlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CanDelayPlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CanDelayPlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.CanDelayPlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.CanDelayPlacement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public System.Windows.FigureLength Height { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FigureLength Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FigureLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはの高さを示す値を設定、<see cref="T:System.Windows.Documents.Figure" />要素。</summary>
+        <value>A<see cref="T:System.Windows.FigureLength" />構造体の高さの特性を指定する、<see cref="T:System.Windows.Documents.Figure" />です。  
+  
+ 既定値は<see cref="T:System.Windows.FigureLength" />します。<see cref="P:System.Windows.FigureLength.Value" /> = **1.0**と<see cref="T:System.Windows.FigureLength" />です。<see cref="P:System.Windows.FigureLength.FigureUnitType" /> = <see cref="F:System.Windows.FigureUnitType.Auto" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Height"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.HeightProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.Height%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.Height%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeightProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HeightProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HeightProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.HeightProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.Height" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAnchor">
+      <MemberSignature Language="C#" Value="public System.Windows.FigureHorizontalAnchor HorizontalAnchor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FigureHorizontalAnchor HorizontalAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.HorizontalAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FigureHorizontalAnchor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または水平方向にコンテンツが固定される位置を示す値を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FigureHorizontalAnchor" />の水平方向のアンカーの場所を指定する列挙体、<see cref="T:System.Windows.Documents.Figure" />です。  
+  
+ 既定値は <see cref="F:System.Windows.FigureHorizontalAnchor.ColumnRight" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_HorizontalAnchor"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.HorizontalAnchorProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.HorizontalAnchor%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.HorizontalAnchor%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalAnchorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalAnchorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalAnchorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.HorizontalAnchorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.HorizontalAnchor" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffset">
+      <MemberSignature Language="C#" Value="public double HorizontalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.HorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の距離を示す値を<see cref="T:System.Windows.Documents.Figure" />水平方向にそのベースラインからオフセットします。</summary>
+        <value>までの距離を<see cref="T:System.Windows.Documents.Figure" />デバイス非依存ピクセルで、水平方向にそのベースラインからオフセットします。  
+  
+ 既定値は**0.0**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_HorizontalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HorizontalOffset="double"/>  
+- or -  
+<object HorizontalOffset="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_HorizontalOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると**0.0**がよりも小さい<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_HorizontalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.HorizontalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.HorizontalOffset%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.HorizontalOffset%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.HorizontalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalAnchor">
+      <MemberSignature Language="C#" Value="public System.Windows.FigureVerticalAnchor VerticalAnchor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FigureVerticalAnchor VerticalAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.VerticalAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FigureVerticalAnchor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または垂直方向にコンテンツが固定される位置を示す値を設定します。</summary>
+        <value>メンバー、<see cref="T:System.Windows.FigureVerticalAnchor" />の垂直方向のアンカーの場所を指定する列挙体、<see cref="T:System.Windows.Documents.Figure" />です。  
+  
+ 既定値は <see cref="F:System.Windows.FigureVerticalAnchor.ParagraphTop" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_VerticalAnchor"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.VerticalAnchorProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.VerticalAnchor%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.VerticalAnchor%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalAnchorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalAnchorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalAnchorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.VerticalAnchorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.VerticalAnchor" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffset">
+      <MemberSignature Language="C#" Value="public double VerticalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.VerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の距離を示す値を<see cref="T:System.Windows.Documents.Figure" />垂直方向にそのベースラインからオフセットします。</summary>
+        <value>までの距離を<see cref="T:System.Windows.Documents.Figure" />デバイス非依存ピクセルで、垂直方向にそのベースラインからオフセットします。  
+  
+ 既定値は**0.0**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_VerticalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object VerticalOffset="double"/>  
+- or -  
+<object VerticalOffset="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_VerticalOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値以上になると**0.0**がよりも小さい<xref:System.Double.PositiveInfinity>です。 修飾されていない値は、デバイス非依存ピクセル単位で計測されます。 明示的に、文字列では、小数点を含める必要がありますされません。  
+  
+ *qualifiedDouble*  
+ A*二重*、上記で説明したように値 (ドキュメントを除く`Auto`) 後に、次の単位指定子の 1 つ: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+<a name="dependencyPropertyInfo_VerticalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.VerticalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.VerticalOffset%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.VerticalOffset%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.VerticalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Width">
+      <MemberSignature Language="C#" Value="public System.Windows.FigureLength Width { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FigureLength Width" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.Width" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.FigureLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の幅を示す値、<see cref="T:System.Windows.Documents.Figure" />要素。</summary>
+        <value>A<see cref="T:System.Windows.FigureLength" />構造体の幅の特性を指定する、<see cref="T:System.Windows.Documents.Figure" />です。  
+  
+ 既定値は<see cref="T:System.Windows.FigureLength" />します。<see cref="P:System.Windows.FigureLength.Value" /> = **1.0**と<see cref="T:System.Windows.FigureLength" />です。<see cref="P:System.Windows.FigureLength.FigureUnitType" /> = <see cref="F:System.Windows.FigureUnitType.Auto" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Width"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.WidthProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.Width%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.Width%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WidthProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WidthProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WidthProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.WidthProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.Width" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapDirection">
+      <MemberSignature Language="C#" Value="public System.Windows.WrapDirection WrapDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.WrapDirection WrapDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Figure.WrapDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WrapDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコンテンツが周囲フローできます、許容される方法を示す値を設定、<see cref="T:System.Windows.Documents.Figure" />です。</summary>
+        <value>メンバー、<see cref="T:System.Windows.WrapDirection" />コンテンツが周囲フローできます、許容される方法を指定する列挙体、<see cref="T:System.Windows.Documents.Figure" />です。  
+  
+ 既定値は <see cref="F:System.Windows.WrapDirection.Both" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_WrapDirection"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Figure.WrapDirectionProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsParentMeasure%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.WrapDirection%2A>の属性、<xref:System.Windows.Documents.Figure>要素。  
+  
+ [!code-xaml[FloaterFigureSnippets#_FigurePropsXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml#_figurepropsxaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Figure.WrapDirection%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[FloaterFigureSnippets#_FigureProps](~/samples/snippets/csharp/VS_Snippets_Wpf/FloaterFigureSnippets/CSharp/Window1.xaml.cs#_figureprops)]
+ [!code-vb[FloaterFigureSnippets#_FigureProps](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FloaterFigureSnippets/visualbasic/window1.xaml.vb#_figureprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapDirectionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WrapDirectionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WrapDirectionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Figure.WrapDirectionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Figure.WrapDirection" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,243 @@
+<Type Name="CursorEventArgs" FullName="System.Windows.Forms.DataVisualization.Charting.CursorEventArgs">
+  <TypeSignature Language="C#" Value="public class CursorEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CursorEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ルートで、次のイベントで使用されるプロパティを提供<see cref="T:System.Windows.Forms.DataVisualization.Charting.Chart" />オブジェクト: <see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged" />、 <see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging" />、<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanged" />と<see cref="E:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs>としてクラスが公開されている、`e`内のパラメーター、 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>、 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>ルートのイベント<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト。  
+  
+ このクラスには、次のプロパティが含まれています。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea>のイベントが発生したオブジェクト。 <xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.Name>グラフ領域の名前を取得するプロパティ以外の他のグラフ領域のプロパティを設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis%2A>取得に使用されるプロパティ、<xref:System.Windows.Forms.DataVisualization.Charting.Axis>のイベントが発生したオブジェクト。 軸の種類を確認する — X、Y または Y2、X2: を使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。 その他の軸のプロパティが設定することもできます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewPosition%2A>軸に沿ったカーソルの位置を表すプロパティは、イベントが発生した時に、軸の値、として計測されます。 <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewPosition%2A>プロパティを使用して、カーソルの位置を取得できます。 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>イベント、このプロパティは、カーソルの位置をリセットするも使用できます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionStart%2A>軸の範囲選択の開始位置を表すプロパティは、イベントが発生した時に、軸の値、として計測されます。 <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionStart%2A>プロパティを使用して選択範囲の開始位置を取得できます。 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>イベント、このプロパティは、位置をリセットするも使用できます。  
+  
+-   <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionEnd%2A>軸の範囲選択の終了位置を表すプロパティは、イベントが発生した時に、軸の値、として計測されます。 <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionEnd%2A>プロパティを使用して、選択した範囲の終了位置を取得することです。 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>イベント、このプロパティは、位置をリセットするも使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CursorEventArgs (System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, System.Windows.Forms.DataVisualization.Charting.Axis axis, double newPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, class System.Windows.Forms.DataVisualization.Charting.Axis axis, float64 newPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.ChartArea,System.Windows.Forms.DataVisualization.Charting.Axis,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="chartArea" Type="System.Windows.Forms.DataVisualization.Charting.ChartArea" />
+        <Parameter Name="axis" Type="System.Windows.Forms.DataVisualization.Charting.Axis" />
+        <Parameter Name="newPosition" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="chartArea"><see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />カーソルのです。</param>
+        <param name="axis">カーソルの軸です。</param>
+        <param name="newPosition">新しいカーソル位置。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs" />クラスの指定したグラフ領域、軸、およびカーソルの位置を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CursorEventArgs (System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, System.Windows.Forms.DataVisualization.Charting.Axis axis, double newSelectionStart, double newSelectionEnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea, class System.Windows.Forms.DataVisualization.Charting.Axis axis, float64 newSelectionStart, float64 newSelectionEnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.#ctor(System.Windows.Forms.DataVisualization.Charting.ChartArea,System.Windows.Forms.DataVisualization.Charting.Axis,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="chartArea" Type="System.Windows.Forms.DataVisualization.Charting.ChartArea" />
+        <Parameter Name="axis" Type="System.Windows.Forms.DataVisualization.Charting.Axis" />
+        <Parameter Name="newSelectionStart" Type="System.Double" />
+        <Parameter Name="newSelectionEnd" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="chartArea"><see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />カーソルのです。</param>
+        <param name="axis">カーソルの軸です。</param>
+        <param name="newSelectionStart">新しい範囲選択の開始位置。</param>
+        <param name="newSelectionEnd">新しい範囲選択の終了位置。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs" />新しい範囲の指定したグラフ領域、軸、開始と終了位置を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Axis">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.Axis Axis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.Axis Axis" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.Axis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />カーソルまたは範囲の選択が属するオブジェクト。</summary>
+        <value><see cref="T:System.Windows.Forms.DataVisualization.Charting.Axis" />カーソルまたは範囲の選択が属する軸を表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis%2A>ルートの次のイベントのプロパティが公開される<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト: <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>、 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>です。  
+  
+ このプロパティを使用することができます。  
+  
+-   軸の種類を決定 — X、Y または Y2、X2 — イベントが発生して、使用して、<xref:System.Windows.Forms.DataVisualization.Charting.Axis.AxisName%2A>プロパティです。  
+  
+-   取得し、軸のプロパティを設定します。<xref:System.Windows.Forms.DataVisualization.Charting.Axis.LineColor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChartArea">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.DataVisualization.Charting.ChartArea ChartArea" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataVisualization.Charting.ChartArea</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />カーソルまたは範囲の選択が属するオブジェクト。</summary>
+        <value>型のオブジェクト<see cref="T:System.Windows.Forms.DataVisualization.Charting.ChartArea" />範囲の選択 またはカーソルが属しているグラフ領域を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea%2A>ルートの次のイベントのプロパティが公開される<xref:System.Windows.Forms.DataVisualization.Charting.Chart>オブジェクト: <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>、 <xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanged>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>です。  
+  
+ このプロパティを使用することができます。  
+  
+-   対象となるイベントが生成されたどのグラフ領域を決定します。これは、グラフ画像内で複数のグラフ領域があるときに便利です。  
+  
+-   取得し、グラフ領域のプロパティを設定します。<xref:System.Windows.Forms.DataVisualization.Charting.ChartArea.BackColor%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewPosition">
+      <MemberSignature Language="C#" Value="public double NewPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカーソルの位置を設定します。 イベントに応じて、また、カーソルの位置を設定します。</summary>
+        <value>A<see langword="double" />を軸に沿ったカーソルの位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが新しいカーソル、カーソルの位置を表しで使用できる、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>カーソルの位置を取得するイベントです。 使用することもできます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>カーソルの位置を設定するイベントです。  
+  
+ そのこのプロパティの設定注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>イベントには影響はありません。 <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewPosition%2A>の値を持つ<xref:System.Double.NaN>このイベントでします。  
+  
+ グラフ領域に対して、イベントが生成されていることを確認するには<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis%2A>プロパティがこの終了位置の範囲に沿ってプライマリ選択されている、または第 2 X または Y 軸のかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSelectionEnd">
+      <MemberSignature Language="C#" Value="public double NewSelectionEnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewSelectionEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の終了位置を設定します。 イベントに応じて、また、範囲の終了位置を設定します。</summary>
+        <value>A<see langword="double" />の選択範囲の終了位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionEnd%2A>プロパティは、カーソルの新しい位置を表しで使用できる、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>カーソルの位置を取得するイベントです。 使用することもできます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>カーソルの位置を設定するイベントです。  
+  
+ そのこのプロパティの設定注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.SelectionRangeChanging>イベントには影響はありません。 <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionEnd%2A>の値を持つ<xref:System.Double.NaN>このイベントでします。  
+  
+ 選択範囲の開始位置が必ずしもより小さくありません選択範囲の終了位置です。  開始位置は、ここで、グラフ領域内でクリックされたときに、ユーザー最初、終了位置では、マウスの位置はイベントの発生時に位置です。  
+  
+ グラフ領域の決定に使用するため、イベントが発生している、<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis%2A>プロパティがこの終了位置の範囲に沿ってプライマリ選択されている、または第 2 X または Y 軸のかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSelectionStart">
+      <MemberSignature Language="C#" Value="public double NewSelectionStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 NewSelectionStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択範囲の開始位置を設定します。 イベントに応じて、また、範囲の開始位置を設定します。</summary>
+        <value>A<see langword="double" />の選択範囲の開始位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionStart%2A>プロパティは、カーソルの新しい位置を表しで使用できる、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>と<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanged>カーソルの位置を取得するイベントです。 使用することもできます、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>カーソルの位置を設定するイベントです。  
+  
+ そのこのプロパティの設定注意してください、<xref:System.Windows.Forms.DataVisualization.Charting.Chart.CursorPositionChanging>イベントには影響はありません;<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.NewSelectionStart%2A>の値を持つ<xref:System.Double.NaN>このイベントでします。  
+  
+ 選択範囲の開始位置が必ずしもより小さくありません選択範囲の終了位置です。 開始位置は、ここで、グラフ領域内でクリックされたときに、ユーザー最初、終了位置では、マウスの位置はイベントの発生時に位置です。  
+  
+ グラフ領域に対して、イベントが生成されていることを確認するには<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.ChartArea%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Forms.DataVisualization.Charting.CursorEventArgs.Axis%2A>プロパティがこの終了位置の範囲に沿ってプライマリ選択されている、または第 2 X または Y 軸のかを判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

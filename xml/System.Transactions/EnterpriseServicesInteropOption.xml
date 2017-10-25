@@ -1,0 +1,109 @@
+<Type Name="EnterpriseServicesInteropOption" FullName="System.Transactions.EnterpriseServicesInteropOption">
+  <TypeSignature Language="C#" Value="public enum EnterpriseServicesInteropOption" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EnterpriseServicesInteropOption extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Transactions.EnterpriseServicesInteropOption" />
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Transactions.Local</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>どのように分散トランザクションを指定します。 COM + トランザクションと対話します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework のクラスを使用して COM + トランザクションに参加する管理対象の .NET コンポーネントを使用する、<xref:System.EnterpriseServices>名前空間。 ただし、既定では、相互運用性が指定されていません、以降は、この列挙を使用して COM + のコンテキストに参加する方法を指定する必要があります。 具体的には、作成する場合、新しい<xref:System.Transactions.TransactionScope>、この列挙体をトランザクション COM + トランザクションに参加する方法を示すために使用します。 詳細については、次を参照してください。[エンタープライズ サービス、および COM + トランザクションとの相互運用](http://msdn.microsoft.com/en-us/2e93b3c6-4d48-4b9b-82b2-7d5908a2c970)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Automatic">
+      <MemberSignature Language="C#" Value="Automatic" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.EnterpriseServicesInteropOption Automatic = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.EnterpriseServicesInteropOption.Automatic" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.EnterpriseServicesInteropOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既存の COM + コンテキストの検索し、1 つが存在する場合、同期されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Full">
+      <MemberSignature Language="C#" Value="Full" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.EnterpriseServicesInteropOption Full = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.EnterpriseServicesInteropOption.Full" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.EnterpriseServicesInteropOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="N:System.EnterpriseServices" />コンテキスト (静的メソッドを呼び出すことによって取得できますが<see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />の<see cref="T:System.EnterpriseServices.ContextUtil" />クラス) と<see cref="N:System.Transactions" />アンビエント トランザクション (静的メソッドを呼び出すことによって取得できますが<see cref="P:System.Transactions.Transaction.Current" />の<see cref="T:System.Transactions.Transaction" />クラス) は常に同期します。 これは、ため、パフォーマンスの低下場合、新しい<see cref="N:System.EnterpriseServices" />コンテキストを作成する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Transactions.EnterpriseServicesInteropOption None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Transactions.EnterpriseServicesInteropOption.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Transactions.Local</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.EnterpriseServicesInteropOption</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期されません<see cref="P:System.EnterpriseServices.ContextUtil.Transaction" />と<see cref="P:System.Transactions.Transaction.Current" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

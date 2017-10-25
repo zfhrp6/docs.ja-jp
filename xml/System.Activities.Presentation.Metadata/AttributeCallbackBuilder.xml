@@ -1,0 +1,268 @@
+<Type Name="AttributeCallbackBuilder" FullName="System.Activities.Presentation.Metadata.AttributeCallbackBuilder">
+  <TypeSignature Language="C#" Value="public sealed class AttributeCallbackBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AttributeCallbackBuilder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Metadata.AttributeCallbackBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定の型の属性を特定の <see cref="T:System.Activities.Presentation.Metadata.AttributeTable" /> に追加するためのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Presentation.Metadata.AttributeTable> に対してある型の属性が初めて照会されると、<xref:System.Activities.Presentation.Metadata.AttributeTableBuilder> を使用して <xref:System.Activities.Presentation.Metadata.AttributeTableBuilder.AddCallback%2A> にその型のデータが入力されていれば、デリゲートに <xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder> が渡されます。 <xref:System.Activities.Presentation.Metadata.AttributeTable> では、コールバック参照が削除されて、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes%2A> への呼び出しによって提供されたすべての属性情報が追加されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName="AddCustomAttributes">
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddCustomAttributes">
+      <MemberSignature Language="C#" Value="public void AddCustomAttributes (params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCustomAttributes(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="attributes">テーブルに追加する属性。</param>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="attributes" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomAttributes">
+      <MemberSignature Language="C#" Value="public void AddCustomAttributes (System.ComponentModel.MemberDescriptor descriptor, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCustomAttributes(class System.ComponentModel.MemberDescriptor descriptor, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes(System.ComponentModel.MemberDescriptor,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="descriptor" Type="System.ComponentModel.MemberDescriptor" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="descriptor">属性を追加するメンバー。</param>
+        <param name="attributes">テーブルに追加する属性。</param>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="descriptor" /> または <paramref name="attributes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomAttributes">
+      <MemberSignature Language="C#" Value="public void AddCustomAttributes (System.Reflection.MemberInfo member, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCustomAttributes(class System.Reflection.MemberInfo member, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes(System.Reflection.MemberInfo,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="member" Type="System.Reflection.MemberInfo" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="member">属性を追加するメンバー。</param>
+        <param name="attributes">テーブルに追加する属性。</param>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="member" /> または <paramref name="attributes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomAttributes">
+      <MemberSignature Language="C#" Value="public void AddCustomAttributes (string memberName, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCustomAttributes(string memberName, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes(System.String,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memberName" Type="System.String" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="memberName">属性を追加するメンバーの名前。</param>
+        <param name="attributes">テーブルに追加する属性。</param>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="memberName" /> または <paramref name="attributes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCustomAttributes">
+      <MemberSignature Language="C#" Value="public void AddCustomAttributes (System.Windows.DependencyProperty dp, params Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddCustomAttributes(class System.Windows.DependencyProperty dp, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.AddCustomAttributes(System.Windows.DependencyProperty,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dp" Type="System.Windows.DependencyProperty" />
+        <Parameter Name="attributes" Type="System.Attribute[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="dp">属性を追加する依存関係。</param>
+        <param name="attributes">テーブルに追加する属性。</param>
+        <summary>指定した属性の内容を、このビルダーを作成した属性テーブルに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性が、既にテーブルに含まれている他の属性と競合する場合は、古い属性が最後に追加された属性に置き換えられます。  
+  
+ 属性は、<xref:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType%2A> によって指定された型に対してのみ追加できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dp" /> または <paramref name="attributes" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CallbackType">
+      <MemberSignature Language="C#" Value="public Type CallbackType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type CallbackType" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Metadata.AttributeCallbackBuilder.CallbackType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性を追加する型。</summary>
+        <value>属性を追加する型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型はコンストラクターで設定され、変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

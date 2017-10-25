@@ -1,0 +1,359 @@
+<Type Name="Scope" FullName="System.IdentityModel.Scope">
+  <TypeSignature Language="C#" Value="public class Scope" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Scope extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Scope" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>トークン発行要求の構成を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Scope>クラスは、証明書利用者 (RP) セキュリティ トークン要求 (RST) に関連付けられているに関する情報をカプセル化します。 実装でこの情報を使用、<xref:System.IdentityModel.SecurityTokenService>セキュリティ トークン要求 (RST) を応答 (RSTR) を返すために、トークンの発行パイプライン内のクラス (STS)。  
+  
+ <xref:System.IdentityModel.Scope>オブジェクトには、RP、暗号化および署名資格情報を使って発行されたセキュリティ トークンのアドレスに関する情報が含まれてし、トークンを暗号化するかによって発行されたトークン自体または対称キーかどうか。 既定では、トークンと対称キーの両方が暗号化されます。 拡張することができます、<xref:System.IdentityModel.Scope>クラスなど、RP によって受け入れられるトークンの種類の要求に関する追加情報を実行するために既定のトークンの有効期間、最大のトークンの有効期間、RP によって使用されるアルゴリズム スイートとなどです。 ただし、このクラスにカプセル化された情報に変わらないように個々 の要求のです。  
+  
+ トークンの発行パイプラインの実装、<xref:System.IdentityModel.SecurityTokenService.Issue%2A>このメソッドを呼び出す、 <xref:System.IdentityModel.SecurityTokenService.GetScope%2A> RST の構成を取得します。 実装する必要があります、<xref:System.IdentityModel.SecurityTokenService.GetScope%2A>メソッドで、カスタム STS と戻り値、<xref:System.IdentityModel.Scope>オブジェクトに適した RP および STS の実装です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Scope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Scope.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Scope" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Scope>インスタンス。  
+  
+|プロパティ|値。|  
+|--------------|------------|  
+|<xref:System.IdentityModel.Scope.AppliesToAddress%2A>|`null` .|  
+|<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.Properties%2A>|空のディクショナリ。|  
+|<xref:System.IdentityModel.Scope.ReplyToAddress%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SigningCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>|`true`。|  
+|<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Scope (string appliesToAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appliesToAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Scope.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesToAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appliesToAddress">証明書利用者の appliesTo アドレスです。 通常は URI です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Scope" />指定された appliesTo アドレスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Scope>インスタンス。  
+  
+|プロパティ|値。|  
+|--------------|------------|  
+|<xref:System.IdentityModel.Scope.AppliesToAddress%2A>|`appliesToAddress` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.Properties%2A>|空のディクショナリ。|  
+|<xref:System.IdentityModel.Scope.ReplyToAddress%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SigningCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>|`true`。|  
+|<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Scope (string appliesToAddress, System.IdentityModel.Tokens.EncryptingCredentials encryptingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appliesToAddress, class System.IdentityModel.Tokens.EncryptingCredentials encryptingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Scope.#ctor(System.String,System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesToAddress" Type="System.String" />
+        <Parameter Name="encryptingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="appliesToAddress">証明書利用者の appliesTo アドレスです。 通常は URI です。</param>
+        <param name="encryptingCredentials">暗号化に証明書利用者の資格情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Scope" />クラスの指定された appliesTo アドレスを使用し、資格情報を暗号化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Scope>インスタンス。  
+  
+|プロパティ|値。|  
+|--------------|------------|  
+|<xref:System.IdentityModel.Scope.AppliesToAddress%2A>|`appliesToAddress` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.Properties%2A>|空のディクショナリ。|  
+|<xref:System.IdentityModel.Scope.ReplyToAddress%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SigningCredentials%2A>|`signingCredentials` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>|`true`。|  
+|<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Scope (string appliesToAddress, System.IdentityModel.Tokens.SigningCredentials signingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appliesToAddress, class System.IdentityModel.Tokens.SigningCredentials signingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Scope.#ctor(System.String,System.IdentityModel.Tokens.SigningCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesToAddress" Type="System.String" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="appliesToAddress">証明書利用者の appliesTo アドレスです。 通常は URI です。</param>
+        <param name="signingCredentials">証明書利用者の署名資格情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Scope" />指定された appliesTo アドレスを持つクラスし、資格情報に署名します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Scope>インスタンス。  
+  
+|プロパティ|値。|  
+|--------------|------------|  
+|<xref:System.IdentityModel.Scope.AppliesToAddress%2A>|`appliesToAddress` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.Properties%2A>|空のディクショナリ。|  
+|<xref:System.IdentityModel.Scope.ReplyToAddress%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SigningCredentials%2A>|`signingCredentials` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>|`true`。|  
+|<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Scope (string appliesToAddress, System.IdentityModel.Tokens.SigningCredentials signingCredentials, System.IdentityModel.Tokens.EncryptingCredentials encryptingCredentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string appliesToAddress, class System.IdentityModel.Tokens.SigningCredentials signingCredentials, class System.IdentityModel.Tokens.EncryptingCredentials encryptingCredentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Scope.#ctor(System.String,System.IdentityModel.Tokens.SigningCredentials,System.IdentityModel.Tokens.EncryptingCredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="appliesToAddress" Type="System.String" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+        <Parameter Name="encryptingCredentials" Type="System.IdentityModel.Tokens.EncryptingCredentials" />
+      </Parameters>
+      <Docs>
+        <param name="appliesToAddress">証明書利用者の appliesTo アドレスです。 通常は URI です。</param>
+        <param name="signingCredentials">証明書利用者の署名資格情報。</param>
+        <param name="encryptingCredentials">暗号化に証明書利用者の資格情報。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Scope" />署名資格情報、および資格情報を暗号化、指定された appliesTo アドレスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、新しい初期プロパティ値を示します<xref:System.IdentityModel.Scope>インスタンス。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.IdentityModel.Scope.AppliesToAddress%2A>|`appliesToAddress` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>|`encryptingCredentials` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.Properties%2A>|空のディクショナリ。|  
+|<xref:System.IdentityModel.Scope.ReplyToAddress%2A>|`null`。|  
+|<xref:System.IdentityModel.Scope.SigningCredentials%2A>|`signingCredentials` パラメーターの値。|  
+|<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>|`true`。|  
+|<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>|`true`。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppliesToAddress">
+      <MemberSignature Language="C#" Value="public virtual string AppliesToAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AppliesToAddress" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.AppliesToAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明書利用者の appliesTo アドレスを設定します。</summary>
+        <value>証明書利用者の appliesTo アドレスです。 通常は URI です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptingCredentials">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.EncryptingCredentials EncryptingCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.EncryptingCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.EncryptingCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明書利用者の暗号化の資格情報を設定します。</summary>
+        <value>暗号化に証明書利用者に使用する資格情報です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>プロパティは`true`、資格情報が発行されたセキュリティ トークンの暗号化に使用されます。 場合、<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>プロパティは`true`、資格情報は、セキュリティ トークンで発行された対称キーの暗号化に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.Dictionary&lt;string,object&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.Dictionary`2&lt;string, object&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.Dictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトを拡張するプロパティ バッグを取得します。</summary>
+        <value>プロパティ バッグ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReplyToAddress">
+      <MemberSignature Language="C#" Value="public virtual string ReplyToAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ReplyToAddress" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.ReplyToAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明書利用者の replyTo アドレスを設定します。</summary>
+        <value>証明書利用者の replyTo アドレス。 通常は URI です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SigningCredentials">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SigningCredentials SigningCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SigningCredentials SigningCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.SigningCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SigningCredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または証明書利用者の署名の資格情報を設定します。</summary>
+        <value>証明書利用者に使用する署名資格情報です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SymmetricKeyEncryptionRequired">
+      <MemberSignature Language="C#" Value="public virtual bool SymmetricKeyEncryptionRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SymmetricKeyEncryptionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行された対称キーを暗号化する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />対称キーを暗号化する必要があります場合。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Scope.SymmetricKeyEncryptionRequired%2A>プロパティは`true`、内の資格情報を使用して対称キーが暗号化されて、<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenEncryptionRequired">
+      <MemberSignature Language="C#" Value="public virtual bool TokenEncryptionRequired { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TokenEncryptionRequired" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Scope.TokenEncryptionRequired" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または発行されたセキュリティ トークンを暗号化する必要があるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />セキュリティ トークンを暗号化する必要があります場合。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Scope.TokenEncryptionRequired%2A>プロパティは`true`、セキュリティ トークンは内の資格情報を使用して暗号化、<xref:System.IdentityModel.Scope.EncryptingCredentials%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

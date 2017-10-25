@@ -1,0 +1,1021 @@
+<Type Name="SecurityAlgorithmSuite" FullName="System.ServiceModel.Security.SecurityAlgorithmSuite">
+  <TypeSignature Language="C#" Value="public abstract class SecurityAlgorithmSuite" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract SecurityAlgorithmSuite extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アルゴリズムのプロパティを指定します。 これは <see langword="abstract" /> クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスは、メッセージをセキュリティで保護するときに使用するアルゴリズムの暗号化特性を指定するために使用されます。  
+  
+ このクラスは、セキュリティ アルゴリズム スイートをインスタンス化するために派生クラスで使用されます。このクラスには、セキュリティ アルゴリズムを記述するプロパティが含まれます。 たとえば、`wsBasicHttp` バインディングは、内部派生クラスを使用してそのセキュリティ アルゴリズムのプロパティを指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityAlgorithmSuite ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのインスタンスは静的プロパティと読み取り専用プロパティで構成されるため、このコンストラクターはプロパティを初期化しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic128">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic128 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic128" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic128" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Basic128 アルゴリズム スイートを取得します。</summary>
+        <value>128 ビット Basic <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、AES 128 は暗号化アルゴリズムとして使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic128Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic128Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとは、128 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズムとは、128 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic128Sha256">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Sha256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Sha256" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic128Sha256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ暗号化アルゴリズムとして 128 ビット Basic し、署名ダイジェストに SHA256 を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 128 ビット Basic し、署名ダイジェストに SHA256 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic128Sha256Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Sha256Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic128Sha256Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic128Sha256Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズム、署名ダイジェストに SHA256 を 128 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズム、署名ダイジェストに SHA256 を 128 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic192">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic192 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic192" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic192" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ暗号化アルゴリズムとして 192 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージの暗号化アルゴリズムとして 192 ビット Basic を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、暗号化アルゴリズムとして AES-192 が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic192Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic192Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして 192 ビット Basic メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズムとして 192 ビット Basic メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic192Sha256">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Sha256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Sha256" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic192Sha256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 192 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 192 ビット Basic し、署名ダイジェストに SHA256 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic192Sha256Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Sha256Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic192Sha256Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic192Sha256Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして RSA15 を使用し、署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 192 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズム、署名ダイジェストに SHA256 を 192 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic256">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic256" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージの暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、暗号化アルゴリズムとして AES-256 が使用されます。  
+  
+   
+  
+## Examples  
+ 次のコードに、このプロパティに <xref:System.ServiceModel.MessageSecurityOverHttp.AlgorithmSuite%2A> を設定する方法を示します。  
+  
+ [!code-csharp[c_ProgrammingSecurity#8](~/samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#8)]
+ [!code-vb[c_ProgrammingSecurity#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic256Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして RSA15 を使用し、メッセージ暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズムと 256 ビット Basic として、メッセージ暗号化アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic256Sha256">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Sha256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Sha256" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256Sha256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 256 ビット Basic し、署名ダイジェストに SHA256 を使用して、アルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Basic256Sha256Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Sha256Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Basic256Sha256Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256Sha256Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして RSA15 を使用し、署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイートを取得します。</summary>
+        <value>キー ラップ アルゴリズムとして RSA15 を使用し、署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 256 ビット Basic を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite Default { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite Default" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Default" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のアルゴリズム スイートを取得します。</summary>
+        <value>既定の <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> は <see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> です。これは、対称暗号化アルゴリズムとして 256 ビット Advanced Encryption Standard (AES) を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、メソッドだけでなく、既定値を指定するプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAsymmetricKeyWrapAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultAsymmetricKeyWrapAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultAsymmetricKeyWrapAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultAsymmetricKeyWrapAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の非対称キー ラップ アルゴリズムを文字列として取得します。</summary>
+        <value>既定の非対称キー ラップ アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされると、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.IsAsymmetricKeyWrapAlgorithmSupported%2A> メソッドで比較に使用される文字列値が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultAsymmetricSignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultAsymmetricSignatureAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultAsymmetricSignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultAsymmetricSignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の非対称署名アルゴリズムを文字列として取得します。</summary>
+        <value>既定の非対称署名アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされると、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.IsAsymmetricSignatureAlgorithmSupported%2A> メソッドで比較に使用される文字列値が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultCanonicalizationAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultCanonicalizationAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultCanonicalizationAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultCanonicalizationAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の標準化アルゴリズムを文字列として取得します。</summary>
+        <value>既定の標準化アルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされると、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.IsCanonicalizationAlgorithmSupported%2A> メソッドで比較に使用される文字列値が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultDigestAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultDigestAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultDigestAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultDigestAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のダイジェスト アルゴリズムを文字列として取得します。</summary>
+        <value>既定のダイジェスト アルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされると、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.IsDigestAlgorithmSupported%2A> メソッドで比較に使用される文字列値が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultEncryptionAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultEncryptionAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultEncryptionAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultEncryptionAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の暗号化アルゴリズムを文字列として取得します。</summary>
+        <value>既定の暗号化アルゴリズムです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバーライドされると、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.IsEncryptionAlgorithmSupported%2A> メソッドで比較に使用される文字列値が生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultEncryptionKeyDerivationLength">
+      <MemberSignature Language="C#" Value="public abstract int DefaultEncryptionKeyDerivationLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultEncryptionKeyDerivationLength" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultEncryptionKeyDerivationLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の暗号化キー派生長を <see cref="T:System.Int32" /> 値として取得します。</summary>
+        <value>既定の暗号化キー派生長。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は、メソッドを実装しているサブクラスによって異なります。 `Basic256` 暗号化では、256 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSignatureKeyDerivationLength">
+      <MemberSignature Language="C#" Value="public abstract int DefaultSignatureKeyDerivationLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSignatureKeyDerivationLength" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultSignatureKeyDerivationLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の署名キー派生長を <see cref="T:System.Int32" /> 値として取得します。</summary>
+        <value>既定の署名キー派生長。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は、メソッドを実装しているサブクラスによって異なります。 `Basic256`暗号化、192 を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSymmetricKeyLength">
+      <MemberSignature Language="C#" Value="public abstract int DefaultSymmetricKeyLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSymmetricKeyLength" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultSymmetricKeyLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の対称キー長を <see cref="T:System.Int32" /> 値として取得します。</summary>
+        <value>既定の対称キー長。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 戻り値は、メソッドを実装しているサブクラスによって異なります。 `Basic256` 暗号化では、256 が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSymmetricKeyWrapAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultSymmetricKeyWrapAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultSymmetricKeyWrapAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultSymmetricKeyWrapAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の対称キー ラップ アルゴリズムを文字列として取得します。</summary>
+        <value>既定の対称キー ラップ アルゴリズム。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSymmetricSignatureAlgorithm">
+      <MemberSignature Language="C#" Value="public abstract string DefaultSymmetricSignatureAlgorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultSymmetricSignatureAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultSymmetricSignatureAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の対称署名アルゴリズムを文字列として取得します。</summary>
+        <value>既定の対称署名アルゴリズム。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsymmetricKeyLengthSupported">
+      <MemberSignature Language="C#" Value="public abstract bool IsAsymmetricKeyLengthSupported (int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAsymmetricKeyLengthSupported(int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsAsymmetricKeyLengthSupported(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="length">確認対象のキー長。</param>
+        <summary>特定のキー長が非対称アルゴリズムでサポートされているかどうかを示します。</summary>
+        <returns>
+          キー長が非対称アルゴリズムでサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的なキー長は 128、192、および 256 ビットです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsymmetricKeyWrapAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsAsymmetricKeyWrapAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAsymmetricKeyWrapAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsAsymmetricKeyWrapAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム。</param>
+        <summary>非対称キー ラップ アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          非対称キー ラップ アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `algorithm` が、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultAsymmetricKeyWrapAlgorithm%2A> によって返される文字列と比較されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsymmetricSignatureAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsAsymmetricSignatureAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsAsymmetricSignatureAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsAsymmetricSignatureAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>非対称署名アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          非対称署名アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `algorithm` が、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultAsymmetricSignatureAlgorithm%2A> によって返される文字列と比較されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCanonicalizationAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsCanonicalizationAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsCanonicalizationAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsCanonicalizationAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>標準化アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          標準化アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `algorithm` が、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultCanonicalizationAlgorithm%2A> によって返される文字列と比較されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDigestAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsDigestAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsDigestAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsDigestAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>ダイジェスト アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          ダイジェスト アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `algorithm` が、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultDigestAlgorithm%2A> によって返される文字列と比較されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncryptionAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsEncryptionAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEncryptionAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsEncryptionAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>暗号化アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          暗号化アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `algorithm` が、<xref:System.ServiceModel.Security.SecurityAlgorithmSuite.DefaultEncryptionAlgorithm%2A> によって返される文字列と比較されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEncryptionKeyDerivationAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsEncryptionKeyDerivationAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsEncryptionKeyDerivationAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsEncryptionKeyDerivationAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>暗号化キー派生アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          暗号化キー派生アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSignatureKeyDerivationAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsSignatureKeyDerivationAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSignatureKeyDerivationAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsSignatureKeyDerivationAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>署名キー派生アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          署名キー派生アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSymmetricKeyLengthSupported">
+      <MemberSignature Language="C#" Value="public abstract bool IsSymmetricKeyLengthSupported (int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSymmetricKeyLengthSupported(int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsSymmetricKeyLengthSupported(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="length">確認対象のキー長。</param>
+        <summary>派生クラスでオーバーライドされると、特定の対称キー長がサポートされているかどうかを示します。</summary>
+        <returns>
+          対称キー長がサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `length` は、サブクラスに応じた範囲の値と比較されます。 たとえば、`TripleDES` サブクラスでは、このメソッドは `length` が 192 ～ 256 の範囲内の値であることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSymmetricKeyWrapAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsSymmetricKeyWrapAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSymmetricKeyWrapAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsSymmetricKeyWrapAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>対称キー ラップ アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          対称キー ラップ アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSymmetricSignatureAlgorithmSupported">
+      <MemberSignature Language="C#" Value="public virtual bool IsSymmetricSignatureAlgorithmSupported (string algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsSymmetricSignatureAlgorithmSupported(string algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.SecurityAlgorithmSuite.IsSymmetricSignatureAlgorithmSupported(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">確認対象のアルゴリズム名。</param>
+        <summary>対称署名アルゴリズムがサポートされているかどうかを示します。</summary>
+        <returns>
+          対称署名アルゴリズムがサポートされている場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TripleDes">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite TripleDes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite TripleDes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.TripleDes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Triple Data Encryption Standard (DES) アルゴリズム スイートを取得します。</summary>
+        <value>Triple DES <see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TripleDesRsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesRsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesRsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.TripleDesRsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして RSA15 を使用し、メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) とキー ラップ アルゴリズムとして rsa15 を使用を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TripleDesSha256">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesSha256 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesSha256" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.TripleDesSha256" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) し、署名ダイジェストに SHA256 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TripleDesSha256Rsa15">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesSha256Rsa15 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.ServiceModel.Security.SecurityAlgorithmSuite TripleDesSha256Rsa15" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.SecurityAlgorithmSuite.TripleDesSha256Rsa15" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー ラップ アルゴリズムとして RSA15 を使用し、署名ダイジェストに SHA256 を使用し、メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) を使用するアルゴリズム スイートを取得します。</summary>
+        <value>メッセージ暗号化アルゴリズムとして 192 ビット Triple Data Encryption Standard (DES) し、署名ダイジェストに SHA256、キー ラップ アルゴリズムとして RSA15 を使用するアルゴリズム スイート。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は内部サブクラスであり、いくつかのメソッドだけでなく、既定値を指定するいくつかのプロパティをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

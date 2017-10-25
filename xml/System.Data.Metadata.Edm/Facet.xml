@@ -1,0 +1,166 @@
+<Type Name="Facet" FullName="System.Data.Metadata.Edm.Facet">
+  <TypeSignature Language="C#" Value="public sealed class Facet : System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Facet extends System.Data.Metadata.Edm.MetadataItem" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Metadata.Edm.Facet" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Data.Metadata.Edm.MetadataItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{Name,nq}={Value}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メンバーに関する追加情報を提供します。 ADO.NET メタデータの型の階層では、ファセットは、メンバーのを通じて、宣言された型のメンバーに関する追加情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーおよびファセットの詳細については、次を参照してください。[構造型](http://msdn.microsoft.com/en-us/c0c54fe0-e0ba-4e1d-8572-dfd2fbf788fa)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuiltInTypeKind">
+      <MemberSignature Language="C#" Value="public override System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.BuiltInTypeKind BuiltInTypeKind" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.BuiltInTypeKind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.BuiltInTypeKind</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の組み込み型種別を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.BuiltInTypeKind" /> の組み込み型種別を表す <see cref="T:System.Data.Metadata.Edm.Facet" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.FacetDescription Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.FacetDescription Description" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.FacetDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の説明を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.FacetDescription" /> の説明を表す <see cref="T:System.Data.Metadata.Edm.Facet" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FacetType">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.EdmType FacetType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Metadata.Edm.EdmType FacetType" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.FacetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.EdmType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の型を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.EdmType" /> の型を表す <see cref="T:System.Data.Metadata.Edm.Facet" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnbounded">
+      <MemberSignature Language="C#" Value="public bool IsUnbounded { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnbounded" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.IsUnbounded" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファセットの値が無制限であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ファセットの値が無制限であります。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Metadata.Edm.Facet.IsUnbounded%2A> は、基になるストレージで許容される最大値をそのプロパティに設定できるかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の名前を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Metadata.Edm.Facet.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の名前を返します。</summary>
+        <returns>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Metadata.Edm.Facet.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の値を取得します。</summary>
+        <value>この <see cref="T:System.Data.Metadata.Edm.Facet" /> の値を取得します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

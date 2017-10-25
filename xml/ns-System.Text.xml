@@ -1,0 +1,25 @@
+<Namespace Name="System.Text">
+  <Docs>
+    <summary><see cref="N:System.Text" /> 名前空間には、ASCII および Unicode 文字エンコーディングを表すクラスが含まれます。バイトのブロック間で文字ブロックを変換するための抽象型基本クラス、<see cref="T:System.String" /> の中間インスタンスを作成せずに <see cref="T:System.String" /> オブジェクトを操作および書式設定するヘルパー クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンコーディング クラスは、主に、さまざまなエンコーディングまたはコード ページと、Unicode エンコーディングの間で変換するものです。 <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType>.NET Framework によって内部的に使用されます (utf-16) エンコーディングと<xref:System.Text.Encoding.UTF8%2A?displayProperty=nameWithType>は多くの場合に使用するエンコーディングを文字データを格納するマシンとのカルチャでの移植性を確保します。  
+  
+ 派生したクラス<xref:System.Text.Encoding>のバイト シーケンスにエンコードできない文字または文字にデコードできないバイトを処理する方法を決めるフォールバック ストラテジを選択できます。 次のいずれかを選択できます。  
+  
+-   例外フォールバックします。 使用していずれかのデータ エラーの例外をスローすることができます、`throwonerror`で利用可能な一部のクラス コンス トラクターを使用して、フラグ、<xref:System.Text.EncoderExceptionFallback>と<xref:System.Text.DecoderExceptionFallback>クラスです。 データ ストリームの整合性に関する懸念がある場合は、例外のスローことをお勧めします。  
+  
+-   置換フォールバックします。 使用することができます、<xref:System.Text.EncoderFallback>と<xref:System.Text.DecoderFallback>文字を通知なしに変更するクラス"?"や、Unicode replacement character (U+FFFD) にします。  
+  
+-   最適フォールバックはします。 このオプションは、別のエンコード内の文字を 1 つのエンコーディングで文字をマップします。 最もふさわしいフォールバックは多くの場合、お勧めできませんデータが失われると、混乱を引き起こす可能性があるために、単純なより遅い"?"文字の置換します。 ただし、ANSI コード ページの最も適合が既定の動作です。  
+  
+ <xref:System.Text.StringBuilder>クラスが 1 つの文字列で広範囲の操作を実行する操作のために設計されています。 異なり、<xref:System.String>クラス、<xref:System.Text.StringBuilder>クラスは変更可能な連結、または文字列を削除すると、パフォーマンスが向上します。  
+  
+ 詳細については<xref:System.Text?displayProperty=nameWithType>を参照してください[.NET Framework の文字エンコーディング](~/docs/standard/base-types/character-encoding.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

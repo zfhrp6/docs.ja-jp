@@ -1,0 +1,520 @@
+<Type Name="ApplicationManager" FullName="System.Web.Hosting.ApplicationManager">
+  <TypeSignature Language="C#" Value="public sealed class ApplicationManager : MarshalByRefObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ApplicationManager extends System.MarshalByRefObject" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.ApplicationManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.MarshalByRefObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アプリケーションをホストしている ASP.NET の ASP.NET アプリケーション ドメインを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager>オブジェクトは、ASP.NET アプリケーションのホスティング環境のオブジェクトの有効期間の管理を提供します。 担当は。  
+  
+-   アクティブ化して、ASP.NET アプリケーションを初期化します。  
+  
+-   アプリケーションに登録されているアプリケーションの有効期間とオブジェクトの有効期間を管理します。  
+  
+-   ASP.NET アプリケーションの要求を処理するホスト環境で使用されるオブジェクトを公開します。  
+  
+-   特定の時点では、ホスト プロセスで実行されているアプリケーションの一覧を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのアプリケーション ドメインを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し、<xref:System.Web.Hosting.ApplicationManager.Close%2A>メソッドが 0 の場合に、アプリケーション マネージャーを使用してアプリケーションの参照カウントを減らし、<xref:System.Web.Hosting.ApplicationManager.Close%2A>メソッドの呼び出し、<xref:System.Web.Hosting.ApplicationManager.ShutdownAll%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.IRegisteredObject CreateObject (System.Web.Hosting.IApplicationHost appHost, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.IRegisteredObject CreateObject(class System.Web.Hosting.IApplicationHost appHost, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.CreateObject(System.Web.Hosting.IApplicationHost,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IRegisteredObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appHost" Type="System.Web.Hosting.IApplicationHost" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="appHost"><see cref="T:System.Web.Hosting.IApplicationHost" /> オブジェクト。</param>
+        <param name="type">作成するオブジェクトの種類。</param>
+        <summary>種類に基づいて、指定されたアプリケーション ドメインのオブジェクトを作成します。</summary>
+        <returns><paramref name="type" /> で指定された型の新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>.NET Framework version 3.5 で導入されました。  詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">アプリケーションの物理パスが存在しません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appHost" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.IRegisteredObject CreateObject (string appId, Type type, string virtualPath, string physicalPath, bool failIfExists);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.IRegisteredObject CreateObject(string appId, class System.Type type, string virtualPath, string physicalPath, bool failIfExists) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.CreateObject(System.String,System.Type,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IRegisteredObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="physicalPath" Type="System.String" />
+        <Parameter Name="failIfExists" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">オブジェクトを所有しているアプリケーションの一意の識別子。</param>
+        <param name="type">作成するオブジェクトの種類。</param>
+        <param name="virtualPath">アプリケーションの仮想パス。</param>
+        <param name="physicalPath">アプリケーションへの物理パス。</param>
+        <param name="failIfExists">
+          <see langword="true" />スローする場合は、指定した型のオブジェクトが現在登録されているです。<see langword="false" />を指定した型の既存の登録済みのオブジェクトを返します。</param>
+        <summary>型、仮想および物理パス、および指定した型のオブジェクトが既に存在する場合は、エラー動作を示すブール値に基づいて、指定されたアプリケーション ドメインのオブジェクトを作成します。</summary>
+        <returns>指定された新しいオブジェクト<paramref name="type" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>作成して、アプリケーションでオブジェクトを登録するメソッドを使用します。 各型の 1 つのオブジェクトを作成できます。 同じ種類の複数のオブジェクトを作成する必要がある場合は、オブジェクト ファクトリを実装する必要があります。 詳細については、このトピックのコード例を参照してください。  
+  
+ 一意のアプリケーション id で識別される、各アプリケーションは、独自のアプリケーション ドメインで実行されます。 <xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドで指定されたアプリケーションのアプリケーション ドメイン内に指定した型のオブジェクトを作成する、`appID`パラメーター。 指定されたアプリケーションのアプリケーション ドメインが存在しない場合は、オブジェクトが作成される前にいずれかが作成されます。  
+  
+ `failIfExists`パラメーターの動作を制御する、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドと、指定した型のオブジェクトは、アプリケーションに既に存在します。 ときに`failIfExists`は`true`、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドがスローされます、<xref:System.InvalidOperationException>例外。  
+  
+ ときに`failIfExists`は`false`、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドは、指定した型の既存の登録済みのオブジェクトを返します。  
+  
+ <xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドは、追加するオーバー ロードを呼び出します`throwOnError`パラメーターと`throwOnError`'éý'`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、登録されているオブジェクトのオブジェクト ファクトリ デザイン パターンの実装です。 ファクトリ パターンを使用するには、オブジェクトの複数のインスタンスを登録することができます。 例では、2 つのオブジェクトが含まれています: `SampleComponent`、オブジェクトのアプリケーションではの複数のインスタンスを使用して、`SampleComponentFactory`の一覧を管理する`SampleComponent`インスタンス。  
+  
+ [!code-csharp[System.Web.Hosting.ApplicationManager#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/CS/appManagercs.aspx.cs#1)]
+ [!code-vb[System.Web.Hosting.ApplicationManager#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.ApplicationManager/VB/appManagervb.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="physicalPath" /> は <see langword="null" /> です  
+  
+ \- または  
+  
+ <paramref name="physicalPath" />有効なアプリケーション パスではありません。  
+  
+ \- または  
+  
+ <paramref name="type" />実装していません、<see cref="T:System.Web.Hosting.IRegisteredObject" />インターフェイスです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appID" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="failIfExists" /><see langword="true" />指定した型のオブジェクトが既に登録されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateObject">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.IRegisteredObject CreateObject (string appId, Type type, string virtualPath, string physicalPath, bool failIfExists, bool throwOnError);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.IRegisteredObject CreateObject(string appId, class System.Type type, string virtualPath, string physicalPath, bool failIfExists, bool throwOnError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.CreateObject(System.String,System.Type,System.String,System.String,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IRegisteredObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="virtualPath" Type="System.String" />
+        <Parameter Name="physicalPath" Type="System.String" />
+        <Parameter Name="failIfExists" Type="System.Boolean" />
+        <Parameter Name="throwOnError" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="appId">オブジェクトを所有しているアプリケーションの一意の識別子。</param>
+        <param name="type">作成するオブジェクトの種類。</param>
+        <param name="virtualPath">アプリケーションの仮想パス。</param>
+        <param name="physicalPath">アプリケーションへの物理パス。</param>
+        <param name="failIfExists">
+          <see langword="true" />スローする場合は、指定した型のオブジェクトが現在登録されているです。<see langword="false" />を指定した型の既存の登録済みのオブジェクトを返します。</param>
+        <param name="throwOnError">
+          <see langword="true" />初期化エラーが発生します。 をホストするための例外をスローするには<see langword="false" />ホスト初期化例外をスローしません。</param>
+        <summary>型、仮想および物理パス、指定した型のオブジェクトが既に存在して、ホスティングの初期化エラーの例外をスローするかどうかを示すブール値、エラー動作を示すブール値に基づいて、指定されたアプリケーション ドメインのオブジェクトを作成します。</summary>
+        <returns>指定された新しいオブジェクト<paramref name="type" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドには、`throwOnError`パラメーターで、ホストの初期化の例外がスローされたかどうかを制御できます。 オーバー ロード、<xref:System.Web.Hosting.ApplicationManager.CreateObject%2A>メソッドを提供しない`throwOnError`パラメーターを設定したこのオーバー ロードを呼び出す`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="physicalPath" /> は <see langword="null" /> です  
+  
+ \- または  
+  
+ <paramref name="physicalPath" />有効なアプリケーション パスではありません。  
+  
+ \- または  
+  
+ <paramref name="type" />実装していません、<see cref="T:System.Web.Hosting.IRegisteredObject" />インターフェイスです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appID" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="failIfExists" /><see langword="true" />指定した型のオブジェクトが既に登録されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppDomain">
+      <MemberSignature Language="C#" Value="public AppDomain GetAppDomain (string appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.AppDomain GetAppDomain(string appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.GetAppDomain(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AppDomain</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アプリケーションの一意の識別子。</param>
+        <summary>指定したアプリケーションのアプリケーション ドメインを取得します。</summary>
+        <returns>アプリケーションのアプリケーション ドメイン。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAppDomain">
+      <MemberSignature Language="C#" Value="public AppDomain GetAppDomain (System.Web.Hosting.IApplicationHost appHost);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.AppDomain GetAppDomain(class System.Web.Hosting.IApplicationHost appHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.GetAppDomain(System.Web.Hosting.IApplicationHost)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AppDomain</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appHost" Type="System.Web.Hosting.IApplicationHost" />
+      </Parameters>
+      <Docs>
+        <param name="appHost">ホストのアプリケーション ドメインを取得します。</param>
+        <summary>指定したホストを使用してアプリケーションのアプリケーション ドメインを取得します。</summary>
+        <returns>アプリケーションのアプリケーション ドメイン。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationManager">
+      <MemberSignature Language="C#" Value="public static System.Web.Hosting.ApplicationManager GetApplicationManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Web.Hosting.ApplicationManager GetApplicationManager() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.GetApplicationManager" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.ApplicationManager</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つのインスタンスを返します、<see cref="T:System.Web.Hosting.ApplicationManager" />この ASP.NET ホスト プロセスに関連付けられているオブジェクト。</summary>
+        <returns>単一のインスタンス、<see cref="T:System.Web.Hosting.ApplicationManager" />実行されている ASP.NET ホスト プロセスに関連付けられているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを 1 つだけ、<xref:System.Web.Hosting.ApplicationManager>オブジェクトは既定のアプリケーション ドメインで、ASP.NET ホスト プロセスによって作成します。 インスタンスの場合、<xref:System.Web.Hosting.ApplicationManager>クラスが使用できない、<xref:System.Web.Hosting.ApplicationManager.GetApplicationManager%2A>メソッドが最初のインスタンスを作成、<xref:System.Web.Hosting.ApplicationManager>クラスを新しく作成されたオブジェクトを返します。 インスタンスの場合、<xref:System.Web.Hosting.ApplicationManager>クラスを以前に作成した、<xref:System.Web.Hosting.ApplicationManager.GetApplicationManager%2A>メソッドは、既存のオブジェクトを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Hosting.ApplicationManager.GetApplicationManager%2A>を取得する方法、 <xref:System.Web.Hosting.ApplicationManager> Web アプリケーションのインスタンス。  
+  
+ [!code-aspx-csharp[System.Web.Hosting.ApplicationInfo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.ApplicationInfo/CS/applicationInfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Hosting.ApplicationInfo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.ApplicationInfo/VB/applicationInfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObject">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.IRegisteredObject GetObject (string appId, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.IRegisteredObject GetObject(string appId, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.GetObject(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.IRegisteredObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="appId">オブジェクトを所有しているアプリケーションの一意の識別子。</param>
+        <param name="type">返すオブジェクトの型。</param>
+        <summary>指定したアプリケーションから、指定した型の登録済みのオブジェクトを返します。</summary>
+        <returns>指定した型の登録済みのオブジェクトまたは<see langword="null" />を呼び出すことによって、型が登録されていないかどうか、<see cref="M:System.Web.Hosting.ApplicationManager.CreateObject(System.String,System.Type,System.String,System.String,System.Boolean)" />メソッドです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appId" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRunningApplications">
+      <MemberSignature Language="C#" Value="public System.Web.Hosting.ApplicationInfo[] GetRunningApplications ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.Hosting.ApplicationInfo[] GetRunningApplications() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.GetRunningApplications" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Hosting.ApplicationInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行中のアプリケーションのスナップショットを返します。</summary>
+        <returns>配列<see cref="T:System.Web.Hosting.ApplicationInfo" />これによって管理されるアプリケーションに関する情報を含むオブジェクト<see cref="T:System.Web.Hosting.ApplicationManager" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Hosting.ApplicationManager.GetRunningApplications%2A>によって管理されるアプリケーションに関する情報を表示する方法、<xref:System.Web.Hosting.ApplicationManager>インスタンス。  
+  
+ [!code-aspx-csharp[System.Web.Hosting.ApplicationInfo#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Hosting.ApplicationInfo/CS/applicationInfocs.aspx#1)]
+ [!code-aspx-vb[System.Web.Hosting.ApplicationInfo#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Hosting.ApplicationInfo/VB/applicationInfovb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeLifetimeService">
+      <MemberSignature Language="C#" Value="public override object InitializeLifetimeService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InitializeLifetimeService() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.InitializeLifetimeService" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション ドメインは、無限リースが作成されるようにすることによって有効期間。</summary>
+        <returns>常に <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.MarshalByRefObject.InitializeLifetimeService%2A>基本クラス メソッド。 常に返します`null`およびこれにより、アプリケーション ドメインの有効期間を制限する作成されないリースを防止します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdle">
+      <MemberSignature Language="C#" Value="public bool IsIdle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsIdle() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.IsIdle" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>要求を処理していないプロセスでホストされているすべてのアプリケーションがアイドル状態かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、プロセスのすべてのアプリケーションがアイドル状態です。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Hosting.ApplicationManager.IsIdle%2A>メソッドを返します。`true`場合は、プロセスによってホストされているすべてのアプリケーションがアイドル状態です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Open() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.Open" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーション マネージャー インスタンスのユーザー参照カウントへの増分値がスレッド セーフであるを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownAll">
+      <MemberSignature Language="C#" Value="public void ShutdownAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShutdownAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.ShutdownAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのアプリケーション リソースをアンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Web.Hosting.ApplicationManager.ShutdownAll%2A>はメソッドを呼び出すことと同じ、<xref:System.Web.Hosting.HostingEnvironment.InitiateShutdown%2A?displayProperty=nameWithType>これによって管理されるすべてのアプリケーション ドメイン内のメソッド<xref:System.Web.Hosting.ApplicationManager>インスタンスです。 ただし、、<xref:System.Web.Hosting.ApplicationManager.ShutdownAll%2A>メソッドは、管理対象のアプリケーション ドメインの外部から呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownApplication">
+      <MemberSignature Language="C#" Value="public void ShutdownApplication (string appId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ShutdownApplication(string appId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.ShutdownApplication(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="appId">アンロードするアプリケーションの一意の識別子。</param>
+        <summary>指定したアプリケーションをアンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Web.Hosting.ApplicationManager.ShutdownApplication%2A>はメソッドを呼び出すことと同じ、 <xref:System.Web.Hosting.HostingEnvironment.InitiateShutdown%2A?displayProperty=nameWithType> ; 特定のアプリケーション ドメインに対して方式ただし、<xref:System.Web.Hosting.ApplicationManager.ShutdownApplication%2A>メソッドは、管理対象外のアプリケーション ドメインから呼び出すことができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appId" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StopObject">
+      <MemberSignature Language="C#" Value="public void StopObject (string appId, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void StopObject(string appId, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.ApplicationManager.StopObject(System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="appId">オブジェクトを所有しているアプリケーションの一意の識別子。</param>
+        <param name="type">アンロードするオブジェクトの型。</param>
+        <summary>アプリケーションで登録されているオブジェクトの一覧から、指定したオブジェクトを削除します。 削除するオブジェクトが、アプリケーションの登録済みのオブジェクトの一覧の最後の残りのオブジェクトの場合は、アプリケーションはアンロードされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="appId" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="type" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

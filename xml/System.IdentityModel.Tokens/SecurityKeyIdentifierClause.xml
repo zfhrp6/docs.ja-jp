@@ -1,0 +1,251 @@
+<Type Name="SecurityKeyIdentifierClause" FullName="System.IdentityModel.Tokens.SecurityKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public abstract class SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityKeyIdentifierClause extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>キー識別子句の抽象基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は、カスタム セキュリティ トークン サービスが作成される場合を除いて、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> を使用する必要はありません。 セキュリティ トークン サービスがセキュリティ トークンを返した場合、発行されたセキュリティ トークンには、結び付けられているセキュリティ トークンまたは結び付けられていないセキュリティ トークンへの参照が含まれます。 結び付けられている参照は、SOAP メッセージ トークンのセキュリティ ヘッダーに含まれるセキュリティ トークンを参照し、結び付けられていない参照は、SOAP メッセージのセキュリティ ヘッダーに含まれていないセキュリティ トークンを参照します。 これらの参照は、通常、発行されたセキュリティ トークンの信頼性を確認します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityKeyIdentifierClause (string clauseType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clauseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clauseType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clauseType">キー識別子句型。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.ClauseType" /> プロパティの値を設定します。</param>
+        <summary>指定したキー識別子句の型を使用して、<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセキュリティ キー識別子が XML にシリアル化される場合は、`clauseType` パラメーターが `ValueType` 要素の `<SecurityTokenReference>` 属性としてシリアル化されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityKeyIdentifierClause (string clauseType, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string clauseType, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="clauseType" Type="System.String" />
+        <Parameter Name="nonce" Type="System.Byte[]" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="clauseType">キー識別子句型。 <see cref="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.ClauseType" /> プロパティの値を設定します。</param>
+        <param name="derivationNonce">To be added.</param>
+        <param name="derivationLength">To be added.</param>
+        <summary>指定したキー識別句型、nonce、および派生キーの長さを使用して、<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子の作成をサポートしません。 ただし、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙のキー識別子を含む受信 SOAP メッセージを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKey">
+      <MemberSignature Language="C#" Value="public virtual bool CanCreateKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanCreateKey" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CanCreateKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーを作成できるかどうかを示す値を取得します。</summary>
+        <value>
+          キーを作成できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターに渡されたパラメーターを使用してキーを作成できる場合、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CanCreateKey%2A> メソッドをオーバーライドして `true` を返し、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CreateKey%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClauseType">
+      <MemberSignature Language="C#" Value="public string ClauseType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ClauseType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.ClauseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー識別句型を取得します。</summary>
+        <value>キー識別子句型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKey">
+      <MemberSignature Language="C#" Value="public virtual System.IdentityModel.Tokens.SecurityKey CreateKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityKey CreateKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CreateKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKey</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンストラクターに渡されたパラメーターに基づくキーを作成します。</summary>
+        <returns>作成されたキーを格納する <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンストラクターに渡されたパラメーターを使用してキーを作成できる場合、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CanCreateKey%2A> メソッドをオーバーライドして `true` を返し、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.CreateKey%2A> メソッドを実装します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DerivationLength">
+      <MemberSignature Language="C#" Value="public int DerivationLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DerivationLength" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.DerivationLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生キーのサイズを取得します。</summary>
+        <value>派生キーのサイズ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子の作成をサポートしません。 ただし、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙のキー識別子を含む受信 SOAP メッセージを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDerivationNonce">
+      <MemberSignature Language="C#" Value="public byte[] GetDerivationNonce ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] GetDerivationNonce() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.GetDerivationNonce" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生されるキーの生成に使用された nonce を取得します。</summary>
+        <returns>派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙的な派生キー識別子の作成をサポートしません。 ただし、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)] は、暗黙のキー識別子を含む受信 SOAP メッセージを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public string Id { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定キー識別子句の id。</summary>
+        <value>キー識別子句の id。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセキュリティ キー識別子が XML にシリアル化する際、<xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.Id%2A>としてプロパティをシリアル化、`Id`の属性、`<SecurityTokenReference>`要素。 プロパティが場合`null`、`Id`で属性が含まれていない、`<SecurityTokenReference>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public virtual bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別句と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が現在のインスタンスと同じインスタンスの場合は <paramref name="clause" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="clause" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

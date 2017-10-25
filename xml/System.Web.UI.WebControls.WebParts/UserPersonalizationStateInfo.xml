@@ -1,0 +1,125 @@
+<Type Name="UserPersonalizationStateInfo" FullName="System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo">
+  <TypeSignature Language="C#" Value="public sealed class UserPersonalizationStateInfo : System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit UserPersonalizationStateInfo extends System.Web.UI.WebControls.WebParts.PersonalizationStateInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.PersonalizationStateInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ページと、ユーザーのユーザーごとの個人用設定の情報を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、個々 のユーザーの個人用設定に関する統計情報を確認するユーザーごとに使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserPersonalizationStateInfo (string path, DateTime lastUpdatedDate, int size, string username, DateTime lastActivityDate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.DateTime lastUpdatedDate, int32 size, string username, valuetype System.DateTime lastActivityDate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.#ctor(System.String,System.DateTime,System.Int32,System.String,System.DateTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastUpdatedDate" Type="System.DateTime" />
+        <Parameter Name="size" Type="System.Int32" />
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="lastActivityDate" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">情報に該当するページです。 <c>パス</c>はアプリケーション相対 (構文を使用してチルダ) 仮想パス。</param>
+        <param name="lastUpdatedDate">最後の日付と、ページのユーザー情報が更新された時刻。</param>
+        <param name="size">ページのユーザーごとの状態情報のバイト単位のサイズ。</param>
+        <param name="username">ページのパーソナル化情報を適用する対象ユーザー。</param>
+        <param name="lastActivityDate">最後に、ユーザーは、ASP.NET アプリケーション内でアクティブでした。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `lastActivityDate`パラメーターが、ユーザーが、ASP.NET アプリケーションでアクティブであった最後の時間を示します。 この日付は、メンバーシップおよびプロファイルなどその他の ASP.NET 機能によって更新されることができます。  
+  
+ `path`および`username`場合以外は切り捨てられます`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />、トリミング後は、空の文字列 ("") です。  
+  
+ \- または  
+  
+ <paramref name="username" />、トリミング後は、空の文字列 ("") です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ \- または  
+  
+ <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="size" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LastActivityDate">
+      <MemberSignature Language="C#" Value="public DateTime LastActivityDate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime LastActivityDate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.LastActivityDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前回のページに関連付けられている ASP.NET アプリケーションでアクティブであったユーザーを取得します。</summary>
+        <value>ユーザーがページに関連付けられている ASP.NET アプリケーションでアクティブであった最後の時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ユーザーが、アプリケーション全体ではまだアクティブかどうかを示すインジケーターとして使用できます。 この日付は、メンバーシップおよびプロファイルなどその他の ASP.NET 機能によって更新されることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Username">
+      <MemberSignature Language="C#" Value="public string Username { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Username" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.Username" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページのパーソナル化情報を適用するユーザー名を取得します。</summary>
+        <value>ページのパーソナル化情報を適用するユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.WebParts.UserPersonalizationStateInfo.Username%2A>特定のユーザーの統計のパーソナル化状態情報を検索するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

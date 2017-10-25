@@ -1,0 +1,279 @@
+<Type Name="DefaultWorkflowSchedulerService" FullName="System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService">
+  <TypeSignature Language="C#" Value="public class DefaultWorkflowSchedulerService : System.Workflow.Runtime.Hosting.WorkflowSchedulerService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DefaultWorkflowSchedulerService extends System.Workflow.Runtime.Hosting.WorkflowSchedulerService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowSchedulerService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー ランタイム エンジンでワークフロー インスタンスを実行するスレッドを作成および管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService> は、既定ではワークフロー ランタイム エンジンによって使用されます。 これには、複数のワークフロー インスタンスをランタイム スレッド プール キューに置くための既定のサポートが含まれます。 ワークフローの実行を担うスレッドを制御する必要がある場合は、<xref:System.Workflow.Runtime.Hosting.ManualWorkflowSchedulerService> を使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultWorkflowSchedulerService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultWorkflowSchedulerService (System.Collections.Specialized.NameValueCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">初期化情報を保持する <see cref="T:System.Collections.Specialized.NameValueCollection" />。</param>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、ワークフロー ランタイム エンジンがアプリケーション構成ファイルからサービスを読み込むときに呼び出されます。 有効なパラメーターは `maxSimultaneousWorkflows` のみです。このパラメーターで、同時に実行できるワークフローの数を指定できます。  
+  
+ `maxSimultaneousWorkflows` を大きな値に設定すると、.NET スレッド プールに余裕ができすぎる場合があります。 これにより、永続性サービスが永続性トランザクションを完了しようとするときにタイムアウトが発生する可能性があります。これは、<xref:System.Transactions.Transaction> オブジェクトも .NET スレッド プールを使用するためです。  
+  
+ コンストラクターまたは構成ファイルで `maxSimultaneousWorkflows` を指定しなければ、既定値は、シングルプロセッサ コンピューターでは 5、マルチプロセッサ コンピューターでは (int)(5 * Environment.ProcessorCount * .8) になります。 (int)(5 * Environment.ProcessorCount * .8) は、整数演算の規則により、必ずしも (int)(4 * Environment.ProcessorCount) と同じになるとは限りません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parameters" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="parameters" /> コレクション内のいずれかのキー値に null 参照 (<see langword="Nothing" />) が含まれています。  
+  
+ または  
+  
+ <paramref name="parameters" /> コレクション内のいずれかのキー値が、<see cref="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" /> の既定のキーと一致しません。</exception>
+        <exception cref="T:System.FormatException">いずれかのパラメーターを、<see cref="P:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.MaxSimultaneousWorkflows" /> に合う倍精度浮動小数点数に変換できません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.MaxSimultaneousWorkflows" /> が 1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultWorkflowSchedulerService (int maxSimultaneousWorkflows);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 maxSimultaneousWorkflows) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="maxSimultaneousWorkflows" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="maxSimultaneousWorkflows">スレッド プール キューに格納できるワークフロー インスタンスの最大数を決定する整数。</param>
+        <summary>サービスが同時に実行できるワークフロー インスタンスの最大数を指定して、<see cref="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `maxSimultaneousWorkflows` を大きな値に設定すると、.NET スレッド プールに余裕ができすぎる場合があります。 これにより、永続性サービスが永続性トランザクションを完了しようとするときにタイムアウトが発生する可能性があります。これは、<xref:System.Transactions.Transaction> オブジェクトも .NET スレッド プールを使用するためです。  
+  
+ コンストラクターまたは構成ファイルで `maxSimultaneousWorkflows` を指定しなければ、既定値は、シングルプロセッサ コンピューターでは 5、マルチプロセッサ コンピューターでは (int)(5 * Environment.ProcessorCount * .8) になります。 (int)(5 * Environment.ProcessorCount * .8) は、整数演算の規則により、必ずしも (int)(4 * Environment.ProcessorCount) と同じになるとは限りません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="maxSimultaneousWorkflows" /> が 1 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Cancel">
+      <MemberSignature Language="C#" Value="protected override void Cancel (Guid timerId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Cancel(valuetype System.Guid timerId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.Cancel(System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timerId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="timerId">キャンセルする既存のスケジュール済み作業項目に関連付けられている <see cref="T:System.Guid" />。</param>
+        <summary>指定した既存のワークフロー インスタンス作業項目をキャンセルします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="timerId" /> が空の GUID です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxSimultaneousWorkflows">
+      <MemberSignature Language="C#" Value="public int MaxSimultaneousWorkflows { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxSimultaneousWorkflows" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.MaxSimultaneousWorkflows" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッド プール キューに格納できるワークフロー インスタンスの最大数を取得します。</summary>
+        <value>スレッド プール キューに格納できるワークフロー インスタンスの最大数を表す整数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの既定値は、シングルプロセッサ コンピューターでは 5、マルチプロセッサ コンピューターでは (int)(5 * Environment.ProcessorCount * .8) です。 (int)(5 * Environment.ProcessorCount * .8) は、整数演算の規則により、必ずしも (int)(4 * Environment.ProcessorCount) と同じになるとは限りません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStarted">
+      <MemberSignature Language="C#" Value="protected override void OnStarted ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStarted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.OnStarted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー インスタンスが実行を開始したことを <see cref="T:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.OnStarted%2A> は、ワークフロー インスタンス スレッド プールに組み込まれるのを待機している項目のリストの最初の作業項目について、スレッドを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Schedule">
+      <MemberSignature Language="C#" Value="protected override void Schedule (System.Threading.WaitCallback callback, Guid workflowInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Schedule(class System.Threading.WaitCallback callback, valuetype System.Guid workflowInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.WaitCallback" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" /> マルチキャスト デリゲート。</param>
+        <param name="workflowInstanceId">ワークフロー インスタンスを表す <see cref="T:System.Guid" />。</param>
+        <summary>指定したマルチキャスト デリゲートを使用する指定したワークフロー インスタンスを使用して、保留中の作業項目のキューにワークフロー インスタンスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいスレッドで実行するデリゲート メソッドを作成するには、<xref:System.Threading.WaitCallback> コンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callback" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Schedule">
+      <MemberSignature Language="C#" Value="protected override void Schedule (System.Threading.WaitCallback callback, Guid workflowInstanceId, DateTime whenUtc, Guid timerId);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Schedule(class System.Threading.WaitCallback callback, valuetype System.Guid workflowInstanceId, valuetype System.DateTime whenUtc, valuetype System.Guid timerId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.Schedule(System.Threading.WaitCallback,System.Guid,System.DateTime,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Threading.WaitCallback" />
+        <Parameter Name="workflowInstanceId" Type="System.Guid" />
+        <Parameter Name="whenUtc" Type="System.DateTime" />
+        <Parameter Name="timerId" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="callback">実行するメソッドを表す <see cref="T:System.Threading.WaitCallback" /> マルチキャスト デリゲート。</param>
+        <param name="workflowInstanceId">ワークフロー インスタンスを表す <see cref="T:System.Guid" />。</param>
+        <param name="whenUtc">スレッドの実行を開始する時刻を示す <see cref="T:System.DateTime" />。</param>
+        <param name="timerId">スケジュール済みスレッドを表す <see cref="T:System.Guid" />。</param>
+        <summary>指定したマルチキャスト デリゲート、<see cref="T:System.DateTime" />、および GUID を使用して、保留中の作業項目のキューに、指定したワークフロー インスタンスを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいスレッドで実行するデリゲート メソッドを作成するには、<xref:System.Threading.WaitCallback> コンストラクターを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="callback" /> に null 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="workflowInstanceId" /> または <paramref name="timerId" /> が空の GUID です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="protected override void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.DefaultWorkflowSchedulerService.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー インスタンスの現在実行中のスレッド、および実行中のタイマーを停止します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

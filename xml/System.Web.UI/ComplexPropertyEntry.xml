@@ -1,0 +1,69 @@
+<Type Name="ComplexPropertyEntry" FullName="System.Web.UI.ComplexPropertyEntry">
+  <TypeSignature Language="C#" Value="public class ComplexPropertyEntry : System.Web.UI.BuilderPropertyEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComplexPropertyEntry extends System.Web.UI.BuilderPropertyEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.ComplexPropertyEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.BuilderPropertyEntry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>読み取り/書き込みおよび読み取り専用のプロパティをテンプレートなどのプロパティ エントリとして機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複雑なプロパティのエントリでは、テンプレートなどの項目を表します。  
+  
+ ページ パーサーでは、解析時にプロパティ エントリ クラスを使用して、サーバー コントロール タグ内の式を表します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="IsCollectionItem">
+      <MemberSignature Language="C#" Value="public bool IsCollectionItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollectionItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ComplexPropertyEntry.IsCollectionItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティがコレクション オブジェクトであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />値のコレクションを格納している場合は、プロパティのエントリが項目を表しますそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.ComplexPropertyEntry.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロパティのエントリで表される項目がその値を設定するためのメソッドを含むかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プロパティのエントリによって表される項目には、set メソッドが含まれていない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,214 @@
+<Type Name="ChartHttpHandlerSettings" FullName="System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings">
+  <TypeSignature Language="C#" Value="public class ChartHttpHandlerSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChartHttpHandlerSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一時イメージ ファイルを格納するためのカスタム HTTP ハンドラーの記述に使用できる属性を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CustomHandlerName">
+      <MemberSignature Language="C#" Value="public string CustomHandlerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CustomHandlerName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.CustomHandlerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ハンドラーの名前を設定します。</summary>
+        <value>A<see langword="string" />カスタム ハンドラーの名前を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Directory">
+      <MemberSignature Language="C#" Value="public string Directory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Directory" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.Directory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、一時イメージ ファイルを格納するためのカスタム ハンドラーのディレクトリを設定します。</summary>
+        <value>A<see langword="string" />ディレクトリを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FolderName">
+      <MemberSignature Language="C#" Value="public string FolderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FolderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.FolderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または指定したディレクトリ内のイメージを格納するために使用されるフォルダーを設定します。</summary>
+        <value>A<see langword="string" />フォルダーの名前を表します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlerType">
+      <MemberSignature Language="C#" Value="public Type HandlerType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type HandlerType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.HandlerType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム ハンドラーのハンドラーの型を取得します。</summary>
+        <value><see cref="T:System.Type" />カスタム ハンドラーのです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public string this[string name] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">取得するパラメーターの名前です。</param>
+        <summary>下にある Web.config ファイルに登録されている、指定した名前の設定パラメーターを取得、 <c>ChartHttpHandler</c>キー。</summary>
+        <value>パラメーターの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 下にある Web.config ファイル内の任意のパラメーターにアクセスするには、このメソッドを使用して、`ChartHttpHandler`キー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrivateImages">
+      <MemberSignature Language="C#" Value="public bool PrivateImages { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrivateImages" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.PrivateImages" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドラーがプライベート イメージを利用するかどうかを示すフラグを取得します。</summary>
+        <value>
+          <see langword="True" />ハンドラーは、プライベート イメージをそれ以外の場合に利用する場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.PrivateImages%2A>プロパティが設定されて、ハンドラーはセッションのスコープ外のイメージを返しません。 さらに、クライアントは別のユーザーのイメージをダウンロードすることができません。 これが既定の動作です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StorageType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataVisualization.Charting.ChartHttpHandlerStorageType StorageType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartHttpHandlerStorageType StorageType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.StorageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartHttpHandlerStorageType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラフの画像ストレージ型を設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerStorageType" />グラフ画像ストレージ型を表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ グラフ イメージは、ファイルとして、またはメモリに格納できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスタム ハンドラーのタイムアウトを設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />されたグラフ イメージの有効期間を表す列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タイムアウトが経過すると、格納されているグラフ イメージは新しいグラフ イメージによってオーバーライドまたは破棄します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public string Url { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Url" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.ChartHttpHandlerSettings.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または一時イメージ ファイルが保存される HTTP パスに対応する URL を設定します。</summary>
+        <value>A <see langword="string" /> URL を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,712 @@
+<Type Name="Barrier" FullName="System.Threading.Barrier">
+  <TypeSignature Language="C#" Value="public class Barrier : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Barrier extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Barrier" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Participant Count={ParticipantCount},Participants Remaining={ParticipantsRemaining}")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>複数のタスクが、複数のフェーズを通じて 1 つのアルゴリズムで並行して協調的に実行できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 到着したが、グループ内の各シグナル送信を一連のフェーズで、移動することによって、タスクのグループが連携して、<xref:System.Threading.Barrier>特定のフェーズでは、暗黙的にその他すべての到着を待機します。 同じ<xref:System.Threading.Barrier>の複数の段階で使用することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、バリアを使用する方法を示します。  
+  
+ [!code-csharp[System.Threading.Barrier#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.barrier/cs/barrier.cs#01)]
+ [!code-vb[System.Threading.Barrier#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.barrier/vb/barrier.vb#01)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>すべてのパブリックおよびプロテクト メンバー<see cref="T:System.Threading.Barrier" />はスレッド セーフであるとする必要がありますのみ Dispose を除き、複数のスレッドから同時に使用することがあるときに使用上の他のすべての操作、<see cref="T:System.Threading.Barrier" />が完了します。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Barrier (int participantCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 participantCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="participantCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="participantCount">参加しているスレッドの数。</param>
+        <summary><see cref="T:System.Threading.Barrier" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="participantCount" />0 未満か、32,767 を超える。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Barrier (int participantCount, Action&lt;System.Threading.Barrier&gt; postPhaseAction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 participantCount, class System.Action`1&lt;class System.Threading.Barrier&gt; postPhaseAction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.#ctor(System.Int32,System.Action{System.Threading.Barrier})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="participantCount" Type="System.Int32" />
+        <Parameter Name="postPhaseAction" Type="System.Action&lt;System.Threading.Barrier&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="participantCount">参加しているスレッドの数。</param>
+        <param name="postPhaseAction"><see cref="T:System.Action`1" />各フェーズの後に実行します。 何も処理を示すためには、null (Visual Basic では Nothing) を渡すことができます。</param>
+        <summary><see cref="T:System.Threading.Barrier" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `postPhaseAction`すべての参加者が 1 つのフェーズのバリアに到着した後に実行されるデリゲート。 参加者は、次のフェーズ postPhaseAction デリゲートの実行が完了するまでには解放されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="participantCount" />0 未満か、32,767 を超える。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParticipant">
+      <MemberSignature Language="C#" Value="public long AddParticipant ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 AddParticipant() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.AddParticipant" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通知、<see cref="T:System.Threading.Barrier" />その他の参加要素があることができます。</summary>
+        <returns>新しい参加要素が最初に参加 barrier のフェーズ数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バリアは現在、フェーズの後の処理を実行して、フェーズの後の処理が完了して、バリアは、次のフェーズで移動するまで、この呼び出しがブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">参加要素を追加すると、32,767 を超えるバリアの参加要素の数となります。  
+  
+ または  
+  
+ メソッドは、フェーズ後アクション内から呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParticipants">
+      <MemberSignature Language="C#" Value="public long AddParticipants (int participantCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int64 AddParticipants(int32 participantCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.AddParticipants(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="participantCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="participantCount">バリアに追加するその他の参加者の数。</param>
+        <summary>通知、<see cref="T:System.Threading.Barrier" />参加者があることができます。</summary>
+        <returns>新しい参加要素が最初に参加 barrier のフェーズ数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バリアは現在、フェーズの後の処理を実行して、フェーズの後の処理が完了して、バリアは、次のフェーズで移動するまで、この呼び出しがブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="participantCount" /> が 0 未満です。  
+  
+ または  
+  
+ 追加<paramref name="participantCount" />参加者が 32,767 を超えるバリアの参加要素の数を原因となります。</exception>
+        <exception cref="T:System.InvalidOperationException">メソッドは、フェーズ後アクション内から呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPhaseNumber">
+      <MemberSignature Language="C#" Value="public long CurrentPhaseNumber { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CurrentPhaseNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Barrier.CurrentPhaseNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、バリアの数の現在のフェーズです。</summary>
+        <value>返します、バリアの数の現在のフェーズです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Threading.Barrier" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Dispose` を使い終わったら <xref:System.Threading.Barrier> を呼び出します。 `Dispose` メソッドによって、<xref:System.Threading.Barrier> は使用不可の状態になります。 呼び出した後`Dispose`へのすべての参照を解放する必要があります、<xref:System.Threading.Barrier>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Threading.Barrier>占有されていた。  
+  
+ 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  `Dispose` への最後の参照を解放する前に、必ず <xref:System.Threading.Barrier> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Threading.Barrier> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メソッドは、フェーズ後アクション内から呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">マネージ リソースとアンマネージ リソースの両方を解放する場合は true、アンマネージ リソースだけを解放する場合は false。</param>
+        <summary><see cref="T:System.Threading.Barrier" /> が使用しているアンマネージ リソースを解放します。オプションとして、マネージ リソースを解放することもできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ほとんどのメンバーとは異なり<xref:System.Threading.Barrier>Dispose がスレッド セーフであるとこのインスタンスの他のメンバーと同時に使用できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParticipantCount">
+      <MemberSignature Language="C#" Value="public int ParticipantCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ParticipantCount" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Barrier.ParticipantCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バリアの参加要素の合計数を取得します。</summary>
+        <value>バリアの参加要素の合計数を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParticipantsRemaining">
+      <MemberSignature Language="C#" Value="public int ParticipantsRemaining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ParticipantsRemaining" />
+      <MemberSignature Language="DocId" Value="P:System.Threading.Barrier.ParticipantsRemaining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のフェーズでまだ通知していないバリアの参加要素の数を取得します。</summary>
+        <value>現在のフェーズにシグナル状態にしていないまだバリアの参加要素の数を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フェーズ後アクション デリゲートの実行中に 0 にするか、ParticipantCount が 0 の場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveParticipant">
+      <MemberSignature Language="C#" Value="public void RemoveParticipant ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveParticipant() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.RemoveParticipant" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通知、<see cref="T:System.Threading.Barrier" />少ない 1 つの参加要素があることができます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">バリアは、0 の参加者を既に持っています。  
+  
+ または  
+  
+ メソッドは、フェーズ後アクション内から呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveParticipants">
+      <MemberSignature Language="C#" Value="public void RemoveParticipants (int participantCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveParticipants(int32 participantCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.RemoveParticipants(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="participantCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="participantCount">バリアから削除するその他の参加者の数。</param>
+        <summary>通知、<see cref="T:System.Threading.Barrier" />少ない参加要素があることができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`participantCount`参加要素がバリアで既に待機している、この削除は、バリアを満たす、フェーズの後の処理が実行される、および削除されているこの参加要素がバリアに到達が正常に場合、すべての参加者がウェイクします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">参加要素の総数が、指定より小さい<paramref name="participantCount" /></exception>
+        <exception cref="T:System.InvalidOperationException">バリアは、0 の参加者を既に持っています。  
+  
+ または  
+  
+ メソッドは、フェーズ後アクション内から呼び出されました。  
+  
+ または  
+  
+ 現在の構成要素の数が指定された participantCount より小さい</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public void SignalAndWait ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SignalAndWait() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>通知参加者がバリアに達して、その他のすべての参加者もバリアに到達するまで待機します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+        <exception cref="T:System.Threading.BarrierPostPhaseException">例外がスローされた場合 Barrier のフェーズの後の処理から結局のところに参加しているスレッドが SignalAndWait という例外が、BarrierPostPhaseException でラップされ、参加しているすべてのスレッドにスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public bool SignalAndWait (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SignalAndWait(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <summary>参加者がバリアに達して、32 ビット符号付き整数を使用して、タイムアウト時間を測定するも、バリアに到達するその他のすべての参加者が待機することを通知します。</summary>
+        <returns>すべての参加要素は、指定した時間内のバリアに到達した場合それ以外の場合は false。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は無限のタイムアウトを表す -1 以外の負の数です。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+        <exception cref="T:System.Threading.BarrierPostPhaseException">例外がスローされた場合 Barrier のフェーズの後の処理から結局のところに参加しているスレッドが SignalAndWait という例外が、BarrierPostPhaseException でラップされ、参加しているすべてのスレッドにスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public void SignalAndWait (System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SignalAndWait(valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait(System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>参加者がバリアに達して、キャンセル トークンを観察しながら、バリアに到達するその他のすべての参加者が待機することを通知します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public bool SignalAndWait (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SignalAndWait(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機するミリ秒数を表す <see cref="T:System.TimeSpan" />。無制限に待機する場合は、-1 ミリ秒を表す <see cref="T:System.TimeSpan" />。</param>
+        <summary>参加者がバリアに達してを使用しても、バリアに到達するその他のすべての参加者が待機することを通知する<see cref="T:System.TimeSpan" />時間間隔を測定するオブジェクト。</summary>
+        <returns>その他のすべての参加者が; バリアに到達した場合は trueそれ以外の場合は false です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" />無限のタイムアウトを表す-1 ミリ秒以外負の数値か、32,767 より大きい。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public bool SignalAndWait (int millisecondsTimeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SignalAndWait(int32 millisecondsTimeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait(System.Int32,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">待機するミリ秒数。無制限に待機する場合は <see cref="F:System.Threading.Timeout.Infinite" /> (-1)。</param>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>参加者がバリアに達して、32 ビット符号付き整数を使用して、キャンセル トークンを観察しながら、タイムアウト時間を測定するも、バリアに到達するその他のすべての参加者が待機することを通知します。</summary>
+        <returns>すべての参加要素は、指定した時間内のバリアに到達した場合それ以外の場合 false</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`cancellationToken`信号かかりました無効で、前に取り消されました、<xref:System.OperationCanceledException>がスローされます、<xref:System.Threading.Barrier.ParticipantsRemaining%2A>値が減少しません。 場合、`cancellationToken`が取り消されていないかが、シグナルを反映し、後に取り消される<xref:System.Threading.Barrier.ParticipantsRemaining%2A>が減らさおよび no<xref:System.OperationCanceledException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" /> は無限のタイムアウトを表す -1 以外の負の数です。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SignalAndWait">
+      <MemberSignature Language="C#" Value="public bool SignalAndWait (TimeSpan timeout, System.Threading.CancellationToken cancellationToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool SignalAndWait(valuetype System.TimeSpan timeout, valuetype System.Threading.CancellationToken cancellationToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Barrier.SignalAndWait(System.TimeSpan,System.Threading.CancellationToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="cancellationToken" Type="System.Threading.CancellationToken" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">待機するミリ秒数を表す <see cref="T:System.TimeSpan" />。無制限に待機する場合は、-1 ミリ秒を表す <see cref="T:System.TimeSpan" />。</param>
+        <param name="cancellationToken">観察する <see cref="T:System.Threading.CancellationToken" />。</param>
+        <summary>参加者がバリアに達してを使用しても、バリアに到達するその他のすべての参加者が待機することを通知する<see cref="T:System.TimeSpan" />キャンセル トークンを観察しながら、時間間隔を測定するオブジェクト。</summary>
+        <returns>その他のすべての参加者が; バリアに到達した場合は trueそれ以外の場合は false です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.OperationCanceledException">
+          <paramref name="cancellationToken" />取り消されました。</exception>
+        <exception cref="T:System.ObjectDisposedException">現在のインスタンスは既に破棄されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="timeout" /> は無限のタイムアウトを表す -1 ミリ秒以外の負の数です。</exception>
+        <exception cref="T:System.InvalidOperationException">フェーズ後アクション内から呼び出されたメソッドまたは、バリアに現在参加要素がバリアは、参加者として登録されているよりも多くのスレッドによって通知されます。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

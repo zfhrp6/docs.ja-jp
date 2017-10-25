@@ -1,0 +1,565 @@
+<Type Name="AssemblyInstaller" FullName="System.Configuration.Install.AssemblyInstaller">
+  <TypeSignature Language="C#" Value="public class AssemblyInstaller : System.Configuration.Install.Installer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AssemblyInstaller extends System.Configuration.Install.Installer" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.Install.AssemblyInstaller" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.Install</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Install.Installer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アセンブリを読み込んで内のすべてのインストーラーを実行します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller>を呼び出すことによって作成された、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 このオブジェクトのプロパティを設定し、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>をインストールするメソッドが呼び出される、`MyAssembly.exe`アセンブリ。  
+  
+ [!code-cpp[AssemblyInstaller#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller/CPP/assemblyinstaller.cpp#1)]
+ [!code-csharp[AssemblyInstaller#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller/CS/assemblyinstaller.cs#1)]
+ [!code-vb[AssemblyInstaller#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller/VB/assemblyinstaller.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyInstaller ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.Install.AssemblyInstaller" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>のメソッド、<xref:System.Configuration.Install.AssemblyInstaller>クラスです。  
+  
+ <xref:System.Configuration.Install.AssemblyInstaller>を呼び出すことによって作成された、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 このオブジェクトのプロパティを設定し、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>をインストールするメソッドが呼び出される、`MyAssembly_Install.exe`アセンブリ。  
+  
+ [!code-cpp[AssemblyInstaller_Install#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Install/CPP/assemblyinstaller_install.cpp#2)]
+ [!code-csharp[AssemblyInstaller_Install#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Install/CS/assemblyinstaller_install.cs#2)]
+ [!code-vb[AssemblyInstaller_Install#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Install/VB/assemblyinstaller_install.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyInstaller (System.Reflection.Assembly assembly, string[] commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Reflection.Assembly assembly, string[] commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.#ctor(System.Reflection.Assembly,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assembly" Type="System.Reflection.Assembly" />
+        <Parameter Name="commandLine" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="assembly"><see cref="T:System.Reflection.Assembly" />をインストールします。</param>
+        <param name="commandLine">新たに作成するときに使用するコマンド ライン<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。 Null 値を指定できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.AssemblyInstaller" />クラス、およびインストールするアセンブリと新たに作成するときに使用するコマンドラインの両方を指定<see cref="T:System.Configuration.Install.InstallContext" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AssemblyInstaller (string fileName, string[] commandLine);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fileName, string[] commandLine) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.#ctor(System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="commandLine" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="fileName">インストールするアセンブリのファイル名。</param>
+        <param name="commandLine">新たに作成するときに使用するコマンド ライン<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。 Null 値を指定できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Configuration.Install.AssemblyInstaller" />クラス、およびインストールするアセンブリと新たに作成するときに使用するコマンドラインのファイル名を指定<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller>を呼び出すことによって作成された、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターをインストールするアセンブリとパラメーターとして、コマンドライン引数の配列を使用します。  
+  
+ [!code-cpp[AssemblyInstaller_Uninstall#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Uninstall/CPP/assemblyinstaller_uninstall.cpp#1)]
+ [!code-csharp[AssemblyInstaller_Uninstall#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Uninstall/CS/assemblyinstaller_uninstall.cs#1)]
+ [!code-vb[AssemblyInstaller_Uninstall#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Uninstall/VB/assemblyinstaller_uninstall.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Assembly">
+      <MemberSignature Language="C#" Value="public System.Reflection.Assembly Assembly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.Assembly Assembly" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.AssemblyInstaller.Assembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.Assembly</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインストールするアセンブリを設定します。</summary>
+        <value><see cref="T:System.Reflection.Assembly" />をインストールするアセンブリを定義します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティ値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckIfInstallable">
+      <MemberSignature Language="C#" Value="public static void CheckIfInstallable (string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CheckIfInstallable(string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.CheckIfInstallable(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">インストーラーを検索するためのアセンブリ。</param>
+        <summary>指定したアセンブリをインストールすることができるかどうかを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Configuration.Install.AssemblyInstaller.CheckIfInstallable%2A>メソッドでは、指定したアセンブリをインストールできるかどうかを判断します。 スローされた例外を避けるためには、ファイルは、次の条件を満たす必要があります。  
+  
+-   ファイルが存在します。  
+  
+-   ファイルは、.NET Framework アセンブリです。  
+  
+-   パブリック型は、ファイルから読み取ることができます。  
+  
+-   拡張するには、少なくとも 1 つのパブリックな非抽象クラスがある、<xref:System.Configuration.Install.Installer>クラスし、が含まれています、<xref:System.ComponentModel.RunInstallerAttribute.Yes>属性。  
+  
+-   各インストーラーのインスタンスを作成できます。  
+  
+> [!NOTE]
+>  アセンブリが有効では、インストーラーが含まれていない場合は、例外がスローされます。 この動作は、場合は空のアセンブリをインストールすると、エラー、インストール時に異なります。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.CheckIfInstallable%2A>メソッドが存在し、存在しないの両方のアセンブリに適用され、呼び出しの結果がコンソールに表示されます。  
+  
+ [!code-cpp[AssemblyInstaller_CheckIfInstallable#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_CheckIfInstallable/CPP/assemblyinstaller_checkifinstallable.cpp#1)]
+ [!code-csharp[AssemblyInstaller_CheckIfInstallable#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_CheckIfInstallable/CS/assemblyinstaller_checkifinstallable.cs#1)]
+ [!code-vb[AssemblyInstaller_CheckIfInstallable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_CheckIfInstallable/VB/assemblyinstaller_checkifinstallable.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Exception">指定したアセンブリをインストールすることはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandLine">
+      <MemberSignature Language="C#" Value="public string[] CommandLine { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] CommandLine" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.AssemblyInstaller.CommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新たに作成するときに使用するコマンドラインの設定を取得または<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。</summary>
+        <value>型の配列<see cref="T:System.String" />新たに作成するときに使用するコマンドラインを表す<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.CommandLine%2A>のプロパティ、<xref:System.Configuration.Install.AssemblyInstaller>ログ ファイルの名前に設定されています。  
+  
+ [!code-cpp[AssemblyInstaller_Rollback#3](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CPP/assemblyinstaller_rollback.cpp#3)]
+ [!code-csharp[AssemblyInstaller_Rollback#3](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CS/assemblyinstaller_rollback.cs#3)]
+ [!code-vb[AssemblyInstaller_Rollback#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Rollback/VB/assemblyinstaller_rollback.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.Commit(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />インストーラー コレクション内のすべてのインストーラーが実行された後、コンピューターの状態を格納します。</param>
+        <summary>インストール トランザクションを完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合にのみ、このメソッドが呼び出されます、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>とこのインスタンスの内のすべてのインストーラー メソッド<xref:System.Configuration.Install.InstallerCollection>は成功します。 このメソッドを呼び出すし、<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>コレクション内の各インストーラーのメソッドです。  
+  
+ 適切に行うには必要であることに関する情報を格納保存された状態での操作をアンインストール<xref:System.Collections.IDictionary>に渡される、<xref:System.Configuration.Install.AssemblyInstaller.Uninstall%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>のメソッド、<xref:System.Configuration.Install.AssemblyInstaller>クラスです。  
+  
+ <xref:System.Configuration.Install.AssemblyInstaller>クラスが呼び出すことによって作成される、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 このオブジェクトのプロパティを設定し、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>をインストールするメソッドが呼び出される、`MyAssembly_Install.exe`アセンブリ。  
+  
+ [!code-cpp[AssemblyInstaller_Install#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Install/CPP/assemblyinstaller_install.cpp#2)]
+ [!code-csharp[AssemblyInstaller_Install#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Install/CS/assemblyinstaller_install.cs#2)]
+ [!code-vb[AssemblyInstaller_Install#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Install/VB/assemblyinstaller_install.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="savedState" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ 保存状態<see cref="T:System.Collections.IDictionary" />壊れている可能性があります。  
+  
+ または  
+  
+ ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.Exception">エラーが発生しました、<see cref="E:System.Configuration.Install.Installer.Committing" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ エラーが発生しました、<see cref="E:System.Configuration.Install.Installer.Committed" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ 中に例外が発生しました、<see cref="M:System.Configuration.Install.AssemblyInstaller.Commit(System.Collections.IDictionary)" />インストールの段階です。 例外は無視され、インストールが続行されます。 ただし、インストールの完了後、アプリケーションが正しく機能しない可能性がします。  
+  
+ または  
+  
+ インストーラーの種類は、アセンブリのいずれかで見つかりませんでした。  
+  
+ または  
+  
+ インストーラーの種類の 1 つのインスタンスを作成できませんでした。</exception>
+        <exception cref="T:System.Configuration.Install.InstallException">中に例外が発生しました、<see cref="M:System.Configuration.Install.AssemblyInstaller.Commit(System.Collections.IDictionary)" />インストールの段階です。 例外は無視され、インストールが続行されます。 ただし、インストールの完了後、アプリケーションが正しく機能しない可能性がします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpText">
+      <MemberSignature Language="C#" Value="public override string HelpText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpText" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.AssemblyInstaller.HelpText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インストーラー コレクション内のすべてのインストーラーに関するヘルプ テキストを取得します。</summary>
+        <value>各インストーラーの動作と、コマンド ライン オプションの (インストール プログラム用) に渡されるおよび各インストーラーによって認識できる説明など、インストーラー コレクション内のすべてのインストーラーに関するヘルプ テキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インストール プログラムの例は、InstallUtil.exe ユーティリティです。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.HelpText%2A>のプロパティ、<xref:System.Configuration.Install.AssemblyInstaller>がコンソールに表示されます。  
+  
+ [!code-cpp[AssemblyInstaller_HelpText#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_HelpText/CPP/assemblyinstaller_helptext.cpp#2)]
+ [!code-csharp[AssemblyInstaller_HelpText#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_HelpText/CS/assemblyinstaller_helptext.cs#2)]
+ [!code-vb[AssemblyInstaller_HelpText#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_HelpText/VB/assemblyinstaller_helptext.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Install">
+      <MemberSignature Language="C#" Value="public override void Install (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Install(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.Install(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">コミット、ロールバック、またはアンインストール操作を実行するために必要な情報を保存するために使用する <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>インストールを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>に含まれる各インストーラーのメソッド、<xref:System.Configuration.Install.Installer.Installers%2A>のこのインスタンスのプロパティです。 <xref:System.Collections.IDictionary>で指定されたオブジェクト、`savedState`パラメーターが含まれているインストーラーが実行された後、インストールの状態を反映するように更新します。 すべての場合、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>メソッドが成功した、<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>メソッドが呼び出されます。 それ以外の場合、<xref:System.Configuration.Install.AssemblyInstaller.Rollback%2A>メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターと<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>のメソッド、<xref:System.Configuration.Install.AssemblyInstaller>クラスです。  
+  
+ オブジェクト、<xref:System.Configuration.Install.AssemblyInstaller>クラスが呼び出すことによって作成される、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 このオブジェクトのプロパティを設定し、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>と<xref:System.Configuration.Install.AssemblyInstaller.Commit%2A>'MyAssembly_Install.exe' アセンブリをインストールするメソッドが呼び出されます。  
+  
+ [!code-cpp[AssemblyInstaller_Install#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Install/CPP/assemblyinstaller_install.cpp#2)]
+ [!code-csharp[AssemblyInstaller_Install#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Install/CS/assemblyinstaller_install.cs#2)]
+ [!code-vb[AssemblyInstaller_Install#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Install/VB/assemblyinstaller_install.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="savedState" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.Exception">例外が発生、<see cref="E:System.Configuration.Install.Installer.BeforeInstall" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ 例外が発生、<see cref="E:System.Configuration.Install.Installer.AfterInstall" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ インストーラーの種類は、アセンブリのいずれかで見つかりませんでした。  
+  
+ または  
+  
+ インストーラーの種類の 1 つのインスタンスを作成できませんでした。</exception>
+        <block subset="none" type="usage">
+          <para><see cref="T:System.Collections.IDictionary" />によって指定された、<paramref name="savedState" />パラメーターに渡される場合は空にする必要があります、<see cref="M:System.Configuration.Install.AssemblyInstaller.Install(System.Collections.IDictionary)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public string Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Path" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.AssemblyInstaller.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはインストールするアセンブリのパスを設定します。</summary>
+        <value>インストールするアセンブリのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller>を呼び出すことによって作成された、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 <xref:System.Configuration.Install.AssemblyInstaller.Path%2A>このオブジェクトのプロパティを設定します。  
+  
+ [!code-cpp[AssemblyInstaller_Rollback#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CPP/assemblyinstaller_rollback.cpp#2)]
+ [!code-csharp[AssemblyInstaller_Rollback#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CS/assemblyinstaller_rollback.cs#2)]
+ [!code-vb[AssemblyInstaller_Rollback#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Rollback/VB/assemblyinstaller_rollback.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rollback">
+      <MemberSignature Language="C#" Value="public override void Rollback (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Rollback(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.Rollback(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">インストール前のコンピューターの状態を格納している <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>インストール前に、の状態にコンピューターを復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロールバックは、インストールの実行前に、の状態にコンピューターを復元します。 <xref:System.Configuration.Install.AssemblyInstaller.Rollback%2A>場合、メソッドが呼び出されます、<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>メソッドのこの<xref:System.Configuration.Install.Installer>インスタンスまたはインストーラー内のすべてのインストーラーのコレクションが正常に実行に失敗します。 呼び出すことによって生成される例外、<xref:System.Configuration.Install.AssemblyInstaller.Rollback%2A>インストーラー コレクション内のメソッドは無視され、その他のインストーラーのロールバックは続行されます。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.Rollback%2A>を指定したアセンブリのインストール プロセスを元に戻すメソッドが呼び出されます。  
+  
+ [!code-cpp[AssemblyInstaller_Rollback#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CPP/assemblyinstaller_rollback.cpp#1)]
+ [!code-csharp[AssemblyInstaller_Rollback#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Rollback/CS/assemblyinstaller_rollback.cs#1)]
+ [!code-vb[AssemblyInstaller_Rollback#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Rollback/VB/assemblyinstaller_rollback.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="savedState" /> パラメーターが <see langword="null" /> です。  
+  
+ または  
+  
+ 保存状態<see cref="T:System.Collections.IDictionary" />壊れている可能性があります。  
+  
+ または  
+  
+ ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.Exception">例外が発生、<see cref="E:System.Configuration.Install.Installer.BeforeRollback" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ 例外が発生、<see cref="E:System.Configuration.Install.Installer.AfterRollback" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ 中に例外が発生しました、<see cref="M:System.Configuration.Install.AssemblyInstaller.Rollback(System.Collections.IDictionary)" />インストールの段階です。 例外は無視され、ロールバックは続行されます。 ただし、コンピューター可能性があります完全に戻すを初期状態にロールバックが完了後します。  
+  
+ または  
+  
+ インストーラーの種類は、アセンブリのいずれかで見つかりませんでした。  
+  
+ または  
+  
+ インストーラーの種類の 1 つのインスタンスを作成できませんでした。</exception>
+        <exception cref="T:System.Configuration.Install.InstallException">中に例外が発生しました、<see cref="M:System.Configuration.Install.AssemblyInstaller.Rollback(System.Collections.IDictionary)" />インストールの段階です。 例外は無視され、ロールバックは続行されます。 ただし、コンピューター可能性があります完全に戻すを初期状態にロールバックが完了後します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Uninstall">
+      <MemberSignature Language="C#" Value="public override void Uninstall (System.Collections.IDictionary savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Uninstall(class System.Collections.IDictionary savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.Install.AssemblyInstaller.Uninstall(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Collections.IDictionary" />コンピューターのインストール後の状態を格納しています。</param>
+        <summary>インストールを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以前に完了したインストールを削除するには、このメソッドを呼び出します。 場合、<xref:System.Configuration.Install.Installer.Uninstall%2A>コレクション内のインストーラーのいずれかのメソッドが失敗した場合、残りのインストーラーのままと呼ばれます。 アンインストールの失敗はロールバックされません、コンピューターをアンインストール前の状態にします。  
+  
+> [!NOTE]
+>  <xref:System.Configuration.Install.Installer.Install%2A>と<xref:System.Configuration.Install.Installer.Commit%2A>メソッドは、インストール後に、コンピューターの状態を保存、ファイルを含む、<xref:System.Collections.IDictionary>から、`savedState`パラメーターが削除された可能性がある時点で、インストールが完了した後です。 ファイルが削除された場合、`savedState`パラメーターは`null`します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller.Uninstall%2A>インストール後にメソッドが呼び出され、コンス トラクターにパラメーターとして渡されたアセンブリをコミットします。  
+  
+ [!code-cpp[AssemblyInstaller_Uninstall#2](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_Uninstall/CPP/assemblyinstaller_uninstall.cpp#2)]
+ [!code-csharp[AssemblyInstaller_Uninstall#2](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_Uninstall/CS/assemblyinstaller_uninstall.cs#2)]
+ [!code-vb[AssemblyInstaller_Uninstall#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_Uninstall/VB/assemblyinstaller_uninstall.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">保存状態<see cref="T:System.Collections.IDictionary" />壊れている可能性があります。  
+  
+ または  
+  
+ ファイルが見つかりませんでした。</exception>
+        <exception cref="T:System.Exception">エラーが発生しました、<see cref="E:System.Configuration.Install.Installer.BeforeUninstall" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ エラーが発生しました、<see cref="E:System.Configuration.Install.Installer.AfterUninstall" />コレクション内のインストーラーのいずれかのイベント ハンドラー。  
+  
+ または  
+  
+ アンインストール中に例外が発生しました。 例外は無視され、アンインストールが続行します。 ただし、アンインストールが完了した後、アプリケーションは完全にアンインストールされない可能性がします。  
+  
+ または  
+  
+ インストーラーの種類は、アセンブリのいずれかで見つかりませんでした。  
+  
+ または  
+  
+ インストーラーの種類の 1 つのインスタンスを作成できませんでした。  
+  
+ または  
+  
+ ファイルを削除できませんでした。</exception>
+        <exception cref="T:System.Configuration.Install.InstallException">アンインストール中に例外が発生しました。 例外は無視され、アンインストールが続行します。 ただし、アンインストールが完了した後、アプリケーションは完全にアンインストールされない可能性がします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseNewContext">
+      <MemberSignature Language="C#" Value="public bool UseNewContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseNewContext" />
+      <MemberSignature Language="DocId" Value="P:System.Configuration.Install.AssemblyInstaller.UseNewContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.Install</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新規作成するかどうかを示す値を取得または<see cref="T:System.Configuration.Install.InstallContext" />アセンブリのインストールのためのオブジェクト。</summary>
+        <value>
+          <see langword="true" />場合、新しい<see cref="T:System.Configuration.Install.InstallContext" />オブジェクトが作成されたアセンブリのインストールのため、それ以外にする必要があります<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`"アセンブリ {name} という新しいファイルの作成します。このアセンブリのメッセージを記録する場合は"InstallLog です。 設定<xref:System.Configuration.Install.AssemblyInstaller.UseNewContext%2A>に`false`新しいファイルが作成されていることを防止します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Configuration.Install.AssemblyInstaller>を呼び出すことによって作成された、<xref:System.Configuration.Install.AssemblyInstaller.%23ctor%2A>コンス トラクターです。 <xref:System.Configuration.Install.AssemblyInstaller.UseNewContext%2A>このオブジェクトのプロパティが設定されて`true`と<xref:System.Configuration.Install.AssemblyInstaller.Install%2A>メソッドで呼び出される、`MyAssembly_HelpText.exe`アセンブリ。 そのため、ログ メッセージは、コンソールに表示されます。  
+  
+ [!code-cpp[AssemblyInstaller_HelpText#1](~/samples/snippets/cpp/VS_Snippets_CLR/AssemblyInstaller_HelpText/CPP/assemblyinstaller_helptext.cpp#1)]
+ [!code-csharp[AssemblyInstaller_HelpText#1](~/samples/snippets/csharp/VS_Snippets_CLR/AssemblyInstaller_HelpText/CS/assemblyinstaller_helptext.cs#1)]
+ [!code-vb[AssemblyInstaller_HelpText#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyInstaller_HelpText/VB/assemblyinstaller_helptext.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

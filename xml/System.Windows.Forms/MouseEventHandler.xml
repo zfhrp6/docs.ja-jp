@@ -1,0 +1,41 @@
+<Type Name="MouseEventHandler" FullName="System.Windows.Forms.MouseEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MouseEventHandler(object sender, MouseEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MouseEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.MouseEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.MouseEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.MouseEventArgs" />。</param>
+    <summary>処理するメソッドを表す、 <see langword="MouseDown" />、 <see langword="MouseUp" />、または<see langword="MouseMove" />フォーム、コントロール、またはその他のコンポーネントのイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MouseEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しますにマウスのパスを描画する別のマウス イベントを使用して、<xref:System.Windows.Forms.Panel>です。 直線セグメントを追加、<xref:System.Drawing.Drawing2D.GraphicsPath>各<xref:System.Windows.Forms.Control.MouseMove>と<xref:System.Windows.Forms.Control.MouseDown>発生するイベントです。 グラフィックスを更新する、<xref:System.Windows.Forms.Control.Invalidate%2A>のメソッドは、<xref:System.Windows.Forms.Panel>ごとに`MouseDown`と`MouseUp`イベント。 さらに、グラフィックのパスがときに上下にスクロールされる基準、<xref:System.Windows.Forms.Control.MouseWheel>イベントが発生します。 その他のマウス イベントと同様に<xref:System.Windows.Forms.Control.MouseHover>、画面にも識別されます。 マウスでに関する追加情報も、画面に表示されますが、<xref:System.Windows.Forms.SystemInformation>クラスです。  
+  
+ [!code-cpp[System.Windows.Forms.MouseEvent#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/CPP/mouseeventexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.MouseEvent#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/CS/mouseeventexample.cs#1)]
+ [!code-vb[System.Windows.Forms.MouseEvent#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.MouseEvent/VB/mouseeventexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,97 @@
+<Type Name="ContainerFilterService" FullName="System.ComponentModel.ContainerFilterService">
+  <TypeSignature Language="C#" Value="public abstract class ContainerFilterService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ContainerFilterService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ContainerFilterService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンテナー フィルター サービスの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Container>と<xref:System.ComponentModel.NestedContainer>クラスの呼び出し、<xref:System.ComponentModel.ContainerFilterService.FilterComponents%2A>メソッド呼び出し元に返すのためのコンポーネントのコレクションを作成する必要があるたびにします。 <xref:System.ComponentModel.ContainerFilterService.FilterComponents%2A>コンポーネントの更新のコレクションを返す可能性があります。 これにより、コンテナーから返されるコンポーネントのビューを変更する外部サービス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ContainerFilterService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ContainerFilterService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.ContainerFilterService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterComponents">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.ComponentCollection FilterComponents (System.ComponentModel.ComponentCollection components);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.ComponentCollection FilterComponents(class System.ComponentModel.ComponentCollection components) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ContainerFilterService.FilterComponents(System.ComponentModel.ComponentCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ComponentCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="components" Type="System.ComponentModel.ComponentCollection" />
+      </Parameters>
+      <Docs>
+        <param name="components">フィルター処理するコンポーネントのコレクションです。</param>
+        <summary>コンポーネントのコレクションをフィルター処理します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.ComponentCollection" />変更されたコレクションを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.ContainerFilterService.FilterComponents%2A>メソッドは、必要に応じて、新しい変更されたコレクションを返すことによってコンポーネントのコレクションをフィルター処理します。 既定の実装では、それによって実行なしのフィルター処理、入力のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

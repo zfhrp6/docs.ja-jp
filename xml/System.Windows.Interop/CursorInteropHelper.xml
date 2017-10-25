@@ -1,0 +1,54 @@
+<Type Name="CursorInteropHelper" FullName="System.Windows.Interop.CursorInteropHelper">
+  <TypeSignature Language="C#" Value="public static class CursorInteropHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CursorInteropHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Interop.CursorInteropHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows Presentation Foundation (WPF) の取得に使用される 1 つのメソッドを使用して WPF/Win32 の相互運用のための静的ヘルパー クラスを提供<see cref="T:System.Windows.Input.Cursor" />オブジェクトが提供されている Win32 カーソル ハンドルに基づいています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.Cursor Create (System.Runtime.InteropServices.SafeHandle cursorHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Input.Cursor Create(class System.Runtime.InteropServices.SafeHandle cursorHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Interop.CursorInteropHelper.Create(System.Runtime.InteropServices.SafeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.Cursor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cursorHandle" Type="System.Runtime.InteropServices.SafeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="cursorHandle">相互運用に使用するカーソル参照。</param>
+        <summary>返します、 [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] <see cref="T:System.Windows.Input.Cursor" />オブジェクトに基づいて、指定された[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]カーソル ハンドルです。</summary>
+        <returns>[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]カーソル オブジェクトに基づいて、指定した[!INCLUDE[TLA#tla_win32](~/includes/tlasharptla-win32-md.md)]カーソル ハンドルです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 純粋で行う場合でもは、カスタムのカーソル イメージを設定するとセキュリティのアクセス許可が必要です[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プログラミングします。 「<xref:System.Windows.Input.Cursor>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このメソッドを呼び出します。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

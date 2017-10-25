@@ -1,0 +1,79 @@
+<Type Name="IApplicationPreloadUtil" FullName="System.Web.Hosting.IApplicationPreloadUtil">
+  <TypeSignature Language="C#" Value="public interface IApplicationPreloadUtil" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IApplicationPreloadUtil" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IApplicationPreloadUtil" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("940D8ADD-9E40-4475-9A67-2CDCDF57995C")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET を使用して、サーバーがアプリケーションをプリロードするときに、IIS 7.0 と通信するメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetApplicationPreloadInfo">
+      <MemberSignature Language="C#" Value="public void GetApplicationPreloadInfo (string context, out bool enabled, out string startupObjType, out string[] parametersForStartupObj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetApplicationPreloadInfo([in]string context, [out] bool&amp; enabled, [out] string&amp; startupObjType, [out] string[]&amp; parametersForStartupObj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IApplicationPreloadUtil.GetApplicationPreloadInfo(System.String,System.Boolean@,System.String@,System.String[]@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="enabled" Type="System.Boolean&amp;" RefType="out" />
+        <Parameter Name="startupObjType" Type="System.String&amp;" RefType="out" />
+        <Parameter Name="parametersForStartupObj" Type="System.String[]&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="context">アプリケーションのコンテキスト。</param>
+        <param name="enabled">このメソッドが戻るときに、格納<see langword="true" />プリロードされている、それ以外にアプリケーションを持つことを示すために<see langword="false" />です。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="startupObjType">このメソッドが戻るとき、プリロード プロセスの一部である、マネージ型を識別する文字列を格納します。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="parametersForStartupObj">このメソッドが戻るときに、事前に読み込まれた型に渡されるデータが含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>アプリケーションをプリロードするために必要な初期化データを取得します。 このメソッドは、ASP.NET によって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ReportApplicationPreloadFailure">
+      <MemberSignature Language="C#" Value="public void ReportApplicationPreloadFailure (string context, int errorCode, string errorMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReportApplicationPreloadFailure([in]string context, [in]int32 errorCode, [in]string errorMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IApplicationPreloadUtil.ReportApplicationPreloadFailure(System.String,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="errorMessage" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context">アプリケーションのコンテキスト。</param>
+        <param name="errorCode">数値エラー コード。</param>
+        <param name="errorMessage">エラー テキスト。</param>
+        <summary>エラーが発生しましたレポート[!INCLUDE[iisver](~/includes/iisver-md.md)]サーバーが ASP.NET アプリケーションを事前読み込み中にします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

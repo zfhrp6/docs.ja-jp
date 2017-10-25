@@ -1,0 +1,2334 @@
+<Type Name="HttpBrowserCapabilitiesWrapper" FullName="System.Web.HttpBrowserCapabilitiesWrapper">
+  <TypeSignature Language="C#" Value="public class HttpBrowserCapabilitiesWrapper : System.Web.HttpBrowserCapabilitiesBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HttpBrowserCapabilitiesWrapper extends System.Web.HttpBrowserCapabilitiesBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpBrowserCapabilitiesWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpBrowserCapabilitiesBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.CompilerServices.TypeForwardedFrom("System.Web.Abstractions, Version=3.5.0.0, Culture=Neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーが現在の要求を作成したブラウザーの機能に関する情報を収集できるようにする HTTP 組み込みオブジェクトをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.HttpBrowserCapabilitiesWrapper>から派生したクラス、<xref:System.Web.HttpBrowserCapabilitiesBase>のラッパーとして機能し、クラス、<xref:System.Web.HttpBrowserCapabilities>クラスです。 このクラスの機能を公開する、<xref:System.Web.HttpBrowserCapabilities>クラスを公開、<xref:System.Web.HttpBrowserCapabilitiesBase>型です。 <xref:System.Web.HttpBrowserCapabilitiesBase>クラスでは、元の実装を置換することができます、<xref:System.Web.HttpBrowserCapabilities>単体テストの外部の ASP.NET パイプラインを実行する場合などのカスタム実装を使用してアプリケーション内のクラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpBrowserCapabilitiesWrapper (System.Web.HttpBrowserCapabilities httpBrowserCapabilities);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.HttpBrowserCapabilities httpBrowserCapabilities) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.#ctor(System.Web.HttpBrowserCapabilities)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="httpBrowserCapabilities" Type="System.Web.HttpBrowserCapabilities" />
+      </Parameters>
+      <Docs>
+        <param name="httpBrowserCapabilities">このラッパー クラスのアクセス提供先のオブジェクト。</param>
+        <summary><see cref="T:System.Web.HttpBrowserCapabilitiesWrapper" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="httpBrowserCapabilities" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveXControls">
+      <MemberSignature Language="C#" Value="public override bool ActiveXControls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ActiveXControls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ActiveXControls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが ActiveX コントロールをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが ActiveX コントロールをサポートできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Adapters">
+      <MemberSignature Language="C#" Value="public override System.Collections.IDictionary Adapters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Adapters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Adapters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能なコントロール アダプターのコレクションを取得します。</summary>
+        <value>ブラウザー用に登録されたコントロール アダプターのコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddBrowser">
+      <MemberSignature Language="C#" Value="public override void AddBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.AddBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">追加するブラウザーの名前。</param>
+        <summary>機能が認識されるブラウザーの内部コレクションにエントリを追加するために内部的に使用されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AOL">
+      <MemberSignature Language="C#" Value="public override bool AOL { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AOL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.AOL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが America Online (AOL) のブラウザーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが AOL ブラウザーである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundSounds">
+      <MemberSignature Language="C#" Value="public override bool BackgroundSounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BackgroundSounds" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.BackgroundSounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーを使用してバック グラウンド サウンドの再生をサポートするかどうかを示す値を取得、 <see langword="bgsounds" /> HTML 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがバック グラウンド サウンドの再生; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Beta">
+      <MemberSignature Language="C#" Value="public override bool Beta { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Beta" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Beta" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがベータ版であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがベータ版である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browser">
+      <MemberSignature Language="C#" Value="public override string Browser { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Browser" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Browser" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="User-Agent" /> 要求ヘッダー内のブラウザーによって送信されたブラウザー文字列を取得します (存在する場合)。</summary>
+        <value>ブラウザーによって送信された <see langword="User-Agent" /> 要求ヘッダーのコンテンツ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Browsers">
+      <MemberSignature Language="C#" Value="public override System.Collections.ArrayList Browsers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList Browsers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Browsers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>機能が認識されるブラウザーのコレクションを取得します。</summary>
+        <value>機能が認識されるブラウザー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCombineFormsInDeck">
+      <MemberSignature Language="C#" Value="public override bool CanCombineFormsInDeck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanCombineFormsInDeck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanCombineFormsInDeck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別のカードなどの複数のフォームを含むデッキをブラウザーがサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />複数のフォームを含むデッキをブラウザーがサポートする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInitiateVoiceCall">
+      <MemberSignature Language="C#" Value="public override bool CanInitiateVoiceCall { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanInitiateVoiceCall" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanInitiateVoiceCall" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのデバイスが音声通話を開始できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーのデバイスが音声通話; を開始できる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderAfterInputOrSelectElement">
+      <MemberSignature Language="C#" Value="public override bool CanRenderAfterInputOrSelectElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderAfterInputOrSelectElement" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderAfterInputOrSelectElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML の <see langword="select" /> 要素または <see langword="input" /> 要素の後のページ コンテンツをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML に依存しているページのコンテンツをサポートする場合は<see langword="select" />または<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderEmptySelects">
+      <MemberSignature Language="C#" Value="public override bool CanRenderEmptySelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderEmptySelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderEmptySelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが空の HTML <see langword="select" /> 要素をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが空の HTML をサポートする場合は<see langword="select" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderInputAndSelectElementsTogether">
+      <MemberSignature Language="C#" Value="public override bool CanRenderInputAndSelectElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderInputAndSelectElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderInputAndSelectElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="input" />と<see langword="select" />要素の同じカード内に共存します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="input" />と<see langword="select" />要素一緒に、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderMixedSelects">
+      <MemberSignature Language="C#" Value="public override bool CanRenderMixedSelects { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderMixedSelects" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderMixedSelects" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をサポートするかどうかを示す値を取得<see langword="option" />両方を指定する要素<see langword="onpick" />と<see langword="value" />属性。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="option" />両方を指定する要素<see langword="onpick" />と<see langword="value" />属性です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderOneventAndPrevElementsTogether">
+      <MemberSignature Language="C#" Value="public override bool CanRenderOneventAndPrevElementsTogether { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderOneventAndPrevElementsTogether" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderOneventAndPrevElementsTogether" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが同じカードに存在する WML の <see langword="onevent" /> 要素と <see langword="prev" /> 要素をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートする場合は<see langword="onevent" />と<see langword="prev" />、同じ要素カード、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderPostBackCards">
+      <MemberSignature Language="C#" Value="public override bool CanRenderPostBackCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderPostBackCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderPostBackCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがポストバック用の WML カードをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがポストバック用 WML カードをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRenderSetvarZeroWithMultiSelectionList">
+      <MemberSignature Language="C#" Value="public override bool CanRenderSetvarZeroWithMultiSelectionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanRenderSetvarZeroWithMultiSelectionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="value" /> 属性が 0 の WML <see langword="setvar" /> 要素がブラウザーでサポートされているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML をサポートしている場合<see langword="setvar" />を持つ要素を<see langword="value" />0 の属性です。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSendMail">
+      <MemberSignature Language="C#" Value="public override bool CanSendMail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSendMail" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CanSendMail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML を使用して電子メール メッセージの送信をサポートするかどうかを示す値を取得<see langword="mailto" />スキームです。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML を使用して電子メール メッセージの送信をサポートするかどうかは<see langword="mailto" />スキームです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Capabilities">
+      <MemberSignature Language="C#" Value="public override System.Collections.IDictionary Capabilities { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Capabilities" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Capabilities" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの定義済みの機能を取得する目的で内部的に使用されます。</summary>
+        <value>ブラウザーの定義済みの機能。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CDF">
+      <MemberSignature Language="C#" Value="public override bool CDF { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CDF" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.CDF" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Web キャスト用のチャネル定義フォーマット (CDF) をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CDF をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClrVersion">
+      <MemberSignature Language="C#" Value="public override Version ClrVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version ClrVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ClrVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントにインストールされている .NET Framework のバージョンを取得します。</summary>
+        <value>共通言語ランタイム (CLRS) のバージョン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareFilters">
+      <MemberSignature Language="C#" Value="public override int CompareFilters (string filter1, string filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 CompareFilters(string filter1, string filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.CompareFilters(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.String" />
+        <Parameter Name="filter2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">比較する最初のフィルター。</param>
+        <param name="filter2">比較する 2 番目のフィルター。</param>
+        <summary>フィルターを比較する目的で内部的に使用されます。</summary>
+        <returns><paramref name="filter1" /> が <paramref name="filter2" /> の親である場合は 1。<paramref name="filter2" /> が <paramref name="filter1" /> の親である場合は -1。<paramref name="filter1" /> と <paramref name="filter2" /> の間に親子関係が存在しない場合は 0。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookies">
+      <MemberSignature Language="C#" Value="public override bool Cookies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Cookies" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Cookies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが cookie をサポートできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが cookie をサポートできる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは示しません cookie をブラウザーで、現在有効にするかどうか、ブラウザーが cookie をサポートできるかどうか。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Crawler">
+      <MemberSignature Language="C#" Value="public override bool Crawler { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Crawler" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Crawler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが検索エンジンの Web クローラーかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが、検索エンジンのクローラーである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateHtmlTextWriter">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.HtmlTextWriter CreateHtmlTextWriter (System.IO.TextWriter w);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.HtmlTextWriter CreateHtmlTextWriter(class System.IO.TextWriter w) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.CreateHtmlTextWriter(System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="w" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="w">作成するオブジェクト</param>
+        <summary>マークアップをブラウザーにレンダリングするために使用する <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトの新しいインスタンスを作成します。</summary>
+        <returns>オブジェクトの新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception"><see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトの作成中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSubmitButtonLimit">
+      <MemberSignature Language="C#" Value="public override int DefaultSubmitButtonLimit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DefaultSubmitButtonLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.DefaultSubmitButtonLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームで使用できる [送信] ボタンの最大数を取得します。</summary>
+        <value>フォームで使用できる [送信] ボタンの最大数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisableOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public override void DisableOptimizedCacheKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DisableOptimizedCacheKey() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.DisableOptimizedCacheKey" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>内部的に使用して、最適化されたキャッシュ キーの使用を無効にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EcmaScriptVersion">
+      <MemberSignature Language="C#" Value="public override Version EcmaScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version EcmaScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.EcmaScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする ECMAScript (JavaScript) のバージョン番号を取得します。</summary>
+        <value>ブラウザーがサポートする ECMAScript (JavaScript) のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateFilter">
+      <MemberSignature Language="C#" Value="public override bool EvaluateFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool EvaluateFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.EvaluateFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">評価するフィルター。</param>
+        <summary>フィルターを評価する目的で内部的に使用されます。</summary>
+        <returns>
+          フィルターが正常に評価された場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public override bool Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML のフレームをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがフレームをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMajorVersion">
+      <MemberSignature Language="C#" Value="public override int GatewayMajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GatewayMajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.GatewayMajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのアクセスに使用するワイヤレス ゲートウェイのメジャー バージョン番号 (既知の場合) を取得します。</summary>
+        <value>サーバーへのアクセスに使用するワイヤレス ゲートウェイのメジャー バージョン番号 (既知の場合)。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayMinorVersion">
+      <MemberSignature Language="C#" Value="public override double GatewayMinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 GatewayMinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.GatewayMinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのマイナー バージョン番号を取得します (既知の場合)。</summary>
+        <value>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのマイナー バージョン番号 (既知の場合)。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GatewayVersion">
+      <MemberSignature Language="C#" Value="public override string GatewayVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GatewayVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.GatewayVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのバージョンを取得します (既知の場合)。</summary>
+        <value>サーバーへのアクセスに使用されるワイヤレス ゲートウェイのバージョン番号 (既知の場合)。 既定値は "None" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClrVersions">
+      <MemberSignature Language="C#" Value="public override Version[] GetClrVersions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Version[] GetClrVersions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.GetClrVersions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアントにインストールされている .NET Framework 共通言語ランタイム (CLR) の、すべてのバージョンを取得します。</summary>
+        <returns><see cref="T:System.Version" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBackButton">
+      <MemberSignature Language="C#" Value="public override bool HasBackButton { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasBackButton" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.HasBackButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーに専用の [戻る] ボタンがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに、専用 [戻る] ボタンがある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HidesRightAlignedMultiselectScrollbars">
+      <MemberSignature Language="C#" Value="public override bool HidesRightAlignedMultiselectScrollbars { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HidesRightAlignedMultiselectScrollbars" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.HidesRightAlignedMultiselectScrollbars" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、HTML のスクロール バー<see langword="select multiple" />を持つ要素を<see langword="align" />属性の値の<see langword="right" />がレンダリング時に隠されます。</summary>
+        <value>
+          <see langword="true" />場合、HTML のスクロール バー<see langword="select multiple" />を持つ要素を<see langword="align" />属性の値の<see langword="right" />、それ以外のレンダリング時に非表示になる<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HtmlTextWriter">
+      <MemberSignature Language="C#" Value="public override string HtmlTextWriter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HtmlTextWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.HtmlTextWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マークアップ文字とテキストの記述に使用する <see cref="T:System.Web.UI.HtmlTextWriter" /> の完全修飾クラス名を取得または設定します。</summary>
+        <value>マークアップ文字とテキストの記述に使用する <see cref="T:System.Web.UI.HtmlTextWriter" /> の完全修飾クラス名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザー定義ファイルで指定されているブラウザーの内部識別子を取得します。</summary>
+        <value>ブラウザー定義ファイルで指定されているブラウザーの内部識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputType">
+      <MemberSignature Language="C#" Value="public override string InputType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InputType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.InputType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーでサポートされている入力の型を取得します。</summary>
+        <value>ブラウザーでサポートされている入力の型。 既定は "telephoneKeypad" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBrowser">
+      <MemberSignature Language="C#" Value="public override bool IsBrowser (string browserName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsBrowser(string browserName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpBrowserCapabilitiesWrapper.IsBrowser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="browserName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="browserName">指定されたブラウザー。</param>
+        <summary>クライアントのブラウザーが指定されたブラウザーと同じであるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />クライアントのブラウザーが指定されたブラウザーと同じ場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsColor">
+      <MemberSignature Language="C#" Value="public override bool IsColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.IsColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーにカラー表示があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーにカラー表示がある場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMobileDevice">
+      <MemberSignature Language="C#" Value="public override bool IsMobileDevice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMobileDevice" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.IsMobileDevice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがモバイル デバイスとして認識されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ブラウザーは、モバイル デバイスとして認識します。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public override string this[string key] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">取得するブラウザー機能の名前。</param>
+        <summary>指定したブラウザー機能の値を取得します。 C# では、このプロパティはクラスのインデクサーです。</summary>
+        <value>指定したキー名のブラウザー機能。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JavaApplets">
+      <MemberSignature Language="C#" Value="public override bool JavaApplets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool JavaApplets" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.JavaApplets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Java をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Java; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは、ブラウザーで Java が現在有効になっているかどうかを示すものでない、ブラウザーが Java をサポートできるかどうかを。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="JScriptVersion">
+      <MemberSignature Language="C#" Value="public override Version JScriptVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version JScriptVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.JScriptVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする JScript バージョンを取得します。</summary>
+        <value>ブラウザーがサポートする JScript のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ECMAScript のブラウザーでサポートされているのバージョン番号を参照してください。<xref:System.Web.HttpBrowserCapabilitiesWrapper.EcmaScriptVersion%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public override int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーのメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumHrefLength">
+      <MemberSignature Language="C#" Value="public override int MaximumHrefLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumHrefLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MaximumHrefLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列の最大長を取得、 <see langword="href" /> 、html 属性<see langword="a" />(アンカー) 要素です。</summary>
+        <value>文字の最大数、 <see langword="href" /> 、html 属性<see langword="a" />(アンカー) 要素です。 既定値は、値、<see cref="P:System.Web.HttpBrowserCapabilitiesWrapper.Item(System.String)" />の"maximumHrefLength"キー名を持つプロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumRenderedPageSize">
+      <MemberSignature Language="C#" Value="public override int MaximumRenderedPageSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumRenderedPageSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MaximumRenderedPageSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーに表示できるページのバイト単位の最大長を取得します。</summary>
+        <value>ブラウザーに表示できるページのバイト単位の最大長。 既定値は<c>2000</c>です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumSoftkeyLabelLength">
+      <MemberSignature Language="C#" Value="public override int MaximumSoftkeyLabelLength { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaximumSoftkeyLabelLength" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MaximumSoftkeyLabelLength" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソフト キー ラベルに表示できるテキストの最大長を取得します。</summary>
+        <value>ソフト キー ラベルに表示できるテキストの最大長。 既定値は 5 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public override double MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのマイナー (小数点付き) バージョン番号を取得します。</summary>
+        <value>ブラウザーのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersionString">
+      <MemberSignature Language="C#" Value="public override string MinorVersionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MinorVersionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MinorVersionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーのマイナー (小数) バージョン番号を文字列として取得します。</summary>
+        <value>ブラウザーのマイナー バージョン番号を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceManufacturer">
+      <MemberSignature Language="C#" Value="public override string MobileDeviceManufacturer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceManufacturer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MobileDeviceManufacturer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モバイル デバイスの製造元の名前を取得します (既知の場合)。</summary>
+        <value>モバイル デバイスの製造元の名前 (既知の場合)。 既定値は、"Unknown" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MobileDeviceModel">
+      <MemberSignature Language="C#" Value="public override string MobileDeviceModel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MobileDeviceModel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MobileDeviceModel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既知の場合は、モバイル デバイスのモデル名を取得します。</summary>
+        <value>既知の場合は、モバイル デバイスのモデル名。 既定値は、"Unknown" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MSDomVersion">
+      <MemberSignature Language="C#" Value="public override Version MSDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version MSDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.MSDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする Microsoft HTML (MSHTML) ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする MSHTML DOM バージョン。 既定値は 0.0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfSoftkeys">
+      <MemberSignature Language="C#" Value="public override int NumberOfSoftkeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NumberOfSoftkeys" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.NumberOfSoftkeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モバイル デバイスのソフト キーの数を取得します。</summary>
+        <value>モバイル デバイスでサポートされるソフト キーの数。 既定値は 0 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public override string Platform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Platform" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが使用しているオペレーティング システムの名前を取得します (既知の場合)。</summary>
+        <value>既知の場合は、クライアントが使用しているオペレーティング システム。それ以外の場合、値は「不明」に設定されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredImageMime">
+      <MemberSignature Language="C#" Value="public override string PreferredImageMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredImageMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.PreferredImageMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプを取得します。</summary>
+        <value>ブラウザーが通常推奨するイメージ コンテンツの種類の MIME タイプ。 既定値は "image/gif" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingMime">
+      <MemberSignature Language="C#" Value="public override string PreferredRenderingMime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingMime" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.PreferredRenderingMime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが通常推奨するコンテンツの種類の MIME タイプを取得します。</summary>
+        <value>ブラウザーが通常推奨するコンテンツの種類の MIME タイプ。 既定値は "text/html" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRenderingType">
+      <MemberSignature Language="C#" Value="public override string PreferredRenderingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRenderingType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.PreferredRenderingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが推奨するコンテンツの種類の一般名を取得します。</summary>
+        <value>値 "html32" または "chtml10"。 既定値は "html32" です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredRequestEncoding">
+      <MemberSignature Language="C#" Value="public override string PreferredRequestEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredRequestEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.PreferredRequestEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが推奨する要求のエンコーディングを取得します。</summary>
+        <value>ブラウザーが推奨する要求のエンコーディング。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredResponseEncoding">
+      <MemberSignature Language="C#" Value="public override string PreferredResponseEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredResponseEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.PreferredResponseEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーで優先される応答のエンコードを取得します。</summary>
+        <value>ブラウザーで優先される応答のエンコード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreakBeforeWmlSelectAndInput">
+      <MemberSignature Language="C#" Value="public override bool RendersBreakBeforeWmlSelectAndInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreakBeforeWmlSelectAndInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersBreakBeforeWmlSelectAndInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが前に改行を行うかどうかを示す値を取得<see langword="select" />または<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが前に改行を行う場合<see langword="select" />または<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterHtmlLists">
+      <MemberSignature Language="C#" Value="public override bool RendersBreaksAfterHtmlLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterHtmlLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersBreaksAfterHtmlLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがリスト項目の要素の後で改行するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリスト項目要素です。 後で改行する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlAnchor">
+      <MemberSignature Language="C#" Value="public override bool RendersBreaksAfterWmlAnchor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlAnchor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersBreaksAfterWmlAnchor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがスタンドアロン WML の後で改行するかどうかを示す値を取得<see langword="a" />(アンカー) 要素です。</summary>
+        <value>
+          <see langword="true" />ブラウザーがスタンドアロン WML の後で改行するかどうかは<see langword="a" />(アンカー) 要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersBreaksAfterWmlInput">
+      <MemberSignature Language="C#" Value="public override bool RendersBreaksAfterWmlInput { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersBreaksAfterWmlInput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersBreaksAfterWmlInput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML の後で改行するかどうかを示す値を取得<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML の後で改行するかどうかは<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlDoAcceptsInline">
+      <MemberSignature Language="C#" Value="public override bool RendersWmlDoAcceptsInline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlDoAcceptsInline" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersWmlDoAcceptsInline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モバイル デバイスのブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="do" />form accept コンストラクトをソフトキーのではなくインライン ボタンとして。</summary>
+        <value>
+          <see langword="true" />モバイル デバイス ブラウザーが WML 場合<see langword="do" />form accept コンストラクトをインライン ボタン; としてそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendersWmlSelectsAsMenuCards">
+      <MemberSignature Language="C#" Value="public override bool RendersWmlSelectsAsMenuCards { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RendersWmlSelectsAsMenuCards" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RendersWmlSelectsAsMenuCards" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが WML をレンダリングするかどうかを示す値を取得<see langword="select" />要素をメニュー カードとしての代わりに、コンボ ボックス。</summary>
+        <value>
+          <see langword="true" />ブラウザーが WML 場合<see langword="select" />要素をメニュー カードとしてそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiredMetaTagNameValue">
+      <MemberSignature Language="C#" Value="public override string RequiredMetaTagNameValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequiredMetaTagNameValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiredMetaTagNameValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一部のブラウザーで必要とされるメタ タグを生成する目的で内部的に使用されます。</summary>
+        <value>一部のブラウザーで必要とされるメタ タグ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresAttributeColonSubstitution">
+      <MemberSignature Language="C#" Value="public override bool RequiresAttributeColonSubstitution { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresAttributeColonSubstitution" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresAttributeColonSubstitution" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要素の属性値に含まれるコロンを別の文字に置き換えることが必要なブラウザーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが別の文字に置き換えられる要素の属性値内のコロンが必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresContentTypeMetaTag">
+      <MemberSignature Language="C#" Value="public override bool RequiresContentTypeMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresContentTypeMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresContentTypeMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML を必要とするかどうかを示す値を取得<see langword="meta" />要素を<see langword="content-type" />属性を指定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML が必要な場合<see langword="meta" />要素を<see langword="content-type" />属性が指定されている場合は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresControlStateInSession">
+      <MemberSignature Language="C#" Value="public override bool RequiresControlStateInSession { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresControlStateInSession" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresControlStateInSession" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーでセッションの制御状態を維持する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザー セッションで保持するコントロールの状態が必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresDBCSCharacter">
+      <MemberSignature Language="C#" Value="public override bool RequiresDBCSCharacter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresDBCSCharacter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresDBCSCharacter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが 2 バイト文字セットを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが 2 バイト文字セットです。 必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresHtmlAdaptiveErrorReporting">
+      <MemberSignature Language="C#" Value="public override bool RequiresHtmlAdaptiveErrorReporting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresHtmlAdaptiveErrorReporting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresHtmlAdaptiveErrorReporting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが非標準のエラー メッセージを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーに非標準のエラー メッセージが必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresLeadingPageBreak">
+      <MemberSignature Language="C#" Value="public override bool RequiresLeadingPageBreak { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresLeadingPageBreak" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresLeadingPageBreak" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML である Web ページの本文の最初の要素を必要とするかどうかを示す値を取得<see langword="br" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML である Web ページの本文の最初の要素が必要な場合<see langword="br" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresNoBreakInFormatting">
+      <MemberSignature Language="C#" Value="public override bool RequiresNoBreakInFormatting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresNoBreakInFormatting" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresNoBreakInFormatting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートしていないかどうかを示す値を取得<see langword="br" />改行の書式設定する要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートしていない場合<see langword="br" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresOutputOptimization">
+      <MemberSignature Language="C#" Value="public override bool RequiresOutputOptimization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresOutputOptimization" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresOutputOptimization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サイズが最適化された形式のマークアップ言語タグを含むページをブラウザーが必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サイズが最適化された形式のマークアップ言語タグを含むページがブラウザーに必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresPhoneNumbersAsPlainText">
+      <MemberSignature Language="C#" Value="public override bool RequiresPhoneNumbersAsPlainText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresPhoneNumbersAsPlainText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresPhoneNumbersAsPlainText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがプレーン テキストに基づく電話のダイヤルをサポートしているか、または特殊なマークアップを必要とするかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがプレーン テキストに基づく電話のダイヤルをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresSpecialViewStateEncoding">
+      <MemberSignature Language="C#" Value="public override bool RequiresSpecialViewStateEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresSpecialViewStateEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresSpecialViewStateEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがビューステート値に対して特殊なエンコードを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーには、特殊なエンコードをビュー ステートの値が必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueFilePathSuffix">
+      <MemberSignature Language="C#" Value="public override bool RequiresUniqueFilePathSuffix { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueFilePathSuffix" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresUniqueFilePathSuffix" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが一意のフォーム アクション URL を必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意のフォーム アクション Url を必要とする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlCheckboxNames">
+      <MemberSignature Language="C#" Value="public override bool RequiresUniqueHtmlCheckboxNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlCheckboxNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresUniqueHtmlCheckboxNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが必要かどうかを示す値を一意に取得<see langword="name" />の複数の HTML 属性値<see langword="input type=&quot;checkbox&quot;" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />の複数の HTML 属性値<see langword="input type=&quot;checkbox&quot;" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUniqueHtmlInputNames">
+      <MemberSignature Language="C#" Value="public override bool RequiresUniqueHtmlInputNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUniqueHtmlInputNames" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresUniqueHtmlInputNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが必要かどうかを示す値を一意に取得<see langword="name" />の複数の HTML 属性値<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが一意で必要な場合<see langword="name" />の複数の HTML 属性値<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresUrlEncodedPostfieldValues">
+      <MemberSignature Language="C#" Value="public override bool RequiresUrlEncodedPostfieldValues { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresUrlEncodedPostfieldValues" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.RequiresUrlEncodedPostfieldValues" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーによって送信されるポストバック データが URL エンコードされるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーによって送信されるポストバック データが URL エンコードされる場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenBitDepth">
+      <MemberSignature Language="C#" Value="public override int ScreenBitDepth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenBitDepth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ScreenBitDepth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイ画面の深度をピクセルあたりのビット数で取得します。</summary>
+        <value>ディスプレイ画面の深度 (ピクセルあたりのビット数)。 既定値は 1 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersHeight">
+      <MemberSignature Language="C#" Value="public override int ScreenCharactersHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ScreenCharactersHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイのおおよその高さを、文字の行数で取得します。</summary>
+        <value>文字の行数による、ディスプレイのおおよその高さ。 既定値は 6 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenCharactersWidth">
+      <MemberSignature Language="C#" Value="public override int ScreenCharactersWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenCharactersWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ScreenCharactersWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイのおおよその幅を文字数で取得します。</summary>
+        <value>ディスプレイのおおよその幅 (文字数)。 既定値は 12 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsHeight">
+      <MemberSignature Language="C#" Value="public override int ScreenPixelsHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ScreenPixelsHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイ画面のおおよその高さをピクセル単位で取得します。</summary>
+        <value>ディスプレイ画面のおおよその高さ (ピクセル単位)。 既定値は 72 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScreenPixelsWidth">
+      <MemberSignature Language="C#" Value="public override int ScreenPixelsWidth { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ScreenPixelsWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.ScreenPixelsWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスプレイ画面のおおよその幅をピクセル単位で取得します。</summary>
+        <value>ディスプレイ画面のおおよその幅 (ピクセル単位)。 既定値は 96 です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsAccesskeyAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsAccesskeyAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsAccesskeyAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsAccesskeyAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="accesskey" /> HTML の属性<see langword="a" />(アンカー) と<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="accesskey" /> HTML の属性<see langword="a" />(アンカー) と<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBodyColor">
+      <MemberSignature Language="C#" Value="public override bool SupportsBodyColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBodyColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsBodyColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="bgcolor" /> html 属性<see langword="body" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="bgcolor" /> html 属性<see langword="body" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsBold">
+      <MemberSignature Language="C#" Value="public override bool SupportsBold { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsBold" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsBold" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="b" />要素による太字テキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="b" />要素による太字のテキストを書式設定それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCacheControlMetaTag">
+      <MemberSignature Language="C#" Value="public override bool SupportsCacheControlMetaTag { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCacheControlMetaTag" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsCacheControlMetaTag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="meta" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、<see langword="cache-control" />値を<see langword="http-equiv" />HTML の属性<see langword="meta" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCallback">
+      <MemberSignature Language="C#" Value="public override bool SupportsCallback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがコールバック スクリプトをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがコールバック スクリプトをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsCss">
+      <MemberSignature Language="C#" Value="public override bool SupportsCss { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsCss" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsCss" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがカスケード スタイル シート (CSS) をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが CSS; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivAlign">
+      <MemberSignature Language="C#" Value="public override bool SupportsDivAlign { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivAlign" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsDivAlign" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="align" /> HTML の属性<see langword="div" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="align" /> HTML の属性<see langword="div" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDivNoWrap">
+      <MemberSignature Language="C#" Value="public override bool SupportsDivNoWrap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDivNoWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsDivNoWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="nowrap" /> HTML の属性<see langword="div" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="nowrap" /> HTML<see langword="div" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsEmptyStringInCookieValue">
+      <MemberSignature Language="C#" Value="public override bool SupportsEmptyStringInCookieValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsEmptyStringInCookieValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsEmptyStringInCookieValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが Cookie 値内で空の文字列をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが cookie 値内で空の文字列をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontColor">
+      <MemberSignature Language="C#" Value="public override bool SupportsFontColor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsFontColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="color" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="color" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontName">
+      <MemberSignature Language="C#" Value="public override bool SupportsFontName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsFontName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="name" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="name" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsFontSize">
+      <MemberSignature Language="C#" Value="public override bool SupportsFontSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsFontSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsFontSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="size" /> HTML の属性<see langword="font" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="size" /> HTML の属性<see langword="font" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsImageSubmit">
+      <MemberSignature Language="C#" Value="public override bool SupportsImageSubmit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsImageSubmit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsImageSubmit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが、標準のフォーム送信ボタンの代わりにカスタム イメージの使用をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが標準のフォーム送信ボタン; の代わりにカスタム イメージの使用をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsIModeSymbols">
+      <MemberSignature Language="C#" Value="public override bool SupportsIModeSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsIModeSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsIModeSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが iモード記号をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが i モード記号; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputIStyle">
+      <MemberSignature Language="C#" Value="public override bool SupportsInputIStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputIStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsInputIStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="istyle" /> HTML の属性<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="istyle" /> HTML の属性<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsInputMode">
+      <MemberSignature Language="C#" Value="public override bool SupportsInputMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsInputMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsInputMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="mode" /> HTML の属性<see langword="input" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="mode" /> HTML の属性<see langword="input" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsItalic">
+      <MemberSignature Language="C#" Value="public override bool SupportsItalic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsItalic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsItalic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="i" />要素による斜体のテキストを書式設定します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="i" />要素による斜体のテキストを書式設定それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneMultiMediaAttributes">
+      <MemberSignature Language="C#" Value="public override bool SupportsJPhoneMultiMediaAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneMultiMediaAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsJPhoneMultiMediaAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが J-Phone のマルチメディア属性をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J-phone のマルチ メディア属性をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsJPhoneSymbols">
+      <MemberSignature Language="C#" Value="public override bool SupportsJPhoneSymbols { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsJPhoneSymbols" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsJPhoneSymbols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが J-Phone 固有の画像シンボルをサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが J 固有の画像シンボルをサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsQueryStringInFormAction">
+      <MemberSignature Language="C#" Value="public override bool SupportsQueryStringInFormAction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsQueryStringInFormAction" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsQueryStringInFormAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが内のクエリ文字列をサポートするかどうかを示す値を取得、<see langword="action" />属性の値の HTML<see langword="form" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザー内のクエリ文字列をサポートしている場合、<see langword="action" />属性の値の HTML<see langword="form" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsRedirectWithCookie">
+      <MemberSignature Language="C#" Value="public override bool SupportsRedirectWithCookie { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsRedirectWithCookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsRedirectWithCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが、リダイレクトで Cookie をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーがリダイレクト; で cookie をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsSelectMultiple">
+      <MemberSignature Language="C#" Value="public override bool SupportsSelectMultiple { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsSelectMultiple" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsSelectMultiple" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートするかどうかを示す値を取得、 <see langword="multiple" /> HTML の属性<see langword="select" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーがサポートされている場合、 <see langword="multiple" /> HTML の属性<see langword="select" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsUncheck">
+      <MemberSignature Language="C#" Value="public override bool SupportsUncheck { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsUncheck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsUncheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得チェックされた HTML をクリアするかどうか<see langword="input type=&quot;checkbox&quot;" />要素がポストバック データに反映されます。</summary>
+        <value>
+          <see langword="true" />チェックされた HTML が消去される場合<see langword="input type=&quot;checkbox&quot;" />要素は、それ以外のポストバック データに反映される<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsXmlHttp">
+      <MemberSignature Language="C#" Value="public override bool SupportsXmlHttp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsXmlHttp" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.SupportsXmlHttp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTTP 経由の XML 受信をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTTP; 経由で受信側の XML をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tables">
+      <MemberSignature Language="C#" Value="public override bool Tables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Tables" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Tables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが HTML をサポートするかどうかを示す値を取得<see langword="table" />要素。</summary>
+        <value>
+          <see langword="true" />ブラウザーが HTML をサポートする場合は<see langword="table" />要素、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagWriter">
+      <MemberSignature Language="C#" Value="public override Type TagWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TagWriter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.TagWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザー用のタグを記述するために使用されるオブジェクトの型を取得する目的で、内部的に使用されます。</summary>
+        <value>ブラウザー用のタグを記述するために使用されるオブジェクトの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public override string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの名前およびメジャー (整数) バージョン番号を取得します。</summary>
+        <value>ブラウザーの名前とメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseOptimizedCacheKey">
+      <MemberSignature Language="C#" Value="public override bool UseOptimizedCacheKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseOptimizedCacheKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.UseOptimizedCacheKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最適化されたキャッシュ キーを使用するかどうかを示す値を取得するために内部的に使用されます。</summary>
+        <value>
+          <see langword="true" />最適化されたキャッシュ キー; を使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VBScript">
+      <MemberSignature Language="C#" Value="public override bool VBScript { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VBScript" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.VBScript" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーが VBScript (Visual Basic Scripting Edition) をサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが VBScript; をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。  
+  
+ <block subset="none" type="note"><para>  
+ このプロパティは、VBScript がブラウザーで、現在有効になっているかどうかを示すものでない、ブラウザーが VBScript をサポートできるかどうかをします。  
+  
+</para></block></value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public override string Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーの完全なバージョン番号 (整数と小数) を文字列として取得します。</summary>
+        <value>ブラウザーの完全なバージョン番号 (文字列)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="W3CDomVersion">
+      <MemberSignature Language="C#" Value="public override Version W3CDomVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version W3CDomVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.W3CDomVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブラウザーがサポートする World Wide Web コンソーシアム (W3C) XML ドキュメント オブジェクト モデル (DOM) のバージョンを取得します。</summary>
+        <value>ブラウザーがサポートする W3C XML DOM のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win16">
+      <MemberSignature Language="C#" Value="public override bool Win16 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win16" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Win16" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが Win16 ベースのコンピューターであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ブラウザーが Win16 ベースのコンピューターで実行されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32">
+      <MemberSignature Language="C#" Value="public override bool Win32 { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Win32" />
+      <MemberSignature Language="DocId" Value="P:System.Web.HttpBrowserCapabilitiesWrapper.Win32" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが Win32 ベースのコンピューターであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クライアントが Win32 ベースのコンピューターである場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

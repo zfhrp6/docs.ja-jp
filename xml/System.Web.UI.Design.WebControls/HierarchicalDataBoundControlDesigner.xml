@@ -1,0 +1,391 @@
+<Type Name="HierarchicalDataBoundControlDesigner" FullName="System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner">
+  <TypeSignature Language="C#" Value="public class HierarchicalDataBoundControlDesigner : System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HierarchicalDataBoundControlDesigner extends System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイナー ホストでのデザイン時サポートを提供、<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのホストで、ユーザーがソースからデザイン ビューに切り替えたときにマークアップのソース コードを説明するから派生したコントロール、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>抽象クラスは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ユーザーは、ソース ビューに切り替える、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスから派生するコントロールのデザイン時サポートを提供する、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>デザイナー ホストでします。  
+  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスのプロパティは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataSourceDesigner%2A>プロパティが定義されている場合に、データ ソースのデザイナーにアクセスを提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DesignerView%2A>プロパティが関連付けられているコントロールにバインドされているデータ ソースの既定のビューを取得します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.UseDataSourcePickerActionList%2A>プロパティは、コントロールが選択して、データ ソースを作成するための既定のアクション リストを表示するかどうかを決定します。  
+  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ConnectToDataSource%2A>メソッドは現在のデータ ソースへの接続に必要な操作を実行します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.CreateDataSource%2A>メソッドは、関連付けられたコントロールの新しいデータ ソースを作成します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataBind%2A>メソッドから派生した関連付けられたコントロールのバインド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>デザイン時のデータ ソースにクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DisconnectFromDataSource%2A>メソッドは現在のデータ ソースから切断するために必要なアクションを実行します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.GetDesignTimeDataSource%2A>メソッドは、関連付けられたコントロールのデザイン時に使用できるデータ ソースを取得します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.GetSampleDataSource%2A>メソッドは、関連付けられたコントロールのデザイン時に使用できるサンプル データ ソースを構築します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties%2A>からプロパティを削除するか、またはから派生した関連付けられたコントロールのプロパティをシャドウする追加のプロパティを追加するメソッドが使用される、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張する方法を示します、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスから派生したコントロールの外観を変更する、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールをデザイン時です。  
+  
+ 例では、`MyHierarchicalDataBoundControl`クラス、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>です。 `MyHierarchicalDataBoundControl`クラスは、単のコピー、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>です。 例ではまた、`MyHierarchicalDataBoundControlDesigner`からクラス、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスと場所、<xref:System.ComponentModel.DesignerAttribute>オブジェクトに対する、`MyHierarchicalDataBoundControlDesigner`上、`MyHierarchicalDataBoundControl`クラスです。  
+  
+ `MyHierarchicalDataBoundControlDesigner`よりも優先、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties%2A>を作成するメソッド、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**デザイン時にグリッドです。 も優先、<xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.GetDesignTimeHtml%2A>デザイン時のマークアップがある場合、プレース ホルダーのマークアップを生成する方法を`null`または<xref:System.String.Empty>、デザイン時のマークアップが、空の場合、または`<span>`ブロック (、間に内部マークアップがない場合は、`<span`しています.`>` および`</span>`タグ)。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner/CS/hierarchicaldatabounddesigner.cs#1)]
+ [!code-vb[System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner/VB/hierarchicaldatabounddesigner.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HierarchicalDataBoundControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスから派生した関連付けられたコントロールの作成時に、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ActionLists%2A>プロパティは、空、作成<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectToDataSource">
+      <MemberSignature Language="C#" Value="protected override bool ConnectToDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ConnectToDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ConnectToDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデータ ソースに接続するために必要なアクションを実行します。</summary>
+        <returns>
+          <see langword="true" />新しいデータ ソースへの接続が実行された場合<see langword="false" />古いマスター_キーと新しいデータ ソースが同じである場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ConnectToDataSource%2A>メソッドの切断、<xref:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged>と<xref:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed>以前のデータ ソースからのイベントを新しいデータ ソースにこれらのイベントをアタッチします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDataSource">
+      <MemberSignature Language="C#" Value="protected override void CreateDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CreateDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.CreateDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールの新しいデータ ソースを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.CreateDataSource%2A>メソッドから派生した関連付けられたコントロールのデータ ソースの作成に使用できるダイアログ ボックスを表示、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="protected override void DataBind (System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DataBind(class System.Web.UI.WebControls.BaseDataBoundControl dataBoundControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataBind(System.Web.UI.WebControls.BaseDataBoundControl)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataBoundControl" Type="System.Web.UI.WebControls.BaseDataBoundControl" />
+      </Parameters>
+      <Docs>
+        <param name="dataBoundControl">デザイン時のデータ ソースにバインドする <see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />。</param>
+        <summary>関連付けられたコントロールをデザイン時のデータ ソースにバインドします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataBind%2A>メソッドの最初のセット、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>のプロパティ、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロール、デザイン時のデータ ソースとセットの参照を<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>プロパティを`null`です。 <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataBind%2A>を呼び出して、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataBind%2A>から派生したコントロールのメソッド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>デザイン時のデータ ソースにバインドするクラス。 最後の元の値が復元されます、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>と<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>プロパティです。  
+  
+ `dataBoundControl`パラメーターがコントロールから派生した、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>デザイナー、またはそのコントロールのコピーに関連付けられているクラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceDesigner">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IHierarchicalDataSourceDesigner DataSourceDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IHierarchicalDataSourceDesigner DataSourceDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DataSourceDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IHierarchicalDataSourceDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングのいずれかが選択されているときに、データ ソースのデザイナーにアクセスを提供します。</summary>
+        <value>派生した関連付けられたコントロールのデータ ソースのデザイナー、<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />を実装する、<see cref="T:System.Web.UI.Design.IHierarchicalDataSourceDesigner" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してデータ ソースにアクセスすることができます、 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A> 、デザイナーのプロパティまたは<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A?displayProperty=nameWithType>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.DesignerHierarchicalDataSourceView DesignerView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerHierarchicalDataSourceView DesignerView" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DesignerView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerHierarchicalDataSourceView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールにバインドされているデータ ソースの既定のビューを取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.DesignerHierarchicalDataSourceView" />データ ソースの既定のビューを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用してデータ ソースにアクセスすることができます、 <xref:System.Web.UI.Design.WebControls.BaseDataBoundControlDesigner.DataSource%2A> 、デザイナーのプロパティまたは<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A?displayProperty=nameWithType>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisconnectFromDataSource">
+      <MemberSignature Language="C#" Value="protected override void DisconnectFromDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void DisconnectFromDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DisconnectFromDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のデータ ソースから切断するために必要なアクションを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.DisconnectFromDataSource%2A>メソッドの切断、<xref:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged>と<xref:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed>現在のデータ ソースからのイベントです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeDataSource">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.IHierarchicalEnumerable GetDesignTimeDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable GetDesignTimeDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.GetDesignTimeDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデザイン時に使用できるデータ ソースを取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />インターフェイスから派生したコントロールのデータ ソースとして使用できる、<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス上の理由から、ことをお勧めから派生したコントロールの実際のデータ ソースではなく、デザイン時に、簡単な定義済みのデータ ソースを使用する、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSampleDataSource">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.IHierarchicalEnumerable GetSampleDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.IHierarchicalEnumerable GetSampleDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.GetSampleDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールに対して、デザイン時に使用できるサンプル データ ソースを構築します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />インターフェイスから派生したコントロールのデータ ソースとして使用できる<see cref="T:System.Web.UI.WebControls.HierarchicalDataBoundControl" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって構築されたサンプル データ、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.GetSampleDataSource%2A>メソッドには、空のパスを持つ 1 つのノードです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">追加されたプロパティおよびシャドウ プロパティの <see cref="T:System.Collections.IDictionary" /> を実装するコレクション。</param>
+        <summary>プロパティを削除するかに表示する追加のプロパティを追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、**プロパティ**グリッドです。  
+  
+ 派生したコントロールの<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラス、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties%2A>メソッドをシャドウするデザイン時のプロパティを作成、<xref:System.Web.UI.WebControls.BaseDataBoundControl.DataSource%2A>と<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl.DataSourceID%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、オーバーライドする方法を示します、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties%2A>から継承されるクラスのメソッド、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>を変更するクラス、**プロパティ**のグリッド、<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>コントロールをデザイン時です。 例は、<xref:System.Web.UI.Control.NamingContainer%2A>プロパティに表示される、**プロパティ**グリッドです。  
+  
+ [!code-csharp[System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner/CS/hierarchicaldatabounddesigner.cs#3)]
+ [!code-vb[System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner/VB/hierarchicaldatabounddesigner.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDataSourcePickerActionList">
+      <MemberSignature Language="C#" Value="protected virtual bool UseDataSourcePickerActionList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDataSourcePickerActionList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.UseDataSourcePickerActionList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かどうか、コントロール既定のアクション リストを表示、データ ソース ID のドロップダウン リストおよび関連するタスクが含まれているかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のアクションの一覧を示します、<xref:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner>クラスが含まれて、**データ ソースの選択**元となるデータ ソースを選択することができます、ドロップダウン リストを持つメニュー項目とその他のアクション項目アクションのリストで、データ ソース コントロールのです。  
+  
+ データ ソースの管理操作のリストは、通常、**データ ソースの構成**と**スキーマの更新**メニュー項目をこれらいない常に存在する必要があります。 **データ ソースの構成**メニュー項目がデータ ソースの選択の型に適切なダイアログ ボックスを表示します。 たとえば、データ ソースが、<xref:System.Web.UI.WebControls.ObjectDataSource>コントロール、**データ ソースの構成** ダイアログ ボックスでは、ビジネス オブジェクトを選択することができます、<xref:System.Web.UI.WebControls.ObjectDataSource>です。 **スキーマの更新**メニュー項目がデータ ソースによって適用されるデザイナーのスキーマを更新します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>表示する既定のデータ ソースのアクション リスト アイテムしたくない場合は、上書き、<see cref="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.UseDataSourcePickerActionList" />を返すプロパティ<see langword="false" />です。 その他のデータ ソース アクション リスト項目を表示する場合は、上書き、<see cref="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.UseDataSourcePickerActionList" />を返す<see langword="false" />をオーバーライドし、<see cref="P:System.Web.UI.Design.WebControls.HierarchicalDataBoundControlDesigner.ActionLists" />プロパティを追加、適切な<see cref="T:System.ComponentModel.Design.DesignerActionItem" />オブジェクトを<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />返されるオブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

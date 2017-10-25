@@ -1,0 +1,98 @@
+<Type Name="DataContractFormatAttribute" FullName="System.ServiceModel.DataContractFormatAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataContractFormatAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataContractFormatAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.DataContractFormatAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Method | System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Windows Communication Foundation (WCF) インフラストラクチャを使用するように指示、<see cref="T:System.Runtime.Serialization.DataContractSerializer" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、<xref:System.ServiceModel.XmlSerializerFormatAttribute> 属性に似ています。 どちらの属性も、メソッドまたはクラスに適用できます。  
+  
+ メソッドには、2 つの属性のいずれかを適用でき、両方は適用できません。 どちらの属性も適用されていない操作では、格納クラスに適用された属性を使用します。 格納クラスにどちらの属性も適用されていない場合は、<xref:System.Runtime.Serialization.DataContractSerializer> が使用されます。  
+  
+ 属性を適用すると、実行時に <xref:System.ServiceModel.Description.DataContractSerializerOperationBehavior> が作成されます。 この動作は、シリアライザーの実行時の動作のカスタマイズを可能にします。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.DataContractFormatAttribute> を適用し、<xref:System.ServiceModel.DataContractFormatAttribute.Style%2A> プロパティを <xref:System.ServiceModel.OperationFormatStyle.Rpc> に設定する例を次に示します。 RPC スタイルは、Web サービス記述言語 (WSDL) で記述されます。  
+  
+ [!code-csharp[DataContractFormatAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractformatattribute/cs/source.cs#1)]
+ [!code-vb[DataContractFormatAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/datacontractformatattribute/vb/source.vb#1)]
+ [!code-vb[DataContractFormatAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractformatattribute/cs/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContractFormatAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.DataContractFormatAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.DataContractFormatAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.OperationFormatStyle Style { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.OperationFormatStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.DataContractFormatAttribute.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.OperationFormatStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されたデータの SOAP スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.OperationFormatStyle" /> 値のいずれか。 既定値は、<see cref="F:System.ServiceModel.OperationFormatStyle.Document" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

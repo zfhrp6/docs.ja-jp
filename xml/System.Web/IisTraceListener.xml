@@ -1,0 +1,388 @@
+<Type Name="IisTraceListener" FullName="System.Web.IisTraceListener">
+  <TypeSignature Language="C#" Value="public sealed class IisTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit IisTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Web.IisTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>IIS 7.0 のインフラストラクチャにすべてのトレースとデバッグ出力をルーティングするリスナーを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener>クラス接続のトレース機構[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]に[!INCLUDE[iisver](~/includes/iisver-md.md)]です。 このリスナー クラスにより、開発者が作成する[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]アプリケーションおよび実装した、<xref:System.Web.IHttpModule>と<xref:System.Web.IHttpHandler>にページ レベル、モジュール レベル、またはハンドラーのレベルのイベントを発生させるインターフェイス、[!INCLUDE[iisver](~/includes/iisver-md.md)]トレース時にインフラストラクチャを有効にします。  
+  
+> [!NOTE]
+>  このリスナー クラスはルーティングされません[!INCLUDE[iisver](~/includes/iisver-md.md)]ASP.NET クラスにイベント。 これが含まれています、<xref:System.Web.UI.Page>クラスおよび実装するクラス、<xref:System.Web.IHttpModule>または<xref:System.Web.IHttpHandler>インターフェイスです。  
+  
+ <xref:System.Web.IisTraceListener>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IisTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.IisTraceListener" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.%23ctor%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TraceData">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>トレース データの出力を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.TraceData%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別する名前です。 これは、通常、トレース イベントを生成したアプリケーションの名前です。</param>
+        <param name="eventType">A<see cref="T:System.Diagnostics.TraceEventType" />トレースを発生させたイベントの種類を指定する値。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">書き込むトレース データ。</param>
+        <summary>出力にトレース情報、データ オブジェクト、およびイベント情報を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。 メンバー、 <xref:System.Diagnostics.Debug?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、および<xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>クラスでは、このメソッドを使用して、トレース データを記述します。  
+  
+ <xref:System.Web.IisTraceListener.TraceData%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceData">
+      <MemberSignature Language="C#" Value="public override void TraceData (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType eventType, int id, params object[] data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceData(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType eventType, int32 id, object[] data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="eventType" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="data" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別する名前です。 これは、通常、トレース イベントを生成したアプリケーションの名前です。</param>
+        <param name="eventType">A<see cref="T:System.Diagnostics.TraceEventType" />トレースを発生させたイベントの種類を指定する値。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="data">データとして書き込むオブジェクトの配列。</param>
+        <summary>出力にトレース情報、データ オブジェクト、およびイベント情報の配列を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。 メンバー、 <xref:System.Diagnostics.Debug?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、および<xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>クラスでは、このメソッドを使用して、トレース データを記述します。  
+  
+ <xref:System.Web.IisTraceListener.TraceData%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TraceEvent">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>出力にトレース情報およびイベント情報を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.TraceEvent%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType severity, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType severity, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別する名前です。 これは、通常、トレース イベントを生成したアプリケーションの名前です。</param>
+        <param name="severity">A<see cref="T:System.Diagnostics.TraceEventType" />トレースを発生させたイベントの種類を指定する値。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>出力にトレース情報およびイベント情報を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。 メンバー、 <xref:System.Diagnostics.Debug?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、および<xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>クラスでは、このメソッドを使用して、トレース データを記述します。  
+  
+ <xref:System.Web.IisTraceListener.TraceEvent%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType severity, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType severity, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">現在のプロセス ID、スレッド ID、およびスタック トレース情報を格納している <see cref="T:System.Diagnostics.TraceEventCache" /> オブジェクト。</param>
+        <param name="source">出力を識別する名前です。 これは、通常、トレース イベントを生成したアプリケーションの名前です。</param>
+        <param name="severity">A<see cref="T:System.Diagnostics.TraceEventType" />トレースを発生させたイベントの種類を指定する値。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する 0 個以上の書式項目を含む、 <c>args</c>配列。</param>
+        <param name="args">0 個以上の書式設定対象オブジェクトを含んだオブジェクト配列。</param>
+        <summary>出力にトレース情報、書式付き配列、オブジェクト、およびイベント情報を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードによって直接呼び出されるものではありません。 メンバー、 <xref:System.Diagnostics.Debug?displayProperty=nameWithType>、 <xref:System.Diagnostics.Trace?displayProperty=nameWithType>、および<xref:System.Diagnostics.TraceSource?displayProperty=nameWithType>クラスでは、このメソッドを使用して、トレース データを記述します。  
+  
+ <xref:System.Web.IisTraceListener.TraceEvent%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Write">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>メッセージ、カテゴリ名、またはオブジェクトの値を書き込みます<see cref="M:System.Object.ToString" />メソッドの出力を<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.Write%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>指定したメッセージの出力を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.Write%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.Write(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">無視されます。 <see cref="T:System.Web.IisTraceListener" />の実装、<see cref="T:System.Diagnostics.TraceListener" />面をクラス、<c>カテゴリ</c>パラメーター。</param>
+        <summary>指定されたメッセージと指定されたカテゴリ名を <see cref="T:System.Web.IisTraceListener" /> クラスの出力に書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、<xref:System.Web.IisTraceListener.Write%2A>メソッドは互換性のために提供します。 このメソッドは渡された任意の値を使用しない、`category`パラメーター。  
+  
+ <xref:System.Web.IisTraceListener.Write%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>指定したメッセージの出力を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.WriteLine%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.IisTraceListener.WriteLine(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">無視されます。 <see cref="T:System.Web.Iis7TraceListener" />の実装<see cref="T:System.Diagnostics.TraceListener" />面をクラス、<c>カテゴリ</c>パラメーター。</param>
+        <summary>出力に指定したメッセージとカテゴリ名を書き込みます、<see cref="T:System.Web.IisTraceListener" />クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.IisTraceListener.WriteLine%2A>導入された、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]です。 詳細については、「[.NET Framework のバージョンおよび依存関係](~/docs/framework/migration-guide/versions-and-dependencies.md)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1223 @@
+<Type Name="Dns" FullName="System.Net.Dns">
+  <TypeSignature Language="C#" Value="public static class Dns" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed Dns extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Dns" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NameResolution</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>単純なドメイン名の解決策機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns>クラスは、特定のホストに関する情報をインターネット ドメイン ネーム システム (DNS) から取得する静的クラスです。  
+  
+ インスタンスに、DNS クエリからホスト情報が返されます、<xref:System.Net.IPHostEntry>クラスです。 指定したホストに複数のエントリがある場合は、DNS データベースに<xref:System.Net.IPHostEntry>複数の IP アドレスおよびエイリアスが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、DNS データベースのホスト www.contoso.com で情報をクエリします。  
+  
+ [!code-cpp[Classic Dns Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic Dns Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Dns Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic Dns Example/CS/source.cs#1)]
+ [!code-vb[Classic Dns Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic Dns Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BeginGetHostAddresses">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginGetHostAddresses (string hostNameOrAddress, AsyncCallback requestCallback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginGetHostAddresses(string hostNameOrAddress, class System.AsyncCallback requestCallback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.BeginGetHostAddresses(System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>で</c>委任操作が完了するとします。</param>
+        <summary>指定したホストのインターネット プロトコル (IP) アドレスを非同期に返します。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期要求を参照するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.BeginGetHostAddresses%2A>メソッドが非同期的にホスト名に関連付けられている IP アドレスの DNS サーバーを照会します。 場合`hostNameOrAddress`IP アドレスは、このアドレスが DNS サーバーを照会することがなく返されます。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ として空の文字列が渡された場合、`hostNameOrAddress`引数をこのメソッドは、ローカル ホストの IPv4 と IPv6 のアドレスを返します。
+  
+ 非同期の<xref:System.Net.Dns.BeginGetHostAddresses%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Dns.EndGetHostAddresses%2A>メソッドです。 通常、このメソッドはによって、`requestCallback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 使用して、操作が完了するまで、禁止する、<xref:System.Net.Dns.GetHostAddresses%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostNameOrAddress" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="hostNameOrAddress" />IP アドレスは無効です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetHostByName">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginGetHostByName (string hostName, AsyncCallback requestCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginGetHostByName(string hostName, class System.AsyncCallback requestCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.BeginGetHostByName(System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use BeginGetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostName" Type="System.String" />
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostName">ホストの DNS 名。</param>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="stateObject">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>で</c>委任操作が完了するとします。</param>
+        <summary>非同期要求を開始<see cref="T:System.Net.IPHostEntry" />指定の DNS ホスト名に関する情報。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期要求を参照するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期の<xref:System.Net.Dns.BeginGetHostByName%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Dns.EndGetHostByName%2A>メソッドです。 通常、このメソッドはによって、`requestCallback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 使用して、操作が完了するまで、禁止する、<xref:System.Net.Dns.GetHostByName%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">DNS クエリの実行中にエラーが発生しました。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetHostEntry">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginGetHostEntry (System.Net.IPAddress address, AsyncCallback requestCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginGetHostEntry(class System.Net.IPAddress address, class System.AsyncCallback requestCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.BeginGetHostEntry(System.Net.IPAddress,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="address">解決するのには IP アドレス。</param>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="stateObject">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>で</c>委任操作が完了するとします。</param>
+        <summary>IP アドレスを非同期的な<see cref="T:System.Net.IPHostEntry" />インスタンス。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期要求を参照するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.BeginGetHostEntry%2A>メソッドが非同期的に、IP アドレスおよび IP アドレスに関連付けられているエイリアスを DNS サーバーを照会します。  
+  
+ **注**このメンバーは、アプリケーションでネットワーク トレースを有効にする場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ 非同期の<xref:System.Net.Dns.BeginGetHostEntry%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Dns.EndGetHostEntry%2A>メソッドです。 通常、このメソッドはによって、`requestCallback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 使用して、操作が完了するまで、禁止する、<xref:System.Net.Dns.GetHostEntry%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください[同期のメソッドを非同期に呼び出す。](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Dns.BeginGetHostEntry%2A>メソッドを解決するには、IP アドレスを<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[System.Net.Dns#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Dns/CPP/dnsnewmethods.cpp#2)]
+ [!code-csharp[System.Net.Dns#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Dns/CS/dnsnewmethods.cs#2)]
+ [!code-vb[System.Net.Dns#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Dns/vb/dnsnewmethods.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="address" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="address" />IP アドレスは無効です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginGetHostEntry">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginGetHostEntry (string hostNameOrAddress, AsyncCallback requestCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginGetHostEntry(string hostNameOrAddress, class System.AsyncCallback requestCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.BeginGetHostEntry(System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="stateObject">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>で</c>委任操作が完了するとします。</param>
+        <summary>ホスト名または IP アドレスを非同期的な<see cref="T:System.Net.IPHostEntry" />インスタンス。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期要求を参照するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.BeginGetHostEntry%2A>メソッドは、ホスト名に関連付けられている IP アドレスまたは IP アドレスの DNS サーバーを照会します。  
+  
+ **注**このメンバーは、アプリケーションでネットワーク トレースを有効にする場合にトレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ 非同期の<xref:System.Net.Dns.BeginGetHostEntry%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Dns.EndGetHostEntry%2A>メソッドです。 通常、このメソッドはによって、`requestCallback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 使用して、操作が完了するまで、禁止する、<xref:System.Net.Dns.GetHostEntry%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Dns.BeginGetHostEntry%2A>メソッドを解決するには、IP アドレスを<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[System.Net.Dns#2](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Dns/CPP/dnsnewmethods.cpp#2)]
+ [!code-csharp[System.Net.Dns#2](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Dns/CS/dnsnewmethods.cs#2)]
+ [!code-vb[System.Net.Dns#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Dns/vb/dnsnewmethods.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostNameOrAddress" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="hostNameOrAddress" />IP アドレスは無効です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginResolve">
+      <MemberSignature Language="C#" Value="public static IAsyncResult BeginResolve (string hostName, AsyncCallback requestCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IAsyncResult BeginResolve(string hostName, class System.AsyncCallback requestCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.BeginResolve(System.String,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use BeginGetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostName" Type="System.String" />
+        <Parameter Name="requestCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="hostName">ホストの DNS 名。</param>
+        <param name="requestCallback">操作の完了時に呼び出すメソッドを参照する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="stateObject">操作に関する情報を格納するユーザー定義のオブジェクト。 このオブジェクトは、<c>で</c>委任操作が完了するとします。</param>
+        <summary>DNS ホスト名または IP アドレスを解決するのには非同期要求を開始、<see cref="T:System.Net.IPAddress" />インスタンス。</summary>
+        <returns><see cref="T:System.IAsyncResult" />非同期要求を参照するインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期の<xref:System.Net.Dns.BeginResolve%2A>操作を呼び出すことによって完了する必要があります、<xref:System.Net.Dns.EndResolve%2A>メソッドです。 通常、このメソッドはによって、`requestCallback`を委任します。  
+  
+ このメソッドは、操作が完了するまでにはブロックされません。 使用して、操作が完了するまで、禁止する、<xref:System.Net.Dns.Resolve%2A>メソッドです。  
+  
+ 詳細については、非同期プログラミング モデルを使用して、次を参照してください。[同期のメソッドを非同期に呼び出す](~/docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.Dns.BeginResolve%2A>に DNS ホスト名を解決するのには、<xref:System.Net.IPAddress>です。  
+  
+ [!code-cpp[Dns_Begin_EndResolve#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_Begin_EndResolve/CPP/dns_begin_endresolve.cpp#1)]
+ [!code-csharp[Dns_Begin_EndResolve#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_Begin_EndResolve/CS/dns_begin_endresolve.cs#1)]
+ [!code-vb[Dns_Begin_EndResolve#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_Begin_EndResolve/VB/dns_begin_endresolve.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">呼び出し元には、DNS 情報にアクセスする権限がありません。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetHostAddresses">
+      <MemberSignature Language="C#" Value="public static System.Net.IPAddress[] EndGetHostAddresses (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPAddress[] EndGetHostAddresses(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.EndGetHostAddresses(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス、<see cref="M:System.Net.Dns.BeginGetHostAddresses(System.String,System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <summary>DNS 情報への非同期要求を終了します。</summary>
+        <returns>型の配列<see cref="T:System.Net.IPAddress" />で指定されたホストの IP アドレスを保持する、<paramref name="hostNameOrAddress" />のパラメーター<see cref="M:System.Net.Dns.BeginGetHostAddresses(System.String,System.AsyncCallback,System.Object)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.BeginGetHostAddresses%2A>メソッドは、ホスト名に関連付けられている IP アドレスの DNS サーバーを照会します。 場合`hostNameOrAddress`IP アドレスは、このアドレスが DNS サーバーを照会することがなく返されます。  
+  
+ として空の文字列が渡された場合、`hostNameOrAddress`引数をこのメソッドは、ローカル ホストの IPv4 と IPv6 のアドレスを返します。
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetHostByName">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry EndGetHostByName (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry EndGetHostByName(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.EndGetHostByName(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use EndGetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス、<see cref="M:System.Net.Dns.BeginGetHostByName(System.String,System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <summary>DNS 情報への非同期要求を終了します。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />ホストに関する DNS 情報を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作するまでブロックを完了します。  
+  
+ この操作を同期的に実行するを使用して、<xref:System.Net.Dns.GetHostByName%2A>メソッドです。  
+  
+ 場合、<xref:System.Net.Configuration.Ipv6Element.Enabled%2A?displayProperty=nameWithType>プロパティに設定されている`true`、<xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndGetHostEntry">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry EndGetHostEntry (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry EndGetHostEntry(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.EndGetHostEntry(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス、<see cref="Overload:System.Net.Dns.BeginGetHostEntry" />メソッドです。</param>
+        <summary>DNS 情報への非同期要求を終了します。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />ホストのアドレス情報を格納しているインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作するまでブロックを完了します。  
+  
+ <xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+ この操作を同期的に実行するを使用して、<xref:System.Net.Dns.GetHostEntry%2A>メソッドです。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndResolve">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry EndResolve (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry EndResolve(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.EndResolve(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use EndGetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult"><see cref="T:System.IAsyncResult" />への呼び出しによって返されるインスタンス、<see cref="M:System.Net.Dns.BeginResolve(System.String,System.AsyncCallback,System.Object)" />メソッドです。</param>
+        <summary>DNS 情報への非同期要求を終了します。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />ホストに関する DNS 情報を含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、操作するまでブロックを完了します。  
+  
+ 場合、<xref:System.Net.Configuration.Ipv6Element.Enabled%2A?displayProperty=nameWithType>に設定されている`true`、<xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+ この操作を同期的に実行するを使用して、<xref:System.Net.Dns.Resolve%2A>メソッドです。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、DNS のホスト情報への非同期要求を終了します。  
+  
+ [!code-cpp[Dns_Begin_EndResolve#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_Begin_EndResolve/CPP/dns_begin_endresolve.cpp#1)]
+ [!code-csharp[Dns_Begin_EndResolve#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_Begin_EndResolve/CS/dns_begin_endresolve.cs#1)]
+ [!code-vb[Dns_Begin_EndResolve#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_Begin_EndResolve/VB/dns_begin_endresolve.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="asyncResult" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostAddresses">
+      <MemberSignature Language="C#" Value="public static System.Net.IPAddress[] GetHostAddresses (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPAddress[] GetHostAddresses(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostAddresses(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPAddress[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <summary>指定したホストのインターネット プロトコル (IP) アドレスを返します。</summary>
+        <returns>型の配列<see cref="T:System.Net.IPAddress" />で指定されているホストの IP アドレスを保持する、<paramref name="hostNameOrAddress" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.GetHostAddresses%2A>メソッドは、ホスト名に関連付けられている IP アドレスの DNS サーバーを照会します。 場合`hostNameOrAddress`IP アドレスは、このアドレスが DNS サーバーを照会することがなく返されます。  
+  
+ として空の文字列が渡された場合、`hostNameOrAddress`引数をこのメソッドは、ローカル ホストの IPv4 と IPv6 のアドレスを返します。
+  
+ IPv6 アドレスはフィルターでの結果から、<xref:System.Net.Dns.GetHostAddresses%2A>メソッド、ローカル コンピューターでは、IPv6 がインストールされていない場合。 その結果、可能であれば、空の戻る<xref:System.Net.IPAddress>IPv6 の使用可能な場合の結果だけをインスタンス化、 `hostNameOrAddress`.parameter です。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Net.Dns.GetHostAddresses%2A>型の配列に IP アドレスを解決するのにはメソッド<xref:System.Net.IPAddress>です。  
+  
+ [!code-cpp[System.Net.Dns#3](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Dns/CPP/dnsnewmethods.cpp#3)]
+ [!code-csharp[System.Net.Dns#3](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Dns/CS/dnsnewmethods.cs#3)]
+ [!code-vb[System.Net.Dns#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Dns/vb/dnsnewmethods.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostNameOrAddress" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="hostNameOrAddress" />IP アドレスは無効です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostAddressesAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.IPAddress[]&gt; GetHostAddressesAsync (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.IPAddress[]&gt; GetHostAddressesAsync(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostAddressesAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.IPAddress[]&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <summary>インターネット プロトコル (IP) アドレスを指定したホストの非同期操作として返します。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティの型の配列を返します<see cref="T:System.Net.IPAddress" />で指定されているホストの IP アドレスを保持する、<paramref name="hostNameOrAddress" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、後に完了、`hostNameOrAddress`は解決されています。  
+  
+ このメソッドは、ホスト名に関連付けられている IP アドレスの DNS サーバーを照会します。 場合`hostNameOrAddress`IP アドレスは、このアドレスが DNS サーバーを照会することがなく返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostNameOrAddress" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostNameOrAddress" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="hostNameOrAddress" />IP アドレスは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostByAddress">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry GetHostByAddress (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry GetHostByAddress(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostByAddress(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use GetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address"><see cref="T:System.Net.IPAddress" />。</param>
+        <summary>作成、<see cref="T:System.Net.IPHostEntry" />から、指定したインスタンス<see cref="T:System.Net.IPAddress" />です。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />。  
+  
+ <see cref="T:System.Net.IPHostEntry" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Net.IPHostEntry>から、<xref:System.Net.IPAddress>です。  
+  
+ [!code-cpp[Dns_GetHostByAddress_IPAddress#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_GetHostByAddress_IPAddress/CPP/dns_gethostbyaddress_ipaddress.cpp#1)]
+ [!code-csharp[Dns_GetHostByAddress_IPAddress#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_GetHostByAddress_IPAddress/CS/dns_gethostbyaddress_ipaddress.cs#1)]
+ [!code-vb[Dns_GetHostByAddress_IPAddress#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_GetHostByAddress_IPAddress/VB/dns_gethostbyaddress_ipaddress.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="address" />です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostByAddress">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry GetHostByAddress (string address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry GetHostByAddress(string address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostByAddress(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use GetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレス。</param>
+        <summary>作成、 <see cref="T:System.Net.IPHostEntry" /> IP アドレスからのインスタンス。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" /> インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="address" />です。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="address" />有効な IP アドレスではありません。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostByName">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry GetHostByName (string hostName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry GetHostByName(string hostName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostByName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use GetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostName">ホストの DNS 名。</param>
+        <summary>指定した DNS ホスト名の DNS 情報を取得します。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />で指定されたアドレスのホスト情報を格納しているオブジェクト<paramref name="hostName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.GetHostByName%2A>メソッドは、インターネット DNS サーバーのホスト情報を照会します。 ホスト名として空の文字列を渡した場合、このメソッドは、ローカル コンピューターの標準的なホスト名を取得します。  
+  
+ DNS 情報を非同期アクセスを使用して、<xref:System.Net.Dns.BeginGetHostByName%2A>と<xref:System.Net.Dns.EndGetHostByName%2A>メソッドです。  
+  
+ 場合、<xref:System.Net.Configuration.Ipv6Element.Enabled%2A?displayProperty=nameWithType>プロパティに設定されている`true`、<xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.Dns.GetHostByName%2A>指定の DNS ホスト名の DNS 情報を取得します。  
+  
+ [!code-cpp[Dns_GetHostByName#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_GetHostByName/CPP/dns_gethostbyname.cpp#1)]
+ [!code-csharp[Dns_GetHostByName#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_GetHostByName/CS/dns_gethostbyname.cs#1)]
+ [!code-vb[Dns_GetHostByName#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_GetHostByName/VB/dns_gethostbyname.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostName" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostName" />です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostEntry">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry GetHostEntry (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry GetHostEntry(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostEntry(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレス。</param>
+        <summary>IP アドレスを解決する<see cref="T:System.Net.IPHostEntry" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />で指定されたホストのアドレス情報を格納しているインスタンス<paramref name="address" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.GetHostEntry%2A>メソッドは、IP アドレスおよび IP アドレスに関連付けられているエイリアスを DNS サーバーを照会します。  
+  
+ IPv6 アドレスはフィルターでの結果から、<xref:System.Net.Dns.GetHostEntry%2A>メソッド、ローカル コンピューターでは、IPv6 がインストールされていない場合。 その結果、可能であれば、空の戻る<xref:System.Net.IPHostEntry>IPv6 の使用可能な場合の結果だけをインスタンス化、`address`パラメーター。  
+  
+ <xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+
+## Examples  
+ 次のコード例では、<xref:System.Net.Dns.GetHostEntry%2A>メソッドを解決するには、IP アドレスを<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[System.Net.Dns#4](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Dns/CPP/dnsnewmethods.cpp#4)]
+ [!code-csharp[System.Net.Dns#4](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Dns/CS/dnsnewmethods.cs#4)]
+ [!code-vb[System.Net.Dns#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Dns/vb/dnsnewmethods.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="address" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="address" />IP アドレスは無効です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostEntry">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry GetHostEntry (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry GetHostEntry(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostEntry(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <summary>ホスト名または IP アドレスを解決する<see cref="T:System.Net.IPHostEntry" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />で指定されたホストのアドレス情報を格納しているインスタンス<paramref name="hostNameOrAddress" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.GetHostEntry%2A>メソッドは、ホスト名に関連付けられている IP アドレスまたは IP アドレスの DNS サーバーを照会します。  
+  
+ として空の文字列が渡された場合、`hostNameOrAddress`引数をこのメソッドは、ローカル ホストの IPv4 と IPv6 のアドレスを返します。
+  
+ ホスト名が見つからない場合、 <xref:System.Net.Sockets.SocketException> 11001 (Windows ソケット エラー WSAHOST_NOT_FOUND) の値は、例外が返されます。 この例外は、DNS サーバーが応答しない場合に返されます。 この例外は、名前が正式なホスト名またはエイリアスであるか、クエリ対象のデータベースで見つからない場合に返すこともできます。  
+  
+ <xref:System.ArgumentException>場合にも例外が返されます、`hostNameOrAddress`パラメーターが含まれる<xref:System.Net.IPAddress.Any>または<xref:System.Net.IPAddress.IPv6Any>です。  
+  
+ <xref:System.Net.Dns.GetHostEntry%2A>メソッドであると推定 IP リテラル文字列が渡された場合、`hostNameOrAddress`アプリケーションがパラメーター、<xref:System.Net.IPHostEntry>プロパティ セットのすべてのインスタンスが返されます。 これらのプロパティに、 <xref:System.Net.IPHostEntry.AddressList%2A>、 <xref:System.Net.IPHostEntry.Aliases%2A>、および<xref:System.Net.IPHostEntry.HostName%2A>です。 その結果の実装、<xref:System.Net.Dns.GetHostEntry%2A>リテラル IP 文字列が渡されるメソッドは次の動作を示します。  
+  
+1.  メソッドは、アドレスを解析しようとします。 場合、`hostNameOrAddress`パラメーターには、リテラル、有効な IP 文字列が含まれています。 し、最初のフェーズでは成功します。  
+  
+2.  IP 文字列リテラルの IP アドレスを使用して逆引き参照がホスト名を取得しようとしています。 この結果として設定されて、<xref:System.Net.IPHostEntry.HostName%2A>プロパティです。  
+  
+3.  すべての可能な IP アドレス、名前に関連付けられているし、設定を取得するこの逆引き参照からのホスト名が再度使用される、<xref:System.Net.IPHostEntry.AddressList%2A>プロパティです。  
+  
+ IPv4 のリテラル文字列、上記の 3 つすべての手順が成功します。 実際に返される別のホストに属している IPv4 アドレス用の古い DNS レコードのことができます。 手順 3 は失敗し、(は IPv4 アドレスの DNS PTR レコードが IPv4 アドレスの DNS A レコード) 例外をスローする可能性があります。  
+  
+ Ipv6、上記の手順 2 が失敗する、IPv6 のほとんどの配置は、IPv6 アドレスの逆引き (PTR) レコードを登録しないためです。 このメソッドを返すよう文字列 IPv6 リテラル内の完全修飾ドメイン (FQDN) ホスト名として、<xref:System.Net.IPHostEntry.HostName%2A>プロパティです。  
+  
+ <xref:System.Net.Dns.GetHostAddresses%2A>メソッドには IP リテラルに関して動作が異なります。 上記の手順 1 のステップが成功した場合 (が正常に解析して、IP アドレスとして)、アドレスがすぐに、結果として返されることです。 逆引き参照で試行することはありません。  
+  
+ IPv6 アドレスはフィルターでの結果から、<xref:System.Net.Dns.GetHostEntry%2A>メソッド、ローカル コンピューターでは、IPv6 がインストールされていない場合。 その結果、可能であれば、空の戻る<xref:System.Net.IPHostEntry>IPv6 の使用可能な場合の結果だけをインスタンス化、 `hostNameOrAddress`.parameter です。  
+  
+ <xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.Dns.GetHostEntry%2A>メソッドを解決するには、IP アドレスを<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[System.Net.Dns#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.Dns/CPP/dnsnewmethods.cpp#1)]
+ [!code-csharp[System.Net.Dns#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.Dns/CS/dnsnewmethods.cs#1)]
+ [!code-vb[System.Net.Dns#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.Dns/vb/dnsnewmethods.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="hostNameOrAddress" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />パラメーターが 255 文字より大きい。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました、<paramref name="hostNameOrAddress" />パラメーター。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="hostNameOrAddress" />パラメーターが無効な IP アドレス。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostEntryAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.IPHostEntry&gt; GetHostEntryAsync (System.Net.IPAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.IPHostEntry&gt; GetHostEntryAsync(class System.Net.IPAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostEntryAsync(System.Net.IPAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.IPHostEntry&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Net.IPAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">IP アドレス。</param>
+        <summary>IP アドレスの解決、<see cref="T:System.Net.IPHostEntry" />非同期操作としてのインスタンス。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.IPHostEntry" />で指定されたホストのアドレス情報を格納しているインスタンス<paramref name="address" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、後に完了、`address`は解決されています。  
+  
+ このメソッドは、DNS サーバーの IP アドレスと IP アドレスに関連付けられているエイリアスを照会します。  
+  
+ IPv6 アドレスは、ローカル コンピューターでは、IPv6 がインストールされていない場合、このメソッドの結果から除外されます。 その結果、可能であれば、空の戻る<xref:System.Net.IPHostEntry>IPv6 の使用可能な場合の結果だけをインスタンス化、`address`パラメーター。  
+  
+ <xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="address" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="address" />IP アドレスは無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostEntryAsync">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;System.Net.IPHostEntry&gt; GetHostEntryAsync (string hostNameOrAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;class System.Net.IPHostEntry&gt; GetHostEntryAsync(string hostNameOrAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostEntryAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;System.Net.IPHostEntry&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostNameOrAddress" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostNameOrAddress">ホスト名または IP アドレスを解決します。</param>
+        <summary>ホスト名または IP アドレスを解決する<see cref="T:System.Net.IPHostEntry" />非同期操作としてのインスタンス。</summary>
+        <returns><see cref="T:System.Threading.Tasks.Task`1" /> を返します。  
+  
+ 非同期操作を表すタスク オブジェクト。 <see cref="P:System.Threading.Tasks.Task`1.Result" />タスク オブジェクトのプロパティを返します、<see cref="T:System.Net.IPHostEntry" />で指定されたホストのアドレス情報を格納しているインスタンス<paramref name="hostNameOrAddress" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作はブロックされません。 返された<xref:System.Threading.Tasks.Task%601>オブジェクトは、後に完了、`hostNameOrAddress`は解決されています。  
+  
+ このメソッドは、ホスト名に関連付けられている IP アドレスまたは IP アドレスの DNS サーバーを照会します。  
+  
+ として空の文字列が渡された場合、`hostNameOrAddress`引数をこのメソッドは、ローカル ホストの IPv4 と IPv6 のアドレスを返します。
+  
+ ホスト名が見つからない場合、 <xref:System.Net.Sockets.SocketException> 11001 (Windows ソケット エラー WSAHOST_NOT_FOUND) の値は、例外が返されます。 この例外は、DNS サーバーが応答しない場合に返されます。 この例外は、名前が正式なホスト名またはエイリアスであるか、クエリ対象のデータベースで見つからない場合に返すこともできます。  
+  
+ <xref:System.ArgumentException>場合にも例外が返されます、`hostNameOrAddress`パラメーターが含まれる<xref:System.Net.IPAddress.Any>または<xref:System.Net.IPAddress.IPv6Any>です。  
+  
+ このメソッドであると推定 IP リテラル文字列が渡された場合、`hostNameOrAddress`アプリケーションがパラメーター、<xref:System.Net.IPHostEntry>プロパティ セットのすべてのインスタンスが返されます。 これらのプロパティに、 <xref:System.Net.IPHostEntry.AddressList%2A>、 <xref:System.Net.IPHostEntry.Aliases%2A>、および<xref:System.Net.IPHostEntry.HostName%2A>です。 その結果、このメソッドの実装では、リテラル IP 文字列が渡されるときに、次の現象が発生します。  
+  
+1.  メソッドは、アドレスを解析しようとします。 場合、`hostNameOrAddress`パラメーターには、リテラル、有効な IP 文字列が含まれています。 し、最初のフェーズでは成功します。  
+  
+2.  IP 文字列リテラルの IP アドレスを使用して逆引き参照がホスト名を取得しようとしています。 この結果として設定されて、<xref:System.Net.IPHostEntry.HostName%2A>プロパティです。  
+  
+3.  すべての可能な IP アドレス、名前に関連付けられているし、設定を取得するこの逆引き参照からのホスト名が再度使用される、<xref:System.Net.IPHostEntry.AddressList%2A>プロパティです。  
+  
+ IPv4 のリテラル文字列、上記の 3 つすべての手順が成功します。 実際に返される別のホストに属している IPv4 アドレス用の古い DNS レコードのことができます。 手順 3 は失敗し、(は IPv4 アドレスの DNS PTR レコードが IPv4 アドレスの DNS A レコード) 例外をスローする可能性があります。  
+  
+ Ipv6、上記の手順 2 が失敗する、IPv6 のほとんどの配置は、IPv6 アドレスの逆引き (PTR) レコードを登録しないためです。 このメソッドを返すよう文字列 IPv6 リテラル内の完全修飾ドメイン (FQDN) ホスト名として、<xref:System.Net.IPHostEntry.HostName%2A>プロパティです。  
+  
+ <xref:System.Net.Dns.GetHostAddresses%2A>メソッドには IP リテラルに関して動作が異なります。 上記の手順 1 のステップが成功した場合 (が正常に解析して、IP アドレスとして)、アドレスがすぐに、結果として返されることです。 逆引き参照で試行することはありません。  
+  
+ IPv6 アドレスは、ローカル コンピューターでは、IPv6 がインストールされていない場合、このメソッドの結果から除外されます。 その結果、可能であれば、空の戻る<xref:System.Net.IPHostEntry>IPv6 の使用可能な場合の結果だけをインスタンス化、 `hostNameOrAddress`.parameter です。  
+  
+ <xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="hostNameOrAddress" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostNameOrAddress" />パラメーターが 255 文字より大きい。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました、<paramref name="hostNameOrAddress" />パラメーター。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="hostNameOrAddress" />パラメーターが無効な IP アドレス。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHostName">
+      <MemberSignature Language="C#" Value="public static string GetHostName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetHostName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.GetHostName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ローカル コンピューターのホスト名を取得します。</summary>
+        <returns>ローカル コンピューターの名前をホストする DNS を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.Net.Dns.GetHostName%2A>メソッド、ローカル コンピューターのホスト名を取得します。  
+  
+ [!code-cpp[Dns_GetHostName#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_GetHostName/CPP/dns_gethostname.cpp#1)]
+ [!code-csharp[Dns_GetHostName#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_GetHostName/CS/dns_gethostname.cs#1)]
+ [!code-vb[Dns_GetHostName#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_GetHostName/VB/dns_gethostname.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.Sockets.SocketException">ローカル ホスト名を解決するときに、エラーが発生しました。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.Net.IPHostEntry Resolve (string hostName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IPHostEntry Resolve(string hostName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Dns.Resolve(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NameResolution</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use GetHostEntry instead")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.IPHostEntry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hostName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hostName">DNS スタイルのホスト名または IP アドレス。</param>
+        <summary>DNS ホスト名または IP アドレスを解決する<see cref="T:System.Net.IPHostEntry" />インスタンス。</summary>
+        <returns><see cref="T:System.Net.IPHostEntry" />で指定されたホストのアドレス情報を格納しているインスタンス<paramref name="hostName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Dns.Resolve%2A>メソッドは、ホスト名または IP アドレスに関連付けられている IP アドレスの DNS サーバーを照会します。  
+  
+ ときに`hostName`DNS スタイルのホスト名に関連付けられている複数の IP アドレス、そのホスト名に解決される最初の IP アドレスのみが返されます。  
+  
+ 場合、<xref:System.Net.Configuration.Ipv6Element.Enabled%2A?displayProperty=nameWithType>プロパティに設定されている`true`、<xref:System.Net.IPHostEntry.Aliases%2A>のプロパティ、<xref:System.Net.IPHostEntry>返されたインスタンスは、このメソッドでは設定されず、常に空になります。  
+  
+> [!NOTE]
+>  このメンバーは、アプリケーションでネットワーク トレースを有効にすると、トレース情報を出力します。 詳細については、次を参照してください。 [.NET Framework のネットワークのトレース](~/docs/framework/network-programming/network-tracing.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Net.Dns.Resolve%2A>メソッドを解決するには、IP アドレスを<xref:System.Net.IPHostEntry>インスタンス。  
+  
+ [!code-cpp[Dns_Resolve#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Dns_Resolve/CPP/dns_resolve.cpp#1)]
+ [!code-csharp[Dns_Resolve#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Dns_Resolve/CS/dns_resolve.cs#1)]
+ [!code-vb[Dns_Resolve#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Dns_Resolve/VB/dns_resolve.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="hostName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">長さ<paramref name="hostName" />が 255 文字よりも大きいです。</exception>
+        <exception cref="T:System.Net.Sockets.SocketException">解決するときにエラーが発生しました<paramref name="hostName" />です。</exception>
+        <permission cref="T:System.Net.DnsPermission">DNS 情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

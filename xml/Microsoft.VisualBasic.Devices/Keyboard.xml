@@ -1,0 +1,530 @@
+<Type Name="Keyboard" FullName="Microsoft.VisualBasic.Devices.Keyboard">
+  <TypeSignature Language="C#" Value="public class Keyboard" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Keyboard extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Keyboard" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在どのキーが押されているかなど、キーボードの現在の状態にアクセスするためのプロパティを提供します。また、キーストロークを作業中のウィンドウに送るメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard`オブジェクトは、コンピューターのキーボード インターフェイスを提供します。 プロパティ、`My.Computer.Keyboard`いくつかの特殊なキーの状態に関する情報を提供します。 `My.Computer.Keyboard.SendKeys`メソッドにより、キーボードで型指定されているかのようにキーをアクティブなウィンドウに送信できます。  
+  
+## <a name="tasks"></a>タスク  
+ 次の表に、関連するタスクの例、`My.Computer.Keyboard`オブジェクト。  
+  
+|目的|参照トピック|  
+|-|-|  
+|アプリケーションにキーストロークを送信します。|[方法: アプリケーションを起動してキーストロークを送る (Visual Basic)](~/docs/visual-basic/developing-apps/programming/computer-resources/how-to-start-an-application-and-send-it-keystrokes.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.CtrlKeyDown`プロパティをコンピューターの CTRL キーが押されたかどうかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#36)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Keyboard ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Keyboard.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Keyboard" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AltKeyDown">
+      <MemberSignature Language="C#" Value="public bool AltKeyDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AltKeyDown" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.AltKeyDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> ALT キーが押されてかどうかを示すです。</summary>
+        <value>A<see langword="Boolean" />値: <see langword="True" /> 、ALT キーがダウンして、それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard.AltKeyDown`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.Control.ModifierKeys%2A>プロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.AltKeyDown`プロパティ ダウンが、コンピューターの ALT キーかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CapsLock">
+      <MemberSignature Language="C#" Value="public bool CapsLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CapsLock" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.CapsLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> CAPS LOCK がオンになっているかどうかを示すです。</summary>
+        <value>A<see langword="Boolean" />値: <see langword="True" /> CAPS LOCK がオンです。 それ以外の場合になっている場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CAPS LOCK の状態のみが返されます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.CapsLock`プロパティをコンピューターの CAPS LOCK がオンになっているかどうかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#50)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CtrlKeyDown">
+      <MemberSignature Language="C#" Value="public bool CtrlKeyDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CtrlKeyDown" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.CtrlKeyDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> CTRL キーが押されてかどうかを示すです。</summary>
+        <value><see langword="Boolean" /> 値。 <see langword="True" />CTRL キーが; ダウンした場合それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard.CtrlKeyDown`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.Control.ModifierKeys%2A>プロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.CtrlKeyDown`プロパティ ダウンが、コンピューターの CTRL キーを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#34)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumLock">
+      <MemberSignature Language="C#" Value="public bool NumLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NumLock" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.NumLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> NUM LOCK キーがかどうかを示すです。</summary>
+        <value><see langword="Boolean" /> 値。 <see langword="True" />NUMLOCK が; にある場合それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ NUM LOCK キーの状態のみが返されます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.NumLock`プロパティがコンピューターの NUMLOCK キーかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollLock">
+      <MemberSignature Language="C#" Value="public bool ScrollLock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ScrollLock" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.ScrollLock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> SCROLL LOCK キーがオンかどうかを示すです。</summary>
+        <value><see langword="Boolean" /> 値。 <see langword="True" />スクロール ロックが; にある場合それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SCROLL LOCK キーの状態のみが返されます。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.ScrollLock`プロパティで、コンピューターの SCROLL LOCK キーがかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#31)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SendKeys">
+      <MemberSignature Language="C#" Value="public void SendKeys (string keys);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SendKeys(string keys) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Keyboard.SendKeys(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keys">A<see langword="String" />送信するキーを定義します。</param>
+        <summary>キーボードで入力する 1 つまたは複数のキーストロークをアクティブなウィンドウに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard.SendKeys`メソッドと同様の機能を提供する、<xref:System.Windows.Forms.SendKeys.Send%2A>と<xref:System.Windows.Forms.SendKeys.SendWait%2A>メソッドです。  
+  
+ `wait`引数は、アプリケーションを続行する前に、他のアプリケーションが終了した場合に便利です。  
+  
+> [!NOTE]
+>  別のアプリケーションをアクティブ化するマネージ メソッドがないため、現在のアプリケーション内でこのクラスを使用して、手動で、キーを送信するウィンドウを選択かなど、Windows API のメソッドを使用して`FindWindow`と`SetForegroundWindow`、他のアプリケーションにフォーカスを設定します。 詳細については、次を参照してください。[チュートリアル: Windows Api の呼び出し](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)です。  
+  
+ `keys`引数は、いずれか 1 つのキーまたは alt キーを押し、CTRL、shift キーを押し (またはそれらのキーの任意の組み合わせ) と組み合わせて使用する任意のキーを指定できます。 各キーがなどの 1 つ以上の文字で表される`a`の文字"a"、または`{ENTER}`ENTER キーをします。  
+  
+ SHIFT キーを組み合わせて、コードで`+`(プラス記号) です。 CTRL キーを組み合わせて、コードで`^`(キャレット)。 ALT キーを組み合わせて、コードで`%`(パーセント)。 繰り返しのキーを指定するには、フォームを使用して`{`*キー数*`}`です。 間にスペースを配置する必要があります*キー*と*数*です。 たとえば、`{LEFT 42}`意味"左方向キーを押して 42 時間"です。`{h 10}`手段"'h' 10 回押します"。  
+  
+ 次の表は、(ENTER キーまたは TAB) などの対応するキーを押したときに表示されていない文字を指定するために使用するコードを示します。  
+  
+|キー|コード|  
+|-|-|  
+|BACKSPACE キー|{BACKSPACE} または {BS}|  
+|改行|{BREAK}|  
+|キャップス ロックです|{CAPSLOCK}|  
+|オフ|{オフ}|  
+|Del|{削除} または {DEL}|  
+|↓|{ダウン}|  
+|End|{終了}|  
+|入力 (テンキー)|{に入力}|  
+|Enter|~|  
+|ESC|{エスケープ} または {ESC}|  
+|ヘルプ|{ヘルプ}|  
+|ホーム|{ホーム}|  
+|挿入|{挿入}|  
+|←|{左}|  
+|NUM LOCK|{NUMLOCK}|  
+|PageDown|{した}|  
+|PageUp|{PGUP}|  
+|RETURN|{返す}|  
+|→|{右}|  
+|スクロール ロック|{SCROLLLOCK}|  
+|Tab|{タブ}|  
+|↑|{アップ}|  
+|F1 ~ F15|{F1} {F15} 経由|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.SendKeys`によって開始された、外部のアプリケーション、電卓アプリケーションにキーストロークを送信する方法、`Shell`関数。  
+  
+ [!code-vb[VbVbalrMyComputer#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#25)]  
+  
+ 要求されたプロセス ID のアプリケーションが見つからない場合には、<xref:System.ArgumentException> 例外が発生します。  
+  
+ `Shell` 関数の呼び出しには完全な信頼が必要です (<xref:System.Security.SecurityException> クラス)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SendKeys">
+      <MemberSignature Language="C#" Value="public void SendKeys (string keys, bool wait);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void SendKeys(string keys, bool wait) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Keyboard.SendKeys(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keys" Type="System.String" />
+        <Parameter Name="wait" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="keys">A<see langword="String" />送信するキーを定義します。</param>
+        <param name="wait">省略可能です。 A<see langword="Boolean" />キーボード操作を行って、アプリケーションを続行する前に処理されるまで待機するかどうかを指定します。 既定では <see langword="True" /> です。</param>
+        <summary>キーボードで入力する 1 つまたは複数のキーストロークをアクティブなウィンドウに送信します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard.SendKeys`メソッドと同様の機能を提供する、<xref:System.Windows.Forms.SendKeys.Send%2A>と<xref:System.Windows.Forms.SendKeys.SendWait%2A>メソッドです。  
+  
+ `wait`引数は、アプリケーションを続行する前に、他のアプリケーションが終了した場合に便利です。  
+  
+> [!NOTE]
+>  別のアプリケーションをアクティブ化するマネージ メソッドがないため、現在のアプリケーション内でこのクラスを使用して、手動で、キーを送信するウィンドウを選択かなど、Windows API のメソッドを使用して`FindWindow`と`SetForegroundWindow`、他のアプリケーションにフォーカスを設定します。 詳細については、次を参照してください。[チュートリアル: Windows Api の呼び出し](~/docs/visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)です。  
+  
+ `keys`引数は、いずれか 1 つのキーまたは alt キーを押し、CTRL、shift キーを押し (またはそれらのキーの任意の組み合わせ) と組み合わせて使用する任意のキーを指定できます。 各キーがなどの 1 つ以上の文字で表される`a`の文字"a"、または`{ENTER}`ENTER キーをします。  
+  
+ SHIFT キーを組み合わせて、コードで`+`(プラス記号) です。 CTRL キーを組み合わせて、コードで`^`(キャレット)。 ALT キーを組み合わせて、コードで`%`(パーセント)。 繰り返しのキーを指定するには、フォームを使用して`{`*キー数*`}`です。 間にスペースを配置する必要があります*キー*と*数*です。 たとえば、`{LEFT 42}`意味"左方向キーを押して 42 時間"です。`{h 10}`手段"'h' 10 回押します"。  
+  
+ 次の表は、(ENTER キーまたは TAB) などの対応するキーを押したときに表示されていない文字を指定するために使用するコードを示します。  
+  
+|キー|コード|  
+|-|-|  
+|BACKSPACE キー|{BACKSPACE} または {BS}|  
+|改行|{BREAK}|  
+|キャップス ロックです|{CAPSLOCK}|  
+|オフ|{オフ}|  
+|Del|{削除} または {DEL}|  
+|↓|{ダウン}|  
+|End|{終了}|  
+|入力 (テンキー)|{に入力}|  
+|Enter|~|  
+|ESC|{エスケープ} または {ESC}|  
+|ヘルプ|{ヘルプ}|  
+|ホーム|{ホーム}|  
+|挿入|{挿入}|  
+|←|{左}|  
+|NUM LOCK|{NUMLOCK}|  
+|PageDown|{した}|  
+|PageUp|{PGUP}|  
+|RETURN|{返す}|  
+|→|{右}|  
+|スクロール ロック|{SCROLLLOCK}|  
+|Tab|{タブ}|  
+|↑|{アップ}|  
+|F1 ~ F15|{F1} {F15} 経由|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.SendKeys`によって開始された、外部のアプリケーション、電卓アプリケーションにキーストロークを送信する方法、`Shell`関数。  
+  
+ [!code-vb[VbVbalrMyComputer#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#25)]  
+  
+ 要求されたプロセス ID のアプリケーションが見つからない場合には、<xref:System.ArgumentException> 例外が発生します。  
+  
+ `Shell` 関数の呼び出しには完全な信頼が必要です (<xref:System.Security.SecurityException> クラス)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">部分的に信頼された状況では、ユーザーが必要なアクセス許可を持っていない存在しています。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+        <permission cref="T:System.Security.Permissions.UIPermission">ユーザー インターフェイスとクリップボードに関連するアクセス許可を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ShiftKeyDown">
+      <MemberSignature Language="C#" Value="public bool ShiftKeyDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShiftKeyDown" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Keyboard.ShiftKeyDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> SHIFT キーが押されてかどうかを示すです。</summary>
+        <value><see langword="Boolean" /> 値。 <see langword="True" />場合は、SHIFT キーを押したです。それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Keyboard.ShiftKeyDown`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.Control.ModifierKeys%2A>プロパティです。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Keyboard.ShiftKeyDown`プロパティ ダウンが、コンピューターの SHIFT キーのいずれかを判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#47)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,252 @@
+<Type Name="IDataSourceFieldSchema" FullName="System.Web.UI.Design.IDataSourceFieldSchema">
+  <TypeSignature Language="C#" Value="public interface IDataSourceFieldSchema" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataSourceFieldSchema" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.IDataSourceFieldSchema" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時にデータ フィールドの構造を記述するためには、基本的な機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.IDataSourceFieldSchema>インターフェイスは、データ ソースのフィールドを記述するプロパティのセットを実装するクラスを使用します。 <xref:System.Web.UI.Design.DataSetFieldSchema> クラスは、<xref:System.Web.UI.Design.IDataSourceFieldSchema> インターフェイスを実装します。  
+  
+ 実装するクラス、<xref:System.Web.UI.Design.IDataSourceFieldSchema>デザイン時にデータ バインド コントロールをデータ ソースのフィールドとプロパティの一覧を提供するカスタム コントロールのデザイナー コンポーネントで使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public Type DataType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドに格納されたデータの種類を取得します。</summary>
+        <value><see cref="T:System.Type" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public bool Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値が自動的に新しい行ごとにインクリメントするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、フィールドの<see cref="P:System.Web.UI.Design.IDataSourceFieldSchema.DataType" />が数値型と、基になるフィールド インクリメント自動的に新しい行が追加されました。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>オブジェクト、<xref:System.Web.UI.Design.IDataSourceFieldSchema.Identity%2A>プロパティに対応して、<xref:System.Data.DataColumn.AutoIncrement%2A>プロパティです。 SQL Server では、Id 列は、値は、そのレコードを一意に識別すること、追加した各レコードに自動的に増加する数値列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドが編集可能かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、フィールドは読み取り専用です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>、<xref:System.Web.UI.Design.IDataSourceFieldSchema.IsReadOnly%2A>プロパティに対応して、<xref:System.Data.DataColumn.ReadOnly%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnique">
+      <MemberSignature Language="C#" Value="public bool IsUnique { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnique" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.IsUnique" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの値が一意である必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フィールドのデータが一意である必要がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>オブジェクト、<xref:System.Web.UI.Design.IDataSourceFieldSchema.IsUnique%2A>プロパティに対応して、<xref:System.Data.DataColumn.Unique%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドに格納できるデータのサイズを示す値を取得します。</summary>
+        <value>フィールドに格納できるバイト数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>オブジェクト、<xref:System.Web.UI.Design.IDataSourceFieldSchema.Length%2A>プロパティに対応して、<xref:System.Data.DataColumn.MaxLength%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドの名前を取得します。</summary>
+        <value>フィールドの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>オブジェクト、<xref:System.Web.UI.Design.IDataSourceFieldSchema.Name%2A>プロパティに対応して、<xref:System.Data.DataColumn.ColumnName%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Nullable">
+      <MemberSignature Language="C#" Value="public bool Nullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Nullable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Nullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドに使用できるかどうかを示す値を取得<see langword="null" />値。</summary>
+        <value>
+          <see langword="true" />場合は、フィールドに使用できる<see langword="null" />値です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.DataColumn>オブジェクト、<xref:System.Web.UI.Design.IDataSourceFieldSchema.Nullable%2A>プロパティに対応して、<xref:System.Data.DataColumn.AllowDBNull%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Precision">
+      <MemberSignature Language="C#" Value="public int Precision { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Precision" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Precision" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールド内の数値を表すために使用する最大桁数を取得します。</summary>
+        <value>フィールドの値を表している場合に使用する最大桁数、<see cref="P:System.Web.UI.Design.IDataSourceFieldSchema.DataType" />フィールドのプロパティは、数値型を表します。 このプロパティが実装されていない場合は-1 を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryKey">
+      <MemberSignature Language="C#" Value="public bool PrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.PrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドが主キーであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フィールドの主キー以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public int Scale { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Scale" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.IDataSourceFieldSchema.Scale" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドに数値を解決する小数点以下桁数を取得します。</summary>
+        <value>場合、<see cref="P:System.Web.UI.Design.IDataSourceFieldSchema.DataType" />のプロパティ、フィールドが数値型を表す、する値は、解決、それ以外の場合、小数点以下桁数の数を返します<see langword="-1" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

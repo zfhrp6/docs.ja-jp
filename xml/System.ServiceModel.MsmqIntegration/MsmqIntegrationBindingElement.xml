@@ -1,0 +1,355 @@
+<Type Name="MsmqIntegrationBindingElement" FullName="System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement">
+  <TypeSignature Language="C#" Value="public sealed class MsmqIntegrationBindingElement : System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MsmqIntegrationBindingElement extends System.ServiceModel.Channels.MsmqBindingElementBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.MsmqBindingElementBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このバインド要素は、Windows Communication Foundation (WCF) アプリケーションにメッセージを送信し、COM、MSMQ ネイティブ Api、または Api を使用する既存の MSMQ アプリケーションからメッセージを受信できるようにするために使用できる<see cref="N:System.Messaging" />です。 このクラスを使用して、MSMQ ベースのメッセージング アプリケーションからメッセージを送受信します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/service.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MsmqIntegrationBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/service.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネルの型。</typeparam>
+        <param name="context">チャネル ファクトリのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル ファクトリを作成します。</summary>
+        <returns>既存の MSMQ アプリケーションへのメッセージ送信用チャネルを作成するための MSMQ 統合チャネル ファクトリ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが作成するチャネル ファクトリを使用すると、サービスと通信するためのクライアント チャネルを作成できます。 チャネル ファクトリはチャネルではなく、チャネルを作成できるファクトリです。 チャネルを作成するには `IChannelFactory<TChannel>.CreateChannel` を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキスト値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> が <see langword="IOutputChannel" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> が Certificate または WindowsDomain で、<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> が None です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネルの型。</typeparam>
+        <param name="context">チャネル リスナーのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル リスナーを作成します。</summary>
+        <returns>既存の MSMQ アプリケーションからのメッセージを受信するためのチャネルの作成に使用できる MSMQ 統合チャネル リスナー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル リスナーはサービスで作成され、クライアント チャネルが送信するメッセージの受信に使用されます。 サービスは、実際のチャネルに対する参照を取得するには、`IChannelListener.Open` を呼び出した後、`IChannelListener.AcceptChannel` を呼び出す必要があります。 その後、`IChannel.Open` を呼び出してチャネルを開く必要があります。 この時点で、チャネルを使用してメッセージを取得できるようになります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキスト値は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="TChannel" /> が <see langword="IInputChannel" /> ではありません。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqAuthenticationMode" /> が Certificate または WindowsDomain で、<see cref="P:System.ServiceModel.MsmqTransportSecurity.MsmqProtectionLevel" /> が None です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネルの型。</typeparam>
+        <param name="context">チャネル ファクトリのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル ファクトリを作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          与えられたコンテキストでチャネル ファクトリをビルドできる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 このメソッドは、<see langword="true" /> が <paramref name="TChannel" /> のときだけ、<see cref="T:System.ServiceModel.Channels.IOutputChannel" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネルの型。</typeparam>
+        <param name="context">チャネル リスナーのビルドに使用する <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定したコンテキストを使用してチャネル リスナーを作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          与えられたコンテキストでチャネル リスナーをビルドできる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。  
+  
+ このメソッドは、<see langword="true" /> が <paramref name="TChannel" /> のときだけ、<see cref="T:System.ServiceModel.Channels.IInputChannel" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインド要素の複製を返します。</summary>
+        <returns>バインド要素の複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#5](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/snippets.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">プロパティの種類。</typeparam>
+        <param name="context">バインド コンテキスト。</param>
+        <summary>指定した <see langword="BindingContext" /> 型から、要求した型のプロパティを取得します。</summary>
+        <returns><paramref name="T" /> 型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、要素から機能および保護要件を取得するための機能を提供します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">コンテキストは <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public override string Scheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインド要素で使用されるスキームを格納する <see cref="T:System.String" /> を取得します。</summary>
+        <value>バインド要素で使用されるスキームを格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、MSMQ 統合チャネルで使用されるアドレス スキームを示す文字列 "msmq.formatname" を返します。 キューのアドレス指定の詳細については、次を参照してください。[サービス エンドポイントとキューのアドレス指定](~/docs/framework/wcf/feature-details/service-endpoints-and-queue-addressing.md)です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/service.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SerializationFormat">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat SerializationFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat SerializationFormat" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.SerializationFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MSMQ メッセージのシリアル化に使用される <see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat" /> を取得または設定します。</summary>
+        <value>MSMQ メッセージのシリアル化に使用される <see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、次の値のいずれか 1 つをとります。  
+  
+-   `ActiveX` - ActiveX シリアライザーは、オブジェクトのシリアル化に使用されます。  
+  
+-   `Binary` - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> は、オブジェクトのシリアル化に使用されます。  
+  
+-   `ByteArray` - オブジェクトをバイト配列にシリアル化します。  
+  
+-   `Stream` - オブジェクトをストリームにシリアル化します。  
+  
+-   `Xml` - <xref:System.Xml.Serialization.XmlSerializer> は、オブジェクトのシリアル化に使用されます。  
+  
+-   既定値は `Xml` です。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/snippets.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が <see cref="T:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat" /> の値の範囲内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetSerializationTypes">
+      <MemberSignature Language="C#" Value="public Type[] TargetSerializationTypes { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] TargetSerializationTypes" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.TargetSerializationTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが逆シリアル化された後の型を格納する <see cref="T:System.Type" /> オブジェクトの配列を取得または設定します。</summary>
+        <value>メッセージが逆シリアル化された後の型を格納している <see cref="T:System.Type" /> の配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MSMQ メッセージの本文に型はありません。 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBindingElement.TargetSerializationTypes%2A> プロパティを使用すると、メッセージが MSMQ アプリケーションから [!INCLUDE[indigo1](~/includes/indigo1-md.md)] の受信アプリケーションに送信されるときに、メッセージが逆シリアル化される型を指定できます。 このプロパティは、<xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat> を `Xml` に設定している場合にのみ使用します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_MsmqToWcf#4](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_msmqtowcf/cs/snippets.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,231 @@
+<Type Name="ActivityBlockingUpdate" FullName="System.Activities.DynamicUpdate.ActivityBlockingUpdate">
+  <TypeSignature Language="C#" Value="public class ActivityBlockingUpdate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit ActivityBlockingUpdate extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DynamicUpdate.ActivityBlockingUpdate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>更新プログラムをブロックするアクティビティを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、Windows Workflow Foundation のバージョン管理と動的な更新機能をサポートします。 [!INCLUDE[crabout](~/includes/crabout-md.md)] ワークフローのバージョン管理、ワークフロー ID、および動的な更新に詳細については、次のトピックを参照してください。  
+  
+ [ワークフローのバージョン管理](http://go.microsoft.com/fwlink/?LinkID=271561)  
+ [!INCLUDE[net_v45](~/includes/net-v45-md.md)] で導入されたワークフローのバージョン管理機能について説明します。  
+  
+ [動的な更新](http://go.microsoft.com/fwlink/?LinkId=271563)  
+ 動的更新を使用して、永続化されたワークフロー インスタンスのワークフロー定義を更新する方法について説明します。  
+  
+ [WorkflowApplication Id とバージョン管理を使用](http://go.microsoft.com/fwlink/?LinkId=271564)  
+ <xref:System.Activities.WorkflowIdentity> を使用して、ワークフローの複数バージョンを同時にホストする方法について説明します。  
+  
+ [WorkflowServiceHost でサイド バイ サイドのバージョン管理](http://go.microsoft.com/fwlink/?LinkId=271565)  
+ 単一のエンドポイントでワークフローの複数のバージョンをホストする方法について説明します。  
+  
+ [ワークフローの複数のバージョンを同時にホストする方法](http://go.microsoft.com/fwlink/?LinkId=271566)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)ワークフロー定義の更新と同時に新旧両方の定義を使用してワークフローのホスティングを示します。  
+  
+ [実行中のワークフロー インスタンスの定義を更新する方法](http://go.microsoft.com/fwlink/?LinkId=271567)  
+ これは、ステップで、[チュートリアル入門](http://go.microsoft.com/fwlink/?LinkId=271570)新しいワークフロー定義を使用する永続化されたワークフロー インスタンスの更新を示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBlockingUpdate (System.Activities.Activity activity, string originalActivityId, string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Activity activity, string originalActivityId, string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.ActivityBlockingUpdate.#ctor(System.Activities.Activity,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+        <Parameter Name="originalActivityId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activity">アクティビティのワークフロー定義。</param>
+        <param name="originalActivityId">元のアクティビティの識別子です。</param>
+        <param name="reason">アクティビティをブロックする理由です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.DynamicUpdate.ActivityBlockingUpdate" />指定したアクティビティ、元のアクティビティの識別子と理由を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBlockingUpdate (string updatedActivityId, string originalActivityId, string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string updatedActivityId, string originalActivityId, string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.ActivityBlockingUpdate.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="updatedActivityId" Type="System.String" />
+        <Parameter Name="originalActivityId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="updatedActivityId">更新されたアクティビティの識別子です。</param>
+        <param name="originalActivityId">元のアクティビティの識別子です。</param>
+        <param name="reason">アクティビティをブロックする理由です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.DynamicUpdate.ActivityBlockingUpdate" />指定したクラスがアクティビティの識別子では、元のアクティビティの識別子および理由を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBlockingUpdate (System.Activities.Activity activity, string originalActivityId, string reason, string activityInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Activities.Activity activity, string originalActivityId, string reason, string activityInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.ActivityBlockingUpdate.#ctor(System.Activities.Activity,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+        <Parameter Name="originalActivityId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+        <Parameter Name="activityInstanceId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="activity">アクティビティのワークフロー定義。</param>
+        <param name="originalActivityId">元のアクティビティの識別子です。</param>
+        <param name="reason">アクティビティをブロックする理由です。</param>
+        <param name="activityInstanceId">アクティビティ インスタンスの実行の識別子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.DynamicUpdate.ActivityBlockingUpdate" />指定したアクティビティ、元のアクティビティ id、理由とアクティビティのインスタンス識別子を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityBlockingUpdate (string updatedActivityId, string originalActivityId, string reason, string activityInstanceId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string updatedActivityId, string originalActivityId, string reason, string activityInstanceId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DynamicUpdate.ActivityBlockingUpdate.#ctor(System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="updatedActivityId" Type="System.String" />
+        <Parameter Name="originalActivityId" Type="System.String" />
+        <Parameter Name="reason" Type="System.String" />
+        <Parameter Name="activityInstanceId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="updatedActivityId">更新されたアクティビティの識別子です。</param>
+        <param name="originalActivityId">元のアクティビティの識別子です。</param>
+        <param name="reason">アクティビティをブロックする理由です。</param>
+        <param name="activityInstanceId">アクティビティ インスタンスの実行の識別子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Activities.DynamicUpdate.ActivityBlockingUpdate" />指定したクラスがアクティビティの識別子、元のアクティビティ id、理由とアクティビティのインスタンス識別子を更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activity">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Activity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Activity" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.ActivityBlockingUpdate.Activity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー定義のアクティビティを取得します。</summary>
+        <value>ワークフロー定義のアクティビティ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActivityInstanceId">
+      <MemberSignature Language="C#" Value="public string ActivityInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActivityInstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.ActivityBlockingUpdate.ActivityInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在実行中のアクティビティ インスタンスの一意の識別子を設定します。</summary>
+        <value>現在実行中のアクティビティ インスタンスの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalActivityId">
+      <MemberSignature Language="C#" Value="public string OriginalActivityId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OriginalActivityId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.ActivityBlockingUpdate.OriginalActivityId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワークフロー定義に、元のアクティビティの識別子を設定します。</summary>
+        <value>ワークフロー定義に元のアクティビティの識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public string Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Reason" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.ActivityBlockingUpdate.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクティビティ ブロックの原因を設定します。</summary>
+        <value>アクティビティ ブロックの理由です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdatedActivityId">
+      <MemberSignature Language="C#" Value="public string UpdatedActivityId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UpdatedActivityId" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DynamicUpdate.ActivityBlockingUpdate.UpdatedActivityId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワークフロー定義に更新されたアクティビティの識別子を設定します。</summary>
+        <value>ワークフロー定義に更新されたアクティビティの識別子です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

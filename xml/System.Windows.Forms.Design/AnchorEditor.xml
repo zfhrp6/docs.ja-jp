@@ -1,0 +1,105 @@
+<Type Name="AnchorEditor" FullName="System.Windows.Forms.Design.AnchorEditor">
+  <TypeSignature Language="C#" Value="public sealed class AnchorEditor : System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AnchorEditor extends System.Drawing.Design.UITypeEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.AnchorEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.UITypeEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成するためのユーザー インターフェイスを提供する<see cref="P:System.Windows.Forms.Control.Anchor" />プロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Design.AnchorEditor>を構成するため、デザイン時のユーザー インターフェイスを提供する<xref:System.Windows.Forms.Control.Anchor%2A>プロパティです。 <xref:System.Windows.Forms.Control.Anchor%2A>プロパティは、通常、コントロールがバインドされるコンテナーのどの辺を使用します。 このクラスは、ユーザーがコントロールを固定するコンテナーののどの辺を指定できるドロップダウン リストのグラフィカル コントロールを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ComponentModel.EditorAttribute>に関連付けるには、<xref:System.Windows.Forms.Design.AnchorEditor>プロパティを設定します。  
+  
+ [!code-cpp[EditorAttributesExample#4](~/samples/snippets/cpp/VS_Snippets_Winforms/EditorAttributesExample/CPP/class1.cpp#4)]
+ [!code-csharp[EditorAttributesExample#4](~/samples/snippets/csharp/VS_Snippets_Winforms/EditorAttributesExample/CS/class1.cs#4)]
+ [!code-vb[EditorAttributesExample#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/EditorAttributesExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AnchorEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AnchorEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.AnchorEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AnchorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="provider"><see cref="T:System.IServiceProvider" />使用される編集サービスが取得します。</param>
+        <param name="value">編集中の値のインスタンス。</param>
+        <summary>指定したサービス プロバイダーとコンテキストを使用して、指定したオブジェクトの値を編集します。</summary>
+        <returns>オブジェクトの新しい値。 オブジェクトの値が変更されていない場合は、このメソッドは渡された同じオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス プロバイダーが提供するは、任意の必要な編集サービスを取得できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditStyle">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Design.UITypeEditorEditStyle GetEditStyle (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Drawing.Design.UITypeEditorEditStyle GetEditStyle(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AnchorEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Design.UITypeEditorEditStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>使用するエディター スタイルを取得、<see cref="M:System.Windows.Forms.Design.AnchorEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />メソッドです。</summary>
+        <returns>1 つ、<see cref="T:System.Drawing.Design.UITypeEditorEditStyle" />スタイル指定の編集を示す値を設定します。 かどうか、メソッドはサポートされていません、このメソッドは<see cref="F:System.Drawing.Design.UITypeEditorEditStyle.None" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

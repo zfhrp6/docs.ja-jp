@@ -1,0 +1,126 @@
+<Type Name="ClientTargetSection" FullName="System.Web.Configuration.ClientTargetSection">
+  <TypeSignature Language="C#" Value="public sealed class ClientTargetSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ClientTargetSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ClientTargetSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>構成、<see langword="clientTarget" />セクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ClientTargetSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`clientTarget`構成ファイルのセクションです。 含むグループに属している、<xref:System.Web.Configuration.ClientTargetCollection>クラスおよび<xref:System.Web.Configuration.ClientTarget>クラスです。  
+  
+ <xref:System.Web.Configuration.ClientTargetSection>クラスに含まれる<xref:System.Web.Configuration.ClientTarget>のエイリアスとの ASP.NET サーバー コントロールがコンテンツをレンダリングする必要がありますに関連付けられたターゲット ユーザー エージェントのペアを定義するオブジェクト。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初の宣言型表現を表示する、<xref:System.Web.Configuration.ClientTargetSection>クラスし、宣言のいくつかのプロパティの値を指定する方法も示します、<xref:System.Web.Configuration.ClientTarget>クラスです。 2 つ目は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetCollection>構成ファイルからのオブジェクト。 このオブジェクトを使用してアクセスする、<xref:System.Web.Configuration.ClientTarget>オブジェクトが含まれています。  
+  
+ 次のコード例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.ClientTarget>クラスです。  
+  
+```  
+<clientTarget>  
+  <add alias=  
+    "uplevel" userAgent="Mozilla/5.0 (compatible;MSIE 6.0;Windows NT 5.1)"/>  
+  <add alias="downlevel" userAgent="Generic Downlevel"/>  
+</clientTarget>  
+```  
+  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetCollection>構成ファイルからオブジェクト  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#1)]
+ [!code-vb[System.Web.Configuration.ClientTarget#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientTargetSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ClientTargetSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.ClientTargetSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、ASP.NET 構成システムによって呼び出され、コードから直接使用するものではありません。 インスタンスを取得することができます、<xref:System.Web.Configuration.ClientTargetSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientTargets">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ClientTargetCollection ClientTargets { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.ClientTargetCollection ClientTargets" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetSection.ClientTargets" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("", IsDefaultCollection=true, IsRequired=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ClientTargetCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.Configuration.ClientTarget" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.ClientTargetCollection" />を格納している、<see cref="T:System.Web.Configuration.ClientTarget" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Web.Configuration.ClientTarget>オブジェクトには、ユーザー エージェントとも呼ばれます。 クライアントのブラウザーを識別する 2 つのプロパティが含まれています。 1 つのプロパティは、その他のプロパティによって識別されるクライアントのブラウザーに関連付けられているエイリアスです。 ASP.NET は、ページ上のサーバー コントロールを表示するためにこの情報を使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.ClientTargetSection.ClientTargets%2A>コレクション。  
+  
+ [!code-csharp[System.Web.Configuration.ClientTarget#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/CS/clienttarget.cs#2)]
+ [!code-vb[System.Web.Configuration.ClientTarget#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ClientTarget/VB/clienttarget.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ClientTargetSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

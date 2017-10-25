@@ -1,0 +1,110 @@
+<Type Name="EdmFunctionAttribute" FullName="System.Data.Objects.DataClasses.EdmFunctionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EdmFunctionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmFunctionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EdmFunctionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>属性をメソッドに適用する場合のことを示しますメソッド プロキシ関数を概念モデルまたはストレージ モデル。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>別の関数に共通言語ランタイム (CLR) メソッドをリンクします。 たとえば、記憶域プロバイダーによって公開される関数に、データベース内のユーザー定義関数、または、概念モデル内のユーザー定義関数、CLR のメソッドをマップする属性を使用できます。 この属性を持つメソッドは、to Entities クエリの LINQ から呼び出すことができます。  
+  
+ 使用する、<xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>関数、CLR のメソッドをマップするには、次を true にする必要があります。  
+  
+-   CLR メソッドの戻り値の型をマップする関数の戻り値の型と互換性のあるにする必要があります。  
+  
+-   CLR メソッドの引数の型をマップする関数の引数の型と互換性のあるにする必要があります。  
+  
+ 互換性のある型については、次を参照してください。[概念モデル型 (CSDL)](http://msdn.microsoft.com/en-us/987b995f-e429-4569-9559-b4146744def4)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmFunctionAttribute (string namespaceName, string functionName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string namespaceName, string functionName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmFunctionAttribute.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="namespaceName" Type="System.String" />
+        <Parameter Name="functionName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="namespaceName">マップ先の関数の名前空間。</param>
+        <param name="functionName">マップ先の関数の名前。</param>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmFunctionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>別の関数に共通言語ランタイム (CLR) メソッドをリンクします。 たとえば、記憶域プロバイダーによって公開される関数に、データベース内のユーザー定義関数、または、概念モデル内のユーザー定義関数、CLR のメソッドをマップする属性を使用できます。 この属性を持つメソッドは、to Entities クエリの LINQ から呼び出すことができます。  
+  
+ 使用する、<xref:System.Data.Objects.DataClasses.EdmFunctionAttribute>関数、CLR のメソッドをマップするには、次を true にする必要があります。  
+  
+-   CLR メソッドの戻り値の型をマップする関数の戻り値の型と互換性のあるにする必要があります。  
+  
+-   CLR メソッドの引数の型をマップする関数の引数の型と互換性のあるにする必要があります。  
+  
+ 互換性のある型については、次を参照してください。[概念モデル型 (CSDL)](http://msdn.microsoft.com/en-us/987b995f-e429-4569-9559-b4146744def4)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FunctionName">
+      <MemberSignature Language="C#" Value="public string FunctionName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FunctionName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マップ先の関数の名前。</summary>
+        <value>マップ先の関数の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceName">
+      <MemberSignature Language="C#" Value="public string NamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マップ先の関数の名前空間。</summary>
+        <value>マップ先の関数の名前空間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

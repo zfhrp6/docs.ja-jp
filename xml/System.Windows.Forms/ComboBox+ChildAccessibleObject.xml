@@ -1,0 +1,83 @@
+<Type Name="ComboBox+ChildAccessibleObject" FullName="System.Windows.Forms.ComboBox+ChildAccessibleObject">
+  <TypeSignature Language="C#" Value="public class ComboBox.ChildAccessibleObject : System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi beforefieldinit ComboBox/ChildAccessibleObject extends System.Windows.Forms.AccessibleObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ComboBox.ChildAccessibleObject" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.AccessibleObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザー補助クライアント アプリケーションに <see cref="T:System.Windows.Forms.ComboBox" /> コントロールの情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームでは、ユーザー補助機能が組み込まれているし、ユーザー補助クライアント アプリケーションで使用できるように、アプリケーションに関する情報を提供します。 ユーザー補助クライアント アプリケーションの例は、ツールとレビュー担当者のユーティリティを画面には、音声入力ユーティリティ、オンスクリーン キーボード、代替入力デバイス、およびキーボード拡張ユーティリティ。 <xref:System.Windows.Forms.ComboBox.ChildAccessibleObject>クラスから継承、<xref:System.Windows.Forms.AccessibleObject>に関する情報を提供するクラス、<xref:System.Windows.Forms.ComboBox>ユーザー補助クライアント アプリケーションに制御します。  
+  
+ インスタンスがあるコントロールの名前や説明、ユーザー補助クライアント アプリケーションなどのカスタム情報を提供する場合。 この情報を提供する 2 つの方法はあります。 既存のコントロールの限られたユーザー補助情報を提供するには、設定コントロールの<xref:System.Windows.Forms.Control.AccessibleName%2A>、 <xref:System.Windows.Forms.Control.AccessibleDescription%2A>、 <xref:System.Windows.Forms.Control.AccessibleDefaultActionDescription%2A>、および<xref:System.Windows.Forms.Control.AccessibleRole%2A>プロパティの値は、ユーザー補助クライアント アプリケーションに報告されます。  
+  
+ ユーザー補助機能については、コントロールに含まれているを必要とする場合から派生した独自のクラスを記述することができます、<xref:System.Windows.Forms.AccessibleObject>または<xref:System.Windows.Forms.Control.ControlAccessibleObject>クラスです。 たとえば、共通のコントロールから派生していない、独自のコントロールを作成している場合、またはコントロール内でヒット テストなどの操作が必要な作成する必要があります、<xref:System.Windows.Forms.Control.ControlAccessibleObject>呼び出すことによって、コントロールの<xref:System.Windows.Forms.Control.CreateAccessibilityInstance%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChildAccessibleObject (System.Windows.Forms.ComboBox owner, IntPtr handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ComboBox owner, native int handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ComboBox.ChildAccessibleObject.#ctor(System.Windows.Forms.ComboBox,System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.Forms.ComboBox" />
+        <Parameter Name="handle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="owner"><see cref="T:System.Windows.Forms.ComboBox" />を所有しているコントロール、<see cref="T:System.Windows.Forms.ComboBox.ChildAccessibleObject" />です。</param>
+        <param name="handle">部分へのハンドル、<see cref="T:System.Windows.Forms.ComboBox" />です。</param>
+        <summary><see cref="T:System.Windows.Forms.ComboBox.ChildAccessibleObject" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ComboBox>コントロールが内部的に 1 つ以上のコントロールの構成します。 <xref:System.Windows.Forms.ComboBox.ChildAccessibleObject>使用へのハンドルを知る必要があります。 個々 のコントロールを識別するハンドルは、プライベート メンバーであるために、コンシューマーには、このコンス トラクターを呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ComboBox.ChildAccessibleObject.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトの名前を取得します。</summary>
+        <value>値、<see cref="P:System.Windows.Forms.ComboBox.ChildAccessibleObject.Name" />プロパティと同じ、<see cref="P:System.Windows.Forms.AccessibleObject.Name" />プロパティを<see cref="T:System.Windows.Forms.AccessibleObject" />の<see cref="T:System.Windows.Forms.ComboBox" />です。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

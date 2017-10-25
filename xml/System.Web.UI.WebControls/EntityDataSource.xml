@@ -1,0 +1,2052 @@
+<Type Name="EntityDataSource" FullName="System.Web.UI.WebControls.EntityDataSource">
+  <TypeSignature Language="C#" Value="public class EntityDataSource : System.Web.UI.DataSourceControl, System.Web.DynamicData.IDynamicDataSource, System.Web.UI.WebControls.IQueryableDataSource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EntityDataSource extends System.Web.UI.DataSourceControl implements class System.Web.DynamicData.IDynamicDataSource, class System.Web.UI.IDataSource, class System.Web.UI.WebControls.IQueryableDataSource" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.EntityDataSource" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.DataSourceControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.DynamicData.IDynamicDataSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.IQueryableDataSource</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Selecting")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("EntitySetName")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.EntityDataSourceDesigner, System.Web.Entity.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(System.Web.UI.WebControls.EntityDataSource), "EntityDataSource.ico")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ASP.NET アプリケーションで、データ バインドされたコントロールに対する Entity Data Model (EDM) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用することができます、 <xref:System.Web.UI.WebControls.EntityDataSource> EDM からデータを取得および表示、編集、およびほとんどまたはまったくないコードを使用して、Web ページ上のデータの並べ替えするデータ バインド コントロールと共に制御します。 詳細については、次を参照してください。 [EntityDataSource Web サーバー コントロールの概要](http://msdn.microsoft.com/library/1f09af00-9578-4744-a029-765710a3c83f)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:EntityDataSource  
+    AutoGenerateOrderByClause="True|False"  
+    AutoGenerateWhereClause="True|False"  
+    AutoPage="True|False"  
+    AutoSort="True|False"  
+    CommandText="string"  
+    ConnectionString="string"  
+    ContextType="typed ObjectContext"  
+    ContextTypeName="string"  
+    DefaultContainerName="string"  
+    EnableDelete="True|False"  
+    EnableInsert="True|False"  
+    EnableUpdate="True|False"  
+    EnableViewState="True|False"  
+    EntitySetName="string"  
+    EntityTypeFilter="string"  
+    GroupBy="string"  
+    Include="string"  
+    OnContextCreated="ContextCreated event handler"  
+    OnContextCreating="ContextCreating event handler"  
+    OnContextDisposing="ContextDisposing event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDeleted="Deleted event handler"  
+    OnDeleting="Deleting event handler"  
+    OnException="IDynamicDataSource.Exception event handler"  
+    OnInserted="Inserted event handler"  
+    OnInserting="Inserting event handler"  
+    OnSelected="Selected event handler"  
+    OnSelecting="Selecting event handler"  
+    OnUpdated="Updated event handler"  
+    OnUpdating="Updating event handler"  
+    OrderBy="string"  
+    runat="server"  
+    Select="string"  
+    StoreOriginalValuesInViewState="True|False"  
+    Where="string"  
+>  
+        <CommandParameters />  
+        <DeleteParameters />  
+        <GroupByParameters />  
+        <InsertParameters />  
+        <OrderByParameters />  
+        <SelectParameters />  
+        <UpdateParameters />  
+        <WhereParameters />  
+</asp:EntityDataSource>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.EntityDataSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EntityDataSource (System.Data.EntityClient.EntityConnection connection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Data.EntityClient.EntityConnection connection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.#ctor(System.Data.EntityClient.EntityConnection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connection" Type="System.Data.EntityClient.EntityConnection" />
+      </Parameters>
+      <Docs>
+        <param name="connection"><see cref="T:System.Data.EntityClient.EntityConnection" /> Entity Data Model (EDM) にします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />指定された接続を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoGenerateOrderByClause">
+      <MemberSignature Language="C#" Value="public bool AutoGenerateOrderByClause { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoGenerateOrderByClause" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールが <see cref="P:System.Web.UI.WebControls.EntityDataSource.OrderByParameters" /> コレクション内の値に基づいて ORDER BY 句を動的に作成するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールが ORDER BY 句を作成する場合は <see langword="true" />。それ以外の場合 <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールに設定されている`true`、コントロールでのパラメーターからの ORDER BY 句を自動的に生成されます、<xref:System.Web.UI.WebControls.ParameterCollection>に割り当てられている、<xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters%2A>プロパティです。 これを ORDER BY 句を明示的に割り当てる必要がある、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>プロパティです。  
+  
+ 設定した場合、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause%2A>プロパティを`true`に値を明示的に割り当てる必要がありますいない、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例は、自動的に、ORDER BY 句を生成しの値を使用して、`OrderByDropDownList`パラメーターの値を設定します。  
+  
+```  
+<asp:DropDownList AutoPostBack="true" ID="OrderByDropDownList" runat="server">  
+    <asp:ListItem Value="TotalDue"></asp:ListItem>  
+    <asp:ListItem Value="OrderDate"></asp:ListItem>  
+</asp:DropDownList>  
+  
+<asp:EntityDataSource ID="EntityDataSourceWithAutoGenOrderBy" runat="server"   
+ConnectionString="name=AdventureWorksEntities"   
+DefaultContainerName="AdventureWorksEntities"   
+EntitySetName="SalesOrderHeaders"   
+Select="it.SalesOrderID, it.TotalDue, it.OrderDate"  
+AutoGenerateOrderByClause="True">  
+<OrderByParameters>  
+    <asp:ControlParameter  
+    ControlID="OrderByDropDownList"/>  
+</OrderByParameters>  
+</asp:EntityDataSource>  
+```  
+  
+ 次の例は、自動的に、ORDER BY 句を生成しを使用して、`DefaultValue`の属性、`Parameter`パラメーターの値を設定する要素。  
+  
+```  
+<asp:EntityDataSource ID="EntityDataSourceWithAutoGenOrderBy" runat="server"   
+ConnectionString="name=AdventureWorksEntities"   
+DefaultContainerName="AdventureWorksEntities"   
+EntitySetName="SalesOrderHeaders"   
+Select="it.SalesOrderID, it.TotalDue, it.OrderDate"  
+AutoGenerateOrderByClause="True">  
+<OrderByParameters>  
+    <asp:Parameter  
+    DefaultValue="TotalDue"/>  
+</OrderByParameters>  
+</asp:EntityDataSource>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause" /> プロパティが <see langword="true" /> に設定されており、<see cref="P:System.Web.UI.WebControls.EntityDataSource.OrderBy" /> プロパティが null でない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoGenerateWhereClause">
+      <MemberSignature Language="C#" Value="public bool AutoGenerateWhereClause { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoGenerateWhereClause" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロールは、WHERE 句で定義された値に基づいて動的に作成、<see cref="P:System.Web.UI.WebControls.EntityDataSource.WhereParameters" />コレクション。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロールが WHERE 句を作成、それ以外の<see langword="false" />します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クエリ結果をフィルター処理、エンティティ型プロパティを式が等しいか調査して、使用することができます、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A>プロパティです。 ときに、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールに設定されている`true`、コントロールが自動的に生成、`WHERE`句内のパラメーターから、<xref:System.Web.UI.WebControls.ParameterCollection>の<xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters%2A>プロパティです。 <xref:System.Web.UI.WebControls.Parameter.Name%2A>各パラメーターのプロパティは、クエリの結果に含まれるエンティティ型のプロパティ名と一致しています。 設定した場合、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A>プロパティを`true`、明示的に割り当てる必要がありますいないを`WHERE`句を<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。  
+  
+## <a name="example"></a>例  
+ 次の例では、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A>プロパティに設定されている`true`です。 したがって、<xref:System.Web.UI.WebControls.Parameter.Name%2A>プロパティのクエリの結果に含まれるエンティティ型のプロパティ名と一致するがします。 クエリには、SalesOrderHeader エンティティ型の SalesOrderID および TotalDue プロパティが選択されます。 自動的に生成された`WHERE`句がクエリの結果をフィルター処理、TotalDue 値 TotalDueList リスト ボックス コントロールで選択した値と比較します。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeaderWithAutoParam" runat="server"   
+   ConnectionString="name=AdventureWorksEntities"   
+   DefaultContainerName="AdventureWorksEntities"   
+   EntitySetName="SalesOrderHeaders"   
+   Select="it.SalesOrderID, it.TotalDue"  
+    AutoGenerateWhereClause="True">  
+    <WhereParameters>  
+        <asp:ControlParameter ControlID="TotalDueList"   
+           Name="TotalDue" PropertyName="SelectedValue" DbType="Decimal" />  
+    </WhereParameters>  
+</asp:EntityDataSource>  
+```  
+  
+## <a name="example"></a>例  
+ 既定では、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A> プロパティは `false` に設定されます。 つまり、ことを指定する、`WHERE`句。 次の例で、`WHERE`句は`Where="it.TotalDue < @totalDueParam"`totalDueParam は、パラメーター名。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeaderWithOutAutoParam" runat="server"   
+   ConnectionString="name=AdventureWorksEntities"   
+   DefaultContainerName="AdventureWorksEntities"   
+   EntitySetName="SalesOrderHeaders"   
+   Where="it.TotalDue < @totalDueParam"   
+    Select="it.SalesOrderID, it.TotalDue">  
+    <WhereParameters>  
+        <asp:ControlParameter ControlID="TotalDueList"   
+           Name="totalDueParam" PropertyName="SelectedValue" DbType="Decimal" />  
+    </WhereParameters>  
+</asp:EntityDataSource>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause" /> プロパティが <see langword="true" /> に設定されており、<see cref="P:System.Web.UI.WebControls.EntityDataSource.Where" /> プロパティが null でない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoPage">
+      <MemberSignature Language="C#" Value="public bool AutoPage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoPage" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.AutoPage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行時に <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールがデータ セクションでのナビゲーションをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ユーザーがデータを閲覧できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource>コントロールは自動的にクエリによって返されるデータのページングをサポートします。 <xref:System.Web.UI.WebControls.EntityDataSource.AutoPage%2A>プロパティは、データ コントロールにバインドされたクエリによって返されるデータのページングが有効になっているかどうかを示すブール型プロパティです。 このプロパティを設定すると`true`、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールを追加する適切なクエリ ビルダー メソッド、<xref:System.Data.Objects.ObjectQuery%601>に指定された情報に基づいて、<xref:System.Web.UI.WebControls.EntityDataSourceView>データ バインドされたコントロールによってです。  
+  
+ 値、<xref:System.Web.UI.WebControls.EntityDataSource.AutoPage%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.EntityDataSourceView.CanPage%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceView>データ ソースをサポートするコントロールは`true`または`false`です。  
+  
+ ページングが有効になっていると、射影を定義するときに、結果の並べ替えに使用するプロパティを定義します。 つまり、設定すると、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>射影を定義し、プロパティ<xref:System.Web.UI.WebControls.EntityDataSource.AutoPage%2A>に設定`true`も設定する必要があります、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>順序を定義または設定するプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause%2A>プロパティを`true`に ORDER BY パラメーターを追加し、<xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters%2A>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSort">
+      <MemberSignature Language="C#" Value="public bool AutoSort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSort" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.AutoSort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実行時に <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールがデータの並べ替えをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ユーザーがデータを並べ替えられる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、クエリによって返されるデータを自動的に並べ替えをサポートします。 <xref:System.Web.UI.WebControls.EntityDataSource.AutoSort%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、データ コントロールにバインドされているクエリによって返されるデータの並べ替えが有効かどうかを示すブール型プロパティです。 このプロパティを設定すると`true`、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールを追加する適切なクエリ ビルダー メソッド、<xref:System.Data.Objects.ObjectQuery%601>に指定された情報に基づいて、<xref:System.Web.UI.WebControls.EntityDataSourceView>データ バインドされたコントロールによってです。  
+  
+ 値、<xref:System.Web.UI.WebControls.EntityDataSource.AutoSort%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.EntityDataSourceView.CanSort%2A>と<xref:System.Web.UI.WebControls.EntityDataSourceView.CanRetrieveTotalRowCount%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceView>データ ソースをサポートするコントロールは`true`または`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection CommandParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection CommandParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.CommandParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリのパラメーターのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.ParameterCollection" />クエリ コマンドに渡されるパラメーターを格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.CommandParameters%2A>プロパティを使用してアクセスする、<xref:System.Web.UI.WebControls.ParameterCollection>を使用して指定されている明示的な Entity SQL クエリに渡されるパラメーターの<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、製品オブジェクトのコレクションを返す Entity SQL コマンド テキストを提供します。  
+  
+```  
+<asp:EntityDataSource ID="ProductDataSource" runat="server"   
+    CommandText="SELECT value p FROM Products AS p  
+        WHERE p.ProductID  
+        BETWEEN @OrderIdMin AND @OrderIdMax"  
+    ConnectionString="name=AdventureWorksEntities"   
+    DefaultContainerName="AdventureWorksEntities" >  
+    <CommandParameters>  
+        <asp:ControlParameter Name="OrderIdMin"   
+            ControlID="ProductIdMin" Type="Int32"/>  
+        <asp:ControlParameter Name="OrderIdMax"   
+            ControlID="ProductIdMax" Type="Int32" />  
+    </CommandParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 次の例では、射影された一連の列が返されます。  
+  
+```  
+<asp:EntityDataSource ID="ProductDataSource" runat="server"   
+    CommandText="SELECT p.ProductID, p.ProductName, p.UnitsOnOrder  
+         FROM Products AS p   
+         WHERE p.ProductID BETWEEN @OrderIDMin AND @OrderIDMax"   
+         ContextTypeName="AdventureWorksModel. AdventureWorksEntities">  
+    <CommandParameters>  
+        <asp:ControlParameter Name="OrderIDMin"   
+               ControlID="ProductIDMinTextBox" Type="Int32"/>  
+        <asp:ControlParameter Name="OrderIDMax"   
+               ControlID="ProductIDMaxTextBox" Type="Int32" />  
+    </CommandParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandText">
+      <MemberSignature Language="C#" Value="public string CommandText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.CommandText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリを定義する Entity SQL コマンドを設定します。</summary>
+        <value>A <see langword="string" /> Entity SQL クエリである値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールでは、カスタムの Entity SQL 式を使用するクエリを指定することができます。 SELECT ステートメントと同様に<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>は更新可能でない、元のデータの予測を作成します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>プロパティが割り当てられている、update、insert、および delete の機能が無効になっています。 この場合、メソッド<xref:System.Web.UI.WebControls.EntityDataSourceView.CanDelete%2A>、 <xref:System.Web.UI.WebControls.EntityDataSourceView.CanInsert%2A>、および<xref:System.Web.UI.WebControls.EntityDataSourceView.CanUpdate%2A>関連の<xref:System.Web.UI.WebControls.EntityDataSourceView>コントロールのすべてのリターン`false`です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>プロパティが設定されて、例外がスローされた、<xref:System.Web.UI.DataSourceView.ExecuteSelect%2A>メソッドにバインドされたデータにあるコントロールによって呼び出されます、<xref:System.Web.UI.WebControls.EntityDataSource>場合は、制御の値<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>、 <xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>、または<xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>に設定されている`true`です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>プロパティの射影を返すクエリに設定されている (たとえば、"`SELECT p.ProductID, p. Name FROM AdventureWorksEntities.Products AS p`")、<xref:System.Data.Common.DbDataRecord>が返されます。  
+  
+   
+  
+## Examples  
+ 次の例に指定された Entity SQL コマンドは、製品オブジェクトのコレクションを返します。  
+  
+```  
+<asp:EntityDataSource ID="ProductDataSource" runat="server"   
+    CommandText="SELECT value p FROM Products AS p  
+        WHERE p.ProductID  
+        BETWEEN @OrderIdMin AND @OrderIdMax"  
+    ConnectionString="name=AdventureWorksEntities"   
+    DefaultContainerName="AdventureWorksEntities" >  
+    <CommandParameters>  
+        <asp:ControlParameter Name="OrderIdMin"   
+            ControlID="ProductIdMin" Type="Int32"/>  
+        <asp:ControlParameter Name="OrderIdMax"   
+            ControlID="ProductIdMax" Type="Int32" />  
+    </CommandParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 次の例では、射影された一連の列が返されます。  
+  
+```  
+<asp:EntityDataSource ID="ProductDataSource" runat="server"   
+    CommandText="SELECT p.ProductID, p.ProductName, p.UnitsOnOrder  
+          FROM Products AS p   
+          WHERE p.ProductID BETWEEN @OrderIDMin AND @OrderIDMax"   
+          ContextTypeName="AdventureWorksModel. AdventureWorksEntities">  
+    <CommandParameters>  
+        <asp:ControlParameter Name="OrderIDMin"   
+                ControlID="ProductIDMinTextBox" Type="Int32"/>  
+        <asp:ControlParameter Name="OrderIDMax"   
+                ControlID="ProductIDMaxTextBox" Type="Int32" />  
+    </CommandParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリを実行するために使用される接続文字列を設定します。</summary>
+        <value>クエリの接続文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.ConnectionString%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、アプリケーション構成ファイルの要素に格納されている名前付き EDM の接続文字列から初期化することができます。 Entity Data Model ウィザードを使用して、EDM が作成されると、アプリケーション構成ファイルに名前付きの EDM 接続が作成されます。 EDM の名前付き接続文字列が見つかった場合に、アプリケーション構成ファイル、接続が EntityDataSource デザイナーのデータ ソースの構成ウィザードのオプションとして表示します。 詳細については、次を参照してください。[データ ソース構成ウィザード (EntityDataSource コントロール)](http://msdn.microsoft.com/en-us/263976a5-2406-47c0-8919-c6af6e76d78e)です。  
+  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.ContextTypeName%2A>プロパティが指定されていないの両方を<xref:System.Web.UI.WebControls.EntityDataSource.DefaultContainerName%2A>と<xref:System.Web.UI.WebControls.EntityDataSource.ConnectionString%2A>、コントロールを作成するには、プロパティを設定する必要があります、<xref:System.Data.Objects.ObjectContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs&gt; ContextCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs&gt; ContextCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.ContextCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.EntityDataSource" /> がエンティティ データ オブジェクトを操作するために使用する <see cref="T:System.Data.Objects.ObjectContext" /> の作成を完了した場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセスするには、このイベントを処理、<xref:System.Data.Objects.ObjectContext>によって使用される、<xref:System.Web.UI.WebControls.EntityDataSource>クエリを実行し、変更の追跡を制御します。 このコンテキスト オブジェクトを格納し、外の一連の操作の使用、<xref:System.Web.UI.WebControls.EntityDataSource>です。 <xref:System.Data.Objects.ObjectContext>から取得した、<xref:System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs>によって返される、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreated>イベント。 詳細については、次を参照してください。[オブジェクト コンテキストのライフ サイクル管理 (EntityDataSource)](http://msdn.microsoft.com/en-us/67bc2486-112c-47c3-b23f-0297f7ac2160)です。 オブジェクト コンテキストの詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+ <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreated>イベントに割り当てることができます、<xref:System.Data.Objects.ObjectContext>外の一連の操作用の変数に作成された、<xref:System.Web.UI.WebControls.EntityDataSource>です。 <xref:System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs.Context%2A?displayProperty=nameWithType>プロパティにはで作成されているコンテキストが含まれています、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating>イベント。 ユーザーが中にコンテキストを割り当てない場合、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating>イベントにコンテキストのインスタンスが含まれている<xref:System.Web.UI.WebControls.EntityDataSourceContextCreatedEventArgs.Context%2A?displayProperty=nameWithType>で作成されたものでは、<xref:System.Web.UI.WebControls.EntityDataSource>に基づいて、 <xref:System.Web.UI.WebControls.EntityDataSource.ContextTypeName%2A?displayProperty=nameWithType>、 <xref:System.Web.UI.WebControls.EntityDataSource.DefaultContainerName%2A?displayProperty=nameWithType>、または<xref:System.Web.UI.WebControls.EntityDataSource.ConnectionString%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextCreating">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs&gt; ContextCreating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs&gt; ContextCreating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.ContextCreating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />を作成、<see cref="T:System.Data.Objects.ObjectContext" />エンティティ データ オブジェクトを操作に使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating>独自に提供するイベント<xref:System.Data.Objects.ObjectContext>新しいではなく<xref:System.Data.Objects.ObjectContext>を作成します。 場合、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating>イベントが処理されないか、ハンドラーが提供されません、 <xref:System.Data.Objects.ObjectContext>、<xref:System.Web.UI.WebControls.EntityDataSource>の構成に従って 1 つを作成します。 ときに、<xref:System.Data.Objects.ObjectContext>に提供される、 <xref:System.Web.UI.WebControls.EntityDataSource.ContextCreating> 、同じインスタンスが割り当てられているイベントを`Context`の連続するイベントのイベント オブジェクトのプロパティです。 詳細については、次を参照してください。[オブジェクト コンテキストのライフ サイクル管理 (EntityDataSource)](http://msdn.microsoft.com/en-us/67bc2486-112c-47c3-b23f-0297f7ac2160)です。 オブジェクト コンテキストの詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Data.Objects.ObjectContext>の変数、<xref:System.Web.UI.Page>オブジェクトし、それを割り当てる、<xref:System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs.Context%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceContextCreatingEventArgs>オブジェクト。  
+  
+```csharp  
+public partial class _Default : System.Web.UI.Page  
+    {  
+        AdventureWorksModel.AdventureWorksEntities objCtx =  
+            new AdventureWorksModel.AdventureWorksEntities();  
+  
+        protected void EntityDataSource2_ContextCreating(object sender,   
+            EntityDataSourceContextCreatingEventArgs e)  
+        {  
+            e.Context = objCtx;  
+        }  
+    }  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextDisposing">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs&gt; ContextDisposing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs&gt; ContextDisposing" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.ContextDisposing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生する前に、<see cref="T:System.Data.Objects.ObjectContext" />が破棄されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 防ぐためにこのイベントを処理、<xref:System.Data.Objects.ObjectContext>によって使用される、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールの破棄されるからです。 これを 1 つを使用する際に行います<xref:System.Data.Objects.ObjectContext>、ページのいくつかのコントロールまたはのインスタンスのインスタンス、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 防ぐために、<xref:System.Data.Objects.ObjectContext>破棄されているから次のように設定します。、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceContextDisposingEventArgs>オブジェクトを`true`です。 詳細については、次を参照してください。[オブジェクト コンテキストのライフ サイクル管理 (EntityDataSource)](http://msdn.microsoft.com/en-us/67bc2486-112c-47c3-b23f-0297f7ac2160)です。 オブジェクト コンテキストの詳細については、次を参照してください。 [Id 解決、状態管理、および変更の追跡](http://msdn.microsoft.com/en-us/3bd49311-0e72-4ea4-8355-38fe57036ba0)です。  
+  
+   
+  
+## Examples  
+ 既存を保持する<xref:System.Data.Objects.ObjectContext>今後の参照 [キャンセル] のインスタンスのメンバー、<xref:System.Web.UI.WebControls.EntityDataSource.ContextCreated>イベント、次のコードに示すようにします。  
+  
+```csharp  
+protected void EntityDataSource2_ContextDisposing(object sender,   
+    EntityDataSourceContextDisposingEventArgs e)  
+{  
+    e.Cancel = true;  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextType">
+      <MemberSignature Language="C#" Value="public Type ContextType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ContextType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.ContextType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、型指定された<see cref="T:System.Data.Objects.ObjectContext" />によって使用される、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>派生したオブジェクト<see cref="T:System.Data.Objects.ObjectContext" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Objects.ObjectContext>によって使用される、<xref:System.Web.UI.WebControls.EntityDataSource>からアクセスできるコントロール、<xref:System.Web.UI.WebControls.EntityDataSource.ContextType%2A>プロパティです。 詳細については、次を参照してください。[オブジェクト コンテキストのライフ サイクル管理 (EntityDataSource)](http://msdn.microsoft.com/en-us/67bc2486-112c-47c3-b23f-0297f7ac2160)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextTypeName">
+      <MemberSignature Language="C#" Value="public string ContextTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContextTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.ContextTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の型指定された完全修飾名<see cref="T:System.Data.Objects.ObjectContext" />によって使用される、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>A<see cref="T:System.String" />型の完全修飾名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.ContextTypeName%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、型指定されたの完全修飾型名を指定する文字列<xref:System.Data.Objects.ObjectContext>によって使用される、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 場合、<xref:System.Web.UI.WebControls.EntityDataSource.ContextTypeName%2A>プロパティが指定されていないの両方を<xref:System.Web.UI.WebControls.EntityDataSource.DefaultContainerName%2A>と<xref:System.Web.UI.WebControls.EntityDataSource.ConnectionString%2A>、コントロールを作成するには、プロパティを設定する必要があります、<xref:System.Data.Objects.ObjectContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateView">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.EntityDataSourceView CreateView ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.EntityDataSourceView CreateView() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.CreateView" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.EntityDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Web.UI.WebControls.EntityDataSourceView" />このコントロールに関連付けられています。</summary>
+        <returns>データ バインド コントロールのインターフェイスとして機能するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム ビューを提供するには、派生クラスでは、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultContainerName">
+      <MemberSignature Language="C#" Value="public string DefaultContainerName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultContainerName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.DefaultContainerName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のコンテナー名を取得または設定します。</summary>
+        <value>既定のコンテナー名を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.ContextTypeName%2A>プロパティが指定されていないの両方を<xref:System.Web.UI.WebControls.EntityDataSource.DefaultContainerName%2A>と<xref:System.Web.UI.WebControls.EntityDataSource.ConnectionString%2A>、コントロールを作成するには、プロパティを設定する必要があります、<xref:System.Data.Objects.ObjectContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Deleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Deleted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Deleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトが、データ ソースから削除された後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Deleted>後にイベントを生成、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A>メソッドが正常に呼び出された上、<xref:System.Data.Objects.ObjectContext>オブジェクトを削除します。 <xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトが削除されたオブジェクトにアクセスするために使用します。 このオブジェクトは、<xref:System.Data.EntityState.Detached>状態です。  
+  
+ オブジェクトが削除されると、エラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Deleted>のイベントが発生、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>、および<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Entity%2A>プロパティに設定されている`null`です。 例外を処理する場合、 <xref:System.Web.UI.WebControls.EntityDataSource.Deleted> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection DeleteParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection DeleteParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.DeleteParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Delete 操作中に使用されるパラメーターのコレクションを取得します。</summary>
+        <value>Delete 操作中に使用されるパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 4 以降を対象とする web アプリケーションでは、プロパティの値は、ビュー ステートに格納され、ポストバック間で自動的に維持します。 ASP.NET 4.5 を対象とする web アプリケーションのプロパティ値がビュー状態で格納されないと、HTTP 要求ごとに値を設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Deleting">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Deleting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Deleting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Deleting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースからオブジェクトを削除する前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Deleting>イベントが発生する前に、<xref:System.Data.Objects.ObjectContext.SaveChanges%2A>メソッドが、<xref:System.Data.Objects.ObjectContext>オブジェクトを削除します。 <xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトが削除されるオブジェクトのアクセスに使用します。 このオブジェクトのプロパティを完全に設定できません可能性があります。 オブジェクトを識別するために必要なプロパティのみを設定する必要があります。  
+  
+ 削除されないオブジェクトを停止する、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトを`true`です。  
+  
+ オブジェクトを削除する準備をする場合、エラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Deleting>イベントが発生し、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>です。  
+  
+ 例外を処理するときに、 <xref:System.Web.UI.WebControls.EntityDataSource.Deleting> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDelete">
+      <MemberSignature Language="C#" Value="public bool EnableDelete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableDelete" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EnableDelete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを通じてオブジェクトを削除できるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>
+          <see langword="true" />自動削除の各操作は有効な場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>場合に設定することはできません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>プロパティを有効にします。  
+  
+ A`false`に割り当てられた値、<xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>プロパティを<xref:System.Web.UI.WebControls.EntityDataSource>強制的に、<xref:System.Web.UI.WebControls.EntityDataSourceView.CanDelete%2A>の関連するプロパティ<xref:System.Web.UI.WebControls.EntityDataSourceView>オブジェクトを返す`false`です。 ときに、<xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>プロパティに設定されている`false`、<xref:System.NotSupportedException>データ バインド コントロールを呼び出す場合に発生した、<xref:System.Web.UI.DataSourceView.ExecuteDelete%2A>メソッドを<xref:System.Web.UI.WebControls.EntityDataSourceView>です。  
+  
+ かどうかの更新の実行条件は満たされません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.EntityDataSource>例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableFlattening">
+      <MemberSignature Language="C#" Value="public bool EnableFlattening { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableFlattening" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EnableFlattening" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラッパーの作成をオフにするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="True" />プロパティを平坦化する場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化するとき、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールを使用して、 <xref:System.Web.UI.WebControls.EntityDataSource.EntitySetName%2A> 、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>結果のオブジェクトの各エンティティのインスタンスをラップ、<xref:System.ComponentModel.ICustomTypeDescriptor>型です。 詳細については、次を参照してください。[フラット化オブジェクト (EntityDataSource)](http://msdn.microsoft.com/en-us/08a30ef3-1132-4ac4-856c-5ed3d65eaf16)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableInsert">
+      <MemberSignature Language="C#" Value="public bool EnableInsert { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableInsert" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EnableInsert" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを通じてオブジェクトを追加できるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>
+          <see langword="true" />自動挿入操作は有効な場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>場合に設定することはできません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>プロパティに設定されている`true`です。  
+  
+ A`false`に割り当てられた値、<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>プロパティを<xref:System.Web.UI.WebControls.EntityDataSource>強制的に、<xref:System.Web.UI.WebControls.EntityDataSourceView.CanInsert%2A>の関連するプロパティ<xref:System.Web.UI.WebControls.EntityDataSourceView>オブジェクトを返す`false`です。 ときに、<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>プロパティに設定されている`false`、<xref:System.NotSupportedException>データ バインド コントロールを呼び出す場合に発生した、<xref:System.Web.UI.DataSourceView.ExecuteInsert%2A>メソッドを<xref:System.Web.UI.WebControls.EntityDataSourceView>です。  
+  
+ かどうかの更新の実行条件は満たされません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.EntityDataSource>例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUpdate">
+      <MemberSignature Language="C#" Value="public bool EnableUpdate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableUpdate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EnableUpdate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを通じてオブジェクトを変更できるかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>
+          <see langword="true" />自動更新操作は有効な場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>場合に設定することはできません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>プロパティに設定されている`true`です。  
+  
+ A`false`に割り当てられた値、<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>プロパティ フォース、<xref:System.Web.UI.WebControls.EntityDataSourceView.CanUpdate%2A>の関連するプロパティ<xref:System.Web.UI.WebControls.EntityDataSourceView>オブジェクトを返す`false`です。 ときに、<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>プロパティに設定されている`false`、<xref:System.NotSupportedException>データ バインド コントロールを呼び出す場合に発生した、<xref:System.Web.UI.DataSourceView.ExecuteUpdate%2A>メソッドを<xref:System.Web.UI.WebControls.EntityDataSourceView>です。  
+  
+ 設定、<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>プロパティを`true`更新とは限りません。  
+  
+ かどうかの更新の実行条件は満たされません、<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.EntityDataSource>例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntitySetName">
+      <MemberSignature Language="C#" Value="public string EntitySetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntitySetName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EntitySetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で使用されるエンティティ セットの名前、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <value>エンティティ セットの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.EntitySetName%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールがコントロールによってアクセスされるオブジェクトの種類のエンティティ セットを指定するために使用します。 値、<xref:System.Web.UI.WebControls.EntityDataSource.EntitySetName%2A>プロパティがコントロールによって使用される既定の SELECT ステートメントです。 用意されている Entity SQL 式としてクエリが指定されている場合、設定は必要ありません、<xref:System.Web.UI.WebControls.EntityDataSource.CommandText%2A>プロパティです。 詳細については、次を参照してください。[カスタム コマンド テキスト (EntityDataSource)](http://msdn.microsoft.com/en-us/d42e90d0-1443-474e-8940-53f504d6fc91)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EntityTypeFilter">
+      <MemberSignature Language="C#" Value="public string EntityTypeFilter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EntityTypeFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.EntityTypeFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリの特定の派生型の結果のみを制限する式を設定します。</summary>
+        <value>フィルター式です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、特定の派生型を返す必要があります、<xref:System.Web.UI.WebControls.EntityDataSource.EntityTypeFilter%2A>プロパティは、この派生型の名前を指定にも設定する必要があります。 場合、<xref:System.Web.UI.WebControls.EntityDataSource.EntitySetName%2A>プロパティ、ポリモーフィックな結果を生成できるエンティティ セットの指定、<xref:System.Web.UI.WebControls.EntityDataSource.EntityTypeFilter%2A>プロパティ データを編集できるようにする必要があります。 これは、同じ効果を適用すると、<xref:System.Data.Objects.ObjectQuery%601.OfType%60%601?displayProperty=nameWithType>メソッドを<xref:System.Data.Objects.ObjectQuery%601?displayProperty=nameWithType>です。 データ バインディングが読み取り専用の場合、<xref:System.Web.UI.WebControls.EntityDataSource.EntityTypeFilter%2A>プロパティは必要ありません。 この場合は、エンティティ セットの既定のエンティティ型のクエリによって返されるオブジェクトのプロパティがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.DataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Web.UI.DataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得するビューの名前。 <see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロールは、1 つのビューをサポートしている<c>viewName</c>は無視されます。</param>
+        <summary>データ ソース コントロールに関連付けられている名前付きのデータ ソース ビューを取得します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.EntityDataSourceView" />と関連付けられている、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、1 つだけのデータ ソース ビューをサポートしています。 すべてのデータ ソース ビュー オブジェクトと同様に、<xref:System.Web.UI.WebControls.EntityDataSourceView>データ ソース コントロールに関連付けられているオブジェクトは、その機能を定義は、基になるデータベースからデータを取得する必要はし、並べ替え、挿入、削除、および更新などの操作を実行するすべての作業を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ICollection GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ICollection GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられているビュー オブジェクトの一覧を表す名前のコレクションを取得、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <returns><see cref="T:System.Collections.ICollection" />に関連付けられているビューの名前を格納している、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、その基になるデータの 1 つのビューをサポートしています。 <xref:System.Web.UI.WebControls.EntityDataSource.GetViewNames%2A>メソッドを文字列としてこの 1 つのビューの名前の 1 つの要素のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupBy">
+      <MemberSignature Language="C#" Value="public string GroupBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string GroupBy" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.GroupBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリの結果をグループ化する方法を指定する Entity SQL 式を設定します。</summary>
+        <value>GROUP BY 句。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Include">
+      <MemberSignature Language="C#" Value="public string Include { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Include" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.Include" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリの結果に含める関連オブジェクトを指定する式を設定します。</summary>
+        <value>クエリ結果に返すクエリ パスをコンマで区切って指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Include%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、具体的には照会されたオブジェクトと共に返されるオブジェクトとを定義するクエリ パスのコンマ区切りの一覧を指定します。 として個別に呼び出して、改変の有無、文字列内の各コンマ区切り値が渡される、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>のメソッド、<xref:System.Data.Objects.ObjectQuery%601>によって実行される、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]です。 このクエリによって規制データのソースである、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 <xref:System.Web.UI.WebControls.EntityDataSource.Include%2A>プロパティは、引数に適用される、<xref:System.Data.Objects.ObjectQuery%601>が実行される前にします。  
+  
+ 文字列が指定した、<xref:System.Web.UI.WebControls.EntityDataSource.Include%2A>プロパティに渡される文字列と同じ形式を使用して、<xref:System.Data.Objects.ObjectQuery%601.Include%2A>メソッドの<xref:System.Data.Objects.ObjectQuery%601>します。 クエリ パスを使用して、関連するオブジェクトを自動的にロードする方法の例については、次を参照してください。[する方法: 図形の結果にクエリ パスを使用して](http://msdn.microsoft.com/en-us/100bf7f5-00ba-4c17-8e27-7a8a14831093)です。  
+  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource.Include%2A>クエリ パスを指定するプロパティを使用では、関連エンティティのプロパティは読み取り専用のデータ バインディングにのみ使用できます。 関連オブジェクトが明示的にクエリ パスに含まれていない場合、データ バインディングのプロパティ記述子を利用できますが、プロパティ自体は、null 値を返します。 この場合、その値を表示する関連オブジェクトを明示的に読み込む必要があります。 詳細については、次を参照してください。[関連オブジェクトの読み込み](http://msdn.microsoft.com/en-us/452347d2-7b3b-44cd-9001-231299a28cb1)です。  
+  
+   
+  
+## Examples  
+ 次の XML マークアップを返すクエリ パスを定義する`SalesOrderHeader`に返されたオブジェクトが関連する`Contact`オブジェクト。 各`SalesOrderHeader`、関連する`SalesOrderDetail`と`Address`オブジェクトも返されます。  
+  
+```  
+<asp:EntityDataSource ID="ContactDataSource" runat="server"   
+    AutoGenerateWhereClause="True" ConnectionString="name=AdventureWorksEntities"   
+    DefaultContainerName="AdventureWorksEntities" EnableDelete="True"   
+    EnableInsert="True" EnableUpdate="True" EntitySetName="Contact"   
+    Include="SalesOrderHeader.SalesOrderDetail, SalesOrderHeader.Address">  
+    <WhereParameters>  
+        <asp:ControlParameter ControlID="customerId" Name="ContactID"   
+            PropertyName="Text" />  
+    </WhereParameters>  
+</asp:EntityDataSource>  
+```  
+  
+ 前の XML の例は、次と同じ<xref:System.Data.Objects.ObjectQuery%601>という`customers`:  
+  
+```  
+ObjectQuery<Contact> customers =  
+      context.Contact  
+       .Where("it.ContactID = @ContactID",  
+         new ObjectParameter("ContactID", customerId))  
+        .Include("SalesOrderHeader.SalesOrderDetail")  
+        .Include("SalesOrderHeader.Address");  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inserted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Inserted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Inserted" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Inserted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースで新しいオブジェクトを作成した後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Inserted>イベントは、データ ソースに追加するオブジェクトが作成されるとき、またはデータ ソースにオブジェクトのデータが保存されるときにエラーが発生した場合に発生します。 <xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs>オブジェクトが追加されたオブジェクトにアクセスするために使用します。  
+  
+ このオブジェクトのプロパティは、データ ソースが生成した値も含めて、データ ソースから返される値を格納します。  
+  
+ データ ソースにオブジェクトが保存されるときにエラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Inserted>イベントが発生し、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>です。 例外を処理する場合、 <xref:System.Web.UI.WebControls.EntityDataSource.Inserted> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inserting">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Inserting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Inserting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Inserting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースに新しいオブジェクトが保存される前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Inserting>イベントは、データ ソースに新しいオブジェクトが保存される前に発生します。 <xref:System.Web.UI.WebControls.EntityDataSource.Inserting>イベントでは、変更、オブジェクトが追加されていることを確認または別のオブジェクトを追加、または、操作を取り消すことができます。 追加するオブジェクトにアクセスすることができます、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクト。 正しいエンティティの種類を設定するため、ユーザーは、別のオブジェクトを指定する場合など、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>プロパティです。  
+  
+ セットをオブジェクトの追加を停止する、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトを`true`です。  
+  
+ 新しいオブジェクトを作成するときにエラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Inserting>イベントが発生し、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>です。  
+  
+ 例外を処理するときに、 <xref:System.Web.UI.WebControls.EntityDataSource.Inserting> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection InsertParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection InsertParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.InsertParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入操作中に使用されるパラメーターのコレクションを取得します。</summary>
+        <value>挿入操作中に使用されるパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 4 以降を対象とする web アプリケーションでは、プロパティの値は、ビュー ステートに格納され、ポストバック間で自動的に維持します。 ASP.NET 4.5 を対象とする web アプリケーションのプロパティ値がビュー状態で格納されないと、HTTP 要求ごとに値を設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadControlState">
+      <MemberSignature Language="C#" Value="protected override void LoadControlState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadControlState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.LoadControlState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />状態情報を格納します。</param>
+        <summary>永続化する必要がある <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールのプロパティの状態を読み込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnInit">
+      <MemberSignature Language="C#" Value="protected override void OnInit (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnInit(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.OnInit(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary>追加、<see cref="E:System.Web.UI.Page.LoadComplete" />イベント ハンドラーを<see cref="T:System.Web.UI.Page" />が含まれるコントロール、<see cref="T:System.Web.UI.WebControls.EntityDataSource" />コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUnload">
+      <MemberSignature Language="C#" Value="protected override void OnUnload (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnUnload(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.OnUnload(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary><see cref="E:System.Web.UI.Control.Unload" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrderBy">
+      <MemberSignature Language="C#" Value="public string OrderBy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OrderBy" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.OrderBy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリの結果を並べ替える方法を指定する Entity SQL 式を設定します。</summary>
+        <value>ORDER BY 句。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、Entity SQL クエリの式を表す文字列です。 この文字列が渡される、改変の有無に、<xref:System.Data.Objects.ObjectQuery%601>によって実行される、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]です。 このクエリによって規制データのソースである、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 文字列が指定した、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>プロパティに渡される文字列と同じ形式を使用して、<xref:System.Data.Objects.ObjectQuery%601.OrderBy%2A>メソッドの<xref:System.Data.Objects.ObjectQuery%601>します。 クエリ結果の順序付けに句を使用する方法の例については、次を参照してください。[する方法: データの並べ替え](http://msdn.microsoft.com/en-us/c05f2506-cb9d-4ebc-822b-300042ad53e7)です。  
+  
+   
+  
+## Examples  
+ XML マークアップを .aspx ファイルで、次の例では、コントロールから値を取得し、パラメーターとして渡します、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeader" runat="server"   
+  ConnectionString="name=AdventureWorksEntities"   
+  DefaultContainerName="AdventureWorksEntities" EnableDelete="True"   
+  EnableInsert="True" EnableUpdate="True" EntitySetName="SalesOrderHeader"   
+  EntityTypeFilter="" OrderBy="it.TotalDue DESC" Select=""   
+   Where="it.OnlineOrderFlag = TRUE AND it.TotalDue &gt; @ordercost">  
+  <WhereParameters>  
+    <asp:ControlParameter ControlID="costLimit" DbType="Int32"   
+      DefaultValue="2500" Name="ordercost" PropertyName="Text" />  
+  </WhereParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 前の XML の例は、次に相当<xref:System.Data.Objects.ObjectQuery%601>という`onlineOrders`:  
+  
+```  
+ObjectQuery<SalesOrderHeader> onlineOrders =  
+      context.SalesOrderHeader  
+       .Where("it.OnlineOrderFlag = TRUE AND it.TotalDue > @ordercost",  
+         new ObjectParameter("ordercost", orderCost))  
+        .OrderBy("it.TotalDue DESC");  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrderByParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection OrderByParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection OrderByParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.OrderByParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ORDER BY 句の作成に使用されるパラメーターのコレクションを取得します。</summary>
+        <value>ORDER BY 句の作成に使用するパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールに設定されている`true`、コントロールでのパラメーターからの ORDER BY 句を自動的に生成されます、<xref:System.Web.UI.WebControls.ParameterCollection>に割り当てられている、<xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters%2A>プロパティです。 これを ORDER BY 句を明示的に割り当てる必要がある、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>プロパティです。 ORDER BY 句の構築、<xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters%2A>プロパティでは、する必要があります、<xref:System.Web.UI.WebControls.Parameter.Name%2A>コレクション内のパラメーターのプロパティは、クエリから返される項目の 1 つのプロパティを識別します。  
+  
+   
+  
+## Examples  
+ 次の例は、自動的に、ORDER BY 句を生成しの値を使用して、`orderByDropDownList`パラメーターの値を設定します。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeader" runat="server"   
+    ConnectionString="name=AdventureWorksEntities"  
+    DefaultContainerName="AdventureWorksEntities" EnableDelete="True"   
+    EnableInsert="True" EnableUpdate="True" EntitySetName="SalesOrderHeader"   
+    Where="it.OnlineOrderFlag = true" AutoGenerateOrderByClause="True">  
+    <OrderByParameters>  
+        <asp:ControlParameter Name="OrderByParameter"   
+            ControlID="orderByDropDownList" Type="String" />  
+    </OrderByParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryCreated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.QueryCreatedEventArgs&gt; QueryCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.QueryCreatedEventArgs&gt; QueryCreated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.QueryCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.QueryCreatedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールの構成時に指定された Entity SQL クエリを <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> が作成した後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、次を参照してください。 [EntityDataSource する LINQ クエリを適用する](http://msdn.microsoft.com/en-us/cb70db56-9f9d-4b79-98fe-f03dd5ad1e38)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveControlState">
+      <MemberSignature Language="C#" Value="protected override object SaveControlState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object SaveControlState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.SaveControlState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>永続化する必要がある <see cref="T:System.Web.UI.WebControls.EntityDataSource" /> コントロールのプロパティの状態を保存します。</summary>
+        <returns><see cref="T:System.Object" />状態情報を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public string Select { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Select" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.Select" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリの結果に含めるプロパティを定義するプロジェクションを取得または設定します。</summary>
+        <value>ORDER BY 句の作成に使用するパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールには、Entity SQL クエリのステートメントを表す文字列が含まれています。 これにより、指定されたクエリによって返されるオブジェクトのプロパティのセットを射影することができます。  
+  
+ この文字列が渡される、改変の有無に、<xref:System.Data.Objects.ObjectQuery%601>によって実行される、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]です。 このクエリによって規制データのソースである、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 文字列が指定した、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>プロパティに渡される文字列と同じ形式を使用して、<xref:System.Data.Objects.ObjectQuery%601.Select%2A>メソッドの<xref:System.Data.Objects.ObjectQuery%601>します。 クエリの射影を定義する句を使用する方法の例については、次を参照してください。[する方法: そのを返します。 匿名型のオブジェクト クエリを実行する](http://msdn.microsoft.com/en-us/3b264025-e911-4d73-90ce-992d2b9d189d)です。  
+  
+ 射影されたデータに対する更新はサポートされていません。 つまり、使用すると、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>投影法、バインド、バインドされたデータを指定するプロパティが更新をサポートしません。  
+  
+ ページングが有効になっていると、射影を定義するときに、結果の並べ替えに使用するプロパティを定義します。 つまり、when を設定する、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>プロパティを射影を定義して<xref:System.Web.UI.WebControls.EntityDataSource.AutoPage%2A>'éý'`true`も設定する必要があります、<xref:System.Web.UI.WebControls.EntityDataSource.OrderBy%2A>順序を定義または設定するプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateOrderByClause%2A>プロパティを`true`に ORDER BY パラメーターを追加し、<xref:System.Web.UI.WebControls.EntityDataSource.OrderByParameters%2A>コレクション。  
+  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>場合は設定できません<xref:System.Web.UI.WebControls.EntityDataSource.EnableUpdate%2A>、 <xref:System.Web.UI.WebControls.EntityDataSource.EnableDelete%2A>、または<xref:System.Web.UI.WebControls.EntityDataSource.EnableInsert%2A>を有効にします。  
+  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>プロパティの射影を返すクエリに設定されている (たとえば、 `SELECT p.ProductID, p. Name FROM AdventureWorksEntities.Products AS p`)、<xref:System.Data.Common.DbDataRecord>が返されます。  
+  
+   
+  
+## Examples  
+ 次の XML マークアップを使用して、 <xref:System.Web.UI.WebControls.EntityDataSource.Select%2A> 6 つの製品の種類のプロパティを投影法を指定するプロパティ。  
+  
+```  
+<asp:EntityDataSource ID="ProductDataSource" runat="server"   
+    ConnectionString="name=AdventureWorksEntities"   
+    DefaultContainerName="AdventureWorksEntities"   
+    EntitySetName="Product" OrderBy="it.[ProductID]"   
+    Select="it.[ProductID], it.[Name], it.[ListPrice],   
+    it.[Size], it.[Style], it.[Weight]">  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 前の XML の例は、次と同じ<xref:System.Data.Objects.ObjectQuery%601>という`products`:  
+  
+```  
+ObjectQuery<Product> products = context.Product  
+    .Select(it.[ProductID], it.[Name], it.[ListPrice],   
+      it.[Size], it.[Style], it.[Weight])  
+    .OrderBy("it.[ProductID]");  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.EntityDataSource.Select" /> プロパティでクエリ プロジェクションおよび <see cref="P:System.Web.UI.WebControls.EntityDataSource.EnableUpdate" /> の値を指定する場合、<see cref="P:System.Web.UI.WebControls.EntityDataSource.EnableDelete" />、または <see cref="P:System.Web.UI.WebControls.EntityDataSource.EnableInsert" /> は <see langword="true" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Selected">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs&gt; Selected;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs&gt; Selected" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Selected" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリの実行後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Selected>イベントは、クエリが実行され、データが返された後に発生します。 クエリの準備または実行中にエラーが発生した場合にも発生します。  
+  
+ <xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.Results%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs>オブジェクトが含まれています、<xref:System.Collections.IEnumerable>クエリから返されるオブジェクトの。 処理、<xref:System.Web.UI.WebControls.EntityDataSource.Selected>イベントを取得し、保存するには、内のエンティティが返されます、<xref:System.Web.UI.Control.ViewState%2A>です。 このページ上のオブジェクトの変更を保持するの操作を行います。  
+  
+ <xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.TotalRowCount%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs>オブジェクトは、ページングにデータ バインドされたコントロールによって渡された値に関係なく、すべてのページにオブジェクトの合計数を示します。 <xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.TotalRowCount%2A>のみ取得場合は、データ バインド コントロールで必要な場合などページングが有効になっています。  
+  
+ クエリが準備または実行するとときに、エラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Selected>のイベントが発生、<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>、および<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.Results%2A>プロパティに設定されている`null`です。 例外を処理する場合、 <xref:System.Web.UI.WebControls.EntityDataSource.Selected> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceSelectedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Selecting">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceSelectingEventArgs&gt; Selecting;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceSelectingEventArgs&gt; Selecting" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Selecting" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceSelectingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリが作成され、実行前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Selecting>イベントは、クエリが作成され、実行前に発生します。 処理、<xref:System.Web.UI.WebControls.EntityDataSource.Selecting>の構成を変更するイベント、<xref:System.Web.UI.WebControls.EntityDataSource>またはの読み取りや、クエリを構築および実行する前に、データ バインド コントロールから引数を変更します。  
+  
+ 設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceSelectingEventArgs>オブジェクトを`true`クエリを取り消します。 SELECT 操作が取り消されたときに、データ バインド コントロールにデータは返されません。  
+  
+ 場合`AllowPaging`に設定されている`true`データ バインド コントロールで、<xref:System.Web.UI.WebControls.EntityDataSource>呼び出します、<xref:System.Data.Objects.ObjectQuery%601.Skip%2A>と<xref:System.Data.Objects.ObjectQuery%601.Top%2A>でクエリ ビルダー メソッド<xref:System.Data.Objects.ObjectQuery%601>の値を使用して、<xref:System.Web.UI.DataSourceSelectArguments.StartRowIndex%2A>と<xref:System.Web.UI.DataSourceSelectArguments.MaximumRows%2A>のプロパティ、<xref:System.Web.UI.DataSourceSelectArguments>オブジェクト。  
+  
+ 場合`AllowSorting`に設定されている`true`データ バインド コントロールで、<xref:System.Web.UI.DataSourceSelectArguments.SortExpression%2A>の<xref:System.Web.UI.DataSourceSelectArguments>オブジェクトを変更するときに、<xref:System.Web.UI.WebControls.EntityDataSource.Selecting>イベントを処理します。 場所などの他のクエリ演算子または ORDER BY、ページのマークアップで指定されている後に適用されます、<xref:System.Web.UI.WebControls.EntityDataSource.Selecting>イベントが発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection SelectParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection SelectParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.SelectParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>射影を作成するために使用されるパラメーターのコレクションを取得します。</summary>
+        <value>射影の作成に使用されるパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に、<xref:System.Data.Objects.ObjectQuery%601.Select%2A>のメソッド、<xref:System.Data.Objects.ObjectQuery%601>クラス、パラメーターは、によって定義されるプロジェクションに渡すことができます、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>プロパティです。 <xref:System.Web.UI.WebControls.EntityDataSource.SelectParameters%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールを指定します、<xref:System.Web.UI.WebControls.ParameterCollection>クエリの SELECT ステートメントに指定するパラメーターを格納します。 <xref:System.Web.UI.WebControls.EntityDataSource.SelectParameters%2A>プロパティでは、名前付き引数を使用して、用意されている文字列で指定されているパラメーターを参照してください、<xref:System.Web.UI.WebControls.EntityDataSource.Select%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.SelectParameters%2A>プロパティが設定されていない、パラメーターの置換は行われません。 先頭に、SELECT ステートメント内のすべてのパラメーター名、"`@"`シンボル`,`一致する名前を指定する必要があります、<xref:System.Web.UI.WebControls.ParameterCollection>です。 パラメーターに null 値が許可されていません、<xref:System.Web.UI.WebControls.ParameterCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreOriginalValuesInViewState">
+      <MemberSignature Language="C#" Value="public bool StoreOriginalValuesInViewState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StoreOriginalValuesInViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.StoreOriginalValuesInViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソースからデータをデータが変更されていないことを別のプロセスが更新または削除する前に確認するビュー ステートに保存するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />値がビューに格納する場合は、次の状態です。それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更を追跡するときに更新および削除操作が有効になって、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールで読み込まれたオブジェクトの元の値に関する情報を格納する必要があります、<xref:System.Web.UI.PageStatePersister.ControlState%2A>です。 ビュー ステートにこの必要な情報を格納すると、ページ サイズが増加します。 ビュー ステートに元の値を格納する設定を無効にする、<xref:System.Web.UI.WebControls.EntityDataSource.StoreOriginalValuesInViewState%2A>プロパティを`false`です。 これを行う場合、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]更新されたオブジェクトの同時実行を追跡することはできません。 詳細については、次を参照してください。[更新データ (EntityDataSource)](http://msdn.microsoft.com/en-us/ca153eec-6817-4c1d-b262-efd6d35b0246)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.WebControls.IQueryableDataSource.RaiseViewChanged">
+      <MemberSignature Language="C#" Value="void IQueryableDataSource.RaiseViewChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.WebControls.IQueryableDataSource.RaiseViewChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.System#Web#UI#WebControls#IQueryableDataSource#RaiseViewChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パラメーター オブジェクトが変更されており、データ バインド コントロールを更新する必要があるデータ バインド コントロールに通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected override void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.EntityDataSource.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サーバー コントロールにビュー ステートの変更の追跡すると、サーバー コントロールの保存できるため<see cref="T:System.Web.UI.StateBag" />オブジェクト。 このオブジェクトは、<see cref="P:System.Web.UI.Control.ViewState" /> プロパティによってアクセスできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.Web.UI.Control.TrackViewState%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Updated">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Updated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt; Updated" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Updated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトへの変更が永続化されていないデータ ソースにした後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Updated>イベントは、データ ソースに変更されたオブジェクトへの変更が永続化される場合、または変更を適用するときにエラーが発生した場合に発生します。 <xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs>オブジェクトが変更されたオブジェクトにアクセスするために使用します。  
+  
+ このオブジェクトのプロパティでは、サーバーで生成された値も含めて、データ ソースから返される値を格納します。  
+  
+ 変更がデータ ソースに保存されるときにエラーが発生した場合、<xref:System.Web.UI.WebControls.EntityDataSource.Updated>イベントが発生し、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>です。 例外を処理する場合、 <xref:System.Web.UI.WebControls.EntityDataSource.Updated> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangedEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection UpdateParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection UpdateParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.UpdateParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作中に使用されるパラメーターのコレクションを取得します。</summary>
+        <value>更新操作中に使用されるパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET 4 以降を対象とする web アプリケーションでは、プロパティの値は、ビュー ステートに格納され、ポストバック間で自動的に維持します。 ASP.NET 4.5 を対象とする web アプリケーションのプロパティ値がビュー状態で格納されないと、HTTP 要求ごとに値を設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Updating">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Updating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt; Updating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.EntityDataSource.Updating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.UI.WebControls.EntityDataSourceChangingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクトへの変更がデータ ソースに保存される前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Updating>オブジェクトのプロパティへの変更がデータ ソースに保存される前にイベントが発生します。 <xref:System.Web.UI.WebControls.EntityDataSource.Updating>イベントでは、変更やオブジェクトへの変更を確認、別のオブジェクトを指定または変更が保存される前に、操作を取り消すことができます。 変更されたオブジェクトにアクセスすることができます、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクト。 正しいエンティティの種類を設定するため、ユーザーは、別のオブジェクトを指定する場合など、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Entity%2A>プロパティです。  
+  
+ 処理、<xref:System.Web.UI.WebControls.EntityDataSource.Updating>イベント必要がありますを変更する場合、<xref:System.Data.Objects.ObjectStateEntry>の同時実行制御の別の元の値を設定するオブジェクト。 詳細については、次を参照してください。[変更を保存および管理する同時実行](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)です。  
+  
+ 変更を停止する、永続化してから、設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトを`true`です。  
+  
+ オブジェクトをインスタンス化するときにエラーが発生した場合プロパティの変更、または、<xref:System.Web.UI.WebControls.EntityDataSource.Updating>イベントが発生し、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.Exception%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs>オブジェクトが設定されているに返された<xref:System.Exception>です。  
+  
+ 例外を処理するときに、 <xref:System.Web.UI.WebControls.EntityDataSource.Updating> 、イベント ハンドラーを設定、<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>プロパティを`true`です。 これは、再発生から例外を防ぎます。 値を指定すると`false`の<xref:System.Web.UI.WebControls.EntityDataSourceChangingEventArgs.ExceptionHandled%2A>、プロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>再度、例外を発生させます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Where">
+      <MemberSignature Language="C#" Value="public string Where { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Where" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.Where" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクエリの結果をフィルター処理する方法を指定する Entity SQL 式を設定します。</summary>
+        <value>WHERE 句です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールは、Entity SQL クエリの述語である句を表す文字列です。 この文字列が渡される、改変の有無に、<xref:System.Data.Objects.ObjectQuery%601>によって実行される、[!INCLUDE[adonet_ef](~/includes/adonet-ef-md.md)]です。 このクエリによって規制データのソースである、<xref:System.Web.UI.WebControls.EntityDataSource>コントロール。 文字列が指定した、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティに渡される文字列と同じ形式を使用して、<xref:System.Data.Objects.ObjectQuery%601.Where%2A>メソッドの<xref:System.Data.Objects.ObjectQuery%601>します。 句を使用してクエリをフィルター処理する方法の例については、次を参照してください。[する方法: データのフィルター選択](http://msdn.microsoft.com/en-us/776f8556-3350-4572-804a-b1513515c1b2)です。  
+  
+ クエリ結果をフィルター処理、エンティティ型プロパティを式が等しいか調査して、情報を参照してください。、<xref:System.Web.UI.WebControls.EntityDataSource.AutoGenerateWhereClause%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ XML マークアップを .aspx ファイルで、次の例では、コントロールから値を取得し、パラメーターとして渡します、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeader" runat="server"   
+  ConnectionString="name=AdventureWorksEntities"   
+  DefaultContainerName="AdventureWorksEntities" EnableDelete="True"   
+  EnableInsert="True" EnableUpdate="True" EntitySetName="SalesOrderHeader"   
+  EntityTypeFilter="" OrderBy="it.TotalDue DESC" Select=""   
+   Where="it.OnlineOrderFlag = TRUE AND it.TotalDue &gt; @ordercost">  
+  <WhereParameters>  
+    <asp:ControlParameter ControlID="costLimit" DbType="Int32"   
+      DefaultValue="2500" Name="ordercost" PropertyName="Text" />  
+  </WhereParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 前の XML の例は、次と同じ<xref:System.Data.Objects.ObjectQuery%601>という`onlineOrders`:  
+  
+```  
+ObjectQuery<SalesOrderHeader> onlineOrders =  
+      context.SalesOrderHeader  
+       .Where("it.OnlineOrderFlag = TRUE AND it.TotalDue > @ordercost",  
+         new ObjectParameter("ordercost", orderCost))  
+        .OrderBy("it.TotalDue DESC");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WhereParameters">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.ParameterCollection WhereParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ParameterCollection WhereParameters" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.EntityDataSource.WhereParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ParameterCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WHERE 句の作成に使用されるパラメーターのコレクションを取得します。</summary>
+        <value>WHERE 句の作成に使用されるパラメーター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に、<xref:System.Data.Objects.ObjectQuery%601.Where%2A>のメソッド、<xref:System.Data.Objects.ObjectQuery%601>クラス、パラメーターを渡す場合、述語に割り当てられている、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。 <xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters%2A>のプロパティ、<xref:System.Web.UI.WebControls.EntityDataSource>コントロールを指定します、<xref:System.Web.UI.WebControls.ParameterCollection>クエリの WHERE 句に指定するパラメーターを格納します。 <xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters%2A>プロパティでは、名前付き引数を使用して、用意されている文字列で指定されているパラメーターを参照してください、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.EntityDataSource.WhereParameters%2A>プロパティが設定されていない、パラメーターの置換は行われません。 記号の前に、WHERE 句内のすべてのパラメーター名"`@"`一致する名前を指定する必要があります、<xref:System.Web.UI.WebControls.ParameterCollection>です。 パラメーターに null 値が許可されていません、<xref:System.Web.UI.WebControls.ParameterCollection>です。  
+  
+   
+  
+## Examples  
+ XML マークアップを .aspx ファイルで、次の例では、コントロールから値を取得し、パラメーターとして渡します、<xref:System.Web.UI.WebControls.EntityDataSource.Where%2A>プロパティです。  
+  
+```  
+<asp:EntityDataSource ID="SalesOrderHeader" runat="server"   
+  ConnectionString="name=AdventureWorksEntities"   
+  DefaultContainerName="AdventureWorksEntities" EnableDelete="True"   
+  EnableInsert="True" EnableUpdate="True" EntitySetName="SalesOrderHeader"   
+  EntityTypeFilter="" OrderBy="it.TotalDue DESC" Select=""   
+   Where="it.OnlineOrderFlag = TRUE AND it.TotalDue &gt; @ordercost">  
+  <WhereParameters>  
+    <asp:ControlParameter ControlID="costLimit" DbType="Int32"   
+      DefaultValue="2500" Name="ordercost" PropertyName="Text" />  
+  </WhereParameters>  
+</asp:EntityDataSource>  
+  
+```  
+  
+ 前の XML の例は、次と同じ<xref:System.Data.Objects.ObjectQuery%601>という`onlineOrders`:  
+  
+```  
+ObjectQuery<SalesOrderHeader> onlineOrders =  
+      context.SalesOrderHeader  
+       .Where("it.OnlineOrderFlag = TRUE AND it.TotalDue > @ordercost",  
+         new ObjectParameter("ordercost", orderCost))  
+        .OrderBy("it.TotalDue DESC");  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

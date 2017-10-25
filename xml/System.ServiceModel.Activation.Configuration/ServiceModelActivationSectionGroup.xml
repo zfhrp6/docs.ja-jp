@@ -1,0 +1,124 @@
+<Type Name="ServiceModelActivationSectionGroup" FullName="System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup">
+  <TypeSignature Language="C#" Value="public sealed class ServiceModelActivationSectionGroup : System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceModelActivationSectionGroup extends System.Configuration.ConfigurationSectionGroup" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSectionGroup</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SMSvcHost.exe ツールの構成セクションを格納します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、SMSvcHost.exe ツールのさまざまな構成要素をカプセル化します。 具体的には、SMSvcHost.exe.config ファイルに構成できる構成要素を表します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceModelActivationSectionGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Diagnostics">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Activation.Configuration.DiagnosticSection Diagnostics { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Activation.Configuration.DiagnosticSection Diagnostics" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.Diagnostics" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activation.Configuration.DiagnosticSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>診断構成セクションを取得します。</summary>
+        <value>診断構成セクションの名前を格納している <see cref="T:System.ServiceModel.Activation.Configuration.DiagnosticSection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSectionGroup">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup GetSectionGroup (System.Configuration.Configuration config);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup GetSectionGroup(class System.Configuration.Configuration config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.GetSectionGroup(System.Configuration.Configuration)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="config" Type="System.Configuration.Configuration" />
+      </Parameters>
+      <Docs>
+        <param name="config">構成ファイルを表す <see cref="T:System.Configuration.Configuration" />。</param>
+        <summary>指定した構成ファイルから <see langword="System.ServiceModel.Activation" /> 構成セクション グループを取得します。</summary>
+        <returns>構成ファイルの <see cref="T:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup" /> 設定を表す <see langword="System.ServiceModel.Activation" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、構成ファイルからアクティベーション構成設定を抽出できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetPipe">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Activation.Configuration.NetPipeSection NetPipe { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Activation.Configuration.NetPipeSection NetPipe" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.NetPipe" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activation.Configuration.NetPipeSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NetPipeActivator 共有サービスの構成設定を指定します。</summary>
+        <value>NetPipeActivator 共有サービスの構成設定を格納している <see cref="T:System.ServiceModel.Activation.Configuration.NetPipeSection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NetTcp">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Activation.Configuration.NetTcpSection NetTcp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Activation.Configuration.NetTcpSection NetTcp" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Activation.Configuration.ServiceModelActivationSectionGroup.NetTcp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Activation.Configuration.NetTcpSection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>NetTcpPortSharing 共有サービスの構成設定を取得します。</summary>
+        <value>NetTcpPortSharing 共有サービスの構成設定を格納している <see cref="T:System.ServiceModel.Activation.Configuration.NetTcpSection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,98 @@
+<Type Name="IChannel" FullName="System.ServiceModel.Channels.IChannel">
+  <TypeSignature Language="C#" Value="public interface IChannel : System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannel implements class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.IChannel" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.ICommunicationObject</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>すべてのチャネル オブジェクトが実装する必要がある基本インターフェイスを定義します。 すべての通信オブジェクトが共有するステート マシン インターフェイスを実装し、チャネル スタックからオブジェクトを取得するためのメソッドを実装する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネルは、<xref:System.ServiceModel.ICommunicationObject> インターフェイスで定義されているステート マシンのコントラクトを満たす必要があります。  
+  
+ <xref:System.ServiceModel.Channels.IChannel> インターフェイスは、  
+  
+ <xref:System.ServiceModel.Channels.IChannel.GetProperty%2A> メソッドを <xref:System.ServiceModel.ICommunicationObject> インターフェイスに追加します。 このメソッドは、スタック内でプロパティが存在する場所に関係なく、チャネル スタックからプロパティを取得するためのメカニズムを提供します。 メソッド名に含まれる "property" という言葉は、スタック内のいずれかのチャネルに属するなんらかの情報を指します。 そのプロパティに対する CLR 型は、`T` によって決まります。 この取得メソッドは、チャネル ファクトリやチャネル リスナーに対しても使用できます。  
+  
+ `IChannel` は、基本的なメッセージ交換パターンに関係する、以下の各チャネル インターフェイスによって継承されます。  
+  
+-   メッセージ受信用の <xref:System.ServiceModel.Channels.IInputChannel>。  
+  
+-   メッセージ送信用の <xref:System.ServiceModel.Channels.IOutputChannel>。  
+  
+-   要求送信用の <xref:System.ServiceModel.Channels.IRequestChannel>。  
+  
+-   応答送信用の <xref:System.ServiceModel.Channels.IReplyChannel>。  
+  
+-   双方向メッセージング用の <xref:System.ServiceModel.Channels.IDuplexChannel>。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetProperty&lt;T&gt; () where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !!T GetProperty&lt;class T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.IChannel.GetProperty``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">メソッドが照会している、型指定されたオブジェクト。</typeparam>
+        <summary>チャネル スタックの適切な層から、要求のあった型指定されたオブジェクト (ある場合) を返します。</summary>
+        <returns>要求される型指定されたオブジェクト <paramref name="T" /> がある場合は、そのオブジェクト。ない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これを使用して、チャネル スタックの適切な層のプロパティの設定、ステータスの取得を行うために、インターフェイスなどの型指定されたオブジェクトを要求します。 その層が要求されたオブジェクトを返せる場合は、オブジェクトを返します。 それ以外の場合は、スタック内の次の層に呼び出しを代行させます。 スタックの最下位に達しても要求されたオブジェクトをサポートするチャネル層がない場合、メソッドは、`null` を返します。  
+  
+   
+  
+## Examples  
+ 次の例を使用して、スタック内の呼び出しを代行させるチャネルでこのプロパティを実装する方法を示しています、`InnerChannel`このチャネルの内部チャネルを取得するプロパティです。  
+  
+ [!code-csharp[S_UEIChannel#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ueichannel/cs/generatedclient.cs#0)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

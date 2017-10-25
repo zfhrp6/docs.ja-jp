@@ -1,0 +1,1703 @@
+<Type Name="GC" FullName="System.GC">
+  <TypeSignature Language="C#" Value="public static class GC" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit GC extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.GC" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>未使用メモリを自動的に収集するサービスであるシステム ガベージ コレクターを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクターは、割り当てとマネージ メモリの解放を制御する共通言語ランタイム コンポーネントです。 このクラスのメソッドは、オブジェクトとオブジェクトによって割り当てられたリソースが解放されるときに、ガベージ コレクションが実行されるときに影響します。 このクラスのプロパティは、システムおよび年齢のカテゴリ、またはオブジェクトに割り当てられたメモリの生成で使用可能なメモリの合計量に関する情報を提供します。  
+  
+ ガベージ コレクターは、追跡し、マネージ メモリに割り当てられたオブジェクトを解放します。 定期的に、ガベージ コレクターは、対象の有効な参照がないオブジェクトに割り当てられたメモリを解放するガベージ コレクションを実行します。 ガベージ コレクションは、利用可能なメモリを使用してメモリの要求を満たすできないときに自動的に行われます。 また、アプリケーションが使用してガベージ コレクションを強制することができます、<xref:System.GC.Collect%2A>メソッドです。  
+  
+ ガベージ コレクションは、次の手順で構成されます。  
+  
+1.  ガベージ コレクターはマネージ コードで参照されている管理対象のオブジェクトを検索します。  
+  
+2.  ガベージ コレクターが参照されていないオブジェクトの終了しようとするとします。  
+  
+3.  ガベージ コレクターは、参照されていないオブジェクトを解放し、自らのメモリを解放します。  
+  
+ このトピックには、次のセクションがあります。  
+  
+ [ガベージ コレクターとアンマネージ リソース](#unmanaged)   
+ [オブジェクトのエージング機能と生成結果](#generations)   
+ [ガベージ コレクションを禁止します。](#NoGCRegion)  
+  
+<a name="unmanaged"></a>   
+## <a name="the-garbage-collector-and-unmanaged-resources"></a>ガベージ コレクターとアンマネージ リソース  
+ コレクション中に、ガベージ コレクターはオブジェクトを解放しませんマネージ コードで、オブジェクトへの 1 つまたは複数の参照を検出した場合。 ただし、ガベージ コレクターは、アンマネージ コードからオブジェクトへの参照では認識されませんし、これから明示的に禁止場合を除き、アンマネージ コードに排他的に使用されているオブジェクトを解放することがあります。 <xref:System.GC.KeepAlive%2A>メソッドは、ガベージ コレクターがアンマネージ コードでまだ使用されているオブジェクトを収集することを防止する機構を提供します。  
+  
+ 別に、マネージ メモリの割り当て、ガベージ コレクターの実装は、ファイル ハンドルやデータベース接続などのオブジェクトによって保持されているリソースに関する情報を保持しています。 型は、その型のインスタンスがクリアされる前に解放する必要がありますのあるアンマネージ リソースを使用しているときに、型はファイナライザーを実装できます。  
+  
+ ほとんどの場合、ファイナライザーはオーバーライドすることで、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドです。 ただし、デストラクター、のオーバーライドを有効にするコンパイラの実装 (C#) または C++ で記述された型<xref:System.Object.Finalize%2A?displayProperty=nameWithType>です。 ほとんどの場合、オブジェクトに、ファイナライザーがある場合、ガベージ コレクターでそのオブジェクトを解放する前に、 ただし、ガベージ コレクターはすべての状況でファイナライザーを呼び出す必要はありません。たとえば、<xref:System.GC.SuppressFinalize%2A>メソッドが呼び出されることを明示的にオブジェクトのファイナライザーを防止します。 また、ガベージ コレクターを特定のスレッドを使用して、オブジェクトの終了またはファイナライザーが相互に参照が、ガベージ コレクション用に使用できるオブジェクトに対して呼び出される順序を保証する必要はありません。  
+  
+ クラスに実装できる特定の時刻にリソースを解放する必要がありますのシナリオで、<xref:System.IDisposable>インターフェイスが含まれています、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>リソースの管理およびクリーンアップのタスクを実行するメソッド。 実装するクラス<xref:System.IDisposable.Dispose%2A>必要がありますを指定、クラス コントラクトの一部としてクラスのコンシューマーが、オブジェクトをクリーンアップするメソッドを呼び出す場合。 ガベージ コレクターは、既定では、呼び出しません、<xref:System.IDisposable.Dispose%2A>メソッドです。 ただし、の実装、<xref:System.IDisposable.Dispose%2A>メソッド メソッドを呼び出すことができます、<xref:System.GC>ガベージ コレクターの終了処理動作をカスタマイズするクラス。  
+  
+ オブジェクトの終了処理し、dispose パターンの詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。  
+  
+<a name="generations"></a>   
+## <a name="object-aging-and-generations"></a>オブジェクトのエージング機能と生成結果  
+ 共通言語ランタイムのガベージ コレクターには、世代を使用してオブジェクトの世代がサポートしています。 生成結果は、メモリ内のオブジェクトの相対的な有効期間の測定単位です。 世代番号、またはオブジェクトの経過期間は、オブジェクトが所属する生成を示します。 最近作成されたオブジェクトは新しいジェネレーションの一部であるいてオブジェクトの既に作成したアプリケーション ライフ サイクルよりも小さいジェネレーション番号になります。 最も新しいジェネレーションのオブジェクトでは、ジェネレーション 0 にします。 ガベージ コレクターのこの実装では、オブジェクトの 3 つの世代、ジェネレーション 0、1、および 2 をサポートします。 値を取得することができます、<xref:System.GC.MaxGeneration%2A>プロパティをシステムでサポートされている最大のジェネレーション番号を決定します。  
+  
+ オブジェクトの世代は、ガベージ コレクターがすべてのジェネレーションを評価するを必要とするのではなく、ジェネレーションの特定のセットでアプリケーションを対象のガベージ コレクションをできます。 オーバー ロードが、<xref:System.GC.Collect%2A>メソッドを含む、`generation`パラメーターを使用する最も古いジェネレーションのガベージ コレクション実行を指定します。  
+  
+<a name="NoGCRegion"></a>   
+## <a name="disallowing-garbage-collection"></a>ガベージ コレクションを禁止します。  
+ 以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、ガベージ コレクターは、GC 領域の無待機モードでガベージ コレクションによって低下アプリのパフォーマンスのクリティカル パスの実行中に使用できるをサポートしています。 GC 領域の無待機モードは、干渉なし、ガベージ コレクターから割り当て可能なメモリの量を指定することが必要です。 場合は、ランタイムは、そのメモリを割り当てることができます、ランタイムはない実行ガベージ コレクションのクリティカル パスにコードが実行中にします。  
+  
+ オーバー ロードのいずれかを呼び出していない GC 領域のクリティカル パスの先頭を定義する、<xref:System.GC.TryStartNoGCRegion%2A>です。 呼び出して、クリティカル パスの末尾を指定する、<xref:System.GC.EndNoGCRegion%2A>メソッドです。  
+  
+ 呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+   
+  
+## Examples  
+ 次の例では、いくつかの GC メソッドを使用して、生成と使用されていないオブジェクトのブロックのメモリ情報を取得し、コンソールに出力します。 使用されていないオブジェクトを収集し、され、結果として得られるメモリの合計が表示されます。  
+  
+ [!code-cpp[System.GC.Collect Int Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.gc.collect int example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Int Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect int example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Int Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect int example/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddMemoryPressure">
+      <MemberSignature Language="C#" Value="public static void AddMemoryPressure (long bytesAllocated);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMemoryPressure(int64 bytesAllocated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.AddMemoryPressure(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytesAllocated" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="bytesAllocated">割り当てられたアンマネージ メモリの増加量。</param>
+        <summary>アンマネージ メモリが大規模に割り当てられたため、ガベージ コレクションをスケジュールするときに考慮する必要があることが、ランタイムに通知されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクションのスケジュールを設定する時期を判断するには、ランタイムは考慮マネージ メモリの量が割り当てられます。 小規模のマネージ オブジェクトがアンマネージ メモリの消費量を割り当てる場合、ランタイムはマネージ メモリのみを考慮し、したがってガベージ コレクションのスケジュールの緊急度を過小評価します。 <xref:System.GC.AddMemoryPressure%2A>メソッドをシステム メモリの不足しているこの追加のランタイムに通知します。  
+  
+ パターンでは、最も簡単な使用方法、マネージ オブジェクト コンス トラクターで、アンマネージ メモリの割り当てし、解放で、`Dispose`または`Finalize`メソッドです。 呼び出す、 <xref:System.GC.AddMemoryPressure%2A> 、アンマネージ メモリの割り当て後にメソッドを呼び出すと、<xref:System.GC.RemoveMemoryPressure%2A>解放するとメソッド。  
+  
+ 呼び出すことができますをアンマネージ メモリの割り当てが変更された大幅にマネージ オブジェクトの有効期間中より複雑なシナリオで、<xref:System.GC.AddMemoryPressure%2A>と<xref:System.GC.RemoveMemoryPressure%2A>ランタイムに増分変更を通知するメソッド。  
+  
+> [!CAUTION]
+>  追加する負荷の量だけを削除することを確認する必要があります。 これに失敗すると、長期間にわたって実行されるアプリケーションでは、システムのパフォーマンスが低下することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bytesAllocated" /> が 0 以下です。  
+  
+ または  
+  
+ 32 ビット コンピューターで<paramref name="bytesAllocated" />よりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ガベージ コレクションの優先順位を操作するときに、アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelFullGCNotification">
+      <MemberSignature Language="C#" Value="public static void CancelFullGCNotification ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CancelFullGCNotification() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.CancelFullGCNotification" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクションの通知の登録をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、使用して登録されたガベージ コレクションの通知をキャンセル、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。 後続の呼び出しでパラメーター値のしきい値を調整する前にこのメソッドを呼び出すしなくても、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、ガベージ コレクションの登録をキャンセルします。 この例に示されている例の一部である、[ガベージ コレクションの通知](~/docs/standard/garbage-collection/notifications.md)トピックです。  
+  
+ [!code-cpp[GCNotification#7](~/samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#7)]
+ [!code-csharp[GCNotification#7](~/samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#7)]
+ [!code-vb[GCNotification#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">同時実行ガベージ コレクションが有効の場合、このメンバーは使用できません。 参照してください、 [ &lt;gcConcurrent&gt; ](~/docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)同時実行ガベージ コレクションを無効にする方法に関する情報は実行時設定します。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Collect">
+      <MemberSignature Language="C#" Value="public static void Collect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Collect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.Collect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのジェネレーションのガベージ コレクションを直ちに強制実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、アクセスできなくなっているすべてのメモリを解放しようとしてください。 すべてのジェネレーションのブロッキング ガベージ コレクションを実行します。  
+  
+ どのくらいの時間が長かった、メモリ内に関係なく、すべてのオブジェクトがコレクションの対象します。ただし、マネージ コードで参照されるオブジェクトが収集されません。 このメソッドを使用して、強制的に使用可能なメモリの最大量を解放しようとしてください。  
+  
+ 以降で、[!INCLUDE[net_v451](~/includes/net-v451-md.md)]を設定して、大きなオブジェクト ヒープ (LOH) を圧縮することができます、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>呼び出す前に、<xref:System.GC.Collect%2A>メソッドでは、次の例として示します。  
+  
+ [!code-csharp[System.Runtime.GCSettings#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.gcsettings/cs/lohcompactionmode1.cs#1)]
+ [!code-vb[System.Runtime.GCSettings#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.gcsettings/vb/lohcompactionmode1.vb#1)]  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.Collect%2A>メモリのすべてのジェネレーションのコレクションを実行するメソッド。 コードは、使用されていないオブジェクトの数を生成しを呼び出して、<xref:System.GC.Collect%2A>メモリから消去します。  
+  
+ [!code-cpp[System.GC.Collect Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.GC.Collect Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.Collect Example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.Collect Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collect">
+      <MemberSignature Language="C#" Value="public static void Collect (int generation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Collect(int32 generation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.Collect(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generation" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="generation">ガベージ コレクションを行うべき最も古いジェネレーションの番号。</param>
+        <summary>ジェネレーション 0 から指定ジェネレーションまでのガベージ コレクションを直ちに強制実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、アクセスできるメモリの解放を試みます。 ただし、このメソッドを使用していないわけでは、指定したジェネレーション内のすべてのアクセスできないメモリが解放されることです。  
+  
+ 世代番号のオブジェクトは、ガベージ コレクターによって収集されませんオブジェクトの世代が実装されている場合は、指定したジェネレーションよりも高い。 オブジェクトの世代が実装されていない場合、ガベージ コレクターは、ガベージ コレクション中にすべてのオブジェクトを考慮します。  
+  
+ 使用して、<xref:System.GC.MaxGeneration%2A>の最大有効値を決定するプロパティ、`generation`パラメーター。  
+  
+ すべてのオブジェクトの世代に関係なく、ガベージ コレクターには、このパラメーターをとらないメソッドのバージョンを使用します。 に基づいてオブジェクトの再利用、ガベージ コレクターを使用して、<xref:System.GCCollectionMode>設定を使用して、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.Collect%2A>メモリの個々 のレイヤーのコレクションを実行するメソッド。 コードは、使用されていないオブジェクトの数を生成しを呼び出して、<xref:System.GC.Collect%2A>メモリから消去します。  
+  
+ [!code-cpp[System.GC.Collect Int Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.gc.collect int example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Int Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect int example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Int Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect int example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="generation" /> が無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Collect">
+      <MemberSignature Language="C#" Value="public static void Collect (int generation, GCCollectionMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Collect(int32 generation, valuetype System.GCCollectionMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.Collect(System.Int32,System.GCCollectionMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generation" Type="System.Int32" />
+        <Parameter Name="mode" Type="System.GCCollectionMode" />
+      </Parameters>
+      <Docs>
+        <param name="generation">ガベージ コレクションを行うべき最も古いジェネレーションの番号。</param>
+        <param name="mode">ガベージ コレクションが強制実行になっている (<see cref="F:System.GCCollectionMode.Default" /> または <see cref="F:System.GCCollectionMode.Forced" />) か、最適化になっている (<see cref="F:System.GCCollectionMode.Optimized" />) かを示す列挙値。</param>
+        <summary><see cref="T:System.GCCollectionMode" /> 値によって指定したタイミングで、ジェネレーション 0 から指定ジェネレーションまでのガベージ コレクションを強制的に実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`mode`パラメーターを指定するかどうかガベージ コレクションを実行するのみか、すぐに、時間はオブジェクトの再利用するのに最適です。 このメソッドを使用しても、指定したジェネレーション内のすべてのアクセスできないメモリが解放されることとは限りません。  
+  
+ アプリケーションで重要な期間中にガベージ コレクションの割り込みの動作を調整するには<xref:System.Runtime.GCSettings.LatencyMode%2A>プロパティです。  
+  
+ ガベージ コレクターはジェネレーションの番号で指定されたよりも高いのオブジェクトを収集しません、`generation`パラメーター。 使用して、<xref:System.GC.MaxGeneration%2A>の最大有効値を決定するプロパティ`generation`です。  
+  
+ すべてのオブジェクトの世代に関係なく、ガベージ コレクターには、このパラメーターをとらないメソッドのバージョンを使用します。  
+  
+ オブジェクトの指定ジェネレーションまでのオブジェクトの再利用を使用して、ガベージ コレクターを使用して、<xref:System.GC.Collect%28System.Int32%29?displayProperty=nameWithType>メソッドのオーバー ロードします。 Generation の最大値を指定する場合は、すべてのオブジェクトが収集されます。  
+  
+   
+  
+## Examples  
+ 次の例には、第 2 世代のオブジェクトをガベージ コレクションが強制実行、<xref:System.GCCollectionMode.Optimized>設定します。  
+  
+ [!code-csharp[System.GC.GCCollectionMode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.GCCollectionMode/cs/Program.cs#1)]
+ [!code-vb[System.GC.GCCollectionMode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.GCCollectionMode/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="generation" /> が無効です。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="T:System.GCCollectionMode" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Collect">
+      <MemberSignature Language="C#" Value="public static void Collect (int generation, GCCollectionMode mode, bool blocking);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Collect(int32 generation, valuetype System.GCCollectionMode mode, bool blocking) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.Collect(System.Int32,System.GCCollectionMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generation" Type="System.Int32" />
+        <Parameter Name="mode" Type="System.GCCollectionMode" />
+        <Parameter Name="blocking" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="generation">ガベージ コレクションを行うべき最も古いジェネレーションの番号。</param>
+        <param name="mode">ガベージ コレクションが強制実行になっている (<see cref="F:System.GCCollectionMode.Default" /> または <see cref="F:System.GCCollectionMode.Forced" />) か、最適化になっている (<see cref="F:System.GCCollectionMode.Optimized" />) かを示す列挙値。</param>
+        <param name="blocking">
+          ブロッキング ガベージ コレクションを実行する場合は <see langword="true" />。可能な限りバックグラウンド ガベージ コレクションを実行する場合は <see langword="false" />。</param>
+        <summary>ジェネレーション 0 から指定ジェネレーションまでのガベージ コレクションを、 <see cref="T:System.GCCollectionMode" /> 値で指定したタイミングで強制実行します。コレクションをブロックする必要があるかどうかを指定する値を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表の相互作用をまとめたもの、`mode`と`blocking`パラメーター。  
+  
+|`mode`|`blocking` は `true` です|`blocking` は `false` です|  
+|-|-|-|  
+|<xref:System.GCCollectionMode.Forced> または <xref:System.GCCollectionMode.Default>|ブロッキング コレクションはできるだけ早く実行されます。 バック グラウンド コレクションが実行中である場合と`generation`が 0 または 1 の場合、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29>メソッドは直ちにブロッキング コレクションをトリガーし、コレクションが完了したらを返します。 バック グラウンド コレクションが実行中である場合と`generation`は、2、バック グラウンド コレクションが終了して、ジェネレーション 2 のブロッキング コレクションをトリガーし、返されるまで、メソッドを待機します。|コレクションはできるだけ早く実行されます。 <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> メソッドはバックグラウンド コレクションを要求しますが、それは保証されず、状況によってはブロッキング コレクションが実行される場合もあります。 バックグラウンド コレクションが既に実行中の場合、メソッドはすぐに制御を返します。|  
+|<xref:System.GCCollectionMode.Optimized>|ガベージ コレクターおよび `generation` パラメーターの状態によっては、ブロッキング コレクションが実行される場合があります。 ガベージ コレクターは最適なパフォーマンスを提供しようとします。|ガベージ コレクターの状態によっては、コレクションが実行される場合があります。 <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29> メソッドはバックグラウンド コレクションを要求しますが、それは保証されず、状況によってはブロッキング コレクションが実行される場合もあります。 ガベージ コレクターは最適なパフォーマンスを提供しようとします。 バックグラウンド コレクションが既に実行中の場合、メソッドはすぐに制御を返します。|  
+  
+ 呼び出し、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%29>メソッドがフル ブロッキング ガベージ コレクションを実行、設定して、大きなオブジェクト ヒープを圧縮することもできます、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>呼び出す前に、<xref:System.GC.Collect%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="generation" /> が無効です。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="T:System.GCCollectionMode" /> 値のいずれでもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Collect">
+      <MemberSignature Language="C#" Value="public static void Collect (int generation, GCCollectionMode mode, bool blocking, bool compacting);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Collect(int32 generation, valuetype System.GCCollectionMode mode, bool blocking, bool compacting) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.Collect(System.Int32,System.GCCollectionMode,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generation" Type="System.Int32" />
+        <Parameter Name="mode" Type="System.GCCollectionMode" />
+        <Parameter Name="blocking" Type="System.Boolean" />
+        <Parameter Name="compacting" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="generation">ガベージ コレクションを行うべき最も古いジェネレーションの番号。</param>
+        <param name="mode">ガベージ コレクションが強制実行になっている (<see cref="F:System.GCCollectionMode.Default" /> または <see cref="F:System.GCCollectionMode.Forced" />) か、最適化になっている (<see cref="F:System.GCCollectionMode.Optimized" />) かを示す列挙値。</param>
+        <param name="blocking">
+          ブロッキング ガベージ コレクションを実行する場合は <see langword="true" />。可能な限りバックグラウンド ガベージ コレクションを実行する場合は <see langword="false" />。</param>
+        <param name="compacting">
+          小さなオブジェクト ヒープの圧縮を行う場合は <see langword="true" />、スイープのみ行う場合は <see langword="false" />。</param>
+        <summary>ジェネレーション 0 から指定ジェネレーションまでのガベージ コレクションを、 <see cref="T:System.GCCollectionMode" /> 値で指定したタイミングで強制実行します。コレクションをブロックおよび圧縮する必要があるかどうかを指定する値を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`blocking`は`false`GC は、バック グラウンドまたはブロッキング ガベージ コレクションを実行するかどうかを決定します。 場合`compacting`は`true`、ブロッキング ガベージ コレクションを実行します。  
+  
+ 場合`compacting`は`true`ランタイムは、小さなオブジェクト ヒープ (SOH) を圧縮します。 しない限り、大きなオブジェクト ヒープ (LOH) は圧縮されません、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティに設定されている<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>です。 すべてブロッキング ガベージ コレクション、いないだけフル ブロッキング ガベージ コレクションを含むことに注意してください。  
+  
+ 呼び出すことができます、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29>次のコード フラグメントに示すように、最小サイズできるにマネージ ヒープを減らすための方法です。  
+  
+ [!code-csharp[System.GC.Collect#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect/cs/collect4.cs#1)]
+ [!code-vb[System.GC.Collect#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect/vb/collect4.vb#1)]  
+  
+ 指定する`true`の`compacting`引数は、圧縮、フル ブロッキング ガベージ コレクションを保証します。 設定、<xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>プロパティを<xref:System.Runtime.GCLargeObjectHeapCompactionMode?displayProperty=nameWithType>LOH と SOH の両方が圧縮されていることを確認します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollectionCount">
+      <MemberSignature Language="C#" Value="public static int CollectionCount (int generation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 CollectionCount(int32 generation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.CollectionCount(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="generation" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="generation">ガベージ コレクションの回数を確認するオブジェクトのジェネレーション。</param>
+        <summary>指定したジェネレーションのオブジェクトに対するガベージ コレクションの発生回数を返します。</summary>
+        <returns>プロセスの起動後に、指定したジェネレーションに対して発生したガベージ コレクションの回数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 独自のリソース管理を実装する場合は、定期的に呼び出すことによってガベージ コレクションを強制的が必要、<xref:System.GC.Collect%2A>メソッドです。 これはコストのかかる操作であるため、ガベージ コレクションが最近発生したときに呼び出しをスキップしてパフォーマンスを向上できます。 によって返される値を保存する<xref:System.GC.CollectionCount%2A>呼び出し直後後<xref:System.GC.Collect%2A>です。 次に呼び出す必要があるとき<xref:System.GC.Collect%2A>、によって返される現在の値を比較<xref:System.GC.CollectionCount%2A>保存されている値にします。 2 つの値が等しい場合は、その前にコレクションが発生していないしそのを呼び出す<xref:System.GC.Collect%2A>もう一度です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="generation" /> が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndNoGCRegion">
+      <MemberSignature Language="C#" Value="public static void EndNoGCRegion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EndNoGCRegion() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.EndNoGCRegion" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>GC 領域の無待機モードを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.EndNoGCRegion%2A>メソッドがスローされます、<xref:System.InvalidOperationException>ガベージ コレクターが GC 領域の無待機モードにない場合。 これは、次の条件のいずれかで発生します。  
+  
+-   <xref:System.GC.TryStartNoGCRegion%2A>メソッドが以前に呼び出されませんでした。  
+  
+-   呼び出し、<xref:System.GC.TryStartNoGCRegion%2A>メソッドが返される`false`です。  
+  
+-   呼び出し、<xref:System.GC.TryStartNoGCRegion%2A>メソッドが例外をスローしました。  
+  
+ 次のようなコードを使用して、これらの理由のいずれかの例外を回避できます。  
+  
+ [!code-csharp[System.GC.EndNoGCRegion#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.endnogcregion/cs/endnogcregion1.cs#1)]
+ [!code-vb[System.GC.EndNoGCRegion#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.endnogcregion/vb/endnogcregion1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ガベージ コレクターが、GC 領域の無待機モードではありません。  
+  
+ または  
+  
+ ガベージ コレクションが発生したために、GC 領域の無待機モードは前に終了されました。  
+  
+ または  
+  
+ メモリ割り当てが、<see cref="M:System.GC.TryStartNoGCRegion(System.Int64)" /> メソッドの呼び出しで指定された量を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllocatedBytesForCurrentThread">
+      <MemberSignature Language="C#" Value="public static long GetAllocatedBytesForCurrentThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 GetAllocatedBytesForCurrentThread() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.GetAllocatedBytesForCurrentThread" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneration">
+      <MemberSignature Language="C#" Value="public static int GetGeneration (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetGeneration(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.GetGeneration(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ジェネレーションの情報を検索する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトの現在のジェネレーション番号を返します。</summary>
+        <returns><paramref name="obj" /> の現在のジェネレーション番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、オブジェクトの有効期間を特定しでその情報を使用して、<xref:System.GC.Collect%2A>同じ世代のオブジェクトをガベージ コレクターが収集を強制する方法です。 たとえば、一連のオブジェクトをグループとして作成されると同時にアクセスできなくなることがある場合は、このメソッドを使用します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.GetGeneration%2A>オブジェクトの期間を確認するメソッド。 この例は、メモリをクリーンアップして、事前の比較をコンソールでメモリの合計をコレクションに投稿するガベージ コレクションを実行します。  
+  
+ [!code-cpp[System.GC.Collect Int Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.gc.collect int example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Int Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect int example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Int Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect int example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGeneration">
+      <MemberSignature Language="C#" Value="public static int GetGeneration (WeakReference wo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetGeneration(class System.WeakReference wo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.GetGeneration(System.WeakReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="wo" Type="System.WeakReference" />
+      </Parameters>
+      <Docs>
+        <param name="wo">ジェネレーション番号を確認する対象のオブジェクトを参照する <see cref="T:System.WeakReference" />。</param>
+        <summary>指定した弱い参照の対象となる現在のジェネレーション番号を返します。</summary>
+        <returns><paramref name="wo" /> の対象となる現在のジェネレーション番号。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.GC.GetGeneration%2A>弱参照オブジェクトの古さを調べます。  
+  
+ [!code-cpp[System.GC.GetGenerationWeak Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.GC.GetGenerationWeak Example/CPP/systemgcgetgenerationweak.cpp#1)]
+ [!code-csharp[System.GC.GetGenerationWeak Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.GetGenerationWeak Example/CS/systemgcgetgenerationweak.cs#1)]
+ [!code-vb[System.GC.GetGenerationWeak Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.GetGenerationWeak Example/VB/systemgcgetgenerationweak.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ガベージ コレクションは既にで実行されている<paramref name="wo" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTotalMemory">
+      <MemberSignature Language="C#" Value="public static long GetTotalMemory (bool forceFullCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 GetTotalMemory(bool forceFullCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.GetTotalMemory(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="forceFullCollection" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="forceFullCollection">
+          ガベージ コレクションの発生を待ってから制御を戻す場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>現在割り当てられていると思われるバイト数を取得します。 パラメーターは、このメソッドが制御を戻す前に短い時間だけ待機して、システムがガベージ コレクションを行い、オブジェクトの終了操作を実行できるようにするかどうかを示します。</summary>
+        <returns>マネージ メモリに現在割り当てられているバイト数の最もよい近似値となる数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`forceFullCollection`パラメーターは`true`、このメソッドは、システムがガベージを収集し、オブジェクトを終了させるときに返す前に、短い間隔を待機します。 間隔の時間は、完了したガベージ コレクション サイクルの数によって決定されます、内部的に指定された制限とサイクル間で回復メモリ量の変化です。 ガベージ コレクターでは、すべてのアクセスできないメモリを収集することは保証されません。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.GetTotalMemory%2A>メソッドを取得し、マネージ メモリに現在割り当てられているバイト数を表示します。  
+  
+ [!code-cpp[System.GC.Collect Int Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.gc.collect int example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Int Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect int example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Int Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect int example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public static void KeepAlive (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void KeepAlive(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.KeepAlive(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">参照するオブジェクト。</param>
+        <summary>指定したオブジェクトを参照することにより、現在のルーチンの開始時からこのメソッドが呼び出される時点までの間、そのオブジェクトをガベージ コレクションの対象から外します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 目的、<xref:System.GC.KeepAlive%2A>メソッドは、ガベージ コレクターによって解放される処理の途中での危険にさらされるオブジェクトへの参照の有無を確認することです。 これが発生する一般的なシナリオは、マネージ コードまたはデータ、オブジェクトへの参照はありませんが、オブジェクトがアンマネージ Dll の場合、Win32 Api などのアンマネージ コードでは使用されている場合、または COM を使用する方法  
+  
+ このメソッドは参照、`obj`パラメーター、そのオブジェクトのガベージ コレクションの対象から外しますから行うルーチンの開始実行順にポイントにこのメソッドが呼び出されます。 最初ではなく命令の範囲の最後に、このメソッドのコードで`obj`できる必要があります。  
+  
+ <xref:System.GC.KeepAlive%2A>メソッドが操作を実行しないとは、パラメーターとして渡されたオブジェクトの有効期間を拡張する以外の副作用がします。  
+  
+   
+  
+## Examples  
+ 次のコード例の先頭にオブジェクトを作成するその`Main`メソッドし、最後に、まで、オブジェクトを参照しないときに、<xref:System.GC.KeepAlive%2A>メソッドが呼び出されます。 オブジェクトは、30 秒間のみが引き続き発生する、`Main`への呼び出しに関係なく、メソッド、<xref:System.GC.Collect%2A>と<xref:System.GC.WaitForPendingFinalizers%2A>メソッドです。  
+  
+ [!code-cpp[System.GC.KeepAlive Example2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.GC.KeepAlive Example2/CPP/gckeepalive.cpp#1)]
+ [!code-csharp[System.GC.KeepAlive Example2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.KeepAlive Example2/CS/gckeepalive.cs#1)]
+ [!code-vb[System.GC.KeepAlive Example2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.KeepAlive Example2/VB/gckeepalive.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxGeneration">
+      <MemberSignature Language="C#" Value="public static int MaxGeneration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxGeneration" />
+      <MemberSignature Language="DocId" Value="P:System.GC.MaxGeneration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムが現在サポートしている最大のジェネレーション番号を取得します。</summary>
+        <value>0 からサポートされるジェネレーションの最大番号までの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 世代番号、またはオブジェクトの経過期間は、オブジェクトの有効期間の実装定義の相対尺度です。 最近作成されたオブジェクトは、ジェネレーション 0 で、最も古いオブジェクトによって返される生成小さいジェネレーションで、<xref:System.GC.MaxGeneration%2A>プロパティです。  
+  
+ ガベージ コレクターは、新しいメモリがより古いメモリ ガベージ コレクションの対象とする方があることを前提とします。 そのため、ガベージ コレクターがジェネレーションの番号のたびに、メモリを解放することを調整することによって、パフォーマンスが向上し、<xref:System.GC.MaxGeneration%2A>プロパティの値が時間の経過と共に成長ことができます。  
+  
+ オブジェクトの世代が実装されている場合、<xref:System.GC.MaxGeneration%2A>プロパティは、システムによって使用される最大のジェネレーション番号を返します。 それ以外の場合、このプロパティは 0 を返します。  
+  
+   
+  
+## Examples  
+ 次の例では、MaxGeneration プロパティを使用して、現在使用中で最大のジェネレーション番号を表示する方法を示します。  
+  
+ [!code-cpp[System.GC.Collect Int Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.gc.collect int example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.Collect Int Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.collect int example/CS/class1.cs#1)]
+ [!code-vb[System.GC.Collect Int Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.collect int example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>この実装によって返される値、<see cref="P:System.GC.MaxGeneration" />プロパティは実行中のアプリケーションの有効期間が一定に保たを保証します。  
+  
+ 使用して、<see cref="P:System.GC.MaxGeneration" />を呼び出すときに指定できる最大値を決定するプロパティ、<see cref="M:System.GC.Collect(System.Int32)" />生成パラメーターを受け取るメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterForFullGCNotification">
+      <MemberSignature Language="C#" Value="public static void RegisterForFullGCNotification (int maxGenerationThreshold, int largeObjectHeapThreshold);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterForFullGCNotification(int32 maxGenerationThreshold, int32 largeObjectHeapThreshold) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.RegisterForFullGCNotification(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="maxGenerationThreshold" Type="System.Int32" />
+        <Parameter Name="largeObjectHeapThreshold" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="maxGenerationThreshold">ジェネレーション 2 に割り当てられたオブジェクト数に基づいて通知を発行するタイミングを指定する、1 ～ 99 の数値。</param>
+        <param name="largeObjectHeapThreshold">大きなオブジェクトのヒープに割り当てられたオブジェクト数に基づいて通知を発行するタイミングを指定する、1 ～ 99 の数値。</param>
+        <summary>フル ガベージ コレクションの可能性が高い状態のとき、およびガベージ コレクションが完了したときに、ガベージ コレクションの通知を発行する必要があることを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ジェネレーションは、ガベージ コレクターは、そのジェネレーションに割り当てのしきい値を設定します。 割り当てのサイズがこのしきい値を超えたときに、そのジェネレーションで、ガベージ コレクションがトリガーされます。 例では、ジェネレーション 2 のしきい値は 20 MB (20 MB のジェネレーション 1 のコレクションで回収されなかったし、ジェネレーション 2 に昇格されたことを意味します)、20 MB を超える場合は、第 1 世代が存続したジェネレーション 2 にメッセージが表示されます、ジェネレーション 2 のコレクションとして次のガベージ コレクションが試行されます。 同様に、大きなオブジェクト ヒープ (LOH) の場合のしきい値は 20 MB と 20 MB 以上のラージ オブジェクトの割り当て済みのアプリが、次回のガベージ コレクションも試みますジェネレーション 2 のコレクションとして (ため LOH は gen2 ガベージ コレクションでのみ収集されます)。  
+  
+ `maxGenerationThreshold`と`largeObjectHeapThreshold`しきい値を制御を事前にどの程度フル ガベージ コレクションが発生する前に通知されます。 しきい値よりも大きいが、割り当て通知と次の完全なガベージ コレクションの間に発生することができます。  
+  
+ ランタイムが完全なガベージ コレクションを行い、そのコレクションを自分でコレクションを発生させることで回避するときに通知する求められる場合は、アプリケーションのパフォーマンスは、共通言語ランタイムによるフル ガベージ コレクションに悪影響を及ぼす場合がある場合は、(を使用して、<xref:System.GC.Collect%2A>メソッド) の条件がまだ有効な場合です。 ガベージ コレクションのスケジュールを自分で変更だけでなくフル GC 通知は、次のシナリオに便利です。  
+  
+-   フル ガベージ コレクションのアプローチを監視して、(たとえば、いくつかのキャッシュ エントリを解放する) をライブ データのサイズを小さく 1 つに近づいていることを確認するメッセージが表示されたら、します。 その結果、ガベージ コレクションが発生するより多くのメモリを解放できないです。  
+  
+-   監視するフル ガベージ コレクションが完了できるように、いくつかの統計を収集することができます。  たとえば、ライブ データのサイズがわかるように、GC の終了時にヒープのサイズを測定することができます。 (フル GC では、後に、ヒープの最小サイズで)。  
+  
+ 詳細については、フル ガベージ コレクションが何を表す、次を参照してください。[ガベージ コレクションの通知](~/docs/standard/garbage-collection/notifications.md)です。  
+  
+ ガベージ コレクションの通知を登録するときにフル ガベージ コレクションが近づいているとき、およびが完了を通知できます。 このパターンでは、オペレーティング システムがメモリ不足の通知を監視する方法に似ています。  
+  
+ 指定するため、次のガイドラインを使用して、`maxGenerationThreshold`と`largeObjectHeapThreshold`パラメーター。  
+  
+-   しきい値の値が大きいほど、通知とフル ガベージ コレクションの間で複数の割り当てが発生します。  
+  
+     しきい値より大きい値では、コレクションが近づいているを確認するランタイムの機会を提供します。 これには、通知する可能性が高くなります。 ただし、ランタイムは、次のコレクションを発生させる前に複数の割り当てになるために、ありません高すぎるしきい値を設定してください。  
+  
+     強制的に実行するコレクション自分で上限しきい値の値を使用して通知時に、ときに、ランタイムの次のコレクションで解放されるよりも少数のオブジェクトが再利用されます。  
+  
+-   しきい値の値が小さいほど、通知とフル ガベージ コレクションの割り当てが少ない。  
+  
+   
+  
+## Examples  
+ 次の例では、ガベージ コレクションの通知を登録し、ガベージ コレクションの通知の状態を監視するスレッドを開始する方法を示します。 このコード例に示されている例の一部である[ガベージ コレクションの通知](~/docs/standard/garbage-collection/notifications.md)トピックです。  
+  
+ [!code-cpp[GCNotification#2](~/samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#2)]
+ [!code-csharp[GCNotification#2](~/samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#2)]
+ [!code-vb[GCNotification#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="maxGenerationThreshold" />または<paramref name="largeObjectHeapThreshold" />1 と 99 の間ではありません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMemoryPressure">
+      <MemberSignature Language="C#" Value="public static void RemoveMemoryPressure (long bytesAllocated);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMemoryPressure(int64 bytesAllocated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.RemoveMemoryPressure(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="bytesAllocated" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="bytesAllocated">解放されたアンマネージ メモリの量。</param>
+        <summary>アンマネージ メモリが解放され、ガベージ コレクションのスケジュールにこのメモリを考慮する必要がなくなったことをランタイムに通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクションのスケジュールを設定する時期を判断するには、ランタイムは考慮マネージ メモリの量が割り当てられます。 小規模のマネージ オブジェクトがアンマネージ メモリの消費量を割り当てる場合、ランタイムはマネージ メモリのみを考慮し、したがってガベージ コレクションのスケジュールの緊急度を過小評価します。 <xref:System.GC.AddMemoryPressure%2A>メソッドをシステム メモリの不足しているこの追加のランタイムに通知し、<xref:System.GC.RemoveMemoryPressure%2A>メソッドは、追加の負荷が解放されたことをランタイムに通知します。  
+  
+ パターンでは、最も簡単な使用方法、マネージ オブジェクト コンス トラクターで、アンマネージ メモリの割り当てし、解放で、`Dispose`または`Finalize`メソッドです。 呼び出す、 <xref:System.GC.AddMemoryPressure%2A> 、アンマネージ メモリの割り当て後にメソッドを呼び出すと、<xref:System.GC.RemoveMemoryPressure%2A>解放するとメソッド。  
+  
+ 呼び出すことができますをアンマネージ メモリの割り当てが変更された大幅にマネージ オブジェクトの有効期間中より複雑なシナリオで、<xref:System.GC.AddMemoryPressure%2A>と<xref:System.GC.RemoveMemoryPressure%2A>ランタイムに増分変更を通知するメソッド。  
+  
+> [!CAUTION]
+>  追加する負荷の量だけを削除することを確認する必要があります。 これに失敗すると、長期間にわたって実行されるアプリケーションでは、システムのパフォーマンスが低下することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="bytesAllocated" /> が 0 以下です。  
+  
+ または  
+  
+ 32 ビット コンピューターで<paramref name="bytesAllocated" />よりも大きい<see cref="F:System.Int32.MaxValue" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">ガベージ コレクションの優先順位を操作するときに、アンマネージ コードを呼び出す必要なアクセス許可。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReRegisterForFinalize">
+      <MemberSignature Language="C#" Value="public static void ReRegisterForFinalize (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ReRegisterForFinalize(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.ReRegisterForFinalize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ファイナライザーの呼び出しが必要なオブジェクト。</param>
+        <summary><see cref="M:System.GC.SuppressFinalize(System.Object)" /> が事前に呼び出されている指定オブジェクトに対して、ファイナライザーを呼び出すことをシステムに要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.ReRegisterForFinalize%2A>メソッドを追加、`obj`ガベージ コレクターがオブジェクトを解放する前に、終了処理を要求するオブジェクトの一覧へのパラメーターです。 `obj`パラメーターはこのメソッドの呼び出し元である必要があります。  
+  
+ 呼び出す、<xref:System.GC.ReRegisterForFinalize%2A>メソッドは、ガベージ コレクターがオブジェクトのファイナライザーを呼び出すことを保証しません。  
+  
+ 既定では、ファイナライザーを実装するすべてのオブジェクトが終了操作を必要とするオブジェクトの一覧に追加されます。ただし、オブジェクトの可能性がありますが既に終了されているまたは可能性がありますが無効になっているファイナライズを呼び出して、<xref:System.GC.SuppressFinalize%2A>メソッドです。  
+  
+ ファイナライザーは、そのリング自体またはそれが参照するオブジェクトを再生するのにこのメソッドを使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、ReRegisterForFinalize メソッドを 2 回目のオブジェクトの最終処理を使用してガベージ コレクションの後に時間。  
+  
+ [!code-cpp[System.GC.ReregisterForFinalize Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.GC.ReRegisterForFinalize Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.ReregisterForFinalize Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.ReRegisterForFinalize Example/CS/class1.cs#1)]
+ [!code-vb[System.GC.ReregisterForFinalize Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.ReRegisterForFinalize Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SuppressFinalize">
+      <MemberSignature Language="C#" Value="public static void SuppressFinalize (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SuppressFinalize(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.SuppressFinalize(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">実行すべきではないファイナライザーを持つオブジェクト。</param>
+        <summary>指定したオブジェクトに対してファイナライザーを呼び出さないことを共通言語ランタイムに要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ビットのオブジェクトのヘッダーを設定`obj`ランタイムがファイナライザーを呼び出すときに照合します。 によって表される、ファイナライザー、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>オブジェクトがガベージ コレクトされる前に、アンマネージ リソースを解放するメソッドを使用します。 場合`obj`への呼び出し、ファイナライザーを持たない、<xref:System.GC.SuppressFinalize%2A>メソッドも何も起こりません。  
+  
+ 実装するオブジェクト、<xref:System.IDisposable>インターフェイスは、オブジェクトからこのメソッドを呼び出すことができます<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>を呼び出して、ガベージ コレクターを防ぐために実装<xref:System.Object.Finalize%2A?displayProperty=nameWithType>できる必要のないオブジェクトにします。 ファイナライザーがによって既に解放されているアンマネージ リソースを解放するを防ぐためにこれは、通常、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装します。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.SuppressFinalize%2A>冗長なガベージ コレクションが呼び出されるようにリソース クラスのメソッドです。 この例では、 [dispose パターン](~/docs/standard/design-guidelines/dispose-pattern.md)両方を解放するマネージ リソース (を実装するには、オブジェクト<xref:System.IDisposable>) リソースとアンマネージ リソース。  
+  
+ [!code-csharp[System.GC.SuppressFinalize#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.gc.suppressfinalize/cs/suppressfinalize1.cs#1)]
+ [!code-vb[System.GC.SuppressFinalize#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.gc.suppressfinalize/vb/suppressfinalize1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="TryStartNoGCRegion">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>クリティカル パスの実行中はガベージ コレクションが行われないよう、試行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="TryStartNoGCRegion">
+      <MemberSignature Language="C#" Value="public static bool TryStartNoGCRegion (long totalSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryStartNoGCRegion(int64 totalSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.TryStartNoGCRegion(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="totalSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="totalSize">ガベージ コレクションをトリガーすることなく割り当てるメモリの量 (バイト) を指定します。 短期セグメントのサイズ以下でなければなりません。 短期セグメントのサイズについては、「短期のジェネレーションとセグメント」セクションを参照して、[ガベージ コレクションの基礎](~/docs/standard/garbage-collection/fundamentals.md)資料です。</param>
+        <summary>指定した量のメモリを使用可能な場合、クリティカル パスの実行中にガベージ コレクションが行われないよう、試行します。</summary>
+        <returns>
+          ランタイムが、必要な量のメモリをコミットできたため、ガベージ コレクターが GC 領域の無待機モードに入ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%29>メソッドは、ガベージ コレクターに GC 領域の無待機モード、によってコードの重要な領域をアプリが実行中にガベージ コレクションを禁止されている配置しようとしています。  ランタイムは、最初に要求したメモリ量を割り当てることができませんが、ガベージ コレクターで追加メモリを解放するためにフル ブロッキング ガベージ コレクションを実行します。 ガベージ コレクターには GC 領域の無待機モードがない場合は、必要なメモリの量、ここでは実際には 2 を割り当てることができません *`totalSize`バイト (割り当てしよう`totalSize`小さなオブジェクト ヒープのバイト数と`totalSize`大きなオブジェクト ヒープのバイト数)。  
+  
+ `totalSize`クリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要があります。 これには、アプリケーションによって割り当てだけでなく、ランタイムは、アプリの代わりに、割り当てが含まれます。  
+  
+> [!IMPORTANT]
+>  呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+ 呼び出して、GC 領域の無待機モードを終了する、<xref:System.GC.EndNoGCRegion%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="totalSize" /> は、短期セグメント サイズを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">プロセスは既に、非 GC 領域待機時間モードになっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryStartNoGCRegion">
+      <MemberSignature Language="C#" Value="public static bool TryStartNoGCRegion (long totalSize, bool disallowFullBlockingGC);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryStartNoGCRegion(int64 totalSize, bool disallowFullBlockingGC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.TryStartNoGCRegion(System.Int64,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="totalSize" Type="System.Int64" />
+        <Parameter Name="disallowFullBlockingGC" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="totalSize">ガベージ コレクションをトリガーすることなく割り当てるメモリの量 (バイト) を指定します。 短期セグメントのサイズ以下でなければなりません。 短期セグメントのサイズについては、「短期のジェネレーションとセグメント」セクションを参照して、[ガベージ コレクションの基礎](~/docs/standard/garbage-collection/fundamentals.md)資料です。</param>
+        <param name="disallowFullBlockingGC">
+          <see langword="true" />ガベージ コレクターが最初に割り当てられない場合にフル ブロッキング ガベージ コレクションを省略する<c>totalSize</c>バイトです。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>指定した量のメモリを使用可能な場合は、クリティカル パスの実行中にガベージ コレクションが行われないよう、試行します。また、最初に十分な量のメモリを使用できない場合に、ガベージ コレクターがフル ブロッキング ガベージ コレクションを実行するかどうかを制御します。</summary>
+        <returns>
+          ランタイムが、必要な量のメモリをコミットできたため、ガベージ コレクターが GC 領域の無待機モードに入ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Boolean%29>メソッドは、ガベージ コレクターに GC 領域の無待機モード、によってコードの重要な領域をアプリが実行中にガベージ コレクションを禁止されている配置しようとしています。  かどうか、ランタイムは最初に要求したメモリ量を割り当てることはおよび`disallowFullBlockingGC`引数は`false`、追加のメモリを解放しようとすると、ガベージ コレクターがフル ブロッキング ガベージ コレクションを実行以外の場合はそれ以外の場合、割り当ては失敗し、メソッドを返します`false`です。 ガベージ コレクターには GC 領域の無待機モードがない場合は、必要なメモリの量、ここでは実際には 2 を割り当てることができません * `totalSize` (割り当てるしよう`totalSize`小さなオブジェクト ヒープと`totalSize`大きなオブジェクト ヒープ) です。  
+  
+ `totalSize`クリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要があります。 これには、アプリケーションによって割り当てだけでなく、ランタイムは、アプリの代わりに、割り当てが含まれます。  
+  
+ 設定`disallowFullBlockingGC`に`true`をフル ブロッキング ガベージを回避するのに十分なメモリが最初に利用可能な場合は、コレクションが負荷分散のシナリオで最も役に立つ: 1 つのシステムがこのメソッドを呼び出すし、報告して返された場合は、要求を受け入れる準備ができて`true`、返された場合、その他のシステムに要求をリダイレクトするロード バランサーがあると`false`です。 これを実行できますフル ブロッキング ガベージ コレクションを呼び出して要求は処理されません。 ときに、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29>メソッドです。  
+  
+> [!IMPORTANT]
+>  呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+ 呼び出して、GC 領域の無待機モードを終了する、<xref:System.GC.EndNoGCRegion%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="totalSize" /> は、短期セグメント サイズを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">プロセスは既に、非 GC 領域待機時間モードになっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryStartNoGCRegion">
+      <MemberSignature Language="C#" Value="public static bool TryStartNoGCRegion (long totalSize, long lohSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryStartNoGCRegion(int64 totalSize, int64 lohSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.TryStartNoGCRegion(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="totalSize" Type="System.Int64" />
+        <Parameter Name="lohSize" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="totalSize">ガベージ コレクションをトリガーすることなく割り当てるメモリの量 (バイト) を指定します。 <c>totalSize</c> –<c>lohSize</c>短期セグメントのサイズ以下である必要があります。 短期セグメントのサイズについては、「短期のジェネレーションとセグメント」セクションを参照して、[ガベージ コレクションの基礎](~/docs/standard/garbage-collection/fundamentals.md)資料です。</param>
+        <param name="lohSize">バイト数<c>totalSize</c>の大きなオブジェクト ヒープ (LOH) の割り当てを使用します。</param>
+        <summary>大きなオブジェクト ヒープおよび小さなオブジェクト ヒープに対して、指定した量のメモリを使用可能な場合、クリティカル パスの実行中にガベージ コレクションが行われないよう、試行します。</summary>
+        <returns>
+          ランタイムが、必要な量のメモリをコミットできたため、ガベージ コレクターが GC 領域の無待機モードに入ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%29>メソッドは、ガベージ コレクターに GC 領域の無待機モード、によってコードの重要な領域をアプリが実行中にガベージ コレクションを禁止されている配置しようとしています。  ランタイムは、最初に要求したメモリ量を割り当てることができませんが、ガベージ コレクターで追加メモリを解放するためにフル ブロッキング ガベージ コレクションを実行します。 ガベージ コレクターが入るありません GC 領域の無待機モードに割り当てられない場合`lohSize`LOH のおよび`totalSize`–`lohSize`小さなオブジェクト ヒープ (SOH)。  
+  
+ `lohSize`LOH のクリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要がありますと`totalSize`– `lohSize` SOH のクリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要があります。 これには、アプリケーションによって割り当てだけでなく、ランタイムは、アプリの代わりに、割り当てが含まれます。  
+  
+> [!IMPORTANT]
+>  呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+ 呼び出して、GC 領域の無待機モードを終了する、<xref:System.GC.EndNoGCRegion%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="totalSize" />–<paramref name="lohSize" />短期セグメント サイズを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">プロセスは既に、非 GC 領域待機時間モードになっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryStartNoGCRegion">
+      <MemberSignature Language="C#" Value="public static bool TryStartNoGCRegion (long totalSize, long lohSize, bool disallowFullBlockingGC);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryStartNoGCRegion(int64 totalSize, int64 lohSize, bool disallowFullBlockingGC) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.TryStartNoGCRegion(System.Int64,System.Int64,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="totalSize" Type="System.Int64" />
+        <Parameter Name="lohSize" Type="System.Int64" />
+        <Parameter Name="disallowFullBlockingGC" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="totalSize">ガベージ コレクションをトリガーすることなく割り当てるメモリの量 (バイト) を指定します。 <c>totalSize</c> –<c>lohSize</c>短期セグメントのサイズ以下である必要があります。 短期セグメントのサイズについては、「短期のジェネレーションとセグメント」セクションを参照して、[ガベージ コレクションの基礎](~/docs/standard/garbage-collection/fundamentals.md)資料です。</param>
+        <param name="lohSize">バイト数<c>totalSize</c>の大きなオブジェクト ヒープ (LOH) の割り当てを使用します。</param>
+        <param name="disallowFullBlockingGC">
+          ガベージ コレクターが指定されたメモリを最初に小さなオブジェクト ヒープ (SOH) および LOH に割り当てられないときにフル ブロッキング ガベージ コレクションを省略する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>大きなオブジェクト ヒープおよび小さなオブジェクト ヒープに対して、指定した量のメモリを使用可能な場合は、クリティカル パスの実行中にガベージ コレクションが行われないよう、試行します。また、最初に十分な量のメモリを使用できない場合に、ガベージ コレクターがフル ブロッキング ガベージ コレクションを実行するかどうかを制御します。</summary>
+        <returns>
+          ランタイムが、必要な量のメモリをコミットできたため、ガベージ コレクターが GC 領域の無待機モードに入ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.GC.TryStartNoGCRegion%28System.Int64%2CSystem.Int64%2CSystem.Boolean%29>メソッドは、ガベージ コレクターに GC 領域の無待機モード、によってコードの重要な領域をアプリが実行中にガベージ コレクションを禁止されている配置しようとしています。  かどうか、ランタイムは最初に要求したメモリ量を割り当てることはおよび`disallowFullBlockingGC`引数は`false`、追加のメモリを解放しようとすると、ガベージ コレクターがフル ブロッキング ガベージ コレクションを実行以外の場合はそれ以外の場合、割り当ては失敗し、メソッドを返します`false`です。 ガベージ コレクターが入るありません GC 領域の無待機モードに割り当てられない場合`lohSize`LOH のおよび`totalSize`–`lohSize`小さなオブジェクト ヒープ (SOH)。  
+  
+ `lohSize`LOH のクリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要がありますと`totalSize`– `lohSize` SOH のクリティカル パスで発生したすべてのメモリ割り当てを処理するのに十分な大きさである必要があります。 これには、アプリケーションによって割り当てだけでなく、ランタイムは、アプリの代わりに、割り当てが含まれます。  
+  
+ 設定`disallowFullBlockingGC`に`true`をフル ブロッキング ガベージを回避するのに十分なメモリが最初に利用可能な場合は、コレクションが負荷分散のシナリオで最も役に立つ: 1 つのシステムがこのメソッドを呼び出すし、報告して返された場合は、要求を受け入れる準備ができて`true`、返された場合、その他のシステムに要求をリダイレクトするロード バランサーがあると`false`です。 これを実行できますフル ブロッキング ガベージ コレクションを呼び出して要求は処理されません。 ときに、<xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%2CSystem.Boolean%2CSystem.Boolean%29>メソッドです。  
+  
+> [!IMPORTANT]
+>  呼び出しをネストすることはできません、<xref:System.GC.TryStartNoGCRegion%2A>メソッド、およびするのみを呼び出す、<xref:System.GC.EndNoGCRegion%2A>メソッドの場合は、ランタイムが GC 領域の無待機モードになっています。 つまり、呼び出す必要はありません<xref:System.GC.TryStartNoGCRegion%2A>複数回 (最初のメソッド呼び出しの後に後続の呼び出しは成功しません)、呼び出しをすることはありませんし<xref:System.GC.EndNoGCRegion%2A>を最初の呼び出しからといってを成功させる<xref:System.GC.TryStartNoGCRegion%2A>に成功しました。  
+  
+ 呼び出して、GC 領域の無待機モードを終了する、<xref:System.GC.EndNoGCRegion%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="totalSize" />–<paramref name="lohSize" />短期セグメント サイズを超えています。</exception>
+        <exception cref="T:System.InvalidOperationException">プロセスは既に、非 GC 領域待機時間モードになっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForFullGCApproach">
+      <MemberSignature Language="C#" Value="public static GCNotificationStatus WaitForFullGCApproach ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.GCNotificationStatus WaitForFullGCApproach() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.WaitForFullGCApproach" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.GCNotificationStatus</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>共通言語ランタイムによるフル ブロッキング ガベージ コレクションが近づいているかどうかを確認するための、登録済みの通知の状態を返します。</summary>
+        <returns>登録済みのガベージ コレクションの通知の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.GCNotificationStatus>列挙体を使用して登録されている現在のガベージ コレクションの通知の状態を判断するには、このメソッドによって返される、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。 使用することも、<xref:System.GC.WaitForFullGCComplete%2A>フル ガベージ コレクションが完了したかどうかを調べます。  
+  
+ 列挙体が返されるときに<xref:System.GCNotificationStatus.Succeeded>、割り当てられていると、コレクションを強制しないで、自分で追加のオブジェクトを妨げてなどのタスクを行うことができます、<xref:System.GC.Collect%2A>メソッドです。 通知が保証されません、フル ガベージ コレクションが発生する、条件の完全なガベージ コレクションが発生する高いしきい値に達したことのみに注意してください。  
+  
+ このメソッドは、ガベージ コレクションの通知を取得するための無期限に待機します。 通知を取得できないかどうかを返すメソッドのタイムアウト期間を指定する場合を使用して、<xref:System.GC.WaitForFullGCApproach%28System.Int32%29?displayProperty=nameWithType>メソッドのオーバー ロードします。 タイムアウトを指定せずにこのメソッドを呼び出す場合は、呼び出す、<xref:System.GC.CancelFullGCNotification%2A>メソッド優先よりも長い時間を待機している場合。  
+  
+ このメソッドを呼び出してを従う必要があります、<xref:System.GC.WaitForFullGCComplete%2A>フル ガベージ コレクションがあることを確認するメソッド。 このメソッドを呼び出すだけで、不確定な結果が発生します。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用してフル ブロッキング ガベージ コレクションが近づいているかどうかを判断する方法を示します。 通知の状態のときに<xref:System.GCNotificationStatus.Succeeded>、ユーザー メソッド`OnFullGCApproachNotify`コレクションが近づいているへの応答アクションを実行すると呼びます。 このコード例に示されている例の一部である[ガベージ コレクションの通知](~/docs/standard/garbage-collection/notifications.md)トピックです。  
+  
+ [!code-cpp[GCNotification#3](~/samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#3)]
+ [!code-csharp[GCNotification#3](~/samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#3)]
+ [!code-vb[GCNotification#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForFullGCApproach">
+      <MemberSignature Language="C#" Value="public static GCNotificationStatus WaitForFullGCApproach (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.GCNotificationStatus WaitForFullGCApproach(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.WaitForFullGCApproach(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.GCNotificationStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">通知の状態が取得されるまで待機する時間。 無期限に待機するには -1 を指定します。</param>
+        <summary>共通言語ランタイムによるフル ブロッキング ガベージ コレクションが近づいているかどうかを確認するための登録済みの通知の状態を、指定したタイムアウト時間で返します。</summary>
+        <returns>登録済みのガベージ コレクションの通知の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.GCNotificationStatus>列挙体を使用して登録されている現在のガベージ コレクションの通知の状態を判断するには、このメソッドによって返される、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。 使用することも、<xref:System.GC.WaitForFullGCComplete%2A>フル ガベージ コレクションが完了したかどうかを調べます。  
+  
+ 指定された値に関係なく、ガベージ コレクションの通知の状態を取得するときにすぐに、このメソッドが戻る注`millisecondsTimeout`です。 前にガベージ コレクションの通知の状態が取得されていないかどうかは`millisecondsTimeout`回、このメソッドが戻る<xref:System.GCNotificationStatus.NotApplicable>です。  
+  
+ 列挙体が返されるときに<xref:System.GCNotificationStatus.Succeeded>、割り当てられていると、コレクションを強制しないで、自分で追加のオブジェクトを妨げてなどのタスクを行うことができます、<xref:System.GC.Collect%2A>メソッドです。 通知が保証されません、フル ガベージ コレクションが発生する、条件の完全なガベージ コレクションが発生する高いしきい値に達したことのみに注意してください。  
+  
+ 呼び出すことができます、<xref:System.GC.CancelFullGCNotification%2A>メソッドと、タイムアウト期間に対して、経過時間を待機することはできません。  
+  
+ このメソッドを呼び出してを従う必要があります、<xref:System.GC.WaitForFullGCComplete%2A>フル ガベージ コレクションがあることを確認するメソッド。 このメソッドを呼び出すだけで、不確定な結果が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="millisecondsTimeout" />負でないか以下にする必要があります以上<see cref="F:System.Int32.MaxValue" />または-1。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForFullGCComplete">
+      <MemberSignature Language="C#" Value="public static GCNotificationStatus WaitForFullGCComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.GCNotificationStatus WaitForFullGCComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.WaitForFullGCComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.GCNotificationStatus</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>共通言語ランタイムによるフル ブロッキング ガベージ コレクションが完了したかどうかを確認するための、登録済みの通知の状態を返します。</summary>
+        <returns>登録済みのガベージ コレクションの通知の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.GCNotificationStatus>列挙体を使用して登録されている現在のガベージ コレクションの通知の状態を判断するには、このメソッドによって返される、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。 使用することも、<xref:System.GC.WaitForFullGCApproach%2A>フル ガベージ コレクションが近づいているかどうかを調べます。  
+  
+ 列挙体が返されるときに<xref:System.GCNotificationStatus.Succeeded>、作業を再開して、コレクションの数を取得するなどのタスクを行うことができます、<xref:System.GC.CollectionCount%2A>プロパティです。  
+  
+ このメソッドは、ガベージ コレクションの通知を取得するための無期限に待機します。 通知を取得できないかどうかを返すメソッドのタイムアウト期間を指定する場合を使用して、<xref:System.GC.WaitForFullGCApproach%28System.Int32%29?displayProperty=nameWithType>メソッドのオーバー ロードします。 タイムアウトを指定せずにこのメソッドを呼び出す場合は、呼び出す、<xref:System.GC.CancelFullGCNotification%2A>メソッド優先よりも長い時間を待機している場合。  
+  
+ 呼び出しに先行されなければなりません。 このメソッドの呼び出し、<xref:System.GC.WaitForFullGCApproach%2A>フル ガベージ コレクションがあることを確認するメソッド。 このメソッドを呼び出すだけで不確定な結果を生成できます。  
+  
+   
+  
+## Examples  
+ 次の例では、このメソッドを使用して、フル ガベージ コレクションが完了したかどうかを判断する方法を示します。 通知の状態のときに<xref:System.GCNotificationStatus.Succeeded>、ユーザー メソッド`OnFullGCCompletedNotify`完了したコレクションへの応答アクションを実行すると呼びます。 このコード例に示されている例の一部である[ガベージ コレクションの通知](~/docs/standard/garbage-collection/notifications.md)トピックです。  
+  
+ [!code-cpp[GCNotification#4](~/samples/snippets/cpp/VS_Snippets_CLR/GCNotification/cpp/program.cpp#4)]
+ [!code-csharp[GCNotification#4](~/samples/snippets/csharp/VS_Snippets_CLR/GCNotification/cs/Program.cs#4)]
+ [!code-vb[GCNotification#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/GCNotification/vb/program.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForFullGCComplete">
+      <MemberSignature Language="C#" Value="public static GCNotificationStatus WaitForFullGCComplete (int millisecondsTimeout);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.GCNotificationStatus WaitForFullGCComplete(int32 millisecondsTimeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.WaitForFullGCComplete(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.GCNotificationStatus</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="millisecondsTimeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="millisecondsTimeout">通知の状態が取得されるまで待機する時間。 無期限に待機するには -1 を指定します。</param>
+        <summary>共通言語ランタイムによるフル ブロッキング ガベージ コレクションが完了したかどうかを確認するための登録済みの通知の状態を、指定したタイムアウト時間で返します。</summary>
+        <returns>登録済みのガベージ コレクションの通知の状態。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.GCNotificationStatus>列挙体を使用して登録されている現在のガベージ コレクションの通知の状態を判断するには、このメソッドによって返される、<xref:System.GC.RegisterForFullGCNotification%2A>メソッドです。 使用することも、<xref:System.GC.WaitForFullGCApproach%2A>フル ガベージ コレクションが近づいているかどうかを調べます。  
+  
+ 指定された値に関係なく、ガベージ コレクションの通知の状態を取得するときにすぐに、このメソッドが戻る注`millisecondsTimeout`です。 前にガベージ コレクションの通知の状態が取得されていないかどうかは`millisecondsTimeout`回、このメソッドが戻る<xref:System.GCNotificationStatus.NotApplicable>です。  
+  
+ 列挙体が返されるときに<xref:System.GCNotificationStatus.Succeeded>、作業を再開して、コレクションの数を取得するなどのタスクを行うことができます、<xref:System.GC.CollectionCount%2A>プロパティです。  
+  
+ 呼び出すことができます、<xref:System.GC.CancelFullGCNotification%2A>メソッドと、タイムアウト期間に対して、経過時間を待機することはできません。  
+  
+ 呼び出しに先行されなければなりません。 このメソッドの呼び出し、<xref:System.GC.WaitForFullGCApproach%2A>フル ガベージ コレクションがあることを確認するメソッド。 このメソッドを呼び出すだけで不確定な結果を生成できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="millisecondsTimeout" />負でないか以下にする必要があります以上<see cref="F:System.Int32.MaxValue" />または-1。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitForPendingFinalizers">
+      <MemberSignature Language="C#" Value="public static void WaitForPendingFinalizers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void WaitForPendingFinalizers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.GC.WaitForPendingFinalizers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ファイナライザーのキューを処理するスレッドがそのキューを空にするまで、現在のスレッドを中断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクターは、再利用できるオブジェクトを検出すると、オブジェクトの終了処理の要件を決定するには、各オブジェクトを確認します。 オブジェクトがファイナライザーを実装しを無効に呼び出すことによってかどうか<xref:System.GC.SuppressFinalize%2A>、終了処理の準備完了としてマークされているオブジェクトの一覧で、オブジェクトが配置されます。 ガベージ コレクターの呼び出し、<xref:System.Object.Finalize%2A>このリストし、削除、一覧からエントリ内のオブジェクトのメソッドです。 このメソッドはブロックされるまでのすべてのファイナライザーの実行が終了します。  
+  
+ このメソッドが終了されるという保証はありません、ファイナライザーが実行されるスレッドは指定しません。 このスレッドを中断しているときに別のスレッドによってただし、<xref:System.GC.WaitForPendingFinalizers%2A>メソッドが進行中です。 たとえば、一定の時間まで待機し、このスレッドがまだ中断されている場合、このスレッドを中断する別のスレッドを開始できます。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.GC.WaitForPendingFinalizers%2A>収集されたすべてのオブジェクトの最終処理が完了するまで、現在のスレッドを中断するメソッド。  
+  
+ [!code-cpp[System.GC.WaitForPendingFinalizers Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.GC.WaitForPendingFinalizers Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.GC.WaitForPendingFinalizers Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.GC.WaitForPendingFinalizers Example/CS/class1.cs#1)]
+ [!code-vb[System.GC.WaitForPendingFinalizers Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.GC.WaitForPendingFinalizers Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

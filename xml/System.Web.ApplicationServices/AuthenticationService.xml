@@ -1,0 +1,305 @@
+<Type Name="AuthenticationService" FullName="System.Web.ApplicationServices.AuthenticationService">
+  <TypeSignature Language="C#" Value="public class AuthenticationService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AuthenticationService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ApplicationServices.AuthenticationService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.Activation.AspNetCompatibilityRequirements(RequirementsMode=System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceBehavior(ConcurrencyMode=System.ServiceModel.ConcurrencyMode.Multiple, InstanceContextMode=System.ServiceModel.InstanceContextMode.Single, Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ServiceModel.ServiceContract(Namespace="http://asp.net/ApplicationServices/v200")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web サービスとして ASP.NET フォーム認証にアクセスできます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService>オブジェクトを使用してユーザーを認証することができます、[!INCLUDE[vsindigo](~/includes/vsindigo-md.md)]サービス。 WCF 認証サービスを使用するは、ユーザーの資格情報を格納する Web アプリケーションの外部であるアプリケーションからの ASP.NET メンバーシップを使用してユーザーを認証する必要があります。 アプリケーションは、送信および SOAP 形式のメッセージを処理できる必要があります。 を介して、<xref:System.Web.ApplicationServices.AuthenticationService>クラスと、ユーザーにログインできる、ログ ユーザー アウト、資格情報を検証、認証の状態を確認して、認証では、カスタマイズ認証クッキーを設定します。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService>クラスには、WCF サービスを通じてのみにアクセスする必要がある 4 つのメソッドが含まれています。 <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn%2A>、 <xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>、 <xref:System.Web.ApplicationServices.AuthenticationService.Logout%2A>、および<xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>メソッドです。 これらのメソッドを呼び出すには、Web サーバーに認証サービスを有効にして、Web サービスに WCF と互換性のあるクライアント アプリケーションを接続します。 認証サービスを構成する方法については、次を参照してください。[する方法: WCF 認証サービスを有効にする](http://msdn.microsoft.com/library/f7913259-762e-4a73-a771-ac9e42903f44)です。  
+  
+ ユーザーのログオンにユーザーの資格情報を渡す、<xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドです。 資格情報が、有効な場合、<xref:System.Web.ApplicationServices.AuthenticationService>クラスは、認証 cookie を作成します。 認証 cookie の期限が切れていない場合、ユーザーの資格情報が認証済みであり、資格情報を再度検証する必要はありませんがわかっています。 (Cookie のない認証では使用できない、<xref:System.Web.ApplicationServices.AuthenticationService>クラスです)。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService> 2 つのイベントを発生させることができます:<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>と<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>です。 <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベント、ユーザーの資格情報は検証されているときに発生します。 イベント ハンドラーを作成、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>ユーザーの資格情報を検証する方法をカスタマイズするイベントです。 <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>ユーザーの資格情報が検証された後、認証 cookie が設定されるときに発生します。 イベント ハンドラーを作成、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>認証クッキーをカスタマイズするイベントです。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>メソッドが、認証用のユーザーの資格情報を確認しますが、認証チケットを返すことはできません。 使用して<xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>と、ユーザーがログイン前に、新しいアプリケーションのセッションの開始時の資格情報が有効であることを確認する必要があります。  
+  
+ 例については、コンソール アプリケーションから WCF 認証サービスを使用して、次を参照してください。[チュートリアル: ASP.NET アプリケーション サービスを使用する](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticationService ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.AuthenticationService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ApplicationServices.AuthenticationService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Authenticating">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Web.ApplicationServices.AuthenticatingEventArgs&gt; Authenticating;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ApplicationServices.AuthenticatingEventArgs&gt; Authenticating" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ApplicationServices.AuthenticationService.Authenticating" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ApplicationServices.AuthenticatingEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーの資格情報が検証されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベントは、ユーザーの資格情報が検証されているときに発生します。 イベント ハンドラーを作成、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>ユーザーの資格情報を検証する方法をカスタマイズするイベントです。  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーにバインドする方法を示しています、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>内のイベント、 `Application_Start` Global.asax ファイルのメソッドです。  
+  
+ [!code-csharp[System.Web.Security.LoginService_MultipleCredentials#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.LoginService_MultipleCredentials#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/vb/Global.asax#1)]  
+  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>Global.asax ファイル内のイベントです。 イベント ハンドラーから 2 つの認証値を読み取り、<xref:System.Web.ApplicationServices.AuthenticatingEventArgs.CustomCredential%2A>プロパティおよびというユーザー名とすると、カスタム認証クラス パスワードと共ににパス`StudentAuthentication`です。  
+  
+ [!code-csharp[System.Web.Security.LoginService_MultipleCredentials#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService_MultipleCredentials#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService_MultipleCredentials/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatingCookie">
+      <MemberSignature Language="C#" Value="public static event EventHandler&lt;System.Web.ApplicationServices.CreatingCookieEventArgs&gt; CreatingCookie;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ApplicationServices.CreatingCookieEventArgs&gt; CreatingCookie" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ApplicationServices.AuthenticationService.CreatingCookie" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ApplicationServices.CreatingCookieEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証 cookie が設定されているときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベントはユーザーの資格情報が検証された後、認証 cookie が設定されると発生します。 イベント ハンドラーを作成、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>認証クッキーをカスタマイズするイベントです。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーにバインドする方法を示しています、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>内のイベント、 `Application_Start` Global.asax ファイルのメソッドです。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#1)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#1)]  
+  
+ 次の例は、イベント ハンドラーを<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>Global.asax ファイル内のイベントです。 イベント ハンドラーの値を追加することで、認証 cookie をカスタマイズする、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティを<xref:System.Web.Security.FormsAuthenticationTicket.UserData%2A>プロパティです。 ストア、<xref:System.Web.ApplicationServices.CreatingCookieEventArgs.CustomCredential%2A>プロパティ内のデータは区別されないことがわかっている場合にのみ、クッキー内のプロパティです。 悪意のあるユーザーは、cookie の値にアクセスできます。  
+  
+ [!code-csharp[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/cs/Global.asax#2)]
+ [!code-vb[System.Web.Security.LoginService.CreatingCookieEventArgs#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.LoginService.CreatingCookieEventArgs/vb/Global.asax#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLoggedIn">
+      <MemberSignature Language="C#" Value="public bool IsLoggedIn ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsLoggedIn() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のユーザーが認証されたかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />ユーザーが認証されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn%2A>メソッドでは、チェックして、現在のユーザーが認証されたかどうかを確認、 <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A>.property です。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.AuthenticationService.IsLoggedIn%2A> WCF サービスの一部としてのみメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Login">
+      <MemberSignature Language="C#" Value="public bool Login (string username, string password, string customCredential, bool isPersistent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Login(string username, string password, string customCredential, bool isPersistent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.AuthenticationService.Login(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="customCredential" Type="System.String" />
+        <Parameter Name="isPersistent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="username">検証に使用するユーザー名。</param>
+        <param name="password">指定したユーザーのパスワード。</param>
+        <param name="customCredential">他に、検証する値<c>userName</c>と<c>パスワード</c>存在する場合、します。</param>
+        <param name="isPersistent">複数のセッションでの認証チケットが有効であるかどうかを示す値。</param>
+        <summary>ユーザーの資格情報し、資格情報が有効な場合は、認証チケット (クッキー) を作成を確認します。</summary>
+        <returns>
+          <see langword="true" />ユーザーの資格情報が有効な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドはメンバーシップ プロバイダーを通じてユーザーの資格情報を検証します。 既定のメンバーシップ プロバイダーを使用したり、実行時にカスタム メンバーシップ プロバイダーを指定することができます。 <xref:System.Web.ApplicationServices.AuthenticationService>クラス パス`userName`と`password`をメンバーシップ プロバイダーの<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>メソッド、にもかかわらずが通過しない`customCredential`です。 場合<xref:System.Web.Security.MembershipProvider.ValidateUser%2A>返します`true`、 <xref:System.Web.ApplicationServices.AuthenticationService> cookie として認証チケットを作成します。 設定、`isPersistent`パラメーターを`true`を現在のセッション以降存続する認証チケットを作成します。  
+  
+> [!NOTE]
+>  常に secure socket layer (SSL を HTTPS を使用して) と共に認証サービスを使用して機密データを保護します。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService.Login%2A>メソッドが発生し、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベントおよび<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。 イベント ハンドラーを作成<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>値のチェックインなどの認証をカスタマイズする`customCredential`または既定以外のメンバーシップ プロバイダーを通じて資格情報を検証します。 内の値`customCredential`既定のメンバーシップ プロバイダーでは検証されません。 認証 cookie をカスタマイズするためのイベント ハンドラーを作成<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>です。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.AuthenticationService.Login%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.AuthenticationService.Login%2A> WCF サービスの一部としてのみメソッドです。 詳細については、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userName" /> または <paramref name="password" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Logout">
+      <MemberSignature Language="C#" Value="public void Logout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Logout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.AuthenticationService.Logout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ブラウザーでの認証チケット (クッキー) を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.Logout%2A>メソッドは、ブラウザーのクッキー コレクションから、認証 cookie をクリアします。 ユーザーは、認証を受けるもう一度ログインする必要があります。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService>クラスには、どの認証のチケットがクリアされているサーバーの情報は保存されません。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.AuthenticationService.Logout%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.AuthenticationService.Logout%2A> WCF サービスの一部としてのみメソッドです。 詳細については、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUser">
+      <MemberSignature Language="C#" Value="public bool ValidateUser (string username, string password, string customCredential);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ValidateUser(string username, string password, string customCredential) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ApplicationServices.AuthenticationService.ValidateUser(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ServiceModel.OperationContract</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="customCredential" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">検証に使用するユーザー名。</param>
+        <param name="password">指定したユーザーのパスワード。</param>
+        <param name="customCredential">他に、検証する値<c>userName</c>と<c>パスワード</c>存在する場合、します。</param>
+        <summary>認証チケットを発行することがなく、ユーザーの資格情報を認証します。</summary>
+        <returns>
+          <see langword="true" />ユーザーの資格情報が有効な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>メソッドは、ユーザーの資格情報を認証しますが、認証 cookie を設定しません。 認証 cookie、せず、ユーザーは記録されません資格情報が有効な場合でも。  
+  
+ 使用して、<xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>メソッドと、認証 cookie を受けることがなく、ユーザーの資格情報が有効かどうかを確認する必要があります。 たとえば、これを行います認証 cookie がクライアント アプリケーションに既に格納されても、新しいセッションを開始するときに、ユーザーの資格情報がまだ有効であることを確認する場合。  
+  
+ <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A>メソッドを発生させます、<xref:System.Web.ApplicationServices.AuthenticationService.Authenticating>イベントは発生しませんが、<xref:System.Web.ApplicationServices.AuthenticationService.CreatingCookie>イベント。  
+  
+> [!NOTE]
+>  呼び出す必要はありません、 <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A> Web サーバーで実行されているコードからメソッドです。 呼び出す、 <xref:System.Web.ApplicationServices.AuthenticationService.ValidateUser%2A> WCF サービスの一部としてのみメソッドです。 詳細については、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="userName" /> または <paramref name="password" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

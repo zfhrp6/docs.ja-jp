@@ -1,0 +1,454 @@
+<Type Name="BuildEventContext" FullName="Microsoft.Build.Framework.BuildEventContext">
+  <TypeSignature Language="C#" Value="public class BuildEventContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit BuildEventContext extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.BuildEventContext" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビルド イベントのコンテキストの場所の情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.Framework.BuildEventContext>マルチプロセッサ環境で便利です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildEventContext (int nodeId, int targetId, int projectContextId, int taskId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 nodeId, int32 targetId, int32 projectContextId, int32 taskId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nodeId" Type="System.Int32" />
+        <Parameter Name="targetId" Type="System.Int32" />
+        <Parameter Name="projectContextId" Type="System.Int32" />
+        <Parameter Name="taskId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="nodeId">ビルド イベントのノード ID。</param>
+        <param name="targetId">ビルド イベントのターゲット ID です。</param>
+        <param name="projectContextId">ビルド イベントのプロジェクト ID。</param>
+        <param name="taskId">ビルド イベントのタスクの ID。</param>
+        <summary><see cref="T:Microsoft.Build.Framework.BuildEventContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildEventContext (int nodeId, int projectInstanceId, int projectContextId, int targetId, int taskId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 nodeId, int32 projectInstanceId, int32 projectContextId, int32 targetId, int32 taskId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="nodeId" Type="System.Int32" />
+        <Parameter Name="projectInstanceId" Type="System.Int32" />
+        <Parameter Name="projectContextId" Type="System.Int32" />
+        <Parameter Name="targetId" Type="System.Int32" />
+        <Parameter Name="taskId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="nodeId">ビルド イベントのノード ID。</param>
+        <param name="projectInstanceId">ビルド イベントのプロジェクトのインスタンス ID。</param>
+        <param name="projectContextId">ビルド イベントのプロジェクト ID。</param>
+        <param name="targetId">ビルド イベントのターゲット ID です。</param>
+        <param name="taskId">ビルド イベントのタスクの ID。</param>
+        <summary>指定されたプロジェクト インスタンス id を持つ BuildEventContext を構築します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildEventContext (int submissionId, int nodeId, int projectInstanceId, int projectContextId, int targetId, int taskId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 submissionId, int32 nodeId, int32 projectInstanceId, int32 projectContextId, int32 targetId, int32 taskId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="submissionId" Type="System.Int32" />
+        <Parameter Name="nodeId" Type="System.Int32" />
+        <Parameter Name="projectInstanceId" Type="System.Int32" />
+        <Parameter Name="projectContextId" Type="System.Int32" />
+        <Parameter Name="targetId" Type="System.Int32" />
+        <Parameter Name="taskId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="submissionId">ビルド イベントの送信 ID。</param>
+        <param name="nodeId">ビルド イベントのノード ID。</param>
+        <param name="projectInstanceId">ビルド イベントのプロジェクトのインスタンス ID。</param>
+        <param name="projectContextId">ビルド イベントのプロジェクト ID。</param>
+        <param name="targetId">ビルド イベントのターゲット ID です。</param>
+        <param name="taskId">ビルド イベントのタスクの ID。</param>
+        <summary>特定の送信 id と BuildEventContext を構築します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildRequestId">
+      <MemberSignature Language="C#" Value="public long BuildRequestId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BuildRequestId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.BuildRequestId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>BuildRequest id を取得します。これがないと同じこと BuildRequest または構築結果でグローバル要求 id に注意してください。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較する参照。</param>
+        <summary>参照が、同じかどうかを取得します。</summary>
+        <returns>
+          <see langword="true" />参照が等しい場合は<see langword="false" />それ以外の場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成コードを取得、<see cref="P:Microsoft.Build.Framework.BuildEventContext.ProjectContextId" />と<see cref="P:Microsoft.Build.Framework.BuildEventContext.NodeId" />です。</summary>
+        <returns>ハッシュ コードを表す整数値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="public static Microsoft.Build.Framework.BuildEventContext Invalid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Build.Framework.BuildEventContext Invalid" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.Invalid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.BuildEventContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したコンテキストが有効かどうかを取得します。</summary>
+        <value>
+          <see langword="true" />コンテキストが無効である場合<see langword="false" />それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidNodeId">
+      <MemberSignature Language="C#" Value="public const int InvalidNodeId = -2;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidNodeId = (-2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidNodeId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-2</MemberValue>
+      <Docs>
+        <summary>イベントの発生時のターゲット イベントのノード ID。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ノード ID を表す整数値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidProjectContextId">
+      <MemberSignature Language="C#" Value="public const int InvalidProjectContextId = -2;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidProjectContextId = (-2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidProjectContextId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-2</MemberValue>
+      <Docs>
+        <summary>イベントの発生時のイベントのターゲットのプロジェクト ID。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidProjectInstanceId">
+      <MemberSignature Language="C#" Value="public const int InvalidProjectInstanceId = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidProjectInstanceId = (-1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidProjectInstanceId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>イベントの発生時のイベントのターゲットのプロジェクトのインスタンス ID。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidSubmissionId">
+      <MemberSignature Language="C#" Value="public const int InvalidSubmissionId = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidSubmissionId = (-1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidSubmissionId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>イベントの発生時のターゲット イベントの送信 ID。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidTargetId">
+      <MemberSignature Language="C#" Value="public const int InvalidTargetId = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidTargetId = (-1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidTargetId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>ターゲットの名前、イベント時のイベントがトリガーされました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidTaskId">
+      <MemberSignature Language="C#" Value="public const int InvalidTaskId = -1;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 InvalidTaskId = (-1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Build.Framework.BuildEventContext.InvalidTaskId" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>-1</MemberValue>
+      <Docs>
+        <summary>イベントの発生時のターゲット イベントのタスクの ID。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeId">
+      <MemberSignature Language="C#" Value="public int NodeId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 NodeId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.NodeId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したノード ID を取得します。</summary>
+        <value>ノード ID を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (Microsoft.Build.Framework.BuildEventContext left, Microsoft.Build.Framework.BuildEventContext right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class Microsoft.Build.Framework.BuildEventContext left, class Microsoft.Build.Framework.BuildEventContext right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.op_Equality(Microsoft.Build.Framework.BuildEventContext,Microsoft.Build.Framework.BuildEventContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="Microsoft.Build.Framework.BuildEventContext" />
+        <Parameter Name="right" Type="Microsoft.Build.Framework.BuildEventContext" />
+      </Parameters>
+      <Docs>
+        <param name="left">左側のオペランド</param>
+        <param name="right">右側のオペランド</param>
+        <summary>オーバーライド = = この演算子を使用する等値比較と同じになります。等しい</summary>
+        <returns>オブジェクトの値が同一の場合、false が同一でない場合は true。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (Microsoft.Build.Framework.BuildEventContext left, Microsoft.Build.Framework.BuildEventContext right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class Microsoft.Build.Framework.BuildEventContext left, class Microsoft.Build.Framework.BuildEventContext right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.BuildEventContext.op_Inequality(Microsoft.Build.Framework.BuildEventContext,Microsoft.Build.Framework.BuildEventContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="Microsoft.Build.Framework.BuildEventContext" />
+        <Parameter Name="right" Type="Microsoft.Build.Framework.BuildEventContext" />
+      </Parameters>
+      <Docs>
+        <param name="left">左側のオペランド</param>
+        <param name="right">右側のオペランド</param>
+        <summary>オーバーライド! = ため、この演算子を使用する等値比較は同じになります。 次の値に等しい</summary>
+        <returns>オブジェクトの値が異なる場合、false が等しい場合は true。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectContextId">
+      <MemberSignature Language="C#" Value="public int ProjectContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProjectContextId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.ProjectContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生した、プロジェクトの ID を取得します。</summary>
+        <value>プロジェクト ID を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProjectInstanceId">
+      <MemberSignature Language="C#" Value="public int ProjectInstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProjectInstanceId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.ProjectInstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロジェクト インスタンス id を取得します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmissionId">
+      <MemberSignature Language="C#" Value="public int SubmissionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SubmissionId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.SubmissionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信の id を取得します。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetId">
+      <MemberSignature Language="C#" Value="public int TargetId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TargetId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.TargetId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したターゲットの ID を取得します。</summary>
+        <value>対象の ID を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TaskId">
+      <MemberSignature Language="C#" Value="public int TaskId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TaskId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.BuildEventContext.TaskId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントが発生したタスクの ID を取得します。</summary>
+        <value>タスク ID を表す整数値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

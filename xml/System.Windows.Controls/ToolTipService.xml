@@ -1,0 +1,1328 @@
+<Type Name="ToolTipService" FullName="System.Windows.Controls.ToolTipService">
+  <TypeSignature Language="C#" Value="public static class ToolTipService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed ToolTipService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ToolTipService" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ツールヒントの表示と動作を制御するためのプロパティおよびイベントを提供するサービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、要素のツールヒントを定義する、<xref:System.Windows.FrameworkContentElement.ToolTip%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkElement.ToolTip%2A?displayProperty=nameWithType>プロパティです。  ToolTip プロパティでは、1 つの子を取得します。 子のコンテンツは、単純なテキスト文字列に異なるより複雑なコンテンツなど、<xref:System.Windows.Controls.StackPanel>テキストが埋め込まれていると<xref:System.Windows.Controls.Image>要素。  
+  
+ としてのツールヒントの内容を定義することができます、<xref:System.Windows.Controls.ToolTip>オブジェクトが、これは必要ありません。 ときに、ツールヒントとしてコンテンツを定義していない、<xref:System.Windows.Controls.ToolTip>オブジェクトを使用する、<xref:System.Windows.Controls.ToolTipService>配置し、ツールヒントのコンテンツをカスタマイズするプロパティです。 添付プロパティの<xref:System.Windows.Controls.ToolTipService>クラスを使用して、配置、動作、およびツールヒントの外観を決定します。 これらのプロパティは、ツールヒントが定義されている要素に設定されます。  
+  
+ <xref:System.Windows.Controls.ToolTip>クラスおよび<xref:System.Windows.Controls.ToolTipService>クラスでは、多くのツール ヒントのカスタマイズに使用される同じプロパティを共有します。 同じ場合<xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ToolTipService>プロパティは、両方の設定、<xref:System.Windows.Controls.ToolTipService>プロパティが優先されます。 例では、両方の<xref:System.Windows.Controls.ToolTip.Placement%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Controls.ToolTipService.Placement%2A?displayProperty=nameWithType>のプロパティを設定、<xref:System.Windows.Controls.ToolTip?displayProperty=nameWithType>オブジェクト、値の<xref:System.Windows.Controls.ToolTipService.Placement%2A?displayProperty=nameWithType>プロパティを使用します。  
+  
+ 次<xref:System.Windows.Controls.ToolTipService>に対してしかタイミングのプロパティを定義、<xref:System.Windows.Controls.ToolTipService>クラスされ、すべてのツールヒントによって使用されます。  
+  
+-   <xref:System.Windows.Controls.ToolTipService.InitialShowDelay%2A>  
+  
+-   <xref:System.Windows.Controls.ToolTipService.ShowDuration%2A>  
+  
+-   <xref:System.Windows.Controls.ToolTipService.BetweenShowDelay%2A>  
+  
+ ツールヒントが開くか閉じるときに発生するイベントを処理する方法については、次を参照してください。、<xref:System.Windows.Controls.ToolTipService.ToolTipOpeningEvent>と<xref:System.Windows.Controls.ToolTipService.ToolTipClosingEvent>フィールドです。  
+  
+ <xref:System.Windows.Controls.ToolTipService.Placement%2A>、 <xref:System.Windows.Controls.ToolTipService.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ToolTipService.PlacementTarget%2A>、 <xref:System.Windows.Controls.ToolTipService.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ToolTipService.VerticalOffset%2A>内の同じ名前のプロパティと同様に動作、<xref:System.Windows.Controls.Primitives.Popup>クラスです。  詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 例を次にどのように使用、<xref:System.Windows.Controls.ToolTipService>ツールヒントの動作を指定するクラス。 プロパティを設定する、<xref:System.Windows.Controls.ToolTipService>ツールヒントを公開する要素に直接アタッチすることによってクラスです。  
+  
+ [!code-xaml[ToolTipService#NoToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml#notooltip)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddToolTipClosingHandler">
+      <MemberSignature Language="C#" Value="public static void AddToolTipClosingHandler (System.Windows.DependencyObject element, System.Windows.Controls.ToolTipEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddToolTipClosingHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ToolTipEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.AddToolTipClosingHandler(System.Windows.DependencyObject,System.Windows.Controls.ToolTipEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ToolTipEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see langword="ToolTipService.ToolTipClosing" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToolTipOpeningHandler">
+      <MemberSignature Language="C#" Value="public static void AddToolTipOpeningHandler (System.Windows.DependencyObject element, System.Windows.Controls.ToolTipEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddToolTipOpeningHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ToolTipEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.AddToolTipOpeningHandler(System.Windows.DependencyObject,System.Windows.Controls.ToolTipEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ToolTipEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see langword="ToolTipService.ToolTipOpening" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BetweenShowDelayProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BetweenShowDelayProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BetweenShowDelayProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.BetweenShowDelayProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.BetweenShowDelay" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBetweenShowDelay">
+      <MemberSignature Language="C#" Value="public static int GetBetweenShowDelay (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetBetweenShowDelay(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetBetweenShowDelay(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.BetweenShowDelay" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.BetweenShowDelay" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.BetweenShowDelay`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetBetweenShowDelay](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getbetweenshowdelay)]
+ [!code-vb[ToolTipService#GetBetweenShowDelay](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getbetweenshowdelay)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHasDropShadow">
+      <MemberSignature Language="C#" Value="public static bool GetHasDropShadow (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetHasDropShadow(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetHasDropShadow(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.HasDropShadow" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.HasDropShadow" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.HasDropShadow`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetHasDropShadow](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#gethasdropshadow)]
+ [!code-vb[ToolTipService#GetHasDropShadow](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#gethasdropshadow)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHorizontalOffset">
+      <MemberSignature Language="C#" Value="public static double GetHorizontalOffset (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetHorizontalOffset(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetHorizontalOffset(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.HorizontalOffset" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.HorizontalOffset" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.HorizontalOffset`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetHorizontalOffset](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#gethorizontaloffset)]
+ [!code-vb[ToolTipService#GetHorizontalOffset](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#gethorizontaloffset)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInitialShowDelay">
+      <MemberSignature Language="C#" Value="public static int GetInitialShowDelay (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetInitialShowDelay(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetInitialShowDelay(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.InitialShowDelay" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.InitialShowDelay" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.InitialShowDelay`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetInitialShowDelay](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getinitialshowdelay)]
+ [!code-vb[ToolTipService#GetInitialShowDelay](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getinitialshowdelay)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsEnabled">
+      <MemberSignature Language="C#" Value="public static bool GetIsEnabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsEnabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetIsEnabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.IsEnabled" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.IsEnabled" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.IsEnabled`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetIsEnabled](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getisenabled)]
+ [!code-vb[ToolTipService#GetIsEnabled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getisenabled)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsOpen">
+      <MemberSignature Language="C#" Value="public static bool GetIsOpen (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsOpen(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetIsOpen(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.IsOpen" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.IsOpen" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.IsOpen`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetIsOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getisopen)]
+ [!code-vb[ToolTipService#GetIsOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getisopen)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacement">
+      <MemberSignature Language="C#" Value="public static System.Windows.Controls.Primitives.PlacementMode GetPlacement (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Controls.Primitives.PlacementMode GetPlacement(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetPlacement(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PlacementMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.Placement" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.Placement" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.Placement`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetPlacement](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getplacement)]
+ [!code-vb[ToolTipService#GetPlacement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getplacement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacementRectangle">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect GetPlacementRectangle (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect GetPlacementRectangle(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetPlacementRectangle(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.PlacementRectangle" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.PlacementRectangle" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.PlacementRectangle`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetPlacementRectangle](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getplacementrectangle)]
+ [!code-vb[ToolTipService#GetPlacementRectangle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getplacementrectangle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPlacementTarget">
+      <MemberSignature Language="C#" Value="public static System.Windows.UIElement GetPlacementTarget (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.UIElement GetPlacementTarget(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetPlacementTarget(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.PlacementTarget" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.PlacementTarget" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.PlacementTarget`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetPlacementTarget](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getplacementtarget)]
+ [!code-vb[ToolTipService#GetPlacementTarget](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getplacementtarget)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetShowDuration">
+      <MemberSignature Language="C#" Value="public static int GetShowDuration (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetShowDuration(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetShowDuration(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.ShowDuration" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.ShowDuration" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.ShowDuration`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetShowDuration](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getshowduration)]
+ [!code-vb[ToolTipService#GetShowDuration](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getshowduration)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetShowOnDisabled">
+      <MemberSignature Language="C#" Value="public static bool GetShowOnDisabled (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetShowOnDisabled(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetShowOnDisabled(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.ShowOnDisabled" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.ShowOnDisabled" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.ShowOnDisabledProperty`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetShowOnDisabled](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getshowondisabled)]
+ [!code-vb[ToolTipService#GetShowOnDisabled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getshowondisabled)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetToolTip">
+      <MemberSignature Language="C#" Value="public static object GetToolTip (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetToolTip(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetToolTip(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.ToolTip" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.ToolTip" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.ToolTipProperty`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#gettooltip)]
+ [!code-vb[ToolTipService#GetToolTip](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#gettooltip)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVerticalOffset">
+      <MemberSignature Language="C#" Value="public static double GetVerticalOffset (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetVerticalOffset(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.GetVerticalOffset(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.AttachedPropertyBrowsableForType(typeof(System.Windows.DependencyObject))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see langword="ToolTipService.VerticalOffset" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see langword="ToolTipService.VerticalOffset" />プロパティの値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、`ToolTipService.VerticalOffset`添付プロパティ。 <xref:System.Windows.FrameworkElement.FindName%2A>メソッドが呼び出されるオブジェクトを検索`ellipse2`、これは、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-csharp[ToolTipService#GetVerticalOffset](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#getverticaloffset)]
+ [!code-vb[ToolTipService#GetVerticalOffset](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#getverticaloffset)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasDropShadowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasDropShadowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.HasDropShadowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.HasDropShadow" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.HorizontalOffset" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialShowDelayProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InitialShowDelayProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InitialShowDelayProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.InitialShowDelayProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.InitialShowDelay" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsEnabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsEnabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.IsEnabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.IsEnabled" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.IsOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.IsOpen" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.PlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.Placement" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementRectangleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementRectangleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.PlacementRectangleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.PlacementRectangle" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.PlacementTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.PlacementTarget" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveToolTipClosingHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveToolTipClosingHandler (System.Windows.DependencyObject element, System.Windows.Controls.ToolTipEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveToolTipClosingHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ToolTipEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.RemoveToolTipClosingHandler(System.Windows.DependencyObject,System.Windows.Controls.ToolTipEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ToolTipEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see langword="ToolTipService.ToolTipClosing" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveToolTipOpeningHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveToolTipOpeningHandler (System.Windows.DependencyObject element, System.Windows.Controls.ToolTipEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveToolTipOpeningHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.ToolTipEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.RemoveToolTipOpeningHandler(System.Windows.DependencyObject,System.Windows.Controls.ToolTipEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.ToolTipEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">このイベントをリッスンする <see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see langword="ToolTipService.ToolTipOpening" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBetweenShowDelay">
+      <MemberSignature Language="C#" Value="public static void SetBetweenShowDelay (System.Windows.DependencyObject element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetBetweenShowDelay(class System.Windows.DependencyObject element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetBetweenShowDelay(System.Windows.DependencyObject,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see langword="ToolTipService.BetweenShowDelay" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.BetweenShowDelay`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetBetweenShowDelay](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setbetweenshowdelay)]
+ [!code-vb[ToolTipService#SetBetweenShowDelay](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setbetweenshowdelay)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHasDropShadow">
+      <MemberSignature Language="C#" Value="public static void SetHasDropShadow (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHasDropShadow(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetHasDropShadow(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.HasDropShadow" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.HasDropShadow`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetHasDropShadow](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#sethasdropshadow)]
+ [!code-vb[ToolTipService#SetHasDropShadow](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#sethasdropshadow)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetHorizontalOffset">
+      <MemberSignature Language="C#" Value="public static void SetHorizontalOffset (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetHorizontalOffset(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetHorizontalOffset(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.HorizontalOffset" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.HorizontalOffset`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetHorizontalOffset](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#sethorizontaloffset)]
+ [!code-vb[ToolTipService#SetHorizontalOffset](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#sethorizontaloffset)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetInitialShowDelay">
+      <MemberSignature Language="C#" Value="public static void SetInitialShowDelay (System.Windows.DependencyObject element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetInitialShowDelay(class System.Windows.DependencyObject element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetInitialShowDelay(System.Windows.DependencyObject,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.InitialShowDelay" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.InitialShowDelay`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetInitialShowDelay](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setinitialshowdelay)]
+ [!code-vb[ToolTipService#SetInitialShowDelay](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setinitialshowdelay)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIsEnabled">
+      <MemberSignature Language="C#" Value="public static void SetIsEnabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetIsEnabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetIsEnabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.IsEnabled" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.IsEnabled`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetIsEnabled](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setisenabled)]
+ [!code-vb[ToolTipService#SetIsEnabled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setisenabled)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacement">
+      <MemberSignature Language="C#" Value="public static void SetPlacement (System.Windows.DependencyObject element, System.Windows.Controls.Primitives.PlacementMode value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacement(class System.Windows.DependencyObject element, valuetype System.Windows.Controls.Primitives.PlacementMode value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetPlacement(System.Windows.DependencyObject,System.Windows.Controls.Primitives.PlacementMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Controls.Primitives.PlacementMode" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.Placement" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.Placement`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetPlacement](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setplacement)]
+ [!code-vb[ToolTipService#SetPlacement](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setplacement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacementRectangle">
+      <MemberSignature Language="C#" Value="public static void SetPlacementRectangle (System.Windows.DependencyObject element, System.Windows.Rect value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacementRectangle(class System.Windows.DependencyObject element, valuetype System.Windows.Rect value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetPlacementRectangle(System.Windows.DependencyObject,System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.PlacementRectangle" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.PlacementRectangle`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetPlacementRectangle](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setplacementrectangle)]
+ [!code-vb[ToolTipService#SetPlacementRectangle](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setplacementrectangle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPlacementTarget">
+      <MemberSignature Language="C#" Value="public static void SetPlacementTarget (System.Windows.DependencyObject element, System.Windows.UIElement value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetPlacementTarget(class System.Windows.DependencyObject element, class System.Windows.UIElement value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetPlacementTarget(System.Windows.DependencyObject,System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.PlacementTarget" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.PlacementTarget`添付プロパティ。  
+  
+ [!code-csharp[ToolTipAssign#SetPlacementTarget](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipAssign/CSharp/Pane1.xaml.cs#setplacementtarget)]
+ [!code-vb[ToolTipAssign#SetPlacementTarget](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipAssign/visualbasic/pane1.xaml.vb#setplacementtarget)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetShowDuration">
+      <MemberSignature Language="C#" Value="public static void SetShowDuration (System.Windows.DependencyObject element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetShowDuration(class System.Windows.DependencyObject element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetShowDuration(System.Windows.DependencyObject,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.ShowDuration" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.ShowDuration`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetShowDuration](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setshowduration)]
+ [!code-vb[ToolTipService#SetShowDuration](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setshowduration)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetShowOnDisabled">
+      <MemberSignature Language="C#" Value="public static void SetShowOnDisabled (System.Windows.DependencyObject element, bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetShowOnDisabled(class System.Windows.DependencyObject element, bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetShowOnDisabled(System.Windows.DependencyObject,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.ShowOnDisabled" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.ShowOnDisabled`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetShowOnDisabled](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setshowondisabled)]
+ [!code-vb[ToolTipService#SetShowOnDisabled](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setshowondisabled)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetToolTip">
+      <MemberSignature Language="C#" Value="public static void SetToolTip (System.Windows.DependencyObject element, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetToolTip(class System.Windows.DependencyObject element, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetToolTip(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">設定する値。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.ToolTipService.ToolTip" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値の場合、<xref:System.Windows.Controls.ToolTip>オブジェクト、<xref:System.Windows.Controls.ToolTip>すべてそのまま使用します。 によって提供されるヒントのコンテンツとしてその値が使用される値が他の型の場合は、<xref:System.Windows.Controls.ToolTipService>です。  
+  
+   
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.ToolTip`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetToolTip2](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#settooltip2)]
+ [!code-vb[ToolTipService#SetToolTip2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#settooltip2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetVerticalOffset">
+      <MemberSignature Language="C#" Value="public static void SetVerticalOffset (System.Windows.DependencyObject element, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetVerticalOffset(class System.Windows.DependencyObject element, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ToolTipService.SetVerticalOffset(System.Windows.DependencyObject,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="element">添付プロパティの書き込み先になるオブジェクト。</param>
+        <param name="value">必要な値。</param>
+        <summary>値を設定、<see langword="ToolTipService.VerticalOffset" />添付プロパティ オブジェクトをします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を設定する方法を示しています、`ToolTipService.VerticalOffset`添付プロパティ。  
+  
+ [!code-csharp[ToolTipService#SetVerticalOffset](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#setverticaloffset)]
+ [!code-vb[ToolTipService#SetVerticalOffset](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#setverticaloffset)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDurationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowDurationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowDurationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.ShowDurationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.ShowDuration" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowOnDisabledProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowOnDisabledProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowOnDisabledProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.ShowOnDisabledProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ToolTipService.ShowOnDisabled" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipClosingEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ToolTipClosingEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ToolTipClosingEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.ToolTipClosingEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Controls.ToolTipService.ToolTipClosing" />によって公開されるイベント オブジェクトを使用する、<see cref="T:System.Windows.Controls.ToolTipService" />ツールヒントを表示するサービスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ToolTipService.ToolTipClosing>ツールヒントが閉じる直前にイベントが発生します。  
+  
+ このフィールドの動作の登録、<xref:System.Windows.Controls.ToolTipService.ToolTipClosingEvent>このサービスを使用するクラスのイベントです。 <xref:System.Windows.FrameworkElement>と<xref:System.Windows.FrameworkContentElement>両方のクラスを実装、<xref:System.Windows.Controls.ToolTipService>を通じてこのイベントを公開し、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]アクセサー<xref:System.Windows.FrameworkElement.ToolTipClosing?displayProperty=nameWithType>と<xref:System.Windows.FrameworkContentElement.ToolTipClosing?displayProperty=nameWithType>です。  
+  
+ としてツールヒントを指定する場合、<xref:System.Windows.Controls.ToolTip>オブジェクト、<xref:System.Windows.Controls.ToolTip.Closed>イベントは、ツールヒントが閉じたときにも発生します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを設定する方法を示しています、<xref:System.Windows.Controls.ToolTipService.ToolTipClosing>イベント。 この場合、イベント ハンドラーが、実際の<xref:System.Windows.FrameworkElement.ToolTipClosing?displayProperty=nameWithType>であるため、<xref:System.Windows.Shapes.Ellipse>の派生クラスでは、ハンドラーが添付されている<xref:System.Windows.FrameworkElement>です。  
+  
+ [!code-csharp[ToolTipService#ToolTipServiceEventHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipserviceeventhandlers)]
+ [!code-vb[ToolTipService#ToolTipServiceEventHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipserviceeventhandlers)]  
+  
+ [!code-csharp[ToolTipService#ToolTipOpenAndCloseHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipopenandclosehandler)]
+ [!code-vb[ToolTipService#ToolTipOpenAndCloseHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipopenandclosehandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipOpeningEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ToolTipOpeningEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ToolTipOpeningEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.ToolTipOpeningEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Controls.ToolTipService.ToolTipOpening" />によって公開されるイベント オブジェクトを使用する、<see cref="T:System.Windows.Controls.ToolTipService" />ツールヒントを表示するサービスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ToolTipService.ToolTipOpening>ツールヒントが開く前にすぐにイベントが発生します。 ツールヒントが定義されていない場合、またはツールヒントのコンテンツが設定されている場合、このイベントは発生しませんを null にします。  
+  
+ このフィールドの動作の登録、<xref:System.Windows.Controls.ToolTipService.ToolTipOpening>このサービスを使用するクラスのイベントです。 <xref:System.Windows.FrameworkElement>と<xref:System.Windows.FrameworkContentElement>両方のクラスを実装、<xref:System.Windows.Controls.ToolTipService>を通じてこのイベントを公開し、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]アクセサー<xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=nameWithType>と<xref:System.Windows.FrameworkContentElement.ToolTipOpening?displayProperty=nameWithType>です。  
+  
+ としてツールヒントを指定する場合、<xref:System.Windows.Controls.ToolTip>オブジェクト、<xref:System.Windows.Controls.ToolTip.Opened>イベントは、ツールヒントが開いたときにも発生します。  
+  
+   
+  
+## Examples  
+ 次の例は、イベント ハンドラーを設定する方法を示しています、<xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=nameWithType>イベント。  この場合、イベント ハンドラーが、実際の<xref:System.Windows.FrameworkElement.ToolTipOpening?displayProperty=nameWithType>であるため、<xref:System.Windows.Shapes.Ellipse>の派生クラスでは、ハンドラーが添付されている<xref:System.Windows.FrameworkElement>です。  
+  
+ [!code-csharp[ToolTipService#ToolTipServiceEventHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipserviceeventhandlers)]
+ [!code-vb[ToolTipService#ToolTipServiceEventHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipserviceeventhandlers)]  
+  
+ [!code-csharp[ToolTipService#ToolTipOpenAndCloseHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/ToolTipService/CSharp/Pane1.xaml.cs#tooltipopenandclosehandler)]
+ [!code-vb[ToolTipService#ToolTipOpenAndCloseHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ToolTipService/visualbasic/pane1.xaml.vb#tooltipopenandclosehandler)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToolTipProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ToolTipProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ToolTipProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.ToolTipProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.ToolTip" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ToolTipService.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="ToolTipService.VerticalOffset" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

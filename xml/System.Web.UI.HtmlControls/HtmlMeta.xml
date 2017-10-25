@@ -1,0 +1,271 @@
+<Type Name="HtmlMeta" FullName="System.Web.UI.HtmlControls.HtmlMeta">
+  <TypeSignature Language="C#" Value="public class HtmlMeta : System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HtmlMeta extends System.Web.UI.HtmlControls.HtmlControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlMeta" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HtmlControls.HtmlControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>HTML をプログラムでアクセスできます<see langword="&lt;meta&gt;" />サーバーでタグ付けします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta>コントロールでは、プログラムによるアクセスを提供、HTML に`<meta>`サーバー上の要素。 HTML`<meta>`要素は、について表示されたページ データ コンテナーがないページのコンテンツそのものです。 `<meta>`タグが開始および終了の HTML の間に配置`<head>`要素。 各`<meta>`要素は、メタデータ プロパティ名と関連付けられている値について説明します。  
+  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlMeta>コントロールの<xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>プロパティをメタデータ プロパティの名前を指定して、<xref:System.Web.UI.HtmlControls.HtmlMeta.Content%2A>メタデータ プロパティの値を指定するプロパティです。 使用して、<xref:System.Web.UI.HtmlControls.HtmlMeta.Scheme%2A>プロパティ メタデータのプロパティを解釈する方法についてユーザー エージェントに追加情報を指定します。 使用して、<xref:System.Web.UI.HtmlControls.HtmlMeta.HttpEquiv%2A>プロパティの代わりに、<xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>プロパティ HTTP を使用して結果のメタデータ プロパティを取得するときにします。  
+  
+ ページへの参照を取得できます`<head>`要素を使用して、<xref:System.Web.UI.Page.Header%2A>のプロパティ、<xref:System.Web.UI.Page>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlMeta> HTML を定義するコントロール`<meta>`Web ページの要素。 2 つ`<meta>`要素が定義されている、ページが作成されたいずれかのページと日付を一覧表示するいずれかを説明するキーワードの一覧表示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlMeta ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlMeta.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlMeta" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.HtmlControls.HtmlMeta>コントロール。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.HtmlControls.HtmlMeta>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.HtmlControls.HtmlControl.TagName%2A>|「メタ」リテラル文字列です。|  
+  
+   
+  
+## Examples  
+ 使用する方法の例については、<xref:System.Web.UI.HtmlControls.HtmlMeta.%23ctor%2A>コンス トラクターを参照してください、<xref:System.Web.UI.HtmlControls.HtmlMeta>クラスの概要に関するトピック。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public virtual string Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Content" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlMeta.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって定義されたメタデータ プロパティの値、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />コントロール。</summary>
+        <value>メタデータ プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Content%2A>と連携して、プロパティ、<xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>プロパティ ページのメタデータ プロパティを定義します。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Content%2A>プロパティにレンダリングされる、`content`結果の HTML の属性`<meta>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlMeta> HTML を定義するコントロール`<meta>`Web ページの要素。 2 つ`<meta>`要素が定義されている、ページが作成されたいずれかのページと日付を一覧表示するいずれかを説明するキーワードの一覧表示します。 <xref:System.Web.UI.HtmlControls.HtmlMeta.Content%2A>を定義するプロパティが使用される、`content`ごとに属性`<meta>`タグ。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HttpEquiv">
+      <MemberSignature Language="C#" Value="public virtual string HttpEquiv { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HttpEquiv" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlMeta.HttpEquiv" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Web.UI.HtmlControls.HtmlMeta" /> HTTP 応答ヘッダーに含まれているプロパティを制御します。</summary>
+        <value>HTTP 応答のヘッダー項目の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.HtmlControls.HtmlMeta.HttpEquiv%2A>プロパティの代わりに、 <xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A> HTTP 要求の応答ヘッダーに含める必要がある情報を特定するプロパティです。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.HttpEquiv%2A>プロパティにレンダリングされる、`http-equiv`結果の HTML の属性`<meta>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlMeta.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定によって定義されたメタデータのプロパティ名、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />コントロール。</summary>
+        <value>プロパティ名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>と連携して、プロパティ、<xref:System.Web.UI.HtmlControls.HtmlMeta.Content%2A>プロパティ ページのメタデータ プロパティを定義します。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>プロパティにレンダリングされる、`name`結果の HTML の属性`<meta>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlMeta> HTML を定義するコントロール`<meta>`Web ページの要素。 2 つ`<meta>`タグが定義されている、ページが作成されたいずれかのページと日付を一覧表示するいずれかを説明するキーワードの一覧表示します。 <xref:System.Web.UI.HtmlControls.HtmlMeta.Name%2A>を定義するプロパティが使用される、`name`の各属性`<meta>`タグ。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlMeta.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />表示するために使用される、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />クライアントのブラウザー上のコントロールのコンテンツ。</param>
+        <summary>表示、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />コントロールを指定して、クライアントのブラウザーに<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta>レンダリングを制御、 <xref:System.Web.UI.HtmlTextWriter.SelfClosingTagEnd> HTML 角かっこ (/>) で、`<meta>`クライアントのブラウザーは、XHTML 準拠している場合は、要素。 XHTML 非表示の ASP.NET を構成する方法については、次を参照してください。 [NIB: 方法: XHTML のレンダリングを構成する ASP.NET Web サイトで](http://msdn.microsoft.com/en-us/42483a54-f1ae-44e1-88e6-4370f8690149)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>拡張するとき、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />コントロールをオーバーライド、<see cref="M:System.Web.UI.HtmlControls.HtmlMeta.Render(System.Web.UI.HtmlTextWriter)" />カスタム表示を提供するメソッド。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Scheme">
+      <MemberSignature Language="C#" Value="public virtual string Scheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Scheme" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.HtmlControls.HtmlMeta.Scheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see langword="scheme" />によって定義されたメタデータ プロパティの値を解釈するための属性、<see cref="T:System.Web.UI.HtmlControls.HtmlMeta" />コントロール。</summary>
+        <value><see langword="scheme" />属性。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Scheme%2A>プロパティでは、指定することができます、`scheme`レンダリングされた html 属性`<meta>`要素。 `scheme`クライアント ブラウザーまたは検索エンジン、メタデータ プロパティを解釈するための追加のコンテキストなど、ユーザー エージェントを提供する属性を使用できます。  
+  
+ <xref:System.Web.UI.HtmlControls.HtmlMeta.Scheme%2A>プロパティにレンダリングされる、`scheme`結果の HTML の属性`<meta>`要素。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.HtmlControls.HtmlMeta> HTML を定義するコントロール`<meta>`Web ページの要素。 2 つ`<meta>`タグが定義されている、ページが作成されたいずれかのページと日付を一覧表示するいずれかを説明するキーワードの一覧表示します。 <xref:System.Web.UI.HtmlControls.HtmlMeta.Scheme%2A>日付関連のプロパティは使用`<meta>`日付値を読み取るユーザー エージェントを支援するためにタグ。  
+  
+ [!code-aspx-csharp[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/cs/sourcecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.HtmlControls.HtmlMeta#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.HtmlControls.HtmlMeta/vb/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,183 @@
+<Type Name="BestFitMappingAttribute" FullName="System.Runtime.InteropServices.BestFitMappingAttribute">
+  <TypeSignature Language="C#" Value="public sealed class BestFitMappingAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BestFitMappingAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.BestFitMappingAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Unicode 文字を、その文字に一番近い ANSI 文字に変換するかどうかを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリ、インターフェイス、クラスまたは構造体に適用できます。  
+  
+ 既定では、共通言語ランタイムは Windows 98 または Windows me で実行するアンマネージ メソッドに渡される Unicode 文字が管理している ANSI 文字に変換します。 最適マッピングを有効に、相互運用マーシャラーを完全に一致が存在しない場合は、近い文字を選択します。 たとえば、マーシャラー、Unicode 文字に変換著作権を ANSI 文字を使用するアンマネージ メソッドに対して 'c' です。  
+  
+> [!CAUTION]
+>  一部の文字がない最適形式です。これらの文字といいます。 マップできない文字が、既定値に変換する通常 '?'ANSI 文字です。 特定の Unicode 文字は、円記号など、危険な文字に変換されます '\\' 文字で、パスを不用意に変更できます。  
+  
+ <xref:System.Runtime.InteropServices.BestFitMappingAttribute>最適なマッピングの側面を制御する 2 つのパラメーターを提供します。 最適マッピング オンとオフを切り替えるには、最初のパラメーターを使用します。 既定値は`true`アセンブリ、インターフェイス、およびクラス レベルでの最適マッピングを有効にします。 インターフェイスまたはクラスに適用される属性は、アセンブリ レベル属性をオーバーライドします。 同様に有効または無効にする最適マッピングを使用してプラットフォーム呼び出しが、<xref:System.Runtime.InteropServices.DllImportAttribute.BestFitMapping?displayProperty=nameWithType>フィールドです。 プラットフォームによって設定された値はすべてのレベルのフィールドの上書きを呼び出す<xref:System.Runtime.InteropServices.BestFitMappingAttribute>です。  
+  
+ コントロールをマップできない文字に例外をスローする 2 番目のパラメーターを使用することができます。 既定値、<xref:System.Runtime.InteropServices.BestFitMappingAttribute.ThrowOnUnmappableChar>フィールドは`false`に変換するのには Unicode 文字を検出した時刻、ランタイムの各例外をスローしたり無効に、'?'ANSI 文字です。 場合でも、最適マッピングは`true`、マップできない文字が例外を生成するときに、<xref:System.Runtime.InteropServices.BestFitMappingAttribute.ThrowOnUnmappableChar>フィールドは`true`します。 セキュリティを強化するためには、最初のパラメーターを切り替えることができます`false`し、2 番目のパラメーターを`true`です。 このパラメーターの設定の組み合わせは、off、最適マッピングを有効が安全のため例外スロー機構を有効にします。  
+  
+> [!CAUTION]
+>  によって提供される既定値を変更することはできません<xref:System.Runtime.InteropServices.BestFitMappingAttribute>ときに要素を持つマネージ配列を渡すことは ANSI 文字または LPSTRs アンマネージのセーフ配列にします。 最適なマッピングが常に有効になっているし、例外はスローされません。 この組み合わせが、セキュリティ モデルを損なうことに注意してください。  
+  
+   
+  
+## Examples  
+ 次の例は、例外をスローする Unicode 文字の変換では、最適マッピングを無効にする方法を示します、'?'ANSI 文字です。 設定<xref:System.Runtime.InteropServices.BestFitMappingAttribute>この方法でパラメーターがセキュリティの追加のメジャーを提供します。  
+  
+ [!code-cpp[System.Runtime.InteropServices.BestFitMappingAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.bestfitmappingattribute/cpp/source.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.BestFitMappingAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.bestfitmappingattribute/cs/source.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.BestFitMappingAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.bestfitmappingattribute/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BestFitMappingAttribute (bool BestFitMapping);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool BestFitMapping) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.BestFitMappingAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="BestFitMapping" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="BestFitMapping">
+          <see langword="true" />最適なマッピングが有効なことを示すためにそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.BestFitMappingAttribute" />クラスの値に設定する、<see cref="P:System.Runtime.InteropServices.BestFitMappingAttribute.BestFitMapping" />プロパティです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BestFitMapping">
+      <MemberSignature Language="C#" Value="public bool BestFitMapping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BestFitMapping" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.BestFitMappingAttribute.BestFitMapping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Unicode 文字を ANSI 文字に変換するときは、最適マッピングの動作を取得します。</summary>
+        <value>
+          <see langword="true" />最適なマッピングが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最適マッピングは場合`false`と<xref:System.Runtime.InteropServices.BestFitMappingAttribute.ThrowOnUnmappableChar>は`true`、ANSI 形式に変換が必要なすべての Unicode 文字には、アンマネージ コードに渡されるときに例外が発生します。 一部の文字がマッピングではなくも最適マッピングは`true`します。 一部の文字がない最適形式です。これらの文字といいます。 マップできない文字が、既定値に変換する通常 '?'ANSI 文字です。  
+  
+> [!CAUTION]
+>  特定の Unicode 文字は、円記号など、危険な文字に変換されます '\\' 文字で、パスを不用意に変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowOnUnmappableChar">
+      <MemberSignature Language="C#" Value="public bool ThrowOnUnmappableChar;" />
+      <MemberSignature Language="ILAsm" Value=".field public bool ThrowOnUnmappableChar" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.BestFitMappingAttribute.ThrowOnUnmappableChar" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効または無効に ANSI に変換されるマップできない Unicode 文字の例外のスロー '?' 文字です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`false`、<xref:System.Runtime.InteropServices.BestFitMappingAttribute.ThrowOnUnmappableChar>フィールドが無効になります。 それ以外の場合、例外は、相互運用マーシャラーが、マップできない文字を検出するたびにします。 既定の `false`。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

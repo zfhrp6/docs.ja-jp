@@ -1,0 +1,235 @@
+<Type Name="MenuEventArgs" FullName="System.Web.UI.WebControls.MenuEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class MenuEventArgs : System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MenuEventArgs extends System.Web.UI.WebControls.CommandEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MenuEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.CommandEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Web.UI.WebControls.Menu.MenuItemClick" />と<see cref="E:System.Web.UI.WebControls.Menu.MenuItemDataBound" />のイベント、<see cref="T:System.Web.UI.WebControls.Menu" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.MenuEventArgs>クラスは、次の表に、イベントのイベント ハンドラーに渡されたイベント データの格納に使用します。  
+  
+|イベント|説明|  
+|-----------|-----------------|  
+|<xref:System.Web.UI.WebControls.Menu.MenuItemClick>|メニュー項目がクリックされたときに発生します。 このイベントは、同期するためによく使用、 <xref:System.Web.UI.WebControls.Menu>  ページで別のコントロールでのコントロールです。|  
+|<xref:System.Web.UI.WebControls.Menu.MenuItemDataBound>|メニュー項目がデータにバインドされている場合に発生します。 このイベントは通常使用でレンダリングされる前に、メニュー項目を変更する、<xref:System.Web.UI.WebControls.Menu>コントロール。|  
+  
+ 発生するイベントによって、ユーザーまたはを使用してデータにバインドされているメニュー項目がクリックされたメニュー項目にアクセスすることができます、<xref:System.Web.UI.WebControls.MenuEventArgs.Item%2A>プロパティです。  
+  
+ <xref:System.Web.UI.WebControls.MenuEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.MenuEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuEventArgs>オブジェクトのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.Menu.MenuItemDataBound>に表示される前に、メニュー項目のプロパティを変更するイベント、<xref:System.Web.UI.WebControls.Menu>コントロール。 <xref:System.Web.UI.WebControls.MenuItem.ImageUrl%2A>のプロパティ、`Home`メニュー項目のみにイメージを表示するメニュー項目を設定します。 この例を正しく動作する Web.sitemap をという名前のファイルに以下のサンプル サイト マップ データをコピーする必要があります。  
+  
+ [!code-aspx-csharp[MenuEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuEventArgs/CS/menueventargscs.aspx#1)]
+ [!code-aspx-vb[MenuEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuEventArgs/VB/menueventargsvb.aspx#1)]  
+  
+ 前の例のサンプル サイト マップ データを次に示します。  
+  
+ `<siteMap>`  
+  
+ `<siteMapNode url="~\Home.aspx"`  
+  
+ `title="Home"`  
+  
+ `description="Home">`  
+  
+ `<siteMapNode url="~\Music.aspx"`  
+  
+ `title="Music"`  
+  
+ `description="Music">`  
+  
+ `<siteMapNode url="~\Classical.aspx"`  
+  
+ `title="Classical"`  
+  
+ `description="Classical"/>`  
+  
+ `<siteMapNode url="~\Rock.aspx"`  
+  
+ `title="Rock"`  
+  
+ `description="Rock"/>`  
+  
+ `<siteMapNode url="~\Jazz.aspx"`  
+  
+ `title="Jazz"`  
+  
+ `description="Jazz"/>`  
+  
+ `</siteMapNode>`  
+  
+ `<siteMapNode url="~\Movies.aspx"`  
+  
+ `title="Movies"`  
+  
+ `description="Movies">`  
+  
+ `<siteMapNode url="~\Action.aspx"`  
+  
+ `title="Action"`  
+  
+ `description="Action"/>`  
+  
+ `<siteMapNode url="~\Drama.aspx"`  
+  
+ `title="Drama"`  
+  
+ `description="Drama"/>`  
+  
+ `<siteMapNode url="~\Musical.aspx"`  
+  
+ `title="Musical"`  
+  
+ `description="Musical"/>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMapNode>`  
+  
+ `</siteMap>`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuEventArgs (System.Web.UI.WebControls.MenuItem item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.MenuItem item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuEventArgs.#ctor(System.Web.UI.WebControls.MenuItem)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.MenuItem" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="E:System.Web.UI.WebControls.Menu.MenuItemClick" />イベント、このパラメーターは、ユーザーがクリックされたメニュー項目を表します。 <see cref="E:System.Web.UI.WebControls.Menu.MenuItemDataBound" />イベント、このパラメーターは、データにバインドされているメニュー項目を表します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuEventArgs" />クラスの指定されたメニュー項目を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuEventArgs>指定されたメニュー項目からのクラスです。 <xref:System.Web.UI.WebControls.MenuEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>|`null`|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>|<xref:System.String.Empty>|  
+|<xref:System.Web.UI.WebControls.MenuEventArgs.CommandSource%2A>|`null`|  
+|<xref:System.Web.UI.WebControls.MenuEventArgs.Item%2A>|<xref:System.Web.UI.WebControls.MenuItem>で指定されたオブジェクト、`item`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuEventArgs (System.Web.UI.WebControls.MenuItem item, object commandSource, System.Web.UI.WebControls.CommandEventArgs originalArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.MenuItem item, object commandSource, class System.Web.UI.WebControls.CommandEventArgs originalArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.MenuEventArgs.#ctor(System.Web.UI.WebControls.MenuItem,System.Object,System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.MenuItem" />
+        <Parameter Name="commandSource" Type="System.Object" />
+        <Parameter Name="originalArgs" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="E:System.Web.UI.WebControls.Menu.MenuItemClick" />イベント、このパラメーターは、ユーザーがクリックされたメニュー項目を表します。 <see cref="E:System.Web.UI.WebControls.Menu.MenuItemDataBound" />イベント、このパラメーターは、データにバインドされているメニュー項目を表します。</param>
+        <param name="commandSource">イベントの発生元の <see cref="T:System.Object" />。</param>
+        <param name="originalArgs">A<see cref="T:System.Web.UI.WebControls.CommandEventArgs" />メニュー項目のコマンド引数の値とコマンドの名前を格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.MenuEventArgs" />クラス コマンド ソースとイベント引数の指定されたメニュー項目を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを作成するこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.MenuEventArgs>から、指定されたメニュー項目コマンド ソース、イベント引数クラスです。 <xref:System.Web.UI.WebControls.MenuEventArgs> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandArgument%2A>|`originalArgs.CommandArgument` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.CommandEventArgs.CommandName%2A>|`originalArgs.CommandName` パラメーターの値。|  
+|<xref:System.Web.UI.WebControls.MenuEventArgs.CommandSource%2A>|<xref:System.Object>によって指定された、`commandSource`パラメーター。|  
+|<xref:System.Web.UI.WebControls.MenuEventArgs.Item%2A>|<xref:System.Web.UI.WebControls.MenuItem>で指定されたオブジェクト、`item`パラメーター。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandSource">
+      <MemberSignature Language="C#" Value="public object CommandSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuEventArgs.CommandSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させた <see cref="T:System.Object" /> を取得します。</summary>
+        <value>イベントの発生元の <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuEventArgs.CommandSource%2A>プロパティへのアクセスを<xref:System.Object>イベントが発生しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.MenuItem Item { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.MenuItem Item" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.MenuEventArgs.Item" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.MenuItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したイベントに関連付けられているメニュー項目を取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.MenuItem" />に発生するイベントに関連付けられているメニュー項目を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.MenuEventArgs.Item%2A>に発生するイベントに関連付けられているプロパティをアクセスまたはメニュー項目のプロパティを変更します。 <xref:System.Web.UI.WebControls.Menu.MenuItemClick>イベント、この項目は、ユーザーがクリックされたメニュー項目を表します。 <xref:System.Web.UI.WebControls.Menu.MenuItemDataBound>イベント、この項目がデータにバインドされているメニュー項目を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.MenuEventArgs.Item%2A>ユーザーがメニュー項目のプロパティにアクセスするプロパティをクリックします。 選択されたメニュー項目のテキストは、ページに表示されます。  
+  
+ [!code-aspx-csharp[MenuEventArgsItem#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MenuEventArgsItem/CS/menueventargsitemcs.aspx#1)]
+ [!code-aspx-vb[MenuEventArgsItem#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/MenuEventArgsItem/VB/menueventargsitemvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

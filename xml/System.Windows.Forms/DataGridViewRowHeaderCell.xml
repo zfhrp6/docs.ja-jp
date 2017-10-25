@@ -1,0 +1,417 @@
+<Type Name="DataGridViewRowHeaderCell" FullName="System.Windows.Forms.DataGridViewRowHeaderCell">
+  <TypeSignature Language="C#" Value="public class DataGridViewRowHeaderCell : System.Windows.Forms.DataGridViewHeaderCell" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataGridViewRowHeaderCell extends System.Windows.Forms.DataGridViewHeaderCell" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewRowHeaderCell" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.DataGridViewHeaderCell</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>行ヘッダーを表す、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ App.config ファイルには、次のエントリが含まれている場合、システム DPI 設定に従って、行の状態 (鉛筆、アスタリスク、およびイメージ矢印) サイズが変更されます。  
+  
+```  
+<appSettings>  
+  <add key="EnableWindowsFormsHighDpiAutoResizing" value="true" />  
+</appSettings>  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>派生したときに<see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" />、派生クラスに新しいプロパティを追加、上書きすることを確認して、<see cref="M:System.Windows.Forms.DataGridViewRowHeaderCell.Clone" />複製操作時に新しいプロパティをコピーします。 基本クラスの呼び出す必要もあります<see cref="M:System.Windows.Forms.DataGridViewRowHeaderCell.Clone" />メソッドの基本クラスのプロパティが新しいセルにコピーされるようにします。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewRowHeaderCell ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のセルの同一コピーを作成します。</summary>
+        <returns>複製された <see cref="T:System.Windows.Forms.DataGridViewHeaderCell" /> を表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateAccessibilityInstance">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Forms.AccessibleObject CreateAccessibilityInstance ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Forms.AccessibleObject CreateAccessibilityInstance() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.CreateAccessibilityInstance" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" /> の新しいユーザー補助オブジェクトを作成します。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell.DataGridViewRowHeaderCellAccessibleObject" /> の新しい <see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 明示的に <xref:System.Windows.Forms.DataGridViewRowHeaderCell.CreateAccessibilityInstance%2A> メソッドを呼び出さない場合は、<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A> プロパティが参照されると呼び出されます。  
+  
+> [!NOTE]
+>  取得または設定<xref:System.Windows.Forms.DataGridViewCell.AccessibilityObject%2A>への参照を追加する必要があります、`Accessibility`アセンブリが .NET Framework と共にインストールします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClipboardContent">
+      <MemberSignature Language="C#" Value="protected override object GetClipboardContent (int rowIndex, bool firstCell, bool lastCell, bool inFirstRow, bool inLastRow, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetClipboardContent(int32 rowIndex, bool firstCell, bool lastCell, bool inFirstRow, bool inLastRow, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetClipboardContent(System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="firstCell" Type="System.Boolean" />
+        <Parameter Name="lastCell" Type="System.Boolean" />
+        <Parameter Name="inFirstRow" Type="System.Boolean" />
+        <Parameter Name="inLastRow" Type="System.Boolean" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルを含む行の、0 から始まるインデックス番号。</param>
+        <param name="firstCell">
+          <see langword="true" />セルが選択したセルによって定義される領域の最初の列であることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="lastCell">
+          <see langword="true" />セルが選択したセルによって定義される領域の最後の列であることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="inFirstRow">
+          <see langword="true" />セルが選択したセルによって定義される領域の最初の行であることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="inLastRow">
+          <see langword="true" />セルが選択したセルによって定義される領域の最後の行であることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="format">セルの現在の書式指定文字列。</param>
+        <summary>コピーするセルの書式設定された値を取得、<see cref="T:System.Windows.Forms.Clipboard" />です。</summary>
+        <returns>A<see cref="T:System.Object" />にコピーするセルの値を表す、<see cref="T:System.Windows.Forms.Clipboard" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値に応じて、<xref:System.Windows.Forms.DataGridView.ClipboardCopyMode%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>コントロール、このメソッドは、コントロールの<xref:System.Windows.Forms.DataGridView.GetClipboardContent%2A>セルを表すクリップボード形式の値を取得します。  
+  
+ このメソッドの位置に関連するパラメーターが、選択したセル内で定義された領域を表すデータ テーブル内のこのセルの位置を示す、<xref:System.Windows.Forms.DataGridView>コントロール。 セルの位置によって書式設定情報可能性があるメソッドによって返されるこのセルの値だけでなくです。 たとえば、HTML 形式行の最初の列内のセルにはには、行の先頭を示すタグが含まれます。  
+  
+ クリップボードのサポートされている形式には、 <xref:System.Windows.Forms.DataFormats.Text?displayProperty=nameWithType>、 <xref:System.Windows.Forms.DataFormats.UnicodeText?displayProperty=nameWithType>、 <xref:System.Windows.Forms.DataFormats.Html?displayProperty=nameWithType>、および<xref:System.Windows.Forms.DataFormats.CommaSeparatedValue?displayProperty=nameWithType>です。  
+  
+ 詳細については、<xref:System.Windows.Forms.Clipboard> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="rowIndex" />ゼロ未満かより大きいか、コントロール内の行の数と同じです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetContentBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetContentBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetContentBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>指定されたを使用して計算されるセルの内容領域を囲んだ外接する四角形を返します<see cref="T:System.Drawing.Graphics" />とセル スタイルです。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />セルの内容領域に外接します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorIconBounds">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Rectangle GetErrorIconBounds (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Rectangle GetErrorIconBounds(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetErrorIconBounds(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="graphics">セルのグラフィックス コンテキスト。</param>
+        <param name="cellStyle"><see cref="T:System.Windows.Forms.DataGridViewCellStyle" />をセルに適用できます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルのエラー アイコンが表示されている場合に、そのエラー アイコンを囲む外接する四角形を返します。</summary>
+        <returns><see cref="T:System.Drawing.Rectangle" />いずれかが表示されている、それ以外の場合、セルのエラーのアイコンに外接する<see cref="F:System.Drawing.Rectangle.Empty" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrorText">
+      <MemberSignature Language="C#" Value="protected override string GetErrorText (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance string GetErrorText(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetErrorText(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの行インデックス。</param>
+        <summary>セルのエラーを表す文字列を返します。</summary>
+        <returns>現在のエラーを説明する文字列<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInheritedContextMenuStrip">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.ContextMenuStrip GetInheritedContextMenuStrip (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.ContextMenuStrip GetInheritedContextMenuStrip(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetInheritedContextMenuStrip(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContextMenuStrip</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">取得する行のインデックス、<see cref="T:System.Windows.Forms.ContextMenuStrip" />のです。 インデックスは、列見出しの行を示す-1 にする必要があります。</param>
+        <summary>指定された行の継承されたショートカット メニューを取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ContextMenuStrip" />のいずれかが存在する場合、行のそれ以外の場合、<see cref="T:System.Windows.Forms.ContextMenuStrip" />から継承された<see cref="T:System.Windows.Forms.DataGridView" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<see cref="P:System.Windows.Forms.DataGridViewElement.DataGridView" />セルのプロパティは使用されません<see langword="null" />と、指定した<paramref name="rowIndex" />が 0 未満か、1 を引いたコントロール内の行の数を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInheritedStyle">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.DataGridViewCellStyle GetInheritedStyle (System.Windows.Forms.DataGridViewCellStyle inheritedCellStyle, int rowIndex, bool includeColors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Forms.DataGridViewCellStyle GetInheritedStyle(class System.Windows.Forms.DataGridViewCellStyle inheritedCellStyle, int32 rowIndex, bool includeColors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetInheritedStyle(System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewCellStyle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inheritedCellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="includeColors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="inheritedCellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />継承されたセルのスタイルが設定されます。</param>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <param name="includeColors">
+          <see langword="true" />含めるには、返されるセル スタイル; 内の色を継承それ以外の場合、<see langword="false" />です。</param>
+        <summary>セルに適用されるスタイルを取得します。</summary>
+        <returns>A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルの親の行から継承されたセルのスタイル設定が含まれている列、および<see cref="T:System.Windows.Forms.DataGridView" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreferredSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size GetPreferredSize (System.Drawing.Graphics graphics, System.Windows.Forms.DataGridViewCellStyle cellStyle, int rowIndex, System.Drawing.Size constraintSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size GetPreferredSize(class System.Drawing.Graphics graphics, class System.Windows.Forms.DataGridViewCellStyle cellStyle, int32 rowIndex, valuetype System.Drawing.Size constraintSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetPreferredSize(System.Drawing.Graphics,System.Windows.Forms.DataGridViewCellStyle,System.Int32,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="constraintSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />セルを描画するために使用します。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルのスタイルを表すです。</param>
+        <param name="rowIndex">セルの 0 から始まる行インデックス番号。</param>
+        <param name="constraintSize">セルの最大許容サイズ。</param>
+        <summary>セルの推奨されるサイズをピクセル単位で計算します。</summary>
+        <returns>A <see cref="T:System.Drawing.Size" /> (ピクセル単位) のセルの推奨されるサイズを表すです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="protected override object GetValue (int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance object GetValue(int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.GetValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <summary>セルの値を取得します。</summary>
+        <returns>含まれる値、<see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`rowIndex`値-1 は共有行を示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値、<see cref="P:System.Windows.Forms.DataGridViewElement.DataGridView" />セルのプロパティは使用されません<see langword="null" />と<paramref name="rowIndex" />が-1 未満かより大きいか、親の行の数と等しい<see cref="T:System.Windows.Forms.DataGridView" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Paint">
+      <MemberSignature Language="C#" Value="protected override void Paint (System.Drawing.Graphics graphics, System.Drawing.Rectangle clipBounds, System.Drawing.Rectangle cellBounds, int rowIndex, System.Windows.Forms.DataGridViewElementStates cellState, object value, object formattedValue, string errorText, System.Windows.Forms.DataGridViewCellStyle cellStyle, System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, System.Windows.Forms.DataGridViewPaintParts paintParts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Paint(class System.Drawing.Graphics graphics, valuetype System.Drawing.Rectangle clipBounds, valuetype System.Drawing.Rectangle cellBounds, int32 rowIndex, valuetype System.Windows.Forms.DataGridViewElementStates cellState, object value, object formattedValue, string errorText, class System.Windows.Forms.DataGridViewCellStyle cellStyle, class System.Windows.Forms.DataGridViewAdvancedBorderStyle advancedBorderStyle, valuetype System.Windows.Forms.DataGridViewPaintParts paintParts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.Paint(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Rectangle,System.Int32,System.Windows.Forms.DataGridViewElementStates,System.Object,System.Object,System.String,System.Windows.Forms.DataGridViewCellStyle,System.Windows.Forms.DataGridViewAdvancedBorderStyle,System.Windows.Forms.DataGridViewPaintParts)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="graphics" Type="System.Drawing.Graphics" />
+        <Parameter Name="clipBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="cellBounds" Type="System.Drawing.Rectangle" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="cellState" Type="System.Windows.Forms.DataGridViewElementStates" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="formattedValue" Type="System.Object" />
+        <Parameter Name="errorText" Type="System.String" />
+        <Parameter Name="cellStyle" Type="System.Windows.Forms.DataGridViewCellStyle" />
+        <Parameter Name="advancedBorderStyle" Type="System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+        <Parameter Name="paintParts" Type="System.Windows.Forms.DataGridViewPaintParts" />
+      </Parameters>
+      <Docs>
+        <param name="graphics"><see cref="T:System.Drawing.Graphics" />描画に使用される、<see cref="T:System.Windows.Forms.DataGridViewCell" />です。</param>
+        <param name="clipBounds">A<see cref="T:System.Drawing.Rectangle" />の領域を表す、<see cref="T:System.Windows.Forms.DataGridView" />再描画する必要があります。</param>
+        <param name="cellBounds">A<see cref="T:System.Drawing.Rectangle" />の境界を格納している、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="rowIndex">描画されるセルの行インデックス。</param>
+        <param name="cellState">ビットごとの組み合わせ<see cref="T:System.Windows.Forms.DataGridViewElementStates" />セルの状態を指定する値。</param>
+        <param name="value">データ、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="formattedValue">書式付きデータ、<see cref="T:System.Windows.Forms.DataGridViewCell" />描画されます。</param>
+        <param name="errorText">セルに関連付けられたエラー メッセージ。</param>
+        <param name="cellStyle">A<see cref="T:System.Windows.Forms.DataGridViewCellStyle" />セルに関する書式とスタイル情報を格納します。</param>
+        <param name="advancedBorderStyle">A<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />描画されるセルの境界線スタイルを格納します。</param>
+        <param name="paintParts">ビットごとの組み合わせ、<see cref="T:System.Windows.Forms.DataGridViewPaintParts" />セルのどの部分を描画する必要がありますを指定する値。</param>
+        <summary>現在の描画<see cref="T:System.Windows.Forms.DataGridViewRowHeaderCell" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="protected override bool SetValue (int rowIndex, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool SetValue(int32 rowIndex, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.SetValue(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rowIndex" Type="System.Int32" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="rowIndex">セルの親行のインデックス。</param>
+        <param name="value">設定するセル値。</param>
+        <summary>セルの値を設定します。</summary>
+        <returns>
+          <see langword="true" />値が設定されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewRowHeaderCell.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セルの文字列表現を返します。</summary>
+        <returns>現在のセルを表す文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

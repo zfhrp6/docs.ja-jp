@@ -1,0 +1,744 @@
+<Type Name="Track" FullName="System.Windows.Controls.Primitives.Track">
+  <TypeSignature Language="C#" Value="public class Track : System.Windows.FrameworkElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Track extends System.Windows.FrameworkElement" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.Track" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>配置を処理するコントロール プリミティブとのサイズを表す、<see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールと 2 つ<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />設定に使用されるコントロール、<see cref="P:System.Windows.Controls.Primitives.Track.Value" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track>コントロールには、既定値はありません。<xref:System.Windows.Controls.ControlTemplate>です。 その<xref:System.Windows.Controls.ControlTemplate>の一部として実装されて、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Primitives.ScrollBar>と<xref:System.Windows.Controls.Slider>コントロール。 <xref:System.Windows.Controls.Primitives.Track>が、<xref:System.Windows.Controls.Primitives.Thumb>コントロールと 2 つ<xref:System.Windows.Controls.Primitives.RepeatButton>変更に使用されるコントロール、<xref:System.Windows.Controls.Primitives.Track.Value%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Track>コントロール。  
+  
+ 次の図は、<xref:System.Windows.Controls.Primitives.Track>スライダー上。  
+  
+ **スライダーのトラック**  
+  
+ ![RepeatButton、つまみ](~/add/media/trackonslider.png "RepeatButton、つまみ")  
+  
+ 次の表に、<xref:System.Windows.Controls.Primitives.Track>プロパティと、対応する<xref:System.Windows.Controls.Primitives.RangeBase>に自動的にバインドするプロパティです。 いずれかのプロパティが変更されたときに、バインドされたプロパティも変更されます。  
+  
+|<xref:System.Windows.Controls.Primitives.Track> プロパティ|<xref:System.Windows.Controls.Primitives.RangeBase> プロパティ|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.Primitives.Track.Maximum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.Minimum%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.Value%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>|  
+  
+ 次の表に、<xref:System.Windows.Controls.Primitives.Track>プロパティと、対応する<xref:System.Windows.Controls.Primitives.ScrollBar>プロパティがバインドするときに、<xref:System.Windows.Controls.Primitives.Track>の一部である、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールと<xref:System.Windows.Controls.Primitives.Track>プロパティが明示的に設定されていません。  
+  
+|<xref:System.Windows.Controls.Primitives.Track> プロパティ|<xref:System.Windows.Controls.Primitives.ScrollBar> プロパティ|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.Primitives.Track.Orientation%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.ScrollBar.Orientation%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A?displayProperty=nameWithType>|  
+  
+ 次の表に、<xref:System.Windows.Controls.Primitives.Track>プロパティと、対応する<xref:System.Windows.Controls.Slider>プロパティがバインドするときに、<xref:System.Windows.Controls.Primitives.Track>の一部である、<xref:System.Windows.Controls.Slider>コントロールと<xref:System.Windows.Controls.Primitives.Track>プロパティが明示的に設定されていません。  
+  
+|<xref:System.Windows.Controls.Primitives.Track> プロパティ|<xref:System.Windows.Controls.Slider> プロパティ|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|  
+|<xref:System.Windows.Controls.Primitives.Track.Orientation%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.Orientation%2A?displayProperty=nameWithType>|  
+|<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A?displayProperty=nameWithType>|<xref:System.Windows.Controls.Slider.IsDirectionReversed%2A?displayProperty=nameWithType>|  
+  
+ さらに、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.RepeatButton>の制御、<xref:System.Windows.Controls.Slider>にバインドされるコントロール、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.RepeatButton>の制御、<xref:System.Windows.Controls.Primitives.Track>コントロール。  
+  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コンテンツのサイズをスクロールするために使用、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>コントロールは、表示可能領域またはビューポートに表示されるコンテンツのパーセンテージに比例します。 次の図の例を示します、<xref:System.Windows.Controls.ScrollViewer>を実装するコントロール、<xref:System.Windows.Controls.Primitives.Track>コントロール。  
+  
+ **トラックのコントロールを含むスクロール バー**  
+  
+ ![スクロール バーの図](~/add/media/scrollbargeneric.png "スクロール バーの図")  
+  
+ サイズの計算は次の計算で使用、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>です。  
+  
+ つまみのサイズ (viewportSize/(maximum–minimum+viewportSize)) × trackLength を =  
+  
+ ViewportSize パラメーターは、の値、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>プロパティです。 最大値と最小パラメーターに対応、<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>と<xref:System.Windows.Controls.Primitives.Track.Minimum%2A>プロパティの値。 最大の式の値-最小 + viewportSize がスクロール可能なコンテンツのサイズ。 なおの値、<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>プロパティを表します、<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>コンテンツが一番下にスクロールされる基準します。 これは、<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>値が同じ長さまたはコンテンツの範囲とします。 詳細については、「<xref:System.Windows.Controls.Primitives.Track.Maximum%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ <xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Primitives.ScrollBar>増加上から下へ、または左から右の向きに応じて、<xref:System.Windows.Controls.Primitives.ScrollBar>です。 同様に、<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>で、<xref:System.Windows.Controls.Slider>増加下上からまたは左から右の向きに応じて、<xref:System.Windows.Controls.Slider>です。 値を増加させる方向を変更するには、設定、<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Track>に`true`です。  
+  
+   
+  
+## Examples  
+ 次の例は、定義する方法を示します、<xref:System.Windows.Controls.Primitives.Track>内の制御、 <xref:System.Windows.Controls.Primitives.ScrollBar> <xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ [!code-xaml[ScrollBarTemplateExample#TrackDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#trackdefinition)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Track ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Track" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ArrangeOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size ArrangeOverride (System.Windows.Size arrangeSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size ArrangeOverride(valuetype System.Windows.Size arrangeSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.ArrangeOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="arrangeSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="arrangeSize">に対して提供されている領域、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</param>
+        <summary>レイアウトを作成、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <returns><see cref="T:System.Windows.Size" />に使用する、<see cref="T:System.Windows.Controls.Primitives.Track" />コンテンツ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseRepeatButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.RepeatButton DecreaseRepeatButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.RepeatButton DecreaseRepeatButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.RepeatButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />を減少、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />のプロパティ、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.RepeatButton" />を削減するため、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />タイミングを制御、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されました。 既定値は、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />を既定の設定を持つコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コントロールが、<xref:System.Windows.Controls.Slider>コントロール、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.RepeatButton>の制御、<xref:System.Windows.Controls.Primitives.Track>へのバインド、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Slider>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例に示す方法、<xref:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton%2A>と<xref:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton%2A>スタイル内で定義されて、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール テンプレートときに、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A>プロパティは<xref:System.Windows.Controls.Orientation.Vertical>します。 サンプル全体については、次を参照してください。、[スクロール バー スタイルとテンプレート](~/docs/framework/wpf/controls/scrollbar-styles-and-templates.md)です。  
+  
+ [!code-xaml[ScrollBarTemplateExample#RepeatButtonStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#repeatbuttonstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">子のインデックス。</param>
+        <summary>子を取得、<see cref="T:System.Windows.Controls.Primitives.Track" />指定したインデックス位置。</summary>
+        <returns>オブジェクトを返します、 <see cref="T:System.Windows.Controls.Primitives.Track" /> visual の子要素の一覧で、指定したインデックス位置。 インデックスがゼロ (0) からの値までの数値にする必要があります、<see cref="P:System.Windows.Controls.Primitives.Track.VisualChildrenCount" />マイナス 1 (1) プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子要素を指定する、<xref:System.Windows.Controls.Primitives.Track>を設定して、 <xref:System.Windows.Controls.Primitives.Track.Thumb%2A>、 <xref:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton%2A>、および<xref:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton%2A>プロパティです。 プロパティが設定されている順序で子要素のインデックスが作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定したインデックスがの値より大きい、<see cref="P:System.Windows.Controls.Primitives.Track.VisualChildrenCount" />マイナス 1 (1) プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseRepeatButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.RepeatButton IncreaseRepeatButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.RepeatButton IncreaseRepeatButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.RepeatButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />増加する、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />のプロパティ、<see cref="T:System.Windows.Controls.Primitives.Track" />クラスです。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.RepeatButton" />増加する、<see cref="P:System.Windows.Controls.Primitives.RangeBase.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />タイミングを制御、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />が押されました。 既定値は、<see cref="T:System.Windows.Controls.Primitives.RepeatButton" />を既定の設定を持つコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コントロールが、<xref:System.Windows.Controls.Slider>コントロール、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.RepeatButton>の制御、<xref:System.Windows.Controls.Primitives.Track>へのバインド、<xref:System.Windows.Controls.Primitives.RepeatButton.Delay%2A>のプロパティ、<xref:System.Windows.Controls.Slider>コントロール。  
+  
+   
+  
+## Examples  
+ 次の例に示す方法、<xref:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton%2A>と<xref:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton%2A>スタイル内で定義されて、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール テンプレートときに、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A>プロパティは<xref:System.Windows.Controls.Orientation.Vertical>します。  
+  
+ [!code-xaml[ScrollBarTemplateExample#RepeatButtonStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#repeatbuttonstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectionReversed">
+      <MemberSignature Language="C#" Value="public bool IsDirectionReversed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDirectionReversed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.IsDirectionReversed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するかどうかを増加させる方向<see cref="P:System.Windows.Controls.Primitives.Track.Value" />既定の方向からを反転します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton" />と<see cref="P:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton" />交換された位置と値を増加させる方向が反転そうでない<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときの値<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A>に設定されている`true`、<xref:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton%2A>と<xref:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton%2A>で、<xref:System.Windows.Controls.Primitives.Track>の場所を交換します。  
+  
+ <xref:System.Windows.Controls.Primitives.Track>値が増加する両方の水平方向の右側に左から<xref:System.Windows.Controls.Slider>と<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。 ただし、<xref:System.Windows.Controls.Primitives.Track>垂直方向の値<xref:System.Windows.Controls.Primitives.ScrollBar>が増え、上から下が垂直方向の<xref:System.Windows.Controls.Slider>ページのトップへ下からこれらの値が増加します。 設定すると、<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A>プロパティを`true`値を増加させる方向を反転させます。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.Track>の一部として、<xref:System.Windows.Controls.Slider>制御が明示的に設定しないでください、 <xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A?displayProperty=nameWithType> 、プロパティ、<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A?displayProperty=nameWithType>プロパティにバインドされて、<xref:System.Windows.Controls.Slider.IsDirectionReversed%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="dependencyPropertyInfo_IsDirectionReversed"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例に示す方法、<xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A>内部プロパティが定義されて、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール テンプレートときに、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A>プロパティは<xref:System.Windows.Controls.Orientation.Vertical>します。  
+  
+ [!code-xaml[ScrollBarTemplateExample#RepeatButtonStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#repeatbuttonstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDirectionReversedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDirectionReversedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDirectionReversedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.IsDirectionReversedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.IsDirectionReversed" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.IsDirectionReversed%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Maximum">
+      <MemberSignature Language="C#" Value="public double Maximum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Maximum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.Maximum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定される最大<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <value>最大許容<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コントロールが、<xref:System.Windows.Controls.Primitives.RangeBase>コントロールと<xref:System.Windows.Controls.Primitives.Track.Maximum%2A?displayProperty=nameWithType>プロパティが明示的に設定されていない、このプロパティで自動的にバインドされて、<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Windows.Controls.Primitives.Track.Maximum%2A>値を<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールが表示されているコンテンツ領域、またはビューポートのサイズ-スクロール可能なコンテンツのサイズに相当します。 たとえば、コンテンツのサイズは 100 のサイズ、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>プロパティは、30 の値、<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>プロパティは 70 です。 これは true、ため、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロールがスクロール可能なコンテンツのビューポートの上部に表示される位置に対応しています。 コンテンツをこの例では一番下にスクロールするとと、コンテンツの 30% は、ビューポートに表示されます。 したがって、<xref:System.Windows.Controls.Primitives.Track.Value%2A>に対応する、ビューポートの上端が 70、および<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>値は 70 です。  
+  
+ 次の図はどのように<xref:System.Windows.Controls.Primitives.Track.Value%2A>内の位置に対応、<xref:System.Windows.Controls.Primitives.ScrollBar>の<xref:System.Windows.Controls.ScrollViewer>コントロール。  
+  
+ ![値は、コンテンツの位置に対応](~/add/media/scrollbarvalueeqmaximum.png "値は、コンテンツの位置に対応しています")  
+  
+<a name="dependencyPropertyInfo_Maximum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.MaximumProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.RangeBase.Maximum%2A>プロパティを<xref:System.Windows.Controls.Slider>のバインド ソースになります、<xref:System.Windows.Controls.Primitives.Track.Maximum%2A?displayProperty=nameWithType>プロパティです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MaximumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MaximumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.MaximumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.Maximum" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.Maximum%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size availableSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size availableSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="availableSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="availableSize">トラックに対して使用可能な領域のサイズ。</param>
+        <summary>必要なレイアウトのサイズを測定、<see cref="T:System.Windows.Controls.Primitives.Track" />とそのコンポーネント。</summary>
+        <returns>レイアウト<see cref="T:System.Windows.Size" />で必要となる、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Minimum">
+      <MemberSignature Language="C#" Value="public double Minimum { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Minimum" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.Minimum" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許容される最小の設定を取得または<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <value>指定可能な最小<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コントロールが、<xref:System.Windows.Controls.Primitives.RangeBase>コントロールと<xref:System.Windows.Controls.Primitives.Track.Minimum%2A?displayProperty=nameWithType>プロパティが明示的に設定されていない、このプロパティで自動的にバインドされて、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="dependencyPropertyInfo_Minimum"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.MinimumProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.RangeBase.Minimum%2A>プロパティを<xref:System.Windows.Controls.Slider>のバインド ソースになります、<xref:System.Windows.Controls.Primitives.Track.Minimum%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MinimumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MinimumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.MinimumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.Minimum" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.Minimum%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Orientation">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Orientation Orientation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation Orientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.Orientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.Primitives.Track" />が水平方向または垂直方向に表示されます。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" />を示す列挙値かどうか、<see cref="T:System.Windows.Controls.Primitives.Track" />が水平方向または垂直方向に表示されます。 既定値は、<see cref="F:System.Windows.Controls.Orientation.Horizontal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.Track>の一部として、<xref:System.Windows.Controls.Primitives.ScrollBar>制御が明示的に設定しないでください、 <xref:System.Windows.Controls.Primitives.Track.Orientation%2A> 、プロパティ、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A?displayProperty=nameWithType>プロパティにバインドされて、<xref:System.Windows.Controls.Primitives.ScrollBar.Orientation%2A?displayProperty=nameWithType>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.Track>の一部として、<xref:System.Windows.Controls.Slider>制御が明示的に設定しないでください、 <xref:System.Windows.Controls.Primitives.Track.Orientation%2A> 、プロパティ、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A?displayProperty=nameWithType>プロパティにバインドされて、<xref:System.Windows.Controls.Slider.Orientation%2A?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_Orientation"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.OrientationProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsMeasure%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OrientationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OrientationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OrientationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.OrientationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.Orientation" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.Orientation%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Thumb">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.Thumb Thumb { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.Thumb Thumb" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.Thumb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.Thumb</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.Primitives.Thumb" />変更に使用されるコントロール、<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.Thumb" />コントロールで使用される、<see cref="T:System.Windows.Controls.Primitives.Track" />です。 既定値は、<see cref="T:System.Windows.Controls.Primitives.Thumb" />を既定の設定を持つコントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>に対応するコントロール、<xref:System.Windows.Controls.Primitives.Track.Value%2A>の<xref:System.Windows.Controls.Primitives.Track>コントロール。 サイズ、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>内の制御、<xref:System.Windows.Controls.Primitives.Track>コントロールが現在表示されているコンテンツの量を反映します。 サイズ、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>の制御、<xref:System.Windows.Controls.Primitives.Track>は次の方法で計算します。  
+  
+-   場合、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>プロパティが指定されていないのサイズ、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>固定の既定値です。 これは、どのように<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>トラックの内部機能、<xref:System.Windows.Controls.Slider>コントロール。  
+  
+-   場合、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>プロパティが指定されており、コンテンツのサイズがより大きい、 <xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>、次の式を使用します。  
+  
+     つまみのサイズ = TrackLength * ViewportSize/(最大値-最小 + ViewportSize)  
+  
+     パラメーターが定義されているとおり。  
+  
+    |||  
+    |-|-|  
+    |つまみのサイズ|サイズ、 <xref:System.Windows.Controls.Primitives.Track.Thumb%2A> TrackLength として同じ単位で制御します。|  
+    |TrackLength|長さ、<xref:System.Windows.Controls.Primitives.Track>です。|  
+    |ViewportSize|ドキュメントのページの数など、コンテンツの単位で表示されているスクロール可能な領域のサイズ。|  
+    |最大|10 ページのドキュメントのページ 10 などのコンテンツのユニット内のコンテンツの最大値。|  
+    |最小要件|ドキュメントのページ 1 などのコンテンツの単位の内容は、の最小値。|  
+  
+     次の図に、これらのパラメーターの一部の視覚的表現、<xref:System.Windows.Controls.Primitives.ScrollBar>コントロール。  
+  
+     ![ビューポートのサイズ、つまみのサイズ、およびトラック長](~/add/media/scrollbarthumbsizemath.png "ビューポートのサイズ、つまみのサイズ、およびトラック長")  
+  
+-   場合は、コンテンツのサイズより小さい、 <xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>は表示されず<xref:System.Windows.UIElement.Visibility%2A>のプロパティ<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>に設定されている`false`です。  
+  
+ サイズを最小値、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>コントロールは、2 つのシステム パラメーターによって決まります<xref:System.Windows.SystemParameters.VerticalScrollBarButtonHeight%2A>と<xref:System.Windows.SystemParameters.HorizontalScrollBarThumbWidth%2A>です。 最小サイズ、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>垂直方向のコントロール<xref:System.Windows.Controls.Primitives.Track>は 1/2 *<xref:System.Windows.SystemParameters.VerticalScrollBarButtonHeight%2A>との最小サイズ、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>水平方向のコントロール<xref:System.Windows.Controls.Primitives.Track>は 1/2 *<xref:System.Windows.SystemParameters.HorizontalScrollBarThumbWidth%2A>です。  
+  
+   
+  
+## Examples  
+ 例を次に、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>スタイル内で定義されて、 <xref:System.Windows.Controls.Primitives.ScrollBar> <xref:System.Windows.Controls.ControlTemplate>ときに、<xref:System.Windows.Controls.Primitives.Track.Orientation%2A>プロパティは<xref:System.Windows.Controls.Orientation.Vertical>します。  
+  
+ [!code-xaml[ScrollBarTemplateExample#RepeatButtonStyle](~/samples/snippets/csharp/VS_Snippets_Wpf/ScrollBarTemplateExample/CS/Window1.xaml#repeatbuttonstyle)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在の値、<see cref="T:System.Windows.Controls.Primitives.Track" />の位置によって決定される、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />コントロール。</summary>
+        <value>現在の値、<see cref="T:System.Windows.Controls.Primitives.Track" />です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.Value%2A>間の値を表す、<xref:System.Windows.Controls.Primitives.Track.Minimum%2A>と<xref:System.Windows.Controls.Primitives.Track.Maximum%2A>プロパティの値。  
+  
+ ときに、<xref:System.Windows.Controls.Primitives.Track>コントロールの一部である、<xref:System.Windows.Controls.Primitives.RangeBase>コントロールと<xref:System.Windows.Controls.Primitives.Track.Value%2A?displayProperty=nameWithType>プロパティが明示的に設定されていない、このプロパティで自動的にバインドされて、<xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="dependencyPropertyInfo_Value"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.ValueProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>、<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>、<xref:System.Windows.FrameworkPropertyMetadata.Journal%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueFromDistance">
+      <MemberSignature Language="C#" Value="public virtual double ValueFromDistance (double horizontal, double vertical);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 ValueFromDistance(float64 horizontal, float64 vertical) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.ValueFromDistance(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="horizontal" Type="System.Double" />
+        <Parameter Name="vertical" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="horizontal">水平方向の距離、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />です。</param>
+        <param name="vertical">垂直方向の距離、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />です。</param>
+        <summary>計算の変更、<see cref="P:System.Windows.Controls.Primitives.Track.Value" />の<see cref="T:System.Windows.Controls.Primitives.Track" />ときに、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />に移動します。</summary>
+        <returns>変更<see cref="P:System.Windows.Controls.Primitives.Track.Value" />のディスプレイスメントに対応する、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />の<see cref="T:System.Windows.Controls.Primitives.Track" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueFromPoint">
+      <MemberSignature Language="C#" Value="public virtual double ValueFromPoint (System.Windows.Point pt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance float64 ValueFromPoint(valuetype System.Windows.Point pt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Track.ValueFromPoint(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pt" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="pt">指定された点です。</param>
+        <summary>距離を計算、<see cref="T:System.Windows.Controls.Primitives.Thumb" />上の指定した位置に、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <returns>間の距離、<see cref="P:System.Windows.Controls.Primitives.Track.Thumb" />と、指定した<paramref name="pt" />値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ValueProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ValueProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.ValueProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.Value" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.Value%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportSize">
+      <MemberSignature Language="C#" Value="public double ViewportSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ViewportSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.ViewportSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示されているスクロール可能なコンテンツの部分のサイズを設定します。</summary>
+        <value>スクロール可能なコンテンツの表示領域のサイズ。 既定値は<see cref="F:System.Double.NaN" />、コンテンツのサイズが定義されていないことを意味します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>プロパティのサイズの計算に使用、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>内の制御、<xref:System.Windows.Controls.Primitives.ScrollBar>ときに、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>は<xref:System.Double.NaN?displayProperty=nameWithType>します。 詳細については、「解説」を参照してください、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>プロパティです。  
+  
+ サイズを明示的に定義する、<xref:System.Windows.Controls.Primitives.Thumb>から派生したオブジェクトを作成、<xref:System.Windows.Controls.Primitives.Track>クラスおよびオーバーライド<xref:System.Windows.Controls.Primitives.Track.MeasureOverride%2A>と<xref:System.Windows.Controls.Primitives.Track.ArrangeOverride%2A>です。  
+  
+ 実装する場合、<xref:System.Windows.Controls.Primitives.Track>の一部として、<xref:System.Windows.Controls.Primitives.ScrollBar>制御が明示的に設定しないでください、 <xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A?displayProperty=nameWithType> 、プロパティ、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A?displayProperty=nameWithType>プロパティにバインドされて、<xref:System.Windows.Controls.Primitives.ScrollBar.ViewportSize%2A?displayProperty=nameWithType>プロパティです。  
+  
+ 値、<xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Track>で実装されているコントロール、<xref:System.Windows.Controls.Slider>コントロールは常に<xref:System.Double.NaN?displayProperty=nameWithType>であるため、<xref:System.Windows.Controls.Primitives.Track.Thumb%2A>コントロールでは、サイズは変更されません。  
+  
+<a name="dependencyPropertyInfo_ViewportSize"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Track.ViewportSizeProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsArrange%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportSizeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportSizeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportSizeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Track.ViewportSizeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Track.ViewportSize" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Track.ViewportSize%2A> 依存関係プロパティの識別子。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Track.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子要素の数を取得、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</summary>
+        <value>0 ~ 2 の子要素の数を指定する整数で、<see cref="T:System.Windows.Controls.Primitives.Track" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子要素を指定する、<xref:System.Windows.Controls.Primitives.Track>を設定して、 <xref:System.Windows.Controls.Primitives.Track.Thumb%2A>、 <xref:System.Windows.Controls.Primitives.Track.DecreaseRepeatButton%2A>、および<xref:System.Windows.Controls.Primitives.Track.IncreaseRepeatButton%2A>プロパティです。 プロパティが設定されている順序で子要素のインデックスが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,85 @@
+<Type Name="WorkflowTerminatedEventArgs" FullName="System.Workflow.Runtime.WorkflowTerminatedEventArgs">
+  <TypeSignature Language="C#" Value="public class WorkflowTerminatedEventArgs : System.Workflow.Runtime.WorkflowEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowTerminatedEventArgs extends System.Workflow.Runtime.WorkflowEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowTerminatedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.WorkflowEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー インスタンスは、ホストが <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> を呼び出した場合、ワークフロー インスタンスの内部から <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティが呼び出された場合、または未処理の例外のためにワークフロー ランタイム エンジンがインスタンスを終了した場合に終了します。 ワークフロー インスタンスが終了すると、ワークフロー ランタイム エンジンが <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated?displayProperty=nameWithType> イベントを発生させます。 ホストはイベント ハンドラーを <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated?displayProperty=nameWithType> に追加することによって、このイベントを定期受信できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、パラメーターとして <xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> を使用するイベント ハンドラー メソッドを示しています。 `OnWorkflowTerminated` イベントが発生すると、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> メソッドが呼び出されます。 このコードでは、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A> プロパティを使用して、ワークフローの終了の原因となった例外に関連付けられているメッセージを取得します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、パラメーターを使用したシーケンシャル ワークフローを示す SDK サンプルの一部です。 詳細については、次を参照してください。[パラメーターを含むシーケンシャル ワークフロー](http://msdn.microsoft.com/en-us/17157f2d-8fed-4848-a386-e4efa381b66b)です。  
+  
+ [!code-csharp[WF_Samples#193](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#193)]
+ [!code-vb[WF_Samples#193](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#193)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの終了の原因となった例外を取得します。</summary>
+        <value>ワークフロー インスタンスの終了の原因となった <see cref="T:System.Exception" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスが未処理の例外によって終了する場合は、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A> に未処理の例外が格納されます。  
+  
+ ホストが呼び出した <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> または <xref:System.Workflow.ComponentModel.TerminateActivity> アクティビティによってワークフロー インスタンスが終了する場合は、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A> に <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> が格納され、その <xref:System.Exception.Message%2A> プロパティには終了の理由に関する説明が設定されます。 ホストがワークフロー インスタンスを終了させる場合、ホストはその説明を `string` パラメーターで <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A?displayProperty=nameWithType> に渡します。 ワークフロー インスタンスが <xref:System.Workflow.ComponentModel.TerminateActivity> によって終了する場合、その説明は <xref:System.Workflow.ComponentModel.TerminateActivity.Error%2A?displayProperty=nameWithType> によって示されます。  
+  
+> [!NOTE]
+>  未処理の例外が原因ではない <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated?displayProperty=nameWithType> イベントの場合、ワークフロー ランタイム エンジンは終了の理由の説明を <xref:System.Exception.Message%2A> の <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> プロパティにカプセル化しますが、この例外をスローするとは限りません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A> プロパティを使用して、ワークフローが終了する原因となった例外に関する情報を取得する方法を示しています。 `OnWorkflowTerminated` メソッドは、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> をパラメーターとして受け取ります。 このメソッドは、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> イベントが発生すると呼び出されます。 このコードでは、<xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs.Exception%2A> プロパティを使用して、ワークフローの終了の原因となった例外に関連付けられているメッセージを取得します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、パラメーターを使用したシーケンシャル ワークフローを示す SDK サンプルの一部です。 詳細については、次を参照してください。[パラメーターを含むシーケンシャル ワークフロー](http://msdn.microsoft.com/en-us/17157f2d-8fed-4848-a386-e4efa381b66b)です。  
+  
+ [!code-csharp[WF_Samples#193](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#193)]
+ [!code-vb[WF_Samples#193](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#193)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

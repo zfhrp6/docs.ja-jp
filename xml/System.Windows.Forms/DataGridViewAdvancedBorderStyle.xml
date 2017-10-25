@@ -1,0 +1,316 @@
+<Type Name="DataGridViewAdvancedBorderStyle" FullName="System.Windows.Forms.DataGridViewAdvancedBorderStyle">
+  <TypeSignature Language="C#" Value="public sealed class DataGridViewAdvancedBorderStyle : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataGridViewAdvancedBorderStyle extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>内のセルの境界線のスタイルが含まれています、<see cref="T:System.Windows.Forms.DataGridView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridView>コントロールでは、完全に、セルとヘッダーの境界線を含むその外観をカスタマイズすることができます。 <xref:System.Windows.Forms.DataGridView>が<xref:System.Windows.Forms.DataGridView.CellBorderStyle%2A>、 <xref:System.Windows.Forms.DataGridView.ColumnHeadersBorderStyle%2A>、および<xref:System.Windows.Forms.DataGridView.RowHeadersBorderStyle%2A>セルの枠線の外観を設定できるプロパティです。 ただし、さらに、境界線をカスタマイズする必要がある場合、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスでは、セルのそれぞれの辺に罫線のスタイルを設定することができます。 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Left%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Right%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Top%2A>、および<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Bottom%2A>プロパティの<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>左、右、上、およびセルの下枠線をそれぞれ表します。 これらのプロパティを設定することができます、 <xref:System.Windows.Forms.DataGridView.AdvancedCellBorderStyle%2A>、 <xref:System.Windows.Forms.DataGridView.AdvancedColumnHeadersBorderStyle%2A>、<xref:System.Windows.Forms.DataGridView.AdvancedRowHeadersBorderStyle%2A>のプロパティ、<xref:System.Windows.Forms.DataGridView>セル間の境界線の外観を生成するためにします。  
+  
+   
+  
+## Examples  
+ セルの罫線を調整します。 次のコード例、 <xref:System.Windows.Forms.DataGridView> double 罫線は、行および列ヘッダーから内部セルと左上のヘッダー セルを分離できるようにします。 このサンプルをオーバーライドする方法を示します、 <xref:System.Windows.Forms.DataGridView.AdjustColumnHeaderBorderStyle%2A>、 <xref:System.Windows.Forms.DataGridViewRow.AdjustRowHeaderBorderStyle%2A>、および<xref:System.Windows.Forms.DataGridViewCell.AdjustCellBorderStyle%2A>メソッド、および<xref:System.Windows.Forms.DataGridView.AdjustedTopLeftHeaderBorderStyle%2A>プロパティです。 これらのメンバーを使用して<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>個々 のセルの境界線を変更するオブジェクト。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#0](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#0)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataGridViewAdvancedBorderStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewAdvancedBorderStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAdvancedCellBorderStyle All { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAdvancedCellBorderStyle All" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAdvancedCellBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはすべてのセルの境界線の境界線スタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Left%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Right%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Top%2A>、および<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Bottom%2A>プロパティが同じに設定されていない<xref:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle>値、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.All%2A>プロパティの値が<xref:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定が、無効な場合は、指定した値<see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" />値。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティの設定時に指定された値が <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet" /> です。  
+  
+ または  
+  
+ このプロパティを設定するときに指定された値が<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.OutsetDouble" />、 <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.OutsetPartial" />、または<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.InsetDouble" />され、この<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />を介して取得されたインスタンス、<see cref="P:System.Windows.Forms.DataGridView.AdvancedCellBorderStyle" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAdvancedCellBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセルの下罫線のスタイルを設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定が、無効な場合は、指定した値<see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" />値。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティの設定時に指定された値が <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.Object" />と比較します。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" /> と等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="other" />は、<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />の値、 <see cref="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Top" />、 <see cref="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Bottom" />、 <see cref="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Left" />、および<see cref="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Right" />プロパティが現在その相手に等しい<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewAdvancedBorderStyle.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Left" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAdvancedCellBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの左罫線のスタイルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定が、無効な場合は、指定した値<see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティの設定時に指定された値が <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet" /> です。  
+  
+ または  
+  
+ このプロパティを設定するときに指定された値が<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.InsetDouble" />または<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.OutsetDouble" />され、この<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />インスタンスに関連付けられている<see cref="T:System.Windows.Forms.DataGridView" />コントロールを<see cref="P:System.Windows.Forms.Control.RightToLeft" />のプロパティの値<see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Right" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAdvancedCellBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの右側の境界線のスタイルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定が、無効な場合は、指定した値<see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティの設定時に指定された値が <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet" /> です。  
+  
+ または  
+  
+ このプロパティを設定するときに指定された値が<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.InsetDouble" />または<see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.OutsetDouble" />され、この<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />インスタンスに関連付けられている<see cref="T:System.Windows.Forms.DataGridView" />コントロールを<see cref="P:System.Windows.Forms.Control.RightToLeft" />のプロパティの値<see langword="false" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewAdvancedBorderStyle.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>現在のインスタンスのコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DataGridViewAdvancedCellBorderStyle Top" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DataGridViewAdvancedCellBorderStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルの上罫線のスタイルを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このプロパティの使用方法を示しています。 この例で使用できる例の一部である、<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/CS/advancedborderstyle.cs#12)]
+ [!code-vb[System.Windows.Forms.DataGridViewAdvancedBorderStyle#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewAdvancedBorderStyle/VB/advancedborderstyle.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">このプロパティの設定が、無効な場合は、指定した値<see cref="T:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティの設定時に指定された値が <see cref="F:System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.NotSet" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataGridViewAdvancedBorderStyle.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>表す文字列を返します、<see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" />です。</summary>
+        <returns><see cref="T:System.Windows.Forms.DataGridViewAdvancedBorderStyle" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.ToString%2A>メソッドの値を含む文字列を返します、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.All%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Top%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Bottom%2A>、 <xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Left%2A>、および<xref:System.Windows.Forms.DataGridViewAdvancedBorderStyle.Right%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

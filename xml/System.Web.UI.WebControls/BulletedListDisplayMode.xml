@@ -1,0 +1,87 @@
+<Type Name="BulletedListDisplayMode" FullName="System.Web.UI.WebControls.BulletedListDisplayMode">
+  <TypeSignature Language="C#" Value="public enum BulletedListDisplayMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BulletedListDisplayMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BulletedListDisplayMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>リスト項目の内容に適用可能な表示動作を指定します、<see cref="T:System.Web.UI.WebControls.BulletedList" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedListDisplayMode>列挙体のリスト項目のコンテンツに適用可能な表示動作を表す、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 <xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティでは、これらの列挙値を使用して、一覧の表示動作で項目コンテンツ設定を<xref:System.Web.UI.WebControls.BulletedList>コントロール。 設定する場合など、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティ ハイパーリンクの値を内の各リスト項目の内容、<xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>コントロールをハイパーリンクとしてレンダリングします。  
+  
+ テキスト値では、なしの追加機能で通常のテキストとしてリスト項目の内容を表示することができます。  
+  
+ ハイパーリンクの値では、リスト項目の内容をハイパーリンクとして表示することができます。 クリックすると、ハイパーリンクは、URL に移動します。 使用して、<xref:System.Web.UI.WebControls.ListItem.Value%2A>プロパティに移動するハイパーリンクの URL を指定します。  
+  
+ LinkButton 値では、リンク ボタンとしてリスト項目の内容を表示することができます。 使用して、<xref:System.Web.UI.WebControls.BulletedList.Click?displayProperty=nameWithType>ユーザーがリンク ボタンをクリックしたときに、サーバーに通知するイベントです。 イベント データを使用して、<xref:System.Web.UI.WebControls.BulletedListEventArgs>リンク ボタンのインデックスを確認するクラス、<xref:System.Web.UI.WebControls.BulletedList>ユーザーがクリックしました。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>を制御し、設定、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティです。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.BulletedListDisplayMode>値。 ユーザーがリスト ボックスから選択した表示モードに基づくリスト項目のコンテンツ変更の形式です。  
+  
+ [!code-aspx-csharp[BulletedListStylesExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListStylesExample/CS/bulletedliststylescs.aspx#1)]
+ [!code-aspx-vb[BulletedListStylesExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListStylesExample/VB/bulletedliststylesvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HyperLink">
+      <MemberSignature Language="C#" Value="HyperLink" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.BulletedListDisplayMode HyperLink = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletedListDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハイパーリンクとして、リスト項目の内容を表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkButton">
+      <MemberSignature Language="C#" Value="LinkButton" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.BulletedListDisplayMode LinkButton = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletedListDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンク ボタンとしてリスト項目の内容を表示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="Text" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.BulletedListDisplayMode Text = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.BulletedListDisplayMode.Text" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletedListDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リスト項目の内容をテキストとして表示します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

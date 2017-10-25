@@ -1,0 +1,1961 @@
+<Type Name="FieldInfo" FullName="System.Reflection.FieldInfo">
+  <TypeSignature Language="C#" Value="public abstract class FieldInfo : System.Reflection.MemberInfo, System.Runtime.InteropServices._FieldInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit FieldInfo extends System.Reflection.MemberInfo implements class System.Runtime.InteropServices._FieldInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.FieldInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Reflection.MemberInfo</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.InteropServices._FieldInfo</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComDefaultInterface(typeof(System.Runtime.InteropServices._FieldInfo))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フィールドの属性を取得し、フィールドのメタデータにアクセスできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドの情報は、メタデータから取得されます。 <xref:System.Reflection.FieldInfo>クラスには、パブリック コンス トラクターがありません。 <xref:System.Reflection.FieldInfo>呼び出して、オブジェクトを取得、<xref:System.Type.GetFields%2A>または<xref:System.Type.GetField%2A>のメソッド、`Type`オブジェクト。  
+  
+ フィールドは、クラスで定義された変数です。 <xref:System.Reflection.FieldInfo>クラス内のフィールドのメタデータへのアクセスと、フィールドの動的なセットと get 機能を提供します。 クラスは invoke までメモリに読み込まれていないか、オブジェクトに対して get が呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Type.GetFields%2A?displayProperty=nameWithType>からのフィールドに関連する情報を取得するメソッド、<xref:System.Reflection.FieldInfo>クラス、および、フィールドの属性値が表示されます。  
+  
+ [!code-cpp[FieldInfo#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo/CPP/fieldinfo.cpp#1)]
+ [!code-csharp[FieldInfo#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo/CS/fieldinfo.cs#1)]
+ [!code-vb[FieldInfo#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo/VB/fieldinfo.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Reflection.FieldInfo" /> から継承する場合は、<see cref="M:System.Reflection.FieldInfo.GetValue(System.Object)" /> メンバーと <see cref="M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)" /> メンバーをオーバーライドする必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FieldInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see langword="FieldInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.Reflection.FieldAttributes Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.FieldAttributes Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldAttributes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールドに関連付けられている属性を取得します。</summary>
+        <value><see langword="FieldAttributes" />このフィールドにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのメンバーには、特定の種類のメンバーに関連して定義されている属性のセットがあります。 `FieldAttributes`このフィールドは、プライベート フィールド、静的フィールドとであるかどうかをユーザーに通知します。  
+  
+ 取得する、`Attributes`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`Attributes`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 3 つのフィールドを作成し、そのフィールドの属性を表示します。 A`FieldAttributes`値が両方ともなど、複数の属性を含めることができます`Public`と`Literal`の 3 番目のフィールドに示すようにします。  
+  
+ [!code-cpp[Classic FieldAttributes Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldAttributes Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldAttributes Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldAttributes Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldAttributes Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldAttributes Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がこのインスタンスの型および値に等しい場合は <paramref name="obj" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldHandle">
+      <MemberSignature Language="C#" Value="public abstract RuntimeFieldHandle FieldHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.RuntimeFieldHandle FieldHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.FieldHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeFieldHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="RuntimeFieldHandle" />、これは、フィールドの内部メタデータ表現へのハンドル。</summary>
+        <value>フィールドの内部メタデータ表現へのハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルは、取得された appdomain 内でのみ有効です。  
+  
+   
+  
+## Examples  
+ 次の例では、MyClass.MyField フィールド情報を取得し、フィールド ハンドルに関連付けられているフィールドを表示します。  
+  
+ [!code-cpp[FieldInfo_FieldHandle#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_FieldHandle/CPP/fieldinfo_fieldhandle.cpp#1)]
+ [!code-csharp[FieldInfo_FieldHandle#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_FieldHandle/CS/fieldinfo_fieldhandle.cs#1)]
+ [!code-vb[FieldInfo_FieldHandle#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_FieldHandle/VB/fieldinfo_fieldhandle.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FieldType">
+      <MemberSignature Language="C#" Value="public abstract Type FieldType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type FieldType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.FieldType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールド オブジェクトの種類を取得します。</summary>
+        <value>このフィールド オブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型は、いくつかのプリミティブ データ型など`String`、 `Boolean`、または`GUID`です。  
+  
+ 取得する、`FieldType`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`FieldType`値。  
+  
+   
+  
+## Examples  
+ 次の例は、フィールドを作成、その型を取得し、 <xref:System.Reflection.FieldInfo>、し、表示、<xref:System.Reflection.FieldInfo.FieldType%2A>です。  
+  
+ [!code-cpp[Classic FieldInfo.FieldType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.FieldType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.FieldType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.FieldType Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.FieldType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.FieldType Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldFromHandle">
+      <MemberSignature Language="C#" Value="public static System.Reflection.FieldInfo GetFieldFromHandle (RuntimeFieldHandle handle);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.FieldInfo GetFieldFromHandle(valuetype System.RuntimeFieldHandle handle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetFieldFromHandle(System.RuntimeFieldHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.RuntimeFieldHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">A<see cref="T:System.RuntimeFieldHandle" />フィールドの内部メタデータ表現へのハンドルを格納する構造体。</param>
+        <summary>取得、<see cref="T:System.Reflection.FieldInfo" />の指定されたハンドルによって表されるフィールド。</summary>
+        <returns>A<see cref="T:System.Reflection.FieldInfo" />で指定されたフィールドを表すオブジェクトを<paramref name="handle" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルが取得されたアプリケーション ドメイン内でのみ有効です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Type.GetFields%2A?displayProperty=nameWithType>取得するメソッド<xref:System.Reflection.FieldInfo>、型のフィールドについてのオブジェクトを取得、<xref:System.RuntimeFieldHandle>構造体の各フィールド、および、取得、 <xref:System.Reflection.FieldInfo> のこのオーバーロードを使用してハンドルからオブジェクト<xref:System.Reflection.FieldInfo.GetFieldFromHandle%2A>メソッドです。  
+  
+ [!code-cpp[FieldInfo_GetFieldFromHandle#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_GetFieldFromHandle/CPP/fieldinfo_getfieldfromhandle.cpp#1)]
+ [!code-csharp[FieldInfo_GetFieldFromHandle#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_GetFieldFromHandle/CS/fieldinfo_getfieldfromhandle.cs#1)]
+ [!code-vb[FieldInfo_GetFieldFromHandle#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_GetFieldFromHandle/VB/fieldinfo_getfieldfromhandle.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="handle" /> が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFieldFromHandle">
+      <MemberSignature Language="C#" Value="public static System.Reflection.FieldInfo GetFieldFromHandle (RuntimeFieldHandle handle, RuntimeTypeHandle declaringType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Reflection.FieldInfo GetFieldFromHandle(valuetype System.RuntimeFieldHandle handle, valuetype System.RuntimeTypeHandle declaringType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetFieldFromHandle(System.RuntimeFieldHandle,System.RuntimeTypeHandle)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="handle" Type="System.RuntimeFieldHandle" />
+        <Parameter Name="declaringType" Type="System.RuntimeTypeHandle" />
+      </Parameters>
+      <Docs>
+        <param name="handle">A<see cref="T:System.RuntimeFieldHandle" />フィールドの内部メタデータ表現へのハンドルを格納する構造体。</param>
+        <param name="declaringType">A<see cref="T:System.RuntimeTypeHandle" />フィールドを定義するジェネリック型を識別するハンドルを格納する構造体。</param>
+        <summary>取得、<see cref="T:System.Reflection.FieldInfo" />の指定されたジェネリック型の指定したハンドルによって表されるフィールド。</summary>
+        <returns>A<see cref="T:System.Reflection.FieldInfo" />で指定されたフィールドを表すオブジェクトを<paramref name="handle" />、によって指定されたジェネリック型で<paramref name="declaringType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハンドルが取得されたアプリケーション ドメイン内でのみ有効です。  
+  
+ 推奨されている`declaringType`の構築されたランタイム型ハンドルの種類は常に`handle`に属しています。 つまり場合、`handle`に属しているフィールドのランタイム フィールド ハンドルは、 `MyType<int>` (`MyType(Of Integer)` Visual Basic で)、`declaringType`のランタイム型ハンドル`MyType<int>`です。 ランタイム フィールド ハンドルが、ジェネリック型定義でフィールドを表す場合は、ジェネリック型定義のランタイム型のハンドルを使用しません。  
+  
+ 実装は、場合によっては互換性があります。 たとえば、単一の実装は、ジェネリック型引数の参照型を使用して、特定のジェネリック型定義から構築されたすべての種類で共有されます。 たとえば、 `MyType<string>`、 `MyType<object>`、および`MyType<ArrayList>`すべて同じ実装を共有します。 このような状況で、<xref:System.Reflection.FieldInfo>返されるオブジェクトを表す型のフィールドを`declaringType`の元のソースに関係なく、指定`handle`です。 構築された型のジェネリック型引数が参照型である場合にのみ動作するためでも、この方法はお勧めはできません。  
+  
+ 汎用引数が値型の場合は、構築型のランタイム型ハンドルは、同じジェネリック パラメーターの位置に参照型または異なる値型の位置にある構造からランタイム フィールド ハンドルと互換性がありません。 その場合、使用する唯一の方法で、<xref:System.Reflection.FieldInfo.GetFieldFromHandle%28System.RuntimeFieldHandle%2CSystem.RuntimeTypeHandle%29?displayProperty=nameWithType>ことを確認するにはオーバー ロード`declaringType`構築された型のランタイム型ハンドルは、`handle`に属しています。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示しています。<xref:System.Reflection.FieldInfo>の構築されたジェネリック クラスのフィールドです。 例では、ジェネリック型を定義する`Test<T>`(`Test(Of T)` Visual Basic で) という名前の単一フィールドと`TestField`、型の`T`します。 例では、取得、<xref:System.RuntimeFieldHandle>と<xref:System.RuntimeTypeHandle>の場合、ここで`T`は<xref:System.String>、および、次の例を示します。  
+  
+-   場合、例外がスローされます、<xref:System.Reflection.FieldInfo.GetFieldFromHandle%28System.RuntimeFieldHandle%29>メソッド オーバー ロードを使用します。 これは、フィールドの種類ではない場合でも当てはまります`T`です。  
+  
+-   A<xref:System.Reflection.FieldInfo>場合は、ここでは、ランタイム フィールド ハンドルとして同じ構築からランタイム型ハンドルが正常に取得`Test<string>`です。  
+  
+-   ランタイム型ハンドルが互換性のあるコンストラクションからこの例ではかどうか`Test<object>`、<xref:System.Reflection.FieldInfo>の互換性のあるコンス トラクターでフィールドを取得します。  
+  
+-   ランタイム型ハンドルは、互換性のあるコンストラクションからは、例外がスローされます。 この場合、値の型が指定されて`T`です。  
+  
+ [!code-csharp[FieldInfo_GetFieldFromHandle2#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_GetFieldFromHandle2/cs/source.cs#1)]
+ [!code-vb[FieldInfo_GetFieldFromHandle2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_GetFieldFromHandle2/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="handle" /> が無効です。  
+  
+ または  
+  
+ <paramref name="declaringType" /> は <paramref name="handle" /> と互換性がありません。 たとえば、<paramref name="declaringType" />ジェネリック型定義のランタイム型ハンドルと<paramref name="handle" />構築された型に由来します。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOptionalCustomModifiers">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetOptionalCustomModifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetOptionalCustomModifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetOptionalCustomModifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フィールドの省略可能なカスタム修飾子を識別する型の配列を取得します。</summary>
+        <returns><see cref="T:System.Runtime.CompilerServices.IsConst" /> など、現在のフィールドのオプションのカスタム修飾子を識別する <see cref="T:System.Type" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldInfo.GetOptionalCustomModifiers%2A>と<xref:System.Reflection.FieldInfo.GetRequiredCustomModifiers%2A>マネージ コンパイラのデザイナーのメソッドが用意されています。 カスタム修飾子の詳細については、次を参照してください。<xref:System.Runtime.CompilerServices.IsBoxed>および関連クラス、<xref:System.Runtime.CompilerServices>名前空間および ECMA Partition II ドキュメント内のメタデータ指定します。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRawConstantValue">
+      <MemberSignature Language="C#" Value="public virtual object GetRawConstantValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetRawConstantValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetRawConstantValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンパイラによってフィールドに関連付けられているリテラル値を返します。</summary>
+        <returns>フィールドに関連付けられているリテラル値を格納している <see cref="T:System.Object" />。 リテラル値が、要素値がゼロに設定されているクラス型である場合、戻り値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、マネージ コンパイラ、およびコード アナライザーのデザイナーを提供します。  
+  
+ このメソッドは、実行コンテキストおよび、リフレクションのみのコンテキストの両方で使用できます。  
+  
+ アンマネージ メタデータは、フィールド、パラメーター、およびプロパティの定数値を格納する定数のテーブルが使用されます。 定数の詳細については、実行時の動作を直接は影響しません。 コンパイラがコンパイル時に、この情報を検査メタデータをインポートするときにします。 使用する場合は、コンパイラは、Microsoft intermediate language (MSIL) ストリームに定数の値が埋め込まれます。 実行時に定数のテーブルへのアクセスに使用できる MSIL 命令はありません。  
+  
+> [!NOTE]
+>  定数値と定数のテーブルの詳細については、ECMA Partition II ドキュメントを参照してください。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アンマネージ メタデータの定数のテーブルには、現在のフィールドの定数値がありません。</exception>
+        <exception cref="T:System.FormatException">値の型は、共通言語仕様 (CLS) によって許可されているどの型でもありません。 ECMA Partition II 仕様 Metadata Logical Format を参照してください: Other Structures」署名で使用される要素の型。</exception>
+        <exception cref="T:System.NotSupportedException">フィールドの定数値が設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredCustomModifiers">
+      <MemberSignature Language="C#" Value="public virtual Type[] GetRequiredCustomModifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Type[] GetRequiredCustomModifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetRequiredCustomModifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティの必須のカスタム修飾子を識別する型の配列を取得します。</summary>
+        <returns><see cref="T:System.Type" /> や <see cref="T:System.Runtime.CompilerServices.IsConst" /> など、現在のプロパティの必須のカスタム修飾子を識別する <see cref="T:System.Runtime.CompilerServices.IsImplicitlyDereferenced" /> オブジェクトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldInfo.GetOptionalCustomModifiers%2A>と<xref:System.Reflection.FieldInfo.GetRequiredCustomModifiers%2A>マネージ コンパイラのデザイナーのメソッドが用意されています。 カスタム修飾子の詳細については、次を参照してください。<xref:System.Runtime.CompilerServices.IsBoxed>および関連クラス、<xref:System.Runtime.CompilerServices>名前空間および ECMA Partition II ドキュメント内のメタデータ指定します。 ドキュメントはオンラインで入手できます。MSDN の「[ECMA C# and Common Language Infrastructure Standards](http://go.microsoft.com/fwlink/?LinkID=99212)」 (ECMA の C# および共通言語基盤の標準規格) と、ECMA のインターナショナル Web サイトにある「[Standard ECMA-335 - Common Language Infrastructure (CLI)](http://go.microsoft.com/fwlink/?LinkID=65552)」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public abstract object GetValue (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValue(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetValue(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が返されるオブジェクト。</param>
+        <summary>派生クラスによってオーバーライドされた場合、指定したオブジェクトでサポートされているフィールドの値を返します。</summary>
+        <returns>このインスタンスがリフレクションするフィールドの値を保持しているオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドが静的である場合`obj`は無視されます。 非静的フィールドの`obj`フィールドを宣言または継承するクラスのインスタンスである必要があります。 戻り値の型の注`GetValue`は`Object`します。 たとえば、フィールド保持している場合はブール値プリミティブ値のインスタンス`Object`と適切なブール値、値が返されます。 値を返す前に`GetValue`ユーザーがアクセス許可を持っているかどうかを確認します。  
+  
+> [!NOTE]
+>  アクセスの制限には、完全に信頼されたコードは無視されます。 つまり、private のコンス トラクター、メソッド、フィールド、およびプロパティにアクセスして、コードが完全に信頼されるリフレクションを通じて呼び出されました。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Reflection.FieldInfo.GetValue%2A>静的フィールドの値を取得します。 なおの値、`obj`引数は`null`します。  
+  
+ [!code-cpp[getfldval#1](~/samples/snippets/cpp/VS_Snippets_CLR/GetFldVal/CPP/getfldval.cpp#1)]
+ [!code-csharp[getfldval#1](~/samples/snippets/csharp/VS_Snippets_CLR/GetFldVal/CS/getfldval.cs#1)]
+ [!code-vb[getfldval#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/GetFldVal/VB/getfldval.vb#1)]  
+  
+ 次の例の配列を取得する<xref:System.Reflection.FieldInfo>のフィールドを表すオブジェクト、`FieldsClass`型、呼び出し、続いて、<xref:System.Reflection.FieldInfo.GetValue%2A>の各フィールドの値を表示する、`fieldsInst`オブジェクト。  
+  
+ [!code-cpp[FieldInfo_GetValue#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_GetValue/CPP/fieldinfo_getvalue.cpp#1)]
+ [!code-csharp[FieldInfo_GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_GetValue/CS/fieldinfo_getvalue.cs#1)]
+ [!code-vb[FieldInfo_GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_GetValue/VB/fieldinfo_getvalue.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)またはポータブル クラス ライブラリ、catch<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ フィールドは非静的であり、<paramref name="obj" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">フィールドがリテラルとマークされていますが、フィールドは許可されたリテラル型を持っていません。</exception>
+        <exception cref="T:System.FieldAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または基底クラスの例外をキャッチ、ポータブル クラス ライブラリ、 <see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 呼び出し元には、このフィールドに対するアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">メソッドは <paramref name="obj" /> のクラスで宣言も継承もされていません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValueDirect">
+      <MemberSignature Language="C#" Value="public virtual object GetValueDirect (TypedReference obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetValueDirect(valuetype System.TypedReference obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.GetValueDirect(System.TypedReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.TypedReference" />
+      </Parameters>
+      <Docs>
+        <param name="obj">A<see cref="T:System.TypedReference" />を場所とその場所に保存されている型のランタイム表現マネージ ポインターをカプセル化します。</param>
+        <summary>指定されたオブジェクトでサポートされているフィールドの値を返します。</summary>
+        <returns><see langword="Object" />フィールドの値を含むです。</returns>
+        <remarks>To be added.</remarks>
+        <altCompliant cref="M:System.Reflection.FieldInfo.GetValue(System.Object)" />
+        <exception cref="T:System.NotSupportedException">呼び出し元は、共通言語仕様 (CLS) の代替が必要ですが、代わりにこのメソッドを呼び出しました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssembly">
+      <MemberSignature Language="C#" Value="public bool IsAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこのフィールドの潜在的な可視性が説明されているかどうかを示す値を取得<see cref="F:System.Reflection.FieldAttributes.Assembly" />; は、フィールドを表示する最大で、同じアセンブリ内の他の種類が派生していてに表示されないアセンブリの外側の型。</summary>
+        <value>
+          <see langword="true" />このフィールドの可視性がによって正確に説明されているかどうかは<see cref="F:System.Reflection.FieldAttributes.Assembly" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドの実際の可視性は、その型の可視性によって制限されます。 <xref:System.Reflection.FieldInfo.IsAssembly%2A>プロパティがあります`true`フィールドが含んでいる型の外部で参照ではありませんし、プライベートの入れ子にされた型のフィールドである場合は、フィールドのです。  
+  
+ フィールドの可視性がによって正確に説明されている<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>のみ可視性修飾子が場合`internal`(`Friend` Visual Basic で)。 このプロパティは、`false`られたフィールドの`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で); を使用して、<xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>このようなフィールドを識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つフィールドを定義しの値を表示、 <xref:System.Reflection.FieldInfo.IsAssembly%2A>、 <xref:System.Reflection.FieldInfo.IsFamily%2A>、 <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.FieldInfo.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語でフィールドを定義できません<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamily">
+      <MemberSignature Language="C#" Value="public bool IsFamily { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamily" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsFamily" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってこのフィールドの可視性が説明されているかどうかを示す値を取得<see cref="F:System.Reflection.FieldAttributes.Family" />; は、フィールドをそのクラスと派生クラス内でのみ表示されます。</summary>
+        <value>
+          <see langword="true" />このフィールドへのアクセスがによって正確に記述されている場合<see cref="F:System.Reflection.FieldAttributes.Family" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドの可視性がによって正確に説明されている<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>のみ可視性修飾子が場合`protected`です。 このプロパティは、`false`られたフィールドの`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で); を使用して、<xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>このようなフィールドを識別するプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つフィールドを定義しの値を表示、 <xref:System.Reflection.FieldInfo.IsAssembly%2A>、 <xref:System.Reflection.FieldInfo.IsFamily%2A>、 <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.FieldInfo.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語でフィールドを定義できません<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyAndAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyAndAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyAndAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsFamilyAndAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールドの可視性がで説明されているかどうかを示す値を取得<see cref="F:System.Reflection.FieldAttributes.FamANDAssem" />;、フィールドは、派生クラスからアクセスされるが、同じアセンブリ内にある場合にのみ、つまり、します。</summary>
+        <value>
+          <see langword="true" />このフィールドへのアクセスがによって正確に記述されている場合<see cref="F:System.Reflection.FieldAttributes.FamANDAssem" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドがある場合<xref:System.Reflection.FieldAttributes.FamANDAssem>レベルの可視性、呼び出すことができますも、同じアセンブリ内にある派生クラスでのすべてのメンバーからからではないその他の種類。  
+  
+ フィールドの可視性がによって正確に説明されている<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性修飾子が場合`protected private`C++ でします。 Visual Basic または c# では、この可視性を持つフィールドを定義することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つフィールドを定義しの値を表示、 <xref:System.Reflection.FieldInfo.IsAssembly%2A>、 <xref:System.Reflection.FieldInfo.IsFamily%2A>、 <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.FieldInfo.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語でフィールドを定義できません<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFamilyOrAssembly">
+      <MemberSignature Language="C#" Value="public bool IsFamilyOrAssembly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFamilyOrAssembly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsFamilyOrAssembly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールドの潜在的な可視性がで説明されているかどうかを示す値を取得<see cref="F:System.Reflection.FieldAttributes.FamORAssem" />; は、フィールドおよびアクセスできます、派生クラスによってどこにいても、同じアセンブリ内のクラスです。</summary>
+        <value>
+          <see langword="true" />このフィールドへのアクセスがによって正確に記述されている場合<see cref="F:System.Reflection.FieldAttributes.FamORAssem" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドがある場合<xref:System.Reflection.FieldAttributes.FamORAssem>レベルの可視性、呼び出すことができます、同じアセンブリ内のメンバーまたは派生クラスで任意のメンバーからからではないその他の種類。  
+  
+ フィールドの実際の可視性は、その型の可視性によって制限されます。 <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>プロパティがあります`true`フィールドが含んでいる型の外部で参照ではありませんし、プライベートの入れ子にされた型のフィールドである場合は、フィールドのです。  
+  
+ フィールドの可視性がによって正確に説明されている<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性修飾子が場合`protected internal`(C#) (`Protected Friend` Visual basic で`protected public`C++ で)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、さまざまなレベルの可視性を持つフィールドを定義しの値を表示、 <xref:System.Reflection.FieldInfo.IsAssembly%2A>、 <xref:System.Reflection.FieldInfo.IsFamily%2A>、 <xref:System.Reflection.FieldInfo.IsFamilyOrAssembly%2A>、および<xref:System.Reflection.FieldInfo.IsFamilyAndAssembly%2A>プロパティです。  
+  
+> [!NOTE]
+>  Visual Basic および c# 言語でフィールドを定義できません<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>可視性; アクセス レベルは、C++ の例でのみが表示されます。  
+  
+ [!code-cpp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsAssembly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsAssembly Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsInitOnly">
+      <MemberSignature Language="C#" Value="public bool IsInitOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsInitOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsInitOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドには、コンス トラクターの本体でのみ設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="InitOnly" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返される値が場合`true`、フィールドのみ初期化することができ、その後は読み取り専用です。  
+  
+ 取得する、`IsInitOnly`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`IsInitOnly`プロパティです。 パブリックでないフィールドにアクセスするには、結合<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>の一方または両方で<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>と<xref:System.Reflection.BindingFlags?displayProperty=nameWithType>で、`GetField`メソッドです。  
+  
+ `IsInitOnly`場合、プロパティが設定、<xref:System.Reflection.FieldAttributes?displayProperty=nameWithType>属性を設定します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのフィールドが作成されます。 2 番目のフィールドは読み取り専用、set アクセサーがないと`IsInitOnly`に設定されている`true`です。  
+  
+ [!code-cpp[Classic FieldInfo.IsInitOnly Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsInitOnly Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsInitOnly Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsInitOnly Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsInitOnly Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsInitOnly Example/VB/source.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+ Reflection.FieldInfo  
+  
+ Myfielda - A が変更されると、対応 = False  
+  
+ Myfieldb - B 読み取り専用フィールドを対応 = True  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiteral">
+      <MemberSignature Language="C#" Value="public bool IsLiteral { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsLiteral" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsLiteral" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値が書き込まれるかどうかを示す値を取得では、コンパイル時と、変更できません。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="Literal" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsLiteral`場合、プロパティが設定、`FieldAttributes.Literal`属性を設定します。 この属性が設定されている場合、フィールドでは変更できませんあり定数です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNotSerialized">
+      <MemberSignature Language="C#" Value="public bool IsNotSerialized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNotSerialized" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsNotSerialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフィールドがあるかどうかを示す値を取得、<see langword="NotSerialized" />属性。</summary>
+        <value>
+          <see langword="true" />フィールドの場合、<see langword="NotSerialized" />属性の設定、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsNotSerialized`プロパティから返される`true`でフィールドがマークされている場合、`FieldAttributes.NotSerialized`フラグ。 このフラグがフィールドに設定されている場合、種類がリモート処理するときにシリアル化するフィールドがないことを示します。  
+  
+   
+  
+## Examples  
+ 次の例では、MyClass のフィールドのフィールド情報を取得、かどうかをフィールド、シリアル化できる結果が表示されます。  
+  
+ [!code-cpp[FieldInfo_IsNotSerialized#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_IsNotSerialized/CPP/fieldinfo_isnotserialized.cpp#1)]
+ [!code-csharp[FieldInfo_IsNotSerialized#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_IsNotSerialized/CS/fieldinfo_isnotserialized.cs#1)]
+ [!code-vb[FieldInfo_IsNotSerialized#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_IsNotSerialized/VB/fieldinfo_isnotserialized.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPinvokeImpl">
+      <MemberSignature Language="C#" Value="public bool IsPinvokeImpl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPinvokeImpl" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsPinvokeImpl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、対応する<see langword="PinvokeImpl" />属性では設定<see cref="T:System.Reflection.FieldAttributes" />です。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="PinvokeImpl" />属性では設定<see cref="T:System.Reflection.FieldAttributes" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のクラスを作成し、名前を表示フィールドおよび<xref:System.Reflection.FieldInfo.IsPinvokeImpl%2A>フィールドのプロパティの値。  
+  
+ [!code-cpp[FieldInfo_IsPInvokeImpl#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_IsPInvokeImpl/CPP/fieldinfo_ispinvokeimpl.cpp#1)]
+ [!code-csharp[FieldInfo_IsPInvokeImpl#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_IsPInvokeImpl/CS/fieldinfo_ispinvokeimpl.cs#1)]
+ [!code-vb[FieldInfo_IsPInvokeImpl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_IsPInvokeImpl/VB/fieldinfo_ispinvokeimpl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPrivate">
+      <MemberSignature Language="C#" Value="public bool IsPrivate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPrivate" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsPrivate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドはプライベートであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、このフィールドはプライベートです。それ以外の場合です。<see langword="false" />.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プライベート フィールドでは、メンバー関数からのみアクセスできます。  
+  
+ `IsPrivate`場合、プロパティが設定、`FieldAttributes.Private`属性を設定します。  
+  
+ 取得する、`IsPrivate`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`IsPrivate`プロパティです。 パブリックでないフィールドにアクセスするには、設定、`BindingFlags`に`NonPublic`、いずれかと`Static`または`Instance`で、`GetField`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、クラスのフィールドがプライベートであるかどうかを示す値を返します。  
+  
+ [!code-cpp[FieldInfo_IsPrivate#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_IsPrivate/CPP/fieldinfo_isprivate.cpp#1)]
+ [!code-csharp[FieldInfo_IsPrivate#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_IsPrivate/CS/fieldinfo_isprivate.cs#1)]
+ [!code-vb[FieldInfo_IsPrivate#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_IsPrivate/VB/fieldinfo_isprivate.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPublic">
+      <MemberSignature Language="C#" Value="public bool IsPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドはパブリックであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このフィールドがパブリックの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック フィールドにはアクセス可能なすべての場所で、対応するクラスが表示されます。  
+  
+ `IsPublic`場合、プロパティが設定、`FieldAttributes.Public`属性を設定します。  
+  
+ 取得する、`IsPublic`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`IsPublic`プロパティです。 保護されている場合は、このフィールドは、パブリック以外は、すぐにアクセスすることはできません。 パブリックでないフィールドにアクセスするには、設定、`BindingFlags`に`NonPublic`、どちらかを指定`BindingFlags.Instance`または`BindingFlags.Static`、これを使用して、`GetField`メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例は、クラスのフィールドがパブリックかプライベートかどうかを示す値を返します。  
+  
+ [!code-cpp[Classic FieldInfo.IsPublic Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsPublic Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsPublic Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsPublic Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsPublic Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsPublic Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityCritical">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecurityCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsSecurityCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の信頼レベルが、セキュリティ クリティカルまたはセキュリティ セーフ クリティカルに現在のフィールドかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のフィールドは、現在の信頼レベルでセキュリティ クリティカルまたはセキュリティ セーフ クリティカルである場合<see langword="false" />透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldInfo.IsSecurityCritical%2A>、 <xref:System.Reflection.FieldInfo.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.FieldInfo.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される、現在の信頼レベルにあるフィールドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecuritySafeCritical">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecuritySafeCritical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecuritySafeCritical" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsSecuritySafeCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のフィールドが、現在の信頼レベルでセキュリティ セーフ クリティカルであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />現在のフィールドが、現在の信頼レベルでセキュリティ セーフ クリティカルである場合<see langword="false" />セキュリティ クリティカルまたは透過的である場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldInfo.IsSecurityCritical%2A>、 <xref:System.Reflection.FieldInfo.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.FieldInfo.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される、現在の信頼レベルにあるフィールドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSecurityTransparent">
+      <MemberSignature Language="C#" Value="public virtual bool IsSecurityTransparent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSecurityTransparent" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsSecurityTransparent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のフィールドが現在の信頼レベルで透過的かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />フィールドが現在の信頼レベルでセキュリティ透過的な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Reflection.FieldInfo.IsSecurityCritical%2A>、 <xref:System.Reflection.FieldInfo.IsSecuritySafeCritical%2A>、および<xref:System.Reflection.FieldInfo.IsSecurityTransparent%2A>プロパティが共通言語ランタイム (CLR) によって決定される、現在の信頼レベルにあるフィールドの透明度を報告します。 これらのプロパティの組み合わせは、次の表に示します。  
+  
+|セキュリティ レベル|IsSecurityCritical|IsSecuritySafeCritical|IsSecurityTransparent|  
+|--------------------|------------------------|----------------------------|---------------------------|  
+|重大|`true`|`false`|`false`|  
+|セーフ クリティカル|`true`|`true`|`false`|  
+|透明|`false`|`false`|`true`|  
+  
+ これらのプロパティを使用して、アセンブリとその型およびメンバーのセキュリティの注釈を調べることを確認したり、現在の信頼レベルをランタイムの規則を複製するよりもはるかに簡単です。  
+  
+> [!IMPORTANT]
+>  部分的に信頼されたアセンブリでは、このプロパティの値は、アセンブリの現在の信頼レベルによって異なります。 アセンブリがドメインに読み込まれて、部分的に信頼されたアプリケーション (たとえば、サンド ボックス アプリケーション ドメイン) の場合、ランタイムはアセンブリのセキュリティの注釈を無視します。 アセンブリとそのすべての型は透明として扱われます。 ランタイムは、そのアセンブリが、完全に信頼されたアプリケーション ドメイン (たとえば、デスクトップ アプリケーションの既定のアプリケーション ドメイン) に読み込まれている場合にのみ、部分信頼アセンブリのセキュリティの注釈に注意を支払います。 これに対し、信頼されたアセンブリ (つまり、厳密な名前付きアセンブリをグローバル アセンブリ キャッシュにインストールされている) は常にアプリケーション ドメインの信頼レベルに関係なく、完全信頼で読み込まれたため、現在の信頼レベルは完全に信頼された常にします。 使用して、アセンブリとアプリケーション ドメインの現在の信頼レベルを指定できます、<xref:System.Reflection.Assembly.IsFullyTrusted%2A?displayProperty=nameWithType>と<xref:System.AppDomain.IsFullyTrusted%2A?displayProperty=nameWithType>プロパティです。  
+  
+ リフレクションと透過性の詳細については、次を参照してください。[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)です。 透過性の詳細については、次を参照してください。[セキュリティの変更点](~/docs/framework/security/security-changes.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSpecialName">
+      <MemberSignature Language="C#" Value="public bool IsSpecialName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSpecialName" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsSpecialName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、対応する<see langword="SpecialName" />属性の設定、<see cref="T:System.Reflection.FieldAttributes" />列挙子。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="SpecialName" />属性では設定<see cref="T:System.Reflection.FieldAttributes" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 始まるか、アンダー スコア文字 (_)、プロパティ アクセサー、および演算子のオーバー ロードが含まれている名前は、一部のコンパイラで特別な処理が必要となる名前の例を示します。  
+  
+   
+  
+## Examples  
+ 次の例は、クラス内のフィールドが SpecialName では属性を含めるかどうかを示す値を返します。  
+  
+ [!code-cpp[FieldInfo_IsSpecialName#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_IsSpecialName/CPP/fieldinfo_isspecialname.cpp#1)]
+ [!code-csharp[FieldInfo_IsSpecialName#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_IsSpecialName/CS/fieldinfo_isspecialname.cs#1)]
+ [!code-vb[FieldInfo_IsSpecialName#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_IsSpecialName/VB/fieldinfo_isspecialname.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStatic">
+      <MemberSignature Language="C#" Value="public bool IsStatic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStatic" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.IsStatic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フィールドが静的であるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、このフィールドは静的です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドが静的な場合は、フィールドの 1 つのコピーは、型のすべてのインスタンスによって共有されます。  
+  
+ `IsStatic`場合、プロパティが設定、`FieldAttributes.Static`属性を設定します。  
+  
+ 取得する、`IsStatic`プロパティ、クラスをまず取得`Type`です。 `Type`、取得、`FieldInfo`です。 `FieldInfo`、取得、`IsStatic`プロパティです。 パブリックでないフィールドにアクセスするには、設定、`BindingFlags`に`NonPublic`で、`GetField`メソッドに、ユーザー補助の設定と`Instance`または`Static`です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したフィールドは静的であり、その結果を表示するかどうかを判断します。  
+  
+ [!code-cpp[Classic FieldInfo.IsStatic Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.IsStatic Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.IsStatic Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.IsStatic Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.IsStatic Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.IsStatic Example/VB/source.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+ Reflection.FieldInfo  
+  
+ Myfielda - プライベート フィールドです。IsStatic - False  
+  
+ Myfieldb - B の静的フィールドです。IsStatic - True  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberType">
+      <MemberSignature Language="C#" Value="public override System.Reflection.MemberTypes MemberType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Reflection.MemberTypes MemberType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.FieldInfo.MemberType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.MemberTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーがフィールドであることを示す <see cref="T:System.Reflection.MemberTypes" /> 値を取得します。</summary>
+        <value>このメンバーがフィールドであることを示す <see cref="T:System.Reflection.MemberTypes" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.Reflection.MemberInfo.MemberType%2A>です。 セットを確認すると、そのため、<xref:System.Reflection.MemberInfo>オブジェクト-によって返される配列など、 <xref:System.Type.GetMembers%2A> —、<xref:System.Reflection.MemberInfo.MemberType%2A>プロパティから返される<xref:System.Reflection.MemberTypes?displayProperty=nameWithType>フィールドが場合にのみ特定のメンバーです。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたメンバーはフィールドであり、その結果を表示するかどうかを判断します。  
+  
+ [!code-cpp[Classic FieldInfo.MemberType Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic FieldInfo.MemberType Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic FieldInfo.MemberType Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic FieldInfo.MemberType Example/CS/source.cs#1)]
+ [!code-vb[Classic FieldInfo.MemberType Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic FieldInfo.MemberType Example/VB/source.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+ Reflection.FieldInfo  
+  
+ Myfield.field - プライベート フィールドです。MemberType はフィールド  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Reflection.FieldInfo left, System.Reflection.FieldInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Reflection.FieldInfo left, class System.Reflection.FieldInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.op_Equality(System.Reflection.FieldInfo,System.Reflection.FieldInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.FieldInfo" />
+        <Parameter Name="right" Type="System.Reflection.FieldInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.FieldInfo" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> に等しい場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Reflection.FieldInfo left, System.Reflection.FieldInfo right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Reflection.FieldInfo left, class System.Reflection.FieldInfo right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.op_Inequality(System.Reflection.FieldInfo,System.Reflection.FieldInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Reflection.FieldInfo" />
+        <Parameter Name="right" Type="System.Reflection.FieldInfo" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する最初のオブジェクト。</param>
+        <param name="right">比較する 2 番目のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Reflection.FieldInfo" /> オブジェクトが等しくないかどうかを示します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="left" /> と等しくない場合は <paramref name="right" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (object obj, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <summary>指定したオブジェクトでサポートされているフィールドの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは代入`value`オブジェクトのこのインスタンスによって反映されるフィールドに`obj`です。 フィールドが静的である場合`obj`は無視されます。 非静的フィールドの`obj`フィールドを宣言または継承するクラスのインスタンスである必要があります。 として、新しい値が渡される、`Object`です。 たとえば、フィールドの型がブール値、インスタンスの`Object`値が渡されると、適切なブール値。 値を設定する前に`SetValue`ユーザーがアクセス許可を持っているかどうかを確認します。 この最終的なメソッドは、次を呼び出すための便利なメソッドでは`SetValue`メソッドです。  
+  
+> [!NOTE]
+>  完全に信頼されたコードでは、アクセスし、private のコンス トラクター、メソッド、フィールド、およびリフレクションを使用してプロパティを起動するために必要なアクセス許可を持っています。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+   
+  
+## Examples  
+ 次の例フィールドの値を設定を取得し、値が表示されます、フィールドを変更および、結果が表示されます。  
+  
+ [!code-cpp[FieldInfo_SetValue#1](~/samples/snippets/cpp/VS_Snippets_CLR/FieldInfo_SetValue/CPP/fieldinfo_setvalue.cpp#1)]
+ [!code-csharp[FieldInfo_SetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR/FieldInfo_SetValue/CS/fieldinfo_setvalue.cs#1)]
+ [!code-vb[FieldInfo_SetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/FieldInfo_SetValue/VB/fieldinfo_setvalue.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FieldAccessException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MemberAccessException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ 呼び出し元には、このフィールドに対するアクセス許可がありません。</exception>
+        <exception cref="T:System.Reflection.TargetException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、キャッチ<see cref="T:System.Exception" />代わりにします。  
+  
+</para>
+          </block>  
+  
+ <paramref name="obj" /> パラメーターは <see langword="null" /> で、そのフィールドはインスタンス フィールドです。</exception>
+        <exception cref="T:System.ArgumentException">このフィールドはオブジェクト上に存在しません。  
+  
+ または  
+  
+ <paramref name="value" /> パラメーターを変換してフィールドに格納することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">初期化専用のフィールドを更新します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public abstract void SetValue (object obj, object value, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValue(object obj, object value, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="obj">フィールド値が設定されるオブジェクト。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <param name="invokeAttr">フィールド<see langword="Binder" />が必要なバインドの種類を指定する (たとえば、<see langword="Binder.CreateInstance" />または<see langword="Binder.ExactBinding" />)。</param>
+        <param name="binder">一連のプロパティをバインディング、引数型の強制変換、リフレクションによるメンバーの呼び出しを有効にします。 場合<c>バインダー</c>は<see langword="null" />、し<see langword="Binder.DefaultBinding" />を使用します。</param>
+        <param name="culture">特定のカルチャのソフトウェア環境を設定します。</param>
+        <summary>派生クラスでオーバーライドされると、指定されたオブジェクトでサポートされているフィールドの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは代入`value`このインスタンスによって反映されるフィールドに`obj`です。 フィールドが静的である場合`obj`は無視されます。 非静的フィールドの`obj`フィールドを宣言または継承するクラスのインスタンスである必要があります。 として、新しい値が渡される、`Object`です。 たとえば、フィールドの型が`Boolean`のインスタンス`Object`値が渡されると、適切なブール値。 値を設定する前に`SetValue`ユーザーがアクセス許可を持っているかどうかを確認します。  
+  
+> [!NOTE]
+>  完全に信頼されたコードでは、アクセスし、private のコンス トラクター、メソッド、フィールド、およびリフレクションを使用してプロパティを起動するために必要なアクセス許可を持っています。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.FieldAccessException">呼び出し元には、このフィールドに対するアクセス許可がありません。</exception>
+        <exception cref="T:System.Reflection.TargetException"><paramref name="obj" /> パラメーターは <see langword="null" /> で、そのフィールドはインスタンス フィールドです。</exception>
+        <exception cref="T:System.ArgumentException">このフィールドはオブジェクト上に存在しません。  
+  
+ または  
+  
+ <paramref name="value" /> パラメーターを変換してフィールドに格納することはできません。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">初期化専用のフィールドを更新します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValueDirect">
+      <MemberSignature Language="C#" Value="public virtual void SetValueDirect (TypedReference obj, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetValueDirect(valuetype System.TypedReference obj, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.SetValueDirect(System.TypedReference,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.TypedReference" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">場所へのマネージ ポインターをカプセル化する <see cref="T:System.TypedReference" /> 構造体と、その場所に格納できる型のランタイム表現。</param>
+        <param name="value">フィールドに代入する値。</param>
+        <summary>指定したオブジェクトでサポートされているフィールドの値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="M:System.Reflection.FieldInfo.SetValue(System.Object,System.Object,System.Reflection.BindingFlags,System.Reflection.Binder,System.Globalization.CultureInfo)" />
+        <exception cref="T:System.NotSupportedException">呼び出し元は、共通言語仕様 (CLS) の代替が必要ですが、代わりにこのメソッドを呼び出しました。</exception>
+        <permission cref="T:System.Security.Permissions.ReflectionPermission">呼び出されたときに遅延バインディング メカニズムを通じてなど<see cref="M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />です。 関連する列挙値:<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._FieldInfo.GetIDsOfNames">
+      <MemberSignature Language="C#" Value="void _FieldInfo.GetIDsOfNames (ref Guid riid, IntPtr rgszNames, uint cNames, uint lcid, IntPtr rgDispId);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._FieldInfo.GetIDsOfNames([in]valuetype System.Guid&amp; riid, native int rgszNames, unsigned int32 cNames, unsigned int32 lcid, native int rgDispId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.System#Runtime#InteropServices#_FieldInfo#GetIDsOfNames(System.Guid@,System.IntPtr,System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="rgszNames" Type="System.IntPtr" />
+        <Parameter Name="cNames" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="rgDispId" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="rgszNames">マッピング対象として渡される名前の配列。</param>
+        <param name="cNames">マッピングされる名前のカウント。</param>
+        <param name="lcid">名前を解釈するロケール コンテキスト。</param>
+        <param name="rgDispId">名前に対応する ID を受け取る、呼び出し元が割り当てた配列。</param>
+        <summary>一連の名前を対応する一連のディスパッチ識別子に割り当てます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetIDsOfNames`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._FieldInfo.GetType">
+      <MemberSignature Language="C#" Value="Type _FieldInfo.GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Type System.Runtime.InteropServices._FieldInfo.GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.System#Runtime#InteropServices#_FieldInfo#GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Type" /> 型を表す <see cref="T:System.Reflection.FieldInfo" /> オブジェクトを取得します。</summary>
+        <returns><see cref="T:System.Type" /> 型を表す <see cref="T:System.Reflection.FieldInfo" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._FieldInfo.GetTypeInfo">
+      <MemberSignature Language="C#" Value="void _FieldInfo.GetTypeInfo (uint iTInfo, uint lcid, IntPtr ppTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._FieldInfo.GetTypeInfo(unsigned int32 iTInfo, unsigned int32 lcid, native int ppTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.System#Runtime#InteropServices#_FieldInfo#GetTypeInfo(System.UInt32,System.UInt32,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="iTInfo" Type="System.UInt32" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="ppTInfo" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="iTInfo">返される型情報。</param>
+        <param name="lcid">型情報のロケール ID。</param>
+        <param name="ppTInfo">要求された型情報オブジェクトへのポインターを取得します。</param>
+        <summary>オブジェクトの型情報を取得します。この型情報を使用して、インターフェイスの型情報を取得できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfo`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._FieldInfo.GetTypeInfoCount">
+      <MemberSignature Language="C#" Value="void _FieldInfo.GetTypeInfoCount (out uint pcTInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._FieldInfo.GetTypeInfoCount([out] unsigned int32&amp; pcTInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.System#Runtime#InteropServices#_FieldInfo#GetTypeInfoCount(System.UInt32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pcTInfo" Type="System.UInt32&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="pcTInfo">オブジェクトにより提供される型タイプ情報インターフェイスの数を受け取る場所を指定します。</param>
+        <summary>オブジェクトが提供する型情報インターフェイスの数 (0 または 1) を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::GetTypeInfoCount`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.InteropServices._FieldInfo.Invoke">
+      <MemberSignature Language="C#" Value="void _FieldInfo.Invoke (uint dispIdMember, ref Guid riid, uint lcid, short wFlags, IntPtr pDispParams, IntPtr pVarResult, IntPtr pExcepInfo, IntPtr puArgErr);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.InteropServices._FieldInfo.Invoke(unsigned int32 dispIdMember, [in]valuetype System.Guid&amp; riid, unsigned int32 lcid, int16 wFlags, native int pDispParams, native int pVarResult, native int pExcepInfo, native int puArgErr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.FieldInfo.System#Runtime#InteropServices#_FieldInfo#Invoke(System.UInt32,System.Guid@,System.UInt32,System.Int16,System.IntPtr,System.IntPtr,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dispIdMember" Type="System.UInt32" />
+        <Parameter Name="riid" Type="System.Guid&amp;" RefType="ref" />
+        <Parameter Name="lcid" Type="System.UInt32" />
+        <Parameter Name="wFlags" Type="System.Int16" />
+        <Parameter Name="pDispParams" Type="System.IntPtr" />
+        <Parameter Name="pVarResult" Type="System.IntPtr" />
+        <Parameter Name="pExcepInfo" Type="System.IntPtr" />
+        <Parameter Name="puArgErr" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="dispIdMember">メンバーを識別します。</param>
+        <param name="riid">将来使用するために予約されています。 IID_NULL にする必要があります。</param>
+        <param name="lcid">引数を解釈する対象のロケール コンテキスト。</param>
+        <param name="wFlags">呼び出しのコンテキストを記述するフラグ。</param>
+        <param name="pDispParams">引数の配列、名前付き引数の DISPID の配列、配列内の要素数のカウントを格納している構造体へのポインター。</param>
+        <param name="pVarResult">結果が格納される場所へのポインター。</param>
+        <param name="pExcepInfo">例外情報を格納する構造体へのポインター。</param>
+        <param name="puArgErr">エラーが存在する最初の引数のインデックス。</param>
+        <summary>オブジェクトによって公開されたプロパティおよびメソッドへのアクセスを提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ コードからマネージ クラスにアクセスするため、およびマネージ コードから呼び出すことはできません。 詳細については`IDispatch::Invoke`、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotImplementedException">COM を使用して遅延バインディング アクセス<c>IDispatch</c>インターフェイスはサポートされていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

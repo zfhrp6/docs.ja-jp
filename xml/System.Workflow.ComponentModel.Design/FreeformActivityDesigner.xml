@@ -1,0 +1,1231 @@
+<Type Name="FreeformActivityDesigner" FullName="System.Workflow.ComponentModel.Design.FreeformActivityDesigner">
+  <TypeSignature Language="C#" Value="public class FreeformActivityDesigner : System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FreeformActivityDesigner extends System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.CompositeActivityDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Design.Serialization.DesignerSerializer(typeof(System.Workflow.ComponentModel.Design.FreeformActivityDesignerLayoutSerializer), typeof(System.Workflow.ComponentModel.Serialization.WorkflowMarkupSerializer))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーがワークフロー デザイン サーフェイスで視覚的に変更できるカスタマイズ可能なアクティビティ デザイナー画面を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> によりユーザーは、ワークフロー デザイン サーフェイス上のアクティビティの外観を変更できます。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> 属性を使用して `Designer` をカスタム アクティビティ クラスに関連付けると、ユーザーがデザイン サーフェイスにドロップしたカスタム アクティビティの外観は、他のアクティビティとは異なります。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> がデザイン サーフェイスにアクティビティを表示すると、ユーザーは他のアクティビティ デザイナーとのコネクタを描画でき、デザイン サーフェイスで定義されたパラメーターの範囲内でデザイナーのサイズを変更できます。  
+  
+> [!NOTE]
+>  ユーザーがカスタム アクティビティにコネクタを追加できるのは、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> がワークフロー内のトップレベル アクティビティに関連付けられている場合のみです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FreeformActivityDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibilityObject">
+      <MemberSignature Language="C#" Value="public override System.Windows.Forms.AccessibleObject AccessibilityObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.AccessibleObject AccessibilityObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AccessibilityObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AccessibleObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー補助アプリケーションが、障碍を持つユーザー用にアプリケーション UI を調整するのに使用する、<see cref="T:System.Windows.Forms.AccessibleObject" /> を取得します。</summary>
+        <value>コントロールに関連付けられた <see cref="T:System.Windows.Forms.AccessibleObject" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールに現在割り当てられている `AccessibleObject` がない場合は、コントロールの新しいインスタンスが作成されます。  
+  
+> [!NOTE]
+>  `AccessibilityObject` プロパティを取得または設定するには、.NET Framework と一緒にインストールされているユーザー補助アセンブリへの参照を追加する必要があります。  
+  
+ ユーザー補助オブジェクト[!INCLUDE[crabout](~/includes/crabout-md.md)]、MSDN ライブラリの「Active Accessibility」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddConnector">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.Connector AddConnector (System.Workflow.ComponentModel.Design.ConnectionPoint source, System.Workflow.ComponentModel.Design.ConnectionPoint target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Design.Connector AddConnector(class System.Workflow.ComponentModel.Design.ConnectionPoint source, class System.Workflow.ComponentModel.Design.ConnectionPoint target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AddConnector(System.Workflow.ComponentModel.Design.ConnectionPoint,System.Workflow.ComponentModel.Design.ConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.Connector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+        <Parameter Name="target" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="source">コネクタの描画の始点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <param name="target">コネクタの描画の終点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> にコネクタを追加します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> に追加された <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AddConnector%2A> は、ユーザーが <xref:System.Workflow.ComponentModel.Design.Connector> に <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> を追加するときに呼び出されます。  
+  
+   
+  
+## Examples  
+ カスタム アクティビティ デザイナーの `AddConnnector` メソッドで `OnLayoutPosition` メソッドを使用する方法の例を次に示します。  
+  
+ [!code-csharp[FreeformActivityDesigner#0](~/samples/snippets/csharp/VS_Snippets_CFX/freeformactivitydesigner/cs/snippets.cs#0)]
+ [!code-vb[FreeformActivityDesigner#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/freeformactivitydesigner/vb/snippets.vb#0)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="source" /> または <paramref name="target" /> に <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Workflow.ComponentModel.Design.ConnectionPoint.AssociatedDesigner" /> または <paramref name="source" /> の <paramref name="target" /> プロパティに <see langword="null" /> 参照 (<see langword="Nothing" />) が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">現在の <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> は、追加するコネクタのコンテナーではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSize">
+      <MemberSignature Language="C#" Value="public bool AutoSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが子デザイナーのサイズを変更すると <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のサイズが自動調整されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" /> のサイズが自動調整される場合は <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> を設定すると、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> のレイアウトが更新されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeMargin">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size AutoSizeMargin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size AutoSizeMargin" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMargin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のサイズが自動調整されるときに子デザイナーの周りにレンダリングされる余白のサイズを取得または設定します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> の子デザイナーの周りにレンダリングされる余白のサイズを表す <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMargin%2A> の既定のサイズは、40 x 40 ピクセルの大きさの <xref:System.Drawing.Size> オブジェクトです。  
+  
+ 現在のワークフロー テーマに関連付けられた <xref:System.Workflow.ComponentModel.Design.AmbientTheme.ShowGrid%2A?displayProperty=nameWithType> プロパティが `true` に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMargin%2A> に設定される高さと幅は、それぞれグリッド サイズの半分になります。  
+  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMargin%2A> を設定すると、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> のレイアウトが更新されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoSizeMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.AutoSizeMode AutoSizeMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.AutoSizeMode AutoSizeMode" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.AutoSizeMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.AutoSizeMode" /> の <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> の設定を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.AutoSizeMode" /> の <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。 既定値は <see cref="F:System.Windows.Forms.AutoSizeMode.GrowOnly" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> の既定の動作では、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> はその内容が入るように必要に応じて大きくなることができますが、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MinimumSize%2A> プロパティの値より小さくなることはできません。  
+  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> を設定すると、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> のレイアウトが更新されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringToFront">
+      <MemberSignature Language="C#" Value="public void BringToFront (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BringToFront(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.BringToFront(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">z オーダーの先頭に配置する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> を、<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> の z オーダーの先頭に配置します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.BringToFront%2A> は、指定した <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> を可視の先頭の子デザイナーとして <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> が表示するように z オーダーを変更します。 このメソッドを使用することにより、ユーザーが選択したデザイナーを z オーダーの先頭に表示できます。  
+  
+ `containedDesigner` を呼び出す前に、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.BringToFront%2A> の子になければなりません。 そうでない場合は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.BringToFront%2A> は <xref:System.ArgumentException> をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> は <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) を含んでいます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="containedDesigner" /> が <see cref="P:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners" /> コレクション内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConnectContainedDesigners">
+      <MemberSignature Language="C#" Value="protected virtual bool CanConnectContainedDesigners (System.Workflow.ComponentModel.Design.ConnectionPoint source, System.Workflow.ComponentModel.Design.ConnectionPoint target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool CanConnectContainedDesigners(class System.Workflow.ComponentModel.Design.ConnectionPoint source, class System.Workflow.ComponentModel.Design.ConnectionPoint target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CanConnectContainedDesigners(System.Workflow.ComponentModel.Design.ConnectionPoint,System.Workflow.ComponentModel.Design.ConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+        <Parameter Name="target" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="source">接続元アクティビティ デザイナー上の確認する <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />。</param>
+        <param name="target">接続先アクティビティ デザイナー上の確認する <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" />。</param>
+        <summary>ソースの子アクティビティ デザイナー上の指定したコネクション ポイントとターゲットの子アクティビティ デザイナー上の指定したコネクション ポイント間に <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> が接続を作成できるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> がソース アクティビティ デザイナーとターゲット アクティビティ デザイナー間にコネクタを描画できる場合は <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExpandCollapse">
+      <MemberSignature Language="C#" Value="public override bool CanExpandCollapse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanExpandCollapse" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CanExpandCollapse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> をワークフロー デザイン サーフェイス上で折りたためるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> を折りたためる場合は <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CanExpandCollapse%2A> は常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanResizeContainedDesigner">
+      <MemberSignature Language="C#" Value="protected virtual bool CanResizeContainedDesigner (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance bool CanResizeContainedDesigner(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CanResizeContainedDesigner(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">確認対象の <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に含まれる指定した子アクティビティ デザイナーの視覚上のサイズをユーザーが変更できるかどうかを示す値を返します。</summary>
+        <returns>
+          指定したアクティビティ デザイナーの視覚上のサイズをユーザーが変更できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされない限り、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CanResizeContainedDesigner%2A> が `true` であれば、`containedDesigner` は <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> を返します。 他の型のデザイナーはサイズ変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorAdded">
+      <MemberSignature Language="C#" Value="public event System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorAdded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorAdded" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorAdded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ConnectorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> に <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> が追加されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorAdded%2A> は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorAdded> イベントの登録済みのデリゲート イベント ハンドラーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorChanged">
+      <MemberSignature Language="C#" Value="public event System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ConnectorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> によって表示されている <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> に関連付けられた <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> 位置をユーザーが変更したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コネクタは、ユーザーによって <xref:System.Workflow.ComponentModel.Design.ConnectionPoint> オブジェクトの一方の端の <xref:System.Workflow.ComponentModel.Design.Connector> の場所が変更されると変わります。  
+  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorChanged%2A> は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorChanged> イベントの登録済みのデリゲート イベント ハンドラーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectorRemoved">
+      <MemberSignature Language="C#" Value="public event System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorRemoved;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Workflow.ComponentModel.Design.ConnectorEventHandler ConnectorRemoved" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorRemoved" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ConnectorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> からコネクタを削除したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorRemoved%2A> は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorRemoved> イベントの登録済みのデリゲート イベント ハンドラーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connectors">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.Connector&gt; Connectors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Design.Connector&gt; Connectors" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Connectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Design.Connector&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に関連付けられたコネクタの読み取り専用コレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.Connector" /> に関連付けられたすべての <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> オブジェクトを格納している読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コネクタは、2 つのアクティビティ デザイナーを接続するためのものとしてワークフロー デザイン サーフェイスに表示される線です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateConnector">
+      <MemberSignature Language="C#" Value="protected virtual System.Workflow.ComponentModel.Design.Connector CreateConnector (System.Workflow.ComponentModel.Design.ConnectionPoint source, System.Workflow.ComponentModel.Design.ConnectionPoint target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Workflow.ComponentModel.Design.Connector CreateConnector(class System.Workflow.ComponentModel.Design.ConnectionPoint source, class System.Workflow.ComponentModel.Design.ConnectionPoint target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.CreateConnector(System.Workflow.ComponentModel.Design.ConnectionPoint,System.Workflow.ComponentModel.Design.ConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.Connector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+        <Parameter Name="target" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="source">コネクタの描画の始点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <param name="target">コネクタの描画の終点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <summary>指定した 2 つのコネクション ポイント間の接続を作成します。</summary>
+        <returns>作成された <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          デザイナーを破棄する場合は <see langword="true" />、デザイナーを完了する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableUserDrawnConnectors">
+      <MemberSignature Language="C#" Value="public bool EnableUserDrawnConnectors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableUserDrawnConnectors" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.EnableUserDrawnConnectors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが自由形式のアクティビティ デザイナー画面でコネクタをドラッグおよび描画できるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ユーザーが自由形式のアクティビティ デザイナー画面でコネクタをドラッグおよび描画できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableVisualResizing">
+      <MemberSignature Language="C#" Value="protected override bool EnableVisualResizing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableVisualResizing" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.EnableVisualResizing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー デザイン サーフェイスで <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> の視覚上のサイズを変更できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> の視覚上のサイズを変更できる場合は <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が `true` に設定されていて <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> が <xref:System.Windows.Forms.AutoSizeMode.GrowAndShrink> に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.EnableVisualResizing%2A> は `false` を返します。 その他のすべての条件では、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.EnableVisualResizing%2A> は `true` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstSelectableObject">
+      <MemberSignature Language="C#" Value="public override object FirstSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FirstSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.FirstSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のナビゲーション順で最初の選択可能オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のナビゲーション順で最初の選択可能オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.FirstSelectableObject%2A> は、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners%2A> コレクション内の最初の子デザイナーを返します。コレクション数が 0 の場合は `null` 参照 (Visual Basic の場合は `Nothing`) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNextSelectableObject">
+      <MemberSignature Language="C#" Value="public override object GetNextSelectableObject (object current, System.Workflow.ComponentModel.Design.DesignerNavigationDirection navigate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetNextSelectableObject(object current, valuetype System.Workflow.ComponentModel.Design.DesignerNavigationDirection navigate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.GetNextSelectableObject(System.Object,System.Workflow.ComponentModel.Design.DesignerNavigationDirection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="current" Type="System.Object" />
+        <Parameter Name="navigate" Type="System.Workflow.ComponentModel.Design.DesignerNavigationDirection" />
+      </Parameters>
+      <Docs>
+        <param name="current">ナビゲーション順の現在の <see cref="T:System.Object" />。</param>
+        <param name="navigate">デザイナーのナビゲーション順を決定する <see cref="T:System.Workflow.ComponentModel.Design.DesignerNavigationDirection" /> 列挙値。</param>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のナビゲーション順で、指定されたオブジェクトから後の最初の選択可能オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" /> の後に続く、ナビゲーション順で最初に選択可能な <paramref name="obj" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Glyphs">
+      <MemberSignature Language="C#" Value="protected override System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection Glyphs" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Glyphs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に表示されるグリフのコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerGlyphCollection" /> に表示されるグリフを格納している <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Glyphs%2A> は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に含まれる接続可能な子デザイナーそれぞれのグリフを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public override System.Workflow.ComponentModel.Design.HitTestInfo HitTest (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Workflow.ComponentModel.Design.HitTestInfo HitTest(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.HitTest(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.HitTestInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">情報収集元のワークフロー デザイン サーフェイス上の座標を格納している <see cref="T:System.Drawing.Point" />。</param>
+        <summary>ワークフロー デザイン サーフェイス上の指定した座標にある <see langword="FreeformActivityDesigner" /> に関する情報を返します。</summary>
+        <returns>指定した座標の <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" /> に関する情報を格納している <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.HitTest%2A> は、位置がコネクタ上またはいずれかの子アクティビティ デザイナー上の位置かどうかをチェックします。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.HitTest%2A> の対象が別の位置にドラッグされている子アクティビティだった場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.HitTest%2A> は移動中のデザイナーではなく、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に関する情報を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="protected override void Initialize (System.Workflow.ComponentModel.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Initialize(class System.Workflow.ComponentModel.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Initialize(System.Workflow.ComponentModel.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Workflow.ComponentModel.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity"><see cref="T:System.Workflow.ComponentModel.Activity" /> の初期化に使用する <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> を使用して <see cref="T:System.Workflow.ComponentModel.Activity" /> を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Initialize` では、デザイナー プロパティ エクステンダーが <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に追加されます。このエクステンダーはデザイン サーフェイスが破棄されるまで使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertActivities">
+      <MemberSignature Language="C#" Value="public override void InsertActivities (System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToInsert);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void InsertActivities(class System.Workflow.ComponentModel.Design.HitTestInfo insertLocation, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToInsert) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.InsertActivities(System.Workflow.ComponentModel.Design.HitTestInfo,System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="insertLocation" Type="System.Workflow.ComponentModel.Design.HitTestInfo" />
+        <Parameter Name="activitiesToInsert" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="insertLocation">アクティビティの追加先を指定する <see cref="T:System.Workflow.ComponentModel.Design.HitTestInfo" />。</param>
+        <param name="activitiesToInsert"><see cref="T:System.Workflow.ComponentModel.Activity" /> に追加するアクティビティを格納している読み取り専用の <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> コレクション。</param>
+        <summary>指定した読み取り専用のアクティビティ コレクションを、ワークフロー デザイン サーフェイス上の指定した位置にある <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LastSelectableObject">
+      <MemberSignature Language="C#" Value="public override object LastSelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object LastSelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.LastSelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> のナビゲーション順で最後の選択可能オブジェクトを取得します。</summary>
+        <value>デザイナーのナビゲーション順で最後に選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.LastSelectableObject%2A> は、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners%2A> プロパティ内の最後の子デザイナーを返します。`null` に子デザイナーが含まれない場合は `Nothing` 参照 (Visual Basic の場合は <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner>) を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Point Location { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Location" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> の論理座標上の位置を取得または設定します。</summary>
+        <value><see langword="Point" /> の論理座標上の位置を表す<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Location%2A> のサイズを変更しているために <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が設定される場合、デザイナーは自身の子デザイナーの相対位置を維持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumSize">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Size MinimumSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size MinimumSize" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MinimumSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> の最小サイズ設定を取得します。</summary>
+        <value><see cref="T:System.Drawing.Size" /> の可能な最小サイズを表す <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveActivities">
+      <MemberSignature Language="C#" Value="public override void MoveActivities (System.Workflow.ComponentModel.Design.HitTestInfo moveLocation, System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt; activitiesToMove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MoveActivities(class System.Workflow.ComponentModel.Design.HitTestInfo moveLocation, class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.ComponentModel.Activity&gt; activitiesToMove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MoveActivities(System.Workflow.ComponentModel.Design.HitTestInfo,System.Collections.ObjectModel.ReadOnlyCollection{System.Workflow.ComponentModel.Activity})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="moveLocation" Type="System.Workflow.ComponentModel.Design.HitTestInfo" />
+        <Parameter Name="activitiesToMove" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.ComponentModel.Activity&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="moveLocation">アクティビティの移動先。</param>
+        <param name="activitiesToMove">移動するアクティビティを含むコレクション<c>moveLocation です。</c></param>
+        <summary>デザイン サーフェイス内の指定した位置にアクティビティを移動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveContainedDesigner">
+      <MemberSignature Language="C#" Value="public void MoveContainedDesigner (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner, System.Drawing.Point newLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveContainedDesigner(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner, valuetype System.Drawing.Point newLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MoveContainedDesigner(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="newLocation" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">移動する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="newLocation">デザイナーの新しい位置を表す <see cref="T:System.Drawing.Point" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> を、指定した位置に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MoveContainedDesigner%2A> は、移動されるデザイナーの新しい境界を設定し、ワークフロー デザイン サーフェイス上の <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に必要なすべてのレイアウト操作を実行します。  
+  
+ `containedDesigner` を呼び出す前に、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MoveContainedDesigner%2A> の子になければなりません。 そうでない場合は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MoveContainedDesigner%2A> は <xref:System.ArgumentException> をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> は <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) を含んでいます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="containedDesigner" /> が <see cref="P:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners" /> コレクション内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnConnectorAdded">
+      <MemberSignature Language="C#" Value="protected virtual void OnConnectorAdded (System.Workflow.ComponentModel.Design.ConnectorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnConnectorAdded(class System.Workflow.ComponentModel.Design.ConnectorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorAdded(System.Workflow.ComponentModel.Design.ConnectorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ConnectorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ConnectorEventArgs" />。</param>
+        <summary><see cref="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorAdded" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnConnectorChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnConnectorChanged (System.Workflow.ComponentModel.Design.ConnectorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnConnectorChanged(class System.Workflow.ComponentModel.Design.ConnectorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorChanged(System.Workflow.ComponentModel.Design.ConnectorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ConnectorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ConnectorEventArgs" />。</param>
+        <summary><see cref="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コネクタは、ユーザーによって <xref:System.Workflow.ComponentModel.Design.ConnectionPoint> オブジェクトの一方の端の <xref:System.Workflow.ComponentModel.Design.Connector> の場所が変更されると変わります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnConnectorRemoved">
+      <MemberSignature Language="C#" Value="protected virtual void OnConnectorRemoved (System.Workflow.ComponentModel.Design.ConnectorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnConnectorRemoved(class System.Workflow.ComponentModel.Design.ConnectorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorRemoved(System.Workflow.ComponentModel.Design.ConnectorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ConnectorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Workflow.ComponentModel.Design.ConnectorEventArgs" />。</param>
+        <summary><see cref="E:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ConnectorRemoved" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContainedActivitiesChanging">
+      <MemberSignature Language="C#" Value="protected override void OnContainedActivitiesChanging (System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnContainedActivitiesChanging(class System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs listChangeArgs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnContainedActivitiesChanging(System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listChangeArgs" Type="System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="listChangeArgs">追加または削除されたアクティビティに関する情報を格納している <see cref="T:System.Workflow.ComponentModel.ActivityCollectionChangeEventArgs" />。</param>
+        <summary>子アクティビティが <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> コレクションに追加されたとき、またはアクティビティ コレクションから削除されたときに、<see langword="Activities" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnContainedDesignersConnected">
+      <MemberSignature Language="C#" Value="protected virtual void OnContainedDesignersConnected (System.Workflow.ComponentModel.Design.ConnectionPoint source, System.Workflow.ComponentModel.Design.ConnectionPoint target);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnContainedDesignersConnected(class System.Workflow.ComponentModel.Design.ConnectionPoint source, class System.Workflow.ComponentModel.Design.ConnectionPoint target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnContainedDesignersConnected(System.Workflow.ComponentModel.Design.ConnectionPoint,System.Workflow.ComponentModel.Design.ConnectionPoint)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+        <Parameter Name="target" Type="System.Workflow.ComponentModel.Design.ConnectionPoint" />
+      </Parameters>
+      <Docs>
+        <param name="source">コネクタの描画の始点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <param name="target">コネクタの描画の終点となる <see cref="T:System.Workflow.ComponentModel.Design.ConnectionPoint" /> の場所。</param>
+        <summary>含まれているアクティビティ デザイナーのうちの 2 つの間で接続が確立されたときに、<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnContainedDesignersConnected%2A> は、<xref:System.Workflow.ComponentModel.Design.Connector> オブジェクトに含まれるアクティビティ デザイナーのうちの 1 つのアクティビティ デザイナー上のソースからもう 1 つのアクティビティ デザイナー上のターゲットに <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が描画されたときに呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragDrop">
+      <MemberSignature Language="C#" Value="protected override void OnDragDrop (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragDrop(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnDragDrop(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>デザイン サーフェイスの境界内でドラッグ ドロップ操作が完了したときに、<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDragOver">
+      <MemberSignature Language="C#" Value="protected override void OnDragOver (System.Workflow.ComponentModel.Design.ActivityDragEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnDragOver(class System.Workflow.ComponentModel.Design.ActivityDragEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnDragOver(System.Workflow.ComponentModel.Design.ActivityDragEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDragEventArgs" />。</param>
+        <summary>ドラッグ ドロップの操作中にユーザーのマウス カーソルがデザイナーの境界内にあるときに、<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Forms.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Forms.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnKeyDown(System.Windows.Forms.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Forms.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyEventArgs" />。</param>
+        <summary>デザイナーにキーボード フォーカスがあるときにキーが押されると発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutPosition">
+      <MemberSignature Language="C#" Value="protected override void OnLayoutPosition (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnLayoutPosition(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnLayoutPosition(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> にビジュアル キューと子デザイナーを配置するためのレイアウト タスクを実行します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLayoutSize">
+      <MemberSignature Language="C#" Value="protected override System.Drawing.Size OnLayoutSize (System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Drawing.Size OnLayoutSize(class System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnLayoutSize(System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerLayoutEventArgs" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> によって表示されるデザイナーのビジュアル キューのサイズが変更されたときに、<see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <returns>ワークフロー デザイン サーフェイス上の <see cref="T:System.Drawing.Size" /> の新しいサイズを表す <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnLayoutSize%2A> は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> に設定されているときに、`false` の現在の外接する四角形のサイズを返します。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が `true` に設定されていて <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> が <xref:System.Windows.Forms.AutoSizeMode?displayProperty=nameWithType> に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnLayoutSize%2A> は、外接する四角形の新しいサイズ設定を計算して返します。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が true に設定されていて <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> が <xref:System.Windows.Forms.AutoSizeMode?displayProperty=nameWithType> に設定されていない場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnLayoutSize%2A> は <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.MinimumSize%2A> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnResizing">
+      <MemberSignature Language="C#" Value="protected override void OnResizing (System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnResizing(class System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnResizing(System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">操作イベントの引数を定義する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerResizeEventArgs" />。</param>
+        <summary>デザイン時の視覚的サイズがユーザーによって変更されているときに <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が `true` に設定されていて <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> が <xref:System.Windows.Forms.AutoSizeMode?displayProperty=nameWithType> に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnResizing%2A> はワークフロー デザイン サーフェイス上のすべてのサイズ変更タスクを実行します。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が `true` に設定されていて <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSizeMode%2A> が <xref:System.Windows.Forms.AutoSizeMode?displayProperty=nameWithType> に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnResizing%2A> はレイアウト タスクを実行しますがサイズ変更タスクは実行しません。 <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.AutoSize%2A> が `false` に設定されている場合、含まれているすべてのデザイナーは <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> 上のそれまでのそれぞれの位置を保持します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnThemeChange">
+      <MemberSignature Language="C#" Value="protected override void OnThemeChange (System.Workflow.ComponentModel.Design.ActivityDesignerTheme newTheme);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnThemeChange(class System.Workflow.ComponentModel.Design.ActivityDesignerTheme newTheme) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnThemeChange(System.Workflow.ComponentModel.Design.ActivityDesignerTheme)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newTheme" Type="System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />
+      </Parameters>
+      <Docs>
+        <param name="newTheme">更新されたテーマのプロパティ設定を格納している <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" />。</param>
+        <summary>関連付けられたテーマが変更されたことを <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> に通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされない限り、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnThemeChange%2A> は常に、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Text%2A> プロパティを空の文字列に設定し、<xref:System.Workflow.ComponentModel.Design.ActivityDesigner.Image%2A> プロパティを `null` (Visual Basic の場合は `Nothing`) に設定します。  
+  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme.ShowGrid%2A> が `true` に設定されている場合、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に含まれるそれぞれの子デザイナーの位置は、最も近いグリッド線にスナップされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveConnector">
+      <MemberSignature Language="C#" Value="public void RemoveConnector (System.Workflow.ComponentModel.Design.Connector connector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveConnector(class System.Workflow.ComponentModel.Design.Connector connector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.RemoveConnector(System.Workflow.ComponentModel.Design.Connector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connector" Type="System.Workflow.ComponentModel.Design.Connector" />
+      </Parameters>
+      <Docs>
+        <param name="connector">削除する <see cref="T:System.Workflow.ComponentModel.Design.Connector" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.Connector" /> を <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.RemoveConnector%2A> は、指定したコネクタを <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.Connectors%2A> コレクションから削除し、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.OnConnectorRemoved%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="connector" /> は <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) を含んでいます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeContainedDesigner">
+      <MemberSignature Language="C#" Value="public void ResizeContainedDesigner (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner, System.Drawing.Size newSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResizeContainedDesigner(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner, valuetype System.Drawing.Size newSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ResizeContainedDesigner(System.Workflow.ComponentModel.Design.ActivityDesigner,System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+        <Parameter Name="newSize" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">サイズを変更する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <param name="newSize">デザイナーの新しい大きさを表す <see cref="T:System.Drawing.Size" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> を、指定したサイズの大きさにサイズ変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ResizeContainedDesigner%2A> は、サイズ変更されるデザイナーの新しい境界を設定し、ワークフロー デザイン サーフェイス上の <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> に必要なすべてのレイアウト操作を実行します。  
+  
+ `containedDesigner` を呼び出す前に、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ResizeContainedDesigner%2A> の子になければなりません。 そうでない場合は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ResizeContainedDesigner%2A> は <xref:System.ArgumentException> をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> は <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) を含んでいます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="containedDesigner" /> が <see cref="P:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners" /> コレクション内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SendToBack">
+      <MemberSignature Language="C#" Value="public void SendToBack (System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SendToBack(class System.Workflow.ComponentModel.Design.ActivityDesigner containedDesigner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.SendToBack(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containedDesigner" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="containedDesigner">z オーダーの一番下に設定する <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> を、<see langword="FreeformActivityDesigner" /> の z オーダーの一番下に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.SendToBack%2A> は、指定した <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> を可視の一番下のデザイナーとして <xref:System.Workflow.ComponentModel.Design.ActivityDesigner> がデザイン サーフェイスに表示するように z オーダーを変更します。 このメソッドを使用することにより、ユーザーが選択解除したデザイナーを z オーダーの一番下に表示できます。  
+  
+ `containedDesigner` を呼び出す前に、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> が <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.SendToBack%2A> の子になければなりません。 そうでない場合は、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.SendToBack%2A> は <xref:System.ArgumentException> をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="containedDesigner" /> は <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) を含んでいます。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="containedDesigner" /> が <see cref="P:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.ContainedDesigners" /> コレクション内に見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowConnectorsInForeground">
+      <MemberSignature Language="C#" Value="protected virtual bool ShowConnectorsInForeground { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowConnectorsInForeground" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ShowConnectorsInForeground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" /> が自身のデザイン サーフェイスの前景にコネクタを描画するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が自身のデザイン サーフェイスの前景にコネクタを描画する場合は <see cref="T:System.Workflow.ComponentModel.Design.FreeformActivityDesigner" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner> から派生したクラスでオーバーライドされない限り、<xref:System.Workflow.ComponentModel.Design.FreeformActivityDesigner.ShowConnectorsInForeground%2A> は常に `false` を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

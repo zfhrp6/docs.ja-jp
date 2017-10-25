@@ -1,0 +1,57 @@
+<Type Name="GeoPositionAccuracy" FullName="System.Device.Location.GeoPositionAccuracy">
+  <TypeSignature Language="C#" Value="public enum GeoPositionAccuracy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GeoPositionAccuracy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Device.Location.GeoPositionAccuracy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Device</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>アプリケーションが使用する、場所データの要求された精度のレベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求された精度のコンス トラクターで指定できる<xref:System.Device.Location.GeoCoordinateWatcher>です。 指定されていない場合、<xref:System.Device.Location.GeoCoordinateWatcher>が既定の精度レベルを作成します。 精度レベルは高は、システム パフォーマンスが低下する可能性があり、必要な場合にのみ使用する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Device.Location.GeoPositionAccuracy Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Device.Location.GeoPositionAccuracy.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPositionAccuracy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電源、パフォーマンス、およびその他の最適化に関する考慮事項のコストします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="High">
+      <MemberSignature Language="C#" Value="High" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Device.Location.GeoPositionAccuracy High = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Device.Location.GeoPositionAccuracy.High" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Device</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Device.Location.GeoPositionAccuracy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>可能な最も正確なレポートを配信します。 これは有料のサービスを使用するかより高いレベルのバッテリ電力または接続の帯域幅を消費してが含まれます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

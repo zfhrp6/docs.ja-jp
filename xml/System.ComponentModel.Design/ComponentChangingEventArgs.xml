@@ -1,0 +1,157 @@
+<Type Name="ComponentChangingEventArgs" FullName="System.ComponentModel.Design.ComponentChangingEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class ComponentChangingEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComponentChangingEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ComponentChangingEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.IComponentChangeService.ComponentChanging" /> イベントのデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.ComponentChangingEventArgs>に関するデータを提供する<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanging>イベント。 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanging>イベントは、通知、<xref:System.ComponentModel.Design.IComponentChangeService>し、現在の設計ドキュメント内の特定のコンポーネントを変更するイベント ハンドラーを登録します。 このイベントは、コンポーネントを変更できないようにする広くアクセス可能なメソッドを提供します。  
+  
+ A<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanging>コンポーネントが変更される前にイベントが発生します。 このイベントは、デザイナーで変更を中止する機会を提供します。 コンポーネント デザイナーを通常発生させる、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanging>イベントに自動的にします。 プロパティを変更できない場合、イベントを処理するメソッドは例外をスローできます。 たとえば、デザイナー ファイルは、ソース コード管理にチェックインされて、このイベントのハンドラーは、通常な例外をスロー、ユーザーがファイルをチェック アウトを拒否した場合。  
+  
+ A<xref:System.ComponentModel.Design.ComponentChangingEventArgs>次の情報を提供します。  
+  
+-   A`Component`変更されようとしているコンポーネントを示すプロパティです。  
+  
+-   A`Member`変更される直前にあるメンバーを示すプロパティです。  
+  
+   
+  
+## Examples  
+ 次の例で作成、<xref:System.ComponentModel.Design.ComponentChangingEventArgs>です。  
+  
+ [!code-cpp[ComponentChangingEventArgsExample2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/ComponentChangingEventArgsExample2/CPP/componentchangingeventargsexample.cpp#1)]
+ [!code-csharp[ComponentChangingEventArgsExample2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/ComponentChangingEventArgsExample2/CS/componentchangingeventargsexample.cs#1)]
+ [!code-vb[ComponentChangingEventArgsExample2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ComponentChangingEventArgsExample2/VB/componentchangingeventargsexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>コンパイラ エラーは、このクラスが別のクラスの基底クラスとして指定されている場合に発生します。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentChangingEventArgs (object component, System.ComponentModel.MemberDescriptor member);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object component, class System.ComponentModel.MemberDescriptor member) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ComponentChangingEventArgs.#ctor(System.Object,System.ComponentModel.MemberDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="component" Type="System.Object" />
+        <Parameter Name="member" Type="System.ComponentModel.MemberDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="component">変更される直前にあるコンポーネント。</param>
+        <param name="member">A<see cref="T:System.ComponentModel.MemberDescriptor" />変更される直前にあるコンポーネントのメンバーを示すです。</param>
+        <summary><see cref="T:System.ComponentModel.Design.ComponentChangingEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.Design.ComponentChangingEventArgs>変更されようとしているコンポーネントとメンバーを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Component">
+      <MemberSignature Language="C#" Value="public object Component { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Component" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangingEventArgs.Component" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更される直前にあるコンポーネントまたはコンポーネントが変更される直前にあるメンバーの親コンテナーを取得します。</summary>
+        <value>変更されたメンバーが含まれているコンポーネント。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.MemberDescriptor Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.MemberDescriptor Member" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ComponentChangingEventArgs.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.MemberDescriptor</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更される直前にあるメンバーを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.MemberDescriptor" />がわかっている場合、変更される直前にあるメンバーを示すまたは<see langword="null" />それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは`null`メンバーが不明の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

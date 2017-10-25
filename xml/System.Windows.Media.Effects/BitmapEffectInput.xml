@@ -1,0 +1,330 @@
+<Type Name="BitmapEffectInput" FullName="System.Windows.Media.Effects.BitmapEffectInput">
+  <TypeSignature Language="C#" Value="public sealed class BitmapEffectInput : System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BitmapEffectInput extends System.Windows.Media.Animation.Animatable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Effects.BitmapEffectInput" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.Animatable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 適用される、<see cref="T:System.Windows.Media.Effects.BitmapEffect" />で指定されて、<see cref="P:System.Windows.UIElement.BitmapEffect" />ビジュアル オブジェクトの領域を指定するプロパティです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、イメージの一部に適用された浮き出し効果を示します。  
+  
+ ![イメージの一部に対するエンボス効果。](~/add/media/effectinput-centered-emboss.jpg "イメージの一部に対するエンボス効果。")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapEffectInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="T:System.Windows.Media.Effects.BitmapEffectInput" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapEffectInput (System.Windows.Media.Imaging.BitmapSource input);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Imaging.BitmapSource input) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.#ctor(System.Windows.Media.Imaging.BitmapSource)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="input" Type="System.Windows.Media.Imaging.BitmapSource" />
+      </Parameters>
+      <Docs>
+        <param name="input">この入力オブジェクトによって使用されるビットマップのソース。</param>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Effects.BitmapEffectInput" />クラスを使用して、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />をこの入力ソースとして。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreaToApplyEffect">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect AreaToApplyEffect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect AreaToApplyEffect" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 取得または設定四角形の領域をビジュアル、<see cref="T:System.Windows.Media.Effects.BitmapEffect" />を適用します。</summary>
+        <value>効果が適用される、ビジュアルの四角形領域です。 既定値は <see cref="P:System.Windows.Rect.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形が持っている場合、<xref:System.Windows.Rect.Width%2A>または<xref:System.Windows.Rect.Height%2A>と等しい**0**効果は、ビジュアルに適用されません。  
+  
+ <xref:System.Windows.Media.Effects.BitmapEffectInput>かどうか、要素の背景が透明かに応じて異なる動作を表します。 バック グラウンドが存在しないか、定義されている場合<xref:System.Windows.UIElement>のみ子を考慮する、サイズ、および開始ポイントの座標は、視覚的なレンダリングの開始位置を開始します。  
+  
+<a name="dependencyPropertyInfo_AreaToApplyEffect"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreaToApplyEffectProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AreaToApplyEffectProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AreaToApplyEffectProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffect" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreaToApplyEffectUnits">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BrushMappingMode AreaToApplyEffectUnits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.BrushMappingMode AreaToApplyEffectUnits" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectUnits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BrushMappingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 取得または設定によって提供される四角形を解釈する対象のメソッド<see cref="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffect" />です。</summary>
+        <value>によって提供される四角形を解釈する対象のメソッド、<see cref="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectUnits" />プロパティです。 既定値は <see cref="F:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_AreaToApplyEffectUnits"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectUnitsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AreaToApplyEffectUnitsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AreaToApplyEffectUnitsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AreaToApplyEffectUnitsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectUnitsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BitmapEffectInput.AreaToApplyEffectUnits" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffectInput Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.BitmapEffectInput Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffectInput</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 この <see cref="T:System.Windows.Media.Effects.BitmapEffectInput" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Effects.BitmapEffectInput CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Effects.BitmapEffectInput CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffectInput</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 この <see cref="T:System.Windows.Media.Effects.BitmapEffectInput" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextInputSource">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Imaging.BitmapSource ContextInputSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Imaging.BitmapSource ContextInputSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BitmapEffectInput.ContextInputSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 表す値を取得、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />コンテキストから派生します。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapSource" />コンテキストから派生します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Input">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Imaging.BitmapSource Input { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Imaging.BitmapSource Input" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Effects.BitmapEffectInput.Input" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Imaging.BitmapSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 取得または設定、<see cref="T:System.Windows.Media.Imaging.BitmapSource" />オブジェクトの入力に使用されます。</summary>
+        <value><see cref="T:System.Windows.Media.Imaging.BitmapSource" />オブジェクトの入力として使用されます。 既定値は**null**です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定に置き換わります現在ビジュアルを指定された<xref:System.Windows.Media.Imaging.BitmapSource>です。 望ましくない影響が生じると、十分に注意してください。 たとえば、入力が、 <xref:System.Windows.Controls.Image> 、効果を適用しているオブジェクトと、<xref:System.Windows.Controls.TextBox>イメージには、ビジュアルとしてテキスト ボックスが置き換えられます。  
+  
+<a name="dependencyPropertyInfo_Input"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.Effects.BitmapEffectInput.InputProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty InputProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty InputProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Effects.BitmapEffectInput.InputProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 <see cref="P:System.Windows.Media.Effects.BitmapEffectInput.Input" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeInput">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeInput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeInput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Effects.BitmapEffectInput.ShouldSerializeInput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>**注: この API は廃止されました。** 旧式でない代替手段は、<see cref="T:System.Windows.Media.Effects.Effect" /> です。 かどうかを<see cref="P:System.Windows.Media.Effects.BitmapEffectInput.Input" />シリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="P:System.Windows.Media.Effects.BitmapEffectInput.Input" />それ以外のシリアル化された<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

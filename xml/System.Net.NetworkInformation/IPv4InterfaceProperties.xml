@@ -1,0 +1,392 @@
+<Type Name="IPv4InterfaceProperties" FullName="System.Net.NetworkInformation.IPv4InterfaceProperties">
+  <TypeSignature Language="C#" Value="public abstract class IPv4InterfaceProperties" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit IPv4InterfaceProperties extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.IPv4InterfaceProperties" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット プロトコル バージョン 4 (IPv4) をサポートするネットワーク インターフェイスについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、IPv4 をサポートするネットワーク インターフェイスの構成情報とアドレス情報へのアクセスを提供します。 このクラスのインスタンスを作成しません。によって返される、<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties%2A>メソッドです。  
+  
+ 、[IPV6] プロパティを参照してください。<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv6Properties%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPInterfaceProperties.GetIPv4Properties%2A>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected IPv4InterfaceProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.IPv4InterfaceProperties.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.NetworkInformation.IPv4InterfaceProperties" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターはから派生するクラスによってのみ呼び出すことができます<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Index">
+      <MemberSignature Language="C#" Value="public abstract int Index { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Index" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.Index" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスを取得、インターネット プロトコル バージョン 4 (IPv4) に関連付けられているネットワーク インターフェイスのアドレスします。</summary>
+        <value><see cref="T:System.Int32" /> IPv4 インターフェイスのインデックスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値がゼロの場合、このインターフェイスでは IPv4 がサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAutomaticPrivateAddressingActive">
+      <MemberSignature Language="C#" Value="public abstract bool IsAutomaticPrivateAddressingActive { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAutomaticPrivateAddressingActive" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.IsAutomaticPrivateAddressingActive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />をこのインターフェイスが、プライベート IP アドレス (割り当て APIPA) アドレスを持つかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />インターフェイスが APIPA アドレス; を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック アドレスと競合しない IP アドレスを自動的に割り当てられる動的ホスト構成プロトコル (DHCP) サーバーへのアクセスがないコンピューターを自動プライベート IP アドレス指定できます。 これらのアドレスは 169.254.255.255 169.254.0.0 までの範囲です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAutomaticPrivateAddressingEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsAutomaticPrivateAddressingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAutomaticPrivateAddressingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.IsAutomaticPrivateAddressingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />このインターフェイスでは、自動プライベート IP アドレス指定 (APIPA) 有効にするかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />インターフェイスが APIPA; を使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック アドレスと競合しない IP アドレスを自動的に割り当てられる動的ホスト構成プロトコル (DHCP) サーバーへのアクセスがないコンピューターを自動プライベート IP アドレス指定できます。 これらのアドレスは 169.254.255.255 169.254.0.0 までの範囲です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDhcpEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsDhcpEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDhcpEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.IsDhcpEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />動的ホスト構成プロトコル (DHCP) サーバーを使用して IP アドレスを取得するインターフェイスに構成されているかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />DHCP サーバーから IP アドレスを取得するインターフェイスが構成されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが`true`、DHCP サーバーが、コンピューターが、ネットワーク接続が確立されるときに、インターフェイスに IP アドレスを割り当てます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsForwardingEnabled">
+      <MemberSignature Language="C#" Value="public abstract bool IsForwardingEnabled { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsForwardingEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.IsForwardingEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />をこのインターフェイスを転送できるかどうかを示す値 (ルート) のパケットです。</summary>
+        <value>
+          <see langword="true" />このインターフェイスは、パケットをルーティングする場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルーティングが無効になっていますが、インターフェイスによって保持されてい宛先アドレスを持つインターフェイスによって受信されたパケットは破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mtu">
+      <MemberSignature Language="C#" Value="public abstract int Mtu { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Mtu" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.Mtu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このネットワーク インターフェイスの最大転送単位 (MTU) を取得します。</summary>
+        <value><see cref="T:System.Int64" /> MTU を指定する値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ネットワーク インターフェイスの MTU は、最大のパケットを送信することができます。 これは、オクテット (8 ビット バイト) で計測されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UsesWins">
+      <MemberSignature Language="C#" Value="public abstract bool UsesWins { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UsesWins" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.IPv4InterfaceProperties.UsesWins" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.NetworkInformation</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Boolean" />インターフェイスが Windows インターネット ネーム サービス (WINS) を使用するかどうかを示す値。</summary>
+        <value>
+          <see langword="true" />インターフェイスは、WINS; を使用している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WINS は、登録および動的の NetBIOS 名を IPv4 アドレスのマッピングを照会するための分散データベースを提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Net.NetworkInformation.IPv4InterfaceProperties>オブジェクトし、そのデータが表示されます。  
+  
+ [!code-cpp[NclNetInfo2#48](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLNetInfo2/CPP/networkexamples.cpp#48)]
+ [!code-csharp[NclNetInfo2#48](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLNetInfo2/CS/networkexamples.cs#48)]
+ [!code-vb[NclNetInfo2#48](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NCLNetInfo2/VB/networkexamples.vb#48)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

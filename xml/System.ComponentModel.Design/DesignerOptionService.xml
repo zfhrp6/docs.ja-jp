@@ -1,0 +1,331 @@
+<Type Name="DesignerOptionService" FullName="System.ComponentModel.Design.DesignerOptionService">
+  <TypeSignature Language="C#" Value="public abstract class DesignerOptionService : System.ComponentModel.Design.IDesignerOptionService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DesignerOptionService extends System.Object implements class System.ComponentModel.Design.IDesignerOptionService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignerOptionService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.Design.IDesignerOptionService</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>取得し、デザイナーのオプションの値の設定には、基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerOptionService>クラスには、オプションのコレクションが用意されています。 これらのオプションのコレクションのそれぞれで、さらに、フィルター選択することができるようにするインデクサーがあります。 各オプションのコレクションには、独自のオプションのセットとその子のオプションのすべての更新プログラムのロールアップが含まれています。 プロパティの間の名前付けの競合が発生した場合は、最も外側のオプション オブジェクトが優先されます。 次**ツール & #124 です。オプション**大きい重要度の最も外側のオプション オブジェクトがどのように行わユーザー インターフェイス (UI) の構造を示しています。  
+  
+ **WindowsFormsDesigner & #124 です。[全般]**  
+  
+-   **Snaptogrid が指定**  
+  
+-   **ShowGrid**  
+  
+-   **GridSize**  
+  
+ 指定された、<xref:System.ComponentModel.Design.IDesignerOptionService>という名前`service`の値を取得する、<xref:System.Windows.Forms.Design.ParentControlDesigner.GridSize%2A>プロパティ、次の呼び出しを行うは。  
+  
+ [!code-cpp[IDesignerOptionServiceExample#2](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CPP/idesigneroptionservicecontrol.cpp#2)]
+ [!code-csharp[IDesignerOptionServiceExample#2](~/samples/snippets/csharp/VS_Snippets_Winforms/IDesignerOptionServiceExample/CS/idesigneroptionservicecontrol.cs#2)]
+ [!code-vb[IDesignerOptionServiceExample#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerOptionServiceExample/VB/idesigneroptionservicecontrol.vb#2)]  
+  
+ 移動するまで、この動作<xref:System.Windows.Forms.Design.ParentControlDesigner.GridSize%2A>別のページにします。 また、<xref:System.ComponentModel.Design.IDesignerOptionService>探索メカニズムを提供しません。 渡す文字列がわからない場合、サービスは、プロパティ値を見つけることができません。  
+  
+ <xref:System.ComponentModel.Design.DesignerOptionService>クラスこうした問題に対処します。 コレクション、クエリを実行することができで定義された型コンバーターがある、<xref:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection>コレクションを展開可能としてマークするオブジェクト。 この型コンバーターをプロパティ ウィンドウに、全体のデザイナー オプションのサービスを渡すでき、サービスを目視で確認できます。  
+  
+   
+  
+## Examples  
+ 次のコード例へのアクセスを示しています、<xref:System.ComponentModel.Design.DesignerOptionService>を標準オプションの現在の値を表示します。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerOptionService#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerOptionService/CS/designeroptionservicecontrol.cs#1)]
+ [!code-vb[System.ComponentModel.Design.DesignerOptionService#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerOptionService/VB/designeroptionservicecontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DesignerOptionService ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignerOptionService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOptionCollection">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection CreateOptionCollection (System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection parent, string name, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.ComponentModel.Design.DesignerOptionService/DesignerOptionCollection CreateOptionCollection(class System.ComponentModel.Design.DesignerOptionService/DesignerOptionCollection parent, string name, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.CreateOptionCollection(System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parent" Type="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親デザイナー オプションのコレクションです。 すべてのコレクションでは、ルート オブジェクトのコレクションを除く、親を持ちます。</param>
+        <param name="name">このコレクションの名前。</param>
+        <param name="value">このコレクションのプロパティを提供するオブジェクト。 指定できます<see langword="null" />場合は、コレクションは、プロパティを提供しない必要があります。</param>
+        <summary>新たに作成<see cref="T:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection" />指定した名前で指定した親に追加します。</summary>
+        <returns>新しい<see cref="T:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection" />指定した名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `value`パラメーターの使用はパブリック プロパティを持つオブジェクトを指定する、<xref:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection.Properties%2A>オプションのコレクションのコレクション。 `value`パラメーターを指定できます`null`このオプションのコレクションに任意のプロパティが提供されていない場合。 プロパティを渡す何かのコンポーネント パラメーターにこのような方法でラップされて、<xref:System.ComponentModel.PropertyDescriptor>は無視されますと`value`オブジェクトに置き換えられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parent" /> または <paramref name="name" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerOptionService/DesignerOptionCollection Options" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignerOptionService.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このサービスのオプションのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection" />デザイナーの使用可能なオプションで設定されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子コレクションを格納するグローバルなオプションのコレクションは常にします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付きインデクサーによって、コレクション内を移動しての値を取得することがでく方法を示します、`GridSize`オプション。 次の 3 つすべてのバリエーションは、同じ値を返します。  
+  
+ [!code-csharp[System.ComponentModel.Design.DesignerOptionService#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerOptionService/CS/designeroptionservicecontrol.cs#3)]
+ [!code-vb[System.ComponentModel.Design.DesignerOptionService#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.Design.DesignerOptionService/VB/designeroptionservicecontrol.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopulateOptionCollection">
+      <MemberSignature Language="C#" Value="protected virtual void PopulateOptionCollection (System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection options);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void PopulateOptionCollection(class System.ComponentModel.Design.DesignerOptionService/DesignerOptionCollection options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.PopulateOptionCollection(System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="options">設定のコレクション。</param>
+        <summary>追加、<see cref="T:System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerOptionService.PopulateOptionCollection%2A>子オプションまたはオプションのコレクションのプロパティに対してユーザーが要求するときに、最初のオンデマンドでメソッドが呼び出されます。  
+  
+ 設定することができます、`options`を呼び出してコレクション、<xref:System.ComponentModel.Design.DesignerOptionService.CreateOptionCollection%2A>メソッドを親としてこのコレクションを渡すことです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowDialog">
+      <MemberSignature Language="C#" Value="protected virtual bool ShowDialog (System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection options, object optionObject);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool ShowDialog(class System.ComponentModel.Design.DesignerOptionService/DesignerOptionCollection options, object optionObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.ShowDialog(System.ComponentModel.Design.DesignerOptionService.DesignerOptionCollection,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="options" Type="System.ComponentModel.Design.DesignerOptionService+DesignerOptionCollection" />
+        <Parameter Name="optionObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="options">呼び出されるオブジェクトを含むオプションのコレクションです。</param>
+        <param name="optionObject">実際のオプション オブジェクトです。</param>
+        <summary>指定されたオブジェクトの [オプション] ダイアログ ボックスを表示します。</summary>
+        <returns>
+          <see langword="true" />ダイアログ ボックスを表示する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignerOptionService.ShowDialog%2A>なメソッドを実装する必要があります、`optionObject`パラメーターのオプション ダイアログ ボックスに表示されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>既定の実装は何もしませんし、返します<see langword="false" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.IDesignerOptionService.GetOptionValue">
+      <MemberSignature Language="C#" Value="object IDesignerOptionService.GetOptionValue (string pageName, string valueName);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.Design.IDesignerOptionService.GetOptionValue(string pageName, string valueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.System#ComponentModel#Design#IDesignerOptionService#GetOptionValue(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="pageName">オプションがバインドされているページです。</param>
+        <param name="valueName">オプションの値の名前。</param>
+        <summary>このパッケージで定義されているオプションの値を取得します。</summary>
+        <returns>という名前のオプションの値<paramref name="valueName" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pageName" /> または <paramref name="valueName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.Design.IDesignerOptionService.SetOptionValue">
+      <MemberSignature Language="C#" Value="void IDesignerOptionService.SetOptionValue (string pageName, string valueName, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.Design.IDesignerOptionService.SetOptionValue(string pageName, string valueName, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignerOptionService.System#ComponentModel#Design#IDesignerOptionService#SetOptionValue(System.String,System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pageName" Type="System.String" />
+        <Parameter Name="valueName" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="pageName">オプションのバインド先となるページ</param>
+        <param name="valueName">オプションの値の名前。</param>
+        <param name="value">オプションの値です。</param>
+        <summary>このパッケージで定義されているオプションの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="pageName" /> または <paramref name="valueName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

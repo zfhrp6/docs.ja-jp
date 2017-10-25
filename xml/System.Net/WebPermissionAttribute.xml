@@ -1,0 +1,288 @@
+<Type Name="WebPermissionAttribute" FullName="System.Net.WebPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class WebPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit WebPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Net.WebPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>インターネット リソースにアクセスする権限を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebPermissionAttribute>クラスを使用できるどの URI 文字列や正規表現文字列を宣言によって指定できます。  
+  
+ 指定されたセキュリティ情報、<xref:System.Net.WebPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて<xref:System.Net.WebPermissionAttribute>を適用します。 システムでは、実行時にこの情報にアクセスします。 <xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>に渡されるコンス トラクターが使用可能な範囲を決定<xref:System.Net.WebPermissionAttribute>ターゲットです。 システムを使用して、<xref:System.Net.WebPermission>によって返される、<xref:System.Net.WebPermissionAttribute.CreatePermission%2A>属性ターゲットのセキュリティ情報をメタデータに格納されているシリアル化可能な形式に変換します。  
+  
+> [!NOTE]
+>  <xref:System.Net.WebPermissionAttribute>のみ使用される[宣言セキュリティ](http://msdn.microsoft.com/en-us/97e21efd-6e89-4115-90d5-ad239513dad8)です。 [強制セキュリティ](http://msdn.microsoft.com/en-us/15aab1e1-6b7d-41ad-b102-c1ed7bedea27)、対応する使用<xref:System.Net.WebPermission>です。  
+  
+   
+  
+## Examples  
+ 次の例では、適用<xref:System.Net.WebPermissionAttribute>メソッドにします。  
+  
+ [!code-cpp[WebPermissionAttribute_AcceptConnect#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_AcceptConnect/CPP/webpermissionattribute_acceptconnect.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_AcceptConnect#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_AcceptConnect/CS/webpermissionattribute_acceptconnect.cs#1)]
+ [!code-vb[WebPermissionAttribute_AcceptConnect#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_AcceptConnect/VB/webpermissionattribute_acceptconnect.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebPermissionAttribute" />このクラスで実行できるセキュリティ アクションを指定する値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.SecurityAction>このコンス トラクターに渡された値は、このクラスで実行できる使用可能なセキュリティ アクションを指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、適用<xref:System.Net.WebPermissionAttribute>メソッドにします。  
+  
+ [!code-cpp[WebPermissionAttribute_Constructor#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_Constructor/CPP/source.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_Constructor#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_Constructor/CS/source.cs#1)]
+ [!code-vb[WebPermissionAttribute_Constructor#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_Constructor/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="action" /> は有効な <see cref="T:System.Security.Permissions.SecurityAction" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Accept">
+      <MemberSignature Language="C#" Value="public string Accept { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Accept" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermissionAttribute.Accept" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在の許容される URI 文字列<see cref="T:System.Net.WebPermissionAttribute" />です。</summary>
+        <value>現在の URI を含む文字列が受け入れられた<see cref="T:System.Net.WebPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用するときに<xref:System.Net.WebPermissionAttribute>クラスにこのプロパティを指定します、クラス内で使用するためにどのような URI 文字列が受け入れられます。 このアクセス許可が適用されるは、セキュリティ システムを呼び出すと<xref:System.Net.WebPermissionAttribute.CreatePermission%2A>です。 このプロパティは書き込みの後です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.WebPermissionAttribute>を指定する許容<xref:System.Net.WebPermissionAttribute.Accept%2A>文字列。  
+  
+ [!code-cpp[WebPermissionAttribute_Accept#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_Accept/CPP/source.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_Accept#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_Accept/CS/source.cs#1)]
+ [!code-vb[WebPermissionAttribute_Accept#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_Accept/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.WebPermissionAttribute.Accept" /><see langword="null" />値を設定しようとします。 1 つ以上の受け入れの URI を指定する場合は、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AcceptPattern">
+      <MemberSignature Language="C#" Value="public string AcceptPattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AcceptPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermissionAttribute.AcceptPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在では受け入れ URI を記述する正規表現パターンを取得または<see cref="T:System.Net.WebPermissionAttribute" />です。</summary>
+        <value>現在の URI を記述する正規表現パターンが含まれた文字列が受け入れられた<see cref="T:System.Net.WebPermissionAttribute" />です。 この文字列をエンコードするための規則に従ってエスケープする必要があります、<see cref="T:System.Text.RegularExpressions.Regex" />コンス トラクター文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用するときに<xref:System.Net.WebPermissionAttribute>クラスにこのプロパティを指定します、クラス内で使用するためにどのような正規表現文字列が受け入れられます。 このプロパティは書き込みの後です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.WebPermissionAttribute>を指定する許容<xref:System.Net.WebPermissionAttribute.AcceptPattern%2A>です。  
+  
+ [!code-cpp[WebPermissionAttribute_AcceptPattern#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_AcceptPattern/CPP/source.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_AcceptPattern#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_AcceptPattern/CS/source.cs#1)]
+ [!code-vb[WebPermissionAttribute_AcceptPattern#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_AcceptPattern/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.WebPermissionAttribute.AcceptPattern" /><see langword="null" />値を設定しようとします。 1 つ以上の受け入れの URI を指定する場合は、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public string Connect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Connect" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermissionAttribute.Connect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI の接続文字列が現在によって制御される設定を取得または<see cref="T:System.Net.WebPermissionAttribute" />です。</summary>
+        <value>現在の管理対象 URI の接続を含む文字列<see cref="T:System.Net.WebPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用するときに<xref:System.Net.WebPermissionAttribute>クラスにこのプロパティを指定します、クラス内で使用するどのような URI の接続は受け入れられます。 このプロパティは書き込みの後です。  
+  
+   
+  
+## Examples  
+ 次の例では、アクセスを使用して、使用可能な指定<xref:System.Net.WebPermissionAttribute.Connect%2A>文字列。  
+  
+ [!code-cpp[WebPermissionAttribute_Connect#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_Connect/CPP/source.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_Connect#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_Connect/CS/source.cs#1)]
+ [!code-vb[WebPermissionAttribute_Connect#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_Connect/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.WebPermissionAttribute.Connect" /><see langword="null" />値を設定しようとします。 1 つ以上の接続 URI を指定する場合は、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectPattern">
+      <MemberSignature Language="C#" Value="public string ConnectPattern { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectPattern" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebPermissionAttribute.ConnectPattern" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の管理対象 URI の接続を記述する正規表現パターンを取得または<see cref="T:System.Net.WebPermissionAttribute" />です。</summary>
+        <value>これによって制御される URI の接続を記述する正規表現パターンが含まれた文字列<see cref="T:System.Net.WebPermissionAttribute" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用するときに<xref:System.Net.WebPermissionAttribute>このプロパティがどのような正規表現の接続文字列を指定、クラスには、クラス内で使用するために受け入れられます。 このプロパティは書き込みの後です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します<xref:System.Net.WebPermissionAttribute>を指定する許容<xref:System.Net.WebPermissionAttribute.ConnectPattern%2A>です。  
+  
+ [!code-cpp[WebPermissionAttribute_ConnectPattern#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebPermissionAttribute_ConnectPattern/CPP/source.cpp#1)]
+ [!code-csharp[WebPermissionAttribute_ConnectPattern#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebPermissionAttribute_ConnectPattern/CS/source.cs#1)]
+ [!code-vb[WebPermissionAttribute_ConnectPattern#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebPermissionAttribute_ConnectPattern/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Net.WebPermissionAttribute.ConnectPattern" /><see langword="null" />値を設定しようとします。 1 つ以上の接続 URI を指定する場合は、追加の属性の宣言ステートメントを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.WebPermission" /> クラスの新しいインスタンスを作成して返します。</summary>
+        <returns>セキュリティ宣言に対応する <see cref="T:System.Net.WebPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.SocketPermissionAttribute.CreatePermission%2A>メソッドは、アプリケーション コードではなく、セキュリティ システムによって呼び出されます。  
+  
+ によって記述されるセキュリティ情報<xref:System.Net.WebPermissionAttribute>するクラスである属性ターゲットのメタデータに格納されて<xref:System.Net.WebPermissionAttribute>を適用します。 システムでは、実行時情報にアクセスします。 システムを使用して、<xref:System.Net.WebPermission>によって返される<xref:System.Net.SocketPermissionAttribute.CreatePermission%2A>属性ターゲットのセキュリティ情報をメタデータに格納されているシリアル化可能な形式に変換します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

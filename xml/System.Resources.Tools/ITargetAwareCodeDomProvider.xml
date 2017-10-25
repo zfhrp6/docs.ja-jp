@@ -1,0 +1,45 @@
+<Type Name="ITargetAwareCodeDomProvider" FullName="System.Resources.Tools.ITargetAwareCodeDomProvider">
+  <TypeSignature Language="C#" Value="public interface ITargetAwareCodeDomProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITargetAwareCodeDomProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Resources.Tools.ITargetAwareCodeDomProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>厳密に型指定されたリソースのビルダーを有効にするインターフェイス定義 (<see cref="T:System.Resources.Tools.StronglyTypedResourceBuilder" />オブジェクト) にどの型とプロパティが使用可能なコード ドキュメント オブジェクト モデル (CodeDOM) の適切なツリーを出力できるようにします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="SupportsProperty">
+      <MemberSignature Language="C#" Value="public bool SupportsProperty (Type type, string propertyName, bool isWritable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool SupportsProperty(class System.Type type, string propertyName, bool isWritable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Resources.Tools.ITargetAwareCodeDomProvider.SupportsProperty(System.Type,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="propertyName" Type="System.String" />
+        <Parameter Name="isWritable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">プロパティを照会する型。</param>
+        <param name="propertyName">検索するプロパティの名前<c>型</c>です。</param>
+        <param name="isWritable">プロパティが get アクセサーを含める必要があるかどうかを示すフラグです。</param>
+        <summary>プロジェクトのターゲット フレームワークで指定された型が、指定した名前付きプロパティを持つかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="type" />、プロジェクトのターゲット フレームワークがという名前のプロパティ<paramref name="propertyname" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

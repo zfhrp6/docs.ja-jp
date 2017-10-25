@@ -1,0 +1,230 @@
+<Type Name="Instrumentation" FullName="System.Management.Instrumentation.Instrumentation">
+  <TypeSignature Language="C#" Value="public class Instrumentation" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Instrumentation extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Management.Instrumentation.Instrumentation" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>管理用のイベントとデータを公開するには、ヘルパー関数を提供します。 アプリケーション ドメインごとに、このクラスの 1 つのインスタンスがあります。  
+  
+ 注: WMI .NET ライブラリは最終的な状態と見なされます。これらのライブラリに影響を与えるセキュリティ以外に関連する問題については、さらなる開発、機能拡張、または更新は利用できません。 [MI Api](https://msdn.microsoft.com/en-us/library/jj152383%28v=vs.80%29.aspx)すべての新しい開発で使用する必要があります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Instrumentation ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Management.Instrumentation.Instrumentation" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、フィールドを既定値に初期化します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Fire">
+      <MemberSignature Language="C#" Value="public static void Fire (object eventData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Fire(object eventData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.Fire(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="eventData">クラス、プロパティ、およびイベントの値を決定するオブジェクト。</param>
+        <summary>管理イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAssemblyRegistered">
+      <MemberSignature Language="C#" Value="public static bool IsAssemblyRegistered (System.Reflection.Assembly assemblyToRegister);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsAssemblyRegistered(class System.Reflection.Assembly assemblyToRegister) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.IsAssemblyRegistered(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyToRegister" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyToRegister"><see cref="T:System.Reflection.Assembly" /> Instrumentation インスタンスまたはイベントの種類を含むです。</param>
+        <summary>指定したアセンブリのインストルメンテーションのスキーマが WMI で、既に正しく登録されてかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したアセンブリでのインストルメンテーション スキーマが WMI に登録されている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Publish">
+      <MemberSignature Language="C#" Value="public static void Publish (object instanceData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Publish(object instanceData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.Publish(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instanceData">管理の実装を通じて参照できるようにするオブジェクト。</param>
+        <summary>インスタンスは、管理インストルメンテーションを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterAssembly">
+      <MemberSignature Language="C#" Value="public static void RegisterAssembly (System.Reflection.Assembly assemblyToRegister);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterAssembly(class System.Reflection.Assembly assemblyToRegister) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.RegisterAssembly(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyToRegister" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyToRegister"><see cref="T:System.Reflection.Assembly" /> Instrumentation インスタンスまたはイベントの種類を含むです。</param>
+        <summary>WMI で指定したアセンブリでは、管理インスタンスまたはイベント クラスを登録します。 これは、インストルメンテーション スキーマがアクセスできることにより、<see cref="N:System.Management" />クライアント アプリケーション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Revoke">
+      <MemberSignature Language="C#" Value="public static void Revoke (object instanceData);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Revoke(object instanceData) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.Revoke(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instanceData" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instanceData">Management instrumentation の可視性はから削除するオブジェクト。</param>
+        <summary>インスタンスを作成するを通じて公開されていた、<see cref="M:System.Management.Instrumentation.Instrumentation.Publish(System.Object)" />メソッドが表示されない管理の実装を通じてします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBatchSize">
+      <MemberSignature Language="C#" Value="public static void SetBatchSize (Type instrumentationClass, int batchSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetBatchSize(class System.Type instrumentationClass, int32 batchSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.Instrumentation.Instrumentation.SetBatchSize(System.Type,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instrumentationClass" Type="System.Type" />
+        <Parameter Name="batchSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="instrumentationClass">バッチ サイズが設定されているクラスです。</param>
+        <param name="batchSize">一度に提供されるオブジェクトの最大数。</param>
+        <summary>一度に提供する指定した型のオブジェクトの最大数を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

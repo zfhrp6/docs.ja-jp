@@ -1,0 +1,133 @@
+<Type Name="MarkupObject" FullName="System.Windows.Markup.Primitives.MarkupObject">
+  <TypeSignature Language="C#" Value="public abstract class MarkupObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MarkupObject extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.Primitives.MarkupObject" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトのツリーを移動するために使用できるオブジェクトを表す抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを作成、<xref:System.Windows.Markup.Primitives.MarkupObject>を参照してください<xref:System.Windows.Markup.Primitives.MarkupWriter.GetMarkupObjectFor%2A>メソッドを<xref:System.Windows.Markup.Primitives.MarkupWriter>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AssignRootContext">
+      <MemberSignature Language="C#" Value="public abstract void AssignRootContext (System.Windows.Markup.IValueSerializerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AssignRootContext(class System.Windows.Markup.IValueSerializerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.Primitives.MarkupObject.AssignRootContext(System.Windows.Markup.IValueSerializerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Markup.IValueSerializerContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.Windows.Markup.IValueSerializerContext" />を割り当てるためのルート コンテキスト。</param>
+        <summary>派生クラスでオーバーライドされると、割り当てのルート コンテキスト<see cref="T:System.Windows.Markup.ValueSerializer" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public abstract System.ComponentModel.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupObject.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、これに関連付けられている属性を取得<see cref="T:System.Windows.Markup.Primitives.MarkupObject" />です。</summary>
+        <value>属性のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public abstract object Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupObject.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、これによって表されるオブジェクトのインスタンスを取得<see cref="T:System.Windows.Markup.Primitives.MarkupObject" />です。</summary>
+        <value>オブジェクトのインスタンス</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトの型と等しいできない可能性があります<xref:System.Windows.Markup.Primitives.MarkupObject.ObjectType%2A>インスタンスが型のインスタンスを作成するファクトリを表すかどうか<xref:System.Windows.Markup.Primitives.MarkupObject.ObjectType%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObjectType">
+      <MemberSignature Language="C#" Value="public abstract Type ObjectType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type ObjectType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupObject.ObjectType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるの型を取得、<see cref="T:System.Windows.Markup.Primitives.MarkupObject" />インスタンス。</summary>
+        <value>オブジェクトの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.Primitives.MarkupObject.ObjectType%2A>型を返します、<xref:System.Windows.Markup.Primitives.MarkupObject>です。  たとえば、項目を表す、<xref:System.Windows.Controls.Button>のと同じを返します**typeof(System.Windows.Button)**です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IEnumerable&lt;System.Windows.Markup.Primitives.MarkupProperty&gt; Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Markup.Primitives.MarkupProperty&gt; Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.Primitives.MarkupObject.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Windows.Markup.Primitives.MarkupProperty&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このプロパティを取得<see cref="T:System.Windows.Markup.Primitives.MarkupObject" />に書き込むかインスタンス[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]です。</summary>
+        <value>プロパティ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

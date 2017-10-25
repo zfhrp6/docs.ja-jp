@@ -1,0 +1,176 @@
+<Type Name="EnvelopedSignatureWriter" FullName="System.IdentityModel.EnvelopedSignatureWriter">
+  <TypeSignature Language="C#" Value="public sealed class EnvelopedSignatureWriter : System.IdentityModel.DelegatingXmlDictionaryWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EnvelopedSignatureWriter extends System.IdentityModel.DelegatingXmlDictionaryWriter" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.EnvelopedSignatureWriter" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.DelegatingXmlDictionaryWriter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ライターをラップして、エンベロープが完全に書き込まれるときに自動的に署名を生成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、生成された署名は、エンベロープ内の最後の要素として挿入されます。 これは、明示的に呼び出すことによって修正できます、<xref:System.IdentityModel.EnvelopedSignatureWriter.WriteSignature%2A>メソッド署名を挿入するエンベロープ内の位置を指定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EnvelopedSignatureWriter (System.Xml.XmlWriter innerWriter, System.IdentityModel.Tokens.SigningCredentials signingCredentials, string referenceId, System.IdentityModel.Selectors.SecurityTokenSerializer securityTokenSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlWriter innerWriter, class System.IdentityModel.Tokens.SigningCredentials signingCredentials, string referenceId, class System.IdentityModel.Selectors.SecurityTokenSerializer securityTokenSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.#ctor(System.Xml.XmlWriter,System.IdentityModel.Tokens.SigningCredentials,System.String,System.IdentityModel.Selectors.SecurityTokenSerializer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="innerWriter" Type="System.Xml.XmlWriter" />
+        <Parameter Name="signingCredentials" Type="System.IdentityModel.Tokens.SigningCredentials" />
+        <Parameter Name="referenceId" Type="System.String" />
+        <Parameter Name="securityTokenSerializer" Type="System.IdentityModel.Selectors.SecurityTokenSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="innerWriter">ラップするライター。</param>
+        <param name="signingCredentials">署名の生成に使用する署名資格情報です。</param>
+        <param name="referenceId">エンベロープの参照の ID です。</param>
+        <param name="securityTokenSerializer">署名の必要な KeyInfo をシリアル化に使用するトークン シリアライザー。</param>
+        <summary><see cref="T:System.IdentityModel.EnvelopedSignatureWriter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="referenceId" /> が <see langword="null" /> または空です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="innerWriter" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="signingCredentials" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="securityTokenSerializer" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndElement">
+      <MemberSignature Language="C#" Value="public override void WriteEndElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteEndElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.WriteEndElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つの要素を閉じ、対応する名前空間スコープをポップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンベロープの最後の要素が書き込まれるときに、署名はエンベロープ経由で自動的に計算されます。 場合、<xref:System.IdentityModel.EnvelopedSignatureWriter.WriteSignature%2A>メソッドが明示的に呼び出される、署名が、エンベロープ内の適切な位置に挿入されてです。 それ以外の場合、エンベロープの最後に挿入されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteFullEndElement">
+      <MemberSignature Language="C#" Value="public override void WriteFullEndElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteFullEndElement() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.WriteFullEndElement" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>1 つの要素を閉じ、対応する名前空間スコープをポップします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エンベロープの最後の要素が書き込まれるときに、署名はエンベロープ経由で自動的に計算されます。 場合、<xref:System.IdentityModel.EnvelopedSignatureWriter.WriteSignature%2A>メソッドが明示的に呼び出される、署名が、エンベロープ内の適切な位置に挿入されてです。 それ以外の場合、エンベロープの最後に挿入されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSignature">
+      <MemberSignature Language="C#" Value="public void WriteSignature ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteSignature() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.WriteSignature" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>エンベロープ内の署名の位置を設定します。 挿入する箇所署名を示すために、エンベロープの書き込み中には、このメソッドを呼び出します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartElement">
+      <MemberSignature Language="C#" Value="public override void WriteStartElement (string prefix, string localName, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteStartElement(string prefix, string localName, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.EnvelopedSignatureWriter.WriteStartElement(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefix" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="prefix">要素の名前空間プリフィックス。</param>
+        <param name="localName">要素のローカル名。 (プレフィックスなしの要素の名前です。)</param>
+        <param name="ns">要素に関連付ける名前空間 URI。</param>
+        <summary>指定した開始タグを書き込みし、指定した名前空間に関連付けます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

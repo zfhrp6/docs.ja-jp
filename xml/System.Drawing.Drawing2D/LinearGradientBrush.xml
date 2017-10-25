@@ -1,0 +1,983 @@
+<Type Name="LinearGradientBrush" FullName="System.Drawing.Drawing2D.LinearGradientBrush">
+  <TypeSignature Language="C#" Value="public sealed class LinearGradientBrush : System.Drawing.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit LinearGradientBrush extends System.Drawing.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.LinearGradientBrush" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>カプセル化、<see cref="T:System.Drawing.Brush" />線形グラデーションを使用しています。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、2 色のグラデーションとカスタムのマルチ カラー グラデーションの両方をカプセル化します。  
+  
+ 四角形の幅または 2 つのポイントのいずれかを指定した行に沿ってすべての線形グラデーションが定義されます。  
+  
+ 既定では、2 色の線形グラデーションは、水平線形 blend 開始色から終了色まで指定した行に沿ったです。 Blend のパターンを使用して、カスタマイズ、<xref:System.Drawing.Drawing2D.Blend>クラス、<xref:System.Drawing.Drawing2D.LinearGradientBrush.SetSigmaBellShape%2A>メソッド、または<xref:System.Drawing.Drawing2D.LinearGradientBrush.SetBlendTriangularShape%2A>メソッドです。 指定して、グラデーションの方向をカスタマイズ、<xref:System.Drawing.Drawing2D.LinearGradientMode>列挙型またはコンス トラクターの角度。  
+  
+ 使用して、<xref:System.Drawing.Drawing2D.LinearGradientBrush.InterpolationColors%2A>グラデーションを作成するプロパティです。  
+  
+ <xref:System.Drawing.Drawing2D.LinearGradientBrush.Transform%2A>プロパティをグラデーションに適用されるローカル ジオメトリック変換を指定します。  
+  
+   
+  
+## Examples  
+ 次の例では、水平方向<xref:System.Drawing.Drawing2D.LinearGradientBrush>; 200 の水平方向の座標に水平方向の座標は 0 から移動すると、色の要素が直線的に変化します。 たとえば、最初の座標が 0 ~ 200 の範囲の中間に位置ポイントは、0 ~ 255 の範囲の中間に位置が青の要素があります。 この例は、Windows フォームで使用するために設計されています。 次のコード例は Windows フォームで使用するために設計され、必要があります、 <xref:System.Windows.Forms.PaintEventArgs> `e`、パラメーターのある<xref:System.Windows.Forms.PaintEventHandler>です。  
+  
+ [!code-csharp[System.Drawing.UsingaGradientBrush#21](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/CS/Class1.cs#21)]
+ [!code-vb[System.Drawing.UsingaGradientBrush#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.UsingaGradientBrush/VB/Class1.vb#21)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.Point point1, System.Drawing.Point point2, System.Drawing.Color color1, System.Drawing.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Point point1, valuetype System.Drawing.Point point2, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.Point,System.Drawing.Point,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Drawing.Point" />
+        <Parameter Name="point2" Type="System.Drawing.Point" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="point1">A<see cref="T:System.Drawing.Point" />線状グラデーションの開始位置を表す構造です。</param>
+        <param name="point2">A<see cref="T:System.Drawing.Point" />線形グラデーションの終了点を表す構造です。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />線状グラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />線状グラデーションの終了色を表す構造です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />として、指定されたポイントの色。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.PointF point1, System.Drawing.PointF point2, System.Drawing.Color color1, System.Drawing.Color color2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.PointF point1, valuetype System.Drawing.PointF point2, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.Color,System.Drawing.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="point1" Type="System.Drawing.PointF" />
+        <Parameter Name="point2" Type="System.Drawing.PointF" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+      </Parameters>
+      <Docs>
+        <param name="point1">A<see cref="T:System.Drawing.PointF" />線状グラデーションの開始位置を表す構造です。</param>
+        <param name="point2">A<see cref="T:System.Drawing.PointF" />線形グラデーションの終了点を表す構造です。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />線状グラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />線状グラデーションの終了色を表す構造です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />として、指定されたポイントの色。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.Rectangle rect, System.Drawing.Color color1, System.Drawing.Color color2, System.Drawing.Drawing2D.LinearGradientMode linearGradientMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, valuetype System.Drawing.Drawing2D.LinearGradientMode linearGradientMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Drawing.Drawing2D.LinearGradientMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="linearGradientMode" Type="System.Drawing.Drawing2D.LinearGradientMode" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="linearGradientMode">A<see cref="T:System.Drawing.Drawing2D.LinearGradientMode" />グラデーションの向きを指定する要素を列挙します。 印刷の向きでは、グラデーションの開始と終了ポイントを決定します。 たとえば、<see langword="LinearGradientMode.ForwardDiagonal" />ことが四角形の左上隅の開始点と終了ポイントは、四角形の右下隅を指定します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />クラスは、最初と最後の色、および印刷の向きの四角形に基づいています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.Rectangle rect, System.Drawing.Color color1, System.Drawing.Color color2, float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="angle">時計回りに測定した、x 軸からのグラデーションの印刷の向きの行の角度。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />クラスは、最初と最後の色、および角度の四角形に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の行を垂直方向の線に沿ったのすべてのポイントは、同じ色がします。  
+  
+ 開始行は、垂直方向の行に四角形の四隅のいずれかを通過します。 開始行のすべてのポイントは、開始色です。 行を終了し、垂直方向の行し、四角形の四隅のいずれかを通過します。 終了行に対するすべてのポイントは、終了色です。  
+  
+ 印刷の向きの線の角度は、最初と最後の行を通過する隅を決定します。 たとえば、角度が 0 ~ 90 ° の範囲にある場合は、開始行をそのまま渡し、左上隅にある終了行は、右下隅を通過します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.RectangleF rect, System.Drawing.Color color1, System.Drawing.Color color2, System.Drawing.Drawing2D.LinearGradientMode linearGradientMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.RectangleF rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, valuetype System.Drawing.Drawing2D.LinearGradientMode linearGradientMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Drawing.Drawing2D.LinearGradientMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="linearGradientMode" Type="System.Drawing.Drawing2D.LinearGradientMode" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="linearGradientMode">A<see cref="T:System.Drawing.Drawing2D.LinearGradientMode" />グラデーションの向きを指定する要素を列挙します。 印刷の向きでは、グラデーションの開始と終了ポイントを決定します。 たとえば、<see langword="LinearGradientMode.ForwardDiagonal" />ことが四角形の左上隅の開始点と終了ポイントは、四角形の右下隅を指定します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />最初と最後の色、および向きモードの四角形に基づいています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.RectangleF rect, System.Drawing.Color color1, System.Drawing.Color color2, float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.RectangleF rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Single)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="angle">時計回りに測定した、x 軸からのグラデーションの印刷の向きの行の角度。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />クラスは、最初と最後の色、および角度の四角形に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の行を垂直方向の線に沿ったのすべてのポイントは、同じ色がします。  
+  
+ 開始行は、垂直方向の行に四角形の四隅のいずれかを通過します。 開始行のすべてのポイントは、開始色です。 行を終了し、垂直方向の行し、四角形の四隅のいずれかを通過します。 終了行に対するすべてのポイントは、終了色です。  
+  
+ 印刷の向きの線の角度は、最初と最後の行を通過する隅を決定します。 たとえば、角度が 0 ~ 90 ° の範囲にある場合は、開始行をそのまま渡し、左上隅にある終了行は、右下隅を通過します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.Rectangle rect, System.Drawing.Color color1, System.Drawing.Color color2, float angle, bool isAngleScaleable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, float32 angle, bool isAngleScaleable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.Rectangle,System.Drawing.Color,System.Drawing.Color,System.Single,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.Rectangle" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="isAngleScaleable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.Rectangle" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="angle">時計回りに測定した、x 軸からのグラデーションの印刷の向きの行の角度。</param>
+        <param name="isAngleScaleable">設定<see langword="true" />角度がこれに関連付けられている変換によって影響を受けることを指定する<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />クラスは、最初と最後の色、および角度の四角形に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の行を垂直方向の線に沿ったのすべてのポイントは、同じ色がします。  
+  
+ 開始行は、垂直方向の行に四角形の四隅のいずれかを通過します。 開始行のすべてのポイントは、開始色です。 行を終了し、垂直方向の行し、四角形の四隅のいずれかを通過します。 終了行に対するすべてのポイントは、終了色です。  
+  
+ 印刷の向きの線の角度は、最初と最後の行を通過する隅を決定します。 たとえば、角度が 0 ~ 90 ° の範囲にある場合は、開始行をそのまま渡し、左上隅にある終了行は、右下隅を通過します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinearGradientBrush (System.Drawing.RectangleF rect, System.Drawing.Color color1, System.Drawing.Color color2, float angle, bool isAngleScaleable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.RectangleF rect, valuetype System.Drawing.Color color1, valuetype System.Drawing.Color color2, float32 angle, bool isAngleScaleable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.#ctor(System.Drawing.RectangleF,System.Drawing.Color,System.Drawing.Color,System.Single,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Drawing.RectangleF" />
+        <Parameter Name="color1" Type="System.Drawing.Color" />
+        <Parameter Name="color2" Type="System.Drawing.Color" />
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="isAngleScaleable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="rect">A<see cref="T:System.Drawing.RectangleF" />構造線状グラデーションの境界を指定します。</param>
+        <param name="color1">A<see cref="T:System.Drawing.Color" />のグラデーションの開始色を表す構造です。</param>
+        <param name="color2">A<see cref="T:System.Drawing.Color" />のグラデーションの終了色を表す構造です。</param>
+        <param name="angle">時計回りに測定した、x 軸からのグラデーションの印刷の向きの行の角度。</param>
+        <param name="isAngleScaleable">設定<see langword="true" />角度がこれに関連付けられている変換によって影響を受けることを指定する<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />、それ以外の<see langword="false" />します。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />クラスは、最初と最後の色、および角度の四角形に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 任意の行を垂直方向の線に沿ったのすべてのポイントは、同じ色がします。  
+  
+ 開始行は、垂直方向の行に四角形の四隅のいずれかを通過します。 開始行のすべてのポイントは、開始色です。 行を終了し、垂直方向の行し、四角形の四隅のいずれかを通過します。 終了行に対するすべてのポイントは、終了色です。  
+  
+ 印刷の向きの線の角度は、最初と最後の行を通過する隅を決定します。 たとえば、角度が 0 ~ 90 ° の範囲にある場合は、開始行をそのまま渡し、左上隅にある終了行は、右下隅を通過します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Blend">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Blend Blend { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Blend Blend" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.Blend" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Blend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.Blend" />のグラデーションのカスタム減色を定義する位置と係数を指定します。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.Blend" />のグラデーションのカスタムの減色を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A <xref:System.Drawing.Drawing2D.Blend> blend 要因および位置の対応する配列が含まれています。 Blend の要因は、色の開始と終了日に対応する位置に使用する色の割合を指定します。 位置は、グラデーションの線に沿った距離の割合として指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" /> の同一コピーを作成します。</summary>
+        <returns><see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />オブジェクトとしてキャスト、このメソッドを作成します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、画面に楕円を描画します。  
+  
+-   クローン、 <xref:System.Drawing.Drawing2D.LinearGradientBrush> (`clonedLGBrush`)。  
+  
+-   複製されたブラシを使用して、最初の楕円のすぐ下の画面に楕円を描画します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GammaCorrection">
+      <MemberSignature Language="C#" Value="public bool GammaCorrection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool GammaCorrection" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.GammaCorrection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ガンマ補正が有効にするかどうかを示す値を取得または<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />です。</summary>
+        <value>値が<see langword="true" />ガンマ補正が有効にする場合<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolationColors">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.ColorBlend InterpolationColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.ColorBlend InterpolationColors" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.InterpolationColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.ColorBlend</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.ColorBlend" />線形グラデーションを定義します。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.ColorBlend" />線形グラデーションを定義します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Drawing.Drawing2D.ColorBlend>色および位置の対応する配列が含まれています。 位置は、対応する色が配置されているグラデーションの線に沿った距離の割合を指定する 0 ~ 1 の値です。  
+  
+ このプロパティを設定すると、グラデーションの線に沿った位置ごとに 1 つの色とグラデーションが作成されます。 このプロパティの設定をすべて以前の色、位置、および減衰設定を null<xref:System.Drawing.Drawing2D.LinearGradientBrush>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinearColors">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color[] LinearColors { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color[] LinearColors" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.LinearColors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはグラデーションの開始および終了色を設定します。</summary>
+        <value>2 つの配列<see cref="T:System.Drawing.Color" />を開始および終了するグラデーションの色を表す構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />ジオメトリック変換を乗算します。</param>
+        <summary>乗算、<see cref="T:System.Drawing.Drawing2D.Matrix" />このローカル ジオメトリック変換を表す<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />において指定した<see cref="T:System.Drawing.Drawing2D.Matrix" />、指定した付加することによって<see cref="T:System.Drawing.Drawing2D.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.LinearGradientBrush.MultiplyTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiplyTransform">
+      <MemberSignature Language="C#" Value="public void MultiplyTransform (System.Drawing.Drawing2D.Matrix matrix, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MultiplyTransform(class System.Drawing.Drawing2D.Matrix matrix, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.MultiplyTransform(System.Drawing.Drawing2D.Matrix,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Drawing.Drawing2D.Matrix" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Drawing.Drawing2D.Matrix" />ジオメトリック変換を乗算します。</param>
+        <param name="order">A<see cref="T:System.Drawing.Drawing2D.MatrixOrder" />で 2 つの行列を乗算する順序を指定します。</param>
+        <summary>乗算、<see cref="T:System.Drawing.Drawing2D.Matrix" />このローカル ジオメトリック変換を表す<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />において指定した<see cref="T:System.Drawing.Drawing2D.Matrix" />指定した順序で。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、画面に楕円を描画します。  
+  
+-   呼び出し、<xref:System.Drawing.Drawing2D.LinearGradientBrush.MultiplyTransform%2A>変換する方法、<xref:System.Drawing.Drawing2D.LinearGradientBrush>です。  
+  
+-   変換されたブラシを使用して、最初の楕円のすぐ下の画面に楕円を描画します。  
+  
+ 下の楕円は、水平方向に合わせて引き伸ばされますことおよびグラデーションは新しい図形を一致するように合わせて引き伸ばされますことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#2)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#2)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.RectangleF Rectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.RectangleF Rectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.Rectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.RectangleF</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グラデーションの開始と終了ポイントを定義する四角形の領域を取得します。</summary>
+        <value>A<see cref="T:System.Drawing.RectangleF" />を開始して、グラデーションの終点を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 四角形の左側にある線形グラデーションの開始位置を指定して、四角形の右側にあるエンドポイントを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResetTransform">
+      <MemberSignature Language="C#" Value="public void ResetTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResetTransform() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.ResetTransform" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リセット、<see cref="P:System.Drawing.Drawing2D.LinearGradientBrush.Transform" />プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、画面に楕円を描画します。  
+  
+-   呼び出し、<xref:System.Drawing.Drawing2D.LinearGradientBrush.MultiplyTransform%2A>に変換し、<xref:System.Drawing.Drawing2D.LinearGradientBrush>です。  
+  
+-   変換されたブラシを使用して、最初の楕円のすぐ下の画面に楕円を描画します。  
+  
+-   トランス フォームをリセットします。  
+  
+-   最初の 2 つ次の画面に 3 番目の楕円を描画します。  
+  
+ 楕円を描画することに注意してください、同じサイズとして 1 つ目と、期限の呼び出しに、<xref:System.Drawing.Drawing2D.LinearGradientBrush.ResetTransform%2A>メソッド、グラデーションが一致するように短縮されました。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#3](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#3)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#3)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.RotateTransform(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <summary>指定した量だけローカル ジオメトリック変換を回転します。 このメソッドの前に回転変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.LinearGradientBrush.RotateTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateTransform">
+      <MemberSignature Language="C#" Value="public void RotateTransform (float angle, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateTransform(float32 angle, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.RotateTransform(System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <param name="order">回転行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>指定した順序で指定した量だけローカル ジオメトリック変換を回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コード  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、画面に楕円を描画します。  
+  
+-   回転、 <xref:System.Drawing.Drawing2D.LinearGradientBrush> 45 度呼び出すことによって、<xref:System.Drawing.Drawing2D.LinearGradientBrush.RotateTransform%2A>メソッドです。  
+  
+-   回転のブラシを使用して、最初の楕円のすぐ下の画面に楕円を描画します。  
+  
+ 下の楕円のグラデーションが上の楕円の x 軸に 45 度の角度であることを確認します。 またへの呼び出し、<xref:System.Drawing.Drawing2D.LinearGradientBrush.TranslateTransform%2A>下の楕円の左端の塗りつぶしのグラデーションの左端を正当化するメソッドを使用します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#4)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#4)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.ScaleTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向に変換をスケーリングする量。</param>
+        <param name="sy">Y 軸方向に変換をスケーリングする量。</param>
+        <summary>ローカル ジオメトリック変換をスケール、指定した量だけです。 このメソッドの前にスケーリング行列変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.LinearGradientBrush.ScaleTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleTransform">
+      <MemberSignature Language="C#" Value="public void ScaleTransform (float sx, float sy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleTransform(float32 sx, float32 sy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.ScaleTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sx" Type="System.Single" />
+        <Parameter Name="sy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="sx">X 軸方向に変換をスケーリングする量。</param>
+        <param name="sy">Y 軸方向に変換をスケーリングする量。</param>
+        <param name="order">スケーリング行列を後に適用するか、前に適用するかを指定する <see cref="T:System.Drawing.Drawing2D.MatrixOrder" />。</param>
+        <summary>ローカル ジオメトリック変換をスケールを指定した順序で指定した比率。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、画面に楕円を描画します。  
+  
+-   スケール、<xref:System.Drawing.Drawing2D.LinearGradientBrush>で x 軸の 2 つの要素。  
+  
+-   スケール調節されたブラシを使用して、最初の楕円のすぐ下の画面に楕円を描画します。  
+  
+ 下の楕円のグラデーションを 2 つの倍に拡大することに注意してください。 またへの呼び出し、<xref:System.Drawing.Drawing2D.LinearGradientBrush.TranslateTransform%2A>グラデーション塗りつぶし楕円の左端との左端を正当化するメソッドを使用します。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#5)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#5)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBlendTriangularShape">
+      <MemberSignature Language="C#" Value="public void SetBlendTriangularShape (float focus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBlendTriangularShape(float32 focus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.SetBlendTriangularShape(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 (ポイント、グラデーションがで構成される終了色のみ) のグラデーションの中心を指定する値。</param>
+        <summary>中央の色と単一の色の両端に線形の減衰を線形グラデーションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを指定します、 `focus`、のみの終了色、グラデーションがで構成されるポイントであります。 `focus`パラメーター グラデーションの線に沿った距離に対する比率として場所を表します。 どちら側に直線的に開始色をグラデーションになります。  
+  
+   
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.LinearGradientBrush.SetBlendTriangularShape%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetBlendTriangularShape">
+      <MemberSignature Language="C#" Value="public void SetBlendTriangularShape (float focus, float scale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetBlendTriangularShape(float32 focus, float32 scale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.SetBlendTriangularShape(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+        <Parameter Name="scale" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 (ポイント、グラデーションがで構成される終了色のみ) のグラデーションの中心を指定する値。</param>
+        <param name="scale">開始色からどのように高速の色減色を指定する 0 through1 から値<c>フォーカス</c>(終了色)</param>
+        <summary>中央の色と単一の色の両端に線形の減衰を線形グラデーションを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを指定します、 `focus`、のみの終了色、グラデーションがで構成されるポイントであります。 `focus`パラメーター グラデーションの線に沿った距離に対する比率として場所を表します。 どちら側に直線的に開始色をグラデーションになります。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、色の線形の左から右への遷移のある画面に楕円を描画します。  
+  
+-   変換、<xref:System.Drawing.Drawing2D.LinearGradientBrush>を中央でピーク時の三角形にします。  
+  
+-   変換されたブラシを使用して、画面に 2 番目の楕円を描画します。  
+  
+ 下の楕円のグラデーションの遷移青に赤と青に戻すことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#6)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#6)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSigmaBellShape">
+      <MemberSignature Language="C#" Value="public void SetSigmaBellShape (float focus);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSigmaBellShape(float32 focus) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.SetSigmaBellShape(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 (ここで色を開始および終了色ブレンド均等にポイント) のグラデーションの中心を指定する値。</param>
+        <summary>ベルの形の曲線に基づくグラデーションの減色を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを指定します、 `focus`、のみの終了色、グラデーションがで構成されるポイントであります。 `focus`パラメーター グラデーションの線に沿った距離に対する比率として場所を表します。 どちら側にベル曲線図形 (正規分布) に基づいて開始色をグラデーションになります。  
+  
+   
+  
+## Examples  
+ 例については、次を参照してください。<xref:System.Drawing.Drawing2D.LinearGradientBrush.SetSigmaBellShape%2A>`.`  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSigmaBellShape">
+      <MemberSignature Language="C#" Value="public void SetSigmaBellShape (float focus, float scale);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetSigmaBellShape(float32 focus, float32 scale) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.SetSigmaBellShape(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="focus" Type="System.Single" />
+        <Parameter Name="scale" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="focus">0 ~ 1 (ポイント、グラデーションがで構成される終了色のみ) のグラデーションの中心を指定する値。</param>
+        <param name="scale">0 ~ 1 から色減衰をどのくらいの速度を指定する値、<c>フォーカス</c>です。</param>
+        <summary>ベルの形の曲線に基づくグラデーションの減色を作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを指定します、 `focus`、のみの終了色、グラデーションがで構成されるポイントであります。 `focus`パラメーター グラデーションの線に沿った距離に対する比率として場所を表します。 どちら側にベル曲線図形 (正規分布) に基づいて開始色をグラデーションになります。  
+  
+   
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、色の線形の左から右への遷移のある画面に楕円を描画します。  
+  
+-   変換、<xref:System.Drawing.Drawing2D.LinearGradientBrush>センターでピーク時と整形ベル曲線にします。  
+  
+-   ベル型のブラシを使用して、画面に 2 番目の楕円を描画します。  
+  
+ 下の楕円のグラデーションの遷移青に赤と青に戻すことに注意してください。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#7](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#7)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#7)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.Matrix Transform { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Drawing2D.Matrix Transform" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.Transform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコピー<see cref="T:System.Drawing.Drawing2D.Matrix" />このローカル ジオメトリック変換を定義する<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />です。</summary>
+        <value>コピー、<see cref="T:System.Drawing.Drawing2D.Matrix" />がいっぱいになったこので描画されたにのみ適用されるジオメトリック変換を定義する<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジオメトリック変換は、変換、拡大縮小、回転、または塗りつぶしのグラデーションのずれを使用できます。 マトリックスが返されたため、<xref:System.Drawing.Drawing2D.LinearGradientBrush.Transform%2A>プロパティ ブラシのジオメトリック変換のコピーであるが不要になったときに、マトリックスを破棄する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.TranslateTransform(System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <summary>指定した寸法でローカル ジオメトリック変換を変換します。 このメソッドの前に平行移動、変換を行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Drawing2D.LinearGradientBrush.TranslateTransform%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateTransform">
+      <MemberSignature Language="C#" Value="public void TranslateTransform (float dx, float dy, System.Drawing.Drawing2D.MatrixOrder order);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslateTransform(float32 dx, float32 dy, valuetype System.Drawing.Drawing2D.MatrixOrder order) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Drawing2D.LinearGradientBrush.TranslateTransform(System.Single,System.Single,System.Drawing.Drawing2D.MatrixOrder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dx" Type="System.Single" />
+        <Parameter Name="dy" Type="System.Single" />
+        <Parameter Name="order" Type="System.Drawing.Drawing2D.MatrixOrder" />
+      </Parameters>
+      <Docs>
+        <param name="dx">x 軸方向の平行移動の値。</param>
+        <param name="dy">y 軸方向の平行移動の値。</param>
+        <param name="order">平行移動を適用する順序 (前または後)。</param>
+        <summary>指定した順序で指定した寸法でローカル ジオメトリック変換を変換します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs> `e`、<xref:System.Windows.Forms.Form.OnPaint%2A>イベント オブジェクトです。 コードは、次のアクションを実行します。  
+  
+-   新しい <xref:System.Drawing.Drawing2D.LinearGradientBrush> を作成します。  
+  
+-   このブラシを使用して、四角形の色の線形の左から右への遷移のある画面に描画します。  
+  
+-   回転、<xref:System.Drawing.Drawing2D.LinearGradientBrush>に 90 度、グラデーションのスケールを設定するとします。  
+  
+-   回転とスケーリングのグラデーションを使用して、四角形を画面に描画します。  
+  
+-   四角形は、上から下に線形グラデーションがあるされるように変換します。  
+  
+-   画面に翻訳済みの四角形を描画します。  
+  
+ 次の 3 つの四角形があることに注意してくださいでは、1 番上の表示、左から右グラデーションを回転とスケーリングのグラデーション、およびグラデーションの最後に、翻訳されたを示す 1 つ下に示す中央の 1 つが表示されます。  
+  
+ [!code-cpp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CPP/form1.cpp#8)]
+ [!code-csharp[System.Drawing.Drawing2D.ClassicLinearGradientBrush#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/CS/form1.cs#8)]
+ [!code-vb[System.Drawing.Drawing2D.ClassicLinearGradientBrush#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Drawing2D.ClassicLinearGradientBrush/VB/form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WrapMode">
+      <MemberSignature Language="C#" Value="public System.Drawing.Drawing2D.WrapMode WrapMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Drawing2D.WrapMode WrapMode" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Drawing2D.LinearGradientBrush.WrapMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.WrapMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Drawing2D.WrapMode" />をこのラップ モードを示す列挙体<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />です。</summary>
+        <value>A<see cref="T:System.Drawing.Drawing2D.WrapMode" />を指定する方法がいっぱいになったこので描画された<see cref="T:System.Drawing.Drawing2D.LinearGradientBrush" />並べて表示します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

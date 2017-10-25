@@ -1,0 +1,179 @@
+<Type Name="ActivityTrackPoint" FullName="System.Workflow.Runtime.Tracking.ActivityTrackPoint">
+  <TypeSignature Language="C#" Value="public sealed class ActivityTrackPoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ActivityTrackPoint extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスの実行パス内の追跡対象となる、アクティビティ実行ステータスの変化に関連付けられたポイントを定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ アクティビティの実行ステータスが変わるたびに、ワークフロー インスタンスはアクティビティ ステータス イベントをランタイム追跡インフラストラクチャに送信します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> は、そのようなアクティビティ ステータス イベントで修飾された、ワークフロー実行パス内のポイントを定義します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> には、照合に含まれる場所、照合から除外される場所、および追跡ポイントの照合時にワークフロー インスタンスから抽出されるデータが格納されます。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> を <xref:System.Workflow.Runtime.Tracking.TrackingProfile.ActivityTrackPoints%2A> に追加すると、ランタイム追跡インフラストラクチャは、指定されたアクティビティ ステータス イベントのセットが発生したときに <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> を追跡サービスに送ります。 単一の <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> は、ワークフロー インスタンスの複数のポイントで照合できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> には、ワークフロー インスタンス実行パス内の場所の一致条件が含まれます。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> に追加すれば、追跡ポイントの照合に含める必要がある場所を定義できます。 同様に、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> に追加すれば、追跡ポイントの照合に含めない場所を定義できます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> オブジェクトと <xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A> に追加して、追跡ポイントと一致するときにワークフロー インスタンスから抽出するデータを指定します。 抽出されたデータは <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> に格納されます。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Annotations%2A> に追加することによって、追跡ポイントに関連付ける追加情報を指定できます。 このような注釈は、追跡ポイントの照合時に送られる <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> に含められます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActivityTrackPoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Tracking.ActivityTrackPoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackPoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、空の追跡ポイントを初期化します。 一致する場所、除外する場所、データの抽出、または注釈は指定されません。 1 つ以上の <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> を <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> に追加して、追跡ポイントを構成する必要があります。 オプションでオブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A>、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A>、および <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Annotations%2A> に追加することもできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Annotations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.TrackingAnnotationCollection Annotations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Annotations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.TrackingAnnotationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追跡ポイントに関連付けられている注釈のコレクションを取得します。</summary>
+        <value><see cref="T:System.Workflow.Runtime.Tracking.TrackingAnnotationCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Annotations%2A> に追加することによって、追跡ポイントを照合するときに追跡サービスに送信される <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> で返す注釈を指定できます。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Annotations%2A> が空の場合は、追跡ポイントに注釈が関連付けられていません。  
+  
+ 注釈は、追跡ポイントに関連付けられている情報が含まれているユーザー定義の `strings` です。 たとえば、注釈には、この追跡ポイントからのワークフローの実行パスに関する情報を含めたり、ユーザー インターフェイスに表示する情報を含めたりできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExcludedLocations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection ExcludedLocations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection ExcludedLocations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイム追跡インフラストラクチャによる追跡ポイントに含めない場所のコレクションを取得します。</summary>
+        <value>追跡ポイントに含めない場所を指定する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> 内のいずれかの <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> が特定のアクティビティ ステータス イベントに関して照合される場合、追跡ポイントは照合されず、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> は追跡サービスに送られません。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> が空の場合は、除外された場所はありません。  
+  
+ ランタイム追跡インフラストラクチャによる追跡に含めない場所を指定するために、<xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> を使用することができます。 たとえば、<xref:System.Workflow.Activities.CodeActivity> プロパティが "Code1" である <xref:System.Workflow.Activities.CodeActivity> アクティビティを除くすべての <xref:System.Workflow.ComponentModel.Activity.Name%2A> アクティビティを追跡するには、すべての <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> アクティビティを照合する <xref:System.Workflow.Activities.CodeActivity> を定義して、それを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> に追加することができます。 その後、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> プロパティが「Code1」に設定された <xref:System.Workflow.Activities.CodeActivity> アクティビティを照合する別の <xref:System.Workflow.ComponentModel.Activity.Name%2A> を定義して、それを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> に追加することができます。 すると、追跡ポイントは「Code1」アクティビティを除くすべての <xref:System.Workflow.Activities.CodeActivity> アクティビティを照合するようになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extracts">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.ExtractCollection Extracts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.ExtractCollection Extracts" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ExtractCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスから抽出して追跡サービスに送る対象のデータを指定するコレクションを取得します。</summary>
+        <value>抽出されて追跡サービスに送られるデータを指定する <see cref="T:System.Workflow.Runtime.Tracking.ExtractCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追跡ポイントが照合されるとき、ランタイム追跡インフラストラクチャはワークフロー インスタンスからデータを抽出することができます。 ランタイム追跡インフラストラクチャは、追跡サービスに送られる <xref:System.Workflow.Runtime.Tracking.TrackingDataItem> の <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord.Body%2A> に含まれる <xref:System.Workflow.Runtime.Tracking.ActivityTrackingRecord> オブジェクトの中に、抽出データをカプセル化します。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A> が空の場合、データは抽出されません。  
+  
+ この追跡ポイントに関連付けられたアクティビティから抽出されるメンバー データを指定するために、<xref:System.Workflow.Runtime.Tracking.ActivityDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A> に追加できます。さらに、ワークフローのアクティビティから抽出されるメンバー データを指定するために、<xref:System.Workflow.Runtime.Tracking.WorkflowDataTrackingExtract> オブジェクトを <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.Extracts%2A> に追加できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchingLocations">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection MatchingLocations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection MatchingLocations" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ランタイム追跡インフラストラクチャによる追跡ポイントの照合に含めるべき場所のコレクションを取得します。</summary>
+        <value>追跡ポイントの照合の対象となる場所を指定する <see cref="T:System.Workflow.Runtime.Tracking.ActivityTrackingLocationCollection" />。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> が空の場合は、ランタイム追跡インフラストラクチャで追跡ポイントを照合できません。 <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> を一致させるには、1 つ以上の <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> を <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint> に追加する必要があります。  
+  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> 内のいずれかの <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> がランタイム追跡インフラストラクチャによって照合され、<xref:System.Workflow.Runtime.Tracking.ActivityTrackingLocation> 内の <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.ExcludedLocations%2A> が照合されない場合には、追跡ポイントが照合されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.Tracking.ActivityTrackPoint.MatchingLocations%2A> プロパティにアクセスする例を次に示します。 この例は、TrackingProfileDesigner SDK のサンプルです。 詳細については、次を参照してください。[追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[WF_Samples#120](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#120)]
+ [!code-vb[WF_Samples#120](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

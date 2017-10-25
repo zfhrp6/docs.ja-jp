@@ -1,0 +1,77 @@
+<Type Name="BootMode" FullName="System.Windows.Forms.BootMode">
+  <TypeSignature Language="C#" Value="public enum BootMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BootMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BootMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>システムが起動されたブート モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体では、標準のオペレーティング システムのスタートアップ モードを表す識別子を定義します。  
+  
+ この列挙体を使って、<xref:System.Windows.Forms.SystemInformation.BootMode%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation>クラスです。  
+  
+ 通常のブート モードは、標準のシステムのスタートアップ モードです。 フェール セーフ ブート モードは、セーフ モードとも呼ばれます。 FailSafeWithNetwork ブート モードは、セーフ モードとネットワークとも呼ばれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FailSafe">
+      <MemberSignature Language="C#" Value="FailSafe" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.BootMode FailSafe = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.BootMode.FailSafe" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BootMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターは、ネットワーク サポートのないセーフ モードで起動されました。 このモードでは、制限付きのドライバーと設定プロファイルを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FailSafeWithNetwork">
+      <MemberSignature Language="C#" Value="FailSafeWithNetwork" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.BootMode FailSafeWithNetwork = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.BootMode.FailSafeWithNetwork" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BootMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターは、ネットワーク サポートをセーフ モードで起動されました。 このモードでは、制限付きのドライバーと設定プロファイルを使用し、ネットワークを開始するために必要なサービスを読み込みます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.BootMode Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.BootMode.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BootMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターは、標準的なブート モードで起動されました。 このモードでは、システムの標準のドライバーと設定を使用します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

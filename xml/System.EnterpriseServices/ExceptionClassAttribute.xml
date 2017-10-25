@@ -1,0 +1,95 @@
+<Type Name="ExceptionClassAttribute" FullName="System.EnterpriseServices.ExceptionClassAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ExceptionClassAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExceptionClassAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.ExceptionClassAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class, Inherited=true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キューに置かれたクラスのキューの例外クラスを設定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.EnterpriseServices.ExceptionClassAttribute>型です。  
+  
+ [!code-csharp[EnterpriseServicesExceptionClassAttribute#0](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesExceptionClassAttribute/CS/class1.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExceptionClassAttribute (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.ExceptionClassAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">アクティブにして、メッセージの前に再生するプレーヤーの例外クラスの名前は、配信不能キューにルーティングされます。</param>
+        <summary><see cref="T:System.EnterpriseServices.ExceptionClassAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例が新たに作成<xref:System.EnterpriseServices.ExceptionClassAttribute>です。  
+  
+ [!code-csharp[EnterpriseServicesExceptionClassAttribute#1](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesExceptionClassAttribute/CS/class1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.EnterpriseServices.ExceptionClassAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブ化し、メッセージは配信不能キューにルーティングする前に再生するプレーヤーの例外クラスの名前を取得します。</summary>
+        <value>アクティブにして、メッセージの前に再生するプレーヤーの例外クラスの名前は、配信不能キューにルーティングされます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の値を取得する、`ExceptionClass`属性の<xref:System.EnterpriseServices.ExceptionClassAttribute.Value%2A>プロパティです。  
+  
+ [!code-csharp[EnterpriseServicesExceptionClassAttribute#2](~/samples/snippets/csharp/VS_Snippets_Remoting/EnterpriseServicesExceptionClassAttribute/CS/class1.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

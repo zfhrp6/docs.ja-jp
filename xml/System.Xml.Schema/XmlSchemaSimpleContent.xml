@@ -1,0 +1,138 @@
+<Type Name="XmlSchemaSimpleContent" FullName="System.Xml.Schema.XmlSchemaSimpleContent">
+  <TypeSignature Language="C#" Value="public class XmlSchemaSimpleContent : System.Xml.Schema.XmlSchemaContentModel" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlSchemaSimpleContent extends System.Xml.Schema.XmlSchemaContentModel" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Schema.XmlSchemaSimpleContent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xml.Schema.XmlSchemaContentModel</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>表す、 <see langword="simpleContent" /> World Wide Web Consortium (W3C) で指定された XML スキーマの要素。 このクラスは、単純なコンテンツ モデルを持つ単純型および複合型に使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Schema.XmlSchemaSimpleContent>新しい種類のコンテンツ モデルには、文字データとは、要素なしのみが含まれているを示すために使用されます。 これは、を通じて<xref:System.Xml.Schema.XmlSchemaSimpleContentExtension>または<xref:System.Xml.Schema.XmlSchemaSimpleContentRestriction>です。  
+  
+   
+  
+## Examples  
+ 次の例は、`XmlSchemaSimpleContent`クラスです。  
+  
+ [!code-cpp[Classic WebData XmlSchemaSimpleContent Example#1](~/samples/snippets/cpp/VS_Snippets_Data/Classic WebData XmlSchemaSimpleContent Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebData XmlSchemaSimpleContent Example#1](~/samples/snippets/csharp/VS_Snippets_Data/Classic WebData XmlSchemaSimpleContent Example/CS/source.cs#1)]
+ [!code-vb[Classic WebData XmlSchemaSimpleContent Example#1](~/samples/snippets/visualbasic/VS_Snippets_Data/Classic WebData XmlSchemaSimpleContent Example/VB/source.vb#1)]  
+  
+ 上記のコード例については、次の XML ファイルが生成されます。  
+  
+ [!code-xml[Classic WebData XmlSchemaSimpleContent Example#2](~/samples/snippets/xml/VS_Snippets_Data/Classic WebData XmlSchemaSimpleContent Example/XML/source.xml#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaSimpleContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Schema.XmlSchemaSimpleContent.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Schema.XmlSchemaSimpleContent" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Content">
+      <MemberSignature Language="C#" Value="public override System.Xml.Schema.XmlSchemaContent Content { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Schema.XmlSchemaContent Content" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Schema.XmlSchemaSimpleContent.Content" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("restriction", typeof(System.Xml.Schema.XmlSchemaSimpleContentRestriction))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("extension", typeof(System.Xml.Schema.XmlSchemaSimpleContentExtension))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchemaContent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかを取得、<see cref="T:System.Xml.Schema.XmlSchemaSimpleContentRestriction" />または<see cref="T:System.Xml.Schema.XmlSchemaSimpleContentExtension" />です。</summary>
+        <value>含まれる内容、<see langword="XmlSchemaSimpleContentRestriction" />または<see langword="XmlSchemaSimpleContentExtension" />クラスです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `simpleContent`要素では、要素のない単純型を含むように要素を指定し、要素のコンテンツの値を制限または属性を持つコンテンツを拡張することができます。  
+  
+   
+  
+## Examples  
+ 使用して、`simpleContent`要素では、次の要素宣言が含まれています、`complexType`として要素の内容を定義する、 `decimal` 1 つの属性を持つ型 (`sizing`)。  
+  
+```  
+<xs:element name="shoeSize">  
+  <xs:complexType>  
+    <xs:simpleContent>  
+      <xs:extension base="xs:decimal">  
+        <xs:attribute name="sizing">  
+          <xs:restriction base="xs:string">  
+            <xs:enumeration value="US"/>  
+            <xs:enumeration value="European"/>  
+            <xs:enumeration value="UK"/>  
+            <xs:enumeration value="Japan"/>  
+          </xs:restriction>  
+        </xs:attribute>  
+      </xs:extension>  
+    </xs:simpleContent>  
+  </xs:complexType>  
+</xs:element>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,420 @@
+<Type Name="DirectoryVirtualListView" FullName="System.DirectoryServices.DirectoryVirtualListView">
+  <TypeSignature Language="C#" Value="public class DirectoryVirtualListView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryVirtualListView extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.DirectoryVirtualListView" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.DirectoryVirtualListView" />クラスが仮想のリスト ビューの検索を実行する方法を指定します。 仮想リスト ビューの検索では、アドレス帳スタイル仮想一覧の表示と検索結果を表示することができます。 非常に大きな結果セットに特に適しています。 検索データは、並べ替えられたディレクトリ検索の連続したサブセットで取得されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の c# の例では、結果セット内の最初の 30 のエントリを取得する方法を示します。  
+  
+```csharp  
+using System.DirectoryServices;  
+...  
+DirectorySearcher src = new DirectorySearcher("…");   
+src.VirtualListView = new DirectoryVirtualListView(0,30);  
+foreach(SearchResult res in src.FindAll() )  
+{  
+    Console.WriteLine(…");  
+}  
+  
+```  
+  
+ 次の c# の例では、文字"Ha"で始まる結果セット内の最初の 50 エントリを取得する方法を示します。  
+  
+```csharp  
+using System.DirectoryServices;  
+...  
+DirectorySearcher src = new DirectorySearcher("…");   
+src.VirtualListView = new DirectoryVirtualListView(0,50, "Ha");  
+foreach(SearchResult res in src.FindAll() )  
+{  
+    Console.WriteLine(…");  
+}  
+  
+```  
+  
+ 次の c# の例では、60% のおおよそのターゲットで最初の 100 個のエントリを取得する方法を示します。  
+  
+```csharp  
+using System.DirectoryServices;  
+...  
+// First VLV calls.   
+DirectorySearcher src = new DirectorySearcher("…");   
+src.VirtualListView = new DirectoryVirtualListView(100);  
+foreach(SearchResult res in src.FindAll() )  
+{  
+    Console.WriteLine(…");  
+}  
+  
+// Second Call, the VLV context is still attached to the DirectorySearcher.  
+src.VirtualListView.TargetPercentage = 60;  
+src.VirtualListView.BeforeCount = 50;  
+src.VirtualListView.AfterCount = 50;  
+  
+foreach(SearchResult res in src.FindAll() )  
+{  
+    Console.WriteLine(…");  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.DirectoryVirtualListView" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView (int afterCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 afterCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="afterCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="afterCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryVirtualListView" />後の数を持つクラスを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView (int beforeCount, int afterCount, int offset);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, int32 offset) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor(System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="afterCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="offset"><see cref="T:System.Int32" />データ型を取得または設定を示す推定ターゲット エントリの値がリスト内のオフセットを要求します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryVirtualListView" />クラス、count、count、およびオフセット セットの後にする前にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView (int beforeCount, int afterCount, string target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, string target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor(System.Int32,System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="target" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="afterCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="target">A<see cref="T:System.String" />を取得またはクライアントによって要求されたターゲット エントリを示す値を設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryVirtualListView" />クラス、count、count、および対象セットの後にする前にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView (int beforeCount, int afterCount, int offset, System.DirectoryServices.DirectoryVirtualListViewContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, int32 offset, class System.DirectoryServices.DirectoryVirtualListViewContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor(System.Int32,System.Int32,System.Int32,System.DirectoryServices.DirectoryVirtualListViewContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="context" Type="System.DirectoryServices.DirectoryVirtualListViewContext" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="afterCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="offset"><see cref="T:System.Int32" />データ型を取得または設定を示す推定ターゲット エントリの値がリスト内のオフセットを要求します。</param>
+        <param name="context">A<see cref="T:System.DirectoryServices.DirectoryVirtualListViewContext" />データ型のオブジェクトを取得または仮想のリスト ビューの検索応答を示す値を設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryVirtualListView" />クラスに、前に count、カウントのオフセットとコンテキストを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryVirtualListView (int beforeCount, int afterCount, string target, System.DirectoryServices.DirectoryVirtualListViewContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 beforeCount, int32 afterCount, string target, class System.DirectoryServices.DirectoryVirtualListViewContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.DirectoryVirtualListView.#ctor(System.Int32,System.Int32,System.String,System.DirectoryServices.DirectoryVirtualListViewContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="beforeCount" Type="System.Int32" />
+        <Parameter Name="afterCount" Type="System.Int32" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="context" Type="System.DirectoryServices.DirectoryVirtualListViewContext" />
+      </Parameters>
+      <Docs>
+        <param name="beforeCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="afterCount">A<see cref="T:System.Int32" />データ型のオブジェクトを取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</param>
+        <param name="target">A<see cref="T:System.String" />を取得またはクライアントによって要求されたターゲット エントリを示す値を設定します。</param>
+        <param name="context">A<see cref="T:System.DirectoryServices.DirectoryVirtualListViewContext" />データ型のオブジェクトを取得または仮想のリスト ビューの検索応答を示す値を設定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.DirectoryVirtualListView" />クラスに、前に count、count、ターゲットおよびコンテキストを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AfterCount">
+      <MemberSignature Language="C#" Value="public int AfterCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AfterCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.AfterCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSAfterCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーからクライアントが要求しているターゲット エントリ後エントリの数を示す値を設定します。</summary>
+        <value>サーバーからクライアントが要求しているターゲット エントリ後のエントリの数を表す整数値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.DirectoryServices.DirectoryVirtualListView.AfterCount" />値にプロパティが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApproximateTotal">
+      <MemberSignature Language="C#" Value="public int ApproximateTotal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ApproximateTotal" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.ApproximateTotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSApproximateTotal")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト内の項目の見積もりの合計数を示す値を設定します。</summary>
+        <value>リスト内の項目の見積もりの合計数を表す整数値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.DirectoryServices.DirectoryVirtualListView.ApproximateTotal" />値にプロパティが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeforeCount">
+      <MemberSignature Language="C#" Value="public int BeforeCount { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BeforeCount" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.BeforeCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSBeforeCount")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーからクライアントが要求しているターゲット エントリ前に、のエントリの数を示す値を設定します。</summary>
+        <value>サーバーからクライアントが要求しているターゲット エントリ前に、のエントリの数を表す整数値。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.DirectoryServices.DirectoryVirtualListView.BeforeCount" /> プロパティは、0 未満の値が設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryVirtualListViewContext">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.DirectoryVirtualListViewContext DirectoryVirtualListViewContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.DirectoryServices.DirectoryVirtualListViewContext DirectoryVirtualListViewContext" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.DirectoryVirtualListViewContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSDirectoryVirtualListViewContext")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.DirectoryVirtualListViewContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または仮想のリスト ビューの検索応答を示す値を設定します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.DirectoryVirtualListViewContext" />仮想一覧表示の検索応答を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Offset">
+      <MemberSignature Language="C#" Value="public int Offset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Offset" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.Offset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSOffset")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリスト内のターゲット エントリの相対位置を示す値を設定します。</summary>
+        <value>ターゲットのエントリを表す整数値では、一覧内のオフセットを推定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合、新しい値を<xref:System.DirectoryServices.DirectoryVirtualListView.TargetPercentage%2A>プロパティがの値で割ることによって計算された、<xref:System.DirectoryServices.DirectoryVirtualListView.Offset%2A>プロパティの値によって、<xref:System.DirectoryServices.DirectoryVirtualListView.ApproximateTotal%2A>プロパティ、および結果に 100 を乗算します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.DirectoryServices.DirectoryVirtualListView.Offset" /> プロパティは、0 未満の値が設定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Diagnostics.Design.StringValueConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSTarget")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.DirectoryVirtualListView.Target" />プロパティを取得またはクライアントによって要求されたターゲット エントリを示す値を設定します。</summary>
+        <value>クライアントによって要求されたターゲット エントリを含む文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetPercentage">
+      <MemberSignature Language="C#" Value="public int TargetPercentage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 TargetPercentage" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.DirectoryVirtualListView.TargetPercentage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.DirectoryServices.DSDescription("DSTargetPercentage")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.DirectoryVirtualListView.TargetPercentage" />プロパティを取得またはリスト内の項目の合計数に対する割合として、リスト内のオフセットを要求した推定ターゲット エントリを示す値を設定します。</summary>
+        <value>ターゲット エントリの一覧内の推定割合オフセットを表す整数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティ設定されている場合、新しい値を<xref:System.DirectoryServices.DirectoryVirtualListView.Offset%2A>プロパティがの値を乗算することによって計算された、<xref:System.DirectoryServices.DirectoryVirtualListView.ApproximateTotal%2A>プロパティの値によって、<xref:System.DirectoryServices.DirectoryVirtualListView.TargetPercentage%2A>プロパティ、および 100 で、結果を除算します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.DirectoryServices.DirectoryVirtualListView.TargetPercentage" />プロパティが 100 より大きいまたは 0 より小さい値に設定します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

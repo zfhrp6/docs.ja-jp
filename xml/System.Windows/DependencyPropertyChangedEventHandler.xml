@@ -1,0 +1,36 @@
+<Type Name="DependencyPropertyChangedEventHandler" FullName="System.Windows.DependencyPropertyChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void DependencyPropertyChangedEventHandler(object sender, DependencyPropertyChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DependencyPropertyChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DependencyPropertyChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary><see cref="T:System.Windows.DependencyProperty" /> が特定の <see cref="T:System.Windows.DependencyObject" /> 実装で変更された場合に発生するイベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、依存関係プロパティの変更を報告する特定のイベントのハンドラーのシグネチャです。  
+  
+ このハンドラーを使用するイベントとして公開されている、[!INCLUDE[TLA#tla_clr](~/includes/tlasharptla-clr-md.md)]ルーティングされたイベントではなく、イベント。 これらのイベントが名前付けパターンに従う通常`Is(` *PropertyName*`)Changed`ここで、 *PropertyName*は、<xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>変更されたプロパティのです。 イベントの引数は、特定のイベントによって報告された、プロパティの古いマスター_キーと新しい値をクエリに使用されます。 通常は、1:1 で対応プロパティの間の変更を報告する特定のイベントおよびその変更します。 1 つ以上のプロパティに同じイベント レポートの変更が、一般的ではにも、可能です。 ここで、<xref:System.Windows.DependencyPropertyChangedEventArgs>変更されたプロパティを判断するためにチェックする必要があります。  
+  
+ イベント データ クラス<xref:System.Windows.DependencyPropertyChangedEventArgs>このデリゲートだけよりも幅の使用法います。 <xref:System.Windows.DependencyPropertyChangedEventArgs>データの通信にも使用<xref:System.Windows.PropertyChangedCallback>カスタマイズの機能と内部の一部の実装の[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]プロパティ システムおよび、<xref:System.Windows.DependencyObject.OnPropertyChanged%2A>仮想メソッドをオーバーライドすると、オブジェクトの任意の依存関係プロパティが変更されるたびに、クラスに固有の通知を提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,343 @@
+<Type Name="CngUIPolicy" FullName="System.Security.Cryptography.CngUIPolicy">
+  <TypeSignature Language="C#" Value="public sealed class CngUIPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CngUIPolicy extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.CngUIPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>保護されたキーへのアクセス時に CNG(Cryptography Next Generation) が表示するユーザー インターフェイス (UI) のオプションの構成パラメーターをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスでは、スマート カード PIN プロンプトなどのキーの操作に関するプロンプトを表示するための UI ポリシーを作成することができます。 キーが、ソフトウェア キー格納プロバイダー (KSP) の代わりに、スマート カードに格納されている場合でも、キーにアクセスするユーザーの操作を適用することもできます。 CNG は、保護されたキーにアクセスするときに、UI のこれらの構成パラメーターを表示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngUIPolicy (System.Security.Cryptography.CngUIProtectionLevels protectionLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.CngUIProtectionLevels protectionLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngUIPolicy.#ctor(System.Security.Cryptography.CngUIProtectionLevels)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Security.Cryptography.CngUIProtectionLevels" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">保護レベルを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngUIPolicy" />指定された保護レベルを使用してクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、UI のプロンプトを表示するシナリオで、キーの保護レベルを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngUIPolicy (System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngUIPolicy.#ctor(System.Security.Cryptography.CngUIProtectionLevels,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Security.Cryptography.CngUIProtectionLevels" />
+        <Parameter Name="friendlyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">保護レベルを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="friendlyName">UI のプロンプトで使用されるキーのフレンドリ名。 既定の名前を使用する null 文字列を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngUIPolicy" />容易な指定された保護レベルを使用してクラス名。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngUIPolicy (System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngUIPolicy.#ctor(System.Security.Cryptography.CngUIProtectionLevels,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Security.Cryptography.CngUIProtectionLevels" />
+        <Parameter Name="friendlyName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">保護レベルを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="friendlyName">UI のプロンプトで使用されるキーのフレンドリ名。 既定の名前を使用する null 文字列を指定します。</param>
+        <param name="description">キーのフル テキスト説明します。 既定の説明を使用する文字列を null を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngUIPolicy" />クラスによって指定された保護レベル、フレンドリ名、および説明を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngUIPolicy (System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description, string useContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description, string useContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngUIPolicy.#ctor(System.Security.Cryptography.CngUIProtectionLevels,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Security.Cryptography.CngUIProtectionLevels" />
+        <Parameter Name="friendlyName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="useContext" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">保護レベルを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="friendlyName">UI のプロンプトで使用されるキーのフレンドリ名。 既定の名前を使用する null 文字列を指定します。</param>
+        <param name="description">キーのフル テキスト説明します。 既定の説明を使用する文字列を null を指定します。</param>
+        <param name="useContext">キーの使用方法の説明です。 既定の説明を使用する文字列を null を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngUIPolicy" />クラスの指定された保護レベル、フレンドリ名、説明文字列を使用して、コンテキストを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngUIPolicy (System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description, string useContext, string creationTitle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.CngUIProtectionLevels protectionLevel, string friendlyName, string description, string useContext, string creationTitle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngUIPolicy.#ctor(System.Security.Cryptography.CngUIProtectionLevels,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="protectionLevel" Type="System.Security.Cryptography.CngUIProtectionLevels" />
+        <Parameter Name="friendlyName" Type="System.String" />
+        <Parameter Name="description" Type="System.String" />
+        <Parameter Name="useContext" Type="System.String" />
+        <Parameter Name="creationTitle" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="protectionLevel">保護レベルを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="friendlyName">UI のプロンプトで使用されるキーのフレンドリ名。 既定の名前を使用する null 文字列を指定します。</param>
+        <param name="description">キーのフル テキスト説明します。 既定の説明を使用する文字列を null を指定します。</param>
+        <param name="useContext">キーの使用方法の説明です。 既定の説明を使用する文字列を null を指定します。</param>
+        <param name="creationTitle">UI のプロンプトを提供するダイアログ ボックスのタイトル。 既定のタイトルを使用する null 文字列を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.CngUIPolicy" />指定された保護レベル、フレンドリ名、説明文字列を使用してコンテキストとタイトルを使用してクラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreationTitle">
+      <MemberSignature Language="C#" Value="public string CreationTitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CreationTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngUIPolicy.CreationTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロンプトの UI が表示されるタイトルを取得します。</summary>
+        <value>キーにアクセスするときに表示されるダイアログ ボックスのタイトル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngUIPolicy.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロンプトの UI が表示される説明文字列を取得します。</summary>
+        <value>キーにアクセスするときに表示されるダイアログ ボックスの説明テキストです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FriendlyName">
+      <MemberSignature Language="C#" Value="public string FriendlyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FriendlyName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngUIPolicy.FriendlyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロンプトの UI が表示されるフレンドリ名を取得します。</summary>
+        <value>キーのアクセス時に表示されるダイアログ ボックスで、キーの説明に使用されるフレンドリ名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngUIProtectionLevels ProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CngUIProtectionLevels ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngUIPolicy.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngUIProtectionLevels</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの UI の保護レベルを取得します。</summary>
+        <value>キーに適用する UI 保護のレベルを記述するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseContext">
+      <MemberSignature Language="C#" Value="public string UseContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UseContext" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngUIPolicy.UseContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの使用方法の説明を取得します。</summary>
+        <value>キーの使用方法の説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

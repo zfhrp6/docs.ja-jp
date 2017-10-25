@@ -1,0 +1,84 @@
+<Type Name="ToolStripSeparatorRenderEventArgs" FullName="System.Windows.Forms.ToolStripSeparatorRenderEventArgs">
+  <TypeSignature Language="C#" Value="public class ToolStripSeparatorRenderEventArgs : System.Windows.Forms.ToolStripItemRenderEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ToolStripSeparatorRenderEventArgs extends System.Windows.Forms.ToolStripItemRenderEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripSeparatorRenderEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.ToolStripItemRenderEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.ToolStripRenderer.RenderGrip" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#602](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#602)]
+ [!code-vb[System.Windows.Forms.EventExamples#602](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#602)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ToolStripSeparatorRenderEventArgs (System.Drawing.Graphics g, System.Windows.Forms.ToolStripSeparator separator, bool vertical);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Drawing.Graphics g, class System.Windows.Forms.ToolStripSeparator separator, bool vertical) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripSeparatorRenderEventArgs.#ctor(System.Drawing.Graphics,System.Windows.Forms.ToolStripSeparator,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="g" Type="System.Drawing.Graphics" />
+        <Parameter Name="separator" Type="System.Windows.Forms.ToolStripSeparator" />
+        <Parameter Name="vertical" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="g"><see cref="T:System.Drawing.Graphics" />で描くにします。</param>
+        <param name="separator"><see cref="T:System.Windows.Forms.ToolStripSeparator" />描画します。</param>
+        <param name="vertical">示す値かどうか、<see cref="T:System.Windows.Forms.ToolStripSeparator" />が垂直方向に描画されます。</param>
+        <summary><see cref="T:System.Windows.Forms.ToolStripSeparatorRenderEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Vertical">
+      <MemberSignature Language="C#" Value="public bool Vertical { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Vertical" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripSeparatorRenderEventArgs.Vertical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドルの表示スタイルが垂直方向かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />表示スタイルを設定する場合、 <see cref="T:System.Windows.Forms.ToolStripSeparator" /> 、それ以外の垂直<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripRenderer>、ように、<xref:System.Windows.Forms.ToolStripSystemRenderer>または<xref:System.Windows.Forms.ToolStripProfessionalRenderer>です。 インスタンスを名前`ToolStripRenderer1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripRenderer.RenderSeparator?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#602](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#602)]
+ [!code-vb[System.Windows.Forms.EventExamples#602](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#602)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

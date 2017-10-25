@@ -1,0 +1,50 @@
+<Type Name="IRootObjectProvider" FullName="System.Xaml.IRootObjectProvider">
+  <TypeSignature Language="C#" Value="public interface IRootObjectProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRootObjectProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IRootObjectProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>解析されたマークアップのルート オブジェクトを返すことができるサービスについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.IRootObjectProvider>サービスは主に、特定のフレームワークによって、またはフレームワークでよく使用されるルート要素クラスの機能によって公開されるアプリケーション サービスに関連します。  
+  
+ 型コンバーターおよびマークアップ拡張機能を照会できます<xref:System.Xaml.IRootObjectProvider>XAML オブジェクト ライターは、値変換の動作を呼び出すときは、XAML オブジェクト ライターによって提供されるサービスのコンテキストでサービスとして。 詳細については、次を参照してください。[型コンバーターと XAML のマークアップ拡張機能](~/docs/framework/xaml-services/type-converters-and-markup-extensions-for-xaml.md)と[サービスで使用できるコンテキスト型コンバーターおよびマークアップ拡張機能](~/docs/framework/xaml-services/service-contexts-available-to-type-converters-and-markup-extensions.md)します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="RootObject">
+      <MemberSignature Language="C#" Value="public object RootObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object RootObject" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IRootObjectProvider.RootObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マークアップまたはオブジェクト グラフからは、ルート オブジェクトを取得します。</summary>
+        <value>ルート オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML マークアップのシナリオでは、ルート オブジェクトは、規約によって設定される XAML マークアップのルート レベルの属性のためのマークアップ拡張機能のシナリオで役立ちます可能性があります。 フレームワークでは、特定のルート オブジェクトの機能を指定する場合があります。 たとえば、特定の属性がのみ有効でルート レベルでかフレームワークのルートからのグローバル プロパティの継承をサポートして可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

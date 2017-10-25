@@ -1,0 +1,171 @@
+<Type Name="ValidationSettings" FullName="System.Activities.Validation.ValidationSettings">
+  <TypeSignature Language="C#" Value="public class ValidationSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ValidationSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Validation.ValidationSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="M:System.Activities.Validation.ActivityValidationServices.Validate(System.Activities.Activity)" /> の動作をカスタマイズする設定のコレクションを表します。 これを使用すると、アクティビティのユーザーはワークフローにポリシーの制約を適用することもできます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ValidationSettings ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Validation.ValidationSettings.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.Validation.ValidationSettings" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdditionalConstraints">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;Type,System.Collections.Generic.IList&lt;System.Activities.Validation.Constraint&gt;&gt; AdditionalConstraints { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Type, class System.Collections.Generic.IList`1&lt;class System.Activities.Validation.Constraint&gt;&gt; AdditionalConstraints" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.AdditionalConstraints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Type,System.Collections.Generic.IList&lt;System.Activities.Validation.Constraint&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型と制約のペアのディクショナリを取得します。 ディクショナリに追加された各制約は、検証対象ワークフローの指定された型の各アクティビティに適用されます。</summary>
+        <value>制約と型のディクショナリ型一覧。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancellationToken">
+      <MemberSignature Language="C#" Value="public System.Threading.CancellationToken CancellationToken { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.CancellationToken CancellationToken" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.CancellationToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.CancellationToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャンセル トークンを使用して、アクティビティを取り消す通知を設定します。</summary>
+        <value>アクティビティをキャンセルできる必要がありますに通知するために使用するキャンセル トークン。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Environment">
+      <MemberSignature Language="C#" Value="public System.Activities.LocationReferenceEnvironment Environment { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.LocationReferenceEnvironment Environment" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.Environment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.LocationReferenceEnvironment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、この検証の設定に関連付けられている引数および変数の環境を設定します。</summary>
+        <value>この検証の設定に関連付けられている引数および変数の環境。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnlyUseAdditionalConstraints">
+      <MemberSignature Language="C#" Value="public bool OnlyUseAdditionalConstraints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OnlyUseAdditionalConstraints" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加の検証制約をワークフローの検証に排他的に使用するかどうかを示す値を取得または設定します。 場合設定<see langword="true" />、アクティビティ自体の内部に含まれるすべての検証は無視されます。</summary>
+        <value>
+          <see langword="true" />排他的です。 使用する場合は、追加の制約それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローを実行するときには必ず <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> が呼び出され、これによって発生したエラーにより <xref:System.Activities.InvalidWorkflowException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareForRuntime">
+      <MemberSignature Language="C#" Value="public bool PrepareForRuntime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrepareForRuntime" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.PrepareForRuntime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはランタイム用にこのインスタンスを準備するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="True" />ランタイムのこのインスタンスが準備されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleLevel">
+      <MemberSignature Language="C#" Value="public bool SingleLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SingleLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.SingleLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したアクティビティ、および指定したアクティビティのすべての子と孫が検証されるかどうか、またはバリデーターが指定したアクティビティのみを検証するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />要素がその子要素を検証せずに検証されている場合それ以外の場合、<see langword="false" />要素とその子と孫が検証されている場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipValidatingRootConfiguration">
+      <MemberSignature Language="C#" Value="public bool SkipValidatingRootConfiguration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SkipValidatingRootConfiguration" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Validation.ValidationSettings.SkipValidatingRootConfiguration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはルート構成が検証の主題ではないかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ルートの構成が検証の対象でない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

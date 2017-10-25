@@ -1,0 +1,1042 @@
+<Type Name="Object" FullName="System.Object">
+  <TypeSignature Language="C#" Value="public class Object" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit object" />
+  <TypeSignature Language="DocId" Value="T:System.Object" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDual)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>.NET Framework クラス階層のすべてのクラスをサポートし、派生クラスに下位レベルのサービスを提供します。 これは、.NET Framework の全クラスの基本クラスであり、型階層のルートです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/object.cs#d9262ceecc1719ab)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 通常の言語は、クラスからの継承を宣言する必要ありません<xref:System.Object>の継承は暗黙的なためです。  
+  
+ .NET Framework のすべてのクラスがから派生するため<xref:System.Object>で定義されているすべてのメソッド、<xref:System.Object>クラスは、システム内のすべてのオブジェクトで使用できます。 クラスを派生し、これらのメソッドの一部をオーバーライドしないでください。  
+  
+-   <xref:System.Object.Equals%2A>-オブジェクト間の比較をサポートしています。  
+  
+-   <xref:System.Object.Finalize%2A>-オブジェクトが自動的にクリアされる前に、クリーンアップ操作を実行します。  
+  
+-   <xref:System.Object.GetHashCode%2A>ハッシュ テーブルの使用をサポートするために、オブジェクトの値に対応する番号を生成します。  
+  
+-   <xref:System.Object.ToString%2A>クラスのインスタンスを記述する人が判読できるテキスト文字列を製造しています。  
+  
+## <a name="performance-considerations"></a>パフォーマンスに関する考慮事項  
+ どの型のオブジェクトを処理する必要が、コレクションなど、クラスをデザインする場合は、インスタンスを受け入れるクラス メンバーを作成することができます、<xref:System.Object>クラスです。 ただし、ボックス化と型をボックス化解除のプロセスでは、パフォーマンス コストが伴います。 新しいクラスの特定の値型を頻繁に処理することがわかっている場合は、ボックス化のコストを最小限に 2 つの方針のいずれかを使用できます。  
+  
+-   受け取るための一般的なメソッドを作成、<xref:System.Object>型、および頻繁に処理するクラスを期待する各値の型を許容する型固有のメソッド オーバー ロードのセット。 型固有のメソッドを呼び出し元のパラメーター型を受け付けるが存在する場合は、ボックス化が行われず、型固有のメソッドが呼び出されます。 呼び出し元のパラメーター型と一致するメソッドの引数がない場合は、パラメーターがボックス化され、一般的なメソッドが呼び出されます。  
+  
+-   ジェネリックを使用するには、種類とそのメンバーをデザインします。 共通言語ランタイムは、クラスのインスタンスを作成し、ジェネリック型引数を指定するときに、クローズ ジェネリック型を作成します。 ジェネリック メソッドは型固有であり、呼び出し元のパラメーターをボックス化しなくても呼び出すことができます。  
+  
+ 受け取るまたは返す汎用クラスを開発するために必要な場合がありますが<xref:System.Object>型も頻繁に使用される型を処理する型固有のクラスを提供することによってパフォーマンスが向上することができます。 たとえばは、特定の設定とブール値を取得するクラスを提供するには、ボックス化とボックス化解除のブール値のコストが削減されます。  
+  
+   
+  
+## Examples  
+ 次の例から派生したポイントの種類の定義、<xref:System.Object>クラスし、多くの仮想メソッドのオーバーライド、<xref:System.Object>クラスです。 さらに、例は、静的の多くを呼び出す方法を示しています。 のメソッドとインスタンス、<xref:System.Object>クラスです。  
+  
+ [!code-cpp[ObjectX#1](~/samples/snippets/cpp/VS_Snippets_CLR/ObjectX/cpp/ObjectX.cpp#1)]
+ [!code-csharp[ObjectX#1](~/samples/snippets/csharp/VS_Snippets_CLR/ObjectX/CS/ObjectX.cs#1)]
+ [!code-vb[ObjectX#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ObjectX/vb/objectX.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>パブリック静的 (<see langword="Shared" /> Visual Basic で) この型のメンバーは、スレッド セーフであります。 インスタンス メンバーは、スレッド セーフであることを保証はありません。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Object ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Object" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは派生クラスでコンス トラクターによって呼び出されますが、直接のインスタンスの作成にも使用できます、<xref:System.Object>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public virtual bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが、現在のオブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          指定したオブジェクトが現在のオブジェクトと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンス間の比較の種類と`obj`パラメーターは、現在のインスタンスは、参照型または値型かどうかによって異なります。  
+  
+-   現在のインスタンスが、参照型である場合、<xref:System.Object.Equals%28System.Object%29>参照の等価性のテストのメソッドを呼び出すと、<xref:System.Object.Equals%28System.Object%29>メソッドへの呼び出しには、<xref:System.Object.ReferenceEquals%2A>メソッドです。 参照の等価性は、比較されたオブジェクト変数が同じオブジェクトを参照していることを意味します。 次の例は、このような比較の結果を示しています。 定義する、`Person`クラスは、参照型である、および呼び出し、`Person`新しい 2 つのインスタンス化するクラスのコンス トラクター`Person`オブジェクト、`person1a`と`person2`値が同じであります。 割り当てます`person1a`を別のオブジェクト変数`person1b`です。 例から出力として`person1a`と`person1b`が同じオブジェクトを参照するために等しい。 ただし、`person1a`と`person2`が、同じ値が等しくないです。  
+  
+     [!code-csharp[System.Object.Equals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equals_ref.cs#2)]
+     [!code-vb[System.Object.Equals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equals_ref.vb#2)]  
+  
+-   現在のインスタンスが、値型である場合、<xref:System.Object.Equals%28System.Object%29>値の等価性のテストのメソッドです。 値の等価性には、次のことを意味します。  
+  
+    -   2 つのオブジェクトでは、同じ型です。 次の例に示すように、 <xref:System.Byte> 12 の値を持つオブジェクトが等しくない、<xref:System.Int32>を 2 つのオブジェクトがある実行時の型が異なるため、12 の値を持つオブジェクト。  
+  
+         [!code-csharp[System.Object.Equals#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equals_val1.cs#3)]
+         [!code-vb[System.Object.Equals#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equals_val1.vb#3)]  
+  
+    -   2 つのオブジェクトのパブリックおよびプライベート フィールドの値が等しいです。 次の例は、値の等価性をテストします。 定義する、 `Person` 、構造体は値型と呼び出し、`Person`新しい 2 つのインスタンス化するクラスのコンス トラクター`Person`オブジェクト、`person1`と`person2`、同じ値であります。 例の出力では、2 つのオブジェクト変数、複数のオブジェクトを参照していますが`person1`と`person2`がプライベートの同じ値があるために等しい`personName`フィールドです。  
+  
+         [!code-csharp[System.Object.Equals#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equals_val2.cs#4)]
+         [!code-vb[System.Object.Equals#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equals_val2.vb#4)]  
+  
+ <xref:System.Object>クラスは、.NET Framework のすべての型の基本クラス、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドは、他のすべての種類の既定の等値比較を提供します。 ただし、型多くの場合、上書き、<xref:System.Object.Equals%2A>値の等価性を実装するメソッド。 詳細については、の継承元のセクションでは呼び出し元関数とノートのノートを参照します。  
+  
+## <a name="notes-for-the-includewrtincludeswrt-mdmd"></a>は、[!INCLUDE[wrt](~/includes/wrt-md.md)]  
+ 呼び出すと、<xref:System.Object.Equals%28System.Object%29>のクラスのメソッドのオーバー ロード、 [!INCLUDE[wrt](~/includes/wrt-md.md)]、しないをオーバーライドするクラスの既定の動作を提供<xref:System.Object.Equals%28System.Object%29>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 内のクラス、[!INCLUDE[wrt](~/includes/wrt-md.md)]継承しない<xref:System.Object>、現在実装していないと、<xref:System.Object.Equals%28System.Object%29>メソッドです。 ただし、それらがように見えます<xref:System.Object.ToString%2A>、 <xref:System.Object.Equals%28System.Object%29>、および<xref:System.Object.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+> [!NOTE]
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)]c# または Visual Basic で記述されたクラスをオーバーライドして、<xref:System.Object.Equals%28System.Object%29>メソッドのオーバー ロードします。  
+  
+## <a name="notes-for-callers"></a>呼び出し元のノート  
+ 派生クラスでオーバーライドよく、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>値の等価性を実装するメソッド。 さらに、種類もを頻繁に提供する追加の厳密に型指定されたオーバー ロード、`Equals`メソッドを実装することで、通常、<xref:System.IEquatable%601>インターフェイスです。 呼び出すと、`Equals`等しいかどうかをテストするメソッド、現在のインスタンスを上書きするかどうかを知っておくべき<xref:System.Object.Equals%2A?displayProperty=nameWithType>に特定の呼び出し方法を理解して、`Equals`メソッドが解決します。 それ以外の場合、意図したものとは異なる等価性テストを実行して、メソッドは、予期しない値を返す可能性があります。  
+  
+ 具体的な例を次に示します。 3 つをインスタンス化<xref:System.Text.StringBuilder>オブジェクトと同一の文字列とを 4 つの呼び出しを行い、`Equals`メソッドです。 最初のメソッドの呼び出しを返します`true`と残りの 3 つの戻り値`false`です。  
+  
+ [!code-csharp[System.Object.Equals#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equalssb1.cs#5)]
+ [!code-vb[System.Object.Equals#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equalssb1.vb#5)]  
+  
+ 最初の場合、厳密に型指定<xref:System.Text.StringBuilder.Equals%28System.Text.StringBuilder%29?displayProperty=nameWithType>値の等価性テスト メソッドのオーバー ロードが呼び出されます。 2 つの文字列が割り当てられているため<xref:System.Text.StringBuilder>オブジェクトが等しい、メソッドが返されます`true`です。 ただし、<xref:System.Text.StringBuilder>をオーバーライドしません<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>です。 このため、ときに、<xref:System.Text.StringBuilder>オブジェクトにキャスト、<xref:System.Object>ときに、<xref:System.Text.StringBuilder>インスタンスが型の変数に割り当てられた<xref:System.Object>とタイミング、<xref:System.Object.Equals%28System.Object%2CSystem.Object%29?displayProperty=nameWithType>メソッドが渡される 2 つ<xref:System.Text.StringBuilder>オブジェクト、既定値<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドが呼び出されます。 <xref:System.Text.StringBuilder> 、参照型では、これは、2 つを渡すことに相当<xref:System.Text.StringBuilder>オブジェクトを<xref:System.Object.ReferenceEquals%2A>メソッドです。 3 つすべて<xref:System.Text.StringBuilder>オブジェクトと同じ文字列を格納する、3 つの異なるオブジェクトを参照しています。 その結果、これら 3 つのメソッド呼び出しを返す`false`です。  
+  
+ 現在のオブジェクトを別のオブジェクト参照の等価性を比較するには呼び出すことによって、<xref:System.Object.ReferenceEquals%2A>メソッドです。 Visual basic で使用することも、`is`キーワード (たとえば、 `If Me Is otherObject Then ...`)。  
+  
+## <a name="notes-for-inheritors"></a>継承時の注意  
+ 独自の型を定義すると、その型を継承によって定義されている機能、`Equals`その基本型のメソッドです。 次の表に、既定の実装、 `Equals` .NET Framework の型の主なカテゴリのメソッドです。  
+  
+|型のカテゴリ|によって定義される等価性|コメント|  
+|-------------------|-------------------------|--------------|  
+|直接派生したクラス<xref:System.Object>|<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>|参照の等価性です。呼び出すことと同じ<xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>です。|  
+|構造体|<xref:System.ValueType.Equals%2A?displayProperty=nameWithType>|値の等価性です。直接比較するバイトでまたはリフレクションを使用してフィールドの比較できます。|  
+|列挙|<xref:System.Enum.Equals%2A?displayProperty=nameWithType>|値は、同じ列挙型と同じ基になる値が必要です。|  
+|Delegate|<xref:System.MulticastDelegate.Equals%2A?displayProperty=nameWithType>|デリゲートには、同一の呼び出しリストを持つ同じ型が必要です。|  
+|インターフェイス|<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>|参照の等価性。|  
+  
+ 値型にする必要がありますを常にオーバーライド<xref:System.Object.Equals%2A>リフレクションに依存するテストが等しいかどうかは、パフォーマンスの低下を提供します。 既定の実装を上書きすることもできます。<xref:System.Object.Equals%2A>参照型の参照の等価性ではなく値の等価性をテストすると、値の等価性の正確な意味を定義します。 このような実装の<xref:System.Object.Equals%2A>返す`true`同じインスタンスでない場合でも、2 つのオブジェクトが同じ値があるかどうか。 型の実行者は、オブジェクトの値の構成内容を決定が、通常一部またはすべてのデータ オブジェクトのインスタンスの変数に格納します。 たとえばの値、<xref:System.String>オブジェクトは、文字列の文字に基づいて、<xref:System.String.Equals%28System.Object%29?displayProperty=nameWithType>メソッドのオーバーライド、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>を返すメソッドを`true`任意の 2 つの文字列と同じ順序で同じ文字が含まれているインスタンス。  
+  
+ 次の例は、オーバーライドする方法を示します、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>値の等価性をテストするメソッド。 も優先、<xref:System.Object.Equals%2A>のメソッド、`Person`クラスです。 場合`Person`の等値をその基本クラス実装を受け入れる次の 2 つ`Person`オブジェクトは 1 つのオブジェクトを参照した場合にのみ、等価になります。 ただし、このケースでは、次の 2 つ`Person`オブジェクトが同じ値がある場合に等しく、`Person.Id`プロパティです。  
+  
+ [!code-csharp[System.Object.Equals#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equalsoverride.cs#6)]
+ [!code-vb[System.Object.Equals#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equalsoverride.vb#6)]  
+  
+ オーバーライドするだけでなく<xref:System.Object.Equals%2A>、実装することができます、<xref:System.IEquatable%601>等値の厳密に型指定されたテストを提供するインターフェイスです。  
+  
+ 次のステートメントは、のすべての実装の場合は true である必要があります、<xref:System.Object.Equals%28System.Object%29>メソッドです。 一覧で、 `x`、 `y`、および`z`れていないオブジェクト参照を表す**null**です。  
+  
+-   `x.Equals(x)`返します`true`、浮動小数点型に関連する場合は除きます。 ISO と IEC/IEEE 60559:2011、情報テクノロジ--マイクロプロセッサ システムであり、浮動小数点算術演算子を参照してください。  
+  
+-   `x.Equals(y)`同じ値を返します`y.Equals(x)`です。  
+  
+-   `x.Equals(y)`返します`true`両方`x`と`y`は`NaN`します。  
+  
+-   場合`(x.Equals(y) && y.Equals(z))`返します`true`、し`x.Equals(z)`返します`true`です。  
+  
+-   連続して呼び出す`x.Equals(y)`によってオブジェクトが参照されている限り、同じ値を返す`x`と`y`は変更されません。  
+  
+-   `x.Equals(null)` は、`false` を返します。  
+  
+ 実装<xref:System.Object.Equals%2A>は例外をスローする必要がありますいないそれらは常に値を返します。 たとえば場合、`obj`は`null`、<xref:System.Object.Equals%2A>メソッドが返す`false`スローする代わりに、<xref:System.ArgumentNullException>です。  
+  
+ オーバーライドする場合は、次のガイドラインをに従って<xref:System.Object.Equals%28System.Object%29>:  
+  
+-   型を実装する<xref:System.IComparable>オーバーライドする必要があります<xref:System.Object.Equals%28System.Object%29>です。  
+  
+-   型のオーバーライドが<xref:System.Object.Equals%28System.Object%29>もオーバーライドしなければなりません<xref:System.Object.GetHashCode%2A>以外の場合、ハッシュ テーブルが正しく動作しません。  
+  
+-   実装を検討する必要があります、<xref:System.IEquatable%601>強くをサポートするインターフェイスが等しいかどうかのテストを入力します。 <xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType>実装と一貫性のある結果を返す必要があります<xref:System.Object.Equals%2A>です。  
+  
+-   場合は、プログラミング言語は、演算子のオーバー ロードをサポートしていると、指定された型の等値演算子をオーバー ロードする、上書きすることも必要があります、<xref:System.Object.Equals%28System.Object%29>等値演算子と同じ結果を返すメソッド。 これにより、そのクラス ライブラリのコードを使用する<xref:System.Object.Equals%2A>(など<xref:System.Collections.ArrayList>と<xref:System.Collections.Hashtable>) は、アプリケーション コードで、等値演算子を使用する方法と一致するように動作します。  
+  
+### <a name="guidelines-for-reference-types"></a>参照型に関するガイドライン  
+ オーバーライドするのに次のガイドラインが適用<xref:System.Object.Equals%28System.Object%29>参照型。  
+  
+-   オーバーライドを検討してください<xref:System.Object.Equals%2A>場合は、型のセマンティクスは、という事実に基づいて、種類がいくつかの値を表します。  
+  
+-   ほとんどの参照型である必要がありますをオーバーライドする場合でもを等値演算子オーバー ロードしない<xref:System.Object.Equals%2A>です。 ただしなど、複雑な数値型の値のセマンティクスを持つものでは参照型を実装している場合は、等値演算子をオーバーライドする必要があります。  
+  
+-   オーバーライドしないでください<xref:System.Object.Equals%2A>変更可能な参照型にします。 これは、オーバーライドするため<xref:System.Object.Equals%2A>オーバーライドすることも必要があります、<xref:System.Object.GetHashCode%2A>メソッド、前のセクションで説明したようにします。 つまり、変更可能な参照型のインスタンスのハッシュ コードがその有効期間中に、ハッシュ テーブルで、オブジェクトが失われた可能性がありますを変更できます。  
+  
+### <a name="guidelines-for-value-types"></a>値の型に関するガイドライン  
+ オーバーライドするのに次のガイドラインが適用<xref:System.Object.Equals%28System.Object%29>値の型に対して。  
+  
+-   1 つまたは複数のフィールドを含む値の型を定義している場合は参照型の値が、オーバーライドする必要があります<xref:System.Object.Equals%28System.Object%29>です。 <xref:System.Object.Equals%28System.Object%29>で提供される実装<xref:System.ValueType>値型がバイト単位の比較を実行のフィールドは、すべての値の型がリフレクションを使用して、その結果、フィールドが参照型を含む値の型のフィールドの比較を実行します。  
+  
+-   オーバーライドする場合は<xref:System.Object.Equals%2A>開発言語には、演算子のオーバー ロードがサポートしていると、等値演算子をオーバー ロードする必要があります。  
+  
+-   実装する必要があります、<xref:System.IEquatable%601>インターフェイスです。 厳密に型を呼び出す<xref:System.IEquatable%601.Equals%2A?displayProperty=nameWithType>メソッドは、ボックス化を回避できます、`obj`引数。  
+  
+   
+  
+## Examples  
+ 例を次に、`Point`をオーバーライドするクラス、<xref:System.Object.Equals%2A>値の等価性を提供するメソッドと`Point3D`から派生したクラスを`Point`です。 `Point`オーバーライド<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>値の等価性をテストする、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッドは呼び出されません。 ただし、`Point3D.Equals`呼び出し`Point.Equals`ため`Point`実装<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>で値の等価性を提供できるようにします。  
+  
+ [!code-csharp[ECMA-System.Object.Equals2#1](~/samples/snippets/csharp/VS_Snippets_CLR/ECMA-System.Object.Equals2/CS/equals2.cs#1)]
+ [!code-vb[ECMA-System.Object.Equals2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ECMA-System.Object.Equals2/VB/equals2.vb#1)]  
+  
+ `Point.Equals`メソッドをチェックすることを確認して、`obj`引数ではありません**null**このオブジェクトと同じ型のインスタンスを参照しているとします。 メソッドを返しますのかどうかはいずれかのチェックに失敗する、`false`です。  
+  
+ `Point.Equals`メソッドの呼び出し、 <xref:System.Object.GetType%2A> 2 つのオブジェクトの実行時の型が同一かどうかを調べます。 メソッドには、フォームのチェックが使用されている場合`obj is Point`(C#) または`TryCast(obj, Point)`Visual basic で、チェックを返すよう`true`の場合、`obj`の派生クラスのインスタンスは、`Point`場合でも、`obj`と現在インスタンスが同一の実行時の型です。 両方のオブジェクトが同じ型、メソッドのキャストのことを確認したら`obj`入力`Point`2 つのオブジェクトのインスタンス フィールドを比較の結果を返します。  
+  
+ `Point3D.Equals`、継承された`Point.Equals`メソッドのオーバーライド<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>が何を行う前に呼び出されます。 `Point3D` 、シール クラスは、(`NotInheritable` Visual Basic で)、フォームにチェック マーク`obj is Point`(C#) または`TryCast(obj, Point)`Visual Basic では、いることを確認するのに十分`obj`は、`Point3D`オブジェクト。 ある場合、`Point3D`オブジェクトにキャスト、`Point`オブジェクトし、の基本クラスの実装に渡される<xref:System.Object.Equals%2A>です。 場合にのみ、継承された`Point.Equals`メソッドを返します。`true`メソッド比較は、`z`インスタンス フィールドが、派生クラスで導入されました。  
+  
+ 次の例では定義、`Rectangle`として 2 つの四角形を内部的に実装するクラス`Point`オブジェクト。 `Rectangle`クラスも上書き<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>値の等価性を提供します。  
+  
+ [!code-csharp[ECMA-System.Object.Equals3#1](~/samples/snippets/csharp/VS_Snippets_CLR/ECMA-System.Object.Equals3/CS/equals3.cs#1)]
+ [!code-vb[ECMA-System.Object.Equals3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ECMA-System.Object.Equals3/VB/equals3.vb#1)]  
+  
+ C# および Visual Basic などの一部の言語では、演算子のオーバー ロードをサポートします。 オーバーライドする必要がありますも、型は、等値演算子をオーバー ロード、ときに、<xref:System.Object.Equals%28System.Object%29>同じ機能を提供するメソッド。 記述してこれは通常、<xref:System.Object.Equals%28System.Object%29>次の例のように、オーバー ロードされた等値演算子の観点からのメソッドです。  
+  
+ [!code-csharp[ECMA-System.Object.Equals4#1](~/samples/snippets/csharp/VS_Snippets_CLR/ECMA-System.Object.Equals4/CS/equals4.cs#1)]
+ [!code-vb[ECMA-System.Object.Equals4#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ECMA-System.Object.Equals4/vb/equals4.vb#1)]  
+  
+ `Complex`は、値の型から派生することはできません。  そのため、上書きを<xref:System.Object.Equals%28System.Object%29>メソッドを呼び出す必要はありません<xref:System.Object.GetType%2A>を決定する正確なランタイムを入力できますが、各オブジェクトの代わりに使用する、 `is` (C#) 演算子または`TypeOf`の種類を確認するVisualBasicの演算子`obj`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (object objA, object objB);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(object objA, object objB) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.Equals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objA" Type="System.Object" />
+        <Parameter Name="objB" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objA">比較する最初のオブジェクト。</param>
+        <param name="objB">比較する 2 番目のオブジェクト。</param>
+        <summary>指定されたインスタンスが等しいかどうかを判断します。</summary>
+        <returns>
+          オブジェクトが等しいと見なされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 両方<paramref name="objA" />と<paramref name="objB" />は**null**、メソッドを返します<see langword="true" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 静的な<xref:System.Object.Equals%28System.Object%2CSystem.Object%29>かどうか 2 つのオブジェクト、メソッドを示します`objA`と`objB`、等しい。 オブジェクトの値をテストすることもできます**null**等しいかどうか。 比較`objA`と`objB`次のように等しいかどうか。  
+  
+-   これは、2 つのオブジェクトが同じオブジェクト参照を表すかどうかを判断します。 このメソッドを返しますのかどうかは、`true`です。 このテストは呼び出すことと同じ、<xref:System.Object.ReferenceEquals%2A>メソッドです。 さらに、両方`objA`と`objB`は**null**、メソッドを返します`true`です。  
+  
+-   決定するかどうか、`objA`または`objB`は**null**です。 そのため、返された場合`false`です。  
+  
+-   2 つのオブジェクトが同じオブジェクト参照を表さないとなりはどちらも**null**、呼び出す`objA`.`Equals`(`objB`) し、結果を返します。 つまり、`objA`よりも優先、<xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>メソッド、このオーバーライドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Object.Equals%28System.Object%2CSystem.Object%29>メソッドとの比較、<xref:System.Object.ReferenceEquals%2A>メソッドです。  
+  
+ [!code-csharp[System.Object.Equals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.equals/cs/equals_static2.cs#1)]
+ [!code-vb[System.Object.Equals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.equals/vb/equals_static2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~Object ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトが、ガベージ コレクションによって収集される前に、リソースの解放とその他のクリーンアップ操作の実行を試みることができるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object.Finalize%2A>オブジェクトが破棄される前に、現在のオブジェクトによって保持されているアンマネージ リソースのクリーンアップ操作を実行するメソッドを使用します。 メソッドが保護されているためおよび派生クラスによって、またはこのクラスによってのみアクセスできます。  
+  
+ このセクションの内容:  
+  
+-   [終了処理のしくみ](#How)  
+  
+-   [実装についてのメモ](#Notes)  
+  
+-   [SafeHandle の代替手段](#SafeHandle)  
+  
+<a name="How"></a>   
+## <a name="how-finalization-works"></a>終了処理のしくみ  
+ <xref:System.Object>クラスの実装を提供なし、<xref:System.Object.Finalize%2A>メソッド、および、ガベージ コレクターから派生した型をマークしません<xref:System.Object>終了がオーバーライドされない限り、<xref:System.Object.Finalize%2A>メソッドです。  
+  
+ 型をオーバーライドする場合、<xref:System.Object.Finalize%2A>メソッド、ガベージ コレクターにエントリを追加、型のインスタンスごとにファイナライザー キューと呼ばれる内部構造体。 ファイナライザーのキューには、すべてのオブジェクトが終了コードは、ガベージ コレクターが自らのメモリを解放する前に実行する必要があります、マネージ ヒープ内のエントリが含まれています。 ガベージ コレクターを呼び出して、<xref:System.Object.Finalize%2A>メソッドは、次の条件下で自動的に。  
+  
+-   ガベージ コレクターがオブジェクトをへの呼び出しによって終了処理から除外されている場合を除き、オブジェクトがアクセス可能でないを検出したら、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   アプリケーション ドメインのシャット ダウン中にオブジェクトが終了処理から除外されている場合を除き、します。 シャット ダウン中、引き続きアクセスできるものオブジェクトが完了しました。  
+  
+ <xref:System.Object.Finalize%2A>自動的に 1 回だけ呼び出す特定のインスタンスでオブジェクトが再などのメカニズムを使用して、登録されている場合を除き、<xref:System.GC.ReRegisterForFinalize%2A?displayProperty=nameWithType>と<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドが、その後に呼び出されていません。  
+  
+ <xref:System.Object.Finalize%2A>操作には、次の制限があります。  
+  
+-   ファイナライザーの実行の正確な時間は、定義されていません。 リソースの確定的に解放をように、クラスのインスタンスを実装する、`Close`メソッドを提供したり、<xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>実装します。  
+  
+-   2 つのオブジェクトのファイナライザーは、1 つのオブジェクトを指す他の場合でも、特定の順序で実行する保証はありません。 つまり、オブジェクト A がオブジェクト B への参照を両方ファイナライザーがある場合は、オブジェクト B 可能性がありますが既に終了されているオブジェクトのファイナライザーの開始時にします。  
+  
+-   ファイナライザーが実行されているスレッドは、指定されていません。  
+  
+ <xref:System.Object.Finalize%2A>メソッドが完了するまで実行されないか、次の例外的な状況でまったく実行されない可能性があります。  
+  
+-   別のファイナライザーが無期限にブロックした場合 (、無限ループに移動しようとすることはありませんを入手してなどのロックの取得)。 ランタイムがファイナライザーを完了するまで実行しようとするとため、その他のファイナライザー可能性がある場合は呼び出されませんファイナライザー ブロック無期限にします。  
+  
+-   場合は、ランタイムをクリーンアップする機会を与えることがなく、プロセスを終了します。 この場合、ランタイムのプロセスの終了の最初の通知はあります通知です。  
+  
+ ランタイムは、ファイナライズ可能なオブジェクトの数が減少し続けます中にのみ、シャット ダウン中にオブジェクトを最終処理を続行します。  
+  
+ 場合<xref:System.Object.Finalize%2A>またはのオーバーライド<xref:System.Object.Finalize%2A>、例外をスローし、ランタイムが、既定のポリシーをオーバーライドするアプリケーションによってホストされていない、プロセスとはアクティブなランタイムが終了する`try` / `finally`ブロックまたはファイナライザーを実行します。 この動作は、ファイナライザーが解放またはリソースを破棄できない場合、プロセスの整合性を確保します。  
+  
+<a name="Notes"></a>   
+## <a name="overriding-the-finalize-method"></a>Finalize メソッドをオーバーライドします。 
+ オーバーライドする必要があります<xref:System.Object.Finalize%2A>ファイル ハンドルやガベージ コレクション中にそれらを使用するマネージ オブジェクトが破棄されたときに解放する必要がありますのあるデータベース接続などのアンマネージ リソースを使用するクラス。 実装しないでください、<xref:System.Object.Finalize%2A>ガベージ コレクターが自動的にマネージ リソースを解放するためのメソッドがオブジェクトを管理します。  
+  
+> [!IMPORTANT]
+>  場合、<xref:System.Runtime.InteropServices.SafeHandle>オブジェクトが使用可能なアンマネージ リソースをラップする、推奨される代替手段は、セーフ ハンドルの dispose パターンを実装し、無効にする<xref:System.Object.Finalize%2A>です。 詳細については、次を参照してください。[代わりに、SafeHandle](#SafeHandle)セクションです。  
+  
+ <xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドは既定では、何しますが、オーバーライドする必要があります<xref:System.Object.Finalize%2A>のみ必要であれば、アンマネージ リソースを解放するだけです。 メモリを再利用するには、少なくとも 2 つのガベージ コレクションが必要とするために終了操作を実行する場合は、かなり長くかかる傾向があります。 さらに、オーバーライドする必要があります、<xref:System.Object.Finalize%2A>参照用のメソッドの型だけです。 共通言語ランタイムは、参照型のみを終了します。 値型でファイナライザーは無視されます。  
+
+スコープ、<xref:System.Object.Finalize%2A?displayProperty=nameWithType>メソッドは`protected`します。 クラス内でこのメソッドをオーバーライドする場合は、このスコープの範囲を維持する必要があります。 保持することで、<xref:System.Object.Finalize%2A>保護されているメソッド、オブジェクトの呼び出し元から、アプリケーションのユーザーを防ぐ<xref:System.Object.Finalize%2A>メソッドを直接です。
+  
+ すべての実装の<xref:System.Object.Finalize%2A>派生型での基本データ型の実装を呼び出す必要があります<xref:System.Object.Finalize%2A>です。 これを呼び出すアプリケーション コードが許可されている場合だけ<xref:System.Object.Finalize%2A>です。 オブジェクトの<xref:System.Object.Finalize%2A>メソッドは、基底クラスのではないすべてのオブジェクトに対するメソッドを呼び出すことはできません。 これは、共通言語ランタイムがシャットダウンされる場合など、呼び出し元のオブジェクトと呼び出された別のオブジェクトが同時にガベージ コレクションされることがあるからです。 
+  
+> [!NOTE]
+>  C# コンパイラを上書きすることはできません、<xref:System.Object.Finalize%2A>メソッドです。 実装することでファイナライザーを用意する代わりに、[デストラクター](~/docs/csharp/programming-guide/classes-and-structs/destructors.md)クラスです。 C# のデストラクターは、その基本クラスのデストラクターを自動的に呼び出します。  
+>   
+>  Visual C を実装する独自の構文もが用意されています、<xref:System.Object.Finalize%2A>メソッドです。 詳細については、の「デストラクターとファイナライザー」セクションを参照してください。[する方法: を定義すると消費クラスと構造体 (C + + CLI)](http://msdn.microsoft.com/library/1c03cb0d-1459-4b5e-af65-97d6b3094fd7)です。  
+  
+ ガベージ コレクションは非決定的であるため、ガベージ コレクターが終了処理を実行すると正確にわかっていません。 リソースを解放する、すぐにこともできますを実装する、 [dispose パターン](~/docs/standard/design-guidelines/dispose-pattern.md)と<xref:System.IDisposable>インターフェイスです。 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> 、アンマネージ リソースを解放する、クラスのコンシューマーによって実装を呼び出すことができ、使用することができます、<xref:System.Object.Finalize%2A>アンマネージ リソースを解放するメソッドを<xref:System.IDisposable.Dispose%2A>メソッドは呼び出されません。  
+  
+ <xref:System.Object.Finalize%2A>ガベージ コレクション中にクリーンアップされた後に、オブジェクト (つまり、オブジェクトにアクセスできるように再度) 復活させる方法を含む、ほぼすべてのアクションを実行することができます。 ただし、オブジェクトできますのみ再生できるは 1 回です。<xref:System.Object.Finalize%2A>ガベージ コレクション中に再生されたオブジェクトで呼び出すことができません。 1 つのアクションがあることの実装<xref:System.Object.Finalize%2A>を渡す必要があります: が例外をスローする必要がありますしません。 メソッドによってスローされた例外が呼び出された場合、<xref:System.Object.Finalize%2A>メソッドがで処理されない、<xref:System.Object.Finalize%2A>メソッド、ランタイムが想定する、<xref:System.Object.Finalize%2A>メソッドが返され、呼び出しは引き続き、<xref:System.Object.Finalize%2A>他のオブジェクトのメソッドです。 
+  
+<a name="SafeHandle"></a>   
+## <a name="the-safehandle-alternative"></a>代替手段としての SafeHandle  
+ 信頼性の高いファイナライザーの作成が多くの場合、困難ですが、アプリケーションの状態に関する仮定をすることはできないためなど、未処理のシステム例外<xref:System.OutOfMemoryException>と<xref:System.StackOverflowException>ファイナライザーを終了します。 派生したオブジェクトを使用するアンマネージ リソースを解放するには、クラスのファイナライザーを実装するには、代わりに、<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>アンマネージ リソースをラップするクラスし、ファイナライザーせず、dispose パターンを実装します。 .NET Framework の次のクラスには、<xref:Microsoft.Win32?displayProperty=nameWithType>から派生した名前空間<xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType>:  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeFileHandle>ファイル ハンドルのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle>メモリ マップト ファイル ハンドルのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeMemoryMappedViewHandle>アンマネージ メモリ ブロックへのポインターのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle>、 <xref:Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle>、および<xref:Microsoft.Win32.SafeHandles.SafeNCryptSecretHandle>暗号化ハンドルのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafePipeHandle>パイプ ハンドルのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>レジストリ キーへのハンドルのラッパー クラスです。  
+  
+-   <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle>待機ハンドルのラッパー クラスです。  
+  
+ 次の例では、 [dispose パターン](~/docs/standard/design-guidelines/dispose-pattern.md)オーバーライドする代わりにセーフ ハンドルを使った、<xref:System.Object.Finalize%2A>メソッドです。 定義する、`FileAssociation`特定のファイル拡張子を持つファイルを処理するアプリケーションのレジストリ情報をラップするクラス。 として返される 2 つのレジストリ ハンドル`out`Windows によってパラメーター [RegOpenKeyEx](http://msdn.microsoft.com/library/windows/desktop/ms724897.aspx)関数の呼び出しに渡される、<xref:Microsoft.Win32.SafeHandles.SafeRegistryHandle>コンス トラクターです。 型の保護された`Dispose`メソッドを呼び出します、`SafeRegistryHandle.Dispose`これら 2 つのハンドルを解放します。  
+  
+ [!code-csharp[System.Object.Finalize#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.finalize/cs/finalize_safe.cs#2)]
+ [!code-vb[System.Object.Finalize#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.finalize/vb/finalize_safe.vb#2)]  
+  
+   
+  
+## Examples  
+ 次の例では、あることを確認、<xref:System.Object.Finalize%2A>オブジェクトを上書きする場合に、メソッドが呼び出されます<xref:System.Object.Finalize%2A>は破棄されます。 なお、実稼働アプリケーションで、<xref:System.Object.Finalize%2A>オブジェクトによって保持されているアンマネージ リソースを解放するメソッドはオーバーライドされます。 なお、c# の例にオーバーライドする代わりにデストラクターが提供されている、<xref:System.Object.Finalize%2A>メソッドです。  
+  
+ [!code-csharp[System.Object.Finalize#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.finalize/cs/finalize1.cs#1)]
+ [!code-vb[System.Object.Finalize#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.finalize/vb/finalize1.vb#1)]  
+  
+ オーバーライドするその他の例については、<xref:System.Object.Finalize%2A>メソッドを参照してください、<xref:System.GC.SuppressFinalize%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public virtual int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のハッシュ関数として機能します。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ コードを挿入し、などハッシュ ベースのコレクション内のオブジェクトの識別に使用される数値の値は、<xref:System.Collections.Generic.Dictionary%602>クラス、<xref:System.Collections.Hashtable>クラスから派生した型、または、<xref:System.Collections.DictionaryBase>クラスです。 <xref:System.Object.GetHashCode%2A>を迅速にオブジェクトの等価性の確認を必要とするアルゴリズムのメソッドがこのハッシュ コードを提供します。  
+  
+> [!NOTE]
+>  ハッシュ テーブルのハッシュ コードを使用する方法に関する情報といくつか追加のハッシュ コードのアルゴリズムを参照してください、[ハッシュ関数](http://en.wikipedia.org/wiki/Hash_function)Wikipedia で入力します。  
+  
+ 等しいと同じ戻り値のハッシュ コードは、2 つのオブジェクト。 ただし、この逆はできません。 同じハッシュ コードを意味しませんオブジェクトの等価性 (等しくない) 別のオブジェクトが同一のハッシュ コードを持てないためです。 さらに、.NET Framework とは限りませんの既定の実装、<xref:System.Object.GetHashCode%2A>メソッド、および、このメソッドから返される値が異なる .NET Framework のバージョンとプラットフォームでは、32 ビットおよび 64 ビットのプラットフォームなどの間です。 これらの理由から、このメソッドの既定の実装固有のオブジェクト識別子としてに使わないハッシュの目的でします。 これから次の 2 つの影響。  
+  
+-   同じハッシュ コードがオブジェクトの等価性を示すものであると想定する必要があります。  
+  
+-   永続化したり、同じオブジェクトをアプリケーション ドメイン、プロセス、およびプラットフォーム間でハッシュ可能性がありますのでが作成されたアプリケーション ドメインの外部ハッシュ コードを使用する必要がありますしないでください。  
+  
+> [!WARNING]
+>  ハッシュ コードは、効率的な挿入とハッシュ テーブルに基づいているコレクション内の参照です。 ハッシュ コードは、永続的な値ではありません。 このため。  
+>   
+>  -   ハッシュ コード値をシリアル化したり、データベースに格納しないでください。  
+> -   キー付きのコレクションからオブジェクトを取得するのに、キーとしてハッシュ コードを使用しません。  
+> -   アプリケーション ドメインまたはプロセス間では、ハッシュ コードを送信しません。 場合によっては、プロセスごとまたはアプリケーションごとのドメインごとにハッシュ コードを計算することがあります。  
+> -   暗号強度が高いハッシュする必要がある場合は、暗号ハッシュ関数によって返される値ではなくハッシュ コードを使用しません。 暗号法のハッシュから派生するクラスを使用して、<xref:System.Security.Cryptography.HashAlgorithm?displayProperty=nameWithType>または<xref:System.Security.Cryptography.KeyedHashAlgorithm?displayProperty=nameWithType>クラスです。  
+> -   2 つのオブジェクトが等しいかどうかを判断するハッシュ コードの等価性をテストしません。 (等しくないオブジェクトは、同一のハッシュ コードを持つことができます)等しいかどうかをテストするには、呼び出し、<xref:System.Object.ReferenceEquals%2A>または<xref:System.Object.Equals%2A>メソッドです。  
+  
+ <xref:System.Object.GetHashCode%2A>派生型でメソッドをオーバーライドすることができます。 場合<xref:System.Object.GetHashCode%2A>がオーバーライドされていないハッシュ コードを呼び出すことによって計算が参照型、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>ハッシュ コードを計算する、基本クラスのメソッド ベース以外のオブジェクトの参照の詳細についてを参照してください<xref:System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode%2A?displayProperty=nameWithType>です。 つまり、2 つのオブジェクトを<xref:System.Object.ReferenceEquals%2A>メソッドを返します。`true`同一のハッシュ コードがあります。 値の型をオーバーライドしない場合<xref:System.Object.GetHashCode%2A>、<xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType>基底クラスのメソッドでは、リフレクションを使用して、型のフィールドの値に基づいてハッシュ コードを計算します。 つまり、その結果、フィールドが同じ値を持つ値型では、同じハッシュ コードがあります。 オーバーライドの詳細については<xref:System.Object.GetHashCode%2A>、「ノート継承クラス」を参照してください。  
+  
+> [!WARNING]
+>  オーバーライドする場合、<xref:System.Object.GetHashCode%2A>メソッドもオーバーライドする<xref:System.Object.Equals%2A>、およびその逆です。 場合、オーバーライドされた<xref:System.Object.Equals%2A>メソッドを返します。`true`等しいかどうかを、オーバーライドされた 2 つのオブジェクトをテストするときに<xref:System.Object.GetHashCode%2A>メソッドは、2 つのオブジェクトに対して同じ値を返す必要があります。  
+  
+ かどうか、ハッシュ テーブル内のキーとして使用されるオブジェクトの管轄外の便利な実装<xref:System.Object.GetHashCode%2A>、ハッシュ コード プロバイダーを指定するには指定することによって、<xref:System.Collections.IEqualityComparer>のオーバー ロードのいずれかに実装、<xref:System.Collections.Hashtable>クラスのコンス トラクターです。  
+  
+## <a name="notes-for-the-includewrtincludeswrt-mdmd"></a>は、[!INCLUDE[wrt](~/includes/wrt-md.md)]  
+ 呼び出すと、<xref:System.Object.GetHashCode%2A>内のクラスのメソッド、 [!INCLUDE[wrt](~/includes/wrt-md.md)]、しないをオーバーライドするクラスの既定の動作を提供<xref:System.Object.GetHashCode%2A>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 内のクラス、[!INCLUDE[wrt](~/includes/wrt-md.md)]継承しない<xref:System.Object>、現在実装していないと、<xref:System.Object.GetHashCode%2A>です。 ただし、それらがように見えます<xref:System.Object.ToString%2A>、 <xref:System.Object.Equals%28System.Object%29>、および<xref:System.Object.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+> [!NOTE]
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)]c# または Visual Basic で記述されたクラスをオーバーライドして、<xref:System.Object.GetHashCode%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ ハッシュ コードを同じか、またはより小さい範囲を持つ数値を計算する最も簡単な方法の 1 つ、<xref:System.Int32>型が単純にその値を返すにします。 次の例では、このような実装、`Number`構造体。  
+  
+ [!code-csharp[System.Object.GetHashCode#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gethashcode/cs/direct1.cs#1)]
+ [!code-vb[System.Object.GetHashCode#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gethashcode/vb/direct1.vb#1)]  
+  
+ 多くの場合、型では、ハッシュ コードの生成に含めることができる複数のデータ フィールドがあります。 使用してこれらのフィールドを結合するにはハッシュ コードを生成する方法、`XOR (eXclusive OR)`操作、次の例で示すようにします。  
+  
+ [!code-csharp[System.Object.GetHashCode#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gethashcode/cs/xor1.cs#2)]
+ [!code-vb[System.Object.GetHashCode#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gethashcode/vb/xor1.vb#2)]  
+  
+ 前の例は、(n1、n2) に対して同じハッシュ コードを返します (n2、n1)、および、要件を満たしているよりも多くの競合を生成する可能性があります。 このような場合のハッシュ コードが同じでないようにソリューションの数のとおりです。 1 つのハッシュ コードを返すには、`Tuple`の各フィールドの順序を反映するオブジェクト。 次の例を使用して可能な実装を示しています、<xref:System.Tuple%602>クラスです。 ただしをインスタンス化のパフォーマンスのオーバーヘッドを`Tuple`オブジェクトは、ハッシュ テーブルに多数のオブジェクトを格納するアプリケーションの全体的なパフォーマンスに大きく影響可能性があります。  
+  
+ [!code-csharp[System.Object.GetHashCode#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gethashcode/cs/xor2.cs#3)]
+ [!code-vb[System.Object.GetHashCode#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gethashcode/vb/xor2.vb#3)]  
+  
+ 2 番目の代替ソリューションには、連続するフィールドのハッシュ コードを 2 つ以上のビットを左シフトして個々 のハッシュ コードを重み付けが含まれます。 最適に、破棄されるのではなくを超えて 31 ビット シフトをラップする代わりに破棄されます。 C# および Visual Basic の両方での左シフト演算子では、ビットが破棄され、以降は、次のように左 shift キーを押し、ラップ メソッドを作成する必要があります。  
+  
+ [!code-csharp[System.Object.GetHashCode#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gethashcode/cs/shift1.cs#4)]
+ [!code-vb[System.Object.GetHashCode#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gethashcode/vb/shift1.vb#4)]  
+  
+ 次の例は、のハッシュ コードを計算するこのシフトの折り返し方法を使用して、`Point`前の例で使用される構造体。  
+  
+ [!code-csharp[System.Object.GetHashCode#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gethashcode/cs/shift1.cs#5)]
+ [!code-vb[System.Object.GetHashCode#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gethashcode/vb/shift1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>ハッシュ関数を使用して、オブジェクトの値に対応する番号 (ハッシュ コード) をすばやく生成します。 ハッシュ関数は通常、各種類に固有しが、一意である必要があります少なくとも 1 つのインスタンス フィールドの入力として使用します。 静的フィールドの値を使用してハッシュ コードを計算する必要がありますされません。  
+  
+ 派生したクラスの<see cref="T:System.Object" />、<see langword="GetHashCode" />メソッドは、基底クラスに委任できます<see cref="M:System.Object.GetHashCode" />派生クラスには参照の等価性に等しいかどうかが定義されている場合にのみ実装されます。 既定の実装<see cref="M:System.Object.GetHashCode" />参照の種類がによって返されたと等価のハッシュ コードを返します、<see cref="M:System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(System.Object)" />メソッドです。 オーバーライドできます<see cref="M:System.Object.GetHashCode" />変更不可の参照の種類。 一般に、変更可能な参照型の場合は、オーバーライドする<see cref="M:System.Object.GetHashCode" />場合のみ。  
+  
+-   変更できません。 指定されたフィールドのハッシュ コードを計算することができます。または  
+  
+-   オブジェクトがそのハッシュ コードに依存しているコレクションに含まれている間に、変更可能なオブジェクトのハッシュ コードが変更されないことを確認することができます。  
+  
+ それ以外の場合、ハッシュ テーブルで変更可能なオブジェクトが失われることを検討する可能性があります。 オーバーライドする場合は<see cref="M:System.Object.GetHashCode" />変更可能な参照型の場合は、ドキュメント必要があることを明示するため、オブジェクトが、ハッシュ テーブルに格納されているときに、型のユーザーがオブジェクトの値を変更しないでください。  
+  
+ 値型の場合は、<see cref="M:System.ValueType.GetHashCode" />リフレクションを使用する既定のハッシュ コード実装を提供します。 パフォーマンス向上のためにオーバーライドすることを検討する必要があります。  
+  
+ <block subset="none" type="note"><para>  
+ 詳細とさまざまな方法でのハッシュ コードを計算する例については、「例」を参照してください。  
+  
+</para></block>  
+  
+ ハッシュ関数では、次のプロパティが必要です。  
+  
+-   2 つのオブジェクトが等しいかどうか、として比較している場合、<see cref="M:System.Object.GetHashCode" />の各オブジェクトのメソッドは、同じ値を返す必要があります。 ただし、2 つのオブジェクトが等しいかどうか、として比較されない場合、 <see cref="M:System.Object.GetHashCode" /> 2 つのオブジェクトのメソッドは、異なる値を返す必要はありません。  
+  
+-   <see cref="M:System.Object.GetHashCode" />メソッドは、オブジェクトがオブジェクトの戻り値を決定するオブジェクトの状態への変更がない限り、同じハッシュ コードを返す必要があります一貫して[System.Object.Equals](xref:System.Object.Equals*)メソッドです。 アプリケーションの現在の実行にのみ true であるし、アプリケーションをもう一度実行する場合は別のハッシュ コードを返されることができますに注意してください。  
+  
+-   最高のパフォーマンスをハッシュ関数は頻度の高いクラスター化されている入力を含む、すべての入力に対して均等な分布を生成する必要があります。 オブジェクトの状態に変更を加える必要がありますになる大きなハッシュ テーブルの最適なパフォーマンスの結果のハッシュ コード変更では、します。  
+  
+-   ハッシュ関数を計算する高価なすることはできません。  
+  
+-   <see cref="M:System.Object.GetHashCode" />メソッドが例外をスローする必要があります。  
+  
+ 実装など、<see cref="M:System.String.GetHashCode" />によって提供されるメソッド、<see cref="T:System.String" />クラスはまったく同じ文字列値の同一のハッシュ コードを返します。 そのため、2 つ<see cref="T:System.String" />オブジェクトが同じ文字列値を表している場合、同じハッシュ コードを返します。 また、メソッドを使用してすべての文字文字列の入力が特定の範囲にクラスター化された場合でも、ある程度ランダムに分散型の出力を生成する (たとえば、多くのユーザーがいなくても、下位 128 ASCII 文字のみを含む文字列を含めることが、文字列含めることができます、65,535 の Unicode 文字のいずれか)。  
+  
+ クラスの適切なハッシュ関数を提供することができます著しく影響する場合、ハッシュ テーブルへのそれらのオブジェクトの追加のパフォーマンスです。 ハッシュ関数の適切な実装を提供するキーを持つハッシュ テーブル、要素の検索、(たとえば、o (1) 操作) の定数の時間がかかります。 ハッシュ関数の不適切な実装でハッシュ テーブルの検索のパフォーマンスによって異なります、ハッシュ テーブル内の項目数 (たとえば、O (`n`) 操作、場所`n`ハッシュ テーブル内の項目の数です)。 悪意のあるユーザーには、次の条件下で、ハッシュ テーブルに依存するアプリケーションのパフォーマンスが大幅に低下の衝突の数が増加するデータを入力できます。  
+  
+-   ときにハッシュ関数は、頻繁に競合を作成します。  
+  
+-   ときに、ハッシュ テーブル内のオブジェクトの大部分が等しいか、互いにほぼ同じ数のハッシュ コードを生成します。  
+  
+-   ときにユーザーは、ハッシュ コードの計算元となるデータを入力します。  
+  
+ オーバーライドするクラスを派生<see cref="M:System.Object.GetHashCode" />もオーバーライドしなければなりません<see cref="M:System.Object.Equals(System.Object)" />等しいと見なされる 2 つのオブジェクトに同じハッシュ コードがあることを保証するためにそれ以外の場合、<see cref="T:System.Collections.Hashtable" />型が正しく動作しません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.GetType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスの <see cref="T:System.Type" /> を取得します。</summary>
+        <returns>現在のインスタンスの正確なランタイム型。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object?displayProperty=nameWithType>の .NET Framework の型システムでは、すべての型の基底クラス、<xref:System.Object.GetType%2A>を返すメソッドを使用できます<xref:System.Type>すべての .NET Framework 型を表すオブジェクト。 .NET Framework には、次の 5 つの種類のカテゴリが認識されます。  
+  
+-   派生したクラス<xref:System.Object?displayProperty=nameWithType>、  
+  
+-   派生した型の値<xref:System.ValueType?displayProperty=nameWithType>です。  
+  
+-   派生したインターフェイス<xref:System.Object?displayProperty=nameWithType>.NET Framework 2.0 を起動します。  
+  
+-   派生した列挙体は、<xref:System.Enum?displayProperty=nameWithType>です。  
+  
+-   派生したデリゲート<xref:System.MulticastDelegate?displayProperty=nameWithType>です。  
+  
+ 2 つのオブジェクトの`x`と`y`同一のランタイム型がある`Object.ReferenceEquals(x.GetType(),y.GetType())`返します`true`です。 次の例では、<xref:System.Object.GetType%2A>メソッドを<xref:System.Object.ReferenceEquals%2A>メソッドを 1 つの数値が他の 2 つの数値の値と同じ型であるかどうかを判別します。  
+  
+ [!code-csharp[System.Object.GetType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gettype/cs/gettype1.cs#1)]
+ [!code-vb[System.Object.GetType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gettype/vb/gettype1.vb#1)]  
+  
+> [!NOTE]
+>  オブジェクトがを特定の種類であるかどうかを判断するのには、言語の型の比較のキーワードを使用したりを構築できます。 たとえば、使用することができます、 `TypeOf…Is` Visual Basic で構築または`is`c# のキーワードです。  
+  
+ <xref:System.Object.GetType%2A>から派生したすべての型によって継承されたメソッド<xref:System.Object>です。 これは、比較の独自言語のキーワードを使用して、に加えて使用できることを意味、<xref:System.Object.GetType%2A>メソッドを次の例のように、特定のオブジェクトの種類を決定します。  
+  
+ [!code-csharp[System.Object.GetType#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.gettype/cs/GetTypeEx2.cs#2)]
+ [!code-vb[System.Object.GetType#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.gettype/vb/GetTypeEx2.vb#2)]  
+  
+ <xref:System.Type>オブジェクトは、現在のクラスに関連付けられているメタデータを公開<xref:System.Object>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ことを示します<xref:System.Object.GetType%2A>現在のインスタンスのランタイム型を返します。  
+  
+ [!code-cpp[ECMA-System.Object.GetType#1](~/samples/snippets/cpp/VS_Snippets_CLR/ECMA-System.Object.GetType/CPP/gettype.cpp#1)]
+ [!code-csharp[ECMA-System.Object.GetType#1](~/samples/snippets/csharp/VS_Snippets_CLR/ECMA-System.Object.GetType/CS/gettype.cs#1)]
+ [!code-vb[ECMA-System.Object.GetType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ECMA-System.Object.GetType/VB/gettype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberwiseClone">
+      <MemberSignature Language="C#" Value="protected object MemberwiseClone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object MemberwiseClone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.MemberwiseClone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Object" /> の簡易コピーを作成します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> の簡易コピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object.MemberwiseClone%2A>メソッドでは、シャロー コピーを作成して新しいオブジェクトの作成を新しいオブジェクトに現在のオブジェクトの非静的フィールドをコピーします。 フィールドが値型の場合、フィールドのビットごとのコピーは実行されます。 フィールドが参照型の場合、参照はコピーしますが、参照されるオブジェクトではありません。そのため、元のオブジェクトとその複製は、同じオブジェクトを参照します。  
+  
+ たとえば、オブジェクト A と B をさらに、参照の参照オブジェクト c です。 X と呼ばれるオブジェクトX の簡易コピーを作成もオブジェクト A と B を参照する新しいオブジェクト X2これに対し、X の詳細コピーが A2 と B2、A のコピーである新しいオブジェクトを参照する新しいオブジェクト X2 を作成し、B. B2 がさらに、c ドライブのコピーである新しいオブジェクト C2 を参照例は、shallow と詳細なコピー操作の違いを示しています。  
+  
+ 場合、シャロー コピー操作によって実行の詳細コピー操作を実装する方法はたくさんあります、<xref:System.Object.MemberwiseClone%2A>ニーズを満たしていないメソッドです。 次に例を示します。  
+  
+-   コピーを最初のオブジェクトから取得したプロパティ値を持つ 2 番目のオブジェクトを作成するオブジェクトのクラスのコンス トラクターを呼び出します。 これは、クラス コンス トラクターによって、オブジェクトの値がまったく定義されていると仮定します。  
+  
+-   呼び出す、<xref:System.Object.MemberwiseClone%2A>メソッドをオブジェクトのシャロー コピーを作成し、そのプロパティまたはフィールドの値を持つ参照型を元のオブジェクトと同じ値が新しいオブジェクトを割り当てます。 `DeepCopy`メソッドの例では、この方法を示しています。  
+  
+-   コピーするには、深くするオブジェクトをシリアル化し、別のオブジェクト変数をシリアル化されたデータを復元します。  
+  
+-   再帰ではリフレクションを使用して、詳細なコピー操作を実行します。  
+  
+   
+  
+## Examples  
+ 次の例を示しています、<xref:System.Object.MemberwiseClone%2A>メソッドです。 定義する、`ShallowCopy`メソッドを呼び出す、<xref:System.Object.MemberwiseClone%2A>シャロー コピー操作を実行するメソッド、`Person`オブジェクト。 定義、`DeepCopy`のディープ コピー操作を実行するメソッド、`Person`オブジェクト。  
+  
+ [!code-csharp[System.Object.MemberwiseClone#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.memberwiseclone/cs/memberwiseclone1.cs#1)]
+ [!code-vb[System.Object.MemberwiseClone#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.memberwiseclone/vb/memberwiseclone1.vb#1)]  
+  
+ この例では、`Person.IdInfo`プロパティから返される、`IdInfo`オブジェクト。 例から出力としてときに、`Person`オブジェクトを呼び出すことによって複製、<xref:System.Object.MemberwiseClone%2A>メソッドは、複製された`Person`同じを共有する点を除いて、オブジェクトは、元のオブジェクトの独立したコピー`Person.IdInfo`オブジェクト参照。 その結果、変更、複製の`Person.IdInfo`プロパティには、元のオブジェクトが変更された`Person.IdInfo`プロパティです。 その一方で、詳細なコピー操作が行われる場合、複製された`Person`オブジェクトを含むその`Person.IdInfo`プロパティは、元のオブジェクトの影響を与えずに変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReferenceEquals">
+      <MemberSignature Language="C#" Value="public static bool ReferenceEquals (object objA, object objB);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ReferenceEquals(object objA, object objB) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.ReferenceEquals(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="objA" Type="System.Object" />
+        <Parameter Name="objB" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="objA">比較する最初のオブジェクト。</param>
+        <param name="objB">比較する 2 番目のオブジェクト。</param>
+        <summary>指定した複数の <see cref="T:System.Object" /> インスタンスが同一インスタンスかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="objA" />と同じインスタンスは、<paramref name="objB" />か、どちら**null**、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Object.Equals%2A>メソッドおよび等値演算子、<xref:System.Object.ReferenceEquals%2A>メソッドをオーバーライドすることはできません。 このためをテストする場合は、2 つのオブジェクトが等しいかどうかを参照していないの実装に関することを確認して、`Equals`メソッドが呼び出すことができます、<xref:System.Object.ReferenceEquals%2A>メソッドです。  
+  
+ ただし、戻り値の<xref:System.Object.ReferenceEquals%2A>メソッドは、これら 2 つのシナリオで異常なできるように表示される可能性があります。  
+  
+-   ときに、値の型を比較します。 場合`objA`と`objB`は、値の型に渡される前にボックス化されている、<xref:System.Object.ReferenceEquals%2A>メソッドです。 つまり、この両方`objA`と`objB`値の型の同じインスタンスを表す、<xref:System.Object.ReferenceEquals%2A>メソッドを返しますそれにもかかわらず`false`次の例に示すように、します。  
+  
+     [!code-csharp[System.Object.ReferenceEquals#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.referenceequals/cs/referenceequals4.cs#1)]
+     [!code-vb[System.Object.ReferenceEquals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.referenceequals/vb/referenceequals4.vb#1)]  
+  
+     値の型をボックス化については、次を参照してください。[ボックス化とボックス化解除](~/docs/csharp/programming-guide/types/boxing-and-unboxing.md)です。  
+  
+-   文字列を比較する場合。 場合`objA`と`objB`文字列、<xref:System.Object.ReferenceEquals%2A>メソッドを返します。`true`場合は、文字列がインターン プールに存在します。 値の等価性テストを行うことはできません。  次の例では、`s1`と`s2`は等しいためにが 1 つのインターン処理後の文字列の 2 つのインスタンス。 ただし、`s3`と`s4`が等しくない、まったく同じ文字列値がありますは、その文字列がインターンいないためです。  
+  
+     [!code-csharp[System.Object.ReferenceEquals#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.referenceequals/cs/referenceequalsa.cs#2)]
+     [!code-vb[System.Object.ReferenceEquals#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.referenceequals/vb/referenceequalsa.vb#2)]  
+  
+     文字列インターンの使用の詳細については、次を参照してください。<xref:System.String.IsInterned%2A?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Object.ReferenceEquals%2A>2 つのオブジェクトが同じインスタンスがかどうかを判断します。  
+  
+ [!code-cpp[ECMA-System.Object.ReferenceEquals#1](~/samples/snippets/cpp/VS_Snippets_CLR/ECMA-System.Object.ReferenceEquals/CPP/referenceequals.cpp#1)]
+ [!code-csharp[ECMA-System.Object.ReferenceEquals#1](~/samples/snippets/csharp/VS_Snippets_CLR/ECMA-System.Object.ReferenceEquals/CS/referenceequals.cs#1)]
+ [!code-vb[ECMA-System.Object.ReferenceEquals#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/ECMA-System.Object.ReferenceEquals/vb/referenceequals.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public virtual string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Object.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のオブジェクトを表す文字列を返します。</summary>
+        <returns>現在のオブジェクトを表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Object.ToString%2A?displayProperty=nameWithType>.NET Framework のメソッドを書式設定、メジャーです。 表示に適したされるため、オブジェクトの文字列形式に変換されます。 (.NET Framework のサポートを書式設定については、次を参照してください[型の書式設定](~/docs/standard/base-types/formatting-types.md)。)。既定の実装、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドがオブジェクトの型の完全修飾名を返します。  
+  
+> [!IMPORTANT]
+>  別の型のメンバーの一覧からリンクからこのページを表示が可能性があります。 これはその型をオーバーライドしないため<xref:System.Object.ToString%2A?displayProperty=nameWithType>です。 代わりの機能を継承、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 型は多くの場合、オーバーライド、<xref:System.Object.ToString%2A?displayProperty=nameWithType>特定の型の適切な文字列形式を指定するメソッド。 型でも頻繁にオーバー ロード、<xref:System.Object.ToString%2A?displayProperty=nameWithType>書式指定文字列またはカルチャの書式設定のサポートを提供するメソッド。  
+  
+ このセクションの内容:  
+  
+ [既定の Object.ToString() メソッド](#Default)   
+ [Object.ToString() メソッドのオーバーライド](#Overriding)   
+ [ToString メソッドをオーバー ロード](#Overloading)   
+ [Object.ToString メソッドを拡張します。](#Extending)   
+ [Windows ランタイムのメモ](#WinRT)  
+  
+<a name="Default"></a>   
+## <a name="the-default-objecttostring-method"></a>既定の Object.ToString() メソッド  
+ 既定の実装、<xref:System.Object.ToString%2A>メソッドの型の完全修飾名を返します、<xref:System.Object>次の例を示します。  
+  
+ [!code-cpp[System.Object.ToString#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.object.tostring/cpp/tostring1.cpp#1)]
+ [!code-csharp[System.Object.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostring1.cs#1)]
+ [!code-vb[System.Object.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostring1.vb#1)]  
+  
+ <xref:System.Object>すべての参照型の基本クラスは、.NET Framework でこの動作はオーバーライドしない参照型によって継承、<xref:System.Object.ToString%2A>メソッドです。 次に例を示します。 という名前のクラスが定義`Object1`すべての既定の実装を受け入れる<xref:System.Object>メンバー。 その<xref:System.Object.ToString%2A>メソッド、オブジェクトの完全修飾型名を返します。  
+  
+ [!code-cpp[System.Object.ToString#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.object.tostring/cpp/tostring2.cpp#2)]
+ [!code-csharp[System.Object.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostring2.cs#2)]
+ [!code-vb[System.Object.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostring2.vb#2)]  
+  
+<a name="Overriding"></a>   
+## <a name="overriding-the-objecttostring-method"></a>Object.ToString() メソッドのオーバーライド  
+ 型は通常、オーバーライド、<xref:System.Object.ToString%2A?displayProperty=nameWithType>オブジェクトのインスタンスを表す文字列を返すメソッド。 たとえば、基本などの型<xref:System.Char>、<xref:System.Int32>と<xref:System.String>提供<xref:System.Object.ToString%2A>オブジェクトによって表される値の文字列形式を返す実装します。 次の例は、クラスを定義`Object2`、オーバーライド、<xref:System.Object.ToString%2A>とその値の型名を返すメソッド。  
+  
+ [!code-cpp[System.Object.ToString#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.object.tostring/cpp/tostring3.cpp#3)]
+ [!code-csharp[System.Object.ToString#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostring3.cs#3)]
+ [!code-vb[System.Object.ToString#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostring3.vb#3)]  
+  
+ 次の表は、.NET Framework の型のカテゴリを一覧表示し、それらを上書きするかどうかどうかを示す、<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッドです。  
+  
+|型のカテゴリ|Object.ToString() をオーバーライドします。|動作|  
+|-------------------|-----------------------------------|--------------|  
+|クラス|適用なし|適用なし|  
+|構造体|はい (<xref:System.ValueType.ToString%2A?displayProperty=nameWithType>)|Object.ToString() と同じ|  
+|列挙|はい (<xref:System.Enum.ToString?displayProperty=nameWithType>)|メンバー名|  
+|インターフェイス|いいえ|適用なし|  
+|Delegate|いいえ|適用なし|  
+  
+ オーバーライドの詳細については、継承クラス」の注意を参照してください<xref:System.Object.ToString%2A>です。  
+  
+<a name="Overloading"></a>   
+## <a name="overloading-the-tostring-method"></a>ToString メソッドをオーバー ロード  
+ パラメーターなしのオーバーライドをするだけでなく<xref:System.Object.ToString?displayProperty=nameWithType>メソッド、さまざまな種類のオーバー ロード、`ToString`メソッドのパラメーターを受け取るバージョンを指定するメソッド。 ほとんどの場合、この変数の書式とカルチャの書式設定のサポートを提供する行われます。  
+  
+ 次の例のオーバー ロード、`ToString`のさまざまなフィールドの値を含む結果の文字列を返すメソッドを`Automobile`クラスです。 次の 4 つの書式指定文字列を定義します G、モデルの名前と年度; が返されます。D で、モデルの名前、year、および; のドアの数を返しますC で、モデルの名前、year、およびシリンダー; の数を返しますおよび A, と 4 つのフィールドの値の文字列が返されます。  
+  
+ [!code-csharp[System.Object.ToString#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostringoverload1.cs#4)]
+ [!code-vb[System.Object.ToString#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostringoverload1.vb#4)]  
+  
+ 次の例では、オーバー ロードされた<xref:System.Decimal.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>カルチャが通貨値の書式を表示します。  
+  
+ [!code-csharp[System.Object.ToString#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/tostringoverload2.cs#5)]
+ [!code-vb[System.Object.ToString#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/tostringoverload2.vb#5)]  
+  
+ 書式指定文字列とカルチャの書式設定の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。 書式指定文字列を数値でサポートされている、次を参照してください。[標準の数値書式指定文字列](~/docs/standard/base-types/standard-numeric-format-strings.md)と[カスタム数値書式指定文字列](~/docs/standard/base-types/custom-numeric-format-strings.md)です。 日付と時刻の値でサポートされている書式指定文字列を参照してください。[標準の日付と時刻の書式指定文字列](~/docs/standard/base-types/standard-date-and-time-format-strings.md)と[カスタムの日付と時刻の書式指定文字列](~/docs/standard/base-types/custom-date-and-time-format-strings.md)です。  
+  
+<a name="Extending"></a>   
+## <a name="extending-the-objecttostring-method"></a>Object.ToString メソッドを拡張します。  
+ 型が既定値を継承しているため<xref:System.Object.ToString%2A?displayProperty=nameWithType>メソッド、検索の動作が望ましくないしてを変更します。 これは特に、配列とコレクション クラスです。 期待したときに、`ToString`メソッド配列またはコレクションのメンバーの値を表示するクラスの代わりに、型の完全修飾型名として表示例を示します。  
+  
+ [!code-csharp[System.Object.ToString#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/array1.cs#6)]
+ [!code-vb[System.Object.ToString#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/array1.vb#6)]  
+  
+ 希望する結果の文字列を生成するためにいくつかのオプションがあります。  
+  
+-   型が、配列、コレクション オブジェクト、または実装するオブジェクトの場合、<xref:System.Collections.IEnumerable>または<xref:System.Collections.Generic.IEnumerable%601>インターフェイスを使用してその要素を列挙することができます、 `foreach` (C#) ステートメント、または`For Each...Next`Visual Basic で作成します。  
+  
+-   クラスがない場合`sealed`(C# の場合) または`NotInheritable`の基本クラスから継承するラッパー クラスを開発する (Visual Basic の場合) の<xref:System.Object.ToString%2A?displayProperty=nameWithType>をカスタマイズする方法です。 少なくとも次行う必要があります。  
+  
+    1.  必要なコンス トラクターを実装します。 派生クラスでは、その基本クラスのコンス トラクターは継承されません。  
+  
+    2.  上書き、<xref:System.Object.ToString%2A?displayProperty=nameWithType>を希望する結果の文字列を返すメソッド。  
+  
+     次の例のラッパー クラスを定義する、<xref:System.Collections.Generic.List%601>クラスです。 も優先、<xref:System.Object.ToString%2A?displayProperty=nameWithType>完全修飾型名ではなく、コレクションの各メソッドの値を表示するメソッド。  
+  
+     [!code-csharp[System.Object.ToString#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/customize1.cs#7)]
+     [!code-vb[System.Object.ToString#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/customize1.vb#7)]  
+  
+-   開発、[拡張メソッド](~/docs/standard/design-guidelines/extension-methods.md)かされる結果の文字列を返します。 既定値をオーバーライドすることはできません注<xref:System.Object.ToString%2A?displayProperty=nameWithType>この方法でメソッド (拡張機能クラス (c#) または (Visual Basic) のモジュールがという名前のパラメーターのないメソッドを持つことはできません、`ToString`元の型の代わりに呼び出される`ToString`メソッドです。 パラメーターなしの他のいくつかの名前を指定する必要があります`ToString`置換します。  
+  
+     次の例を拡張する 2 つのメソッドを定義する、<xref:System.Collections.Generic.List%601>クラス: パラメーターのない`ToString2`メソッド、および`ToString`メソッドを<xref:System.String>書式指定文字列を表すパラメーター。  
+  
+     [!code-csharp[System.Object.ToString#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.object.tostring/cs/customize2.cs#8)]
+     [!code-vb[System.Object.ToString#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.object.tostring/vb/customize2.vb#8)]  
+  
+<a name="WinRT"></a>   
+## <a name="notes-for-the-includewrtincludeswrt-mdmd"></a>は、[!INCLUDE[wrt](~/includes/wrt-md.md)]  
+ 呼び出すと、<xref:System.Object.ToString%2A>内のクラスのメソッド、 [!INCLUDE[wrt](~/includes/wrt-md.md)]、しないをオーバーライドするクラスの既定の動作を提供<xref:System.Object.ToString%2A>です。 これは、.NET Framework 提供するサポートの一部、 [!INCLUDE[wrt](~/includes/wrt-md.md)] (を参照してください[フレームワークをサポートして Windows ストア アプリ用 .NET と Windows ランタイム](~/docs/standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md))。 内のクラス、[!INCLUDE[wrt](~/includes/wrt-md.md)]継承しない<xref:System.Object>、常に実装していないと、<xref:System.Object.ToString%2A>です。 ただし、常に現れるが<xref:System.Object.ToString%2A>、<xref:System.Object.Equals%28System.Object%29>と<xref:System.Object.GetHashCode%2A>メソッド、c# または Visual Basic コードで使用すると、.NET Framework では、これらのメソッドの既定の動作です。  
+  
+ 以降で、 [!INCLUDE[net_v451](~/includes/net-v451-md.md)]、共通言語ランタイムを使用して[IStringable.ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)上、[!INCLUDE[wrt](~/includes/wrt-md.md)]の既定の実装に戻る前にオブジェクト<xref:System.Object.ToString%2A?displayProperty=nameWithType>です。  
+  
+> [!NOTE]
+>  [!INCLUDE[wrt](~/includes/wrt-md.md)]c# または Visual Basic で記述されたクラスをオーバーライドして、<xref:System.Object.ToString%2A>メソッドです。  
+  
+### <a name="the-includewrtincludeswrt-mdmd-and-the-istringable-interface"></a>[!INCLUDE[wrt](~/includes/wrt-md.md)]と IStringable インターフェイス  
+ 以降で[!INCLUDE[win81](~/includes/win81-md.md)]、[!INCLUDE[wrt](~/includes/wrt-md.md)]が含まれています、 [IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)が 1 つのメソッドをインターフェイス[IStringable.ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)で提供される比較可能な基本の書式設定のサポートを提供<xref:System.Object.ToString%2A?displayProperty=nameWithType>です。 あいまいさを回避するのには実装しないでください[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)マネージ型にします。  
+  
+ ネイティブ コードまたは JavaScript または C++ などの言語で記述されたコードでのマネージ オブジェクトが呼び出されるタイミング + CX、表示される実装[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)です。 共通言語ランタイムはからの呼び出しに自動的にルーティング[IStringable.ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)に<xref:System.Object.ToString%2A?displayProperty=nameWithType>イベント[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)がマネージ オブジェクトでは実装されていません。  
+  
+> [!WARNING]
+>  共通言語ランタイムの自動実装[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)内の型のすべての管理[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]アプリでは、ことをお勧めするを指定しない独自[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)実装します。 実装する[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)を呼び出すときに予期しない動作で発生する可能性があります`ToString`から、 [!INCLUDE[wrt](~/includes/wrt-md.md)]C + +/CX、または JavaScript。  
+  
+ 実装することを選択する場合[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)でエクスポートしたパブリック マネージ型の[!INCLUDE[wrt](~/includes/wrt-md.md)]コンポーネント、次の制限が適用されます。  
+  
+-   定義することができます、 [IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)など、「クラスが実装する」関係でしかインターフェイス  
+  
+    ```  
+    public class NewClass : IStringable  
+    ```  
+  
+     C# では、上記のようになります。  
+  
+    ```  
+    Public Class NewClass : Implements IStringable  
+    ```  
+  
+     Visual Basic では、上記のようになります。  
+  
+-   実装することはできません[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)インターフェイスでします。  
+  
+-   型のパラメーターを宣言することはできません[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)です。  
+  
+-   [IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)メソッド、プロパティ、またはフィールドの戻り値の型にすることはできません。  
+  
+-   非表示にすることはできません、 [IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)実装を次のようなメソッド定義を使用して、基本クラスから。  
+  
+    ```  
+  
+    public class NewClass : IStringable  
+    {  
+       public new string ToString()  
+       {  
+          return "New ToString in NewClass";  
+       }  
+    }  
+  
+    ```  
+  
+     代わりに、 [IStringable.ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)実装は、基本クラスの実装を常にオーバーライドする必要があります。 `ToString` の実装を隠すことができるのは、厳密に型指定されたクラス インスタンスで呼び出す場合だけです。  
+  
+ なお、さまざまな条件を実装するマネージ型をネイティブ コードから呼び出す[IStringable](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx)を表示または非その[ToString](http://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx)実装は、予期しない動作を引き起こすことができます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする必要があります、独自の型を実装するときに、<see cref="M:System.Object.ToString" />の種類に対して意味のある値を返すメソッド。 も書式指定より詳細に制御を必要とするクラスを派生<see cref="M:System.Object.ToString" />提供実装できる、<see cref="T:System.IFormattable" />インターフェイスです。 その<see cref="M:System.IFormattable.ToString(System.String,System.IFormatProvider)" />メソッドを使用する書式を制御する書式指定文字列を定義し、使用すると、<see cref="T:System.IFormatProvider" />カルチャに固有の書式設定するために提供できるオブジェクト。  
+  
+ 上書きが、<see cref="M:System.Object.ToString" />メソッドが次のガイドラインに従う必要があります。  
+  
+-   返される文字列は、わかりやすい、人間が判読できるにする必要があります。  
+  
+-   返される文字列は、オブジェクトのインスタンスの値を一意に識別する必要があります。  
+  
+-   返される文字列は、できるように、デバッガーによって表示に適していますできるだけ短くする必要があります。  
+  
+-   <see cref="M:System.Object.ToString" />オーバーライドを返さないでください<see cref="F:System.String.Empty" />または null 文字列です。  
+  
+-   <see cref="M:System.Object.ToString" />オーバーライドが例外をスローする必要があります。  
+  
+-   インスタンスの文字列形式をカルチャに依存、いくつかの方法でフォーマットできる場合は、実装、<see cref="T:System.IFormattable" />インターフェイスです。  
+  
+-   返される文字列には、機密情報が含まれている場合は、適切なアクセス許可をまず要求する必要があります。 要求が成功した場合、機密情報を返すことができます。それ以外の場合、機密情報を除外する文字列を返す必要があります。  
+  
+-   <see cref="M:System.Object.ToString" />上書きには、デバッグで複雑さを回避する副作用はありません。 呼び出しなど、<see cref="M:System.Object.ToString" />メソッドはインスタンス フィールドの値を変更しないでください。  
+  
+-   種類を解析メソッドを実装する場合 (または<see langword="Parse" />または<see langword="TryParse" />メソッド、コンス トラクター、または文字列から型のインスタンスをインスタンス化するいくつか他の静的メソッド)、によって返される文字列をようにする必要があります、<see cref="M:System.Object.ToString" />メソッドを指定できますオブジェクトのインスタンスに変換されます。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,160 @@
+<Type Name="LinqDataSourceDeleteEventArgs" FullName="System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs">
+  <TypeSignature Language="C#" Value="public class LinqDataSourceDeleteEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinqDataSourceDeleteEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.LinqDataSource.Deleting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs>オブジェクトは、のいずれかのハンドラーに渡される、<xref:System.Web.UI.WebControls.LinqDataSource.Deleting>イベント。 <xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject%2A>プロパティが削除されるデータを格納します。  
+  
+ データ ソースを表すオブジェクト、データを削除する前に検証例外がスローした場合、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.Exception%2A>プロパティにはインスタンスが含まれています、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException>クラスです。 すべての検証例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceValidationException.InnerExceptions%2A>プロパティです。 検証例外がスローされない場合、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.Exception%2A>プロパティが含まれます`null`です。 検証の例外を処理して再スローされる例外を作成したくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.ExceptionHandled%2A>プロパティを`true`です。  
+  
+ イベント ハンドラーを作成する、<xref:System.Web.UI.WebControls.LinqDataSource.Deleting>イベント データ クラスからの検証エラーを検証する、または削除操作をキャンセルする、データを検証します。 設定して、削除操作をキャンセルする、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.LinqDataSource>いるものを除き、Web ページで状態管理ストアが、元に値をデータ ソースから<xref:System.Data.Linq.Mapping.ColumnAttribute>属性マークが付いている`UpdateCheck.Never`です。 LINQ to SQL は、自動的にデータを削除する前に、データの整合性をチェックします。 この機能を使用するには、ビュー ステートに格納されている元の値をデータ ソースの現在の値を比較します。 ハンドラーを作成することで、追加のデータ検証を行うことができます、<xref:System.Web.UI.WebControls.LinqDataSource.Deleting>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティに基づいて削除操作をキャンセルする方法を示しています、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject%2A>プロパティと、Web ページからの値。 例では、ユーザーを選択する必要があります、<xref:System.Web.UI.WebControls.CheckBox>と製品を削除することを確認する制御レコードの`OnSale`プロパティに設定されている`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Deleting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Deleting/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Deleting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Deleting/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceDeleteEventArgs (object originalObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object originalObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="originalObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="originalObject">指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />を削除するデータを格納するプロパティです。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinqDataSourceDeleteEventArgs (System.Web.UI.WebControls.LinqDataSourceValidationException exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.LinqDataSourceValidationException exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.#ctor(System.Web.UI.WebControls.LinqDataSourceValidationException)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="exception" Type="System.Web.UI.WebControls.LinqDataSourceValidationException" />
+      </Parameters>
+      <Docs>
+        <param name="exception">削除するデータを検証するときに発生した例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs" />指定された例外を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.LinqDataSourceValidationException Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.LinqDataSourceValidationException Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.LinqDataSourceValidationException</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除操作の前に、データの検証中にスローされた例外を取得します。</summary>
+        <value>エラーが発生しました; 場合は、例外それ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 削除操作を実行する前に検証例外がスローされた場合、例外は、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.Exception%2A>プロパティです。 イベント ハンドラーで、<xref:System.Web.UI.WebControls.LinqDataSource.Deleting>イベントでの例外を取得することができます、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.Exception%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceptionHandled">
+      <MemberSignature Language="C#" Value="public bool ExceptionHandled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExceptionHandled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.ExceptionHandled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはをことがスローされない再度、例外が処理されたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーを作成することができます、<xref:System.Web.UI.WebControls.LinqDataSource.Deleting>検証スローされた例外を削除操作の前に検査するイベントです。 例外の処理を再度スローすることは望ましくない場合は、設定、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.ExceptionHandled%2A>プロパティを`true`です。 設定しない場合、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.ExceptionHandled%2A>プロパティを`true`例外は、呼び出し履歴内の次のイベント ハンドラーに反映されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OriginalObject">
+      <MemberSignature Language="C#" Value="public object OriginalObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object OriginalObject" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除するデータを表すオブジェクトを取得します。</summary>
+        <value>指定された型のオブジェクト、<see cref="P:System.Web.UI.WebControls.LinqDataSource.TableName" />を削除するデータを格納するプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject%2A>プロパティが削除される前に、データと対話します。 データを検証するかを設定して、イベントを取り消すことができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 内のオブジェクトの値を変更することによってどのレコードが削除されるを変更することができます、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、プロパティに基づいて削除操作をキャンセルする方法を示しています、<xref:System.Web.UI.WebControls.LinqDataSourceDeleteEventArgs.OriginalObject%2A>プロパティと、Web ページからの値。 例では、ユーザーを選択する必要があります、<xref:System.Web.UI.WebControls.CheckBox>と製品を削除することを確認する制御レコードの`OnSale`プロパティに設定されている`true`です。  
+  
+ [!code-csharp[System.Web.UI.WebControls.LinqDataSource.Deleting#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Deleting/cs/Default.aspx.cs#1)]
+ [!code-vb[System.Web.UI.WebControls.LinqDataSource.Deleting#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.LinqDataSource.Deleting/vb/Default.aspx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

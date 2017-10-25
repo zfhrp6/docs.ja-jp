@@ -1,0 +1,646 @@
+<Type Name="CustomAttributeData" FullName="System.Reflection.CustomAttributeData">
+  <TypeSignature Language="C#" Value="public class CustomAttributeData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CustomAttributeData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.CustomAttributeData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Reflection</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>リフレクションのみのコンテキストに読み込まれているアセンブリ、モジュール、型、メンバー、およびパラメーターのカスタム属性データへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 常とそのプロパティを調べてなどのメソッドを使用してそれらのインスタンスを作成することでカスタム属性を確認することはできませんので、リフレクションのみのコンテキストで検査されているコードを実行できません<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>、<xref:System.Reflection.MemberInfo.GetCustomAttributes%2A?displayProperty=nameWithType>のようにします。 属性型自体のコードがリフレクションのみのコンテキストに読み込まれている場合は実行できません。  
+  
+ <xref:System.Reflection.CustomAttributeData>クラスにより、リフレクションのみのコンテキストで調査できるようにカスタム属性の属性の抽象化を提供します。 このクラスのメンバーを位置指定引数を取得するために使用し、名前付き属性の引数。 使用して、<xref:System.Reflection.CustomAttributeData.ConstructorArguments%2A>の一覧を取得するプロパティ<xref:System.Reflection.CustomAttributeTypedArgument>構造体を使用して、位置指定引数を表す、<xref:System.Reflection.CustomAttributeData.NamedArguments%2A>の一覧を取得するプロパティ<xref:System.Reflection.CustomAttributeNamedArgument>名前付き引数を表す構造体。  
+  
+> [!NOTE]
+>  <xref:System.Reflection.CustomAttributeNamedArgument>構造のみを取得し、引数の値を設定するために使用する属性のプロパティに関する情報を提供します。 型と引数の値を取得するを使用して、<xref:System.Reflection.CustomAttributeNamedArgument.TypedValue%2A?displayProperty=nameWithType>を取得するプロパティ、<xref:System.Reflection.CustomAttributeTypedArgument>構造体。  
+  
+ ある場合、<xref:System.Reflection.CustomAttributeTypedArgument>名前付きまたは位置指定、かどうか、引数の構造体を使用して、<xref:System.Reflection.CustomAttributeTypedArgument.ArgumentType%2A?displayProperty=nameWithType>型を取得するプロパティと<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A?displayProperty=nameWithType>プロパティ値を取得します。  
+  
+> [!NOTE]
+>  配列引数に対して、<xref:System.Reflection.CustomAttributeTypedArgument.Value%2A?displayProperty=nameWithType>プロパティは、ジェネリック型を返します<xref:System.Collections.ObjectModel.ReadOnlyCollection%601>の<xref:System.Reflection.CustomAttributeTypedArgument>オブジェクト。 各<xref:System.Reflection.CustomAttributeTypedArgument>コレクション内のオブジェクトが配列の対応する要素を表します。  
+  
+ <xref:System.Reflection.CustomAttributeData>実行コンテキストにもリフレクションのみのコンテキストで使用できます。 たとえば、カスタム属性のコードを含むアセンブリが読み込まれないようにすることができます。 使用して、<xref:System.Reflection.CustomAttributeData>クラスとは異なるなどのメソッドを使用して<xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>:  
+  
+-   プロパティとメソッドの<xref:System.Reflection.CustomAttributeData>のみを提供する指定された値を持つ属性インスタンスの場合、コンス トラクターのセマンティクスではありません。 たとえば、属性の文字列引数可能性内部的には、その他の表現に変換があり; 正規の形式で返されるまたは、実際の属性のコードを実行すると、プロパティに副作用がある可能性があります。  
+  
+-   プロパティとメソッドの<xref:System.Reflection.CustomAttributeData>基底クラスから継承されたカスタム属性を取得することはできません。  
+  
+ インスタンスを作成する、<xref:System.Reflection.CustomAttributeData>クラスを使用して、 `static` (`Shared` Visual Basic で)<xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>ファクトリ メソッド。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリは自体をリフレクションのみのコンテキストに読み込まれとが含まれているメンバーと型に適用されたカスタム属性に関する情報が表示されます。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CustomAttributeData ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Reflection.CustomAttributeData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構築中にこのコンス トラクターが派生クラスによって呼び出された<xref:System.Reflection.CustomAttributeData>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeType">
+      <MemberSignature Language="C#" Value="public Type AttributeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AttributeType" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeData.AttributeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>属性の型を取得します。</summary>
+        <value>属性の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Constructor">
+      <MemberSignature Language="C#" Value="public virtual System.Reflection.ConstructorInfo Constructor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Reflection.ConstructorInfo Constructor" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeData.Constructor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ConstructorInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム属性を初期化したはずのコンストラクターを表す <see cref="T:System.Reflection.ConstructorInfo" /> オブジェクトを取得します。</summary>
+        <value><see cref="T:System.Reflection.CustomAttributeData" /> クラスの現在のインスタンスで表されるカスタム属性を初期化したであろうコンストラクターを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが現在によって表される属性のインスタンスを初期化するを特定のコンス トラクターのみを返します属性の種類に複数のコンス トラクターがある場合は、<xref:System.Reflection.CustomAttributeData>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.Constructor%2A>でプロパティが使用される、`ShowAttributeData`をカスタム属性データを表示するメソッド。 このコード例では、<xref:System.Reflection.ConstructorInfo>これによって返されるプロパティの使用にプロパティには、属性を初期化するコンス トラクターを返すことを示す、コンス トラクターを表すテキスト文字列を表示します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructorArguments">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeTypedArgument&gt; ConstructorArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Reflection.CustomAttributeTypedArgument&gt; ConstructorArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeData.ConstructorArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeTypedArgument&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表される属性のインスタンスに対して指定された位置指定引数の一覧を取得、<see cref="T:System.Reflection.CustomAttributeData" />オブジェクト。</summary>
+        <value>カスタム属性のインスタンスに対して指定された位置指定引数を表す構造体のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カスタム属性のコードを実行せず、カスタム属性のインスタンスに対して指定された位置指定引数を取得します。 このため、リフレクションのみのコンテキストで使用できます。  
+  
+ 使用して、<xref:System.Reflection.CustomAttributeData.NamedArguments%2A>属性のインスタンスに対して指定された名前付き引数を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.ConstructorArguments%2A>でプロパティが使用される、`ShowAttributeData`をカスタム属性データを表示するメソッド。 このコード例はこのプロパティを使用して属性を初期化するコンス トラクターに渡された引数の一覧を表示します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">対象のインスタンスと比較する対象のオブジェクト、または <see langword="null" />。</param>
+        <summary>このインスタンスが、指定されたオブジェクトと等価であるかどうかを示す値を返します。</summary>
+        <returns>
+          <paramref name="obj" /> が現在のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributes (System.Reflection.Assembly target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributes(class System.Reflection.Assembly target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.GetCustomAttributes(System.Reflection.Assembly)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Reflection.Assembly" />
+      </Parameters>
+      <Docs>
+        <param name="target">取得するカスタム属性データが含まれるアセンブリ。</param>
+        <summary>ターゲット アセンブリに適用されている属性に関するデータを表す <see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトのリストを返します。</summary>
+        <returns>対象のアセンブリに適用されている属性に関するデータを表すオブジェクトの一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを提供する代わりに、<xref:System.Reflection.Assembly.GetCustomAttributes%2A>リフレクションのみのコンテキストで常に使用できるメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>でメソッドが使用される`Main()`をアセンブリに適用されるカスタム属性を取得します。 メソッドの戻り値が渡される、`ShowAttributeData`メソッドです。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributes (System.Reflection.MemberInfo target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributes(class System.Reflection.MemberInfo target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.GetCustomAttributes(System.Reflection.MemberInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Reflection.MemberInfo" />
+      </Parameters>
+      <Docs>
+        <param name="target">取得する属性データが含まれるメンバー。</param>
+        <summary>ターゲット メンバーに適用されている属性に関するデータを表す <see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトのリストを返します。</summary>
+        <returns>対象のメンバーに適用されている属性に関するデータを表すオブジェクトの一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードでの型や入れ子にされた型は、型のメンバー、カスタム属性データが取得、<xref:System.Type>クラスと、クラス、<xref:System.Reflection>型からメンバーを表す名前空間<xref:System.Reflection.MemberInfo>です。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>でメソッドが使用される`Main()`型にし、テスト メソッドに適用されたカスタム属性を取得する (<xref:System.Type>から派生した<xref:System.Reflection.MemberInfo>)。 戻り値<xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>に渡される、`ShowAttributeData`メソッドです。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="Overload:System.Reflection.MemberInfo.GetCustomAttributes" />
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributes (System.Reflection.Module target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributes(class System.Reflection.Module target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.GetCustomAttributes(System.Reflection.Module)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Reflection.Module" />
+      </Parameters>
+      <Docs>
+        <param name="target">カスタム属性データ モジュールを取得します。</param>
+        <summary>ターゲット モジュールに適用されている属性に関するデータを表す <see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトのリストを戻します。</summary>
+        <returns>対象のモジュールに適用されている属性に関するデータを表すオブジェクトの一覧。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCustomAttributes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt; GetCustomAttributes (System.Reflection.ParameterInfo target);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Reflection.CustomAttributeData&gt; GetCustomAttributes(class System.Reflection.ParameterInfo target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.GetCustomAttributes(System.Reflection.ParameterInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeData&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Reflection.ParameterInfo" />
+      </Parameters>
+      <Docs>
+        <param name="target">取得する属性データが含まれるパラメーター。</param>
+        <summary>ターゲット パラメーターに適用されている属性に関するデータを表す <see cref="T:System.Reflection.CustomAttributeData" /> オブジェクトのリストを戻します。</summary>
+        <returns>対象のパラメーターに適用されている属性に関するデータを表すオブジェクトの一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを提供する代わりに、<xref:System.Reflection.ParameterInfo.GetCustomAttributes%2A>リフレクションのみのコンテキストで常に使用できるメソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>でメソッドが使用される`Main()`テスト メソッドのパラメーターに適用されたカスタム属性を取得します。 戻り値<xref:System.Reflection.CustomAttributeData.GetCustomAttributes%2A>に渡される、`ShowAttributeData`メソッドです。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Object" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NamedArguments">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeNamedArgument&gt; NamedArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Reflection.CustomAttributeNamedArgument&gt; NamedArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Reflection.CustomAttributeData.NamedArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Reflection</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Reflection.CustomAttributeNamedArgument&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表される属性のインスタンスに対して指定された名前付き引数の一覧を取得、<see cref="T:System.Reflection.CustomAttributeData" />オブジェクト。</summary>
+        <value>カスタム属性のインスタンスに対して指定された名前付き引数を表す構造体のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、カスタム属性のコードを実行せず、カスタム属性のインスタンスに対して指定された名前付き引数を取得します。 このため、リフレクションのみのコンテキストで使用できます。  
+  
+ 返される一覧には、属性のインスタンスに対して指定された名前付き引数のみが含まれています。  
+  
+ 使用して、<xref:System.Reflection.CustomAttributeData.ConstructorArguments%2A>属性のインスタンスの指定された位置指定引数を取得します。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ <xref:System.Reflection.CustomAttributeData.NamedArguments%2A>でプロパティが使用される、`ShowAttributeData`をカスタム属性データを表示するメソッド。 このコード例はこのプロパティを使用して属性に指定された名前付き引数の一覧を表示します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Reflection.CustomAttributeData.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>カスタム属性の文字列表現を返します。</summary>
+        <returns>カスタム属性を表す文字列値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列値には、属性の型、属性のパラメーター、および名前付きパラメーターが含まれています。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 4 つのコンス トラクターと 4 つのプロパティを持つカスタム属性を定義します。 2 つのプロパティは読み取り専用され、コンス トラクターの位置指定パラメーターを使用して設定されます。 その他の 2 つのプロパティは読み取り/書き込み、および名前付き引数を使用して設定できます。 1 つの位置指定プロパティは、文字列の配列および 1 つの名前付きプロパティは、整数の配列。  
+  
+ この属性は、アセンブリ、アセンブリで宣言された型、型のメソッド、メソッドのパラメーターに適用されます。 別のコンス トラクターは、このような場合に使用されます。 実行すると、アセンブリはリフレクション専用コンテキストに読み込みます自体し、カスタム属性を表示します。  
+  
+ 型に適用される属性では、位置指定および名前付きの両方の引数を指定して、配列のプロパティを示します。  
+  
+ この例では、<xref:System.Reflection.CustomAttributeData.ToString%2A>でメソッドが使用される、`ShowAttributeData`メソッドを持つデータが表示されている属性を識別します。  
+  
+ [!code-cpp[CustomAttributeData#1](~/samples/snippets/cpp/VS_Snippets_CLR/CustomAttributeData/CPP/source.cpp#1)]
+ [!code-csharp[CustomAttributeData#1](~/samples/snippets/csharp/VS_Snippets_CLR/CustomAttributeData/CS/source.cs#1)]
+ [!code-vb[CustomAttributeData#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CustomAttributeData/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,621 @@
+<Type Name="CounterSample" FullName="System.Diagnostics.CounterSample">
+  <TypeSignature Language="C#" Value="public struct CounterSample" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit CounterSample extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.CounterSample" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>パフォーマンス カウンターの生データを保持する構造体を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例での使用、<xref:System.Diagnostics.CounterSample>パフォーマンス カウンターのデータを表示するクラス。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterSample (long rawValue, long baseValue, long counterFrequency, long systemFrequency, long timeStamp, long timeStamp100nSec, System.Diagnostics.PerformanceCounterType counterType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 rawValue, int64 baseValue, int64 counterFrequency, int64 systemFrequency, int64 timeStamp, int64 timeStamp100nSec, valuetype System.Diagnostics.PerformanceCounterType counterType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.#ctor(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Diagnostics.PerformanceCounterType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawValue" Type="System.Int64" />
+        <Parameter Name="baseValue" Type="System.Int64" />
+        <Parameter Name="counterFrequency" Type="System.Int64" />
+        <Parameter Name="systemFrequency" Type="System.Int64" />
+        <Parameter Name="timeStamp" Type="System.Int64" />
+        <Parameter Name="timeStamp100nSec" Type="System.Int64" />
+        <Parameter Name="counterType" Type="System.Diagnostics.PerformanceCounterType" />
+      </Parameters>
+      <Docs>
+        <param name="rawValue">パフォーマンス カウンターのサンプルに関連付けられている数値。</param>
+        <param name="baseValue">省略可能な基本の生の値、サンプルは、複数のカウンターに基づいている場合にのみを使用する、カウンターです。</param>
+        <param name="counterFrequency">カウンターが読み取り頻度。</param>
+        <param name="systemFrequency">カウンターを読み取るシステム使用する頻度です。</param>
+        <param name="timeStamp">生のタイムスタンプです。</param>
+        <param name="timeStamp100nSec">信頼性の高い、未加工のタイムスタンプです。</param>
+        <param name="counterType">A<see cref="T:System.Diagnostics.PerformanceCounterType" />をこのサンプルは、スナップショット、対象のカウンターの種類を示すオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterSample" />構造とセット、<see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" />プロパティを 0 (ゼロ) にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス カウンターの初期のサンプルを実行するのにには、このコンス トラクターを使用します。 システム モニターのこれらのパラメーターの値が自動的に入力を呼び出すとき、<xref:System.Diagnostics.PerformanceCounter.NextSample%2A>を初めてメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CounterSample (long rawValue, long baseValue, long counterFrequency, long systemFrequency, long timeStamp, long timeStamp100nSec, System.Diagnostics.PerformanceCounterType counterType, long counterTimeStamp);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int64 rawValue, int64 baseValue, int64 counterFrequency, int64 systemFrequency, int64 timeStamp, int64 timeStamp100nSec, valuetype System.Diagnostics.PerformanceCounterType counterType, int64 counterTimeStamp) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.#ctor(System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Int64,System.Diagnostics.PerformanceCounterType,System.Int64)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="rawValue" Type="System.Int64" />
+        <Parameter Name="baseValue" Type="System.Int64" />
+        <Parameter Name="counterFrequency" Type="System.Int64" />
+        <Parameter Name="systemFrequency" Type="System.Int64" />
+        <Parameter Name="timeStamp" Type="System.Int64" />
+        <Parameter Name="timeStamp100nSec" Type="System.Int64" />
+        <Parameter Name="counterType" Type="System.Diagnostics.PerformanceCounterType" />
+        <Parameter Name="counterTimeStamp" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="rawValue">パフォーマンス カウンターのサンプルに関連付けられている数値。</param>
+        <param name="baseValue">省略可能な基本の生の値、サンプルは、複数のカウンターに基づいている場合にのみを使用する、カウンターです。</param>
+        <param name="counterFrequency">カウンターが読み取り頻度。</param>
+        <param name="systemFrequency">カウンターを読み取るシステム使用する頻度です。</param>
+        <param name="timeStamp">生のタイムスタンプです。</param>
+        <param name="timeStamp100nSec">信頼性の高い、未加工のタイムスタンプです。</param>
+        <param name="counterType">A<see cref="T:System.Diagnostics.PerformanceCounterType" />をこのサンプルは、スナップショット、対象のカウンターの種類を示すオブジェクト。</param>
+        <param name="counterTimeStamp">サンプルが作成された時刻。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Diagnostics.CounterSample" />構造とセット、<see cref="P:System.Diagnostics.CounterSample.CounterTimeStamp" />プロパティには、渡された値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パフォーマンス カウンターの初期のサンプルを実行した後、サンプルを実行するのにには、このコンス トラクターを使用します。 システム モニターのこれらのパラメーターの値が自動的に入力を呼び出すとき、<xref:System.Diagnostics.PerformanceCounter.NextSample%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、新しい初期化<xref:System.Diagnostics.CounterSample>構造体の値を渡して、 `rawValue`、 `baseValue`、 `counterFrequency`、 `systemFrequency`、 `timeStamp`、 `timeStamp100nSec`、 `counterType`、および`counterTimeStamp`パラメーター。 作成した後、<xref:System.Diagnostics.CounterSample>構造体、例では、表示のプロパティの値、<xref:System.Diagnostics.CounterSample>コンソール ウィンドウにします。  
+  
+ [!code-cpp[CounterSample_Ctor_2#1](~/samples/snippets/cpp/VS_Snippets_CLR/CounterSample_Ctor_2/CPP/countersample_ctor_2.cpp#1)]
+ [!code-csharp[CounterSample_Ctor_2#1](~/samples/snippets/csharp/VS_Snippets_CLR/CounterSample_Ctor_2/CS/countersample_ctor_2.cs#1)]
+ [!code-vb[CounterSample_Ctor_2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterSample_Ctor_2/VB/countersample_ctor_2.vb#1)]  
+[!code-cpp[CounterSample_Ctor_2#2](~/samples/snippets/cpp/VS_Snippets_CLR/CounterSample_Ctor_2/CPP/countersample_ctor_2.cpp#2)]
+[!code-csharp[CounterSample_Ctor_2#2](~/samples/snippets/csharp/VS_Snippets_CLR/CounterSample_Ctor_2/CS/countersample_ctor_2.cs#2)]
+[!code-vb[CounterSample_Ctor_2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/CounterSample_Ctor_2/VB/countersample_ctor_2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseValue">
+      <MemberSignature Language="C#" Value="public long BaseValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BaseValue" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.BaseValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンターの省略可能な基本生の値を取得します。</summary>
+        <value>生のベース値、サンプルは、複数のカウンターに基づいている場合にのみ使用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.BaseValue%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Calculate">
+      <MemberSignature Language="C#" Value="public static float Calculate (System.Diagnostics.CounterSample counterSample);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 Calculate(valuetype System.Diagnostics.CounterSample counterSample) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Calculate(System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="counterSample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="counterSample"><see cref="T:System.Diagnostics.CounterSample" />パフォーマンス データを計算するための基本ポイントとして使用する構造体。</param>
+        <summary>1 つのサンプルのポイントを使用して、カウンターのパフォーマンス データを計算します。 このメソッドは通常、計算されないパフォーマンス カウンターの種類を使用します。</summary>
+        <returns>計算されるパフォーマンス値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Calculate">
+      <MemberSignature Language="C#" Value="public static float Calculate (System.Diagnostics.CounterSample counterSample, System.Diagnostics.CounterSample nextCounterSample);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 Calculate(valuetype System.Diagnostics.CounterSample counterSample, valuetype System.Diagnostics.CounterSample nextCounterSample) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Calculate(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="counterSample" Type="System.Diagnostics.CounterSample" />
+        <Parameter Name="nextCounterSample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="counterSample"><see cref="T:System.Diagnostics.CounterSample" />パフォーマンス データを計算するための基本ポイントとして使用する構造体。</param>
+        <param name="nextCounterSample"><see cref="T:System.Diagnostics.CounterSample" />パフォーマンス データを計算するための終了点として使用する構造体。</param>
+        <summary>サンプルの 2 点を使用して、カウンターのパフォーマンス データを計算します。 このメソッドは通常、平均などの計算のパフォーマンス カウンターの種類を使用します。</summary>
+        <returns>計算されるパフォーマンス値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterFrequency">
+      <MemberSignature Language="C#" Value="public long CounterFrequency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CounterFrequency" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.CounterFrequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンターの生の頻度を取得します。</summary>
+        <value>カウンターが読み取り頻度。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.CounterFrequency%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterTimeStamp">
+      <MemberSignature Language="C#" Value="public long CounterTimeStamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 CounterTimeStamp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.CounterTimeStamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンターのタイムスタンプを取得します。</summary>
+        <value>サンプルが作成された時刻。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.CounterTimeStamp%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterType">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.PerformanceCounterType CounterType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Diagnostics.PerformanceCounterType CounterType" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.CounterType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パフォーマンス カウンターの種類を取得します。</summary>
+        <value>A<see cref="T:System.Diagnostics.PerformanceCounterType" />をこのサンプルは、スナップショット、対象のカウンターの種類を示すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static System.Diagnostics.CounterSample Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static valuetype System.Diagnostics.CounterSample Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.CounterSample.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.CounterSample</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の空、初期化されていないパフォーマンス カウンターのサンプルを定義<see langword="NumberOfItems32" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Diagnostics.CounterSample other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Diagnostics.CounterSample other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sample" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="other">To be added.</param>
+        <summary>示すかどうか、指定した<see cref="T:System.Diagnostics.CounterSample" />構造体は、現在と等しい<see cref="T:System.Diagnostics.CounterSample" />構造体。</summary>
+        <returns>
+          <paramref name="other" /> が現在のインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Diagnostics.CounterSample>構造が同じプロパティの値がある場合は等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">To be added.</param>
+        <summary>指定された構造体がかどうかを示す、<see cref="T:System.Diagnostics.CounterSample" />構造体し、は、現在と同じ<see cref="T:System.Diagnostics.CounterSample" />構造体。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="obj" />は、<see cref="T:System.Diagnostics.CounterSample" />構造体し、は、現在のインスタンスと同じです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Diagnostics.CounterSample>構造が同じプロパティの値がある場合は等しい。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のカウンター サンプルのハッシュ コードを取得します。</summary>
+        <returns>現在のカウンター サンプルのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Diagnostics.CounterSample obj1, System.Diagnostics.CounterSample obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Diagnostics.CounterSample obj1, valuetype System.Diagnostics.CounterSample obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Equality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Diagnostics.CounterSample" />
+        <Parameter Name="b" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">To be added.</param>
+        <param name="obj2">To be added.</param>
+        <summary>示す値を返します 2 つあるかどうか<see cref="T:System.Diagnostics.CounterSample" />構造体が等しい。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="a" /> が等しい場合は <paramref name="b" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Diagnostics.CounterSample>構造が同じプロパティの値がある場合は等しい。  
+  
+ この演算子を同等の方法は<xref:System.Diagnostics.CounterSample.Equals%28System.Diagnostics.CounterSample%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Diagnostics.CounterSample obj1, System.Diagnostics.CounterSample obj2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Diagnostics.CounterSample obj1, valuetype System.Diagnostics.CounterSample obj2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Diagnostics.CounterSample.op_Inequality(System.Diagnostics.CounterSample,System.Diagnostics.CounterSample)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="a" Type="System.Diagnostics.CounterSample" />
+        <Parameter Name="b" Type="System.Diagnostics.CounterSample" />
+      </Parameters>
+      <Docs>
+        <param name="obj1">To be added.</param>
+        <param name="obj2">To be added.</param>
+        <summary>示す値を返します 2 つあるかどうか<see cref="T:System.Diagnostics.CounterSample" />構造が等しくないです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="a" />と<paramref name="b" />が等しくないそれ以外の場合、。<see langword="false" /></returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Diagnostics.CounterSample>構造がそのプロパティ値のいずれかが異なる場合は等しくないです。  
+  
+ この演算子を同等の方法は<xref:System.Diagnostics.CounterSample.Equals%28System.Diagnostics.CounterSample%29?displayProperty=nameWithType>します。]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawValue">
+      <MemberSignature Language="C#" Value="public long RawValue { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 RawValue" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.RawValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カウンターの生の値を取得します。</summary>
+        <value>パフォーマンス カウンターのサンプルに関連付けられている数値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.RawValue%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemFrequency">
+      <MemberSignature Language="C#" Value="public long SystemFrequency { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 SystemFrequency" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.SystemFrequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生のシステムの頻度を取得します。</summary>
+        <value>カウンターを読み取るシステム使用する頻度です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.SystemFrequency%2A>カウンターのプロパティ.  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeStamp">
+      <MemberSignature Language="C#" Value="public long TimeStamp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TimeStamp" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.TimeStamp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生のタイムスタンプを取得します。</summary>
+        <value>システムのタイムスタンプです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.TimeStamp%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeStamp100nSec">
+      <MemberSignature Language="C#" Value="public long TimeStamp100nSec { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 TimeStamp100nSec" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.CounterSample.TimeStamp100nSec" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>信頼性の高い、未加工のタイムスタンプを取得します。</summary>
+        <value>ミリ秒の 0.1 単位で表されるシステム タイムスタンプ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例の値を表示する、<xref:System.Diagnostics.CounterSample.TimeStamp100nSec%2A>カウンターのプロパティです。  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

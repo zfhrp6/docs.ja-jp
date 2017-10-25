@@ -1,0 +1,355 @@
+<Type Name="X509SecurityToken" FullName="System.IdentityModel.Tokens.X509SecurityToken">
+  <TypeSignature Language="C#" Value="public class X509SecurityToken : System.IdentityModel.Tokens.SecurityToken, IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit X509SecurityToken extends System.IdentityModel.Tokens.SecurityToken implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.X509SecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>X.509 証明書に基づくセキュリティ トークンを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X.509 証明書の詳細を取得するには、<xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> プロパティにアクセスします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityToken (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。 <see cref="P:System.IdentityModel.Tokens.X509SecurityToken.Certificate" /> プロパティを設定します。</param>
+        <summary>指定した X.509 証明書を使用して、<see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンの一意の識別子を作成し、その値を <xref:System.IdentityModel.Tokens.X509SecurityToken.Id%2A> プロパティに割り当てます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509SecurityToken (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.#ctor(System.Security.Cryptography.X509Certificates.X509Certificate2,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。 <see cref="P:System.IdentityModel.Tokens.X509SecurityToken.Certificate" /> プロパティを設定します。</param>
+        <param name="id">セキュリティ トークンの一意の識別子。 <see cref="P:System.IdentityModel.Tokens.X509SecurityToken.Id" /> プロパティを設定します。</param>
+        <summary>指定した X.509 証明書と一意の識別子を使用して、<see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="id" /> が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanCreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanCreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanCreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.CanCreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>このセキュリティ トークンが、指定したキー識別子を作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="T" /> 型、<see cref="T:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause" /> 型、<see cref="T:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause" /> 型、または <see cref="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" /> 型の場合は <see cref="T:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ X.509 証明書のキー識別子は、複数の異なるキー識別句を使用して表現できます。 これらのキー識別子句は、<xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause>、<xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause>、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause>、および <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause> の各クラスによって表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificate">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2 Certificate { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2 Certificate" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509SecurityToken.Certificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられた X.509 証明書を取得します。</summary>
+        <value>X.509 証明書を含む <see cref="T:System.Security.Cryptography.X509Certificates.X509Certificate2" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> プロパティを使用して、<xref:System.IdentityModel.Tokens.X509SecurityToken> セキュリティ トークンに関連付けられた X.509 証明書の詳細を取得します。 たとえば、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Thumbprint%2A> プロパティを使用して、X.509 証明書の拇印にアクセスできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateKeyIdentifierClause&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T CreateKeyIdentifierClause&lt;T&gt; () where T : System.IdentityModel.Tokens.SecurityKeyIdentifierClause;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T CreateKeyIdentifierClause&lt;(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause) T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.CreateKeyIdentifierClause``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">作成するキー識別子を指定する <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</typeparam>
+        <summary>指定したキー識別句を作成します。</summary>
+        <returns>セキュリティ トークンのキー識別子句である <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.CreateKeyIdentifierClause%2A> メソッドの戻り値は、X.509 証明書のキー識別子を表現できるキー識別子句のいずれかです。 可能な戻り値の型は、<xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause>、<xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause>、<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause>、および <xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause> の各クラスによって表されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public virtual void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IdentityModel.Tokens.X509SecurityToken" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.Dispose%2A> メソッドは、<xref:System.IdentityModel.Tokens.X509SecurityToken> の使用が完了したときに呼び出します。 <xref:System.IdentityModel.Tokens.X509SecurityToken.Dispose%2A> メソッドによって、<xref:System.IdentityModel.Tokens.X509SecurityToken> は使用不可の状態になります。 <xref:System.IdentityModel.Tokens.X509SecurityToken.Dispose%2A> メソッドを呼び出した後、<xref:System.IdentityModel.Tokens.X509SecurityToken> が使用していたメモリをガベージ コレクターが再利用できるように、<xref:System.IdentityModel.Tokens.X509SecurityToken> への参照をすべて解放する必要があります。  
+  
+> [!NOTE]
+>  <xref:System.IdentityModel.Tokens.X509SecurityToken.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.IdentityModel.Tokens.X509SecurityToken> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.IdentityModel.Tokens.X509SecurityToken> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509SecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンの一意の識別子を取得します。</summary>
+        <value>セキュリティ トークンの一意の識別子。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MatchesKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override bool MatchesKeyIdentifierClause (System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MatchesKeyIdentifierClause(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause skiClause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.MatchesKeyIdentifierClause(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="skiClause">To be added.</param>
+        <summary>このインスタンスのキー識別子が、指定したキー識別子に等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> が <paramref name="skiClause" /> 型、<see cref="T:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause" /> 型、<see cref="T:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause" /> 型、または <see cref="T:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause" /> 型のいずれかであり、キー識別句が一致する場合は <see cref="T:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.MatchesKeyIdentifierClause%2A> メソッドは、<xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> パラメーターの型に基づいて、`keyIdentifierClause` プロパティ内の X.509 証明書の条件を照合します。 照合される対象を次の表に示します。  
+  
+|キー識別子句型。|照合対象|  
+|--------------------------------|---------------------|  
+|<xref:System.IdentityModel.Tokens.X509IssuerSerialKeyIdentifierClause>|<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.IssuerName%2A> プロパティの値と、<xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetSerialNumber%2A> メソッドから返される発行者シリアル番号。|  
+|<xref:System.IdentityModel.Tokens.X509RawDataKeyIdentifierClause>|<xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetRawCertData%2A> メソッドから返されるデータ。|  
+|<xref:System.IdentityModel.Tokens.X509SubjectKeyIdentifierClause>|<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Extensions%2A> プロパティのサブジェクト キー識別子の拡張。|  
+|<xref:System.IdentityModel.Tokens.X509ThumbprintKeyIdentifierClause>|<xref:System.Security.Cryptography.X509Certificates.X509Certificate.GetCertHash%2A> メソッドによって返される拇印。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509SecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ トークンに関連付けられた暗号化キーを取得します。</summary>
+        <value>セキュリティ トークンに関連付けられている一連のキーを含む、<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Tokens.SecurityKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.SecurityKeys%2A> プロパティを使用して、このセキュリティ トークンの暗号キーを設定し、SOAP メッセージを保護します。 このキーは、特に SOAP メッセージのデジタル署名または暗号化に使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThrowIfDisposed">
+      <MemberSignature Language="C#" Value="protected void ThrowIfDisposed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ThrowIfDisposed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.X509SecurityToken.ThrowIfDisposed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.IdentityModel.Tokens.X509SecurityToken.ThrowIfDisposed" /> メソッドがこのインスタンスのために呼び出された場合は、例外がスローされます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException">このインスタンスの <see cref="M:System.IdentityModel.Tokens.X509SecurityToken.ThrowIfDisposed" /> メソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public override DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509SecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の開始時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の開始時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.ValidFrom%2A> プロパティは、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.NotBefore%2A> プロパティで指定された X.509 証明書の <xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> プロパティの値であり、世界協定時刻 (UTC) で指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public override DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.X509SecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセキュリティ トークンの有効期間の終了時点を取得します。</summary>
+        <value>このセキュリティ トークンの有効期間の終了の時点を示す <see cref="T:System.DateTime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.X509SecurityToken.ValidFrom%2A> プロパティは、<xref:System.Security.Cryptography.X509Certificates.X509Certificate2.NotAfter%2A> プロパティで指定された X.509 証明書の <xref:System.IdentityModel.Tokens.X509SecurityToken.Certificate%2A> プロパティの値であり、世界協定時刻 (UTC) で指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,125 @@
+<Type Name="ProjectedWrapper" FullName="System.Data.Services.Internal.ProjectedWrapper">
+  <TypeSignature Language="C#" Value="public abstract class ProjectedWrapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProjectedWrapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.Internal.ProjectedWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>結果の要素に対するラッパーと、プロパティのサブセットを射影する機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProjectedWrapper ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Internal.ProjectedWrapper.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Services.Internal.ProjectedWrapper" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetProjectedPropertyValue">
+      <MemberSignature Language="C#" Value="public object GetProjectedPropertyValue (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetProjectedPropertyValue(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Internal.ProjectedWrapper.GetProjectedPropertyValue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">値の取得先のプロパティの名前。</param>
+        <summary>結果の名前付きプロパティの値を取得します。</summary>
+        <returns>結果の名前付きプロパティの値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InternalGetProjectedPropertyValue">
+      <MemberSignature Language="C#" Value="protected abstract object InternalGetProjectedPropertyValue (int propertyIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object InternalGetProjectedPropertyValue(int32 propertyIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.Internal.ProjectedWrapper.InternalGetProjectedPropertyValue(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="propertyIndex">値の取得先のプロパティのインデックス。</param>
+        <summary>インデックス別に指定したプロパティの値を取得します。</summary>
+        <returns>プロパティの値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="PropertyNameList">
+      <MemberSignature Language="C#" Value="public string PropertyNameList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PropertyNameList" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Internal.ProjectedWrapper.PropertyNameList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ名の一覧をコンマ区切り形式のテキストとして取得します。</summary>
+        <value>コンマ区切りの名前の一覧。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ResourceTypeName">
+      <MemberSignature Language="C#" Value="public string ResourceTypeName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ResourceTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Services.Internal.ProjectedWrapper.ResourceTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この結果の型を表す <see cref="T:System.Data.Services.Providers.ResourceType" /> の完全な名前を取得します。</summary>
+        <value>型の完全な名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

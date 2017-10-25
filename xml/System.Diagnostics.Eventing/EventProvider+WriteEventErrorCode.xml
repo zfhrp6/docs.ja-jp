@@ -1,0 +1,75 @@
+<Type Name="EventProvider+WriteEventErrorCode" FullName="System.Diagnostics.Eventing.EventProvider+WriteEventErrorCode">
+  <TypeSignature Language="C#" Value="public enum EventProvider.WriteEventErrorCode" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed EventProvider/WriteEventErrorCode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.Eventing.EventProvider.WriteEventErrorCode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>最後の書き込み操作の状態を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体のインスタンスを取得する、<xref:System.Diagnostics.Eventing.EventProvider.GetLastWriteEventError%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Diagnostics.Eventing.EventProvider.WriteEvent%2A?displayProperty=nameWithType>、 <xref:System.Diagnostics.Eventing.EventProvider.WriteMessageEvent%2A?displayProperty=nameWithType>、および<xref:System.Diagnostics.Eventing.EventProvider.WriteTransferEvent%2A?displayProperty=nameWithType>メソッドは、イベントの書き込みに失敗した場合にこの値を設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EventTooBig">
+      <MemberSignature Language="C#" Value="EventTooBig" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.EventProvider/WriteEventErrorCode EventTooBig = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.EventProvider.WriteEventErrorCode.EventTooBig" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.EventProvider+WriteEventErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントは、セッション バッファー サイズより大きいイベントは、バッファーをまたぐことはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoError">
+      <MemberSignature Language="C#" Value="NoError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.EventProvider/WriteEventErrorCode NoError = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.EventProvider.WriteEventErrorCode.NoError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.EventProvider+WriteEventErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込みが正常に完了しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFreeBuffers">
+      <MemberSignature Language="C#" Value="NoFreeBuffers" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.Eventing.EventProvider/WriteEventErrorCode NoFreeBuffers = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.Eventing.EventProvider.WriteEventErrorCode.NoFreeBuffers" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.Eventing.EventProvider+WriteEventErrorCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションは、空きバッファーに書き込む不足になりました。 これはディスク サブシステムがオーバー ロードされるか、バッファーの数が小さすぎるため高いイベント レートを中に発生します。 多くのバッファーが使用可能になるまでブロックではなく、イベントを削除します。 バッファーのサイズと数を増やすと、セッションのまたは書き込むイベントの数またはイベントのサイズを減らすことを検討してください。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

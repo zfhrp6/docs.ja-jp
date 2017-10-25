@@ -1,0 +1,195 @@
+<Type Name="ISelectionItemProvider" FullName="System.Windows.Automation.Provider.ISelectionItemProvider">
+  <TypeSignature Language="C#" Value="public interface ISelectionItemProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISelectionItemProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ISelectionItemProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("2acad808-b2d4-452d-a407-91ff1ad167b2")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装するコンテナーの選択可能な個別の子コントロールへの UI オートメーション クライアント アクセスをサポートするメソッドとプロパティを公開する<see cref="T:System.Windows.Automation.Provider.ISelectionProvider" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.SelectionItemPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddToSelection">
+      <MemberSignature Language="C#" Value="public void AddToSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddToSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した項目のコレクションに現在の要素を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の呼び出しの結果<xref:System.Windows.Automation.Provider.ISelectionItemProvider.AddToSelection%2A>が 1 つの項目が選択されている場合、送信、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>対応する要素。 それ以外の場合送信、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>または<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>に応じて。  
+  
+> [!NOTE]
+>  このルールでは、またはにどのような方法は、選択を変更に使用されたかどうか、コンテナーは、1 つまたは複数の選択肢には依存しません。 結果のみが重要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、選択した項目のコレクションに項目を追加します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#AddToSelection](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#addtoselection)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#AddToSelection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#addtoselection)]  
+[!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#isselected)]
+[!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#isselected)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSelected">
+      <MemberSignature Language="C#" Value="public bool IsSelected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSelected" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ISelectionItemProvider.IsSelected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目が選択されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />要素がオンの場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を返します`true`この項目が選択した項目のコレクション内にある場合。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#isselected)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#isselected)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFromSelection">
+      <MemberSignature Language="C#" Value="public void RemoveFromSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveFromSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISelectionItemProvider.RemoveFromSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した項目のコレクションから現在の要素を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 送信、<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>をクリックします。  
+  
+> [!NOTE]
+>  このルールでは、またはにどのような方法は、選択を変更に使用されたかどうか、コンテナーは、1 つまたは複数の選択肢には依存しません。 結果のみが重要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、選択した項目のコレクションから項目を削除します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#RemoveFromSelection](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#removefromselection)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#RemoveFromSelection](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#removefromselection)]  
+[!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#isselected)]
+[!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#IsSelected](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#isselected)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public void Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ISelectionItemProvider.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択したアイテムの選択を解除し、現在の要素を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、選択した項目のコレクションからすべての項目をクリアして、この項目を追加します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#Select](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#select)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#Select](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#select)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionContainer">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple SelectionContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Provider.IRawElementProviderSimple SelectionContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ISelectionItemProvider.SelectionContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実装する UI オートメーション プロバイダーを取得<see cref="T:System.Windows.Automation.Provider.ISelectionProvider" />であり、呼び出し元のオブジェクトのコンテナーとして機能します。</summary>
+        <value>サポートするプロバイダー<see cref="T:System.Windows.Automation.Provider.ISelectionProvider" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、この一覧項目を含むリスト ボックスの UI オートメーション プロバイダーを返します。  
+  
+ [!code-csharp[UIAISelectionProvider_ISelectionItemProvider_snip#SelectionContainer](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/CSharp/ListItemFragment.cs#selectioncontainer)]
+ [!code-vb[UIAISelectionProvider_ISelectionItemProvider_snip#SelectionContainer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAISelectionProvider_ISelectionItemProvider_snip/visualbasic/listitemfragment.vb#selectioncontainer)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

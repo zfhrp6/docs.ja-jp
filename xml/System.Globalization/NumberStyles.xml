@@ -1,0 +1,572 @@
+<Type Name="NumberStyles" FullName="System.Globalization.NumberStyles">
+  <TypeSignature Language="C#" Value="public enum NumberStyles" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed NumberStyles extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Globalization.NumberStyles" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>渡される数値文字列引数で使用できるスタイルを決定、<see langword="Parse" />と<see langword="TryParse" />整数および浮動小数点数値型のメソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Globalization.NumberStyles>という 2 種類の数値の文字列表現を解析するために使用する列挙値の列挙体で構成されます。  
+  
+-   個々 のフィールドのフラグ、解析された文字列内に存在することができます (空白文字と桁区切り記号) などの特定のスタイル要素を定義します。  
+  
+-   複合数値スタイル: 解析された文字列で使用可能なスタイル要素を定義する複数のフィールド フラグで構成されます。  
+  
+ AllowHexSpecifier を除く、個々 のフィールドがのフラグ、<xref:System.Globalization.NumberStyles.AllowHexSpecifier>列挙体は、10 進数の文字列表現を解析するときに使用されるスタイル要素を定義します。 None は、数字のみが解析された文字列内に存在できることを示します。 その他の個々 のフィールドのフラグは、可能性がありますが、正常に解析操作の 10 進数の文字列形式で提示する必要はありませんスタイル要素を定義します。 これに対し、AllowHexSpecifier フラグは、解析する文字列を常に 16 進数値として解釈することを示します。 AllowHexSpecifier を併用するのみの個別のフィールド フラグは、AllowLeadingWhite と AllowTrailingWhite がします。 <xref:System.Globalization.NumberStyles>列挙には、複合数値のスタイルでは、3 つすべてのフラグで構成される hexnumber 表記が含まれています。  
+  
+ メンバーによって解析される文字列に含まれる (通貨記号、桁区切り記号、桁区切り記号および正と負符号) などのシンボルが定義されて、<xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>いずれかの暗黙的または明示的に渡されるオブジェクト、`Parse`メソッドです。 このトピック内のメンバー テーブルが各個々 のフラグの説明を提供し、そのリレーションシップを示す<xref:System.Globalization.NumberFormatInfo>プロパティです。  
+  
+ 次の表は、複合数値スタイルの一覧し、含まれている個々 のフィールド フラグを示します。 セルに「1」では、複合数値スタイルに、その行の個別の数値のスタイルが含まれていることを示します。 「0」では、複合数値スタイルに個別の数値のスタイルが含まれていないことを示します。  
+  
+||どれでも可|通貨|浮動小数点型|整数|数値|Hexnumber 表記|  
+|-|---------|--------------|-----------|-------------|------------|---------------|  
+|AllowHexSpecifier (0x0200)|0|0|0|0|0|1|  
+|AllowCurrencySymbol (0x0100)|1|1|0|0|0|0|  
+|AllowExponent (0x0080)|1|0|1|0|0|0|  
+|AllowThousands (0x0040)|1|1|0|0|1|0|  
+|に対して (0x0020)|1|1|1|0|1|0|  
+|AllowParentheses (0x0010)|1|1|0|0|0|0|  
+|AllowTrailingSign (0x0008)|1|1|0|0|1|0|  
+|AllowLeadingSign (0x0004)|1|1|1|1|1|0|  
+|AllowTrailingWhite (0x0002)|1|1|1|1|1|1|  
+|AllowLeadingWhite (0x0001)|1|1|1|1|1|1|  
+||(0x1ff)|(0x17f)|(0x0a7)|(0x007)|(0x06f)|(0x203)|  
+  
+   
+  
+## Examples  
+ この例は、32 ビット整数にさまざまなを使用して文字列を解析する方法を示しています。<xref:System.Globalization.NumberStyles.AllowHexSpecifier>フラグ。  
+  
+ [!code-cpp[NumberStyles#1](~/samples/snippets/cpp/VS_Snippets_CLR/NumberStyles/cpp/NumberStyles.cpp#1)]
+ [!code-csharp[NumberStyles#1](~/samples/snippets/csharp/VS_Snippets_CLR/NumberStyles/CS/NumberStyles.cs#1)]
+ [!code-vb[NumberStyles#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/NumberStyles/vb/numberstyles.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowCurrencySymbol">
+      <MemberSignature Language="C#" Value="AllowCurrencySymbol" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowCurrencySymbol = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowCurrencySymbol" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が通貨記号を含めることができますを示します。 有効な通貨記号がによって決定されます、<see cref="P:System.Globalization.NumberFormatInfo.CurrencySymbol" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowDecimalPoint">
+      <MemberSignature Language="C#" Value="AllowDecimalPoint" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowDecimalPoint = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowDecimalPoint" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が 10 進数のポイントに持つことができることを示します。 場合、<see cref="T:System.Globalization.NumberStyles" />値が含まれる、<see cref="F:System.Globalization.NumberStyles.AllowCurrencySymbol" />フラグおよび解析された文字列には、通貨記号が含まれているが 10 進区切り記号はによって決まりますが、<see cref="P:System.Globalization.NumberFormatInfo.CurrencyDecimalSeparator" />プロパティです。 によって、桁区切り記号の文字を決定するそれ以外の場合、<see cref="P:System.Globalization.NumberFormatInfo.NumberDecimalSeparator" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowExponent">
+      <MemberSignature Language="C#" Value="AllowExponent" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowExponent = int32(128)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowExponent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指数表記法で数値の文字列ができることを示します。 <see cref="F:System.Globalization.NumberStyles.AllowExponent" />フラグは、"E"または"e"文字で始まるし、省略可能な正または負の符号と整数が後に、指数部を含むに解析された文字列を使用します。 つまり、フォーム内の文字列を正常に解析* nnn *E*xx*、 * nnn *E +*xx*、および*nnn *E -*xx*です。 小数点区切り文字を許可したり、有効桁または仮数; サインインしません。これらの要素を解析する文字列を許可するのには、使用、<see cref="F:System.Globalization.NumberStyles.AllowDecimalPoint" />と<see cref="F:System.Globalization.NumberStyles.AllowLeadingSign" />フラグ、またはこれらの個々 のフラグを含む複合スタイルを使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowHexSpecifier">
+      <MemberSignature Language="C#" Value="AllowHexSpecifier" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowHexSpecifier = int32(512)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowHexSpecifier" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が 16 進数値を表すことを示します。 有効な 16 進数の値には、桁の数字 0 ~ 9 および A ~ F、a ~ f の 16 進数字が含まれます。 このスタイルを使用して解析される文字列は"0 x"を付けることはできませんまたは"&amp;h"です。 使用して解析は、文字列、<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />スタイル常に 16 進数値として解釈されます。 組み合わせることができますのみのフラグ<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />は<see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite" />と<see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite" />です。 <see cref="T:System.Globalization.NumberStyles" />列挙には、複合のスタイルが含まれています。 <see cref="F:System.Globalization.NumberStyles.HexNumber" />、これら 3 つのフラグで構成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowLeadingSign">
+      <MemberSignature Language="C#" Value="AllowLeadingSign" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowLeadingSign = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowLeadingSign" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が先頭の符号を持つことを示します。 有効な先頭の符号文字がによって決定されます、<see cref="P:System.Globalization.NumberFormatInfo.PositiveSign" />と<see cref="P:System.Globalization.NumberFormatInfo.NegativeSign" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowLeadingWhite">
+      <MemberSignature Language="C#" Value="AllowLeadingWhite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowLeadingWhite = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowLeadingWhite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ある先頭の空白文字で使用できる解析された文字列を示します。 有効な空白文字、Unicode 値 u+0009、u+000 a、U +0 000B、U + 000 C、U+000D、およびある u+0020 です。 これは、対象の文字のサブセットであることに注意してください、<see cref="M:System.Char.IsWhiteSpace(System.Char)" />メソッドを返します。<see langword="true" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowParentheses">
+      <MemberSignature Language="C#" Value="AllowParentheses" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowParentheses = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowParentheses" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が 1 つの数値を囲むかっこのペアを持つことができることを示します。 かっこは、解析する文字列が負の数を表すことを示しています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowThousands">
+      <MemberSignature Language="C#" Value="AllowThousands" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowThousands = int32(64)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowThousands" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が数千から数百を区切る記号などのグループの区切り記号を持つことができることを示します。 場合、<see cref="T:System.Globalization.NumberStyles" />値が含まれる、<see cref="F:System.Globalization.NumberStyles.AllowCurrencySymbol" />フラグと文字列を解析するには、通貨記号が含まれている有効グループ区切り文字はによって決まりますが、<see cref="P:System.Globalization.NumberFormatInfo.CurrencyGroupSeparator" />プロパティ、および各グループの数字の数によって決定されます、<see cref="P:System.Globalization.NumberFormatInfo.CurrencyGroupSizes" />プロパティです。 それ以外の場合は有効なグループ区切り文字がによって決まります、<see cref="P:System.Globalization.NumberFormatInfo.NumberGroupSeparator" />プロパティ、および各グループの数字の数によって決定されます、<see cref="P:System.Globalization.NumberFormatInfo.NumberGroupSizes" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowTrailingSign">
+      <MemberSignature Language="C#" Value="AllowTrailingSign" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowTrailingSign = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowTrailingSign" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数値の文字列が、後続の記号に持つことができることを示します。 有効な末尾の記号の文字はによって決定されます、<see cref="P:System.Globalization.NumberFormatInfo.PositiveSign" />と<see cref="P:System.Globalization.NumberFormatInfo.NegativeSign" />プロパティです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowTrailingWhite">
+      <MemberSignature Language="C#" Value="AllowTrailingWhite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles AllowTrailingWhite = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.AllowTrailingWhite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>末尾の空白文字できる解析済みの文字列内に存在を示します。 有効な空白文字、Unicode 値 u+0009、u+000 a、U +0 000B、U + 000 C、U+000D、およびある u+0020 です。 これは、対象の文字のサブセットであることに注意してください、<see cref="M:System.Char.IsWhiteSpace(System.Char)" />メソッドを返します。<see langword="true" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Any">
+      <MemberSignature Language="C#" Value="Any" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles Any = int32(511)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.Any" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>除くすべてのスタイルを示す<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />使用されます。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Currency">
+      <MemberSignature Language="C#" Value="Currency" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles Currency = int32(383)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.Currency" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>除くすべてのスタイルを示す<see cref="F:System.Globalization.NumberStyles.AllowExponent" />と<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />使用されます。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Float">
+      <MemberSignature Language="C#" Value="Float" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles Float = int32(167)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.Float" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingSign" />、 <see cref="F:System.Globalization.NumberStyles.AllowDecimalPoint" />、および<see cref="F:System.Globalization.NumberStyles.AllowExponent" />のスタイルを使用します。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HexNumber">
+      <MemberSignature Language="C#" Value="HexNumber" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles HexNumber = int32(515)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.HexNumber" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite" />、および<see cref="F:System.Globalization.NumberStyles.AllowHexSpecifier" />のスタイルを使用します。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Integer">
+      <MemberSignature Language="C#" Value="Integer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles Integer = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.Integer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite" />、および<see cref="F:System.Globalization.NumberStyles.AllowLeadingSign" />のスタイルを使用します。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>先頭または末尾のなどのスタイルの要素が空白文字、何千もないことを示す区切り記号、または小数点区切り文字が解析された文字列で存在することができます。 解析する文字列は必要があります整数 10 進数字のみで構成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Number">
+      <MemberSignature Language="C#" Value="Number" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Globalization.NumberStyles Number = int32(111)" />
+      <MemberSignature Language="DocId" Value="F:System.Globalization.NumberStyles.Number" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.NumberStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示します、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowTrailingWhite" />、 <see cref="F:System.Globalization.NumberStyles.AllowLeadingSign" />、 <see cref="F:System.Globalization.NumberStyles.AllowTrailingSign" />、 <see cref="F:System.Globalization.NumberStyles.AllowDecimalPoint" />、および<see cref="F:System.Globalization.NumberStyles.AllowThousands" />のスタイルを使用します。 これは、複合数値スタイルです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

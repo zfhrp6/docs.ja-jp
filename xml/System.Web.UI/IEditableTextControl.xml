@@ -1,0 +1,71 @@
+<Type Name="IEditableTextControl" FullName="System.Web.UI.IEditableTextControl">
+  <TypeSignature Language="C#" Value="public interface IEditableTextControl : System.Web.UI.ITextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IEditableTextControl implements class System.Web.UI.ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IEditableTextControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITextControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ユーザーが変更可能なテキストを表示するコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのコントロール<xref:System.Web.UI.WebControls.TextBox>から派生したものと<xref:System.Web.UI.WebControls.ListControl>ページのユーザーによって変更可能なテキスト プロパティを提供します。 Text プロパティが変更されたときに、プロパティが変更されたハンドラーに通知するイベントが発生します。 実装するクラス<xref:System.Web.UI.IEditableTextControl>を定義する必要があります、<xref:System.Web.UI.IEditableTextControl.TextChanged>イベント。  
+  
+ <xref:System.Web.UI.IEditableTextControl>インターフェイスにのみ、<xref:System.Web.UI.IEditableTextControl.TextChanged>から継承して、イベント、<xref:System.Web.UI.ITextControl>を定義するインターフェイス、<xref:System.Web.UI.ITextControl.Text%2A>プロパティです。 実装する、<xref:System.Web.UI.IEditableTextControl>インターフェイス、コントロールを定義する必要があります、<xref:System.Web.UI.ITextControl.Text%2A>プロパティおよび<xref:System.Web.UI.IEditableTextControl.TextChanged>に発生するイベントと、<xref:System.Web.UI.ITextControl.Text%2A>サーバーへのポスト間でプロパティが変更されました。  
+  
+ <xref:System.Web.UI.IEditableTextControl>によって実装される<xref:System.Web.UI.WebControls.TextBox>と<xref:System.Web.UI.WebControls.ListControl>です。 それらのクラスでこのイベントはを通じて、<xref:System.Web.UI.WebControls.ListControl.OnTextChanged%2A?displayProperty=nameWithType>または<xref:System.Web.UI.WebControls.TextBox.OnTextChanged%2A?displayProperty=nameWithType>メソッドです。 実装するクラス、<xref:System.Web.UI.IEditableTextControl>インターフェイスは、イベントを発生させるための同様のメソッドを定義できます。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.UI.IEditableTextControl.TextChanged>イベント。  
+  
+ [!code-csharp[System.Web.UI.IEditableTextControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IEditableTextControl/CS/customeditablebox.ascx.cs#1)]
+ [!code-vb[System.Web.UI.IEditableTextControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IEditableTextControl/VB/customeditablebox.ascx.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TextChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler TextChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler TextChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.IEditableTextControl.TextChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーへのポスト間でテキストの内容が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IEditableTextControl.TextChanged>イベントが発生したときに、<xref:System.Web.UI.ITextControl.Text%2A>サーバーへのポスト間でプロパティが変更されました。 このイベントの実装は、いずれかで確認できる、<xref:System.Web.UI.WebControls.TextBox>または<xref:System.Web.UI.WebControls.ListControl>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Web.UI.IEditableTextControl.TextChanged>イベント。  
+  
+ [!code-csharp[System.Web.UI.IEditableTextControl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.IEditableTextControl/CS/customeditablebox.ascx.cs#1)]
+ [!code-vb[System.Web.UI.IEditableTextControl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.IEditableTextControl/VB/customeditablebox.ascx.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

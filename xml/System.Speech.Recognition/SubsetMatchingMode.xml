@@ -1,0 +1,191 @@
+<Type Name="SubsetMatchingMode" FullName="System.Speech.Recognition.SubsetMatchingMode">
+  <TypeSignature Language="C#" Value="public enum SubsetMatchingMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SubsetMatchingMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.SubsetMatchingMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>マッチング モードのサブセットの値を列挙します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ System.Speech では、オーディオ入力内にその内容のサブセットのみが見つかった場合でも正常に語句を認識している文法を構築できます。  
+  
+ 既定では、認識エンジンに語句全体に対して完全に一致する必要があります。 認識エンジンは部分的な語句で定義されたパラメーターに従っても一致、<xref:System.Speech.Recognition.SubsetMatchingMode>への引数として使用されるメンバー、<xref:System.Speech.Recognition.GrammarBuilder.%23ctor%2A>または<xref:System.Speech.Recognition.SrgsGrammar.SrgsSubset.%23ctor%2A>コンス トラクター、または<xref:System.Speech.Recognition.GrammarBuilder.Append%2A>メソッドです。  
+  
+ 次に示しますそれぞれどのようにの<xref:System.Speech.Recognition.SubsetMatchingMode>メンバー「自動車トラック平面ボート a」という語句を含む文法で使用する場合の認識に影響します。  
+  
+ **OrderedSubset**  
+  
+ このモードでは、次の条件に当てはまる場合語句全体を正常に認識するように、語句のサブセットが使用されることを示します。  
+  
+-   オーディオの入力では、語句内の 1 つ以上の単語を認識します。  
+  
+-   それらの認識された単語の相対順序は、語句の場合と同様です。  
+  
+-   一致する語句は、前置詞とアーティクルのみで構成されます。  
+  
+ OrderedSubset を使用して、文法に「自動車トラック平面ボート a」という語句を追加するモードには、認識を次の結果が生成されます。  
+  
+|**語句の入力**|**結果**|  
+|----------------------|----------------|  
+|「自動車トラック平面ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|「自動車トラック ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|"平面を car"|語句全体を含む「自動車トラック平面ボート a」が認識されます。 認識されたサブセットを元の文字列のシーケンスである必要はありません。|  
+|「自動車平面トラックをボート」|認識が正常に実行ではありません。 単語の順序が間違っています。|  
+|"は、"|語句全体を含む「自動車トラック平面ボート a」が認識されます。 前置詞と記事は、認識するために使用されます。|  
+  
+ **OrderedSubsetContentRequired**  
+  
+ このモードでは、次の条件に当てはまる場合語句全体を正常に認識するように、語句のサブセットが使用されることを示します。  
+  
+-   語句内の 1 つ以上の単語は、オーディオ入力では認識し、  
+  
+-   それらの認識された単語の相対順序は、語句の場合と同様です。  
+  
+-   一致する単語前置詞とアーティクルのみ含めることはできません。  
+  
+ OrderedSubsetContentRequired を使用して、文法に「自動車トラック平面ボート a」という語句を追加するモードには、認識を次の結果が生成されます。  
+  
+|**語句の入力**|**結果**|  
+|----------------------|----------------|  
+|「自動車トラック平面ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|「自動車トラック ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|"平面を car"|語句全体を含む「自動車トラック平面ボート a」が認識されます。 認識されたサブセットを元の文字列のシーケンスである必要はありません。|  
+|「自動車平面トラックをボート」|認識が正常に実行ではありません。 単語の順序が間違っています。|  
+|"は、"|認識が正常に実行ではありません。  音声入力には、アーティクルと前置詞以外の単語を含める必要があります。|  
+  
+ **サブシーケンス:**  
+  
+ このモードでは、次の条件に当てはまる場合語句全体を正常に認識するように、語句のサブセットが使用されることを示します。  
+  
+-   語句内の 1 つ以上の単語はオーディオ入力では、語句のシーケンスとして認識し、  
+  
+-   それらの認識された単語の相対順序は、語句の場合と同様です。  
+  
+-   一致する語句は、前置詞とアーティクルのみで構成されます。  
+  
+ サブシーケンス モードを使用して、文法に「自動車トラック平面ボート a」という語句を追加するには、認識を次の結果が生成されます。  
+  
+|**語句の入力**|**結果**|  
+|----------------------|----------------|  
+|「自動車トラック平面ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|「自動車トラック ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|"平面を car"|認識が正常に実行ではありません。 認識されたサブセットが元の文字列のシーケンスに必要です。|  
+|「自動車平面トラックをボート」|認識が正常に実行ではありません。 単語の順序が間違っています。|  
+|"は、"|語句全体を含む「自動車トラック平面ボート a」が認識されます。 前置詞と記事は、認識するために使用されます。|  
+  
+ **SubsequenceContentRequired**  
+  
+ このモードでは、次の条件に当てはまる場合語句全体を正常に認識するように、語句のサブセットが使用されることを示します。  
+  
+-   一致文字列の 1 つ以上の単語は、オーディオ入力内のフレーズのシーケンスとして認識されます。  
+  
+-   一致する単語前置詞とアーティクルのみ含めることはできません。  
+  
+ SubsequenceContentRequired を使用して、文法に「自動車トラック平面ボート a」という語句を追加するモードには、認識を次の結果が生成されます。  
+  
+|**語句の入力**|**結果**|  
+|----------------------|----------------|  
+|「自動車トラック平面ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|「自動車トラック ボート a」|語句全体を含む「自動車トラック平面ボート a」が認識されます。|  
+|"平面を car"|認識が正常に実行ではありません。 認識されたサブセットが元の文字列のシーケンスに必要です。|  
+|「自動車平面トラックをボート」|認識が正常に実行ではありません。 単語の順序が間違っています。|  
+|"は、"|認識が正常に実行ではありません。 音声入力には、アーティクルと前置詞以外の単語を含める必要があります。|  
+  
+   
+  
+## Examples  
+ 次の 4 つを生成するテスト ルーチンを次に示します<xref:System.Speech.Recognition.Grammar>オブジェクトごとの同じ語句を使用して、`SubsetMatchingModes`です。 これら<xref:System.Speech.Recognition.Grammar>オブジェクトをテストし、ことができます。  
+  
+```  
+private void CreateSubsetMatchTest()   
+{  
+  foreach ( System.Speech.Recognition.SubsetMatchingMode mode   
+              in Enum.GetValues(typeof(System.Speech.Recognition.SubsetMatchingMode)))  
+  {  
+    GrammarBuilder gb = new GrammarBuilder("a car the truck a boat that plane",mode);  
+    Grammar grammar = new Grammar(gb);  
+    grammar.Name = mode.ToString();  
+    grammar.Enabled=true;  
+    _recognizer.LoadGrammar(grammar);  
+  }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="OrderedSubset">
+      <MemberSignature Language="C#" Value="OrderedSubset" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SubsetMatchingMode OrderedSubset = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SubsetMatchingMode.OrderedSubset" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SubsetMatchingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モードと一致するサブセットに含まれることを示します**OrderedSubset**です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OrderedSubsetContentRequired">
+      <MemberSignature Language="C#" Value="OrderedSubsetContentRequired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SubsetMatchingMode OrderedSubsetContentRequired = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SubsetMatchingMode.OrderedSubsetContentRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SubsetMatchingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モードと一致するサブセットに含まれることを示します**OrderedSubsetContentRequired**です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Subsequence">
+      <MemberSignature Language="C#" Value="Subsequence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SubsetMatchingMode Subsequence = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SubsetMatchingMode.Subsequence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SubsetMatchingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モードと一致するサブセットに含まれることを示します**サブシーケンス**です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SubsequenceContentRequired">
+      <MemberSignature Language="C#" Value="SubsequenceContentRequired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Speech.Recognition.SubsetMatchingMode SubsequenceContentRequired = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Speech.Recognition.SubsetMatchingMode.SubsequenceContentRequired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.SubsetMatchingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>モードと一致するサブセットに含まれることを示します**SubsequenceContentRequired**です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

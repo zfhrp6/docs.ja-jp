@@ -1,0 +1,102 @@
+<Type Name="QueryActivatableWorkflowsCommand" FullName="System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand">
+  <TypeSignature Language="C#" Value="public sealed class QueryActivatableWorkflowsCommand : System.Runtime.DurableInstancing.InstancePersistenceCommand" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit QueryActivatableWorkflowsCommand extends System.Runtime.DurableInstancing.InstancePersistenceCommand" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.DurableInstancing.InstancePersistenceCommand</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクティブ化パラメーターを取得するために、汎用ホストがインスタンス ストアに対して実行するコマンドを表します。 汎用ホストは、これらのアクティブ化パラメーターを使用してワークフロー ホストを作成します。作成されたワークフロー ホストは、実行可能サービス インスタンスを読み込みます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスが*アクティブ化可能な*を場合、その中断状態または完了状態ではなく、次の条件を満たします。  
+  
+-   インスタンスが*runnable*です。 永続性データベースのインスタンスが次の条件を満たしている場合は、実行可能と見なされます。  
+  
+    -   インスタンスがロック解除されていて、保留タイマーの期限が切れている。  
+  
+    -   インスタンスのロックが解除されていると、その状態が**Executing**です。  
+  
+    -   インスタンスに期限切れのロックがある。  
+  
+-   ローカル コンピューターで実行されているインスタンスを読み込むことができるワークフロー ホストがない。  
+  
+ インスタンス ストアは、そのストアを使用するワークフロー ホストに属しているアクティブ化可能なワークフロー インスタンスを定期的に検索します。 永続化ストアにアクティブ化可能なインスタンスが見つかると、<xref:System.Activities.DurableInstancing.HasActivatableWorkflowEvent> を発生させます。 永続化ストアにアクティブ化可能なインスタンスが見つからない場合は、永続化ストアでのアクティブ化可能なインスタンスの監視を続行します。  
+  
+ HasActivatableWorkflowEvent を発生させた場合は、<xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を受け取って実行するまで、永続化ストアでのアクティブ化可能なインスタンスの監視を停止します。 このコマンドを実行してもアクティブ化可能なワークフロー インスタンスが返されない場合のみ、監視を続行します。  
+  
+ このイベントを受け取った汎用ホストは、インスタンス ストアに対して <xref:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand> を実行して、ワークフロー ホストの作成に必要なアクティブ化パラメーターを取得します。 これらのアクティブ化パラメーターを使用してワークフロー ホストを作成します。作成されたワークフロー ホストは、サービス インスタンスを読み込んで実行します。 WAS アクティブ化型のアクティブ化パラメーターは、サイト名、(サイトを基準とする) アプリケーション パス、および (アプリケーションを基準とする) サービス パスです。 インスタンス ストアは、これら 3 つのアクティブ化パラメーターの複数のセットを返すことがあります。  
+  
+ 汎用ホストはという XName パラメーターを持つホスト**ActivationType**、これは、インスタンス ストアでサポートされる値に設定してください。 現時点では、SQL Workflow Instance Store は ActivationType パラメーターの値を設定した汎用ホストをサポートしています: **WAS**です。 ActivationType が設定されていない場合、そのホストは汎用ホストと見なされます。  
+  
+> [!NOTE]
+>  ネーム"Dublin"(.NET 4.0 用アプリケーション サーバーの拡張) をコードに付属するワークフロー管理サービスが、ライセンス認証の種類に設定された汎用ホストは、 **WAS**です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryActivatableWorkflowsCommand ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTransactionEnlistmentOptional">
+      <MemberSignature Language="C#" Value="protected override bool IsTransactionEnlistmentOptional { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTransactionEnlistmentOptional" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand.IsTransactionEnlistmentOptional" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="protected override void Validate (System.Runtime.DurableInstancing.InstanceView view);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Validate(class System.Runtime.DurableInstancing.InstanceView view) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.DurableInstancing.QueryActivatableWorkflowsCommand.Validate(System.Runtime.DurableInstancing.InstanceView)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="view" Type="System.Runtime.DurableInstancing.InstanceView" />
+      </Parameters>
+      <Docs>
+        <param name="view">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

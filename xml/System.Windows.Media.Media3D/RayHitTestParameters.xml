@@ -1,0 +1,115 @@
+<Type Name="RayHitTestParameters" FullName="System.Windows.Media.Media3D.RayHitTestParameters">
+  <TypeSignature Language="C#" Value="public sealed class RayHitTestParameters : System.Windows.Media.Media3D.HitTestParameters3D" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit RayHitTestParameters extends System.Windows.Media.Media3D.HitTestParameters3D" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Media3D.RayHitTestParameters" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Media3D.HitTestParameters3D</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>光線に沿ったヒット テストのパラメーターを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルの層がポイントまたはジオメトリ、最上位のオブジェクトだけでなく下にあるすべてのオブジェクトに対してヒット テストをサポートしていることに注意してください。  2D のヒット テストでは、指定したポイントまたは geometry のすぐ下の 3D の結果も返します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RayHitTestParameters (System.Windows.Media.Media3D.Point3D origin, System.Windows.Media.Media3D.Vector3D direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Media3D.Point3D origin, valuetype System.Windows.Media.Media3D.Vector3D direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Media3D.RayHitTestParameters.#ctor(System.Windows.Media.Media3D.Point3D,System.Windows.Media.Media3D.Vector3D)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="origin" Type="System.Windows.Media.Media3D.Point3D" />
+        <Parameter Name="direction" Type="System.Windows.Media.Media3D.Vector3D" />
+      </Parameters>
+      <Docs>
+        <param name="origin">光線の発生する位置の Point3D。</param>
+        <param name="direction">光線の方向を示す Vector3D。</param>
+        <summary>ヒット テストを行う光線の原点と方向を指定するオブジェクトのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルの層がポイントまたはジオメトリ、最上位のオブジェクトだけでなく下にあるすべてのオブジェクトに対してヒット テストをサポートしていることに注意してください。  2D のヒット テストでは、指定したポイントまたは geometry のすぐ下の 3D の結果も返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Vector3D Direction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Vector3D Direction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.RayHitTestParameters.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Vector3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、 <see cref="T:System.Windows.Media.Media3D.Vector3D" /> (原点) からヒット テストを行う光線の方向を示すです。</summary>
+        <value>ヒット テストを行う光線の方向を示す Vector3D。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルの層がポイントまたはジオメトリ、最上位のオブジェクトだけでなく下にあるすべてのオブジェクトに対してヒット テストをサポートしていることに注意してください。  2D のヒット テストでは、指定したポイントまたは geometry のすぐ下の 3D の結果も返します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[hittest3d#HitTest3D3DN4](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml.cs#hittest3d3dn4)]
+ [!code-vb[hittest3d#HitTest3D3DN4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTest3D/visualbasic/window1.xaml.vb#hittest3d3dn4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Origin">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Media3D.Point3D Origin { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Media3D.Point3D Origin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Media3D.RayHitTestParameters.Origin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Point3D</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒット テストを行う光線の原点を取得します。</summary>
+        <value>ヒットを行う光線の原点をテストします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアルの層がポイントまたはジオメトリ、最上位のオブジェクトだけでなく下にあるすべてのオブジェクトに対してヒット テストをサポートしていることに注意してください。  2D のヒット テストでは、指定したポイントまたは geometry のすぐ下の 3D の結果も返します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[hittest3d#HitTest3D3DN4](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml.cs#hittest3d3dn4)]
+ [!code-vb[hittest3d#HitTest3D3DN4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTest3D/visualbasic/window1.xaml.vb#hittest3d3dn4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

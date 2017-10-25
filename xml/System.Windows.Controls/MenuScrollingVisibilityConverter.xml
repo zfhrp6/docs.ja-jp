@@ -1,0 +1,121 @@
+<Type Name="MenuScrollingVisibilityConverter" FullName="System.Windows.Controls.MenuScrollingVisibilityConverter">
+  <TypeSignature Language="C#" Value="public sealed class MenuScrollingVisibilityConverter : System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MenuScrollingVisibilityConverter extends System.Object implements class System.Windows.Data.IMultiValueConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.MenuScrollingVisibilityConverter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Data.IMultiValueConverter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>繰り返しのメニューをスクロール ボタンの可視性を処理するデータ コンバーターを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.MenuScrollingVisibilityConverter>メニューがある 1 回に画面に収まるようにアイテムが多すぎるときに、メニューが繰り返しのボタンを表示するかどうかを決定します。  コンバーターを使用して、 <xref:System.Windows.Data.MultiBinding> 4 つのバインディングを持ちます。  4 つのバインディングは、親のプロパティにする必要があります<xref:System.Windows.Controls.ScrollViewer>: メニュー項目が整理されている場合垂直方向にする (メニューの既定値)、バインド<xref:System.Windows.Controls.ScrollViewer.ComputedVerticalScrollBarVisibility%2A>、 <xref:System.Windows.Controls.ScrollViewer.VerticalOffset%2A>、 <xref:System.Windows.Controls.ScrollViewer.ExtentHeight%2A>、および<xref:System.Windows.Controls.ScrollViewer.ViewportHeight%2A>です。  メニュー項目が水平方向に整理されている場合にバインド<xref:System.Windows.Controls.ScrollViewer.ComputedHorizontalScrollBarVisibility%2A>、 <xref:System.Windows.Controls.ScrollViewer.HorizontalOffset%2A>、 <xref:System.Windows.Controls.ScrollViewer.ExtentWidth%2A>、および<xref:System.Windows.Controls.ScrollViewer.ViewportWidth%2A>です。  
+  
+ 設定<xref:System.Windows.Data.MultiBinding.ConverterParameter%2A?displayProperty=nameWithType>を 0 または 100 にします。  値がパーセンテージとして扱われ、ボタンが非表示かどうかを判断時、<xref:System.Windows.Controls.ScrollViewer>が指定した位置にあります。  ときに、<xref:System.Windows.Controls.ScrollViewer>は上部の位置、 <xref:System.Windows.Controls.ScrollViewer> 0% は、一番上のボタンを非表示にします。  ときに、<xref:System.Windows.Controls.ScrollViewer>は下部の位置、 <xref:System.Windows.Controls.ScrollViewer> 100% は、下のボタンを非表示にします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.MenuScrollingVisibilityConverter>で、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.ScrollViewer>メニュー。  完了の例では、次を参照してください。[サンプル全体について](http://go.microsoft.com/fwlink/?LinkID=160041)です。  
+  
+ [!code-xaml[ControlTemplateExamples#MenuScrollViewer](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/menu.xaml#menuscrollviewer)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MenuScrollingVisibilityConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MenuScrollingVisibilityConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.MenuScrollingVisibilityConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Convert">
+      <MemberSignature Language="C#" Value="public object Convert (object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Convert(object[] values, class System.Type targetType, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MenuScrollingVisibilityConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="values" Type="System.Object[]" />
+        <Parameter Name="targetType" Type="System.Type" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="values">ソース バインドによって生成される値。</param>
+        <param name="targetType">対象の型。 ソースに変換することを入力します。</param>
+        <param name="parameter">コンバーター パラメーター。</param>
+        <param name="culture">カルチャ情報。</param>
+        <summary>ソースからの値をターゲットに移動するときに呼び出されます。</summary>
+        <returns>変換された値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DependencyProperty.UnsetValue>コンバーターに値が生成されないことと、既定値を使用することを示すために返される可能性があります。  
+  
+ <xref:System.Windows.Data.Binding.DoNothing>バインドの値を転送または既定値を使用する必要がありますいないを示すために返される可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertBack">
+      <MemberSignature Language="C#" Value="public object[] ConvertBack (object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object[] ConvertBack(object value, class System.Type[] targetTypes, object parameter, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.MenuScrollingVisibilityConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="targetTypes" Type="System.Type[]" />
+        <Parameter Name="parameter" Type="System.Object" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">このパラメーターは使用されません。</param>
+        <param name="targetTypes">このパラメーターは使用されません。</param>
+        <param name="parameter">このパラメーターは使用されません。</param>
+        <param name="culture">このパラメーターは使用されません。</param>
+        <summary>サポートされていません。</summary>
+        <returns>
+          <see cref="F:System.Windows.Data.Binding.DoNothing" />
+        </returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

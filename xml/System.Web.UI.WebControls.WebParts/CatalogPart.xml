@@ -1,0 +1,355 @@
+<Type Name="CatalogPart" FullName="System.Web.UI.WebControls.WebParts.CatalogPart">
+  <TypeSignature Language="C#" Value="public abstract class CatalogPart : System.Web.UI.WebControls.WebParts.Part" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CatalogPart extends System.Web.UI.WebControls.WebParts.Part" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.CatalogPart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebParts.Part</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.WebParts.CatalogPartDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>内に存在するコントロールの基底クラスとして機能<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />ゾーン、および利用可能な Web サーバー コントロールのカタログを提供 (特に<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロール) のユーザーが Web ページに追加できます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラス内に存在する特殊なコントロールの基底クラスは、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>ゾーンです。 派生これら<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールは、エンドユーザーが Web ページに追加できる Web サーバー コントロールのカタログを提供します。 使用して<xref:System.Web.UI.WebControls.WebParts.CatalogPart>エンドユーザーに提供すると、柔軟性を追加またはサーバー コントロールを削除して、Web ページの機能を変更する場合は、Web アプリケーションで制御します。  
+  
+ カタログは、1 つ以上の使用可能な Web サーバー コントロールの一覧だけで (を含む<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、ASP.NET サーバー コントロール、およびカスタム認証またはユーザー コントロール) のユーザーが Web ページに追加できます。 カタログがエンドユーザー; 用の命令のテキストを含む、共通の特徴の数サーバーの各コントロールを説明するテキストサーバー コントロールを選択し、ページに追加するヘルパー コントロール共通のヘッダー、フッター、および境界線です。スタイル属性の数。  
+  
+ 次の 3 種類がある<xref:System.Web.UI.WebControls.WebParts.CatalogPart>次の表に示すように Web パーツ コントロール セットに付属するコントロール。 各種の<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールには、別のソースからのページに追加されたサーバー コントロールが含まれています。  
+  
+> [!IMPORTANT]
+>  継承するコントロール、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスがから派生したゾーンでのみ置くことができます、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>クラスです。  
+  
+|コントロール|説明|  
+|-------------|-----------------|  
+|<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>|コントロールがページで閉じられていて、ユーザーが再度開く (ページに再度追加する) ことがありますが含まれています。 この種類のカタログ内のコントロールは、別のソースからのページに既に追加されて、ユーザーが終了し、コントロールです。|  
+|<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>|内で宣言されたサーバー コントロールが含まれています、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>自体では、コントロール、 <xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase> Web ページのマークアップ内のゾーンです。|  
+|<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>|カタログにコントロールの定義ファイル (状態情報が含まれるスキーマで定義されている XML ファイル) をアップロードするユーザーのユーザー インターフェイス (UI) を提供できるように、Web ページにコントロールを追加することができます。 この種類のカタログにコントロール自体は表示されません。カタログは、それらをページに追加できるように外部コントロールの定義ファイルにアクセスするためのメカニズムだけです。|  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスは、ベースから継承<xref:System.Web.UI.WebControls.WebParts.Part>クラス、Web パーツ コントロール セットの他のパーツ コントロールの共通の動作があるようにします。 さらに、カタログの機能に便利ないくつかのメンバーを追加します。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle%2A>プロパティ、コントロールのタイトルとして表示されている実際の文字列を取得します。 このプロパティの値には、同じの値にすることができます、<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティまたはプロパティには、.NET Framework で提供される既定値に値が割り当てられていない場合。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart.WebPartManager%2A>と<xref:System.Web.UI.WebControls.WebParts.CatalogPart.Zone%2A>プロパティの両方のライフ サイクルを制御する 2 つの重要なオブジェクトに簡単にアクセスを提供する、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール:<xref:System.Web.UI.WebControls.WebParts.WebPartManager>コントロール、および<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>を含むゾーン、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>それぞれ制御します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスには、いくつかのメソッドも含まれています。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッドは継承クラスによって実装する必要がありますのある抽象メソッドとして宣言されています。 その目的は、カタログ内のコントロールの説明のコレクションを返すにです。 関連するメソッド、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetWebPart%2A>抽象として宣言されても、継承クラスで実装する必要があります。 このメソッドは、のインスタンスを返す、<xref:System.Web.UI.WebControls.WebParts.WebPart>をパラメーターとしてメソッドに渡される説明に基づいてコントロール。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスです。 クラスは抽象であるために、コード内で直接は使用されません。 ただし、例は、3 つの派生を使用する方法を示しています。 <xref:System.Web.UI.WebControls.WebParts.CatalogPart> 、Web パーツ コントロール セットを一般的な使用シナリオを示すために用意されているコントロール。  
+  
+ これには、コード例に 4 つの部分があります。  
+  
+-   ユーザー コントロールを Web ページの表示モードを変更することができます。  
+  
+-   Web ページに、3 つが含まれています<xref:System.Web.UI.WebControls.WebParts.CatalogPart>付属している、Web パーツ コントロール セット内で宣言されているすべてのコントロール、 <xref:System.Web.UI.WebControls.WebParts.CatalogZone> Web ページ上。 ページも含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロールで、<xref:System.Web.UI.WebControls.AdRotator>コントロール、ゾーンで宣言します。  
+  
+-   引用符内に表示を含む XML ファイル、 <xref:System.Web.UI.WebControls.AdRotator> Web ページ上のコントロールです。  
+  
+-   この例を実行する方法の説明。  
+  
+ このコード例の最初の部分は、ユーザーが Web ページの表示モードを変更できるユーザー コントロールです。 DisplayModeMenuCS.ascx または DisplayModeMenuVB.ascx (言語に応じて使用している) という名前のファイルには、このコードを保存する必要があります。 詳細については、このコントロールでモードと、ソース コードの説明を表示を参照してください[チュートリアル: Web パーツ ページの表示モードの変更](http://msdn.microsoft.com/library/24e42f74-82dc-4c13-8574-130398985fc0)です。  
+  
+ [!code-aspx-csharp[WebParts_CatalogPart_Overview#5](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPart_Overview/CS/displaymodemenucs.ascx#5)]
+ [!code-aspx-vb[WebParts_CatalogPart_Overview#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPart_Overview/VB/displaymodemenuvb.ascx#5)]  
+  
+ コード例の 2 番目の部分は、Web ページです。 ページが含まれています、<xref:System.Web.UI.WebControls.WebParts.CatalogZone>コントロール、および子内で`<zonetemplate>`、3 つの各要素<xref:System.Web.UI.WebControls.WebParts.CatalogPart>と Web パーツ コントロール セットが宣言されている指定を制御します。 いくつかの属性に設定されて、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>コントロールにも、\<スクリプト > ページでは、そのコントロールの属性のセクションでは、プログラムからアクセスします。 コントロールには、ユーザーがページに追加できる 1 つの子コントロールが含まれています。 標準<xref:System.Web.UI.WebControls.Calendar>コントロール。 <xref:System.Web.UI.WebControls.WebParts.CatalogZone>と<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールのみ表示するユーザーは、カタログの表示モードにページを切り替えるときにします。  
+  
+ ページにも含まれています、<xref:System.Web.UI.WebControls.WebParts.WebPartZone>コントロール、およびその子内で`<zonetemplate>`要素は、 <xref:System.Web.UI.WebControls.AdRotator> XML ファイルから交互にメッセージを表示するコントロール。 閉じる動詞をページが表示されます、コントロールが追加され、ページ カタログにユーザーをもう一度開くコントロール、ページのカタログの表示モードに切り替え をクリックして、ユーザーがコントロールを閉じると場合に、アクセスする、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>を制御する、追加して戻すと、閉じたコントロールです。  
+  
+ [!code-aspx-csharp[WebParts_CatalogPart_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_CatalogPart_Overview/CS/catalogpartcs.aspx#1)]
+ [!code-aspx-vb[WebParts_CatalogPart_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_CatalogPart_Overview/VB/catalogpartvb.aspx#1)]  
+  
+ コード例の 3 番目の部分は、XML ファイルです。 このファイルは、ソース ファイルを<xref:System.Web.UI.WebControls.AdRotator> ページで宣言されているコントロール。 ファイルには、コントロールは、定期的に回転し、表示する、お気に入りの引用が含まれています。 次の内容をテキスト エディターにコピーし、Quotes.xml としてファイルを保存します。  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>  
+<Advertisements>  
+  <Ad>  
+    <AlternateText>  
+      A stitch in time saves nine.  
+    </AlternateText>      
+  </Ad>  
+  <Ad>  
+    <AlternateText>  
+      A penny saved is a penny earned.  
+    </AlternateText>      
+  </Ad>  
+</Advertisements>  
+```  
+  
+ コード例を実行するには、ブラウザーで Web ページを読み込みます。 使用して、**表示モード**を選択するドロップダウン コントロール**カタログ**ページ切り替えると、カタログの表示モードにします。 さまざまなプロパティ値に設定された場合の影響に注意してください、<xref:System.Web.UI.WebControls.WebParts.DeclarativeCatalogPart>が含まれるコントロール、<xref:System.Web.UI.WebControls.Calendar>コントロール。 横にチェック ボックスを選択することができます、<xref:System.Web.UI.WebControls.Calendar>を制御して、をクリックして**追加**ページに追加します。 クリックした場合、**表示 DeclarativeCatalogPart プロパティ**ボタンの場合は、そのコントロールが表示されているのプロパティの値。 クリックして**閉じる**を通常のブラウズ モードをページを取得して、ページに追加したコントロールを参照してください。 動詞メニューに進み、 <xref:System.Web.UI.WebControls.AdRotator> (タイトル バーに下向きの矢印で表される) コントロールをクリック**閉じる**です。 コントロールをページのカタログに追加します。 ここでも、カタログの表示モードに切り替えるし、表示するページ カタログ ハイパーリンクをクリックして、<xref:System.Web.UI.WebControls.WebParts.PageCatalogPart>コントロール。 なお、<xref:System.Web.UI.WebControls.AdRotator>コントロールは、そのタイトルである参照が**お気に入りを引用符で**です。 選択、**お気に入りを引用符で**を制御して、をクリックして、**追加**コントロールをページに追加するボタンをクリックします。 をクリックして、**閉じる**をブラウズ モードのページを返すボタンをクリックします。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>コントロールがこのページでも宣言されていますが、コントロールの使用は、このコード例ではデモンストレーションしませんので、コントロールをインポートする方法を示すサンプルが、複雑です。 完全を参照する、クラス概要ドキュメントの例では、作業を参照してください、<xref:System.Web.UI.WebControls.WebParts.ImportCatalogPart>クラスまたは<xref:System.Web.UI.WebControls.WebParts.CatalogZone>クラスです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />クラスは抽象クラス、Web ページ上で直接使用することはできません。 3 つの Web パーツ コントロール セット提供<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />基底クラスから派生したコントロール (このトピックの「解説」セクションの表に一覧表示) と Web パーツ ページを使用できます。 これらのコントロールには、ほとんどの Web サーバー コントロールのカタログの作成に必要な機能を提供する必要があります。 ただし、する可能性がありますの専門的なカスタムの開発が必要なニーズ<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。 特別な種類を作成するなど、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />サーバー コントロールを Web サービス、またはデータベースから直接使用できるようにするコントロール。 これを行うから継承する必要があります、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />クラスです。 抽象を上書きすることも必要があります。<see cref="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions" />と<see cref="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />を返す実装を提供するメソッド、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />も他のサーバー コントロールとその説明です。 データベースまたは Web サービスからサーバーのさまざまなコントロールを読み込むためのメソッドも必要になります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CatalogPart ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>継承クラス インスタンスによって使用されるクラスを初期化します。 このコンストラクターは、継承クラスによってのみ呼び出すことができます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayTitle">
+      <MemberSignature Language="C#" Value="public string DisplayTitle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayTitle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>実際の現在のタイトルを表す文字列を取得、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</summary>
+        <value>コントロールの完全な表示されるタイトルを表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle%2A>プロパティ ベースの現在値を返します<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティまたはコントロールにタイトル、計算値がありません。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle%2A>プロパティが実行時に表示されるタイトルの実際の現在の値を取得する読み取り専用、計算されたプロパティに設計されています。 したがって、しないでのタイトルを設定するこのプロパティを使用して、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 タイトルを設定するには、ベースを使用<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますをプログラムで使用、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle%2A>プロパティです。 `<script>`  ページで、コード アクセスのセクションで、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.DisplayTitle%2A>プロパティ`DeclarativeCatalogPart1` ページで宣言されています。 このコードは、Web ページのみを示しています。完全なコード例を実行するために必要なを参照してください。、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>クラスの概要です。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAvailableWebPartDescriptions">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection GetAvailableWebPartDescriptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用可能な説明のコレクションを返します<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />カタログ内のコントロールです。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescriptionCollection" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />カタログの各コントロールに対してです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッドは、カタログの各コントロールの説明情報を返します。 A<xref:System.Web.UI.WebControls.WebParts.WebPartDescription>オブジェクトは、軽量のオブジェクトに関する重要な情報を含む、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール、およびベースから継承されているいくつかの重要なプロパティの値へのオブジェクト参照をその ID を含むコントロール<xref:System.Web.UI.WebControls.WebParts.Part>クラスなど<xref:System.Web.UI.WebControls.WebParts.Part.Title%2A>と<xref:System.Web.UI.WebControls.WebParts.Part.Description%2A>です。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>メソッドのパフォーマンスが向上します。 カタログが作成されると、一部の情報が含まれている、タイトル、説明、アイコン (が存在する場合)、および ID を含む各コントロールについて、必要があります。 この情報を取得するには、各コントロールのインスタンスを作成するのではなく、呼び出し元が使用できます、<xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions%2A>各コントロールの概要の説明情報のみを返すメソッド。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetAvailableWebPartDescriptions" />は抽象であるメソッドで実装する必要がありますので派生<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。 含むゾーンでこのメソッドが呼び出されます、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール、および関連付けられている<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />オブジェクトとの内容、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />ゾーンが表示されます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IDictionary GetDesignModeState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.IDictionary GetDesignModeState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetDesignModeState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の状態を取得、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールの親ゾーンです。</summary>
+        <returns><see cref="T:System.Collections.IDictionary" />の現在の状態を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />を含むゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetDesignModeState%2A>メソッドを含むゾーンの状態に関する情報を返します、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロール。 ディクショナリの形式では、状態情報が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWebPart">
+      <MemberSignature Language="C#" Value="public abstract System.Web.UI.WebControls.WebParts.WebPart GetWebPart (System.Web.UI.WebControls.WebParts.WebPartDescription description);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Web.UI.WebControls.WebParts.WebPart GetWebPart(class System.Web.UI.WebControls.WebParts.WebPartDescription description) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPart</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.Web.UI.WebControls.WebParts.WebPartDescription" />
+      </Parameters>
+      <Docs>
+        <param name="description">A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />特定への参照を格納している<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />です。</param>
+        <summary>カタログから取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />によって参照されているコントロール、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartDescription" />メソッドに渡されるオブジェクト。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />内のオブジェクトによって参照される、<paramref name="description" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.GetWebPart%2A>メソッドを返します、<xref:System.Web.UI.WebControls.WebParts.WebPart>カタログから管理します。 <xref:System.Web.UI.WebControls.WebParts.WebPartDescription>メソッドに渡されるオブジェクトに一致する特定の<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールと、メソッドによって返されることを制御できます。  
+  
+ 派生していないサーバー コントロールが、カタログに含まれているかどうか、 <xref:System.Web.UI.WebControls.WebParts.WebPart> ASP.NET サーバー コントロール、カスタム サーバー コントロール、またはユーザー コントロールなど、クラス、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>コントロールが使用して、サーバー コントロールをラップする必要があります、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>制御、および返す、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>このメソッドから制御します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.WebParts.CatalogPart.GetWebPart(System.Web.UI.WebControls.WebParts.WebPartDescription)" />は抽象であるメソッドで実装する必要がありますので派生<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。 含むゾーンでこのメソッドは、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール、関連付けられている<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPartChrome" />オブジェクト、および、 <see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" /> Web ページ上のオブジェクト。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.OnPreRender%2A>メソッドは、ベース<xref:System.Web.UI.Control.OnPreRender%2A?displayProperty=nameWithType>メソッド、確実のインスタンスと、<xref:System.Web.UI.WebControls.WebParts.CatalogZoneBase>クラスが作成されました。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />を格納している、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロールが<see langword="null" />です。</exception>
+        <block subset="none" type="overrides">
+          <para>このメソッドは、派生クラスで必要に応じてオーバーライドできます。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SetDesignModeState">
+      <MemberSignature Language="C#" Value="protected override void SetDesignModeState (System.Collections.IDictionary data);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void SetDesignModeState(class System.Collections.IDictionary data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WebParts.CatalogPart.SetDesignModeState(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="data" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="data">コントロールのデザイン時データを格納する <see cref="T:System.Collections.IDictionary" />。</param>
+        <summary>コントロールのデザイン時データを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebPartManager">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartManager WebPartManager" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPart.WebPartManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスへの参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />クラスです。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WebParts.WebPartManager" />の現在の Web ページ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.WebPartManager%2A>プロパティを提供するため、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>に現在のアクセス制御<xref:System.Web.UI.WebControls.WebParts.WebPartManager>ページ上のオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Zone">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.CatalogZoneBase Zone" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.CatalogPart.Zone" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.CatalogZoneBase</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />を含むゾーン、<see cref="T:System.Web.UI.WebControls.WebParts.CatalogPart" />コントロール。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.CatalogZoneBase" />コントロールを格納するゾーンに対応します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.CatalogPart.Zone%2A>プロパティにより、<xref:System.Web.UI.WebControls.WebParts.CatalogPart>そのゾーンへの参照を取得するコントロール。 プロパティが読み取り専用の場合は、ゾーンの基になるプロパティをプログラムで変更できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

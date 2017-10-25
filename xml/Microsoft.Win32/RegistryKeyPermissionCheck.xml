@@ -1,0 +1,108 @@
+<Type Name="RegistryKeyPermissionCheck" FullName="Microsoft.Win32.RegistryKeyPermissionCheck">
+  <TypeSignature Language="C#" Value="public enum RegistryKeyPermissionCheck" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RegistryKeyPermissionCheck extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.RegistryKeyPermissionCheck" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>レジストリ キーを開くときに、セキュリティ チェックを実行するかどうかを指定し、名前/値ペアにアクセスします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、保存またはサブキーのセットから多数のレジストリ設定を取得、各種の冗長なセキュリティ チェックが実行されます。 この列挙体は、キーに対するセキュリティ チェックが省略を指定します。  
+  
+ 次の表の親キーや現在のキーを開く方法に基づいて、セキュリティ チェックが実行時に示します。  
+  
+|親のキーを使用して開いた|現在のキーを使用して開いた|結果|  
+|----------------------------|-----------------------------|------------|  
+|既定値|既定値|現在のキーでは、任意の値にアクセスするとき、または、サブキーにアクセスしようとすると、セキュリティ チェックは実行されます。 これは、.NET Framework のバージョン 1.0 および 1.1 での動作です。|  
+|既定値|ReadSubTree|セキュリティ チェックは現在のキーを開こうとしたときに実行されます。|  
+|既定値|ReadWriteSubTree|セキュリティ チェックは現在のキーを開こうとしたときに実行されます。|  
+|ReadSubTree|既定値または ReadSubTree|現在のキーまたはその値を開くときに、セキュリティ チェックは行われません。|  
+|ReadSubTree|ReadWriteSubTree|セキュリティ チェックは現在のキーを開こうとしたときに実行されます。|  
+|ReadWriteSubTree|どれでも可|現在のキーまたはその値を開くときに、セキュリティ チェックは行われません。|  
+  
+   
+  
+## Examples  
+ 次のコード例では、100 のキー/値ペアを含む、サブキーを作成し、終了しました。 例では、既定値は、サブキーを開き、すべての値の読み取りにかかる時間を記録します。 例では、ReadSubTree とサブキーを開き、すべての値の読み取りにかかる時間を記録します。 最後に、この例を計算し、向上率が表示されます。  
+  
+ [!code-csharp[RegistryKey.OpenSubKey_PermCheck#1](~/samples/snippets/csharp/VS_Snippets_CLR/RegistryKey.OpenSubKey_PermCheck/cs/source.cs#1)]
+ [!code-vb[RegistryKey.OpenSubKey_PermCheck#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RegistryKey.OpenSubKey_PermCheck/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryKeyPermissionCheck Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryKeyPermissionCheck.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKeyPermissionCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリ キーは、その親のモードを継承します。 セキュリティ チェックは実行アクセス サブキーまたは値、しようとするときに親が開かれた場合を除き、<see cref="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadSubTree" />または<see cref="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadWriteSubTree" />モード。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSubTree">
+      <MemberSignature Language="C#" Value="ReadSubTree" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryKeyPermissionCheck ReadSubTree = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadSubTree" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKeyPermissionCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブキーまたは値にアクセスするときに、セキュリティ チェックは実行されません。 親が開かれた場合を除き、現在のキーを開こうとしているときのセキュリティ チェックが実行<see cref="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadSubTree" />または<see cref="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadWriteSubTree" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadWriteSubTree">
+      <MemberSignature Language="C#" Value="ReadWriteSubTree" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.Win32.RegistryKeyPermissionCheck ReadWriteSubTree = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadWriteSubTree" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Win32.Registry</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKeyPermissionCheck</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブキーまたは値にアクセスするときに、セキュリティ チェックは実行されません。 親が開かれた場合を除き、現在のキーを開こうとしているときのセキュリティ チェックが実行<see cref="F:Microsoft.Win32.RegistryKeyPermissionCheck.ReadWriteSubTree" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

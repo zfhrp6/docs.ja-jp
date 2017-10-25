@@ -1,0 +1,127 @@
+<Type Name="DesignTimeResourceProviderFactoryAttribute" FullName="System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DesignTimeResourceProviderFactoryAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignTimeResourceProviderFactoryAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時のリソース プロバイダー ファクトリの種類を指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute>クラスを使用する、<xref:System.Web.Compilation.ResourceProviderFactory>関連付けられている型を指定するオブジェクト<xref:System.Web.UI.Design.DesignTimeResourceProviderFactory>オブジェクト。 <xref:System.Web.UI.Design.DesignTimeResourceProviderFactory>クラスは、プロバイダーを作成するデザイン時のリソースの読み書きに使用します。 内で[!INCLUDE[vsprvsext](~/includes/vsprvsext-md.md)]、開発者は、使用できる、**ローカル リソースの生成**コマンドを**ツール** メニューのデザイン時にリソースを作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例をカスタマイズしたデザイン時のリソース プロバイダー ファクトリを指定するカスタマイズされたリソース プロバイダー ファクトリを示しています、<xref:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute>属性。 この例では、カスタマイズしたデザイン時のリソース プロバイダー ファクトリを実装するために必要なコードは含まれません。  
+  
+ [!code-csharp[System.Web.Compilation.ResourceProviderFactory#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/CS/source.cs#1)]
+ [!code-vb[System.Web.Compilation.ResourceProviderFactory#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Compilation.ResourceProviderFactory/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignTimeResourceProviderFactoryAttribute (string factoryTypeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string factoryTypeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="factoryTypeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="factoryTypeName">リソース プロバイダー ファクトリ型の名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute" />型名を指定した工場出荷時設定の属性を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute> 属性が `factoryTypeName` に設定されています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignTimeResourceProviderFactoryAttribute (Type factoryType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type factoryType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="factoryType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="factoryType">リソース プロバイダーのファクトリの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute" />属性が指定されたファクトリの型の修飾名に設定されたクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.FactoryTypeName%2A>プロパティに設定されている、<xref:System.Type.AssemblyQualifiedName%2A>のプロパティの値、`factoryType`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FactoryTypeName">
+      <MemberSignature Language="C#" Value="public string FactoryTypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FactoryTypeName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.FactoryTypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>工場出荷時の型名の値を取得します。</summary>
+        <value>A<see cref="T:System.String" />ファクトリの型の名前を含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定のプロバイダーを使用するかどうかを判断します。</summary>
+        <returns>
+          <see cref="P:System.Web.Compilation.DesignTimeResourceProviderFactoryAttribute.FactoryTypeName" /> が <see langword="null" /> に等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

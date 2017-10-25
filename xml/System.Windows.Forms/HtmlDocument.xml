@@ -1,0 +1,1623 @@
+<Type Name="HtmlDocument" FullName="System.Windows.Forms.HtmlDocument">
+  <TypeSignature Language="C#" Value="public sealed class HtmlDocument" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlDocument extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlDocument" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.WebBrowser" /> コントロールでホストされている HTML ドキュメントに、トップレベルのプログラムによるアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument>Internet Explorer のドキュメント オブジェクトとも呼ばれる、HTML ドキュメント オブジェクト モデル (DOM) のマネージ ラッパーを提供します。 インスタンスを取得する<xref:System.Windows.Forms.HtmlDocument>を通じて、<xref:System.Windows.Forms.WebBrowser.Document%2A>のプロパティ、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ HTML タグ、HTML ドキュメントの内部では、相互内にネストすることができます。 <xref:System.Windows.Forms.HtmlDocument>子供がインスタンスである、ドキュメント ツリーを表すための<xref:System.Windows.Forms.HtmlElement>クラスです。 次のコード例では、単純な HTML ファイルを示します。  
+  
+```  
+<HTML>  
+    <BODY>  
+        <DIV name="Span1">Simple HTML Form</DIV>  
+        <FORM>  
+            <SPAN name="TextLabel">Enter Your Name:</SPAN>  
+            <INPUT type="text" size="20" name="Text1">  
+        </FORM>  
+    </BODY>  
+</HTML>  
+```  
+  
+ この例では<xref:System.Windows.Forms.HtmlDocument>内のドキュメント全体を表す、`HTML`タグ。 `BODY`、 `DIV`、`FORM`と`SPAN`タグが個人によって表される<xref:System.Windows.Forms.HtmlElement>オブジェクト。  
+  
+ このツリーの要素にアクセスすることがいくつかの方法はあります。 使用して、<xref:System.Windows.Forms.HtmlDocument.Body%2A>プロパティへのアクセスを`BODY`タグとそのすべての子です。 <xref:System.Windows.Forms.HtmlDocument.ActiveElement%2A>プロパティを示します、<xref:System.Windows.Forms.HtmlElement>のユーザーの入力フォーカスのある HTML ページ上にある要素。 HTML ページ内のすべての要素が名前を持つことができます。<xref:System.Windows.Forms.HtmlDocument.All%2A>コレクションで各へのアクセスを提供<xref:System.Windows.Forms.HtmlElement>インデックスとその名前を使用します。 <xref:System.Windows.Forms.HtmlDocument.GetElementsByTagName%2A>返されます、<xref:System.Windows.Forms.HtmlElementCollection>すべて<xref:System.Windows.Forms.HtmlElement>などの指定された HTML タグ名を持つオブジェクト`DIV`または`TABLE`です。 <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A>1 つを返す<xref:System.Windows.Forms.HtmlElement>を指定する一意の ID に対応します。 <xref:System.Windows.Forms.HtmlDocument.GetElementFromPoint%2A>返されます、<xref:System.Windows.Forms.HtmlElement>は指定されたマウス ポインターの座標時に画面に存在します。  
+  
+ 使用することも、<xref:System.Windows.Forms.HtmlDocument.Forms%2A>と<xref:System.Windows.Forms.HtmlDocument.Images%2A>コレクションを反復可能な要素を表すユーザー入力フォームおよびグラフィックス、それぞれします。  
+  
+ <xref:System.Windows.Forms.HtmlDocument>Internet Explorer の DHTML DOM によって実装されたアンマネージ インターフェイスに基づきます。 `IHTMLDocument`、 `IHTMLDocument2`、 `IHTMLDocument3`、および`IHTMLDocument4`です。 最も頻繁に使用されるプロパティ、これらのアンマネージ インターフェイスのメソッドは、によって公開されるのみで、<xref:System.Windows.Forms.HtmlDocument>です。 その他のすべてのプロパティとメソッドを使用して直接アクセスすることができます、<xref:System.Windows.Forms.HtmlDocument.DomDocument%2A>プロパティで、必要なアンマネージ インターフェイス ポインターにキャストすることができます。  
+  
+ HTML ドキュメントはさまざまなウィンドウ フレームを含む可能性がありますの内側、<xref:System.Windows.Forms.WebBrowser>コントロール。 各フレームには、独自の HTML ページが表示されます。 <xref:System.Windows.Forms.HtmlWindow.Frames%2A>コレクションがを介して使用できる、<xref:System.Windows.Forms.HtmlDocument.Window%2A>プロパティです。 使用することも、<xref:System.Windows.Forms.HtmlDocument.Window%2A>プロパティを表示されるページのサイズを変更またはドキュメントをスクロール、表示通知し、ユーザーにメッセージが表示されます。  
+  
+ <xref:System.Windows.Forms.HtmlDocument>HTML ページをホストしている場合の処理が期待する最も一般的なイベントを公開します。 イベントのインターフェイスを直接公開されていない場合を使用して、イベントのハンドラーを追加できます<xref:System.Windows.Forms.HtmlDocument.AttachEventHandler%2A>です。  
+  
+ HTML ファイルを含めることがあります`SCRIPT`タグで、アクティブ スクリプトの言語、JScript、VBScript などのいずれかで記述されたコードをカプセル化します。 <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>プロパティの実行に対してメソッドを提供し、メソッド内で定義、`SCRIPT`タグ。  
+  
+> [!NOTE]
+>  プロパティ、メソッド、およびイベントのほとんどを while<xref:System.Windows.Forms.HtmlDocument>がアンマネージ DOM いるということは、同じ名前に保たれる限り、いくつか変更されているとの整合性が、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する、Northwind データベースからデータを使用して、`HTML TABLE`を使用して動的に<xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>です。 <xref:System.Windows.Forms.HtmlElement.AppendChild%2A>メソッドは使用も、最初のセルを追加する (`TD`要素) の行に (`TR`要素)、テーブルに行を追加し、最後に、現在のドキュメントの最後に、テーブルを追加します。 このコード例では、アプリケーションがある必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。 ドキュメントが読み込まれた後は、コードを呼び出す必要があります。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement ActiveElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElement ActiveElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.ActiveElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在ユーザーの入力フォーカスがある <see cref="T:System.Windows.Forms.HtmlElement" /> を提供します。</summary>
+        <value>現在ユーザーの入力フォーカスがある <see cref="T:System.Windows.Forms.HtmlElement" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントにフォーカスがドキュメントの要素が指定されていません、フォーカス<xref:System.Windows.Forms.HtmlDocument.ActiveElement%2A>に対応する要素を返します、`<BODY>`タグ。  
+  
+ ドキュメントがフォーカスを持たない場合<xref:System.Windows.Forms.HtmlDocument.ActiveElement%2A>返します`null`です。  
+  
+ 入力フォーカスを持つ現在の要素がセルがかどうか (`TD`)、HTML で`TABLE`タグ、<xref:System.Windows.Forms.HtmlDocument.ActiveElement%2A>を含む要素を返す、`TABLE`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ActiveLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ActiveLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.ActiveLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがハイパーリンクをクリックしたときのハイパーリンクの <see cref="T:System.Drawing.Color" /> を取得または設定します。</summary>
+        <value>アクティブなリンクの <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがこれをクリックすると、リンクはアクティブです。 ナビゲーションの前に、リンクの色を変更するには、このプロパティを変更します。  
+  
+ <xref:System.Drawing.Color>に入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]をサポートしている、`Alpha`値が、HTML DOM はありません。 したがって、`Alpha`はこのプロパティに割り当てられている場合に効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElementCollection All { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElementCollection All" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.All" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.HtmlElementCollection" /> のインスタンスを取得します。これは、ドキュメントのすべての <see cref="T:System.Windows.Forms.HtmlElement" /> オブジェクトを格納します。</summary>
+        <value>ドキュメント内のすべての要素の <see cref="T:System.Windows.Forms.HtmlElementCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.All%2A>コレクションで、ドキュメント ツリー内での位置に関係なく、HTML ドキュメント内の要素へのランダム アクセスを提供します。 名前、ID、HTML ドキュメント内の要素にアクセスまたはパーティション インデックスを使用します。 すべてのドキュメント内の要素を反復処理する可能性があります。  
+  
+ 一部の要素など`HEAD`と`TITLE`、それらに関連付けられた名前がなくなります。 その他のすべての要素は、HTML ファイルの作成者には、それらが割り当てられている場合にのみ、名前があります。 ID またはインデックスの名前のない要素にアクセスすることができます。  
+  
+ 要素に直接追加することはできません、 <xref:System.Windows.Forms.HtmlDocument.All%2A> 、コレクションの外部ファイルに html 要素をすべてため、`HTML`タグは親要素が必要です。 使用して、<xref:System.Windows.Forms.HtmlElement.AppendChild%2A>メソッドまたは<xref:System.Windows.Forms.HtmlElement.InnerHtml%2A>プロパティ<xref:System.Windows.Forms.HtmlElement>ツリーに新しい要素を追加します。  
+  
+   
+  
+## Examples  
+ 次のコード例はすべての設定し、ドキュメント内の要素を反復処理`Enabled=True`ドキュメントの読み込み中に、ユーザー入力を防ぐために既定で無効には任意の要素を有効にします。 コード例では、アプリケーションが含まれている必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachEventHandler">
+      <MemberSignature Language="C#" Value="public void AttachEventHandler (string eventName, EventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachEventHandler(string eventName, class System.EventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.AttachEventHandler(System.String,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="eventHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventName">処理するイベントの名前。</param>
+        <param name="eventHandler">イベントを処理するマネージ コード。</param>
+        <summary>指定した HTML DOM イベントのイベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントの読み込みが完了するまで、ドキュメントまたはそのオブジェクトのいずれかのイベントをアタッチする必要がありますできません。 できるだけ早くこのメソッドを呼び出す必要がありますが、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>のイベント、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ このメソッドでは、によって公開されていないアンマネージの DOM イベント ハンドラーをアタッチすることができます<xref:System.Windows.Forms.HtmlDocument>です。 使用可能なアンマネージ DOM イベントの詳細については、次を参照してください。 [、管理されている HTML ドキュメント オブジェクト モデルでのへのアクセスの非公開メンバー](~/docs/framework/winforms/controls/accessing-unexposed-members-on-the-managed-html-document-object-model.md)と IHTMLDocument インターフェイス: [IHTMLDocument](http://go.microsoft.com/fwlink/?LinkId=104882)、 [IHTMLDocument2](http://go.microsoft.com/fwlink/?LinkId=104884)、 [IHTMLDocument3](http://go.microsoft.com/fwlink/?LinkId=104886)、 [IHTMLDocument4](http://go.microsoft.com/fwlink/?LinkId=104887)、 [IHTMLDocument5](http://go.microsoft.com/fwlink/?LinkId=104888)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color BackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color BackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.BackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML ドキュメントの背景色を取得または設定します。</summary>
+        <value>ドキュメントの背景の <see cref="T:System.Drawing.Color" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.BackColor%2A>その他の要素は、画面の領域を占有と表示されます。  
+  
+ <xref:System.Drawing.Color>に入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]をサポートしている、`Alpha`値が、HTML DOM はありません。 したがって、`Alpha`はこのプロパティに割り当てられている場合に効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement Body { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElement Body" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.HtmlElement" />の<c>本文</c>タグ。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlElement" />オブジェクトに対して、<c>本文</c>タグ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML ドキュメントは、次の 2 つの主要なセクションに分かれています。  
+  
+-   `HEAD`、ドキュメントのタイトル、任意の文書メタデータが含まれていますと`SCRIPT`要素。  
+  
+-   `BODY`、を含むすべての要素に関連する、画面に表示されるドキュメントの外観です。  
+  
+ 該当するショートカットはありません`Head`プロパティ<xref:System.Windows.Forms.HtmlDocument>です。 取得する、`HEAD`要素を使用して<xref:System.Windows.Forms.HtmlDocument.GetElementsByTagName%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例が新たに作成`DIV`要素を使用して、ドキュメントの一番下に追加され、<xref:System.Windows.Forms.HtmlElement.AppendChild%2A>メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#13)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがドキュメント内の任意の場所をクリックしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ドキュメント上をクリックを検出の要素を検索して、使用<xref:System.Windows.Forms.HtmlElement.ScrollIntoView%2A>に要素を Web ページの上部に揃えます。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextMenuShowing">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler ContextMenuShowing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler ContextMenuShowing" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.ContextMenuShowing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがドキュメントのコンテキスト メニューの表示を要求したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ドキュメントまたはドキュメント内の要素をマウスを右クリックした場合が表示されます、既定のコンテキスト メニューの特定の要素にします。 このイベントを使用して、コンテキスト メニューの表示を取り消すし、独自のいずれかが表示されます。  
+  
+   
+  
+## Examples  
+ 次のコード例のキャプチャ、<xref:System.Windows.Forms.HtmlDocument.ContextMenuShowing>イベント表示を使用して、<xref:System.Windows.Forms.ContextMenuStrip>です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Cookie">
+      <MemberSignature Language="C#" Value="public string Cookie { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Cookie" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Cookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドキュメントに関連付けられている HTTP クッキーを取得または設定します。</summary>
+        <value>セミコロンで各クッキーを区切った、クッキーのリストを格納する <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.Cookie%2A>プロパティ<xref:System.Windows.Forms.HtmlDocument>Web ページを設定するすべての cookie を公開します。  
+  
+ A *cookie*は、特定の Web ページに関連付けられた任意の名前/値ペア。 Web 開発者は、ユーザーを参照してくださいまたは Web サイトに戻るときに追跡するために cookie を使用します。 Cookie は、次を決定する cookie くずリストと呼ばれる複数の部分で構成されます。  
+  
+-   ドキュメントが cookie を適用する設定です。そのドメインとパスです。  
+  
+-   名前と cookie の値。  
+  
+-   Cookie の有効期限です。  
+  
+-   かどうか、クッキーだけが送信できる、セキュリティで保護された接続を使用します。  
+  
+ <xref:System.Windows.Forms.HtmlDocument.Cookie%2A>プロパティは、複数の cookie を含めることがあります。  
+  
+ のみ使用できます、<xref:System.Windows.Forms.HtmlDocument.Cookie%2A>プロパティを一度に 1 つの cookie を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement CreateElement (string elementTag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlElement CreateElement(string elementTag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.CreateElement(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="elementTag" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="elementTag">作成する HTML 要素の名前。</param>
+        <summary>指定した HTML タグの種類の新しい <see langword="HtmlElement" /> を作成します。</summary>
+        <returns>指定したタグの種類の新しい要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `elementTag`除くが Internet Explorer で、サポートされている HTML タグのいずれかのいずれかのあります`FRAME`または`IFRAME`です。  
+  
+ <xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>現在のドキュメント ツリーにアタッチされていない要素を返します。 ドキュメントに要素を追加するには、いずれかを使用、<xref:System.Windows.Forms.HtmlElement.InsertAdjacentElement%2A>または<xref:System.Windows.Forms.HtmlElement.AppendChild%2A>メソッドです。  
+  
+ 使用する場合は、このメソッドは既存のドキュメントのソース コードの状態を与えません。、<xref:System.Windows.Forms.WebBrowser>コントロールの**ソースの表示**コンテキスト メニュー コマンドまたは<xref:System.Windows.Forms.WebBrowser.DocumentText%2A>と<xref:System.Windows.Forms.WebBrowser.DocumentStream%2A>のプロパティ、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ 使用して新しい要素を作成するとき<xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>など、特定のプロパティを設定することはできません`Name`です。 Name 属性を設定する必要がある場合、割り当てるを HTML として、<xref:System.Windows.Forms.HtmlElement.InnerHtml%2A>ドキュメント内の別のオブジェクトのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、HTML を作成する、Northwind データベースからのデータ テーブルを使用して<xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>です。 <xref:System.Windows.Forms.HtmlElement.AppendChild%2A>メソッドは使用も、最初のセルを追加する (`TD`要素) の行に (`TR`要素)、テーブルに行を追加し、最後に、現在のドキュメントの最後に、テーブルを追加します。 このコード例では、アプリケーションがある必要があります、<xref:System.Windows.Forms.WebBrowser>と呼ばれるコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultEncoding">
+      <MemberSignature Language="C#" Value="public string DefaultEncoding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultEncoding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.DefaultEncoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のドキュメントに既定で使用されるエンコーディングを取得します。</summary>
+        <value>ページが最初に表示されたときにブラウザーが使用するエンコーディングを表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のエンコーディングは、エンコード、ページが最初に読み込まれるときに使用するマネージ HTML ドキュメント オブジェクト モデル (DOM) を試みます。 このエンコードは、派生のいずれかから Internet Explorer の**エンコード**設定、または、`META`ページ内でタグが埋め込まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetachEventHandler">
+      <MemberSignature Language="C#" Value="public void DetachEventHandler (string eventName, EventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DetachEventHandler(string eventName, class System.EventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.DetachEventHandler(System.String,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="eventHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventName">処理を終了するイベントの名前。</param>
+        <param name="eventHandler">イベントを処理するマネージ コード。</param>
+        <summary>HTML DOM の指定したイベントからイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティのためにこのドキュメントのドメインを記述する文字列を取得または設定します。</summary>
+        <value>有効なドメイン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、別のフレーム内の 2 つの Web ページは、阻止スクリプトを使用して、互いのコンテンツにアクセスします。偶数 www.microsoft.com と msdn.microsoft.com の「は、このインスタンスでと見なされます別のドメイン。 クロス フレームが同じ最上位ドメインからのページのスクリプティングを有効にするには、新しい値を割り当てることができます、<xref:System.Windows.Forms.HtmlDocument.Domain%2A>プロパティです。 例では、以前の URL、設定<xref:System.Windows.Forms.HtmlDocument.Domain%2A>microsoft.com は相互に通信するために両方のページを許可します。  
+  
+ 割り当てられている文字列、<xref:System.Windows.Forms.HtmlDocument.Domain%2A>プロパティが有効な最上位ドメインをする必要があります。 設定することができます、前の URL の例で<xref:System.Windows.Forms.HtmlDocument.Domain%2A>に microsoft.com は .com、スクリプトのページの内容をインターネット上の任意のページを有効にするとします。  
+  
+ 使用することはできません、<xref:System.Windows.Forms.HtmlDocument.Domain%2A>クロス フレームが 2 つの異なるプロトコルを使用してアクセスされるページのスクリプトを有効にするプロパティです。 場合は、ページ内の 1 つのフレームは、Web サーバー (http:// プロトコル) から取得し、ファイル システム (file://) プロトコルに由来別、することはできませんの値に関係なく、相互に通信するために、<xref:System.Windows.Forms.HtmlDocument.Domain%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">引数、<c>ドメイン</c>プロパティは、ドメイン ネーム システム (DNS) 規則を使用して有効なドメイン名をする必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DomDocument">
+      <MemberSignature Language="C#" Value="public object DomDocument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DomDocument" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.DomDocument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Forms.HtmlDocument" /> のアンマネージ インターフェイスへのポインターを取得します。</summary>
+        <value><see cref="T:System.Object" />を表す、 <c>IDispatch</c>アンマネージ ドキュメントへのポインター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument>ラッパーの Internet Explorer ドキュメント オブジェクト モデル (DOM)、COM に書き込まれるは など、非公開のプロパティまたはメソッドに、基になる COM インターフェイスにアクセスする必要がある場合`IHTMLDocument2`、それらのクエリには、このオブジェクトを使用することができます。  
+  
+ アンマネージ インターフェイスを使用するのには、アプリケーションに MSHTML ライブラリ (mshtml.dll) をインポートします。 ただし、実行することも公開されていないプロパティとメソッドを使用して、`IDispatch::Invoke`メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例のキャスト、<xref:System.Windows.Forms.HtmlDocument.DomDocument%2A>を`IHTMLDocument2`ポインターの値を表示し、`lastModified`プロパティは、ドキュメントの所有者が最終の内容を更新日時が示されます。 このコード例が必要です、<xref:System.Windows.Forms.Button>という名前のフォームに`Button6`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission"><see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />権限です。 関連する列挙。<see cref="T:System.Security.Permissions.SecurityPermissionFlag" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoding">
+      <MemberSignature Language="C#" Value="public string Encoding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Encoding" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Encoding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドキュメントの文字エンコーディングを取得または設定します。</summary>
+        <value>現在の文字エンコーディングを表す <see cref="T:System.String" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テストするオブジェクト。</param>
+        <summary>指定したオブジェクトと現在のオブジェクトとを比較し、等しいかどうかをテストします。</summary>
+        <returns>
+          オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecCommand">
+      <MemberSignature Language="C#" Value="public void ExecCommand (string command, bool showUI, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExecCommand(string command, bool showUI, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.ExecCommand(System.String,System.Boolean,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="command" Type="System.String" />
+        <Parameter Name="showUI" Type="System.Boolean" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="command">実行するコマンド名です。</param>
+        <param name="showUI">コマンド固有のダイアログ ボックスまたはメッセージ ボックスをユーザーに表示するかどうか。</param>
+        <param name="value">コマンドを使用して代入する値。 すべてのコマンドに適用されるわけではありません。</param>
+        <summary>ドキュメントに対して指定したコマンドを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.ExecCommand%2A>コマンドの大きな配列で公開されたメソッドがない公開<xref:System.Windows.Forms.HtmlDocument>です。 使用して<xref:System.Windows.Forms.HtmlDocument.ExecCommand%2A>新しい HTML 要素を挿入を選択し、テキスト、書式を設定および解除認証資格情報をキャッシュします。 コマンドの一覧については、次を参照してください。[コマンド識別子](http://go.microsoft.com/fwlink/?LinkId=198814)です。  
+  
+> [!NOTE]
+>  コピーなどの特定のコマンドでは、戻り値があります。 現在の実装で<xref:System.Windows.Forms.HtmlDocument.ExecCommand%2A>、呼び出しから戻り値を取得することはできません。 戻り値を取得するに対応するアンマネージ メソッドを使用する<xref:System.Windows.Forms.HtmlDocument.DomDocument%2A>代わりに参照します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーの入力フォーカスを現在のドキュメントに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Forms.HtmlDocument.Focus%2A>にフォーカスを設定、<xref:System.Windows.Forms.WebBrowser>コントロール現在フォーカスがない場合は、制御します。 内のドキュメントがホストされている場合、 `FRAME`、このメソッドはそのフォーカスを移す`FRAME`内で、`FRAMESET`です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission"><see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />フォームにフォーカスを設定する権限です。 関連する列挙。<see cref="T:System.Security.Permissions.UIPermissionWindow" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Focused">
+      <MemberSignature Language="C#" Value="public bool Focused { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Focused" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Focused" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントにユーザーの入力フォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          ドキュメントにフォーカスがある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focusing">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Focusing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Focusing" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.Focusing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントがフォーカスを得る前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.Focusing>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.Focusing>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#424](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#424)]
+ [!code-vb[System.Windows.Forms.EventExamples#424](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#424)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ForeColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color ForeColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color ForeColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.ForeColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのテキストの色を取得または設定します。</summary>
+        <value>ドキュメントのテキストの色。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Color> <xref:System.Drawing.Color>に入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]をサポートしている、`Alpha`値が、HTML DOM はありません。 したがって、`Alpha`はこのプロパティに割り当てられている場合に効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forms">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElementCollection Forms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElementCollection Forms" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Forms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのコレクションを取得、 <c>&lt;フォーム&gt;</c>ドキュメント内の要素。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlElementCollection" />の<c>&lt;フォーム&gt;</c>ドキュメント内の要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML ドキュメントが 1 つまたは複数あります`FORM`データを送信するための入力フィールドを持つ要素がサーバーにバックアップします。  
+  
+ プログラムで送信することができます、`FORM`を取得してその<xref:System.Windows.Forms.HtmlElement>呼び出しとその`Submit`メソッドを使用して、<xref:System.Windows.Forms.HtmlElement.InvokeMember%2A>メソッドです。  
+  
+ 新しいを追加する`FORM`、ドキュメントを作成することも、新しい`FORM`を文字列としてタグを割り当てる、<xref:System.Windows.Forms.HtmlElement.InnerHtml%2A>要素のプロパティが、HTML DOM に追加済みまたは使用することができます、<xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>メソッドを使用してそのプロパティを設定する<xref:System.Windows.Forms.HtmlElement.SetAttribute%2A>、し、要素を使用して既存の子として追加<xref:System.Windows.Forms.HtmlElement.AppendChild%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、すべての反復、 `Form` Web 上の要素がページし、すべてのユーザー入力フォームの既定値をクリアします。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#4)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementById">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement GetElementById (string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlElement GetElementById(string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.GetElementById(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="id">取得する要素の ID 属性。</param>
+        <summary>1 つを取得<see cref="T:System.Windows.Forms.HtmlElement" />、要素を使用して<c>ID</c>検索キーとして属性。</summary>
+        <returns>同じの最初のオブジェクトを返します<c>ID</c>属性として、指定した値または<see langword="null" />場合、<paramref name="id" />が見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメント内で同じ ID 値では、複数の要素がある場合<xref:System.Windows.Forms.HtmlDocument.GetElementById%2A>は、見つかった最初の 1 つを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、名前付き取得`TABLE`ドキュメントから、行の数をカウントし、Web ページに結果を表示します。 コード例が必要です、<xref:System.Windows.Forms.WebBrowser>というプロジェクトの管理`WebBrowser1`、Web ページが読み込まれていると、`TABLE`が`ID`属性は`Table1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementFromPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement GetElementFromPoint (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlElement GetElementFromPoint(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.GetElementFromPoint(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ドキュメントの左上隅を基準とした、画面上の要素の (x,y) 位置。</param>
+        <summary>指定されたクライアント座標にある HTML 要素を取得します。</summary>
+        <returns>ドキュメント内の指定した画面位置にある <see cref="T:System.Windows.Forms.HtmlElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.GetElementFromPoint%2A>ドキュメントの左上隅にあるが値 (0, 0) を割り当て、クライアント座標を使用します。 使用して、カーソルの現在位置をクライアント座標を取得することができます、<xref:System.Windows.Forms.HtmlWindow.Position%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ドキュメント上をクリックを検出の要素を検索して、使用<xref:System.Windows.Forms.HtmlElement.ScrollIntoView%2A>に要素を Web ページの上部に揃えます。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#7](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#7)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#7](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetElementsByTagName">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElementCollection GetElementsByTagName (string tagName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlElementCollection GetElementsByTagName(string tagName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.GetElementsByTagName(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tagName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="tagName">取得する <see cref="T:System.Windows.Forms.HtmlElement" /> オブジェクトの HTML タグの名前。</param>
+        <summary>指定した HTML タグを持つ要素のコレクションを取得します。</summary>
+        <returns>タグ名が <paramref name="tagName" /> 引数と同じである要素のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 通常の HTML ページを使用して、`META`ドキュメントに関する任意の情報を埋め込むにはタグ。 次の HTML コード例は、すべての取得、`META`タグ、HTML ドキュメント内を検索、`META`名前を持つタグ`Description`、し、それをユーザーに表示します。 このコード例では、アプリケーションがある必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#6)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを取得します。</summary>
+        <returns>このオブジェクトのインメモリ ハッシュを表す <see cref="T:System.Int32" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Images">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElementCollection Images { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElementCollection Images" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Images" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメント内のすべてのイメージ タグのコレクションを取得します。</summary>
+        <value>ドキュメント内の IMG タグごとに 1 つある <see cref="T:System.Windows.Forms.HtmlElement" /> オブジェクトのコレクションです。 要素は、格納されている順序でコレクションから返されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.Images%2A>コレクションを返します<xref:System.Windows.Forms.HtmlElement>オブジェクト。 属性にアクセスするなど`ALT`と`SRC`、によって直接公開されていないを<xref:System.Windows.Forms.HtmlElement>を使用して、<xref:System.Windows.Forms.HtmlElement.GetAttribute%2A>メソッドです。  
+  
+ イメージを追加する、新しいドキュメントに、作成するか、新しい`IMG`を文字列としてタグを割り当てる、 <xref:System.Windows.Forms.HtmlElement.InnerHtml%2A> ; HTML DOM に追加された要素のプロパティを使用して、または、<xref:System.Windows.Forms.HtmlDocument.CreateElement%2A>メソッドを使用してそのプロパティを設定する<xref:System.Windows.Forms.HtmlElement.SetAttribute%2A>、し、要素を使用して既存の子として追加<xref:System.Windows.Forms.HtmlElement.AppendChild%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例を調べ、 `ALT` 、ドキュメント内のイメージのすべての属性、既定値を設定および`ALT`属性値が既に設定されていない場合。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#8)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="InvokeScript">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>HTML ページで定義されたアクティブ スクリプト関数を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Web ページで、スクリプトの内容を実行します。 このコード例では、次の Web ページが読み込まれている必要があります。  
+  
+```  
+<HTML>  
+<SCRIPT>  
+function test(name, address) {  
+window.alert("Name is " + name + "; address is " + address);  
+}  
+</SCRIPT>  
+  
+<BODY>  
+</BODY>  
+</HTML>  
+  
+```  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#9)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="InvokeScript">
+      <MemberSignature Language="C#" Value="public object InvokeScript (string scriptName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeScript(string scriptName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.InvokeScript(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="scriptName">呼び出されるスクリプト メソッドの名前。</param>
+        <summary>HTML ページで定義されたアクティブ スクリプト関数を実行します。</summary>
+        <returns>アクティブ スクリプト呼び出しによって返されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクトの基になる型<xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>は異なります。 呼び出されたアクティブ スクリプト関数が、整数、文字列などのスカラー データを返す場合が文字列として返されます。 JScript または VBScript を使用して作成されたオブジェクトなどのスクリプト ベースのオブジェクトを返す場合`new`演算子、その型である`Object`です。 (呼び出すことによってこのようなオブジェクトに対する呼び出しを行うことができます<xref:System.Object.GetType%2A>を使用して、 <xref:System.Type.InvokeMember%2A>)。かどうか、HTML DOM の要素を返すなど、`DIV`または`TABLE`、型のことが`Object`MSHTML への参照をプロジェクトに追加した場合です。DLL、その特定の管理されていない DOM 型にキャストするただし、します。  
+  
+ JScript および VBScript を含む、ユーザーのコンピューターにインストールされているアクティブなスクリプト言語で記述された関数を呼び出すことがあります。  
+  
+ <xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>はユーザーが明示的に Internet Explorer でスクリプトの実行を無効になっている場合に何も表示されない、または Web ページの現在のセキュリティ構成では許可されていない場合に実行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web ページで、スクリプトの内容を実行します。 このコード例が必要です、<xref:System.Windows.Forms.WebBrowser>と呼ばれる、アプリケーションで`WebBrowser1`、次の Web ページが読み込まれているとします。  
+  
+```  
+<HTML>  
+  
+    <HEAD>  
+        <TITLE>Invoke Script Sample</TITLE>  
+  
+        <SCRIPT>  
+            function MyObject() {  
+                this.Data = "Data for my private object.";  
+            }  
+            // Return a string.  
+            function test() {  
+                return("This is a test.");  
+            }  
+            // Return a JScript object.  
+            function testJScriptObject() {  
+                return(new(MyObject));  
+            }  
+            // Return a DOM element.  
+            function testElement() {  
+                return(div1);  
+            }  
+        </SCRIPT>  
+    </HEAD>  
+  
+    <BODY>  
+  
+        <DIV id="div1">  
+        </DIV>  
+  
+    </BODY>  
+  
+</HTML>  
+  
+```  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#12](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#12)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#12](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeScript">
+      <MemberSignature Language="C#" Value="public object InvokeScript (string scriptName, object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object InvokeScript(string scriptName, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.InvokeScript(System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scriptName" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="scriptName">呼び出されるスクリプト メソッドの名前。</param>
+        <param name="args">スクリプト メソッドに渡す引数。</param>
+        <summary>HTML ページで定義されたアクティブ スクリプト関数を実行します。</summary>
+        <returns>アクティブ スクリプト呼び出しによって返されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返されるオブジェクトの基になる型<xref:System.Windows.Forms.HtmlDocument.InvokeScript%2A>は異なります。 呼び出されたアクティブ スクリプト関数が、整数、文字列などのスカラー データを返す場合が文字列として返されます。 JScript または VBScript を使用して作成されたオブジェクトなどのスクリプト ベースのオブジェクトを返す場合`new`演算子、その型である`Object`です。 (呼び出すことによってこのようなオブジェクトに対する呼び出しを行うことができます<xref:System.Object.GetType%2A>を使用して、 <xref:System.Type.InvokeMember%2A>)。かどうか、HTML DOM の要素を返すなど、`DIV`または`TABLE`、型のことが`Object`MSHTML への参照をプロジェクトに追加した場合です。DLL、その特定の管理されていない DOM 型にキャストするただし、します。  
+  
+ JScript および VBScript を含む、ユーザーのコンピューターにインストールされているアクティブなスクリプト言語で記述された関数を呼び出すことがあります。  
+  
+ このメソッドは、ユーザーが明示的に Internet Explorer でスクリプトの実行を無効になっている場合に何も表示されない、または Web ページの現在のセキュリティ構成では許可されていない場合に実行されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web ページで、スクリプトの内容を実行します。 このコード例が必要です、<xref:System.Windows.Forms.WebBrowser>と呼ばれる、アプリケーションで`WebBrowser1`、次の Web ページが読み込まれているとします。  
+  
+```  
+<HTML>  
+    <SCRIPT>  
+        function test(name, address) {  
+            window.alert("Name is " + name + "; address is " + address);  
+        }  
+    </SCRIPT>  
+  
+    <BODY>  
+    </BODY>  
+</HTML>  
+  
+```  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#9)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color LinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color LinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.LinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハイパーリンクの色を取得または設定します。</summary>
+        <value>現在のドキュメント内のハイパーリンクの色。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Color>に入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]をサポートしている、`Alpha`値が、HTML DOM はありません。 したがって、`Alpha`はこのプロパティに割り当てられている場合に効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Links">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElementCollection Links { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElementCollection Links" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Links" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この HTML ドキュメント内のすべてのハイパーリンクのリストを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlElement" /> オブジェクトの <see cref="T:System.Windows.Forms.HtmlElementCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションを使用して作成されたすべてのリンクを含む、 `A`、 `LINK`、および`AREA`html タグ。  
+  
+ <xref:System.Windows.Forms.HtmlElement>このコレクションに含まれるオブジェクトをカプセル化、アンマネージ`IHTMLLinkElement`インターフェイスです。 基になるインターフェイスのプロパティを安全にアクセスするには、使用、<xref:System.Windows.Forms.HtmlElement.GetAttribute%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LosingFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler LosingFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler LosingFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.LosingFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールからフォーカスが失われるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.LosingFocus>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.LosingFocus>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#425](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#425)]
+ [!code-vb[System.Windows.Forms.EventExamples#425](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#425)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseDown">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler MouseDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler MouseDown" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.MouseDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウスの左ボタンをクリックしたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.MouseDown>イベントが発生する前に、<xref:System.Windows.Forms.HtmlDocument.Click>イベント。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.MouseDown>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.MouseDown>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#426](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#426)]
+ [!code-vb[System.Windows.Forms.EventExamples#426](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#426)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseLeave">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler MouseLeave;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler MouseLeave" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.MouseLeave" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスがドキュメント上から外れた時点で発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.MouseLeave>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.MouseLeave>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#427](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#427)]
+ [!code-vb[System.Windows.Forms.EventExamples#427](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#427)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseMove">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler MouseMove;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler MouseMove" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.MouseMove" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスがドキュメント上を移動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.MouseMove>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.MouseMove>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#428](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#428)]
+ [!code-vb[System.Windows.Forms.EventExamples#428](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#428)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseOver">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler MouseOver;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler MouseOver" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.MouseOver" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスがドキュメント上を移動すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.MouseOver>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.MouseOver>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#429](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#429)]
+ [!code-vb[System.Windows.Forms.EventExamples#429](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#429)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseUp">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler MouseUp;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler MouseUp" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.MouseUp" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウスの左ボタンを離したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlDocument.MouseUp>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlDocument>という`HtmlDocument1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlDocument.MouseUp>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#430](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#430)]
+ [!code-vb[System.Windows.Forms.EventExamples#430](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#430)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Forms.HtmlDocument left, System.Windows.Forms.HtmlDocument right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Windows.Forms.HtmlDocument left, class System.Windows.Forms.HtmlDocument right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.op_Equality(System.Windows.Forms.HtmlDocument,System.Windows.Forms.HtmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Forms.HtmlDocument" />
+        <Parameter Name="right" Type="System.Windows.Forms.HtmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する 1 番目のインスタンス。</param>
+        <param name="right">比較する 2 番目のインスタンス。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.HtmlDocument" /> のインスタンスが同じ値を表しているかどうかを示す値を返します。</summary>
+        <returns>
+          指定したインスタンスが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Windows.Forms.HtmlDocument.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Forms.HtmlDocument left, System.Windows.Forms.HtmlDocument right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Windows.Forms.HtmlDocument left, class System.Windows.Forms.HtmlDocument right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.op_Inequality(System.Windows.Forms.HtmlDocument,System.Windows.Forms.HtmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Forms.HtmlDocument" />
+        <Parameter Name="right" Type="System.Windows.Forms.HtmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="left">比較する 1 番目のインスタンス。</param>
+        <param name="right">比較する 2 番目のインスタンス。</param>
+        <summary>指定した <see cref="T:System.Windows.Forms.HtmlDocument" /> のインスタンスが同じ値を表していないかどうかを示す値を返します。</summary>
+        <returns>
+          指定したインスタンスが等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenNew">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlDocument OpenNew (bool replaceInHistory);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlDocument OpenNew(bool replaceInHistory) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.OpenNew(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlDocument</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="replaceInHistory" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="replaceInHistory">新しいウィンドウの移動によって、DOM の移動履歴内の前の要素が置換されるかどうか。</param>
+        <summary><see cref="M:System.Windows.Forms.HtmlDocument.Write(System.String)" /> メソッドと共に使用する新しい <see cref="T:System.Windows.Forms.HtmlDocument" /> を取得します。</summary>
+        <returns>書き込み用の新しいドキュメント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.OpenNew%2A>変数など、任意の関連付けられた状態を含む、以前の読み込まれたドキュメントがクリアされます。 ナビゲーション イベントは発生しません<xref:System.Windows.Forms.WebBrowser>が発生します。  
+  
+ <xref:System.Windows.Forms.HtmlDocument.OpenNew%2A>常に現在のウィンドウで、新しいドキュメントを作成します。 新しいウィンドウで、ドキュメントを開くには、使用、<xref:System.Windows.Forms.HtmlWindow.Open%2A>メソッドを<xref:System.Windows.Forms.HtmlWindow>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、書き込みのため、DOM を準備し、使用して新しいドキュメントを書き込みます、<xref:System.Windows.Forms.HtmlDocument.Write%2A>メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public bool RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のドキュメントでのテキストの方向を取得または設定します。</summary>
+        <value>
+          テキストを右から左に描画する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlDocument.RightToLeft%2A>コード内、または html 形式で明示的に設定されている場合を除き、任意の値はありません。  
+  
+ 異なり、 <xref:System.Windows.Forms.HtmlDocument.RightToLeft%2A> 、Windows フォーム コントロールのプロパティ<xref:System.Windows.Forms.HtmlDocument.RightToLeft%2A>マネージ HTML DOM には影響を与えませんラテン語テキストの方向。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Stop;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Stop" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlDocument.Stop" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>別の Web ページへの移動が中断されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラム コードを呼び出す場合、Web ページの読み込みは中断されます、<xref:System.Windows.Forms.WebBrowser.Stop%2A>のメソッド、<xref:System.Windows.Forms.WebBrowser>コントロール。 ネットワークの停止や正常に機能しない Web サイトによるナビゲーション エラーは発生しません<xref:System.Windows.Forms.HtmlDocument.Stop>を実行します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例のステータス バーに、Windows フォーム アプリケーションをリセットするときに、`Stop`イベントが発生しました。 このコード例が必要です、<xref:System.Windows.Forms.StatusBar>という名前のコントロール`StatusBar1`アプリケーションでします。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト値の取得または設定、 <c>&lt;タイトル&gt;</c>現在の HTML ドキュメントのタグ。</summary>
+        <value>現在のドキュメントのタイトル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.HtmlDocument.Title%2A>人間が判読できる名前を使用してドキュメントを識別するプロパティです。  
+  
+ このプロパティに対する変更が反映されます、<xref:System.Windows.Forms.WebBrowser.DocumentTitle%2A>のプロパティ、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例では、リンクの場所と、ドキュメントのタイトルとしてこのリンク テキストとして、ドキュメントの URL を使用して現在のドキュメントへの HTML ハイパーリンクを作成します。 このコード例では、アプリケーションがある必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#14](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#14)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#14](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドキュメントの場所を記述する URL を取得します。</summary>
+        <value>このドキュメントの URL を表す <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用です。 新しいドキュメントに移動するには、使用、<xref:System.Windows.Forms.WebBrowser.Url%2A>プロパティを<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisitedLinkColor">
+      <MemberSignature Language="C#" Value="public System.Drawing.Color VisitedLinkColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color VisitedLinkColor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.VisitedLinkColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが既にアクセスした HTML ページへのリンクの色を取得または設定します。</summary>
+        <value>アクセスしたリンクの色。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `Color`に入力、[!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]をサポートしている、`Alpha`値が、HTML DOM はありません。 したがって、`Alpha`はこのプロパティに割り当てられている場合に効果がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Window">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow Window { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindow Window" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlDocument.Window" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このドキュメントに関連付けられている <see cref="T:System.Windows.Forms.HtmlWindow" /> を取得します。</summary>
+        <value>このドキュメントのウィンドウ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての HTML ドキュメント ウィンドウをドキュメントの画面のサイズを操作し、新しいウィンドウを開くために使用するし、その他の重要なオブジェクトへのアクセスと呼ばれる HTML DOM オブジェクトをなどがある、<xref:System.Windows.Forms.HtmlHistory>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public void Write (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Write(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlDocument.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">ドキュメントに書き込まれる HTML テキスト。</param>
+        <summary>新しい HTML ページを出力します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての呼び出しを<xref:System.Windows.Forms.HtmlDocument.Write%2A>への呼び出しによって先行されなければなりません<xref:System.Windows.Forms.HtmlDocument.OpenNew%2A>、現在のドキュメントおよびすべての変数をクリアします。 呼び出す<xref:System.Windows.Forms.HtmlDocument.Write%2A>代わりに、新しい HTML ドキュメントを作成します。 ドキュメントの特定の部分だけを変更するには、適切な取得<xref:System.Windows.Forms.HtmlElement>設定とその<xref:System.Windows.Forms.HtmlElement.InnerHtml%2A>プロパティです。  
+  
+ 全体有効な HTML ドキュメントを使用して、記述することをお勧め、<xref:System.Windows.Forms.HtmlDocument.Write%2A>メソッドを含む`HTML`と`BODY`タグ。 ただし、HTML 要素だけを記述する場合ドキュメント オブジェクト モデル (DOM) はこれらの要素を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、新しい開きます<xref:System.Windows.Forms.HtmlDocument>新しい HTML ファイルに書き込みます。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlDocument#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.HtmlDocument#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlDocument/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

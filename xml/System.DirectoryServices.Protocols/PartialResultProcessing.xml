@@ -1,0 +1,81 @@
+<Type Name="PartialResultProcessing" FullName="System.DirectoryServices.Protocols.PartialResultProcessing">
+  <TypeSignature Language="C#" Value="public enum PartialResultProcessing" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PartialResultProcessing extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.PartialResultProcessing" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.PartialResultProcessing" />列挙体は、部分的な結果の処理の必要な型を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期操作を実行するアプリケーションで使用できます、<xref:System.DirectoryServices.Protocols.LdapConnection.BeginSendRequest%2A>メソッド、<xref:System.DirectoryServices.Protocols.LdapConnection.EndSendRequest%2A>メソッド、および (必要に応じて)、<xref:System.AsyncCallback>標準の .NET スタイルに委任します。  
+  
+ 部分的な結果を取得するアプリケーションが呼び出すことができます、 <xref:System.DirectoryServices.Protocols.LdapConnection.BeginSendRequest%2A> ReturnPartialResults か ReturnPartialResultsAndNotifyCallback として渡すと、`partialMode`パラメーター。  
+  
+ ほとんどのシナリオでは、パフォーマンスとスケーラビリティを向上させる NoPartialResultSupport を使用します。 ReturnPartialResults または ReturnPartialResultsAndNotifyCallback の使用は部分的な結果を取得する必要があるシナリオでのみ推奨されます。 たとえばを使って検索を実行するときに、<xref:System.DirectoryServices.Protocols.DirectoryNotificationControl>指定すると、検索結果が返されますそのオブジェクトが変更された場合にのみです。 検索が完了しないと、部分的な結果が返されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="NoPartialResultSupport">
+      <MemberSignature Language="C#" Value="NoPartialResultSupport" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.PartialResultProcessing NoPartialResultSupport = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.PartialResultProcessing.NoPartialResultSupport" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.PartialResultProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは、部分的な結果を取得しません。 値は 0 です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnPartialResults">
+      <MemberSignature Language="C#" Value="ReturnPartialResults" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.PartialResultProcessing ReturnPartialResults = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.PartialResultProcessing.ReturnPartialResults" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.PartialResultProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションは部分的な結果を取得します。 値は、1 と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnPartialResultsAndNotifyCallback">
+      <MemberSignature Language="C#" Value="ReturnPartialResultsAndNotifyCallback" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.DirectoryServices.Protocols.PartialResultProcessing ReturnPartialResultsAndNotifyCallback = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.DirectoryServices.Protocols.PartialResultProcessing.ReturnPartialResultsAndNotifyCallback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.Protocols.PartialResultProcessing</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションでは、部分的な結果を取得し、コールバック機構を使用します。 値が 2 に等しいです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

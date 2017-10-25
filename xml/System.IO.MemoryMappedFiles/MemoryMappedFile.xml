@@ -1,0 +1,1706 @@
+<Type Name="MemoryMappedFile" FullName="System.IO.MemoryMappedFiles.MemoryMappedFile">
+  <TypeSignature Language="C#" Value="public class MemoryMappedFile : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MemoryMappedFile extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.IO.MemoryMappedFiles.MemoryMappedFile" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>メモリ マップト ファイルを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ マップト ファイルは、ファイルの内容をアプリケーションの論理アドレス空間にマップされます。 メモリ マップト ファイルには、メモリを同時に、管理できます。 またシークの必要としないファイルへの完全なランダム アクセスを許可するために非常に大規模なファイルで作業するプログラマが有効にします。 メモリ マップト ファイルは、複数のプロセスで共有できます。  
+  
+ <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A>メソッドは、指定されたパスからメモリ マップト ファイルを作成または<xref:System.IO.FileStream>のディスク上の既存のファイルです。 変更がディスクに自動的に反映ファイルにマップされていません。  
+  
+ <xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A>メソッドは、ディスク上の既存のファイルにマップされていないメモリ マップト ファイルを作成およびはプロセス間通信 (IPC) 用の共有メモリを作成するために適しています。  
+  
+ メモリ マップト ファイルは、名前に関連付けられます。  
+  
+ ファイルの部分の表示も含め、メモリ マップト ファイルの複数のビューを作成することができます。 ファイルの同じ部分は、同時実行メモリを作成する 1 つ以上のアドレスにマップできます。 2 つのビューが同時実行されるには、それらのビューを同じメモリ マップト ファイルから作成する必要があります。 2 つのビューで、同じファイルの 2 つのファイル マッピングを作成しても、同時実行制御は提供されません。  
+  
+   
+  
+## Examples  
+ 次の例では、きわめて大きなファイルの一部のメモリ マップト ビューを作成し、その一部分を操作します。  
+  
+ [!code-csharp[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](~/samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/cs/program.cs#1)]
+ [!code-vb[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/vb/program.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">割り当てるファイルのパス。</param>
+        <summary>ディスク上のファイルからメモリ マップト ファイルを作成します。</summary>
+        <returns>メモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%2A>メソッドをメモリ マップト ファイルを作成し、きわめて大きなファイルの部分をメモリ マップト ビューを作成します。  
+  
+ [!code-csharp[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](~/samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/cs/program.cs#1)]
+ [!code-vb[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列は、唯一の空白文字が含まれていますかで定義されている 1 つまたは複数の無効な文字が含まれて、<see cref="M:System.IO.Path.GetInvalidFileNameChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="path" />無効なデバイスを指します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />オペレーティング システムで定義された最大長を超えています。 Windows では、パスは 248 未満の文字を含める必要があり、ファイル名は 260 文字未満を含める必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ファイルの必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.String,System.IO.FileMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">割り当てるファイルのパス。</param>
+        <param name="mode">アクセス モードです。必要があります<see cref="F:System.IO.FileMode.Open" />です。</param>
+        <summary>ディスク上のファイルから、アクセス モードが指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>アクセス モードが指定されたメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`ディスク上のソース ファイルに関連するパラメーターです。 のみを使用することができます、<xref:System.IO.FileMode.Open>列挙体の値はディスク上のソース ファイルからメモリ マップト ファイルを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列は、唯一の空白文字が含まれていますかで定義されている 1 つまたは複数の無効な文字が含まれて、<see cref="M:System.IO.Path.GetInvalidFileNameChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="path" />無効なデバイスを指します。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="F:System.IO.FileMode.Append" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="mode" /> が <see cref="F:System.IO.FileMode.Create" />、<see cref="F:System.IO.FileMode.CreateNew" />、または <see cref="F:System.IO.FileMode.Truncate" /> です。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.FileMode.OpenOrCreate" />し、ディスク上のファイルが存在しません。  
+  
+ または  
+  
+ I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />オペレーティング システムで定義された最大長を超えています。 Windows では、パスは 248 未満の文字を含める必要があり、ファイル名は 260 文字未満を含める必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ファイルの必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (string path, System.IO.FileMode mode, string mapName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(string path, valuetype System.IO.FileMode mode, string mapName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.String,System.IO.FileMode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="mapName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">割り当てるファイルのパス。</param>
+        <param name="mode">アクセス モードです。必要があります<see cref="F:System.IO.FileMode.Open" />です。</param>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <summary>ディスク上のファイルから、アクセス モードと名前が指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>名前およびアクセス モードが指定されたメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`ディスク上のソース ファイルに関連するパラメーターです。 のみを使用することができます、<xref:System.IO.FileMode.Open>列挙体の値はディスク上のソース ファイルからメモリ マップト ファイルを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列は、唯一の空白文字が含まれていますかで定義されている 1 つまたは複数の無効な文字が含まれて、<see cref="M:System.IO.Path.GetInvalidFileNameChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="path" />無効なデバイスを指します。  
+  
+ または  
+  
+ <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="F:System.IO.FileMode.Append" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="mapName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="mode" /> が <see cref="F:System.IO.FileMode.Create" />、<see cref="F:System.IO.FileMode.CreateNew" />、または <see cref="F:System.IO.FileMode.Truncate" /> です。  
+  
+ または  
+  
+ <paramref name="mode" /><see cref="F:System.IO.FileMode.OpenOrCreate" />し、ディスク上のファイルが存在しません。  
+  
+ または  
+  
+ I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />オペレーティング システムで定義された最大長を超えています。 Windows では、パスは 248 未満の文字を含める必要があり、ファイル名は 260 文字未満を含める必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ファイルの必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (string path, System.IO.FileMode mode, string mapName, long capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(string path, valuetype System.IO.FileMode mode, string mapName, int64 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.String,System.IO.FileMode,System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="path">割り当てるファイルのパス。</param>
+        <param name="mode">アクセス モードです。いずれかを指定できます、<see cref="T:System.IO.FileMode" />列挙値を除く<see cref="F:System.IO.FileMode.Append" />です。</param>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。 容量をディスク上のファイルのサイズに設定するには、0 を指定します。</param>
+        <summary>ディスク上のファイルから、アクセス モード、名前、および容量が指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`ディスク上のソース ファイルに関連するパラメーターです。  
+  
+ 場合`capacity`ディスク、ディスク上のファイルのファイルのサイズがメモリ マップト ファイルにデータが書き込まれません場合でも、指定した容量を一致するように拡大を超えています。 これの発生を防ぐには、既定の量は、内部で設定の 0 (ゼロ) を指定します。`capacity`ディスク上のファイルのサイズにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />空の文字列は、唯一の空白文字が含まれていますかで定義されている 1 つまたは複数の無効な文字が含まれて、<see cref="M:System.IO.Path.GetInvalidFileNameChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="path" />無効なデバイスを指します。  
+  
+ または  
+  
+ <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="F:System.IO.FileMode.Append" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="mapName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />ファイルのサイズ (ただし 0 ではありません) 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />0、ディスク上のファイルのサイズは、0 となります。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />オペレーティング システムで定義された最大長を超えています。 Windows では、パスは 248 未満の文字を含める必要があり、ファイル名は 260 文字未満を含める必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ファイルの必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (string path, System.IO.FileMode mode, string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(string path, valuetype System.IO.FileMode mode, string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.String,System.IO.FileMode,System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">割り当てるファイルのパス。</param>
+        <param name="mode">アクセス モードです。いずれかを指定できます、<see cref="T:System.IO.FileMode" />列挙値を除く<see cref="F:System.IO.FileMode.Append" />です。</param>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。 容量をディスク上のファイルのサイズに設定するには、0 を指定します。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。</param>
+        <summary>ディスク上のファイルから、アクセス モード、名前、容量、およびアクセスの種類が指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`ディスク上のソース ファイルに関連するパラメーターです。  
+  
+ 場合`capacity`ディスク、ディスク上のファイルのファイルのサイズがメモリ マップト ファイルにデータが書き込まれません場合でも、指定した容量を一致するように拡大を超えています。 これの発生を防ぐには、既定の量は、内部で設定の 0 (ゼロ) を指定します。`capacity`ディスク上のファイルのサイズにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" />許可されている値ではありません。  
+  
+ または  
+  
+ <paramref name="path" />空のファイルを指定します。  
+  
+ または  
+  
+ <paramref name="access" />として指定された<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Read" />容量がで指定されたファイルのサイズよりも大きい<paramref name="path" />です。  
+  
+ または  
+  
+ <paramref name="mode" /> は <see cref="F:System.IO.FileMode.Append" /> です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="mapName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />ファイルのサイズ (ただし 0 ではありません) 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />0、ディスク上のファイルのサイズは、0 となります。  
+  
+ または  
+  
+ <paramref name="access" />未定義<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />値。  
+  
+ または  
+  
+ 指定したファイルのサイズ<paramref name="path" />がより大きい<paramref name="capacity" />です。</exception>
+        <exception cref="T:System.IO.IOException">または  
+  
+ I/O エラーが発生しました。</exception>
+        <exception cref="T:System.IO.PathTooLongException">
+          <paramref name="path" />オペレーティング システムで定義された最大長を超えています。 Windows では、パスは 248 未満の文字を含める必要があり、ファイル名は 260 文字未満を含める必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元には、ファイルの必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (System.IO.FileStream fileStream, string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.HandleInheritability inheritability, bool leaveOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(class System.IO.FileStream fileStream, string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, valuetype System.IO.HandleInheritability inheritability, bool leaveOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.IO.FileStream,System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.HandleInheritability,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileStream" Type="System.IO.FileStream" />
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="leaveOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="fileStream">既存のファイルのファイル ストリーム。</param>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。 0 のサイズに容量の設定を指定する<c>filestream</c>です。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。  
+  
+ このパラメーター設定できません<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />です。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <param name="leaveOpen">ストリーム ソース ファイルを閉じるかどうかを示す値、<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFile" />が破棄されています。</param>
+        <summary>既存のファイルから、アクセス モード、名前、継承性、および容量が指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が <see langword="null" /> または空の文字列です。  
+  
+ または  
+  
+ <paramref name="capacity" />れ、ファイルの長さは 0 です。  
+  
+ または  
+  
+ <paramref name="access" />設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />または<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />列挙の値は、許可されていません。  
+  
+ または  
+  
+ <paramref name="access" />設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Read" />と<paramref name="capacity" />の長さよりも大きい<see langword="filestream" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileStream" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />ファイルのサイズより小さい。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromFile">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile (System.IO.FileStream fileStream, string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, System.IO.HandleInheritability inheritability, bool leaveOpen);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateFromFile(class System.IO.FileStream fileStream, string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, class System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, valuetype System.IO.HandleInheritability inheritability, bool leaveOpen) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile(System.IO.FileStream,System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.MemoryMappedFiles.MemoryMappedFileSecurity,System.IO.HandleInheritability,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fileStream" Type="System.IO.FileStream" />
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="memoryMappedFileSecurity" Type="System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+        <Parameter Name="leaveOpen" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="fileStream"><c>FileStream</c>ファイルにマップします。</param>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。 容量をディスク上のファイルのサイズに設定するには、0 を指定します。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。  
+  
+ このパラメーター設定できません<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />です。</param>
+        <param name="memoryMappedFileSecurity">メモリ マップト ファイルに対するファイル アクセスと操作に関して付与することのできるアクセス許可。  
+  
+ このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <param name="leaveOpen">
+          <see langword="true" />破棄しません<c>fileStream</c>後、<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFile" />が閉じられました。<see langword="false" />を破棄する<c>fileStream</c>です。</param>
+        <summary>ディスク上のファイルから指定された名前、容量、アクセスの種類、セキュリティのアクセス許可、継承性、および破棄要件を持つメモリ マップト ファイルを作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`capacity`ディスク、ディスク上のファイルのファイルのサイズがメモリ マップト ファイルにデータが書き込まれません場合でも、指定した容量を一致するように拡大を超えています。 これの発生を防ぐには、既定の量は、内部で設定の 0 (ゼロ) を指定します。`capacity`ディスク上のファイルのサイズにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="capacity" />れ、ファイルの長さは 0 です。  
+  
+ または  
+  
+ <paramref name="access" />設定されている、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Read" />または<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />列挙の値は、許可されていません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="fileStream" /> または <paramref name="mapname" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="capacity" />ファイルのサイズより小さい。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.ObjectDisposedException">
+          <paramref name="fileStream" />閉じられました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="access" />設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" />とき<paramref name="fileStream" />のアクセスに設定されている<see cref="F:System.IO.FileAccess.Read" />または<see cref="F:System.IO.FileAccess.Write" />です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="mapName" />既に存在します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNew">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew (string mapName, long capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew(string mapName, int64 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew(System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <summary>容量が指定されたメモリ マップト ファイルをシステム メモリ内で作成します。</summary>
+        <returns>名前および容量が指定されたメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して永続化されていないメモリ マップト ファイルを作成する (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+   
+  
+## Examples  
+ 次の例は 3 つ別のプロセス (コンソール アプリケーション) を書き込むことで構成されます`Boolean`メモリ マップト ファイルへの値。 次の順序で処理が実行されます。  
+  
+1.  プロセス A では、メモリ マップト ファイルを作成し、値を書き込みます。  
+  
+2.  プロセス B は、メモリ マップト ファイルを開き、値を書き込みます。  
+  
+3.  プロセス C は、メモリ マップト ファイルを開き、値を書き込みます。  
+  
+4.  プロセス A は、読み取り、メモリ マップト ファイルから値が表示されます。  
+  
+5.  プロセス A が完了したら、メモリ マップト ファイルと共に、ガベージ コレクションによってファイルが直ちにクリアします。  
+  
+ この例を実行するには、次の手順に従います。  
+  
+1.  アプリケーションをコンパイルし、次の 3 つのコマンド ウィンドウを開きます。  
+  
+2.  最初のコマンド ウィンドウでの実行プロセス A  
+  
+3.  2 番目のコマンド ウィンドウでプロセス B. を実行します  
+  
+4.  プロセス A に戻り、ENTER キーを押します。  
+  
+5.  3 番目のコマンド ウィンドウでプロセス C を実行します。  
+  
+6.  プロセス A に戻り、ENTER キーを押します。  
+  
+ プロセス A の出力は次のとおりです。  
+  
+```  
+Start Process B and press ENTER to continue.  
+Start Process C and press ENTER to continue.  
+Process A says: True  
+Process B says: False  
+Process C says: True  
+```  
+  
+ **プロセス A**  
+  
+ [!code-csharp[System.IO.MemoryMappedFiles_IPC_X#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/cs/program.cs#1)]
+ [!code-vb[System.IO.MemoryMappedFiles_IPC_X#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/vb/program.vb#1)]  
+  
+ **プロセス B**  
+  
+ [!code-csharp[System.IO.MemoryMappedFiles_IPC_A#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/cs/program.cs#1)]
+ [!code-vb[System.IO.MemoryMappedFiles_IPC_A#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_a/vb/program.vb#1)]  
+  
+ **プロセス C**  
+  
+ [!code-csharp[System.IO.MemoryMappedFiles_IPC_B#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/cs/program.cs#1)]
+ [!code-vb[System.IO.MemoryMappedFiles_IPC_B#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_b/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNew">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>容量およびアクセスの種類が指定されたメモリ マップト ファイルをシステム メモリ内で作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して永続化されていないメモリ マップト ファイルを作成する (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNew">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.MemoryMappedFiles.MemoryMappedFileOptions,System.IO.HandleInheritability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="options" Type="System.IO.MemoryMappedFiles.MemoryMappedFileOptions" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <param name="options">メモリ マップト ファイルのメモリ割り当てオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する値。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <summary>名前、容量、アクセスの種類、メモリ割り当てオプション、および継承性が指定されたメモリ マップト ファイルを作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> は有効な <see cref="T:System.IO.HandleInheritability" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateNew">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateNew(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, class System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.MemoryMappedFiles.MemoryMappedFileOptions,System.IO.MemoryMappedFiles.MemoryMappedFileSecurity,System.IO.HandleInheritability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="options" Type="System.IO.MemoryMappedFiles.MemoryMappedFileOptions" />
+        <Parameter Name="memoryMappedFileSecurity" Type="System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <param name="options">メモリ マップト ファイルのメモリ割り当てオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="memoryMappedFileSecurity">メモリ マップト ファイルに対するファイル アクセスと操作に関して付与することのできるアクセス許可。  
+  
+ このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <summary>容量、アクセスの種類、メモリの割り当て、セキュリティ アクセス許可、および継承性が指定されたメモリ マップト ファイルをシステム メモリ内で作成します。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して永続化されていないメモリ マップト ファイルを作成する (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrOpen">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen (string mapName, long capacity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen(string mapName, int64 capacity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen(System.String,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <summary>容量が指定されたメモリ マップト ファイルをシステム メモリ内で作成するか、または開きます。</summary>
+        <returns>指定された名前およびサイズのメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して作成または永続化されていないメモリ マップト ファイルを開きます (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 以下です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrOpen">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>容量およびアクセスの種類が指定されたメモリ マップト ファイルをシステム メモリ内で作成するか、または開きます。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して作成または永続化されていないメモリ マップト ファイルを開きます (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">オペレーティング システムにファイルへのアクセスが拒否されましたたとえば、アクセスに設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />または<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" />がファイルまたはディレクトリは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrOpen">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.MemoryMappedFiles.MemoryMappedFileOptions,System.IO.HandleInheritability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="options" Type="System.IO.MemoryMappedFiles.MemoryMappedFileOptions" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <param name="options">ファイルに適用するメモリ割り当てオプションを示す値のビットごとの組み合わせ。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する値。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <summary>新しい空のメモリ マップト ファイルを作成するか、同じ名前のファイルが存在する場合は既存のメモリ マップト ファイルを開きます。 既存のファイルを開く場合、容量、オプション、およびメモリ引数は無視されます。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">オペレーティング システムにファイルへのアクセスが拒否されましたたとえば、アクセスに設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />または<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" />がファイルまたはディレクトリは読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateOrOpen">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen (string mapName, long capacity, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile CreateOrOpen(string mapName, int64 capacity, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileOptions options, class System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateOrOpen(System.String,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess,System.IO.MemoryMappedFiles.MemoryMappedFileOptions,System.IO.MemoryMappedFiles.MemoryMappedFileSecurity,System.IO.HandleInheritability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="capacity" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+        <Parameter Name="options" Type="System.IO.MemoryMappedFiles.MemoryMappedFileOptions" />
+        <Parameter Name="memoryMappedFileSecurity" Type="System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">メモリ マップト ファイルに割り当てる名前。</param>
+        <param name="capacity">メモリ マップト ファイルに割り当てる最大サイズ (バイト単位)。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <param name="options">メモリ マップト ファイルのメモリ割り当てオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="memoryMappedFileSecurity">メモリ マップト ファイルに対するファイル アクセスと操作に関して付与することのできるアクセス許可。  
+  
+ このパラメーターは、<see langword="null" /> に設定できます。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <summary>容量、アクセスの種類、メモリの割り当て、セキュリティ アクセス許可、および継承性が指定されたメモリ マップト ファイルをシステム メモリ内で作成するか、または開きます。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して作成または永続化されていないメモリ マップト ファイルを開きます (つまり、ディスク上のファイルに関連付けられていない) をプロセス間でデータを共有することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="access" /> が <see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" /> 列挙値で書き込み専用に設定されます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="capacity" />論理アドレス空間のサイズを超えています。  
+  
+ または  
+  
+ <paramref name="capacity" /> が 0 以下です。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">オペレーティング システムが、指定された拒否<paramref name="access" />ファイルになど<paramref name="access" />に設定されている<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />または<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" />がファイルまたはディレクトリは読み取り専用です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewAccessor">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewAccessor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor" />メモリ マップト ファイルのビューにマップされます。</summary>
+        <returns>ランダムにアクセスできるメモリ ブロック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ マップト ファイルへのランダム アクセスには、このメソッドによって返されるビューを使用することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">メモリ マップト ファイルへのアクセスが承認されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewAccessor">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor (long offset, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor(int64 offset, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewAccessor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="offset">ビューの開始位置のバイト。</param>
+        <param name="size">ビューのサイズ。 0 (ゼロ) に開始されるビューを作成する指定<c>オフセット</c>約メモリ マップト ファイルの末尾で終わります。</param>
+        <summary>作成、<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor" />メモリ マップト ファイルのビューにマップされると、指定されたオフセットとサイズを持ちます。</summary>
+        <returns>ランダムにアクセスできるメモリ ブロック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ マップト ファイルへのランダム アクセスには、このメソッドによって返されるビューを使用することができます。  
+  
+ メモリ マップト ファイルの完全なビューを作成するを 0 (ゼロ) を指定、`size`パラメーター。 これを行う場合、ビューのサイズは、ディスク上のソース ファイルのサイズより小さいか大きいにあります可能性。 これはシステム ページの単位で提供されるビューとビューのサイズは次のシステム ページ サイズに切り上げです。  
+  
+   
+  
+## Examples  
+ 次の例では、メモリ マップト ファイルのビューを作成し、編集します。 このコード例に示されている例の一部である、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile>クラスです。  
+  
+ [!code-csharp[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#2](~/samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/cs/program.cs#2)]
+ [!code-vb[MemoryMappedFiles.MemoryMappedFile.CreateFromFile#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.createfromfile/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />または<paramref name="size" />負の値です。  
+  
+ または  
+  
+ <paramref name="size" />論理アドレス空間を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">メモリ マップト ファイルへのアクセスが承認されていません。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewAccessor">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor (long offset, long size, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewAccessor CreateViewAccessor(int64 offset, int64 size, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewAccessor(System.Int64,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewAccessor</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="offset">ビューの開始位置のバイト。</param>
+        <param name="size">ビューのサイズ。 0 (ゼロ) に開始されるビューを作成する指定<c>オフセット</c>約メモリ マップト ファイルの末尾で終わります。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>作成、<see cref="T:System.IO.MemoryMappedFiles.MemoryMappedViewAccessor" />メモリ マップト ファイルのビューにマップされると、指定したオフセット、サイズ、およびアクセスの制限を持ちます。</summary>
+        <returns>ランダムにアクセスできるメモリ ブロック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ マップト ファイルへのランダム アクセスには、このメソッドによって返されるビューを使用することができます。  
+  
+ メモリ マップト ファイルの完全なビューを作成するを 0 (ゼロ) を指定、`size`パラメーター。 これを行う場合、ビューのサイズは、ディスク上のソース ファイルのサイズより小さいか大きいにあります可能性。 これはシステム ページの単位で提供されるビューとビューのサイズは次のシステム ページ サイズに切り上げです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />または<paramref name="size" />負の値です。  
+  
+ または  
+  
+ <paramref name="size" />論理アドレス空間を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="access" />メモリ マップト ファイルに対して無効です。</exception>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewStream">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewStream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メモリ マップト ファイルのビューに対応するストリームを作成します。</summary>
+        <returns>メモリのストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるストリームのシーケンシャル アクセスには、このメソッドによってメモリ マップト ファイルになどのプロセス間通信を使用することができます。  
+  
+   
+  
+## Examples  
+ 次の例では、ストリームを作成し、値を書き込みます。 このコード例に示されている例の一部である、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%2A>メソッドです。  
+  
+ [!code-csharp[System.IO.MemoryMappedFiles_IPC_X#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/cs/program.cs#2)]
+ [!code-vb[System.IO.MemoryMappedFiles_IPC_X#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.memorymappedfiles_ipc_x/vb/program.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">メモリ マップト ファイルへのアクセスが承認されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewStream">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream (long offset, long size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream(int64 offset, int64 size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewStream(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="offset">ビューの開始位置のバイト。</param>
+        <param name="size">ビューのサイズ。 0 (ゼロ) に開始されるビューを作成する指定<c>オフセット</c>約メモリ マップト ファイルの末尾で終わります。</param>
+        <summary>メモリ マップト ファイルのビューに対応する、オフセットとサイズが指定されたストリームを作成します。</summary>
+        <returns>オフセットおよびサイズが指定されたメモリのストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるストリームのシーケンシャル アクセスには、このメソッドによってメモリ マップト ファイルになどのプロセス間通信を使用することができます。  
+  
+ メモリ マップト ファイルの完全なビューを作成するを 0 (ゼロ) を指定、`size`パラメーター。 これを行う場合、ビューのサイズは、ディスク上のソース ファイルのサイズより小さいか大きいにあります可能性。 これはシステム ページの単位で提供されるビューとビューのサイズは次のシステム ページ サイズに切り上げです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />または<paramref name="size" />負の値です。  
+  
+ または  
+  
+ <paramref name="size" />論理アドレス空間を超えています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">メモリ マップト ファイルへのアクセスが承認されていません。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="size" />仮想メモリの合計を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateViewStream">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream (long offset, long size, System.IO.MemoryMappedFiles.MemoryMappedFileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedViewStream CreateViewStream(int64 offset, int64 size, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateViewStream(System.Int64,System.Int64,System.IO.MemoryMappedFiles.MemoryMappedFileAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedViewStream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="size" Type="System.Int64" />
+        <Parameter Name="access" Type="System.IO.MemoryMappedFiles.MemoryMappedFileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="offset">ビューの開始位置のバイト。</param>
+        <param name="size">ビューのサイズ。 0 (ゼロ) に開始されるビューを作成する指定<c>オフセット</c>約メモリ マップト ファイルの末尾で終わります。</param>
+        <param name="access">メモリ マップト ファイルに対して許可されたアクセス権の種類を指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.ReadWrite" /> です。</param>
+        <summary>メモリ マップト ファイルのビューに対応するオフセット、サイズ、およびアクセスの種類が指定されたストリームを作成します。</summary>
+        <returns>特性が指定されたメモリのストリーム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるストリームのシーケンシャル アクセスには、このメソッドによってメモリ マップト ファイルになどのプロセス間通信を使用することができます。  
+  
+ メモリ マップト ファイルの完全なビューを作成するを 0 (ゼロ) を指定、`size`パラメーター。 これを行う場合、ビューのサイズは、ディスク上のソース ファイルのサイズより小さいか大きいにあります可能性。 これはシステム ページの単位で提供されるビューとビューのサイズは次のシステム ページ サイズに切り上げです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="offset" />または<paramref name="size" />負の値です。  
+  
+ または  
+  
+ <paramref name="size" />論理アドレス空間を超えています。  
+  
+ または  
+  
+ <paramref name="access" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileAccess" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">
+          <paramref name="access" />メモリ マップト ファイルに対して無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="size" />仮想メモリの合計を超えています。  
+  
+ または  
+  
+ <paramref name="access" />メモリ マップト ファイルに対して無効です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFile" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFile" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.IO.MemoryMappedFiles.MemoryMappedFileSecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.MemoryMappedFiles.MemoryMappedFileSecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFileSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メモリ マップト ファイル リソースへのアクセス制御を取得します。</summary>
+        <returns>メモリ マップト ファイルに対するファイル アクセスと操作に関して付与することのできるアクセス許可。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。</exception>
+        <exception cref="T:System.ObjectDisposedException">メモリ マップト ファイルは閉じられます。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のプラットフォームは、Windows 98 以前のバージョンです。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。  
+  
+ または  
+  
+ メモリ マップト ファイルが開かれましたとして<see cref="F:System.IO.MemoryMappedFiles.MemoryMappedFileAccess.Write" />のみです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting (string mapName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting(string mapName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">開くメモリ マップト ファイルの名前。</param>
+        <summary>システム メモリ内で名前が指定されたメモリ マップト ファイルを開きます。</summary>
+        <returns>指定された名前を持つメモリ マップト ファイル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリ マップト ファイルは永続化メモリ マップト ファイルか (ディスク上のファイルに関連付けられている) か非永続化します。  
+  
+   
+  
+## Examples  
+ **永続化メモリ マップト ファイルを開く**  
+  
+ 次の例は、名前付きメモリ マップト ファイルを開きます`ImgA`を既に作成されているディスク上のファイルから (の例に示すように、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateFromFile%28System.String%29>メソッド)。  
+  
+ [!code-csharp[memorymappedfiles.memorymappedfile.openexisting#1](~/samples/snippets/csharp/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/cs/program.cs#1)]
+ [!code-vb[memorymappedfiles.memorymappedfile.openexisting#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/memorymappedfiles.memorymappedfile.openexisting/vb/program.vb#1)]  
+  
+ **非永続化メモリ マップト ファイルを開く**  
+  
+ 次の例では、プロセス間通信に使用されるメモリ マップト ファイルを開きます。 このコード例に示されている例の一部である、<xref:System.IO.MemoryMappedFiles.MemoryMappedFile.CreateNew%28System.String%2CSystem.Int64%29>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイル<paramref name="mapName" />存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting (string mapName, System.IO.MemoryMappedFiles.MemoryMappedFileRights desiredAccessRights);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting(string mapName, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileRights desiredAccessRights) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting(System.String,System.IO.MemoryMappedFiles.MemoryMappedFileRights)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="desiredAccessRights" Type="System.IO.MemoryMappedFiles.MemoryMappedFileRights" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">開くメモリ マップト ファイルの名前。</param>
+        <param name="desiredAccessRights">メモリ マップト ファイルに適用するアクセス権を指定する列挙値の 1 つ。</param>
+        <summary>システム メモリ内で名前およびアクセス権が指定されたメモリ マップト ファイルを開きます。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="desiredAccessRights" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileRights" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイル<paramref name="mapName" />存在しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting (string mapName, System.IO.MemoryMappedFiles.MemoryMappedFileRights desiredAccessRights, System.IO.HandleInheritability inheritability);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.MemoryMappedFiles.MemoryMappedFile OpenExisting(string mapName, valuetype System.IO.MemoryMappedFiles.MemoryMappedFileRights desiredAccessRights, valuetype System.IO.HandleInheritability inheritability) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.OpenExisting(System.String,System.IO.MemoryMappedFiles.MemoryMappedFileRights,System.IO.HandleInheritability)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.MemoryMappedFiles.MemoryMappedFile</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mapName" Type="System.String" />
+        <Parameter Name="desiredAccessRights" Type="System.IO.MemoryMappedFiles.MemoryMappedFileRights" />
+        <Parameter Name="inheritability" Type="System.IO.HandleInheritability" />
+      </Parameters>
+      <Docs>
+        <param name="mapName">開くメモリ マップト ファイルの名前。</param>
+        <param name="desiredAccessRights">メモリ マップト ファイルに適用するアクセス権を指定する列挙値の 1 つ。</param>
+        <param name="inheritability">メモリ マップト ファイルへのハンドルを子プロセスが継承できるかどうかを指定する列挙値の 1 つ。 既定値は、<see cref="F:System.IO.HandleInheritability.None" /> です。</param>
+        <summary>システム メモリ内で名前、アクセス権、および継承性が指定されたメモリ マップト ファイルを開きます。</summary>
+        <returns>指定された特性を持つメモリ マップト ファイル。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="mapName" /> が空の文字列です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="mapName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="desiredAccessRights" /> が有効な <see cref="T:System.IO.MemoryMappedFiles.MemoryMappedFileRights" /> 列挙値ではありません。  
+  
+ または  
+  
+ <paramref name="inheritability" /> が有効な <see cref="T:System.IO.HandleInheritability" /> 列挙値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">メモリ マップト ファイルに対して要求されたアクセスが正しくありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したファイル<paramref name="mapName" />存在しません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeMemoryMappedFileHandle">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle SafeMemoryMappedFileHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle SafeMemoryMappedFileHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.MemoryMappedFiles.MemoryMappedFile.SafeMemoryMappedFileHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.MemoryMappedFiles</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeMemoryMappedFileHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メモリ マップト ファイルのファイル ハンドルを取得します。</summary>
+        <value>メモリ マップト ファイルのハンドル。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードにアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.IO.MemoryMappedFiles.MemoryMappedFileSecurity memoryMappedFileSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.MemoryMappedFiles.MemoryMappedFile.SetAccessControl(System.IO.MemoryMappedFiles.MemoryMappedFileSecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="memoryMappedFileSecurity" Type="System.IO.MemoryMappedFiles.MemoryMappedFileSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="memoryMappedFileSecurity">メモリ マップト ファイルに対するファイル アクセスと操作に関して付与することのできるアクセス許可。</param>
+        <summary>メモリ マップト ファイル リソースへのアクセス制御を設定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="memoryMappedFileSecurity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。</exception>
+        <exception cref="T:System.NotSupportedException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">セキュリティ情報を設定するための基になる呼び出しが失敗しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

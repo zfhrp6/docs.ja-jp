@@ -1,0 +1,90 @@
+<Type Name="ITaskFactory2" FullName="Microsoft.Build.Framework.ITaskFactory2">
+  <TypeSignature Language="C#" Value="public interface ITaskFactory2 : Microsoft.Build.Framework.ITaskFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITaskFactory2 implements class Microsoft.Build.Framework.ITaskFactory" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.ITaskFactory2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.ITaskFactory</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>について説明し、拡張<see cref="T:Microsoft.Build.Framework.ITaskFactory" />インターフェイスをタスク ファクトリのインスタンスを実装する必要があります。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateTask">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Framework.ITask CreateTask (Microsoft.Build.Framework.IBuildEngine taskFactoryLoggingHost, System.Collections.Generic.IDictionary&lt;string,string&gt; taskIdentityParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.Build.Framework.ITask CreateTask(class Microsoft.Build.Framework.IBuildEngine taskFactoryLoggingHost, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; taskIdentityParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ITaskFactory2.CreateTask(Microsoft.Build.Framework.IBuildEngine,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Framework.ITask</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="taskFactoryLoggingHost" Type="Microsoft.Build.Framework.IBuildEngine" />
+        <Parameter Name="taskIdentityParameters" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="taskFactoryLoggingHost">タスク ファクトリのログ記録のホストは、タスクのコンテキストでメッセージを記録します。</param>
+        <param name="taskIdentityParameters">タスク ファクトリがランタイムとアーキテクチャなどのタスクを実行する方法を変更に使用できる特殊なパラメーターです。</param>
+        <summary>MSBuildRuntime と MSBuildArchitecture 既定タスク パラメーターを使用して個々 のタスクの起動に基づき設定「特別な」のパラメーターのオプションのセットで、使用するタスクのインスタンスを作成します。 MSBuild は、このインターフェイスでは、値"CLR2"、"CLR4"、"CurrentRuntime"を"MSBuildRuntime"を使用している TaskHostFactory の実装を提供し、"*"(Any;)値"x86"、"x64"、"CurrentArchitecture"、"MSBuildArchitecture"、および"\*"(すべて)。 ITaskFactory2 を実装する側では、値を使用してこれら定義済み MSBuildRuntime と MSBuildArchitecture を選択できますか、これらのパラメーターの新しい値を指定できます。</summary>
+        <returns>生成されたタスク、または<c>null</c>場合は、タスクを作成できませんでした。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスク ファクトリは ITaskFactory2 を実装する場合、MSBuild は ITaskFactory.CreateTask の代わりにこのメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public bool Initialize (string taskName, System.Collections.Generic.IDictionary&lt;string,string&gt; factoryIdentityParameters, System.Collections.Generic.IDictionary&lt;string,Microsoft.Build.Framework.TaskPropertyInfo&gt; parameterGroup, string taskBody, Microsoft.Build.Framework.IBuildEngine taskFactoryLoggingHost);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Initialize(string taskName, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; factoryIdentityParameters, class System.Collections.Generic.IDictionary`2&lt;string, class Microsoft.Build.Framework.TaskPropertyInfo&gt; parameterGroup, string taskBody, class Microsoft.Build.Framework.IBuildEngine taskFactoryLoggingHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ITaskFactory2.Initialize(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Collections.Generic.IDictionary{System.String,Microsoft.Build.Framework.TaskPropertyInfo},System.String,Microsoft.Build.Framework.IBuildEngine)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="taskName" Type="System.String" />
+        <Parameter Name="factoryIdentityParameters" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+        <Parameter Name="parameterGroup" Type="System.Collections.Generic.IDictionary&lt;System.String,Microsoft.Build.Framework.TaskPropertyInfo&gt;" />
+        <Parameter Name="taskBody" Type="System.String" />
+        <Parameter Name="taskFactoryLoggingHost" Type="Microsoft.Build.Framework.IBuildEngine" />
+      </Parameters>
+      <Docs>
+        <param name="taskName">タスクの名前です。</param>
+        <param name="factoryIdentityParameters">タスク ファクトリがランタイムとアーキテクチャなどのタスクを実行する方法を変更に使用できる特殊なパラメーターです。 キーがパラメーターの名前と値は、パラメーターの値。 これは、UsingTask ランタイムとアーキテクチャ パラメーターなどを使用して、UsingTask で設定されたパラメーターのセットです。</param>
+        <param name="parameterGroup">パラメーターのグループです。</param>
+        <param name="taskBody">タスクの本体。</param>
+        <param name="taskFactoryLoggingHost">タスク ファクトリのログ記録のホスト。</param>
+        <summary>このファクトリは、特定のインライン タスクのブロックと UsingTask パラメーターのセットを使用してインスタンス化するタスクを初期化します。 MSBuild は、このインターフェイスでは、値"CLR2"、"CLR4"、"CurrentRuntime"を"Runtime"を使用している TaskHostFactory の実装を提供し、"*"(Any;)値"x86"、"x64"、"CurrentArchitecture"、「アーキテクチャ」、および"\*"(すべて)。 ITaskFactory2 を実装する側では、これら事前に定義されたランタイムとアーキテクチャの値を使用することもできますか、これらのパラメーターの新しい値を指定できます。</summary>
+        <returns>初期化が成功したかどうかを示す値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ MSBuild エンジンを呼び出してこのファクトリを初期化します。 タスク名をファクトリによって作成できるかどうか、ファクトリを問い合わせることができるように十分なファクトリの初期化この必要があります。 タスク ファクトリは ITaskFactory2 を実装する場合は ITaskFactory.Initialize の代わりにこの初期化メソッドが呼び出されます。  
+  
+ TaskFactoryLoggingHost タスクが最初に使用されているターゲットのコンテキストでメッセージが記録されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

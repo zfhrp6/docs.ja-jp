@@ -1,0 +1,764 @@
+<Type Name="NewLateBinding" FullName="Microsoft.VisualBasic.CompilerServices.NewLateBinding">
+  <TypeSignature Language="C#" Value="public sealed class NewLateBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed NewLateBinding extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.CompilerServices.NewLateBinding" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このクラスは、Visual Basic コンパイラを使用して遅延バインディング呼び出しのヘルパーを提供します。コードから直接呼び出されるものではありません。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FallbackCall">
+      <MemberSignature Language="C#" Value="public static object FallbackCall (object Instance, string MemberName, object[] Arguments, string[] ArgumentNames, bool IgnoreReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FallbackCall(object Instance, string MemberName, object[] Arguments, string[] ArgumentNames, bool IgnoreReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackCall(System.Object,System.String,System.Object[],System.String[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="IgnoreReturn" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="IgnoreReturn">A<see langword="Boolean" />戻り値を無視するかどうかを示すの値します。</param>
+        <summary>遅延バインディングのメソッドまたは関数の呼び出しを実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Interaction.CallByName%2A> と似ています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackGet">
+      <MemberSignature Language="C#" Value="public static object FallbackGet (object Instance, string MemberName, object[] Arguments, string[] ArgumentNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FallbackGet(object Instance, string MemberName, object[] Arguments, string[] ArgumentNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackGet(System.Object,System.String,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <summary>遅延バインディング プロパティの実行を取得またはフィールド アクセスの呼び出しです。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackIndexSet">
+      <MemberSignature Language="C#" Value="public static void FallbackIndexSet (object Instance, object[] Arguments, string[] ArgumentNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void FallbackIndexSet(object Instance, object[] Arguments, string[] ArgumentNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackIndexSet(System.Object,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackIndexSetComplex">
+      <MemberSignature Language="C#" Value="public static void FallbackIndexSetComplex (object Instance, object[] Arguments, string[] ArgumentNames, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void FallbackIndexSetComplex(object Instance, object[] Arguments, string[] ArgumentNames, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackIndexSetComplex(System.Object,System.Object[],System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="OptimisticSet">A<see langword="Boolean" />設定操作が機能するかどうかを決定する値。 設定<see langword="True" />でプロパティまたはフィールド。 中間の値が設定されていると思われる場合にそれ以外の場合<see langword="False" />です。</param>
+        <param name="RValueBase">A<see langword="Boolean" />値を指定するときに、遅延参照の基本リファレンス、<see langword="RValue" />です。 設定<see langword="True" />が遅延された参照のベース参照の場合、 <see langword="RValue" />; これにより遅延割り当てのフィールドに、実行時に例外を生成して<see langword="RValues" />値の型のです。 それ以外の場合、<see langword="False" />です。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackInvokeDefault1">
+      <MemberSignature Language="C#" Value="public static object FallbackInvokeDefault1 (object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FallbackInvokeDefault1(object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackInvokeDefault1(System.Object,System.Object[],System.String[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="ReportErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。 場合<c>インスタンス</c>の種類は<see cref="T:System.Dynamic.IDynamicMetaObjectProvider" />、動的言語ランタイムを使用して、バインドです。 それ以外の場合に標準の遅延バインディングを実行します。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="ReportErrors">A<see langword="Boolean" />値、エラーが発生した例外をスローするかどうかを指定するために使用します。 設定<see langword="True" />例外をスローします。 設定<see langword="False" />を返す<see langword="Nothing" />エラーが発生したとき。</param>
+        <summary>既定のプロパティまたはフィールド、または既定のメソッドまたは関数への呼び出しの遅延バインディングされた get を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackInvokeDefault2">
+      <MemberSignature Language="C#" Value="public static object FallbackInvokeDefault2 (object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object FallbackInvokeDefault2(object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackInvokeDefault2(System.Object,System.Object[],System.String[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="ReportErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="ReportErrors">A<see langword="Boolean" />値、エラーが発生した例外をスローするかどうかを指定するために使用します。 設定<see langword="True" />例外をスローします。 設定<see langword="False" />を返す<see langword="Nothing" />エラーが発生したとき。</param>
+        <summary>既定のプロパティまたはフィールド、または既定のメソッドまたは関数への呼び出しの遅延バインディングされた get を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackSet">
+      <MemberSignature Language="C#" Value="public static void FallbackSet (object Instance, string MemberName, object[] Arguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void FallbackSet(object Instance, string MemberName, object[] Arguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackSet(System.Object,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FallbackSetComplex">
+      <MemberSignature Language="C#" Value="public static void FallbackSetComplex (object Instance, string MemberName, object[] Arguments, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void FallbackSetComplex(object Instance, string MemberName, object[] Arguments, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.FallbackSetComplex(System.Object,System.String,System.Object[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("do not use this method", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="OptimisticSet">A<see langword="Boolean" />設定操作が機能するかどうかを決定する値。 設定<see langword="True" />でプロパティまたはフィールド。 中間の値が設定されていると思われる場合にそれ以外の場合<see langword="False" />です。</param>
+        <param name="RValueBase">A<see langword="Boolean" />値を指定するときに、遅延参照の基本リファレンス、<see langword="RValue" />です。 設定<see langword="True" />が遅延された参照のベース参照の場合、 <see langword="RValue" />; これにより遅延割り当てのフィールドに、実行時に例外を生成して<see langword="RValues" />値の型のです。 それ以外の場合、<see langword="False" />です。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateCall">
+      <MemberSignature Language="C#" Value="public static object LateCall (object Instance, Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, Type[] TypeArguments, bool[] CopyBack, bool IgnoreReturn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateCall(object Instance, class System.Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, class System.Type[] TypeArguments, bool[] CopyBack, bool IgnoreReturn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateCall(System.Object,System.Type,System.String,System.Object[],System.String[],System.Type[],System.Boolean[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Type" Type="System.Type" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="TypeArguments" Type="System.Type[]" />
+        <Parameter Name="CopyBack" Type="System.Boolean[]" />
+        <Parameter Name="IgnoreReturn" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Type">呼び出しオブジェクトの型。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="TypeArguments">引数の型の配列引数の型を渡すために汎用的な呼び出しについてのみ使用します。</param>
+        <param name="CopyBack">配列<see langword="Boolean" />遅延バインダーが通信するために使用する値を引数の一致呼び出しサイトにもう一度<see langword="ByRef" />パラメーター。 各<see langword="True" />値は、引数が一致して、呼び出しの後コピーするかを示します。<see langword="LateCall" />が完了しました。</param>
+        <param name="IgnoreReturn">A<see langword="Boolean" />戻り値を無視するかどうかを示すの値します。</param>
+        <summary>遅延バインディングのメソッドまたは関数の呼び出しを実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.Interaction.CallByName%2A> と似ています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateCallInvokeDefault">
+      <MemberSignature Language="C#" Value="public static object LateCallInvokeDefault (object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateCallInvokeDefault(object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateCallInvokeDefault(System.Object,System.Object[],System.String[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="ReportErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="ReportErrors">A<see langword="Boolean" />値、エラーが発生した例外をスローするかどうかを指定するために使用します。 設定<see langword="True" />例外をスローします。 設定<see langword="False" />を返す<see langword="Nothing" />エラーが発生したとき。</param>
+        <summary>既定のメソッドまたは関数への遅延バインディング呼び出しを実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateCanEvaluate">
+      <MemberSignature Language="C#" Value="public static bool LateCanEvaluate (object instance, Type type, string memberName, object[] arguments, bool allowFunctionEvaluation, bool allowPropertyEvaluation);" />
+      <MemberSignature Language="ILAsm" Value=".method public static bool LateCanEvaluate(object instance, class System.Type type, string memberName, object[] arguments, bool allowFunctionEvaluation, bool allowPropertyEvaluation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateCanEvaluate(System.Object,System.Type,System.String,System.Object[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="memberName" Type="System.String" />
+        <Parameter Name="arguments" Type="System.Object[]" />
+        <Parameter Name="allowFunctionEvaluation" Type="System.Boolean" />
+        <Parameter Name="allowPropertyEvaluation" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="type">呼び出しオブジェクトの型。</param>
+        <param name="memberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="allowFunctionEvaluation">A<see langword="Boolean" />関数の評価を許可するかどうかを指定する値。</param>
+        <param name="allowPropertyEvaluation">A<see langword="Boolean" />プロパティに評価されるようにするかどうかを指定する値。</param>
+        <summary>呼び出しに遅延バインディングの評価が必要かどうかを示します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>A<see langword="Boolean" />式が評価の遅延バインディングを必要とするかどうかを示す値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateGet">
+      <MemberSignature Language="C#" Value="public static object LateGet (object Instance, Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, Type[] TypeArguments, bool[] CopyBack);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateGet(object Instance, class System.Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, class System.Type[] TypeArguments, bool[] CopyBack) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGet(System.Object,System.Type,System.String,System.Object[],System.String[],System.Type[],System.Boolean[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Type" Type="System.Type" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="TypeArguments" Type="System.Type[]" />
+        <Parameter Name="CopyBack" Type="System.Boolean[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Type">呼び出しオブジェクトの型。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="TypeArguments">引数の型の配列引数の型を渡すために汎用的な呼び出しについてのみ使用します。</param>
+        <param name="CopyBack">配列<see langword="Boolean" />遅延バインダーが通信するために使用する値を引数の一致呼び出しサイトにもう一度<see langword="ByRef" />パラメーター。 各<see langword="True" />値は、引数が一致して、呼び出しの後コピーするかを示します。<see langword="LateCall" />が完了しました。</param>
+        <summary>遅延バインディング プロパティの実行を取得またはフィールド アクセスの呼び出しです。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateGetInvokeDefault">
+      <MemberSignature Language="C#" Value="public static object LateGetInvokeDefault (object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateGetInvokeDefault(object Instance, object[] Arguments, string[] ArgumentNames, bool ReportErrors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateGetInvokeDefault(System.Object,System.Object[],System.String[],System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="ReportErrors" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="ReportErrors">A<see langword="Boolean" />値、エラーが発生した例外をスローするかどうかを指定するために使用します。 設定<see langword="True" />例外をスローします。 設定<see langword="False" />を返す<see langword="Nothing" />エラーが発生したとき。</param>
+        <summary>既定のプロパティまたはフィールドの遅延バインディングされた get を実行します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexGet">
+      <MemberSignature Language="C#" Value="public static object LateIndexGet (object Instance, object[] Arguments, string[] ArgumentNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static object LateIndexGet(object Instance, object[] Arguments, string[] ArgumentNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateIndexGet(System.Object,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <summary>遅延バインディング プロパティの実行を取得またはフィールド アクセスの呼び出しです。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <returns>呼び出しオブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexSet">
+      <MemberSignature Language="C#" Value="public static void LateIndexSet (object Instance, object[] Arguments, string[] ArgumentNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateIndexSet(object Instance, object[] Arguments, string[] ArgumentNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateIndexSet(System.Object,System.Object[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateIndexSetComplex">
+      <MemberSignature Language="C#" Value="public static void LateIndexSetComplex (object Instance, object[] Arguments, string[] ArgumentNames, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateIndexSetComplex(object Instance, object[] Arguments, string[] ArgumentNames, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateIndexSetComplex(System.Object,System.Object[],System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="OptimisticSet">A<see langword="Boolean" />設定操作が機能するかどうかを決定する値。 設定<see langword="True" />でプロパティまたはフィールド。 中間の値が設定されていると思われる場合にそれ以外の場合<see langword="False" />です。</param>
+        <param name="RValueBase">A<see langword="Boolean" />値を指定するときに、遅延参照の基本リファレンス、<see langword="RValue" />です。 設定<see langword="True" />が遅延された参照のベース参照の場合、 <see langword="RValue" />; これにより遅延割り当てのフィールドに、実行時に例外を生成して<see langword="RValues" />値の型のです。 それ以外の場合、<see langword="False" />です。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateSet">
+      <MemberSignature Language="C#" Value="public static void LateSet (object Instance, Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, Type[] TypeArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateSet(object Instance, class System.Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, class System.Type[] TypeArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateSet(System.Object,System.Type,System.String,System.Object[],System.String[],System.Type[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Type" Type="System.Type" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="TypeArguments" Type="System.Type[]" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Type">呼び出しオブジェクトの型。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="TypeArguments">引数の型の配列引数の型を渡すために汎用的な呼び出しについてのみ使用します。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateSet">
+      <MemberSignature Language="C#" Value="public static void LateSet (object Instance, Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, Type[] TypeArguments, bool OptimisticSet, bool RValueBase, Microsoft.VisualBasic.CallType CallType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateSet(object Instance, class System.Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, class System.Type[] TypeArguments, bool OptimisticSet, bool RValueBase, valuetype Microsoft.VisualBasic.CallType CallType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateSet(System.Object,System.Type,System.String,System.Object[],System.String[],System.Type[],System.Boolean,System.Boolean,Microsoft.VisualBasic.CallType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Type" Type="System.Type" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="TypeArguments" Type="System.Type[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+        <Parameter Name="CallType" Type="Microsoft.VisualBasic.CallType" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Type">呼び出しオブジェクトの型。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="TypeArguments">引数の型の配列引数の型を渡すために汎用的な呼び出しについてのみ使用します。</param>
+        <param name="OptimisticSet">A<see langword="Boolean" />設定操作が機能するかどうかを決定する値。 設定<see langword="True" />でプロパティまたはフィールド。 中間の値が設定されていると思われる場合にそれ以外の場合<see langword="False" />です。</param>
+        <param name="RValueBase">A<see langword="Boolean" />値を指定するときに、遅延参照の基本リファレンス、<see langword="RValue" />です。 設定<see langword="True" />が遅延された参照のベース参照の場合、 <see langword="RValue" />; これにより遅延割り当てのフィールドに、実行時に例外を生成して<see langword="RValues" />値の型のです。 それ以外の場合、<see langword="False" />です。</param>
+        <param name="CallType">型の列挙体のメンバー<see cref="T:Microsoft.VisualBasic.CallType" />呼び出されるプロシージャの種類を表すです。 CallType の値を指定できます<see langword="Method" />、 <see langword="Get" />、または<see langword="Set" />です。 のみ<see langword="Set" />を使用します。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定操作は、コピー ライトバックとして渡される遅延バインディング式の場合、`ByRef`パラメーター、`OptimisticSet`遅延バインディングされた式の結果が読み取り専用のプロパティまたはメソッドにするよう設定操作を使用するかどうかを決定するために使用します。 詳細については、のコピーバック パラメーターを参照してください<xref:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateCall%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LateSetComplex">
+      <MemberSignature Language="C#" Value="public static void LateSetComplex (object Instance, Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, Type[] TypeArguments, bool OptimisticSet, bool RValueBase);" />
+      <MemberSignature Language="ILAsm" Value=".method public static void LateSetComplex(object Instance, class System.Type Type, string MemberName, object[] Arguments, string[] ArgumentNames, class System.Type[] TypeArguments, bool OptimisticSet, bool RValueBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateSetComplex(System.Object,System.Type,System.String,System.Object[],System.String[],System.Type[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="Instance" Type="System.Object" />
+        <Parameter Name="Type" Type="System.Type" />
+        <Parameter Name="MemberName" Type="System.String" />
+        <Parameter Name="Arguments" Type="System.Object[]" />
+        <Parameter Name="ArgumentNames" Type="System.String[]" />
+        <Parameter Name="TypeArguments" Type="System.Type[]" />
+        <Parameter Name="OptimisticSet" Type="System.Boolean" />
+        <Parameter Name="RValueBase" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Instance">プロパティまたはメソッドを公開する通知オブジェクトのインスタンス。</param>
+        <param name="Type">呼び出しオブジェクトの型。</param>
+        <param name="MemberName">プロパティまたはメソッドの呼び出しオブジェクトでの名前。</param>
+        <param name="Arguments">プロパティまたは呼び出されるメソッドに渡される引数を格納する配列。</param>
+        <param name="ArgumentNames">引数名の配列。</param>
+        <param name="TypeArguments">引数の型の配列引数の型を渡すために汎用的な呼び出しについてのみ使用します。</param>
+        <param name="OptimisticSet">A<see langword="Boolean" />設定操作が機能するかどうかを決定する値。 設定<see langword="True" />でプロパティまたはフィールド。 中間の値が設定されていると思われる場合にそれ以外の場合<see langword="False" />です。</param>
+        <param name="RValueBase">A<see langword="Boolean" />値を指定するときに、遅延参照の基本リファレンス、<see langword="RValue" />です。 設定<see langword="True" />が遅延された参照のベース参照の場合、 <see langword="RValue" />; これにより遅延割り当てのフィールドに、実行時に例外を生成して<see langword="RValues" />値の型のです。 それ以外の場合、<see langword="False" />です。</param>
+        <summary>遅延バインディングを実行プロパティの設定またはフィールドは、呼び出しを記述します。 このヘルパー メソッドは、コードから直接呼び出されるものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ような<xref:Microsoft.VisualBasic.CompilerServices.NewLateBinding.LateSet%2A>このメソッドは、複雑な式 (たとえば、かっこで囲まれた式) で使用する点を除いて。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

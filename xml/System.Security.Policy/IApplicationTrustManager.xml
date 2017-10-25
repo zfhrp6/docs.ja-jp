@@ -1,0 +1,83 @@
+<Type Name="IApplicationTrustManager" FullName="System.Security.Policy.IApplicationTrustManager">
+  <TypeSignature Language="C#" Value="public interface IApplicationTrustManager : System.Security.ISecurityEncodable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IApplicationTrustManager implements class System.Security.ISecurityEncodable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.IApplicationTrustManager" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.ISecurityEncodable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーションを実行するかどうかと、どのアクセス許可セットを付与する必要がありますを決定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 信頼マネージャーを実装する必要があります、<xref:System.Security.Policy.IApplicationTrustManager>インターフェイスです。 ホストの呼び出し、<xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A?displayProperty=nameWithType>メソッドを呼び出せば確認アプリケーションを実行するかどうかと、アプリケーションにアクセス許可を付与する必要があります。  
+  
+ [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]され、後で、カスタム実装は、1 つだけの信頼マネージャーがあるの<xref:System.Security.Policy.IApplicationTrustManager>インターフェイスです。 信頼マネージャーの既定の実装では、許可をユーザーにアプリケーションをインストールして、アプリケーションに付与されるアクセス許可を引き上げるように求められます。 その他の信頼マネージャーの実装では、別のユーザー エクスペリエンスを提供できます。 たとえば、実装は情報をユーザーに確認ではなく信頼されたアプリケーションのエンタープライズ リストを確認する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例の簡単な実装を示しています。<xref:System.Security.Policy.IApplicationTrustManager>です。  
+  
+ [!code-csharp[System.Security.Policy.IApplicationTrustManager#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.IApplicationTrustManager/CS/customTrustManager.cs#1)]
+ [!code-vb[System.Security.Policy.IApplicationTrustManager#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.IApplicationTrustManager/VB/customtrustmanager.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DetermineApplicationTrust">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.ApplicationTrust DetermineApplicationTrust (ActivationContext activationContext, System.Security.Policy.TrustManagerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Policy.ApplicationTrust DetermineApplicationTrust(class System.ActivationContext activationContext, class System.Security.Policy.TrustManagerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust(System.ActivationContext,System.Security.Policy.TrustManagerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.ApplicationTrust</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+        <Parameter Name="context" Type="System.Security.Policy.TrustManagerContext" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext">アプリケーションのアクティベーション コンテキスト。</param>
+        <param name="context">アプリケーションの信頼マネージャー コンテキスト。</param>
+        <summary>アプリケーションを実行するかどうかと、どのアクセス許可セットを付与する必要がありますを決定します。</summary>
+        <returns>アプリケーションに関するセキュリティ上の決定を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A>メソッドは、ホスト アプリケーションを実行する必要があり、その権限のセットを付与する必要があるかどうかを決定します。 <xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A>返します、<xref:System.Security.Policy.ApplicationTrust>オブジェクトを<xref:System.Security.Policy.ApplicationTrust.DefaultGrantSet%2A>アプリケーションのコンテキスト内で実行する各アセンブリに付与するアクセス許可を表すアクセス許可を含むプロパティを設定します。 付与されたアクセス許可は、アセンブリをグローバル アセンブリ キャッシュには適用されません。 <xref:System.Security.Policy.ApplicationTrust>オブジェクトもあります、<xref:System.Security.Policy.ApplicationTrust.IsApplicationTrustedToRun%2A>信頼マネージャーは、アプリケーションを信頼するかどうかを示すために設定するプロパティです。 ホストが、アプリケーションをアクティブにし、そのアセンブリで提供されるアクセス許可のセットを許可、信頼マネージャーは、アプリケーションが信頼できることを示している場合、<xref:System.Security.Policy.ApplicationTrust>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例の実装を示しています、<xref:System.Security.Policy.IApplicationTrustManager.DetermineApplicationTrust%2A>カスタム信頼マネージャーのメソッドです。 このコード例に示されている例の一部である、<xref:System.Security.Policy.IApplicationTrustManager>インターフェイスです。  
+  
+ [!code-csharp[System.Security.Policy.IApplicationTrustManager#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Policy.IApplicationTrustManager/CS/customTrustManager.cs#2)]
+ [!code-vb[System.Security.Policy.IApplicationTrustManager#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Policy.IApplicationTrustManager/VB/customtrustmanager.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,403 @@
+<Type Name="ChannelFactoryBase&lt;TChannel&gt;" FullName="System.ServiceModel.Channels.ChannelFactoryBase&lt;TChannel&gt;">
+  <TypeSignature Language="C#" Value="public abstract class ChannelFactoryBase&lt;TChannel&gt; : System.ServiceModel.Channels.ChannelFactoryBase, System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ChannelFactoryBase`1&lt;TChannel&gt; extends System.ServiceModel.Channels.ChannelFactoryBase implements class System.ServiceModel.Channels.IChannelFactory, class System.ServiceModel.Channels.IChannelFactory`1&lt;!TChannel&gt;, class System.ServiceModel.ICommunicationObject" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.ChannelFactoryBase`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.ChannelFactoryBase</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TChannel">ファクトリが作成するチャネルの種類。</typeparam>
+    <summary>指定したアドレスに接続する指定した種類のチャネルを作成するための、クライアント上のチャネル ファクトリに対する共通の基本実装を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントのファクトリによって作成されたチャネルは、サーバーのチャネル リスナーで受け入れられます。 クライアントとサービスの間にチャネル接続が確立されると、両者はメッセージを交換して通信できます。  
+  
+ <xref:System.ServiceModel.Channels.ChannelFactoryBase%601.CreateChannel%2A> は、指定したアドレスを送信メッセージの送信先として使用します。 ServiceAddress.Uri プロパティは、メッセージの To ヘッダーとして使用されます。 ServiceReference.Via プロパティは、メッセージの物理的な送信先として使用されます。 これは通常、ServiceAddress.Uri の値と同じです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ChannelFactoryBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の <xref:System.ServiceModel.Channels.ChannelFactoryBase%601.%23ctor> コンストラクターは、メッセージを交換するときにサービス モデルのタイムアウト値でタイムアウト プロパティを初期化します。 開く、送信、および閉じる操作の既定値は 1 分、受信操作の既定値は 10 分です。 これらの操作のタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelFactoryBase%601.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelFactoryBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.ChannelFactoryBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンストラクターは、メッセージを交換するときにサービス モデルのタイムアウト値でタイムアウト プロパティを初期化します。 開く、送信、および閉じる操作の既定値は 1 分、受信操作の既定値は 10 分です。 これらの操作のタイムアウトに他の値を指定する場合は、<xref:System.ServiceModel.Channels.ChannelFactoryBase%601.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ChannelFactoryBase (System.ServiceModel.IDefaultCommunicationTimeouts timeouts);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.IDefaultCommunicationTimeouts timeouts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.#ctor(System.ServiceModel.IDefaultCommunicationTimeouts)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="timeouts" Type="System.ServiceModel.IDefaultCommunicationTimeouts" />
+      </Parameters>
+      <Docs>
+        <param name="timeouts">メッセージを交換するときの、開く、送信、受信、および閉じる操作の既定のタイムアウトを指定する <see cref="T:System.ServiceModel.IDefaultCommunicationTimeouts" />。</param>
+        <summary>指定した既定の通信タイムアウトを使用して、<see cref="T:System.ServiceModel.Channels.ChannelFactoryBase`1" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開く、送信、受信、および閉じる操作のタイムアウトにサービス モデルの既定値を使用せず、カスタム値を指定する場合は、既定のコンストラクターの代わりに <xref:System.ServiceModel.Channels.ChannelFactoryBase%601.%23ctor%28System.ServiceModel.IDefaultCommunicationTimeouts%29> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannel (System.ServiceModel.EndpointAddress address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel CreateChannel(class System.ServiceModel.EndpointAddress address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.CreateChannel(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="address">チャネルでのメッセージの送信先となるリモート エンドポイントの <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <summary>指定したエンドポイント アドレスで特定の種類のチャネルを作成します。</summary>
+        <returns>指定した <paramref name="TChannel" /> を使用する <paramref name="address" /> 型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出されると、<xref:System.ServiceModel.Channels.ChannelFactoryBase%601.OnCreateChannel%28System.ServiceModel.EndpointAddress%2CSystem.Uri%29> を呼び出します。 このメソッドは、派生クラスではオーバーライドできません。  
+  
+ このメソッドは、出力チャネルで送信されるメッセージの送信先のトランスポート アドレスとして、<xref:System.ServiceModel.EndpointAddress.Uri%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChannel">
+      <MemberSignature Language="C#" Value="public TChannel CreateChannel (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance !TChannel CreateChannel(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.CreateChannel(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">チャネルでのメッセージの送信先となるリモート エンドポイントの <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="via">出力チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する <see cref="T:System.Uri" />。</param>
+        <summary>指定したトランスポートとエンドポイント アドレスで、特定の種類のチャネルを作成します。</summary>
+        <returns>指定したリモート アドレスとトランスポート アドレスを使用する、<paramref name="TChannel" /> 型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出されると、<xref:System.ServiceModel.Channels.ChannelFactoryBase%601.OnCreateChannel%28System.ServiceModel.EndpointAddress%2CSystem.Uri%29> を呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAbort">
+      <MemberSignature Language="C#" Value="protected override void OnAbort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnAbort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnAbort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チャネル ファクトリによって管理されている各チャネルを中止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.ServiceModel.Channels.CommunicationObject.Abort%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBeginClose">
+      <MemberSignature Language="C#" Value="protected override IAsyncResult OnBeginClose (TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IAsyncResult OnBeginClose(valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">終了時の操作がタイム アウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="callback">終了時操作の非同期完了の通知を受信する <see cref="T:System.AsyncCallback" /> デリゲート。</param>
+        <param name="state">非同期終了時操作に関連付けられている状態情報を保持するオブジェクト。アプリケーションで指定します。</param>
+        <summary>チャネル ファクトリに関連付けられているすべてのチャネルを指定した時間内に閉じる非同期操作を開始します。</summary>
+        <returns>非同期終了時操作を参照する <see cref="T:System.IAsyncResult" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClose">
+      <MemberSignature Language="C#" Value="protected override void OnClose (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnClose(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnClose(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">終了時の操作がタイム アウトまでに完了する必要がある時間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>チャネル ファクトリに関連付けられているすべてのチャネルを指定した時間内に閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、特定の順序ではなく、チャネル ファクトリに関連付けられているすべてのアクティブなチャネルのクローズを試みます。 タイムアウト パラメーターは、すべてのチャネルのクローズに利用できる合計時間です。 いずれかのチャネルの正常なクローズが失敗すると (たとえば、チャネルでエラーが発生し、例外をスローした場合など)、この操作は失敗し、残りのチャネルのクローズは試みられません。 このメソッドがエラーになると、ファクトリおよび残っているチャネルはクローズではなく、中止されます。  
+  
+ このメソッドは <xref:System.ServiceModel.Channels.CommunicationObject.Close%2A> によって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateChannel">
+      <MemberSignature Language="C#" Value="protected abstract TChannel OnCreateChannel (System.ServiceModel.EndpointAddress address, Uri via);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance !TChannel OnCreateChannel(class System.ServiceModel.EndpointAddress address, class System.Uri via) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnCreateChannel(System.ServiceModel.EndpointAddress,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TChannel</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="via" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">チャネルでのメッセージの送信先となるリモート エンドポイントの <see cref="T:System.ServiceModel.EndpointAddress" />。</param>
+        <param name="via">出力チャネルで送信されるメッセージの送信先となるトランスポート アドレスを格納する <see cref="T:System.Uri" />。</param>
+        <summary>派生クラスとして実装された場合、チャネルを作成するときの機能拡張ポイントを提供します。</summary>
+        <returns>指定したアドレスを使用する <paramref name="TChannel" /> 型のチャネル。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、呼び出された <xref:System.ServiceModel.Channels.ChannelFactoryBase%601.CreateChannel%2A> から呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnEndClose">
+      <MemberSignature Language="C#" Value="protected override void OnEndClose (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnEndClose(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnEndClose(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="T:System.IAsyncResult" /> メソッドの呼び出しで返された <see cref="M:System.ServiceModel.Channels.ChannelFactoryBase`1.OnBeginClose(System.TimeSpan,System.AsyncCallback,System.Object)" />。</param>
+        <summary>チャネル ファクトリに関連付けられているすべてのチャネルを、指定した時間内に閉じる非同期操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateCreateChannel">
+      <MemberSignature Language="C#" Value="protected void ValidateCreateChannel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void ValidateCreateChannel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.ChannelFactoryBase`1.ValidateCreateChannel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>チャネル ファクトリが開かれていてチャネルを作成できる状態であることを確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、示されている例外のいずれかをスローし、表に示されている順序で条件を検査します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Closing" /> または <see cref="F:System.ServiceModel.CommunicationState.Closed" /> 状態にあります。</exception>
+        <exception cref="T:System.ServiceModel.CommunicationObjectFaultedException">通信オブジェクトは、<see cref="F:System.ServiceModel.CommunicationState.Faulted" /> 状態にあります。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のチャネル ファクトリは、<see cref="F:System.ServiceModel.CommunicationState.Opened" /> 状態ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

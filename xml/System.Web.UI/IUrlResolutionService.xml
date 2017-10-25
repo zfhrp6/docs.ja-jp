@@ -1,0 +1,54 @@
+<Type Name="IUrlResolutionService" FullName="System.Web.UI.IUrlResolutionService">
+  <TypeSignature Language="C#" Value="public interface IUrlResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IUrlResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IUrlResolutionService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>コンテキスト情報に基づく相対 Url を解決するのにはオブジェクトで実装されたサービスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、URL パスを解決するために使用するサービスを定義します。 <xref:System.Web.UI.IUrlResolutionService>インターフェイスを含むパスと相対パスを解決するために使用される、~ 演算子。 リソースを参照するサーバー コントロールが使用したリソースへのパスを定義できます、~ 演算子で、現在のアプリケーションのルートを表します。 パスを含む、~、ブラウザーに渡された場合、演算子は使用できません。 サーバー コントロールは、ブラウザーに渡す前への絶対パスまたは相対パス、パスを変換する必要があります。  
+  
+ <xref:System.Web.UI.Control>このインターフェイスを実装します。 派生したコントロール<xref:System.Web.UI.Control>Url のカスタマイズされた解決策を提供するには、この実装をオーバーライドする可能性があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ResolveClientUrl">
+      <MemberSignature Language="C#" Value="public string ResolveClientUrl (string relativeUrl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string ResolveClientUrl(string relativeUrl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IUrlResolutionService.ResolveClientUrl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="relativeUrl" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="relativeUrl">現在のページに対する相対 URL です。</param>
+        <summary>クライアントで使用するために適切な解決 URL を返します。</summary>
+        <returns>A<see cref="T:System.String" />解決済みの URL を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定された URL が絶対である場合は、変更することがなく絶対 URL が返されます。 それ以外の場合、URL は、クライアントで解決できる相対 URL に変換されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,58 @@
+<Type Name="IAppDomainFactory" FullName="System.Web.Hosting.IAppDomainFactory">
+  <TypeSignature Language="C#" Value="public interface IAppDomainFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IAppDomainFactory" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Hosting.IAppDomainFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("e6e21054-a7dc-4378-877d-b7f4a2d7e8ba")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>新しいを作成する 1 つのメソッドを定義<see cref="T:System.AppDomain" />Web アプリケーションのインスタンス。 このインターフェイスは、2.0 より前の .NET Framework のバージョンで使用されましたバージョン 2.0 を使用して、<see cref="T:System.Web.Hosting.IAppManagerAppDomainFactory" />インターフェイスの代わりにします。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public object Create (string module, string typeName, string appId, string appPath, string strUrlOfAppOrigin, int iZone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Create([in]string module, [in]string typeName, [in]string appId, [in]string appPath, [in]string strUrlOfAppOrigin, [in]int32 iZone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Hosting.IAppDomainFactory.Create(System.String,System.String,System.String,System.String,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="module" Type="System.String" />
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="appId" Type="System.String" />
+        <Parameter Name="appPath" Type="System.String" />
+        <Parameter Name="strUrlOfAppOrigin" Type="System.String" />
+        <Parameter Name="iZone" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="module">Web アプリケーションを含むモジュール。</param>
+        <param name="typeName">Web アプリケーションの種類。</param>
+        <param name="appId">Web アプリケーションの一意の識別子。</param>
+        <param name="appPath">Web アプリケーションのファイルへのパス。</param>
+        <param name="strUrlOfAppOrigin">Web アプリケーションのための原点の URL です。</param>
+        <param name="iZone">Web アプリケーションの元のゾーンです。</param>
+        <summary>指定した Web アプリケーションの新しいアプリケーション ドメインを作成します。 このインターフェイスは、2.0 より前の .NET Framework のバージョンで使用されましたバージョン 2.0 を使用して、<see cref="T:System.Web.Hosting.IAppManagerAppDomainFactory" />インターフェイスの代わりにします。</summary>
+        <returns>指定された Web アプリケーションの新しいアプリケーション ドメイン。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

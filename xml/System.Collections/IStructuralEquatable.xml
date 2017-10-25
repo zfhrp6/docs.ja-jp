@@ -1,0 +1,174 @@
+<Type Name="IStructuralEquatable" FullName="System.Collections.IStructuralEquatable">
+  <TypeSignature Language="C#" Value="public interface IStructuralEquatable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IStructuralEquatable" />
+  <TypeSignature Language="DocId" Value="T:System.Collections.IStructuralEquatable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>FSharp.Core</AssemblyName>
+    <AssemblyVersion>2.3.98.1</AssemblyVersion>
+    <AssemblyVersion>3.98.4.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトの構造が等価かどうかの比較をサポートするメソッドを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構造の等価では、同じ値が 2 つのオブジェクトが等しいことを意味します。 同じ物理オブジェクトを参照している 2 つのオブジェクト参照が等しいことを示す参照の等価性とは異なります。 <xref:System.Collections.IStructuralEquatable>インターフェイスでは、コレクション オブジェクトの構造の等価性を確認するカスタムの比較を実装することができます。 つまり、構造の等価の定義を作成し、コレクション型を受け入れると、この定義を使用するように指定、<xref:System.Collections.IStructuralEquatable>インターフェイスです。 インターフェイスが 2 つのメンバー: <xref:System.Collections.IStructuralEquatable.Equals%2A>、指定されたを使用して、等しいかどうかをテスト<xref:System.Collections.IEqualityComparer>実装と<xref:System.Collections.IStructuralEquatable.GetHashCode%2A>と同じであるオブジェクトの同一のハッシュ コードが返されます。  
+  
+> [!NOTE]
+>  <xref:System.Collections.IStructuralEquatable>インターフェイスは、構造の等価のカスタムの比較だけをサポートしています。 <xref:System.Collections.IStructuralComparable>インターフェイスは、並べ替えと順序付けのカスタムの構造比較をサポートしています。  
+  
+ .NET Framework も用意されています既定等値比較子によって返される、<xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType>と<xref:System.Collections.StructuralComparisons.StructuralEqualityComparer%2A?displayProperty=nameWithType>プロパティです。 詳細については、例を参照してください。  
+  
+ ジェネリック組クラス (<xref:System.Tuple%601>、 <xref:System.Tuple%602>、<xref:System.Tuple%603>など)、および<xref:System.Array>クラスの明示的な実装を提供する、<xref:System.Collections.IStructuralEquatable>インターフェイスです。 キャスト (c#) またはへの変換 (Visual Basic) の配列または組の現在のインスタンスによって、<xref:System.Collections.IStructuralEquatable>インターフェイス値を提供して、<xref:System.Collections.IEqualityComparer>実装への引数として、<xref:System.Collections.IStructuralEquatable.Equals%2A>メソッド、配列またはコレクションのカスタムの等値比較を定義することができます。  
+  
+   
+  
+## Examples  
+ 既定の等値比較子`EqualityComparer<Object>.Default.Equals`、2 つと見なします`NaN`値と等しくなります。 ただし、場合によっては、比較することがあります`NaN`値が等しいかどうかを返す`false`値を比較できないことを示します。 次の例では、`NanComparer` インターフェイスを実装する <xref:System.Collections.IStructuralEquatable> クラスを定義しています。 2 つを比較して<xref:System.Double>または 2 つ<xref:System.Single>等値演算子を使用して値。 既定の等値比較子をその他の種類の値を渡します。  
+  
+ [!code-csharp[System.Collections.IStructuralEquatable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.istructuralequatable/cs/nanexample1.cs#1)]
+ [!code-vb[System.Collections.IStructuralEquatable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.istructuralequatable/vb/nanexample1.vb#1)]  
+  
+ 次の例では、3 つの構成要素、2 つの同一の 3 組オブジェクト<xref:System.Double>値。 2 番目のコンポーネントの値が<xref:System.Double.NaN?displayProperty=nameWithType>です。 この例では、<xref:System.Tuple%603.Equals%2A?displayProperty=nameWithType>メソッド、およびそれを呼び出す、<xref:System.Collections.IStructuralEquatable.Equals%2A?displayProperty=nameWithType>メソッドを 3 回です。 によって返される既定の等値比較子を渡しますが、初めて、<xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType>プロパティです。 によって返される既定の等値比較子を渡すこと、2 回目、<xref:System.Collections.StructuralComparisons.StructuralEqualityComparer%2A?displayProperty=nameWithType>プロパティです。 3 番目の時間では、カスタム渡します`NanComparer`オブジェクト。 最初の 3 つのメソッド呼び出しを返すように、例からの出力を示しています、`true`が 4 番目の呼び出しが戻る、`false`です。  
+  
+ [!code-csharp[System.Collections.IStructuralEquatable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.istructuralequatable/cs/nanexample1.cs#2)]
+ [!code-vb[System.Collections.IStructuralEquatable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.istructuralequatable/vb/nanexample1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (object other, System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(object other, class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IStructuralEquatable.Equals(System.Object,System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>FSharp.Core</AssemblyName>
+        <AssemblyVersion>2.3.98.1</AssemblyVersion>
+        <AssemblyVersion>3.98.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Object" />
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="other">現在のインスタンスと比較するオブジェクト。</param>
+        <param name="comparer">オブジェクトを決定するかどうか、現在のインスタンスと<c>他の</c>が等しい。</param>
+        <summary>オブジェクトが現在のインスタンスに構造的に等しいかどうかを判断します。</summary>
+        <returns>
+          2 つのオブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.IStructuralEquatable.Equals%2A>メソッドは、配列とタプル オブジェクトのカスタムの構造比較をサポートしています。 このメソッドを呼び出します、`comparer`オブジェクトの<xref:System.Collections.IEqualityComparer.Equals%2A?displayProperty=nameWithType>配列の各要素または以降の最初の要素またはコンポーネントで、タプル コンポーネントを比較するメソッド。 個々 の呼び出し<xref:System.Collections.IEqualityComparer.Equals%2A?displayProperty=nameWithType>終了と<xref:System.Collections.IStructuralEquatable.Equals%2A?displayProperty=nameWithType>メソッド値を返すか、メソッドの呼び出しが戻るとき`false`またはすべての配列の要素または組のコンポーネントが比較された後にします。  
+  
+   
+  
+## Examples  
+ 既定の等値比較子`EqualityComparer<Object>.Default.Equals`、2 つと見なします`NaN`値と等しくなります。 ただし、場合によっては、比較することがあります`NaN`値が等しいかどうかを返す`false`値を比較できないことを示します。 次の例では、`NanComparer` インターフェイスを実装する <xref:System.Collections.IStructuralEquatable> クラスを定義しています。 2 つを比較して<xref:System.Double>または 2 つ<xref:System.Single>等値演算子を使用して値。 既定の等値比較子をその他の種類の値を渡します。  
+  
+ [!code-csharp[System.Collections.IStructuralEquatable#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.istructuralequatable/cs/nanexample1.cs#1)]
+ [!code-vb[System.Collections.IStructuralEquatable#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.istructuralequatable/vb/nanexample1.vb#1)]  
+  
+ 次の例では、3 つの構成要素、2 つの同一の 3 組オブジェクト<xref:System.Double>値。 2 番目のコンポーネントの値が<xref:System.Double.NaN?displayProperty=nameWithType>です。 この例では、<xref:System.Tuple%603.Equals%2A?displayProperty=nameWithType>メソッド、およびそれを呼び出す、<xref:System.Collections.IStructuralEquatable.Equals%2A?displayProperty=nameWithType>メソッドを 3 回です。 によって返される既定の等値比較子を渡しますが、初めて、<xref:System.Collections.Generic.EqualityComparer%601.Default%2A?displayProperty=nameWithType>プロパティです。 によって返される既定の等値比較子を渡すこと、2 回目、<xref:System.Collections.StructuralComparisons.StructuralEqualityComparer%2A?displayProperty=nameWithType>プロパティです。 3 番目の時間では、カスタム渡します`NanComparer`オブジェクト。 最初の 3 つのメソッド呼び出しを返すように、例からの出力を示しています、`true`が 4 番目の呼び出しが戻る、`false`です。  
+  
+ [!code-csharp[System.Collections.IStructuralEquatable#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.collections.istructuralequatable/cs/nanexample1.cs#2)]
+ [!code-vb[System.Collections.IStructuralEquatable#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.collections.istructuralequatable/vb/nanexample1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public int GetHashCode (System.Collections.IEqualityComparer comparer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 GetHashCode(class System.Collections.IEqualityComparer comparer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Collections.IStructuralEquatable.GetHashCode(System.Collections.IEqualityComparer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>FSharp.Core</AssemblyName>
+        <AssemblyVersion>2.3.98.1</AssemblyVersion>
+        <AssemblyVersion>3.98.4.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="comparer" Type="System.Collections.IEqualityComparer" />
+      </Parameters>
+      <Docs>
+        <param name="comparer">現在のオブジェクトのハッシュ コードを計算するオブジェクト。</param>
+        <summary>現在のインスタンスのハッシュ コードを返します。</summary>
+        <returns>現在のインスタンスのハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタマイズされた比較によって提供される構造の等価性に対応するコレクション オブジェクトのカスタマイズされたハッシュ コードを返すには、このメソッドを実装、<xref:System.Collections.IStructuralEquatable.Equals%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>場合、<see cref="M:System.Collections.IStructuralEquatable.Equals(System.Object,System.Collections.IEqualityComparer)" />メソッドを返します。<see langword="true" />によって 2 つのオブジェクトの値が返される、 <see cref="M:System.Collections.IStructuralEquatable.GetHashCode(System.Collections.IEqualityComparer)" /> 2 つのオブジェクトのメソッドを等しいもする必要があります。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

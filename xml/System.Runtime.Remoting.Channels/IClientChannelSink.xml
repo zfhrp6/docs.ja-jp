@@ -1,0 +1,241 @@
+<Type Name="IClientChannelSink" FullName="System.Runtime.Remoting.Channels.IClientChannelSink">
+  <TypeSignature Language="C#" Value="public interface IClientChannelSink : System.Runtime.Remoting.Channels.IChannelSinkBase" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IClientChannelSink implements class System.Runtime.Remoting.Channels.IChannelSinkBase" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IClientChannelSink" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Channels.IChannelSinkBase</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クライアント チャネル シンクに必要な関数とプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 チャネル シンク プロバイダーのチェーン内のチャネル シンクが相互リンクされているし、すべてのチャネルのメッセージはこのシンク チェーンをシリアル化する、転送します。  
+  
+   
+  
+## Examples  
+ 次のコード例の実装を示しています、<xref:System.Runtime.Remoting.Channels.IClientChannelSink>インターフェイスです。  
+  
+ [!code-cpp[Remoting_Sinks#20](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_Sinks/CPP/clientsink.cpp#20)]
+ [!code-csharp[Remoting_Sinks#20](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_Sinks/CS/clientsink.cs#20)]  
+  
+ 参照してください、<xref:System.Runtime.Remoting.Channels.IClientChannelSinkProvider>対応するクライアントのシンク プロバイダーの実装の例についてはドキュメントのインターフェイスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncProcessRequest">
+      <MemberSignature Language="C#" Value="public void AsyncProcessRequest (System.Runtime.Remoting.Channels.IClientChannelSinkStack sinkStack, System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Channels.ITransportHeaders headers, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AsyncProcessRequest(class System.Runtime.Remoting.Channels.IClientChannelSinkStack sinkStack, class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Channels.ITransportHeaders headers, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IClientChannelSink.AsyncProcessRequest(System.Runtime.Remoting.Channels.IClientChannelSinkStack,System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IClientChannelSinkStack" />
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">このシンクと呼ばれるチャネルのスタックがシンクします。</param>
+        <param name="msg">処理するメッセージ。</param>
+        <param name="headers">サーバーに送信メッセージの件名を追加するヘッダー。</param>
+        <param name="stream">転送シンクへのストリーム。</param>
+        <summary>現在のシンクで呼び出しの非同期メソッドの処理を要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties#2](~/samples/snippets/cpp/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties/CPP/soapclientformattersinkprovider_customprovider.cpp#2)]
+ [!code-csharp[SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties#2](~/samples/snippets/csharp/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties/CS/soapclientformattersinkprovider_customprovider.cs#2)]
+ [!code-vb[SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SoapClientFormatterSinkProvider_BaseChannelSinkWithProperties/VB/soapclientformattersinkprovider_customprovider.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncProcessResponse">
+      <MemberSignature Language="C#" Value="public void AsyncProcessResponse (System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack sinkStack, object state, System.Runtime.Remoting.Channels.ITransportHeaders headers, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AsyncProcessResponse(class System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack sinkStack, object state, class System.Runtime.Remoting.Channels.ITransportHeaders headers, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IClientChannelSink.AsyncProcessResponse(System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack,System.Object,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sinkStack" Type="System.Runtime.Remoting.Channels.IClientResponseChannelSinkStack" />
+        <Parameter Name="state" Type="System.Object" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="sinkStack">このシンクと呼ばれるシンク スタック。</param>
+        <param name="state">このシンクに関連付けられている要求側で生成された情報です。</param>
+        <param name="headers">ヘッダーは、サーバー応答のストリームから取得されます。</param>
+        <param name="stream">転送シンクから返されるストリーム。</param>
+        <summary>現在のシンクで呼び出しの非同期メソッドへの応答の処理を要求します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[CommonTransportKeys#1](~/samples/snippets/cpp/VS_Snippets_Remoting/CommonTransportKeys/CPP/commontransportkeys.cpp#1)]
+ [!code-csharp[CommonTransportKeys#1](~/samples/snippets/csharp/VS_Snippets_Remoting/CommonTransportKeys/CS/commontransportkeys.cs#1)]
+ [!code-vb[CommonTransportKeys#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/CommonTransportKeys/VB/commontransportkeys.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequestStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetRequestStream (System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Channels.ITransportHeaders headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.IO.Stream GetRequestStream(class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Channels.ITransportHeaders headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IClientChannelSink.GetRequestStream(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+      </Parameters>
+      <Docs>
+        <param name="msg"><see cref="T:System.Runtime.Remoting.Messaging.IMethodCallMessage" />メソッドの呼び出しに関する詳細を含むです。</param>
+        <param name="headers">サーバーに送信メッセージの件名を追加するヘッダー。</param>
+        <summary>返します、<see cref="T:System.IO.Stream" />シリアル化するのには、指定されたメッセージにします。</summary>
+        <returns><see cref="T:System.IO.Stream" />シリアル化するのには、指定されたメッセージにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Remoting.Channels.IClientChannelSink.GetRequestStream%2A>メソッドは、メッセージをシリアル化する前に、フォーマッタ シンクによって呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドの実装を示しています。  
+  
+ [!code-cpp[Remoting_Sinks#23](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_Sinks/CPP/clientsink.cpp#23)]
+ [!code-csharp[Remoting_Sinks#23](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_Sinks/CS/clientsink.cs#23)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="NextChannelSink">
+      <MemberSignature Language="C#" Value="public System.Runtime.Remoting.Channels.IClientChannelSink NextChannelSink { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Remoting.Channels.IClientChannelSink NextChannelSink" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IClientChannelSink.NextChannelSink" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Remoting.Channels.IClientChannelSink</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次のクライアントのクライアントのシンク チェーン内のチャネル シンクを取得します。</summary>
+        <value>次のクライアント チャネルは、クライアントのシンク チェーン内のシンクします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シンク プロバイダーのチェーン内のチャネル シンクが相互リンクされているし、すべてのチャネルのメッセージはこのチェーンをシリアル化する、転送します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このプロパティの実装を示しています。  
+  
+ [!code-cpp[Remoting_Sinks#22](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_Sinks/CPP/clientsink.cpp#22)]
+ [!code-csharp[Remoting_Sinks#22](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_Sinks/CS/clientsink.cs#22)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessMessage">
+      <MemberSignature Language="C#" Value="public void ProcessMessage (System.Runtime.Remoting.Messaging.IMessage msg, System.Runtime.Remoting.Channels.ITransportHeaders requestHeaders, System.IO.Stream requestStream, out System.Runtime.Remoting.Channels.ITransportHeaders responseHeaders, out System.IO.Stream responseStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessMessage(class System.Runtime.Remoting.Messaging.IMessage msg, class System.Runtime.Remoting.Channels.ITransportHeaders requestHeaders, class System.IO.Stream requestStream, [out] class System.Runtime.Remoting.Channels.ITransportHeaders&amp; responseHeaders, [out] class System.IO.Stream&amp; responseStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.IClientChannelSink.ProcessMessage(System.Runtime.Remoting.Messaging.IMessage,System.Runtime.Remoting.Channels.ITransportHeaders,System.IO.Stream,System.Runtime.Remoting.Channels.ITransportHeaders@,System.IO.Stream@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="msg" Type="System.Runtime.Remoting.Messaging.IMessage" />
+        <Parameter Name="requestHeaders" Type="System.Runtime.Remoting.Channels.ITransportHeaders" />
+        <Parameter Name="requestStream" Type="System.IO.Stream" />
+        <Parameter Name="responseHeaders" Type="System.Runtime.Remoting.Channels.ITransportHeaders&amp;" RefType="out" />
+        <Parameter Name="responseStream" Type="System.IO.Stream&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="msg">処理するメッセージ。</param>
+        <param name="requestHeaders">サーバーに送信メッセージの件名を追加するヘッダー。</param>
+        <param name="requestStream">転送シンクへのストリーム。</param>
+        <param name="responseHeaders">このメソッドが戻るとき、<see cref="T:System.Runtime.Remoting.Channels.ITransportHeaders" />サーバーから返されたヘッダーを保持するインターフェイスです。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="responseStream">このメソッドが戻るとき、<see cref="T:System.IO.Stream" />転送シンクから返されます。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>要求メッセージの現在のシンクから処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、このメソッドの実装を示しています。  
+  
+ [!code-cpp[Remoting_Sinks#24](~/samples/snippets/cpp/VS_Snippets_Remoting/Remoting_Sinks/CPP/clientsink.cpp#24)]
+ [!code-csharp[Remoting_Sinks#24](~/samples/snippets/csharp/VS_Snippets_Remoting/Remoting_Sinks/CS/clientsink.cs#24)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

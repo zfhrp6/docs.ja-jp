@@ -1,0 +1,84 @@
+<Type Name="UserNameSecurityTokenProvider" FullName="System.IdentityModel.Selectors.UserNameSecurityTokenProvider">
+  <TypeSignature Language="C#" Value="public class UserNameSecurityTokenProvider : System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UserNameSecurityTokenProvider extends System.IdentityModel.Selectors.SecurityTokenProvider" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.UserNameSecurityTokenProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.SecurityTokenProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージ送信者の <see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンを提供するセキュリティ トークン プロバイダーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大半の場合、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenProvider> クラスを直接呼び出す必要はありません。このクラスはクライアントが <xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンを必要とする SOAP メッセージを送信するときに呼び出されます。 特に、クライアントは <xref:System.ServiceModel.Description.ClientCredentials> クラスを使用して必要なセキュリティ トークンの種類を指定し、<xref:System.ServiceModel.Description.ClientCredentials> クラスはセキュリティ トークンを取得するために <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドを呼び出します。 必要なセキュリティ トークンが <xref:System.IdentityModel.Tokens.UserNameSecurityToken> セキュリティ トークンである場合、<xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UserNameSecurityTokenProvider (string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName"><see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンの取得に使用するユーザー名。</param>
+        <param name="password"><see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンを取得する対象ユーザーのパスワード。</param>
+        <summary>指定したユーザー名とパスワードを使用して、<see cref="T:System.IdentityModel.Selectors.UserNameSecurityTokenProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.GetTokenCore%2A> メソッドは、指定されたユーザー名とパスワードに基づいてトークンを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenCore">
+      <MemberSignature Language="C#" Value="protected override System.IdentityModel.Tokens.SecurityToken GetTokenCore (TimeSpan timeout);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken GetTokenCore(valuetype System.TimeSpan timeout) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.GetTokenCore(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeout">セキュリティ トークンを取得するメッセージのタイムアウト値を指定する <see cref="T:System.TimeSpan" />。</param>
+        <summary>コンストラクターに指定されたユーザー名とパスワードに基づいてセキュリティ トークンを取得します。</summary>
+        <returns>取得するセキュリティ トークンを表す <see cref="T:System.IdentityModel.Tokens.SecurityToken" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クライアントが SOAP メッセージを送信し、<xref:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.GetTokenCore%2A> セキュリティ トークンが要求される場合、<xref:System.ServiceModel.Description.ClientCredentials> メソッドが <xref:System.IdentityModel.Tokens.UserNameSecurityToken> クラスにより呼び出されます。  
+  
+ <xref:System.IdentityModel.Selectors.SecurityTokenProvider.GetToken%2A> メソッドは <xref:System.IdentityModel.Selectors.UserNameSecurityTokenProvider.GetTokenCore%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

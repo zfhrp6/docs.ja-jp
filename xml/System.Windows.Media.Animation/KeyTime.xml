@@ -1,0 +1,452 @@
+<Type Name="KeyTime" FullName="System.Windows.Media.Animation.KeyTime">
+  <TypeSignature Language="C#" Value="public struct KeyTime : IEquatable&lt;System.Windows.Media.Animation.KeyTime&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit KeyTime extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.Media.Animation.KeyTime&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.KeyTime" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.Media.Animation.KeyTime&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.KeyTimeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アニメーションの相対的な処理において、<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンスは、特定のキー フレーム処理を実行するときに、正確なタイミングを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各キー フレームの<xref:System.Windows.Media.Animation.KeyTime>そのキー フレームの終了を指定します。 キーの時間の再生時間を指定するわけではありません。 キー フレームが再生される時間の長さは、そのキー フレームの終了時刻、前のキー フレームの終了時刻、およびアニメーションの継続時間によって決まります。 参照してください[キー フレーム アニメーションの概要](~/docs/framework/wpf/graphics-multimedia/key-frame-animations-overview.md)詳細についてはします。  
+  
+ A<xref:System.Windows.Media.Animation.KeyTime>割合、または特殊な sentinel 値の 1 つとして、数値の時刻の値を含む、いくつかのさまざまな形式で表現することがあります<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>または<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>です。  
+  
+<a name="xamlAttributeUsage_KeyTime"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<*object* *property*="[*days*.]*hours*:*minutes*:*seconds*[.*fractionalSeconds*]"/>  
+  
+ \- または  
+  
+ \<*object* *property*="[*days*.]*hours*:*minutes*"/>  
+  
+ \- または  
+  
+ \<*オブジェクト**プロパティ*="*pctValue*%"/>  
+  
+ \- または  
+  
+ \<*object* *property*="<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>"/>  
+  
+ \- または  
+  
+ \<*object* *property*="<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>"/>  
+  
+<a name="xamlValues_KeyTime"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *日数*  
+ 整数値より大きいかをこの日数の数を指定する 0 に等しい<xref:System.Windows.Media.Animation.KeyTime>です。 詳細については、<xref:System.Windows.Media.Animation.KeyTime.TimeSpan%2A> プロパティを参照してください。  
+  
+ *時間*  
+ これにより展開される時間数を指定する 0 ~ 23 の範囲の整数値<xref:System.Windows.Media.Animation.KeyTime>です。 詳細については、<xref:System.Windows.Media.Animation.KeyTime.TimeSpan%2A> プロパティを参照してください。  
+  
+ *(分)*  
+ これにより展開される分単位の時間を指定する 0 ~ 59 の範囲の整数値<xref:System.Windows.Media.Animation.KeyTime>です。 詳細については、<xref:System.Windows.Media.Animation.KeyTime.TimeSpan%2A> プロパティを参照してください。  
+  
+ *(秒)*  
+ これにより展開される秒数を指定する 0 ~ 59 の範囲の浮動小数点値<xref:System.Windows.Media.Animation.KeyTime>です。 詳細については、<xref:System.Windows.Media.Animation.KeyTime.TimeSpan%2A> プロパティを参照してください。  
+  
+ *fractionalSeconds*  
+ 整数値 1 ~ 7 桁の数字から成る秒の小数部を指定します。 詳細については、<xref:System.Windows.Media.Animation.KeyTime.TimeSpan%2A> プロパティを参照してください。  
+  
+ *pctValue*  
+ これを指定する 0 ~ 100 の範囲、間の浮動小数点値<xref:System.Windows.Media.Animation.KeyTime>アニメーションの総実行時間のパーセンテージです。 リテラル文字でこの後にする必要があります`%`です。詳細については、次を参照してください。、<xref:System.Windows.Media.Animation.KeyTime.Percent%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスに指定したオブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="value" />は、<see cref="T:System.Windows.Media.Animation.KeyTime" />時間です。 このインスタンスと同じ長さを表すそれ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの比較<xref:System.Windows.Media.Animation.KeyTime>インスタンスとは異なる方法で型指定された<xref:System.Windows.Media.Animation.KeyTimeType>一様または Paced、特殊な値を含むプロパティが false の戻り値を引き起こします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Animation.KeyTime value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.Media.Animation.KeyTime value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.Equals(System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスと比較するオブジェクト。</param>
+        <summary>このインスタンスが、指定したのと等しいかどうかを示す<see cref="T:System.Windows.Media.Animation.KeyTime" />です。</summary>
+        <returns>
+          <paramref name="value" /> がこのインスタンスと等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Animation.KeyTime keyTime1, System.Windows.Media.Animation.KeyTime keyTime2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Animation.KeyTime keyTime1, valuetype System.Windows.Media.Animation.KeyTime keyTime2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.Equals(System.Windows.Media.Animation.KeyTime,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyTime1" Type="System.Windows.Media.Animation.KeyTime" />
+        <Parameter Name="keyTime2" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="keyTime1">比較する最初の値です。</param>
+        <param name="keyTime2">比較する 2 番目の値です。</param>
+        <summary>2 つを指定するかどうかを示す<see cref="T:System.Windows.Media.Animation.KeyTime" />構造体が等しい。</summary>
+        <returns>
+          <see langword="true" />場合の値<paramref name="keyTime1" />と<paramref name="keyTime2" />と同じです。 それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つの比較<xref:System.Windows.Media.Animation.KeyTime>インスタンスとは異なる方法で型指定された<xref:System.Windows.Media.Animation.KeyTimeType>一様または Paced、特殊な値を含むプロパティが false の戻り値を引き起こします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromPercent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Animation.KeyTime FromPercent (double percent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Animation.KeyTime FromPercent(float64 percent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.FromPercent(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="percent" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="percent">新しい値<see cref="T:System.Windows.Media.Animation.KeyTime" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンスで、<see cref="T:System.Windows.Media.Animation.KeyTimeType" />プロパティが指定されたパラメーターの値に初期化します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンスの値に初期化<paramref name="percent" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーセントのパラメーターは、値 0.0 と 1.0 の範囲、double 型として渡されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="percent" />小さい 0.0 以上 1.0 です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FromTimeSpan">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Animation.KeyTime FromTimeSpan (TimeSpan timeSpan);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Animation.KeyTime FromTimeSpan(valuetype System.TimeSpan timeSpan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.FromTimeSpan(System.TimeSpan)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeSpan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeSpan">新しい値<see cref="T:System.Windows.Media.Animation.KeyTime" />です。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンスで、<see cref="T:System.Windows.Media.Animation.KeyTimeType" />プロパティが指定されたパラメーターの値に初期化します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンスの値に初期化<paramref name="timeSpan" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスを表す整数のハッシュ コードを返します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Animation.KeyTime keyTime1, System.Windows.Media.Animation.KeyTime keyTime2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Animation.KeyTime keyTime1, valuetype System.Windows.Media.Animation.KeyTime keyTime2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.op_Equality(System.Windows.Media.Animation.KeyTime,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyTime1" Type="System.Windows.Media.Animation.KeyTime" />
+        <Parameter Name="keyTime2" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="keyTime1">比較する最初の値です。</param>
+        <param name="keyTime2">比較する 2 番目の値です。</param>
+        <summary>比較する 2 つのオーバー ロードされた演算子<see cref="T:System.Windows.Media.Animation.KeyTime" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" /> と <paramref name="keyTime1" /> が等しい場合は <paramref name="keyTime2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較する<xref:System.Windows.Media.Animation.KeyTime>インスタンスとは異なる方法で型指定された<xref:System.Windows.Media.Animation.KeyTimeType>一様または Paced、特殊な値を含むプロパティが false の戻り値を引き起こします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Windows.Media.Animation.KeyTime (TimeSpan timeSpan);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Animation.KeyTime op_Implicit(valuetype System.TimeSpan timeSpan) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.op_Implicit(System.TimeSpan)~System.Windows.Media.Animation.KeyTime" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="timeSpan" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="timeSpan">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Animation.KeyTime keyTime1, System.Windows.Media.Animation.KeyTime keyTime2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Animation.KeyTime keyTime1, valuetype System.Windows.Media.Animation.KeyTime keyTime2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.op_Inequality(System.Windows.Media.Animation.KeyTime,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyTime1" Type="System.Windows.Media.Animation.KeyTime" />
+        <Parameter Name="keyTime2" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="keyTime1">比較する最初の値です。</param>
+        <param name="keyTime2">比較する 2 番目の値です。</param>
+        <summary>比較する 2 つのオーバー ロードされた演算子<see cref="T:System.Windows.Media.Animation.KeyTime" />非等値の構造体。</summary>
+        <returns>
+          <paramref name="keyTime1" /> と <paramref name="keyTime2" /> が等しくない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Paced">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Animation.KeyTime Paced { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.Animation.KeyTime Paced" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeyTime.Paced" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.KeyTime.Paced" />値がアニメーションを定率で補間結果として得られるタイミング動作を作成します。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.KeyTime.Paced" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー時刻を設定すると<xref:System.Windows.Media.Animation.KeyTime.Paced%2A>、各フレームの存続期間を決定するキー フレームのそれぞれの長さに従って使用可能な時間が割り当てられます。  これにより、「速度」またはアニメーションの速度が一定に保つように動作が提供されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Percent">
+      <MemberSignature Language="C#" Value="public double Percent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Percent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeyTime.Percent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの総実行時間の割合で表されたキー フレームの終了時刻を取得します。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.KeyTime.Percent" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー時刻をパーセンテージで表現する場合、キー フレームの終了時刻はキー フレーム アニメーションの時間の割合として指定されます。 たとえば、キー フレーム アニメーションに 4 秒、75% の期間がある場合は、として指定されている、<xref:System.Windows.Media.Animation.KeyTime>キー フレームの割合、キー フレームを 3 秒後に終了されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このインスタンスがない場合の種類の<see cref="P:System.Windows.Media.Animation.KeyTime.Percent" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TimeSpan">
+      <MemberSignature Language="C#" Value="public TimeSpan TimeSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan TimeSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeyTime.TimeSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アニメーションの先頭の相対時刻で表されたキー フレームの終了時刻を取得します。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.KeyTime.TimeSpan" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー時刻としてする時間間隔で表現する場合、キー フレームの終了時刻は、アニメーションの開始相対時刻として指定されます。 たとえば、期間は、「0:0:2」に設定されているキー フレームは 2 秒アニメーションの開始後に終了します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このインスタンスがない場合の種類の<see cref="P:System.Windows.Media.Animation.KeyTime.TimeSpan" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.KeyTime.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを表す文字列を返します<see cref="T:System.Windows.Media.Animation.KeyTime" />インスタンス。</summary>
+        <returns>このインスタンスの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.KeyTimeType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Animation.KeyTimeType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeyTime.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTimeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.KeyTime.Type" />このインスタンスが表す値です。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.KeyTime.Type" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uniform">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Animation.KeyTime Uniform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.Animation.KeyTime Uniform" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.KeyTime.Uniform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.KeyTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Windows.Media.Animation.KeyTime.Uniform" />アニメーション キー フレームの間で均等に割り当てられた時間に分割します。</summary>
+        <value><see cref="P:System.Windows.Media.Animation.KeyTime.Uniform" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー時刻を設定すると<xref:System.Windows.Media.Animation.KeyTime.Uniform%2A>アニメーションの時間を割り当てられた合計は、キー フレームの間で均等に分割します。 たとえば、キー フレーム アニメーションに 4 秒の期間があり、ユーザーが次の 4 つのキー フレームは、各キー フレームは最後の 1 秒間と上記の 1 つが終了した直後に開始します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

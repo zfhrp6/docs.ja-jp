@@ -1,0 +1,125 @@
+<Type Name="NonceCache" FullName="System.ServiceModel.Security.NonceCache">
+  <TypeSignature Language="C#" Value="public abstract class NonceCache" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit NonceCache extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.NonceCache" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検証済みの nonce のキャッシュを表す抽象基本クラス。</summary>
+    <remarks>To be added.</remarks>
+    <block subset="none" type="overrides">
+      <para>オーバーライドする必要があります、<see cref="M:System.ServiceModel.Security.NonceCache.CheckNonce(System.Byte[])" />と<see cref="M:System.ServiceModel.Security.NonceCache.TryAddNonce(System.Byte[])" />メソッドです。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected NonceCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.NonceCache.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>初期化するために派生クラスのコンス トラクターから呼び出される、<see cref="T:System.ServiceModel.Security.NonceCache" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheSize">
+      <MemberSignature Language="C#" Value="public int CacheSize { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CacheSize" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.NonceCache.CacheSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキャッシュを含めることができる検証済みの nonce の数として指定したキャッシュの最大サイズを設定します。</summary>
+        <value>キャッシュの最大サイズは、キャッシュを含めることができる検証済みの nonce の数として指定します。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">0 より小さい値である値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CachingTimeSpan">
+      <MemberSignature Language="C#" Value="public TimeSpan CachingTimeSpan { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CachingTimeSpan" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.NonceCache.CachingTimeSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または nonce がキャッシュから削除する最大期間を設定します。</summary>
+        <value>Nonce がキャッシュから削除する最大期間。 この値は、2 回以上、最大クロック スキュー リプレイ ウィンドウのサイズに追加をする必要があります。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">ある値を設定しようとするより小さい<see cref="F:System.TimeSpan.Zero" />に発生します。  
+  
+ または  
+  
+ 許可される最大値より大きい値を設定しようとすると、発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckNonce">
+      <MemberSignature Language="C#" Value="public abstract bool CheckNonce (byte[] nonce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CheckNonce(unsigned int8[] nonce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.NonceCache.CheckNonce(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nonce" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="nonce">Nonce を確認します。</param>
+        <summary>派生クラスでオーバーライドされると、指定された nonce がキャッシュ内に既にあるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定された nonce が既にキャッシュ内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryAddNonce">
+      <MemberSignature Language="C#" Value="public abstract bool TryAddNonce (byte[] nonce);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryAddNonce(unsigned int8[] nonce) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.NonceCache.TryAddNonce(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nonce" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="nonce">Nonce、キャッシュに追加します。</param>
+        <summary>派生クラスでオーバーライドされるは、指定された nonce をキャッシュに追加を試みます。</summary>
+        <returns>
+          <see langword="true" />nonce がキャッシュに追加した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

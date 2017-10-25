@@ -1,0 +1,363 @@
+<Type Name="ComputerInfo" FullName="Microsoft.VisualBasic.Devices.ComputerInfo">
+  <TypeSignature Language="C#" Value="public class ComputerInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ComputerInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.ComputerInfo" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerTypeProxy(typeof(Microsoft.VisualBasic.Devices.ComputerInfo/ComputerInfoDebugView))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンピューターのメモリ、読み込まれたアセンブリ、名前、オペレーティング システムに関する情報を取得するためのプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Computer.Info`オブジェクトの実行時に決定される、アプリケーションの配置元のコンピューターに関する情報を返します。 通常、このデータは、開発用コンピューター上で利用できるは異なります。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.AvailablePhysicalMemory`コードが実行されているコンピューターの使用可能な物理メモリの量を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComputerInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.ComputerInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.ComputerInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AvailablePhysicalMemory">
+      <MemberSignature Language="C#" Value="public ulong AvailablePhysicalMemory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 AvailablePhysicalMemory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.AvailablePhysicalMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターの空き物理メモリの総量を取得します。</summary>
+        <value>A<see langword="ULong" />コンピューターの空き物理メモリのバイト数を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.AvailablePhysicalMemory`プロパティは、Windows XP、Windows 2000 Professional、Windows Server 2003、Windows 2000 Server、または Windows Vista が必要です。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.AvailablePhysicalMemory`コードが実行されているコンピューターの使用可能な物理メモリの量を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">アプリケーションでは、メモリの状態を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AvailableVirtualMemory">
+      <MemberSignature Language="C#" Value="public ulong AvailableVirtualMemory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 AvailableVirtualMemory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.AvailableVirtualMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターの空き仮想アドレス領域の合計サイズを取得します。</summary>
+        <value>A<see langword="ULong" />コンピューターの空き仮想アドレス空間のバイト数を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.AvailableVirtualMemory`プロパティは、Windows XP、Windows 2000 Professional、Windows Server 2003、Windows 2000 Server、または Windows Vista が必要です。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.AvailableVirtualMemory`コードが実行されているコンピューターの使用可能な仮想メモリの量を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">アプリケーションでは、メモリの状態を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstalledUICulture">
+      <MemberSignature Language="C#" Value="public System.Globalization.CultureInfo InstalledUICulture { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Globalization.CultureInfo InstalledUICulture" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.InstalledUICulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムにインストールされている現在の UI カルチャを取得します。</summary>
+        <value>A<see cref="T:System.Globalization.CultureInfo" />オブジェクトは、コンピューターにインストールされている UI カルチャを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.InstalledUICulture`プロパティと同じ動作には、<xref:System.Globalization.CultureInfo.InstalledUICulture%2A>プロパティです。  
+  
+ 日本語版の Windows 2000 Professional など、ローカライズされたオペレーティング システムでは、このプロパティは、オペレーティング システムのカルチャを返します。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.InstalledUICulture`プロパティをオペレーティング システムの UI カルチャの名前を表示します。  
+  
+ [!code-vb[VbVbalrMyComputer#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OSFullName">
+      <MemberSignature Language="C#" Value="public string OSFullName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OSFullName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.OSFullName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムの完全名を取得します。</summary>
+        <value>A<see langword="String" />オペレーティング システム名を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、Windows Management Instrumentation (WMI) がコンピューターにインストールされている場合に、オペレーティング システムの名前に関する詳細情報を返します。 同じ文字列を返しますそれ以外の場合、`My.Computer.Info.OSPlatform`プロパティで、WMI で提供できるよりも小さいの詳細情報を提供します。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.OSFullName`のオペレーティング システムのプロパティをコンピューターの名前を表示します。  
+  
+ [!code-vb[VbVbalrMyComputer#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元のコードには、完全な信頼はありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OSPlatform">
+      <MemberSignature Language="C#" Value="public string OSPlatform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OSPlatform" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.OSPlatform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターのオペレーティング システムのプラットフォーム id を取得します。</summary>
+        <value>A<see langword="String" />のメンバー名から選択したコンピューターのオペレーティング システムのプラットフォーム識別子を含む、<see cref="T:System.PlatformID" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.OSPlatform`プロパティと同様の機能を提供する、<xref:System.OperatingSystem.Platform%2A>によって返されるオブジェクトのプロパティ、<xref:System.Environment.OSVersion%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.OSPlatform`のオペレーティング システムのコンピューターのプラットフォームを表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ExecutionEngineException">アプリケーションでは、オペレーティング システム プラットフォーム情報を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OSVersion">
+      <MemberSignature Language="C#" Value="public string OSVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OSVersion" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.OSVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターのオペレーティング システムのバージョンを取得します。</summary>
+        <value>A<see langword="String" />オペレーティング システムの現在のバージョン番号を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.OSVersion`プロパティが"major.minor.build.revision"とバージョンを書式設定します。  
+  
+ `My.Computer.Info.OSVersion`プロパティと同様の機能を提供する、<xref:System.OperatingSystem.Version%2A>によって返されるオブジェクトのプロパティ、<xref:System.Environment.OSVersion%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.OSVersion`のオペレーティング システムのプロパティをコンピューターのバージョンを表示します。  
+  
+ [!code-vb[VbVbalrMyComputer#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ExecutionEngineException">アプリケーションでは、オペレーティング システムのバージョン情報を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalPhysicalMemory">
+      <MemberSignature Language="C#" Value="public ulong TotalPhysicalMemory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 TotalPhysicalMemory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.TotalPhysicalMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターの合計物理メモリ量を取得します。</summary>
+        <value>A<see langword="ULong" />コンピューターの物理メモリのバイト数を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.TotalPhysicalMemory`プロパティは、Windows XP、Windows 2000 Professional、Windows Server 2003、Windows 2000 Server、または Windows Vista が必要です.  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.TotalPhysicalMemory`コードが実行されているコンピューターの物理メモリの合計金額を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">アプリケーションでは、メモリの状態を取得できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TotalVirtualMemory">
+      <MemberSignature Language="C#" Value="public ulong TotalVirtualMemory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int64 TotalVirtualMemory" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.ComputerInfo.TotalVirtualMemory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンピューターの使用可能な仮想アドレス領域の合計量を取得します。</summary>
+        <value>A<see langword="ULong" />コンピューターの使用可能な仮想アドレス領域のバイト数を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Info.TotalVirtualMemory`プロパティは、Windows XP、Windows 2000 Professional、Windows Server 2003、Windows 2000 Server、または Windows Vista が必要です.  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Info.TotalVirtualMemory`コードが実行されているコンピューターの仮想メモリの合計金額を表示するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.Win32Exception">アプリケーションでは、メモリの状態を取得できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

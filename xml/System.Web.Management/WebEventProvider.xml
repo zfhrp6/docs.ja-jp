@@ -1,0 +1,197 @@
+<Type Name="WebEventProvider" FullName="System.Web.Management.WebEventProvider">
+  <TypeSignature Language="C#" Value="public abstract class WebEventProvider : System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WebEventProvider extends System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebEventProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非バッファー イベント プロバイダーの基本クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置済みの Web アプリケーションの管理を運用環境と運用スタッフは、ASP.NET の状態監視できます。 <xref:System.Web.Management>名前空間には、アプリケーションの正常性状態のデータおよびプロバイダーの種類は、このデータ処理をパッケージ化する正常性イベントの種類が含まれています。 正常性イベントの管理を支援するサポート型も含まれています。  
+  
+ 派生できます正常性イベントの処理をカスタマイズする場合、<xref:System.Web.Management.WebEventProvider>独自のカスタム プロバイダーを作成するクラス。  
+  
+> [!NOTE]
+>  ほとんどの場合はできる実装されると、ASP.NET の稼働状況の監視の種類を使用して、内の値を指定することで、稼働状況の監視システムを制御する、`healthMonitoring`構成セクション。 独自のカスタム イベントおよびプロバイダーを作成する正常性の監視の種類からも派生できます。 派生する例については、<xref:System.Web.Management.WebEventProvider>クラスのこのトピックで例を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する方法を示しています、<xref:System.Web.Management.WebEventProvider>を適切なアクセス権を付与する必要がローカル ファイルに構成されたイベントの書き込みを行うカスタム プロバイダーを作成するクラス。 このカスタム プロバイダーの例は、単純なと主な目的は、開発者が基本的な機構を完全に制御できるようにすることができます。 現実のシナリオでは、このプロバイダーと特に、バッファー内のプロバイダーの例で使用可能なを使用でした<xref:System.Web.Management.BufferedWebEventProvider>アプリケーションの動作に予備プローブとします。 使用可能な情報を把握する設計段階で役立ちます後で調べることより複雑なプロバイダーにこの情報をします。  
+  
+ 次の構成ファイルの抜粋、`healthMonitoring`セクションの構成を上記で定義されたすべての稼働状況の監視イベントを処理するカスタム プロバイダーを使用する ASP.NET を有効にします。  
+  
+```  
+<healthMonitoring   
+  heartBeatInterval="0"   
+  enabled="true">  
+  
+    <providers>  
+  
+      <add name="SampleWebEventProvider"   
+        type="SamplesAspNet.SampleEventProvider,webeventprovider, Version=1.0.1773.33989, Culture=neutral, PublicKeyToken=cf85aa6c978d9dea, processorArchitecture=MSIL" />  
+  
+    </providers>  
+  
+    <rules>  
+  
+      <rule   
+        name="Custom Event Provider"  
+        eventName="All Events"  
+        provider="SampleWebEventProvider"  
+        profile="Default" />  
+    </rules>  
+  
+</healthMonitoring>  
+```  
+  
+ [!code-csharp[System.Web.Management.WebEventProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/CS/webeventprovider.cs#1)]
+ [!code-vb[System.Web.Management.WebEventProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/VB/webeventprovider.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebEventProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Management.WebEventProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebEventProvider.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET によって呼び出されます。 呼び出すことができます、<xref:System.Web.Management.WebEventProvider.%23ctor%2A>コンス トラクターから派生している場合、<xref:System.Web.Management.WebEventProvider>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタム イベント プロバイダーでこのコンス トラクターを使用する方法を示します。  
+  
+ [!code-csharp[System.Web.Management.WebEventProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/CS/webeventprovider.cs#2)]
+ [!code-vb[System.Web.Management.WebEventProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/VB/webeventprovider.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public abstract void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventProvider.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのバッファーからイベントをイベント ログに移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、バッファー内の最後の書き込みまたはイベントの数からバッファー内のイベントがバッファーからどれだけ時間に関係なく、イベント ログにすぐに移動したすべての経過します。 最後の書き込みの時間は、フラッシュ操作の時間にリセットされます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebEventProvider.Flush%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebEventProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/CS/webeventprovider.cs#3)]
+ [!code-vb[System.Web.Management.WebEventProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/VB/webeventprovider.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessEvent">
+      <MemberSignature Language="C#" Value="public abstract void ProcessEvent (System.Web.Management.WebBaseEvent raisedEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ProcessEvent(class System.Web.Management.WebBaseEvent raisedEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventProvider.ProcessEvent(System.Web.Management.WebBaseEvent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="raisedEvent" Type="System.Web.Management.WebBaseEvent" />
+      </Parameters>
+      <Docs>
+        <param name="raisedEvent"><see cref="T:System.Web.Management.WebBaseEvent" />オブジェクトを処理します。</param>
+        <summary>プロバイダーに渡されたイベントを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、イベントの処理を開始するを呼び出す ASP.NET 正常性の監視方法です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Management.WebEventProvider.ProcessEvent%2A> メソッドを実装する方法を示しています。 このメソッドは、特定のログ ファイルをイベントのカスタマイズした文字列形式を追加します。  
+  
+ [!code-csharp[System.Web.Management.WebEventProvider#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/CS/webeventprovider.cs#5)]
+ [!code-vb[System.Web.Management.WebEventProvider#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/VB/webeventprovider.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public abstract void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebEventProvider.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロバイダーのシャット ダウンに関連付けられているタスクを実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET の呼び出し、<xref:System.Web.Management.EventLogWebEventProvider.Shutdown%2A>メソッドは、Web アプリケーションをホストしているアプリケーション ドメインが終了するとします。 メソッドが呼び出されて、リソースを閉じるなどを正常に終了するアプリケーションを許可するタスクを実行します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Management.WebEventProvider.Shutdown%2A> メソッドを使用するコード例を次に示します。  
+  
+ [!code-csharp[System.Web.Management.WebEventProvider#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/CS/webeventprovider.cs#4)]
+ [!code-vb[System.Web.Management.WebEventProvider#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebEventProvider/VB/webeventprovider.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

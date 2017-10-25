@@ -1,0 +1,683 @@
+<Type Name="TileBrush" FullName="System.Windows.Media.TileBrush">
+  <TypeSignature Language="C#" Value="public abstract class TileBrush : System.Windows.Media.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract TileBrush extends System.Windows.Media.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TileBrush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つ以上のタイルを使用して領域を塗りつぶす方法を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラス<xref:System.Windows.Media.TileBrush>領域を塗りつぶすに使用するタイルの内容を定義します。 たとえば、使用して、<xref:System.Windows.Media.ImageBrush>イメージを使用して領域を塗りつぶすクラスです。  
+  
+ 使用して、<xref:System.Windows.Media.TileBrush>領域を塗りつぶす方法を制御します。 たとえば、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ブラシのいくつかの型を提供します。  
+  
+-   描くには、イメージを使用してを使用して、<xref:System.Windows.Media.ImageBrush>です。  
+  
+-   描画で塗りつぶすを使用して、<xref:System.Windows.Media.DrawingBrush>です。  
+  
+-   使用して描画する、<xref:System.Windows.Media.Visual>を使用して、<xref:System.Windows.Media.VisualBrush>です。  
+  
+ 使用すると、<xref:System.Windows.Media.TileBrush>単一の拡大されたイメージを使用して領域の塗りつぶしではなく、領域を塗りつぶすには、一連のパターンを作成する画像タイルを使用して領域を塗りつぶすことができます。  
+  
+ 使用して領域を塗りつぶすときに、 <xref:System.Windows.Media.TileBrush>、3 つのコンポーネントを使用する: コンテンツ、タイル、および、出力領域。 次の図は、これらの 3 つを表示<xref:System.Windows.Media.TileBrush>コンポーネントが互いに関連します。  
+  
+ ![TileBrush コンポーネント](~/add/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "TileBrush コンポーネント")  
+1 つのタイルが TileBrush のコンポーネント  
+  
+ ![並べて表示された TileBrush のコンポーネント](~/add/media/graphicsmm-tiledprojection.png "並べて表示された TileBrush のコンポーネント")  
+Tile の TileMode を使用する TileBrush のコンポーネント  
+  
+ **コンテンツ**: A<xref:System.Windows.Media.TileBrush>コンテンツの種類を持つことができます。  
+  
+-   ブラシがの場合、 <xref:System.Windows.Media.ImageBrush>、このコンテンツは、イメージです。 <xref:System.Windows.Media.ImageBrush.ImageSource%2A>プロパティの内容を指定する、<xref:System.Windows.Media.ImageBrush>です。  
+  
+-   ブラシがの場合、 <xref:System.Windows.Media.DrawingBrush>、このコンテンツは、描画します。 <xref:System.Windows.Media.DrawingBrush.Drawing%2A>プロパティの内容を指定する、<xref:System.Windows.Media.DrawingBrush>です。  
+  
+-   ブラシがの場合、 <xref:System.Windows.Media.VisualBrush>、このコンテンツは、ビジュアル。 <xref:System.Windows.Media.VisualBrush.Visual%2A>プロパティの内容を指定する、<xref:System.Windows.Media.VisualBrush>です。  
+  
+ 位置および寸法を指定することができます<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティです。  
+  
+ **タイル**: A <xref:System.Windows.Media.TileBrush> 1 つ以上のタイルが生成されます。 既定では、ブラシのコンテンツが 1 つのタイルに合わせて引き伸ばされ、そのタイルが出力領域に合わせて引き伸ばされます。 <xref:System.Windows.Media.TileBrush.Viewport%2A>の基本タイルの位置とサイズを指定するプロパティが使用される、<xref:System.Windows.Media.TileBrush>です。 <xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティを決定するかどうかの位置とサイズ、<xref:System.Windows.Media.TileBrush.Viewport%2A>は出力領域 (既定の動作) または絶対値で指定されるかどうかを基準とします。  
+  
+ **出力領域**: 出力領域など、ブラシが描画された領域が、<xref:System.Windows.Shapes.Shape.Fill%2A>の<xref:System.Windows.Shapes.Ellipse>または<xref:System.Windows.Controls.Control.Background%2A>の<xref:System.Windows.Controls.Button>です。  
+  
+ 詳細については、<xref:System.Windows.Media.TileBrush>クラスを参照してください[イメージ、図形、およびビジュアルの描画](~/docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)です。  
+  
+## <a name="freezable-features"></a>Freezable 機能  
+ A<xref:System.Windows.Media.TileBrush>は、<xref:System.Windows.Freezable>型です。 について<xref:System.Windows.Freezable>の凍結と、複製などの機能を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Windows.Media.TileBrush" />オーバーライドする必要があります、クラス、<see cref="M:System.Windows.Freezable.CreateInstanceCore" />メソッドです。 継承の詳細については<see cref="T:System.Windows.Freezable" />型を参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TileBrush ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TileBrush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスのコンス トラクターによって呼び出されたときに、基本クラスの値の初期化を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentX">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.AlignmentX AlignmentX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.AlignmentX AlignmentX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.AlignmentX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.AlignmentX</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容の水平方向の配置、<see cref="T:System.Windows.Media.TileBrush" />基本タイルです。</summary>
+        <value>水平方向の位置を示す値<see cref="T:System.Windows.Media.TileBrush" />基本タイルにおけるコンテンツ。 既定値は <see cref="F:System.Windows.HorizontalAlignment.Center" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TileBrush.AlignmentX%2A>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>使用は、次の条件のいずれかが true の場合。  
+  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.Uniform>または<xref:System.Windows.Media.Stretch.UniformToFill>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>別の縦横比があります。  
+  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.None>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>サイズが異なる。  
+  
+ 寸法を指定することに注意してください<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティ; のサイズと位置を指定する、<xref:System.Windows.Media.TileBrush>基本タイルを使用して、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_AlignmentX"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.AlignmentXProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentXProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AlignmentXProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AlignmentXProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.AlignmentXProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.AlignmentX" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentY">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.AlignmentY AlignmentY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.AlignmentY AlignmentY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.AlignmentY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.AlignmentY</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容の垂直方向の配置、<see cref="T:System.Windows.Media.TileBrush" />基本タイルです。</summary>
+        <value>縦方向の位置を指定する値<see cref="T:System.Windows.Media.TileBrush" />基本タイルにおけるコンテンツ。 既定値は <see cref="F:System.Windows.Media.AlignmentY.Center" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TileBrush.AlignmentX%2A>と<xref:System.Windows.Media.TileBrush.AlignmentY%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>次の条件のいずれかが当てはまる場合に使用されます。  
+  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.Uniform>または<xref:System.Windows.Media.Stretch.UniformToFill>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>別の縦横比があります。  
+  
+-   <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティは<xref:System.Windows.Media.Stretch.None>と<xref:System.Windows.Media.TileBrush.Viewbox%2A>と<xref:System.Windows.Media.TileBrush.Viewport%2A>サイズが異なる。  
+  
+ 寸法を指定することに注意してください<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティ; のサイズと位置を指定する、<xref:System.Windows.Media.TileBrush>基本タイルを使用して、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_AlignmentY"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.AlignmentYProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlignmentYProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AlignmentYProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AlignmentYProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.AlignmentYProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.AlignmentY" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TileBrush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.TileBrush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TileBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の詳細コピーを作ることにより、この <see cref="T:System.Windows.Media.TileBrush" /> の変更可能なコピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> の場合でも、複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドは、依存関係プロパティをコピーする場合、は、不要になった解決する可能性がありますが、リソース参照とデータ バインディングをコピーします。 アニメーションやその現在の値はコピーされません。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TileBrush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.TileBrush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TileBrush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更可能なコピーを作成<see cref="T:System.Windows.Media.TileBrush" />オブジェクトの値の詳細コピーを作成しています。 このメソッドでは、リソース参照、データ バインディング、アニメーションはコピーされませんが、その現在の値はコピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 <see cref="P:System.Windows.Freezable.IsFrozen" /> 、複製されたオブジェクトのプロパティが<see langword="false" />場合でも、<see cref="P:System.Windows.Freezable.IsFrozen" />ソースのプロパ rty は<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="protected abstract void GetContentBounds (out System.Windows.Rect contentBounds);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetContentBounds([out] valuetype System.Windows.Rect&amp; contentBounds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TileBrush.GetContentBounds(System.Windows.Rect@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="contentBounds" Type="System.Windows.Rect&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="contentBounds">境界の出力、<see cref="T:System.Windows.Media.TileBrush" />コンテンツ。</param>
+        <summary>現在の境界を取得、<see cref="T:System.Windows.Media.TileBrush" />コンテンツ</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stretch">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Stretch Stretch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Stretch Stretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.Stretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Stretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値か、このコンテンツ<see cref="T:System.Windows.Media.TileBrush" />を拡大するタイル。</summary>
+        <value>指定する値がこの方法<see cref="T:System.Windows.Media.TileBrush" />コンテンツがその基本タイルに投影されています。 既定値は <see cref="F:System.Windows.Media.Stretch.Fill" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティでは、次を値、<xref:System.Windows.Media.Stretch>列挙体を定義します。  
+  
+-   <xref:System.Windows.Media.Stretch.None><xref:System.Windows.Media.TileBrush>コンテンツがタイルを塗りつぶす伸縮しません。  
+  
+-   <xref:System.Windows.Media.Stretch.Uniform><xref:System.Windows.Media.TileBrush>コンテンツがタイルのサイズに合わせて拡大縮小します。 ただし、コンテンツの縦横比は維持されます。  
+  
+-   <xref:System.Windows.Media.Stretch.UniformToFill><xref:System.Windows.Media.TileBrush>領域に出力が元の縦横比は維持されますが、完全にできるように、コンテンツが拡大縮小します。  
+  
+-   <xref:System.Windows.Media.Stretch.Fill><xref:System.Windows.Media.TileBrush>コンテンツがタイルに合わせて拡大縮小します。 コンテンツの高さと幅は別々にスケーリングされるため、コンテンツの元の縦横比が維持されない場合があります。 つまり、<xref:System.Windows.Media.TileBrush>出力タイルを完全に入力するためにコンテンツが偏る可能性があります。  
+  
+ 次の図は、さまざまな示します<xref:System.Windows.Media.TileBrush.Stretch%2A>設定します。  
+  
+ ![別の TileBrush Stretch 設定](~/add/media/img-mmgraphics-stretchenum.jpg "別の TileBrush Stretch 設定")  
+異なる Stretch 設定  
+  
+ 寸法を指定することに注意してください<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティ; のサイズと位置を指定する、<xref:System.Windows.Media.TileBrush>基本タイルを使用して、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティです。  
+  
+## <a name="viewbox-clipping"></a>Viewbox クリッピング  
+ <xref:System.Windows.Media.TileBrush>内容がクリップされることはありません、<xref:System.Windows.Media.TileBrush.Viewbox%2A>です。 ただし、<xref:System.Windows.Media.TileBrush>内容*は*の端にクリップ、<xref:System.Windows.Media.TileBrush.Viewport%2A>の寸法を設定する、<xref:System.Windows.Media.TileBrush>基本タイルです。  
+  
+ 次の図に、別の効果<xref:System.Windows.Media.TileBrush.Stretch%2A>上の設定、<xref:System.Windows.Media.TileBrush>を持つ、<xref:System.Windows.Media.TileBrush.Viewbox%2A>より小さい、<xref:System.Windows.Media.TileBrush.Viewport%2A>です。 外側にあるイメージの部分、<xref:System.Windows.Media.TileBrush.Viewbox%2A>薄い灰色のされます。  
+  
+ ![設定が異なる TileBrush Stretch](~/add/media/graphicsmm-viewbox-clipping.png "Stretch 設定が異なる TileBrush")  
+Stretch 設定が異なる TileBrush  
+  
+<a name="dependencyPropertyInfo_Stretch"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.StretchProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StretchProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StretchProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StretchProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.StretchProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.Stretch" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TileMode">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TileMode TileMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.TileMode TileMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.TileMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TileMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを指定する値を設定する方法、<see cref="T:System.Windows.Media.TileBrush" />基本タイルが出力領域より小さい場合に、描画する領域を塗りつぶします。</summary>
+        <value>指定する値、<see cref="T:System.Windows.Media.TileBrush" />タイルが出力領域を塗りつぶすときに、基本タイルで指定される、<see cref="P:System.Windows.Media.TileBrush.Viewport" />プロパティは、出力領域よりも小さいです。 既定値は <see cref="F:System.Windows.Media.TileMode.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図で定義されているさまざまなタイル モード、<xref:System.Windows.Media.TileMode>列挙します。  
+  
+ ![別の TileBrush TileMode 設定](~/add/media/img-mmgraphics-tilemodes.gif "別の TileBrush TileMode 設定")  
+TileMode 列挙のために使用できるタイル モード  
+  
+ <xref:System.Windows.Media.TileBrush.TileMode%2A>が影響するプロパティを設定する必要があります、 <xref:System.Windows.Media.TileBrush.Viewport%2A> (出力領域) を描画している領域よりも小さいサイズにブラシをします。 場合、<xref:System.Windows.Media.TileBrush.Viewport%2A>サイズと等しい以上に、出力領域を格納し、出力領域とタイル パターンのない展開される 1 つのタイルが発生した、ブラシを作成します。  
+  
+<a name="dependencyPropertyInfo_TileMode"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.TileModeProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TileModeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TileModeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TileModeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.TileModeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.TileMode" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Viewbox">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect Viewbox { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect Viewbox" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.Viewbox" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置とディメンション内のコンテンツの取得または設定、<see cref="T:System.Windows.Media.TileBrush" />並べて表示します。</summary>
+        <value>位置とサイズの<see cref="T:System.Windows.Media.TileBrush" />コンテンツ。 既定値は四角形 (<see cref="T:System.Windows.Rect" />) を持つ、 <see cref="P:System.Windows.Rect.TopLeft" /> (0, 0)、および<see cref="P:System.Windows.Rect.Width" />と<see cref="P:System.Windows.Rect.Height" />は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して領域を塗りつぶすときに、 <xref:System.Windows.Media.TileBrush>、3 つのコンポーネントを使用する: コンテンツ、タイル、および、出力領域。 <xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティは、の位置とサイズを指定します。<xref:System.Windows.Media.TileBrush>コンテンツ。 次の図に、これらの 3 つ<xref:System.Windows.Media.TileBrush>コンポーネントが互いに関連します。  
+  
+ ![TileBrush コンポーネント](~/add/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "TileBrush コンポーネント")  
+TileBrush コンポーネント  
+  
+ ![並べて表示された TileBrush のコンポーネント](~/add/media/graphicsmm-tiledprojection.png "並べて表示された TileBrush のコンポーネント")  
+  
+ <xref:System.Windows.Media.TileBrush.ViewboxUnits%2A>プロパティを決定するかどうか、<xref:System.Windows.Media.TileBrush.Viewbox%2A>値は相対パスまたは絶対値として解釈されます。 既定では、<xref:System.Windows.Media.TileBrush.ViewboxUnits%2A> プロパティは <xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox> に設定されます。  
+  
+## <a name="viewbox-clipping"></a>Viewbox クリッピング  
+ <xref:System.Windows.Media.TileBrush>内容がクリップされることはありません、<xref:System.Windows.Media.TileBrush.Viewbox%2A>です。 ただし、<xref:System.Windows.Media.TileBrush>内容*は*の端にクリップ、 <xref:System.Windows.Media.TileBrush.Viewport%2A>、基本タイルの値を設定します。  
+  
+ 次の図に、別の効果<xref:System.Windows.Media.TileBrush.Stretch%2A>上の設定、<xref:System.Windows.Media.TileBrush>を持つ、<xref:System.Windows.Media.TileBrush.Viewbox%2A>より小さい、<xref:System.Windows.Media.TileBrush.Viewport%2A>です。 外側にあるイメージの部分、<xref:System.Windows.Media.TileBrush.Viewbox%2A>薄い灰色のされます。  
+  
+ ![設定が異なる TileBrush Stretch](~/add/media/graphicsmm-viewbox-clipping.png "Stretch 設定が異なる TileBrush")  
+Stretch 設定が異なる TileBrush  
+  
+<a name="dependencyPropertyInfo_Viewbox"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.ViewboxProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 位置とサイズを指定することができます<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティです。 <xref:System.Windows.Media.TileBrush.ViewboxUnits%2A>プロパティを決定するかどうか、<xref:System.Windows.Media.TileBrush.Viewbox%2A>の境界値は、<xref:System.Windows.Media.TileBrush>コンテンツや、絶対値であるかどうか。  
+  
+ 最初の図は、100 × 100 ピクセルの画像を表示し、このイメージを使用して、別の影響を示して<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティの設定。  
+  
+ ![イメージ](~/add/media/graphicsmm-viewbox-sampleimage.jpg "イメージ")  
+最初のサンプル イメージ (100 × 100 デバイス非依存ピクセル)  
+  
+ 次の図の出力、<xref:System.Windows.Media.TileBrush>を使用して、 <xref:System.Windows.Media.TileBrush.Viewbox%2A> 0.0, 0.0 の 0.25,0.5 します。 その他の関連するプロパティ値を以下に示します。  
+  
+-   <xref:System.Windows.Media.TileBrush.ViewboxUnits%2A>: <xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox> (既定値)  
+  
+-   <xref:System.Windows.Media.TileBrush.Viewport%2A>: 0,0,1,1  
+  
+-   <xref:System.Windows.Media.TileBrush.ViewportUnits%2A>: <xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>  
+  
+-   <xref:System.Windows.Media.TileBrush.AlignmentX%2A>, <xref:System.Windows.Media.TileBrush.AlignmentY%2A>: <xref:System.Windows.Media.AlignmentX.Center>  
+  
+ 次に示します。 いくつか異なる<xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティの設定。 <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティを決定する方法、<xref:System.Windows.Media.TileBrush>拡大その<xref:System.Windows.Media.TileBrush.Viewbox%2A>を埋めるその<xref:System.Windows.Media.TileBrush.Viewport%2A>です。  
+  
+ ![Viewbox 0, 0 0.25,0.5 0.5 の TileBrush](~/add/media/graphicsmm-0-0-025-05-viewbox.png "viewbox 0, 0 0.25,0.5 0.5 の TileBrush")  
+相対 viewbox 0.0, 0.0、0.5 の TileBrush 0.25,0.5  
+  
+ 次の図に類似した<xref:System.Windows.Media.TileBrush>が相対<xref:System.Windows.Media.TileBrush.Viewbox%2A>0.5,0.25 の 0.25,0.5 します。  
+  
+ ![Viewbox 0.5,0.25 0.25,0.5 0.5 の TileBrush](~/add/media/graphicsmm-05-0-025-05-viewbox.png "viewbox 0.5,0.25 0.25,0.5 0.5 の TileBrush")  
+同様の TileBrush を異なる Viewbox 設定が、  
+  
+ 次の図に、同じ<xref:System.Windows.Media.TileBrush>が相対<xref:System.Windows.Media.TileBrush.Viewport%2A>0.0, 0.0 の値 0.5,0.5 と<xref:System.Windows.Media.TileBrush.TileMode%2A>の<xref:System.Windows.Media.TileMode.Tile>します。  
+  
+ ![Viewbox 0.5,0.25 0.25,0.5 の](~/add/media/graphicsmm-05-0-025-05-viewbox-tiled.png "0.5,0.25 0.25,0.5 の Viewbox")  
+同様の TileBrush を並べて表示し、別のビューポート設定が、  
+  
+ 次の例は、タイルを作成する方法を示しています。<xref:System.Windows.Media.TileBrush>を持つ、 <xref:System.Windows.Media.TileBrush.Viewbox%2A> 0.5,0.25、の 0.25,0.5 します。  
+  
+ [!code-xaml[BrushOverviewExamples_snip#GraphicsMMTileBrushViewboxWithStretchTiling](~/samples/snippets/xaml/VS_Snippets_Wpf/BrushOverviewExamples_snip/XAML/ViewboxExample.xaml#graphicsmmtilebrushviewboxwithstretchtiling)]  
+  
+ [!code-csharp[BrushOverviewExamples_procedural_snip#GraphicsMMTileBrushViewboxWithStretchTiling](~/samples/snippets/csharp/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/CSharp/ViewboxExample.cs#graphicsmmtilebrushviewboxwithstretchtiling)]
+ [!code-vb[BrushOverviewExamples_procedural_snip#GraphicsMMTileBrushViewboxWithStretchTiling](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BrushOverviewExamples_procedural_snip/visualbasic/viewboxexample.vb#graphicsmmtilebrushviewboxwithstretchtiling)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewboxProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewboxProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewboxProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.ViewboxProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.Viewbox" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewboxUnits">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BrushMappingMode ViewboxUnits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.BrushMappingMode ViewboxUnits" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.ViewboxUnits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BrushMappingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定する値かどうか、<see cref="P:System.Windows.Media.TileBrush.Viewbox" />境界ボックスの値は、<see cref="T:System.Windows.Media.TileBrush" />内容または値が絶対値かどうか。</summary>
+        <value>示す値かどうか、<see cref="P:System.Windows.Media.TileBrush.Viewbox" />境界ボックスの値は、<see cref="T:System.Windows.Media.TileBrush" />内容や、絶対値であるかどうか。 既定値は <see cref="F:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox>ことを示します、<xref:System.Windows.Media.TileBrush.ViewboxUnits%2A>はコンテンツの境界ボックスに対する相対パスです。 なおの値<xref:System.Windows.Media.BrushMappingMode.Absolute>デバイスに依存しているデバイスのピクセル単位ではなくデバイス非依存のピクセルを指定します。 そのための値<xref:System.Windows.Media.BrushMappingMode.Absolute>が適用される各ピクセルを表す 1/96 インチです。  
+  
+ 指定するときにこのピクセルの違いに留意する必要があります、<xref:System.Windows.Media.TileBrush.Viewbox%2A>の<xref:System.Windows.Media.ImageBrush>を持つ、<xref:System.Windows.Media.Imaging.BitmapImage>のソースとして。 たとえば、メジャーとして標準のピクセルを使用すると 300、300 ピクセルの画像は、のみ 1 インチ幅が画像の解像度 300 のドット/インチです。 ただし、絶対値を設定するときに設定する必要あります、 <xref:System.Windows.Media.TileBrush.Viewbox%2A> (0、0、96、96) イメージ全体を含めるためにします。  
+  
+ 位置とサイズを指定することができます<xref:System.Windows.Media.TileBrush>コンテンツを使用して、<xref:System.Windows.Media.TileBrush.Viewbox%2A>プロパティです。 <xref:System.Windows.Media.TileBrush.ViewboxUnits%2A>プロパティを決定するかどうか、<xref:System.Windows.Media.TileBrush.Viewbox%2A>の境界値は、<xref:System.Windows.Media.TileBrush>コンテンツや、絶対値であるかどうか。  
+  
+<a name="dependencyPropertyInfo_ViewboxUnits"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.ViewboxUnitsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewboxUnitsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewboxUnitsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewboxUnitsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.ViewboxUnitsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.ViewboxUnits" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Viewport">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect Viewport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect Viewport" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.Viewport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>位置とディメンションの基本タイルの取得または設定、<see cref="T:System.Windows.Media.TileBrush" />です。</summary>
+        <value>位置との基本タイルのサイズ、<see cref="T:System.Windows.Media.TileBrush" />です。 既定値は四角形 (<see cref="T:System.Windows.Rect" />) で、 <see cref="P:System.Windows.Rect.TopLeft" /> (0, 0) および<see cref="P:System.Windows.Rect.Width" />と<see cref="P:System.Windows.Rect.Height" />1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して領域を塗りつぶすときに、 <xref:System.Windows.Media.TileBrush>、3 つのコンポーネントを使用する: コンテンツ、タイル、および、出力領域。 次の図に、これらの 3 つ<xref:System.Windows.Media.TileBrush>コンポーネントが互いに関連します。  
+  
+ ![TileBrush コンポーネント](~/add/media/wcpsdk-mmgraphics-defaultcontentprojection2.png "TileBrush コンポーネント")  
+1 つのタイルが TileBrush のコンポーネント  
+  
+ ![並べて表示された TileBrush のコンポーネント](~/add/media/graphicsmm-tiledprojection.png "並べて表示された TileBrush のコンポーネント")  
+Tile の TileMode を使用する TileBrush のコンポーネント  
+  
+ <xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティ内のタイルの位置とサイズの決定、<xref:System.Windows.Media.TileBrush>です。 既定では、<xref:System.Windows.Media.TileBrush>全体を格納する 1 つのタイルが、領域を出力します。 <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティ コントロール方法、<xref:System.Windows.Media.TileBrush>コンテンツに組み込まれているタイル。 この既定の動作をオーバーライドしを使用して、タイルのサイズを指定できます、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティを指定するかどうか、<xref:System.Windows.Media.TileBrush.Viewport%2A>絶対または相対座標を使用します。 座標が相対的な場合、座標は出力領域のサイズに対して相対的になります。 ポイント (0, 0) では、出力領域の (1, 1) を表す、右上隅にある、出力領域の左上隅を表します。 指定する、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティが絶対座標を使用して、設定、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティを<xref:System.Windows.Media.BrushMappingMode.Absolute>です。  
+  
+ 次の図の出力に違いを設定すると、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>相対または絶対パスのいずれかにします。  
+  
+ ![ビューポートの絶対パスと相対単位](~/add/media/absolute-and-relative-viewports.png "ビューポートの絶対パスと相対単位")  
+相対パスと絶対 ViewportUnits  
+  
+<a name="dependencyPropertyInfo_Viewport"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.ViewportProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.ViewportProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.Viewport" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportUnits">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.BrushMappingMode ViewportUnits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.BrushMappingMode ViewportUnits" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TileBrush.ViewportUnits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.BrushMappingMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.BrushMappingMode" />列挙型を指定するかどうかの値、<see cref="P:System.Windows.Media.TileBrush.Viewport" />のサイズと位置を示します、<see cref="T:System.Windows.Media.TileBrush" />基本タイル、出力領域のサイズに対する相対パスです。</summary>
+        <value>示すかどうかの値、<see cref="P:System.Windows.Media.TileBrush.Viewport" />の位置とサイズが記載されて、<see cref="T:System.Windows.Media.TileBrush" />タイル、全体のサイズに対する相対パスです出力領域。 既定値は <see cref="F:System.Windows.Media.BrushMappingMode.RelativeToBoundingBox" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティ内のタイルの位置とサイズの決定、<xref:System.Windows.Media.TileBrush>です。 既定では、<xref:System.Windows.Media.TileBrush>全体を格納する 1 つのタイルが、領域を出力します。 <xref:System.Windows.Media.TileBrush.Stretch%2A>プロパティ コントロール方法、<xref:System.Windows.Media.TileBrush>コンテンツに組み込まれているタイル。 この既定の動作をオーバーライドしを使用して、タイルのサイズを指定できます、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティです。  
+  
+ 使用して、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティを指定するかどうか、<xref:System.Windows.Media.TileBrush.Viewport%2A>絶対または相対座標を使用します。 座標が相対的な場合、座標は出力領域のサイズに対して相対的になります。 ポイント (0, 0) では、出力領域の (1, 1) を表す、右上隅にある、出力領域の左上隅を表します。 指定する、<xref:System.Windows.Media.TileBrush.Viewport%2A>プロパティが絶対座標を使用して、設定、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>プロパティを<xref:System.Windows.Media.BrushMappingMode.Absolute>です。  
+  
+ 次の図の出力に違いを設定すると、<xref:System.Windows.Media.TileBrush.ViewportUnits%2A>のプロパティ、<xref:System.Windows.Media.TileBrush>相対または絶対パスのいずれかにします。  
+  
+ ![ビューポートの絶対パスと相対単位](~/add/media/absolute-and-relative-viewports.png "ビューポートの絶対パスと相対単位")  
+相対パスと絶対 ViewportUnits  
+  
+<a name="dependencyPropertyInfo_ViewportUnits"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TileBrush.ViewportUnitsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewportUnitsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ViewportUnitsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ViewportUnitsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TileBrush.ViewportUnitsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TileBrush.ViewportUnits" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

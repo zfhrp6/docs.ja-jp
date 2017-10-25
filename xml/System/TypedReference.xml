@@ -1,0 +1,337 @@
+<Type Name="TypedReference" FullName="System.TypedReference">
+  <TypeSignature Language="C#" Value="public struct TypedReference" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit TypedReference extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.TypedReference" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>場所を指すマネージ ポインターと、その場所に格納できる型のランタイム表現の両方を格納するオブジェクトを記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型指定された参照は、可変引数およびその他のサポートに使用の種類と値の組み合わせです。 `TypedReference`パラメーターおよびローカル変数を使用できる組み込みの値型です。  
+  
+ 配列`TypedReference`オブジェクトを作成することはできません。 たとえば、次の呼び出しが正しくありません。  
+  
+ [!code-cpp[System.TypedReference#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.typedreference/cpp/source.cpp#1)]
+ [!code-csharp[System.TypedReference#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.typedreference/cs/source.cs#1)]
+ [!code-vb[System.TypedReference#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.typedreference/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在のオブジェクトと比較するオブジェクト。</param>
+        <summary>このオブジェクトが、指定したオブジェクトと同一かどうかを確認します。</summary>
+        <returns>
+          このオブジェクトが、指定したオブジェクトと同一である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">このメソッドは実装されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns>このオブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTargetType">
+      <MemberSignature Language="C#" Value="public static Type GetTargetType (TypedReference value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetTargetType(valuetype System.TypedReference value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.GetTargetType(System.TypedReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.TypedReference" />
+      </Parameters>
+      <Docs>
+        <param name="value">返される対象である型の値。</param>
+        <summary>指定した <see langword="TypedReference" /> の対象である型を返します。</summary>
+        <returns>指定した <see langword="TypedReference" /> の対象である型。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeTypedReference">
+      <MemberSignature Language="C#" Value="public static TypedReference MakeTypedReference (object target, System.Reflection.FieldInfo[] flds);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.TypedReference MakeTypedReference(object target, class System.Reflection.FieldInfo[] flds) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.MakeTypedReference(System.Object,System.Reflection.FieldInfo[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TypedReference</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="flds" Type="System.Reflection.FieldInfo[]" />
+      </Parameters>
+      <Docs>
+        <param name="target">最初の要素で記述されるフィールドを格納しているオブジェクト<c>flds</c>です。</param>
+        <param name="flds">各要素が続く要素で記述されるフィールドを格納したフィールドを記述するフィールド記述のリスト。 記述される各フィールドは、値型にする必要があります。 フィールド記述は、型システムで提供される <see langword="RuntimeFieldInfo" /> オブジェクトであることが必要です。</param>
+        <summary>指定したオブジェクトとフィールド記述の一覧によって識別されるフィールドの <see langword="TypedReference" /> を作成します。</summary>
+        <returns><paramref name="flds" /> の最後の要素で記述されるフィールドの <see cref="T:System.TypedReference" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.TypedReference.MakeTypedReference%2A>メソッドによってターミナル フィールドに型指定された参照を返します場所、`target`パラメーターの最初の要素で記述されるフィールドが含まれる`flds`の最初の要素で記述されるフィールド`flds`の 2 番目の要素で記述されるフィールドが含まれています`flds`ターミナル フィールドに到達するまでに、します。  
+  
+> [!NOTE]
+>  以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このメソッドは、呼び出し元が許可されている場合は、非パブリック メンバーをアクセスに使用できます<xref:System.Security.Permissions.ReflectionPermission>で、<xref:System.Security.Permissions.ReflectionPermissionFlag?displayProperty=nameWithType>フラグし、非パブリック メンバーの許可セットが、呼び出し元に制限されている場合は、セット、またはそのサブセットを付与します。 (を参照してください[リフレクションに関するセキュリティの考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md))。  
+>   
+>  この機能を使用するには、アプリケーションで [!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)] 以降を対象とする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="target" /> または <paramref name="flds" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="flds" /> の要素は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="flds" />配列に要素がありません。  
+  
+ または  
+  
+ 要素<paramref name="flds" />されませんが、<see langword="RuntimeFieldInfo" />オブジェクト。  
+  
+ または  
+  
+ <see cref="P:System.Reflection.FieldInfo.IsInitOnly" />または<see cref="P:System.Reflection.FieldInfo.IsStatic" />の要素のプロパティ<paramref name="flds" />は<see langword="true" />します。</exception>
+        <exception cref="T:System.MissingMemberException">パラメーター<paramref name="target" />の最初の要素で記述されるフィールドが含まれていない<paramref name="flds" />、または、要素の<paramref name="flds" />の続く要素で記述されるフィールドに含まれてないフィールドが記述されて<paramref name="flds" />です。  
+  
+ または  
+  
+ 要素で記述されるフィールド<paramref name="flds" />値型ではありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTypedReference">
+      <MemberSignature Language="C#" Value="public static void SetTypedReference (TypedReference target, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTypedReference(valuetype System.TypedReference target, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.SetTypedReference(System.TypedReference,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.TypedReference" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="target">変換の対象。</param>
+        <param name="value">変換する値。</param>
+        <summary>指定した値を <see langword="TypedReference" /> に変換します。 このメソッドはサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、常に <xref:System.NotSupportedException> をスローします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">すべての場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetTypeToken">
+      <MemberSignature Language="C#" Value="public static RuntimeTypeHandle TargetTypeToken (TypedReference value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.RuntimeTypeHandle TargetTypeToken(valuetype System.TypedReference value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.TargetTypeToken(System.TypedReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.RuntimeTypeHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.TypedReference" />
+      </Parameters>
+      <Docs>
+        <param name="value">型ハンドルが要求されている対象である <see langword="TypedReference" />。</param>
+        <summary>指定した <see langword="TypedReference" /> の内部メタデータ型ハンドルを返します。</summary>
+        <returns>指定した <see langword="TypedReference" /> の内部メタデータ型ハンドル。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToObject">
+      <MemberSignature Language="C#" Value="public static object ToObject (TypedReference value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object ToObject(valuetype System.TypedReference value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypedReference.ToObject(System.TypedReference)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.TypedReference" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換される <see langword="TypedReference" />。</param>
+        <summary>指定した <see langword="TypedReference" /> を <see langword="Object" /> に変換します。</summary>
+        <returns><see cref="T:System.Object" /> から変換された <see langword="TypedReference" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ボックス化操作があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

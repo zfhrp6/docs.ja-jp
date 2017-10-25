@@ -1,0 +1,208 @@
+<Type Name="AddInController" FullName="System.AddIn.Hosting.AddInController">
+  <TypeSignature Language="C#" Value="public sealed class AddInController" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddInController extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInController" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>さまざまなタスクのアドインへのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して、次のタスクを実行します。  
+  
+-   使用して、<xref:System.AddIn.Hosting.AddInController.AddInEnvironment%2A>を取得するプロパティ、<xref:System.AddIn.Hosting.AddInEnvironment>アドインのオブジェクト。 そのオブジェクトを使用して、同じアプリケーション ドメインと、元のアドインとしてのプロセス内で他のアドインをアクティブ化します。  
+  
+-   使用して、<xref:System.AddIn.Hosting.AddInController.AppDomain%2A>を取得するプロパティ、<xref:System.AppDomain>アドインのオブジェクト。 そのオブジェクトを使用して元のアドインと同じアプリケーション ドメイン内で他のアドインをアクティブ化します。 制限によって、プロセス間リモート処理で、このシナリオはありませんで動作する別のプロセスでライセンス認証されているアドインに注意してください。  
+  
+-   使用して、<xref:System.AddIn.Hosting.AddInController.Token%2A>を取得するプロパティ、<xref:System.AddIn.Hosting.AddInToken>アドインを表すオブジェクト。  
+  
+-   シャット ダウンしてアドインを<xref:System.AddIn.Hosting.AddInController.Shutdown%2A>メソッドです。  
+  
+ アドインでのコント ローラーを取得するを呼び出して、<xref:System.AddIn.Hosting.AddInController.GetAddInController%2A>メソッドとそのパラメーターとしてアドインのインスタンスのパス。  
+  
+   
+  
+## Examples  
+ 次の例を使用してにアクティブだったアドインと同じ環境内でアドインがアクティブ化、<xref:System.AddIn.Hosting.AddInController>オブジェクト。  
+  
+ [!code-csharp[AddInP3Host#8](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#8)]
+ [!code-vb[AddInP3Host#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddInEnvironment">
+      <MemberSignature Language="C#" Value="public System.AddIn.Hosting.AddInEnvironment AddInEnvironment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.AddIn.Hosting.AddInEnvironment AddInEnvironment" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInController.AddInEnvironment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInEnvironment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.AddIn.Hosting.AddInEnvironment" />オブジェクト。</summary>
+        <value>元のアドインと同じ環境で他のアドインをアクティブ化に使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、<xref:System.AddIn.Hosting.AddInEnvironment>アドインのオブジェクト。 そのオブジェクトを使用して、同じアプリケーション ドメインと、元のアドインとしてのプロセス内で他のアドインをアクティブ化します。  
+  
+   
+  
+## Examples  
+ 次の例は、最初のアドインと同じ環境内で 2 つ目のアドインをアクティブにします。  
+  
+ [!code-csharp[AddInP3Host#8](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#8)]
+ [!code-vb[AddInP3Host#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppDomain">
+      <MemberSignature Language="C#" Value="public AppDomain AppDomain { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.AppDomain AppDomain" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInController.AppDomain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AppDomain</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインを含むアプリケーション ドメインを取得します。</summary>
+        <value>アドインのアプリケーション ドメイン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、アドインの入手<xref:System.AppDomain>オブジェクトと同じアプリケーション ドメインで他のアドインをアクティブにします。  
+  
+   
+  
+## Examples  
+ 次の例は、最初のアドインと同じアプリケーション ドメインで 2 つ目のアドインをアクティブにします。  
+  
+ [!code-csharp[AddInP3Host#9](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#9)]
+ [!code-vb[AddInP3Host#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAddInController">
+      <MemberSignature Language="C#" Value="public static System.AddIn.Hosting.AddInController GetAddInController (object addIn);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.AddIn.Hosting.AddInController GetAddInController(object addIn) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInController.GetAddInController(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInController</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="addIn" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="addIn">アドインのホスト ビュー。</param>
+        <summary>アドインでのコント ローラーを取得します。</summary>
+        <returns>アドインでのコント ローラー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AddIn.Hosting.AddInToken.Activate%2A>メソッドは、アドインのホストのビューを表すオブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public void Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInController.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.MayFail)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アドインを無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アドインとホスト間の通信パイプラインを分割します。 アドインがアクティブにされた場合、自動的に生成されたアプリケーション ドメインでを使用して、<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInSecurityLevel%29>または<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.Security.PermissionSet%29>、メソッド、<xref:System.AddIn.Hosting.AddInController.Shutdown%2A>メソッドも、アプリケーション ドメインをアンロードします。  
+  
+ アドインで独自のアプリケーション ドメインに読み込まれた場合、<xref:System.AddIn.Hosting.AddInController.Shutdown%2A>メソッドも、アプリケーション ドメインをアンロードします。  
+  
+ アドインでは、既存のアプリケーション ドメインに読み込まれた場合、ホストおよびパイプライン セグメントがそのアドインへの参照がされなくなります。 この場合、アドインが適合しているガベージ コレクションによるクリアの対象に。  
+  
+ このクラスを使用して、外部プロセスではアクティブ化されて、アドインをシャット ダウンすることができますも。  
+  
+   
+  
+## Examples  
+ 次の例では取得、<xref:System.AddIn.Hosting.AddInController>という名前のホスト ビューのオブジェクト`manager`し、アドインをシャット ダウンします。  
+  
+ [!code-csharp[AddInCollectionPipelineHost#6](~/samples/snippets/csharp/VS_Snippets_CLR/AddInCollectionPipelineHost/cs/Program.cs#6)]
+ [!code-vb[AddInCollectionPipelineHost#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/AddInCollectionPipelineHost/vb/Program.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Token">
+      <MemberSignature Language="C#" Value="public System.AddIn.Hosting.AddInToken Token { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.AddIn.Hosting.AddInToken Token" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInController.Token" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.AddInToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アドインを表すトークンを取得します。</summary>
+        <value>アドインを表すオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このプロパティを使用して、後でアドインをアクティブ化するトークンを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

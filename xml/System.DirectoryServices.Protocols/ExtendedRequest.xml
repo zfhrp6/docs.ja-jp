@@ -1,0 +1,136 @@
+<Type Name="ExtendedRequest" FullName="System.DirectoryServices.Protocols.ExtendedRequest">
+  <TypeSignature Language="C#" Value="public class ExtendedRequest : System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ExtendedRequest extends System.DirectoryServices.Protocols.DirectoryRequest" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.ExtendedRequest" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.DirectoryServices.Protocols.DirectoryRequest</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.ExtendedRequest" />クラスは、サーバーに LDAP の拡張操作を渡します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedRequest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor" /> コンストラクターは、<see cref="T:System.DirectoryServices.Protocols.ExtendedRequest" /> クラスのインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedRequest (string requestName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string requestName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="requestName">要求の名前。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor(System.String)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ExtendedRequest" />クラスの名前を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExtendedRequest (string requestName, byte[] requestValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string requestName, unsigned int8[] requestValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor(System.String,System.Byte[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="requestName" Type="System.String" />
+        <Parameter Name="requestValue" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="requestName">要求の名前。</param>
+        <param name="requestValue">要求の値。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ExtendedRequest.#ctor(System.String,System.Byte[])" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.ExtendedRequest" />クラスの指定した名前と値を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestName">
+      <MemberSignature Language="C#" Value="public string RequestName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RequestName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ExtendedRequest.RequestName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ExtendedRequest.RequestName" />プロパティには、要求名が含まれています。</summary>
+        <value>要求の名前です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestValue">
+      <MemberSignature Language="C#" Value="public byte[] RequestValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] RequestValue" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.ExtendedRequest.RequestValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.ExtendedRequest.RequestValue" />プロパティには、要求の値が含まれています。</summary>
+        <value>要求の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXmlNode">
+      <MemberSignature Language="C#" Value="protected override System.Xml.XmlElement ToXmlNode (System.Xml.XmlDocument doc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Xml.XmlElement ToXmlNode(class System.Xml.XmlDocument doc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.ExtendedRequest.ToXmlNode(System.Xml.XmlDocument)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="doc" Type="System.Xml.XmlDocument" />
+      </Parameters>
+      <Docs>
+        <param name="doc"><see cref="T:System.Xml.XmlDocument" /> オブジェクト。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.ExtendedRequest.ToXmlNode(System.Xml.XmlDocument)" />メソッドから、指定された XML ノードを作成する<see cref="T:System.Xml.XmlDocument" />オブジェクト。</summary>
+        <returns>結果として得られる <see cref="T:System.Xml.XmlElement" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

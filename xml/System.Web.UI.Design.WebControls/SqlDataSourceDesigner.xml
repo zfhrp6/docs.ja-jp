@@ -1,0 +1,538 @@
+<Type Name="SqlDataSourceDesigner" FullName="System.Web.UI.Design.WebControls.SqlDataSourceDesigner">
+  <TypeSignature Language="C#" Value="public class SqlDataSourceDesigner : System.Web.UI.Design.DataSourceDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SqlDataSourceDesigner extends System.Web.UI.Design.DataSourceDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DataSourceDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.SqlDataSource" /> コントロールを、ビジュアル デザイナーで、デザイン時に使用できるようにします。</summary>
+    <remarks>To be added.</remarks>
+    <block subset="none" type="overrides">
+      <para>派生クラスでは、デザイン時の操作 メニューの一覧のコマンドを提供するにオーバーライドする必要があります、<see cref="P:System.Web.UI.Design.ControlDesigner.ActionLists" />返されるカスタム プロパティを<see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />から派生した項目を含むオブジェクト、<see cref="T:System.ComponentModel.Design.DesignerActionList" />オブジェクト。  
+  
+ 詳細とコード サンプルについては、「<see cref="T:System.Web.UI.Design.DataSourceDesigner" />」を参照してください。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SqlDataSourceDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConfigure">
+      <MemberSignature Language="C#" Value="public override bool CanConfigure { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanConfigure" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.CanConfigure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ホストで <see cref="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.Configure" /> メソッドを呼び出すことができるかどうかを示す値を取得します。</summary>
+        <value>
+          デザイン ホストが <see cref="T:System.ComponentModel.Design.Data.IDataEnvironment" /> インターフェイスをサポートする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRefreshSchema">
+      <MemberSignature Language="C#" Value="public override bool CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン ホストで <see cref="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.RefreshSchema(System.Boolean)" /> メソッドを呼び出すことができるかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ConnectionString" /> プロパティと <see cref="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.SelectCommand" /> プロパティが空でない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Configure">
+      <MemberSignature Language="C#" Value="public override void Configure ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Configure() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.Configure" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン ホストのデータ ソース構成ユーティリティを起動します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データベースを開くために使用する文字列を取得または設定します。</summary>
+        <value>実行時にデータベース接続を開くために使用する文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ConnectionString%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateView">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.Design.WebControls.SqlDesignerDataSourceView CreateView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.Design.WebControls.SqlDesignerDataSourceView CreateView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.CreateView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.WebControls.SqlDesignerDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">作成するビューの名前。</param>
+        <summary>指定された名前を使用して新しい <see cref="T:System.Web.UI.Design.WebControls.SqlDesignerDataSourceView" /> インスタンスを作成します。</summary>
+        <returns><see cref="T:System.Web.UI.Design.WebControls.SqlDesignerDataSourceView" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SqlDesignerDataSourceView>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteQuery">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceOperation DeleteQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceOperation DeleteQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>削除クエリをサポートする <see cref="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" /> を取得または設定します。</summary>
+        <value><see cref="F:System.Web.UI.DataSourceOperation.Delete" /> クエリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装方法、設定、<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery%2A>プロパティは影響を与えません。 <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeriveParameters">
+      <MemberSignature Language="C#" Value="protected virtual void DeriveParameters (string providerName, System.Data.Common.DbCommand command);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DeriveParameters(string providerName, class System.Data.Common.DbCommand command) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeriveParameters(System.String,System.Data.Common.DbCommand)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="command" Type="System.Data.Common.DbCommand" />
+      </Parameters>
+      <Docs>
+        <param name="providerName">データ プロバイダーの名前。</param>
+        <param name="command"><see cref="T:System.Data.Common.DbCommand" /> オブジェクト。</param>
+        <summary>指定された SQL コマンドからパラメーターを派生して、対応する <see cref="T:System.Web.UI.WebControls.Parameter" /> オブジェクトをコマンドのパラメーター コレクションに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConnectionString">
+      <MemberSignature Language="C#" Value="protected virtual string GetConnectionString ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetConnectionString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.GetConnectionString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>対象のデザイナーに関連付けられているコントロールの、デザイン時に有効な接続文字列を取得します。</summary>
+        <returns>接続文字列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetView">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.Design.DesignerDataSourceView GetView (string viewName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.Design.DesignerDataSourceView GetView(string viewName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.GetView(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerDataSourceView</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="viewName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="viewName">取得するビューの名前。</param>
+        <summary>ビュー名で識別される <see cref="T:System.Web.UI.Design.DesignerDataSourceView" /> オブジェクトを取得します。</summary>
+        <returns>データ ソース内にある場合は <see cref="T:System.Web.UI.Design.DesignerDataSourceView" /> オブジェクト。それ以外の場合は <see langword="null" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetViewNames">
+      <MemberSignature Language="C#" Value="public override string[] GetViewNames ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetViewNames() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.GetViewNames" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>使用できるビューのリストを取得します。</summary>
+        <returns>使用できるビューの名前を格納している文字列配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InferParameterNames">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.WebControls.Parameter[] InferParameterNames (System.ComponentModel.Design.Data.DesignerDataConnection connection, string commandText, System.Web.UI.WebControls.SqlDataSourceCommandType commandType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Web.UI.WebControls.Parameter[] InferParameterNames(class System.ComponentModel.Design.Data.DesignerDataConnection connection, string commandText, valuetype System.Web.UI.WebControls.SqlDataSourceCommandType commandType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.InferParameterNames(System.ComponentModel.Design.Data.DesignerDataConnection,System.String,System.Web.UI.WebControls.SqlDataSourceCommandType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Parameter[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connection" Type="System.ComponentModel.Design.Data.DesignerDataConnection" />
+        <Parameter Name="commandText" Type="System.String" />
+        <Parameter Name="commandType" Type="System.Web.UI.WebControls.SqlDataSourceCommandType" />
+      </Parameters>
+      <Docs>
+        <param name="connection"><see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" /> オブジェクト。</param>
+        <param name="commandText">コマンドのテキスト。</param>
+        <param name="commandType">コマンドの種類を示す <see cref="T:System.Web.UI.WebControls.SqlDataSourceCommandType" />。</param>
+        <summary>指定された接続、コマンド テキスト、およびコマンドの種類を使用して、パラメーターの配列を返します。</summary>
+        <returns><see cref="T:System.Web.UI.WebControls.Parameter" /> オブジェクトの配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertQuery">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceOperation InsertQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceOperation InsertQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.InsertQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入クエリをサポートする <see cref="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" /> を取得または設定します。</summary>
+        <value><see cref="F:System.Web.UI.DataSourceOperation.Insert" /> クエリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装方法、設定、<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery%2A>プロパティは影響を与えません。 <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.InsertQuery%2A>デザイナーのプロパティに関連付けられているコントロールで、同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">フィルター処理の対象となるプロパティ。</param>
+        <summary>プロパティを追加または削除してから、デザイナーで使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた <see cref="T:System.Web.UI.WebControls.SqlDataSource" /> コントロールが基になるデータ ソースに接続するために使用する .NET Framework データ プロバイダーの名前を取得または設定します。</summary>
+        <value>データ プロバイダーの名前を含む文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ProviderName%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshSchema">
+      <MemberSignature Language="C#" Value="public override void RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">
+          スキーマが更新されるまで、すべてのデータ ソース イベントを中止する場合は、<see langword="true" />。それ以外の場合は false。</param>
+        <summary>基になるデータ ソースのスキーマを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.RefreshSchema%2A>によってデザイン ホスト場合にのみ、メソッドが呼び出される<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.CanRefreshSchema%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectCommand">
+      <MemberSignature Language="C#" Value="public string SelectCommand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectCommand" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.SelectCommand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータベースのデータを選択するために、関連する <see cref="T:System.Web.UI.WebControls.SqlDataSource" /> の SQL クエリを取得または設定します。</summary>
+        <value>SQL クエリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.SelectCommand%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectQuery">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceOperation SelectQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceOperation SelectQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.SelectQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択クエリをサポートする <see cref="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" /> を取得または設定します。</summary>
+        <value><see cref="F:System.Web.UI.DataSourceOperation.Select" /> クエリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装方法、設定、<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery%2A>プロパティは影響を与えません。 <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.ProviderName%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateQuery">
+      <MemberSignature Language="C#" Value="public System.Web.UI.DataSourceOperation UpdateQuery { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataSourceOperation UpdateQuery" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.UpdateQuery" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Data")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.MergableProperty(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.WebControls.SqlDataSourceQueryConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataSourceOperation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新クエリをサポートする <see cref="T:System.Web.UI.Design.WebControls.SqlDataSourceDesigner" /> を取得または設定します。</summary>
+        <value><see cref="F:System.Web.UI.DataSourceOperation.Update" /> クエリ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装方法、設定、<xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.DeleteQuery%2A>プロパティは影響を与えません。 <xref:System.Web.UI.Design.WebControls.SqlDataSourceDesigner.UpdateQuery%2A>プロパティ、関連付けられたコントロールの同じプロパティをシャドウであり、内部使用のみ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

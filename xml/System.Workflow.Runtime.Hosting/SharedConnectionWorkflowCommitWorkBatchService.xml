@@ -1,0 +1,162 @@
+<Type Name="SharedConnectionWorkflowCommitWorkBatchService" FullName="System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService">
+  <TypeSignature Language="C#" Value="public class SharedConnectionWorkflowCommitWorkBatchService : System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SharedConnectionWorkflowCommitWorkBatchService extends System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ランタイムによって使用される共有接続タイプの <see cref="T:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService" /> サービスを表します。 この場合の共有接続は、サービスが追跡サービスと永続性サービスの両方に同じ SQL 接続を使用することを意味します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> サービスは、さまざまなオブジェクト間の共有接続を使用するデータベース トランザクション用に使用されます。 <xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> インスタンスで <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService> ではなく <xref:System.Workflow.Runtime.WorkflowRuntime> を使用するには、<xref:System.Workflow.Runtime.WorkflowRuntime.AddService%2A> メソッドを使用します。  
+  
+> [!IMPORTANT]
+>  SQL クラスターのフェールオーバーやネットワーク接続の一時的切断などの問題のために、<xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> によって使用される SQL サーバーがダウンした場合、<xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> はコミット処理を最大 20 回再試行した後、<xref:System.Workflow.Runtime.WorkflowRuntime.ServicesExceptionNotHandled> イベントを発行します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedConnectionWorkflowCommitWorkBatchService (System.Collections.Specialized.NameValueCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Specialized.NameValueCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.#ctor(System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parameters" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="parameters">
+          <see cref="T:System.Collections.Specialized.NameValueCollection" />。 このコンストラクターは、ワークフロー ランタイム エンジンがアプリケーション構成ファイルからサービスを読み込むときに呼び出されます。 有効なキーは<c>EnableRetries</c>です。 これにより、データベースに接続できない場合に <see cref="T:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService" /> の再試行が要求されます。</param>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService" /> クラスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SharedConnectionWorkflowCommitWorkBatchService (string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="connectionString">データベース接続文字列。</param>
+        <summary>データベース接続文字列を使用して、<see cref="T:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService" /> クラスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommitWorkBatch">
+      <MemberSignature Language="C#" Value="protected override void CommitWorkBatch (System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback commitWorkBatchCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CommitWorkBatch(class System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService/CommitWorkBatchCallback commitWorkBatchCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.CommitWorkBatch(System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="commitWorkBatchCallback" Type="System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService+CommitWorkBatchCallback" />
+      </Parameters>
+      <Docs>
+        <param name="commitWorkBatchCallback"><see cref="T:System.Workflow.Runtime.Hosting.WorkflowCommitWorkBatchService.CommitWorkBatchCallback" />作業バッチをコミットするために呼び出すデリゲート。</param>
+        <summary>トランザクションが存在しない場合に、トランザクションを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableRetries">
+      <MemberSignature Language="C#" Value="public bool EnableRetries { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableRetries" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.EnableRetries" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService" /> が作業バッチのコミットを再試行するかどうかを指定する値を取得および設定します。</summary>
+        <value>
+          サービスで作業バッチのコミットを再試行する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.TransactionScopeActivity> アクティビティのための作業バッチ コミットの再試行は、ワークフロー内でモデル化される必要があります (通常は <xref:System.Workflow.ComponentModel.TransactionScopeActivity> 外の while ループと例外ハンドラーを使用)。 この場合、<xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService> は、トランザクションを開始していない (したがってトランザクションを所有していない) ので、再試行を行えません。  
+  
+ この機能は、プログラムで設定する以外に、構成ファイルを使用して有効にすることもできます。 構成ファイルでこのプロパティを設定する方法の詳細については、次を参照してください。[ワークフロー構成ファイル](http://msdn.microsoft.com/en-us/ada4bb90-6c9d-4f3d-a9d0-b559bb0f9909)です。  
+  
+ 作業バッチ トランザクションの再試行に関する一般情報は、次を参照してください。[ワークフローの状態情報をバッチ処理](http://msdn.microsoft.com/en-us/ecda18ba-9140-4bd7-b13d-6787fdf5959d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStopped">
+      <MemberSignature Language="C#" Value="protected override void OnStopped ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnStopped() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.OnStopped" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー ランタイムが <see cref="E:System.Workflow.Runtime.WorkflowRuntime.Stopped" /> イベントを発生させるときに呼び出されるメソッドを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="protected override void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスを開始するために呼び出されるメソッドを表します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

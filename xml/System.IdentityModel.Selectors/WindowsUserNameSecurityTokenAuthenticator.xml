@@ -1,0 +1,103 @@
+<Type Name="WindowsUserNameSecurityTokenAuthenticator" FullName="System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator">
+  <TypeSignature Language="C#" Value="public class WindowsUserNameSecurityTokenAuthenticator : System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowsUserNameSecurityTokenAuthenticator extends System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Selectors.UserNameSecurityTokenAuthenticator</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows 認証を使用して、<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンのユーザー名とパスワードを認証します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore%2A> メソッドは、Windows 認証を使用して、ユーザー名とパスワードを認証します。  
+  
+ カスタム認証方式を提供するには、<xref:System.IdentityModel.Selectors.CustomUserNameSecurityTokenAuthenticator> クラスを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsUserNameSecurityTokenAuthenticator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが認証される場合、ユーザーが属する Windows グループを識別するクレームが最初に <xref:System.IdentityModel.Policy.EvaluationContext.ClaimSets%2A> プロパティに追加され、最終的に <xref:System.IdentityModel.Policy.AuthorizationContext.ClaimSets%2A> プロパティに追加されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsUserNameSecurityTokenAuthenticator (bool includeWindowsGroups);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool includeWindowsGroups) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="includeWindowsGroups" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="includeWindowsGroups">
+          Windows ユーザーが属するグループを取得する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>ユーザーが認証される場合、ユーザーが属する Windows グループを示すクレームが最初に <see cref="T:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator" /> プロパティに追加されるかどうかを指定して、<see cref="P:System.IdentityModel.Policy.AuthorizationContext.ClaimSets" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateUserNamePasswordCore">
+      <MemberSignature Language="C#" Value="protected override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore (string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Policy.IAuthorizationPolicy&gt; ValidateUserNamePasswordCore(string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Selectors.WindowsUserNameSecurityTokenAuthenticator.ValidateUserNamePasswordCore(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Policy.IAuthorizationPolicy&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">セキュリティ トークンに関連付けられたユーザー名。</param>
+        <param name="password">セキュリティ トークンに関連付けられたパスワード。</param>
+        <summary>指定したユーザー名とパスワードを認証し、<see cref="T:System.IdentityModel.Tokens.UserNameSecurityToken" /> セキュリティ トークンの一連の承認ポリシーを返します。</summary>
+        <returns>このアプリケーションで有効な承認ポリシー セットを含む <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> 型の <see cref="T:System.IdentityModel.Policy.IAuthorizationPolicy" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `userName` パラメーターは、`domain\username` または `username` のいずれかの形式で指定する必要があります。 場合、`userName`では、パラメーター、`domain\username`フォーマット、1 つだけの円記号である必要があります (\\) ユーザー名とドメインを区切る文字です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="userName" />複数の円記号が含まれています (\\) 文字です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

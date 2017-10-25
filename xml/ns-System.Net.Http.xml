@@ -1,0 +1,57 @@
+<Namespace Name="System.Net.Http">
+  <Docs>
+    <summary><see cref="N:System.Net.Http" />名前空間は、最新の HTTP アプリケーションのプログラミング インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Http>名前空間は、次を提供するように設計されています。  
+  
+1.  HTTP 経由で最新の web サービスを利用するユーザーに許可する HTTP クライアント コンポーネント。  
+  
+2.  使用できる HTTP コンポーネント クライアントとサーバー (HTTP ヘッダーと例については、メッセージ) の両方でします。 これにより一貫性のあるプログラミング モデル、クライアントとサーバー側の両方で最新の web サービスの HTTP 経由でします。  
+  
+ <xref:System.Net.Http>名前空間および関連<xref:System.Net.Http.Headers>名前空間は、次のコンポーネントのセットを提供します。  
+  
+1.  <xref:System.Net.Http.HttpClient>-HTTP 経由で要求を送受信するために使用する主なクラスです。  
+  
+2.  <xref:System.Net.Http.HttpRequestMessage><xref:System.Net.Http.HttpResponseMessage> -IETF によって RFC 2616 で定義されたメッセージの HTTP。  
+  
+3.  <xref:System.Net.Http.Headers.HttpHeaders>HTTP ヘッダー IETF によって RFC 2616 で定義されています。  
+  
+4.  <xref:System.Net.Http.HttpClientHandler>HTTP ハンドラーを HTTP 応答メッセージを生成します。  
+  
+ 使用できるさまざまな HTTP メッセージ ハンドルがあります。 次が含まれます。  
+  
+1.  <xref:System.Net.Http.DelegatingHandler>は、クラス ハンドラー チェーンにハンドラーを接続するために使用します。  
+  
+2.  <xref:System.Net.Http.HttpMessageHandler>-シンプル から派生するクラスには、ほとんどのアプリケーションの最も一般的な要件をサポートします。  
+  
+3.  <xref:System.Net.Http.HttpClientHandler>に実際に操作を処理する、HTTP トランスポート ハンドラー チェーンの下部にある動作は、クラスです。  
+  
+4.  <xref:System.Net.Http.WebRequestHandler>に固有のオプションで HTTP トランスポートの操作を処理するハンドラー チェーン クラスの下部に動作するは、専門分野クラス、<xref:System.Net.HttpWebRequest?displayProperty=nameWithType>オブジェクト。  
+  
+ HTTP メッセージの内容は、RFC 2616 で定義されているエンティティ ボディに対応します。  
+  
+ クラスの数は、HTTP コンテンツを使用できます。 次が含まれます。  
+  
+1.  <xref:System.Net.Http.ByteArrayContent>-に基づく HTTP コンテンツをバイト配列。  
+  
+2.  <xref:System.Net.Http.FormUrlEncodedContent>名前/値の組の HTTP コンテンツは、アプリケーション/x-www-form-urlencoded MIME の種類を使用してエンコードされます。  
+  
+3.  <xref:System.Net.Http.MultipartContent>マルチパートを使用してシリアル化される HTTP コンテンツ/* コンテンツ タイプ仕様です。  
+  
+4.  <xref:System.Net.Http.MultipartFormDataContent>HTTP コンテンツは、マルチパート フォーム データの MIME の種類を使用してエンコードされます。  
+  
+5.  <xref:System.Net.Http.StreamContent>HTTP コンテンツ ストリームに基づきます。  
+  
+6.  <xref:System.Net.Http.StringContent>-に基づく HTTP コンテンツ文字列。  
+  
+ 使用して、アプリの場合、<xref:System.Net.Http>と<xref:System.Net.Http.Headers>名前空間が、大量のデータ (50 メガバイトまたはそれ以上) をダウンロードしようとしています。 し、アプリのこれらのダウンロードをストリームと既定のバッファリングを使用する必要があります。 既定のバッファリングを使用する場合は、クライアントのメモリ使用量が非常に大きな取得、パフォーマンスが低下する可能性のある結果として得られるで大幅にします。  
+  
+ 内のクラス、<xref:System.Net.Http>と<xref:System.Net.Http.Headers>名前空間は、Windows ストア アプリまたはデスクトップ アプリを開発するために使用できます。 Windows ストア アプリで使用する場合にクラス、<xref:System.Net.Http>と<xref:System.Net.Http.Headers>名前空間がによって使用されるアプリケーションのセキュリティ モデルの一部であるネットワーク分離機能によって影響を受ける、[!INCLUDE[win8](~/includes/win8-md.md)]です。 Windows ストア アプリでネットワーク アクセスを許可するシステムの Windows ストア アプリのアプリ マニフェストでは、適切なネットワーク機能を有効にする必要があります。 詳細については、次を参照してください。、 [Windows ストア アプリでネットワーク分離用](~/docs/framework/network-programming/network-isolation-for-windows-store-apps.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

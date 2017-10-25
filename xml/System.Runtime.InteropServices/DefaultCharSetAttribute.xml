@@ -1,0 +1,128 @@
+<Type Name="DefaultCharSetAttribute" FullName="System.Runtime.InteropServices.DefaultCharSetAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DefaultCharSetAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DefaultCharSetAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DefaultCharSetAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Module, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値を指定します、<see cref="T:System.Runtime.InteropServices.CharSet" />列挙します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Runtime.InteropServices.DefaultCharSetAttribute>アセンブリ レベルまたはモジュール レベルを設定する属性、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>値への呼び出しを<xref:System.Runtime.InteropServices.DllImportAttribute>が含まれていない、<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>ユーザーによって指定された引数の名前します。  
+  
+ A<xref:System.Runtime.InteropServices.DllImportAttribute.CharSet>ユーザーによって指定された名前付き引数の設定を上書きする<xref:System.Runtime.InteropServices.DefaultCharSetAttribute>です。  
+  
+> [!NOTE]
+>  この属性を認識のみ、c# および Visual Basic コンパイラC コンパイラでは使用されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、既定値を変更<xref:System.Runtime.InteropServices.CharSet>値から<xref:System.Runtime.InteropServices.CharSet.Ansi>に<xref:System.Runtime.InteropServices.CharSet.Auto>です。  
+  
+ `using System.Runtime.InteropServices;`  
+  
+ `[module: DefaultCharSet(CharSet.Auto)]`  
+  
+ `// …`  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DefaultCharSetAttribute (System.Runtime.InteropServices.CharSet charSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.InteropServices.CharSet charSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.DefaultCharSetAttribute.#ctor(System.Runtime.InteropServices.CharSet)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="charSet" Type="System.Runtime.InteropServices.CharSet" />
+      </Parameters>
+      <Docs>
+        <param name="charSet"><see cref="T:System.Runtime.InteropServices.CharSet" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Runtime.InteropServices.CharSet" /> 値を使用して、<see cref="T:System.Runtime.InteropServices.DefaultCharSetAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharSet">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.CharSet CharSet { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.CharSet CharSet" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.DefaultCharSetAttribute.CharSet" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.CharSet</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を取得<see cref="T:System.Runtime.InteropServices.CharSet" />呼び出しに対して<see cref="T:System.Runtime.InteropServices.DllImportAttribute" />です。</summary>
+        <value>既定値の<see cref="T:System.Runtime.InteropServices.CharSet" />呼び出しに対して<see cref="T:System.Runtime.InteropServices.DllImportAttribute" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

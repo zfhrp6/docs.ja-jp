@@ -1,0 +1,163 @@
+<Type Name="ImageListImageEditor" FullName="System.Windows.Forms.Design.ImageListImageEditor">
+  <TypeSignature Language="C#" Value="public class ImageListImageEditor : System.Drawing.Design.ImageEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ImageListImageEditor extends System.Drawing.Design.ImageEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.ImageListImageEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Drawing.Design.ImageEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビットマップ (.bmp) ファイルの既定のファイル検索を実行するエディターを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ImageListImageEditor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.Design.ImageListImageEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EditValue">
+      <MemberSignature Language="C#" Value="public override object EditValue (System.ComponentModel.ITypeDescriptorContext context, IServiceProvider provider, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object EditValue(class System.ComponentModel.ITypeDescriptorContext context, class System.IServiceProvider provider, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <param name="provider"><see cref="T:System.IServiceProvider" />使用される編集サービス取得できます。</param>
+        <param name="value"><see cref="T:System.Object" />編集されています。</param>
+        <summary>によって提供される編集スタイルを使用して指定したオブジェクトの値を編集、<see cref="M:System.Drawing.Design.ImageEditor.GetEditStyle(System.ComponentModel.ITypeDescriptorContext)" />メソッドです。</summary>
+        <returns><see cref="T:System.Object" />新しい値を示すです。 オブジェクトの値が変更されていない場合、<see cref="M:System.Windows.Forms.Design.ImageListImageEditor.EditValue(System.ComponentModel.ITypeDescriptorContext,System.IServiceProvider,System.Object)" />メソッドに渡されたオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このエディターでは、サービス プロバイダーを使用するのに必要な編集サービスを取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileDialogDescription">
+      <MemberSignature Language="C#" Value="protected override string GetFileDialogDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetFileDialogDescription() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.GetFileDialogDescription" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このエディターによって提供される既定のファイル リストのフィルターの説明を取得します。</summary>
+        <returns>既定のファイル リストのフィルターの説明です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル ダイアログ ボックスの説明は、ファイル リスト フィルターのドロップダウン リスト ボックスに表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImageExtenders">
+      <MemberSignature Language="C#" Value="protected override Type[] GetImageExtenders ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Type[] GetImageExtenders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.GetImageExtenders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サポートされているイメージの種類の配列を取得します。</summary>
+        <returns>配列<see cref="T:System.Type" />を表すイメージの種類をサポートします。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPaintValueSupported">
+      <MemberSignature Language="C#" Value="public override bool GetPaintValueSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool GetPaintValueSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.GetPaintValueSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">追加のコンテキスト情報を取得するために使用できる <see cref="T:System.ComponentModel.ITypeDescriptorContext" />。</param>
+        <summary>このエディターが、オブジェクトの値の表現を描画できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />場合<see cref="M:System.Drawing.Design.ImageEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)" />が実装されている、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PaintValue">
+      <MemberSignature Language="C#" Value="public override void PaintValue (System.Drawing.Design.PaintValueEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void PaintValue(class System.Drawing.Design.PaintValueEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.ImageListImageEditor.PaintValue(System.Drawing.Design.PaintValueEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Drawing.Design.PaintValueEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">A<see cref="T:System.Drawing.Design.PaintValueEventArgs" />を描画する新機能、および描画位置を示すです。</param>
+        <summary>指定したにより示される値を描画<see cref="T:System.Drawing.Design.PaintValueEventArgs" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表示するには、値の形式を標準的なプロパティ シートの形式での描画の境界内、 <xref:System.Drawing.Rectangle> 、指定した内に含まれる<xref:System.Drawing.Design.PaintValueEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

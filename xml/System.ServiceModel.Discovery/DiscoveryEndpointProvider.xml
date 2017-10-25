@@ -1,0 +1,67 @@
+<Type Name="DiscoveryEndpointProvider" FullName="System.ServiceModel.Discovery.DiscoveryEndpointProvider">
+  <TypeSignature Language="C#" Value="public abstract class DiscoveryEndpointProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DiscoveryEndpointProvider extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryEndpointProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>探索エンドポイントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> クラスは、<xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> から派生したクラスを使用して、使用する探索エンドポイントを取得します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DiscoveryEndpointProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpointProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryEndpointProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDiscoveryEndpoint">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.Discovery.DiscoveryEndpoint GetDiscoveryEndpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Discovery.DiscoveryEndpoint GetDiscoveryEndpoint() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryEndpoint</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>探索エンドポイントを取得します。</summary>
+        <returns>探索エンドポイント。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> クラスは、ユーザーによって渡された <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> インスタンス上で <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> メソッドを呼び出して、サービスを探索するための <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> を取得します。 <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> は、自己のクローンを作成する必要がある場合、<xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> メソッドも呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,168 @@
+<Type Name="WorkflowInspectionServices" FullName="System.Activities.WorkflowInspectionServices">
+  <TypeSignature Language="C#" Value="public static class WorkflowInspectionServices" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit WorkflowInspectionServices extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.WorkflowInspectionServices" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>アクティビティ ツリーのランタイム メタデータを操作するためのメソッドを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="public static void CacheMetadata (System.Activities.Activity rootActivity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CacheMetadata(class System.Activities.Activity rootActivity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.CacheMetadata(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">アクティビティ ツリーのルート アクティビティ。</param>
+        <summary>指定されたアクティビティ ツリーのランタイム メタデータをキャッシュします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheMetadata">
+      <MemberSignature Language="C#" Value="public static void CacheMetadata (System.Activities.Activity rootActivity, System.Activities.LocationReferenceEnvironment hostEnvironment);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CacheMetadata(class System.Activities.Activity rootActivity, class System.Activities.LocationReferenceEnvironment hostEnvironment) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.CacheMetadata(System.Activities.Activity,System.Activities.LocationReferenceEnvironment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rootActivity" Type="System.Activities.Activity" />
+        <Parameter Name="hostEnvironment" Type="System.Activities.LocationReferenceEnvironment" />
+      </Parameters>
+      <Docs>
+        <param name="rootActivity">アクティビティ ツリーのルート アクティビティ。</param>
+        <param name="hostEnvironment">アクティビティ ツリーに関連付けられた環境。</param>
+        <summary>指定された環境を使用する指定されたアクティビティ ツリーのランタイム メタデータをキャッシュします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanInduceIdle">
+      <MemberSignature Language="C#" Value="public static bool CanInduceIdle (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool CanInduceIdle(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.CanInduceIdle(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">アクティビティ。</param>
+        <summary>サービスがアイドル状態のアクティビティを含めるかどうかを指定します。</summary>
+        <returns>
+          <see langword="True" />場合は、サービスがアイドル状態のアクティビティを含めることができます。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetActivities">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;System.Activities.Activity&gt; GetActivities (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;class System.Activities.Activity&gt; GetActivities(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.GetActivities(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Activities.WorkflowInspectionServices/&lt;GetActivities&gt;d__3))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Activities.Activity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">ルート アクティビティ。</param>
+        <summary>入力アクティビティに関連付けられているすべてのアクティビティを表す <see cref="T:System.Collections.Generic.IEnumerable`1" /> を返します。</summary>
+        <returns>入力アクティビティに関連付けられているすべてのアクティビティを表す列挙。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 列挙には、すべての子アクティビティ、デリゲート ハンドラー、変数既定値、および引数式が格納されます。 入力アクティビティがある場合`null`、<xref:System.ArgumentNullException>がスローされます。 アクティビティ ツリーは変更されないままでなければならず、<xref:System.Activities.WorkflowInspectionServices.CacheMetadata%2A> はツリーが列挙されている間に呼び出される必要があります。そうでないと、<xref:System.InvalidOperationException> が呼び出されたときに <xref:System.Collections.IEnumerator.MoveNext%2A> がスローされます。  
+  
+ このメソッドを呼び出すと、メタデータのフル キャッシュが実行されます。 このメソッドを呼び出した後、ワークフローに変更を加えた場合は、呼び出す必要があります、 <xref:System.Activities.Validation.ActivityValidationServices> <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>メソッドのメタデータを再キャッシュするために変更を行った後。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImplementationVersion">
+      <MemberSignature Language="C#" Value="public static Version GetImplementationVersion (System.Activities.Activity activity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Version GetImplementationVersion(class System.Activities.Activity activity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.GetImplementationVersion(System.Activities.Activity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activity" Type="System.Activities.Activity" />
+      </Parameters>
+      <Docs>
+        <param name="activity">アクティビティ。</param>
+        <summary>アクティビティの実装のバージョンを取得します。</summary>
+        <returns>アクティビティの実装のバージョン。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public static System.Activities.Activity Resolve (System.Activities.Activity root, string id);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Activities.Activity Resolve(class System.Activities.Activity root, string id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.WorkflowInspectionServices.Resolve(System.Activities.Activity,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Activities.Activity" />
+        <Parameter Name="id" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="root">検索するアクティビティ ツリー。</param>
+        <param name="id">検索するアクティビティの識別子。</param>
+        <summary>指定された <paramref name="id" /> を持つアクティビティを指定されたアクティビティ ツリーから返します。</summary>
+        <returns>見つかった場合は、指定されたアクティビティ。見つからなかった場合は <see cref="T:System.ArgumentException" /> がスローされます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,143 @@
+<Type Name="TimeSpanSecondsConverter" FullName="System.Configuration.TimeSpanSecondsConverter">
+  <TypeSignature Language="C#" Value="public class TimeSpanSecondsConverter : System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TimeSpanSecondsConverter extends System.Configuration.ConfigurationConverterBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.TimeSpanSecondsConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationConverterBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>秒単位で表された期間に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ など、他の構成を実行するコンバーターの種類すべて、この型では、関連する厳密に型指定されたプロパティとの間の構成ファイル内で見つかった文字列に変換します。  
+  
+ 具体的には、<xref:System.Configuration.TimeSpanSecondsConverter>変換<xref:System.String>(秒単位) に、[構成] プロパティに割り当てられている<xref:System.TimeSpan>秒と、その逆です。  
+  
+ <xref:System.Configuration.TimeSpanMinutesConverter>型の値が引き続き発生する`long`秒数を表しています。  
+  
+   
+  
+## Examples  
+ コード例を参照してください<xref:System.Configuration.InfiniteTimeSpanConverter>と<xref:System.Configuration.TimeSpanMinutesConverter>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TimeSpanSecondsConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TimeSpanSecondsConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Configuration.TimeSpanSecondsConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、システムによって提供されるコンバーターの種類を使用します。 使用する必要があるときだけ、<xref:System.Configuration.TimeSpanSecondsConverter.%23ctor%2A>コンス トラクターは、独自の変換の種類を作成するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public override object ConvertFrom (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object data);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object data) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TimeSpanSecondsConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="data" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="data">変換対象の <see cref="T:System.String" /> オブジェクト。</param>
+        <summary><see cref="T:System.String" /> を <see cref="T:System.TimeSpan" /> に変換します。</summary>
+        <returns><see cref="T:System.TimeSpan" />を表す、<paramref name="data" />秒単位でのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.TimeSpanSecondsConverter.ConvertFrom%2A>メソッドに変換する構成ファイルから読み取る際に、<xref:System.String>値を<xref:System.TimeSpan>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="data" />整数値として解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public override object ConvertTo (System.ComponentModel.ITypeDescriptorContext ctx, System.Globalization.CultureInfo ci, object value, Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext ctx, class System.Globalization.CultureInfo ci, object value, class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.TimeSpanSecondsConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ctx" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="ci" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="ctx"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />オブジェクトの型変換のために使用します。</param>
+        <param name="ci"><see cref="T:System.Globalization.CultureInfo" />変換中に使用されるオブジェクト。</param>
+        <param name="value">変換する値。</param>
+        <param name="type">変換後の型。</param>
+        <summary><see cref="T:System.TimeSpan" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns><see cref="T:System.String" />を表す、<paramref name="value" />分単位でのパラメーターです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムを使用して、<xref:System.Configuration.TimeSpanSecondsConverter.ConvertTo%2A>メソッドに変換する構成ファイルに書き込まれると、<xref:System.TimeSpan>を<xref:System.String>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

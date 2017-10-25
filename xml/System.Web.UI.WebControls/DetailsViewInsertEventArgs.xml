@@ -1,0 +1,145 @@
+<Type Name="DetailsViewInsertEventArgs" FullName="System.Web.UI.WebControls.DetailsViewInsertEventArgs">
+  <TypeSignature Language="C#" Value="public class DetailsViewInsertEventArgs : System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DetailsViewInsertEventArgs extends System.ComponentModel.CancelEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DetailsViewInsertEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.CancelEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.UI.WebControls.DetailsView.ItemInserting" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DetailsView>制御を発生させます、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>挿入ボタンをクリックしたときにイベント (ボタンがその`CommandName`プロパティを"Insert"に設定) コントロール内でクリックすると、その前に、<xref:System.Web.UI.WebControls.DetailsView>コントロールは、レコードを挿入します。 これにより、HTML エンコード方式などのカスタムのルーチンを実行するイベント ハンドラーを提供するこのイベントが発生するたびに、データ ソースに挿入する前にレコードの値。  
+  
+ A<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs>オブジェクトが、省略可能なコマンドに渡す引数の値を決定することができます、イベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView>コントロールと挿入操作を取り消す必要があることを指定します。 コマンド引数の値を確認するには<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument%2A>プロパティです。 挿入操作をキャンセルするには設定、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>プロパティを`true`です。 読み取りまたはを使用して、新しいレコードのフィールド値を変更することができますも、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.Values%2A>プロパティです。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs> クラスのインスタンスの初期プロパティ値一覧については、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.%23ctor%2A> コンストラクターに関するトピックを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs>オブジェクトのイベント ハンドラーに渡される、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>挿入操作をキャンセルするイベントです。  
+  
+ [!code-aspx-csharp[DetailsViewInsertEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewInsertEventArgs/CS/detailsviewinserteventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewInsertEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewInsertEventArgs/VB/detailsviewinserteventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DetailsViewInsertEventArgs (object commandArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object commandArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DetailsViewInsertEventArgs.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="commandArgument" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="commandArgument">渡される省略可能なコマンド引数、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DetailsViewInsertEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいインスタンスを初期化するためにこのコンス トラクターを使用して、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs>クラスです。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument%2A>|`commandArgument` パラメーターの値。|  
+  
+> [!NOTE]
+>  このコンス トラクターは、イベントを発生させる場合、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public object CommandArgument { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>渡される挿入操作のコマンド引数を取得、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</summary>
+        <value>渡される挿入操作のためのコマンド引数、<see cref="T:System.Web.UI.WebControls.DetailsView" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument%2A>に渡されるコマンドの引数の値を決定するプロパティ、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.CommandArgument%2A>プロパティは、挿入に関する追加情報を実行するために使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>制御の取得や中に値を使用して、<xref:System.Web.UI.WebControls.DetailsView.ItemInserting>イベント。  
+  
+ [!code-aspx-csharp[DetailsViewInsertEventArgsCommandArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewInsertEventArgsCommandArgument/CS/InsertCommand.aspx#1)]
+ [!code-aspx-vb[DetailsViewInsertEventArgsCommandArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewInsertEventArgsCommandArgument/VB/InsertCommandVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.IOrderedDictionary Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.IOrderedDictionary Values" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DetailsViewInsertEventArgs.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.IOrderedDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>挿入するレコードのフィールドの名前/値ペアを含むディクショナリを取得します。</summary>
+        <value><see cref="T:System.Collections.Specialized.IOrderedDictionary" />を挿入するレコードのキー フィールドの名前/値ペアのディクショナリを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.Values%2A>プロパティを挿入するレコードのフィールドの値にアクセスします。 たとえば、データ ソースに挿入する前に、レコードの値を HTML エンコードすることができます。  
+  
+ <xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.Values%2A>プロパティを実装するオブジェクトを返します、<xref:System.Collections.Specialized.IOrderedDictionary>インターフェイスです。 オブジェクトに含まれる<xref:System.Collections.DictionaryEntry>レコードのフィールドを表すオブジェクト。  
+  
+> [!NOTE]
+>  簡単な方法としてのインデクサーを使用することも、<xref:System.Collections.Specialized.IOrderedDictionary>値を直接フィールドにアクセスするオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DetailsViewInsertEventArgs.Values%2A>挿入されるレコードのフィールドの値にアクセスするプロパティです。  
+  
+ [!code-aspx-csharp[DetailsViewInsertEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DetailsViewInsertEventArgs/CS/detailsviewinserteventargscs.aspx#1)]
+ [!code-aspx-vb[DetailsViewInsertEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DetailsViewInsertEventArgs/VB/detailsviewinserteventargsvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

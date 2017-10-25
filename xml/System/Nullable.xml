@@ -1,0 +1,250 @@
+<Type Name="Nullable" FullName="System.Nullable">
+  <TypeSignature Language="C#" Value="public static class Nullable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Nullable extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Nullable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>割り当てることのできる値の型をサポートしている<see langword="null" />です。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型が値を割り当てることができるか、または割り当てることができる場合は null 許容にすると言われます`null`、つまり、型にします。 既定では、参照型はすべてなど<xref:System.String>は、null 値がすべての値などの型、 <xref:System.Int32>、されません。  
+  
+ C# および Visual Basic の場合でを使用して null 値許容と値の型をマークする、`?`値型の後に表記されます。 たとえば、 `int?` (C#) または`Integer?`Visual Basic で割り当てることのできる整数値の型を宣言`null`です。  
+  
+ <xref:System.Nullable>補完的なサポートを提供するクラス、<xref:System.Nullable%601>構造体。 <xref:System.Nullable>クラスは、null 許容型の基になる型を取得をサポートし、null 許容型の型を基になる値のペアの比較と等しいかどうかの操作が汎用の比較と等しいかどうかの操作をサポートしません。  
+  
+## <a name="boxing-and-unboxing"></a>ボックス化とボックス化解除  
+ 共通言語ランタイムの基になる値のボックスを自動的に null 許容型をボックス化するときに、<xref:System.Nullable%601>オブジェクトは、<xref:System.Nullable%601>オブジェクト自体です。 つまり場合、<xref:System.Nullable%601.HasValue%2A>プロパティは`true`の内容、<xref:System.Nullable%601.Value%2A>プロパティのボックス化されます。 場合、`HasValue`プロパティは`false`、`null`ボックス化されます。 共通言語ランタイムが新たに作成 null 許容型の基になる値がボックス化された<xref:System.Nullable%601>構造体の基になる値に初期化します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Compare&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static int Compare&lt;T&gt; (Nullable&lt;T&gt; n1, Nullable&lt;T&gt; n2) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Compare&lt;struct .ctor (class System.ValueType) T&gt;(valuetype System.Nullable`1&lt;!!T&gt; n1, valuetype System.Nullable`1&lt;!!T&gt; n2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Nullable.Compare``1(System.Nullable{``0},System.Nullable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="n1" Type="System.Nullable&lt;T&gt;" />
+        <Parameter Name="n2" Type="System.Nullable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">基になる値の型、 <c>n1</c>と<c>n2</c>パラメーター。</typeparam>
+        <param name="n1"><see cref="T:System.Nullable`1" /> オブジェクト。</param>
+        <param name="n2"><see cref="T:System.Nullable`1" /> オブジェクト。</param>
+        <summary>2 つの相対値を比較<see cref="T:System.Nullable`1" />オブジェクト。</summary>
+        <returns>相対値を示す整数を<paramref name="n1" />と<paramref name="n2" />パラメーター。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term>0 より小さい値  
+  
+ </term><description><see cref="P:System.Nullable`1.HasValue" />プロパティ<paramref name="n1" />は<see langword="false" />、および<see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n2" />は<see langword="true" />します。  
+  
+ または  
+  
+ <see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n1" />と<paramref name="n2" />は<see langword="true" />、しの値、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n1" />がの値より小さい、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n2" />です。  
+  
+ </description></item><item><term>0  
+  
+ </term><description><see cref="P:System.Nullable`1.HasValue" />プロパティ<paramref name="n1" />と<paramref name="n2" />は<see langword="false" />します。  
+  
+ または  
+  
+ <see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n1" />と<paramref name="n2" />は<see langword="true" />、しの値、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n1" />がの値と等しい、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n2" />です。  
+  
+ </description></item><item><term>0 より大きい値  
+  
+ </term><description><see cref="P:System.Nullable`1.HasValue" />プロパティ<paramref name="n1" />は<see langword="true" />、および<see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n2" />は<see langword="false" />します。  
+  
+ または  
+  
+ <see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n1" />と<paramref name="n2" />は<see langword="true" />、しの値、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n1" />の値よりも大きい、<see cref="P:System.Nullable`1.Value" />プロパティを<paramref name="n2" />です。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static bool Equals&lt;T&gt; (Nullable&lt;T&gt; n1, Nullable&lt;T&gt; n2) where T : struct;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals&lt;struct .ctor (class System.ValueType) T&gt;(valuetype System.Nullable`1&lt;!!T&gt; n1, valuetype System.Nullable`1&lt;!!T&gt; n2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Nullable.Equals``1(System.Nullable{``0},System.Nullable{``0})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>DefaultConstructorConstraint</ParameterAttribute>
+            <ParameterAttribute>NotNullableValueTypeConstraint</ParameterAttribute>
+            <BaseTypeName>System.ValueType</BaseTypeName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="n1" Type="System.Nullable&lt;T&gt;" />
+        <Parameter Name="n2" Type="System.Nullable&lt;T&gt;" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">基になる値の型、 <c>n1</c>と<c>n2</c>パラメーター。</typeparam>
+        <param name="n1"><see cref="T:System.Nullable`1" /> オブジェクト。</param>
+        <param name="n2"><see cref="T:System.Nullable`1" /> オブジェクト。</param>
+        <summary>指定した 2 つの <see cref="T:System.Nullable`1" /> オブジェクトが等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、<paramref name="n1" />パラメーターと等しい、<paramref name="n2" />パラメーターです。 それ以外の場合、<see langword="false" />です。  
+  
+ 戻り値によって異なります、<see cref="P:System.Nullable`1.HasValue" />と<see cref="P:System.Nullable`1.Value" />と比較される 2 つのパラメーターのプロパティです。  
+  
+ <list type="table"><listheader><term>戻り値  
+  
+ </term><description>説明  
+  
+ </description></listheader><item><term><see langword="true" /></term><description><see cref="P:System.Nullable`1.HasValue" />プロパティ<paramref name="n1" />と<paramref name="n2" />は<see langword="false" />します。  
+  
+ または  
+  
+ <see cref="P:System.Nullable`1.HasValue" />プロパティ<paramref name="n1" />と<paramref name="n2" />は<see langword="true" />、および<see cref="P:System.Nullable`1.Value" />パラメーターのプロパティが等しい。  
+  
+ </description></item><item><term><see langword="false" /></term><description><see cref="P:System.Nullable`1.HasValue" />プロパティは<see langword="true" />1 つのパラメーターと<see langword="false" />の他のパラメーターです。  
+  
+ または  
+  
+ <see cref="P:System.Nullable`1.HasValue" />プロパティを<paramref name="n1" />と<paramref name="n2" />は<see langword="true" />、および<see cref="P:System.Nullable`1.Value" />パラメーターのプロパティが等しくないです。  
+  
+ </description></item></list></returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUnderlyingType">
+      <MemberSignature Language="C#" Value="public static Type GetUnderlyingType (Type nullableType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Type GetUnderlyingType(class System.Type nullableType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Nullable.GetUnderlyingType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nullableType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="nullableType">A<see cref="T:System.Type" />クローズ ジェネリック null 許容型を記述するオブジェクト。</param>
+        <summary>指定された null 許容型の基になる型引数を返します。</summary>
+        <returns>型引数、<paramref name="nullableType" />パラメーター場合、<paramref name="nullableType" />パラメーターがクローズ ジェネリック null 許容型以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ジェネリック型定義の型宣言をなどは<xref:System.Nullable%601>、型パラメーター リストを格納していると、型パラメーター リストを 1 つまたは複数の型パラメーターを宣言します。 クローズ ジェネリック型は、型パラメーターに対して、特定の型が指定されている型宣言です。  
+  
+ たとえば場合、`nullableType`パラメーターの型が`Nullable<Int32>`(C#) (`Nullable(Of Int32)` Visual Basic で)、戻り値の型は、 <xref:System.Int32> (クローズ ジェネリック型の引数の型)。  
+  
+   
+  
+## Examples  
+ 次のコード例は、型の戻り値を返すメソッドを定義する<xref:System.Nullable%601>の<xref:System.Int32>します。 コード例では、<xref:System.Nullable.GetUnderlyingType%2A>戻り値の型引数を表示するメソッド。  
+  
+ [!code-csharp[system.nullable_GetUnderlyingType#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.nullable_GetUnderlyingType/cs/gut.cs#1)]
+ [!code-vb[system.nullable_GetUnderlyingType#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.nullable_GetUnderlyingType/vb/gut.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="nullableType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

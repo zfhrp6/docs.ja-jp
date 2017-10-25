@@ -1,0 +1,185 @@
+<Type Name="QueryContinueDragEventArgs" FullName="System.Windows.Forms.QueryContinueDragEventArgs">
+  <TypeSignature Language="C#" Value="public class QueryContinueDragEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit QueryContinueDragEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.QueryContinueDragEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.Control.QueryContinueDrag" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.QueryContinueDrag>イベントがドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定します。 A<xref:System.Windows.Forms.QueryContinueDragEventArgs>ドラッグ アンド ドロップ操作を続行するかどうかおよびどのように、どの修飾子キーが押されたかどうか、およびユーザーが ESC キーを押したかどうかを指定します。  
+  
+ 既定では、Esc キーが押された場合、<xref:System.Windows.Forms.Control.QueryContinueDrag> イベントは <xref:System.Windows.Forms.QueryContinueDragEventArgs.Action%2A> を <xref:System.Windows.Forms.DragAction?displayProperty=nameWithType> に設定します。また、マウスの左右または中央のボタンが押された場合は `Action` を <xref:System.Windows.Forms.DragAction?displayProperty=nameWithType> に設定します。  
+  
+ イベント モデルについては、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.QueryContinueDragEventArgs>クラス、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#6)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#6)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public QueryContinueDragEventArgs (int keyState, bool escapePressed, System.Windows.Forms.DragAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 keyState, bool escapePressed, valuetype System.Windows.Forms.DragAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.QueryContinueDragEventArgs.#ctor(System.Int32,System.Boolean,System.Windows.Forms.DragAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="keyState" Type="System.Int32" />
+        <Parameter Name="escapePressed" Type="System.Boolean" />
+        <Parameter Name="action" Type="System.Windows.Forms.DragAction" />
+      </Parameters>
+      <Docs>
+        <param name="keyState">Shift、Ctrl、Alt の各キーの現在の状態。</param>
+        <param name="escapePressed">
+          <see langword="true" />場合は、ESC キーが押されたです。それ以外の場合、<see langword="false" />です。</param>
+        <param name="action"><see cref="T:System.Windows.Forms.DragAction" /> 値。</param>
+        <summary><see cref="T:System.Windows.Forms.QueryContinueDragEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.DragAction Action { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.DragAction Action" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryContinueDragEventArgs.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ アンド ドロップ操作のステータスを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.DragAction" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、Esc キーが押された場合、<xref:System.Windows.Forms.Control.QueryContinueDrag> イベントは <xref:System.Windows.Forms.QueryContinueDragEventArgs.Action%2A> を <xref:System.Windows.Forms.DragAction?displayProperty=nameWithType> に設定します。また、マウスの左右または中央のボタンが押された場合は `Action` を <xref:System.Windows.Forms.DragAction?displayProperty=nameWithType> に設定します。  
+  
+   
+  
+## Examples  
+ このコードの抜粋では、使用方法を示します、<xref:System.Windows.Forms.QueryContinueDragEventArgs>クラス、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#6)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#6)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EscapePressed">
+      <MemberSignature Language="C#" Value="public bool EscapePressed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EscapePressed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryContinueDragEventArgs.EscapePressed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが Esc キーを押したかどうかを取得します。</summary>
+        <value>
+          <see langword="true" />場合は、ESC キーが押されたです。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント セット<xref:System.Windows.Forms.QueryContinueDragEventArgs.Action%2A>に<xref:System.Windows.Forms.DragAction?displayProperty=nameWithType>場合<xref:System.Windows.Forms.QueryContinueDragEventArgs.EscapePressed%2A>は true です。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Windows.Forms.QueryContinueDragEventArgs.EscapePressed%2A>です。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.QueryContinueDrag?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.QueryContinueDrag?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#43](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#43)]
+ [!code-vb[System.Windows.Forms.EventExamples#43](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#43)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyState">
+      <MemberSignature Language="C#" Value="public int KeyState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeyState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.QueryContinueDragEventArgs.KeyState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Shift、Ctrl、Alt の各キーの現在の状態を取得します。</summary>
+        <value>Shift、Ctrl、Alt の各キーの現在の状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定されているビット、<xref:System.Windows.Forms.QueryContinueDragEventArgs.KeyState%2A>プロパティがキーか、操作中に押されたマウス ボタンを識別します。 たとえば、マウスの左ボタンが押された場合、最初のビット、<xref:System.Windows.Forms.QueryContinueDragEventArgs.KeyState%2A>プロパティを設定します。 演算を使用することができます`AND`指定されたキーの状態をテストする演算子です。  
+  
+ 次の表は、指定したイベントに設定されているビットを一覧表示します。  
+  
+|ビット|キー|  
+|---------|---------|  
+|1|マウスの左ボタンです。|  
+|2|マウスの右ボタンです。|  
+|4|SHIFT キー。|  
+|9|CTL キー。|  
+|16|マウスの中央ボタン。|  
+|32|ALT キー。|  
+  
+ 既定では、<xref:System.Windows.Forms.Control.QueryContinueDrag>イベント セット<xref:System.Windows.Forms.QueryContinueDragEventArgs.Action%2A>に<xref:System.Windows.Forms.DragAction?displayProperty=nameWithType>場合<xref:System.Windows.Forms.QueryContinueDragEventArgs.KeyState%2A>、ミドル ネーム、左右のマウス ボタンが押されたことを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Control.QueryContinueDrag?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.Control>、ように、<xref:System.Windows.Forms.Button>または<xref:System.Windows.Forms.ComboBox>です。 インスタンスを名前`Control1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Control.QueryContinueDrag?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#43](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#43)]
+ [!code-vb[System.Windows.Forms.EventExamples#43](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#43)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

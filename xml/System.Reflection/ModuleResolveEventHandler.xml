@@ -1,0 +1,76 @@
+<Type Name="ModuleResolveEventHandler" FullName="System.Reflection.ModuleResolveEventHandler">
+  <TypeSignature Language="C#" Value="public delegate System.Reflection.Module ModuleResolveEventHandler(object sender, ResolveEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ModuleResolveEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Reflection.ModuleResolveEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ResolveEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Reflection.Module</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントの原因となったアセンブリ。</param>
+    <param name="e">イベントを記述するオブジェクトによって提供される引数。</param>
+    <summary><see cref="T:System.Reflection.Assembly" /> の <see cref="E:System.Reflection.Assembly.ModuleResolve" /> イベントを処理するメソッドを表します。</summary>
+    <returns>要求を満たすモジュール。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 共通言語ランタイム クラス ローダーでは、通常の方法でアセンブリの内部モジュールへの参照を解決できない場合は、このイベントが発生します。 このデリゲートのイベント ハンドラーをする必要がありますを見つけて要求を満たすモジュールを返します。  
+  
+   
+  
+## Examples  
+ 次の例では、イベント ハンドラーと呼ばれる実行の順序を示します。 この例では、Server1 は、MySample クラスの外部のモジュールです。  
+  
+### <a name="to-compile-and-run-the-example"></a>コンパイルし、例を実行するには  
+  
+1.  コマンド プロンプト ウィンドウを開き、MySample.cs が格納されているディレクトリに移動します。  
+  
+2.  Server1 をコンパイルする次のコマンドを使用します。  
+  
+    ```  
+    csc /out:subfolder\Server1.netmodule /t:module Server1.cs  
+    ```  
+  
+3.  次のコマンドを使用して MySample をコンパイルします。  
+  
+    ```  
+    csc /out:MySample.exe /t:exe /addmodule:subfolder\Server1.netmodule MySample.cs  
+    ```  
+  
+4.  MySample.exe を実行します。  
+  
+> [!NOTE]
+>  モジュール ファイル Server1.netmodule は正常に動作するこの例の「サブフォルダー」という名前のサブディレクトリにする必要があります。  
+  
+ [!code-csharp[System.Reflection.ModuleResolveEventHandler#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.moduleresolveeventhandler/cs/mysample.cs#1)]  
+[!code-csharp[System.Reflection.ModuleResolveEventHandler#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.reflection.moduleresolveeventhandler/cs/server1.cs#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

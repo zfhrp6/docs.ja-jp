@@ -1,0 +1,75 @@
+<Type Name="ActiveDesignSurfaceChangedEventArgs" FullName="System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class ActiveDesignSurfaceChangedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ActiveDesignSurfaceChangedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurfaceChanged" /> イベントのデータを提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ActiveDesignSurfaceChangedEventArgs (System.ComponentModel.Design.DesignSurface oldSurface, System.ComponentModel.Design.DesignSurface newSurface);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.Design.DesignSurface oldSurface, class System.ComponentModel.Design.DesignSurface newSurface) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs.#ctor(System.ComponentModel.Design.DesignSurface,System.ComponentModel.Design.DesignSurface)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="oldSurface" Type="System.ComponentModel.Design.DesignSurface" />
+        <Parameter Name="newSurface" Type="System.ComponentModel.Design.DesignSurface" />
+      </Parameters>
+      <Docs>
+        <param name="oldSurface">アクティブでなくなる、デザイン画面。</param>
+        <param name="newSurface">デザイン サーフェイスからアクティブになります。</param>
+        <summary><see cref="T:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewSurface">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignSurface NewSurface { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignSurface NewSurface" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs.NewSurface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブ化がますますデザイン画面を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignSurface" />アクティブ化がますますです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OldSurface">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignSurface OldSurface { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignSurface OldSurface" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.ActiveDesignSurfaceChangedEventArgs.OldSurface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブでなくなるデザイン画面を取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignSurface" />アクティブでなくなることができます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,390 @@
+<Type Name="ChangeConflictCollection" FullName="System.Data.Linq.ChangeConflictCollection">
+  <TypeSignature Language="C#" Value="public sealed class ChangeConflictCollection : System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;, System.Collections.Generic.IEnumerable&lt;System.Data.Linq.ObjectChangeConflict&gt;, System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ChangeConflictCollection extends System.Object implements class System.Collections.Generic.ICollection`1&lt;class System.Data.Linq.ObjectChangeConflict&gt;, class System.Collections.Generic.IEnumerable`1&lt;class System.Data.Linq.ObjectChangeConflict&gt;, class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.ChangeConflictCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.Generic.IEnumerable&lt;System.Data.Linq.ObjectChangeConflict&gt;</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>同時実行の競合に関連するオブジェクトのコレクションを返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 競合しているオブジェクトに関する情報を取得する次の例で`db.ChangeConflicts`それらのオブジェクトのコレクションを表します。  
+  
+ [!code-csharp[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/csharp/VS_Snippets_Data/system.data.linq.objectchangeconflict/cs/program.cs#1)]
+ [!code-vb[System.Data.Linq.ObjectChangeConflict#1](~/samples/snippets/visualbasic/VS_Snippets_Data/system.data.linq.objectchangeconflict/vb/module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての競合を削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Data.Linq.ObjectChangeConflict item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Contains(class System.Data.Linq.ObjectChangeConflict item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.Contains(System.Data.Linq.ObjectChangeConflict)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Data.Linq.ObjectChangeConflict" />
+      </Parameters>
+      <Docs>
+        <param name="item">指定した競合します。</param>
+        <summary>指定した競合が、コレクションのメンバーであるかどうかを指定します。</summary>
+        <returns>指定した競合が、コレクションのメンバーである場合は true を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.Data.Linq.ObjectChangeConflict[] array, int arrayIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Data.Linq.ObjectChangeConflict[] array, int32 arrayIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.CopyTo(System.Data.Linq.ObjectChangeConflict[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Data.Linq.ObjectChangeConflict[]" />
+        <Parameter Name="arrayIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="arrayIndex">配列インデックスは、コピーが開始します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの要素を配列にコピーします。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ChangeConflictCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の競合の数を返します。</summary>
+        <value>整数</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IEnumerator&lt;System.Data.Linq.ObjectChangeConflict&gt; GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;class System.Data.Linq.ObjectChangeConflict&gt; GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Data.Linq.ObjectChangeConflict&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションの列挙子を返します。</summary>
+        <returns>コレクションの列挙子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Data.Linq.ObjectChangeConflict this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Data.Linq.ObjectChangeConflict Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ChangeConflictCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ObjectChangeConflict</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">競合している項目のコレクションにインデックスを作成します。</param>
+        <summary>競合している項目を返します。</summary>
+        <value><see cref="T:System.Data.Linq.ObjectChangeConflict" />競合している項目を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (System.Data.Linq.ObjectChangeConflict item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(class System.Data.Linq.ObjectChangeConflict item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.Remove(System.Data.Linq.ObjectChangeConflict)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Data.Linq.ObjectChangeConflict" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する競合。</param>
+        <summary>指定した競合をコレクションから削除するかどうかを指定します。</summary>
+        <returns>場合は true を返します、<see cref="T:System.Data.Linq.ObjectChangeConflict" />コレクションから削除します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAll">
+      <MemberSignature Language="C#" Value="public void ResolveAll (System.Data.Linq.RefreshMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAll(valuetype System.Data.Linq.RefreshMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.ResolveAll(System.Data.Linq.RefreshMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Data.Linq.RefreshMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">使用できるオプションのいずれかの<see cref="T:System.Data.Linq.RefreshMode" />します。</param>
+        <summary>指定された方法を使用して、コレクション内のすべての競合を解決します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveAll">
+      <MemberSignature Language="C#" Value="public void ResolveAll (System.Data.Linq.RefreshMode mode, bool autoResolveDeletes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResolveAll(valuetype System.Data.Linq.RefreshMode mode, bool autoResolveDeletes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.ResolveAll(System.Data.Linq.RefreshMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Data.Linq.RefreshMode" />
+        <Parameter Name="autoResolveDeletes" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode">使用して競合を解決する方法。</param>
+        <param name="autoResolveDeletes">True の場合、自動的に変更されたデータベースではなくなったオブジェクトにより発生する競合を解決します。</param>
+        <summary>指定された方法を使用して、コレクション内のすべての競合を解決します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;.Add">
+      <MemberSignature Language="C#" Value="void ICollection&lt;ObjectChangeConflict&gt;.Add (System.Data.Linq.ObjectChangeConflict item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;.Add(class System.Data.Linq.ObjectChangeConflict item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.System#Collections#Generic#ICollection&lt;System#Data#Linq#ObjectChangeConflict&gt;#Add(System.Data.Linq.ObjectChangeConflict)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Data.Linq.ObjectChangeConflict" />
+      </Parameters>
+      <Docs>
+        <param name="item">追加する項目。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.Generic.ICollection`1.Add(`0)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 項目をコレクションに追加します。  
+  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.Generic.ICollection%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.Generic.ICollection&lt;System.Data.Linq.ObjectChangeConflict&gt;.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ChangeConflictCollection.System#Collections#Generic#ICollection&lt;System#Data#Linq#ObjectChangeConflict&gt;#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.Generic.ICollection`1.IsReadOnly" />」を参照してください。</summary>
+        <value>返します<see langword="true" />コレクションが読み取り専用の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.Generic.ICollection%601> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">配列の名前です。</param>
+        <param name="index">配列のインデックス。</param>
+        <summary>配列にコレクションをコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ChangeConflictCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」をご覧ください。</summary>
+        <value>返します<see langword="true" />コレクションへのアクセスが同期されている場合 (スレッド セーフである)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Linq.ChangeConflictCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」を参照してください。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクトを返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Linq.ChangeConflictCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」を参照してください。</summary>
+        <returns>コレクションを反復処理する列挙子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Linq.ChangeConflictCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

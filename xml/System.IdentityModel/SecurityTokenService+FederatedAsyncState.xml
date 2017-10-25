@@ -1,0 +1,139 @@
+<Type Name="SecurityTokenService+FederatedAsyncState" FullName="System.IdentityModel.SecurityTokenService+FederatedAsyncState">
+  <TypeSignature Language="C#" Value="protected class SecurityTokenService.FederatedAsyncState" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit SecurityTokenService/FederatedAsyncState extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.SecurityTokenService.FederatedAsyncState" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このクラスは、セキュリティ トークン サービス内での非同期呼び出し間で要求の状態を維持するために使用されます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederatedAsyncState (System.IdentityModel.SecurityTokenService.FederatedAsyncState federatedAsyncState);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.SecurityTokenService/FederatedAsyncState federatedAsyncState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.FederatedAsyncState.#ctor(System.IdentityModel.SecurityTokenService.FederatedAsyncState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="federatedAsyncState" Type="System.IdentityModel.SecurityTokenService+FederatedAsyncState" />
+      </Parameters>
+      <Docs>
+        <param name="federatedAsyncState"><see cref="T:System.IdentityModel.SecurityTokenService.FederatedAsyncState" />新しいインスタンスを作成する対象のインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.SecurityTokenService.FederatedAsyncState" />から、指定したクラス<see cref="T:System.IdentityModel.SecurityTokenService.FederatedAsyncState" />オブジェクト。 このコンス トラクターは、指定したインスタンスのコピーを効果的に作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="federatedAsyncState" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FederatedAsyncState (System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, System.Security.Claims.ClaimsPrincipal principal, IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken request, class System.Security.Claims.ClaimsPrincipal principal, class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.SecurityTokenService.FederatedAsyncState.#ctor(System.IdentityModel.Protocols.WSTrust.RequestSecurityToken,System.Security.Claims.ClaimsPrincipal,System.IAsyncResult)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="request" Type="System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="request">トークンの要求。</param>
+        <param name="principal">要求元の id。</param>
+        <param name="result"><see cref="T:System.IAsyncResult" />非同期呼び出しの状態を表すです。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.IdentityModel.SecurityTokenService.FederatedAsyncState" /> 、指定したトークン要求 (RST) トークンの要求元のクラスと<see cref="T:System.IAsyncResult" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="result" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsPrincipal">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsPrincipal ClaimsPrincipal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsPrincipal ClaimsPrincipal" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.FederatedAsyncState.ClaimsPrincipal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期呼び出しに関連付けられているトークンの要求者の id を取得します。</summary>
+        <value>トークンの要求者の id。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Request">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Protocols.WSTrust.RequestSecurityToken Request { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Protocols.WSTrust.RequestSecurityToken Request" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.FederatedAsyncState.Request" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Protocols.WSTrust.RequestSecurityToken</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非同期呼び出しに関連付けられている、トークン要求 (RST) を取得します。</summary>
+        <value>非同期呼び出しに関連付けられているトークンの要求。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public IAsyncResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IAsyncResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.FederatedAsyncState.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IAsyncResult" />非同期呼び出しに関連付けられています。</summary>
+        <value><see cref="T:System.IAsyncResult" />非同期呼び出しの状態を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenHandler">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityTokenHandler SecurityTokenHandler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Tokens.SecurityTokenHandler SecurityTokenHandler" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.SecurityTokenService.FederatedAsyncState.SecurityTokenHandler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityTokenHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトークン発行の非同期呼び出し中に使用されるセキュリティ トークン ハンドラーを設定します。</summary>
+        <value>使用されるトークン ハンドラー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

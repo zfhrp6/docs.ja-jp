@@ -1,0 +1,112 @@
+<Type Name="StartupNextInstanceEventArgs" FullName="Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs">
+  <TypeSignature Language="C#" Value="public class StartupNextInstanceEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi StartupNextInstanceEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see langword="My.Application.StartupNextInstance" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント Visual Basic アプリケーション モデルを使用して、単一インスタンス アプリケーション、後続のインスタンスが開始するときに発生します。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ <xref:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs>後続のアプリケーション インスタンスのコマンドライン引数を格納し、例外ハンドラーの終了時に、フォア グラウンドに最初のアプリケーション インスタンスを挿入する必要があるかどうかを示します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StartupNextInstanceEventArgs (System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; args, bool bringToForegroundFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; args, bool bringToForegroundFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.#ctor(System.Collections.ObjectModel.ReadOnlyCollection{System.String},System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="args" Type="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;" />
+        <Parameter Name="bringToForegroundFlag" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="args">A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />後続のアプリケーション インスタンスのコマンドライン引数を格納しているオブジェクト。</param>
+        <param name="bringToForegroundFlag">A<see cref="T:System.Boolean" />最初のアプリケーション インスタンスをする必要があります、例外ハンドラーの終了時に前面に移動するかどうかを示すです。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント Visual Basic アプリケーション モデルを使用して、単一インスタンス アプリケーション、後続のインスタンスが開始するときに発生します。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ <xref:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs>後続のアプリケーション インスタンスのコマンドライン引数を格納し、例外ハンドラーの終了時に、フォア グラウンドに最初のアプリケーション インスタンスを挿入する必要があるかどうかを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BringToForeground">
+      <MemberSignature Language="C#" Value="public bool BringToForeground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BringToForeground" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.BringToForeground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>例外ハンドラーの終了時に、フォア グラウンドに最初のアプリケーション インスタンスを挿入する必要があるかどうかを示します。</summary>
+        <value>A<see cref="T:System.Boolean" />最初のアプリケーション インスタンスをする必要があります、例外ハンドラーの終了時に前面に移動するかどうかを示すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Visual Basic アプリケーション モデルでは、このプロパティの値を調べてのハンドラーを実行した後、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント。 場合、<xref:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.BringToForeground%2A>プロパティは`True`、最初のアプリケーション インスタンスが前面に移動します。 それ以外の場合、最初のアプリケーション インスタンス位置は変わりません。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandLine">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; CommandLine { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; CommandLine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs.CommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後続のアプリケーション インスタンスのコマンドライン引数を取得します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />後続のアプリケーション インスタンスのコマンドライン引数を格納しているオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベント Visual Basic アプリケーション モデルを使用して、単一インスタンス アプリケーション、後続のインスタンスが開始するときに発生します。 詳細については、次を参照してください。 [Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

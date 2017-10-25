@@ -1,0 +1,45 @@
+<Type Name="MonthChangedEventHandler" FullName="System.Web.UI.WebControls.MonthChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MonthChangedEventHandler(object sender, MonthChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MonthChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.MonthChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.MonthChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.MonthChangedEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.Calendar.VisibleMonthChanged" />のイベント、<see cref="T:System.Web.UI.WebControls.Calendar" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Calendar.VisibleMonthChanged>イベントは、ユーザーのナビゲーション コントロールをクリックしたときに、<xref:System.Web.UI.WebControls.Calendar>次または前の月を表示するコントロール。  
+  
+ <xref:System.Web.UI.WebControls.MonthChangedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Calendar.VisibleMonthChanged>で表示するイベント、<xref:System.Web.UI.WebControls.Label>コントロールかどうか、<xref:System.Web.UI.WebControls.Calendar>コントロールが前方または後方の 1 か月間を移動します。  
+  
+ [!code-aspx-csharp[CalendarVisibleMonthChanged#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarVisibleMonthChanged/CS/calendarvisiblemonthchangedcs.aspx#1)]
+ [!code-aspx-vb[CalendarVisibleMonthChanged#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarVisibleMonthChanged/VB/calendarvisiblemonthchangedvb.aspx#1)]  
+  
+ [!code-aspx-csharp[CalendarVisibleMonthChanged2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CalendarVisibleMonthChanged2/CS/calendarvisiblemonthchanged2cs.aspx#1)]
+ [!code-aspx-vb[CalendarVisibleMonthChanged2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CalendarVisibleMonthChanged2/VB/calendarvisiblemonthchanged2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,108 @@
+<Type Name="HtmlTable+HtmlTableRowControlCollection" FullName="System.Web.UI.HtmlControls.HtmlTable+HtmlTableRowControlCollection">
+  <TypeSignature Language="C#" Value="protected class HtmlTable.HtmlTableRowControlCollection : System.Web.UI.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit HtmlTable/HtmlTableRowControlCollection extends System.Web.UI.ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />の行であるオブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTable" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection>クラスのコレクションを表します<xref:System.Web.UI.HtmlControls.HtmlTableRow>オブジェクトに対する、<xref:System.Web.UI.HtmlControls.HtmlTable>コントロール。 コントロールを使用して、コレクションの最後に追加することができます、<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.Add%2A>メソッド、または使用して、コレクション内の指定したインデックス位置にある、<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.AddAt%2A>メソッドです。 型のコントロールだけ<xref:System.Web.UI.HtmlControls.HtmlTableRow>に追加することができます、<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを作成する方法を示します<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection>をオーバーライドする、<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.Add%2A>メソッド テーブルの行のコレクションの先頭に追加されるため、テーブルに行を追加するとを常にします。  
+  
+ [!code-aspx-csharp[CustomHtmlTable.HtmlTableRowControlCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/CS/custom_htmltable_htmltablerowcontrolcollectioncs.aspx#1)]
+ [!code-aspx-vb[CustomHtmlTable.HtmlTableRowControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/VB/custom_htmltable_htmltablerowcontrolcollectionvb.aspx#1)]  
+  
+ [!code-csharp[CustomHtmlTable.HtmlTableRowControlCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/CS/custom_htmltable_htmltablerowcontrolcollection.cs#2)]
+ [!code-vb[CustomHtmlTable.HtmlTableRowControlCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/VB/custom_htmltable_htmltablerowcontrolcollection.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.Add(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="child">コレクションに追加する <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.Control" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されたコントロールは、必ず、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。 それ以外の場合、<xref:System.ArgumentException>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、カスタムを作成する方法を示します<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection>をオーバーライドするコレクション、<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.Add%2A>メソッド テーブルの行のコレクションの先頭に追加されるため、テーブルに行を追加するとを常にします。 通知方法、カスタム<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.Add%2A>メソッドは、基本クラスの<xref:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.AddAt%2A>メソッドを`index`パラメーターを 0 に等しい。  
+  
+ [!code-aspx-csharp[CustomHtmlTable.HtmlTableRowControlCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/CS/custom_htmltable_htmltablerowcontrolcollectioncs.aspx#1)]
+ [!code-aspx-vb[CustomHtmlTable.HtmlTableRowControlCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/VB/custom_htmltable_htmltablerowcontrolcollectionvb.aspx#1)]  
+  
+ [!code-csharp[CustomHtmlTable.HtmlTableRowControlCollection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/CS/custom_htmltable_htmltablerowcontrolcollection.cs#2)]
+ [!code-vb[CustomHtmlTable.HtmlTableRowControlCollection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomHtmlTable.HtmlTableRowControlCollection/VB/custom_htmltable_htmltablerowcontrolcollection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">追加されたコントロールは、型でなければなりません<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public override void AddAt (int index, System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAt(int32 index, class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTable.HtmlTableRowControlCollection.AddAt(System.Int32,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="index">子コントロールを追加する位置を示す、配列内の位置。</param>
+        <param name="child">コレクションに追加する <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.Control" /> オブジェクトをコレクションに追加します。 新しいコントロールは、指定したインデックス位置にある配列に追加されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されたコントロールは、必ず、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。 それ以外の場合、<xref:System.ArgumentException>がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">追加されたコントロールは、型でなければなりません<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

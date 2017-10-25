@@ -1,0 +1,616 @@
+<Type Name="RibbonQuickAccessToolBar" FullName="System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar">
+  <TypeSignature Language="C#" Value="public class RibbonQuickAccessToolBar : System.Windows.Controls.ItemsControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi RibbonQuickAccessToolBar extends System.Windows.Controls.ItemsControl" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ItemsControl</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_MainPanel", Type=typeof(System.Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_OverflowPanel", Type=typeof(System.Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_OverflowPopup", Type=typeof(System.Windows.Controls.Primitives.Popup))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_OverflowButton", Type=typeof(System.Windows.Controls.Ribbon.RibbonToggleButton))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>常に一般的なコマンドへのアクセスを提供する、ウィンドウ フレームに表示されるリボンのツールバーを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加する、<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar>を<xref:System.Windows.Controls.Ribbon.Ribbon>コントロールのコンテンツとして指定することにより、 <xref:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBar%2A?displayProperty=nameWithType> XAML を使用してプロパティ[プロパティ要素構文](~/docs/framework/wpf/advanced/xaml-syntax-in-detail.md)です。  
+  
+```  
+<ribbon:Ribbon>  
+  <ribbon:Ribbon.QuickAccessToolBar>  
+    <ribbon:RibbonQuickAccessToolBar />  
+  </ribbon:Ribbon.QuickAccessToolBar>   
+...  
+</ribbon:Ribbon>  
+  
+```  
+  
+ 次の一覧の標準的な位置を示しています、<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar>リボン要素の階層にします。  
+  
+-   <xref:System.Windows.Controls.Ribbon.Ribbon>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBar%2A?displayProperty=nameWithType> プロパティ  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonButton>, <xref:System.Windows.Controls.Ribbon.RibbonRadioButton>, <xref:System.Windows.Controls.Ribbon.RibbonToggleButton>, <xref:System.Windows.Controls.Ribbon.RibbonCheckBox>, <xref:System.Windows.Controls.Ribbon.RibbonTextBox>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonComboBox>、<xref:System.Windows.Controls.Ribbon.RibbonMenuButton>、<xref:System.Windows.Controls.Ribbon.RibbonSplitButton>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButton%2A>  
+  
+   
+  
+## Examples  
+ 次の例では、[ヘルプ] ウィンドウとクイック アクセス ツールバーの要素を追加、Visual Studio 2010 テンプレートによって作成される単純なリボンを示します。  
+  
+ [!code-xaml[Ribbon_Snippets#RibbonDefault](~/samples/snippets/csharp/VS_Snippets_Wpf/ribbon_snippets/cs/mainwindow.xaml#ribbondefault)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RibbonQuickAccessToolBar ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddCloneHandler">
+      <MemberSignature Language="C#" Value="public static void AddCloneHandler (System.Windows.DependencyObject element, System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddCloneHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.AddCloneHandler(System.Windows.DependencyObject,System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベントを追加する要素。</param>
+        <param name="handler">追加するイベント ハンドラー。</param>
+        <summary>ハンドラーを追加、<see cref="E:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.Clone" />ルーティングされたイベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void ClearContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ClearContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.ClearContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">項目の表示に使用される要素。</param>
+        <param name="item">表示する項目、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</param>
+        <summary>指定したアイテムのコンテナーをアンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの効果を元に戻します、<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.PrepareContainerForItemOverride%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CloneEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CloneEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CloneEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.Clone" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomizeMenuButton">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Ribbon.RibbonMenuButton CustomizeMenuButton { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Ribbon.RibbonMenuButton CustomizeMenuButton" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButton" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.RibbonMenuButton</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クイック アクセス ツールバーのカスタマイズ メニューを表示するために使用する <see cref="T:System.Windows.Controls.Ribbon.RibbonMenuButton" /> を取得または設定します。</summary>
+        <value>クイック アクセス ツールバーのカスタマイズ メニューを表示するために使用するボタン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CustomizeMenuButton"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButtonProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomizeMenuButtonProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomizeMenuButtonProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomizeMenuButtonProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButtonProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButton" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Windows.Controls.Ribbon.RibbonControl" /> オブジェクトを返します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Controls.Ribbon.RibbonControl" />コンテナー オブジェクトからの項目を表示するために使用、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIsOverflowItem">
+      <MemberSignature Language="C#" Value="public static bool GetIsOverflowItem (System.Windows.DependencyObject element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool GetIsOverflowItem(class System.Windows.DependencyObject element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.GetIsOverflowItem(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値の読み取り元となるオブジェクト。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowItem" />添付プロパティ オブジェクトをします。</summary>
+        <returns>オブジェクトの<see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowItem" />プロパティの値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">指定された <paramref name="element" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasOverflowItems">
+      <MemberSignature Language="C#" Value="public bool HasOverflowItems { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasOverflowItems" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.HasOverflowItems" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クイック アクセス ツールバーにアイテムをオーバーフロー メニューに非表示にするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />クイック アクセス ツールバーにアイテムをオーバーフロー メニューに非表示がある場合それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_HasOverflowItems"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.HasOverflowItemsProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasOverflowItemsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasOverflowItemsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasOverflowItemsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.HasOverflowItemsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.HasOverflowItems" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected override bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">テストする項目。</param>
+        <summary>示す値を返すかどうか、指定した項目が (またはが対象になります) 独自のコンテナーです。</summary>
+        <returns>
+          <see langword="true" />項目がの場合、 <see cref="T:System.Windows.Controls.Ribbon.RibbonControl" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowItemProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOverflowItemProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOverflowItemProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowItemProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowItem" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowOpen">
+      <MemberSignature Language="C#" Value="public bool IsOverflowOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOverflowOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクイック アクセス ツールバーのオーバーフロー メニューが開いているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クイック アクセス ツールバーのオーバーフロー メニューが開いている場合です。それ以外の場合、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsOverflowOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverflowOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOverflowOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOverflowOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.IsOverflowOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivatingKeyTip">
+      <MemberSignature Language="C#" Value="protected virtual void OnActivatingKeyTip (System.Windows.Controls.ActivatingKeyTipEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnActivatingKeyTip(class System.Windows.Controls.ActivatingKeyTipEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnActivatingKeyTip(System.Windows.Controls.ActivatingKeyTipEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ActivatingKeyTipEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">アクティベーションに関するデータが含まれています。</param>
+        <summary>KeyTip またはアクセラレータ キーが押されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいテンプレートが適用されたときの <see cref="T:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar" /> のビジュアル ツリーを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードまたは内部プロセス (リビルド レイアウト パスなど) が <xref:System.Windows.FrameworkElement.ApplyTemplate%2A> メソッドを呼び出すと、このメソッドが必ず呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコントロールの新しい <see cref="T:System.Windows.Automation.Peers.RibbonQuickAccessToolBarAutomationPeer" /> オブジェクトを作成します。</summary>
+        <returns>このコントロールの新しいオートメーション ピア オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">変更に関する情報。</param>
+        <summary>呼び出されたときに、<see cref="P:System.Windows.Controls.ItemsControl.Items" />プロパティが変更されました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.KeyDown" /> ルーティング イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewKeyTipAccessed">
+      <MemberSignature Language="C#" Value="protected virtual void OnPreviewKeyTipAccessed (System.Windows.Controls.KeyTipAccessedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnPreviewKeyTipAccessed(class System.Windows.Controls.KeyTipAccessedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.OnPreviewKeyTipAccessed(System.Windows.Controls.KeyTipAccessedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.KeyTipAccessedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Controls.KeyTipService.PreviewKeyTipAccessed" /> ルーティング イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">項目の表示に使用される要素。</param>
+        <param name="item">表示する項目、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCloneHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveCloneHandler (System.Windows.DependencyObject element, System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveCloneHandler(class System.Windows.DependencyObject element, class System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.RemoveCloneHandler(System.Windows.DependencyObject,System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.Controls.Ribbon.RibbonQuickAccessToolBarCloneEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベントを削除する要素。</param>
+        <param name="handler">削除するイベント ハンドラー。</param>
+        <summary>ハンドラーを削除、<see cref="E:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.Clone" />ルーティングされたイベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Ribbon">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Ribbon.Ribbon Ribbon { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Ribbon.Ribbon Ribbon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.Ribbon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.Ribbon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>参照を取得、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />がこのコントロールが属しています。</summary>
+        <value>参照、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />がこのコントロールが属しています。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、親に設定<xref:System.Windows.Controls.Ribbon.Ribbon>制御し、は、子コントロールを継承します。 定義されている visual スタイル ブラシへのアクセスに使用される、<xref:System.Windows.Controls.Ribbon.Ribbon>クラスです。  
+  
+<a name="dependencyPropertyInfo_Ribbon"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.RibbonProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RibbonProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty RibbonProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty RibbonProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.RibbonProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.Ribbon" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

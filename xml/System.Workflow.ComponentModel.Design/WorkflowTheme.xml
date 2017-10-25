@@ -1,0 +1,759 @@
+<Type Name="WorkflowTheme" FullName="System.Workflow.ComponentModel.Design.WorkflowTheme">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowTheme : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WorkflowTheme extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デザイン時環境でワークフローの外観プロパティの設定を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ワークフロー テーマは、ワークフロー デザイン サーフェイスの外観を定義します。 これには、ワークフローに定義される背景スタイル、前景スタイル、フォント、およびアイコンが含まれます。  
+  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme> は、特定のワークフローに定義されたテーマです。 特定のワークフロー テーマを必要としない場合は、<xref:System.Workflow.ComponentModel.Design.AmbientTheme> クラスを既定のプロパティに使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowTheme ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AmbientTheme">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.AmbientTheme AmbientTheme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.ComponentModel.Design.AmbientTheme AmbientTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.AmbientTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.AmbientTheme</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> を取得します。</summary>
+        <value><see cref="T:System.Workflow.ComponentModel.Design.AmbientTheme" /> の外観の既定値を示す <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.AmbientTheme> は、ワークフロー デザイン サーフェイスの外観を示します。 これには、ワークフロー デザイン サーフェイスに定義される背景スタイル、前景スタイル、フォント、およびアイコンが含まれます。  
+  
+   
+  
+## Examples  
+ 次の例は、`AmbientTheme` プロパティのアクセス方法を示しています。 この例は、追跡プロファイル デザイナーの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[Wf_samples#124](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#124)]
+ [!code-vb[Wf_samples#124](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#124)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.WorkflowTheme Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Design.WorkflowTheme Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>重複テーマを作成します。</summary>
+        <returns>新しく複製されたテーマを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製するテーマとプロパティ設定が一致する重複テーマを作成するには、`Clone` を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingFileDirectory">
+      <MemberSignature Language="C#" Value="public string ContainingFileDirectory { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ContainingFileDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.ContainingFileDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Workflow.ComponentModel.Design.WorkflowTheme.FilePath" /> のディレクトリ部分を取得します。</summary>
+        <value><see cref="P:System.Workflow.ComponentModel.Design.WorkflowTheme.FilePath" /> のディレクトリ部分。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.ContainingFileDirectory%2A> のディレクトリ部分を取得するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.FilePath%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStandardTheme">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.WorkflowTheme CreateStandardTheme (System.Workflow.ComponentModel.Design.ThemeType standardThemeType);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Design.WorkflowTheme CreateStandardTheme(valuetype System.Workflow.ComponentModel.Design.ThemeType standardThemeType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.CreateStandardTheme(System.Workflow.ComponentModel.Design.ThemeType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="standardThemeType" Type="System.Workflow.ComponentModel.Design.ThemeType" />
+      </Parameters>
+      <Docs>
+        <param name="standardThemeType">作成する標準テーマの <see cref="T:System.Workflow.ComponentModel.Design.ThemeType" />。</param>
+        <summary>標準テーマを作成します。</summary>
+        <returns>新しく作成された <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー デザイナーを使用するどのユーザーも使用できる新しいテーマを作成するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.CreateStandardTheme%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentTheme">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.WorkflowTheme CurrentTheme { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Workflow.ComponentModel.Design.WorkflowTheme CurrentTheme" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.CurrentTheme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のテーマを取得または設定します。</summary>
+        <value>表示設定に使用される <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローの表示に使用されるテーマに変更を加えるには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.CurrentTheme%2A> を使用します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.CurrentTheme%2A> プロパティを使用して、ワークフローに関連付けられた <xref:System.Workflow.ComponentModel.Design.AmbientTheme> にアクセスする方法のコード例を、次に示します。  
+  
+ このコード例は、DesignerGlyphProvider.cs ファイルに含まれている、ワークフロー モニターの SDK サンプルの一部です。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][ワークフロー モニター](http://msdn.microsoft.com/en-us/4f70c1c5-f82d-4d5f-8b7d-943b9f99f8e2)です。  
+  
+ [!code-csharp[WF_Samples#133](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#133)]
+ [!code-vb[WF_Samples#133](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#133)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの説明を取得または設定します。</summary>
+        <value>テーマの説明。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー テーマが読み取り専用であるため、プロパティ値は設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerThemes">
+      <MemberSignature Language="C#" Value="public System.Collections.IList DesignerThemes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList DesignerThemes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.DesignerThemes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフローに関連付けられたデザイナー テーマのリストを取得します。</summary>
+        <value>ワークフローに関連付けられたデザイナー テーマのリスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフローに関連付けられたデザイナー テーマのリストを取得するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.DesignerThemes%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableChangeNotification">
+      <MemberSignature Language="C#" Value="public static bool EnableChangeNotification { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableChangeNotification" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.EnableChangeNotification" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>変更通知を有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          変更通知を有効にする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更通知を有効にすると、テーマに変更が加えられたときにテーマ変更イベントが発生するようになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilePath">
+      <MemberSignature Language="C#" Value="public string FilePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.FilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマのファイル パスを取得または設定します。</summary>
+        <value>テーマのファイル パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.FilePath%2A> は、テーマの設定が格納されているファイルへのパスを表します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー テーマが読み取り専用であるため、プロパティ値は設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~WorkflowTheme ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、オブジェクトはリソースを確定的にクリーンアップできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.System%23IDisposable%23Dispose%2A>(`false`) を呼び出してリソースをクリーンアップします。 <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.System%23IDisposable%23Dispose%2A> をオーバーライドしてクリーンアップをカスタマイズします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateThemeFilePath">
+      <MemberSignature Language="C#" Value="public static string GenerateThemeFilePath ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GenerateThemeFilePath() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.GenerateThemeFilePath" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーマのファイル パスを生成します。</summary>
+        <returns>テーマの一意の新しいファイル パス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマの一意のファイル パスを作成するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.GenerateThemeFilePath%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignerTheme">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ActivityDesignerTheme GetDesignerTheme (System.Workflow.ComponentModel.Design.ActivityDesigner designer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Design.ActivityDesignerTheme GetDesignerTheme(class System.Workflow.ComponentModel.Design.ActivityDesigner designer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.GetDesignerTheme(System.Workflow.ComponentModel.Design.ActivityDesigner)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ActivityDesignerTheme</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="designer" Type="System.Workflow.ComponentModel.Design.ActivityDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="designer">テーマの取得元のアクティビティ デザイナー。</param>
+        <summary>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" /> のテーマを取得します。</summary>
+        <returns>指定した <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesignerTheme" /> に関連付けられている <see cref="T:System.Workflow.ComponentModel.Design.ActivityDesigner" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したアクティビティ デザイナーに関連付けられたテーマを取得するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.GetDesignerTheme%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.WorkflowTheme Load (string themeFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Design.WorkflowTheme Load(string themeFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.Load(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="themeFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="themeFilePath">テーマのファイル パス</param>
+        <summary>指定したファイル パスからテーマを読み込みます。</summary>
+        <returns>指定したファイル名から読み込まれた新しい <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.WorkflowTheme Load (System.ComponentModel.Design.Serialization.IDesignerSerializationManager serializationManager, string themeFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Design.WorkflowTheme Load(class System.ComponentModel.Design.Serialization.IDesignerSerializationManager serializationManager, string themeFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.Load(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationManager" Type="System.ComponentModel.Design.Serialization.IDesignerSerializationManager" />
+        <Parameter Name="themeFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serializationManager">テーマを読み込むために使用するシリアル化マネージャー。</param>
+        <param name="themeFilePath">テーマの読み込み元のファイル パス。</param>
+        <summary>シリアル化マネージャーを使用して、指定したパスから新しいテーマを読み込みます。</summary>
+        <returns>指定したシリアル化マネージャーを使用して、指定したファイル パスから読み込まれた新しい <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマがカスタム シリアル化を必要とする場合、カスタム シリアル化マネージャーを使用してメソッドを読み込むには、このメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadThemeSettingFromRegistry">
+      <MemberSignature Language="C#" Value="public static System.Workflow.ComponentModel.Design.WorkflowTheme LoadThemeSettingFromRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Workflow.ComponentModel.Design.WorkflowTheme LoadThemeSettingFromRegistry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.LoadThemeSettingFromRegistry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.WorkflowTheme</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>レジストリからテーマを読み込みます。</summary>
+        <returns>レジストリから読み込まれた <see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `LoadThemeSettingFromRegistry` は、を読み込みます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupPath">
+      <MemberSignature Language="C#" Value="public static string LookupPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string LookupPath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.LookupPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジストリからファイル パスを取得します。</summary>
+        <value>レジストリから取得されたテーマへのファイル パス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `FilePath` は、テーマの設定が格納されているファイルへのパスを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの名前を取得または設定します。</summary>
+        <value>テーマの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマを他のテーマと一意に識別するには、名前を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー テーマが読み取り専用であるため、プロパティ値は設定できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="public bool ReadOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.ReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー テーマが読み取り専用かどうかを示す値を取得または設定します。</summary>
+        <value>
+          ワークフロー テーマが読み取り専用の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ `ReadOnly` プロパティを設定するために <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.AmbientTheme%2A> プロパティを設定または設定解除する例を、次に示します。 この例は、追跡プロファイル デザイナーの SDK サンプルです。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][追跡プロファイル デザイナーのサンプル](http://msdn.microsoft.com/en-us/a280199c-3000-4148-ac63-cb5aaeac07c8)です。  
+  
+ [!code-csharp[Wf_samples#124](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#124)]
+ [!code-vb[Wf_samples#124](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#124)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegistryKeyPath">
+      <MemberSignature Language="C#" Value="public static string RegistryKeyPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string RegistryKeyPath" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.RegistryKeyPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマのレジストリ キーのパスを取得します。</summary>
+        <value>テーマのレジストリ キーのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows レジストリに一意の場所を準備してテーマ情報を保存するには、レジストリ キーを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public void Save (string themeFilePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Save(string themeFilePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.Save(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="themeFilePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="themeFilePath"><see langword="WorkflowTheme" /> を保存するファイル。</param>
+        <summary>テーマをファイルに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマをファイルに保持するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.Save%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveThemeSettingToRegistry">
+      <MemberSignature Language="C#" Value="public static void SaveThemeSettingToRegistry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SaveThemeSettingToRegistry() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.SaveThemeSettingToRegistry" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーマをレジストリに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.WorkflowTheme.SaveThemeSettingToRegistry%2A> によって指定されたキーを使用してテーマをレジストリに保存するには、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.RegistryKeyPath%2A> を使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StandardThemes">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IDictionary&lt;System.Workflow.ComponentModel.Design.ThemeType,string[]&gt; StandardThemes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Collections.Generic.IDictionary`2&lt;valuetype System.Workflow.ComponentModel.Design.ThemeType, string[]&gt; StandardThemes" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.StandardThemes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Workflow.ComponentModel.Design.ThemeType,System.String[]&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準テーマのリストを取得します。</summary>
+        <value>使用できるテーマのリスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IDisposable.Dispose">
+      <MemberSignature Language="C#" Value="void IDisposable.Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.IDisposable.Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.WorkflowTheme.System#IDisposable#Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.WorkflowTheme" /> によって使用されているマネージ リソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThemeChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler ThemeChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ThemeChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Workflow.ComponentModel.Design.WorkflowTheme.ThemeChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマが変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テーマのプロパティが変更されたとき、またはテーマが読み込まれたときに、<xref:System.Workflow.ComponentModel.Design.WorkflowTheme.ThemeChanged> が発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Design.ThemeType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Workflow.ComponentModel.Design.ThemeType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Design.ThemeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマの種類を取得します。</summary>
+        <value>テーマの <see cref="T:System.Workflow.ComponentModel.Design.ThemeType" />。 可能性のある値は、<see langword="Default" />、<see langword="System" />、および <see langword="UserDefined" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.WorkflowTheme.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テーマのバージョンを取得または設定します。</summary>
+        <value>テーマのバージョン情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きテーマの逐次改良を示すには、バージョン情報を使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー テーマが読み取り専用であるため、プロパティ値は設定できません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

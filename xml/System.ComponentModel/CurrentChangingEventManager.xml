@@ -1,0 +1,190 @@
+<Type Name="CurrentChangingEventManager" FullName="System.ComponentModel.CurrentChangingEventManager">
+  <TypeSignature Language="C#" Value="public class CurrentChangingEventManager : System.Windows.WeakEventManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CurrentChangingEventManager extends System.Windows.WeakEventManager" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.CurrentChangingEventManager" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.WeakEventManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Windows.WeakEventManager" />実装のリスナーをアタッチする、「脆弱なイベントのリスナー」パターンを使用できるように、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンでリスナーをするために、リスナー オブジェクトを実装する必要があります<xref:System.Windows.IWeakEventListener>です。 実装する必要はありません<xref:System.Windows.IWeakEventListener>イベントのソースであるクラスにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddHandler">
+      <MemberSignature Language="C#" Value="public static void AddHandler (System.ComponentModel.ICollectionView source, EventHandler&lt;System.ComponentModel.CurrentChangingEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddHandler(class System.ComponentModel.ICollectionView source, class System.EventHandler`1&lt;class System.ComponentModel.CurrentChangingEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.AddHandler(System.ComponentModel.ICollectionView,System.EventHandler{System.ComponentModel.CurrentChangingEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.ICollectionView" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.ComponentModel.CurrentChangingEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</param>
+        <summary>指定されたソースが発生したときに呼び出される指定されたイベント ハンドラーを追加、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定期受信に使用するイベント ハンドラーを指定するには、このメソッドを使用して、<xref:System.ComponentModel.ICollectionView.CurrentChanging>イベント.  リスナー オブジェクトを実装する必要はありませんこのメソッドを使用するときに、<xref:System.Windows.IWeakEventListener>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddListener">
+      <MemberSignature Language="C#" Value="public static void AddListener (System.ComponentModel.ICollectionView source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddListener(class System.ComponentModel.ICollectionView source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.AddListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.ICollectionView" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <param name="listener">リスナーとして追加するオブジェクト。</param>
+        <summary>指定されたリスナーを追加、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />指定したソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewListenerList">
+      <MemberSignature Language="C#" Value="protected override System.Windows.WeakEventManager.ListenerList NewListenerList ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.WeakEventManager/ListenerList NewListenerList() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.NewListenerList" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.WeakEventManager+ListenerList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リスナーを格納する新しいオブジェクトを返します、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</summary>
+        <returns>リスナーを格納する新しいオブジェクト、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveHandler (System.ComponentModel.ICollectionView source, EventHandler&lt;System.ComponentModel.CurrentChangingEventArgs&gt; handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveHandler(class System.ComponentModel.ICollectionView source, class System.EventHandler`1&lt;class System.ComponentModel.CurrentChangingEventArgs&gt; handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.RemoveHandler(System.ComponentModel.ICollectionView,System.EventHandler{System.ComponentModel.CurrentChangingEventArgs})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.ICollectionView" />
+        <Parameter Name="handler" Type="System.EventHandler&lt;System.ComponentModel.CurrentChangingEventArgs&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="source">基になるオブジェクトが発生し、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</param>
+        <param name="handler">処理するデリゲート、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />イベント。</param>
+        <summary>指定したソースから指定されたイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="handler" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveListener">
+      <MemberSignature Language="C#" Value="public static void RemoveListener (System.ComponentModel.ICollectionView source, System.Windows.IWeakEventListener listener);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveListener(class System.ComponentModel.ICollectionView source, class System.Windows.IWeakEventListener listener) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.RemoveListener(System.ComponentModel.ICollectionView,System.Windows.IWeakEventListener)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.ComponentModel.ICollectionView" />
+        <Parameter Name="listener" Type="System.Windows.IWeakEventListener" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <param name="listener">削除するリスナー。</param>
+        <summary>指定されたリスナーの削除、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />指定したソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StartListening">
+      <MemberSignature Language="C#" Value="protected override void StartListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StartListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.StartListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <summary>リッスンを開始、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />指定したソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StopListening">
+      <MemberSignature Language="C#" Value="protected override void StopListening (object source);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void StopListening(object source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CurrentChangingEventManager.StopListening(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="source">イベントを持つオブジェクト。</param>
+        <summary>リッスンが停止、<see cref="E:System.ComponentModel.ICollectionView.CurrentChanging" />指定したソースのイベントです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

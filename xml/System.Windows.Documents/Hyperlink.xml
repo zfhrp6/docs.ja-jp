@@ -1,0 +1,822 @@
+<Type Name="Hyperlink" FullName="System.Windows.Documents.Hyperlink">
+  <TypeSignature Language="C#" Value="public class Hyperlink : System.Windows.Documents.Span, System.Windows.Input.ICommandSource, System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Hyperlink extends System.Windows.Documents.Span implements class System.Windows.Input.ICommandSource, class System.Windows.Markup.IUriContext" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Documents.Hyperlink" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Documents.Span</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Input.ICommandSource</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IUriContext</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Documents.TextElementEditingBehavior(IsMergeable=false, IsTypographicOnly=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フロー コンテンツ内のハイパーリンクをホストする機能を提供するインラインレベル フロー コンテンツ要素。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Documents.Hyperlink>実装する、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>で設定するプロパティ、<xref:System.Uri>されたコンテンツをハイパーリンクがクリックしてされたときにナビゲートする必要があります。 <xref:System.Windows.Documents.Hyperlink>ナビゲーション場合のみ、ただし、いずれかの直接または間接親、<xref:System.Windows.Documents.Hyperlink>を含むナビゲーション ホストは、 <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.Frame>、または任意のブラウザーをホストできる[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)](が含まれている[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]、 [!INCLUDE[TLA2#tla_ie6](~/includes/tla2sharptla-ie6-md.md)]、および Firefox 2.0 以降)。 詳細については、次を参照してください。、**ナビゲーション ホスト**でトピック[ナビゲーション概要](~/docs/framework/wpf/app-development/navigation-overview.md)です。  
+  
+ <xref:System.Windows.Documents.Hyperlink>子コンテンツの強力なコンテンツ モデルを適用します。 参照してください[TextElement コンテンツ モデルの概要](~/docs/framework/wpf/advanced/textelement-content-model-overview.md)の詳細については、<xref:System.Windows.Documents.Hyperlink>コンテンツ モデルです。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+   
+  
+## Examples  
+ 次の例の簡単な使用を示しています、<xref:System.Windows.Documents.Hyperlink>要素。  
+  
+ [!code-xaml[HyperlinkSnippets#_Hyperlink_NavUriXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml#_hyperlink_navurixaml)]  
+  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Documents.Hyperlink>プログラムでします。  
+  
+ [!code-csharp[HyperlinkSnippets#_Hyperlink_NavUri](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml.cs#_hyperlink_navuri)]
+ [!code-vb[HyperlinkSnippets#_Hyperlink_NavUri](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HyperlinkSnippets/visualbasic/window1.xaml.vb#_hyperlink_navuri)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hyperlink ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しい既定のインスタンスを初期化、<see cref="T:System.Windows.Documents.Hyperlink" />クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hyperlink (System.Windows.Documents.Inline childInline);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline childInline) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.#ctor(System.Windows.Documents.Inline)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childInline" Type="System.Windows.Documents.Inline" />
+      </Parameters>
+      <Docs>
+        <param name="childInline"><see cref="T:System.Windows.Documents.Inline" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Hyperlink" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Hyperlink" />クラス、指定した<see cref="T:System.Windows.Documents.Inline" />オブジェクトを新しいの初期コンテンツとして<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用方法を示します。  
+  
+ [!code-csharp[HyperlinkSnippets#_Hyperlink_Const1](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml.cs#_hyperlink_const1)]
+ [!code-vb[HyperlinkSnippets#_Hyperlink_Const1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HyperlinkSnippets/visualbasic/window1.xaml.vb#_hyperlink_const1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hyperlink (System.Windows.Documents.Inline childInline, System.Windows.Documents.TextPointer insertionPosition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.Inline childInline, class System.Windows.Documents.TextPointer insertionPosition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.#ctor(System.Windows.Documents.Inline,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="childInline" Type="System.Windows.Documents.Inline" />
+        <Parameter Name="insertionPosition" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="childInline"><see cref="T:System.Windows.Documents.Inline" />新しいの初期コンテンツを指定するオブジェクト<see cref="T:System.Windows.Documents.Hyperlink" />です。  このパラメーターがあります<see langword="null" />、後者ありません<see cref="T:System.Windows.Documents.Inline" />を挿入します。</param>
+        <param name="insertionPosition">A<see cref="T:System.Windows.Documents.TextPointer" />を挿入する位置の挿入位置を指定する、<see cref="T:System.Windows.Documents.Hyperlink" />要素は、その作成した後または<see langword="null" />ありませんを自動挿入するためです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Hyperlink" />クラス、指定した<see cref="T:System.Windows.Documents.Inline" />オブジェクトとして、新しいの初期コンテンツ<see cref="T:System.Windows.Documents.Hyperlink" />、および<see cref="T:System.Windows.Documents.TextPointer" />挿入位置を指定する、新しい<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用方法を示します。  
+  
+ [!code-csharp[HyperlinkSnippets#_Hyperlink_Const2](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml.cs#_hyperlink_const2)]
+ [!code-vb[HyperlinkSnippets#_Hyperlink_Const2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HyperlinkSnippets/visualbasic/window1.xaml.vb#_hyperlink_const2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Hyperlink (System.Windows.Documents.TextPointer start, System.Windows.Documents.TextPointer end);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Documents.TextPointer start, class System.Windows.Documents.TextPointer end) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.#ctor(System.Windows.Documents.TextPointer,System.Windows.Documents.TextPointer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="start" Type="System.Windows.Documents.TextPointer" />
+        <Parameter Name="end" Type="System.Windows.Documents.TextPointer" />
+      </Parameters>
+      <Docs>
+        <param name="start">A<see cref="T:System.Windows.Documents.TextPointer" />に含まれる新しいへのコンテンツの選択範囲の先頭を示す<see cref="T:System.Windows.Documents.Hyperlink" />です。</param>
+        <param name="end">A<see cref="T:System.Windows.Documents.TextPointer" />に含まれる新しいへのコンテンツの選択範囲の終了を示す<see cref="T:System.Windows.Documents.Hyperlink" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Documents.Hyperlink" />クラス、2 つ<see cref="T:System.Windows.Documents.TextPointer" />の先頭と末尾に含まれる新しいへのコンテンツの選択範囲を示すオブジェクト<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、新しい初期化を意図して<xref:System.Windows.Documents.Hyperlink>既存の選択範囲を囲むことなどのコンテンツ要素。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターの使用方法を示します。  
+  
+ [!code-csharp[HyperlinkSnippets#_Hyperlink_Const3](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml.cs#_hyperlink_const3)]
+ [!code-vb[HyperlinkSnippets#_Hyperlink_Const3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HyperlinkSnippets/visualbasic/window1.xaml.vb#_hyperlink_const3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="start" /> または <paramref name="end" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="start" />および<paramref name="end" />によってエンクロージャに適したコンテンツの範囲に解決されません、<see cref="T:System.Windows.Documents.Span" />要素。 たとえば、場合<paramref name="start" />と<paramref name="end" />別の段落に位置を示します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="protected virtual Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のベース URI、<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <value>ベース URI を<see cref="T:System.Windows.Documents.Hyperlink" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.Hyperlink.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マウスの左ボタンがクリックしたときに発生する<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_Click"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.ClickEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClickEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ClickEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ClickEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.ClickEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Documents.Hyperlink.Click" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.ICommand Command { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.ICommand Command" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.Command" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けるコマンド、<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <value>関連付けるコマンド、<see cref="T:System.Windows.Documents.Hyperlink" />です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_Command"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.CommandProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameter">
+      <MemberSignature Language="C#" Value="public object CommandParameter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CommandParameter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.CommandParameter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.NeverLocalize)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定コマンドのパラメーターで指定されたコマンドに関連付けられている、<see cref="P:System.Windows.Documents.Hyperlink.Command" />プロパティです。</summary>
+        <value>指定されたコマンドのパラメーターを指定するオブジェクト、<see cref="P:System.Windows.Documents.Hyperlink.Command" />プロパティです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CommandParameter"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.CommandParameterProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameterProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandParameterProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandParameterProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.CommandParameterProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Hyperlink.CommandParameter" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.CommandProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Hyperlink.Command" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.IInputElement CommandTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.IInputElement CommandTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.CommandTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Action")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.IInputElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する target 要素で指定されたコマンドを実行するために、<see cref="P:System.Windows.Documents.Hyperlink.Command" />プロパティです。</summary>
+        <value>指定されたコマンドを実行するターゲット要素、<see cref="P:System.Windows.Documents.Hyperlink.Command" />プロパティです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CommandTarget"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.CommandTargetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CommandTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CommandTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.CommandTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Hyperlink.CommandTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoClick">
+      <MemberSignature Language="C#" Value="public void DoClick ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DoClick() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.DoClick" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クリックするとユーザーの行為をシミュレート、<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すことは、ユーザーをクリックすると同じ、<xref:System.Windows.Documents.Hyperlink>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEnabledCore">
+      <MemberSignature Language="C#" Value="protected override bool IsEnabledCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEnabledCore" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.IsEnabledCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Documents.Hyperlink" />を有効にします。</summary>
+        <value>
+          <see cref="T:System.Windows.Documents.Hyperlink" /> が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.Windows.ContentElement.IsEnabledCore%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUri">
+      <MemberSignature Language="C#" Value="public Uri NavigateUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri NavigateUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.NavigateUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Hyperlink)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ときに移動する、<see cref="T:System.Windows.Documents.Hyperlink" />がアクティブ化します。</summary>
+        <value><see cref="T:System.Uri" />ときに移動する、<see cref="T:System.Windows.Documents.Hyperlink" />がアクティブ化します。 既定値は、<see langword="null" /> です。  
+  
+ <block subset="none" type="note"><para><see cref="T:System.Windows.Documents.Hyperlink" />値に移動できる、<see cref="P:System.Windows.Documents.Hyperlink.NavigateUri" />場合にのみ、プロパティの直接または間接の親、<see cref="T:System.Windows.Documents.Hyperlink" />を含むナビゲーション ホストは、 <see cref="T:System.Windows.Navigation.NavigationWindow" />、 <see cref="T:System.Windows.Controls.Frame" />、または任意のブラウザーをホストできる[!INCLUDE[TLA2#tla_xbap#plural](~/includes/tla2sharptla-xbapsharpplural-md.md)](を含む[!INCLUDE[TLA2#tla_ie7](~/includes/tla2sharptla-ie7-md.md)]、 [!INCLUDE[TLA2#tla_ie6](~/includes/tla2sharptla-ie6-md.md)]、および Firefox 2.0 以降)。 詳細については、次を参照してください。、**ナビゲーション ホスト**」の「[ナビゲーション概要](~/docs/framework/wpf/app-development/navigation-overview.md)です。  
+  
+</para></block></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のインライン要素にリンク、要素名の前にシャープ記号を指定します (#)。  
+  
+ ユーザーが経由でマウスを置いたときに、<xref:System.Windows.Documents.Hyperlink>で、 [!INCLUDE[TLA2#tla_xbap](~/includes/tla2sharptla-xbap-md.md)]、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]に格納されている、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティは、ステータス バーに表示されます。 <xref:System.Windows.Documents.Hyperlink>これに移動[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]、ユーザーがクリックしたとき、<xref:System.Windows.Documents.Hyperlink>です。 場合の値、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティが変更されたユーザーがクリックした後、<xref:System.Windows.Documents.Hyperlink>と後続のナビゲーション要求の前に<xref:System.Windows.Documents.Hyperlink>の新しい値を無視、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティに移動し、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の値が、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティ、ユーザーがクリックされたときに、<xref:System.Windows.Documents.Hyperlink>です。  
+  
+> [!NOTE]
+>  使用してのみに限定されません、<xref:System.Windows.Documents.Hyperlink>ナビゲーションを行うことです。 使用することができます、<xref:System.Windows.Documents.FixedPage.NavigateUri%2A>次からしかプロパティも、接続されている: <xref:System.Windows.Documents.FixedPage>、 <xref:System.Windows.Shapes.Path>、 <xref:System.Windows.Controls.Canvas>、および<xref:System.Windows.Documents.Glyphs>です。  
+  
+<a name="dependencyPropertyInfo_NavigateUri"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.NavigateUriProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>の属性、<xref:System.Windows.Documents.Hyperlink>要素。  
+  
+ [!code-xaml[HyperlinkSnippets#_Hyperlink_NavUriXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml#_hyperlink_navurixaml)]  
+  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティ プログラムでします。  
+  
+ [!code-csharp[HyperlinkSnippets#_Hyperlink_NavUri](~/samples/snippets/csharp/VS_Snippets_Wpf/HyperlinkSnippets/CSharp/Window1.xaml.cs#_hyperlink_navuri)]
+ [!code-vb[HyperlinkSnippets#_Hyperlink_NavUri](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HyperlinkSnippets/visualbasic/window1.xaml.vb#_hyperlink_navuri)]  
+  
+ 次の例を使用する方法を示しています、 **mailto:** [!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]を電子メール アドレス、電子メール アドレスと、件名、および電子メール アドレスを含む、新しいメール] ウィンドウを開くには、件名、および本文です。  
+  
+ [!code-xaml[HOWTONavigationMailToSnippet#MailToMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/HOWTONavigationMailToSnippet/CS/HomePage.xaml#mailtomarkup)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUriProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty NavigateUriProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty NavigateUriProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.NavigateUriProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Hyperlink.NavigateUri" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.OnClick" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>処理、<see cref="E:System.Windows.Documents.Hyperlink.Click" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドに移動、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]によって指定された、<xref:System.Windows.Documents.Hyperlink.NavigateUri%2A>プロパティ、および記号、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]訪問済みとして。  
+  
+> [!IMPORTANT]
+>  構成によっては、ホスト コンピューターのセキュリティ、特定の形式のナビゲーション (への移動など、[!INCLUDE[TLA#tla_unc](~/includes/tlasharptla-unc-md.md)]パス)、インターネット ゾーンでは許可されません。  このような場合は、このメソッドは完全な信頼を要求します。  詳細については、次を参照してください。[コード アクセス セキュリティ](~/docs/framework/misc/code-access-security.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Documents.Hyperlink" />します。</summary>
+        <returns><see cref="T:System.Windows.Automation.Peers.AutomationPeer" />オブジェクトの<see cref="T:System.Windows.Documents.Hyperlink" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnCreateAutomationPeer%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられている引数、<see cref="E:System.Windows.ContentElement.KeyDown" />イベント。</param>
+        <summary>処理、<see cref="E:System.Windows.ContentElement.KeyDown" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnKeyDown%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられている引数、<see cref="E:System.Windows.ContentElement.MouseLeftButtonDown" />イベント。</param>
+        <summary>処理、<see cref="E:System.Windows.ContentElement.MouseLeftButtonDown" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnMouseLeftButtonDown%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnMouseLeftButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnMouseLeftButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Documents.Hyperlink.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">関連付けられている引数、<see cref="E:System.Windows.ContentElement.MouseLeftButtonUp" />イベント。</param>
+        <summary>処理、<see cref="E:System.Windows.ContentElement.MouseLeftButtonUp" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Windows.ContentElement.OnMouseLeftButtonUp%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestNavigate">
+      <MemberSignature Language="C#" Value="public event System.Windows.Navigation.RequestNavigateEventHandler RequestNavigate;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Navigation.RequestNavigateEventHandler RequestNavigate" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Documents.Hyperlink.RequestNavigate" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Navigation.RequestNavigateEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ナビゲーション イベントが要求されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_RequestNavigate"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.RequestNavigateEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.Navigation.RequestNavigateEventHandler>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestNavigateEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent RequestNavigateEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent RequestNavigateEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.RequestNavigateEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Documents.Hyperlink.RequestNavigate" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IUriContext.BaseUri">
+      <MemberSignature Language="C#" Value="Uri System.Windows.Markup.IUriContext.BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri System.Windows.Markup.IUriContext.BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.System#Windows#Markup#IUriContext#BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のベース URI、<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <value>ベース URI を<see cref="T:System.Windows.Documents.Hyperlink" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetName">
+      <MemberSignature Language="C#" Value="public string TargetName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TargetName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Documents.Hyperlink.TargetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Modifiability=System.Windows.Modifiability.Unmodifiable)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定対象のウィンドウまたはフレームの名前、<see cref="T:System.Windows.Documents.Hyperlink" />です。</summary>
+        <value>対象のウィンドウまたはフレームの名前を指定する文字列、<see cref="T:System.Windows.Documents.Hyperlink" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、`TARGET`の属性、[!INCLUDE[TLA#tla_html](~/includes/tlasharptla-html-md.md)]ハイパーリンクです。  
+  
+<a name="dependencyPropertyInfo_TargetName"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Documents.Hyperlink.TargetNameProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetNameProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TargetNameProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TargetNameProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Documents.Hyperlink.TargetNameProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Documents.Hyperlink.TargetName" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

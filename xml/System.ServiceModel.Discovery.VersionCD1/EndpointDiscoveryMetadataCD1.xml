@@ -1,0 +1,152 @@
+<Type Name="EndpointDiscoveryMetadataCD1" FullName="System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1">
+  <TypeSignature Language="C#" Value="public class EndpointDiscoveryMetadataCD1 : System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EndpointDiscoveryMetadataCD1 extends System.Object implements class System.Xml.Serialization.IXmlSerializable" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Xml.Serialization.IXmlSerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Xml.Serialization.XmlSchemaProvider("GetSchema")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WS-Discovery プロトコルの Committee Draft 1 バージョンに基づいた探索サービスのメタデータを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FromEndpointDiscoveryMetadata">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1 FromEndpointDiscoveryMetadata (System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1 FromEndpointDiscoveryMetadata(class System.ServiceModel.Discovery.EndpointDiscoveryMetadata endpointDiscoveryMetadata) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.FromEndpointDiscoveryMetadata(System.ServiceModel.Discovery.EndpointDiscoveryMetadata)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="endpointDiscoveryMetadata" Type="System.ServiceModel.Discovery.EndpointDiscoveryMetadata" />
+      </Parameters>
+      <Docs>
+        <param name="endpointDiscoveryMetadata">エンドポイント探索メタデータ。</param>
+        <summary>指定された <see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> インスタンスを使用して、<see cref="T:System.ServiceModel.Discovery.EndpointDiscoveryMetadata" /> クラスの新しいインスタンスを初期化します。</summary>
+        <returns><see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public System.Xml.Schema.XmlSchema GetSchema ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.Schema.XmlSchema GetSchema() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.GetSchema" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Schema.XmlSchema</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>WS-Discovery プロトコルの Committee Draft 1 バージョンでの定義に基づいたエンドポイント探索メタデータのスキーマを取得します。</summary>
+        <returns>スキーマの XML 修飾名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSchema">
+      <MemberSignature Language="C#" Value="public static System.Xml.XmlQualifiedName GetSchema (System.Xml.Schema.XmlSchemaSet schemaSet);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xml.XmlQualifiedName GetSchema(class System.Xml.Schema.XmlSchemaSet schemaSet) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.GetSchema(System.Xml.Schema.XmlSchemaSet)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlQualifiedName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemaSet" Type="System.Xml.Schema.XmlSchemaSet" />
+      </Parameters>
+      <Docs>
+        <param name="schemaSet">スキーマ セット。</param>
+        <summary>WS-Discovery プロトコルの Committee Draft 1 バージョン用のエンドポイント探索メタデータのスキーマを取得し、指定されたスキーマ セットにない場合は、そのセットに追加します。</summary>
+        <returns>スキーマの XML 修飾名。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadXml">
+      <MemberSignature Language="C#" Value="public void ReadXml (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ReadXml(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.ReadXml(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">読み取りを行う先の XML リーダー。</param>
+        <summary>XML から <see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> インスタンスを読み取ります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToEndpointDiscoveryMetadata">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.EndpointDiscoveryMetadata ToEndpointDiscoveryMetadata ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Discovery.EndpointDiscoveryMetadata ToEndpointDiscoveryMetadata() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.ToEndpointDiscoveryMetadata" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.EndpointDiscoveryMetadata</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.ServiceModel.Discovery.EndpointDiscoveryMetadata" /> インスタンスに関連付けられている <see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> を取得します。</summary>
+        <returns><see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteXml">
+      <MemberSignature Language="C#" Value="public void WriteXml (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteXml(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1.WriteXml(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">書き込み先の XML ライター。</param>
+        <summary>XML に <see cref="T:System.ServiceModel.Discovery.VersionCD1.EndpointDiscoveryMetadataCD1" /> インスタンスを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

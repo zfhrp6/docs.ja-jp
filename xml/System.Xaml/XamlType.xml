@@ -1,0 +1,2472 @@
+<Type Name="XamlType" FullName="System.Xaml.XamlType">
+  <TypeSignature Language="C#" Value="public class XamlType : IEquatable&lt;System.Xaml.XamlType&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlType extends System.Object implements class System.IEquatable`1&lt;class System.Xaml.XamlType&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Xaml.XamlType&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>.NET Framework XAML サービスで実装されている XAML システム全体の一部として XAML の型に関する情報を報告します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くの Api、<xref:System.Xaml.XamlType>クラスで報告する概念は、XAML の仕様 [MS-XAML] の特定のセクションに似ています、XAML の型に関する情報を提供します。  
+  
+ <xref:System.Xaml.XamlType>広く使われて、.NET Framework XAML サービス API の XAML 型に関するレポート情報です。 <xref:System.Xaml.XamlType>インスタンスを使用するために、または XAML ノード ストリーム、またはと同様に XAML 表現からのメンバーにアクセスする XAML の型について知っておく必要がある情報を報告します。 ような方法は、reporting<xref:System.Type>入力リフレクション クラスと共に、システムなど、CLR で<xref:System.Reflection.MemberInfo>CLR 型とその使用状況に関する情報を提供します。  
+  
+ XAML 型システムを拡張するから派生できます<xref:System.Xaml.XamlType>です。 実効上には、する必要がありますも実装する、<xref:System.Xaml.Schema.XamlTypeInvoker>です。 <xref:System.Xaml.Schema.XamlTypeInvoker>一般化された XAML 型システム呼び出しの動作の一部として指定することをバッキング型システムを使用するようになります。 特定のカスタム<xref:System.Xaml.Schema.XamlTypeInvoker>、既定で使用される CLR 型システムへの依存関係を削減する方法を提供<xref:System.Xaml.XamlType>動作します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlType (Type underlyingType, System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type underlyingType, class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.#ctor(System.Type,System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="underlyingType" Type="System.Type" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="underlyingType">基になる CLR<see cref="T:System.Type" />を構築するために XAML の型。</param>
+        <param name="schemaContext">XAML リーダーや XAML ライターの XAML スキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlType" />クラス情報を基に、基になる CLR 型。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の<paramref name="underlyingType" />または<paramref name="schemaContext" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XamlType (string typeName, System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; typeArguments, System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(string typeName, class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; typeArguments, class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.#ctor(System.String,System.Collections.Generic.IList{System.Xaml.XamlType},System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">作成する型の名前。</param>
+        <param name="typeArguments">型引数、<see cref="T:System.Xaml.XamlType" />ジェネリック型を表すです。 指定できます (および多くの場合は) <see langword="null" />、表される型がジェネリック型ではないことを示します。</param>
+        <param name="schemaContext">XAML リーダーと XAML ライターの XAML スキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlType" />クラスが、型の名前を文字列に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、protected コンス トラクターです。 現在のパブリック派生クラスが存在しない構築のこの特定のパスを使用します。 既存のコンシューマーとして<xref:System.Xaml.XamlType>、他のコンス トラクター シグネチャを使用する必要があります (<xref:System.Xaml.XamlType.%23ctor%28System.Type%2CSystem.Xaml.XamlSchemaContext%2CSystem.Xaml.Schema.XamlTypeInvoker%29>、 <xref:System.Xaml.XamlType.%23ctor%28System.Type%2CSystem.Xaml.XamlSchemaContext%29>、または<xref:System.Xaml.XamlType.%23ctor%28System.String%2CSystem.String%2CSystem.Collections.Generic.IList%7BSystem.Xaml.XamlType%7D%2CSystem.Xaml.XamlSchemaContext%29>) 初期化するために、<xref:System.Xaml.XamlType>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の<paramref name="typeName" />または<paramref name="schemaContext" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlType (Type underlyingType, System.Xaml.XamlSchemaContext schemaContext, System.Xaml.Schema.XamlTypeInvoker invoker);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type underlyingType, class System.Xaml.XamlSchemaContext schemaContext, class System.Xaml.Schema.XamlTypeInvoker invoker) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.#ctor(System.Type,System.Xaml.XamlSchemaContext,System.Xaml.Schema.XamlTypeInvoker)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="underlyingType" Type="System.Type" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+        <Parameter Name="invoker" Type="System.Xaml.Schema.XamlTypeInvoker" />
+      </Parameters>
+      <Docs>
+        <param name="underlyingType">構築するために XAML 型の基になる型。</param>
+        <param name="schemaContext">XAML リーダーの XAML スキーマ コンテキスト。</param>
+        <param name="invoker"><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />に対するランタイムのリフレクションを処理する実装を呼び出す、<see cref="T:System.Xaml.XamlType" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlType" />クラス情報を基に基になる型と<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />実装します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の<paramref name="underlyingType" />または<paramref name="schemaContext" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlType (string unknownTypeNamespace, string unknownTypeName, System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; typeArguments, System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string unknownTypeNamespace, string unknownTypeName, class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; typeArguments, class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.#ctor(System.String,System.String,System.Collections.Generic.IList{System.Xaml.XamlType},System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="unknownTypeNamespace" Type="System.String" />
+        <Parameter Name="unknownTypeName" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="unknownTypeNamespace">文字列としての型の XAML 名前空間。</param>
+        <param name="unknownTypeName">指定した型の名前<c>unknownTypeNamespace</c>の XAML 名前空間。</param>
+        <param name="typeArguments">型引数、<see cref="T:System.Xaml.XamlType" />ジェネリック型を表すです。 指定できます (および多くの場合は) <see langword="null" />、表される型がジェネリック型ではないことを示します。</param>
+        <param name="schemaContext">XAML リーダーや XAML ライターの XAML スキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlType" />クラスが、XAML 名前空間と型の文字列名に基づいています。 このコンス トラクターは排他的分析とサポートする型システムと XAML スキーマ コンテキストでのバックアップがないように認識される型の使用法の XAML ノードを記録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、基になる型システムにマップされる XAML の型が使用可能な「不明」の種類に対してのみです。 このコンス トラクターが、結果が得られない、<xref:System.Xaml.XamlType.IsUnknown%2A?displayProperty=nameWithType>は`true`します。 既定 reflector ロジックが、基になる型と型を報告する代わりに、<xref:System.Xaml.XamlLanguage.Object%2A?displayProperty=nameWithType>です。 ただし、この動作を変更のため、<xref:System.Xaml.XamlType.LookupIsUnknown%2A>をオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">1 つ以上の<paramref name="unknownTypeNamespace" />、 <paramref name="unknownTypeName" />、または<paramref name="schemaContext" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowedContentTypes">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; AllowedContentTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; AllowedContentTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.AllowedContentTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として使用されている型の読み取り専用コレクションを取得、<see cref="P:System.Xaml.XamlType.ContentProperty" />値<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>使用可能なコンテンツ型の読み取り専用コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当て可能な型 (たとえば、許可されているコンテンツ型である基本型に割り当てることができる) 特定のコンテンツ タイプは考慮されませんの目的で複数の種類<xref:System.Xaml.XamlType.AllowedContentTypes%2A>です。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupAllowedContentTypes%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseType">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlType BaseType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType BaseType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.BaseType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />この XAML 型の直接の基本型にします。 この値の決定は、基になる型に基づいてこの<see cref="T:System.Xaml.XamlType" />とスキーマ コンテキスト。</summary>
+        <value><see cref="T:System.Xaml.XamlType" />この XAML 型の直接の基本型にします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupBaseType%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupBaseType%2A>この型にします。 既定では、<xref:System.Xaml.XamlType.BaseType%2A>表す内部定数、<xref:System.Object>場合<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupBaseType%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) に報告された型の XAML 型情報が変更され、基になる CLR 型の型システム情報と予想される方法で整合不要になった。 割り当て操作とアクセスのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanAssignTo">
+      <MemberSignature Language="C#" Value="public virtual bool CanAssignTo (System.Xaml.XamlType xamlType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanAssignTo(class System.Xaml.XamlType xamlType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.CanAssignTo(System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlType" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="xamlType">現在の照合する型<see cref="T:System.Xaml.XamlType" />です。</param>
+        <summary>示す値を返しますこれのインスタンスかどうか<see cref="T:System.Xaml.XamlType" />、指定された<see cref="T:System.Xaml.XamlType" />割り当て可能な種類の一覧にします。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="xamlType" />、割り当てられた型リストには、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当て可能な型では、参照型のすべての機能はありませんは、割り当てのため使用することができます。 たとえば、プロパティの値の型が一致するようにするのに割り当てを使用することができます。 XAML で割り当てることができる型の概念は、CLR 型システムへのキャストの概念に似ています。 たとえば、CLR 型システムでは、すべての型が、<xref:System.Object>割り当て可能な型のリストにします。  
+  
+ 場合、2 つのいずれかの<xref:System.Xaml.XamlType>使用されるインスタンスの比較がある<xref:System.Xaml.XamlType.IsUnknown%2A>と等しい`true`、このメソッドは、特殊な不明なモードを返す`true`場合、2 つ<xref:System.Xaml.XamlType>のインスタンスが等しい。  
+  
+ 既定の実装が CLR を使用して<xref:System.Type>から<xref:System.Xaml.XamlType.UnderlyingType%2A>この<xref:System.Xaml.XamlType>し、入力<xref:System.Xaml.XamlType>、および呼び出し<xref:System.Type.IsAssignableFrom%2A>です。 割り当てられた型のさまざまな決定をする場合は、このメソッドをオーバーライドします。  
+  
+ Null を渡す`xamlType`、例外をスローしないと、常に返します`false`です。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.CanAssignTo%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) を基になる CLR 型の型キャストの動作に必要な方法で配置されなくされるように XAML 型の割り当てを変更します。 割り当て操作とアクセスのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConstructionRequiresArguments">
+      <MemberSignature Language="C#" Value="public bool ConstructionRequiresArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ConstructionRequiresArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.ConstructionRequiresArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />引数が必要 (ジェネリック制約を通じて<see langword="x:TypeArguments" />初期化のテキスト、またはその他の XAML の手法) 型の有効なインスタンスを構築するためにします。</summary>
+        <value>
+          <see langword="true" />インスタンスの構築には、引数値が必要とする場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupConstructionRequiresArguments%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupConstructionRequiresArguments%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentProperty">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlMember ContentProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlMember ContentProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.ContentProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlMember" />これのコンテンツ プロパティの情報を<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>
+          <see cref="T:System.Xaml.XamlMember" />このコンテンツのプロパティの情報を<see cref="T:System.Xaml.XamlType" />です。 あります<see langword="null" />コンテンツ プロパティが存在しない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときにバインディングを使用して、または CLR 型システムのバックアップ、XAML コンテンツ プロパティを指定できます型に適用することで<xref:System.Windows.Markup.ContentPropertyAttribute>種類の定義にします。  
+  
+ このプロパティに揃えます、 `[content property]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupContentProperty%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupContentProperty%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentWrappers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; ContentWrappers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; ContentWrappers" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.ContentWrappers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得できない場合に厳密な型が一致する、厳密に型指定の文字列など、コンテンツのプロパティのコンテンツをラップするために使用される型<see langword="Collection&lt;T&gt;" />です。</summary>
+        <value>可能なコンテンツのラッパー型の読み取り専用コレクションそれ以外の場合、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、型の一致が低下するためにラッパーがない場合は、`null`です。  
+  
+ 型として評価される<xref:System.Xaml.XamlType.CanAssignTo%2A>特定のコンテンツ タイプは考慮されませんの目的で複数の種類<xref:System.Xaml.XamlType.ContentWrappers%2A>です。  
+  
+ CLR バインドで<xref:System.Xaml>と<xref:System.Xaml.XamlType>、として、型の XAML のコンテンツ ラッパー型を指定することができます、<xref:System.Windows.Markup.ContentWrapperAttribute>です。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupContentWrappers%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupContentWrappers%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferringLoader">
+      <MemberSignature Language="C#" Value="public System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt; DeferringLoader { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.Xaml.XamlDeferringLoader&gt; DeferringLoader" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.DeferringLoader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />を表す、遅延読み込みこの型の変換動作します。</summary>
+        <value><see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.Xaml.XamlDeferringLoader" />をこの種類の遅延読み込み動作を表す制約。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WPF の XAML テンプレートの動作は、遅延読み込み動作の例を示します。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupDeferringLoader%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupDeferringLoader%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このオブジェクトと比較するオブジェクト。</param>
+        <summary>現在のオブジェクトが別のオブジェクトと等しいかどうかを示します。</summary>
+        <returns>
+          現在のオブジェクトが <paramref name="obj" /> パラメーターと等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Xaml.XamlType other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Xaml.XamlType other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.Equals(System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="other">このオブジェクトと比較するオブジェクト。</param>
+        <summary>現在のオブジェクトが、同じ型の別のオブジェクトと等しいかどうかを示します。</summary>
+        <returns>
+          現在のオブジェクトが <paramref name="other" /> パラメーターと等しい場合は <see langword="true" />、それ以外の場合は <see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAliasedProperty">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlMember GetAliasedProperty (System.Xaml.XamlDirective directive);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlMember GetAliasedProperty(class System.Xaml.XamlDirective directive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetAliasedProperty(System.Xaml.XamlDirective)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directive" Type="System.Xaml.XamlDirective" />
+      </Parameters>
+      <Docs>
+        <param name="directive">エイリアスのメンバーを検索するためのディレクティブ。</param>
+        <summary>この XAML ディレクティブの別名は、XAML メンバーを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>エイリアスのメンバー場合が見つかりました。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupAliasedProperty%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupAliasedProperty%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllAttachableMembers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Xaml.XamlMember&gt; GetAllAttachableMembers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class System.Xaml.XamlMember&gt; GetAllAttachableMembers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetAllAttachableMembers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Xaml.XamlMember&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これによって公開されているすべてのアタッチ可能なプロパティを含むコレクションを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>0 個以上含んだコレクション<see cref="T:System.Xaml.XamlMember" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Xaml.XamlMember>返されたコレクションを含めることは、概念をサポートする値を<xref:System.Xaml.XamlMember>アタッチ可能なメンバーは、します。 たとえば、メンバーを返す必要があります`true`の<xref:System.Xaml.XamlMember.IsAttachable%2A>の型を<xref:System.Xaml.XamlMember.TargetType%2A>のようにします。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupAllAttachableMembers%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupAllAttachableMembers%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllMembers">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;System.Xaml.XamlMember&gt; GetAllMembers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.ICollection`1&lt;class System.Xaml.XamlMember&gt; GetAllMembers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetAllMembers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.Xaml.XamlMember&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これによって公開されているすべてのメンバーを含むコレクションを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>0 個以上含んだコレクション<see cref="T:System.Xaml.XamlMember" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupAllMembers%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttachableMember">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlMember GetAttachableMember (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlMember GetAttachableMember(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetAttachableMember(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">でアタッチ可能なメンバーの名前<c>ownerTypeName.MemberName</c>フォーム。</param>
+        <summary>この <see cref="T:System.Xaml.XamlType" /> の特定の名前の付いたアタッチ可能メンバーを表す <see cref="T:System.Xaml.XamlMember" /> を返します。</summary>
+        <returns>要求されたアタッチ可能メンバーの <see cref="T:System.Xaml.XamlMember" /> オブジェクト。その名前のアタッチ可能メンバーが存在しない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupAttachableMember%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupAttachableMember%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) と予想される方法で不要になった位置が揃うように、報告された XAML 型のメンバーを変更する、 <xref:System.ComponentModel.TypeDescriptor> `Get*`基になる CLR 型に関する情報。 Reporting メンバーのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのハッシュ コードを返します。</summary>
+        <returns>整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMember">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlMember GetMember (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xaml.XamlMember GetMember(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetMember(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">(文字列) として取得するメンバーの名前です。</param>
+        <summary>返します、<see cref="T:System.Xaml.XamlMember" />これからメンバーをという名前の特定の<see cref="T:System.Xaml.XamlType" />します。</summary>
+        <returns><see cref="T:System.Xaml.XamlMember" />ようなメンバーが、それ以外の場合は、メンバーの情報を<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、`name`修飾すると想定されます。 アタッチされたメンバーを示す型で修飾された名前を送信する必要があります<xref:System.Xaml.XamlType.GetAttachableMember%2A>代わりにします。 プレフィックス付きのメンバー名は使用できません。プレフィックスは使用状況と、XAML 型システムは、このような使用法のコンテキストとプレフィックスをマップする方法を知ることはできません。  
+  
+ このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupMember%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupMember%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) と予想される方法で不要になった位置が揃うように、報告された XAML 型のメンバーを変更する、 <xref:System.ComponentModel.TypeDescriptor> `Get*`基になる CLR 型に関する情報。 Reporting メンバーのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPositionalParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; GetPositionalParameters (int parameterCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; GetPositionalParameters(int32 parameterCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetPositionalParameters(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterCount">情報を表示する特定の構文またはコンス トラクター モードの数 (アリティ)。</param>
+        <summary>マークアップ拡張機能の種類、この特定のマークアップ拡張機能の使用でサポートされている位置指定パラメーターの型を返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>一連の<see cref="T:System.Xaml.XamlType" />値、ここで各<see cref="T:System.Xaml.XamlType" />は構文内の位置の型です。 マークアップ、マークアップ拡張機能の入力を指定するときに、同じ順序で、種類を指定する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この API は、関連する場合は、こののみ<xref:System.Xaml.XamlType>マークアップ拡張機能を表します (<xref:System.Xaml.XamlType.IsMarkupExtension%2A>は`true`)。  
+  
+ 入力`parameterCount`を使用しない特定の位置指定パラメーターの型を要求します。 マークアップ拡張機能の使用のアリティを指定することがあります。 多くの場合、マークアップ拡張機能の使用は、複数の「署名」を持つし、区別するために位置指定パラメーターの異なるパラメーター アリティ (数) を使用します。 ただし、重複 arities を許可して、差別化要因の位置指定パラメーターの型を使用するスキーマ コンテキストを構成することができます。 詳細については、「<xref:System.Xaml.XamlSchemaContext.SupportMarkupExtensionsWithDuplicateArity%2A>」を参照してください。 特定のアリティ (数) の場合、パラメーターの位置と型が異なります。 特定のアリティのマークアップ拡張機能の使用の位置指定の種類を取得するには、最初に呼び出す<xref:System.Xaml.XamlType.GetPositionalParameters%2A>アリティ数を指定します。 返されるコレクションからその位置に項目を取得します。  
+  
+ このメソッドを呼び出すを呼び出すことができます<xref:System.Xaml.XamlType.LookupPositionalParameters%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXamlNamespaces">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IList&lt;string&gt; GetXamlNamespaces ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;string&gt; GetXamlNamespaces() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.GetXamlNamespaces" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型が記載されている XAML 名前空間の文字列識別子の一覧を返します。</summary>
+        <returns>ここで、各文字列は、XAML 名前空間の URI 識別子、文字列値の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的な XAML 名前空間の識別子は、URI 形式の文字列です。  
+  
+ 既定の実装の順序で、次のチェック: 構築で指定されている XAML 名前空間 (<xref:System.Xaml.XamlType.%23ctor%28System.String%2CSystem.String%2CSystem.Collections.Generic.IList%7BSystem.Xaml.XamlType%7D%2CSystem.Xaml.XamlSchemaContext%29>署名のみ); とスキーマ コンテキストから提供されている名前空間。 これらはそれぞれ場合、 `null`、1 つの空の文字列を含む新しいリストが生成されます。 参照方法を変更するには、このメソッドをオーバーライドすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invoker">
+      <MemberSignature Language="C#" Value="public System.Xaml.Schema.XamlTypeInvoker Invoker { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.Schema.XamlTypeInvoker Invoker" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.Invoker" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlTypeInvoker</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />これに関連付けられている実装<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />これに関連付けられている実装<see cref="T:System.Xaml.XamlType" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、呼び出し元<xref:System.Xaml.XamlType.Invoker%2A>いずれかを呼び出すことができます<xref:System.Xaml.XamlType.LookupInvoker%2A>またはそのメソッドの特定のオーバーライドします。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupInvoker%2A>この型にします。  
+  
+ 場合、<xref:System.Xaml.XamlType.LookupInvoker%2A>オーバーライド`null`、既定の実装を返す場合、または`null`が不足しているのため<xref:System.Xaml.XamlType.UnderlyingType%2A>この<xref:System.Xaml.XamlType>、し<xref:System.Xaml.XamlType.Invoker%2A>を返します<xref:System.Xaml.Schema.XamlTypeInvoker.UnknownInvoker%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAmbient">
+      <MemberSignature Language="C#" Value="public bool IsAmbient { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAmbient" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsAmbient" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、アンビエントの種類を表します。</summary>
+        <value>
+          <see langword="true" />場合は、この<see cref="T:System.Xaml.XamlType" />アンビエントの型を表し、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsAmbient%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsAmbient%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsArray">
+      <MemberSignature Language="C#" Value="public bool IsArray { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsArray" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsArray" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />配列を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />配列を表します。 それ以外の場合、 <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupCollectionKind%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupCollectionKind%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollection">
+      <MemberSignature Language="C#" Value="public bool IsCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />コレクションを表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />コレクションを表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupCollectionKind%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupCollectionKind%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConstructible">
+      <MemberSignature Language="C#" Value="public bool IsConstructible { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConstructible" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsConstructible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、構築型を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />構築型を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに揃えます、 `[is default constructible]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsConstructible%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsConstructible%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDictionary">
+      <MemberSignature Language="C#" Value="public bool IsDictionary { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDictionary" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsDictionary" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、ディクショナリを表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />ディクショナリを表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに揃えます、 `[is dictionary]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupCollectionKind%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupCollectionKind%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsGeneric">
+      <MemberSignature Language="C#" Value="public bool IsGeneric { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsGeneric" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsGeneric" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />ジェネリック型を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />ジェネリック型を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは null 値をチェックするヘルパー プロパティ<xref:System.Xaml.XamlType.TypeArguments%2A>です。 固有の仕様がない`Lookup`に関連するメソッド<xref:System.Xaml.XamlType.IsGeneric%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMarkupExtension">
+      <MemberSignature Language="C#" Value="public bool IsMarkupExtension { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMarkupExtension" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsMarkupExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML の仕様の用語では、この型に割り当てることにする必要があります`x:MarkupExtension`を返すために`true`の<xref:System.Xaml.XamlType.IsMarkupExtension%2A>します。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsMarkupExtension%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsMarkupExtension%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNameScope">
+      <MemberSignature Language="C#" Value="public bool IsNameScope { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNameScope" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsNameScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従っての XAML 名前スコープを表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />XAML 名前スコープを表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XAML 名前スコープまたは複数のためのプロパティの名前の一意性を強制する`x:Name`  / `[name property]`です。 場合<xref:System.Xaml.XamlType.IsNameScope%2A>は`true`一意性を適用するためのいくつかのメカニズムが存在し、XAML 名前空間を所有しているこの種類の観点から評価する必要があります。 XAML 名前スコープは、別の XAML 名前スコープで所有されている型が検出されるまで、型のコンテンツを拡張します。  
+  
+ このプロパティに揃えます、 `[is name scope]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsNameScope%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNameValid">
+      <MemberSignature Language="C#" Value="public bool IsNameValid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNameValid" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsNameValid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこれ<see cref="T:System.Xaml.XamlType" />は有効なを使用して初期化<see langword="xamlName" />で文字列をその<see cref="P:System.Xaml.XamlType.Name" />。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />が有効なを使用して初期化される<see langword="xamlName" />文字列です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、null 許容型を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />null 許容型を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに揃えます、 `[is nullable]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用していないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsNullable%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPublic">
+      <MemberSignature Language="C#" Value="public bool IsPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />関連型システムのパブリック型を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />パブリック型を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsPublic%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupIsPublic%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合)、基になる CLR 型の型システムとアクセスの情報と予想される方法で整合不要になったように XAML 型についての報告されたアクセスを変更します。 割り当て操作とアクセスのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnknown">
+      <MemberSignature Language="C#" Value="public bool IsUnknown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUnknown" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsUnknown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />の基になる型システムで解決できない型を表します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />解決できない型を表す、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsUnknown%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。  
+  
+ 関係する読み込みパスの<xref:System.Xaml.XamlObjectWriter>、<xref:System.Xaml.XamlType>を持つ`true`の<xref:System.Xaml.XamlType.IsUnknown%2A>オブジェクト グラフに書き込まれることはできません。 既定の実装  <xref:System.Xaml> 、<xref:System.Xaml.XamlObjectWriter.WriteStartObject%2A?displayProperty=nameWithType>スローされます、<xref:System.Xaml.XamlObjectWriterException>ときに、関連する<xref:System.Xaml.XamlType>レポート`true`の<xref:System.Xaml.XamlType.IsUnknown%2A>です。 渡さないでください、<xref:System.Xaml.XamlType>を持つ<xref:System.Xaml.XamlType.IsUnknown%2A>として`true`から例外を処理する準備済みでない限り、 <xref:System.Xaml.XamlObjectWriter>、その他の方法を調整することも、<xref:System.Xaml.XamlObjectWriter>動作や、オブジェクト グラフを作成する前に、XAML ノード ストリーム。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUsableDuringInitialization">
+      <MemberSignature Language="C#" Value="public bool IsUsableDuringInitialization { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsUsableDuringInitialization" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsUsableDuringInitialization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 初期化中に、トップダウンを構築します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />XAML 初期化中に上から下へ、それ以外のビルドは<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上から下へは、オブジェクト グラフを作成するときに、XAML プロセッサの動作を概算する比喩です。 トップダウンをビルドすると、型がインスタンス化される、親にアタッチされているし、そのプロパティが設定されます。 トップダウンの構築では、ハンドラーのプロパティ変更の複数回の呼び出しで回避できます。 このような処理は、オブジェクト グラフに波及し、そのため、複数のハンドラーの呼び出しを排除し、オブジェクト グラフの起動時のパフォーマンスの最適化を提供します。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupUsableDuringInitialization%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupUsableDuringInitialization%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWhitespaceSignificantCollection">
+      <MemberSignature Language="C#" Value="public bool IsWhitespaceSignificantCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsWhitespaceSignificantCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsWhitespaceSignificantCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />に従って XML 定義に空白の意味を持つコレクションを表します。</summary>
+        <value>
+          <see langword="true" />場合は、この<see cref="T:System.Xaml.XamlType" />空白文字の意味を持つコレクションを表します。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsWhitespaceSignificantCollection%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsWhitespaceSignificantCollection%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsXData">
+      <MemberSignature Language="C#" Value="public bool IsXData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsXData" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.IsXData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />XML を表す<see langword="XDATA" />、XAML 定義ごとにします。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />表す<see langword="XDATA" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに揃えます、 `[is xdata]` [MS-XAML] の仕様の情報項目。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsXData%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsXData%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemType">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlType ItemType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType ItemType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.ItemType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型情報を提供する値を取得、<see langword="Items" />プロパティこの<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />コレクション内の項目の型のオブジェクトをそれ以外の場合、<see langword="null" />この場合、<see cref="T:System.Xaml.XamlType" />コレクションを表していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは関連する場合は、こののみ<xref:System.Xaml.XamlType>コレクションを表します (<xref:System.Xaml.XamlType.IsCollection%2A>は`true`)。 `Items`プロパティは、どのようなプロパティは、その種類のコレクションまたは配列に項目を保持します。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupItemType%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupItemType%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyType">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlType KeyType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType KeyType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.KeyType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキー プロパティの型情報を提供する値を取得<see cref="T:System.Xaml.XamlType" />場合、<see cref="T:System.Xaml.XamlType" />ディクショナリを表します。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />のディクショナリの使用、それ以外の場合、キーの型のオブジェクトを<see langword="null" />この場合、<see cref="T:System.Xaml.XamlType" />ディクショナリを表していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは関連する場合は、こののみ<xref:System.Xaml.XamlType>ディクショナリを表します (<xref:System.Xaml.XamlType.IsDictionary%2A>は`true`)。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupKeyType%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupKeyType%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupAliasedProperty">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlMember LookupAliasedProperty (System.Xaml.XamlDirective directive);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlMember LookupAliasedProperty(class System.Xaml.XamlDirective directive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupAliasedProperty(System.Xaml.XamlDirective)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="directive" Type="System.Xaml.XamlDirective" />
+      </Parameters>
+      <Docs>
+        <param name="directive">エイリアスのメンバーを検索するためのディレクティブ。</param>
+        <summary>この XAML ディレクティブの別名は、XAML メンバーを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>エイリアスのメンバー場合が見つかりました。それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.GetAliasedProperty%2A>です。  
+  
+ 既定の実装は、次の XAML ディレクティブの結果を返すことができます:`Key`です。`Name`;`Uid`; and `xml:lang`. 基になるリフレクションに依存およびが返すもこれらの値`null`エイリアス プロパティが見つからない場合。  
+  
+ 既定内部の CLR リフレクションには依存しないと、XAML 型システム情報または型のスキーマ情報を報告のメタデータまたはその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupAllAttachableMembers">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Xaml.XamlMember&gt; LookupAllAttachableMembers ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.XamlMember&gt; LookupAllAttachableMembers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupAllAttachableMembers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xaml.XamlMember&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これによって公開されているすべてのアタッチ可能なプロパティを含む列挙可能なセットを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>0 個以上を含む列挙可能なセット<see cref="T:System.Xaml.XamlMember" />値です。 それ以外の場合、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.GetAllAttachableMembers%2A>です。  
+  
+ <xref:System.Xaml.XamlType.GetAllAttachableMembers%2A> 、ジェネリック コレクションを返しますこれ`Lookup`メソッドがジェネリックの列挙可能なセットを返します。  
+  
+ 既定の実装では、内部の CLR リフレクションを使用します。 ときに<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`、既定の実装を使用できる<xref:System.Xaml.XamlType.BaseType%2A>が利用可能な場合は。 この動作を呼び出す<xref:System.Xaml.XamlType.LookupAllAttachableMembers%2A>再帰的に有効な基本型を返すを検索しようとする`null`有効な基本型が存在しない場合。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。 Null の戻り値は、型のシステムやリフレクションのサポートの不足のための情報を決定できない場合に用に予約する必要があります。 場合は、型が有効では、リフレクションやその他の手法は、利用可能、型には、アタッチ可能なメンバーはありませんは、空を代わりに返す必要があります<xref:System.Collections.Generic.IEnumerable%601>を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupAllMembers">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Xaml.XamlMember&gt; LookupAllMembers ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.XamlMember&gt; LookupAllMembers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupAllMembers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Xaml.XamlMember&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これによって公開されているすべてのメンバーを含む列挙可能なセットを返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>0 個以上を含む列挙可能なセット<see cref="T:System.Xaml.XamlMember" />値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.GetAllMembers%2A>です。  
+  
+ <xref:System.Xaml.XamlType.GetAllMembers%2A> 、ジェネリック コレクションを返しますこれ`Lookup`メソッドがジェネリックの列挙可能なセットを返します。  
+  
+ 既定の実装では、内部の CLR リフレクションを使用します。 場合、<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`、既定の実装を使用できます<xref:System.Xaml.XamlType.BaseType%2A>が利用可能な場合は。 この動作を呼び出す<xref:System.Xaml.XamlType.LookupAllMembers%2A>再帰的に有効な基本型を返すを検索しようとする`null`有効な基本型が存在しない場合。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。 Null の戻り値は、型のシステムやリフレクションのサポートの不足のための情報を決定できない場合に用に予約する必要があります。 リフレクションまたは他の手法が使用可能な型が有効な場合型がメンバーを持たない場合は、空を代わりに返す必要があります<xref:System.Collections.Generic.IEnumerable%601>を設定します。  
+  
+ 値を返す<xref:System.Xaml.XamlType.LookupAllMembers%2A>と<xref:System.Xaml.XamlType.LookupAllAttachableMembers%2A>相互に排他的にする必要があります。 2 つの異なるとしてそのメンバーが報告される場合は、バッキング型システムのプロパティが、アタッチ可能な使用法と同様に、標準インスタンスの使用をサポートできる場合がある場合は、<xref:System.Xaml.XamlMember>アタッチ可能な一覧と、標準的なメンバー リスト内の別に表示される値の 1 つの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupAllowedContentTypes">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; LookupAllowedContentTypes ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; LookupAllowedContentTypes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupAllowedContentTypes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>として使用されている型の一覧を返します、<see cref="P:System.Xaml.XamlType.ContentProperty" />値<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>使用可能なコンテンツ型の一覧。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.AllowedContentTypes%2A>です。  
+  
+ 型として評価される<xref:System.Xaml.XamlType.CanAssignTo%2A>特定のコンテンツ タイプは考慮されませんの目的で複数の種類<xref:System.Xaml.XamlType.AllowedContentTypes%2A>です。  
+  
+ 既定の実装は、の他のプロパティを使用できます<xref:System.Xaml.XamlType>(<xref:System.Xaml.XamlType.ContentWrappers%2A>、 <xref:System.Xaml.XamlType.ContentProperty%2A>、または<xref:System.Xaml.XamlType.ItemType%2A>) 結果を取得します。 `Lookup`オーバーライドの前のプロパティ リストは、この判断で呼び出すこともできます。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupAttachableMember">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlMember LookupAttachableMember (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlMember LookupAttachableMember(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupAttachableMember(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">でアタッチ可能なメンバーの名前<c>ownerTypeName.MemberName</c>フォーム。</param>
+        <summary>この <see cref="T:System.Xaml.XamlType" /> から、特定の名前の付いたアタッチ可能なものを表す <see cref="T:System.Xaml.XamlMember" /> を返します。</summary>
+        <returns>要求されたアタッチ可能メンバーの <see cref="T:System.Xaml.XamlMember" /> オブジェクト。その名前のアタッチ可能メンバーが存在しない場合は <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.GetAttachableMember%2A>です。  
+  
+ 既定の実装では、内部の CLR リフレクションを使用します。 ときに<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`、既定の実装を使用できる<xref:System.Xaml.XamlType.BaseType%2A>が利用可能な場合は。 この動作を呼び出す<xref:System.Xaml.XamlType.LookupAttachableMember%2A>再帰的に有効な基本型を返すを検索しようとする`null`有効な基本型が存在しない場合。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupAttachableMember%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) と予想される方法で不要になった位置が揃うように、報告された XAML 型のメンバーを変更する、 <xref:System.ComponentModel.TypeDescriptor> `Get*`基になる CLR 型に関する情報。 Reporting メンバーのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupBaseType">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlType LookupBaseType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlType LookupBaseType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupBaseType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.XamlType" />この XAML 型の直接の基本型にします。 この値の決定は、基になる型に基づいてこの<see cref="T:System.Xaml.XamlType" />とスキーマ コンテキスト。</summary>
+        <returns><see cref="T:System.Xaml.XamlType" />この XAML 型の直接の基本型にします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.BaseType%2A>です。  
+  
+ 既定の実装を表す内部定数を返す場合があります、<xref:System.Object>場合<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`します。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupBaseType%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) に報告された型の XAML 型情報が変更され、基になる CLR 型の型システム情報と予想される方法で整合不要になった。 割り当て操作とアクセスのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupCollectionKind">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.Schema.XamlCollectionKind LookupCollectionKind ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance valuetype System.Xaml.Schema.XamlCollectionKind LookupCollectionKind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupCollectionKind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlCollectionKind</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値を返します、<see cref="T:System.Xaml.Schema.XamlCollectionKind" />この型の列挙される特定のコレクションを宣言する<see cref="T:System.Xaml.XamlType" />を使用します。</summary>
+        <returns>値、<see cref="T:System.Xaml.Schema.XamlCollectionKind" />列挙します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、内部プライベート メソッドによって呼び出されます (パブリック`CollectionKind`または`GetCollectionKind`に API が存在する<xref:System.Xaml.XamlType>)。  
+  
+ 既定の実装では、内部の CLR リフレクションを使用します。 場合、<xref:System.Xaml.XamlType.UnderlyingType%2A>は`null`、既定の実装を使用できます<xref:System.Xaml.XamlType.BaseType%2A>が利用可能な場合は。 この動作を間接的に呼び出す<xref:System.Xaml.XamlType.LookupCollectionKind%2A>に有効な基本型を検索しようとしています。 再帰的に返します<xref:System.Xaml.Schema.XamlCollectionKind?displayProperty=nameWithType>有効な基本型が存在しない場合。 既定の実装が検索しようとした一般に、`Add`リフレクションによって基になる型のメソッドです。 場合が見つかると、<xref:System.Reflection.MethodInfo>の`Add`メソッドが判断するために必要な情報<xref:System.Xaml.Schema.XamlCollectionKind>値が返されます。 返しますそれ以外の場合、<xref:System.Xaml.Schema.XamlCollectionKind?displayProperty=nameWithType>です。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupConstructionRequiresArguments">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupConstructionRequiresArguments ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupConstructionRequiresArguments() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupConstructionRequiresArguments" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />引数を持つ必要があります (使用してジェネリック制約<see langword="x:TypeArguments" />初期化のテキスト、またはその他の XAML の手法) 型の有効なインスタンスを構築します。</summary>
+        <returns>
+          <see langword="true" />インスタンスの構築には、引数値が必要とする場合それ以外の場合は false です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.ConstructionRequiresArguments%2A>です。  
+  
+ 既定の実装を返します`false`CLR で値型と見なされますの種類のシステムと入力します。 値型、CLR リフレクション以外の場合<xref:System.Reflection.ConstructorInfo>既定のコンス トラクターが存在するかどうかを調べるために使用します。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupContentProperty">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlMember LookupContentProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlMember LookupContentProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupContentProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します<see cref="T:System.Xaml.XamlMember" />これのコンテンツ プロパティの情報を<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>
+          <see cref="T:System.Xaml.XamlMember" />このコンテンツのプロパティの情報を<see cref="T:System.Xaml.XamlType" />です。 <see langword="null" /> でもかまいません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.ContentProperty%2A>です。  
+  
+ 既定の実装<xref:System.Windows.Markup.ContentPropertyAttribute>型定義。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 既定の実装を返しますのかどうか、これらのチェックはコンテンツの種類を検出しません、`null`です。  
+  
+ 既定の内部の CLR リフレクションに依存しない、し、XAML 型システム情報または型のスキーマ情報を報告のメタデータやその他の手法を使用している場合は、このメソッドをオーバーライドします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupContentWrappers">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; LookupContentWrappers ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; LookupContentWrappers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupContentWrappers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一覧を取得<see cref="T:System.Xaml.XamlType" />このコンテンツのラッパーを表す値<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>一連の<see cref="T:System.Xaml.XamlType" />このコンテンツのラッパーを表す値<see cref="T:System.Xaml.XamlType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツのラッパーは、そのコレクションに使用される型は、型システムを連続していないときにコンテンツのコレクション型を表すクラスです。 コンテンツ ラッパー コレクション項目の種類を超えるいくつかの方法で制限されるとして予想される<xref:System.Object>または同等のニュートラル オブジェクト。 ただし、このような制限が、およびデザインまたはその型を使用するプロパティの目的は、型システムではなくにのみ適用されます。 1 つ以上のコンテンツ ラッパーは、型に存在できます。  
+  
+ クラスの例と WPF XAML 実装からシナリオの場合は、「<xref:System.Windows.Documents.InlineCollection>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupCustomAttributeProvider">
+      <MemberSignature Language="C#" Value="protected virtual System.Reflection.ICustomAttributeProvider LookupCustomAttributeProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Reflection.ICustomAttributeProvider LookupCustomAttributeProvider() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupCustomAttributeProvider" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.ICustomAttributeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合を返します、<see cref="T:System.Reflection.ICustomAttributeProvider" />実装します。</summary>
+        <returns><see cref="T:System.Reflection.ICustomAttributeProvider" /> の実装。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ CLR 属性の値を取得する代替方法を内部のリフレクションを提供するには、このメソッドをオーバーライドします。 上書きがない場合では、内部 reflector は、一般的な CLR ロジックでリフレクションを使用します。  
+  
+ 既定の実装では、`null` が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupDeferringLoader">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt; LookupDeferringLoader ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.Xaml.XamlDeferringLoader&gt; LookupDeferringLoader() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupDeferringLoader" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.Xaml.XamlDeferringLoader&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />オブジェクトの XAML 宣言の遅延読み込みの際に使用されるオブジェクト。</summary>
+        <returns>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />を持つ、<see cref="T:System.Xaml.XamlDeferringLoader" />ジェネリックに制約します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元から値を取得するときに、このメソッドを呼び出すことができます<xref:System.Xaml.XamlType.DeferringLoader%2A>です。 このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.DeferringLoader%2A>をカスタムを既定の内部リフレクションで有効になっても提供するよりも、別の値を返す<xref:System.Xaml.Schema.XamlTypeInvoker>情報。  
+  
+ 既定の実装は、読み取りに基づいてオブジェクトを返します<xref:System.Windows.Markup.XamlDeferLoadAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 このメソッドが戻るかどうかは、値は使用できません、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupInvoker">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.Schema.XamlTypeInvoker LookupInvoker ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.Schema.XamlTypeInvoker LookupInvoker() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupInvoker" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlTypeInvoker</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlTypeInvoker" />これに関連付けられている<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns><see cref="T:System.Xaml.Schema.XamlTypeInvoker" />情報<see cref="T:System.Xaml.XamlType" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.Invoker%2A>です。  
+  
+ 既定の実装で、いる必要はありません、<xref:System.Xaml.XamlType>初期を渡すコンス トラクターのいずれかを使用して構築する<xref:System.Xaml.Schema.XamlTypeInvoker>です。 ただし、<xref:System.Xaml.XamlType.UnderlyingType%2A>の値が存在する必要があります、<xref:System.Xaml.XamlType>以外の場合、既定の実装を返します`null`です。  
+  
+ 派生クラスも作成する場合は、このメソッドをオーバーライド<xref:System.Xaml.Schema.XamlTypeInvoker>および派生クラスを返すようにします。 返す場合`null`、<xref:System.Xaml.XamlType.Invoker%2A>返します<xref:System.Xaml.Schema.XamlTypeInvoker.UnknownInvoker%2A?displayProperty=nameWithType>の呼び出し元にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsAmbient">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsAmbient ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsAmbient() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsAmbient" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、アンビエントの種類を表します。</summary>
+        <returns>
+          <see langword="true" />場合は、この<see cref="T:System.Xaml.XamlType" />アンビエントの型を表し、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsAmbient%2A>です。  
+  
+ 既定の実装で CLR のリフレクションを使用して、<xref:System.Xaml.XamlType.UnderlyingType%2A>基本型を確認できます。 この実装を確認、<xref:System.Windows.Markup.AmbientAttribute>をクラス レベルで、関連する種類の定義に適用して返す`true`ここでします。 その他のすべてのケースを返す`false`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsAmbient%2A>既定内部リフレクションで有効になっても、異なる値を返すにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsConstructible">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsConstructible ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsConstructible() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsConstructible" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、構築型を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />構築型を表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsConstructible%2A>です。  
+  
+ 既定の実装で CLR のリフレクションを使用して、<xref:System.Xaml.XamlType.UnderlyingType%2A>です。 型は、具象、入れ子にされないおよび終了する必要があります。 既定の実装は、型が値型との戻り値かどうかを確認します。<xref:System.Xaml.XamlType.ConstructionRequiresArguments%2A>です。 Null <xref:System.Xaml.XamlType.UnderlyingType%2A>、このメソッドが戻る`true`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsConstructible%2A>既定内部リフレクションで有効になっても、異なる値を返すにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsMarkupExtension">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsMarkupExtension ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsMarkupExtension() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsMarkupExtension" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能を表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsMarkupExtension%2A>です。  
+  
+ 既定の実装は、この呼び出しののみで構成されます。  
+  
+ `return CanAssignTo(XamlLanguage.MarkupExtension);`  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsMarkupExtension%2A>別のロジックを使用します。  
+  
+ XAML の仕様の用語では、この型に割り当てることにする必要があります`x:MarkupExtension`を返すために`true`の<xref:System.Xaml.XamlType.IsMarkupExtension%2A>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsNameScope">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsNameScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsNameScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsNameScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従っての XAML 名前スコープを表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />XAML 名前スコープを表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsNameScope%2A>です。  
+  
+ 既定の実装、<xref:System.Xaml.XamlType.CanAssignTo%2A>型に対して直接呼び出す<xref:System.Windows.Markup.INameScope>です。 <xref:System.Windows.Markup.INameScope>WindowsBase アセンブリで定義されているインターフェイス。 XAML 名前スコープ識別するためには、この手法が使用される WPF が両方と[!INCLUDE[TLA#tla_workflow](~/includes/tlasharptla-workflow-md.md)]XAML の実装です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsNameScope%2A>別のロジックを使用します。  
+  
+ XAML 名前スコープまたは複数に使用されるプロパティの名前の一意性を強制する`x:Name`  / `[name property]`です。 場合<xref:System.Xaml.XamlType.IsNameScope%2A>は`true`一意性を適用するためのいくつかのメカニズムが存在する必要があり、XAML 名前空間を所有しているこの種類の観点から評価する必要があります。 XAML 名前スコープは、XAML 名前スコープを所有している別の型が検出されるまで、型のコンテンツを拡張します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsNullable">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsNullable ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsNullable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsNullable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 定義に従って、null 許容型を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />null 許容型を表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsNullable%2A>です。  
+  
+ 既定の実装は、概念に基づいて CLR コア ライブラリ null 許容型、照合決定<xref:System.Xaml.XamlType.UnderlyingType%2A>です。 Null <xref:System.Xaml.XamlType.UnderlyingType%2A>、返します`true`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsNullable%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsPublic">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsPublic ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsPublic() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsPublic" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />関連型システムのパブリック型を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />パブリック型を表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsPublic%2A>です。  
+  
+ 既定の実装が null でないに対して CLR リフレクションを使用して<xref:System.Xaml.XamlType.UnderlyingType%2A>です。 Null <xref:System.Xaml.XamlType.UnderlyingType%2A>、返します`true`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsPublic%2A>別のロジックを使用します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupIsPublic%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合)、基になる CLR 型の型システムまたはアクセスの情報と予想される方法で整合しなくように XAML 型についての報告されたアクセスを変更します。 割り当て操作とアクセスのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsUnknown">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsUnknown ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsUnknown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsUnknown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />の基になる型システムで解決できない型を表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />nonresolvable 型を表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsUnknown%2A>です。  
+  
+ 既定の実装では、CLR のリフレクションを使用できます。 Null <xref:System.Xaml.XamlType.UnderlyingType%2A>、返します`true`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsUnknown%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsWhitespaceSignificantCollection">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsWhitespaceSignificantCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsWhitespaceSignificantCollection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsWhitespaceSignificantCollection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />に従って XML 定義に空白の意味を持つコレクションを表します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />空白文字の意味を持つコレクションを表す、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsWhitespaceSignificantCollection%2A>です。  
+  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.WhitespaceSignificantCollectionAttribute>です。 チェック、<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`false`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsWhitespaceSignificantCollection%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupIsXData">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupIsXData ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupIsXData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupIsXData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XML を表す<see langword="XDATA" />、XAML 定義ごとにします。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />表す<see langword="XDATA" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsXData%2A>です。  
+  
+ 既定の実装、<xref:System.Xaml.XamlType.CanAssignTo%2A>型に対して直接呼び出す<xref:System.Xml.Serialization.IXmlSerializable>です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsXData%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupItemType">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlType LookupItemType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlType LookupItemType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupItemType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型情報を提供する値を返します、<see langword="Items" />プロパティこの<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>A<see cref="T:System.Xaml.XamlType" />コレクション内の項目の型のオブジェクトをそれ以外の場合、<see langword="null" />この<see cref="T:System.Xaml.XamlType" />コレクションを表していません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.ItemType%2A>です。  
+  
+ 既定の実装の確認などの CLR リフレクションの概念を使用できます、`Add`メソッドによって<xref:System.Reflection.MethodInfo>を使用して、<xref:System.Reflection.ParameterInfo>以外の場合はチェック<xref:System.Xaml.XamlType.IsArray%2A>; とチェック<xref:System.Xaml.XamlType.BaseType%2A>があるのと同じロジックをしようとします。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.ItemType%2A>別のロジックを使用します。 あるケース<xref:System.Xaml.XamlType.LookupCollectionKind%2A>返します<xref:System.Xaml.Schema.XamlCollectionKind?displayProperty=nameWithType>返す必要があります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupKeyType">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlType LookupKeyType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlType LookupKeyType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupKeyType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このキーのプロパティの型情報を提供する値を返します<see cref="T:System.Xaml.XamlType" />場合、<see cref="T:System.Xaml.XamlType" />ディクショナリを表します。</summary>
+        <returns>A<see cref="T:System.Xaml.XamlType" />ディクショナリの使用状況のキーの型のオブジェクトまたは<see langword="null" />この<see cref="T:System.Xaml.XamlType" />ディクショナリを表していません</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.KeyType%2A>です。  
+  
+ 既定の実装の確認などの CLR リフレクションの概念を使用できます、`Add`メソッドによって<xref:System.Reflection.MethodInfo>を使用して、 <xref:System.Reflection.ParameterInfo>; とチェック<xref:System.Xaml.XamlType.BaseType%2A>があるのと同じロジックをしようとします。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.KeyType%2A>別のロジックを使用します。 あるケース<xref:System.Xaml.XamlType.LookupCollectionKind%2A>返さない<xref:System.Xaml.Schema.XamlCollectionKind?displayProperty=nameWithType>返す必要があります`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupMarkupExtensionReturnType">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlType LookupMarkupExtensionReturnType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlType LookupMarkupExtensionReturnType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupMarkupExtensionReturnType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返された型情報を提供する値を返します<see langword="ProvideValue" />この<see cref="T:System.Xaml.XamlType" />を表している場合、マークアップ拡張機能、します。</summary>
+        <returns>A<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能の使用方法の戻り値の型のオブジェクトをそれ以外の場合、<see langword="null" />この場合、<see cref="T:System.Xaml.XamlType" />はマークアップ拡張機能を表していません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.MarkupExtensionReturnType%2A>です。  
+  
+ 既定の実装を返します、<xref:System.Xaml.XamlType>読み取りに基づいて<xref:System.Windows.Markup.MarkupExtensionReturnTypeAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`null`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.MarkupExtensionReturnType%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupMember">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.XamlMember LookupMember (string name, bool skipReadOnlyCheck);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.XamlMember LookupMember(string name, bool skipReadOnlyCheck) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupMember(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="skipReadOnlyCheck" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">(文字列) として取得するメンバーの名前です。</param>
+        <param name="skipReadOnlyCheck">
+          <see langword="true" />そのメンバーがある場合でも、メンバーを返す、<see langword="true" />値<see cref="P:System.Xaml.XamlMember.IsReadOnly" />です。<see langword="false" />を戻さない、<see cref="P:System.Xaml.XamlMember.IsReadOnly" />メンバー。 既定値は、<see langword="false" /> です。</param>
+        <summary>返します、<see cref="T:System.Xaml.XamlMember" />これからメンバーをという名前の特定の<see cref="T:System.Xaml.XamlType" />します。</summary>
+        <returns><see cref="T:System.Xaml.XamlMember" />メンバーが、それ以外の場合は、メンバーの情報を<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.GetMember%2A>です。  
+  
+ 既定の実装を返します、 <xref:System.Xaml.XamlType> CLR の内部のリフレクションとスキーマのコンテキストで評価に基づいています。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.GetMember%2A>別のロジックを使用します。  
+  
+> [!IMPORTANT]
+>  <xref:System.Xaml.XamlType.LookupMember%2A>仮想で、そのため、オーバーライドできます。 上書きされる可能性があります (悪意のあるものかどうかまたはそれ以外の場合) と予想される方法で不要になった位置が揃うように、報告された XAML 型のメンバーを変更する、 <xref:System.ComponentModel.TypeDescriptor> `Get*`基になる CLR 型に関する情報。 Reporting メンバーのセキュリティ クリティカルなチェックには、基になる CLR 型を代わりに使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupPositionalParameters">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; LookupPositionalParameters (int parameterCount);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; LookupPositionalParameters(int32 parameterCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupPositionalParameters(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parameterCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="parameterCount">情報を表示する特定の構文またはコンス トラクター モードの数 (アリティ)。</param>
+        <summary>マークアップ拡張機能の種類、この特定のマークアップ拡張機能の使用でサポートされている位置指定パラメーターの型を返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>一連の<see cref="T:System.Xaml.XamlType" />値を where これらの各<see cref="T:System.Xaml.XamlType" />は構文内の位置の型です。 マークアップ、マークアップ拡張機能の入力を指定するときは、同じ順序でそれらの型を指定する必要があります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.GetPositionalParameters%2A>です。  
+  
+ 既定の実装では、コンス トラクターを検索して、アリティのチェックに基づく内部のリフレクション情報を使用します。 このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.GetPositionalParameters%2A>別のロジックを使用します。  
+  
+ この API は、関連する場合は、こののみ<xref:System.Xaml.XamlType>マークアップ拡張機能を表します (<xref:System.Xaml.XamlType.IsMarkupExtension%2A>は`true`)。  
+  
+ 入力`parameterCount`を使用しない特定の位置指定パラメーターの型を要求します。 マークアップ拡張機能の使用のアリティを指定することがあります。 多くの場合、マークアップ拡張機能の使用は、複数の署名を持つし、区別するために位置指定パラメーターの異なるパラメーター アリティ (数) を使用します。 ただし、重複 arities を許可して、差別化要因の位置指定パラメーターの型を使用するスキーマ コンテキストを構成することができます。 詳細については、「<xref:System.Xaml.XamlSchemaContext.SupportMarkupExtensionsWithDuplicateArity%2A>」を参照してください。 特定のアリティ count の場合は、パラメーターの位置と型が異なります。 特定のアリティのマークアップ拡張機能の使用の位置指定の種類を取得するには、最初に呼び出す<xref:System.Xaml.XamlType.GetPositionalParameters%2A>アリティ カウントします。 返されるコレクションからその位置に項目を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupSetMarkupExtensionHandler">
+      <MemberSignature Language="C#" Value="protected virtual EventHandler&lt;System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; LookupSetMarkupExtensionHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt; LookupSetMarkupExtensionHandler() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupSetMarkupExtensionHandler" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Markup.XamlSetMarkupExtensionEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>マークアップ拡張機能のセット操作に使用するハンドラーのコールバックを返します。</summary>
+        <returns>マークアップ拡張機能のセット操作に使用するハンドラーのコールバック。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupSetTypeConverterHandler">
+      <MemberSignature Language="C#" Value="protected virtual EventHandler&lt;System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; LookupSetTypeConverterHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.EventHandler`1&lt;class System.Windows.Markup.XamlSetTypeConverterEventArgs&gt; LookupSetTypeConverterHandler() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupSetTypeConverterHandler" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Markup.XamlSetTypeConverterEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>型コンバーターを設定する場合に使用するハンドラーを返します。</summary>
+        <returns>型コンバーターを設定する場合に使用するハンドラー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.XamlSetTypeConverterAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupTrimSurroundingWhitespace">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupTrimSurroundingWhitespace ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupTrimSurroundingWhitespace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupTrimSurroundingWhitespace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />周囲の空白をトリミングするモードを使用してシリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />周囲の空白をトリミングするモードでシリアル化された、それ以外にする必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.TrimSurroundingWhitespace%2A>です。  
+  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.TrimSurroundingWhitespaceAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupTypeConverter">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt; LookupTypeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.ComponentModel.TypeConverter&gt; LookupTypeConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupTypeConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />を持つ、<see cref="T:System.ComponentModel.TypeConverter" />制約で、この値の型変換動作を表す<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.ComponentModel.TypeConverter" />をこの値の型変換動作を表す制約<see cref="T:System.Xaml.XamlType" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.TypeConverter%2A>です。  
+  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.ComponentModel.TypeConverterAttribute>です。 既定の実装を確認できますも<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 列挙型、共通の値型とジェネリックの既定の変換の特別なロジックも含まれています。 返すかどうか、値は使用できません、`null`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.TypeConverter%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupUnderlyingType">
+      <MemberSignature Language="C#" Value="protected virtual Type LookupUnderlyingType ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Type LookupUnderlyingType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupUnderlyingType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>CLR を返します<see cref="T:System.Type" />この基になっている<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>CLR<see cref="T:System.Type" />この基になっている<see cref="T:System.Xaml.XamlType" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.UnderlyingType%2A>です。  
+  
+ 既定の実装では、内部のフィールドを返します。 構築時にそのフィールドが初期化される一般にし、その値がコンス トラクターが呼び出されたと指定した情報に基づいています。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.UnderlyingType%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupUsableDuringInitialization">
+      <MemberSignature Language="C#" Value="protected virtual bool LookupUsableDuringInitialization ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool LookupUsableDuringInitialization() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupUsableDuringInitialization" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を返すかどうかこの<see cref="T:System.Xaml.XamlType" />XAML 初期化中に、トップダウンを構築します。</summary>
+        <returns>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />XAML 初期化中に上から下へ、それ以外のビルドは<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上から下へは、オブジェクト グラフを作成するときに、XAML プロセッサの動作を概算する比喩です。 構築時に、トップダウン、型がインスタンス化される、親にアタッチされているし、そのプロパティが設定します。 トップダウンの構築では、ハンドラーのプロパティ変更の複数回の呼び出しで回避できます。 このような処理は、オブジェクト グラフに波及し、そのため、複数のハンドラーの呼び出しを排除し、オブジェクト グラフの起動時のパフォーマンスの最適化を提供します。  
+  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.IsUsableDuringInitialization%2A>です。  
+  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.UsableDuringInitializationAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 返すかどうか、値は使用できません、`false`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.IsUsableDuringInitialization%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LookupValueSerializer">
+      <MemberSignature Language="C#" Value="protected virtual System.Xaml.Schema.XamlValueConverter&lt;System.Windows.Markup.ValueSerializer&gt; LookupValueSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.Windows.Markup.ValueSerializer&gt; LookupValueSerializer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.LookupValueSerializer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.Windows.Markup.ValueSerializer&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />を持つ、<see cref="T:System.Windows.Markup.ValueSerializer" />制約で、この値の値のシリアル化の動作を表す<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.Windows.Markup.ValueSerializer" />をこの値の値のシリアル化の動作を表す制約<see cref="T:System.Xaml.XamlType" />、それ以外の<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しによって、このメソッドを呼び出せる<xref:System.Xaml.XamlType.ValueSerializer%2A>です。  
+  
+ 既定の実装が読み取りに基づいた値を返します<xref:System.Windows.Markup.ValueSerializerAttribute>です。 チェック<xref:System.Xaml.XamlType.BaseType%2A>属性に直接の基になる型の属性が見つからない場合。 列挙型、共通の値型またはジェネリックの既定のシリアル化の特別なロジックも含まれています。 返すかどうか、値は使用できません、`null`です。  
+  
+ このメソッドをオーバーライドする場合は<xref:System.Xaml.XamlType.ValueSerializer%2A>別のロジックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MarkupExtensionReturnType">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlType MarkupExtensionReturnType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType MarkupExtensionReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.MarkupExtensionReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返された型情報を提供する値を取得<see langword="ProvideValue" />この<see cref="T:System.Xaml.XamlType" />を表している場合、マークアップ拡張機能、します。</summary>
+        <value>A<see cref="T:System.Xaml.XamlType" />マークアップ拡張機能の使用方法の戻り値の型のオブジェクトをそれ以外の場合、<see langword="null" />この場合、<see cref="T:System.Xaml.XamlType" />はマークアップ拡張機能を表していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは関連する場合のみ<xref:System.Xaml.XamlType>マークアップ拡張機能を表します (`x:MarkupExtension`が割り当てられた型リスト)。  
+  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupMarkupExtensionReturnType%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupMarkupExtensionReturnType%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の文字列名を取得この<see cref="T:System.Xaml.XamlType" />を表します。</summary>
+        <value>この XAML 型の文字列名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、通常、スキーマで構築された名前を取得 (あたり、<xref:System.Xaml.XamlType.%23ctor%2A>署名)、またはの名前、 <xref:System.Type>CLR 型システムの適切なコンス トラクターを使用して構成する場合は、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Xaml.XamlType xamlType1, System.Xaml.XamlType xamlType2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Xaml.XamlType xamlType1, class System.Xaml.XamlType xamlType2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.op_Equality(System.Xaml.XamlType,System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlType1" Type="System.Xaml.XamlType" />
+        <Parameter Name="xamlType2" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="xamlType1"><see cref="T:System.Xaml.XamlType" /> または <see langword="null" />。</param>
+        <param name="xamlType2"><see cref="T:System.Xaml.XamlType" /> または <see langword="null" />。</param>
+        <summary>指定した 2 つの <see cref="T:System.Xaml.XamlType" /> オブジェクトの値が同一かどうかを判断します。</summary>
+        <returns>
+          <see langword="true" /> の値が <paramref name="xamlType1" /> の値と同じ場合は <paramref name="xamlType2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Xaml.XamlType xamlType1, System.Xaml.XamlType xamlType2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Xaml.XamlType xamlType1, class System.Xaml.XamlType xamlType2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.op_Inequality(System.Xaml.XamlType,System.Xaml.XamlType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xamlType1" Type="System.Xaml.XamlType" />
+        <Parameter Name="xamlType2" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="xamlType1"><see cref="T:System.Xaml.XamlType" /> または <see langword="null" />。</param>
+        <param name="xamlType2"><see cref="T:System.Xaml.XamlType" /> または <see langword="null" />。</param>
+        <summary>指定した 2 つあるかどうかを判断<see cref="T:System.Xaml.XamlType" />オブジェクトが異なる値を設定します。</summary>
+        <returns>
+          <see langword="true" /> の値が <paramref name="xamlType1" /> の値と異なる場合は <paramref name="xamlType2" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreferredXamlNamespace">
+      <MemberSignature Language="C#" Value="public string PreferredXamlNamespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PreferredXamlNamespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.PreferredXamlNamespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプライマリの XAML 名前空間は、1 つの XAML 名前空間を取得<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>この XAML 型のプライマリの XAML 名前空間の文字列としての識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装は呼び出すことと同じ値を提供<xref:System.Xaml.XamlType.GetXamlNamespaces%2A>と返される列挙可能なセットから最初の値の文字列を取得します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクティブな取得<see cref="T:System.Xaml.XamlSchemaContext" />これを処理するため<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>アクティブな<see cref="T:System.Xaml.XamlSchemaContext" />これを処理するため<see cref="T:System.Xaml.XamlType" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlSchemaContext>必要なパラメーターの入力を構築するときに、<xref:System.Xaml.XamlType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlType.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この文字列表現を返します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <returns>この文字列表現<see cref="T:System.Xaml.XamlType" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlType>の実装<xref:System.Object.ToString%2A>を返します、<xref:System.Xaml.XamlType.Name%2A>のプロパティ、<xref:System.Xaml.XamlType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrimSurroundingWhitespace">
+      <MemberSignature Language="C#" Value="public bool TrimSurroundingWhitespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrimSurroundingWhitespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.TrimSurroundingWhitespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Xaml.XamlType" />が空白のコンテンツ内の周囲の空白をトリミングするシリアル化の動作を処理します。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Xaml.XamlType" />空白文字を使用する型を表すトリム、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupIsWhitespaceSignificantCollection%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupIsWhitespaceSignificantCollection%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeArguments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt; TypeArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Xaml.XamlType&gt; TypeArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.TypeArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.XamlType&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ケースの型引数の一覧を取得、この<see cref="T:System.Xaml.XamlType" />ジェネリック型を表します。</summary>
+        <value>型引数の型の一覧それ以外の場合、<see langword="null" />この場合、<see cref="T:System.Xaml.XamlType" />はジェネリック型を表していません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定のシナリオがある、<xref:System.Xaml.XamlType>を呼び出す場合、<xref:System.Xaml.XamlType.TypeArguments%2A>パラメーターは、型がまだ開いて一覧を返します。 この場合は、1 つ以上で、返された<xref:System.Xaml.XamlType>値のプレース ホルダーの値になります<xref:System.Xaml.XamlType.Name%2A?displayProperty=nameWithType>など`T`をジェネリックがまだ開いていることを示します。 このシナリオは、取得する場合に発生することができます、<xref:System.Xaml.XamlType>への呼び出しから<xref:System.Xaml.XamlSchemaContext.GetXamlType%2A>の代わりに XAML リーダーの実装からです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeConverter">
+      <MemberSignature Language="C#" Value="public System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt; TypeConverter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.ComponentModel.TypeConverter&gt; TypeConverter" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.TypeConverter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.ComponentModel.TypeConverter&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.ComponentModel.TypeConverter" />制約型の値の変換動作を表します<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.ComponentModel.TypeConverter" />制約型の値の変換動作を表します<see cref="T:System.Xaml.XamlType" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupTypeConverter%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupTypeConverter%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlyingType">
+      <MemberSignature Language="C#" Value="public Type UnderlyingType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type UnderlyingType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.UnderlyingType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CLR の取得<see cref="T:System.Type" />この基になっている<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>CLR<see cref="T:System.Type" />この基になっている<see cref="T:System.Xaml.XamlType" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueSerializer">
+      <MemberSignature Language="C#" Value="public System.Xaml.Schema.XamlValueConverter&lt;System.Windows.Markup.ValueSerializer&gt; ValueSerializer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.Schema.XamlValueConverter`1&lt;class System.Windows.Markup.ValueSerializer&gt; ValueSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlType.ValueSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlValueConverter&lt;System.Windows.Markup.ValueSerializer&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.Windows.Markup.ValueSerializer" />をこの値の値のシリアル化の動作を表す制約<see cref="T:System.Xaml.XamlType" />です。</summary>
+        <value>A<see cref="T:System.Xaml.Schema.XamlValueConverter`1" />で<see cref="T:System.Windows.Markup.ValueSerializer" />をこの値の値のシリアル化の動作を表す制約<see cref="T:System.Xaml.XamlType" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値内部 CLR リフレクション手法を使用しないかどうか、 <xref:System.Xaml.XamlType>、このプロパティへの呼び出しを呼び出すことができます<xref:System.Xaml.XamlType.LookupValueSerializer%2A>の上書きを<xref:System.Xaml.XamlType>クラスを派生します。 戻り値およびその他の動作に関する詳細については、ドキュメントを参照して<xref:System.Xaml.XamlType.LookupValueSerializer%2A>この型にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

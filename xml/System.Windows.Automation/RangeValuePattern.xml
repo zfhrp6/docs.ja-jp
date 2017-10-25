@@ -1,0 +1,349 @@
+<Type Name="RangeValuePattern" FullName="System.Windows.Automation.RangeValuePattern">
+  <TypeSignature Language="C#" Value="public class RangeValuePattern : System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RangeValuePattern extends System.Windows.Automation.BasePattern" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.RangeValuePattern" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.BasePattern</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>範囲内の値に設定できるコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールは、ロケールまたはユーザー設定に基づいて、サポートされているプロパティを再調整を許可することがあります。 この例を華氏または摂氏で温度を表示する設定できる、温度計コントロールとなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cached">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation Cached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.RangeValuePattern/RangeValuePatternInformation Cached" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.RangeValuePattern.Cached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.RangeValuePattern+RangeValuePatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このキャッシュされたプロパティ値を取得<see cref="T:System.Windows.Automation.RangeValuePattern" />です。</summary>
+        <value>キャッシュされたプロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キャッシュされたプロパティ値必要がありますが要求されていない以前を使用して、<xref:System.Windows.Automation.CacheRequest>です。 使用してプロパティの取得時に、現在のポイントでプロパティの値を取得する<xref:System.Windows.Automation.RangeValuePattern.Current%2A>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">要求されたプロパティがキャッシュ内にありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.RangeValuePattern/RangeValuePatternInformation Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.RangeValuePattern.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.RangeValuePattern+RangeValuePatternInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この現在のプロパティ値を取得<see cref="T:System.Windows.Automation.RangeValuePattern" />です。</summary>
+        <value>現在のプロパティ値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このパターンがあります、<xref:System.Windows.Automation.AutomationElement>で、<xref:System.Windows.Automation.AutomationElementMode.Full>の現在の値を取得するために参照します。 場合、<xref:System.Windows.Automation.AutomationElement>を使用して取得された<xref:System.Windows.Automation.AutomationElementMode.None>キャッシュされたデータのみが含まれている、および任意のプロパティの現在の値を取得しようとして例外を発生させます。 使用して<xref:System.Windows.Automation.RangeValuePattern.Cached%2A>を使用してあらかじめ指定されているプロパティのキャッシュされた値を取得する、<xref:System.Windows.Automation.CacheRequest>です。  
+  
+ 使用可能なプロパティおよびその使用方法については、次を参照してください。<xref:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnlyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty IsReadOnlyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty IsReadOnlyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.IsReadOnly" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例では、ルート要素がのコレクションを返す関数に渡される<xref:System.Windows.Automation.AutomationElement>ルートの子孫であり、一連のプロパティの条件を満たしています。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#100](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#100)]
+ [!code-vb[UIARangeValuePattern_snip#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LargeChangeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty LargeChangeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty LargeChangeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.LargeChangeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.LargeChange" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.RangeValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#102)]
+ [!code-vb[UIARangeValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaximumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty MaximumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty MaximumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.MaximumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.Maximum" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.RangeValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#102)]
+ [!code-vb[UIARangeValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinimumProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty MinimumProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty MinimumProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.MinimumProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.Minimum" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.RangeValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#102)]
+ [!code-vb[UIARangeValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pattern">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationPattern Pattern;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationPattern Pattern" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.Pattern" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationPattern</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.RangeValuePattern" /> コントロール パターンを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+ パターン識別子がなどのメソッドに渡された<xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A>から、指定した目的のコントロール パターンを取得する<xref:System.Windows.Automation.AutomationElement>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>からコントロール パターンを取得、<xref:System.Windows.Automation.AutomationElement>です。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#101)]
+ [!code-vb[UIARangeValuePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetValue">
+      <MemberSignature Language="C#" Value="public void SetValue (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetValue(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.RangeValuePattern.SetValue(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">要素の新しい値。</param>
+        <summary>関連付けられている値を設定、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定されている実際の値は、コントロールの実装に依存します。 コントロールによって、要求された`value`上または下です。 UI オートメーション クライアントが調べることができます、<xref:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.Value%2A>実績を確認するには、値を更新します。 新しい値が返されると、クライアントのプロパティのプロパティ変更イベントの登録し、古いを調べることができますも、<xref:System.Windows.Automation.AutomationPropertyChangedEventArgs>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement>をサポートする、<xref:System.Windows.Automation.RangeValuePattern>コントロール パターンはその値がコントロールに固有の最小値を設定します。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#104Minimum](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#104minimum)]
+ [!code-vb[UIARangeValuePattern_snip#104Minimum](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#104minimum)]  
+[!code-csharp[UIARangeValuePattern_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#104)]
+[!code-vb[UIARangeValuePattern_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#104)]  
+[!code-csharp[UIARangeValuePattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#101)]
+[!code-vb[UIARangeValuePattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />最小値または要素の最大値よりも大きい未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SmallChangeProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty SmallChangeProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty SmallChangeProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.SmallChangeProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.SmallChange" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.RangeValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#102)]
+ [!code-vb[UIARangeValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValueProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.Automation.AutomationProperty ValueProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.Automation.AutomationProperty ValueProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Automation.RangeValuePattern.ValueProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.AutomationProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Automation.RangeValuePattern.RangeValuePatternInformation.Value" /> プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この識別子は、UI オートメーション クライアント アプリケーションによって使用されます。 UI オートメーション プロバイダーの相当するフィールドを使用する必要があります<xref:System.Windows.Automation.RangeValuePatternIdentifiers>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.RangeValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.RangeValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIARangeValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIARangeValuePattern_snip/CSharp/UIARangeValuePattern_snippets.cs#102)]
+ [!code-vb[UIARangeValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIARangeValuePattern_snip/VisualBasic/UIARangeValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,222 @@
+<Type Name="XmlSerializationReader+Fixup" FullName="System.Xml.Serialization.XmlSerializationReader+Fixup">
+  <TypeSignature Language="C#" Value="protected class XmlSerializationReader.Fixup" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit XmlSerializationReader/Fixup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSerializationReader.Fixup" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>保持、<see cref="T:System.Xml.Serialization.XmlSerializationFixupCallback" />デリゲートのインスタンスと、メソッドの入力以外の場合は、メソッドのパラメーターとしても機能します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework のオブジェクトには、XML ドキュメントを逆シリアル化するときに、.NET Framework の XML シリアル化インフラストラクチャ動的にインスタンス化を実装するフィックス アップ メソッド、<xref:System.Xml.Serialization.XmlSerializationFixupCallback>デリゲートです。 さらに、それをインスタンス化<xref:System.Xml.Serialization.XmlSerializationReader.Fixup>クラスを、入力と修正をメソッドを格納するオブジェクト。 インフラストラクチャはのでを .NET Framework のデータ型を持つマップ SOAP でエンコードされた配列の型を参照します。 次に、必要に応じて、フィックス アップ メソッドは、配列内のオブジェクトを埋めるために呼び出されます。  
+  
+ さらに、初期化中に、.NET Framework XML のシリアル化インフラストラクチャに動的に生成およびコンパイル一時クラスから派生した逆シリアル化の<xref:System.Xml.Serialization.XmlSerializationReader>クラスです。 このプロセス中に、インフラストラクチャが生成されます<xref:System.Xml.Serialization.XmlSerializationFixupCallback>プロパティ プラス<xref:System.Xml.Serialization.XmlSerializationReader.Fixup>クラス照さ XML データの SOAP エンコードされたオブジェクト。 メソッドは、逆シリアル化中に、呼び出されます。  
+  
+ インスタンスを直接作成できません、<xref:System.Xml.Serialization.XmlSerializationFixupCallback>または<xref:System.Xml.Serialization.XmlSerializationReader.Fixup>クラスです。  
+  
+ SOAP エンコーディングは SOAP 1.1 仕様のセクション 5 で説明します。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Fixup (object o, System.Xml.Serialization.XmlSerializationFixupCallback callback, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object o, class System.Xml.Serialization.XmlSerializationFixupCallback callback, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationReader.Fixup.#ctor(System.Object,System.Xml.Serialization.XmlSerializationFixupCallback,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="callback" Type="System.Xml.Serialization.XmlSerializationFixupCallback" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="o">コールバックの実装によって設定の値を持つ他のオブジェクトを格納するオブジェクト。</param>
+        <param name="callback">インスタンス化するメソッド、<see cref="T:System.Xml.Serialization.XmlSerializationFixupCallback" />を委任します。</param>
+        <param name="count">文字列の配列のサイズがを介して取得された、<see cref="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Ids" />プロパティです。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializationReader.Fixup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成できません、<xref:System.Xml.Serialization.XmlSerializationReader.Fixup>クラスまたは<xref:System.Xml.Serialization.XmlSerializationFixupCallback>を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Fixup (object o, System.Xml.Serialization.XmlSerializationFixupCallback callback, string[] ids);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object o, class System.Xml.Serialization.XmlSerializationFixupCallback callback, string[] ids) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSerializationReader.Fixup.#ctor(System.Object,System.Xml.Serialization.XmlSerializationFixupCallback,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+        <Parameter Name="callback" Type="System.Xml.Serialization.XmlSerializationFixupCallback" />
+        <Parameter Name="ids" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="o">コールバックの実装によって設定の値を持つ他のオブジェクトを格納するオブジェクト。</param>
+        <param name="callback">インスタンス化するメソッド、<see cref="T:System.Xml.Serialization.XmlSerializationFixupCallback" />を委任します。</param>
+        <param name="ids">文字列の配列がを介して取得された、<see cref="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Ids" />プロパティです。</param>
+        <summary><see cref="T:System.Xml.Serialization.XmlSerializationReader.Fixup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 直接インスタンス化しないで、<xref:System.Xml.Serialization.XmlSerializationReader.Fixup>クラスまたは<xref:System.Xml.Serialization.XmlSerializationFixupCallback>を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Callback">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSerializationFixupCallback Callback { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSerializationFixupCallback Callback" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Callback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSerializationFixupCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを作成するコールバック メソッドを取得、<see cref="T:System.Xml.Serialization.XmlSerializationFixupCallback" />を委任します。</summary>
+        <value>インスタンスを作成するコールバック メソッド、<see cref="T:System.Xml.Serialization.XmlSerializationFixupCallback" />を委任します。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Ids">
+      <MemberSignature Language="C#" Value="public string[] Ids { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] Ids" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Ids" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に属しているオブジェクトのキーの配列、<see cref="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Source" />プロパティの値を持つコールバックの実装によって入力を取得します。</summary>
+        <value>キーの配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトには、SOAP でエンコードされた配列、または SOAP でエンコードされたメッセージにマップされる Web サービス メソッドに属している項目を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Source">
+      <MemberSignature Language="C#" Value="public object Source { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Source" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSerializationReader.Fixup.Source" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコールバックの実装によって設定の値を持つ他のオブジェクトを格納しているオブジェクトを設定します。</summary>
+        <value>挿入する値を持つオブジェクトを含むソースです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトを解決するには、次のいずれかを指定できます。  
+  
+-   配列項目である、<xref:System.Xml.Serialization.XmlSerializationFixupCallback>デリゲート実装を入力します。  
+  
+-   Web サービス メソッドと Web サービス記述言語 (WSDL) ドキュメントで定義できる SOAP メッセージの間のマッピング。 メソッド パラメーターなど、マップのメンバーは、コールバック メソッドで設定されます。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

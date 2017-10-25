@@ -1,0 +1,205 @@
+<Type Name="DeploymentServiceCom" FullName="System.Deployment.Application.DeploymentServiceCom">
+  <TypeSignature Language="C#" Value="public class DeploymentServiceCom" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi beforefieldinit DeploymentServiceCom extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.DeploymentServiceCom" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("20FD4E26-8E0F-4F73-A0E0-F27B8C57BE6F")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ClickOnce 配置 API を社内のサービスを提供します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DeploymentServiceCom ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Deployment.Application.DeploymentServiceCom" /> の新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ActivateApplicationExtension">
+      <MemberSignature Language="C#" Value="public void ActivateApplicationExtension (string textualSubId, string deploymentProviderUrl, string targetAssociatedFile);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ActivateApplicationExtension(string textualSubId, string deploymentProviderUrl, string targetAssociatedFile) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.ActivateApplicationExtension(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textualSubId" Type="System.String" />
+        <Parameter Name="deploymentProviderUrl" Type="System.String" />
+        <Parameter Name="targetAssociatedFile" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textualSubId">展開の内部 ID。</param>
+        <param name="deploymentProviderUrl">デプロイの URL です。</param>
+        <param name="targetAssociatedFile">ターゲット ファイル。</param>
+        <summary>アプリケーションの拡張機能をアクティブにします。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ActivateDeployment">
+      <MemberSignature Language="C#" Value="public void ActivateDeployment (string deploymentLocation, bool isShortcut);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ActivateDeployment(string deploymentLocation, bool isShortcut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.ActivateDeployment(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deploymentLocation" Type="System.String" />
+        <Parameter Name="isShortcut" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deploymentLocation">ディスク上の配置マニフェストの場所です。</param>
+        <param name="isShortcut">かどうか<c>deploymentLocation</c>ショートカット、または実際のファイルです。</param>
+        <summary>クライアント コンピューターで、展開を開始します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ActivateDeploymentEx">
+      <MemberSignature Language="C#" Value="public void ActivateDeploymentEx (string deploymentLocation, int unsignedPolicy, int signedPolicy);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ActivateDeploymentEx(string deploymentLocation, int32 unsignedPolicy, int32 signedPolicy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.ActivateDeploymentEx(System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deploymentLocation" Type="System.String" />
+        <Parameter Name="unsignedPolicy" Type="System.Int32" />
+        <Parameter Name="signedPolicy" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="deploymentLocation">配置マニフェストの場所です。</param>
+        <param name="unsignedPolicy">署名されていないアプリケーションを使用するポリシー。</param>
+        <param name="signedPolicy">使用するポリシーには、アプリケーションが署名されます。</param>
+        <summary>クライアント コンピューターで、展開を開始します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CheckForDeploymentUpdate">
+      <MemberSignature Language="C#" Value="public void CheckForDeploymentUpdate (string textualSubId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CheckForDeploymentUpdate(string textualSubId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.CheckForDeploymentUpdate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textualSubId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textualSubId">展開するための内部識別子です。</param>
+        <summary>この展開の更新されたバージョンかどうかを決定する更新プログラムの場所を確認します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CleanOnlineAppCache">
+      <MemberSignature Language="C#" Value="public void CleanOnlineAppCache ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CleanOnlineAppCache() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.CleanOnlineAppCache" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除すべてオンライン専用[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]コンピューターにインストールされているアプリケーション。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="EndServiceRightNow">
+      <MemberSignature Language="C#" Value="public void EndServiceRightNow ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EndServiceRightNow() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.EndServiceRightNow" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>展開の更新を直ちに停止します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="MaintainSubscription">
+      <MemberSignature Language="C#" Value="public void MaintainSubscription (string textualSubId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MaintainSubscription(string textualSubId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Application.DeploymentServiceCom.MaintainSubscription(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textualSubId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textualSubId">展開の内部 ID。</param>
+        <summary>更新サブスクリプションを管理します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

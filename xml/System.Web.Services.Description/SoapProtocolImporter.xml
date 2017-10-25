@@ -1,0 +1,388 @@
+<Type Name="SoapProtocolImporter" FullName="System.Web.Services.Description.SoapProtocolImporter">
+  <TypeSignature Language="C#" Value="public class SoapProtocolImporter : System.Web.Services.Description.ProtocolImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SoapProtocolImporter extends System.Web.Services.Description.ProtocolImporter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.SoapProtocolImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ProtocolImporter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP プロトコルを使用する Web サービスのクラスを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter>クラスは、クライアント プロキシ コードまたは SOAP プロトコルに従って抽象サーバー コードが生成されます。 クラスは、Web サービス記述言語 (WSDL) ドキュメントで定義されている各サポートされているバインドのクラスを生成します。  
+  
+ 呼び出すのではなく、通常、<xref:System.Web.Services.Description.SoapProtocolImporter>開発者がを通じて間接的にクラスを使用して、直接、<xref:System.Web.Services.Description.ServiceDescriptionImporter>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapProtocolImporter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.SoapProtocolImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginClass">
+      <MemberSignature Language="C#" Value="protected override System.CodeDom.CodeTypeDeclaration BeginClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.CodeDom.CodeTypeDeclaration BeginClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.BeginClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeDeclaration</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディング クラスの生成を初期化します。</summary>
+        <returns>バインド クラスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したバインディング用のクラスの生成中に、<xref:System.Web.Services.Description.SoapProtocolImporter.BeginClass%2A>メソッドを実行する前に、<xref:System.Web.Services.Description.SoapProtocolImporter>クラスには、操作に対応するメソッドが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginNamespace">
+      <MemberSignature Language="C#" Value="protected override void BeginNamespace ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void BeginNamespace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.BeginNamespace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コード生成中に、コード全体の名前空間の初期化を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード生成中に、<xref:System.Web.Services.Description.SoapProtocolImporter.BeginNamespace%2A>メソッドを実行する前に、<xref:System.Web.Services.Description.SoapProtocolImporter>クラスには、バインドを表すクラスが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndClass">
+      <MemberSignature Language="C#" Value="protected override void EndClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EndClass() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.EndClass" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メソッドの生成後に、バインディング クラスを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したバインディング用のクラスの生成中に、<xref:System.Web.Services.Description.SoapProtocolImporter.EndClass%2A>メソッドの実行後に、<xref:System.Web.Services.Description.SoapProtocolImporter>クラスには、操作に対応するメソッドが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndNamespace">
+      <MemberSignature Language="C#" Value="protected override void EndNamespace ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void EndNamespace() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.EndNamespace" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスの生成をバインドした後、コード全体の名前空間の処理を実行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード生成中に、<xref:System.Web.Services.Description.SoapProtocolImporter.EndNamespace%2A>メソッドの実行後に、<xref:System.Web.Services.Description.SoapProtocolImporter>クラスには、バインドを表すクラスが生成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateMethod">
+      <MemberSignature Language="C#" Value="protected override System.CodeDom.CodeMemberMethod GenerateMethod ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.CodeDom.CodeMemberMethod GenerateMethod() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.GenerateMethod" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeMemberMethod</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインディング クラスのメソッドのコードを生成します。</summary>
+        <returns>バインディング クラスのメソッドのコード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したバインディング用のクラスの生成中に、<xref:System.Web.Services.Description.SoapProtocolImporter.GenerateMethod%2A>操作を表すバインディング クラス メソッドの各メソッドを実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBindingSupported">
+      <MemberSignature Language="C#" Value="protected override bool IsBindingSupported ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsBindingSupported() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.IsBindingSupported" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のバインドのクラスを生成できるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のバインドのクラスを生成することができる場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter.IsBindingSupported%2A>メソッドでは、現在のバインドのクラスを生成するかどうかが決定されるで表される、<xref:System.Web.Services.Description.SoapProtocolImporter.Binding%2A>プロパティです。 メソッドのチェックするかどうか、<xref:System.Web.Services.Description.SoapProtocolImporter.Binding%2A>プロパティの<xref:System.Web.Services.Description.Binding.Extensions%2A>プロパティが含まれています、<xref:System.Web.Services.Description.SoapBinding>インスタンス。 トランスポート機構がさらに、を介して取得された、<xref:System.Web.Services.Description.SoapBinding.Transport%2A>プロパティは、現在 Web サービスの構成でサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOperationFlowSupported">
+      <MemberSignature Language="C#" Value="protected override bool IsOperationFlowSupported (System.Web.Services.Description.OperationFlow flow);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsOperationFlowSupported(valuetype System.Web.Services.Description.OperationFlow flow) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.IsOperationFlowSupported(System.Web.Services.Description.OperationFlow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flow" Type="System.Web.Services.Description.OperationFlow" />
+      </Parameters>
+      <Docs>
+        <param name="flow"><see cref="T:System.Web.Services.Description.OperationFlow" />伝送パターンを表す列挙値。</param>
+        <summary>現在の操作の操作フローがサポートされているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在の操作の操作フローがサポートされる場合それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter.IsOperationFlowSupported%2A>メソッドでは、現在の操作のメソッドを生成するかどうかが決定されるで表される、<xref:System.Web.Services.Description.Operation>プロパティです。 この評価では、クラスが生成されているバインド内の各操作に対して行われます。 場合、`false`値が返されます、<xref:System.Web.Services.Description.SoapProtocolImporter.UnsupportedOperationWarning%2A>メソッドを実行します。 A`true`入力値が場合にのみ値が返されます<xref:System.Web.Services.Description.OperationFlow.OneWay>または<xref:System.Web.Services.Description.OperationFlow.RequestResponse>です。  
+  
+ 詳細については、<xref:System.Web.Services.Description.OperationMessageCollection.Flow%2A> プロパティを参照してください。 <xref:System.Web.Services.Description.Operation.Messages%2A> プロパティは <xref:System.Web.Services.Description.OperationMessageCollection> 型です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSoapEncodingPresent">
+      <MemberSignature Language="C#" Value="protected virtual bool IsSoapEncodingPresent (string uriList);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsSoapEncodingPresent(string uriList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.SoapProtocolImporter.IsSoapEncodingPresent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriList" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uriList">Uri のスペースで区切られたリスト。</param>
+        <summary>Uniform リソース インジケーター (Uri) の一覧を表す文字列で"http://schemas.xmlsoap.org/soap/encoding/"の存在を確認します。</summary>
+        <returns>
+          <see langword="true" />文字列が含まれている[http://schemas.xmlsoap.org/soap/encoding/](http://schemas.xmlsoap.org/soap/encoding/)それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtocolName">
+      <MemberSignature Language="C#" Value="public override string ProtocolName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProtocolName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.ProtocolName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>"Soap"の値を取得します。</summary>
+        <value>A<see cref="T:System.String" />文字列"Soap"を含むオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapBinding">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.SoapBinding SoapBinding { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.SoapBinding SoapBinding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.SoapBinding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.SoapBinding</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.SoapBinding" />を介して取得されたインスタンス、<see cref="P:System.Web.Services.Description.SoapProtocolImporter.SoapBinding" />プロパティの<see cref="P:System.Web.Services.Description.Binding.Extensions" />プロパティです。</summary>
+        <value>A<see cref="T:System.Web.Services.Description.SoapBinding" />を介して取得されたインスタンス、<see cref="P:System.Web.Services.Description.SoapProtocolImporter.SoapBinding" />プロパティの<see cref="P:System.Web.Services.Description.Binding.Extensions" />プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapExporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.SoapCodeExporter SoapExporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.SoapCodeExporter SoapExporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.SoapExporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.SoapCodeExporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトを取得<see cref="T:System.Xml.Serialization.SoapCodeExporter" />によって内部的に使用される、 <see cref="T:System.Web.Services.Description.SoapProtocolImporter" /> SOAP でエンコードされた XML スキーマ コンテンツと .NET Framework の型の間のマッピングからコードを生成するクラス。</summary>
+        <value>型のオブジェクト<see cref="T:System.Xml.Serialization.SoapCodeExporter" />によって内部的に使用される、 <see cref="T:System.Web.Services.Description.SoapProtocolImporter" /> SOAP でエンコードされた XML スキーマ コンテンツと .NET Framework の型の間のマッピングからコードを生成するクラス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter>クラスの使用、<xref:System.Xml.Serialization.SoapCodeExporter>リテラルの XML スキーマの使用法ではなく、SOAP のエンコーディングを有効にする要素とデータ型 XML スキーマの .NET Framework 型のマッピングからコードを作成するオブジェクト。 SOAP エンコーディングは、SOAP 1.1 仕様のセクション 5 で指定されます。 SOAP エンコーディングとは、名前空間"http://schemas.xmlsoap.org/soap/encoding/"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoapImporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.SoapSchemaImporter SoapImporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.SoapSchemaImporter SoapImporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.SoapImporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.SoapSchemaImporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトを取得<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />によって内部的に使用される、 <see cref="T:System.Web.Services.Description.SoapProtocolImporter" /> SOAP でエンコードされた XML スキーマ コンテンツと .NET Framework の型の間のマッピングを生成するクラス。</summary>
+        <value>型のオブジェクト<see cref="T:System.Xml.Serialization.SoapSchemaImporter" />によって内部的に使用される、 <see cref="T:System.Web.Services.Description.SoapProtocolImporter" /> SOAP でエンコードされた XML スキーマ コンテンツと .NET Framework の型の間のマッピングを生成するクラス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter>クラスの使用、<xref:System.Xml.Serialization.SoapSchemaImporter>リテラルの XML スキーマの使用法ではなく、SOAP のエンコーディングを有効にする要素とデータの種類の XML スキーマの .NET Framework 型のマッピングを作成するオブジェクト。 SOAP エンコーディングは、SOAP 1.1 仕様のセクション 5 で指定されます。 SOAP エンコーディングとは、名前空間"http://schemas.xmlsoap.org/soap/encoding/"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlExporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlCodeExporter XmlExporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlCodeExporter XmlExporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.XmlExporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlCodeExporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトを取得<see cref="T:System.Xml.Serialization.XmlCodeExporter" />によって内部的に使用される、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />リテラルの XML スキーマ コンテンツは、.NET Framework の型の間のマッピングからコードを生成するクラス。</summary>
+        <value>型のオブジェクト<see cref="T:System.Xml.Serialization.XmlCodeExporter" />によって内部的に使用される、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />リテラルの XML スキーマ コンテンツは、.NET Framework の型の間のマッピングからコードを生成するクラス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter>クラスの使用、 <xref:System.Xml.Serialization.XmlSchemaImporter> SOAP エンコーディングではなく、リテラルの XML スキーマの使用状況を必要とする要素とデータの種類の XML スキーマの .NET Framework 型のマッピングを作成するオブジェクト。 SOAP エンコーディングは、SOAP 1.1 仕様のセクション 5 で指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlImporter">
+      <MemberSignature Language="C#" Value="public System.Xml.Serialization.XmlSchemaImporter XmlImporter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.Serialization.XmlSchemaImporter XmlImporter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.SoapProtocolImporter.XmlImporter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.Serialization.XmlSchemaImporter</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトを取得<see cref="T:System.Xml.Serialization.XmlSchemaImporter" />によって内部的に使用される、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />リテラルの XML スキーマ コンテンツは、.NET Framework の型の間のマッピングを生成するクラス。</summary>
+        <value>型のオブジェクト<see cref="T:System.Xml.Serialization.XmlSchemaImporter" />によって内部的に使用される、<see cref="T:System.Web.Services.Description.SoapProtocolImporter" />リテラルの XML スキーマ コンテンツは、.NET Framework の型の間のマッピングを生成するクラス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.SoapProtocolImporter>クラスの使用、 <xref:System.Xml.Serialization.XmlSchemaImporter> SOAP エンコーディングではなく、リテラルの XML スキーマの使用状況を必要とする要素とデータの型 XML スキーマの .NET Framework 型のマッピングからコードを作成するオブジェクト。 SOAP エンコーディングは、SOAP 1.1 仕様のセクション 5 で指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

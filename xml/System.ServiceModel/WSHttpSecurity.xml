@@ -1,0 +1,222 @@
+<Type Name="WSHttpSecurity" FullName="System.ServiceModel.WSHttpSecurity">
+  <TypeSignature Language="C#" Value="public sealed class WSHttpSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WSHttpSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSHttpSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.WSHttpBinding" /> のセキュリティ設定を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.WSHttpBinding> クラスは、WS-* 仕様を実装するサービスと共に相互運用するようにデザインされています。 このバインディングのトランスポート セキュリティは、SSL (Secure Sockets Layer) over HTTP または HTTPS です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WSHttpSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.WSHttpSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.NonDualMessageSecurityOverHttp Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.NonDualMessageSecurityOverHttp Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpSecurity.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.NonDualMessageSecurityOverHttp</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドのメッセージ レベルのセキュリティ設定を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.NonDualMessageSecurityOverHttp" /> のインスタンス。  
+  
+ 既定値には、既定の <see cref="P:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext" /> が設定された <see langword="true" /> が含まれ、<see cref="P:System.ServiceModel.MessageSecurityOverHttp.ClientCredentialType" /> に <see cref="F:System.ServiceModel.MessageCredentialType.Windows" /> が、<see cref="P:System.ServiceModel.MessageSecurityOverHttp.AlgorithmSuite" /> に<see cref="P:System.ServiceModel.Security.SecurityAlgorithmSuite.Basic256" /> が、そして、<see cref="P:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential" /> に <see langword="true" /> が設定されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、このプロパティの使用例を示しています。  
+  
+ [!code-csharp[c_CreateSecureSession#4](~/samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.SecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.SecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのメッセージ <see cref="T:System.ServiceModel.SecurityMode" /> を指定します。</summary>
+        <value>このバインディングの <see cref="T:System.ServiceModel.SecurityMode" />。 既定値は、<see cref="F:System.ServiceModel.SecurityMode.Message" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、<xref:System.ServiceModel.WSHttpSecurity.Transport%2A> プロパティまたは <xref:System.ServiceModel.WSHttpSecurity.Message%2A> プロパティ、あるいはその両方のグループの設定を有効にできるかどうかを決定します。  
+  
+   
+  
+## Examples  
+ このプロパティを設定するコードを次に示します。  
+  
+ [!code-csharp[c_CreateSecureSession#3](~/samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定された <see cref="P:System.ServiceModel.WSHttpSecurity.Mode" /> の値が定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMessage">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMessage ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMessage() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpSecurity.ShouldSerializeMessage" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpSecurity.Message" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。 この情報は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] によって XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpSecurity.Message" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeMode">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeMode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeMode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpSecurity.ShouldSerializeMode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpSecurity.Mode" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。 この情報は、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] によって XAML 統合に使用されます。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpSecurity.Mode" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransport">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransport ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransport() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.WSHttpSecurity.ShouldSerializeTransport" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.WSHttpSecurity.Transport" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.WSHttpSecurity.Transport" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.HttpTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.HttpTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.WSHttpSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.HttpTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインディングのトランスポート レベルのセキュリティ設定を格納するオブジェクトを取得します。</summary>
+        <value>このバインディングの <see cref="T:System.ServiceModel.HttpTransportSecurity" />。  
+  
+ 既定値には、<see cref="P:System.ServiceModel.HttpTransportSecurity.ClientCredentialType" /> である <see cref="F:System.ServiceModel.HttpClientCredentialType.None" /> と <see cref="P:System.ServiceModel.HttpTransportSecurity.ProxyCredentialType" /> である <see cref="F:System.ServiceModel.HttpProxyCredentialType.None" /> が含まれます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって返されるオブジェクトを使用して、バインドのトランスポート セキュリティ設定を設定できます。  
+  
+   
+  
+## Examples  
+ 次のコードは、クライアントの資格情報の種類を Windows に設定します。  
+  
+```csharp  
+// The code uses a shortcut to specify the security mode to Transport.  
+WSHttpBinding b = new WSHttpBinding(SecurityMode.Transport);  
+b.Security.Transport.ClientCredentialType = HttpClientCredentialType.Windows;  
+```  
+  
+```vb  
+' The code uses a shortcut to specify the security mode to Transport.  
+Dim b As WSHttpBinding = new WSHttpBinding(SecurityMode.Transport)  
+b.Security.Transport.ClientCredentialType = HttpClientCredentialType.Windows  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="XmlSchemaProviderAttribute" FullName="System.Xml.Serialization.XmlSchemaProviderAttribute">
+  <TypeSignature Language="C#" Value="public sealed class XmlSchemaProviderAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XmlSchemaProviderAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlSchemaProviderAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Interface)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型に適用する場合は、XML スキーマを返す型の静的メソッドの名前を格納し、 <see cref="T:System.Xml.XmlQualifiedName" /> (または<see cref="T:System.Xml.Schema.XmlSchemaType" />匿名型の) 型のシリアル化を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 主な目的、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute>を有効にするのには、 <xref:System.Xml.Serialization.XmlSchemaExporter> Web サービス記述言語ツール (WSDL.exe) から照会されたとき、またはを使用してスキーマを返すために、 **Web 参照の追加**の機能[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]します。 静的メソッドの型の実際のスキーマを制御できます。  
+  
+> [!NOTE]
+>  属性のターゲット クラスを実装する必要があります、<xref:System.Xml.Serialization.IXmlSerializable>インターフェイスです。  
+  
+ <xref:System.Xml.Serialization.XmlSchemaProviderAttribute.MethodName%2A>プロパティは、リフレクションを使用する静的メソッドの名前を返します。 メソッドを実装する必要がありますが、単一のパラメーターを受け取る必要があります、<xref:System.Xml.Schema.XmlSchemaSet>メソッドを追加するオブジェクト、<xref:System.Xml.Schema.XmlSchema>オブジェクト。 メソッドが返す必要がありますも、<xref:System.Xml.XmlQualifiedName>データ型を識別するオブジェクト。  
+  
+## <a name="returning-anonymous-types"></a>匿名型を返す  
+ 返すメソッドを使用して、匿名の複合型を作成することはできません<xref:System.Xml.XmlQualifiedName>です。 として匿名型を返す必要がある、匿名型が、名前を持たないため、匿名型をスキーマに追加することはできません、<xref:System.Xml.Schema.XmlSchemaType>です。  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute>サーバー側のクラスです。 呼び出されると、という名前のメソッドによって、<xref:System.Xml.Serialization.XmlSchemaProviderAttribute.MethodName%2A>プロパティは、スキーマを作成します。 この単純な実装では、ディスクから既存のスキーマを読み取ります。 ただし、作成することも、カスタム スキーマについては、必要に応じて、型を使用する場合、<xref:System.Xml.Schema>名前空間。  
+  
+ [!code-csharp[HowToChunkSerializedData#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HowToChunkSerializedData/CS/SerializationChunk.cs#2)]
+ [!code-vb[HowToChunkSerializedData#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HowToChunkSerializedData/VB/SerializationChunk.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlSchemaProviderAttribute (string methodName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string methodName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlSchemaProviderAttribute.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="methodName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="methodName">実装する必要がある静的メソッドの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute" />クラス、型の XML スキーマを提供する静的メソッドの名前を取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAny">
+      <MemberSignature Language="C#" Value="public bool IsAny { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAny" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSchemaProviderAttribute.IsAny" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲット クラスが、ワイルドカードまたはのみを含むクラスのスキーマに含まれているかどうかを決定する値を設定、<see langword="xs:any" />要素。</summary>
+        <value>
+          <see langword="true" />、このクラスは、ワイルドカード、またはスキーマがのみに含まれる場合、<see langword="xs:any" />要素、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 属性のターゲット クラスには、任意のクラスを指定できます。 これは、次の方法で実現できます。  
+  
+-   属性によってという名前のメソッドが返すことができます`null`です。  
+  
+-   このプロパティの値を設定`true`メソッドが呼び出されないようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MethodName">
+      <MemberSignature Language="C#" Value="public string MethodName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MethodName" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.Serialization.XmlSchemaProviderAttribute.MethodName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型の XML スキーマおよびその XML スキーマ データ型の名前を提供する静的メソッドの名前を取得します。</summary>
+        <value>XML スキーマを返すために XML インフラストラクチャによって呼び出されるメソッドの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

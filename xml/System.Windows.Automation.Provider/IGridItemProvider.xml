@@ -1,0 +1,176 @@
+<Type Name="IGridItemProvider" FullName="System.Windows.Automation.Provider.IGridItemProvider">
+  <TypeSignature Language="C#" Value="public interface IGridItemProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IGridItemProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.IGridItemProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("d02541f1-fb81-4d64-ae32-f520f8a6dbd1")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>実装するコンテナーの各子コントロールへの UI オートメーション クライアント アクセスをサポートするメソッドとプロパティを公開する<see cref="T:System.Windows.Automation.Provider.IGridProvider" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するコントロール<xref:System.Windows.Automation.Provider.IGridItemProvider>通常走査することができます (つまり、UI オートメーション クライアントが隣接するコントロールに移動ことができます)、キーボードを使用しています。  
+  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.GridItemPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Column">
+      <MemberSignature Language="C#" Value="public int Column { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Column" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridItemProvider.Column" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムを含む列の序数を取得します。</summary>
+        <value>セルまたはアイテムを含む列を識別する、0 から始まる序数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、内部変数に格納されているプロパティを返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#104](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGridItem.cs#104)]
+ [!code-vb[UIAMiscPatternProviders_snip#104](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgriditem.vb#104)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColumnSpan">
+      <MemberSignature Language="C#" Value="public int ColumnSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ColumnSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムがまたがる列の数を取得します。</summary>
+        <value>またがる列の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、項目が常に 1 つの列にまたがるグリッドでアイテムのプロパティを返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGridItem.cs#107)]
+ [!code-vb[UIAMiscPatternProviders_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgriditem.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainingGrid">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.IRawElementProviderSimple ContainingGrid { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Provider.IRawElementProviderSimple ContainingGrid" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.IRawElementProviderSimple</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Automation.Provider.IGridProvider" /> を実装する UI オートメーション プロバイダーを取得し、セルまたは項目のコンテナーを表します。</summary>
+        <value><see cref="T:System.Windows.Automation.GridPattern" /> を実装し、セルまたは項目のコンテナーを表す、UI オートメーション プロバイダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、グリッドのコンテナーを表す内部変数として格納される、オブジェクトを返します。 このオブジェクトが実装する<xref:System.Windows.Automation.Provider.IGridProvider>と<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>です。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGridItem.cs#108)]
+ [!code-vb[UIAMiscPatternProviders_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgriditem.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Row">
+      <MemberSignature Language="C#" Value="public int Row { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Row" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridItemProvider.Row" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたは項目が含まれる行の序数を取得します。</summary>
+        <value>セルまたは項目を含む行を識別する、0 から始まる序数です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、内部変数に格納されているプロパティを返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#105](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGridItem.cs#105)]
+ [!code-vb[UIAMiscPatternProviders_snip#105](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgriditem.vb#105)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RowSpan">
+      <MemberSignature Language="C#" Value="public int RowSpan { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RowSpan" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.IGridItemProvider.RowSpan" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セルまたはアイテムがまたがる行の数を取得します。</summary>
+        <value>またがる行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、項目が常に 1 つの行にまたがるグリッドでアイテムのプロパティを返します。  
+  
+ [!code-csharp[UIAMiscPatternProviders_snip#106](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/CSharp/CustomGridItem.cs#106)]
+ [!code-vb[UIAMiscPatternProviders_snip#106](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAMiscPatternProviders_snip/visualbasic/customgriditem.vb#106)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

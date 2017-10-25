@@ -1,0 +1,95 @@
+<Type Name="ChangeAction" FullName="System.Data.Linq.ChangeAction">
+  <TypeSignature Language="C#" Value="public enum ChangeAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ChangeAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Linq.ChangeAction" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Linq</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>エンティティに変更がデータベースに送信されるときに加えられる変更の種類について説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して`OnValidate()`で[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]送信中の変更の種類に基づくアプリケーションを指定するか検証を省略します。  
+  
+   
+  
+## Examples  
+ [!code-csharp[System.Data.Linq.ChangeAction#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Data.Linq.ChangeAction/cs/Program.cs#1)]
+ [!code-vb[System.Data.Linq.ChangeAction#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Data.Linq.ChangeAction/vb/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.ChangeAction Delete = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.ChangeAction.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティは削除されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.ChangeAction Insert = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.ChangeAction.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティが挿入されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.ChangeAction None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.ChangeAction.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティは送信されません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="Update" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Linq.ChangeAction Update = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Linq.ChangeAction.Update" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Linq</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Linq.ChangeAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティが更新されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

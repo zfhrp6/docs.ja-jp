@@ -1,0 +1,118 @@
+<Type Name="SessionPageStatePersister" FullName="System.Web.UI.SessionPageStatePersister">
+  <TypeSignature Language="C#" Value="public class SessionPageStatePersister : System.Web.UI.PageStatePersister" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SessionPageStatePersister extends System.Web.UI.PageStatePersister" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.SessionPageStatePersister" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.PageStatePersister</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サーバー上の ASP.NET ページのビュー ステートを格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET ページを格納できます<xref:System.Web.UI.Page>状態情報を本質的にステートレスの HTTP 要求と応答を処理し、任意の Web ページを使用するために必要の。 この状態は「の状態を表示します」と呼ばれる  
+  
+ 既定の ASP.NET の永続化メカニズムを使用して、クライアントでビュー ステートを格納する、<xref:System.Web.UI.HiddenFieldPageStatePersister>クラスです。 サービス要求の状態と各 HTTP 要求と応答データを一般に問題なくは実行し、大規模な Web ファームのシナリオに重要な Web サーバーは関係ありませんのでビューを保存する: ページの状態は、ページを正確に表示するために、サーバーの現在のコンテキストで使用できます。  
+  
+ クライアント側のリソースが限られているまたは非表示フィールドの要素をサポートしていないマークアップ言語を使用できる小型のデバイスにページを提供する場所のシナリオで、サーバー上のビュー ステートを格納することが必要です。 ASP.NET デバイス ページの複数のアダプターの上書き、`GetStatePersister`を返すメソッドを<xref:System.Web.UI.SessionPageStatePersister>クライアントに関連付けられたセッション オブジェクト内のサーバーにページの状態を格納しているオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例では、記述する方法を示しています、<xref:System.Web.UI.Adapters.PageAdapter>クラスのインスタンスを返す、 <xref:System.Web.UI.SessionPageStatePersister> 、既定ではなくクラス<xref:System.Web.UI.HiddenFieldPageStatePersister>サーバー側のセッション オブジェクトのビューステートを保存するクラス。  
+  
+ [!code-csharp[System.Web.UI.SessionPageStatePersister_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.SessionPageStatePersister_1/CS/mypageadapter2.cs#1)]
+ [!code-vb[System.Web.UI.SessionPageStatePersister_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.SessionPageStatePersister_1/VB/mypageadapter2.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionPageStatePersister (System.Web.UI.Page page);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Page page) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SessionPageStatePersister.#ctor(System.Web.UI.Page)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="page" Type="System.Web.UI.Page" />
+      </Parameters>
+      <Docs>
+        <param name="page"><see cref="T:System.Web.UI.Page" />のビュー状態の永続化メカニズムを作成します。</param>
+        <summary><see cref="T:System.Web.UI.SessionPageStatePersister" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、記述する方法を示しています、<xref:System.Web.UI.Adapters.PageAdapter>クラスのインスタンスを返す、<xref:System.Web.UI.SessionPageStatePersister>サーバー側のセッション オブジェクトのビューステートを保存するクラス。  
+  
+ [!code-csharp[System.Web.UI.SessionPageStatePersister_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.SessionPageStatePersister_1/CS/mypageadapter2.cs#1)]
+ [!code-vb[System.Web.UI.SessionPageStatePersister_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.SessionPageStatePersister_1/VB/mypageadapter2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="T:System.Web.SessionState.HttpSessionState" />が null (<see langword="Nothing" /> Visual basic)</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public override void Load ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Load() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SessionPageStatePersister.Load" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>逆シリアル化し、サーバー側のセッション オブジェクトから永続化された状態を読み込むときに、<see cref="T:System.Web.UI.Page" />オブジェクトがそのコントロールの階層構造を初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.SessionPageStatePersister>クラスが実装する、<xref:System.Web.UI.SessionPageStatePersister.Load%2A>からページの状態を読み込むためのメソッド、<xref:System.Web.SessionState.HttpSessionState>クライアントに関連付けられているオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException"><see cref="M:System.Web.UI.SessionPageStatePersister.Load" />メソッドが正常にシリアル化解除できません、Web サーバーへの要求に含まれている状態です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public override void Save ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Save() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SessionPageStatePersister.Save" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>含まれている任意のオブジェクトの状態をシリアル化、<see cref="P:System.Web.UI.PageStatePersister.ViewState" />または<see cref="P:System.Web.UI.PageStatePersister.ControlState" />プロパティおよび状態をセッション オブジェクトに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.SessionPageStatePersister>クラスが実装する、<xref:System.Web.UI.HiddenFieldPageStatePersister.Save%2A>でページの状態を永続化するメソッド、<xref:System.Web.SessionState.HttpSessionState>クライアントに関連付けられているオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

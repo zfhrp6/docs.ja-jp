@@ -1,0 +1,155 @@
+<Type Name="PeerApplicationLaunchInfo" FullName="System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo">
+  <TypeSignature Language="C#" Value="public class PeerApplicationLaunchInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PeerApplicationLaunchInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>必要な起動情報を表す、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />ピア コラボレーションの招待に応答するが開始します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを調査できます、<xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data%2A>と<xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Message%2A>アプリケーションの起動を開始した招待状に固有の情報を取得するには、このクラスのプロパティです。  
+  
+ このクラスへのアクセスが必要です、<xref:System.Security.Permissions.PermissionState>の<xref:System.Security.Permissions.PermissionState.Unrestricted>します。 この状態が作成されたときに、<xref:System.Net.PeerToPeer.Collaboration.Peer>コラボレーション セッションを開始します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public byte[] Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[] Data" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているアプリケーション定義のバイナリ データ、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />招待します。</summary>
+        <value>関連付けられているデータを含むバイト配列、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />招待します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデータ blob は自由形式であり、呼び出し元によって提供されます。  指定できるデータの上限は、4,096 バイトです。  
+  
+ <xref:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Data%2A>することはできません`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定への応答に関連付けられたメッセージ、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />招待します。</summary>
+        <value>テキスト メッセージに関連付けられている、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerInvitationResponse" />を<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />招待します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージの最大長は、255 Unicode 文字です。 すべてのプロパティの既定値は、明示的に指定しない限り、`null`参照型の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerApplication">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerApplication PeerApplication { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerApplication PeerApplication" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.PeerApplication" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerApplication</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />の招待状が送信されました。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />を<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaboration" />招待状が送信されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのプロパティの既定値は、明示的に指定しない限り、`null`参照型の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerContact">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerContact PeerContact { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerContact PeerContact" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.PeerContact" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerContact</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />招待を送信します。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerContact" />招待を送信します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのプロパティの既定値は、明示的に指定しない限り、`null`参照型の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PeerEndPoint">
+      <MemberSignature Language="C#" Value="public System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.PeerToPeer.Collaboration.PeerEndPoint PeerEndPoint" />
+      <MemberSignature Language="DocId" Value="P:System.Net.PeerToPeer.Collaboration.PeerApplicationLaunchInfo.PeerEndPoint" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.PeerToPeer.Collaboration.PeerEndPoint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />元となる、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerApplication" />招待状が送信されました。</summary>
+        <value><see cref="T:System.Net.PeerToPeer.Collaboration.PeerEndPoint" />から招待状が送信されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのプロパティの既定値は、明示的に指定しない限り、`null`参照型の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

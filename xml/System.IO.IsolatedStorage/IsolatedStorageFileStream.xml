@@ -1,0 +1,1458 @@
+<Type Name="IsolatedStorageFileStream" FullName="System.IO.IsolatedStorage.IsolatedStorageFileStream">
+  <TypeSignature Language="C#" Value="public class IsolatedStorageFileStream : System.IO.FileStream" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IsolatedStorageFileStream extends System.IO.FileStream" />
+  <TypeSignature Language="DocId" Value="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.FileStream</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>分離ストレージ内のファイルを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り、書き込み、および分離ストレージでファイルを作成するには、このクラスを使用します。  
+  
+ このクラスを拡張するため<xref:System.IO.FileStream>のインスタンスを使用することができます<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>ほとんどの状況で場所、<xref:System.IO.FileStream>される可能性がありますそれ以外の場合、構築する場合など、<xref:System.IO.StreamReader>または<xref:System.IO.StreamWriter>です。  
+  
+ この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+> [!IMPORTANT]
+>  分離ストレージは [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] アプリでは使用できません。 代わりに、`Windows.Storage` API に含まれる [!INCLUDE[wrt](~/includes/wrt-md.md)] 名前空間内のアプリケーション データ クラスを使用して、ローカル データとローカル ファイルを格納します。 詳細については、Windows デベロッパー センターの [アプリケーション データ](http://go.microsoft.com/fwlink/?LinkId=229175) に関する説明を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションでは、使用する方法を示しています<xref:System.IO.IsolatedStorage.IsolatedStorageFile>と<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>分離ストレージ ファイルにデータを書き込めません。 ユーザーがログインしようとしています。 ユーザーが、新しいユーザーの場合は、ニュース URL とスポーツ URL が分離ストレージ内の個人設定として記録されます。 ユーザーが返されるユーザーの場合は、ユーザーの現在の設定が表示されます。 このサンプル アプリケーションのコンテキストでは、この名前空間全体で使用するコード例が表示されます。 使用することができます、 [Storeadm.exe (分離ストレージ ツール)](~/docs/framework/tools/storeadm-exe-isolated-storage-tool.md)ユーティリティを一覧表示し、このコンソール アプリケーションで作成される分離ストレージ ファイルを削除します。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#1)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#1)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> 値のいずれか。</param>
+        <summary>指定した <paramref name="mode" /> で、<paramref name="path" /> によって指定されたファイルへのアクセスを与える <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在実行中のアセンブリの id が実行されているアプリケーション ドメインのでは使用される分離ストアが対象です。 このストアを開いたままの有効期間にのみ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 別の分離ストレージのスコープを指定するか、開かれたままにストアを許可する (ので、複数<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>そこからオブジェクトを開くことができます) を受け取るコンス トラクターのフォームを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクト。  
+  
+ `mode`パラメーターかどうか、新しいファイルを作成する必要があります、これを使用すると、既存のものとなどを示します。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字解釈されないことし、例外をスローする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリ<paramref name="path" />存在しません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません、<paramref name="mode" />に設定されています。<see cref="F:System.IO.FileMode.Open" /></exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <summary><paramref name="mode" /> に指定したモードで、<paramref name="path" /> で指定したファイルへの、<paramref name="access" /> に指定した種類のアクセスを提供する、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在実行中のアセンブリの id が実行されているアプリケーション ドメインのでは使用される分離ストアが対象です。 このストアを開いたままの有効期間にのみ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 別の分離ストレージのスコープを指定するか、開かれたままにストアを許可する (ので、複数<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>そこからオブジェクトを開くことができます) を受け取るコンス トラクターのフォームを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクト。  
+  
+ `mode`パラメーターは、新しいファイルを作成するかどうかまたは既存の使用を示します。 `access`パラメーターは、読み取り専用、読み取り/書き込み、および書き込み専用です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.IsolatedStorage.IsolatedStorageFile isf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, class System.IO.IsolatedStorage.IsolatedStorageFile isf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.IsolatedStorage.IsolatedStorageFile)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="isf" Type="System.IO.IsolatedStorage.IsolatedStorageFile" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="isf"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> を開くために使用する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />。</param>
+        <summary><paramref name="mode" /> で指定したモード、<paramref name="isf" /> で指定した <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" /> のコンテキストを使用して、<paramref name="path" /> で指定したファイルへのアクセスを提供する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`パラメーターかどうか、新しいファイルを作成する必要があります、これを使用すると、既存のものとなどを示します。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#11)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#11)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">
+          <paramref name="isf" /> にクォータがありません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <param name="share"><see cref="T:System.IO.FileShare" /> 値のビットごとの組み合わせ。</param>
+        <summary><paramref name="mode" /> で指定したモード、<paramref name="share" /> で指定した共有モードを使用して、<paramref name="path" /> で指定したファイルへの、<paramref name="access" /> で指定した種類のアクセスを提供する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在実行中のアセンブリの id が実行されているアプリケーション ドメインのでは使用される分離ストアが対象です。 このストアを開いたままの有効期間にのみ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 別の分離ストレージのスコープを指定するか、開かれたままにストアを許可する (ので、複数<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>そこからオブジェクトを開くことができます) を受け取るコンス トラクターのフォームを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクト。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#15)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#15)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.IsolatedStorage.IsolatedStorageFile isf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, class System.IO.IsolatedStorage.IsolatedStorageFile isf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.IsolatedStorage.IsolatedStorageFile)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="isf" Type="System.IO.IsolatedStorage.IsolatedStorageFile" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <param name="isf"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> を開くために使用する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />。</param>
+        <summary><paramref name="mode" /> で指定したモード、<paramref name="isf" /> で指定した <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" /> のコンテキストを使用して、<paramref name="path" /> で指定したファイルへの、<paramref name="access" /> で指定した種類のアクセスを提供する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`パラメーターは、新しいファイルを作成するかどうかまたは既存の使用を示します。 `access`パラメーターは、読み取り専用、読み取り/書き込み、および書き込み専用です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#10)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#10)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ObjectDisposedException">分離ストアは閉じています。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> が <see cref="F:System.IO.FileMode.Open" /> に設定されています。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">
+          <paramref name="isf" /> にクォータがありません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <param name="share"><see cref="T:System.IO.FileShare" /> 値のビットごとの組み合わせ。</param>
+        <param name="bufferSize"><see cref="T:System.IO.FileStream" /> のバッファー サイズ。</param>
+        <summary><paramref name="mode" /> で指定したモード、<paramref name="share" /> で指定したファイル共有モード、<paramref name="buffersize" /> で指定したバッファー サイズを使用して、<paramref name="path" /> で指定したファイルへの、<paramref name="access" /> で指定した種類のアクセスを提供する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在実行中のアセンブリの id が実行されているアプリケーション ドメインのでは使用される分離ストアが対象です。 このストアを開いたままの有効期間にのみ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 別の分離ストレージのスコープを指定するか、開かれたままにストアを許可する (ので、複数<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>そこからオブジェクトを開くことができます) を受け取るコンス トラクターのフォームを使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFile>オブジェクト。  
+  
+ `mode`パラメーターは、新しいファイルを作成するかどうかまたは既存の使用を示します。 `access`パラメーターは、読み取り専用、読み取り/書き込み、および書き込み専用です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.IO.IsolatedStorage.IsolatedStorageFile isf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, class System.IO.IsolatedStorage.IsolatedStorageFile isf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.IO.IsolatedStorage.IsolatedStorageFile)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="isf" Type="System.IO.IsolatedStorage.IsolatedStorageFile" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <param name="share"><see cref="T:System.IO.FileShare" /> 値のビットごとの組み合わせ。</param>
+        <param name="isf"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> を開くために使用する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />。</param>
+        <summary><paramref name="mode" /> で指定したモード、<paramref name="share" /> で指定したファイル共有モード、<paramref name="isf" /> で指定した <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" /> のコンテキストを使用して、<paramref name="path" /> で指定したファイルへの、<paramref name="access" /> で指定した種類のアクセスを提供する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`パラメーターは、新しいファイルを作成するかどうかまたは既存の使用を示します。 `access`パラメーターは、読み取り専用、読み取り/書き込み、および書き込み専用です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#11)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#11)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">
+          <paramref name="isf" /> にクォータがありません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IsolatedStorageFileStream (string path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, int bufferSize, System.IO.IsolatedStorage.IsolatedStorageFile isf);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.IO.FileMode mode, valuetype System.IO.FileAccess access, valuetype System.IO.FileShare share, int32 bufferSize, class System.IO.IsolatedStorage.IsolatedStorageFile isf) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.#ctor(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Int32,System.IO.IsolatedStorage.IsolatedStorageFile)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="mode" Type="System.IO.FileMode" />
+        <Parameter Name="access" Type="System.IO.FileAccess" />
+        <Parameter Name="share" Type="System.IO.FileShare" />
+        <Parameter Name="bufferSize" Type="System.Int32" />
+        <Parameter Name="isf" Type="System.IO.IsolatedStorage.IsolatedStorageFile" />
+      </Parameters>
+      <Docs>
+        <param name="path">分離ストレージ内でのファイルの相対パス。</param>
+        <param name="mode"><see cref="T:System.IO.FileMode" /> の値の 1 つ。</param>
+        <param name="access"><see cref="T:System.IO.FileAccess" /> 値のビットごとの組み合わせ。</param>
+        <param name="share"><see cref="T:System.IO.FileShare" /> 値のビットごとの組み合わせ。</param>
+        <param name="bufferSize"><see cref="T:System.IO.FileStream" /> のバッファー サイズ。</param>
+        <param name="isf"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> を開くために使用する <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" />。</param>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> で指定したモード、<paramref name="path" /> で指定したファイル共有モード、<paramref name="mode" /> で指定したバッファー サイズ、<paramref name="access" /> で指定した <paramref name="share" /> のコンテキストを使用して、<paramref name="buffersize" /> で指定したファイルへの、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFile" /> で指定した種類のアクセスを提供する <paramref name="isf" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `mode`パラメーターは、新しいファイルを作成するかどうかまたは既存の使用を示します。 `access`パラメーターは、読み取り専用、読み取り/書き込み、および書き込み専用です。  
+  
+> [!CAUTION]
+>  文字のセットをコンパイル時に特定のカルチャ設定を同じ文字を別のカルチャ設定を取得する文字、解釈されないことし、例外をスローする可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターの使用を示します。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#12](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#12)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#12)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="path" /> の形式が正しくありません。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">ファイルが見つかりません。<paramref name="mode" /> は <see cref="F:System.IO.FileMode.Open" /> に設定されます。</exception>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException">
+          <paramref name="isf" /> にクォータがありません。</exception>
+        <permission cref="T:System.Security.Permissions.IsolatedStorageFilePermission">分離ストレージのアクセス</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginRead">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginRead (byte[] buffer, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginRead(unsigned int8[] buffer, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numBytes" Type="System.Int32" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを読み取るバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>読み取りを開始する位置。</param>
+        <param name="numBytes">読み取る最大バイト数。</param>
+        <param name="userCallback">非同期の読み取り操作が完了したときに呼び出すメソッド。 このパラメーターは省略できます。</param>
+        <param name="stateObject">非同期の読み取りの状態。</param>
+        <summary>非同期の読み取りを開始します。</summary>
+        <returns>非同期の読み取りを表す <see cref="T:System.IAsyncResult" /> オブジェクト。まだ保留状態の場合もあります。 読み取ったバイト数を確認するには、<see cref="T:System.IAsyncResult" /> をこのストリームの <see cref="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead(System.IAsyncResult)" /> メソッドに渡す必要があります。 この操作は、<see cref="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> を呼び出した同じコードを使用するか、または <see cref="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> に渡されたコールバックで行うことができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ストリームの現在の位置は、I/O 操作の完了時ではなく、非同期の読み取りや書き込みを発行したときに更新されます。  
+  
+ 呼び出す必要があります<xref:System.IO.Stream.EndRead%2A>この<xref:System.IAsyncResult>に読み取られたバイト数を確認します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">非同期の読み取りがファイルの終わりを超えて試行されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginWrite">
+      <MemberSignature Language="C#" Value="public override IAsyncResult BeginWrite (byte[] buffer, int offset, int numBytes, AsyncCallback userCallback, object stateObject);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IAsyncResult BeginWrite(unsigned int8[] buffer, int32 offset, int32 numBytes, class System.AsyncCallback userCallback, object stateObject) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="numBytes" Type="System.Int32" />
+        <Parameter Name="userCallback" Type="System.AsyncCallback" />
+        <Parameter Name="stateObject" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">データを書き込むバッファー。</param>
+        <param name="offset">内のバイト オフセット<c>バッファー</c>書き込みを開始する位置を示すです。</param>
+        <param name="numBytes">書き込む最大バイト数。</param>
+        <param name="userCallback">非同期の書き込み操作が完了したときに呼び出すメソッド。 このパラメーターは省略できます。</param>
+        <param name="stateObject">非同期の書き込みの状態。</param>
+        <summary>非同期の書き込みを開始します。</summary>
+        <returns>非同期の書き込みを表す <see cref="T:System.IAsyncResult" />。まだ保留状態の場合もあります。 書き込みが完了したことを確認してから、リソースを適切に解放するには、このストリームの <see cref="M:System.IO.Stream.EndWrite(System.IAsyncResult)" /> メソッドに <see cref="T:System.IAsyncResult" /> を渡す必要があります。 この操作は、<see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> を呼び出した同じコードを使用するか、または <see cref="M:System.IO.Stream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)" /> に渡されたコールバックで行うことができます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>は、オブジェクトが書き込み可能なストリームの末尾に書き込み、ストリームが拡張されます。  
+  
+ ストリームの現在の位置は、I/O 操作の完了時ではなく、非同期の読み取りや書き込みを発行したときに更新されます。  
+  
+ 呼び出す必要があります<xref:System.IO.Stream.EndWrite%2A>で、<xref:System.IAsyncResult>を書き込まれたバイト数を調べるにはこのメソッドを表すオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">非同期の書き込みがファイルの終わりを超えて試行されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanRead">
+      <MemberSignature Language="C#" Value="public override bool CanRead { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanRead" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanRead" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルを読み取ることができるかどうかを示すブール値を取得します。</summary>
+        <value>
+          <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトを読み取ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用しているかどうか、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトを読み取ることができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用する方法を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanRead%2A>に呼び出す前に、ストリームを読み取ることができるかどうかを調べると、プロパティ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read%2A>または<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#11)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#11)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSeek">
+      <MemberSignature Language="C#" Value="public override bool CanSeek { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSeek" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanSeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シーク操作をサポートしているかどうかを示す ブール値を取得します。</summary>
+        <value>
+          <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトがシーク操作をサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用しているかどうか、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトでサポートされるシーク操作します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWrite">
+      <MemberSignature Language="C#" Value="public override bool CanWrite { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWrite" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanWrite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルに書き込むことができるかどうかを示す ブール値を取得します。</summary>
+        <value>
+          <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトに書き込むことができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用しているかどうか、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトを書き込むことができます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用する方法を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanWrite%2A>に呼び出す前に、ストリームを読み取ることができるかどうかを調べると、プロパティ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Write%2A>または<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginWrite%2A>メソッドです。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#13](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#13)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#13)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、パブリック<xref:System.IDisposable.Dispose%2A>メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 <xref:System.IDisposable.Dispose%2A>プロテクト呼び出します<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose%2A>メソッドを`disposing`パラメーターが true に設定します。 <xref:System.Object.Finalize%2A>呼び出す<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose%2A>で`disposing`を false に設定します。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>参照します。 このメソッドは、参照される各オブジェクトの <xref:System.IDisposable.Dispose%2A> メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.IDisposable.Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 <see cref="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose(System.Boolean)" /> をオーバーライドする場合は、以前に <see cref="M:System.IDisposable.Dispose" /> を呼び出したときに破棄されたオブジェクトを参照しないように注意する必要があります。 実装する方法の詳細についての<see cref="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Dispose(System.Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see cref="M:System.IDisposable.Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="EndRead">
+      <MemberSignature Language="C#" Value="public override int EndRead (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 EndRead(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留中の非同期の要求。</param>
+        <summary>非同期読み込み要求の保留状態を終了します。</summary>
+        <returns>ストリームから読み取ったバイト数 (0 ～要求したバイト数の間の数値)。 ストリームは、末尾に達した場合にだけ 0 を返します。 それ以外の場合、ストリームは少なくとも 1 バイトが読み取られるまでブロックします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead%2A>1 回だけ呼び出す必要がありますすべて<xref:System.IAsyncResult>オブジェクトから<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead%2A>、および呼び出し<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead%2A>から読み取られたバイト数を知る唯一の方法、<xref:System.IO.Stream>です。 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead%2A>I/O 操作が完了するまでブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EndWrite">
+      <MemberSignature Language="C#" Value="public override void EndWrite (IAsyncResult asyncResult);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void EndWrite(class System.IAsyncResult asyncResult) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndWrite(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="asyncResult" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="asyncResult">保留中の非同期 I/O 終了要求。</param>
+        <summary>非同期の書き込みを終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndWrite%2A>1 回だけ呼び出す必要がありますすべて<xref:System.IAsyncResult>から<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginWrite%2A>です。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndWrite%2A>I/O 操作が完了するまでブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="asyncResult" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Flush" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このストリームのバッファーをクリアして、バッファー内のデータがファイルに書き込まれるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファーの読み取りまたは書き込み、両方は必要ありませんが、同時に使用できるため<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Flush%2A>は 2 つの関数を実行します。 最初に、以前にバッファーに書き込まれたすべてのデータがファイルにコピーされ、バッファーをクリアします。 場合は、2 番目<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanSeek%2A>は`true`とデータが以前の読み取りにバッファーをファイルからコピー、ファイル内の現在位置が、バッファー内の未読のバイト数だけデクリメントします。 バッファーをクリアし、します。  
+  
+ 使用して、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Flush%28System.Boolean%29>バッファリングされたすべてのデータの中間ファイル バッファーのことを確認するときのメソッドのオーバー ロードが記述されたディスクにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="public override void Flush (bool flushToDisk);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Flush(bool flushToDisk) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Flush(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flushToDisk" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="flushToDisk">
+          すべての中間ファイル バッファーをフラッシュする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>このストリームのバッファーをクリアして、バッファー内のデータがファイルに書き込まれるようにし、すべての中間ファイル バッファーもクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バッファリングされたすべてのデータの中間ファイル バッファーのことを確認する場合は、このオーバー ロードが書き込まれます使用してディスクにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public override IntPtr Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Handle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use SafeFileHandle - once available")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドルを取得します。 <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトではこのプロパティへのアクセスは許可されておらず、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageException" /> がスローされます。</summary>
+        <value>現在の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトによってカプセル化されるファイルのファイル ハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、「<xref:System.IO.FileStream.Handle%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Handle%2A>プロパティです。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#4)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#4)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException"><see cref="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.Handle" />プロパティは常にこの例外を生成します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAsync">
+      <MemberSignature Language="C#" Value="public override bool IsAsync { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAsync" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.IsAsync" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトが非同期的に開かれたか、同期的に開かれたかを示すブール値を取得します。</summary>
+        <value>
+          <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトが非同期アクセスをサポートしている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトを作成することはできませんとは異なり、<xref:System.IO.FileStream>です。 ただし、 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginWrite%2A>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.BeginRead%2A>、 <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndWrite%2A>、および<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.EndRead%2A>メソッドは、いくつかのパフォーマンスの低下との同期のインスタンスでサポートされています。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用する方法を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.IsAsync%2A>ことを確認するプロパティ、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>は同期型です。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#7)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#7)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public override long Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Length" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの長さを取得します。</summary>
+        <value>バイト単位の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの長さ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Length%2A>現在、ファイル内のバイト数を表します。 分離ストレージのクォータで影響はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を示しています、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Length%2A>プロパティです。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#14)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#14)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Lock">
+      <MemberSignature Language="C#" Value="public override void Lock (long position, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Lock(int64 position, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Lock(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">ロックする範囲の開始位置。 このパラメーターの値は、0 (ゼロ) 以上にする必要があります。</param>
+        <param name="length">ロックするバイト数。</param>
+        <summary>ストリームに対する他のプロセスの読み取りまたは書き込みを禁止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル ストリームの範囲をロックすると、ファイル ストリームの範囲にロックのプロセスの排他アクセスのスレッドが与えられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" /> または <paramref name="length" /> が負の値です。</exception>
+        <exception cref="T:System.ObjectDisposedException">ファイルは閉じられています。</exception>
+        <exception cref="T:System.IO.IOException">別のプロセスがファイルの一部をロックしているため、プロセスはこのファイルにアクセスできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public override long Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 Position" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの現在位置を取得または設定します。</summary>
+        <value><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの現在位置。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定する場合に有効、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.CanSeek%2A>プロパティは`true`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Position%2A>プロパティにデータをファイルに書き込めません。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#14)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#14)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">位置は、負の値に設定することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override int Read (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 Read(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">読み取るバッファー。</param>
+        <param name="offset">書き込みの開始位置を示すバッファー内のオフセット。</param>
+        <param name="count">読み取る最大バイト数。</param>
+        <summary>現在のバッファー内の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトから配列にバイトをコピーします。</summary>
+        <returns><paramref name="buffer" /> に読み取る合計バイト数。 要求しただけのバイト数を読み取ることができなかった場合、この値は要求したバイト数より小さくなります。ストリームの末尾に到達した場合は 0 になることがあります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `buffer`パラメーターのインスタンスであることができます、<xref:System.Buffer>クラス、または、次の種類の 1 つの配列。 <xref:System.Byte>、 <xref:System.SByte>、 <xref:System.Char>、 <xref:System.Int16>、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.UInt16>、 <xref:System.UInt32>、 <xref:System.UInt64>、 <xref:System.Single>、または<xref:System.Double>です。 `offset`パラメーターは、書き込み (バッファー内のインデックス) を開始する位置を示すバッファー内のバイトのオフセットと`count`パラメーターは現在のストリームから読み込まれるバイトの最大数を指定します。 ストリームの末尾に達した場合は、実際の数バイトを読み取り、または 0 を返されるです。 読み取り操作が成功した場合、ストリームの現在の位置は読み取られたバイト数で進められます。 例外が発生する場合は、ストリームの現在の位置は変更されません。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read%2A>メソッド扱い、`buffer`パラメーターを実際の型に関係なく、バイトのブロックとして。 同様に、`offset`と`count`パラメーターは、常に、バイト単位で指定します。 `buffer`バイト配列以外のパラメーター、つまり、フォームの適切な値をバイト単位で要素のサイズによって、要素のインデックスを乗算する必要があります`offset`または`count`です。  
+  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read%2A>メソッドは、ストリームの末尾に達した場合にのみゼロを返します。 その他のすべてのケースで<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read%2A>常に返す前に、ストリームから、少なくとも 1 バイトを読み取ります。 データが利用できない場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>への呼び出し時にオブジェクト<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.Read%2A>、少なくとも 1 バイトのデータを返すことができるまで、メソッドはブロックされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadByte">
+      <MemberSignature Language="C#" Value="public override int ReadByte ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 ReadByte() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.ReadByte" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>分離ストレージで <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトから 1 バイトを読み取ります。</summary>
+        <returns>分離ストレージ ファイルから読み取られた 8 ビット符号なし整数値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しますが、どのように<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.ReadByte%2A>からデータを読み取るメソッドを使用できます、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#14)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#14)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeFileHandle">
+      <MemberSignature Language="C#" Value="public override Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeFileHandle SafeFileHandle" />
+      <MemberSignature Language="DocId" Value="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.SafeFileHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeFileHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドルを表す <see cref="T:Microsoft.Win32.SafeHandles.SafeFileHandle" /> オブジェクトを取得します。</summary>
+        <value>現在の <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトによってカプセル化されるファイルのオペレーティング システム ファイル ハンドルを表す <see cref="T:Microsoft.Win32.SafeHandles.SafeFileHandle" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.SafeFileHandle%2A>プロパティはサポートされず、常に生成、<xref:System.IO.IsolatedStorage.IsolatedStorageException>例外。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException"><see cref="P:System.IO.IsolatedStorage.IsolatedStorageFileStream.SafeFileHandle" />プロパティは常にこの例外を生成します。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードへのアクセスに必要なアクセス許可。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" /></permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public override long Seek (long offset, System.IO.SeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int64 Seek(int64 offset, valuetype System.IO.SeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Seek(System.Int64,System.IO.SeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.Int64" />
+        <Parameter Name="origin" Type="System.IO.SeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの新しい位置。</param>
+        <param name="origin"><see cref="T:System.IO.SeekOrigin" /> 値のいずれか。</param>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの現在位置を特定の値に設定します。</summary>
+        <returns><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの新しい位置。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いくつか<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトは、ストリームの長さを超えた位置指定をサポート、他のユーザーここで例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="origin" /> は <see cref="T:System.IO.SeekOrigin" /> 値のいずれかである必要があります。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLength">
+      <MemberSignature Language="C#" Value="public override void SetLength (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetLength(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.SetLength(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">新しい <see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの長さ。</param>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトの長さを指定した <paramref name="value" /> に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、指定した`value`が現在の長さより小さい、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト、ストリームが切り詰められています。 場合、指定した`value`が現在の長さより大きく、ストリームのストリームが展開されています。 ストリームが展開されている場合、古いクライアント シークレットと新しい長さの間のストリームの内容は未定義です。 このメソッドを使用するために、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトは、書き込みとシークの両方をサポートする必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" /> は負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unlock">
+      <MemberSignature Language="C#" Value="public override void Unlock (long position, long length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Unlock(int64 position, int64 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Unlock(System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int64" />
+        <Parameter Name="length" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="position">ロックを解除する範囲の開始位置。 このパラメーターの値は、0 (ゼロ) 以上にする必要があります。</param>
+        <param name="length">ロックを解除するバイト数。</param>
+        <summary>以前にロックされたファイルの全部または一部への他のプロセスによるアクセスを許可します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="position" /> または <paramref name="length" /> が負の値です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (byte[] buffer, int offset, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(unsigned int8[] buffer, int32 offset, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.Write(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="buffer" Type="System.Byte[]" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="buffer">書き込むバッファー。</param>
+        <param name="offset">開始位置を示すバッファー内のバイト オフセット。</param>
+        <param name="count">書き込む最大バイト数。</param>
+        <summary>バイト配列から読み取ったデータを使用して、<see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトにバイトのブロックを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `offset`パラメーターはバイトのオフセット、`buffer`読み取りを開始する位置を示す、`count`パラメーターはこれに書き込まれるバイト数<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 現在の位置の書き込み操作が成功した場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトが書き込まれたバイト数で高度なです。 例外が発生した、現在の位置の場合、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクトは変更されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトのクォータを超える書き込みが試行されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteByte">
+      <MemberSignature Language="C#" Value="public override void WriteByte (byte value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteByte(unsigned int8 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.IsolatedStorage.IsolatedStorageFileStream.WriteByte(System.Byte)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.IsolatedStorage</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte" />
+      </Parameters>
+      <Docs>
+        <param name="value">分離ストレージ ファイルに書き込むバイト値。</param>
+        <summary><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトに 1 バイトを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を示しますが、どのように<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream.WriteByte%2A>からデータを読み取るメソッドを使用できます、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>オブジェクト。 この例の完全なコンテキストで次を参照してください。、<xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>の概要です。  
+  
+ [!code-cpp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CPP/source.cpp#14)]
+ [!code-csharp[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/CS/source.cs#14)]
+ [!code-vb[System.IO.IsolatedStorage.IsolatedStorage#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.IsolatedStorage.IsolatedStorage/VB/source.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IsolatedStorage.IsolatedStorageException"><see cref="T:System.IO.IsolatedStorage.IsolatedStorageFileStream" /> オブジェクトのクォータを超える書き込みが試行されています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

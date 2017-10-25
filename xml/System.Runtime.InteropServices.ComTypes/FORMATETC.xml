@@ -1,0 +1,240 @@
+<Type Name="FORMATETC" FullName="System.Runtime.InteropServices.ComTypes.FORMATETC">
+  <TypeSignature Language="C#" Value="public struct FORMATETC" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit FORMATETC extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComTypes.FORMATETC" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>クリップボードの一般化された形式を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.InteropServices.ComTypes.FORMATETC>構造体には、対象となるデバイス、縦横またはデータ、および記憶域メディア インジケーターのビューが含まれます。 クリップボードの形式ではなくは OLE FORMATETC データ構造を代わりに使用します。 この構造体は、OLE 関数とデータの書式情報を必要とするメソッドのパラメーターとして使用されます。  
+  
+ 詳細については、`FORMATETC`構造体、MSDN ライブラリを参照してください。  
+  
+ COM メソッドのネイティブ コードでは、HRESULT を返すと、共通言語ランタイムは例外をスローします。 詳細については、次を参照してください。[する方法: マップの Hresult と例外](~/docs/framework/interop/how-to-map-hresults-and-exceptions.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="cfFormat">
+      <MemberSignature Language="C#" Value="public short cfFormat;" />
+      <MemberSignature Language="ILAsm" Value=".field public int16 cfFormat" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.ComTypes.FORMATETC.cfFormat" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関心のある特定のクリップボード形式を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ OLE には、3 つの形式が認識されます。  
+  
+-   標準のインターチェンジ形式など、`CF_TEXT`です。  
+  
+-   プライベートなアプリケーション形式はの形式を提供するアプリケーションまたは同様の機能を提供するその他のアプリケーションによってのみ認識されます。  
+  
+-   リンクまたは埋め込みオブジェクトを OLE 形式の場合、作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="dwAspect">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ComTypes.DVASPECT dwAspect;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Runtime.InteropServices.ComTypes.DVASPECT dwAspect" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ComTypes.DVASPECT</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかを指定します、<see cref="T:System.Runtime.InteropServices.ComTypes.DVASPECT" />列挙定数を示す、レンダリングにどの程度詳細が含まれている必要があります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一のクリップボード形式には、複数の要素またはオブジェクトのビューをサポートできます。 ほとんどのデータやプレゼンテーションの転送、およびメソッドをキャッシュは、すべての属性情報を渡します。 たとえば、呼び出し元が要求オブジェクトのアイコンの画像メタファイルのクリップボード形式を使用して、それを取得します。 1 つだけに注意してください<xref:System.Runtime.InteropServices.ComTypes.DVASPECT>で値を使用できます<xref:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect>です。 つまり、<xref:System.Runtime.InteropServices.ComTypes.FORMATETC.dwAspect>の結果をすることはできません、`BOOLEAN OR`いくつかの操作<xref:System.Runtime.InteropServices.ComTypes.DVASPECT>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="lindex">
+      <MemberSignature Language="C#" Value="public int lindex;" />
+      <MemberSignature Language="ILAsm" Value=".field public int32 lindex" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ページの境界を越えて、データを分割する必要があるときは、縦横比の一部を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も一般的な値は、すべてのデータを示す-1 です。 概要の<xref:System.Runtime.InteropServices.ComTypes.DVASPECT.DVASPECT_THUMBNAIL>と<xref:System.Runtime.InteropServices.ComTypes.DVASPECT.DVASPECT_ICON>、<xref:System.Runtime.InteropServices.ComTypes.FORMATETC.lindex>は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ptd">
+      <MemberSignature Language="C#" Value="public IntPtr ptd;" />
+      <MemberSignature Language="ILAsm" Value=".field public native int ptd" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.ComTypes.FORMATETC.ptd" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポインターを指定します、<see langword="DVTARGETDEVICE" />構造の作成中のデータをターゲット デバイスに関する情報を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したデータ形式は、ターゲット デバイスのまたは呼び出し元はどのようなデバイスが使用される気にしません独立したときに、null 値が使用されます。 後者の場合、データには、ターゲット デバイスが必要な場合、オブジェクト必要があります、適切な既定のデバイスを選択 (多くの場合、ビジュアル コンポーネントを表示)。 ほとんどのメタファイルなど、null のターゲット デバイスを使用するオブジェクトから取得されたデータは、ターゲット デバイスに依存しません。 結果のデータは通常と同じユーザーが選択したかどうかになります、**名前を付けて保存**コマンドを**ファイル**メニューと、インターチェンジの形式を選択します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="tymed">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.ComTypes.TYMED tymed;" />
+      <MemberSignature Language="ILAsm" Value=".field public valuetype System.Runtime.InteropServices.ComTypes.TYMED tymed" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.ComTypes.FORMATETC.tymed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.ComTypes.TYMED</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いずれかを指定します、<see cref="T:System.Runtime.InteropServices.ComTypes.TYMED" />列挙型定数は、オブジェクトのデータを転送に使用するストレージ メディアの種類を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ どのようなメディアに適したオブジェクトを使用して、データを転送できます。 たとえば、データは、グローバル メモリ、ディスク ファイル、または構造化ストレージ オブジェクトを使用して渡すことができます。 詳細については、<xref:System.Runtime.InteropServices.ComTypes.TYMED> 列挙型のページをご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

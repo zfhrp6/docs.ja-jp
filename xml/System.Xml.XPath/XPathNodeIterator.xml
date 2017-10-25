@@ -1,0 +1,546 @@
+<Type Name="XPathNodeIterator" FullName="System.Xml.XPath.XPathNodeIterator">
+  <TypeSignature Language="C#" Value="public abstract class XPathNodeIterator : ICloneable, System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XPathNodeIterator extends System.Object implements class System.Collections.IEnumerable, class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.XPath.XPathNodeIterator" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XPath</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Position={CurrentPosition}, Current={debuggerDisplayProxy}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>選択したノード セットに対する反復子を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XPath.XPathNodeIterator>によって返されるオブジェクト、<xref:System.Xml.XPath.XPathNavigator>クラスは、選択したノードのセットの最初のノードに配置されていません。 呼び出し、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>のメソッド、<xref:System.Xml.XPath.XPathNodeIterator>クラスは、配置を行う必要があります、<xref:System.Xml.XPath.XPathNodeIterator>選択したノード セットの最初のノード上のオブジェクト。  
+  
+ 使用する場合、 <xref:System.Xml.XPath.XPathNodeIterator>、現在のノードまたはその先祖のいずれかを編集する場合、現在の位置は失われます。 ノードの数を編集する場合に選択した、作成、<xref:System.Xml.XPath.XPathNavigator>配列のすべてのノードからのコピー、<xref:System.Xml.XPath.XPathNodeIterator>配列、配列を反復処理し、ノードを変更します。  
+  
+ 反復処理する 2 つの方法、<xref:System.Xml.XPath.XPathNavigator>コレクションを使用して、<xref:System.Xml.XPath.XPathNodeIterator>クラスです。  
+  
+ 1 つの方法は、使用する、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドと、呼び出し<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>現在を取得する<xref:System.Xml.XPath.XPathNavigator>次の例のように、インスタンス。  
+  
+ [!code-cpp[XPathNavigatorMethods#55](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#55)]
+ [!code-csharp[XPathNavigatorMethods#55](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#55)]
+ [!code-vb[XPathNavigatorMethods#55](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#55)]  
+  
+ 別の方法は、使用する、`foreach`を呼び出すループ、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドを使用して、返された<xref:System.Collections.IEnumerator>インターフェイスを次の例のように、ノードを列挙します。  
+  
+ [!code-cpp[XPathNavigatorMethods#56](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#56)]
+ [!code-csharp[XPathNavigatorMethods#56](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#56)]
+ [!code-vb[XPathNavigatorMethods#56](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#56)]  
+  
+ いずれかを使用する必要があります<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>と<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>使用または<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>です。 これら 2 つのアプローチを組み合わせることと、予期しない結果が生じることができます。 たとえば場合、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドは最初に、し、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドが呼び出される、`foreach`ループ、`foreach`ループはその後の位置からでは、コレクションの先頭からの結果の列挙を開始しません、<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XPath.XPathNavigator.Select%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスを使用して設定ノードを選択する、<xref:System.Xml.XPath.XPathNodeIterator>クラスです。  
+  
+ [!code-cpp[XPathNavigatorMethods#39](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#39)]
+ [!code-csharp[XPathNavigatorMethods#39](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#39)]
+ [!code-vb[XPathNavigatorMethods#39](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#39)]  
+  
+ この例は、`books.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>   
+<bookstore>  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合、<see cref="T:System.Xml.XPath.XPathNodeIterator" />クラスでは、次のメンバーをオーバーライドする必要があります。  
+  
+-   <see cref="M:System.Xml.XPath.XPathNodeIterator.Clone" />  
+  
+-   <see cref="P:System.Xml.XPath.XPathNodeIterator.Current" />  
+  
+-   <see cref="P:System.Xml.XPath.XPathNodeIterator.CurrentPosition" />  
+  
+-   <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" /></para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XPathNodeIterator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathNodeIterator.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XPath.XPathNodeIterator" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、この型の状態を初期化するために、派生クラスのコンス トラクターによって呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XPath.XPathNodeIterator Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XPath.XPathNodeIterator Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathNodeIterator.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNodeIterator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、この複製を返します<see cref="T:System.Xml.XPath.XPathNodeIterator" />オブジェクト。</summary>
+        <returns>新しい<see cref="T:System.Xml.XPath.XPathNodeIterator" />このオブジェクトの複製<see cref="T:System.Xml.XPath.XPathNodeIterator" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複製された<xref:System.Xml.XPath.XPathNodeIterator>への呼び出しが行われている場合に設定されるノード内の同じノードにオブジェクトを配置、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドです。 複製された<xref:System.Xml.XPath.XPathNodeIterator>オブジェクトがこれを後続の変更によって影響ありません<xref:System.Xml.XPath.XPathNodeIterator>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathNodeIterator.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択したノード セット内の最後のノードのインデックスを取得します。</summary>
+        <value>選択した複数のノード、または選択したノードがない場合は 0 の最後のノードのインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XPath.XPathNodeIterator.Count%2A>プロパティの位置は影響しません、<xref:System.Xml.XPath.XPathNodeIterator>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XPath.XPathNavigator Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XPath.XPathNavigator Current" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathNodeIterator.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XPath.XPathNavigator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在のコンテキスト ノードに位置する、この <see cref="T:System.Xml.XPath.XPathNodeIterator" /> の <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクトを取得します。</summary>
+        <value>ノード セットの選択元となるコンテキスト ノードに位置する <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクト。 <see cref="M:System.Xml.XPath.XPathNodeIterator.MoveNext" /> メソッドを呼び出して、選択したセットの最初のノードに <see cref="T:System.Xml.XPath.XPathNodeIterator" /> を移動する必要があります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたのプロパティを使用する<xref:System.Xml.XPath.XPathNavigator>現在のノードに関する情報を取得するオブジェクト。 ただし、返された<xref:System.Xml.XPath.XPathNavigator>オブジェクトは変更できません。 返された<xref:System.Xml.XPath.XPathNavigator>選択されたノード セットからオブジェクトを移動することはできません。  
+  
+ また、複製すること、<xref:System.Xml.XPath.XPathNavigator>オブジェクトを使用して、<xref:System.Xml.XPath.XPathNavigator.Clone%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスです。 複製された<xref:System.Xml.XPath.XPathNavigator>オブジェクトは、選択されたノード セットから離れた場所から移動できます。 このメソッドの複製の<xref:System.Xml.XPath.XPathNavigator>オブジェクトが、XPath クエリのパフォーマンスに影響します。  
+  
+ 場合、 <xref:System.Xml.XPath.XPathNavigator.SelectAncestors%2A>、 <xref:System.Xml.XPath.XPathNavigator.SelectDescendants%2A>、および<xref:System.Xml.XPath.XPathNavigator.SelectChildren%2A>メソッドと、選択されているノードがありません、<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>プロパティをコンテキスト ノードにポイントしない可能性があります。  
+  
+ ノードが選択されているかどうかをテストするには、使用、<xref:System.Xml.XPath.XPathNodeIterator.Count%2A>プロパティ、次の例に示すようにします。  
+  
+   
+  
+## Examples  
+ 次の例の得られるを使用して作成されたすべての書名を取得する、<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>のプロパティ、<xref:System.Xml.XPath.XPathNodeIterator>オブジェクトおよび<xref:System.Xml.XPath.XPathNavigator.Clone%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスです。  
+  
+ [!code-cpp[XPathNavigatorMethods#6](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#6)]
+ [!code-csharp[XPathNavigatorMethods#6](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#6)]
+ [!code-vb[XPathNavigatorMethods#6](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#6)]  
+  
+ この例は、`contosoBooks.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>  
+<bookstore xmlns="http://www.contoso.com/books">  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPosition">
+      <MemberSignature Language="C#" Value="public abstract int CurrentPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Xml.XPath.XPathNodeIterator.CurrentPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、選択したノード セット内の現在位置のインデックスを取得します。</summary>
+        <value>現在の位置のインデックス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスでは、1 から始まります。 したがって、最初のノードには、1 のインデックスがあります。 インデックスは 0 では、選択したノードがないことを示します。 このプロパティは、常に正の整数を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathNodeIterator.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />選択されたノード セットを反復処理するオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />選択されたノード セットを反復処理するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在位置に、列挙子が配置されている、<xref:System.Xml.XPath.XPathNodeIterator>オブジェクト。  
+  
+ 反復処理する 2 つの方法、<xref:System.Xml.XPath.XPathNavigator>コレクションを使用して、<xref:System.Xml.XPath.XPathNodeIterator>クラスです。  
+  
+ 1 つの方法は、使用する、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドと、呼び出し<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>現在を取得する<xref:System.Xml.XPath.XPathNavigator>次の例のように、インスタンス。  
+  
+ [!code-cpp[XPathNavigatorMethods#55](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#55)]
+ [!code-csharp[XPathNavigatorMethods#55](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#55)]
+ [!code-vb[XPathNavigatorMethods#55](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#55)]  
+  
+ 別の方法は、使用する、`foreach`を呼び出すループ、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドを使用して、返された<xref:System.Collections.IEnumerator>インターフェイスを次の例のように、ノードを列挙します。  
+  
+ [!code-cpp[XPathNavigatorMethods#56](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#56)]
+ [!code-csharp[XPathNavigatorMethods#56](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#56)]
+ [!code-vb[XPathNavigatorMethods#56](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#56)]  
+  
+ いずれかを使用する必要があります、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドおよび<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>か使用して、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドです。 これら 2 つのアプローチを組み合わせることと、予期しない結果が生じることができます。 たとえば場合、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドは最初に、し、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドが呼び出される、`foreach`ループ、`foreach`ループはその後の位置からでは、コレクションの先頭からの結果の列挙を開始しません、<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveNext">
+      <MemberSignature Language="C#" Value="public abstract bool MoveNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool MoveNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathNodeIterator.MoveNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XPath</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、<see cref="P:System.Xml.XPath.XPathNodeIterator.Current" /> プロパティによって返された <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクトを、選択されたノード セットにおける次のノードに移動させます。</summary>
+        <returns>
+          <see cref="T:System.Xml.XPath.XPathNavigator" /> オブジェクトが次のノードに移動された場合は、<see langword="true" />。これ以上、選択されたノードがない場合は、<see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XPath.XPathNodeIterator>オブジェクトが最初の呼び出し後にのみ設定、選択したノードの最初のノードに配置されている、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドです。 ドキュメントの順序では、ノード セットが作成されます。 そのため、呼び出し、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドは、ドキュメントの順序で次のノードに移動します。  
+  
+ 反復処理する 2 つの方法、<xref:System.Xml.XPath.XPathNavigator>コレクションを使用して、<xref:System.Xml.XPath.XPathNodeIterator>クラスです。  
+  
+ 1 つの方法は、使用する、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドと、呼び出し<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>現在を取得する<xref:System.Xml.XPath.XPathNavigator>次の例のように、インスタンス。  
+  
+ [!code-cpp[XPathNavigatorMethods#55](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#55)]
+ [!code-csharp[XPathNavigatorMethods#55](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#55)]
+ [!code-vb[XPathNavigatorMethods#55](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#55)]  
+  
+ 別の方法は、使用する、`foreach`を呼び出すループ、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドを使用して、返された<xref:System.Collections.IEnumerator>インターフェイスを次の例のように、ノードを列挙します。  
+  
+ [!code-cpp[XPathNavigatorMethods#56](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#56)]
+ [!code-csharp[XPathNavigatorMethods#56](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#56)]
+ [!code-vb[XPathNavigatorMethods#56](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#56)]  
+  
+ いずれかを使用する必要があります、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドおよび<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>か使用して、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドです。 これら 2 つのアプローチを組み合わせることと、予期しない結果が生じることができます。 たとえば場合、<xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A>メソッドは最初に、し、<xref:System.Xml.XPath.XPathNodeIterator.GetEnumerator%2A>メソッドが呼び出される、`foreach`ループ、`foreach`ループはその後の位置からでは、コレクションの先頭からの結果の列挙を開始しません、<xref:System.Xml.XPath.XPathNodeIterator.Current%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Xml.XPath.XPathNavigator.Select%2A>のメソッド、<xref:System.Xml.XPath.XPathNavigator>クラスを使用して設定ノードを選択する、<xref:System.Xml.XPath.XPathNodeIterator>クラスです。  
+  
+ [!code-cpp[XPathNavigatorMethods#39](~/samples/snippets/cpp/VS_Snippets_Data/XPathNavigatorMethods/CPP/xpathnavigatormethods.cpp#39)]
+ [!code-csharp[XPathNavigatorMethods#39](~/samples/snippets/csharp/VS_Snippets_Data/XPathNavigatorMethods/CS/xpathnavigatormethods.cs#39)]
+ [!code-vb[XPathNavigatorMethods#39](~/samples/snippets/visualbasic/VS_Snippets_Data/XPathNavigatorMethods/VB/xpathnavigatormethods.vb#39)]  
+  
+ この例は、`books.xml` ファイルを入力として使用します。  
+  
+```xml  
+  
+<?xml version="1.0" encoding="utf-8" ?>   
+<bookstore>  
+    <book genre="autobiography" publicationdate="1981-03-22" ISBN="1-861003-11-0">  
+        <title>The Autobiography of Benjamin Franklin</title>  
+        <author>  
+            <first-name>Benjamin</first-name>  
+            <last-name>Franklin</last-name>  
+        </author>  
+        <price>8.99</price>  
+    </book>  
+    <book genre="novel" publicationdate="1967-11-17" ISBN="0-201-63361-2">  
+        <title>The Confidence Man</title>  
+        <author>  
+            <first-name>Herman</first-name>  
+            <last-name>Melville</last-name>  
+        </author>  
+        <price>11.99</price>  
+    </book>  
+    <book genre="philosophy" publicationdate="1991-02-15" ISBN="1-861001-57-6">  
+        <title>The Gorgias</title>  
+        <author>  
+            <name>Plato</name>  
+        </author>  
+        <price>9.99</price>  
+    </book>  
+</bookstore>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.XPath.XPathNodeIterator.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Xml.XPath.XPathNodeIterator> のインスタンスが <xref:System.ICloneable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

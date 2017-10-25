@@ -1,0 +1,736 @@
+<Type Name="BinaryFormatter" FullName="System.Runtime.Serialization.Formatters.Binary.BinaryFormatter">
+  <TypeSignature Language="C#" Value="public sealed class BinaryFormatter : System.Runtime.Remoting.Messaging.IRemotingFormatter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BinaryFormatter extends System.Object implements class System.Runtime.Remoting.Messaging.IRemotingFormatter, class System.Runtime.Serialization.IFormatter" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Remoting.Messaging.IRemotingFormatter</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>オブジェクト、または接続されているオブジェクトのグラフ全体を、バイナリ形式でシリアル化および逆シリアル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>と<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>クラスで実装、<xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>リモート プロシージャ コール (Rpc) をサポートするインターフェイスと<xref:System.Runtime.Serialization.IFormatter>インターフェイス (によって継承、 <xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>) オブジェクトのグラフのシリアル化をサポートするためにします。 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>クラスも持つ Rpc をサポートしている<xref:System.Runtime.Serialization.Formatters.ISoapMessage>を使用せず、オブジェクト、<xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>機能します。  
+  
+ Rpc、中に、<xref:System.Runtime.Remoting.Messaging.IRemotingFormatter>インターフェイスにより、2 つの個別のオブジェクト グラフの指定: シリアル化するオブジェクトのグラフと、リモート関数呼び出し (たとえば、トランザクション ID またはメソッドのシグネチャ) に関する情報を伝達するヘッダーのオブジェクトの配列を含むその他のグラフ。  
+  
+ 使用する Rpc、 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 2 つの異なる部分に分割: メソッドの呼び出しは、呼び出されると、メソッドを含む、リモート オブジェクトとが呼び出されたメソッドのステータスと応答の情報をクライアントにサーバーから送信されるメソッドの応答でサーバーに送信されます。  
+  
+ メソッドの呼び出しのシリアル化中に、オブジェクト グラフの最初のオブジェクトをサポートする必要があります、<xref:System.Runtime.Remoting.Messaging.IMethodCallMessage>インターフェイスです。 メソッドの呼び出しを逆シリアル化を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>メソッドを<xref:System.Runtime.Remoting.Messaging.HeaderHandler>パラメーター。 リモート処理インフラストラクチャを使用して、<xref:System.Runtime.Remoting.Messaging.HeaderHandler>デリゲートをサポートするオブジェクトを生成するために、<xref:System.Runtime.Serialization.ISerializable>インターフェイスです。 ときに、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>呼び出します、<xref:System.Runtime.Remoting.Messaging.HeaderHandler>デリゲート、呼び出されるメソッドを使用して、リモート オブジェクトの URI を返します、します。 グラフ内の最初のオブジェクトには、サポートが返されます、<xref:System.Runtime.Remoting.Messaging.IMethodCallMessage>インターフェイスです。  
+  
+ メソッドの応答をシリアル化の手順は、メソッド呼び出しのものと同じ、オブジェクトの最初のオブジェクトを除くグラフをサポートする必要があります、<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage>インターフェイスです。 メソッドの応答を逆シリアル化を使用して、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>メソッドです。 時間を節約するには、呼び出し元のオブジェクトに関する詳細情報は送信されません、リモート オブジェクトにメソッドの呼び出し中にします。 これらの詳細は、代わりに渡された元のメソッド呼び出しから取得、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>メソッドで、<xref:System.Runtime.Remoting.Messaging.IMethodCallMessage>パラメーター。 によって返される、グラフ内の最初のオブジェクト、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>メソッドのサポート、<xref:System.Runtime.Remoting.Messaging.IMethodReturnMessage>インターフェイスです。  
+  
+> [!IMPORTANT]
+>  バイナリ シリアル化を使用して信頼されていないデータを逆シリアル化するセキュリティ リスクの可能性があります。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+## <a name="unpaired-surrogates"></a>サロゲート ペアになっていません。  
+ 対になっていないサロゲート文字は、バイナリのシリアル化時に失われます。 たとえば、次の文字列が上位サロゲートの Unicode 文字を含む`(\ud800`)、2 つの間`Test`語。  
+  
+ `Test\ud800Test`  
+  
+ シリアル化する前に、文字列のバイト配列のとおりです。  
+  
+|バイト配列の値|文字|  
+|----------------------|---------------|  
+|84|T|  
+|101|e|  
+|115|秒|  
+|116|t|  
+|55296|\ud800|  
+|84|T|  
+|101|e|  
+|115|秒|  
+|116|t|  
+  
+ 逆シリアル化した後は、上位サロゲートの Unicode 文字は失われます。  
+  
+|バイト配列の値|文字|  
+|----------------------|---------------|  
+|84|T|  
+|101|e|  
+|115|秒|  
+|116|t|  
+|84|T|  
+|101|e|  
+|115|秒|  
+|116|t|  
+  
+   
+  
+## Examples  
+ [!code-cpp[BinaryFormatterClass Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/BinaryFormatterClass Example/CPP/binaryformatter.cpp#1)]
+ [!code-csharp[BinaryFormatterClass Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/BinaryFormatterClass Example/CS/binaryformatter.cs#1)]
+ [!code-vb[BinaryFormatterClass Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BinaryFormatterClass Example/VB/binaryformatter.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryFormatter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのプロパティの設定、<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>オブジェクトの次のようにします。  
+  
+|プロパティの型|状態|  
+|-------------------|---------------|  
+|<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.SurrogateSelector%2A>|`null`|  
+|<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Context%2A>|A<xref:System.Runtime.Serialization.StreamingContext>シリアル化されたデータに転送されるか、他のコンテキストのいずれかから受信したことを示す値を使用します。 (<xref:System.Runtime.Serialization.StreamingContextStates?displayProperty=nameWithType>)|  
+  
+   
+  
+## Examples  
+ [!code-cpp[BinaryFormatterClass Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/BinaryFormatterClass Example/CPP/binaryformatter.cpp#1)]
+ [!code-csharp[BinaryFormatterClass Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/BinaryFormatterClass Example/CS/binaryformatter.cs#1)]
+ [!code-vb[BinaryFormatterClass Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BinaryFormatterClass Example/VB/binaryformatter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BinaryFormatter (System.Runtime.Serialization.ISurrogateSelector selector, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.ISurrogateSelector selector, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.#ctor(System.Runtime.Serialization.ISurrogateSelector,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="selector" Type="System.Runtime.Serialization.ISurrogateSelector" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="selector">使用する <see cref="T:System.Runtime.Serialization.ISurrogateSelector" />。 指定できます<see langword="null" />です。</param>
+        <param name="context">ソースとシリアル化されたデータの変換先。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" />クラスの指定したサロゲート セレクターとストリーム コンテキストを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい初期化`BinaryFormatter`のシリアル化または逆シリアル化から、指定したオブジェクトの<xref:System.IO.Stream>します。  
+  
+ シリアル化または逆シリアル化のプロセスを使用して、指定した<xref:System.Runtime.Serialization.ISurrogateSelector>を検索する型のオブジェクトに登録されているサロゲートが逆シリアル化します。 サロゲートは、および特定のクラスのオブジェクトを逆シリアル化するヘルパーです。 既定値<xref:System.Runtime.Serialization.ISurrogateSelector>から派生したオブジェクトのシリアル化を処理することはできません、<xref:System.MarshalByRefObject>リモート処理のためです。 指定したリモート処理の状況で<xref:System.Runtime.Serialization.ISurrogateSelector>から派生したオブジェクトを置き換えます<xref:System.MarshalByRefObject>で、<xref:System.Runtime.Remoting.ObjRef>指定したサロゲート セレクターによってシリアル化されるオブジェクト。 このため、リモート オブジェクトを使用する場合は、設定、`selector`のインスタンスにパラメーター<xref:System.Runtime.Remoting.Messaging.RemotingSurrogateSelector>です。 サロゲートは不要にする場合は、設定、`selector`にパラメーターを`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssemblyFormat">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterAssemblyStyle AssemblyFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterAssemblyStyle AssemblyFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.AssemblyFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterAssemblyStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索して、アセンブリの読み込みに関してデシリアライザーの動作を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle" />デシリアライザー動作を指定する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Binder">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.SerializationBinder Binder { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.SerializationBinder Binder" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Binder" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.SerializationBinder</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のオブジェクトを取得または<see cref="T:System.Runtime.Serialization.SerializationBinder" />シリアル化されたオブジェクトの型へのバインドを制御します。</summary>
+        <value>このフォーマッタで使用するシリアル化バインダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[SerializationBinder Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SerializationBinder Example/CPP/serializationbinder.cpp#1)]
+ [!code-csharp[SerializationBinder Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SerializationBinder Example/CS/serializationbinder.cs#1)]
+ [!code-vb[SerializationBinder Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SerializationBinder Example/VB/serializationbinder.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.StreamingContext Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.StreamingContext Context" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.StreamingContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.StreamingContext" />このフォーマッタのです。</summary>
+        <value>このフォーマッタで使用するストリーミング コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.StreamingContext>移行元サーバーと、指定したシリアル化ストリームの送信先とそのコンテキストおよび追加の呼び出し元が定義のコンテキストを保持するシリアル化の方法を説明する列挙体を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Deserialize">
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>オブジェクト グラフには、ストリームを逆シリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクト グラフを逆シリアル化するストリーム。</param>
+        <summary>オブジェクト グラフには、指定したストリームを逆シリアル化します。</summary>
+        <returns>オブジェクト グラフのトップ (ルート)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正常に逆シリアル化、ストリーム内の現在位置は、オブジェクト グラフの先頭でなければなりません。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[BinaryFormatterClass Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/BinaryFormatterClass Example/CPP/binaryformatter.cpp#1)]
+ [!code-csharp[BinaryFormatterClass Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/BinaryFormatterClass Example/CS/binaryformatter.cs#1)]
+ [!code-vb[BinaryFormatterClass Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BinaryFormatterClass Example/VB/binaryformatter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="serializationStream" />シークをサポートしていますが、その長さは 0 です。  
+  
+ または  
+  
+ 対象の型は、 <see cref="T:System.Decimal" />、値が範囲外ですが、<see cref="T:System.Decimal" />型です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Deserialize">
+      <MemberSignature Language="C#" Value="public object Deserialize (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Deserialize(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Messaging.HeaderHandler" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクト グラフを逆シリアル化するストリーム。</param>
+        <param name="handler"><see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />内のすべてのヘッダーを処理する、 <c>serializationStream</c>です。 指定できます<see langword="null" />です。</param>
+        <summary>オブジェクト グラフには、指定したストリームを逆シリアル化します。 指定された<see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />ストリーム内の任意のヘッダーを処理します。</summary>
+        <returns>逆シリアル化されたオブジェクトまたはオブジェクト グラフの一番上のオブジェクト (ルート)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダーは、特定のリモート処理アプリケーションでのみ使用されます。  
+  
+ 成功させるには、逆シリアル化するために、ストリームの現在の位置は、オブジェクト グラフの先頭でなければなりません。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="serializationStream" />シークをサポートしていますが、その長さは 0 です。  
+  
+ または  
+  
+ 対象の型は、 <see cref="T:System.Decimal" />、値が範囲外ですが、<see cref="T:System.Decimal" />型です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeMethodResponse">
+      <MemberSignature Language="C#" Value="public object DeserializeMethodResponse (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler, System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object DeserializeMethodResponse(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler, class System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler,System.Runtime.Remoting.Messaging.IMethodCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Messaging.HeaderHandler" />
+        <Parameter Name="methodCallMessage" Type="System.Runtime.Remoting.Messaging.IMethodCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクト グラフを逆シリアル化するストリーム。</param>
+        <param name="handler"><see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />内のすべてのヘッダーを処理する、 <c>serializationStream</c>です。 指定できます<see langword="null" />です。</param>
+        <param name="methodCallMessage"><see cref="T:System.Runtime.Remoting.Messaging.IMethodCallMessage" />呼び出し元の場所に関する詳細を格納しています。</param>
+        <summary>指定されたリモート メソッドの呼び出しに応答をシリアル化解除<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>リモート メソッド呼び出しへの逆シリアル化された応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの呼び出し時に、リモート オブジェクトに呼び出し元のオブジェクトに関する詳細情報は送信されません。 現在のメソッドに渡される元のメソッド呼び出しからこれらの詳細を取得する代わりに、`methodCallMessage`パラメーター。  
+  
+ 成功させるには、逆シリアル化するために、ストリームの現在の位置は、オブジェクト グラフの先頭でなければなりません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="serializationStream" />シークをサポートしていますが、その長さは 0 です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterLevel">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.TypeFilterLevel FilterLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.TypeFilterLevel FilterLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.FilterLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.TypeFilterLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" />自動逆シリアル化の<see cref="T:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter" />を実行します。</summary>
+        <value><see cref="T:System.Runtime.Serialization.Formatters.TypeFilterLevel" />を表す現在のレベルで自動逆シリアル化します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートされる値は<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Low>と<xref:System.Runtime.Serialization.Formatters.TypeFilterLevel.Full>(既定)。 逆シリアル化のレベルについては、次を参照してください[&#91;\< 。topic://cpconAutomaticDeserializationInNETRemoting > & #93 です。](http://msdn.microsoft.com/en-us/313a0e88-5b2b-4a17-8391-0ddf9f7a787b).  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">グラフをシリアル化するストリーム。</param>
+        <param name="graph">シリアル化するグラフのルートにあるオブジェクト。</param>
+        <summary>指定したストリームにオブジェクト、または指定した上位 (ルート) を使用してオブジェクトのグラフをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[BinaryFormatterClass Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/BinaryFormatterClass Example/CPP/binaryformatter.cpp#1)]
+ [!code-csharp[BinaryFormatterClass Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/BinaryFormatterClass Example/CS/binaryformatter.cs#1)]
+ [!code-vb[BinaryFormatterClass Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/BinaryFormatterClass Example/VB/binaryformatter.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="graph" />が null です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">エラーが発生した場合など、シリアル化中にオブジェクト、<paramref name="graph" />パラメーターはシリアル化可能としてマークされていません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Serialize">
+      <MemberSignature Language="C#" Value="public void Serialize (System.IO.Stream serializationStream, object graph, System.Runtime.Remoting.Messaging.Header[] headers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Serialize(class System.IO.Stream serializationStream, object graph, class System.Runtime.Remoting.Messaging.Header[] headers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize(System.IO.Stream,System.Object,System.Runtime.Remoting.Messaging.Header[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+        <Parameter Name="headers" Type="System.Runtime.Remoting.Messaging.Header[]" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクトをシリアル化するストリーム。</param>
+        <param name="graph">シリアル化するグラフのルートにあるオブジェクト。</param>
+        <param name="headers">シリアル化では、リモート処理ヘッダー。 指定できます<see langword="null" />です。</param>
+        <summary>指定したヘッダーを添付する、指定したストリームにオブジェクト、または指定した上位 (ルート) を使用してオブジェクトのグラフをシリアル化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化プロセスに提供する情報が含まれています、`headers`シリアル化ストリームの先頭にあるパラメーターです。  
+  
+ ヘッダーは、特定のリモート処理アプリケーションでのみ使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">エラーが発生した場合など、シリアル化中にオブジェクト、<paramref name="graph" />パラメーターはシリアル化可能としてマークされていません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SurrogateSelector">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.ISurrogateSelector SurrogateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Runtime.Serialization.ISurrogateSelector SurrogateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.SurrogateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.ISurrogateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Runtime.Serialization.ISurrogateSelector" />するコントロール型のシリアル化および逆シリアル化中に置換します。</summary>
+        <value>このフォーマッタで使用するサロゲート セレクター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サロゲート セレクターを使用<xref:System.Runtime.Remoting>を生成する<xref:System.Runtime.Remoting.ObjRef>から派生したオブジェクトのインスタンス<xref:System.MarshalByRefObject>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeFormat">
+      <MemberSignature Language="C#" Value="public System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Serialization.Formatters.FormatterTypeStyle TypeFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.TypeFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Formatters</AssemblyName>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Serialization.Formatters.FormatterTypeStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはで型の記述はレイアウト シリアル化ストリームの形式を設定します。</summary>
+        <value>型のレイアウトを使用するスタイルです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeDeserialize">
+      <MemberSignature Language="C#" Value="public object UnsafeDeserialize (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object UnsafeDeserialize(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserialize(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Messaging.HeaderHandler" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクト グラフを逆シリアル化するストリーム。</param>
+        <param name="handler"><see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />内のすべてのヘッダーを処理する、 <c>serializationStream</c>です。 指定できます<see langword="null" />です。</param>
+        <summary>オブジェクト グラフには、指定したストリームを逆シリアル化します。 指定された<see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />ストリーム内の任意のヘッダーを処理します。</summary>
+        <returns>逆シリアル化されたオブジェクトまたはオブジェクト グラフの一番上のオブジェクト (ルート)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダーは、特定のリモート処理アプリケーションでのみ使用されます。  
+  
+ このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>されないようにする、信頼されていないコードから呼び出す以外の直前の呼び出し元のみする必要がある<xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType>権限です。 コードは、部分信頼コードから呼び出すことが場合は、このメソッドを使用しないでください。 部分的に信頼されたシナリオでは使用<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>代わりにします。 完全な信頼のシナリオで<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserialize%2A>よりも優れたパフォーマンスを提供<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A>です。  
+  
+ 正常に逆シリアル化、ストリーム内の現在位置は、オブジェクト グラフの先頭でなければなりません。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="serializationStream" />シークをサポートしていますが、その長さは 0 です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UnsafeDeserializeMethodResponse">
+      <MemberSignature Language="C#" Value="public object UnsafeDeserializeMethodResponse (System.IO.Stream serializationStream, System.Runtime.Remoting.Messaging.HeaderHandler handler, System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object UnsafeDeserializeMethodResponse(class System.IO.Stream serializationStream, class System.Runtime.Remoting.Messaging.HeaderHandler handler, class System.Runtime.Remoting.Messaging.IMethodCallMessage methodCallMessage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserializeMethodResponse(System.IO.Stream,System.Runtime.Remoting.Messaging.HeaderHandler,System.Runtime.Remoting.Messaging.IMethodCallMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationStream" Type="System.IO.Stream" />
+        <Parameter Name="handler" Type="System.Runtime.Remoting.Messaging.HeaderHandler" />
+        <Parameter Name="methodCallMessage" Type="System.Runtime.Remoting.Messaging.IMethodCallMessage" />
+      </Parameters>
+      <Docs>
+        <param name="serializationStream">オブジェクト グラフを逆シリアル化するストリーム。</param>
+        <param name="handler"><see cref="T:System.Runtime.Remoting.Messaging.HeaderHandler" />内のすべてのヘッダーを処理する、 <c>serializationStream</c>です。 指定できます<see langword="null" />です。</param>
+        <param name="methodCallMessage"><see cref="T:System.Runtime.Remoting.Messaging.IMethodCallMessage" />呼び出し元の場所に関する詳細を格納しています。</param>
+        <summary>指定されたリモート メソッドの呼び出しに応答をシリアル化解除<see cref="T:System.IO.Stream" />です。</summary>
+        <returns>リモート メソッド呼び出しへの逆シリアル化された応答。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドの呼び出し時に、リモート オブジェクトに呼び出し元のオブジェクトに関する詳細情報は送信されません。 現在のメソッドに渡される元のメソッド呼び出しからこれらの詳細を取得する代わりに、`methodCallMessage`パラメーター。  
+  
+ このメソッドを使用して<xref:System.Security.Permissions.SecurityAction?displayProperty=nameWithType>されないようにする、信頼されていないコードから呼び出す以外の直前の呼び出し元のみする必要がある<xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A?displayProperty=nameWithType>権限です。 コードは、部分信頼コードから呼び出すことが場合は、このメソッドを使用しないでください。 部分的に信頼されたシナリオでは使用<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>代わりにします。 完全な信頼のシナリオで<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.UnsafeDeserializeMethodResponse%2A>よりも優れたパフォーマンスを提供<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.DeserializeMethodResponse%2A>です。  
+  
+ 正常に逆シリアル化、ストリーム内の現在位置は、オブジェクト グラフの先頭でなければなりません。  
+  
+> [!IMPORTANT]
+>  信頼できないデータをこのメソッドを呼び出すと、セキュリティ上のリスクです。 このメソッドでは、信頼されたデータだけです。 詳細については、次を参照してください。[信頼されていないデータのセキュリティ リスク](http://go.microsoft.com/fwlink/?LinkId=330378)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="serializationStream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException"><paramref name="serializationStream" />シークをサポートしていますが、その長さは 0 です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">シリアル化サービスを提供します。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

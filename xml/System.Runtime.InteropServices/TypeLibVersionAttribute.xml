@@ -1,0 +1,123 @@
+<Type Name="TypeLibVersionAttribute" FullName="System.Runtime.InteropServices.TypeLibVersionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class TypeLibVersionAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TypeLibVersionAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.TypeLibVersionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>エクスポートされたタイプ ライブラリのバージョン番号を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリに適用できます。  
+  
+ 既定では、 [Tlbexp.exe (タイプ ライブラリ エクスポーター)](~/docs/framework/tools/tlbexp-exe-type-library-exporter.md)アセンブリのバージョンの最初の 2 つの数値からタイプ ライブラリのバージョンが生成されます。 たとえば、Tlb.exe アセンブリのバージョンが 1.2.5000.0 の場合としてエクスポート タイプ ライブラリのバージョン 1.2 では、アセンブリのビルドとリビジョン番号を排除します。 適用することにより、タイプ ライブラリの番号の生成が明示的に制御できますこの動作が望ましくない場合、<xref:System.Runtime.InteropServices.TypeLibVersionAttribute>です。  
+  
+ 2 つのアセンブリ バージョンの同じタイプ ライブラリ バージョンを生成するときに明示的にタイプ ライブラリのバージョンの生成を制御すると便利です。 たとえば、アセンブリのバージョン 1.2.0.0 とアセンブリのバージョン 1.2.500.0 両方 1.2 では、アセンブリのいずれかをアンインストールするときに問題が発生することができますのタイプ ライブラリのバージョンが生成されます。 タイプ ライブラリのバージョンを区別するためには、1.25 のタイプ ライブラリのバージョンを生成するために 2 番目のアセンブリ (バージョン 1.2.500.0) を強制することができます。  
+  
+   
+  
+## Examples  
+ 次の例に適用する方法を示しています、 <xref:System.Runtime.InteropServices.TypeLibVersionAttribute> 1.25 にタイプ ライブラリのバージョンを明示的に設定します。  
+  
+ [!code-cpp[System.Runtime.InteropServices.TypeLibVersionAttribute#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.typelibversionattribute/cpp/source.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.TypeLibVersionAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.typelibversionattribute/cs/source.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.TypeLibVersionAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.typelibversionattribute/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeLibVersionAttribute (int major, int minor);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 major, int32 minor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.TypeLibVersionAttribute.#ctor(System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="major" Type="System.Int32" />
+        <Parameter Name="minor" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="major">タイプ ライブラリのメジャー バージョン番号。</param>
+        <param name="minor">タイプ ライブラリのマイナー バージョン番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.TypeLibVersionAttribute" />タイプ ライブラリのメジャーおよびマイナー バージョン番号を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.TypeLibVersionAttribute.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイプ ライブラリのメジャー バージョン番号を取得します。</summary>
+        <value>タイプ ライブラリのメジャー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.TypeLibVersionAttribute.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイプ ライブラリのマイナー バージョン番号を取得します。</summary>
+        <value>タイプ ライブラリのマイナー バージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,192 @@
+<Type Name="BuildSubmission" FullName="Microsoft.Build.Execution.BuildSubmission">
+  <TypeSignature Language="C#" Value="public class BuildSubmission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildSubmission extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Execution.BuildSubmission" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>処理のため、ビルド マネージャーに送信されたビルド要求を表します。 同期または非同期のビルド要求を実行して、完了したときに結果へのアクセスを提供するは、このクラスのメソッドを使用することがあります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、スレッド セーフです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AsyncContext">
+      <MemberSignature Language="C#" Value="public object AsyncContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AsyncContext" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.AsyncContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を指定した非同期コンテキスト<see cref="M:Microsoft.Build.Execution.BuildSubmission.ExecuteAsync(Microsoft.Build.Execution.BuildSubmissionCompleteCallback,System.Object)" />存在する場合、します。</summary>
+        <value>提供される非同期コンテキストを返します<see cref="M:Microsoft.Build.Execution.BuildSubmission.ExecuteAsync(Microsoft.Build.Execution.BuildSubmissionCompleteCallback,System.Object)" />です。 コンテキストが指定されていない場合は null を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildManager">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.BuildManager BuildManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Execution.BuildManager BuildManager" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.BuildManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.BuildManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのビルドの送信に関連付けられているビルド マネージャーを設定します。</summary>
+        <value>このビルドの送信に関連付けられたビルド マネージャーを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildResult">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.BuildResult BuildResult { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.Execution.BuildResult BuildResult" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.BuildResult" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.BuildResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはビルドの結果を設定します。</summary>
+        <value>ビルドの結果を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果の有効期限がない<xref:Microsoft.Build.Execution.BuildSubmission.WaitHandle%2A>が通知されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Execute">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.Execution.BuildResult Execute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.Execution.BuildResult Execute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildSubmission.Execute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.Execution.BuildResult</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビルド要求を同期的に起動し、結果が得られるまでに待機します。</summary>
+        <returns>ビルド要求を返します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">要求は既に開始されてまたは既に完了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecuteAsync">
+      <MemberSignature Language="C#" Value="public void ExecuteAsync (Microsoft.Build.Execution.BuildSubmissionCompleteCallback callback, object context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ExecuteAsync(class Microsoft.Build.Execution.BuildSubmissionCompleteCallback callback, object context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Execution.BuildSubmission.ExecuteAsync(Microsoft.Build.Execution.BuildSubmissionCompleteCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="Microsoft.Build.Execution.BuildSubmissionCompleteCallback" />
+        <Parameter Name="context" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ビルドの送信が完了したときに呼び出すコールバック メソッド。</param>
+        <param name="context">ビルドの送信が行われるコンテキストです。</param>
+        <summary>非同期的にし、指定されたコンテキスト内では、ビルド要求を開始します。 呼び出し元に制御が直ちに返されます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">要求は既に開始されてまたは既に完了します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCompleted">
+      <MemberSignature Language="C#" Value="public bool IsCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCompleted" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.IsCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このビルドの送信が完了するかどうかを判断します。</summary>
+        <value>このビルドの送信が完了した場合、true を返しますfalse それ以外の場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubmissionId">
+      <MemberSignature Language="C#" Value="public int SubmissionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SubmissionId" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.SubmissionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのビルドの送信を一意に識別する ID を設定します。</summary>
+        <value>このビルドの送信を一意に識別する ID を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この ID は、同じビルド内には、その他のビルド要求を送信からこのビルドの送信を区別するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WaitHandle">
+      <MemberSignature Language="C#" Value="public System.Threading.WaitHandle WaitHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Threading.WaitHandle WaitHandle" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Execution.BuildSubmission.WaitHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.WaitHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Threading.WaitHandle" />ビルドが完了すると、通知されるオブジェクト。</summary>
+        <value>までは null を返します<see cref="M:Microsoft.Build.Execution.BuildSubmission.Execute" />または<see cref="M:Microsoft.Build.Execution.BuildSubmission.ExecuteAsync(Microsoft.Build.Execution.BuildSubmissionCompleteCallback,System.Object)" />が返される、WaitHandle オブジェクトを返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

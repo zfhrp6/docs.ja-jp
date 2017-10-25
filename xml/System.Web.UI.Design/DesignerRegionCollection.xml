@@ -1,0 +1,978 @@
+<Type Name="DesignerRegionCollection" FullName="System.Web.UI.Design.DesignerRegionCollection">
+  <TypeSignature Language="C#" Value="public class DesignerRegionCollection : System.Collections.IList" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignerRegionCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.DesignerRegionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コントロール デザイナー内の <see cref="T:System.Web.UI.Design.DesignerRegion" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ControlDesigner>クラス、および任意の派生クラスを使用して、<xref:System.Web.UI.Design.DesignerRegionCollection>クラスが含まれておりなどにデザイン ホストでは、コントロールのデザイナー領域の列挙を[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]です。  
+  
+ たとえば、<xref:System.Web.UI.Design.ControlDesigner.GetDesignTimeHtml%2A?displayProperty=nameWithType>メソッドを定義し、領域をコレクションに追加を使用することができます。  
+  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Owner%2A>デザイナー領域のコレクションを含むコントロール デザイナーのオブジェクトにアクセスするプロパティです。 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection>メソッドとプロパティを確認し、維持、<xref:System.Web.UI.Design.DesignerRegion>コレクションに含まれるオブジェクト。  
+  
+ コレクションは、オブジェクトが追加されるに動的に増加します。 このコレクションのインデックスは 0 から始まります。 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>プロパティ コレクション内の数のデザイナー領域を調べることです。 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection>次の機能を提供するメンバー。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>メソッドを 1 つのデザイナーの領域をコレクションに追加します。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>コレクション内の特定のインデックスにデザイナーの領域を追加するメソッド。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>デザイナー領域を削除します。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.RemoveAt%2A>デザイナーの領域を特定のインデックスを削除する方法です。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Contains%2A>特定デザイナーの領域が既にコレクション内にするかどうかを調べます。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.IndexOf%2A>コレクション内でデザイナーの領域のインデックスを取得します。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Item%2A>インデクサーを取得または配列表記を使用して、特定のインデックス位置にデザイナーの領域を設定します。  
+  
+-   <xref:System.Web.UI.Design.DesignerRegionCollection.Clear%2A>コレクションからすべてのデザイナー領域を削除する方法です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerRegionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DesignerRegionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.%23ctor%2A>コンス トラクターを空のコレクションを作成します。 使用してコレクションに要素を追加することができます、<xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>または<xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerRegionCollection (System.Web.UI.Design.ControlDesigner owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Design.ControlDesigner owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.#ctor(System.Web.UI.Design.ControlDesigner)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Web.UI.Design.ControlDesigner" />
+      </Parameters>
+      <Docs>
+        <param name="owner">このデザイナー領域のコレクションを所有しているコントロール デザイナー。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.Design.DesignerRegionCollection" />指定したコントロール デザイナーのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.%23ctor%2A>コンス トラクターは、空のコレクションを作成し、設定、<xref:System.Web.UI.Design.DesignerRegionCollection.Owner%2A>プロパティを指定したコントロールのデザイナーのオブジェクト。 ビジュアル デザイナーなど、[!INCLUDE[vsprvslong](~/includes/vsprvslong-md.md)]を使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.%23ctor%2A>デザイナーで特定のコントロール デザイナー領域のコレクションを初期化するコンス トラクターです。  
+  
+ 使用してコレクションに要素を追加することができます、<xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>または<xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.Web.UI.Design.DesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.Web.UI.Design.DesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.Add(System.Web.UI.Design.DesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.DesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">コレクションに追加する <see cref="T:System.Web.UI.Design.DesignerRegion" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.Design.DesignerRegion" />コレクションの末尾にオブジェクト。</summary>
+        <returns>コレクションに追加された領域のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>メソッドは、指定した追加<xref:System.Web.UI.Design.DesignerRegion>コレクションの末尾にオブジェクト。 追加する、<xref:System.Web.UI.Design.DesignerRegion>コレクションの位置、特定のインデックスを使用するオブジェクト、<xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションからすべての領域を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Clear%2A>コレクションからすべての領域を削除する方法です。 特定の領域をコレクションから削除するには、<xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>メソッドです。 特定のインデックスの領域を削除するには、<xref:System.Web.UI.Design.DesignerRegionCollection.RemoveAt%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.Web.UI.Design.DesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.Web.UI.Design.DesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.Contains(System.Web.UI.Design.DesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.DesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内で検索します。</param>
+        <summary>指定した領域がコレクション内に含まれるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />、領域がコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Contains%2A>メソッドを使用して等しいかどうかを決定する、<xref:System.Object.Equals%2A>メソッドを<xref:System.Web.UI.Design.DesignerRegion>オブジェクト。  
+  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Contains%2A>線形探索を実行するメソッドです。 したがって、平均実行時間に比例して、<xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>プロパティです。 テンプレート領域のコレクションは、通常はわずかであるため、一方向の検索操作のパフォーマンスは重要ではないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />されるコピー元領域のコピー先です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>コレクションの要素をコピー、<see cref="T:System.Array" />オブジェクト、特定の開始<see cref="T:System.Array" />インデックス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>または<xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>をデザイン領域を追加する方法、<xref:System.Web.UI.Design.DesignerRegionCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>通常、プロパティはインデックスを確認上限の境界、コレクション内のオブジェクトを反復処理するときに使用します。 最初の要素がインデックス位置にあるため、コレクションのインデックスは 0 から始まる、`0`インデックス位置にある最後の要素と`Count-1`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>プロパティ ループおよび構築など`while`、 `for`、または`foreach`を列挙するためのステートメント、<xref:System.Web.UI.Design.DesignerRegionCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.Web.UI.Design.DesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.Web.UI.Design.DesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.IndexOf(System.Web.UI.Design.DesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.DesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region"><see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内で検索します。</param>
+        <summary>指定したインデックスを返します<see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内のオブジェクト。</summary>
+        <returns>最初に見つかった位置の 0 から始まるインデックス<paramref name="region" />コレクション内で、それ以外の場合は-1 場合<paramref name="region" />がコレクション内にありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.IndexOf%2A>メソッドを使用して等しいかどうかを決定する、<xref:System.Object.Equals%2A>メソッドを<xref:System.Web.UI.Design.DesignerRegion>オブジェクト。  
+  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.IndexOf%2A>線形探索を実行するメソッドです。 したがって、平均実行時間に比例して、<xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>プロパティです。 テンプレート領域のコレクションは、通常はわずかであるため、一方向の検索操作のパフォーマンスは重要ではないです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.Web.UI.Design.DesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.Web.UI.Design.DesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.Insert(System.Int32,System.Web.UI.Design.DesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="region" Type="System.Web.UI.Design.DesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="index">領域を挿入する位置を示すコレクション内の 0 から始まるインデックス。</param>
+        <param name="region"><see cref="T:System.Web.UI.Design.DesignerRegion" />コレクションに挿入します。</param>
+        <summary>挿入、<see cref="T:System.Web.UI.Design.DesignerRegion" />オブジェクトをコレクション内の指定したインデックス位置にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Insert%2A>メソッドを追加、<xref:System.Web.UI.Design.DesignerRegion>オブジェクトを特定のインデックス位置にあるコレクション。 1 つを追加する<xref:System.Web.UI.Design.DesignerRegion>にコレクションの末尾を使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Add%2A>メソッドです。  
+  
+> [!NOTE]
+>  コレクションに項目を挿入するときにコレクション内の後続の項目のインデックスを変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />大きい、<see cref="P:System.Web.UI.Design.DesignerRegionCollection.Count" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.Design.DesignerRegionCollection" />オブジェクトのサイズが固定されています。</summary>
+        <value>
+          <see langword="true" />を追加または項目を削除して、コレクションのサイズを変更できない場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.Design.DesignerRegionCollection" />オブジェクトは読み取り専用です。</summary>
+        <value>
+          <see langword="true" />、場合は、コレクションは変更できません。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DesignerRegionCollection" /> オブジェクトへのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、場合へのアクセス、 <see cref="T:System.Web.UI.Design.DesignerRegionCollection" /> 、それ以外の同期された<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は本質的に、スレッド セーフなプロシージャでないです。 コレクションが同期されている場合でも、他のスレッドがコレクションを変更します。 これは、列挙中に例外をによりします。  
+  
+ 使用してコレクションをロック、<xref:System.Web.UI.Design.DesignerRegionCollection.SyncRoot%2A>スレッド セーフを確保する全体の列挙中にメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.DesignerRegion this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerRegion Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerRegion</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:System.Web.UI.Design.DesignerRegion" />にコレクションで取得または設定します。</param>
+        <summary>取得または設定、<see cref="T:System.Web.UI.Design.DesignerRegion" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>コレクション内の指定したインデックス位置の <see cref="T:System.Web.UI.Design.DesignerRegion" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.Item%2A>インデクサー コレクション内の指定したインデックス位置の地域を取得または領域をコレクション内の指定したインデックス位置に設定します。 コレクション内の要素のインデックスを作成するには、配列表記を使用します。 たとえば、インデックスを作成するインデックス位置にある要素`i`表記で`DesignerRegions(i)`Microsoft visual Basic のまたは`DesignerRegions[i]`C# の場合。  
+  
+ 領域オブジェクトへの参照を含めるし、コレクション内のオブジェクトのインデックスが必要です、使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.IndexOf%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="value" />大きい、<see cref="P:System.Web.UI.Design.DesignerRegionCollection.Count" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Owner">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.ControlDesigner Owner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.ControlDesigner Owner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.Owner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.ControlDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの領域のコレクションを所有しているコントロールのデザイナーを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.Design.ControlDesigner" />を所有しているコントロールのデザイナーを表す、<see cref="T:System.Web.UI.Design.DesignerRegionCollection" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Owner%2A>プロパティはデザイナーの領域のコレクションのコントロール デザイナーのオブジェクトにアクセスする便利な手段を提供します。 たとえば、使用することができます、<xref:System.Web.UI.Design.DesignerRegionCollection.Owner%2A>プロパティおよびプロパティとコントロール デザイナーのメソッドにアクセスするコレクションを所有しているコントロール デザイナーの種類を判断します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Web.UI.Design.DesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Web.UI.Design.DesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.Remove(System.Web.UI.Design.DesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.DesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">コレクションから削除する <see cref="T:System.Web.UI.Design.DesignerRegion" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.Design.DesignerRegion" /> オブジェクトをコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>メソッドがコレクションから指定した領域の最初に見つかった位置を削除します。 場合、<xref:System.Web.UI.Design.DesignerRegionCollection>オブジェクトを指定した含まない`region`コレクションは変更されません。 例外をスローすることはありません。  
+  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>メソッドを使用して等しいかどうかを決定する、<xref:System.Object.Equals%2A>メソッドを<xref:System.Web.UI.Design.DesignerRegion>オブジェクト。  
+  
+ <xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>線形探索を実行するメソッドです。 したがって、平均実行時間に比例して、<xref:System.Web.UI.Design.DesignerRegionCollection.Count%2A>プロパティです。 テンプレート領域のコレクションは、通常はわずかであるため、一方向の検索操作のパフォーマンスは重要ではないです。  
+  
+ コレクションから特定のインデックスの領域を削除するには、使用、<xref:System.Web.UI.Design.DesignerRegionCollection.RemoveAt%2A>メソッドです。 コレクションからすべての領域を削除するには、使用、<xref:System.Web.UI.Design.DesignerRegionCollection.Clear%2A>メソッドです。  
+  
+> [!NOTE]
+>  コレクションから項目を削除するときにコレクション内の後続の項目のインデックスを変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内の 0 から始まるインデックス、<see cref="T:System.Web.UI.Design.DesignerRegion" />を削除します。</param>
+        <summary>削除、<see cref="T:System.Web.UI.Design.DesignerRegion" />オブジェクト、コレクション内で指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.DesignerRegionCollection.RemoveAt%2A>コレクションから特定のインデックスの領域を削除する方法です。 指定した領域をコレクションから削除するには、<xref:System.Web.UI.Design.DesignerRegionCollection.Remove%2A>メソッドです。 コレクションからすべての領域を削除するには、使用、<xref:System.Web.UI.Design.DesignerRegionCollection.Clear%2A>メソッドです。  
+  
+> [!NOTE]
+>  コレクションから項目を削除するときにコレクション内の後続の項目のインデックスを変更します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が 0 未満です。  
+  
+ \- または  
+  
+ <paramref name="index" />大きい、<see cref="P:System.Web.UI.Design.DesignerRegionCollection.Count" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.DesignerRegionCollection" /> オブジェクトへのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.DesignerRegionCollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションの列挙は本質的に、スレッド セーフなプロシージャでないです。 コレクションが同期されている場合でも、他のスレッドがコレクションを変更します。 これは、列挙中に例外をによりします。  
+  
+ 使用してコレクションをロック、<xref:System.Web.UI.Design.DesignerRegionCollection.SyncRoot%2A>スレッド セーフを確保する全体の列挙中にメソッドです。 スレッド セーフなアクセス用のコレクションのロックの詳細については、次を参照してください。<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" />されるコピー元領域のコピー先です。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.Count">
+      <MemberSignature Language="C#" Value="int System.Collections.ICollection.Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 System.Collections.ICollection.Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#ICollection#Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.Count" />」をご覧ください。</summary>
+        <value>コレクション内の要素の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.IsSynchronized" />」をご覧ください。</summary>
+        <value>
+          <see langword="true" />、コレクションへのアクセスが同期されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.ICollection.SyncRoot" />」を参照してください。</summary>
+        <value>コレクションへのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IEnumerable.GetEnumerator" />」をご覧ください。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Add">
+      <MemberSignature Language="C#" Value="int IList.Add (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.Add(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">コレクションに追加する項目。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Add(System.Object)" />」をご覧ください。</summary>
+        <returns>コレクションに追加された項目のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Clear">
+      <MemberSignature Language="C#" Value="void IList.Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Clear" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Contains">
+      <MemberSignature Language="C#" Value="bool IList.Contains (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IList.Contains(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内で検索します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Contains(System.Object)" />」をご覧ください。</summary>
+        <returns>
+          <see langword="true" />、領域がコレクション内にある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IndexOf">
+      <MemberSignature Language="C#" Value="int IList.IndexOf (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance int32 System.Collections.IList.IndexOf(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Web.UI.Design.DesignerRegion" />コレクション内で検索します。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.IndexOf(System.Object)" />」をご覧ください。</summary>
+        <returns>コレクション内のオブジェクトの最初に見つかった位置の 0 から始まるインデックスオブジェクトがコレクション内にない場合は-1。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Insert">
+      <MemberSignature Language="C#" Value="void IList.Insert (int index, object o);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Insert(int32 index, object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="index">オブジェクトを挿入する位置を示すコレクション内の 0 から始まるインデックス。</param>
+        <param name="o">コレクションに挿入するオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Insert(System.Int32,System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsFixedSize" />」をご覧ください。</summary>
+        <value>
+          <see langword="false" />、新しいオブジェクトが追加される;、このコレクションは、動的にサイズが増える場合それ以外の場合、<see langword="true" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.IsReadOnly" />」をご覧ください。</summary>
+        <value><see cref="P:System.Web.UI.Design.DesignerRegionCollection.IsReadOnly" /> プロパティの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IList.Item[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IList.Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">コレクション内で取得するオブジェクトの 0 から始まるインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Collections.IList.Item(System.Int32)" />」をご覧ください。</summary>
+        <value>コレクション内の指定したインデックスにあるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.Remove">
+      <MemberSignature Language="C#" Value="void IList.Remove (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.Remove(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">コレクションから削除するオブジェクト。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.Remove(System.Object)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.RemoveAt">
+      <MemberSignature Language="C#" Value="void IList.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IList.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.DesignerRegionCollection.System#Collections#IList#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除するオブジェクトのコレクション内の 0 から始まるインデックス。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Collections.IList.RemoveAt(System.Int32)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.DesignerRegionCollection> のインスタンスが <xref:System.Collections.IList> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

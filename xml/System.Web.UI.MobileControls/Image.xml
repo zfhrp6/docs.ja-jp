@@ -1,0 +1,288 @@
+<Type Name="Image" FullName="System.Web.UI.MobileControls.Image">
+  <TypeSignature Language="C#" Value="public class Image : System.Web.UI.MobileControls.MobileControl, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Image extends System.Web.UI.MobileControls.MobileControl implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.Image" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.MobileControls.MobileControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("ImageUrl")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer(typeof(System.Web.UI.Design.MobileControls.ImageDesigner))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(typeof(System.Web.UI.Design.WebControlToolboxItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.MobileControls.DesignerAdapter(typeof(System.Web.UI.Design.MobileControls.Adapters.DesignerImageAdapter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Image runat="server"&gt;&lt;/{0}:Image&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>モバイル Web ページ上にイメージを表示します。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.MobileControls.Image>クラスは、デバイスの特性に基づくイメージ ファイルを選択する方法を提供します。 特定のデバイスを指定できます組み込みイメージを使用して、 `symbol` : プレフィックス内の URL の一部として、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>プロパティです。 詳細については、のデバイスに固有のセクションを参照して、<xref:System.Web.UI.MobileControls.Image>です。  
+  
+> [!NOTE]
+>  Cookie なしのセッションに依存したり、アプリケーションが cookie なしのセッションを要求するブラウザーから要求を受信する可能性がある場合、は、チルダを使用して ("~") パスで誤ってにつながる新しいセッションが作成され、セッション データが失われる可能性があります。 など、パスを持つプロパティを設定する ("~/パス") を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>("~/パス") をプロパティに割り当てる前にします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します、 [ \<DeviceSpecific >](http://msdn.microsoft.com/en-us/6dca8eb9-d6f6-479a-abac-20fc9d485cc8)各種デバイス用の別のイメージを指定するイメージ] コントロール内のコントロールです。 使用可能ながあれば Sunshine.gif をという名前のファイル、Internet Explorer に表示されます。 OpenWave 電話などの WML デバイスまたは CHTML デバイスで、ページを表示する場合は、sun アイコンとして表示されます。 ページは、ブラウザーの名前とイメージの名前解決にも表示されます。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MobileImageSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileImageSample/cs/Default.aspx#1)]  
+  
+ 次に、`<deviceFilters>`のセクションで、`Web.config`ファイル。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Web.AspNetHostingPermission">ホスト環境で動作しています。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。アクセス許可の値:<see cref="F:System.Web.AspNetHostingPermissionLevel.Minimal" />です。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Image ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Image.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.MobileControls.Image" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlternateText">
+      <MemberSignature Language="C#" Value="public string AlternateText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AlternateText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Image.AlternateText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージが、デバイスで利用できる場合に表示する代替テキストを設定します。 既定値は、空の文字列 ("") です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>イメージは、デバイスで利用できるときに表示される代替テキストです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イメージをサポートしていないか、またはイメージ ファイルがいない使用可能なブラウザーの代替テキストが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Image.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor(typeof(System.Web.UI.Design.MobileControls.ImageUrlEditor), typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の画像のソースの URL、<see cref="T:System.Web.UI.MobileControls.Image" />コントロール。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>画像のソースの URL、<see cref="T:System.Web.UI.MobileControls.Image" /></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ さまざまなデバイスを使用して、中心となる、陽、書籍、右矢印は、および、用の画像などの組み込みの画像のセットを提供するため、 [ \<DeviceSpecific >](http://msdn.microsoft.com/en-us/6dca8eb9-d6f6-479a-abac-20fc9d485cc8)内の制御、<xref:System.Web.UI.MobileControls.Image>コントロール、さまざまな標準的な Web グラフィックと同様に、自身がデバイスに統合できるグラフィックスを指定することができます。  
+  
+ たとえば、指定`symbol:63726`として、 <xref:System.Web.UI.MobileControls.Image.ImageUrl%2A> WML マークアップ、およびとして Sunshine.gif を必要とするすべてのデバイスのプロパティの値、 <xref:System.Web.UI.MobileControls.Image.ImageUrl%2A> HTML デバイスのプロパティの値。  
+  
+ 正確な解像度、<xref:System.Web.UI.MobileControls.Image.ImageUrl%2A>値がイメージ アダプターによって提供される (など<xref:System.Web.UI.MobileControls.Adapters.ChtmlImageAdapter>、 <xref:System.Web.UI.MobileControls.Adapters.WmlImageAdapter>、または<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlImageAdapter>)。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、`<DeviceSpecific>`内で制御、<xref:System.Web.UI.MobileControls.Image>各種デバイス用の別のイメージを指定するコントロール。 Sunshine.gif をという名前のファイルがある場合は、Internet Explorer に表示されます。 OpenWave 電話などの WML デバイスまたは CHTML デバイスで、ページを表示する場合は、sun アイコンとして表示されます。 ページは、ブラウザーの名前とイメージの名前解決にも表示されます。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[MobileImageSample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/MobileImageSample/cs/Default.aspx#1)]  
+  
+ 次に、 `<deviceFilters>` Web.config ファイルのセクションです。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NavigateUrl">
+      <MemberSignature Language="C#" Value="public string NavigateUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NavigateUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Image.NavigateUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.Design.MobileControls.Converters.NavigateUrlConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイメージのターゲット URL を設定します。 既定値は、空の文字列 ("") です。  この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。この API は今後使用しません。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>イメージのターゲット URL です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cookie なしのセッションに依存したり、アプリケーションが cookie なしのセッションを要求するブラウザーから要求を受信する可能性がある場合、は、チルダを使用して ("~") パスで誤ってにつながる新しいセッションが作成され、セッション データが失われる可能性があります。 など、パスを持つプロパティを設定する ("~/パス") を使用してパスを解決する<xref:System.Web.UI.MobileControls.MobileControl.ResolveUrl%2A>("~/パス") をプロパティに割り当てる前にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected void RaisePostBackEvent (string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void RaisePostBackEvent(string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Image.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="argument">イベント ハンドラーに渡される省略可能なイベント引数を表す <see cref="T:System.String" />。</param>
+        <summary><see cref="T:System.Web.UI.MobileControls.Image" /> オブジェクトにポストバック イベントを通知します。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SoftkeyLabel">
+      <MemberSignature Language="C#" Value="public string SoftkeyLabel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SoftkeyLabel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.MobileControls.Image.SoftkeyLabel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはソフトキーに表示されるイメージにテキストを設定、<see cref="P:System.Web.UI.MobileControls.Image.NavigateUrl" />プロパティが定義されています。 既定値は、空<see langword="string" />です。 この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <value>ソフトキー イメージに存在するときに表示されるテキスト、<see cref="P:System.Web.UI.MobileControls.Image.NavigateUrl" />プロパティが定義されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはソフトキーをサポートするデバイスに対してのみ使用されます。 このプロパティが空の場合、`Text`コントロールのプロパティを使用します。 場合、`Text`プロパティが空か、長さが 9 未満、`Text`ソフトキー ラベルのプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.MobileControls.Image.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Mobile</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント ハンドラーに渡される省略可能なイベント引数。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(System.String)" />」をご覧ください。  この API は、互換性のために残されています。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.MobileControls.Image> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

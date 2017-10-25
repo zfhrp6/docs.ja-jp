@@ -1,0 +1,927 @@
+<Type Name="IOControlCode" FullName="System.Net.Sockets.IOControlCode">
+  <TypeSignature Language="C#" Value="public enum IOControlCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed IOControlCode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.IOControlCode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>サポートされている IO 制御コードを指定します、<see cref="M:System.Net.Sockets.Socket.IOControl(System.Int32,System.Byte[],System.Byte[])" />メソッドです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Sockets.IOControlCode>列挙体は、ソケットの操作モードを指定する名前付きの値を提供します。 これらの値は Windows Sockets 2 (Winsock 2) に渡される制御コード`WSAIoctl`関数。  
+  
+   
+  
+## Examples  
+ 次のコード例では、 <xref:System.Net.Sockets.Socket.IOControl%28System.Net.Sockets.IOControlCode%2CSystem.Byte%5B%5D%2CSystem.Byte%5B%5D%29> DataToRead パラメーター値を持つメソッドにアクセスすると、結果を比較し、。<xref:System.Net.Sockets.Socket.Available%2A>プロパティです。  
+  
+ [!code-cpp[NCLSocketIoControl1#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLSocketIoControl1/CPP/iocontrolcode.cpp#1)]
+ [!code-csharp[NCLSocketIoControl1#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLSocketIoControl1/CS/iocontrolcode.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AbsorbRouterAlert">
+      <MemberSignature Language="C#" Value="AbsorbRouterAlert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AbsorbRouterAlert = int64(2550136837)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AbsorbRouterAlert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値は、Winsock 2 SIO_ABSORB_RTRALERT 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMulticastGroupOnInterface">
+      <MemberSignature Language="C#" Value="AddMulticastGroupOnInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AddMulticastGroupOnInterface = int64(2550136842)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AddMulticastGroupOnInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インデックスによって識別されるインターフェイスを使用してマルチキャスト グループに参加します。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_INDEX_ADD_MCAST 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressListChange">
+      <MemberSignature Language="C#" Value="AddressListChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AddressListChange = int64(671088663)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AddressListChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットのプロトコルのファミリのローカル インターフェイスの一覧が変更されたときの通知の受信を有効にします。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_ADDRESS_LIST_CHANGE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressListQuery">
+      <MemberSignature Language="C#" Value="AddressListQuery" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AddressListQuery = int64(1207959574)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AddressListQuery" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットにバインドできるローカル インターフェイスの一覧を返します。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_ADDRESS_LIST_QUERY 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressListSort">
+      <MemberSignature Language="C#" Value="AddressListSort" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AddressListSort = int64(3355443225)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AddressListSort" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって返される構造体を並べ替え、<see cref="F:System.Net.Sockets.IOControlCode.AddressListQuery" />フィールドし、IPv6 アドレスの範囲の ID 情報を追加します。 この制御コードは、Windows XP およびそれ以降のオペレーティング システムではサポートします。 この値は、Winsock 2 SIO_ADDRESS_LIST_SORT 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociateHandle">
+      <MemberSignature Language="C#" Value="AssociateHandle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AssociateHandle = int64(2281701377)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AssociateHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このソケットを対応するインターフェイスの指定したハンドルに関連付けます。 Winsock 2 参照または追加の詳細について、特定の対応するインターフェイスのドキュメントで適切なプロトコル固有 annex を参照してください。 コンポーネント オブジェクト モデル (COM) を使用この IOCTL ではなく検出およびソケットによってサポートされる可能性があるその他のインターフェイスを追跡することをお勧めします。 この制御コードは、COM が利用できないか、何らかの理由で使用することはできません、システムとの下位互換性存在します。 この値は、Winsock 2 SIO_ASSOCIATE_HANDLE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AsyncIO">
+      <MemberSignature Language="C#" Value="AsyncIO" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode AsyncIO = int64(2147772029)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.AsyncIO" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データが受信されるまで待機しているときの通知を有効にします。 この値は、Winsock 2 FIOASYNC 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="BindToInterface">
+      <MemberSignature Language="C#" Value="BindToInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode BindToInterface = int64(2550136840)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.BindToInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたインターフェイスのインデックスに、ソケットをバインドします。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_INDEX_BIND 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DataToRead">
+      <MemberSignature Language="C#" Value="DataToRead" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode DataToRead = int64(1074030207)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.DataToRead" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取りに使用できるバイト数を返します。 この値は、Winsock 2 FIONREAD 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteMulticastGroupFromInterface">
+      <MemberSignature Language="C#" Value="DeleteMulticastGroupFromInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode DeleteMulticastGroupFromInterface = int64(2550136843)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.DeleteMulticastGroupFromInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットは、マルチキャスト グループから削除します。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_INDEX_ADD_MCAST 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableCircularQueuing">
+      <MemberSignature Language="C#" Value="EnableCircularQueuing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode EnableCircularQueuing = int64(671088642)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.EnableCircularQueuing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信メッセージ キューがいっぱいになったときは、最も古いキューに置かれたデータグラムを受信したデータグラムで置き換えます。 この値は、Winsock 2 SIO_ENABLE_CIRCULAR_QUEUEING 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Flush">
+      <MemberSignature Language="C#" Value="Flush" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode Flush = int64(671088644)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.Flush" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信キューの内容を破棄します。 この値は、Winsock 2 SIO_FLUSH 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBroadcastAddress">
+      <MemberSignature Language="C#" Value="GetBroadcastAddress" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode GetBroadcastAddress = int64(1207959557)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.GetBroadcastAddress" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のソケット アドレス ファミリのブロードキャスト アドレスを含む SOCKADDR 構造体を返します。 返されたアドレスを使用できます、<see cref="Overload:System.Net.Sockets.Socket.SendTo" />メソッドです。 この値は、Winsock 2 SIO_GET_BROADCAST_ADDRESS 定数と同じです。 この値は、ユーザー データグラム プロトコル (UDP) のソケットのみで使用できます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExtensionFunctionPointer">
+      <MemberSignature Language="C#" Value="GetExtensionFunctionPointer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode GetExtensionFunctionPointer = int64(3355443206)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.GetExtensionFunctionPointer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Winsock の仕様の一部ではないプロバイダーに固有の機能を取得します。 関数は、そのプロバイダーによって割り当てられた GUID を使用して指定されます。 この値は、Winsock 2 SIO_GET_EXTENSION_FUNCTION_POINTER 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGroupQos">
+      <MemberSignature Language="C#" Value="GetGroupQos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode GetGroupQos = int64(3355443208)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.GetGroupQos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットのグループのサービス品質 (QOS) の属性を返します。 この値は、将来の使用に予約されているし、Winsock 2 SIO_GET_GROUP_QOS 定数には。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQos">
+      <MemberSignature Language="C#" Value="GetQos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode GetQos = int64(3355443207)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.GetQos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットに関連付けられている QOS 構造体を取得します。 このコントロールは、QOS 対応のトランスポート (Windows Me、Windows 2000、およびそれ以降) を提供するプラットフォームでのみサポートします。この値は、Winsock 2 SIO_GET_QOS 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAliveValues">
+      <MemberSignature Language="C#" Value="KeepAliveValues" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode KeepAliveValues = int64(2550136836)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.KeepAliveValues" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TCP の keep-alive パケットの送信とに送信される間隔を制御します。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 詳細については、ならなければ 4.2.3.6 セクションを参照してください。 この値は、Winsock 2 SIO_KEEPALIVE_VALS 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LimitBroadcasts">
+      <MemberSignature Language="C#" Value="LimitBroadcasts" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode LimitBroadcasts = int64(2550136839)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.LimitBroadcasts" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この値は、Winsock 2 SIO_LIMIT_BROADCASTS 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MulticastInterface">
+      <MemberSignature Language="C#" Value="MulticastInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode MulticastInterface = int64(2550136841)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.MulticastInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発信マルチキャスト パケットの使用されるインターフェイスを設定します。 インターフェイスは、そのインデックスによって識別されます。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。  この値は、Winsock 2 SIO_INDEX_MCASTIF 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MulticastScope">
+      <MemberSignature Language="C#" Value="MulticastScope" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode MulticastScope = int64(2281701386)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.MulticastScope" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マルチキャスト パケットとも呼ばれる、Time to Live (TTL)、ルーターによって転送できますか、ホップ数の回数を制御します。 この値は、Winsock 2 SIO_MULTICAST_SCOPE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultipointLoopback">
+      <MemberSignature Language="C#" Value="MultipointLoopback" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode MultipointLoopback = int64(2281701385)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.MultipointLoopback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロール、ソケットの送信マルチキャスト データ、ソケットの受信データとして表示されるかどうかは、キューを取得します。 この値は、Winsock 2 SIO_MULTIPOINT_LOOPBACK 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NamespaceChange">
+      <MemberSignature Language="C#" Value="NamespaceChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode NamespaceChange = int64(2281701401)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.NamespaceChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前空間のクエリが無効になったときに、ソケットに通知を受け取るかどうかを制御します。 この制御コードは、Windows XP およびそれ以降のオペレーティング システムではサポートします。 この値は、Winsock 2 SIO_NSP_NOTIFY_CHANGE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NonBlockingIO">
+      <MemberSignature Language="C#" Value="NonBlockingIO" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode NonBlockingIO = int64(2147772030)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.NonBlockingIO" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットのブロックの動作を制御します。 このコントロールのコードで指定された引数が 0 の場合は、ブロッキング モード ソケットが配置されます。 引数が 0 以外の場合は、非ブロッキング モード ソケットが配置されます。 この値は、Winsock 2 FIONBIO 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OobDataRead">
+      <MemberSignature Language="C#" Value="OobDataRead" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode OobDataRead = int64(1074033415)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.OobDataRead" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>受信を待機している帯域外のデータに関する情報を返します。 この制御コード ストリーム ソケットを使用する場合、戻り値は、使用できるバイト数を示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryTargetPnpHandle">
+      <MemberSignature Language="C#" Value="QueryTargetPnpHandle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode QueryTargetPnpHandle = int64(1207959576)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.QueryTargetPnpHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるプロバイダーのソケット ハンドルを取得します。 プラグ アンド プレイのイベント通知を受け取るには、このハンドルを使用できます。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_QUERY_TARGET_PNP_HANDLE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAll">
+      <MemberSignature Language="C#" Value="ReceiveAll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode ReceiveAll = int64(2550136833)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.ReceiveAll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク上のすべての IPv4 パケットの受信を有効にします。 ソケット アドレス ファミリをいる必要があります<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />、ソケットの種類である必要があります<see cref="F:System.Net.Sockets.SocketType.Raw" />、プロトコルの種類を指定する必要があります<see cref="F:System.Net.Sockets.ProtocolType.IP" />です。 現在のユーザーが、ローカル コンピューターの Administrators グループに属している必要があります、ソケットは、特定のポートにバインドする必要があります。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_RCVALL 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAllIgmpMulticast">
+      <MemberSignature Language="C#" Value="ReceiveAllIgmpMulticast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode ReceiveAllIgmpMulticast = int64(2550136835)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.ReceiveAllIgmpMulticast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク上のすべてのインターネット グループ管理プロトコル (IGMP) パケットの受信を有効にします。 ソケット アドレス ファミリをいる必要があります<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />、ソケットの種類である必要があります<see cref="F:System.Net.Sockets.SocketType.Raw" />、プロトコルの種類を指定する必要があります<see cref="F:System.Net.Sockets.ProtocolType.Igmp" />です。 現在のユーザーが、ローカル コンピューターの Administrators グループに属している必要があります、ソケットは、特定のポートにバインドする必要があります。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_RCVALL_IGMPMCAST 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReceiveAllMulticast">
+      <MemberSignature Language="C#" Value="ReceiveAllMulticast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode ReceiveAllMulticast = int64(2550136834)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.ReceiveAllMulticast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク上のすべてのマルチキャスト IPv4 パケットの受信を有効にします。 これらは、224.0.0.0 ~ 239.255.255.255 の範囲内で移行先のアドレスからのパケットです。 ソケット アドレス ファミリをいる必要があります<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" />、ソケットの種類である必要があります<see cref="F:System.Net.Sockets.SocketType.Raw" />、プロトコルの種類を指定する必要があります<see cref="F:System.Net.Sockets.ProtocolType.Udp" />です。 現在のユーザーが、ローカル コンピューターの Administrators グループに属している必要があります、ソケットは、特定のポートにバインドする必要があります。 この制御コードは、Windows 2000 以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_RCVALL_MCAST 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RoutingInterfaceChange">
+      <MemberSignature Language="C#" Value="RoutingInterfaceChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode RoutingInterfaceChange = int64(2281701397)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.RoutingInterfaceChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル インターフェイスは、リモート エンドポイントの変更のアクセスに使用する場合の通知の受信を有効にします。 この値は、Winsock 2 SIO_ROUTING_INTERFACE_CHANGE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RoutingInterfaceQuery">
+      <MemberSignature Language="C#" Value="RoutingInterfaceQuery" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode RoutingInterfaceQuery = int64(3355443220)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.RoutingInterfaceQuery" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたリモート アドレスへの接続に使用できるインターフェイスのアドレスを返します。 この値は、Winsock 2 SIO_ROUTING_INTERFACE_QUERY 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetGroupQos">
+      <MemberSignature Language="C#" Value="SetGroupQos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode SetGroupQos = int64(2281701388)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.SetGroupQos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットのグループのサービス品質 (QOS) の属性を設定します。 この値は将来使用するために予約されて、Winsock 2 SIO_SET_GROUP_QOS 定数と等しい。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SetQos">
+      <MemberSignature Language="C#" Value="SetQos" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode SetQos = int64(2281701387)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.SetQos" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ソケットのサービス品質 (QOS) 属性を設定します。 QOS は、ソケットの帯域幅要件を定義します。 この制御コードは、Windows Me、Windows 2000、および以降のオペレーティング システムでサポートされます。 この値は、Winsock 2 SIO_SET_QOS 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslateHandle">
+      <MemberSignature Language="C#" Value="TranslateHandle" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode TranslateHandle = int64(3355443213)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.TranslateHandle" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>対応するインターフェイスのコンテキストで有効なソケットのハンドルを返します。 この値は、Winsock 2 SIO_TRANSLATE_HANDLE 定数と同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnicastInterface">
+      <MemberSignature Language="C#" Value="UnicastInterface" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.IOControlCode UnicastInterface = int64(2550136838)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.IOControlCode.UnicastInterface" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.IOControlCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユニキャスト パケットの送信に使用するインターフェイスを設定します。 この値は、Winsock 2 SIO_UCAST_IF 定数と同じです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

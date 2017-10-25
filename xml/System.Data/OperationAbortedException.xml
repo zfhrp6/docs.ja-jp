@@ -1,0 +1,30 @@
+<Type Name="OperationAbortedException" FullName="System.Data.OperationAbortedException">
+  <TypeSignature Language="C#" Value="public sealed class OperationAbortedException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit OperationAbortedException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.Data.OperationAbortedException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data.SqlClient</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>進行中の操作がユーザーによって中止されたときに、この例外がスローされます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この例外は、API のコンシューマーによって操作が中止されたことを示します。 たとえば場合のイベント ハンドラー、<xref:System.Data.SqlClient.SqlBulkCopy.SqlRowsCopied>イベント セット、**中止**プロパティを`true`で、<xref:System.Data.SqlClient.SqlRowsCopiedEventArgs>ハンドラーに渡されたオブジェクト、<xref:System.Data.SqlClient.SqlBulkCopy.WriteToServer%2A>メソッドは、サーバーへの行の送信を停止し、スロー、<xref:System.Data.OperationAbortedException>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

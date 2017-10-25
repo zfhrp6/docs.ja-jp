@@ -1,0 +1,1493 @@
+<Type Name="HtmlWindow" FullName="System.Windows.Forms.HtmlWindow">
+  <TypeSignature Language="C#" Value="public sealed class HtmlWindow" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlWindow extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.HtmlWindow" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Forms.HtmlDocument" /> のインスタンスを 1 つ以上格納する論理的なウィンドウを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow>Windows フォームまたは Win32 API; のウィンドウの概念を混同しないでください。ない`HWND`またはのインスタンスに直接対応する同様の Windows リソース<xref:System.Windows.Forms.HtmlWindow>です。 代わりに、<xref:System.Windows.Forms.HtmlWindow>ユーザーの画面で、だけでなくメッセージとダイアログ ボックスを使用するユーザーと対話するためのメソッドにドキュメントの場所の概要を提供します。 <xref:System.Windows.Forms.HtmlWindow>Web ページのドキュメントおよびドキュメントの場所や Web ブラウザーの機能など、そのメタデータの論理的コンテナーとして機能します。  
+  
+ Web ページから成る 1 つのドキュメントや`FRAMESET`1 つ以上含む`FRAME`要素、独自のドキュメントをホストします。 Web 開発者は、フレーム セットを使用して、論理的に関連するページ サイド バイ サイド (ナビゲーション ページの横にあるコンテンツ ページなど) を示します。 ページは、1 つのドキュメントで構成されと、をを介してアクセスできる、<xref:System.Windows.Forms.HtmlWindow.Document%2A>プロパティ<xref:System.Windows.Forms.HtmlWindow>以外のかどうか、ページを使用してフレーム、を介して、ドキュメントにアクセスすることができます、<xref:System.Windows.Forms.HtmlWindow.Frames%2A>は 1 つまたは複数のコレクション<xref:System.Windows.Forms.HtmlWindow>オブジェクト。  
+  
+ ときに、ホスト、<xref:System.Windows.Forms.WebBrowser>コントロール、Windows フォーム アプリケーションを選択できますなどの標準の Windows フォーム クラスを使用して、ユーザーと対話する<xref:System.Windows.Forms.Form>または<xref:System.Windows.Forms.MessageBox>でメソッドを使用することも<xref:System.Windows.Forms.HtmlWindow>この用途で定義します。 <xref:System.Windows.Forms.HtmlWindow.Alert%2A>メソッドは、カスタム テキストを含む単純なダイアログ ボックスを表示し、 **OK**ボタンをクリックします。<xref:System.Windows.Forms.HtmlWindow.Prompt%2A>カスタム テキストとテキスト入力フィールドの行をユーザーに提示と<xref:System.Windows.Forms.HtmlWindow.Confirm%2A>、行のカスタム テキストとダイアログ ボックスを表示および**[ok]**と**キャンセル**ボタン。  
+  
+ 使用することができます<xref:System.Windows.Forms.HtmlWindow>を新しいドキュメントを含む新しいウィンドウを開きます。 <xref:System.Windows.Forms.HtmlWindow.Open%2A>指定された URL を指定したウィンドウに読み込みます while が既に存在しない場合は、それを作成、<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>常に、新しく作成されたウィンドウでその URL を開きます。  
+  
+   
+  
+## Examples  
+ 次のコード例には、2 つのメソッドが含まれています。 1 つ目は、という名前のウィンドウで URL を開く`displayWindow`、表示されるステータス バーを作成します。 2 番目は同じウィンドウで、別の URL を開きますが、アドレス バーのみが表示されることを指定します。 URL は、最初に開いたをウィンドウと表示されているコントロールのディメンションが依存することに注意してください。 コード例では、フォームが含まれている必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#13)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#13)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alert">
+      <MemberSignature Language="C#" Value="public void Alert (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Alert(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Alert(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">メッセージ ボックスに表示する <see cref="T:System.String" />。</param>
+        <summary>メッセージ ボックスを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.MessageBox>クラスのより強力なバージョンの提供、<xref:System.Windows.Forms.HtmlWindow.Alert%2A>メソッドです。  
+  
+ <xref:System.Windows.Forms.HtmlWindow.Alert%2A> Unicode のテキストを指定、入力として、Internet Explorer スクリプト プロンプトは表示されませんラテン文字以外の言語のテキスト適切に Windows 95、Windows 98、Windows ME または Windows NT でオペレーティング システムの制限によりします。 詳細については、次を参照してください。[情報: Internet Explorer のスクリプトが、MBCS または Unicode](http://support.microsoft.com/default.aspx?scid=kb;en-us;211147)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AttachEventHandler">
+      <MemberSignature Language="C#" Value="public void AttachEventHandler (string eventName, EventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AttachEventHandler(string eventName, class System.EventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.AttachEventHandler(System.String,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="eventHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventName">処理するイベントの名前。</param>
+        <param name="eventHandler">イベントを処理するマネージ コードへの参照。</param>
+        <summary>指定した HTML DOM イベントのイベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントの読み込みが完了するまでイベント HTML ドキュメントやそのオブジェクトのいずれかにアタッチください。 できるだけ早くこのメソッドを呼び出す必要がありますが、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>のイベント、<xref:System.Windows.Forms.WebBrowser>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ウィンドウを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.HtmlWindow.IsClosed%2A>ウィンドウは既に閉じられているかどうかを決定するプロパティです。 場合は、ウィンドウは既に閉じられて、このメソッドは効果はありません。  
+  
+ 使用して新しいウィンドウを作成する場合<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>、<xref:System.Windows.Forms.HtmlWindow.Close%2A>を Internet Explorer の新しいインスタンスを開くには、HTML ドキュメント オブジェクト モデルをによりします。 呼び出さない場合<xref:System.Windows.Forms.HtmlWindow.Close%2A>ですべてのウィンドウで作成した、Internet Explorer のこのインスタンスが稼動したまま、アプリケーションの終了後もします。  
+  
+   
+  
+## Examples  
+ 次のコード例には、ウィンドウが開き、ユーザーが使用しない場合、過去 5 分以内に終了しました。 コード例には、フォームにあると仮定して書き込んだ、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`、<xref:System.Windows.Forms.Button>という名前`Button1`、および<xref:System.Windows.Forms.Timer>という名前のクラス`Timer1`です。 この例を正常に実行する、最初の引数を変更する<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>有効な URL にします。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#9](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#9)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#9](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Confirm">
+      <MemberSignature Language="C#" Value="public bool Confirm (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Confirm(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Confirm(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">ユーザーに表示するテキスト。</param>
+        <summary>yes/no の応答を求めるメッセージとボタンを含むダイアログ ボックスを表示します。</summary>
+        <returns>
+          <see langword="true" />ユーザーがクリックした場合**はい**です。<see langword="false" />ユーザーがクリックした場合**いいえ**またはダイアログ ボックスを終了します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.Confirm%2A>モーダル ダイアログ ボックスが表示されます。ユーザーは最初にこのダイアログ ボックスを閉じることがなく、基になる HTML ページにアクセスできません。  
+  
+ <xref:System.Windows.Forms.HtmlWindow.Confirm%2A> Unicode のテキストを指定、入力として、Internet Explorer スクリプト プロンプトは表示されませんラテン文字以外の言語のテキスト適切に Windows 95、Windows 98、Windows ME または Windows NT でオペレーティング システムの制限によりします。 詳細については、次を参照してください。[情報: Internet Explorer のスクリプトが、MBCS または Unicode](http://support.microsoft.com/default.aspx?scid=kb;en-us;211147)です。  
+  
+   
+  
+## Examples  
+ 次の HTML をコピーし、orderForm.htm をという名前のフォームに保存します。  
+  
+ `<HTML>`  
+  
+ `<BODY>`  
+  
+ `<FORM name="NewOrderForm">`  
+  
+ `Select Part Type:`  
+  
+ `<SELECT name="PartType">`  
+  
+ `<OPTION>AZ-3700`  
+  
+ `<OPTION>AZ-3701`  
+  
+ `<OPTION>AZ-3702`  
+  
+ `<SELECT><br>`  
+  
+ `Quantity: <INPUT type="text" name="PartQty" size="2" maxsize="2"><br>`  
+  
+ `Building/Desk:`  
+  
+ `<INPUT type="text" name="PartBuilding" size="2" maxsize="2"> /`  
+  
+ `<INPUT type="text" name="PartDesk" size="2" maxsize="2"><p>`  
+  
+ `<INPUT type="submit" value="Transmit Order">`  
+  
+ `</FORM>`  
+  
+ `</BODY>`  
+  
+ `</HTML>`  
+  
+ 次のコード例では表示、 <xref:System.Windows.Forms.HtmlWindow.Confirm%2A>  ダイアログ ボックスのユーザーが送信`NewOrderForm`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#10)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DetachEventHandler">
+      <MemberSignature Language="C#" Value="public void DetachEventHandler (string eventName, EventHandler eventHandler);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void DetachEventHandler(string eventName, class System.EventHandler eventHandler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.DetachEventHandler(System.String,System.EventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventName" Type="System.String" />
+        <Parameter Name="eventHandler" Type="System.EventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="eventName">処理するイベントの名前。</param>
+        <param name="eventHandler">イベントを処理するマネージ コードへの参照。</param>
+        <summary>指定したイベント ハンドラーを削除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Document">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlDocument Document { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlDocument Document" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Document" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlDocument</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウに格納されている HTML ドキュメントを取得します。</summary>
+        <value>ドキュメントが読み込まれている場合は、<see cref="T:System.Windows.Forms.HtmlDocument" /> の有効なインスタンス。 このウィンドウが含まれている場合、<c>フレーム セット</c>、ドキュメントが現在読み込まれていないが返されますまたは<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アクセスする、<xref:System.Windows.Forms.HtmlWindow.Document%2A>を通じて、<xref:System.Windows.Forms.WebBrowser.Document%2A>のプロパティ、<xref:System.Windows.Forms.WebBrowser>コントロール。 内のドキュメントにアクセスする必要がある場合は、このプロパティを使用して、`FRAME`を使用して、<xref:System.Windows.Forms.HtmlWindow.Frames%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フレームを含むページ内の各ドキュメントを検査し、各ページの今後の調査から出力方向のハイパーリンクのすべてのテーブルを作成します。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DomWindow">
+      <MemberSignature Language="C#" Value="public object DomWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DomWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.DomWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このクラスによってラップされたアンマネージ インターフェイスを取得します。</summary>
+        <value>キャスト可能なオブジェクト、 <see langword="IHTMLWindow2" />、 <see langword="IHTMLWindow3" />、または<see langword="IHTMLWindow4" />ポインター。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されていないメソッドを実行する、基になるアンマネージ インターフェイス ポインターをドキュメント オブジェクト モデル (DOM) を使用して<xref:System.Windows.Forms.HtmlWindow>です。  
+  
+ 追加して、参照されているアンマネージ MSHTML.dll を使用するために<xref:System.Windows.Forms.HtmlWindow.DomWindow%2A>です。 詳細については、次を参照してください。[タイプ ライブラリのアセンブリとしてインポート](~/docs/framework/interop/importing-a-type-library-as-an-assembly.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を取得、`IHTMLWindow2`ドキュメントからポインターのウィンドウとモーダル ウィンドウで、新しいドキュメントを表示します。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#3)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">テストするオブジェクト。</param>
+        <summary>指定したオブジェクトと現在のオブジェクトとを比較し、等しいかどうかをテストします。</summary>
+        <returns>
+          オブジェクトが等しい場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementErrorEventHandler Error;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementErrorEventHandler Error" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.Error" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementErrorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ内で実行されているスクリプトがランタイム エラーを検出すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ HTML ページには、通常 JScript またはページが読み込まれるときに実行される VBScript で記述されたスクリプト コードを含めることができます。 <xref:System.Windows.Forms.HtmlWindow.Error>スクリプトが実行時エラーを検出するたびに発生します。 スクリプト コードは遅延バインディングであるため、オブジェクトに対する呼び出しがないことを意味まで解決実行時に、エラーは、未定義のプロパティまたはメソッドの呼び出しには、null オブジェクトを参照してからすべての情報を含めることができます。  
+  
+ 設定することができます、<xref:System.Windows.Forms.HtmlElementErrorEventArgs.Handled%2A>プロパティ<xref:System.Windows.Forms.HtmlElementErrorEventArgs>Internet Explorer でのネイティブ エラー ダイアログ ボックスが表示することを防止するために true です。  
+  
+ バブルのイベントとイベントの既定の操作をキャンセルの取り消しの違いの詳細については、次を参照してください。 [DHTML オブジェクト モデルについて](http://msdn.microsoft.com/library/ms533022.aspx)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ドキュメントで定義されていないオブジェクトにアクセスしようとしている場合、HTML ページ上のスクリプトの結果、エラーをトラップします。 ページは前に完全に読み込む必要がありますが、<xref:System.Windows.Forms.HtmlWindow.Error>イベント ハンドラーがアタッチされている、それ以外の場合の例は機能しません。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#16](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#16)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#16](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Focus">
+      <MemberSignature Language="C#" Value="public void Focus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Focus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Focus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のウィンドウにフォーカスを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のウィンドウには、前にフォーカスが保持されている場合<xref:System.Windows.Forms.HtmlWindow.Focus%2A>が呼び出されると、そのウィンドウがフォーカスが失うされます。  
+  
+ ウィンドウ内で要素をウィンドウのまでフォーカスを呼び出す必要はありません<xref:System.Windows.Forms.HtmlWindow.Load>イベントが発生しました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Frames">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindowCollection Frames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindowCollection Frames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Frames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindowCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各への参照を取得、<c>フレーム</c>Web ページ内で定義されている要素です。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlWindowCollection" />ドキュメントの<c>フレーム</c>と<c>IFRAME</c>オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A`FRAME`内で定義されている windows の設定は、`FRAMESET`です。 `FRAME`使用すると、1 つのドキュメント内で複数のドキュメントをホストします。 各`FRAME`特定の行と列の幅を持つが定義されており、他の関連ページ上の位置は、`FRAME`内で定義された、 `FRAMESET`; の位置、`FRAME`が解決されたら、ユーザーことがありますを使用しても、マウス カーソルを拡大または縮小、`FRAME`です。 `IFRAME`フレームに似ていますが、固定位置に固定する必要がありますが、します。  
+  
+ フレームが 1 つのインスタンスを含む<xref:System.Windows.Forms.HtmlWindow>ごと`FRAME`または`IFRAME`Web ページ内で定義します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、フレームを含むページ内の各ドキュメントを検査し、各ページの今後の調査から出力方向のハイパーリンクのすべてのテーブルを作成します。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#2)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定の型のハッシュ関数として機能します。</summary>
+        <returns>現在の <see cref="T:System.Windows.Forms.HtmlWindow" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GotFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler GotFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler GotFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.GotFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のウィンドウがユーザーの入力フォーカスを得ると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.GotFocus>ようになります。  
+  
+-   最初のウィンドウ、`FRAMESET`ときに、`FRAMESET`が初めて読み込まれます。  
+  
+-   `FRAME`を最後がフォーカスを含むウィンドウ、<xref:System.Windows.Forms.WebBrowser>コントロールが前面に移動します。  
+  
+-   A`FRAME`ユーザーがクリックされたが、ユーザーのクリックがウィンドウ内の要素にフォーカスを設定していない場合にのみです。  
+  
+ 既定のアクションを取り消すことはできません、<xref:System.Windows.Forms.HtmlWindow.GotFocus>イベント、またはバブルを防止します。 バブルのイベントとイベントの既定の操作をキャンセルの取り消しの違いの詳細については、次を参照してください。 [DHTML オブジェクト モデルについて](http://msdn.microsoft.com/library/ms533022.aspx)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.GotFocus>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.GotFocus>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#452](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#452)]
+ [!code-vb[System.Windows.Forms.EventExamples#452](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#452)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="History">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlHistory History { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlHistory History" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.History" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlHistory</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが最近表示した URL を格納するオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlHistory" />現在のウィンドウ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.History%2A>移動先と呼ばれますが、現在のウィンドウ内のすべての Url が含まれています、*ナビゲーション スタック*、それらのドキュメントに移動するためのメソッドを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsClosed">
+      <MemberSignature Language="C#" Value="public bool IsClosed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsClosed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.IsClosed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウが開いているか閉じているかを示す値を取得します。</summary>
+        <value>
+          ウィンドウが画面上でまだ開いている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Forms.HtmlWindow>またはへの呼び出しを使用して、ユーザーが閉じられましたが、<xref:System.Windows.Forms.HtmlWindow.Close%2A>メソッド、ウィンドウのドキュメントにアクセスしたり、新しい URL に移動しようとすると、エラーが発生します。 このプロパティを使用して、安全に、現在のウィンドウでプロパティとメソッドを呼び出すかどうかを判別します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、ウィンドウが開き、ユーザーが使用しない場合、過去 5 分以内に終了しました。 このコード例は、フォームに、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`、<xref:System.Windows.Forms.Button>という名前`Button1`、および<xref:System.Windows.Forms.Timer>という名前のクラス`Timer1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#8)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Load;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Load" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.Load" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのドキュメントとそのすべての要素の初期化が終了すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.Load>イベントの動作と同じように、<xref:System.Windows.Forms.WebBrowser.DocumentCompleted>でイベントを<xref:System.Windows.Forms.WebBrowser>コントロール: ドキュメント内でアクセス HTML 要素に安全であるという通知します。  
+  
+ 既定のアクションを取り消すことはできません、<xref:System.Windows.Forms.HtmlWindow.Load>イベント。  
+  
+ バブルのイベントとイベントの既定の操作をキャンセルの取り消しの違いの詳細については、次を参照してください。 [DHTML オブジェクト モデルについて](http://msdn.microsoft.com/library/ms533022.aspx)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.Load>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.Load>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#453](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#453)]
+ [!code-vb[System.Windows.Forms.EventExamples#453](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#453)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LostFocus">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler LostFocus;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler LostFocus" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.LostFocus" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウがユーザーの入力フォーカスを失うと発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.LostFocus>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.LostFocus>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#454](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#454)]
+ [!code-vb[System.Windows.Forms.EventExamples#454](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#454)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.MoveTo(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">ウィンドウの左上隅の x 座標と y 座標。</param>
+        <summary>画面上の指定した座標にウィンドウを移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することはできません<xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>に表示される、画面の端からウィンドウを移動以外の場合はこのメソッドは、Web ページ上のスクリプトを通じて使用もと windows を非表示に表示するために信頼されていないスクリプトを許可するとは見なされませんセキュリティで保護されました。  
+  
+ <xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>発生させる、<xref:System.UnauthorizedAccessException>移動しようとして、ウィンドウとその親ウィンドウにさまざまなトップレベル ドメインがあるかどうか。 たとえば、ホストしている場合、 <xref:System.Windows.Forms.WebBrowser> a.adatum.com を指すをコントロールを使用して新しいウィンドウを作成<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>b.adatum.com を表示します。この場合、両方のウィンドウは、同じ最上位ドメインの一部と見なされます、例外はスローされません。 ただし、呼び出した場合<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>を表示する www,microsoft.com 2 つのウィンドウようになりましたが、別のトップレベル ドメインと<xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>操作には、スローする例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">この操作を実行しようとしています。 コードには、このウィンドウを操作するアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveTo">
+      <MemberSignature Language="C#" Value="public void MoveTo (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MoveTo(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.MoveTo(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">ウィンドウの左上隅の x 座標。</param>
+        <param name="y">ウィンドウの左上隅の y 座標。</param>
+        <summary>画面上の指定した座標にウィンドウを移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することはできません<xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>に表示される、画面の端からウィンドウを移動以外の場合はこのメソッドは、Web ページ上のスクリプトを通じて使用もと windows を非表示に表示するために信頼されていないスクリプトを許可するとは見なされませんセキュリティで保護されました。  
+  
+ <xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>発生させる、<xref:System.UnauthorizedAccessException>移動しようとして、ウィンドウとその親ウィンドウにさまざまなトップレベル ドメインがあるかどうか。 たとえば、ホストしている場合、 <xref:System.Windows.Forms.WebBrowser> a.adatum.com をポイントして制御し、それを作成する新しいウィンドウを使用して、 <xref:System.Windows.Forms.HtmlWindow.OpenNew%2A> b.adatum.com を表示します。この場合、両方のウィンドウは、同じ最上位ドメインの一部と見なされます、例外はスローされません。 ただし、呼び出した場合<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>を表示する www,microsoft.com 2 つのウィンドウようになりましたが、別のトップレベル ドメインと<xref:System.Windows.Forms.HtmlWindow.MoveTo%2A>操作には、スローする例外が発生します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">この操作を実行しようとしています。 コードには、このウィンドウを操作するアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウの名前を取得または設定します。</summary>
+        <value>名前を表す <see cref="T:System.String" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (string urlString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(string urlString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Navigate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="urlString">URL (Uniform Resource Locator) で表される表示対象のリソース。</param>
+        <summary>指定した URL にある新しいコンテンツを表示またはダウンロードします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`url`パラメーターを指します HTML ページ、ウィンドウに表示されているページが破棄され、新しいページに置き換えられます。 アプリケーションが前のページの管理対象の DOM オブジェクトに保持してすべての参照は無効になります。 場合`url`Internet Explorer によって表示されることはできませんのあるリソースへのポインター、ユーザーは、ダウンロード操作をキャンセルしたり、ディスクに保存する、アプリケーションの外部リソースを開くかどうかを確認するダイアログ ボックスが表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigate">
+      <MemberSignature Language="C#" Value="public void Navigate (Uri url);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Navigate(class System.Uri url) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Navigate(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="url">現在のウィンドウに表示するドキュメントまたはオブジェクトの、<see cref="T:System.Uri" /> で指定された場所。</param>
+        <summary>現在のウィンドウに新しいドキュメントを表示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Forms.HtmlWindow left, System.Windows.Forms.HtmlWindow right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Windows.Forms.HtmlWindow left, class System.Windows.Forms.HtmlWindow right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.op_Equality(System.Windows.Forms.HtmlWindow,System.Windows.Forms.HtmlWindow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Forms.HtmlWindow" />
+        <Parameter Name="right" Type="System.Windows.Forms.HtmlWindow" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の <see cref="T:System.Windows.Forms.HtmlWindow" /> オブジェクト。</param>
+        <param name="right">2 番目の <see cref="T:System.Windows.Forms.HtmlWindow" /> オブジェクト。</param>
+        <summary>2 つの <see cref="T:System.Windows.Forms.HtmlWindow" /> オブジェクトが等しいかどうかをテストします。</summary>
+        <returns>
+          両方のパラメーターが <see langword="null" /> の場合、または、基になる COM インターフェイスが両方の要素で同じ場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 等値演算子のテスト、`IUnknown`基になるに指定されたによってラップされた COM オブジェクトのポインター<xref:System.Windows.Forms.HtmlWindow>クラスです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Windows.Forms.HtmlWindow.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Forms.HtmlWindow left, System.Windows.Forms.HtmlWindow right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Windows.Forms.HtmlWindow left, class System.Windows.Forms.HtmlWindow right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.op_Inequality(System.Windows.Forms.HtmlWindow,System.Windows.Forms.HtmlWindow)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Windows.Forms.HtmlWindow" />
+        <Parameter Name="right" Type="System.Windows.Forms.HtmlWindow" />
+      </Parameters>
+      <Docs>
+        <param name="left">最初の <see cref="T:System.Windows.Forms.HtmlWindow" /> オブジェクト。</param>
+        <param name="right">2 番目の <see cref="T:System.Windows.Forms.HtmlWindow" /> オブジェクト。</param>
+        <summary>2 つの <see langword="HtmlWindow" /> オブジェクトが等しくないかどうかをテストします。</summary>
+        <returns>
+          いずれか一方のオブジェクトだけが <see langword="null" /> の場合、または、基になる COM ポインターが一致しない場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow Open (string urlString, string target, string windowOptions, bool replaceEntry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlWindow Open(string urlString, string target, string windowOptions, bool replaceEntry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Open(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlString" Type="System.String" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="windowOptions" Type="System.String" />
+        <Parameter Name="replaceEntry" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="urlString">読み込むファイルの場所を記述する URL。</param>
+        <param name="target">リソースを開くウィンドウの名前。 これは、開発者が指定した名前、または次の特殊な値のいずれかです。  
+  
+ <c>_blank</c>: 開きます<c>url</c>新しいウィンドウにします。 <see cref="M:System.Windows.Forms.HtmlWindow.OpenNew(System.String,System.String)" /> を呼び出した場合と同じ動作を実行します。  
+  
+ <c>_media</c>: 開きます<c>url</c>メディア バーにします。  
+  
+ <c>_parent</c>: 開きます<c>url</c>を現在のウィンドウを作成したウィンドウでします。  
+  
+ <c>検索 (_s)</c>: 開きます<c>url</c>検索バーにします。  
+  
+ <c>_self</c>: 開きます<c>url</c>現在のウィンドウにします。  
+  
+ <c>_top</c>: に属するウィンドウに対して呼び出された場合、<c>フレーム</c>要素が表示されます<c>url</c>ホストするウィンドウでその<c>フレーム セット</c>です。 それ以外の場合と同じ動作<c>_self</c>です。</param>
+        <param name="windowOptions">0 個以上の形式で、次のオプションで構成されるコンマ区切りの文字列<c>名前 = 値</c>です。 を除き、<c>左</c>、<c>上部</c>、<c>高さ</c>、および<c>幅</c>オプションで、任意の整数を受け取り、各オプションを受け入れる<c>はい</c>または<see langword="1" />、および<c>ありません</c>または<see langword="0" />、有効な値として。  
+  
+ <c>channelmode</c>: Internet Explorer 4.0 の廃止されたチャネルのテクノロジで使用します。 既定値は<c>ありません</c>です。  
+  
+ <c>ディレクトリ</c>: ウィンドウがディレクトリ移動ボタンを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>高さ</c>: (ピクセル単位) のウィンドウのクライアント領域の高さ。 最小値は 100 です。これよりも小さいウィンドウを開こうとすると、Internet Explorer の既定値に従ってウィンドウが開かれます。  
+  
+ <c>左</c>: ユーザーの画面の左上隅を基準とした、ウィンドウの左端の (x 座標) 位置 (ピクセル単位)。 正の整数にする必要があります。  
+  
+ <c>場所</c>: 新しい URL にウィンドウを移動することができます、アドレス バーを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>menubar</c>: 新しいウィンドウにメニューを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>サイズ変更可能な</c>: かどうか、ウィンドウ サイズを変更できるユーザー。 既定値は<c>はい</c>です。  
+  
+ <c>スクロール バー</c>: ウィンドウが水平方向および垂直のスクロール バーを持つかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>ステータス</c>: かどうか、ウィンドウが下部にあるステータス バーがあります。 既定値は<c>はい</c>です。  
+  
+ <c>titlebar</c>: 現在のページのタイトルが表示されているか。 このオプションを設定<c>ありません</c>; 管理対象のアプリケーション内で影響を与えませんタイトル バーは常に表示されます。  
+  
+ <c>ツールバー</c>: ツール バー ボタンなどかどうか**戻る**、**フォワード**と**停止**表示されます。 既定値は<c>はい</c>です。  
+  
+ <c>上部</c>: ユーザーの画面の左上隅を基準とした、ウィンドウの上部 (y 座標) 位置 (ピクセル単位)。 正の整数にする必要があります。  
+  
+ <c>幅</c>: (ピクセル単位) のウィンドウのクライアント領域の幅。 最小値は 100 です。これよりも小さいウィンドウを開こうとすると、Internet Explorer の既定値に従ってウィンドウが開かれます。</param>
+        <param name="replaceEntry">かどうか<c>url</c>ナビゲーション履歴に現在のウィンドウの URL に置き換えられます。 これは、<see cref="T:System.Windows.Forms.HtmlHistory" /> クラスのメソッドの操作に影響を及ぼします。</param>
+        <summary>指定したウィンドウにファイルを表示します。</summary>
+        <returns>新しいウィンドウ、または <paramref name="target" /> パラメーターで指定された以前に作成されたウィンドウを表す <see cref="T:System.Windows.Forms.HtmlWindow" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `target`パラメーターは、前の呼び出しの結果として作成されたウィンドウに名前を付けます<xref:System.Windows.Forms.HtmlWindow.Open%2A>です。 パラメーターがハイパーリンクをクリックすると開くウィンドウを指す場合も (`A`要素)、または`FORM`を使用する要素、`TARGET`属性を新しいウィンドウでその URL を開きます。 次の HTML コードがという名前の新しいウィンドウを開きます`orderWindow`ユーザーがクリックしたときに。  
+  
+ `<A HREF="/startOrder.aspx" TARGET="orderWindow">Click to Start Order</a>`  
+  
+ 任意のオプションを指定する場合、`windowOptions`パラメーター、含まれていない任意のオプションが自動的に無効にします。 つまり、によってのみを指定する場合は`windowOptions`メニュー バー、ツールバー、タイトル、スクロール バー、およびなどは表示されません明示的に有効にすることによってしない限り、そのステータス バー、する`windowOptions`です。  
+  
+ ファイルが参照されている場合`url`は HTML ファイル、テキスト ファイル、または Internet Explorer の内部でホストできるその他のファイルの種類が指定したウィンドウに表示されます。 Internet Explorer 内でファイルを表示できませんターゲットによってという名前のウィンドウが既に存在しないしかどうか、ウィンドウが開き、リソースのダウンロードに Internet Explorer の長いのみ直ちに終了後です。  
+  
+ 使用して新しいウィンドウを作成するときに<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>、Internet Explorer の新しいインスタンスを開くには、HTML ドキュメント オブジェクト モデルになります。 呼び出さない場合<xref:System.Windows.Forms.HtmlWindow.Close%2A>ですべてのウィンドウで作成した、Internet Explorer のこのインスタンスが稼動したまま、アプリケーションが終了した後もします。  
+  
+ 使用する場合<xref:System.Windows.Forms.HtmlWindow.Open%2A>を既存のウィンドウ内で URL を読み込む`windowOptions`は無視されます。 ウィンドウが、ディメンション、外観、および最初の呼び出しによってその最初の画面位置に保持されます<xref:System.Windows.Forms.HtmlWindow.Open%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow Open (Uri url, string target, string windowOptions, bool replaceEntry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlWindow Open(class System.Uri url, string target, string windowOptions, bool replaceEntry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Open(System.Uri,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.Uri" />
+        <Parameter Name="target" Type="System.String" />
+        <Parameter Name="windowOptions" Type="System.String" />
+        <Parameter Name="replaceEntry" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="url">読み込むファイルの場所を記述する URL。</param>
+        <param name="target">リソースを開くウィンドウの名前。 これは、開発者が指定した名前、または次の特殊な値のいずれかです。  
+  
+ <c>_blank</c>: 開きます<c>url</c>新しいウィンドウにします。 <see cref="M:System.Windows.Forms.HtmlWindow.OpenNew(System.String,System.String)" /> を呼び出した場合と同じ動作を実行します。  
+  
+ <c>_media</c>: 開きます<c>url</c>メディア バーにします。  
+  
+ <c>_parent</c>: 開きます<c>url</c>を現在のウィンドウを作成したウィンドウでします。  
+  
+ <c>検索 (_s)</c>: 開きます<c>url</c>検索バーにします。  
+  
+ <c>_self</c>: 開きます<c>url</c>現在のウィンドウにします。  
+  
+ <c>_top</c>: に属するウィンドウに対して呼び出された場合、<c>フレーム</c>要素が表示されます<c>url</c>ホストするウィンドウでその<c>フレーム セット</c>です。 それ以外の場合と同じ動作<c>_self</c>です。</param>
+        <param name="windowOptions">0 個以上の形式で、次のオプションで構成されるコンマ区切りの文字列<c>名前 = 値</c>です。 を除き、<c>左</c>、<c>上部</c>、<c>高さ</c>、および<c>幅</c>オプションで、任意の整数を受け取り、各オプションを受け入れる<c>はい</c>または<see langword="1" />、および<c>ありません</c>または<see langword="0" />、有効な値として。  
+  
+ <c>channelmode</c>: Internet Explorer 4.0 の廃止されたチャネルのテクノロジで使用します。 既定値は<c>ありません</c>です。  
+  
+ <c>ディレクトリ</c>: ウィンドウがディレクトリ移動ボタンを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>高さ</c>: (ピクセル単位) のウィンドウのクライアント領域の高さ。 最小値は 100 です。これよりも小さいウィンドウを開こうとすると、Internet Explorer の既定値に従ってウィンドウが開かれます。  
+  
+ <c>左</c>: ユーザーの画面の左上隅を基準とした、ウィンドウの左端の (x 座標) 位置 (ピクセル単位)。 正の整数にする必要があります。  
+  
+ <c>場所</c>: 新しい URL にウィンドウを移動することができます、アドレス バーを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>menubar</c>: 新しいウィンドウにメニューを表示するかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>サイズ変更可能な</c>: かどうか、ウィンドウ サイズを変更できるユーザー。 既定値は<c>はい</c>です。  
+  
+ <c>スクロール バー</c>: ウィンドウが水平方向および垂直のスクロール バーを持つかどうか。 既定値は<c>はい</c>です。  
+  
+ <c>ステータス</c>: かどうか、ウィンドウが下部にあるステータス バーがあります。 既定値は<c>はい</c>です。  
+  
+ <c>titlebar</c>: 現在のページのタイトルが表示されているか。 このオプションを設定<c>ありません</c>; 管理対象のアプリケーション内で影響を与えませんタイトル バーは常に表示されます。  
+  
+ <c>ツールバー</c>: ツール バー ボタンなどかどうか**戻る**、**フォワード**と**停止**表示されます。 既定値は<c>はい</c>です。  
+  
+ <c>上部</c>: ユーザーの画面の左上隅を基準とした、ウィンドウの上部 (y 座標) 位置 (ピクセル単位)。 正の整数にする必要があります。  
+  
+ <c>幅</c>: (ピクセル単位) のウィンドウのクライアント領域の幅。 最小値は 100 です。これよりも小さいウィンドウを開こうとすると、Internet Explorer の既定値に従ってウィンドウが開かれます。</param>
+        <param name="replaceEntry">かどうか<c>url</c>ナビゲーション履歴に現在のウィンドウの URL に置き換えられます。 これは、<see cref="T:System.Windows.Forms.HtmlHistory" /> クラスのメソッドの操作に影響を及ぼします。</param>
+        <summary>指定したウィンドウにファイルを表示します。</summary>
+        <returns>新しいウィンドウ、または <paramref name="target" /> パラメーターで指定された以前に作成されたウィンドウを表す <see cref="T:System.Windows.Forms.HtmlWindow" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `target`パラメーターは、前の呼び出しの結果として作成されたウィンドウに名前を付けます<xref:System.Windows.Forms.HtmlWindow.Open%2A>です。 パラメーターがハイパーリンクをクリックすると開くウィンドウを指す場合も (`A`要素)、または`FORM`を使用する要素、`TARGET`属性を新しいウィンドウでその URL を開きます。 次の HTML コードがという名前の新しいウィンドウを開きます`orderWindow`ユーザーがクリックしたときに。  
+  
+ `<A HREF="/startOrder.aspx" TARGET="orderWindow">Click to Start Order</a>`  
+  
+ 任意のオプションを指定する場合、`windowOptions`パラメーター、含まれていない任意のオプションが自動的に無効にします。 つまり、によってのみを指定する場合は`windowOptions`メニュー バー、ツールバー、タイトル、スクロール バー、およびなどは表示されません明示的に有効にすることによってしない限り、そのステータス バー、する`windowOptions`です。  
+  
+ ファイルが参照されている場合`url`は HTML ファイル、テキスト ファイル、または Internet Explorer の内部でホストできるその他のファイルの種類が指定したウィンドウに表示されます。 Internet Explorer 内でファイルを表示できませんターゲットによってという名前のウィンドウが既に存在しないしかどうか、ウィンドウが開き、リソースのダウンロードに Internet Explorer の長いのみ直ちに終了後です。  
+  
+ 使用して新しいウィンドウを作成するときに<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>、Internet Explorer の新しいインスタンスを開くには、HTML ドキュメント オブジェクト モデルになります。 呼び出さない場合<xref:System.Windows.Forms.HtmlWindow.Close%2A>ですべてのウィンドウで作成した、Internet Explorer のこのインスタンスが稼動したまま、アプリケーションが終了した後もします。  
+  
+ 使用する場合<xref:System.Windows.Forms.HtmlWindow.Open%2A>を既存のウィンドウ内で URL を読み込む`windowOptions`は無視されます。 ウィンドウが、ディメンション、外観、および最初の呼び出しによってその最初の画面位置に保持されます<xref:System.Windows.Forms.HtmlWindow.Open%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例には、2 つのメソッドが含まれています。  
+  
+-   1 つ目は、という名前のウィンドウで URL を開く`displayWindow`、表示されるステータス バーを作成します。  
+  
+-   2 番目は同じウィンドウで、別の URL を開きますが、アドレス バーのみが表示されることを指定します。  
+  
+ URL は、最初に開いたをウィンドウと表示されているコントロールのディメンションが依存することに注意してください。 コード例では、フォームが含まれている必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#13](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#13)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#13](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opener">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow Opener { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindow Opener" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Opener" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のウィンドウを開いたウィンドウへの参照を取得します。</summary>
+        <value><see cref="M:System.Windows.Forms.HtmlWindow.Open(System.String,System.String,System.String,System.Boolean)" /> メソッドまたは <see cref="M:System.Windows.Forms.HtmlWindow.OpenNew(System.String,System.String)" /> メソッドの呼び出しによって作成された <see cref="T:System.Windows.Forms.HtmlWindow" />。 ウィンドウがこれらのメソッドのいずれかを使用して作成されていない場合、このプロパティは <see langword="null" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenNew">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow OpenNew (string urlString, string windowOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlWindow OpenNew(string urlString, string windowOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.OpenNew(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="urlString" Type="System.String" />
+        <Parameter Name="windowOptions" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="urlString">読み込むファイルの場所を記述する URL。</param>
+        <param name="windowOptions">0 個以上の形式で、次のオプションで構成されるコンマ区切りの文字列<c>名前 = 値</c>です。 有効なオプションの詳細については、<see cref="M:System.Windows.Forms.HtmlWindow.Open(System.String,System.String,System.String,System.Boolean)" /> を参照してください。</param>
+        <summary>新しいウィンドウにファイルを表示します。</summary>
+        <returns>新しいウィンドウを表す <see cref="T:System.Windows.Forms.HtmlWindow" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、ファイルが参照されている場合`url`HTML ファイル、テキスト ファイル、または Internet Explorer の内部でホストできるその他のファイルの種類は、新しいウィンドウに表示されます。 かどうかには、Internet Explorer 内でファイルを表示できませんし、ウィンドウが開き、リソースのダウンロードに Internet Explorer の長いのみ直ちに終了後です。  
+  
+ 使用して新しいウィンドウを作成するときに<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>、Internet Explorer の新しいインスタンスを開くには、HTML ドキュメント オブジェクト モデルになります。 呼び出さない場合<xref:System.Windows.Forms.HtmlWindow.Close%2A>ですべてのウィンドウで作成した、Internet Explorer のこのインスタンスが稼動したまま、アプリケーションが終了した後もします。  
+  
+ 以前に開かれたウィンドウにドキュメントを読み込む場合を参照してください、<xref:System.Windows.Forms.HtmlWindow.Open%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenNew">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow OpenNew (Uri url, string windowOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Forms.HtmlWindow OpenNew(class System.Uri url, string windowOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.OpenNew(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="url" Type="System.Uri" />
+        <Parameter Name="windowOptions" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="url">読み込むファイルの場所を記述する URL。</param>
+        <param name="windowOptions">0 個以上の形式で、次のオプションで構成されるコンマ区切りの文字列<c>名前 = 値</c>です。 有効なオプションの詳細については、<see cref="M:System.Windows.Forms.HtmlWindow.Open(System.String,System.String,System.String,System.Boolean)" /> を参照してください。</param>
+        <summary>新しいウィンドウにファイルを表示します。</summary>
+        <returns>新しいウィンドウを表す <see cref="T:System.Windows.Forms.HtmlWindow" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって、ファイルが参照されている場合`url`HTML ファイル、テキスト ファイル、または Internet Explorer の内部でホストできるその他のファイルの種類は、新しいウィンドウに表示されます。 かどうかには、Internet Explorer 内でファイルを表示できませんし、ウィンドウが開き、リソースのダウンロードに Internet Explorer の長いのみ直ちに終了後です。  
+  
+ 使用して新しいウィンドウを作成するときに<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>、Internet Explorer の新しいインスタンスを開くには、HTML ドキュメント オブジェクト モデルになります。 呼び出さない場合<xref:System.Windows.Forms.HtmlWindow.Close%2A>ですべてのウィンドウで作成した、Internet Explorer のこのインスタンスが稼動したまま、アプリケーションが終了した後もします。  
+  
+ 以前に開かれたウィンドウにドキュメントを読み込む場合を参照してください、<xref:System.Windows.Forms.HtmlWindow.Open%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parent">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlWindow Parent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlWindow Parent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Parent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlWindow</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フレームを含むページにおいて、現在のウィンドウの上位にあるウィンドウを取得します。</summary>
+        <value>現在のウィンドウを所有する <see cref="T:System.Windows.Forms.HtmlWindow" />。 現在のウィンドウがない場合、<c>フレーム</c>、内の埋め込まれていないか、<c>フレーム</c>を返します<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フレームを含むドキュメントで各`FRAME`内で、 `FRAMESET`  ページで、1 つの子ウィンドウとして動作します。 それぞれの親`FRAME`は、`FRAMESET`が含まれている、`FRAME`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public System.Drawing.Point Position { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Point Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Point</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>画面におけるウィンドウのクライアント領域の位置を取得します。</summary>
+        <value>画面の左上隅の x 座標と y 座標をピクセル単位で記述する <see cref="T:System.Drawing.Point" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control.Location%2A>のプロパティ、<xref:System.Windows.Forms.WebBrowser>コントロールはフォームの左上隅を基準としたコントロールの位置を返します。 これに対し、<xref:System.Windows.Forms.HtmlWindow.Position%2A>は、ユーザーのモニターの左上隅を基準としたドキュメントの表示領域の場所を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、経由で直接新しいウィンドウを開き、<xref:System.Windows.Forms.WebBrowser>フォーム上のコントロールです。 コード例では、フォームにはインスタンスが含まれている必要があります、<xref:System.Windows.Forms.WebBrowser>という名前のコントロール`WebBrowser1`です。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#5)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prompt">
+      <MemberSignature Language="C#" Value="public string Prompt (string message, string defaultInputValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string Prompt(string message, string defaultInputValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.Prompt(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="defaultInputValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">ユーザーに表示するメッセージ。</param>
+        <param name="defaultInputValue">テキスト ボックスに表示する既定値。</param>
+        <summary>メッセージとテキスト ボックスをユーザーに表示するダイアログ ボックスを表示します。</summary>
+        <returns>ユーザーが入力したテキストを表す <see cref="T:System.String" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.Prompt%2A>ユーザーからの単純なテキストの入力を取得する迅速で簡単な方法を提供します。  
+  
+ <xref:System.Windows.Forms.HtmlWindow.Prompt%2A> Unicode のテキストを指定、入力として、Internet Explorer スクリプト プロンプトは表示されませんラテン文字以外の言語のテキスト適切に Windows 95、Windows 98、Windows ME または Windows NT でオペレーティング システムの制限によりします。 詳細については、次を参照してください。[情報: Internet Explorer のスクリプトが、MBCS または Unicode](http://support.microsoft.com/default.aspx?scid=kb;en-us;211147)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFocus">
+      <MemberSignature Language="C#" Value="public void RemoveFocus ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveFocus() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.RemoveFocus" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のウィンドウからフォーカスを移します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出されると、 `FRAME`  ウィンドウで、 `FRAMESET`、<xref:System.Windows.Forms.HtmlWindow.RemoveFocus%2A>によって、フォーカスが失われ、そのウィンドウが、自動的に設定されませんフォーカスを別のウィンドウ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resize">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Resize;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Resize" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.Resize" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがマウスを使用してウィンドウの寸法を変更すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.Resize>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.Resize>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#455](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#455)]
+ [!code-vb[System.Windows.Forms.EventExamples#455](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#455)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeTo">
+      <MemberSignature Language="C#" Value="public void ResizeTo (System.Drawing.Size size);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResizeTo(valuetype System.Drawing.Size size) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.ResizeTo(System.Drawing.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="size" Type="System.Drawing.Size" />
+      </Parameters>
+      <Docs>
+        <param name="size">ウィンドウの幅と高さをピクセル単位で記述する <see cref="T:System.Drawing.Size" />。 幅も高さも 100 ピクセル以上にする必要があります。</param>
+        <summary>ウィンドウのサイズを指定した寸法に変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、新しいウィンドウを開き、使用可能な画面の領域を覆うようにサイズを変更します。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#15)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#15](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">サイズを変更しようとして、ウィンドウは、親ウィンドウとは異なるドメインには。 この制限は、クロス フレーム スクリプティング セキュリティの一部詳細については、次を参照してください。[に関するクロス フレームのスクリプティングとセキュリティ](http://msdn.microsoft.com/library/ms533028.aspx)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResizeTo">
+      <MemberSignature Language="C#" Value="public void ResizeTo (int width, int height);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ResizeTo(int32 width, int32 height) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.ResizeTo(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="width" Type="System.Int32" />
+        <Parameter Name="height" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="width">目的のウィンドウの幅をピクセル単位で記述します。 100 ピクセル以上にする必要があります。</param>
+        <param name="height">目的のウィンドウの高さをピクセル単位で記述します。 100 ピクセル以上にする必要があります。</param>
+        <summary>ウィンドウのサイズを指定した寸法に変更します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.UnauthorizedAccessException">サイズを変更しようとして、ウィンドウは、親ウィンドウとは異なるドメインには。 この制限は、クロス フレーム スクリプティング セキュリティの一部詳細については、次を参照してください。[に関するクロス フレームのスクリプティングとセキュリティ](http://msdn.microsoft.com/library/ms533028.aspx)です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Scroll">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Scroll;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Scroll" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.Scroll" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがウィンドウをスクロールして、画面に表示されていなかったテキストを表示すると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.Scroll>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.Scroll>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#456](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#456)]
+ [!code-vb[System.Windows.Forms.EventExamples#456](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#456)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollTo">
+      <MemberSignature Language="C#" Value="public void ScrollTo (System.Drawing.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollTo(valuetype System.Drawing.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.ScrollTo(System.Drawing.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Drawing.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">現在のウィンドウの左上隅を基準とした、ページのスクロール先の x 座標と y 座標。</param>
+        <summary>ウィンドウを指定された座標に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.ScrollTo%2A>ドキュメントをスクロールして、ドキュメントで指定された座標がドキュメントのウィンドウの左上隅に配置されるようになります。 ドキュメントがまたはこれを実現する、幅がない場合<xref:System.Windows.Forms.HtmlWindow.ScrollTo%2A>指定した方向で可能な限り、ドキュメントがスクロールされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ユーザーがクリックされた座標位置にドキュメントをスクロールします。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#15](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#15)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#15](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScrollTo">
+      <MemberSignature Language="C#" Value="public void ScrollTo (int x, int y);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScrollTo(int32 x, int32 y) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.HtmlWindow.ScrollTo(System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="x" Type="System.Int32" />
+        <Parameter Name="y" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="x">現在のウィンドウの左上隅を基準とした、ページのスクロール先の x 座標。</param>
+        <param name="y">現在のウィンドウの左上隅を基準とした、ページのスクロール先の y 座標。</param>
+        <summary>指定した位置までウィンドウをスクロールします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.HtmlWindow.ScrollTo%2A>ドキュメントをスクロールして、ドキュメントで指定された座標がドキュメントのウィンドウの左上隅に配置されるようになります。 ドキュメントがまたはこれを実現する、幅がない場合<xref:System.Windows.Forms.HtmlWindow.ScrollTo%2A>指定した方向で可能な限り、ドキュメントがスクロールされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Size">
+      <MemberSignature Language="C#" Value="public System.Drawing.Size Size { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Size Size" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Size" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Size</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のウィンドウのサイズを取得または設定します。</summary>
+        <value>ウィンドウのサイズをピクセル単位で記述する <see cref="T:System.Drawing.Size" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusBarText">
+      <MemberSignature Language="C#" Value="public string StatusBarText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string StatusBarText" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.StatusBarText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウのステータス バーに表示されるテキストを取得または設定します。</summary>
+        <value>現在のステータス テキストを格納する <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.WebBrowser>コントロールがステータス バーを表示しません。 任意の新しいウィンドウを開いた、<xref:System.Windows.Forms.HtmlWindow.Open%2A>または<xref:System.Windows.Forms.HtmlWindow.OpenNew%2A>メソッド、ただしは既定で表示ステータス バーです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.HtmlElementEventHandler Unload;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.HtmlElementEventHandler Unload" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.HtmlWindow.Unload" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElementEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のページがアンロード中で、新しいページが表示される直前に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.HtmlWindow.Unload>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.HtmlWindow>という`HtmlWindow1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.HtmlWindow.Unload>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#457](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#457)]
+ [!code-vb[System.Windows.Forms.EventExamples#457](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#457)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Url">
+      <MemberSignature Language="C#" Value="public Uri Url { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Url" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.Url" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウに表示されている現在の項目に対応する URL を取得します。</summary>
+        <value>URL を記述する <see cref="T:System.Uri" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用です。 新しいドキュメント ウィンドウを移動するを使用して、<xref:System.Windows.Forms.HtmlWindow.Navigate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowFrameElement">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.HtmlElement WindowFrameElement { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.HtmlElement WindowFrameElement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.HtmlWindow.WindowFrameElement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.HtmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このウィンドウに対応するフレーム要素を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.HtmlElement" />にこのウィンドウの対応する<c>フレーム</c>要素。 このウィンドウがフレームではない場合、<see langword="null" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得する場合、`FRAME`から要素を<xref:System.Windows.Forms.HtmlWindow.Frames%2A>、コレクションが返されます、<xref:System.Windows.Forms.HtmlWindow>です。 呼び出す<xref:System.Windows.Forms.HtmlWindow.WindowFrameElement%2A>、基になる属性にアクセスする必要がある場合は、このオブジェクトに`FRAME`要素など、`SRC`属性。  
+  
+   
+  
+## Examples  
+ 次のコード例に比較して、`SRC`内のフレームの属性、`FRAMESET`を現在の場所。 2 つが異なる場合は、フレームが元の Url にリセットされます。  
+  
+ [!code-csharp[System.Windows.Forms.HtmlWindow#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/CS/Form1.cs#8)]
+ [!code-vb[System.Windows.Forms.HtmlWindow#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.HtmlWindow/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.UnauthorizedAccessException">アクセスすることはできません、<c>フレーム</c>要素または<c>フレーム</c>'s ドキュメントの場合、<c>フレーム</c>よりも別のゾーンでは、<c>フレーム セット</c>を格納しています。です。 詳細については、次を参照してください。[に関するクロス フレームのスクリプティングとセキュリティ](http://msdn.microsoft.com/library/ms533028.aspx)です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,30 @@
+<Type Name="OnChangedCallback" FullName="System.Runtime.Caching.OnChangedCallback">
+  <TypeSignature Language="C#" Value="public delegate void OnChangedCallback(object state);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OnChangedCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Caching.OnChangedCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Caching</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="state" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="state">変更された依存オブジェクトの状態。</param>
+    <summary>監視対象のアイテムへの変更を処理するメソッドへの参照を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Caching.OnChangedCallback>デリゲートが使用されて変更モニターによってキャッシュ実装を持つコンテンツがキャッシュされるオブジェクトの変更が発生したことを通知します。 タスクの実装を<xref:System.Runtime.Caching.ChangeMonitor>型がキャッシュされるオブジェクトの変更を検出するモニターにします。 たとえば、ファイルの内容が、キャッシュ エントリに含まれる場合、およびファイルが更新された場合は、その関連するキャッシュ エントリ必要がありますも変更します。 実装では一般的なキャッシュ、派生<xref:System.Runtime.Caching.ChangeMonitor>インスタンスの使用、<xref:System.Runtime.Caching.OnChangedCallback>変更に関する、キャッシュに通知するデリゲート。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

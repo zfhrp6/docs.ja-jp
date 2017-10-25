@@ -1,0 +1,117 @@
+<Type Name="ListItemsCollectionEditor" FullName="System.Web.UI.Design.WebControls.ListItemsCollectionEditor">
+  <TypeSignature Language="C#" Value="public class ListItemsCollectionEditor : System.ComponentModel.Design.CollectionEditor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ListItemsCollectionEditor extends System.ComponentModel.Design.CollectionEditor" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.ListItemsCollectionEditor" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Design.CollectionEditor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネント エディターを提供<see cref="T:System.Web.UI.WebControls.ListItemCollection" />から派生したコントロール内のオブジェクト、<see cref="T:System.Web.UI.WebControls.ListControl" />または同様のコントロールです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>クラスを編集するためのユーザー インターフェイスの提供、<xref:System.Web.UI.WebControls.ListItem>の要素、<xref:System.Web.UI.WebControls.ListItemCollection>から派生したコントロール内のオブジェクト、<xref:System.Web.UI.WebControls.ListControl>または同様のコントロールです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>を省略記号ボタンを選択すると呼び出されます (**.**) のボタンでは、 **Listitem**プロパティに、**プロパティ**ビジュアル デザイナーのグリッドです。  
+  
+ <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.CanSelectMultipleInstances%2A>メソッドは常に返します`false`を示す、エディターで、一度に 1 つだけそのオブジェクトを選択できます。 <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.HelpTopic%2A>プロパティ エディターを表示するヘルプ トピックの名前を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.ComponentModel.EditorAttribute>に関連付けるクラス、<xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>クラスおよび<xref:System.Drawing.Design.UITypeEditor>クラス (コレクション エディターの基本クラス) をカスタム`ListItems`プロパティです。  
+  
+ [!code-csharp[Design.WebControls_CollectionEditorSamples#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Design.WebControls_CollectionEditorSamples/CS/WebControlDesignerCollectionEditors.cs#3)]
+ [!code-vb[Design.WebControls_CollectionEditorSamples#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Design.WebControls_CollectionEditorSamples/VB/webcontroldesignercollectioneditors.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ListItemsCollectionEditor (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type"><see cref="T:System.Type" />のコレクションを編集します。</param>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.ListItemsCollectionEditor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>クラスの省略記号ボタンを選択すると (**.**) のボタンでは、 **Listitem**プロパティに、**プロパティ**から派生したコントロールを設計するときは、ビジュアル デザイナーのグリッド、<xref:System.Web.UI.WebControls.ListControl>クラスまたはその他のコントロールをカプセル化する、<xref:System.Web.UI.WebControls.ListItemCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSelectMultipleInstances">
+      <MemberSignature Language="C#" Value="protected override bool CanSelectMultipleInstances ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool CanSelectMultipleInstances() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.CanSelectMultipleInstances" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうか複数<see cref="T:System.Web.UI.WebControls.ListItem" />要素を一度に 1 つ選択することができます。</summary>
+        <returns>常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.CanSelectMultipleInstances%2A>メソッドは常に返します`false`。 このため、1 つだけ<xref:System.Web.UI.WebControls.ListItem>時にオブジェクトを選択することができます、<xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpTopic">
+      <MemberSignature Language="C#" Value="protected override string HelpTopic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HelpTopic" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.HelpTopic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示するヘルプ トピックを取得、<see cref="T:System.Web.UI.Design.WebControls.ListItemsCollectionEditor" />オブジェクト。</summary>
+        <value>A<see cref="T:System.String" />表示するヘルプ トピックを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.HelpTopic%2A>プロパティを取得するときに表示されるヘルプ トピックの名前、 <xref:System.Web.UI.Design.WebControls.ListItemsCollectionEditor>  ダイアログ ボックス**ヘルプ**ボタンがクリックされたときか、 **F1**キーが押されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="P:System.Web.UI.Design.WebControls.ListItemsCollectionEditor.HelpTopic" />プロパティを別のヘルプ トピックを表示します。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,679 @@
+<Type Name="SslStreamSecurityBindingElement" FullName="System.ServiceModel.Channels.SslStreamSecurityBindingElement">
+  <TypeSignature Language="C#" Value="public class SslStreamSecurityBindingElement : System.ServiceModel.Channels.BindingElement, System.ServiceModel.Channels.ITransportTokenAssertionProvider, System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SslStreamSecurityBindingElement extends System.ServiceModel.Channels.BindingElement implements class System.ServiceModel.Channels.ITransportTokenAssertionProvider, class System.ServiceModel.Description.IPolicyExportExtension" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Channels.StreamUpgradeBindingElement</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="xamarinandroid-7.1">System.ServiceModel.Channels.BindingElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.ITransportTokenAssertionProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IPolicyExportExtension</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>SSL ストリームを使用するチャネル セキュリティをサポートするカスタム バインディング要素を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ TCP などのストリーム指向プロトコルおよび名前付きパイプを使用するトランスポートは、ストリーム ベースのトランスポート アップグレードをサポートします。 特に、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] はセキュリティ アップグレードを提供します。 このトランスポート セキュリティの構成は、このクラスおよび <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> によってカプセル化され、構成してカスタム バインディングに追加できます。 さらに、サードパーティは独自のカスタム `StreamSecurityBindingElement` を作成できます。 これらのバインディング要素は、クライアントとサーバーのストリーム アップグレード プロバイダーを作成するために呼び出される <xref:System.ServiceModel.Channels.StreamUpgradeBindingElement> クラスを拡張します。  
+  
+ カスタム バインドには、特定の順序で配置されたバインド要素のコレクションが含まれます。バインド スタックの一番上を表す要素が最初に追加され、バインド スタックの 1 つ下の要素が 2 番目に追加される、という順序で配置されます。  
+  
+### <a name="to-add-this-class-to-a-binding"></a>このクラスをバインドに追加するには  
+  
+1.  <xref:System.ServiceModel.Channels.BindingElementCollection> を作成します。  
+  
+2.  オプションの <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> や <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> など、バインド スタックでこのバインド要素の上になるカスタム バインド要素を作成します。  
+  
+3.  <xref:System.ServiceModel.Channels.BindingElementCollection> メソッドを使用して、作成した要素を前に述べた順序で <xref:System.ServiceModel.Channels.BindingElementCollection.InsertItem%2A> に追加します。  
+  
+4.  <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> インスタンスを作成して、コレクションに追加します。  
+  
+5.  <xref:System.ServiceModel.Channels.TcpTransportBindingElement> など、追加のカスタム バインド要素があればコレクションに追加します。  
+  
+ WSDL をインポートした後でクライアント エンドポイントで正しい UPN/SPN を手動で指定するか、クライアントの <xref:System.ServiceModel.Security.IdentityVerifier> でカスタムの <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> を指定することが必要となるシナリオは 3 つあります。  
+  
+1.  サービス ID が WSDL で公開されない場合。 <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> と HTTPS が使用されます (たとえば、SecurityMode = <xref:System.ServiceModel.WSHttpBinding> が設定された <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>)。 サービスがコンピューター ID を使用して実行されていない場合は、WSDL をインポートした後でクライアント エンドポイントで正しい UPN/SPN を手動で指定する必要があります。  
+  
+2.  DNSservice ID が WSDL で公開される場合。 <xref:System.ServiceModel.Configuration.AuthenticationMode.SspiNegotiatedOverTransport> と <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> が UPN/SPN の代わりに使用されます (たとえば、SecurityMode = <xref:System.ServiceModel.NetTcpBinding> が設定された <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>)。 サービスがコンピューター ID を使用して実行されていないか、DNS ID がコンピューターの ID ではない場合は、WSDL をインポートした後でクライアント エンドポイントで正しい UPN/SPN を手動で指定する必要があります。  
+  
+3.  DNS ID が WSDL で公開される場合。 <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> がクライアントでオーバーライドされる場合は、クライアントの <xref:System.ServiceModel.Security.IdentityVerifier> でカスタムの <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> を指定する必要があります。  
+  
+ 次のコードは、クライアント エンドポイントで正しい UPN/SPN を手動で指定する方法と、クライアントの <xref:System.ServiceModel.Security.IdentityVerifier> でカスタムの <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement> を指定する方法を示しています。  
+  
+```  
+  
+using System;  
+using System.Collections.Generic;  
+using System.Linq;  
+using System.Net;  
+using System.IdentityModel.Claims;  
+using System.IdentityModel.Policy;  
+using System.Security.Cryptography.X509Certificates;  
+using System.ServiceModel;  
+using System.ServiceModel.Channels;  
+using System.ServiceModel.Description;  
+using System.ServiceModel.Security;  
+using System.Xml;  
+  
+namespace ServiceNamespace  
+{  
+    [ServiceContract]  
+    interface IService  
+    {  
+        [OperationContract]  
+        void DoSomething();  
+    }  
+  
+    class DnsIdentityVerifier : IdentityVerifier  
+    {  
+        DnsEndpointIdentity _expectedIdentity;  
+  
+        public DnsIdentityVerifier(EndpointAddress serviceEndpoint)  
+        {  
+            _expectedIdentity = new DnsEndpointIdentity(serviceEndpoint.Uri.DnsSafeHost);  
+        }  
+  
+        public override bool CheckAccess(EndpointIdentity identity, AuthorizationContext authContext)  
+        {  
+            Claim dnsClaim = authContext.Claims().Single(claim => claim.ClaimType == ClaimTypes.Dns);  
+            return String.Equals(_expectedIdentity.IdentityClaim.Resource, dnsClaim.Resource);  
+        }  
+  
+        public override bool TryGetIdentity(EndpointAddress reference, out EndpointIdentity identity)  
+        {  
+            identity = _expectedIdentity;  
+            return true;  
+        }  
+    }  
+  
+    static class LinqExtensionForClaims  
+    {  
+        public static IEnumerable<Claim> Claims(this AuthorizationContext authContext)  
+        {  
+            if (null != authContext.ClaimSets)  
+            {  
+                foreach (ClaimSet claimSet in authContext.ClaimSets)  
+                {  
+                    if (null != claimSet)  
+                    {  
+                        foreach (Claim claim in claimSet)  
+                        {  
+                            yield return claim;  
+                        }  
+                    }  
+                }  
+            }  
+        }  
+    }  
+  
+    class Service : IService  
+    {  
+        public void DoSomething()  
+        {  
+            Console.WriteLine("Service called.");  
+        }  
+    }  
+  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+            string hostname = Dns.GetHostEntry(String.Empty).HostName;  
+            NetTcpBinding serviceBinding = new NetTcpBinding(SecurityMode.TransportWithMessageCredential);  
+  
+            ServiceHost serviceHost = new ServiceHost(typeof(Service), new Uri(String.Format("net.tcp://{0}:8080/Service", hostname)));  
+            serviceHost.Credentials.ServiceCertificate.SetCertificate(StoreLocation.LocalMachine, StoreName.My, X509FindType.FindByThumbprint, "8a 42 1b eb cf 8a 14 b1 de 83 d9 a5 70 88 0a 62 f9 bf 69 06");  
+            ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IService), serviceBinding, "Endpoint");  
+            serviceHost.Open();  
+  
+            CustomBinding clientBinding = new CustomBinding(serviceBinding.CreateBindingElements());  
+            SslStreamSecurityBindingElement sslStream = clientBinding.Elements.Find<SslStreamSecurityBindingElement>();  
+            sslStream.IdentityVerifier = new DnsIdentityVerifier(serviceEndpoint.Address);  
+  
+            ChannelFactory<IService> channelFactory = new ChannelFactory<IService>(clientBinding, new EndpointAddress(serviceEndpoint.Address.Uri, UpnEndpointIdentity.CreateUpnIdentity("username@domain")));  
+            channelFactory.Credentials.Windows.AllowNtlm = false;  
+            IService channel = channelFactory.CreateChannel();  
+            channel.DoSomething();  
+        }  
+    }  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SslStreamSecurityBindingElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SslStreamSecurityBindingElement (System.ServiceModel.Channels.SslStreamSecurityBindingElement elementToBeCloned);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.SslStreamSecurityBindingElement elementToBeCloned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.#ctor(System.ServiceModel.Channels.SslStreamSecurityBindingElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="elementToBeCloned" Type="System.ServiceModel.Channels.SslStreamSecurityBindingElement" />
+      </Parameters>
+      <Docs>
+        <param name="elementToBeCloned">複製する <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />クラスの別の値を使用して<see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt; BuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelFactory`1&lt;!!TChannel&gt; BuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelFactory&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル ファクトリを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelFactory" />種類のチャネル ファクトリを表すオブジェクト<paramref name="TChannel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、チャネル ファクトリを作成します。これは、このバインディングの送信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt; BuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.IChannelListener`1&lt;!!TChannel&gt; BuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IChannelListener&lt;TChannel&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル リスナーを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.IChannelListener" />種類のチャネル リスナーを表すオブジェクト<paramref name="TChannel" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、チャネル リスナーを作成します。これは、このバインディングの受信メッセージを処理するチャネルの作成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildClientStreamUpgradeProvider">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.StreamUpgradeProvider BuildClientStreamUpgradeProvider (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.StreamUpgradeProvider BuildClientStreamUpgradeProvider(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildClientStreamUpgradeProvider(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">チャネル スタック全体の <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>提供するチャネル コンテキストに基づいて、<see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のクライアント上にインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、クライアント チャネル ファクトリを開くときに呼び出され、<xref:System.ServiceModel.Channels.StreamUpgradeProvider> 抽象クラスのカスタム実装を提供します。  
+  
+ <xref:System.ServiceModel.Channels.BindingContext> パラメーターは、チャネル スタック内の他の要素に対する反応を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildServerStreamUpgradeProvider">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.StreamUpgradeProvider BuildServerStreamUpgradeProvider (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.StreamUpgradeProvider BuildServerStreamUpgradeProvider(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.BuildServerStreamUpgradeProvider(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.StreamUpgradeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">チャネル スタック全体の <see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>提供するチャネル コンテキストに基づいて、<see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のサーバー上にインスタンスを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.StreamUpgradeProvider" /> のインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、サービスを開くときに呼び出され、<xref:System.ServiceModel.Channels.StreamUpgradeProvider> 抽象クラスのカスタム実装を提供します。  
+  
+ <xref:System.ServiceModel.Channels.BindingContext> パラメーターは、チャネル スタック内の他の要素に対する反応を有効にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelFactory&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelFactory&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelFactory&lt;TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelFactory``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル ファクトリの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル ファクトリを作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          指定した型のチャネル ファクトリを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル ファクトリを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanBuildChannelListener&lt;TChannel&gt;">
+      <MemberSignature Language="C#" Value="public override bool CanBuildChannelListener&lt;TChannel&gt; (System.ServiceModel.Channels.BindingContext context) where TChannel : class, System.ServiceModel.Channels.IChannel;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanBuildChannelListener&lt;class (class System.ServiceModel.Channels.IChannel) TChannel&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.CanBuildChannelListener``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TChannel">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+            <InterfaceName>System.ServiceModel.Channels.IChannel</InterfaceName>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TChannel">チャネル リスナーの種類。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary>指定した種類のチャネル リスナーを作成できるかどうかを示す値を取得します。</summary>
+        <returns>
+          指定した型のチャネル リスナーを作成できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル リスナーを作成する前にこのメソッドを呼び出す必要があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="context" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.Channels.BindingElement Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.Channels.BindingElement Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.BindingElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいインスタンスを作成します。</summary>
+        <returns>現在のインスタンスのコピーで <see cref="T:System.ServiceModel.Channels.SslStreamSecurityBindingElement" /> インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public override T GetProperty&lt;T&gt; (System.ServiceModel.Channels.BindingContext context) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance !!T GetProperty&lt;class T&gt;(class System.ServiceModel.Channels.BindingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetProperty``1(System.ServiceModel.Channels.BindingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="context" Type="System.ServiceModel.Channels.BindingContext" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">取得するオブジェクトの型。</typeparam>
+        <param name="context"><see cref="T:System.ServiceModel.Channels.BindingContext" />。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.BindingContext" /> から指定したオブジェクトを取得します。</summary>
+        <returns>型のオブジェクト<paramref name="T" />から、 <see cref="T:System.ServiceModel.Channels.BindingContext" />、または<see langword="null" />オブジェクトが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、基本クラスまたはそのクラスの先祖から、指定したオブジェクトを取得します。 返されるオブジェクトは、通常、プロパティのコレクションです。たとえば、<xref:System.ServiceModel.Channels.ISecurityCapabilities> を実装するオブジェクトなどです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransportTokenAssertion">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetTransportTokenAssertion ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlElement GetTransportTokenAssertion() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.GetTransportTokenAssertion" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ バインドで使用されるトランスポート トークンを表す <see cref="T:System.Xml.XmlElement" /> を取得します。</summary>
+        <returns>セキュリティ バインドで使用されるトランスポート トークンを表す <see cref="T:System.Xml.XmlElement" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、関連付けられているサービス用の WSDL の生成に使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdentityVerifier">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.IdentityVerifier IdentityVerifier { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.IdentityVerifier IdentityVerifier" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SslStreamSecurityBindingElement.IdentityVerifier" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.IdentityVerifier</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このバインドの ID 検証機能を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.IdentityVerifier" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">設定する値が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireClientCertificate">
+      <MemberSignature Language="C#" Value="public bool RequireClientCertificate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequireClientCertificate" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SslStreamSecurityBindingElement.RequireClientCertificate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアント証明書がこのバインディングに必要かどうかを指定する値を取得または設定します。</summary>
+        <value>
+          クライアント証明書がこのバインディングに必要な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeIdentityVerifier">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeIdentityVerifier ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeIdentityVerifier() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.ShouldSerializeIdentityVerifier" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ID 検証機能をシリアル化する必要があるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />id 検証機能をシリアル化する必要があります。 場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SslProtocols">
+      <MemberSignature Language="C#" Value="public System.Security.Authentication.SslProtocols SslProtocols { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Authentication.SslProtocols SslProtocols" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Authentication.SslProtocols</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>TcpClientCredentialType.Certificate のクライアント資格情報の種類を使用するときの、ネゴシエートする SSL/TLS プロトコルの一覧を指定します。 値には、次の列挙体メンバーの 1 つ以上の組み合わせを指定できます: Ssl3、Tls、Tls11、Tls12。</summary>
+        <value><see cref="T:System.Security.Authentication.SslProtocols" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は Ssl3 & #124 です。Tls & #124 です。Tls11 & #124 です。Tls12 です。 Framework 4.6 より前のバージョンは、Ssl3、Tls をサポートするだけです。 含まれていない場合、framework の旧バージョンとの通信はことはできません。 Tls11、Tls12 を指定するが含まれている場合でも Ssl3 の使用法が無効になります。  
+  
+   
+  
+## Examples  
+  
+```  
+NetTcpBinding netTcpBinding = new NetTcpBinding(SecurityMode.Transport);  
+netTcpBinding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;  
+CustomBinding b = new CustomBinding(netTcpBinding);  
+SslStreamSecurityBindingElement sslStream = b.Elements.Find<SslStreamSecurityBindingElement>();  
+sslStream.SslProtocols = SslProtocols.Tls11 | SslProtocols.Tls12;  
+EndpointAddress a = new EndpointAddress("net.tcp://contoso.com/TcpAddress");  
+ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(b, a);  
+cf.Credentials.ClientCertificate.SetCertificate(  
+    StoreLocation.LocalMachine,  
+    StoreName.My,  
+    X509FindType.FindByThumbprint,  
+    "0000000000000000000000000000000000000000");  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy">
+      <MemberSignature Language="C#" Value="void IPolicyExportExtension.ExportPolicy (System.ServiceModel.Description.MetadataExporter exporter, System.ServiceModel.Description.PolicyConversionContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IPolicyExportExtension.ExportPolicy(class System.ServiceModel.Description.MetadataExporter exporter, class System.ServiceModel.Description.PolicyConversionContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.SslStreamSecurityBindingElement.System#ServiceModel#Description#IPolicyExportExtension#ExportPolicy(System.ServiceModel.Description.MetadataExporter,System.ServiceModel.Description.PolicyConversionContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="exporter" Type="System.ServiceModel.Description.MetadataExporter" />
+        <Parameter Name="context" Type="System.ServiceModel.Description.PolicyConversionContext" />
+      </Parameters>
+      <Docs>
+        <param name="exporter">エクスポート プロセスを変更するために使用できる <see cref="T:System.ServiceModel.Description.MetadataExporter" />。</param>
+        <param name="context">カスタム ポリシー アサーションの挿入に使用できる <see cref="T:System.ServiceModel.Description.PolicyConversionContext" />。</param>
+        <summary>バインディングに関するカスタム ポリシー アサーションをエクスポートします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、バインディングに関連するステートメントを、特定のコントラクトによって公開される WSDL 情報に書き込みます。また、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] によって、バインディング スタック内にこのカスタム バインディング要素があることをクライアントに伝えるために使用されます。  
+  
+ このメソッドには、<xref:System.ServiceModel.Description.MetadataExporter> オブジェクトおよび <xref:System.ServiceModel.Description.PolicyConversionContext> オブジェクトの 2 つのパラメーターがあります。 <xref:System.ServiceModel.Description.PolicyConversionContext.GetBindingAssertions%2A>、<xref:System.ServiceModel.Description.PolicyConversionContext.GetMessageBindingAssertions%2A>、および <xref:System.ServiceModel.Description.PolicyConversionContext.GetOperationBindingAssertions%2A> の各メソッドを使用して、既にさまざまなスコープでエクスポートされているポリシー アサーションのコレクションを取得します。 次に、このメソッドを使用して、独自のポリシー アサーションを適切なコレクションに追加します。  
+  
+ <xref:System.ServiceModel.Description.PolicyConversionContext.Contract%2A> プロパティは、エクスポートされるエンドポイントの <xref:System.ServiceModel.Description.ContractDescription> を公開します。 これにより、このメソッドは、エクスポートされたポリシー アサーションを正しく特定できます。 たとえば、コード内のセキュリティ属性は、セキュリティ ポリシー アサーションを追加する必要がある場所を示す<xref:System.ServiceModel.Description.ContractDescription> に動作を追加できます。  
+  
+ カスタム ポリシー アサーションが WSDL 情報に結び付けられると、クライアントは、<xref:System.ServiceModel.Description.IPolicyImportExtension> インターフェイスを実装することによって、カスタム バインディング アサーションを検出し、インポートできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

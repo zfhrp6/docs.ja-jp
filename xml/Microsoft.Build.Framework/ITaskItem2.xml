@@ -1,0 +1,124 @@
+<Type Name="ITaskItem2" FullName="Microsoft.Build.Framework.ITaskItem2">
+  <TypeSignature Language="C#" Value="public interface ITaskItem2 : Microsoft.Build.Framework.ITaskItem" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITaskItem2 implements class Microsoft.Build.Framework.ITaskItem" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.ITaskItem2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.ITaskItem</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("ac6d5a59-f877-461b-88e3-b2f06fce0cb9")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>このインターフェイスは、ITaskItem インターフェイスにエスケープ処理のサポートを追加します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CloneCustomMetadataEscaped">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary CloneCustomMetadataEscaped ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionary CloneCustomMetadataEscaped() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ITaskItem2.CloneCustomMetadataEscaped" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのメタデータの複製を返す ITaskItem2 の実装。  返される値は、その値の元のエスケープされた形式になります。</summary>
+        <returns>複製されたメタデータを返します。値のエスケープは保持されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluatedIncludeEscaped">
+      <MemberSignature Language="C#" Value="public string EvaluatedIncludeEscaped { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EvaluatedIncludeEscaped" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.ITaskItem2.EvaluatedIncludeEscaped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目のインクルードを取得または値の例: ディスク上の項目はこのなりますファイルのパス。</summary>
+        <value>項目のインクルード値を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetMetadataValueEscaped">
+      <MemberSignature Language="C#" Value="public string GetMetadataValueEscaped (string metadataName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetMetadataValueEscaped(string metadataName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ITaskItem2.GetMetadataValueEscaped(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="metadataName">照会するメタデータ。</param>
+        <summary>項目のメタデータの値を照会できるようにします。</summary>
+        <returns>エスケープされたメタデータの値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GetMetadata 改善版ですが、これが明確に示すために、プロパティの名前を修正する機会を活用しています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetMetadataValueLiteral">
+      <MemberSignature Language="C#" Value="public void SetMetadataValueLiteral (string metadataName, string metadataValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetMetadataValueLiteral(string metadataName, string metadataValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.ITaskItem2.SetMetadataValueLiteral(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="metadataName" Type="System.String" />
+        <Parameter Name="metadataValue" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="metadataName">メタデータ名。</param>
+        <param name="metadataValue">メタデータ値。</param>
+        <summary>項目にカスタム メタデータを設定できるようにします。 渡された値はエスケープされていないものとして扱われ、その値を維持するために必要に応じて値がエスケープされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これが明確に示すために、プロパティの名前を修正する機会を活用して SetMetadata 改善版です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

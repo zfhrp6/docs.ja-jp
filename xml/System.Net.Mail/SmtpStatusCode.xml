@@ -1,0 +1,669 @@
+<Type Name="SmtpStatusCode" FullName="System.Net.Mail.SmtpStatusCode">
+  <TypeSignature Language="C#" Value="public enum SmtpStatusCode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SmtpStatusCode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.SmtpStatusCode" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Mail</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>電子メールの送信結果を、<see cref="T:System.Net.Mail.SmtpClient" /> クラスを使用して指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値、<xref:System.Net.Mail.SmtpStatusCode>列挙体は、簡易メール転送プロトコル (SMTP) サーバーから送信された応答状態の値を指定します。 <xref:System.Net.Mail.SmtpException>と<xref:System.Net.Mail.SmtpFailedRecipientsException>クラスを含む<xref:System.Net.Mail.SmtpException.StatusCode%2A>を返すプロパティ<xref:System.Net.Mail.SmtpStatusCode>値。  
+  
+ SMTP が RFC 2821 いただけますで定義されている[http://www.ietf.org](http://www.ietf.org/)です。  
+  
+   
+  
+## Examples  
+ 次のコード例をコンソールにエラー メッセージを表示するときに、<xref:System.Net.Mail.SmtpException>がスローされます。  
+  
+ [!code-cpp[NclMailSync#23](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLMailSync/CPP/NclMailSync.cpp#23)]
+ [!code-csharp[NclMailSync#23](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLMailSync/CS/mail.cs#23)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BadCommandSequence">
+      <MemberSignature Language="C#" Value="BadCommandSequence" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode BadCommandSequence = int32(503)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.BadCommandSequence" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドが不正な順序で送信されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CannotVerifyUserWillAttemptDelivery">
+      <MemberSignature Language="C#" Value="CannotVerifyUserWillAttemptDelivery" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode CannotVerifyUserWillAttemptDelivery = int32(252)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.CannotVerifyUserWillAttemptDelivery" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したユーザーはローカルではありませんが、受信側の SMTP サービスはそのメッセージを受け入れ、配信を試みました。 この状態コードが記載されている RFC 1123 に定義されている[http://www.ietf.org](http://www.ietf.org/)です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientNotPermitted">
+      <MemberSignature Language="C#" Value="ClientNotPermitted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode ClientNotPermitted = int32(454)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.ClientNotPermitted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが認証されなかったか、指定した SMTP ホストを使用したメールの送信が許可されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandNotImplemented">
+      <MemberSignature Language="C#" Value="CommandNotImplemented" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode CommandNotImplemented = int32(502)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.CommandNotImplemented" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスは指定したコマンドを実装していません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandParameterNotImplemented">
+      <MemberSignature Language="C#" Value="CommandParameterNotImplemented" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode CommandParameterNotImplemented = int32(504)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.CommandParameterNotImplemented" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスは指定したコマンド パラメーターを実装していません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandUnrecognized">
+      <MemberSignature Language="C#" Value="CommandUnrecognized" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode CommandUnrecognized = int32(500)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.CommandUnrecognized" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスは指定したコマンドを認識していません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ExceededStorageAllocation">
+      <MemberSignature Language="C#" Value="ExceededStorageAllocation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode ExceededStorageAllocation = int32(552)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.ExceededStorageAllocation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが大きすぎて、送信先のメールボックスに格納できません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneralFailure">
+      <MemberSignature Language="C#" Value="GeneralFailure" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode GeneralFailure = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.GeneralFailure" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションを発行できませんでした。 指定した SMTP ホストが見つからない場合にこのエラーが発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpMessage">
+      <MemberSignature Language="C#" Value="HelpMessage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode HelpMessage = int32(214)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.HelpMessage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスによってヘルプ メッセージが返されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="InsufficientStorage">
+      <MemberSignature Language="C#" Value="InsufficientStorage" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode InsufficientStorage = int32(452)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.InsufficientStorage" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスには、要求を完了するために必要な容量のストレージがありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalErrorInProcessing">
+      <MemberSignature Language="C#" Value="LocalErrorInProcessing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode LocalErrorInProcessing = int32(451)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.LocalErrorInProcessing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスは要求を完了できません。 このエラーは、クライアントの IP アドレスを解決できない場合に発生することができます (つまり、逆引き参照が失敗しました)。 クライアントのドメインが、第三者中継や迷惑メール (SPAM) の送信元として識別されている場合にも、このエラーが発生します。 詳細については、記載されている RFC 2505 を参照してください。 [http://www.ietf.org](http://www.ietf.org/)です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MailboxBusy">
+      <MemberSignature Language="C#" Value="MailboxBusy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode MailboxBusy = int32(450)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.MailboxBusy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のメールボックスが使用中です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MailboxNameNotAllowed">
+      <MemberSignature Language="C#" Value="MailboxNameNotAllowed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode MailboxNameNotAllowed = int32(553)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.MailboxNameNotAllowed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のメールボックスの指定に使用した構文が正しくありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MailboxUnavailable">
+      <MemberSignature Language="C#" Value="MailboxUnavailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode MailboxUnavailable = int32(550)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.MailboxUnavailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>送信先のメールボックスが見つからなかったかアクセスできませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MustIssueStartTlsFirst">
+      <MemberSignature Language="C#" Value="MustIssueStartTlsFirst" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode MustIssueStartTlsFirst = int32(530)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.MustIssueStartTlsFirst" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サーバーが TLS 接続のみを受け入れるように構成されており、SMTP クライアントが非 TLS 接続を使用して接続しようとしています。 これを解決するには、そのユーザーについては、SMTP クライアントで EnableSsl=true を設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ok">
+      <MemberSignature Language="C#" Value="Ok" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode Ok = int32(250)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.Ok" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>電子メールは SMTP サービスに正常に送信されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceClosingTransmissionChannel">
+      <MemberSignature Language="C#" Value="ServiceClosingTransmissionChannel" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode ServiceClosingTransmissionChannel = int32(221)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.ServiceClosingTransmissionChannel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスの伝送チャネルが閉じられています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceNotAvailable">
+      <MemberSignature Language="C#" Value="ServiceNotAvailable" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode ServiceNotAvailable = int32(421)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.ServiceNotAvailable" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスが利用できません。サーバーの伝送チャネルが閉じられています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceReady">
+      <MemberSignature Language="C#" Value="ServiceReady" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode ServiceReady = int32(220)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.ServiceReady" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスの準備が整っています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StartMailInput">
+      <MemberSignature Language="C#" Value="StartMailInput" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode StartMailInput = int32(354)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.StartMailInput" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SMTP サービスは、電子メールの内容を受信できる状態です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SyntaxError">
+      <MemberSignature Language="C#" Value="SyntaxError" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode SyntaxError = int32(501)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.SyntaxError" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コマンドまたはパラメーターの指定に使用した構文が正しくありません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SystemStatus">
+      <MemberSignature Language="C#" Value="SystemStatus" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode SystemStatus = int32(211)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.SystemStatus" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムの状態またはシステム ヘルプの返答です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionFailed">
+      <MemberSignature Language="C#" Value="TransactionFailed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode TransactionFailed = int32(554)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.TransactionFailed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションに失敗しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserNotLocalTryAlternatePath">
+      <MemberSignature Language="C#" Value="UserNotLocalTryAlternatePath" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode UserNotLocalTryAlternatePath = int32(551)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.UserNotLocalTryAlternatePath" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー メールボックスが受信側のサーバー上に配置されていません。 提供されたアドレス情報を使用して再送信する必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UserNotLocalWillForward">
+      <MemberSignature Language="C#" Value="UserNotLocalWillForward" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Mail.SmtpStatusCode UserNotLocalWillForward = int32(251)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Mail.SmtpStatusCode.UserNotLocalWillForward" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Mail</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpStatusCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー メールボックスが受信側のサーバー上に配置されていません。サーバーは電子メールを転送します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

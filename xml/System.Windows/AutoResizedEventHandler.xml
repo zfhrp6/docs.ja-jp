@@ -1,0 +1,32 @@
+<Type Name="AutoResizedEventHandler" FullName="System.Windows.AutoResizedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void AutoResizedEventHandler(object sender, AutoResizedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AutoResizedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.AutoResizedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.AutoResizedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary><see cref="T:System.Windows.Interop.HwndSource" /> により発生する <see cref="E:System.Windows.Interop.HwndSource.AutoResized" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Interop.HwndSource.AutoResized>イベントが発生したときに、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]レイアウト システムにより、<xref:System.Windows.Interop.HwndSource>自動的にサイズ変更します。 一般的なハンドラーの実装がサイズ変更に含まれる HWND 通信、<xref:System.Windows.Interop.HwndSource>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

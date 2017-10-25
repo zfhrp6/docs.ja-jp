@@ -1,0 +1,191 @@
+<Type Name="AxImporter" FullName="System.Windows.Forms.Design.AxImporter">
+  <TypeSignature Language="C#" Value="public class AxImporter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit AxImporter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Design.AxImporter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ActiveX コントロールをインポートし、デザイナーでアクセスできるラッパーを生成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ActiveX コントロールの ActiveX ラッパーを生成するには、最初に作成するかのインスタンスを取得、<xref:System.Windows.Forms.Design.AxImporter>クラスです。 <xref:System.Windows.Forms.Design.AxImporter>コンス トラクターを受け入れる、<xref:System.Windows.Forms.Design.AxImporter.Options>オブジェクトを生成するラッパー .dll およびするラッパーを生成する出力ディレクトリのファイル名など、インポーターのオプションを設定します。 ActiveX ラッパーを生成するには、適切なを生成するメソッドを呼び出します。 ファイルから生成するには、呼び出す<xref:System.Windows.Forms.Design.AxImporter.GenerateFromFile%2A>です。 タイプ ライブラリから生成するには、呼び出す<xref:System.Windows.Forms.Design.AxImporter.GenerateFromTypeLibrary%2A>です。 返される文字列はアセンブリ修飾名で構成されます (例:"Namespace.Type,Assembly") の ActiveX ラッパーが生成された型。 指定された .dll ファイルに、ActiveX コントロール用のラッパーが生成されます、<xref:System.Windows.Forms.Design.AxImporter.Options.outputName>のプロパティ、<xref:System.Windows.Forms.Design.AxImporter.Options>に渡される、<xref:System.Windows.Forms.Design.AxImporter>コンス トラクターです。 型を読み込むまたはを使用してクエリ<xref:System.Reflection>通常のマネージ型として扱われます。 呼び出すことも、`GetOcx`オブジェクトをサポートしている場合、オブジェクトへの COM インターフェイスを取得する型のメソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AxImporter (System.Windows.Forms.Design.AxImporter.Options options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.Design.AxImporter/Options options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AxImporter.#ctor(System.Windows.Forms.Design.AxImporter.Options)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="options" Type="System.Windows.Forms.Design.AxImporter+Options" />
+      </Parameters>
+      <Docs>
+        <param name="options"><see cref="T:System.Windows.Forms.Design.AxImporter.Options" /> ActiveX コントロール インポーターを使用するためのオプションを示すです。</param>
+        <summary><see cref="T:System.Windows.Forms.Design.AxImporter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedAssemblies">
+      <MemberSignature Language="C#" Value="public string[] GeneratedAssemblies { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] GeneratedAssemblies" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.AxImporter.GeneratedAssemblies" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに対して生成されるアセンブリの名前を取得します。</summary>
+        <value>生成されたアセンブリ、またはアセンブリが生成されていない場合、空の文字列配列の名前の配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedSources">
+      <MemberSignature Language="C#" Value="public string[] GeneratedSources { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] GeneratedSources" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.AxImporter.GeneratedSources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたソース ファイルの名前を取得します。</summary>
+        <value>生成されたソース ファイルのファイル名の配列または<see langword="null" />が存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GeneratedTypeLibAttributes">
+      <MemberSignature Language="C#" Value="public System.Runtime.InteropServices.TYPELIBATTR[] GeneratedTypeLibAttributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.InteropServices.TYPELIBATTR[] GeneratedTypeLibAttributes" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Design.AxImporter.GeneratedTypeLibAttributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.TYPELIBATTR[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>生成されたタイプ ライブラリの属性を取得します。</summary>
+        <value>型の配列<see cref="T:System.Runtime.InteropServices.TYPELIBATTR" />生成されたタイプ ライブラリの属性を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateFromFile">
+      <MemberSignature Language="C#" Value="public string GenerateFromFile (System.IO.FileInfo file);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateFromFile(class System.IO.FileInfo file) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AxImporter.GenerateFromFile(System.IO.FileInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="file" Type="System.IO.FileInfo" />
+      </Parameters>
+      <Docs>
+        <param name="file">A<see cref="T:System.IO.FileInfo" />コントロールを含むファイルを示すです。</param>
+        <summary>デザイン時環境で使用する ActiveX コントロール用のラッパーを生成します。</summary>
+        <returns>ラッパーが生成された ActiveX コントロールの種類のアセンブリ修飾名。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">タイプ ライブラリを読み込むことができませんでした<paramref name="file" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateFromTypeLibrary">
+      <MemberSignature Language="C#" Value="public string GenerateFromTypeLibrary (System.Runtime.InteropServices.UCOMITypeLib typeLib);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateFromTypeLibrary(class System.Runtime.InteropServices.UCOMITypeLib typeLib) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AxImporter.GenerateFromTypeLibrary(System.Runtime.InteropServices.UCOMITypeLib)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeLib" Type="System.Runtime.InteropServices.UCOMITypeLib" />
+      </Parameters>
+      <Docs>
+        <param name="typeLib">A<see cref="T:System.Runtime.InteropServices.UCOMITypeLib" />からコントロールを生成するタイプ ライブラリを示すです。</param>
+        <summary>デザイン時環境で使用する ActiveX コントロール用のラッパーを生成します。</summary>
+        <returns>ラッパーが生成された ActiveX コントロールの種類のアセンブリ修飾名。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">登録された ActiveX コントロールが見つかりません<paramref name="typeLib" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GenerateFromTypeLibrary">
+      <MemberSignature Language="C#" Value="public string GenerateFromTypeLibrary (System.Runtime.InteropServices.UCOMITypeLib typeLib, Guid clsid);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GenerateFromTypeLibrary(class System.Runtime.InteropServices.UCOMITypeLib typeLib, valuetype System.Guid clsid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AxImporter.GenerateFromTypeLibrary(System.Runtime.InteropServices.UCOMITypeLib,System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeLib" Type="System.Runtime.InteropServices.UCOMITypeLib" />
+        <Parameter Name="clsid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="typeLib">A<see cref="T:System.Runtime.InteropServices.UCOMITypeLib" />からコントロールを生成するタイプ ライブラリを示すです。</param>
+        <param name="clsid"><see cref="T:System.Guid" />コントロール ラッパーです。</param>
+        <summary>デザイン時環境で使用する ActiveX コントロール用のラッパーを生成します。</summary>
+        <returns>ラッパーが生成された ActiveX コントロールの種類のアセンブリ修飾名。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Exception">登録された ActiveX コントロールが見つかりません<paramref name="typeLib" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileOfTypeLib">
+      <MemberSignature Language="C#" Value="public static string GetFileOfTypeLib (ref System.Runtime.InteropServices.TYPELIBATTR tlibattr);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetFileOfTypeLib(valuetype System.Runtime.InteropServices.TYPELIBATTR&amp; tlibattr) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Design.AxImporter.GetFileOfTypeLib(System.Runtime.InteropServices.TYPELIBATTR@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="tlibattr" Type="System.Runtime.InteropServices.TYPELIBATTR&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="tlibattr">A<see cref="T:System.Runtime.InteropServices.TYPELIBATTR" />を示す、タイプ ライブラリのファイル名を取得します。</param>
+        <summary>指定したタイプ ライブラリへのパスとファイル名を取得します。</summary>
+        <returns>指定したタイプ ライブラリへのパスとファイル名または<see langword="null" />場合は、ライブラリが見つかりませんでした。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

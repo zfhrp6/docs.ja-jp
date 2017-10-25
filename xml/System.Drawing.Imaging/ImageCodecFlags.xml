@@ -1,0 +1,174 @@
+<Type Name="ImageCodecFlags" FullName="System.Drawing.Imaging.ImageCodecFlags">
+  <TypeSignature Language="C#" Value="public enum ImageCodecFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ImageCodecFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.ImageCodecFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>イメージ エンコーダー/デコーダー (コーデック) の属性を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Imaging.ImageCodecFlags>クラスを使って、<xref:System.Drawing.Imaging.ImageCodecInfo.Flags%2A>のプロパティ、<xref:System.Drawing.Imaging.ImageCodecInfo>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BlockingDecode">
+      <MemberSignature Language="C#" Value="BlockingDecode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags BlockingDecode = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.BlockingDecode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デコーダーは、デコード処理中にブロッキング動作します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Builtin">
+      <MemberSignature Language="C#" Value="Builtin" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags Builtin = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.Builtin" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックは、GDI + に組み込まれています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Decoder">
+      <MemberSignature Language="C#" Value="Decoder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags Decoder = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.Decoder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックには、デコード (読み取り) がサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Encoder">
+      <MemberSignature Language="C#" Value="Encoder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags Encoder = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.Encoder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックは、エンコーディング (保存) をサポートします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekableEncode">
+      <MemberSignature Language="C#" Value="SeekableEncode" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags SeekableEncode = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.SeekableEncode" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンコーダーには、シーク可能な出力ストリームが必要です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportBitmap">
+      <MemberSignature Language="C#" Value="SupportBitmap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags SupportBitmap = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.SupportBitmap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックには、ラスター イメージ (ビットマップ) がサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportVector">
+      <MemberSignature Language="C#" Value="SupportVector" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags SupportVector = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.SupportVector" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コーデックには、ベクター イメージ (メタファイル) がサポートしています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags System = int32(131072)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="User">
+      <MemberSignature Language="C#" Value="User" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Imaging.ImageCodecFlags User = int32(262144)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Imaging.ImageCodecFlags.User" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

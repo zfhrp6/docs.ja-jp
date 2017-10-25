@@ -1,0 +1,344 @@
+<Type Name="XamlObjectReader" FullName="System.Xaml.XamlObjectReader">
+  <TypeSignature Language="C#" Value="public class XamlObjectReader : System.Xaml.XamlReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlObjectReader extends System.Xaml.XamlReader" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.XamlObjectReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Xaml.XamlReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Xaml.XamlReader" />読み取りますオブジェクトは、グラフ化し、XAML ノード ストリームを生成する実装。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Xaml.XamlObjectReader>シナリオでは、オブジェクト グラフを処理する、これは通常、アプリケーション、XAML ソースから生成される最初のオブジェクト グラフ。 使用する場合があります、 <xref:System.Xaml.XamlObjectReader> XAML の始点から XAML の終点をラウンド トリップが行われます。 実行する可能性があります、 <xref:System.Xaml.XamlObjectReader> ; オブジェクト グラフの上に Api を使用して、必要な場合に、中間の XAML ノード ストリームを処理<xref:System.Xaml.XamlType>と<xref:System.Xaml.XamlMember>; しを使用して<xref:System.Xaml.XamlXmlWriter>を XAML ノードを XML にシリアル化します。  
+  
+ 高度なシナリオを提供すること、 <xref:System.Xaml.XamlXmlWriter> override キーワードと、特定の XAML スキーマ コンテキストを<xref:System.Xaml.XamlObjectReader>を使用し、ライターの上書きに渡します。  
+  
+ 使用するための一般的なシナリオ<xref:System.Xaml.XamlObjectReader>メンバーを呼び出す<xref:System.Xaml.XamlObjectReader>implements 以外の場合は、呼び出すことも<xref:System.Xaml.XamlReader.Close%2A>、 <xref:System.Xaml.XamlReader.ReadSubtree%2A>、および<xref:System.Xaml.XamlReader.Skip%2A>から、<xref:System.Xaml.XamlReader>基本クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectReader (object instance);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object instance) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReader.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="instance">オブジェクト ツリーのルート オブジェクト グラフを読み取る/です。</param>
+        <summary><see cref="T:System.Xaml.XamlObjectReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによる初期化を行う場合、<xref:System.Xaml.XamlObjectReader>オブジェクトには、既定値の初期設定<xref:System.Xaml.XamlObjectReaderSettings>オブジェクトと既定の初期コンテキスト<xref:System.Xaml.XamlSchemaContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectReader (object instance, System.Xaml.XamlObjectReaderSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object instance, class System.Xaml.XamlObjectReaderSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReader.#ctor(System.Object,System.Xaml.XamlObjectReaderSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="settings" Type="System.Xaml.XamlObjectReaderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="instance">読み取るオブジェクト ツリーのルートです。</param>
+        <param name="settings">設定オブジェクトです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectReader" />指定リーダーの設定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定オブジェクトは、行番号処理やエラー処理動作などのリーダー操作の規則を指定します。 詳細については、「<xref:System.Xaml.XamlObjectReaderSettings>」を参照してください。  
+  
+ このコンス トラクターによる初期化を行う場合、<xref:System.Xaml.XamlObjectReader>オブジェクトには、既定値の初期コンテキスト<xref:System.Xaml.XamlSchemaContext>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectReader (object instance, System.Xaml.XamlSchemaContext schemaContext);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object instance, class System.Xaml.XamlSchemaContext schemaContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReader.#ctor(System.Object,System.Xaml.XamlSchemaContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+      </Parameters>
+      <Docs>
+        <param name="instance">読み取るオブジェクト ツリーのルートです。</param>
+        <param name="schemaContext">使用するリーダーのスキーマ コンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectReader" />指定したスキーマ コンテキストを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによる初期化を行う場合、<xref:System.Xaml.XamlObjectReader>オブジェクトには、既定値の初期設定<xref:System.Xaml.XamlObjectReaderSettings>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlObjectReader (object instance, System.Xaml.XamlSchemaContext schemaContext, System.Xaml.XamlObjectReaderSettings settings);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object instance, class System.Xaml.XamlSchemaContext schemaContext, class System.Xaml.XamlObjectReaderSettings settings) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReader.#ctor(System.Object,System.Xaml.XamlSchemaContext,System.Xaml.XamlObjectReaderSettings)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instance" Type="System.Object" />
+        <Parameter Name="schemaContext" Type="System.Xaml.XamlSchemaContext" />
+        <Parameter Name="settings" Type="System.Xaml.XamlObjectReaderSettings" />
+      </Parameters>
+      <Docs>
+        <param name="instance">読み取るオブジェクト ツリーのルートです。</param>
+        <param name="schemaContext">使用するリーダーのスキーマ コンテキスト。</param>
+        <param name="settings">設定オブジェクトです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.XamlObjectReader" />指定したスキーマ コンテキストとリーダーの設定を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定オブジェクトは、行番号処理やエラー処理動作などのリーダー操作の規則を指定します。 詳細については、「<xref:System.Xaml.XamlObjectReaderSettings>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="schemaContext" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="public virtual object Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のリーダーの位置で利用可能なオブジェクト インスタンスを取得します。</summary>
+        <value>現在のリーダーの位置にあるオブジェクトのインスタンスまたは<see langword="null" />リーダーの位置がオブジェクトにない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEof">
+      <MemberSignature Language="C#" Value="public override bool IsEof { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEof" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.IsEof" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リーダーの位置が、ファイルの末尾にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />リーダーの位置が、ファイルの末尾にある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Member">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlMember Member { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlMember Member" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.Member" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlMember</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の取得<see cref="T:System.Xaml.XamlMember" />リーダーの位置にある場合、リーダーの位置にある、<see cref="F:System.Xaml.XamlNodeType.StartMember" />です。</summary>
+        <value>現在のメンバー。または<see langword="null" />リーダーの位置がメンバーでない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public override System.Xaml.NamespaceDeclaration Namespace { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.NamespaceDeclaration Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.NamespaceDeclaration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のリーダーの位置からの XAML 名前空間の宣言を取得します。</summary>
+        <value>XAML 名前空間の宣言で、リーダーが配置されている場合、 <see cref="F:System.Xaml.XamlNodeType.NamespaceDeclaration" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが null 以外の結果の場合にのみを返します、<xref:System.Xaml.XamlObjectReader.NodeType%2A>リーダーの現在位置のプロパティは<xref:System.Xaml.XamlNodeType.NamespaceDeclaration>します。 その名前空間内のオブジェクトなどの他の種類のノードのコンテキストに基づいている名前空間の推論はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeType">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlNodeType NodeType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Xaml.XamlNodeType NodeType" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.NodeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlNodeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のノードの種類を取得します。</summary>
+        <value>現在のノードの型。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、 <xref:System.Xaml.XamlObjectReader> Api では、通常をチェックする、<xref:System.Xaml.XamlObjectReader.NodeType%2A>プロパティなど、リーダーの位置を進めます可能性のあるすべての操作の完了後、 <xref:System.Xaml.XamlObjectReader.Read%2A>、 <xref:System.Xaml.XamlReader.ReadSubtree%2A>、または<xref:System.Xaml.XamlReader.Skip%2A>メソッドです。 <xref:System.Xaml.XamlObjectReader.NodeType%2A>現在のリーダーの位置と次に呼び出すメソッドから入手できる情報を示します。 たとえば、アクセスする場合、 <xref:System.Xaml.XamlObjectReader.Member%2A>、 <xref:System.Xaml.XamlObjectReader.Type%2A>、 <xref:System.Xaml.XamlObjectReader.Value%2A>、または<xref:System.Xaml.XamlObjectReader.Instance%2A>プロパティ; するかを呼び出すことがあります、<xref:System.Xaml.XamlReader.Skip%2A>メソッドが不要な現在のノードの種類の内容の場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override bool Read ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Read() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.XamlObjectReader.Read" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ノードがある場合は、グラフから、ソース オブジェクトは、次の XAML ノードを提供します。</summary>
+        <returns>
+          <see langword="true" />ノードがある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出した後、<xref:System.Xaml.XamlObjectReader.Read%2A>メソッドを取得し、`true`結果、通常、ノードのプロパティにアクセスします。 によって、<xref:System.Xaml.XamlObjectReader.NodeType%2A>アクセスできる、プロパティ、 <xref:System.Xaml.XamlObjectReader.Member%2A>、 <xref:System.Xaml.XamlObjectReader.Type%2A>、 <xref:System.Xaml.XamlObjectReader.Value%2A>、または<xref:System.Xaml.XamlObjectReader.Instance%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>情報のセットのスキーマ情報を提供するオブジェクトを取得します。</summary>
+        <value>情報のセットのスキーマ情報を提供するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スキーマ コンテキストは、従来の意味でのスキーマと XAML スキーマの概念 (解析、読み取り、および書き込み操作) の特定の XAML プロセッサでの処理の間の中間概念です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public override System.Xaml.XamlType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlType" />の現在のリーダーの位置にあるオブジェクト。</summary>
+        <value><see cref="T:System.Xaml.XamlType" />の現在のリーダーの位置にあるオブジェクトまたは<see langword="null" />オブジェクト上に配置されていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが null 以外の結果の場合にのみを返します、<xref:System.Xaml.XamlObjectReader.NodeType%2A>リーダーの現在位置のプロパティは<xref:System.Xaml.XamlNodeType.StartObject>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override object Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Value" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.XamlObjectReader.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のリーダーの位置にあるノードの値を取得します。</summary>
+        <value>現在のノードの値または<see langword="null" />、リーダーの位置に含まれていない場合、<see cref="F:System.Xaml.XamlNodeType.Value" />ノードの種類。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,763 @@
+<Type Name="XmlObjectSerializer" FullName="System.Runtime.Serialization.XmlObjectSerializer">
+  <TypeSignature Language="C#" Value="public abstract class XmlObjectSerializer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit XmlObjectSerializer extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.XmlObjectSerializer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトを XML ストリームまたはドキュメントとしてシリアル化するために使用する基本クラスを用意します。 このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XmlObjectSerializer> を拡張して、オブジェクトをシリアル化および逆シリアル化するための独自のシリアライザーを作成します。 <xref:System.Runtime.Serialization.DataContractSerializer> クラスと <xref:System.Runtime.Serialization.NetDataContractSerializer> クラスの両方が <xref:System.Runtime.Serialization.XmlObjectSerializer> から継承され、データ コントラクト規則に従っているオブジェクト (<xref:System.Runtime.Serialization.DataContractAttribute> と <xref:System.Runtime.Serialization.DataMemberAttribute> を使用して作成されたオブジェクト) をシリアル化および逆シリアル化するために使用されます。  
+  
+   
+  
+## Examples  
+ パラメーターとして `WriteObjectWithInstance` を含む <xref:System.Runtime.Serialization.XmlObjectSerializer> という名前のメソッドの例を次に示します。 このメソッドは、<xref:System.Runtime.Serialization.DataContractSerializer> メソッドを呼び出すことで、<xref:System.Runtime.Serialization.NetDataContractSerializer> と <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> のいずれかを使用してオブジェクトをシリアル化します。  
+  
+ [!code-csharp[XmlObjectSerializer#1](~/samples/snippets/csharp/VS_Snippets_CFX/xmlobjectserializer/cs/source.cs#1)]
+ [!code-vb[XmlObjectSerializer#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/xmlobjectserializer/vb/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+    <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> から継承する場合は、<see cref="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)" />、<see cref="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)" />、<see cref="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)" /> の各メンバーをオーバーライドする必要があります。 さらに、読み取りと逆シリアル化を行うために、<see cref="Overload:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject" /> メソッドと <see cref="Overload:System.Runtime.Serialization.XmlObjectSerializer.ReadObject" /> メソッドを実装する必要があります。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected XmlObjectSerializer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、派生クラスがコンストラクターをチェーンできるように、保護とマークされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="IsStartObject">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>シリアライザーがオブジェクトを読み取れるかどうかを指定する値を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、読み取る要素にリーダーが配置されているかどうかをチェックし、その要素が XML ストリームまたはドキュメントで検出されたオブジェクトのトップレベルの要素である場合は `true` を返します。 `true` を返すには、検出された要素の名前が、予期された名前と一致している必要があります。 実際の予期された要素名は、シリアライザーの実装によって異なります。  
+  
+ <xref:System.Runtime.Serialization.DataContractSerializer> によって、開始要素が拡張クラスのコンストラクター内に指定されます。  例については、<xref:System.Runtime.Serialization.DataContractSerializer> クラスのコンストラクターを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="IsStartObject">
+      <MemberSignature Language="C#" Value="public abstract bool IsStartObject (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsStartObject(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ストリームまたはドキュメントを読み取るために使用する <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary>読み取り可能な XML 要素に <see cref="T:System.Xml.XmlDictionaryReader" /> が配置されているかどうかを指定する値を取得します。</summary>
+        <returns>
+          リーダーがデータを読み取ることができる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、読み取る要素にリーダーが配置されているかどうかをチェックし、その要素が XML ストリームまたはドキュメントで検出されたオブジェクトのトップレベルの要素である場合は `true` を返します。 <xref:System.Runtime.Serialization.XmlObjectSerializer> を返すタイミングは、`true` の実装が決定します。 実装では、実装が要素に配置されていることを確認するか、予期された要素名を検索できます。 <xref:System.Runtime.Serialization.XmlObjectSerializer> の 1 つの実装である <xref:System.Runtime.Serialization.DataContractSerializer> では、それが要素に配置されていることを確認すると共に、要素名が現在の逆シリアル化の対象である型のトップレベルの予期される名前であることを確認します。  
+  
+ 必要であれば、<xref:System.Runtime.Serialization.XmlObjectSerializer.ReadObject%2A> メソッドを使用して XML コンテンツを読み取る前に、トップレベルの要素に配置する一方で、XML ストリーム内の追加属性を読み取ることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStartObject">
+      <MemberSignature Language="C#" Value="public virtual bool IsStartObject (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsStartObject(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ストリームまたはドキュメントを読み取るために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>読み取り可能な XML 要素に <see cref="T:System.Xml.XmlReader" /> が配置されているかどうかを指定する値を取得します。</summary>
+        <returns>
+          開始要素にリーダーが配置されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、読み取る要素にリーダーが配置されているかどうかをチェックし、その要素が XML ストリームまたはドキュメントで検出されたオブジェクトのトップレベルの要素である場合は `true` を返します。 `true` を返すには、検出された要素の名前が、予期された名前と一致している必要があります。 実際の予期された要素名は、シリアライザーの実装によって異なります。  
+  
+ <xref:System.Runtime.Serialization.DataContractSerializer> によって、開始要素が拡張クラスのコンストラクター内に指定されます。  例については、<xref:System.Runtime.Serialization.DataContractSerializer> クラスのコンストラクターを参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadObject">
+      <MemberSignature Language="C#" Value="public virtual object ReadObject (System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ReadObject(class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="stream">XML ストリームまたはドキュメントを読み取るために使用する <see cref="T:System.IO.Stream" />。</param>
+        <summary><see cref="T:System.IO.Stream" /> を使用して XML ストリームまたはドキュメントを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは仮想メソッドであり、基になるストリームを読み取って逆シリアル化するディクショナリ リーダーを作成する既定の実装があります。 既定の実装は、ストリームがテキストまたは XML であると想定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadObject">
+      <MemberSignature Language="C#" Value="public virtual object ReadObject (System.Xml.XmlDictionaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ReadObject(class System.Xml.XmlDictionaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントを読み取るために使用する <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <summary><see cref="T:System.Xml.XmlDictionaryReader" /> を使用して XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは仮想メソッドであり、基になるストリームを読み取って逆シリアル化するディクショナリ リーダーを作成する既定の実装があります。 既定の実装は、ストリームがテキストまたは XML であると想定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadObject">
+      <MemberSignature Language="C#" Value="public virtual object ReadObject (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ReadObject(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ストリームまたはドキュメントを読み取るために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary><see cref="T:System.Xml.XmlReader" /> を使用して XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadObject">
+      <MemberSignature Language="C#" Value="public abstract object ReadObject (System.Xml.XmlDictionaryReader reader, bool verifyObjectName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ReadObject(class System.Xml.XmlDictionaryReader reader, bool verifyObjectName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlDictionaryReader,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlDictionaryReader" />
+        <Parameter Name="verifyObjectName" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントを読み取るために使用する <see cref="T:System.Xml.XmlDictionaryReader" />。</param>
+        <param name="verifyObjectName">
+          周囲の XML 要素名と名前空間がルート名とルート名前空間に対応するかどうかをチェックする場合は <see langword="true" />。この検査をスキップする場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Xml.XmlDictionaryReader" /> を使用して XML ストリームまたはドキュメントを読み取り、逆シリアル化されたオブジェクトを返します。さらに、リーダーがデータを読み取る前に、シリアライザーがデータを読み取ることができるかどうかを指定できます。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `verifyObjectName` パラメーターは、<xref:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject%2A> メソッドと同じコードを使用して、要素がオブジェクトの先頭であるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadObject">
+      <MemberSignature Language="C#" Value="public virtual object ReadObject (System.Xml.XmlReader reader, bool verifyObjectName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ReadObject(class System.Xml.XmlReader reader, bool verifyObjectName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.ReadObject(System.Xml.XmlReader,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+        <Parameter Name="verifyObjectName" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML ドキュメントまたはストリームを読み取るために使用する <see cref="T:System.Xml.XmlReader" />。</param>
+        <param name="verifyObjectName">
+          周囲の XML 要素名と名前空間がルート名とルート名前空間に対応するかどうかをチェックする場合は <see langword="true" />。この検査をスキップする場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Xml.XmlReader" /> を使用して XML ドキュメントまたはストリームを読み取り、逆シリアル化されたオブジェクトを返します。さらに、リーダーがデータを読み取る前に、シリアライザーがデータを読み取ることができるかどうかを指定できます。</summary>
+        <returns>逆シリアル化されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `verifyObjectName` パラメーターは、<xref:System.Runtime.Serialization.XmlObjectSerializer.IsStartObject%2A> メソッドと同じコードを使用して、要素がオブジェクトの先頭であるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteEndObject">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>XML ストリームまたはドキュメントに XML の終了要素を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A>、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A>、および <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> の各メソッドを実装する必要があります。 この 3 つのメソッドは、書き込み開始、コンテンツの書き込み、書き込み終了というパターンを用いた完全なシリアル化の書き込みを行うために続けて使用されます。 ユーザーは、オブジェクトの書き込み中に、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A> への呼び出しと <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> への呼び出しの間に、XML 属性を挿入できます。 この 3 つのメソッドは、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> メソッドの仮想実装によって呼び出すこともできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteEndObject">
+      <MemberSignature Language="C#" Value="public abstract void WriteEndObject (System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteEndObject(class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <summary><see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、オブジェクト データの末尾を XML の終了要素として XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEndObject">
+      <MemberSignature Language="C#" Value="public virtual void WriteEndObject (System.Xml.XmlWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteEndObject(class System.Xml.XmlWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject(System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <summary><see cref="T:System.Xml.XmlWriter" /> を使用して、オブジェクト データの末尾を XML の終了要素として XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteObject">
+      <MemberSignature Language="C#" Value="public virtual void WriteObject (System.IO.Stream stream, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteObject(class System.IO.Stream stream, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.IO.Stream,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="stream" Type="System.IO.Stream" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="stream">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.IO.Stream" />。</param>
+        <param name="graph">ストリームに書き込むデータを格納したオブジェクト。</param>
+        <summary><see cref="T:System.IO.Stream" /> を使用して、オブジェクトの完全なコンテンツ (開始、コンテンツ、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteObject">
+      <MemberSignature Language="C#" Value="public virtual void WriteObject (System.Xml.XmlDictionaryWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteObject(class System.Xml.XmlDictionaryWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlDictionaryWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">コンテンツを XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="graph">書き込むコンテンツを格納するオブジェクト。</param>
+        <summary><see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、オブジェクトの完全なコンテンツ (開始、コンテンツ、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは仮想メソッドであり、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A>、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A>、および <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> の各メソッドを呼び出す既定の実装があります。 このため、このメソッドは、シリアライザーで最も使用されるメソッドになることを目的としています。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteObject">
+      <MemberSignature Language="C#" Value="public virtual void WriteObject (System.Xml.XmlWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteObject(class System.Xml.XmlWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObject(System.Xml.XmlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="graph">書き込むコンテンツを格納するオブジェクト。</param>
+        <summary><see cref="T:System.Xml.XmlWriter" /> を使用して、オブジェクトの完全なコンテンツ (開始、コンテンツ、および終了) を XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは仮想メソッドであり、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%28System.Xml.XmlDictionaryWriter%2CSystem.Object%29?displayProperty=nameWithType> オーバーロードに書き込みを代行させる既定の実装があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteObjectContent">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>オブジェクトのコンテンツだけを XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A>、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A>、および <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> の各メソッドを実装する必要があります。 この 3 つのメソッドは、書き込み開始、コンテンツの書き込み、書き込み終了というパターンを用いた完全なシリアル化の書き込みを行うために続けて使用されます。 実装で XML 要素を使用して書き込みを行う場合は、オブジェクトのコンテンツを書き込む前に属性を挿入できます。 この 3 つのメソッドは、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> メソッドの仮想実装によって呼び出すこともできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteObjectContent">
+      <MemberSignature Language="C#" Value="public abstract void WriteObjectContent (System.Xml.XmlDictionaryWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteObjectContent(class System.Xml.XmlDictionaryWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlDictionaryWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="graph">書き込むコンテンツを格納するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、オブジェクトのコンテンツだけを XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteObjectContent">
+      <MemberSignature Language="C#" Value="public virtual void WriteObjectContent (System.Xml.XmlWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteObjectContent(class System.Xml.XmlWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent(System.Xml.XmlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントまたはストリームを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="graph">書き込むコンテンツを格納するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlWriter" /> を使用して、オブジェクトのコンテンツだけを XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="WriteStartObject">
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>XML の開始要素だけを XML ドキュメントまたはストリームに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject%2A>、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObjectContent%2A>、および <xref:System.Runtime.Serialization.XmlObjectSerializer.WriteEndObject%2A> の各メソッドを実装する必要があります。 この 3 つのメソッドは、書き込み開始、コンテンツの書き込み、書き込み終了というパターンを用いた完全なシリアル化の書き込みを行うために続けて使用されます。 実装で XML 要素を使用して書き込みを行う場合は、オブジェクトのコンテンツを書き込む前に属性を挿入できます。 この 3 つのメソッドは、<xref:System.Runtime.Serialization.XmlObjectSerializer.WriteObject%2A> メソッドの仮想実装によって呼び出すこともできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="WriteStartObject">
+      <MemberSignature Language="C#" Value="public abstract void WriteStartObject (System.Xml.XmlDictionaryWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteStartObject(class System.Xml.XmlDictionaryWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlDictionaryWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントを書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="graph">シリアル化するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlDictionaryWriter" /> を使用して、オブジェクト データの先頭を XML の開始要素として書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteStartObject">
+      <MemberSignature Language="C#" Value="public virtual void WriteStartObject (System.Xml.XmlWriter writer, object graph);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteStartObject(class System.Xml.XmlWriter writer, object graph) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.XmlObjectSerializer.WriteStartObject(System.Xml.XmlWriter,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Xml</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="graph" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="writer">XML ドキュメントを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="graph">シリアル化するオブジェクト。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlWriter" /> を使用して、オブジェクト データの先頭を XML の開始要素として書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Runtime.Serialization.InvalidDataContractException">シリアル化される種類がデータ コントラクト規則に従いません。 たとえば、<see cref="T:System.Runtime.Serialization.DataContractAttribute" /> 属性が型に適用されていません。</exception>
+        <exception cref="T:System.Runtime.Serialization.SerializationException">シリアル化されるインスタンスに問題があります。</exception>
+        <exception cref="T:System.ServiceModel.QuotaExceededException">シリアル化されるオブジェクトが最大数を超えました。 <see cref="P:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph" /> プロパティをチェックします。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

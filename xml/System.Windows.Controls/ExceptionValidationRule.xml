@@ -1,0 +1,82 @@
+<Type Name="ExceptionValidationRule" FullName="System.Windows.Controls.ExceptionValidationRule">
+  <TypeSignature Language="C#" Value="public sealed class ExceptionValidationRule : System.Windows.Controls.ValidationRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ExceptionValidationRule extends System.Windows.Controls.ValidationRule" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ExceptionValidationRule" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.ValidationRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインディング ソースのプロパティの更新中にスローされる例外をチェックする規則を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]データ バインディング モデルを使用すると、関連付ける<xref:System.Windows.Data.Binding.ValidationRules%2A>で、<xref:System.Windows.Data.Binding>オブジェクト。 <xref:System.Windows.Controls.ExceptionValidationRule>クラスは、組み込みの規則は、バインディング ソース プロパティの更新中にスローされる例外をチェックします。 バインディング エンジンが使用して、これらの例外を処理する方法を指定するカスタム ロジックを指定することができます、<xref:System.Windows.Data.UpdateSourceExceptionFilterCallback>です。 詳細については、「<xref:System.Windows.Data.Binding.UpdateSourceExceptionFilter%2A>」を参照してください。  
+  
+ 設定を別の構文、<xref:System.Windows.Controls.ExceptionValidationRule>は明示的に設定する、<xref:System.Windows.Data.Binding.ValidatesOnExceptions%2A>プロパティを`true`上、<xref:System.Windows.Data.Binding>または<xref:System.Windows.Data.MultiBinding>オブジェクト。  
+  
+ 派生するクラスを作成することで、カスタム ルールを作成することができます<xref:System.Windows.Controls.ValidationRule>です。 詳細については、データの検証の詳細についてを参照してください[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Data.Binding.ValidationRules%2A>プロパティのコレクションを受け取って<xref:System.Windows.Controls.ValidationRule>オブジェクト。 次の例で<xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType>バインディング ターゲット プロパティとしてと`StartPrice`(整数)、バインディング ソースのプロパティとして。 整数に変換できない値を入力すると、例外がスローされます、これにより、<xref:System.Windows.Controls.ExceptionValidationRule>対象の値を無効にします。  
+  
+ [!code-xaml[DataBindingLab#DefaultValidation](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/AddProductWindow.xaml#defaultvalidation)]  
+  
+ 既定では、検証エラーがある場合に、<xref:System.Windows.Controls.TextBox>赤い境界線が表示されます。 必要に応じて、カスタムを記述することができます<xref:System.Windows.Controls.Validation.ErrorTemplate%2A>検証エラーがある場合にユーザーに通知する方法を指定します。  
+  
+ データの検証の詳細については、次を参照してください。[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+ サンプル全体については、次を参照してください。[データ バインディング デモ](http://go.microsoft.com/fwlink/?LinkID=163703)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ExceptionValidationRule ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ExceptionValidationRule.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ExceptionValidationRule" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Validate">
+      <MemberSignature Language="C#" Value="public override System.Windows.Controls.ValidationResult Validate (object value, System.Globalization.CultureInfo cultureInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Windows.Controls.ValidationResult Validate(object value, class System.Globalization.CultureInfo cultureInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ExceptionValidationRule.Validate(System.Object,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.ValidationResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="cultureInfo" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">(バインディング ターゲット) から値を確認します。</param>
+        <param name="cultureInfo">このルールで使用するカルチャ。</param>
+        <summary>値に対して検証チェックを実行します。</summary>
+        <returns><see cref="T:System.Windows.Controls.ValidationResult" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

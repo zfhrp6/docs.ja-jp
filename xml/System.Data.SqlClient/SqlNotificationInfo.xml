@@ -1,0 +1,348 @@
+<Type Name="SqlNotificationInfo" FullName="System.Data.SqlClient.SqlNotificationInfo">
+  <TypeSignature Language="C#" Value="public enum SqlNotificationInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlNotificationInfo extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlNotificationInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>この列挙は、依存関係のイベント ハンドラーによって受信可能なさまざまな通知に関する追加情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.SqlClient.SqlNotificationInfo>列挙型がのインスタンスによって参照される、<xref:System.Data.SqlClient.SqlNotificationEventArgs>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AlreadyChanged">
+      <MemberSignature Language="C#" Value="AlreadyChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo AlreadyChanged = int32(-2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.AlreadyChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="SqlDependency" />オブジェクトが既に発生したし、して新しいコマンドを追加することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Alter">
+      <MemberSignature Language="C#" Value="Alter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Alter = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Alter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリに関連する基になるサーバー オブジェクトが変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="Delete" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Delete = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Delete" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データは、DELETE ステートメントによって変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Drop">
+      <MemberSignature Language="C#" Value="Drop" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Drop = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Drop" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリに関連する基になるオブジェクトが削除されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="Error" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Error = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Error" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内部サーバー エラーが発生しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="Expired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Expired = int32(12)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Expired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see langword="SqlDependency" />オブジェクトの有効期限が切れました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="Insert" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Insert = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Insert" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データは、INSERT ステートメントによって変更されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Invalid = int32(9)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ステートメントが指定されました (たとえば、UPDATE ステートメント) に通知することはできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Isolation">
+      <MemberSignature Language="C#" Value="Isolation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Isolation = int32(11)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Isolation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無効な分離モードでは、ステートメントが実行された (たとえば、スナップショット)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="Merge" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Merge = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Merge" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ通知のトリガーにサーバー側の原因を区別するために使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="Options" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Options = int32(10)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Options" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブスクリプションの時に、SET オプションが適切に設定されませんでした。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousFire">
+      <MemberSignature Language="C#" Value="PreviousFire" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo PreviousFire = int32(14)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.PreviousFire" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>前のステートメントは現在のトランザクションの下でクエリ通知を発生しました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Query">
+      <MemberSignature Language="C#" Value="Query" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Query = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Query" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通知を受け取ることはできませんまたはが指定されている SELECT ステートメント。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Resource">
+      <MemberSignature Language="C#" Value="Resource" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Resource = int32(13)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Resource" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Server のリソースが不足した結果として発生します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Restart">
+      <MemberSignature Language="C#" Value="Restart" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Restart = int32(6)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Restart" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーは再起動されました (通知は再起動中に送信されます。)。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplateLimit">
+      <MemberSignature Language="C#" Value="TemplateLimit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo TemplateLimit = int32(15)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.TemplateLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブスクライブしているクエリでは、上の最大許容制限を超える対象テーブルのいずれかのテンプレートの数が行われます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Truncate">
+      <MemberSignature Language="C#" Value="Truncate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Truncate = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Truncate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数のテーブルが切り捨てられました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Unknown = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーによって送信された情報のオプションがクライアントによって認識されない場合に使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Update">
+      <MemberSignature Language="C#" Value="Update" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlNotificationInfo Update = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlNotificationInfo.Update" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlNotificationInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データは、UPDATE ステートメントによって変更されました。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

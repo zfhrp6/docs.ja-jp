@@ -1,0 +1,354 @@
+<Type Name="UriTemplateMatch" FullName="System.UriTemplateMatch">
+  <TypeSignature Language="C#" Value="public class UriTemplateMatch" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UriTemplateMatch extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.UriTemplateMatch" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.UriTemplate" /> インスタンスに関する照合操作の結果を表すクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplateMatch> メソッドの呼び出し結果を表す <xref:System.UriTemplate.Match%28System.Uri%2CSystem.Uri%29> クラス。 このクラスはスレッド セーフではありません。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch> クラスを使用する方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#0](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/program.cs#0)]
+ [!code-vb[UriTemplateMatch#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/program.vb#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UriTemplateMatch ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriTemplateMatch.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.UriTemplateMatch" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このクラスは直接インスタンス化しません。<xref:System.UriTemplateMatch> インスタンスは、<xref:System.UriTemplate.Match%28System.Uri%2CSystem.Uri%29> または <xref:System.UriTemplateTable.MatchSingle%28System.Uri%29> メソッドから返されます。 また、<xref:System.UriTemplateTable.Match%2A> メソッドは、<xref:System.UriTemplateMatch> のコレクションも返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BaseUri">
+      <MemberSignature Language="C#" Value="public Uri BaseUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri BaseUri" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.BaseUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレート照合用のベース URI を取得および設定します。</summary>
+        <value>テンプレート照合用のベース URI を表す <see cref="T:System.Uri" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.BaseUri%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#1](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#1)]
+ [!code-vb[UriTemplateMatch#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BoundVariables">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection BoundVariables { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection BoundVariables" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.BoundVariables" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テンプレート照合用の <see langword="BoundVariables" /> コレクションを取得します。</summary>
+        <value>照合中に URI から抽出したテンプレート変数値を格納する <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各テンプレート変数名は、このコレクション内に名前として表示され、その変数にバインドされる値は対応する名前の下に格納されます。 このコレクション内の値は、すべてのエスケープ シーケンスが実際の文字に変換されています。 この名前値コレションでは、変数名の照合時に大文字と小文字を区別しない検索を使用します。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.BoundVariables%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#2](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#2)]
+ [!code-vb[UriTemplateMatch#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public object Data { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Data" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.UriTemplateMatch" /> インスタンスに関連付けられたオブジェクトを取得および設定します。</summary>
+        <value><see cref="T:System.Object" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriTemplate> を <xref:System.UriTemplateTable> に追加する場合、データをテンプレートに関連付けます。 この値はアプリケーション固有で、特定のセマンティクスには関連付けられていません。 <xref:System.UriTemplateTable.Match%28System.Uri%29> が呼び出され、一致が見つかると、照合するテンプレートに関連付けられたデータは <xref:System.UriTemplateMatch.Data%2A> プロパティに返されます。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.Data%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#3](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#3)]
+ [!code-vb[UriTemplateMatch#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryParameters">
+      <MemberSignature Language="C#" Value="public System.Collections.Specialized.NameValueCollection QueryParameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Specialized.NameValueCollection QueryParameters" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.QueryParameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Specialized.NameValueCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリ文字列パラメーターのコレクションとその値を取得します。</summary>
+        <value>クエリ文字列パラメーターとその値を格納する <see cref="T:System.Collections.Specialized.NameValueCollection" /> インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 元の URI のすべてのクエリ文字列の名前と値のペアは、一致したテンプレート文字列で明示的に指定されていなくても、このコレクションに表示されます。 このコレクション内の値は、すべてのエスケープ シーケンスが実際の文字に変換されています。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.QueryParameters%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#4](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#4)]
+ [!code-vb[UriTemplateMatch#4](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelativePathSegments">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; RelativePathSegments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; RelativePathSegments" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.RelativePathSegments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>相対パス セグメントのコレクションを取得します。</summary>
+        <value>相対パス セグメントのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには、テンプレート ワイルドカードに一致したパス セグメントと一緒に、テンプレートに一致した候補 URI のパス セグメントのコレクションが格納されます。 テンプレート ワイルドカードに一致したパス セグメントは、<xref:System.UriTemplateMatch.WildcardPathSegments%2A> プロパティにも格納されます。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.RelativePathSegments%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#5](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#5)]
+ [!code-vb[UriTemplateMatch#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestUri">
+      <MemberSignature Language="C#" Value="public Uri RequestUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri RequestUri" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.RequestUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一致した URI を取得および設定します。</summary>
+        <value><see cref="T:System.Uri" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.RequestUri%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#6](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#6)]
+ [!code-vb[UriTemplateMatch#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Template">
+      <MemberSignature Language="C#" Value="public UriTemplate Template { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.UriTemplate Template" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.Template" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.UriTemplate" /> インスタンスに関連付けられた <see cref="T:System.UriTemplateMatch" /> インスタンスを取得および設定します。</summary>
+        <value><see cref="T:System.UriTemplate" /> のインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、候補 URI が一致した <xref:System.UriTemplate> を格納します。  
+  
+   
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.Template%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#7](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#7)]
+ [!code-vb[UriTemplateMatch#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/uritemplatematch/vb/snippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WildcardPathSegments">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;string&gt; WildcardPathSegments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;string&gt; WildcardPathSegments" />
+      <MemberSignature Language="DocId" Value="P:System.UriTemplateMatch.WildcardPathSegments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>URI テンプレートのワイルドカードに一致したパス セグメントのコレクションを取得します。</summary>
+        <value>URI テンプレートのワイルドカードに一致したパス セグメントのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコードは、<xref:System.UriTemplateMatch.WildcardPathSegments%2A> プロパティへのアクセス方法を示しています。  
+  
+ [!code-csharp[UriTemplateMatch#8](~/samples/snippets/csharp/VS_Snippets_CFX/uritemplatematch/cs/snippets.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,140 @@
+<Type Name="DirectoryControl" FullName="System.DirectoryServices.Protocols.DirectoryControl">
+  <TypeSignature Language="C#" Value="public class DirectoryControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DirectoryControl extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.Protocols.DirectoryControl" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.DirectoryServices.Protocols.DirectoryControl" />クラスは、さまざまな LDAP 操作の拡張データを指定します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DirectoryControl (string type, byte[] value, bool isCritical, bool serverSide);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string type, unsigned int8[] value, bool isCritical, bool serverSide) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DirectoryControl.#ctor(System.String,System.Byte[],System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="isCritical" Type="System.Boolean" />
+        <Parameter Name="serverSide" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="type">コントロール型。</param>
+        <param name="value">コントロールに関連付けられている値。</param>
+        <param name="isCritical">コントロールが重要なかどうかを指定します。 既定値は、<see langword="true" /> です。</param>
+        <param name="serverSide">かどうかは、これはサーバー側のコントロールを指定します。  既定値は、<see langword="true" /> です。 <see langword="false" />クライアント側コントロールを指定します。</param>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DirectoryControl.#ctor(System.String,System.Byte[],System.Boolean,System.Boolean)" />コンス トラクターのインスタンスを作成する、<see cref="T:System.DirectoryServices.Protocols.DirectoryControl" />クラス型、値、重要度、および ServerSide プロパティの指定された値を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" />パラメーターが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public virtual byte[] GetValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.Protocols.DirectoryControl.GetValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.DirectoryServices.Protocols.DirectoryControl.GetValue" />メソッド コントロールに関連付けられているデータを返します。</summary>
+        <returns>コントロールに関連付けられているデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCritical">
+      <MemberSignature Language="C#" Value="public bool IsCritical { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCritical" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryControl.IsCritical" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryControl.IsCritical" />プロパティは、このコントロールは重要であるかどうかを指定します。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールは重要です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerSide">
+      <MemberSignature Language="C#" Value="public bool ServerSide { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ServerSide" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryControl.ServerSide" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryControl.ServerSide" />プロパティは、これは、サーバー側のコントロールであるかどうかを指定します。</summary>
+        <value>
+          <see langword="true" />場合は、コントロールは、サーバー側コントロールです。 <see langword="false" />クライアント側コントロールを指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの既定値は `true` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public string Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Type" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.Protocols.DirectoryControl.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.Protocols</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.DirectoryServices.Protocols.DirectoryControl.Type" />プロパティには、コントロールのオブジェクト識別子 (OID) が含まれています。</summary>
+        <value>コントロールの OID です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1013 @@
+<Type Name="BulletedList" FullName="System.Web.UI.WebControls.BulletedList">
+  <TypeSignature Language="C#" Value="public class BulletedList : System.Web.UI.WebControls.ListControl, System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BulletedList extends System.Web.UI.WebControls.ListControl implements class System.Web.UI.IPostBackEventHandler" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.BulletedList" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.ListControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Click")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("BulletStyle")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.BulletedListDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>行頭文字付き書式で項目のリストを生成するコントロールを作成します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#Introduction)  
+  
+-   [ユーザー補助](#Accessibility)  
+  
+-   [宣言型の構文](#DeclarativeSyntax)  
+  
+<a name="Introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList>箇条書きでフォーマットされている項目のリストを作成するコントロール。 表示する個々 のリスト項目を指定する、<xref:System.Web.UI.WebControls.BulletedList>コントロールを配置、<xref:System.Web.UI.WebControls.ListItem>開始タグと終了タグの間には、各エントリのオブジェクト、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+ リスト項目を表示するために行頭文字型を指定する、<xref:System.Web.UI.WebControls.BulletedList>コントロールを設定、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティによって定義されている行頭文字型のいずれかを<xref:System.Web.UI.WebControls.BulletStyle>列挙します。 次の表は、使用できる行頭文字スタイルを示します。  
+  
+|行頭文字スタイル|説明|  
+|------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.BulletStyle.NotSet>|未設定。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Numbered>|数値。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.LowerAlpha>|小文字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.UpperAlpha>|大文字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.LowerRoman>|小文字のローマ数字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.UpperRoman>|大文字のローマ数字です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Disc>|塗りつぶされた円です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Circle>|空の円です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Square>|塗りつぶされた四角形。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>|カスタム イメージです。|  
+  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>プロパティを順序付けされたリスト項目の番号を開始する値を指定する<xref:System.Web.UI.WebControls.BulletedList>コントロール。 割り当てられている値、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>場合、プロパティは無視されます、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティに設定されている、 <xref:System.Web.UI.WebControls.BulletStyle.Disc>、 <xref:System.Web.UI.WebControls.BulletStyle.Square>、 <xref:System.Web.UI.WebControls.BulletStyle.Circle>、または<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>フィールドです。 設定した場合、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティの値を<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>の項目のカスタム イメージを指定する必要がありますを設定する、<xref:System.Web.UI.WebControls.BulletedList.BulletImageUrl%2A>イメージ ファイルの場所を指定する場合にもプロパティです。  
+  
+ リスト項目の表示動作を指定する、 <xref:System.Web.UI.WebControls.BulletedList>、設定、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティによって定義されている値のいずれかを<xref:System.Web.UI.WebControls.BulletedListDisplayMode>列挙します。 定義されている表示動作は<xref:System.Web.UI.WebControls.BulletedListDisplayMode.Text>、 <xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>、および<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>です。  
+  
+ ハイパーリンクがクリックされたときに、URL に移動します。 使用して、<xref:System.Web.UI.WebControls.ListItem.Value%2A>プロパティに移動するハイパーリンクの URL を指定します。 使用して、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>プロパティ フレームまたはハイパーリンクがクリックされたときにナビゲートは Web ページを表示するウィンドウを指定します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティに設定されている<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>、<xref:System.Web.UI.WebControls.BulletedList>コントロールがクリックされたときに、サーバーへのポストバックへのリンクとしてリスト項目を表示します。 リンク ボタンがクリックされたときに実行されるアクションをプログラムから制御するには、提供のイベント ハンドラー、<xref:System.Web.UI.WebControls.BulletedList.Click>イベント。 なお、<xref:System.Web.UI.WebControls.BulletedList.SelectedIndex%2A>と<xref:System.Web.UI.WebControls.BulletedList.SelectedItem%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.ListControl>クラスし、には適用されません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 イベント データを使用して、<xref:System.Web.UI.WebControls.BulletedListEventArgs>リンク ボタンのインデックスを確認するクラス、<xref:System.Web.UI.WebControls.BulletedList>クリックしてされました。  
+  
+ <xref:System.Web.UI.WebControls.BulletedList>コントロールには、データ バインディングもサポートしています。 バインドする、<xref:System.Web.UI.WebControls.BulletedList>データ ソースに、指定のデータ バインディング機構のいずれかを使用できます。 詳細については、次を参照してください。[データベースへのバインド](http://msdn.microsoft.com/en-us/ab7b2846-975b-4057-a948-45527497c742)です。  
+  
+<a name="Accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ このコントロールの既定で表示されるマークアップは、Web コンテンツ ユーザー補助ガイドライン 1.0 (WCAG) 優先度 1 のガイドラインなどのユーザー補助の標準に準拠していません可能性があります。 このコントロールのユーザー補助のサポートに関する詳細については、「 [ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:BulletedList  
+    AccessKey="string"  
+    AppendDataBoundItems="True|False"  
+    AutoPostBack="True|False"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    BulletImageUrl="uri"  
+    BulletStyle="NotSet|Numbered|LowerAlpha|UpperAlpha|LowerRoman|  
+        UpperRoman|Disc|Circle|Square|CustomImage"  
+    CausesValidation="True|False"  
+    CssClass="string"  
+    DataMember="string"  
+    DataSource="string"  
+    DataSourceID="string"  
+    DataTextField="string"  
+    DataTextFormatString="string"  
+    DataValueField="string"  
+    DisplayMode="Text|HyperLink|LinkButton"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    FirstBulletNumber="integer"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|  
+        Medium|Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnClick="Click event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDataBound="DataBound event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnSelectedIndexChanged="SelectedIndexChanged event handler"  
+    OnTextChanged="TextChanged event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Target="string|_blank|_parent|_search|_self|_top"  
+    ToolTip="string"  
+    ValidationGroup="string"  
+    Visible="True|False"  
+    Width="size"  
+>  
+            <asp:ListItem  
+                Enabled="True|False"  
+                Selected="True|False"  
+                Text="string"  
+                Value="string"  
+            />  
+</asp:BulletedList>  
+```  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初のコード例は、作成する方法を示します、<xref:System.Web.UI.WebControls.BulletedList>一覧項目はリンク ボタンとして書式設定を持つコントロール。 2 番目のコード例は、作成する方法を示します、<xref:System.Web.UI.WebControls.BulletedList>リスト項目を指定するデータ バインディングの使用を制御します。  
+  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>一覧項目はリンク ボタンとして書式設定を持つコントロール。 テキストを表示、<xref:System.Web.UI.WebControls.Label>リスト項目がクリックされたときを制御します。  
+  
+ [!code-aspx-csharp[BulletedListClassExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListClassExample/CS/bulletedlistclass1cs.aspx#1)]
+ [!code-aspx-vb[BulletedListClassExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListClassExample/VB/bulletedlistclass1vb.aspx#1)]  
+  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>リスト項目を指定するデータ バインディングの使用を制御します。 リスト項目はリンク ボタンとしてフォーマットされます。 テキストを表示、<xref:System.Web.UI.WebControls.Label>リスト項目がクリックされたときを制御します。  
+  
+ [!code-aspx-csharp[BulletedListClassDataBindExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListClassDataBindExample/CS/bulletedlistclass2databindcs.aspx#1)]
+ [!code-aspx-vb[BulletedListClassDataBindExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListClassDataBindExample/VB/bulletedlistclass2databindvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BulletedList ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.%23ctor%2A>の新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.BulletedList>クラスです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.BulletedList> クラスの新しいインスタンスを初期化する方法を次のコード例に示します。  
+  
+ [!code-aspx-csharp[BulletedListConstructor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListConstructor/CS/bulletedlistcstrcs.aspx#1)]
+ [!code-aspx-vb[BulletedListConstructor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListConstructor/VB/bulletedlistcstrvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトに表示する <see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの HTML 属性とスタイルを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.AddAttributesToRender%2A>メソッドが適切な属性を挿入する、主にコントロールの開発者によって使用されにスタイル、<xref:System.Web.UI.HtmlTextWriter?displayProperty=nameWithType>の出力ストリームは、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.WebControls.BulletedList.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッドのオーバーライド、<see cref="M:System.Web.UI.WebControls.ListControl.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoPostBack">
+      <MemberSignature Language="C#" Value="public override bool AutoPostBack { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoPostBack" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.AutoPostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基本クラスの <see cref="P:System.Web.UI.WebControls.ListControl.AutoPostBack" /> プロパティの値を取得または設定します。</summary>
+        <value>
+          <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.AutoPostBack%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.ListControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 値が割り当てられない、<xref:System.Web.UI.WebControls.BulletedList.AutoPostBack%2A>プロパティです。 値を割り当てる場合、 <xref:System.Web.UI.WebControls.BulletedList.AutoPostBack%2A>、<xref:System.NotSupportedException>例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、ことを示しますの値、<xref:System.Web.UI.WebControls.ListControl.AutoPostBack%2A>プロパティは常に`false`の<xref:System.Web.UI.WebControls.BulletedList>制御し、そのため、このクラスに適用できません。  
+  
+ [!code-aspx-csharp[BulletedListAutoPostBack#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListAutoPostBack/CS/BulletedListAutoPostBackCS.aspx#1)]
+ [!code-aspx-vb[BulletedListAutoPostBack#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListAutoPostBack/VB/bulletedlistautopostbackvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を代入しようとしましたが、<see cref="P:System.Web.UI.WebControls.BulletedList.AutoPostBack" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BulletImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string BulletImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string BulletImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.BulletImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールに行頭文字として表示するイメージへのパスを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BulletedList" /> に行頭文字として表示するイメージへのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.BulletImageUrl%2A>行頭文字としてでを表示するイメージへのパスを指定するプロパティ、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 箇条書きのカスタム イメージを指定する必要がありますも設定する、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティ値を<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>です。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BulletedList>コントロールはサポートされない、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティ箇条書きは本質的に装飾的なとする支援技術を使用して情報を伝える必要がある追加の情報を提供しないためです。 ユーザーに特定の概念を伝えるためにカスタム イメージを使用する場合は、箇条書きリスト項目ごとにテキストを追加または各イメージの代替テキストを指定できるようにするコントロールを使用する必要があります。  
+  
+ 相対パスまたは画像への絶対パスのいずれかを指定することができます。 相対パスは、サーバー上、完全なパスを指定せず、Web ページの場所にイメージの場所を関連付けます。 Web ページの場所への相対パスでは。 これにより、コードを更新することがなく別のディレクトリに、サーバー上のサイト全体を移動しやすくします。  
+  
+ 次のコード例では、イメージ ファイルへの相対パスを示します。  
+  
+```csharp  
+\\Images\\image1.jpg  
+```  
+  
+```vb  
+"Images\image1.jpg"  
+```  
+  
+ 次のコード例では、イメージ ファイルへの絶対パスを示します。  
+  
+```csharp  
+"c:\\MyImagesDir\\image1.jpg"   
+```  
+  
+```vb  
+"c"\MyImagesDir\image1.jpg"  
+```  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>を制御し、設定、<xref:System.Web.UI.WebControls.BulletedList.BulletImageUrl%2A>行頭文字として使用するカスタム イメージへのパスを指定するプロパティです。  
+  
+ [!code-aspx-csharp[BulletedListBulletImageurl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListBulletImageUrl/CS/bulletimageurlcs.aspx#1)]
+ [!code-aspx-vb[BulletedListBulletImageurl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListBulletImageUrl/VB/bulletimageurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BulletStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.BulletStyle BulletStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.BulletStyle BulletStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.BulletStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの行頭文字スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BulletStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.BulletStyle.NotSet" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletStyle>プロパティを行頭に適用するスタイルの一覧の項目を指定する、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 <xref:System.Web.UI.WebControls.BulletStyle>プロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.BulletStyle>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|行頭文字スタイル|説明|  
+|------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.BulletStyle.NotSet>|未設定。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Numbered>|数値。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.LowerAlpha>|小文字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.UpperAlpha>|大文字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.LowerRoman>|小文字のローマ数字。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.UpperRoman>|大文字のローマ数字です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Disc>|塗りつぶされた円です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Circle>|空の円です。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.Square>|塗りつぶされた四角形。|  
+|<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>|カスタム イメージです。|  
+  
+ 指定する、<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>値では、行頭の独自のイメージを指定することができます。 指定した場合、<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>値を設定する必要も、<xref:System.Web.UI.WebControls.BulletedList.BulletImageUrl%2A>プロパティを使用するカスタム イメージの URL。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BulletedList>コントロールはサポートされない、<xref:System.Web.UI.WebControls.Image.AlternateText%2A>プロパティ箇条書きは本質的に装飾的なとする支援技術を使用して情報を伝える必要がある追加の情報を提供しないためです。 ユーザーに特定の概念を伝えるためにカスタム イメージを使用する場合は、箇条書きリスト項目ごとにテキストを追加または各イメージの代替テキストを指定できるようにするコントロールを使用する必要があります。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 A<xref:System.Web.UI.WebControls.ListBox>コントロールのすべて、使用可能な設定が<xref:System.Web.UI.WebControls.BulletStyle>列挙値。 ユーザーがリスト ボックスから選択したスタイルに基づいて行頭文字スタイルの変更。  
+  
+ [!code-aspx-csharp[BulletedListStylesExample#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListStylesExample/CS/bulletedliststylescs.aspx#1)]
+ [!code-aspx-vb[BulletedListStylesExample#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListStylesExample/VB/bulletedliststylesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.BulletStyle" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.BulletedListEventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.BulletedListEventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.BulletedList.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletedListEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロール内のリンク ボタンがクリックされた場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.Click>イベントは、リスト項目で、<xref:System.Web.UI.WebControls.BulletedList>コントロールをクリックします。 リスト項目を有効にする、<xref:System.Web.UI.WebControls.BulletedList>させるコントロール、<xref:System.Web.UI.WebControls.BulletedList.Click>イベント、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティ最初にする必要があります値に設定する、<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.BulletedList.Click>のイベント、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 メッセージを表示するリスト項目がクリックされたときに、<xref:System.Web.UI.WebControls.Label>ページ上のコントロールです。 箇条書きリスト内のすべてのリンク ボタンを発生させると、同じ<xref:System.Web.UI.WebControls.BulletedList.Click>イベント。 どのリンク ボタンが、イベントを発生させたを決定する、<xref:System.Web.UI.WebControls.BulletedListEventArgs>引数が調べられます。  
+  
+ [!code-aspx-csharp[BulletedListClickEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListClickEvent/CS/bulletedlistclickeventcs.aspx#1)]
+ [!code-aspx-vb[BulletedListClickEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListClickEvent/VB/bulletedlistclickeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="T:System.Web.UI.ControlCollection" /> コレクションを取得します。</summary>
+        <value>コントロールのコントロール コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.Controls%2A>から継承されたプロパティ、<xref:System.Web.UI.Control>クラスし、は適用されません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 <xref:System.Web.UI.WebControls.BulletedList.Controls%2A>常に基底クラスからコレクションがオーバーライドされる、<xref:System.Web.UI.EmptyControlCollection>コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayMode">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.BulletedListDisplayMode DisplayMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.BulletedListDisplayMode DisplayMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.DisplayMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.BulletedListDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのリスト内容の表示モードを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BulletedListDisplayMode" /> 値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.BulletedListDisplayMode.Text" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>リスト項目のコンテンツに適用する表示動作を指定するプロパティ、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 <xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティのいずれかを使用して、<xref:System.Web.UI.WebControls.BulletedListDisplayMode>列挙値。 次の表は、使用可能な値を一覧表示します。  
+  
+|値|として表示されます。|  
+|-----------|------------------|  
+|<xref:System.Web.UI.WebControls.BulletedListDisplayMode.Text>|テキスト|  
+|<xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>|ハイパーリンクです。|  
+|<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>|ボタンにリンクします。|  
+  
+ <xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>値では、一覧の内容をハイパーリンクとして表示することができます。 クリックすると、ハイパーリンクは、URL に移動します。 使用して、<xref:System.Web.UI.WebControls.ListItem.Value%2A>プロパティに移動するハイパーリンクの URL を指定します。  
+  
+ <xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>フィールドでは、リンクとして一覧の内容を表示することができます。 使用して、<xref:System.Web.UI.WebControls.BulletedList.Click?displayProperty=nameWithType>リンク ボタンがクリックされたときに、サーバーに通知するイベントです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>を制御し、設定、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティです。 A<xref:System.Web.UI.WebControls.ListBox>コントロールの設定が、<xref:System.Web.UI.WebControls.BulletedListDisplayMode>列挙値。 ユーザーがリスト ボックスから選択した表示モードに基づくリスト項目のコンテンツ変更の形式です。  
+  
+ [!code-aspx-csharp[BulletedListDisplayMode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListDisplayMode/CS/bulletedlistdisplaymodecs.aspx#1)]
+ [!code-aspx-vb[BulletedListDisplayMode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListDisplayMode/VB/bulletedlistdisplaymodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された型は、のいずれかではない、<see cref="T:System.Web.UI.WebControls.BulletedListDisplayMode" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstBulletNumber">
+      <MemberSignature Language="C#" Value="public virtual int FirstBulletNumber { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FirstBulletNumber" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.FirstBulletNumber" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>番号付き <see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのリスト項目に付加する番号の開始値を取得または設定します。</summary>
+        <value>番号付き <see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのリスト項目に付加する番号の開始値。 既定値は<c>1</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>プロパティを順序付けされたリスト項目の番号を開始する値を指定する<xref:System.Web.UI.WebControls.BulletedList>コントロール。 割り当てられている値、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>場合、プロパティは無視されます、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティに設定されている、 <xref:System.Web.UI.WebControls.BulletStyle.Disc>、 <xref:System.Web.UI.WebControls.BulletStyle.Square>、 <xref:System.Web.UI.WebControls.BulletStyle.Circle>、または<xref:System.Web.UI.WebControls.BulletStyle.CustomImage>値。 ただしの値、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>プロパティは、整数、数値として表示するために、箇条書き記号を常に発生しません。 設定する場合など、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>プロパティを`4`設定と、<xref:System.Web.UI.WebControls.BulletedList.BulletStyle%2A>プロパティ値を<xref:System.Web.UI.WebControls.BulletStyle.LowerAlpha>、最初の行頭文字数は、小文字 d としてレンダリングされます。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>を制御し、設定、<xref:System.Web.UI.WebControls.BulletedList.FirstBulletNumber%2A>プロパティを付加する番号のリスト項目の開始値を指定する、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 リスト項目の変更の番号付けの開始値は、ユーザーがテキスト ボックスに入力した値に基づいています。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[BulletedListFirstBulletNumber#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListFirstBulletNumber/CS/firstbulletnumbercs.aspx#1)]
+ [!code-aspx-vb[BulletedListFirstBulletNumber#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListFirstBulletNumber/VB/firstbulletnumbervb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick (System.Web.UI.WebControls.BulletedListEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick(class System.Web.UI.WebControls.BulletedListEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.OnClick(System.Web.UI.WebControls.BulletedListEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.BulletedListEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.BulletedListEventArgs" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの <see cref="E:System.Web.UI.WebControls.BulletedList.Click" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.Click>イベントは、リスト項目で、<xref:System.Web.UI.WebControls.BulletedList>コントロールをクリックします。 リスト項目を有効にする、<xref:System.Web.UI.WebControls.BulletedList>させるコントロール、<xref:System.Web.UI.WebControls.BulletedList.Click>イベントを設定する必要あります最初、<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティ値を<xref:System.Web.UI.WebControls.BulletedListDisplayMode.LinkButton>です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+ <xref:System.Web.UI.WebControls.BulletedList.OnClick%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.BulletedList.Click>のイベント、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 メッセージを表示するリスト項目がクリックされたときに、<xref:System.Web.UI.WebControls.Label>ページ上のコントロールです。  
+  
+ [!code-aspx-csharp[BulletedListClickEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListClickEvent/CS/bulletedlistclickeventcs.aspx#1)]
+ [!code-aspx-vb[BulletedListClickEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListClickEvent/VB/bulletedlistclickeventvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合、<see cref="M:System.Web.UI.WebControls.BulletedList.OnClick(System.Web.UI.WebControls.BulletedListEventArgs)" />を呼び出して派生クラスでメソッドが必ず、<see cref="M:System.Web.UI.WebControls.BulletedList.OnClick(System.Web.UI.WebControls.BulletedListEventArgs)" />デリゲートを登録するための基本クラスのメソッドは、イベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントを発生させたリスト項目のインデックスを表す文字列。</param>
+        <summary>フォームがサーバーにポストバックされるときに、<see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.RaisePostBackEvent%2A>メソッドは内部で使用される、<xref:System.Web.UI.WebControls.BulletedList>項目リスト内のリンク ボタンがクリックされたときを制御します。 含むページをクリックしたリンクのボタンのインデックスを指定します、`eventArgument`初期化するために使用するパラメーター、<xref:System.Web.UI.WebControls.BulletedListEventArgs.Index%2A>のプロパティ、<xref:System.Web.UI.WebControls.BulletedListEventArgs>オブジェクト。 <xref:System.Web.UI.WebControls.BulletedList.RaisePostBackEvent%2A>メソッドが発生し、 <xref:System.Web.UI.WebControls.BulletedList.Click> 、初期化されたを渡すことによってイベント<xref:System.Web.UI.WebControls.BulletedListEventArgs>オブジェクトを<xref:System.Web.UI.WebControls.BulletedList.OnClick%2A>メソッドです。  
+  
+ <xref:System.Web.UI.WebControls.BulletedList.RaisePostBackEvent%2A>メソッドは必要に応じて発生させる前に検証を実行できる、<xref:System.Web.UI.WebControls.BulletedList.Click>コントロールのイベントです。 内でリンク ボタンにしたときに、ページ上のコントロールのグループを検証する、<xref:System.Web.UI.WebControls.BulletedList>クリックすると、設定、<xref:System.Web.UI.WebControls.ListControl.CausesValidation%2A>プロパティを`true`で検証するコントロールのグループを指定して、<xref:System.Web.UI.WebControls.ListControl.ValidationGroup%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの内容を、クライアントへの表示用に指定された <see cref="T:System.Web.UI.HtmlTextWriter" /> オブジェクトに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.Render%2A>メソッドは、主にコントロールの開発者によって使用されます。  
+  
+ <xref:System.Web.UI.WebControls.BulletedList.Render%2A>メソッドの表示内容を書き込みます、<xref:System.Web.UI.WebControls.BulletedList>項目を使用して、指定されたクライアント<xref:System.Web.UI.HtmlTextWriter>オブジェクト。 各<xref:System.Web.UI.WebControls.BulletedList>項目が内の要素によって表される、<xref:System.Web.UI.WebControls.ListControl.Items%2A>コレクション。  
+  
+ 場合、<xref:System.Web.UI.WebControls.ListControl.Items%2A>のプロパティ、<xref:System.Web.UI.WebControls.BulletedList>コントロールが空の場合にコンテンツが表示されることはありません、<xref:System.Web.UI.HtmlTextWriter>です。 内の少なくとも 1 つのリスト項目がある場合、 <xref:System.Web.UI.WebControls.ListControl.Items%2A> 、コレクション、<xref:System.Web.UI.WebControls.BulletedList.Render%2A>メソッドの HTML コンテンツを書き込みます、<xref:System.Web.UI.WebControls.BulletedList>制御を使用して、 <xref:System.Web.UI.WebControls.WebControl.RenderBeginTag%2A>、 <xref:System.Web.UI.WebControls.BulletedList.RenderContents%2A>、および<xref:System.Web.UI.WebControls.WebControl.RenderEndTag%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderBulletText">
+      <MemberSignature Language="C#" Value="protected virtual void RenderBulletText (System.Web.UI.WebControls.ListItem item, int index, System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RenderBulletText(class System.Web.UI.WebControls.ListItem item, int32 index, class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.RenderBulletText(System.Web.UI.WebControls.ListItem,System.Int32,System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Web.UI.WebControls.ListItem" />
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="T:System.Web.UI.WebControls.BulletedList" /> の <see cref="T:System.Web.UI.WebControls.ListItem" /> オブジェクトのコレクション。</param>
+        <param name="index">コレクションから取得する <see cref="T:System.Web.UI.WebControls.ListItem" /> の 0 から始まるインデックス番号。</param>
+        <param name="writer">クライアントに HTML のコンテンツを表示する出力ストリーム。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの各リスト項目に行頭文字付きテキストを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.RenderBulletText%2A>メソッドがリスト項目ごとに行頭文字付きテキストを表示、<xref:System.Web.UI.WebControls.BulletedList>指定して制御<xref:System.Web.UI.WebControls.BulletedList.DisplayMode%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのリスト項目を、指定した <see cref="T:System.Web.UI.HtmlTextWriter" /> 内に行頭文字として表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのリスト項目の表示、<xref:System.Web.UI.WebControls.BulletedList>コントロール内の指定に行頭文字として<xref:System.Web.UI.HtmlTextWriter?displayProperty=nameWithType>です。 このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderWhenDataEmpty">
+      <MemberSignature Language="C#" Value="public virtual bool RenderWhenDataEmpty { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RenderWhenDataEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.RenderWhenDataEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ ソースにデータがない場合や、コントロールがデータ バインドされていない場合にコントロールを表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          データ ソースにデータがない場合や、コントロールがデータ バインドされていない場合にコントロールを表示する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedIndex">
+      <MemberSignature Language="C#" Value="public override int SelectedIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 SelectedIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.SelectedIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールで現在選択されている項目の 0 から始まるインデックスを取得または設定します。</summary>
+        <value>常に -1 を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスに<xref:System.Web.UI.WebControls.ListControl>、<xref:System.Web.UI.WebControls.ListControl.SelectedIndex%2A>プロパティは、現在選択されている項目の 0 から始まるインデックスを返します。 既定値は -1 です。これは、何も選択されていないことを示します。 <xref:System.Web.UI.WebControls.BulletedList.SelectedIndex%2A>プロパティには適用できません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+ **注**を使用する場合、`get`アクセサーを<xref:System.Web.UI.WebControls.BulletedList.SelectedIndex%2A>プロパティ、常に返します`-1`です。 使おうとすると、`set`アクセサーを<xref:System.Web.UI.WebControls.BulletedList.SelectedIndex%2A>プロパティが発生し、<xref:System.NotSupportedException>です。  
+  
+ イベント データを使用して、<xref:System.Web.UI.WebControls.BulletedListEventArgs>リンク ボタンのインデックスを確認するクラス、<xref:System.Web.UI.WebControls.BulletedList>がクリックされたコントロール。  
+  
+ このプロパティは、ビジュアル デザイナーでバインドできるではありませんが実行時にバインドします。 詳細については、「<xref:System.ComponentModel.BindableAttribute>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を代入しようとしましたが、<see cref="P:System.Web.UI.WebControls.BulletedList.SelectedIndex" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedItem">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.ListItem SelectedItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.ListItem SelectedItem" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.SelectedItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.ListItem</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールで現在選択されている項目を取得します。</summary>
+        <value>
+          <see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本クラスに<xref:System.Web.UI.WebControls.ListControl>、<xref:System.Web.UI.WebControls.ListControl.SelectedItem%2A>プロパティから返される、<xref:System.Web.UI.WebControls.ListItem>で現在選択されている項目を表すオブジェクト、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 既定値は、`null` です。 <xref:System.Web.UI.WebControls.BulletedList.SelectedItem%2A>プロパティには適用できません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+> [!NOTE]
+>  使用する場合、`get`アクセサーを<xref:System.Web.UI.WebControls.BulletedList.SelectedItem%2A>の選択した項目を取得するプロパティ、<xref:System.Web.UI.WebControls.BulletedList>コントロールが常に返します`null`です。  
+  
+ イベント データを使用して、<xref:System.Web.UI.WebControls.BulletedListEventArgs>リンク ボタンのインデックスを確認するクラス、<xref:System.Web.UI.WebControls.BulletedList>クリックしてされました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedValue">
+      <MemberSignature Language="C#" Value="public override string SelectedValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SelectedValue" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.SelectedValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの選択された <see cref="T:System.Web.UI.WebControls.ListItem" /> オブジェクトの <see cref="P:System.Web.UI.WebControls.ListItem.Value" /> プロパティを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BulletedList" /> の選択された <see cref="T:System.Web.UI.WebControls.ListItem" /> の <see cref="P:System.Web.UI.WebControls.ListItem.Value" />。項目が選択されていない場合は空の文字列 ("")。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.SelectedValue%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.ListControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BulletedList.SelectedValue%2A>プロパティは、内部的にに基づいて設定で選択したリスト アイテム、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 設定した場合、<xref:System.Web.UI.WebControls.BulletedList.SelectedValue%2A>プロパティを直接、<xref:System.NotSupportedException>例外がスローされます。  
+  
+ このプロパティは、ビジュアル デザイナーでバインドできるではありませんが実行時にバインドします。 詳細については、「<xref:System.ComponentModel.BindableAttribute>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を代入しようとしましたが、<see cref="P:System.Web.UI.WebControls.BulletedList.SelectedValue" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.BulletedList.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベント ハンドラーに渡すオプションのイベント引数を表す文字列。</param>
+        <summary>このメソッドの説明については、「<see cref="M:System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(System.String)" />」を参照してください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.WebControls.BulletedList> のインスタンスが <xref:System.Web.UI.IPostBackEventHandler> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定した <see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールの <see cref="T:System.Web.UI.HtmlTextWriterTag" /> 値を取得します。</summary>
+        <value>HTML テキスト ライターのタグ値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.TagKey%2A>を決定するプロパティ、<xref:System.Web.UI.HtmlTextWriterTag>に関連付けられている値、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 <xref:System.Web.UI.WebControls.BulletedList.TagKey%2A>プロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Target">
+      <MemberSignature Language="C#" Value="public virtual string Target { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Target" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.Target" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.TargetConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのハイパーリンクがクリックされたときに、リンク先の Web ページの内容を表示するウィンドウまたはフレームを取得または設定します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.BulletedList" /> のハイパーリンクがクリックされたときに、リンク先の Web ページを読み込むウィンドウまたはフレーム。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値は、A から Z (大文字)、アンダー スコアで始まる次の表に記載されている特殊な値を除くの範囲の文字で始まる必要があります。  
+  
+|値|説明|  
+|-----------|-----------------|  
+|`_blank`|新しいウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+|`_parent`|直接の親のフレーム セット内のコンテンツをレンダリングします。|  
+|`_search`|[検索] ウィンドウの内容を表示します。|  
+|`_self`|フォーカスのあるフレームのコンテンツをレンダリングします。|  
+|`_top`|フル ウィンドウ フレームを使用せずにコンテンツをレンダリングします。|  
+  
+> [!NOTE]
+>  ブラウザーのマニュアルを参照するかどうかを`_search`値はサポートされています。  たとえば、Microsoft Internet Explorer 5.0、以降のサポート、`_search`ターゲット値。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>フレームまたはときのハイパーリンクのリンク先 Web ページを表示するウィンドウを指定するプロパティ、<xref:System.Web.UI.WebControls.BulletedList>コントロールをクリックします。 内のハイパーリンクとして、リスト項目の内容を表示する、<xref:System.Web.UI.WebControls.BulletedList>コントロールを設定、<xref:System.Web.UI.WebControls.BulletedListDisplayMode>プロパティ値を<xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>です。 次に、設定、<xref:System.Web.UI.WebControls.ListItem.Value%2A>に移動する Web ページの URL に各リスト項目のプロパティです。  
+  
+ 場合、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>プロパティが設定されていないブラウザーまたはハイパーリンクがクリックされたときに、フォーカスの更新を含むウィンドウ。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BulletedList.Target%2A>としてプロパティを表示、`target`属性。 `target`属性`anchor`要素は、XHTML 1.1 ドキュメント型定義で許可されていません。 設定しないでください、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>プロパティ場合に表示される出力、 <xref:System.Web.UI.WebControls.BulletedList> XHTML 1.1 を準拠にする必要があります。 詳細については、トピックを参照してください[Visual Studio および ASP.NET で XHTML 標準](http://msdn.microsoft.com/library/1b78d416-66bb-43a5-ac77-c703aab55b97)です。  
+>   
+>  ユーザー補助対応の Web ページを作成するときに使用しないことを強くお勧め、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>を別のウィンドウを対象とするプロパティです。 詳細については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)します。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成する方法を示しています、<xref:System.Web.UI.WebControls.BulletedList>を制御し、設定、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>プロパティです。 ユーザーが選択すると、<xref:System.Web.UI.WebControls.BulletedListDisplayMode.HyperLink>リスト ボックスからモードを表示、<xref:System.Web.UI.WebControls.BulletedList.Target%2A>プロパティに設定されている`_blank`を新しいブラウザー ウィンドウでリンク先のページを表示します。  
+  
+ [!code-aspx-csharp[BulletedListDisplaymode#1](~/samples/snippets/csharp/VS_Snippets_WebNet/BulletedListDisplayMode/CS/bulletedlistdisplaymodecs.aspx#1)]
+ [!code-aspx-vb[BulletedListDisplaymode#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/BulletedListDisplayMode/VB/bulletedlistdisplaymodevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public override string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.BulletedList.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.BulletedList" /> コントロールのテキストを取得または設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.ListControl.SelectedValue" /> の項目のいずれかが選択されている場合は <see cref="T:System.Web.UI.WebControls.BulletedList" /> の <see cref="T:System.Web.UI.WebControls.BulletedList" />。選択されていない場合は空の文字列 ("")。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.BulletedList.Text%2A>から継承されたプロパティ、<xref:System.Web.UI.WebControls.ListControl>クラスし、は適用されません、<xref:System.Web.UI.WebControls.BulletedList>コントロール。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.BulletedList.Text%2A>プロパティは、内部的にに基づいて設定で選択したリスト アイテム、<xref:System.Web.UI.WebControls.BulletedList>コントロール。 設定した場合、<xref:System.Web.UI.WebControls.BulletedList.Text%2A>プロパティを直接、<xref:System.NotSupportedException>例外がスローされます。  
+  
+ アクセスできないときに、<xref:System.Web.UI.WebControls.BulletedList.Text%2A>プロパティ<xref:System.Web.UI.WebControls.BulletedList>コントロールのイベント データを使用することができます、<xref:System.Web.UI.WebControls.BulletedListEventArgs>リンク ボタンのインデックスを決めるクラスを<xref:System.Web.UI.WebControls.BulletedList>クリックしてされました。 アクセスすることができますし、<xref:System.Web.UI.WebControls.LinkButton.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.LinkButton>コントロール。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">値を代入しようとしましたが、<see cref="P:System.Web.UI.WebControls.BulletedList.Text" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,228 @@
+<Type Name="ComponentGuaranteesAttribute" FullName="System.Runtime.Versioning.ComponentGuaranteesAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComponentGuaranteesAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComponentGuaranteesAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Versioning.ComponentGuaranteesAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Module | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Event | System.AttributeTargets.Interface | System.AttributeTargets.Delegate, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンポーネント、型、または複数のバージョンにわたる可能性がある型のメンバーの互換性の保証を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>は、コンポーネント、およびクラス ライブラリの開発者によってのそれらのライブラリのコンシューマーは、複数のバージョンで期待できる互換性レベルを示すために使用します。 ライブラリまたはコンポーネントの将来のバージョンでは既存のクライアントが中断されないことの保証のレベルを示します。 クライアントが使用できるし、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>バージョンでの安定性を確保する、独自のインターフェイスの設計に役立てるためにします。  
+  
+> [!NOTE]
+>  共通言語ランタイム (CLR) は、この属性を使用して、任意の方法ではありません。 正式にコンポーネントの作成者の目的は、文書化するのには、その値があります。 コンパイル時のツールでは、宣言されている保証が破壊されるそれ以外の場合はコンパイル時エラーを検出するためにもこれらの宣言を使用できます。  
+  
+## <a name="levels-of-compatibility"></a>互換性レベル  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>のメンバーによって表されるの互換性のため、次のレベルをサポートしている、<xref:System.Runtime.Versioning.ComponentGuaranteesOptions>列挙します。  
+  
+-   バージョンの互換性なし (<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>)。 クライアントは、将来のバージョンが、既存のクライアントを中断することができます。 詳細については、次を参照してください。、[互換なし](#None)このトピックで後述します。  
+  
+-   サイド バイ サイドのバージョンの互換性 (<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>)。 コンポーネントは、同じアプリケーション ドメインで 1 つ以上のバージョンのアセンブリが読み込まれるときに使用するテスト済みです。 一般に、将来のバージョンでは、互換性を損なうことができます。 ただし、重大な変更が加えられたときの古いバージョンは変更されませんが、新しいバージョンを共存します。 サイド バイ サイド実行は、既存のクライアントが重大な変更が加えられたときの動作に必要な方法です。 詳細については、次を参照してください。、[サイド バイ サイド互換性](#SideBySide)このトピックで後述します。  
+  
+-   固定のバージョンの互換性 (<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>)。 将来のバージョンでは、クライアントを中断する必要がありますいないと、サイド バイ サイド実行が必要はありません。 ただし、クライアントが誤って破損した場合、問題を解決するサイド バイ サイド実行を使用することがあります。 詳細については、次を参照してください。、[安定した互換性](#Standard)セクションです。  
+  
+-   Exchange のバージョンの互換性 (<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>)。 異常なが注意する将来のバージョンでは、クライアントが中断されないことを確認してください。 クライアントは、互いに配置されている他のアセンブリとの通信に使用されるインターフェイスのシグネチャでこれらの型のみを使用する必要があります。 これらの型の 1 つだけのバージョンは、場合は、クライアントは、次の中断、サイド バイ サイド実行は互換性の問題を修正することはできないことを意味する特定のアプリケーション ドメイン内にあると想定されます。 詳細については、次を参照してください。、 [Exchange 型の互換性](#Exchange)セクションです。  
+  
+ 以下のセクションでは、さらに詳しく保証の各レベルについて説明します。  
+  
+<a name="None"></a>   
+### <a name="no-compatibility"></a>互換性なし  
+ コンポーネントとしてのマークを付ける<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>いるプロバイダーは、保証いたしません互換性に関することを示します。 クライアントは、公開されているインターフェイスに対するすべての依存関係を実行することを避ける必要があります。 このレベルの互換性の役に立ちますタイプは実験用またはパブリックに公開しますが、常に同時に更新されるコンポーネントのみを意図しています。 <xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>明示的に外部コンポーネントでこのコンポーネントを使用しないことを示します。  
+  
+<a name="SideBySide"></a>   
+### <a name="side-by-side-compatibility"></a>サイド バイ サイドの互換性  
+ コンポーネントとしてのマークを付ける<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>アセンブリの 1 つ以上のバージョンが同じアプリケーション ドメインに読み込まれるときに使用するコンポーネントがテストされていることを示します。 重大な変更より大きなバージョン番号を持つアセンブリに行われる限りは許可します。 引き続き以前のバージョンにバインドするアセンブリの古いバージョンにバインドされているコンポーネントが許可され、他のコンポーネントは、新しいバージョンにバインドできます。 宣言されているコンポーネントを更新することも<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.SideBySide>破壊的の古いバージョンを変更しています。  
+  
+<a name="Standard"></a>   
+### <a name="stable-compatibility"></a>安定した互換性  
+ 型をマークするとして<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>型維持される安定したバージョンを示します。 ただしも可能性があります、同じアプリケーション ドメイン内に存在する安定した型のバージョンをサイド バイ サイドのです。  
+  
+ 安定した型には、バイナリ互換性の高いバーが維持されます。 このため、プロバイダーは、安定した型に互換性に影響する変更を加える避ける必要があります。 次のような変更が可能です。  
+  
+-   プライベート インスタンス フィールドを追加またはこのシリアル化の形式は中断されません限り、その型からフィールドを削除します。  
+  
+-   シリアル化できない型をシリアル化可能な型に変更します。 (ただし、シリアル化可能な型変更できませんをシリアル化できない型です。)  
+  
+-   新規、メソッドからより派生例外をスローします。  
+  
+-   メソッドのパフォーマンスが向上します。  
+  
+-   変更がクライアントの大半に悪影響を及ぼさない限り、戻り値の範囲を変更します。  
+  
+-   業務の妥当性が高いと、悪影響を受けるクライアントの数が少ない場合、重大なバグを修正します。  
+  
+ 安定したコンポーネントの新しいバージョンは、既存のクライアントには必要ありません、ため、通常、アプリケーション ドメインで安定したコンポーネントのバージョンを 1 つだけが必要です。 ただし、この必要はありません、安定した型は、すべてのコンポーネントが合意をよく知られている exchange 型として使用されていないためです。 そのため、安定したコンポーネントの新しいバージョンにいくつかのコンポーネントが誤って破損し、その他のコンポーネントには、新しいバージョンが必要な場合は、両方、新旧のコンポーネントを読み込むことにより問題が解決される可能性があります。  
+  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>強力なバージョンの互換性が保証されて<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>です。 これは、複数バージョンのコンポーネントの一般的な既定値です。  
+  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>組み合わせて使用できます<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.SideBySide>コンポーネントが互換性を損なうことはできませんが、特定のアプリケーション ドメインに複数のバージョンが読み込まれたときの動作は、テストを示すです。  
+  
+ 型またはメソッドとしてマークされていた後<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>にアップグレードできます<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange>です。 ただし、そのことはできませんにダウン グレード<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>です。  
+  
+<a name="Exchange"></a>   
+### <a name="exchange-type-compatibility"></a>Exchange 型の互換性  
+ として型をマーク<xref:System.Runtime.Versioning.ComponentGuaranteesOptions?displayProperty=nameWithType>より強力なバージョンの互換性が保証されて<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>、最も安定したすべての種類に適用する必要があります。 これらの型は、両方の時刻 (CLR のすべてのバージョン) または任意のバージョン、コンポーネントまたはアプリケーションのすべてのコンポーネントの境界を越えて個別にビルドされたコンポーネントとスペース (プロセス間クロスと CLR で 1 つのプロセス、1 つの CLR でのアプリケーション間のドメイン) の間のやり取りに使用するものではします。 Exchange の種類に重大な変更が行われた場合、型の複数のバージョンを読み込むことにより、問題を解決することはできません。  
+  
+ 問題が重大なセキュリティ上の問題) など、非常に深刻なまたは破損の確率が (動作は、コードが持てない依存関係のランダムな方法で既に切断されました) の場合は、非常に低い場合にのみ、Exchange の種類を変更する必要があります。 Exchange の種類を次のような変更を行うことができます。  
+  
+-   新しいインターフェイス定義の継承を追加します。  
+  
+-   新たに継承されたインターフェイスの定義のメソッドを実装する新しいプライベート メソッドを追加します。  
+  
+-   新しい静的フィールドを追加します。  
+  
+-   新しい静的メソッドを追加します。  
+  
+-   新しい非仮想インスタンス メソッドを追加します。  
+  
+ 次のコード例は重大な変更を考慮して、プリミティブ型は許可されていません。  
+  
+-   シリアル化形式を変更します。 バージョン トレラントなシリアル化が必要です。  
+  
+-   追加またはプライベート インスタンス フィールドを削除します。 これは、型のシリアル化形式を変更して、リフレクションを使用するクライアント コードの重大なリスクです。  
+  
+-   型のシリアル化可能性を変更します。 シリアル化できない型される場合がありますいないシリアル化可能なまたはその逆です。  
+  
+-   メソッドから別の例外をスローしています。  
+  
+-   、メソッドの戻り値の範囲を変更する場合にのみ、メンバー定義この可能性を発生させます明確にクライアントが不明な値を処理する方法を示します。  
+  
+-   多くのバグを修正します。 型のコンシューマーは、既存の動作に依存することもできます。  
+  
+ コンポーネントの場合は後の型、またはメンバーが付いて、<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange>保証が、いずれかに変更することはできません<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>または<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>です。  
+  
+ 通常、exchange の種類には、基本的な型 (など<xref:System.Int32>と<xref:System.String>.NET Framework の) とインターフェイス (など<xref:System.Collections.Generic.IList%601>、 <xref:System.Collections.Generic.IEnumerable%601>、および<xref:System.IComparable%601>) パブリック インターフェイスでよく使用されています。  
+  
+ Exchange の種類がでもマークされているその他の型のみを公開している可能性があります<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange>互換性。 さらに、exchange の種類が変更される可能性がある Windows Api の動作に依存できません。  
+  
+## <a name="component-guarantees-a-summary"></a>コンポーネントの保証: 概要  
+ 次の表では、コンポーネントの特性と使用状況が、互換性の保証に影響を示します。  
+  
+|コンポーネントの特性|Exchange|Stable|サイド バイ サイド|なし|  
+|-------------------------------|--------------|------------|--------------------|----------|  
+|コンポーネント間のインターフェイスでそのバージョン別個に使用します。|Y|N|N|N|  
+|指定できます (プライベート) アセンブリでバージョンを個別に使用します。|Y|Y|Y|N|  
+|1 つのアプリケーション ドメインで複数のバージョンを持つことができます。|N|Y|Y|Y|  
+|互換性に影響する変更を加えることができます。|N|N|Y|Y|  
+|テストすると、アセンブリの複数のバージョンを同時に読み込むことができることを確認してください。|N|N|Y|N|  
+|インプレースにおける重大な変更を行うことができます。|N|N|N|Y|  
+|重要ではないサービスの場所で変更を非常に安全にことができます。|Y|Y|Y|Y|  
+  
+## <a name="applying-the-attribute"></a>属性を適用します。  
+ 適用することができます、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>アセンブリ、型、または型のメンバーにします。 そのアプリケーションは、階層構造です。 つまり、既定では、保証によって定義された、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute.Guarantees%2A>アセンブリ レベルで属性のプロパティは、アセンブリとそれらの型のすべてのメンバーですべての種類の保証を定義します。 同様に、保証が型に適用されている場合既定にも適用されます、型の各メンバー。  
+  
+ この継承の保証を適用することによりオーバーライドできます、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>個々 の型と型のメンバーにします。 ただし、既定値をオーバーライドすることが保証をできますのみを弱める。 保証です。これを強化ことはできません。 たとえば、アセンブリが付いている場合、<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>保証が、その型とメンバーに互換性の保証がなくと型またはアセンブリ内のメンバーに適用されるその他の保証は無視されます。  
+  
+## <a name="testing-the-guarantee"></a>保証のテスト  
+ <xref:System.Runtime.Versioning.ComponentGuaranteesAttribute.Guarantees%2A>プロパティのメンバーを返します、<xref:System.Runtime.Versioning.ComponentGuaranteesOptions>でマークされている列挙型、<xref:System.FlagsAttribute>属性。 これは、退席中の可能性がある不明なフラグをマスクして、関心のあるフラグをテストする必要があることを意味します。 次の例が、型としてマークされているかどうかをテストするなど、<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>です。  
+  
+ [!code-csharp[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/cs/apply1.cs#1)]
+ [!code-vb[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/vb/apply1.vb#1)]  
+  
+ 次の例として、型が設定されているかどうかをテスト<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>または<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange>です。  
+  
+ [!code-csharp[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/cs/apply1.cs#2)]
+ [!code-vb[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/vb/apply1.vb#2)]  
+  
+ 次のテストを使用すると、型の例としてマークされて<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.None>(は、どちらも<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Stable>も<xref:System.Runtime.Versioning.ComponentGuaranteesOptions.Exchange>)。  
+  
+ [!code-csharp[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/cs/apply1.cs#3)]
+ [!code-vb[System.Runtime.Versioning.ComponentGuaranteesAttribute.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.versioning.componentguaranteesattribute.class/vb/apply1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentGuaranteesAttribute (System.Runtime.Versioning.ComponentGuaranteesOptions guarantees);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.Versioning.ComponentGuaranteesOptions guarantees) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Versioning.ComponentGuaranteesAttribute.#ctor(System.Runtime.Versioning.ComponentGuaranteesOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="guarantees" Type="System.Runtime.Versioning.ComponentGuaranteesOptions" />
+      </Parameters>
+      <Docs>
+        <param name="guarantees">複数のバージョンで保証されている互換性レベルを指定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.Versioning.ComponentGuaranteesAttribute" />ライブラリ、型、またはメンバーを示す値を持つクラスは、複数のバージョンの互換性レベルを保証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute>クラスをインスタンス化の値、`guarantees`にパラメーターが割り当てられた、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute.Guarantees%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Guarantees">
+      <MemberSignature Language="C#" Value="public System.Runtime.Versioning.ComponentGuaranteesOptions Guarantees { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Runtime.Versioning.ComponentGuaranteesOptions Guarantees" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Versioning.ComponentGuaranteesAttribute.Guarantees" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.Versioning.ComponentGuaranteesOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ライブラリ、型、または複数のバージョンにまたがる型のメンバーとの互換性レベルの保証を示す値を取得します。</summary>
+        <value>複数のバージョンで保証されている互換性レベルを指定する列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute.Guarantees%2A>プロパティに対応して、`guarantees`のパラメーター、<xref:System.Runtime.Versioning.ComponentGuaranteesAttribute.%23ctor%2A>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,128 @@
+<Type Name="WindowHelperService" FullName="System.Activities.Presentation.Hosting.WindowHelperService">
+  <TypeSignature Language="C#" Value="public class WindowHelperService" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowHelperService extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.Hosting.WindowHelperService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント通知用のデリゲートを登録および登録解除する機能と、ウィンドウの所有権を設定する機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowHelperService (IntPtr hwnd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int hwnd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.WindowHelperService.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="hwnd" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hwnd">親ウィンドウのハンドル。</param>
+        <summary>特定の親ウィンドウへのハンドルを使用して、<see cref="T:System.Activities.Presentation.Hosting.WindowHelperService" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentWindowHwnd">
+      <MemberSignature Language="C#" Value="public IntPtr ParentWindowHwnd { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int ParentWindowHwnd" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Presentation.Hosting.WindowHelperService.ParentWindowHwnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>親ウィンドウのハンドルを取得または設定します。</summary>
+        <value><see cref="T:System.IntPtr" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterWindowMessageHandler">
+      <MemberSignature Language="C#" Value="public bool RegisterWindowMessageHandler (System.Activities.Presentation.Hosting.WindowMessage callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool RegisterWindowMessageHandler(class System.Activities.Presentation.Hosting.WindowMessage callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.WindowHelperService.RegisterWindowMessageHandler(System.Activities.Presentation.Hosting.WindowMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Activities.Presentation.Hosting.WindowMessage" />
+      </Parameters>
+      <Docs>
+        <param name="callback">イベント通知に登録するデリゲート。</param>
+        <summary>指定したデリゲートをイベント通知に登録します。</summary>
+        <returns>
+          操作が正常に終了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="callback" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TrySetWindowOwner">
+      <MemberSignature Language="C#" Value="public bool TrySetWindowOwner (System.Windows.DependencyObject source, System.Windows.Window target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TrySetWindowOwner(class System.Windows.DependencyObject source, class System.Windows.Window target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.WindowHelperService.TrySetWindowOwner(System.Windows.DependencyObject,System.Windows.Window)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Windows.DependencyObject" />
+        <Parameter Name="target" Type="System.Windows.Window" />
+      </Parameters>
+      <Docs>
+        <param name="source">所有者<c>ターゲット</c>です。</param>
+        <param name="target">によって所有されるウィンドウ<c>ソース</c>です。</param>
+        <summary>ウィンドウを、指定したウィンドウの所有者に割り当てます。</summary>
+        <returns>
+          操作が正常に終了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterWindowMessageHandler">
+      <MemberSignature Language="C#" Value="public bool UnregisterWindowMessageHandler (System.Activities.Presentation.Hosting.WindowMessage callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool UnregisterWindowMessageHandler(class System.Activities.Presentation.Hosting.WindowMessage callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.Hosting.WindowHelperService.UnregisterWindowMessageHandler(System.Activities.Presentation.Hosting.WindowMessage)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Activities.Presentation.Hosting.WindowMessage" />
+      </Parameters>
+      <Docs>
+        <param name="callback">イベント通知から削除するデリゲート。</param>
+        <summary>指定したデリゲートをイベント通知から登録解除します。</summary>
+        <returns>
+          操作が正常に終了した場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

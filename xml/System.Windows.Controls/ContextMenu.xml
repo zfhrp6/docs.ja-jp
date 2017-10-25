@@ -1,0 +1,1061 @@
+<Type Name="ContextMenu" FullName="System.Windows.Controls.ContextMenu">
+  <TypeSignature Language="C#" Value="public class ContextMenu : System.Windows.Controls.Primitives.MenuBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ContextMenu extends System.Windows.Controls.Primitives.MenuBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ContextMenu" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.MenuBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Opened")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>そのコントロールでは、コントロールのコンテキストに固有の機能を公開するポップアップ メニューを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContextMenu><xref:System.Windows.Controls.ItemsControl>、つまり、任意の型 (文字列、画像、またはパネル) などのオブジェクトのコレクションを含めることができます。 詳細については、<xref:System.Windows.Controls.ItemsControl> クラスを参照してください。  
+  
+ プロパティ、<xref:System.Windows.Controls.ContextMenu>の動作と位置を定義するクラスを使用、<xref:System.Windows.Controls.ContextMenu>です。  
+  
+ A<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>持つことができます、<xref:System.Windows.Controls.ContextMenu>です。  割り当てる場合、<xref:System.Windows.Controls.ContextMenu>を<xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.ContextMenu%2A?displayProperty=nameWithType>、プロパティ、<xref:System.Windows.Controls.ContextMenuService>クラス ユーザーとの対話に応答のコンテキスト メニューの操作を処理します。 作業の一部、<xref:System.Windows.Controls.ContextMenuService>を開いて、<xref:System.Windows.Controls.ContextMenu>ユーザーがコントロール上でマウスの右ボタンをクリックするとします。  
+  
+ 次のプロパティが定義されている、<xref:System.Windows.Controls.ContextMenu>と<xref:System.Windows.Controls.ContextMenuService>クラスです。  これらのプロパティのいずれかの両方で設定されている場合<xref:System.Windows.Controls.ContextMenu>と<xref:System.Windows.Controls.ContextMenuService>、プロパティ値を<xref:System.Windows.Controls.ContextMenuService>を使用します。  
+  
+-   <xref:System.Windows.Controls.ContextMenu.Placement%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenu.PlacementTargetProperty>  
+  
+-   <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A>  
+  
+-   <xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>  
+  
+-   <xref:System.Windows.Controls.ContextMenu.HasDropShadow%2A>  
+  
+ A<xref:System.Windows.Controls.ContextMenu>内は自動的に配置する<xref:System.Windows.Controls.Primitives.Popup>コントロール。 この動作は変更できません。  
+  
+## <a name="customizing-the-contextmenu-control"></a>ContextMenu コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.ContextMenu>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  部分とに固有の状態を表示する、<xref:System.Windows.Controls.ContextMenu>を参照してください[ContextMenu スタイルとテンプレート](~/docs/framework/wpf/controls/contextmenu-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。  プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果が場合、このプロパティは、両方に存在<xref:System.Windows.Controls.ContextMenu>コントロールの既定のテンプレートとを使用して設定をします。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.ContextMenu>のテキストを操作する、<xref:System.Windows.Controls.TextBox>です。  サブスクライブし、イベントを処理する方法を示します<xref:System.Windows.Controls.MenuItem>内のオブジェクト、<xref:System.Windows.Controls.ContextMenu>です。  
+  
+ [!code-xaml[ContextMenu#Events](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#events)]  
+  
+ [!code-csharp[MenuItemCommandsAndEvents#2](~/samples/snippets/csharp/VS_Snippets_Wpf/MenuItemCommandsAndEvents/CSharp/Window1.xaml.cs#2)]
+ [!code-vb[MenuItemCommandsAndEvents#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MenuItemCommandsAndEvents/VisualBasic/Window1.xaml.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContextMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ContextMenu" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Closed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Closed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.ContextMenu.Closed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>特定のインスタンスのときに発生する<see cref="T:System.Windows.Controls.ContextMenu" />を閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_Closed"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.ClosedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ContextMenu>イベント:<xref:System.Windows.Controls.ContextMenu.Opened>と<xref:System.Windows.Controls.ContextMenu.Closed>です。  
+  
+ [!code-xaml[ContextMenu#ContextMenuEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuevents)]  
+  
+ [!code-csharp[ContextMenu#ContextMenuEventHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#contextmenueventhandlers)]
+ [!code-vb[ContextMenu#ContextMenuEventHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#contextmenueventhandlers)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClosedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ClosedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ClosedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.ClosedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.ContextMenu.Closed" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomPopupPlacementCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.CustomPopupPlacementCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.CustomPopupPlacementCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の場所を示すコールバック、<see cref="T:System.Windows.Controls.ContextMenu" />画面上に配置する必要があります。</summary>
+        <value>コールバックの場所を指定する、<see cref="T:System.Windows.Controls.ContextMenu" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ContextMenu.Placement%2A>プロパティに設定する必要があります<xref:System.Windows.Controls.Primitives.PlacementMode.Custom>使用するコールバック デリゲート。  
+  
+ <xref:System.Windows.Controls.Primitives.CustomPopupPlacementCallback>デリゲートに関して定義されている可能性の点の配列が返された、<xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>です。 容量を最大限に高めるポイントを選択するコンテキスト メニューが表示される場合、<xref:System.Windows.Controls.ToolTip>表示されているウィンドウ。  
+  
+ 動作は、ポップアップの場合と同じです。  詳細については、次を参照してください。[する方法: カスタム ポップアップの位置を指定](~/docs/framework/wpf/controls/how-to-specify-a-custom-popup-position.md)と[ポップアップ配置サンプル](http://go.microsoft.com/fwlink/?LinkID=160032)です。  
+  
+<a name="dependencyPropertyInfo_CustomPopupPlacementCallback"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.CustomPopupPlacementCallbackProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomPopupPlacementCallbackProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.CustomPopupPlacementCallbackProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.CustomPopupPlacementCallback" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HandlesScrolling">
+      <MemberSignature Language="C#" Value="protected override bool HandlesScrolling { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HandlesScrolling" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.HandlesScrolling" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールがスクロールをサポートしているかどうかを示す値を取得します。</summary>
+        <value>常に <see langword="true" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールがある場合、<xref:System.Windows.Controls.ScrollViewer>スタイルにあり、スクロール動作、カスタム キーボード<xref:System.Windows.Controls.ListBox.HandlesScrolling%2A>返す必要があります`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadow">
+      <MemberSignature Language="C#" Value="public bool HasDropShadow { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDropShadow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.HasDropShadow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはドロップ シャドウを伴って、コンテキスト メニューが表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ドロップ シャドウでコンテキスト メニューが表示される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.ContextMenu>が開き、値は、の値に設定が<xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=nameWithType>です。 このプロパティを設定`true`も何も起こりません場合、<xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=nameWithType>プロパティは`false`します。  
+  
+<a name="dependencyPropertyInfo_"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.HasDropShadowProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.ContextMenu.HasDropShadow%2A> プロパティを使用する方法を次の例に示します。  
+  
+ [!code-xaml[ContextMenu#ContextMenuProps](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasDropShadowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasDropShadowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.HasDropShadowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.HasDropShadow" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffset">
+      <MemberSignature Language="C#" Value="public double HorizontalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.HorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポイントを取得またはターゲットの基準とポップアップの配置の間で水平方向の距離。</summary>
+        <value>ターゲットの基準とポップアップ配置ポイント間で水平方向の距離。 ターゲットの基準とポップアップ配置ポイントについては、次を参照してください。[ポップアップ配置動作](~/docs/framework/wpf/controls/popup-placement-behavior.md)です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置することができます、<xref:System.Windows.Controls.ContextMenu>を設定して、 <xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>、 <xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ContextMenu.Placement%2A>、 <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>プロパティです。  これらのプロパティ同様に動作ように、<xref:System.Windows.Controls.Primitives.Popup>です。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_HorizontalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.HorizontalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_HorizontalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HorizontalOffset="double"/>  
+- or –  
+<object HorizontalOffset ="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_HorizontalOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 明示的に、文字列では、小数点を含める必要がありますされません。 値のインスタンス`1`は許容されます。  
+  
+ 同じ<xref:System.Double>プロパティの値セクションで説明したように範囲の制限が適用されます。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ **注**多くの場合は、double 型の値を自動に設定する可能性がありますが、<xref:System.Windows.Controls.ContextMenu>オフセットが Auto に設定されている場合は表示されません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A> 、プロパティ、<xref:System.Windows.Controls.ContextMenu>を開くには、ボタンの親に関連して指定した位置。  
+  
+ [!code-xaml[ContextMenu#ContextMenuProps](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.HorizontalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpen">
+      <MemberSignature Language="C#" Value="public bool IsOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.IsOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ContextMenu" /> が表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Windows.Controls.ContextMenu" /> が可視の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Windows.Controls.ContextMenu.IsOpen%2A>に設定されている`true`、マウスのキャプチャに設定されている、<xref:System.Windows.Controls.ContextMenu>とそのサブツリーします。  
+  
+<a name="dependencyPropertyInfo_IsOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.IsOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+   
+  
+## Examples  
+ この例を確認するかどうか、<xref:System.Windows.Controls.ContextMenu.IsOpen%2A>プロパティに設定されている`true`です。  
+  
+ [!code-csharp[ContextMenu#ContextMenuIsOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#contextmenuisopen)]
+ [!code-vb[ContextMenu#ContextMenuIsOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#contextmenuisopen)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.IsOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.IsOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosed (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnClosed(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Controls.ContextMenu.Closed" />イベント。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.Controls.ContextMenu.Closed" />イベントが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して返します、<see cref="T:System.Windows.Automation.Peers.ContextMenuAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.ContextMenu" />します。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.ContextMenuAutomationPeer" />オブジェクトの<see cref="T:System.Windows.Controls.ContextMenu" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsKeyboardFocusWithinChanged">
+      <MemberSignature Language="C#" Value="protected override void OnIsKeyboardFocusWithinChanged (System.Windows.DependencyPropertyChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnIsKeyboardFocusWithinChanged(valuetype System.Windows.DependencyPropertyChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnIsKeyboardFocusWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.DependencyPropertyChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.UIElement.IsKeyboardFocusWithinChanged" />イベント。</param>
+        <summary>報告された、<see cref="P:System.Windows.UIElement.IsKeyboardFocusWithin" />プロパティを変更します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.UIElement.KeyDown" />イベント。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.ContentElement.KeyDown" />内のオブジェクトによってイベントが発生した、<see cref="T:System.Windows.Controls.ContextMenu" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyUp">
+      <MemberSignature Language="C#" Value="protected override void OnKeyUp (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyUp(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnKeyUp(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.UIElement.KeyUp" />イベント。</param>
+        <summary>応答する、<see cref="E:System.Windows.ContentElement.KeyUp" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpened">
+      <MemberSignature Language="C#" Value="protected virtual void OnOpened (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnOpened(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnOpened(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを<see cref="E:System.Windows.Controls.ContextMenu.Opened" />イベント。</param>
+        <summary>ときに呼び出されます、<see cref="E:System.Windows.Controls.ContextMenu.Opened" />イベントが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualParentChanged">
+      <MemberSignature Language="C#" Value="protected override void OnVisualParentChanged (System.Windows.DependencyObject oldParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualParentChanged(class System.Windows.DependencyObject oldParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.OnVisualParentChanged(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldParent" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="oldParent">コンテキスト メニューが以前にアタッチされているオブジェクト。</param>
+        <summary>コンテキスト メニューのビジュアル親が変更されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opened">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Opened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Opened" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.ContextMenu.Opened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテキスト メニューの特定のインスタンスが開いたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="routedEventInfo_Opened"></a>   
+## <a name="routed-event-information"></a>ルーティングされたイベント情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.OpenedEvent>|  
+|ルーティング方法|バブル|  
+|Delegate|<xref:System.Windows.RoutedEventHandler>|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ContextMenu>イベント:<xref:System.Windows.Controls.ContextMenu.Opened>と<xref:System.Windows.Controls.ContextMenu.Closed>です。  
+  
+ [!code-xaml[ContextMenu#ContextMenuEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuevents)]  
+  
+ [!code-csharp[ContextMenu#ContextMenuEventHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml.cs#contextmenueventhandlers)]
+ [!code-vb[ContextMenu#ContextMenuEventHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ContextMenu/VisualBasic/Pane1.xaml.vb#contextmenueventhandlers)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent OpenedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent OpenedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.OpenedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.ContextMenu.Opened" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Placement">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.PlacementMode Placement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.PlacementMode Placement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.Placement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PlacementMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="P:System.Windows.Controls.ContextMenu.Placement" />のプロパティ、<see cref="T:System.Windows.Controls.ContextMenu" />です。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Controls.Primitives.PlacementMode" />列挙します。 既定値は、<see cref="F:System.Windows.Controls.Primitives.PlacementMode.MousePoint" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.ContextMenu>に割り当てられている、<xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.ContextMenu%2A?displayProperty=nameWithType>プロパティ、<xref:System.Windows.Controls.ContextMenuService>このプロパティの値を変更するときに、<xref:System.Windows.Controls.ContextMenu>が開きます。 ユーザーが開いた場合、 <xref:System.Windows.Controls.ContextMenu> 、マウスを使って<xref:System.Windows.Controls.ContextMenu.Placement%2A>に設定されている<xref:System.Windows.Controls.Primitives.PlacementMode.MousePoint>です。  ユーザーが開いた場合、 <xref:System.Windows.Controls.ContextMenu> 、キーボードを使用して<xref:System.Windows.Controls.ContextMenu.Placement%2A>に設定されている<xref:System.Windows.Controls.Primitives.PlacementMode.Center>です。  位置を変更する場合、 <xref:System.Windows.Controls.ContextMenu>、設定、<xref:System.Windows.Controls.ContextMenuService.Placement%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>です。  
+  
+ 配置することができます、<xref:System.Windows.Controls.ContextMenu>を設定して、 <xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>、 <xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ContextMenu.Placement%2A>、 <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>プロパティです。  これらのプロパティ同様に動作ように、<xref:System.Windows.Controls.Primitives.Popup>です。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_Placement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.PlacementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ContextMenu.Placement%2A>プロパティと場所を指定する配置モード、<xref:System.Windows.Controls.ContextMenu>が配置されます。  
+  
+ [!code-xaml[ContextMenu#ContextMenuPlacement](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuplacement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.PlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.Placement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangle">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect PlacementRectangle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect PlacementRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.PlacementRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または開くときに、コンテキスト メニューを配置基準となる領域を設定します。</summary>
+        <value>コンテキスト メニューの配置に使用される四角形で定義される領域です。 既定値は、<see cref="P:System.Windows.Rect.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置することができます、<xref:System.Windows.Controls.ContextMenu>を設定して、 <xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>、 <xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ContextMenu.Placement%2A>、 <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>プロパティです。  これらのプロパティ同様に動作ように、<xref:System.Windows.Controls.Primitives.Popup>です。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_PlacementRectangle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.PlacementRectangleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>プロパティ場所を指定し、<xref:System.Windows.Controls.ContextMenu>が配置されます。  
+  
+ [!code-xaml[ContextMenu#ContextMenuPlacement](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuplacement)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementRectangleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementRectangleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.PlacementRectangleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.PlacementRectangle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement PlacementTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement PlacementTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.PlacementTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.UIElement" />基準となる、<see cref="T:System.Windows.Controls.ContextMenu" />開くときに配置します。</summary>
+        <value>基準となる要素、<see cref="T:System.Windows.Controls.ContextMenu" />開くときに配置します。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.ContextMenu>に割り当てられている、<xref:System.Windows.FrameworkElement.ContextMenu%2A?displayProperty=nameWithType>または<xref:System.Windows.FrameworkContentElement.ContextMenu%2A?displayProperty=nameWithType>、プロパティ、<xref:System.Windows.Controls.ContextMenuService>を所有している、このプロパティの値を変更<xref:System.Windows.FrameworkElement>または<xref:System.Windows.FrameworkContentElement>ときに、<xref:System.Windows.Controls.ContextMenu>が開きます。 別の使用を<xref:System.Windows.UIElement>、設定、<xref:System.Windows.Controls.ContextMenuService.PlacementTarget%2A?displayProperty=nameWithType>プロパティです。  
+  
+<a name="dependencyPropertyInfo_PlacementTarget"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.PlacementTargetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 対象、<xref:System.Windows.Controls.ContextMenu>親となっています。 次の例を使用する方法を示して、<xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>の親を検索するプロパティ、<xref:System.Windows.Controls.ContextMenu>です。  
+  
+ [!code-csharp[TabControlwithContextMenu#3](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlwithContextMenu/CSharp/Pane1.xaml.cs#3)]
+ [!code-vb[TabControlwithContextMenu#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TabControlwithContextMenu/visualbasic/pane1.xaml.vb#3)]  
+  
+ [!code-csharp[TabControlContextMenu_snip#FromItemContainer](~/samples/snippets/csharp/VS_Snippets_Wpf/TabControlContextMenu_snip/CSharp/Pane1.xaml.cs#fromitemcontainer)]
+ [!code-vb[TabControlContextMenu_snip#FromItemContainer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/TabControlContextMenu_snip/visualbasic/pane1.xaml.vb#fromitemcontainer)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.PlacementTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.PlacementTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ContextMenu.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">指定した項目を表示するために使用する要素。</param>
+        <param name="item">指定した項目。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要素の準備可能性があります、バインドの設定、スタイルの適用を必要とします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaysOpen">
+      <MemberSignature Language="C#" Value="public bool StaysOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StaysOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.StaysOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Windows.Controls.ContextMenu" />自動的に閉じる必要があります。</summary>
+        <value>
+          <see langword="true" />場合は、メニューまで開いたままにする必要があります、<see cref="P:System.Windows.Controls.ContextMenu.IsOpen" />プロパティに対する変更を<see langword="false" />、それ以外の<see langword="false" />します。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_StaysOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.StaysOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ContextMenu.StaysOpen%2A>プロパティをコンテキスト メニューを開いたままになり、イベントが発生するまで変更する、<xref:System.Windows.Controls.ContextMenu.IsOpen%2A>プロパティを`false`です。  
+  
+ [!code-xaml[ContextMenu#ContextMenuEvents](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuevents)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaysOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StaysOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StaysOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.StaysOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.StaysOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffset">
+      <MemberSignature Language="C#" Value="public double VerticalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ContextMenu.VerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポイントを取得またはターゲットの基準とポップアップの配置の間の垂直距離です。</summary>
+        <value>ターゲットの基準とポップアップ配置ポイント間の垂直距離です。 ターゲットの基準とポップアップ配置ポイントについては、次を参照してください。[ポップアップ配置動作](~/docs/framework/wpf/controls/popup-placement-behavior.md)です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配置することができます、<xref:System.Windows.Controls.ContextMenu>を設定して、 <xref:System.Windows.Controls.ContextMenu.PlacementTarget%2A>、 <xref:System.Windows.Controls.ContextMenu.PlacementRectangle%2A>、 <xref:System.Windows.Controls.ContextMenu.Placement%2A>、 <xref:System.Windows.Controls.ContextMenu.HorizontalOffset%2A>、および<xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>プロパティです。  これらのプロパティ同様に動作ように、<xref:System.Windows.Controls.Primitives.Popup>です。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_VerticalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.ContextMenu.VerticalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_VerticalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object VerticalOffset="double"/>  
+- or –  
+<object VerticalOffset ="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_VerticalOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *double*  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 明示的に、文字列では、小数点を含める必要がありますされません。 値のインスタンス、`1`は許容されます。 同じ<xref:System.Double>プロパティの値セクションで説明したように範囲の制限が適用されます。  
+  
+ *qualifiedDouble*  
+ A*二重*値、上記と続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+> [!NOTE]
+>  Double 型を Auto に設定することが多くの場合は、<xref:System.Windows.Controls.ContextMenu>オフセットが自動に設定されている場合は表示されません。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.Controls.ContextMenu.VerticalOffset%2A> 、プロパティ、<xref:System.Windows.Controls.ContextMenu>を開くには、ボタンの親に関連して指定した位置。  
+  
+ [!code-xaml[ContextMenu#ContextMenuProps](~/samples/snippets/csharp/VS_Snippets_Wpf/ContextMenu/CSharp/Pane1.xaml#contextmenuprops)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.ContextMenu.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.ContextMenu.VerticalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

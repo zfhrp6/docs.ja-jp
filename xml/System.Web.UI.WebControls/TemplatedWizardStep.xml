@@ -1,0 +1,239 @@
+<Type Name="TemplatedWizardStep" FullName="System.Web.UI.WebControls.TemplatedWizardStep">
+  <TypeSignature Language="C#" Value="public class TemplatedWizardStep : System.Web.UI.WebControls.WizardStepBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TemplatedWizardStep extends System.Web.UI.WebControls.WizardStepBase" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TemplatedWizardStep" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WizardStepBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.WizardStepControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.Themeable(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テンプレートを使用してカスタマイズできるウィザード コントロールの手順を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TemplatedWizardStep>ウィザードとして機能するコントロールの手順にテンプレートを適用する開発者を有効にするクラスが用意されています。 <xref:System.Web.UI.WebControls.TemplatedWizardStep>主にコントロールの開発者によって使用されるクラスが目的としています。  
+  
+ テーマを適用する<xref:System.Web.UI.WebControls.TemplatedWizardStep>です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.UI.WebControls.TemplatedWizardStep>クラスでは、その中のコンテンツとナビゲーション テンプレートをカスタマイズすることができます。 次の例では、テンプレートに基づくウィザードの手順を定義する方法を示します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplate%2A>プロパティでは、通常、現在のビューの下部に表示されるナビゲーション ブロックのフル コントロールを実行することができます。 通常は、一連のボタンをナビゲーション ブロックを入力します。 ただし、その他のコントロールは、許容可能な限り、バブル、同様のコマンドをサポートする、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.TemplatedWizardStep#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.TemplatedWizardStep/CS/templatedwizardstepcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.TemplatedWizardStep#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.TemplatedWizardStep/VB/templatedwizardstepvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TemplatedWizardStep ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TemplatedWizardStep.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TemplatedWizardStep" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate ContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplatedWizardStep.ContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.Wizard))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のステップは、コンテンツを表示するためのテンプレート、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />のステップは、コンテンツを表示するためのテンプレートを格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContentTemplateContainer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ContentTemplateContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control ContentTemplateContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplatedWizardStep.ContentTemplateContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーを取得、<see cref="T:System.Web.UI.WebControls.Wizard" />を作成するコントロールを使用して、<see cref="P:System.Web.UI.WebControls.TemplatedWizardStep.ContentTemplate" />ステップ用のテンプレートです。</summary>
+        <value>A<see cref="T:System.Web.UI.Control" />を格納している、<see cref="P:System.Web.UI.WebControls.TemplatedWizardStep.ContentTemplate" />ステップ用のテンプレートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構文には、設定が含まれていますが、<xref:System.Web.UI.WebControls.TemplatedWizardStep.ContentTemplateContainer%2A>プロパティには、内部でのみ、使用のため、プロパティは読み取り専用効果的にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomNavigationTemplate">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.ITemplate CustomNavigationTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate CustomNavigationTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.TemplateContainer(typeof(System.Web.UI.WebControls.Wizard))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のステップは、ナビゲーション ユーザー インターフェイス (UI) を表示するため、テンプレート、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />ステップのナビゲーション UI を表示するためのテンプレートが含まれるオブジェクトで、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomNavigationTemplateContainer">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control CustomNavigationTemplateContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control CustomNavigationTemplateContainer" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplateContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンテナーを取得、<see cref="T:System.Web.UI.WebControls.Wizard" />を作成するコントロールを使用して、<see cref="P:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplate" />ステップ用のテンプレートです。</summary>
+        <value>A<see cref="T:System.Web.UI.Control" />を格納している、<see cref="P:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplate" />ステップ用のテンプレートです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構文には、設定が含まれていますが、<xref:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplateContainer%2A>プロパティには、内部でのみ、使用のため、プロパティは読み取り専用効果的にします。 コードで、ことを確認する必要があります、<xref:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplateContainer%2A>プロパティは使用されません`null`参照する前にします。  
+  
+ このプロパティは、ビジュアル デザイナーでバインドできるではありませんが実行時にバインドします。 詳細については、「<xref:System.ComponentModel.BindableAttribute>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException">場合<see cref="P:System.Web.UI.WebControls.TemplatedWizardStep.CustomNavigationTemplate" />コンテンツがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SkinID">
+      <MemberSignature Language="C#" Value="public override string SkinID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SkinID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TemplatedWizardStep.SkinID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールに適用するスキンを取得または設定します。</summary>
+        <value>コントロールに適用するスキンの名前。 既定値は、<see cref="F:System.String.Empty" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

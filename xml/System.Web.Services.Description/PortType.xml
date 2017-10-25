@@ -1,0 +1,138 @@
+<Type Name="PortType" FullName="System.Web.Services.Description.PortType">
+  <TypeSignature Language="C#" Value="public sealed class PortType : System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PortType extends System.Web.Services.Description.NamedItem" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.PortType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.NamedItem</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPoint("Extensions")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>抽象操作と、対応する抽象メッセージの名前付きセットを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Description.PortType>クラスが Web サービス記述言語 (WSDL) に対応しています`portType`要素で囲ま、`definitions`ルート要素です。 WSDL の詳細については、http://www.w3.org/TR/wsdl の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ [!code-cpp[PortType_Class#1](~/samples/snippets/cpp/VS_Snippets_Remoting/PortType_Class/CPP/porttype_class.cpp#1)]
+ [!code-csharp[PortType_Class#1](~/samples/snippets/csharp/VS_Snippets_Remoting/PortType_Class/CS/porttype_class.cs#1)]
+ [!code-vb[PortType_Class#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/PortType_Class/VB/porttype_class.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PortType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.PortType.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.PortType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Extensions">
+      <MemberSignature Language="C#" Value="public override System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection Extensions" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.PortType.Extensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.PortType" /> を取得します。</summary>
+        <value>この <see cref="T:System.Web.Services.Description.ServiceDescriptionFormatExtensionCollection" /> に関連付けられている <see cref="T:System.Web.Services.Description.PortType" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Operations">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.OperationCollection Operations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.OperationCollection Operations" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.PortType.Operations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlElement("operation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.OperationCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Web.Services.Description.Operation" />によって定義されているインスタンス、<see cref="T:System.Web.Services.Description.PortType" />です。</summary>
+        <value>によって定義された操作のインスタンスのコレクション、<see cref="T:System.Web.Services.Description.PortType" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-cpp[PortType#1](~/samples/snippets/cpp/VS_Snippets_Remoting/PortType/CPP/porttype.cpp#1)]
+ [!code-csharp[PortType#1](~/samples/snippets/csharp/VS_Snippets_Remoting/PortType/CS/porttype.cs#1)]
+ [!code-vb[PortType#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/PortType/VB/porttype.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceDescription">
+      <MemberSignature Language="C#" Value="public System.Web.Services.Description.ServiceDescription ServiceDescription { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Services.Description.ServiceDescription ServiceDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.PortType.ServiceDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Services.Description.ServiceDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Services.Description.ServiceDescription" />うち、<see cref="T:System.Web.Services.Description.PortType" />メンバーであります。</summary>
+        <value>これのサービスの説明、<see cref="T:System.Web.Services.Description.PortType" />メンバーであります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ PortType_ServiceDescription #1  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,83 @@
+<Type Name="IFilterResolutionService" FullName="System.Web.UI.IFilterResolutionService">
+  <TypeSignature Language="C#" Value="public interface IFilterResolutionService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IFilterResolutionService" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.IFilterResolutionService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>開発者が名前でのデバイス フィルターの評価に使用するデザイナーのインターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの開発者およびコントロールの作成者は使用しないでください、<xref:System.Web.UI.IFilterResolutionService>インターフェイスです。 <xref:System.Web.UI.IFilterResolutionService>インターフェイス デザイナー環境でコントロールを解析し、永続化するときに、デバイス フィルターに関連するサービスを提供するデザイナーの開発者によって実装されます。  
+  
+ <xref:System.Web.UI.IFilterResolutionService>インターフェイスは、デザイナーの開発者は、フィルター選択されたプロパティの編集をサポートする必要がある場合に使用します。  
+  
+ <xref:System.Web.UI.IFilterResolutionService>インターフェイスは、デザイナーの環境でのデバイス フィルターのコントロールの使用を特定します。 コントロールが解析またはブラウザーの要求のコンテキスト外のデザイナー環境で保存されるとき、<xref:System.Web.UI.IFilterResolutionService>インターフェイスには、現在のコントロールが名前付きフィルターによって影響を受けるかどうかと、名前付きフィルターとは、特定のデバイス フィルター階層の一部かどうかを決定する方法が用意されています。  
+  
+ <xref:System.Web.Configuration.HttpCapabilitiesBase> クラスは、<xref:System.Web.UI.IFilterResolutionService> インターフェイスを実装します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CompareFilters">
+      <MemberSignature Language="C#" Value="public int CompareFilters (string filter1, string filter2);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 CompareFilters(string filter1, string filter2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IFilterResolutionService.CompareFilters(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filter1" Type="System.String" />
+        <Parameter Name="filter2" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filter1">デバイス フィルター名。</param>
+        <param name="filter2">デバイス フィルター名</param>
+        <summary>デバイス フィルターを指定した 2 つの間の親子リレーションシップが存在するかどうかを示す値を返します。</summary>
+        <returns>によって識別されるデバイス フィルターの場合は 1<paramref name="filter1" />で識別されるフィルターの親である<paramref name="filter2" />でデバイス フィルターが識別される場合は-1<paramref name="filter2" />で識別されるフィルターの親である<paramref name="filter1" />、親子リレーションシップが存在しない場合は 02 つのフィルター間。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EvaluateFilter">
+      <MemberSignature Language="C#" Value="public bool EvaluateFilter (string filterName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EvaluateFilter(string filterName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.IFilterResolutionService.EvaluateFilter(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="filterName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="filterName">デバイス フィルターの名前。</param>
+        <summary>指定されたフィルターがフィルターの現在のオブジェクトの型かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定されたフィルターが現在のフィルターのオブジェクトに適用可能な型の場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.IFilterResolutionService.EvaluateFilter%2A>メソッドを判断するかどうか、名前付きデバイス フィルターでサポートされているフィルターの種類、<xref:System.Web.UI.IFilterResolutionService>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,1134 @@
+<Type Name="MediaCommands" FullName="System.Windows.Input.MediaCommands">
+  <TypeSignature Language="C#" Value="public static class MediaCommands" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit MediaCommands extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MediaCommands" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>一連の標準的なメディア関連コマンドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のコマンド、<xref:System.Windows.Input.MediaCommands>クラスと、他のコマンドなど、ライブラリ クラスをコマンド<xref:System.Windows.Input.ComponentCommands>と<xref:System.Windows.Input.ApplicationCommands>、アプリケーション プログラマが頻繁に発生する一般的なコマンドのセットを表すものではします。  コマンドでは、インスタンスのみを表す、<xref:System.Windows.Input.RoutedCommand>とコマンドの実装ロジックではありません。 実装ロジックを使用してコマンドを<xref:System.Windows.UIElement.CommandBindings%2A>です。  たとえば場合、<xref:System.Windows.Input.MediaCommands.Play%2A>コントロール (コマンドのターゲット) を実行するロジックでコマンドの実行、<xref:System.Windows.Input.MediaCommands.Play%2A>コマンドできない可能性があります指定コマンド ターゲットによってためアプリケーション ライターを担当するコマンドのターゲットがコマンドを処理する方法を決定するロジックを記述します。  
+  
+ 多くのコントロールは、コマンドのライブラリ内のコマンドの多くの実装ロジックを提供しないでください。  など、<xref:System.Windows.Controls.TextBox>クラスのロジックを提供する、<xref:System.Windows.Input.ApplicationCommands.Paste%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Cut%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Copy%2A>コマンド、<xref:System.Windows.Input.ApplicationCommands.Undo%2A>コマンド、および<xref:System.Windows.Input.ApplicationCommands.Redo%2A>コマンド。  
+  
+ 詳細については、コマンドとコマンド実行を参照してください、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BoostBass">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand BoostBass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand BoostBass" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.BoostBass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[低音を強調] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>低音を上げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、低音の強調をオンまたはオフに切り替えることを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_BoostBass"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="BoostBass"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelDown">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ChannelDown { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ChannelDown" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.ChannelDown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャンネル ダウン コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>チャンネル ダウン  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、チャネルの値をデクリメントを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ChannelDown"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ChannelDown"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelUp">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ChannelUp { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ChannelUp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.ChannelUp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャンネル アップ コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>チャンネル アップ  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、チャネル値をインクリメントすることを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ChannelUp"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ChannelUp"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseBass">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand DecreaseBass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand DecreaseBass" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.DecreaseBass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>低音を下げるコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>低音を下げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、低音を下げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_DecreaseBass"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="DecreaseBass"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseMicrophoneVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand DecreaseMicrophoneVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand DecreaseMicrophoneVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.DecreaseMicrophoneVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイクの音量を下げるコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>マイクの音量を下げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、マイクの音量を下げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_DecreaseMicrophoneVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="DecreaseMicrophoneVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseTreble">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand DecreaseTreble { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand DecreaseTreble" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.DecreaseTreble" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[高音を下げる] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>高音を下げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、高音を下げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_DecreaseTreble"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="DecreaseTreble"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DecreaseVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand DecreaseVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand DecreaseVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.DecreaseVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボリュームを下げるコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>音量を下げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、音量を下げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_DecreaseVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="DecreaseVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FastForward">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand FastForward { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand FastForward" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.FastForward" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>早送りコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>高速順方向  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、再生速度を向上させることを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_FastForward"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="FastForward"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseBass">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand IncreaseBass { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand IncreaseBass" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.IncreaseBass" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[低音を上げる] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>低音を上げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、低音を上げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_IncreaseBass"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="IncreaseBass"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseMicrophoneVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand IncreaseMicrophoneVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand IncreaseMicrophoneVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.IncreaseMicrophoneVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[マイクの音量を上げる] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>マイクの音量を上げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、マイクの音量を上げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_IncreaseMicrophoneVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="IncreaseMicrophoneVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseTreble">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand IncreaseTreble { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand IncreaseTreble" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.IncreaseTreble" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高音を上げるコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>高音を上げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、高音を上げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_IncreaseTreble"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="IncreaseTreble"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncreaseVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand IncreaseVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand IncreaseVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.IncreaseVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボリュームを上げるコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>音量を上げる  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、音量を上げるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_IncreaseVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="IncreaseVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MuteMicrophoneVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MuteMicrophoneVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MuteMicrophoneVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.MuteMicrophoneVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[マイクの音量をミュート] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>マイクの音量をミュートします。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、マイクのミュートを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MuteMicrophoneVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MuteMicrophoneVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MuteVolume">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand MuteVolume { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand MuteVolume" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.MuteVolume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[音量をミュート] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>音量をミュート  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、音量をミュートを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_MuteVolume"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="MuteVolume"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextTrack">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand NextTrack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand NextTrack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.NextTrack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>次のトラック コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>次のトラック  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、次のトラックを選択することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_NextTrack"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="NextTrack"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Pause { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Pause" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Pause" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一時停止コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>一時停止  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、再生を一時停止を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Pause"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Pause"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Play">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Play { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Play" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Play" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>再生コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>再生  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、現在の位置で再生を開始することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Play"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Play"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousTrack">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand PreviousTrack { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand PreviousTrack" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.PreviousTrack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>「前のトラック」コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>前のトラック  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、前のトラックを選択することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_PreviousTrack"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="PreviousTrack"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Record">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Record { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Record" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Record" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>録音コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>レコード  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、録音を開始することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Record"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Record"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rewind">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Rewind { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Rewind" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Rewind" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[巻き戻し] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>巻き戻し  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、逆方向に再生を設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Rewind"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Rewind"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Select { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Select" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Select" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>選択コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>選択します。  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、選択モードにメディアを挿入するという意図を示しています。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Select"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Select"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand Stop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand Stop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.Stop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>停止コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>停止  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドでは、再生を停止することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_Stop"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="Stop"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToggleMicrophoneOnOff">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand ToggleMicrophoneOnOff { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand ToggleMicrophoneOnOff" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.ToggleMicrophoneOnOff" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マイクのオン/オフの切り替えコマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>トグル マイク OnOff  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、マイクのオンとオフ切り替えるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_ToggleMicrophoneOnOff"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="ToggleMicrophoneOnOff"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TogglePlayPause">
+      <MemberSignature Language="C#" Value="public static System.Windows.Input.RoutedUICommand TogglePlayPause { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Input.RoutedUICommand TogglePlayPause" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MediaCommands.TogglePlayPause" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.RoutedUICommand</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[再生/一時停止の切り替え] コマンドを表す値を取得します。</summary>
+        <value>コマンド。  
+  
+ <list type="table"><listheader><term>既定値  
+  
+ </term><description></description></listheader><item><term>キー ジェスチャ  
+  
+ </term><description>ジェスチャが定義されていません。  
+  
+ </description></item><item><term>UI テキスト  
+  
+ </term><description>トグル再生の一時停止  
+  
+ </description></item></list></value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコマンドは、再生および一時停止の間での再生を切り替えるを設定することを示します。  
+  
+ 必ずしも; 任意のオブジェクトのコマンドに対応する実際の実装がありません。多くの場合は、そのコマンドに応答の実装は、アプリケーションの作成者の責任がします。  
+  
+<a name="xamlAttributeUsage_TogglePlayPause"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="TogglePlayPause"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,485 @@
+<Type Name="BindableAttribute" FullName="System.ComponentModel.BindableAttribute">
+  <TypeSignature Language="C#" Value="public sealed class BindableAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BindableAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.BindableAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.All)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインディングの通常のメンバーが使用されるかどうかを指定します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数のメンバーでは、通常のプロパティで、コントロールのこの属性を指定することができます。  
+  
+ プロパティでマークされている場合、 <xref:System.ComponentModel.BindableAttribute> 'éý'`true`をそのプロパティのプロパティの変更通知を発生する必要があります。 つまり、<xref:System.ComponentModel.BindableAttribute.Bindable%2A>プロパティは<xref:System.ComponentModel.BindableAttribute.Yes>、双方向データ バインディングをサポートします。 場合<xref:System.ComponentModel.BindableAttribute.Bindable%2A>は<xref:System.ComponentModel.BindableAttribute.No>プロパティにもバインドできますが、必要がありますは示されませんプロパティの既定のセットに、バインドする場合がありますか、プロパティの変更通知を発生させることがないためです。  
+  
+> [!NOTE]
+>  持つプロパティを指定すると<xref:System.ComponentModel.BindableAttribute.%23ctor%2A>'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.BindableAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.BindableAttribute.%23ctor%2A>'éý' `false`、値が<xref:System.ComponentModel.BindableAttribute.No>です。 そのため、コード内でこの属性の値を確認する必要がありますを指定する属性として<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.BindableAttribute.No?displayProperty=nameWithType>です。  
+  
+> [!CAUTION]
+>  この属性は、デザイン時にのみ使用できます。 何もできなくなりますバインディング任意のプロパティに実行時。  
+  
+ 詳細については、「[属性](~/docs/standard/attributes/index.md)」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバインドに該当するプロパティをマークします。  
+  
+ [!code-cpp[Classic BindableAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindableAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic BindableAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute Example/VB/source.vb#1)]  
+  
+ 次のコード例の値を確認する方法を示しています、<xref:System.ComponentModel.BindableAttribute>の`MyProperty`します。 最初に、コードを取得、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。 次に、インデックス、コード、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。 最後に、このプロパティの属性を返し、それらの属性の変数に保存します。 このコード例は次の 2 通りの値をチェックする、<xref:System.ComponentModel.BindableAttribute>です。 この例では、2 つ目のコード フラグメントで、<xref:System.Object.Equals%2A>メソッドです。 この例では、最後のコード フラグメントで、<xref:System.ComponentModel.BindableAttribute.Bindable%2A>プロパティの値を確認します。  
+  
+ [!code-cpp[Classic BindableAttribute Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic BindableAttribute Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute Example/CS/source.cs#2)]
+ [!code-vb[Classic BindableAttribute Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute Example/VB/source.vb#2)]  
+  
+ 持つクラスをマークした場合、 <xref:System.ComponentModel.BindableAttribute>、次のコード例を使用して値を確認します。  
+  
+ [!code-cpp[Classic BindableAttribute Example#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute Example/CPP/source.cpp#3)]
+ [!code-csharp[Classic BindableAttribute Example#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute Example/CS/source.cs#3)]
+ [!code-vb[Classic BindableAttribute Example#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute Example/VB/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindableAttribute (bool bindable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool bindable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="bindable">
+          <see langword="true" />バインディングのプロパティを使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.BindableAttribute" />ブール値を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.BindableAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.BindableAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.BindableAttribute>'éý' `false`、値が<xref:System.ComponentModel.BindableAttribute.No>です。 そのため、コード内でこの属性の値を確認する必要がありますを指定する属性として<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.BindableAttribute.No?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバインドに該当するプロパティをマークします。 このコード例が新たに作成<xref:System.ComponentModel.BindableAttribute>、その値に設定<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic BindableAttribute.BindableAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindableAttribute.BindableAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic BindableAttribute.BindableAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindableAttribute (System.ComponentModel.BindableSupport flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.BindableSupport flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.#ctor(System.ComponentModel.BindableSupport)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flags" Type="System.ComponentModel.BindableSupport" />
+      </Parameters>
+      <Docs>
+        <param name="flags"><see cref="T:System.ComponentModel.BindableSupport" /> 値のいずれか。</param>
+        <summary><see cref="T:System.ComponentModel.BindableAttribute" /> クラスの新しいインスタンスを <see cref="T:System.ComponentModel.BindableSupport" /> の値のいずれかで初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、 <xref:System.ComponentModel.BindableAttribute> 'éý' `true`、この属性の値が定数のメンバーに設定されます<xref:System.ComponentModel.BindableAttribute.Yes>です。 マークされたプロパティの<xref:System.ComponentModel.BindableAttribute>'éý' `false`、値が<xref:System.ComponentModel.BindableAttribute.No>です。 そのため、コード内でこの属性の値を確認する必要がありますを指定する属性として<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>または<xref:System.ComponentModel.BindableAttribute.No?displayProperty=nameWithType>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、データをバインドに該当するプロパティをマークします。 このコード例が新たに作成<xref:System.ComponentModel.BindableAttribute>、その値に設定<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>、し、プロパティにバインドします。  
+  
+ [!code-cpp[Classic BindableAttribute.BindableAttribute1 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute1 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindableAttribute.BindableAttribute1 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute1 Example/CS/source.cs#1)]
+ [!code-vb[Classic BindableAttribute.BindableAttribute1 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute.BindableAttribute1 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindableAttribute (bool bindable, System.ComponentModel.BindingDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool bindable, valuetype System.ComponentModel.BindingDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.#ctor(System.Boolean,System.ComponentModel.BindingDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bindable" Type="System.Boolean" />
+        <Parameter Name="direction" Type="System.ComponentModel.BindingDirection" />
+      </Parameters>
+      <Docs>
+        <param name="bindable">
+          <see langword="true" />バインディングのプロパティを使用するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="direction"><see cref="T:System.ComponentModel.BindingDirection" /> 値のいずれか。</param>
+        <summary><see cref="T:System.ComponentModel.BindableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindableAttribute (System.ComponentModel.BindableSupport flags, System.ComponentModel.BindingDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.ComponentModel.BindableSupport flags, valuetype System.ComponentModel.BindingDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.#ctor(System.ComponentModel.BindableSupport,System.ComponentModel.BindingDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="flags" Type="System.ComponentModel.BindableSupport" />
+        <Parameter Name="direction" Type="System.ComponentModel.BindingDirection" />
+      </Parameters>
+      <Docs>
+        <param name="flags"><see cref="T:System.ComponentModel.BindableSupport" /> 値のいずれか。</param>
+        <param name="direction"><see cref="T:System.ComponentModel.BindingDirection" /> 値のいずれか。</param>
+        <summary><see cref="T:System.ComponentModel.BindableAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bindable">
+      <MemberSignature Language="C#" Value="public bool Bindable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Bindable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindableAttribute.Bindable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングのプロパティが通常使用されることを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティは、通常、バインドに使用される場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を参照してくださいかどうか確認するかどうか`MyProperty`バインド可能です。 最初の属性の取得コード`MyProperty`次の手順で。  
+  
+-   取得する、<xref:System.ComponentModel.PropertyDescriptorCollection>オブジェクトのすべてのプロパティをします。  
+  
+-   インデックスを付ける、<xref:System.ComponentModel.PropertyDescriptorCollection>を取得する`MyProperty`です。  
+  
+-   このプロパティの属性の属性変数に保存します。  
+  
+ コードを設定し、`myAttribute`の値に、<xref:System.ComponentModel.BindableAttribute>で、<xref:System.ComponentModel.AttributeCollection>し、プロパティがバインド可能かどうかを確認します。  
+  
+ このコード例を実行するには、完全修飾アセンブリ名を指定する必要があります。 アセンブリの完全修飾名を取得する方法については、次を参照してください。  
+  
+ [アセンブリ名](~/docs/framework/app-domains/assembly-names.md)です。  
+  
+ [!code-cpp[Classic BindableAttribute.Bindable Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindableAttribute.Bindable Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindableAttribute.Bindable Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindableAttribute.Bindable Example/CS/source.cs#1)]
+ [!code-vb[Classic BindableAttribute.Bindable Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindableAttribute.Bindable Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BindableAttribute Default;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BindableAttribute Default" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BindableAttribute.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BindableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値を指定します、 <see cref="T:System.ComponentModel.BindableAttribute" />、これは<see cref="F:System.ComponentModel.BindableAttribute.No" />します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を持つプロパティをマークすると、<xref:System.ComponentModel.BindableAttribute>定数のメンバーに設定されている<xref:System.ComponentModel.BindableAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうか確認する場合は、として属性を指定する必要があります<xref:System.ComponentModel.BindableAttribute?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.BindingDirection Direction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.BindingDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.BindableAttribute.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BindingDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティのデータ バインディングの方向を示す値を取得します。</summary>
+        <value>このプロパティのデータ バインディングの方向です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>2 つの <see cref="T:System.ComponentModel.BindableAttribute" /> オブジェクトが等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.ComponentModel.BindableAttribute" />が現在に等しい<see cref="T:System.ComponentModel.BindableAttribute" />です。<see langword="false" />が等しくない場合。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能、<see cref="T:System.ComponentModel.BindableAttribute" />クラスです。</summary>
+        <returns>現在の <see cref="T:System.ComponentModel.BindableAttribute" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDefaultAttribute">
+      <MemberSignature Language="C#" Value="public override bool IsDefaultAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsDefaultAttribute() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.BindableAttribute.IsDefaultAttribute" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この属性が既定値であるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />属性がこの属性クラスの既定値である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="No">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BindableAttribute No;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BindableAttribute No" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BindableAttribute.No" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BindableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが通常はバインドに使用されないことを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.BindableAttribute.No>フィールドは既定の設定、<xref:System.ComponentModel.BindableAttribute>です。  
+  
+ 持つプロパティを指定すると、<xref:System.ComponentModel.BindableAttribute.%23ctor%2A>値のコンス トラクター`false,`定数のメンバーにこの属性の値が設定<xref:System.ComponentModel.BindableAttribute.No>です。 そのため、属性がコード内でこの値に設定されているかどうかを確認する必要がありますを指定する属性として<xref:System.ComponentModel.BindableAttribute.No?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Yes">
+      <MemberSignature Language="C#" Value="public static readonly System.ComponentModel.BindableAttribute Yes;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.ComponentModel.BindableAttribute Yes" />
+      <MemberSignature Language="DocId" Value="F:System.ComponentModel.BindableAttribute.Yes" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.BindableAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングのプロパティが通常使用されることを指定します。 このフィールドは読み取り専用です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 持つプロパティを指定すると、<xref:System.ComponentModel.BindableAttribute.%23ctor%2A>値のコンス トラクター`true`の値、<xref:System.ComponentModel.BindableAttribute>定数のメンバーに設定されている<xref:System.ComponentModel.BindableAttribute.Yes>です。 そのため、属性がコード内でこの値に設定されているかどうかを確認する必要がありますを指定する属性として<xref:System.ComponentModel.BindableAttribute.Yes?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

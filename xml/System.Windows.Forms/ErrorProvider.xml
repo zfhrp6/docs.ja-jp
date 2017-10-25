@@ -1,0 +1,951 @@
+<Type Name="ErrorProvider" FullName="System.Windows.Forms.ErrorProvider">
+  <TypeSignature Language="C#" Value="public class ErrorProvider : System.ComponentModel.Component, System.ComponentModel.IExtenderProvider, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ErrorProvider extends System.ComponentModel.Component implements class System.ComponentModel.IExtenderProvider, class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ErrorProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.Component</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IExtenderProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ComplexBindingProperties("DataSource", "DataMember")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("IconPadding", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("IconAlignment", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ProvideProperty("Error", typeof(System.Windows.Forms.Control))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItemFilter("System.Windows.Forms")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>フォーム上のコントロールに関連するエラーがあることを示すためのユーザー インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ErrorProvider>フォーム上のコントロールに関連付けられているエラーがあることをエンドユーザーに示す単純なメカニズムについて説明します。 コントロールのエラーを説明する文字列を指定すると、コントロールの横にアイコンが表示されます。 指定された方法で、アイコンの点滅<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>で指定したレートで<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>です。 アイコンの上にマウスを置くと、エラーを説明する文字列を示すツールヒントが表示されます。  
+  
+ 通常、使用して<xref:System.Windows.Forms.ErrorProvider>データ バインド コントロールに関連します。 使用する場合<xref:System.Windows.Forms.ErrorProvider>、データ バインド コントロールを指定する必要があります、 <xref:System.Windows.Forms.ErrorProvider.ContainerControl%2A>、コンス トラクターで、または設定、<xref:System.Windows.Forms.ErrorProvider.ContainerControl%2A>プロパティです。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.ErrorProvider>コンポーネントがユーザー補助クライアントの組み込みサポートを提供していません。 アプリケーション アクセスできるようにする場合、このコンポーネントを使用して、アクセス可能な追加のフィードバック メカニズムを提供する必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ 使用するコード例を次に示します、<xref:System.Windows.Forms.ErrorProvider>で、<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>をユーザーにデータ エラーを示します。  
+  
+ [!code-cpp[Classic ErrorProvider Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ErrorProvider Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ErrorProvider Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ErrorProvider Example/CS/source.cs#1)]
+ [!code-vb[Classic ErrorProvider Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ErrorProvider Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ErrorProvider" />クラスし、の既定の設定を初期化します<see cref="P:System.Windows.Forms.ErrorProvider.BlinkRate" />、 <see cref="P:System.Windows.Forms.ErrorProvider.BlinkStyle" />、および<see cref="P:System.Windows.Forms.ErrorProvider.Icon" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Windows.Forms.ErrorProvider>です。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Windows.Forms.ErrorProvider.Icon%2A>|背景が赤い円で囲んだ感嘆符から成る アイコン|  
+|<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>|250|  
+|<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>|<xref:System.Windows.Forms.ErrorBlinkStyle.BlinkIfDifferentError>|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorProvider (System.ComponentModel.IContainer container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.IContainer container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.#ctor(System.ComponentModel.IContainer)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="container" Type="System.ComponentModel.IContainer" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.ComponentModel.IContainer" />エラーを監視します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ErrorProvider" />にアタッチされているクラス、<see cref="T:System.ComponentModel.IContainer" />実装します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.IContainer>に関連付けると、エラー プロバイダーのデータ バインド コントロールのコンテナー オブジェクトであるを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ErrorProvider (System.Windows.Forms.ContainerControl parentControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.ContainerControl parentControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.#ctor(System.Windows.Forms.ContainerControl)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentControl" Type="System.Windows.Forms.ContainerControl" />
+      </Parameters>
+      <Docs>
+        <param name="parentControl">エラーを監視するコントロールのコンテナーです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.ErrorProvider" />クラスは、コンテナーにアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Control>によって指定された<xref:System.Windows.Forms.ErrorProvider.ContainerControl%2A>に関連付けると、エラー プロバイダーのデータ バインド コントロールのコンテナー オブジェクトであります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindToDataAndErrors">
+      <MemberSignature Language="C#" Value="public void BindToDataAndErrors (object newDataSource, string newDataMember);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void BindToDataAndErrors(object newDataSource, string newDataMember) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.BindToDataAndErrors(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newDataSource" Type="System.Object" />
+        <Parameter Name="newDataMember" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="newDataSource">データ セットがに基づいて、<see cref="T:System.Collections.IList" />インターフェイス エラーを監視するようにします。 通常、これは、<see cref="T:System.Data.DataSet" />エラーを監視するようにします。</param>
+        <param name="newDataMember">コレクション内で、 <c>newDataSource</c>エラーを監視します。 通常、これには、<see cref="T:System.Data.DataTable" />です。</param>
+        <summary>両方を設定するメソッドを提供、<see cref="P:System.Windows.Forms.ErrorProvider.DataSource" />と<see cref="P:System.Windows.Forms.ErrorProvider.DataMember" />実行時にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更するときに発生することが実行時に競合を避けるため<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>、使用する必要があります<xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A>設定ではなく<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>個別にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlinkRate">
+      <MemberSignature Language="C#" Value="public int BlinkRate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BlinkRate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.BlinkRate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(250)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.Repaint)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー アイコンの点滅速度を取得または設定します。</summary>
+        <value>エラー アイコンの点滅速度 (ミリ秒)。 既定値は 250 ミリ秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラー アイコンは、指定したレートで点滅します。 値がゼロのセットの<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>に<xref:System.Windows.Forms.ErrorBlinkStyle.NeverBlink>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BlinkStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ErrorBlinkStyle BlinkStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.ErrorBlinkStyle BlinkStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.BlinkStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ErrorBlinkStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつエラー アイコンが点滅するかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ErrorBlinkStyle" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.Forms.ErrorBlinkStyle.BlinkIfDifferentError" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 割り当てられている指定された方法でエラー アイコンの点滅<xref:System.Windows.Forms.ErrorBlinkStyle>エラーが発生します。 設定、 <xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A> 0 を設定する、<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>に<xref:System.Windows.Forms.ErrorBlinkStyle.NeverBlink>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">割り当てられた値が、<see cref="T:System.Windows.Forms.ErrorBlinkStyle" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExtend">
+      <MemberSignature Language="C#" Value="public bool CanExtend (object extendee);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanExtend(object extendee) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.CanExtend(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="extendee" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="extendee">拡張するコントロール。</param>
+        <summary>コントロールを拡張できるかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />コントロールを拡張できる場合それ以外の場合、<see langword="false" />です。  
+  
+ このプロパティはなって<see langword="true" />オブジェクトがある場合、<see cref="T:System.Windows.Forms.Control" />となって、<see cref="T:System.Windows.Forms.Form" />または<see cref="T:System.Windows.Forms.ToolBar" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常は使用<xref:System.Windows.Forms.ErrorProvider.CanExtend%2A>アタッチできるかどうかを決定する、<xref:System.Windows.Forms.ErrorProvider>指定したコントロールにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコンポーネントに関連付けられている設定をすべてクリアします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの設定をすべてをクリアするこのメソッドを呼び出す<xref:System.Windows.Forms.ErrorProvider>既定値にプロパティを復元します。 エラー メッセージを消去するを呼び出して、<xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドを渡します<xref:System.String.Empty>の<xref:System.String>値。 これから指定したエラー グリフを削除<xref:System.Windows.Forms.Control>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainerControl">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ContainerControl ContainerControl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.ContainerControl ContainerControl" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.ContainerControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ContainerControl</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このため、親コントロールを示す値を設定を取得または<see cref="T:System.Windows.Forms.ErrorProvider" />です。</summary>
+        <value><see cref="T:System.Windows.Forms.ContainerControl" />コントロールを格納しているを<see cref="T:System.Windows.Forms.ErrorProvider" />にアタッチします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、これは、<xref:System.Windows.Forms.Form>データ バインド コントロールの上に存在します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">派生クラスでこのプロパティをオーバーライドします。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Windows.Forms.Design.DataMemberListEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>監視するデータ ソース内のリストを取得または設定します。</summary>
+        <value>指定されたデータ ソース内のリストを表す文字列、<see cref="P:System.Windows.Forms.ErrorProvider.DataSource" />監視するようにします。 通常、これには、<see cref="T:System.Data.DataTable" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ErrorProvider.DataMember%2A>ナビゲーション文字列に基づいて<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>です。  
+  
+ 変更するときに発生することが実行時に競合を避けるため<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>、使用する必要があります<xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A>設定ではなく<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>個別にします。  
+  
+   
+  
+## Examples  
+ 使用するコード例を次に示します、<xref:System.Windows.Forms.ErrorProvider>で、<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>をユーザーにデータ エラーを示します。  
+  
+ [!code-cpp[Classic ErrorProvider Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ErrorProvider Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ErrorProvider Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ErrorProvider Example/CS/source.cs#1)]
+ [!code-vb[Classic ErrorProvider Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ErrorProvider Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public object DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.AttributeProvider(typeof(System.ComponentModel.IListSource))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、データ ソース、<see cref="T:System.Windows.Forms.ErrorProvider" />モニターします。</summary>
+        <value>データ ソースがに基づいて、<see cref="T:System.Collections.IList" />インターフェイス エラーを監視するようにします。 通常、これは、<see cref="T:System.Data.DataSet" />エラーを監視するようにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ErrorProvider.DataSource%2A>データ ソース コントロールに割り当てることができるエラーを監視します。 <xref:System.Windows.Forms.ErrorProvider.DataSource%2A>実装する任意のコレクションに設定することができます<xref:System.Collections.IList>です。  
+  
+ 変更するときに発生することが実行時に競合を避けるため<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>、使用する必要があります<xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A>設定ではなく<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>個別にします。  
+  
+   
+  
+## Examples  
+ 使用するコード例を次に示します、<xref:System.Windows.Forms.ErrorProvider>で、<xref:System.Windows.Forms.ErrorProvider.DataSource%2A>と<xref:System.Windows.Forms.ErrorProvider.DataMember%2A>をユーザーにデータ エラーを示します。 このコードでは、作成および設定したが前提としています、<xref:System.Data.DataSet>という名前`dataSet1`を含む、<xref:System.Data.DataTable>という`dataTable1`です。 バインドすると、<xref:System.Data.DataSet>などのコントロールを<xref:System.Windows.Forms.DataGridView>を通じて指定したエラーを制御します。<xref:System.Data.DataRow>オブジェクトでエラー グリフとして表示されます、<xref:System.Windows.Forms.DataGridView>コントロール。  
+  
+ [!code-cpp[Classic ErrorProvider Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic ErrorProvider Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ErrorProvider Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic ErrorProvider Example/CS/source.cs#1)]
+ [!code-vb[Classic ErrorProvider Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic ErrorProvider Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Component" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetError">
+      <MemberSignature Language="C#" Value="public string GetError (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string GetError(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.GetError(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">エラーを説明する文字列を取得する対象となる項目。</param>
+        <summary>指定したコントロールの現在のエラーを説明する文字列を返します。</summary>
+        <returns>指定したコントロールの現在のエラーを説明する文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.ErrorProvider.GetError%2A>ファイル ダイアログ ボックスを開く前にエラーを確認します。 この例を実行するを含むフォームに次のコードを貼り付けます、<xref:System.Windows.Forms.TextBox>という名前`TextBox1`、<xref:System.Windows.Forms.OpenFileDialog>という名前`OpenFileDialog1`、という名前のボタン`Button1`、および<xref:System.Windows.Forms.ErrorProvider>という`ErrorProvider1`です。 すべてのイベントがイベント ハンドラーに関連付けられていることを確認します。  
+  
+ [!code-cpp[System.Windows.Forms.FileDialog#2](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CPP/filedialogform.cpp#2)]
+ [!code-csharp[System.Windows.Forms.FileDialog#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CS/filedialogform.cs#2)]
+ [!code-vb[System.Windows.Forms.FileDialog#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/VB/filedialogform.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIconAlignment">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.ErrorIconAlignment GetIconAlignment (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Forms.ErrorIconAlignment GetIconAlignment(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.GetIconAlignment(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ErrorIconAlignment</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">アイコンの位置を取得するコントロール。</param>
+        <summary>コントロールに対してエラー アイコンの配置される位置を示す値を取得します。</summary>
+        <returns><see cref="T:System.Windows.Forms.ErrorIconAlignment" /> 値のいずれか。 アイコンの既定のアラインメントは<see cref="F:System.Windows.Forms.ErrorIconAlignment.MiddleRight" />します。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIconPadding">
+      <MemberSignature Language="C#" Value="public int GetIconPadding (System.Windows.Forms.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 GetIconPadding(class System.Windows.Forms.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.GetIconPadding(System.Windows.Forms.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+      </Parameters>
+      <Docs>
+        <param name="control">余白を取得するコントロール。</param>
+        <summary>エラー アイコンの隣に空ける、余白の合計サイズを返します。</summary>
+        <returns>アイコンとコントロールの間のピクセルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くのアイコンには、通常、中央のイメージの周囲に余白追加の領域が必要あります。 余白の値と、正または負の値を指定できます。 負の値には、コントロールの端に重なりますアイコンが発生します。 既定のアイコンの余白は 0 です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Icon">
+      <MemberSignature Language="C#" Value="public System.Drawing.Icon Icon { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Drawing.Icon Icon" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.Icon" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Icon</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Drawing.Icon" />コントロールのエラーを説明する文字列が設定されているコントロールの横に表示されます。</summary>
+        <value><see cref="T:System.Drawing.Icon" />エラーが発生したことを意味します。 背景が赤の、円で囲んだ感嘆符から成る既定のアイコン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最良の結果をサイズ 16 x 16 ピクセルのアイコンを使用します。 16 x 16 ピクセルにするために必要な場合、指定されたアイコンのサイズが変更されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">割り当てられた値、<see cref="T:System.Drawing.Icon" />は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRightToLeftChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnRightToLeftChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRightToLeftChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.OnRightToLeftChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.ErrorProvider.RightToLeftChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.ErrorProvider.OnRightToLeftChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.ErrorProvider.OnRightToLeftChanged(System.EventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.ErrorProvider.OnRightToLeftChanged(System.EventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeft">
+      <MemberSignature Language="C#" Value="public virtual bool RightToLeft { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RightToLeft" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.RightToLeft" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>右から左方向に記述されるフォントをサポートするロケールでコンポーネントが使用されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />コンポーネントが、右から左へのロケールで使用する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティが設定されている場合は、関連付けられたコントロールの左側に true に、エラー アイコンが表示され、ツールヒントのテキストが右から左の順序で表示されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightToLeftChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler RightToLeftChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RightToLeftChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ErrorProvider.RightToLeftChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Forms.ErrorProvider.RightToLeft" />プロパティが値を変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ErrorProvider.RightToLeftChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ErrorProvider>という`ErrorProvider1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ErrorProvider.RightToLeftChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#382](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#382)]
+ [!code-vb[System.Windows.Forms.EventExamples#382](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#382)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetError">
+      <MemberSignature Language="C#" Value="public void SetError (System.Windows.Forms.Control control, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetError(class System.Windows.Forms.Control control, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.SetError(System.Windows.Forms.Control,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="control">エラーの説明文字列を設定するコントロール。</param>
+        <param name="value">エラーの説明文字列または<see langword="null" />または<see cref="F:System.String.Empty" />エラーを取り除きます。</param>
+        <summary>指定したコントロールに対し、エラーを説明する文字列を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合の長さ`value`がゼロより大きく、エラー アイコンが表示され、エラー アイコンのツールヒントがエラーの説明テキストです。 長さが 0 の場合、または`value`は`null`、エラー アイコンが非表示になります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIconAlignment">
+      <MemberSignature Language="C#" Value="public void SetIconAlignment (System.Windows.Forms.Control control, System.Windows.Forms.ErrorIconAlignment value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIconAlignment(class System.Windows.Forms.Control control, valuetype System.Windows.Forms.ErrorIconAlignment value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.SetIconAlignment(System.Windows.Forms.Control,System.Windows.Forms.ErrorIconAlignment)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="value" Type="System.Windows.Forms.ErrorIconAlignment" />
+      </Parameters>
+      <Docs>
+        <param name="control">アイコンの位置を設定するコントロール。</param>
+        <param name="value"><see cref="T:System.Windows.Forms.ErrorIconAlignment" /> 値のいずれか。</param>
+        <summary>コントロールに対してエラー アイコンの配置される位置を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白の値のアイコンでは、アイコンの最終的な配置が変更されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIconPadding">
+      <MemberSignature Language="C#" Value="public void SetIconPadding (System.Windows.Forms.Control control, int padding);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIconPadding(class System.Windows.Forms.Control control, int32 padding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.SetIconPadding(System.Windows.Forms.Control,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="control" Type="System.Windows.Forms.Control" />
+        <Parameter Name="padding" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="control"><c>コントロール</c>の余白を設定します。</param>
+        <param name="padding">アイコンの間に追加するピクセルの数と<c>コントロール</c>です。</param>
+        <summary>指定されたコントロールとエラー アイコンの間に空ける、余白の合計サイズを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 多くのアイコンには、通常、中央のイメージの周囲に余白追加の領域が必要あります。 余白の値と、正または負の値を指定できます。 負の値には、コントロールの端に重なりますアイコンが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.ErrorProvider>クラスのデータ エントリ エラーをユーザーに通知します。 例は、作成、<xref:System.Windows.Forms.Form>を格納している、<xref:System.Windows.Forms.TextBox>コントロール、<xref:System.Windows.Forms.NumericUpDown>コントロール、および<xref:System.Windows.Forms.ComboBox>制御、そのコンテンツの検証と<xref:System.Windows.Forms.ErrorProvider>コントロールごとにします。 例では、設定エラー アイコンのオプションを使用して、<xref:System.Windows.Forms.ErrorProvider.BlinkRate%2A>と<xref:System.Windows.Forms.ErrorProvider.BlinkStyle%2A>プロパティおよび<xref:System.Windows.Forms.ErrorProvider.SetIconAlignment%2A>と<xref:System.Windows.Forms.ErrorProvider.SetIconPadding%2A>メソッドです。 <xref:System.Windows.Forms.ErrorProvider.SetError%2A>メソッドは適切なエラー テキストの有無をコントロールの中に<xref:System.Windows.Forms.Control.Validated>イベント、コントロールの内容によって異なります。  
+  
+ [!code-cpp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CPP/errorproviderexample.cpp#1)]
+ [!code-csharp[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/CS/errorproviderexample.cs#1)]
+ [!code-vb[System.Windows.Forms.ErrorProvider#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ErrorProvider/VB/errorproviderexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="control" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Site">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.ISite Site { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.ISite Site" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.Site" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.ISite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Component" /> の <see cref="T:System.ComponentModel.ISite" /> を取得または設定します。</summary>
+        <value><see cref="T:System.ComponentModel.Component" /> に関連付けられている <see cref="T:System.ComponentModel.ISite" />。<see cref="T:System.ComponentModel.Component" /> が <see cref="T:System.ComponentModel.IContainer" /> にカプセル化されていない場合、<see cref="T:System.ComponentModel.Component" /> に <see cref="T:System.ComponentModel.ISite" /> が関連付けられていない場合、または <see cref="T:System.ComponentModel.Component" /> が <see cref="T:System.ComponentModel.IContainer" /> から削除された場合には、null。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の開始を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>初期化の完了を通知するシグナルをオブジェクトに送信します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Tag">
+      <MemberSignature Language="C#" Value="public object Tag { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Tag" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ErrorProvider.Tag" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.StringConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントに関するデータを格納するオブジェクトを取得または設定します。</summary>
+        <value>コントロールに関するデータを含むオブジェクト。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、コンポーネントのカスタム データを格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateBinding">
+      <MemberSignature Language="C#" Value="public void UpdateBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void UpdateBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ErrorProvider.UpdateBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>バインドを更新するメソッドを提供、 <see cref="P:System.Windows.Forms.ErrorProvider.DataSource" />、 <see cref="P:System.Windows.Forms.ErrorProvider.DataMember" />、およびエラー テキスト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドを呼び出した後<xref:System.Windows.Forms.ErrorProvider.BindToDataAndErrors%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

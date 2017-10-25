@@ -1,0 +1,1680 @@
+<Type Name="Application" FullName="System.Windows.Forms.Application">
+  <TypeSignature Language="C#" Value="public sealed class Application" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit Application extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.Application" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows メッセージを処理するために、アプリケーションを開始および停止するメソッドや、アプリケーションについての情報を取得するためのプロパティなど、アプリケーションを管理するための <see langword="static" /> メソッドおよびプロパティを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Application>クラスを起動し、アプリケーションとのスレッドを停止し、次のように Windows メッセージを処理するメソッドには。  
+  
+-   <xref:System.Windows.Forms.Application.Run%2A>現在のスレッドでのアプリケーション メッセージ ループを開始し、必要に応じては、フォームを表示します。  
+  
+-   <xref:System.Windows.Forms.Application.Exit%2A>または<xref:System.Windows.Forms.Application.ExitThread%2A>メッセージ ループを停止します。  
+  
+-   <xref:System.Windows.Forms.Application.DoEvents%2A>プログラムがループ内では、メッセージを処理します。  
+  
+-   <xref:System.Windows.Forms.Application.AddMessageFilter%2A>Windows メッセージを監視するアプリケーション メッセージ ポンプにメッセージ フィルターを追加します。  
+  
+-   <xref:System.Windows.Forms.IMessageFilter>により、イベントの発生を停止するか、イベント ハンドラーを呼び出す前に特別な操作を実行できます。  
+  
+ このクラスには<xref:System.Windows.Forms.Application.CurrentCulture%2A>と<xref:System.Windows.Forms.Application.CurrentInputLanguage%2A>カルチャ、現在のスレッドの情報を取得または設定するプロパティです。  
+  
+ このクラスのインスタンスを作成することはできません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、フォームにリスト ボックス内の番号を一覧表示します。 クリックするたびに`button1`アプリケーションが一覧に別の数値を追加します。  
+  
+ `Main`メソッド呼び出し<xref:System.Windows.Forms.Application.Run%2A>をフォームを作成するには、アプリケーションを起動する`listBox1`と`button1`です。 ユーザーがクリックしたとき`button1`、`button1_Click`メソッドが表示されます、<xref:System.Windows.Forms.MessageBox>です。 ユーザーがクリックした場合`No`上、 <xref:System.Windows.Forms.MessageBox>、`button1_Click`メソッドは、一覧に数値を追加します。 ユーザーがクリックした場合`Yes`、アプリケーション呼び出し<xref:System.Windows.Forms.Application.Exit%2A>をキューに残りのすべてのメッセージを処理し、終了します。  
+  
+> [!NOTE]
+>  呼び出し<xref:System.Windows.Forms.Application.Exit%2A>部分的な信頼では失敗します。  
+  
+ [!code-cpp[Classic Application Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application Example/CS/source.cs#1)]
+ [!code-vb[Classic Application Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddMessageFilter">
+      <MemberSignature Language="C#" Value="public static void AddMessageFilter (System.Windows.Forms.IMessageFilter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddMessageFilter(class System.Windows.Forms.IMessageFilter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.AddMessageFilter(System.Windows.Forms.IMessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.IMessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="value">インストールする <see cref="T:System.Windows.Forms.IMessageFilter" /> インターフェイスの実装。</param>
+        <summary>メッセージ フィルターを追加して、ルーティング先にルーティングされる Windows メッセージを監視します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントをイベント ハンドラーに渡される前に特別な操作を実行するかを特定のイベントが発生していることを防ぐためには、メッセージ フィルターを使用します。 メッセージ フィルターは、特定のスレッドに固有です。  
+  
+ メッセージがディスパッチされていることを防ぐため、`value`このメソッドに渡すパラメーターのインスタンスをオーバーライドする必要があります、<xref:System.Windows.Forms.IMessageFilter.PreFilterMessage%2A>メッセージを処理するコードを持つメソッドです。 メソッドは `false` を返します。  
+  
+> [!CAUTION]
+>  アプリケーションのメッセージ ポンプにメッセージ フィルターを追加すると、パフォーマンスが低下することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例と呼ばれるメッセージ フィルターを作成する`TestMessageFilter`です。 このフィルターは、マウスの左ボタンに関連するすべてのメッセージをブロックします。 実装を提供する必要がありますメッセージ フィルターを使用することができます、前に、<xref:System.Windows.Forms.IMessageFilter>インターフェイスです。  
+  
+ [!code-cpp[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowQuit">
+      <MemberSignature Language="C#" Value="public static bool AllowQuit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool AllowQuit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.AllowQuit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出し元がこのアプリケーションを終了できるかどうかを示す値を取得します。</summary>
+        <value>
+          呼び出し元がこのアプリケーションを終了できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`false`から呼び出された場合、 <xref:System.Windows.Forms.Control> Web ブラウザー内でホストされています。 したがって、<xref:System.Windows.Forms.Control>終了できません、<xref:System.Windows.Forms.Application>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationExit">
+      <MemberSignature Language="C#" Value="public static event EventHandler ApplicationExit;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ApplicationExit" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.ApplicationExit" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションをシャットダウンしようとすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーをアタッチする必要があります、<xref:System.Windows.Forms.Application.Exit%2A>ハンドルされていないを実行するにはタスクが必要なアプリケーションの実行が停止する前にします。 このアプリケーション、またはガベージ コレクションは再生されませんでしたオブジェクトの破棄によって開かれたファイルを閉じることができます。  
+  
+ これは、静的イベントであるためで、このイベントにアタッチされているすべてのイベント ハンドラーをデタッチする必要があります、<xref:System.Windows.Forms.Application.ApplicationExit>イベント ハンドラー自体です。 これらのハンドラーを接続解除しないでイベントに接続したまま、され、メモリの使用を継続します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのフォームを表示し、両方のフォームが閉じられたときに、アプリケーションを終了します。 アプリケーションを起動し、終了、各フォームの位置が記憶されます。 この例では、<xref:System.Windows.Forms.Application.ApplicationExit>を知り、フォームの位置は、ファイルを永続化するとき、およびイベント、`FileStream`閉じる必要があります。  
+  
+ クラス`MyApplicationContext`から継承<xref:System.Windows.Forms.ApplicationContext>し、各フォームは閉じられ、両者は、するときに、現在のスレッドを終了するときの追跡します。 クラスは、閉じられているときに、各フォームの位置を記憶します。 ときに、<xref:System.Windows.Forms.Application.ApplicationExit>クラス ファイルの書き込みごとに、ユーザーの位置をイベントが発生します。 フォームの位置データはというファイルに格納`appdata.txt`によって決まります場所に作成される<xref:System.Windows.Forms.Application.UserAppDataPath%2A>です。 `Main`メソッド呼び出し`Application.Run(context)`指定されたアプリケーションを起動する、<xref:System.Windows.Forms.ApplicationContext>です。  
+  
+ このコードに示した例からの抜粋、<xref:System.Windows.Forms.ApplicationContext>クラスの概要です。 参照してください<xref:System.Windows.Forms.ApplicationContext>コード全体をします。  
+  
+ [!code-cpp[Application#5](~/samples/snippets/cpp/VS_Snippets_Winforms/Application/CPP/source.cpp#5)]
+ [!code-csharp[Application#5](~/samples/snippets/csharp/VS_Snippets_Winforms/Application/CS/source.cs#5)]
+ [!code-vb[Application#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Application/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonAppDataPath">
+      <MemberSignature Language="C#" Value="public static string CommonAppDataPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CommonAppDataPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.CommonAppDataPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーが共有するアプリケーション データのパスを取得します。</summary>
+        <value>すべてのユーザーが共有するアプリケーション データのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスが存在しない場合、次の形式で 1 つは作成されます。  
+  
+ *基本パス*\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>  
+  
+ <xref:System.Windows.Forms.Application.ProductVersion%2A>メインの実行可能ファイルを含むアセンブリが含まれているが最初に検索、`AssemblyInformationalVersion`の属性です。 この属性が存在する場合が、両方の使用<xref:System.Windows.Forms.Application.ProductVersion%2A>と<xref:System.Windows.Forms.Application.CommonAppDataPath%2A>です。 両方のプロパティをこの属性が存在しない場合、実行可能ファイルのバージョンが代わりに使用します。  
+  
+ パスは、Windows フォーム アプリケーションの配置を使用しているかどうかに応じて異なるに[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、C:\Documents and Settings でユーザーごとのアプリケーションのキャッシュに格納されている\\*username*ディレクトリ。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommonAppDataRegistry">
+      <MemberSignature Language="C#" Value="public static Microsoft.Win32.RegistryKey CommonAppDataRegistry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Win32.RegistryKey CommonAppDataRegistry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.CommonAppDataRegistry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてのユーザーが共有するアプリケーション データのレジストリ キーを取得します。</summary>
+        <value>すべてのユーザーが共有するアプリケーション データのレジストリ キーを表す <see cref="T:Microsoft.Win32.RegistryKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーが存在しない場合、次の形式で作成します。  
+  
+ LocalMachine\Software\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompanyName">
+      <MemberSignature Language="C#" Value="public static string CompanyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string CompanyName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.CompanyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションに関連付けられている会社名を取得します。</summary>
+        <value>会社名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.CompanyName Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.CompanyName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.CompanyName Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.CompanyName Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.CompanyName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.CompanyName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentCulture">
+      <MemberSignature Language="C#" Value="public static System.Globalization.CultureInfo CurrentCulture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Globalization.CultureInfo CurrentCulture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.CurrentCulture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Globalization.CultureInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドのカルチャ情報を取得または設定します。</summary>
+        <value>現在のスレッドのカルチャ情報を表す <see cref="T:System.Globalization.CultureInfo" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.CurrentCulture Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.CurrentCulture Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.CurrentCulture Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.CurrentCulture Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.CurrentCulture Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.CurrentCulture Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを設定するすべてのウィンドウ。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentInputLanguage">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.InputLanguage CurrentInputLanguage { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.InputLanguage CurrentInputLanguage" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.CurrentInputLanguage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.InputLanguage</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のスレッドの現在の入力言語を取得または設定します。</summary>
+        <value>現在のスレッドの現在の入力言語を表す <see cref="T:System.Windows.Forms.InputLanguage" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.CurrentInputLanguage Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.CurrentInputLanguage Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.CurrentInputLanguage Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.CurrentInputLanguage Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.CurrentInputLanguage Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.CurrentInputLanguage Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DoEvents">
+      <MemberSignature Language="C#" Value="public static void DoEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void DoEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.DoEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メッセージ キューに現在ある Windows メッセージをすべて処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームを実行する場合は、イベントを処理するを待機し、新しいフォームを作成します。 フォームは、イベントを処理するたびに、そのイベントに関連付けられているすべてのコードを処理します。 その他のすべてのイベントは、キューで待機します。 コードでは、イベントを処理するときに、アプリケーションが応答しません。 たとえば、ウィンドウが再描画されない上で別のウィンドウがドラッグした場合。  
+  
+ 呼び出す場合<xref:System.Windows.Forms.Application.DoEvents%2A>コードで、アプリケーションが他のイベントを処理できます。 たとえば、データを追加するフォームがある場合、<xref:System.Windows.Forms.ListBox>追加<xref:System.Windows.Forms.Application.DoEvents%2A>上にある別のウィンドウがドラッグされると、コードに、フォームを再描画します。 削除する場合<xref:System.Windows.Forms.Application.DoEvents%2A>コードで、フォームが再描画されないボタンの click イベント ハンドラーが完了するまで実行します。 メッセージングの詳細については、次を参照してください。 [Windows フォームにおけるユーザー入力](~/docs/framework/winforms/user-input-in-windows-forms.md)です。  
+  
+ Visual Basic 6.0 とは異なり、<xref:System.Windows.Forms.Application.DoEvents%2A>メソッドは呼び出しません、<xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 通常、メッセージを処理するループ内でこのメソッドを使用します。  
+  
+> [!CAUTION]
+>  このメソッドを呼び出すと、待機中のすべてのウィンドウ メッセージの処理中に中断する現在のスレッドとします。 メッセージによってトリガーされるイベントは、アプリケーション コードの他の領域は実行可能性があります。 これには、アプリをデバッグするが困難な予期しない動作が発生する可能性があります。 操作または時間がかかる計算を実行する場合、新しいスレッドで操作を実行するよりも適していますが多くの場合、します。 非同期プログラミングの詳細については、次を参照してください。[非同期プログラミング モデル (APM)](~/docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.Application.DoEvents%2A>メソッドです。 例を実行すると、ユーザーがからグラフィックス ファイルを選択できる、<xref:System.Windows.Forms.OpenFileDialog>です。 選択したファイルは、フォームに表示されます。 <xref:System.Windows.Forms.Application.DoEvents%2A>メソッド強制的に開いている各グラフィックス ファイルの形式の再描画します。 この例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.PictureBox>という`PictureBox1`、<xref:System.Windows.Forms.OpenFileDialog>という名前`OpenFileDialog1`、という名前のボタンと`fileButton`です。 呼び出す、`InitializePictureBox`と`InitializeOpenFileDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。  
+  
+> [!NOTE]
+>  [!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を追加する場合は、<xref:System.Windows.Forms.OpenFileDialog>ドラッグ操作を使用して、フォームには、次を変更する必要が`InitializeOpenFileDialog`メソッドの新しいインスタンスを作成する 1 行を削除することによって<xref:System.Windows.Forms.OpenFileDialog>です。  
+  
+ 例もする必要があります、<xref:System.Windows.Forms.Control.Click?displayProperty=nameWithType>のイベント、<xref:System.Windows.Forms.Button>コントロールと<xref:System.Windows.Forms.FileDialog.FileOk>のイベント、<xref:System.Windows.Forms.OpenFileDialog>の例で定義されたイベント ハンドラーに接続しています。 例が実行されている場合は、ボタンをクリックしてダイアログ ボックスを表示します。  
+  
+ [!code-cpp[System.Windows.Forms.FileDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CPP/filedialogform.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FileDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CS/filedialogform.cs#1)]
+ [!code-vb[System.Windows.Forms.FileDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/VB/filedialogform.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableVisualStyles">
+      <MemberSignature Language="C#" Value="public static void EnableVisualStyles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void EnableVisualStyles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.EnableVisualStyles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションで visual スタイルを有効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーションの visual スタイルを使用できます。 Visual スタイルは、色、フォント、およびオペレーティング システムのテーマを形成する他のビジュアル要素がします。 コントロールは、コントロールとオペレーティング システムがサポートしている場合、visual スタイルで描画されます。 影響<xref:System.Windows.Forms.Application.EnableVisualStyles>アプリケーションでコントロールを作成する前に呼び出す必要があります通常、<xref:System.Windows.Forms.Application.EnableVisualStyles>の最初の行には、`Main`関数。 呼び出すときに、visual スタイルを有効にするのには、個別マニフェストは必要はありません<xref:System.Windows.Forms.Application.EnableVisualStyles>です。  
+  
+> [!NOTE]
+>  .NET Framework 2.0 の前に、`FlatStyle`から派生するコントロールなど、一部のコントロールのプロパティ<xref:System.Windows.Forms.ButtonBase>に設定する必要がある<xref:System.Windows.Forms.FlatStyle?displayProperty=nameWithType>visual スタイルで描画するコントロールの順序で。 アプリケーションでは、.NET Framework 2.0 で記述された、これは必要なくなりました。  
+  
+> [!NOTE]
+>  このメソッドには、Internet Explorer でホストされるコントロールの影響はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します通話<xref:System.Windows.Forms.Application.EnableVisualStyles%2A>で、`Main`アプリケーションの visual スタイルを有効にする関数。  
+  
+ [!code-cpp[System.Windows.Forms.Application.EnableVisualStyles#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Application.EnableVisualStyles/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.Application.EnableVisualStyles#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Application.EnableVisualStyles/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.Application.EnableVisualStyles#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Application.EnableVisualStyles/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnterThreadModal">
+      <MemberSignature Language="C#" Value="public static event EventHandler EnterThreadModal;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler EnterThreadModal" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.EnterThreadModal" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがモーダル状態に入ろうとすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  これは、静的イベントであるため、アプリケーションが破棄されると、またはメモリ リークは発生時に、イベント ハンドラーをデタッチする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Application.EnterThreadModal>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する Windows フォームに貼り付けとに、イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Application.EnterThreadModal>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#3](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#3)]
+ [!code-vb[System.Windows.Forms.EventExamples#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">必要があります<see cref="P:System.Security.Permissions.SecurityPermissionAttribute.UnmanagedCode" />イベントをリッスンする権限です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutablePath">
+      <MemberSignature Language="C#" Value="public static string ExecutablePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ExecutablePath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.ExecutablePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションを開始した実行可能ファイルのパスを、ファイル名を含めて取得します。</summary>
+        <value>アプリケーションを開始した実行可能ファイルのパスおよびファイル名。  
+  
+ このパスは、Windows フォーム アプリケーションの配置を使用しているかどうかに応じて異なるなります[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、C:\Documents and Settings でユーザーごとのアプリケーションのキャッシュに格納されている\\*username*ディレクトリ。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスを取得します。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Exit">
+      <MemberSignature Language="C#" Value="public static void Exit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Exit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Exit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>終了する必要があるすべてのメッセージ ポンプを通知し、メッセージが処理されると、すべてのアプリケーション ウィンドウを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Application.Exit%2A>メソッドがすべてのスレッドで実行中のすべてのメッセージ ループを停止し、アプリケーションのすべてのウィンドウを閉じます。 このメソッドは、アプリケーションが終了を必ずしも強制的されません。 <xref:System.Windows.Forms.Application.Exit%2A>メソッドは通常から呼び出されるとメッセージ ループ内で<xref:System.Windows.Forms.Application.Run%2A>を返します。 現在のスレッドのみのメッセージ ループを終了するには、呼び出す<xref:System.Windows.Forms.Application.ExitThread%2A>です。  
+  
+ <xref:System.Windows.Forms.Application.Exit%2A>次のイベントを発生させ、関連する条件付き操作を実行します。  
+  
+-   A<xref:System.Windows.Forms.Form.FormClosing>によって表されるすべてのフォームのイベントは、<xref:System.Windows.Forms.Application.OpenForms%2A>プロパティです。 このイベントは、設定によって取り消されることができます、<xref:System.ComponentModel.CancelEventArgs.Cancel%2A>のプロパティ、<xref:System.Windows.Forms.FormClosingEventArgs>パラメーターを`true`です。  
+  
+-   かどうかの 1 つ以上のハンドラーのイベントをキャンセルする、<xref:System.Windows.Forms.Application.Exit%2A>のさらなる操作せずに返します。 それ以外の場合、<xref:System.Windows.Forms.Form.FormClosed>イベントは、すべてのフォームの発生し、実行中のすべてのメッセージ ループとフォームが閉じられました。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Application.Exit%2A>メソッドは発生しません、<xref:System.Windows.Forms.Form.Closed>と<xref:System.Windows.Forms.Form.Closing>はの廃止のイベント[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、フォームにリスト ボックス内の番号を一覧表示します。 クリックするたびに`button1`アプリケーションが一覧に別の数値を追加します。  
+  
+ `Main`メソッド呼び出し<xref:System.Windows.Forms.Application.Run%2A>をフォームを作成するには、アプリケーションを起動する`listBox1`、および`button1`です。 ユーザーがクリックしたとき`button1`、`button1_Click`メソッドをリスト ボックスには、1 ~ 3 の数値を加算し、表示、<xref:System.Windows.Forms.MessageBox>です。 ユーザーがクリックした場合**なし**上、 <xref:System.Windows.Forms.MessageBox>、`button1_Click`メソッドは、一覧に別の数値を追加します。 ユーザーがクリックした場合**はい**、アプリケーション呼び出し<xref:System.Windows.Forms.Application.Exit%2A>キュー内の残りのすべてのメッセージを処理するし終了します。  
+  
+ この例では、する必要があります`listBox1`と`button1`インスタンス化され、フォーム上に配置されています。  
+  
+ [!code-cpp[Classic Application.Exit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.Exit Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.Exit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.Exit Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.Exit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.Exit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Exit">
+      <MemberSignature Language="C#" Value="public static void Exit (System.ComponentModel.CancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Exit(class System.ComponentModel.CancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Exit(System.ComponentModel.CancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">アプリケーション内の <see cref="T:System.Windows.Forms.Form" /> が終了をキャンセルしたかどうかを示す値を返します。</param>
+        <summary>終了する必要があるすべてのメッセージ ポンプを通知し、メッセージが処理されると、すべてのアプリケーション ウィンドウを閉じます。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityException">アクセス許可を実行を終了するアプリケーション スレッドです。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExitThread">
+      <MemberSignature Language="C#" Value="public static void ExitThread ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ExitThread() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.ExitThread" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスレッドのメッセージ ループを終了し、スレッドのウィンドウをすべて閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、現在のスレッドのメッセージ ループを終了します。 このメソッドの呼び出しは、<xref:System.Windows.Forms.Application.Run%2A>現在のスレッドを返します。 アプリケーション全体を終了するには、呼び出す<xref:System.Windows.Forms.Application.Exit%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterMessage">
+      <MemberSignature Language="C#" Value="public static bool FilterMessage (ref System.Windows.Forms.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool FilterMessage(valuetype System.Windows.Forms.Message&amp; message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.FilterMessage(System.Windows.Forms.Message@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.Windows.Forms.Message&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="message">フィルター処理の対象となる Windows イベント メッセージ。</param>
+        <summary>ウィンドウ メッセージに対してフィルターを実行し、変更したメッセージのコピーを返します。</summary>
+        <returns>
+          フィルターが処理された場合は <see langword="True" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Idle">
+      <MemberSignature Language="C#" Value="public static event EventHandler Idle;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Idle" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.Idle" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが処理を完了し、アイドル状態に入ろうとすると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクを実行する必要がありますがある場合、スレッドがアイドル状態になると、前にこのイベントに添付します。  
+  
+> [!CAUTION]
+>  これは、静的イベントであるため、アプリケーションが破棄されると、またはメモリ リークは発生時に、イベント ハンドラーをデタッチする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Application.Idle>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する Windows フォームに貼り付けるし、イベント ハンドラーが関連付けられているかどうかを確認、<xref:System.Windows.Forms.Application.Idle>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#2](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#2)]
+ [!code-vb[System.Windows.Forms.EventExamples#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeaveThreadModal">
+      <MemberSignature Language="C#" Value="public static event EventHandler LeaveThreadModal;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler LeaveThreadModal" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.LeaveThreadModal" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションがモーダル状態を終了するときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  これは、静的イベントであるため、アプリケーションが破棄されると、またはメモリ リークは発生時に、イベント ハンドラーをデタッチする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Application.LeaveThreadModal>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する Windows フォームに貼り付けとに、イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Application.LeaveThreadModal>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#4)]
+ [!code-vb[System.Windows.Forms.EventExamples#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalUserAppDataPath">
+      <MemberSignature Language="C#" Value="public static string LocalUserAppDataPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string LocalUserAppDataPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.LocalUserAppDataPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカルで非ローミング ユーザーのアプリケーション データのパスを取得します。</summary>
+        <value>ローカルで非ローミング ユーザーのアプリケーション データのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ローカル ユーザーは、ユーザー プロファイルを持つが、ユーザーがログオンをシステムに格納されているいずれかです。 パスが存在しない場合、次の形式で 1 つは作成されます。  
+  
+ *基本パス*\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>   
+  
+ 一般的な基本パスは、C:\Documents and Settings\\*username*\Local Settings\Application データ。 このパスになります、ただしを使用して Windows フォーム アプリケーションが展開されている場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]他のすべてのアプリケーションから分離する独自のアプリケーション データ ディレクトリを作成します。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのフォームを表示し、両方のフォームが閉じられたときに、アプリケーションを終了します。 アプリケーションを起動し、終了、各フォームの位置が記憶されます。 この例を使用して、 <xref:System.Windows.Forms.Application.UserAppDataPath%2A> 、ユーザーのアプリケーション データを格納するプロパティ、<xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A>代わりに使用されることができます。  
+  
+ `MyApplicationContext`クラスから継承<xref:System.Windows.Forms.ApplicationContext>し、各フォームは閉じられ、両者は、するときに、現在のスレッドを終了するときは常に追跡します。 クラスは、ユーザーの各フォームの位置を格納します。 フォームの位置データはというファイルに格納`Appdata.txt`によって決まります場所に作成される<xref:System.Windows.Forms.Application.UserAppDataPath%2A>です。 `Main`メソッド呼び出し`Application.Run(context)`指定されたアプリケーションを起動する、<xref:System.Windows.Forms.ApplicationContext>です。  
+  
+ このコードに示した例からの抜粋、<xref:System.Windows.Forms.ApplicationContext>クラスの概要です。 一部のコードは、簡潔さを優先するためには表示されません。 参照してください<xref:System.Windows.Forms.ApplicationContext>コード全体をします。  
+  
+ [!code-cpp[Application#5](~/samples/snippets/cpp/VS_Snippets_Winforms/Application/CPP/source.cpp#5)]
+ [!code-csharp[Application#5](~/samples/snippets/csharp/VS_Snippets_Winforms/Application/CS/source.cs#5)]
+ [!code-vb[Application#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Application/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageLoop">
+      <MemberSignature Language="C#" Value="public static bool MessageLoop { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool MessageLoop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.MessageLoop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このスレッドにメッセージ ループが存在するかどうかを示す値を取得します。</summary>
+        <value>
+          メッセージ ループが存在する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Windows フォームをアンマネージ アプリケーションなど、他の環境でホストする場合にこのプロパティは常に返します`false`です。 使用して<xref:System.Windows.Forms.Application.RegisterMessageLoop%2A>にホスティング環境がまだアクティブなメッセージ ループがかどうかに Windows フォームを指示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OleRequired">
+      <MemberSignature Language="C#" Value="public static System.Threading.ApartmentState OleRequired ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Threading.ApartmentState OleRequired() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.OleRequired" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ApartmentState</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスレッドで OLE を初期化します。</summary>
+        <returns><see cref="T:System.Threading.ApartmentState" /> 値のいずれか。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す前にこのメソッドを呼び出す`Microsoft.Win32`OLE を必要とするメソッド。 <xref:System.Windows.Forms.Application.OleRequired%2A>まず、現在のスレッドで OLE は初期化されてかどうかを確認します。 それ以外の場合は、OLE のスレッドを初期化します。  
+  
+> [!NOTE]
+>  スレッドは、直接 OLE メソッドを呼び出して、しない限り、このメソッドを呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnThreadException">
+      <MemberSignature Language="C#" Value="public static void OnThreadException (Exception t);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void OnThreadException(class System.Exception t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.OnThreadException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="t" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="t">スローされた例外を表す <see cref="T:System.Exception" />。</param>
+        <summary><see cref="E:System.Windows.Forms.Application.ThreadException" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Windows.Forms.Application.OnThreadException%2A>をアプリケーションの処理を停止する例外を発生させます。  
+  
+ <xref:System.Windows.Forms.Application>クラスには、<xref:System.Windows.Forms.Application.ThreadException>イベント。 未処理の例外に必要なカスタム処理を実行するには、このイベントをイベント ハンドラーをアタッチできます。 場合は、イベント ハンドラーをアタッチしない<xref:System.Windows.Forms.Application.OnThreadException%2A>エラーされたことをユーザーに通知するダイアログ ボックスの表示が行われる既定の動作を実行します。  
+  
+ <xref:System.Windows.Forms.Application.OnThreadException%2A>Windows フォームが所有するスレッドで発生する未処理の例外の既定の例外動作をのみを実装します。 他のスレッドで未処理の例外は、<xref:System.AppDomain.UnhandledException>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenForms">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.FormCollection OpenForms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.FormCollection OpenForms" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.OpenForms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FormCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが所有している、開かれたフォームのコレクションを取得します。</summary>
+        <value>アプリケーションによって所有されている、現在開いているすべてのフォームが格納された <see cref="T:System.Windows.Forms.FormCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.Application.OpenForms%2A>プロパティは、アプリケーションによって所有されているフォームの読み取り専用コレクションを表します。 インデックスの位置または、このコレクションを検索することができます、<xref:System.Windows.Forms.Control.Name%2A>の<xref:System.Windows.Forms.Form>です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">呼び出し元がありますへのすべての windows のアクセス許可の定義に従って、<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" />の値、<see cref="T:System.Security.Permissions.UIPermissionWindow" />列挙します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductName">
+      <MemberSignature Language="C#" Value="public static string ProductName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ProductName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.ProductName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションに関連付けられている製品名を取得します。</summary>
+        <value>製品名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ProductName`現在のアプリケーションのメイン フォームを含むアセンブリのメタデータから取得されます。 これを設定するには設定を<xref:System.Reflection.AssemblyProductAttribute>アセンブリ マニフェスト内で。 詳細については、次を参照してください。[アセンブリ マニフェスト](~/docs/framework/app-domains/assembly-manifest.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.ProductName Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ProductName Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ProductName Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ProductName Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ProductName Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ProductName Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductVersion">
+      <MemberSignature Language="C#" Value="public static string ProductVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ProductVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.ProductVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアプリケーションに関連付けられている製品のバージョンを取得します。</summary>
+        <value>製品のバージョン。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、バージョン番号として表示されます*メジャー番号*。* 。マイナー番号*.*ビルド番号*.*プライベート パート番号*です。 アセンブリ マニフェスト内でアセンブリのバージョンを設定して明示的に設定できます。 詳細については、次を参照してください。[アセンブリ マニフェスト](~/docs/framework/app-domains/assembly-manifest.md)です。  
+  
+ <xref:System.Windows.Forms.Application.ProductVersion%2A>メインの実行可能ファイルを含むアセンブリが含まれているが最初に検索、`AssemblyInformationalVersion`の属性です。 この属性が存在する場合が、両方の使用<xref:System.Windows.Forms.Application.ProductVersion%2A>と<xref:System.Windows.Forms.Application.CommonAppDataPath%2A>です。 両方のプロパティをこの属性が存在しない場合、実行可能ファイルのバージョンが代わりに使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.ProductVersion Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ProductVersion Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ProductVersion Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ProductVersion Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ProductVersion Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ProductVersion Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaiseIdle">
+      <MemberSignature Language="C#" Value="public static void RaiseIdle (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RaiseIdle(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.RaiseIdle(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" /> イベントに渡す <see cref="E:System.Windows.Forms.Application.Idle" /> オブジェクト。</param>
+        <summary>ホストされているシナリオで <see cref="E:System.Windows.Forms.Application.Idle" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ アプリケーションなどの別の環境で Windows フォームをホストする場合に使用されます。 呼び出す必要があります<xref:System.Windows.Forms.Application.RaiseIdle%2A>ホスト アプリケーションがアイドル状態に入ったとき。 これにより、一部の Windows フォーム コントロールおよびコンポーネントをユーザーがアプリケーションと対話していないときに、重要なバック グラウンド作業を行うには。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterMessageLoop">
+      <MemberSignature Language="C#" Value="public static void RegisterMessageLoop (System.Windows.Forms.Application.MessageLoopCallback callback);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterMessageLoop(class System.Windows.Forms.Application/MessageLoopCallback callback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.RegisterMessageLoop(System.Windows.Forms.Application.MessageLoopCallback)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="callback" Type="System.Windows.Forms.Application+MessageLoopCallback" />
+      </Parameters>
+      <Docs>
+        <param name="callback">ホスト環境が依然としてメッセージを送信しているかどうかを Windows フォームでチェックする必要がある場合に呼び出すメソッド。</param>
+        <summary>メッセージ ループがホストされている環境で実行されているかどうかをチェックするためのコールバックを登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アンマネージ アプリケーションなどの別の環境で Windows フォームをホストする場合に使用されます。 ホストの環境では、<xref:System.Windows.Forms.Application.MessageLoop%2A>プロパティは常に Windows フォームでは、メッセージは処理されていない場合は false に返します。 かどうかは、ホスティング環境がまだ処理してメッセージを Windows フォームに通知するのにには、このコールバックを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveMessageFilter">
+      <MemberSignature Language="C#" Value="public static void RemoveMessageFilter (System.Windows.Forms.IMessageFilter value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveMessageFilter(class System.Windows.Forms.IMessageFilter value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.RemoveMessageFilter(System.Windows.Forms.IMessageFilter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Forms.IMessageFilter" />
+      </Parameters>
+      <Docs>
+        <param name="value">アプリケーションから削除する <see cref="T:System.Windows.Forms.IMessageFilter" /> の実装。</param>
+        <summary>アプリケーションのメッセージ ポンプからメッセージ フィルターを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディスパッチされる前に、Windows メッセージをキャプチャする必要がなくなったときにメッセージ フィルターを削除することができます。  
+  
+   
+  
+## Examples  
+ 実装を提供する必要がありますメッセージ フィルターを使用することができます、前に、<xref:System.Windows.Forms.IMessageFilter>インターフェイスです。 次のクラスと呼ばれるメッセージ フィルターを作成`TestMessageFilter`です。 このフィルターは、マウスの左ボタンに関連するすべてのメッセージをブロックします。  
+  
+ [!code-cpp[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.RemoveMessageFilter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.RemoveMessageFilter Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderWithVisualStyles">
+      <MemberSignature Language="C#" Value="public static bool RenderWithVisualStyles { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool RenderWithVisualStyles" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.RenderWithVisualStyles" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションが visual スタイルを使用してコントロールを描画しているかどうかを示す値を取得します。</summary>
+        <value>
+          アプリケーション ウィンドウのクライアント領域のコントロールで visual スタイルが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カスタム コントロールを描画する場合は、このプロパティを使用して、外観は、アプリケーションの他のコントロールと一貫性ができるように、visual スタイルの有無にコントロールを描画するかどうかを決定します。  
+  
+ 次の表に、4 つの条件を残す必要のある<xref:System.Windows.Forms.Application.RenderWithVisualStyles%2A>を返す`true`です。  
+  
+|条件|説明|  
+|---------------|-----------------|  
+|オペレーティング システムには、visual スタイルがサポートしています|この条件を個別に確認するには、 <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsSupportedByOS%2A> クラスの <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> プロパティを使用します。|  
+|ユーザーがオペレーティング システムで visual スタイルを有効に|この条件を個別に確認するには、 <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation.IsEnabledByUser%2A> クラスの <xref:System.Windows.Forms.VisualStyles.VisualStyleInformation> プロパティを使用します。|  
+|アプリケーションで visual スタイルが有効になっています。|アプリケーションで視覚スタイルを有効にするには、<xref:System.Windows.Forms.Application.EnableVisualStyles> メソッドを呼び出すか、ComCtl32.dll バージョン 6 以降をコントロールの描画に使用することを指定するアプリケーション マニフェストを使用します。|  
+|Visual スタイルは、アプリケーション ウィンドウのクライアント領域の描画に使用されています|この条件を個別に確認するには、<xref:System.Windows.Forms.Application> クラスの <xref:System.Windows.Forms.Application.VisualStyleState%2A> プロパティを使用し、その値が <xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType> または <xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType> になっていることを確認します。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Restart">
+      <MemberSignature Language="C#" Value="public static void Restart ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Restart() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Restart" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションをシャットダウンし、直後に新しいインスタンスを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元の最も一般的な理由`Restart`からダウンロードしたアプリケーションの新しいバージョンを始められる[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]を使用して、`Update`または`UpdateAsync`メソッドです。  
+  
+ 最初に実行されるコンテキストでは、アプリケーションが再起動されます。 アプリケーションのメイン実行可能ファイルを直接指す URL を使用して、アプリケーションが開始された場合、同じ URL に再起動されます。 アプリケーションの場合、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションを使用して再開されます[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。  
+  
+ 最初に実行されたときに、アプリケーションによって指定された最初のコマンド ライン オプションがあった場合<xref:System.Windows.Forms.Application.Restart%2A>同じオプションを使用してアプリケーションを起動します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">コードは、Windows フォーム アプリケーションではありません。 このコンテキストでは、このメソッドを呼び出すことはできません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">必要があります<see cref="M:System.Security.Permissions.SecurityPermission.IsUnrestricted" />権限です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Run" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のスレッドで標準のアプリケーション メッセージ ループの実行を、フォームなしで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Win32 ベースまたは Windows フォーム アプリケーションでは、メッセージ ループは、マウスやキーボード入力などのユーザー イベントを処理するコード内のルーチンです。 各実行中の Windows ベースのアプリケーションには、メイン メッセージ ループと呼ばれる、作業中のメッセージ ループが必要です。 メイン メッセージ ループが閉じたときに、アプリケーションを終了します。 Windows フォームでこのループが閉じられたときに、<xref:System.Windows.Forms.Application.Exit%2A>メソッドを呼び出す場合や、<xref:System.Windows.Forms.Application.ExitThread%2A>メイン メッセージ ループを実行しているスレッドでメソッドが呼び出されます。  
+  
+ Windows フォームのほとんどの開発者は、このバージョンのメソッドを使用する必要はありません。 使用する必要があります、<xref:System.Windows.Forms.Application.Run%28System.Windows.Forms.Form%29>メイン フォームが閉じられたときに、アプリケーションの終了できるように、メイン フォーム アプリケーションを起動するオーバー ロードします。 その他のすべての状況を使用して、<xref:System.Windows.Forms.Application.Run%28System.Windows.Forms.ApplicationContext%29>オーバー ロードを指定することをサポートする、<xref:System.Windows.Forms.ApplicationContext>アプリケーションの有効期間の制御を強化するためのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メイン メッセージ ループは、このスレッドで実行されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run (System.Windows.Forms.ApplicationContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class System.Windows.Forms.ApplicationContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Run(System.Windows.Forms.ApplicationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Windows.Forms.ApplicationContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">アプリケーションが実行される <see cref="T:System.Windows.Forms.ApplicationContext" />。</param>
+        <summary><see cref="T:System.Windows.Forms.ApplicationContext" /> を使用して、現在のスレッドで標準のアプリケーション メッセージ ループの実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ ループを実行するまで<xref:System.Windows.Forms.Application.Exit%2A>または<xref:System.Windows.Forms.Application.ExitThread%2A>が呼び出された、または<xref:System.Windows.Forms.Application.ThreadExit>コンテキスト オブジェクトでイベントが発生します。  
+  
+   
+  
+## Examples  
+ この例では、2 つのフォームを表示し、両方のフォームが閉じられたときに、アプリケーションを終了します。 アプリケーションを起動し、終了、各フォームの位置が記憶されます。 この例で使用する方法、 <xref:System.Windows.Forms.ApplicationContext>、と共に、`Application.Run(context)`メソッドは、アプリケーションの起動時に、複数のフォームを表示します。  
+  
+ クラス`MyApplicationContext`から継承<xref:System.Windows.Forms.ApplicationContext>し、各フォームは閉じられ、両者は、するときに、現在のスレッドを終了するときは常に追跡します。 クラスは、ユーザーの各フォームの位置を格納します。 フォームの位置データはというファイルに格納`Appdata.txt`によって決まります場所に作成される<xref:System.Windows.Forms.Application.UserAppDataPath%2A>です。 `Main`メソッド呼び出し`Application.Run(context)`指定されたアプリケーションを起動する、<xref:System.Windows.Forms.ApplicationContext>です。  
+  
+ コードを`AppForm1`と`AppForm2`フォームは、簡潔さを優先するためには表示されません。 参照してください、<xref:System.Windows.Forms.ApplicationContext>コード全体のクラスの概要です。  
+  
+ [!code-cpp[Application#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Application/CPP/source.cpp#2)]
+ [!code-csharp[Application#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Application/CS/source.cs#2)]
+ [!code-vb[Application#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Application/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">メイン メッセージ ループは、このスレッドで実行されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Run">
+      <MemberSignature Language="C#" Value="public static void Run (System.Windows.Forms.Form mainForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Run(class System.Windows.Forms.Form mainForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.Run(System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mainForm" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="mainForm">表示するフォームを表す <see cref="T:System.Windows.Forms.Form" />。</param>
+        <summary>現在のスレッドで標準のアプリケーション メッセージ ループの実行を開始し、指定したフォームを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、アプリケーションの主な機能は、このメソッドを呼び出すし、アプリケーションのメイン ウィンドウを渡します。  
+  
+ このメソッドは、イベント ハンドラーを追加、`mainForm`のパラメーター、<xref:System.Windows.Forms.Form.Closed>イベント。 イベント ハンドラー呼び出し<xref:System.Windows.Forms.Application.ExitThread%2A>アプリケーションをクリーンアップします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Forms.Control.Dispose%2A>のメソッド、<xref:System.Windows.Forms.Form>クラスがこのメソッドの戻り値の前に呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、フォームにリスト ボックス内の番号を一覧表示します。 クリックするたびに`button1`アプリケーションが一覧に別の数値を追加します。  
+  
+ `Main`メソッド呼び出し<xref:System.Windows.Forms.Application.Run%2A>をフォームを作成するには、アプリケーションを起動する`listBox1`、および`button1`です。 ユーザーがクリックしたとき`button1`、`button1_Click`メソッドをリスト ボックスには、1 ~ 3 の数値を加算し、表示、<xref:System.Windows.Forms.MessageBox>です。 ユーザーがクリックした場合**なし**上、 <xref:System.Windows.Forms.MessageBox>、`button1_Click`メソッドは、一覧に別の数値を追加します。 ユーザーがクリックした場合**[はい]**、アプリケーション呼び出し<xref:System.Windows.Forms.Application.Exit%2A>をキューに残りのすべてのメッセージを処理し、終了します。  
+  
+ この例では、する必要があります`listBox1`と`button1`が作成され、フォーム上に配置します。  
+  
+ [!code-cpp[Classic Application.Exit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.Exit Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.Exit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.Exit Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.Exit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.Exit Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">現在のスレッドでは、メイン メッセージ ループが実行中です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SafeTopLevelCaptionFormat">
+      <MemberSignature Language="C#" Value="public static string SafeTopLevelCaptionFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string SafeTopLevelCaptionFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.SafeTopLevelCaptionFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>警告見出しと共に表示された場合にトップレベル ウィンドウのキャプションに適用する書式指定文字列を取得または設定します。</summary>
+        <value>トップレベル ウィンドウのキャプションに適用する書式指定文字列。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.UIPermission">このプロパティを設定するすべてのウィンドウ。 関連する列挙。<see cref="F:System.Security.Permissions.UIPermissionWindow.AllWindows" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCompatibleTextRenderingDefault">
+      <MemberSignature Language="C#" Value="public static void SetCompatibleTextRenderingDefault (bool defaultValue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCompatibleTextRenderingDefault(bool defaultValue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="defaultValue" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="defaultValue">新しいコントロールに適用する既定値。 場合<see langword="true" />、サポートする新しいコントロール<c>UseCompatibleTextRendering</c>を使用して、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ベース<see cref="T:System.Drawing.Graphics" />場合ですテキストを表示するためのクラス<see langword="false" />、新しい使用を制御、[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ベース<see cref="T:System.Windows.Forms.TextRenderer" />。クラスです。</param>
+        <summary>アプリケーション全体の既定の設定、 <c>UseCompatibleTextRendering</c>特定のコントロールで定義されたプロパティ。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 特定の Windows フォーム コントロールは、いずれかを使用して、テキストを描画できます、<xref:System.Windows.Forms.TextRenderer>に基づくクラス、[!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]グラフィックス ライブラリ、または<xref:System.Drawing.Graphics>クラスに基づいて、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]グラフィックス ライブラリ。 この変更が行われた、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]でパフォーマンスとローカリゼーションの問題があるため[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]です。 使用して<xref:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault%2A>の既定値を設定する、`UseCompatibleTextRendering`サポートされているコントロールのプロパティです。  
+  
+ `UseCompatibleTextRendering`プロパティがそのレンダリング テキストを使用して Windows フォーム コントロールの間での visual の互換性を維持するためのもの、<xref:System.Windows.Forms.TextRenderer>クラスと[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]と[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]カスタム テキスト レンダリングを使用して実行するアプリケーション、<xref:System.Drawing.Graphics>クラスです。 ほとんどの場合、アプリケーションはからアップグレードされていない場合に[!INCLUDE[net_v10_short](~/includes/net-v10-short-md.md)]または[!INCLUDE[net_v11_short](~/includes/net-v11-short-md.md)]、しておくことをお勧め`UseCompatibleTextRendering`の既定値に設定`false`です。  
+  
+ [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]ベース<xref:System.Windows.Forms.TextRenderer>クラスで導入された、[!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]パフォーマンスを向上させるようにテキストの外観をよく、および国際対応フォントのサポートを改善します。 以前のバージョンので、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]、[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]ベース<xref:System.Drawing.Graphics>クラスを使用してすべてのテキスト レンダリングを実行します。 [!INCLUDE[ndptecgdi](~/includes/ndptecgdi-md.md)]文字間隔とでの折り返しが異なるから計算[!INCLUDE[ndptecgdiplus](~/includes/ndptecgdiplus-md.md)]です。 使用する Windows フォーム アプリケーションで、<xref:System.Drawing.Graphics>クラスのテキストを表示するために、これが原因で、コントロールのテキストを使用する<xref:System.Windows.Forms.TextRenderer>を異なるアプリケーションで他のテキストで表示します。 この非互換性を解決するには、設定することができます、`UseCompatibleTextRendering`プロパティを`true`です。 設定する`UseCompatibleTextRendering`に`true`サポートされている、すべてのコントロール、アプリケーションで呼び出して、<xref:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault%2A>メソッドのパラメーターを持つ`true`します。  
+  
+ Windows フォームのコードが Internet Explorer などの別のアプリケーションでホストされている場合、このメソッドを呼び出すことはありません必要があります。 スタンドアロンの Windows フォーム アプリケーションでこのメソッドを呼び出すだけです。  
+  
+   
+  
+## Examples  
+  
+> [!IMPORTANT]
+>  既定値を設定する`UseCompatibleTextRendering`で[!INCLUDE[vbprvblong](~/includes/vbprvblong-md.md)]か、後で、「<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A?displayProperty=nameWithType>です。  
+  
+ [!INCLUDE[csprcslong](~/includes/csprcslong-md.md)]またはそれ以降への呼び出し<xref:System.Windows.Forms.Application.SetCompatibleTextRenderingDefault%2A>Program.cs ファイルに自動的に生成します。 既定のテキスト レンダリングを変更するには、生成されたコードを変更します。  
+  
+```scr  
+static class Program  
+{  
+    /// <summary>  
+    /// The main entry point for the application.  
+    /// </summary>  
+    [STAThread]  
+    static void Main()  
+    {  
+        Application.EnableVisualStyles();  
+        Application.SetCompatibleTextRenderingDefault(false);  
+        Application.Run(new Form1());  
+    }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">Windows フォーム アプリケーションで、最初のウィンドウが作成される前にのみ、このメソッドを呼び出すことができます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetSuspendState">
+      <MemberSignature Language="C#" Value="public static bool SetSuspendState (System.Windows.Forms.PowerState state, bool force, bool disableWakeEvent);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool SetSuspendState(valuetype System.Windows.Forms.PowerState state, bool force, bool disableWakeEvent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.SetSuspendState(System.Windows.Forms.PowerState,System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Windows.Forms.PowerState" />
+        <Parameter Name="force" Type="System.Boolean" />
+        <Parameter Name="disableWakeEvent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="state">移行後の電源の動作モードを示す <see cref="T:System.Windows.Forms.PowerState" />。</param>
+        <param name="force">
+          すぐに、強制的に中断モードにする場合は <see langword="true" />。Windows からすべてのアプリケーションに中断の要求が送られるようにする場合は <see langword="false" />。</param>
+        <param name="disableWakeEvent">
+          システムの電源ステータスの復元が wake イベントでアクティブにならないようにするには <see langword="true" />。システムの電源ステータスの復元が wake イベントでアクティブになるようにするには <see langword="false" />。</param>
+        <summary>システムを中断または休止状態にするか、システムが中断または休止状態になるよう要求します。</summary>
+        <returns>
+          システムが中断中の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 20 秒内で、アプリケーションが中断の要求に応答しない場合、Windows は、応答しない状態であることと、アプリケーションするスリープ状態にするか、終了を決定します。 アプリケーションは、中断の要求に応答すると、かかることがリソースをクリーンアップし、アクティブなプロセスをシャット ダウンする必要がある他の時刻。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetUnhandledExceptionMode">
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>未処理の例外への対応方法をアプリケーションに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、Windows フォーム スレッドおよび他のスレッドで発生する例外の発生した例外のイベント ハンドラーを設定します。 設定<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>すべての例外は、アプリケーションのユーザー構成ファイルの設定に関係なく、アプリケーションによって処理されるようにします。 使用して、 <xref:System.Windows.Forms.Application.ThreadException> UI スレッドの例外を処理するイベントと<xref:System.AppDomain.UnhandledException>非 UI スレッドの例外を処理するイベントです。 <xref:System.AppDomain.UnhandledException>アプリケーションを防ぐことはできませんが終了するには、例では、単にエラーがログ記録、終了する前に、アプリケーション イベント ログにします。  
+  
+ この例では、2 つを定義した<xref:System.Windows.Forms.Button>コントロール、`button1`と`button2`の<xref:System.Windows.Forms.Form>クラスです。  
+  
+ [!code-cpp[Classic Application.ThreadException Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ThreadException Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ThreadException Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ThreadException Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetUnhandledExceptionMode">
+      <MemberSignature Language="C#" Value="public static void SetUnhandledExceptionMode (System.Windows.Forms.UnhandledExceptionMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetUnhandledExceptionMode(valuetype System.Windows.Forms.UnhandledExceptionMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.SetUnhandledExceptionMode(System.Windows.Forms.UnhandledExceptionMode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode">キャッチされない例外がスローされた場合に必要なアプリケーションの動作方法を説明する <see cref="T:System.Windows.Forms.UnhandledExceptionMode" /> 値。</param>
+        <summary>未処理の例外への対応方法をアプリケーションに指示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての Windows フォームによってスローされる例外をキャッチするは、ほとんどの場合です。 このメソッドを使用するかどうか、それらをユーザーに公開して実行を停止にする必要がありますか Windows フォームのコンポーネントによってスローされたすべての未処理の例外をキャッチして、操作を続行する必要がありますが、アプリケーションに指示できます。  
+  
+ 呼び出す<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>を使用して、アプリケーションのメイン フォームのインスタンスを作成する前に、<xref:System.Windows.Forms.Application.Run%2A>メソッドです。  
+  
+ 未作成スレッドで発生する例外をキャッチして、Windows フォームによって所有されている、<xref:System.AppDomain.UnhandledException>イベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Windows フォーム スレッドおよび他のスレッドで発生する例外の発生した例外のイベント ハンドラーを設定します。 設定<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>すべての例外は、アプリケーションのユーザー構成ファイルの設定に関係なく、アプリケーションによって処理されるようにします。 使用して、 <xref:System.Windows.Forms.Application.ThreadException> UI スレッドの例外を処理するイベントと<xref:System.AppDomain.UnhandledException>非 UI スレッドの例外を処理するイベントです。 <xref:System.AppDomain.UnhandledException>アプリケーションを防ぐことはできませんが終了するには、例では、単にエラーがログ記録、終了する前に、アプリケーション イベント ログにします。  
+  
+ この例では、2 つを定義した<xref:System.Windows.Forms.Button>コントロール、`button1`と`button2`の<xref:System.Windows.Forms.Form>クラスです。  
+  
+ [!code-cpp[Classic Application.ThreadException Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ThreadException Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ThreadException Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ThreadException Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが最初のウィンドウを作成した後は、例外モードを設定することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetUnhandledExceptionMode">
+      <MemberSignature Language="C#" Value="public static void SetUnhandledExceptionMode (System.Windows.Forms.UnhandledExceptionMode mode, bool threadScope);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetUnhandledExceptionMode(valuetype System.Windows.Forms.UnhandledExceptionMode mode, bool threadScope) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.SetUnhandledExceptionMode(System.Windows.Forms.UnhandledExceptionMode,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Windows.Forms.UnhandledExceptionMode" />
+        <Parameter Name="threadScope" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="mode">キャッチされない例外がスローされた場合に必要なアプリケーションの動作方法を説明する <see cref="T:System.Windows.Forms.UnhandledExceptionMode" /> 値。</param>
+        <param name="threadScope">
+          スレッド例外モードを設定する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</param>
+        <summary>未処理の例外に応答する方法をアプリケーションに指示し、オプションでスレッド固有の動作を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての Windows フォームによってスローされる例外をキャッチするは、ほとんどの場合です。 このメソッドを使用するかどうか、それらをユーザーに公開して実行を停止にする必要がありますか Windows フォームのコンポーネントによってスローされたすべての未処理の例外をキャッチして、操作を続行する必要がありますが、アプリケーションに指示できます。  
+  
+ 呼び出す<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>を使用して、アプリケーションのメイン フォームのインスタンスを作成する前に、<xref:System.Windows.Forms.Application.Run%2A>メソッドです。  
+  
+ ときに`threadScope`は`true`、スレッド例外モードを設定します。 場合、スレッド例外モードは、アプリケーション例外モードをオーバーライド`mode`に設定されていない<xref:System.Windows.Forms.UnhandledExceptionMode.Automatic>です。  
+  
+ ときに`threadScope`は`false`、アプリケーション例外モードを設定します。 すべてのスレッドを持つアプリケーション例外モードを使用、<xref:System.Windows.Forms.UnhandledExceptionMode.Automatic>モード。 アプリケーション例外モードを設定しても、現在のスレッドの設定は影響しません。  
+  
+ 未作成スレッドで発生する例外をキャッチして、Windows フォームによって所有されている、<xref:System.AppDomain.UnhandledException>イベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Windows フォーム スレッドおよび他のスレッドで発生する例外の発生した例外のイベント ハンドラーを設定します。 設定<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>すべての例外は、アプリケーションのユーザー構成ファイルの設定に関係なく、アプリケーションによって処理されるようにします。 使用して、 <xref:System.Windows.Forms.Application.ThreadException> UI スレッドの例外を処理するイベントと<xref:System.AppDomain.UnhandledException>非 UI スレッドの例外を処理するイベントです。 <xref:System.AppDomain.UnhandledException>アプリケーションを防ぐことはできませんが終了するには、例では、単にエラーがログ記録、終了する前に、アプリケーション イベント ログにします。  
+  
+ この例では、2 つを定義した<xref:System.Windows.Forms.Button>コントロール、`button1`と`button2`の<xref:System.Windows.Forms.Form>クラスです。  
+  
+ [!code-cpp[Classic Application.ThreadException Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ThreadException Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ThreadException Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ThreadException Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">アプリケーションが最初のウィンドウを作成した後は、例外モードを設定することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartupPath">
+      <MemberSignature Language="C#" Value="public static string StartupPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string StartupPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.StartupPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションを開始した実行可能ファイルの、ファイル名を含まないパスを取得します。</summary>
+        <value>アプリケーションを開始した実行可能ファイルのパス。  
+  
+ このパスは、Windows フォーム アプリケーションの配置を使用しているかどうかに応じて異なるなります[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションは、C:\Documents and Settings でユーザーごとのアプリケーションのキャッシュに格納されている\\*username*ディレクトリ。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを取得し、テキスト ボックスにその値を表示します。 この例では、する必要があります`textBox1`フォームに配置されています。  
+  
+ [!code-cpp[Classic Application.StartupPath Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.StartupPath Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.StartupPath Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.StartupPath Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.StartupPath Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.StartupPath Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">パスを取得します。 関連する列挙。<see cref="T:System.Security.Permissions.FileIOPermissionAccess" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadException">
+      <MemberSignature Language="C#" Value="public static event System.Threading.ThreadExceptionEventHandler ThreadException;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Threading.ThreadExceptionEventHandler ThreadException" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.ThreadException" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadExceptionEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トラップされないスレッドの例外がスローされると、発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、Windows フォーム スレッドで発生する例外を処理それ以外の場合はハンドルされていないときに、Windows フォーム アプリケーションを使用します。 イベント ハンドラーをアタッチ、<xref:System.Windows.Forms.Application.ThreadException>は不明な状態で、アプリケーションのままにするこれらの例外を処理するイベントです。 可能であれば、構造化例外処理ブロックで例外を処理する必要があります。  
+  
+ このコールバックは Windows フォーム スレッドの未処理の例外を設定して使用するかどうかを変更することができます<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>です。 未作成スレッドで発生する例外をキャッチして、Windows フォームによって所有されている、<xref:System.AppDomain.UnhandledException>イベント ハンドラー。  
+  
+> [!NOTE]
+>  呼び出す前に、このイベントのアクティブ化が見落とされないことを保証のハンドラーをアタッチする必要があります<xref:System.Windows.Application.Run%2A?displayProperty=nameWithType>です。  
+  
+> [!CAUTION]
+>  これは、静的イベントであるため、アプリケーションが破棄されると、またはメモリ リークは発生時に、イベント ハンドラーをデタッチする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Windows フォーム スレッドおよび他のスレッドで発生する例外の発生した例外のイベント ハンドラーを設定します。 設定<xref:System.Windows.Forms.Application.SetUnhandledExceptionMode%2A>すべての例外は、アプリケーションのユーザー構成ファイルの設定に関係なく、アプリケーションによって処理されるようにします。 使用して、 <xref:System.Windows.Forms.Application.ThreadException> UI スレッドの例外を処理するイベントと<xref:System.AppDomain.UnhandledException>非 UI スレッドの例外を処理するイベントです。 <xref:System.AppDomain.UnhandledException>アプリケーションを防ぐことはできませんが終了するには、例では、単にエラーがログ記録、終了する前に、アプリケーション イベント ログにします。  
+  
+ この例では、2 つを定義した<xref:System.Windows.Forms.Button>コントロール、`button1`と`button2`の<xref:System.Windows.Forms.Form>クラスです。  
+  
+ [!code-cpp[Classic Application.ThreadException Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Application.ThreadException Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Application.ThreadException Example/CS/source.cs#1)]
+ [!code-vb[Classic Application.ThreadException Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Application.ThreadException Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このイベントにハンドラーを追加するときに、アンマネージ コードを呼び出す即時呼び出し元がします。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ThreadExit">
+      <MemberSignature Language="C#" Value="public static event EventHandler ThreadExit;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler ThreadExit" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.Application.ThreadExit" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>スレッドをシャットダウンしようとすると発生します。 アプリケーションのメイン スレッドをシャットダウンしようとすると、まずこのイベントが発生し、続いて <see cref="E:System.Windows.Forms.Application.ApplicationExit" /> イベントが発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーをアタッチする必要があります、<xref:System.Windows.Forms.Application.ThreadExit>を実行するイベントがハンドルされていないとき、スレッドの実行を停止する前にタスクが必要です。 このスレッド、またはガベージ コレクターが再生されませんでしたオブジェクトの破棄によって開かれたファイルを閉じます。  
+  
+> [!CAUTION]
+>  これは、静的イベントであるため、アプリケーションが破棄されると、またはメモリ リークは発生時に、イベント ハンドラーをデタッチする必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.Application.ThreadExit>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する Windows フォームに貼り付けとに、イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.Application.ThreadExit>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#6)]
+ [!code-vb[System.Windows.Forms.EventExamples#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnregisterMessageLoop">
+      <MemberSignature Language="C#" Value="public static void UnregisterMessageLoop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void UnregisterMessageLoop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.Application.UnregisterMessageLoop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.Windows.Forms.Application.RegisterMessageLoop(System.Windows.Forms.Application.MessageLoopCallback)" /> によってなされたメッセージ ループ コールバックを登録解除します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAppDataPath">
+      <MemberSignature Language="C#" Value="public static string UserAppDataPath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string UserAppDataPath" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.UserAppDataPath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのアプリケーション データのパスを取得します。</summary>
+        <value>ユーザーのアプリケーション データのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスが存在しない場合、次の形式で 1 つは作成されます。  
+  
+ *基本パス*\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>  
+  
+ このパスに格納されたデータは、ローミングが有効になっているユーザー プロファイルの一部です。 ローミング ユーザーは、ネットワーク内の 1 つ以上のコンピューターで機能します。 ローミング ユーザーのユーザー プロファイルは、ネットワーク上のサーバーに保持され、ユーザーがログオンしたときに、システムに読み込まれます。 ローミング中に考慮する、ユーザー プロファイルのオペレーティング システムは、ローミング プロファイルをサポートする必要があり、有効にする必要があります。  
+  
+ 一般的な基本パスは、C:\Documents and Settings\\*username*\Application Data です。 このパスになります、ただしを使用して Windows フォーム アプリケーションが展開されている場合[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]です。 [!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]他のすべてのアプリケーションから分離する独自のアプリケーション データ ディレクトリを作成します。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次の 2 つのフォームを表示し、両方のフォームが閉じられたときに、アプリケーションを終了します。 アプリケーションを起動し、終了、各フォームの位置が記憶されます。 この例では、<xref:System.Windows.Forms.Application.UserAppDataPath%2A>プロパティをユーザーのアプリケーション データを格納します。  
+  
+ クラス`MyApplicationContext`から継承<xref:System.Windows.Forms.ApplicationContext>し、各フォームは閉じられ、両者は、するときに、現在のスレッドを終了するときは常に追跡します。 クラスは、ユーザーの各フォームの位置を格納します。 フォームの位置データはというファイルに格納`Appdata.txt`によって決まります場所に作成される<xref:System.Windows.Forms.Application.UserAppDataPath%2A>です。 `Main`メソッド呼び出し`Application.Run(context)`指定されたアプリケーションを起動する、<xref:System.Windows.Forms.ApplicationContext>です。  
+  
+ このコードに示した例からの抜粋、<xref:System.Windows.Forms.ApplicationContext>クラスの概要です。 一部のコードは、簡潔さを優先するためには表示されません。 参照してください<xref:System.Windows.Forms.ApplicationContext>コード全体をします。  
+  
+ [!code-cpp[Application#5](~/samples/snippets/cpp/VS_Snippets_Winforms/Application/CPP/source.cpp#5)]
+ [!code-csharp[Application#5](~/samples/snippets/csharp/VS_Snippets_Winforms/Application/CS/source.cs#5)]
+ [!code-vb[Application#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Application/VB/source.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserAppDataRegistry">
+      <MemberSignature Language="C#" Value="public static Microsoft.Win32.RegistryKey UserAppDataRegistry { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class Microsoft.Win32.RegistryKey UserAppDataRegistry" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.UserAppDataRegistry" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.RegistryKey</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのアプリケーション データのレジストリ キーを取得します。</summary>
+        <value>ユーザー固有のアプリケーション データのレジストリ キーを表す <see cref="T:Microsoft.Win32.RegistryKey" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーが存在しない場合、次の形式で作成します。  
+  
+ CurrentUser\Software\\<xref:System.Windows.Forms.Application.CompanyName%2A>\\<xref:System.Windows.Forms.Application.ProductName%2A>\\<xref:System.Windows.Forms.Application.ProductVersion%2A>   
+  
+ このキーに格納されたデータは、ローミングが有効になっているユーザー プロファイルの一部です。 ローミング ユーザーは、ネットワーク内の 1 つ以上のコンピューターで機能します。 ローミング ユーザーのユーザー プロファイルは、ネットワーク上のサーバーに保持され、ユーザーがログオンしたときに、システムに読み込まれます。 ローミング中に考慮する、ユーザー プロファイルのオペレーティング システムは、ローミング プロファイルをサポートする必要があり、有効にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseWaitCursor">
+      <MemberSignature Language="C#" Value="public static bool UseWaitCursor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UseWaitCursor" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.UseWaitCursor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの開いているフォームすべてに待機カーソルを使用するかどうかについて、取得または設定します。</summary>
+        <value>
+          すべての開いているフォームで待機カーソルが使用される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定すると`true`、<xref:System.Windows.Forms.Control.UseWaitCursor%2A>アプリケーションでフォームを開いているすべてのプロパティ設定されます`true`です。 すべてのフォームにこのプロパティが設定されるまで、この呼び出しは返されません。 実行時間の長い操作し、すべてのアプリケーション形式で、操作がまだ処理されていることを示すために必要な場合は、このプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualStyleState">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.VisualStyles.VisualStyleState VisualStyleState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.VisualStyles.VisualStyleState VisualStyleState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.Application.VisualStyleState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.VisualStyles.VisualStyleState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション ウィンドウに visual スタイルをどのように適用するかを指定する値を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.VisualStyles.VisualStyleState" /> 値のビットごとの組み合わせ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Forms.Application.VisualStyleState%2A>プロパティは、クライアント領域またはアプリケーション ウィンドウの非クライアント領域で、visual スタイルが有効にするかどうかを決定します。 一般に、メイン フォームのコンス トラクター内でこのプロパティを設定する必要がありますまたは<xref:System.Windows.Forms.Form.Load>イベント ハンドラー。  
+  
+   
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Windows.Forms.Application.VisualStyleState%2A>プロパティのいずれかを<xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType>内の値、<xref:System.Windows.Forms.Control.Click>のイベント ハンドラー、<xref:System.Windows.Forms.Button>コントロール。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.VisualStyles.VisualStyleState?displayProperty=nameWithType>列挙します。  
+  
+ [!code-cpp[System.Windows.Forms.VisualStyles.VisualStyleState#10](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleState/cpp/visualstylestate.cpp#10)]
+ [!code-csharp[System.Windows.Forms.VisualStyles.VisualStyleState#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleState/CS/visualstylestate.cs#10)]
+ [!code-vb[System.Windows.Forms.VisualStyles.VisualStyleState#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.VisualStyles.VisualStyleState/VB/visualstylestate.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

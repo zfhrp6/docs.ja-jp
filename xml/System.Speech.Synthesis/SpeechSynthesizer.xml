@@ -1,0 +1,2486 @@
+<Type Name="SpeechSynthesizer" FullName="System.Speech.Synthesis.SpeechSynthesizer">
+  <TypeSignature Language="C#" Value="public sealed class SpeechSynthesizer : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SpeechSynthesizer extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.SpeechSynthesizer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>インストール済みの音声合成エンジン機能へのアクセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新規に作成するときに<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトの既定のシステムの音声を使用します。 構成するのには<xref:System.Speech.Synthesis.SpeechSynthesizer>使用するにはインストールされている音声合成 (音声合成) 声のいずれかを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。 音声のインストールに関する情報を取得する、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスです。  
+  
+ このクラスには、音声合成の次の側面を制御も提供されます。  
+  
+-   出力を構成する、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトを使用して、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>メソッドです。  
+  
+-   音声を生成するには、使用、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 <xref:System.Speech.Synthesis.SpeechSynthesizer> 、テキストから音声を生成することができます、<xref:System.Speech.Synthesis.Prompt>または<xref:System.Speech.Synthesis.PromptBuilder>オブジェクト、またはから[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)です。  
+  
+-   一時停止し、音声合成の再開を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.Pause%2A>と<xref:System.Speech.Synthesis.SpeechSynthesizer.Resume%2A>メソッドです。  
+  
+-   を追加または削除の辞書を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon%2A>と<xref:System.Speech.Synthesis.SpeechSynthesizer.RemoveLexicon%2A>メソッドです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>単語、発音のガイドに 1 つまたは複数の辞書を使用することができます。  
+  
+-   音声出力の配信を変更するには、使用、<xref:System.Speech.Synthesis.SpeechSynthesizer.Rate%2A>と<xref:System.Speech.Synthesis.SpeechSynthesizer.Volume%2A>プロパティです。  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>プロンプトの特定の機能を検出したときにイベントを発生させます。 (<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress>)。 開始を報告するイベントを発生させます (<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>) と終了 (<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>) の操作を話すとでは、声の変更 (<xref:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange>)。  
+  
+> [!NOTE]
+>  <xref:System.Speech.Synthesis.SpeechSynthesizer.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Speech.Synthesis.SpeechSynthesizer> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Speech.Synthesis.SpeechSynthesizer> オブジェクトの <xref:System.Object.Finalize%2A> メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+   
+  
+## Examples  
+ 次の例を初期化するコンソール アプリケーションの一部である、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクト、文字列を読みます。  
+  
+```csharp  
+  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Speak a string.  
+      synth.Speak("This example demonstrates a basic use of Speech Synthesizer");  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SpeechSynthesizer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.SpeechSynthesizer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化するとき、新しい<xref:System.Speech.Synthesis.SpeechSynthesizer>インスタンス、既定のシステムの音声を使用します。 構成するのには<xref:System.Speech.Synthesis.SpeechSynthesizer>使用するにはインストールされている音声合成 (音声合成) 声のいずれかを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。 音声のインストールに関する情報を取得する、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddLexicon">
+      <MemberSignature Language="C#" Value="public void AddLexicon (Uri uri, string mediaType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddLexicon(class System.Uri uri, string mediaType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon(System.Uri,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="mediaType" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="uri">辞書の情報の場所です。</param>
+        <param name="mediaType">辞書のメディアの種類。 メディアの種類の値は大文字と小文字ではありません。</param>
+        <summary>辞書を追加、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発音辞書は、単語または語句とその発音では、文字およびサポートされている音標文字からの文字で構成のコレクションです。 辞書を使用すると、アプリケーションで特殊なボキャブラリのカスタムの発音を指定します。  
+  
+ 外部の辞書ファイルで指定された発音スピーチ シンセサイザーの内部辞書またはディクショナリの発音よりも優先されます。 ただし、発音がインラインを指定のいずれかで作成されるプロンプトで、 <xref:System.Speech.Synthesis.PromptBuilder.AppendTextWithPronunciation%2A>、 <xref:System.Speech.Synthesis.PromptBuilder.AppendSsmlMarkup%2A>、または<xref:System.Speech.Synthesis.PromptBuilder.AppendSsml%2A>メソッドの辞書で指定された発音よりも優先します。 インライン発音単語の 1 つのみに適用されます。 参照してください[辞書と音声のアルファベット](http://msdn.microsoft.com/en-us/435e3c6f-6834-4e5a-b0f6-c17b2275dc51)詳細についてはします。  
+  
+ 複数の辞書を追加することができます、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクト。2 つの値が現在サポートされている、`mediaType`パラメーター。  
+  
+-   値`application/pls+xml`に、辞書が準拠していることを示します、[発音辞書の仕様 (PL) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201766)です。 これは、使用する優先形式です。  
+  
+-   値`application/vdn.ms-sapi-lex`辞書形式が圧縮されていない辞書に独自の Microsoft 形式であることを示します。 これは、従来の形式と、上記の PLS フォーマットを使用することをお勧めします。  
+  
+   
+  
+## Examples  
+ 次の例では、追加と削除を含むカスタムの発音"blue"という単語を辞書の効果を示します。 辞書は、"bleep"のような音声に"blue"の発音を定義します。 辞書が読み込まれているスピーチ シンセサイザーは辞書で定義されている発音を使用します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Speak the prompt.  
+        synth.Speak("My favorite color is blue.");  
+  
+        // Add a lexicon that changes the pronunciation of "blue".  
+        synth.AddLexicon(new Uri("C:\\test\\Blue.pls"), "application/pls+xml");  
+  
+        // Speak the prompt.  
+        synth.Speak("My favorite color is blue.");  
+  
+        // Remove the lexicon.  
+        synth.RemoveLexicon(new Uri("C:\\test\\Blue.pls"));  
+  
+        // Speak the prompt.  
+        synth.Speak("My favorite color is blue.");  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ Blue.pls 辞書ファイルの内容を次に示します。  
+  
+```xml  
+<?xml version="1.0" encoding="UTF-8"?>  
+  
+<lexicon version="1.0"   
+      xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"  
+      alphabet="x-microsoft-ups" xml:lang="en-US">  
+  
+  <lexeme>  
+    <grapheme> blue </grapheme>  
+    <phoneme> B L I P </phoneme>  
+  </lexeme>  
+  
+</lexicon>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BookmarkReached">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.BookmarkReachedEventArgs&gt; BookmarkReached;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.BookmarkReachedEventArgs&gt; BookmarkReached" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.BookmarkReachedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するか、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />メッセージ内のブックマークを検出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>のいずれかの処理中にこのイベントを発生させる、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 イベントに関連付けられているデータについては、次を参照してください。<xref:System.Speech.Synthesis.BookmarkReachedEventArgs>です。  
+  
+ 使用してブックマークを追加することができます、<xref:System.Speech.Synthesis.PromptBuilder.AppendBookmark%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのブックマークが含まれていて、WAV ファイル再生のために、出力を送信するメッセージを作成します。 ハンドラーを<xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>イベントがコンソールにイベントが発生したときに、オーディオのストリーム内での位置およびブックマークの名前を書き込みます。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\test\weather.wav");  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =  
+          new System.Media.SoundPlayer(@"C:\test\weather.wav");  
+  
+        // Build a prompt and append bookmarks.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendText(  
+          "The weather forecast for today is partly cloudy with some sun breaks.");  
+        builder.AppendBookmark("Daytime forecast");  
+        builder.AppendText(  
+          "Tonight's weather will be cloudy with a 30% chance of showers.");  
+        builder.AppendBookmark("Nightime forecast");  
+  
+        // Add a handler for the BookmarkReached event.  
+        synth.BookmarkReached +=  
+          new EventHandler<BookmarkReachedEventArgs>(synth_BookmarkReached);  
+  
+        // Speak the prompt and play back the output file.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Write the name and position of the bookmark to the console.  
+    static void synth_BookmarkReached(object sender, BookmarkReachedEventArgs e)  
+    {  
+      Console.WriteLine("Bookmark ({0}) reached at: {1} ",  
+        e.Bookmark, e.AudioPosition);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Speech.Synthesis.SpeechSynthesizer" /> オブジェクトを破棄し、セッション中に使用するリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~SpeechSynthesizer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リソースをクリーンアップするためのセーフガードの役割を果たしますイベントで、<see cref="M:System.Speech.Synthesis.SpeechSynthesizer.Dispose" />メソッドは呼び出されません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentlySpokenPrompt">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.Prompt GetCurrentlySpokenPrompt ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Synthesis.Prompt GetCurrentlySpokenPrompt() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.GetCurrentlySpokenPrompt" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.Prompt</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロンプトを取得、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />の音声が出力されます。</summary>
+        <returns>読み上げ現在プロンプトのオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+  
+```csharp  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetInstalledVoices">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>現在システムにインストールされている音声合成 (合成) で音声認識のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、音声 (音声合成エンジン) のそれぞれが検出されるでレジストリを満たしている特定の最小の条件を確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetInstalledVoices">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Synthesis.InstalledVoice&gt; GetInstalledVoices ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.Synthesis.InstalledVoice&gt; GetInstalledVoices() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Synthesis.InstalledVoice&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのインストール済みの音声合成 (音声合成) 声を返します。</summary>
+        <returns>システムに現在インストールされている音声の読み取り専用コレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音声とは、システムにインストールされている音声合成音声合成 (TTS) のエンジンです。  
+  
+   
+  
+## Examples  
+ 次の例を初期化するコンソール アプリケーションの一部である、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトおよびインストールされている音声 (音声合成エンジン) の一覧をコンソールに出力を各音声で利用可能な情報を示します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+using System.Speech.AudioFormat;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Output information about all of the installed voices.   
+        Console.WriteLine("Installed voices -");  
+        foreach (InstalledVoice voice in synth.GetInstalledVoices())  
+        {  
+          VoiceInfo info = voice.VoiceInfo;  
+          string AudioFormats = "";  
+          foreach (SpeechAudioFormatInfo fmt in info.SupportedAudioFormats)  
+          {  
+            AudioFormats += String.Format("{0}\n",  
+            fmt.EncodingFormat.ToString());  
+          }  
+  
+          Console.WriteLine(" Name:          " + info.Name);  
+          Console.WriteLine(" Culture:       " + info.Culture);  
+          Console.WriteLine(" Age:           " + info.Age);  
+          Console.WriteLine(" Gender:        " + info.Gender);  
+          Console.WriteLine(" Description:   " + info.Description);  
+          Console.WriteLine(" ID:            " + info.Id);  
+          Console.WriteLine(" Enabled:       " + voice.Enabled);  
+          if (info.SupportedAudioFormats.Count != 0)  
+          {  
+            Console.WriteLine( " Audio formats: " + AudioFormats);  
+          }  
+          else  
+          {  
+            Console.WriteLine(" No supported audio formats found");  
+          }  
+  
+          string AdditionalInfo = "";  
+          foreach (string key in info.AdditionalInfo.Keys)  
+          {  
+            AdditionalInfo += String.Format("  {0}: {1}\n", key, info.AdditionalInfo[key]);  
+          }  
+  
+          Console.WriteLine(" Additional Info - " + AdditionalInfo);  
+          Console.WriteLine();  
+        }  
+      }  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInstalledVoices">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Synthesis.InstalledVoice&gt; GetInstalledVoices (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Speech.Synthesis.InstalledVoice&gt; GetInstalledVoices(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Speech.Synthesis.InstalledVoice&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">音声をサポートする必要があるロケールです。</param>
+        <summary>特定のロケールをサポートする (音声合成) を合成音声で次のインストール済みの音声のすべてを返します。</summary>
+        <returns>指定したロケールをサポートするシステムに現在インストールされている音声の読み取り専用コレクションを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インストールされている音声サポート指定されたロケールにない場合、このメソッドは空のコレクションを返します。  
+  
+ Microsoft Windows および System.Speech API は、すべての有効な言語-国コードを受け取ります。 カルチャ プロパティで指定された言語を使用して音声合成を実行するには、言語-国コードをサポートする音声合成エンジンをインストールする必要があります。 Microsoft Windows 7 に付属の音声合成エンジンは、次の言語、国コードと協力します。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+   
+  
+## Examples  
+ 次の例を初期化するコンソール アプリケーションの一部である、<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトを EN-US ロケールをサポートしているインストール済みの音声の一覧をコンソールに出力します。  
+  
+```csharp  
+using System;  
+using System.Globalization;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the speech synthesizer.  
+      using (SpeechSynthesizer synthesizer = new SpeechSynthesizer())  
+      {  
+  
+        // Output information about all of the installed voices that  
+        // support the en-US locacale.   
+        Console.WriteLine("Installed voices for the en-US locale:");  
+        foreach (InstalledVoice voice in  
+          synthesizer.GetInstalledVoices(new CultureInfo("en-US")))  
+        {  
+          VoiceInfo info = voice.VoiceInfo;  
+          OutputVoiceInfo(info);  
+        }  
+  
+        // Output information about the current voice.  
+        Console.WriteLine();  
+        Console.WriteLine("Current voice:");  
+        OutputVoiceInfo(synthesizer.Voice);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Display information about a synthesizer voice.  
+    private static void OutputVoiceInfo(VoiceInfo info)  
+    {  
+      Console.WriteLine("  Name: {0}, culture: {1}, gender: {2}, age: {3}.",  
+        info.Name, info.Culture, info.Gender, info.Age);  
+      Console.WriteLine("    Description: {0}", info.Description);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>一時停止、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PhonemeReached">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.PhonemeReachedEventArgs&gt; PhonemeReached;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.PhonemeReachedEventArgs&gt; PhonemeReached" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.PhonemeReachedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音素に達したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音素は、記述された言語の基本コンポーネント、通常のアルファベット (または 2 文字の組み合わせ) を 1 つまたは複数の個別のサウンドを表す文字です。 たとえば、文字"c"は「シンダー」の"s"のように、または"catch"に"k"のように思えるかもしれませんの音素です。 書き込まれた単語とは、音素の集合体です。 音素を単語内で変更すると、そのスペルが変更されます。  
+  
+ A<xref:System.Speech.Synthesis.SpeechSynthesizer>インスタンスの生成、<xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>音素のときに使用する単語の各部分のイベントです。 たとえば、単語の「テーマ」は生成 3<xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>イベント;"th"サウンド、"e"音を出すと 1 つの"m"のサウンド (me) 用の 1 つです。  
+  
+ 例と、イベントに関連付けられているデータに関する情報については、次を参照してください。<xref:System.Speech.Synthesis.PhonemeReachedEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rate">
+      <MemberSignature Language="C#" Value="public int Rate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Rate" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.SpeechSynthesizer.Rate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の読み上げ速度、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <value>返しますの読み上げ速度、 <see cref="T:System.Speech.Synthesis.SpeechSynthesizer" /> 10 から -10 からのオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、文字列を-2 に設定する話し速度で話します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Set a value for the speaking rate.  
+      synth.Rate = -2;  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Speak a text string synchronously.  
+      synth.Speak("This example speaks a string with the speaking rate set to -2.");  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }     
+  }    
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveLexicon">
+      <MemberSignature Language="C#" Value="public void RemoveLexicon (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveLexicon(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.RemoveLexicon(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">辞書のドキュメントの場所です。</param>
+        <summary>辞書からの削除、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例については、「<xref:System.Speech.Synthesis.SpeechSynthesizer.AddLexicon%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Resume" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>再開されます、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />が一時停止した後のオブジェクトします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectVoice">
+      <MemberSignature Language="C#" Value="public void SelectVoice (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectVoice(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">選択する音声の名前。</param>
+        <summary>名前で特定の音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスの名前を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。 選択するには、音声の内容全体を渡す、<xref:System.Speech.Synthesis.VoiceInfo.Name%2A>プロパティの引数として、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッドです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトの選択を含む最初のインストール済みの音声`name`で音声の<xref:System.Speech.Synthesis.VoiceInfo.Name%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Speech.Synthesis.SpeechSynthesizer>音声と一致するかどうかを決定する、大文字小文字を区別部分文字列比較を実行、`name`です。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ 性別、年齢、またはロケールによって、音声を選択するには、いずれかの操作を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SelectVoiceByHints">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>特定の特性を持つ、音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスの名前を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトが指定された特性に一致する最初のインストール済みの音声を選択します。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ 名前で、音声を選択するには、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッド  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SelectVoiceByHints">
+      <MemberSignature Language="C#" Value="public void SelectVoiceByHints (System.Speech.Synthesis.VoiceGender gender);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectVoiceByHints(valuetype System.Speech.Synthesis.VoiceGender gender) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints(System.Speech.Synthesis.VoiceGender)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+      </Parameters>
+      <Docs>
+        <param name="gender">選択する音声の性別。</param>
+        <summary>特定の性別と音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスの名前を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクト選択の最初のインストール済みの音声が<xref:System.Speech.Synthesis.VoiceInfo.Gender%2A>プロパティと一致する、`gender`パラメーター。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ その他の特性に基づいて、音声を選択するを参照してください、他の<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。  
+  
+ 名前で、音声を選択するには、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectVoiceByHints">
+      <MemberSignature Language="C#" Value="public void SelectVoiceByHints (System.Speech.Synthesis.VoiceGender gender, System.Speech.Synthesis.VoiceAge age);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectVoiceByHints(valuetype System.Speech.Synthesis.VoiceGender gender, valuetype System.Speech.Synthesis.VoiceAge age) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints(System.Speech.Synthesis.VoiceGender,System.Speech.Synthesis.VoiceAge)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+        <Parameter Name="age" Type="System.Speech.Synthesis.VoiceAge" />
+      </Parameters>
+      <Docs>
+        <param name="gender">選択する音声の性別。</param>
+        <param name="age">選択する音声の年齢。</param>
+        <summary>特定の性別と年齢に音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスの名前を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトが最初のインストール済みの音声を選択が<xref:System.Speech.Synthesis.VoiceInfo.Gender%2A>と<xref:System.Speech.Synthesis.VoiceInfo.Age%2A>プロパティ一致、`gender`と`age`パラメーター。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ その他の特性に基づいて、音声を選択するを参照してください、他の<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。  
+  
+ 名前で、音声を選択するには、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectVoiceByHints">
+      <MemberSignature Language="C#" Value="public void SelectVoiceByHints (System.Speech.Synthesis.VoiceGender gender, System.Speech.Synthesis.VoiceAge age, int voiceAlternate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectVoiceByHints(valuetype System.Speech.Synthesis.VoiceGender gender, valuetype System.Speech.Synthesis.VoiceAge age, int32 voiceAlternate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints(System.Speech.Synthesis.VoiceGender,System.Speech.Synthesis.VoiceAge,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+        <Parameter Name="age" Type="System.Speech.Synthesis.VoiceAge" />
+        <Parameter Name="voiceAlternate" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="gender">選択する音声の性別。</param>
+        <param name="age">選択する音声の年齢。</param>
+        <param name="voiceAlternate">選択する音声の位置。</param>
+        <summary>声が順序付けの位置に基づいて特定の性別と年齢と音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスの名前を取得するには、選択可能な音声合成 (TTS) 音声がインストールされています。 <xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトの検索がインストールされている意見を持つ<xref:System.Speech.Synthesis.VoiceInfo.Gender%2A>と<xref:System.Speech.Synthesis.VoiceInfo.Age%2A>プロパティ一致、`gender`と`age`パラメーター。 <xref:System.Speech.Synthesis.SpeechSynthesizer>一致が見つかると、しに等しくなると、音声を返しますのカウント、`voiceAlternate`パラメーター。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ その他の特性に基づいて、音声を選択するを参照してください、他の<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>オーバー ロードします。  
+  
+ 名前で、音声を選択するには、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectVoiceByHints">
+      <MemberSignature Language="C#" Value="public void SelectVoiceByHints (System.Speech.Synthesis.VoiceGender gender, System.Speech.Synthesis.VoiceAge age, int voiceAlternate, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SelectVoiceByHints(valuetype System.Speech.Synthesis.VoiceGender gender, valuetype System.Speech.Synthesis.VoiceAge age, int32 voiceAlternate, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints(System.Speech.Synthesis.VoiceGender,System.Speech.Synthesis.VoiceAge,System.Int32,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gender" Type="System.Speech.Synthesis.VoiceGender" />
+        <Parameter Name="age" Type="System.Speech.Synthesis.VoiceAge" />
+        <Parameter Name="voiceAlternate" Type="System.Int32" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="gender">選択する音声の性別。</param>
+        <param name="age">選択する音声の年齢。</param>
+        <param name="voiceAlternate">選択する音声の位置。</param>
+        <param name="culture">選択する音声のロケールです。</param>
+        <summary>声が順序付けの位置に基づいて特定の性別、年齢、およびロケールの音声を選択します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>検索意見を持つオブジェクト<xref:System.Speech.Synthesis.VoiceInfo.Gender%2A>、 <xref:System.Speech.Synthesis.VoiceInfo.Age%2A>、および<xref:System.Speech.Synthesis.VoiceInfo.Culture%2A>プロパティ一致、 `gender`、 `age`、および`culture`パラメーター。 <xref:System.Speech.Synthesis.SpeechSynthesizer>一致が見つかると、しに等しくなると、音声を返しますのカウント、`voiceAlternate`パラメーター。  
+  
+ Microsoft Windows および System.Speech API は、すべての有効な言語-国コードを受け取ります。 指定された言語を使用して音声合成を実行する、`culture`パラメーターでは、言語、国コードをインストールする必要があるをサポートする音声合成エンジンです。 Microsoft Windows 7 に付属の音声合成エンジンは、次の言語、国コードと協力します。  
+  
+-   EN-US です。 英語 (米国)  
+  
+-   ZH-CN です。 中国語 (中国)  
+  
+-   zh-tw があります。 中国語 (台湾)  
+  
+ "En"などの 2 文字の言語コードも許可されています。  
+  
+ アプリケーションを呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドは、最低限の条件を満たして、レジストリ内で見つかった声のことを確認します。 検証に失敗したすべての音声の<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>設定、<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティを`False`です。 アプリケーションが、音声を選択できない持つ<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティは`False`します。 通常、アプリケーションは、音声のない設定<xref:System.Speech.Synthesis.InstalledVoice.Enabled%2A>プロパティです。  
+  
+ その他の特性に基づいて、音声を選択するを参照してください、他の<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>オーバー ロードします。  
+  
+ 名前で、音声を選択するには、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputToAudioStream">
+      <MemberSignature Language="C#" Value="public void SetOutputToAudioStream (System.IO.Stream audioDestination, System.Speech.AudioFormat.SpeechAudioFormatInfo formatInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToAudioStream(class System.IO.Stream audioDestination, class System.Speech.AudioFormat.SpeechAudioFormatInfo formatInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream(System.IO.Stream,System.Speech.AudioFormat.SpeechAudioFormatInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioDestination" Type="System.IO.Stream" />
+        <Parameter Name="formatInfo" Type="System.Speech.AudioFormat.SpeechAudioFormatInfo" />
+      </Parameters>
+      <Docs>
+        <param name="audioDestination">シンセサイザーの出力を追加するストリーム。</param>
+        <param name="formatInfo">シンセサイザーの出力に使用する形式。</param>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オーディオ ストリームに出力を追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>を解放する、<xref:System.Speech.Synthesis.SpeechSynthesizer>のストリームへの参照。  
+  
+ その他の出力の構成オプションを参照してください、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputToDefaultAudioDevice">
+      <MemberSignature Language="C#" Value="public void SetOutputToDefaultAudioDevice ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToDefaultAudioDevice() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />既定のオーディオ デバイスに出力を送信するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、**サウンド**、Windows のウィンドウ**コントロール パネルの **コンピューターの既定のオーディオ デバイスを構成します。  
+  
+ その他の出力の構成オプションを参照してください、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、シンセサイザーを使用して、既定のオーディオ出力に語句を話します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the speech synthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the synthesizer to send output to the default audio device.  
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Speak a phrase.  
+        synth.Speak("This is sample text-to-speech output.");  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputToNull">
+      <MemberSignature Language="C#" Value="public void SetOutputToNull ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToNull() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />いないデバイス、ファイル、またはストリームに合成操作から出力を送信するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、リリース、<xref:System.Speech.Synthesis.SpeechSynthesizer>のファイルまたはストリームへの参照。 例については、「<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream%2A>」を参照してください。  
+  
+ その他の出力の構成オプションを参照してください、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SetOutputToWaveFile">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />波形オーディオ形式のファイルに出力を追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 解放する、<xref:System.Speech.Synthesis.SpeechSynthesizer>の参照、ファイルを再構成、<xref:System.Speech.Synthesis.SpeechSynthesizer>の出力、たとえば、呼び出すことによって<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>です。  
+  
+ その他の出力の構成オプションを参照してください、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SetOutputToWaveFile">
+      <MemberSignature Language="C#" Value="public void SetOutputToWaveFile (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToWaveFile(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルへのパス。</param>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />波形オーディオの設定を含むファイルに出力を追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 出力を構成して、オーディオ形式を指定してを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを使用して<xref:System.Media.SoundPlayer>.wav ファイルに出力されているプロンプトを再生します。 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>呼び出しが非同期で、<xref:System.Media.SoundPlayer>インスタンスが作成される (および<xref:System.Media.SoundPlayer.Play%2A>呼び出されるメソッド) のハンドラーで、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベント。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToWaveFile(@"C:\Test\Sample.wav");  
+  
+      // Register for the SpeakCompleted event.  
+      synth.SpeakCompleted += new EventHandler<SpeakCompletedEventArgs>(synth_SpeakCompleted);  
+  
+      // Build a prompt.  
+      PromptBuilder builder = new PromptBuilder();  
+      builder.AppendText("This sample asynchronously speaks a prompt to a WAVE file.");  
+  
+      // Speak the string asynchronously.  
+      synth.SpeakAsync(builder);  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Handle the SpeakCompleted event.  
+    static void synth_SpeakCompleted(object sender, SpeakCompletedEventArgs e)  
+    {  
+  
+      // Create a SoundPlayer instance to play the output audio file.  
+      System.Media.SoundPlayer m_SoundPlayer =  
+        new System.Media.SoundPlayer(@"C:\Test\Sample.wav");  
+  
+      //  Play the output file.  
+      m_SoundPlayer.Play();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputToWaveFile">
+      <MemberSignature Language="C#" Value="public void SetOutputToWaveFile (string path, System.Speech.AudioFormat.SpeechAudioFormatInfo formatInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToWaveFile(string path, class System.Speech.AudioFormat.SpeechAudioFormatInfo formatInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile(System.String,System.Speech.AudioFormat.SpeechAudioFormatInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="formatInfo" Type="System.Speech.AudioFormat.SpeechAudioFormatInfo" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルへのパス。</param>
+        <param name="formatInfo">オーディオ形式情報。</param>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />指定の形式で波形オーディオ形式のファイルに出力を追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、音声合成の出力の形式を指定し、WAV ファイルを送信します。  
+  
+```csharp  
+using System;  
+using System.IO;  
+using System.Speech.Synthesis;  
+using System.Speech.AudioFormat;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToWaveFile(@"C:\temp\test.wav",   
+          new SpeechAudioFormatInfo(32000, AudioBitsPerSample.Sixteen, AudioChannel.Mono));  
+  
+        // Create a SoundPlayer instance to play output audio file.  
+        System.Media.SoundPlayer m_SoundPlayer =   
+          new System.Media.SoundPlayer(@"C:\temp\test.wav");  
+  
+        // Build a prompt.  
+        PromptBuilder builder = new PromptBuilder();  
+        builder.AppendText("This is sample output to a WAVE file.");  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+        m_SoundPlayer.Play();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetOutputToWaveStream">
+      <MemberSignature Language="C#" Value="public void SetOutputToWaveStream (System.IO.Stream audioDestination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetOutputToWaveStream(class System.IO.Stream audioDestination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveStream(System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="audioDestination" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="audioDestination">シンセサイザーの出力を追加するストリーム。</param>
+        <summary>構成、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />波形オーディオの設定を格納しているストリームに出力を追加するオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 解放する、<xref:System.Speech.Synthesis.SpeechSynthesizer>の参照に、ストリーム reconfigure シンセサイザーの出力、たとえば、呼び出すことによって<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>です。  
+  
+ その他の出力の構成オプションを参照してください、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToAudioStream%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToDefaultAudioDevice%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToNull%2A>、および<xref:System.Speech.Synthesis.SpeechSynthesizer.SetOutputToWaveFile%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、WAV ストリームに語句を出力します。  
+  
+```csharp  
+using System;  
+using System.IO;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the speech synthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      using (MemoryStream stream = new MemoryStream())  
+      {  
+  
+        // Create a SoundPlayer instance to play the output audio file.  
+        MemoryStream streamAudio = new MemoryStream();  
+        System.Media.SoundPlayer m_SoundPlayer = new System.Media.SoundPlayer();  
+  
+        // Configure the synthesizer to output to an audio stream.  
+        synth.SetOutputToWaveStream(streamAudio);  
+  
+        // Speak a phrase.  
+        synth.Speak("This is sample text-to-speech output.");  
+        streamAudio.Position = 0;  
+        m_SoundPlayer.Stream = streamAudio;  
+        m_SoundPlayer.Play();  
+  
+        // Set the synthesizer output to null to release the stream.   
+        synth.SetOutputToNull();  
+  
+        // Insert code to persist or process the stream contents here.  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Speak">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>文字列から同期的に音声出力が生成されます、<see cref="T:System.Speech.Synthesis.Prompt" />オブジェクト、または<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドが同期的に音声を生成します。 コンテンツまでメソッドを返さない、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>インスタンスが完全に読み上げられます。 これは、音声を生成する最も簡単な方法です。 ただし場合は、アプリケーションは、話すときにタスクを実行する必要があります、たとえば強調表示テキスト、ペイント アニメーション、モニター コントロール、またはその他のタスクを使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドまたは<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>音声を非同期に生成する方法です。  
+  
+ このメソッドの呼び出し中に、<xref:System.Speech.Synthesis.SpeechSynthesizer>次のイベントを発生させることができます。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.StateChanged>。 シンセサイザーの話し方の状態が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>。 シンセサイザーが音声の生成を開始するときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>。 シンセサイザーは文字または音声の言語で音を慎重に構成する文字の組み合わせに達するたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress>。 シンセサイザーたびに発生する単語を話す完了します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>。 音声出力口または音声の生成に使用される顔筋肉の位置の変更を必要とするたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>。 シンセサイザーがメッセージ内のブックマークを検出したときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange>。 シンセサイザーの声が変更されたときに発生します。  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>は発生しません、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベントのいずれかの処理中に、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Speak">
+      <MemberSignature Language="C#" Value="public void Speak (System.Speech.Synthesis.Prompt prompt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Speak(class System.Speech.Synthesis.Prompt prompt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Speak(System.Speech.Synthesis.Prompt)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="System.Speech.Synthesis.Prompt" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">読み上げるコンテンツ。</param>
+        <summary>内容を同期的に話す、<see cref="T:System.Speech.Synthesis.Prompt" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容を非同期的に読み上げるために、<xref:System.Speech.Synthesis.Prompt>オブジェクトを使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.Prompt>文字列からオブジェクトへの引数として、オブジェクトを渡すと、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a prompt from a string.  
+        Prompt color = new Prompt("What is your favorite color?");  
+  
+        // Speak the contents of the prompt synchronously.  
+        synth.Speak(color);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Speak">
+      <MemberSignature Language="C#" Value="public void Speak (System.Speech.Synthesis.PromptBuilder promptBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Speak(class System.Speech.Synthesis.PromptBuilder promptBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Speak(System.Speech.Synthesis.PromptBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="promptBuilder" Type="System.Speech.Synthesis.PromptBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="promptBuilder">読み上げるコンテンツ。</param>
+        <summary>内容を同期的に話す、<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容を非同期的に読み上げるために、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>文字列からオブジェクトへの引数として、オブジェクトを渡すと、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Create a PromptBuilder object and append a text string.  
+        PromptBuilder song = new PromptBuilder();  
+        song.AppendText("Say the name of the song you want to hear");  
+  
+        // Speak the contents of the prompt synchronously.  
+        synth.Speak(song);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Speak">
+      <MemberSignature Language="C#" Value="public void Speak (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Speak(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.Speak(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストです。</param>
+        <summary>文字列の内容を同期的に話します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML マークアップを含む文字列を話す同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>メソッドです。 文字列の内容を話す非同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のように、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドの音声が同期的に出力を生成する最も簡単な手段を提供します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Speak a string synchronously.  
+        synth.Speak("What is your favorite color?");  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="SpeakAsync">
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>文字列から非同期的に音声出力が生成されます、<see cref="T:System.Speech.Synthesis.Prompt" />オブジェクト、または<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドが非同期的に音声を生成します。 コンテンツを待機することがなく、メソッドがすぐに返す、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>話すを終了するオブジェクト。 使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>場合は、アプリケーションは、話すときにタスクを実行、たとえばテキストを強調表示する必要があります、アニメーション、モニター コントロール、またはその他のタスクを描画します。  
+  
+ このメソッドの呼び出し中に、<xref:System.Speech.Synthesis.SpeechSynthesizer>次のイベントを発生させることができます。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.StateChanged>。 シンセサイザーの話し方の状態が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>。 シンセサイザーが音声の生成を開始するときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>。 シンセサイザーは文字または音声の言語で音を慎重に構成する文字の組み合わせに達するたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress>。 シンセサイザーたびに発生する単語を話す完了します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>。 音声出力口または音声の生成に使用される顔筋肉の位置の変更を必要とするたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>。 シンセサイザーがメッセージ内のブックマークを検出したときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange>。 シンセサイザーの声が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>。 シンセサイザーが終了するときに発生する、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>操作します。  
+  
+ 使用することができます、アプリケーションが話すときにタスクを実行する必要がない場合、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドまたは<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>音声を同期的に生成する方法です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="SpeakAsync">
+      <MemberSignature Language="C#" Value="public void SpeakAsync (System.Speech.Synthesis.Prompt prompt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SpeakAsync(class System.Speech.Synthesis.Prompt prompt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync(System.Speech.Synthesis.Prompt)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="System.Speech.Synthesis.Prompt" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">読み上げるコンテンツ。</param>
+        <summary>内容を非同期で話す、<see cref="T:System.Speech.Synthesis.Prompt" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、プロンプトの非同期話すを取り消すことができます、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancel%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancelAll%2A>メソッドです。  
+  
+ 内容を同期的に読み上げるために、<xref:System.Speech.Synthesis.Prompt>オブジェクトを使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.Prompt>文字列からオブジェクトへの引数として、オブジェクトを渡すと、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Create a prompt from a string.  
+      Prompt color = new Prompt("What is your favorite color?");  
+  
+      // Speak the contents of the prompt asynchronously.  
+      synth.SpeakAsync(color);  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakAsync">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.Prompt SpeakAsync (System.Speech.Synthesis.PromptBuilder promptBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Synthesis.Prompt SpeakAsync(class System.Speech.Synthesis.PromptBuilder promptBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync(System.Speech.Synthesis.PromptBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.Prompt</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="promptBuilder" Type="System.Speech.Synthesis.PromptBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="promptBuilder">読み上げるコンテンツ。</param>
+        <summary>内容を非同期で話す、<see cref="T:System.Speech.Synthesis.PromptBuilder" />オブジェクト。</summary>
+        <returns>読み上げるために、コンテンツを含むオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容を同期的に読み上げるために、<xref:System.Speech.Synthesis.PromptBuilder>オブジェクトを使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Speech.Synthesis.PromptBuilder>文字列からオブジェクトへの引数として、オブジェクトを渡すと、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Create a PromptBuilder object and append a text string.  
+      PromptBuilder song = new PromptBuilder();  
+      song.AppendText("Say the name of the song you want to hear");  
+  
+      // Speak the contents of the prompt asynchronously.  
+      synth.SpeakAsync(song);  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakAsync">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.Prompt SpeakAsync (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Synthesis.Prompt SpeakAsync(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.Prompt</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">読み上げるテキストです。</param>
+        <summary>文字列の内容を非同期的に話します。</summary>
+        <returns>読み上げるために、コンテンツを含むオブジェクトを返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SSML マークアップを含む文字列を話す非同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 文字列の内容を話す同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。 使用して、プロンプトの非同期話すを取り消すことができます、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancel%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancelAll%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のように、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>メソッドを音声に非同期的に出力を生成する最も簡単な方法を提供します。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Speak a string asynchronously.  
+      synth.SpeakAsync("What is your favorite color?");  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakAsyncCancel">
+      <MemberSignature Language="C#" Value="public void SpeakAsyncCancel (System.Speech.Synthesis.Prompt prompt);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SpeakAsyncCancel(class System.Speech.Synthesis.Prompt prompt) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancel(System.Speech.Synthesis.Prompt)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prompt" Type="System.Speech.Synthesis.Prompt" />
+      </Parameters>
+      <Docs>
+        <param name="prompt">Speak 操作をキャンセルする対象のコンテンツ。</param>
+        <summary>キューに置かれたメッセージの非同期の合成の操作を取り消します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 非同期のキャンセルにこのメソッドを使用することもできます。 次の操作を話します。  
+  
+-   内容、<xref:System.String>によって指定された、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   内容、<xref:System.Speech.Synthesis.PromptBuilder>によって指定された、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A?displayProperty=nameWithType>メソッドです。  
+  
+-   内容、 <xref:System.String> SSML で指定されたを含む、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。  
+  
+ 呼び出すと<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A?displayProperty=nameWithType>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A?displayProperty=nameWithType>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>、System.Speech を作成、<xref:System.Speech.Synthesis.Prompt>オブジェクトしメソッドのパラメーターの内容の設定を返します、<xref:System.Speech.Synthesis.Prompt>オブジェクト。 返されたのコピーを保持する場合<xref:System.Speech.Synthesis.Prompt>を渡すことができます<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancel%2A>で指定された話し方の内容をキャンセルする、<xref:System.String>または<xref:System.Speech.Synthesis.PromptBuilder>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakAsyncCancelAll">
+      <MemberSignature Language="C#" Value="public void SpeakAsyncCancelAll ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SpeakAsyncCancelAll() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancelAll" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてキューに置かれた、非同期、音声合成の操作をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用して<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsyncCancelAll%2A>新しいプロンプトを読み上げることができるように、プロンプトでの非同期話すをキャンセルします。 なお、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベントが発生したときに、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>操作が取り消されました。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+using System.Threading;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Subscribe to the StateChanged event.  
+      synth.StateChanged += new EventHandler<StateChangedEventArgs>(synth_StateChanged);  
+  
+      // Subscribe to the SpeakProgress event.  
+      synth.SpeakProgress += new EventHandler<SpeakProgressEventArgs>(synth_SpeakProgress);  
+  
+      // Subscribe to the SpeakCompleted event.  
+      synth.SpeakCompleted += new EventHandler<SpeakCompletedEventArgs>(synth_SpeakCompleted);  
+  
+      // Begin speaking a text string asynchronously.  
+      synth.SpeakAsync("Speech is an effective and natural way for people to interact with applications, " +  
+        "complementing or even replacing the use of mice, keyboards, controllers, and gestures.");  
+  
+      // Speak for four seconds.  
+      Thread.Sleep(4000);  
+  
+      // Cancel the SpeakAsync operation and wait one second.  
+      synth.SpeakAsyncCancelAll();  
+      Thread.Sleep(1000);  
+  
+      // Speak a new text string.  
+      synth.Speak("An urgent email message has arrived. Do you want to hear it?");  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    // Write to the console when the SpeakAsync operation has been cancelled.  
+    static void synth_SpeakCompleted(object sender, SpeakCompletedEventArgs e)  
+    {  
+      Console.WriteLine("\nThe SpeakAsync operation was cancelled!!");  
+    }  
+  
+    // When it changes, write the state of the SpeechSynthesizer to the console.  
+    static void synth_StateChanged(object sender, StateChangedEventArgs e)  
+    {  
+      Console.WriteLine("\nSynthesizer State: {0}    Previous State: {1}\n", e.State, e.PreviousState);  
+    }  
+  
+    // Write the text being spoken by the SpeechSynthesizer to the console.  
+    static void synth_SpeakProgress(object sender, SpeakProgressEventArgs e)  
+    {  
+      Console.WriteLine(e.Text);  
+    }      
+  }    
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakCompleted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.SpeakCompletedEventArgs&gt; SpeakCompleted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.SpeakCompletedEventArgs&gt; SpeakCompleted" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.SpeakCompletedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するか、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />いえば、プロンプトが完了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>を生成、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベントのいずれかの完了時に、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。  
+  
+ <xref:System.Speech.Synthesis.SpeakCompletedEventArgs>クラスのプロパティを持たないし、からのデータを返さない、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベント。 アプリケーションの作成者のイベント ハンドラーを記述するために用意されたこと、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakProgress">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.SpeakProgressEventArgs&gt; SpeakProgress;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.SpeakProgressEventArgs&gt; SpeakProgress" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.SpeakProgressEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>後に発生した、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />プロンプトの各個々 の単語を話します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>の新しい各単語内のいずれかを使用して、プロンプトで、これは、このイベントを発生させる、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 例と、イベントに関連付けられているデータの詳細については、次を参照してください。<xref:System.Speech.Synthesis.SpeakProgressEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakSsml">
+      <MemberSignature Language="C#" Value="public void SpeakSsml (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SpeakSsml(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">話す SSML 文字列。</param>
+        <summary>同期が話す間、 <see cref="T:System.String" /> SSML マークアップを格納しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`textToSpeak`パラメーターを含める必要があります、`speak`要素に従っている必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)です。 詳細については、次を参照してください。[音声合成マークアップ言語リファレンス](http://msdn.microsoft.com/en-us/0c51279e-84d2-4f73-a924-8832039abf94)です。  
+  
+ SSML マークアップを含む文字列を話す非同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。 使用することができます<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>を同期と言えば SSML マークアップを含まない文字列を開始します。  
+  
+ このメソッドの呼び出し中に、<xref:System.Speech.Synthesis.SpeechSynthesizer>次のイベントを発生させることができます。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.StateChanged>。 シンセサイザーの話し方の状態が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>。 シンセサイザーが音声の生成を開始するときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>。 シンセサイザーは文字または音声の言語で音を慎重に構成する文字の組み合わせに達するたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress>。 シンセサイザーたびに発生する単語を話す完了します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>。 音声出力口または音声の生成に使用される顔筋肉の位置の変更を必要とするたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>。 シンセサイザーがメッセージ内のブックマークを検出したときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange>。 シンセサイザーの声が変更されたときに発生します。  
+  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>は発生しません、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>イベントを処理中に、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では、日付を表示します。 1/29/2009 を日付、月、日、年の順にします。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Build an SSML prompt in a string.  
+      string str = "<speak version=\"1.0\"";  
+      str += " xmlns=\"http://www.w3.org/2001/10/synthesis\"";  
+      str += " xml:lang=\"en-US\">";  
+      str += "<say-as type=\"date:mdy\"> 1/29/2009 </say-as>";  
+      str += "</speak>";  
+  
+      // Speak the contents of the prompt asynchronously.  
+      synth.SpeakSsml(str);  
+  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakSsmlAsync">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.Prompt SpeakSsmlAsync (string textToSpeak);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Speech.Synthesis.Prompt SpeakSsmlAsync(string textToSpeak) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.Prompt</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="textToSpeak" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="textToSpeak">発言 SMML マークアップ。</param>
+        <summary>非同期的が話す間、 <see cref="T:System.String" /> SSML マークアップを格納しています。</summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`textToSpeak`パラメーターを含める必要があります、`speak`要素に従っている必要があります、[音声合成マークアップ言語 (SSML) バージョン 1.0](http://go.microsoft.com/fwlink/?LinkId=201763)です。 詳細については、次を参照してください。[音声合成マークアップ言語リファレンス](http://msdn.microsoft.com/en-us/0c51279e-84d2-4f73-a924-8832039abf94)です。  
+  
+ SSML マークアップを含む文字列を話す同期的を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>メソッドです。 使用することができます<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>SSML マークアップを含まない文字列の非同期話すを開始します。  
+  
+ このメソッドの呼び出し中に、<xref:System.Speech.Synthesis.SpeechSynthesizer>次のイベントを発生させることができます。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.StateChanged>。 シンセサイザーの話し方の状態が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>。 シンセサイザーが音声の生成を開始するときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>。 シンセサイザーは文字または音声の言語で音を慎重に構成する文字の組み合わせに達するたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakProgress>。 シンセサイザーたびに発生する単語を話す完了します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>。 音声出力口または音声の生成に使用される顔筋肉の位置の変更を必要とするたびに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.BookmarkReached>。 シンセサイザーがメッセージ内のブックマークを検出したときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange>。 シンセサイザーの声が変更されたときに発生します。  
+  
+-   <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakCompleted>。 シンセサイザーが処理を終了するときに発生する、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>操作します。  
+  
+ 使用することができます、アプリケーション dos 話すときにタスクを実行する必要がない場合、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>音声を同期的に生成する方法です。  
+  
+   
+  
+## Examples  
+  
+```  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Build an SSML prompt in a string.  
+      string str = "<speak version=\"1.0\"";  
+      str += " xmlns=\"http://www.w3.org/2001/10/synthesis\"";  
+      str += " xml:lang=\"en-US\">";  
+      str += "<say-as type=\"date:mdy\"> 1/29/2009 </say-as>";  
+      str += "</speak>";  
+  
+      // Speak the contents of the prompt asynchronously.  
+      synth.SpeakSsmlAsync(str);  
+  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeakStarted">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.SpeakStartedEventArgs&gt; SpeakStarted;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.SpeakStartedEventArgs&gt; SpeakStarted" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.SpeakStartedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するか、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />いえば、プロンプトを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>のいずれかを使用して、プロンプトの処理が開始したときに、このイベントを発生させる、 <xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakAsync%2A>、 <xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsml%2A>、または<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakSsmlAsync%2A>メソッドです。  
+  
+ <xref:System.Speech.Synthesis.SpeakStartedEventArgs>クラスのプロパティを持たないし、からのデータを返さない、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>イベント。 アプリケーションの作成者のイベント ハンドラーを記述するために用意されたこと、<xref:System.Speech.Synthesis.SpeechSynthesizer.SpeakStarted>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.SynthesizerState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.SynthesizerState State" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.SpeechSynthesizer.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.SynthesizerState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の話すの状態を取得、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <value>現在の話し方の状態を返す、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しい状態を取得する、 <xref:System.Speech.Synthesis.SpeechSynthesizer> 、変更後を使用して、<xref:System.Speech.Synthesis.StateChangedEventArgs.State%2A>のプロパティ、<xref:System.Speech.Synthesis.StateChangedEventArgs>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例の状態を示しています、 <xref:System.Speech.Synthesis.SpeechSynthesizer> 、実行時に、前後に、プロンプトで話しします。  
+  
+```csharp  
+using System;  
+using System.Threading;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer() ;  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Subscribe to the SpeakProgress event.         
+      synth.SpeakProgress += new EventHandler<SpeakProgressEventArgs>(synth_SpeakProgress);  
+  
+      // Write the state of the SpeechSynthesizer to the console.  
+      Console.WriteLine("Current Synthesizer state: " + synth.State + "\n");  
+  
+      // Speak a string asynchronously.  
+      synth.SpeakAsync("What is your favorite color?");  
+  
+      // Write the state of the SpeechSynthesizer to the console while it is speaking.  
+      Thread.Sleep(1000);  
+      Console.WriteLine("\n - Current Synthesizer state: " + synth.State + " - \n");  
+  
+      // Write the state of the SpeechSynthesizer to the console after it is done speaking.  
+      Thread.Sleep(2000);  
+      Console.WriteLine("\nCurrent Synthesizer state: " + synth.State);  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  
+    static void synth_SpeakProgress(object sender, SpeakProgressEventArgs e)  
+    {  
+      Console.WriteLine(e.Text);  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.StateChangedEventArgs&gt; StateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.StateChangedEventArgs&gt; StateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.StateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.StateChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するかの状態、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Synthesis.SpeechSynthesizer>このイベントを発生させるときに、話す<xref:System.Speech.Synthesis.SpeechSynthesizer.State%2A>変更します。 例と、イベントに関連付けられているデータの詳細については、次を参照してください。<xref:System.Speech.Synthesis.StateChangedEventArgs>です。  
+  
+ 一時停止し、音声合成の再開を使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.Pause%2A>と<xref:System.Speech.Synthesis.SpeechSynthesizer.Resume%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisemeReached">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.VisemeReachedEventArgs&gt; VisemeReached;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.VisemeReachedEventArgs&gt; VisemeReached" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.VisemeReachedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Viseme に達したときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Viseme は、音素の発音口とフェイスの基本的な位置です。 Visemes は、音素のビジュアル表現です。  
+  
+ System.Speech では、英語 (米国)、対応する 1 つまたは複数の音素を 21 visemes をサポートしています。  <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>達すると新しい音素がある別の対応する viseme に達する前音素よりときにイベントが発生します。 いくつか visemes が 1 つ以上の音素を表すため、<xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached>音素の前と同じ viseme に対応する次の音素に達した場合、イベントは生成されません。 たとえば、話された単語「このゾーン」を<xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>"this"で"s"と「ゾーン」で"z"のイベントが発生します。 ただし、 <xref:System.Speech.Synthesis.SpeechSynthesizer.VisemeReached> "this"で"s"として同じ viseme に対応しているため、"z"で「ゾーン」のイベントは発生しません。  
+  
+ 21 SAPI 音素と英語 (米国) で viseme に対応する音素グループの一覧を次に示します。  
+  
+|Viseme|Phoneme(s)|  
+|------------|------------------|  
+|0|サイレント状態|  
+|1|ae、ax、ah|  
+|2|aa|  
+|3|ao|  
+|4|欄、eh、しかし|  
+|5|er|  
+|6|ix、y、iy、組み込み|  
+|7|ワシントン、w|  
+|9|ow|  
+|9|aw|  
+|10|oy|  
+|11|接続されて|  
+|12|時|  
+|13|r|  
+|14|l|  
+|15|s、z|  
+|16|sh、ch、jh、zh|  
+|17|th、dh|  
+|18|f、v|  
+|19|d、t、n|  
+|20|k、g、ng|  
+|21|p、b、m|  
+  
+ 関連付けられているデータについては、`VisemeReached`イベントを参照してください<xref:System.Speech.Synthesis.VisemeReachedEventArgs>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Voice">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.VoiceInfo Voice { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Synthesis.VoiceInfo Voice" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.SpeechSynthesizer.Voice" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.VoiceInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の音声に関する情報を取得、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <value>現在の音声に関する情報を返します、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 初期化するとき、新しい<xref:System.Speech.Synthesis.SpeechSynthesizer>既定のシステムの音声を使用します。 構成するのには<xref:System.Speech.Synthesis.SpeechSynthesizer>オブジェクトがインストールされている音声合成の音声のいずれかを使用して、使用して、<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。 音声のインストールに関する情報を取得する、<xref:System.Speech.Synthesis.SpeechSynthesizer.GetInstalledVoices%2A>メソッドおよび<xref:System.Speech.Synthesis.VoiceInfo>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例のインスタンスを初期化する<xref:System.Speech.Synthesis.SpeechSynthesizer>し、現在の音声に関する情報を取得します。  
+  
+```csharp  
+using System;  
+using System.IO;  
+using System.Speech.Synthesis;  
+using System.Speech.AudioFormat;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Get information about supported audio formats.  
+        string AudioFormats = "";  
+        foreach (SpeechAudioFormatInfo fmt in synth.Voice.SupportedAudioFormats)  
+        {  
+          AudioFormats += String.Format("{0}\n",  
+          fmt.EncodingFormat.ToString());  
+        }  
+  
+        // Write information about the voice to the console.  
+        Console.WriteLine(" Name:          " + synth.Voice.Name);  
+        Console.WriteLine(" Culture:       " + synth.Voice.Culture);  
+        Console.WriteLine(" Age:           " + synth.Voice.Age);  
+        Console.WriteLine(" Gender:        " + synth.Voice.Gender);  
+        Console.WriteLine(" Description:   " + synth.Voice.Description);  
+        Console.WriteLine(" ID:            " + synth.Voice.Id);  
+        if (synth.Voice.SupportedAudioFormats.Count != 0)  
+        {  
+          Console.WriteLine(" Audio formats: " + AudioFormats);  
+        }  
+        else  
+        {  
+          Console.WriteLine(" No supported audio formats found");  
+        }  
+  
+        // Get additional information about the voice.  
+        string AdditionalInfo = "";  
+        foreach (string key in synth.Voice.AdditionalInfo.Keys)  
+        {  
+          AdditionalInfo += String.Format("  {0}: {1}\n",  
+            key, synth.Voice.AdditionalInfo[key]);  
+        }  
+  
+        Console.WriteLine(" Additional Info - " + AdditionalInfo);  
+        Console.WriteLine();  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VoiceChange">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Speech.Synthesis.VoiceChangeEventArgs&gt; VoiceChange;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Speech.Synthesis.VoiceChangeEventArgs&gt; VoiceChange" />
+      <MemberSignature Language="DocId" Value="E:System.Speech.Synthesis.SpeechSynthesizer.VoiceChange" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Speech.Synthesis.VoiceChangeEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>いつ発生するの音声、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 例と、イベントに関連付けられているデータに関する情報については、次を参照してください。<xref:System.Speech.Synthesis.VoiceChangeEventArgs>です。  
+  
+ 音声を変更することができますを<xref:System.Speech.Synthesis.SpeechSynthesizer>のいずれかを使用して、<xref:System.Speech.Synthesis.PromptBuilder>の<xref:System.Speech.Synthesis.PromptBuilder.StartVoice%2A>メソッドまたは<xref:System.Speech.Synthesis.SpeechSynthesizer>の<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoice%2A>または<xref:System.Speech.Synthesis.SpeechSynthesizer.SelectVoiceByHints%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Volume">
+      <MemberSignature Language="C#" Value="public int Volume { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Volume" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.SpeechSynthesizer.Volume" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の出力量、<see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />オブジェクト。</summary>
+        <value>ボリュームを返して、 <see cref="T:System.Speech.Synthesis.SpeechSynthesizer" />、0 ~ 100 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のボリュームの設定、<xref:System.Speech.Synthesis.SpeechSynthesizer>のオーディオ出力での合成の音声および WAV ファイル。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+  class Program  
+  {  
+    static void Main(string[] args)  
+    {  
+  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+      {  
+  
+        // Configure the audio output.   
+        synth.SetOutputToDefaultAudioDevice();  
+  
+        // Set the volume of the SpeechSynthesizer's ouput.  
+        synth.Volume = 60;  
+  
+        // Build a prompt containing recorded audio and synthesized speech.  
+        PromptBuilder builder = new PromptBuilder(  
+          new System.Globalization.CultureInfo("en-US"));  
+        builder.AppendAudio("C:\\Test\\WelcomeToContosoRadio.wav");  
+        builder.AppendText(  
+          "The weather forecast for today is partly cloudy with some sun breaks.");  
+  
+        // Speak the prompt.  
+        synth.Speak(builder);  
+      }  
+  
+      Console.WriteLine();  
+      Console.WriteLine("Press any key to exit...");  
+      Console.ReadKey();  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

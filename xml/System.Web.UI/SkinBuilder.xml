@@ -1,0 +1,85 @@
+<Type Name="SkinBuilder" FullName="System.Web.UI.SkinBuilder">
+  <TypeSignature Language="C#" Value="public sealed class SkinBuilder : System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SkinBuilder extends System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.SkinBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>提供、<see cref="T:System.Web.UI.ControlBuilder" />コントロールにコントロール スキンを適用するデザイン時に使用されるオブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ページの開発者およびコントロールの作成者は使用しないでください、<xref:System.Web.UI.SkinBuilder>クラスに直接できます。  
+  
+ ASP.NET デザイナー ビルダーを使用して、<xref:System.Web.UI.SkinBuilder>クラスと組み合わせて、<xref:System.Web.UI.ThemeProvider>クラスおよび<xref:System.Web.UI.IThemeResolutionService>コントロールにデザイン時のテーマとその対応するコントロール スキンを適用するインターフェイスです。 デザイン時に基本テーマを適用する<xref:System.Web.UI.ControlBuilder>クラスの呼び出し、<xref:System.Web.UI.SkinBuilder.ApplyTheme%2A>メソッド コントロールの子コントロールのツリーが構築されるたびにします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SkinBuilder (System.Web.UI.ThemeProvider provider, System.Web.UI.Control control, System.Web.UI.ControlBuilder skinBuilder, string themePath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.ThemeProvider provider, class System.Web.UI.Control control, class System.Web.UI.ControlBuilder skinBuilder, string themePath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SkinBuilder.#ctor(System.Web.UI.ThemeProvider,System.Web.UI.Control,System.Web.UI.ControlBuilder,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.Web.UI.ThemeProvider" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+        <Parameter Name="skinBuilder" Type="System.Web.UI.ControlBuilder" />
+        <Parameter Name="themePath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="provider">A<see cref="T:System.Web.UI.ThemeProvider" />デザイナー環境でのコントロールのテーマ情報をカプセル化します。</param>
+        <param name="control"><see cref="T:System.Web.UI.Control" />いる、<see cref="T:System.Web.UI.SkinBuilder" />が関連付けられています。 <see cref="M:System.Web.UI.SkinBuilder.ApplyTheme" />メソッドは、このコントロールにコントロール スキンを適用し、それを返します。</param>
+        <param name="skinBuilder">A<see cref="T:System.Web.UI.ControlBuilder" />によって提供される、<see cref="T:System.Web.UI.ThemeProvider" />のコントロールの種類。</param>
+        <param name="themePath">テーマ ファイルへの絶対パス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.SkinBuilder" />クラス、ビルダーが関連付けられているコントロールを設定する、一般的な<see cref="T:System.Web.UI.ControlBuilder" />オブジェクトによって提供される、<see cref="T:System.Web.UI.ThemeProvider" />コントロールおよびテーマ ファイルへのパスのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを呼び出す、<xref:System.Web.UI.ThemeProvider.GetSkinBuilder%2A>のメソッド、<xref:System.Web.UI.ThemeProvider>を返すために、<xref:System.Web.UI.SkinBuilder>で指定されたコントロールのオブジェクト、`control`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyTheme">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control ApplyTheme ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Web.UI.Control ApplyTheme() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.SkinBuilder.ApplyTheme" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テーマとコントロール スキンの場合に適用されます、現在のコントロール、デザイン時に、<see cref="T:System.Web.UI.SkinBuilder" />オブジェクトは、コントロールに関連付けられています。</summary>
+        <returns>コントロールのインスタンスをテーマまたはスタイル シートのテーマ、およびコントロール スキンが適用されました。 これは、同じインスタンスが、ビルダーに渡される<see cref="M:System.Web.UI.SkinBuilder.#ctor(System.Web.UI.ThemeProvider,System.Web.UI.Control,System.Web.UI.ControlBuilder,System.String)" />コンス トラクターです。 このメソッドは<see langword="null" />コンス トラクターに制御が渡されなかった場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.SkinBuilder>オブジェクトがコントロールに関連付けられたデザイン時に指定することによって、<xref:System.Web.UI.IThemeResolutionService>インスタンスの場合、<xref:System.Web.UI.ControlBuilder>を提供するコントロールのオブジェクト、<xref:System.Web.UI.ThemeProvider>オブジェクト。 <xref:System.Web.UI.ThemeProvider>オブジェクトを返すことができます、<xref:System.Web.UI.SkinBuilder>の特定のコントロールのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,904 @@
+<Type Name="PerformanceCounterType" FullName="System.Diagnostics.PerformanceCounterType">
+  <TypeSignature Language="C#" Value="public enum PerformanceCounterType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PerformanceCounterType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.PerformanceCounterType" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Diagnostics.AlphabeticalEnumConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>計算に使用する数式を指定します、<see cref="M:System.Diagnostics.PerformanceCounter.NextValue" />のメソッド、<see cref="T:System.Diagnostics.PerformanceCounter" />インスタンス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ カウンターの種類によっては、1 つまたは複数のカウンター サンプルに基づく計算値を表す他のユーザーに対し、生データを表します。 使用可能なカウンターの種類を次のカテゴリに分類されます。  
+  
+-   平均値: は、時間の経過と共に値を測定し、最後の 2 つの測定値の平均値を表示します。 平均各カウンターに関連付けられているとは関連するサンプルの数を追跡するベース カウンターです。  
+  
+-   差: が 1 つ前の最後の計測を減算して、正数である場合は、差を表示負の場合はゼロを表示します。  
+  
+-   即時: 最新の計測値を表示します。  
+  
+-   割合: は、計算値をパーセンテージとして表示します。  
+  
+-   割合: は、時間の経過と共にイベント数が増加するをサンプリングし、アクティビティの割合を表示する時間を変更してカウントの値の変更を除算します。  
+  
+ パフォーマンス カウンター データのサンプリング、平均を表すカウンターの種類を使用してをその生のデータ値、使用する意味のあるします。 生データ カウンターなど、`NumberOfItems64`ランダム サンプルからサンプルには、データを公開できます。 カウンターが返す値の平均を計算する数式するは (X 0 + X 1 +… + X n)/n を指定すると、それぞれの X i が未処理のカウンター サンプルです。  
+  
+ レート カウンターは、カウンターの平均のようなよりリソースが使用されるものと速度が増加する場合に便利です。 迅速に平均を計算する数式は、((X X n 0)/(T n-t 0))/頻度、それぞれの X i はカウンター サンプルと各 T i は、対応するサンプルの作成時。 1 秒あたりの平均使用量になります。  
+  
+> [!NOTE]
+>  特に記載のない限り、時間の単位は秒です。  
+  
+ アプリケーション (の作成とカスタム パフォーマンス カウンターの書き込み) をインストルメント時に可能性がありますを作成する、計算で使用されている付随するベース カウンターに依存するパフォーマンス カウンターの種類。 関連付けられているそのカウンターの直後に基本カウンター必要があります、<xref:System.Diagnostics.CounterCreationDataCollection>コレクション、アプリケーションで使用します。 次の表では、対応するパフォーマンス カウンター型に基本カウンター型が一覧表示します。  
+  
+|型のベース カウンター|パフォーマンス カウンターの種類|  
+|-----------------------|-------------------------------|  
+|`AverageBase`|`AverageTimer32`<br /><br /> `AverageCount64`|  
+|`CounterMultiBase`|`CounterMultiTimer`<br /><br /> `CounterMultiTimerInverse`<br /><br /> `CounterMultiTimer100Ns`<br /><br /> `CounterMultiTimer100NsInverse`|  
+|`RawBase`|`RawFraction`|  
+|`SampleBase`|`SampleFraction`|  
+  
+   
+  
+## Examples  
+ 次の例では、カウンターの種類のいくつかを示しています、<xref:System.Diagnostics.PerformanceCounterType>列挙します。  
+  
+ `AverageCount64`  
+  
+ [!code-cpp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CPP/averagecount32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/CS/averagecount32.cs#1)]
+ [!code-vb[PerformanceCounterType.AverageCounter64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageCounter64/VB/averagecount32.vb#1)]  
+  
+ `AverageTimer32`  
+  
+ [!code-cpp[PerformanceCounterType.AverageTimer32#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.AverageTimer32/CPP/averagetimer32.cpp#2)]
+ [!code-csharp[PerformanceCounterType.AverageTimer32#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.AverageTimer32/CS/averagetimer32.cs#2)]
+ [!code-vb[PerformanceCounterType.AverageTimer32#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.AverageTimer32/VB/averagetimer32.vb#2)]  
+  
+ `ElapsedTime`  
+  
+ [!code-cpp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CPP/elapsedtime.cpp#2)]
+ [!code-csharp[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/CS/elapsedtime.cs#2)]
+ [!code-vb[PerformanceCounterType.ElapsedTime#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.ElapsedTime/VB/elapsedtime.vb#2)]  
+  
+ `NumberOfItems32`  
+  
+ [!code-cpp[PerformanceCounterType.NumberOfItems32#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems32/CPP/numberofitems32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.NumberOfItems32#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems32/CS/numberofitems32.cs#1)]
+ [!code-vb[PerformanceCounterType.NumberOfItems32#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems32/VB/numberofitems32.vb#1)]  
+  
+ `NumberOfItems64`  
+  
+ [!code-cpp[PerformanceCounterType.NumberOfItems64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems64/CPP/numberofitems64.cpp#1)]
+ [!code-csharp[PerformanceCounterType.NumberOfItems64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems64/CS/numberofitems64.cs#1)]
+ [!code-vb[PerformanceCounterType.NumberOfItems64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.NumberOfItems64/VB/numberofitems64.vb#1)]  
+  
+ `SampleFraction`  
+  
+ [!code-csharp[PerformanceCounterType.SampleFraction#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.SampleFraction/CS/program.cs#1)]
+ [!code-vb[PerformanceCounterType.SampleFraction#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.SampleFraction/VB/program.vb#1)]  
+  
+ `RateOfCountsPerSecond32`  
+  
+ [!code-cpp[PerformanceCounterType.RateOfCountsPerSecond#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond/CPP/rateofcountspersecond32.cpp#1)]
+ [!code-csharp[PerformanceCounterType.RateOfCountsPerSecond#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond/CS/rateofcountspersecond32.cs#1)]
+ [!code-vb[PerformanceCounterType.RateOfCountsPerSecond#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond/VB/rateofcountspersecond32.vb#1)]  
+  
+ `RateOfCountsPerSecond64`  
+  
+ [!code-cpp[PerformanceCounterType.RateOfCountsPerSecond64#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond64/CPP/rateofcountspersecond64.cpp#1)]
+ [!code-csharp[PerformanceCounterType.RateOfCountsPerSecond64#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond64/CS/rateofcountspersecond64.cs#1)]
+ [!code-vb[PerformanceCounterType.RateOfCountsPerSecond64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.RateOfCountsPerSecond64/VB/rateofcountspersecond64.vb#1)]  
+  
+ `RawFraction`  
+  
+ [!code-cpp[PerformanceCounterType.RawFraction#1](~/samples/snippets/cpp/VS_Snippets_CLR/PerformanceCounterType.RawFraction/CPP/rawfraction.cpp#1)]
+ [!code-csharp[PerformanceCounterType.RawFraction#1](~/samples/snippets/csharp/VS_Snippets_CLR/PerformanceCounterType.RawFraction/CS/rawfraction.cs#1)]
+ [!code-vb[PerformanceCounterType.RawFraction#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/PerformanceCounterType.RawFraction/VB/rawfraction.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AverageBase">
+      <MemberSignature Language="C#" Value="AverageBase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType AverageBase = int32(1073939458)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.AverageBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>など、時間やカウントの平均の計算に使用される基本カウンター<see langword="AverageTimer32" />と<see langword="AverageCount64" />です。 存在"操作ごとの時間"カウンターの計算の分母を格納または「操作あたりの数」です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="AverageCount64">
+      <MemberSignature Language="C#" Value="AverageCount64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType AverageCount64 = int32(1073874176)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.AverageCount64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目の数、平均すると、中に処理された操作を示す平均のカウンター。 この型のカウンターは、完了した操作の数に処理されたアイテムの比率を表示します。 比率は、最後の期間中、完了した操作の数には、最後の間隔中に処理されたアイテムの数を比較して計算されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1-N 0)/(B ~ B 0)、ここで N 1 および N 0 は、パフォーマンス カウンターの値、および B 1 および 0 B は、対応する`AverageBase`値。 したがって、分子はサンプリング間隔中に処理されたアイテムの番号を表し、分母のサンプル期間中、完了した操作の数を表します。  
+  
+ この型のカウンターには、PhysicalDisk\ 平均が含まれます。ディスク バイト数/転送します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AverageTimer32">
+      <MemberSignature Language="C#" Value="AverageTimer32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType AverageTimer32 = int32(805438464)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.AverageTimer32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>かかる時間は、平均、プロセスまたは操作を完了する時間を計測する平均のカウンターです。 このタイプのカウンターは、プロセスまたはその時点で完了した操作の数、サンプル間隔の経過時間の合計の比率を表示します。 このカウンターの種類は、システム クロックのタイマー刻み単位で時間を計測します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: ((N 1-N 0)/F)/(B ~ B 0)、N 1 および N 0 は、パフォーマンス カウンターの値には、B 1 と 0 B は、対応する`AverageBase`値、および F が 1 秒あたりのタイマー刻みの数。 F の値が式で考慮されるため、結果は、秒単位で表示できます。 したがって、分子が前回のサンプル間隔中にカウントされたタイマー刻みの数を表します、F はタイマー刻みの頻度を表し、分母は前回のサンプル間隔中に、完了した操作の数を表します。  
+  
+ この型のカウンターには、PhysicalDisk\ 平均が含まれます。ディスク転送秒数。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterDelta32">
+      <MemberSignature Language="C#" Value="CounterDelta32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterDelta32 = int32(4195328)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterDelta32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計測対象の属性、2 つの最新のサンプル間隔の間での変更を示す違いカウンター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: N 1 -N 0、n-1 N 0 があるパフォーマンス カウンターの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterDelta64">
+      <MemberSignature Language="C#" Value="CounterDelta64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterDelta64 = int32(4195584)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterDelta64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>計測対象の属性、2 つの最新のサンプル間隔の間での変更を示す違いカウンター。 同じでは、<see langword="CounterDelta32" />カウンター型である点を除いてより大きな値を格納する大きなフィールドを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: N 1 -N 0、n-1 N 0 があるパフォーマンス カウンターの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterMultiBase">
+      <MemberSignature Language="C#" Value="CounterMultiBase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterMultiBase = int32(1107494144)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterMultiBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリングする項目の数を示す、ベース カウンターです。 複数のタイミングをとりながらをサンプリングする項目の平均を取得する、計算の分母として使用される類似したアイテムです。 と共に使用<see langword="CounterMultiTimer" />、 <see langword="CounterMultiTimerInverse" />、 <see langword="CounterMultiTimer100Ns" />、および<see langword="CounterMultiTimer100NsInverse" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterMultiTimer">
+      <MemberSignature Language="C#" Value="CounterMultiTimer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterMultiTimer = int32(574686464)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterMultiTimer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つまたは複数のコンポーネントのアクティブな時間をサンプル間隔の時間の合計に対するパーセンテージとして表示するパーセンテージ カウンターです。 分子は同時に運用されるコンポーネントのアクティブな時間を記録するため、結果のパーセントは 100% を超えることができます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカウンターは、マルチ タイマーです。 マルチ タイマーは、プロセッサやディスクなどのコンポーネントの 1 つ以上のインスタンスからデータを収集します。 このカウンターの種類が異なる`CounterMultiTimer100Ns`点で、時間を 100 ナノ秒単位ではなく、システム パフォーマンス タイマーのタイマー刻み単位で計測します。  
+  
+ 数式: ((1 - N 0)/(1 - 0 D)) x 100/B、ここで N 1 および 0 を N にはパフォーマンス カウンターの値が 1 と 0 D、システム パフォーマンス タイマーのタイマー刻み単位で計算され、変数 B は、監視対象コンポーネントの基本の数を示します (基本型のカウンターを使用して`CounterMultiBase`)。 したがって、分子を監視するコンポーネントが、アクティブであったし、分母は、サンプル間隔の経過時間の合計を表します、サンプル間隔の部分を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterMultiTimer100Ns">
+      <MemberSignature Language="C#" Value="CounterMultiTimer100Ns" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterMultiTimer100Ns = int32(575735040)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterMultiTimer100Ns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリング間隔の時間の合計に対するパーセンテージとして 1 つまたは複数のコンポーネントのアクティブな時間を示す割合カウンター。 時間を 100 ナノ秒 (ns) 単位で計測します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカウンターの種類は、マルチ タイマーがします。 プロセッサやディスクなどのコンポーネントの 1 つ以上のインスタンスの監視には、マルチ タイマーが設計されています。  
+  
+ 数式: ((1 - N 0)/(1 - 0 D)) x 100/B、ここで N 1 および 0 を N にはパフォーマンス カウンターの値が 1 と 0 D を 100 ナノ秒単位で計算され、変数 B は、監視対象コンポーネントの基本の数を示します (基本型のカウンターを使用して`CounterMultiBase`)。 したがって、分子を監視するコンポーネントが、アクティブであったし、分母は、サンプル間隔の経過時間の合計を表します、サンプル間隔の部分を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterMultiTimer100NsInverse">
+      <MemberSignature Language="C#" Value="CounterMultiTimer100NsInverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterMultiTimer100NsInverse = int32(592512256)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterMultiTimer100NsInverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリング間隔の時間の合計に対するパーセンテージとして 1 つまたは複数のコンポーネントのアクティブな時間を示す割合カウンター。 このタイプのカウンターは、100 ナノ秒 (ns) 単位で時間を測定します。 アクティブな時間は、コンポーネントがアクティブでなかった時間を計測し、監視オブジェクトの数で 100% を乗算した結果を引いて、派生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカウンターの種類は、逆のマルチ タイマーがします。 プロセッサやディスクなどのコンポーネントの 1 つ以上のインスタンスの監視には、マルチ タイマーが設計されています。 逆カウンターは、コンポーネントはアクティブでない時間を測定し、アクティブな時間を非アクティブな時間の計測値から派生  
+  
+ 数式: (B ((N 1 - N 0)/(1 - 0 D))) x 100、分母は、サンプル間隔の経過時間の合計を表す、分子を表す時間間隔、監視対象のコンポーネントがアクティブでなかった、B はコンポーネントの数を表す場合、監視されている型のベース カウンターを使用して`CounterMultiBase`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterMultiTimerInverse">
+      <MemberSignature Language="C#" Value="CounterMultiTimerInverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterMultiTimerInverse = int32(591463680)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterMultiTimerInverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリング間隔の時間の合計に対するパーセンテージとして 1 つまたは複数のコンポーネントのアクティブな時間を示す割合カウンター。 コンポーネントがアクティブでなかった時間を計測し、監視オブジェクトの数が 100% から結果を引いて、アクティブな時間を取得します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このカウンターの種類は、逆のマルチ タイマーがします。 マルチ タイマーは、プロセッサやディスクなどのコンポーネントの 1 つ以上のインスタンスを監視します。 逆カウンターは、コンポーネントはアクティブでない時間を測定し、アクティブな時間をこの計測値から派生します。  
+  
+ このカウンターは異なります`CounterMultiTimer100NsInverse`点で、時間を 100 ナノ秒単位ではなく、システム パフォーマンス タイマーのタイマー刻み単位で計測します。  
+  
+ 数式: (B - ((1 - N 0)/(1 - D 0))) x 100、分母は、サンプル間隔の経過時間の合計を表す、分子を表す時間間隔、監視対象のコンポーネントがアクティブでなかった、B はコンポーネントの数を表す場合、監視されている型のベース カウンターを使用して`CounterMultiBase`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterTimer">
+      <MemberSignature Language="C#" Value="CounterTimer" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterTimer = int32(541132032)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterTimer" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>割合を示すカウンターの平均時間、コンポーネントが、合計のサンプリング時間の割合としてアクティブになっています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/(1 - 0 D) ここで N 1、N 0 は、パフォーマンス カウンターの値、D 1 と 0 D、対応する時間の測定値です。 したがって、分子を監視するコンポーネントが、アクティブであったし、分母は、サンプル間隔の経過時間の合計を表します、サンプル間隔の部分を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CounterTimerInverse">
+      <MemberSignature Language="C#" Value="CounterTimerInverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CounterTimerInverse = int32(557909248)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CounterTimerInverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリング間隔中に観察されたアクティブな時間の割合の平均値を表示するパーセンテージ カウンター。 これらのカウンターの値は、サービスがアクティブであった時間の割合を監視し、その値を 100% から引いて計算されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、逆のカウンターの種類です。 逆カウンター コンポーネントは、時間を計測は、アクティブに注意してくださいし、アクティブな時間をこの計測値から派生します。 このカウンターの種類が同じ`CounterTimer100NsInv`時間を 100 ナノ秒単位ではなく、システム パフォーマンス タイマーのタイマー刻み単位で計測する点が異なります。  
+  
+ 数式: (1 - ((1 - N 0)/(1 - D 0))) x 100、ここで、分子を表します、時間間隔中に監視対象のコンポーネントがアクティブでなかったし、分母は、サンプル間隔の経過時間の合計を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountPerTimeInterval32">
+      <MemberSignature Language="C#" Value="CountPerTimeInterval32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CountPerTimeInterval32 = int32(4523008)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CountPerTimeInterval32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>平均カウンター リソースに対するキューの長さの平均時間の経過と共に監視できます。 間隔の時間で割った最後の 2 つのサンプリング間隔中に観察されたキューの長さの差を示します。 このカウンターの種類は通常、キューに登録された項目または待機の数を追跡するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/(1 - 0 D) ここで、分子がキュー内の項目の数を表しますおよび分母は、時間を表しますの前回のサンプル間隔中に経過時間します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CountPerTimeInterval64">
+      <MemberSignature Language="C#" Value="CountPerTimeInterval64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType CountPerTimeInterval64 = int32(4523264)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.CountPerTimeInterval64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リソースに対するキューの長さの平均が時間の経過と共に監視する平均のカウンターです。 この型のカウンターは、間隔の時間で割った最後の 2 つのサンプリング間隔中に観察されたキューの長さの差を表示します。 このカウンターの種類が同じ<see langword="CountPerTimeInterval32" />より大きな値を格納する大きなフィールドを使用する点を除いて。 このカウンターの種類は通常、キューに登録された項目または待機中の高ボリュームまたは非常に大きな数を追跡するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/(1 - 0 D)、分子がキュー内の項目の数を表すおよび分母が時刻を表す経過時間をサンプリング間隔中にします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElapsedTime">
+      <MemberSignature Language="C#" Value="ElapsedTime" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType ElapsedTime = int32(807666944)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.ElapsedTime" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンポーネントまたはプロセスの開始時と、この値が計算された時刻までの合計時間を示す違いタイマーです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (0 - N 0 D)/F、D 0 は、現在の時刻を表す、N 0 は、オブジェクトが開始された時刻を表すされ、F は、1 秒間に経過時間の単位の数を表します。 F の値が式で考慮されるため、結果は、秒単位で表示できます。  
+  
+ この型のカウンターには、システムのシステム時刻が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfItems32">
+      <MemberSignature Language="C#" Value="NumberOfItems32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType NumberOfItems32 = int32(65536)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.NumberOfItems32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に観察された値を示す瞬時カウンター。 使用される、たとえば、アイテムまたは操作の簡単なカウントを維持するためにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式: なし。 平均は表示されませんが、収集された、生データを表示できます。  
+  
+ この型のカウンターには、memory \available Bytes が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfItems64">
+      <MemberSignature Language="C#" Value="NumberOfItems64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType NumberOfItems64 = int32(65792)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.NumberOfItems64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に観察された値を示す瞬時カウンター。 使用される、たとえば、非常に多数のアイテムまたは操作の単純なカウントを維持するためにします。 同じである<see langword="NumberOfItems32" />より大きな値を格納する大きなフィールドを使用する点を除いて。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式: なし。 平均は表示されませんが、収集された、生データを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfItemsHEX32">
+      <MemberSignature Language="C#" Value="NumberOfItemsHEX32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType NumberOfItemsHEX32 = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.NumberOfItemsHEX32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>16 進形式で、最後に計測された値を示す瞬時カウンター。 使用される、たとえば、アイテムまたは操作の簡単なカウントを維持するためにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式: なし。 平均は表示されませんが、収集された、生データを表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NumberOfItemsHEX64">
+      <MemberSignature Language="C#" Value="NumberOfItemsHEX64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType NumberOfItemsHEX64 = int32(256)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.NumberOfItemsHEX64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後に観察された値を示す瞬時カウンター。 使用される、たとえば、非常に多数のアイテムまたは操作の単純なカウントを維持するためにします。 同じである<see langword="NumberOfItemsHEX32" />より大きな値を格納する大きなフィールドを使用する点を除いて。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式: なし。 平均は表示されませんが、収集された生データを表示  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RateOfCountsPerSecond32">
+      <MemberSignature Language="C#" Value="RateOfCountsPerSecond32" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType RateOfCountsPerSecond32 = int32(272696320)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.RateOfCountsPerSecond32" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時、サンプル間隔の 1 秒あたりに完了した操作の平均数を示す差カウンター。 このタイプのカウンターは、システム クロックのタイマー刻み単位で時間を測定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/((D 1-d 0)/F) はパフォーマンス カウンターの値の 1 次 N および N 0、1 と 0 D は、対応する時間の測定値、F は、1 秒あたりのタイマー刻みの数を表します。 したがって、分子が分母を表すタイマー刻みの数が前回のサンプル間隔中に経過した前回のサンプル間隔中に実行される操作の数を表し、F はタイマー刻みの頻度。 F の値が式で考慮されるため、結果は、秒単位で表示できます。  
+  
+ この型のカウンターには、システム ファイルの読み取り操作数/秒が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RateOfCountsPerSecond64">
+      <MemberSignature Language="C#" Value="RateOfCountsPerSecond64" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType RateOfCountsPerSecond64 = int32(272696576)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.RateOfCountsPerSecond64" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>時、サンプル間隔の 1 秒あたりに完了した操作の平均数を示す差カウンター。 このタイプのカウンターは、システム クロックのタイマー刻み単位で時間を測定します。 このカウンターの種類が同じ、<see langword="RateOfCountsPerSecond32" />型であり、これは、アイテムまたはバイト転送速度などの 1 秒あたりの処理に大量の数を追跡するためより大きな値を格納する大きなフィールドを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/((D 1-d 0)/F) はパフォーマンス カウンターの値の 1 次 N および N 0、1 と 0 D は、対応する時間の測定値、F は、1 秒あたりのタイマー刻みの数を表します。 したがって、分子が分母を表すタイマー刻みの数が前回のサンプル間隔中に経過した前回のサンプル間隔中に実行される操作の数を表し、F はタイマー刻みの頻度。 F の値が式で考慮されるため、結果は、秒単位で表示できます。  
+  
+ この型のカウンターには、システム ファイルの読み取りバイト数/秒が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RawBase">
+      <MemberSignature Language="C#" Value="RawBase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType RawBase = int32(1073939459)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.RawBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>通常の算術分数を表すカウンターの分母を格納するベース カウンターです。 この値がの分母として使用する前に 0 より大きいことを確認して、<see langword="RawFraction" />値の計算です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RawFraction">
+      <MemberSignature Language="C#" Value="RawFraction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType RawFraction = int32(537003008)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.RawFraction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>そのセットに、割合としてのサブセットの比率を示す即時パーセント カウンターです。 たとえば、ディスク上のバイトの総数へのディスク上の使用中バイト数を比較します。 この型のカウンターは、現在の割合のみ、時間の経過と共に平均ではなくを表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 0/0 D) x 100、D 0 が計測対象の属性を表します (基本型のカウンターを使用して`RawBase`)、N 0 は、その属性の 1 つのコンポーネントを表します。  
+  
+ この型のカウンターには、ページング ファイルが含まれます。\\% 使用率のピーク時です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleBase">
+      <MemberSignature Language="C#" Value="SampleBase" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType SampleBase = int32(1073939457)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.SampleBase" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリングの数を格納するベース カウンターは、実行が中断され、サンプリング分数の分母として使用されます。 サンプリング分数は 1 をいたサンプルの数 (または<see langword="true" />) サンプル割り込み用です。 この値がの計算の分母として使用する前に 0 より大きいことを確認して<see langword="SampleFraction" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleCounter">
+      <MemberSignature Language="C#" Value="SampleCounter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType SampleCounter = int32(4260864)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.SampleCounter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 秒間に完了した操作の平均数を表示する平均のカウンターです。 この型のカウンター データのサンプル、ときに各サンプリング割り込みが 1 つまたは 0 を返します。 カウンターのデータは、サンプリングされたの数です。 これは、システム パフォーマンス タイマーのタイマー刻み単位で時間を計測します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1-N 0)/((D 1 – D 0)/F)、分子 (N) は、完了した操作の数を表す、分母 (D) は、システム パフォーマンス タイマーのタイマー刻み単位での経過時間を表す、F は、1 秒間に経過時間をタイマー刻みの数を表します。 F が式で考慮されるため、結果は、秒単位で表示できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleFraction">
+      <MemberSignature Language="C#" Value="SampleFraction" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType SampleFraction = int32(549585920)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.SampleFraction" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最後の 2 つのサンプリング間隔中にすべての操作にヒット数の平均の比率を示すパーセンテージ カウンター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: ((1 - N 0)/(1 - D 0)) x 100、分子は前回のサンプル間隔中に正常に操作の数を表し、分母は、型のカウンターを使用して、サンプリング間隔中に完了した型の測定) のすべての操作の数の変更を表す`SampleBase`です。  
+  
+ この型のカウンターには、Cache\Pin 読み取り Hits % が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timer100Ns">
+      <MemberSignature Language="C#" Value="Timer100Ns" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType Timer100Ns = int32(542180608)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.Timer100Ns" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプル間隔の経過時間の合計に対するパーセンテージとしてコンポーネントのアクティブな時間を示すパーセンテージ カウンター。 時間を 100 ナノ秒 (ns) 単位で計測します。 このタイプのカウンターは、一度に 1 つのコンポーネントの利用状況を測定するよう設計されています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 数式: (N 1 - N 0)/(1 - 0 D) x 100、場所、分子を監視対象のコンポーネントがアクティブで、サンプル間隔の部分を表し、分母は、サンプル間隔の経過時間の合計を表します。  
+  
+ この型のカウンターには、processor \ % User Time が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timer100NsInverse">
+      <MemberSignature Language="C#" Value="Timer100NsInverse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.PerformanceCounterType Timer100NsInverse = int32(558957824)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.PerformanceCounterType.Timer100NsInverse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.PerformanceCounter</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.PerformanceCounterType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプリング間隔中に観察されたアクティブな時間の割合の平均を示すパーセンテージ カウンター。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、逆のカウンターです。 このタイプのカウンターは、アクティブな時間をサービスがアクティブな時間を計測し、100% からアクティブな時間の割合を引いて計算します。  
+  
+ 数式: (1 - ((1 - N 0)/(1 - D 0))) x 100、ここで、分子を表します、時間間隔中に監視対象のコンポーネントがアクティブでなかったし、分母は、サンプル間隔の経過時間の合計を表します。  
+  
+ この型のカウンターには、processor \ % Processor Time が含まれます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

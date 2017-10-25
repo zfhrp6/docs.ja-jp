@@ -1,0 +1,395 @@
+<Type Name="SignatureDescription" FullName="System.Security.Cryptography.SignatureDescription">
+  <TypeSignature Language="C#" Value="public class SignatureDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SignatureDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.SignatureDescription" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デジタル署名のプロパティに関する情報が含まれています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、メンバーを使用して、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#2)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#2)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignatureDescription ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.SignatureDescription.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.SignatureDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、既定値を呼び出す方法を示します<xref:System.Security.Cryptography.SignatureDescription.%23ctor%2A>コンス トラクターです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#1)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SignatureDescription (System.Security.SecurityElement el);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.SecurityElement el) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.SignatureDescription.#ctor(System.Security.SecurityElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="el" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="el"><see cref="T:System.Security.SecurityElement" />元となる署名の説明のアルゴリズムを取得します。</param>
+        <summary>指定した <see cref="T:System.Security.SecurityElement" /> から <see cref="T:System.Security.Cryptography.SignatureDescription" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、新しい初期化<xref:System.Security.Cryptography.SignatureDescription>クラスを使用して、  
+  
+ <xref:System.Security.SecurityElement>4 つのアルゴリズムを含むです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#3)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#3)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="el" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDeformatter">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.AsymmetricSignatureDeformatter CreateDeformatter (System.Security.Cryptography.AsymmetricAlgorithm key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.AsymmetricSignatureDeformatter CreateDeformatter(class System.Security.Cryptography.AsymmetricAlgorithm key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.SignatureDescription.CreateDeformatter(System.Security.Cryptography.AsymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricSignatureDeformatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.AsymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="key">使用するキー、<see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter" />です。</param>
+        <summary>作成、<see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter" />で指定したキーを使用して、インスタンス、<see cref="P:System.Security.Cryptography.SignatureDescription.DeformatterAlgorithm" />プロパティです。</summary>
+        <returns>新しく作成された<see cref="T:System.Security.Cryptography.AsymmetricSignatureDeformatter" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.SignatureDescription.CreateDeformatter%2A>メソッドを署名を検証する DSA 署名デフォーマッタを作成します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#4)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#4)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDigest">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.HashAlgorithm CreateDigest ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.HashAlgorithm CreateDigest() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.SignatureDescription.CreateDigest" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.HashAlgorithm</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Security.Cryptography.HashAlgorithm" />インスタンスを使用して、<see cref="P:System.Security.Cryptography.SignatureDescription.DigestAlgorithm" />プロパティです。</summary>
+        <returns>新しく作成された<see cref="T:System.Security.Cryptography.HashAlgorithm" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Security.Cryptography.SignatureDescription.CreateDigest%2A>メソッドを作成、<xref:System.Security.Cryptography.HashAlgorithm>署名のダイジェスト アルゴリズムを使用します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#10](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#10)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#10)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFormatter">
+      <MemberSignature Language="C#" Value="public virtual System.Security.Cryptography.AsymmetricSignatureFormatter CreateFormatter (System.Security.Cryptography.AsymmetricAlgorithm key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Cryptography.AsymmetricSignatureFormatter CreateFormatter(class System.Security.Cryptography.AsymmetricAlgorithm key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.SignatureDescription.CreateFormatter(System.Security.Cryptography.AsymmetricAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.AsymmetricSignatureFormatter</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.Security.Cryptography.AsymmetricAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="key">使用するキー、<see cref="T:System.Security.Cryptography.AsymmetricSignatureFormatter" />です。</param>
+        <summary>作成、<see cref="T:System.Security.Cryptography.AsymmetricSignatureFormatter" />で指定したキーを使用して、インスタンス、<see cref="P:System.Security.Cryptography.SignatureDescription.FormatterAlgorithm" />プロパティです。</summary>
+        <returns>新しく作成された<see cref="T:System.Security.Cryptography.AsymmetricSignatureFormatter" />インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Security.Cryptography.SignatureDescription.CreateFormatter%2A> DSA 暗号化署名フォーマッタを作成します。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#5)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#5)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeformatterAlgorithm">
+      <MemberSignature Language="C#" Value="public string DeformatterAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DeformatterAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.SignatureDescription.DeformatterAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名の説明のデフォーマッタ アルゴリズムを設定します。</summary>
+        <value>署名の説明のデフォーマッタ アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Security.Cryptography.SignatureDescription.DeformatterAlgorithm%2A> RSAPKCS1 デフォーマッタを持つプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#8](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#8)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#8)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DigestAlgorithm">
+      <MemberSignature Language="C#" Value="public string DigestAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DigestAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.SignatureDescription.DigestAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名の説明のダイジェスト アルゴリズムを設定します。</summary>
+        <value>署名の説明のダイジェスト アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Security.Cryptography.SignatureDescription.DigestAlgorithm%2A> SHA1 プロバイダーを使用した RSA 暗号化プロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#6)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#6)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatterAlgorithm">
+      <MemberSignature Language="C#" Value="public string FormatterAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatterAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.SignatureDescription.FormatterAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名の説明のフォーマッタ アルゴリズムを設定します。</summary>
+        <value>署名の説明のフォーマッタ アルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Security.Cryptography.SignatureDescription.FormatterAlgorithm%2A> RSAPKCS1 フォーマッタを持つプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#9](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#9)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#9](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#9)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#9](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyAlgorithm">
+      <MemberSignature Language="C#" Value="public string KeyAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.SignatureDescription.KeyAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または署名の説明用のキーのアルゴリズムを設定します。</summary>
+        <value>署名の説明のキーのアルゴリズム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、 <xref:System.Security.Cryptography.SignatureDescription.KeyAlgorithm%2A> RSA 暗号化のプロパティです。 このコード例に示されている例の一部である、<xref:System.Security.Cryptography.SignatureDescription>クラスです。  
+  
+ [!code-cpp[System.Security.Cryptography.SignatureDescription#7](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CPP/signaturedescription.cpp#7)]
+ [!code-csharp[System.Security.Cryptography.SignatureDescription#7](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/CS/signaturedescription.cs#7)]
+ [!code-vb[System.Security.Cryptography.SignatureDescription#7](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.SignatureDescription/VB/signaturedescription.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

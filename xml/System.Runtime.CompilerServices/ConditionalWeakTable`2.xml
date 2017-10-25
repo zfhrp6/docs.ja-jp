@@ -1,0 +1,496 @@
+<Type Name="ConditionalWeakTable&lt;TKey,TValue&gt;" FullName="System.Runtime.CompilerServices.ConditionalWeakTable&lt;TKey,TValue&gt;">
+  <TypeSignature Language="C#" Value="public sealed class ConditionalWeakTable&lt;TKey,TValue&gt; where TKey : class where TValue : class" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConditionalWeakTable`2&lt;class TKey, class TValue&gt; extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.ConditionalWeakTable`2" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TKey">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+    <TypeParameter Name="TValue">
+      <Constraints>
+        <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <typeparam name="TKey">フィールドがアタッチされる参照型。</typeparam>
+    <typeparam name="TValue">フィールドの種類。 参照型である必要があります。</typeparam>
+    <summary>コンパイラがマネージ オブジェクトに動的にオブジェクト フィールドをアタッチできるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスには、実行時に任意のプロパティを管理対象オブジェクトにアタッチする言語コンパイラができるようにします。 A<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>オブジェクトは、添付プロパティの値によって表される、キーによって表される、管理対象オブジェクトをバインドするディクショナリ。 オブジェクトのキーの個別のインスタンスである、`TKey`クラスをプロパティのアタッチし、その値は、対応するオブジェクトに割り当てられているプロパティの値。  
+  
+ キーを一意にする必要があります。言い換えると、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスはマネージ オブジェクトごとに 1 つのアタッチされた値をサポートします。 2 つのキーが等しくに渡す場合、<xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>メソッドを返します。`true`です。  
+  
+> [!NOTE]
+>  オーバーライドすることで、等値比較を制御することはできません<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>キーのハッシュ コードを明示的に設定します。 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスは使用しない、<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>を計算するメソッドのハッシュ コード、およびしたがっては呼び出されません<xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>をオーバーライドします。  
+  
+ ただし、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスは、キー/値ペアのコレクションを保持していることが最適と考える辞書オブジェクトではなくテーブル。 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスといくつかの方法で辞書は異なります。  
+  
+-   キーは保持されません。 つまり、キー保持しないコレクションのメンバーであるためにのみです。  
+  
+-   すべてのメソッドは含まれません (など`GetEnumerator`または`Contains`) で、辞書が通常はします。  
+  
+-   実装していない、<xref:System.Collections.Generic.IDictionary%602>インターフェイスです。  
+  
+ <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラスとその他のコレクション オブジェクトのコレクションに格納されたキー オブジェクトの有効期間の管理では異なります。 通常、オブジェクトがコレクションに格納されている場合、有効期間が削除された (およびオブジェクトへの他の参照がない) か、コレクション オブジェクト自体が破棄されるまで継続します。 ただしでは、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>クラス、テーブルにキー/値のペアとは限りませんこと、キーは維持され、(たとえば、テーブルには、1 つのキー、A、V1、値を持つと 2 番目のキー、B、A への参照を含む P2、値が含まれています) 場合は、テーブルに格納されている値から直接に到達できる場合でもを追加します。 代わりに、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブルの外部キーには、他の参照が存在しないと、すぐに自動的にキー/値のエントリを削除します。 具体的な例を次に示します。  
+  
+   
+  
+## Examples  
+ 次の例で保存されるキー、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブルの外側への参照が破棄された後、テーブルが保持されません。 2 つのクラスが定義されています: `ManagedClass`、テーブル内のキーを表すと`ClassData`キーの値を表します。 この例は、各型の 3 つのオブジェクトをインスタンス化します。 インスタンス化も、<xref:System.WeakReference>秒を表すオブジェクト`ManagedClass`、し、2 つ目を破棄`ManagedClass`インスタンス。 2 つ目を取得しようとすると、`ManagedClass`オブジェクトから、<xref:System.WeakReference.Target%2A>プロパティは、オブジェクトへの参照が残っていないことを示します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.class/cs/example1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.class/vb/example1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>インスタンス、<see cref="T:System.Runtime.CompilerServices.ConditionalWeakTable`2" />クラスはスレッド セーフであります。 呼び出し元を追加のロックを行うには不要です。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConditionalWeakTable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.CompilerServices.ConditionalWeakTable`2" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.%23ctor%2A>コンス トラクターは、空をインスタンス化<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 つまり、表に、何も含まキー/値ペア。 キー/値ペアを追加するには呼び出すことによって、 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>、 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>、または<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>メソッドです。  
+  
+ 内のすべてのキー、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>オブジェクトを一意にする必要があります。 キーは、同じオブジェクトを参照している場合は、一意ではありません (への引数として渡す場合は、<xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>メソッドを返します。 `true`)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (TKey key, TValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(!TKey key, !TValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.Add(`0,`1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="value" Type="TValue" />
+      </Parameters>
+      <Docs>
+        <param name="key">追加するキー。 <c>キー</c>プロパティが関連付けられているオブジェクトを表します。</param>
+        <param name="value">キーのプロパティ値。</param>
+        <summary>テーブルにキーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内のすべてのキー、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>オブジェクトを一意にする必要があります。 キーは、同じオブジェクトを参照している場合は、一意ではありません (への引数として渡す場合は、<xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType>メソッドを返します。 `true`)。  
+  
+ キーは、ガベージ コレクトされる追加操作中に、既存のキー/値ペアが削除され、例外がスローせず、新しいキー/値ペアを追加しました。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`MainClass`クラスおよび`MainInfo`に関する情報を提供するクラス、`MainClass`インスタンス。 この例では、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>を追加するメソッド、`MainClass`オブジェクトとその添付`MainInfo`オブジェクトを<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 呼び出しも示します、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>と<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>、テーブルおよびにキー/値ペアを追加する方法、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>既存のキーの値を取得します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="key" />既に存在します。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrUpdate">
+      <MemberSignature Language="C#" Value="public void AddOrUpdate (TKey key, TValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOrUpdate(!TKey key, !TValue value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.AddOrUpdate(`0,`1)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="value" Type="TValue" />
+      </Parameters>
+      <Docs>
+        <param name="key">To be added.</param>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Finalize">
+      <MemberSignature Language="C#" Value="~ConditionalWeakTable`2 ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Finalize() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.Finalize" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ガベージ コレクターが <see cref="T:System.Runtime.CompilerServices.ConditionalWeakTable`2" /> を再利用しているときに、リソースが解放され、他のクリーンアップ操作が確実に実行されるようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ガベージ コレクター<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Finalize%2A>現在のオブジェクトが完了する準備ができています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOrCreateValue">
+      <MemberSignature Language="C#" Value="public TValue GetOrCreateValue (TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TValue GetOrCreateValue(!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetOrCreateValue(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のキー。 <c>キー</c>プロパティが関連付けられているオブジェクトを表します。</param>
+        <summary>テーブルで指定されたキーをアトミックに検索し、対応する値を返します。 キーがテーブルに存在しない場合は、メソッドが、テーブルの値を表すクラスの既定のコンストラクターを呼び出して、指定されたキーにバインドされる値を作成します。</summary>
+        <returns><paramref name="key" /> がテーブル内に既に存在する場合には、<paramref name="key" /> に対応する値。それ以外の場合には、<paramref name="TValue" /> ジェネリック型パラメーターによって定義されるクラスの既定コンストラクターによって作成された新しい値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`key`存在しないによって定義されるクラスの既定のコンス トラクターを呼び出すことによってインスタンス化されるオブジェクトと共に、このメソッドは、テーブルで追加、`TValue`ジェネリック型パラメーターです。 場合、`TValue`クラスは既定のコンス トラクターを持たない、<xref:System.MissingMethodException>がスローされます。  
+  
+ これは、既存の値を取得またはを新しい値を追加する推奨される方法、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>表に、テーブルの値のクラスには既定のコンス トラクターが定義されている場合。 代わりに呼び出すことができる場合、既定のコンス トラクターは定義しません、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>メソッドは、テーブルの値を表すオブジェクトをインスタンス化するコールバックに用意されているメソッドに依存しています  
+  
+ 呼び出しの表に、キーが見つからない場合、キー/値ペアを追加することがなく既存のキーの値を取得する、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`MainClass`クラスおよび`MainInfo`に関する情報を提供するクラス、`MainClass`インスタンス。 呼び出しの例、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>を追加するメソッド、`MainClass`オブジェクトとその添付`MainInfo`オブジェクトを<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 呼び出しも示します、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>と<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>、テーブルおよびにキー/値ペアを追加する方法、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>既存のキーの値を取得します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.MissingMethodException">
+          <block subset="none" type="note">
+            <para>  
+ [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または[ポータブル クラス ライブラリ](~/docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)、基本クラスの例外をキャッチ<see cref="T:System.MissingMemberException" />、代わりにします。  
+  
+</para>
+          </block>  
+  
+ テーブルの値を表すクラスは、既定のコンストラクターを定義しません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetValue">
+      <MemberSignature Language="C#" Value="public TValue GetValue (TKey key, System.Runtime.CompilerServices.ConditionalWeakTable&lt;TKey,TValue&gt;.CreateValueCallback createValueCallback);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !TValue GetValue(!TKey key, class System.Runtime.CompilerServices.ConditionalWeakTable`2/CreateValueCallback&lt;!TKey, !TValue&gt; createValueCallback) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.GetValue(`0,System.Runtime.CompilerServices.ConditionalWeakTable`2.CreateValueCallback{`0,`1})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>TValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="createValueCallback" Type="System.Runtime.CompilerServices.ConditionalWeakTable&lt;TKey,TValue&gt;+CreateValueCallback" />
+      </Parameters>
+      <Docs>
+        <param name="key">検索対象のキー。 <c>キー</c>プロパティが関連付けられているオブジェクトを表します。</param>
+        <param name="createValueCallback">デリゲートの値を作成できるメソッドを指定された<c>キー</c>です。 型の 1 つのパラメーターを持ち<c>TKey</c>、型の値を返す<c>TValue</c>です。</param>
+        <summary>テーブルで指定されたキーをアトミックに検索し、対応する値を返します。 キーがテーブルに存在しない場合は、メソッドがコールバック メソッドを呼び出して、指定されたキーにバインドされる値を作成します。</summary>
+        <returns><paramref name="key" /> がテーブル内に既に存在する場合には、<paramref name="key" /> にアタッチされた値。それ以外の場合には、<paramref name="createValueCallback" /> デリゲートによって戻される新しい値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`key`、テーブルに存在しません<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>で定義されているメソッドを呼び出し、`createValueCallback`パラメーターし、キーを渡します。 新しい値は、テーブル内のキーにバインドされ、その結果が返されます。  
+  
+ テーブルの値を表すクラスが既定のコンス トラクターを定義していない場合にのみ、このメソッドを使用します。 場合は、既定のコンス トラクターは定義を使用して、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>メソッド代わりにします。 呼び出しの表に、キーが見つからない場合、キー/値ペアを追加することがなく既存のキーの値を取得する、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>メソッドです。  
+  
+ 複数のスレッドが、同じキーを作成しようとしています。 場合`createValueCallback`、同じキーで複数回を呼び出すことがあります。 これらの呼び出しの 1 つだけが正常に終了し、その戻り値は、テーブルに追加されます。 スレッドが値の作成に成功すると、不確定です。 この規則により、テーブルを呼び出す`createValueCallback`デッドロックを防ぐために内部テーブル ロック外です。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`MainClass`クラスおよび`MainInfo`に関する情報を提供するクラス、`MainClass`インスタンス。 静的なも定義 (`Shared` Visual Basic で)`CreateAttachedValue`に割り当てることのできるメソッド、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.CreateValueCallback>を委任しに渡される、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>メソッドです。 呼び出しの例、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>を追加するメソッド、`MainClass`オブジェクトとその添付`MainInfo`オブジェクトを<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 呼び出しも示します、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>と<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>、テーブルおよびにキー/値ペアを追加する方法、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>既存のキーの値を取得します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> または <paramref name="createValueCallback" /> が <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public bool Remove (TKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Remove(!TKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.Remove(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+      </Parameters>
+      <Docs>
+        <param name="key">削除するキー。</param>
+        <summary>テーブルから、キーとその値を削除します。</summary>
+        <returns>
+          キーが見つかり削除された場合には <see langword="true" />。それ以外の場合には <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーは、ガベージ コレクションをこの操作中に、メソッドが例外を発生させないし、戻り値が定義されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt; IEnumerable&lt;KeyValuePair&lt;TKey,TValue&gt;&gt;.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerator`1&lt;valuetype System.Collections.Generic.KeyValuePair`2&lt;!TKey, !TValue&gt;&gt; System.Collections.Generic.IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.System#Collections#Generic#IEnumerable&lt;System#Collections#Generic#KeyValuePair&lt;TKey,TValue&gt;&gt;#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerator&lt;System.Collections.Generic.KeyValuePair&lt;TKey,TValue&gt;&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public bool TryGetValue (TKey key, out TValue value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetValue(!TKey key, [out] !TValue&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.ConditionalWeakTable`2.TryGetValue(`0,`1@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="TKey" />
+        <Parameter Name="value" Type="TValue&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="key">添付プロパティのオブジェクトを表すキー。</param>
+        <param name="value">このメソッドから戻るときに、添付プロパティの値が格納されています。 場合<c>キー</c>が見つからない<c>値</c>既定値を格納します。</param>
+        <summary>指定したキーの値を取得します。</summary>
+        <returns>
+          <see langword="true" /> が見つかる場合には <paramref name="key" />。それ以外の場合には <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、キーはこの操作中にガベージ コレクションは、メソッドが返す可能性があります`false`設定と`value`既定値 (キーが存在しない場合、します。  
+  
+   
+  
+## Examples  
+ 次の例では定義、`MainClass`クラスおよび`MainInfo`に関する情報を提供するクラス、`MainClass`インスタンス。 呼び出しの例、 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.Add%2A>、 <xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetOrCreateValue%2A>、および<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.GetValue%2A>するキー/値ペアを追加する方法、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602>テーブル。 この例では、各ケースで、<xref:System.Runtime.CompilerServices.ConditionalWeakTable%602.TryGetValue%2A>キー/値ペアが、テーブルに追加されていることを確認します。  
+  
+ [!code-csharp[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/cs/getvalue1.cs#1)]
+ [!code-vb[System.Runtime.CompilerServices.ConditionalWeakTable.GetValue#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.compilerservices.conditionalweaktable.getvalue/vb/getvalue1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="key" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

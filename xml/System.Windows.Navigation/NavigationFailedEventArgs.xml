@@ -1,0 +1,224 @@
+<Type Name="NavigationFailedEventArgs" FullName="System.Windows.Navigation.NavigationFailedEventArgs">
+  <TypeSignature Language="C#" Value="public class NavigationFailedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit NavigationFailedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Navigation.NavigationFailedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 **NavigationFailed**イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これらのイベント引数には、失敗したのハンドラーに渡されたナビゲーションに関する情報が含まれて、 **NavigationFailed**次によって実装されるイベント。  
+  
+-   <xref:System.Windows.Navigation.NavigationService.NavigationFailed?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Navigation.NavigationWindow.NavigationFailed?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Controls.Frame.NavigationFailed?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Application.NavigationFailed?displayProperty=nameWithType>  
+  
+ <xref:System.Windows.Navigation.NavigationFailedEventArgs>ナビゲーションが失敗した要求の次の詳細をカプセル化します。  
+  
+-   **ナビゲーション開始**:<xref:System.Windows.Navigation.NavigationFailedEventArgs.Navigator%2A>です。  
+  
+-   **ナビゲーション例外**: <xref:System.Windows.Navigation.NavigationFailedEventArgs.Exception%2A>、<xref:System.Windows.Navigation.NavigationFailedEventArgs.Handled%2A>です。  
+  
+-   **ナビゲーション コンテンツ**:<xref:System.Windows.Navigation.NavigationFailedEventArgs.Uri%2A>です。  
+  
+-   **ナビゲーションの詳細**: <xref:System.Windows.Navigation.NavigationFailedEventArgs.WebRequest%2A>、<xref:System.Windows.Navigation.NavigationFailedEventArgs.WebResponse%2A>です。  
+  
+-   **ナビゲーション状態**:<xref:System.Windows.Navigation.NavigationFailedEventArgs.ExtraData%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exception">
+      <MemberSignature Language="C#" Value="public Exception Exception { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception Exception" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.Exception" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Exception" />が失敗したナビゲーションの結果として発生しました。</summary>
+        <value><see cref="T:System.Exception" />が失敗したナビゲーションの結果として発生しました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Exception>どちらかになります、<xref:System.Net.WebException>または<xref:System.IO.IOException>  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtraData">
+      <MemberSignature Language="C#" Value="public object ExtraData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object ExtraData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.ExtraData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>省略可能なデータを取得<see cref="T:System.Object" />ナビゲーションが開始されたときに渡されました。</summary>
+        <value>省略可能なデータ<see cref="T:System.Object" />ナビゲーションが開始されたときに渡されました。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Navigation.NavigationFailedEventArgs.ExtraData%2A>特定のナビゲーションに固有のコンテキストに固有のデータを渡すために使用します。 <xref:System.Windows.Navigation.NavigationFailedEventArgs.ExtraData%2A>いずれかを呼び出すときに、2 番目の引数として渡されるオブジェクトへの参照を含む<xref:System.Windows.Navigation.NavigationService.Navigate%2A>または<xref:System.Windows.Navigation.NavigationService.Navigate%2A>です。 それ以外の場合は `null` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handled">
+      <MemberSignature Language="C#" Value="public bool Handled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Handled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.Handled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはナビゲーションが失敗した例外が処理されたかどうかを設定します。</summary>
+        <value>
+          <see langword="true" />例外が処理された場合それ以外の場合、 <see langword="false" /> (既定値)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 処理するときに<xref:System.Windows.Navigation.NavigationService.NavigationFailed>を処理して、失敗したナビゲーションの結果としてスローされる例外をしたくない[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]例外の処理を続行するに設定する必要があります、<xref:System.Windows.Navigation.NavigationFailedEventArgs.Handled%2A>プロパティを`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Navigator">
+      <MemberSignature Language="C#" Value="public object Navigator { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Navigator" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.Navigator" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このイベントを発生させたナビゲーター。</summary>
+        <value><see cref="T:System.Object" />このイベントを発生させたナビゲーターは</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Uri">
+      <MemberSignature Language="C#" Value="public Uri Uri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Uri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.Uri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[TLA#tla_uri](~/includes/tlasharptla-uri-md.md)]内容を移動できませんでした。</summary>
+        <value><see cref="T:System.Uri" />内容を移動できませんでした。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebRequest">
+      <MemberSignature Language="C#" Value="public System.Net.WebRequest WebRequest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebRequest WebRequest" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.WebRequest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebRequest</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたコンテンツを要求に使用された web 要求を取得します。</summary>
+        <value>取得、<see cref="T:System.Net.WebRequest" />指定されたコンテンツを要求するために使用されたオブジェクト。 オブジェクトに移動する場合<see cref="P:System.Windows.Navigation.NavigationFailedEventArgs.WebRequest" />は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebRequest?displayProperty=nameWithType>web 要求をカプセル化する抽象基本クラス、プロトコルに依存しません。 一般的なプロトコルごとに、[!INCLUDE[TLA#tla_titlewinfx](~/includes/tlasharptla-titlewinfx-md.md)]から派生するクラスが含まれています<xref:System.Net.WebRequest?displayProperty=nameWithType>しそれをプロトコル固有の状態と動作拡張を含みます。  
+  
+-   <xref:System.IO.Packaging.PackWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`pack://`アプリケーション データ ファイルを要求するスキーム (を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+-   <xref:System.Net.HttpWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`http://`要求ファイルを Web サーバーからのスキーム。  
+  
+-   <xref:System.Net.FtpWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`ftp://`要求ファイルを FTP サーバーからのスキーム。  
+  
+-   <xref:System.Net.FileWebRequest>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`file://`スキームがローカル ファイルを要求します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebResponse">
+      <MemberSignature Language="C#" Value="public System.Net.WebResponse WebResponse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.WebResponse WebResponse" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Navigation.NavigationFailedEventArgs.WebResponse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.WebResponse</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロードを試行した後に返された web 応答を取得する指定された内容。</summary>
+        <value><see cref="T:System.Net.WebResponse" />ダウンロードを試行した後に返された、指定された内容。 ナビゲーションには、失敗した場合、<see cref="P:System.Windows.Navigation.NavigationFailedEventArgs.WebResponse" />は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebResponse?displayProperty=nameWithType>web の応答をカプセル化する抽象基本クラス、プロトコルに依存しません。 一般的なプロトコルごとに、[!INCLUDE[TLA#tla_titlewinfx](~/includes/tlasharptla-titlewinfx-md.md)]から派生するクラスが含まれています<xref:System.Net.WebResponse?displayProperty=nameWithType>およびプロトコルに固有の状態に拡張を含みます。  
+  
+-   <xref:System.IO.Packaging.PackWebResponse>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`pack://`アプリケーション データ ファイルを要求するスキーム (を参照してください[WPF アプリケーションのリソース、コンテンツ、およびデータ ファイル](~/docs/framework/wpf/app-development/wpf-application-resource-content-and-data-files.md))。  
+  
+-   <xref:System.Net.HttpWebResponse>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`http://`要求ファイルを Web サーバーからのスキーム。  
+  
+-   <xref:System.Net.FtpWebResponse>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`ftp://`要求ファイルを FTP サーバーからのスキーム。  
+  
+-   <xref:System.Net.FileWebResponse>:[!INCLUDE[TLA2#tla_uri#plural](~/includes/tla2sharptla-urisharpplural-md.md)]を使用する、`file://`スキームがローカル ファイルを要求します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

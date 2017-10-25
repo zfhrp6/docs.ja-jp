@@ -1,0 +1,71 @@
+<Type Name="ISecureConversationSession" FullName="System.ServiceModel.Security.ISecureConversationSession">
+  <TypeSignature Language="C#" Value="public interface ISecureConversationSession : System.ServiceModel.Security.ISecuritySession" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISecureConversationSession implements class System.ServiceModel.Channels.ISession, class System.ServiceModel.Security.ISecuritySession" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.ISecureConversationSession" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Security.ISecuritySession</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>セキュリティで保護された通信のセキュリティ セッションを表します。 送信者と受信者は、サーバーがセッション確立の過程で発行する <see langword="SecurityContextToken" /> を使用して、セッションのすべてのメッセージをセキュリティで保護します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="TryReadSessionTokenIdentifier">
+      <MemberSignature Language="C#" Value="public bool TryReadSessionTokenIdentifier (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryReadSessionTokenIdentifier(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ISecureConversationSession.TryReadSessionTokenIdentifier(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">トークンの読み取りを試みる <see cref="T:System.Xml.XmlReader" />。</param>
+        <summary>XML リーダーによって示されているセッション トークン識別子の読み取りを試みます。</summary>
+        <returns>
+          XML によって示されている XML が、セキュリティ セッションのトークンに一致する <see langword="true" /> に対応している場合は <see langword="SecurityKeyIdentifierClause" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ セッションに基づき、セッション確立プロトコルの一部としてセキュリティ セッション トークンの識別子を参照する WS-RM セッションなどのセッションに便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteSessionTokenIdentifier">
+      <MemberSignature Language="C#" Value="public void WriteSessionTokenIdentifier (System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void WriteSessionTokenIdentifier(class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ISecureConversationSession.WriteSessionTokenIdentifier(System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">トークンの書き込みを試みる <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <summary>セキュリティ セッションのトークンに対応する <see langword="SecurityKeyIdentifierClause" /> の書き込みを試みます。 このメソッドは、セキュリティ セッションに基づき、セッション確立プロトコルの一部としてセキュリティ セッション トークンの識別子を参照する WS-RM セッションなどのセッションに便利です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

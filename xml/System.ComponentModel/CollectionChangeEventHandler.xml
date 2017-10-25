@@ -1,0 +1,47 @@
+<Type Name="CollectionChangeEventHandler" FullName="System.ComponentModel.CollectionChangeEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void CollectionChangeEventHandler(object sender, CollectionChangeEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CollectionChangeEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.CollectionChangeEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.ComponentModel.CollectionChangeEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CollectionChangeEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Data.DataColumnCollection.CollectionChanged" />に要素を追加またはコレクションから要素を削除するときに発生するイベントです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.CollectionChangeEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 使用する例については、<xref:System.ComponentModel.CollectionChangeEventHandler>委任のサンプル コードを参照してください、<xref:System.Data.DataColumnCollection.CollectionChanged>のイベント、<xref:System.Data.DataColumnCollection>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

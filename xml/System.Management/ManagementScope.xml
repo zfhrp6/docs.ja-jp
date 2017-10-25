@@ -1,0 +1,374 @@
+<Type Name="ManagementScope" FullName="System.Management.ManagementScope">
+  <TypeSignature Language="C#" Value="public class ManagementScope : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ManagementScope extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Management.ManagementScope" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Management.ManagementScopeConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>管理操作のスコープ (名前空間) を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.ManagementScope>特定のパスとし、WMI 名前空間に、スコープ オブジェクトを接続します。 この例は、リモート コンピューター上の名前空間に接続します。  
+  
+ [!code-csharp[wminet_ManagementScope#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementScope/cs/ManagementScope.cs#1)]
+ [!code-vb[wminet_ManagementScope#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementScope/vb/ManagementScope.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementScope" />クラスは、既定値を使用します。 これは、既定のコンス トラクターです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトが接続する前に設定されたプロパティを持たない場合 (たとえば、ローカル コンピューターおよび root \cimv2 名前空間) の既定値で初期化されます。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementScope (System.Management.ManagementPath path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementPath path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.#ctor(System.Management.ManagementPath)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+      </Parameters>
+      <Docs>
+        <param name="path">A<see cref="T:System.Management.ManagementPath" />サーバーとの名前空間へのパスを含む、<see cref="T:System.Management.ManagementScope" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementScope" />指定されたスコープのパスを表すクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementScope (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバーと名前空間のパス、<see cref="T:System.Management.ManagementScope" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementScope" />指定されたスコープのパスを表すクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.ManagementScope>特定のパスとし、WMI 名前空間に、スコープ オブジェクトを接続します。 この例は、リモート コンピューター上の名前空間に接続します。  
+  
+ [!code-csharp[wminet_ManagementScope-S#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementScope-S/cs/ManagementScope-S.cs#1)]
+ [!code-vb[wminet_ManagementScope-S#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementScope-S/vb/ManagementScope-S.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementScope (System.Management.ManagementPath path, System.Management.ConnectionOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Management.ManagementPath path, class System.Management.ConnectionOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.#ctor(System.Management.ManagementPath,System.Management.ConnectionOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.Management.ManagementPath" />
+        <Parameter Name="options" Type="System.Management.ConnectionOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">A<see cref="T:System.Management.ManagementPath" />サーバーとの名前空間へのパスを含む、<see cref="T:System.Management.ManagementScope" />です。</param>
+        <param name="options"><see cref="T:System.Management.ConnectionOptions" />接続のオプションを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementScope" />指定したオプションを使用して、指定したスコープ パスを表すクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ManagementScope (string path, System.Management.ConnectionOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, class System.Management.ConnectionOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.#ctor(System.String,System.Management.ConnectionOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="options" Type="System.Management.ConnectionOptions" />
+      </Parameters>
+      <Docs>
+        <param name="path">サーバーとの名前空間、<see cref="T:System.Management.ManagementScope" />です。</param>
+        <param name="options">A<see cref="T:System.Management.ConnectionOptions" />接続のオプションを格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Management.ManagementScope" />指定したオプションを使用して、指定したスコープ パスを表すクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.ManagementScope>特定のパスとし、WMI 名前空間に、スコープ オブジェクトを接続します。 この例は、リモート コンピューター上の名前空間に接続します。  
+  
+ [!code-csharp[wminet_ManagementScope-S_C#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementScope-S_C/cs/ManagementScope-S_C.cs#1)]
+ [!code-vb[wminet_ManagementScope-S_C#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementScope-S_C/vb/ManagementScope-S_C.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementScope Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Management.ManagementScope Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトのコピーを返します。</summary>
+        <returns>新しいコピー、<see cref="T:System.Management.ManagementScope" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Connect">
+      <MemberSignature Language="C#" Value="public void Connect ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Connect() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.Connect" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これは接続<see cref="T:System.Management.ManagementScope" />WMI スコープを実際にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、スコープを接続する必要がある操作で使用すると、暗黙的に呼び出されます。 明示的に呼び出すことにより、ユーザーが接続の時点を制御します。 このメソッドは、2 分以内に戻ります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を新しい初期化<xref:System.Management.ManagementScope>特定のパスとし、WMI 名前空間に、スコープ オブジェクトを接続します。 この例は、リモート コンピューター上の名前空間に接続します。  
+  
+ [!code-csharp[wminet_ManagementScope_Connect#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_ManagementScope_Connect/cs/ManagementScope_Connect.cs#1)]
+ [!code-vb[wminet_ManagementScope_Connect#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_ManagementScope_Connect/vb/ManagementScope_Connect.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConnected">
+      <MemberSignature Language="C#" Value="public bool IsConnected { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConnected" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementScope.IsConnected" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、 <see cref="T:System.Management.ManagementScope" /> WMI サーバーと名前空間にバインドされています。</summary>
+        <value>返します、<see cref="T:System.Boolean" />スコープが現在の WMI サーバーと名前空間にバインドされているかどうかを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成後にスコープが切断されている他のユーザーを明示的に呼び出すまで<xref:System.Management.ManagementScope.Connect%2A>、またはライブ接続を必要とする任意の操作のスコープを使用します。 また、スコープは、スコープの識別プロパティが変更されるたびに、以前の接続から切断されます。  
+  
+## <a name="property-value"></a>プロパティ値  
+ `true`場合は、接続がアライブ (バインドされているサーバーと名前空間を)それ以外の場合、`false`です。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.Management.ConnectionOptions Options { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ConnectionOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementScope.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ConnectionOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または WMI 接続を確立するためのオプションを設定します。</summary>
+        <value>返します、 <see cref="T:System.Management.ConnectionOptions" /> WMI 接続を行うためのオプションを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ 有効な<xref:System.Management.ConnectionOptions>WMI 接続のオプションを格納します。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Path">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementPath Path { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementPath Path" />
+      <MemberSignature Language="DocId" Value="P:System.Management.ManagementScope.Path" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementPath</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パスを取得または設定、<see cref="T:System.Management.ManagementScope" />です。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementPath" />スコープ (名前空間) へのパスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.ManagementPath>サーバーと名前空間へのパスを含むです。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ICloneable.Clone">
+      <MemberSignature Language="C#" Value="object ICloneable.Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ICloneable.Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Management.ManagementScope.System#ICloneable#Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

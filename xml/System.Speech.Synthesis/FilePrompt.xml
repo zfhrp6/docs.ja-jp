@@ -1,0 +1,122 @@
+<Type Name="FilePrompt" FullName="System.Speech.Synthesis.FilePrompt">
+  <TypeSignature Language="C#" Value="public class FilePrompt : System.Speech.Synthesis.Prompt" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit FilePrompt extends System.Speech.Synthesis.Prompt" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.FilePrompt" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Synthesis.Prompt</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{_text}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイルから作成されたプロンプトを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FilePrompt (string path, System.Speech.Synthesis.SynthesisMediaType media);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Speech.Synthesis.SynthesisMediaType media) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.FilePrompt.#ctor(System.String,System.Speech.Synthesis.SynthesisMediaType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="media" Type="System.Speech.Synthesis.SynthesisMediaType" />
+      </Parameters>
+      <Docs>
+        <param name="path">プロンプトのコンテンツを含むファイルのパス。</param>
+        <param name="media">ファイルのメディアの種類。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Speech.Synthesis.FilePrompt" />クラス、およびファイルとそのメディアの種類へのパスを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用するにはオブジェクトから、既存音声合成マークアップ言語 (SSML) を作成するファイルを<xref:System.Speech.Synthesis.SpeechSynthesizer>音声の生成に使用することができます。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Speech.Synthesis.FilePrompt> SSML プロンプトへのパスを指定するオブジェクト。 例では、プロンプトのコンテンツを読み上げるために提供し、<xref:System.Speech.Synthesis.FilePrompt>オブジェクトを引数として、<xref:System.Speech.Synthesis.SpeechSynthesizer.Speak%2A>メソッドです。  
+  
+```csharp  
+using System;  
+using System.Speech.Synthesis;  
+  
+namespace SampleSynthesis  
+{  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {  
+  
+            // Initialize a new instance of the SpeechSynthesizer.  
+            using (SpeechSynthesizer synth = new SpeechSynthesizer())  
+            {  
+  
+                // Configure the audio output.   
+                synth.SetOutputToDefaultAudioDevice();  
+  
+                // Create a FilePrompt object that references an SSML prompt.  
+                FilePrompt ssmlFile = new FilePrompt("c:\\test\\Weather.ssml", SynthesisMediaType.Ssml);  
+  
+                // Speak the contents of the SSML prompt.  
+                synth.Speak(ssmlFile);  
+            }  
+  
+            Console.WriteLine();  
+            Console.WriteLine("Press any key to exit...");  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+```  
+  
+ 前の例を参照する SSML ファイルを次に示します。  
+  
+```xml  
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<speak version="1.0"  
+ xmlns="http://www.w3.org/2001/10/synthesis"  
+ xml:lang="en-US">  
+  
+  <s> The weather forecast for today is partly cloudy with some sun breaks. </s>  
+  
+</speak>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FilePrompt (Uri promptFile, System.Speech.Synthesis.SynthesisMediaType media);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri promptFile, valuetype System.Speech.Synthesis.SynthesisMediaType media) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Speech.Synthesis.FilePrompt.#ctor(System.Uri,System.Speech.Synthesis.SynthesisMediaType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="promptFile" Type="System.Uri" />
+        <Parameter Name="media" Type="System.Speech.Synthesis.SynthesisMediaType" />
+      </Parameters>
+      <Docs>
+        <param name="promptFile">プロンプトのコンテンツを含むファイルの URI。</param>
+        <param name="media">ファイルのメディアの種類。</param>
+        <summary>新しいインスタンスを作成、<see cref="T:System.Speech.Synthesis.FilePrompt" />クラス、し、そのメディアの種類とファイルの場所を指定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

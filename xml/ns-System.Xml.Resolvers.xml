@@ -1,0 +1,28 @@
+<Namespace Name="System.Xml.Resolvers">
+  <Docs>
+    <summary><see cref="N:System.Xml.Resolvers" />名前空間は、Dtd または XML キャッシュの事前設定のサポートを提供ストリーム。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Resolvers>名前空間を定義、<xref:System.Xml.Resolvers.XmlPreloadedResolver>と<xref:System.Xml.Resolvers.XmlKnownDtds>列挙します。  
+  
+ <xref:System.Xml.Resolvers.XmlPreloadedResolver>ネットワークに自動の呼び出しが必要ではないかは不可能な場合に、競合回避モジュールとして使用されます。 たとえば、キャッシュされた外部 Dtd を読み込むためのこの型を使用できます。 別のシナリオを XHTML の読み込みと使用<xref:System.Xml.Resolvers.XmlPreloadedResolver>XHTML 1.0 で定義されている既知の Dtd を事前に読み込む。 よく知られている DTD を事前読み込みしても、すべてのネットワーク接続は呼び出されませんこれらの Dtd は既に System.Xml.Utils アセンブリに埋め込まれているため。 現在、 <xref:System.Xml.Resolvers.XmlPreloadedResolver> XHTML 1.0 および RSS 0.91 Dtd。  
+  
+ <xref:System.Xml.Resolvers.XmlKnownDtds>列挙体を定義する既知の Dtd、<xref:System.Xml.Resolvers.XmlPreloadedResolver>を認識します。 <xref:System.Xml.Resolvers.XmlKnownDtds>列挙が含まれています、 `Xhtml10`、 `Rss091`、 `All`、および`None`値。  
+  
+ `XmlKnownDtd.Xhtml10`指定する、 `T:System.Xml.Resolvers.XmlPreloadedResolver` Dtd および XHTML 1.0 で定義されているエンティティが認識されます。 XHTML の詳細については、次を参照してください。、 [XHTML 1.0 仕様](http://go.microsoft.com/fwlink/?LinkID=109812)です。  
+  
+ `XmlKnownDtd.Rss091`指定する、 `T:System.Xml.Resolvers.XmlPreloadedResolver` Dtd と RSS 0.91 で定義されているエンティティが認識されます。  
+  
+ `XmlKnownDtd.All`指定する、<xref:System.Xml.Resolvers.XmlPreloadedResolver>は現在サポートされているすべての Dtd を認識します。 これが既定の動作です。  
+  
+ `XmlKnownDtd.None`指定する、<xref:System.Xml.Resolvers.XmlPreloadedResolver>定義済みの Dtd のいずれかを認識しません。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Xml.Resolvers.XmlPreloadedResolver>よく知られている DTD を再度読み込みます、Dtd は既に System.Xml.Utils アセンブリに埋め込まれているために、ネットワーク接続は呼び出されません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

@@ -1,0 +1,98 @@
+<Type Name="RecognitionEventArgs" FullName="System.Speech.Recognition.RecognitionEventArgs">
+  <TypeSignature Language="C#" Value="public abstract class RecognitionEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit RecognitionEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Recognition.RecognitionEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>認識イベント音声に関する情報を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Speech.Recognition.RecognitionEventArgs.Result%2A>プロパティとして認識情報の取得、<xref:System.Speech.Recognition.RecognitionResult>オブジェクト。 音声認識のイベントの詳細については、次を参照してください。[音声認識イベントを使用した](http://msdn.microsoft.com/en-us/01c598ca-2e0e-4e89-b303-cd1cef9e8482)です。  
+  
+ **RecognitionEventArgs**は、次のクラスの基本クラス。  
+  
+-   <xref:System.Speech.Recognition.SpeechRecognizedEventArgs>  
+  
+-   <xref:System.Speech.Recognition.SpeechRecognitionRejectedEventArgs>  
+  
+-   <xref:System.Speech.Recognition.SpeechHypothesizedEventArgs>  
+  
+ <xref:System.Speech.Recognition.RecognitionEventArgs> は、<xref:System.EventArgs> から派生します。  
+  
+   
+  
+## Examples  
+ 次の例のハンドラーをアタッチする、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechHypothesized>、 <xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognized>、および<xref:System.Speech.Recognition.SpeechRecognitionEngine.SpeechRecognitionRejected>音声認識エンジンのイベントです。 すべての 3 つのイベントのイベント引数の型から派生<xref:System.Speech.Recognition.RecognitionEventArgs>ハンドラーでイベント データ パラメーターとして使用されます。  
+  
+```csharp  
+  
+// Initialize the speech recognizer.  
+private void Initialize(SpeechRecognitionEngine recognizer)  
+{  
+  // Attach handlers for the SpeechHypothesized, SpeechRecognitionRejected,  
+  // and SpeechRecognized events.  
+  recognizer.SpeechHypothesized +=  
+    new EventHandler<SpeechHypothesizedEventArgs>(DisplayResult);  
+  recognizer.SpeechRecognitionRejected +=  
+    new EventHandler<SpeechRecognitionRejectedEventArgs>(DisplayResult);  
+  recognizer.SpeechRecognized +=  
+    new EventHandler<SpeechRecognizedEventArgs>(DisplayResult);  
+  
+  // Add other initialization code here.  
+}  
+  
+// Handle the SpeechHypothesized, SpeechRecognitionRejected,  
+// and SpeechRecognized events.  
+private void DisplayResult(object sender, RecognitionEventArgs e)  
+{  
+  if (e is SpeechHypothesizedEventArgs)  
+  {  
+    Console.WriteLine("Speech hypothesized:");  
+  }  
+  else if (e is SpeechRecognitionRejectedEventArgs)  
+  {  
+    Console.WriteLine("Speech recognition rejected:");  
+  }  
+  else if (e is SpeechRecognizedEventArgs)  
+  {  
+    Console.WriteLine("Speech recognized:");  
+  }  
+  
+  // Add code to handle the event.  
+}  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.Speech.Recognition.RecognitionResult Result { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Speech.Recognition.RecognitionResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Recognition.RecognitionEventArgs.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Recognition.RecognitionResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音声認識イベントに関連付けられている認識結果データを取得します。</summary>
+        <value><see cref="P:System.Speech.Recognition.RecognitionEventArgs.Result" />プロパティから返される、<see cref="T:System.Speech.Recognition.RecognitionResult" />認識に関する情報を格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

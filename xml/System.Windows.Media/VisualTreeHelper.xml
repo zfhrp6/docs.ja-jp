@@ -1,0 +1,850 @@
+<Type Name="VisualTreeHelper" FullName="System.Windows.Media.VisualTreeHelper">
+  <TypeSignature Language="C#" Value="public static class VisualTreeHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit VisualTreeHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.VisualTreeHelper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ビジュアル ツリー内のノードに関連する一般的なタスクを実行するユーティリティ メソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビジュアル ツリー内のノードには、いずれかを指定できる<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Media3D.Visual3D>オブジェクト。 ビジュアル オブジェクトの種類に固有のメソッドがいずれかとして入力された<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Media3D.Visual3D>です。 ただし、いくつかのメソッド、<xref:System.Windows.Media.VisualTreeHelper>クラスを受け入れることができます、<xref:System.Windows.DependencyObject>ビジュアル オブジェクトのいずれかの型を表す値です。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]オブジェクトのいくつかの別のツリー構造にプログラムでアクセスをサポートしています。 主に、このビジュアル ツリーおよび論理ツリーとして公開されます。 場合によっては、論理ツリーは内の要素の役に立つの表現、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]アプリケーションはなく、概念的には、論理ツリーが超えるレベルで実装された、<xref:System.Windows.Media.Visual>クラスです。 ビジュアル ツリーとは異なり、論理ツリーは非ビジュアルのデータ オブジェクトなど<xref:System.Windows.Documents.ListItem>です。 論理ツリーについて詳しくは、「[WPF のツリー](~/docs/framework/wpf/advanced/trees-in-wpf.md)」をご覧ください。 論理ツリーは、同様のユーティリティ メソッド クラスでサポートされても<xref:System.Windows.LogicalTreeHelper>します。  
+  
+   
+  
+## Examples  
+ 次の例に示すのは、ビジュアル オブジェクトのすべての子孫を列挙する方法です。これは、ビジュアル オブジェクト階層のすべての描画情報をシリアル化する必要がある場合に使用できる手法です。  
+  
+ [!code-csharp[VisualsOverview#101](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[VisualsOverview#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#101)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetBitmapEffect">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Effects.BitmapEffect GetBitmapEffect (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Effects.BitmapEffect GetBitmapEffect(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetBitmapEffect(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />ビットマップ効果を格納しています。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Effects.BitmapEffect" />値を指定<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>この <see cref="T:System.Windows.Media.Effects.BitmapEffect" /> の <see cref="T:System.Windows.Media.Visual" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBitmapEffectInput">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Effects.BitmapEffectInput GetBitmapEffectInput (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Effects.BitmapEffectInput GetBitmapEffectInput(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetBitmapEffectInput(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.BitmapEffectInput</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />ビットマップ効果の入力値を格納しています。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Effects.BitmapEffectInput" />値を指定<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>この <see cref="T:System.Windows.Media.Effects.BitmapEffectInput" /> の <see cref="T:System.Windows.Media.Visual" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCacheMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.CacheMode GetCacheMode (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.CacheMode GetCacheMode(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetCacheMode(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CacheMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />を取得する、<see cref="T:System.Windows.Media.CacheMode" />用です。</param>
+        <summary>指定したキャッシュされた表現を取得<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.CacheMode" />の<paramref name="reference" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChild">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetChild (System.Windows.DependencyObject reference, int childIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetChild(class System.Windows.DependencyObject reference, int32 childIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetChild(System.Windows.DependencyObject,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.DependencyObject" />
+        <Parameter Name="childIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="reference">として参照される親 visual、<see cref="T:System.Windows.DependencyObject" />です。</param>
+        <param name="childIndex">格納されている子ビジュアルを表すインデックス<c>参照</c>です。</param>
+        <summary>指定した親内の指定されたコレクションのインデックスから子ビジュアル オブジェクトを返します。</summary>
+        <returns>ビジュアルの子オブジェクトのインデックス値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、 <xref:System.Windows.Media.VisualTreeHelper.GetChildrenCount%2A> visual の親の子要素の合計数を決定します。  
+  
+ 値`reference`いずれかを表すことができます、<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Media3D.Visual3D>オブジェクトで、その理由は、共通の基本型<xref:System.Windows.DependencyObject>使用ここでは、パラメーター型として。  
+  
+   
+  
+## Examples  
+ 次の例では、ビジュアル オブジェクトのすべての子孫を列挙する方法を示します。 これは、ビジュアル オブジェクト階層のすべての表示情報をシリアル化に関心があるか、分析または他の描画を実行している場合に使用する手法です。  
+  
+ [!code-csharp[VisualsOverview#101](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[VisualsOverview#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetChildrenCount">
+      <MemberSignature Language="C#" Value="public static int GetChildrenCount (System.Windows.DependencyObject reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetChildrenCount(class System.Windows.DependencyObject reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetChildrenCount(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="reference">として参照される親 visual、<see cref="T:System.Windows.DependencyObject" />です。</param>
+        <summary>指定された visual オブジェクトに含まれる子の数を返します。</summary>
+        <returns>親のビジュアルに含まれる子ビジュアルの数。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、 <xref:System.Windows.Media.VisualTreeHelper.GetChild%2A> visual の親の指定子を取得します。  
+  
+ 値`reference`いずれかを表すことができます、<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Media3D.Visual3D>オブジェクトで、その理由は、共通の基本型<xref:System.Windows.DependencyObject>使用ここでは、パラメーター型として。  
+  
+   
+  
+## Examples  
+ 次の例では、ビジュアル オブジェクトのすべての子孫を列挙する方法を示します。 これは、ビジュアル オブジェクト階層のすべての表示情報をシリアル化に関心があるか、分析または他の描画を実行している場合に使用する手法です。  
+  
+ [!code-csharp[VisualsOverview#101](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[VisualsOverview#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#101)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClip">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Geometry GetClip (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Geometry GetClip(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetClip(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />クリップ領域値が返されます。</param>
+        <summary>指定したのクリップ領域を返す<see cref="T:System.Windows.Media.Visual" />として、<see cref="T:System.Windows.Media.Geometry" />値。</summary>
+        <returns>クリップ領域値、<see cref="T:System.Windows.Media.Visual" />として返されます、<see cref="T:System.Windows.Media.Geometry" />型です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D GetContentBounds (System.Windows.Media.Media3D.Visual3D reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D GetContentBounds(class System.Windows.Media.Media3D.Visual3D reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetContentBounds(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="reference">3D のビジュアル境界ボックスの値が計算されます。</param>
+        <summary>指定された外接するキャッシュのボックス四角形を返します<see cref="T:System.Windows.Media.Media3D.Visual3D" />です。</summary>
+        <returns>境界ボックス 3D の四角形、<see cref="T:System.Windows.Media.Media3D.Visual3D" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.VisualTreeHelper.GetDescendantBounds%2A>すべてのコンテンツを 3D のビジュアル オブジェクトを含むすべての子孫の境界ボックスの和集合を返すメソッドを<xref:System.Windows.Media.Media3D.Visual3D>自体です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContentBounds">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect GetContentBounds (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect GetContentBounds(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetContentBounds(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />が境界ボックスの値を計算します。</param>
+        <summary>指定された外接するキャッシュのボックス四角形を返します<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>ボックスの外接する四角形、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、<xref:System.Windows.Media.VisualTreeHelper.GetDescendantBounds%2A>すべてのコンテンツが含まれて、ビジュアル オブジェクトのすべての子孫の境界ボックスの和集合を返すメソッドを<xref:System.Windows.Media.Visual>自体です。  
+  
+   
+  
+## Examples  
+ 次の例の外接する四角形を取得する方法を示しています、<xref:System.Windows.Media.Visual>オブジェクト。  
+  
+ [!code-csharp[VisualsOverview#102](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#102)]
+ [!code-vb[VisualsOverview#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDescendantBounds">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Media3D.Rect3D GetDescendantBounds (System.Windows.Media.Media3D.Visual3D reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Media3D.Rect3D GetDescendantBounds(class System.Windows.Media.Media3D.Visual3D reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetDescendantBounds(System.Windows.Media.Media3D.Visual3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Media3D.Rect3D</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Media3D.Visual3D" />
+      </Parameters>
+      <Docs>
+        <param name="reference">境界ボックスの値すべての子孫の 3D のビジュアルが計算されます。</param>
+        <summary>すべてのコンテンツを指定のすべての子孫の境界ボックスの和集合を返します<see cref="T:System.Windows.Media.Media3D.Visual3D" />、境界ボックスのコンテンツを含む、<see cref="T:System.Windows.Media.Media3D.Visual3D" />です。</summary>
+        <returns>3D ビジュアルの境界ボックスの 3D 四角を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、 <xref:System.Windows.Media.VisualTreeHelper.GetContentBounds%2A> 3D ビジュアル オブジェクトの外接するキャッシュのボックス四角形を返すメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDescendantBounds">
+      <MemberSignature Language="C#" Value="public static System.Windows.Rect GetDescendantBounds (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Rect GetDescendantBounds(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetDescendantBounds(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />すべての子孫が境界ボックスの値を計算します。</param>
+        <summary>すべてのコンテンツがすべての子孫の境界ボックスの和集合を返します、 <see cref="T:System.Windows.Media.Visual" />、境界ボックスのコンテンツを含む、<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>指定されたボックスの外接する四角形<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す、 <xref:System.Windows.Media.VisualTreeHelper.GetContentBounds%2A> 、キャッシュされている境界ボックスの四角形を返すメソッドを<xref:System.Windows.Media.Visual>です。  
+  
+   
+  
+## Examples  
+ 次の例の子孫の外接する四角形の和集合を取得する方法を示しています、<xref:System.Windows.Media.Visual>です。  
+  
+ [!code-csharp[VisualsOverview#102](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#102)]
+ [!code-vb[VisualsOverview#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDpi">
+      <MemberSignature Language="C#" Value="public static System.Windows.DpiScale GetDpi (System.Windows.Media.Visual visual);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.DpiScale GetDpi(class System.Windows.Media.Visual visual) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetDpi(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DpiScale</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="visual">ビジュアルのターゲット オブジェクト。</param>
+        <summary>このビジュアルが測定および表示される DPI 情報を取得します。</summary>
+        <returns>DPIScale 値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDrawing">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.DrawingGroup GetDrawing (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.DrawingGroup GetDrawing(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetDrawing(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DrawingGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />描画コンテンツが返されます。</param>
+        <summary>指定した図面の内容を返します<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>描画コンテンツ、<see cref="T:System.Windows.Media.Visual" />として返されます、<see cref="T:System.Windows.Media.DrawingGroup" />型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.DrawingGroup>してビジュアル オブジェクトを使用してから、<xref:System.Windows.Media.VisualTreeHelper.GetDrawing%2A>メソッドです。 ヒット テストが実行され内の各図面の geometry 上、<xref:System.Windows.Media.DrawingGroup>を決定するジオメトリにヒットしました。  
+  
+ [!code-csharp[VisualsOverview#VisualsOverviewSnippet4](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualsOverview/CSharp/Window1.xaml.cs#visualsoverviewsnippet4)]
+ [!code-vb[VisualsOverview#VisualsOverviewSnippet4](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsOverview/visualbasic/window1.xaml.vb#visualsoverviewsnippet4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEdgeMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.EdgeMode GetEdgeMode (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.EdgeMode GetEdgeMode(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetEdgeMode(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.EdgeMode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />エッジ モード値が返されます。</param>
+        <summary>指定したエッジ モードを返します<see cref="T:System.Windows.Media.Visual" />として、<see cref="T:System.Windows.Media.EdgeMode" />値。</summary>
+        <returns><see cref="T:System.Windows.Media.EdgeMode" />の値、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エッジ モードの値は、テキスト以外のプリミティブの端がどのように表示されるかを判断します。  
+  
+|エッジ モードの値|説明|  
+|---------------------|-----------------|  
+|<xref:System.Windows.Media.EdgeMode.Aliased>|テキスト以外のプリミティブの端は、エイリアス化された端としてレンダリングします。|  
+|<xref:System.Windows.Media.EdgeMode.Unspecified>|エッジ モードは指定されません。 テキスト以外のプリミティブに適用される現在のエッジ モードは変更されません。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEffect">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Effects.Effect GetEffect (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Effects.Effect GetEffect(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetEffect(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Effects.Effect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />のビットマップ効果を取得します。</param>
+        <summary>指定されたビットマップ効果を取得<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns><see cref="T:System.Windows.Media.Effects.Effect" />に適用される<paramref name="reference" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOffset">
+      <MemberSignature Language="C#" Value="public static System.Windows.Vector GetOffset (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Vector GetOffset(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetOffset(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />オフセットが返されます。</param>
+        <summary>オフセットを返します、<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>A<see cref="T:System.Windows.Vector" />のオフセット値を表す、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されたオフセット値は、親の<xref:System.Windows.Media.Visual>です。 親を基準にはないオフセット値を取得する場合、<xref:System.Windows.Media.Visual>を使用して、<xref:System.Windows.Media.Visual.TransformToAncestor%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のマークアップの例は、<xref:System.Windows.Controls.TextBlock>で定義されている<xref:System.Windows.FrameworkElement.Margin%2A>4 の値。  
+  
+ [!code-xaml[VisualSnippets#VisualSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml#visualsnippet1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.VisualTreeHelper.GetOffset%2A>のオフセットを取得する方法を<xref:System.Windows.Controls.TextBlock>です。 オフセット値が含まれている、返された内<xref:System.Windows.Vector>値。  
+  
+ [!code-csharp[VisualSnippets#VisualSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet2)]
+ [!code-vb[VisualSnippets#VisualSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet2)]  
+  
+ オフセットは考慮に入れて、<xref:System.Windows.FrameworkElement.Margin%2A>値。 ここでは、<xref:System.Windows.Vector.X%2A>は、4、および<xref:System.Windows.Vector.Y%2A>は 4 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOpacity">
+      <MemberSignature Language="C#" Value="public static double GetOpacity (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 GetOpacity(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetOpacity(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />不透明度の値が返されます。</param>
+        <summary>不透明度を返します、<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>型の値<see cref="T:System.Double" />の不透明度の値を表す、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明度の値は、0 ~ 1 の値として表されます。 値 0 は、値が 1 の要素が完全に不透明であることを示し、要素が完全に透明であるを示します。 値 0.5 の要素が 50% 不透明であることを示します。 0 は、0 として扱われ、1 より大きい値は 1 として処理よりも小さいを値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOpacityMask">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Brush GetOpacityMask (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Brush GetOpacityMask(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetOpacityMask(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />不透明度マスクの値が返されます。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Brush" />の不透明度マスクを表す値、<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>型の値<see cref="T:System.Windows.Media.Brush" />の不透明度マスクの値を表す、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不透明度マスクは、<xref:System.Windows.Media.Brush>この描画された内容の任意のアルファ チャンネル マスクに適用されている<xref:System.Windows.Media.Visual>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public static System.Windows.DependencyObject GetParent (System.Windows.DependencyObject reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.DependencyObject GetParent(class System.Windows.DependencyObject reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetParent(System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="reference">親が返されるビジュアル。</param>
+        <summary>返します、<see cref="T:System.Windows.DependencyObject" />ビジュアル オブジェクトの親を表す値です。</summary>
+        <returns>ビジュアルの親。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値`reference`いずれかを表すことができます、<xref:System.Windows.Media.Visual>または<xref:System.Windows.Media.Media3D.Visual3D>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTransform">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Transform GetTransform (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Transform GetTransform(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetTransform(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />変換値が返されます。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Transform" />値を<see cref="T:System.Windows.Media.Visual" />です。</summary>
+        <returns>変換の値、 <see cref="T:System.Windows.Media.Visual" />、または<see langword="null" />場合<paramref name="reference" />定義された変換はありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ また、使用することができます、<xref:System.Windows.Media.Visual.TransformToAncestor%2A>の先祖の変換の値を返すメソッドを<xref:System.Windows.Media.Visual>です。 このメソッドは、常に有効な変換を返します。 次のコード例は、使用する方法を示しています。<xref:System.Windows.Media.Visual.TransformToAncestor%2A>メソッドです。  
+  
+ [!code-csharp[VisualSnippets#VisualSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet3)]
+ [!code-vb[VisualSnippets#VisualSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet3)]  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Media.VisualTreeHelper.GetTransform%2A>指定された visual オブジェクトの変換を取得します。  
+  
+ [!code-csharp[VisualSnippets#VisualSnippet6](~/samples/snippets/csharp/VS_Snippets_Wpf/VisualSnippets/CSharp/Window1.xaml.cs#visualsnippet6)]
+ [!code-vb[VisualSnippets#VisualSnippet6](~/samples/snippets/visualbasic/VS_Snippets_Wpf/VisualSnippets/visualbasic/window1.xaml.vb#visualsnippet6)]  
+  
+ コードをテストする必要があります`null`返される値を使用する前にします。 返された変換のオフセットを返すを使用して、<xref:System.Windows.Media.GeneralTransform.Transform%2A>メソッドです。 オフセットの値は、親の<xref:System.Windows.Media.Visual>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXSnappingGuidelines">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.DoubleCollection GetXSnappingGuidelines (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.DoubleCollection GetXSnappingGuidelines(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetXSnappingGuidelines(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />の X 座標ガイドライン コレクションが返されます。</param>
+        <summary>X 座標 (垂直) ガイドライン コレクションを返します。</summary>
+        <returns>X 座標ガイドライン コレクション、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル スナップは、プロセス オブジェクトのエッジがデバイスに固有のピクセル単位で表示できるようにのコンテンツのレイアウトは固定です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] グラフィックス システムでは、デバイスに依存しない単位を使用して、解像度とデバイスの独立性を可能にします。 システムのされた各デバイスに依存しないピクセルが自動的に拡大縮小[!INCLUDE[TLA#tla_dpi](~/includes/tlasharptla-dpi-md.md)]設定します。 これにより、異なる [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 設定に対して [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] アプリケーションに適切なスケーリングを提供し、アプリケーションを自動的に [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 対応にします。  
+  
+ ただし、この[!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)]の独立性がアンチ エイリアス処理のための不規則なエッジ表示を作成できます。 これらの成果物がぼやけていたり、か「ソフト」のエッジとしても表示は、エッジの場所がデバイス ピクセルの間ではなく、デバイスのピクセルの中央にあるときに発生します。 この問題に対処[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ぼかしアンチ エイリアス処理によって生成されるを排除すること""デバイス ピクセルにスナップ ピクセル スナップを使用するビジュアル ツリー内のオブジェクトの端の方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetYSnappingGuidelines">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.DoubleCollection GetYSnappingGuidelines (System.Windows.Media.Visual reference);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.DoubleCollection GetYSnappingGuidelines(class System.Windows.Media.Visual reference) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.GetYSnappingGuidelines(System.Windows.Media.Visual)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.DoubleCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+      </Parameters>
+      <Docs>
+        <param name="reference"><see cref="T:System.Windows.Media.Visual" />の Y 座標ガイドライン コレクションが返されます。</param>
+        <summary>Y 座標 (水平) ガイドライン コレクションを返します。</summary>
+        <returns>Y 座標ガイドライン コレクション、<see cref="T:System.Windows.Media.Visual" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ピクセル スナップは、プロセス オブジェクトのエッジがデバイスに固有のピクセル単位で表示できるようにのコンテンツのレイアウトは固定です。 [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] グラフィックス システムでは、デバイスに依存しない単位を使用して、解像度とデバイスの独立性を可能にします。 システムのされた各デバイスに依存しないピクセルが自動的に拡大縮小[!INCLUDE[TLA#tla_dpi](~/includes/tlasharptla-dpi-md.md)]設定します。 これにより、異なる [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 設定に対して [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] アプリケーションに適切なスケーリングを提供し、アプリケーションを自動的に [!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)] 対応にします。  
+  
+ ただし、この[!INCLUDE[TLA2#tla_dpi](~/includes/tla2sharptla-dpi-md.md)]の独立性がアンチ エイリアス処理のための不規則なエッジ表示を作成できます。 これらの成果物がぼやけていたり、か「ソフト」のエッジとしても表示は、エッジの場所がデバイス ピクセルの間ではなく、デバイスのピクセルの中央にあるときに発生します。 この問題に対処[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ぼかしアンチ エイリアス処理によって生成されるを排除すること""デバイス ピクセルにスナップ ピクセル スナップを使用するビジュアル ツリー内のオブジェクトの端の方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="HitTest">
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>最上位を返します<see cref="T:System.Windows.Media.Visual" />ヒット テストのオブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受け取るオーバー ロードされたメソッド<xref:System.Windows.Media.HitTestResultCallback>と<xref:System.Windows.Media.HitTestFilterCallback>パラメーターがヒット テスト中に追加の機能を提供します。  
+  
+-   ヒット テスト中のビジュアル ツリーの移動の制御に参加できます。  
+  
+-   使用すると、すべてのポイントまたはジオメトリ、最上位の 1 つだけでなく下にあるビジュアルを取得できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.HitTestResult HitTest (System.Windows.Media.Visual reference, System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.HitTestResult HitTest(class System.Windows.Media.Visual reference, valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.HitTest(System.Windows.Media.Visual,System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.HitTestResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="reference">ヒット テストを行う対象の <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="point">ヒット テストの対象にするポイント値。</param>
+        <summary>最上位を返します<see cref="T:System.Windows.Media.Visual" />を指定して、ヒット テストのオブジェクト、<see cref="T:System.Windows.Point" />です。</summary>
+        <returns>ヒット テストの結果の<see cref="T:System.Windows.Media.Visual" />として返される、<see cref="T:System.Windows.Media.HitTestResult" />型です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.HitTestResult.VisualHit%2A>戻り値のプロパティを表す、<xref:System.Windows.Media.Visual>ヒットしたオブジェクト。  
+  
+> [!NOTE]
+>  返す 2D のビジュアル ツリー内を起動するヒット テストのことが<xref:System.Windows.Media.Media3D.RayHitTestResult>、これは、3 D のヒット テストの結果オブジェクト。 ヒット 2D のビジュアル ツリー内の開始が、定義済みの 3D のビジュアル ツリーにシームレスに拡張することをテストします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>ヒット メソッド内のオブジェクトをテストする、<xref:System.Windows.Controls.Canvas>です。  
+  
+ [!code-csharp[HitTestingOverview#100](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#100)]
+ [!code-vb[HitTestingOverview#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#100)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public static void HitTest (System.Windows.Media.Media3D.Visual3D reference, System.Windows.Media.HitTestFilterCallback filterCallback, System.Windows.Media.HitTestResultCallback resultCallback, System.Windows.Media.Media3D.HitTestParameters3D hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HitTest(class System.Windows.Media.Media3D.Visual3D reference, class System.Windows.Media.HitTestFilterCallback filterCallback, class System.Windows.Media.HitTestResultCallback resultCallback, class System.Windows.Media.Media3D.HitTestParameters3D hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.HitTest(System.Windows.Media.Media3D.Visual3D,System.Windows.Media.HitTestFilterCallback,System.Windows.Media.HitTestResultCallback,System.Windows.Media.Media3D.HitTestParameters3D)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Media3D.Visual3D" />
+        <Parameter Name="filterCallback" Type="System.Windows.Media.HitTestFilterCallback" />
+        <Parameter Name="resultCallback" Type="System.Windows.Media.HitTestResultCallback" />
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.Media3D.HitTestParameters3D" />
+      </Parameters>
+      <Docs>
+        <param name="reference">ヒット テストを行う対象の <see cref="T:System.Windows.Media.Media3D.Visual3D" />。</param>
+        <param name="filterCallback">ヒット テスト フィルターのコールバック値を表すメソッド。</param>
+        <param name="resultCallback">ヒット テスト結果のコールバック値を表すメソッド。</param>
+        <param name="hitTestParameters">ヒット テストの対象にする 3D パラメーター値。</param>
+        <summary>呼び出し元が定義した <see cref="T:System.Windows.Media.HitTestFilterCallback" /> メソッドと <see cref="T:System.Windows.Media.HitTestResultCallback" /> メソッドを使って、指定した <see cref="T:System.Windows.Media.Media3D.Visual3D" /> に対してヒット テストを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `filterCallback`パラメーターを指定できます`null`、その場合は、これは無視されます。 場合`filterCallback`は`null`、呼び出す前に呼び出す`resultCallback`です。  `resultCallback` として `null` を使用することはできません。  
+  
+> [!NOTE]
+>  返す 2D のビジュアル ツリー内を起動するヒット テストのことが<xref:System.Windows.Media.Media3D.RayHitTestResult>、これは、3 D のヒット テストの結果オブジェクト。 ヒット 2D のビジュアル ツリー内の開始が、定義済みの 3D のビジュアル ツリーにシームレスに拡張することをテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HitTest">
+      <MemberSignature Language="C#" Value="public static void HitTest (System.Windows.Media.Visual reference, System.Windows.Media.HitTestFilterCallback filterCallback, System.Windows.Media.HitTestResultCallback resultCallback, System.Windows.Media.HitTestParameters hitTestParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void HitTest(class System.Windows.Media.Visual reference, class System.Windows.Media.HitTestFilterCallback filterCallback, class System.Windows.Media.HitTestResultCallback resultCallback, class System.Windows.Media.HitTestParameters hitTestParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.HitTest(System.Windows.Media.Visual,System.Windows.Media.HitTestFilterCallback,System.Windows.Media.HitTestResultCallback,System.Windows.Media.HitTestParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reference" Type="System.Windows.Media.Visual" />
+        <Parameter Name="filterCallback" Type="System.Windows.Media.HitTestFilterCallback" />
+        <Parameter Name="resultCallback" Type="System.Windows.Media.HitTestResultCallback" />
+        <Parameter Name="hitTestParameters" Type="System.Windows.Media.HitTestParameters" />
+      </Parameters>
+      <Docs>
+        <param name="reference">ヒット テストを行う対象の <see cref="T:System.Windows.Media.Visual" />。</param>
+        <param name="filterCallback">ヒット テスト フィルターのコールバック値を表すメソッド。</param>
+        <param name="resultCallback">ヒット テスト結果のコールバック値を表すメソッド。</param>
+        <param name="hitTestParameters">ヒット テストの対象にするパラメーター値。</param>
+        <summary>呼び出し元が定義した <see cref="T:System.Windows.Media.HitTestFilterCallback" /> メソッドと <see cref="T:System.Windows.Media.HitTestResultCallback" /> メソッドを使って、指定した <see cref="T:System.Windows.Media.Visual" /> に対してヒット テストを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `filterCallback`パラメーターを指定できます`null`、後者は無視されます。 場合`filterCallback`は`null`、呼び出す前に呼び出す`resultCallback`です。 `resultCallback` として `null` を使用することはできません。  
+  
+> [!NOTE]
+>  返す 2D のビジュアル ツリー内を起動するヒット テストのことが<xref:System.Windows.Media.Media3D.RayHitTestResult>、これは、3 D のヒット テストの結果オブジェクト。 ヒット 2D のビジュアル ツリー内の開始が、定義済みの 3D のビジュアル ツリーにシームレスに拡張することをテストします。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.VisualTreeHelper.HitTest%2A>ヒット メソッド内のオブジェクトをテストする、<xref:System.Windows.Controls.Canvas>です。  
+  
+ [!code-csharp[HitTestingOverview#101](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#101)]
+ [!code-vb[HitTestingOverview#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#101)]  
+[!code-csharp[HitTestingOverview#102](~/samples/snippets/csharp/VS_Snippets_Wpf/HitTestingOverview/CSharp/Window1.xaml.cs#102)]
+[!code-vb[HitTestingOverview#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HitTestingOverview/visualbasic/window1.xaml.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetRootDpi">
+      <MemberSignature Language="C#" Value="public static void SetRootDpi (System.Windows.Media.Visual visual, System.Windows.DpiScale dpiInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetRootDpi(class System.Windows.Media.Visual visual, valuetype System.Windows.DpiScale dpiInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.VisualTreeHelper.SetRootDpi(System.Windows.Media.Visual,System.Windows.DpiScale)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visual" Type="System.Windows.Media.Visual" />
+        <Parameter Name="dpiInfo" Type="System.Windows.DpiScale" />
+      </Parameters>
+      <Docs>
+        <param name="visual">ビジュアル オブジェクトの対象。</param>
+        <param name="dpiInfo">ターゲットの Visual の DPI 情報です。</param>
+        <summary>ビジュアルの DPI 情報を更新します。 親なしビジュアルでのみ呼び出すことができます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

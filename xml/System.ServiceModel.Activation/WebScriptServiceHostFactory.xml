@@ -1,0 +1,98 @@
+<Type Name="WebScriptServiceHostFactory" FullName="System.ServiceModel.Activation.WebScriptServiceHostFactory">
+  <TypeSignature Language="C#" Value="public class WebScriptServiceHostFactory : System.ServiceModel.Activation.ServiceHostFactory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebScriptServiceHostFactory extends System.ServiceModel.Activation.ServiceHostFactory" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.WebScriptServiceHostFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activation.ServiceHostFactory</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>受信メッセージに応答して動的にサービスに対するホスト インスタンスをアクティブ化する管理対象ホスティング環境で、このサービスに自動的に ASP.NET AJAX エンドポイントを追加します。構成は必要ありません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このファクトリは、構成を要求せずに、サービスに ASP.NET AJAX エンドポイントを追加する方法を提供します。 このエンドポイントは、構成で定義されているエンドポイントが他にもある場合、そのどれにでも追加できます。 このようなホストの動的アクティブ化をサポートする管理対象ホスティング環境は、インターネット インフォメーション サービス (IIS) と Windows プロセス アクティブ化サービス (WAS) です。  
+  
+ このファクトリを使用するのには、指定、<xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>で、`Factory`の属性、 [ @ServiceHost ](~/docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)ディレクティブです。  
+  
+ このファクトリにより作成された ASP.NET AJAX エンドポイントは、<xref:System.ServiceModel.WebHttpBinding> および <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> を使用して構成されます。設定にはすべて既定の値が使用されます。 エンドポイントは、.svc ファイルに相対する空のアドレス位置に作成されます。 サービス構成で、このアドレスに、既にエンドポイントが定義されている場合、<xref:System.InvalidOperationException> がスローされ、サービスの起動に失敗します。  
+  
+   
+  
+## Examples  
+ 指定、<xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>の値の`Factory`属性、 [ @ServiceHost ](~/docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md)の ASP.NET AJAX エンドポイントをアクティブ化するディレクティブ、`MyService`次の例で示すようにサービスを提供します。  
+  
+```  
+<% @ServiceHost   
+Service="MyService"  
+Language="C#"  
+Debug="true"  
+Factory="WebScriptServiceHostFactory"  
+%>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebScriptServiceHostFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.WebScriptServiceHostFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.WebScriptServiceHostFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このコンストラクターは、サービスのアクティブ化の一部として、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] により自動的に呼び出されます。このメソッドを手動で呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="protected override System.ServiceModel.ServiceHost CreateServiceHost (Type serviceType, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.ServiceModel.ServiceHost CreateServiceHost(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.WebScriptServiceHostFactory.CreateServiceHost(System.Type,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHost</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">ホストするサービスの型。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Array" /> 型の <see cref="T:System.Uri" />。</param>
+        <summary>特定のシナリオで自動的に ASP.NET AJAX エンドポイントを有効にするために使用可能なベース アドレスを持つ特定のサービス型に対する <see cref="T:System.ServiceModel.ServiceHost" /> の派生クラスを作成します。</summary>
+        <returns>指定したベース アドレスで指定されるサービス型に対する <see cref="T:System.ServiceModel.ServiceHost" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、このメソッドは、サービスのアクティブ化の一部として、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] により自動的に呼び出されます。このメソッドを手動で呼び出す必要はありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">別のサービスは同じベース アドレスを使用します。または、別のエンドポイントが、このファクトリで作成しようとしている ASP.NET AJAX エンドポイントと同じアドレスを使用しています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

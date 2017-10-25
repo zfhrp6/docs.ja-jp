@@ -1,0 +1,803 @@
+<Type Name="SecureString" FullName="System.Security.SecureString">
+  <TypeSignature Language="C#" Value="public sealed class SecureString : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecureString extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecureString" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.SecureString</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>不要になったときにコンピューターのメモリから削除するなどして機密を保持する必要があるテキストを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecureString>セキュリティ上の理由を説明する文字列型です。 プレーン テキストとしてのプロセス メモリに機密性の高い文字列を格納しないようにしようとします。  (制限については、ただしを参照してください、[安全な方法は、SecureString?](#HowSecure)セクションです)。インスタンスの値<xref:System.Security.SecureString>インスタンスを初期化する場合、または値が変更されたときに、基になるプラットフォームでサポートされるメカニズムを使用して自動的に保護します。 アプリケーションがインスタンスを変更できないレンダリングし、呼び出すことによってさらに変更を禁止する、<xref:System.Security.SecureString.MakeReadOnly%2A>メソッドです。  
+  
+ 最大長、<xref:System.Security.SecureString>インスタンスは、65,536 文字です。  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型のインスタンスを使用してが完了したら、直接的または間接的にそれを破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ <xref:System.Security.SecureString>クラスとそのメンバーが COM に表示されません。 詳細については、「<xref:System.Runtime.InteropServices.ComVisibleAttribute>」を参照してください。  
+  
+ このセクションの内容:  
+  
+ [Vs の文字列を指定します。SecureString](#vsString)   
+ [SecureString 操作](#Ops)   
+ [SecureString および相互運用](#interop)   
+ [SecureString はどのようにセキュリティで保護されたのですか。](#HowSecure)  
+  
+<a name="vsString"></a>   
+## <a name="string-versus-securestring"></a>SecureString と文字列  
+ インスタンス、<xref:System.String?displayProperty=nameWithType>クラスは変更不可であり、不要になったときにガベージ コレクションのプログラムでスケジュールできません。 つまり、インスタンスは読み取り専用で、作成されると、コンピューターのメモリから、インスタンスを削除する場合を予測することはできません。 <xref:System.String?displayProperty=nameWithType>インスタンスは変更可能な場合を既存のインスタンスを変更する表示される操作が実際に操作するためのコピーを作成します。 したがって場合、<xref:System.String>オブジェクトには、パスワード、クレジット_カード番号、または個人データなどの機密情報が含まれています、アプリケーションがコンピューターのメモリからデータを削除できないために、使用後に、情報が盗まれるリスクが生じます。  
+  
+ A<xref:System.Security.SecureString>オブジェクトがに似ていますが、<xref:System.String>オブジェクトのテキスト値があることにします。 ただしの値、<xref:System.Security.SecureString>オブジェクトのメモリ内に固定された、アプリケーションで読み取り専用としてマークされるまで、基になるオペレーティング システムによって提供される、暗号化を変更できるよう保護機構を使用する可能性があります、コンピューターのメモリから削除できますか、アプリケーションの呼び出すことによって、<xref:System.Security.SecureString.Dispose%2A>メソッドまたは .NET Framework ガベージ コレクターによってです。  
+  
+ 制限については、<xref:System.Security.SecureString>クラスを参照してください、[安全な方法は、SecureString?](#HowSecure)セクションです。  
+  
+ [ページのトップへ](#top)  
+  
+<a name="Ops"></a>   
+## <a name="securestring-operations"></a>SecureString 操作  
+ <xref:System.Security.SecureString>クラスには、次の操作を許可するメンバーが含まれています。  
+  
+ インスタンスを作成、<xref:System.Security.SecureString>オブジェクト  
+ インスタンス化する、<xref:System.Security.SecureString>パラメーターなしのコンス トラクターを呼び出すことによってオブジェクト。  
+  
+ 文字を追加、<xref:System.Security.SecureString>オブジェクト  
+ 一度に 1 つの文字を追加することができます、<xref:System.Security.SecureString>オブジェクトを呼び出してその<xref:System.Security.SecureString.AppendChar%2A>または<xref:System.Security.SecureString.InsertAt%2A>メソッドです。  
+  
+> [!IMPORTANT]
+>  A<xref:System.Security.SecureString>からオブジェクトを構築する必要がありますしない、<xref:System.String>機微なデータは既に、メモリ永続化の結果、変更できないため、<xref:System.String>クラスです。 構築する最善の方法、<xref:System.Security.SecureString>オブジェクトは、時間での文字の管理されていないソースからなど、<xref:System.Console.ReadKey%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 文字を削除して、<xref:System.Security.SecureString>オブジェクト  
+ 呼び出して個々 の文字を置き換えることができます、<xref:System.Security.SecureString.SetAt%2A>メソッドを呼び出して個々 の文字を削除、<xref:System.Security.SecureString.RemoveAt%2A>メソッド、またはすべての文字から削除、<xref:System.Security.SecureString>を呼び出してインスタンス、<xref:System.Security.SecureString.Clear%2A>メソッドです。  
+  
+ ように、<xref:System.Security.SecureString>オブジェクトの読み取り専用  
+ 定義すると、文字列を<xref:System.Security.SecureString>呼び出して、オブジェクトを表します、<xref:System.Security.SecureString.MakeReadOnly%2A>を読み取り専用文字列を作成するメソッド。  
+  
+ に関する情報を取得、<xref:System.Security.SecureString>オブジェクト  
+ <xref:System.Security.SecureString>クラスには、文字列についての情報を提供する 2 つだけのメンバー: その<xref:System.Security.SecureString.Length%2A>を文字列にコードの UTF16 エンコード ユニットの数を示すプロパティおよび<xref:System.Security.SecureString.IsReadOnly%2A>メソッドのインスタンスは読み取り専用であるかどうかを示します。  
+  
+ 割り当てられたメモリを解放、<xref:System.Security.SecureString>インスタンス  
+ <xref:System.Security.SecureString>を実装する、<xref:System.IDisposable>インターフェイスを呼び出すことによって、メモリを解放する、<xref:System.Security.SecureString.Dispose%2A>メソッドです。  
+  
+ <xref:System.Security.SecureString>クラスに検査、比較、またはの値を変換するメンバーが存在しない、<xref:System.Security.SecureString>です。 このようなメンバーが存在しない場合は、誤ってまたは悪意のある露出からのインスタンスの値を保護するのに役立ちます。 適切なメンバーを使用して、<xref:System.Runtime.InteropServices.Marshal?displayProperty=nameWithType>クラスなど、<xref:System.Runtime.InteropServices.Marshal.SecureStringToBSTR%2A>の値を操作するメソッドを<xref:System.Security.SecureString>オブジェクト。  
+  
+ よく使われる .NET Framework クラス ライブラリ<xref:System.Security.SecureString>次の方法でインスタンス。  
+  
+-   使用して、プロセスにパスワード情報を提供する、<xref:System.Diagnostics.ProcessStartInfo>構造体またはのオーバー ロードを呼び出すことによって、<xref:System.Diagnostics.Process.Start%2A?displayProperty=nameWithType>型のパラメーターを持つメソッド<xref:System.Security.SecureString>です。  
+  
+-   情報を提供するネットワーク パスワードを呼び出して、<xref:System.Net.NetworkCredential>型のパラメーターを持つクラスのコンス トラクター<xref:System.Security.SecureString>またはを使用して、<xref:System.Net.NetworkCredential.SecurePassword%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   呼び出すことによって SQL Server 認証のパスワード情報を提供する、<xref:System.Data.SqlClient.SqlCredential.%23ctor%2A?displayProperty=nameWithType>コンス トラクターまたはの値を取得、<xref:System.Data.SqlClient.SqlCredential.Password%2A?displayProperty=nameWithType>プロパティです。  
+  
+-   アンマネージ コードに文字列を渡す。 詳細については、次を参照してください。、 [SecureString 相互運用機能および](#interop)セクションです。  
+  
+ [ページのトップへ](#top)  
+  
+<a name="interop"></a>   
+## <a name="securestring-and-interop"></a>SecureString および相互運用  
+ オペレーティング システムによって直接サポートされないため<xref:System.Security.SecureString>の値を変換する必要があります、<xref:System.Security.SecureString>オブジェクトをネイティブ メソッドに文字列を渡す前に必須の文字列型にします。  <xref:System.Runtime.InteropServices.Marshal>クラスにはこれを実行する 5 つの方法。  
+  
+-   <xref:System.Runtime.InteropServices.Marshal.SecureStringToBSTR%2A?displayProperty=nameWithType>、に変換する、 <xref:System.Security.SecureString> COM によって認識されるバイナリ文字列 (BSTR) に値の文字列  
+  
+-   <xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemAnsi%2A?displayProperty=nameWithType>および<xref:System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocAnsi%2A?displayProperty=nameWithType>、のどのコピー、<xref:System.Security.SecureString>文字列のアンマネージ メモリ内の ANSI 文字列値です。  
+  
+-   <xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemUnicode%2A?displayProperty=nameWithType>および<xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemUnicode%2A?displayProperty=nameWithType>、のどのコピー、<xref:System.Security.SecureString>文字列をアンマネージ メモリ内の Unicode 文字列値です。  
+  
+ これらの各メソッドは、アンマネージ メモリにクリア テキスト文字列を作成します。 ゼロにして、不要になったとすぐにそのメモリを解放する開発者の責任においてすることをお勧めします。 文字列変換とメモリの割り当て方法のそれぞれをゼロに割り当てられたメモリを解放して対応するメソッドがあります。  
+  
+|割り当ておよび変換メソッド|0 と free メソッド|  
+|--------------------------------------|--------------------------|  
+|<xref:System.Runtime.InteropServices.Marshal.SecureStringToBSTR%2A?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ZeroFreeBSTR%2A?displayProperty=nameWithType>|  
+|<xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemAnsi%2A?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ZeroFreeCoTaskMemAnsi%2A?displayProperty=nameWithType>|  
+|<xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemUnicode%2A?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ZeroFreeCoTaskMemUnicode%2A?displayProperty=nameWithType>|  
+|<xref:System.Runtime.InteropServices.Marshal.SecureStringToGlobalAllocAnsi%2A?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocAnsi%2A?displayProperty=nameWithType>|  
+|<xref:System.Runtime.InteropServices.Marshal.SecureStringToCoTaskMemUnicode%2A?displayProperty=nameWithType>|<xref:System.Runtime.InteropServices.Marshal.ZeroFreeGlobalAllocUnicode%2A?displayProperty=nameWithType>|  
+  
+ [ページのトップへ](#top)  
+  
+<a name="HowSecure"></a>   
+## <a name="how-secure-is-securestring"></a>SecureString はどのようにセキュリティで保護されたのですか。  
+ 正常に作成されたときに、<xref:System.Security.SecureString>インスタンスよりも多くのデータ保護を提供する、<xref:System.String>です。 時間での文字のソースから文字列を作成するときに<xref:System.String>一方、メモリ上で複数の中間を作成<xref:System.Security.SecureString>単一インスタンスだけを作成します。  ガベージ コレクション<xref:System.String>オブジェクトは、非確定的です。 さらに、そのメモリが固定されていないため、ガベージ コレクターは追加のコピーを作成<xref:System.String>値の移動やメモリを圧縮することにします。 これに対しに割り当てられた、メモリ、<xref:System.Security.SecureString>オブジェクトが固定され、そのメモリを呼び出すことによって解放されることができます、<xref:System.Security.SecureString.Dispose%2A>メソッドです。  
+  
+ 格納されているデータが、<xref:System.Security.SecureString>インスタンスがデータに格納されているよりも安全性、<xref:System.String>インスタンスの安全な方法に大幅な制限は、<xref:System.Security.SecureString>インスタンスがします。 以下に例を示します。  
+  
+ プラットフォーム  
+ Windows オペレーティング システムでの内容、<xref:System.Security.SecureString>インスタンスの内部文字配列を暗号化します。 ただし、Api またはキーの管理に関する問題がありません、ためかどうか暗号化はいないすべてのプラットフォームで利用可能です。 このため、<xref:System.Security.SecureString>はデスクトップ (Windows のみ)、および .NET Core ではなく利用できます。  
+  
+ 存続期間  
+ 場合でも、<xref:System.Security.SecureString>実装が暗号化を利用できるに割り当てられているプレーン テキスト、<xref:System.Security.SecureString>インスタンスは、さまざまなタイミングで公開される可能性があります。  
+  
+-   Windows がオペレーティング システム レベルでセキュリティで保護された文字列の実装を提供していないため、.NET Framework はまだセキュリティで保護された文字列の値をそれを使用するために、プレーン テキスト形式に変換します。  
+  
+-   たびにセキュリティで保護された文字列の値は、メソッドによって変更など<xref:System.Security.SecureString.AppendChar%2A>または<xref:System.Security.SecureString.RemoveAt%2A>、復号化する必要があります (つまり、変換後に再度プレーン テキスト)、変更され、再度暗号化します。  
+  
+-   相互運用の呼び出しで、セキュリティで保護された文字列を使用する場合は、ANSI 文字列、Unicode 文字列またはバイナリ文字列 (BSTR) に変換する必要があります。 詳細については、次を参照してください。、 [SecureString 相互運用機能および](#interop)セクションです。  
+  
+ 対象の時間間隔、<xref:System.Security.SecureString>インスタンスの値が公開されているが、比較するだけで切り捨てられて、<xref:System.String>クラスです。  
+  
+ 使用法とストレージ  
+ 一般的に、<xref:System.Security.SecureString>クラスは、保護されているまたは秘密にする必要がある文字列値を格納するメカニズムを定義します。 ただし、.NET Framework 自体の外部で使用状況のメカニズムがサポートされません<xref:System.Security.SecureString>です。 つまり、セキュリティで保護された文字列をそのターゲットが認識できる使用可能な形式 (通常はクリア テキスト形式) に変換する必要があります、復号化し、変換は、ユーザー領域で行う必要があります。  
+  
+ 全体的な<xref:System.Security.SecureString>よりも安全<xref:System.String>区別する文字列データの公開を制限するためです。 ただし、それらの文字列は、プロセスやホスト コンピューター、プロセス ダンプ、またはユーザー表示可能なスワップ ファイルで実行されている悪意のあるプロセスなどの生のメモリへのアクセス権がある操作も公開可能性があります。 使用せずに<xref:System.Security.SecureString>パスワード保護のため、推奨される場合は、プロセスの外部で格納されている資格情報を不透明なハンドルを使用します。  
+  
+ [ページのトップへ](#top)  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.Security.SecureString>新しいプロセスを開始する資格情報として使用するためのユーザーのパスワードをセキュリティで保護します。  
+  
+ [!code-csharp[System.Security.SecureString.Ctor#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/cs/ctor4.cs#4)]
+ [!code-vb[System.Security.SecureString.Ctor#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/vb/ctor4.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecureString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.SecureString" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、既定値 (またはパラメーターなし)、新しいインスタンスを作成するコンス トラクター<xref:System.Security.SecureString>オブジェクト。 呼び出して、<xref:System.Security.SecureString.AppendChar%2A>文字の配列を追加するメソッド。  
+  
+ [!code-cpp[System.Security.SecureString.Ctor#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/cpp/Ctor2.cpp#2)]
+ [!code-csharp[System.Security.SecureString.Ctor#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/cs/Ctor2.cs#2)]
+ [!code-vb[System.Security.SecureString.Ctor#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/vb/ctor2.vb#2)]  
+  
+ 次の例を作成、<xref:System.Security.SecureString>オブジェクトの値から、<xref:System.String>オブジェクト。  
+  
+ [!code-cpp[System.Security.SecureString.Ctor#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/cpp/Ctor3.cpp#3)]
+ [!code-csharp[System.Security.SecureString.Ctor#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/cs/Ctor3.cs#3)]
+ [!code-vb[System.Security.SecureString.Ctor#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.SecureString.Ctor/vb/Ctor3.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">保護またはこのインスタンスの値を復号化中にエラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作は、このプラットフォームではサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecureString (char* value, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(char* value, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.#ctor(System.Char*,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char*" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Char" /> オブジェクトの配列へのポインター。</param>
+        <param name="length">要素の数<c>値</c>新しいインスタンスに含める。</param>
+        <summary><see cref="T:System.Char" /> オブジェクトのサブ配列から <see cref="T:System.Security.SecureString" /> クラスの新しいインスタンスを初期化します。  
+  
+ このコンストラクターは、CLS 準拠ではありません。 CLS 準拠の代わりとして <see cref="M:System.Security.SecureString.#ctor" /> を使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを新しい初期化<xref:System.Security.SecureString>オブジェクト内の文字の数を`value`によって指定された`length`; のインスタンスの値は暗号化されます。  
+  
+ C# の場合、このコンス トラクターはアンセーフ コードのコンテキストでのみ定義されます。  
+  
+   
+  
+## Examples  
+ 次の例の新しいインスタンスを作成<xref:System.Security.SecureString>コンス トラクターが文字配列へのポインターを渡すことによってオブジェクト。  
+  
+ [!code-cpp[System.Security.SecureString.Ctor2#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.security.securestring.ctor2/cpp/ctor1.cpp#1)]
+ [!code-csharp[System.Security.SecureString.Ctor2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.security.securestring.ctor2/cs/ctor1.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="length" /> が 0 未満か、65,536 を超えています。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+        <exception cref="T:System.NotSupportedException">この操作は、このプラットフォームではサポートされていません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendChar">
+      <MemberSignature Language="C#" Value="public void AppendChar (char c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AppendChar(char c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.AppendChar(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="c" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="c">このセキュリティ文字列に追加される文字。</param>
+        <summary>現在のセキュリティ文字列の末尾に、文字を 1 つ追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、このセキュリティ文字列の値が保護; されていない場合は、実装は、暗号化などの保護メカニズムを使用`c`が追加されます。 セキュリティで保護された文字列の新しい値は再保護します。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、<xref:System.Security.SecureString.SetAt%2A>と<xref:System.Security.SecureString.Clear%2A>メソッドの値に影響、<xref:System.Security.SecureString>オブジェクト。  
+  
+ [!code-cpp[SecureString.xAt#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xAt/CPP/SecureString.xAt.cpp#1)]
+ [!code-csharp[SecureString.xAt#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xAt/CS/xat.cs#1)]
+ [!code-vb[SecureString.xAt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xAt/VB/xat.vb#1)]  
+  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>と<xref:System.Security.SecureString.RemoveAt%2A>メソッドは、パスワードの文字を収集するために使用できます。  
+  
+ [!code-cpp[SecureString.xChar#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xChar/CPP/SecureString.xChar.cpp#1)]
+ [!code-csharp[SecureString.xChar#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xChar/CS/xchar.cs#1)]
+ [!code-vb[SecureString.xChar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xChar/VB/xchar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このセキュリティで保護された文字列とは、読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">この操作を実行すると、このセキュリティ文字列の長さは 65,536 文字を超えています。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセキュリティ文字列の値を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このセキュリティ文字列の値を含むコンピューターのメモリをゼロに設定し、このセキュリティ文字列の値の長さは 0 に設定します。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、<xref:System.Security.SecureString.SetAt%2A>と<xref:System.Security.SecureString.Clear%2A>メソッドの値に影響、<xref:System.Security.SecureString>オブジェクト。  
+  
+ [!code-cpp[SecureString.xAt#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xAt/CPP/SecureString.xAt.cpp#1)]
+ [!code-csharp[SecureString.xAt#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xAt/CS/xat.cs#1)]
+ [!code-vb[SecureString.xAt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xAt/VB/xat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このセキュリティで保護された文字列とは、読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public System.Security.SecureString Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.SecureString Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecureString</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のセキュリティ文字列のコピーを作成します。</summary>
+        <returns>このセキュリティ文字列の複製。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの場合、<xref:System.Security.SecureString>は読み取り専用に設定されると、そのインスタンスのコピーができない読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Security.SecureString" /> オブジェクトによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecureString.Dispose%2A>メソッドはこの値を含む割り当てられたメモリへのバイナリのゼロも書き込みます<xref:System.Security.SecureString>オブジェクト、し、割り当てられたメモリを解放します。  
+  
+ 詳細については、次を参照してください。[ガベージ コレクション](http://msdn.microsoft.com/library/22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertAt">
+      <MemberSignature Language="C#" Value="public void InsertAt (int index, char c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void InsertAt(int32 index, char c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.InsertAt(System.Int32,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="c" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置パラメーター <c>c</c>を挿入します。</param>
+        <param name="c">挿入する文字。</param>
+        <summary>このセキュリティ文字列の指定したインデックス位置に文字を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスが 0 から始まります。このセキュリティ文字列の最初の文字は、インデックス位置 0 です。  
+  
+ 存在する場合は、セキュリティで保護された文字列の値が保護されてはいない実装では、暗号化などの保護メカニズムを使用している場合`c` ; 指定したインデックス位置に挿入は、新しい値は再保護します。 <xref:System.Security.SecureString.InsertAt%2A>メソッドと同じ結果が得られます、<xref:System.Security.SecureString.AppendChar%2A>場合、セキュリティで保護された文字列の末尾に文字を挿入するメソッド、`index`のパラメーター<xref:System.Security.SecureString.InsertAt%2A>がこのインスタンスの長さに設定します。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、<xref:System.Security.SecureString.SetAt%2A>と<xref:System.Security.SecureString.Clear%2A>メソッドの値に影響、<xref:System.Security.SecureString>オブジェクト。  
+  
+ [!code-cpp[SecureString.xAt#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xAt/CPP/SecureString.xAt.cpp#1)]
+ [!code-csharp[SecureString.xAt#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xAt/CS/xat.cs#1)]
+ [!code-vb[SecureString.xAt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xAt/VB/xat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このセキュリティで保護された文字列とは、読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0 の場合、このセキュリティ文字列の長さより大きいか未満です。  
+  
+ または  
+  
+ この操作を実行すると、このセキュリティ文字列の長さは 65,536 文字を超えています。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.IsReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このセキュリティ文字列が読み取り専用としてマークされているかどうかを示します。</summary>
+        <returns>
+          このセキュリティ文字列が読み取り専用にマークされている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスの後に<xref:System.Security.SecureString>で読み取り専用にマークされて、<xref:System.Security.SecureString.MakeReadOnly%2A>メソッドを呼び出そうとするとインスタンスがスローされますの値を変更する、<xref:System.InvalidOperationException>です。 使用して、<xref:System.Security.SecureString.IsReadOnly%2A>メソッドをテストするかどうか、<xref:System.Security.SecureString>はそれを変更する前に読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.Security.SecureString.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセキュリティ文字列内の文字数を取得します。</summary>
+        <value>このセキュリティ文字列に含まれる <see cref="T:System.Char" /> オブジェクトの数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecureString.Length%2A>プロパティの数を返します<xref:System.Char>オブジェクトがこのインスタンスで、Unicode 文字の数値ではありません。 1 つ以上の Unicode 文字を表す<xref:System.Char>オブジェクト。  
+  
+ 最大長、<xref:System.Security.SecureString>インスタンスは、65,536 文字です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このセキュリティ文字列のテキスト値を読み取り専用にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスのテキスト値を初期化、<xref:System.Security.SecureString>クラス、<xref:System.Security.SecureString.%23ctor%2A>コンス トラクター、および使用の値を変更、 <xref:System.Security.SecureString.Clear%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、 <xref:System.Security.SecureString.SetAt%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、および<xref:System.Security.SecureString.AppendChar%2A>メソッドです。  
+  
+ 最終的な変更を加えた後に使用して、<xref:System.Security.SecureString.MakeReadOnly%2A>インスタンスの値を変更できないようにするメソッド (読み取り専用)。 値は読み取り専用とマークされているが、さらにしようとするとスローを変更する、<xref:System.InvalidOperationException>です。  
+  
+ 呼び出しの影響<xref:System.Security.SecureString.MakeReadOnly%2A>は永続的なため、<xref:System.Security.SecureString>を再度変更可能にするには、セキュリティで保護された文字列クラスの手段がありません。 使用して、<xref:System.Security.SecureString.IsReadOnly%2A>のインスタンスかどうかをテストするメソッド<xref:System.Security.SecureString>は読み取り専用です。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>と<xref:System.Security.SecureString.RemoveAt%2A>メソッドは、パスワードの文字を収集するために使用できます。 パスワードが収集されると、読み取り専用されています。  
+  
+ [!code-cpp[SecureString.xChar#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xChar/CPP/SecureString.xChar.cpp#1)]
+ [!code-csharp[SecureString.xChar#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xChar/CS/xchar.cs#1)]
+ [!code-vb[SecureString.xChar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xChar/VB/xchar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">このセキュリティ文字列に含まれる文字のインデックス位置。</param>
+        <summary>このセキュリティ文字列の指定されたインデックス位置にある文字を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスが 0 から始まります。このインスタンスの最初の文字は、インデックス位置 0 です。  
+  
+ 場合は、このセキュリティ文字列の値が保護; されていない場合は、実装は、暗号化などの保護メカニズムを使用指定したインデックス位置にある文字が削除されます。新しい値を再保護します。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、<xref:System.Security.SecureString.SetAt%2A>と<xref:System.Security.SecureString.Clear%2A>メソッドの値に影響、<xref:System.Security.SecureString>オブジェクト。  
+  
+ [!code-cpp[SecureString.xAt#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xAt/CPP/SecureString.xAt.cpp#1)]
+ [!code-csharp[SecureString.xAt#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xAt/CS/xat.cs#1)]
+ [!code-vb[SecureString.xAt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xAt/VB/xat.vb#1)]  
+  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>と<xref:System.Security.SecureString.RemoveAt%2A>メソッドは、パスワードの文字を収集するために使用できます。  
+  
+ [!code-cpp[SecureString.xChar#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xChar/CPP/SecureString.xChar.cpp#1)]
+ [!code-csharp[SecureString.xChar#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xChar/CS/xchar.cs#1)]
+ [!code-vb[SecureString.xChar#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xChar/VB/xchar.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このセキュリティで保護された文字列とは、読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0、またはより大きいかこのセキュリティ文字列の長さと等しいです。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAt">
+      <MemberSignature Language="C#" Value="public void SetAt (int index, char c);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAt(int32 index, char c) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecureString.SetAt(System.Int32,System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.SecureString</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="c" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="index">このセキュリティ文字列に含まれる既存の文字のインデックス位置。</param>
+        <param name="c">既存の文字を置換する文字。</param>
+        <summary>指定されたインデックス位置にある既存の文字を別の文字に置き換えます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インデックスが 0 から始まります。このインスタンスの最初の文字は、インデックス位置 0 です。  
+  
+ 存在する場合は、セキュリティで保護された文字列の値が保護されてはいない実装では、暗号化などの保護メカニズムを使用している場合`c` ; 指定したインデックス位置に割り当てられている、新しい値は再保護します。  
+  
+   
+  
+## Examples  
+ 次の例でどのように<xref:System.Security.SecureString.AppendChar%2A>、 <xref:System.Security.SecureString.InsertAt%2A>、 <xref:System.Security.SecureString.RemoveAt%2A>、<xref:System.Security.SecureString.SetAt%2A>と<xref:System.Security.SecureString.Clear%2A>メソッドの値に影響、<xref:System.Security.SecureString>オブジェクト。  
+  
+ [!code-cpp[SecureString.xAt#1](~/samples/snippets/cpp/VS_Snippets_CLR/SecureString.xAt/CPP/SecureString.xAt.cpp#1)]
+ [!code-csharp[SecureString.xAt#1](~/samples/snippets/csharp/VS_Snippets_CLR/SecureString.xAt/CS/xat.cs#1)]
+ [!code-vb[SecureString.xAt#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/SecureString.xAt/VB/xat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">このセキュリティ文字列は既に破棄されています。</exception>
+        <exception cref="T:System.InvalidOperationException">このセキュリティで保護された文字列とは、読み取り専用です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" />0、またはより大きいかこのセキュリティ文字列の長さと等しいです。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">このセキュリティ文字列の値を暗号化または復号化するときにエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

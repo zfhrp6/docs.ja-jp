@@ -1,0 +1,251 @@
+<Type Name="ConsoleApplicationBase" FullName="Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase">
+  <TypeSignature Language="C#" Value="public class ConsoleApplicationBase : Microsoft.VisualBasic.ApplicationServices.ApplicationBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ConsoleApplicationBase extends Microsoft.VisualBasic.ApplicationServices.ApplicationBase" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.VisualBasic.ApplicationServices.ApplicationBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティ、メソッド、および現在のアプリケーションに関連するイベントを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって公開されるプロパティ、`My.Application`オブジェクトの現在のアプリケーションまたは DLL にのみ関連付けられているデータを返す。 システム レベル以外の情報は、`My.Application` に変更される可能性があります。  
+  
+ `My.Application` オブジェクトは、次のクラスで構成されています。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> は、すべてのプロジェクトで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> は、Windows フォーム アプリケーションで使用可能なメンバーを提供します。  
+  
+-   <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> は、コンソール アプリケーションで使用可能なメンバーを提供します。  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.CommandLineArgs`プロパティをアプリケーションのコマンドライン引数を確認します。 始まる引数が見つかった場合`/input=`、その引数の残りの部分が表示されます。  
+  
+ [!code-vb[VbVbalrMyApplication#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConsoleApplicationBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandLineArgs">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; CommandLineArgs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; CommandLineArgs" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションの文字列として、コマンドライン引数を含むコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see langword="String" />、現在のアプリケーションの文字列としてコマンドライン引数を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.CommandLineArgs`プロパティ ClickOnce の配置ではないアプリケーションの現在のアプリケーションのコマンドライン引数への読み取り専用のアクセスを提供します。  
+  
+ 単一インスタンス アプリケーションの場合、`My.Application.CommandLineArgs`プロパティは、アプリケーションの最初のインスタンスに対するコマンドライン引数を返します。 後続の単一インスタンス アプリケーションを起動するための引数にアクセスするには、処理、<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>イベントを確認し、<xref:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs.CommandLine%2A>のプロパティ、<xref:Microsoft.VisualBasic.ApplicationServices.StartupEventArgs>引数。  
+  
+> [!NOTE]
+>  `My.Application.CommandLineArgs`プロパティは、コマンドラインの引数のみを返します。 これは、動作と異なる、<xref:System.Environment.CommandLine%2A>プロパティで、引数に加え、アプリケーション名を返します。  
+  
+> [!NOTE]
+>  アプリケーションは、ClickOnce 配置で使用して、<xref:System.Deployment.Application.ApplicationDeployment.ActivationUri%2A>のプロパティ、`My.Application.Deployment`コマンドライン引数を取得するオブジェクト。 詳細については、「<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.Deployment%2A>」を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Application.CommandLineArgs`プロパティです。  
+  
+|目的|参照トピック|  
+|-|-|  
+|その後の試行を単一インスタンスのアプリケーションを開始するコマンドライン引数を調べる|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.StartupNextInstance>|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Application.CommandLineArgs`プロパティをアプリケーションのコマンドライン引数を確認します。 始まる引数が見つかった場合`/input=`、その引数の残りの部分が表示されます。  
+  
+ [!code-vb[VbVbalrMyApplication#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <altCompliant cref="P:System.Environment.CommandLine" />
+        <permission cref="T:System.Security.Permissions.EnvironmentPermission">PATH 環境変数にアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.EnvironmentPermissionAccess.Read" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Deployment">
+      <MemberSignature Language="C#" Value="public System.Deployment.Application.ApplicationDeployment Deployment { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Deployment.Application.ApplicationDeployment Deployment" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.Deployment" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.ApplicationDeployment</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の展開をプログラムで更新し、ファイルのオンデマンドでダウンロードのサポートのサポートを提供する現在のアプリケーションの ClickOnce 配置オブジェクトを取得します。</summary>
+        <value>返します、<see cref="T:System.Deployment.Application.ApplicationDeployment" />アプリケーションの ClickOnce 配置のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.Deployment`プロパティを返します、アプリケーションの ClickOnce<xref:System.Deployment.Application.ApplicationDeployment>オブジェクト。 <xref:System.Deployment.Application.ApplicationDeployment>オブジェクトは、現在のデプロイをプログラムで更新だけでなくファイルのオンデマンドでダウンロードのサポートのサポートを提供します。 ClickOnce アプリケーションおよび展開する方法の詳細については、次を参照してください。 [ClickOnce のセキュリティと配置](http://msdn.microsoft.com/library/abab6d34-c3c2-45c1-a8b6-43c7d3131e7a)と[ClickOnce アプリケーションの発行](http://msdn.microsoft.com/library/eb6dfe79-f54c-4331-8e36-073688e70973)です。  
+  
+ いることを確認、<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.IsNetworkDeployed%2A>プロパティは`True`にアクセスする前に、`My.Application.Deployment`プロパティです。 それ以外の場合、アプリケーションを配置 ClickOnce を使用していない場合は、読み取り、`My.Application.Deployment`プロパティの結果、<xref:System.Deployment.Application.InvalidDeploymentException>例外。 ClickOnce アプリケーションを展開する方法の詳細については、次を参照してください。[する方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行](http://msdn.microsoft.com/library/2e4aa67c-4445-4f7b-9e03-9acb95829127)です。  
+  
+ 使用する方法について、`My.Application.Deployment`プロパティを参照してください[Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、アプリケーションがネットワーク経由で配置を確認した後、更新プログラムをダウンロードしています。 <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>期限切れである場合を除き、メソッドが、アプリケーションを更新できません。 アプリケーションは、更新プログラムを使用するために再起動します。  
+  
+ [!code-vb[VbVbalrMyApplication#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#4)]  
+  
+ 使用して ClickOnce の配置は、アプリケーションのみを更新することができます、`My.Application.Deployment`オブジェクト。 ClickOnce アプリケーションを展開する方法の詳細については、次を参照してください。[する方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行](http://msdn.microsoft.com/library/2e4aa67c-4445-4f7b-9e03-9acb95829127)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Deployment.Application.InvalidDeploymentException">アプリケーションが ClickOnce アプリケーションとして展開されていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalCommandLine">
+      <MemberSignature Language="C#" Value="protected System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; InternalCommandLine { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; InternalCommandLine" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.InternalCommandLine" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーションのコマンドライン引数として使用する値を設定します。</summary>
+        <value>A<see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />の<see langword="String" />、現在のアプリケーションに対するコマンドライン引数として使用する文字列を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでは、内部で使用されるコマンドライン引数の値を設定することができます、<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase>クラスです。 このプロパティを決定、<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>プロパティを返します。 このプロパティを設定するか、このプロパティを設定しないでください`Nothing`、<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.CommandLineArgs%2A>プロパティは、コマンドラインの引数から、<xref:System.Environment.CommandLine%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNetworkDeployed">
+      <MemberSignature Language="C#" Value="public bool IsNetworkDeployed { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNetworkDeployed" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.IsNetworkDeployed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see langword="Boolean" /> ClickOnce を使用して、ネットワークから、アプリケーションが展開されたかどうかを表すです。</summary>
+        <value>A<see langword="Boolean" />アプリケーションがネットワークから配置されたかどうかを表すです。 値が<see langword="True" />、現在のアプリケーションがネットワークから配置された場合のそれ以外の場合、値は<see langword="False" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.IsNetworkDeployed`プロパティは、アプリケーションが ClickOnce を使用して、ネットワークから配置されたかどうかを示します。 ClickOnce アプリケーションの詳細については、次を参照してください。 [ClickOnce のセキュリティと配置](http://msdn.microsoft.com/library/abab6d34-c3c2-45c1-a8b6-43c7d3131e7a)です。  
+  
+ このプロパティがあることを確認する必要があります`True`にアクセスする前に、<xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase.Deployment%2A>プロパティです。 それ以外の場合、ClickOnce を使用して、ネットワークからは、アプリケーションが展開されていない場合、読み取り、`My.Application.Deployment`プロパティの結果、<xref:System.Deployment.Application.InvalidDeploymentException>例外。  
+  
+ ClickOnce を構成する方法については、次を参照してください。 [ClickOnce アプリケーションの発行](http://msdn.microsoft.com/library/eb6dfe79-f54c-4331-8e36-073688e70973)です。 ClickOnce アプリケーションを展開する方法の詳細については、次を参照してください。[する方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行](http://msdn.microsoft.com/library/2e4aa67c-4445-4f7b-9e03-9acb95829127)です。  
+  
+ 使用する方法について、`My.Application.IsNetworkDeployed`プロパティを参照してください[Visual Basic アプリケーション モデルの概要](~/docs/visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)です。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows フォーム アプリケーション|**はい**|  
+|クラス ライブラリ|いいえ|  
+|コンソール アプリケーション|**はい**|  
+|Windows フォーム コントロール ライブラリ|いいえ|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、アプリケーションがネットワークから展開されていることを確認した後、更新プログラムをダウンロードしています。 <xref:System.Deployment.Application.ApplicationDeployment.Update%2A>期限切れである場合を除き、メソッドが、アプリケーションを更新できません。 アプリケーションは、更新プログラムを使用するために再起動します。  
+  
+ [!code-vb[VbVbalrMyApplication#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplication/VB/Form1.vb#4)]  
+  
+ 使用して、ClickOnce 配置するアプリケーションのみを更新することができます、`My.Application.Deployment`オブジェクト。 ClickOnce アプリケーションを展開する方法の詳細については、次を参照してください。[する方法: 発行ウィザードを使用して ClickOnce アプリケーションを発行](http://msdn.microsoft.com/library/2e4aa67c-4445-4f7b-9e03-9acb95829127)です。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,137 @@
+<Type Name="LocationReference" FullName="System.Activities.LocationReference">
+  <TypeSignature Language="C#" Value="public abstract class LocationReference" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit LocationReference extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.LocationReference" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Activities.Location" /> を実行時に解決できるようにするメカニズムを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.Variable>、<xref:System.Activities.RuntimeArgument>、および <xref:System.Activities.DelegateArgument> は、すべて <xref:System.Activities.LocationReference> です。 ランタイムは、各 <xref:System.Activities.ActivityInstance> に関連付けられた環境での状態を管理します。 <xref:System.Activities.Location> は、この環境に保管される値にとっての読み取り/書き込みプロキシです。 <xref:System.Activities.LocationReference> は、<xref:System.Activities.Location> を実行時に解決できるようにするメカニズムを提供します。  
+  
+ これは抽象クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected LocationReference ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.LocationReference.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Activities.LocationReference" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocation">
+      <MemberSignature Language="C#" Value="public abstract System.Activities.Location GetLocation (System.Activities.ActivityContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Location GetLocation(class System.Activities.ActivityContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.LocationReference.GetLocation(System.Activities.ActivityContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Location</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Activities.ActivityContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">アクティビティ実行環境についての情報 (この環境に関連付けられたデリゲート引数、引数、および変数の値を含む)。</param>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Activities.LocationReference" /> の場所を <see cref="T:System.Activities.ActivityContext" /> オブジェクトから抽出します。</summary>
+        <returns>変数、引数、またはデリゲート引数の値の場所。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.LocationReference.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.LocationReference" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Activities.LocationReference" /> の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NameCore">
+      <MemberSignature Language="C#" Value="protected abstract string NameCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NameCore" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.LocationReference.NameCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、カルチャに合わせてローカライズされたバージョンの <see cref="T:System.Activities.LocationReference" /> の名前を取得または設定します。</summary>
+        <value><see cref="T:System.Activities.LocationReference" /> の名前のローカライズ版。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public Type Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Type" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.LocationReference.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Activities.LocationReference" /> の型を取得または設定します。</summary>
+        <value><see cref="T:System.Activities.LocationReference" /> の型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeCore">
+      <MemberSignature Language="C#" Value="protected abstract Type TypeCore { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TypeCore" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.LocationReference.TypeCore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスで実装された場合、カルチャに合わせてローカライズされたバージョンの <see cref="T:System.Activities.LocationReference" /> の型を取得または設定します。</summary>
+        <value><see cref="T:System.Activities.LocationReference" /> の型のローカライズ版。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

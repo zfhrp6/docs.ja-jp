@@ -1,0 +1,97 @@
+<Type Name="CacheItemRemovedReason" FullName="System.Web.Caching.CacheItemRemovedReason">
+  <TypeSignature Language="C#" Value="public enum CacheItemRemovedReason" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CacheItemRemovedReason extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Caching.CacheItemRemovedReason" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>項目を削除した理由を指定、<see cref="T:System.Web.Caching.Cache" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は使用、<xref:System.Web.Caching.CacheItemRemovedCallback>から、オブジェクトが削除された理由など、ASP.NET アプリケーションに通知するデリゲート、<xref:System.Web.Caching.Cache>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、共有のブール型プロパティを示します`itemRemoved`、共有<xref:System.Web.Caching.CacheItemRemovedReason>列挙オブジェクト`reason`、および<xref:System.Web.Caching.CacheItemRemovedCallback>デリゲート`onRemove`です。 後者に含まれる、<xref:System.Web.Caching.Cache.Insert%2A>または<xref:System.Web.Caching.Cache.Add%2A>メソッドの呼び出しです。 メソッドも定義`RemovedCallback`、一致するシグネチャを持つ、<xref:System.Web.Caching.CacheItemRemovedCallback>を委任します。 ときに、`RemovedCallback`メソッドが呼び出されると、変更、`itemRemoved`プロパティの値を`true`割り当てます、`reason`プロパティの値によって提供される理由を<xref:System.Web.Caching.CacheItemRemovedReason>列挙します。  
+  
+ [!code-csharp[System.Web.Caching Examples#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Caching Examples/CS/cachecs.aspx#2)]
+ [!code-vb[System.Web.Caching Examples#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Caching Examples/VB/cachevb.aspx#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DependencyChanged">
+      <MemberSignature Language="C#" Value="DependencyChanged" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemRemovedReason DependencyChanged = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemRemovedReason.DependencyChanged" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられているキャッシュの依存関係が変更されたために、項目はキャッシュから削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Expired">
+      <MemberSignature Language="C#" Value="Expired" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemRemovedReason Expired = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemRemovedReason.Expired" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>期限切れになるために、項目はキャッシュから削除します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Removed">
+      <MemberSignature Language="C#" Value="Removed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemRemovedReason Removed = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemRemovedReason.Removed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってキャッシュから項目を削除、<see cref="M:System.Web.Caching.Cache.Remove(System.String)" />メソッドを呼び出すか、または、<see cref="M:System.Web.Caching.Cache.Insert(System.String,System.Object)" />を同じキーを指定したメソッド呼び出しです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Underused">
+      <MemberSignature Language="C#" Value="Underused" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Caching.CacheItemRemovedReason Underused = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Caching.CacheItemRemovedReason.Underused" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Caching.CacheItemRemovedReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム メモリを解放することによって削除されたために、項目はキャッシュから削除します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

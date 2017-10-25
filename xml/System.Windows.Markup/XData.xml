@@ -1,0 +1,100 @@
+<Type Name="XData" FullName="System.Windows.Markup.XData">
+  <TypeSignature Language="C#" Value="public sealed class XData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XData" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Text")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>値として表示可能なリテラルのデータを表す、<see langword="Value" />ノード。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XData.Text%2A>XAML コンテンツ プロパティは、<xref:System.Windows.Markup.XData>です。 ノードを XAML からの値を読み取るには、where をストリーム配信`XData`が返される、取得、<xref:System.Windows.Markup.XData.Text%2A>プロパティの値。  
+  
+ エンコードの考慮事項はで最上位の XML 宣言は、既定では一般に utf-8 です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XData.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Markup.XData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XData.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定値をリテラル文字列は、この<see cref="T:System.Windows.Markup.XData" />をラップします。</summary>
+        <value>リテラル値の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XData.Text%2A>XAML コンテンツ プロパティは、<xref:System.Windows.Markup.XData>です。 ノードを XAML からの値を読み取るには、where をストリーム配信`XData`が返される、取得、<xref:System.Windows.Markup.XData.Text%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XmlReader">
+      <MemberSignature Language="C#" Value="public object XmlReader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object XmlReader" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XData.XmlReader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはリテラルのデータのリーダーを設定します。</summary>
+        <value>リテラルのデータのリーダー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リーダーは既に設定されていない場合の`XData`、get アクセサーを呼び出すと、作成、新しい<xref:System.Xml.XmlReader>この目的のためです。  
+  
+ このプロパティの型が<xref:System.Object>なく<xref:System.Xml.XmlReader>を含める必要のない呼び出し元に対して最適化経路を提供するために、`System.Xml`基本の種類の定義、および既定のリーダーを使用するユーザーについてのみアセンブリ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

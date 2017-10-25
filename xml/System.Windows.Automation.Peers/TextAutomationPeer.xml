@@ -1,0 +1,63 @@
+<Type Name="TextAutomationPeer" FullName="System.Windows.Automation.Peers.TextAutomationPeer">
+  <TypeSignature Language="C#" Value="public abstract class TextAutomationPeer : System.Windows.Automation.Peers.FrameworkElementAutomationPeer" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit TextAutomationPeer extends System.Windows.Automation.Peers.FrameworkElementAutomationPeer" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Peers.TextAutomationPeer" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Automation.Peers.FrameworkElementAutomationPeer</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>公開<see cref="T:System.Windows.Automation.TextPattern" />UI オートメーションを使用する型。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected TextAutomationPeer (System.Windows.FrameworkElement owner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Windows.FrameworkElement owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.TextAutomationPeer.#ctor(System.Windows.FrameworkElement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="owner" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この <see cref="T:System.Windows.Automation.Peers.TextAutomationPeer" /> に関連付けられた <see cref="T:System.Windows.Automation.TextPattern" />。</param>
+        <summary><see cref="T:System.Windows.Automation.Peers.TextAutomationPeer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetNameCore">
+      <MemberSignature Language="C#" Value="protected override string GetNameCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance string GetNameCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Peers.TextAutomationPeer.GetNameCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている要素のテキスト ラベルを取得<see cref="T:System.Windows.Automation.Peers.TextAutomationPeer" />です。 <see cref="M:System.Windows.Automation.Peers.AutomationPeer.GetName" /> によって呼び出されます。</summary>
+        <returns>値<see cref="P:System.Windows.Automation.AutomationProperties.Name" />または<see cref="P:System.Windows.Automation.AutomationProperties.LabeledBy" />が設定されているいずれかの場合は、このメソッドを返します、空の文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Name プロパティは、ユーザーが使用するコントロールの参照先を説明するテキストの文字列と考えることができます。 すべてのコントロールのテキスト表現を作成することが重要、[!INCLUDE[TLA#tla_gui](~/includes/tlasharptla-gui-md.md)]プログラムにより、ローカライズされた方法でコントロールに参照できるようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

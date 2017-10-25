@@ -1,0 +1,1026 @@
+<Type Name="X509Store" FullName="System.Security.Cryptography.X509Certificates.X509Store">
+  <TypeSignature Language="C#" Value="public sealed class X509Store : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit X509Store extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.X509Certificates.X509Store" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>証明書を永続化して管理する物理ストアである X.509 ストアを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスを使用して、X.509 ストアを操作します。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v46](~/includes/net-v46-md.md)]、この型を実装して、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+>   
+>  対象とするアプリの[!INCLUDE[net_v452](~/includes/net-v452-md.md)]と以前のバージョン、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスを実装しません、<xref:System.IDisposable>インターフェイスし、したがって必要はありません、`Dispose`メソッドです。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例では、標準の X.509 ストアと証明書の数の一覧を開く各にする方法を示します。  
+  
+ 2 番目の例では、追加し、1 つの証明書と証明書の範囲を削除する方法を示します。  
+  
+ **例 1**  
+  
+ この例では、現在のコンピューター上の標準的な各場所にそれぞれの標準的なストアを開こうとします。 各ストアが存在しが含まれる場合の数がそれを証明書、かどうかを示す概要が表示されます。  
+  
+ 例は、作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>標準名と標準の場所の組み合わせごとのオブジェクト。 呼び出す、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A>メソッドを<xref:System.Security.Cryptography.X509Certificates.OpenFlags?displayProperty=nameWithType>フラグは、既に存在する場合にのみ、物理ストアを開きます。 例を使用して物理ストアが存在する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Name%2A>、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Location%2A>、および<xref:System.Security.Cryptography.X509Certificates.X509Store.Certificates%2A>ストアに証明書の数を表示するプロパティです。  
+  
+ [!code-csharp[x509store2#2](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/storenames1.cs#2)]
+ [!code-vb[x509store2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/storenames1.vb#2)]  
+  
+ **例 2**  
+  
+ この例は、X.509 証明書ストアを開き、追加して、証明書を削除したうえでと、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>現在のユーザー ストアの個人用証明書を使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>オブジェクトの現在のユーザーの個人の X.509 証明書ストアを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (IntPtr storeHandle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(native int storeHandle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.IntPtr)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Mono's stores are fully managed. All handles are invalid.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="storeHandle" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="storeHandle">ハンドル、<see langword="HCERTSTORE" />を格納します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" />は Intptr を使用してクラスを識別するハンドル、<see langword="HCERTSTORE" />を格納します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、互換性に、アンマネージ Microsoft 暗号化 API (CAPI) を提供できます。  
+  
+ 詳細については、`HCERTSTORE`アンマネージ CAPI ドキュメントの Platform SDK セクションを参照して、処理、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="storeHandle" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException"><paramref name="storeHandle" />パラメーターが無効なコンテキストをポイントします。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードです。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (System.Security.Cryptography.X509Certificates.StoreLocation storeLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreLocation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="storeLocation">X.509 証明書ストアの場所を指定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" />クラス<see cref="T:System.Security.Cryptography.X509Certificates.StoreLocation" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>は現在のユーザーの場所またはローカル コンピューター ストアの場所を指定するオブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (System.Security.Cryptography.X509Certificates.StoreName storeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.X509Certificates.StoreName storeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreName)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.Security.Cryptography.X509Certificates.StoreName" />
+      </Parameters>
+      <Docs>
+        <param name="storeName">X.509 証明書ストアの名前を指定する列挙値の 1 つ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" />クラス<see cref="T:System.Security.Cryptography.X509Certificates.StoreName" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して、現在のユーザーによって列挙値に対応する X.509 ストアを作成する<xref:System.Security.Cryptography.X509Certificates.StoreName>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (string storeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string storeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="storeName">ストア名を表す文字列値。 詳細については、「<see cref="T:System.Security.Cryptography.X509Certificates.StoreName" />」を参照してください。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" />クラスの指定されたストア名を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>オブジェクトの現在のユーザーの特定の X.509 ストア名を使用します。 新しいストアを作成するには、存在しない名前を指定します。 新しいストアは、その名前で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (System.Security.Cryptography.X509Certificates.StoreName storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.X509Certificates.StoreName storeName, valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.Security.Cryptography.X509Certificates.StoreName" />
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="storeName">X.509 証明書ストアの名前を指定する列挙値の 1 つ。</param>
+        <param name="storeLocation">X.509 証明書ストアの場所を指定する列挙値の 1 つ。</param>
+        <summary>指定した <see cref="T:System.Security.Cryptography.X509Certificates.StoreName" /> 値および <see cref="T:System.Security.Cryptography.X509Certificates.StoreLocation" /> 値を使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>オブジェクト、店舗名と、ストアの場所の両方を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="storeLocation" /> が有効な場所ではないか、<paramref name="storeName" /> が有効な名前ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string storeName, valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.String,System.Security.Cryptography.X509Certificates.StoreLocation)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.String" />
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+      </Parameters>
+      <Docs>
+        <param name="storeName"><see cref="T:System.Security.Cryptography.X509Certificates.StoreName" /> 列挙体の値を表す文字列。</param>
+        <param name="storeLocation">X.509 証明書ストアの場所を指定する列挙値の 1 つ。</param>
+        <summary><see cref="T:System.Security.Cryptography.X509Certificates.StoreName" /> 列挙体の値と <see cref="T:System.Security.Cryptography.X509Certificates.StoreLocation" /> 列挙体の値を表す文字列を使用して、<see cref="T:System.Security.Cryptography.X509Certificates.X509Store" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>オブジェクトのストアの名前と場所を使用します。 新しいストアを作成するには、存在しない名前を指定します。 新しいストアは、その名前で作成されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="storeLocation" /> に無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (System.Security.Cryptography.X509Certificates.StoreName storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.OpenFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Cryptography.X509Certificates.StoreName storeName, valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, valuetype System.Security.Cryptography.X509Certificates.OpenFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.Security.Cryptography.X509Certificates.StoreName,System.Security.Cryptography.X509Certificates.StoreLocation,System.Security.Cryptography.X509Certificates.OpenFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.Security.Cryptography.X509Certificates.StoreName" />
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+        <Parameter Name="flags" Type="System.Security.Cryptography.X509Certificates.OpenFlags" />
+      </Parameters>
+      <Docs>
+        <param name="storeName">To be added.</param>
+        <param name="storeLocation">To be added.</param>
+        <param name="flags">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public X509Store (string storeName, System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, System.Security.Cryptography.X509Certificates.OpenFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string storeName, valuetype System.Security.Cryptography.X509Certificates.StoreLocation storeLocation, valuetype System.Security.Cryptography.X509Certificates.OpenFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.#ctor(System.String,System.Security.Cryptography.X509Certificates.StoreLocation,System.Security.Cryptography.X509Certificates.OpenFlags)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="storeName" Type="System.String" />
+        <Parameter Name="storeLocation" Type="System.Security.Cryptography.X509Certificates.StoreLocation" />
+        <Parameter Name="flags" Type="System.Security.Cryptography.X509Certificates.OpenFlags" />
+      </Parameters>
+      <Docs>
+        <param name="storeName">To be added.</param>
+        <param name="storeLocation">To be added.</param>
+        <param name="flags">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.Add(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">追加する証明書。</param>
+        <summary>証明書を X.509 証明書ストアに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、単一の証明書を X.509 ストアに追加できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">証明書をストアに追加できませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">X.509 証明書ストアに証明書を追加します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.AddToStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.AddRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="certificates">追加する証明書のコレクション。</param>
+        <summary>X.509 証明書ストアに証明書のコレクションを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、X.509 証明書ストアに複数の証明書を追加します。1 つの証明書の追加に失敗した場合、操作を元に戻すし、証明書が追加されていません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">X.509 証明書ストアに証明書を追加します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.AddToStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Certificates">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.X509Certificates.X509Certificate2Collection Certificates" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Store.Certificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.X509Certificate2Collection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書ストア内にある証明書のコレクションを返します。</summary>
+        <value>証明書のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、X.509 証明書ストアのスナップショットを返します。 後続<xref:System.Security.Cryptography.X509Certificates.X509Store.Add%2A>または<xref:System.Security.Cryptography.X509Certificates.X509Store.Remove%2A>ストアに対して実行される操作には、返されるコレクションには影響はありません。 反復的な関数の内部には、このプロパティの使用は推奨されていないために、このスナップショットは、プロパティが呼び出されるたびに再計算されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例では、標準の X.509 ストアと証明書の数の一覧を開く各にする方法を示します。  
+  
+ 2 番目の例では、追加し、1 つの証明書と証明書の範囲を削除する方法を示します。  
+  
+ **例 1**  
+  
+ この例では、現在のコンピューター上の標準的な各場所にそれぞれの標準的なストアを開こうとします。 各ストアが存在しが含まれる場合の数がそれを証明書、かどうかを示す概要が表示されます。  
+  
+ 例は、作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>標準名と標準の場所の組み合わせごとのオブジェクト。 呼び出す、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A>メソッドを<xref:System.Security.Cryptography.X509Certificates.OpenFlags?displayProperty=nameWithType>フラグは、既に存在する場合にのみ、物理ストアを開きます。 例を使用して物理ストアが存在する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Name%2A>、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Location%2A>、および<xref:System.Security.Cryptography.X509Certificates.X509Store.Certificates%2A>ストアに証明書の数を表示するプロパティです。  
+  
+ [!code-csharp[x509store2#2](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/storenames1.cs#2)]
+ [!code-vb[x509store2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/storenames1.vb#2)]  
+  
+ **例 2**  
+  
+ この例は、X.509 証明書ストアを開き、追加して、証明書を削除したうえでと、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.StorePermission">X.509 証明書の証明書の列挙を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Close">
+      <MemberSignature Language="C#" Value="public void Close ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Close() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.Close" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>X.509 証明書ストアを閉じます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、ストアに関連付けられているすべてのリソースを解放します。 X.509 証明書ストアは、使用後に常に閉じる必要があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Security.Cryptography.X509Certificates.X509Store" /> が使用しているリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Cryptography.X509Certificates.X509Store>実装、<xref:System.IDisposable>インターフェイスから始まる、[!INCLUDE[net_v46](~/includes/net-v46-md.md)]以外の場合は、.NET Framework の以前のバージョンで、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスは、このインターフェイスを実装しないため、`Dispose`メソッドが存在しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpen">
+      <MemberSignature Language="C#" Value="public bool IsOpen { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Store.IsOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Location">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.X509Certificates.StoreLocation Location { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.X509Certificates.StoreLocation Location" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Store.Location" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.X509Certificates.StoreLocation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書ストアの場所を取得します。</summary>
+        <value>証明書ストアの場所。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在のユーザー ストアまたはローカル コンピューターのストアのいずれかの X.509 証明書ストアの場所を返します。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例では、標準の X.509 ストアと証明書の数の一覧を開く各にする方法を示します。  
+  
+ 2 番目の例では、追加し、1 つの証明書と証明書の範囲を削除する方法を示します。  
+  
+ **例 1**  
+  
+ この例では、現在のコンピューター上の標準的な各場所にそれぞれの標準的なストアを開こうとします。 各ストアが存在しが含まれる場合の数がそれを証明書、かどうかを示す概要が表示されます。  
+  
+ 例は、作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>標準名と標準の場所の組み合わせごとのオブジェクト。 呼び出す、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A>メソッドを<xref:System.Security.Cryptography.X509Certificates.OpenFlags?displayProperty=nameWithType>フラグは、既に存在する場合にのみ、物理ストアを開きます。 例を使用して物理ストアが存在する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Name%2A>、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Location%2A>、および<xref:System.Security.Cryptography.X509Certificates.X509Store.Certificates%2A>ストアに証明書の数を表示するプロパティです。  
+  
+ [!code-csharp[x509store2#2](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/storenames1.cs#2)]
+ [!code-vb[x509store2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/storenames1.vb#2)]  
+  
+ **例 2**  
+  
+ この例は、X.509 証明書ストアを開き、追加して、証明書を削除したうえでと、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Store.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>X.509 証明書ストアの名前を取得します。</summary>
+        <value>証明書ストアの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、X.509 証明書ストア名を返します。 この値は、ルート証明書または信頼された発行元からの証明書など、格納されている証明書の種類を示すことができます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つの例が含まれています。 最初の例では、標準の X.509 ストアと証明書の数の一覧を開く各にする方法を示します。  
+  
+ 2 番目の例では、追加し、1 つの証明書と証明書の範囲を削除する方法を示します。  
+  
+ **例 1**  
+  
+ この例では、現在のコンピューター上の標準的な各場所にそれぞれの標準的なストアを開こうとします。 各ストアが存在しが含まれる場合の数がそれを証明書、かどうかを示す概要が表示されます。  
+  
+ 例は、作成、<xref:System.Security.Cryptography.X509Certificates.X509Store>標準名と標準の場所の組み合わせごとのオブジェクト。 呼び出す、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A>メソッドを<xref:System.Security.Cryptography.X509Certificates.OpenFlags?displayProperty=nameWithType>フラグは、既に存在する場合にのみ、物理ストアを開きます。 例を使用して物理ストアが存在する場合、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Name%2A>、 <xref:System.Security.Cryptography.X509Certificates.X509Store.Location%2A>、および<xref:System.Security.Cryptography.X509Certificates.X509Store.Certificates%2A>ストアに証明書の数を表示するプロパティです。  
+  
+ [!code-csharp[x509store2#2](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/storenames1.cs#2)]
+ [!code-vb[x509store2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/storenames1.vb#2)]  
+  
+ **例 2**  
+  
+ この例は、X.509 証明書ストアを開き、追加して、証明書を削除したうえでと、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public void Open (System.Security.Cryptography.X509Certificates.OpenFlags flags);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Open(valuetype System.Security.Cryptography.X509Certificates.OpenFlags flags) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.Open(System.Security.Cryptography.X509Certificates.OpenFlags)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="flags" Type="System.Security.Cryptography.X509Certificates.OpenFlags" />
+      </Parameters>
+      <Docs>
+        <param name="flags">X.509 証明書ストアを開く方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <summary><see cref="T:System.Security.Cryptography.X509Certificates.OpenFlags" /> フラグの設定に応じて、X.509 証明書ストアを開くか、または新しいストアを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、既存の X.509 ストアを開きます。 アクセス許可を追加で指定されている必要があります<xref:System.Security.Permissions.StorePermissionFlags>ストアに証明書を列挙します。 新しいストアを作成するには、ストア名が存在しない、クラス コンス トラクターに渡す、しのいずれかを使用して、<xref:System.Security.Cryptography.X509Certificates.OpenFlags>フラグを除く<xref:System.Security.Cryptography.X509Certificates.OpenFlags.OpenExistingOnly>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">ストアを読み取ることができません。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">ストアに無効な値が含まれています。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">開く X.509 証明書を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.OpenStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.CreateStore" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.Security.Cryptography.X509Certificates.X509Certificate2 certificate);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.Remove(System.Security.Cryptography.X509Certificates.X509Certificate2)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificate" Type="System.Security.Cryptography.X509Certificates.X509Certificate2" />
+      </Parameters>
+      <Docs>
+        <param name="certificate">削除する証明書。</param>
+        <summary>X.509 証明書ストアから証明書を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一の証明書を X.509 ストアから削除するのにには、このメソッドを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificate" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">X.509 証明書から証明書の削除を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.RemoveFromStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveRange">
+      <MemberSignature Language="C#" Value="public void RemoveRange (System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveRange(class System.Security.Cryptography.X509Certificates.X509Certificate2Collection certificates) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.X509Certificates.X509Store.RemoveRange(System.Security.Cryptography.X509Certificates.X509Certificate2Collection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Method isn't transactional (like documented)")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="certificates" Type="System.Security.Cryptography.X509Certificates.X509Certificate2Collection" />
+      </Parameters>
+      <Docs>
+        <param name="certificates">削除する証明書の範囲。</param>
+        <summary>X.509 証明書ストアから、ある一定の範囲の証明書を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  この型は、<xref:System.IDisposable>インターフェイスです。 型を使用してが完了したらを直接的または間接的にその破棄する必要があります。 型の直接 dispose を呼び出す、<xref:System.IDisposable.Dispose%2A>メソッドで、 `try` / `catch`ブロックします。 直接ことのない破棄する場合など、言語コンストラクトを使用して`using`(C# の場合) または`Using`(Visual Basic で)。 詳細についてを参照してください"を使用して、オブジェクトを実装する IDisposable"、<xref:System.IDisposable>インターフェイスに関するトピック。  
+  
+ このメソッドは、X.509 証明書ストアから 1 つ以上の証明書を削除します。1 つの証明書の削除に失敗した場合、操作を元に戻すし、証明書は削除されません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、X.509 証明書ストアを開く、追加され、証明書を削除したうえでとし、ストアを閉じます。 これは、3 つの証明書に追加し、ローカル ストアから削除であると想定します。  
+  
+ [!code-cpp[x509store2#1](~/samples/snippets/cpp/VS_Snippets_CLR/x509store2/CPP/x509store2.cpp#1)]
+ [!code-csharp[x509store2#1](~/samples/snippets/csharp/VS_Snippets_CLR/x509store2/CS/x509store2.cs#1)]
+ [!code-vb[x509store2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/x509store2/vb/x509store2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="certificates" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.StorePermission">X.509 証明書から証明書の削除を格納します。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙: <see cref="F:System.Security.Permissions.StorePermissionFlags.RemoveFromStore" />、<see cref="F:System.Security.Permissions.StorePermissionFlags.EnumerateCertificates" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreHandle">
+      <MemberSignature Language="C#" Value="public IntPtr StoreHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int StoreHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.X509Certificates.X509Store.StoreHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.X509Certificates</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Mono's stores are fully managed. Always returns IntPtr.Zero.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IntPtr" />へのハンドル、<see langword="HCERTSTORE" />を格納します。</summary>
+        <value>ハンドル、<see langword="HCERTSTORE" />を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Security.Cryptography.X509Certificates.X509Store.StoreHandle%2A>プロパティで、アンマネージ Microsoft 暗号化 API (CAPI) の互換性を提供します。  
+  
+ 詳細については、`HCERTSTORE`アンマネージ CAPI ドキュメントの Platform SDK セクションを参照して、処理、 [MSDN ライブラリ](http://go.microsoft.com/fwlink/?linkid=37118)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">ストアは開いていません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードです。 セキュリティ アクション:<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

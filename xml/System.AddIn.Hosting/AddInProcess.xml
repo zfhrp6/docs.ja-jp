@@ -1,0 +1,312 @@
+<Type Name="AddInProcess" FullName="System.AddIn.Hosting.AddInProcess">
+  <TypeSignature Language="C#" Value="public sealed class AddInProcess" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit AddInProcess extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Hosting.AddInProcess" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ホスト アプリケーションからのアドインのアウト プロセスを実行するためには、外部プロセスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部プロセスでアドインをアクティブに渡す、<xref:System.AddIn.Hosting.AddInProcess>を適切なオブジェクト<xref:System.AddIn.Hosting.AddInToken.Activate%60%601%28System.AddIn.Hosting.AddInProcess%2CSystem.Security.PermissionSet%29?displayProperty=nameWithType>メソッドのオーバー ロードします。  
+  
+ 追加で実行されている実行可能ファイルは、Windows ディレクトリの下にある .NET Framework と一緒にインストールされている 2 つのファイルのいずれかから取得されます。 既定では、ホスト アプリケーションのワードあたりのビットに一致する実行可能ファイルを使用します。 ホストが 64 ビット プロセスの場合は、AddInProcess.exe が実行されます。それ以外の場合、AddInProcess32.exe が実行されます。 実行可能ファイルが選択されている方法を指定するを使用して、<xref:System.AddIn.Hosting.AddInProcess.%23ctor%28System.AddIn.Hosting.Platform%29>コンス トラクターを作成する、<xref:System.AddIn.Hosting.AddInProcess>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、外部プロセスでアドインをアクティブにします。  
+  
+ [!code-csharp[AddInP3Host#10](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#10)]
+ [!code-vb[AddInP3Host#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#10)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddInProcess ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInProcess.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.AddIn.Hosting.AddInProcess" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると同じ効果を持つ、<xref:System.AddIn.Hosting.AddInProcess.%23ctor%28System.AddIn.Hosting.Platform%29>を持つコンス トラクター、<xref:System.AddIn.Hosting.Platform?displayProperty=nameWithType>フラグを追加で実行されているプロセスが、ホスト プロセスと同じワードあたりのビットを持つことを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AddInProcess (System.AddIn.Hosting.Platform platform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.AddIn.Hosting.Platform platform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInProcess.#ctor(System.AddIn.Hosting.Platform)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="platform" Type="System.AddIn.Hosting.Platform" />
+      </Parameters>
+      <Docs>
+        <param name="platform">アドインを実行するプロセスのワードあたりのビットを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.AddIn.Hosting.AddInProcess" />アドインが実行されるプロセスのワードあたりのビットを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表にどのように`platform`ビット ワードあたりのさまざまなオペレーティング システム上のプロセスの影響を与えます。  
+  
+||32 ビット オペレーティング システム|64 ビット オペレーティング システム|  
+|-|------------------------------|------------------------------|  
+|Host|32 ビット|ホスト プロセスと同じ|  
+|AnyCPU|32 ビット|64 ビット|  
+|X86|32 ビット|32 ビット|  
+|X64|例外がスローされます。|64 ビット|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">実行可能ファイル (AddInProcess.exe または AddInProcess32.exe) へのパスのレジストリ エントリがありません。  
+  
+ または  
+  
+ 実行可能ファイルが見つかりません。</exception>
+        <permission cref="F:System.Security.Permissions.SecurityAction.Demand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrentProcess">
+      <MemberSignature Language="C#" Value="public bool IsCurrentProcess { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentProcess" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInProcess.IsCurrentProcess" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の <see cref="T:System.AddIn.Hosting.AddInProcess" /> オブジェクトがホスト アプリケーションのプロセスを表しているかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.AddIn.Hosting.AddInProcess" /> オブジェクトが現在のプロセスに対応する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値が場合`true`アドインでは、ホスト アプリケーションとインプロセスで実行中です。 その場合を使用して、<xref:System.AddIn.Hosting.AddInProcess.Start%2A>または<xref:System.AddIn.Hosting.AddInProcess.Shutdown%2A>メソッドがスローされます、<xref:System.InvalidOperationException>です。  
+  
+> [!NOTE]
+>  <xref:System.AddIn.Hosting.AddInEnvironment.Process%2A?displayProperty=nameWithType>プロパティから返される、<xref:System.AddIn.Hosting.AddInProcess>アドインを実行している場合、インプロセス ホスト アプリケーションのプロセスを表すオブジェクト。  
+  
+   
+  
+## Examples  
+ 次の例は、外部プロセスでアドインをアクティブにしを使用して、<xref:System.AddIn.Hosting.AddInProcess.IsCurrentProcess%2A>ホスト アプリケーションのプロセスと同じプロセスでは、アドインによって、かどうかを決定するプロパティです。  
+  
+ [!code-csharp[AddInP3Host#10](~/samples/snippets/csharp/VS_Snippets_CLR/addinP3Host/cs/P3Host.cs#10)]
+ [!code-vb[AddInP3Host#10](~/samples/snippets/visualbasic/VS_Snippets_CLR/addinP3Host/vb/p3host.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeepAlive">
+      <MemberSignature Language="C#" Value="public bool KeepAlive { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool KeepAlive" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInProcess.KeepAlive" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または外部のプロセスを維持するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />外部プロセスをアライブ; に収める場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`false`プロセス内の最後のアドインがシャット ダウン後に外部プロセスを積極的にシャット ダウンします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Platform">
+      <MemberSignature Language="C#" Value="public System.AddIn.Hosting.Platform Platform { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.AddIn.Hosting.Platform Platform" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInProcess.Platform" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Hosting.Platform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アウト プロセスのアドインが実行されるプロセスのワードあたりのビット数-を取得します。</summary>
+        <value>ビット ワードあたりのアドインを実行するプロセスのです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、ワードあたりのビットが設定、<xref:System.AddIn.Hosting.AddInProcess>オブジェクトが初期化され、変更できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessId">
+      <MemberSignature Language="C#" Value="public int ProcessId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 ProcessId" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInProcess.ProcessId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部プロセスのプロセス ID を取得します。</summary>
+        <value>プロセス ID、または外部のプロセスが開始されなかった場合は-1。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッグするためには、このプロパティを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="F:System.Security.Permissions.SecurityAction.LinkDemand">直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Shutdown">
+      <MemberSignature Language="C#" Value="public bool Shutdown ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Shutdown() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInProcess.Shutdown" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>外部プロセスを強制的に終了します。</summary>
+        <returns>
+          <see langword="true" />外部プロセスが実行されていたしてが正常にシャット ダウンします。<see langword="false" />プロセスに関連付けられているアクティブながある場合、<see cref="T:System.AddIn.Hosting.AddInProcess" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">この追加では、ホスト アプリケーションとインプロセスで実行中です。 開始と停止、プロセスについては、ホスト プロセスではなく、外部のプロセスに対してのみ許可します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShuttingDown">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.CancelEventArgs&gt; ShuttingDown;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.CancelEventArgs&gt; ShuttingDown" />
+      <MemberSignature Language="DocId" Value="E:System.AddIn.Hosting.AddInProcess.ShuttingDown" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.CancelEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスがによって表されるときに発生、<see cref="T:System.AddIn.Hosting.AddInProcess" />オブジェクトがシャット ダウンしようとしています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public bool Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Hosting.AddInProcess.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>外部プロセスを開始します。</summary>
+        <returns>
+          <see langword="true" />プロセスが正常に開始されている場合<see langword="false" />プロセスが既に実行されている場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">この追加では、ホスト アプリケーションとインプロセスで実行中です。 開始と停止、プロセスについては、ホスト プロセスではなく、外部のプロセスに対してのみ許可します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="StartupTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan StartupTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan StartupTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.AddIn.Hosting.AddInProcess.StartupTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、プロセスの開始を許可する秒数を設定します。</summary>
+        <value>プロセスの起動を許可する秒数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は、10 秒です。 このプロパティをアウト プロセスを追加で実行されるプロセスの開始時間を増やすには、デバッグ中に通常使用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">プロセスが実行されています。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">割り当てられた値は、0 (ゼロ) 未満です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,438 @@
+<Type Name="PostBackOptions" FullName="System.Web.UI.PostBackOptions">
+  <TypeSignature Language="C#" Value="public sealed class PostBackOptions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit PostBackOptions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.PostBackOptions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定する方法は、クライアント側 JavaScript が生成され、ポストバック イベントを開始します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions>クラスにポストバック イベントを開始するクライアント側スクリプトを出力するコントロールを使用できます。 <xref:System.Web.UI.PostBackOptions>クラスは、コントロールでポストバック イベントを開始したへの参照も用意されています。、<xref:System.Web.UI.PostBackOptions.TargetControl%2A>プロパティです。 指定されたオプションに基づいてポストバック イベントが作成、<xref:System.Web.UI.PostBackOptions>オブジェクトに渡し、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A?displayProperty=nameWithType>メソッドです。  
+  
+ 通常、サーバーへのポストバックが [送信] ボタンまたはイメージ ボタンなどの要素によって開始されます。 ただし、出力のクライアント側 JavaScript でさまざまなコントロールがポストバック イベントを開始できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.UI.WebControls.Button.OnClick%2A>のイベント、<xref:System.Web.UI.WebControls.Button>クライアント側スクリプトの生成対象のコントロール、<xref:System.Web.UI.WebControls.HyperLink>により、コントロール、<xref:System.Web.UI.WebControls.HyperLink>ポストバック イベントが発生するコントロール。 <xref:System.Web.UI.PostBackOptions.ActionUrl%2A>のプロパティ、 `myPostBackOptions` "Page2.aspx"に設定されているオブジェクト、ポストバック"Page2.aspx"は、ここで指定されていないという名前の別のページに Web フォーム ページが通知されます。 この例を使用するには、プロジェクトまたはディレクトリに"Page2.aspx"をという名前の別の Web ページを追加する必要があります。  
+  
+ [!code-csharp[System.Web.UI.PostBackOptions#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PostBackOptions/CS/postbackoptions.aspx.cs#2)]
+ [!code-vb[System.Web.UI.PostBackOptions#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PostBackOptions/VB/postbackoptions.aspx.vb#2)]  
+  
+ 次のコード例は、上記の分離コード ファイルの実行に使用できる Web ページです。  
+  
+ [!code-aspx-csharp[System.Web.UI.PostBackOptions#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PostBackOptions/CS/postbackoptions.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PostBackOptions#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PostBackOptions/VB/postbackoptions.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PostBackOptions (System.Web.UI.Control targetControl);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control targetControl) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PostBackOptions.#ctor(System.Web.UI.Control)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetControl" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="targetControl"><see cref="T:System.Web.UI.Control" />ポストバック イベントを受け取る。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PostBackOptions" />指定されたターゲット コントロールのデータを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PostBackOptions (System.Web.UI.Control targetControl, string argument);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control targetControl, string argument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PostBackOptions.#ctor(System.Web.UI.Control,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetControl" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetControl"><see cref="T:System.Web.UI.Control" />ポストバック イベントを受け取る。</param>
+        <param name="argument">ポストバック イベントの中で、省略可能なパラメーターが渡されます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PostBackOptions" />クラスに指定されたターゲットの制御と引数のデータ。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PostBackOptions (System.Web.UI.Control targetControl, string argument, string actionUrl, bool autoPostBack, bool requiresJavaScriptProtocol, bool trackFocus, bool clientSubmit, bool performValidation, string validationGroup);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.Control targetControl, string argument, string actionUrl, bool autoPostBack, bool requiresJavaScriptProtocol, bool trackFocus, bool clientSubmit, bool performValidation, string validationGroup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.PostBackOptions.#ctor(System.Web.UI.Control,System.String,System.String,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetControl" Type="System.Web.UI.Control" />
+        <Parameter Name="argument" Type="System.String" />
+        <Parameter Name="actionUrl" Type="System.String" />
+        <Parameter Name="autoPostBack" Type="System.Boolean" />
+        <Parameter Name="requiresJavaScriptProtocol" Type="System.Boolean" />
+        <Parameter Name="trackFocus" Type="System.Boolean" />
+        <Parameter Name="clientSubmit" Type="System.Boolean" />
+        <Parameter Name="performValidation" Type="System.Boolean" />
+        <Parameter Name="validationGroup" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetControl"><see cref="T:System.Web.UI.Control" />ポストバック イベントを受け取る。</param>
+        <param name="argument">ポストバック イベントの中で、省略可能なパラメーターが渡されます。</param>
+        <param name="actionUrl">ポストバックのターゲットです。</param>
+        <param name="autoPostBack">
+          <see langword="true" />自動的にユーザー アクションへの応答でサーバーにフォームを投稿するにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="requiresJavaScriptProtocol">
+          <see langword="true" />場合、<see langword="javascript:" />プレフィックスは必須です。 それ以外の場合、<see langword="false" />です。</param>
+        <param name="trackFocus">
+          <see langword="true" />現在ページがスクロール位置と、対象のコントロールにフォーカスを返す場合は、ポストバック イベントを返す必要があります。それ以外の場合、<see langword="false" />です。</param>
+        <param name="clientSubmit">
+          <see langword="true" />クライアントのスクリプトによってポストバック イベントを発生させる場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="performValidation">
+          <see langword="true" />ポストバック イベントが発生する前に、クライアント側の検証が必要な場合それ以外の場合、<see langword="false" />です。</param>
+        <param name="validationGroup">対象のコントロールのグループ<see cref="T:System.Web.UI.PostBackOptions" />が原因で、サーバーへのポストバック時に検証します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.PostBackOptions" />クラスのインスタンスのプロパティの値を指定しています。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="targetControl" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionUrl">
+      <MemberSignature Language="C#" Value="public string ActionUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ActionUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.ActionUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web フォーム ページのポストバック用のターゲット URL を設定します。</summary>
+        <value>Web フォーム ページのポストバックの URL です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.ActionUrl%2A>のプロパティ、<xref:System.Web.UI.PostBackOptions>クラスの URL を指定する、 `action` Web フォーム ページの属性です。 <xref:System.Web.UI.PostBackOptions.ActionUrl%2A>を Web フォーム ページを指定するプロパティを使用できますのデータを取り戻す、原因で、ページ間の post を投稿します。 ページ間ポストされた内容の詳細については、次を参照してください。[ページ間の ASP.NET Web フォームの送信](http://msdn.microsoft.com/library/fedf234e-b7c4-4644-a9e8-c1c0870b043b)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.PostBackOptions.ActionUrl%2A>のプロパティ、<xref:System.Web.UI.PostBackOptions>ページ間のポストバック場合は、ユーザーが発生するオブジェクトが上にマウス ポインターを置いた、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.PostBackOptions.ActionUrl#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.ActionUrl/CS/postbackoptions.actionurlcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PostBackOptions.ActionUrl#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.ActionUrl/VB/postbackoptions.actionurlvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Argument">
+      <MemberSignature Language="C#" Value="public string Argument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Argument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.Argument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック イベントで転送される省略可能な引数を設定します。</summary>
+        <value>ポストバック イベントで転送される省略可能な引数。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.Argument%2A>プロパティは、ポストバック イベントで転送される省略可能な引数を指定します。 このプロパティを表すために使用、 `EVENTARGUMENT` _ のパラメーター`doPostBack`クライアント側の JavaScript のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoPostBack">
+      <MemberSignature Language="C#" Value="public bool AutoPostBack { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoPostBack" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.AutoPostBack" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはフォームが、ユーザーの操作への応答でサーバーに自動的にポストされるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />フォームが自動的にユーザー アクションへの応答にポストバックされる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、 <xref:System.Web.UI.PostBackOptions.AutoPostBack%2A> Web フォーム ページがドロップダウン リストから項目を選択するなど、ユーザーの操作への応答でサーバーに投稿して自動的にことを示すプロパティです。 JavaScript`setTimeout`メソッドは、_ 使用`doPostBack`ポストバックが発生する前にユーザーの操作が完了したことを確認するメソッド。  
+  
+   
+  
+## Examples  
+ クライアント側のスクリプトは次のコード例では、時に生成される、<xref:System.Web.UI.PostBackOptions.AutoPostBack%2A>プロパティおよび<xref:System.Web.UI.PostBackOptions.RequiresJavaScriptProtocol%2A>プロパティに設定されて`true`です。  
+  
+```vb  
+javascript:setTimeout('__doPostBack('__Page','')', 0)  
+```  
+  
+```csharp  
+javascript:setTimeout('__doPostBack('__Page','')', 0)  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientSubmit">
+      <MemberSignature Language="C#" Value="public bool ClientSubmit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ClientSubmit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.ClientSubmit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはクライアント側スクリプトからのポストバック イベントの発生するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアント側スクリプトです。 からポストバック イベントが発生した場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.ClientSubmit%2A>プロパティは、クライアント側スクリプトからのポストバック イベントの発生するかどうかを示します。 設定した場合、<xref:System.Web.UI.PostBackOptions.ClientSubmit%2A>プロパティを`false`、JavaScript は生成されません。 割り当てることができます`false`を<xref:System.Web.UI.PostBackOptions.ClientSubmit%2A>を呼び出したい場合は、プロパティ、`__doPostBack`メソッド自分でします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformValidation">
+      <MemberSignature Language="C#" Value="public bool PerformValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PerformValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.PerformValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック イベントが発生する前にクライアント側の検証が必要かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ポストバック イベントが発生する前に、クライアント側の検証が必要な場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.PerformValidation%2A>ポストバック イベントを行う前にクライアント側の検証が必要かどうかを指定するプロパティを使用します。 ときの値、<xref:System.Web.UI.PostBackOptions.PerformValidation%2A>プロパティに設定されている`true`、使用することも、<xref:System.Web.UI.PostBackOptions.ValidationGroup%2A>プロパティの検証が必要なポストバック イベントが発生する前に検証グループの名前を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.PostBackOptions.ValidationGroup%2A>と<xref:System.Web.UI.PostBackOptions.PerformValidation%2A>ことを確認する 2 つのプロパティ<xref:System.Web.UI.WebControls.TextBox>ポストバック イベントが生成される前に入力した情報があるコントロールです。 `NameTextBox`と`AgeTextBox`コントロールの一部である、`PersonalInfoGroup`検証グループが、`StateTextBox`コントロールはありません。 そのため、ユーザーが内のデータを入力する、`StateTextBox`ポストバック イベントを生成する前に制御します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.PostBackOptions.Validation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.Validation/CS/postbackoptions.validationcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PostBackOptions.Validation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.Validation/VB/postbackoptions.validationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresJavaScriptProtocol">
+      <MemberSignature Language="C#" Value="public bool RequiresJavaScriptProtocol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresJavaScriptProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.RequiresJavaScriptProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see langword="javascript:" />プレフィックスは、クライアント側スクリプトの生成します。</summary>
+        <value>
+          <see langword="true" />場合、<see langword="javascript:" />プレフィックスは、それ以外のクライアント側スクリプトの生成された<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `javascript:`プレフィックスがいくつかの HTML 属性を持つなど、必要な`href`の属性、 `<a>` URL から JavaScript プロパティを識別するタグです。 属性と同様に`onclick`必要はありません、`javascript:`プレフィックス JavaScript で自動的に関連付けられているためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetControl">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Control TargetControl { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control TargetControl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.TargetControl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポストバック イベントを受信する対象のコントロールを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.Control" />ポストバック イベントを受信するコントロールを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.TargetControl%2A>プロパティから返される、<xref:System.Web.UI.Control>ポストバック イベントを受け取るコントロールを表すオブジェクト。 このプロパティとして渡される、`EVENTTARGET`パラメーターを`__doPostBack`クライアント側の JavaScript のメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackFocus">
+      <MemberSignature Language="C#" Value="public bool TrackFocus { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TrackFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.TrackFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはポストバック イベントが現在のスクロール位置をページを返し、現在のコントロールにフォーカスを返すかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在ページがスクロール位置と、対象のコントロールにフォーカスを返す場合は、ポストバック イベントを返す必要があります。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.PostBackOptions.TrackFocus%2A>プロパティ ポストバック イベントがページを現在のスクロール位置を返す必要がありにフォーカスを返すかどうかを示します、<xref:System.Web.UI.PostBackOptions.TargetControl%2A>ポストバック イベントが発生した後に制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.PostBackOptions.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のコントロールのグループを設定、<see cref="T:System.Web.UI.PostBackOptions" />オブジェクトは、サーバーへのポストバック時に検証を実行します。</summary>
+        <value>対象のコントロールのグループ、<see cref="T:System.Web.UI.PostBackOptions" />オブジェクトは、サーバーへのポストバック時に検証を実行します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.PostBackOptions.ValidationGroup%2A>プロパティ ポストバック イベントが生成されるときに検証する検証のグループを指定します。 指定された検証グループの検証コントロールのみが検証されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Web.UI.PostBackOptions.ValidationGroup%2A>と<xref:System.Web.UI.PostBackOptions.PerformValidation%2A>ことを確認する 2 つのプロパティ<xref:System.Web.UI.WebControls.TextBox>ポストバック イベントが生成される前に入力した情報があるコントロールです。 `NameTextBox`と`AgeTextBox`コントロールの一部である、`PersonalInfoGroup`検証グループが、`StateTextBox`コントロールはありません。 そのため、ユーザーが内のデータを入力する、`StateTextBox`ポストバック イベントを生成する前に制御します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[System.Web.UI.PostBackOptions.Validation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.Validation/CS/postbackoptions.validationcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.PostBackOptions.Validation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.PostBackOptions.Validation/VB/postbackoptions.validationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

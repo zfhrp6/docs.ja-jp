@@ -1,0 +1,64 @@
+<Type Name="CoreCompatibilityPreferences" FullName="System.Windows.CoreCompatibilityPreferences">
+  <TypeSignature Language="C#" Value="public static class CoreCompatibilityPreferences" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed CoreCompatibilityPreferences extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.CoreCompatibilityPreferences" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>PresentationCore アセンブリ内にある WPF 機能に関連して、アプリケーションの動作方法を指定するプロパティが含まれています。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EnableMultiMonitorDisplayClipping">
+      <MemberSignature Language="C#" Value="public static Nullable&lt;bool&gt; EnableMultiMonitorDisplayClipping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Nullable`1&lt;bool&gt; EnableMultiMonitorDisplayClipping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CoreCompatibilityPreferences.EnableMultiMonitorDisplayClipping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>マルチ モニター表示のクリッピングを有効にするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          マルチ モニター表示のクリッピングを有効にする場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAltKeyRequiredInAccessKeyDefaultScope">
+      <MemberSignature Language="C#" Value="public static bool IsAltKeyRequiredInAccessKeyDefaultScope { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool IsAltKeyRequiredInAccessKeyDefaultScope" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.CoreCompatibilityPreferences.IsAltKeyRequiredInAccessKeyDefaultScope" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ショートカットを呼び出すために ALT キーを使用する必要があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーは、ALT キーを使用してショートカット メニューを起動する必要がある場合それ以外の場合、<see langword="false" />です。  既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ WPF の動作を変更するこのプロパティを使用する場合は、アプリケーションから継承するクラスのコンス トラクターでこのようなアプリの有効期間の初期段階で、プロパティの値を変更する必要があります。  値が読み取られた後にもう一度変更することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

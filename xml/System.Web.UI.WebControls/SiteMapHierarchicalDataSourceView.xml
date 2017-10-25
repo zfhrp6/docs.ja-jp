@@ -1,0 +1,108 @@
+<Type Name="SiteMapHierarchicalDataSourceView" FullName="System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView">
+  <TypeSignature Language="C#" Value="public class SiteMapHierarchicalDataSourceView : System.Web.UI.HierarchicalDataSourceView" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SiteMapHierarchicalDataSourceView extends System.Web.UI.HierarchicalDataSourceView" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.HierarchicalDataSourceView</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サイト マップ ノードまたはノードのコレクション上のデータ ビューを表す、<see cref="T:System.Web.UI.WebControls.SiteMapDataSource" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapDataSource>コントロールは、それを連結する Web サーバー コントロールにテーブルと階層の両方の形式でその基になるデータを表示することができます。 <xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>またはコントロールの開発者が開発者ではなくページでページ コードで使用されています。  
+  
+ などのコントロール<xref:System.Web.UI.WebControls.Menu>または<xref:System.Web.UI.WebControls.DropDownList>を使用して、<xref:System.Web.UI.WebControls.SiteMapDataSource>サイト マップ データまたはリスト形式で提示に関連付ける、while から派生したコントロールを<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>クラスなど<xref:System.Web.UI.WebControls.TreeView>サイト マップ データにバインドする、および階層形式で提示します。  
+  
+ データ バインド コントロールを呼び出す場合、<xref:System.Web.UI.IDataSource.GetView%2A>のメソッド、 <xref:System.Web.UI.WebControls.SiteMapDataSource>、<xref:System.Web.UI.WebControls.SiteMapDataSourceView>は、データ ソースによって作成します。 コントロールを呼び出す場合、 <xref:System.Web.UI.WebControls.HierarchicalDataBoundControl> <xref:System.Web.UI.HierarchicalDataSourceControl.GetHierarchicalView%2A> 、メソッド、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>を作成します。 <xref:System.Web.UI.WebControls.SiteMapDataSourceView>から派生する Web サーバー コントロールのクラスが用意されて<xref:System.Web.UI.WebControls.DataBoundControl>とリストと表形式のデータにバインド中に、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>から派生する Web サーバー コントロールの指定された<xref:System.Web.UI.WebControls.HierarchicalDataBoundControl>階層データをバインドします。  
+  
+ などのすべて<xref:System.Web.UI.HierarchicalDataSourceView>ヘルパー オブジェクト、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>データ ソースを基になるデータで実行できる操作を定義します。 <xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>クラスのオーバーライドのみ、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.Select%2A>メソッドは、関連付けられた<xref:System.Web.UI.WebControls.SiteMapDataSource>コントロールでは、並べ替え式はサポートされていませんまたは挿入、削除、または更新操作。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapHierarchicalDataSourceView (System.Web.SiteMapNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.#ctor(System.Web.SiteMapNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Web.SiteMapNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">A<see cref="T:System.Web.SiteMapNode" />データ ソース ビューを表すことです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />に指定されたノードを追加するクラス、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />データ ソース ビューを保持するコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>クラスは、内部保持<xref:System.Web.SiteMapNodeCollection>ノードのコレクション。 ときに、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.%23ctor%2A>コンス トラクターを使用すると、指定したノードが、コレクションに追加します。 呼び出し、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.Select%2A>メソッドでは、この 1 つの要素のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SiteMapHierarchicalDataSourceView (System.Web.SiteMapNodeCollection collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.SiteMapNodeCollection collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.#ctor(System.Web.SiteMapNodeCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.Web.SiteMapNodeCollection" />
+      </Parameters>
+      <Docs>
+        <param name="collection">A<see cref="T:System.Web.SiteMapNodeCollection" />データ ソース ビューを表すことです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView" />設定を指定したコレクション クラス、<see cref="T:System.Web.UI.IHierarchicalEnumerable" />データ ソース ビューを保持するコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView>クラスは、内部保持<xref:System.Web.SiteMapNodeCollection>ノードのコレクション。 ときに、<xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.%23ctor%2A>コンス トラクターを使用すると、指定したコレクション データ ソース ビューを保持する 1 つになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.IHierarchicalEnumerable Select ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Web.UI.IHierarchicalEnumerable Select() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.Select" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.IHierarchicalEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.Web.SiteMapNode" />を現在のユーザーのサイト ナビゲーション構造を表すオブジェクト。</summary>
+        <returns><see cref="T:System.Web.UI.IHierarchicalEnumerable" />サイト マップ ノードのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SiteMapHierarchicalDataSourceView.Select%2A>メソッドを返します、<xref:System.Web.UI.IHierarchicalEnumerable>ノードのコレクション。 呼び出すことができます、<xref:System.String.System%23Collections%23IEnumerable%23GetEnumerator%2A>取得するメソッド、<xref:System.Collections.IEnumerator>オブジェクトをこのコレクションを反復処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

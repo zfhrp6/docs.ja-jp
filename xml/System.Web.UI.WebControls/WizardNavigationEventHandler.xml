@@ -1,0 +1,34 @@
+<Type Name="WizardNavigationEventHandler" FullName="System.Web.UI.WebControls.WizardNavigationEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void WizardNavigationEventHandler(object sender, WizardNavigationEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WizardNavigationEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WizardNavigationEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.WizardNavigationEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">型の引数<see cref="T:System.Web.UI.WebControls.WizardNavigationEventArgs" />イベント データを格納します。</param>
+    <summary>ナビゲーション イベントを処理するメソッドを表す、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardNavigationEventHandler>クラスは、ナビゲーション イベントを処理するメソッドを表す<xref:System.Web.UI.WebControls.Wizard.FinishButtonClick>、 <xref:System.Web.UI.WebControls.Wizard.NextButtonClick>、 <xref:System.Web.UI.WebControls.Wizard.PreviousButtonClick>、および<xref:System.Web.UI.WebControls.Wizard.SideBarButtonClick>の<xref:System.Web.UI.WebControls.Wizard>を制御しからのコントロールを継承する、<xref:System.Web.UI.WebControls.Wizard>コントロール (など、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール)。  
+  
+ <xref:System.Web.UI.WebControls.WizardNavigationEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

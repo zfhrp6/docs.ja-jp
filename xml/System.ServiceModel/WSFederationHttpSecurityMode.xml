@@ -1,0 +1,85 @@
+<Type Name="WSFederationHttpSecurityMode" FullName="System.ServiceModel.WSFederationHttpSecurityMode">
+  <TypeSignature Language="C#" Value="public enum WSFederationHttpSecurityMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed WSFederationHttpSecurityMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.WSFederationHttpSecurityMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.WSFederationHttpBinding" /> の別のセキュリティ モードを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体は、<xref:System.ServiceModel.WSFederationHttpBinding> がサポートするセキュリティ モードを定義します。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.WSFederationHttpSecurity.Mode%2A> を、この列挙体のメンバーに設定する方法を次のコードに示します。  
+  
+ [!code-csharp[WSFederationHttpSecurity#3](~/samples/snippets/csharp/VS_Snippets_CFX/wsfederationhttpsecurity/cs/source.cs#3)]
+ [!code-vb[WSFederationHttpSecurity#3](~/samples/snippets/visualbasic/VS_Snippets_CFX/wsfederationhttpsecurity/vb/source.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="Message" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WSFederationHttpSecurityMode Message = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WSFederationHttpSecurityMode.Message" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSFederationHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージ セキュリティを使用して、整合性、機密性、サーバー認証、およびクライアント認証を提供します。 既定では、本文は暗号化および署名されます。 サービスは、証明書を使用して構成する必要があります。 クライアント認証は、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WSFederationHttpSecurityMode None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WSFederationHttpSecurityMode.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSFederationHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージは、転送中はセキュリティで保護されません。 セキュリティ トークン サービスには連絡しません。 このモードは、<see langword="wsHttpBinding" /> で <see langword="SecurityMode.None" /> バインディングを使用するのと同じです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TransportWithMessageCredential">
+      <MemberSignature Language="C#" Value="TransportWithMessageCredential" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.WSFederationHttpSecurityMode TransportWithMessageCredential = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.WSFederationHttpSecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>整合性、機密性、およびサーバー認証は、HTTPS によって提供されます。 サービスは、証明書を使用して構成する必要があります。 クライアント認証は、SOAP メッセージ セキュリティによって提供され、セキュリティ トークン サービスによってクライアントに発行されるトークンに基づいています。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

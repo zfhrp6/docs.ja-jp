@@ -1,0 +1,52 @@
+<Type Name="ConfigurationDuplexChannelFactory&lt;TChannel&gt;" FullName="System.ServiceModel.Configuration.ConfigurationDuplexChannelFactory&lt;TChannel&gt;">
+  <TypeSignature Language="C#" Value="public sealed class ConfigurationDuplexChannelFactory&lt;TChannel&gt; : System.ServiceModel.DuplexChannelFactory&lt;TChannel&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ConfigurationDuplexChannelFactory`1&lt;TChannel&gt; extends System.ServiceModel.DuplexChannelFactory`1&lt;!TChannel&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.ConfigurationDuplexChannelFactory`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="TChannel" />
+  </TypeParameters>
+  <Base>
+    <BaseTypeName>System.ServiceModel.DuplexChannelFactory&lt;TChannel&gt;</BaseTypeName>
+    <BaseTypeArguments>
+      <BaseTypeArgument TypeParamName="TChannel">TChannel</BaseTypeArgument>
+    </BaseTypeArguments>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <typeparam name="TChannel">作成されるエンドポイント要素の通信チャネルの種類。</typeparam>
+    <summary>サービス エンドポイントとの間でメッセージを送受信するために使用する、さまざまな種類の双方向チャネルを作成したり、管理したりする機能を提供します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConfigurationDuplexChannelFactory (object callbackObject, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress, System.Configuration.Configuration configuration);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object callbackObject, string endpointConfigurationName, class System.ServiceModel.EndpointAddress remoteAddress, class System.Configuration.Configuration configuration) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.ConfigurationDuplexChannelFactory`1.#ctor(System.Object,System.String,System.ServiceModel.EndpointAddress,System.Configuration.Configuration)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackObject" Type="System.Object" />
+        <Parameter Name="endpointConfigurationName" Type="System.String" />
+        <Parameter Name="remoteAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="configuration" Type="System.Configuration.Configuration" />
+      </Parameters>
+      <Docs>
+        <param name="callbackObject">クライアントからのメッセージに応答するプロセス。</param>
+        <param name="endpointConfigurationName">エンドポイント構成要素内の名前プロパティ。</param>
+        <param name="remoteAddress">クライアント セッションまたはサーバー セッションの送信先エンドポイントの IP アドレス。</param>
+        <param name="configuration">エンドポイント要素内に表示される情報を定義する設定。</param>
+        <summary>指定したコールバック オブジェクト、エンドポイント構成名、リモート アドレス、および構成設定を使用して、<see cref="T:System.ServiceModel.Configuration.ConfigurationDuplexChannelFactory`1" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="configuration" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

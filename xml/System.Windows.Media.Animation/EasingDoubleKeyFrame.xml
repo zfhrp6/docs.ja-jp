@@ -1,0 +1,230 @@
+<Type Name="EasingDoubleKeyFrame" FullName="System.Windows.Media.Animation.EasingDoubleKeyFrame">
+  <TypeSignature Language="C#" Value="public class EasingDoubleKeyFrame : System.Windows.Media.Animation.DoubleKeyFrame" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EasingDoubleKeyFrame extends System.Windows.Media.Animation.DoubleKeyFrame" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.EasingDoubleKeyFrame" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.DoubleKeyFrame</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イージング関数を <see cref="T:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames" /> キー フレーム アニメーションに関連付けられるようにするクラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの一部として使用される、<xref:System.Windows.Media.Animation.DoubleKeyFrameCollection>と組み合わせて、<xref:System.Windows.Media.Animation.DoubleAnimationUsingKeyFrames>アニメーション化する、<xref:System.Double>一連のキー フレームに沿って。 これは、<xref:System.Windows.Media.Animation.DoubleKeyFrame>間を補間、<xref:System.Double>前のキー フレームとその出力値を生成するイージング関数を直線的にそれ自体の値の値。  
+  
+<a name="xamlObjectElementUsage_EasingDoubleKeyFrame"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<EasingDoubleKeyFrame .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例では、上方向コントラクト、速度が低下し、下 (ようフォール) を展開しに停止し、バウンスを四角形のアニメーションを作成するイージングに関連付けられている関数でのキー フレームを使用する方法を示します。  
+  
+ [!code-xaml[EasingFunctionDoubleKeyFrame_Snippet#EasingFunctionDoubleKeyFrame](~/samples/snippets/csharp/VS_Snippets_Wpf/easingfunctiondoublekeyframe_snippet/CS/window1.xaml#easingfunctiondoublekeyframe)] 
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EasingDoubleKeyFrame ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.EasingDoubleKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EasingDoubleKeyFrame (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">初期<see cref="T:System.Double" />値。</param>
+        <summary>指定した <see cref="T:System.Double" /> 値を使用して、<see cref="T:System.Windows.Media.Animation.EasingDoubleKeyFrame" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EasingDoubleKeyFrame (double value, System.Windows.Media.Animation.KeyTime keyTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Media.Animation.KeyTime keyTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.#ctor(System.Double,System.Windows.Media.Animation.KeyTime)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+      </Parameters>
+      <Docs>
+        <param name="value">初期<see cref="T:System.Double" />値。</param>
+        <param name="keyTime">最初のキー時刻。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.Animation.EasingDoubleKeyFrame" /> 、指定したクラス<see cref="T:System.Double" />値とキー時刻。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EasingDoubleKeyFrame (double value, System.Windows.Media.Animation.KeyTime keyTime, System.Windows.Media.Animation.IEasingFunction easingFunction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.Media.Animation.KeyTime keyTime, class System.Windows.Media.Animation.IEasingFunction easingFunction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.#ctor(System.Double,System.Windows.Media.Animation.KeyTime,System.Windows.Media.Animation.IEasingFunction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="keyTime" Type="System.Windows.Media.Animation.KeyTime" />
+        <Parameter Name="easingFunction" Type="System.Windows.Media.Animation.IEasingFunction" />
+      </Parameters>
+      <Docs>
+        <param name="value">初期<see cref="T:System.Double" />値。</param>
+        <param name="keyTime">最初のキー時刻。</param>
+        <param name="easingFunction">イージング関数。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.Animation.EasingDoubleKeyFrame" /> 、指定したクラス<see cref="T:System.Double" />値、key time、および関数を簡略化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。 派生クラスを作成するときには、このメソッドをオーバーライドする必要があります。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションのクラスに継承直接から<xref:System.Windows.Freezable>です。 このため、オーバーライドする必要があります、<xref:System.Windows.Media.Animation.BackEase.CreateInstanceCore%2A>アニメーション オブジェクトを構築するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingFunction">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.IEasingFunction EasingFunction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.IEasingFunction EasingFunction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.IEasingFunction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキー フレームに適用するイージング関数を設定します。</summary>
+        <value>キー フレームに適用されるイージング関数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="elementUsage_EasingFunction"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<EasingDoubleKeyFrame>  
+  <EasingDoubleKeyFrame.EasingFunction>  
+    easingFunction  
+  </EasingDoubleKeyFrame.EasingFunction>  
+</EasingDoubleKeyFrame  
+```  
+  
+<a name="xamlValues_EasingFunction"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *easingFunction*  
+ 派生したオブジェクトの 1 つのオブジェクト要素<xref:System.Windows.Media.Animation.EasingFunctionBase>したがってを実装して<xref:System.Windows.Media.Animation.IEasingFunction>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EasingFunctionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty EasingFunctionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty EasingFunctionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunctionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunction" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InterpolateValueCore">
+      <MemberSignature Language="C#" Value="protected override double InterpolateValueCore (double baseValue, double keyFrameProgress);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 InterpolateValueCore(float64 baseValue, float64 keyFrameProgress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.EasingDoubleKeyFrame.InterpolateValueCore(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseValue" Type="System.Double" />
+        <Parameter Name="keyFrameProgress" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="baseValue">アニメーション化する元の値。</param>
+        <param name="keyFrameProgress">このキー フレームの経過時間の割合を示す 0.0 ～ 1.0 の値。</param>
+        <summary>補間を前のキー フレーム値と指定された進行状況の増分を使用して、現在のキー フレームの値の間で、使用するイージング関数に従ってします。</summary>
+        <returns>指定された基準値と進行状況が示された、このキー フレームの出力値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

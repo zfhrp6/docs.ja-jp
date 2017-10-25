@@ -1,0 +1,187 @@
+<Type Name="SamlAssertionKeyIdentifierClause" FullName="System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause">
+  <TypeSignature Language="C#" Value="public class SamlAssertionKeyIdentifierClause : System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SamlAssertionKeyIdentifierClause extends System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージ内の <see langword="&lt;KeyIndentifier&gt;" /> 要素を参照する <see langword="&lt;saml:Assertion&gt;" /> 要素を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAssertionKeyIdentifierClause (string assertionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assertionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertionId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assertionId">キー識別子を含む <see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> の識別子。</param>
+        <summary>指定した SAML アサーション識別子を使用して、<see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.AssertionId%2A> の <xref:System.IdentityModel.Tokens.SamlAssertion> プロパティをこのコンストラクターに渡します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assertionId" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SamlAssertionKeyIdentifierClause (string assertionId, byte[] derivationNonce, int derivationLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string assertionId, unsigned int8[] derivationNonce, int32 derivationLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.#ctor(System.String,System.Byte[],System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assertionId" Type="System.String" />
+        <Parameter Name="derivationNonce" Type="System.Byte[]" />
+        <Parameter Name="derivationLength" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="assertionId">キー識別子を含む <see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> の識別子。</param>
+        <param name="derivationNonce">派生キーの作成に使用された nonce を格納する <see cref="T:System.Byte" /> の配列。</param>
+        <param name="derivationLength">派生キーのサイズ。</param>
+        <summary>指定した SAML アサーション識別子、nonce、およびキー長を使用して、<see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion.AssertionId%2A> の <xref:System.IdentityModel.Tokens.SamlAssertion> プロパティをこのコンストラクターに渡します。  
+  
+ `derivationNonce` クラスが送信 SOAP メッセージにシリアル化される場合、`derivationLength` パラメーターと <xref:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause> パラメーターは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assertionId" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertionId">
+      <MemberSignature Language="C#" Value="public string AssertionId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssertionId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.AssertionId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー識別子を含む <see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> の識別子を取得します。</summary>
+        <value>キー識別子を含む <see cref="T:System.IdentityModel.Tokens.SamlAssertion" /> の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SamlAssertion> の識別子は、<xref:System.IdentityModel.Tokens.SamlAssertion.AssertionId%2A> プロパティに指定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public override bool Matches (System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Matches(class System.IdentityModel.Tokens.SecurityKeyIdentifierClause clause) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.Matches(System.IdentityModel.Tokens.SecurityKeyIdentifierClause)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyIdentifierClause" Type="System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />
+      </Parameters>
+      <Docs>
+        <param name="clause">To be added.</param>
+        <summary>指定したキー識別子が現在のインスタンスと同じかどうかを確認します。</summary>
+        <returns>
+          指定したキー識別子が現在のインスタンスと同じ場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この <xref:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.Matches%2A> オーバーロードは、次のいずれかが `true` の場合に`true` 値を返します。  
+  
+-   <xref:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.AssertionId%2A> パラメーターの `keyIdentifierClause` プロパティの値が、現在のインスタンスの <xref:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.AssertionId%2A> プロパティの値と同じである。  
+  
+-   `keyIdentifierClause` パラメーターとこのインスタンスが同じインスタンスである。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Matches">
+      <MemberSignature Language="C#" Value="public bool Matches (string assertionId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Matches(string assertionId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.Matches(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assertionId" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assertionId">比較対象の SAML アサーション識別子。</param>
+        <summary>指定した SAML アサーション識別子が現在のインスタンスと同じかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" /> の値が現在のインスタンスの <paramref name="assertionId" /> プロパティの値と同じ場合は <see cref="P:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.AssertionId" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 比較では、大文字と小文字を区別します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のキー識別句を表す SAML アサーション識別子を含む <see cref="T:System.String" /> を返します。</summary>
+        <returns>現在の <see cref="T:System.String" /> インスタンスを表す SAML アサーション識別子を含む <see cref="T:System.IdentityModel.Tokens.SamlAssertionKeyIdentifierClause" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

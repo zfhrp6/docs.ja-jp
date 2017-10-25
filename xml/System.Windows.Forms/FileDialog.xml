@@ -1,0 +1,946 @@
+<Type Name="FileDialog" FullName="System.Windows.Forms.FileDialog">
+  <TypeSignature Language="C#" Value="public abstract class FileDialog : System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit FileDialog extends System.Windows.Forms.CommonDialog" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.FileDialog" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Forms.CommonDialog</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("FileOk")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("FileName")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーがファイルを選択するダイアログ ボックスを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FileDialog>一般的な動作を含む抽象クラスには、<xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>クラスです。 直接使用できるものではありませんが、これら 2 つのクラスの共通の動作が含まれています。 インスタンスを作成することはできません<xref:System.Windows.Forms.FileDialog>です。 クラスをパブリックに宣言されますが、内部の抽象メソッドが含まれているから継承することはできません。 選択するか、ファイルを保存するダイアログ ボックスを作成するには、使用<xref:System.Windows.Forms.OpenFileDialog>または<xref:System.Windows.Forms.SaveFileDialog>です。  
+  
+ <xref:System.Windows.Forms.FileDialog>モーダル ダイアログ ボックスです。そのため、表示されると、アプリケーションの残りの部分までブロック、ユーザーがファイルを選択します。 ダイアログ ボックスはモーダルとして表示される場合 (キーボードまたはマウス クリック) の入力しか発生しません ダイアログ ボックス上のオブジェクトにします。 プログラムを非表示にする必要があります。 または呼び出し元のプログラムへの入力 (通常はユーザーの操作に対する応答) で、ダイアログ ボックスが閉じる発生することができます。  
+  
+> [!CAUTION]
+>  派生したクラスを使用すると<xref:System.Windows.Forms.FileDialog>など<xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>、絶対パスを含んでいる文字列リテラルは使用しないでください。 代わりに、次の表で説明する手法の 1 つ以上を使用してパスを動的に取得します。  
+  
+ ユーザーがファイルではなくフォルダーを選択して、使用できるようにする場合、<xref:System.Windows.Forms.FolderBrowserDialog>です。  
+  
+ アプリケーション、アプリケーションに関連付けられているデータの格納方法、およびファイル システムにアクセスするための種類によっては、方法は多数あります可能なディレクトリのパスを作成することができます。 次の表は、パスを動的に作成するためのテクニックを示します。  
+  
+|パスまたはプログラムのカテゴリ|使用するクラスとメンバー|  
+|------------------------------|------------------------------|  
+|プログラム ファイル、マイ ドキュメント、デスクトップになど、標準の Windows のパス|<xref:System.Environment?displayProperty=nameWithType>クラスは、これらの静的メソッドを使用するかの最も包括的な基になるように<xref:System.Environment.SystemDirectory%2A>、または、<xref:System.Environment.GetFolderPath%2A>のいずれかを使用して、メソッド、<xref:System.Environment.SpecialFolder>列挙値。|  
+|現在のアプリケーションに関連するパス|<xref:System.Windows.Forms.Application>クラスなど、特定のパスを取得する静的メンバーには<xref:System.Windows.Forms.Application.StartupPath%2A>、 <xref:System.Windows.Forms.Application.ExecutablePath%2A>、 <xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A>、および<xref:System.Windows.Forms.Application.CommonAppDataPath%2A>です。<br /><br /> <xref:System.IO.Path.GetTempPath%2A>のメソッド、<xref:System.IO.Path?displayProperty=nameWithType>一時フォルダーのパスを返します。<br /><br /> <xref:System.IO.Directory.GetCurrentDirectory%2A>のメソッド、<xref:System.IO.Directory?displayProperty=nameWithType>クラスは、アプリケーションの現在実行されているディレクトリを返します。<br /><br /> <xref:System.IO.DriveInfo.RootDirectory%2A>のプロパティ、<xref:System.IO.DriveInfo>クラスは、指定されたドライブのルート ディレクトリを表します。|  
+|アプリケーション設定として格納されたパス|派生したラッパー クラスの設定のプロパティに対応するアプリケーションにアクセス<xref:System.Configuration.ApplicationSettingsBase>です。 詳細については、次を参照してください。 [Windows フォーム用のアプリケーション設定](~/docs/framework/winforms/advanced/application-settings-for-windows-forms.md)です。|  
+|レジストリのストレージ|一部のアプリケーションでは、ディレクトリ情報をレジストリに格納します。 <xref:System.Windows.Forms.Application>クラスには、<xref:System.Windows.Forms.Application.CommonAppDataPath%2A>と<xref:System.Windows.Forms.Application.LocalUserAppDataPath%2A>プロパティに解決される、<xref:Microsoft.Win32.RegistryKey>値。|  
+|ClickOnce アプリケーション|ClickOnce アプリケーションを使用<xref:System.Windows.Forms.Application>クラス メンバーなど<xref:System.Windows.Forms.Application.UserAppDataPath%2A>、これには、ClickOnce データ ディレクトリにポインターを返します。 詳細については、次を参照してください。[ローカルへのアクセスと ClickOnce アプリケーションでのリモート データ](http://msdn.microsoft.com/library/be5cbe12-6cb6-49c9-aa59-a1624e1eef3d)です。|  
+|国際対応のアプリケーション|国際対応のアプリケーションの相対パスの部分から取得、アプリケーションでの文字列リソースを使用して、<xref:System.Resources.ResourceReader?displayProperty=nameWithType>クラスです。 グローバリゼーションとローカリゼーションの詳細については、トピックを参照してください。[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/9a59696b-d89b-45bd-946d-c75da4732d02)です。|  
+  
+ 完全なパス可能性がありますを作成できる記載された方法の 1 つ以上を使用することがわかります。 たとえば、<xref:System.Environment.GetFolderPath%2A>マイ ドキュメント フォルダーへのパスを取得する方法を使用できますし、アプリケーションの設定は、相対サブディレクトリ部分を追加するために使用可能性があります。  
+  
+ <xref:System.IO.Path?displayProperty=nameWithType>クラスに対し絶対と相対パス文字列の操作支援するために静的メンバーが含まれています、<xref:System.IO.File?displayProperty=nameWithType>と<xref:System.IO.Directory?displayProperty=nameWithType>クラスは、実際には、ファイルとディレクトリをそれぞれ操作する静的メンバーを持っています。  
+  
+> [!IMPORTANT]
+>  アプリケーションのユーザーがフォルダーを変更するかどうか、<xref:System.Windows.Forms.FileDialog>で指定された場所に、アプリケーションの現在の作業ディレクトリが設定されているし、<xref:System.Windows.Forms.FileDialog>です。 これを防ぐためには、設定、<xref:System.Windows.Forms.FileDialog.RestoreDirectory%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OpenFileDialog>の実装<xref:System.Windows.Forms.FileDialog>示されているを作成し、プロパティの設定し、ダイアログ ボックスを表示します。 この例では、 <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>  ダイアログ ボックスを表示し、返すメソッド、<xref:System.Windows.Forms.DialogResult>です。 持つフォームでは、<xref:System.Windows.Forms.Button>配置と<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddExtension">
+      <MemberSignature Language="C#" Value="public bool AddExtension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AddExtension" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.AddExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーが拡張子を指定しない場合、ダイアログ ボックスがファイル名に自動的に拡張子を付けるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスでは、ユーザーが拡張子を省略した場合、ファイル名に拡張子を追加する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル名に追加された拡張機能は、現在選択されているファイル フィルターとの値によって異なります、<xref:System.Windows.Forms.FileDialog.CheckFileExists%2A>プロパティです。  
+  
+ 場合、<xref:System.Windows.Forms.FileDialog.CheckFileExists%2A>プロパティは`true`、ダイアログ ボックスは、既存のファイルに一致する現在のファイル フィルターから最初の拡張機能を追加します。 ダイアログ ボックスがで指定された拡張子を追加する現在のファイル フィルターに一致するファイルがない場合、<xref:System.Windows.Forms.FileDialog.DefaultExt%2A>プロパティです。  
+  
+ 場合、<xref:System.Windows.Forms.FileDialog.CheckFileExists%2A>プロパティは`false`、ダイアログ ボックスが現在のファイル フィルターから最初の有効なファイル名拡張子を追加します。 ダイアログ ボックスがで指定された拡張子を追加して現在のファイル フィルターに有効なファイル名拡張子が含まれていない場合、<xref:System.Windows.Forms.FileDialog.DefaultExt%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">拡張機能を追加する場合、ユーザー指定を省略します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoUpgradeEnabled">
+      <MemberSignature Language="C#" Value="public bool AutoUpgradeEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoUpgradeEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.AutoUpgradeEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかこの<see cref="T:System.Windows.Forms.FileDialog" />インスタンスが自動的にアップグレード外観と動作で実行されているときに[!INCLUDE[wiprlhext](~/includes/wiprlhext-md.md)]です。</summary>
+        <value>
+          <see langword="true" />この場合<see cref="T:System.Windows.Forms.FileDialog" />インスタンスが自動的にアップグレード外観と動作で実行されているときに[!INCLUDE[wiprlhext](~/includes/wiprlhext-md.md)]、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、このプロパティは`false`、<xref:System.Windows.Forms.FileDialog>クラスが、 [!INCLUDE[winxp](~/includes/winxp-md.md)]-スタイルの外観と動作[!INCLUDE[wiprlhext](~/includes/wiprlhext-md.md)]です。  
+  
+ [!INCLUDE[winxp](~/includes/winxp-md.md)]、このプロパティには、何も影響はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckFileExists">
+      <MemberSignature Language="C#" Value="public virtual bool CheckFileExists { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckFileExists" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.CheckFileExists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在しないファイルの名前をユーザーが指定した場合に、ダイアログ ボックスが警告を表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが存在しません。 ファイル名を指定した場合、ダイアログ ボックスに警告が表示される場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は`true`、継承の<xref:System.Windows.Forms.OpenFileDialog>と`false`、継承の<xref:System.Windows.Forms.SaveFileDialog>します。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルが既に存在する場合は、警告を表示します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckPathExists">
+      <MemberSignature Language="C#" Value="public bool CheckPathExists { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CheckPathExists" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.CheckPathExists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在しないパスをユーザーが指定したときに、ダイアログ ボックスに警告を表示するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ユーザーが存在しません。 パスを指定するときに、ダイアログ ボックスに警告が表示される場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ユーザーが既に存在するパスを指定した場合は、警告を表示します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomPlaces">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.FileDialogCustomPlacesCollection CustomPlaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.FileDialogCustomPlacesCollection CustomPlaces" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.CustomPlaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.FileDialogCustomPlacesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このカスタム プレースのコレクションを取得<see cref="T:System.Windows.Forms.FileDialog" />インスタンス。</summary>
+        <value>このコレクションを配置するカスタム<see cref="T:System.Windows.Forms.FileDialog" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[winxp](~/includes/winxp-md.md)]、このプロパティには、何も影響はありません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>コレクション。 この例を実行するには、Windows フォームと呼び出しに、次のコードを貼り付けます`InitializeDialogAndButton`フォームのコンス トラクターからまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.FileDialogCommonPlaces#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FileDialogCommonPlaces/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.FileDialogCommonPlaces#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FileDialogCommonPlaces/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultExt">
+      <MemberSignature Language="C#" Value="public string DefaultExt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultExt" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.DefaultExt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のファイル名の拡張子を取得または設定します。</summary>
+        <value>既定のファイル名の拡張子です。 返される文字列にはピリオドが含まれません。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのユーザーが、拡張子のないファイル名を指定すると、<xref:System.Windows.Forms.FileDialog>ファイル名に拡張機能を追加します。 によって使用される拡張機能が決定されます、<xref:System.Windows.Forms.FileDialog.Filter%2A>と<xref:System.Windows.Forms.FileDialog.DefaultExt%2A>プロパティです。 フィルターを選択した場合、<xref:System.Windows.Forms.FileDialog>フィルターは、拡張子を指定し、その拡張機能を使用します。 選択されているフィルター、拡張機能の代わりにワイルドカードを使用するかどうかで指定された拡張機能、<xref:System.Windows.Forms.FileDialog.DefaultExt%2A>プロパティを使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A?displayProperty=nameWithType>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DereferenceLinks">
+      <MemberSignature Language="C#" Value="public bool DereferenceLinks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DereferenceLinks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.DereferenceLinks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスが、ショートカットで参照されたファイルの場所を返すかどうか、またはショートカットの場所 (.lnk) を返すかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスがショートカットで参照されているファイルの場所を返す場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">プロパティを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EventFileOk">
+      <MemberSignature Language="C#" Value="protected static readonly object EventFileOk;" />
+      <MemberSignature Language="ILAsm" Value=".field family static initonly object EventFileOk" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.FileDialog.EventFileOk" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>所有している、<see cref="E:System.Windows.Forms.FileDialog.FileOk" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル ダイアログ ボックスで選択されたファイル名を含む文字列を取得または設定します。</summary>
+        <value>ファイル ダイアログ ボックスで選択されたファイルの名前。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ファイル名には、ファイルのパスと、拡張機能の両方が含まれています。 ファイルが選択されていない場合、このメソッドは、空の文字列を返します ("") です。  
+  
+ 使用する場合、<xref:System.Windows.Forms.SaveFileDialog>クラス、このプロパティを表すから使用する場合は、ファイル、<xref:System.Windows.Forms.OpenFileDialog>クラスを表します開かれるファイル。  
+  
+ このプロパティは、選択した 1 つのファイルの名前のみできます。 使用して、複数選択のダイアログ ボックスで選択されているすべてのファイルの名前を格納する配列を返す場合<xref:System.Windows.Forms.FileDialog.FileNames%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.RichTextBox.SaveFile%2A?displayProperty=nameWithType>と<xref:System.Windows.Forms.RichTextBox.LoadFile%2A?displayProperty=nameWithType>ストリームを持つメソッドです。 使用しても示します、 <xref:System.Windows.Forms.FileDialog.FileName%2A>、 <xref:System.Windows.Forms.FileDialog.DefaultExt%2A>、 <xref:System.Windows.Forms.SaveFileDialog.CreatePrompt%2A?displayProperty=nameWithType>、および<xref:System.Windows.Forms.SaveFileDialog.OverwritePrompt%2A?displayProperty=nameWithType>メンバー。  
+  
+ これは、プロジェクトにコピーするときに実行する準備が整っている完全な例です。  
+  
+ [!code-cpp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CPP/form1.cpp#1)]
+ [!code-csharp[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.RichTextBoxSaveFile#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.RichTextBoxSaveFile/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">取得またはファイル名を設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileNames">
+      <MemberSignature Language="C#" Value="public string[] FileNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] FileNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.FileNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスで選択されたすべてのファイルの名前を取得します。</summary>
+        <value>型の配列<see cref="T:System.String" />、ダイアログ ボックスで選択されているすべてのファイルのファイル名を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各ファイル名には、ファイルのパスと、拡張機能の両方が含まれています。 ファイルが選択されていない場合、このメソッドは空の配列を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、イメージの数を選択し、表示でそれらをできます<xref:System.Windows.Forms.PictureBox>フォーム上のコントロールです。 初期化を示しています、 <xref:System.Windows.Forms.OpenFileDialog>、設定、<xref:System.Windows.Forms.FileDialog.Title%2A>と<xref:System.Windows.Forms.FileDialog.Filter%2A>プロパティ、およびユーザーが設定して複数のファイルを選択できるように、<xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A>プロパティを true にします。 このコード例では、フォームが既に持っている、<xref:System.Windows.Forms.OpenFileDialog>という名前のコントロール`openFileDialog1`、<xref:System.Windows.Forms.Button>という名前`SelectFileButton`、および<xref:System.Windows.Forms.FlowLayoutPanel>という`flowLayoutPanel1`です。  
+  
+ [!code-csharp[System.Windows.Forms.OpenFileDialog.MultiSelect#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.OpenFileDialog.MultiSelect/CS/Form1.cs#1)]
+ [!code-vb[System.Windows.Forms.OpenFileDialog.MultiSelect#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.OpenFileDialog.MultiSelect/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル名を取得します。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.AllAccess" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="FileOk">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.CancelEventHandler FileOk;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.CancelEventHandler FileOk" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.FileDialog.FileOk" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.CancelEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーがクリックしたときに発生、**開く**または**保存**ボタン、[ファイル] ダイアログ ボックスをクリックします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの処理方法の詳細については、次を参照してください。[処理とイベントの発生](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.FileDialog.FileNames%2A>プロパティ、処理、<xref:System.Windows.Forms.FileDialog.FileOk>イベントを使用して、<xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType>メソッドです。 例を実行すると、ユーザーがからグラフィックス ファイルを選択できる、<xref:System.Windows.Forms.OpenFileDialog>オブジェクト。 選択したファイルは、フォームに表示されます。 <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType>メソッド強制的に開いている各グラフィックス ファイルの形式の再描画します。 例を実行するこの貼り付けを次のコードを含むフォームで、<xref:System.Windows.Forms.PictureBox>という名前`PictureBox1`、<xref:System.Windows.Forms.OpenFileDialog>という名前`OpenFileDialog1`、および<xref:System.Windows.Forms.Button>という`fileButton`です。 呼び出す、`InitializePictureBox`と`InitializeOpenFileDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。 例が実行されている場合は、ボタンをクリックしてダイアログ ボックスを表示します。  
+  
+ [!code-cpp[System.Windows.Forms.FileDialog#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CPP/filedialogform.cpp#1)]
+ [!code-csharp[System.Windows.Forms.FileDialog#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CS/filedialogform.cs#1)]
+ [!code-vb[System.Windows.Forms.FileDialog#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/VB/filedialogform.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public string Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスの [保存先ファイルの種類] または [ファイルの種類] ボックスに表示される選択肢を決定する、現在のファイル名のフィルター文字列を取得または設定します。</summary>
+        <value>ダイアログ ボックスで使用できるファイル フィルター処理オプション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィルター文字列が、垂直バー (&#124;) を続けて、フィルターの説明を含む各フィルター オプションおよびフィルター パターン。 異なるフィルター オプションの文字列は、縦棒で区切られます。  
+  
+ フィルター文字列の例を次に示します。  
+  
+ `Text files (*.txt)|*.txt|All files (*.*)|*.*`  
+  
+ フィルターに複数のフィルター パターンを追加するには、たとえば、セミコロンで区切って、ファイルの種類を区切ること。  
+  
+ `Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|All files (*.*)|*.*`  
+  
+ 使用して、<xref:System.Windows.Forms.FileDialog.FilterIndex%2A>するフィルター処理オプションを設定するプロパティがユーザーに最初に表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OpenFileDialog>の実装<xref:System.Windows.Forms.FileDialog>示されているを作成し、プロパティの設定し、ダイアログ ボックスを表示します。 この例では、<xref:System.Windows.Forms.FileDialog.Filter%2A>と<xref:System.Windows.Forms.FileDialog.FilterIndex%2A>ユーザーのフィルターの一覧を提供するプロパティです。 持つフォームでは、<xref:System.Windows.Forms.Button>配置と<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Filter" />形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FilterIndex">
+      <MemberSignature Language="C#" Value="public int FilterIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 FilterIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.FilterIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル ダイアログ ボックスで現在選択されているフィルターのインデックスを取得または設定します。</summary>
+        <value>ファイル ダイアログ ボックスで現在選択されているフィルターのインデックスを含む値。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.FileDialog.FilterIndex%2A>するフィルター処理オプションを設定するプロパティがユーザーに最初に表示します。 値を使用することもできます。<xref:System.Windows.Forms.FileDialog.FilterIndex%2A>によっては、フィルター選択された特殊なファイル操作を実行するファイル ダイアログを表示した後です。  
+  
+> [!NOTE]
+>  最初のフィルター エントリのインデックス値は 1 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OpenFileDialog>の実装<xref:System.Windows.Forms.FileDialog>示されているを作成し、プロパティの設定し、ダイアログ ボックスを表示します。 この例では、<xref:System.Windows.Forms.FileDialog.Filter%2A>と<xref:System.Windows.Forms.FileDialog.FilterIndex%2A>ユーザーのフィルターの一覧を提供するプロパティです。 持つフォームでは、<xref:System.Windows.Forms.Button>配置と<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HookProc">
+      <MemberSignature Language="C#" Value="protected override IntPtr HookProc (IntPtr hWnd, int msg, IntPtr wparam, IntPtr lparam);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance native int HookProc(native int hWnd, int32 msg, native int wparam, native int lparam) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FileDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hWnd" Type="System.IntPtr" />
+        <Parameter Name="msg" Type="System.Int32" />
+        <Parameter Name="wparam" Type="System.IntPtr" />
+        <Parameter Name="lparam" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hWnd">ダイアログ ボックス ウィンドウへのハンドル。</param>
+        <param name="msg">ダイアログ ボックスが受け取ったメッセージ。</param>
+        <param name="wparam">メッセージに関する追加情報。</param>
+        <param name="lparam">メッセージに関する追加情報。</param>
+        <summary>ファイル ダイアログ ボックスに特定の機能を追加するためにオーバーライドされる、コモン ダイアログ ボックスのフック プロシージャを定義します。</summary>
+        <returns>既定のダイアログ ボックス プロシージャがメッセージを処理する場合は 0 を返します。既定のダイアログ ボックス プロシージャがメッセージを無視する場合は 0 以外の値を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 用のフック プロシージャは、接続またはルーチンまたはデバッグまたは機能を強化するためにアプリケーションにその他のルーチンを挿入できます。  
+  
+ 既定では、画面 WM_INITDIALOG メッセージへの応答で、ダイアログ ボックスの中央にフック プロシージャ。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.FileDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CommonDialog.HookProc(System.IntPtr,System.Int32,System.IntPtr,System.IntPtr)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="InitialDirectory">
+      <MemberSignature Language="C#" Value="public string InitialDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string InitialDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.InitialDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル ダイアログ ボックスに表示される起動ディレクトリを取得または設定します。</summary>
+        <value>ファイル ダイアログ ボックスに表示される起動ディレクトリ。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FileDialog.InitialDirectory%2A>通常プロパティが次のソースのいずれかを使用します。  
+  
+-   最後のディレクトリまたはファイルの操作から保持など、プログラムで使用されていたパスです。  
+  
+-   アプリケーション設定などの永続的なソースからのパスを読み取る、<xref:Microsoft.Win32.Registry>またはアプリケーションの文字列リソースです。  
+  
+-   標準的な Windows システムとユーザーのパス、プログラム ファイル、マイ ドキュメント、マイ ミュージック、や (を使用して取得することができます、<xref:System.Environment.GetFolderPath%2A>メソッド)  
+  
+-   スタートアップ ディレクトリなど、現在のアプリケーションに関連するパス (上のプロパティを使用して取得することができます、<xref:System.Windows.Forms.Application>オブジェクト)。  
+  
+ 動的パスの作成の詳細については、次を参照してください。、<xref:System.Windows.Forms.FileDialog>クラスの概要です。  
+  
+ [!INCLUDE[wiprlhext](~/includes/wiprlhext-md.md)]場合は、<xref:System.Windows.Forms.FileDialog.InitialDirectory%2A>設定されているディレクトリのパスだけではなく完全なファイル名、最初のディレクトリが既定値にアプリケーションのパス、または元となるユーザー最後に選択したファイル ディレクトリのいずれか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OpenFileDialog>の実装<xref:System.Windows.Forms.FileDialog>示されているを作成し、プロパティの設定し、ダイアログ ボックスを表示します。 この例では、<xref:System.Windows.Forms.FileDialog.InitialDirectory%2A>初期ディレクトリとは、ユーザーにダイアログ ボックスが表示されるときに設定するプロパティです。 持つフォームでは、<xref:System.Windows.Forms.Button>配置と<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">初期ディレクトリを設定する必要です。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Instance">
+      <MemberSignature Language="C#" Value="protected virtual IntPtr Instance { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int Instance" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.Instance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの Win32 インスタンス ハンドルを取得します。</summary>
+        <value>アプリケーションの Win32 インスタンス ハンドル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFileOk">
+      <MemberSignature Language="C#" Value="protected void OnFileOk (System.ComponentModel.CancelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnFileOk(class System.ComponentModel.CancelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FileDialog.OnFileOk(System.ComponentModel.CancelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.ComponentModel.CancelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.CancelEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.FileDialog.FileOk" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="protected int Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Options" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化するために値を取得、<see cref="T:System.Windows.Forms.FileDialog" />です。</summary>
+        <value>初期化する内部値のビットごとの組み合わせ、<see cref="T:System.Windows.Forms.FileDialog" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.FileDialog.Options%2A>プロパティは Win32 を使用して、[ファイル] ダイアログ ボックスを初期化するために使用されているフラグに対応します。 プロパティを使用して、<xref:System.Windows.Forms.FileDialog>クラスを取得し、オプションを設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FileDialog.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのプロパティを既定値にリセットします。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Forms.FileDialog.Reset" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Forms.CommonDialog.Reset" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="RestoreDirectory">
+      <MemberSignature Language="C#" Value="public bool RestoreDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RestoreDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.RestoreDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスを閉じる前に、ディレクトリを以前選択されていたディレクトリに復元するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスでは、ユーザーがファイルの検索中に、ディレクトリを変更した場合、以前に選択したディレクトリに、現在のディレクトリを復元する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.OpenFileDialog>の実装<xref:System.Windows.Forms.FileDialog>示されているを作成し、プロパティの設定し、ダイアログ ボックスを表示します。 この例では、<xref:System.Windows.Forms.FileDialog.RestoreDirectory%2A>プロパティ ダイアログ ボックスが閉じられたときに、以前に選択したディレクトリを復元することを確認します。 持つフォームでは、<xref:System.Windows.Forms.Button>配置と<xref:System.IO>名前空間を追加します。  
+  
+ [!code-cpp[Classic OpenFileDialog Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic OpenFileDialog Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic OpenFileDialog Example/CS/source.cs#1)]
+ [!code-vb[Classic OpenFileDialog Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic OpenFileDialog Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">プロパティを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="RunDialog">
+      <MemberSignature Language="C#" Value="protected override bool RunDialog (IntPtr hWndOwner);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool RunDialog(native int hWndOwner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FileDialog.RunDialog(System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hWndOwner" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="hWndOwner">コモン ダイアログ ボックスのオーナー ウィンドウのウィンドウ ハンドルを表す値。</param>
+        <summary>コモン ダイアログ ボックスを指定します。</summary>
+        <returns>
+          <see langword="true" />ファイルを開くことができなかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装を提供する<xref:System.Windows.Forms.CommonDialog.RunDialog%2A>、ファイル ダイアログのユーザーを呼び出したときに呼び出されると<xref:System.Windows.Forms.CommonDialog.ShowDialog%2A>です。  
+  
+ 派生クラスで<xref:System.Windows.Forms.OpenFileDialog>と<xref:System.Windows.Forms.SaveFileDialog>無効なファイル名<xref:System.Exception>発生させることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHelp">
+      <MemberSignature Language="C#" Value="public bool ShowHelp { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHelp" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.ShowHelp" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、**ヘルプ**ファイル ダイアログ ボックスにボタンを表示します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスに、ヘルプ ボタンが含まれている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Forms.Control.HelpRequested>イベントは、ユーザーがクリックしたときに、**ヘルプ**ボタンをクリックします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportMultiDottedExtensions">
+      <MemberSignature Language="C#" Value="public bool SupportMultiDottedExtensions { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportMultiDottedExtensions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.SupportMultiDottedExtensions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>複数のファイル名拡張子を持つファイルの表示および保存をダイアログ ボックスがサポートするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスは、複数のファイル名拡張子をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合がありますユーザーを開くし、複数のファイル名拡張子を使用してファイルを保存する必要があります。 たとえば、アプリケーション マニフェスト ファイルで使用される、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]複雑なファイル名拡張子の展開テクノロジの終了"です。 exe.manifest"です。 このプロパティを設定`true`を設定することができます、<xref:System.Windows.Forms.FileDialog.Filter%2A>をドット形式の複数の拡張機能のプロパティです。  
+  
+ 場合<xref:System.Windows.Forms.FileDialog.SupportMultiDottedExtensions%2A>は`false`をドット形式の複数の拡張機能を割り当てると<xref:System.Windows.Forms.FileDialog.Filter%2A>などのコントロールの派生<xref:System.Windows.Forms.SaveFileDialog>のみ使用して、文字列内の最後の拡張機能がします。 代わりに".manifest"を使用するなど、". exe.manifest"です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、拡張子を持つファイルを保存". data.txt"です。 このコード例では、する必要があります、アプリケーション ホスト、<xref:System.Windows.Forms.SaveFileDialog>という名前`saveFileDialog1`と<xref:System.Windows.Forms.Button>という`button1`です。  
+  
+ [!code-csharp[SupportMultiDottedExtensions#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SupportMultiDottedExtensions/CS/Form1.cs#1)]
+ [!code-vb[SupportMultiDottedExtensions#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SupportMultiDottedExtensions/VB/Form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイル ダイアログ ボックスのタイトルを取得または設定します。</summary>
+        <value>ファイル ダイアログ ボックスのタイトル。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、ダイアログ ボックスのタイトル バーに配置されます。 タイトルが、空の文字列の場合は、「名前を付けて保存」または"Open"のいずれかには、既定のタイトルが使用されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、初期化を示しています、 <xref:System.Windows.Forms.OpenFileDialog>、設定、<xref:System.Windows.Forms.FileDialog.Title%2A>と<xref:System.Windows.Forms.FileDialog.Filter%2A>プロパティ、およびユーザーが設定して複数のファイルを選択できるように、<xref:System.Windows.Forms.OpenFileDialog.Multiselect%2A?displayProperty=nameWithType>プロパティを true にします。 この例を実行するを含むフォームで、次のコードを貼り付けます、<xref:System.Windows.Forms.OpenFileDialog>という名前`OpenFileDialog1`と<xref:System.Windows.Forms.Button>という`fileButton`です。 呼び出す、`InitializeOpenFileDialog`フォームのコンス トラクターのメソッドまたは`Load`メソッドです。 この例もする必要があります、`Click`のイベント、`Button`の例で定義されたイベント ハンドラーに制御が接続されています。  
+  
+ [!code-cpp[System.Windows.Forms.FileDialog#6](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CPP/filedialogform.cpp#6)]
+ [!code-csharp[System.Windows.Forms.FileDialog#6](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/CS/filedialogform.cs#6)]
+ [!code-vb[System.Windows.Forms.FileDialog#6](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.FileDialog/VB/filedialogform.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイル ダイアログ ボックスのタイトルを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.FileDialog.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの文字列形式を示します。</summary>
+        <returns>このオブジェクトの文字列形式。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateNames">
+      <MemberSignature Language="C#" Value="public bool ValidateNames { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.FileDialog.ValidateNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダイアログ ボックスが有効な Win32 ファイル名だけを受け入れるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see langword="true" />ダイアログ ボックスが有効な Win32 ファイル名のみを受け入れる場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エディット コントロールが何も含まれていますが、スペースの場合、ユーザーがクリックすると**OK**が有効かどうか、ダイアログ ボックスは、ファイル名を返します。 テキストには、既定の拡張機能は追加されません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">プロパティを設定します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,207 @@
+<Type Name="ReflectionPermissionFlag" FullName="System.Security.Permissions.ReflectionPermissionFlag">
+  <TypeSignature Language="C#" Value="public enum ReflectionPermissionFlag" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ReflectionPermissionFlag extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.ReflectionPermissionFlag" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用できるを指定します、<see cref="N:System.Reflection" />と<see cref="N:System.Reflection.Emit" />名前空間。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙体を使って、<xref:System.Security.Permissions.ReflectionPermission>と<xref:System.Security.Permissions.ReflectionPermissionAttribute>クラスです。 ない場合は<xref:System.Security.Permissions.ReflectionPermission>が付与されるすべての型とメンバーに対するリフレクションを使用できるが、参照できる型およびメンバーに対してのみ呼び出し操作を許可します。 詳しくは、「[リフレクションに関するセキュリティ上の考慮事項](~/docs/framework/reflection-and-codedom/security-considerations-for-reflection.md)」をご覧ください。  
+  
+> [!CAUTION]
+>  <xref:System.Security.Permissions.ReflectionPermission>アクセスを提供できますを付与することお勧めをプライベート クラス メンバーに<xref:System.Security.Permissions.ReflectionPermission>のみ RestrictedMemberAccess フラグとその他の任意のフラグではなく、インターネット コードにします。  
+  
+ RestrictedMemberAccess フラグがで導入された、[!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)]です。 このフラグを使用するアプリケーションを対象する必要があります、[!INCLUDE[net_v35_long](~/includes/net-v35-long-md.md)]またはそれ以降。  
+  
+> [!IMPORTANT]
+>  AllFlags では、RestrictedMemberAccess フラグは含まれません。 この列挙体ですべてのフラグを含むマスクを取得するには、RestrictedMemberAccess を AllFlags の組み合わせを使用する必要があります。  
+  
+ 以降で、 [!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)]、ReflectionEmit フラグが不要になった、コードを出力する場合を除き、デバッグ シンボルが生成されます。 この機能を使用するアプリケーションを対象する必要があります、[!INCLUDE[net_v35_short](~/includes/net-v35-short-md.md)]またはそれ以降。  
+  
+ 以降で、 [!INCLUDE[dnprdnlong](~/includes/dnprdnlong-md.md)]、TypeInformation フラグが非パブリックの型とメンバーに反映させる必要はなくなりました。 フラグが残されています。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>列挙体の新しいインスタンスを初期化するために、<xref:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess>制限付きメンバー アクセスを実行する権限を表すクラスです。 この例は提供されている長い例の一部である、<xref:System.Security.Permissions.ReflectionPermissionFlag.AllFlags>クラスです。  
+  
+ インターネットのコードで RestrictedMemberAccess フラグを使用する方法を示す、例では、次を参照してください。[チュートリアル: 部分信頼シナリオでのコードの生成](~/docs/framework/reflection-and-codedom/walkthrough-emitting-code-in-partial-trust-scenarios.md)です。  
+  
+ [!code-csharp[System.Security.Permissions.ReflectionPermission#8](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.ReflectionPermission/CS/reflectionpermission.cs#8)]
+ [!code-vb[System.Security.Permissions.ReflectionPermission#8](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.ReflectionPermission/VB/reflectionpermission.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllFlags">
+      <MemberSignature Language="C#" Value="AllFlags" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag AllFlags = int32(7)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.AllFlags" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+          <see langword="TypeInformation" />, <see langword="MemberAccess" />, and <see langword="ReflectionEmit" /> are set. <see cref="F:System.Security.Permissions.ReflectionPermissionFlag.AllFlags" />含まれません<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MemberAccess">
+      <MemberSignature Language="C#" Value="MemberAccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag MemberAccess = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.MemberAccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>許可セットに関係なく、すべてのメンバーで呼び出す操作は許可します。 このフラグが設定されていない場合、呼び出し操作は、表示可能なメンバーでのみ許可されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFlags">
+      <MemberSignature Language="C#" Value="NoFlags" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag NoFlags = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.NoFlags" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型およびメンバーの列挙が許可されます。 呼び出し操作は、参照できる型およびメンバーで許可されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReflectionEmit">
+      <MemberSignature Language="C#" Value="ReflectionEmit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag ReflectionEmit = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグ シンボルの生成が許可されます。 以降で、 [!INCLUDE[net_v20sp1_long](~/includes/net-v20sp1-long-md.md)]、このフラグは、コードを出力する必要はなくなりました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RestrictedMemberAccess">
+      <MemberSignature Language="C#" Value="RestrictedMemberAccess" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag RestrictedMemberAccess = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.RestrictedMemberAccess" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>部分的に信頼されたコードに対して制限付きメンバー アクセスが提供します。 のみの許可セット、部分的に信頼できるコードが含まれますすべてのアクセス許可には、非パブリック型とアクセスされているメンバーを含むアセンブリの許可セットには部分的に信頼されたコードが非パブリックの型とメンバーにアクセスできます。 このフラグはの新機能、[!INCLUDE[net_v20SP1_short](~/includes/net-v20sp1-short-md.md)]です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeInformation">
+      <MemberSignature Language="C#" Value="TypeInformation" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.ReflectionPermissionFlag TypeInformation = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.ReflectionPermissionFlag.TypeInformation" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("not used anymore")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.ReflectionPermissionFlag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このフラグは今後使用しません。 フラグの型とメンバーを列挙してそのメタデータを確認する必要はありません。 代わりに、<see cref="F:System.Security.Permissions.ReflectionPermissionFlag.NoFlags" /> を使用してください。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

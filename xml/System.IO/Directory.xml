@@ -1,0 +1,3275 @@
+<Type Name="Directory" FullName="System.IO.Directory">
+  <TypeSignature Language="C#" Value="public static class Directory" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Directory extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IO.Directory" />
+  <AssemblyInfo>
+    <AssemblyName>System.IO.FileSystem</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ディレクトリやサブディレクトリを通じて、作成、移動、および列挙するための静的メソッドを公開します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  この型の .NET Framework ソース コードを表示するを参照してください。、[参照ソース](http://referencesource.microsoft.com/#mscorlib/system/io/directory.cs#b3ad5f0ba800bb28)です。 ソース コードをオンラインで参照、オフラインで表示、リファレンスをダウンロードおよび; デバッグ中にソース (パッチや更新を含む) をステップ参照してください[指示](http://referencesource.microsoft.com/)です。  
+  
+ 使用して、<xref:System.IO.Directory>コピー、移動、名前変更、作成、およびディレクトリを削除するなどの一般的な操作のクラスです。  
+  
+-   ディレクトリを作成するには、いずれかの操作を使用して、<xref:System.IO.Directory.CreateDirectory%2A>メソッドです。  
+  
+-   ディレクトリを削除するには、いずれかを使用、<xref:System.IO.Directory.Delete%2A>メソッドです。  
+  
+-   取得またはアプリの現在のディレクトリを設定を使用して、<xref:System.IO.Directory.GetCurrentDirectory%2A>または<xref:System.IO.Directory.SetCurrentDirectory%2A>メソッドです。  
+  
+-   操作する<xref:System.DateTime>に関連する情報の作成、アクセス、およびディレクトリの書き込みなどのメソッドの使用<xref:System.IO.Directory.SetLastAccessTime%2A>と<xref:System.IO.Directory.SetCreationTime%2A>です。  
+  
+ 静的メソッド、<xref:System.IO.Directory>クラスは、すべてのメソッドでセキュリティ チェックを実行します。 オブジェクトを何度も再利用しようとする場合は、対応するインスタンス メソッドを使用することを検討してください<xref:System.IO.DirectoryInfo>代わりに、セキュリティ チェックが常にではありませんが、必要があります。  
+  
+ 1 つだけのディレクトリに関連するアクションを実行する場合があります、静的なを使用する方が効率的<xref:System.IO.Directory>、対応するのではなく、メソッド<xref:System.IO.DirectoryInfo>インスタンス メソッドです。 ほとんど<xref:System.IO.Directory>メソッドが操作しているディレクトリへのパスを必要とします。  
+  
+> [!NOTE]
+>  文字列を受け入れるメンバーで`path`パラメーター、そのパスは、整形式である必要がありますか、例外が発生します。 たとえば、パスは完全修飾では、スペース ("c:\temp") で始まり場合、パス文字列いないトリミング、パスは形式が正しくないと見なされるため、例外が発生します。 さらに、パスまたはパスの組み合わせ完全修飾できない 2 回クリックします。 たとえば、"c:\temp c:\windows"も例外が発生します。 パス文字列を受け取るメソッドを使用する場合、パスが整形式であることを確認します。 詳細については、「<xref:System.IO.Path>」を参照してください。  
+  
+ パスを受け入れるメンバー ボックスで、パスは、ファイルまたはディレクトリに参照できます。 サーバーと共有名の完全なパス、相対パス、または汎用名前付け規則 (UNC) パスを使用することができます。 たとえば、次のすべては、有効なパスは。  
+  
+-   "c:\\\MyDir"C# の場合、または Visual Basic では、"c:\MyDir"です。  
+  
+-   "MyDir\\\MySubdir"C# の場合、または Visual Basic では、"MyDir\MySubDir"です。  
+  
+-   "\\\\\\\MyServer\\\MyShare"C# の場合、または"\\\MyServer\MyShare"Visual Basic でします。  
+  
+ 既定では、新しいディレクトリへの完全な読み取り/書き込みアクセスは、すべてのユーザーに与えられます。 ただし、アプリには、既存のディレクトリにアクセスする適切なセキュリティが必要です。  
+  
+ ディレクトリとサブディレクトリ、末尾がディレクトリ区切り記号にパス文字列のアクセス許可を要求します。 (たとえば、"C:\Temp\\"C:\Temp\ とそのすべてのサブディレクトリにアクセスを付与します)。特定のディレクトリに最後にピリオド パス文字列にのみアクセス許可を要求します。 (たとえば、"C:\Temp\\"。 C:\Temp にのみアクセスを付与\\ではなく、そのサブディレクトリです)。  
+  
+ 受け入れるメンバーで、`searchPattern`パラメーター、検索文字列をリテラル文字と 2 つのワイルドカード文字以外の任意の組み合わせにすることができます\*してください。 このパラメーターは、正規表現を認識しません。 詳細については、次を参照してください。、<xref:System.IO.Directory.EnumerateDirectories%28System.String%2CSystem.String%29>メソッドまたは他のメソッドを使用する、`searchPattern`パラメーター。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ <xref:System.IO.Directory>および<xref:System.IO.DirectoryInfo>で使用することはできません[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]アプリ。 ファイルやフォルダーにアクセスする方法については[!INCLUDE[win8_appstore_long](~/includes/win8-appstore-long-md.md)]アプリを参照してください[データ ファイルとファイル (Windows ストア アプリ) にアクセスする](http://msdn.microsoft.com/library/windows/apps/hh758319.aspx)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリからすべてのテキスト ファイルを取得し、新しいディレクトリに移動する方法を示します。 ファイルの移動元のディレクトリに存在しなくなります。  
+  
+ [!code-csharp[System.IO.Directory#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class2.cs#10)]
+ [!code-vb[System.IO.Directory#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class2.vb#10)]  
+  
+ 次の例で使用する方法、<xref:System.IO.Directory.EnumerateFiles%2A>ディレクトリからテキスト ファイルのコレクションを取得し、「例」が含まれているすべての行を検索するクエリでそのコレクションを使用するメソッド。  
+  
+ [!code-csharp[System.IO.Directory#11](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class3.cs#11)]
+ [!code-vb[System.IO.Directory#11](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class3.vb#11)]  
+  
+ 次の例では、ディレクトリとそのすべてのファイルを新しいディレクトリに移動する方法を示します。 元のディレクトリは存在しませんが移動した後。  
+  
+ [!code-csharp[System.IO.Directory#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class6.cs#14)]
+ [!code-vb[System.IO.Directory#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class6.vb#14)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CreateDirectory">
+      <MemberSignature Language="C#" Value="public static System.IO.DirectoryInfo CreateDirectory (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.DirectoryInfo CreateDirectory(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.CreateDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">作成するディレクトリ。</param>
+        <summary>既に存在している場合以外は、指定したパスにすべてのディレクトリとサブディレクトリを作成します。</summary>
+        <returns>指定したパスに存在するディレクトリを表すオブジェクト。 指定したパスにおいてディレクトリが既に存在するかどうかにかかわりなく、このオブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されていると、すべてのディレクトリ`path`か、既に存在している場合を除き、作成の一部`path`が無効です。 ディレクトリが既に存在すると、このメソッドは、新しいディレクトリを作成できませんが、それを返します、<xref:System.IO.DirectoryInfo>既存のディレクトリ オブジェクト。  
+  
+ `path`ファイル パスではなく、ディレクトリのパスを指定します。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを作成する前にパラメーター。  
+  
+ 書き込みアクセスのある共有上のリモート コンピューターにディレクトリを作成することができます。 UNC パスがサポートされています。次を指定するたとえば、 `path`: `\\2009\Archives\December` Visual basic でと`\\\\2009\\Archives\\December`C# の場合。  
+  
+ コロン (:) で、ディレクトリの作成はサポートされていませんし、により、`NotSupportedException`がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、作成し、指定されたディレクトリを削除します。  
+  
+ [!code-cpp[Dir_CreateDir#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_CreateDir/CPP/dir_createdir.cpp#1)]
+ [!code-csharp[Dir_CreateDir#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_CreateDir/CS/dir_createdir.cs#1)]
+ [!code-vb[Dir_CreateDir#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_CreateDir/VB/dir_createdir.vb#1)]  
+  
+ 現在のディレクトリが C:\Users\User1 C:\Users\User1\Public\Html ディレクトリを作成するには円記号が適切に解釈されるようにするのには次の呼び出しのいずれかを使用します。  
+  
+ Visual basic:  
+  
+```  
+Directory.CreateDirectory("Public\Html")   
+    Directory.CreateDirectory("\Users\User1\Public\Html")   
+    Directory.CreateDirectory("c:\Users\User1\Public\Html")  
+```  
+  
+ C# の場合:  
+  
+```  
+Directory.CreateDirectory("Public\\Html");  
+    Directory.CreateDirectory("\\Users\\User1\\Public\\Html");  
+    Directory.CreateDirectory("c:\\Users\\User1\\Public\\Html");  
+```  
+  
+ C++:  
+  
+```  
+Directory::CreateDirectory("Public\\Html");  
+    Directory::CreateDirectory("\\Users\\User1\\Public\\Html");  
+    Directory::CreateDirectory("c:\\Users\\User1\\Public\\Html");  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">指定されたディレクトリ<paramref name="path" />ファイルします。  
+  
+ -または-  
+  
+ ネットワーク名が不明です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ または  
+  
+ <paramref name="path" />プレフィックスは、またはコロン文字 (:) のみを含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ドライブのラベルの一部ではないコロン文字 (:) が含まれています ("c:\\") です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや、ファイルまたはディレクトリを作成します。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDirectory">
+      <MemberSignature Language="C#" Value="public static System.IO.DirectoryInfo CreateDirectory (string path, System.Security.AccessControl.DirectorySecurity directorySecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.DirectoryInfo CreateDirectory(string path, class System.Security.AccessControl.DirectorySecurity directorySecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.CreateDirectory(System.String,System.Security.AccessControl.DirectorySecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="directorySecurity" Type="System.Security.AccessControl.DirectorySecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">作成するディレクトリ。</param>
+        <param name="directorySecurity">ディレクトリに適用するアクセス制御。</param>
+        <summary>既に存在している場合以外は、指定したパスにすべてのディレクトリを作成し、指定した Windows セキュリティを適用します。</summary>
+        <returns>指定したパスに存在するディレクトリを表すオブジェクト。 指定したパスにおいてディレクトリが既に存在するかどうかにかかわりなく、このオブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドのオーバー ロードを使用すると、セキュリティが適用される前に、ディレクトリにアクセスできる可能性がないように、アクセス制御のディレクトリを作成します。  
+  
+ 指定されていると、すべてのディレクトリ、`path`か、既に存在している場合を除き、パラメーターを作成の一部`path`が無効です。 `path`ファイル パスではなく、ディレクトリのパスを指定します。 ディレクトリが既に存在すると、このメソッドは、新しいディレクトリを作成できませんが、それを返します、<xref:System.IO.DirectoryInfo>既存のディレクトリ オブジェクト。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを作成する前にパラメーター。  
+  
+ 書き込みアクセスのある共有上のリモート コンピューターにディレクトリを作成することができます。 UNC パスがサポートされています。次を指定するたとえば、 `path`: `\\2009\Archives\December` Visual basic でと`\\\\2009\\Archives\\December`C# の場合。  
+  
+ コロン (:) で、ディレクトリの作成はサポートされていませんし、`NotSupportedException`がスローされます。  
+  
+   
+  
+## Examples  
+ 次の例では、次の 2 つのユーザー アカウントのアクセス規則を新しいディレクトリを作成します。  
+  
+ [!code-csharp[System.IO.Directory#15](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class7.cs#15)]
+ [!code-vb[System.IO.Directory#15](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class7.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">指定されたディレクトリ<paramref name="path" />ファイルします。  
+  
+ -または-  
+  
+ ネットワーク名が不明です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ -または-  
+  
+ <paramref name="path" />プレフィックスは、またはコロン文字 (:) のみを含んでいます。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="path" />ドライブのラベルの一部ではないコロン文字 (:) が含まれています ("c:\\") です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りや書き込みファイルとディレクトリとコピー先ディレクトリにアクセスするためです。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" />セキュリティ アクション。<see cref="F:System.Security.Permissions.SecurityAction.Demand" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public static void Delete (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.Delete(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除する空のディレクトリの名前。 このディレクトリは、書き込み可能で空である必要があります。</param>
+        <summary>指定されたパスから空のディレクトリを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの動作と同じように<xref:System.IO.Directory.Delete%28System.String%2CSystem.Boolean%29>で`false`2 番目のパラメーターを指定します。  
+  
+ `path`パラメーターは相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを削除する前にパラメーター。  
+  
+ このメソッドは、<xref:System.IO.IOException>でディレクトリが指定されている場合、`path`パラメーターには、ファイルまたはサブディレクトリが含まれています。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 場合によっては、ファイル エクスプ ローラーで開く、指定したディレクトリがある場合に、<xref:System.IO.Directory.Delete%2A>メソッドは、それを削除できない可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例では、新しいディレクトリとサブディレクトリを作成し、サブディレクトリのみを削除する方法を示します。  
+  
+ [!code-csharp[System.IO.Directory.Delete#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.delete/cs/class1.cs#1)]
+ [!code-vb[System.IO.Directory.Delete#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.delete/vb/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException"><paramref name="path" /> で指定された同じ名前と場所を持つファイルが存在します。  
+  
+ または  
+  
+ ディレクトリはアプリケーションの現在の作業ディレクトリです。  
+  
+ または  
+  
+ <paramref name="path" /> によって指定されたディレクトリは空ではありません。  
+  
+ または  
+  
+ ディレクトリが読み取り専用になっているか、または読み取り専用のファイルが含まれています。  
+  
+ または  
+  
+ ディレクトリは別のプロセスによって使用されています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="path" /> が存在しないか、見つかりませんでした。  
+  
+ または  
+  
+ 指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public static void Delete (string path, bool recursive);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Delete(string path, bool recursive) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.Delete(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="recursive" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="path">削除するディレクトリの名前。</param>
+        <param name="recursive">
+          <see langword="true" />ディレクトリ、サブディレクトリ、および内のファイルを削除する<c>パス</c>、それ以外の<see langword="false" />します。</param>
+        <summary>指定したディレクトリと、特に指定されている場合はディレクトリ内の任意のサブディレクトリおよびファイルを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`パラメーターは相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを削除する前にパラメーター。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 場合、`recursive`パラメーターは`true`ユーザーは、現在のディレクトリもすべてのサブディレクトリに対する書き込みアクセス許可が必要です。  
+  
+ シンボリック リンクやマウント ポイントなどの再解析ポイントを格納するディレクトリを削除するときに、このメソッドの動作は若干異なります。 再解析ポイントが、ディレクトリの場合は、マウント ポイントなどマウントが解除され、マウント ポイントが削除されます。 このメソッドは、再解析ポイントを介しては再帰しません。 再解析ポイントが削除された場合は、再解析ポイントは、ファイルへのシンボリック リンクは、シンボリック リンクのターゲットではなくとします。  
+  
+ 場合によっては、ファイル エクスプ ローラーで開く、指定したディレクトリがある場合に、<xref:System.IO.Directory.Delete%2A>メソッドは、それを削除できない可能性があります。  
+  
+   
+  
+## Examples  
+ 再帰的がすべての新しい項目を削除し、および次の例は、サブディレクトリに、新しいディレクトリ、サブディレクトリ、およびファイルを作成する方法を示します。  
+  
+ [!code-csharp[System.IO.Directory.Delete#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.delete/cs/class2.cs#2)]
+ [!code-vb[System.IO.Directory.Delete#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.delete/vb/class2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException"><paramref name="path" /> で指定された同じ名前と場所を持つファイルが存在します。  
+  
+ または  
+  
+ <paramref name="path" /> で指定されたディレクトリが読み取り専用です。または、<paramref name="recursive" /> が <see langword="false" /> であり、<paramref name="path" /> は空のディレクトリではありません。  
+  
+ または  
+  
+ ディレクトリはアプリケーションの現在の作業ディレクトリです。  
+  
+ または  
+  
+ ディレクトリに読み取り専用のファイルが含まれています。  
+  
+ または  
+  
+ ディレクトリは別のプロセスによって使用されています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          <paramref name="path" /> が存在しないか、見つかりませんでした。  
+  
+ または  
+  
+ 指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateDirectories (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateDirectories(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateDirectories(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定されたパスに存在するディレクトリ名の列挙可能なコレクションを返します。</summary>
+        <returns><paramref name="path" /> で指定したディレクトリ内にあるディレクトリの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の相対パスまたは絶対パス情報を指定することができます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。 返されたディレクトリ名が付きます。 で指定された値、`path`パラメーター。 相対パスを指定する場合など、`path`パラメーター、返されたディレクトリ名には、相対パスにが含まれます。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したパス内の最上位のディレクトリを列挙します。  
+  
+ [!code-csharp[System.IO.EnumDirs1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.enumdirs1/cs/program.cs#1)]
+ [!code-vb[System.IO.EnumDirs1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.enumdirs1/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateDirectories (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateDirectories(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateDirectories(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のディレクトリの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <summary>指定されたパスから、検索パターンに一致するディレクトリ名の列挙可能なコレクションを返します。</summary>
+        <returns>指定した検索パターンに一致し、<paramref name="path" /> で指定したディレクトリの中にあるディレクトリの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 内の相対パスまたは絶対パス情報を指定することができます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。 返されたディレクトリ名が付きます。 で指定された値、`path`パラメーター。 相対パスを指定する場合など、`path`パラメーター、返されたディレクトリ名には、相対パスにが含まれます。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定されたパスに指定した検索パターンに一致する最上位のディレクトリを列挙します。  
+  
+ [!code-csharp[System.IO.EnumDirs2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.enumdirs2/cs/program.cs#1)]
+ [!code-vb[System.IO.EnumDirs2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.enumdirs2/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateDirectories">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateDirectories (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateDirectories(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateDirectories(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のディレクトリの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。  
+  
+ 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定されたパスにあるディレクトリのうち、検索パターンに一致するディレクトリ名の列挙可能なコレクションを返します。オプションでサブディレクトリを検索対象にすることができます。</summary>
+        <returns>指定した検索パターンおよびオプションに一致し、<paramref name="path" /> で指定したディレクトリの中にあるディレクトリの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置に正確に 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 内の相対パスまたは絶対パス情報を指定することができます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。 返されたディレクトリ名が付きます。 で指定された値、`path`パラメーター。 相対パスを指定する場合など、`path`パラメーター、返されたディレクトリ名には、相対パスにが含まれます。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した検索パターンに一致する指定されたパスにディレクトリを列挙します。 使用して、`searchOption`パラメーターをすべてのサブディレクトリを検索に含める必要があるかを指定します。  
+  
+ [!code-csharp[System.IO.EnumDirs3#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.enumdirs3/cs/program.cs#1)]
+ [!code-vb[System.IO.EnumDirs3#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.enumdirs3/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFiles (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFiles(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFiles(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定されたパスに存在するファイル名の列挙可能なコレクションを返します。</summary>
+        <returns><paramref name="path" /> で指定したディレクトリ内にあるファイルの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリ内のすべてのファイルを取得し、新しいディレクトリに移動する方法を示します。 ファイルの移動元のディレクトリに存在しなくなります。  
+  
+ [!code-csharp[System.IO.Directory#12](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class4.cs#12)]
+ [!code-vb[System.IO.Directory#12](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class4.vb#12)]  
+  
+ ファイルの各の行を読み取り、次の例は、指定したディレクトリ内のファイルを列挙し、文字列"Europe"が含まれている場合、行を表示します。  
+  
+ [!code-csharp[System.IO.Directory.EnumFiles#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.enumfiles/cs/program.cs#1)]
+ [!code-vb[System.IO.Directory.EnumFiles#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.enumfiles/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFiles (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFiles(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFiles(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイルの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <summary>指定されたパスから、検索パターンに一致するファイル名の列挙可能なコレクションを返します。</summary>
+        <returns>指定した検索パターンに一致し、<paramref name="path" /> で指定したディレクトリの中にあるファイルの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリ内のすべてのテキスト ファイルを取得し、新しいディレクトリに移動する方法を示します。 ファイルの移動元のディレクトリに存在しなくなります。  
+  
+ [!code-csharp[System.IO.Directory#10](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class2.cs#10)]
+ [!code-vb[System.IO.Directory#10](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class2.vb#10)]  
+  
+ ファイルの各の行を読み取り、次の例は、.txt 拡張子を持つ、指定したディレクトリ内のファイルを列挙し、文字列"Europe"が含まれている場合、行を表示します。  
+  
+ [!code-csharp[System.IO.Directory.EnumFiles2#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.enumfiles2/cs/program.cs#1)]
+ [!code-vb[System.IO.Directory.EnumFiles2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.enumfiles2/vb/module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFiles">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFiles (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFiles(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFiles(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイルの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。  
+  
+ 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定されたパスにあるファイルのうち、検索パターンに一致するファイル名の列挙可能なコレクションを返します。オプションでサブディレクトリを検索対象にすることができます。</summary>
+        <returns>指定した検索パターンおよびオプションに一致し、<paramref name="path" /> で指定したディレクトリの中にあるファイルの完全名 (パスを含む) から成る列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリとそのサブディレクトリ内のすべてのテキスト ファイルを取得し、新しいディレクトリに移動する方法を示します。 ファイルの移動元のディレクトリに存在しなくなります。  
+  
+ [!code-csharp[System.IO.Directory#13](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class5.cs#13)]
+ [!code-vb[System.IO.Directory#13](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class5.vb#13)]  
+  
+ ファイルの各行を読み取り、次の例を再帰的には、.txt 拡張子を持つすべてのファイルを列挙し、文字列"Microsoft"が含まれている場合は、行を表示します。  
+  
+ [!code-csharp[System.IO.Directory.EnumerateFiles#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.directory.enumeratefiles/cs/program.cs#1)]
+ [!code-vb[System.IO.Directory.EnumerateFiles#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.directory.enumeratefiles/vb/program.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFileSystemEntries (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFileSystemEntries(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFileSystemEntries(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定されたパスに存在するファイル名とディレクトリ名の列挙可能なコレクションを返します。</summary>
+        <returns><paramref name="path" /> で指定されたディレクトリ内のファイル システム エントリの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFileSystemEntries%2A>と<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFileSystemEntries%2A>、コレクション全体が返される前に、エントリのコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFileSystemEntries%2A>、配列にアクセスする前に返されるエントリの配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFileSystemEntries (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFileSystemEntries(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFileSystemEntries(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイル システム エントリの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <summary>指定されたパスから、検索パターンに一致するファイル名とディレクトリ名の列挙可能なコレクションを返します。</summary>
+        <returns><paramref name="path" /> で指定されたディレクトリに存在するファイル システム エントリのうち、指定した検索パターンに一致するファイル システム エントリの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`.  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFileSystemEntries%2A>と<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFileSystemEntries%2A>、コレクション全体が返される前に、エントリのコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFileSystemEntries%2A>、配列にアクセスする前に返されるエントリの配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IEnumerable&lt;string&gt; EnumerateFileSystemEntries (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IEnumerable`1&lt;string&gt; EnumerateFileSystemEntries(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.EnumerateFileSystemEntries(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイル システム エントリと照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。  
+  
+ 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定されたパスにあるディレクトリのうち、検索パターンに一致するファイル名およびディレクトリ名の列挙可能なコレクションを返します。オプションでサブディレクトリを検索対象にすることができます。</summary>
+        <returns><paramref name="path" /> で指定されたディレクトリに存在するファイル システム エントリのうち、指定した検索パターンおよびオプションに一致するファイル システム エントリの列挙可能なコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ <xref:System.IO.Directory.EnumerateFileSystemEntries%2A>と<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFileSystemEntries%2A>、コレクション全体が返される前に、エントリのコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFileSystemEntries%2A>、配列にアクセスする前に返されるエントリの配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるコレクションはキャッシュされません。呼び出しごとに、<xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>コレクションでは新しい列挙体を開始します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.Exists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">テストするパス。</param>
+        <summary>指定したパスがディスク上の既存のディレクトリを参照しているかどうかを確認します。</summary>
+        <returns>
+          <paramref name="path" /> が既存のディレクトリを参照している場合は <see langword="true" />。ディレクトリが存在していない場合や、指定したディレクトリが存在するかどうかを判断しようとしたときにエラーが発生した場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリが存在するかどうかをチェックする前にパラメーター。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ ディレクトリに最小の読み取り専用権限を持たない場合、<xref:System.IO.Directory.Exists%2A>メソッドが返す`false`です。  
+  
+ <xref:System.IO.Directory.Exists%2A>メソッドを返します。 `false` 、指定したファイルが存在する場合を判断するときにエラーが発生した場合。 これは無効な文字または文字が多すぎます、失敗、または見つからないディスクでは、ファイル名を渡すなどの例外が発生する状況で発生する、呼び出し元には、ファイルの読み取りアクセス許可がない場合またはします。  
+  
+   
+  
+## Examples  
+ 次の例では、コマンドラインでファイルまたはディレクトリ名の配列を受け取る、名前の種類は、し、適切な処理を決定します。  
+  
+ [!code-cpp[Recursive file finder#2](~/samples/snippets/cpp/VS_Snippets_CLR/Recursive file finder/CPP/directorylisting.cpp#2)]
+ [!code-csharp[Recursive file finder#2](~/samples/snippets/csharp/VS_Snippets_CLR/Recursive file finder/CS/directorylisting.cs#2)]
+ [!code-vb[Recursive file finder#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Recursive file finder/VB/directorylisting.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public static System.Security.AccessControl.DirectorySecurity GetAccessControl (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.AccessControl.DirectorySecurity GetAccessControl(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetAccessControl(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.DirectorySecurity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">含むディレクトリへのパス、<see cref="T:System.Security.AccessControl.DirectorySecurity" />ファイルのアクセス制御リスト (ACL) 情報を記述するオブジェクト。</param>
+        <summary>取得、<see cref="T:System.Security.AccessControl.DirectorySecurity" />指定したディレクトリのアクセス制御リスト (ACL) エントリをカプセル化するオブジェクト。</summary>
+        <returns>によって記述されるファイルの規則、アクセス制御をカプセル化するオブジェクト、<paramref name="path" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Directory.GetAccessControl%2A>ディレクトリのアクセス制御リスト (ACL) エントリを取得します。  
+  
+ ACL には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ 環境では NTFS、<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>場合は、ユーザーがあるユーザーに付与されます<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親フォルダーに対する権限。 拒否する<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>、拒否<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親ディレクトリにします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Directory.GetAccessControl%2A>と<xref:System.IO.Directory.SetAccessControl%2A>アクセスを追加するメソッドが制御リスト (ACL) エントリと、ディレクトリから ACL エントリを削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows 2000 以降ではありません。</exception>
+        <exception cref="T:System.SystemException">ディレクトリが見つからなかったなどのシステム レベルのエラーが発生しました。 特定の例外のサブクラスである可能性があります<see cref="T:System.SystemException" />です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="path" />パラメーターは読み取り専用であるディレクトリを指定します。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> 、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 要求します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public static System.Security.AccessControl.DirectorySecurity GetAccessControl (string path, System.Security.AccessControl.AccessControlSections includeSections);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.AccessControl.DirectorySecurity GetAccessControl(string path, valuetype System.Security.AccessControl.AccessControlSections includeSections) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetAccessControl(System.String,System.Security.AccessControl.AccessControlSections)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.DirectorySecurity</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="includeSections" Type="System.Security.AccessControl.AccessControlSections" />
+      </Parameters>
+      <Docs>
+        <param name="path">含むディレクトリへのパス、<see cref="T:System.Security.AccessControl.DirectorySecurity" />ファイルのアクセス制御リスト (ACL) 情報を記述するオブジェクト。</param>
+        <param name="includeSections">取得するアクセス制御リスト (ACL) の情報の型を指定する <see cref="T:System.Security.AccessControl.AccessControlSections" /> 値のいずれか。</param>
+        <summary>取得、<see cref="T:System.Security.AccessControl.DirectorySecurity" />指定した型の指定したディレクトリのアクセス制御リスト (ACL) エントリをカプセル化するオブジェクト。</summary>
+        <returns>によって記述されるファイルの規則、アクセス制御をカプセル化するオブジェクト、<paramref name="path" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.IO.Directory.GetAccessControl%2A>ディレクトリのアクセス制御リスト (ACL) エントリを取得します。  
+  
+ ACL には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ 環境では NTFS、<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>場合は、ユーザーがあるユーザーに付与されます<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親フォルダーに対する権限。 拒否する<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>、拒否<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親ディレクトリにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="path" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">ディレクトリを開くときに、I/O エラーが発生しました。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows 2000 以降ではありません。</exception>
+        <exception cref="T:System.SystemException">ディレクトリが見つからなかったなどのシステム レベルのエラーが発生しました。 特定の例外のサブクラスである可能性があります<see cref="T:System.SystemException" />です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException"><paramref name="path" />パラメーターは読み取り専用であるディレクトリを指定します。  
+  
+ または  
+  
+ この操作は、現在のプラットフォームではサポートされていません。  
+  
+ または  
+  
+ 呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> 、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 要求します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreationTime">
+      <MemberSignature Language="C#" Value="public static DateTime GetCreationTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetCreationTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetCreationTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ディレクトリのパス。</param>
+        <summary>ディレクトリの作成日時を取得します。</summary>
+        <returns>指定したディレクトリの作成日時に設定された構造体。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ このメソッドは<xref:System.IO.File.GetCreationTime%2A?displayProperty=nameWithType>します。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定したディレクトリの作成時刻を取得します。  
+  
+ [!code-cpp[Dir_GetCreation#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetCreation/CPP/dir_getcreation.cpp#1)]
+ [!code-csharp[Dir_GetCreation#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetCreation/CS/dir_getcreation.cs#1)]
+ [!code-vb[Dir_GetCreation#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetCreation/VB/dir_getcreation.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreationTimeUtc">
+      <MemberSignature Language="C#" Value="public static DateTime GetCreationTimeUtc (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetCreationTimeUtc(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetCreationTimeUtc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ディレクトリのパス。</param>
+        <summary>世界協定時刻 (UTC: Coordinated Universal Time) 形式でのディレクトリの作成日時を取得します。</summary>
+        <returns>指定したディレクトリの作成日時に設定された構造体。 この値は UTC 時刻で表現されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC)。  
+  
+ このメソッドを使用して、世界協定時刻 (UTC) に基づいて、ディレクトリの作成時刻を取得します。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentDirectory">
+      <MemberSignature Language="C#" Value="public static string GetCurrentDirectory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetCurrentDirectory() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetCurrentDirectory" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アプリケーションの現在の作業ディレクトリを取得します。</summary>
+        <returns>文字列を現在の作業ディレクトリのパスを格納して、円記号が付いていません (\\)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のディレクトリとは異なりますが、プロセスが開始された元のディレクトリです。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ `GetCurrentDirectory` メソッドの使用方法を次の例に示します。  
+  
+ [!code-cpp[Dir_GetCurDir#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetCurDir/CPP/dir_getcurdir.cpp#1)]
+ [!code-csharp[Dir_GetCurDir#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetCurDir/CS/dir_getcurdir.cs#1)]
+ [!code-vb[Dir_GetCurDir#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetCurDir/VB/dir_getcurdir.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.NotSupportedException">オペレーティング システムは、現在のディレクトリの機能が装備されていない Windows CE です。  
+  
+ このメソッドは、.NET Compact Framework で使用できますが、現在サポートされていません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public static string[] GetDirectories (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetDirectories(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetDirectories(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定されたディレクトリ内のサブディレクトリの名前 (パスを含む) を返します。</summary>
+        <returns>指定したパス内のサブディレクトリの完全名 (パスを含む) の配列。または、ディレクトリが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは同じ<xref:System.IO.Directory.GetDirectories%28System.String%2CSystem.String%29>がアクタリスク (\*)、検索パターンと指定すると、これを返しますのすべてのサブディレクトリ。サブディレクトリを検索する必要がある場合、<xref:System.IO.Directory.GetDirectories%28System.String%2CSystem.String%2CSystem.IO.SearchOption%29>に一致するサブディレクトリの検索を指定することにより、メソッド、`searchOption`パラメーター。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ `path`パラメーターは、相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ このメソッドによって返された名前が付きます。 で提供されるディレクトリ情報`path`です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、コマンドラインでファイルまたはディレクトリ名の配列を受け取る、名前の種類は、し、適切な処理を決定します。  
+  
+ [!code-cpp[Recursive file finder#1](~/samples/snippets/cpp/VS_Snippets_CLR/Recursive file finder/CPP/directorylisting.cpp#1)]
+ [!code-csharp[Recursive file finder#1](~/samples/snippets/csharp/VS_Snippets_CLR/Recursive file finder/CS/directorylisting.cs#1)]
+ [!code-vb[Recursive file finder#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Recursive file finder/VB/directorylisting.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public static string[] GetDirectories (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetDirectories(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetDirectories(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のサブディレクトリの名前と照合する検索文字列<c>パス</c>です。 このパラメーターは有効なリテラルのパスとワイルドカード文字の組み合わせを含めることができますが、正規表現をサポートしていません。</param>
+        <summary>指定したディレクトリ内の指定した検索パターンに一致するサブディレクトリ名 (パスを含む) を返します。</summary>
+        <returns>指定したディレクトリ内の検索パターンに一致するサブディレクトリの完全名 (パスを含む) の配列。または、ディレクトリが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した検索パターンに一致する、指定したディレクトリの直下のすべてのサブディレクトリを返します。 指定したディレクトリは、サブディレクトリを持たないかどうか、またはに一致するサブディレクトリの`searchPattern`パラメーター、このメソッドは、空の配列を返します。 最上位のディレクトリのみが検索されます。 同様のサブディレクトリを検索する場合を使用して、<xref:System.IO.Directory.GetDirectories%28System.String%2CSystem.String%2CSystem.IO.SearchOption%29>メソッドを指定して<xref:System.IO.SearchOption.AllDirectories>で、`searchOption`パラメーター。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ `path`パラメーターの相対パスまたは絶対パス情報を指定でき、小文字は区別されません。  相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した文字で始まるパスでディレクトリの数をカウントします。  
+  
+ [!code-cpp[Dir_GetDirs2#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetDirs2/CPP/dir_getdirs2.cpp#1)]
+ [!code-csharp[Dir_GetDirs2#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetDirs2/CS/dir_getdirs2.cs#1)]
+ [!code-vb[Dir_GetDirs2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetDirs2/VB/dir_getdirs2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 使用して無効な文字を照会する<see cref="M:System.IO.Path.GetInvalidPathChars" />です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" />有効なパターンを含んでいません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectories">
+      <MemberSignature Language="C#" Value="public static string[] GetDirectories (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetDirectories(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetDirectories(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のサブディレクトリの名前と照合する検索文字列<c>パス</c>です。 このパラメーターは有効なリテラルのパスとワイルドカード文字の組み合わせを含めることができますが、正規表現をサポートしていません。</param>
+        <param name="searchOption">検索操作にすべてのサブディレクトリを含めるのか、または現在のディレクトリのみを含めるのかを指定する列挙値の 1 つ。</param>
+        <summary>現在のディレクトリ内で、指定された検索パターンに一致するサブディレクトリの名前 (パスを含む) を返します。オプションで、サブディレクトリを検索対象にすることができます。</summary>
+        <returns>指定した条件に一致するサブディレクトリの完全名 (パスを含む) の配列。または、ディレクトリが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`パラメーターの相対パスまたは絶対パス情報を指定でき、小文字は区別されません。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+ <xref:System.IO.Directory.EnumerateDirectories%2A>と<xref:System.IO.Directory.GetDirectories%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateDirectories%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetDirectories%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateDirectories%2A>効率的であることができます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリのパスで指定された文字で始まるの数をカウントします。 最上位レベルのディレクトリのみが検索されます。  
+  
+ [!code-csharp[Dir_GetDirs2#2](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetDirs2/CS/dir_getdirs3.cs#2)]
+ [!code-vb[Dir_GetDirs2#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetDirs2/VB/dir_getdirs3.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大文字数を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙値:<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDirectoryRoot">
+      <MemberSignature Language="C#" Value="public static string GetDirectoryRoot (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string GetDirectoryRoot(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetDirectoryRoot(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">ファイルまたはディレクトリのパス。</param>
+        <summary>指定したパスのボリューム情報、ルート情報、またはその両方を返します。</summary>
+        <returns>指定したパスのボリューム情報、ルート情報、またはその両方を含む文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの完全修飾パス名を取得`path`によって返されるように、 <xref:System.IO.Path.GetFullPath%2A>、ルート ディレクトリ情報を返すとします。 指定されたパスが存在する必要はありません。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のディレクトリを設定し、ディレクトリのルートを表示する方法を示します。  
+  
+ [!code-cpp[System.IO.DirectoryRoot#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.DirectoryRoot/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.DirectoryRoot#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DirectoryRoot/CS/example.cs#1)]
+ [!code-vb[System.IO.DirectoryRoot#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DirectoryRoot/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会する<see cref="M:System.IO.Path.GetInvalidPathChars" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public static string[] GetFiles (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFiles(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFiles(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定したディレクトリ内のファイルの名前 (パスを含む) を返します。</summary>
+        <returns>指定したディレクトリ内のファイルの完全名 (パスを含む) の配列。または、ファイルが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 返されるファイル名が追加されますを指定された`path`パラメーター。  
+  
+ このメソッドと同じ<xref:System.IO.Directory.GetFiles%28System.String%2CSystem.String%29>がアクタリスク (\*)、検索パターンと指定します。  
+  
+ `path`パラメーターは、相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 返されるファイル名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.IO.Directory.GetFiles%2A>ユーザー指定の場所からファイル名を返すメソッド。 例は、このメソッドに一般的な catch すべてエラーに構成されます。  
+  
+ [!code-cpp[Recursive file finder#1](~/samples/snippets/cpp/VS_Snippets_CLR/Recursive file finder/CPP/directorylisting.cpp#1)]
+ [!code-csharp[Recursive file finder#1](~/samples/snippets/csharp/VS_Snippets_CLR/Recursive file finder/CS/directorylisting.cs#1)]
+ [!code-vb[Recursive file finder#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Recursive file finder/VB/directorylisting.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。  
+  
+ または  
+  
+ ネットワーク エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 正しくない文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが見つからないか正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public static string[] GetFiles (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFiles(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFiles(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイルの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <summary>指定したディレクトリ内の指定した検索パターンに一致するファイル名 (パスを含む) を返します。</summary>
+        <returns>指定したディレクトリ内の指定した検索パターンに一致するファイルの完全名 (パスを含む) の配列。または、ファイルが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるファイル名が追加されますを指定された`path`パラメーターと、返されるファイル名の順序は保証されません。 を使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+> [!NOTE]
+>  検索パターンに似ていますので、このメソッドは、8.3 ファイル名の形式と長いファイル名の形式の両方を持つファイル名に対してチェックしない"\*1\*.txt"予期しないファイル名を返す可能性があります。 などの検索パターンを使用して"\*1\*.txt"と同等の 8.3 ファイル名の形式が"LONGFI~1.TXT"であるために、"longfilename.txt"を返します。  
+  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ `path`パラメーターは、相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した文字で始まるファイルの数をカウントします。  
+  
+ [!code-cpp[Dir_GetFiles2#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetFiles2/CPP/dir_getfiles2.cpp#1)]
+ [!code-csharp[Dir_GetFiles2#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetFiles2/CS/dir_getfiles2.cs#1)]
+ [!code-vb[Dir_GetFiles2#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetFiles2/VB/dir_getfiles2.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。  
+  
+ または  
+  
+ ネットワーク エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 使用して無効な文字を照会する<see cref="M:System.IO.Path.GetInvalidPathChars" />です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" />有効なパターンを含んでいません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが見つからないか正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFiles">
+      <MemberSignature Language="C#" Value="public static string[] GetFiles (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFiles(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFiles(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">内のファイルの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <param name="searchOption">検索操作にすべてのサブディレクトリを含めるのか、または現在のディレクトリのみを含めるのかを指定する列挙値の 1 つ。</param>
+        <summary>指定したディレクトリの中から、指定した検索パターンに一致し、サブディレクトリを検索するかどうかを決定する値を持つファイル名 (パスを含む) を返します。</summary>
+        <returns>指定したディレクトリ内の指定した検索パターンおよびオプションに一致するファイルの完全名 (パスを含む) の配列。または、ファイルが見つからない場合は空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるファイル名は指定されたパラメーターに追加されます`path`し、返されるファイル名の順序は保証されません。 使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返し、"file*.txt"の検索パターンには、両方のファイルが返されます。  
+  
+> [!NOTE]
+>  検索パターンに似ていますので、このメソッドは、8.3 ファイル名の形式と長いファイル名の形式の両方を持つファイル名に対してチェックしない"\*1\*.txt"予期しないファイル名を返す可能性があります。 などの検索パターンを使用して"\*1\*.txt"と同等の 8.3 ファイル名の形式が"LONGFI~1.TXT"であるために、"longfilename.txt"を返します。  
+  
+ <xref:System.IO.Directory.EnumerateFiles%2A>と<xref:System.IO.Directory.GetFiles%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFiles%2A>、コレクション全体が返される前に、名前のコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFiles%2A>、配列にアクセスする前に返される名前の配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ ファイル名には、完全なパスが含まれます。  
+  
+ `path`パラメーターは、相対パスまたは絶対パス情報を指定できます。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会する、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchpattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが見つからないか正しくありません (たとえば、マップされていないドライブ上のパスなど)。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。  
+  
+ または  
+  
+ ネットワーク エラーが発生しました。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static string[] GetFileSystemEntries (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFileSystemEntries(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFileSystemEntries(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <summary>指定したパス内のすべてのファイル名とサブディレクトリ名を返します。</summary>
+        <returns>指定したディレクトリ内ファイル名またはサブディレクトリ名の配列。ファイルやサブディレクトリが見つからない場合は、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるファイルとディレクトリ名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ <xref:System.IO.Directory.EnumerateFileSystemEntries%2A>と<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFileSystemEntries%2A>、コレクション全体が返される前に、エントリのコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFileSystemEntries%2A>、配列にアクセスする前に返されるエントリの配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ このメソッドと同じ<xref:System.IO.Directory.GetFileSystemEntries%2A>がアクタリスク (\*)、検索パターンと指定します。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Directory.GetFileSystemEntries%2A>コンソールに配列の文字列の各メソッドですべてのファイルとユーザー指定の場所と出力内にあるサブディレクトリの名前を持つ文字列の配列を設定します。 例は、このメソッドに一般的な catch すべてエラーに構成されます。  
+  
+ [!code-cpp[System.IO.Directory#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Directory/CPP/class1.cpp#1)]
+ [!code-csharp[System.IO.Directory#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class1.cs#1)]
+ [!code-vb[System.IO.Directory#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会する<see cref="M:System.IO.Path.GetInvalidPathChars" />です。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static string[] GetFileSystemEntries (string path, string searchPattern);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFileSystemEntries(string path, string searchPattern) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFileSystemEntries(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">ファイルおよびディレクトリの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <summary>指定されたパスから、検索パターンに一致するファイル名とディレクトリ名の配列を返します。</summary>
+        <returns>指定した検索条件に一致するファイル名またはディレクトリ名の配列。ファイルやディレクトリが見つからない場合は、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるファイルとディレクトリ名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドですべての名前を持つ文字列の配列を設定するファイルの特定の場所にユーザーが指定したフィルターに一致して、コンソールに、配列内の各文字列を出力します。 例は、このメソッドに一般的な catch すべてエラーに構成されます。  
+  
+ [!code-cpp[System.IO.Directory#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Directory/CPP/class1.cpp#2)]
+ [!code-csharp[System.IO.Directory#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class1.cs#2)]
+ [!code-vb[System.IO.Directory#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class1.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会する、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。  
+  
+ または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> または <paramref name="searchPattern" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたパスが正しくありません (たとえば、マップされていないドライブにあるなど)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">現在のディレクトリのパス情報にアクセスします。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFileSystemEntries">
+      <MemberSignature Language="C#" Value="public static string[] GetFileSystemEntries (string path, string searchPattern, System.IO.SearchOption searchOption);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetFileSystemEntries(string path, string searchPattern, valuetype System.IO.SearchOption searchOption) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetFileSystemEntries(System.String,System.String,System.IO.SearchOption)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="searchPattern" Type="System.String" />
+        <Parameter Name="searchOption" Type="System.IO.SearchOption" />
+      </Parameters>
+      <Docs>
+        <param name="path">検索するディレクトリの相対パスまたは絶対パス。 この文字列の大文字と小文字は区別されません。</param>
+        <param name="searchPattern">ファイルおよびディレクトリの名前と照合する検索文字列<c>パス</c>です。  このパラメーターは有効なリテラル パスとワイルドカードの組み合わせを含めることができます (* と?) 文字が、正規表現はサポートしません。</param>
+        <param name="searchOption">検索操作に現在のディレクトリのみを含めるのか、またはすべてのサブディレクトリを含めるのかを指定する列挙値の 1 つ。  
+  
+ 既定値は <see cref="F:System.IO.SearchOption.TopDirectoryOnly" /> です。</param>
+        <summary>指定されたパスにあるファイルおよびディレクトリのうち、検索パターンに一致するすべてのファイル名およびディレクトリ名の配列を返します。オプションでサブディレクトリを検索対象にすることができます。</summary>
+        <returns>指定した検索条件に一致するファイル名またはディレクトリ名の配列。ファイルやディレクトリが見つからない場合は、空の配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるファイルとディレクトリ名の順序は保証されません。使用して、<xref:System.Array.Sort%2A>メソッドの特定の並べ替え順序が必要な場合です。  
+  
+ `searchPattern`リテラルのパスとワイルドカード文字の組み合わせが可能ですが、正規表現をサポートしていません。 次のワイルドカードの指定子が許可される`searchPattern`です。  
+  
+|ワイルドカードの指定子|一致件数|  
+|------------------------|-------------|  
+|\*(アスタリスク付き)|その位置に 0 個以上の文字です。|  
+|? (疑問符 (?))|その位置の 0 個または 1 つの文字。|  
+  
+ 以外のワイルドカード文字は、リテラル文字です。 たとえば、`searchPattern`文字列"\*t"のすべての名前を検索`path`文字"t"で終わる。 `searchPattern`文字列"s\*"のすべての名前を検索`path`"s"で開始します。  
+  
+ `searchPattern`2 つのピリオドで終わることはできません ("..") または 2 つのピリオドを含める ("..") 続けて<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>、無効な文字を含めることもできます。 無効な文字を照会するには、<xref:System.IO.Path.GetInvalidPathChars%2A> メソッドを使用します。  
+  
+> [!NOTE]
+>  アスタリスクのワイルドカード文字を使用すると、`searchPattern`など"\*.txt"、指定された拡張機能の文字数が次のように、検索に影響します。  
+>   
+>  -   指定された拡張機能が 3 文字の場合は、このメソッドは、指定された拡張機能で始まる拡張子を持つファイルを返します。 たとえば、"\*.xls""book.xls"と"book.xlsx"の両方を返します。  
+> -   その他のすべてのケースでは、このメソッドは、指定された拡張機能を正確に一致するファイルを返します。 たとえば、"\*.ai"が"file.ai"、"file.aif"を返します。  
+>   
+>  疑問符 (?) のワイルドカード文字を使用する場合、このメソッドは、指定されたファイル拡張子に一致するファイルのみを返します。 たとえば、指定された 2 つのファイル、"file1.txt"および"file1.txtother"ディレクトリの検索パターンに"ファイルか。txt"は最初のファイルだけを返しますが、検索パターンの"ファイル\*.txt"両方のファイルが返されます。  
+  
+ <xref:System.IO.Directory.EnumerateFileSystemEntries%2A>と<xref:System.IO.Directory.GetFileSystemEntries%2A>メソッドが次のように異なります: を使用すると<xref:System.IO.Directory.EnumerateFileSystemEntries%2A>、コレクション全体が返される前に、エントリのコレクションを列挙することができます。 使用すると<xref:System.IO.Directory.GetFileSystemEntries%2A>、配列にアクセスする前に返されるエントリの配列全体を待つ必要があります。 そのためとを扱う多くのファイルとディレクトリ、<xref:System.IO.Directory.EnumerateFiles%2A>効率的であることができます。  
+  
+ 相対パス情報を指定できます、`path`パラメーター。 相対パスの詳細についてを使用して指定できますが、現在の作業ディレクトリに対して相対的に解釈されます、<xref:System.IO.Directory.GetCurrentDirectory%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" />長さ 0 の文字列か、空白のみが含まれています、無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。  
+  
+ \- または  
+  
+ <paramref name="searchPattern" /> には有効なパターンが含まれません。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="searchPattern" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="searchOption" /> は有効な <see cref="T:System.IO.SearchOption" /> 値ではありません。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">
+          たとえば、マップされていないドライブへの参照など、<paramref name="path" /> は無効です。</exception>
+        <exception cref="T:System.IO.IOException">
+          <paramref name="path" /> はファイル名です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパス、ファイル名、または結合は、システム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastAccessTime">
+      <MemberSignature Language="C#" Value="public static DateTime GetLastAccessTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetLastAccessTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetLastAccessTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">アクセス日時情報を取得する対象のファイルまたはディレクトリ。</param>
+        <summary>指定したファイルまたはディレクトリに最後にアクセスした日付と時刻を返します。</summary>
+        <returns>指定されたファイルまたはディレクトリが最後にアクセスされた日時に設定された構造体。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ このメソッドは同じ<xref:System.IO.File.GetLastAccessTime%2A?displayProperty=nameWithType>です。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します`GetLastAccessTime`です。  
+  
+ [!code-cpp[Dir_GetLastAccess#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetLastAccess/CPP/dir_getlastaccess.cpp#1)]
+ [!code-csharp[Dir_GetLastAccess#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetLastAccess/CS/dir_getlastaccess.cs#1)]
+ [!code-vb[Dir_GetLastAccess#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetLastAccess/VB/dir_getlastaccess.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会する、<see cref="M:System.IO.Path.GetInvalidPathChars" />メソッドです。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" />パラメーターは、形式が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastAccessTimeUtc">
+      <MemberSignature Language="C#" Value="public static DateTime GetLastAccessTimeUtc (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetLastAccessTimeUtc(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetLastAccessTimeUtc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">アクセス日時情報を取得する対象のファイルまたはディレクトリ。</param>
+        <summary>指定されたファイルまたはディレクトリが最後にアクセスされた日付と時刻を世界協定時刻 (UTC) 形式で返します。</summary>
+        <returns>指定されたファイルまたはディレクトリが最後にアクセスされた日時に設定された構造体。 この値は UTC 時刻で表現されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC)。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.NotSupportedException"><paramref name="path" />パラメーターは、形式が無効です。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastWriteTime">
+      <MemberSignature Language="C#" Value="public static DateTime GetLastWriteTime (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetLastWriteTime(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetLastWriteTime(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">変更日時情報を取得する対象のファイルまたはディレクトリ。</param>
+        <summary>指定したファイルまたはディレクトリに最後に書き込んだ日付と時刻を返します。</summary>
+        <returns>指定したファイルまたはディレクトリに最後に書き込んだ日時に設定された構造体。 この値は現地時刻で表示されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC) では、現地時刻に調整されます。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します`GetLastWriteTime`です。  
+  
+ [!code-cpp[Dir_GetLastWrite#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_GetLastWrite/CPP/dir_getlastwrite.cpp#1)]
+ [!code-csharp[Dir_GetLastWrite#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_GetLastWrite/CS/dir_getlastwrite.cs#1)]
+ [!code-vb[Dir_GetLastWrite#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_GetLastWrite/VB/dir_getlastwrite.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLastWriteTimeUtc">
+      <MemberSignature Language="C#" Value="public static DateTime GetLastWriteTimeUtc (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.DateTime GetLastWriteTimeUtc(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetLastWriteTimeUtc(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">変更日時情報を取得する対象のファイルまたはディレクトリ。</param>
+        <summary>指定したファイルまたはディレクトリに最後に書き込んだ日付と時刻を世界協定時刻 (UTC) 形式で返します。</summary>
+        <returns>指定したファイルまたはディレクトリに最後に書き込んだ日時に設定された構造体。 この値は UTC 時刻で表現されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  値を持つが継続的に更新されない、オペレーティング システムでネイティブ関数を使用しているために、このメソッドは、不正確な値を返す可能性があります。  
+  
+ ディレクトリが記述されている場合、`path`パラメーターが存在しないか、このメソッドは、西暦 1601 年 1 月 1 日深夜 12時 00分を返します。 (西暦)世界協定時刻 (UTC)。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリを読み取る。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetLogicalDrives">
+      <MemberSignature Language="C#" Value="public static string[] GetLogicalDrives ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string[] GetLogicalDrives() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetLogicalDrives" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>フォームでは、このコンピューター上の論理ドライブの名前を取得"&lt;ドライブ文字&gt;:\\"です。</summary>
+        <returns>このコンピューターの論理ドライブ。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GetLogicalDrives は、フロッピー ドライブは、任意の光学式ドライブなど、特定のコンピューターにアクセス可能なドライブのすべてを返します。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Directory.GetLogicalDrives%2A>文字列の配列を呼び出し側のコンピューター上の各ドライブの名前を割り当てます。 この文字列の配列の各メンバーは、コンソールに出力されます。 例は、このメソッドに一般的な catch すべてエラーに構成されます。  
+  
+ [!code-cpp[System.IO.Directory#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Directory/CPP/class1.cpp#3)]
+ [!code-csharp[System.IO.Directory#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class1.cs#3)]
+ [!code-vb[System.IO.Directory#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました (ディスク エラーなど)。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">PInvoke または COM 相互運用機能によるネイティブ コードの呼び出しなどのアンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetParent">
+      <MemberSignature Language="C#" Value="public static System.IO.DirectoryInfo GetParent (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IO.DirectoryInfo GetParent(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.GetParent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IO.DirectoryInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">親ディレクトリを取得する対象のパス。</param>
+        <summary>絶対パスと相対パスの両方を含む指定したパスの親ディレクトリを取得します。</summary>
+        <returns>親ディレクトリ。 または<see langword="null" />場合<paramref name="path" />UNC サーバーまたは共有名のルートを含む、ルート ディレクトリです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを取得する前にパラメーター。  
+  
+ このメソッドによって返される文字列をへのパスがありませんなどは、最後のすべての文字から成る<xref:System.IO.Path.DirectorySeparatorChar>または<xref:System.IO.Path.AltDirectorySeparatorChar>です。 たとえば、"C:\Directory\SubDirectory\test.txt"のパスに渡す<xref:System.IO.Directory.GetParent%2A>"C:\Directory\SubDirectory"を返します。 "C:\Directory\SubDirectory"を渡すには、"C:\Directory"が返されます。 ただし、渡す"C:\Directory\SubDirectory\\"終了のディレクトリの区切り記号が「サブディレクトリ」の後にあるため"C:\Directory\SubDirectory"が返されます。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.IO.Directory.GetParent%2A>ユーザー指定の場所の親ディレクトリを取得する方法を"path"です。 によって返される値、<xref:System.IO.Directory.GetParent%2A>メソッドは、コンソールに出力されます。 例は、このメソッドに一般的な catch すべてエラーに構成されます。  
+  
+ [!code-cpp[System.IO.Directory#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.Directory/CPP/class1.cpp#4)]
+ [!code-csharp[System.IO.Directory#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class1.cs#4)]
+ [!code-vb[System.IO.Directory#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">指定されたディレクトリ<paramref name="path" />は読み取り専用です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りにファイルまたはディレクトリ。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="public static void Move (string sourceDirName, string destDirName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Move(string sourceDirName, string destDirName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.Move(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceDirName" Type="System.String" />
+        <Parameter Name="destDirName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceDirName">移動するファイルまたはディレクトリのパス。</param>
+        <param name="destDirName">新しい場所へのパス<c>sourceDirName</c>です。 場合<c>sourceDirName</c>し、ファイルは、<c>と</c>ファイル名である必要があります。</param>
+        <summary>ファイルまたはディレクトリ、およびその内容を新しい場所に移動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで指定された名前の新しいディレクトリを作成する`destDirName`の内容を移動および`sourceDirName`新しく作成されたコピー先ディレクトリにします。 既に存在するディレクトリにディレクトリを移動しようとする場合、<xref:System.IO.IOException>が発生します。 たとえば、c:\mydir を c:\public に移動しようとして、c:\public が既に存在する場合、例外が発生します。 または、指定することが"c:\\\public\\\mydir"として、`destDirName`下にある"mydir"が存在しないことを指定されたパラメーター"c:\\\public"、新しいディレクトリ名を指定します。 または"c:\\\newdir"です。  
+  
+ `sourceDirName`と`destDirName`引数は、相対パスまたは絶対パス情報を指定します。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 末尾のスペースは、ディレクトリを移動する前に、path パラメーターの末尾から削除されます。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、ディレクトリとそのすべてのファイルを新しいディレクトリに移動する方法を示します。 元のディレクトリは存在しませんが移動した後。  
+  
+ [!code-csharp[System.IO.Directory#14](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.Directory/CS/class6.cs#14)]
+ [!code-vb[System.IO.Directory#14](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.Directory/VB/class6.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">ディレクトリを別のボリュームに移動しようとしました。  
+  
+ または  
+  
+ <paramref name="destDirName" />既に存在します。  
+  
+ または  
+  
+ <paramref name="sourceDirName" />と<paramref name="destDirName" />パラメーターが同じファイルまたはディレクトリを参照してください。  
+  
+ または  
+  
+ ディレクトリ、またはそのディレクトリ内のファイルが別のプロセスによって使用されています。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="sourceDirName" />または<paramref name="destDirName" />長さ 0 の文字列は、空白しか含んでいないか 1 つまたは複数の無効な文字が含まれています。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="sourceDirName" /> または <paramref name="destDirName" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定されたパスかファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">によって指定されたパス<paramref name="sourceDirName" />が正しくありません (たとえば、上にある、マップされていないドライブ)。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">読み取りに<paramref name="sourceDirName" />への書き込みと<paramref name="sourceDirName" />と<paramref name="destDirName" />です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" />、<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public static void SetAccessControl (string path, System.Security.AccessControl.DirectorySecurity directorySecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetAccessControl(string path, class System.Security.AccessControl.DirectorySecurity directorySecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetAccessControl(System.String,System.Security.AccessControl.DirectorySecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="directorySecurity" Type="System.Security.AccessControl.DirectorySecurity" />
+      </Parameters>
+      <Docs>
+        <param name="path">アクセス制御リスト (ACL) エントリの追加先または削除元となるディレクトリ。</param>
+        <param name="directorySecurity">A<see cref="T:System.Security.AccessControl.DirectorySecurity" />によって記述されるディレクトリに適用する ACL エントリを記述するオブジェクト、<c>パス</c>パラメーター。</param>
+        <summary>示すアクセス制御リスト (ACL) エントリを適用する<see cref="T:System.Security.AccessControl.DirectorySecurity" />オブジェクトを指定したディレクトリにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IO.Directory.SetAccessControl%2A>メソッドが継承されない ACL リストを表すファイルへのアクセス制御リスト (ACL) エントリを適用します。  
+  
+> [!CAUTION]
+>  ACL に指定された、`directorySecurity`パラメーターは、ディレクトリの既存の ACL を置き換えます。 新しいユーザーのアクセス許可を追加するには、使用、<xref:System.IO.Directory.GetAccessControl%2A>メソッドを既存の ACL を取得し、それを変更します。  
+  
+ ACL には、個人、グループ、または権限がない、指定したファイルまたはディレクトリの特定のアクションをユーザーがについて説明します。 詳細については、「[方法: アクセス制御リスト エントリを追加または削除する](~/docs/standard/io/how-to-add-or-remove-access-control-list-entries.md)」を参照してください。  
+  
+ <xref:System.IO.Directory.SetAccessControl%2A>メソッドにのみが引き続き発生する<xref:System.Security.AccessControl.DirectorySecurity>オブジェクトがオブジェクトの作成後に変更されました。  場合、<xref:System.Security.AccessControl.DirectorySecurity>オブジェクトが変更されていない、ファイルに永続化はできません。  したがって、取得することはありません、 <xref:System.Security.AccessControl.DirectorySecurity> 1 つのファイルからオブジェクトを別のファイルを同じオブジェクトを再適用します。  
+  
+ ACL の情報を別の 1 つのファイルにコピー: する  
+  
+1.  使用して、<xref:System.IO.Directory.GetAccessControl%2A>を取得する方法、<xref:System.Security.AccessControl.DirectorySecurity>ソース ファイルからのオブジェクト。  
+  
+2.  新しい<xref:System.Security.AccessControl.DirectorySecurity>先のファイル オブジェクト。  
+  
+3.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.GetSecurityDescriptorSddlForm%2A>メソッドのソースの<xref:System.Security.AccessControl.DirectorySecurity>ACL 情報を取得するオブジェクト。  
+  
+4.  使用して、<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorBinaryForm%2A>または<xref:System.Security.AccessControl.ObjectSecurity.SetSecurityDescriptorSddlForm%2A>に情報をコピーする方法は、先には、手順 3. で取得<xref:System.Security.AccessControl.DirectorySecurity>オブジェクト。  
+  
+5.  出力先を設定<xref:System.Security.AccessControl.DirectorySecurity>、変換先を使用してファイル オブジェクト、<xref:System.IO.Directory.SetAccessControl%2A>メソッドです。  
+  
+ 環境では NTFS、<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>場合は、ユーザーがあるユーザーに付与されます<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親フォルダーに対する権限。 拒否する<xref:System.Security.AccessControl.FileSystemRights.ReadAttributes>と<xref:System.Security.AccessControl.FileSystemRights.ReadExtendedAttributes>、拒否<xref:System.Security.AccessControl.FileSystemRights.ListDirectory>親ディレクトリにします。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.IO.Directory.GetAccessControl%2A>と<xref:System.IO.Directory.SetAccessControl%2A>アクセスを追加するメソッドが制御リスト (ACL) エントリと、ディレクトリから ACL エントリを削除します。  この例を実行するには、有効なユーザーまたはグループ アカウントを指定する必要があります。  
+  
+ [!code-cpp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/cpp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/cpp/sample.cpp#1)]
+ [!code-csharp[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/csharp/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/CS/sample.cs#1)]
+ [!code-vb[IO.DiretoryInfo.GetAccessControl-SetAccessControl#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/IO.DiretoryInfo.GetAccessControl-SetAccessControl/VB/sample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="directorySecurity" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">ディレクトリが見つかりません。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="path" />が無効です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">現在のプロセスで指定されたディレクトリにアクセスできない<paramref name="path" />です。  
+  
+ または  
+  
+ 現在のプロセスには、ACL エントリを設定するための十分な特権がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows 2000 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ディレクトリのアクセス制御リスト (ACL) を列挙する権限です。 関連する列挙: <see cref="F:System.Security.Permissions.FileIOPermissionAccess.NoAccess" /> 、<see cref="F:System.Security.AccessControl.AccessControlActions.View" />  
+  
+ セキュリティ アクション: 要求します。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCreationTime">
+      <MemberSignature Language="C#" Value="public static void SetCreationTime (string path, DateTime creationTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCreationTime(string path, valuetype System.DateTime creationTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetCreationTime(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="creationTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">作成日時情報を設定する対象のファイルまたはディレクトリ。</param>
+        <param name="creationTime">ファイルまたはディレクトリに最後に書き込んだ日付と時刻。 この値は現地時刻で表示されます。</param>
+        <summary>指定したファイルまたはディレクトリの作成日時を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="creationTime" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCreationTimeUtc">
+      <MemberSignature Language="C#" Value="public static void SetCreationTimeUtc (string path, DateTime creationTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCreationTimeUtc(string path, valuetype System.DateTime creationTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetCreationTimeUtc(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="creationTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">作成日時情報を設定する対象のファイルまたはディレクトリ。</param>
+        <param name="creationTimeUtc">ディレクトリまたはファイルが作成された日時。 この値は現地時刻で表示されます。</param>
+        <summary>指定したファイルまたはディレクトリの作成日時を世界協定時刻 (UTC) 形式で設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="creationTime" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetCurrentDirectory">
+      <MemberSignature Language="C#" Value="public static void SetCurrentDirectory (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetCurrentDirectory(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetCurrentDirectory(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">現在の作業ディレクトリが設定されるパス。</param>
+        <summary>アプリケーションの現在の作業ディレクトリを指定したディレクトリに設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションが終了すると、作業ディレクトリは元の場所 (プロセスが開始されたディレクトリ) に復元されます。  
+  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ 末尾のスペースがの末尾から削除された、`path`ディレクトリを設定する前にパラメーター。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 使用して、ドライブが準備ができているかどうかを確認できます (「a:」フロッピー ディスク ドライブ用)、CD-ROM ドライブの「e:」などにリムーバブル メディア ドライブにディレクトリを設定する場合、<xref:System.IO.DriveInfo.IsReady%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例では、現在のディレクトリを設定し、ディレクトリのルートを表示する方法を示します。  
+  
+ [!code-cpp[System.IO.DirectoryRoot#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.DirectoryRoot/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.DirectoryRoot#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.DirectoryRoot/CS/example.cs#1)]
+ [!code-vb[System.IO.DirectoryRoot#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.DirectoryRoot/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">I/O エラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.Security.SecurityException">呼び出し側に、アンマネージ コードへのアクセスに必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.IO.DirectoryNotFoundException">指定されたディレクトリが見つかりませんでした。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルまたはディレクトリに作成します。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出す。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastAccessTime">
+      <MemberSignature Language="C#" Value="public static void SetLastAccessTime (string path, DateTime lastAccessTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLastAccessTime(string path, valuetype System.DateTime lastAccessTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetLastAccessTime(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastAccessTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">アクセス日時情報を設定する対象のファイルまたはディレクトリ。</param>
+        <param name="lastAccessTime">オブジェクトにアクセスした日付と時刻の設定に値を含む<c>パス</c>です。 この値は現地時刻で表示されます。</param>
+        <summary>指定したファイルまたはディレクトリに最後にアクセスした日付と時刻を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します`SetLastAccessTime`です。  
+  
+ [!code-cpp[Dir_SetLastAccess#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_SetLastAccess/CPP/dir_setlastaccess.cpp#1)]
+ [!code-csharp[Dir_SetLastAccess#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_SetLastAccess/CS/dir_setlastaccess.cs#1)]
+ [!code-vb[Dir_SetLastAccess#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_SetLastAccess/VB/dir_setlastaccess.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="lastAccessTime" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastAccessTimeUtc">
+      <MemberSignature Language="C#" Value="public static void SetLastAccessTimeUtc (string path, DateTime lastAccessTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLastAccessTimeUtc(string path, valuetype System.DateTime lastAccessTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetLastAccessTimeUtc(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastAccessTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">アクセス日時情報を設定する対象のファイルまたはディレクトリ。</param>
+        <param name="lastAccessTimeUtc">オブジェクトにアクセスした日付と時刻の設定に値を含む<c>パス</c>です。 この値は UTC 時刻で表現されます。</param>
+        <summary>指定したファイルまたはディレクトリに最後にアクセスした日付と時刻を世界協定時刻 (UTC) 形式で設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="lastAccessTimeUtc" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastWriteTime">
+      <MemberSignature Language="C#" Value="public static void SetLastWriteTime (string path, DateTime lastWriteTime);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLastWriteTime(string path, valuetype System.DateTime lastWriteTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetLastWriteTime(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastWriteTime" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">ディレクトリのパス。</param>
+        <param name="lastWriteTime">ディレクトリに最後に書き込んだ日付と時刻。 この値は現地時刻で表示されます。</param>
+        <summary>ディレクトリに最後に書き込んだ日付と時刻を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示します`SetLastWriteTime`です。  
+  
+ [!code-cpp[Dir_SetLastWrite#1](~/samples/snippets/cpp/VS_Snippets_CLR/Dir_SetLastWrite/CPP/dir_setlastwrite.cpp#1)]
+ [!code-csharp[Dir_SetLastWrite#1](~/samples/snippets/csharp/VS_Snippets_CLR/Dir_SetLastWrite/CS/dir_setlastwrite.cs#1)]
+ [!code-vb[Dir_SetLastWrite#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Dir_SetLastWrite/VB/dir_setlastwrite.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="lastWriteTime" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetLastWriteTimeUtc">
+      <MemberSignature Language="C#" Value="public static void SetLastWriteTimeUtc (string path, DateTime lastWriteTimeUtc);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetLastWriteTimeUtc(string path, valuetype System.DateTime lastWriteTimeUtc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.Directory.SetLastWriteTimeUtc(System.String,System.DateTime)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IO.FileSystem</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="lastWriteTimeUtc" Type="System.DateTime" />
+      </Parameters>
+      <Docs>
+        <param name="path">ディレクトリのパス。</param>
+        <param name="lastWriteTimeUtc">ディレクトリに最後に書き込んだ日付と時刻。 この値は UTC 時刻で表現されます。</param>
+        <summary>ディレクトリに最後に書き込んだ日付と時刻を世界協定時刻 (UTC) 形式で設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `path`相対パスまたは絶対パス情報を指定するパラメーターは許可されています。 相対パスの詳細については、現在の作業ディレクトリに対して相対的に解釈されます。 現在の作業ディレクトリを取得するを参照してください。<xref:System.IO.Directory.GetCurrentDirectory%2A>です。  
+  
+ `path`パラメーターは、大文字小文字を区別することはありません。  
+  
+ 共通 I/O タスクの一覧は、次を参照してください。[共通 I/O タスク](~/docs/standard/io/common-i-o-tasks.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、世界協定時刻 (UTC) を使用した場合の出力の違いを示しています。  
+  
+ [!code-cpp[System.IO.UTCExample#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.IO.UTCExample/CPP/example.cpp#1)]
+ [!code-csharp[System.IO.UTCExample#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.UTCExample/CS/example.cs#1)]
+ [!code-vb[System.IO.UTCExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.UTCExample/VB/example.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.FileNotFoundException">指定したパスが見つかりませんでした。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="path" /> は長さ 0 の文字列か、空白のみで構成されているか、または 1 つ以上の正しくない文字を含んでいます。 無効な文字を照会するには、<see cref="M:System.IO.Path.GetInvalidPathChars" /> メソッドを使用します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="path" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.PathTooLongException">指定したパス、ファイル名、またはその両方がシステム定義の最大長を超えています。 たとえば、Windows ベースのプラットフォームでは、パスは 248 文字未満、ファイル名は 260 文字未満にする必要があります。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">現在のオペレーティング システムは Windows NT 以降ではありません。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="lastWriteTimeUtc" />日付またはこの操作に許可される時刻の範囲外の値を指定します。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定したファイルまたはディレクトリに書き込む。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Write" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

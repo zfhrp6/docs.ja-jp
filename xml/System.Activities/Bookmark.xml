@@ -1,0 +1,256 @@
+<Type Name="Bookmark" FullName="System.Activities.Bookmark">
+  <TypeSignature Language="C#" Value="public class Bookmark : IEquatable&lt;System.Activities.Bookmark&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Bookmark extends System.Object implements class System.IEquatable`1&lt;class System.Activities.Bookmark&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Bookmark" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Activities.Bookmark&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフローまたはアクティビティが再開を受動的に待機できる点を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティは、<xref:System.Activities.Bookmark> を作成するとアイドル状態になり、<xref:System.Activities.Bookmark> の再開を待機します。 <xref:System.Activities.Bookmark> を作成したアクティビティと並行する他のアクティビティがある場合、これらは実行対象としてスケジュールされます。  
+  
+ ブックマークは、ホスト アプリケーションから、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> オーバーロードのいずれかを使用して再開できます。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]ブックマークを参照してください[を使用して WorkflowInvoker と WorkflowApplication](~/docs/framework/windows-workflow-foundation/using-workflowinvoker-and-workflowapplication.md)、[ブックマーク](~/docs/framework/windows-workflow-foundation/bookmarks.md)、および[ブックマーク &#91;WF のサンプル &#93;](~/docs/framework/windows-workflow-foundation/samples/bookmarks.md)と[入力アクティビティ &#91; の待機WF のサンプル &#93;](~/docs/framework/windows-workflow-foundation/samples/wait-for-input-activity.md)サンプルです。  
+  
+   
+  
+## Examples  
+ 次の例では、`ReadLine` アクティビティを作成します。 実行されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> を作成し、コールバックを登録してから、<xref:System.Activities.Bookmark> が再開されるのを待機します。 再開されると、`ReadLine` アクティビティは <xref:System.Activities.Bookmark> と一緒に渡されたデータを <xref:System.Activities.Activity%601.Result%2A> 引数に代入します。  
+  
+```csharp  
+public sealed class ReadLine : NativeActivity<string>  
+{  
+    [RequiredArgument]  
+    public  InArgument<string> BookmarkName { get; set; }  
+  
+    protected override void Execute(NativeActivityContext context)  
+    {  
+        // Create a Bookmark and wait for it to be resumed.  
+        context.CreateBookmark(BookmarkName.Get(context),   
+            new BookmarkCallback(OnResumeBookmark));  
+    }  
+  
+    // NativeActivity derived activities that do asynchronous operations by calling   
+    // one of the CreateBookmark overloads defined on System.Activities.NativeActivityContext   
+    // must override the CanInduceIdle property and return true.  
+    protected override bool CanInduceIdle  
+    {  
+        get { return true; }  
+    }  
+  
+    public void OnResumeBookmark(NativeActivityContext context, Bookmark bookmark, object obj)  
+    {  
+        // When the Bookmark is resumed, assign its value to  
+        // the Result argument.  
+        Result.Set(context, (string)obj);  
+    }  
+}  
+```  
+  
+ 次の例では、`ReadLine` アクティビティを使用してユーザー名を収集し、それをコンソール ウィンドウに表示するワークフローを作成します。 ホスト アプリケーションは入力を収集する実際の作業を実行し、<xref:System.Activities.Bookmark> を再開することでワークフローに渡します。  
+  
+```csharp  
+Variable<string> name = new Variable<string>  
+{  
+    Name = "name"  
+};  
+  
+Activity wf = new Sequence  
+{  
+    Variables =  
+    {  
+        name  
+    },  
+    Activities =  
+    {  
+        new WriteLine()  
+        {  
+            Text = "What is your name?"  
+        },  
+        new ReadLine()  
+        {  
+            BookmarkName = "UserName",  
+            Result = name  
+        },  
+        new WriteLine()  
+        {  
+            Text = new InArgument<string>((env) => "Hello, " + name.Get(env))  
+        }  
+    }  
+};  
+  
+AutoResetEvent syncEvent = new AutoResetEvent(false);  
+  
+// Create the WorkflowApplication using the desired  
+// workflow definition.  
+WorkflowApplication wfApp = new WorkflowApplication(wf);  
+  
+// Handle the desired lifecycle events.  
+wfApp.Completed = delegate(WorkflowApplicationCompletedEventArgs e)  
+{  
+    // Signal the host that the workflow is complete.  
+    syncEvent.Set();  
+};  
+  
+// Start the workflow.  
+wfApp.Run();  
+  
+// Collect the user's name and resume the bookmark.  
+// Bookmark resumption only occurs when the workflow  
+// is idle. If a call to ResumeBookmark is made and the workflow  
+// is not idle, ResumeBookmark blocks until the workflow becomes  
+// idle before resuming the bookmark.  
+wfApp.ResumeBookmark("UserName", Console.ReadLine());  
+  
+// Wait for Completed to arrive and signal that  
+// the workflow is complete.  
+syncEvent.WaitOne();  
+```  
+  
+ `ReadLine` アクティビティが実行されると、<xref:System.Activities.Bookmark> という名前の `UserName` が作成され、ブックマークが再開されるのを待機します。 ホストは必要なデータを収集し、<xref:System.Activities.Bookmark> を再開します。 ワークフローが再開されると名前が表示されて、完了します。 ブックマークの再開に関して、同期コードは必要ありません。 <xref:System.Activities.Bookmark> を再開できるのは、ワークフローがアイドルの場合のみです。ワークフローがアイドルではない場合、<xref:System.Activities.WorkflowApplication.ResumeBookmark%2A> を呼び出すと、ワークフローがアイドルになるまでブロックされます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Bookmark (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Bookmark.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">ブックマークを識別する名前。</param>
+        <summary>指定された名前を使用して、<see cref="T:System.Activities.Bookmark" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Activities.Bookmark other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(class System.Activities.Bookmark other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Bookmark.Equals(System.Activities.Bookmark)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="other" Type="System.Activities.Bookmark" />
+      </Parameters>
+      <Docs>
+        <param name="other">比較対象となるブックマーク。</param>
+        <summary>現在の <see cref="T:System.Activities.Bookmark" /> と指定された <see cref="T:System.Activities.Bookmark" /> が、ワークフロー内の同一の継続点を参照するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Activities.Bookmark" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Bookmark.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>現在の <see cref="T:System.Activities.Bookmark" /> と指定されたオブジェクトが、ワークフロー内の同一の継続点を参照するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Activities.Bookmark" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Bookmark.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Activities.Bookmark" /> インスタンスの一意の識別子を返します。</summary>
+        <returns>この <see cref="T:System.Activities.Bookmark" /> インスタンスの一意の識別子。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Bookmark.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ブックマーク名を取得します。</summary>
+        <value>ブックマーク名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Bookmark.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>名前付きブックマークならブックマーク名、名前なしブックマークならブックマーク ID を返します。</summary>
+        <returns>ブックマーク名または ID。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

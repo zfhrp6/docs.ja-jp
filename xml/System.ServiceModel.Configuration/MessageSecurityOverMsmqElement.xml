@@ -1,0 +1,130 @@
+<Type Name="MessageSecurityOverMsmqElement" FullName="System.ServiceModel.Configuration.MessageSecurityOverMsmqElement">
+  <TypeSignature Language="C#" Value="public sealed class MessageSecurityOverMsmqElement : System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MessageSecurityOverMsmqElement extends System.ServiceModel.Configuration.ServiceModelConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Configuration.ServiceModelConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.NetMsmqBinding" /> バインドのメッセージレベル セキュリティのプロパティを設定できます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageSecurityOverMsmqElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmSuite">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.SecurityAlgorithmSuite AlgorithmSuite" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement.AlgorithmSuite" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ServiceModel.Configuration.SecurityAlgorithmSuiteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("algorithmSuite", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.SecurityAlgorithmSuite</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP レベルでのセキュリティ メッセージに使用されるアルゴリズム スイートを指定します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.SecurityAlgorithmSuite" /> バインドを介して送信されるメッセージの <see cref="T:System.ServiceModel.NetMsmqBinding" /> 設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> は、正規化、ダイジェスト、キーラップ、署名、暗号化、およびキー派生など、さまざまなアルゴリズムを定義します。 このプロパティが最も関連するのは、既定以外のアルゴリズム セットを使用するプラットフォームで作業する場合です。 このプロパティを変更する場合は、関連するアルゴリズムの長所と短所を認識しておく必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCredentialType">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageCredentialType ClientCredentialType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.MessageCredentialType ClientCredentialType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement.ClientCredentialType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("clientCredentialType", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageCredentialType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>MSMQ トランスポートを介して送信されるメッセージの <see cref="T:System.ServiceModel.MessageCredentialType" /> セキュリティ設定を取得または設定します。</summary>
+        <value>MSMQ トランスポートを介して送信されるメッセージの <see cref="T:System.ServiceModel.MessageCredentialType" /> セキュリティ設定。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティには次の値のいずれかを設定できます。  
+  
+-   None: サービスが匿名クライアントと対話できるようになります。 サービスとクライアントはいずれも資格情報を要求しません。  
+  
+-   Windows : Windows 資格情報の認証済みコンテキストの制御下での SOAP 交換を可能にします。 これは、常に Kerberos ベースの認証を実行します。  
+  
+-   UserName: UserName 資格情報を使用してクライアントを認証するよう、サービスが要求できるようにします。 この資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスを使用して指定する必要があります。  
+  
+    > [!NOTE]
+    >  [!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、パスワード ダイジェストの送信、またはパスワードを使用したキーの派生、およびメッセージ セキュリティでのそのようなキーの使用をサポートしません。 このようにして、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] は、UserName 資格情報を使用する場合に交換が強制的に保護されるようにします。 このモードは、サービス証明書が、ClientCredential 動作および serviceCertificate を使用してクライアント側で指定されることを要求します。  
+  
+-   Certificate: 証明書を使用してクライアントを認証するようサービスが要求できるようにします。 この場合のクライアント資格情報は、<xref:System.ServiceModel.Description.ClientCredentials> クラスまたは ClientCredentials 動作を使用して指定する必要があります。 この場合のサービス資格情報は、serviceCertificate を指定して <xref:System.ServiceModel.Description.ClientCredentials> クラスまたは ClientCredentials 動作を使用することで、指定する必要があります。  
+  
+-   CardSpace : サービスは、[!INCLUDE[infocard1](~/includes/infocard1-md.md)] を使用してクライアントを認証するよう要求します。 serviceCertiifcate は、ClientCredential 動作で提供される必要があります。  
+  
+ `MessageSecurityOverMsmq` に対する証明書資格情報は、セキュリティ モードが `Both` または `Message` である場合にのみ関連します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.MessageSecurityOverMsmqElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

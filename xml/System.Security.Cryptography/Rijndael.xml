@@ -1,0 +1,181 @@
+<Type Name="Rijndael" FullName="System.Security.Cryptography.Rijndael">
+  <TypeSignature Language="C#" Value="public abstract class Rijndael : System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Rijndael extends System.Security.Cryptography.SymmetricAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Rijndael" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.SymmetricAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての実装から基本クラスを表す、<see cref="T:System.Security.Cryptography.Rijndael" />対称暗号化アルゴリズムを継承する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアルゴリズムは、128、192 ビット、または 256 ビットのキーの長さをサポートしています。256 ビットを使用します。 このアルゴリズムは、128、192 ビット、または 256 ビットの数値のブロック サイズをサポートしています。既定の 128 ビット (<xref:System.Security.Cryptography.Aes>-互換性のある)。  
+  
+ <xref:System.Security.Cryptography.Rijndael>クラスは、先行タスク、<xref:System.Security.Cryptography.Aes>アルゴリズムです。 使用する必要があります、<xref:System.Security.Cryptography.Aes>の代わりにアルゴリズム<xref:System.Security.Cryptography.Rijndael>です。 詳細については、エントリを参照してください。 [Rijndael 間の相違点および AES](http://go.microsoft.com/fwlink/?LinkId=200932) in the .NET セキュリティ ブログ。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rijndael>クラスを暗号化およびデータを復号化します。  
+  
+ [!code-csharp[Cryptography.Rijndael.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.rijndael.create.file/cs/fileexample.cs#1)]
+ [!code-vb[Cryptography.Rijndael.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.rijndael.create.file/vb/fileexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Rijndael ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rijndael.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.Cryptography.Rijndael" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。  
+  
+ このメソッドは、保護対象のフィールドを初期化します。<xref:System.Security.Cryptography.SymmetricAlgorithm>を次の表に一覧表示の既定値です。  
+  
+|フィールド|既定値|  
+|-----------|-------------------|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.KeySizeValue>|256|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.BlockSizeValue>|128|  
+|<xref:System.Security.Cryptography.SymmetricAlgorithm.FeedbackSizeValue>|128|  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rijndael>クラスを暗号化およびデータを復号化します。  
+  
+ [!code-csharp[Cryptography.Rijndael.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.rijndael.create.file/cs/fileexample.cs#1)]
+ [!code-vb[Cryptography.Rijndael.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.rijndael.create.file/vb/fileexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.Rijndael Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.Rijndael Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rijndael.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Rijndael</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>実行する暗号オブジェクトを作成、<see cref="T:System.Security.Cryptography.Rijndael" />アルゴリズムです。</summary>
+        <returns>暗号オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装<xref:System.Security.Cryptography.Rijndael>は<xref:System.Security.Cryptography.RijndaelManaged>します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Security.Cryptography.Rijndael>クラスを暗号化およびデータを復号化します。  
+  
+ [!code-csharp[Cryptography.Rijndael.Create.File#1](~/samples/snippets/csharp/VS_Snippets_CLR/cryptography.rijndael.create.file/cs/fileexample.cs#1)]
+ [!code-vb[Cryptography.Rijndael.Create.File#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/cryptography.rijndael.create.file/vb/fileexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">連邦情報処理標準 (FIPS) モードが有効にされた状態でアルゴリズムが使用されましたが、このアルゴリズムは FIPS 準拠ではありません。 </exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.Rijndael Create (string algName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.Rijndael Create(string algName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Rijndael.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Algorithms</AssemblyName>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.Rijndael</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algName">特定の実装の名前<see cref="T:System.Security.Cryptography.Rijndael" />を作成します。</param>
+        <summary>指定した実装を実行する暗号オブジェクトを作成、<see cref="T:System.Security.Cryptography.Rijndael" />アルゴリズムです。</summary>
+        <returns>暗号オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用できる値は、`algName`パラメーターは`Rijndael`と`System.Security.Cryptography.RijndaelManaged`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">によって説明されているアルゴリズム、<paramref name="algName" />パラメーターが有効になっている、連邦情報処理規格 (FIPS) モードで使用されましたが、FIPS 対応ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

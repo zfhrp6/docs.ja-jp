@@ -1,0 +1,194 @@
+<Type Name="PersistenceIOParticipant" FullName="System.Activities.Persistence.PersistenceIOParticipant">
+  <TypeSignature Language="C#" Value="public abstract class PersistenceIOParticipant : System.Activities.Persistence.PersistenceParticipant" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit PersistenceIOParticipant extends System.Activities.Persistence.PersistenceParticipant" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Persistence.PersistenceIOParticipant" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Persistence.PersistenceParticipant</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>永続プロセスを介したワークフロー インスタンスの永続化と読み込みに加え、入出力操作を行うメソッドを使用する <see cref="T:System.Activities.Persistence.PersistenceParticipant" /> クラスの派生 vclass。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストは、インスタンスの永続化時に次の手順 (または段階) を実行します。  
+  
+1.  永続化する値を収集します。  
+  
+2.  モノリシック構造値のフィールドを個々の値にマップします。  
+  
+3.  <xref:System.Activities.DurableInstancing.SaveWorkflowCommand> を永続化プロバイダーに発行します。  
+  
+4.  永続性トランザクションの下で I/O を実行します。  
+  
+ ホストは、段階を完了してから次の段階を開始します。 たとえば永続化時は、ホストは、2 番目の段階に進む前に、すべての永続参加要素から値を収集します。 2 番目の段階では、ホストは、マップを行うために、最初の段階で収集したすべての値を 2 番目の段階のすべての永続参加要素に提供します。 3 番目の段階では、ホストは、<xref:System.Activities.DurableInstancing.SaveWorkflowCommand> の起動時に、最初の段階および 2 番目の段階で収集したすべての値を永続化プロバイダーに提供します。 次に、4 番目の段階では、ホストは、収集したすべての値を永続性トランザクションの下で永続 IO 参加要素に提供します。  
+  
+ ホストは、永続化インスタンスの読み込み時に次の段階を実行します。  
+  
+1.  <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> および <xref:System.Activities.DurableInstancing.LoadWorkflowByInstanceKeyCommand> を永続化プロバイダーに発行します。  
+  
+2.  永続性トランザクションの下で I/O を実行します。  
+  
+3.  読み込まれた値を発行します。  
+  
+ 最上位レベルでは、<xref:System.Activities.Persistence.PersistenceParticipant> クラスから派生するワークフロー インスタンス拡張機能は、永続化プロセスの最初の段階 (Collect) および 2 番目の段階 (Map) と、読み込みプロセスの 3 番目の段階 (Publish) に参加できます。  PersistenceIOParticipant クラスから派生するワークフロー インスタンス拡張機能は、さらに、永続化プロセスの 4 番目の段階と、読み込みプロセス (I/O) の 2 番目の段階に参加できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PersistenceIOParticipant (bool isSaveTransactionRequired, bool isLoadTransactionRequired);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(bool isSaveTransactionRequired, bool isLoadTransactionRequired) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isSaveTransactionRequired" Type="System.Boolean" />
+        <Parameter Name="isLoadTransactionRequired" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isSaveTransactionRequired">
+          <see langword="true" />トランザクションの保存操作に必要な場合です。 場合、<see cref="T:System.Activities.Persistence.PersistenceIOParticipant" />オブジェクトがこのパラメーターを設定して作成された<see langword="true" />Transaction.Current が BeginOnSave が呼び出されたときに設定することが保証されます。 トランザクションは、永続化プロバイダー、すべての PersistenceIOParticipant 拡張機能、およびその他のトランザクション参加要素の間で共有されます。</param>
+        <param name="isLoadTransactionRequired">
+          <see langword="true" />トランザクションの読み込み操作に必要な場合です。 場合、<see cref="T:System.Activities.Persistence.PersistenceIOParticipant" />オブジェクトがこのパラメーターを設定して作成された<see langword="true" />Transaction.Current が BeginOnLoad が呼び出されたときに設定することが保証されます。 トランザクションは、永続化プロバイダー、すべての PersistenceIOParticipant 拡張機能、およびその他のトランザクション参加要素の間で共有されます。</param>
+        <summary>
+          <see cref="T:System.Activities.Persistence.PersistenceIOParticipant" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="protected abstract void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>保留中の IO (読み込みまたは保存) 操作を中止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ BeginOnSave または BeginOnLoad をオーバーライドした後に、すぐに完了しないことがある派生クラスは、Abort をオーバーライドする必要があります。 Abort を起動したら、保留中の IO 操作を取り消す必要があります。 この方法で操作を取り消した場合、対応する End メソッドは OperationCanceledException をスローします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginOnLoad">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginOnLoad (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; readWriteValues, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginOnLoad(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; readWriteValues, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.BeginOnLoad(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="readWriteValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="readWriteValues">永続化プロバイダーによって読み込まれる読み取り/書き込み値のディクショナリ。 これは、このインスタンスの最新の永続化で BeginOnSave に渡される読み取り/書き込み値のセットに対応します。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある期間。</param>
+        <param name="callback">非同期の読み込み操作の完了通知を受信する非同期コールバック デリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>インスタンス ストアから読み込むインスタンスと共に追加の状態を読み込むための非同期操作を開始します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BeginOnSave">
+      <MemberSignature Language="C#" Value="protected virtual IAsyncResult BeginOnSave (System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; readWriteValues, System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,object&gt; writeOnlyValues, TimeSpan timeout, AsyncCallback callback, object state);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IAsyncResult BeginOnSave(class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; readWriteValues, class System.Collections.Generic.IDictionary`2&lt;class System.Xml.Linq.XName, object&gt; writeOnlyValues, valuetype System.TimeSpan timeout, class System.AsyncCallback callback, object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.BeginOnSave(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.TimeSpan,System.AsyncCallback,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IAsyncResult</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="readWriteValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+        <Parameter Name="writeOnlyValues" Type="System.Collections.Generic.IDictionary&lt;System.Xml.Linq.XName,System.Object&gt;" />
+        <Parameter Name="timeout" Type="System.TimeSpan" />
+        <Parameter Name="callback" Type="System.AsyncCallback" />
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="readWriteValues">CollectValues および MapValues 段階で収集される読み取り/書き込み値のディクショナリ。</param>
+        <param name="writeOnlyValues">CollectValues および MapValues 段階で収集される書き込み専用値のディクショナリ。</param>
+        <param name="timeout">タイムアウトせずに操作を完了する必要がある期間。</param>
+        <param name="callback">非同期操作完了の通知を受信する非同期コールバック デリゲート。</param>
+        <param name="state">非同期操作に関連付けられた状態情報。</param>
+        <summary>インスタンス ストアに永続化されるインスタンスと共に追加の状態を保存するための非同期操作を開始します。</summary>
+        <returns>非同期操作のステータス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOnLoad">
+      <MemberSignature Language="C#" Value="protected virtual void EndOnLoad (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EndOnLoad(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.EndOnLoad(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="M:System.Activities.Persistence.PersistenceIOParticipant.BeginOnSave(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.TimeSpan,System.AsyncCallback,System.Object)" /> メソッドの呼び出しにより返される非同期の結果。</param>
+        <summary>非同期の読み込み操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndOnSave">
+      <MemberSignature Language="C#" Value="protected virtual void EndOnSave (IAsyncResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void EndOnSave(class System.IAsyncResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Persistence.PersistenceIOParticipant.EndOnSave(System.IAsyncResult)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="result" Type="System.IAsyncResult" />
+      </Parameters>
+      <Docs>
+        <param name="result"><see cref="M:System.Activities.Persistence.PersistenceIOParticipant.BeginOnSave(System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.Collections.Generic.IDictionary{System.Xml.Linq.XName,System.Object},System.TimeSpan,System.AsyncCallback,System.Object)" /> メソッドの呼び出しにより返される非同期の結果。</param>
+        <summary>非同期の保存操作を完了します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,200 @@
+<Type Name="PrintingCanceledException" FullName="System.Printing.PrintingCanceledException">
+  <TypeSignature Language="C#" Value="public class PrintingCanceledException : System.Printing.PrintJobException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit PrintingCanceledException extends System.Printing.PrintJobException" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintingCanceledException" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintJobException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コードがキャンセルされた印刷ジョブにアクセスしようとしたときに発生する例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成する場合は、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]印刷機能を含み、印刷ジョブをキャンセルするには、アプリケーションであるこの例外を正しく処理することを確認します。 この種の例外が未処理の場合、Windows Presentation Foundation アプリケーションで応答が停止する可能性があります。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintingCanceledException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />固有のエラー条件を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (int errorCode, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.Int32,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />固有のエラー コードとエラー状態を提供するクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected PrintingCanceledException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">オブジェクトを逆シリアル化または逆シリアル化する必要があるデータ。</param>
+        <param name="context">ソースおよびデスティネーションをシリアル化ストリームを含むコンテキスト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />特定を提供するクラス<see cref="T:System.Runtime.Serialization.SerializationInfo" />と<see cref="T:System.Runtime.Serialization.StreamingContext" />です。 このコンス トラクターは保護されています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="innerException">条件を基になるエラーの原因となった、<see cref="T:System.Printing.PrintingCanceledException" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />例外の基になるなど、特定のエラー条件を提供するクラスが発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (int errorCode, string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.Int32,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="innerException">条件を基になるエラーの原因となった、<see cref="T:System.Printing.PrintingCanceledException" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />固有のエラー コードとエラー状態で、基になるなどを提供するクラスは、例外の原因です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (int errorCode, string message, string printQueueName, string jobName, int jobId);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, string printQueueName, string jobName, int32 jobId) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.Int32,System.String,System.String,System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="jobName" Type="System.String" />
+        <Parameter Name="jobId" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="printQueueName">例外の原因となった、印刷ジョブをホストしている印刷キューの名前。</param>
+        <param name="jobName">例外の原因となった、印刷ジョブの名前です。</param>
+        <param name="jobId">例外の原因となった、印刷ジョブの ID 番号。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />固有のエラー コード、エラー状態、印刷キュー名、ジョブ名、およびジョブ ID を提供するクラス</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintingCanceledException (int errorCode, string message, string printQueueName, string jobName, int jobId, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 errorCode, string message, string printQueueName, string jobName, int32 jobId, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintingCanceledException.#ctor(System.Int32,System.String,System.String,System.String,System.Int32,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="errorCode" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="jobName" Type="System.String" />
+        <Parameter Name="jobId" Type="System.Int32" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="errorCode"><see cref="T:System.Int32" />は、HRESULT、特定の例外に割り当てられているコード化数値として解釈されます。</param>
+        <param name="message">A<see cref="T:System.String" />エラー条件を記述します。</param>
+        <param name="printQueueName">例外の原因となった、印刷ジョブをホストしている印刷キューの名前。</param>
+        <param name="jobName">例外の原因となった、印刷ジョブの名前です。</param>
+        <param name="jobId">例外の原因となった、印刷ジョブの ID 番号。</param>
+        <param name="innerException">例外の根本的な原因です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintingCanceledException" />固有のエラー コード、エラー状態、印刷キュー名、ジョブ名、ジョブの ID、および例外の根本原因を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

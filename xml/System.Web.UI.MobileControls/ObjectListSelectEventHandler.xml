@@ -1,0 +1,37 @@
+<Type Name="ObjectListSelectEventHandler" FullName="System.Web.UI.MobileControls.ObjectListSelectEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ObjectListSelectEventHandler(object sender, ObjectListSelectEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ObjectListSelectEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.MobileControls.ObjectListSelectEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Mobile</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Web.Mobile.dll assembly has been deprecated and should no longer be used. For information about how to develop ASP.NET mobile applications, see http://go.microsoft.com/fwlink/?LinkId=157231.")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.MobileControls.ObjectListSelectEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース、<see cref="T:System.Web.UI.MobileControls.ObjectList" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.MobileControls.ObjectListSelectEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.MobileControls.ObjectList.ItemSelect" />のイベント、<see cref="T:System.Web.UI.MobileControls.ObjectList" />コントロール。 ASP.NET モバイル アプリケーションを開発する方法については、次を参照してください。、 [www.asp.net/mobile](http://go.microsoft.com/fwlink/?LinkID=182900) Web サイトです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.UI.MobileControls.ObjectListSelectEventHandler>の委任、<xref:System.Web.UI.MobileControls.ObjectList>コントロール、イベントを処理するメソッドを指定します。 <xref:System.Web.UI.MobileControls.ObjectList>項目イベントが生成されたときに、コントロールは、ハンドラーを通知します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると必ずイベント ハンドラーが呼び出されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

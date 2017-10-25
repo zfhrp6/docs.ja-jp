@@ -1,0 +1,127 @@
+<Type Name="HttpBinding" FullName="System.Web.Services.Description.HttpBinding">
+  <TypeSignature Language="C#" Value="public sealed class HttpBinding : System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HttpBinding extends System.Web.Services.Description.ServiceDescriptionFormatExtension" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Description.HttpBinding" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Description.ServiceDescriptionFormatExtension</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtension("binding", "http://schemas.xmlsoap.org/wsdl/http/", typeof(System.Web.Services.Description.Binding))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.Services.Configuration.XmlFormatExtensionPrefix("http", "http://schemas.xmlsoap.org/wsdl/http/")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>追加された機能拡張要素を表す、 <see cref="T:System.Web.Services.Description.Binding" /> XML Web サービス内で。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの拡張機能要素として使用するには、情報が HTTP で渡されることを指定します。 XML Web サービス用のプロトコルの仕様の詳細については、次を参照してください[&#91;\< 。topic://cpconbuildingaspnetwebservices > & #93 です。](http://msdn.microsoft.com/en-us/01dfc27c-c68e-4910-a0aa-5e4c2a766b0c). Web サービス記述言語 (WSDL) に関する詳細については、http://www.w3.org/TR/wsdl/ の仕様を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例の一般的な使用方法を示しています、`HttpBinding`クラスです。  
+  
+ [!code-cpp[WebServices_HttpBinding#1](~/samples/snippets/cpp/VS_Snippets_Remoting/WebServices_HttpBinding/CPP/httpbinding.cpp#1)]
+ [!code-csharp[WebServices_HttpBinding#1](~/samples/snippets/csharp/VS_Snippets_Remoting/WebServices_HttpBinding/CS/httpbinding.cs#1)]
+ [!code-vb[WebServices_HttpBinding#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/WebServices_HttpBinding/VB/httpbinding.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Description.HttpBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Description.HttpBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public const string Namespace;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal string Namespace" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Services.Description.HttpBinding.Namespace" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP で使用する HTTP トランスポートを表す XML 名前空間の URI を指定します。 このフィールドは定数です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フィールドの値は、"http://schemas.xmlsoap.org/wsdl/http/"です。  
+  
+   
+  
+## Examples  
+ 次の例での一般的な使用、`Namespace`フィールドです。  
+  
+ [!code-cpp[HttpBinding_HttpBinding#2](~/samples/snippets/cpp/VS_Snippets_Remoting/HttpBinding_HttpBinding/CPP/httpbinding_ctor.cpp#2)]
+ [!code-csharp[HttpBinding_HttpBinding#2](~/samples/snippets/csharp/VS_Snippets_Remoting/HttpBinding_HttpBinding/CS/httpbinding_ctor.cs#2)]
+ [!code-vb[HttpBinding_HttpBinding#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/HttpBinding_HttpBinding/VB/httpbinding_ctor.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Verb">
+      <MemberSignature Language="C#" Value="public string Verb { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Verb" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Description.HttpBinding.Verb" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("verb")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または"GET"または"POST"メソッドを使用して HTTP 要求を行ったがかどうかを示す値を設定します。</summary>
+        <value>2 つの値、"GET"または"POST"のいずれかを示す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の例は、新しい作成`HttpBinding`設定とその`Verb`プロパティです。  
+  
+ WebServices_HttpBinding #2  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

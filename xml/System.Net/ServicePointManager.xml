@@ -1,0 +1,939 @@
+<Type Name="ServicePointManager" FullName="System.Net.ServicePointManager">
+  <TypeSignature Language="C#" Value="public class ServicePointManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi ServicePointManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Net.ServicePointManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.ServicePoint</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトのコレクションを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager>作成、保守、およびのインスタンスを削除するための静的クラスには、<xref:System.Net.ServicePoint>クラスです。  
+  
+ アプリケーションがインターネット リソースの識別子 URI (Uniform Resource) への接続を要求するときに経由、<xref:System.Net.ServicePointManager>オブジェクト、<xref:System.Net.ServicePointManager>を返します、<xref:System.Net.ServicePoint>ホストおよび URI によって識別されるスキームへの接続情報を含むオブジェクト。 既に存在する場合<xref:System.Net.ServicePoint>そのホストおよびパーティション構成のオブジェクト、<xref:System.Net.ServicePointManager>既存のオブジェクトを返します<xref:System.Net.ServicePoint>オブジェクト。 それ以外の場合、<xref:System.Net.ServicePointManager>新しいオブジェクトを作成<xref:System.Net.ServicePoint>オブジェクト。  
+  
+ .NET Framework 4.6 には、安全性の低い暗号およびハッシュ アルゴリズムの接続をブロックする新しいセキュリティ機能が含まれています。 HttpClient、HttpWebRequest、FTPClient、SmtpClient、SslStream などの Api を介した TLS と SSL を使用して、.NET Framework 4.6 を対象とするアプリケーションでは、既定では、セキュリティが強化された動作を取得します。  
+  
+ 開発者は、既存 SSL3 サービスまたは TLS で RC4 サービスと相互運用性を維持するために、この動作を除外する必要あります。 [この記事](https://support.microsoft.com/kb/3069494)新しい動作を無効にするように、コードを変更する方法について説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Net.ServicePoint> URI www.contoso.com への接続オブジェクトです。  
+  
+ [!code-cpp[Classic ServicePoint Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic ServicePoint Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ServicePoint Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic ServicePoint Example/CS/source.cs#1)]
+ [!code-vb[Classic ServicePoint Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic ServicePoint Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CertificatePolicy">
+      <MemberSignature Language="C#" Value="public static System.Net.ICertificatePolicy CertificatePolicy { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.ICertificatePolicy CertificatePolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.CertificatePolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use ServerCertificateValidationCallback instead", false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.ICertificatePolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーの証明書ポリシーを取得または設定します。</summary>
+        <value><see cref="T:System.Net.ICertificatePolicy" /> インターフェイスを実装するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Net.ServicePointManager.CertificatePolicy%2A>プロパティに設定されている、<xref:System.Net.ICertificatePolicy>インターフェイス オブジェクト、<xref:System.Net.ServicePointManager>オブジェクトは、既定の証明書ポリシーではなく、そのインスタンスで定義されている証明書ポリシーを使用します。  
+  
+ 既定の証明書ポリシーは、有効な証明書と有効期限が切れた証明書が許可されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、カスタムの証明書ポリシーの証明書ポリシーの例外をキャッチする方法を示します。 証明書ポリシー オブジェクトが定義されている、変数に、Uniform Resource Identifier () の Web リソースが含まれていることを想定しています`myUri`、という名前のメソッドがあることと`ProcessResponse`アプリケーションの作業を実行します。  
+  
+ [!code-cpp[Classic ServicePointManager.CertificatePolicy Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic ServicePointManager.CertificatePolicy Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ServicePointManager.CertificatePolicy Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic ServicePointManager.CertificatePolicy Example/CS/source.cs#1)]
+ [!code-vb[Classic ServicePointManager.CertificatePolicy Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic ServicePointManager.CertificatePolicy Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">設定する、<see cref="P:System.Net.ServicePointManager.CertificatePolicy" />プロパティです。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckCertificateRevocationList">
+      <MemberSignature Language="C#" Value="public static bool CheckCertificateRevocationList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool CheckCertificateRevocationList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.CheckCertificateRevocationList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("CRL checks not implemented")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>証明書が証明機関の失効リストに対して照合されるかどうかを示す <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          証明書失効リストが照合される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Net.ServicePointManager.CheckCertificateRevocationList%2A>は`true`、証明書が証明書の検証プロセスの一部として、証明書機関の失効一覧照らし合わせてチェックされます。 既定値は`false`します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#10)]
+ [!code-csharp[System.Net.ServicePoint#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#10)]
+ [!code-vb[System.Net.ServicePoint#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このプロパティを設定します。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientCipherSuitesCallback">
+      <MemberSignature Language="C#" Value="public static System.Net.CipherSuitesCallback ClientCipherSuitesCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.CipherSuitesCallback ClientCipherSuitesCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.ClientCipherSuitesCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API is no longer supported.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.CipherSuitesCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultConnectionLimit">
+      <MemberSignature Language="C#" Value="public static int DefaultConnectionLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DefaultConnectionLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.DefaultConnectionLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトで許可される同時接続の最大数を取得または設定します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトで許可されている同時接続の最大数。 既定値は 2 です。 AutoConfig プロパティ設定されている場合、構成ファイルからこのプロパティの値を変更することはないアプリは、ASP.NET ホストとして実行中は、<see langword="true" />です。 ただし、autoConfig プロパティが <see langword="true" /> であれば、プログラムで値を変更できます。 AppDomain の読み込み時に、目的の値を 1 回だけ設定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>プロパティの設定の同時接続の既定の最大数、<xref:System.Net.ServicePointManager>オブジェクトに割り当てます、<xref:System.Net.ServicePoint.ConnectionLimit%2A>プロパティの作成時に<xref:System.Net.ServicePoint>オブジェクト。  
+  
+ 変更する、<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>プロパティが既存の影響を与えません<xref:System.Net.ServicePoint>オブジェクトのみに影響を与えます<xref:System.Net.ServicePoint>変更後に初期化されるオブジェクト。 直接または構成のいずれかに、このプロパティの値が設定されていない場合、既定値定数<xref:System.Net.ServicePointManager.DefaultPersistentConnectionLimit>です。  
+  
+> [!NOTE]
+>  変更、<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>プロパティ HTTP 1.0 と HTTP 1.1 の両方の接続に影響します。 HTTP 1.0 と HTTP 1.1 プロトコルの接続の制限を個別に変更することはできません。 サーバー環境 (ASP.NET) で使用されるときに<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>既定値は高い、接続数は 10 です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#10)]
+ [!code-csharp[System.Net.ServicePoint#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#10)]
+ [!code-vb[System.Net.ServicePoint#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Net.ServicePointManager.DefaultConnectionLimit" /> が 0 以下です。</exception>
+        <permission cref="T:System.Net.WebPermission">Web アクセス許可を無制限になります。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultNonPersistentConnectionLimit">
+      <MemberSignature Language="C#" Value="public const int DefaultNonPersistentConnectionLimit = 4;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultNonPersistentConnectionLimit = (4)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.ServicePointManager.DefaultNonPersistentConnectionLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>4</MemberValue>
+      <Docs>
+        <summary>HTTP/1.0 以降のサーバーに接続される <see cref="T:System.Net.ServicePoint" /> オブジェクトで許可する非永続的な接続の既定の数 (4)。 このフィールドは定数ですが、.NET Framework 2.0 では使用されなくなりました。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPersistentConnectionLimit">
+      <MemberSignature Language="C#" Value="public const int DefaultPersistentConnectionLimit = 2;" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal int32 DefaultPersistentConnectionLimit = (2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.ServicePointManager.DefaultPersistentConnectionLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <MemberValue>2</MemberValue>
+      <Docs>
+        <summary>HTTP/1.1 以降のサーバーに接続される <see cref="T:System.Net.ServicePoint" /> オブジェクトで許可する永続的な接続の既定の数 (2)。 このフィールドは定数であり、<see cref="P:System.Net.ServicePointManager.DefaultConnectionLimit" /> プロパティの値が直接にも構成によっても設定されていない場合に <see cref="P:System.Net.ServicePointManager.DefaultConnectionLimit" /> プロパティを初期化するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例のセット、<xref:System.Net.ServicePointManager.DefaultConnectionLimit%2A>プロパティがこのフィールドを使用します。  
+  
+ [!code-cpp[System.Net.ServicePoint#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#10)]
+ [!code-csharp[System.Net.ServicePoint#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#10)]
+ [!code-vb[System.Net.ServicePoint#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DnsRefreshTimeout">
+      <MemberSignature Language="C#" Value="public static int DnsRefreshTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 DnsRefreshTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.DnsRefreshTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドメイン ネーム サービス (DNS: Domain Name Service) 解決が有効と見なされる期間を示す値を取得または設定します。</summary>
+        <value>タイムアウト値 (ミリ秒)。 値が -1 の場合は、タイムアウト期間が無限であることを示します。 既定値は 120,000 ミリ秒 (2 分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePointWhidbey#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/cpp/servicepoint.cpp#1)]
+ [!code-csharp[System.Net.ServicePointWhidbey#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/CS/servicepoint.cs#1)]
+ [!code-vb[System.Net.ServicePointWhidbey#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/VB/servicepoint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableDnsRoundRobin">
+      <MemberSignature Language="C#" Value="public static bool EnableDnsRoundRobin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool EnableDnsRoundRobin" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.EnableDnsRoundRobin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドメイン ネーム サービス (DNS) 解決で、適用可能なインターネット プロトコル (IP) アドレスが順番に使用されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          DNS 解決によって常に特定のホストの最初の IP アドレスが返される場合は <see langword="false" />。それ以外の場合は <see langword="true" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 1 つ以上の IP アドレスがホスト名に関連付けられている場合は、DNS 解決は通常、最初の IP アドレスのみを返します。 このプロパティを設定する場合`true`、後続の DNS 解決が順番に使用できるすべての IP アドレスを特定のホストにし、します。 このオプションは、サービスは、負荷分散サーバーまたはサーバー クラスター間でのメカニズムとして DNS を使用する場合に便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePointWhidbey#1](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/cpp/servicepoint.cpp#1)]
+ [!code-csharp[System.Net.ServicePointWhidbey#1](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/CS/servicepoint.cs#1)]
+ [!code-vb[System.Net.ServicePointWhidbey#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePointWhidbey/VB/servicepoint.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EncryptionPolicy">
+      <MemberSignature Language="C#" Value="public static System.Net.Security.EncryptionPolicy EncryptionPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Net.Security.EncryptionPolicy EncryptionPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.EncryptionPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO("Always returns EncryptionPolicy.RequireEncryption.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.EncryptionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.ServicePointManager" /> インスタンスの <see cref="T:System.Net.Security.EncryptionPolicy" /> を取得します。</summary>
+        <value>この <see cref="T:System.Net.ServicePointManager" /> のインスタンスに使用する暗号化ポリシー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 構成ファイルで値が指定されていない場合、<xref:System.Net.ServicePointManager.EncryptionPolicy%2A>プロパティの既定値<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。 これで、SSL/TLS セッションに適用されるこの<xref:System.Net.ServicePointManager>インスタンス。  
+  
+ 暗号化ポリシーが に設定されているときに Null 暗号の使用する必要が<xref:System.Net.Security.EncryptionPolicy?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expect100Continue">
+      <MemberSignature Language="C#" Value="public static bool Expect100Continue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool Expect100Continue" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.Expect100Continue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>100-Continue 動作を使用するかどうかを決定する <see cref="T:System.Boolean" /> 値を取得または設定します。</summary>
+        <value>
+          100-Continue 動作を有効にする場合は <see langword="true" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに設定するときに`true`、100-100-continue 動作を使用します。 クライアント要求を使用する、`PUT`と`POST`メソッドは、要求に Expect ヘッダーを追加、<xref:System.Net.ServicePointManager.Expect100Continue%2A>プロパティは`true`と<xref:System.Net.HttpWebRequest.ContentLength%2A>プロパティが 0 より大きい、または<xref:System.Net.HttpWebRequest.SendChunked%2A>プロパティが true です。 クライアントが 100 を受信することは、クライアントはポストするデータを送信する必要がありますを示すためにサーバーからの応答を続行します。 このメカニズムにより、クライアント要求ヘッダーに基づき、サーバー要求を拒否する場合は、ネットワーク経由で大量のデータを送信する必要があります。  
+  
+ たとえば、<xref:System.Net.ServicePointManager.Expect100Continue%2A>プロパティは`false`します。 要求がサーバーに送信されると、データが含まれています。 場合は、要求ヘッダーを読み取った後、サーバー認証が必要です、401 応答を送信する必要があります、クライアントは適切な認証ヘッダーを使用してデータを再送信する必要があります。  
+  
+ このプロパティが場合`true`、要求ヘッダーがサーバーに送信されます。 サーバーが要求を拒否されない場合は、100、送信-100-continue 応答データを送信することができます。 上記の例のように、サーバー認証が必要な場合は、401 の応答を送信し、クライアントがデータを不必要に転送されません。  
+  
+ このプロパティの値を変更するには影響しません既存<xref:System.Net.ServicePoint>オブジェクト。 新しいのみ<xref:System.Net.ServicePoint>変更後に作成されたオブジェクトには影響します。  
+  
+ 100 の動作は使用されません HTTP 1.0 要求このプロパティが設定されている場合でも続行`true`です。  
+  
+ Expect 100-IETF RFC 2616 10.1.1 で完全に説明している動作を続行します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#10)]
+ [!code-csharp[System.Net.ServicePoint#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#10)]
+ [!code-vb[System.Net.ServicePoint#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FindServicePoint">
+      <MemberSignature Language="C#" Value="public static System.Net.ServicePoint FindServicePoint (Uri address);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.ServicePoint FindServicePoint(class System.Uri address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePointManager.FindServicePoint(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ServicePoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="address">接続先のインターネット リソースの <see cref="T:System.Uri" /> オブジェクト。</param>
+        <summary>指定した <see cref="T:System.Uri" /> オブジェクトとの通信を管理するには、既存の <see cref="T:System.Net.ServicePoint" /> オブジェクトを検出するか、新しい <see cref="T:System.Net.ServicePoint" /> オブジェクトを作成します。</summary>
+        <returns>要求を処理するための通信を管理する <see cref="T:System.Net.ServicePoint" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager.FindServicePoint%2A>メソッドを返します、<xref:System.Net.ServicePoint>指定されたインターネット ホスト名に関連付けられているオブジェクト。 ない場合は<xref:System.Net.ServicePoint>、そのホスト オブジェクトが存在する、<xref:System.Net.ServicePointManager>オブジェクトは、1 つを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">最大数<see cref="T:System.Net.ServicePoint" />オブジェクトで定義されている<see cref="P:System.Net.ServicePointManager.MaxServicePoints" />に達しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindServicePoint">
+      <MemberSignature Language="C#" Value="public static System.Net.ServicePoint FindServicePoint (string uriString, System.Net.IWebProxy proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.ServicePoint FindServicePoint(string uriString, class System.Net.IWebProxy proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePointManager.FindServicePoint(System.String,System.Net.IWebProxy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ServicePoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriString" Type="System.String" />
+        <Parameter Name="proxy" Type="System.Net.IWebProxy" />
+      </Parameters>
+      <Docs>
+        <param name="uriString">接続先のインターネット リソースの URI。</param>
+        <param name="proxy">この要求に対して使用するプロキシ データ。</param>
+        <summary>指定した URI (Uniform Resource Identifier) との通信を管理するには、既存の <see cref="T:System.Net.ServicePoint" /> オブジェクトを検出するか、新しい <see cref="T:System.Net.ServicePoint" /> オブジェクトを作成します。</summary>
+        <returns>要求を処理するための通信を管理する <see cref="T:System.Net.ServicePoint" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager.FindServicePoint%2A>メソッドを返します、<xref:System.Net.ServicePoint>指定されたインターネット ホスト名に関連付けられているオブジェクト。 ない場合は<xref:System.Net.ServicePoint>、そのホスト オブジェクトが存在する、<xref:System.Net.ServicePointManager>オブジェクトは、1 つを作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例にアクセスするには、このメソッドを呼び出すことを示しています、<xref:System.Net.ServicePoint>オブジェクト。  
+  
+ [!code-cpp[System.Net.ServicePoint#7](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#7)]
+ [!code-csharp[System.Net.ServicePoint#7](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#7)]
+ [!code-vb[System.Net.ServicePoint#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">指定された URI<paramref name="uriString" />が無効です。</exception>
+        <exception cref="T:System.InvalidOperationException">最大数<see cref="T:System.Net.ServicePoint" />オブジェクトで定義されている<see cref="P:System.Net.ServicePointManager.MaxServicePoints" />に達しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindServicePoint">
+      <MemberSignature Language="C#" Value="public static System.Net.ServicePoint FindServicePoint (Uri address, System.Net.IWebProxy proxy);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.ServicePoint FindServicePoint(class System.Uri address, class System.Net.IWebProxy proxy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePointManager.FindServicePoint(System.Uri,System.Net.IWebProxy)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ServicePoint</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="address" Type="System.Uri" />
+        <Parameter Name="proxy" Type="System.Net.IWebProxy" />
+      </Parameters>
+      <Docs>
+        <param name="address">接続先のインターネット リソースのアドレスを格納している <see cref="T:System.Uri" /> オブジェクト。</param>
+        <param name="proxy">この要求に対して使用するプロキシ データ。</param>
+        <summary>指定した <see cref="T:System.Uri" /> オブジェクトとの通信を管理するには、既存の <see cref="T:System.Net.ServicePoint" /> オブジェクトを検出するか、新しい <see cref="T:System.Net.ServicePoint" /> オブジェクトを作成します。</summary>
+        <returns>要求を処理するための通信を管理する <see cref="T:System.Net.ServicePoint" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager.FindServicePoint%2A>メソッドを返します、<xref:System.Net.ServicePoint>指定されたインターネット ホスト名に関連付けられているオブジェクト。 ない場合は<xref:System.Net.ServicePoint>、そのホスト オブジェクトが存在する、<xref:System.Net.ServicePointManager>オブジェクトは、1 つを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="address" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">最大数<see cref="T:System.Net.ServicePoint" />オブジェクトで定義されている<see cref="P:System.Net.ServicePointManager.MaxServicePoints" />に達しています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxServicePointIdleTime">
+      <MemberSignature Language="C#" Value="public static int MaxServicePointIdleTime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxServicePointIdleTime" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.MaxServicePointIdleTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Net.ServicePoint" /> オブジェクトの最大アイドル時間を取得または設定します。</summary>
+        <value><see cref="T:System.Net.ServicePoint" /> オブジェクトのミリ秒単位の最大アイドル時間。 既定値は 100,000 ミリ秒 (100 秒) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.ServicePointManager.MaxServicePointIdleTime%2A>プロパティの設定、最大アイドル時間、<xref:System.Net.ServicePointManager>オブジェクトに割り当てます、<xref:System.Net.ServicePoint.MaxIdleTime%2A>プロパティの作成時に<xref:System.Net.ServicePoint>オブジェクト。 この値を変更に影響を与えるだけ<xref:System.Net.ServicePoint>値が変更された後に初期化されるオブジェクト。  
+  
+ 後に、<xref:System.Net.ServicePoint>で指定された時間アイドル状態オブジェクトになった<xref:System.Net.ServicePoint.MaxIdleTime%2A>、ガベージ コレクションの対象であります。 A<xref:System.Net.ServicePoint>接続の一覧が関連付けられている場合は、オブジェクトがアイドル状態、<xref:System.Net.ServicePoint>オブジェクトが空です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#8](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#8)]
+ [!code-csharp[System.Net.ServicePoint#8](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#8)]
+ [!code-vb[System.Net.ServicePoint#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Net.ServicePointManager.MaxServicePointIdleTime" /> は <see cref="F:System.Threading.Timeout.Infinite" /> 未満か、または <see cref="F:System.Int32.MaxValue" /> を超えています。</exception>
+        <permission cref="T:System.Net.WebPermission">Web アクセス許可を無制限になります。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxServicePoints">
+      <MemberSignature Language="C#" Value="public static int MaxServicePoints { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 MaxServicePoints" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.MaxServicePoints" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同時に維持される <see cref="T:System.Net.ServicePoint" /> オブジェクトの最大数を取得または設定します。</summary>
+        <value>維持される <see cref="T:System.Net.ServicePoint" /> オブジェクトの最大数。 既定値は 0 です。これは <see cref="T:System.Net.ServicePoint" /> オブジェクトの数に制限がないことを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 小さくと、<xref:System.Net.ServicePointManager.MaxServicePoints%2A>プロパティの数を下回って<xref:System.Net.ServicePoint>存在、現在のオブジェクト、<xref:System.Net.ServicePointManager>を削除、<xref:System.Net.ServicePoint>アイドル時間が最長の時間を持つオブジェクト。 場合の数<xref:System.Net.ServicePoint>アクティブな接続を持つオブジェクトがの値より大きい<xref:System.Net.ServicePointManager.MaxServicePoints%2A>、<xref:System.Net.ServicePointManager>オブジェクトの削除、<xref:System.Net.ServicePoint>アイドル状態になったオブジェクトです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#8](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#8)]
+ [!code-csharp[System.Net.ServicePoint#8](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#8)]
+ [!code-vb[System.Net.ServicePoint#8](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <see cref="P:System.Net.ServicePointManager.MaxServicePoints" /> が 0 未満であるか、または <see cref="F:System.Int32.MaxValue" /> を超えています。</exception>
+        <permission cref="T:System.Net.WebPermission">Web アクセス許可を無制限になります。 関連する列挙。<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ReusePort">
+      <MemberSignature Language="C#" Value="public static bool ReusePort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool ReusePort" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.ReusePort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.MonoTODO</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティの値を <see langword="true" /> に設定すると、HttpWebRequest からのすべての発信 TCP 接続において、ソケットでネイティブ ソケット オプション SO_REUSE_UNICASTPORT が使用されます。 これにより、基になる発信ポートが共有されます。 これは、多数の発信接続が短時間で作成される場合や、アプリにポート不足の危険がある場合に役立ちます。</summary>
+        <value><see cref="T:System.Boolean" /> を返します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は `false` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityProtocol">
+      <MemberSignature Language="C#" Value="public static System.Net.SecurityProtocolType SecurityProtocol { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Net.SecurityProtocolType SecurityProtocol" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.SecurityProtocol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.SecurityProtocolType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その <see cref="T:System.Net.ServicePointManager" /> オブジェクトが管理する <see cref="T:System.Net.ServicePoint" /> オブジェクトで使用されるセキュリティ プロトコルを取得または設定します。</summary>
+        <value><see cref="T:System.Net.SecurityProtocolType" /> 列挙値に定義されている値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+このプロパティは、新しい接続に使用する Secure Sockets Layer (SSL) またはトランスポート層セキュリティ (TLS) プロトコルのバージョンを選択します。既存の接続は変更されません。  
+  
+このプロパティの既定値は、.NET Framework 4.7 から始めて、<xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>です。 これにより、.NET Framework がネットワークに基づく Api <xref:System.Net.Security.SslStream> (FTP、HTTP、SMTP など) をオペレーティング システムまたはシステム管理者によって実行される任意のカスタム構成から既定のセキュリティ プロトコルを継承します。 既定では、Windows オペレーティング システムの各バージョンでどの SSL/TLS に関するプロトコルが有効になってについては、次を参照してください。 [TLS/SSL (Schannel SSP) のプロトコル](https://msdn.microsoft.com/library/windows/desktop/mt808159.aspx)です。
+ 
+.NET Framework 4.6.2 経由の .NET Framework のバージョンは、このプロパティの既定値は表示されません。 セキュリティの概要は、常に、変更し、既定のプロトコル、保護レベルは、既知の脆弱性を回避するために時間の経過と共に変更されます。 既定値は、個別のマシン構成、インストールされているソフトウェア、および適用された修正プログラムによって異なります。  
+  
+ コードは必要がありますを使用して特定の保護レベル、または特定のセキュリティ レベルが既定で使用されていることを前提として決して暗黙的に依存します。 アプリは、特定のセキュリティ レベルの使用に依存する場合は、そのレベルを明示的に指定し、内にある実際に確立された接続で使用することを確認する、確認する必要があります。 さらに、プロトコルがサポートされている変更発生した場合に強固でコードを設計すること、ような多くの場合、変更されるほとんどの事前通知と新たな脅威を軽減するためにします。  
+  
+ .NET Framework 4.6 には、安全性の低い暗号およびハッシュ アルゴリズムの接続をブロックする新しいセキュリティ機能が含まれています。 HttpClient、HttpWebRequest、FTPClient、SmtpClient、SslStream などの Api を介した TLS と SSL を使用して、.NET Framework 4.6 を対象とするアプリケーションでは、既定では、セキュリティが強化された動作を取得します。  
+  
+ 開発者は、既存 SSL3 サービスまたは TLS で RC4 サービスと相互運用性を維持するために、この動作を除外する必要あります。 [この記事](https://support.microsoft.com/kb/3069494)新しい動作を無効にするように、コードを変更する方法について説明します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">プロパティを設定するために指定された値が有効な <see cref="T:System.Net.SecurityProtocolType" /> 列挙値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerCertificateValidationCallback">
+      <MemberSignature Language="C#" Value="public static System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.Security.RemoteCertificateValidationCallback ServerCertificateValidationCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.ServerCertificateValidationCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.RemoteCertificateValidationCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバー証明書を検証するコールバックを取得または設定します。</summary>
+        <value><see cref="T:System.Net.Security.RemoteCertificateValidationCallback" /> 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション設定、<xref:System.Net.ServicePointManager.ServerCertificateValidationCallback%2A>プロパティをカスタム クライアントによって、サーバー証明書の検証に使用する方法です。 カスタムの検証を実施する際に、`sender`に渡されたパラメーター、<xref:System.Net.Security.RemoteCertificateValidationCallback>から派生したオブジェクトまたはホスト文字列名であることができます<xref:System.Net.WebRequest>(<xref:System.Net.HttpWebRequest>など) に応じて、<xref:System.Net.ServicePointManager.CertificatePolicy%2A>プロパティです。  
+  
+ カスタム検証を使用しない場合、証明書の名前は、要求の作成に使用されるホスト名と比較されます。 たとえば場合、<xref:System.Net.WebRequest.Create%28System.String%29>パラメーターが渡されました"https://www.contoso.com/default.hmtl"の既定の動作が、www.contoso.com に対して、証明書を確認するクライアント。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">設定する、<see cref="P:System.Net.ServicePointManager.ServerCertificateValidationCallback" />プロパティです。 関連する列挙値:<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerCipherSuitesCallback">
+      <MemberSignature Language="C#" Value="public static System.Net.CipherSuitesCallback ServerCipherSuitesCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Net.CipherSuitesCallback ServerCipherSuitesCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.ServerCipherSuitesCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This API is no longer supported.", true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.CipherSuitesCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetTcpKeepAlive">
+      <MemberSignature Language="C#" Value="public static void SetTcpKeepAlive (bool enabled, int keepAliveTime, int keepAliveInterval);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetTcpKeepAlive(bool enabled, int32 keepAliveTime, int32 keepAliveInterval) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.ServicePointManager.SetTcpKeepAlive(System.Boolean,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enabled" Type="System.Boolean" />
+        <Parameter Name="keepAliveTime" Type="System.Int32" />
+        <Parameter Name="keepAliveInterval" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="enabled">指定されたを使用して有効になりますし、TCP 接続で TCP keep-alive オプションを true に設定する場合<c>keepAliveTime</c>と<c>keepAliveInterval</c>値。  
+  
+ false に設定すると、TCP keep-alive オプションが無効になり、残りのパラメーターは無視されます。  
+  
+ 既定値は false です。</param>
+        <param name="keepAliveTime">最初の keep-alive パケットが送信されるまでアクティビティを行わないタイムアウト値をミリ秒単位で指定します。  
+  
+ 値は 0 よりも大きくする必要があります。  0 またはそれより小さい値が渡されると、<see cref="T:System.ArgumentOutOfRangeException" /> がスローされます。</param>
+        <param name="keepAliveInterval">受信確認が受信されない場合に、連続する keep-alive パケットが送信されるときの間隔をミリ秒単位で指定します。  
+  
+ 値は 0 よりも大きくする必要があります。  0 またはそれより小さい値が渡されると、<see cref="T:System.ArgumentOutOfRangeException" /> がスローされます。</param>
+        <summary>TCP 接続での keep-alive オプションを有効または無効にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションでは、TCP/IP プロバイダーが TCP 接続での keep-alive パケットの使用を有効にすることを要求できます。 既定では TCP 接続での keep-alive パケットの使用が無効になっています。  
+  
+ TCP ソケットときの既定の設定は、2 時間にセットのキープ アライブ タイムアウトとキープ アライブ間隔を 1 秒に初期化されます。 `keepAliveTime`パラメーターが反応のない最初の keep-alive パケットが送信されるまでのミリ秒単位のタイムアウトを指定します。 `keepAliveInterval`パラメーターを指定、間隔 (ミリ秒単位) 間の受信確認を受信しなかった場合、連続する keep-alive パケットが送信されるときにします。 キープ アライブ プローブの数は変更することはできず、10 に設定されています。  
+  
+ Keep-alive の結果として、TCP 接続が削除された場合、<xref:System.Net.Sockets.SocketError>の<xref:System.Net.Sockets.SocketError.NetworkReset>、ソケットで進行中のすべての呼び出しに返される、後続の呼び出しは失敗し、<xref:System.Net.Sockets.SocketError>の<xref:System.Net.Sockets.SocketError.NotConnected>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された値<paramref name="keepAliveTime" />または<paramref name="keepAliveInterval" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseNagleAlgorithm">
+      <MemberSignature Language="C#" Value="public static bool UseNagleAlgorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool UseNagleAlgorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Net.ServicePointManager.UseNagleAlgorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.ServicePoint</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Net.ServicePointManager" /> オブジェクトが管理するサービス ポイントで Nagle アルゴリズムが使用されるかどうかを確認します。</summary>
+        <value>
+          Nagle アルゴリズムを使用する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Nagle アルゴリズムを使用して、小さなデータ パケットをバッファリングして、1 つのパケットとして送信することによってネットワーク トラフィックが削減されます。 このプロセスも呼びます"nagling"です。送信パケットの数が減るために、広く使用されてし、パケットごとのオーバーヘッドを減らすことができます。  
+  
+ このプロパティの値を変更するには影響しません既存<xref:System.Net.ServicePoint>オブジェクト。 変更の後に作成された新しいサービス ポイントのみが影響を受けます。  
+  
+ Nagle アルゴリズムは IETF RFC 896 で詳しく説明します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを設定します。  
+  
+ [!code-cpp[System.Net.ServicePoint#10](~/samples/snippets/cpp/VS_Snippets_Remoting/System.Net.ServicePoint/CPP/servicepoint.cpp#10)]
+ [!code-csharp[System.Net.ServicePoint#10](~/samples/snippets/csharp/VS_Snippets_Remoting/System.Net.ServicePoint/CS/servicepoint.cs#10)]
+ [!code-vb[System.Net.ServicePoint#10](~/samples/snippets/visualbasic/VS_Snippets_Remoting/System.Net.ServicePoint/VB/servicepoint.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

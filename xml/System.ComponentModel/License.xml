@@ -1,0 +1,143 @@
+<Type Name="License" FullName="System.ComponentModel.License">
+  <TypeSignature Language="C#" Value="public abstract class License : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit License extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.License" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>提供、<see langword="abstract" />ライセンスはすべての基本クラスです。 ライセンスは、コンポーネントの特定のインスタンスに付与されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのコンポーネントを呼び出す必要があります<xref:System.ComponentModel.License.Dispose%2A>についてライセンスを付与するときにコンポーネントが破棄または終了します。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.ComponentModel.License" /> から継承する場合は、<see cref="P:System.ComponentModel.License.LicenseKey" /> メンバーと <see cref="M:System.ComponentModel.License.Dispose" /> メンバーをオーバーライドする必要があります。  
+  
+ ライセンスの詳細については、次を参照してください。[する方法: ライセンス コンポーネントやコントロール](http://msdn.microsoft.com/library/8e66c1ed-a445-4b26-8185-990b6e2bbd57)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected License ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.License.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.License" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public abstract void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.License.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、ライセンスによって使用されているリソースを破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのコンポーネントを呼び出す必要があります<xref:System.ComponentModel.License.Dispose%2A>コンポーネントが破棄または終了時に付与するライセンス。  
+  
+ A<xref:System.ComponentModel.LicenseProvider>その使用状況を追跡するために許可するライセンスを使用できます。  
+  
+ <xref:System.ComponentModel.License.Dispose%2A> を使い終わったら <xref:System.ComponentModel.License> を呼び出します。 <xref:System.ComponentModel.License.Dispose%2A> メソッドによって、<xref:System.ComponentModel.License> は使用不可の状態になります。 呼び出した後<xref:System.ComponentModel.License.Dispose%2A>、すべての参照を解放する必要があります、<xref:System.ComponentModel.License>が使用していたメモリをガベージ コレクションによって再要求できるようにします。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.License.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.ComponentModel.License> を呼び出してください。 それ以外の場合、リソース、<xref:System.ComponentModel.License>を使用しては解放されませんガベージ コレクション呼び出すまで、<xref:System.ComponentModel.License>オブジェクトのデストラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LicenseKey">
+      <MemberSignature Language="C#" Value="public abstract string LicenseKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LicenseKey" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.License.LicenseKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このコンポーネントに与えられたライセンス キーを取得します。</summary>
+        <value>このコンポーネントに与えられたライセンス キーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.ComponentModel.LicenseProvider>ライセンス キーとして任意の Unicode 文字の文字列を使用することができます。 <xref:System.ComponentModel.License.LicenseKey%2A>意図的に非表示の内部構造を持つ cookie は、非透過の cookie として処理する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

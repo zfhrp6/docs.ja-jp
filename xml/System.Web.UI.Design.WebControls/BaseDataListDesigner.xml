@@ -1,0 +1,835 @@
+<Type Name="BaseDataListDesigner" FullName="System.Web.UI.Design.WebControls.BaseDataListDesigner">
+  <TypeSignature Language="C#" Value="public abstract class BaseDataListDesigner : System.Web.UI.Design.TemplatedControlDesigner, System.Web.UI.Design.IDataBindingSchemaProvider, System.Web.UI.Design.IDataSourceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BaseDataListDesigner extends System.Web.UI.Design.TemplatedControlDesigner implements class System.Web.UI.Design.IDataBindingSchemaProvider, class System.Web.UI.Design.IDataSourceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.WebControls.BaseDataListDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.TemplatedControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataBindingSchemaProvider</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.Design.IDataSourceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.BaseDataList" /> クラスから派生する Web サーバー コントロールのデザイナー ホストで、デザイン時サポートを提供するコンポーネントの基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーのホストで、ユーザーがソースからデザイン ビューに切り替えたときにコントロールを表すマークアップのソース コードから派生した、<xref:System.Web.UI.WebControls.BaseDataList>抽象クラスは解析され、デザイン画面でコントロールのデザイン時バージョンを作成します。 ユーザーは、ソース ビューに切り替える、デザイン時コントロールがマークアップのソース コードを永続化し、Web ページのマークアップに編集します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>抽象クラスから派生したコントロールのデザイン時サポートを提供するコンポーネントの基本クラスとして機能、<xref:System.Web.UI.WebControls.BaseDataList>デザイナー ホストでします。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>クラスのプロパティは、次の機能を提供します。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.ActionLists%2A>プロパティから返される、<xref:System.ComponentModel.Design.DesignerActionListCollection>通常から派生したオブジェクトを含むオブジェクトを<xref:System.ComponentModel.Design.DesignerActionList>デザイナーの継承ツリーの各レベルのクラスです。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataKeyField%2A>、 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember%2A>、 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSource%2A>、および<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceID%2A>プロパティは、関連付けられたコントロールの対応するプロパティへのアクセスを提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceDesigner%2A>プロパティが関連付けられたコントロールのデータ ソースのデザイナーへのアクセスを提供します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DesignerView%2A>プロパティは、データ ソースの既定のビューを取得します。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>クラスのメソッドは、次の機能を提供します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize%2A>メソッドには、表示、編集、および関連付けられたコントロールをデザインするデザイナーができるように準備します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.InvokePropertyBuilder%2A>メソッドは、コントロールのコンポーネント エディターを起動します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.PreFilterProperties%2A>を追加、削除、または関連付けられたコントロールのデザイン時のプロパティをシャドウするメソッドを使用します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetDesignTimeDataSource%2A>メソッドは、デザイン時にデータ ソースとして使用できるオブジェクトを生成します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetSelectedDataSource%2A>メソッドは、関連付けられたコントロールのコンテナーからデータ ソースを取得します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetResolvedSelectedDataSource%2A>メソッドは、特定のデータ メンバーに解決される、コントロール コンテナーからデータ ソースを取得します。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetTemplateContainerDataSource%2A>メソッドは、テンプレート コンテナーのデータ ソースを取得します。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnComponentChanged%2A>関連付けられているコントロールへの変更がある場合に、メソッドが呼び出されます。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnDataSourceChanged%2A>メソッドが関連付けられているコントロールのデータ ソースが変更されたときに呼び出されます。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnSchemaRefreshed%2A>メソッドは、関連付けられたコントロールのデータ ソースのスキーマが変更されたときに呼び出されます。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormatApplied%2A>自動書式指定スキームが適用されたときに、メソッドが呼び出されます。  
+  
+-   <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnStylesChanged%2A>と<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnTemplateEditingVerbsChanged%2A>関連付けられたコントロールのスタイルが変更された場合や、テンプレート編集デザイナー動詞が変更されたときに、それぞれを実行する機能を実装するメソッドをオーバーライドすることができます。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnPropertyBuilder%2A>プロパティ ビルダー イベントを処理します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected BaseDataListDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.WebControls.BaseDataListDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework は、内部での新しいインスタンスを作成、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>クラスから派生した関連付けられたコントロールの作成時に、<xref:System.Web.UI.WebControls.BaseDataList>クラスまたはそのコントロールをデザイン サーフェイス上のコピー。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActionLists">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.Design.DesignerActionListCollection ActionLists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerActionListCollection ActionLists" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.ActionLists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerActionListCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このデザイナーのデザイナー アクション リスト コレクションを取得します。</summary>
+        <value>このデザイナーと関連付けられた <see cref="T:System.ComponentModel.Design.DesignerActionListCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.ActionLists%2A>プロパティは、空、作成<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクトを追加、<xref:System.ComponentModel.Design.DesignerActionListCollection>によって返される、 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.ActionLists%2A> base プロパティをこの<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクト。 追加してから、<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクト、およびこれを返します<xref:System.ComponentModel.Design.DesignerActionListCollection>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataKeyField">
+      <MemberSignature Language="C#" Value="public string DataKeyField { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataKeyField" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataKeyField" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられたコントロールのデータのキー フィールドの値を設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.BaseDataList.DataKeyField" />関連付けられたコントロールの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataKeyField%2A>プロパティを使用するデザイナーからアクセス、<xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 <xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>関連付けられているコントロールにバインドされているデータ ソースの主キーを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataMember">
+      <MemberSignature Language="C#" Value="public string DataMember { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataMember" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられたコントロールのデータ メンバーのフィールドの値を設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.BaseDataList.DataMember" />関連付けられたコントロールの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember%2A>プロパティを使用するデザイナーからアクセス、<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 <xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>テーブルまたは関連するコントロールにバインドされているデータ ソースの要素を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSource">
+      <MemberSignature Language="C#" Value="public string DataSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSource" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または関連付けられたコントロールのデータ ソース プロパティの値を設定します。</summary>
+        <value><see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />関連付けられたコントロールの値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSource%2A>プロパティを使用するデザイナーからアクセス、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceDesigner">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.IDataSourceDesigner DataSourceDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceDesigner DataSourceDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceDesigner</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディングのいずれかが選択されている場合は、データ ソースのデザイナーを取得します。</summary>
+        <value>関連付けられたコントロールのデータ ソースのデザイナー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceDesigner%2A>から派生した関連付けられたコントロールのデータ ソースのデザイナーを返します、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 デザイナーのオブジェクトを実装して、<xref:System.Web.UI.Design.IDataSourceDesigner>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSourceID">
+      <MemberSignature Language="C#" Value="public string DataSourceID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataSourceID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデザイナーのバージョンのデータ ソース ID プロパティを設定し、関連付けられたコントロールの対応するプロパティをシャドウするために使用します。</summary>
+        <value>A<see cref="T:System.String" />関連付けられたコントロールのデータ ソース ID であります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定デザイナーの<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceID%2A>プロパティ原因、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A?displayProperty=nameWithType>設定に関連付けられたコントロールのプロパティです。 場合、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceID%2A>に設定されている、 <xref:System.String>、定義するのには、新しいデータ ソースを示す、**データ ソースの作成** ダイアログ ボックスが表示されます。 場合、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSourceID%2A>に設定されている、<xref:System.String>データ ソースがないことを示す、<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>空の文字列に設定されている ("") です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerView">
+      <MemberSignature Language="C#" Value="public System.Web.UI.Design.DesignerDataSourceView DesignerView { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.DesignerDataSourceView DesignerView" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.DesignerView" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.DesignerDataSourceView</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられたコントロールにバインドされているデータ ソースの既定のビューを取得します。</summary>
+        <value><see cref="T:System.Web.UI.Design.DesignerDataSourceView" />データ ソースの既定のビューを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DesignerView%2A>プロパティを渡すことによって、関連付けられたコントロールにバインドされているデータ ソースの既定のビューを取得、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember%2A>プロパティを<xref:System.Web.UI.Design.DataSourceDesigner.GetView%2A>のメソッド、<xref:System.Web.UI.Design.DataSourceDesigner>オブジェクト。 ビューが返されない場合、または<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember%2A>プロパティが設定されていない、<xref:System.Web.UI.Design.DataSourceDesigner.GetViewNames%2A>のメソッド、<xref:System.Web.UI.Design.DataSourceDesigner>ビューを取得するために使用名と最初のビュー名が既定のビューを取得するために使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected override void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary>デザイナーによって使用されているアンマネージ リソースを解放し、必要に応じてマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生している、関連付けられているコントロール、<xref:System.Web.UI.WebControls.BaseDataList>クラスには、<xref:System.ComponentModel.IComponent.Site%2A>プロパティを実装する、 <xref:System.ComponentModel.Design.IDesignerHost> 、インターフェイス、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Dispose%2A>メソッドの接続が切断、<xref:System.ComponentModel.Design.IDesignerHost.LoadComplete>のイベント、<xref:System.Web.UI.Design.WebFormsRootDesigner>オブジェクト。  
+  
+ 場合、<xref:System.ComponentModel.IComponent.Site%2A>を実装する、<xref:System.ComponentModel.Design.IComponentChangeService>メソッドを<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Dispose%2A>切断、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentAdded>、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoving>、および<xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoved>イベント。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Dispose%2A>の切断も行います、<xref:System.Web.UI.Design.DataSourceDesigner.DataSourceChanged>と<xref:System.Web.UI.Design.DataSourceDesigner.SchemaRefreshed>のイベント、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner>オブジェクト。 最後に呼び出され、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Dispose%2A>メソッドの基本します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeDataSource">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable GetDesignTimeDataSource (int minimumRows, out bool dummyDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IEnumerable GetDesignTimeDataSource(int32 minimumRows, [out] bool&amp; dummyDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetDesignTimeDataSource(System.Int32,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="minimumRows" Type="System.Int32" />
+        <Parameter Name="dummyDataSource" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="minimumRows">データ ソースを含むサンプル データの行の最小数。</param>
+        <param name="dummyDataSource">
+          <see langword="true" />返されたデータ ソースにはダミー データが含まれている場合<see langword="false" />返されたデータ ソースには、実際のデータ ソースからのデータが含まれている場合。</param>
+        <summary>デザイン時にデータ ソースとして使用できるオブジェクトを生成します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />デザイン時に使用するデータ ソースとして使用するインターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetDesignTimeDataSource%2A?displayProperty=nameWithType>メソッドが、構築しようとしています。、<xref:System.Data.DataTable>オブジェクトで定義されているデータ ソースから、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSource%2A>と<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataMember%2A>プロパティです。 作成可能でない場合、<xref:System.Data.DataTable>ダミー データからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeDataSource">
+      <MemberSignature Language="C#" Value="protected System.Collections.IEnumerable GetDesignTimeDataSource (System.Collections.IEnumerable selectedDataSource, int minimumRows, out bool dummyDataSource);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Collections.IEnumerable GetDesignTimeDataSource(class System.Collections.IEnumerable selectedDataSource, int32 minimumRows, [out] bool&amp; dummyDataSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetDesignTimeDataSource(System.Collections.IEnumerable,System.Int32,System.Boolean@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="selectedDataSource" Type="System.Collections.IEnumerable" />
+        <Parameter Name="minimumRows" Type="System.Int32" />
+        <Parameter Name="dummyDataSource" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="selectedDataSource">実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />データ形式のテンプレートとして使用されます。</param>
+        <param name="minimumRows">データ ソースのデータを含めることはサンプル データの行の最小数。</param>
+        <param name="dummyDataSource">
+          <see langword="true" />返されたデータ ソースにはダミー データが含まれている場合<see langword="false" />返されたデータ ソースには、実際のデータ ソースからのデータが含まれている場合。</param>
+        <summary>デザイン時にデータ ソースとして使用できるオブジェクトを生成します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />デザイン時に使用するデータ ソースとして使用するインターフェイスです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetDesignTimeDataSource%2A?displayProperty=nameWithType>メソッドが、構築しようとしています。、<xref:System.Data.DataTable>オブジェクトで指定されているデータ ソースから、`selectedDataSource`パラメーター。 作成可能でない場合、<xref:System.Data.DataTable>ダミー データからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResolvedSelectedDataSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable GetResolvedSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerable GetResolvedSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetResolvedSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>特定のデータ メンバーに解決される、関連付けられたコントロールのコンテナーからデータ ソース コンポーネントを取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスのデザイン時を含む<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />に解決される、関連付けられたコントロールの<see cref="P:System.Web.UI.WebControls.BaseDataList.DataMember" />パラメーターです。 それ以外の場合、<see langword="null" />データ ソースが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetSelectedDataSource%2A>メソッドを使用、<xref:System.Web.UI.Design.DesignTimeData.GetSelectedDataSource%2A>メソッドで指定されたオブジェクトからのデータ ソースを構築するために、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>と<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelectedDataSource">
+      <MemberSignature Language="C#" Value="public object GetSelectedDataSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetSelectedDataSource() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetSelectedDataSource" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのコンテナーからデータ ソース コンポーネントを取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />インターフェイスのデザイン時を含む<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />関連付けられたコントロールのプロパティです。 それ以外の場合、<see langword="null" />データ ソースが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetSelectedDataSource%2A>メソッドを使用、<xref:System.Web.UI.Design.DesignTimeData.GetSelectedDataSource%2A?displayProperty=nameWithType>メソッドで指定されたオブジェクトからのデータ ソースを構築するために、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>から派生した関連付けられたコントロールのプロパティ、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTemplateContainerDataSource">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerable GetTemplateContainerDataSource (string templateName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Collections.IEnumerable GetTemplateContainerDataSource(string templateName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetTemplateContainerDataSource(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because template editing is handled in ControlDesigner. To support template editing expose template data in the TemplateGroups property and call SetViewFlags(ViewFlags.TemplateEditing, true). http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templateName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="templateName">A<see cref="T:System.String" />データ ソースを取得する対象のテンプレートの名前を指定します。</param>
+        <summary>テンプレートのコンテナーのデータ ソースを取得します。</summary>
+        <returns>実装するオブジェクト、<see cref="T:System.Collections.IEnumerable" />デザイン時を含むインターフェイス<see cref="P:System.Web.UI.WebControls.BaseDataList.DataSource" />プロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetTemplateContainerDataSource%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetResolvedSelectedDataSource%2A>メソッドで指定されたオブジェクトからのデータ ソースを構築するために、<xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>と<xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>関連付けられたコントロールのプロパティから派生した<xref:System.Web.UI.WebControls.BaseDataList>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="usage">
+          <para><see cref="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetTemplateContainerDataSource(System.String)" />メソッドは今後使用しません。 呼び出し元を使用する必要があります、<see cref="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.GetResolvedSelectedDataSource" />メソッド代わりにします。 <paramref name="templateName" />パラメーターは使用されません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">派生したコントロール、<see cref="T:System.Web.UI.WebControls.BaseDataList" />を実装する、<see cref="T:System.ComponentModel.IComponent" />です。</param>
+        <summary>関連付けられたコントロールをデザイナーで表示、編集、デザインできるように準備します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナー ホストの呼び出し、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize%2A>メソッドから派生したコントロールを表示するために、デザイナーを使用する準備ができたときに、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize%2A>メソッドとその基本メソッドのプロパティを構成し、デザイナーの操作のために必要なイベントに接続します。  
+  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize%2A>デザイン時のデータ ソースに接続し、デザイン時のマークアップを更新します。 場合、<xref:System.ComponentModel.IComponent.Site%2A>プロパティを実装して、<xref:System.ComponentModel.Design.IComponentChangeService>インターフェイス、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.Initialize%2A>接続、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentAdded>、 <xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoving>、および<xref:System.ComponentModel.Design.IComponentChangeService.ComponentRemoved>イベント。  
+  
+ `component`パラメーターがから派生した、コントロール、 <xref:System.Web.UI.WebControls.BaseDataList>、つまりこのデザイナー、またはそのコントロールのコピーに関連付けられています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvokePropertyBuilder">
+      <MemberSignature Language="C#" Value="protected void InvokePropertyBuilder (int initialPage);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void InvokePropertyBuilder(int32 initialPage) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.InvokePropertyBuilder(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="initialPage" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="initialPage">コンポーネント エディターの初期化に使用するページのインデックス。</param>
+        <summary>関連付けられたコントロールのコンポーネント エディターを起動します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.InvokePropertyBuilder%2A>メソッドを作成、<xref:System.Web.UI.Design.WebControls.DataGridComponentEditor>または<xref:System.Web.UI.Design.WebControls.DataListComponentEditor>オブジェクト、して呼び出します、<xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent%2A>コンポーネント エディターのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAutoFormat">
+      <MemberSignature Language="C#" Value="protected void OnAutoFormat (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnAutoFormat(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormat(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("Use of this method is not recommended because the AutoFormat dialog is launched by the designer host. The list of available AutoFormats is exposed on the ControlDesigner in the AutoFormats property. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender">イベントの発生元の <see cref="T:System.Object" />。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>処理、<see langword="AutoFormat" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormat%2A>メソッドは廃止されており機能がありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnAutoFormatApplied">
+      <MemberSignature Language="C#" Value="public override void OnAutoFormatApplied (System.Web.UI.Design.DesignerAutoFormat appliedAutoFormat);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnAutoFormatApplied(class System.Web.UI.Design.DesignerAutoFormat appliedAutoFormat) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormatApplied(System.Web.UI.Design.DesignerAutoFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appliedAutoFormat" Type="System.Web.UI.Design.DesignerAutoFormat" />
+      </Parameters>
+      <Docs>
+        <param name="appliedAutoFormat">A<see cref="T:System.Web.UI.Design.DesignerAutoFormat" />スタイルを定義するオブジェクト。</param>
+        <summary>自動書式指定スキームが関連付けられているコントロールに適用されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormatApplied%2A>メソッドが呼び出されます、<xref:System.Web.UI.Design.DesignerAutoFormat>から派生した関連付けられたコントロールをオブジェクトが適用されて、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 A<xref:System.Web.UI.Design.DesignerAutoFormat>オブジェクトを定義、<xref:System.Web.UI.Design.DesignerAutoFormatStyle>コントロールに適用されるオブジェクト。  
+  
+ デザイナーがオーバーライドできる、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnAutoFormatApplied%2A>をコントロールのプロパティを検査するか、他のいくつかの操作を実行します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnComponentChanged">
+      <MemberSignature Language="C#" Value="public override void OnComponentChanged (object sender, System.ComponentModel.Design.ComponentChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnComponentChanged(object sender, class System.ComponentModel.Design.ComponentChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnComponentChanged(System.Object,System.ComponentModel.Design.ComponentChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.ComponentModel.Design.ComponentChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender"><see cref="T:System.Object" />イベントのソースであります。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.ComponentModel.Design.ComponentChangedEventArgs" />。</param>
+        <summary>関連付けられたコントロールに変更があるときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnComponentChanged%2A>メソッドが呼び出されます、<xref:System.ComponentModel.Design.IComponentChangeService.ComponentChanged>から派生したコントロールのイベント、<xref:System.Web.UI.WebControls.BaseDataList>クラスを実行します。 コントロールのプロパティの変更に応答通常、これは (たとえば、**プロパティ**グリッドの変更)。 場合、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.DataSource%2A>コントロールがバインドされているオブジェクトが変更されたが、デザイン画面で、コントロールが再描画します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataSourceChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnDataSourceChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnDataSourceChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnDataSourceChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソースが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnDataSourceChanged%2A>基本メソッドから派生した関連付けられたコントロールの接続、<xref:System.Web.UI.WebControls.BaseDataList>現在のデータ ソースにクラス、メソッドがデザイン時のマークアップを更新する場合は、コントロールが接続されているデータ ソースとします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPropertyBuilder">
+      <MemberSignature Language="C#" Value="protected void OnPropertyBuilder (object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void OnPropertyBuilder(object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnPropertyBuilder(System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="sender"><see cref="T:System.Object" />イベントのソースであります。</param>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" /> オブジェクト。</param>
+        <summary>プロパティ ビルダー イベントを処理するメソッドを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnPropertyBuilder%2A>メソッドを呼び出してから派生した関連付けられたコントロールのコンポーネントのエディター、<xref:System.Web.UI.WebControls.BaseDataList>クラスです。 作成、<xref:System.Web.UI.Design.WebControls.DataGridComponentEditor>または<xref:System.Web.UI.Design.WebControls.DataListComponentEditor>オブジェクト、して呼び出します、<xref:System.Web.UI.Design.WebControls.BaseDataListComponentEditor.EditComponent%2A>コンポーネント エディターのメソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSchemaRefreshed">
+      <MemberSignature Language="C#" Value="protected virtual void OnSchemaRefreshed ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSchemaRefreshed() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnSchemaRefreshed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのデータ ソースのスキーマが変更されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレート編集モードでもフィールドでは、デザイナーがいない場合は追加または編集するには、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnSchemaRefreshed%2A>メソッドの呼び出し、<xref:System.Web.UI.Design.ControlDesigner.InvokeTransactedChange%2A>メソッドを呼び出して、<xref:System.Web.UI.Design.ControlDesigner.OnComponentChanged%2A>を更新するメソッド、<xref:System.Web.UI.WebControls.BaseDataList>コントロール、データ ソースの変更を反映するようにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnStylesChanged">
+      <MemberSignature Language="C#" Value="protected void OnStylesChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void OnStylesChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnStylesChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>関連付けられたコントロールのスタイルが変更されたときに発生する機能の実装をオーバーライドできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnStylesChanged%2A>は通知に関連付けられているスタイルを制御することに由来として使用できます。 メソッド、<xref:System.Web.UI.WebControls.BaseDataList>クラスが変更されました。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnTemplateEditingVerbsChanged">
+      <MemberSignature Language="C#" Value="protected abstract void OnTemplateEditingVerbsChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnTemplateEditingVerbsChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnTemplateEditingVerbsChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テンプレート編集デザイナー動詞が変更されたときに発生する機能の実装をオーバーライドできます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnTemplateEditingVerbsChanged%2A>追加処理を実行するメソッドを実装することができます、記録など、変更が発生した、テンプレート編集動詞を変更するときにします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para><see cref="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.OnTemplateEditingVerbsChanged" />メソッドは抽象であり、派生クラスから継承時にオーバーライドする必要があります、<see cref="T:System.Web.UI.Design.WebControls.BaseDataListDesigner" />クラスです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PreFilterProperties">
+      <MemberSignature Language="C#" Value="protected override void PreFilterProperties (System.Collections.IDictionary properties);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PreFilterProperties(class System.Collections.IDictionary properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.PreFilterProperties(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="properties">実装するコレクション、<see cref="T:System.Collections.IDictionary" />追加されたプロパティおよびシャドウ プロパティのインターフェイスです。</param>
+        <summary>プロパティを削除するかに表示する追加のプロパティを追加する、デザイナーによって使用される、**プロパティ**グリッドまたは関連付けられたコントロールのプロパティをシャドウします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロール デザイナーから派生したメソッドを使用して、<xref:System.ComponentModel.Design.ComponentDesigner.PreFilterProperties%2A?displayProperty=nameWithType>デザイナーを実装して、対応するデザイン時のプロパティにさまざまなコントロールのプロパティをシャドウおよびからプロパティをプロパティを追加または削除する方法、**プロパティ**グリッドです。  
+  
+ 派生したコントロールの<xref:System.Web.UI.WebControls.BaseDataList>クラス、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner.PreFilterProperties%2A>シャドウをデザイン時プロパティを作成する、 <xref:System.Web.UI.WebControls.BaseDataList.DataSource%2A>、 <xref:System.Web.UI.WebControls.BaseDataList.DataMember%2A>、 <xref:System.Web.UI.WebControls.BaseDataList.DataKeyField%2A>、および<xref:System.Web.UI.WebControls.BaseDataList.DataSourceID%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>上書き、<see cref="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.PreFilterProperties(System.Collections.IDictionary)" />プロパティの追加や、デザイン時のプロパティ コレクション内のプロパティの属性を変更する方法です。 他の処理を実行する前に、基本メソッドを呼び出すことを確認します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#CanRefreshSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.Design.IDataBindingSchemaProvider.CanRefreshSchema" />」をご覧ください。</summary>
+        <value>
+          <see langword="true" />スキーマを更新することができます。 場合、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema">
+      <MemberSignature Language="C#" Value="void IDataBindingSchemaProvider.RefreshSchema (bool preferSilent);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema(bool preferSilent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.WebControls.BaseDataListDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#RefreshSchema(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="preferSilent" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="preferSilent">
+          <see langword="true" />スキーマが終了するまでのデータ バインディング イベントを無効にするが更新されました。<see langword="false" />イベントを有効にします。</param>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.Design.IDataBindingSchemaProvider.RefreshSchema(System.Boolean)" />」をご覧ください。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.Design.IDataBindingSchemaProvider.Schema">
+      <MemberSignature Language="C#" Value="System.Web.UI.Design.IDataSourceViewSchema System.Web.UI.Design.IDataBindingSchemaProvider.Schema { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Design.IDataSourceViewSchema System.Web.UI.Design.IDataBindingSchemaProvider.Schema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.WebControls.BaseDataListDesigner.System#Web#UI#Design#IDataBindingSchemaProvider#Schema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Design.IDataSourceViewSchema</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="P:System.Web.UI.Design.IDataBindingSchemaProvider.Schema" />」をご覧ください。</summary>
+        <value><see cref="T:System.Web.UI.Design.IDataSourceViewSchema" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.Design.WebControls.BaseDataListDesigner> のインスタンスが <xref:System.Web.UI.Design.IDataBindingSchemaProvider> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

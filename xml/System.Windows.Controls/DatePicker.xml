@@ -1,0 +1,1214 @@
+<Type Name="DatePicker" FullName="System.Windows.Controls.DatePicker">
+  <TypeSignature Language="C#" Value="public class DatePicker : System.Windows.Controls.Control" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi DatePicker extends System.Windows.Controls.Control" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.DatePicker" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Control</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_Root", Type=typeof(System.Windows.Controls.Grid))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_TextBox", Type=typeof(System.Windows.Controls.Primitives.DatePickerTextBox))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_Button", Type=typeof(System.Windows.Controls.Button))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_Popup", Type=typeof(System.Windows.Controls.Primitives.Popup))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ユーザーが日付を選択できるコントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.DatePicker>コントロールで日付を選択、入力テキスト フィールドにするか、またはドロップダウン リストを使用して、ユーザーは、<xref:System.Windows.Controls.Calendar>コントロール。  
+  
+ 多くは、<xref:System.Windows.Controls.DatePicker>コントロールのプロパティは、その組み込みを管理するため、<xref:System.Windows.Controls.Calendar>と同等のプロパティと同様に関数<xref:System.Windows.Controls.Calendar>です。 具体的には、 <xref:System.Windows.Controls.DatePicker.IsTodayHighlighted%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.DatePicker.FirstDayOfWeek%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.DatePicker.BlackoutDates%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.DatePicker.DisplayDateStart%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.DatePicker.DisplayDateEnd%2A?displayProperty=nameWithType>、 <xref:System.Windows.Controls.DatePicker.DisplayDate%2A?displayProperty=nameWithType>、および<xref:System.Windows.Controls.DatePicker.SelectedDate%2A?displayProperty=nameWithType>プロパティ関数と同じように、<xref:System.Windows.Controls.Calendar>対応します。  詳細については、「<xref:System.Windows.Controls.Calendar>」を参照してください。  
+  
+ ユーザーが直接設定するテキスト フィールドに日付を入力、<xref:System.Windows.Controls.DatePicker.Text%2A>プロパティです。 場合、<xref:System.Windows.Controls.DatePicker>有効な日付を入力した文字列を変換できません、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベントが発生します。 イベント ハンドラーが、例外が発生したこの既定では、<xref:System.Windows.Controls.DatePicker.DateValidationError>を設定できます、<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A>プロパティを`false`と、例外が発生するようにします。  
+  
+> [!NOTE]
+>  <xref:System.Windows.Controls.DatePicker>グレゴリオ暦のみをサポートしています。  
+  
+## <a name="customizing-the-datepicker-control"></a>DatePicker コントロールのカスタマイズ  
+ 設定を適用する、同じプロパティを複数<xref:System.Windows.Controls.DatePicker>、コントロールを使用して、<xref:System.Windows.FrameworkElement.Style%2A>プロパティです。 既定値を変更することができます<xref:System.Windows.Controls.ControlTemplate>コントロールの外観を一意にします。 作成の詳細については、<xref:System.Windows.Controls.ControlTemplate>を参照してください[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。 部分とに固有の状態を表示する、<xref:System.Windows.Controls.DatePicker>を参照してください[DatePicker Syles とテンプレート](~/docs/framework/wpf/controls/datepicker-styles-and-templates.md)です。  
+  
+ コントロールの既定のスタイルでは、このコントロールの依存関係プロパティを設定する場合があります。 プロパティが既定のスタイルが設定されている場合は、アプリケーションでコントロールが表示されたら既定値から、プロパティが変更可能性があります。 既定のスタイルは、いるデスクトップ テーマによっては、アプリケーションが実行されている場合は使用が決定されます。  詳細については、次を参照してください。 [WPF テーマの既定の](http://go.microsoft.com/fwlink/?LinkID=158252)します。  
+  
+> [!NOTE]
+>  Visual プロパティの設定はのみに効果がそのプロパティは、両方のボタン コントロールの既定のテンプレートに存在しを使用して設定されている場合、します。 「を変更する、Visual 構造の制御」 セクションで visual のプロパティの一覧を検索できる[、ControlTemplate を作成することで、既存のコントロールの外観のカスタマイズ](~/docs/framework/wpf/controls/customizing-the-appearance-of-an-existing-control.md)です。  
+  
+<a name="xamlObjectElementUsage_DatePicker"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<DatePicker .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の図は、<xref:System.Windows.Controls.DatePicker>です。  
+  
+ ![DatePicker コントロール](~/add/media/ndp-datepicker.png "DatePicker コントロール")  
+DatePicker コントロール  
+  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>前の図に示すようにします。 <xref:System.Windows.Controls.DatePicker>は次の実行します。  
+  
+-   曜日と月の名前を省略しない形式の日付を表示します。  
+  
+-   2009 年の日付のみを表示するドロップダウン カレンダーを制限します。  
+  
+-   月曜が週の最初の日を表示します。  
+  
+ [!code-csharp[DatePickerSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#1)]
+ [!code-vb[DatePickerSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#1)]
+ [!code-xaml[DatePickerSnippets#1](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DatePicker ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DatePicker" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BlackoutDates">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.CalendarBlackoutDatesCollection BlackoutDates { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.CalendarBlackoutDatesCollection BlackoutDates" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.BlackoutDates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.CalendarBlackoutDatesCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または選択不可としてマークされている日付のコレクションを設定します。</summary>
+        <value>選択できない日付のコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクション内の日付は、ドロップダウン カレンダーで無効として表示されます。  ユーザーが、選択可能ではない日付を入力した場合、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベントが発生します。  
+  
+ 過去の日付のすべてありません選択できるように、するを使用できます、<xref:System.Windows.Controls.CalendarBlackoutDatesCollection.AddDatesInPast%2A>このプロパティによって返されるコレクションによって提供されるメソッド。  
+  
+ 既に選択されているときにこのコレクションに日時が追加または指定した範囲外の日付を追加する<xref:System.Windows.Controls.Calendar.DisplayDateStart%2A>と<xref:System.Windows.Controls.DatePicker.DisplayDateEnd%2A>により、<xref:System.ArgumentOutOfRangeException>です。  
+  
+<a name="xamlPropertyElementUsage_BlackoutDates"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.BlackoutDates>  
+    oneOrMoreCalendarDateRanges  
+  </object.BlackoutDates>  
+</object>  
+```  
+  
+<a name="xamlValues_BlackoutDates"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreCalendarDateRanges*  
+ 型の 1 つまたは複数のオブジェクト要素<xref:System.Windows.Controls.CalendarDateRange>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>を 2009 年 8 月に日付を表示し、各土曜日と日曜日が選択可能ではないことを指定します。  
+  
+ [!code-csharp[DatePickerSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#2)]
+ [!code-vb[DatePickerSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#2)]
+ [!code-xaml[DatePickerSnippets#2](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#2)]  
+  
+ <xref:System.Windows.Controls.DatePicker>ハンドル、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベント、次のコードに示すようにします。 場合は、選択できない日付を入力すると、メッセージを表示します。 有効な日付ではないテキストを入力すると、例外がスローされます。  
+  
+ [!code-csharp[DatePickerSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#3)]
+ [!code-vb[DatePickerSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#3)]  
+  
+ 前の例では、次の図のような出力を生成します。  
+  
+ ![ある選択可能な日付を含む DatePicker](~/add/media/ndp-datepickblackout.png "ある選択可能な日付を含む DatePicker")  
+選択できない日付を含む DatePicker  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarClosed">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler CalendarClosed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler CalendarClosed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DatePicker.CalendarClosed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにドロップダウン<see cref="T:System.Windows.Controls.Calendar" />が閉じられます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_CalendarClosed"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker CalendarClosed="eventhandler"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>をユーザーに詳細な手順を説明します。  ユーザーが開くか閉じる、<xref:System.Windows.Controls.Calendar>手順が更新されます。  
+  
+ [!code-xaml[DatePickerSnippets#7](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#7)]  
+  
+ [!code-csharp[DatePickerSnippets#8](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#8)]
+ [!code-vb[DatePickerSnippets#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarOpened">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler CalendarOpened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler CalendarOpened" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DatePicker.CalendarOpened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときにドロップダウン<see cref="T:System.Windows.Controls.Calendar" />が開かれています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_CalendarOpened"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker CalendarOpened="eventhandler"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>をユーザーに詳細な手順を説明します。  ユーザーが開くか閉じる、<xref:System.Windows.Controls.Calendar>手順が更新されます。  
+  
+ [!code-xaml[DatePickerSnippets#7](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#7)]  
+  
+ [!code-csharp[DatePickerSnippets#8](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#8)]
+ [!code-vb[DatePickerSnippets#8](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style CalendarStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style CalendarStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.CalendarStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカレンダーを表示するときに使用されるスタイルを設定します。</summary>
+        <value>カレンダーを表示するときに使用されるスタイルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.DatePicker.CalendarStyle%2A>ドロップダウン カレンダーの外観を指定するプロパティです。  
+  
+<a name="dependencyPropertyInfo_CalendarStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.CalendarStyleProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+<a name="xamlAttributeUsage_CalendarStyle"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker CalendarStyle="{resourceExtension styleResourceKey}"/>  
+```  
+  
+<a name="xamlValues_CalendarStyle"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *resourceExtension*  
+ 次のいずれかの:`StaticResource`または`DynamicResource`です。 詳しくは、「[XAML リソース](~/docs/framework/wpf/advanced/xaml-resources.md)」を参照してください。  
+  
+ *styleResourceKey*  
+ 要求されているテンプレートを識別するキー。 このキーは既存のリソースを<xref:System.Windows.ResourceDictionary>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Style>の<xref:System.Windows.Controls.Calendar>にスタイルを割り当てると、<xref:System.Windows.Controls.DatePicker.CalendarStyle%2A>プロパティです。  
+  
+ [!code-xaml[DatePickerSnippets#6](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalendarStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CalendarStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CalendarStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.CalendarStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.CalendarStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DateValidationError">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Controls.DatePickerDateValidationErrorEventArgs&gt; DateValidationError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Controls.DatePickerDateValidationErrorEventArgs&gt; DateValidationError" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DatePicker.DateValidationError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Controls.DatePickerDateValidationErrorEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに<see cref="P:System.Windows.Controls.DatePicker.Text" />を日付として解釈できないまたは日付を選択できない場合の値に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 後に、<xref:System.Windows.Controls.DatePicker.DateValidationError>設定すると、イベントが発生、<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A?displayProperty=nameWithType>プロパティを`true`、次の例外のいずれかが発生します。  
+  
+|例外の種類|状態|  
+|--------------------|---------------|  
+|<xref:System.FormatException>|有効な日付を入力したテキストを解析できませんし、例外が抑制されていません。|  
+|<xref:System.ArgumentOutOfRangeException>|入力したテキストを選択できない日付を解析します。|  
+  
+<a name="xamlAttributeUsage_DateValidationError"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker DateValidationError="eventhandler"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>を 2009 年 8 月に日付を表示し、各土曜日と日曜日が選択可能ではないことを指定します。  
+  
+ [!code-csharp[DatePickerSnippets#2](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#2)]
+ [!code-vb[DatePickerSnippets#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#2)]
+ [!code-xaml[DatePickerSnippets#2](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#2)]  
+  
+ <xref:System.Windows.Controls.DatePicker>ハンドル、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベント、次のコードに示すようにします。 場合は、選択できない日付を入力すると、メッセージを表示します。 有効な日付ではないテキストを入力すると、例外がスローされます。  
+  
+ [!code-csharp[DatePickerSnippets#3](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#3)]
+ [!code-vb[DatePickerSnippets#3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDate">
+      <MemberSignature Language="C#" Value="public DateTime DisplayDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime DisplayDate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.DisplayDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示する日付を設定します。</summary>
+        <value>日付を表示します。 既定値は、<see cref="P:System.DateTime.Today" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.DisplayDate%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_DisplayDate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.DisplayDateProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ このプロパティにより、開発者は場合に表示する日付を指定する<xref:System.Windows.Controls.DatePicker.SelectedDate%2A>は`null`します。  
+  
+<a name="xamlAttributeUsage_DisplayDate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker DisplayDate="dateTimeString"/>  
+```  
+  
+<a name="xamlValues_DisplayDate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dateTimeString*  
+ 記載されているいずれかの形式では、日付、 [DateTime XAML 構文](~/docs/framework/wpf/advanced/datetime-xaml-syntax.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>は初期化のカレンダーを開いていると、2009 年 7 月 7 日を表示します。  
+  
+ [!code-xaml[DatePickerSnippets#4](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した日付がによって定義された範囲外<see cref="P:System.Windows.Controls.DatePicker.DisplayDateStart" />です。 および <see cref="P:System.Windows.Controls.DatePicker.DisplayDateEnd" /> を参照してください。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDateEnd">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; DisplayDateEnd { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; DisplayDateEnd" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.DisplayDateEnd" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示する最後の日付を設定します。</summary>
+        <value>最後の日付を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.DisplayDateEnd%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_DisplayDateEnd"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.DisplayDateEndProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+<a name="xamlAttributeUsage_DisplayDateEnd"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker DisplayDateEnd="dateTimeString"/>  
+```  
+  
+<a name="xamlValues_DisplayDateEnd"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dateTimeString*  
+ 記載されているいずれかの形式では、日付、 [DateTime XAML 構文](~/docs/framework/wpf/advanced/datetime-xaml-syntax.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.DatePicker> 2009 年の日付のみを表示するドロップダウン カレンダーを制限します。  
+  
+ [!code-csharp[DatePickerSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#1)]
+ [!code-vb[DatePickerSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#1)]
+ [!code-xaml[DatePickerSnippets#1](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDateEndProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DisplayDateEndProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DisplayDateEndProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.DisplayDateEndProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.DisplayDateEnd" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DisplayDateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DisplayDateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.DisplayDateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.DisplayDate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDateStart">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; DisplayDateStart { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; DisplayDateStart" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.DisplayDateStart" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または表示される最初の日付を設定します。</summary>
+        <value>最初の日付を表示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.DisplayDateStart%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_DisplayDateStart"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.DisplayDateStartProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+<a name="xamlAttributeUsage_DisplayDateStart"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker DisplayDateStart="dateTimeString"/>  
+```  
+  
+<a name="xamlValues_DisplayDateStart"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dateTimeString*  
+ 記載されているいずれかの形式では、日付、 [DateTime XAML 構文](~/docs/framework/wpf/advanced/datetime-xaml-syntax.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、 <xref:System.Windows.Controls.DatePicker> 2009 年の日付のみを表示するドロップダウン カレンダーを制限します。  
+  
+ [!code-csharp[DatePickerSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#1)]
+ [!code-vb[DatePickerSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#1)]
+ [!code-xaml[DatePickerSnippets#1](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayDateStartProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DisplayDateStartProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DisplayDateStartProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.DisplayDateStartProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.DisplayDateStart" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstDayOfWeek">
+      <MemberSignature Language="C#" Value="public DayOfWeek FirstDayOfWeek { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DayOfWeek FirstDayOfWeek" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.FirstDayOfWeek" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DayOfWeek</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または週の始めと見なされる日を設定します。</summary>
+        <value>A<see cref="T:System.DayOfWeek" />週の開始を表すです。 既定値は、<see cref="P:System.Globalization.DateTimeFormatInfo.FirstDayOfWeek" />は、現在のカルチャによって決まります。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.FirstDayOfWeek%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_FirstDayOfWeek"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.FirstDayOfWeekProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+<a name="xamlAttributeUsage_FirstDayOfWeek"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<DatePicker **FirstDayOfWeek**="<xref:System.DayOfWeek>"/>  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>月曜が週の最初の日を表示します。  
+  
+ [!code-csharp[DatePickerSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#1)]
+ [!code-vb[DatePickerSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#1)]
+ [!code-xaml[DatePickerSnippets#1](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FirstDayOfWeekProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FirstDayOfWeekProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FirstDayOfWeekProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.FirstDayOfWeekProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.FirstDayOfWeek" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasEffectiveKeyboardFocus">
+      <MemberSignature Language="C#" Value="protected override bool HasEffectiveKeyboardFocus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasEffectiveKeyboardFocus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.HasEffectiveKeyboardFocus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.DatePicker" /> にフォーカスがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see cref="T:System.Windows.Controls.DatePicker" /> にフォーカスがある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDropDownOpen">
+      <MemberSignature Language="C#" Value="public bool IsDropDownOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDropDownOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.IsDropDownOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、ドロップダウン<see cref="T:System.Windows.Controls.Calendar" />がオープンかクローズします。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Calendar" />が開かれている場合は、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsDropDownOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.IsDropDownOpenProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+ このプロパティの設定、<xref:System.Windows.Controls.Calendar>を開くまたは閉じるには、ドロップダウンします。  
+  
+<a name="xamlAttributeUsage_IsDropDownOpen"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker IsDropDownOpen="bool"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>のカレンダーを開いているが初期化されると、2009 年 7 月 7 日が表示されます。  
+  
+ [!code-xaml[DatePickerSnippets#4](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDropDownOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDropDownOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDropDownOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.IsDropDownOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.IsDropDownOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTodayHighlighted">
+      <MemberSignature Language="C#" Value="public bool IsTodayHighlighted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTodayHighlighted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.IsTodayHighlighted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在の日付は強調表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、現在の日付が強調表示されます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.IsTodayHighlighted%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_IsTodayHighlighted"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.IsTodayHighlightedProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+<a name="xamlAttributeUsage_IsTodayHighlighted"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker IsTodayHighlighted="bool"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>現在の日付を強調表示しません。  
+  
+ [!code-xaml[DatePickerSnippets#4](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTodayHighlightedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsTodayHighlightedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsTodayHighlightedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.IsTodayHighlightedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.IsTodayHighlighted" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビジュアル ツリーを構築、<see cref="T:System.Windows.Controls.DatePicker" />新しいテンプレートが適用されたときを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードまたは内部プロセスでは、レイアウト パスの再構築などが呼び出すたびに、このメソッドが呼び出される、<xref:System.Windows.FrameworkElement.ApplyTemplate%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCalendarClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnCalendarClosed (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCalendarClosed(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnCalendarClosed(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.DatePicker.CalendarClosed" />ルーティングされたイベント。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DatePicker.OnCalendarClosed(System.Windows.RoutedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.DatePicker.OnCalendarClosed(System.Windows.RoutedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCalendarOpened">
+      <MemberSignature Language="C#" Value="protected virtual void OnCalendarOpened (System.Windows.RoutedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCalendarOpened(class System.Windows.RoutedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnCalendarOpened(System.Windows.RoutedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.RoutedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.DatePicker.CalendarOpened" />ルーティングされたイベント。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DatePicker.OnCalendarOpened(System.Windows.RoutedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.DatePicker.OnCalendarOpened(System.Windows.RoutedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Windows.Automation.Peers.DatePickerAutomationPeer" />オートメーション インフラストラクチャで使用します。</summary>
+        <returns>A<see cref="T:System.Windows.Automation.Peers.DatePickerAutomationPeer" />の<see cref="T:System.Windows.Controls.DatePicker" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、新しい作成<xref:System.Windows.Automation.Peers.DatePickerAutomationPeer>コントロールのインスタンスの場合は、1 つのインスタンスが作成されていません。 を返しますそれ以外の場合、<xref:System.Windows.Automation.Peers.DatePickerAutomationPeer>以前に作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDateValidationError">
+      <MemberSignature Language="C#" Value="protected virtual void OnDateValidationError (System.Windows.Controls.DatePickerDateValidationErrorEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnDateValidationError(class System.Windows.Controls.DatePickerDateValidationErrorEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnDateValidationError(System.Windows.Controls.DatePickerDateValidationErrorEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.DatePickerDateValidationErrorEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.Windows.Controls.DatePickerDateValidationErrorEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Controls.DatePicker.DateValidationError" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DatePicker.OnDateValidationError(System.Windows.Controls.DatePickerDateValidationErrorEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.DatePicker.OnDateValidationError(System.Windows.Controls.DatePickerDateValidationErrorEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectedDateChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnSelectedDateChanged (System.Windows.Controls.SelectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnSelectedDateChanged(class System.Windows.Controls.SelectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.OnSelectedDateChanged(System.Windows.Controls.SelectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.SelectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Windows.Controls.DatePicker.SelectedDateChanged" />ルーティングされたイベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで発生し、<xref:System.Windows.Controls.DatePicker.SelectedDateChanged>を呼び出してイベント<xref:System.Windows.UIElement.RaiseEvent%2A>です。 詳細については、次を参照してください。[ルーティング イベントの概要](~/docs/framework/wpf/advanced/routed-events-overview.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドする場合<see cref="M:System.Windows.Controls.DatePicker.OnSelectedDateChanged(System.Windows.Controls.SelectionChangedEventArgs)" />派生クラスでは、基本クラスの呼び出しを必ず<see cref="M:System.Windows.Controls.DatePicker.OnSelectedDateChanged(System.Windows.Controls.SelectionChangedEventArgs)" />デリゲートを登録するためのメソッドがイベントを受信します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDate">
+      <MemberSignature Language="C#" Value="public Nullable&lt;DateTime&gt; SelectedDate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; SelectedDate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.SelectedDate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.DateTime&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在選択されている日付を設定します。</summary>
+        <value>現在選択されている日付です。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、影響、<xref:System.Windows.Controls.Calendar>の<xref:System.Windows.Controls.DatePicker>です。  詳細については、<xref:System.Windows.Controls.Calendar.SelectedDate%2A?displayProperty=nameWithType> プロパティを参照してください。  
+  
+<a name="dependencyPropertyInfo_SelectedDate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.SelectedDateProperty>|  
+|メタデータ プロパティに設定**は true。**|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+<a name="xamlAttributeUsage_SelectedDate"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker SelectedDate="dateTimeString"/>  
+```  
+  
+<a name="xamlValues_SelectedDate"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dateTimeString*  
+ 記載されているいずれかの形式では、日付、 [DateTime XAML 構文](~/docs/framework/wpf/advanced/datetime-xaml-syntax.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>日が 10、2009 年 8 月を選択します。  またこの例で、<xref:System.Windows.Controls.DatePicker.Text%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Controls.TextBlock>です。  
+  
+ [!code-xaml[DatePickerSnippets#5](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定した日付がによって定義された範囲外<see cref="P:System.Windows.Controls.DatePicker.DisplayDateStart" />と<see cref="P:System.Windows.Controls.DatePicker.DisplayDateEnd" />、または指定した日付が、<see cref="P:System.Windows.Controls.DatePicker.BlackoutDates" />コレクション。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDateChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Windows.Controls.SelectionChangedEventArgs&gt; SelectedDateChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Windows.Controls.SelectionChangedEventArgs&gt; SelectedDateChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.DatePicker.SelectedDateChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Windows.Controls.SelectionChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Controls.DatePicker.SelectedDate" />プロパティを変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_SelectedDatesChanged"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker SelectedDateChanged="eventhandler"/>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDateChangedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent SelectedDateChangedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent SelectedDateChangedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.SelectedDateChangedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.DatePicker.SelectedDateChanged" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDateFormat">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DatePickerFormat SelectedDateFormat { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.DatePickerFormat SelectedDateFormat" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.SelectedDateFormat" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DatePickerFormat</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定は、選択した日付を表示するために使用します。</summary>
+        <value>選択した日付を表示するために使用する形式。 既定値は、<see cref="F:System.Windows.Controls.DatePickerFormat.Long" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_SelectedDateFormat"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.SelectedDateFormatProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+<a name="xamlAttributeUsage_SelectedDateFormat"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+ \<DatePicker **SelectedDateFormat**="<xref:System.Windows.Controls.DatePickerFormat>"/>  
+  
+   
+  
+## Examples  
+ 次の例を作成する<xref:System.Windows.Controls.DatePicker>曜日と月の名前を省略しない形式の日付を表示します。  
+  
+ [!code-csharp[DatePickerSnippets#1](~/samples/snippets/csharp/VS_Snippets_Wpf/datepickersnippets/csharp/window1.xaml.cs#1)]
+ [!code-vb[DatePickerSnippets#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/datepickersnippets/visualbasic/window1.xaml.vb#1)]
+ [!code-xaml[DatePickerSnippets#1](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定された形式が正しくありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDateFormatProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedDateFormatProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedDateFormatProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.SelectedDateFormatProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.SelectedDateFormat" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectedDateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SelectedDateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SelectedDateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.SelectedDateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.SelectedDate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.DatePicker.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表示されるテキストを取得、 <see cref="T:System.Windows.Controls.DatePicker" />、または選択した日付を設定します。</summary>
+        <value>によって表示されるテキスト、<see cref="T:System.Windows.Controls.DatePicker" />です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが設定できる、<xref:System.Windows.Controls.DatePicker.SelectedDate%2A>の<xref:System.Windows.Controls.DatePicker>をテキスト ボックスに、日付を入力します。 <xref:System.Windows.Controls.DatePicker>日付としてこのプロパティに入力した任意の文字列の解析を試みます。 中に、<xref:System.Windows.Controls.DatePicker.Text%2A>によって解析できる任意の文字列にプロパティを設定することができます、<xref:System.DateTime.Parse%2A>メソッド日付、返される文字列の形式の値に依存する場合、<xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>プロパティです。 つまり、<xref:System.Windows.Controls.DatePicker>とは異なるユーザーが入力した文字列を表示する場合があります。  
+  
+ 場合<xref:System.Windows.Controls.DatePicker.Text%2A>可能で、有効では、日付に設定されている、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベントが発生します。 処理する場合、<xref:System.Windows.Controls.DatePicker.DateValidationError>イベントとセット、<xref:System.Windows.Controls.DatePickerDateValidationErrorEventArgs.ThrowException%2A>プロパティを`true`、<xref:System.FormatException>または<xref:System.ArgumentOutOfRangeException>が発生します。  
+  
+<a name="dependencyPropertyInfo_Text"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.DatePicker.TextProperty>|  
+|メタデータ プロパティに設定**は true。**|なし|  
+  
+<a name="xamlAttributeUsage_Text"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<DatePicker Text="dateTimeString"/>  
+```  
+  
+<a name="xamlValues_Text"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *dateTimeString*  
+ 記載されているいずれかの形式では、日付、 [DateTime XAML 構文](~/docs/framework/wpf/advanced/datetime-xaml-syntax.md)トピックです。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.DatePicker>日が 10、2009 年 8 月を選択します。  またこの例で、<xref:System.Windows.Controls.DatePicker.Text%2A?displayProperty=nameWithType>プロパティを<xref:System.Windows.Controls.TextBlock>です。 <xref:System.Windows.Controls.DatePicker.SelectedDateFormat%2A>プロパティに設定されている<xref:System.Windows.Controls.DatePickerFormat.Long>、<xref:System.Windows.Controls.DatePicker>と<xref:System.Windows.Controls.TextBlock>が表示されますが、週の日付を完全表記を使用して、日付、月の名前、ユーザーには、短い日付形式が入力した場合でもです。  
+  
+ [!code-xaml[DatePickerSnippets#5](~/samples/snippets/xaml/VS_Snippets_Wpf/datepickersnippets/xaml/window1.xaml#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TextProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TextProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TextProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.DatePicker.TextProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.DatePicker.Text" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.DatePicker.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>選択した日付のテキスト表現を提供します。</summary>
+        <returns>選択した日付または空の文字列のテキスト表現場合<see cref="P:System.Windows.Controls.DatePicker.SelectedDate" />は<see langword="null" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="XmlDsigC14NWithCommentsTransform" FullName="System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform">
+  <TypeSignature Language="C#" Value="public class XmlDsigC14NWithCommentsTransform : System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlDsigC14NWithCommentsTransform extends System.Security.Cryptography.Xml.XmlDsigC14NTransform" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.Xml.XmlDsigC14NTransform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>World Wide Web Consortium (W3C) で定義されているコメントと共にデジタル署名の C14N XML 正規化変換を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform>クラスは、XML ドキュメントの正規の形式を説明する C14N XML 正規化変換を表します。  この変換により、署名者が XML ドキュメントの正規の形式を使用してダイジェストを作成します。  受信者は、同じ変換を使用して、XML ドキュメントの同じ正規の形式を使用してデジタル署名を検証できます。  
+  
+ 使用して、<xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform>クラスのコメントを含む XML ドキュメントに署名する必要がある場合。  
+  
+ 標準化変換クラスの新しいインスタンスを直接作成できないことに注意してください。  標準化変換を指定するに渡す、Uniform Resource Identifier () に変換を表す、<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethod%2A>からアクセス可能なプロパティ、<xref:System.Security.Cryptography.Xml.SignedXml.SignedInfo%2A>プロパティです。  標準化変換への参照を取得する、<xref:System.Security.Cryptography.Xml.SignedInfo.CanonicalizationMethodObject%2A>からアクセス可能なプロパティ、<xref:System.Security.Cryptography.Xml.SignedXml.SignedInfo%2A>プロパティです。  
+  
+ 記述する URI、<xref:System.Security.Cryptography.Xml.XmlDsigExcC14NWithCommentsTransform>によってクラスが定義されている、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigExcC14NWithCommentsTransformUrl>フィールドです。  
+  
+ 記述する URI、<xref:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform>によってクラスが定義されている、<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigC14NWithCommentsTransformUrl>フィールドおよび<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigCanonicalizationWithCommentsUrl>フィールドです。  
+  
+ C14N コメントを付ける方法については、変換セクション 6.5 および 6.6.1 www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) から利用できる XMLDSIG の仕様を参照してください。 標準化アルゴリズムは、www.w3.org/TR/xml-c14n で使用される W3C 正規 XML 仕様で定義されます。  
+  
+   
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、デタッチされた署名を使用して XML ファイルに署名する方法を示します。 この例では、XML ファイルに www.microsoft.com の署名を作成し、ファイルを検証します。 2 番目の例では、エンベロープ署名を使用して XML ファイルに署名する方法を示します。  この例では、XML ファイルの署名を作成し、新しい XML ファイルに署名が保存されます。  
+  
+ **例 1**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/CPP/sampledetached.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/CS/sampledetached.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/VB/sampledetached.vb#1)]  
+  
+ **例 2**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/CPP/sampleenvelope.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/CS/sampleenvelope.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/VB/sampleenvelope.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlDsigC14NWithCommentsTransform ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.XmlDsigC14NWithCommentsTransform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このセクションには、2 つのコード例が含まれています。 最初の例では、デタッチされた署名を使用して XML ファイルに署名する方法を示します。 この例では、XML ファイルに www.microsoft.com の署名を作成し、ファイルを検証します。 2 番目の例では、エンベロープ署名を使用して XML ファイルに署名する方法を示します。  この例では、XML ファイルの署名を作成し、新しい XML ファイルに署名が保存されます。  
+  
+ **例 1**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/CPP/sampledetached.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/CS/sampledetached.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Detached/VB/sampledetached.vb#1)]  
+  
+ **例 2**  
+  
+ [!code-cpp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/CPP/sampleenvelope.cpp#1)]
+ [!code-csharp[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/CS/sampleenvelope.cs#1)]
+ [!code-vb[System.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Cryptography.XML.XmlDsigC14NWithCommentsTransform_Envelope/VB/sampleenvelope.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

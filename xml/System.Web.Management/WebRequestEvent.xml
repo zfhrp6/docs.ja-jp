@@ -1,0 +1,202 @@
+<Type Name="WebRequestEvent" FullName="System.Web.Management.WebRequestEvent">
+  <TypeSignature Language="C#" Value="public class WebRequestEvent : System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebRequestEvent extends System.Web.Management.WebManagementEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebRequestEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebManagementEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web 要求の情報を提供するイベントの基本クラスを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebRequestEvent>は、すべての Web 要求で発生します。  
+  
+ 使用して、<xref:System.Web.Management.WebRequestInformation>要求情報を取得するクラス。  
+  
+> [!NOTE]
+>  ほとんどの場合では、標準の ASP.NET 稼働状況の監視の種類を使用し、設定してその動作を制御、`healthMonitoring`構成セクション。 次の例に示すようにカスタムの型を作成することもできます。 場合は、カスタム イベントの種類を作成して、独自の情報を追加、カスタマイズする必要があります、<xref:System.Web.Management.WebBaseEvent.FormatCustomEventDetails%2A>メソッドです。 これには、上書きまたは機密性の高いシステム情報の改ざんが回避されます。  
+  
+   
+  
+## Examples  
+ 次のコード例から派生する方法を示しています、<xref:System.Web.Management.WebRequestEvent>カスタム イベントを作成するクラス。  
+  
+ [!code-csharp[System.Web.Management.WebRequestEvent#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/CS/WebRequestEvent.cs#1)]
+ [!code-vb[System.Web.Management.WebRequestEvent#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/VB/WebRequestEvent.vb#1)]  
+  
+ 次は、ASP.NET カスタム イベントを使用できるようにする構成ファイルの抜粋です。  
+  
+```  
+<healthMonitoring   
+  enabled="true" heartBeatInterval="0">  
+  <providers>  
+    <!-- Define the custom provider that   
+         processes custom Web request events. -->  
+    <add name="SampleWebEventProvider"   
+type="SamplesAspNet.SampleEventProvider,webeventprovider,Version=1.0.1573.18094, Culture=neutral, PublicKeyToken=b5a57a9a9d487cf4, processorArchitecture=MSIL"/>  
+  </providers>  
+  
+  <eventMappings>  
+    <!--  Define the event source that   
+         issues custom events.   -->  
+    <add  name="SampleWebRequestEvent"   
+type="SamplesAspNet.SampleWebRequestEvent,webrequestevent,Version=1.0.1573.23947, Culture=neutral, PublicKeyToken=e717d983a78c8ddb, processorArchitecture=MSIL"/>  
+    </eventMappings>  
+  
+  <rules>  
+        <!-- Associate custom event with   
+        related custom provider -->  
+    <add   
+      name="CustomWebRequestEvent"  
+      eventName="SampleWebRequestEvent"   
+      provider="SampleWebEventProvider"   
+      profile="Critical"/>  
+  </rules>  
+</healthMonitoring>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebRequestEvent (string message, object eventSource, int eventCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestEvent.#ctor(System.String,System.Object,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントに関連付けられているメッセージ。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントに関連付けられているコード。 大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebRequestEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、<xref:System.Web.Management.WebRequestEvent.%23ctor%2A>イベント メッセージは、イベント、およびコードまたはイベントに関連付けられた識別子のソースを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターをカスタマイズする方法を示します。  
+  
+> [!NOTE]
+>  イベント コードまたは識別子を定義するために使用する値がより大きくなければなりません<xref:System.Web.Management.WebEventCodes.WebExtendedBase>です。  
+  
+ [!code-csharp[System.Web.Management.WebRequestEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/CS/WebRequestEvent.cs#2)]
+ [!code-vb[System.Web.Management.WebRequestEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/VB/WebRequestEvent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebRequestEvent (string message, object eventSource, int eventCode, int eventDetailCode);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, int32 eventCode, int32 eventDetailCode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestEvent.#ctor(System.String,System.Object,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="eventCode" Type="System.Int32" />
+        <Parameter Name="eventDetailCode" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントに関連付けられているメッセージ。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="eventCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントに関連付けられているコード。 大きくなければなりません<see cref="F:System.Web.Management.WebEventCodes.WebExtendedBase" />です。</param>
+        <param name="eventDetailCode"><see cref="T:System.Web.Management.WebEventCodes" />イベントに関連付けられているコードについて詳しく説明します。</param>
+        <summary>初期化、<see cref="T:System.Web.Management.WebRequestEvent" />指定されたイベントのパラメーターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンス トラクターは、<xref:System.Web.Management.WebRequestEvent.%23ctor%2A>イベント メッセージ、イベント、コードや、イベント、および詳細なコードに関連付けられた識別子のソースを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターをカスタマイズする方法を示します。  
+  
+> [!NOTE]
+>  イベント コードまたは識別子を定義するために使用する値がより大きくなければなりません<xref:System.Web.Management.WebEventCodes.WebExtendedBase>  
+  
+ [!code-csharp[System.Web.Management.WebRequestEvent#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/CS/WebRequestEvent.cs#3)]
+ [!code-vb[System.Web.Management.WebRequestEvent#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Management.WebRequestEvent/VB/WebRequestEvent.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncrementPerfCounters">
+      <MemberSignature Language="C#" Value="protected override void IncrementPerfCounters ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void IncrementPerfCounters() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebRequestEvent.IncrementPerfCounters" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>パフォーマンス カウンターをインクリメントするには、内部的に使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestInformation">
+      <MemberSignature Language="C#" Value="public System.Web.Management.WebRequestInformation RequestInformation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Management.WebRequestInformation RequestInformation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebRequestEvent.RequestInformation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Management.WebRequestInformation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この Web アプリケーションの要求に関連付けられている情報を取得します。</summary>
+        <value>この Web アプリケーションの要求に関連付けられている情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準の要求の情報がによって定義された、<xref:System.Web.Management.WebRequestInformation>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、Web 要求情報を取得する方法を示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

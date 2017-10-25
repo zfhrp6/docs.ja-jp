@@ -1,0 +1,202 @@
+<Type Name="WorkflowInstanceUnhandledExceptionRecord" FullName="System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowInstanceUnhandledExceptionRecord : System.Activities.Tracking.WorkflowInstanceRecord" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInstanceUnhandledExceptionRecord extends System.Activities.Tracking.WorkflowInstanceRecord" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Activities.Tracking.WorkflowInstanceRecord</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.Serialization.DataContract</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスが未処理の例外を検出したとき、ランタイム追跡インフラストラクチャによって追跡参加要素へ送られるデータを格納します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceUnhandledExceptionRecord (Guid instanceId, string activityDefinitionId, System.Activities.Tracking.ActivityInfo faultSource, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string activityDefinitionId, class System.Activities.Tracking.ActivityInfo faultSource, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.#ctor(System.Guid,System.String,System.Activities.Tracking.ActivityInfo,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="faultSource" Type="System.Activities.Tracking.ActivityInfo" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">生成するワークフロー インスタンスのインスタンス ID。</param>
+        <param name="activityDefinitionId">生成するワークフロー アクティビティのアクティビティ定義 ID。</param>
+        <param name="faultSource">エラーを生成したアクティビティ。</param>
+        <param name="exception">未処理の例外データ。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceUnhandledExceptionRecord (Guid instanceId, long recordNumber, string activityDefinitionId, System.Activities.Tracking.ActivityInfo faultSource, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, int64 recordNumber, string activityDefinitionId, class System.Activities.Tracking.ActivityInfo faultSource, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.#ctor(System.Guid,System.Int64,System.String,System.Activities.Tracking.ActivityInfo,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="recordNumber" Type="System.Int64" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="faultSource" Type="System.Activities.Tracking.ActivityInfo" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">生成するワークフロー インスタンスのインスタンス ID。</param>
+        <param name="recordNumber">追跡イベントを生成する順序を定義するシーケンス。</param>
+        <param name="activityDefinitionId">ワークフローのルート アクティビティの表示名。</param>
+        <param name="faultSource">エラーを生成したアクティビティ。</param>
+        <param name="exception">未処理の例外データ。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceUnhandledExceptionRecord (Guid instanceId, string activityDefinitionId, System.Activities.Tracking.ActivityInfo faultSource, Exception exception, System.Activities.WorkflowIdentity workflowDefinitionIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, string activityDefinitionId, class System.Activities.Tracking.ActivityInfo faultSource, class System.Exception exception, class System.Activities.WorkflowIdentity workflowDefinitionIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.#ctor(System.Guid,System.String,System.Activities.Tracking.ActivityInfo,System.Exception,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="faultSource" Type="System.Activities.Tracking.ActivityInfo" />
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="workflowDefinitionIdentity" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">生成するワークフロー インスタンスのインスタンス ID。</param>
+        <param name="activityDefinitionId">ワークフローのルート アクティビティの表示名。</param>
+        <param name="faultSource">エラーを生成したアクティビティ。</param>
+        <param name="exception">未処理の例外データ。</param>
+        <param name="workflowDefinitionIdentity">ワークフロー id に関する情報。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowInstanceUnhandledExceptionRecord (Guid instanceId, long recordNumber, string activityDefinitionId, System.Activities.Tracking.ActivityInfo faultSource, Exception exception, System.Activities.WorkflowIdentity workflowDefinitionIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Guid instanceId, int64 recordNumber, string activityDefinitionId, class System.Activities.Tracking.ActivityInfo faultSource, class System.Exception exception, class System.Activities.WorkflowIdentity workflowDefinitionIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.#ctor(System.Guid,System.Int64,System.String,System.Activities.Tracking.ActivityInfo,System.Exception,System.Activities.WorkflowIdentity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="instanceId" Type="System.Guid" />
+        <Parameter Name="recordNumber" Type="System.Int64" />
+        <Parameter Name="activityDefinitionId" Type="System.String" />
+        <Parameter Name="faultSource" Type="System.Activities.Tracking.ActivityInfo" />
+        <Parameter Name="exception" Type="System.Exception" />
+        <Parameter Name="workflowDefinitionIdentity" Type="System.Activities.WorkflowIdentity" />
+      </Parameters>
+      <Docs>
+        <param name="instanceId">生成するワークフロー インスタンスのインスタンス ID。</param>
+        <param name="recordNumber">追跡イベントを生成する順序を定義するシーケンス。</param>
+        <param name="activityDefinitionId">ワークフローのルート アクティビティの表示名。</param>
+        <param name="faultSource">エラーを生成したアクティビティ。</param>
+        <param name="exception">未処理の例外データ。</param>
+        <param name="workflowDefinitionIdentity">ワークフロー id に関する情報。</param>
+        <summary><see cref="T:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="protected override System.Activities.Tracking.TrackingRecord Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Activities.Tracking.TrackingRecord Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.TrackingRecord</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaultSource">
+      <MemberSignature Language="C#" Value="public System.Activities.Tracking.ActivityInfo FaultSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Tracking.ActivityInfo FaultSource" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.FaultSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Tracking.ActivityInfo</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラーを生成したアクティビティを返します。</summary>
+        <value>エラー状態のアクティビティ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追跡レコード データを返します。</summary>
+        <returns>追跡データ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnhandledException">
+      <MemberSignature Language="C#" Value="public Exception UnhandledException { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Exception UnhandledException" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord.UnhandledException" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>未処理の例外データを取得します。</summary>
+        <value>例外データ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

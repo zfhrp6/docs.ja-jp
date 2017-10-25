@@ -1,0 +1,408 @@
+<Type Name="WizardStepBase" FullName="System.Web.UI.WebControls.WizardStepBase">
+  <TypeSignature Language="C#" Value="public abstract class WizardStepBase : System.Web.UI.WebControls.View" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit WizardStepBase extends System.Web.UI.WebControls.View" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WizardStepBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.View</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.ToolboxItem(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.WizardStepControlBuilder))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ステップで必要な基本機能を実装して、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ インスタンスを直接作成することはできません、<xref:System.Web.UI.WebControls.WizardStepBase>クラスです。 代わりに、このクラスは、継承によって、<xref:System.Web.UI.WebControls.WizardStep>クラスおよび<xref:System.Web.UI.WebControls.TemplatedWizardStep>ウィザードとして機能するコントロールの手順の基本的な機能を提供するクラス。  
+  
+ 派生させることができます、<xref:System.Web.UI.WebControls.WizardStepBase>ウィザード コントロールの一意なステップを表すカスタム クラスを作成するクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WizardStepBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.WizardStepBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowReturn">
+      <MemberSignature Language="C#" Value="public virtual bool AllowReturn { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowReturn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.AllowReturn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Filterable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはそれ以降のステップから現在の手順に戻るにユーザーが許可されているかどうかを示す値を設定、<see cref="T:System.Web.UI.WebControls.WizardStepCollection" />コレクション。</summary>
+        <value>
+          <see langword="true" />現在のステップに戻るには、ユーザーが許可された場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>で線形のナビゲーションを適用するプロパティを使用することができます、<xref:System.Web.UI.WebControls.Wizard>コントロール。 各ステップがある場合、<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティに設定`false`ユーザーがアクセスされた後の手順に戻ってできません。 この機能を使用する場合があります 1 つのシナリオでは、これが完了した後の各ステップとしてデータベースにデータを永続化するための手順に戻ってにユーザーが行われないようが完了です。 各手順の後にデータを保存して、ステップに戻ってを保存した後に情報を変更するアクセス許可に設定する場合、保存したデータが破損する可能性があります。 設定して、<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティを`false`ユーザーは、ステップを左揃え、一度自分ことはできませんに戻り、値を変更します。  
+  
+ <xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティを決定する方法とタイミング、**前**ボタンは表示されません。 次の表、**前**レンダリング動作にボタンをクリックします。  
+  
+|シナリオ|動作|  
+|--------------|--------------|  
+|線形: ステップ 1 が<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>'éý'`false`し、ユーザー操作は、手順 2 に進みます。|手順 2 が表示されない、**前**ボタンをクリックします。|  
+|ノンリニア: ステップ 1 が<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>'éý'`false`し、ユーザー操作は、手順 3. に進みます。|手順 3 が表示されない、**前**ボタンをクリックします。|  
+|サイド バーのボタン: 手順 2. が<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>'éý' `false` 、<xref:System.Web.UI.WebControls.Wizard.DisplaySideBar%2A>に設定されている`true`ユーザーが [サイドバー] ボタンをクリックするとします。|ないボタンは自動的に無効になっているサイドバー上と<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>に設定されている`false`です。 ユーザーには、ボタンがクリックすると、アクションは無視されます。|  
+|線形と非線形カスタム テンプレートを使用して: 手順がカスタム ナビゲーション テンプレートです。|いいえ自動非表示/表示する場合は、<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>に設定されている`false`ナビゲーションのテンプレートを使用する場合。 **前**ボタンは、テンプレートでは省略可能にする必要があります。|  
+|Visual Studio デザイナーを使用し、 <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex%2A> : コントロールが 5 つの手順で、手順 4. で作業している実行し、ページ。|手順 4 の場合は、 <xref:System.Web.UI.WebControls.Wizard.ActiveStepIndex%2A>、**前** ボタンを表示します。 **前**のボタンが非表示のみ<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>に設定<xref:System.Web.UI.WebControls.WizardStepType.Step>履歴に前の手順が場合<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>'éý'`false`です。 手順 4 が最初に表示され、履歴にステップがないため、**前**ボタンが非表示にします。|  
+|手順および非線形ナビゲーションを開始します。 手順 3 と手順 4. と手順 1 を持つユーザーにアクセス<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>に設定<xref:System.Web.UI.WebControls.WizardStepType.Start>です。|ウィザードは追加されません、**前**ボタン、<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>に設定されている<xref:System.Web.UI.WebControls.WizardStepType.Start>ユーザーがそのステップに移動する方法に関係なく。|  
+|履歴に同じ手順: ユーザーは、手順 3 を訪れます場所<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>に設定されている<xref:System.Web.UI.WebControls.WizardStepType.Step>し、ユーザーがその操作をコミットできません。 手順 3 で [戻る] ボタンをクリックします。|ウィザード コントロールが確認する場合、**前**履歴内の手順では、ユーザーが現在実行している「同じ」のステップします。 ウィザード コントロールが「別」の前の手順を決定するために、履歴のバックアップに検索しの表示のベース ステップが同じ場合は、**前**ボタンをクリックし、変換先"別の手順に従って"履歴にします。|  
+  
+> [!NOTE]
+>  ときに、<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティに設定されている`false`、ですが、<xref:System.Web.UI.WebControls.Wizard.DisplaySideBar%2A>の親コントロールのプロパティの<xref:System.Web.UI.WebControls.WizardStepBase>に設定されている`true`、サイド バー領域のボタンをクリックすると影響を与えません。 サイドバーの領域は通常非線形のナビゲーションを提供する表示を設定することが非線形ナビゲーションの機能を使用していない場合、<xref:System.Web.UI.WebControls.Wizard.DisplaySideBar%2A>プロパティを`false`です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティ内のステップに返すことから、ユーザーの停止を<xref:System.Web.UI.WebControls.Wizard>がアクセスされた後に制御します。 例では、`Step1`ステップではその<xref:System.Web.UI.WebControls.WizardStepBase.AllowReturn%2A>プロパティに設定`false`です。 ユーザーの後のまま、`Step1`ステップ、[戻る] ボタンは表示されません上、`Step2`手順です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepBaseAllowReturn#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepBaseAllowReturn/CS/wizardstepbaseallowreturncs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepBaseAllowReturn#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepBaseAllowReturn/VB/wizardstepbaseallowreturnvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnableTheming">
+      <MemberSignature Language="C#" Value="public override bool EnableTheming { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnableTheming" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.EnableTheming" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのコントロールにテーマを適用するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />テーマを使用するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>プロパティは、テーマが有効になっているかどうかを示す、<xref:System.Web.UI.WebControls.WizardStepBase>コントロール。 <xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>プロパティは、その controls コレクションに含まれるコントロールのテーマが有効になっているかどうかにも影響します。 ときに、<xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>プロパティは`true`、コントロール スキンを適用するテーマのアプリケーションのディレクトリが検索されます。 テーマのディレクトリ内の特定のコントロール スキンが存在しない場合、スキンは適用されません。 ときに、<xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>プロパティは`false`、テーマのディレクトリは検索されませんの値、<xref:System.Web.UI.Control.SkinID%2A>プロパティは使用されません。  
+  
+ オーバーライドする、<xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>値、親コントロールまたはコントロールを含むページのセット。 たとえば場合、<xref:System.Web.UI.WebControls.WizardStepBase>コントロールに<xref:System.Web.UI.WebControls.WizardStepBase.EnableTheming%2A>に設定`false`、選択的に設定して、ウィザードの手順に含まれる子コントロールにテーマを適用することができます、<xref:System.Web.UI.Control.EnableTheming%2A>プロパティを`true`個々 の子コントロールのです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ID">
+      <MemberSignature Language="C#" Value="public override string ID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.ID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバー コントロールに割り当てられたプログラムの id を設定します。</summary>
+        <value>コントロールに割り当てられているプログラム id。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>プロパティを識別し、Web フォーム ページ内の特定のウィザード手順コントロールを参照します。 <xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>  ページで、コントロールのインスタンスの名前の値になります。 そのページのコードで特定の手順を簡単にアクセスできます。 たとえば、設定した場合、<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>のプロパティ、<xref:System.Web.UI.WebControls.WizardStepBase>コントロール「ステップ 1」するには、ウィザードの手順としてそのページのコードでの子コントロールを参照することができます`Step1.Controls`です。  
+  
+ <xref:System.Web.UI.WebControls.WizardStepBase>コントロールにより各ステップで、<xref:System.Web.UI.WebControls.WizardStepBase.Wizard%2A>手順が追加またはデザイン時に変更されたときに、コントロールが有効な一意の識別子。 たとえば、設定、<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>デザイン時の手順でに含まれる別のステップの識別子に対応、<xref:System.Web.UI.WebControls.WizardStepBase.Wizard%2A>コントロールとが一致することはできません、<xref:System.Web.UI.Control.ID%2A>を含んでいるの<xref:System.Web.UI.WebControls.WizardStepBase.Wizard%2A>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例を次の 3 つのウィザードの手順を定義する、 <xref:System.Web.UI.WebControls.Wizard> Web フォーム ページ内のコントロールです。 ページのコードで、ウィザードの手順は名前付きインスタンスに、ID の値にし、コードで参照できる`WizardStep1`、 `WizardStep2`、および`WizardStep3`です。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardActiveStep#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardActiveStep/CS/wizardactivestepcs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardActiveStep#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardActiveStep/VB/wizardactivestepvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">プロパティは、デザイン時に無効な id 文字列に設定されました。  
+  
+ または  
+  
+ プロパティが含まれていると同じ識別子に設定された<see cref="P:System.Web.UI.WebControls.WizardStepBase.Wizard" />コントロールをデザイン時です。  
+  
+ または  
+  
+ プロパティが含まれている別のステップと同じ識別子に設定された<see cref="P:System.Web.UI.WebControls.WizardStepBase.Wizard" />コントロールをデザイン時です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepBase.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState"><see cref="T:System.Object" />を表すコントロールの状態を復元します。</param>
+        <summary>によって保存された前回のページ要求からビューステート情報を復元、<see cref="M:System.Web.UI.WebControls.WebControl.SaveViewState" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public virtual string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィザードとして機能するコントロールのステップに関連付けられた名前を取得します。</summary>
+        <value>ウィザードとして機能するコントロールでのステップに関連付けられた名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WizardStepBase.Name%2A>プロパティ ウィザード コントロールのステップを識別する文字列を返します。 値が指定されている場合、 <xref:System.Web.UI.WebControls.WizardStepBase.Title%2A> 、プロパティ、<xref:System.Web.UI.WebControls.WizardStepBase.Name%2A>プロパティは、その値を返します。 値が指定されていない場合、 <xref:System.Web.UI.WebControls.WizardStepBase.Title%2A> 、プロパティ、<xref:System.Web.UI.WebControls.WizardStepBase.Name%2A>プロパティの値を返します、<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>プロパティです。 いずれかの値が指定されていない場合、<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>または<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>、プロパティ、<xref:System.Web.UI.WebControls.WizardStepBase.Name%2A>プロパティから返される`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnLoad">
+      <MemberSignature Language="C#" Value="protected override void OnLoad (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnLoad(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepBase.OnLoad(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.EventArgs" />イベント データを格納するオブジェクト。</param>
+        <summary><see cref="M:System.Web.UI.Control.OnLoad(System.EventArgs)" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderChildren">
+      <MemberSignature Language="C#" Value="protected override void RenderChildren (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderChildren(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.WizardStepBase.RenderChildren(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>内容を出力、<see cref="T:System.Web.UI.WebControls.WizardStepBase" />コントロールの子コントロールを指定した<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクトをクライアントに表示される内容を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StepType">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.WizardStepType StepType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WizardStepType StepType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.StepType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WizardStepType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の移動ユーザー インターフェイス (UI) のステップを表示する型、<see cref="T:System.Web.UI.WebControls.Wizard" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.WizardStepType" /> 列挙値のいずれか。 既定値は <see langword="WizardStepType.Auto" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>の手順を表示するナビゲーション ボタンの種類を指定するプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロール。 このプロパティの値を指定する場合に何としてマーク<xref:System.Web.UI.WebControls.WizardStepType.Complete>サイドバーで無効な状態が表示されます。  
+  
+ このプロパティの値を指定しない場合、既定値は`WizardStepType.Auto`します。  
+  
+ 次の表に、利用可能な設定、<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A>プロパティとステップの結果の動作。  
+  
+ `WizardStepType.Auto`  
+ ナビゲーション ステップに表示する UI は、ステップが宣言されている順序で決定されます。  
+  
+ `WizardStepType.Complete`  
+ 最後に表示される手順です。 ナビゲーション ボタンは表示されません。  
+  
+ `WizardStepType.Finish`  
+ ステップは、最終的なデータ コレクションのステップです。 ナビゲーションは、完了 と 前のボタンが表示されます。  
+  
+ `WizardStepType.Start`  
+ 最初に表示される手順です。 [戻る] ボタンは表示されません。  
+  
+ `WizardStepType.Step`  
+ ステップは、いずれかの手順を開始し、[完了] 手順の間です。 ナビゲーションは、前へ および 次へ ボタンが表示されます。 このステップの種類がオーバーライドするために便利ですが、<xref:System.Web.UI.WebControls.WizardStepType.Auto>ステップの種類。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値は、のいずれかではありません、<see cref="T:System.Web.UI.WebControls.WizardStepType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public virtual string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の手順を使用するタイトルを<see cref="T:System.Web.UI.WebControls.Wizard" />サイド バーの機能が有効な場合を制御します。</summary>
+        <value>手順を使用するタイトルを<see cref="T:System.Web.UI.WebControls.Wizard" />サイド バーの機能が有効な場合を制御します。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>のステップに関するわかりやすいタイトルを表示するプロパティ、<xref:System.Web.UI.WebControls.Wizard>サイド バーの機能が有効な場合を制御します。 場合、<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>プロパティが設定されていないと、サイドバー機能を有効にするの値、<xref:System.Web.UI.WebControls.WizardStepBase.ID%2A>サイド バー ボタンのプロパティが表示されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次の例では、使用方法を示します、<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>のステップに関するわかりやすいタイトルを表示するプロパティ、<xref:System.Web.UI.WebControls.Wizard>コントロール。 例では、`Step1`がその<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>プロパティの設定に表示されるように、 <xref:System.Web.UI.WebControls.Wizard> "WizardStep1"と同様に制御します。 `Step2`その<xref:System.Web.UI.WebControls.WizardStepBase.Title%2A>プロパティが設定、「ステップ 2」として表示されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.WizardStepBaseTitle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepBaseTitle/CS/wizardstepbasetitlecs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.WizardStepBaseTitle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.WizardStepBaseTitle/VB/wizardstepbasetitlevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Wizard">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Wizard Wizard { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Wizard Wizard" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WizardStepBase.Wizard" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Wizard</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.Wizard" />から派生したオブジェクトの親であるコントロール<see cref="T:System.Web.UI.WebControls.WizardStepBase" />です。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.Wizard" />から派生したオブジェクトの親であるコントロール<see cref="T:System.Web.UI.WebControls.WizardStepBase" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

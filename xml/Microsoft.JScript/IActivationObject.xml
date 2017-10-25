@@ -1,0 +1,144 @@
+<Type Name="IActivationObject" FullName="Microsoft.JScript.IActivationObject">
+  <TypeSignature Language="C#" Value="public interface IActivationObject" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IActivationObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.IActivationObject" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>スコープを解決するためのメソッドを定義します。 このインターフェイスは、スコープの階層に含まれるすべてのオブジェクトによって実装されます。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName="GetDefaultThisObject">
+      <MemberSignature Language="C#" Value="public object GetDefaultThisObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetDefaultThisObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IActivationObject.GetDefaultThisObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、現在の既定のスコープを取得します。 いずれか、含まれているオブジェクト、<see langword="with" />ステートメントのスコープまたはグローバル スコープ。</summary>
+        <returns>現在の既定のスコープです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetField (string name, int lexLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetField(string name, int32 lexLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IActivationObject.GetField(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="lexLevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するフィールドの名前。</param>
+        <param name="lexLevel">検索する構文レベル。</param>
+        <summary>クラスで実装された場合、スコープの階層を検索することで、指定した名前を持つフィールドを返します。 このメソッドは、構文のレベルで指定されているスコープのみを検索します。</summary>
+        <returns>A<see cref="T:System.Reflection.FieldInfo" />を指定した名前を持つオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンパイル時に解決できないフィールドに適用されます。 これは、ようなときに、`eval`外側のスコープ内のフィールドを式で参照します。 `eval`式は、同じ名前を持つローカル フィールドを宣言できる、フィールドは、外側のスコープのフィールドに事前バインドをすることはできません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlobalScope">
+      <MemberSignature Language="C#" Value="public Microsoft.JScript.GlobalScope GetGlobalScope ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class Microsoft.JScript.GlobalScope GetGlobalScope() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IActivationObject.GetGlobalScope" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.GlobalScope</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クラスで実装された場合、静的変数、たとえば、モジュール スコープを含むスコープが見つかるまで、スコープの階層を検索することにより、グローバル スコープを取得します。</summary>
+        <returns>グローバル スコープです。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetLocalField">
+      <MemberSignature Language="C#" Value="public System.Reflection.FieldInfo GetLocalField (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Reflection.FieldInfo GetLocalField(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IActivationObject.GetLocalField(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Reflection.FieldInfo</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">フィールドの名前。</param>
+        <summary>クラスで実装された場合、指定した名前を持つフィールドのローカル宣言を取得します。 コンパイル時エラー チェックのために使用します。</summary>
+        <returns>フィールドのローカル宣言します。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetMemberValue">
+      <MemberSignature Language="C#" Value="public object GetMemberValue (string name, int lexlevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetMemberValue(string name, int32 lexlevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.IActivationObject.GetMemberValue(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="lexlevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="name">検索するメンバーの名前。</param>
+        <param name="lexlevel">検索する構文レベル。</param>
+        <summary>クラスで実装された場合、スコープの階層を検索することで、指定されたメンバーの値を取得します。 このメソッドは、構文のレベルで指定されているスコープのみを検索します。</summary>
+        <returns>メンバーの値<paramref name="name" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コンパイル時に解決できないメンバーに適用されます。 これが発生したときに、`eval`外側のスコープ内のメンバーを式で参照します。 `eval`式は、同じ名前のローカルのメンバーを宣言できる、外部スコープのメンバーに事前バインディングをメンバーにすることはできません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

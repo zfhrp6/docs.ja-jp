@@ -1,0 +1,72 @@
+<Type Name="SqlDataSourceMode" FullName="System.Web.UI.WebControls.SqlDataSourceMode">
+  <TypeSignature Language="C#" Value="public enum SqlDataSourceMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlDataSourceMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.SqlDataSourceMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>指定するかどうか、<see cref="T:System.Web.UI.WebControls.SqlDataSource" />または<see cref="T:System.Web.UI.WebControls.AccessDataSource" />コントロールとしてデータの取得、<see cref="T:System.Data.IDataReader" />または<see cref="T:System.Data.DataSet" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.SqlDataSourceMode>列挙型を使用して、<xref:System.Web.UI.WebControls.SqlDataSource>と<xref:System.Web.UI.WebControls.AccessDataSource>時に、データ取得モードは、データ ソース コントロールであることを説明するコントロールによって使用、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>メソッドが呼び出されます。 ときに、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>データセットに設定されているプロパティ、データが読み込まれます、<xref:System.Data.DataSet>構造体。 これにより、ユーザー インターフェイスなどのコントロール シナリオ<xref:System.Web.UI.WebControls.GridView>並べ替えとページング機能を提供します。 ときに、 <xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A> DataReader にプロパティが設定されている、データを取得して、<xref:System.Data.IDataReader>順方向専用、読み取り専用カーソルであるオブジェクト。  
+  
+ <xref:System.Web.UI.WebControls.SqlDataSourceMode.DataReader>列挙型が記述に使用されるだけ方法、<xref:System.Web.UI.WebControls.SqlDataSource.Select%2A>コマンドは、データを取得は、その他の操作に影響はありません、<xref:System.Web.UI.WebControls.SqlDataSourceMode>コントロールを実行するよう<xref:System.Web.UI.WebControls.SqlDataSource.Insert%2A>、 <xref:System.Web.UI.WebControls.SqlDataSource.Update%2A>、または<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>の<xref:System.Web.UI.WebControls.SqlDataSource.Delete%2A>DataReader に SQL Server データベースから項目の単純なリストを取得するときにコントロール、<xref:System.Web.UI.WebControls.ListBox>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/CS/sql1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_1sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_1sql/VB/sql1vb.aspx#1)]  
+  
+ 次のコード例は、設定する方法を示します、<xref:System.Web.UI.WebControls.SqlDataSource.DataSourceMode%2A>データセットへのデータのセットを取得するときに、<xref:System.Web.UI.WebControls.GridView>で並べ替えを有効になっているコントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_4sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_4sql/CS/sql4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_4sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_4sql/VB/sql4vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DataReader">
+      <MemberSignature Language="C#" Value="DataReader" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SqlDataSourceMode DataReader = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SqlDataSourceMode.DataReader" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ ストレージとしてからデータを取得します。<see cref="T:System.Data.IDataReader" /></summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSet">
+      <MemberSignature Language="C#" Value="DataSet" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.SqlDataSourceMode DataSet = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.SqlDataSourceMode.DataSet" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.SqlDataSourceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ ストレージからデータを取得、<see cref="T:System.Data.DataSet" />構造体。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

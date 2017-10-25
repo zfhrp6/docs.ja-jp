@@ -1,0 +1,763 @@
+<Type Name="Unit" FullName="System.Web.UI.WebControls.Unit">
+  <TypeSignature Language="C#" Value="public struct Unit" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Unit extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Unit" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.UnitConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>長さの単位を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Unit>構造体は、任意の HTML と互換性のあるサイズ単位で表すことができる長さの単位を表します。 <xref:System.Web.UI.WebControls.UnitType> 列挙体には、表すことができる単位がリストされます。 <xref:System.Web.UI.WebControls.Unit>などのプロパティで使用が`BorderWidth`と`Height`長さまたはプロパティの幅を表すです。 たとえば、設定することができます、<xref:System.Web.UI.WebControls.WebControl.BorderWidth%2A>に Web サーバー コントロールのプロパティ、<xref:System.Web.UI.WebControls.Unit>を表す 5 つのピクセルです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Unit>クラスのみ-32768 から 32767 までの値を表すことができます。  
+  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Value%2A>の測定値の長さを決定するプロパティです。 使用して測定単位を特定、<xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティです。 他のデータ型に変換することができます、<xref:System.Web.UI.WebControls.Unit>を使用して、 <xref:System.Web.UI.WebControls.Unit.Parse%2A>、 <xref:System.Web.UI.WebControls.Unit.Percentage%2A>、 <xref:System.Web.UI.WebControls.Unit.Pixel%2A>、および<xref:System.Web.UI.WebControls.Unit.Point%2A>メソッドです。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.Web.UI.WebControls.Unit>を参照してください、<xref:System.Web.UI.WebControls.Unit>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Style>一度に複数のコントロールのスタイル プロパティを変更するオブジェクト。 いずれかされるたびに、<xref:System.Web.UI.WebControls.Style>プロパティの値の変更、各コントロールを呼び出す必要があります、<xref:System.Web.UI.WebControls.WebControl.ApplyStyle%2A>メソッドです。 すべてのコントロールが示されているすべてのプロパティをサポートすることに注意してください。 コントロールが特定のプロパティをサポートしていない場合、プロパティ値が変更されたときに、コントロールの外観は変更されません。  
+  
+ [!code-aspx-csharp[StyleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#1)]
+ [!code-aspx-vb[StyleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#1)]  
+[!code-aspx-csharp[StyleClass#3](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#3)]
+[!code-aspx-vb[StyleClass#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Unit (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">倍精度浮動小数点数の長さを表す、 <see cref="T:System.Web.UI.WebControls.Unit" /> (ピクセル単位)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Unit" />指定 double 精度浮動小数点数を含む構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Unit>指定 double 精度浮動小数点数を使用して構造体します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Unit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Unit.Type%2A>|<xref:System.Web.UI.WebControls.UnitType.Pixel>|  
+|<xref:System.Web.UI.WebControls.Unit.Value%2A>|`value` で指定された値。|  
+  
+> [!CAUTION]
+>  場合`value`はいない-32768 から 32767 までの例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />-32768 ~ 32767 の間にない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Unit (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">長さを表す 32 ビット符号付き整数の<see cref="T:System.Web.UI.WebControls.Unit" />(ピクセル単位)。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Unit" />指定した 32 ビット符号付き整数を含む構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Unit>指定した 32 ビット符号付き整数を使用して構造体します。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Unit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Unit.Type%2A>|<xref:System.Web.UI.WebControls.UnitType.Pixel>|  
+|<xref:System.Web.UI.WebControls.Unit.Value%2A>|`value` で指定された値。|  
+  
+> [!CAUTION]
+>  場合`value`はいない-32768 から 32767 までの例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />-32768 ~ 32767 の間にない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Unit (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">長さを表す文字列、<see cref="T:System.Web.UI.WebControls.Unit" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Unit" />指定の長さを持つ構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Unit>指定の長さを使用して構造体します。 長さは、2 つの部分、長さの値および長さの単位の種類で指定されます。 たとえば、"200 Cm"では、200 センチメートル単位の長さを表します。 有効な CSS 準拠単位式を使用できます。  
+  
+ 次の表は、共通の単位の種類を一覧表示します。  
+  
+|ユニットの種類|説明|  
+|---------------|-----------------|  
+|`Pixel`|ピクセル単位の長さ。|  
+|`Point`|ポイント単位の長さです。 ポイントは、1/72 インチを表します。|  
+|`Inch`|インチ単位の長さ。|  
+|`Mm`|ミリメートル単位の長さ。|  
+|`Cm`|センチメートル単位の長さ。|  
+|`Percentage`|親要素の割合としての長さ。|  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Unit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Unit.Type%2A>|指定されたユニットの種類`value`です。|  
+|<xref:System.Web.UI.WebControls.Unit.Value%2A>|指定された値`value`です。|  
+  
+> [!CAUTION]
+>  場合`value`はいない-32768 から 32767 までの例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定の長さは、-32768 ~ 32767 の間はありません。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="value" />有効な CSS 準拠単位式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Unit (double value, System.Web.UI.WebControls.UnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Web.UI.WebControls.UnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.#ctor(System.Double,System.Web.UI.WebControls.UnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Web.UI.WebControls.UnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value">倍精度浮動小数点数の長さを表す、<see cref="T:System.Web.UI.WebControls.Unit" />です。</param>
+        <param name="type"><see cref="T:System.Web.UI.WebControls.UnitType" /> 列挙値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Unit" />指定 double 精度浮動小数点数を含む構造体と<see cref="T:System.Web.UI.WebControls.UnitType" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Unit>指定 double 精度浮動小数点数を使用して構造体と<xref:System.Web.UI.WebControls.UnitType>です。  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Unit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Unit.Type%2A>|`type` の値。|  
+|<xref:System.Web.UI.WebControls.Unit.Value%2A>|`value` で指定された値。|  
+  
+> [!CAUTION]
+>  場合`value`はいない-32768 から 32767 までの例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="value" />-32768 ~ 32767 の間にない。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Unit (string value, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.#ctor(System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value">長さを表す文字列、<see cref="T:System.Web.UI.WebControls.Unit" />です。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />カルチャを表すです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.UI.WebControls.Unit" />指定の長さを持つ構造体と<see cref="T:System.Globalization.CultureInfo" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Unit>指定の長さを使用して構造体と<xref:System.Globalization.CultureInfo?displayProperty=nameWithType>です。 長さは、2 つの部分、長さの値および長さの単位の種類で指定されます。 たとえば、"200 Cm"では、200 センチメートル単位の長さを表します。 有効な CSS 準拠単位式を使用できます。  
+  
+ 次の表は、共通の単位の種類を一覧表示します。  
+  
+|ユニットの種類|説明|  
+|---------------|-----------------|  
+|`Pixel`|ピクセル単位の長さ。|  
+|`Point`|ポイント単位の長さです。 ポイントは、1/72 インチを表します。|  
+|`Inch`|インチ単位の長さ。|  
+|`Mm`|ミリメートル単位の長さ。|  
+|`Cm`|センチメートル単位の長さ。|  
+|`Percentage`|親要素の割合としての長さ。|  
+  
+ 次の表は、のインスタンスの初期プロパティ値を示しています。<xref:System.Web.UI.WebControls.Unit>です。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.Unit.Type%2A>|指定されたユニットの種類`value`です。|  
+|<xref:System.Web.UI.WebControls.Unit.Value%2A>|指定された値`value`です。|  
+  
+> [!CAUTION]
+>  場合`value`はいない-32768 から 32767 までの例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">指定の長さは、-32768 ~ 32767 の間はありません。</exception>
+        <exception cref="T:System.FormatException">
+          <paramref name="value" />有効な CSS 準拠単位式ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Empty">
+      <MemberSignature Language="C#" Value="public static readonly System.Web.UI.WebControls.Unit Empty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly valuetype System.Web.UI.WebControls.Unit Empty" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.Unit.Empty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>空の表す<see cref="T:System.Web.UI.WebControls.Unit" />です。 このフィールドは読み取り専用です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>これと比較<see cref="T:System.Web.UI.WebControls.Unit" />指定したオブジェクトにします。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.Unit" />からこのメソッドが呼び出されることと等しい、指定したオブジェクト。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Equals%2A>を比較するメソッド、<xref:System.Web.UI.WebControls.Unit>で指定されたオブジェクトからこのメソッドが呼び出される`obj`です。 両方のオブジェクトが等しい場合は、<xref:System.Web.UI.WebControls.Unit.Type%2A> プロパティと <xref:System.Web.UI.WebControls.Unit.Value%2A> プロパティに同じ値を指定する必要があります。  
+  
+> [!NOTE]
+>  指定されたオブジェクト`obj`である必要があります、<xref:System.Web.UI.WebControls.Unit>型のオブジェクトの成功を比較します。 オブジェクトが場合`null`、`false`が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>このインスタンスのハッシュ コードである 32 ビット符号付き整数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Unit.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.Unit" />が空です。</summary>
+        <value>
+          <see langword="true" /> が空の場合は <see cref="T:System.Web.UI.WebControls.Unit" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.IsEmpty%2A>プロパティを決定するかどうか、<xref:System.Web.UI.WebControls.Unit>が空です。 <xref:System.Web.UI.WebControls.Unit>空場合、<xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティが 0 の列挙値を格納します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Web.UI.WebControls.Unit left, System.Web.UI.WebControls.Unit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Web.UI.WebControls.Unit left, valuetype System.Web.UI.WebControls.Unit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.op_Equality(System.Web.UI.WebControls.Unit,System.Web.UI.WebControls.Unit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Web.UI.WebControls.Unit" />
+        <Parameter Name="right" Type="System.Web.UI.WebControls.Unit" />
+      </Parameters>
+      <Docs>
+        <param name="left">演算子の左辺にある <see cref="T:System.Web.UI.WebControls.Unit" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.Web.UI.WebControls.Unit" />。</param>
+        <summary>比較する 2 つ<see cref="T:System.Web.UI.WebControls.Unit" />それらが等しいかどうかを判断するオブジェクト。</summary>
+        <returns>
+          <see langword="true" />両方<see cref="T:System.Web.UI.WebControls.Unit" />オブジェクトが等しい。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子を使用して、2 つを比較する<xref:System.Web.UI.WebControls.Unit>オブジェクトが等しいかどうか。 両方のオブジェクトが等しい場合は、<xref:System.Web.UI.WebControls.Unit.Type%2A> プロパティと <xref:System.Web.UI.WebControls.Unit.Value%2A> プロパティに同じ値を指定する必要があります。  
+  
+ この演算子を同等の方法は、します。<xref:System.Web.UI.WebControls.Unit.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Implicit">
+      <MemberSignature Language="C#" Value="public static implicit operator System.Web.UI.WebControls.Unit (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Web.UI.WebControls.Unit op_Implicit(int32 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.op_Implicit(System.Int32)~System.Web.UI.WebControls.Unit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Web.UI.WebControls.Unit left, System.Web.UI.WebControls.Unit right);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Web.UI.WebControls.Unit left, valuetype System.Web.UI.WebControls.Unit right) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.op_Inequality(System.Web.UI.WebControls.Unit,System.Web.UI.WebControls.Unit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="left" Type="System.Web.UI.WebControls.Unit" />
+        <Parameter Name="right" Type="System.Web.UI.WebControls.Unit" />
+      </Parameters>
+      <Docs>
+        <param name="left">演算子の左辺にある <see cref="T:System.Web.UI.WebControls.Unit" />。</param>
+        <param name="right">演算子の右辺にある <see cref="T:System.Web.UI.WebControls.Unit" />。</param>
+        <summary>比較する 2 つ<see cref="T:System.Web.UI.WebControls.Unit" />両者が等しくないかどうかを決定するオブジェクト。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.Unit" />オブジェクトが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この演算子を使用して、2 つを比較する<xref:System.Web.UI.WebControls.Unit>の非等値オブジェクトです。 等価でないオブジェクト用に別の値がある必要があります、<xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティまたは<xref:System.Web.UI.WebControls.Unit.Value%2A>プロパティです。  
+  
+ この演算子を同等の方法は、します。<xref:System.Web.UI.WebControls.Unit.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.Unit Parse (string s);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.Unit Parse(string s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する文字列。</param>
+        <summary>指定した文字列に変換する<see cref="T:System.Web.UI.WebControls.Unit" />です。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Unit" />を表す、指定した文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Parse%2A>で指定された文字列に変換する静的メソッド、`s`パラメーターを<xref:System.Web.UI.WebControls.Unit>です。  
+  
+> [!NOTE]
+>  このメソッドを使用する場合の単位が<xref:System.Web.UI.WebControls.UnitType.Pixel>です。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[StyleClass#1](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#1)]
+ [!code-aspx-vb[StyleClass#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#1)]  
+[!code-aspx-csharp[StyleClass#3](~/samples/snippets/csharp/VS_Snippets_WebNet/StyleClass/CS/styleclasscs.aspx#3)]
+[!code-aspx-vb[StyleClass#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/StyleClass/VB/styleclassvb.aspx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.Unit Parse (string s, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.Unit Parse(string s, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Parse(System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="s">変換する文字列。</param>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />カルチャを表すオブジェクト。</param>
+        <summary>指定した文字列と<see cref="T:System.Globalization.CultureInfo" />を<see cref="T:System.Web.UI.WebControls.Unit" />です。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Unit" />を表す、指定した文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Parse%2A>静的メソッドで指定された文字列に変換する`s`を<xref:System.Web.UI.WebControls.Unit>で指定したカルチャに`culture`です。  
+  
+> [!NOTE]
+>  このメソッドを使用する場合の単位が<xref:System.Web.UI.WebControls.UnitType.Pixel>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Percentage">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.Unit Percentage (double n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.Unit Percentage(float64 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Percentage(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="n">長さを表す倍精度浮動小数点数、<see cref="T:System.Web.UI.WebControls.Unit" />です。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />指定した倍精度浮動小数点数から。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />を表す倍精度浮動小数点数で指定された長さです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Percentage%2A>作成する静的メソッド、<xref:System.Web.UI.WebControls.Unit>型の<xref:System.Web.UI.WebControls.UnitType.Percentage>で指定された長さを表す、`n`パラメーター。 80 を指定する場合など、 * n *使用して、返される単位を設定、 <xref:System.Web.UI.WebControls.WebControl.Height%2A> 、Web サーバー コントロールの`height`属性が 80% に設定します。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Unit>クラスのみ-32768 から 32767 までの値を表すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pixel">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.Unit Pixel (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.Unit Pixel(int32 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Pixel(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">長さを表す 32 ビット符号付き整数の<see cref="T:System.Web.UI.WebControls.Unit" />します。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Pixel" />指定した 32 ビット符号付き整数から。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Pixel" />で指定された長さを表す、<paramref name="n" />パラメーター。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Pixel%2A>作成する静的メソッド、<xref:System.Web.UI.WebControls.Unit>型の<xref:System.Web.UI.WebControls.UnitType.Pixel>で指定された長さを表す、`n`パラメーター。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Unit>クラスのみ-32768 から 32767 までの値を表すことができます。  
+  
+   
+  
+## Examples  
+ [!code-aspx-csharp[TableCell#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TableCell/CS/tablecellcs.aspx#1)]
+ [!code-aspx-vb[TableCell#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TableCell/VB/tablecellvb.aspx#1)]  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Point">
+      <MemberSignature Language="C#" Value="public static System.Web.UI.WebControls.Unit Point (int n);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Web.UI.WebControls.Unit Point(int32 n) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.Point(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="n" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="n">長さを表す 32 ビット符号付き整数の<see cref="T:System.Web.UI.WebControls.Unit" />します。</param>
+        <summary>作成、<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Point" />指定した 32 ビット符号付き整数から。</summary>
+        <returns>A<see cref="T:System.Web.UI.WebControls.Unit" />型の<see cref="F:System.Web.UI.WebControls.UnitType.Point" />を表す 32 ビット符号付き整数で指定された長さです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Point%2A>作成する静的メソッド、<xref:System.Web.UI.WebControls.Unit>型の<xref:System.Web.UI.WebControls.UnitType.Point>で指定された長さを表す、`n`パラメーター。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Unit>クラスのみ-32768 から 32767 までの値を表すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Unit" /> を <see cref="T:System.String" /> に変換します。</summary>
+        <returns>この <see cref="T:System.Web.UI.WebControls.Unit" /> を表す <see cref="T:System.String" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.ToString(System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="culture">A<see cref="T:System.Globalization.CultureInfo" />カルチャを表すです。</param>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.Unit" />で指定したカルチャと等価の文字列にします。</summary>
+        <returns>A<see cref="T:System.String" />これを表す<see cref="T:System.Web.UI.WebControls.Unit" />で指定したカルチャに<paramref name="culture" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.ToString%2A>に変換する方法、<xref:System.Web.UI.WebControls.Unit>このメソッドから呼び出される文字列に指定されたカルチャと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider formatProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider formatProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Unit.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="formatProvider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="formatProvider"><see cref="T:System.IFormatProvider" />インターフェイスのカルチャに固有の書式情報を提供する実装。</param>
+        <summary>変換、<see cref="T:System.Web.UI.WebControls.Unit" />文字列に相当する指定された書式プロバイダーを使用します。</summary>
+        <returns>A<see cref="T:System.String" />これを表す<see cref="T:System.Web.UI.WebControls.Unit" />で指定された形式で<paramref name="formatProvider" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Unit.ToString%2A>単位に書式設定文字列表現を返します<xref:System.Web.UI.WebControls.Unit.Value%2A>と単位を表す省略形<xref:System.Web.UI.WebControls.Unit.Type%2A>です。 次の表にリスト<xref:System.Web.UI.WebControls.UnitType>値と対応する、省略形です。  
+  
+|ユニットの種類|省略形|  
+|---------------|------------------|  
+|<xref:System.Web.UI.WebControls.UnitType.Pixel>|px|  
+|<xref:System.Web.UI.WebControls.UnitType.Point>|pt|  
+|<xref:System.Web.UI.WebControls.UnitType.Pica>|pc|  
+|<xref:System.Web.UI.WebControls.UnitType.Inch>|の|  
+|<xref:System.Web.UI.WebControls.UnitType.Mm>|mm|  
+|<xref:System.Web.UI.WebControls.UnitType.Cm>|cm|  
+|<xref:System.Web.UI.WebControls.UnitType.Percentage>|%|  
+|<xref:System.Web.UI.WebControls.UnitType.Em>|em|  
+|<xref:System.Web.UI.WebControls.UnitType.Ex>|ex|  
+  
+ 使用して`formatProvider`書式を設定するために使用するカルチャ固有情報を指定する、<xref:System.Web.UI.WebControls.Unit.Value%2A>です。 場合`formatProvider`は`null`、文字列の数値部分の書式は、既定値を使用して<xref:System.Globalization.NumberFormatInfo>オブジェクト、現在のカルチャ用に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Type">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.UnitType Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.UnitType Type" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Unit.Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.UnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Unit" /> の単位型を取得します。</summary>
+        <value><see cref="T:System.Web.UI.WebControls.UnitType" /> 列挙値のいずれか。 既定値は、<see cref="F:System.Web.UI.WebControls.UnitType.Pixel" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Type%2A>測定単位を決定するプロパティを<xref:System.Web.UI.WebControls.Unit>ピクセルなどを表します。 <xref:System.Web.UI.WebControls.Unit.Type%2A>プロパティは、のいずれかで表される、<xref:System.Web.UI.WebControls.UnitType>列挙値。  
+  
+> [!NOTE]
+>  場合<xref:System.Web.UI.WebControls.Unit.IsEmpty%2A>プロパティに設定されている`true`、<xref:System.Web.UI.WebControls.UnitType.Point>列挙の値が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Unit.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>長さを取得、<see cref="T:System.Web.UI.WebControls.Unit" />です。</summary>
+        <value>長さを表す倍精度浮動小数点数、<see cref="T:System.Web.UI.WebControls.Unit" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Unit.Value%2A>の長さを決定するプロパティ、<xref:System.Web.UI.WebControls.Unit>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

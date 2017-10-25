@@ -1,0 +1,638 @@
+<Type Name="RoleManagerSection" FullName="System.Web.Configuration.RoleManagerSection">
+  <TypeSignature Language="C#" Value="public sealed class RoleManagerSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RoleManagerSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.RoleManagerSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションのロールの管理インフラストラクチャをサポートするために使用される構成設定を定義します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection>クラスは、プログラムからアクセスしの内容を変更する方法を提供、`roleManager`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかのプロパティの値を宣言によって指定する方法を説明、<xref:System.Web.Configuration.RoleManagerSection>クラスです。 2 つ目は、使用する方法を示します、<xref:System.Web.Configuration.RoleManagerSection>型です。  
+  
+ 次の構成ファイルの例は、宣言のいくつかのプロパティの値を指定する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+```  
+<system.web>  
+  <roleManager   
+    enabled="false"   
+    cacheRolesInCookie="false"   
+    cookieName=".ASPXROLES" cookieTimeout="30"  
+    cookiePath="/" cookieRequireSSL="false"  
+    cookieSlidingExpiration="true" createPersistentCookie="false"  
+    cookieProtection="All"   
+    defaultProvider="AspNetSqlRoleProvider"  
+    maxCachedResults="25"  >  
+    <providers>  
+      <add   
+        name="AspNetSqlRoleProvider"  
+        connectionStringName="LocalSqlServer"   
+        applicationName="/"  
+        type="System.Web.Security.SqlRoleProvider, System.Web,  
+          Version=2.0.3600.0, Culture=neutral,  
+          PublicKeyToken=b03f5f7f11d50a3a" />  
+      <add   
+        name="AspNetWindowsTokenRoleProvider"   
+        applicationName="/"  
+        type="System.Web.Security.WindowsTokenRoleProvider, System.Web,   
+          Version=2.0.3600.0, Culture=neutral,   
+          PublicKeyToken=b03f5f7f11d50a3a" />  
+    </providers>  
+  </roleManager>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#1)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RoleManagerSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.RoleManagerSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.RoleManagerSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.RoleManagerSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ 次の表は、既定の設定に使用される、<xref:System.Web.Configuration.RoleManagerSection.%23ctor%2A>コンス トラクターです。  
+  
+|プロパティ|既定値|  
+|--------------|-------------------|  
+|<xref:System.Web.Configuration.RoleManagerSection.Enabled%2A>|`false`|  
+|<xref:System.Web.Configuration.RoleManagerSection.CacheRolesInCookie%2A>|`false`|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookieName%2A>|".ASPXROLES"|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookiePath%2A>|"/"|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>|`All`|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookieRequireSSL%2A>|`false`|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookieSlidingExpiration%2A>|`true`|  
+|<xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>|30 (分)|  
+|<xref:System.Web.Configuration.RoleManagerSection.CreatePersistentCookie%2A>|`false`|  
+|<xref:System.Web.Configuration.RoleManagerSection.DefaultProvider%2A>|"AspNetSqlRoleProvider"|  
+|<xref:System.Web.Configuration.RoleManagerSection.Domain%2A>|空の文字列 ("")|  
+|<xref:System.Web.Configuration.RoleManagerSection.MaxCachedResults%2A>|25|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CacheRolesInCookie">
+      <MemberSignature Language="C#" Value="public bool CacheRolesInCookie { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CacheRolesInCookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CacheRolesInCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cacheRolesInCookie", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または現在のユーザーのロールがクッキーにキャッシュするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />現在のユーザーのロールがクッキー; にキャッシュされている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.CacheRolesInCookie%2A>ロール名のクッキーの記憶域が有効になっているかどうかを示すブール値を返します。  
+  
+ ときに、<xref:System.Web.Configuration.RoleManagerSection.CacheRolesInCookie%2A>プロパティに設定されている`true`クライアントのクッキーに構成ファイルに各ユーザーのロール情報が格納されています。 ユーザーが特定のロールであるかどうかを判断するチェックのロール管理、データ ソースにあるロールの一覧を確認するロール プロバイダーを呼び出す前にロール クッキーがチェックされます。 最新の検証済みのロール名をキャッシュにクライアントでクッキーが動的に更新します。  
+  
+ 指定してクッキーにキャッシュされているロール名の信頼性を向上させることができます、<xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>プロパティを構成するとき、`roleManager`構成ファイルのセクションです。 既定値<xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>プロパティは`All`cookie 内のロール名を暗号化し、cookie の内容が変更されていないことを検証します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CacheRolesInCookie%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#2)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieName">
+      <MemberSignature Language="C#" Value="public string CookieName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookieName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookieName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.WhiteSpaceTrimStringConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロール名をキャッシュするために使用される cookie の名前を設定します。</summary>
+        <value>ロール名をキャッシュに使用する cookie の名前。 既定値は"です。ASPXROLES"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.CookieName%2A>プロパティは、ロール名をキャッシュするために使用される cookie の名前を返します。 設定して、アプリケーションのロールがキャッシュされている cookie の名前を指定できます、 `cookieName` ASP.NET アプリケーションの Web.config ファイル内の属性です。 これは、機能は、アプリケーションの cookie を一意に識別するとき、または cookie は、複数のアプリケーション間で共有されるときに便利です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieName%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#3)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookiePath">
+      <MemberSignature Language="C#" Value="public string CookiePath { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CookiePath" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookiePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.WhiteSpaceTrimStringConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookiePath", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの名前をキャッシュに使用される cookie の仮想パスを設定します。</summary>
+        <value>ロールの名前を格納するために使用する cookie のパス。 既定値は「/」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定して、アプリケーションのロール名がキャッシュされているクッキーのパスを指定することができます、 `cookiePath` ASP.NET アプリケーションの Web.config ファイル内の属性です。 <xref:System.Web.Configuration.RoleManagerSection.CookiePath%2A>プロパティの値を返します、 `cookiePath` Web.config ファイルからの属性です。 パスは大文字小文字を区別します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookiePath%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#4)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieProtection">
+      <MemberSignature Language="C#" Value="public System.Web.Security.CookieProtection CookieProtection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Security.CookieProtection CookieProtection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookieProtection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieProtection", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Security.CookieProtection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの名前をキャッシュする cookie の保護に使用されるセキュリティの種類を設定します。</summary>
+        <value>ロール名がキャッシュされている cookie 内で使用されるセキュリティ保護の種類。 既定値は、<see langword="All" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>プロパティは、cookie 内の情報を安全に格納する方法について説明します。 設定して、アプリケーションのロールがキャッシュされている cookie のセキュリティの種類を指定できます、 `cookieProtection` ASP.NET アプリケーションの Web.config ファイル内の属性です。 `cookieProtection`属性は、<xref:System.Web.Security.CookieProtection>の列挙値`All`、 `Encryption`、 `None`、または`Validation`です。 既定値は、`All` です。 既定値を使用してください、<xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>する場合、データの検証と cookie を保護するために暗号化の両方のプロパティです。 Cookie の保護を向上させるため、設定することも、<xref:System.Web.Configuration.RoleManagerSection.CookieRequireSSL%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieProtection%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#5)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieRequireSSL">
+      <MemberSignature Language="C#" Value="public bool CookieRequireSSL { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CookieRequireSSL" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookieRequireSSL" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieRequireSSL", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロール名をキャッシュに使用される cookie がサーバーに返されるために Secure Sockets Layer (SSL) 接続を必要とするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />返すために、サーバーに、cookie です。 ロール名がキャッシュされている SSL 接続が必要な場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロール名のクッキーをサーバーを設定して返すには SSL が必要かどうかを指定することができます、 `cookieRequireSSL` ASP.NET アプリケーションの Web.config ファイル内の属性です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieRequireSSL%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#6)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieSlidingExpiration">
+      <MemberSignature Language="C#" Value="public bool CookieSlidingExpiration { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CookieSlidingExpiration" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookieSlidingExpiration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieSlidingExpiration", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの名前をキャッシュに使用されるクッキーが定期的にリセットするかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ロール名のクッキーの有効期限の日付と時刻が定期的にリセットする場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロール名をキャッシュに使用されるクッキーが定期的にリセットまたはを使用して特定の時点に期限切れかどうかを指定することができます、 `cookieSlidingExpiration` ASP.NET アプリケーションの Web.config ファイル内の属性です。 場合`true`、cookie の有効期限が最初に現在の日付と時刻に設定されていると、<xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>分単位でのプロパティです。 ユーザーは引き続き、ASP.NET アプリケーションをアクティブに使用する、cookie の有効期限日時に自動的に更新されるの半分未満を使用する必要がある場合、<xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>残りです。 既定値は、`true` です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieSlidingExpiration%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#7)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CookieTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan CookieTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan CookieTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CookieTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.TimeSpanMinutesOrInfiniteConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cookieTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロール名をキャッシュに使用される cookie の有効期限が切れる前に分単位の時間を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />は分単位のキャッシュ ロール名を使用するクッキーの有効期限が切れる前にします。 既定値は 30 を使用 (分) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>プロパティは、ロール名のクッキーの有効期限が切れるまでの分数を指定する値を設定します。 既定値は、30 分です。 場合、<xref:System.Web.Configuration.RoleManagerSection.CookieSlidingExpiration%2A>プロパティは`false`、<xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>プロパティは無視されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieTimeout%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#8)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePersistentCookie">
+      <MemberSignature Language="C#" Value="public bool CreatePersistentCookie { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CreatePersistentCookie" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.CreatePersistentCookie" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("createPersistentCookie", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション ベースの cookie、または永続的な cookie を使用してロールの名前をキャッシュするかどうかを示します。</summary>
+        <value>
+          <see langword="true" />ブラウザー セッション間で永続的なロール名のクッキーを作成するにはそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.CreatePersistentCookie%2A>プロパティは、ロール名をキャッシュに使用されるクッキーをブラウザーが閉じられたときに、cookie が失われることを意味するには、セッション ベースの cookie、または永続的な cookie が含まれ、ブラウザー セッション間で cookie が使用できることを意味する必要があるかどうかを示します。 既定値は`false`、セッション ベースの cookie を使用ロール名をキャッシュすることを示します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CreatePersistentCookie%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#9)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProvider">
+      <MemberSignature Language="C#" Value="public string DefaultProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.DefaultProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.WhiteSpaceTrimStringConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultProvider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールを管理するために使用される既定のプロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前、<see cref="P:System.Web.Configuration.RoleManagerSection.Providers" />です。 既定値は、"AspNetSqlRoleProvider"です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.DefaultProvider%2A>プロパティが 名前付きの値と一致する必要があります、`providers`のサブセクション、`roleManager`構成ファイルのセクションです。 空の文字列 ("") の有効な値ではありません、<xref:System.Web.Configuration.RoleManagerSection.DefaultProvider%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.CookieSlidingExpiration%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#10)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Domain">
+      <MemberSignature Language="C#" Value="public string Domain { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Domain" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.Domain" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("domain")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの名前をキャッシュに使用される cookie に関連付けられているドメインの名前を設定します。</summary>
+        <value><see cref="P:System.Web.HttpCookie.Domain" />のロール名をキャッシュを使用するクッキー。 既定値は空の文字列 (<see langword="&quot;&quot;" />)。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.Domain%2A>プロパティを使用して ASP.NET アプリケーションの構成で設定されて、`domain`の属性、`roleManager`構成要素。 構成で値が指定されていない場合、 `domain` 、属性、<xref:System.Web.Configuration.RoleManagerSection.Domain%2A>プロパティから返される`null`の役割の動作に cookie のドメインの既定値の名前と、<xref:System.Web.HttpCookie.Domain%2A>プロパティです。 既定値は空の文字列です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のロール管理機能が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET のロール管理機能が有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.RoleManagerSection.Enabled%2A>プロパティが、ASP.NET のロール管理機能は、実行時にアクセスできるかどうかを示すブール値を返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.Enabled%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#12](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#12)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#12](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxCachedResults">
+      <MemberSignature Language="C#" Value="public int MaxCachedResults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxCachedResults" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.MaxCachedResults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxCachedResults", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはロールの cookie で ASP.NET をキャッシュするロールの最大数を設定します。</summary>
+        <value>ロール クッキーで ASP.NET のキャッシュをロールの最大数を示す値。 既定値は 25 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.Roles.MaxCachedResults%2A>プロパティは、ASP.NET がロールのクッキーにキャッシュするロールの最大数を示す整数を返します。 既定値は 25 です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.RoleManagerSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Configuration.ProviderSettingsCollection" />のオブジェクト<see cref="T:System.Configuration.ProviderSettings" />要素。</summary>
+        <value>A<see cref="T:System.Configuration.ProviderSettingsCollection" />内で定義された設定プロバイダーを格納している、<see langword="providers" />のサブセクション、<see langword="roleManager" />構成ファイルのセクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ロール管理プロバイダーは、サイトの種類のロールへのアクセスを提供するコンポーネントです。 ロール管理プロバイダーを指定することができます、`providers`のサブセクション、`roleManager`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.RoleManagerSection.DefaultProvider%2A>プロパティが既定で使用されているプロバイダーを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.RoleManagerSection.Providers%2A>プロパティです。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.RoleManagerSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.RoleManagerSection#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/CS/rolemanagersection.cs#13)]
+ [!code-vb[System.Web.Configuration.RoleManagerSection#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.RoleManagerSection/VB/rolemanagersection.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

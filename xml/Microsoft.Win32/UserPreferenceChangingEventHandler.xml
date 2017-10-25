@@ -1,0 +1,41 @@
+<Type Name="UserPreferenceChangingEventHandler" FullName="Microsoft.Win32.UserPreferenceChangingEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void UserPreferenceChangingEventHandler(object sender, UserPreferenceChangingEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed UserPreferenceChangingEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Win32.UserPreferenceChangingEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="Microsoft.Win32.UserPreferenceChangingEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。 このイベントが発生したとき、<see cref="T:Microsoft.Win32.SystemEvents" />クラスでは、このオブジェクトは常に<see langword="null" />です。</param>
+    <param name="e">イベント データを格納している <see cref="T:Microsoft.Win32.UserPreferenceChangedEventArgs" />。</param>
+    <summary><see cref="E:Microsoft.Win32.SystemEvents.UserPreferenceChanging" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Win32.UserPreferenceChangingEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 関連付けるには、イベントをイベント処理メソッドを使用して、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、イベントが発生すると、イベント処理メソッドが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:Microsoft.Win32.UserPreferenceChangingEventHandler>を監視する型、<xref:Microsoft.Win32.SystemEvents.UserPreferenceChanging>イベント。 このコード例に示されている例の一部である、<xref:Microsoft.Win32.SystemEvents>クラスです。  
+  
+ [!code-cpp[SystemEvents#1](~/samples/snippets/cpp/VS_Snippets_Winforms/SystemEvents/cpp/SystemEvents.cpp#1)]
+ [!code-csharp[SystemEvents#1](~/samples/snippets/csharp/VS_Snippets_Winforms/SystemEvents/CS/SystemEvents.cs#1)]
+ [!code-vb[SystemEvents#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/SystemEvents/VB/SystemEvents.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

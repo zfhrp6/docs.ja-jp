@@ -1,0 +1,561 @@
+<Type Name="PrincipalContext" FullName="System.DirectoryServices.AccountManagement.PrincipalContext">
+  <TypeSignature Language="C#" Value="public class PrincipalContext : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrincipalContext extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.DirectoryServices.AccountManagement.PrincipalContext" />
+  <AssemblyInfo>
+    <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical(System.Security.SecurityCriticalScope.Everything)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サーバーまたはドメインのすべての操作の対象となる、これらの操作と、操作を実行するために使用する資格情報のベースとして使用されるコンテナーをカプセル化します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検索操作のためプリンシパルのコンテキスト、検索ベース挿入操作のコンテキスト定義し、オブジェクトが挿入されるコンテナー。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <MemberGroup MemberName=".ctor">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary><see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext>コンス トラクターのパラメーターと、サーバー検証を実行することはありませんない資格情報を検証します。  
+  
+ プリンシパル オブジェクトがコンテナーを指定せず、作成時に、複数の異なるコンテナーを表す使用可能性があります。 1 つのコンテナーは、追加コンテナーは、新しく作成されたプリンシパル オブジェクトを保持できます中に、クエリ操作のベースとして使用する可能性があります。 たとえば、ユーザーまたはグループがドメインに挿入されると、アカウントの管理 API を使用して、既定の既知のユーザー コンテナー"CN = Users, DC = Fabrikam, DC = com"です。 API が既定値を使用して、ストア内のコンピューターが挿入されると、"CN = コンピューター、DC Fabrikam, DC = com の ="コンテナーです。 ドメイン管理者が、既定のコンテナー名を変更することができることに注意してください。 プリンシパル オブジェクトのコンス トラクターは、1 つのプリンシパルを指定できますのみ、ので、アプリケーションがコンテナーを指定せずにドメイン コンテキストを作成するときに、追加のコンテキストが既定の動作として公開されます。 アプリケーションが、コンス トラクターでコンテナーを指定する必要があります、アプリケーションのディレクトリによく知られているコンテナーが必要があるないため、または<xref:System.ArgumentException>がスローされます。 SAM は、コンテナーがあるないため、<xref:System.ArgumentException>コンス トラクターでコンテナーを指定しようとしているアプリケーションがスローされます。  
+  
+ パラメーターとしてユーザー名を受け取るコンス トラクターの各バージョンで、`userName`文字列は、さまざまな形式にすることができます。  3 つのサポートされている NameFormats は Nt4Name、UserPrincipalName と SamAccountName です。  名の形式に関する詳細については、詳細な[ここ](http://go.microsoft.com/fwlink/?LinkID=99942)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">アプリケーション ディレクトリ コンテキストを使用する場合は、名前またはコンテナーを指定してください。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類と名前を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">名前にする必要がある時に指定された<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="F:System.DirectoryServices.AccountManagement.ContextType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="container" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <param name="container">コンテキストのルートとして使用するストア上のコンテナーです。 このルートの下のすべてのクエリが実行され、このコンテナーへのすべての挿入が実行されます。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />と<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの種類、このパラメーターは、コンテナー オブジェクトの識別名。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、このパラメーターを設定する必要がありますを null にします。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />クラスを指定したコンテキストの種類、名前、およびコンテナーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException>のコンテナーが指定されている場合、サーバーに接続する後続のディレクトリ操作呼び出しでスローされる可能性があります、<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>プリンシパルのコンテキストが有効なコンテナーではありません。 コンテナーがスキーマ クラスがプリンシパルのクラスのオブジェクトとして定義されているユーザー、グループ、またはその possibleInferiors 属性内のコンピューターのいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コンテナーにすることはできない時に指定された、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型がで指定された、<paramref name="contextType" />パラメーター。  
+  
+ 名前またはコンテナーがある必要がある時に指定された<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="F:System.DirectoryServices.AccountManagement.ContextType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, System.DirectoryServices.AccountManagement.ContextOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, valuetype System.DirectoryServices.AccountManagement.ContextOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String,System.String,System.DirectoryServices.AccountManagement.ContextOptions)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="container" Type="System.String" />
+        <Parameter Name="options" Type="System.DirectoryServices.AccountManagement.ContextOptions" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <param name="container">コンテキストのルートとして使用するストア上のコンテナーです。 このルートの下のすべてのクエリが実行され、このコンテナーへのすべての挿入が実行されます。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />と<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの種類、このパラメーターは、コンテナー オブジェクトの識別名。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、このパラメーターを設定する必要がありますを null にします。</param>
+        <param name="options">1 つまたは複数の組み合わせ<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />サーバーへのバインドに使用するオプションを指定する列挙値。 このパラメーターが null の場合は、既定のオプション、ContextOptions.Negotiate |ContextOptions.Signing |ContextOptions.Sealing です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類、名前、コンテナー、およびコンテキストのオプションを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException>のコンテナーが指定されている場合、サーバーに接続する後続のディレクトリ操作呼び出しでスローされる可能性があります、<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>プリンシパルのコンテキストが有効なコンテナーではありません。 コンテナーがスキーマ クラスがプリンシパルのクラスのオブジェクトとして定義されているユーザー、グループ、またはその possibleInferiors 属性内のコンピューターのいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コンテナーにすることはできない時に指定された、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型がで指定された、<paramref name="contextType" />パラメーター。  
+  
+ 名前またはコンテナーがある必要がある時に指定された<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />列挙値。  
+  
+ <paramref name="options" />パラメーターに有効な組み合わせが含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <param name="userName">ストアに接続するために使用するユーザー名。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。 それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <param name="password">ストアへの接続に使用するパスワード。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。 それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類、名前、ユーザー名、およびパスワードを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="username" />と<paramref name="password" />パラメーターの null にするか、値を含める必要があります。  
+  
+ 名前にする必要がある時に指定された<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String,System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="container" Type="System.String" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <param name="container">コンテキストのルートとして使用するストア上のコンテナーです。 このルートの下のすべてのクエリが実行され、このコンテナーへのすべての挿入が実行されます。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />と<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの種類、このパラメーターは、コンテナー オブジェクトの識別名。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、このパラメーターを設定する必要がありますを null にします。</param>
+        <param name="userName">ストアに接続するために使用するユーザー名。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。  それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <param name="password">ストアへの接続に使用するパスワード。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。  それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類、名前、コンテナー、username、およびパスワードを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException>のコンテナーが指定されている場合、サーバーに接続する後続のディレクトリ操作呼び出しでスローされる可能性があります、<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>プリンシパルのコンテキストが有効なコンテナーではありません。 コンテナーがスキーマ クラスがプリンシパルのクラスのオブジェクトとして定義されているユーザー、グループ、またはその possibleInferiors 属性内のコンピューターのいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="username" />と<paramref name="password" />パラメーターの null にするか、値を含める必要があります。  
+  
+ コンテナーにすることはできない時に指定された、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型がで指定された、<paramref name="contextType" />パラメーター。  
+  
+ A<paramref name="name" />または<paramref name="container" />場合に指定する必要があります<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrincipalContext (System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, System.DirectoryServices.AccountManagement.ContextOptions options, string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.DirectoryServices.AccountManagement.ContextType contextType, string name, string container, valuetype System.DirectoryServices.AccountManagement.ContextOptions options, string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.#ctor(System.DirectoryServices.AccountManagement.ContextType,System.String,System.String,System.DirectoryServices.AccountManagement.ContextOptions,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="contextType" Type="System.DirectoryServices.AccountManagement.ContextType" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="container" Type="System.String" />
+        <Parameter Name="options" Type="System.DirectoryServices.AccountManagement.ContextOptions" />
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="contextType">A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />プリンシパルのコンテキストのストアの種類を指定する列挙値。</param>
+        <param name="name">ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキストの種類、コンピューター名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型、または、サーバーの名前、およびポートをホストしている、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス。  
+  
+ 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />このコンテキストは、スレッドが実行されているプリンシパルのユーザーのドメインのドメイン コント ローラー コンテキストの種類。 名前が null の場合、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、これは、ローカル コンピューターの名前。 このパラメーターは null にすることはできません<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの型。</param>
+        <param name="container">コンテキストのルートとして使用するストア上のコンテナーです。 このルートの下のすべてのクエリが実行され、このコンテナーへのすべての挿入が実行されます。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />と<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />コンテキストの種類、このパラメーターは、コンテナー オブジェクトの識別名。  
+  
+ <see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型の場合は、このパラメーターを設定する必要がありますを null にします。</param>
+        <param name="options">1 つまたは複数の組み合わせ<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />列挙値をサーバーへのバインドに使用するオプションです。 このパラメーターが null の場合は、既定のオプション、ContextOptions.Negotiate |ContextOptions.Signing |ContextOptions.Sealing です。</param>
+        <param name="userName">ストアに接続するために使用するユーザー名。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。 それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <param name="password">ストアへの接続に使用するパスワード。 場合、 <c>username</c>と<c>パスワード</c>パラメーターが null のどちらも、現在のプリンシパルの既定の資格情報が使用されます。  それ以外の場合、両方<c>username</c>と<c>パスワード</c>null 以外の場合、必要がありますを指定している資格情報を使用して、ストアに接続します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.DirectoryServices.AccountManagement.PrincipalContext" />指定したコンテキストの種類、名前、コンテナー、コンテキストのオプション、ユーザー名、およびパスワードを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.InvalidOperationException>のコンテナーが指定されている場合、サーバーに接続する後続のディレクトリ操作呼び出しでスローされる可能性があります、<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>プリンシパルのコンテキストが有効なコンテナーではありません。 コンテナーがスキーマ クラスがプリンシパルのクラスのオブジェクトとして定義されているユーザー、グループ、またはその possibleInferiors 属性内のコンピューターのいずれか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="username" />と<paramref name="password" />パラメーターの null にするか、値を含める必要があります。  
+  
+ コンテナーにすることはできない時に指定された、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型がで指定された、<paramref name="contextType" />パラメーター。  
+  
+ 名前またはコンテナーがある必要がある時に指定された<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />で指定された、<paramref name="contextType" />パラメーター。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException"><paramref name="contextType" />パラメーターが有効な含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />列挙値。  
+  
+ <paramref name="options" />パラメーターに有効な組み合わせが含まれていない<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />列挙値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectedServer">
+      <MemberSignature Language="C#" Value="public string ConnectedServer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectedServer" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.ConnectedServer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンシパルのコンテキストが接続されているサーバーの名前を取得します。</summary>
+        <value>プリンシパルのコンテキストを接続または null プリンシパルのコンテキストがサーバーに接続されていない場合、サーバーの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキストの種類が場合<xref:System.DirectoryServices.AccountManagement.ContextType.Domain>、このプロパティは、ドメイン コント ローラーまたはアプリケーション ディレクトリのインスタンスの名前を返します。 コンテキストの種類が場合<xref:System.DirectoryServices.AccountManagement.ContextType.Machine>、このプロパティは、コンピューター名を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Container">
+      <MemberSignature Language="C#" Value="public string Container { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Container" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.Container" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンス トラクター内のコンテナー パラメーターで指定された値を取得します。</summary>
+        <value>コンテナーが指定されていない場合、コンテキストまたは null のルートとして使用するストア上のコンテナーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このルートの下のすべてのクエリが実行され、このコンテナーへのすべての挿入が実行されます。 <xref:System.DirectoryServices.AccountManagement.ContextType.Domain>と<xref:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory>コンテキストの種類、このプロパティは、コンテナー オブジェクトの識別名。 <xref:System.DirectoryServices.AccountManagement.ContextType.Machine>コンテキスト型の場合は、このプロパティを null にする必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextType">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.ContextType ContextType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.AccountManagement.ContextType ContextType" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.ContextType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリンシパルのコンテキストのストアの種類を指定するコンテキストの種類を取得します。</summary>
+        <value>A<see cref="T:System.DirectoryServices.AccountManagement.ContextType" />への接続先のターゲットの種類を指定する列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションがプリンシパルのコンテキストを作成し、コンテキストの種類を指定して直接このプロパティが使用されます。 たとえば、アプリケーションでは、グループ メンバーシップを列挙するときにこのプロパティは、プリンシパルが属しているストアの種類を決定する使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.DirectorySerices.AccountManagement.PrincipalContext" /> オブジェクトのインスタンスを破棄します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>として指定された値を取得、<paramref name="name" />コンス トラクターのパラメーターです。</summary>
+        <value>ドメインまたはサーバーの名前<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Domain" />コンテキスト型は、ホスト名を<see cref="F:System.DirectoryServices.AccountManagement.ContextType.Machine" />コンテキスト型は、ホストするサーバーの名前、<see cref="F:System.DirectoryServices.AccountManagement.ContextType.ApplicationDirectory" />インスタンス、または名前が設定されていない場合は null です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Options">
+      <MemberSignature Language="C#" Value="public System.DirectoryServices.AccountManagement.ContextOptions Options { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DirectoryServices.AccountManagement.ContextOptions Options" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.Options" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DirectoryServices.AccountManagement.ContextOptions</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたオプションを取得、<paramref name="contextOptions" />コンス トラクターのパラメーターです。</summary>
+        <value>A<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />への接続先のターゲットの種類を指定する列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.DirectoryServices.AccountManagement.PrincipalContext.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コンス トラクター内のユーザー名パラメーターで指定された値を取得します。</summary>
+        <value>ユーザー名が存在しない場合、ストア、または null への接続に使用されるユーザー名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、さまざまな形式のいずれかで、ユーザー名を渡すことによって設定できます。  許容可能な種類の形式の完全な一覧なドキュメントを参照してください。[ここ](http://go.microsoft.com/fwlink/?LinkID=99942)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ValidateCredentials">
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>サーバーへの接続を作成し、接続が成功した場合、指定された資格情報を検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この関数の各バージョンで、`userName`文字列は、さまざまな形式のいずれかにすることができます。  許容可能な種類の形式の完全な一覧なドキュメントを参照してください。[ここ](http://go.microsoft.com/fwlink/?LinkID=99942)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ValidateCredentials">
+      <MemberSignature Language="C#" Value="public bool ValidateCredentials (string userName, string password);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ValidateCredentials(string userName, string password) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="userName">サーバー上で検証するユーザー名。</param>
+        <param name="password">サーバー上で検証するパスワード。</param>
+        <summary>サーバーへの接続を作成し、指定されたユーザー名とパスワードが有効かどうかを指定するブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合は、資格情報が無効です。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A>メソッドは、コンス トラクターで指定されたサーバーにバインドします。 場合、`username`と`password`パラメーターが null で、コンス トラクターで指定された資格情報が検証されます。 資格情報が、コンス トラクターで指定されていない場合、`username`と`password`パラメーターが null で、このメソッドは、現在のプリンシパルの既定の資格情報を検証します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateCredentials">
+      <MemberSignature Language="C#" Value="public bool ValidateCredentials (string userName, string password, System.DirectoryServices.AccountManagement.ContextOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ValidateCredentials(string userName, string password, valuetype System.DirectoryServices.AccountManagement.ContextOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials(System.String,System.String,System.DirectoryServices.AccountManagement.ContextOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.DirectoryServices.AccountManagement</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="userName" Type="System.String" />
+        <Parameter Name="password" Type="System.String" />
+        <Parameter Name="options" Type="System.DirectoryServices.AccountManagement.ContextOptions" />
+      </Parameters>
+      <Docs>
+        <param name="userName">サーバー上で検証するユーザー名。</param>
+        <param name="password">サーバー上で検証するパスワード。</param>
+        <param name="options">1 つまたは複数の組み合わせ<see cref="T:System.DirectoryServices.AccountManagement.ContextOptions" />列挙値をサーバーへのバインドに使用するオプションです。 このパラメーターは、SSL の有無に簡易バインドを指定またはネゴシエート バインドのみできます。</param>
+        <summary>サーバーへの接続を作成し、指定されたユーザー名とパスワードが有効かどうかを指定するブール値を返します。 このメソッドは、ユーザー名とパスワードの高速の資格情報の検証を実行します。</summary>
+        <returns>
+          <see langword="true" />場合は、資格情報が無効です。それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.DirectoryServices.AccountManagement.PrincipalContext.ValidateCredentials%2A>メソッドは、コンス トラクターで指定されたサーバーにバインドします。 場合、`username`と`password`パラメーターが null で、コンス トラクターで指定された資格情報が検証されます。 資格情報が、コンス トラクターで指定されていない場合、`username`と`password`パラメーターが null で、このメソッドは、現在のプリンシパルの既定の資格情報を検証します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="options" />コンテキスト型の場合、パラメーターはネゴシエートを指定する必要があります<see cref="T:System.DirectoryServices.AccountManagement.ContextType.Machine." /></exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

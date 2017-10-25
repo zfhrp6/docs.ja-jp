@@ -1,0 +1,1401 @@
+<Type Name="GlyphTypeface" FullName="System.Windows.Media.GlyphTypeface">
+  <TypeSignature Language="C#" Value="public class GlyphTypeface : System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GlyphTypeface extends System.Object implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GlyphTypeface" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ディスク上のフォント ファイルに対応する物理的なフォント フェイスを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface>オブジェクトは、OpenType フォント ファイルで表されるとしてファミリまたはドキュメント内のメモリ ブロックとしてシリアル化されたフォントの 1 つの面に対応する低レベル テキスト オブジェクト。 正しい<xref:System.Windows.Media.GlyphTypeface>の特定の論理フォントの文字の実行に使用するのには通常によって決定されます、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]フォント システムで記録、<xref:System.Windows.Media.GlyphRun>によって生成されたオブジェクト、<xref:System.Windows.Media.FormattedText>オブジェクトおよびテキストの書式設定を行[!INCLUDE[TLA2#tla_api#plural](~/includes/tla2sharptla-apisharpplural-md.md)]です。  
+  
+ <xref:System.Windows.Media.GlyphTypeface>プロパティとメソッドを提供します。  
+  
+-   フォント フェイス共通などのメトリックをアセントと降下 em サイズの比率を取得します。  
+  
+-   メトリック、アウトライン、および個々 のグリフのビットマップを取得しています。  
+  
+-   ドキュメントにシリアル化します。  
+  
+ 次のように、型を使用して、低レベルの値を示すシナリオではアプリケーションの制御を<xref:System.Windows.Media.GlyphTypeface>オブジェクトを提供します。  
+  
+-   固定形式のドキュメント ジェネレーターが使用して、<xref:System.Windows.Media.GlyphTypeface>ドキュメント コンテナー内に埋め込むためのフォントのバイナリの画像を取得するには  
+  
+-   プリンター ドライバーを使用可能性があります、<xref:System.Windows.Media.GlyphTypeface>フォント グリフのアウトラインまたはビットマップ、またはプリンターに送信するため、全体のフォントのイメージを取得します。  
+  
+-   A<xref:System.Windows.Media.GlyphTypeface>ビューアー アプリケーションで使用できる、<xref:System.Windows.Media.GlyphTypeface>メトリックとビットマップの情報を取得します。  
+  
+ 他に配置する方法を指定するメトリックを定義する各グリフ<xref:System.Windows.Documents.Glyphs>です。 次の図では、文字のグリフのメトリックの値を定義します。  
+  
+ ![グリフ単位のダイアグラム](~/add/media/glyph-example.png "グリフ単位のダイアグラム")  
+文字のグリフのメトリック値  
+  
+<a name="xamlTextUsage_GlyphTypeface"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlyphTypeface ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphTypeface" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlyphTypeface (Uri typefaceSource);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri typefaceSource) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typefaceSource" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="typefaceSource">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォント ファイルの場所を指定します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.GlyphTypeface" />クラス、指定したフォント ファイルの場所を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Windows.Media.GlyphTypeface>オブジェクトで指定された OpenType フォントのフォント フェイスから`typefaceSource`です。 構築された<xref:System.Windows.Media.GlyphTypeface>オブジェクトがスタイルのシミュレーションを使用しません。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを作成する方法を示します、<xref:System.Windows.Media.GlyphTypeface>フォント ファイルの場所を指定するクラス。  
+  
+ [!code-csharp[GlyphTypefaceSnippets#GlyphTypefaceSnippet1](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphTypefaceSnippets/CSharp/Window1.xaml.cs#glyphtypefacesnippet1)]
+ [!code-vb[GlyphTypefaceSnippets#GlyphTypefaceSnippet1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GlyphTypefaceSnippets/visualbasic/window1.xaml.vb#glyphtypefacesnippet1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GlyphTypeface (Uri typefaceSource, System.Windows.Media.StyleSimulations styleSimulations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri typefaceSource, valuetype System.Windows.Media.StyleSimulations styleSimulations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.#ctor(System.Uri,System.Windows.Media.StyleSimulations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="typefaceSource" Type="System.Uri" />
+        <Parameter Name="styleSimulations" Type="System.Windows.Media.StyleSimulations" />
+      </Parameters>
+      <Docs>
+        <param name="typefaceSource">[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]フォント ファイルの場所を指定します。</param>
+        <param name="styleSimulations"><see cref="T:System.Windows.Media.StyleSimulations" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.GlyphTypeface" />クラスの指定したフォント ファイルの場所を使用して<see cref="T:System.Windows.Media.StyleSimulations" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターが新たに作成<xref:System.Windows.Media.GlyphTypeface>オブジェクトで指定された OpenType フォントのフォント フェイスから`typefaceSource`と`styleSimulations`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvanceHeights">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; AdvanceHeights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; AdvanceHeights" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.AdvanceHeights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの事前の高さを取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />グリフの表します事前高さ情報のペアをキーと値を格納しているオブジェクト。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />アドバンスの高さを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.AdvanceHeights%2A>プロパティは、垂直レイアウトの計算に使用します。  
+  
+   
+  
+## Examples  
+ 次の例では、フォントのグリフからアドバンスのコレクションを返す方法を示します。  
+  
+ [!code-csharp[GlyphTypefaceSnippets#GlyphTypefaceSnippet2](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphTypefaceSnippets/CSharp/Window1.xaml.cs#glyphtypefacesnippet2)]
+ [!code-vb[GlyphTypefaceSnippets#GlyphTypefaceSnippet2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GlyphTypefaceSnippets/visualbasic/window1.xaml.vb#glyphtypefacesnippet2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AdvanceWidths">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; AdvanceWidths { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; AdvanceWidths" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.AdvanceWidths" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフのアドバンス幅を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />グリフの表しますアドバンス幅情報のペアをキーと値を含むオブジェクトです。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />アドバンス幅を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.AdvanceHeights%2A>プロパティは水平方向のレイアウトの計算に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Baseline">
+      <MemberSignature Language="C#" Value="public double Baseline { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Baseline" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Baseline" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基準の値を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />です。</summary>
+        <value>型の値<see cref="T:System.Double" />ベースラインを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ベースライン値は、em サイズの基準とした英語版の基準に、セルの上端からの距離を表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BottomSideBearings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; BottomSideBearings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; BottomSideBearings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.BottomSideBearings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの事前ベクターの下端に黒いボックスの下部エッジからの距離を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを情報を表す距離です。 キーが、<see cref="T:System.UInt16" />グリフを識別します。 値が、<see cref="T:System.Double" />までの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.BottomSideBearings%2A>黒いボックスの下端がアドバンス幅とフォントのセルの高さによって定義された配置の四角形内にある場合は、値が正の値。 フォントのセルの高さは、垂直レイアウトでの水平方向のディメンションです。  
+  
+ <xref:System.Windows.Media.GlyphTypeface.BottomSideBearings%2A>配置の四角形の下部エッジ黒いボックスの場合は、値が負の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CapsHeight">
+      <MemberSignature Language="C#" Value="public double CapsHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 CapsHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.CapsHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベースラインとの em サイズを基準とした、英語の大文字の一番上までの距離を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Double" />ベースラインから英語の大文字、フォントの em サイズの割合で表したの一番上までの距離を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CharacterToGlyphMap">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;int,ushort&gt; CharacterToGlyphMap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;int32, unsigned int16&gt; CharacterToGlyphMap" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.CharacterToGlyphMap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Int32,System.UInt16&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォント 'CMAP' テーブルで定義されたグリフ インデックスに Unicode コード ポイントの標準マッピングを取得します。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />グリフ インデックス内のすべてのグリフの指す Unicode コードのマッピングを格納しているオブジェクト、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComputeSubset">
+      <MemberSignature Language="C#" Value="public byte[] ComputeSubset (System.Collections.Generic.ICollection&lt;ushort&gt; glyphs);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] ComputeSubset(class System.Collections.Generic.ICollection`1&lt;unsigned int16&gt; glyphs) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.ComputeSubset(System.Collections.Generic.ICollection{System.UInt16})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="glyphs" Type="System.Collections.Generic.ICollection&lt;System.UInt16&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="glyphs">サブセットに含めるグリフのインデックスのコレクション。</param>
+        <summary>指定したグリフのコレクションに基いてフォント サブセットのバイナリ イメージを返します。</summary>
+        <returns>フォント サブセットのバイナリ イメージを表す <see cref="T:System.Byte" /> 配列。</returns>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">指定した内容を読み取るため<paramref name="glyphs" />です。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.Read" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Copyrights">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; Copyrights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; Copyrights" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Copyrights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>著作権情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />著作権情報を表すキーと値を格納しているオブジェクトで構成されたペアします。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、著作権情報の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.Copyrights%2A>プロパティとは別によるアクセスは、商標情報、<xref:System.Windows.Media.GlyphTypeface.Trademarks%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例の著作権情報のコレクションを返す方法を示しています、<xref:System.Windows.Media.GlyphTypeface>オブジェクト。  
+  
+ [!code-csharp[GlyphTypefaceSnippets#GlyphTypefaceSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/GlyphTypefaceSnippets/CSharp/Window1.xaml.cs#glyphtypefacesnippet3)]
+ [!code-vb[GlyphTypefaceSnippets#GlyphTypefaceSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GlyphTypefaceSnippets/visualbasic/window1.xaml.vb#glyphtypefacesnippet3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Descriptions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; Descriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; Descriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Descriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーはキー/値ペアを格納しているオブジェクト、<see cref="T:System.Globalization.CultureInfo" />カルチャを識別するオブジェクト。 値は、説明情報文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 説明情報、<xref:System.Windows.Media.GlyphTypeface>オブジェクトは、リビジョン ノート、使用に関する推奨事項、履歴の機能だけでなく他の情報を含めることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; DesignerNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; DesignerNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.DesignerNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーの情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを情報を表すデザイナー。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、デザイナー情報文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerUrls">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; DesignerUrls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; DesignerUrls" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.DesignerUrls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナー URL 情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを情報を表すデザイナー。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、デザイナーを参照している文字列の URL。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DistancesFromHorizontalBaselineToBlackBoxBottom">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; DistancesFromHorizontalBaselineToBlackBoxBottom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; DistancesFromHorizontalBaselineToBlackBoxBottom" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.DistancesFromHorizontalBaselineToBlackBoxBottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフのグリフの黒いボックスの下部に水平方向の西洋ベースラインからオフセット値を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />グリフのオフセットを表すキー/値ペアを含むオブジェクト。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />オフセット値を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EmbeddingRights">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FontEmbeddingRight EmbeddingRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.FontEmbeddingRight EmbeddingRights" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.EmbeddingRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FontEmbeddingRight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの埋め込み用のアクセス許可を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Media.FontEmbeddingRight" />フォント埋め込みアクセス許可を表す値</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o"><see cref="T:System.Object" />現在と比較する<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</param>
+        <summary>指定したオブジェクトが、現在の <see cref="T:System.Windows.Media.GlyphTypeface" /> オブジェクトと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Windows.Media.GlyphTypeface" />とは、現在と同じ<see cref="T:System.Windows.Media.GlyphTypeface" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つ<xref:System.Windows.Media.GlyphTypeface>場合、オブジェクトが等しいかどうかと見なされます、<xref:System.Windows.Media.GlyphTypeface.StyleSimulations%2A>のプロパティは等価です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FaceNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; FaceNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; FaceNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.FaceNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphTypeface" /> オブジェクトのフェイス名を取得します。</summary>
+        <value>フェイス名情報を表すキーと値のペアを格納している <see cref="T:System.Collections.Generic.IDictionary`2" /> オブジェクト。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 この値は、フェイス名を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント ファイルは、指定した言語の名前を指定しない場合、<xref:System.Windows.Media.GlyphTypeface.FaceNames%2A>プロパティは、英語の書体名を返します。 フェイス名は、太さ、スタイル、識別や、情報を stretch 可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FamilyNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; FamilyNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; FamilyNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.FamilyNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファミリ名を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトはファミリ名情報を表すをペアします。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、ファミリ名を含む文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォント ファイルは、指定した言語のファミリ名を指定しなかった場合、<xref:System.Windows.Media.GlyphTypeface.FamilyNames%2A>プロパティは、英語で、ファミリ名を返します。 ファミリ名を除外太さ、スタイル、および情報を stretch です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FontUri">
+      <MemberSignature Language="C#" Value="public Uri FontUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri FontUri" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.FontUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_FontUri"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">取得元の[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]の<see cref="T:System.Windows.Media.GlyphTypeface" />です。 元の[!INCLUDE[TLA2#tla_uri](~/includes/tla2sharptla-uri-md.md)]ローカル ファイル システム情報が明らかになる可能性があります。 関連する列挙。<see cref="F:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetFontStream">
+      <MemberSignature Language="C#" Value="public System.IO.Stream GetFontStream ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IO.Stream GetFontStream() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.GetFontStream" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IO.Stream</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって表されるフォント ファイル ストリームを返します、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <returns>A<see cref="T:System.IO.Stream" />フォント ファイルを表す値です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetGlyphOutline">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Geometry GetGlyphOutline (ushort glyphIndex, double renderingEmSize, double hintingEmSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Geometry GetGlyphOutline(unsigned int16 glyphIndex, float64 renderingEmSize, float64 hintingEmSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.GetGlyphOutline(System.UInt16,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Geometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="glyphIndex" Type="System.UInt16" />
+        <Parameter Name="renderingEmSize" Type="System.Double" />
+        <Parameter Name="hintingEmSize" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="glyphIndex">アウトラインを取得するグリフのインデックス。</param>
+        <param name="renderingEmSize">描画サーフェイスの単位でフォント サイズ。</param>
+        <param name="hintingEmSize">ポイント単位でのヒントのサイズ。</param>
+        <summary>返します、<see cref="T:System.Windows.Media.Geometry" />フォントのグリフが 1 つのパスを記述する値。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Geometry" />のグリフのパスを表す値です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パスは、グリッドの調整を特定の解像度で表示するために適用されることがなく、グリフを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ関数として機能<see cref="T:System.Windows.Media.GlyphTypeface" />します。</summary>
+        <returns>現在のオブジェクトのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GlyphCount">
+      <MemberSignature Language="C#" Value="public int GlyphCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 GlyphCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.GlyphCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphTypeface" /> オブジェクトのグリフ数を取得します。</summary>
+        <value>グリフの合計数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Height">
+      <MemberSignature Language="C#" Value="public double Height { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Height" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Height" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Em サイズに対して文字セルの高さを取得します。</summary>
+        <value><see cref="T:System.Double" />文字セルの高さを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LeftSideBearings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; LeftSideBearings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; LeftSideBearings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.LeftSideBearings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの黒いボックスの左端に事前ベクターの先頭の末尾からの距離を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />グリフの情報を表す距離のペアをキーと値を含むオブジェクトです。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />までの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.LeftSideBearings%2A>黒いボックスの左のエッジがアドバンス幅とフォントのセルの高さによって定義された配置の四角形内にある場合は、値が正の値。  
+  
+ <xref:System.Windows.Media.GlyphTypeface.LeftSideBearings%2A>配置の四角形の黒いボックス左端場合、値が負の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LicenseDescriptions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; LicenseDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; LicenseDescriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.LicenseDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントのライセンスの説明情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアをフォントのライセンス情報です。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、フォントのライセンス情報を説明する文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ManufacturerNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; ManufacturerNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; ManufacturerNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.ManufacturerNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの製造元に情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />フォント製造元については、キーと値を格納しているオブジェクトのペアします。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、フォントの製造元の情報を記述する文字列です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RightSideBearings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; RightSideBearings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; RightSideBearings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.RightSideBearings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの事前ベクターの右端に黒いボックスの右端からの距離を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを情報を表す距離です。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />までの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.RightSideBearings%2A>黒いボックスの末端がアドバンス幅とフォントのセルの高さによって定義された配置の四角形内にある場合は、値が正の値。  
+  
+ <xref:System.Windows.Media.GlyphTypeface.RightSideBearings%2A>配置の四角形の黒いボックス右端場合、値が負の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SampleTexts">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; SampleTexts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; SampleTexts" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.SampleTexts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サンプル テキストの情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアをサンプル テキスト情報。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、サンプル テキストの情報を記述する文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.SampleTexts%2A>フォント名、または、デザイナーでのフォントを表示する最適なサンプルとしている他の任意のテキスト値を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stretch">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStretch Stretch { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStretch Stretch" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Stretch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStretch</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.FontStretch" />値を<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Windows.FontStretch" />フォントの伸縮を表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughPosition">
+      <MemberSignature Language="C#" Value="public double StrikethroughPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrikethroughPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.StrikethroughPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベースラインからタイプフェイスの取り消し線までの距離を示す値を取得します。</summary>
+        <value>取り消し線の位置を表す <see cref="T:System.Double" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取り消し線付きの位置の値が通常正ベースラインより上に取り消し線は、通常、です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StrikethroughThickness">
+      <MemberSignature Language="C#" Value="public double StrikethroughThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 StrikethroughThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.StrikethroughThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの em サイズに相対する取り消し線の太さを示す値を取得します。</summary>
+        <value>フォントの em サイズの割合で表現される、取り消し線の太さを示す <see cref="T:System.Double" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Style">
+      <MemberSignature Language="C#" Value="public System.Windows.FontStyle Style { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontStyle Style" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Style" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphTypeface" /> オブジェクトのスタイルを取得します。</summary>
+        <value>スタイル値を表す <see cref="T:System.Windows.FontStyle" /> の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StyleSimulations">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.StyleSimulations StyleSimulations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.StyleSimulations StyleSimulations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.StyleSimulations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.StyleSimulations</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.StyleSimulations" />の<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Media.StyleSimulations" />のフォントのスタイルのシミュレーションを表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlTextUsage_StyleSimulations"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Symbol">
+      <MemberSignature Language="C#" Value="public bool Symbol { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Symbol" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Symbol" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Media.GlyphTypeface" />フォントは、Unicode エンコーディングに準拠しています。</summary>
+        <value>
+          <see langword="true" />フォントは、Unicode エンコーディングに準拠している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントは、コード ポイントでインデックス付けされたシンボルの単純なコレクションと見なされる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ISupportInitialize.BeginInit" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.GlyphTypeface.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.ComponentModel.ISupportInitialize.EndInit" />」をご覧ください。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TopSideBearings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;ushort,double&gt; TopSideBearings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;unsigned int16, float64&gt; TopSideBearings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.TopSideBearings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.UInt16,System.Double&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるグリフの黒いボックスの上端に垂直アドバンス ベクターの上端からの距離を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを情報を表す距離です。 キーが、<see cref="T:System.UInt16" />グリフ インデックスを識別します。 値が、<see cref="T:System.Double" />までの距離を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.TopSideBearings%2A>黒いボックスの上端がアドバンスの高さおよびセルの高さをフォントで定義された配置の四角形内にある場合は、値が正の値。 フォントのセルの高さは、垂直レイアウトでの水平方向のディメンションです。  
+  
+ <xref:System.Windows.Media.GlyphTypeface.TopSideBearings%2A>配置の四角形の黒いボックス上端場合、値が負の値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Trademarks">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; Trademarks { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; Trademarks" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Trademarks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>商標の通知情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアをその情報を表す商標に注意してください。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、商標情報文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.GlyphTypeface.Trademarks%2A>プロパティは、られている著作権情報によるアクセスから独立した、<xref:System.Windows.Media.GlyphTypeface.Copyrights%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlinePosition">
+      <MemberSignature Language="C#" Value="public double UnderlinePosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 UnderlinePosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.UnderlinePosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>下線の位置を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />です。</summary>
+        <value>A<see cref="T:System.Double" />下線の位置を表す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 下線の位置は、em サイズ基準とベースラインの基準としました。 返される位置の値は、下線はベースラインの下に通常通常負の値です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UnderlineThickness">
+      <MemberSignature Language="C#" Value="public double UnderlineThickness { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 UnderlineThickness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.UnderlineThickness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>em サイズに相対的な下線の太さを取得します。</summary>
+        <value><see cref="T:System.Double" /> 型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VendorUrls">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; VendorUrls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; VendorUrls" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.VendorUrls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仕入先の URL 情報の取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを仕入先 URL 情報を表すです。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、仕入先の URL を参照する文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの製造元は、フォントの登録に使用できる、URL に固有のシリアル番号を埋め込むこと。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public double Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントの 'NAME' のテーブルから解釈されたフォント フェイスのバージョンを取得します。</summary>
+        <value>A<see cref="T:System.Double" />バージョンを表す値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VersionStrings">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; VersionStrings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; VersionStrings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.VersionStrings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バージョン文字列の情報を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />フォントの 'NAME' のテーブルからオブジェクトが解釈されます。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" />キーと値を格納しているオブジェクトのペアを文字列情報を表すバージョン。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、バージョンを表す文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョン文字列は、形式で大幅に異なります。 数値の値とバージョンを取得するには使用、 <xref:System.Windows.Media.GlyphTypeface.Version%2A>-の値の解析をしないで、<xref:System.Windows.Media.GlyphTypeface.VersionStrings%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Weight">
+      <MemberSignature Language="C#" Value="public System.Windows.FontWeight Weight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.FontWeight Weight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Weight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FontWeight</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設計によって表されるフォントの太さを取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value>型の値<see cref="T:System.Windows.FontWeight" />フォントの太さを表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32FaceNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; Win32FaceNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; Win32FaceNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Win32FaceNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Win32 フェイス名で表されるフォントを取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" /> Win32 フェイス名の情報を表すキー/値ペアを含むオブジェクト。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、Win32 の書体名を表す文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントが、指定した言語の名前を指定していない場合は、英語の書体名を返します。 Win32 の書体名は、重み標準以外 (太字)、およびスタイルを識別する可能性がありますが、stretch またはその他の重みは識別できません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Win32FamilyNames">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,string&gt; Win32FamilyNames { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;class System.Globalization.CultureInfo, string&gt; Win32FamilyNames" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.Win32FamilyNames" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.Globalization.CultureInfo,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によって表されるフォントの Win32 ファミリ名を取得、<see cref="T:System.Windows.Media.GlyphTypeface" />オブジェクト。</summary>
+        <value><see cref="T:System.Collections.Generic.IDictionary`2" /> Win32 ファミリ名の情報を表すキー/値ペアを含むオブジェクト。 このキーは、カルチャーを識別する <see cref="T:System.Globalization.CultureInfo" /> オブジェクトです。 値は、Win32 のファミリ名を表す文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントが、指定した言語のファミリ名を指定しなかった場合、<xref:System.Windows.Media.GlyphTypeface.Win32FamilyNames%2A>プロパティは、英語で、ファミリ名を返します。 標準または太字の重みとスタイルを Win32 ファミリ名が含まれませんが、その他の重みとストレッチが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="XHeight">
+      <MemberSignature Language="C#" Value="public double XHeight { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 XHeight" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.GlyphTypeface.XHeight" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityTreatAsSafe</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.GlyphTypeface" /> オブジェクトで表される、フォントの em サイズに対する Western x-height を取得します。</summary>
+        <value><see cref="T:System.Double" /> 型の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

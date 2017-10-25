@@ -1,0 +1,44 @@
+<Type Name="ObjectMaterializedEventArgs" FullName="System.Data.Objects.ObjectMaterializedEventArgs">
+  <TypeSignature Language="C#" Value="public class ObjectMaterializedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ObjectMaterializedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.ObjectMaterializedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを含む、<see cref="E:System.Data.Objects.ObjectContext.ObjectMaterialized" />イベント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Entity">
+      <MemberSignature Language="C#" Value="public object Entity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Entity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.ObjectMaterializedEventArgs.Entity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>作成されたエンティティ オブジェクトを取得します。</summary>
+        <value>作成されたエンティティ オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Entity Framework がオブジェクトを再作成されませんが、同じキー値を持つオブジェクトがコンテキストで存在する場合、<xref:System.Data.Objects.ObjectContext.ObjectMaterialized>イベントは発生しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

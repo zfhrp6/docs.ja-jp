@@ -1,0 +1,79 @@
+<Type Name="ParameterizedThreadStart" FullName="System.Threading.ParameterizedThreadStart">
+  <TypeSignature Language="C#" Value="public delegate void ParameterizedThreadStart(object obj);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ParameterizedThreadStart extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.ParameterizedThreadStart" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Thread</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="obj" Type="System.Object" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="obj">スレッド プロシージャ用のデータを含むオブジェクト。</param>
+    <summary><see cref="T:System.Threading.Thread" /> で実行するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マネージ スレッドが作成されると、スレッドで実行するメソッドとして表されます。  
+  
+-   A<xref:System.Threading.ThreadStart>デリゲートに渡される、<xref:System.Threading.Thread.%23ctor%28System.Threading.ThreadStart%29?displayProperty=nameWithType>コンス トラクターです。  任意のメソッド パラメーターを持たずを返す`void`(C#) または、 `Sub` Visual Basic のプロシージャは、デリゲートを表すことができます。  
+  
+-   A<xref:System.Threading.ParameterizedThreadStart>デリゲートに渡される、<xref:System.Threading.Thread.%23ctor%28System.Threading.ParameterizedThreadStart%29?displayProperty=nameWithType>コンス トラクターです。 型の 1 つのパラメーターを持つ任意のメソッド<xref:System.Object>し、c# では、void を返しますまたは、Visual Basic では Sub プロシージャは、デリゲートを表すことができます。  
+  
+ スレッドがまで実行を開始していない、<xref:System.Threading.Thread.Start%2A?displayProperty=nameWithType>メソッドが呼び出されます。 <xref:System.Threading.ThreadStart>または<xref:System.Threading.ParameterizedThreadStart>スレッドでデリゲートが呼び出され、デリゲートによって表されるメソッドの最初の行で実行を開始します。 場合、<xref:System.Threading.ParameterizedThreadStart>デリゲートに渡されるオブジェクト、<xref:System.Threading.Thread.Start%28System.Object%29>メソッドは、デリゲートに渡されます。  
+  
+> [!NOTE]
+>  Visual Basic および c# のユーザーを省略できます、<xref:System.Threading.ThreadStart>または<xref:System.Threading.ParameterizedThreadStart>スレッドを作成するときに、デリゲート コンス トラクターです。 Visual Basic を使用して、`AddressOf`演算子が、メソッドに渡すときに、<xref:System.Threading.Thread.%23ctor%2A>コンス トラクター。 たとえば、`Dim t As New Thread(AddressOf ThreadProc)`です。 C# の場合は、単にスレッド プロシージャの名前を指定します。 コンパイラは、適切なデリゲート コンス トラクターを選択します。  
+  
+> [!NOTE]
+>  作成するときに、<xref:System.Threading.ParameterizedThreadStart>インスタンス メソッドを C++ では、コンス トラクターの最初のパラメーターは、インスタンス変数を委任します。 静的メソッドは、コンス トラクターの最初のパラメーターは 0 です。 静的メソッドでは、デリゲート コンス トラクターには、1 つだけのパラメーターが必要です。 クラス名で修飾して、コールバック メソッドのアドレス。  
+  
+ <xref:System.Threading.ParameterizedThreadStart>委任と<xref:System.Threading.Thread.Start%28System.Object%29?displayProperty=nameWithType>メソッドのオーバー ロードしやすいようにデータをスレッド プロシージャに渡すが、この手法はタイプ セーフであるに任意のオブジェクトを渡すことがあるため<xref:System.Threading.Thread.Start%28System.Object%29?displayProperty=nameWithType>です。 データをスレッド プロシージャに渡すより堅牢な方法は、ワーカーのオブジェクトをスレッド プロシージャと、データ フィールドの両方にです。 詳細については、次を参照してください。[スレッドの作成と開始時にデータを渡す](~/docs/standard/threading/creating-threads-and-passing-data-at-start-time.md)です。  
+  
+ <xref:System.Threading.ParameterizedThreadStart>デリゲートは、1 つのパラメーターのみをサポートしています。 複数のデータ項目を渡すことができます、<xref:System.Threading.ParameterizedThreadStart>させて、次のいずれかのパラメーター。  
+  
+-   配列。  
+  
+-   コレクション型の場合、同じ種類のすべてのデータ項目の場合。  
+  
+-   組などの入力、<xref:System.Tuple%602>または<xref:System.Tuple%604>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Threading.ParameterizedThreadStart>静的メソッドとインスタンス メソッドを実行するデリゲート。 最初の<xref:System.Threading.ParameterizedThreadStart>デリゲートは、静的で表される`DoWork`メソッドと、2 つ目は、インスタンスによって表される`DoMoreWork`メソッドです。 両方のメソッドと一致、<xref:System.Threading.ParameterizedThreadStart>デリゲートのシグネチャです。 つまり、型の 1 つのパラメーターがある<xref:System.Object>し、値を返しません。  
+  
+> [!NOTE]
+>  Visual Basic と c# コンパイラが推論、<xref:System.Threading.ParameterizedThreadStart>デリゲートのシグネチャから、`DoWork`と`DoMoreWork`メソッド、および正しいコンス トラクターの呼び出しです。 したがって、コードで明示的なコンス トラクターの呼び出しではありません。  
+  
+ [!code-cpp[System.Threading.ParameterizedThreadStart#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.ParameterizedThreadStart/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.ParameterizedThreadStart#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.ParameterizedThreadStart/CS/source.cs#1)]
+ [!code-vb[System.Threading.ParameterizedThreadStart#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.ParameterizedThreadStart/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

@@ -1,0 +1,157 @@
+<Type Name="GCHandleType" FullName="System.Runtime.InteropServices.GCHandleType">
+  <TypeSignature Language="C#" Value="public enum GCHandleType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed GCHandleType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.GCHandleType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ハンドルの種類を表す、<see cref="T:System.Runtime.InteropServices.GCHandle" />クラスが割り当てることができます。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.GCHandleType Normal = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.GCHandleType.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.GCHandleType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この種類のハンドルは、つまり、ハンドルをピン止めオブジェクトのアドレスを解決することはできません、不透明なハンドルを表します。 この型は、オブジェクトを追跡し、ガベージ コレクターによってそのコレクションを防ぐために使用できます。 この列挙体メンバーは、アンマネージ クライアントは、マネージ オブジェクトに、ガベージ コレクターから検出可能ではない唯一の参照を保持している場合に便利です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pinned">
+      <MemberSignature Language="C#" Value="Pinned" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.GCHandleType Pinned = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.GCHandleType.Pinned" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.GCHandleType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この種類のハンドルがに似ていますが<see cref="F:System.Runtime.InteropServices.GCHandleType.Normal" />が実行されるピン止めオブジェクトのアドレスを許可します。 これにより、ガベージ コレクターがオブジェクトを移動することを防止ありできなくなるため、ガベージ コレクターの効率。 使用して、<see cref="M:System.Runtime.InteropServices.GCHandle.Free" />できるだけ早く、割り当てられたハンドルを解放します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Weak">
+      <MemberSignature Language="C#" Value="Weak" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.GCHandleType Weak = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.GCHandleType.Weak" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.GCHandleType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この種類のハンドルを使用して、追跡オブジェクトを収集することを許可します。 オブジェクトが収集される場合の内容、<see cref="T:System.Runtime.InteropServices.GCHandle" />ゼロに設定されます。 <see langword="Weak" />参照がファイナライザーの実行前に、そのため、ファイナライザーが、オブジェクトを復活させた場合でもゼロ、<see langword="Weak" />参照が 0 のままです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="WeakTrackResurrection">
+      <MemberSignature Language="C#" Value="WeakTrackResurrection" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.GCHandleType WeakTrackResurrection = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.GCHandleType.WeakTrackResurrection" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.GCHandleType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この種類のハンドルがに似ていますが<see cref="F:System.Runtime.InteropServices.GCHandleType.Weak" />ハンドルはない 0 の場合は、オブジェクトが終了処理中に再生しますが、できます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

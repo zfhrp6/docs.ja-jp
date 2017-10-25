@@ -1,0 +1,148 @@
+<Type Name="INotifyDataErrorInfo" FullName="System.ComponentModel.INotifyDataErrorInfo">
+  <TypeSignature Language="C#" Value="public interface INotifyDataErrorInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract INotifyDataErrorInfo" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.INotifyDataErrorInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.ObjectModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>カスタムの同期検証および非同期検証をサポートするためにデータ エンティティ クラスに実装できるメンバーを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインターフェイスは、カスタム検証規則を実装し、非同期的に検証結果を公開するデータ エンティティ クラスを使用します。 このインターフェイスは、カスタム エラー オブジェクト、プロパティごとの複数のエラー、プロパティ間のエラー、およびエンティティ レベルのエラーもサポートします。 プロパティ間のエラーは、複数のプロパティに影響するエラーです。 1 つまたはすべての影響を受けるプロパティがこれらのエラーを関連付けることができますか、エンティティ レベルのエラーとして処理することができます。 エンティティ レベルのエラーは、複数のプロパティに影響するか、特定のプロパティの影響を与えずにエンティティ全体に影響するエラーです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ErrorsChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.ComponentModel.DataErrorsChangedEventArgs&gt; ErrorsChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.ComponentModel.DataErrorsChangedEventArgs&gt; ErrorsChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.INotifyDataErrorInfo.ErrorsChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.ComponentModel.DataErrorsChangedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティまたはエンティティ全体で検証エラーが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装するクラスは、ユーザー インターフェイスでこのイベントを発生させるスレッドのたびに、<xref:System.ComponentModel.INotifyDataErrorInfo.GetErrors%2A>戻り値を実装する場合でも、値の変更を返す<xref:System.Collections.Specialized.INotifyCollectionChanged>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetErrors">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable GetErrors (string propertyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerable GetErrors(string propertyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.INotifyDataErrorInfo.GetErrors(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="propertyName">の検証エラーを取得するプロパティの名前または<see langword="null" />または<see cref="F:System.String.Empty" />、エンティティ レベルのエラーを取得します。</param>
+        <summary>指定したプロパティまたはエンティティ全体の検証エラーを取得します。</summary>
+        <returns>プロパティまたはエンティティの検証エラー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、<xref:System.Collections.IEnumerable>非同期の検証規則の終了処理としてを変更することができます。 これにより、バインディング エンジン エラーの追加、削除、または変更されたときに、ユーザー インターフェイスの検証のフィードバックを自動的に更新できます。  
+  
+ 戻り値は別に変更できます<xref:System.Collections.IEnumerable>、または以前に返される再利用できます<xref:System.Collections.IEnumerable>し、その内容を変更します。 戻り値に変更を発生させる、<xref:System.ComponentModel.INotifyDataErrorInfo.ErrorsChanged>イベント、戻り値を実装する場合でも<xref:System.Collections.Specialized.INotifyCollectionChanged>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasErrors">
+      <MemberSignature Language="C#" Value="public bool HasErrors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasErrors" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.INotifyDataErrorInfo.HasErrors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ObjectModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンティティに検証エラーがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />エンティティが検証エラーを持っている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを返します`false`はアクセス時に、エンティティに関する既知のエンティティ レベルまたはプロパティ レベルの検証エラーがないかどうか。 ただし、いくつかの検証規則がまだ実行中の非同期的に説明した、<xref:System.ComponentModel.INotifyDataErrorInfo.GetErrors%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,799 @@
+<Type Name="CodeGroup" FullName="System.Security.Policy.CodeGroup">
+  <TypeSignature Language="C#" Value="public abstract class CodeGroup" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract serializable beforefieldinit CodeGroup extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.CodeGroup" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>グループの派生元のコードのすべての実装と抽象基本クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コード グループとは、コード アクセス セキュリティ ポリシーの構成要素です。 各ポリシー レベルは、子コード グループを持つことができるルート コード グループで構成されます。 各子コード グループは、独自の子コード グループを持つことができます。この動作は、任意のツリーを形成するレベル数を拡張します。 各コード グループには、そのアセンブリの証拠に基づいてそこに、特定のアセンブリが属しているかを決定するメンバーシップ条件があります。  
+  
+ メンバーシップ条件を持つには、特定のアセンブリの証拠と一致するコード グループのみが適用されます。 一致するコード グループが子コード グループを持つ場合、メンバーシップ条件を持つ、指定された証拠との一致もこれらの子同様に適用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CodeGroup (System.Security.Policy.IMembershipCondition membershipCondition, System.Security.Policy.PolicyStatement policy);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Security.Policy.IMembershipCondition membershipCondition, class System.Security.Policy.PolicyStatement policy) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.#ctor(System.Security.Policy.IMembershipCondition,System.Security.Policy.PolicyStatement)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="membershipCondition" Type="System.Security.Policy.IMembershipCondition" />
+        <Parameter Name="policy" Type="System.Security.Policy.PolicyStatement" />
+      </Parameters>
+      <Docs>
+        <param name="membershipCondition">このコード グループにポリシーが適用されるかどうかを決定する証拠をテストするメンバーシップ条件です。</param>
+        <param name="policy">メンバーシップ条件に一致するコードを許可するアクセス許可セットと属性の形式で、コード グループのポリシー ステートメントです。</param>
+        <summary>
+          <see cref="T:System.Security.Policy.CodeGroup" /> の新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、基本的なコード グループを作成し、カスタム コード グループのコンス トラクターから呼び出す必要があります。 使用して子コード グループを追加することができます、<xref:System.Security.Policy.CodeGroup.AddChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="membershipCondition" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">型、<paramref name="membershipCondition" />パラメーターが無効です。  
+  
+ または  
+  
+ 型、<paramref name="policy" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddChild">
+      <MemberSignature Language="C#" Value="public void AddChild (System.Security.Policy.CodeGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddChild(class System.Security.Policy.CodeGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.AddChild(System.Security.Policy.CodeGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Security.Policy.CodeGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">子として追加するコード グループです。 この新しい子コード グループは、リストの末尾に追加されます。</param>
+        <summary>現在のコード グループに子コード グループを追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="group" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="group" />パラメーターが有効なコード グループではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AttributeString">
+      <MemberSignature Language="C#" Value="public virtual string AttributeString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AttributeString" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.AttributeString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード グループのポリシー ステートメントの属性の文字列表現を取得します。</summary>
+        <value>コード グループのポリシー ステートメントの属性の文字列形式。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列の形式はローカライズされません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Children { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Children" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード グループの子コード グループの順序付きリストを設定します。</summary>
+        <value>子コード グループの一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 子コード グループの順序は、特定のコード グループに関して重要なのです。  
+  
+> [!NOTE]
+>  戻り値は、子コード リストのコピーです。 子コード グループを追加するのに、返された一覧を使用しないでください。代わりに、使用、<xref:System.Security.Policy.CodeGroup.AddChild%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このプロパティを設定しようとしましたが<see langword="null" />です。</exception>
+        <exception cref="T:System.ArgumentException">このプロパティは子の一覧を設定しようとしましたが<see cref="T:System.Security.Policy.CodeGroup" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Policy.CodeGroup Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Policy.CodeGroup Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされるは、現在のコード グループのディープ コピーを作成します。</summary>
+        <returns>メンバーシップ条件と子コード グループを含む、現在のコード グループの同等のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コード グループに含まれるすべてのオブジェクトのコピーは作成もできるように、コード グループの詳細コピーを作成します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateXml">
+      <MemberSignature Language="C#" Value="protected virtual void CreateXml (System.Security.SecurityElement element, System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CreateXml(class System.Security.SecurityElement element, class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Security.SecurityElement" />
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="element">シリアル化を追加する XML エンコード。</param>
+        <param name="level">コード グループが存在するポリシー レベルです。</param>
+        <summary>派生クラスでオーバーライドされると、プロパティおよび派生コード グループに固有の内部状態をシリアル化し、指定したシリアル化を追加<see cref="T:System.Security.SecurityElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.CodeGroup.ToXml%2A>オーバーライドできません。 特定の実装に固有のメンバーをシリアル化する必要があるかどうかは<xref:System.Security.Policy.CodeGroup>、オーバーライドする必要があります<xref:System.Security.Policy.CodeGroup.CreateXml%2A>と存在は、メンバーをシリアル化します。 コード グループをシリアル化すると場合、<xref:System.Security.Policy.CodeGroup.ToXml%2A>呼び出し<xref:System.Security.Policy.CodeGroup.CreateXml%2A>へのシリアル化を追加し、<xref:System.Security.SecurityElement>によって作成された<xref:System.Security.Policy.CodeGroup.ToXml%2A>です。  
+  
+ このメソッドを使用して作成された XML がによって逆シリアル化、<xref:System.Security.Policy.CodeGroup.ParseXml%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを実装する必要があります実装する、<see cref="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドもします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード グループの説明を設定します。</summary>
+        <value>コード グループの説明です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">現在のコード グループと比較するコード グループです。</param>
+        <summary>指定されたコード グループが現在のコード グループと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定されたコード グループは、現在のコード グループと同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのコード グループは、それらが同じである場合に等価<xref:System.Security.Policy.CodeGroup.Name%2A>、 <xref:System.Security.Policy.CodeGroup.Description%2A>、および<xref:System.Security.Policy.CodeGroup.MembershipCondition%2A>です。  
+  
+ このメソッドは、最上位のコード グループをのみ、その子コード グループではなくをテストします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Security.Policy.CodeGroup cg, bool compareChildren);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(class System.Security.Policy.CodeGroup cg, bool compareChildren) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.Equals(System.Security.Policy.CodeGroup,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cg" Type="System.Security.Policy.CodeGroup" />
+        <Parameter Name="compareChildren" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="cg">現在のコード グループと比較するコード グループです。</param>
+        <param name="compareChildren">
+          <see langword="true" />子コード グループも; を比較するにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>指定されたコード グループが指定されている場合は、同様に、子コード グループを確認しています、現在のコード グループと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定されたコード グループは、現在のコード グループと同じ場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのコード グループは、それらが同じである場合に等価<xref:System.Security.Policy.CodeGroup.Name%2A>、 <xref:System.Security.Policy.CodeGroup.Description%2A>、および<xref:System.Security.Policy.CodeGroup.MembershipCondition%2A>です。  
+  
+ 場合、`compareChildren`パラメーターは`true`、このメソッドは返すのみ`true`に応じて現在のコード グループとそのすべての子コード グループのかどうかは、指定されたコード グループとそのすべての子コード グループに相当します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FromXml(class System.Security.SecurityElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="e">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <summary>XML エンコードから指定された状態で、セキュリティ オブジェクトを再構築します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> パラメーターが <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement)" />および<see cref="M:System.Security.Policy.CodeGroup.ToXml" />はオーバーライドできません。 コード グループの実装が XML を処理する方法を変更する必要がある場合は、上書き、<see cref="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />と<see cref="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public void FromXml (System.Security.SecurityElement e, System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void FromXml(class System.Security.SecurityElement e, class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="e">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <param name="level">コード グループが存在するポリシー レベルです。</param>
+        <summary>特定の状態と、XML エンコードからのポリシー レベルのセキュリティ オブジェクトを再構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー レベルのコンテキストでは、名前付き権限セットの解像度が指定されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="e" /> パラメーターが <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement)" />および<see cref="M:System.Security.Policy.CodeGroup.ToXml" />はオーバーライドできません。 コード グループの実装が XML を処理する方法を変更する必要がある場合は、上書き、<see cref="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />と<see cref="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のコード グループのハッシュ コードを取得します。</summary>
+        <returns>現在のコード グループのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MembershipCondition">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.IMembershipCondition MembershipCondition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.IMembershipCondition MembershipCondition" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.MembershipCondition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.IMembershipCondition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード グループのメンバーシップ条件を設定します。</summary>
+        <value>どの証拠にコード グループを決定するメンバーシップ条件は適用されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メンバーシップ条件は証拠をテストし、一致があるかどうかを示すブール値を返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">このパラメーターに設定しようとしましたが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeLogic">
+      <MemberSignature Language="C#" Value="public abstract string MergeLogic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MergeLogic" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.MergeLogic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、コード グループのマージ ロジックを取得します。</summary>
+        <value>コード グループのマージ ロジックの説明です。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>このプロパティは、その子コード グループによって付与されるアクセス許可を解決するのには、コード グループで使用するマージ ロジックについて説明する文字列です。 コード グループを使用する管理者を支援することを意図したが、ポリシー システムでは使用されません。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード グループの名前を設定します。</summary>
+        <value>コード グループの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseXml">
+      <MemberSignature Language="C#" Value="protected virtual void ParseXml (System.Security.SecurityElement e, System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void ParseXml(class System.Security.SecurityElement e, class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="e">セキュリティ オブジェクトの再構築に使用する XML エンコード。</param>
+        <param name="level">コード グループが存在するポリシー レベルです。</param>
+        <summary>派生クラスでオーバーライドされると、再構築プロパティおよび特定の内部状態派生コード グループに指定された対象から<see cref="T:System.Security.SecurityElement" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.CodeGroup.FromXml%2A>オーバーライドできません。 特定の実装に固有のメンバーを逆シリアル化する必要があるかどうかは<xref:System.Security.Policy.CodeGroup>、オーバーライドする必要があります<xref:System.Security.Policy.CodeGroup.ParseXml%2A>および、メンバーがあるの逆シリアル化します。 コード グループが逆シリアル化される<xref:System.Security.Policy.CodeGroup.FromXml%2A>呼び出し<xref:System.Security.Policy.CodeGroup.ParseXml%2A>からメンバーを再構築し、<xref:System.Security.SecurityElement>です。  
+  
+ このメソッドを使用して作成された XML を逆シリアル化<xref:System.Security.Policy.CodeGroup.CreateXml%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>このメソッドを実装する必要があります実装する、<see cref="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドもします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="PermissionSetName">
+      <MemberSignature Language="C#" Value="public virtual string PermissionSetName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PermissionSetName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.PermissionSetName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コード グループの名前付き権限セットの名前を取得します。</summary>
+        <value>ポリシー レベルの名前付き権限セットの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを指定できます`null`コード グループには、名前のないアクセス許可セットが含まれている場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PolicyStatement">
+      <MemberSignature Language="C#" Value="public System.Security.Policy.PolicyStatement PolicyStatement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Policy.PolicyStatement PolicyStatement" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.CodeGroup.PolicyStatement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、コード グループに関連付けられているポリシー ステートメントを設定します。</summary>
+        <value>コード グループのポリシー ステートメントです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー ステートメントは、証拠メンバーシップ条件に一致する場合に、アセンブリのコードに適用されます。  
+  
+ このプロパティは、ポリシー ステートメントをコンス トラクターに渡すことによっても設定できます。  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Security.Policy.PolicyStatement>コード グループにします。  
+  
+ [!code-cpp[Classic CodeGroup.PolicyStatement Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic CodeGroup.PolicyStatement Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic CodeGroup.PolicyStatement Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic CodeGroup.PolicyStatement Example/CS/source.cs#1)]
+ [!code-vb[Classic CodeGroup.PolicyStatement Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic CodeGroup.PolicyStatement Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveChild">
+      <MemberSignature Language="C#" Value="public void RemoveChild (System.Security.Policy.CodeGroup group);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveChild(class System.Security.Policy.CodeGroup group) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.RemoveChild(System.Security.Policy.CodeGroup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="group" Type="System.Security.Policy.CodeGroup" />
+      </Parameters>
+      <Docs>
+        <param name="group">子として削除するコード グループです。</param>
+        <summary>指定した子コード グループを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、直接の子コード グループのみを削除できます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="group" />パラメーターは、直接の子コード グループの現在のコード グループではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Policy.PolicyStatement Resolve (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Policy.PolicyStatement Resolve(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.Resolve(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.PolicyStatement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>派生クラスでオーバーライドされると、コード グループのポリシーと証拠のセットをその子孫を解決します。</summary>
+        <returns>省略可能な属性は、コード グループによって付与された権限で構成されるポリシー ステートメントまたは<see langword="null" />コード グループが適用されない場合 (メンバーシップ条件は、指定した証拠を一致していません)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み込まれるアセンブリの証拠を指定するには、このメソッドは、指定した証拠メンバーシップ条件をチェックして、コード グループを評価します。 一致がある場合、このメソッドは、子コード グループの評価を含む、コード グループのポリシー ステートメントを返します。  
+  
+ <xref:System.Security.Policy.UnionCodeGroup>、すべての子コード グループのメンバーシップ条件は、指定した証拠を一致も解決、およびすべての結果として得られるポリシー ステートメントが、親合併コード グループのポリシー ステートメントと組み合わせて使用します。 各子コード グループの種類の決定方法に応じて、その下にあるすべての子グループが適用されるしくみ<xref:System.Security.Policy.CodeGroup.Resolve%2A>これらの子グループのメソッドは動作します。  
+  
+ .NET Framework セキュリティ システムを使用して<xref:System.Security.Policy.CodeGroup.Resolve%2A>アセンブリで、結果として得られる、ポリシー ステートメントと、コードから読み込まれているコードに与えるアクセス許可を要求を決定するポリシー レベル上。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResolveMatchingCodeGroups">
+      <MemberSignature Language="C#" Value="public abstract System.Security.Policy.CodeGroup ResolveMatchingCodeGroups (System.Security.Policy.Evidence evidence);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Security.Policy.CodeGroup ResolveMatchingCodeGroups(class System.Security.Policy.Evidence evidence) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.ResolveMatchingCodeGroups(System.Security.Policy.Evidence)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.CodeGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="evidence" Type="System.Security.Policy.Evidence" />
+      </Parameters>
+      <Docs>
+        <param name="evidence">アセンブリの証拠。</param>
+        <summary>派生クラスでオーバーライドされると、一致するコード グループを解決します。</summary>
+        <returns>A<see cref="T:System.Security.Policy.CodeGroup" />一致するコード グループのツリーのルートはします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、同じ評価特性として<xref:System.Security.Policy.CodeGroup.Resolve%2A>です。 返される、コード グループには、さらに、指定された証拠と一致したコード グループの完全なセットを反映するために必要に応じて、子コード グループを持つことができる子コード グループが含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>セキュリティ オブジェクトとその現在の状態の XML エンコードを作成します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement)" />および<see cref="M:System.Security.Policy.CodeGroup.ToXml" />はオーバーライドできません。 コード グループの実装が XML を処理する方法を変更する必要がある場合は、上書き、<see cref="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />と<see cref="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public System.Security.SecurityElement ToXml (System.Security.Policy.PolicyLevel level);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.SecurityElement ToXml(class System.Security.Policy.PolicyLevel level) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.CodeGroup.ToXml(System.Security.Policy.PolicyLevel)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="level" Type="System.Security.Policy.PolicyLevel" />
+      </Parameters>
+      <Docs>
+        <param name="level">コード グループが存在するポリシー レベルです。</param>
+        <summary>セキュリティ オブジェクト、現在の状態と、コードが存在するポリシー レベルの XML エンコードを作成します。</summary>
+        <returns>状態情報のすべてを含む、セキュリティ オブジェクトの XML エンコーディング。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシー レベルのコンテキストでは、名前付き権限セットの解像度が指定されます。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see cref="M:System.Security.Policy.CodeGroup.FromXml(System.Security.SecurityElement)" />および<see cref="M:System.Security.Policy.CodeGroup.ToXml" />はオーバーライドできません。 コード グループの実装が XML を処理する方法を変更する必要がある場合は、上書き、<see cref="M:System.Security.Policy.CodeGroup.ParseXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />と<see cref="M:System.Security.Policy.CodeGroup.CreateXml(System.Security.SecurityElement,System.Security.Policy.PolicyLevel)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

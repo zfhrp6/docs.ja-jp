@@ -1,0 +1,505 @@
+<Type Name="SmtpPermission" FullName="System.Net.Mail.SmtpPermission">
+  <TypeSignature Language="C#" Value="public sealed class SmtpPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit SmtpPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Mail.SmtpPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>簡易メール転送プロトコル (SMTP) サーバーへのアクセスを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.SmtpPermission>と<xref:System.Net.Mail.SmtpPermissionAttribute>クラスは、SMTP ホストのコンピューターへのアクセスを制御します。 <xref:System.Net.Mail.SmtpClient>クラスの要求、<xref:System.Net.Mail.SmtpPermission>配信のための SMTP ホストに電子メールを送信するときにします。  
+  
+ <xref:System.Net.Mail.SmtpAccess>列挙体は、このアクセス許可のインスタンスによって制御されるアクセスのレベルを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、のインスタンスを作成、<xref:System.Net.Mail.SmtpPermission>です。  
+  
+ [!code-cpp[NclMailPerms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#1)]
+ [!code-csharp[NclMailPerms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmtpPermission (bool unrestricted);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool unrestricted) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="unrestricted" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="unrestricted">
+          <see langword="true" />新しいアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.SmtpPermission" />クラス状態を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`unrestricted`は`true`、権限の制御<xref:System.Net.Mail.SmtpAccess.Connect>SMTP サーバーへのアクセス。 無制限の場合は、 `false`、権限の制御<xref:System.Net.Mail.SmtpAccess.None>アクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailPerms#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#4)]
+ [!code-csharp[NclMailPerms#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmtpPermission (System.Net.Mail.SmtpAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.Mail.SmtpAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.#ctor(System.Net.Mail.SmtpAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.Mail.SmtpAccess" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.Mail.SmtpAccess" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.SmtpPermission" />クラス、指定したアクセス レベルを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成されたアクセス許可は、SMTP サーバーにセキュリティで保護されたアクセスするために使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailPerms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#1)]
+ [!code-csharp[NclMailPerms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmtpPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.Mail.SmtpPermission" />クラス、指定したアクセス許可の状態の値を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成されたアクセス許可は、フル アクセスを許可または SMTP サーバーへのすべてのアクセスを回避するために使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NclMailPerms#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#2)]
+ [!code-csharp[NclMailPerms#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Access">
+      <MemberSignature Language="C#" Value="public System.Net.Mail.SmtpAccess Access { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Mail.SmtpAccess Access" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Mail.SmtpPermission.Access" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Mail.SmtpAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可によって制御される SMTP サーバーへのアクセス レベルを取得します。</summary>
+        <value><see cref="T:System.Net.Mail.SmtpAccess" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このプロパティの値の表示を示しています。  
+  
+ [!code-cpp[NclMailPerms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#1)]
+ [!code-csharp[NclMailPerms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public void AddPermission (System.Net.Mail.SmtpAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.Mail.SmtpAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.AddPermission(System.Net.Mail.SmtpAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.Mail.SmtpAccess" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.Mail.SmtpAccess" /> 値のいずれか。</param>
+        <summary>アクセス許可を指定したアクセス レベルの値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、このアクセス許可のインスタンスの状態を追加することで、シンプル メール トランスポート プロトコルのサーバーへのアクセスを変更できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では追加<xref:System.Net.Mail.SmtpAccess.Connect>権限オブジェクトにアクセスします。  
+  
+ [!code-cpp[NclMailPerms#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#5)]
+ [!code-csharp[NclMailPerms#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可の同一のコピーを作成して返します。</summary>
+        <returns><see cref="T:System.Net.Mail.SmtpPermission" />を現在のアクセス許可と同じです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、アクセス許可オブジェクトのコピーを作成します。  
+  
+ [!code-cpp[NclMailPerms#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#3)]
+ [!code-csharp[NclMailPerms#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">XML エンコードを使用して現在のアクセス許可の状態を設定します。</param>
+        <summary>指定された XML エンコードを使用してアクセス許可の状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ システムで使用し、アプリケーション コードでは通常呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="securityElement" />については説明しません、<see cref="T:System.Net.Mail.SmtpPermission" />オブジェクト。  
+  
+ または  
+  
+ <paramref name="securityElement" />アクセス許可を再構築に必要な状態情報を含まないもの。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityElement" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Security.IPermission" />の現在のアクセス許可と交差します。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns><see cref="T:System.Net.Mail.SmtpPermission" />現在のアクセス許可と指定したアクセス許可の積集合を表すです。 返します<see langword="null" />積集合が空の場合、または<paramref name="target" />は<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合となるに共通する状態を説明するアクセス許可。 元の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、SMTP サーバーへのフル アクセスを付与されているオブジェクトを既存のアクセス許可の積集合であるアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclMailPerms#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#6)]
+ [!code-csharp[NclMailPerms#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.Mail.SmtpPermission" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Security.IPermission" />サブセットの関係をテストすることができます。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可が指定したアクセス許可のサブセットであるかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる状態を指定する場合、指定したアクセス許可のサブセットです。 このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、2 つのアクセス許可のサブセットの関係を表示します。  
+  
+ [!code-cpp[NclMailPerms#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#7)]
+ [!code-csharp[NclMailPerms#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.Mail.SmtpPermission" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限のアクセス許可は、アクセス許可のインスタンスによって制御されるすべてのリソースへのフル アクセスがします。  
+  
+   
+  
+## Examples  
+ 次の例では、アクセス許可オブジェクトを作成し、その状態が表示されます。  
+  
+ [!code-cpp[NclMailPerms#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#2)]
+ [!code-csharp[NclMailPerms#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>アクセス許可の状態の XML エンコードを作成します。</summary>
+        <returns>A<see cref="T:System.Security.SecurityElement" />は、現在のアクセス許可の XML エンコードが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ システムで使用し、アプリケーション コードでは通常呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Mail.SmtpPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Security.IPermission" />現在のアクセス許可と結合します。</param>
+        <summary>現在のアクセス許可と指定されたアクセス許可の和集合であるアクセス許可を作成します。</summary>
+        <returns>新しい<see cref="T:System.Net.Mail.SmtpPermission" />を現在のアクセス許可と、指定した権限の和集合を表す権限。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Mail.SmtpPermission.Union%2A>メソッドは現在のアクセス許可と、指定した権限の両方で表されるすべての状態を表すアクセス許可を返します。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+   
+  
+## Examples  
+ 次の例では、2 つのアクセス許可オブジェクトの和集合であるアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclMailPerms#8](~/samples/snippets/cpp/VS_Snippets_Remoting/NclMailPerms/CPP/mailpermissions.cpp#8)]
+ [!code-csharp[NclMailPerms#8](~/samples/snippets/csharp/VS_Snippets_Remoting/NclMailPerms/CS/mailpermissions.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.Mail.SmtpPermission" /> ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

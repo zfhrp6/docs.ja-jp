@@ -1,0 +1,999 @@
+<Type Name="Button" FullName="System.Web.UI.WebControls.Button">
+  <TypeSignature Language="C#" Value="public class Button : System.Web.UI.WebControls.WebControl, System.Web.UI.IPostBackEventHandler, System.Web.UI.WebControls.IButtonControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Button extends System.Web.UI.WebControls.WebControl implements class System.Web.UI.IPostBackEventHandler, class System.Web.UI.WebControls.IButtonControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Button" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IPostBackEventHandler</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.WebControls.IButtonControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Click")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.ButtonDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.TextDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.SupportsEventValidation</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Button runat="server" Text="Button"&gt;&lt;/{0}:Button&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページにプッシュ ボタン コントロールを表示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#Introduction)  
+  
+-   [ポストバック ボタンの動作およびサーバー イベント](#ButtonPostbackBehaviorandServerEvents)  
+  
+-   [クライアント スクリプトのボタン イベントの処理](#HandlingButtonEventsinClientScript)  
+  
+-   [ボタン コントロールと検証](#ButtonControlsAndValidation)  
+  
+-   [データ コントロール内のボタン](#ButtonsInDataControls)  
+  
+-   [コントロールへのデータ バインディング](#BindingDataToTheControls)  
+  
+-   [UpdatePanel コントロールでのボタンを使用します。](#UsingButtonsWithUpdatePanelControls)  
+  
+-   [宣言型の構文](#DeclarativeSyntax)  
+  
+<a name="Introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、<xref:System.Web.UI.WebControls.Button>コントロールをユーザーがサーバーにページを投稿できる Web ページのプッシュ ボタンを作成します。 コントロールは、ポストバックに応答を処理できるサーバー コードでイベントをトリガーします。 ページが通知されるかを実行し、ページの送信をキャンセルする前に処理できるクライアント スクリプト内のイベントを発生する可能性もします。  
+  
+> [!NOTE]
+>  ASP.NET には、いくつかの種類異なる方法で Web ページに表示するの各ボタン コントロールにはが含まれています。 <xref:System.Web.UI.WebControls.Button>プッシュ ボタンとしてレンダリングするコントロールを<xref:System.Web.UI.WebControls.LinkButton>; リンクとしてレンダリングするコントロールを<xref:System.Web.UI.WebControls.ImageButton>画像としてレンダリングするコントロールを<xref:System.Web.UI.WebControls.ImageMap>コントロールで、ユーザーがクリックしてできるホット スポットのあるグラフィックスを作成することができます。 既定では、すべてのボタン コントロールは、クリックされたときに、ページを送信します。 使用することも、<xref:System.Web.UI.HtmlControls.HtmlButton>と<xref:System.Web.UI.HtmlControls.HtmlInputButton>サーバー コードでプログラミング可能である、ページ上のボタンを作成するコントロール。 HTML や Web サーバー コントロールの違いの詳細については、「 [ASP.NET Web サーバー コントロールの概要](http://msdn.microsoft.com/library/0d4854a3-6e79-4b7b-a27f-ac57cd9c2a84)です。  
+  
+ 既定では、<xref:System.Web.UI.WebControls.Button>コントロールは、送信ボタンをクリックします。 [送信] ボタンには、コマンド名はありません (によって指定された、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティ)、ボタンや Web ページがサーバーに戻す投稿するだけに関連付けられています。 イベント ハンドラーを指定することができます、<xref:System.Web.UI.WebControls.Button.Click>送信ボタンがクリックされたときに、プログラムから、操作を制御するイベントが実行されました。  
+  
+ コマンド ボタンなどのボタンに関連付けられているコマンド名では`Sort`を設定して、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティです。 これにより、複数作成<xref:System.Web.UI.WebControls.Button>の Web ページし、コントロール プログラムで判断するため<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。 使用することも、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>などを実行するコマンドに関する追加情報を提供するコマンド ボタンを持つプロパティ`Ascending`です。 イベント ハンドラーを指定することができます、<xref:System.Web.UI.WebControls.Button.Command>コマンド ボタンがクリックされたときに、プログラムから、操作を制御するイベントが実行されました。  
+  
+<a name="ButtonPostbackBehaviorandServerEvents"></a>   
+## <a name="button-postback-behavior-and-server-events"></a>ポストバック ボタンの動作およびサーバー イベント  
+ ユーザーには、任意の Web サーバー コントロールのボタンがクリックすると、ページがサーバーに送信されます。 これにより、Web ページを処理して、保留中のイベントがサーバー側コードで発生します。 すべてのページとコントロールの処理が完了したら、ページが自身を表示、ブラウザーをもう一度です。  
+  
+ ボタンに上げることができます独自<xref:System.Web.UI.WebControls.Button.Click>イベントまたは<xref:System.Web.UI.WebControls.Button.Command>イベントで、サーバー ベースのコードを使用して処理することができます。 これは、ボタンの従来の HTML ページやクライアント ベースの Web アプリケーションでは、イベントとは異なる`onclick`クライアントで実行されている JavaScript を使用してイベントを処理します。 詳細については、次を参照してください。 [ASP.NET Web フォーム サーバー コントロールのイベント モデル](http://msdn.microsoft.com/library/6304bff7-1b0e-4641-8acb-6d3b0badc4a3)です。  
+  
+ ユーザーは、ボタン コントロールをクリックして、ときにページがサーバーにポストされました。 既定では、ページが、それ自体へポストされました。  
+  
+ 別のページに現在のページにポストするボタンを構成することができます。 これは、複数ページのフォームの作成に役立つことができます。 詳細については、「[ページ間の ASP.NET Web フォームの送信](http://msdn.microsoft.com/library/fedf234e-b7c4-4644-a9e8-c1c0870b043b)です。  
+  
+<a name="HandlingButtonEventsinClientScript"></a>   
+## <a name="handling-button-events-in-client-script"></a>クライアント スクリプトのボタン イベントの処理  
+ ボタン コントロールには、サーバー イベントとクライアントのイベントの両方を生成できます。 ポストバック後にサーバー イベントが発生し、これらは、ページ用に記述するサーバー側コードで処理します。 クライアント イベントは、ECMAScript (JavaScript)、通常、クライアント スクリプトの処理され、ページを送信する前に発生します。 クライアント側のイベントを ASP.NET ボタン コントロールに追加すると、ページを送信する前に確認のダイアログ ボックスを表示するなどのタスクを実行し、送信をキャンセルできます。 詳細については、「 [ASP.NET Web Pages でのクライアント スクリプト](http://msdn.microsoft.com/library/13edb6b9-2dea-43c6-b8c1-a47207de19aa)と[する方法: クライアント スクリプト ボタンの Web サーバー コントロール イベントに応答](http://msdn.microsoft.com/library/1ab97f0b-1c38-4897-85b0-ac915f6a182b)です。  
+  
+ することも、<xref:System.Web.UI.WebControls.Button>も (HTTP POST 操作を実行する) ではなくポストバックを実行するクライアント スクリプトを使用するコントロール。 これは、ページ上の他の要素へのアタッチなど、ポストバックをプログラムで操作する場合に役立ちます。 ことができます。 設定することができます、<xref:System.Web.UI.WebControls.Button>コントロールの<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティを`true`が発生する、<xref:System.Web.UI.WebControls.Button>クライアント スクリプトを使用するコントロールがポストバックをベースです。  
+  
+<a name="ButtonControlsAndValidation"></a>   
+## <a name="button-controls-and-validation"></a>ボタン コントロールと検証  
+ ページには、既定では、ASP.NET の検証コントロールが含まれている場合に、そのチェックを実行する検証コントロール ボタン コントロールをクリックするとします。 検証コントロールでクライアント側の検証が有効な場合、検証チェックに失敗した場合に、ページが送信されません。  
+  
+ 次の表では、検証プロセスをより正確に制御するためのボタン コントロールでサポートされているプロパティについて説明します。  
+  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>|ボタンをクリックすると検証チェックも実行するかどうかを指定します。 このプロパティを設定`false`検証チェックを防ぐためにします。|  
+|<xref:System.Web.UI.WebControls.Button.ValidationGroup%2A>|ボタンがクリックされたときに、ページ上のどの検証コントロールが呼び出されますを指定できます。 検証グループが作成されていない場合、ボタンのクリックは検証コントロール、ページ上のすべてを呼び出します。|  
+  
+ 詳細については、「[ASP.NET Web ページにおけるユーザー入力の検証](http://msdn.microsoft.com/library/4ad3dacb-89e0-4cee-89ac-40a3f2a85461)」を参照してください。  
+  
+<a name="ButtonsInDataControls"></a>   
+## <a name="buttons-in-data-controls"></a>データ コントロール内のボタン  
+ ボタンの Web サーバー コントロールは多くの場合、コントロールで使用データなどの<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.GridView>、および<xref:System.Web.UI.WebControls.Repeater>リスト コントロール。 ような場合、通常に応答しない、ボタンに直接イベント をクリックします。 代わりに、データ コントロールのボタンは、データ コントロールに固有であるイベントを発生させます。 たとえば、<xref:System.Web.UI.WebControls.DataList>ボタンを発生させる可能性があります、コントロール、<xref:System.Web.UI.WebControls.DataList>コントロールの<xref:System.Web.UI.WebControls.DataList.ItemCommand>イベントを発生させるのではなく、<xref:System.Web.UI.WebControls.Button>コントロールの<xref:System.Web.UI.WebControls.Button.Click>イベント。  
+  
+ ボタンを設定することができますので、データ連結リスト コントロールには、多くのボタンを含めることができます、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティ、イベントの一部として渡す値を指定します。 クリックしてされたボタンを表示するには、この引数をテストできます。  
+  
+<a name="BindingDataToTheControls"></a>   
+## <a name="binding-data-to-the-controls"></a>コントロールへのデータ バインディング  
+ ボタンの Web サーバー コントロールをデータ ソースにバインドするには、プロパティの設定を制御するために動的にします。 たとえば、ボタンを設定することができます<xref:System.Web.UI.WebControls.Button.Text%2A>データ バインドを使用してプロパティです。  
+  
+<a name="UsingButtonsWithUpdatePanelControls"></a>   
+## <a name="using-buttons-with-updatepanel-controls"></a>UpdatePanel コントロールでのボタンを使用します。  
+ 部分ページ レンダリングを使うとポストバックなしでページの一部を更新できます。 <xref:System.Web.UI.UpdatePanel>コントロールを使用すると、部分ページ レンダリングに参加しているページの部分をマークできます。 既定では、内部のコントロールの動作、<xref:System.Web.UI.UpdatePanel>コントロールを含む<xref:System.Web.UI.WebControls.Button>コントロール、ポストバックではなく、非同期ポストバックを実行することです。 これによって、更新の内容のみ、<xref:System.Web.UI.UpdatePanel>ポストバックが発生元からを制御します。  
+  
+ シナリオだけでなく、<xref:System.Web.UI.WebControls.Button>内にあるコントロール、<xref:System.Web.UI.UpdatePanel>使用できるコントロール、<xref:System.Web.UI.WebControls.Button>で制御<xref:System.Web.UI.UpdatePanel>次のシナリオでのコントロール。  
+  
+-   定義する、<xref:System.Web.UI.WebControls.Button>外にあるコントロール、<xref:System.Web.UI.UpdatePanel>として制御、<xref:System.Web.UI.AsyncPostBackTrigger>パネルのコントロールです。 ボタンがクリックされたときに、非同期ポストバックを実行し、パネルの内容を更新します。  
+  
+-   定義する、<xref:System.Web.UI.WebControls.Button>内にあるコントロール、<xref:System.Web.UI.UpdatePanel>として制御、<xref:System.Web.UI.PostBackTrigger>パネルのです。 内部にある場合でもポストバックを実行 ボタンがクリックされたときに、<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ 部分ページ レンダリングと使用の詳細については<xref:System.Web.UI.UpdatePanel>コントロールを参照してください[UpdatePanel コントロールの概要](http://msdn.microsoft.com/library/29a2265d-9674-4c19-b70e-e5560ee9689a)と[部分ページ レンダリングの概要](http://msdn.microsoft.com/library/5c12736d-d9e9-464a-9388-3fe0f9f49e49)です。  
+  
+<a name="DeclarativeSyntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Button  
+    AccessKey="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CausesValidation="True|False"  
+    CommandArgument="string"  
+    CommandName="string"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnClick="Click event handler"  
+    OnClientClick="string"  
+    OnCommand="Command event handler"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    PostBackUrl="uri"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Text="string"  
+    ToolTip="string"  
+    UseSubmitBehavior="True|False"  
+    ValidationGroup="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次のコード例は、送信を作成する方法を示します<xref:System.Web.UI.WebControls.Button>コンテンツ サーバーに Web ページにポストするコントロール。  
+  
+ [!code-aspx-csharp[Classic Button Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Button Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Button Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Button Example/VB/sourcevb.aspx#1)]  
+  
+ 次のコード例は、コマンドを作成する方法を示します<xref:System.Web.UI.WebControls.Button>コントロールをリストを並べ替えます。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Button ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Button" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Button>クラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.Button>クラスです。  
+  
+ [!code-aspx-csharp[ButtonCtor#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCtor/CS/buttonctorcs.aspx#1)]
+ [!code-aspx-vb[ButtonCtor#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCtor/VB/buttonctorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer"><see cref="T:System.Web.UI.HtmlTextWriter" />クライアントで表示する出力ストリームを格納しています。</param>
+        <summary>属性を追加、<see cref="T:System.Web.UI.WebControls.Button" />クライアントに表示する出力ストリームを制御します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ オーバーライドする方法を次のコード例に示します、<xref:System.Web.UI.WebControls.Button.AddAttributesToRender%2A>カスタム サーバー コントロールできるように、<xref:System.Web.UI.WebControls.Button>常に、テキストは赤で表示されます。  
+  
+ [!code-aspx-csharp[CustomButtonAddAttributesToRender#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomButtonAddAttributesToRender/CS/custombuttonaddattributestorendercs.aspx#1)]
+ [!code-aspx-vb[CustomButtonAddAttributesToRender#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomButtonAddAttributesToRender/VB/custombuttonaddattributestorendervb.aspx#1)]  
+[!code-csharp[CustomButtonAddAttributesToRender#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomButtonAddAttributesToRender/CS/custombuttonaddattributestorender.cs#2)]
+[!code-vb[CustomButtonAddAttributesToRender#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomButtonAddAttributesToRender/VB/custombuttonaddattributestorender.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CausesValidation">
+      <MemberSignature Language="C#" Value="public virtual bool CausesValidation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CausesValidation" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.CausesValidation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検証を実行するかどうかを示す値を設定するときに、<see cref="T:System.Web.UI.WebControls.Button" />コントロールがクリックされました。</summary>
+        <value>
+          <see cref="T:System.Web.UI.WebControls.Button" /> コントロールがクリックされたときに検証を実行する場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、ページの検証が実行されるときに、<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。 ページの検証は、入力コントロールをすべて検証コントロールによって指定された検証規則を合格ページ上の検証コントロールに関連付けられているかどうかを判断します。  
+  
+ 指定するか、クライアントとサーバーの両方で検証を実行するかどうかを判断するときに、<xref:System.Web.UI.WebControls.Button>を使用してコントロールがクリックされた、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティです。 検証が実行されるを防ぐためには、設定、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティを`false`です。  
+  
+> [!NOTE]
+>  設定する必要があります、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティを`false`を使用する場合、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティに別のページをポストします。 別のページに戻るときに、明示的に検証をチェックする必要があります。 例については、「解説」セクションを参照してください、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティです。  
+  
+ 通常、このプロパティに設定`false`の`reset`または`clear`ボタンがクリックされたときに実行される検証が実行できなくボタンをクリックします。  
+  
+ ときの値、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティに設定されている`true`、使用することも、<xref:System.Web.UI.WebControls.Button.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.Button>コントロールが原因で検証します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>ページ検証の発生を防ぐためにプロパティです。 なお、<xref:System.Web.UI.WebControls.BaseValidator.Validate%2A>メソッドをアクティブにない各検証コントロール個別にします。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[ButtonControlCausesValidation#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonControlCausesValidation/CS/buttoncausesvalidationcs.aspx#1)]
+ [!code-aspx-vb[ButtonControlCausesValidation#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonControlCausesValidation/VB/buttoncausesvalidationvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Click">
+      <MemberSignature Language="C#" Value="public event EventHandler Click;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Click" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Button.Click" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Button" /> コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.Click>イベントが発生したときに、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。 このイベントは通常に関連付けられているコマンド名がない場合に使用、 <xref:System.Web.UI.WebControls.Button> (たとえば、送信ボタン) を制御します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Button.Click>イベント、Web でメッセージを表示するためにページ、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。  
+  
+ [!code-aspx-csharp[ButtonClickText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonClickText/cs/ButtonClickCS.aspx#1)]
+ [!code-aspx-vb[ButtonClickText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonClickText/vb/ButtonClickVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Command">
+      <MemberSignature Language="C#" Value="public event System.Web.UI.WebControls.CommandEventHandler Command;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Web.UI.WebControls.CommandEventHandler Command" />
+      <MemberSignature Language="DocId" Value="E:System.Web.UI.WebControls.Button.Command" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.CommandEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Button" /> コントロールがクリックされたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.Command>イベントが発生したときに、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。 このイベントは通常使用時に、コマンド名など`Sort`に関連付けられている、<xref:System.Web.UI.WebControls.Button>コントロール。 これにより、複数作成<xref:System.Web.UI.WebControls.Button>の Web ページし、コントロール プログラムで判断するため<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Button.Command>の形式でコントロールの階層構造をイベントは、`BubbleEvent`です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Button.Command>イベント一覧を並べ替えるときに、<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。 この例を示す、イベント ハンドラー宣言によってを使用して、<xref:System.Web.UI.WebControls.Button.OnClick%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ 次のコード例は、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法を示します、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[ButtonCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommand/CS/buttoncommandcs.aspx#1)]
+ [!code-aspx-vb[ButtonCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommand/VB/buttoncommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandArgument">
+      <MemberSignature Language="C#" Value="public string CommandArgument { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandArgument" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.CommandArgument" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、オプションのパラメーターに渡される、<see cref="E:System.Web.UI.WebControls.Button.Command" />イベントと共に、関連付けられている<see cref="P:System.Web.UI.WebControls.Button.CommandName" />です。</summary>
+        <value>渡される省略可能なパラメーター、<see cref="E:System.Web.UI.WebControls.Button.Command" />イベントと共に、関連付けられている<see cref="P:System.Web.UI.WebControls.Button.CommandName" />です。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティを補完するパラメーターを指定する、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティです。  
+  
+> [!NOTE]
+>  設定できますが、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティ自体には、通常のみを使用するときに、<xref:System.Web.UI.WebControls.Button.CommandName%2A>でもプロパティが設定されます。  
+  
+ <xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティを補完、<xref:System.Web.UI.WebControls.Button.CommandName%2A>を実行するコマンドに関する追加情報を提供することによりプロパティです。 たとえば、設定した場合、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティを`Sort`と<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティを`Ascending`、昇順で並べ替えるには、コマンドを指定します。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティを作成する、<xref:System.Web.UI.WebControls.Button>コントロールを昇順でリストを並べ替えます。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CommandName">
+      <MemberSignature Language="C#" Value="public string CommandName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CommandName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.CommandName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられているコマンド名、<see cref="T:System.Web.UI.WebControls.Button" />コントロールに渡される、<see cref="E:System.Web.UI.WebControls.Button.Command" />イベント。</summary>
+        <value>コマンド名、<see cref="T:System.Web.UI.WebControls.Button" />コントロール。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数を設定するときに<xref:System.Web.UI.WebControls.Button>Web ページ上のコントロールを使用して、<xref:System.Web.UI.WebControls.Button.CommandName%2A>を指定するか、コマンド名を特定するプロパティがそれぞれに関連付けられている<xref:System.Web.UI.WebControls.Button>コントロール。 設定することができます、<xref:System.Web.UI.WebControls.Button.CommandName%2A>を実行するコマンドを識別する任意の文字列を持つプロパティです。 プログラムでのコマンドの名前を決定することができますし、<xref:System.Web.UI.WebControls.Button>を制御し、適切なアクションを実行します。  
+  
+ 追加コマンドについては、よう`Ascending`を使用して指定することがあります、<xref:System.Web.UI.WebControls.Button.CommandArgument%2A>プロパティです。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.CommandName%2A>プロパティを作成する、<xref:System.Web.UI.WebControls.Button>コントロールをリストを並べ替えます。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPostBackOptions">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.PostBackOptions GetPostBackOptions ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.PostBackOptions GetPostBackOptions() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.GetPostBackOptions" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.PostBackOptions</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.Web.UI.PostBackOptions" />を表すオブジェクト、<see cref="T:System.Web.UI.WebControls.Button" />コントロールのポストバック動作します。</summary>
+        <returns>A<see cref="T:System.Web.UI.PostBackOptions" />を表す、<see cref="T:System.Web.UI.WebControls.Button" />コントロールのポストバック動作します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.GetPostBackOptions%2A>メソッドを作成、<xref:System.Web.UI.PostBackOptions>を表すオブジェクト、<xref:System.Web.UI.WebControls.Button>コントロールのポストバック動作します。 <xref:System.Web.UI.PostBackOptions>オブジェクトが通常に渡され、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%28System.Web.UI.PostBackOptions%29?displayProperty=nameWithType>参照を取得するクライアント側スクリプト関数に、呼び出されたときに使用される、メソッドにより、サーバーのページへのポストバックをします。  
+  
+ 拡張する場合、このメソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.Button>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>オーバーライドすることができます、<see cref="M:System.Web.UI.WebControls.Button.GetPostBackOptions" />をボタン コントロールのポストバック オプションを変更したり、ボタンがクリックされたときに、クライアント側スクリプトを呼び出すには、派生クラス内のメソッドです。 必ず、基本クラスの<see cref="M:System.Web.UI.WebControls.Button.GetPostBackOptions" />メソッド標準ポストバック オプションが設定されるようにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClick">
+      <MemberSignature Language="C#" Value="protected virtual void OnClick (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClick(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.OnClick(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Button.Click" />のイベント、<see cref="T:System.Web.UI.WebControls.Button" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.Click>イベントが発生したときに、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。 このイベントは通常に関連付けられているコマンド名がない場合に使用、 <xref:System.Web.UI.WebControls.Button> (たとえば、送信ボタン) を制御します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.Button.OnClick%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、 <xref:System.Web.UI.WebControls.Button.Click> Web ページで、単純なメッセージを表示するためにイベント。  
+  
+ [!code-aspx-csharp[ButtonClickText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonClickText/cs/ButtonClickCS.aspx#1)]
+ [!code-aspx-vb[ButtonClickText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonClickText/vb/ButtonClickVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Button.OnClick(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Button.OnClick(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClientClick">
+      <MemberSignature Language="C#" Value="public virtual string OnClientClick { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string OnClientClick" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.OnClientClick" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する際に実行するクライアント側スクリプト、<see cref="T:System.Web.UI.WebControls.Button" />コントロールの<see cref="E:System.Web.UI.WebControls.Button.Click" />イベントが発生します。</summary>
+        <value>ときに実行するクライアント側スクリプト、<see cref="T:System.Web.UI.WebControls.Button" />コントロールの<see cref="E:System.Web.UI.WebControls.Button.Click" />イベントが発生します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Button.OnClientClick%2A>ときに実行するその他のクライアント側スクリプトを指定するプロパティ、<xref:System.Web.UI.WebControls.Button>コントロールの<xref:System.Web.UI.WebControls.Button.Click>イベントが発生します。 このプロパティが表示されるを指定する、スクリプト、<xref:System.Web.UI.WebControls.Button>コントロールの`OnClick`だけでなく、コントロールの属性には、クライアント側のスクリプトが事前定義されています。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ Visual Studio の Web サイト プロジェクトとソース コードは、このトピックで使用可能な:[ダウンロード](http://go.microsoft.com/fwlink/?LinkId=192871)です。  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.OnClientClick%2A>ときに実行するその他のクライアント側スクリプトを指定するプロパティ、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。  
+  
+ [!code-aspx-csharp[Button.OnClientClick#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Button.OnClientClick/cs/button.onclientclickcs.aspx#1)]
+ [!code-aspx-vb[Button.OnClientClick#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Button.OnClientClick/vb/button.onclientclickvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCommand">
+      <MemberSignature Language="C#" Value="protected virtual void OnCommand (System.Web.UI.WebControls.CommandEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnCommand(class System.Web.UI.WebControls.CommandEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.OnCommand(System.Web.UI.WebControls.CommandEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Web.UI.WebControls.CommandEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>発生させる、<see cref="E:System.Web.UI.WebControls.Button.Command" />のイベント、<see cref="T:System.Web.UI.WebControls.Button" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.Command>イベントが発生したときに、<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。 このイベントは通常使用時に、コマンド名など`Sort`に関連付けられている、<xref:System.Web.UI.WebControls.Button>コントロール。 これにより、複数作成<xref:System.Web.UI.WebControls.Button>の Web ページし、コントロール プログラムで判断するため<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.Button.Command>の形式でコントロールの階層構造をイベントは、`BubbleEvent`です。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.Button.OnCommand%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+   
+  
+## Examples  
+ 指定し、コードのイベント ハンドラーを次のコード例には、<xref:System.Web.UI.WebControls.Button.Command>イベント一覧を並べ替えるときに、<xref:System.Web.UI.WebControls.Button>コントロールがクリックされました。 この例を示す、イベント ハンドラー宣言によってを使用して、<xref:System.Web.UI.WebControls.Button.OnClick%2A>のプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[ButtonCommandNameArgument#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommandNameArgument/CS/buttoncommandnamecs.aspx#1)]
+ [!code-aspx-vb[ButtonCommandNameArgument#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommandNameArgument/VB/buttoncommandnamevb.aspx#1)]  
+  
+ 次のコード例は、イベント ハンドラーを指定し、プログラム内のイベントに追加する方法を示します、`Page_Load`メソッドです。  
+  
+ [!code-aspx-csharp[ButtonCommand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonCommand/CS/buttoncommandcs.aspx#1)]
+ [!code-aspx-vb[ButtonCommand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonCommand/VB/buttoncommandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.Button.OnCommand(System.Web.UI.WebControls.CommandEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.Button.OnCommand(System.Web.UI.WebControls.CommandEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>クライアントに表示する前に、ボタンがクリックしてされたかどうかを判断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.OnPreRender%2A>からカスタム クラスを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PostBackUrl">
+      <MemberSignature Language="C#" Value="public virtual string PostBackUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PostBackUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.PostBackUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.UrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty("*.aspx")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の現在のページにポストするページの URL、<see cref="T:System.Web.UI.WebControls.Button" />コントロールをクリックします。</summary>
+        <value>現在のページにポストする Web ページの URL、<see cref="T:System.Web.UI.WebControls.Button" />コントロールをクリックします。 既定値は空の文字列 ("")、それが原因で、ページ自体へのポストバックをします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティでは、ページ間を使用して post を実行することができます、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+> [!NOTE]
+>  のみ正しく指定したパスは、このプロパティで動作します。 たとえば、相対パス (Test/default.aspx) 絶対パス (https://localhost/WebApp/default.aspx) と仮想 (~ \Test\default.aspx) 正常に動作します。 正しく書式設定されていないパスなど"/Test/default.aspx"または"\Test\default.aspx"が動作しません。 参照してください[ASP.NET Web プロジェクト パス](http://msdn.microsoft.com/library/2447f50c-b849-483c-8093-85ed53e7a5bd)正しいパスを作成する方法についてはします。  
+  
+ 設定、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティときに投稿する Web ページの URL を<xref:System.Web.UI.WebControls.Button>コントロールをクリックします。 たとえば、指定する`Page2.aspx`を含むページが発生、<xref:System.Web.UI.WebControls.Button>に投稿するコントロール`Page2.aspx`です。 値を指定しない場合、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>自体へのプロパティ ページのポストバックします。  
+  
+> [!IMPORTANT]
+>  サーバー側の検証コントロールをページ間のポストバックを実行するときに、ことを確認する必要があります、ページの<xref:System.Web.UI.Page.IsValid%2A>プロパティは`true`ポストバックを処理する前にします。 ページ間のポストバックの場合は、ページを確認するが、<xref:System.Web.UI.Page.PreviousPage%2A>です。 次の VB コードは、これを行う方法を示しています。  
+  
+```  
+Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load  
+        If Page.PreviousPage.IsValid Then  
+            ' Handle the post back  
+        Else  
+            Response.Write("Invalid")  
+        End If  
+End Sub  
+```  
+  
+ ページ間の送信方法の詳細については、次を参照してください。[ページ間の ASP.NET Web フォームの送信](http://msdn.microsoft.com/library/fedf234e-b7c4-4644-a9e8-c1c0870b043b)です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>ページ間の post を実行するプロパティです。 ユーザーがクリックしたとき、<xref:System.Web.UI.WebControls.Button>コントロール、ページがポストで指定された対象のページに、テキスト ボックスに入力された値、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティです。 このサンプルを実行するには、このコード例と同じディレクトリにターゲット ページのファイルを作成することも必要があります。 ターゲット ページのコードは、次の例で提供されます。  
+  
+ [!code-aspx-csharp[Button.PostBackUrlProperty#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Button.PostBackUrlProperty/CS/button.postbackurlpropertycs.aspx#1)]
+ [!code-aspx-vb[Button.PostBackUrlProperty#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Button.PostBackUrlProperty/VB/button.postbackurlpropertyvb.aspx#1)]  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.Page.PreviousPage%2A?displayProperty=nameWithType>から別のページを使用して送信された値にアクセスするプロパティ、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>プロパティです。 このページは、前のページからポストされ、し、ユーザーに表示される文字列を取得します。 に、エラーが発生直接このコード例を実行しようとする場合の値、`text`フィールド`null`です。 代わりに、このコードを使用して、対象ページを作成し、前の例のコードと同じディレクトリにファイルを配置します。 ファイルの名前が指定された値に対応する必要があります、<xref:System.Web.UI.WebControls.Button.PostBackUrl%2A>前の例です。 前の例のコードを実行するときにこのページは自動的に実行クロス ページのポストバックが発生したとき。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Button.PostBackUrlPage2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Button.PostBackUrlPage2/CS/button.postbackurlpage2cs.aspx#1)]
+ [!code-aspx-vb[Button.PostBackUrlPage2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Button.PostBackUrlPage2/VB/button.postbackurlpage2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="protected virtual void RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数。</param>
+        <summary>サーバーへのポストバック時に、<see cref="T:System.Web.UI.WebControls.Button" /> コントロールのイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは内部で使用される、<xref:System.Web.UI.WebControls.Button>コントロール、発生させる、クリックしてされたとき、<xref:System.Web.UI.WebControls.Button.Click>イベントを定義されている場合と、<xref:System.Web.UI.WebControls.Button.Command>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">A <see cref="T:System.Web.UI.HtmlTextWriter" /> HTML クライアントでコンテンツを表示する出力ストリームを表すオブジェクト。</param>
+        <summary>指定したライターにコントロールの内容を表示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Button.RenderContents%2A>常に次のカスタム テキストを表示するようにカスタム サーバー内のメソッドが制御<xref:System.Web.UI.WebControls.Button>サーバー コントロールです。  
+  
+ [!code-aspx-csharp[CustomButtonRenderContents#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomButtonRenderContents/CS/custombuttonrendercontentscs.aspx#1)]
+ [!code-aspx-vb[CustomButtonRenderContents#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomButtonRenderContents/VB/custombuttonrendercontentsvb.aspx#1)]  
+[!code-csharp[CustomButtonRenderContents#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomButtonRenderContents/CS/custombuttonrendercontents.cs#2)]
+[!code-vb[CustomButtonRenderContents#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomButtonRenderContents/VB/custombuttonrendercontents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IPostBackEventHandler.RaisePostBackEvent">
+      <MemberSignature Language="C#" Value="void IPostBackEventHandler.RaisePostBackEvent (string eventArgument);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(string eventArgument) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Button.System#Web#UI#IPostBackEventHandler#RaisePostBackEvent(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventArgument" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventArgument">イベントの引数。</param>
+        <summary>サーバーへのポストバック時に、<see cref="T:System.Web.UI.WebControls.Button" /> コントロールのイベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは内部で使用される、<xref:System.Web.UI.WebControls.Button>コントロール、発生させる、クリックしてされたとき、<xref:System.Web.UI.WebControls.Button.Click>イベントを定義されている場合と、<xref:System.Web.UI.WebControls.Button.Command>イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Button.System%23Web%23UI%23IPostBackEventHandler%23RaisePostBackEvent%2A>ことを常に発生させるためのメソッド、<xref:System.Web.UI.WebControls.Button.OnClick%2A>カスタム イベント<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-csharp[CustomButtonRaisePostBackEvent#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomButtonRaisePostBackEvent/CS/custombuttonraisepostbackevent.cs#2)]
+ [!code-vb[CustomButtonRaisePostBackEvent#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomButtonRaisePostBackEvent/VB/custombuttonraisepostbackevent.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で表示されるテキスト キャプション、<see cref="T:System.Web.UI.WebControls.Button" />コントロール。</summary>
+        <value>表示されるテキスト キャプション、<see cref="T:System.Web.UI.WebControls.Button" />コントロール。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Button.Text%2A>プロパティに表示するキャプションを指定、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.Text%2A>に表示されるキャプションを指定するプロパティ、<xref:System.Web.UI.WebControls.Button>コントロール。  
+  
+ [!code-aspx-csharp[ButtonClickText#1](~/samples/snippets/csharp/VS_Snippets_WebNet/ButtonClickText/cs/ButtonClickCS.aspx#1)]
+ [!code-aspx-vb[ButtonClickText#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/ButtonClickText/vb/ButtonClickVB.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSubmitBehavior">
+      <MemberSignature Language="C#" Value="public virtual bool UseSubmitBehavior { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSubmitBehavior" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.UseSubmitBehavior" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Web.UI.WebControls.Button" />コントロールでクライアントを使用してブラウザーのメカニズム、または ASP.NET ポストバックのメカニズムを送信します。</summary>
+        <value>
+          <see langword="true" />コントロールがクライアントのブラウザーを使用する場合の送信メカニズムです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティを指定するかどうか、<xref:System.Web.UI.WebControls.Button>コントロールでクライアントを使用してブラウザーのメカニズム、または ASP.NET ポストバックのメカニズムを送信します。 既定でこのプロパティの値は`true`、原因、<xref:System.Web.UI.WebControls.Button>送信機構をブラウザーを使用して制御します。 指定した場合`false`、ASP.NET ページ フレームワークでは、サーバーにフォームを投稿するページにクライアント側スクリプトを追加します。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティは`false`、コントロールの開発者が使用できる、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>クライアントを返すメソッドをポストバック イベントを<xref:System.Web.UI.WebControls.Button>です。 によって返される文字列、<xref:System.Web.UI.ClientScriptManager.GetPostBackEventReference%2A>メソッドは、クライアント側の関数呼び出しのテキストが含まれており、クライアント側のイベント ハンドラーに挿入することができます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>送信方法を指定するプロパティを<xref:System.Web.UI.WebControls.Button>サーバーへのポストバック時にコントロールを使用しています。 <xref:System.Web.UI.WebControls.Button.UseSubmitBehavior%2A>プロパティに設定されている`false`、ポストバック メカニズムの原因で、ASP.NET を使用してボタンをクリックします。 ブラウザーの ソースの表示コマンドを使用して、レンダリングされるページのソース コードを表示する場合、クライアント側のスクリプトがサーバーにフォームを投稿する ASP.NET ページ フレームワークによって追加されたことが表示されます。  
+  
+ [!code-aspx-csharp[Button.UseSubmitBehavior#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Button.UseSubmitBehavior/CS/button.usesubmitbehaviorcs.aspx#1)]
+ [!code-aspx-vb[Button.UseSubmitBehavior#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Button.UseSubmitBehavior/VB/button.usesubmitbehaviorvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidationGroup">
+      <MemberSignature Language="C#" Value="public virtual string ValidationGroup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ValidationGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Button.ValidationGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または対象のコントロールのグループを設定、<see cref="T:System.Web.UI.WebControls.Button" />サーバーへのポストバック時にコントロールによって検証されます。</summary>
+        <value>対象のコントロールのグループ、<see cref="T:System.Web.UI.WebControls.Button" />サーバーへのポストバック時にコントロールによって検証されます。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 検証グループを使用すると、ページ上の検証コントロールを特定のカテゴリに割り当てることができます。 各グループの検証は、ページ上の他の検証グループとは無関係に検証できます。 使用して、<xref:System.Web.UI.WebControls.Button.ValidationGroup%2A>プロパティを対象の検証グループの名前を指定する、<xref:System.Web.UI.WebControls.Button>サーバーへのポストバック時にコントロールによって検証されます。  
+  
+ このプロパティは、有効される場合にのみの値、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティに設定されている`true`です。 値を指定すると、<xref:System.Web.UI.WebControls.Button.ValidationGroup%2A>プロパティ、指定されたグループの一部である検証コントロールだけは、検証、<xref:System.Web.UI.WebControls.Button>コントロールは、サーバーに再度ポストします。 このプロパティの値を指定しないかどうか、<xref:System.Web.UI.WebControls.Button.CausesValidation%2A>プロパティに設定されている`true`サーバーへのコントロールのポストバック時に検証グループに割り当てられていないページ上のすべての検証コントロールが検証されます。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.Button.ValidationGroup%2A>ときに検証するためにコントロールを指定するプロパティ、<xref:System.Web.UI.WebControls.Button>コントロールは、サーバーに再度ポストします。 ページには、ユーザーからのデータをキャプチャする 3 つのテキスト ボックス、3 つが含まれています。<xref:System.Web.UI.WebControls.RequiredFieldValidator>コントロールを、ユーザーは空白でないテキスト ボックスを確認してください。 <xref:System.Web.UI.WebControls.RequiredFieldValidator>制御では、最初の 2 つのテキスト ボックス、`PersonalInfoGroup`検証グループおよび<xref:System.Web.UI.WebControls.RequiredFieldValidator>では、3 つ目のテキスト ボックスの制御、`LocationInfoGroup`検証グループ。 ときに`Button1`がクリックすると、検証グループ内にあるコントロールだけ`PersonalInfoGroup`検証されます。 ときに`Button2`クリックすると、検証グループ内のコントロールのみ`LocationInfoGroup`を検証します。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Button.ValidationGroup#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Button.ValidationGroup/CS/button.validationgroupcs.aspx#1)]
+ [!code-aspx-vb[Button.ValidationGroup#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Button.ValidationGroup/VB/button.validationgroupvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

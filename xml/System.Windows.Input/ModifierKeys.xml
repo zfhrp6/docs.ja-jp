@@ -1,0 +1,140 @@
+<Type Name="ModifierKeys" FullName="System.Windows.Input.ModifierKeys">
+  <TypeSignature Language="C#" Value="public enum ModifierKeys" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ModifierKeys extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.ModifierKeys" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.ModifierKeysConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.ModifierKeysValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>修飾子キーのセットを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.Keyboard.Modifiers%2A>プロパティを<xref:System.Windows.Input.Keyboard>クラスは現在押されている修飾子キーのセット。  
+  
+ いくつか[!INCLUDE[TLA#tla_api#plural](~/includes/tlasharptla-apisharpplural-md.md)]で[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]ウィザードを使用するを使用して、<xref:System.Windows.Input.ModifierKeys>列挙体は、<xref:System.Windows.Input.Keyboard.Modifiers%2A>プロパティを<xref:System.Windows.Input.Keyboard>、 <xref:System.Windows.Input.KeyBinding>、<xref:System.Windows.Input.KeyGesture>と<xref:System.Windows.Input.MouseGesture>クラスです。  
+  
+<a name="xamlAttributeUsage_ModifierKeys"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="oneOrMoreModifierKeys"/>  
+```  
+  
+<a name="xamlValues_ModifierKeys"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreModifierKeys*  
+ によって定義された 1 つまたは複数の修飾子キー、<xref:System.Windows.Input.ModifierKeys>列挙型、「+」文字で区切られます。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Input.KeyBinding>を関連付ける、<xref:System.Windows.Input.KeyGesture>で、<xref:System.Windows.Input.RoutedCommand>です。  <xref:System.Windows.Input.KeyBinding>を使用して、<xref:System.Windows.Input.ModifierKeys>ジェスチャの修飾子キーを指定する列挙です。  
+  
+ [!code-xaml[commandWithHandler#CommandHandlerKeyBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/commandWithHandler/CSharp/Window1.xaml#commandhandlerkeybinding)]  
+  
+ [!code-csharp[commandhandlerprocedural#CommandHandlerKeyBindingCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandHandlerProcedural/CSharp/Window1.xaml.cs#commandhandlerkeybindingcodebehind)]
+ [!code-vb[commandhandlerprocedural#CommandHandlerKeyBindingCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandHandlerProcedural/visualbasic/window1.xaml.vb#commandhandlerkeybindingcodebehind)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Alt">
+      <MemberSignature Language="C#" Value="Alt" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.ModifierKeys Alt = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.ModifierKeys.Alt" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ALT キー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="Control" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.ModifierKeys Control = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.ModifierKeys.Control" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>CTRL キー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.ModifierKeys None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.ModifierKeys.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>修飾子は押されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Shift">
+      <MemberSignature Language="C#" Value="Shift" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.ModifierKeys Shift = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.ModifierKeys.Shift" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SHIFT キー。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Windows">
+      <MemberSignature Language="C#" Value="Windows" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.ModifierKeys Windows = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.ModifierKeys.Windows" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.ModifierKeys</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Windows ロゴ キー。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

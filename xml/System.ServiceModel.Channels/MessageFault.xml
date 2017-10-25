@@ -1,0 +1,705 @@
+<Type Name="MessageFault" FullName="System.ServiceModel.Channels.MessageFault">
+  <TypeSignature Language="C#" Value="public abstract class MessageFault" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit MessageFault extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.MessageFault" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="Overload:System.ServiceModel.Channels.Message.CreateMessage" /> に渡してエラー情報を含むメッセージを作成することのできる SOAP エラーのメモリ内表現を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ エラー情報を含む SOAP メッセージを作成するために変更および使用できるメモリ内の SOAP エラー表現が必要な場合は常に、<xref:System.ServiceModel.Channels.MessageFault> クラスを使用します。  
+  
+ 通常、<xref:System.ServiceModel.Channels.MessageFault> クラスは、<xref:System.ServiceModel.Dispatcher.IErrorHandler> インターフェイスを実装するときに使用します。 この場合、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] が <xref:System.ServiceModel.Channels.MessageFault> オブジェクトを渡し、ユーザーはそれを特定のニーズに使用します (たとえば、<xref:System.ServiceModel.Channels.MessageFault> をカスタマイズしたり、エラー情報をログに記録したりできます)。 ただし、<xref:System.ServiceModel.Channels.MessageFault> は、SOAP エラー メッセージのカスタム処理が必要な箇所ではどこでも使用できます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.ServiceModel.Channels.MessageFault> の最も一般的な使用方法を示します。 <xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> と <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> はどちらも、<xref:System.ServiceModel.Channels.MessageFault> オブジェクトを渡します。このオブジェクトは、変更してシステムに返したり (<xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> の場合)、またはなんらかの独自のエラー関連動作を実行するために使用したり (<xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> の場合) できます。  
+  
+ この例では、<xref:System.ServiceModel.Dispatcher.IErrorHandler.ProvideFault%2A> メソッドは、すべての <xref:System.Exception> オブジェクトを <xref:System.ServiceModel.Channels.MessageFault> 型の <xref:System.ServiceModel.FaultException%601> オブジェクトを含む `GreetingFault` オブジェクトに変換し、このカスタマイズされた <xref:System.ServiceModel.Channels.MessageFault> を [!INCLUDE[indigo2](~/includes/indigo2-md.md)] に返します。  
+  
+ [!code-csharp[IErrorHandler#6](~/samples/snippets/csharp/VS_Snippets_CFX/ierrorhandler/cs/ierrorhandler.cs#6)]
+ [!code-vb[IErrorHandler#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/ierrorhandler/vb/ierrorhandler.vb#6)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected MessageFault ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで呼び出されると、<see cref="T:System.ServiceModel.Channels.MessageFault" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actor">
+      <MemberSignature Language="C#" Value="public virtual string Actor { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Actor" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.Actor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクターの値を取得または設定します。</summary>
+        <value>アクターの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Code">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.FaultCode Code { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.FaultCode Code" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.Code" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.FaultCode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラーコードを取得します。</summary>
+        <value>SOAP エラー コードを格納する <see cref="T:System.ServiceModel.FaultCode" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.Channels.Message message, int maxBufferSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.Channels.Message message, int32 maxBufferSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.Channels.Message,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="maxBufferSize" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message"><see cref="T:System.ServiceModel.Channels.Message" /> オブジェクトを作成するために使用する <see cref="T:System.ServiceModel.Channels.MessageFault" />。</param>
+        <param name="maxBufferSize">メッセージ バッファーの最大バッファサイズ。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" /> およびメッセージ バッファーに対する指定した最大バッファー サイズを使用する新しい <see cref="T:System.ServiceModel.Channels.Message" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, System.ServiceModel.FaultReason reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, class System.ServiceModel.FaultReason reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.ServiceModel.FaultReason)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.ServiceModel.FaultReason" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" /> オブジェクトと <see cref="T:System.ServiceModel.FaultCode" /> オブジェクトを使用する新しい <see cref="T:System.ServiceModel.FaultReason" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, string reason);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, string reason) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" /> とエラー理由を使用する新しい <see cref="T:System.ServiceModel.FaultCode" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, System.ServiceModel.FaultReason reason, object detail);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, class System.ServiceModel.FaultReason reason, object detail) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.ServiceModel.FaultReason,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.ServiceModel.FaultReason" />
+        <Parameter Name="detail" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <param name="detail">エラー詳細オブジェクト。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" />、<see cref="T:System.ServiceModel.FaultCode" />、および詳細オブジェクトを使用する新しい <see cref="T:System.ServiceModel.FaultReason" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, System.ServiceModel.FaultReason reason, object detail, System.Runtime.Serialization.XmlObjectSerializer formatter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, class System.ServiceModel.FaultReason reason, object detail, class System.Runtime.Serialization.XmlObjectSerializer formatter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.ServiceModel.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.ServiceModel.FaultReason" />
+        <Parameter Name="detail" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <param name="detail">エラー詳細オブジェクト。</param>
+        <param name="formatter">To be added.</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" />、<see cref="T:System.ServiceModel.FaultCode" />、詳細オブジェクト、および <see cref="T:System.ServiceModel.FaultReason" /> オブジェクトを使用する新しい <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, System.ServiceModel.FaultReason reason, object detail, System.Runtime.Serialization.XmlObjectSerializer formatter, string actor);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, class System.ServiceModel.FaultReason reason, object detail, class System.Runtime.Serialization.XmlObjectSerializer formatter, string actor) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.ServiceModel.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.ServiceModel.FaultReason" />
+        <Parameter Name="detail" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+        <Parameter Name="actor" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <param name="detail">エラー詳細オブジェクト。</param>
+        <param name="formatter">To be added.</param>
+        <param name="actor">アクターの値。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" />、<see cref="T:System.ServiceModel.FaultCode" />、詳細オブジェクト、<see cref="T:System.ServiceModel.FaultReason" />、およびアクターを使用する新しい <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFault">
+      <MemberSignature Language="C#" Value="public static System.ServiceModel.Channels.MessageFault CreateFault (System.ServiceModel.FaultCode code, System.ServiceModel.FaultReason reason, object detail, System.Runtime.Serialization.XmlObjectSerializer formatter, string actor, string node);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.ServiceModel.Channels.MessageFault CreateFault(class System.ServiceModel.FaultCode code, class System.ServiceModel.FaultReason reason, object detail, class System.Runtime.Serialization.XmlObjectSerializer formatter, string actor, string node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.CreateFault(System.ServiceModel.FaultCode,System.ServiceModel.FaultReason,System.Object,System.Runtime.Serialization.XmlObjectSerializer,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.MessageFault</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="code" Type="System.ServiceModel.FaultCode" />
+        <Parameter Name="reason" Type="System.ServiceModel.FaultReason" />
+        <Parameter Name="detail" Type="System.Object" />
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+        <Parameter Name="actor" Type="System.String" />
+        <Parameter Name="node" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="code">エラー メッセージのエラー コード。</param>
+        <param name="reason">エラーの理由。</param>
+        <param name="detail">エラー詳細オブジェクト。</param>
+        <param name="formatter">To be added.</param>
+        <param name="actor">アクターの値。</param>
+        <param name="node">ノードの値。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.MessageFault" />、<see cref="T:System.ServiceModel.FaultCode" />、詳細オブジェクト、<see cref="T:System.ServiceModel.FaultReason" />、アクター、およびノード値を使用する新しい <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> オブジェクトを返します。</summary>
+        <returns>A<see cref="T:System.ServiceModel.Channels.MessageFault" />で渡されたパラメーターからの初期値を持つオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDetail&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetDetail&lt;T&gt; ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetDetail&lt;T&gt;() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.GetDetail``1" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters />
+      <Docs>
+        <typeparam name="T">詳細オブジェクトの型。</typeparam>
+        <summary>メッセージ エラーの詳細オブジェクトを返します。</summary>
+        <returns>メッセージ エラーの詳細オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDetail&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public T GetDetail&lt;T&gt; (System.Runtime.Serialization.XmlObjectSerializer serializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance !!T GetDetail&lt;T&gt;(class System.Runtime.Serialization.XmlObjectSerializer serializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.GetDetail``1(System.Runtime.Serialization.XmlObjectSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="serializer" Type="System.Runtime.Serialization.XmlObjectSerializer" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">詳細オブジェクトの型。</typeparam>
+        <param name="serializer">詳細オブジェクトを逆シリアル化するときに使用する <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" />。</param>
+        <summary>指定した <see cref="T:System.Runtime.Serialization.XmlObjectSerializer" /> を使用する詳細オブジェクトを返します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.MessageFault" /> に格納された詳細オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetReaderAtDetailContents">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlDictionaryReader GetReaderAtDetailContents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlDictionaryReader GetReaderAtDetailContents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.GetReaderAtDetailContents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.XmlDictionaryReader" /> の詳細オブジェクト上に配置された <see cref="T:System.ServiceModel.Channels.MessageFault" /> オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Xml.XmlDictionaryReader" /> の詳細オブジェクトに配置される <see cref="T:System.ServiceModel.Channels.MessageFault" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDetail">
+      <MemberSignature Language="C#" Value="public abstract bool HasDetail { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDetail" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.HasDetail" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.MessageFault" /> に詳細オブジェクトがあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> に詳細オブジェクトがある場合は <see cref="T:System.ServiceModel.Channels.MessageFault" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMustUnderstandFault">
+      <MemberSignature Language="C#" Value="public bool IsMustUnderstandFault { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMustUnderstandFault" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.IsMustUnderstandFault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このエラーが SOAP ヘッダー認識の失敗によって発生したものかどうかを示す値を取得します。</summary>
+        <value>
+          このエラーが SOAP ヘッダー認識の失敗によって発生したものである場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public virtual string Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Node" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー メッセージのパスの原因で SOAP ノードに関する情報を格納する SOAP ノードを取得します。</summary>
+        <value>エラーの原因となったメッセージ パス上の SOAP ノードに関する情報を格納する SOAP ノード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGetReaderAtDetailContents">
+      <MemberSignature Language="C#" Value="protected virtual System.Xml.XmlDictionaryReader OnGetReaderAtDetailContents ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.XmlDictionaryReader OnGetReaderAtDetailContents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.OnGetReaderAtDetailContents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlDictionaryReader</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで呼び出されると、<see cref="T:System.Xml.XmlDictionaryReader" /> の詳細オブジェクトに配置された <see cref="T:System.ServiceModel.Channels.MessageFault" /> オブジェクトを返します。</summary>
+        <returns><see cref="T:System.Xml.XmlDictionaryReader" /> の詳細オブジェクトに配置される <see cref="T:System.ServiceModel.Channels.MessageFault" /> オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteDetail">
+      <MemberSignature Language="C#" Value="protected virtual void OnWriteDetail (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.EnvelopeVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteDetail(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.EnvelopeVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.OnWriteDetail(System.Xml.XmlDictionaryWriter,System.ServiceModel.EnvelopeVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="version" Type="System.ServiceModel.EnvelopeVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer">詳細要素を書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="version">書き込む SOAP エンベロープのバージョン。</param>
+        <summary>詳細内容を書き込む前に呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細書き込みプロセスに参加するには、<xref:System.ServiceModel.Channels.MessageFault.OnWriteDetail%2A> メソッドをオーバーライドします。 既定の動作では、<xref:System.ServiceModel.Channels.MessageFault.OnWriteStartDetail%2A> が呼び出された後、<xref:System.ServiceModel.Channels.MessageFault.OnWriteDetailContents%2A> が呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteDetailContents">
+      <MemberSignature Language="C#" Value="protected abstract void OnWriteDetailContents (System.Xml.XmlDictionaryWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteDetailContents(class System.Xml.XmlDictionaryWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.OnWriteDetailContents(System.Xml.XmlDictionaryWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">詳細要素を書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <summary>非抽象派生クラスでオーバーライドされた場合、詳細要素の内容を書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.MessageFault.OnWriteDetailContents%2A> メソッドは、<xref:System.ServiceModel.Channels.MessageFault.OnWriteStartDetail%2A> の後、終了要素の書き込みの前に、呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnWriteStartDetail">
+      <MemberSignature Language="C#" Value="protected virtual void OnWriteStartDetail (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.EnvelopeVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnWriteStartDetail(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.EnvelopeVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.OnWriteStartDetail(System.Xml.XmlDictionaryWriter,System.ServiceModel.EnvelopeVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="version" Type="System.ServiceModel.EnvelopeVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer">詳細要素を書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="version">書き込む SOAP エンベロープのバージョン。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlDictionaryWriter" /> および SOAP エンベロープのバージョンを使用して、開始要素を書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reason">
+      <MemberSignature Language="C#" Value="public abstract System.ServiceModel.FaultReason Reason { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.FaultReason Reason" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.MessageFault.Reason" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.FaultReason</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP エラーの説明文を取得します。</summary>
+        <value>SOAP エラーの説明文を格納する <see cref="T:System.ServiceModel.FaultReason" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WasHeaderNotUnderstood">
+      <MemberSignature Language="C#" Value="public static bool WasHeaderNotUnderstood (System.ServiceModel.Channels.MessageHeaders headers, string name, string ns);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool WasHeaderNotUnderstood(class System.ServiceModel.Channels.MessageHeaders headers, string name, string ns) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.WasHeaderNotUnderstood(System.ServiceModel.Channels.MessageHeaders,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="headers" Type="System.ServiceModel.Channels.MessageHeaders" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="ns" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="headers">SOAP メッセージ ヘッダー。</param>
+        <param name="name">ヘッダー要素の名前。</param>
+        <param name="ns">ヘッダー要素の名前空間。</param>
+        <summary>SOAP メッセージ ヘッダーが認識されたかどうかを示す値を取得します。</summary>
+        <returns>
+          メッセージ ヘッダーが認識された場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.Xml.XmlDictionaryWriter writer, System.ServiceModel.EnvelopeVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.Xml.XmlDictionaryWriter writer, class System.ServiceModel.EnvelopeVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.WriteTo(System.Xml.XmlDictionaryWriter,System.ServiceModel.EnvelopeVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlDictionaryWriter" />
+        <Parameter Name="version" Type="System.ServiceModel.EnvelopeVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer">メッセージのエラーを書き込むために使用する <see cref="T:System.Xml.XmlDictionaryWriter" />。</param>
+        <param name="version">書き込む SOAP エンベロープのバージョン。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlDictionaryWriter" /> および SOAP エンベロープのバージョンを使用するメッセージ エラーを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteTo">
+      <MemberSignature Language="C#" Value="public void WriteTo (System.Xml.XmlWriter writer, System.ServiceModel.EnvelopeVersion version);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void WriteTo(class System.Xml.XmlWriter writer, class System.ServiceModel.EnvelopeVersion version) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.MessageFault.WriteTo(System.Xml.XmlWriter,System.ServiceModel.EnvelopeVersion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="version" Type="System.ServiceModel.EnvelopeVersion" />
+      </Parameters>
+      <Docs>
+        <param name="writer">メッセージのエラーを書き込むために使用する <see cref="T:System.Xml.XmlWriter" />。</param>
+        <param name="version">書き込む SOAP エンベロープのバージョン。</param>
+        <summary>指定した <see cref="T:System.Xml.XmlWriter" /> および SOAP エンベロープのバージョンを使用するメッセージ エラーを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

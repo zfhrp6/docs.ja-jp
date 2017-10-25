@@ -1,0 +1,75 @@
+<Type Name="HtmlEmptyTagControlBuilder" FullName="System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder">
+  <TypeSignature Language="C#" Value="public sealed class HtmlEmptyTagControlBuilder : System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit HtmlEmptyTagControlBuilder extends System.Web.UI.ControlBuilder" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlBuilder</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>本文または終了タグがないられる HTML サーバー コントロールをビルドするページのパーサーと通信します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder>コントロールの対話がない本体または終了タグなどの HTML サーバー コントロールをビルドするためにページ パーサー `<img>`、 `<link>`、 `<input>`、および`<meta>`です。 <xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder.HasBody%2A>プロパティは常に返します`false`、コントロールがでビルドされたことを示す、<xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder>コントロールに終了タグがありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HtmlEmptyTagControlBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder.%23ctor%2A>メソッドは、ASP.NET ページ フレームワークによって内部的に使用し、コードから呼び出されるものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBody">
+      <MemberSignature Language="C#" Value="public override bool HasBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool HasBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder.HasBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールがでビルドされたことを示す、<see cref="T:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder" />コントロールに終了タグがありません。</summary>
+        <returns>
+          常に <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder.HasBody%2A>メソッドは、基本クラスの<xref:System.Web.UI.ControlBuilder.HasBody%2A>メソッドを常に返す`false`であるため、<xref:System.Web.UI.HtmlControls.HtmlEmptyTagControlBuilder>クラスは、終了タグがないコントロールを表します。 <xref:System.Web.UI.ControlBuilder.HasBody%2A>のメソッド、<xref:System.Web.UI.ControlBuilder>クラスは、タグと終了タグの両方に、コントロールがあるかどうかを決定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,464 @@
+<Type Name="TreeNodeStyle" FullName="System.Web.UI.WebControls.TreeNodeStyle">
+  <TypeSignature Language="C#" Value="public sealed class TreeNodeStyle : System.Web.UI.WebControls.Style" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeNodeStyle extends System.Web.UI.WebControls.Style" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Style</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のノードのスタイルを表す、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle>内のノードのスタイルを表すクラス、<xref:System.Web.UI.WebControls.TreeView>コントロール。 <xref:System.Web.UI.WebControls.TreeView>の別のノードの種類の各コントロールを使用するフォント サイズや色) などの別のスタイル特性を指定します。  
+  
+ 次の表でサポートされているノードのスタイル、<xref:System.Web.UI.WebControls.TreeNodeStyle>クラスです。  
+  
+|ノードのスタイル プロパティ|説明|  
+|-------------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.TreeView.HoverNodeStyle%2A>|マウス ポインターを置いたときにノードのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.TreeView.LeafNodeStyle%2A>|リーフ ノードのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.TreeView.NodeStyle%2A>|ノードの既定のスタイル設定します。|  
+|<xref:System.Web.UI.WebControls.TreeView.ParentNodeStyle%2A>|親ノードのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.TreeView.RootNodeStyle%2A>|ルート ノードのスタイルの設定。|  
+|<xref:System.Web.UI.WebControls.TreeView.SelectedNodeStyle%2A>|選択したノードのスタイルの設定。|  
+  
+ ノードを設定するときのスタイル プロパティ、<xref:System.Web.UI.WebControls.TreeView>コントロール、次の順序で適用されます。  
+  
+1.  <xref:System.Web.UI.WebControls.TreeView.NodeStyle%2A>。  
+  
+2.  <xref:System.Web.UI.WebControls.TreeView.RootNodeStyle%2A>、 <xref:System.Web.UI.WebControls.TreeView.ParentNodeStyle%2A>、または<xref:System.Web.UI.WebControls.TreeView.LeafNodeStyle%2A>、ノードの種類によって異なります。  
+  
+3.  <xref:System.Web.UI.WebControls.TreeView.LevelStyles%2A>。  
+  
+4.  <xref:System.Web.UI.WebControls.TreeView.SelectedNodeStyle%2A>。  
+  
+5.  <xref:System.Web.UI.WebControls.TreeView.HoverNodeStyle%2A>。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeStyle>クラスからそのメンバーのほとんどの継承、<xref:System.Web.UI.WebControls.Style>クラスです。 拡張されて、<xref:System.Web.UI.WebControls.Style>隣接するノード間の空白と同様に、ノード内のテキストの周囲のスペースの量を制御するプロパティを提供するクラス。 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.HorizontalPadding%2A>ノード内のテキストの右側と左側の領域の量を制御するプロパティです。 同様に、<xref:System.Web.UI.WebControls.TreeNodeStyle.VerticalPadding%2A>プロパティは、ノード内のテキストの下と上の領域の量を制御します。 ノード間のスペースの量を制御することができますを<xref:System.Web.UI.WebControls.TreeNodeStyle>に適用されると、隣接するノードを設定して、<xref:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing%2A>プロパティです。 親ノードと子ノードの間のスペースの量を制御する、<xref:System.Web.UI.WebControls.TreeNodeStyle.ChildNodesPadding%2A>プロパティです。  
+  
+ 継承したスタイルの設定に関する詳細については、次を参照してください。<xref:System.Web.UI.WebControls.Style>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、親のノードの外観を制御する方法を示します、<xref:System.Web.UI.WebControls.TreeView>コントロールのスタイル プロパティを設定して、<xref:System.Web.UI.WebControls.TreeNodeStyle>から返されるオブジェクト、<xref:System.Web.UI.WebControls.TreeView.ParentNodeStyle%2A>プロパティです。  
+  
+ [!code-aspx-csharp[TreeNodeStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyle/CS/treenodestylecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyle/VB/treenodestylevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.TreeNodeStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeStyle (System.Web.UI.StateBag bag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.StateBag bag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.#ctor(System.Web.UI.StateBag)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="bag" Type="System.Web.UI.StateBag" />
+      </Parameters>
+      <Docs>
+        <param name="bag">A<see cref="T:System.Web.UI.StateBag" />スタイル情報を格納します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Web.UI.WebControls.TreeNodeStyle" /> 、指定したクラス<see cref="T:System.Web.UI.StateBag" />オブジェクトの情報です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.%23ctor%2A>作成しの新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.TreeNodeStyle>クラスを使用して、<xref:System.Web.UI.StateBag>で指定されたオブジェクト、`bag`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildNodesPadding">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit ChildNodesPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit ChildNodesPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyle.ChildNodesPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を親と子ノード間のスペースの量を<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />クラスを適用します。</summary>
+        <value>(ピクセル単位) の領域の量は上で親ノードの子ノードのセクションの下です。 既定値は、0 ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.ChildNodesPadding%2A>するノードの子ノードのセクションの下と上の領域の量を制御するプロパティ、<xref:System.Web.UI.WebControls.TreeNodeStyle>クラスを適用します。 この間隔は、親ノードとその最初の子ノードの間だけでなく、最後の子ノードと [次へ] ノードの間に挿入されます。  
+  
+> [!NOTE]
+>  これは、コントロールの下部にある不必要なギャップを外に出るために、次の最後の子ノードでは、追加のノードがない場合は、最後の子ノードの後にスペースは表示されません。  
+  
+ 子ノード間のスペースの量を制御する、<xref:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.ChildNodesPadding%2A>プロパティの親ノードの子ノードのセクションの上下の領域を指定します。  
+  
+ [!code-aspx-csharp[TreeNodeStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyle/CS/treenodestylecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyle/VB/treenodestylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値の型は<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />またはより小さい<see langword="0" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyFrom">
+      <MemberSignature Language="C#" Value="public override void CopyFrom (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CopyFrom(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.CopyFrom(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s"><see cref="T:System.Web.UI.WebControls.Style" />をコピーします。</param>
+        <summary>指定したスタイルのプロパティをコピー<see cref="T:System.Web.UI.WebControls.Style" />現在オブジェクト<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.CopyFrom%2A>メソッドを指定のスタイル プロパティを複製する<xref:System.Web.UI.WebControls.Style>内のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyle>このメソッドを呼び出すオブジェクト。  
+  
+> [!NOTE]
+>  現在のすべてのプロパティ<xref:System.Web.UI.WebControls.TreeNodeStyle>、対応するプロパティで指定したオブジェクトを置き換える<xref:System.Web.UI.WebControls.Style>オブジェクト。  
+  
+ 既に設定されている任意の値を置き換えることがなくスタイル プロパティをコピーするには、使用、<xref:System.Web.UI.WebControls.TreeNodeStyle.MergeWith%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.CopyFrom%2A>に指定したスタイルのプロパティをコピーする方法<xref:System.Web.UI.WebControls.Style>オブジェクトに、<xref:System.Web.UI.WebControls.TreeNodeStyle>このメソッドを呼び出すオブジェクト。 すべてのスタイル プロパティが置き換えられることに注意してください。  
+  
+ [!code-aspx-csharp[TreeNodeStyleCopyFrom#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyleCopyFrom/CS/treenodestylecopyfromcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyleCopyFrom#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyleCopyFrom/VB/treenodestylecopyfromvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillStyleAttributes">
+      <MemberSignature Language="C#" Value="protected override void FillStyleAttributes (System.Web.UI.CssStyleCollection attributes, System.Web.UI.IUrlResolutionService urlResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void FillStyleAttributes(class System.Web.UI.CssStyleCollection attributes, class System.Web.UI.IUrlResolutionService urlResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.FillStyleAttributes(System.Web.UI.CssStyleCollection,System.Web.UI.IUrlResolutionService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Web.UI.CssStyleCollection" />
+        <Parameter Name="urlResolver" Type="System.Web.UI.IUrlResolutionService" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">To be added.</param>
+        <param name="urlResolver">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalPadding">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit HorizontalPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit HorizontalPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyle.HorizontalPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または内のノードとテキストの左側の領域の量を設定します。</summary>
+        <value>ノードのテキストの右側および左側には、です (ピクセル単位) の領域の量。 既定値は、0 ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.HorizontalPadding%2A>プロパティは、ノードのテキストの周辺の水平スペースの量を制御する、<xref:System.Web.UI.WebControls.TreeNodeStyle>を適用します。 この領域は、テキストの左端とテキスト領域の枠線の間だけでなく、テキストの右端とテキストの境界線の間に挿入されます。 上下の間隔を制御するには、使用、<xref:System.Web.UI.WebControls.TreeNodeStyle.VerticalPadding%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.HorizontalPadding%2A>ノードのテキストの周辺の左右の間隔を制御するプロパティです。  
+  
+ [!code-aspx-csharp[TreeNodeStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyle/CS/treenodestylecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyle/VB/treenodestylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値の型は<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />またはより小さい<see langword="0" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImageUrl">
+      <MemberSignature Language="C#" Value="public string ImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyle.ImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはノードの横に表示されるイメージの URL を設定します。</summary>
+        <value>ノードの横に表示されるカスタム イメージの URL です。 既定値は空の文字列 ("")、ことを示します、<see cref="P:System.Web.UI.WebControls.TreeNodeStyle.ImageUrl" />プロパティが設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.ImageUrl%2A>スタイルのカスタム イメージを指定するプロパティです。 このイメージが、ノードの横に表示され、ことができます (.jpg、.gif、.bmp など) などの任意のイメージ ファイル形式でクライアントのブラウザーでサポートされている限り。  
+  
+ 両方の<xref:System.Web.UI.WebControls.TreeNodeStyle.ImageUrl%2A>と<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティが設定されて、表示されるイメージがで指定されている 1 つ、<xref:System.Web.UI.WebControls.TreeNode.ImageUrl%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">選択した値は<see langword="null" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MergeWith">
+      <MemberSignature Language="C#" Value="public override void MergeWith (System.Web.UI.WebControls.Style s);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void MergeWith(class System.Web.UI.WebControls.Style s) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.MergeWith(System.Web.UI.WebControls.Style)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="s" Type="System.Web.UI.WebControls.Style" />
+      </Parameters>
+      <Docs>
+        <param name="s"><see cref="T:System.Web.UI.WebControls.Style" />現在のノードの設定を使用するマージされます。</param>
+        <summary>指定したスタイルのプロパティを組み合わせて<see cref="T:System.Web.UI.WebControls.Style" />、現在のスタイル プロパティを持つオブジェクト<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.MergeWith%2A>メソッドの指定したスタイルのプロパティを結合する<xref:System.Web.UI.WebControls.Style>のスタイル プロパティを持つオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyle>からこのメソッドが呼び出されるオブジェクト。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeStyle.MergeWith%2A>メソッドは、現在設定されている各プロパティを設定してスタイルのプロパティを結合<xref:System.Web.UI.WebControls.TreeNodeStyle>が指定された、対応する値を持つオブジェクト<xref:System.Web.UI.WebControls.Style>オブジェクト。 設定されていないプロパティだけが更新されます。 場合、指定したプロパティ<xref:System.Web.UI.WebControls.Style>オブジェクトが設定されていない、現在の対応するプロパティ<xref:System.Web.UI.WebControls.TreeNodeStyle>オブジェクトは変更されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.MergeWith%2A>メソッドの指定したスタイルのプロパティを結合する<xref:System.Web.UI.WebControls.Style>のオブジェクト、<xref:System.Web.UI.WebControls.TreeNodeStyle>このメソッドを呼び出すオブジェクト。 設定解除だけであることを確認<xref:System.Web.UI.WebControls.TreeNodeStyle>プロパティが置き換えられます。  
+  
+ [!code-aspx-csharp[TreeNodeStyleMergeWith#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyleMergeWith/CS/treenodestylemergewithcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyleMergeWith#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyleMergeWith/VB/treenodestylemergewithvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NodeSpacing">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit NodeSpacing { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit NodeSpacing" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定するノードの間の上下の間隔の量、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />オブジェクトが適用されると、隣接するノードです。</summary>
+        <value>(ピクセル単位) をノード間の垂直方向のスペースの量、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />が適用されると、同じレベルの隣接するノードです。 既定値は、0 ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing%2A>ノード間の上下のスペースの量を制御するプロパティを<xref:System.Web.UI.WebControls.TreeNodeStyle>に適用されると同じレベルの横にあるそのノード。 この領域は、次のノードの上限と挿入された、現在のノードの上端と下端前のノードの間、および現在のノードの下枠の端です。 最初のノードの上の領域はレンダリングされません、<xref:System.Web.UI.WebControls.TreeView>を制御するため、これは、コントロールの上部にある不必要なギャップのままにします。  
+  
+ <xref:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing%2A>と<xref:System.Web.UI.WebControls.TreeNodeStyle.ChildNodesPadding%2A>プロパティが個別に適用されていません。 ノードを展開するかどうかは、ノードの間隔には影響しません。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.NodeSpacing%2A>ツリーのノードと同じレベルの横にあるそのノードの間の上下の間隔を指定するプロパティです。  
+  
+ [!code-aspx-csharp[TreeNodeStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyle/CS/treenodestylecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyle/VB/treenodestylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値の型は<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />またはより小さい<see langword="0" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public override void Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeStyle.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Web.UI.WebControls.TreeNodeStyle" />を元の状態オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.Reset%2A>を削除するメソッドは以前スタイル要素を定義し、リセット、<xref:System.Web.UI.WebControls.TreeNodeStyle>元 (つまり、既定値) の状態オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.Reset%2A>を返すメソッドを<xref:System.Web.UI.WebControls.TreeNodeStyle>既定状態へのオブジェクト。  
+  
+ [!code-aspx-csharp[TreeNodeStyleMergeWith#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyleMergeWith/CS/treenodestylemergewithcs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyleMergeWith#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyleMergeWith/VB/treenodestylemergewithvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalPadding">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Unit VerticalPadding { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Unit VerticalPadding" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeStyle.VerticalPadding" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.WebControls.Unit), "")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.NotifyParentProperty(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Unit</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または上と、テキスト ノードの下の領域の量を設定します。</summary>
+        <value>(ピクセル単位)、ノードのテキストの上下の領域の量。 既定値は、0 ピクセルです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeStyle.VerticalPadding%2A>プロパティは、ノードのテキストの周辺の垂直方向のスペースの量を制御する、<xref:System.Web.UI.WebControls.TreeNodeStyle>クラスを適用します。 この領域は、テキストの上端とテキスト領域の枠線の間だけでなく、テキストの下枠とテキストの境界線の間に挿入されます。 左右の間隔を制御するには、使用、<xref:System.Web.UI.WebControls.TreeNodeStyle.HorizontalPadding%2A>プロパティです。  
+  
+ このプロパティの値は、ビュー ステートに格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeStyle.VerticalPadding%2A>プロパティ ノードのテキストを垂直方向のスペースを指定します。  
+  
+ [!code-aspx-csharp[TreeNodeStyle#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeNodeStyle/CS/treenodestylecs.aspx#1)]
+ [!code-aspx-vb[TreeNodeStyle#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeNodeStyle/VB/treenodestylevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">選択した値の型は<see cref="F:System.Web.UI.WebControls.UnitType.Percentage" />またはより小さい<see langword="0" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

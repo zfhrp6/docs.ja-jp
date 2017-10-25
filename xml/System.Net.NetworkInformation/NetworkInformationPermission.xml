@@ -1,0 +1,494 @@
+<Type Name="NetworkInformationPermission" FullName="System.Net.NetworkInformation.NetworkInformationPermission">
+  <TypeSignature Language="C#" Value="public sealed class NetworkInformationPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit NetworkInformationPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Net.NetworkInformation.NetworkInformationPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>ネットワーク情報と、ローカル コンピューターのトラフィックの統計情報へのアクセスを制御します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このアクセス許可がクラスでは、によって返されるデータの保護に使用される、<xref:System.Net.NetworkInformation>名前空間。  
+  
+ 宣言型セキュリティを使用して、<xref:System.Net.NetworkInformation.NetworkInformationPermissionAttribute>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、無制限のアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#1)]
+ [!code-csharp[NclNetworkInfoPerms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#1)]
+ [!code-vb[NclNetworkInfoPerms#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetworkInformationPermission (System.Net.NetworkInformation.NetworkInformationAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Net.NetworkInformation.NetworkInformationAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.#ctor(System.Net.NetworkInformation.NetworkInformationAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkInformation.NetworkInformationAccess" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.NetworkInformation.NetworkInformationAccess" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" />クラス<see cref="T:System.Net.NetworkInformation.NetworkInformationAccess" />値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成されたアクセス許可は、ネットワークの情報へのアクセスをセキュリティで保護を使用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、アクセスを制御するアクセス許可オブジェクトを作成するネットワークの情報です。  
+  
+ [!code-cpp[NclNetworkInfoPerms#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#3)]
+ [!code-csharp[NclNetworkInfoPerms#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#3)]
+ [!code-vb[NclNetworkInfoPerms#3](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetworkInformationPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" /> を使用して、<see cref="T:System.Security.Permissions.PermissionState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターによって作成されたアクセス許可は、ネットワークの情報へのアクセスをセキュリティで保護を使用できます。  
+  
+   
+  
+## Examples  
+ 次の例では、無制限のアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#1)]
+ [!code-csharp[NclNetworkInfoPerms#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#1)]
+ [!code-vb[NclNetworkInfoPerms#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Access">
+      <MemberSignature Language="C#" Value="public System.Net.NetworkInformation.NetworkInformationAccess Access { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.NetworkInformation.NetworkInformationAccess Access" />
+      <MemberSignature Language="DocId" Value="P:System.Net.NetworkInformation.NetworkInformationPermission.Access" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.NetworkInformation.NetworkInformationAccess</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このアクセス許可によって制御されるネットワークの情報へのアクセス レベルを取得します。</summary>
+        <value><see cref="T:System.Net.NetworkInformation.NetworkInformationAccess" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Net.NetworkInformation.NetworkInformationPermission>で作成された<xref:System.Security.Permissions.PermissionState?displayProperty=nameWithType>指定<xref:System.Net.NetworkInformation.NetworkInformationAccess.Ping>& #124 です。<xref:System.Net.NetworkInformation.NetworkInformationAccess.Read>アクセスします。 A<xref:System.Net.NetworkInformation.NetworkInformationPermission>で作成された<xref:System.Security.Permissions.PermissionState?displayProperty=nameWithType>指定<xref:System.Net.NetworkInformation.NetworkInformationAccess.None>アクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、 <xref:System.Net.NetworkInformation.NetworkInformationPermission>、追加、<xref:System.Net.NetworkInformation.NetworkInformationAccess>値と、このプロパティの値を表示します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#7)]
+ [!code-csharp[NclNetworkInfoPerms#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#7)]
+ [!code-vb[NclNetworkInfoPerms#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPermission">
+      <MemberSignature Language="C#" Value="public void AddPermission (System.Net.NetworkInformation.NetworkInformationAccess access);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddPermission(valuetype System.Net.NetworkInformation.NetworkInformationAccess access) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.AddPermission(System.Net.NetworkInformation.NetworkInformationAccess)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="access" Type="System.Net.NetworkInformation.NetworkInformationAccess" />
+      </Parameters>
+      <Docs>
+        <param name="access"><see cref="T:System.Net.NetworkInformation.NetworkInformationAccess" /> 値のいずれか。</param>
+        <summary>このアクセス許可を指定された値を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用すると、現在のアクセス許可の状態を追加することでネットワークの情報へのアクセスを変更できます。  
+  
+   
+  
+## Examples  
+ 次の例では、空のアクセス許可オブジェクトを作成し、それに追加されます。  
+  
+ [!code-cpp[NclNetworkInfoPerms#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#7)]
+ [!code-csharp[NclNetworkInfoPerms#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#7)]
+ [!code-vb[NclNetworkInfoPerms#7](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成して、このアクセス許可の完全なコピーを返します。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" />現在のアクセス許可と同じであります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可のコピーは、元のアクセス許可としてリソースに対して同じアクセス権を表します。  
+  
+   
+  
+## Examples  
+ 次の例では、アクセス許可オブジェクトのコピーを作成します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#4)]
+ [!code-csharp[NclNetworkInfoPerms#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#4)]
+ [!code-vb[NclNetworkInfoPerms#4](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement securityElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement securityElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityElement" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="securityElement">A<see cref="T:System.Security.SecurityElement" />を使用して現在のアクセス許可の状態を設定する XML エンコードを格納しています。</param>
+        <summary>指定された XML エンコードを使用してこのアクセス許可の状態を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ システムで使用し、アプリケーション コードでは通常呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="securityElement" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="securityElement" />アクセス許可ではないエンコードします。  
+  
+ または  
+  
+ <paramref name="securityElement" />エンコーディングではないのは、<see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" />です。  
+  
+ または  
+  
+ <paramref name="securityElement" />無効な<see cref="T:System.Net.NetworkInformation.NetworkInformationAccess" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Security.IPermission" />の現在のアクセス許可と交差します。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在のアクセス許可と指定したアクセス許可の積集合であるアクセス許可を作成して返します。</summary>
+        <returns>A<see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" />を現在のアクセス許可と指定したアクセス許可の積集合を表すです。 この新しいアクセス許可は<see langword="null" />積集合が空の場合、または<paramref name="target" />は<see langword="null" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、両方に共通する状態を説明する権限です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+   
+  
+## Examples  
+ 次の例では、既存のアクセス許可オブジェクトの積集合であるアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#6)]
+ [!code-csharp[NclNetworkInfoPerms#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#6)]
+ [!code-vb[NclNetworkInfoPerms#6](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="target" /> が <see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target"><see cref="T:System.Security.IPermission" />サブセットの関係をテストすることができます。 このアクセス許可が現在のアクセス許可と同じ型である必要があります。</param>
+        <summary>現在のアクセス許可が、指定したアクセス許可のサブセットであるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が指定した権限のサブセットの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のアクセス許可は、現在のアクセス許可を指定した権限によって完全に含まれる状態を指定する場合、指定したアクセス許可のサブセットです。 このメソッドは、true を返します、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、2 つのアクセス許可のサブセットの関係を表示します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#5)]
+ [!code-csharp[NclNetworkInfoPerms#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#5)]
+ [!code-vb[NclNetworkInfoPerms#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のアクセス許可が無制限かどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、無制限のアクセス許可を作成、<xref:System.Net.NetworkInformation.NetworkInformationPermission.%23ctor%2A>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 次の例では、アクセス許可オブジェクトを作成し、その状態が表示されます。  
+  
+ [!code-cpp[NclNetworkInfoPerms#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#2)]
+ [!code-csharp[NclNetworkInfoPerms#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#2)]
+ [!code-vb[NclNetworkInfoPerms#2](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このアクセス許可の状態の XML エンコードを作成します。</summary>
+        <returns>A<see cref="T:System.Security.SecurityElement" />は、現在のアクセス許可の XML エンコードが含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、セキュリティ システムで使用し、アプリケーション コードでは通常呼び出されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.NetworkInformation.NetworkInformationPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">A<see cref="T:System.Net.NetworkInformation.NetworkInformationPermission" />現在のアクセス許可と結合するアクセス許可。</param>
+        <summary>このアクセス許可と、指定した権限の和集合であるアクセス許可を作成します。</summary>
+        <returns>現在のアクセス許可と指定されたアクセス許可の和集合を表す新しいアクセス許可。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.NetworkInformation.NetworkInformationPermission.Union%2A>メソッドは現在のアクセス許可と、指定した権限の両方で表されるすべての状態を表すアクセス許可を返します。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+   
+  
+## Examples  
+ 次の例では、既存のアクセス許可オブジェクトの和集合であるアクセス許可オブジェクトを作成します。  
+  
+ [!code-cpp[NclNetworkInfoPerms#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NclNetworkInfoPerms/CPP/NclNetworkInfoPerms.cpp#5)]
+ [!code-csharp[NclNetworkInfoPerms#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NclNetworkInfoPerms/CS/permissionexample.cs#5)]
+ [!code-vb[NclNetworkInfoPerms#5](~/samples/snippets/visualbasic/VS_Snippets_Remoting/NclNetworkInfoPerms/VB/permissionexample.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

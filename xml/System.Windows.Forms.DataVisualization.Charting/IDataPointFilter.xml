@@ -1,0 +1,73 @@
+<Type Name="IDataPointFilter" FullName="System.Windows.Forms.DataVisualization.Charting.IDataPointFilter">
+  <TypeSignature Language="C#" Value="public interface IDataPointFilter" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDataPointFilter" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>公開、<see cref="M:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter.FilterDataPoint(System.Windows.Forms.DataVisualization.Charting.DataPoint,System.Windows.Forms.DataVisualization.Charting.Series,System.Int32)" />メソッド<see cref="T:System.Windows.Forms.DataVisualization.Charting.Series" />カスタムするデータのフィルター処理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter>インターフェイスの公開、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter.FilterDataPoint%2A>メソッドでは、系列内の特定のデータ ポイントの受け取りを返す、`Boolean`データ ポイントがフィルター処理するかどうかを決定する値。  
+  
+ カスタムのフィルタ リングを実行します。  
+  
+-   このインターフェイスから新規または既存のクラスを派生します。  
+  
+-   上書き、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter.FilterDataPoint%2A>カスタム フィルター ロジックを実装するメソッド。  
+  
+-   フィルター処理を開始するには、いずれかを呼び出して、`Filter`内のメソッド、<xref:System.Windows.Forms.DataVisualization.Charting.DataManipulator>を受け取るクラス、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter>最初のパラメーターとしてオブジェクト。  
+  
+ サンプル ソース コードでは、次を参照してください。、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter.FilterDataPoint%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FilterDataPoint">
+      <MemberSignature Language="C#" Value="public bool FilterDataPoint (System.Windows.Forms.DataVisualization.Charting.DataPoint point, System.Windows.Forms.DataVisualization.Charting.Series series, int pointIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool FilterDataPoint(class System.Windows.Forms.DataVisualization.Charting.DataPoint point, class System.Windows.Forms.DataVisualization.Charting.Series series, int32 pointIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter.FilterDataPoint(System.Windows.Forms.DataVisualization.Charting.DataPoint,System.Windows.Forms.DataVisualization.Charting.Series,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Forms.DataVisualization.Charting.DataPoint" />
+        <Parameter Name="series" Type="System.Windows.Forms.DataVisualization.Charting.Series" />
+        <Parameter Name="pointIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="point"><see cref="T:System.Windows.Forms.DataVisualization.Charting.DataPoint" />フィルター選択するオブジェクト。</param>
+        <param name="series"><see cref="T:System.Windows.Forms.DataVisualization.Charting.Series" />データ ポイントに属しているオブジェクト。</param>
+        <param name="pointIndex">系列内の位置を決定する、データ ポイントのインデックス。</param>
+        <summary>系列内の特定のデータ ポイントがフィルター処理するかどうかを判断します。</summary>
+        <returns>
+          <see langword="True" />データ ポイントが削除された場合、それ以外の場合<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、系列内の各データ ポイントを呼び出す必要があり、返します、`Boolean`データ ポイントをフィルター処理するかどうかを示す値。  
+  
+ カスタム フィルター処理するから新規または既存のクラスを派生させる、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter>インターフェイスし、このメソッドを実装します。 一致ロジックを独自の条件を入力し、返す`true`または`false`をフィルター選択されるデータ ポイントをマークします。 このメソッドが実装されるのいずれかを使用、`Filter`にメソッド定義、<xref:System.Windows.Forms.DataVisualization.Charting.DataManipulator>を受け取るクラス、<xref:System.Windows.Forms.DataVisualization.Charting.IDataPointFilter>フィルター処理を実行するパラメーターとしてオブジェクト。  
+  
+ 既定では、フィルター選択されたポイントが系列から削除されます。 表示することも空のポイントとしての値を設定して、<xref:System.Windows.Forms.DataVisualization.Charting.DataManipulator.FilterSetEmptyPoints%2A>プロパティを`true`です。  
+  
+ フィルター選択された点は、フィルターによって決定される、フィルター条件に一致しない場合にも設定する、<xref:System.Windows.Forms.DataVisualization.Charting.DataManipulator.FilterMatchedPoints%2A>値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

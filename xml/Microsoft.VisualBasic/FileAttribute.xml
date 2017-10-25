@@ -1,0 +1,146 @@
+<Type Name="FileAttribute" FullName="Microsoft.VisualBasic.FileAttribute">
+  <TypeSignature Language="C#" Value="public enum FileAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FileAttribute extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.FileAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ファイル アクセス関数を呼び出すときに使用するファイル属性を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出すと、 `Dir`、 `GetAttr`、または`SetAttr`関数、行うこともできます、`FileAttribute`実際の値の代わりに、コード内で列挙します。  
+  
+ `Attributes`引数は、`FileAttribute`列挙型メンバー。  
+  
+ ファイル I/O 操作を実行するときに、`My.Computer.FileSystem`オブジェクトが、メソッドを I/O パフォーマンスと従来のファイルよりも使いやすさの向上を提供します。 詳細については、「<xref:Microsoft.VisualBasic.FileSystem>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Archive">
+      <MemberSignature Language="C#" Value="Archive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute Archive = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.Archive" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルは、最後のバックアップから変更されました。 このメンバーは、Visual Basic 定数の <see langword="vbArchive" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Directory">
+      <MemberSignature Language="C#" Value="Directory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute Directory = int32(16)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.Directory" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディレクトリまたはフォルダーです。 このメンバーは、Visual Basic 定数の <see langword="vbDirectory" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Hidden">
+      <MemberSignature Language="C#" Value="Hidden" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute Hidden = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.Hidden" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>非表示にします。 このメンバーは、Visual Basic 定数の <see langword="vbHidden" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Normal">
+      <MemberSignature Language="C#" Value="Normal" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute Normal = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.Normal" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>標準 (の既定の<see langword="Dir" />と<see langword="SetAttr" />)。 このファイルには、特別な特性は適用されません。 このメンバーは、Visual Basic 定数の <see langword="vbNormal" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadOnly">
+      <MemberSignature Language="C#" Value="ReadOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute ReadOnly = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.ReadOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>読み取り専用です。 このメンバーは、Visual Basic 定数の <see langword="vbReadOnly" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="System">
+      <MemberSignature Language="C#" Value="System" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute System = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.System" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システム ファイル。 このメンバーは、Visual Basic 定数の <see langword="vbSystem" /> に相当します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Volume">
+      <MemberSignature Language="C#" Value="Volume" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Microsoft.VisualBasic.FileAttribute Volume = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.VisualBasic.FileAttribute.Volume" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.FileAttribute</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ボリューム ラベル。 この属性はと共に使用する場合は、無効<see langword="SetAttr" />です。 このメンバーは、Visual Basic 定数の <see langword="vbVolume" /> に相当します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,114 @@
+<Type Name="SigningOutEventArgs" FullName="System.IdentityModel.Services.SigningOutEventArgs">
+  <TypeSignature Language="C#" Value="public class SigningOutEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SigningOutEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.SigningOutEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.IdentityModel.Services.WSFederationAuthenticationModule.SigningOut" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り、 <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A> (は RP によってサインアウト クリーンアップ要求メッセージを受信しました)、IP により、サインアウトの項目が開始されたかどうかを決定するイベント ハンドラーのプロパティかどうか、サインアウトによって開始された、証明書利用者 (RP) またはします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SigningOutEventArgs (bool isIPInitiated);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool isIPInitiated) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.SigningOutEventArgs.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="isIPInitiated" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="isIPInitiated">
+          <see langword="true" />サインアウト; IP が要求した場合それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Services.SigningOutEventArgs" />かどうかサインアウトによって要求された id プロバイダー (IP) を指定する値を使用して、クラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A>の値に設定されて、`isIPInitiated`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IPInitiated">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.SigningOutEventArgs IPInitiated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.SigningOutEventArgs IPInitiated" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SigningOutEventArgs.IPInitiated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SigningOutEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Services.SigningOutEventArgs" />サインアウト id プロバイダー (IP) によって開始されたことを示します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Services.SigningOutEventArgs" />を持つその<see cref="P:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated" />プロパティ セット<see langword="true" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIPInitiated">
+      <MemberSignature Language="C#" Value="public bool IsIPInitiated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIPInitiated" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Ws-federation サインアウト クリーンアップ メッセージ ("wsignoutcleanup1.0") を使用して id プロバイダー (IP) によってサインアウトの項目が開始されたかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />サインアウト; IP によって開始された場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント ハンドラーで使用することができます、 <xref:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated%2A> (は RP によってサインアウト クリーンアップ要求メッセージを受信しました)、IP により、サインアウトの項目が開始されたかどうかを決定するプロパティかどうか、サインアウトによって開始された、証明書利用者 (RP) またはします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RPInitiated">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.SigningOutEventArgs RPInitiated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.IdentityModel.Services.SigningOutEventArgs RPInitiated" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Services.SigningOutEventArgs.RPInitiated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SigningOutEventArgs</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.IdentityModel.Services.SigningOutEventArgs" />サインアウト、証明書利用者 (RP) によって開始されたことを示します。</summary>
+        <value>A<see cref="T:System.IdentityModel.Services.SigningOutEventArgs" />を持つその<see cref="P:System.IdentityModel.Services.SigningOutEventArgs.IsIPInitiated" />プロパティ セット<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

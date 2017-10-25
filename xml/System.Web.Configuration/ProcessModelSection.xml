@@ -1,0 +1,1238 @@
+<Type Name="ProcessModelSection" FullName="System.Web.Configuration.ProcessModelSection">
+  <TypeSignature Language="C#" Value="public sealed class ProcessModelSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProcessModelSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ProcessModelSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>インターネット インフォメーション サービス (IIS) Web サーバーで ASP.NET プロセス モデルの設定を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`processModel`構成ファイルのセクションです。  
+  
+ <xref:System.Web.Configuration.ProcessModelSection>クラスは、ASP.NET ワーカー プロセスの間では、どのようなセキュリティ id を下にある、実行、時に作成されたインスタンスの数などのさまざまな側面を制御し、サイズ、CLR のスレッドのサービス要求にプールします。  
+  
+ ASP.NET は、ネイティブ モードで IIS 6 で実行中は、ASP.NET は IIS 6 プロセス モデルを使用し、このセクションのほとんどの設定を無視します。 これらのプロパティを構成するのにには、IIS の管理ユーザー インターフェイス (UI) を使用します。 ASP.NET 構成ファイルによって構成でき、次のプロパティを使用できます: <xref:System.Web.Configuration.ProcessModelSection.RequestQueueLimit%2A>、 <xref:System.Web.Configuration.ProcessModelSection.ResponseDeadlockInterval%2A>、 <xref:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads%2A>、 <xref:System.Web.Configuration.ProcessModelSection.MaxIOThreads%2A>、 <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>、および<xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>です。  
+  
+ `processModel` ASP.NET ISAPI 拡張機能では、使用されるため、保護された構成機能やツールを使用してセクションを暗号化することはできません。  
+  
+   
+  
+## Examples  
+ この例は、宣言の複数の属性の値を指定する方法を示します、`processModel`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.ProcessModelSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`processModel`セクションです。  
+  
+```  
+<processModel   
+  enable="True" timeout="Infinite"   
+  idleTimeout="Infinite"   
+  shutdownTimeout="00:00:05" requestLimit="Infinite"  
+  requestQueueLimit="5000" restartQueueLimit="10"   
+  memoryLimit="60" webGarden="False" cpuMask="0xffffffff"   
+  userName="machine" password="AutoGenerate" logLevel="Errors"  
+  clientConnectedCheck="00:00:05"   
+  comAuthenticationLevel="Connect" comImpersonationLevel="Impersonate"  
+  responseDeadlockInterval="00:03:00"   
+  responseRestartDeadlockInterval="00:03:00" autoConfig="True"  
+  maxWorkerThreads="20" maxIoThreads="20" minWorkerThreads="1"  
+  minIoThreads="1" serverErrorMessageFile="" pingFrequency="Infinite"  
+  pingTimeout="Infinite" asyncOption="20" maxAppDomains="2000"   
+/>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProcessModelSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#1)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProcessModelSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProcessModelSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.ProcessModelSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.ProcessModelSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoConfig">
+      <MemberSignature Language="C#" Value="public bool AutoConfig { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutoConfig" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.AutoConfig" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("autoConfig", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET アプリケーションの ASP.NET パフォーマンス設定を自動的に構成するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />パフォーマンスの設定が ASP.NET アプリケーションを自動的に構成されている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.ProcessModelSection.AutoConfig%2A>に値が設定されている`false`、ASP.NET アプリケーションのパフォーマンスの構成を決定する Web.config の明示的な値を使用します。 場合、<xref:System.Web.Configuration.ProcessModelSection.AutoConfig%2A>に値が設定されている`true`、ASP.NET アプリケーションのパフォーマンス設定を自動的に構成します。  
+  
+ <xref:System.Web.Configuration.ProcessModelSection.AutoConfig%2A>値に明示的に設定`true`Machine.config ファイルにします。 既定のコード値に設定`false`です。  場合、 <xref:System.Web.Configuration.ProcessModelSection.AutoConfig%2A> Machine.config から値が削除され、明示的な設定は自動構成される設定の代わりに使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ClientConnectedCheck">
+      <MemberSignature Language="C#" Value="public TimeSpan ClientConnectedCheck { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ClientConnectedCheck" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ClientConnectedCheck" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("clientConnectedCheck", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、要求はどのくらいの時間を示す値が、キューに残されます。</summary>
+        <value>A<see cref="T:System.TimeSpan" />キューの時刻を示す値。 既定値は、5 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、要求は、どのくらいの時間を指定します。 ASP.NET は、クライアント接続チェックを実行する前にキューに登録します。  
+  
+> [!NOTE]
+>  要求が待ちのときに、間隔が経過すると、クライアント接続チェックは、ASP.NET ワーカー プロセスを処理するために経由で要求を渡す前に行われます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセスおよび変更する方法を示しています、<xref:System.Web.Configuration.ProcessModelSection.ClientConnectedCheck%2A>プロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#18](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#18)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#18](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#18)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComAuthenticationLevel">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProcessModelComAuthenticationLevel ComAuthenticationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.ProcessModelComAuthenticationLevel ComAuthenticationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ComAuthenticationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("comAuthenticationLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProcessModelComAuthenticationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または DCOM セキュリティの認証レベルを示す値を設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.ProcessModelComAuthenticationLevel" /> 値のいずれか。 既定値は <see cref="F:System.Web.Configuration.ProcessModelComAuthenticationLevel.Connect" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値に設定すると<xref:System.Web.Configuration.ProcessModelComAuthenticationLevel.Default>DCOM は、通常のセキュリティ ネゴシエーション アルゴリズムを使用して認証レベルを決定します。 Machine.config ファイルで指定された、このプロパティに割り当てられている既定値は<xref:System.Web.Configuration.ProcessModelComAuthenticationLevel.Connect>します。 この場合、DCOM は、クライアントがサーバーとの関係を確立したときだけ、クライアントの資格情報を認証します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.ComAuthenticationLevel%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#21](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#21)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#21](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#21)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComImpersonationLevel">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProcessModelComImpersonationLevel ComImpersonationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.ProcessModelComImpersonationLevel ComImpersonationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ComImpersonationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("comImpersonationLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProcessModelComImpersonationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または COM セキュリティの認証レベルを示す値を設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.ProcessModelComImpersonationLevel" /> 値のいずれか。 既定値は <see cref="F:System.Web.Configuration.ProcessModelComImpersonationLevel.Impersonate" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値に設定すると<xref:System.Web.Configuration.ProcessModelComImpersonationLevel.Default>DCOM は、通常のセキュリティ ネゴシエーション アルゴリズムを使用して偽装レベルを決定します。 Machine.config ファイルで指定された、このプロパティに割り当てられている既定値は<xref:System.Web.Configuration.ProcessModelComImpersonationLevel.Impersonate>します。 この場合、サーバー プロセスは、クライアントの代理として機能している間、クライアントのセキュリティ コンテキストを偽装できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.ComImpersonationLevel%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#22](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#22)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#22](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#22)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CpuMask">
+      <MemberSignature Language="C#" Value="public int CpuMask { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CpuMask" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.CpuMask" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("cpuMask", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはマルチプロセッサ サーバーでどのプロセッサは、ASP.NET プロセスを実行する対象を示す値を設定します。</summary>
+        <value>適用するビット パターンを表す数値です。 既定値は、0 xffffffff です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A>値は、ASP.NET スレッドの実行対象の Cpu を表すビット パターンを指定します。 場合、<xref:System.Web.Configuration.ProcessModelSection.WebGarden%2A>プロパティに設定されている`true`、<xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A>ワーカー プロセスが対象となる Cpu の数を制限します。 ワーカー プロセスの最大許容数は、Cpu の数と同じです。 既定では、すべての Cpu が有効で、ASP.NET が cpu ごとに 1 つのプロセスを起動します。 場合、<xref:System.Web.Configuration.ProcessModelSection.WebGarden%2A>プロパティに設定されている`false`、<xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A>属性は無視され、1 つだけのワーカー プロセスが実行されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#25](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#25)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#25](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#25)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ElementProperty">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationElementProperty ElementProperty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationElementProperty ElementProperty" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ElementProperty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationElementProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enable">
+      <MemberSignature Language="C#" Value="public bool Enable { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enable" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.Enable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enable", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはモデルの処理が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />モデルの処理が有効である場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection.Enable%2A>プロパティは、外部のワーカー プロセスで ASP.NET がホストされているかどうかを指定します。 場合<xref:System.Web.Configuration.ProcessModelSection.Enable%2A>は`true`ASP.NET は、それ以外の外部のワーカー プロセスでホストされている、Inetinfo.exe で直接実行されます。  
+  
+> [!NOTE]
+>  ローカル システムのセキュリティ コンテキストでアプリケーションを実行しているが含まれるため、ASP.NET を Inetinfo.exe で実行されているはお勧めできません。 ASP.NET をネイティブ モードのインターネット インフォメーション サービス (IIS) 6 で実行するとこの設定は無視に設定する理由は通常ありません`false`です。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.Enable%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#2)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IdleTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan IdleTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan IdleTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.IdleTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("idleTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET がワーカー プロセスを自動的に終了するアクティブな期間を示す値を設定します。</summary>
+        <value>A<see cref="T:System.TimeSpan" />のアイドル時間を示す値。 既定値は、無限に対応する<see cref="F:System.TimeSpan.MaxValue" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワーカー プロセスが再起動 (エラーで戻す) ときに、<xref:System.Web.Configuration.ProcessModelSection.IdleTimeout%2A>プロパティの値に到達します。 既定で 2 つの条件により、プロセスがバウンス: プロセスが、許可されたメモリ制限を超えたか、プロセスはキューに置くことができる要求の最大数を超えています。 既定の他の条件を追加できます。 たとえば、使用することができます、<xref:System.Web.Configuration.ProcessModelSection.IdleTimeout%2A>ワーカー プロセスがアイドル状態時間を制限するプロパティです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.IdleTimeout%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#16](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#16)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#16](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#16)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogLevel">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.ProcessModelLogLevel LogLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.ProcessModelLogLevel LogLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.LogLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("logLevel", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.ProcessModelLogLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはイベント ログに記録されるイベントの種類を示す値を設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.ProcessModelLogLevel" /> 値のいずれか。 既定値は <see cref="F:System.Web.Configuration.ProcessModelLogLevel.Errors" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを正しく使用すると、システムにログオン エラーをフィルター処理することができます。 アプリケーションの誤動作やボトルネックの概要を把握した後は、興味のあるエラーの範囲を狭める戦略を策定することができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.LogLevel%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#23](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#23)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#23](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#23)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxAppDomains">
+      <MemberSignature Language="C#" Value="public int MaxAppDomains { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxAppDomains" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MaxAppDomains" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxAppDomains", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=2147483646, MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 1 つのプロセスでアプリケーション ドメインの最大許容数を設定します。</summary>
+        <value>1 つのプロセス内のアプリケーション ドメインの数が最大です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Web.Configuration.ProcessModelSection.MaxAppDomains%2A>しきい値を超過すると、最も使用されないアプリケーション ドメインがシャット ダウン、新しいアプリケーション ドメインを開始する必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MaxAppDomains%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#27](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#27)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#27](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#27)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxIOThreads">
+      <MemberSignature Language="C#" Value="public int MaxIOThreads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxIOThreads" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MaxIOThreads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxIoThreads", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=2147483646, MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または CLR スレッド プールで CPU あたりの I/O スレッドの最大数を示す値を設定します。</summary>
+        <value>スレッドの最大数。 既定値は 20 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Web.Configuration.ProcessModelSection.MaxIOThreads%2A>を以上にする必要があります、<xref:System.Web.Configuration.HttpRuntimeSection.MinFreeThreads%2A>での設定、`httpRuntime`構成セクション。  
+  
+ 使用してワーカー スレッドと I/O スレッドの数を設定して、CPU 使用率をある程度制御を必要することができます、<xref:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads%2A>プロパティおよび<xref:System.Web.Configuration.ProcessModelSection.MaxIOThreads%2A>プロパティそれぞれします。  
+  
+ スレッドの 2 種類の違いは、こと、後者は、ストリーム、パイプなどの I/O オブジェクトにバインドされ、前者は従来の制限のないスレッドです。 インターネット インフォメーション サービス (IIS) 6.0 以降のバージョンには、ASP.NET は、ワーカー スレッドで要求を処理します。 これは、IIS で ASP.NET が統合されているためです。  
+  
+ これらのスレッドは、アプリケーションに属するプロセス全体にわたる CLR スレッド プールから取得されます。  
+  
+> [!NOTE]
+>  通常は許可されているスレッドの既定値は、CPU 使用率が高いを保持するだけで十分です。 何らかの理由により、アプリケーションが低速なおそらく待機している場合の外部リソース、100 未満の値をスレッドの数を増やすしようとする可能性があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MaxIOThreads%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#5)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxWorkerThreads">
+      <MemberSignature Language="C#" Value="public int MaxWorkerThreads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxWorkerThreads" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("maxWorkerThreads", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=2147483646, MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または CLR スレッド プール内の CPU ごとのワーカー スレッドの最大時間を示す値を設定します。</summary>
+        <value>スレッドの最大数。 既定値は 20 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値<xref:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads%2A>を以上にする必要があります、<xref:System.Web.Configuration.HttpRuntimeSection.MinFreeThreads%2A>での設定、`httpRuntime`構成セクション。  
+  
+ 使用してワーカー スレッドと I/O スレッドの数を設定して、CPU 使用率をある程度制御を必要することができます、<xref:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads%2A>プロパティと、<xref:System.Web.Configuration.ProcessModelSection.MaxIOThreads%2A>プロパティ、それぞれします。  
+  
+ スレッドの 2 種類の違いは、こと、後者は、ストリーム、パイプなどの I/O オブジェクトにバインドされ、前者は従来の制限のないスレッドです。 インターネット インフォメーション サービス (IIS) 6.0 以降のバージョンには、ASP.NET は、ワーカー スレッドで要求を処理します。 これは、IIS で ASP.NET が統合されているためです。  
+  
+ これらのスレッドは、アプリケーションに属するプロセス全体にわたる CLR スレッド プールから取得されます。  
+  
+> [!NOTE]
+>  通常は許可されているスレッドの既定値は、CPU 使用率が高いを保持するだけで十分です。 何らかの理由により、アプリケーションが低速なおそらく待機している場合の外部リソース、100 未満の値をスレッドの数を増やすしようとする可能性があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MaxWorkerThreads%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#7)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryLimit">
+      <MemberSignature Language="C#" Value="public int MemoryLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MemoryLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MemoryLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("memoryLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または許容される最大メモリ サイズを示す値を設定します。</summary>
+        <value>合計システム メモリの割合。 既定は 60% です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メモリのサイズは、合計システム メモリの割合として表されます。 これは、ASP.NET (バウンス) を再起動する前にワーカー プロセスが使用できるメモリの量にします。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MemoryLimit%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#3)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinIOThreads">
+      <MemberSignature Language="C#" Value="public int MinIOThreads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinIOThreads" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MinIOThreads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minIoThreads", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=2147483646, MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または CLR スレッド プールで CPU あたりの I/O スレッドの最小数を設定します。</summary>
+        <value>CLR スレッド プールで CPU あたりの I/O スレッドの最小数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MinIOThreads%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#4)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinWorkerThreads">
+      <MemberSignature Language="C#" Value="public int MinWorkerThreads { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinWorkerThreads" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.MinWorkerThreads" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("minWorkerThreads", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MaxValue=2147483646, MinValue=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または CLR スレッド プールの CPU ごとのワーカー スレッドの最小数を設定します。</summary>
+        <value>CLR スレッド プール内の CPU ごとのワーカー スレッドの最小数</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#6)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Password">
+      <MemberSignature Language="C#" Value="public string Password { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Password" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.Password" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("password", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Windows id として使用するパスワードを示す値を設定します。</summary>
+        <value>使用するパスワードです。 既定値は、自動生成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection.Password%2A>でプロパティを使用する必要があります、<xref:System.Web.Configuration.ProcessModelSection.UserName%2A>プロパティです。  
+  
+ 指定されている場合、これらのプロパティ値は構成済みの Windows id を使用して実行するワーカー プロセスを発生します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.Password%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#20](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#20)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#20](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#20)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PingFrequency">
+      <MemberSignature Language="C#" Value="public TimeSpan PingFrequency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PingFrequency" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.PingFrequency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pingFrequency", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ISAPI 拡張機能が、ワーカー プロセスが実行されているかどうかを決定するを ping する間隔を示す値を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />時間間隔を定義します。 既定値は 30 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワーカー プロセスが再起動した (バウンス) の後に実行されていない、<xref:System.Web.Configuration.ProcessModelSection.PingFrequency%2A>間隔の有効期限が切れました。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.PingFrequency%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#13](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#13)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#13](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PingTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan PingTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan PingTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.PingTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pingTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または応答のないワーカー プロセスが再起動するまでの時間間隔を示す値を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />時間間隔を定義します。 既定値は、5 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ISAPI 拡張機能にワーカー プロセスの ping、<xref:System.Web.Configuration.ProcessModelSection.PingFrequency%2A>間隔。 内では、ワーカー プロセスが応答しない場合、<xref:System.Web.Configuration.ProcessModelSection.PingTimeout%2A>間隔、プロセスを再起動します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.PingTimeout%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#14](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#14)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#14](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#14)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestLimit">
+      <MemberSignature Language="C#" Value="public int RequestLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RequestLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.RequestLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requestLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー プロセスがリサイクルされるまでに許可される要求の数を示す値を設定します。</summary>
+        <value>許可された要求の数。 既定値は無限です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の数を超えた場合、ASP.NET は自動的に現在の 1 つの代わりに使用する新しいワーカー プロセスを起動します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.RequestLimit%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#8)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestQueueLimit">
+      <MemberSignature Language="C#" Value="public int RequestQueueLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RequestQueueLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.RequestQueueLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requestQueueLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキューに許可される要求の数を示す値を設定します。</summary>
+        <value>キューに置かれたで許可される要求の数。 既定値は 5000 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET が返すを開始、キューに許可された要求の数を超えた場合、"503: サーバーがビジー"エラーを新しい要求します。 この制限に達すると、システムが異常な状態で動作します。 これが原因の誤動作徴候であるか、単純負荷が高いです。 (バウンス) を再起動するワーカー プロセスがさらに問題を回避する唯一の方法になる可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.RequestQueueLimit%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#10)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseDeadlockInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan ResponseDeadlockInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ResponseDeadlockInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ResponseDeadlockInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("responseDeadlockInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー プロセスが応答する時間間隔を示す値を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />間隔を定義します。 既定値は、3 分間です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キューに入れられた要求およびかどうかがありますが、応答で定義されている間隔の間にある場合、プロセスが再開<xref:System.Web.Configuration.ProcessModelSection.ResponseDeadlockInterval%2A>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.ResponseDeadlockInterval%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#17](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#17)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#17](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#17)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ResponseRestartDeadlockInterval">
+      <MemberSignature Language="C#" Value="public TimeSpan ResponseRestartDeadlockInterval { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ResponseRestartDeadlockInterval" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ResponseRestartDeadlockInterval" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("responseRestartDeadlockInterval", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用されなくなりました。</summary>
+        <value>該当なし。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ASP.NET では使用されなくされ、旧バージョンとの互換性を保つのために提供されます。 これは発生しません構成エラーが構成ファイルに存在する場合。 すべてのリサイクル、デッドロック状態が発生した場合は、今すぐによって制御、<xref:System.Web.Configuration.ProcessModelSection.ResponseDeadlockInterval%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.ResponseRestartDeadlockInterval%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#11)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartQueueLimit">
+      <MemberSignature Language="C#" Value="public int RestartQueueLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RestartQueueLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.RestartQueueLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteIntConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("restartQueueLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または要求の処理を開始する新しいワーカー プロセスの待機中に、ISAPI による要求の最大数のキューを示す値を設定します。</summary>
+        <value>要求の数がキューに登録します。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この制限を超えたときに、ワーカー プロセスが準備できるまで、クライアントの要求は 503 エラーを受信します。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.RestartQueueLimit%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#9)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServerErrorMessageFile">
+      <MemberSignature Language="C#" Value="public string ServerErrorMessageFile { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ServerErrorMessageFile" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ServerErrorMessageFile" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("serverErrorMessageFile", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または致命的なエラーが発生したときに、コンテンツを持つを使用する必要がありますファイルを示す値を設定します。</summary>
+        <value>致命的なエラーが発生したときに使用するファイルのパス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容が既定のサーバーが使用できないメッセージの代わりに使用するファイル。  
+  
+ ファイルの場所には、相対パスまたは絶対ファイル パスを指定できます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.ServerErrorMessageFile%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#28](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#28)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#28](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#28)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownTimeout">
+      <MemberSignature Language="C#" Value="public TimeSpan ShutdownTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan ShutdownTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.ShutdownTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("shutdownTimeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.TimeSpanValidator(MaxValueString="10675199.02:48:05.4775807", MinValueString="00:00:00")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または許可されたワーカー プロセスがシャット ダウンする時間を示す値を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />間隔を定義します。 既定値は、5 秒です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、ワーカー プロセスが正常にシャット ダウンの許容分単位の数を指定します。 タイムアウトが経過すると、ASP.NET をシャット ダウン、ワーカー プロセスに強制的にします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.ShutdownTimeout%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#15](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#15)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#15](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#15)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Timeout">
+      <MemberSignature Language="C#" Value="public TimeSpan Timeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Timeout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.Timeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Configuration.InfiniteTimeSpanConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("timeout", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET が新しいワーカー プロセスを起動するまでの分数を示す値を設定します。</summary>
+        <value><see cref="T:System.TimeSpan" />間隔を定義します。 既定値は無限です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET では、現在の 1 つの代わりに使用する新しいワーカー プロセスが起動します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProcessModelSection.Timeout%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#10](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#10)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#10](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UserName">
+      <MemberSignature Language="C#" Value="public string UserName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UserName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.UserName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("userName", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Windows id のユーザー名を示す値を設定します。</summary>
+        <value>ユーザー名。 既定値は、マシンです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 存在する場合、<xref:System.Web.Configuration.ProcessModelSection.UserName%2A>異なる既定のプロセスの Windows id を定義します。 この id は、ASP.NET ワーカー プロセスの実行に使用します。  
+  
+ 既定では、<xref:System.Web.Configuration.ProcessModelSection.UserName%2A>特殊値マシン、および ASP.NET がインストールされているときに自動的に作成される aspnet ユーザー アカウントでプロセスの実行に設定されています。  
+  
+ <xref:System.Web.Configuration.ProcessModelSection.Password%2A>でプロパティを使用する必要があります、<xref:System.Web.Configuration.ProcessModelSection.UserName%2A>プロパティです。  
+  
+ 指定されている場合、これらのプロパティ値は構成済みの Windows id を使用して実行するワーカー プロセスを発生します。  
+  
+> [!NOTE]
+>  場合、<xref:System.Web.Configuration.ProcessModelSection.UserName%2A>プロパティ システムにパスワードの自動生成を使用して、管理者アカウントとして、プロセスを実行して、完全な管理者特権を持つプロセスで実行されているすべての ASP.NET ユーザー コードをできるようにエンティティを定義します。 そのため、注意この場合は、許可される権限にします。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.UserName%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#19](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#19)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#19](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#19)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebGarden">
+      <MemberSignature Language="C#" Value="public bool WebGarden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WebGarden" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProcessModelSection.WebGarden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("webGarden", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはワーカー プロセスの実行に使用できる Cpu を有効にする値を設定します。</summary>
+        <value>
+          <see langword="true" />、場合<see cref="P:System.Web.Configuration.ProcessModelSection.CpuMask" />; 対象となる Cpu の数にワーカー プロセスをマップするために使用<see langword="false" />場合<see cref="P:System.Web.Configuration.ProcessModelSection.CpuMask" />は無視されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProcessModelSection.WebGarden%2A>でプロパティを使用する必要があります、<xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A>プロパティです。  
+  
+ 場合、<xref:System.Web.Configuration.ProcessModelSection.WebGarden%2A>プロパティに設定されている`false`、<xref:System.Web.Configuration.ProcessModelSection.CpuMask%2A>属性は無視され、1 つだけのワーカー プロセスを実行します。  
+  
+> [!NOTE]
+>  マルチプロセッサの Web サーバーには、Web ガーデンは呼び出されます。  
+  
+   
+  
+## Examples  
+ <xref:System.Web.Configuration.ProcessModelSection.WebGarden%2A> プロパティへのアクセス方法を次のコード例に示します。  
+  
+ [!code-csharp[System.Web.Configuration.ProcessModelSection#24](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/CS/processmodelsection.cs#24)]
+ [!code-vb[System.Web.Configuration.ProcessModelSection#24](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProcessModelSection/VB/processmodelsection.vb#24)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

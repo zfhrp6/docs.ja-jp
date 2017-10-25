@@ -1,0 +1,58 @@
+<Type Name="MouseWheelEventHandler" FullName="System.Windows.Input.MouseWheelEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void MouseWheelEventHandler(object sender, MouseWheelEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed MouseWheelEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseWheelEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Input.MouseWheelEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベント ハンドラーがアタッチされるオブジェクト。</param>
+    <param name="e">イベントのデータ。</param>
+    <summary><see cref="E:System.Windows.UIElement.MouseWheel" /> と <see cref="E:System.Windows.ContentElement.MouseWheel" /> のルーティング イベントだけでなく、関連する添付イベントとプレビュー イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このデリゲートは、次の添付イベントと共に使用されます。  
+  
+-   <xref:System.Windows.Input.Mouse.MouseWheel?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.Input.Mouse.PreviewMouseWheel?displayProperty=nameWithType>  
+  
+ このデリゲートは、次のルーティング イベントと共に使用されます。 これらのルーティング イベントがより一般的な要素のモデルにアクセスできるようにする上記のアタッチされたイベントを転送[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]です。  
+  
+-   <xref:System.Windows.UIElement.MouseWheel?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.MouseWheel?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.UIElement.PreviewMouseWheel?displayProperty=nameWithType>  
+  
+-   <xref:System.Windows.ContentElement.PreviewMouseWheel?displayProperty=nameWithType>  
+  
+ 添付イベントおよび基本要素のルーティング イベントは、それぞれのイベント データを共有し、バブルとトンネル ルーティング イベントのバージョンは、イベント データを共有もします。 イベント ルートをたどる際は、イベントの処理の特性に影響することができます。 詳細については、「[入力概要](~/docs/framework/wpf/advanced/input-overview.md)です。  
+  
+ <xref:System.Windows.Input.MouseWheelEventArgs.Delta%2A>プロパティは、(奥ユーザー) マウス ホイールを前方移動した場合は、正または負の値 (ユーザー) に向かってマウス ホイールを下へ移動した場合。  
+  
+   
+  
+## Examples  
+ 次の例では移動、<xref:System.Windows.Controls.TextBox>に接続されている、<xref:System.Windows.Controls.Canvas>上方向の場合は、マウスのホイール<xref:System.Windows.Input.MouseWheelEventArgs.Delta%2A>が正の値と、移動、<xref:System.Windows.Controls.TextBox>下降傾向の場合、マウス ホイール<xref:System.Windows.Input.MouseWheelEventArgs.Delta%2A>が負の値。  
+  
+ [!code-csharp[mousesnippetsample#MouseWheelDelta](~/samples/snippets/csharp/VS_Snippets_Wpf/MouseSnippetSample/CSharp/Window1.xaml.cs#mousewheeldelta)]
+ [!code-vb[mousesnippetsample#MouseWheelDelta](~/samples/snippets/visualbasic/VS_Snippets_Wpf/MouseSnippetSample/visualbasic/window1.xaml.vb#mousewheeldelta)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

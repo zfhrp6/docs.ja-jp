@@ -1,0 +1,136 @@
+<Type Name="DispatchWrapper" FullName="System.Runtime.InteropServices.DispatchWrapper">
+  <TypeSignature Language="C#" Value="public sealed class DispatchWrapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit DispatchWrapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.DispatchWrapper" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マーシャラーとしてマーシャ リング オブジェクトをラップする<see langword="VT_DISPATCH" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マーシャラーとしてマーシャ リング オブジェクトをラップするを使用して、`VT_DISPATCH`です。 このラッパーとしてマーシャ リングするオブジェクトが強制的に実行`VT_DISPATCH`です。 オブジェクトがサポートしていない場合`IDispatch`し、例外がスローされます。  
+  
+ [!code-cpp[System.Runtime.InteropServices.DispatchWrapper#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.runtime.interopservices.dispatchwrapper/cpp/source.cpp#1)]
+ [!code-csharp[System.Runtime.InteropServices.DispatchWrapper#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.runtime.interopservices.dispatchwrapper/cs/source.cs#1)]
+ [!code-vb[System.Runtime.InteropServices.DispatchWrapper#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.runtime.interopservices.dispatchwrapper/vb/source.vb#1)]  
+  
+ 詳細については`VT_DISPATCH`、既存のドキュメントをご覧ください`VARENUM::VT_DISPATCH`MSDN ライブラリです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DispatchWrapper (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.DispatchWrapper.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">ラップされに変換するオブジェクト<see cref="F:System.Runtime.InteropServices.VarEnum.VT_DISPATCH" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.DispatchWrapper" />ラップされているオブジェクトを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="obj" />クラスまたは配列ではありません。  
+  
+ または  
+  
+ <paramref name="obj" />サポートしていません<see langword="IDispatch" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="obj" />パラメーターとして設定されていた、<see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" />属性の値が渡された<see langword="false" />です。  
+  
+ または  
+  
+ <paramref name="obj" />でマークされた型からパラメーターを継承する<see cref="T:System.Runtime.InteropServices.ComVisibleAttribute" />属性の値が渡された<see langword="false" />です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。  
+  
+ セキュリティ アクション: 要求します。  
+  
+ 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WrappedObject">
+      <MemberSignature Language="C#" Value="public object WrappedObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object WrappedObject" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.DispatchWrapper.WrappedObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>によってラップされたオブジェクトを取得、<see cref="T:System.Runtime.InteropServices.DispatchWrapper" />です。</summary>
+        <value>によってラップされたオブジェクト、<see cref="T:System.Runtime.InteropServices.DispatchWrapper" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

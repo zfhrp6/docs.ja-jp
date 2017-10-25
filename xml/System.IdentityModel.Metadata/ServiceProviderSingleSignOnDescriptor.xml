@@ -1,0 +1,129 @@
+<Type Name="ServiceProviderSingleSignOnDescriptor" FullName="System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor">
+  <TypeSignature Language="C#" Value="public class ServiceProviderSingleSignOnDescriptor : System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ServiceProviderSingleSignOnDescriptor extends System.IdentityModel.Metadata.SingleSignOnDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Metadata.SingleSignOnDescriptor</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サービス プロバイダー SSO (SPSSO) の記述子を定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceProviderSingleSignOnDescriptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceProviderSingleSignOnDescriptor (System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary collection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary collection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.#ctor(System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="collection" Type="System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="collection"><see cref="T:System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" />このインスタンスのオブジェクト。 初期化、<see cref="P:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.AssertionConsumerServices" />プロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor" />インデックス付きのエンドポイントの指定されたディクショナリを持つクラスであります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssertionConsumerServices">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary AssertionConsumerServices { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary AssertionConsumerServices" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.AssertionConsumerServices" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、 <see cref="T:System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" /> [SAMLProf] で定義されている要求の認証プロトコルのプロファイルをサポートするインデックス付きのエンドポイントを格納します。</summary>
+        <value>このインスタンスの <see cref="T:System.IdentityModel.Metadata.IndexedProtocolEndpointDictionary" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ディクショナリは通常、1 つまたは複数の要素を含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuthenticationRequestsSigned">
+      <MemberSignature Language="C#" Value="public bool AuthenticationRequestsSigned { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AuthenticationRequestsSigned" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.AuthenticationRequestsSigned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス プロバイダーによって送信された要求に署名するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />サービス プロバイダーに送信した認証要求に署名する場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 表す、`AuthnRequestsSigned`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WantAssertionsSigned">
+      <MemberSignature Language="C#" Value="public bool WantAssertionsSigned { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WantAssertionsSigned" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Metadata.ServiceProviderSingleSignOnDescriptor.WantAssertionsSigned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサービス プロバイダーによって受信されたアサーションに署名を付けるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />アサーションを受信した場合、サービス プロバイダーに署名を付けます。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 取得または設定、`WantAssertionsSigned`属性。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

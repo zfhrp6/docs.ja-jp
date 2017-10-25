@@ -1,0 +1,405 @@
+<Type Name="DataObjectFieldAttribute" FullName="System.ComponentModel.DataObjectFieldAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataObjectFieldAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataObjectFieldAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.DataObjectFieldAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ フィールドを表すプロパティのメタデータを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.ComponentModel.DataObjectFieldAttribute>属性を基になるデータのスキーマに関する情報を提供します。 デザイン時などのクラス、<xref:System.Web.UI.Design.WebControls.ObjectDataSourceDesigner>クラスの使用、<xref:System.ComponentModel.DataObjectAttribute>デザイン時にプロパティを設定する属性が公開されているスキーマに基づきます。  
+  
+ 適用する、<xref:System.ComponentModel.DataObjectFieldAttribute>属性でマークされたオブジェクトの選択メソッドによって返されるデータ項目のオブジェクトのメンバーを<xref:System.ComponentModel.DataObjectAttribute>属性。 次の例で、`NorthwindData`クラスには、<xref:System.ComponentModel.DataObjectAttribute>属性、および返します、<xref:System.Collections.IEnumerable>オブジェクトを含む`NorthwindEmployee`オブジェクトから、`GetAllEmployees`メソッドです。 フィールドで、`NorthwindEmployee`クラスが付いて、<xref:System.ComponentModel.DataObjectFieldAttribute>それらが表す基になるデータ ソースのデータ フィールドを示す属性です。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.ComponentModel.DataObjectFieldAttribute>公開されるプロパティのプロパティに関連付けられているメタデータを識別します。 この例では、`NorthwindEmployee`型は、次の 3 つのデータ プロパティを公開: `EmployeeID`、 `FirstName`、および`LastName`です。 <xref:System.ComponentModel.DataObjectFieldAttribute>属性は次の 3 つすべてのプロパティに適用ただし、のみ、`EmployeeID`プロパティの属性は、データ行の主キーであることを示します。  
+  
+ [!code-csharp[System.ComponentModel.DataObjectMethodAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/CS/dataobjectmethodattribute.cs#2)]
+ [!code-vb[System.ComponentModel.DataObjectMethodAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/VB/dataobjectmethodattribute.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectFieldAttribute (bool primaryKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool primaryKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="primaryKey">
+          <see langword="true" />フィールドがデータ行の主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectFieldAttribute" />クラスし、フィールドがデータ行の主キーかどうかを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectFieldAttribute (bool primaryKey, bool isIdentity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool primaryKey, bool isIdentity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.#ctor(System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+        <Parameter Name="isIdentity" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="primaryKey">
+          <see langword="true" />フィールドがデータ行の主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isIdentity">
+          <see langword="true" />フィールドがデータ行を一意に識別する id フィールドであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectFieldAttribute" />クラスし、フィールドのデータ行の主キーがかどうかと、フィールドは、データベースの id フィールドかどうかを示します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectFieldAttribute (bool primaryKey, bool isIdentity, bool isNullable);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool primaryKey, bool isIdentity, bool isNullable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+        <Parameter Name="isIdentity" Type="System.Boolean" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="primaryKey">
+          <see langword="true" />フィールドがデータ行の主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isIdentity">
+          <see langword="true" />フィールドがデータ行を一意に識別する id フィールドであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isNullable">
+          <see langword="true" />データ ストアに、フィールドが null にできることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectFieldAttribute" />クラスし、フィールドのデータ行の主キーがあるか、かどうか、フィールドは、データベースの id フィールド、およびかどうか、フィールドを null にすることを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、適用する方法を示しています、<xref:System.ComponentModel.DataObjectFieldAttribute>公開されるプロパティのプロパティに関連付けられているメタデータを識別します。 この例では、`NorthwindEmployee`型は、次の 3 つのデータ プロパティを公開: `EmployeeID`、 `FirstName`、および`LastName`です。 <xref:System.ComponentModel.DataObjectFieldAttribute>属性は次の 3 つすべてのプロパティに適用ただし、のみ、`EmployeeID`プロパティの属性は、データ行の主キーであることを示します。  
+  
+ [!code-csharp[System.ComponentModel.DataObjectMethodAttribute#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/CS/dataobjectmethodattribute.cs#2)]
+ [!code-vb[System.ComponentModel.DataObjectMethodAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.ComponentModel.DataObjectMethodAttribute/VB/dataobjectmethodattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataObjectFieldAttribute (bool primaryKey, bool isIdentity, bool isNullable, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool primaryKey, bool isIdentity, bool isNullable, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.#ctor(System.Boolean,System.Boolean,System.Boolean,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="primaryKey" Type="System.Boolean" />
+        <Parameter Name="isIdentity" Type="System.Boolean" />
+        <Parameter Name="isNullable" Type="System.Boolean" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="primaryKey">
+          <see langword="true" />フィールドがデータ行の主キーであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isIdentity">
+          <see langword="true" />フィールドがデータ行を一意に識別する id フィールドであることを示しますそれ以外の場合、<see langword="false" />です。</param>
+        <param name="isNullable">
+          <see langword="true" />データ ストアに、フィールドが null にできることを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <param name="length">バイトのフィールドの長さ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.DataObjectFieldAttribute" />クラスしかどうか、フィールド データ行の主キー、データベースの id フィールドであるかどうか、null にすることができるかどうかを示すし、フィールドの長さを設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">このインスタンスと比較するオブジェクト<see cref="T:System.ComponentModel.DataObjectFieldAttribute" />です。</param>
+        <summary>このインスタンスが指定されたオブジェクトに等しいかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />このインスタンスがで指定されたインスタンスと同じである場合、<paramref name="obj" />パラメーターです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを判断するかどうかのこのインスタンス<xref:System.ComponentModel.DataObjectFieldAttribute>別のオブジェクトのパターンに適合します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.DataObjectFieldAttribute.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このインスタンスのハッシュ コードを返します。</summary>
+        <returns>32 ビット符号付き整数ハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdentity">
+      <MemberSignature Language="C#" Value="public bool IsIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectFieldAttribute.IsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが基になるデータ id フィールドを表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティは、基になるデータです。 id フィールドを表す場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.IsIdentity%2A>プロパティを`true`ときに、<xref:System.ComponentModel.DataObjectFieldAttribute>属性は、基になるデータ ストアの id フィールドを表すプロパティに適用します。 通常、id フィールドでは、データ ストアによって生成され、データ ストア内のエンティティを一意に識別します。  
+  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.IsIdentity%2A>のいずれかのプロパティ、<xref:System.ComponentModel.DataObjectFieldAttribute>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNullable">
+      <MemberSignature Language="C#" Value="public bool IsNullable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNullable" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectFieldAttribute.IsNullable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが、基になるデータ ストアに null にすることができます、フィールドを表すかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティは、基になるデータ ストアで null にすることができます、フィールドを表す場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.IsNullable%2A>プロパティを`true`ときに、<xref:System.ComponentModel.DataObjectFieldAttribute>属性が設定できる、基になるデータ ストア内のフィールドを表すプロパティに適用される null にします。 データ ストア内の null を表す値が異なる場合がある`null`プログラミング言語です。  
+  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.IsNullable%2A>のいずれかのプロパティ、<xref:System.ComponentModel.DataObjectFieldAttribute>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Length">
+      <MemberSignature Language="C#" Value="public int Length { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Length" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectFieldAttribute.Length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの長さをバイト単位で取得します。</summary>
+        <value>長さ (バイト単位) の場合は-1 プロパティの設定されていません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.Length%2A>プロパティを基になるデータ ストアからのデータの長さ、(バイト単位)。 場合、<xref:System.ComponentModel.DataObjectFieldAttribute.Length%2A>プロパティが設定されていない、-1 になります。  
+  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.Length%2A>のいずれかのプロパティ、<xref:System.ComponentModel.DataObjectFieldAttribute>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrimaryKey">
+      <MemberSignature Language="C#" Value="public bool PrimaryKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PrimaryKey" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.DataObjectFieldAttribute.PrimaryKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティが、基になるデータの主キー内にあるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />プロパティが、データ ストアの主キーの場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.PrimaryKey%2A>プロパティを`true`ときに、<xref:System.ComponentModel.DataObjectFieldAttribute>属性は、基になるデータの主キーの値を表すプロパティに適用します。 主キー データ ストア内のエンティティを一意に識別する、基になるデータ ストアで通常使用してが多くの場合はするには、する必要はありませんデータ ストアの id フィールドです。  
+  
+ 設定、<xref:System.ComponentModel.DataObjectFieldAttribute.PrimaryKey%2A>のいずれかのプロパティ、<xref:System.ComponentModel.DataObjectFieldAttribute>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

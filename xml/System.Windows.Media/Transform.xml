@@ -1,0 +1,265 @@
+<Type Name="Transform" FullName="System.Windows.Media.Transform">
+  <TypeSignature Language="C#" Value="public abstract class Transform : System.Windows.Media.GeneralTransform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Transform extends System.Windows.Media.GeneralTransform" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Transform" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.GeneralTransform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.TransformConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Converters.TransformValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 次元平面内の変換を有効にする機能を定義します。 変換には、回転 (<see cref="T:System.Windows.Media.RotateTransform" />)、スケール (<see cref="T:System.Windows.Media.ScaleTransform" />)、傾斜 (<see cref="T:System.Windows.Media.SkewTransform" />)、平行移動 (<see cref="T:System.Windows.Media.TranslateTransform" />) が含まれます。 このクラス階層は、クラスであり、アニメーションと列挙のセマンティクスをサポートする点で <see cref="T:System.Windows.Media.Matrix" /> 構造体とは異なります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.MatrixTransform>では提供されないカスタム変換を作成するクラス、 <xref:System.Windows.Media.RotateTransform>、 <xref:System.Windows.Media.ScaleTransform>、 <xref:System.Windows.Media.SkewTransform>、および<xref:System.Windows.Media.TranslateTransform>クラスです。  
+  
+ A [!INCLUDE[TLA#tla_2d](~/includes/tlasharptla-2d-md.md)] x と y の面では、変換に 3 x 3 行列を使用します。 アフィン変換行列の回転などと、傾斜、フォームの線形変換 (傾斜) 翻訳に続くを乗算することができます。  
+  
+ アフィン変換行列が最後の列を (0, 0, 1) です。したがって、最初の 2 つの列で、メンバーを指定する必要がのみです。  
+  
+ A [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] <xref:System.Windows.Media.Matrix>次の構造になっています。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+ 最後の行メンバー<xref:System.Windows.Media.Matrix.OffsetX%2A>と<xref:System.Windows.Media.Matrix.OffsetY%2A>、平行移動の値を表します。  
+  
+ メソッドとプロパティを 6 つのみのメンバーを持つベクトルと、変換行列を指定通常次のとおり  
+  
+ (<xref:System.Windows.Media.Matrix.M11%2A>, <xref:System.Windows.Media.Matrix.M12%2A>, <xref:System.Windows.Media.Matrix.M21%2A>, <xref:System.Windows.Media.Matrix.M22%2A>, <xref:System.Windows.Media.Matrix.OffsetX%2A>, <xref:System.Windows.Media.Matrix.OffsetY%2A>)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Transform Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Transform.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の詳細コピーを作ることにより、この <see cref="T:System.Windows.Media.Transform" /> の変更可能なコピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> の場合でも、複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドは、依存関係プロパティをコピーする場合、は、不要になった解決する可能性がありますが、リソース参照とデータ バインディングをコピーします。 アニメーションやその現在の値はコピーされません。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Transform CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.Transform CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Transform.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更可能な複製を作成<see cref="T:System.Windows.Media.Transform" />オブジェクトの値の詳細コピーを作成しています。 このメソッドでは、リソース参照、データ バインディング、アニメーションはコピーされませんが、その現在の値はコピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 <see cref="P:System.Windows.Freezable.IsFrozen" /> 、複製されたオブジェクトのプロパティが<see langword="false" />場合でも、<see cref="P:System.Windows.Freezable.IsFrozen" />ソースのプロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Transform Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Media.Transform Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Transform.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別情報の変換を取得します。</summary>
+        <value>Id の変換。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の構成を持つ恒等変換 (行列):  
+  
+||||  
+|-|-|-|  
+|1|0|0|  
+|0|1|0|  
+|0|0|1|  
+  
+ 単位行列を適用すると、オブジェクトにも変更されません。 乗算は`1`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inverse">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.GeneralTransform Inverse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.GeneralTransform Inverse" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Transform.Inverse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeneralTransform</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>存在する場合は、この変換の逆関数の値を取得します。</summary>
+        <value>この変換は、存在する場合の逆関数それ以外の場合、<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Transform Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.Transform Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Transform.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Transform</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source">6 個のコンマ区切り<see cref="T:System.Double" />新しいを記述する値<see cref="T:System.Windows.Media.Transform" />です。 「解説」を参照してください。</param>
+        <summary>新たに作成<see cref="T:System.Windows.Media.Transform" />から指定した文字列形式の変換行列。</summary>
+        <returns>指定した文字列から作成されますが、新しい変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 詳細については、XAML 属性の使用方法の参照、<xref:System.Windows.Media.MatrixTransform>クラス ページ。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransformBounds">
+      <MemberSignature Language="C#" Value="public override System.Windows.Rect TransformBounds (System.Windows.Rect rect);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance valuetype System.Windows.Rect TransformBounds(valuetype System.Windows.Rect rect) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Transform.TransformBounds(System.Windows.Rect)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="rect" Type="System.Windows.Rect" />
+      </Parameters>
+      <Docs>
+        <param name="rect">変換する境界ボックス。</param>
+        <summary>指定した境界ボックスを変換し、軸に沿った境界ボックスが正確に大きさを返します。</summary>
+        <returns>最小軸に沿って境界ボックス、変換後に含めることができる<paramref name="rect" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryTransform">
+      <MemberSignature Language="C#" Value="public override bool TryTransform (System.Windows.Point inPoint, out System.Windows.Point result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool TryTransform(valuetype System.Windows.Point inPoint, [out] valuetype System.Windows.Point&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Transform.TryTransform(System.Windows.Point,System.Windows.Point@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="inPoint" Type="System.Windows.Point" />
+        <Parameter Name="result" Type="System.Windows.Point&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="inPoint">変換対象のポイント。</param>
+        <param name="result">変換した結果<c>inPoint</c>です。</param>
+        <summary>指定した点の変換を試行し、変換が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="inPoint" />が変換された、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Windows.Media.GeneralTransform.Transform%2A>メソッド、このメソッドは例外をスローしませんが、変換が成功した場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public abstract System.Windows.Media.Matrix Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Transform.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の変換を取得、<see cref="T:System.Windows.Media.Matrix" />オブジェクト。</summary>
+        <value>現在の行列変換します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

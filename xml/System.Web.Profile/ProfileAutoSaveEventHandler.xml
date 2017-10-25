@@ -1,0 +1,46 @@
+<Type Name="ProfileAutoSaveEventHandler" FullName="System.Web.Profile.ProfileAutoSaveEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void ProfileAutoSaveEventHandler(object sender, ProfileAutoSaveEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProfileAutoSaveEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Profile.ProfileAutoSaveEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.Profile.ProfileAutoSaveEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender"><see cref="T:System.Web.Profile.ProfileModule" />を発生させた、<see cref="E:System.Web.Profile.ProfileModule.ProfileAutoSaving" />イベント。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.Profile.ProfileAutoSaveEventArgs" />。</param>
+    <summary><see cref="E:System.Web.Profile.ProfileModule.ProfileAutoSaving" /> の <see cref="T:System.Web.Profile.ProfileModule" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Profile.ProfileAutoSaveEventHandler>のデリゲートを定義、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、<xref:System.Web.Profile.ProfileModule>クラスです。 アクセスすることができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>のイベント、 <xref:System.Web.Profile.ProfileModule> ASP.NET アプリケーションの Global.asax ファイルでクラスのこのトピックの例に示すようにします。 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントは、ページの実行の最後、<xref:System.Web.Profile.ProfileManager.AutomaticSaveEnabled%2A>プロパティは`true`します。  
+  
+ <xref:System.Configuration.SettingsBase.Save%2A>メソッドに自動的にするかどうかのプロパティをプリミティブ型、文字列の構成または<xref:System.DateTime>をチェックして、オブジェクトが変更されて、<xref:System.Configuration.SettingsPropertyValue.IsDirty%2A>の各プロパティの値<xref:System.Configuration.SettingsPropertyValue>ユーザー プロファイルにします。 ただし、<xref:System.Configuration.SettingsBase.Save%2A>メソッドが、カスタム クラスが変更されたかどうかを判定できません明示的にします。 処理することができます、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>カスタム オブジェクトが変更されたかどうかを決定および変更したオブジェクトの自動保存を続行し、オブジェクトが変更されていない場合は、自動保存をキャンセルするイベントです。  
+  
+ プロファイルの自動保存の操作をキャンセルする、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`false`で、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントです。 それ以外の場合、設定、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティを`true`です。  
+  
+ 複数のサブスクライバーがある可能性があります、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベント。 <xref:System.Web.Profile.ProfileModule>が使用する最後の値を<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに設定します。 その結果、お勧めする明示的に設定する、<xref:System.Web.Profile.ProfileAutoSaveEventArgs.ContinueWithProfileAutoSave%2A>プロパティに、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>を取り消すか、自動保存、以前のサブスクライバーによって設定された値を上書きする必要がある可能性がありますを続行するかに関係なく、イベント。  
+  
+   
+  
+## Examples  
+ 次のコード例は、 <xref:System.Web.Profile.ProfileModule.ProfileAutoSaving> ASP.NET アプリケーションの Global.asax ファイルに含まれるイベント。  
+  
+ [!code-csharp[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/CS/global.asax#11)]
+ [!code-vb[System.Web.Profile.ProfileManager.ProfileAutoSaving#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Profile.ProfileManager.ProfileAutoSaving/VB/global.asax#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

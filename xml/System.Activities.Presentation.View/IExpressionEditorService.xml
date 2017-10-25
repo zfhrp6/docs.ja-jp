@@ -1,0 +1,196 @@
+<Type Name="IExpressionEditorService" FullName="System.Activities.Presentation.View.IExpressionEditorService">
+  <TypeSignature Language="C#" Value="public interface IExpressionEditorService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExpressionEditorService" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Presentation.View.IExpressionEditorService" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>式エディターを作成するか閉じます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 式エディターは、Visual Studio 内で式を編集するために使用する Visual Basic コントロールです。 このコントロールには、IntelliSense、色付け、パラメーター情報、エラーを示す波線などの、本格的な IDE 編集機能が備わっています。  
+  
+ <xref:System.Activities.Presentation.View.IExpressionEditorService> は、カスタム式エディターのインスタンスの管理に使用することもできます。 カスタム式エディターを登録するには、次のコードを使用して <xref:System.Activities.Presentation.View.IExpressionEditorService> を発行する必要があります。  
+  
+ `this.expressionEditorService = new ExpressionEditorService();`  
+  
+ `this.workflowDesigner.Context.Services.Publish<IExpressionEditorService>(this.expressionEditorService);`  
+  
+ 式エディターは、<xref:System.Activities.Presentation.View.ExpressionTextBox> インスタンスにフォーカスが設定されたときに作成され、有効な式がフォーカスを失ったとき、またはデザイナーが再読み込みされたときに破棄されます。  
+  
+ 既定の式エディターは、再ホストされたアプリケーションでは使用できません。 再ホストされたアプリケーションで既定の式エディターを使用する場合は、編集にテキスト ボックスを使用できます。 ただし、アプリケーションで <xref:System.Activities.Presentation.View.IExpressionEditorService> を発行することによって、再ホストされたアプリケーションでカスタム式エディターを使用することもできます。  
+  
+ カスタム アクティビティ デザイナーで <xref:System.Activities.Presentation.View.ExpressionTextBox> コントロールを使用している場合は、このインターフェイスを使用して式エディターを作成および破棄する必要はありません。 <xref:System.Activities.Presentation.View.ExpressionTextBox> クラスによってこの処理が行われます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CloseExpressionEditors">
+      <MemberSignature Language="C#" Value="public void CloseExpressionEditors ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CloseExpressionEditors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.CloseExpressionEditors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべてのアクティブな式エディターを閉じます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateExpressionEditor">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor (System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; variables, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor(class System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, class System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; variables, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor(System.Activities.Presentation.Hosting.AssemblyContextControlItem,System.Activities.Presentation.Hosting.ImportedNamespaceContextItem,System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem},System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.IExpressionEditorInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Activities.Presentation.Hosting.AssemblyContextControlItem" />
+        <Parameter Name="importedNamespaces" Type="System.Activities.Presentation.Hosting.ImportedNamespaceContextItem" />
+        <Parameter Name="variables" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">エディター セッションのコンテキストを設定するために使用します。</param>
+        <param name="importedNamespaces">式エディターで使用するインポートされた名前空間。</param>
+        <param name="variables">式エディターのローカル変数。</param>
+        <param name="text">式エディターに入力するために使用する文字列。</param>
+        <summary>新しい式エディターを作成します。</summary>
+        <returns><see cref="T:System.Activities.Presentation.View.IExpressionEditorInstance" /> を返します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateExpressionEditor">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor (System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; variables, string text, Type expressionType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor(class System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, class System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; variables, string text, class System.Type expressionType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor(System.Activities.Presentation.Hosting.AssemblyContextControlItem,System.Activities.Presentation.Hosting.ImportedNamespaceContextItem,System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem},System.String,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.IExpressionEditorInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Activities.Presentation.Hosting.AssemblyContextControlItem" />
+        <Parameter Name="importedNamespaces" Type="System.Activities.Presentation.Hosting.ImportedNamespaceContextItem" />
+        <Parameter Name="variables" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="expressionType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">環境内のローカル アセンブリおよび参照アセンブリ。</param>
+        <param name="importedNamespaces">式エディターで使用するインポートされた名前空間。</param>
+        <param name="variables">式エディターのローカル変数。</param>
+        <param name="text">式エディターに入力するために使用する文字列。</param>
+        <param name="expressionType">式の型。</param>
+        <summary>指定したアセンブリ、インポートされた名前空間、変数、式テキスト、および式の型を使用して、新しい式エディターを作成します。</summary>
+        <returns><see cref="T:System.Activities.Presentation.View.IExpressionEditorInstance" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateExpressionEditor">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor (System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; variables, string text, System.Windows.Size initialSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor(class System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, class System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; variables, string text, valuetype System.Windows.Size initialSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor(System.Activities.Presentation.Hosting.AssemblyContextControlItem,System.Activities.Presentation.Hosting.ImportedNamespaceContextItem,System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem},System.String,System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.IExpressionEditorInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Activities.Presentation.Hosting.AssemblyContextControlItem" />
+        <Parameter Name="importedNamespaces" Type="System.Activities.Presentation.Hosting.ImportedNamespaceContextItem" />
+        <Parameter Name="variables" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="initialSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">環境内のローカル アセンブリおよび参照アセンブリ。</param>
+        <param name="importedNamespaces">式エディターで使用するインポートされた名前空間。</param>
+        <param name="variables">式エディターのローカル変数。</param>
+        <param name="text">式エディターに入力するために使用する文字列。</param>
+        <param name="initialSize">式エディター コントロールの高さと幅の初期サイズ。</param>
+        <summary>指定したアセンブリ、インポートされた名前空間、変数、式テキスト、および初期サイズを使用して、新しい式エディターを作成します。</summary>
+        <returns><see cref="T:System.Activities.Presentation.View.IExpressionEditorInstance" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateExpressionEditor">
+      <MemberSignature Language="C#" Value="public System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor (System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt; variables, string text, Type expressionType, System.Windows.Size initialSize);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Activities.Presentation.View.IExpressionEditorInstance CreateExpressionEditor(class System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, class System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces, class System.Collections.Generic.List`1&lt;class System.Activities.Presentation.Model.ModelItem&gt; variables, string text, class System.Type expressionType, valuetype System.Windows.Size initialSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.CreateExpressionEditor(System.Activities.Presentation.Hosting.AssemblyContextControlItem,System.Activities.Presentation.Hosting.ImportedNamespaceContextItem,System.Collections.Generic.List{System.Activities.Presentation.Model.ModelItem},System.String,System.Type,System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.Presentation.View.IExpressionEditorInstance</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Activities.Presentation.Hosting.AssemblyContextControlItem" />
+        <Parameter Name="importedNamespaces" Type="System.Activities.Presentation.Hosting.ImportedNamespaceContextItem" />
+        <Parameter Name="variables" Type="System.Collections.Generic.List&lt;System.Activities.Presentation.Model.ModelItem&gt;" />
+        <Parameter Name="text" Type="System.String" />
+        <Parameter Name="expressionType" Type="System.Type" />
+        <Parameter Name="initialSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">環境内のローカル アセンブリおよび参照アセンブリ。</param>
+        <param name="importedNamespaces">式エディターで使用するインポートされた名前空間。</param>
+        <param name="variables">式エディターのローカル変数。</param>
+        <param name="text">式エディターに入力するために使用する文字列。</param>
+        <param name="expressionType">式の型。</param>
+        <param name="initialSize">式エディター コントロールの高さと幅の初期サイズ。</param>
+        <summary>指定したアセンブリ、インポートされた名前空間、変数、式テキスト、式の型、および初期サイズを使用して、新しい式エディターを作成します。</summary>
+        <returns><see cref="T:System.Activities.Presentation.View.IExpressionEditorInstance" /> の新しいインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateContext">
+      <MemberSignature Language="C#" Value="public void UpdateContext (System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void UpdateContext(class System.Activities.Presentation.Hosting.AssemblyContextControlItem assemblies, class System.Activities.Presentation.Hosting.ImportedNamespaceContextItem importedNamespaces) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Presentation.View.IExpressionEditorService.UpdateContext(System.Activities.Presentation.Hosting.AssemblyContextControlItem,System.Activities.Presentation.Hosting.ImportedNamespaceContextItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblies" Type="System.Activities.Presentation.Hosting.AssemblyContextControlItem" />
+        <Parameter Name="importedNamespaces" Type="System.Activities.Presentation.Hosting.ImportedNamespaceContextItem" />
+      </Parameters>
+      <Docs>
+        <param name="assemblies">エディター セッションのコンテキストを設定するために使用します。</param>
+        <param name="importedNamespaces">式エディターで使用するインポートされた名前空間。</param>
+        <summary>編集セッションのコンテキストを更新します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,95 @@
+<Type Name="IteratorStateMachineAttribute" FullName="System.Runtime.CompilerServices.IteratorStateMachineAttribute">
+  <TypeSignature Language="C#" Value="public sealed class IteratorStateMachineAttribute : System.Runtime.CompilerServices.StateMachineAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit IteratorStateMachineAttribute extends System.Runtime.CompilerServices.StateMachineAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.IteratorStateMachineAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Runtime.CompilerServices.StateMachineAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Visual Basic のメソッドをマークするかどうかを示す、<see langword="Iterator" />修飾子です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用することはできません、`IteratorStateMachine`属性をコード内のメソッドにします。 持つ Visual Basic でのメソッドの[反復子](~/docs/visual-basic/language-reference/modifiers/iterator.md)修飾子は、コンパイラが適用されます、 `IteratorStateMachine` IL 出力を内の属性です。  
+  
+ メソッドが、(*MethodName*) Visual Basic では、`Iterator`修飾子は、コンパイラは、ステート マシンの構造体を含む IL を生成します。 その構造には、メソッドのコードが含まれています。 IL がスタブ メソッドにはも含まれている (*MethodName*) に、ステート マシンを呼び出します。 コンパイラは追加、`IteratorStateMachine`ツールは、対応するステート マシンを識別できるように、スタブ メソッドに属性します。 生成された IL の詳細については、将来のコンパイラのリリースで変更可能性があります。  
+  
+ 反復子メソッドは、コレクションに対するカスタム イテレーションを使用して、実行、 `Yield` (Visual Basic) ステートメントを一度に 1 つの各要素を返します。 詳細については、「[反復子](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)」をご覧ください。  
+  
+> [!NOTE]
+>  使用することはできません`IteratorStateMachineAttribute`メソッドが c# では、iterator メソッドであるかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 次の例では、メソッドが iterator メソッドであるかどうかを判別する方法を示します。 例では、`IsIteratorMethod`は、次の手順を実行します。  
+  
+-   取得、<xref:System.Reflection.MethodInfo>メソッド名を使用してオブジェクト<xref:System.Type.GetMethod%2A?displayProperty=nameWithType>です。  
+  
+-   取得、<xref:System.Type>オブジェクトを使用して属性を[GetType 演算子](~/docs/visual-basic/language-reference/operators/gettype-operator.md)です。  
+  
+-   メソッドと属性の型の属性オブジェクトで使用して取得`MethodInfo.GetCustomAttribute`です。 場合`GetCustomAttribute`返します`Nothing`(Visual Basic)、メソッドが含まれていない属性にはです。  
+  
+ [!code-vb[Runtime.CompilerServices.AsyncStateMachineAttribute#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/runtime.compilerservices.asyncstatemachineattribute/vb/module2.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IteratorStateMachineAttribute (Type stateMachineType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type stateMachineType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.IteratorStateMachineAttribute.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="stateMachineType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="stateMachineType">ステート マシン メソッドの実装に使用される基になるステート マシン型の型のオブジェクト。</param>
+        <summary><see cref="T:System.Runtime.CompilerServices.IteratorStateMachineAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

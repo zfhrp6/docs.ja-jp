@@ -1,0 +1,1171 @@
+<Type Name="DataControlField" FullName="System.Web.UI.WebControls.DataControlField">
+  <TypeSignature Language="C#" Value="public abstract class DataControlField : System.Web.UI.IDataSourceViewSchemaAccessor, System.Web.UI.IStateManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit DataControlField extends System.Object implements class System.Web.UI.IDataSourceViewSchemaAccessor, class System.Web.UI.IStateManager" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataControlField" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IDataSourceViewSchemaAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IStateManager</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("HeaderText")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.ComponentModel.ExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべてのデータ コントロールフィールド型の基底クラスとして機能します。これは、<see cref="T:System.Web.UI.WebControls.DetailsView" /> や <see cref="T:System.Web.UI.WebControls.GridView" /> など、表形式のデータ バインド コントロール内のデータ列を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField>クラスはコントロールのフィールドの種類、すべてのデータの基本クラスとして機能します。 コントロールのデータ フィールドは、方法と似ています、データのフィールドを表すデータ バインドされたコントロールによって使用される、<xref:System.Web.UI.WebControls.DataGridColumn>オブジェクト内の列の型を表して、<xref:System.Web.UI.WebControls.DataGrid>コントロール。  
+  
+ 派生したクラスを使用して<xref:System.Web.UI.WebControls.DataControlField>のデータ フィールドでの表示方法、データ バインド コントロールなどを制御する<xref:System.Web.UI.WebControls.DetailsView>または<xref:System.Web.UI.WebControls.GridView>です。 次の表は、ASP.NET によって提供される別のデータ コントロール フィールド型を一覧表示します。  
+  
+|列フィールドの種類|説明|  
+|-----------------------|-----------------|  
+|<xref:System.Web.UI.WebControls.BoundField>|データ ソースのフィールドの値をテキストとして表示します。|  
+|<xref:System.Web.UI.WebControls.ButtonField>|データ バインド コントロール内のコマンド ボタンを表示します。 コントロールによっては、これにより、行または追加または削除 ボタンなどのカスタム ボタン コントロールを持つ列を表示できます。|  
+|<xref:System.Web.UI.WebControls.CheckBoxField>|データ バインド コントロールでチェック ボックスを表示します。 この種類のデータ コントロール フィールドはブール値を持つフィールドを表示します。|  
+|<xref:System.Web.UI.WebControls.CommandField>|組み込みのコマンドを表示、編集を実行するボタンの挿入、またはデータ バインド コントロール内で操作を削除します。|  
+|<xref:System.Web.UI.WebControls.HyperLinkField>|ハイパーリンクとして、データ ソースのフィールドの値を表示します。 この種類のデータ コントロール フィールドでは、2 番目のフィールドをハイパーリンクの URL にバインドすることができます。|  
+|<xref:System.Web.UI.WebControls.ImageField>|データ バインド コントロールにイメージを表示します。|  
+|<xref:System.Web.UI.WebControls.TemplateField>|ユーザー定義コンテンツで、指定したテンプレートに応じてデータ バインド コントロールに表示します。|  
+  
+ 拡張することも、<xref:System.Web.UI.WebControls.DataControlField>と<xref:System.Web.UI.WebControls.BoundField>独自のデータ コントロール フィールド型を作成するクラス。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField>クラスには、データ バインド コントロール内のユーザー インターフェイス (UI) 要素の表示方法を決定する多くのプロパティが用意されています。 わけではありませんコントロールは、UI を表示するときに、すべての利用可能なデータ コントロール フィールド プロパティを使用します。 たとえば、<xref:System.Web.UI.WebControls.DetailsView>行としてデータ コントロール フィールドを表示するコントロールには、データ コントロール フィールドごとに、ヘッダー項目がないページ フッターのアイテムが含まれています。 したがって、<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>と<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>によってプロパティが無視される、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.GridView> 、ただし、使用を制御、<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>と<xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>プロパティ場合、<xref:System.Web.UI.WebControls.GridView.ShowFooter%2A>プロパティに設定されている`true`です。 同様に、データ コントロール フィールドのプロパティでは、要素は、新機能によって、UI 要素の表示に影響します。 <xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>プロパティは常に、フィールドに適用します。 型から派生している場合<xref:System.Web.UI.WebControls.DataControlField>ようにコントロールを含む、<xref:System.Web.UI.WebControls.ButtonField>または<xref:System.Web.UI.WebControls.CheckBoxField>クラス、<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>プロパティ フィールドに適用します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.BoundField>と<xref:System.Web.UI.WebControls.ButtonField>から派生したオブジェクト<xref:System.Web.UI.WebControls.DataControlField>、内の行を表示する、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.DetailsView>コントロールが、<xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows%2A>プロパティに設定`false`、によって返されるデータのサブセットを表示できるようにする、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/CS/datacontrolfield1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/VB/datacontrolfield1vb.aspx#1)]  
+  
+ 次のコード例を拡張する方法を示しています、<xref:System.Web.UI.WebControls.BoundField>で使用できるカスタム バインドされるフィールドを作成するクラス、<xref:System.Web.UI.WebControls.GridView>コントロール。 ような<xref:System.Web.UI.WebControls.CheckBoxField>クラス、`RadioButtonField`クラスの列を表します`true`または`false`データ。 ただしがデータを<xref:System.Web.UI.WebControls.CheckBoxField>にクラスをバインドのセットにすることができます`true`または`false`値は、一連のデータを`RadioButtonField`するクラスがバインドされている 1 つだけ持つことができます`true`特定の時点の値。 この例は、実装する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>と<xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>から派生したすべてのクラスの 2 つの重要なメソッド、メソッド、<xref:System.Web.UI.WebControls.DataControlField>です。  
+  
+ [!code-csharp[Samples.AspNet.RadioButtonField#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/CS/radiobuttonfield.cs#1)]
+ [!code-vb[Samples.AspNet.RadioButtonField#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/VB/radiobuttonfield.vb#1)]  
+  
+ 次のコード例を使用する方法を示しています、`RadioButtonField`で前の例で提供されているクラス、<xref:System.Web.UI.WebControls.GridView>コントロール。 この例では、<xref:System.Web.UI.WebControls.GridView>コントロール、スポーツ チームに対してデータを表示します。 プレーヤーのデータは、ID 列、列名については、プレーヤー、およびチームの長を示す true または false の列を含むデータ テーブルで維持されます。 `RadioButtonField`クラスを使用しているチーム メンバーは、現在のチーム長を表示します。 <xref:System.Web.UI.WebControls.GridView>新しいチーム長を選択するか、その他のプレーヤーの情報を変更するのには、コントロールを編集することができます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_4#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_4/CS/datacontrolfield4cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_4#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_4/VB/datacontrolfield4vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected DataControlField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataControlField" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField>クラスは抽象クラスを作成することはできません、<xref:System.Web.UI.WebControls.DataControlField>オブジェクトに直接できます。 このコンス トラクターは、一般的に定義されたプロパティを初期化するために派生クラスのコンス トラクターによって呼び出されます。、<xref:System.Web.UI.WebControls.DataControlField>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AccessibleHeaderText">
+      <MemberSignature Language="C#" Value="public virtual string AccessibleHeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AccessibleHeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.AccessibleHeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定として表示されるテキストを<see langword="AbbreviatedText" />一部のコントロールでプロパティの値。</summary>
+        <value>スクリーン リーダーによって読み取られるテキストの省略形を表す文字列。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>状態変更イベントを発生させるメソッドが呼び出されたときに、<xref:System.Web.UI.WebControls.DataControlField.AccessibleHeaderText%2A>プロパティを設定します。  
+  
+ 値、<xref:System.Web.UI.WebControls.DataControlField.AccessibleHeaderText%2A>プロパティは viewstate に格納されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneField">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.WebControls.DataControlField CloneField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance class System.Web.UI.WebControls.DataControlField CloneField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.CloneField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の重複したコピーを作成<see cref="T:System.Web.UI.WebControls.DataControlField" />-派生オブジェクト。</summary>
+        <returns>現在の複製コピー<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A>メソッドで使用されるヘルパー メソッド、 <xref:System.Web.UI.WebControls.DataControlFieldCollection.CloneFields%2A> 、現在のコピーを作成するメソッド<xref:System.Web.UI.WebControls.DataControlField>-派生オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Control">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.Control Control { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.Control Control" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.Control" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.Control</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロールへの参照を取得、<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクトに関連付けられています。</summary>
+        <value>所有するデータ コントロール、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.Control%2A>場合、参照が設定、<xref:System.Web.UI.WebControls.DataControlField.Initialize%2A>メソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ControlStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Style ControlStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style ControlStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.ControlStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれるすべての Web サーバー コントロールのスタイルを取得、<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Style" />フィールドに含まれている Web サーバー コントロールの外観を制御します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>プロパティから派生した型に含まれるすべての Web サーバー コントロールの外観を制御する<xref:System.Web.UI.WebControls.DataControlField>です。  
+  
+ このプロパティは、すべての派生型には影響しません。 <xref:System.Web.UI.WebControls.BoundField>コントロールでは、通常のテキスト データが表示され、のみが含まれています<xref:System.Web.UI.WebControls.TextBox>コントロールで、影響を受けるのみ、<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>プロパティの場合に<xref:System.Web.UI.WebControls.DataControlRowState.Edit>状態です。 Web サーバー コントロールなど<xref:System.Web.UI.WebControls.ButtonField>と<xref:System.Web.UI.WebControls.CheckBoxField>影響を受ける可能性があります、<xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>プロパティ、フィールドに含まれるコントロール オブジェクトのインスタンスの特定の構成によって異なります。 たとえば、<xref:System.Web.UI.WebControls.ButtonField>としてコントロールを表示できる、 <xref:System.Web.UI.WebControls.LinkButton>、 <xref:System.Web.UI.WebControls.ImageButton>、または<xref:System.Web.UI.WebControls.Button>オブジェクト。 <xref:System.Web.UI.WebControls.LinkButton>コントロールの影響を受ける`font`の指定された属性<xref:System.Web.UI.WebControls.Style>オブジェクト、<xref:System.Web.UI.WebControls.Button>コントロールはありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.BoundField>と<xref:System.Web.UI.WebControls.ButtonField>から派生したオブジェクト<xref:System.Web.UI.WebControls.DataControlField>、内の行を表示する、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.DataControlField.ControlStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.ButtonField>オブジェクトが設定されているし、制御する方法、<xref:System.Web.UI.WebControls.LinkButton>フィールドが含まれているコントロールが表示されます。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_2/CS/datacontrolfield2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_2/VB/datacontrolfield2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyProperties">
+      <MemberSignature Language="C#" Value="protected virtual void CopyProperties (System.Web.UI.WebControls.DataControlField newField);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void CopyProperties(class System.Web.UI.WebControls.DataControlField newField) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.CopyProperties(System.Web.UI.WebControls.DataControlField)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newField" Type="System.Web.UI.WebControls.DataControlField" />
+      </Parameters>
+      <Docs>
+        <param name="newField"><see cref="T:System.Web.UI.WebControls.DataControlField" />を現在のプロパティをコピーする<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</param>
+        <summary>現在のプロパティをコピー <see cref="T:System.Web.UI.WebControls.DataControlField" />-を指定したオブジェクトを派生<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.CopyProperties%2A>メソッドで使用されるヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField.CloneField%2A>メソッド、現在のプロパティをコピーする<xref:System.Web.UI.WebControls.DataControlField>-派生オブジェクトを<xref:System.Web.UI.WebControls.DataControlField>メソッドによって作成されたオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateField">
+      <MemberSignature Language="C#" Value="protected abstract System.Web.UI.WebControls.DataControlField CreateField ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Web.UI.WebControls.DataControlField CreateField() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.CreateField" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataControlField</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、作成、空<see cref="T:System.Web.UI.WebControls.DataControlField" />-派生オブジェクト。</summary>
+        <returns>空<see cref="T:System.Web.UI.WebControls.DataControlField" />-派生オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.CreateField%2A>メソッドで使用されるヘルパー メソッド、 <xref:System.Web.UI.WebControls.DataControlField.CloneField%2A> 、空を作成するメソッド<xref:System.Web.UI.WebControls.DataControlField>-派生オブジェクトの現在のプロパティのコピーを<xref:System.Web.UI.WebControls.DataControlField>-にオブジェクトを派生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignMode">
+      <MemberSignature Language="C#" Value="protected bool DesignMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DesignMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.DesignMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロール フィールドが現在デザイン時環境で表示するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataControlField" />表示した、デザイン時環境で、それ以外では現在<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.DesignMode%2A>プロパティが公開、<xref:System.Web.UI.Control.DesignMode%2A?displayProperty=nameWithType>プロパティです。 <xref:System.Web.UI.Control>に渡されるインスタンス、<xref:System.Web.UI.WebControls.DataControlField.Initialize%2A>メソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExtractValuesFromCell">
+      <MemberSignature Language="C#" Value="public virtual void ExtractValuesFromCell (System.Collections.Specialized.IOrderedDictionary dictionary, System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ExtractValuesFromCell(class System.Collections.Specialized.IOrderedDictionary dictionary, class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlRowState rowState, bool includeReadOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell(System.Collections.Specialized.IOrderedDictionary,System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlRowState,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dictionary" Type="System.Collections.Specialized.IOrderedDictionary" />
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="includeReadOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="dictionary"><see cref="T:System.Collections.Specialized.IOrderedDictionary" />。</param>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />のコントロールまたはテキストを格納している、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</param>
+        <param name="rowState"><see cref="T:System.Web.UI.WebControls.DataControlRowState" /> 値のいずれか。</param>
+        <param name="includeReadOnly">
+          <see langword="true" />読み取り専用フィールドの値が含まれることを示すために、<c>ディクショナリ</c>コレクションです。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>現在のテーブル セルからデータ コントロール フィールドの値を抽出しを指定した値を追加<see cref="T:System.Collections.IDictionary" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>メソッドはから派生した型によって実装<xref:System.Web.UI.WebControls.DataControlField>に該当する場合、値と、現在のフィールドを関連付けます。 フィールドと値のペアが格納されている、`dictionary`メソッドに渡されるコレクション。 <xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>メソッドによって呼び出されます、`ExtractRowValues`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.DataControlFieldCell>セルとその関連値のセットを作成するオブジェクト。 派生するクラスを作成している場合は、このメソッドを実装して<xref:System.Web.UI.WebControls.DataControlField>ユーザー データまたはデータ バインドされたデータを表示します。 すべての派生型の実装、<xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>メソッド、すべてのフィールドにユーザー データが表示されるためです。 たとえば、<xref:System.Web.UI.WebControls.ButtonField>コントロール ボタンを表示し、ユーザー データがありません。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>から派生するコントロールに対して、メソッド、<xref:System.Web.UI.WebControls.DataControlField>クラスです。 `RadioButtonField`クラスのすべての行のデータ バインド オプション ボタンをレンダリングする、<xref:System.Web.UI.WebControls.GridView>コントロール。 ときに、<xref:System.Web.UI.WebControls.DataControlField.ExtractValuesFromCell%2A>メソッドが呼び出されると、メソッドを決定しようとしたかどうかの現在の値、<xref:System.Web.UI.WebControls.RadioButton>セルに含まれるオブジェクトが選択されているまたはクリアされ、値を追加、<xref:System.Collections.IDictionary>コレクション。 このコード例に示されている例の一部である、<xref:System.Web.UI.WebControls.DataControlField>クラスです。  
+  
+ [!code-csharp[Samples.AspNet.RadioButtonField#2](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/CS/radiobuttonfield.cs#2)]
+ [!code-vb[Samples.AspNet.RadioButtonField#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/VB/radiobuttonfield.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle FooterStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle FooterStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.FooterStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのデータ フィールドのフッターのスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />のフッターのアイテムの外観を制御する、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>プロパティから派生した型のページ フッターのアイテムに表示される任意のテキストの外観を制御する<xref:System.Web.UI.WebControls.DataControlField>です。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロールでは、データ コントロール フィールドのフッターのアイテムは表示されません。 たとえば、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として、データ コントロール フィールドを表示します。 ページ フッターのアイテムはレンダリングされませんこれらのデータ コントロール フィールドです。 <xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>これらのコントロールのプロパティは無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterText">
+      <MemberSignature Language="C#" Value="public virtual string FooterText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FooterText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.FooterText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロール フィールドのフッターのアイテムに表示されるテキストを設定します。</summary>
+        <value>[フッター] 項目で表示される文字列、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>フィールドに関連するデータ コントロール フィールド、またはその他のデータのメモやコメントを追加するプロパティです。  
+  
+> [!NOTE]
+>  一部のデータ バインド コントロールでは、データ コントロール フィールドのフッターのアイテムは表示されません。 たとえば、<xref:System.Web.UI.WebControls.DetailsView>コントロールは行として、データ コントロール フィールドを表示します。 ページ フッターのアイテムはレンダリングされませんこれらのデータ コントロール フィールドです。 <xref:System.Web.UI.WebControls.DataControlField.FooterStyle%2A>これらのコントロールのプロパティは無視されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderImageUrl">
+      <MemberSignature Language="C#" Value="public virtual string HeaderImageUrl { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderImageUrl" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.HeaderImageUrl" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.ImageUrlEditor, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a", typeof(System.Drawing.Design.UITypeEditor))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.UrlProperty</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロール フィールドのヘッダー項目に表示されるイメージの URL を設定します。</summary>
+        <value>ヘッダー項目に表示されるイメージへの完全修飾パスまたは相対 URL を表す文字列、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティ ヘッダー テキストではなくデータ コントロールのヘッダー項目に表示するイメージの場合。  
+  
+> [!NOTE]
+>  場合は、両方、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>と<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティを設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティが優先されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>のプロパティ、<xref:System.Web.UI.WebControls.ButtonField>でイメージを表示する列を<xref:System.Web.UI.WebControls.GridView>ヘッダーのテキストではなくコントロールの列のヘッダー。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_3/CS/datacontrolfield3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_3/VB/datacontrolfield3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle HeaderStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle HeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.HeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールのデータ フィールドのヘッダーのスタイルを設定します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />の外観を制御する、<see cref="T:System.Web.UI.WebControls.DataControlField" />ヘッダー項目。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>プロパティから派生した型のヘッダー項目に表示される任意のテキストの外観を制御する<xref:System.Web.UI.WebControls.DataControlField>です。 最も一般的なアプリケーション、<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>内の列ヘッダーのスタイルを変更するのには、プロパティ、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.HeaderStyle%2A>のプロパティ、<xref:System.Web.UI.WebControls.HyperLinkField>列で、列ヘッダーの黄色の背景色が表示されます、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_3#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_3/CS/datacontrolfield3cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_3#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_3/VB/datacontrolfield3vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HeaderText">
+      <MemberSignature Language="C#" Value="public virtual string HeaderText { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string HeaderText" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.HeaderText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロール フィールドのヘッダー項目に表示されるテキストを設定します。</summary>
+        <value>文字列のヘッダー項目に表示される、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>フレンドリ名をデータ コントロール内のフィールドを識別するプロパティです。 最も一般的なアプリケーション、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>プロパティは意味のある列のデータ バインドされたフィールドの名前を提供する、<xref:System.Web.UI.WebControls.GridView>または<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+> [!NOTE]
+>  場合は、両方、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>と<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティを設定、<xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>プロパティが優先されます。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>プロパティの<xref:System.Web.UI.WebControls.BoundField>の列のヘッダーにテキストを表示する列、<xref:System.Web.UI.WebControls.GridView>コントロール。 このコード例は、マスター/詳細シナリオを示します、<xref:System.Web.UI.WebControls.GridView>コントロールを使用中にデータのサブセットを表示する、<xref:System.Web.UI.WebControls.DetailsView>コントロールを使用すると、大量のデータ セットを表示し、新しいレコードを挿入します。 2 つの例では、使用<xref:System.Web.UI.WebControls.SqlDataSource>コントロール: いずれかを設定する、<xref:System.Web.UI.WebControls.GridView>制御と設定を 1 つ、<xref:System.Web.UI.WebControls.DetailsView>を制御し、データを挿入します。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/CS/sql15cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.SqlDataSource_15sql#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.SqlDataSource_15sql/VB/sql15vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public virtual bool Initialize (bool sortingEnabled, System.Web.UI.Control control);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Initialize(bool sortingEnabled, class System.Web.UI.Control control) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.Initialize(System.Boolean,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sortingEnabled" Type="System.Boolean" />
+        <Parameter Name="control" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="sortingEnabled">コントロールがデータの列の並べ替えをサポートしているかどうかを示す値。</param>
+        <param name="control">所有するデータ コントロール、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</param>
+        <summary>データ コントロール フィールドのインスタンスの基本的な初期化を実行します。</summary>
+        <returns>常に <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールを<xref:System.Web.UI.WebControls.DataControlField>オブジェクトが呼び出しに関連付けられた、<xref:System.Web.UI.WebControls.DataControlField.Initialize%2A>行コレクションに追加される前に、フィールドを初期化します。 などのデータ コントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>を呼び出す、<xref:System.Web.UI.WebControls.DataControlField.Initialize%2A>メソッドでその`CreateChildControls`などその他のメソッドを呼び出す前にメソッド`CreateRow`データを特定の行を作成します。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.DataControlFieldCell>いずれかの基本的な初期化を実行するオブジェクト<xref:System.Web.UI.WebControls.DataControlField>オブジェクト。 設定する前に、派生型は任意のオブジェクトの初期化が必要な場合は、このメソッドを実装して<xref:System.Web.UI.WebControls.DataControlFieldCell>でコントロールのデータをオブジェクトまたは、<xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeCell">
+      <MemberSignature Language="C#" Value="public virtual void InitializeCell (System.Web.UI.WebControls.DataControlFieldCell cell, System.Web.UI.WebControls.DataControlCellType cellType, System.Web.UI.WebControls.DataControlRowState rowState, int rowIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void InitializeCell(class System.Web.UI.WebControls.DataControlFieldCell cell, valuetype System.Web.UI.WebControls.DataControlCellType cellType, valuetype System.Web.UI.WebControls.DataControlRowState rowState, int32 rowIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.InitializeCell(System.Web.UI.WebControls.DataControlFieldCell,System.Web.UI.WebControls.DataControlCellType,System.Web.UI.WebControls.DataControlRowState,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="cell" Type="System.Web.UI.WebControls.DataControlFieldCell" />
+        <Parameter Name="cellType" Type="System.Web.UI.WebControls.DataControlCellType" />
+        <Parameter Name="rowState" Type="System.Web.UI.WebControls.DataControlRowState" />
+        <Parameter Name="rowIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="cell">A<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />のコントロールまたはテキストを格納している、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</param>
+        <param name="cellType"><see cref="T:System.Web.UI.WebControls.DataControlCellType" /> 値のいずれか。</param>
+        <param name="rowState">1 つ、<see cref="T:System.Web.UI.WebControls.DataControlRowState" />を含む行の状態を指定する値、<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />です。</param>
+        <param name="rowIndex">行のインデックスを<see cref="T:System.Web.UI.WebControls.DataControlFieldCell" />に含まれています。</param>
+        <summary>セルのコントロール コレクションにテキストやコントロールを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生した型<xref:System.Web.UI.WebControls.DataControlField>実装、<xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>テキストとコントロールを追加する方法、<xref:System.Web.UI.WebControls.DataControlFieldCell>ユーザー インターフェイス (UI) を表示するテーブルを使用するデータ コントロールに属しているオブジェクト。 これらのデータ コントロールを作成、完全なテーブル構造 1 行ずつときに、それぞれ`CreateChildControls`メソッドが呼び出されます。 <xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>メソッドによって呼び出されます、`InitializeRow`データのメソッドなどのコントロール<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>です。  
+  
+ カスタムのデータ バインドを作成している場合は、このメソッドを制御する呼び出しを使用して<xref:System.Web.UI.WebControls.DataControlFieldCell>コントロールやデータを含むテーブル構造のセルを初期化するためにします。 派生するクラスを作成している場合は、このメソッドを実装して<xref:System.Web.UI.WebControls.DataControlField>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、実装する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.InitializeCell%2A>から派生するコントロールに対して、メソッド、<xref:System.Web.UI.WebControls.DataControlField>クラスです。 `RadioButtonField`クラスのすべての行のデータ バインド オプション ボタンをレンダリングする、<xref:System.Web.UI.WebControls.GridView>コントロール。 行がユーザーにデータが表示と編集モードではないときに、<xref:System.Web.UI.WebControls.RadioButton>コントロールが無効にします。 たとえば、ユーザーが行を更新するときに、編集モードは、行と、<xref:System.Web.UI.WebControls.GridView>コントロール、<xref:System.Web.UI.WebControls.RadioButton>コントロールを表示するように有効になるため、クリックすることができます。 この例は、行の状態は 1 つまたは複数の組み合わせで可能性があるためにビットごとの AND 演算子を使用して<xref:System.Web.UI.WebControls.DataControlRowState>値。  
+  
+ [!code-csharp[Samples.AspNet.RadioButtonField#3](~/samples/snippets/csharp/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/CS/radiobuttonfield.cs#3)]
+ [!code-vb[Samples.AspNet.RadioButtonField#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Samples.AspNet.RadioButtonField/VB/radiobuttonfield.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InsertVisible">
+      <MemberSignature Language="C#" Value="public virtual bool InsertVisible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool InsertVisible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.InsertVisible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataControlField" />親データ バインド コントロールが挿入モードの場合は、オブジェクトを表示します。</summary>
+        <value>
+          <see langword="true" />挿入モード; に、親データ バインド コントロールが表示される場合は、フィールドが表示される場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在の表示行の状態が挿入モードでは、データ バインド コントロール<xref:System.Web.UI.WebControls.DataControlRowState?displayProperty=nameWithType>です。  
+  
+ <xref:System.Web.UI.WebControls.DetailsView>一連のフィールドを表示する前に、コントロールがこのプロパティの値を確認します。 場合、<xref:System.Web.UI.WebControls.DataControlField.InsertVisible%2A>プロパティは`false`、<xref:System.Web.UI.Control.Visible%2A>のプロパティ、<xref:System.Web.UI.WebControls.DetailsViewRow>にオブジェクトが設定されている`false`です。  
+  
+ 値、<xref:System.Web.UI.WebControls.DataControlField.InsertVisible%2A>プロパティは viewstate に格納されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsTrackingViewState">
+      <MemberSignature Language="C#" Value="protected bool IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクトのビューステートへ変更を保存します。</summary>
+        <value>
+          <see langword="true" />その状態を保存する場合は、データ ソース ビューがマークされています。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ItemStyle">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TableItemStyle ItemStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TableItemStyle ItemStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.ItemStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TableItemStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ コントロール フィールドによって表示される任意のテキスト ベースのコンテンツのスタイルを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TableItemStyle" />に表示されるテキストの外観を制御する、<see cref="T:System.Web.UI.WebControls.DataControlField" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>プロパティから派生した型に表示される任意のテキスト データの外観を制御する<xref:System.Web.UI.WebControls.DataControlField>です。 たとえば、バインド、<xref:System.Web.UI.WebControls.BoundField>コントロール テキスト データに使用することができます、<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>プロパティが表示されるテキストの外観を変更します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、宣言によって設定する方法を示します、<xref:System.Web.UI.WebControls.DataControlField.ItemStyle%2A>プロパティを<xref:System.Web.UI.WebControls.BoundField>表示に使用されるオブジェクト`FirstName`と`LastName`内のデータ、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.DetailsView>コントロールが、<xref:System.Web.UI.WebControls.DetailsView.AutoGenerateRows%2A>プロパティに設定`false`、によって返されるデータのサブセットを表示できるようにする、<xref:System.Web.UI.WebControls.SqlDataSource.SelectCommand%2A>プロパティです。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/CS/datacontrolfield1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/VB/datacontrolfield1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected virtual void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">復元する <see cref="T:System.Web.UI.WebControls.DataControlField" /> の状態を表すオブジェクト。</param>
+        <summary>データ ソース ビューの以前保存したビューステートを復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ このメソッドのビュー ステート情報の復元、<xref:System.Web.UI.WebControls.DataControlField>によって保存された前回のページ要求からのオブジェクト、<xref:System.Web.UI.WebControls.DataControlField.SaveViewState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnFieldChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnFieldChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnFieldChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.OnFieldChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see langword="FieldChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>メソッド イベントを発生させますことを知らせる、<xref:System.Web.UI.WebControls.DataControlField>オブジェクトの状態が変更されました。 次のプロパティへの変更がこのイベントが発生する: <xref:System.Web.UI.WebControls.DataControlField.FooterText%2A>、 <xref:System.Web.UI.WebControls.DataControlField.HeaderImageUrl%2A>、 <xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>、 <xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>、 <xref:System.Web.UI.WebControls.DataControlField.SortExpression%2A>、および<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>です。 また、派生型のプロパティには、状態が変化したときにこのイベントが発生します。 Web サーバー コントロールなど<xref:System.Web.UI.WebControls.DetailsView>と<xref:System.Web.UI.WebControls.GridView>通常を呼び出す、`DataBind`フィールドへの応答でメソッドがイベントを変更します。  
+  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、次を参照してください。 [NIB: イベントを発生させる](http://msdn.microsoft.com/en-us/f2adaf01-1ed1-42e1-8c31-8d467e7e0ee2)です。  
+  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Web.UI.WebControls.DataControlField.OnFieldChanged" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Web.UI.WebControls.DataControlField.OnFieldChanged" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveViewState">
+      <MemberSignature Language="C#" Value="protected virtual object SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance object SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>加えられた変更を保存、<see cref="T:System.Web.UI.WebControls.DataControlField" />ページがサーバーにポストされた時間以降の状態を表示します。</summary>
+        <returns>変更を格納しているオブジェクト、<see cref="T:System.Web.UI.WebControls.DataControlField" />状態を表示します。 このメソッドが戻るかどうかは、オブジェクトに関連付けられているビュー ステートがない、<see langword="null" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ビュー ステートが、サーバー コントロールのプロパティの値の累積します。 これらの値は自動的に、サーバー コントロールの配置<xref:System.Web.UI.Control.ViewState%2A>インスタンスであるプロパティの<xref:System.Web.UI.StateBag>クラスです。 保存状態の段階のサーバー コントロールのライフ サイクルの後に、このプロパティの値が文字列オブジェクトを永続化します。  
+  
+ 文字列は、HTML に格納されている変数として、クライアントに返されるビューステートを保存すると、`hidden`要素。 カスタム サーバー コントロールを作成するときに、このメソッドをオーバーライドし、変更、サーバー コントロールの効率を向上できます<xref:System.Web.UI.Control.ViewState%2A>プロパティです。 詳細については、次を参照してください。 [ASP.NET ビュー状態の概要](http://msdn.microsoft.com/library/19d2a6ed-9a77-4c7c-a7f5-74dd4b6c3818)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowHeader">
+      <MemberSignature Language="C#" Value="public virtual bool ShowHeader { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowHeader" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.ShowHeader" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロール フィールドのヘッダー項目が表示されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合のヘッダー項目、<see cref="T:System.Web.UI.WebControls.DataControlField" />がレンダリングされた、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlField.ShowHeader%2A>ヘッダー アイテムを表示するかどうかを指定するプロパティ、<xref:System.Web.UI.WebControls.DataControlField>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SortExpression">
+      <MemberSignature Language="C#" Value="public virtual string SortExpression { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SortExpression" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.SortExpression" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.DataSourceViewSchemaConverter, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ソース コントロールによってデータの並べ替えに使用される並べ替え式を設定します。</summary>
+        <value>データ ソース コントロールによってデータの並べ替えに使用する並べ替え式です。 既定値は、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.OnFieldChanged%2A>状態変更イベントを発生させるメソッドが呼び出されたときに、<xref:System.Web.UI.WebControls.DataControlField.SortExpression%2A>プロパティを設定します。  
+  
+ 値、<xref:System.Web.UI.WebControls.DataControlField.SortExpression%2A>プロパティは viewstate に格納されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.DataControlField.SortExpression%2A>データ コントロール フィールドに、並べ替え式を割り当てるプロパティをします。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/CS/datacontrolfield1cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_1#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_1/VB/datacontrolfield1vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema">
+      <MemberSignature Language="C#" Value="object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Web.UI.IDataSourceViewSchemaAccessor.DataSourceViewSchema" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.System#Web#UI#IDataSourceViewSchemaAccessor#DataSourceViewSchema" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataControlField" /> オブジェクトに関連付けられているスキーマを取得または設定します。</summary>
+        <value>この <see cref="T:System.Web.UI.WebControls.DataControlField" /> に関連付けられているスキーマ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.IsTrackingViewState">
+      <MemberSignature Language="C#" Value="bool System.Web.UI.IStateManager.IsTrackingViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Web.UI.IStateManager.IsTrackingViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.System#Web#UI#IStateManager#IsTrackingViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクトのビューステートへ変更を保存します。</summary>
+        <value>
+          <see langword="true" />示す、<see cref="T:System.Web.UI.WebControls.DataControlField" />するビューの変更を保存状態です。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.LoadViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.LoadViewState (object state);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.LoadViewState(object state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.System#Web#UI#IStateManager#LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="state" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="state">保存したコントロールのビュー ステートの値を格納している <see cref="T:System.Object" />。</param>
+        <summary>データ コントロール フィールドの以前に保存したビューステートを復元します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.SaveViewState">
+      <MemberSignature Language="C#" Value="object IStateManager.SaveViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.Web.UI.IStateManager.SaveViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.System#Web#UI#IStateManager#SaveViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>加えられた変更を保存、<see cref="T:System.Web.UI.WebControls.DataControlField" />ページがサーバーにポストされた時間以降の状態を表示します。</summary>
+        <returns>保存したコントロールのビュー ステートの値を格納している <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IStateManager.TrackViewState">
+      <MemberSignature Language="C#" Value="void IStateManager.TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IStateManager.TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.System#Web#UI#IStateManager#TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、 <see cref="T:System.Web.UI.WebControls.DataControlField" /> 、コントロールの保存できるように、ビュー ステートへの変更を追跡するオブジェクト<see cref="P:System.Web.UI.WebControls.DataControlField.ViewState" />プロパティと同じページの間で永続化された要求。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これを表す文字列を返します<see cref="T:System.Web.UI.WebControls.DataControlField" />オブジェクト。</summary>
+        <returns>この <see cref="T:System.Web.UI.WebControls.DataControlField" /> を表す文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは実装の値を返す、<xref:System.Web.UI.WebControls.DataControlField.HeaderText%2A>プロパティ、プロパティが設定されている場合。 それ以外の場合、このメソッドは、単にデータ コントロール フィールド (たとえば、"BoundField") の型を表す文字列を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TrackViewState">
+      <MemberSignature Language="C#" Value="protected virtual void TrackViewState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void TrackViewState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.TrackViewState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、 <see cref="T:System.Web.UI.WebControls.DataControlField" /> 、コントロールの保存できるように、ビュー ステートへの変更を追跡するオブジェクト<see cref="P:System.Web.UI.WebControls.DataControlField.ViewState" />プロパティと同じページの間で永続化された要求。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateRequestMode">
+      <MemberSignature Language="C#" Value="protected virtual System.Web.UI.ValidateRequestMode ValidateRequestMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.ValidateRequestMode ValidateRequestMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.ValidateRequestMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ValidateRequestMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコントロールがクライアントの入力を検証するかどうかを指定する値を設定します。</summary>
+        <value>
+          <see langword="true" />コントロールがクライアントの入力を検証する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateSupportsCallback">
+      <MemberSignature Language="C#" Value="public virtual void ValidateSupportsCallback ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ValidateSupportsCallback() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataControlField.ValidateSupportsCallback" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、コールバックのサポート フィールドに、コントロールが含まれていることを通知します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataControlField.ValidateSupportsCallback%2A>メソッドは、コントロールに含まれているかどうかを判断するために使用するヘルパー メソッド、<xref:System.Web.UI.WebControls.DataControlField>サポート コールバック オブジェクトします。 このメソッドの基本実装を実装してスロー、<xref:System.NotSupportedException>コールバックがサポートされていないことを示す例外です。  
+  
+> [!NOTE]
+>  このメソッドは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">既定のインスタンスで、メソッドが呼び出さ、<see cref="T:System.Web.UI.WebControls.DataControlField" />クラスです。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.WebControls.DataControlField" />クラス フィールド サポート コールバックによって、コントロールが含まれるかどうかを示すためにこのメソッドをオーバーライドします。 コールバックがサポートされていることを示すために、例外をスローしない空のメソッドとしてこのメソッドを実装しますそれ以外の場合、コールバックがサポートされていない理由を説明するメッセージと共に例外をスローします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewState">
+      <MemberSignature Language="C#" Value="protected System.Web.UI.StateBag ViewState { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.StateBag ViewState" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.ViewState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.StateBag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>状態情報を保存およびのビューステートを復元することができますのディクショナリを取得、<see cref="T:System.Web.UI.WebControls.DataControlField" />同じページに対する複数の要求オブジェクト。</summary>
+        <value>インスタンス<see cref="T:System.Web.UI.StateBag" />を格納している、<see cref="T:System.Web.UI.WebControls.DataControlField" />ビュー ステート情報。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、状態が蓄積されるすべてのプロパティ値のフィールドの表示を制御します。 ASP.NET サーバー コントロールを HTTP 要求間でこれらの値を保持するには、このプロパティは、インスタンスを使用しての<xref:System.Web.UI.StateBag>クラス、プロパティ値を格納します。 値は、後続の要求が処理されるときに、変数として HTML 非表示の input 要素を渡されます。 サーバー コントロールのビューステートの保存に関する詳細については、次を参照してください。 [ASP.NET ビュー状態の概要](http://msdn.microsoft.com/library/19d2a6ed-9a77-4c7c-a7f5-74dd4b6c3818)です。  
+  
+ 既定では、すべてのサーバー コントロールのビューステートが有効な場合がありますを無効にします。 詳細については、次を参照してください。 [ASP.NET パフォーマンス概要](http://msdn.microsoft.com/library/f882bf1b-a009-4312-ac06-74370ffabc0b)です。  
+  
+ ディクショナリ、およびその使用方法の詳細については、次を参照してください。[コレクションとデータ構造体](http://msdn.microsoft.com/library/60cc581f-1db5-445b-ba04-a173396bf872)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Visible">
+      <MemberSignature Language="C#" Value="public bool Visible { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Visible" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataControlField.Visible" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ コントロール フィールドを表示するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Web.UI.WebControls.DataControlField" />がレンダリングされた、それ以外の<see langword="false" />します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティを表示または非表示に<xref:System.Web.UI.WebControls.DataControlField>データ バインド コントロール内のオブジェクト。  
+  
+ 場合の<xref:System.Web.UI.WebControls.DataControlField.Visible%2A>プロパティは`false`データ値は表示されず、クライアントへのラウンド トリップしないでください。 ラウンドト リップさせる、データを表示するフィールドが表示されていないの場合の追加、フィールド名を`DataKeyNames`データ バインド コントロールのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.Web.UI.WebControls.BoundField>と<xref:System.Web.UI.WebControls.ButtonField>から派生したオブジェクト<xref:System.Web.UI.WebControls.DataControlField>、内の行を表示する、<xref:System.Web.UI.WebControls.DetailsView>コントロール。 <xref:System.Web.UI.WebControls.DataControlField.Visible%2A>のプロパティ、<xref:System.Web.UI.WebControls.BoundField>を表示するオブジェクト、`EmployeeID`に列が設定されている`false`、列は表示もされませんが、<xref:System.Web.UI.WebControls.DetailsView>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.DataControlField_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_2/CS/datacontrolfield2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.DataControlField_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.DataControlField_2/VB/datacontrolfield2vb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

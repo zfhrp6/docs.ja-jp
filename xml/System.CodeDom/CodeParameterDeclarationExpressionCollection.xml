@@ -1,0 +1,455 @@
+<Type Name="CodeParameterDeclarationExpressionCollection" FullName="System.CodeDom.CodeParameterDeclarationExpressionCollection">
+  <TypeSignature Language="C#" Value="public class CodeParameterDeclarationExpressionCollection : System.Collections.CollectionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeParameterDeclarationExpressionCollection extends System.Collections.CollectionBase" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Collections.CollectionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.CodeDom.CodeParameterDeclarationExpression" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeParameterDeclarationExpressionCollection> クラスには、一連の <xref:System.CodeDom.CodeParameterDeclarationExpression> オブジェクトの格納に使用できる単純なコレクション オブジェクトが用意されています。  
+  
+   
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>クラスのメソッドです。 この例では、クラスの新しいインスタンスを作成し、メソッドを使用してステートメントをコレクションに追加し、インデックスを返し、追加、または特定のインデックス位置にある属性を削除します。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#1](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#1)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#1](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#1)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeParameterDeclarationExpressionCollection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeParameterDeclarationExpressionCollection (System.CodeDom.CodeParameterDeclarationExpression[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeParameterDeclarationExpression[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.#ctor(System.CodeDom.CodeParameterDeclarationExpression[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクションの初期化に使用するオブジェクト。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />クラスの指定した配列を含む<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />オブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">配列内の 1 つまたは複数のオブジェクトが<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeParameterDeclarationExpressionCollection (System.CodeDom.CodeParameterDeclarationExpressionCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.CodeDom.CodeParameterDeclarationExpressionCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.#ctor(System.CodeDom.CodeParameterDeclarationExpressionCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpressionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />コレクションを初期化するときに使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />指定したソース コレクションの要素を格納します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (System.CodeDom.CodeParameterDeclarationExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 Add(class System.CodeDom.CodeParameterDeclarationExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.Add(System.CodeDom.CodeParameterDeclarationExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">追加する <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />。</param>
+        <summary>指定された <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" /> をコレクションに追加します。</summary>
+        <returns>新しい要素の挿入位置のインデックス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.CodeDom.CodeParameterDeclarationExpression>オブジェクトを<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>インスタンス。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#3)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#3)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeParameterDeclarationExpression[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeParameterDeclarationExpression[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.AddRange(System.CodeDom.CodeParameterDeclarationExpression[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">型の配列<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクションに追加するオブジェクトを格納します。</param>
+        <summary>指定された配列の要素をコレクションの末尾にコピーします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.AddRange%28System.CodeDom.CodeParameterDeclarationExpression%5B%5D%29>のメンバーを追加するメソッドのオーバー ロード、<xref:System.CodeDom.CodeParameterDeclarationExpression>配列を<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>です。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddRange">
+      <MemberSignature Language="C#" Value="public void AddRange (System.CodeDom.CodeParameterDeclarationExpressionCollection value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddRange(class System.CodeDom.CodeParameterDeclarationExpressionCollection value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.AddRange(System.CodeDom.CodeParameterDeclarationExpressionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpressionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />コレクションに追加するオブジェクトを格納します。</param>
+        <summary>別の内容を追加<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />コレクションの末尾にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.AddRange%28System.CodeDom.CodeParameterDeclarationExpressionCollection%29>メソッドのオーバー ロードのいずれかのメンバーを追加する<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>を別のオブジェクト<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>です。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#4)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#4)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public bool Contains (System.CodeDom.CodeParameterDeclarationExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Contains(class System.CodeDom.CodeParameterDeclarationExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.Contains(System.CodeDom.CodeParameterDeclarationExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">A<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクション内で検索します。</param>
+        <summary>コレクションが、指定したに含まれているかどうかを示す値を取得<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />です。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがコレクションに含まれている場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.Contains%2A>メソッドが存在する特定の検索を<xref:System.CodeDom.CodeParameterDeclarationExpression>オブジェクトを検出するインデックス値を取得します。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (System.CodeDom.CodeParameterDeclarationExpression[] array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void CopyTo(class System.CodeDom.CodeParameterDeclarationExpression[] array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.CopyTo(System.CodeDom.CodeParameterDeclarationExpression[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.CodeDom.CodeParameterDeclarationExpression[]" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">1 次元<see cref="T:System.Array" />の値がコレクションからコピー先であること。</param>
+        <param name="index">挿入を開始する位置を示す配列のインデックス。</param>
+        <summary>オブジェクトをコレクションに、1 次元コピー<see cref="T:System.Array" />インスタンスの指定したインデックスを開始位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、の内容をコピーする方法を示します、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>を<xref:System.Array>指定したインデックス値から開始します。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#6](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#6)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#6](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#6)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#6](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コピー先の配列が多次元です。  
+  
+ または  
+  
+ 内の要素の数、<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />がで指定されたターゲット配列のインデックスの間で使用可能な領域よりも大きい、<paramref name="index" />パラメーターと対象となる配列の末尾。</exception>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターは、ターゲット配列の最小のインデックス値より小さくします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public int IndexOf (System.CodeDom.CodeParameterDeclarationExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance int32 IndexOf(class System.CodeDom.CodeParameterDeclarationExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.IndexOf(System.CodeDom.CodeParameterDeclarationExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクション内で検索する <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />。</param>
+        <summary>指定したコレクションのインデックスを取得<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクション内に存在する場合は、します。</summary>
+        <returns>指定したオブジェクトのコレクション内のインデックス場合が見つかりました。それ以外の場合、-1 を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、特定の存在を検索<xref:System.CodeDom.CodeParameterDeclarationExpression>使用して、インスタンス、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.IndexOf%2A>が検出されたインデックス値を取得します。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#5)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#5)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#5](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int index, System.CodeDom.CodeParameterDeclarationExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Insert(int32 index, class System.CodeDom.CodeParameterDeclarationExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.Insert(System.Int32,System.CodeDom.CodeParameterDeclarationExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression" />
+      </Parameters>
+      <Docs>
+        <param name="index">指定したオブジェクトを挿入する位置の 0 から始まるインデックス。</param>
+        <param name="value">挿入する <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />。</param>
+        <summary>指定した挿入<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクション内の指定したインデックス位置。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.Insert%2A>を追加するメソッド、<xref:System.CodeDom.CodeParameterDeclarationExpression>オブジェクトを<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>です。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#8)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#8)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeParameterDeclarationExpression this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeParameterDeclarationExpression Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeParameterDeclarationExpressionCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeParameterDeclarationExpression</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">アクセスするコレクションのインデックス。</param>
+        <summary>取得または設定、<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />有効な各インデックスにします。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、コレクションへのアクセスに使用できるインデクサーです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" /> パラメーターが、コレクションのインデックスの有効範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (System.CodeDom.CodeParameterDeclarationExpression value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove(class System.CodeDom.CodeParameterDeclarationExpression value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeParameterDeclarationExpressionCollection.Remove(System.CodeDom.CodeParameterDeclarationExpression)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.CodeDom.CodeParameterDeclarationExpression" />
+      </Parameters>
+      <Docs>
+        <param name="value">コレクションから削除する <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" />。</param>
+        <summary>指定された <see cref="T:System.CodeDom.CodeParameterDeclarationExpression" /> をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で使用する方法、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection.Remove%2A>を削除する方法、<xref:System.CodeDom.CodeParameterDeclarationExpression>オブジェクトから、<xref:System.CodeDom.CodeParameterDeclarationExpressionCollection>です。  
+  
+ [!code-cpp[CodeParameterDeclarationExpressionCollectionExample#9](~/samples/snippets/cpp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CPP/class1.cpp#9)]
+ [!code-csharp[CodeParameterDeclarationExpressionCollectionExample#9](~/samples/snippets/csharp/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/CS/class1.cs#9)]
+ [!code-vb[CodeParameterDeclarationExpressionCollectionExample#9](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeParameterDeclarationExpressionCollectionExample/VB/class1.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">指定したオブジェクトがコレクション内に見つかりませんでした。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

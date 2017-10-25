@@ -1,0 +1,45 @@
+<Type Name="KeyPressEventHandler" FullName="System.Windows.Forms.KeyPressEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void KeyPressEventHandler(object sender, KeyPressEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KeyPressEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.KeyPressEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.KeyPressEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.KeyPressEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.Control.KeyPress" /> の <see cref="T:System.Windows.Forms.Control" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定<xref:System.Windows.Forms.KeyPressEventArgs.Handled%2A?displayProperty=nameWithType>に`true`を取り消す、`KeyPress`イベント。 これにより、コントロールがキーを押すを処理します。  
+  
+ <xref:System.Windows.Forms.KeyPressEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 デリゲートでイベントを処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[KeyPressEventArgs#1](~/samples/snippets/cpp/VS_Snippets_Winforms/KeyPressEventArgs/CPP/form1.cpp#1)]
+ [!code-csharp[KeyPressEventArgs#1](~/samples/snippets/csharp/VS_Snippets_Winforms/KeyPressEventArgs/CS/form1.cs#1)]
+ [!code-vb[KeyPressEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/KeyPressEventArgs/VB/form1.vb#1)]  
+  
+ [!code-cpp[Control.KeyDown#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Control.KeyDown/CPP/form1.cpp#1)]
+ [!code-csharp[Control.KeyDown#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Control.KeyDown/CS/form1.cs#1)]
+ [!code-vb[Control.KeyDown#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Control.KeyDown/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

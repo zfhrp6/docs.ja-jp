@@ -1,0 +1,1177 @@
+<Type Name="DragDrop" FullName="System.Windows.DragDrop">
+  <TypeSignature Language="C#" Value="public static class DragDrop" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit DragDrop extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DragDrop" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ドラッグ アンド ドロップ操作では、機能と機能を追加して、ドラッグ アンド ドロップの関連するイベント ハンドラーの削除を開始するメソッドを含む、ドラッグ アンド ドロップ操作を開始するためのヘルパー メソッドとフィールドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般的に、ドラッグ アンド ドロップとは、マウス (または何らかのポインティング デバイス) を使用して 1 つ以上のオブジェクトを選択し、これらのオブジェクトを [!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)] の目的のドロップ先までドラッグしてからドロップするデータ転送方式をいいます。 ドラッグ アンド ドロップ、コピー (または切り取り) に似ています - と - 貼り付けの操作から 1 つのオブジェクトまたは別のアプリケーションにデータを転送するために使用します。 通常、ドラッグ アンド ドロップ操作では、2 つのパーティ: ドラッグ ソースからドラッグしたデータの作成元とドロップのデータを受け取るドロップ ターゲットです。 ドラッグ アンド ドロップ操作に必要なイベントとメソッドは、<xref:System.Windows.DragDrop> クラスで定義されています。 ドラッグ アンド ドロップ イベントは、アタッチされるイベントに関連付けることができる<xref:System.Windows.UIElement>または<xref:System.Windows.ContentElement>です。 ドラッグのソースとドロップのターゲットには、UI 要素を同じアプリケーション内、または別のアプリケーションに可能性があります。 ただし、ドロップ ターゲットは、ドラッグ元で渡されるデータを処理する方法を知っている必要があります。  
+  
+> [!NOTE]
+>  <xref:System.Windows.UIElement>と<xref:System.Windows.ContentElement>イベントは、基底クラスとしてこれらのクラスが継承されるクラス メンバーの一覧に表示されるように、クラスがドラッグ アンド ドロップのイベントのエイリアスを含めます。 基になる、ハンドラーがアタッチされているこれらのクラスのいずれかにドラッグ アンド ドロップ イベントをイベント ハンドラーをアタッチする際に<xref:System.Windows.DragDrop>イベントと、イベント データの同じインスタンスを受信します。 例については、「<xref:System.Windows.UIElement.Drop?displayProperty=nameWithType>」を参照してください。  
+  
+ ドラッグ元では、静的な <xref:System.Windows.DragDrop.DoDragDrop%2A> メソッドを呼び出して、転送するデータをそのメソッドに渡すことでドラッグ アンド ドロップ操作を開始します。 通常、要素は、ドラッグ ソースがある場合に、次のイベントを処理します。  
+  
+-   <xref:System.Windows.DragDrop.GiveFeedback>  
+  
+-   <xref:System.Windows.DragDrop.QueryContinueDrag>  
+  
+ 通常、要素は、ドロップ ターゲットである場合は、次のイベントを処理します。  
+  
+-   <xref:System.Windows.DragDrop.DragEnter>  
+  
+-   <xref:System.Windows.DragDrop.DragLeave>  
+  
+-   <xref:System.Windows.DragDrop.DragOver>  
+  
+-   <xref:System.Windows.DragDrop.Drop>  
+  
+ 詳細と例については、次を参照してください。[ドラッグ アンド ドロップの概要](~/docs/framework/wpf/advanced/drag-and-drop-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddDragEnterHandler">
+      <MemberSignature Language="C#" Value="public static void AddDragEnterHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDragEnterHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddDragEnterHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.DragEnter" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.DragEnter>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewDragEnterHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDragLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void AddDragLeaveHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDragLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddDragLeaveHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.DragLeave" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.DragLeave>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewDragLeaveHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDragOverHandler">
+      <MemberSignature Language="C#" Value="public static void AddDragOverHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDragOverHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddDragOverHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.DragOver" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragOver>イベント オブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.DragOver>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewDragOverHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDropHandler">
+      <MemberSignature Language="C#" Value="public static void AddDropHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddDropHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddDropHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.Drop" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.Drop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.Drop>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewDropHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddGiveFeedbackHandler">
+      <MemberSignature Language="C#" Value="public static void AddGiveFeedbackHandler (System.Windows.DependencyObject element, System.Windows.GiveFeedbackEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddGiveFeedbackHandler(class System.Windows.DependencyObject element, class System.Windows.GiveFeedbackEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddGiveFeedbackHandler(System.Windows.DependencyObject,System.Windows.GiveFeedbackEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.GiveFeedback" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.GiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.GiveFeedback>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewGiveFeedbackHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewDragEnterHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewDragEnterHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewDragEnterHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewDragEnterHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewDragEnter" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewDragEnter>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddDragEnterHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewDragLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewDragLeaveHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewDragLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewDragLeaveHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewDragLeave" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewDragLeave>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddDragLeaveHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewDragOverHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewDragOverHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewDragOverHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewDragOverHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewDragOver" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragOver>イベント n 個のオブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewDragOver>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddDragOverHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewDropHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewDropHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewDropHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewDropHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewDrop" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDrop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewDrop>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddDropHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewGiveFeedbackHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewGiveFeedbackHandler (System.Windows.DependencyObject element, System.Windows.GiveFeedbackEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewGiveFeedbackHandler(class System.Windows.DependencyObject element, class System.Windows.GiveFeedbackEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewGiveFeedbackHandler(System.Windows.DependencyObject,System.Windows.GiveFeedbackEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewGiveFeedback" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewGiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewGiveFeedback>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddGiveFeedbackHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewQueryContinueDragHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewQueryContinueDragHandler (System.Windows.DependencyObject element, System.Windows.QueryContinueDragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewQueryContinueDragHandler(class System.Windows.DependencyObject element, class System.Windows.QueryContinueDragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddPreviewQueryContinueDragHandler(System.Windows.DependencyObject,System.Windows.QueryContinueDragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.PreviewQueryContinueDrag" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベント。 バブルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddQueryContinueDragHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddQueryContinueDragHandler">
+      <MemberSignature Language="C#" Value="public static void AddQueryContinueDragHandler (System.Windows.DependencyObject element, System.Windows.QueryContinueDragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddQueryContinueDragHandler(class System.Windows.DependencyObject element, class System.Windows.QueryContinueDragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.AddQueryContinueDragHandler(System.Windows.DependencyObject,System.Windows.QueryContinueDragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">イベント ハンドラーを追加する対象の依存関係オブジェクト (<see cref="T:System.Windows.UIElement" /> または <see cref="T:System.Windows.ContentElement" />)。</param>
+        <param name="handler">追加するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>指定された依存関係オブジェクトに <see cref="E:System.Windows.DragDrop.QueryContinueDrag" /> イベント ハンドラーを追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.QueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを追加、<xref:System.Windows.DragDrop.QueryContinueDrag>イベント。 トンネルのバージョンは、このイベントのハンドラーを追加するを参照してください。<xref:System.Windows.DragDrop.AddPreviewQueryContinueDragHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DoDragDrop">
+      <MemberSignature Language="C#" Value="public static System.Windows.DragDropEffects DoDragDrop (System.Windows.DependencyObject dragSource, object data, System.Windows.DragDropEffects allowedEffects);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.DragDropEffects DoDragDrop(class System.Windows.DependencyObject dragSource, object data, valuetype System.Windows.DragDropEffects allowedEffects) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.DoDragDrop(System.Windows.DependencyObject,System.Object,System.Windows.DragDropEffects)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dragSource" Type="System.Windows.DependencyObject" />
+        <Parameter Name="data" Type="System.Object" />
+        <Parameter Name="allowedEffects" Type="System.Windows.DragDropEffects" />
+      </Parameters>
+      <Docs>
+        <param name="dragSource">ドラッグされているデータのソースである依存関係オブジェクトへの参照。</param>
+        <param name="data">ドラッグされているデータを格納するデータ オブジェクト。</param>
+        <param name="allowedEffects">1 つ、<see cref="T:System.Windows.DragDropEffects" />を指定する値は、ドラッグ アンド ドロップ操作の効果を許可します。</param>
+        <summary>ドラッグ アンド ドロップ操作を開始します。</summary>
+        <returns>1 つ、<see cref="T:System.Windows.DragDropEffects" />ドラッグ アンド ドロップ操作中に実行された最終的な効果を指定する値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドラッグが発生する時期を決定し、ドラッグ アンド ドロップ操作を開始するアプリケーションの役割です。 通常、これはときに、<xref:System.Windows.UIElement.MouseDown>と<xref:System.Windows.UIElement.MouseMove>をドラッグできる要素の上の一連のイベントが発生します。 静的なを呼び出すことによって、ドラッグ アンド ドロップ操作を開始する<xref:System.Windows.DragDrop.DoDragDrop%2A>メソッドと、転送されたデータを渡します。 必要な場合、<xref:System.Windows.DragDrop.DoDragDrop%2A> メソッドは <xref:System.Windows.DataObject> にデータを自動的にラップします。 データ形式の制御を拡大するには、データを <xref:System.Windows.DragDrop.DoDragDrop%2A> メソッドに渡す前に <xref:System.Windows.DataObject> にラップします。  
+  
+ 返される値、<xref:System.Windows.DragDrop.DoDragDrop%2A>メソッドの値では、<xref:System.Windows.DragEventArgs.Effects%2A?displayProperty=nameWithType>でドロップ ターゲットのプロパティが設定<xref:System.Windows.DragDrop.Drop>イベント ハンドラー。 戻り値のいずれかの一致しない場合、`allowedEffects`への呼び出しで指定された<xref:System.Windows.DragDrop.DoDragDrop%2A>、ドラッグ アンド ドロップ操作は実行されません。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Shapes.Ellipse> 要素の <xref:System.Windows.UIElement.MouseMove> イベント ハンドラーからドラッグ アンド ドロップ操作を開始してドラッグ元にする方法を示しています。 転送されるデータは、楕円の <xref:System.Windows.Shapes.Shape.Fill%2A> プロパティの文字列表現です。 データが渡される、<xref:System.Windows.DragDrop.DoDragDrop%2A>を文字列としてのメソッドは自動的にラップし、<xref:System.Windows.DataObject>です。  
+  
+ [!code-csharp[DragDropSnippets#DoDragDrop](~/samples/snippets/csharp/VS_Snippets_Wpf/dragdropsnippets/cs/mainwindow.xaml.cs#dodragdrop)]
+ [!code-vb[DragDropSnippets#DoDragDrop](~/samples/snippets/visualbasic/VS_Snippets_Wpf/dragdropsnippets/vb/mainwindow.xaml.vb#dodragdrop)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="dragSource" /> または <paramref name="data" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DragEnterEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragEnterEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragEnterEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.DragEnterEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.DragEnter" />イベントをアタッチします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.DragEnter>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewDragEnterEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragLeaveEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragLeaveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragLeaveEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.DragLeaveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.DragLeave" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.DragLeave>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewDragLeaveEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DragOverEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DragOverEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DragOverEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.DragOverEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.DragOver" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragOver>イベント オブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.DragOver>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewDragOverEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DropEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent DropEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent DropEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.DropEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.Drop" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.Drop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.Drop>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewDropEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GiveFeedbackEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent GiveFeedbackEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent GiveFeedbackEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.GiveFeedbackEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.GiveFeedback" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.GiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.GiveFeedback>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewGiveFeedbackEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewDragEnterEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewDragEnterEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewDragEnterEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewDragEnterEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewDragEnter" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewDragEnter>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.DragEnterEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewDragLeaveEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewDragLeaveEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewDragLeaveEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewDragLeaveEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewDragLeave" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewDragLeave>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.DragLeaveEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewDragOverEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewDragOverEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewDragOverEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewDragOverEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewDragOver" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragOver>イベント n 個のオブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewDragOver>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.DragOverEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewDropEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewDropEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewDropEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewDropEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewDrop" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDrop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewDrop>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.DropEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewGiveFeedbackEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewGiveFeedbackEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewGiveFeedbackEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewGiveFeedbackEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewGiveFeedback" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewGiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewGiveFeedback>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.GiveFeedbackEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewQueryContinueDragEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewQueryContinueDragEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewQueryContinueDragEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.PreviewQueryContinueDragEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.PreviewQueryContinueDrag" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このフィールドのトンネルのバージョンを識別する、<xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベント。 このイベントのバブルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.QueryContinueDragEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QueryContinueDragEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent QueryContinueDragEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent QueryContinueDragEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.DragDrop.QueryContinueDragEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.DragDrop.QueryContinueDrag" />添付イベント</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.QueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このフィールドのバブルのバージョンを識別する、<xref:System.Windows.DragDrop.QueryContinueDrag>イベント。 このイベントのトンネルのバージョンの識別子を参照してください。<xref:System.Windows.DragDrop.PreviewQueryContinueDragEvent>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDragEnterHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveDragEnterHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveDragEnterHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveDragEnterHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.DragEnter" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.DragEnter>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewDragEnterHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDragLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveDragLeaveHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveDragLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveDragLeaveHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.DragLeave" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.DragLeave>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewDragLeaveHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDragOverHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveDragOverHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveDragOverHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveDragOverHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.DragOver" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.DragOver>イベント オブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.DragOver>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewDragOverHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveDropHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveDropHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveDropHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveDropHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.Drop" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.Drop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.Drop>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewDropHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveGiveFeedbackHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveGiveFeedbackHandler (System.Windows.DependencyObject element, System.Windows.GiveFeedbackEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveGiveFeedbackHandler(class System.Windows.DependencyObject element, class System.Windows.GiveFeedbackEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveGiveFeedbackHandler(System.Windows.DependencyObject,System.Windows.GiveFeedbackEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.GiveFeedback" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.GiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.GiveFeedback>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewGiveFeedbackHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewDragEnterHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewDragEnterHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewDragEnterHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewDragEnterHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewDragEnter" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragEnter>イベント オブジェクトが、要素の境界内にドラッグされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewDragEnter>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveDragEnterHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewDragLeaveHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewDragLeaveHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewDragLeaveHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewDragLeaveHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewDragLeave" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragLeave>イベント オブジェクトが、要素の境界外にドラッグされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewDragLeave>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveDragLeaveHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewDragOverHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewDragOverHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewDragOverHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewDragOverHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewDragOver" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDragOver>イベント n 個のオブジェクトが、要素の境界を越えてドラッグされるときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewDragOver>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveDragOverHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewDropHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewDropHandler (System.Windows.DependencyObject element, System.Windows.DragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewDropHandler(class System.Windows.DependencyObject element, class System.Windows.DragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewDropHandler(System.Windows.DependencyObject,System.Windows.DragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.DragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewDrop" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewDrop>イベント要素の境界内でオブジェクトがドロップされたときに発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewDrop>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveDropHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewGiveFeedbackHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewGiveFeedbackHandler (System.Windows.DependencyObject element, System.Windows.GiveFeedbackEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewGiveFeedbackHandler(class System.Windows.DependencyObject element, class System.Windows.GiveFeedbackEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewGiveFeedbackHandler(System.Windows.DependencyObject,System.Windows.GiveFeedbackEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.GiveFeedbackEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewGiveFeedback" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewGiveFeedback>イベントは、ドラッグ操作中に発生します。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewGiveFeedback>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveGiveFeedbackHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewQueryContinueDragHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewQueryContinueDragHandler (System.Windows.DependencyObject element, System.Windows.QueryContinueDragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewQueryContinueDragHandler(class System.Windows.DependencyObject element, class System.Windows.QueryContinueDragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemovePreviewQueryContinueDragHandler(System.Windows.DependencyObject,System.Windows.QueryContinueDragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.PreviewQueryContinueDrag" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このメソッドは、トンネルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.PreviewQueryContinueDrag>イベント。 バブルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemoveQueryContinueDragHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveQueryContinueDragHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveQueryContinueDragHandler (System.Windows.DependencyObject element, System.Windows.QueryContinueDragEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveQueryContinueDragHandler(class System.Windows.DependencyObject element, class System.Windows.QueryContinueDragEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DragDrop.RemoveQueryContinueDragHandler(System.Windows.DependencyObject,System.Windows.QueryContinueDragEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="handler" Type="System.Windows.QueryContinueDragEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">依存関係オブジェクト (、<see cref="T:System.Windows.UIElement" />または<see cref="T:System.Windows.ContentElement" />) をイベント ハンドラーを削除します。</param>
+        <param name="handler">削除するハンドラー メソッドを参照するデリゲート。</param>
+        <summary>削除、<see cref="E:System.Windows.DragDrop.QueryContinueDrag" />指定した依存関係オブジェクトからのイベント ハンドラー。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.DragDrop.QueryContinueDrag>イベントは、ドラッグ アンド ドロップ操作中に発生し、ドラッグ ソースがドラッグ アンド ドロップ操作を取り消す必要があるかどうかを決定できるようにします。  
+  
+ このメソッドは、バブルのバージョンのハンドラーを削除、<xref:System.Windows.DragDrop.QueryContinueDrag>イベント。 トンネルのバージョンは、このイベントのハンドラーを削除するを参照してください。<xref:System.Windows.DragDrop.RemovePreviewQueryContinueDragHandler%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

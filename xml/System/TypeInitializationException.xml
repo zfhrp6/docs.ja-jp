@@ -1,0 +1,264 @@
+<Type Name="TypeInitializationException" FullName="System.TypeInitializationException">
+  <TypeSignature Language="C#" Value="public sealed class TypeInitializationException : SystemException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit TypeInitializationException extends System.SystemException" />
+  <TypeSignature Language="DocId" Value="T:System.TypeInitializationException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Exception</BaseTypeName>
+    <BaseTypeName FrameworkAlternate="netframework-4.5">System.SystemException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラス初期化子によってスローされた例外をラップするラッパーとしてスローされる例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラス初期化子で型の初期化に失敗すると、<xref:System.TypeInitializationException> が作成され、その型のクラス初期化子でスローされる例外への参照が渡されます。 <xref:System.Exception.InnerException%2A>プロパティ<xref:System.TypeInitializationException>は基になる例外を保持します。  
+  
+ 通常、<xref:System.TypeInitializationException>例外には、重大な状態が反映されます (ランタイムは、型をインスタンス化することはありません) ことにより、アプリケーションが続行されません。  ほとんどの場合、<xref:System.TypeInitializationException>アプリケーションの実行中の環境での変更に応答がスローされます。 その結果、以外の可能性のあるコードのデバッグ、トラブルシューティングのため例外いない内を処理する、 `try` / `catch`ブロックします。 代わりに、例外の原因は調査して除去します。  
+  
+ <xref:System.TypeInitializationException>値は 0x80131534 HRESULT COR_E_TYPEINITIALIZATION を使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については<xref:System.TypeInitializationException>を参照してください、<xref:System.TypeInitializationException.%23ctor%2A>コンス トラクターです。  
+  
+ 一部の状況を次のセクションでは、説明、<xref:System.TypeInitializationException>例外がスローされます。  
+  
+ [静的コンス トラクターと TypeInitializationException 例外](#Static)   
+ [正規表現の一致のタイムアウト値](#Timeout)   
+ [暦とカルチャのデータ](#Calendars)  
+  
+<a name="Static"></a>   
+## <a name="static-constructors-and-the-typeinitializationexception-exception"></a>静的コンス トラクターと TypeInitializationException 例外  
+ 静的コンス トラクターでは、1 つ存在する場合、自動的にランタイムによって呼び出されます、型の新しいインスタンスを作成する前にします。 静的コンス トラクターは、開発者によって明示的に定義することができます。 静的コンス トラクターが明示的に定義されていない場合のコンパイラを自動的に作成を初期化する 1 つ`static`(C# の場合) または`Shared`(Visual Basic) の型のメンバーです。  静的コンス トラクターの詳細については、次を参照してください。[静的コンス トラクター](~/docs/csharp/programming-guide/classes-and-structs/static-constructors.md)です。  
+  
+ 最も一般的な<xref:System.TypeInitializationException>静的コンス トラクターが型のインスタンスを作成できない場合に例外がスローされます。  <xref:System.Exception.InnerException%2A>プロパティは、静的コンス トラクターが型をインスタンス化できない理由を示します。 一般的な原因の一部、<xref:System.TypeInitializationException>例外します。  
+  
+ 静的コンス トラクターで未処理の例外  
+ その例外をラップ、静的コンス トラクターで例外がスローされた場合、<xref:System.TypeInitializationException>例外、および種類をインスタンス化することはできません。  
+  
+ 多くの場合、この例外をトラブルシューティングするが困難になります、静的コンス トラクターは常に明示的に定義されていませんソース コードでします。 場合、型で静的コンス トラクターが存在します。  
+  
+-   型のメンバーとして明示的に定義されています。  
+  
+-   型を持つ`static`(C# の場合) または`Shared`(Visual Basic) で宣言され、単一のステートメントで初期化されている変数。 この例では、言語コンパイラは、型の静的コンス トラクターを生成します。 などのユーティリティを使用して、検査することができます[IL 逆アセンブラー](~/docs/framework/tools/ildasm-exe-il-disassembler.md)です。 たとえば、c# および VB コンパイラは、次の例をコンパイル、ときに、IL には、次のように、静的コンス トラクターが生成します。  
+  
+    ```  
+  
+    .method private specialname rtspecialname static   
+            void  .cctor() cil managed  
+    {  
+      // Code size       12 (0xc)  
+      .maxstack  8  
+      IL_0000:  ldc.i4.3  
+      IL_0001:  newobj     instance void TestClass::.ctor(int32)  
+      IL_0006:  stsfld     class TestClass Example::test  
+      IL_000b:  ret  
+    } // end of method Example::.cctor  
+  
+    ```  
+  
+ 次の例は、<xref:System.TypeInitializationException>コンパイラによって生成された静的コンス トラクターによってスローされる例外。 `Example`クラスが含まれています、 `static` (C# の場合) または`Shared`(Visual Basic) の型のフィールド`TestClass`が 3 の値をそのクラスのコンス トラクターに渡すことによってインスタンス化します。  その値、ただしは無効です。0 または 1 の値のみが許可されています。 その結果、`TestClass`クラスのコンス トラクターがスローされます、<xref:System.ArgumentOutOfRangeException>です。 この例外が処理されないため、ラップ、<xref:System.TypeInitializationException>例外。  
+  
+ [!code-csharp[System.TypeInitializationException#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.TypeInitializationException/cs/ctorException1.cs#3)]
+ [!code-vb[System.TypeInitializationException#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.TypeInitializationException/vb/CtorException1.vb#3)]  
+  
+ 例外メッセージがに関する情報を表示することに注意してください、<xref:System.Exception.InnerException%2A>プロパティです。  
+  
+ 不足しているアセンブリまたはデータ ファイル  
+ 一般的な原因、<xref:System.TypeInitializationException>例外は、アプリケーションの開発およびテスト環境に存在していたアセンブリまたはデータ ファイルは、ランタイム環境から不足していること。 使用して、これによって Missing1a.dll をという名前のアセンブリには、次の例をコンパイルするなどのコマンドライン構文。  
+  
+```csharp  
+csc /t:library Missing1a.cs  
+```  
+  
+```vb  
+vbc Missing1a.vb /t:library  
+```  
+  
+ [!code-csharp[System.TypeInitializationException#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.TypeInitializationException/cs/Missing1a.cs#1)]
+ [!code-vb[System.TypeInitializationException#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.TypeInitializationException/vb/Missing1a.vb#1)]  
+  
+ Missing1a.dll への参照を含めることによって Missing1.exe を名前付き実行可能ファイルに次の例をコンパイルできます。  
+  
+```csharp  
+csc Missing1.cs /r:Missing1a.dll  
+```  
+  
+```vb  
+vbc Missing1.vb /r:Missing1a.dll  
+```  
+  
+ ただし、名前の変更、移動、または削除 Missing1a.dll して例を実行、スロー、<xref:System.TypeInitializationException>例外の例に示すように出力を表示します。  例外メッセージにはに関する情報が含まれますことに注意してください、<xref:System.Exception.InnerException%2A>プロパティです。 ここでは、内部例外は、<xref:System.IO.FileNotFoundException>がスローされるため、ランタイムは、依存アセンブリを見つけることができません。  
+  
+ [!code-csharp[System.TypeInitializationException#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.TypeInitializationException/cs/Missing1.cs#2)]
+ [!code-vb[System.TypeInitializationException#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.TypeInitializationException/vb/Missing1.vb#2)]  
+  
+> [!NOTE]
+>  この例では、<xref:System.TypeInitializationException>アセンブリは、読み込むことができないために、例外がスローされました。 例外は、静的コンス トラクターは、構成ファイル、XML ファイル、またはを格納するファイルが含まれていないデータをシリアル化など、データ ファイルを開こうとすると場合にもスローされます。  
+  
+<a name="Timeout"></a>   
+## <a name="regular-expression-match-timeout-values"></a>正規表現の一致のタイムアウト値  
+ アプリケーションごとのドメインごとの動作と一致する正規表現パターンの既定のタイムアウト値を設定することができます。 指定することで、タイムアウトが定義されている、<xref:System.TimeSpan>に"REGEX_DEFAULT_MATCH_TIMEOUT"プロパティの値、<xref:System.AppDomain.SetData%2A?displayProperty=nameWithType>メソッドです。 時間間隔を有効にする必要があります<xref:System.TimeSpan>オブジェクトが 0 より小さい約 24 日よりも大きいです。 これらの要件が満たされず、既定のタイムアウト値を設定しようとすると、スロー、<xref:System.ArgumentOutOfRangeException>を順番にラップされて、<xref:System.TypeInitializationException>例外。  
+  
+ 次の例は、 <xref:System.TypeInitializationException> "REGEX_DEFAULT_MATCH_TIMEOUT"プロパティに割り当てられた値が有効ではない場合にスローされます。 例外を回避するのには"REGEX_DEFAULT_MATCH_TIMEOUT"プロパティを設定、<xref:System.TimeSpan>の値が 0 より小さい約 24 日よりも大きいです。  
+  
+ [!code-csharp[System.TypeInitializationException#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/System.TypeInitializationException/cs/Regex1.cs#4)]
+ [!code-vb[System.TypeInitializationException#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/System.TypeInitializationException/vb/Regex1.vb#4)]  
+  
+<a name="Calendars"></a>   
+## <a name="calendars-and-cultural-data"></a>暦とカルチャのデータ  
+ カレンダーをインスタンス化しようとするが、ランタイムがインスタンス化することがないかどうか、<xref:System.Globalization.CultureInfo>そのカレンダーに対応するオブジェクトをスロー、<xref:System.TypeInitializationException>例外。 次のカレンダー クラス コンス トラクターによって例外をスローできます。  
+  
+-   既定のコンス トラクター、<xref:System.Globalization.JapaneseCalendar>クラスです。  
+  
+-   既定のコンス トラクター、<xref:System.Globalization.KoreanCalendar>クラスです。  
+  
+-   既定のコンス トラクター、<xref:System.Globalization.TaiwanCalendar>クラスです。  
+  
+ これらのカルチャのカルチャのデータは、すべてのシステムで利用可能にする必要があります、ためする必要がありますまれに、これまで、例外が発生するこのです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeInitializationException (string fullTypeName, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string fullTypeName, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeInitializationException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="fullTypeName" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="fullTypeName">初期化に失敗した型の完全修飾名。</param>
+        <param name="innerException">現在の例外の原因となった例外。 場合、 <c>innerException</c>パラメーターが null 参照ではありません (<see langword="Nothing" /> Visual Basic で) で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.TypeInitializationException" />した既定のエラー メッセージ、指定された型名は、この例外の根本原因となった内部例外への参照。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外は、<xref:System.Exception.InnerException%2A> プロパティに前の例外への参照を含んでいる場合があります。 <xref:System.Exception.InnerException%2A> プロパティは、コンストラクターに渡されたものと同じ値を返します。`Nothing` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、null 参照 (Visual Basic の場合は <xref:System.Exception.InnerException%2A>) を返します。  
+  
+ <xref:System.TypeInitializationException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.Exception.Message%2A>|ローカライズされたエラー メッセージ文字列。|  
+|<xref:System.TypeInitializationException.TypeName%2A>|型の名前。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.TypeInitializationException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />型名と追加の例外情報を含むオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeName">
+      <MemberSignature Language="C#" Value="public string TypeName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TypeName" />
+      <MemberSignature Language="DocId" Value="P:System.TypeInitializationException.TypeName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>初期化に失敗した型の完全修飾名を取得します。</summary>
+        <value>初期化に失敗した型の完全修飾名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

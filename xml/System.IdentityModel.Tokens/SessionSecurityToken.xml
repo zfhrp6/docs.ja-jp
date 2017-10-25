@@ -1,0 +1,879 @@
+<Type Name="SessionSecurityToken" FullName="System.IdentityModel.Tokens.SessionSecurityToken">
+  <TypeSignature Language="C#" Value="public class SessionSecurityToken : System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit SessionSecurityToken extends System.IdentityModel.Tokens.SecurityToken" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SessionSecurityToken" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityToken</BaseTypeName>
+  </Base>
+  <Interfaces>
+  </Interfaces>
+  <Docs>
+    <summary>セッションに関連付けられているデータが含まれるセキュリティ トークンを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セッション トークンを格納、<xref:System.Security.Claims.ClaimsPrincipal>のセッションを定義するその他のパラメーターだけでなく、セッションに関連付けられているユーザー セッションの開始イベントおよび終了時刻。  
+  
+ パッシブのシナリオで、<xref:System.IdentityModel.Services.WSFederationAuthenticationModule>への呼び出し、 <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) からのセッション トークンを作成する認証パイプラインから、<xref:System.Security.Claims.ClaimsPrincipal>認証されたユーザーを表すです。 その構成を使用して、SAM<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを作成して cookie にシリアル化 (および後続の要求の cookie からのトークンを逆シリアル化する)。 SAM は、その構成済みのインスタンスを使用して<xref:System.IdentityModel.Services.CookieHandler>クッキーを HTTP 応答に書き込むのにクラスです。 この cookie は、クライアントに返されます、後続の要求で、クライアントをセキュリティ トークンを再取得する id プロバイダーに戻るラウンド トリップを加えるのではなく、cookie 提示できます。 WIF のセッションのしくみの詳細については、次を参照してください。 [WIF セッション管理](~/docs/framework/security/wif-session-management.md)です。 Web ファームのシナリオにセッションの使用方法の詳細については、次を参照してください。 [WIF および Web ファーム](~/docs/framework/security/wif-and-web-farms.md)です。  
+  
+ セッション トークンは、かどうか参照モードで動作できます。 セッション トークンが参照モードで動作していない場合は、トークン全体がクライアントに格納されているセッション cookie にシリアル化されます。 シリアル化されたセッション トークンが非常に大きくなることができ、そのため、cookie がクライアントに格納することもできます非常にサイズ変更可能です。 参照モードでセッション全体をシリアル化するのではなく cookie にトークン、トークンはセッション セキュリティ トークンのキャッシュとキャッシュからトークンを取得するために必要なキーの生成に使用する情報のみが、cookie に格納されています。 これは、cookie のサイズを大幅に減らすことができます。 セッション トークンのキャッシュがから派生したクラスによって実装される<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>キャッシュ キーはによって実装されると、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>クラスです。 <xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>と<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>プロパティがで使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>キャッシュ キーを生成するクラス。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>プロパティかを決定するかどうか、セッション トークンの参照モードでします。  
+  
+> [!IMPORTANT]
+>  ハンドラーを提供することをお勧め参照モードで動作する、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> global.asax.cs ファイルと設定でイベント、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>に渡されたトークンのプロパティ、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 セッション トークンが要求ごとに参照モードで動作し、単なる設定が優先これにより、<xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A?displayProperty=nameWithType>セッション認証モジュールのプロパティです。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> WIF で提供されるクラスが Ws-secure Conversation としてセッション トークンをシリアル化`<wsc:SecurityContextToken>`要素。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">トークンを初期化するための要求のプリンシパル。</param>
+        <summary>指定されたプリンシパルから <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|<xref:System.String.Empty?displayProperty=nameWithType>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|<xref:System.DateTime.UtcNow%2A>加えた<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|生成される 128 ビットの対称キーが含まれています。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|<xref:System.DateTime.UtcNow%2A>加えた<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SessionSecurityToken (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データ。</param>
+        <param name="context">ソースに関するコンテキスト情報。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="context" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">ブートス トラップ トークンから生成された要求のプリンシパル。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />指定されたプリンシパルとブートス トラップ トークンからのクラスです。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|<xref:System.String.Empty?displayProperty=nameWithType>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|<xref:System.DateTime.UtcNow%2A>加えた<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|生成される 128 ビットの対称キーが含まれています。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|<xref:System.DateTime.UtcNow%2A>加えた<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, TimeSpan lifetime);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, valuetype System.TimeSpan lifetime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.TimeSpan)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="lifetime" Type="System.TimeSpan" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">トークンを初期化するための要求のプリンシパル。</param>
+        <param name="lifetime">トークンが有効である現在の時刻からの期間。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />プロパティ設定されます<see cref="P:System.DateTime.UtcNow" />と<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo" />プロパティ設定されます<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />さらにこのパラメーターによって指定された期間。</param>
+        <summary>指定されたプリンシパルから <see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" /> クラスの新しいインスタンスを初期化します。 有効では、新しいトークン<see cref="P:System.DateTime.UtcNow" />期間は、指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|<xref:System.String.Empty?displayProperty=nameWithType>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|<xref:System.DateTime.UtcNow%2A>plus `lifetime`.|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|生成される 128 ビットの対称キーが含まれています。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|<xref:System.DateTime.UtcNow%2A>plus `lifetime`.|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="lifetime" />以下には、<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context, Nullable&lt;DateTime&gt; validFrom, Nullable&lt;DateTime&gt; validTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validFrom, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="validTo" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">ブートス トラップ トークンから生成された要求のプリンシパル。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <param name="validFrom">トークンが有効になる時刻インスタント。 <see langword="null" />指定するには<see cref="P:System.DateTime.UtcNow" /></param>
+        <param name="validTo">インスタントするまでの時間、トークンが有効ではなくなりました。 <see langword="null" />値を追加することで、値を決定する必要がありますを指定する、<see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime" />プロパティで指定された時間を<c>validFrom</c>パラメーター。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />から、指定されたプリンシパルとブートス トラップ トークンです。 クラスと、指定した開始時刻と有効期限の時刻。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|<xref:System.String.Empty?displayProperty=nameWithType>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|値に設定、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>によって決定されるプロパティ、`ValidFrom`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>によって決定されるプロパティ、`ValidTo`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|生成される 128 ビットの対称キーが含まれています。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|値、`validFrom`パラメーター、または、`validFrom`は`null`、<xref:System.DateTime.UtcNow%2A>です。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|`validFrom` パラメーターの値。 場合`validFrom`は`null`の値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>プロパティ (によって決定される、`validFrom`パラメーター) と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="validFrom" />と<paramref name="validTo" />パラメーターを検証することはできません。 たとえば、<paramref name="validTo" />に発生する時間を指定よりも前<paramref name="validFrom" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context, string endpointId, Nullable&lt;DateTime&gt; validFrom, Nullable&lt;DateTime&gt; validTo);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, string context, string endpointId, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validFrom, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validTo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="validTo" Type="System.Nullable&lt;System.DateTime&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">ブートス トラップ トークンから生成された要求のプリンシパル。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <param name="endpointId">このトークンのバインド先となるエンドポイント。 空の文字列では、対象範囲外のトークンを作成します。</param>
+        <param name="validFrom">トークンが有効になる時刻インスタント。 <see langword="null" />指定する<see cref="P:System.DateTime.UtcNow" />です。</param>
+        <param name="validTo">インスタントするまでの時間、トークンが有効ではなくなりました。 <see langword="null" />値を追加することで、値を決定する必要がありますを指定する、<see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime" />プロパティで指定された時間を<c>validFrom</c>パラメーター。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />から、指定されたプリンシパルとブートス トラップ トークンです。 クラスと、指定した開始時刻と有効期限の時刻。 新しいトークンは、指定したエンドポイントに制限されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|`endpointId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|値に設定、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>によって決定されるプロパティ、`ValidFrom`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>によって決定されるプロパティ、`ValidTo`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|生成される 128 ビットの対称キーが含まれています。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|値、`validFrom`パラメーター、または、`validFrom`は`null`、<xref:System.DateTime.UtcNow%2A>です。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|`validFrom` パラメーターの値。 場合`validFrom`は`null`の値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>プロパティ (によって決定される、`validFrom`パラメーター) と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="endpointId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="validFrom" />と<paramref name="validTo" />パラメーターを検証することはできません。 たとえば、<paramref name="validTo" />に発生する時間を指定よりも前<paramref name="validFrom" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, System.Xml.UniqueId contextId, string context, string endpointId, TimeSpan lifetime, System.IdentityModel.Tokens.SymmetricSecurityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, class System.Xml.UniqueId contextId, string context, string endpointId, valuetype System.TimeSpan lifetime, class System.IdentityModel.Tokens.SymmetricSecurityKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.Xml.UniqueId,System.String,System.String,System.TimeSpan,System.IdentityModel.Tokens.SymmetricSecurityKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="lifetime" Type="System.TimeSpan" />
+        <Parameter Name="key" Type="System.IdentityModel.Tokens.SymmetricSecurityKey" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">このセッションに関連付けられている要求のプリンシパル。</param>
+        <param name="contextId">このトークンに関連付けられているコンテキストの識別子です。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <param name="endpointId">このトークンのバインド先となるエンドポイント。 空の文字列では、対象範囲外のトークンを作成します。</param>
+        <param name="lifetime">セッション トークンの有効期間。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />プロパティ設定されます<see cref="P:System.DateTime.UtcNow" />と<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo" />プロパティ設定されます<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />さらにこのパラメーターによって指定された期間。</param>
+        <param name="key">省略可能な対称セッション キーの場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />クラスを指定したプリンシパル、コンテキスト ID、コンテキスト、エンドポイント、有効期間、およびキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|`contextId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|`endpointId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|<xref:System.DateTime.UtcNow%2A>プラス`lifetime`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|いずれか 1 つの要素が含まれています`key`または、`key`は`null`、生成される 128 ビットの対称キー。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|<xref:System.DateTime.UtcNow%2A>|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|<xref:System.DateTime.UtcNow%2A>プラス`lifetime`|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="contextId" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="endpointId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="lifetime" />以下には、<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, System.Xml.UniqueId contextId, string context, string endpointId, DateTime validFrom, TimeSpan lifetime, System.IdentityModel.Tokens.SymmetricSecurityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, class System.Xml.UniqueId contextId, string context, string endpointId, valuetype System.DateTime validFrom, valuetype System.TimeSpan lifetime, class System.IdentityModel.Tokens.SymmetricSecurityKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.Xml.UniqueId,System.String,System.String,System.DateTime,System.TimeSpan,System.IdentityModel.Tokens.SymmetricSecurityKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.DateTime" />
+        <Parameter Name="lifetime" Type="System.TimeSpan" />
+        <Parameter Name="key" Type="System.IdentityModel.Tokens.SymmetricSecurityKey" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">このセッションに関連付けられている要求のプリンシパル。</param>
+        <param name="contextId">このトークンに関連付けられているコンテキストの識別子です。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <param name="endpointId">このトークンのバインド先となるエンドポイント。 空の文字列では、対象範囲外のトークンを作成します。</param>
+        <param name="validFrom">トークンが有効になる時刻。</param>
+        <param name="lifetime">セッション トークンの有効期間。 <see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo" />プロパティ設定されます<see cref="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />さらにこのパラメーターによって指定された期間。</param>
+        <param name="key">省略可能な対称セッション キーの場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />クラスを指定したプリンシパル、コンテキスト ID、コンテキスト、エンドポイント、有効なタイムスタンプ、有効期間、およびキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|`contextId`または、`contextId`は`null`、生成される一意の id。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|`endpointId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|`validFrom`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|`validFrom`plus `lifetime`.|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|いずれか 1 つの要素が含まれています`key`または、`key`は`null`、生成される 128 ビットの対称キー。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|`validFrom`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|`validFrom`plus `lifetime`.|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="contextId" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="endpointId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="lifetime" />以下には、<see cref="F:System.TimeSpan.Zero" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SessionSecurityToken (System.Security.Claims.ClaimsPrincipal claimsPrincipal, System.Xml.UniqueId contextId, string context, string endpointId, Nullable&lt;DateTime&gt; validFrom, Nullable&lt;DateTime&gt; validTo, System.IdentityModel.Tokens.SymmetricSecurityKey key);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Claims.ClaimsPrincipal claimsPrincipal, class System.Xml.UniqueId contextId, string context, string endpointId, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validFrom, valuetype System.Nullable`1&lt;valuetype System.DateTime&gt; validTo, class System.IdentityModel.Tokens.SymmetricSecurityKey key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.#ctor(System.Security.Claims.ClaimsPrincipal,System.Xml.UniqueId,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.IdentityModel.Tokens.SymmetricSecurityKey)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="claimsPrincipal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="contextId" Type="System.Xml.UniqueId" />
+        <Parameter Name="context" Type="System.String" />
+        <Parameter Name="endpointId" Type="System.String" />
+        <Parameter Name="validFrom" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="validTo" Type="System.Nullable&lt;System.DateTime&gt;" />
+        <Parameter Name="key" Type="System.IdentityModel.Tokens.SymmetricSecurityKey" />
+      </Parameters>
+      <Docs>
+        <param name="claimsPrincipal">このセッションに関連付けられている要求のプリンシパル。</param>
+        <param name="contextId">このトークンに関連付けられているコンテキストの識別子です。</param>
+        <param name="context">省略可能なアプリケーション固有のコンテキスト文字列。</param>
+        <param name="endpointId">このトークンのバインド先となるエンドポイント。 空の文字列では、対象範囲外のトークンを作成します。</param>
+        <param name="validFrom">トークンが有効になる時刻インスタント。 <see langword="null" />指定するには<see cref="P:System.DateTime.UtcNow" /></param>
+        <param name="validTo">インスタントするまでの時間、トークンが有効ではなくなりました。 <see langword="null" />値を追加することで、値を決定する必要がありますを指定する、<see cref="P:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime" />プロパティで指定された時間を<c>validFrom</c>パラメーター。</param>
+        <param name="key">省略可能な対称セッション キーの場合。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SessionSecurityToken" />クラスを指定したプリンシパル、コンテキスト ID、コンテキスト、エンドポイント、開始時刻、有効期限、およびキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken> クラスのインスタンスのプロパティの初期値を次の表に示します。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal%2A>|`claimsPrincipal`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Context%2A>|`context`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>|`contextId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>|`endpointId`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.Id%2A>|生成された一意の ID に設定します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>|`false`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime%2A>|値に設定、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>によって決定されるプロパティ、`ValidFrom`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime%2A>|値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>によって決定されるプロパティ、`ValidTo`パラメーター。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>|`null`|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys%2A>|いずれか 1 つの要素が含まれています`key`または、`key`は`null`、生成される 128 ビットの対称キー。 **注:**既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>|値、`validFrom`パラメーター、または、`validFrom`は`null`、<xref:System.DateTime.UtcNow%2A>です。|  
+|<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo%2A>|`validFrom` パラメーターの値。 場合`validFrom`は`null`の値、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom%2A>プロパティ (によって決定される、`validFrom`パラメーター) と<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.DefaultTokenLifetime%2A?displayProperty=nameWithType>プロパティです。|  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="claimsPrincipal" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="claimsPrincipal" /> の <see cref="P:System.Security.Claims.ClaimsPrincipal.Identities" /> プロパティが <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="contextId" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="validFrom" /> が <paramref name="validTo" /> 以上です。  
+  
+ または  
+  
+ <paramref name="validTo" />現在の時刻より小さいです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClaimsPrincipal">
+      <MemberSignature Language="C#" Value="public System.Security.Claims.ClaimsPrincipal ClaimsPrincipal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Claims.ClaimsPrincipal ClaimsPrincipal" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.ClaimsPrincipal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Claims.ClaimsPrincipal</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッションに関連付けられている要求のプリンシパルを取得します。</summary>
+        <value>要求のプリンシパル。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public string Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Context" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーを取得では、コンテキスト値を指定します。</summary>
+        <value>ユーザーは、コンテキスト値を指定します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、アプリケーション固有のコンテキストを格納することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextId">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId ContextId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId ContextId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.ContextId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セッション コンテキスト識別子を取得します。</summary>
+        <value>セッション コンテキストの識別子です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト識別子は、すべてのセッション トークンの間で一意です。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>クラスは、コンテキスト ID とキーの生成の両方でのトークンのキーの生成を使って、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>です。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスとしては、このプロパティをシリアル化、`<Identifier>`の子要素、`<wsc:SecurityContextToken>`要素。 詳細については、ドキュメントを参照して、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndpointId">
+      <MemberSignature Language="C#" Value="public string EndpointId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EndpointId" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトークンのスコープをエンドポイントの ID を取得します。</summary>
+        <value>エンドポイントの ID です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken.EndpointId%2A>プロパティは`null`、によって、グローバルにスコープ設定セッション トークンが扱われます、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスです。 これは、により、潜在的なセキュリティ リスクが発生することができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SessionSecurityToken.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">シリアル化されたオブジェクト データ。</param>
+        <param name="context">転送元または転送先に関する文脈情報。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />セッション セキュリティ トークンをシリアル化するために必要な情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Id">
+      <MemberSignature Language="C#" Value="public override string Id { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Id" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.Id" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトークンの一意の識別子を取得します。</summary>
+        <value>トークン ID。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスとしては、このプロパティをシリアル化、`Id`の属性、`<wsc:SecurityContextToken>`要素。 詳細については、ドキュメントを参照して、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsPersistent">
+      <MemberSignature Language="C#" Value="public bool IsPersistent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsPersistent" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このトークンによって表される cookie が永続的かどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、cookie が永続的です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsPersistent%2A>プロパティは`true`cookie が永続的な cookie として書き込まれます。 期限が切れるまで、ブラウザーを閉じた後、永続的な cookie が有効なままです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReferenceMode">
+      <MemberSignature Language="C#" Value="public bool IsReferenceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReferenceMode" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはセッションのセキュリティ トークンが参照モードで動作しているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />トークンはセッション モードで動作している場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 参照モードで単純な成果物をシリアル化中に生成され、トークンの情報がトークン ハンドラーに関連付けられているトークンのキャッシュに格納されています。 派生したクラスのインスタンスは、トークンのキャッシュは<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>します。 Web ファームのシナリオで、トークンのキャッシュは、ファーム内のすべてのノードで動作する必要があります。  
+  
+> [!IMPORTANT]
+>  ハンドラーを提供することをお勧め参照モードで動作する、 <xref:System.IdentityModel.Services.WSFederationAuthenticationModule.SessionSecurityTokenCreated?displayProperty=nameWithType> global.asax.cs ファイルと設定でイベント、<xref:System.IdentityModel.Tokens.SessionSecurityToken.IsReferenceMode%2A>に渡されたトークンのプロパティ、<xref:System.IdentityModel.Services.SessionSecurityTokenCreatedEventArgs.SessionToken%2A?displayProperty=nameWithType>プロパティです。 セッション トークンが要求ごとに参照モードで動作し、単なる設定が優先これにより、<xref:System.IdentityModel.Services.SessionAuthenticationModule.IsReferenceMode%2A?displayProperty=nameWithType>セッション認証モジュールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyEffectiveTime">
+      <MemberSignature Language="C#" Value="public DateTime KeyEffectiveTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime KeyEffectiveTime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.KeyEffectiveTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のこのトークンのキーが有効ではインスタントの時間を取得します。</summary>
+        <value>元のインスタント時間キーは有効です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyExpirationTime">
+      <MemberSignature Language="C#" Value="public DateTime KeyExpirationTime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime KeyExpirationTime" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.KeyExpirationTime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その後このトークンのキーが無効になってインスタントの時刻を取得します。</summary>
+        <value>キーの有効期限が切れる時間インスタントです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyGeneration">
+      <MemberSignature Language="C#" Value="public System.Xml.UniqueId KeyGeneration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.UniqueId KeyGeneration" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.UniqueId</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このトークンでキーの生成の id を取得します。</summary>
+        <value>このトークンでキーの生成の一意の識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityToken.KeyGeneration%2A>プロパティがセッション トークン内で一意です。 セッション トークンが発行されるときにのみ、コンテキスト ID を使用してアクセスされる、<xref:System.IdentityModel.Tokens.SessionSecurityToken.ContextId%2A>プロパティです。 セッション トークンを更新すると、キーの生成が追加されます。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenCacheKey>クラスは、コンテキスト ID とキーの生成の両方でのトークンのキーの生成を使って、<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>です。  
+  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>クラスとしては、このプロパティをシリアル化、`<Instance>`の子要素、`<wsc:SecurityContextToken>`要素。 詳細については、ドキュメントを参照して、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler.WriteToken%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecureConversationVersion">
+      <MemberSignature Language="C#" Value="public Uri SecureConversationVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SecureConversationVersion" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.SecureConversationVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセッションのセキュリティをシリアル化に使用される Ws-secure Conversation のバージョンを識別する URI のトークンを取得します。</summary>
+        <value>このトークンをシリアル化に使用される Ws-secure Conversation のバージョンを識別する URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> Ws-secure Conversation Feb2005 および Ws-secure Conversation 1.3 基底クラスをサポートしています。 これらのバージョンの Ws-secure Conversation の Uri は、それぞれ"http://schemas.xmlsoap.org/ws/2005/02/sc"と"http://docs.oasis-open.org/ws-sx/ws-secureconversation/200512"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityKeys">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.IdentityModel.Tokens.SecurityKey&gt; SecurityKeys" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.SecurityKeys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.IdentityModel.Tokens.SecurityKey&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このセッションに関連付けられたキーを取得します。 これは、通常、1 つのキーです。</summary>
+        <value>セッションに関連付けられたキー。 1 つのキーは通常です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  既定の実装では、このプロパティは使用しません。 署名と暗号化キーはによって適用されたクッキーの変換で使用される、<xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler>トークンを処理します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidFrom">
+      <MemberSignature Language="C#" Value="public override DateTime ValidFrom { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidFrom" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidFrom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元のトークンが有効ではインスタントの時間を取得します。</summary>
+        <value>元となるは、トークンの有効期間。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidTo">
+      <MemberSignature Language="C#" Value="public override DateTime ValidTo { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.DateTime ValidTo" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SessionSecurityToken.ValidTo" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その後、トークンが無効になってインスタントの時刻を取得します。</summary>
+        <value>その後、トークンが無効になって時刻。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

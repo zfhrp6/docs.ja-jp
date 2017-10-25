@@ -1,0 +1,82 @@
+<Type Name="PrintJobSettings" FullName="System.Printing.PrintJobSettings">
+  <TypeSignature Language="C#" Value="public class PrintJobSettings" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PrintJobSettings extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintJobSettings" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>印刷ジョブをについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintTicket>値であるオブジェクトの<xref:System.Printing.PrintJobSettings.CurrentPrintTicket%2A>プロパティ、印刷ジョブのすべての詳細な設定を保持します。 親、 <xref:System.Printing.PrintJobSettings>、説明のみを追加します。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CurrentPrintTicket">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintTicket CurrentPrintTicket { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Printing.PrintTicket CurrentPrintTicket" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintJobSettings.CurrentPrintTicket" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintTicket</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Printing.PrintTicket" />印刷ジョブのすべての詳細な設定を保持するオブジェクト。</summary>
+        <value>A<see cref="T:System.Printing.PrintTicket" />などを印刷する部数の印刷ジョブに関するすべての詳細を保持するオブジェクトし、ホチキス止めまたは両面印刷を使用するかどうか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この設定<xref:System.Printing.PrintJobSettings.CurrentPrintTicket%2A>プロパティが検証または指定した変更していない<xref:System.Printing.PrintTicket>、特定の<xref:System.Printing.PrintQueue>します。  必要に応じて、使用、<xref:System.Printing.PrintQueue.MergeAndValidatePrintTicket%2A>メソッドを作成、 <xref:System.Printing.PrintQueue>-特定<xref:System.Printing.PrintTicket>特定のプリンターに対して有効であります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintJobSettings.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または印刷ジョブの説明を設定します。</summary>
+        <value>A<see cref="T:System.String" />たとえば、「Quarterly レポートします」、印刷ジョブを記述する。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,69 @@
+<Type Name="CachingHint" FullName="System.Windows.Media.CachingHint">
+  <TypeSignature Language="C#" Value="public enum CachingHint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CachingHint extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.CachingHint" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>タイル ブラシ オブジェクトをキャッシュするかどうかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]の表示内容をキャッシュしません<xref:System.Windows.Media.DrawingBrush>と<xref:System.Windows.Media.VisualBrush>オブジェクト。 内容も、ブラシ、シーン内の使用を変更中の静的では、キャッシュすることがなく利点、ビデオ メモリを節約するためです。 既定の動作の静的でない方法で静的なコンテンツでブラシを使用する場合[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]ブラシのコンテンツ全体を再表示するためには、コンテンツが変化しない場合でもすべてのフレームです。 たとえば、これは静的<xref:System.Windows.Media.DrawingBrush>または<xref:System.Windows.Media.VisualBrush>回転の 3D オブジェクトの表面にマップされます。 静的なコンテンツを再レンダリング パフォーマンスに悪影響を及ぼすことができます。  
+  
+ 設定して、<xref:System.Windows.Media.RenderOptions.CachingHint%2A>添付プロパティのキャッシュにブラシ、並べて表示されたブラシ オブジェクトのキャッシュされたバージョンを使用してパフォーマンスを向上できます。  
+  
+ <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMinimum%2A>と<xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMaximum%2A>プロパティの値は、タイミングを決定する相対的なサイズ値、<xref:System.Windows.Media.TileBrush>スケールの変更のためには、オブジェクトを再生成する必要があります。 設定などにより、 <xref:System.Windows.Media.RenderOptions.CacheInvalidationThresholdMaximum%2A> 2.0 では、キャッシュするプロパティ、<xref:System.Windows.Media.TileBrush>だけのサイズは、現在のキャッシュのサイズの 2 倍を超えています。 再生成する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例のキャッシュのヒント オプションを使用する方法を示しています、<xref:System.Windows.Media.DrawingBrush>です。  
+  
+ [!code-csharp[RenderOptions#RenderOptionsSnippet3](~/samples/snippets/csharp/VS_Snippets_Wpf/RenderOptions/CSharp/Window1.xaml.cs#renderoptionssnippet3)]
+ [!code-vb[RenderOptions#RenderOptionsSnippet3](~/samples/snippets/visualbasic/VS_Snippets_Wpf/RenderOptions/visualbasic/window1.xaml.vb#renderoptionssnippet3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Cache">
+      <MemberSignature Language="C#" Value="Cache" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.CachingHint Cache = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.CachingHint.Cache" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CachingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されたキャッシュのヒントを使用して、画面バッファー内のブラシを並べて表示されたオブジェクトをキャッシュ、<see cref="T:System.Windows.Media.RenderOptions" />設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unspecified">
+      <MemberSignature Language="C#" Value="Unspecified" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.CachingHint Unspecified = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.CachingHint.Unspecified" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.CachingHint</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キャッシュのヒントが指定されていません。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

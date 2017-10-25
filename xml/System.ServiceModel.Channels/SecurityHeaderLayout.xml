@@ -1,0 +1,112 @@
+<Type Name="SecurityHeaderLayout" FullName="System.ServiceModel.Channels.SecurityHeaderLayout">
+  <TypeSignature Language="C#" Value="public enum SecurityHeaderLayout" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SecurityHeaderLayout extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.SecurityHeaderLayout" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Security</AssemblyName>
+    <AssemblyVersion>4.0.1.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+    <AssemblyVersion>4.0.3.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>セキュリティ ヘッダーのレイアウトを記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は Strict です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Lax">
+      <MemberSignature Language="C#" Value="Lax" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SecurityHeaderLayout Lax = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SecurityHeaderLayout.Lax" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LaxTimestampFirst">
+      <MemberSignature Language="C#" Value="LaxTimestampFirst" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SecurityHeaderLayout LaxTimestampFirst = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SecurityHeaderLayout.LaxTimestampFirst" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最初の要素は wsse:Timestamp 要素である必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LaxTimestampLast">
+      <MemberSignature Language="C#" Value="LaxTimestampLast" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SecurityHeaderLayout LaxTimestampLast = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SecurityHeaderLayout.LaxTimestampLast" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WSS: SOAP メッセージ セキュリティに準じた任意の順序で、項目はセキュリティ ヘッダーに追加されます。ただし、セキュリティ ヘッダーの最後の要素は wsse:Timestamp 要素である必要があります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Strict">
+      <MemberSignature Language="C#" Value="Strict" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.ServiceModel.Channels.SecurityHeaderLayout Strict = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.ServiceModel.Channels.SecurityHeaderLayout.Strict" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Security</AssemblyName>
+        <AssemblyVersion>4.0.1.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+        <AssemblyVersion>4.0.3.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.SecurityHeaderLayout</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目は、「使用前に宣言する」という一般的な方針に従って、セキュリティ ヘッダーに追加されます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

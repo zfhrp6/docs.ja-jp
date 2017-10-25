@@ -1,0 +1,141 @@
+<Type Name="PowerStatus" FullName="System.Windows.Forms.PowerStatus">
+  <TypeSignature Language="C#" Value="public class PowerStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PowerStatus extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.PowerStatus" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のシステム電源の状態情報を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.PowerStatus>クラス AC 行の現在の電源状態、バッテリの充電状態、およびバッテリの充電状態に関する情報を表します。  
+  
+ このクラスは使用、<xref:System.Windows.Forms.SystemInformation.PowerStatus%2A>のプロパティ、<xref:System.Windows.Forms.SystemInformation>を現在のシステム電源の情報を示すクラスです。  
+  
+   
+  
+## Examples  
+ 次の例のすべてのプロパティを一覧表示、<xref:System.Windows.Forms.PowerStatus>クラス内で、<xref:System.Windows.Forms.ListBox>制御し、現在の値に関連付けられたプロパティの表示、<xref:System.Windows.Forms.TextBox>場合に選択したアイテムの一覧を制御します。  
+  
+ [!code-cpp[PowerStatusBrowser#1](~/samples/snippets/cpp/VS_Snippets_Winforms/PowerStatusBrowser/CPP/powerstatusbrowser.cpp#1)]
+ [!code-csharp[PowerStatusBrowser#1](~/samples/snippets/csharp/VS_Snippets_Winforms/PowerStatusBrowser/CS/powerstatusbrowser.cs#1)]
+ [!code-vb[PowerStatusBrowser#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/PowerStatusBrowser/VB/powerstatusbrowser.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BatteryChargeStatus">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BatteryChargeStatus BatteryChargeStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.BatteryChargeStatus BatteryChargeStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PowerStatus.BatteryChargeStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BatteryChargeStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のバッテリの充電状態を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.BatteryChargeStatus" />現在のバッテリを示す値を充電レベルまたは充電中の状態。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、現在のバッテリ充電レベルまたはバッテリの充電状態を示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatteryFullLifetime">
+      <MemberSignature Language="C#" Value="public int BatteryFullLifetime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BatteryFullLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PowerStatus.BatteryFullLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プライマリ バッテリ電源の完全充電の報告された寿命を秒単位で取得します。</summary>
+        <value>バッテリが完全に充電されたときの報告されたバッテリ残量の秒数。またはバッテリの寿命が不明な場合は、-1。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatteryLifePercent">
+      <MemberSignature Language="C#" Value="public float BatteryLifePercent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float32 BatteryLifePercent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PowerStatus.BatteryLifePercent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッテリ残量のおおよその量を取得します。</summary>
+        <value>0.0 ~ 1.0 では、バッテリ残量からおおよそ量。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BatteryLifeRemaining">
+      <MemberSignature Language="C#" Value="public int BatteryLifeRemaining { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 BatteryLifeRemaining" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PowerStatus.BatteryLifeRemaining" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バッテリ残量の秒の概算数を取得します。</summary>
+        <value>バッテリの残りのおおよその残りのバッテリ寿命が不明な場合は – 1 秒間のおおよその数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PowerLineStatus">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.PowerLineStatus PowerLineStatus { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.PowerLineStatus PowerLineStatus" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.PowerStatus.PowerLineStatus" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.PowerLineStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のシステム電源の状態を取得します。</summary>
+        <value>1 つ、<see cref="T:System.Windows.Forms.PowerLineStatus" />電源の状態を現在のシステムを示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、システムの電源がオンラインかどうか、またはシステム電源の状態が不明であるを示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

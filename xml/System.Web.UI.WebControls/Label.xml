@@ -1,0 +1,453 @@
+<Type Name="Label" FullName="System.Web.UI.WebControls.Label">
+  <TypeSignature Language="C#" Value="public class Label : System.Web.UI.WebControls.WebControl, System.Web.UI.ITextControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Label extends System.Web.UI.WebControls.WebControl implements class System.Web.UI.ITextControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Label" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.WebControl</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.ITextControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.WebControls.LabelDesigner, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlBuilder(typeof(System.Web.UI.WebControls.LabelControlBuilder))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ControlValueProperty("Text")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.DataBindingHandler("System.Web.UI.Design.TextDataBindingHandler, System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ToolboxData("&lt;{0}:Label runat="server" Text="Label"&gt;&lt;/{0}:Label&gt;")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web ページにテキストを表示するラベル コントロールを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [ユーザー補助](#accessibility)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ 使用して、 <xref:System.Web.UI.WebControls.Label>  ページで設定された場所にテキストを表示するコントロール。 静的テキストとは異なり、を通じて表示されるテキストをカスタマイズすることができます、<xref:System.Web.UI.WebControls.Label.Text%2A>プロパティです。  
+  
+ 使用することも、<xref:System.Web.UI.WebControls.Literal>と<xref:System.Web.UI.WebControls.PlaceHolder>Web フォーム ページに表示するテキスト コントロールです。 ただしとは異なり、<xref:System.Web.UI.WebControls.Label>コントロール、これらのコントロールは追加のタグが表示されません。  
+  
+> [!IMPORTANT]
+>  このコントロールは、潜在的なセキュリティ上の脅威がユーザー入力を表示に使用できます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+<a name="accessibility"></a>   
+## <a name="accessibility"></a>ユーザー補助  
+ ユーザー補助の標準に準拠するマークアップを生成するように、このコントロールを構成する方法については、次を参照してください。 [Visual Studio と ASP.NET のユーザー補助機能](http://msdn.microsoft.com/library/7e3ce9c4-6b7d-4fb1-94b5-72cf2a44fe13)と[ASP.NET コントロールやアクセシビリティ](http://msdn.microsoft.com/library/847a37e3-ce20-41da-b0d3-7dfb0fdae9a0)です。  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:Label  
+    AccessKey="string"  
+    AssociatedControlID="string"  
+    BackColor="color name|#dddddd"  
+    BorderColor="color name|#dddddd"  
+    BorderStyle="NotSet|None|Dotted|Dashed|Solid|Double|Groove|Ridge|  
+        Inset|Outset"  
+    BorderWidth="size"  
+    CssClass="string"  
+    Enabled="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    Font-Bold="True|False"  
+    Font-Italic="True|False"  
+    Font-Names="string"  
+    Font-Overline="True|False"  
+    Font-Size="string|Smaller|Larger|XX-Small|X-Small|Small|Medium|  
+        Large|X-Large|XX-Large"  
+    Font-Strikeout="True|False"  
+    Font-Underline="True|False"  
+    ForeColor="color name|#dddddd"  
+    Height="size"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Style="string"  
+    TabIndex="integer"  
+    Text="string"  
+    ToolTip="string"  
+    Visible="True|False"  
+    Width="size"  
+/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例で作成する方法、 <xref:System.Web.UI.WebControls.Label> Web ページ上のコントロールです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 ASP.NET Web ページのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[Classic Label Example 2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Label Example 2/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Label Example 2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Label Example 2/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Label ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Label.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Label" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.Label>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例は、作成しの新しいインスタンスを初期化する方法を示しています、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Label.Label Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Label.Label Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Label.Label Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Label.Label Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAttributesToRender">
+      <MemberSignature Language="C#" Value="protected override void AddAttributesToRender (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddAttributesToRender(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Label.AddAttributesToRender(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML コンテンツを表示する出力ストリームを表す <see cref="T:System.Web.UI.HtmlTextWriter" />。</param>
+        <summary>HTML 属性およびスタイルの追加、<see cref="T:System.Web.UI.WebControls.Label" />コントロールを指定された出力ストリームにレンダリングします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Label.AddAttributesToRender%2A>メソッドが追加の属性を挿入する、主にコントロールの開発者によって使用されにスタイル、<xref:System.Web.UI.HtmlTextWriter>の出力ストリームは、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.Label.AddAttributesToRender%2A>のメソッド、<xref:System.Web.UI.WebControls.Label>コントロールが決定するかどうか、`for`属性を追加する必要があります、<xref:System.Web.UI.WebControls.Label.AssociatedControlID%2A>値、幅と境界線のスタイルを表示するインライン ブロック スタイルを適用する場合とします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">指定したコントロール、<see cref="P:System.Web.UI.WebControls.Label.AssociatedControlID" />プロパティが見つかりません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParsedSubObject">
+      <MemberSignature Language="C#" Value="protected override void AddParsedSubObject (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void AddParsedSubObject(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Label.AddParsedSubObject(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">解析された要素を表すオブジェクト。</param>
+        <summary>要素が解析し、要素を追加するコントロールの通知、<see cref="T:System.Web.UI.WebControls.Label" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Label.AddParsedSubObject%2A>からカスタム コントロールを派生している場合、メソッドは、主にコントロールの開発者によって使用、<xref:System.Web.UI.WebControls.Label>クラスです。  
+  
+ 入力オブジェクトがある場合、 <xref:System.Web.UI.LiteralControl>、および<xref:System.Web.UI.WebControls.Label>コントロールに子コントロールがない、入力オブジェクトは、設定に使用される、<xref:System.Web.UI.WebControls.Label.Text%2A>のプロパティ、<xref:System.Web.UI.WebControls.Label>コントロール。 それ以外の場合、<xref:System.Web.UI.Control.AddParsedSubObject%2A>メソッド ベースの<xref:System.Web.UI.Control>クラスが呼び出され、指定したオブジェクトに追加、<xref:System.Web.UI.Control.Controls%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Label.AddParsedSubObject%2A>カスタム メソッド<xref:System.Web.UI.WebControls.Label>サーバーでは制御解析済みのオブジェクトがある場合、解析されたオブジェクトのテキストのプロパティには常に、text プロパティを設定するよう、 <xref:System.Web.UI.WebControls.Literal>、および空の文字列にそれ以外の場合。  
+  
+ [!code-aspx-csharp[CustomLabelAddParsedSubObject#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLabelAddParsedSubObject/CS/custom_label_addparsedsubobjectcs.aspx#1)]
+ [!code-aspx-vb[CustomLabelAddParsedSubObject#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLabelAddParsedSubObject/VB/custom_label_addparsedsubobjectvb.aspx#1)]  
+[!code-csharp[CustomLabelAddParsedSubObject#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLabelAddParsedSubObject/CS/custom_label_addparsedsubobject.cs#2)]
+[!code-vb[CustomLabelAddParsedSubObject#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLabelAddParsedSubObject/VB/custom_label_addparsedsubobject.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedControlID">
+      <MemberSignature Language="C#" Value="public virtual string AssociatedControlID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssociatedControlID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Label.AssociatedControlID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.WebControls.AssociatedControlConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはサーバーを制御するために識別子を設定、<see cref="T:System.Web.UI.WebControls.Label" />コントロールに関連付けられています。</summary>
+        <value>対応する文字列値、 <see cref="P:System.Web.UI.Control.ID" /> Web フォームに含まれるサーバー コントロールにします。 既定値は空の文字列 ("") を示すを<see cref="T:System.Web.UI.WebControls.Label" />コントロールに関連付けられていない別のサーバー コントロールです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Label.AssociatedControlID%2A>プロパティに関連付けるには、 <xref:System.Web.UI.WebControls.Label> Web フォーム上の別のサーバー コントロールでのコントロールです。 ときに、<xref:System.Web.UI.WebControls.Label>コントロールが別のサーバー コントロールに関連付け、その属性を使用すると、関連付けられたコントロールの機能を拡張できる、します。 使用することができます、<xref:System.Web.UI.WebControls.Label>コントロールの別のコントロール、または、キャプションは、タブ インデックスまたは関連付けられたコントロールのホット キーを設定できます。  
+  
+ ときに、<xref:System.Web.UI.WebControls.Label.AssociatedControlID%2A>プロパティが設定されて、<xref:System.Web.UI.WebControls.Label>コントロールが HTML としてレンダリング`label`要素で、`for`属性に設定、<xref:System.Web.UI.Control.ID%2A>関連付けられたコントロールのプロパティ。 その他の属性を設定することができます、`label`要素を使用して、<xref:System.Web.UI.WebControls.Label>プロパティです。 たとえば、使用することができます、<xref:System.Web.UI.WebControls.Label.Text%2A>と<xref:System.Web.UI.WebControls.WebControl.AccessKey%2A>キャプションと関連付けられたコントロールのホット キーを提供するプロパティです。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadViewState">
+      <MemberSignature Language="C#" Value="protected override void LoadViewState (object savedState);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void LoadViewState(object savedState) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Label.LoadViewState(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="savedState" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="savedState">コントロールの保存されているビュー ステートの値を格納するオブジェクト。</param>
+        <summary>コントロールの以前に保存された状態を読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、主に、.NET Framework インフラストラクチャによって使用され、コードから直接使用するものではありません。 ただし、コントロールの開発者は、カスタム サーバー コントロールがそのビューステートを復元する方法を指定するには、このメソッドをオーバーライドすることができます。 詳細については、次を参照してください。 [ASP.NET 状態管理の概要](http://msdn.microsoft.com/library/0218d965-5d30-445b-b6a6-8870e70e63ce)です。  
+  
+ <xref:System.Web.UI.WebControls.Label.LoadViewState%2A>メソッドのビュー ステート情報の復元、<xref:System.Web.UI.WebControls.Label>によって保存された前回のページ要求からのコントロール、<xref:System.Web.UI.WebControls.WebControl.SaveViewState%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderContents">
+      <MemberSignature Language="C#" Value="protected override void RenderContents (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void RenderContents(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Label.RenderContents(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">クライアントに HTML のコンテンツを表示する出力ストリーム。</param>
+        <summary>内容を表示、<see cref="T:System.Web.UI.WebControls.Label" />指定されたライターにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例をオーバーライドする方法を示しています、<xref:System.Web.UI.WebControls.Label.RenderContents%2A>カスタム サーバー内のメソッドを制御するいくつかのテキストを追加できるように、<xref:System.Web.UI.WebControls.Label>です。  
+  
+ [!code-aspx-csharp[CustomLabelRenderContents#1](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLabelRenderContents/CS/custom_label_rendercontentscs.aspx#1)]
+ [!code-aspx-vb[CustomLabelRenderContents#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLabelRenderContents/VB/custom_label_rendercontentsvb.aspx#1)]  
+[!code-csharp[CustomLabelRenderContents#2](~/samples/snippets/csharp/VS_Snippets_WebNet/CustomLabelRenderContents/CS/custom_label_rendercontents.cs#2)]
+[!code-vb[CustomLabelRenderContents#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/CustomLabelRenderContents/VB/custom_label_rendercontents.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportsDisabledAttribute">
+      <MemberSignature Language="C#" Value="public override bool SupportsDisabledAttribute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SupportsDisabledAttribute" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Label.SupportsDisabledAttribute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールの <see cref="P:System.Web.UI.WebControls.WebControl.IsEnabled" /> プロパティが <see langword="false" /> の場合、レンダリングされた HTML 要素の <see langword="disabled" /> 属性を "無効" に設定するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Web.UI.Control.RenderingCompatibility" />プロパティがより低い ASP.NET のバージョンを示す<c>4.0</c>、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コントロールが無効になっているときに ASP.NET がそのコントロールの HTML をどのように描画するかを示します。 場合は、このプロパティは`true`、ASP.NET は表示、`disabled`属性のコントロールを無効にします。 場合は、このプロパティは`false`、ASP.NET は表示、`class`属性のコントロールを無効にします。 詳細については、「<xref:System.Web.UI.WebControls.WebControl.SupportsDisabledAttribute%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TagKey">
+      <MemberSignature Language="C#" Value="protected override System.Web.UI.HtmlTextWriterTag TagKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.HtmlTextWriterTag TagKey" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Label.TagKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.HtmlTextWriterTag</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>表示するために使用される HTML タグを取得、<see cref="T:System.Web.UI.WebControls.Label" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.HtmlTextWriterTag" />表示するために使用される値、<see cref="T:System.Web.UI.WebControls.Label" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Label.TagKey%2A>を決定するプロパティ、<xref:System.Web.UI.HtmlTextWriterTag>に関連付けられている値、<xref:System.Web.UI.WebControls.Label>コントロール。 <xref:System.Web.UI.WebControls.Label.TagKey%2A>プロパティは、主にコントロールの開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Text">
+      <MemberSignature Language="C#" Value="public virtual string Text { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Text" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Label.Text" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerDefaultProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストのコンテンツの設定を取得または、<see cref="T:System.Web.UI.WebControls.Label" />コントロール。</summary>
+        <value>コントロールのテキストの内容。 既定値は <see cref="F:System.String.Empty" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.Label.Text%2A>プロパティを指定するか、テキストのコンテンツを<xref:System.Web.UI.WebControls.Label>コントロール。 通常、このプロパティはプログラムに表示されるテキストをカスタマイズする使用、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+ <xref:System.Web.UI.WebControls.Label.Text%2A>プロパティは、HTML を含めることができます。 場合は、HTML に渡される変更されない、ブラウザーにことがありますテキストではなく、マークアップとして解釈されます。 ブラウザーで HTML マークアップをプレーン テキストとして表示する場合を使えば、<xref:System.Web.HttpServerUtility.HtmlEncode%2A>メソッド、クラスの概要の例に示すようにします。 使用することも、<xref:System.Web.UI.WebControls.Literal>制御の代わりに、<xref:System.Web.UI.WebControls.Label>を制御して、設定、<xref:System.Web.UI.WebControls.Literal.Mode%2A>プロパティを<xref:System.Web.UI.WebControls.LiteralMode.Encode>です。  
+  
+> [!NOTE]
+>  設定、<xref:System.Web.UI.WebControls.Label.Text%2A>プロパティに含まれている他のコントロールがクリアされます、<xref:System.Web.UI.WebControls.Label>コントロール。  
+  
+> [!IMPORTANT]
+>  このコントロールは、潜在的なセキュリティ上の脅威がユーザー入力を表示に使用できます。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[ASP.NET のグローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ このプロパティは、既定のプロパティを<xref:System.Web.UI.WebControls.ControlParameter>オブジェクトは実行時にバインドします。 詳細については、次を参照してください。 <xref:System.Web.UI.ControlValuePropertyAttribute>、 <xref:System.Web.UI.WebControls.ControlParameter>、および[フィルターのデータ ソース コントロールを持つパラメーターの使用](http://msdn.microsoft.com/library/88622d04-2989-484e-93fe-594cd98dcf5f)です。  
+  
+   
+  
+## Examples  
+ 次の例は、の新しいインスタンスを作成する方法を示します、<xref:System.Web.UI.WebControls.Label>を制御し、設定、<xref:System.Web.UI.WebControls.Label.Text%2A>プロパティです。  
+  
+> [!NOTE]
+>  次のコード サンプルでは、単一ファイルのコード モデルを使用し、正常に動作しない場合は、分離コード ファイルに直接コピーします。 このコード サンプルは、.aspx 拡張子を持つ空のテキスト ファイルにコピーする必要があります。 Web フォームのコード モデルの詳細については、次を参照してください。 [ASP.NET Web フォーム ページのコード モデル](http://msdn.microsoft.com/library/81b13e7a-b95b-4285-906f-d2dd77411417)です。  
+  
+ [!code-aspx-csharp[Classic Label.Text Example#1](~/samples/snippets/csharp/VS_Snippets_WebNet/Classic Label.Text Example/CS/sourcecs.aspx#1)]
+ [!code-aspx-vb[Classic Label.Text Example#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/Classic Label.Text Example/VB/sourcevb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

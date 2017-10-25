@@ -1,0 +1,337 @@
+<Type Name="EdmRelationshipAttribute" FullName="System.Data.Objects.DataClasses.EdmRelationshipAttribute">
+  <TypeSignature Language="C#" Value="public sealed class EdmRelationshipAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit EdmRelationshipAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.DataClasses.EdmRelationshipAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly, AllowMultiple=true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>概念モデルのアソシエーションに基づいて、2 つのエンティティ型間のリレーションシップを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アソシエーションごとに 1 つのインスタンスにアセンブリ レベルで適用されます。 アセンブリ内にはこの型の属性が複数存在することがあります。  
+  
+ 特定のアソシエーションのエンティティ型のロールの詳細は、概念スキーマで定義されているアソシエーションと一致する必要があります。  
+  
+ アソシエーションはロールの順序は定義しません。 これはアソシエーションの関連 End を定義するプロパティは、どのような順序でも定義できることを意味します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmRelationshipAttribute (string relationshipNamespaceName, string relationshipName, string role1Name, System.Data.Metadata.Edm.RelationshipMultiplicity role1Multiplicity, Type role1Type, string role2Name, System.Data.Metadata.Edm.RelationshipMultiplicity role2Multiplicity, Type role2Type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationshipNamespaceName, string relationshipName, string role1Name, valuetype System.Data.Metadata.Edm.RelationshipMultiplicity role1Multiplicity, class System.Type role1Type, string role2Name, valuetype System.Data.Metadata.Edm.RelationshipMultiplicity role2Multiplicity, class System.Type role2Type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmRelationshipAttribute.#ctor(System.String,System.String,System.String,System.Data.Metadata.Edm.RelationshipMultiplicity,System.Type,System.String,System.Data.Metadata.Edm.RelationshipMultiplicity,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationshipNamespaceName" Type="System.String" />
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="role1Name" Type="System.String" />
+        <Parameter Name="role1Multiplicity" Type="System.Data.Metadata.Edm.RelationshipMultiplicity" />
+        <Parameter Name="role1Type" Type="System.Type" />
+        <Parameter Name="role2Name" Type="System.String" />
+        <Parameter Name="role2Multiplicity" Type="System.Data.Metadata.Edm.RelationshipMultiplicity" />
+        <Parameter Name="role2Type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipNamespaceName">このエンティティが参加するアソシエーションの名前空間の名前。</param>
+        <param name="relationshipName">このエンティティが参加するリレーションシップの名前。</param>
+        <param name="role1Name">アソシエーションの一方の End の型に対するロール名。</param>
+        <param name="role1Multiplicity">一または多など、アソシエーションの一方の End での複数要素の接続性を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</param>
+        <param name="role1Type">アソシエーションの一方の End のエンティティの型。</param>
+        <param name="role2Name">アソシエーションのもう一方の End の型に対するロール名。</param>
+        <param name="role2Multiplicity">一または多など、アソシエーションのもう一方の End の多重度を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</param>
+        <param name="role2Type">アソシエーションのもう一方の End のエンティティの型。</param>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmRelationshipAttribute" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `typeof`演算子 (`GetType` Visual Basic で) を返します、<xref:System.Type>オブジェクトのオブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EdmRelationshipAttribute (string relationshipNamespaceName, string relationshipName, string role1Name, System.Data.Metadata.Edm.RelationshipMultiplicity role1Multiplicity, Type role1Type, string role2Name, System.Data.Metadata.Edm.RelationshipMultiplicity role2Multiplicity, Type role2Type, bool isForeignKey);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string relationshipNamespaceName, string relationshipName, string role1Name, valuetype System.Data.Metadata.Edm.RelationshipMultiplicity role1Multiplicity, class System.Type role1Type, string role2Name, valuetype System.Data.Metadata.Edm.RelationshipMultiplicity role2Multiplicity, class System.Type role2Type, bool isForeignKey) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Objects.DataClasses.EdmRelationshipAttribute.#ctor(System.String,System.String,System.String,System.Data.Metadata.Edm.RelationshipMultiplicity,System.Type,System.String,System.Data.Metadata.Edm.RelationshipMultiplicity,System.Type,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relationshipNamespaceName" Type="System.String" />
+        <Parameter Name="relationshipName" Type="System.String" />
+        <Parameter Name="role1Name" Type="System.String" />
+        <Parameter Name="role1Multiplicity" Type="System.Data.Metadata.Edm.RelationshipMultiplicity" />
+        <Parameter Name="role1Type" Type="System.Type" />
+        <Parameter Name="role2Name" Type="System.String" />
+        <Parameter Name="role2Multiplicity" Type="System.Data.Metadata.Edm.RelationshipMultiplicity" />
+        <Parameter Name="role2Type" Type="System.Type" />
+        <Parameter Name="isForeignKey" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="relationshipNamespaceName">このエンティティが参加するアソシエーションの名前空間の名前。</param>
+        <param name="relationshipName">このエンティティが参加するリレーションシップの名前。</param>
+        <param name="role1Name">アソシエーションの一方の End の型に対するロール名。</param>
+        <param name="role1Multiplicity">一または多など、アソシエーションの一方の End での複数要素の接続性を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</param>
+        <param name="role1Type">アソシエーションの一方の End のエンティティの型。</param>
+        <param name="role2Name">アソシエーションのもう一方の End の型に対するロール名。</param>
+        <param name="role2Multiplicity">一または多など、アソシエーションのもう一方の End の多重度を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</param>
+        <param name="role2Type">アソシエーションのもう一方の End のエンティティの型。</param>
+        <param name="isForeignKey">リレーションシップが外部キーの値に基づくかを示す値。</param>
+        <summary><see cref="T:System.Data.Objects.DataClasses.EdmRelationshipAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsForeignKey">
+      <MemberSignature Language="C#" Value="public bool IsForeignKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsForeignKey" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.IsForeignKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップが外部キーの値に基づくかを示すブール値を取得します。</summary>
+        <value>
+          <see langword="true" />リレーションシップが外部キーの値に基づく場合それ以外の場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipName">
+      <MemberSignature Language="C#" Value="public string RelationshipName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.RelationshipName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの名前です。</summary>
+        <value>この <see cref="T:System.String" /> で定義されるリレーションシップの名前を表す <see cref="T:System.Data.Objects.DataClasses.EdmRelationshipAttribute" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたリレーションシップの名前、`Name`の属性、`Association`概念モデルでこのリレーションシップを定義する要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RelationshipNamespaceName">
+      <MemberSignature Language="C#" Value="public string RelationshipNamespaceName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string RelationshipNamespaceName" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.RelationshipNamespaceName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの名前空間です。</summary>
+        <value>リレーションシップの名前空間を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リレーションシップの名前空間が指定された、`Namespace`の属性、`Schema`概念モデルでこのリレーションシップを定義するアソシエーションを含む要素です。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role1Multiplicity">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.RelationshipMultiplicity Role1Multiplicity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.RelationshipMultiplicity Role1Multiplicity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role1Multiplicity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.RelationshipMultiplicity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの一方の End での複数要素の接続性です。</summary>
+        <value>複数要素の接続性を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アソシエーションの関連 End がどのような順序でも定義できることを定義するプロパティです。  
+  
+ 多重度がで指定された、`Multiplicity`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role1Name">
+      <MemberSignature Language="C#" Value="public string Role1Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Role1Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role1Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの一方の End のロール名です。</summary>
+        <value>ロールの名前を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定されたロールの名前、`Role`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role1Type">
+      <MemberSignature Language="C#" Value="public Type Role1Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Role1Type" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role1Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップの一方の End のエンティティの型です。</summary>
+        <value>アソシエーションの一方の End のオブジェクトの型を表す <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アソシエーションの関連 End がどのような順序でも定義できることを定義するプロパティです。  
+  
+ 指定された型の名前、`Type`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role2Multiplicity">
+      <MemberSignature Language="C#" Value="public System.Data.Metadata.Edm.RelationshipMultiplicity Role2Multiplicity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Data.Metadata.Edm.RelationshipMultiplicity Role2Multiplicity" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role2Multiplicity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Metadata.Edm.RelationshipMultiplicity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのもう一方の End の複数要素の接続性です。</summary>
+        <value>複数要素の接続性を示す <see cref="T:System.Data.Metadata.Edm.RelationshipMultiplicity" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アソシエーションの関連 End がどのような順序でも定義できることを定義するプロパティです。  
+  
+ 多重度がで指定された、`Multiplicity`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role2Name">
+      <MemberSignature Language="C#" Value="public string Role2Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Role2Name" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role2Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのもう一方の End のロール名です。</summary>
+        <value>ロールの名前を表す <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アソシエーションの関連 End がどのような順序でも定義できることを定義するプロパティです。  
+  
+ 指定されたロールの名前、`Role`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Role2Type">
+      <MemberSignature Language="C#" Value="public Type Role2Type { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type Role2Type" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Objects.DataClasses.EdmRelationshipAttribute.Role2Type" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リレーションシップのもう一方の End のエンティティの型です。</summary>
+        <value>アソシエーションのもう一方の End のオブジェクトの型を表す <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アソシエーションの関連 End がどのような順序でも定義できることを定義するプロパティです。  
+  
+ 指定された型の名前、`Type`の属性、`End`概念モデルでこのリレーションシップを定義するアソシエーション内の要素。 詳細については、次を参照してください。 [CSDL、SSDL、MSL 仕様](~/docs/framework/data/adonet/ef/language-reference/csdl-ssdl-and-msl-specifications.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

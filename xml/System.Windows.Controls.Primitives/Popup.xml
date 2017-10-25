@@ -1,0 +1,1356 @@
+<Type Name="Popup" FullName="System.Windows.Controls.Primitives.Popup">
+  <TypeSignature Language="C#" Value="public class Popup : System.Windows.FrameworkElement, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Popup extends System.Windows.FrameworkElement implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.Popup" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultEvent("Opened")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Child")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Child")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツを含むポップアップ ウィンドウを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **コンテンツ モデル**:<xref:System.Windows.Controls.Primitives.Popup>は 1 つのコンテンツ プロパティがあります:<xref:System.Windows.Controls.Primitives.Popup.Child%2A>です。 A<xref:System.Windows.Controls.Primitives.Popup>いずれか 1 つの子の最大文字数は<xref:System.Windows.UIElement>します。  
+  
+ 次の図は、<xref:System.Windows.Controls.Primitives.Popup>を持つコントロールを<xref:System.Windows.Controls.Button>親とします。  
+  
+ ![ポップアップの図](~/add/media/popuppicture.JPG "ポップアップの図")  
+  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。 ときに<xref:System.Windows.Controls.Primitives.Popup>表示される画面にが再配置されない場合は、親の位置を変更します。  
+  
+ A<xref:System.Windows.Controls.Primitives.Popup>画面に独自のウィンドウでその内容を表示します。 A<xref:System.Windows.Controls.Primitives.Popup>コントロールは、アニメーションをサポートしているときに、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティに設定されている`true`アプリケーションが完全信頼で実行されているとします。 完全信頼で実行されているアプリケーションは、システム リソースへの完全なアクセスし、通常は、ユーザーのシステムにインストールします。 詳細については、次を参照してください。[セキュリティ (WPF)](~/docs/framework/wpf/security-wpf.md)です。  
+  
+ 不透明度とビットマップ効果の内容を<xref:System.Windows.Controls.Primitives.Popup>、上に直接影響を設定する必要があります、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ。 内容、<xref:System.Windows.Controls.Primitives.Popup>に設定されている効果を継承しない、<xref:System.Windows.Controls.Primitives.Popup>制御や、他の要素の上にある親ウィンドウ。  
+  
+ A<xref:System.Windows.Controls.Primitives.Popup>既定ではそのコンテンツにサイズが調整されます。 これが発生すると、適用、<xref:System.Windows.UIElement.RenderTransform%2A>ビットマップ効果を発生させる可能性があります、<xref:System.Windows.Controls.Primitives.Popup>表示されていませんでした。 これは、コンテンツの既定のサイズに効果を表示するのに十分な領域が指定されていないために発生します。 多くの領域が必要な場合は、周囲に余白を定義することができます、<xref:System.Windows.Controls.Primitives.Popup>コンテンツ コントロールに使用可能な領域を増やします。  
+  
+ <xref:System.Windows.FrameworkElement.Parent%2A>でプロパティを設定する必要があります、<xref:System.Windows.Controls.Primitives.Popup>で使用する場合、[!INCLUDE[TLA#tla_winfxwebapp](~/includes/tlasharptla-winfxwebapp-md.md)]です。  
+  
+ ツールヒントを作成するを使用して、<xref:System.Windows.Controls.ToolTip>と<xref:System.Windows.Controls.ToolTipService>クラスです。 詳細については、[ToolTip の概要](~/docs/framework/wpf/controls/tooltip-overview.md)を参照してください。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Controls.Primitives.Popup>コントロール。  
+  
+ [!code-xaml[PopupSimple#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml#2)]  
+  
+ [!code-csharp[PopupSimple#CreatePopup](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSimple/CSharp/Window1.xaml.cs#createpopup)]
+ [!code-vb[PopupSimple#CreatePopup](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSimple/VisualBasic/Window1.xaml.vb#createpopup)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Popup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowsTransparency">
+      <MemberSignature Language="C#" Value="public bool AllowsTransparency { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowsTransparency" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.AllowsTransparency" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールに透過的なコンテンツを含めることができるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールに透過的なコンテンツを含めることができル場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Primitives.Popup>完全信頼でアプリケーションを実行すると、コントロールは透過的なコンテンツを含めるだけことができます。 完全信頼で実行されるアプリケーションでは、システム リソースへの完全なアクセスし、通常は、ローカル システムにインストールします。 詳細については、次を参照してください。[セキュリティ (WPF)](~/docs/framework/wpf/security-wpf.md)です。  
+  
+ このプロパティに設定することはできません`true`ときに、<xref:System.Windows.Controls.Primitives.Popup>でホストされる、[!INCLUDE[TLA#tla_winfxwebapp](~/includes/tlasharptla-winfxwebapp-md.md)]です。  
+  
+ 場合、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティに設定されている`true`、完全な信頼で実行されていないアプリケーションで、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>にプロパティ値が変更された`false`です。 ブラウザーでホストされているアプリケーションは、完全信頼モードで稼働していないアプリケーションの例を示します。  
+  
+<a name="dependencyPropertyInfo_AllowsTransparency"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparencyProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティを<xref:System.Windows.Controls.Primitives.Popup>コントロール。  
+  
+ [!code-csharp[PopupSnips#AllowsTransparency](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#allowstransparency)]
+ [!code-vb[PopupSnips#AllowsTransparency](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#allowstransparency)]
+ [!code-xaml[PopupSnips#AllowsTransparency](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#allowstransparency)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">このプロパティを設定<see langword="true" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowsTransparencyProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AllowsTransparencyProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AllowsTransparencyProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.AllowsTransparencyProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.AllowsTransparency" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A> 依存関係プロパティの識別子。  
+  
+   
+  
+## Examples  
+ [依存関係プロパティの概要](~/docs/framework/wpf/advanced/dependency-properties-overview.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Child">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement Child { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement Child" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.Child" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールのコンテンツを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールの <see cref="T:System.Windows.UIElement" /> コンテンツ。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **コンテンツ モデル**:<xref:System.Windows.Controls.Primitives.Popup.Child%2A>プロパティは、コンテンツのみのプロパティの<xref:System.Windows.Controls.Primitives.Popup>コントロール。 A <xref:System.Windows.Controls.Primitives.Popup> 1 つだけあることができます<xref:System.Windows.UIElement>ように、子がその子には、複合型の埋め込みコンテンツを含めることができます。 たとえば、子を指定できます、<xref:System.Windows.Controls.StackPanel>を格納している、<xref:System.Windows.Controls.Image>テキスト、およびその他の種類のコントロールです。  
+  
+ コンテンツを追加するときに、<xref:System.Windows.Controls.Primitives.Popup>コントロール、<xref:System.Windows.Controls.Primitives.Popup>コントロールがコンテンツに論理親になります。 同様に、<xref:System.Windows.Controls.Primitives.Popup>コンテンツはの論理子と見なされます、<xref:System.Windows.Controls.Primitives.Popup>です。 子コンテンツが格納しているビジュアル ツリーに追加されません、<xref:System.Windows.Controls.Primitives.Popup>コントロール。 子コンテンツが、独自の視覚的に別のウィンドウでどのように表示される代わりに、ツリーの場合、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>に設定されている`true`です。  
+  
+<a name="dependencyPropertyInfo_Child"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.ChildProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、コンテンツを追加する方法を示しています、<xref:System.Windows.Controls.Primitives.Popup>コントロール。  
+  
+ [!code-csharp[PopupSnips#Child](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#child)]
+ [!code-vb[PopupSnips#Child](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#child)]
+ [!code-xaml[PopupSnips#Child](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#child)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ChildProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ChildProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.ChildProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.Child" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Closed">
+      <MemberSignature Language="C#" Value="public event EventHandler Closed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Closed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.Popup.Closed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" />プロパティに対する変更を<see langword="false" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Primitives.Popup>が開いたときおよび閉じたを切り替えることにより、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーを定義する方法を示しています、<xref:System.Windows.Controls.Primitives.Popup.Closed>イベント。  
+  
+ [!code-csharp[PopupSnips#Closed](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#closed)]
+ [!code-vb[PopupSnips#Closed](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#closed)]
+ [!code-xaml[PopupSnips#Closed](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#closed)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRootPopup">
+      <MemberSignature Language="C#" Value="public static void CreateRootPopup (System.Windows.Controls.Primitives.Popup popup, System.Windows.UIElement child);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void CreateRootPopup(class System.Windows.Controls.Primitives.Popup popup, class System.Windows.UIElement child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.CreateRootPopup(System.Windows.Controls.Primitives.Popup,System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="popup" Type="System.Windows.Controls.Primitives.Popup" />
+        <Parameter Name="child" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="popup"><see cref="T:System.Windows.Controls.Primitives.Popup" />子コンテンツを追加します。</param>
+        <param name="child"><see cref="T:System.Windows.UIElement" />子コンテンツ。</param>
+        <summary>子要素をアタッチ、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既存のコントロールと同じ機能があり、動作は、カスタム コントロールを作成する場合があります、<xref:System.Windows.Controls.Primitives.Popup>です。  コントロールと同様に動作を行うことができます、<xref:System.Windows.Controls.Primitives.Popup>追加することによって、<xref:System.Windows.Controls.Primitives.Popup>コントロールと呼び出し元に、<xref:System.Windows.Controls.Primitives.Popup.CreateRootPopup%2A>メソッドです。  
+  
+ このメソッドを割り当てます`child`子プロパティを次のプロパティをバインドおよび`child`です。  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.CustomPopupPlacementCallback%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>  
+  
+-   <xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A>  
+  
+ 同じように使用できるように、コントロール内の依存関係プロパティとしてこれら実装する必要があります、<xref:System.Windows.Controls.Primitives.Popup>です。 詳細については、「[カスタム依存関係プロパティ](~/docs/framework/wpf/advanced/custom-dependency-properties.md)」を参照してください。  
+  
+ 呼び出すと<xref:System.Windows.Controls.Primitives.Popup.CreateRootPopup%2A>、`child`の子にすることはできません、<xref:System.Windows.UIElement>です。 また、`PlacementTarget`このメソッドを呼び出す前に、コントロールにも設定する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomPopupPlacementCallback">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.CustomPopupPlacementCallback" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.CustomPopupPlacementCallback</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールを配置する代理ハンドラーのメソッドを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.Popup" /> コントロールの配置情報を提供する <see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacementCallback" /> デリゲート メソッド。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CustomPopupPlacementCallback"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.CustomPopupPlacementCallbackProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、設定する方法を示します、<xref:System.Windows.Controls.Primitives.Popup.CustomPopupPlacementCallback%2A>を委任します。  
+  
+ [!code-csharp[PopupCustomPlacement#DelegateDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupCustomPlacement/CSharp/Window1.xaml.cs#delegatedefinition)]
+ [!code-vb[PopupCustomPlacement#DelegateDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupCustomPlacement/visualbasic/window1.xaml.vb#delegatedefinition)]  
+  
+ [!code-csharp[PopupCustomPlacement#DelegateInstance](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupCustomPlacement/CSharp/Window1.xaml.cs#delegateinstance)]
+ [!code-vb[PopupCustomPlacement#DelegateInstance](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupCustomPlacement/visualbasic/window1.xaml.vb#delegateinstance)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CustomPopupPlacementCallbackProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CustomPopupPlacementCallbackProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.CustomPopupPlacementCallbackProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.CustomPopupPlacementCallback" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUIParentCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetUIParentCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance class System.Windows.DependencyObject GetUIParentCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.GetUIParentCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>論理上の親を返します、<see cref="T:System.Windows.Controls.Primitives.Popup" />です。</summary>
+        <returns>場合、<see cref="T:System.Windows.Controls.Primitives.Popup" />は定義されている親がありません、<see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" />は<see langword="null" />、<see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" />が返されます。 それ以外の場合、戻り値と同じ<see cref="M:System.Windows.FrameworkElement.GetUIParentCore" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadow">
+      <MemberSignature Language="C#" Value="public bool HasDropShadow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasDropShadow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.HasDropShadow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.Primitives.Popup" />ドロップ シャドウ効果が表示されます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.Popup" />が影付きで表示されている場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドロップ シャドウ効果が表示される、<xref:System.Windows.SystemParameters.DropShadow%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A?displayProperty=nameWithType>プロパティに設定されて`true`です。  
+  
+<a name="dependencyPropertyInfo_HasDropShadow"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.HasDropShadowProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例の値を取得する方法を示しています、<xref:System.Windows.Controls.Primitives.Popup.HasDropShadow%2A>プロパティです。  
+  
+ [!code-csharp[PopupSnips#HasDropShadow](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#hasdropshadow)]
+ [!code-vb[PopupSnips#HasDropShadow](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#hasdropshadow)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasDropShadowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HasDropShadowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HasDropShadowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.HasDropShadowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.HasDropShadow" /> 依存関係プロパティを識別します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Primitives.Popup.HasDropShadow%2A> 依存関係プロパティの識別子。  
+  
+   
+  
+## Examples  
+ [依存関係プロパティの概要](~/docs/framework/wpf/advanced/dependency-properties-overview.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffset">
+      <MemberSignature Language="C#" Value="public double HorizontalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.HorizontalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ポイントを取得またはターゲットの基準とポップアップの配置の間で水平方向の距離。</summary>
+        <value>ターゲットの基準とポップアップ配置ポイント間で水平方向の距離。 ターゲットの基準とポップアップ配置ポイントについては、次を参照してください。[ポップアップ配置動作](~/docs/framework/wpf/controls/popup-placement-behavior.md)です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_HorizontalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.HorizontalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+<a name="xamlAttributeUsage_HorizontalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object HorizontalOffset="double"/>  
+- or -  
+<object HorizontalOffset="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_HorizontallOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `double`  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 文字列は、明示的に 10 進数のポイントを含めることはありません。 値など、`1`は許容されます。  
+  
+ 同じ<xref:System.Double>このトピックのプロパティの値セクションに記載されているものと範囲の制限が適用されます。  
+  
+ `qualifiedDouble`  
+ A`double`値では、次の表では、前述したよう続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、または`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 = 96px で  
+  
+ `cm`センチメートル; は、します。1cm=(96/2.54) px  
+  
+ `pt`ポイントです。1pt=(96/72) px  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.Primitives.Popup>設定と、<xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>と<xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A>20 プロパティです。  <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>プロパティに設定されている<xref:System.Windows.Controls.Primitives.PlacementMode.Bottom>(既定値は)、ターゲットの基準は、対象領域の左下隅、ポップアップ配置ポイントの左上隅にあるのため、<xref:System.Windows.Controls.Primitives.Popup>です。  
+  
+ [!code-xaml[PopupPositionSnippet#5](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#5)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HorizontalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HorizontalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.HorizontalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.HorizontalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpen">
+      <MemberSignature Language="C#" Value="public bool IsOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.IsOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Primitives.Popup" /> が表示されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          <see cref="T:System.Windows.Controls.Primitives.Popup" /> が可視の場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールで使用する場合、<xref:System.Windows.Controls.Primitives.Popup>その既定のスタイルの一環として、バインド、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Popup>コントロールのプロパティにします。 たとえば、<xref:System.Windows.Controls.ComboBox>バインドできるその<xref:System.Windows.Controls.ComboBox.IsDropDownOpen%2A>プロパティを<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Popup>です。 これには、タイミングを制御するためのロジックが簡素化、<xref:System.Windows.Controls.Primitives.Popup>が表示されます。  
+  
+<a name="dependencyPropertyInfo_IsOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.IsOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.BindsTwoWayByDefault%2A>|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[PopupSnips#IsOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#isopen)]
+ [!code-vb[PopupSnips#IsOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#isopen)]
+ [!code-xaml[PopupSnips#IsOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#isopen)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.IsOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>論理上の子要素にアクセスするのに使用できる列挙子を取得、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />の論理上の子要素へのアクセスに使用できる、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテンツを追加すると、<xref:System.Windows.Controls.Primitives.Popup>コントロール、<xref:System.Windows.Controls.Primitives.Popup>コントロールがコンテンツに論理親になります。 同様に、<xref:System.Windows.Controls.Primitives.Popup>コンテンツはの論理子と見なされます、<xref:System.Windows.Controls.Primitives.Popup>です。 子コンテンツが格納しているビジュアル ツリーに追加されません、<xref:System.Windows.Controls.Primitives.Popup>コントロール。 子コンテンツが、独自の visual のある別のウィンドウでどのように表示される代わりに、ツリーの場合、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティに設定されている`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Size MeasureOverride (System.Windows.Size availableSize);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance valuetype System.Windows.Size MeasureOverride(valuetype System.Windows.Size availableSize) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.MeasureOverride(System.Windows.Size)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Size</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="availableSize" Type="System.Windows.Size" />
+      </Parameters>
+      <Docs>
+        <param name="availableSize">この要素は、子を提供できるサイズ。 要素のサイズはどのようなコンテンツを利用するのにことができますを示すために、値として infinity を使用できます。</param>
+        <summary>必要なサイズの決定、<see cref="T:System.Windows.Controls.Primitives.Popup" />論理上の親のビジュアル ツリー内のコンテンツ。</summary>
+        <returns>A<see cref="T:System.Windows.Size" />を持つ構造体、<see cref="P:System.Windows.Size.Height" />と<see cref="P:System.Windows.Size.Width" />ゼロ (0) に一致する両方のプロパティです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、<xref:System.Windows.Size>ため幅と高さのゼロ (0) を持つ<xref:System.Windows.Controls.Primitives.Popup>論理親のビジュアル ツリー内のコンテンツが配置されていないか、<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>です。 子コンテンツを独自のビジュアル ツリーを持つ別のウィンドウが作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnClosed">
+      <MemberSignature Language="C#" Value="protected virtual void OnClosed (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnClosed(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnClosed(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>応答するときの値、<see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" />プロパティから変更<see langword="true" />に<see langword="false" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnOpened">
+      <MemberSignature Language="C#" Value="protected virtual void OnOpened (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnOpened(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnOpened(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント引数。</param>
+        <summary>条件に応答の値、<see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" />からプロパティが変更された<see langword="false" />に<see langword="true" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseLeftButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseLeftButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseLeftButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseLeftButtonDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、ことを確認する、<xref:System.Windows.Controls.Primitives.Popup>外部マウス イベントの発生時に閉じ、<xref:System.Windows.Controls.Primitives.Popup>ときに、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseLeftButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseLeftButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseLeftButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnPreviewMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseLeftButtonUp" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、ことを確認する、<xref:System.Windows.Controls.Primitives.Popup>外部マウス イベントの発生時に閉じ、<xref:System.Windows.Controls.Primitives.Popup>ときに、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseRightButtonDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseRightButtonDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseRightButtonDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnPreviewMouseRightButtonDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseRightButtonUp" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、ことを確認する、<xref:System.Windows.Controls.Primitives.Popup>外部マウス イベントの発生時に閉じ、<xref:System.Windows.Controls.Primitives.Popup>ときに、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseRightButtonUp">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseRightButtonUp (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseRightButtonUp(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.OnPreviewMouseRightButtonUp(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseRightButtonDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装では、ことを確認する、<xref:System.Windows.Controls.Primitives.Popup>外部マウス イベントの発生時に閉じ、<xref:System.Windows.Controls.Primitives.Popup>ときに、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Opened">
+      <MemberSignature Language="C#" Value="public event EventHandler Opened;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Opened" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Primitives.Popup.Opened" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" />プロパティに対する変更を<see langword="true" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Primitives.Popup>が開いたときおよび閉じたを切り替えることにより、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 次の例のイベント ハンドラーを定義する方法を示しています、<xref:System.Windows.Controls.Primitives.Popup.Opened>イベント。  
+  
+ [!code-csharp[PopupSnips#Opened](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#opened)]
+ [!code-vb[PopupSnips#Opened](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#opened)]
+ [!code-xaml[PopupSnips#Opened](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#opened)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Placement">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.PlacementMode Placement { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.PlacementMode Placement" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.Placement" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PlacementMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の向き、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール、コントロールを開いたときの動作を指定し、<see cref="T:System.Windows.Controls.Primitives.Popup" />画面の境界が重なっている場合を制御します。</summary>
+        <value>A<see cref="T:System.Windows.Controls.Primitives.PlacementMode" />の向きを決定する列挙値、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロールを開くと、およびコントロールが画面の境界とやり取りする方法を指定する場合を制御します。 既定値は、<see cref="F:System.Windows.Controls.Primitives.PlacementMode.Bottom" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+ 場合、<xref:System.Windows.SystemParameters.MenuDropAlignment%2A>プロパティは`true`、設定<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>に<xref:System.Windows.Controls.Primitives.PlacementMode.Left>または<xref:System.Windows.Controls.Primitives.PlacementMode.Right>の位置を反転させます、<xref:System.Windows.Controls.Primitives.Popup>以外の場合は、<xref:System.Windows.Controls.Primitives.Popup>で<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>に設定<xref:System.Windows.Controls.Primitives.PlacementMode.Left>の左端の右端に揃えて配置<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>と<xref:System.Windows.Controls.Primitives.Popup>で<xref:System.Windows.Controls.Primitives.Popup.Placement%2A>に設定<xref:System.Windows.Controls.Primitives.PlacementMode.Right>の左端と右端に揃えて配置<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>です。  
+  
+<a name="dependencyPropertyInfo_Placement"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.PlacementProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例は、4 つ作成<xref:System.Windows.Controls.Primitives.Popup>はイメージを基準とするコントロール。 各<xref:System.Windows.Controls.Primitives.Popup>配置のプロパティに異なる値を持ちます。  
+  
+ [!code-xaml[PopupPositionSnippet#3](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#3)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.PlacementProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.Placement" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangle">
+      <MemberSignature Language="C#" Value="public System.Windows.Rect PlacementRectangle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect PlacementRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.PlacementRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定基準となる四角形、<see cref="T:System.Windows.Controls.Primitives.Popup" />が開くときに、コントロールを配置します。</summary>
+        <value>配置に使用する四角形、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_PlacementRectangle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Popup>です。 <xref:System.Windows.Rect.X%2A>、 <xref:System.Windows.Rect.Y%2A>、 <xref:System.Windows.Rect.Width%2A>、および<xref:System.Windows.Rect.Height%2A>のプロパティ、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>は 50、50、50、および 100 で、それぞれします。 <xref:System.Windows.Controls.Primitives.Popup>の境界に対しては、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>プロパティです。 なお、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>プロパティでは、アプリケーションで表示されている要素が作成されません。 例は、作成、<xref:System.Windows.Shapes.Rectangle>を表す同じ境界内で、<xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>です。  
+  
+ [!code-xaml[PopupPositionSnippet#6](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#6)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementRectangleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementRectangleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementRectangleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.PlacementRectangleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.PlacementRectangle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTarget">
+      <MemberSignature Language="C#" Value="public System.Windows.UIElement PlacementTarget { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.UIElement PlacementTarget" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.UIElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定基準となる要素、<see cref="T:System.Windows.Controls.Primitives.Popup" />開くときに配置します。</summary>
+        <value><see cref="T:System.Windows.UIElement" />の論理親である、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="dependencyPropertyInfo_PlacementTarget"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.PlacementTargetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.Primitives.Popup>の子は、 <xref:System.Windows.Controls.Canvas>、設定と<xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>に`ellipse1`ポップアップに相対的であるため、<xref:System.Windows.Shapes.Ellipse>です。  
+  
+ [!code-xaml[PopupPositionSnippet#2](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#2)]    
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PlacementTargetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PlacementTargetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PlacementTargetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.PlacementTargetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.PlacementTarget" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopupAnimation">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Primitives.PopupAnimation PopupAnimation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Primitives.PopupAnimation PopupAnimation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.PopupAnimation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Appearance")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Primitives.PopupAnimation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の開始タグと終了のアニメーション、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。</summary>
+        <value><see cref="T:System.Windows.Controls.Primitives.PopupAnimation" />を開いたり、閉じたりするアニメーションを定義する列挙値、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は、<see cref="F:System.Windows.Controls.Primitives.PopupAnimation.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Primitives.Popup>できますのみをアニメーション化するときに、<xref:System.Windows.Controls.Primitives.Popup.AllowsTransparency%2A>プロパティに設定されている`true`です。 これは、アプリケーションを作成する必要があります、<xref:System.Windows.Controls.Primitives.Popup>コントロールを完全信頼で実行します。  
+  
+ 場合、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A> 、アニメーション化、<xref:System.Windows.Controls.Primitives.Popup>アニメーションで表示されません。  
+  
+<a name="dependencyPropertyInfo_PopupAnimation"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.PopupAnimationProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Primitives.Popup.PopupAnimation%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[PopupSnips#AllowsTransparency](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#allowstransparency)]
+ [!code-vb[PopupSnips#AllowsTransparency](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#allowstransparency)]
+ [!code-xaml[PopupSnips#AllowsTransparency](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#allowstransparency)]  
+  
+ [!code-csharp[PopupSnips#Animation](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#animation)]
+ [!code-vb[PopupSnips#Animation](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#animation)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PopupAnimationProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PopupAnimationProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PopupAnimationProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.PopupAnimationProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.PopupAnimation" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaysOpen">
+      <MemberSignature Language="C#" Value="public bool StaysOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool StaysOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.StaysOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロールがフォーカスではなくなったときにコントロールが閉じます。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロールを閉じるときに<see cref="P:System.Windows.Controls.Primitives.Popup.IsOpen" />プロパティに設定されている<see langword="false" />です。<see langword="false" />場合、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロールを閉じる、マウスまたはキーボード イベントを別に行われます、<see cref="T:System.Windows.Controls.Primitives.Popup" />コントロール。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>プロパティに設定されている`true`、<xref:System.Windows.Controls.Primitives.Popup>まま開くを設定して明示的に閉じられるまで、<xref:System.Windows.Controls.Primitives.Popup.IsOpen%2A>プロパティを`false`です。 ときに<xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A>は`false`、<xref:System.Windows.Controls.Primitives.Popup>コントロールの外部のこれらのイベントのいずれかのタイミングを決定するすべてのマウスとキーボード イベントを途中受信、<xref:System.Windows.Controls.Primitives.Popup>コントロール。  
+  
+<a name="dependencyPropertyInfo_StaysOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.StaysOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ <xref:System.Windows.Controls.Primitives.Popup.StaysOpen%2A> プロパティを設定する方法を次の例に示します。  
+  
+ [!code-csharp[PopupSnips#StaysOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml.cs#staysopen)]
+ [!code-vb[PopupSnips#StaysOpen](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PopupSnips/visualbasic/window1.xaml.vb#staysopen)]
+ [!code-xaml[PopupSnips#StaysOpen](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupSnips/Csharp/Window1.xaml#staysopen)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StaysOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty StaysOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty StaysOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.StaysOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.StaysOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.Popup.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffset">
+      <MemberSignature Language="C#" Value="public double VerticalOffset { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalOffset" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Primitives.Popup.VerticalOffset" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Layout")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.LengthConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはターゲットの基準とポップアップ配置ポイント間の垂直方向の距離を設定します。</summary>
+        <value>ターゲットの基準とポップアップ配置ポイント間の垂直距離です。 ターゲットの基準とポップアップ配置ポイントについては、次を参照してください。[ポップアップ配置動作](~/docs/framework/wpf/controls/popup-placement-behavior.md)です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポップアップを配置するには、設定、 <xref:System.Windows.Controls.Primitives.Popup.PlacementTarget%2A>、 <xref:System.Windows.Controls.Primitives.Popup.PlacementRectangle%2A>、 <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>、 <xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>、および<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>プロパティです。 詳細については、「[Popup Placement Behavior](~/docs/framework/wpf/controls/popup-placement-behavior.md)」を参照してください。  
+  
+<a name="xamlAttributeUsage_VerticalOffset"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object VerticalOffset="double"/>  
+- or -  
+<object VerticalOffset="qualifiedDouble"/>  
+```  
+  
+<a name="xamlValues_VerticalOffset"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ `double`  
+ <xref:System.Double>  
+  
+ 文字列表現を<xref:System.Double>値。 これは、[!INCLUDE[TLA#tla_dipixel](~/includes/tlasharptla-dipixel-md.md)]測定します。 文字列は、明示的に 10 進数のポイントを含めることはありません。 値など、`1`は許容されます。  
+  
+ 同じ<xref:System.Double>このトピックのプロパティの値セクションに記載されているものと範囲の制限が適用されます。  
+  
+ `qualifiedDouble`  
+ A`double`値では、次の表では、前述したよう続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、または`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 = 96px で  
+  
+ `cm`センチメートル; は、します。1cm=(96/2.54) px  
+  
+ `pt`ポイントです。1pt=(96/72) px  
+  
+<a name="dependencyPropertyInfo_VerticalOffset"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Controls.Primitives.Popup>設定と、<xref:System.Windows.Controls.Primitives.Popup.HorizontalOffset%2A>と<xref:System.Windows.Controls.Primitives.Popup.VerticalOffset%2A>20 プロパティです。  <xref:System.Windows.Controls.Primitives.Popup.Placement%2A>プロパティに設定されている<xref:System.Windows.Controls.Primitives.PlacementMode.Bottom>(既定値は)、ターゲットの基準は、対象領域の左下隅、ポップアップ配置ポイントの左上隅にあるのため、<xref:System.Windows.Controls.Primitives.Popup>です。  
+  
+ [!code-xaml[PopupPositionSnippet#5](~/samples/snippets/csharp/VS_Snippets_Wpf/PopupPositionSnippet/CS/Window1.xaml#5)]     
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalOffsetProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty VerticalOffsetProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty VerticalOffsetProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Primitives.Popup.VerticalOffsetProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Primitives.Popup.VerticalOffset" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

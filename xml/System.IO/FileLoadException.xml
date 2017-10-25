@@ -1,0 +1,492 @@
+<Type Name="FileLoadException" FullName="System.IO.FileLoadException">
+  <TypeSignature Language="C#" Value="public class FileLoadException : System.IO.IOException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit FileLoadException extends System.IO.IOException" />
+  <TypeSignature Language="DocId" Value="T:System.IO.FileLoadException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IO.IOException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マネージ アセンブリが見つかっても読み込むことができない場合にスローされる例外。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 発生したエラーを表すときに、<xref:System.Reflection.Assembly>ファイルが見つかりましたが、読み込まれたにすることはできません。  
+  
+ <xref:System.IO.FileNotFoundException>ファイルが見つからないために、読み込みに失敗したときに例外がスローされます。 場合は、ファイルが見つかりましたが、権限の不足によりアンロードすることはできません、<xref:System.Security.SecurityException>がスローされます。  
+  
+ `FileLoadException`既定値の HRESULT の COR_E_FILELOAD あり 0x80131621、値を持つが、これは、可能な唯一の HRESULT ではありません。  
+  
+ コードがない場合<xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A>権限、エラー メッセージはこの例外の場合に完全修飾パスの代わりにファイルまたはディレクトリの名前がのみ含まれている可能性があります。  
+  
+> [!NOTE]
+>  この例外は含まれていない、 [Windows ストア アプリ用 .NET](http://go.microsoft.com/fwlink/?LinkID=247912)または、いくつかのメンバーによってスローされますが、します。 その場合は例外をキャッチして、書き込み、`catch`の声明<xref:System.IO.IOException>代わりにします。  
+  
+ **関連するヒント**  
+  
+ **ファイルが有効な .NET Framework アセンブリであることを確認してください。**  
+ この例外は、ファイルが有効な .NET Framework アセンブリではない場合にスローされます。 詳細については、「<xref:System.Reflection.Assembly>」を参照してください。  
+  
+ **アセンブリまたはモジュールが 2 つの異なる証拠を使用して 2 回読み込まれていないことを確認します。**  
+ 証拠とは、セキュリティ ポリシーがアクセス許可を決定するときに使用する一連の情報 (コードにどのようなアクセス許可を付与できるかなど) のことです。 詳細については、「<xref:System.EnterpriseServices.Internal.Publish.GacRemove%2A>」および「<xref:System.Reflection.Assembly.Evidence%2A>」を参照してください。  
+  
+ **RegisterAssembly または UnregisterAssembly メソッドを使用する場合は、アセンブリ名が MAX_PATH の文字を超えていないことを確認してを確認します。**  
+ アセンブリ名には MAX_PATH を超える文字数を指定できません。 詳細については、<xref:System.EnterpriseServices.Internal.IComSoapPublisher.RegisterAssembly%2A> および <xref:System.EnterpriseServices.Internal.IComSoapPublisher.UnRegisterAssembly%2A> を参照してください。  
+  
+ **サテライト アセンブリを読み込む場合は、指定した CultureInfo がファイルの CultureInfo に一致を確認します。**  
+ サテライト アセンブリには、ローカライズできない実行可能コードを含むローカライズ済みリソースや、既定のカルチャまたはニュートラル カルチャとして機能する単一カルチャ用のリソースが含まれています。 詳細については、「<xref:System.Reflection.Assembly.GetSatelliteAssembly%2A>」を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLoadException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.FileLoadException" />クラス、設定、<see cref="P:System.Exception.Message" />エラーを説明するシステム提供のメッセージの新しいインスタンスのプロパティなど「を読み込めませんでした、指定したファイルです」。 このメッセージには、現在のシステムのカルチャが考慮されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Exception.InnerException%2A>プロパティおよび<xref:System.IO.FileLoadException.FileName%2A>に、新しいインスタンスのプロパティが初期化されます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLoadException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。 コンテンツ<c>メッセージ</c>ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。</param>
+        <summary>指定されたエラー メッセージで <see cref="T:System.IO.FileLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.IO.FileLoadException.Message%2A>プロパティの新しいインスタンスを使用して、`message`です。 <xref:System.Exception.InnerException%2A>プロパティおよび<xref:System.IO.FileLoadException.FileName%2A>に、新しいインスタンスのプロパティが初期化されます`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected FileLoadException (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>シリアル化したデータを使用して、<see cref="T:System.IO.FileLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLoadException (string message, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。 コンテンツ<c>メッセージ</c>ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージおよびこの例外の原因となった内部例外への参照を使用して、<see cref="T:System.IO.FileLoadException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 `InnerException` プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、`InnerException` を返します。  
+  
+ <xref:System.IO.FileLoadException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.IO.FileLoadException.Message%2A>|エラー メッセージ文字列。|  
+  
+ 内部例外の詳細については、次を参照してください。<xref:System.Exception.InnerException%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLoadException (string message, string fileName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string fileName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="fileName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。 コンテンツ<c>メッセージ</c>ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。</param>
+        <param name="fileName">A<see cref="T:System.String" />読み込まれていないファイルの名前を含むです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.FileLoadException" />指定したエラー メッセージと読み込むことができませんでした、ファイルの名前を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクター、<xref:System.IO.FileLoadException.Message%2A>プロパティの新しいインスタンスを使用して、`message`と<xref:System.IO.FileLoadException.FileName%2A>プロパティを使用して`fileName`です。 <xref:System.Exception.InnerException%2A>にプロパティの新しいインスタンスを初期化`null`です。  
+  
+ <xref:System.IO.FileLoadException.FileName%2A>ディスクに格納されているファイルである必要はありません。ストリームへのアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラス可能性がありますできる物理デバイスにアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public FileLoadException (string message, string fileName, Exception inner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, string fileName, class System.Exception inner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.#ctor(System.String,System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="fileName" Type="System.String" />
+        <Parameter Name="inner" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する <see cref="T:System.String" />。 コンテンツ<c>メッセージ</c>ユーザーが理解するためのものです。 このコンストラクターの呼び出し元は、この文字列が現在のシステムのカルチャに合わせてローカライズ済みであることを確認しておく必要があります。</param>
+        <param name="fileName">A<see cref="T:System.String" />読み込まれていないファイルの名前を含むです。</param>
+        <param name="inner">現在の例外の原因となった例外。 場合、<c>内部</c>パラメーターではありません<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IO.FileLoadException" />した指定したエラー メッセージを読み込めませんでした、ファイルの名前、この例外の原因となった内部例外への参照。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 `InnerException` プロパティは、コンストラクターに渡されたものと同じ値を返します。`null` プロパティによって内部例外値がコンストラクターに渡されなかった場合は、`InnerException` を返します。  
+  
+ <xref:System.IO.FileLoadException.FileName%2A>ディスクに格納されているファイルである必要はありません。ストリームへのアクセスをサポートするシステムの任意の部分を指定できます。 たとえば、システムによってこのクラス可能性がありますできる物理デバイスにアクセスします。  
+  
+ <xref:System.IO.FileLoadException> のインスタンスの初期プロパティ値を次の表に示します。  
+  
+|プロパティ|値|  
+|--------------|-----------|  
+|<xref:System.Exception.InnerException%2A>|内部例外の参照。|  
+|<xref:System.IO.FileLoadException.Message%2A>|エラー メッセージ文字列。|  
+  
+ 内部例外の詳細については、次を参照してください。<xref:System.Exception.InnerException%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FileName">
+      <MemberSignature Language="C#" Value="public string FileName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FileName" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileLoadException.FileName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の例外の原因であるファイルの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />ファイル名が渡されなかった場合、コンス トラクターに現在のインスタンスの無効なイメージ、または null 参照を持つファイルの名前を含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、存在する場合に、現在のインスタンスのコンス トラクターに指定されたファイルの名前を返します。 場合は、ファイル名が指定されていないか、null 参照には、このプロパティは null 参照を返します。  
+  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FusionLog">
+      <MemberSignature Language="C#" Value="public string FusionLog { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FusionLog" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileLoadException.FusionLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリの読み込みに失敗した原因を説明するログ ファイルを取得します。</summary>
+        <value>アセンブリのキャッシュによって報告されたエラーを含む文字列。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更します。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="public override void GetObjectData (System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo info, valuetype System.Runtime.Serialization.StreamingContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="info" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="context" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="info">スローされている例外に関するシリアル化済みオブジェクト データを保持している <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="context">転送元または転送先についてのコンテキスト情報を含む <see cref="T:System.Runtime.Serialization.StreamingContext" /> です。</param>
+        <summary>セット、<see cref="T:System.Runtime.Serialization.SerializationInfo" />ファイル名と追加の例外情報を使用します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Security.SecurityException">呼び出し元に、必要なアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">証拠とビューを提供し、ポリシーを変更します。 関連する列挙: <see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlEvidence" />、<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" />です。</permission>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public override string Message { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Message" />
+      <MemberSignature Language="DocId" Value="P:System.IO.FileLoadException.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エラー メッセージ、および例外の原因であるファイルの名前を取得します。</summary>
+        <value>エラー メッセージ、および例外の原因であるファイルの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティのオーバーライド<xref:System.Exception.Message%2A>です。  
+  
+ 現在の例外のコンス トラクターにメッセージが指定されていない場合、このプロパティは、システム提供のエラー メッセージを返します。 場合、<xref:System.IO.FileLoadException.FileName%2A>プロパティが null 参照ではありません、たとえば、メッセージにファイル名が含まれています"ファイルをロードできません、 `FileName`"。 (、`FileName`によって返される値を表す<xref:System.IO.FileLoadException.FileName%2A>)。場合<xref:System.IO.FileLoadException.FileName%2A>は`null`、これは"(null)"としてシステム提供のメッセージで示されます。 システム提供のメッセージでは、現在のシステム カルチャが考慮されます。  
+  
+ このプロパティは読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IO.FileLoadException.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の例外と、場合によっては、内部例外とスタック トレースの名前のエラー メッセージの完全修飾名を返します。</summary>
+        <returns>この例外と、場合によっては、エラー メッセージの完全修飾名を含む文字列の名前、内部例外とスタック トレースのに応じて<see cref="T:System.IO.FileLoadException" />コンス トラクターを使用します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは<xref:System.Object.ToString%2A>します。  
+  
+ このメソッドによって返される文字列の形式が、例外の値の名前を含む、<xref:System.IO.FileLoadException.Message%2A>の値、<xref:System.IO.FileLoadException.FileName%2A>プロパティ、および呼び出しの結果<xref:System.Environment.StackTrace%2A>です。 これらのメンバーのいずれかが null 参照の場合は、その値は返される文字列には含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

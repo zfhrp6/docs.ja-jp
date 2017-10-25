@@ -1,0 +1,66 @@
+<Type Name="IXamlIndexingReader" FullName="System.Xaml.IXamlIndexingReader">
+  <TypeSignature Language="C#" Value="public interface IXamlIndexingReader" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXamlIndexingReader" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IXamlIndexingReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>インデックス付きノードに基づく XAML リーダーの単純な実装についてはノード コントロールを表すサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.IXamlIndexingReader>ノードの外部から指定されたリストで、それぞれ独自のインデックスを保持します。 一覧は、インデックス デリゲートを使用してアクセスできます。 この設計では、同一の固定インデックス ノード セットにアクセスする複数の XAML リーダーを使用できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IXamlIndexingReader.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の外部のノード セット内のノードの数を取得します。</summary>
+        <value>現在の外部のノード セット内のノードの数。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentIndex">
+      <MemberSignature Language="C#" Value="public int CurrentIndex { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentIndex" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IXamlIndexingReader.CurrentIndex" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、XAML ノードのリストのインデックス付きビューの現在のリーダーの位置のインデックス番号を設定します。</summary>
+        <value>現在のリーダーの位置のインデックス番号します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する場合、<xref:System.Xaml.IXamlIndexingReader.CurrentIndex%2A>プロパティを使用する必要はありませんを XAML ノード リーダー モードを使用している`Read`または`Skip`中級者向けのすべてのノードを走査します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

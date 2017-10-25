@@ -1,0 +1,273 @@
+<Type Name="ScopedMessagePartSpecification" FullName="System.ServiceModel.Security.ScopedMessagePartSpecification">
+  <TypeSignature Language="C#" Value="public class ScopedMessagePartSpecification" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ScopedMessagePartSpecification extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.ScopedMessagePartSpecification" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>メッセージに含める部分を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには、メッセージ アクションで識別される異なるメッセージの <xref:System.ServiceModel.Security.MessagePartSpecification> インスタンスが含まれます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScopedMessagePartSpecification ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ScopedMessagePartSpecification (System.ServiceModel.Security.ScopedMessagePartSpecification other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Security.ScopedMessagePartSpecification other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.#ctor(System.ServiceModel.Security.ScopedMessagePartSpecification)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Security.ScopedMessagePartSpecification" />
+      </Parameters>
+      <Docs>
+        <param name="other">他の <see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" />。</param>
+        <summary><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> クラスの別のインスタンスから、このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Actions">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.ICollection&lt;string&gt; Actions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.ICollection`1&lt;string&gt; Actions" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ScopedMessagePartSpecification.Actions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.ICollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクション キーのコレクションを取得します。</summary>
+        <value>アクション部分のコレクションのキーを格納している <see cref="T:System.Collections.Generic.ICollection`1" /> 型の <see cref="T:System.String" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParts">
+      <MemberSignature Language="C#" Value="public void AddParts (System.ServiceModel.Security.MessagePartSpecification parts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddParts(class System.ServiceModel.Security.MessagePartSpecification parts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.AddParts(System.ServiceModel.Security.MessagePartSpecification)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parts" Type="System.ServiceModel.Security.MessagePartSpecification" />
+      </Parameters>
+      <Docs>
+        <param name="parts">追加する部分を格納している <see cref="T:System.ServiceModel.Security.MessagePartSpecification" />。</param>
+        <summary>このクラスのインスタンス内のコレクションにチャネル メッセージ部分を追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parts" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddParts">
+      <MemberSignature Language="C#" Value="public void AddParts (System.ServiceModel.Security.MessagePartSpecification parts, string action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddParts(class System.ServiceModel.Security.MessagePartSpecification parts, string action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.AddParts(System.ServiceModel.Security.MessagePartSpecification,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parts" Type="System.ServiceModel.Security.MessagePartSpecification" />
+        <Parameter Name="action" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parts">追加する部分を格納している <see cref="T:System.ServiceModel.Security.MessagePartSpecification" />。</param>
+        <param name="action">照合するアクション キー。</param>
+        <summary>指定したアクションに対応する <see langword="MessagePartSpecification" /> にメッセージ 部分を追加します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parts" /> または <paramref name="action" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ChannelParts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.MessagePartSpecification ChannelParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.MessagePartSpecification ChannelParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ScopedMessagePartSpecification.ChannelParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.MessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>チャネル部分を含むメッセージ部分の仕様を取得します。</summary>
+        <value>チャネル部分を含む <see cref="T:System.ServiceModel.Security.MessagePartSpecification" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル部分とは、すべてのメッセージに共通のメッセージ部分を指します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ScopedMessagePartSpecification.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仕様が読み取り専用かどうかを示します。</summary>
+        <value>
+          仕様が読み取り専用の場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.ScopedMessagePartSpecification.MakeReadOnly%2A> を使用して、このプロパティを `true` に設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>仕様を読み取り専用に設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetParts">
+      <MemberSignature Language="C#" Value="public bool TryGetParts (string action, out System.ServiceModel.Security.MessagePartSpecification parts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetParts(string action, [out] class System.ServiceModel.Security.MessagePartSpecification&amp; parts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.TryGetParts(System.String,System.ServiceModel.Security.MessagePartSpecification@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="parts" Type="System.ServiceModel.Security.MessagePartSpecification&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクション キー。</param>
+        <param name="parts">このメソッドが呼び出し元に復帰すると、見つかったパートが <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> に設定されています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したアクション キーと一致する部分が存在するかどうかを確認します。</summary>
+        <returns>
+          一致するパートが見つかった場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したアクションが <xref:System.ServiceModel.Security.ScopedMessagePartSpecification> 内に存在しない場合、ワイルドカード アクション ("*") に対して構成されているメッセージ部分が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetParts">
+      <MemberSignature Language="C#" Value="public bool TryGetParts (string action, bool excludeChannelScope, out System.ServiceModel.Security.MessagePartSpecification parts);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryGetParts(string action, bool excludeChannelScope, [out] class System.ServiceModel.Security.MessagePartSpecification&amp; parts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ScopedMessagePartSpecification.TryGetParts(System.String,System.Boolean,System.ServiceModel.Security.MessagePartSpecification@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="excludeChannelScope" Type="System.Boolean" />
+        <Parameter Name="parts" Type="System.ServiceModel.Security.MessagePartSpecification&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="action">アクション キー。</param>
+        <param name="excludeChannelScope"><see langword="true" /> の場合、部分は現在のチャネルに限定されます。</param>
+        <param name="parts">このメソッドが呼び出し元に復帰すると、見つかったパートが <see cref="T:System.ServiceModel.Security.MessagePartSpecification" /> に設定されています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>指定したアクション キーと一致する部分が存在するかどうかを確認します。</summary>
+        <returns>
+          一致するパートが見つかった場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したアクションが <xref:System.ServiceModel.Security.ScopedMessagePartSpecification> 内に存在しない場合、ワイルドカード アクション ("*") に対して構成されているメッセージ部分が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

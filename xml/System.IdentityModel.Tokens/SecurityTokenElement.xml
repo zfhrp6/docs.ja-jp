@@ -1,0 +1,197 @@
+<Type Name="SecurityTokenElement" FullName="System.IdentityModel.Tokens.SecurityTokenElement">
+  <TypeSignature Language="C#" Value="public class SecurityTokenElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SecurityTokenElement extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.SecurityTokenElement" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>検出された要素の数を表す、<see cref="T:System.IdentityModel.Protocols.WSTrust.RequestSecurityToken" />セキュリティ トークンとして表示されています。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスはスレッド セーフではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenElement (System.IdentityModel.Tokens.SecurityToken securityToken);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IdentityModel.Tokens.SecurityToken securityToken) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.#ctor(System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityToken" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="securityToken">新しいインスタンスを表すセキュリティ トークンです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />クラスを使用して、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、<xref:System.IdentityModel.Tokens.SecurityTokenElement.GetIdentities%2A>しない限りに、メソッドは新しいインスタンスによってサポートされていません、<xref:System.IdentityModel.Tokens.SecurityTokenElement.ValidateToken%2A>メソッドをオーバーライドします。  
+  
+ 場合、`securityToken`パラメーターのインスタンスは、 <xref:System.IdentityModel.Tokens.GenericXmlSecurityToken> 、<xref:System.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml%2A>の値に設定されて、<xref:System.IdentityModel.Tokens.GenericXmlSecurityToken.TokenXml%2A?displayProperty=nameWithType>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SecurityTokenElement (System.Xml.XmlElement securityTokenXml, System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xml.XmlElement securityTokenXml, class System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.#ctor(System.Xml.XmlElement,System.IdentityModel.Tokens.SecurityTokenHandlerCollection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="securityTokenXml" Type="System.Xml.XmlElement" />
+        <Parameter Name="securityTokenHandlers" Type="System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />
+      </Parameters>
+      <Docs>
+        <param name="securityTokenXml">セキュリティ トークンの XML 表現。</param>
+        <param name="securityTokenHandlers">読み取りおよびの新しいインスタンスによってラップされたセキュリティ トークンの検証に使用される既定トークン ハンドラーのコレクション。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.IdentityModel.Tokens.SecurityTokenElement" />セキュリティ トークンの指定した XML 表現を使用して、クラスです。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetIdentities">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; GetIdentities ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; GetIdentities() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.GetIdentities" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ラップ トークンに含まれる id を取得します。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSecurityToken">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Tokens.SecurityToken GetSecurityToken ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.IdentityModel.Tokens.SecurityToken GetSecurityToken() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.GetSecurityToken" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスによって表されるセキュリティ トークンを取得します。</summary>
+        <returns>現在のインスタンスを表すセキュリティ トークンです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のインスタンスが明示的に構築されていない場合、<xref:System.IdentityModel.Tokens.SecurityToken>オブジェクトを使用して、<xref:System.IdentityModel.Tokens.SecurityTokenElement.%23ctor%28System.IdentityModel.Tokens.SecurityToken%29?displayProperty=nameWithType>コンス トラクターを次に、<xref:System.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken%2A>セキュリティ トークンを返すメソッドが呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadSecurityToken">
+      <MemberSignature Language="C#" Value="protected virtual System.IdentityModel.Tokens.SecurityToken ReadSecurityToken (System.Xml.XmlElement securityTokenXml, System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.IdentityModel.Tokens.SecurityToken ReadSecurityToken(class System.Xml.XmlElement securityTokenXml, class System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.ReadSecurityToken(System.Xml.XmlElement,System.IdentityModel.Tokens.SecurityTokenHandlerCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityTokenXml" Type="System.Xml.XmlElement" />
+        <Parameter Name="securityTokenHandlers" Type="System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />
+      </Parameters>
+      <Docs>
+        <param name="securityTokenXml">セキュリティ トークンの XML 表現。</param>
+        <param name="securityTokenHandlers">使用して、トークンを読み取るトークン ハンドラーのコレクションです。</param>
+        <summary>逆シリアル化、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />指定した XML 表現。</summary>
+        <returns>XML から逆シリアル化されたセキュリティ トークンです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityTokenXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement SecurityTokenXml { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement SecurityTokenXml" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.SecurityTokenElement.SecurityTokenXml" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ラップ トークンの XML 表現を取得します。</summary>
+        <value>トークンの XML 表現。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは`null`を使用して、現在のインスタンスが初期化されていない限り、<xref:System.IdentityModel.Tokens.SecurityTokenElement.%23ctor%28System.Xml.XmlElement%2CSystem.IdentityModel.Tokens.SecurityTokenHandlerCollection%29?displayProperty=nameWithType>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateToken">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt; ValidateToken (System.Xml.XmlElement securityTokenXml, System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Security.Claims.ClaimsIdentity&gt; ValidateToken(class System.Xml.XmlElement securityTokenXml, class System.IdentityModel.Tokens.SecurityTokenHandlerCollection securityTokenHandlers) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.SecurityTokenElement.ValidateToken(System.Xml.XmlElement,System.IdentityModel.Tokens.SecurityTokenHandlerCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Security.Claims.ClaimsIdentity&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="securityTokenXml" Type="System.Xml.XmlElement" />
+        <Parameter Name="securityTokenHandlers" Type="System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />
+      </Parameters>
+      <Docs>
+        <param name="securityTokenXml">セキュリティ トークンの XML 表現。</param>
+        <param name="securityTokenHandlers">使用して、トークンを読み取るトークン ハンドラーのコレクションです。</param>
+        <summary>セキュリティ トークンの指定した XML 表現に含まれる id を作成します。</summary>
+        <returns>トークンに含まれている識別情報。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="securityTokenXml" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="securityTokenHandlers" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

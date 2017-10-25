@@ -1,0 +1,441 @@
+<Type Name="UriParser" FullName="System.UriParser">
+  <TypeSignature Language="C#" Value="public abstract class UriParser" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract UriParser extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.UriParser" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>新しい URI スキームを解析します。 これは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UriParser クラスでは、新しい URI スキームのパーサーを作成することができます。 これらのパーサーを作成するには、全体またはパーサーは既知のスキーム (HTTP、FTP、および他のスキームのネットワーク プロトコルに基づく) から派生することができます。 まったく新しいパーサーを作成する場合は、継承<xref:System.GenericUriParser>です。 よく知られている URI スキームを拡張するパーサーを作成する場合は、継承<xref:System.FtpStyleUriParser>、 <xref:System.HttpStyleUriParser>、 <xref:System.FileStyleUriParser>、 <xref:System.GopherStyleUriParser>、または<xref:System.LdapStyleUriParser>です。  
+  
+ .NET Framework に付属のパーサーを使用することを強くお勧めします。 独自のパーサーを構築、アプリケーションが複雑になるし、出荷のパーサーが低くなります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UriParser ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の URI パーサーを構築します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponents">
+      <MemberSignature Language="C#" Value="protected virtual string GetComponents (Uri uri, UriComponents components, UriFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string GetComponents(class System.Uri uri, valuetype System.UriComponents components, valuetype System.UriFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.GetComponents(System.Uri,System.UriComponents,System.UriFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="components" Type="System.UriComponents" />
+        <Parameter Name="format" Type="System.UriFormat" />
+      </Parameters>
+      <Docs>
+        <param name="uri">解析する URI。</param>
+        <param name="components"><see cref="T:System.UriComponents" />から取得する<c>uri</c>です。</param>
+        <param name="format">特殊文字のエスケープ方法を制御する <see cref="T:System.UriFormat" /> の値の 1 つ。</param>
+        <summary>URI からコンポーネントを取得します。</summary>
+        <returns>コンポーネントを含む文字列です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.UriParser.GetComponents%2A>など、URI のさまざまな部分の値を決定するメソッド、 <xref:System.UriComponents.Scheme>、 <xref:System.UriComponents.Host>、または<xref:System.UriComponents.Port>です。  
+  
+ コンポーネントは、URI に出現する順序で返されます。 たとえば場合、<xref:System.UriComponents.Scheme>を指定すると、最初に表示します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="uriFormat" /> が無効です。  
+  
+ \- または  
+  
+ <paramref name="uriComponents" />有効な組み合わせではありません<see cref="T:System.UriComponents" />値。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="uri" />ユーザーに基づく解析が必要です。  
+  
+ \- または  
+  
+ <paramref name="uri" /> は絶対 URI ではありません。 相対 Uri は、このメソッドでは使用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeAndValidate">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeAndValidate (Uri uri, out UriFormatException parsingError);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void InitializeAndValidate(class System.Uri uri, [out] class System.UriFormatException&amp; parsingError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.InitializeAndValidate(System.Uri,System.UriFormatException@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+        <Parameter Name="parsingError" Type="System.UriFormatException&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="uri">検証する T:System.Uri です。</param>
+        <param name="parsingError">存在する場合は、検証エラー。</param>
+        <summary>パーサーの状態を初期化し、URI を検証します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriParser.InitializeAndValidate%2A>メソッドは毎回、<xref:System.Uri>がインスタンス化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBaseOf">
+      <MemberSignature Language="C#" Value="protected virtual bool IsBaseOf (Uri baseUri, Uri relativeUri);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsBaseOf(class System.Uri baseUri, class System.Uri relativeUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.IsBaseOf(System.Uri,System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="relativeUri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">ベース URI。</param>
+        <param name="relativeUri">テストへの URI。</param>
+        <summary>指定するかどうか<paramref name="baseUri" />のベース URI は、<paramref name="relativeUri" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="baseUri" />のベース URI は、 <paramref name="relativeUri" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsKnownScheme">
+      <MemberSignature Language="C#" Value="public static bool IsKnownScheme (string schemeName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsKnownScheme(string schemeName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.IsKnownScheme(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemeName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="schemeName">確認対象のスキーム名。</param>
+        <summary>スキーム パーサーが登録されているかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="schemeName" />が登録されている、それ以外のされて<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="schemeName" />パラメーターが null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="schemeName" />パラメーターが無効です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsWellFormedOriginalString">
+      <MemberSignature Language="C#" Value="protected virtual bool IsWellFormedOriginalString (Uri uri);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool IsWellFormedOriginalString(class System.Uri uri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.IsWellFormedOriginalString(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uri" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="uri">確認への URI。</param>
+        <summary>URI が整形式かどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="uri" />が整形式であるそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.UriParser.IsWellFormedOriginalString%2A>場合にメソッドが false を返します。  
+  
+-   文字列が RFC 2396 に従って正しくエスケープされていません。  
+  
+-   文字列では、暗黙的なファイル URI を参照する絶対 URI を表します。  
+  
+-   文字列では、パス コンポーネントの前にスラッシュが欠落している絶対 URI を表します。  
+  
+-   文字列には、スラッシュとして扱う場合でも、エスケープされていない円記号が含まれています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnNewUri">
+      <MemberSignature Language="C#" Value="protected virtual UriParser OnNewUri ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.UriParser OnNewUri() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.OnNewUri" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.UriParser</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>によって呼び出された、<see cref="T:System.Uri" />を取得するコンス トラクター、<see cref="T:System.UriParser" />インスタンス</summary>
+        <returns>A<see cref="T:System.UriParser" />の構築された<see cref="T:System.Uri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装は、同じを返します<xref:System.UriParser>インスタンス。 このメソッドをオーバーライドして、異なるを返す必要があります<xref:System.UriParser>マルチ スレッド環境で動作している場合は、各呼び出しに対してです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRegister">
+      <MemberSignature Language="C#" Value="protected virtual void OnRegister (string schemeName, int defaultPort);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnRegister(string schemeName, int32 defaultPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.OnRegister(System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="schemeName" Type="System.String" />
+        <Parameter Name="defaultPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="schemeName">これに関連付けられているスキーム<see cref="T:System.UriParser" />です。</param>
+        <param name="defaultPort">スキームのポート番号。</param>
+        <summary>フレームワークによって呼び出されたときに、<see cref="T:System.UriParser" />メソッドが登録されています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Register">
+      <MemberSignature Language="C#" Value="public static void Register (UriParser uriParser, string schemeName, int defaultPort);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Register(class System.UriParser uriParser, string schemeName, int32 defaultPort) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.Register(System.UriParser,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="uriParser" Type="System.UriParser" />
+        <Parameter Name="schemeName" Type="System.String" />
+        <Parameter Name="defaultPort" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="uriParser">登録する URI パーサー。</param>
+        <param name="schemeName">このパーサーに関連付けられている構成の名前。</param>
+        <param name="defaultPort">指定されたスキームの既定のポート番号。</param>
+        <summary>スキームおよびポート番号を関連付ける、<see cref="T:System.UriParser" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`defaultPort`パラメーターが-1 に設定されている、<xref:System.UriParser.Register%2A>メソッドは、ポート番号の既定値に登録されません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="uriParser" />パラメーターが null です。  
+  
+ \- または  
+  
+ <paramref name="schemeName" />パラメーターが null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="schemeName" />パラメーターが無効  
+  
+ \- または  
+  
+ <paramref name="defaultPort" />パラメーターが有効ではありません。 <paramref name="defaultPort" />パラメーターが-1 未満か 65,534 を超える。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolve">
+      <MemberSignature Language="C#" Value="protected virtual string Resolve (Uri baseUri, Uri relativeUri, out UriFormatException parsingError);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance string Resolve(class System.Uri baseUri, class System.Uri relativeUri, [out] class System.UriFormatException&amp; parsingError) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.UriParser.Resolve(System.Uri,System.Uri,System.UriFormatException@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="baseUri" Type="System.Uri" />
+        <Parameter Name="relativeUri" Type="System.Uri" />
+        <Parameter Name="parsingError" Type="System.UriFormatException&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="baseUri">ベース URI。</param>
+        <param name="relativeUri">相対 URI です。</param>
+        <param name="parsingError">存在する場合、解決処理中のエラー。</param>
+        <summary>によって呼び出されます<see cref="T:System.Uri" />コンス トラクターと<see cref="Overload:System.Uri.TryCreate" />相対 URI を解決します。</summary>
+        <returns>解決済みの相対パスの文字列<see cref="T:System.Uri" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Uri>コンス トラクターと<xref:System.Uri.TryCreate%2A?displayProperty=nameWithType>使用<xref:System.UriParser.Resolve%2A>から URI を構築するために`baseUri`と`relativeUri`です。  
+  
+ 場合は、解析エラーが発生する解決基準の返される文字列<xref:System.Uri>が null です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="baseUri" />パラメーターが絶対パスではありません。<see cref="T:System.Uri" />  
+  
+ \- または  
+  
+ <paramref name="baseUri" />パラメーターでは、ユーザーに基づく解析が必要です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

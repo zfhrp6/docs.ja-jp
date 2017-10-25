@@ -1,0 +1,52 @@
+<Type Name="ResolveEventHandler" FullName="System.ResolveEventHandler">
+  <TypeSignature Language="C#" Value="public delegate System.Reflection.Assembly ResolveEventHandler(object sender, ResolveEventArgs args);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed ResolveEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.ResolveEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="args" Type="System.ResolveEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Reflection.Assembly</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="args">イベントのデータ。</param>
+    <summary>処理するメソッドを表す、 <see cref="E:System.AppDomain.TypeResolve" />、 <see cref="E:System.AppDomain.ResourceResolve" />、または<see cref="E:System.AppDomain.AssemblyResolve" />のイベント、<see cref="T:System.AppDomain" />です。</summary>
+    <returns>型、アセンブリ、またはリソースを解決するアセンブリ。または<see langword="null" />場合は、アセンブリを解決することはできません。</returns>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイム クラス ローダーは、アセンブリ、型、またはリソースへの参照を解決することはできません、により、参照アセンブリ、型、またはリソースでは、どちらのアセンブリをランタイムに指示を対応するイベントが発生します。 役割です、<xref:System.ResolveEventHandler>型、アセンブリ、またはリソースに解決されるアセンブリを返すか、アセンブリが認識されない場合は null を返します。 詳細については、次を参照してください。[アセンブリ読み込みの解決](~/docs/framework/app-domains/resolve-assembly-loads.md)と<xref:System.AppDomain.ResourceResolve?displayProperty=nameWithType>、 <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>、および<xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=nameWithType>イベント。  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.ResolveEventHandler?displayProperty=nameWithType>リソース アセンブリを含め、すべてのアセンブリに対してイベントが生成されます。 リソース アセンブリが、以前のバージョンで、イベントを発生しません。 オペレーティング システムがローカライズされている場合、ハンドラーが複数回呼び出す: フォールバック チェーン内のカルチャごとに 1 回です。  
+  
+ すべての派生クラスの<xref:System.Delegate>と<xref:System.MulticastDelegate>コンス トラクターを持つと`Invoke`メソッドです。 説明に C++ のコード例を参照してください、<xref:System.Delegate>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

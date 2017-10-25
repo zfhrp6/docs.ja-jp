@@ -1,0 +1,471 @@
+<Type Name="RelativeSource" FullName="System.Windows.Data.RelativeSource">
+  <TypeSignature Language="C#" Value="public class RelativeSource : System.Windows.Markup.MarkupExtension, System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RelativeSource extends System.Windows.Markup.MarkupExtension implements class System.ComponentModel.ISupportInitialize" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Data.RelativeSource" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Markup.MarkupExtension</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ISupportInitialize</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.MarkupExtensionReturnType(typeof(System.Windows.Data.RelativeSource))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>バインディング ソースの位置を、バインディング ターゲットの位置を基準とする相対的な位置として示すマークアップ拡張機能を実装します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バインディング ソースを指定する方法の 1 つを使用して、<xref:System.Windows.Data.Binding.RelativeSource%2A?displayProperty=nameWithType>プロパティです。 これは、そのプロパティのプロパティの型です。 <xref:System.Windows.Data.RelativeSource>マークアップ拡張機能の実装と、データ オブジェクトでは同時にです。 拡張機能がそれ自体を返されるときに (を参照してください<xref:System.Windows.Data.RelativeSource.ProvideValue%2A>)、データに関連する情報が含まれています。 マークアップ拡張機能の主な目的は、属性の形式で、可変個引数コンス トラクター構文を許可するように、<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>モードは、先祖の型およびその他のモードを必要としないレベルの 2 つの余分な引数でインラインで定義を指定できます。  
+  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+<a name="xamlTextUsage_RelativeSource"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+   
+  
+## Examples  
+ 次の例は、スタイルのトリガーを作成する、<xref:System.Windows.Controls.ToolTip>検証エラー メッセージを報告します。 使用して、<xref:System.Windows.Data.Binding.RelativeSource%2A>プロパティ、かつ setter の値は、現在のエラーの内容にバインドされて<xref:System.Windows.Controls.TextBox>(、<xref:System.Windows.Controls.TextBox>スタイルを使用)。 この例の詳細については、次を参照してください。[する方法: バインド検証を実装する](~/docs/framework/wpf/data/how-to-implement-binding-validation.md)です。  
+  
+ [!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
+  
+ 次の例は、<xref:System.Windows.Style>カスタム コントロールの定義と呼ばれる`NumericUpDown`です。 <xref:System.Windows.Controls.TextBlock.Text%2A>のプロパティ、<xref:System.Windows.Controls.TextBlock>にバインドされて、`Value`であるオブジェクトの`TemplatedParent`、これは、`NumericUpDown`するこの機能を制御<xref:System.Windows.Style>にここで適用します。  
+  
+ [!code-xaml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
+  
+ サンプル全体については、次を参照してください。 [NumericUpDown カスタム コントロールのテーマと UI オートメーションのサポート サンプル](http://go.microsoft.com/fwlink/?LinkID=160025)です。  
+  
+ 次の秒を返します<xref:System.Windows.Controls.ItemsControl>バインディングのターゲット要素を起点上方向のパス上で発生します。  
+  
+ [!code-csharp[BindConversion#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#relativesource)]
+ [!code-vb[BindConversion#RelativeSource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#relativesource)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelativeSource ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Data.RelativeSource" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelativeSource (System.Windows.Data.RelativeSourceMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Data.RelativeSourceMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor(System.Windows.Data.RelativeSourceMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Windows.Data.RelativeSourceMode" />
+      </Parameters>
+      <Docs>
+        <param name="mode"><see cref="T:System.Windows.Data.RelativeSourceMode" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Data.RelativeSource" />初期モードを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RelativeSource (System.Windows.Data.RelativeSourceMode mode, Type ancestorType, int ancestorLevel);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Data.RelativeSourceMode mode, class System.Type ancestorType, int32 ancestorLevel) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.#ctor(System.Windows.Data.RelativeSourceMode,System.Type,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="mode" Type="System.Windows.Data.RelativeSourceMode" />
+        <Parameter Name="ancestorType" Type="System.Type" />
+        <Parameter Name="ancestorLevel" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="mode"><see cref="T:System.Windows.Data.RelativeSourceMode" /> 値のいずれか。 この署名に関連するには、この値には<see cref="F:System.Windows.Data.RelativeSourceMode.FindAncestor" />します。</param>
+        <param name="ancestorType"><see cref="T:System.Type" />検索する先祖のです。</param>
+        <param name="ancestorLevel">指定された型のすべての先祖の間で、目的の先祖の序数です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Data.RelativeSource" />初期モードと目的の相対的なソースを検索するための追加のツリー ウォーク修飾子を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `ancestorType`および`ancestorLevel`行ったありませんのパラメーターとして指定されている場合、`mode`以外の<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>します。 この署名を使用しない、他の<xref:System.Windows.Data.RelativeSourceMode>値。  
+  
+   
+  
+## Examples  
+ 次の秒を返します<xref:System.Windows.Controls.ItemsControl>バインディングのターゲット要素を起点上方向のパス上で発生します。  
+  
+ [!code-csharp[BindConversion#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#relativesource)]
+ [!code-vb[BindConversion#RelativeSource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#relativesource)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AncestorLevel">
+      <MemberSignature Language="C#" Value="public int AncestorLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 AncestorLevel" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.AncestorLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="F:System.Windows.Data.RelativeSourceMode.FindAncestor" /> モードで、検索する先祖のレベルを取得または設定します。 バインドのターゲット要素に一番近いレベルを示すには、1 を使用します。</summary>
+        <value>先祖レベル。 バインドのターゲット要素に一番近いレベルを示すには、1 を使用します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティが設定されていない、明示的に設定、<xref:System.Windows.Data.RelativeSource.AncestorType%2A>または<xref:System.Windows.Data.RelativeSource.AncestorLevel%2A>プロパティはロックは暗黙的に、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティの値を<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>です。  
+  
+<a name="xamlTextUsage_AncestorLevel"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+   
+  
+## Examples  
+ 次の秒を返します<xref:System.Windows.Controls.ItemsControl>バインディングのターゲット要素を起点上方向のパス上で発生します。  
+  
+ [!code-csharp[BindConversion#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#relativesource)]
+ [!code-vb[BindConversion#RelativeSource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#relativesource)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AncestorType">
+      <MemberSignature Language="C#" Value="public Type AncestorType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type AncestorType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.AncestorType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または検索する先祖の種類を設定します。</summary>
+        <value>先祖の型。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティが設定されていない、明示的に設定、<xref:System.Windows.Data.RelativeSource.AncestorType%2A>または<xref:System.Windows.Data.RelativeSource.AncestorLevel%2A>プロパティはロックは暗黙的に、<xref:System.Windows.Data.RelativeSource.Mode%2A>プロパティの値を<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>です。  
+  
+<a name="xamlTextUsage_AncestorType"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+   
+  
+## Examples  
+ 次の秒を返します<xref:System.Windows.Controls.ItemsControl>バインディングのターゲット要素を起点上方向のパス上で発生します。  
+  
+ [!code-csharp[BindConversion#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/BindConversion/CSharp/Window1.xaml.cs#relativesource)]
+ [!code-vb[BindConversion#RelativeSource](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BindConversion/visualbasic/window1.xaml.vb#relativesource)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Data.RelativeSource" />に含まれていない、<see cref="F:System.Windows.Data.RelativeSourceMode.FindAncestor" />モード。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Windows.Data.RelativeSourceMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Data.RelativeSourceMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ConstructorArgument("mode")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.RelativeSourceMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Data.RelativeSourceMode" />バインディング ターゲットの位置を基準バインディング ソースの場所を記述する値。</summary>
+        <value><see cref="T:System.Windows.Data.RelativeSourceMode" /> 値のいずれか。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは読み取り専用で初期化した後 このプロパティが明示的に設定されていない場合は、設定、<xref:System.Windows.Data.RelativeSource.AncestorType%2A>または<xref:System.Windows.Data.RelativeSource.AncestorType%2A>と<xref:System.Windows.Data.RelativeSource.AncestorLevel%2A>プロパティは、このプロパティの値に暗黙的にロックされます<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>です。  
+  
+<a name="xamlTextUsage_Mode"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティは、初期化後に変更できません。 変更する代わりに、 <see cref="P:System.Windows.Data.RelativeSource.Mode" /> 、このインスタンスの新規作成<see cref="T:System.Windows.Data.RelativeSource" />または別の静的インスタンスを使用します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviousData">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource PreviousData { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource PreviousData" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.PreviousData" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.RelativeSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すために使用する静的な値を取得、<see cref="T:System.Windows.Data.RelativeSource" />用に構築、<see cref="F:System.Windows.Data.RelativeSourceMode.PreviousData" />モード。</summary>
+        <value>静的な<see cref="T:System.Windows.Data.RelativeSource" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 4 つのうち 3 つ<xref:System.Windows.Data.RelativeSourceMode>値、 <xref:System.Windows.Data.RelativeSourceMode.PreviousData>、 <xref:System.Windows.Data.RelativeSourceMode.Self>、または<xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>、生成できる、<xref:System.Windows.Data.RelativeSource>固有のプライベート値を含まない、完全静的であります。 使用するすべての静的プロパティのを使用するたびに個別のオブジェクトを割り当てる必要がなくなるため、同じオブジェクトを共有できます。 そのため、静的なプロパティを使用するには、メモリ使用量が少なくなります。  
+  
+<a name="xamlTextUsage_PreviousData"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProvideValue">
+      <MemberSignature Language="C#" Value="public override object ProvideValue (IServiceProvider serviceProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object ProvideValue(class System.IServiceProvider serviceProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ProvideValue(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="serviceProvider">マークアップ拡張機能のサービスを提供できるオブジェクト。 この実装では、このパラメーターを指定できます<see langword="null" />です。</param>
+        <summary>このマークアップ拡張機能のターゲット オブジェクトのプロパティの値として設定されるオブジェクトを返します。 <see cref="T:System.Windows.Data.RelativeSource" />、これは、別<see cref="T:System.Windows.Data.RelativeSource" />、指定したモードの適切なソースを使用します。</summary>
+        <returns>別<see cref="T:System.Windows.Data.RelativeSource" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Data.RelativeSource>マークアップ拡張機能の実装と、データ オブジェクトでは同時にです。 拡張機能を使用して、それ自体を返します、関連の情報がデータに含まれます。 マークアップ拡張機能の主な目的は、属性の形式で、可変個引数コンス トラクター構文を許可するように、<xref:System.Windows.Data.RelativeSourceMode.FindAncestor>モードは、先祖の型およびその他のモードを必要としないレベルの 2 つの余分な引数で、インラインで定義を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Self">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource Self { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource Self" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.Self" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.RelativeSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すために使用する静的な値を取得、<see cref="T:System.Windows.Data.RelativeSource" />用に構築、<see cref="F:System.Windows.Data.RelativeSourceMode.Self" />モード。</summary>
+        <value>静的な<see cref="T:System.Windows.Data.RelativeSource" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 4 つのうち 3 つ<xref:System.Windows.Data.RelativeSourceMode>値、 <xref:System.Windows.Data.RelativeSourceMode.PreviousData>、 <xref:System.Windows.Data.RelativeSourceMode.Self>、または<xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>、生成できる、<xref:System.Windows.Data.RelativeSource>固有のプライベート値を含まない、完全静的であります。 使用するすべての静的プロパティのを使用するたびに個別のオブジェクトを割り当てる必要がなくなるため、同じオブジェクトを共有できます。 そのため、静的なプロパティを使用するには、メモリ使用量が少なくなります。  
+  
+<a name="xamlTextUsage_Self"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、スタイルのトリガーを作成する、<xref:System.Windows.Controls.ToolTip>検証エラー メッセージを報告します。 現在のエラーの内容に、set アクセス操作子の値をバインド<xref:System.Windows.Controls.TextBox>(、<xref:System.Windows.Controls.TextBox>スタイルを使用) を使用して、<xref:System.Windows.Data.Binding.RelativeSource%2A>プロパティです。 参照してください[する方法: バインド検証を実装する](~/docs/framework/wpf/data/how-to-implement-binding-validation.md)この例の詳細についてはします。  
+  
+ [!code-xaml[BindValidation#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BindValidation/CSharp/Window1.xaml#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeAncestorLevel">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeAncestorLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeAncestorLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ShouldSerializeAncestorLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.RelativeSource.AncestorLevel" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.RelativeSource.AncestorLevel%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.RelativeSource>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.RelativeSource>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeAncestorType">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeAncestorType ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeAncestorType() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.ShouldSerializeAncestorType" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Windows.Data.RelativeSource.AncestorType" /> プロパティを永続化する必要があるかどうかを示します。</summary>
+        <returns>
+          プロパティの値が既定値から変更されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、`ShouldSerialize`ためメソッドが用意されて、<xref:System.Windows.Data.RelativeSource.AncestorType%2A>プロパティには、単純な既定値にありません。 このメソッドは、既定値から、プロパティが変更されたかどうかを示します。 いずれかをデザイナーを開発している場合に通常、このメソッドが呼び出す、<xref:System.Windows.Data.RelativeSource>やコントロールを組み込む独自の開発、<xref:System.Windows.Data.RelativeSource>です。  
+  
+ 詳細については、次を参照してください。 [ShouldSerialize メソッドとメソッドのリセットを既定値を定義する](~/docs/framework/winforms/controls/defining-default-values-with-the-shouldserialize-and-reset-methods.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.BeginInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.BeginInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.BeginInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.System#ComponentModel#ISupportInitialize#BeginInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ISupportInitialize.EndInit">
+      <MemberSignature Language="C#" Value="void ISupportInitialize.EndInit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.ISupportInitialize.EndInit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Data.RelativeSource.System#ComponentModel#ISupportInitialize#EndInit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TemplatedParent">
+      <MemberSignature Language="C#" Value="public static System.Windows.Data.RelativeSource TemplatedParent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Data.RelativeSource TemplatedParent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Data.RelativeSource.TemplatedParent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Data.RelativeSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>返すために使用する静的な値を取得、<see cref="T:System.Windows.Data.RelativeSource" />用に構築、<see cref="F:System.Windows.Data.RelativeSourceMode.TemplatedParent" />モード。</summary>
+        <value>静的な<see cref="T:System.Windows.Data.RelativeSource" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 4 つのうち 3 つ<xref:System.Windows.Data.RelativeSourceMode>値、 <xref:System.Windows.Data.RelativeSourceMode.PreviousData>、 <xref:System.Windows.Data.RelativeSourceMode.Self>、または<xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>、生成できる、<xref:System.Windows.Data.RelativeSource>固有のプライベート値を含まない、完全静的であります。 使用するすべての静的プロパティのを使用するたびに個別のオブジェクトを割り当てる必要がなくなるため、同じオブジェクトを共有できます。 そのため、静的なプロパティを使用するには、メモリ使用量が少なくなります。  
+  
+<a name="xamlTextUsage_TemplatedParent"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ [!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]についてを参照してください[RelativeSource MarkupExtension](~/docs/framework/wpf/advanced/relativesource-markupextension.md)です。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Windows.Style>カスタム コントロールの定義と呼ばれる`NumericUpDown`です。 <xref:System.Windows.Controls.TextBlock.Text%2A>のプロパティ、<xref:System.Windows.Controls.TextBlock>にバインドされて、`Value`であるオブジェクトの`TemplatedParent`、これは、`NumericUpDown`するこの機能を制御<xref:System.Windows.Style>にここで適用します。  
+  
+ [!code-xaml[CustomControlNumericUpDown#RelativeSource](~/samples/snippets/csharp/VS_Snippets_Wpf/CustomControlNumericUpDown/CSharp/CustomControlLibrary/themes/generic.xaml#relativesource)]  
+  
+ サンプル全体については、次を参照してください。 [NumericUpDown カスタム コントロールのテーマと UI オートメーションのサポート サンプル](http://go.microsoft.com/fwlink/?LinkID=160025)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

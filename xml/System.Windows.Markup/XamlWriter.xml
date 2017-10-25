@@ -1,0 +1,251 @@
+<Type Name="XamlWriter" FullName="System.Windows.Markup.XamlWriter">
+  <TypeSignature Language="C#" Value="public static class XamlWriter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit XamlWriter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlWriter" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>1 つの静的提供<see cref="Overload:System.Windows.Markup.XamlWriter.Save" />の制限の XAML シリアル化に使用できるメソッド (複数のオーバー ロード) は、XAML マークアップに実行時のオブジェクトを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。 これは、Xbap から含まれています。  
+  
+   
+  
+## Examples  
+ 次の例のシリアル化、<xref:System.Windows.Controls.Button>を使用して文字列に、<xref:System.Windows.Markup.XamlWriter>クラスです。  文字列に戻す逆シリアル化し、<xref:System.Windows.Controls.Button>静的<xref:System.Windows.Markup.XamlReader.Load%2A>メソッドを<xref:System.Windows.Markup.XamlReader>クラスです。  
+  
+ [!code-csharp[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/csharp/VS_Snippets_Wpf/XamlReaderWriterSnippets/CSharp/Window1.xaml.cs#xamlreaderloadxmlreader)]
+ [!code-vb[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XamlReaderWriterSnippets/visualbasic/window1.xaml.vb#xamlreaderloadxmlreader)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static string Save (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Save(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlWriter.Save(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化する要素。 通常、これは、ページまたはアプリケーションのルート要素です。</param>
+        <summary>指定したオブジェクトとそのプロパティをシリアル化する XAML の文字列を返します。</summary>
+        <returns>ストリームまたはファイルに書き込むことができる XAML 文字列。 指定されたに該当するすべての要素の論理ツリー<paramref name="obj" />要素をシリアル化されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。  
+  
+   
+  
+## Examples  
+ 次の例のシリアル化、<xref:System.Windows.Controls.Button>を使用して文字列に、<xref:System.Windows.Markup.XamlWriter>クラスです。  文字列に戻す逆シリアル化し、<xref:System.Windows.Controls.Button>静的<xref:System.Windows.Markup.XamlReader.Load%2A>メソッドを<xref:System.Windows.Markup.XamlReader>クラスです。  
+  
+ [!code-csharp[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/csharp/VS_Snippets_Wpf/XamlReaderWriterSnippets/CSharp/Window1.xaml.cs#xamlreaderloadxmlreader)]
+ [!code-vb[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XamlReaderWriterSnippets/visualbasic/window1.xaml.vb#xamlreaderloadxmlreader)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">アプリケーションは、完全な信頼で実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (object obj, System.IO.Stream stream);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(object obj, class System.IO.Stream stream) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlWriter.Save(System.Object,System.IO.Stream)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="stream" Type="System.IO.Stream" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化する要素。 通常、これは、ページまたはアプリケーションのルート要素です。</param>
+        <param name="stream">シリアル化された XAML 情報の保存先のストリーム。</param>
+        <summary>XAML の情報を指定したオブジェクトとそのプロパティをシリアル化する、指定したストリームに保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。  
+  
+   
+  
+## Examples  
+ 次の例のシリアル化、<xref:System.Windows.Controls.Button>に、<xref:System.IO.MemoryStream>を使用して、<xref:System.Windows.Markup.XamlWriter>クラスです。 ストリームに戻す逆シリアル化し、<xref:System.Windows.Controls.Button>静的<xref:System.Windows.Markup.XamlReader.Load%2A>メソッドを<xref:System.Windows.Markup.XamlReader>クラスです。  
+  
+ [!code-csharp[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/csharp/VS_Snippets_Wpf/XamlReaderWriterSnippets/CSharp/Window1.xaml.cs#xamlreaderloadxmlreader)]
+ [!code-vb[XamlReaderWriterSnippets#XamlReaderLoadXmlReader](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XamlReaderWriterSnippets/visualbasic/window1.xaml.vb#xamlreaderloadxmlreader)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> または <paramref name="stream" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">アプリケーションは、完全な信頼で実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (object obj, System.IO.TextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(object obj, class System.IO.TextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlWriter.Save(System.Object,System.IO.TextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="writer" Type="System.IO.TextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化する要素。 通常、これは、ページまたはアプリケーションのルート要素です。</param>
+        <param name="writer">A<see cref="T:System.IO.TextWriter" />シリアル化された XAML 情報が書き込まれる先としてのインスタンス。</param>
+        <summary>指定されたソースとしての XAML 情報の保存<see cref="T:System.IO.TextWriter" />オブジェクト。 出力、<see cref="T:System.IO.TextWriter" />を指定されたオブジェクトとそのプロパティをシリアル化するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> または <paramref name="writer" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">アプリケーションは、完全な信頼で実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (object obj, System.Windows.Markup.XamlDesignerSerializationManager manager);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(object obj, class System.Windows.Markup.XamlDesignerSerializationManager manager) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlWriter.Save(System.Object,System.Windows.Markup.XamlDesignerSerializationManager)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="manager" Type="System.Windows.Markup.XamlDesignerSerializationManager" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化する要素。 通常、これは、ページまたはアプリケーションのルート要素です。</param>
+        <param name="manager">カスタムのシリアル化の実装です。</param>
+        <summary>カスタムのシリアライザーに XAML の情報を保存します。 シリアライザーの出力は、指定されたオブジェクトとそのプロパティをシリアル化に使用できます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> または <paramref name="manager" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">アプリケーションは、完全な信頼で実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Save">
+      <MemberSignature Language="C#" Value="public static void Save (object obj, System.Xml.XmlWriter xmlWriter);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void Save(object obj, class System.Xml.XmlWriter xmlWriter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlWriter.Save(System.Object,System.Xml.XmlWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+        <Parameter Name="xmlWriter" Type="System.Xml.XmlWriter" />
+      </Parameters>
+      <Docs>
+        <param name="obj">シリアル化する要素。 通常、これは、ページまたはアプリケーションのルート要素です。</param>
+        <param name="xmlWriter">使用してシリアル化された XAML 情報を書き込むライター。</param>
+        <summary>指定されたソースとしての XAML 情報の保存<see cref="T:System.Xml.XmlWriter" />オブジェクト。 出力、<see cref="T:System.Xml.XmlWriter" />を指定されたオブジェクトとそのプロパティをシリアル化するために使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドで有効になっているシリアル化では、一連の制限があります。 これは、シリアル化を有効になっているは、明示的に実行時とが可能なデザイン時の情報へのアクセス元の XAML (存在する場合) です。 詳細については、「[シリアル化の制限事項の XamlWriter.Save](~/docs/framework/wpf/advanced/serialization-limitations-of-xamlwriter-save.md)です。  
+  
+ 呼び出す<xref:System.Windows.Markup.XamlWriter.Save%2A>部分的な信頼で実行されている場合は許可されていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="obj" /> または <paramref name="xmlWriter" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">アプリケーションは、完全な信頼で実行されていません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

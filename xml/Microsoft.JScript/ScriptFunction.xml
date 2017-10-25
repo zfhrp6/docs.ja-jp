@@ -1,0 +1,283 @@
+<Type Name="ScriptFunction" FullName="Microsoft.JScript.ScriptFunction">
+  <TypeSignature Language="C#" Value="public abstract class ScriptFunction : Microsoft.JScript.JSObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ScriptFunction extends Microsoft.JScript.JSObject" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.JScript.ScriptFunction" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.JScript</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>Microsoft.JScript.JSObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンス トラクター関数によって定義されるプロトタイプ ベースのオブジェクトを表します。 コンス トラクターのほとんどは、クラスをなど関数<see cref="T:Microsoft.JScript.DateConstructor" />、 <see cref="T:Microsoft.JScript.NumberConstructor" />、 <see cref="T:Microsoft.JScript.StringConstructor" />、および<see cref="T:Microsoft.JScript.ObjectConstructor" />、このクラスから継承します。 このクラスは、オブジェクトと関数のカテゴリに属します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ScriptFunction (Microsoft.JScript.ScriptObject parent, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class Microsoft.JScript.ScriptObject parent, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.#ctor(Microsoft.JScript.ScriptObject,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="Microsoft.JScript.ScriptObject" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="parent">この関数を作成するオブジェクトの親のプロトタイプ。</param>
+        <param name="name">この関数を作成するオブジェクトの名前です。</param>
+        <summary><see cref="T:Microsoft.JScript.ScriptFunction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親は、代行プロパティを要求するオブジェクトまたは自体が実装していないメソッドです。 たとえば、作成、<xref:Microsoft.JScript.NumberObject>を使用して、 <xref:Microsoft.JScript.NumberConstructor>、親は、<xref:Microsoft.JScript.NumberPrototype>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public object CreateInstance (params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstance(object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.CreateInstance(System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasVarArgs)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="args">コンストラクターに渡される引数。</param>
+        <summary>指定した引数を渡して、プロトタイプ ベース オブジェクトのインスタンスを作成します。</summary>
+        <returns>オブジェクトのインスタンス。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrototypeForConstructedObject">
+      <MemberSignature Language="C#" Value="protected Microsoft.JScript.ScriptObject GetPrototypeForConstructedObject ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class Microsoft.JScript.ScriptObject GetPrototypeForConstructedObject() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.GetPrototypeForConstructedObject" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.JScript.ScriptObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコンス トラクター関数のプロトタイプ オブジェクトを取得します。</summary>
+        <returns>このコンス トラクター関数のプロトタイプ オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロトタイプは、代行プロパティを要求するオブジェクトまたは自体が実装していないメソッドです。 たとえば、作成、<xref:Microsoft.JScript.NumberObject>を使用して、 <xref:Microsoft.JScript.NumberConstructor>、プロトタイプは、<xref:Microsoft.JScript.NumberPrototype>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ilength">
+      <MemberSignature Language="C#" Value="protected int ilength;" />
+      <MemberSignature Language="ILAsm" Value=".field family int32 ilength" />
+      <MemberSignature Language="DocId" Value="F:Microsoft.JScript.ScriptFunction.ilength" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>含まれる要素の数を格納、<paramref name="args" />のパラメーター、<see cref="M:Microsoft.JScript.ScriptFunction.CreateInstance(System.Object[])" />メソッドです。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Invoke">
+      <MemberSignature Language="C#" Value="public object Invoke (object thisob, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object Invoke(object thisob, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.Invoke(System.Object,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>Microsoft.JScript.JSFunction(Microsoft.JScript.JSFunctionAttributeEnum.HasThisObject | Microsoft.JScript.JSFunctionAttributeEnum.HasVarArgs)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="thisob" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="thisob">このメソッドは、時に動作しているオブジェクト。</param>
+        <param name="args">メソッドに渡す引数。</param>
+        <summary>指定した引数を渡して、プロトタイプ ベース オブジェクトのメソッドを呼び出します。</summary>
+        <returns>メソッドの呼び出しの結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.JScript.ScriptFunction.Invoke%2A>多くの場合は、コンス トラクターとして機能またはインスタンスの呼び出しを作成します。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="InvokeMember">
+      <MemberSignature Language="C#" Value="public override object InvokeMember (string name, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, object target, object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, string[] namedParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object InvokeMember(string name, valuetype System.Reflection.BindingFlags invokeAttr, class System.Reflection.Binder binder, object target, object[] args, valuetype System.Reflection.ParameterModifier[] modifiers, class System.Globalization.CultureInfo culture, string[] namedParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[],System.Reflection.ParameterModifier[],System.Globalization.CultureInfo,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Diagnostics.DebuggerStepThrough</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="invokeAttr" Type="System.Reflection.BindingFlags" />
+        <Parameter Name="binder" Type="System.Reflection.Binder" />
+        <Parameter Name="target" Type="System.Object" />
+        <Parameter Name="args" Type="System.Object[]" />
+        <Parameter Name="modifiers" Type="System.Reflection.ParameterModifier[]" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="namedParameters" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="name">呼び出すメンバーの名前。</param>
+        <param name="invokeAttr">リフレクションによるメンバーの検索を実行する方法を指定する列挙値のビットごとの組み合わせ。</param>
+        <param name="binder">実引数の型から仮引数型への型変換を実行するオブジェクト。</param>
+        <param name="target">メンバーを呼び出す対象となるオブジェクト。 これは、現在のスクリプト オブジェクトでなければなりません。</param>
+        <param name="args">呼び出すには、数、順序、およびメンバーのパラメーターの型を含むオブジェクトの配列。 これは、パラメーターがない場合、空の配列です。</param>
+        <param name="modifiers">同じ長さを持つ配列、 <c>args</c>パラメーター。 これは、メタデータで呼び出されるメンバーの引数の属性を表します。</param>
+        <param name="culture">特定のカルチャまたはロケール情報を提供します。 数値、日付、および文字列を正しく書式設定に使用します。</param>
+        <param name="namedParameters">パラメーターの配列。</param>
+        <summary>指定したメンバーを呼び出します。</summary>
+        <returns>メンバーへの呼び出しの戻り値。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="length">
+      <MemberSignature Language="C#" Value="public virtual int length { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 length" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptFunction.length" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定されている要素の数、<paramref name="args" />のパラメーター、<see cref="M:Microsoft.JScript.ScriptFunction.CreateInstance(System.Object[])" />メソッドです。</summary>
+        <value>含まれる要素の数、<paramref name="args" />のパラメーター、<see cref="M:Microsoft.JScript.ScriptFunction.CreateInstance(System.Object[])" />メソッドです。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="prototype">
+      <MemberSignature Language="C#" Value="public object prototype { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object prototype" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.JScript.ScriptFunction.prototype" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、このコンス トラクター関数のプロトタイプ オブジェクトを設定します。</summary>
+        <value>このコンス トラクター関数のプロトタイプ オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロトタイプは、代行プロパティを要求するオブジェクトまたは自体が実装していないメソッドです。 たとえば、作成、<xref:Microsoft.JScript.NumberObject>を使用して、 <xref:Microsoft.JScript.NumberConstructor>、プロトタイプは、<xref:Microsoft.JScript.NumberPrototype>です。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.JScript.ScriptFunction.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.JScript</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンス トラクター関数の文字列表現を返します。</summary>
+        <returns>コードのコンス トラクター関数と、プレース ホルダーの名前を表す文字列。</returns>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

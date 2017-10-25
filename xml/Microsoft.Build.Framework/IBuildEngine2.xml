@@ -1,0 +1,135 @@
+<Type Name="IBuildEngine2" FullName="Microsoft.Build.Framework.IBuildEngine2">
+  <TypeSignature Language="C#" Value="public interface IBuildEngine2 : Microsoft.Build.Framework.IBuildEngine" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IBuildEngine2 implements class Microsoft.Build.Framework.IBuildEngine" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Framework.IBuildEngine2" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>Microsoft.Build.Framework.IBuildEngine</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>タスクの作成者、MSBuild エンジンの機能のサブセットを使用するための手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:Microsoft.Build.Framework.IBuildEngine2>拡張<xref:Microsoft.Build.Framework.IBuildEngine>、複数のプロセッサまたはマルチコア プロセッサを含むシステムで同時に複数のプロジェクト ファイルをビルドすることができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BuildProjectFile">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFile (string projectFileName, string[] targetNames, System.Collections.IDictionary globalProperties, System.Collections.IDictionary targetOutputs, string toolsVersion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool BuildProjectFile(string projectFileName, string[] targetNames, class System.Collections.IDictionary globalProperties, class System.Collections.IDictionary targetOutputs, string toolsVersion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine2.BuildProjectFile(System.String,System.String[],System.Collections.IDictionary,System.Collections.IDictionary,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFileName" Type="System.String" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="System.Collections.IDictionary" />
+        <Parameter Name="targetOutputs" Type="System.Collections.IDictionary" />
+        <Parameter Name="toolsVersion" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="projectFileName">ビルドするプロジェクト ファイルの名前。</param>
+        <param name="targetNames">プロジェクトをビルドするターゲットの名前です。 複数のターゲットをセミコロン (;) で区切ります。 <see langword="Null" />値は許容されます。</param>
+        <param name="globalProperties"><see cref="T:System.Collections.IDictionary" />プロジェクトに適用する追加のグローバル プロパティ。 キーと値である必要があります<see langword="String" />データ型。</param>
+        <param name="targetOutputs">指定した各ターゲットの出力。 <see langword="Null" />値は許容されます。</param>
+        <param name="toolsVersion">既定値 =「3.5」。 ビルドを使用するツールセットのバージョンを指定します。 <see langword="Null" />値は許容されます。</param>
+        <summary>プロジェクト ファイルのビルドを開始します。 ビルドが成功した場合に存在する場合、指定されたターゲットの出力が返されます。</summary>
+        <returns>
+          <see langword="true" />ビルドが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ターゲットが指定されていない場合[!INCLUDE[vstecmsbuild](~/includes/vstecmsbuild-md.md)]プロジェクトの既定のターゲットをビルドします。  
+  
+ ターゲット出力として返されます<xref:Microsoft.Build.Framework.ITaskItem>ターゲットの名前でインデックス付けされた配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BuildProjectFilesInParallel">
+      <MemberSignature Language="C#" Value="public bool BuildProjectFilesInParallel (string[] projectFileNames, string[] targetNames, System.Collections.IDictionary[] globalProperties, System.Collections.IDictionary[] targetOutputsPerProject, string[] toolsVersion, bool useResultsCache, bool unloadProjectsOnCompletion);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool BuildProjectFilesInParallel(string[] projectFileNames, string[] targetNames, class System.Collections.IDictionary[] globalProperties, class System.Collections.IDictionary[] targetOutputsPerProject, string[] toolsVersion, bool useResultsCache, bool unloadProjectsOnCompletion) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Framework.IBuildEngine2.BuildProjectFilesInParallel(System.String[],System.String[],System.Collections.IDictionary[],System.Collections.IDictionary[],System.String[],System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="projectFileNames" Type="System.String[]" />
+        <Parameter Name="targetNames" Type="System.String[]" />
+        <Parameter Name="globalProperties" Type="System.Collections.IDictionary[]" />
+        <Parameter Name="targetOutputsPerProject" Type="System.Collections.IDictionary[]" />
+        <Parameter Name="toolsVersion" Type="System.String[]" />
+        <Parameter Name="useResultsCache" Type="System.Boolean" />
+        <Parameter Name="unloadProjectsOnCompletion" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="projectFileNames">ビルドするプロジェクト ファイルの名前。</param>
+        <param name="targetNames">ビルドするプロジェクト内のターゲットの名前。 複数のターゲットをセミコロン (;) で区切ります。 <see langword="Null" />値は許容されます。</param>
+        <param name="globalProperties"><see cref="T:System.Collections.IDictionary" />プロジェクトに適用する追加のグローバル プロパティ。 キーと値である必要があります<see langword="String" />データ型。 配列エントリは、<see langword="null" />です。</param>
+        <param name="targetOutputsPerProject">指定した各ターゲットの出力。 <see langword="Null" />値は許容されます。</param>
+        <param name="toolsVersion">既定値 =「3.5」。 ビルドを使用するツールセットのバージョンを指定します。 <see langword="Null" />値は許容されます。</param>
+        <param name="useResultsCache">場合<see langword="true" />、まだ、キャッシュに結果が含まれていない場合にのみ、操作を実行します。 操作の完了後、結果はキャッシュに格納されます。</param>
+        <param name="unloadProjectsOnCompletion">場合<see langword="true" />操作の完了後、プロジェクトが読み込まれていません。</param>
+        <summary>タスクが複数のプロセッサまたは複数のコア プロセッサ システムで指定されたプロジェクト ファイルの並行ビルドを開始できるようにします。 ビルドが成功した場合に存在する場合、指定されたターゲットの出力が返されます。</summary>
+        <returns>
+          <see langword="True" />ビルドが成功した場合<see langword="false" />場合それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 両方`targetNames`と`targetOutputs`受け入れる`null`値。 ターゲットが指定されていない場合は、既定のターゲットがビルドされます。 ターゲット出力として返されます<xref:Microsoft.Build.Framework.ITaskItem>ターゲットの名前でインデックス付けされた配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRunningMultipleNodes">
+      <MemberSignature Language="C#" Value="public bool IsRunningMultipleNodes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRunningMultipleNodes" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Framework.IBuildEngine2.IsRunningMultipleNodes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Framework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムが 1 つまたはマルチプロセッサ モードで実行されているかどうかを返します。</summary>
+        <value>
+          <see langword="true" />システムがマルチプロセッサ モードで実行されている場合<see langword="false" />それ以外の場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ビルド エンジンはシングル プロセッサ モードで (`IsRunningMultipleNodes` = `false`) を 1 に等しい Cpu の数に初期化され、ビルド エンジンは、子エンジンではありません。 ビルド エンジンがマルチプロセッサ モード (`IsRunningMultipleNodes` = `true`)、1 を超える Cpu の数が初期化されるとき、またはビルド エンジンは、子エンジンです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

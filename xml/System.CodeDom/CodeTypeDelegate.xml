@@ -1,0 +1,139 @@
+<Type Name="CodeTypeDelegate" FullName="System.CodeDom.CodeTypeDelegate">
+  <TypeSignature Language="C#" Value="public class CodeTypeDelegate : System.CodeDom.CodeTypeDeclaration" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeTypeDelegate extends System.CodeDom.CodeTypeDeclaration" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeTypeDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeTypeDeclaration</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>デリゲート宣言を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeTypeDelegate>デリゲート型、またはイベント ハンドラーを宣言するために使用します。 デリゲートは、コールバック メソッドまたはイベント ハンドラーで使用できるメソッドのシグネチャを定義します。 デリゲートは、名前空間レベルで宣言またはその他の種類内で入れ子にできます。 デリゲートは、他のデリゲート内にネストすることはできません。  
+  
+ <xref:System.CodeDom.CodeTypeDelegate.ReturnType%2A>プロパティは、デリゲートによって返されるイベント ハンドラーのデータ型を指定します。 <xref:System.CodeDom.CodeTypeDelegate.Parameters%2A>プロパティにはデリゲート型のパラメーターが含まれています。  
+  
+ <xref:System.CodeDom.CodeTypeDelegate>列挙体、インターフェイス、または型の宣言には使用できません。 代わりに、<xref:System.CodeDom.CodeTypeDeclaration>のものです。  
+  
+> [!NOTE]
+>  すべての言語では、デリゲートの宣言をサポートします。 呼び出す、<xref:System.CodeDom.Compiler.ICodeGenerator.Supports%2A>メソッドを<xref:System.CodeDom.Compiler.GeneratorSupport.DeclareDelegates>かどうかは、特定の言語のサポートを決定するフラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の使用を示します、<xref:System.CodeDom.CodeTypeDelegate>新しいデリゲート型を宣言します。  
+  
+ [!code-cpp[CodeTypeDelegateExample#3](~/samples/snippets/cpp/VS_Snippets_CLR/CodeTypeDelegateExample/CPP/codetypedelegateexample.cpp#3)]
+ [!code-csharp[CodeTypeDelegateExample#3](~/samples/snippets/csharp/VS_Snippets_CLR/CodeTypeDelegateExample/CS/codetypedelegateexample.cs#3)]
+ [!code-vb[CodeTypeDelegateExample#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeTypeDelegateExample/VB/codetypedelegateexample.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeDelegate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDelegate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeTypeDelegate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeTypeDelegate (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeTypeDelegate.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">デリゲートの名前です。</param>
+        <summary><see cref="T:System.CodeDom.CodeTypeDelegate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parameters">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeParameterDeclarationExpressionCollection Parameters { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeParameterDeclarationExpressionCollection Parameters" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDelegate.Parameters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeParameterDeclarationExpressionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デリゲートのパラメーターを取得します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeParameterDeclarationExpressionCollection" />デリゲートのパラメーターを示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReturnType">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeTypeReference ReturnType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeTypeReference ReturnType" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeTypeDelegate.ReturnType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeTypeReference</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデリゲートの戻り値の型を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeTypeReference" />デリゲートの戻り値の型を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

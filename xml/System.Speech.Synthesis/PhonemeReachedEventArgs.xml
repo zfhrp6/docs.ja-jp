@@ -1,0 +1,181 @@
+<Type Name="PhonemeReachedEventArgs" FullName="System.Speech.Synthesis.PhonemeReachedEventArgs">
+  <TypeSignature Language="C#" Value="public class PhonemeReachedEventArgs : System.Speech.Synthesis.PromptEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit PhonemeReachedEventArgs extends System.Speech.Synthesis.PromptEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Speech.Synthesis.PhonemeReachedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Speech</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Speech.Synthesis.PromptEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached" /> イベントからのデータを返します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 音素は、記述された言語の基本コンポーネントです。 音素の詳細については、次を参照してください。<xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>です。  
+  
+   
+  
+## Examples  
+ 次の例から返される情報の書き込みを行う Windows フォーム アプリケーションの一部である、<xref:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached>テキスト ボックスへのイベントです。 音素は文字、[国際音声記号 (IPA)](http://go.microsoft.com/fwlink/?LinkID=207686)です。  
+  
+> [!NOTE]
+>  によって返される最初と最後の文字<xref:System.Speech.Synthesis.PhonemeReachedEventArgs>は開始タグと終了文字を囲むが、単語または語句を構成する音素を表していません。 この例には、5 つの文字が返されますが、中央の 3 文字のみ「テーマ」という単語を表す音素: 音を"th"、"e"サウンド、および"m"のサウンドのいずれか。  
+  
+```csharp  
+using System;  
+using System.Collections.Generic;  
+using System.ComponentModel;  
+using System.Data;  
+using System.Drawing;  
+using System.Linq;  
+using System.Text;  
+using System.Windows.Forms;  
+using System.Speech.Synthesis;  
+  
+namespace PhonemeReached  
+{  
+  public partial class Form1 : Form  
+  {  
+  
+    public Form1()  
+    {  
+      InitializeComponent();  
+      textBox1.Text = "";  
+    }  
+  
+    public void button1_Click(object sender, EventArgs e)  
+    {  
+      // Initialize a new instance of the SpeechSynthesizer.  
+      SpeechSynthesizer synth = new SpeechSynthesizer();  
+  
+      // Configure the audio output.   
+      synth.SetOutputToDefaultAudioDevice();  
+  
+      // Register for the PhonemeReached event.  
+      synth.PhonemeReached += new EventHandler<PhonemeReachedEventArgs>(synth_PhonemeReached);  
+  
+      // Speak the contents of a string.  
+      synth.Speak("Theme");  
+    }  
+  
+    // Write information about each phoneme as it is reached.  
+    private void synth_PhonemeReached(object sender, PhonemeReachedEventArgs e)  
+    {textBox1.AppendText(string.Format(  
+  
+        "  Phoneme reached summary:" + Environment.NewLine +  
+        "    Phoneme:                 {0}" + Environment.NewLine +    
+        "    Audio Position:         {1} mSec" + Environment.NewLine +  
+        "    Duration:                  {2} mSec" + Environment.NewLine +  
+        "    Emphasis:                {3}" + Environment.NewLine +  
+        "    Next Phoneme:         {4}" + Environment.NewLine + Environment.NewLine,   
+        e.Phoneme,  
+        e.AudioPosition,  
+        e.Duration,  
+        e.Emphasis,  
+        e.NextPhoneme));  
+    }  
+  }  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AudioPosition">
+      <MemberSignature Language="C#" Value="public TimeSpan AudioPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan AudioPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PhonemeReachedEventArgs.AudioPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音素のオーディオの位置を取得します。</summary>
+        <value>オーディオ位置を示す <see langword="TimeSpan" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Duration">
+      <MemberSignature Language="C#" Value="public TimeSpan Duration { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan Duration" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PhonemeReachedEventArgs.Duration" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音素の継続時間を取得します。</summary>
+        <value>期間を示す <see langword="TimeSpan" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Emphasis">
+      <MemberSignature Language="C#" Value="public System.Speech.Synthesis.SynthesizerEmphasis Emphasis { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Speech.Synthesis.SynthesizerEmphasis Emphasis" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PhonemeReachedEventArgs.Emphasis" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Speech.Synthesis.SynthesizerEmphasis</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>音素の強勢を取得します。</summary>
+        <value>強調 (斜体) のレベルを示す <see langword="SynthesizerEmphasis" /> のメンバー。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NextPhoneme">
+      <MemberSignature Language="C#" Value="public string NextPhoneme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string NextPhoneme" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PhonemeReachedEventArgs.NextPhoneme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached" /> イベントに関連付けられた音素の次の音素を取得します。</summary>
+        <value>次の音素を格納している文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Phoneme">
+      <MemberSignature Language="C#" Value="public string Phoneme { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Phoneme" />
+      <MemberSignature Language="DocId" Value="P:System.Speech.Synthesis.PhonemeReachedEventArgs.Phoneme" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Speech</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Speech.Synthesis.SpeechSynthesizer.PhonemeReached" /> イベントに関連付けられている音素。</summary>
+        <value>音素を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

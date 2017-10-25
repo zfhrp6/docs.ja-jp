@@ -1,0 +1,79 @@
+<Type Name="ICloneable" FullName="System.ICloneable">
+  <TypeSignature Language="C#" Value="public interface ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.ICloneable" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>既存のインスタンスと同じ値を持つクラスの新しいインスタンスを作成する複製をサポートします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ICloneable>インターフェイスでは、既存のオブジェクトのコピーを作成するカスタマイズされた実装を提供することができます。 <xref:System.ICloneable>インターフェイスには、1 つのメンバーが含まれています、<xref:System.ICloneable.Clone%2A>メソッドによって提供されるもの以外の複製のサポートを提供することが想定される<xref:System.Object.MemberwiseClone%2A?displayProperty=nameWithType>です。  複製は、深さと例については、シャロー コピーではなくの詳細については、次を参照してください。、<xref:System.Object.MemberwiseClone%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para><see cref="T:System.ICloneable" />インターフェイス単純にする必要がありますの実装、<see cref="M:System.ICloneable.Clone" />メソッドは、現在のオブジェクト インスタンスのコピーを返します。 ディープ コピー、シャロー コピーでは、またはその間に何か、複製操作を実行するかどうかを指定するわけではありません。 また、新しいインスタンスにコピーする元のインスタンスのすべてのプロパティ値は必要。 たとえば、<see cref="M:System.Globalization.NumberFormatInfo.Clone" />メソッドを除くすべてのプロパティの簡易コピーを実行、<see cref="P:System.Globalization.NumberFormatInfo.IsReadOnly" />プロパティ以外の場合は、常にこのプロパティの値を設定<see langword="false" />複製されたオブジェクトにします。 の呼び出し元<see cref="M:System.ICloneable.Clone" />、予測可能なを実行するメソッドに依存できない操作を複製するには、ことをお勧め<see cref="T:System.ICloneable" />パブリック Api では実装されません。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ICloneable.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスのコピーである新しいオブジェクトを作成します。</summary>
+        <returns>このインスタンスのコピーである新しいオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 結果として得られるクローンとして、または元のインスタンスとの互換性は、同じ型でなければなりません。  
+  
+ 実装<xref:System.ICloneable.Clone%2A>ディープ コピーまたは簡易コピーを実行できます。 ディープ コピーではすべてのオブジェクトが重複しています。シャロー コピーでは、最上位レベルのオブジェクトのみが重複しています.、下位レベルの参照を含む の呼び出し元<xref:System.ICloneable.Clone%2A>、予測可能なを実行するメソッドに依存できない操作を複製するには、ことをお勧め<xref:System.ICloneable>パブリック Api では実装されません。  
+  
+ 参照してください<xref:System.Object.MemberwiseClone%2A?displayProperty=nameWithType>詳細については複製で、深層と例については、シャロー コピーではなくです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

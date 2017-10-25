@@ -1,0 +1,43 @@
+<Type Name="InputLanguageChangedEventHandler" FullName="System.Windows.Forms.InputLanguageChangedEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void InputLanguageChangedEventHandler(object sender, InputLanguageChangedEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed InputLanguageChangedEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.InputLanguageChangedEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Windows.Forms.InputLanguageChangedEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Windows.Forms.InputLanguageChangedEventArgs" />。</param>
+    <summary><see cref="E:System.Windows.Forms.Form.InputLanguageChanged" /> の <see cref="T:System.Windows.Forms.Form" /> イベントを処理するメソッドを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.InputLanguageChangedEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。  
+  
+ イベント ハンドラー デリゲートの詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Windows.Forms.Form>にイベント ハンドラーをアタッチし、<xref:System.Windows.Forms.Form.InputLanguageChanged>イベント。 このイベントの変更、`IMEmode`入力言語が日本語に変更されたとき。  
+  
+ [!code-cpp[InputLanguageChanged#1](~/samples/snippets/cpp/VS_Snippets_Winforms/InputLanguageChanged/CPP/form1.cpp#1)]
+ [!code-csharp[InputLanguageChanged#1](~/samples/snippets/csharp/VS_Snippets_Winforms/InputLanguageChanged/CS/form1.cs#1)]
+ [!code-vb[InputLanguageChanged#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/InputLanguageChanged/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

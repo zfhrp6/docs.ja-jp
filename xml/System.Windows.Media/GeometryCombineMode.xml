@@ -1,0 +1,99 @@
+<Type Name="GeometryCombineMode" FullName="System.Windows.Media.GeometryCombineMode">
+  <TypeSignature Language="C#" Value="public enum GeometryCombineMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed GeometryCombineMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.GeometryCombineMode" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>2 つのジオメトリを結合できるさまざまな方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の図は、ジオメトリの異なる組み合わせモードを示します。  
+  
+ ![相違点が 2 つのジオメトリに適用されるモードを組み合わせる](~/add/media/mmgraphics-geometrycombinemodes.png "相違点が 2 つのジオメトリに適用されるモードを組み合わせる")  
+Geometry 組み合わせモード  
+  
+   
+  
+## Examples  
+ 次の例では、共用体の結合モードを使用して 2 つのジオメトリを結合する方法を示します。  
+  
+ [!code-xaml[geometrysample#23](~/samples/snippets/csharp/VS_Snippets_Wpf/GeometrySample/CS/combininggeometriesexample.xaml#23)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Exclude">
+      <MemberSignature Language="C#" Value="Exclude" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GeometryCombineMode Exclude = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GeometryCombineMode.Exclude" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryCombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つ目の領域は、最初から除外されます。  2 つのジオメトリ<paramref name="A" />と<paramref name="B" />、ジオメトリの領域<paramref name="B" />ジオメトリの領域から削除された<paramref name="A" />、られている領域を生成した<paramref name="A-B" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="Intersect" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GeometryCombineMode Intersect = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GeometryCombineMode.Intersect" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryCombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つの領域は、積集合を使用して結合されます。  新しい領域は、2 つのジオメトリ、重複領域で構成されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="Union" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GeometryCombineMode Union = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GeometryCombineMode.Union" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryCombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 つの領域は、両方の和集合を使用して結合されます。  結果として得られる geometry、geometry <paramref name="A" /> + geometry<paramref name="B" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Xor">
+      <MemberSignature Language="C#" Value="Xor" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.GeometryCombineMode Xor = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.GeometryCombineMode.Xor" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.GeometryCombineMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の領域がない 2 番目に存在する領域と、2 番目に存在する領域を使用して 2 つの領域を結合領域には存在しません。  新しい領域から成る<paramref name="(A-B)" />  + <paramref name="(B-A)" />ここで、<paramref name="A" />と<paramref name="B" />ジオメトリがします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

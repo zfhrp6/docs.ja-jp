@@ -1,0 +1,114 @@
+<Type Name="SinkProviderData" FullName="System.Runtime.Remoting.Channels.SinkProviderData">
+  <TypeSignature Language="C#" Value="public class SinkProviderData" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SinkProviderData extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.SinkProviderData" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ストアは、シンク プロバイダーのプロバイダーのデータをシンクします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シンク プロバイダーのデータが保存されている構成情報のツリー構造、 [\<プロバイダー > 要素 (テンプレート)](http://msdn.microsoft.com/en-us/d3e67e16-8ca3-4b7f-b7a4-37e3e1a66364)構成ノード。 すべてのシンク プロバイダーを受け入れるコンス トラクターを持つ必要があります、<xref:System.Collections.IDictionary>プロパティの<xref:System.Collections.ICollection>構成ファイルから使用するようにする場合に、これらの構造体の。  
+  
+   
+  
+## Examples  
+ [!code-csharp[SinkProviderData#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SinkProviderData/CS/sinkproviderdata_ipfiltersink.cs#1)]
+ [!code-vb[SinkProviderData#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SinkProviderData/VB/sinkproviderdata_ipfiltersink.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SinkProviderData (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Remoting.Channels.SinkProviderData.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">シンク プロバイダーの名前を現在のデータ<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />オブジェクトに関連付けられています。</param>
+        <summary><see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Collections.IList Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IList Children" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SinkProviderData.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子の一覧を取得<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />ノード。</summary>
+        <value>A<see cref="T:System.Collections.IList" />子<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />ノード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SinkProviderData.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンク プロバイダーの名前を取得、現在のデータ<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />オブジェクトに関連付けられています。</summary>
+        <value>A <see cref="T:System.String" /> XML ノードの名前を現在のデータ<see cref="T:System.Runtime.Remoting.Channels.SinkProviderData" />オブジェクトに関連付けられています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.SinkProviderData.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンクのプロパティをプロバイダーにアクセスするディクショナリを取得します。</summary>
+        <value>シンクのプロパティをプロバイダーにアクセスするディクショナリ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,317 @@
+<Type Name="ChannelProtectionRequirements" FullName="System.ServiceModel.Security.ChannelProtectionRequirements">
+  <TypeSignature Language="C#" Value="public class ChannelProtectionRequirements" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ChannelProtectionRequirements extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Security.ChannelProtectionRequirements" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>このチャネルで送信されるメッセージのさまざまな部分に適用される暗号化および署名の要件を記述します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Channels.BindingElement> クラスを拡張する場合は、<xref:System.ServiceModel.Channels.BindingElement.GetProperty%60%601%28System.ServiceModel.Channels.BindingContext%29> を実装し、バインディング要素に対応するこのクラスのインスタンスを返すようにする必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelProtectionRequirements ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この既定のコンストラクターは、メッセージに含める部分を指定するクラスである <xref:System.ServiceModel.Security.ScopedMessagePartSpecification> の新しいインスタンスに次のプロパティを設定します。  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingEncryptionParts%2A>、  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingSignatureParts%2A>、  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingEncryptionParts%2A>、および  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingSignatureParts%2A>。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ChannelProtectionRequirements (System.ServiceModel.Security.ChannelProtectionRequirements other);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Security.ChannelProtectionRequirements other) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.#ctor(System.ServiceModel.Security.ChannelProtectionRequirements)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="other" Type="System.ServiceModel.Security.ChannelProtectionRequirements" />
+      </Parameters>
+      <Docs>
+        <param name="other"><see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" /> の別のインスタンス。</param>
+        <summary><see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" /> クラスの別のインスタンスから、このクラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンストラクターは、<xref:System.ServiceModel.Security.ScopedMessagePartSpecification> を入力パラメーターとして <xref:System.ServiceModel.Security.ScopedMessagePartSpecification.%23ctor%2A> コンストラクターを使用して、`other` の新しいインスタンスに次のプロパティを設定します。 <xref:System.ServiceModel.Security.ScopedMessagePartSpecification> は、メッセージに含める部分を指定するクラスです。  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingEncryptionParts%2A>、  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingSignatureParts%2A>、  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingEncryptionParts%2A>、および  
+  
+-   <xref:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingSignatureParts%2A>。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="other" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ServiceModel.Security.ChannelProtectionRequirements protectionRequirements);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ServiceModel.Security.ChannelProtectionRequirements protectionRequirements) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.Add(System.ServiceModel.Security.ChannelProtectionRequirements)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protectionRequirements" Type="System.ServiceModel.Security.ChannelProtectionRequirements" />
+      </Parameters>
+      <Docs>
+        <param name="protectionRequirements">指定した <see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" />。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" /> 内の部分のコレクションを、このクラスの現在のインスタンスに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (System.ServiceModel.Security.ChannelProtectionRequirements protectionRequirements, bool channelScopeOnly);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(class System.ServiceModel.Security.ChannelProtectionRequirements protectionRequirements, bool channelScopeOnly) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.Add(System.ServiceModel.Security.ChannelProtectionRequirements,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="protectionRequirements" Type="System.ServiceModel.Security.ChannelProtectionRequirements" />
+        <Parameter Name="channelScopeOnly" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="protectionRequirements">指定した <see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" />。</param>
+        <param name="channelScopeOnly">スコープがチャネルのみかどうかを指定します。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Security.ChannelProtectionRequirements" /> 内のさまざまな部分のコレクションを、このクラスの現在のインスタンスに追加します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInverse">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.ChannelProtectionRequirements CreateInverse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.Security.ChannelProtectionRequirements CreateInverse() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.CreateInverse" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.ChannelProtectionRequirements</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>受信部分と送信部分を逆にした、このクラスの新しいインスタンスを作成します。</summary>
+        <returns>受信部分と送信部分を逆にした、このクラスの新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスの現在のインスタンスの受信部分は、新しいインスタンスの送信部分になります。 このクラスの現在のインスタンスの送信部分は、新しいインスタンスの受信部分になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncomingEncryptionParts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.ScopedMessagePartSpecification IncomingEncryptionParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.ScopedMessagePartSpecification IncomingEncryptionParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingEncryptionParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.ScopedMessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントからサーバーに送信されるメッセージの、暗号化されるメッセージ部分のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンストラクターで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncomingSignatureParts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.ScopedMessagePartSpecification IncomingSignatureParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.ScopedMessagePartSpecification IncomingSignatureParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ChannelProtectionRequirements.IncomingSignatureParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.ScopedMessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントからサーバーに送信されるメッセージの、署名されるメッセージ部分のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンストラクターで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ChannelProtectionRequirements.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスのこのインスタンスが読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          クラスのこのインスタンスが読み取り専用の場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MakeReadOnly">
+      <MemberSignature Language="C#" Value="public void MakeReadOnly ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void MakeReadOnly() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Security.ChannelProtectionRequirements.MakeReadOnly" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このクラスとその部分のコレクションを読み取り専用に設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Security.ChannelProtectionRequirements.IsReadOnly%2A> は、部分のコレクションの対応するプロパティと同様に true に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutgoingEncryptionParts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.ScopedMessagePartSpecification OutgoingEncryptionParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.ScopedMessagePartSpecification OutgoingEncryptionParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingEncryptionParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.ScopedMessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーからクライアントに送信されるメッセージの、暗号化されるメッセージ部分のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンストラクターで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutgoingSignatureParts">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Security.ScopedMessagePartSpecification OutgoingSignatureParts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Security.ScopedMessagePartSpecification OutgoingSignatureParts" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Security.ChannelProtectionRequirements.OutgoingSignatureParts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Security.ScopedMessagePartSpecification</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サーバーからクライアントに送信されるメッセージの、署名されるメッセージ部分のコレクションを取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Security.ScopedMessagePartSpecification" /> コレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、コンストラクターで設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

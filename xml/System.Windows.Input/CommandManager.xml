@@ -1,0 +1,557 @@
+<Type Name="CommandManager" FullName="System.Windows.Input.CommandManager">
+  <TypeSignature Language="C#" Value="public sealed class CommandManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CommandManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.CommandManager" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>関連するコマンドは、登録するユーティリティ メソッド<see cref="T:System.Windows.Input.CommandBinding" />と<see cref="T:System.Windows.Input.InputBinding" />オブジェクト クラスの所有者とコマンド、および追加および削除コマンドのイベント ハンドラーをコマンドの状態を照会するためのサービスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.CommandManager>ルーティング コマンドの管理を行います。  コマンド実行の詳細については、次を参照してください。[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ 使用して<xref:System.Windows.Input.CommandManager.RegisterClassCommandBinding%2A>を登録する、<xref:System.Windows.Input.CommandBinding>クラス インスタンスとは対照的にします。  
+  
+ 使用して<xref:System.Windows.Input.CommandManager.RegisterClassInputBinding%2A>を登録する、<xref:System.Windows.Input.InputBinding>クラス インスタンスとは対照的にします。  
+  
+ <xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested%2A>メソッド フォース、<xref:System.Windows.Input.CommandManager>させる、<xref:System.Windows.Input.CommandManager.RequerySuggested>イベント。  <xref:System.Windows.Input.CommandManager.RequerySuggested>イベントは、コマンド ソース クエリに関連付けられているコマンドを実行できるかどうかを決定するコマンドに通知します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AddCanExecuteHandler">
+      <MemberSignature Language="C#" Value="public static void AddCanExecuteHandler (System.Windows.UIElement element, System.Windows.Input.CanExecuteRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddCanExecuteHandler(class System.Windows.UIElement element, class System.Windows.Input.CanExecuteRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.AddCanExecuteHandler(System.Windows.UIElement,System.Windows.Input.CanExecuteRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.CanExecuteRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">アタッチする要素<c>ハンドラー</c>にします。</param>
+        <param name="handler">ハンドラーを実行することができます。</param>
+        <summary>指定されたアタッチ<see cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />指定された要素にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>それらに接続し、<xref:System.Windows.Controls.Button>はのコマンド ソース、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ 最初に、<xref:System.Windows.Controls.Button>が作成され、関連付け、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdmanageraddhandlersxaml)]  
+  
+ 次に、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>が作成されます。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerexecutedhandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerexecutedhandler)]  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagercanexecutehandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagercanexecutehandler)]  
+  
+ ハンドラーが最後に、関連付けられている、<xref:System.Windows.Controls.Button>を使用して、<xref:System.Windows.Input.CommandManager.AddCanExecuteHandler%2A>と<xref:System.Windows.Input.CommandManager.AddExecutedHandler%2A>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanageraddhandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanageraddhandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddExecutedHandler">
+      <MemberSignature Language="C#" Value="public static void AddExecutedHandler (System.Windows.UIElement element, System.Windows.Input.ExecutedRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddExecutedHandler(class System.Windows.UIElement element, class System.Windows.Input.ExecutedRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.AddExecutedHandler(System.Windows.UIElement,System.Windows.Input.ExecutedRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.ExecutedRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">アタッチする要素<c>ハンドラー</c>にします。</param>
+        <param name="handler">実行したハンドラー。</param>
+        <summary>指定されたアタッチ<see cref="T:System.Windows.Input.ExecutedRoutedEventHandler" />指定された要素にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>それらに接続し、<xref:System.Windows.Controls.Button>はのコマンド ソース、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ 最初に、<xref:System.Windows.Controls.Button>が作成され、関連付け、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdmanageraddhandlersxaml)]  
+  
+ 次に、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>が作成されます。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerexecutedhandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerexecutedhandler)]  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagercanexecutehandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagercanexecutehandler)]  
+  
+ ハンドラーが最後に、関連付けられている、<xref:System.Windows.Controls.Button>を使用して、<xref:System.Windows.Input.CommandManager.AddCanExecuteHandler%2A>と<xref:System.Windows.Input.CommandManager.AddExecutedHandler%2A>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanageraddhandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanageraddhandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewCanExecuteHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewCanExecuteHandler (System.Windows.UIElement element, System.Windows.Input.CanExecuteRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewCanExecuteHandler(class System.Windows.UIElement element, class System.Windows.Input.CanExecuteRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.AddPreviewCanExecuteHandler(System.Windows.UIElement,System.Windows.Input.CanExecuteRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.CanExecuteRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">アタッチする要素<c>ハンドラー</c>にします。</param>
+        <param name="handler">ハンドラーを実行することができます。</param>
+        <summary>指定されたアタッチ<see cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />指定された要素にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>それらに接続し、<xref:System.Windows.Controls.Button>はのコマンド ソース、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ 最初に、<xref:System.Windows.Controls.Button>が作成され、関連付け、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdmanageraddhandlersxaml)]  
+  
+ 次に、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>が作成されます。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerexecutedhandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerexecutedhandler)]  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagercanexecutehandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagercanexecutehandler)]  
+  
+ ハンドラーが最後に、関連付けられている、<xref:System.Windows.Controls.Button>を使用して、<xref:System.Windows.Input.CommandManager.AddCanExecuteHandler%2A>と<xref:System.Windows.Input.CommandManager.AddExecutedHandler%2A>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanageraddhandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanageraddhandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddPreviewExecutedHandler">
+      <MemberSignature Language="C#" Value="public static void AddPreviewExecutedHandler (System.Windows.UIElement element, System.Windows.Input.ExecutedRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AddPreviewExecutedHandler(class System.Windows.UIElement element, class System.Windows.Input.ExecutedRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.AddPreviewExecutedHandler(System.Windows.UIElement,System.Windows.Input.ExecutedRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.ExecutedRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">アタッチする要素<c>ハンドラー</c>にします。</param>
+        <param name="handler">ハンドラーを実行することができます。</param>
+        <summary>指定されたアタッチ<see cref="T:System.Windows.Input.ExecutedRoutedEventHandler" />指定された要素にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>それらに接続し、<xref:System.Windows.Controls.Button>はのコマンド ソース、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ 最初に、<xref:System.Windows.Controls.Button>が作成され、関連付け、<xref:System.Windows.Input.ApplicationCommands.Help%2A>コマンド。  
+  
+ [!code-xaml[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlersXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewcmdmanageraddhandlersxaml)]  
+  
+ 次に、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>が作成されます。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerexecutedhandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerExecutedHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerexecutedhandler)]  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagercanexecutehandler)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerCanExecuteHandler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagercanexecutehandler)]  
+  
+ ハンドラーが最後に、関連付けられている、<xref:System.Windows.Controls.Button>を使用して、<xref:System.Windows.Input.CommandManager.AddCanExecuteHandler%2A>と<xref:System.Windows.Input.CommandManager.AddExecutedHandler%2A>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanageraddhandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerAddHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanageraddhandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanExecuteEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CanExecuteEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CanExecuteEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.CommandManager.CanExecuteEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.CommandManager.CanExecute" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExecutedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ExecutedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ExecutedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.CommandManager.ExecutedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.CommandManager.Executed" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InvalidateRequerySuggested">
+      <MemberSignature Language="C#" Value="public static void InvalidateRequerySuggested ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void InvalidateRequerySuggested() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.InvalidateRequerySuggested" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>強制的に実行、<see cref="T:System.Windows.Input.CommandManager" />させる、<see cref="E:System.Windows.Input.CommandManager.RequerySuggested" />イベント。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.CommandManager>コマンドの対象が変更されたとき、キーボード フォーカスの変化などを判断する特定の条件にのみ注目します。  状況で場所、<xref:System.Windows.Input.CommandManager>コマンドを実行できないことが条件の変更は十分に判断されません<xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested%2A>を強制的に呼び出すことができます、<xref:System.Windows.Input.CommandManager>させる、<xref:System.Windows.Input.CommandManager.RequerySuggested>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Threading.DispatcherTimer>を定期的に呼び出す<xref:System.Windows.Input.CommandManager.InvalidateRequerySuggested%2A>を強制的に、<xref:System.Windows.Input.CommandManager>させる、<xref:System.Windows.Input.CommandManager.RequerySuggested>イベント。  
+  
+ [!code-csharp[InvalidateRequeryWithDispatcherTimer#InvalidateSampleDispatcherTimer](~/samples/snippets/csharp/VS_Snippets_Wpf/InvalidateRequeryWithDispatcherTimer/CSharp/Window1.xaml.cs#invalidatesampledispatchertimer)]
+ [!code-vb[InvalidateRequeryWithDispatcherTimer#InvalidateSampleDispatcherTimer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/InvalidateRequeryWithDispatcherTimer/visualbasic/window1.xaml.vb#invalidatesampledispatchertimer)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewCanExecuteEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewCanExecuteEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewCanExecuteEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.CommandManager.PreviewCanExecuteEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.CommandManager.PreviewCanExecute" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PreviewExecutedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent PreviewExecutedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent PreviewExecutedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.CommandManager.PreviewExecutedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>識別、<see cref="E:System.Windows.Input.CommandManager.PreviewExecuted" />イベントをアタッチします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClassCommandBinding">
+      <MemberSignature Language="C#" Value="public static void RegisterClassCommandBinding (Type type, System.Windows.Input.CommandBinding commandBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClassCommandBinding(class System.Type type, class System.Windows.Input.CommandBinding commandBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RegisterClassCommandBinding(System.Type,System.Windows.Input.CommandBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="commandBinding" Type="System.Windows.Input.CommandBinding" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録するためのクラス<c>commandBinding</c>です。</param>
+        <param name="commandBinding">登録するコマンドのバインド。</param>
+        <summary>登録、<see cref="T:System.Windows.Input.CommandBinding" />型を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Windows.Input.CommandBinding>と関連するクラス、クラスのインスタンスよりもには、代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="commandBinding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RegisterClassInputBinding">
+      <MemberSignature Language="C#" Value="public static void RegisterClassInputBinding (Type type, System.Windows.Input.InputBinding inputBinding);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RegisterClassInputBinding(class System.Type type, class System.Windows.Input.InputBinding inputBinding) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RegisterClassInputBinding(System.Type,System.Windows.Input.InputBinding)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+        <Parameter Name="inputBinding" Type="System.Windows.Input.InputBinding" />
+      </Parameters>
+      <Docs>
+        <param name="type">登録する型<c>inputBinding</c>とします。</param>
+        <param name="inputBinding">入力バインドを登録します。</param>
+        <summary>指定した登録<see cref="T:System.Windows.Input.InputBinding" />型を指定しています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、<xref:System.Windows.Input.InputBinding>クラスのインスタンスではなく型に関連付ける。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="type" /> または <paramref name="inputBinding" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveCanExecuteHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveCanExecuteHandler (System.Windows.UIElement element, System.Windows.Input.CanExecuteRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveCanExecuteHandler(class System.Windows.UIElement element, class System.Windows.Input.CanExecuteRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RemoveCanExecuteHandler(System.Windows.UIElement,System.Windows.Input.CanExecuteRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.CanExecuteRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">削除する要素<c>ハンドラー</c>からです。</param>
+        <param name="handler">ハンドラーを実行することができます。</param>
+        <summary>指定されたデタッチ<see cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />指定された要素から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のデタッチ、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>これが以前にアタッチされていません、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerremovehandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerremovehandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveExecutedHandler">
+      <MemberSignature Language="C#" Value="public static void RemoveExecutedHandler (System.Windows.UIElement element, System.Windows.Input.ExecutedRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemoveExecutedHandler(class System.Windows.UIElement element, class System.Windows.Input.ExecutedRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RemoveExecutedHandler(System.Windows.UIElement,System.Windows.Input.ExecutedRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.ExecutedRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">削除する要素<c>ハンドラー</c>からです。</param>
+        <param name="handler">実行したハンドラー。</param>
+        <summary>指定されたデタッチ<see cref="T:System.Windows.Input.ExecutedRoutedEventHandler" />指定された要素から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のデタッチ、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>これが以前にアタッチされていません、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerremovehandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerremovehandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewCanExecuteHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewCanExecuteHandler (System.Windows.UIElement element, System.Windows.Input.CanExecuteRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewCanExecuteHandler(class System.Windows.UIElement element, class System.Windows.Input.CanExecuteRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RemovePreviewCanExecuteHandler(System.Windows.UIElement,System.Windows.Input.CanExecuteRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.CanExecuteRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">削除する要素<c>ハンドラー</c>からです。</param>
+        <param name="handler">ハンドラーを実行することができます。</param>
+        <summary>指定されたデタッチ<see cref="T:System.Windows.Input.CanExecuteRoutedEventHandler" />指定された要素から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のデタッチ、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>これが以前にアタッチされていません、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerremovehandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerremovehandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemovePreviewExecutedHandler">
+      <MemberSignature Language="C#" Value="public static void RemovePreviewExecutedHandler (System.Windows.UIElement element, System.Windows.Input.ExecutedRoutedEventHandler handler);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void RemovePreviewExecutedHandler(class System.Windows.UIElement element, class System.Windows.Input.ExecutedRoutedEventHandler handler) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.CommandManager.RemovePreviewExecutedHandler(System.Windows.UIElement,System.Windows.Input.ExecutedRoutedEventHandler)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="handler" Type="System.Windows.Input.ExecutedRoutedEventHandler" />
+      </Parameters>
+      <Docs>
+        <param name="element">削除する要素<c>ハンドラー</c>からです。</param>
+        <param name="handler">実行したハンドラー。</param>
+        <summary>指定されたデタッチ<see cref="T:System.Windows.Input.ExecutedRoutedEventHandler" />指定された要素から。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例のデタッチ、<xref:System.Windows.Input.CanExecuteRoutedEventHandler>と<xref:System.Windows.Input.ExecutedRoutedEventHandler>これが以前にアタッチされていません、<xref:System.Windows.Controls.Button>です。  
+  
+ [!code-csharp[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcmdmanagerremovehandlers)]
+ [!code-vb[commandingoverviewsnippets#CommandingOverviewCmdManagerRemoveHandlers](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcmdmanagerremovehandlers)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="element" /> または <paramref name="handler" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RequerySuggested">
+      <MemberSignature Language="C#" Value="public static event EventHandler RequerySuggested;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RequerySuggested" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Input.CommandManager.RequerySuggested" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Windows.Input.CommandManager" />実行するコマンドの機能が変わる可能性がある条件を検出します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、静的であるため、のみを保持するハンドラーに弱い参照として。  このイベントをリッスンしているオブジェクトは、れると、ガベージ コレクションを回避するには、そのイベント ハンドラーに強い参照を保持する必要があります。 これは、このイベントにアタッチした後、プライベート フィールドを持つとする前に、または値として、ハンドラーを割り当てることで達成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

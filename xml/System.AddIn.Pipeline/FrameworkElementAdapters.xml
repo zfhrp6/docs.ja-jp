@@ -1,0 +1,95 @@
+<Type Name="FrameworkElementAdapters" FullName="System.AddIn.Pipeline.FrameworkElementAdapters">
+  <TypeSignature Language="C#" Value="public static class FrameworkElementAdapters" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FrameworkElementAdapters extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Pipeline.FrameworkElementAdapters" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Presentation</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+      <see cref="T:System.AddIn.Pipeline.FrameworkElementAdapters" />間で変換する Windows Presentation Foundation (WPF) のアドインで使用される、<see cref="T:System.Windows.FrameworkElement" />と<see cref="T:System.AddIn.Contract.INativeHandleContract" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[TLA#tla_wpf](~/includes/tlasharptla-wpf-md.md)]拡張、[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)]を許可するのには、アドイン モデル[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)][!INCLUDE[TLA2#tla_ui#plural](~/includes/tla2sharptla-uisharpplural-md.md)]アプリケーションをホストとアドインの間で渡される[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]いる必要があります、 [!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)] [!INCLUDE[TLA2#tla_ui#plural](~/includes/tla2sharptla-uisharpplural-md.md)]をいずれかに直接渡されるか、直接派生していません<xref:System.Windows.FrameworkElement>です。 ただし、アドインとホスト アプリケーションは、通常実行個別のアプリケーション ドメインでは、その結果、分離の境界で区切って指定します。 このため、[!INCLUDE[TLA2#tla_winfx](~/includes/tla2sharptla-winfx-md.md)]アドインでは、モデルには、リモート化可能である分離の境界を越えて渡される型が必要です。 リモート化可能型は、次のいずれかに準拠しています。  
+  
+-   <xref:System.Runtime.Serialization.ISerializable> インターフェイスを実装します。  
+  
+-   <xref:System.SerializableAttribute>属性を適用します。  
+  
+-   派生した、<xref:System.MarshalByRefObject>クラスです。  
+  
+ <xref:System.Windows.FrameworkElement>リモート化可能ではないと、アドインとホスト アプリケーションの間の分離の境界を越えて渡される前に、リモート処理可能な型に変換する必要があります。 この目的で呼び出す必要がある静的<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter%2A>に変換する方法、 <xref:System.Windows.FrameworkElement> 、リモートのインスタンスに<xref:System.AddIn.Contract.INativeHandleContract>です。  
+  
+ 1 回、<xref:System.AddIn.Contract.INativeHandleContract>が渡されますが、分離の境界を越えて、ホスト アプリケーション、または、アドインによって表示できる型に変換する必要があります。 この場合は、静的な<xref:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter%2A>に変換するメソッドが呼び出された、<xref:System.AddIn.Contract.INativeHandleContract>を<xref:System.Windows.FrameworkElement>です。  
+  
+ 詳細についての説明をわかりやすく[!INCLUDE[TLA2#tla_wpf](~/includes/tla2sharptla-wpf-md.md)]アドインを参照してください[WPF のアドインの概要](~/docs/framework/wpf/app-development/wpf-add-ins-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ContractToViewAdapter">
+      <MemberSignature Language="C#" Value="public static System.Windows.FrameworkElement ContractToViewAdapter (System.AddIn.Contract.INativeHandleContract nativeHandleContract);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.FrameworkElement ContractToViewAdapter(class System.AddIn.Contract.INativeHandleContract nativeHandleContract) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.FrameworkElementAdapters.ContractToViewAdapter(System.AddIn.Contract.INativeHandleContract)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.FrameworkElement</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nativeHandleContract" Type="System.AddIn.Contract.INativeHandleContract" />
+      </Parameters>
+      <Docs>
+        <param name="nativeHandleContract"><see cref="T:System.AddIn.Contract.INativeHandleContract" />ホスト アプリケーションとアドインの間の分離の境界を越えて渡されました。</param>
+        <summary>返します、<see cref="T:System.Windows.FrameworkElement" />から変換された、<see cref="T:System.AddIn.Contract.INativeHandleContract" />です。</summary>
+        <returns>A<see cref="T:System.Windows.FrameworkElement" />ですが、ホスト アプリケーションまたはからのアドインで、方向に応じて表示されます、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]は 2 つの間で渡されます。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ViewToContractAdapter">
+      <MemberSignature Language="C#" Value="public static System.AddIn.Contract.INativeHandleContract ViewToContractAdapter (System.Windows.FrameworkElement root);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.AddIn.Contract.INativeHandleContract ViewToContractAdapter(class System.Windows.FrameworkElement root) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Pipeline.FrameworkElementAdapters.ViewToContractAdapter(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Presentation</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.INativeHandleContract</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="root" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="root"><see cref="T:System.Windows.FrameworkElement" />ホスト アプリケーションとアドインの間の分離の境界を越えて渡されます。</param>
+        <summary>返します、<see cref="T:System.AddIn.Contract.INativeHandleContract" />から変換された、<see cref="T:System.Windows.FrameworkElement" />です。</summary>
+        <returns><see cref="T:System.AddIn.Contract.INativeHandleContract" />ホスト アプリケーションまたはを方向に応じて、アドインから渡された、[!INCLUDE[TLA2#tla_ui](~/includes/tla2sharptla-ui-md.md)]は 2 つの間で渡されます。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="root" />要素のツリーのルート要素ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

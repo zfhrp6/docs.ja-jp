@@ -1,0 +1,81 @@
+<Type Name="PermissionState" FullName="System.Security.Permissions.PermissionState">
+  <TypeSignature Language="C#" Value="public enum PermissionState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed PermissionState extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.PermissionState" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクセス許可が作成時にすべてかリソースへのアクセスを持つかどうか指定しません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクセス許可は、完全に制限の厳しいまたは完全無制限の状態で作成できます。 完全に制限の厳しい状態; のリソースへのアクセスは許可されません。完全に制限なしの状態は、特定のリソースへのすべてのアクセスを許可します。 たとえば、ファイル アクセス許可のコンス トラクターは、すべてのファイルまたはすべてのファイルに対するすべてのアクセスをいずれかのアクセスなしを表すオブジェクトを作成できます。  
+  
+ 権限の種類では、極端な状態のいずれかまたはすべての型で表現できるアクセス許可を表す明確に定義します。 したがって、可能であれば、特定のアクセス許可の知識がなくても、完全に制限されているまたは無制限状態に汎用的なアクセス許可を作成するにはただし、中間の状態は、特定のアクセス許可のセマンティクスに従ってのみ設定できます。  
+  
+ .NET Framework に実装されているすべてのコード アクセス許可がかかることができます、<xref:System.Security.Permissions.PermissionState>コンス トラクターに渡す引数として値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.PermissionState None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.PermissionState.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.PermissionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可によって保護されているリソースにアクセスできません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unrestricted">
+      <MemberSignature Language="C#" Value="Unrestricted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Security.Permissions.PermissionState Unrestricted = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Security.Permissions.PermissionState.Unrestricted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.PermissionState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス許可によって保護されているリソースへのフル アクセスできます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,222 @@
+<Type Name="MutexAccessRule" FullName="System.Security.AccessControl.MutexAccessRule">
+  <TypeSignature Language="C#" Value="public sealed class MutexAccessRule : System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit MutexAccessRule extends System.Security.AccessControl.AccessRule" />
+  <TypeSignature Language="DocId" Value="T:System.Security.AccessControl.MutexAccessRule" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.AccessControl</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.AccessControl.AccessRule</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ユーザーまたはグループに対して許可または拒否の権限のセットを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.MutexAccessRule>クラスは、一連の名前付きシステム ミュー テックスに Windows アクセス制御セキュリティを管理するため、.NET Framework が提供するクラスのいずれか。 これらのクラスと、基になる Windows アクセス制御構造との関係の概要については、次を参照してください。<xref:System.Security.AccessControl.MutexSecurity>です。  
+  
+> [!NOTE]
+>  Windows のアクセス制御セキュリティは、名前付きシステム ミュー テックスに対してのみ有効です。 場合、<xref:System.Threading.Mutex>オブジェクトは、ローカル ミュー テックスを表します。、アクセス制御は使用されません。  
+  
+ 名前付きミュー テックスに現在適用されている規則の一覧を取得する、<xref:System.Threading.Mutex.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.MutexSecurity>オブジェクトを使用して、その<xref:System.Security.AccessControl.CommonObjectSecurity.GetAccessRules%2A>メソッドのコレクションを取得する<xref:System.Security.AccessControl.MutexAccessRule>オブジェクト。  
+  
+ <xref:System.Security.AccessControl.MutexAccessRule>オブジェクトは基になる随意アクセス制御リスト (DACL) でアクセス制御エントリを一対一でマップしません。 ミュー テックスのすべてのアクセス規則のセットを取得するときに、セットには、すべてのアクセス制御エントリを表すために必要な現在のルールの最小数が含まれています。  
+  
+> [!NOTE]
+>  基になるアクセス制御エントリは変更を適用して規則を削除するとします。 規則の情報は、アクセス制御エントリの最小数を維持するために可能な場合は、結合されます。 したがって、現在のルールの一覧を読み取るときに、追加したすべてのルールの一覧とまったく同じ体裁に可能性がありますとは限りません。  
+  
+ 使用して<xref:System.Security.AccessControl.MutexAccessRule>ユーザーまたはグループを許可または拒否するアクセス権を指定するオブジェクト。 A<xref:System.Security.AccessControl.MutexAccessRule>表しますアクセスを許可または拒否にアクセスすることはありません両方を常にオブジェクトします。  
+  
+ 名前付きシステム ミュー テックスにルールを適用するには、使用、<xref:System.Threading.Mutex.GetAccessControl%2A?displayProperty=nameWithType>取得するメソッド、<xref:System.Security.AccessControl.MutexSecurity>オブジェクト。 変更、 <xref:System.Security.AccessControl.MutexSecurity> 、ルールを追加し、使用してそのメソッドを使用して、オブジェクト、<xref:System.Threading.Mutex.SetAccessControl%2A?displayProperty=nameWithType>セキュリティ オブジェクトを再アタッチするメソッド。  
+  
+> [!IMPORTANT]
+>  変更を加える、<xref:System.Security.AccessControl.MutexSecurity>オブジェクトには影響しません、名前付きミュー テックスのアクセス レベルが呼び出されるまで、<xref:System.Threading.Mutex.SetAccessControl%2A?displayProperty=nameWithType>名前付きミュー テックスに変更されたセキュリティ オブジェクトを割り当てる方法です。  
+  
+ <xref:System.Security.AccessControl.MutexAccessRule>オブジェクトは変更できません。 メソッドを使用して、ミュー テックスのセキュリティが変更された、<xref:System.Security.AccessControl.MutexSecurity>ルールを追加または削除するクラスです。 これを行うと、基になるアクセス制御エントリが変更されます。  
+  
+> [!NOTE]
+>  Windows 98 または Windows Millennium Edition には、同期オブジェクト上のセキュリティはサポートされていません。  
+  
+   
+  
+## Examples  
+ 次のコード例はの作成と使用を示しています。<xref:System.Security.AccessControl.MutexAccessRule>オブジェクト。 例は、作成、<xref:System.Security.AccessControl.MutexSecurity>オブジェクトが許可し、現在のユーザーのさまざまな権限を拒否する規則を追加し、ルールの結果のペアを表示します。 例では、現在のユーザーに対して新しい権限を許可し、新しい権限が、既存のマージされたことを示す、結果を表示<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.Mutex>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.Mutex.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.Mutex.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MutexAccessRule (System.Security.Principal.IdentityReference identity, System.Security.AccessControl.MutexRights eventRights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Security.Principal.IdentityReference identity, valuetype System.Security.AccessControl.MutexRights eventRights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.MutexAccessRule.#ctor(System.Security.Principal.IdentityReference,System.Security.AccessControl.MutexRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.Security.Principal.IdentityReference" />
+        <Parameter Name="eventRights" Type="System.Security.AccessControl.MutexRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループのルールを適用します。 型でなければなりません<see cref="T:System.Security.Principal.SecurityIdentifier" />またはなど型<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</param>
+        <param name="eventRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.MutexRights" />権限を指定する値を許可または拒否します。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.MutexAccessRule" />指定して、ユーザーまたはグループのアクセス権を規則を適用し、指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上で待機する、 <xref:System.Threading.Mutex> (を呼び出して、 <xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.WaitHandle.WaitAny%2A>または<xref:System.Threading.WaitHandle.WaitAll%2A>メソッド)、ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>アクセスします。 呼び出すことにより、ミュー テックスを解放する、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッド、ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>アクセスします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="eventRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="eventRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" />型のどちらも<see cref="T:System.Security.Principal.SecurityIdentifier" />もなどの型の<see cref="T:System.Security.Principal.NTAccount" />型に変換できる<see cref="T:System.Security.Principal.SecurityIdentifier" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MutexAccessRule (string identity, System.Security.AccessControl.MutexRights eventRights, System.Security.AccessControl.AccessControlType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string identity, valuetype System.Security.AccessControl.MutexRights eventRights, valuetype System.Security.AccessControl.AccessControlType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.AccessControl.MutexAccessRule.#ctor(System.String,System.Security.AccessControl.MutexRights,System.Security.AccessControl.AccessControlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="identity" Type="System.String" />
+        <Parameter Name="eventRights" Type="System.Security.AccessControl.MutexRights" />
+        <Parameter Name="type" Type="System.Security.AccessControl.AccessControlType" />
+      </Parameters>
+      <Docs>
+        <param name="identity">ユーザーまたはグループの名前に、ルールが適用されます。</param>
+        <param name="eventRights">ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.MutexRights" />権限を指定する値を許可または拒否します。</param>
+        <param name="type">1 つ、<see cref="T:System.Security.AccessControl.AccessControlType" />権限を許可または拒否するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.AccessControl.MutexAccessRule" />クラス、ユーザーまたはアクセス権を規則が適用されるグループの名前を指定し、指定したアクセス権を許可または拒否するかどうか。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上で待機する、 <xref:System.Threading.Mutex> (を呼び出して、 <xref:System.Threading.WaitHandle.WaitOne%2A>、<xref:System.Threading.WaitHandle.WaitAny%2A>または<xref:System.Threading.WaitHandle.WaitAll%2A>メソッド)、ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>アクセスします。 呼び出すことにより、ミュー テックスを解放する、<xref:System.Threading.Mutex.ReleaseMutex%2A>メソッド、ユーザーがいる必要があります<xref:System.Security.AccessControl.MutexRights?displayProperty=nameWithType>アクセスします。  
+  
+ このコンス トラクターを作成するのには、<xref:System.Security.Principal.NTAccount>を渡すことによって、オブジェクト`identity`を<xref:System.Security.Principal.NTAccount.%23ctor%28System.String%29?displayProperty=nameWithType>コンス トラクター、および新しく作成された渡す<xref:System.Security.Principal.NTAccount>オブジェクトを<xref:System.Security.AccessControl.MutexAccessRule.%23ctor%28System.Security.Principal.IdentityReference%2CSystem.Security.AccessControl.MutexRights%2CSystem.Security.AccessControl.AccessControlType%29>コンス トラクターです。  
+  
+   
+  
+## Examples  
+ 作成するこのコンス トラクターの使用を次のコード例に示します<xref:System.Security.AccessControl.MutexAccessRule>オブジェクト。 例は、作成、<xref:System.Security.AccessControl.MutexSecurity>オブジェクトが許可し、現在のユーザーのさまざまな権限を拒否する規則を追加し、ルールの結果のペアを表示します。 例では、現在のユーザーに対して新しい権限を許可し、新しい権限が、既存のマージされたことを示す、結果を表示<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.Mutex>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.Mutex.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.Mutex.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="eventRights" />無効な値を指定します。  
+  
+ または  
+  
+ <paramref name="type" />無効な値を指定します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="eventRights" /> が 0 です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="identity" /> は <see langword="null" /> です。  
+  
+ または  
+  
+ <paramref name="identity" /> は長さゼロの文字列です。  
+  
+ または  
+  
+ <paramref name="identity" />512 文字を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MutexRights">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.MutexRights MutexRights { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.AccessControl.MutexRights MutexRights" />
+      <MemberSignature Language="DocId" Value="P:System.Security.AccessControl.MutexAccessRule.MutexRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.AccessControl</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.MutexRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセス規則によって許可または拒否の権限を取得します。</summary>
+        <value>ビットごとの組み合わせ<see cref="T:System.Security.AccessControl.MutexRights" />権限を示す値を許可またはアクセス ルールによって拒否されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.AccessControl.MutexAccessRule>オブジェクトは変更できません。 別のユーザー、異なる権限、または異なるを表す新しいアクセス ルールを作成する<xref:System.Security.AccessControl.AccessControlType>が、既存のアクセス ルールを変更することはできません。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Security.AccessControl.MutexAccessRule.MutexRights%2A>に含まれる規則のセットに権限を表示するプロパティを<xref:System.Security.AccessControl.MutexSecurity>オブジェクト。 例は、作成、<xref:System.Security.AccessControl.MutexSecurity>オブジェクトが許可し、現在のユーザーのさまざまな権限を拒否する規則を追加し、ルールの結果のペアを表示します。 例では、現在のユーザーに対して新しい権限を許可し、新しい権限が、既存のマージされたことを示す、結果を表示<xref:System.Security.AccessControl.AccessControlType.Allow>ルール。  
+  
+> [!NOTE]
+>  この例では、セキュリティ オブジェクトはアタッチされません、<xref:System.Threading.Mutex>オブジェクト。 セキュリティ オブジェクトをアタッチする例は含まれて<xref:System.Threading.Mutex.GetAccessControl%2A?displayProperty=nameWithType>と<xref:System.Threading.Mutex.SetAccessControl%2A?displayProperty=nameWithType>です。  
+  
+ [!code-csharp[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/CS/source.cs#1)]
+ [!code-vb[System.Security.AccessControl.MutexSecurity.AddAccessRule#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.AccessControl.MutexSecurity.AddAccessRule/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

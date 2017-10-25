@@ -1,0 +1,787 @@
+<Type Name="EventWaitHandle" FullName="System.Threading.EventWaitHandle">
+  <TypeSignature Language="C#" Value="public class EventWaitHandle : System.Threading.WaitHandle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EventWaitHandle extends System.Threading.WaitHandle" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.EventWaitHandle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Threading.WaitHandle</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>スレッドの同期イベントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.EventWaitHandle>クラスに通知を互いに通信するためにスレッドを使用できます。 通常、1 つまたは複数のスレッドをブロック、<xref:System.Threading.EventWaitHandle>ブロックされていないスレッドを呼び出すまで、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドを 1 つ以上のブロックされたスレッドを解放します。 スレッドがシグナル送信、<xref:System.Threading.EventWaitHandle>から呼び出すことによって、ブロックし、 `static` (`Shared` Visual Basic で)<xref:System.Threading.WaitHandle.SignalAndWait%2A?displayProperty=nameWithType>メソッドです。  
+  
+> [!NOTE]
+>  <xref:System.Threading.EventWaitHandle>クラスは、名前付きシステム同期イベントへのアクセスを提供します。  
+  
+ 動作、<xref:System.Threading.EventWaitHandle>をシグナル状態になった、リセット モードによって異なります。 <xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>シグナルを受け取ると、1 つの待機中のスレッドを解放した後に、フラグが自動的にリセットされます。 <xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>フラグはまでシグナル状態のまま、<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出されます。  
+  
+ 自動リセット イベントは、リソースへの排他アクセスを提供します。 自動リセット イベントがシグナル状態にスレッドが待機していないときに、シグナル状態のままになるスレッドが試行されるまでです。 イベントは、スレッドを解放し、すぐにリセットされ、後続のスレッドをブロックします。  
+  
+ ゲートのようなイベントは、手動リセットします。 イベントがシグナル状態ではないときに待機しているスレッドがブロックされます。 イベントがシグナル状態に、すべての待機中のスレッドがリリースされると、およびイベント シグナル状態のままと (つまり、後続の待機時間はブロックしません) までその<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出されます。 手動リセット イベントは他のスレッドを続行する前に、1 つのスレッドは、アクティビティを完了する必要がある場合に役立ちます。  
+  
+ <xref:System.Threading.EventWaitHandle>オブジェクトで使用できる、 `static`(`Shared` Visual Basic で)<xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>と<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>メソッドです。  
+  
+ スレッド同期機構の詳細については、次を参照してください。 [EventWaitHandle、AutoResetEvent、CountdownEvent、ManualResetEvent](~/docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Threading.WaitHandle.SignalAndWait%28System.Threading.WaitHandle%2CSystem.Threading.WaitHandle%29>メイン スレッドをブロックされたスレッドを通知し、スレッドがタスクを完了するまで待機を許可するメソッドのオーバー ロードします。  
+  
+ 例では、5 つのスレッドを開始しをブロックすることができます、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>フラグ、ENTER キーを押すのリリース 1 つのスレッドの時間。 例は、別の 5 つのスレッド キューに配置し、すべてを使用して、解放、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>フラグ。  
+  
+ [!code-cpp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CS/source.cs#1)]
+ [!code-vb[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWaitHandle (bool initialState, System.Threading.EventResetMode mode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState, valuetype System.Threading.EventResetMode mode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.#ctor(System.Boolean,System.Threading.EventResetMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+        <Parameter Name="mode" Type="System.Threading.EventResetMode" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          <see langword="true" />シグナルに初期状態を設定します。<see langword="false" />を非シグナル状態に設定しています。</param>
+        <param name="mode">1 つ、<see cref="T:System.Threading.EventResetMode" />イベントを自動または手動でリセットするかどうかを決定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.EventWaitHandle" />クラス、待機ハンドルが最初に通知するかどうか、および自動または手動でをリセットするかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントの初期状態が非シグナル状態の場合は、イベントを待機しているスレッドはブロックされます。 初期状態が通知される場合、<xref:System.Threading.EventResetMode.ManualReset>フラグが指定されて`mode`イベントを待機しているスレッドはブロックされません。 初期状態が通知される場合と`mode`は<xref:System.Threading.EventResetMode.AutoReset>イベントで待機する最初のスレッドはすぐに解放される、その後、イベントはリセット、および後続のスレッドがブロックされます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Threading.WaitHandle.SignalAndWait%28System.Threading.WaitHandle%2CSystem.Threading.WaitHandle%29>メイン スレッドをブロックされたスレッドを通知し、スレッドがタスクを完了するまで待機を許可するメソッドのオーバー ロードします。  
+  
+ 例では、5 つのスレッドを開始しをブロックすることができます、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>フラグ、し、ENTER キーを押すのリリース 1 つのスレッドの時間。 例は、別の 5 つのスレッド キューに配置し、すべてを使用して、解放、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>フラグ。  
+  
+ [!code-cpp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CS/source.cs#1)]
+ [!code-vb[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWaitHandle (bool initialState, System.Threading.EventResetMode mode, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState, valuetype System.Threading.EventResetMode mode, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.#ctor(System.Boolean,System.Threading.EventResetMode,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+        <Parameter Name="mode" Type="System.Threading.EventResetMode" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          名前の付いたイベントがこの呼び出しの結果として作成された場合に、初期状態をシグナル状態に設定するには <see langword="true" />、非シグナル状態に設定するには <see langword="false" />。</param>
+        <param name="mode">1 つ、<see cref="T:System.Threading.EventResetMode" />イベントを自動または手動でリセットするかどうかを決定する値。</param>
+        <param name="name">システム全体の同期イベントの名前。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Threading.EventWaitHandle" />クラス、シグナルかどうか、待機ハンドルは、最初にこの呼び出しの結果として作成された場合に自動または手動でリセットされるかを指定して、システムの同期イベントの名前。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`name`は`null`または空の文字列、ローカル<xref:System.Threading.EventWaitHandle>を作成します。  
+  
+ 場合に指定された名前のシステム イベント、`name`パラメーターが既に存在する、`initialState`パラメーターは無視されます。  
+  
+> [!IMPORTANT]
+>  このコンス トラクターの名前付きシステム イベントを使用する場合は、指定`false`の`initialState`します。 このコンス トラクターには、名前付きのイベントの状態に関するどのような想定をすることはできませんので、名前付きシステム イベントが作成されたかどうかを決定する方法はありません。 指定したイベントが作成されたかどうかを確認するには<xref:System.Threading.EventWaitHandle.%23ctor%28System.Boolean%2CSystem.Threading.EventResetMode%2CSystem.String%2CSystem.Boolean%40%29>コンス トラクターまたは<xref:System.Threading.EventWaitHandle.%23ctor%28System.Boolean%2CSystem.Threading.EventResetMode%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.EventWaitHandleSecurity%29>コンス トラクターです。  
+  
+ イベントの初期状態が非シグナル状態の場合は、イベントを待機しているスレッドはブロックされます。 初期状態が通知される場合、<xref:System.Threading.EventResetMode.ManualReset>フラグが指定されて`mode`イベントを待機しているスレッドはブロックされません。 初期状態が通知される場合と`mode`は<xref:System.Threading.EventResetMode.AutoReset>イベントで待機する最初のスレッドはすぐに解放される、その後、イベントはリセット、および後続のスレッドがブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、指定したイベントが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.EventWaitHandleRights.FullControl" />です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">同じ名前、名前付きイベントを作成できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWaitHandle (bool initialState, System.Threading.EventResetMode mode, string name, out bool createdNew);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState, valuetype System.Threading.EventResetMode mode, string name, [out] bool&amp; createdNew) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.#ctor(System.Boolean,System.Threading.EventResetMode,System.String,System.Boolean@)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+        <Parameter Name="mode" Type="System.Threading.EventResetMode" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="createdNew" Type="System.Boolean&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          名前の付いたイベントがこの呼び出しの結果として作成された場合に、初期状態をシグナル状態に設定するには <see langword="true" />、非シグナル状態に設定するには <see langword="false" />。</param>
+        <param name="mode">1 つ、<see cref="T:System.Threading.EventResetMode" />イベントを自動または手動でリセットするかどうかを決定する値。</param>
+        <param name="name">システム全体の同期イベントの名前。</param>
+        <param name="createdNew">このメソッドが戻るときに、格納<see langword="true" />ローカル イベントが作成された場合 (場合は、<c>名前</c>は<see langword="null" />または空の文字列)、または指定した名前付きシステム イベントが作成された場合<see langword="false" />指定した名前付きシステム イベントが既に存在する場合。 このパラメーターは初期化せずに渡されます。</param>
+        <summary><see cref="T:System.Threading.EventWaitHandle" /> クラスの新しいインスタンスを初期化し、待機ハンドルがこの呼び出しの結果として作成された場合に最初にシグナル状態になるかどうか、リセットは自動または手動か、システムの同期イベントの名前、呼び出しの後の値で名前の付いたシステム イベントが作成されたかどうかを示すブール値変数を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合に指定された名前のシステム イベント、`name`パラメーターが既に存在する、`initialState`パラメーターは無視されます。 このコンス トラクターを呼び出すと、指定された変数の値を使用して、`ref`パラメーター (`ByRef` Visual Basic でのパラメーター)`createdNew`を名前付きシステム イベントが既に存在していたか、作成されたかどうかを判断します。  
+  
+ イベントの初期状態が非シグナル状態の場合は、イベントを待機しているスレッドはブロックされます。 初期状態が通知される場合、<xref:System.Threading.EventResetMode.ManualReset>フラグが指定されて`mode`イベントを待機しているスレッドはブロックされません。 初期状態が通知される場合と`mode`は<xref:System.Threading.EventResetMode.AutoReset>イベントで待機する最初のスレッドはすぐに解放される、その後、イベントはリセット、および後続のスレッドがブロックされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、指定したイベントが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.EventWaitHandleRights.FullControl" />です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">同じ名前、名前付きイベントを作成できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EventWaitHandle (bool initialState, System.Threading.EventResetMode mode, string name, out bool createdNew, System.Security.AccessControl.EventWaitHandleSecurity eventSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool initialState, valuetype System.Threading.EventResetMode mode, string name, [out] bool&amp; createdNew, class System.Security.AccessControl.EventWaitHandleSecurity eventSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.#ctor(System.Boolean,System.Threading.EventResetMode,System.String,System.Boolean@,System.Security.AccessControl.EventWaitHandleSecurity)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="initialState" Type="System.Boolean" />
+        <Parameter Name="mode" Type="System.Threading.EventResetMode" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="createdNew" Type="System.Boolean&amp;" RefType="out" />
+        <Parameter Name="eventSecurity" Type="System.Security.AccessControl.EventWaitHandleSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="initialState">
+          名前の付いたイベントがこの呼び出しの結果として作成された場合に、初期状態をシグナル状態に設定するには <see langword="true" />、非シグナル状態に設定するには <see langword="false" />。</param>
+        <param name="mode">1 つ、<see cref="T:System.Threading.EventResetMode" />イベントを自動または手動でリセットするかどうかを決定する値。</param>
+        <param name="name">システム全体の同期イベントの名前。</param>
+        <param name="createdNew">このメソッドが戻るときに、格納<see langword="true" />ローカル イベントが作成された場合 (場合は、<c>名前</c>は<see langword="null" />または空の文字列)、または指定した名前付きシステム イベントが作成された場合<see langword="false" />指定した名前付きシステム イベントが既に存在する場合。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="eventSecurity"><see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />を名前付きシステム イベントに適用するアクセス制御セキュリティを表すオブジェクト。</param>
+        <summary><see cref="T:System.Threading.EventWaitHandle" /> クラスの新しいインスタンスを初期化し、待機ハンドルがこの呼び出しの結果として作成された場合に最初にシグナル状態になるかどうか、リセットは自動または手動か、システムの同期イベントの名前、呼び出しの後の値で名前の付いたシステム イベントが作成されたかどうかを示すブール値変数、および名前の付いたシステム イベントが作成された場合は、そのイベントにアクセス制御セキュリティを適用するかどうかを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用すると、それが作成されるとき、その他のコードがイベントを制御するを妨げて名前付きシステム イベントにアクセス制御セキュリティを適用できます。  
+  
+ このコンス トラクター、<xref:System.Threading.EventWaitHandle>システム イベントを表すオブジェクト。 複数作成できます<xref:System.Threading.EventWaitHandle>を同じシステム イベントを表すオブジェクト。  
+  
+ システム イベントが存在しない場合、指定したアクセス制御セキュリティで作成されます。 イベントが存在する場合は、指定したアクセス制御セキュリティが無視されます。  
+  
+> [!NOTE]
+>  呼び出し元が新しく作成されたに対するフル コントロール<xref:System.Threading.EventWaitHandle>オブジェクト場合であっても`eventSecurity`拒否するか、現在のユーザーには、いくつかのアクセス権限を付与が失敗します。 ただし、現在のユーザーが別の取得を試みると<xref:System.Threading.EventWaitHandle>オブジェクトの同じを表すという名前を使用して、イベント、コンス トラクターまたは<xref:System.Threading.EventWaitHandle.OpenExisting%2A>メソッド、Windows アクセス制御セキュリティを適用します。  
+  
+ 場合に指定された名前のシステム イベント、`name`パラメーターが既に存在する、`initialState`パラメーターは無視されます。 このコンス トラクターを呼び出すと、指定された変数の値を使用して、`ref`パラメーター (`ByRef` Visual Basic でのパラメーター)`createdNew`を名前付きシステム イベントが既に存在していたか、作成されたかどうかを判断します。  
+  
+ イベントの初期状態が非シグナル状態の場合は、イベントを待機しているスレッドはブロックされます。 初期状態が通知される場合、<xref:System.Threading.EventResetMode.ManualReset>フラグが指定されて`mode`イベントを待機しているスレッドはブロックされません。 初期状態が通知される場合と`mode`は<xref:System.Threading.EventResetMode.AutoReset>イベントで待機する最初のスレッドはすぐに解放される、その後、イベントはリセット、および後続のスレッドがブロックされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセス制御セキュリティを名前付きシステム イベントのプロセス間の動作を示します。 この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きイベントの存在をテストします。  
+  
+ イベントが存在しない場合は、初期所有権と現在のユーザーに、イベントを使用する権限を拒否読み取りし、イベントのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを読み書きアクセス許可を変更するために必要な権限を持つイベントを待機します。  
+  
+ アクセス許可を変更すると、イベントが待機して、通知に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用する例が実行されます。  
+  
+ [!code-cpp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CS/source.cs#1)]
+ [!code-vb[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーはありませんが、指定したイベントが存在し、アクセス制御セキュリティを<see cref="F:System.Security.AccessControl.EventWaitHandleRights.FullControl" />です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">同じ名前、名前付きイベントを作成できません。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が 260 文字を超えています。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAccessControl">
+      <MemberSignature Language="C#" Value="public System.Security.AccessControl.EventWaitHandleSecurity GetAccessControl ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Security.AccessControl.EventWaitHandleSecurity GetAccessControl() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.GetAccessControl" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.AccessControl.EventWaitHandleSecurity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>取得、<see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />現在によって表される名前付きシステム イベントのアクセス制御セキュリティを表すオブジェクト<see cref="T:System.Threading.EventWaitHandle" />オブジェクト。</summary>
+        <returns><see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />を名前付きシステム イベントのアクセス制御セキュリティを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.EventWaitHandle.GetAccessControl%2A>メソッドは、次のフラグ (ビットごとの OR 演算を使用して結合) の組み合わせを使用してアクセス許可を検索する: <xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>、 <xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>、および<xref:System.Security.AccessControl.AccessControlSections?displayProperty=nameWithType>です。  
+  
+ ユーザーがいる必要があります<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>でこのメソッドとイベントを呼び出す権限が開かれている必要があります、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセス制御セキュリティを名前付きシステム イベントのプロセス間の動作を示します。 この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きイベントの存在をテストします。  
+  
+ イベントが存在しない場合は、初期所有権と現在のユーザーに、イベントを使用する権限を拒否読み取りし、イベントのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを読み書きアクセス許可を変更するために必要な権限を持つイベントを待機します。  
+  
+ アクセス許可が読み取られるを使用して、<xref:System.Threading.EventWaitHandle.GetAccessControl%2A>メソッド、変更されると、イベントが開かれる待機し、そのことを通知するために必要な権限を持つとします。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用する例が実行されます。  
+  
+ [!code-cpp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CS/source.cs#1)]
+ [!code-vb[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UnauthorizedAccessException">現在<see cref="T:System.Threading.EventWaitHandle" />オブジェクトは、名前付きシステム イベントを表し、ユーザーがいない<see cref="F:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions" />です。  
+  
+ または  
+  
+ 現在<see cref="T:System.Threading.EventWaitHandle" />オブジェクトは、名前付きシステム イベントを表しで開かれませんでした<see cref="F:System.Security.AccessControl.EventWaitHandleRights.ReadPermissions" />です。</exception>
+        <exception cref="T:System.NotSupportedException">Windows 98 または Windows Millennium Edition はサポートされていません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="M:System.Threading.WaitHandle.Close" />このメソッドが呼び出された<see cref="T:System.Threading.EventWaitHandle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.Threading.EventWaitHandle OpenExisting (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.EventWaitHandle OpenExisting(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.OpenExisting(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.EventWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム同期イベントの名前。</param>
+        <summary>既に存在する場合は、指定された名前付きの同期イベントを開きます。</summary>
+        <returns>名前付きシステム イベントを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.EventWaitHandle.OpenExisting%2A>メソッドは、指定した名前付きシステム イベントを開こうとするとします。 システム イベントが存在しない場合、このメソッドは、システム イベントを作成する代わりに例外をスローします。 イベントを作成する、システムが既に存在しない場合のいずれかの操作を使用して、<xref:System.Threading.EventWaitHandle.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.EventWaitHandle>場合でも、返されるオブジェクトは、同じ名前付きシステム イベントを表すオブジェクトします。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを指定して<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>と<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>権限、ビットごとの OR 演算を使用して結合します。  
+  
+ 指定する、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグにより、スレッドは、名前付きシステム イベントで待機を指定して、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグによって、スレッドを呼び出す、<xref:System.Threading.EventWaitHandle.Set%2A>と<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセス制御セキュリティを名前付きシステム イベントのプロセス間の動作を示します。 この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きイベントの存在をテストします。  
+  
+ イベントが存在しない場合は、初期所有権と現在のユーザーに、イベントを使用する権限を拒否読み取りし、イベントのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを読み書きアクセス許可を変更するために必要な権限を持つイベントを待機します。  
+  
+ アクセス許可を変更すると、イベントが待機して、通知に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用する例が実行されます。  
+  
+ [!code-cpp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CS/source.cs#1)]
+ [!code-vb[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きシステム イベントが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きのイベントが存在するが、ユーザーがそれを使用するために必要なセキュリティ アクセス権がありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenExisting">
+      <MemberSignature Language="C#" Value="public static System.Threading.EventWaitHandle OpenExisting (string name, System.Security.AccessControl.EventWaitHandleRights rights);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.EventWaitHandle OpenExisting(string name, valuetype System.Security.AccessControl.EventWaitHandleRights rights) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.OpenExisting(System.String,System.Security.AccessControl.EventWaitHandleRights)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Threading.EventWaitHandle</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.EventWaitHandleRights" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム同期イベントの名前。</param>
+        <param name="rights">必要なセキュリティ アクセス権を表す列挙値のビットごとの組み合わせ。</param>
+        <summary>指定した同期イベントをという名前が存在する場合、必要なセキュリティ アクセスを開きます。</summary>
+        <returns>名前付きシステム イベントを表すオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `rights`パラメーターを含める必要があります、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>をイベントを待機するスレッドを許可するフラグと<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>を呼び出すスレッドを許可するフラグ、<xref:System.Threading.EventWaitHandle.Set%2A>と<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドです。  
+  
+ <xref:System.Threading.EventWaitHandle.OpenExisting%2A>メソッドは、既存の名前付きシステム イベントを開こうとするとします。 システム イベントが存在しない場合、このメソッドは、システム イベントを作成する代わりに例外をスローします。 イベントを作成する、システムが既に存在しない場合のいずれかの操作を使用して、<xref:System.Threading.EventWaitHandle.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.EventWaitHandle>場合でも、返されるオブジェクトは、同じ名前付きシステム イベントを表すオブジェクトします。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセス制御セキュリティを名前付きシステム イベントのプロセス間の動作を示します。 この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きイベントの存在をテストします。  
+  
+ イベントが存在しない場合は、初期所有権と現在のユーザーに、イベントを使用する権限を拒否読み取りし、イベントのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを読み書きアクセス許可を変更するために必要な権限を持つイベントを待機します。  
+  
+ アクセス許可を変更すると、イベントが待機して、通知に必要な権限で開かれます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用する例が実行されます。  
+  
+ [!code-cpp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CS/source.cs#1)]
+ [!code-vb[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Threading.WaitHandleCannotBeOpenedException">名前付きシステム イベントが存在しません。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きのイベントが存在するが、ユーザーが必要なセキュリティ アクセスがありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public bool Reset ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Reset() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.Reset" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントの状態を非シグナル状態に設定し、スレッドをブロックします。</summary>
+        <returns>
+          <see langword="true" />操作が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="M:System.Threading.WaitHandle.Close" />このメソッドが呼び出された<see cref="T:System.Threading.EventWaitHandle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Set">
+      <MemberSignature Language="C#" Value="public bool Set ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Set() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.Set" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>イベントの状態をシグナル状態に設定し、待機している 1 つ以上のスレッドが進行できるようにします。</summary>
+        <returns>
+          <see langword="true" />操作が成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.EventWaitHandle>で<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>(含む<xref:System.Threading.AutoResetEvent>) では、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドが 1 つのスレッドを解放します。 待機スレッドが存在しない場合、待機ハンドル シグナル状態のままスレッドが、またはまでお待ちくださいしようとするまでその<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出されます。  
+  
+> [!IMPORTANT]
+>  保証はありませんをすべての呼び出しに、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドはからスレッドを解放、<xref:System.Threading.EventWaitHandle>がリセット モードは<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>します。 2 つの呼び出しが近すぎる、スレッドが解放される前に 2 番目の呼び出しが行われるように、1 つのスレッドが解放されます。 2 番目の呼び出しが発生しなかったかのようをお勧めします。 また場合、<xref:System.Threading.EventWaitHandle.Set%2A>待機しているスレッドが存在しないときに呼び出されると、<xref:System.Threading.EventWaitHandle>が既にシグナル、呼び出しが影響を与えません。  
+  
+ <xref:System.Threading.EventWaitHandle>で<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>(など<xref:System.Threading.ManualResetEvent>) を呼び出す、<xref:System.Threading.EventWaitHandle.Set%2A>メソッドまでシグナル状態で、待機ハンドルのままにその<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドが呼び出されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Threading.WaitHandle.SignalAndWait%28System.Threading.WaitHandle%2CSystem.Threading.WaitHandle%29>メイン スレッドをブロックされたスレッドを通知し、スレッドがタスクを完了するまで待機を許可するメソッドのオーバー ロードします。  
+  
+ 例では、5 つのスレッドを開始しをブロックすることができます、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.AutoReset?displayProperty=nameWithType>フラグ、ENTER キーを押すのリリース 1 つのスレッドの時間。 例は、別の 5 つのスレッド キューに配置し、すべてを使用して、解放、<xref:System.Threading.EventWaitHandle>で作成された、<xref:System.Threading.EventResetMode.ManualReset?displayProperty=nameWithType>フラグ。  
+  
+ [!code-cpp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CS/source.cs#1)]
+ [!code-vb[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="M:System.Threading.WaitHandle.Close" />このメソッドが呼び出された<see cref="T:System.Threading.EventWaitHandle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAccessControl">
+      <MemberSignature Language="C#" Value="public void SetAccessControl (System.Security.AccessControl.EventWaitHandleSecurity eventSecurity);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAccessControl(class System.Security.AccessControl.EventWaitHandleSecurity eventSecurity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.SetAccessControl(System.Security.AccessControl.EventWaitHandleSecurity)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventSecurity" Type="System.Security.AccessControl.EventWaitHandleSecurity" />
+      </Parameters>
+      <Docs>
+        <param name="eventSecurity"><see cref="T:System.Security.AccessControl.EventWaitHandleSecurity" />を名前付きシステム イベントに適用するアクセス制御セキュリティを表すオブジェクト。</param>
+        <summary>名前付きシステム イベントのアクセス制御セキュリティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがいる必要があります<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>でこのメソッドとイベントを呼び出す権限が開かれている必要があります、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグ。  
+  
+   
+  
+## Examples  
+ 次のコード例は、アクセス制御セキュリティを名前付きシステム イベントのプロセス間の動作を示します。 この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッドのオーバー ロードを名前付きイベントの存在をテストします。  
+  
+ イベントが存在しない場合は、初期所有権と現在のユーザーに、イベントを使用する権限を拒否読み取りし、イベントのアクセス許可を変更する権限を付与するアクセス制御セキュリティで作成されます。  
+  
+ 2 つのコマンド ウィンドウからコンパイル済みの例を実行する場合、2 番目のコピーへの呼び出しでアクセス違反例外がスローされます<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>です。 例外をキャッチし、この例では、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッドのオーバー ロードを読み書きアクセス許可を変更するために必要な権限を持つイベントを待機します。  
+  
+ 使用して、アクセス許可が変更した後、<xref:System.Threading.EventWaitHandle.SetAccessControl%2A>待機し、そのことを通知するために必要な権限を持つメソッド、イベントを開きます。 3 番目のコマンド ウィンドウからコンパイル済みの例を実行する場合は、新しいアクセス許可を使用する例が実行されます。  
+  
+ [!code-cpp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/CS/source.cs#1)]
+ [!code-vb[System.Threading.EventWaitHandle.ctor named 5#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.EventWaitHandle.ctor named 5/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="eventSecurity" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">ユーザーがいない<see cref="F:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions" />です。  
+  
+ または  
+  
+ イベントで開かれませんでした<see cref="F:System.Security.AccessControl.EventWaitHandleRights.ChangePermissions" />です。</exception>
+        <exception cref="T:System.SystemException">現在<see cref="T:System.Threading.EventWaitHandle" />オブジェクトは名前付きシステム イベントを表していません。</exception>
+        <exception cref="T:System.ObjectDisposedException"><see cref="M:System.Threading.WaitHandle.Close" />このメソッドが呼び出された<see cref="T:System.Threading.EventWaitHandle" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOpenExisting">
+      <MemberSignature Language="C#" Value="public static bool TryOpenExisting (string name, out System.Threading.EventWaitHandle result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryOpenExisting(string name, [out] class System.Threading.EventWaitHandle&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.TryOpenExisting(System.String,System.Threading.EventWaitHandle@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="result" Type="System.Threading.EventWaitHandle&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム同期イベントの名前。</param>
+        <param name="result">このメソッドが戻るとき、<see cref="T:System.Threading.EventWaitHandle" />呼び出しが成功した場合は、名前付きの同期イベントを表すオブジェクトまたは<see langword="null" />呼び出しが失敗した場合。 このパラメーターは初期化前として処理されます。</param>
+        <summary>既に存在する場合は、指定した名前付き同期イベントを開き操作が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />名前付きの同期イベントが正常に開かれた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きの同期イベントが存在しない場合、このメソッドが作成していません。 イベントを作成する、システムが既に存在しない場合のいずれかの操作を使用して、<xref:System.Threading.EventWaitHandle.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ 名前付きの同期イベントが存在するかどうかが不明な場合は、代わりにこのメソッドのオーバー ロードを使用して、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%29>メソッド オーバー ロードは、同期イベントが存在しない場合は、例外をスローします。  
+  
+ このメソッドはオーバー ロードを呼び出すことと同等、<xref:System.Threading.EventWaitHandle.TryOpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%2CSystem.Threading.EventWaitHandle%40%29>メソッドのオーバー ロードを指定して<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>と<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>権限、ビットごとの OR 演算を使用して結合します。 指定する、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグにより、スレッドは、名前付きシステム イベントで待機を指定して、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>フラグによって、スレッドを呼び出す、<xref:System.Threading.EventWaitHandle.Set%2A>と<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドです。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.EventWaitHandle>場合でも、返されるオブジェクトは、同じ名前付きシステム イベントを表すオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きのイベントが存在するが、ユーザーが必要なセキュリティ アクセスがありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="TryOpenExisting">
+      <MemberSignature Language="C#" Value="public static bool TryOpenExisting (string name, System.Security.AccessControl.EventWaitHandleRights rights, out System.Threading.EventWaitHandle result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryOpenExisting(string name, valuetype System.Security.AccessControl.EventWaitHandleRights rights, [out] class System.Threading.EventWaitHandle&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.EventWaitHandle.TryOpenExisting(System.String,System.Security.AccessControl.EventWaitHandleRights,System.Threading.EventWaitHandle@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="rights" Type="System.Security.AccessControl.EventWaitHandleRights" />
+        <Parameter Name="result" Type="System.Threading.EventWaitHandle&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="name">開くシステム同期イベントの名前。</param>
+        <param name="rights">必要なセキュリティ アクセス権を表す列挙値のビットごとの組み合わせ。</param>
+        <param name="result">このメソッドが戻るとき、<see cref="T:System.Threading.EventWaitHandle" />呼び出しが成功した場合は、名前付きの同期イベントを表すオブジェクトまたは<see langword="null" />呼び出しが失敗した場合。 このパラメーターは初期化前として処理されます。</param>
+        <summary>既に存在する場合は、必要なセキュリティ アクセスを使って指定した名前付き同期イベントを開き、操作が成功したかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />名前付きの同期イベントが正常に開かれた場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 名前付きの同期イベントが存在しない場合、このメソッドが作成していません。 イベントを作成する、システムが既に存在しない場合のいずれかの操作を使用して、<xref:System.Threading.EventWaitHandle.%23ctor%2A>コンス トラクターを持つ、`name`パラメーター。  
+  
+ 名前付きの同期イベントが存在するかどうかが不明な場合は、代わりにこのメソッドのオーバー ロードを使用して、<xref:System.Threading.EventWaitHandle.OpenExisting%28System.String%2CSystem.Security.AccessControl.EventWaitHandleRights%29>メソッド オーバー ロードは、同期イベントが存在しない場合は、例外をスローします。  
+  
+ `rights`パラメーターを含める必要があります、<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>をイベントを待機するスレッドを許可するフラグと<xref:System.Security.AccessControl.EventWaitHandleRights?displayProperty=nameWithType>を呼び出すスレッドを許可するフラグ、<xref:System.Threading.EventWaitHandle.Set%2A>と<xref:System.Threading.EventWaitHandle.Reset%2A>メソッドです。  
+  
+ このメソッドに対して同じ値を使用する複数の呼び出し`name`必ずしも返さない同じ<xref:System.Threading.EventWaitHandle>場合でも、返されるオブジェクトは、同じ名前付きシステム イベントを表すオブジェクトします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> が空の文字列です。  
+  
+ または  
+  
+ <paramref name="name" /> が 260 文字を超えています。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.IO.IOException">Win32 エラーが発生しました。</exception>
+        <exception cref="T:System.UnauthorizedAccessException">名前付きのイベントが存在するが、ユーザーが必要なセキュリティ アクセスがありません。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

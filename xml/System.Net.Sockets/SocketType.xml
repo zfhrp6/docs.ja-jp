@@ -1,0 +1,203 @@
+<Type Name="SocketType" FullName="System.Net.Sockets.SocketType">
+  <TypeSignature Language="C#" Value="public enum SocketType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SocketType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Sockets.SocketType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Sockets</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>ソケットの種類を指定するのインスタンス、<see cref="T:System.Net.Sockets.Socket" />クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前に、<xref:System.Net.Sockets.Socket>を送信でき、データが表示される、最初に作成する必要を使用して、 <xref:System.Net.Sockets.AddressFamily>、 <xref:System.Net.Sockets.SocketType>、および<xref:System.Net.Sockets.ProtocolType>です。 <xref:System.Net.Sockets.SocketType>列挙体の型を定義するためのいくつかのオプションを提供する<xref:System.Net.Sockets.Socket>開くしようとします。  
+  
+> [!NOTE]
+>  <xref:System.Net.Sockets.SocketType>場合によって暗黙的に示します。<xref:System.Net.Sockets.ProtocolType>内で使用される、<xref:System.Net.Sockets.AddressFamily>です。 たとえば、ときに、<xref:System.Net.Sockets.SocketType?displayProperty=nameWithType>は<xref:System.Net.Sockets.SocketType.Dgram?displayProperty=nameWithType>、<xref:System.Net.Sockets.ProtocolType?displayProperty=nameWithType>は常に<xref:System.Net.Sockets.ProtocolType.Udp?displayProperty=nameWithType>です。 ときに、<xref:System.Net.Sockets.SocketType?displayProperty=nameWithType>は<xref:System.Net.Sockets.SocketType.Stream?displayProperty=nameWithType>、<xref:System.Net.Sockets.ProtocolType?displayProperty=nameWithType>は常に<xref:System.Net.Sockets.ProtocolType.Tcp?displayProperty=nameWithType>です。 作成しようとする場合、 <xref:System.Net.Sockets.Socket> 、互換性のない組み合わせと<xref:System.Net.Sockets.Socket>スロー、<xref:System.Net.Sockets.SocketException>です。  
+  
+   
+  
+## Examples  
+ 次の例で<xref:System.Net.Sockets.SocketType.Stream?displayProperty=nameWithType>へのパラメーターとして、<xref:System.Net.Sockets.Socket>コンス トラクターです。  
+  
+ [!code-cpp[SelectModeExample#1](~/samples/snippets/cpp/VS_Snippets_Remoting/SelectModeExample/CPP/source.cpp#1)]
+ [!code-csharp[SelectModeExample#1](~/samples/snippets/csharp/VS_Snippets_Remoting/SelectModeExample/CS/source.cs#1)]
+ [!code-vb[SelectModeExample#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/SelectModeExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Dgram">
+      <MemberSignature Language="C#" Value="Dgram" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Dgram = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Dgram" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>固定 (通常はわずか) の最大長のコネクションレス、信頼性の低いメッセージは、データグラムをサポートしています。 メッセージがあります紛失または複製され、順不同で到着可能性があります。 A<see cref="T:System.Net.Sockets.Socket" />型の<see cref="F:System.Net.Sockets.SocketType.Dgram" />接続、データを送受信する前に必要ありません、複数のピアと通信できます。 <see cref="F:System.Net.Sockets.SocketType.Dgram" />データグラム プロトコルを使用して (<see langword="ProtocolType" />.<see cref="F:System.Net.Sockets.ProtocolType.Udp" />) および<see langword="AddressFamily" />です。<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> アドレス ファミリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Raw">
+      <MemberSignature Language="C#" Value="Raw" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Raw = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Raw" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるトランスポート プロトコルへのアクセスをサポートしています。 使用して<see cref="F:System.Net.Sockets.SocketType.Raw" />、インターネット制御メッセージ プロトコルなどのプロトコルを使用して通信できます (<see langword="ProtocolType" />.<see cref="F:System.Net.Sockets.ProtocolType.Icmp" />) とインターネット グループ管理プロトコル (<see langword="ProtocolType" />.<see cref="F:System.Net.Sockets.ProtocolType.Igmp" />)。 送信するときに、アプリケーションは IP ヘッダーを完全に提供する必要があります。 受信したデータグラムがそのまま IP ヘッダーとオプションと共に返されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Rdm">
+      <MemberSignature Language="C#" Value="Rdm" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Rdm = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Rdm" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サポート、コネクションレス メッセージ指向、確実に配信されたメッセージ、しデータ内のメッセージの境界が保護されます。 Rdm (確実に配信されたメッセージの) メッセージには、重複していないと順序が届きます。 さらに、メッセージが失われた場合に、送信者に通知します。 初期化する場合、<see cref="T:System.Net.Sockets.Socket" />を使用して<see cref="F:System.Net.Sockets.SocketType.Rdm" />データを送受信する前にリモート ホスト接続を必要としません。 <see cref="F:System.Net.Sockets.SocketType.Rdm" />、複数のピアと通信することができます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Seqpacket">
+      <MemberSignature Language="C#" Value="Seqpacket" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Seqpacket = int32(5)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Seqpacket" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネットワーク経由で順序付けされたバイト ストリームの接続指向で信頼性の高いの双方向の転送を提供します。 <see cref="F:System.Net.Sockets.SocketType.Seqpacket" />重複していないデータは、およびそれによって、データ ストリーム内の境界は保持されます。 A<see cref="T:System.Net.Sockets.Socket" />型の<see cref="F:System.Net.Sockets.SocketType.Seqpacket" />1 つのピアと通信し、通信を開始する前に、リモート ホスト接続を必要とします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stream">
+      <MemberSignature Language="C#" Value="Stream" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Stream = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Stream" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データの重複および境界を保存する機能せず、接続ベースで信頼性の高い、双方向のバイト ストリームをサポートしています。 A<see cref="T:System.Net.Sockets.Socket" />この型の 1 つのピアと通信し、通信を開始する前に、リモート ホスト接続を必要とします。 <see cref="F:System.Net.Sockets.SocketType.Stream" />伝送制御プロトコルの使用 (<see langword="ProtocolType" />.<see cref="F:System.Net.Sockets.ProtocolType.Tcp" />) および<see langword="AddressFamily" />です。<see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /> アドレス ファミリ。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unknown">
+      <MemberSignature Language="C#" Value="Unknown" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Sockets.SocketType Unknown = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Sockets.SocketType.Unknown" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Sockets</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Sockets.SocketType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明な指定<see cref="Socket" />型です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

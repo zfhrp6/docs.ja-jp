@@ -1,0 +1,357 @@
+<Type Name="GridLength" FullName="System.Windows.GridLength">
+  <TypeSignature Language="C#" Value="public struct GridLength : IEquatable&lt;System.Windows.GridLength&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi sealed beforefieldinit GridLength extends System.ValueType implements class System.IEquatable`1&lt;valuetype System.Windows.GridLength&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.GridLength" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IEquatable&lt;System.Windows.GridLength&gt;</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.GridLengthConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>明示的にサポートする要素の長さを表す<see cref="F:System.Windows.GridUnitType.Star" />ユニットの種類。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などの要素<xref:System.Windows.Controls.ColumnDefinition>と<xref:System.Windows.Controls.RowDefinition>使用可能な領域の変数の分布をサポートするために、幅と高さを記述するこの種類を使用します。  
+  
+<a name="xamlAttributeUsage_GridLength"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="doubleLength"/>  
+- or -  
+<object property="autoValue"/>  
+```  
+  
+<a name="xamlValues_GridLength"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *doubleLength*  
+ いずれかとして説明されている要素の長さ、<xref:System.Double>を指定する値、[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]メジャー、または、 *qualifiedDouble* (下記参照)。  
+  
+ *autoValue*  
+ 自動値で示される要素の長さ、または * です。 参照してください<xref:System.Windows.GridUnitType>自動値についての詳細と * です。  
+  
+ *qualifiedDouble*  
+ A*二重*値のいずれかのメジャー、前述のよう続けて次の単位の宣言文字列のいずれかの: `px`、 `in`、 `cm`、`pt`です。  
+  
+ `px`(既定値)[!INCLUDE[TLA#tla_dipixel#plural](~/includes/tlasharptla-dipixelsharpplural-md.md)]  
+  
+ `in`インチです。1 96px を = =  
+  
+ `cm`センチメートル; は、します。1cm==(96/2.54) px  
+  
+ `pt`ポイントです。1pt==(96/72) px  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridLength (double pixels);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 pixels) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.#ctor(System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="pixels" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="pixels">デバイス非依存ピクセル (96 ピクセル/インチ) の数。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.GridLength" />ピクセル単位で指定された絶対値を使用して構造体します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="Pixels" />is equal to <see cref="F:System.Double.NegativeInfinity" />, <see cref="F:System.Double.PositiveInfinity" />, or <see cref="F:System.Double.NaN" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public GridLength (double value, System.Windows.GridUnitType type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 value, valuetype System.Windows.GridUnitType type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.#ctor(System.Double,System.Windows.GridUnitType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="type" Type="System.Windows.GridUnitType" />
+      </Parameters>
+      <Docs>
+        <param name="value">このインスタンスの初期値<see cref="T:System.Windows.GridLength" />です。</param>
+        <param name="type"><see cref="T:System.Windows.GridUnitType" />のこのインスタンスによって保持されている<see cref="T:System.Windows.GridLength" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.GridLength" />構造体し、値の種類が保留リストを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="value" />is equal to <see cref="F:System.Double.NegativeInfinity" />, <see cref="F:System.Double.PositiveInfinity" />, or <see cref="F:System.Double.NaN" />.</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Auto">
+      <MemberSignature Language="C#" Value="public static System.Windows.GridLength Auto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.GridLength Auto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.Auto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.GridLength</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得<see cref="T:System.Windows.GridLength" />サイズ プロパティによって決定されます、サイズ、コンテンツ オブジェクトの値を保持します。</summary>
+        <value>インスタンスを<see cref="T:System.Windows.GridLength" />が<see cref="P:System.Windows.GridLength.GridUnitType" />プロパティに設定されている<see cref="F:System.Windows.GridUnitType.Auto" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object oCompare);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object oCompare) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oCompare" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="oCompare">現在のインスタンスと比較するオブジェクト。</param>
+        <summary>指定したオブジェクトが現在の <see cref="T:System.Windows.GridLength" /> インスタンスと等しいかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトが同じ値を持つ場合と<see cref="T:System.Windows.GridUnitType" />が現在のインスタンスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.GridLength gridLength);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Equals(valuetype System.Windows.GridLength gridLength) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.Equals(System.Windows.GridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gridLength" Type="System.Windows.GridLength" />
+      </Parameters>
+      <Docs>
+        <param name="gridLength"><see cref="T:System.Windows.GridLength" />に現在のインスタンスと比較します。</param>
+        <summary>指定した <see cref="T:System.Windows.GridLength" /> が現在の <see cref="T:System.Windows.GridLength" /> と等しいかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、指定した<see cref="T:System.Windows.GridLength" />同じ値を持つと<see cref="P:System.Windows.GridLength.GridUnitType" />が現在のインスタンスです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ハッシュ コードを取得、<see cref="T:System.Windows.GridLength" />です。</summary>
+        <returns>現在のハッシュ コード<see cref="T:System.Windows.GridLength" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GridUnitType">
+      <MemberSignature Language="C#" Value="public System.Windows.GridUnitType GridUnitType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.GridUnitType GridUnitType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.GridUnitType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.GridUnitType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>関連付けられた取得<see cref="T:System.Windows.GridUnitType" />の<see cref="T:System.Windows.GridLength" />です。</summary>
+        <value><see cref="T:System.Windows.GridUnitType" /> 値のいずれか。 既定値は、<see cref="F:System.Windows.GridUnitType.Auto" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAbsolute">
+      <MemberSignature Language="C#" Value="public bool IsAbsolute { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAbsolute" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.IsAbsolute" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.GridLength" />ピクセル単位で表される値を保持します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.GridLength.GridUnitType" />プロパティは<see cref="F:System.Windows.GridUnitType.Pixel" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsAuto">
+      <MemberSignature Language="C#" Value="public bool IsAuto { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsAuto" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.IsAuto" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.GridLength" />サイズ プロパティによって決定されます、サイズ、コンテンツ オブジェクトの値を保持します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.GridLength.GridUnitType" />プロパティは<see cref="F:System.Windows.GridUnitType.Auto" />、それ以外の<see langword="false" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Windows.GridLength.GridUnitType%2A>値は<xref:System.Windows.GridUnitType?displayProperty=nameWithType>します。 したがって、このプロパティが返されます`true`を指定しない場合、<xref:System.Windows.GridUnitType>インスタンスを作成するときにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStar">
+      <MemberSignature Language="C#" Value="public bool IsStar { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsStar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.IsStar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.GridLength" />使用可能な領域の加重比率で示される値を保持します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="P:System.Windows.GridLength.GridUnitType" />プロパティは<see cref="F:System.Windows.GridUnitType.Star" />、それ以外の<see langword="false" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.GridLength gl1, System.Windows.GridLength gl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.GridLength gl1, valuetype System.Windows.GridLength gl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.op_Equality(System.Windows.GridLength,System.Windows.GridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gl1" Type="System.Windows.GridLength" />
+        <Parameter Name="gl2" Type="System.Windows.GridLength" />
+      </Parameters>
+      <Docs>
+        <param name="gl1">比較対象の <see cref="T:System.Windows.GridLength" /> の第 1 インスタンス。</param>
+        <param name="gl2">比較対象の <see cref="T:System.Windows.GridLength" /> の第 2 インスタンス。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.GridLength" />構造が等しいかどうか。</summary>
+        <returns>
+          <see langword="true" />場合、2 つの<see cref="T:System.Windows.GridLength" />値が同じであると<see cref="T:System.Windows.GridUnitType" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.GridLength gl1, System.Windows.GridLength gl2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.GridLength gl1, valuetype System.Windows.GridLength gl2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.op_Inequality(System.Windows.GridLength,System.Windows.GridLength)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="gl1" Type="System.Windows.GridLength" />
+        <Parameter Name="gl2" Type="System.Windows.GridLength" />
+      </Parameters>
+      <Docs>
+        <param name="gl1">比較対象の <see cref="T:System.Windows.GridLength" /> の第 1 インスタンス。</param>
+        <param name="gl2">比較対象の <see cref="T:System.Windows.GridLength" /> の第 2 インスタンス。</param>
+        <summary>比較する 2 つ<see cref="T:System.Windows.GridLength" />両者が等しくないかどうかを決定する構造体。</summary>
+        <returns>
+          <see langword="true" />場合、2 つの<see cref="T:System.Windows.GridLength" />同じの値がないと<see cref="T:System.Windows.GridUnitType" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.GridLength.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.String" /> の <see cref="T:System.Windows.GridLength" /> 表現を返します。</summary>
+        <returns>A <see cref="T:System.String" /> 、現在の表現<see cref="T:System.Windows.GridLength" />構造体。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public double Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.GridLength.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Double" />の値を表す、<see cref="T:System.Windows.GridLength" />です。</summary>
+        <value>A<see cref="T:System.Double" />現在のインスタンスの値を表すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,303 @@
+<Type Name="DataContractAttribute" FullName="System.Runtime.Serialization.DataContractAttribute">
+  <TypeSignature Language="C#" Value="public sealed class DataContractAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataContractAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Serialization.DataContractAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Serialization</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum, AllowMultiple=false, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>この型が、データ コントラクトを定義または実装し、<see cref="T:System.Runtime.Serialization.DataContractSerializer" /> などのシリアライザーによってシリアル化可能であることを指定します。 型をシリアル化可能にするには、型作成者が、型のデータ コントラクトを定義する必要があります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.DataContractAttribute> によるシリアル化および逆シリアル化操作で使用される型 (クラス、構造体、または列挙) に対して、<xref:System.Runtime.Serialization.DataContractSerializer> 属性を適用します。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] インフラストラクチャを使用してメッセージを送信または受信する場合は、メッセージで送信されるデータを保持および操作するクラスにも <xref:System.Runtime.Serialization.DataContractAttribute> を適用します。 [!INCLUDE[crabout](~/includes/crabout-md.md)]データ コントラクトを参照してください[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+ シリアル化する値を保持するフィールド、プロパティ、またはイベントにも、<xref:System.Runtime.Serialization.DataMemberAttribute> を適用する必要があります。 <xref:System.Runtime.Serialization.DataContractAttribute> の適用によって、<xref:System.Runtime.Serialization.DataContractSerializer> によるデータのシリアル化と逆シリアル化を明示的に有効にします。  
+  
+> [!CAUTION]
+>  プライベートなフィールドに対して <xref:System.Runtime.Serialization.DataMemberAttribute> を適用できます。 フィールドによって返されるデータは (プライベートであっても) シリアル化と逆シリアル化の対象となるため、悪意のあるユーザーやプロセスによって傍受される可能性があることに注意してください。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]データ コントラクトの各トピックを参照してください[を使用してデータ コントラクト](~/docs/framework/wcf/feature-details/using-data-contracts.md)です。  
+  
+## <a name="data-contracts"></a>データ コントラクト  
+ A*データ コントラクト*は、各フィールドの名前とデータ型の一連のフィールドの概要です。 データ コントラクトは、単一の実装の外部に存在することで、異なるプラットフォームでのサービスの相互運用を可能にします。 サービス間で渡されるデータが同一のコントラクトに準拠している限り、すべてのサービスがそのデータを処理できます。 この処理とも呼ばれる、*疎結合システム*です。 データ コントラクトは、アプリケーションによる処理が可能なようにデータを伝送する方法を指定するという点でインターフェイスに似ています。 たとえば、"FirstName" と "LastName" という 2 つのテキスト フィールドがある "Person" という名前のデータ型をデータ コントラクトで呼び出すことができます。 データ コントラクトを作成するには、<xref:System.Runtime.Serialization.DataContractAttribute> をクラスに適用し、シリアル化する必要がある任意のフィールドまたはプロパティに <xref:System.Runtime.Serialization.DataMemberAttribute> を適用します。 データがシリアル化されるときに、データは、型に暗黙的に組み込まれたデータ コントラクトに従って処理されます。  
+  
+> [!NOTE]
+>  データ コントラクトは、継承動作の点で、実際のインターフェイスとは大きく異なります。 インターフェイスは、任意の派生する型によって継承されます。 <xref:System.Runtime.Serialization.DataContractAttribute> を基本クラスに適用しても、派生する型は、属性も動作も継承しません。 ただし、派生する型にデータ コントラクトがある場合、基本クラスのデータ メンバーはシリアル化されます。 しかし、派生クラスの新しいメンバーをシリアル化可能にするには、新しいメンバーに対して <xref:System.Runtime.Serialization.DataMemberAttribute> を適用する必要があります。  
+  
+## <a name="xml-schema-documents-and-the-svcutil-tool"></a>XML スキーマ ドキュメントと SvcUtil ツール  
+ 他のサービスとデータを交換する場合は、データ コントラクトを記述する必要があります。 <xref:System.Runtime.Serialization.DataContractSerializer> の現在のバージョンでは、XML スキーマを使用してデータ コントラクトを定義できます  (同じ目的で、メタデータまたは記述形式を使用できます)。アプリケーションから XML スキーマを作成するには、使用、 [ServiceModel メタデータ ユーティリティ ツール (Svcutil.exe)](~/docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)で、 **/dconly**コマンド ライン オプションです。 ツールへの入力が既定ではアセンブリの場合、ツーは、そのアセンブリで検出されたすべてのデータ コントラクトの型を定義する XML スキーマ セットを生成します。 逆に、Svcutil.exe ツールは、データ コントラクトによって表現できる構造体を使用する XML スキーマの要件に適合する Visual Basic または C# クラスの定義を作成するために使用することもできます。 ここで、 **/dconly**コマンド ライン オプションは必要ありません。  
+  
+ Svcutil.exe ツールへの入力が既定では XML スキーマの場合、ツールは、クラスのセットを作成します。 これらのクラスを確認すれば、<xref:System.Runtime.Serialization.DataContractAttribute> が適用されていることがわかります。 これらのクラスを使用して、他のサービスと交換する必要があるデータを処理するための新しいアプリケーションを作成できます。  
+  
+ さらに、Web サービス記述言語 (WSDL) ドキュメントを返すエンドポイントに対してこのツールを実行することで、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] クライアントを作成するコードと構成を自動的に生成できます。 生成されたコードには、<xref:System.Runtime.Serialization.DataContractAttribute> でマークされた型が含まれます。  
+  
+## <a name="reusing-existing-types"></a>既存の型の再利用  
+ データ コントラクトには、安定名とメンバー リストという 2 つの基本的な要件があります。 安定名は、名前空間の URI (uniform resource identifier) とコントラクトのローカル名で構成されます。 既定では、<xref:System.Runtime.Serialization.DataContractAttribute> をクラスに適用すると、クラス名がローカル名として使用され、クラスの名前空間が名前空間の URI として使用されます ("http://schemas.datacontract.org/2004/07/" が先頭に追加されます)。 <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティと <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> プロパティを設定することで、これらの既定値をオーバーライドできます。 <xref:System.Runtime.Serialization.ContractNamespaceAttribute> を名前空間に適用することで、名前空間を変更することもできます。 この機能は、目的どおりにデータを処理する既存の型が存在するが、データ コントラクトの名前空間とクラス名が異なる場合に使用します。 既定値をオーバーライドすることで、既存の型を再利用しながら、シリアル化するデータをデータ コントラクトに準拠させることができます。  
+  
+> [!NOTE]
+>  コードでは、`DataContract` の代わりに <xref:System.Runtime.Serialization.DataContractAttribute> という短い語を使用できます。  
+  
+## <a name="versioning"></a>バージョン管理  
+ データ コントラクトは、それ自体の新しいバージョンに対応できます。 つまり、コントラクトの次のバージョンに追加データが含まれている場合、そのデータは保存され、送信側にそのまま返送されます。 これを行うには、<xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装します。  
+  
+ [!INCLUDE[crabout](~/includes/crabout-md.md)]バージョン管理を参照してください[データ コントラクトのバージョン管理](~/docs/framework/wcf/feature-details/data-contract-versioning.md)です。  
+  
+   
+  
+## Examples  
+ `Person` が適用された <xref:System.Runtime.Serialization.DataContractAttribute> という名前のクラスをシリアル化および逆シリアル化する例を次に示します。 <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A> プロパティと <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティに、既定の設定をオーバーライドするための値が設定されていることに注意してください。  
+  
+ [!code-csharp[DataContractAttribute#1](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractattribute/cs/overview.cs#1)]
+ [!code-vb[DataContractAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CFX/datacontractattribute/vb/overview.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataContractAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.Serialization.DataContractAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Runtime.Serialization.DataContractAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNameSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsNameSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNameSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.IsNameSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか<see cref="P:System.Runtime.Serialization.DataContractAttribute.Name" />が明示的に設定されています。</summary>
+        <value>返します<see langword="true" />明示的に設定されて、それ以外の名前が表示された場合に<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsNamespaceSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsNamespaceSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsNamespaceSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.IsNamespaceSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか<see cref="P:System.Runtime.Serialization.DataContractAttribute.Namespace" />が明示的に設定されています。</summary>
+        <value>返します<see langword="true" />明示的に設定されて、それ以外の名前空間があった場合<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReference">
+      <MemberSignature Language="C#" Value="public bool IsReference { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReference" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.IsReference" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト参照データを保持するかどうかを示す値を取得または設定します。</summary>
+        <value>
+          標準 XML を使用してオブジェクト参照データを保持する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `IsReference` プロパティを使用して、<xref:System.Runtime.Serialization.DataContractSerializer> に、オブジェクト参照情報を保持する XML コンストラクトの挿入を指示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReferenceSetExplicitly">
+      <MemberSignature Language="C#" Value="public bool IsReferenceSetExplicitly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReferenceSetExplicitly" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.IsReferenceSetExplicitly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得するかどうか<see cref="P:System.Runtime.Serialization.DataContractAttribute.IsReference" />が明示的に設定されています。</summary>
+        <value>
+          <see langword="true" />参照が明示的に設定されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のデータ コントラクトの名前を取得または設定します。</summary>
+        <value>データ コントラクトのローカル名。 既定値は、この属性が適用されるクラスの名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティを使用して、データ コントラクトに名前を割り当てます。この名前は、XML スキーマ内の型の名前にもなります。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][データ コントラクト名](~/docs/framework/wcf/feature-details/data-contract-names.md)です。  
+  
+ 既定では、データ コントラクトの名前は、<xref:System.Runtime.Serialization.DataContractAttribute> が適用される型の名前になります。 ただし、理由によっては、この既定の名前を変更することができます。 1 つ目の理由は、既存のデータ コントラクトに準拠させる必要があるデータを既存の型で処理できるようにすることです。 たとえば、`Person` という名前の型が存在するが、XML スキーマのデータ コントラクトでは、その型が `Customer` という名前でなければならないとします。 この場合、プロパティ値を `Customer` に設定することで、コントラクトを活用できます。  
+  
+ 2 つ目の理由は、型名としては無効な名前を生成できるようにすることです。 たとえば、データ コントラクトで、型名としては許されない名前が必要な場合は、プロパティ値をその許されない名前に設定します。 たとえば、文字列 "$value" は型名としては使用できませんが、<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> プロパティの値としては設定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Serialization.DataContractAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Serialization</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>型のデータ コントラクトの名前空間を取得または設定します。</summary>
+        <value>コントラクトの名前空間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型で特定のデータ コントラクトに準拠するデータを返す必要がある場合は、このプロパティを使用して特定の名前空間を指定します。  
+  
+> [!TIP]
+>  データを正常に送信するには、クライアントとサーバーの両方でデータ コントラクト内のデータの名前が同じでなければなりません。 Visual Basic プロジェクトの場合は、既定では、プレフィックスを追加 (「ルート名前空間、」プロジェクトにちなんだ名前と呼ばれます) の各ファイルで定義されている名前空間。 このプレフィックスを追加すると、クライアントとサーバーの名前空間は同じ型の別々の名前空間になります。 解決を設定するには、<xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>プロパティを""、またはこのプロパティでデータ コントラクト名前空間を明示的に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

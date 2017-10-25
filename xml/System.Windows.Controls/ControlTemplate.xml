@@ -1,0 +1,274 @@
+<Type Name="ControlTemplate" FullName="System.Windows.Controls.ControlTemplate">
+  <TypeSignature Language="C#" Value="public class ControlTemplate : System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ControlTemplate extends System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ControlTemplate" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkTemplate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.None, Readability=System.Windows.Readability.Unreadable)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.DictionaryKeyProperty("TargetType")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>視覚的な構造とさまざまな動作を指定、<see cref="T:System.Windows.Controls.Control" />コントロールの複数のインスタンスを共有することができます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ControlTemplate>コントロールの視覚的な構造を指定することができます。 コントロールの作成者は、既定値を定義できます<xref:System.Windows.Controls.ControlTemplate>アプリケーション作成者が上書きできると、<xref:System.Windows.Controls.ControlTemplate>をコントロールの視覚的な構造を再構築します。  
+  
+ コントロール テンプレートは、多数の機能によって提供される、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]スタイルとテンプレートのモデル。 スタイルとテンプレート モデルを使用する優れた柔軟性が備わっている多くの場合必要はありません、独自のコントロールを作成します。 コントロールの視覚エフェクトを変更したり、置き換えたりする必要があるアプリケーション作成者の場合は、<xref:System.Windows.Controls.ControlTemplate>の既存のコントロールを参照してください、[スタイルとテンプレート](~/docs/framework/wpf/controls/styling-and-templating.md)例とについて詳しく説明するトピックです。  
+  
+ 独自のコントロールを作成している場合に「カスタム コントロールを作成する」を参照してください、[コントロールの作成の概要](~/docs/framework/wpf/controls/control-authoring-overview.md)です。  
+  
+ A<xref:System.Windows.Controls.ControlTemplate>ユーザーと、スタイルを含むオブジェクトの外側に表示される実装の詳細の自己完結型の単位を指定するものではします。 同じコントロール テンプレート内では、コントロール テンプレートの内容を操作する唯一の方法です。  
+  
+<a name="xamlObjectElementUsage_VisualTree"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<ControlTemplate>  
+  <VisualTreeRootNode > VisualTreeNodeContents  
+  </VisualTreeRootNode >  
+</ControlTemplate>  
+```  
+  
+<a name="xamlValues_VisualTree"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *ControlTemplate*  
+ オブジェクト要素<xref:System.Windows.Controls.ControlTemplate>または派生クラス。  
+  
+ *VisualTreeRootNode*  
+ 1 つ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]要素のすぐ下の子として、 <xref:System.Windows.Controls.ControlTemplate> (または派生クラス)。 テンプレートには、単一のルート ノードが必要です。 有効なテンプレートとして選択した要素を生成するために*VisualTreeRootNode*が多くの場合、複数の子要素をサポートするモデルで、独自のコンテンツ モデルをサポートするために必要です。  
+  
+ *VisualTreeNodeContents*  
+ 対象のテンプレートを 1 つまたは複数の要素。 場合として選択された*VisualTreeRootNode*のみサポートしている 1 つの子、ことがありますのみとして宣言されている 1 つの要素*VisualTreeNodeContents*です。 可能です (ただし、一般的ではない) 場合は、テキスト コンテンツを提供する、選択した*VisualTreeRootNode*テキスト コンテンツ プロパティをサポートします。  
+  
+   
+  
+## Examples  
+ 次に示す、 <xref:System.Windows.Controls.Button> <xref:System.Windows.Style>が設定された、<xref:System.Windows.Controls.ControlTemplate>の<xref:System.Windows.Controls.Button>:  
+  
+ [!code-xaml[StylingIntroSample_snippet#ButtonCT](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSample_snippet/CSharp/Window1.xaml#buttonct)]     
+  
+ この適用を取得するとき、<xref:System.Windows.Controls.Button>として表示されます、 <xref:System.Windows.Shapes.Ellipse>:  
+  
+ ![ボタン ControlTemplate のサンプル](~/add/media/stylingintro-buttoncontroltemplate.png "ボタン ControlTemplate のサンプル")  
+  
+ 設定すると、<xref:System.Windows.Controls.Control.Template%2A>のプロパティ、<xref:System.Windows.Controls.Control>を新しい<xref:System.Windows.Controls.ControlTemplate>全体のテンプレートを置き換える場合、上記の例のようにします。 どのような<xref:System.Windows.Controls.Button>フォーカスが移動またはすべてを置き換えたりするボタンの既定の外観の一部は、押されたときのようになります。 そのため、必要に応じて、ボタンが押されたときのようになります、定義し、次の例のようにに配置する場合があります。  
+  
+ [!code-xaml[ControlTemplateExamples#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/button.xaml#1)]  
+  
+ この例では、ここに表示されていないリソースを参照することに注意してください。 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。 サンプルでは多くのコントロールのコントロール テンプレートの例を示します、コントロール テンプレートの作成を開始するための最善の方法です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ControlTemplate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.ControlTemplate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ControlTemplate (Type targetType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type targetType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ControlTemplate.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="targetType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="targetType">このテンプレートの対象の型。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Controls.ControlTemplate" />指定された対象の型を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TargetType">
+      <MemberSignature Language="C#" Value="public Type TargetType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TargetType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ControlTemplate.TargetType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Controls.ControlTemplate" /> が対象としている型を取得または設定します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スタンドアロンがあれば<xref:System.Windows.Controls.ControlTemplate>リソース セクションで、<xref:System.Windows.Controls.ControlTemplate.TargetType%2A>プロパティを型に設定、<xref:System.Windows.Controls.ControlTemplate>はいないその型に自動的に適用されます。 代わりに、指定する必要があります、`x:Key`テンプレートを明示的に適用します。  
+  
+ またを注意してください、<xref:System.Windows.Controls.ControlTemplate.TargetType%2A>でプロパティが必要な<xref:System.Windows.Controls.ControlTemplate>テンプレートの定義が含まれている場合、<xref:System.Windows.Controls.ContentPresenter>です。  
+  
+<a name="xamlAttributeUsage_TargetType"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object  TargetType="typeName"/>  
+```  
+  
+<a name="xamlValues_TargetType"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *型名*  
+ クラスの型名。 参照する、<xref:System.Type>を使用して、クラスの名前、[マークアップ拡張機能と WPF XAML](~/docs/framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)です。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの使用方法を示しています。  
+  
+ [!code-xaml[ControlTemplateExamples#Label](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/label.xaml#label)]  
+  
+ 上記の例では、次のリソースを使用します。  
+  
+  
+  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Windows.Controls.ControlTemplate.TargetType" />プロパティがありますいない<see langword="null" />テンプレートの定義がある場合、<see cref="T:System.Windows.Controls.ContentPresenter" />です。</exception>
+        <exception cref="T:System.ArgumentException">指定した型を使用することはできません。 <see cref="P:System.Windows.Controls.ControlTemplate.TargetType" />の<see cref="T:System.Windows.Controls.ControlTemplate" />するか、それから継承する必要があります、 <see cref="T:System.Windows.Controls.Control" />、 <see cref="T:System.Windows.Controls.Page" />、または<see cref="T:System.Windows.Navigation.PageFunctionBase" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Triggers">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerCollection Triggers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerCollection Triggers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ControlTemplate.Triggers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("VisualTree")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Template")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.Windows.TriggerBase" />プロパティの変更を適用またはに基づいてアクションを実行するオブジェクトが条件を指定します。</summary>
+        <value><see cref="T:System.Windows.TriggerBase" /> オブジェクトのコレクション。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlPropertyElementUsage_Triggers"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Triggers>  
+    oneOrMoreTriggers  
+  </object.Triggers>  
+</object>  
+```  
+  
+<a name="xamlValues_Triggers"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *oneOrMoreTriggers*  
+ 1 つまたは複数<xref:System.Windows.TriggerBase>オブジェクト (これらは通常、 <xref:System.Windows.Trigger>)。  
+  
+   
+  
+## Examples  
+ 次の例では、このプロパティの使用方法を示しています。  
+  
+ [!code-xaml[ControlTemplateExamples#ToolTip](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/tooltip.xaml#tooltip)]  
+  
+ 上記の例では、次のリソースを使用します。  
+  
+  
+  
+  
+ 完全なサンプルについては、[Styling with ControlTemplates Sample](http://go.microsoft.com/fwlink/?LinkID=160041)を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTemplatedParent">
+      <MemberSignature Language="C#" Value="protected override void ValidateTemplatedParent (System.Windows.FrameworkElement templatedParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateTemplatedParent(class System.Windows.FrameworkElement templatedParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ControlTemplate.ValidateTemplatedParent(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templatedParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="templatedParent">要素にこのテンプレートが適用されます。</param>
+        <summary>一連のルールに対してテンプレートの親を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、次の規則を使用します。  
+  
+ 1. `templatedParent`型<xref:System.Windows.FrameworkContentElement>です。  
+  
+ 2. `templatedParent`型<xref:System.Windows.FrameworkElement>外にある、<xref:System.Windows.Controls.Control>です。  
+  
+ 3. `templatedParent`することはできません、<xref:System.Windows.Controls.Control>が関連付けられていない、<xref:System.Windows.Controls.ControlTemplate>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="templatedParent" /> は <see langword="null" /> にすることはできません。</exception>
+        <exception cref="T:System.ArgumentException">関連付ける必要があります、<see cref="T:System.Windows.Controls.ControlTemplate" />で、<see cref="T:System.Windows.Controls.Control" />を設定して、<see cref="P:System.Windows.Controls.Control.Template" />プロパティを使用する前に、<see cref="T:System.Windows.Controls.ControlTemplate" />上、<see cref="T:System.Windows.Controls.Control" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

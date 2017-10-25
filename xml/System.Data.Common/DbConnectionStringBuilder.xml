@@ -1,0 +1,1980 @@
+<Type Name="DbConnectionStringBuilder" FullName="System.Data.Common.DbConnectionStringBuilder">
+  <TypeSignature Language="C#" Value="public class DbConnectionStringBuilder : System.Collections.IDictionary, System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DbConnectionStringBuilder extends System.Object implements class System.Collections.ICollection, class System.Collections.IDictionary, class System.Collections.IEnumerable, class System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Common.DbConnectionStringBuilder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Common</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IDictionary</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICustomTypeDescriptor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>厳密に型指定された接続文字列ビルダーのための基底クラスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbConnectionStringBuilder>クラスには、厳密に型指定された接続文字列ビルダーが元となる基本クラスが用意されています (<xref:System.Data.SqlClient.SqlConnectionStringBuilder>、<xref:System.Data.OleDb.OleDbConnectionStringBuilder>に) 派生されます。 接続文字列ビルダーは、開発者がプログラムで正しい構文の接続文字列を作成し、解析および既存の接続文字列を再構築を使用できます。  
+  
+ <xref:System.Data.Common.DbConnectionStringBuilder>データベースにとらわれない方法で定義されています。 追加により、<xref:System.Data.Common>名前空間、開発者に必要な任意のデータベースに対して使用できるように接続文字列を構築するためにプログラムできる対象となる基本クラスです。 したがって、<xref:System.Data.Common.DbConnectionStringBuilder>クラスにより、ユーザーが任意のキー/値ペアを割り当てるし、厳密に型指定されたプロバイダーに接続文字列を渡します。 .NET Framework の一部として含まれているすべてのデータ プロバイダーから継承するクラスを厳密に型指定を提供する<xref:System.Data.Common.DbConnectionStringBuilder>: <xref:System.Data.SqlClient.SqlConnectionStringBuilder>、 <xref:System.Data.OracleClient.OracleConnectionStringBuilder>、 <xref:System.Data.Odbc.OdbcConnectionStringBuilder>、および<xref:System.Data.OleDb.OleDbConnectionStringBuilder>です。  
+  
+ 開発者は、ビルド、割り当て、および任意のプロバイダーの接続文字列を編集できます。 特定のキー/値ペアをサポートするプロバイダーの場合は、接続文字列ビルダーは、既知のペアに対応する厳密に型指定のプロパティを提供します。 不明な値をサポートする機能を必要とするプロバイダーをサポートするために、開発者は、任意のキー/値ペアにも提供できます。  
+  
+ <xref:System.Data.Common.DbConnectionStringBuilder> クラスは、<xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスを実装します。 これは、デザイン時に、クラスが Visual Studio のデザイナーで動作することを意味します。 開発者は、デザイナーを使用して、厳密に型指定されたデータセットと Visual Studio 内での厳密に型指定された接続を構築と厳密に型指定された接続文字列ビルダー クラスの型に関連付けられているプロパティが表示されますコンバーター既知のキーに共通の値をマップできる必要があります。  
+  
+ 使用できるアプリケーションの一部として接続文字列を作成する必要がある開発者、<xref:System.Data.Common.DbConnectionStringBuilder>クラスまたはその厳密に型指定された派生接続文字列を構築および変更のいずれか。 <xref:System.Data.Common.DbConnectionStringBuilder>クラスも簡単に、アプリケーション構成ファイルに格納されている接続文字列を管理します。  
+  
+ 開発者は、厳密に型指定された接続文字列ビルダー クラスにいずれかを使用して接続文字列にできます作成または使用できるように、<xref:System.Data.Common.DbConnectionStringBuilder>クラスです。 <xref:System.Data.Common.DbConnectionStringBuilder>有効なキー/値ペアのチェックは行われません。 したがって、このクラスを使用して無効な接続文字列を作成することは可能です。 <xref:System.Data.SqlClient.SqlConnectionStringBuilder>サポートのみキー/値のペアは、SQL Server でサポートされている以外の場合は無効なペアを追加しようとするいると、例外がスローされます。  
+  
+ 両方の<xref:System.Data.Common.DbConnectionStringBuilder.Add%2A>メソッドおよび<xref:System.Data.Common.DbConnectionStringBuilder.Item%2A>プロパティ ハンドルは悪意のあるエントリを挿入しようとしています。 たとえば、次のコードは、入れ子になったキー/値ペアを正しくエスケープします。  
+  
+```vb  
+Dim builder As New System.Data.Common.DbConnectionStringBuilder  
+builder("Data Source") = "(local)"  
+builder("integrated sSecurity") = True  
+builder("Initial Catalog") = "AdventureWorks;NewValue=Bad"  
+```  
+  
+```csharp  
+System.Data.Common.DbConnectionStringBuilder builder =   
+    new System.Data.Common.DbConnectionStringBuilder();  
+builder["Data Source"] = "(local)";  
+builder["integrated Security"] = true;  
+builder["Initial Catalog"] = "AdventureWorks;NewValue=Bad";  
+```  
+  
+ 結果は、無効な値が安全に処理される、次の接続文字列になります。  
+  
+```  
+data source=(local);integrated security=True;  
+initial catalog="AdventureWorks;NewValue=Bad"  
+```  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションは、Microsoft Jet データベースと用の 2 つの接続文字列を作成、[!INCLUDE[ssNoVersion](~/includes/ssnoversion-md.md)]データベース。 コードがジェネリック型を使用して、各ケースで<xref:System.Data.Common.DbConnectionStringBuilder>接続文字列を検索し、パスを作成するクラス、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>のプロパティ、<xref:System.Data.Common.DbConnectionStringBuilder>厳密型 connection クラスのコンス トラクターにインスタンス。 これは不要です。コードでしたも個々 の厳密に型指定された接続文字列ビルダー インスタンスが作成されます。 この例は、既存の接続文字列を解析し、接続文字列の内容を操作するためのさまざまな方法を示します。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DbConnectionStringBuilder ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DbConnectionStringBuilder (bool useOdbcRules);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool useOdbcRules) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="useOdbcRules" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="useOdbcRules">
+          フィールドの区切りに {} を使用する場合、<see langword="true" />。引用符を使用する場合、<see langword="false" />。</param>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> クラスの新しいインスタンスを初期化します。必要に応じて、値を引用符で囲むことについての ODBC の規則が使用されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`useOdbcRules`は`true`、この<xref:System.Data.Common.DbConnectionStringBuilder>(中かっこ ({}) を持つ値を囲む) の値を引用符で囲むの ODBC の規則を使用します。 場合`useOdbcRules`は`false`、この<xref:System.Data.Common.DbConnectionStringBuilder>引用符文字を使用して ("") 値を区切るためにします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public void Add (string keyword, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Add(string keyword, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.Add(System.String,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">追加するキー、<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</param>
+        <param name="value">指定したキーの値。</param>
+        <summary>指定したキーと値を持つエントリを追加、<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbConnectionStringBuilder.Item%2A>プロパティを使用してディクショナリに存在しないキーの値を設定して新しい要素を追加することもできます。 たとえば、`myCollection["myNonexistentKey"] = myValue` のように指定します。  
+  
+ 呼び出す、<xref:System.Data.Common.DbConnectionStringBuilder.Add%2A>メソッドに null を渡すことによって (`Nothing` Visual Basic で) キーがスローされます、<xref:System.ArgumentNullException>です。 ただし、呼び出し、<xref:System.Data.Common.DbConnectionStringBuilder.Add%2A>メソッド、null 値を渡すことによって、キー/値ペアを削除します。  
+  
+   
+  
+## Examples  
+ 次の例は、新しい作成<xref:System.Data.Common.DbConnectionStringBuilder>し項目を追加します。 また、コードでは項目を使用して、既存の上書きを示しています、<xref:System.Data.Common.DbConnectionStringBuilder.Add%2A>メソッドをスローした場合、コメント ブロックが含まれています、<xref:System.ArgumentNullException>です。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.Common.DbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Add#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Add/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Add#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Add/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> は読み取り専用です。  
+  
+ -または-  
+  
+ <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> は固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendKeyValuePair">
+      <MemberSignature Language="C#" Value="public static void AppendKeyValuePair (System.Text.StringBuilder builder, string keyword, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AppendKeyValuePair(class System.Text.StringBuilder builder, string keyword, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.AppendKeyValuePair(System.Text.StringBuilder,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Text.StringBuilder" />
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="builder"><see cref="T:System.Text.StringBuilder" />キー/値ペアを追加します。</param>
+        <param name="keyword">追加されるキー。</param>
+        <param name="value">指定されたキーの値。</param>
+        <summary>既存のキーと値を追加する、効率的かつ安全な方法を提供<see cref="T:System.Text.StringBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、使用する開発者、<xref:System.Text.StringBuilder>に含まれる機能を活用できるキー/値ペアのコレクションを作成する、<xref:System.Data.Common.DbConnectionStringBuilder>クラスの作成と管理のオーバーヘッドが発生することがなくキー/値ペアを追加するときに、<xref:System.Data.Common.DbConnectionStringBuilder>インスタンス。 `AppendKeyValuePair`メソッドは、キーと値を正しく書式設定しを指定された新しい文字列を追加<xref:System.Text.StringBuilder>です。  
+  
+   
+  
+## Examples  
+ いくつかのプロセスが、接続文字列を作成したが、アプリケーションは、その接続文字列への簡単な変更を実行する必要があります、これである可能性がありますだけ使用して、キー/値ペアを追加する方が効率的な<xref:System.Text.StringBuilder>オブジェクト。 新たに作成するのではなく<xref:System.Data.Common.DbConnectionStringBuilder>、開発者が呼び出すことができます、`AppendKeyValuePair`に渡して、メソッド、<xref:System.Text.StringBuilder>指定された接続文字列を格納しています。 次の手順では、この手法の簡単な例を示します。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.AppendKeyValuePair#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.AppendKeyValuePair/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.AppendKeyValuePair#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.AppendKeyValuePair/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AppendKeyValuePair">
+      <MemberSignature Language="C#" Value="public static void AppendKeyValuePair (System.Text.StringBuilder builder, string keyword, string value, bool useOdbcRules);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void AppendKeyValuePair(class System.Text.StringBuilder builder, string keyword, string value, bool useOdbcRules) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.AppendKeyValuePair(System.Text.StringBuilder,System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="builder" Type="System.Text.StringBuilder" />
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+        <Parameter Name="useOdbcRules" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="builder"><see cref="T:System.Text.StringBuilder" />キー/値ペアを追加します。</param>
+        <param name="keyword">追加されるキー。</param>
+        <param name="value">指定されたキーの値。</param>
+        <param name="useOdbcRules">
+          <see langword="true" />フィールドの区切りに {} を使用する<see langword="false" />引用符を使用します。</param>
+        <summary>既存のキーと値を追加する、効率的かつ安全な方法を提供<see cref="T:System.Text.StringBuilder" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、使用する開発者、<xref:System.Text.StringBuilder>に含まれる機能を活用できるキー/値ペアのコレクションを作成する、<xref:System.Data.Common.DbConnectionStringBuilder>クラスの作成と管理のオーバーヘッドが発生することがなくキー/値ペアを追加するときに、<xref:System.Data.Common.DbConnectionStringBuilder>インスタンス。 `AppendKeyValuePair`メソッドは、キーと値を正しく書式設定しを指定された新しい文字列を追加<xref:System.Text.StringBuilder>です。  
+  
+ ほとんどのデータ ソースは、引用符を使用してフィールドを区切るためできますが、ODBC されていません--ODBC 接続文字列の場合は、中かっこ ({}) を使用する必要があります。 ために、<xref:System.Data.Common.DbConnectionStringBuilder>フィールドの区切り記号として ODBC の規則を使用して、設定、`useOdbcRules`パラメーターを`true`です。  
+  
+   
+  
+## Examples  
+ 何らかのプロセスが、接続文字列を作成したが、アプリケーションは、その接続文字列への簡単な変更を実行する必要があります、これがあるかもしれませんだけ使用して、キー/値ペアを追加する方が効率的な<xref:System.Text.StringBuilder>オブジェクト。 新たに作成するのではなく<xref:System.Data.Common.DbConnectionStringBuilder>、開発者が呼び出すことができます、`AppendKeyValuePair`に渡して、メソッド、<xref:System.Text.StringBuilder>指定された接続文字列を格納しています。 次の手順では、値を引用符で囲むの ODBC の規則を使用して、この方法の簡単な例を示します。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.AppendKeyValuePair#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.AppendKeyValuePair/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.AppendKeyValuePair#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.AppendKeyValuePair/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BrowsableConnectionString">
+      <MemberSignature Language="C#" Value="public bool BrowsableConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BrowsableConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.BrowsableConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignOnly(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" />プロパティは、Visual Studio デザイナーで表示します。</summary>
+        <value>
+          <see langword="true" />接続文字列がデザイナーに表示される場合<see langword="false" />それ以外の場合。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 利用するデザイナーを作成する開発者、<xref:System.Data.Common.DbConnectionStringBuilder>クラスは、表示するか、デザイナーのプロパティ グリッド内で非表示に、接続文字列を作成できる必要があります。 <xref:System.Data.Common.DbConnectionStringBuilder.BrowsableConnectionString%2A>プロパティにより、開発者を指定すること、プロパティはされません表示プロパティを設定して`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public virtual void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> インスタンスの内容を消去します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbConnectionStringBuilder.Clear%2A>メソッドからのすべてのキー/値ペアの削除、<xref:System.Data.Common.DbConnectionStringBuilder>し、すべての対応するプロパティをリセットします。 これには、設定が含まれます、<xref:System.Data.Common.DbConnectionStringBuilder.Count%2A>プロパティを 0 にし、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティを空の文字列にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> は読み取り専用です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ClearPropertyDescriptors">
+      <MemberSignature Language="C#" Value="protected void ClearPropertyDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void ClearPropertyDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.ClearPropertyDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションをクリア<see cref="T:System.ComponentModel.PropertyDescriptor" />オブジェクトに関連付けられた<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、[すべての関連付けられたプロパティ記述子をクリア] をデザイナーで使用される、<xref:System.Data.Common.DbConnectionStringBuilder>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.RefreshProperties(System.ComponentModel.RefreshProperties.All)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> に関連付けられた接続文字列を取得または設定します。</summary>
+        <value><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 内に含まれるキーと値のペアから作成された、現在の接続文字列。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティによって保持されているコレクション内に格納されたキー/値ペアのセミコロン区切りのリストが返されます、<xref:System.Data.Common.DbConnectionStringBuilder>です。 各ペアには、キーと等号 (=) で区切られた値が含まれています。 次の例は、一般的な接続文字列を示しています。  
+  
+```  
+"Persist Security Info=False;Integrated Security=SSPI;Initial Catalog=AdventureWorks;Data Source=(local)"  
+```  
+  
+ データ プロバイダーは、特定のキーと接続文字列の各プロパティの値を想定します。 、これらの値は個別に記載されています。 <xref:System.Data.Common.DbConnectionStringBuilder>できますが、それを継承したクラス、クラスがその接続文字列に関連付けられているキー/値ペアを検証できません。  
+  
+ <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>のプロパティ、<xref:System.Data.Common.DbConnectionStringBuilder>クラスは、一般に作成するためのメカニズムとして機能し、等号で区切られたキーと値のペアのセミコロンで区切られた一覧を解析します。 検証なしまたは接続文字列に関するその他のサポートを提供します。 項目を追加する場合、 <xref:System.Data.Common.DbConnectionStringBuilder> 、コレクション、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティ変更が反映されます。 値を代入する場合、 <xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A> 、プロパティ、<xref:System.Data.Common.DbConnectionStringBuilder>セミコロンと等号 (=) の区切り記号を使用して、値の解析を試みます。  
+  
+   
+  
+## Examples  
+ 次の例では、可能な動作、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティです。 例:  
+  
+-   接続文字列を空に 1 つずつ、キー/値ペアを追加作成<xref:System.Data.Common.DbConnectionStringBuilder>です。  
+  
+-   完全な接続文字列を割り当てます、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>のプロパティ、 <xref:System.Data.Common.DbConnectionStringBuilder> 、インスタンス化し、文字列内の 1 つのキー/値ペアを変更します。  
+  
+-   キー/値ペアの任意のセットを割り当てます、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティ (つまり、文字列をリモートで接続文字列のようなものではありません)、値の 1 つを変更します。  
+  
+-   無効な接続文字列を割り当てます、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>にスローされる例外を示すプロパティです。  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.Common.DbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.ConnectionString#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.ConnectionString/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.ConnectionString#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.ConnectionString/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">無効な接続文字列引数が指定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ContainsKey">
+      <MemberSignature Language="C#" Value="public virtual bool ContainsKey (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ContainsKey(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.ContainsKey(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">
+          <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 内で検索されるキー。</param>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> に特定のキーが格納されているかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 、指定したエントリが含まれていますそれ以外のキー<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.ContainsKey#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.ContainsKey/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.ContainsKey#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.ContainsKey/VB/source.vb#1)]  
+  
+ このコードを実行すると、次の出力が生成されます。  
+  
+```  
+Contents of the DbConnectionStringBuilder:  
+provider="Provider=Microsoft.Jet.OLEDB.4.0";data   
+source=C:\MyExcel.xls;extended  
+properties="Excel 8.0;HDR=Yes;IMEX=1"  
+The collection contains the key "Data Source".  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public virtual int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>内に含まれるキーの現在の数を取得、<see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" />プロパティです。</summary>
+        <value>管理されている接続文字列内に含まれるキーの数、<see cref="T:System.Data.Common.DbConnectionStringBuilder" />インスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Data.Common.DbConnectionStringBuilder.Count%2A>前に、と後の両方のプロパティの内容の変更、<xref:System.Data.Common.DbConnectionStringBuilder.ConnectionString%2A>プロパティです。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Count#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Count/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Count#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Count/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EquivalentTo">
+      <MemberSignature Language="C#" Value="public virtual bool EquivalentTo (System.Data.Common.DbConnectionStringBuilder connectionStringBuilder);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool EquivalentTo(class System.Data.Common.DbConnectionStringBuilder connectionStringBuilder) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.EquivalentTo(System.Data.Common.DbConnectionStringBuilder)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="connectionStringBuilder" Type="System.Data.Common.DbConnectionStringBuilder" />
+      </Parameters>
+      <Docs>
+        <param name="connectionStringBuilder"><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> オブジェクトと比較される <see cref="T:System.Data.Common.DbConnectionStringBuilder" />。</param>
+        <summary>この <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> オブジェクトの接続情報を、提供されたオブジェクトの接続情報を比較します。</summary>
+        <returns>
+          <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> オブジェクトの両方の接続情報により同等の接続文字列が生じる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キー名の比較では、大文字小文字を区別します。値の比較では大文字小文字を区別します。  
+  
+ <xref:System.Data.Common.DbConnectionStringBuilder.EquivalentTo%2A>メソッドを返します。`true`キー/値ペアが等しい場合は、順序に関係なく。 順序が接続文字列内で重要ではないために、2 つの接続文字列の接続の動作はそれと同等です。 ただし、別の順序には、接続プールのこれらの接続文字列に基づいて、接続の動作があります。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.EquivalentTo#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.EquivalentTo/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.EquivalentTo#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.EquivalentTo/VB/source.vb#1)]  
+  
+ このサンプルでは、次の出力が表示されます。  
+  
+```  
+builder1 = value1=SomeValue;value2=20;value3=30;value4=40  
+builder2 = value2=20;value3=30;value4=40;value1=SomeValue  
+builder3 = value2=20;value3=30;value4=40;value1=SOMEVALUE  
+builder1.EquivalentTo(builder2) = True  
+builder2.EquivalentTo(builder3) = False  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="protected virtual void GetProperties (System.Collections.Hashtable propertyDescriptors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetProperties(class System.Collections.Hashtable propertyDescriptors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.GetProperties(System.Collections.Hashtable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyDescriptors" Type="System.Collections.Hashtable" />
+      </Parameters>
+      <Docs>
+        <param name="propertyDescriptors"><see cref="T:System.Collections.Hashtable" />これに関する情報を格納する<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</param>
+        <summary>指定された入力<see cref="T:System.Collections.Hashtable" />これのすべてのプロパティに関する情報を含む<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFixedSize">
+      <MemberSignature Language="C#" Value="public virtual bool IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> で固定サイズが使用されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Data.Common.DbConnectionStringBuilder" />が固定サイズです。 それ以外の場合<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 固定サイズのコレクションには、追加またはコレクションが作成された後で既存の要素を変更することは、要素を削除できません。  
+  
+ 固定サイズ コレクションが追加および削除する要素を防止するラッパーを持つコレクションのみそのため、要素を追加または削除を含む、基になるコレクションが変更された場合、固定サイズ コレクションにはそれらの変更が反映されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Data.Common.DbConnectionStringBuilder" /> が読み取り専用かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が読み取り専用の場合は <see cref="T:System.Data.Common.DbConnectionStringBuilder" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用コレクションには、追加、削除、または要素のコレクションを作成したら変更できません。  
+  
+ 読み取り専用コレクションがコレクションの変更を防止するラッパーを持つコレクションのみそのため、基になるコレクションの変更が加えられた、読み取り専用コレクションはそれらの変更を反映します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public virtual object this[string keyword] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(string)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.Item(System.String)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得または設定する項目のキー。</param>
+        <summary>指定されたキーに関連付けられている値を取得または設定します。</summary>
+        <value>指定されたキーに関連付けられている値。 指定したキーが見つからない場合は、null 参照を返しますそれを取得しようとしています (<see langword="Nothing" /> Visual Basic で)、し、指定したキーを使用して、新しい要素を作成するように設定しようとしています。  
+  
+ Null を渡す (<see langword="Nothing" /> Visual Basic で) キーがスローされます、<see cref="T:System.ArgumentNullException" />です。 null 値を割り当てると、キー/値ペアが削除されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定したキーがディクショナリ内に既に存在する場合に、このプロパティを設定すると、値が置換されます。それ以外の場合、新しい要素が作成されます。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーションを作成、新しい<xref:System.Data.Common.DbConnectionStringBuilder>の接続にキー/値ペアを追加して文字列を使用して、<xref:System.Data.Common.DbConnectionStringBuilder.Item%2A>プロパティです。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Item#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Item/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Item#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Item/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.NotSupportedException">プロパティを設定すると、および<see cref="T:System.Data.Common.DbConnectionStringBuilder" />は読み取り専用です。  
+  
+ または  
+  
+ プロパティを設定すると、 <paramref name="keyword" /> 、コレクションに存在しません、<see cref="T:System.Data.Common.DbConnectionStringBuilder" />固定サイズです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Keys">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Keys { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Keys" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.Keys" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内のキーが格納されている <see cref="T:System.Data.Common.DbConnectionStringBuilder" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Collections.ICollection> 内の値の順序は指定されていませんが、<xref:System.Collections.ICollection> プロパティによって返される <xref:System.Data.Common.DbConnectionStringBuilder.Values%2A> 内の関連する値と同じ順序です。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元のキーを逆参照<xref:System.Data.Common.DbConnectionStringBuilder>です。 そのため、変更、<xref:System.Data.Common.DbConnectionStringBuilder>に反映されます、<xref:System.Collections.ICollection>です。  
+  
+   
+  
+## Examples  
+ 次のコンソール アプリケーション例が新たに作成<xref:System.Data.Common.DbConnectionStringBuilder>、いくつかのキーを追加します。 コードがループ、<xref:System.Collections.ICollection>によって返される、<xref:System.Data.Common.DbConnectionStringBuilder.Keys%2A>キー/値を表示するプロパティのペアをし、新しいキーを追加します。 <xref:System.Data.Common.DbConnectionStringBuilder.Keys%2A>プロパティを返します、動的な<xref:System.Collections.ICollection>、2 番目のループには、すべてのキー/値ペアを含む最新の項目が表示されます。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Keys#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Keys/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Keys#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Keys/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public virtual bool Remove (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool Remove(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.Remove(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">この <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 内の接続文字列から削除するキー/値ペアのキー。</param>
+        <summary>指定されたキーを持つエントリを <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> インスタンスから削除します。</summary>
+        <returns>
+          キーが接続文字列内に存在していて削除された場合は <see langword="true" />、キーが存在しなかった場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbConnectionStringBuilder.Remove%2A>メソッドの成功を示す値を返します、キーからキー/値ペアを削除する前に検索する必要はありません、<xref:System.Data.Common.DbConnectionStringBuilder>インスタンス。  
+  
+   
+  
+## Examples  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Remove#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Remove/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Remove#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Remove/VB/source.vb#1)]  
+  
+ このサンプルでは、次の出力が表示されます。  
+  
+```  
+Removed 'Provider'  
+data source=C:\Demo.mdb;jet oledb:system database=system.mdw  
+Unable to remove 'User ID'  
+data source=C:\Demo.mdb;jet oledb:system database=system.mdw  
+Removed 'DATA SOURCE'  
+jet oledb:system database=system.mdw  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> が null (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.NotSupportedException"><see cref="T:System.Data.Common.DbConnectionStringBuilder" />は読み取り専用、または<see cref="T:System.Data.Common.DbConnectionStringBuilder" />のサイズが固定されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerialize">
+      <MemberSignature Language="C#" Value="public virtual bool ShouldSerialize (string keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool ShouldSerialize(string keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.ShouldSerialize(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">
+          <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 内で検索されるキー。</param>
+        <summary>指定されたキーが、この <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> インスタンスに存在するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> 、指定したエントリが含まれていますそれ以外のキー<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの動作は、<xref:System.Data.Common.DbConnectionStringBuilder.ContainsKey%2A> メソッドと同じです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.CopyTo">
+      <MemberSignature Language="C#" Value="void ICollection.CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.ICollection.CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array"><see cref="T:System.Array" /> から要素がコピーされる 1 次元の <see cref="T:System.Collections.ICollection" />。 <see cref="T:System.Array" /> には、0 から始まるインデックス番号が必要です。</param>
+        <param name="index">内の 0 から始まるインデックス<c>配列</c>コピーの開始位置。</param>
+        <summary><see cref="T:System.Collections.ICollection" /> の要素を <see cref="T:System.Array" /> にコピーします。<see cref="T:System.Array" /> の特定のインデックスからコピーが開始されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.Collections.ICollection.CopyTo%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.ICollection.IsSynchronized%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.ICollection> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.ICollection.SyncRoot%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Add">
+      <MemberSignature Language="C#" Value="void IDictionary.Add (object keyword, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IDictionary.Add(object keyword, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Add(System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.Object" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">追加する要素のキーとして使用する <see cref="T:System.Object" />。</param>
+        <param name="value">追加する要素の値として使用する <see cref="T:System.Object" />。</param>
+        <summary>指定したキーおよび値を持つ要素を <see cref="T:System.Collections.IDictionary" /> オブジェクトに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IDictionary> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.Collections.IDictionary.Add%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Contains">
+      <MemberSignature Language="C#" Value="bool IDictionary.Contains (object keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Collections.IDictionary.Contains(object keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyword"><see cref="T:System.Collections.IDictionary" /> オブジェクト内で検索されるキー。</param>
+        <summary>指定したキーを持つ要素が <see cref="T:System.Collections.IDictionary" /> オブジェクトに格納されているかどうかを確認します。</summary>
+        <returns>
+          指定したキーを持つ要素を <see langword="true" /> が保持している場合は <see cref="T:System.Collections.IDictionary" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IDictionary> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.IDictionary.Contains%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IDictionaryEnumerator IDictionary.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IDictionaryEnumerator System.Collections.IDictionary.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionaryEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IDictionaryEnumerator" />オブジェクトに対して、<see cref="T:System.Collections.IDictionary" />オブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IDictionaryEnumerator" /> オブジェクトの <see cref="T:System.Collections.IDictionary" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IDictionary> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.Collections.IDictionary.GetEnumerator%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IDictionary.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IDictionary.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IDictionary.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IDictionary.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Item">
+      <MemberSignature Language="C#" Value="object System.Collections.IDictionary.Item[object keyword] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.IDictionary.Item(object)" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Item(System.Object)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得または設定する要素のキー。</param>
+        <summary>指定したキーを持つ要素を取得または設定します。</summary>
+        <value>指定したキーを持つ要素。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IDictionary> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.Collections.IDictionary.Item%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IDictionary.Remove">
+      <MemberSignature Language="C#" Value="void IDictionary.Remove (object keyword);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Collections.IDictionary.Remove(object keyword) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IDictionary#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">削除する要素のキー。</param>
+        <summary>指定したキーを持つ要素を削除、<see cref="T:System.Collections.IDictionary" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IDictionary> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.Collections.IDictionary.Remove%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IEnumerable.GetEnumerator">
+      <MemberSignature Language="C#" Value="System.Collections.IEnumerator IEnumerable.GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#Collections#IEnumerable#GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションを反復処理する列挙子を返します。</summary>
+        <returns>コレクションを反復処理するために使用できる <see cref="T:System.Collections.IEnumerator" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.Collections.IEnumerable> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.Collections.IEnumerable.GetEnumerator%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetAttributes">
+      <MemberSignature Language="C#" Value="System.ComponentModel.AttributeCollection ICustomTypeDescriptor.GetAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.AttributeCollection System.ComponentModel.ICustomTypeDescriptor.GetAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスのカスタム属性のコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />このオブジェクトの属性を含むです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetAttributes%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetClassName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetClassName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetClassName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetClassName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスのクラス名を返します。</summary>
+        <returns>オブジェクトのクラス名または<see langword="null" />場合は、クラスには、名前がありません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetClassName%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetComponentName">
+      <MemberSignature Language="C#" Value="string ICustomTypeDescriptor.GetComponentName ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.ComponentModel.ICustomTypeDescriptor.GetComponentName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetComponentName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスの名前を返します。</summary>
+        <returns>オブジェクトの名前または<see langword="null" />オブジェクトに名前がない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetComponentName%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetConverter">
+      <MemberSignature Language="C#" Value="System.ComponentModel.TypeConverter ICustomTypeDescriptor.GetConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.TypeConverter System.ComponentModel.ICustomTypeDescriptor.GetConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスの型コンバーターを返します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.TypeConverter" /> 、このオブジェクトのコンバーターであるまたは<see langword="null" />がある場合ありません<see cref="T:System.ComponentModel.TypeConverter" />このオブジェクトにします。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetConverter%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptor ICustomTypeDescriptor.GetDefaultEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetDefaultEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスの既定のイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />このオブジェクトの既定のイベントを表すまたは<see langword="null" />このオブジェクトにイベントがあるない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetDefaultEvent%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptor ICustomTypeDescriptor.GetDefaultProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptor System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetDefaultProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスの既定のプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />このオブジェクトの既定のプロパティを表すまたは<see langword="null" />このオブジェクトにプロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ このメンバーの詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetDefaultProperty%2A>」をご覧ください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEditor">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">A<see cref="T:System.Type" />を表す、このオブジェクトのエディターです。</param>
+        <summary>コンポーネントのこのインスタンスに対して指定されている型のエディターを返します。</summary>
+        <returns><see cref="T:System.Object" />は、このオブジェクトのエディターを指定した型のまたは<see langword="null" />エディターが見つからない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetEditor%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスのイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネント インスタンスのイベントを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetEvents%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetEvents">
+      <MemberSignature Language="C#" Value="System.ComponentModel.EventDescriptorCollection ICustomTypeDescriptor.GetEvents (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetEvents(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetEvents(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>フィルターとして指定された属性配列を使用して、コンポーネントのこのインスタンスのイベントを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />このコンポーネント インスタンスのフィルター選択されたイベントを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetEvents%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コンポーネントのこのインスタンスのプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このコンポーネント インスタンスのプロパティを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetProperties%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetProperties">
+      <MemberSignature Language="C#" Value="System.ComponentModel.PropertyDescriptorCollection ICustomTypeDescriptor.GetProperties (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection System.ComponentModel.ICustomTypeDescriptor.GetProperties(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetProperties(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>属性配列をフィルターとして使用して、コンポーネントのこのインスタンスのプロパティを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このコンポーネント インスタンスのフィルター選択されたプロパティを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetProperties%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner">
+      <MemberSignature Language="C#" Value="object ICustomTypeDescriptor.GetPropertyOwner (System.ComponentModel.PropertyDescriptor pd);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner(class System.ComponentModel.PropertyDescriptor pd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.System#ComponentModel#ICustomTypeDescriptor#GetPropertyOwner(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pd" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="pd">A<see cref="T:System.ComponentModel.PropertyDescriptor" />所有者を検索するプロパティを表すです。</param>
+        <summary>指定したプロパティ記述子によって記述されたプロパティを含むオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />を表す、指定したプロパティの所有者。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Data.Common.DbConnectionStringBuilder> のインスタンスが <xref:System.ComponentModel.ICustomTypeDescriptor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ 詳細については、「<xref:System.ComponentModel.ICustomTypeDescriptor.GetPropertyOwner%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>これに関連付けられている接続文字列を返す<see cref="T:System.Data.Common.DbConnectionStringBuilder" />です。</summary>
+        <returns>現在<see cref="P:System.Data.Common.DbConnectionStringBuilder.ConnectionString" />プロパティです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGetValue">
+      <MemberSignature Language="C#" Value="public virtual bool TryGetValue (string keyword, out object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool TryGetValue(string keyword, [out] object&amp; value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Common.DbConnectionStringBuilder.TryGetValue(System.String,System.Object@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyword" Type="System.String" />
+        <Parameter Name="value" Type="System.Object&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="keyword">取得する項目のキー。</param>
+        <param name="value">対応する値、<c>キー</c>です。</param>
+        <summary>提供されたキーに対応する値をこの <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> から取得します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="keyword" />接続文字列内で見つかった<see langword="false" />それ以外の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue%2A>メソッドにより、開発者からの値を安全に取得、<xref:System.Data.Common.DbConnectionStringBuilder>を最初に呼び出すことがなく、<xref:System.Data.Common.DbConnectionStringBuilder.ContainsKey%2A>メソッドです。 <xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue%2A>例外は発生しませんを呼び出すし、存在しないキーを渡してはその値を取得する前にキーを検索する必要はありません。 呼び出す<xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue%2A>存在しないキーを使用して、null 値に配置されます (`Nothing` Visual Basic で) で、`value`パラメーター。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Data.Common.DbConnectionStringBuilder.TryGetValue%2A>メソッドをいくつかの可能な結果を紹介します。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.TryGetValue#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.TryGetValue/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.TryGetValue#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.TryGetValue/VB/source.vb#1)]  
+  
+ このサンプルを実行すると、次の結果が表示されます。  
+  
+```  
+Provider=sqloledb  
+DATA SOURCE=192.168.168.1,1433  
+Unable to retrieve value for //InvalidKey//  
+Unable to retrieve value for null key.  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyword" /> に null 値 (Visual Basic の場合は <see langword="Nothing" />) が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Values">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.ICollection Values { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ICollection Values" />
+      <MemberSignature Language="DocId" Value="P:System.Data.Common.DbConnectionStringBuilder.Values" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Common</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Collections.ICollection" /> 内の値を格納している <see cref="T:System.Data.Common.DbConnectionStringBuilder" /> を取得します。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> 内の値が格納されている <see cref="T:System.Data.Common.DbConnectionStringBuilder" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値の順序、<xref:System.Collections.ICollection>は指定しませんが、関連付けられているキーと同じ順序、<xref:System.Collections.ICollection>によって返される、<xref:System.Data.Common.DbConnectionStringBuilder.Keys%2A>メソッドです。  
+  
+ 返された<xref:System.Collections.ICollection>静的コピーではありません。 代わりに、、<xref:System.Collections.ICollection>は元の値を逆参照<xref:System.Data.Common.DbConnectionStringBuilder>です。 そのため、変更、<xref:System.Data.Common.DbConnectionStringBuilder>に反映されます、<xref:System.Collections.ICollection>です。  
+  
+   
+  
+## Examples  
+  
+> [!NOTE]
+>  この例には、<xref:System.Data.Common.DbConnectionStringBuilder> による接続文字列の操作方法を示すために、パスワードが含まれています。 実際のアプリケーションでは、Windows 認証を使用することをお勧めします。 パスワードを使用する必要がある場合も、ハードコードされたパスワードをアプリケーションに含めないでください。  
+  
+ [!code-csharp[DataWorks DbConnectionStringBuilder.Values#1](~/samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Values/CS/source.cs#1)]
+ [!code-vb[DataWorks DbConnectionStringBuilder.Values#1](~/samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbConnectionStringBuilder.Values/VB/source.vb#1)]  
+  
+ 次の出力が表示されます。  
+  
+```  
+MSDataShape.1  
+false  
+MSDAORA  
+orac  
+username  
+*******  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

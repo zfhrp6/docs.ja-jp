@@ -1,0 +1,290 @@
+<Type Name="ImageCodecInfo" FullName="System.Drawing.Imaging.ImageCodecInfo">
+  <TypeSignature Language="C#" Value="public sealed class ImageCodecInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ImageCodecInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Imaging.ImageCodecInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Drawing.Imaging.ImageCodecInfo" />クラスには、インストール済みのイメージ エンコーダーおよびデコーダー (コーデックと呼ばれます) に関するすべての関連情報を取得するために必要な記憶域のメンバーとメソッドが用意されています。 継承はできません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ GDI + で保存されたイメージを変換するイメージ エンコーダーを使用して<xref:System.Drawing.Bitmap>さまざまなオブジェクト ファイル形式。 イメージ エンコーダーは、BMP、JPEG、GIF、TIFF、および PNG 形式の場合、GDI + に組み込まれます。 呼び出すときに、エンコーダーが呼び出される、<xref:System.Drawing.Image.Save%2A>または<xref:System.Drawing.Image.SaveAdd%2A>のメソッド、<xref:System.Drawing.Image>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Clsid">
+      <MemberSignature Language="C#" Value="public Guid Clsid { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid Clsid" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.Clsid" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Guid" />特定のコーデックを識別する GUID を格納する構造体。</summary>
+        <value>A<see cref="T:System.Guid" />特定のコーデックを識別する GUID を格納する構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CodecName">
+      <MemberSignature Language="C#" Value="public string CodecName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string CodecName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.CodecName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックの名前を表す文字列を設定します。</summary>
+        <value>コーデックの名前を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DllName">
+      <MemberSignature Language="C#" Value="public string DllName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DllName" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.DllName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックを保持する DLL のパス名を含む文字列を設定します。 このポインターは、コーデックが DLL 内にない場合は、<see langword="null" />です。</summary>
+        <value>コーデックを保持する DLL のパス名を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FilenameExtension">
+      <MemberSignature Language="C#" Value="public string FilenameExtension { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FilenameExtension" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.FilenameExtension" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックで使用されるファイル名拡張子を含む文字列を設定します。 拡張機能は、セミコロンで区切られます。</summary>
+        <value>ファイル名拡張子を格納する文字列は、コーデックで使用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.Drawing.Imaging.ImageCodecFlags Flags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Imaging.ImageCodecFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックに関する追加情報を格納するために使用する 32 ビット値を設定します。 このプロパティを返しますのフラグの組み合わせ、<see cref="T:System.Drawing.Imaging.ImageCodecFlags" />列挙します。</summary>
+        <value>コーデックに関する追加情報を格納するために使用する 32 ビット値です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatDescription">
+      <MemberSignature Language="C#" Value="public string FormatDescription { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FormatDescription" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.FormatDescription" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックのファイル形式を説明する文字列を設定します。</summary>
+        <value>コーデックのファイル形式を説明する文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FormatID">
+      <MemberSignature Language="C#" Value="public Guid FormatID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid FormatID" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.FormatID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Guid" />コーデックの形式を識別する GUID を格納する構造体。</summary>
+        <value>A<see cref="T:System.Guid" />コーデックの形式を識別する GUID を格納する構造体。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImageDecoders">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.ImageCodecInfo[] GetImageDecoders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.ImageCodecInfo[] GetImageDecoders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageCodecInfo.GetImageDecoders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列を返します<see cref="T:System.Drawing.Imaging.ImageCodecInfo" />GDI + に組み込まれているイメージ デコーダーに関する情報を含むオブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Imaging.ImageCodecInfo" /> オブジェクトの配列。 各<see cref="T:System.Drawing.Imaging.ImageCodecInfo" />配列内のオブジェクトには、組み込みイメージ デコーダーのいずれかに関する情報が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例については、「<xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetImageEncoders">
+      <MemberSignature Language="C#" Value="public static System.Drawing.Imaging.ImageCodecInfo[] GetImageEncoders ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Drawing.Imaging.ImageCodecInfo[] GetImageEncoders() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Imaging.ImageCodecInfo[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>配列を返します<see cref="T:System.Drawing.Imaging.ImageCodecInfo" />GDI + に組み込まれているイメージ エンコーダーに関する情報を含むオブジェクト。</summary>
+        <returns><see cref="T:System.Drawing.Imaging.ImageCodecInfo" /> オブジェクトの配列。 各<see cref="T:System.Drawing.Imaging.ImageCodecInfo" />配列内のオブジェクトには、組み込みのイメージ エンコーダーのいずれかに関する情報が含まれています。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は Windows フォームで使用するために設計され、必要があります<xref:System.Windows.Forms.PaintEventArgs>`e`はのパラメーターである、<xref:System.Windows.Forms.Control.Paint>イベント ハンドラー。 コードを使用して、<xref:System.Drawing.Imaging.ImageCodecInfo.GetImageEncoders%2A>をすべてインストールされているイメージ エンコーダーおよびイメージ コーデックのすべてのコーデック情報を取得する方法とし、各コーデックに関するすべての情報を画面に描画します。  
+  
+ [!code-cpp[System.Drawing.Imaging.ClassicImageCodecExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Imaging.ClassicImageCodecExample/cpp/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Imaging.ClassicImageCodecExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Imaging.ClassicImageCodecExample/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Imaging.ClassicImageCodecExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Imaging.ClassicImageCodecExample/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MimeType">
+      <MemberSignature Language="C#" Value="public string MimeType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string MimeType" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.MimeType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックの Multipurpose Internet Mail Extensions (MIME) の種類を含む文字列を設定します。</summary>
+        <value>コーデックの Multipurpose Internet Mail Extensions (MIME) の型を表す文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignatureMasks">
+      <MemberSignature Language="C#" Value="public byte[][] SignatureMasks { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[][] SignatureMasks" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.SignatureMasks" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[][]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の 2 次元の配列をフィルターとして使用できるバイトです。</summary>
+        <value>2 次元の配列をフィルターとして使用できるバイトです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SignaturePatterns">
+      <MemberSignature Language="C#" Value="public byte[][] SignaturePatterns { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8[][] SignaturePatterns" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.SignaturePatterns" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[][]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 の設定を取得またはコーデックの署名を表すバイトの次元の配列。</summary>
+        <value>2 次元コーデックの署名を表すバイト配列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public int Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Version" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Imaging.ImageCodecInfo.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはコーデックのバージョン番号を設定します。</summary>
+        <value>コーデックのバージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

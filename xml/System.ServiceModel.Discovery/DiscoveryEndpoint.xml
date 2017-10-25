@@ -1,0 +1,180 @@
+<Type Name="DiscoveryEndpoint" FullName="System.ServiceModel.Discovery.DiscoveryEndpoint">
+  <TypeSignature Language="C#" Value="public class DiscoveryEndpoint : System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DiscoveryEndpoint extends System.ServiceModel.Description.ServiceEndpoint" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Discovery.DiscoveryEndpoint" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Description.ServiceEndpoint</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>標準探索エンドポイント。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryEndpoint ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpoint.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Discovery.DiscoveryEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryVersion%2A> は <xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscoveryApril2005> に、<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A> は <xref:System.ServiceModel.Discovery.DiscoveryMode.Managed> に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryEndpoint (System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress endpointAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress endpointAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpoint.#ctor(System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="endpointAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="binding">バインディング。</param>
+        <param name="endpointAddress">エンドポイント アドレス。</param>
+        <summary>指定されたバインディングとエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.Discovery.DiscoveryEndpoint" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryVersion%2A> は <xref:System.ServiceModel.Discovery.DiscoveryVersion.WSDiscoveryApril2005%2A> に、<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode%2A> は <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode.Managed> に設定されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, System.ServiceModel.Discovery.ServiceDiscoveryMode discoveryMode);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, valuetype System.ServiceModel.Discovery.ServiceDiscoveryMode discoveryMode) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion,System.ServiceModel.Discovery.ServiceDiscoveryMode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+        <Parameter Name="discoveryMode" Type="System.ServiceModel.Discovery.ServiceDiscoveryMode" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">列挙値は、WS-Discovery プロトコルにいずれかのバージョンを表現しています。</param>
+        <param name="discoveryMode">列挙値は、探索メッセージの送付に使用されるいずれかのモードを表現しています。</param>
+        <summary>指定された探索バージョンとモードを使用して、<see cref="T:System.ServiceModel.Discovery.DiscoveryEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiscoveryEndpoint (System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, System.ServiceModel.Discovery.ServiceDiscoveryMode discoveryMode, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress endpointAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.Discovery.DiscoveryVersion discoveryVersion, valuetype System.ServiceModel.Discovery.ServiceDiscoveryMode discoveryMode, class System.ServiceModel.Channels.Binding binding, class System.ServiceModel.EndpointAddress endpointAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Discovery.DiscoveryEndpoint.#ctor(System.ServiceModel.Discovery.DiscoveryVersion,System.ServiceModel.Discovery.ServiceDiscoveryMode,System.ServiceModel.Channels.Binding,System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="discoveryVersion" Type="System.ServiceModel.Discovery.DiscoveryVersion" />
+        <Parameter Name="discoveryMode" Type="System.ServiceModel.Discovery.ServiceDiscoveryMode" />
+        <Parameter Name="binding" Type="System.ServiceModel.Channels.Binding" />
+        <Parameter Name="endpointAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="discoveryVersion">列挙値は、WS-Discovery プロトコルにいずれかのバージョンを表現しています。</param>
+        <param name="discoveryMode">列挙値は、探索メッセージの送付に使用されるいずれかのモードを表現しています。</param>
+        <param name="binding">クライアントとサービスの間の通信に使用するプロトコル、トランスポート、およびメッセージ エンコーダーを指定するバインド要素。</param>
+        <param name="endpointAddress">探索エンドポイントの一意なアドレス。</param>
+        <summary>指定された探索バージョン、モード、バインディング、およびエンドポイント アドレスを使用して、<see cref="T:System.ServiceModel.Discovery.DiscoveryEndpoint" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoveryMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.ServiceDiscoveryMode DiscoveryMode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Discovery.ServiceDiscoveryMode DiscoveryMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.ServiceDiscoveryMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントの <see cref="P:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode" /> を取得します。</summary>
+        <value><see cref="P:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryMode" /> 列挙値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 探索は、アドホックまたはマネージのいずれかのモードで実行できます。 [!INCLUDE[crdefault](~/includes/crdefault-md.md)][WCF Discovery の概要](~/docs/framework/wcf/feature-details/wcf-discovery-overview.md)  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscoveryVersion">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Discovery.DiscoveryVersion DiscoveryVersion" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryEndpoint.DiscoveryVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Discovery.DiscoveryVersion</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>エンドポイントの <see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> を取得します。</summary>
+        <value><see cref="T:System.ServiceModel.Discovery.DiscoveryVersion" /> 列挙値のいずれか。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxResponseDelay">
+      <MemberSignature Language="C#" Value="public TimeSpan MaxResponseDelay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan MaxResponseDelay" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Discovery.DiscoveryEndpoint.MaxResponseDelay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Discovery</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>上限を設定または取得<see cref="T:System.TimeSpan" />内のすべてで、<see langword="ProbeMatches" />プローブに応答するサービスの操作が送信されます。</summary>
+        <value>A<see cref="T:System.TimeSpan" />内のすべてで最大期間を格納しているインスタンス、<see langword="ProbeMatches" />プローブに応答するサービスの操作が送信されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、<xref:System.TimeSpan>すべてする時間間隔を指定する`ProbeMatches`単一のプローブに応答するサービスの操作が送信されます。 すべて`ProbeMatches`ネットワーク ストームが発生する、同時に送信されます。 これが発生していることを防ぐために`ProbeMatches`各 probematch ランダム遅延で送信されます。 このランダムな遅延は、0 と <xref:System.ServiceModel.Discovery.DiscoveryEndpoint.MaxResponseDelay%2A> の範囲にあります。 場合<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.MaxResponseDelay%2A>を 0 に設定されている、`ProbeMatches`メッセージ ループの待機時間なしで送信されます。 それ以外の場合、`ProbeMatches`メッセージはランダムな時間にこのようなすべての送信にかかる時間の合計を`ProbeMatches`メッセージを超えない、<xref:System.ServiceModel.Discovery.DiscoveryEndpoint.MaxResponseDelay%2A>です。 この値はサービスのみに関連するもので、クライアントが使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

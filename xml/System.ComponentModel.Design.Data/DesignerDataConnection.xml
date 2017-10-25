@@ -1,0 +1,183 @@
+<Type Name="DesignerDataConnection" FullName="System.ComponentModel.Design.Data.DesignerDataConnection">
+  <TypeSignature Language="C#" Value="public sealed class DesignerDataConnection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DesignerDataConnection extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.Data.DesignerDataConnection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン ツールでデータ ストアへの接続を表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクトは、デザイン ツールでデータ ストアへの接続を表します。 通常、<xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクトがの一部として返される、<xref:System.ComponentModel.Design.Data.IDataEnvironment.Connections%2A>プロパティは、アプリケーションの構成ファイルを読み取ることによって、または呼び出すことによって作成および、<xref:System.ComponentModel.Design.Data.IDataEnvironment.BuildConnection%2A>メソッドです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerDataConnection (string name, string providerName, string connectionString);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string providerName, string connectionString) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.DesignerDataConnection.#ctor(System.String,System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">この接続に関連付けられている名前です。</param>
+        <param name="providerName">基になるデータ ストアへのアクセスに使用するプロバイダー オブジェクトの名前</param>
+        <param name="connectionString">データ ストアに接続する方法を指定する文字列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />クラスを指定した名前、データ プロバイダー、および接続文字列を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使って作成<xref:System.ComponentModel.Design.Data.DesignerDataConnection>いないアプリケーションの構成ファイルから作成されるオブジェクト。 このコンス トラクターを使用すると、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>プロパティに設定されている`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignerDataConnection (string name, string providerName, string connectionString, bool isConfigured);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, string providerName, string connectionString, bool isConfigured) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.Data.DesignerDataConnection.#ctor(System.String,System.String,System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="providerName" Type="System.String" />
+        <Parameter Name="connectionString" Type="System.String" />
+        <Parameter Name="isConfigured" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">この接続に関連付けられている名前です。</param>
+        <param name="providerName">基になるデータ ストアへのアクセスに使用するプロバイダー オブジェクトの名前。</param>
+        <param name="connectionString">データ ストアに接続する方法を指定する文字列。</param>
+        <param name="isConfigured">
+          <see langword="true" />アプリケーションの構成ファイルに格納されている情報から、接続が作成されたを示すためにそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.Design.Data.DesignerDataConnection" />クラスの指定した名前、データ プロバイダー、および接続文字列を使用して、接続が構成ファイルから読み込まれたかどうかを示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値を指定する必要がある場合は、このコンス トラクターを使用して、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>プロパティを作成する場合など、<xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクトについては、アプリケーションの構成ファイルに格納されているからです。 <xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>の値に設定されて、`isConfigured`パラメーター。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConnectionString">
+      <MemberSignature Language="C#" Value="public string ConnectionString { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConnectionString" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataConnection.ConnectionString" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続に対して定義されているアプリケーションの接続文字列を取得します。</summary>
+        <value>接続に対して定義されているアプリケーションの接続文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataConnection.ConnectionString%2A>プロパティには、データ ストアに接続するため、アプリケーションによって使用される接続文字列が含まれています。 使用する必要があります、<xref:System.ComponentModel.Design.Data.IDataEnvironment.GetDesignTimeConnection%2A?displayProperty=nameWithType>をデザイン環境での使用に適した接続文字列を返すメソッド。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsConfigured">
+      <MemberSignature Language="C#" Value="public bool IsConfigured { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsConfigured" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続情報がアプリケーションの構成ファイルであるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />接続が、アプリケーションの構成ファイルで定義されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>プロパティになります`true`場合、<xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクトは、アプリケーションの構成ファイルから読み取られた場合、または、<xref:System.ComponentModel.Design.Data.DesignerDataConnection>オブジェクトにして、アプリケーションの構成ファイルに書き込んだ、<xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ときに、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>は`true`、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name%2A>プロパティが、接続の名前で定義されている、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de)構成ファイルのです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataConnection.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ接続の名前を取得します。</summary>
+        <value>データ接続の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name%2A>プロパティには、アプリケーション構成ファイルまたはデータ接続の一覧で特定の接続を識別する名前が含まれています。 ときに、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.IsConfigured%2A>プロパティは`true`、<xref:System.ComponentModel.Design.Data.DesignerDataConnection.Name%2A>プロパティとして使用、`name`属性、 [connectionStrings 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/b6ffbb2e-a4d1-410e-8f7e-9755e92c65de)構成要素、またはから返される、<xref:System.ComponentModel.Design.Data.IDataEnvironment.ConfigureConnection%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderName">
+      <MemberSignature Language="C#" Value="public string ProviderName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProviderName" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.Data.DesignerDataConnection.ProviderName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>基になるデータ ストアにアクセスするために使用するプロバイダーの名前を取得します。</summary>
+        <value>基になるデータ ストアへのアクセスに使用するプロバイダーの名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

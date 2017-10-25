@@ -1,0 +1,79 @@
+<Type Name="PenLineJoin" FullName="System.Windows.Media.PenLineJoin">
+  <TypeSignature Language="C#" Value="public enum PenLineJoin" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PenLineJoin extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.PenLineJoin" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>2 つの直線または線分を結合する図形をについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、図形の頂点で使用されるいくつかの異なる結合を示します。  
+  
+ [!code-xaml[drawingwithshapeelements#PolylineExample1](~/samples/snippets/csharp/VS_Snippets_Wpf/DrawingWithShapeElements/CS/polylineexample.xaml#polylineexample1)]  
+  
+ 次の図は、別の行の結合を示します。  
+  
+ ![線の結合の例です。](~/add/media/graphicslinejoins.png "線の結合の例です。")  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Bevel">
+      <MemberSignature Language="C#" Value="Bevel" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.PenLineJoin Bevel = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.PenLineJoin.Bevel" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineJoin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ベベルの頂点。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Miter">
+      <MemberSignature Language="C#" Value="Miter" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.PenLineJoin Miter = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.PenLineJoin.Miter" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineJoin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>正規の角度の頂点です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Round">
+      <MemberSignature Language="C#" Value="Round" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Media.PenLineJoin Round = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.PenLineJoin.Round" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PenLineJoin</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>丸みのある頂点です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

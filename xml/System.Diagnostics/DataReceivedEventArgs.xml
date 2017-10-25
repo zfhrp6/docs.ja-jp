@@ -1,0 +1,95 @@
+<Type Name="DataReceivedEventArgs" FullName="System.Diagnostics.DataReceivedEventArgs">
+  <TypeSignature Language="C#" Value="public class DataReceivedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataReceivedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.DataReceivedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Diagnostics.Process</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Diagnostics.Process.OutputDataReceived" /> イベントおよび <see cref="E:System.Diagnostics.Process.ErrorDataReceived" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リダイレクトされたを非同期的に収集する<xref:System.Diagnostics.Process.StandardOutput%2A>または<xref:System.Diagnostics.Process.StandardError%2A>ストリームは、プロセスの出力ストリームのリダイレクトされた出力イベントを処理するメソッドを作成する必要があります。 イベント ハンドラー メソッドは、プロセスがリダイレクトされたストリームに書き込むときに呼び出されます。 イベントのデリゲートのインスタンスと、イベント ハンドラーを呼び出す<xref:System.Diagnostics.DataReceivedEventArgs>です。 <xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティには、プロセスは、リダイレクトされたストリームに書き込んだテキスト行が含まれています。  
+  
+   
+  
+## Examples  
+ 次のコード例は、リダイレクトされたで、非同期読み取り操作を実行する方法を示しています。<xref:System.Diagnostics.Process.StandardOutput%2A>のストリーム、`sort`コマンド。 `sort`コマンドは、コンソール アプリケーションを読み取り、テキスト入力を並べ替えています。  
+  
+ 例では、イベント デリゲートを作成する、`SortOutputHandler`イベント ハンドラーに関連付けますと、<xref:System.Diagnostics.Process.OutputDataReceived>イベント。 イベント ハンドラーは、テキストの行からリダイレクトされた<xref:System.Diagnostics.Process.StandardOutput%2A>ストリームは、テキストを書式化して、画面にテキストを書き込みます。  
+  
+ [!code-cpp[Process_AsyncStreams#1](~/samples/snippets/cpp/VS_Snippets_CLR/process_asyncstreams/CPP/sort_async.cpp#1)]
+ [!code-csharp[Process_AsyncStreams#1](~/samples/snippets/csharp/VS_Snippets_CLR/process_asyncstreams/CS/sort_async.cs#1)]
+ [!code-vb[Process_AsyncStreams#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/process_asyncstreams/VB/sort_async.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="public string Data { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Data" />
+      <MemberSignature Language="DocId" Value="P:System.Diagnostics.DataReceivedEventArgs.Data" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Diagnostics.Process</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>書き込まれた文字の行を取得する、リダイレクトされた<see cref="T:System.Diagnostics.Process" />出力ストリーム。</summary>
+        <value>書き込まれた行によって、関連付けられている<see cref="T:System.Diagnostics.Process" />、リダイレクトされたに<see cref="P:System.Diagnostics.Process.StandardOutput" />または<see cref="P:System.Diagnostics.Process.StandardError" />ストリーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リダイレクトするときに、<xref:System.Diagnostics.Process.StandardOutput%2A>または<xref:System.Diagnostics.Process.StandardError%2A>のストリーム、 <xref:System.Diagnostics.Process> 、イベント ハンドラーにイベントが、プロセスは、リダイレクトされたストリームに行を書き込むたびに発生します。 <xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティは、行を<xref:System.Diagnostics.Process>リダイレクトされた出力ストリームに書き込みました。 イベント ハンドラーを使用できる、<xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティをプロセスの出力をフィルター処理または別の場所に出力を書き込みます。 たとえば、指定されたエラー ログ ファイルにすべてのエラー出力の行を格納するイベント ハンドラーを作成する場合があります。  
+  
+ 行は、一連の文字が続く改行 ("\n") または行の直後にキャリッジ リターンが ("\r\n") をフィードとして定義されます。 改行文字は、既定のシステム ANSI コード ページを使用してエンコードされます。 <xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティが終端のキャリッジ リターンを含めるまたは改行していません。  
+  
+ リダイレクトされたストリームが閉じている場合、null の行は、イベント ハンドラーに送信されます。 イベント ハンドラーのチェックを確認してください、<xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>プロパティにアクセスする前に適切にします。 たとえば、静的メソッドを使用することができます<xref:System.String.IsNullOrEmpty%2A?displayProperty=nameWithType>を検証する、<xref:System.Diagnostics.DataReceivedEventArgs.Data%2A>イベント ハンドラーのプロパティです。  
+  
+   
+  
+## Examples  
+ 次のコード例に関連付けられている単純なイベント ハンドラーを示しています、<xref:System.Diagnostics.Process.OutputDataReceived>イベント。 イベント ハンドラーは、テキストの行からリダイレクトされた<xref:System.Diagnostics.Process.StandardOutput%2A>ストリームは、テキストを書式化して、画面にテキストを書き込みます。  
+  
+ [!code-cpp[Process_AsyncStreams#4](~/samples/snippets/cpp/VS_Snippets_CLR/process_asyncstreams/CPP/datareceivedevent.cpp#4)]
+ [!code-csharp[Process_AsyncStreams#4](~/samples/snippets/csharp/VS_Snippets_CLR/process_asyncstreams/CS/datareceivedevent.cs#4)]
+ [!code-vb[Process_AsyncStreams#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/process_asyncstreams/VB/datareceivedevent.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

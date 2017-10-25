@@ -1,0 +1,143 @@
+<Type Name="DragDropEffects" FullName="System.Windows.Forms.DragDropEffects">
+  <TypeSignature Language="C#" Value="public enum DragDropEffects" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DragDropEffects extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.DragDropEffects" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ドラッグ アンド ドロップ操作の効果を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この列挙は、次のクラスによって使用: <xref:System.Windows.Forms.DragEventArgs>、 <xref:System.Windows.Forms.GiveFeedbackEventArgs>、および<xref:System.Windows.Forms.Control>です。  
+  
+ 使用することができます<xref:System.Windows.Forms.DragDropEffects>をドラッグ アンド ドロップの操作用の別のマウス ポインターを表示します。 コピーのドラッグ アンド ドロップ操作で移動のドラッグ アンド ドロップ操作の矢印のシンボルのプラス記号を表示するなど、線が引かの付いた赤い丸が none の場合はシンボル ドラッグ アンド ドロップします。  
+  
+ 現在表示されていないターゲットの位置にあるデータを削除する場合は、ドラッグするときに、ターゲットをスクロールする可能性があります。 ターゲットがスクロールをサポートしていない場合は、ドラッグ アンド ドロップ操作を開始する前にドロップ位置がターゲットに表示されることを確認の操作を行う必要があります。 次に示しますターゲットをスクロールする場合のいくつかのシナリオを。  
+  
+-   ドキュメントにテキストをドラッグして、ドキュメント ウィンドウに表示されていない位置でテキストを削除します。  
+  
+-   ファイルをドラッグすると、ファイル ツリーにし、ファイル ツリーに表示されていないノード上のファイルを削除します。  
+  
+   
+  
+## Examples  
+ このコード例では、<xref:System.Windows.Forms.DragDropEffects.Copy>列挙型、ユーザーがドロップ ターゲット上、ドラッグ アンド ドロップ操作中にマウスを動かしたときにします。 このコード例に示されている例の一部である、<xref:System.Windows.Forms.Control.DoDragDrop%2A>のメソッド、<xref:System.Windows.Forms.Control>クラスです。 参照してください、<xref:System.Windows.Forms.Control.DoDragDrop%2A>完全なコード例のメソッドです。  
+  
+ [!code-cpp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CPP/form1.cpp#4)]
+ [!code-csharp[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.Control.DoDragDrop#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.Control.DoDragDrop/VB/form1.vb#4)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects All = int32(-2147483645)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.All" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>組み合わせ、 <see cref="F:System.Windows.DragDropEffects.Copy" />、 <see cref="F:System.Windows.Forms.DragDropEffects.Move" />、および<see cref="F:System.Windows.Forms.DragDropEffects.Scroll" />効果。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="Copy" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects Copy = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.Copy" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップ ターゲットに、ドラッグ ソースからデータがコピーされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Link">
+      <MemberSignature Language="C#" Value="Link" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects Link = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.Link" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ ソースからのデータは、ドロップ ターゲットにリンクされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="Move" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects Move = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.Move" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドラッグ ソースからのデータは、ドロップ ターゲットに移動されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects None = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドロップ ターゲットでは、データは受け入れられません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Scroll">
+      <MemberSignature Language="C#" Value="Scroll" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Forms.DragDropEffects Scroll = int32(-2147483648)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.DragDropEffects.Scroll" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.DragDropEffects</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ターゲットは、ターゲットに現在表示されていないドロップ位置にドラッグするときにスクロールできます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

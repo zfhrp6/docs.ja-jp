@@ -1,0 +1,105 @@
+<Type Name="TreeNodeEventArgs" FullName="System.Web.UI.WebControls.TreeNodeEventArgs">
+  <TypeSignature Language="C#" Value="public sealed class TreeNodeEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TreeNodeEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.TreeNodeEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、 <see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeCheckChanged" />、 <see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeCollapsed" />、 <see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeDataBound" />、 <see cref="E:System.Web.UI.WebControls.TreeView.TreeNodeExpanded" />、および<see cref="E:System.Web.UI.WebControls.TreeView.TreeNodePopulate" />のイベント、<see cref="T:System.Web.UI.WebControls.TreeView" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.TreeNodeEventArgs>イベント処理メソッドに渡されたイベント データを格納するクラスを使用します。  
+  
+ インスタンスの初期プロパティ値の一覧については、<xref:System.Web.UI.WebControls.TreeNodeEventArgs>クラスを参照してください<xref:System.Web.UI.WebControls.TreeNodeEventArgs.%23ctor%28System.Web.UI.WebControls.TreeNode%29>です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して動的にノードを作成する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeEventArgs>イベント処理メソッドに渡されるオブジェクト。  
+  
+ [!code-aspx-csharp[TreeViewPopulateNodesFromClient#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/CS/treeviewpopulatenodesfromclientcs.aspx#1)]
+ [!code-aspx-vb[TreeViewPopulateNodesFromClient#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewPopulateNodesFromClient/VB/treeviewpopulatenodesfromclientvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TreeNodeEventArgs (System.Web.UI.WebControls.TreeNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Web.UI.WebControls.TreeNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.TreeNodeEventArgs.#ctor(System.Web.UI.WebControls.TreeNode)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="node" Type="System.Web.UI.WebControls.TreeNode" />
+      </Parameters>
+      <Docs>
+        <param name="node">A<see cref="T:System.Web.UI.WebControls.TreeNode" />イベントが発生したときに、現在のノードを表すです。</param>
+        <summary>指定した <see cref="T:System.Web.UI.WebControls.TreeNode" /> オブジェクトを使用して、<see cref="T:System.Web.UI.WebControls.TreeNodeEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeEventArgs.%23ctor%2A>作成しの新しいインスタンスを初期化するコンス トラクター、<xref:System.Web.UI.WebControls.TreeNodeEventArgs>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.WebControls.TreeNodeEventArgs.%23ctor%2A>イベントを発生させるときに、主にコントロールの開発者によってコンス トラクターを使用します。  
+  
+ 次の表のインスタンスの初期プロパティ値、<xref:System.Web.UI.WebControls.TreeNodeEventArgs>クラスです。  
+  
+|プロパティ|初期値|  
+|--------------|-------------------|  
+|<xref:System.Web.UI.WebControls.TreeNodeEventArgs.Node%2A>|<xref:System.Web.UI.WebControls.TreeNode>に含まれている`node`です。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Node">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.TreeNode Node { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.TreeNode Node" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.TreeNodeEventArgs.Node" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.TreeNode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを発生させたノードを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.TreeNode" />イベントを発生させたノードを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.TreeNodeEventArgs.Node%2A>イベントを発生させたノードのプロパティにアクセスするプロパティです。 <xref:System.Web.UI.WebControls.TreeNodeEventArgs.Node%2A>プロパティから返される、<xref:System.Web.UI.WebControls.TreeNode>オブジェクトし、ノードのプロパティを変更するか、子ノードを動的に追加するノードの内容を判断に一般的に使用します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.UI.WebControls.TreeNodeEventArgs.Node%2A>展開されたノードのテキスト値を決定するプロパティです。  
+  
+ [!code-aspx-csharp[TreeViewTreeNodeExpand#1](~/samples/snippets/csharp/VS_Snippets_WebNet/TreeViewTreeNodeExpand/CS/treeviewtreenodeexpandcs.aspx#1)]
+ [!code-aspx-vb[TreeViewTreeNodeExpand#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/TreeViewTreeNodeExpand/VB/treeviewtreenodeexpandvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

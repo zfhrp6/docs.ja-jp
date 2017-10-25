@@ -1,0 +1,202 @@
+<Type Name="StringFormatFlags" FullName="System.Drawing.StringFormatFlags">
+  <TypeSignature Language="C#" Value="public enum StringFormatFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed StringFormatFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.StringFormatFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキスト文字列の表示およびレイアウト情報を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.StringFormatFlags>によって使用される、<xref:System.Drawing.StringFormat>クラスです。  
+  
+> [!NOTE]
+>  FitBlackBox フィールドが誤った名前が付いてし、その動作がに似ていますが、`NoFitBlackBox`フィールドで元の GDI + の実装です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、次のメンバーを示しています。  
+  
+-   <xref:System.Drawing.Rectangle.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.%23ctor%2A>  
+  
+-   <xref:System.Drawing.StringFormat.Alignment%2A>  
+  
+-   <xref:System.Drawing.StringFormat.LineAlignment%2A>  
+  
+-   <xref:System.Drawing.StringAlignment>  
+  
+-   <xref:System.Drawing.StringFormatFlags>  
+  
+ この例は、Windows フォームで使用するよう設計されています。 フォームと呼び出しにコードを貼り付けます、`ShowLineAndAlignment`メソッドは、フォームの処理と<xref:System.Windows.Forms.Control.Paint>イベント、渡す`e`として<xref:System.Windows.Forms.PaintEventArgs>です。  
+  
+ [!code-cpp[System.Drawing.Misc2#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Drawing.Misc2/CPP/form1.cpp#1)]
+ [!code-csharp[System.Drawing.Misc2#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Drawing.Misc2/CS/form1.cs#1)]
+ [!code-vb[System.Drawing.Misc2#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Misc2/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DirectionRightToLeft">
+      <MemberSignature Language="C#" Value="DirectionRightToLeft" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags DirectionRightToLeft = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.DirectionRightToLeft" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキストが右から左に表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectionVertical">
+      <MemberSignature Language="C#" Value="DirectionVertical" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags DirectionVertical = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.DirectionVertical" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>垂直方向のテキストを配置します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayFormatControl">
+      <MemberSignature Language="C#" Value="DisplayFormatControl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags DisplayFormatControl = int32(32)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.DisplayFormatControl" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>左から右へマークなどの制御文字は、代表的なグリフの出力に表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="FitBlackBox">
+      <MemberSignature Language="C#" Value="FitBlackBox" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags FitBlackBox = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.FitBlackBox" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>文字列のレイアウト四角形にオーバー ハングできるは、文字の一部です。 既定では、文字はすべてオーバー ハングを避けるために位置を変更します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="LineLimit">
+      <MemberSignature Language="C#" Value="LineLimit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags LineLimit = int32(8192)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.LineLimit" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>全体の行のみが書式設定の四角形にレイアウトされます。 既定では、レイアウトは、または行がないクリッピング、どちらか早い方の結果として表示されるまで、テキストの末尾まで続きます。 既定の設定が、行の高さの整数倍ではない書式の四角形で部分的に重なって見えにくいに最後の行を許可することに注意してください。 行全体を表示するためには、この値を指定し、1 行の高さには、少なくともの高さの書式設定、四角形を使用してください。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MeasureTrailingSpaces">
+      <MemberSignature Language="C#" Value="MeasureTrailingSpaces" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags MeasureTrailingSpaces = int32(2048)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.MeasureTrailingSpaces" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>各行の末尾には、後続のスペースが含まれます。 既定では、境界四角形がによって返される、<see cref="Overload:System.Drawing.Graphics.MeasureString" />メソッドは、各行の末尾にスペースを除外します。 測定にその領域を含めるには、このフラグを設定します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoClip">
+      <MemberSignature Language="C#" Value="NoClip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags NoClip = int32(16384)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.NoClip" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>突出部、グリフと書式設定の四角形の外側に到達するラップ解除されたテキストの表示を許可します。 既定では、書式設定の四角形の外側に到達するすべてのテキストとグリフの部分がクリッピングされます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFontFallback">
+      <MemberSignature Language="C#" Value="NoFontFallback" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags NoFontFallback = int32(1024)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.NoFontFallback" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求されたフォントでサポートされない文字の代替フォントにフォールバックを無効になります。 任意の文字がない場合は、通常空白の正方形のグリフの欠落したフォントで表示されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoWrap">
+      <MemberSignature Language="C#" Value="NoWrap" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.StringFormatFlags NoWrap = int32(4096)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.StringFormatFlags.NoWrap" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.StringFormatFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>四角形内で書式設定が無効になっている行のテキストの折り返しです。 このフラグは、四角形ではなく、ポイントが渡される場合、または指定した四角形に長さゼロの行は暗黙的です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

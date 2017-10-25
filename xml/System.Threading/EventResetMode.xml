@@ -1,0 +1,101 @@
+<Type Name="EventResetMode" FullName="System.Threading.EventResetMode">
+  <TypeSignature Language="C#" Value="public enum EventResetMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EventResetMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.EventResetMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>示すかどうか、<see cref="T:System.Threading.EventWaitHandle" />シグナルを受信した後は自動または手動でリセットします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Threading.WaitHandle.SignalAndWait%28System.Threading.WaitHandle%2CSystem.Threading.WaitHandle%29>メイン スレッドをブロックされたスレッドを通知し、スレッドがタスクを完了するまで待機を許可するメソッドのオーバー ロードします。  
+  
+ 例では、5 つのスレッドを開始しをブロックすることができます、<xref:System.Threading.EventWaitHandle>ユーザーが ENTER キーを押したリリース 1 つのスレッドにしを持つ自動リセット フラグを作成します。 例は、別の 5 つのスレッド キューに配置し、すべてを使用して、解放、 <xref:System.Threading.EventWaitHandle> ManualReset フラグを作成します。  
+  
+ [!code-cpp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/CS/source.cs#1)]
+ [!code-vb[System.Threading.WaitHandle.SignalAndWait#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.WaitHandle.SignalAndWait/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AutoReset">
+      <MemberSignature Language="C#" Value="AutoReset" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.EventResetMode AutoReset = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.EventResetMode.AutoReset" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.EventResetMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シグナルを受け取ると、 <see cref="T:System.Threading.EventWaitHandle" /> 1 つのスレッドを解放した後に自動的にリセットします。 スレッドが待機していない場合、<see cref="T:System.Threading.EventWaitHandle" />スレッドがブロックされるまでシグナル状態のままし、スレッドを解放すた後リセットします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ManualReset">
+      <MemberSignature Language="C#" Value="ManualReset" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Threading.EventResetMode ManualReset = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Threading.EventResetMode.ManualReset" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.EventResetMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シグナルを受け取ると、<see cref="T:System.Threading.EventWaitHandle" />待機中のすべてのスレッドを解放し、これは手動でリセットされるまで、シグナル状態のままです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

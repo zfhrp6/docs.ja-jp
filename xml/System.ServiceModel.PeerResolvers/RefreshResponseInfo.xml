@@ -1,0 +1,128 @@
+<Type Name="RefreshResponseInfo" FullName="System.ServiceModel.PeerResolvers.RefreshResponseInfo">
+  <TypeSignature Language="C#" Value="public class RefreshResponseInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit RefreshResponseInfo extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.PeerResolvers.RefreshResponseInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ServiceModel.MessageContract(IsWrapped=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ピア リゾルバーでの登録ルックアップ テーブル更新操作の結果として返される応答情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Refresh%28System.ServiceModel.PeerResolvers.RefreshInfo%29> または <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService.Refresh%28System.ServiceModel.PeerResolvers.RefreshInfo%29> の実装を呼び出すと、このオブジェクトがクライアントに返されます。 新しい有効期限タイムスタンプで更新された登録エントリを格納し、登録エントリの有効期限を更新するための要求の一部として前の <xref:System.ServiceModel.PeerResolvers.RefreshInfo> インスタンスがピア リゾルバーに送信されると返されます。  
+  
+ このクラスのインスタンスは主に、リゾルバー サービスからそのサービスのネットワーク クライアントに情報を渡すために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RefreshResponseInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RefreshResponseInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ServiceModel.PeerResolvers.RefreshResponseInfo" /> クラスの新しい既定のインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RefreshResponseInfo (TimeSpan registrationLifetime, System.ServiceModel.PeerResolvers.RefreshResult result);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.TimeSpan registrationLifetime, valuetype System.ServiceModel.PeerResolvers.RefreshResult result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RefreshResponseInfo.#ctor(System.TimeSpan,System.ServiceModel.PeerResolvers.RefreshResult)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="registrationLifetime" Type="System.TimeSpan" />
+        <Parameter Name="result" Type="System.ServiceModel.PeerResolvers.RefreshResult" />
+      </Parameters>
+      <Docs>
+        <param name="registrationLifetime">
+          ピアの登録の新しい有効期間を指定する <see cref="T:System.TimeSpan" />。</param>
+        <param name="result">
+          更新の結果を指定する <see cref="T:System.ServiceModel.PeerResolvers.RefreshResult" />。</param>
+        <summary>登録の有効期間と更新結果を指定して、<see cref="T:System.ServiceModel.PeerResolvers.RefreshResponseInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasBody">
+      <MemberSignature Language="C#" Value="public bool HasBody ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasBody() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.PeerResolvers.RefreshResponseInfo.HasBody" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型のシリアル化されたインスタンスを含むメッセージの本文が正しく書式設定されているかどうかを示します。</summary>
+        <returns>送信側が更新応答情報の本文を正しく書式設定している場合は True。正しくない場合は False。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RegistrationLifetime">
+      <MemberSignature Language="C#" Value="public TimeSpan RegistrationLifetime { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.TimeSpan RegistrationLifetime" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.RefreshResponseInfo.RegistrationLifetime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.TimeSpan</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録の有効期限が切れてリゾルバー サービスが登録を削除するまでの時間を取得または設定します。</summary>
+        <value>
+          登録エントリの有効期限が切れてリゾルバー サービスが登録を削除するまでの新しい時間を指定する <see cref="T:System.TimeSpan" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Result">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.PeerResolvers.RefreshResult Result { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.PeerResolvers.RefreshResult Result" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.PeerResolvers.RefreshResponseInfo.Result" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.PeerResolvers.RefreshResult</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新操作の結果を取得または設定します。</summary>
+        <value>
+          ピア リゾルバーでの更新操作の結果を示す <see cref="T:System.ServiceModel.PeerResolvers.RefreshResult" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

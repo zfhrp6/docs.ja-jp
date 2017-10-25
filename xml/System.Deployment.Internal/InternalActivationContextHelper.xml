@@ -1,0 +1,193 @@
+<Type Name="InternalActivationContextHelper" FullName="System.Deployment.Internal.InternalActivationContextHelper">
+  <TypeSignature Language="C#" Value="public static class InternalActivationContextHelper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit InternalActivationContextHelper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Internal.InternalActivationContextHelper" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データにアクセスできるように、<see cref="T:System.ActivationContext" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、一時的なヘルパー クラスの内部のメンバーにアクセスするために使用する<xref:System.ActivationContext>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetActivationContextData">
+      <MemberSignature Language="C#" Value="public static object GetActivationContextData (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetActivationContextData(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.GetActivationContextData(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">マニフェストを格納するオブジェクト。</param>
+        <summary>アプリケーションの内容がマニフェストから取得、<see cref="T:System.ActivationContext" />オブジェクト。</summary>
+        <returns>アプリケーション マニフェストに含まれています、<see cref="T:System.ActivationContext" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationComponentManifest">
+      <MemberSignature Language="C#" Value="public static object GetApplicationComponentManifest (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetApplicationComponentManifest(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.GetApplicationComponentManifest(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">マニフェストを格納するオブジェクト。</param>
+        <summary>最後の展開コンポーネントでのマニフェストを取得、<see cref="T:System.ActivationContext" />オブジェクト。</summary>
+        <returns>最後の展開のコンポーネントのマニフェスト、<see cref="T:System.ActivationContext" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetApplicationManifestBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetApplicationManifestBytes (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetApplicationManifestBytes(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.GetApplicationManifestBytes(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">バイトを取得するオブジェクト。</param>
+        <summary>アプリケーション マニフェストの生の内容を格納するバイト配列を取得するには.</summary>
+        <returns>生データとして、アプリケーション マニフェストを格納する配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeploymentComponentManifest">
+      <MemberSignature Language="C#" Value="public static object GetDeploymentComponentManifest (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object GetDeploymentComponentManifest(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.GetDeploymentComponentManifest(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">マニフェストを格納するオブジェクト。</param>
+        <summary>最初の展開のコンポーネントでのマニフェストを取得、<see cref="T:System.ActivationContext" />オブジェクト。</summary>
+        <returns>最初の展開のコンポーネントでのマニフェスト、<see cref="T:System.ActivationContext" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDeploymentManifestBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetDeploymentManifestBytes (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetDeploymentManifestBytes(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.GetDeploymentManifestBytes(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">バイトを取得するオブジェクト。</param>
+        <summary>配置マニフェストの生の内容を格納するバイト配列を取得します。</summary>
+        <returns>生データとして、配置マニフェストを格納する配列。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsFirstRun">
+      <MemberSignature Language="C#" Value="public static bool IsFirstRun (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsFirstRun(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.IsFirstRun(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">調べるオブジェクト。</param>
+        <summary>この時間を計測最初であるかどうかを示す値を取得<see cref="T:System.ActivationContext" />オブジェクトが実行されています。</summary>
+        <returns>
+          <see langword="true" />場合、 <see cref="T:System.ActivationContext" /> 、それ以外の最初に実行されていることを示します<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareForExecution">
+      <MemberSignature Language="C#" Value="public static void PrepareForExecution (ActivationContext appInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void PrepareForExecution(class System.ActivationContext appInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Deployment.Internal.InternalActivationContextHelper.PrepareForExecution(System.ActivationContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="appInfo" Type="System.ActivationContext" />
+      </Parameters>
+      <Docs>
+        <param name="appInfo">通知するオブジェクト。</param>
+        <summary>通知、<see cref="T:System.ActivationContext" />を実行する準備が取得されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

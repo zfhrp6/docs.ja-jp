@@ -1,0 +1,403 @@
+<Type Name="DesignSurfaceManager" FullName="System.ComponentModel.Design.DesignSurfaceManager">
+  <TypeSignature Language="C#" Value="public class DesignSurfaceManager : IDisposable, IServiceProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DesignSurfaceManager extends System.Object implements class System.IDisposable, class System.IServiceProvider" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.DesignSurfaceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.IServiceProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.ComponentModel.Design.DesignSurface" /> オブジェクトのコレクションを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager>クラスは、コンテナーの設計されています<xref:System.ComponentModel.Design.DesignSurface>オブジェクト。 そのハンドル イベントのルーティング デザイナー、プロパティ ウィンドウ、およびその他のグローバル オブジェクトの間で一般的なサービスを提供します。 使用して<xref:System.ComponentModel.Design.DesignSurfaceManager>は省略可能では複数のデザイナー ウィンドウをする場合はお勧めします。  
+  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager>クラスが自動的にいくつかのデザイン時サービスを提供します。 これらの各サービスを上書きするには、保護対象に置き換えることによって<xref:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer%2A>プロパティです。 サービスを置き換えるには、コンス トラクターをオーバーライド、基本、および、保護対象から変更を加える<xref:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer%2A>プロパティです。 実装するサービス コンテナーに追加されたすべてのサービス、<xref:System.IDisposable>インターフェイスがデザイン サーフェイス マネージャーが破棄されるときに破棄されます。 <xref:System.ComponentModel.Design.DesignSurfaceManager>クラスを提供、<xref:System.ComponentModel.Design.IDesignerEventService>既定のサービスとインターフェイスします。 <xref:System.ComponentModel.Design.IDesignerEventService>デザイナー イベントのグローバル イベント処理メカニズムを提供します。 このメカニズムにより、アプリケーションは、デザイナーがアクティブになったときに通知されます。 サービスは、デザイナーのコレクションと、[プロパティ] ウィンドウなどのグローバル オブジェクトが選択範囲を監視できますを 1 か所変更イベントを提供します。  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.NamedPermissionSet">システム リソースへのフル アクセスできます。 値を要求: <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />、<see cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand" />です。 関連付けられた状態。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurfaceManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurfaceManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DesignSurfaceManager (IServiceProvider parentProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider parentProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parentProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parentProvider">親サービス プロバイダー。 サービス要求は、デザイン サーフェイス マネージャーによって解決できない場合、このプロバイダーに転送されます。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurfaceManager" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveDesignSurface">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.Design.DesignSurface ActiveDesignSurface { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignSurface ActiveDesignSurface" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアクティブなデザイナーを設定します。</summary>
+        <value>アクティブなデザイナーです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurface%2A>デザイナーがアクティブ ウィンドウになったときに、デザイナーのユーザー インターフェイスでプロパティを設定する必要があります。 既定の実装でこのプロパティの既定の実装の動作、<xref:System.ComponentModel.Design.IDesignerEventService>新しいデザイナーが現在アクティブである関係者に通知するインターフェイスです。 独自の実装を提供する場合<xref:System.ComponentModel.Design.IDesignerEventService>サービスを適切に通知するには、このプロパティをオーバーライドする必要があります。 このプロパティに設定することができます`null`デザイナーがアクティブなないことを示すです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveDesignSurfaceChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler ActiveDesignSurfaceChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler ActiveDesignSurfaceChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurfaceManager.ActiveDesignSurfaceChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ActiveDesignSurfaceChangedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在アクティブなデザイナーが変更されたときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDesignSurface">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignSurface CreateDesignSurface ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Design.DesignSurface CreateDesignSurface() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン画面のインスタンスを作成します。</summary>
+        <returns>新しいデザイン サーフェス インスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDesignSurface">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignSurface CreateDesignSurface (IServiceProvider parentProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.Design.DesignSurface CreateDesignSurface(class System.IServiceProvider parentProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parentProvider">親サービス プロバイダー。 新しい結合サービス プロバイダーが作成されますが最初のサービスに対してこのプロバイダーに確認され、デザイン サーフェイス マネージャー オブジェクトに障害を委任します。 この結合されたプロバイダーに渡される、<see cref="M:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore(System.IServiceProvider)" />メソッドです。</param>
+        <summary>デザイン画面のインスタンスを作成します。</summary>
+        <returns>新しいデザイン サーフェス インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デザイナーごとのサービスを簡単に追加する場合は、使用、`parentProvider`このデザイン サーフェイスでのサービス プロバイダーを提供するパラメーターです。 <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface%2A>メソッドの両方の指定したサービス プロバイダーからのサービス要求を満たすことができる結合サービス プロバイダーを作成するだけでなく<xref:System.ComponentModel.Design.DesignSurfaceManager>自体です。 <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface%2A>し、メソッドはこのサービス プロバイダーに、<xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore%2A>メソッドです。  
+  
+ 後に<xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore%2A>デザイン サーフェイスを返します、<xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface%2A>メソッドを取得しようとする、<xref:System.ComponentModel.Design.IDesignerEventService>です。 これが存在する場合、およびサービスのインスタンスである場合を<xref:System.ComponentModel.Design.DesignSurfaceManager>既定では、指定された、<xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface%2A>メソッドを発生させます、<xref:System.ComponentModel.Design.IDesignerEventService.DesignerCreated>イベント。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="parentProvider" /> は <see langword="null" /> です。</exception>
+        <block subset="none" type="overrides">
+          <para>派生したクラスの責任において、サービスの外部の実装が提供されている場合は、<see cref="T:System.ComponentModel.Design.DesignSurfaceManager" />を発生させるクラス、<see cref="E:System.ComponentModel.Design.IDesignerEventService.DesignerCreated" />イベント。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDesignSurfaceCore">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.Design.DesignSurface CreateDesignSurfaceCore (IServiceProvider parentProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.Design.DesignSurface CreateDesignSurfaceCore(class System.IServiceProvider parentProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore(System.IServiceProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurface</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentProvider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="parentProvider">デザイン画面に渡すサービス プロバイダー。 これは、いずれかのインスタンス<see cref="T:System.ComponentModel.Design.DesignSurfaceManager" />を実装するオブジェクトまたは<see cref="T:System.IServiceProvider" />のサービス プロバイダーとの間のマージを表すと、<see cref="T:System.ComponentModel.Design.DesignSurfaceManager" />クラスおよび外部から渡されたプロバイダー。</param>
+        <summary>デザイン画面を作成するための実装です。</summary>
+        <returns>新しいデザイン サーフェス インスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurfaceCore%2A>メソッドはどちらも<xref:System.ComponentModel.Design.DesignSurfaceManager.CreateDesignSurface%2A>メソッドです。 実際には、デザイン画面を作成する実装することをお勧めします。 既定の実装を返すだけ新しい<xref:System.ComponentModel.Design.DesignSurface>です。 派生したカスタム オブジェクトを提供するには、このメソッドをオーバーライドする可能性があります、<xref:System.ComponentModel.Design.DesignSurface>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignSurfaceCreated">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignSurfaceEventHandler DesignSurfaceCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignSurfaceEventHandler DesignSurfaceCreated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaceCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurfaceEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーが作成されるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignSurfaceDisposed">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignSurfaceEventHandler DesignSurfaceDisposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignSurfaceEventHandler DesignSurfaceDisposed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaceDisposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurfaceEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイナーが破棄されるときに発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignSurfaces">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignSurfaceCollection DesignSurfaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignSurfaceCollection DesignSurfaces" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignSurfaceCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン サーフェイスのコレクションを取得します。</summary>
+        <value>デザイン サーフェイス マネージャーによって現在ホストされているデザイン サーフェイスのコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager.DesignSurfaces%2A>プロパティの実装の上に直接<xref:System.ComponentModel.Design.IDesignerEventService>ので、このプロパティが実装を使用してそのサービスの実装を提供する場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurfaceManager" /> で使用したリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>メソッドの標準に準拠<xref:System.IDisposable>パターン。 このメソッドを呼び出すと、デザイン サーフェイス マネージャーが破棄されます。 これにより、すべてのサービスを実装するサービス コンテナーを破棄する<xref:System.IDisposable>も破棄されます。 このメソッドの保護されているバージョンは`virtual`であり、標準に従って<xref:System.IDisposable>パターン。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurfaceManager> 、クリーンアップのすべてのネイティブ コードはありませんがないファイナライザーを呼び出す<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>です。 呼び出す必要がある場合<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>ファイナライザーを自分で追加する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.DesignSurfaceManager" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリック<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>メソッドの標準に準拠<xref:System.IDisposable>パターン。 このメソッドを呼び出すと、デザイン サーフェイス マネージャーが破棄されます。 これにより、すべてのサービスを実装するサービス コンテナーを破棄する<xref:System.IDisposable>も破棄されます。 このメソッドの保護されているバージョンは`virtual`であり、標準に従って<xref:System.IDisposable>パターン。  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.DesignSurfaceManager> 、クリーンアップのすべてのネイティブ コードはありませんがないファイナライザーを呼び出す<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>です。 呼び出す必要がある場合<xref:System.ComponentModel.Design.DesignSurfaceManager.Dispose%2A>ファイナライザーを自分で追加する必要があります。  
+  
+ このメソッドは、パブリック`Dispose()`メソッドおよび<xref:System.Object.Finalize%2A>メソッドです。 `Dispose()`プロテクト呼び出します`Dispose(Boolean)`メソッドを`disposing`パラメーターに設定`true`です。 <xref:System.Object.Finalize%2A>呼び出す`Dispose`で`disposing`'éý'`false`です。  
+  
+ ときに、`disposing`パラメーターが true の場合、このメソッドは、すべてのマネージ オブジェクトによって保持されているすべてのリソースを解放します。 この<xref:System.ComponentModel.Design.DesignSurfaceManager>参照します。 このメソッドは、参照される各オブジェクトの `Dispose()` メソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>
+            <see langword="Dispose" /> は、他のオブジェクトから複数回呼び出すことができます。 オーバーライドする場合<see langword="Dispose(Boolean)" />既に破棄されているを以前の呼び出しでオブジェクトを参照しないように注意する<see langword="Dispose" />です。 実装する方法の詳細についての<see langword="Dispose(Boolean)" />を参照してください[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+ 詳細については<see langword="Dispose" />と<see cref="M:System.Object.Finalize" />を参照してください[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Finalize メソッドをオーバーライドする](http://msdn.microsoft.com/en-us/8026cb68-fe93-43fc-96c1-c09ad7d64cd3)です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="public object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.DesignSurfaceManager.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">サービスの種類を取得します。</param>
+        <summary>デザイン サーフェイス マネージャーのサービス コンテナーに、サービスを取得します。</summary>
+        <returns>を実装するか、特定のサービス型の派生クラス オブジェクトそれ以外の場合、<see langword="null" />サービス コンテナーには、サービスが存在しない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.DesignSurfaceManager.GetService%2A>メソッドは、構築時にデザイン サーフェイス マネージャーに指定されたサービス プロバイダーに転送します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.DesignSurfaceManager.SelectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>グローバルの選択が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、コンポーネントのアクティブなデザイナーの選択設定の変更時に発生します。 これにマップされている、<xref:System.ComponentModel.Design.IDesignerEventService>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceContainer">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.Design.ServiceContainer ServiceContainer { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.ServiceContainer ServiceContainer" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ServiceContainer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン サーフェイス マネージャーの取得<see cref="P:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer" />です。</summary>
+        <value>デザイン サーフェイス マネージャーの<see cref="P:System.ComponentModel.Design.DesignSurfaceManager.ServiceContainer" />します。</value>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>継承するクラス、<see cref="T:System.ComponentModel.Design.DesignSurfaceManager" />クラスは、このプロパティを使用して追加およびサービスを削除することができます。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

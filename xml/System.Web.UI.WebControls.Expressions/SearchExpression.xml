@@ -1,0 +1,180 @@
+<Type Name="SearchExpression" FullName="System.Web.UI.WebControls.Expressions.SearchExpression">
+  <TypeSignature Language="C#" Value="public class SearchExpression : System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SearchExpression extends System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.Expressions.SearchExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.Expressions.ParameterDataSourceExpression</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>文字列値のフィールドを検索して、それらを指定された文字列の値と比較する方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.QueryExtender>コントロールを使用して、Web ページにデータをフィルター処理する機能を提供する、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>クラスです。 <xref:System.Web.UI.WebControls.Expressions.SearchExpression>クラスは、フィールドまたはフィールドを指定する値に指定した文字列を比較します。 式は、"で始まる"、"contains"または「で終わる」検索を実行します。 値を指定する必要があります、<xref:System.Web.UI.WebControls.Expressions.SearchExpression.SearchType%2A>と<xref:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields%2A>プロパティ検索を実行して検索するデータ フィールドの種類を指定するためにします。 場合に使用する LINQ プロバイダー、<xref:System.Web.UI.WebControls.QueryExtender>コントロールは、大文字小文字の区別をサポートしている、使用することができます、<xref:System.Web.UI.WebControls.Expressions.SearchExpression.ComparisonType%2A>プロパティを有効にするにまたは大文字小文字の区別を無視します。  
+  
+ 検索する値は、によって提供されることができます、[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]コントロール。 このパラメーターを指定する設定する、<xref:System.Web.UI.WebControls.ControlParameter.ControlID%2A>のプロパティ、<xref:System.Web.UI.WebControls.ControlParameter>クラス内で、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>オブジェクトの ID を[!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]コントロール。 たとえば、テキスト ボックスでは、検索する値が入力した場合、<xref:System.Web.UI.WebControls.ControlParameter.ControlID%2A>プロパティは、テキスト ボックス コントロールの ID に設定する必要があります。 使用することができます、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>他の式と組み合わせてクラスを<xref:System.Web.UI.WebControls.QueryExtender>をサポートするように、<xref:System.Web.UI.WebControls.Expressions.RangeExpression>フィルター。 たとえば、文字列「紅茶」と 100 ~ 200 の間、表示価格を含む製品名を検索できます。  
+  
+   
+  
+## Examples  
+ 次の例で指定されている文字列で始まるを持つ製品用の AdventureWorks データベースの Products テーブルの名前 列を検索する方法を示しています、`SearchTextBox`コントロール。 返された結果、<xref:System.Web.UI.WebControls.LinqDataSource>でコントロールが表示される、<xref:System.Web.UI.WebControls.GridView>コントロール。  
+  
+ このコード例で提供されている長い例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+    <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields" />プロパティは<see langword="null" />(<see langword="Nothing" />で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])</exception>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SearchExpression ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.SearchExpression.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.Expressions.SearchExpression" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ComparisonType">
+      <MemberSignature Language="C#" Value="public StringComparison ComparisonType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.StringComparison ComparisonType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.SearchExpression.ComparisonType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.StringComparison</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを実行する文字列比較の種類を設定します。</summary>
+        <value>実行する文字列比較の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティでは、使用することができます、<xref:System.StringComparison>検索を実行する方法を指定する列挙体です。 <xref:System.StringComparison>列挙は、現在のカルチャまたはインバリアント カルチャで文字列比較を使用しているかどうかと、テキストまたは序数の並べ替え規則を使用するかどうかを指定するために使用します。 場合、データ プロバイダーを<xref:System.Web.UI.WebControls.QueryExtender>用途は、大文字小文字の区別をサポートしている、比較型のプロパティのいずれかを使用して、有効にするにまたは大文字小文字の区別を無視することができます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DataFields">
+      <MemberSignature Language="C#" Value="public string DataFields { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DataFields" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得し、1 つのフィールドまたは検索するフィールドのコンマ区切りのリストを設定します。</summary>
+        <value>複数のフィールドを検索します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.SearchExpression>クラスは、指定されたテーブル内の 1 つまたは複数のデータ フィールドの検索を実行します。 少なくとも 1 つのデータ フィールドを指定する必要があります、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>インスタンス。 1 つ以上のデータ フィールドを指定する場合は、コンマを使用して、フィールドを区切ります。  
+  
+   
+  
+## Examples  
+ 次の例では、指定した文字列で始まる名前を持つ製品用の AdventureWorks データベースの Products テーブルの名前と ProductNumber データ フィールドを検索する方法を示します。 このコード例に示されている例の一部である[チュートリアル: Web ページを使用して宣言構文でのデータのフィルター処理](http://msdn.microsoft.com/en-us/b305ae31-1a1b-4d07-a678-51457c17614f)です。  
+  
+```  
+<asp:SearchExpression SearchType="StartsWith"   
+      DataFields="Name","ProductNumber" >  
+  <asp:ControlParameter ControlID="SearchTextBox" />  
+</asp:SearchExpression>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetQueryable">
+      <MemberSignature Language="C#" Value="public override System.Linq.IQueryable GetQueryable (System.Linq.IQueryable source);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Linq.IQueryable GetQueryable(class System.Linq.IQueryable source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.Expressions.SearchExpression.GetQueryable(System.Linq.IQueryable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.IQueryable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.Linq.IQueryable" />
+      </Parameters>
+      <Docs>
+        <param name="source">使用するオブジェクト。</param>
+        <summary>適用される、<see cref="T:System.Web.UI.WebControls.Expressions.SearchExpression" />を指定したオブジェクト<see cref="T:System.Linq.IQueryable" />オブジェクトに基づいて、<see cref="T:System.Web.UI.WebControls.Expressions.SearchType" />オブジェクト。</summary>
+        <returns>インスタンス、<see cref="T:System.Linq.IQueryable" />オブジェクトを<see cref="T:System.Web.UI.WebControls.Expressions.SearchExpression" />に適用されました。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティで使用されるパラメーターのコレクションの評価、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>オブジェクトし、式を適用、<xref:System.Linq.IQueryable>オブジェクト。 複数のデータ フィールドを指定する場合、`AND`演算子は、データ フィールドに適用します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.Web.UI.WebControls.Expressions.SearchExpression.DataFields" /> プロパティが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SearchType">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.Expressions.SearchType SearchType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.Expressions.SearchType SearchType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.Expressions.SearchExpression.SearchType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Expressions.SearchType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Web.UI.WebControls.Expressions.SearchType" />文字列で検索が発生するかを決定する値。</summary>
+        <value>実行する検索の種類。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.Expressions.SearchType>プロパティの使用、<xref:System.Web.UI.WebControls.Expressions.SearchType>列挙型のインスタンスで使用する検索の種類を含む、<xref:System.Web.UI.WebControls.Expressions.SearchExpression>クラスです。  
+  
+ 次の表は、可能な列挙値を一覧表示します。  
+  
+|列挙|説明|  
+|-----------------|-----------------|  
+|<xref:System.Web.UI.WebControls.Expressions.SearchType.StartsWith>|フィールドの任意の場所で開始される検索を示します。|  
+|<xref:System.Web.UI.WebControls.Expressions.SearchType.Contains>|検索のフィールドの先頭から開始することを示します。|  
+|<xref:System.Web.UI.WebControls.Expressions.SearchType.EndsWith>|検索を示すフィールドの末尾にあります。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

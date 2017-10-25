@@ -1,0 +1,203 @@
+<Type Name="ScrollPattern+ScrollPatternInformation" FullName="System.Windows.Automation.ScrollPattern+ScrollPatternInformation">
+  <TypeSignature Language="C#" Value="public struct ScrollPattern.ScrollPatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit ScrollPattern/ScrollPatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ScrollPattern.ScrollPatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.ScrollPattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.ScrollPattern.Current" />または<see cref="P:System.Windows.Automation.ScrollPattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="HorizontallyScrollable">
+      <MemberSignature Language="C#" Value="public bool HorizontallyScrollable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HorizontallyScrollable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontallyScrollable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション要素を水平方向にスクロールできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />UI オートメーション要素を水平方向にスクロールできる場合それ以外の場合<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを動的にすることができます。 たとえば、UI オートメーション要素のコンテンツ エリアできない可能性がありますが現在の表示可能な領域より意味<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontallyScrollable%2A>は`false`します。 ただし、サイズ変更、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素または子項目を追加することを示す、表示可能領域のコンテンツ エリアの境界を増やすことができます<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontallyScrollable%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>コントロール パターンは、UI オートメーション要素から取得され、要求された量の要素を水平方向にスクロールを使用して、します。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#107](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#107)]
+[!code-vb[UIAScrollPattern_snip#107](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#107)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalScrollPercent">
+      <MemberSignature Language="C#" Value="public double HorizontalScrollPercent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalScrollPercent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontalScrollPercent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の水平方向のスクロール位置を取得します。</summary>
+        <value>UI オートメーション要素内のコンテンツ エリア全体のパーセンテージで示した水平スクロール位置。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>ターゲット コントロールから取得したオブジェクトがコンテンツ領域内で表示可能領域の現在の水平方向および垂直のスクロールのパーセンテージを取得する関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#1045](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#1045)]
+ [!code-vb[UIAScrollPattern_snip#1045](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#1045)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HorizontalViewSize">
+      <MemberSignature Language="C#" Value="public double HorizontalViewSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 HorizontalViewSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.HorizontalViewSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の水平方向のビュー サイズを取得します。</summary>
+        <value>UI オートメーション要素内のコンテンツ エリア全体のパーセンテージで示した表示可能領域の水平方向のサイズ。 既定値は 100.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>ターゲット コントロールから取得したオブジェクトのコンテンツ エリア全体のパーセンテージとして表示可能領域の現在の垂直および水平方向のサイズを取得する関数に渡されています。  
+  
+ [!code-csharp[UIAScrollPattern_snip#1055](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#1055)]
+ [!code-vb[UIAScrollPattern_snip#1055](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#1055)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticallyScrollable">
+      <MemberSignature Language="C#" Value="public bool VerticallyScrollable { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool VerticallyScrollable" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticallyScrollable" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>UI オートメーション要素を垂直方向にスクロールできるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />UI オートメーション要素を水平方向にスクロールできる場合それ以外の場合<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを動的にすることができます。 たとえば、UI オートメーション要素のコンテンツ エリアできない可能性がありますが現在の表示可能な領域より意味<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticallyScrollable%2A>は`false`します。 ただし、サイズ変更、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素または子項目を追加することを示す、表示可能領域のコンテンツ エリアの境界を増やすことができます<xref:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticallyScrollable%2A>は`true`します。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>コントロール パターンは、UI オートメーション要素から取得され、要求された量の要素を垂直方向にスクロールを使用しています。  
+  
+ [!code-csharp[UIAScrollPattern_snip#101](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#101)]
+ [!code-vb[UIAScrollPattern_snip#101](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#101)]  
+[!code-csharp[UIAScrollPattern_snip#108](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#108)]
+[!code-vb[UIAScrollPattern_snip#108](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#108)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalScrollPercent">
+      <MemberSignature Language="C#" Value="public double VerticalScrollPercent { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalScrollPercent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticalScrollPercent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の垂直方向のスクロール位置を取得します。</summary>
+        <value>UI オートメーション要素内のコンテンツ エリア全体のパーセンテージで示した垂直スクロール位置。 既定値は 0.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>ターゲット コントロールから取得したオブジェクトがコンテンツ領域内で表示可能領域の現在の水平方向および垂直のスクロールのパーセンテージを取得する関数に渡されます。  
+  
+ [!code-csharp[UIAScrollPattern_snip#1045](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#1045)]
+ [!code-vb[UIAScrollPattern_snip#1045](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#1045)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VerticalViewSize">
+      <MemberSignature Language="C#" Value="public double VerticalViewSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 VerticalViewSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ScrollPattern.ScrollPatternInformation.VerticalViewSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のビューの垂直方向のサイズを取得します。</summary>
+        <value>表示可能な領域の垂直方向のサイズを、UI オートメーション要素内で総コンテンツ領域が占める割合によって表したもの。 既定値は 100.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ScrollPattern>ターゲット コントロールから取得したオブジェクトのコンテンツ エリア全体のパーセンテージとして表示可能領域の現在の垂直および水平方向のサイズを取得する関数に渡されています。  
+  
+ [!code-csharp[UIAScrollPattern_snip#1055](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAScrollPattern_snip/CSharp/UIAScrollPattern_snippets.cs#1055)]
+ [!code-vb[UIAScrollPattern_snip#1055](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAScrollPattern_snip/VisualBasic/UIAScrollPattern_snippets.vb#1055)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

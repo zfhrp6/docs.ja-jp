@@ -1,0 +1,180 @@
+<Type Name="NetTcpSecurity" FullName="System.ServiceModel.NetTcpSecurity">
+  <TypeSignature Language="C#" Value="public sealed class NetTcpSecurity" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit NetTcpSecurity extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.NetTcpSecurity" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.1.2.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントで使用される、トランスポート レベルとメッセージ レベルのセキュリティの種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 標準バインディングにはそれぞれ、転送セキュリティ要件を制御するためのパラメーターが用意されています。 通常、これらのパラメーターには、使用されるセキュリティ レベル (メッセージ レベルまたはトランスポート レベル) を指定したセキュリティ モードと、クライアント資格情報の種類が含まれています。 これらのパラメーターが提示するオプションの選択に基づいて、適切なセキュリティが設定されたチャネル スタックが構築されます。  
+  
+ [!INCLUDE[indigo1](~/includes/indigo1-md.md)] で用意されるシステム提供のバインディグは、最も一般的なシナリオ要件の一部を満たすように設計されたセットです。 これらのバイディングでは、特定のシナリオを対象とするセキュリティ要件を指定できます。  
+  
+ <xref:System.ServiceModel.NetTcpSecurity> は、<xref:System.ServiceModel.NetTcpBinding> のためのセキュリティ仕様を用意します。 これは、コンピューター間通信に適した、安全で信頼できる最適化されたバインディングです。 既定では、このバインドは、メッセージを配信するための TCP、メッセージの保護と認証を行うための Windows セキュリティ、信頼性を高めるための WS-ReliableMessaging、およびバイナリ メッセージのエンコーディングをサポートするランタイム通信スタックを生成します。  
+  
+ このクラスは、<xref:System.ServiceModel.NetTcpBinding> でインスタンス化され、<xref:System.ServiceModel.NetTcpBinding.Security%2A> という読み取り専用プロパティでアクセスできます。 このプロパティは読み取り専用であるため、返されたオブジェクトに変更を加えることはできません。 <xref:System.ServiceModel.NetTcpSecurity> オブジェクトの作成を制御する場合は、<xref:System.ServiceModel.NetTcpBinding> の派生クラスを作成できます。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.NetTcpSecurity> オブジェクトを <xref:System.ServiceModel.NetTcpBinding> から取得し、オブジェクトに含まれる各種設定を出力する方法を次のコードに示します。  
+  
+ [!code-csharp[S_UE_TcpSecurity#0](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_tcpsecurity/cs/service.cs#0)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public NetTcpSecurity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.NetTcpSecurity.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetTcpSecurity" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Message">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.MessageSecurityOverTcp Message { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.MessageSecurityOverTcp Message" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetTcpSecurity.Message" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.MessageSecurityOverTcp</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたサービスの、メッセージ レベルのセキュリティ要件の種類を取得します。</summary>
+        <value>エンドポイントのメッセージ レベルのセキュリティ要件の種類を示す <see cref="T:System.ServiceModel.MessageSecurityOverTcp" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.NetTcpSecurity.Message%2A> は、SOAP メッセージの整合性と機密性を確保し、通信ピアの相互認証を行うためのメッセージ レベルのセキュリティを使用します。 バインディング上でこのセキュリティ モードが選択された場合、チャネル スタックは、メッセージ セキュリティ バインド要素を使用して構成され、SOAP メッセージは WS-Security* 標準に従って保護されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_TcpSecurity#1](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_tcpsecurity/cs/service.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.SecurityMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.SecurityMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetTcpSecurity.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.SecurityMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントでメッセージレベルのセキュリティが使用されるか、トランスポートレベルのセキュリティが使用されるかを指定する値を取得または設定します。</summary>
+        <value>エンドポイントで使用されるセキュリティがメッセージレベルかトランスポートレベルかを示す <see cref="T:System.ServiceModel.SecurityMode" /> の値。 既定値は <see cref="F:System.ServiceModel.SecurityMode.Transport" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ モードによって、エンドポイントで必要となるセキュリティの種類が決まります。 [!INCLUDE[indigo1](~/includes/indigo1-md.md)] のセキュリティには、システム提供のバインディングを使用して構成されたメッセージの転送を保護するさまざまなメカニズムがあります。 各バインドは、これらのセキュリティ モードのサブセットをサポートします。 モードによってメカニズムが決定し、各メカニズムはメッセージ転送セキュリティの機能 (整合性、機密性、および認証) を必要とします。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_TcpSecurity#2](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_tcpsecurity/cs/service.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が定義されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Transport">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.TcpTransportSecurity Transport { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.TcpTransportSecurity Transport" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.NetTcpSecurity.Transport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.NetTcp</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.1.2.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.TcpTransportSecurity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.NetTcpBinding" /> を使用して構成されたエンドポイントの、メッセージ レベルのセキュリティ要件の種類を取得します。</summary>
+        <value>エンドポイントのトランスポート レベルのセキュリティ要件の種類を示す <see cref="T:System.ServiceModel.TcpTransportSecurity" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.NetTcpSecurity.Transport%2A> セキュリティは、SOAP メッセージの整合性と機密性の保護、および相互認証の実行に使用します。 このセキュリティ モードがバインディング上で選択された場合、チャネルスタックはセキュリティ トランスポートを使用して構成され、SOAP メッセージは TCP 上で HTTPS や SSL などのトランスポート セキュリティを使用して保護されます。  
+  
+   
+  
+## Examples  
+ [!code-csharp[S_UE_TcpSecurity#3](~/samples/snippets/csharp/VS_Snippets_CFX/s_ue_tcpsecurity/cs/service.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

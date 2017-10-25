@@ -1,0 +1,251 @@
+<Type Name="ElasticEase" FullName="System.Windows.Media.Animation.ElasticEase">
+  <TypeSignature Language="C#" Value="public class ElasticEase : System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ElasticEase extends System.Windows.Media.Animation.EasingFunctionBase" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ElasticEase" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Animation.EasingFunctionBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>までに前後に動く spring のようなアニメーションを作成するイージング関数を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 「スプリング」の動作が発生するとアニメーションを指定して、制御することができます、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>プロパティの値。 次のグラフのさまざまな値を示します<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>ここで、 *f*(*t*)、アニメーションの進行状況を表すと*t*時間を表します。  
+  
+ ![異なる easingmode のグラフの ElasticEase します。] (~/add/media/elasticease-graph.png "ElasticEase 異なる easingmode のグラフ。")  
+  
+ 使用して、アニメーションの振動回数を指定することができます、<xref:System.Windows.Media.Animation.ElasticEase.Oscillations%2A>プロパティと、振れ springiness が密着したまま入れる方法を使用しているか、<xref:System.Windows.Media.Animation.ElasticEase.Springiness%2A>プロパティです。  
+  
+> [!NOTE]
+>  このアニメーションでは、前後が変化する値が発生するため、アニメーション可能性があります補間に負の数が予期せずします。 これにより、負の数値は許可されていないプロパティをアニメーション化するときにエラーが発生することができます。 このアニメーションを適用する場合など、<xref:System.Windows.FrameworkElement.Height%2A>オブジェクトの (0 ~ を 200 からなど、<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>の<xref:System.Windows.Media.Animation.EasingMode.EaseIn>) の負の値を補間するアニメーションを試みます<xref:System.Windows.FrameworkElement.Height%2A>エラーをスローします。  
+  
+ だけでなく他のいくつかのイージング関数は<xref:System.Windows.Media.Animation.ElasticEase>Silverlight の次のサンプルを使用してを調べることができます。  
+  
+ [このサンプルを実行する](http://go.microsoft.com/fwlink/?LinkId=139798&sref=easing_functions_gallery)  
+  
+ 継承することで、独自のカスタム イージング関数を作成するだけでなく、実行時に含まれるイージング関数を使用して、<xref:System.Windows.Media.Animation.EasingFunctionBase>です。  
+  
+<a name="xamlObjectElementUsage_ElasticEase"></a>   
+## <a name="xaml-object-element-usage"></a>XAML オブジェクト要素の使用方法  
+  
+```  
+<ElasticEase .../>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.ElasticEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>するまでに前後に動く spring のようなアニメーションを作成します。  
+  
+ [!code-xaml[ElasticEase#ElasticEase](~/samples/snippets/csharp/VS_Snippets_Wpf/elasticease/CS/window1.xaml#elasticease)]
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ElasticEase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ElasticEase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.Animation.ElasticEase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ElasticEase.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Freezable" /> 派生クラスの新しいインスタンスを作成します。 派生クラスを作成するときには、このメソッドをオーバーライドする必要があります。</summary>
+        <returns>新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションのクラスに継承直接から<xref:System.Windows.Freezable>です。 このため、オーバーライドする必要があります、<xref:System.Windows.Media.Animation.BackEase.CreateInstanceCore%2A>アニメーション オブジェクトを構築するメソッド。  
+  
+   
+  
+## Examples  
+ 次の例は、の一般的な実装を示しています。<xref:System.Windows.Freezable.CreateInstanceCore%2A>です。  
+  
+ [!code-csharp[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/csharp/VS_Snippets_Wpf/freezablesample_procedural/CSharp/freezablesample.cs#createinstancecoreexample)]
+ [!code-vb[freezablesample_procedural#CreateInstanceCoreExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/freezablesample_procedural/visualbasic/freezablesample.vb#createinstancecoreexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EaseInCore">
+      <MemberSignature Language="C#" Value="protected override double EaseInCore (double normalizedTime);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance float64 EaseInCore(float64 normalizedTime) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ElasticEase.EaseInCore(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="normalizedTime" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="normalizedTime">アニメーションの正規化された時間 (進行状況)。</param>
+        <summary>カスタム イージング関数の <see cref="F:System.Windows.Media.Animation.EasingMode.EaseIn" /> モードを生成するためにオーバーライドできるイージング関数のロジック部分を提供します。</summary>
+        <returns>変換された進行状況を表す double 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変換のアニメーションの速度を制御する正規化された時間、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>の case<xref:System.Windows.Media.Animation.EasingFunctionBase.EasingMode%2A>です。  
+  
+ のみのイージング関数を指定する必要が、<xref:System.Windows.Media.Animation.EasingMode.EaseIn>ためにのケースの実装、<xref:System.Windows.Media.Animation.EasingFunctionBase.Ease%2A>メソッド変換`normalizedTime`の<xref:System.Windows.Media.Animation.EasingMode.EaseOut>と<xref:System.Windows.Media.Animation.EasingMode.EaseInOut>場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Oscillations">
+      <MemberSignature Language="C#" Value="public int Oscillations { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Oscillations" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ElasticEase.Oscillations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアニメーションの宛先経由で回数のターゲット スライドを行ったり来たり設定します。</summary>
+        <value>ターゲットのアニメーションの終点を行ったり来たりスライド時間数。 この値は、0 以上にする必要があります。 既定値は 3 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.ElasticEase.OscillationsProperty>  
+  
+<a name="xamlAttributeUsage_Occilations"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<ElasticEase Oscillations="int"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.ElasticEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>するまでに前後に動く spring のようなアニメーションを作成します。  
+  
+ [!code-xaml[ElasticEase#ElasticEase](~/samples/snippets/csharp/VS_Snippets_Wpf/elasticease/CS/window1.xaml#elasticease)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OscillationsProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OscillationsProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OscillationsProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ElasticEase.OscillationsProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.ElasticEase.Oscillations" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Springiness">
+      <MemberSignature Language="C#" Value="public double Springiness { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Springiness" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ElasticEase.Springiness" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはスプリングの剛性を設定します。 小さいほど Springiness の値が硬いスプリングと、各振幅経由で強度が速ければ速いほどの柔軟性は減少します。</summary>
+        <value>スプリングの剛性を指定する正の数値。 既定値は 3 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ いずれか小さい方、<xref:System.Windows.Media.Animation.ElasticEase.Springiness%2A>値、硬いスプリングと、各振幅経由で強度が速ければ速いほどの柔軟性は減少します。  
+  
+ [!INCLUDE[DP_ID_field_label](~/includes/dp-id-field-label-md.md)] <xref:System.Windows.Media.Animation.ElasticEase.SpringinessProperty>  
+  
+ 次の図は、の異なる値の効果を示しています。<xref:System.Windows.Media.Animation.ElasticEase.Springiness%2A>です。  
+  
+ ![さまざまな Springiness の値を示します。](~/add/media/elasticease-springiness.png "さまざまな Springiness の値を示します。")  
+  
+<a name="xamlAttributeUsage_Springiness"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<ElasticEase Springiness="double"/>  
+```  
+  
+   
+  
+## Examples  
+ 次の例に適用されます、<xref:System.Windows.Media.Animation.ElasticEase>イージング関数を<xref:System.Windows.Media.Animation.DoubleAnimation>するまでに前後に動く spring のようなアニメーションを作成します。  
+  
+ [!code-xaml[ElasticEase#ElasticEase](~/samples/snippets/csharp/VS_Snippets_Wpf/elasticease/CS/window1.xaml#elasticease)]
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpringinessProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty SpringinessProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty SpringinessProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.Animation.ElasticEase.SpringinessProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.Animation.ElasticEase.Springiness" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

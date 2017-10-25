@@ -1,0 +1,99 @@
+<Type Name="WorkflowServiceHostFactory" FullName="System.ServiceModel.Activation.WorkflowServiceHostFactory">
+  <TypeSignature Language="C#" Value="public class WorkflowServiceHostFactory : System.ServiceModel.Activation.ServiceHostFactoryBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WorkflowServiceHostFactory extends System.ServiceModel.Activation.ServiceHostFactoryBase" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Activation.WorkflowServiceHostFactory" />
+  <AssemblyInfo>
+    <AssemblyName>System.WorkflowServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Activation.ServiceHostFactoryBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The WF3 types are deprecated.  Instead, please use the new WF4 types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>入力メッセージに応答してホスト インスタンスが動的に作成される管理対象ホスト環境の中で、<see cref="T:System.ServiceModel.WorkflowServiceHost" /> のインスタンスを提供するファクトリです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 動的アクティブ化をサポートする管理対象ホスト環境は、インターネット インフォメーション サービス (IIS) と Windows プロセス アクティブ化サービス (WAS) です。  
+  
+ <xref:System.ServiceModel.WorkflowServiceHost> のカスタム派生物を実装している場合は、<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory> クラスから派生するファクトリの実装も検討してください。  
+  
+ <xref:System.ServiceModel.ServiceHostBase> のカスタム派生物を実装している場合は、<xref:System.ServiceModel.Activation.ServiceHostFactoryBase> から直接派生するファクトリを実装することも検討してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WorkflowServiceHostFactory ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.WorkflowServiceHostFactory.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Activation.WorkflowServiceHostFactory" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateServiceHost">
+      <MemberSignature Language="C#" Value="public override System.ServiceModel.ServiceHostBase CreateServiceHost (string constructorString, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.ServiceModel.ServiceHostBase CreateServiceHost(string constructorString, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Activation.WorkflowServiceHostFactory.CreateServiceHost(System.String,System.Uri[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.WorkflowServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ServiceHostBase</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="constructorString" Type="System.String" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="constructorString">ワークフロー サービスを定義しているか、ワークフロー サービス型の型名を定義しているワークフロー マークアップ ファイルの名前。</param>
+        <param name="baseAddresses">ホストされるサービスのベース アドレスを格納する <see cref="T:System.Uri" /> 型の配列。</param>
+        <summary>ワークフロー マークアップ ファイルの名前、ワークフロー サービス型の型名、および指定されたサービスのベース アドレスを表す文字列から <see cref="T:System.ServiceModel.WorkflowServiceHost" /> を生成します。</summary>
+        <returns>ワークフロー サービスに関連付けられている <see cref="T:System.ServiceModel.ServiceHostBase" /> オブジェクト。 既定の実装では、指定されたベース アドレスと共に <see cref="T:System.ServiceModel.WorkflowServiceHost" /> オブジェクトが返されます。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `constructorString` 引数には、完全修飾ワークフロー型名か、<xref:System.ServiceModel.Activation.ServiceHostFactory> ディレクティブが配置されている .svc ファイルで宣言されたワークフロー定義ファイルの相対ファイル パスを指定できます。  
+  
+> [!NOTE]
+>  ルール定義をワークフロー定義と関連付けるには、ワークフロー定義ファイルと同じ名前に .rules 拡張子を付けた名前をルール定義ファイルに付け、このルール定義ファイルを、ワークフロー定義ファイルと同じディレクトリに配置します。 たとえば、CalculatorServiceWorkflow.rules というルール定義ファイルは、CalculatorServiceWorkflow.xoml と同じディレクトリに配置する必要があります。  
+  
+   
+  
+## Examples  
+ 次は、ワークフロー サービス CalculatorServiceWorkflow に対する、型に基づく参照例です。  
+  
+```  
+<%@ServiceHost language=c# Debug="true" Factory="System.ServiceModel.Activation.WorkflowServiceHostFactory" Service="CalculatorServiceWorkflow" %>  
+```  
+  
+ 次は、ワークフロー サービス CalculatorServiceWorkflow に対する、ワークフロー定義ファイルの参照例です。  
+  
+```  
+<%@ServiceHost language=c# Debug="true" Factory="System.ServiceModel.Activation.WorkflowServiceHostFactory" Service="CalculatorServiceWorkflow.xoml" %>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

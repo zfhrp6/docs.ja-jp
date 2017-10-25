@@ -1,0 +1,269 @@
+<Type Name="EncryptedSecurityTokenHandler" FullName="System.IdentityModel.Tokens.EncryptedSecurityTokenHandler">
+  <TypeSignature Language="C#" Value="public class EncryptedSecurityTokenHandler : System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit EncryptedSecurityTokenHandler extends System.IdentityModel.Tokens.SecurityTokenHandler" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.IdentityModel.Tokens.SecurityTokenHandler</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>暗号化されたセキュリティ トークンのトークン ハンドラー。 型のトークンを処理<see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シリアル化および逆シリアル化するトークン ハンドラー<xref:System.IdentityModel.Tokens.EncryptedSecurityToken>オブジェクトから`<xenc:EncryptedData>`要素および<xref:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause>オブジェクトから`<xenc:EncryptedKey>`要素 (http://www.w3.org/TR/2002/REC-xmlenc-core-20021210) XML Encryption Syntax and Processing 仕様で定義されています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public EncryptedSecurityTokenHandler ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override bool CanReadKeyIdentifierClause (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanReadKeyIdentifierClause(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.CanReadKeyIdentifierClause(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">開始要素に配置されている XML リーダーです。 リーダーはない高度な必要があります。</param>
+        <summary>現在の XML 要素を指しているかどうかを示す値を返します、<see langword="&lt;xenc:EncryptedKey&gt;" />を逆シリアル化する要素、<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifierClause" />このインスタンスでします。</summary>
+        <returns>
+          <see langword="true" />XML リーダーが配置されている場合、<see langword="&lt;xenc:EncryptedKey&gt;" />要素 (http://www.w3.org/TR/2002/REC-xmlenc-core-20021210); XML Encryption Syntax and Processing 仕様のセクション 3.5.1 で定義されている場合は、 <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanReadToken">
+      <MemberSignature Language="C#" Value="public override bool CanReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool CanReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.CanReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">セキュリティ トークンに位置しているリーダー (<see langword="&lt;xenc:EncryptedData&gt;" />要素です)。</param>
+        <summary>リーダーを指しているかどうかを示す値を返します、<see langword="&lt;xenc:EncryptedData&gt;" />要素。</summary>
+        <returns>
+          <see langword="true" />リーダーが配置されている場合、<see langword="&lt;xenc:EncryptedData&gt;" />要素、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返すときに、リーダーを移動しません`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanWriteToken">
+      <MemberSignature Language="C#" Value="public override bool CanWriteToken { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanWriteToken" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.CanWriteToken" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ハンドラーがトークンのシリアル化機能を提供するかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ハンドラーがトークンをシリアル化できる場合それ以外の場合、<see langword="false" />です。 常に <see langword="true" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetTokenTypeIdentifiers">
+      <MemberSignature Language="C#" Value="public override string[] GetTokenTypeIdentifiers ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetTokenTypeIdentifiers() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.GetTokenTypeIdentifiers" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在のインスタンスによって処理されるトークンの型識別子 Uri を取得します。</summary>
+        <returns>既定では、1 つの配列を返す<see langword="null" />文字列に関連付けられている特定のトークンの型識別子がないため、<see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />型です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyInfoSerializer">
+      <MemberSignature Language="C#" Value="public System.IdentityModel.Selectors.SecurityTokenSerializer KeyInfoSerializer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.IdentityModel.Selectors.SecurityTokenSerializer KeyInfoSerializer" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.KeyInfoSerializer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Selectors.SecurityTokenSerializer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.IdentityModel.Selectors.SecurityTokenSerializer" />およびからキーの識別子を逆シリアル化に使用される、<see langword="&lt;xenc:EncryptedData&gt;" />要素。</summary>
+        <value>読み取りし、書き込みに使用されるトークン シリアライザーは、キーの識別子をキーします。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">プロパティを設定しようとすると、<see langword="null" />に発生します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadKeyIdentifierClause">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityKeyIdentifierClause ReadKeyIdentifierClause (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityKeyIdentifierClause ReadKeyIdentifierClause(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.ReadKeyIdentifierClause(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityKeyIdentifierClause</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">XML リーダーに配置されて、<see langword="&lt;xenc:EncryptedKey&gt;" />要素として 'http://www.w3.org/TR/2002/REC-xmlenc-core-20021210' で定義されている、それ以外の<see langword="false" />します。</param>
+        <summary>読み取り、 <see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" /> XML ストリームからです。</summary>
+        <returns>型のキー識別子句<see cref="T:System.IdentityModel.Tokens.EncryptedKeyIdentifierClause" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="reader" />配置されていません、<see langword="&lt;xenc:EncryptedKey&gt;" />要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReadToken">
+      <MemberSignature Language="C#" Value="public override System.IdentityModel.Tokens.SecurityToken ReadToken (System.Xml.XmlReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IdentityModel.Tokens.SecurityToken ReadToken(class System.Xml.XmlReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.ReadToken(System.Xml.XmlReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Tokens.SecurityToken</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.Xml.XmlReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">元のトークンを読み取るリーダー。</param>
+        <summary>暗号化されたセキュリティ トークンを読み取ります。</summary>
+        <returns>型のセキュリティ トークン<see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="reader" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">構成されたサービス トークン リゾルバーがありません。 (いずれか、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" />プロパティまたは<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration.ServiceTokenResolver" />参照先のトークン ハンドラーの構成のプロパティが<see langword="null" />です。 復号化キーを取得するには、サービスのトークン リゾルバーが必要です。  
+  
+ または  
+  
+ <see cref="T:System.IdentityModel.Tokens.SecurityTokenHandlerCollection" />を介して参照される、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection" />プロパティは見つかりませんが、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />復号化された XML を読み取るして返すことができます、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException">A<see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />リーダーで XML が指す内側が見つかりません。  
+  
+ または  
+  
+ <see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />されませんが、<see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />です。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.EncryptedTokenDecryptionFailedException"><see cref="T:System.IdentityModel.Tokens.SecurityKeyIdentifier" />内側に構成されたサービス トークン リゾルバーで解決できない XML を検出、<see cref="T:System.IdentityModel.Tokens.SecurityKey" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TokenType">
+      <MemberSignature Language="C#" Value="public override Type TokenType { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type TokenType" />
+      <MemberSignature Language="DocId" Value="P:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.TokenType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のインスタンスによって処理されるトークンの種類を取得します。</summary>
+        <value>現在のインスタンスによって処理されるトークンの種類。 既定値は<see langword="typeof" /><see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToken">
+      <MemberSignature Language="C#" Value="public override void WriteToken (System.Xml.XmlWriter writer, System.IdentityModel.Tokens.SecurityToken token);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteToken(class System.Xml.XmlWriter writer, class System.IdentityModel.Tokens.SecurityToken token) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler.WriteToken(System.Xml.XmlWriter,System.IdentityModel.Tokens.SecurityToken)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Xml.XmlWriter" />
+        <Parameter Name="token" Type="System.IdentityModel.Tokens.SecurityToken" />
+      </Parameters>
+      <Docs>
+        <param name="writer">暗号化されたトークンの書き込み先 XML ライター。</param>
+        <param name="token">暗号化されたセキュリティ トークンのインスタンスである必要があります<see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />です。</param>
+        <summary>XML ライターを使用して暗号化されたセキュリティ トークンを書き込みます。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="writer" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="token" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="token" />として割り当てることはできません<see cref="T:System.IdentityModel.Tokens.EncryptedSecurityToken" />です。</exception>
+        <exception cref="T:System.InvalidOperationException"><see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.Configuration" /> プロパティが <see langword="null" /> です。 このプロパティは、暗号化キーを入手するために必要です。  
+  
+ または  
+  
+ によって返されたトークン ハンドラーのコレクション、<see cref="P:System.IdentityModel.Tokens.SecurityTokenHandler.ContainingCollection" />プロパティは検索できませんでした、<see cref="T:System.IdentityModel.Tokens.SecurityTokenHandler" />を書き込むことができます、<see cref="T:System.IdentityModel.Tokens.SecurityToken" />によって返される、<see cref="P:System.IdentityModel.Tokens.EncryptedSecurityToken.Token" />プロパティです。</exception>
+        <exception cref="T:System.IdentityModel.Tokens.SecurityTokenException"><see cref="P:System.IdentityModel.Tokens.EncryptingCredentials.SecurityKey" />として割り当てることができるプロパティは<see cref="T:System.IdentityModel.Tokens.SymmetricSecurityKey" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

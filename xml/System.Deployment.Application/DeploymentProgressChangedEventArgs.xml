@@ -1,0 +1,168 @@
+<Type Name="DeploymentProgressChangedEventArgs" FullName="System.Deployment.Application.DeploymentProgressChangedEventArgs">
+  <TypeSignature Language="C#" Value="public class DeploymentProgressChangedEventArgs : System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DeploymentProgressChangedEventArgs extends System.ComponentModel.ProgressChangedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.DeploymentProgressChangedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.ProgressChangedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>非同期操作で報告される進行状況データを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスには進行状況を記述するプロパティが含まれています、 <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>、 <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>、および<xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>イベント。 このクラスのすべてのプロパティは、各イベントに適用されます。  
+  
+ <xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesCompleted%2A>および<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesTotal%2A>バイトの合計数で表さダウンロードは、それぞれの日付と、ダウンロード操作のバイト数の合計数には 3 つすべてのイベントに対して適用します。 <xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.Group%2A>現在の対応するファイル グループの名前<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>イベント、および<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.State%2A>ダウンロード操作の現在のステージが反映されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のファイル グループをダウンロード`HelpFiles`、し、ダウンロードのステータス バーに進行状況を表示します。 この例は、Windows フォーム アプリケーションを展開して、メイン フォームに、<xref:System.Windows.Forms.StatusStrip>コントロール、および<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BytesCompleted">
+      <MemberSignature Language="C#" Value="public long BytesCompleted { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BytesCompleted" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesCompleted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この操作によってダウンロード済みバイト数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> (バイト単位)、転送されるデータを既にを表します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesCompleted%2A>プロパティは、配置マニフェストのダウンロードを参照します。 <xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>プロパティが含まれる、全体更新のダウンロードの進行状況をマニフェスト、アセンブリ、およびデータ ファイルを参照します。 <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>のプロパティは、名前付きグループの一部であるファイルのセット全体のダウンロードの進行状況を参照します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のファイル グループをダウンロード`HelpFiles`、し、ダウンロードのステータス バーに進行状況を表示します。 この例は、Windows フォーム アプリケーションを展開して、メイン フォームに、<xref:System.Windows.Forms.StatusStrip>コントロール、および<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BytesTotal">
+      <MemberSignature Language="C#" Value="public long BytesTotal { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int64 BytesTotal" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesTotal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロード操作の合計バイト数を取得します。</summary>
+        <value><see cref="T:System.Int64" /> (バイト単位) のダウンロードの合計サイズを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Deployment.Application.ApplicationDeployment.CheckForUpdateProgressChanged>、<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.BytesTotal%2A>プロパティは、配置マニフェストのダウンロードを参照します。 <xref:System.Deployment.Application.ApplicationDeployment.UpdateProgressChanged>プロパティが含まれる、全体更新のダウンロードの進行状況をマニフェスト、アセンブリ、およびデータ ファイルを参照します。 <xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupProgressChanged>のプロパティは、名前付きグループの一部であるファイルのセット全体のダウンロードの進行状況を参照します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のファイル グループをダウンロード`HelpFiles`、し、ダウンロードのステータス バーに進行状況を表示します。 この例は、Windows フォーム アプリケーションを展開して、メイン フォームに、<xref:System.Windows.Forms.StatusStrip>コントロール、および<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Group">
+      <MemberSignature Language="C#" Value="public string Group { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Group" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.DeploymentProgressChangedEventArgs.Group" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ダウンロードされるファイル グループの名前を取得します。</summary>
+        <value>A<see cref="T:System.String" />への呼び出しの結果として、イベントが発生した場合、ファイル グループの名前を含む<see cref="Overload:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync" />以外の場合、長さ 0 の文字列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複数の呼び出しを開始する<xref:System.Deployment.Application.ApplicationDeployment.DownloadFileGroupAsync%2A>と同時に複数のファイル グループをダウンロードします。 使用して<xref:System.Deployment.Application.DeploymentProgressChangedEventArgs.Group%2A>コールバックがどのグループに対応するイベントを確認します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、という名前のファイル グループをダウンロード`HelpFiles`、し、ダウンロードのステータス バーに進行状況を表示します。 この例は、Windows フォーム アプリケーションを展開して、メイン フォームに、<xref:System.Windows.Forms.StatusStrip>コントロール、および<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="State">
+      <MemberSignature Language="C#" Value="public System.Deployment.Application.DeploymentProgressState State { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Deployment.Application.DeploymentProgressState State" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.DeploymentProgressChangedEventArgs.State" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Deployment.Application.DeploymentProgressState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロセスが現在実行中のアクションを取得します。</summary>
+        <value>A<see cref="T:System.Deployment.Application.DeploymentProgressState" />操作は現在、ダウンロードしてどのような要素または要素を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、という名前のファイル グループをダウンロード`HelpFiles`、し、ダウンロードのステータス バーに進行状況を表示します。 この例は、Windows フォーム アプリケーションを展開して、メイン フォームに、<xref:System.Windows.Forms.StatusStrip>コントロール、および<xref:System.Windows.Forms.ToolStripStatusLabel>という名前のコントロール`downloadStatus`です。  
+  
+ [!code-cpp[ClickOnceAPI#8](~/samples/snippets/cpp/VS_Snippets_Winforms/ClickOnceAPI/cpp/form1.cpp#8)]
+ [!code-csharp[ClickOnceAPI#8](~/samples/snippets/csharp/VS_Snippets_Winforms/ClickOnceAPI/CS/Form1.cs#8)]
+ [!code-vb[ClickOnceAPI#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClickOnceAPI/VB/Form1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

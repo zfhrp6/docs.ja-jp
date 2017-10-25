@@ -1,0 +1,195 @@
+<Type Name="TransformGroup" FullName="System.Windows.Media.TransformGroup">
+  <TypeSignature Language="C#" Value="public sealed class TransformGroup : System.Windows.Media.Transform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TransformGroup extends System.Windows.Media.Transform" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.TransformGroup" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Transform</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Children")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>複合を表す<see cref="T:System.Windows.Media.Transform" />他から成る<see cref="T:System.Windows.Media.Transform" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.TransformGroup>複数を適用するときに<xref:System.Windows.Media.Transform>プロパティを 1 つのオブジェクト。  
+  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+ **Freezable 機能:**から継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.TransformGroup>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.TransformGroup>オブジェクトを複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください[Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TransformGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TransformGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.TransformGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TransformCollection Children { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.TransformCollection Children" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TransformGroup.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TransformCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.TransformGroup" /> を定義する <see cref="T:System.Windows.Media.TransformCollection" /> を取得または設定します。</summary>
+        <value>この <see cref="T:System.Windows.Media.TransformGroup" /> を定義する <see cref="T:System.Windows.Media.Transform" /> オブジェクトのコレクション。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+<a name="dependencyPropertyInfo_Children"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.TransformGroup.ChildrenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ChildrenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ChildrenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ChildrenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.TransformGroup.ChildrenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.TransformGroup.Children" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TransformGroup Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.TransformGroup Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TransformGroup.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TransformGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>値の詳細コピーを作ることにより、この <see cref="T:System.Windows.Media.TransformGroup" /> の変更可能なコピーを作成します。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> の場合でも、複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは <see langword="false" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ このメソッドは、依存関係プロパティをコピーする場合、は、不要になった解決する可能性がありますが、リソース参照とデータ バインディングをコピーします。 アニメーションやその現在の値はコピーされません。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.TransformGroup CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.TransformGroup CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TransformGroup.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.TransformGroup</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更可能なコピーを作成<see cref="T:System.Windows.Media.TransformGroup" />オブジェクトの値の詳細コピーを作成しています。 このメソッドでは、リソース参照、データ バインディング、アニメーションはコピーされませんが、その現在の値はコピーします。</summary>
+        <returns>現在のオブジェクトの変更可能な詳細コピー。 <see cref="P:System.Windows.Freezable.IsFrozen" /> 、複製されたオブジェクトのプロパティが<see langword="false" />場合でも、<see cref="P:System.Windows.Freezable.IsFrozen" />ソースのプロパティは<see langword="true" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 読み取り専用の変更可能なコピーを生成するためにこのメソッドを使用して<xref:System.Windows.Freezable>オブジェクト。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.TransformGroup.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public override System.Windows.Media.Matrix Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Matrix Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.TransformGroup.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Matrix" />これによって表される、変換を記述する構造体<see cref="T:System.Windows.Media.TransformGroup" />です。</summary>
+        <value>合成、<see cref="T:System.Windows.Media.Transform" />このオブジェクト<see cref="T:System.Windows.Media.TransformGroup" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

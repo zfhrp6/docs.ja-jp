@@ -1,0 +1,53 @@
+<Type Name="FormViewModeEventHandler" FullName="System.Web.UI.WebControls.FormViewModeEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void FormViewModeEventHandler(object sender, FormViewModeEventArgs e);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed FormViewModeEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.FormViewModeEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="e" Type="System.Web.UI.WebControls.FormViewModeEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="e">イベント データを格納している <see cref="T:System.Web.UI.WebControls.FormViewModeEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.Web.UI.WebControls.FormView.ModeChanging" />のイベント、<see cref="T:System.Web.UI.WebControls.FormView" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.FormView.ModeChanging>イベントが発生したときに、<xref:System.Web.UI.WebControls.FormView>コントロールは、モードが実際に変更前に、編集、挿入、および読み取り専用モードの間の切り替えを試行します。 これにより、構成など、カスタムのルーチンを実行するイベント処理メソッドを提供する、<xref:System.Web.UI.WebControls.FormView>特定のモードを制御したり、このイベントが発生するたびにモードの変更をキャンセルします。  
+  
+ <xref:System.Web.UI.WebControls.FormViewModeEventHandler> デリゲートを作成する場合は、イベントを処理するメソッドを指定します。 イベントをイベント ハンドラーに関連付けるには、デリゲートのインスタンスをイベントに追加します。 デリゲートを削除しない限り、そのイベントが発生すると常にイベント ハンドラーが呼び出されます。 イベント ハンドラー デリゲートの詳細については、次を参照してください。 [NIB: イベントとデリゲート](http://msdn.microsoft.com/en-us/d98fd58b-fa4f-4598-8378-addf4355a115)です。  
+  
+   
+  
+## Examples  
+ 次の例は、プログラムで追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewModeEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ModeChanging>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+> [!IMPORTANT]
+>  この例ではコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewModeEventHandler#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewModeEventHandler/CS/formviewmodeeventhandlercs.aspx#1)]
+ [!code-aspx-vb[FormViewModeEventHandler#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewModeEventHandler/VB/formviewmodeeventhandlervb.aspx#1)]  
+  
+ 次の例は、宣言によって追加する方法を示します、<xref:System.Web.UI.WebControls.FormViewModeEventHandler>にデリゲート、<xref:System.Web.UI.WebControls.FormView.ModeChanging>のイベント、<xref:System.Web.UI.WebControls.FormView>コントロール。  
+  
+> [!IMPORTANT]
+>  この例ではコントロールには、潜在的なセキュリティの脅威は、ユーザー入力を受け付けるテキスト ボックスがあります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[FormViewModeEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WebNet/FormViewModeEventArgs/CS/formviewmodeeventargscs.aspx#1)]
+ [!code-aspx-vb[FormViewModeEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/FormViewModeEventArgs/VB/formviewmodeeventargsvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

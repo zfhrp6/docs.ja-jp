@@ -1,0 +1,374 @@
+<Type Name="BuildItemGroup" FullName="Microsoft.Build.BuildEngine.BuildItemGroup">
+  <TypeSignature Language="C#" Value="public class BuildItemGroup : System.Collections.IEnumerable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit BuildItemGroup extends System.Object implements class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.BuildEngine.BuildItemGroup" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IEnumerable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("BuildItemGroup (Count = { Count }, Condition = { Condition })")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+          <see cref="T:Microsoft.Build.BuildEngine.BuildItem" /> オブジェクトのコレクションを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:Microsoft.Build.BuildEngine.BuildItemGroup>でワイルドカードを評価した後に、項目を含む、アイテムの仮想コレクションが作成されたオブジェクトは、プロジェクト内の要素を表すことができます、または、`Include`と`Exclude`の属性、`Item`要素。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildItemGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewItem#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewItem/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewItem#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewItem/VB/Module1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BuildItemGroup ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="AddNewItem">
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />を<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildItemGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewItem#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewItem/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewItem#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewItem/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="AddNewItem">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildItem AddNewItem (string itemName, string itemInclude);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildItem AddNewItem(string itemName, string itemInclude) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.AddNewItem(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemName" Type="System.String" />
+        <Parameter Name="itemInclude" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="itemName"><see cref="P:Microsoft.Build.BuildEngine.BuildItem.Name" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />です。</param>
+        <param name="itemInclude"><see cref="P:Microsoft.Build.BuildEngine.BuildItem.Include" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />です。</param>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildItem.Name" />と<see cref="P:Microsoft.Build.BuildEngine.BuildItem.Include" />プロパティ値を<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <returns>新しい <see cref="T:Microsoft.Build.BuildEngine.BuildItem" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildItemGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewItem#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewItem/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewItem#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewItem/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNewItem">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildItem AddNewItem (string itemName, string itemInclude, bool treatItemIncludeAsLiteral);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildItem AddNewItem(string itemName, string itemInclude, bool treatItemIncludeAsLiteral) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.AddNewItem(System.String,System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemName" Type="System.String" />
+        <Parameter Name="itemInclude" Type="System.String" />
+        <Parameter Name="treatItemIncludeAsLiteral" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="itemName"><see cref="P:Microsoft.Build.BuildEngine.BuildItem.Name" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />です。</param>
+        <param name="itemInclude"><see cref="P:Microsoft.Build.BuildEngine.BuildItem.Include" />プロパティの値を割り当てる新しい<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />です。</param>
+        <param name="treatItemIncludeAsLiteral">
+          <see langword="true" />処理する、 <c>itemInclude</c>パラメーターとしてリテラル値です。 それ以外の場合、<see langword="false" />です。</param>
+        <summary>新しく追加<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />、指定した<see cref="P:Microsoft.Build.BuildEngine.BuildItem.Name" />と<see cref="P:Microsoft.Build.BuildEngine.BuildItem.Include" />プロパティ値を<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />を指定することができるかどうか、<see cref="P:Microsoft.Build.BuildEngine.BuildItem.Include" />プロパティの値はリテラルとして扱われます。</summary>
+        <returns>新しい <see cref="T:Microsoft.Build.BuildEngine.BuildItem" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="P:Microsoft.Build.BuildEngine.BuildItemGroup.Condition" />プロパティの値とそのすべて<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />オブジェクトから、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildItemGroup Clone (bool deepClone);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildItemGroup Clone(bool deepClone) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.Clone(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildItemGroup</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="deepClone" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="deepClone">
+          <see langword="true" />ディープ コピーを作成する、 <see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />、それ以外の<see langword="false" />します。</param>
+        <summary>簡易コピーを作成、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <returns><see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" /> のコピー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 簡易コピーを<xref:Microsoft.Build.BuildEngine.BuildItemGroup>元と同じプロパティ グループを参照します。 変更の簡易コピーが両方のコピーに反映されます。  
+  
+ 詳細なコピー、<xref:Microsoft.Build.BuildEngine.BuildItemGroup>参照の両方をコピーできるようにする新しい XML 要素を作成、<xref:Microsoft.Build.BuildEngine.BuildItemGroup>は個別に変更できます。  
+  
+ 場合、 <xref:Microsoft.Build.BuildEngine.BuildItemGroup> 、プロジェクト内の要素に直接対応しています (でワイルドカードを評価した後に作成された項目のコレクションに対応するのではなく、`Include`と`Exclude`の属性、`Item`要素)、深層のみコピーが許可されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Condition">
+      <MemberSignature Language="C#" Value="public string Condition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Condition" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildItemGroup.Condition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<c>条件</c>属性項目グループの値。</summary>
+        <value><c>条件</c>属性項目グループの値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildItemGroup.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を示す値を取得<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />内のオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <value>数を表す整数値<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />内のオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" /> を反復処理する列挙子を取得します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerator" />全体の<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、呼び出し元を使用する、 `foreach` c# 言語のステートメント (`for each`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])、個人を反復処理する<xref:Microsoft.Build.BuildEngine.BuildItem>内のオブジェクト、<xref:Microsoft.Build.BuildEngine.BuildItemGroup>です。  
+  
+   
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildProperty> <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildPropertyGroup>クラスをすべてのアイテムと、プロジェクトのプロパティを一覧表示します。  
+  
+ [!code-csharp[msbuild_ListItemsAndProperties#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_ListItemsAndProperties/CS/Program.cs#1)]
+ [!code-vb[msbuild_ListItemsAndProperties#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_ListItemsAndProperties/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsImported">
+      <MemberSignature Language="C#" Value="public bool IsImported { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsImported" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildItemGroup.IsImported" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアイテム グループがプロジェクトにインポートされたかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />場合は、項目グループは、プロジェクトにインポートされましたそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Build.BuildEngine.BuildItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.BuildEngine.BuildItemGroup.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">0 から始まるインデックス、<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />オブジェクトを取得または設定します。</param>
+        <summary>取得または設定、<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />の<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />します。</summary>
+        <value>A<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />の<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItem">
+      <MemberSignature Language="C#" Value="public void RemoveItem (Microsoft.Build.BuildEngine.BuildItem itemToRemove);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveItem(class Microsoft.Build.BuildEngine.BuildItem itemToRemove) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.RemoveItem(Microsoft.Build.BuildEngine.BuildItem)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="itemToRemove" Type="Microsoft.Build.BuildEngine.BuildItem" />
+      </Parameters>
+      <Docs>
+        <param name="itemToRemove">削除する <see cref="T:Microsoft.Build.BuildEngine.BuildItem" />。</param>
+        <summary>指定した <see cref="T:Microsoft.Build.BuildEngine.BuildItem" /> を <see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" /> から削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を作成、<xref:Microsoft.Build.BuildEngine.Project>オブジェクトと使用、<xref:Microsoft.Build.BuildEngine.Project.LoadXml%2A>プロジェクトにコンテンツを追加します。 <xref:Microsoft.Build.BuildEngine.BuildItem>、 <xref:Microsoft.Build.BuildEngine.BuildItemGroup>、および<xref:Microsoft.Build.BuildEngine.BuildItemGroupCollection>クラスを使用すると、追加、削除、およびプロジェクト内の項目を変更します。  
+  
+ [!code-csharp[msbuild_AddNewItem#1](~/samples/snippets/csharp/VS_Snippets_Misc/msbuild_AddNewItem/CS/Program.cs#1)]
+ [!code-vb[msbuild_AddNewItem#1](~/samples/snippets/visualbasic/VS_Snippets_Misc/msbuild_AddNewItem/VB/Module1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveItemAt">
+      <MemberSignature Language="C#" Value="public void RemoveItemAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RemoveItemAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.RemoveItemAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する <see cref="T:Microsoft.Build.BuildEngine.BuildItem" /> オブジェクトの 0 から始まるインデックス。</param>
+        <summary>削除、<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />から指定したインデックス位置、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToArray">
+      <MemberSignature Language="C#" Value="public Microsoft.Build.BuildEngine.BuildItem[] ToArray ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class Microsoft.Build.BuildEngine.BuildItem[] ToArray() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.BuildEngine.BuildItemGroup.ToArray" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Engine</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Microsoft.Build.BuildEngine.BuildItem[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コピー、<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />内のオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />を新しい配列にします。</summary>
+        <returns>新しい配列を格納する、<see cref="T:Microsoft.Build.BuildEngine.BuildItem" />からコピーされるオブジェクト、<see cref="T:Microsoft.Build.BuildEngine.BuildItemGroup" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

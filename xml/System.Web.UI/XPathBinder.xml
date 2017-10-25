@@ -1,0 +1,398 @@
+<Type Name="XPathBinder" FullName="System.Web.UI.XPathBinder">
+  <TypeSignature Language="C#" Value="public sealed class XPathBinder" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit XPathBinder extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.XPathBinder" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>迅速なアプリケーション開発の XPath 式を使用してデータ バインディング式を解析する (RAD) デザイナーのサポートを提供します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードされたを使用することができます<xref:System.Web.UI.XPathBinder.Eval%2A>を実装するオブジェクトに対して実行された XPath 式の結果にバインドするには、このクラスのメソッド、<xref:System.Xml.XPath.IXPathNavigable>インターフェイスなど、<xref:System.Xml.XmlNode>です。 使用することができます、<xref:System.Web.UI.XPathBinder.Select%2A>に対して実行された XPath 式の結果を取得する方法を<xref:System.Xml.XPath.IXPathNavigable>オブジェクトとして、<xref:System.Collections.IEnumerable>ノードの一覧です。 このノードの一覧を直接列挙またはに割り当てられていることができます、`DataSource`リストのプロパティを制御するように、<xref:System.Web.UI.WebControls.Repeater>または<xref:System.Web.UI.WebControls.DataList>です。  
+  
+ 使用する場合は、簡略化されたバージョンのデータ バインディングの構文を使用することができます、<xref:System.Web.UI.XPathBinder>メソッド宣言します。 呼び出し元ではなく`XPathBinder.Eval`(`Container.DataItem`、 `xpath`) を使用することができます`XPath`(`xpath`)。 呼び出す代わりに同様に、 `XPathBinder.Select`(`Container.DataItem`、`xpath`) を使用することができます`XPathSelect`(`xpath`) を取得する、<xref:System.Collections.IEnumerable>ノードのセット。 構文、簡単にこれを使用するとき、<xref:System.Web.UI.XPathBinder.Eval%2A>と<xref:System.Web.UI.XPathBinder.Select%2A>メソッドには、既定値があると`Container.DataItem`コンテキスト オブジェクト。  
+  
+ ASP.NET サーバー コントロールにデータ バインディングの詳細については、次を参照してください。[データ バインディング式の構文](http://msdn.microsoft.com/en-us/676beb1d-ddfa-4153-bba8-3c86dcb7ceca)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.XmlDataSource> 、テンプレートを持つコントロール<xref:System.Web.UI.WebControls.Repeater>コントロールに XML データを表示します。 この例では、2 つの部分があります。  
+  
+-   XML データを表示する Web フォーム ページです。  
+  
+-   データを含む XML ファイルです。  
+  
+ この例の最初の部分がを介してアクセスされる XML データを表示する Web フォーム ページを示しています、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール。 A<xref:System.Web.UI.WebControls.Repeater>簡略化の使用を制御<xref:System.Web.UI.XPathBinder.Eval%28System.Object%2CSystem.String%29>XML 内のデータ項目にバインドするメソッドの構文を文書化する、<xref:System.Web.UI.WebControls.XmlDataSource>を表します。 使用して、<xref:System.Web.UI.XPathBinder.Select%28System.Object%2CSystem.String%29>を取得する方法、<xref:System.Collections.IEnumerable>を一覧表示し、遅延バインディングとして割り当てる<xref:System.Web.UI.WebControls.Repeater.DataSource%2A>プロパティを<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/CS/xmlds14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/VB/xmlds14vb.aspx#1)]  
+  
+ 2 番目の例では、XML ファイル、Web フォーム ページに表示されるデータのソースが前述のように使用される Order.xml を提供します。  
+  
+```  
+<?xml version="1.0" encoding="iso-8859-1"?>  
+  <orders>  
+    <order>  
+      <customer id="12345" />  
+      <customername>  
+        <firstn>John</firstn>  
+        <lastn>Doe</lastn>  
+      </customername>  
+      <transaction id="12345" />  
+      <shipaddress>  
+        <address1>1234 Tenth Avenue</address1>  
+        <city>Bellevue</city>  
+        <state>Washington</state>  
+        <zip>98001</zip>  
+      </shipaddress>  
+      <summary>  
+        <item dept="tools">screwdriver</item>  
+        <item dept="tools">hammer</item>  
+        <item dept="plumbing">fixture</item>  
+      </summary>  
+    </order>  
+ </orders>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static object Eval (object container, string xPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Eval(object container, string xPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Eval(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">XPath クエリから<c>コンテナー</c>バインドされたコントロール プロパティに配置されているプロパティの値にします。</param>
+        <summary>実行時にデータ バインディングの XPath 式を評価します。</summary>
+        <returns><see cref="T:System.Object" />データ バインディング式の評価の結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Eval%2A>メソッドをブラウザーに表示するテキスト文字列を XML ノードのキャストを簡略化する場合に宣言します。 これを行うには、配置する必要があります、 \<% #、% > タグで、データ バインディング式を囲む、標準の ASP.NET データ バインドにも使用します。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。 ページで、に対してをバインドする場合、`container`パラメーターでなければなりません`Page`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.XmlDataSource> 、テンプレートを持つコントロール<xref:System.Web.UI.WebControls.Repeater>コントロールに XML データを表示します。 この例では、2 つの部分があります。  
+  
+-   XML データを表示する Web フォーム ページです。  
+  
+-   データを含む XML ファイルです。  
+  
+ この例の最初の部分がを介してアクセスされる XML データを表示する Web フォーム ページを示しています、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール。 A<xref:System.Web.UI.WebControls.Repeater>コントロールを使用して、簡略化された<xref:System.Web.UI.XPathBinder.Eval%28System.Object%2CSystem.String%29>XML 内のデータ項目にバインドするメソッドの構文を文書化する、<xref:System.Web.UI.WebControls.XmlDataSource>を表します。 使用して、<xref:System.Web.UI.XPathBinder.Select%28System.Object%2CSystem.String%29>を取得する方法、<xref:System.Collections.IEnumerable>を一覧表示し、遅延バインディングとして割り当てる<xref:System.Web.UI.WebControls.Repeater.DataSource%2A>プロパティを<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_13#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_13/CS/xmlds13cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_13#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_13/VB/xmlds13vb.aspx#1)]  
+  
+ 2 番目の例では、XML ファイル、Web フォーム ページに表示されるデータのソースが前述のように使用される Bookstore2.xml を提供します。  
+  
+```  
+<?xml version="1.0" encoding="iso-8859-1"?>  
+  <bookstore>  
+    <genre name="fiction">  
+      <book ISBN="10-861003-324">  
+        <author>  
+          <firstname>test</firstname>  
+          <lastname>test2</lastname>  
+        </author>  
+        <title>The Handmaid's Tale</title>  
+        <price>12.95</price>  
+        <chapters>  
+          <chapter num="1" name="Introduction" />   
+          <chapter num="2" name="Body" />   
+          <chapter num="3" name="Conclusion" />  
+        </chapters>  
+      </book>  
+    </genre>  
+    <genre name="nonfiction">  
+      <book genre="nonfiction" ISBN="1-861001-57-5">  
+        <author>  
+          <firstname>test3</firstname>  
+          <lastname>test4</lastname>  
+        </author>      
+        <title>Pride And Prejudice</title>  
+        <price>24.95</price>  
+        <chapters>  
+          <chapter num="1" name="Introduction" />   
+          <chapter num="2" name="Body" />  
+          <chapter num="3" name="Conclusion" />  
+        </chapters>  
+      </book>  
+    </genre>  
+  </bookstore>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="container" /> パラメーターまたは <paramref name="xpath" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクト<paramref name="container" />されませんが、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static string Eval (object container, string xPath, string format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Eval(object container, string xPath, string format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Eval(System.Object,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">XPath クエリから、<c>コンテナー</c>バインドされたコントロール プロパティに格納されるプロパティの値にします。</param>
+        <param name="format">.NET Framework 形式文字列で使用されるものに似ています<see cref="M:System.String.Format(System.String,System.Object)" />、変換する、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト (データ バインディング式の評価の結果) に、<see cref="T:System.String" />要求側のブラウザーで表示できます。</param>
+        <summary>実行時にデータ バインディングの XPath 式を評価し、結果の要求側のブラウザーで表示されるテキストを書式設定します。</summary>
+        <returns>A<see cref="T:System.String" />データ バインディング式と文字列型への変換の評価の結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET Framework の書式指定文字列の詳細については、次を参照してください。[型の書式設定](~/docs/standard/base-types/formatting-types.md)です。  
+  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Eval%28System.Object%2CSystem.String%29>メソッド、ブラウザーに表示されるテキスト文字列を XML ノードのキャストを簡略化する場合に宣言します。 これを行うには、配置する必要があります、 \<% #、% > タグで、データ バインディング式を囲む、標準の ASP.NET データ バインドにも使用します。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。 ページで、に対してをバインドする場合、`container`パラメーターでなければなりません`Page`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="container" /> パラメーターまたは <paramref name="xpath" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクト<paramref name="container" />されませんが、<see cref="T:System.Xml.XPath.IXPathNavigable" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static object Eval (object container, string xPath, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Eval(object container, string xPath, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Eval(System.Object,System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">XPath クエリから、<c>コンテナー</c>バインドされたコントロール プロパティに格納されるプロパティの値にします。</param>
+        <param name="resolver">XPath 式の名前空間プレフィックスの解決に使用する <see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクト。</param>
+        <summary>実行時にデータ バインディングの XPath 式を評価し、結果の要求元のブラウザーで表示されるテキストを書式設定を使用して、 <see cref="T:System.Xml.IXmlNamespaceResolver" /> XPath 式の名前空間プレフィックスを解決するのには指定されたオブジェクト。</summary>
+        <returns>A<see cref="T:System.Object" />データ バインディング式の評価の結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Eval%2A>メソッド、ブラウザーに表示されるテキスト文字列を XML ノードのキャストを簡略化する場合に宣言します。 これを行うには、配置する必要があります、 \<% #、% > タグで、データ バインディング式を囲む、標準の ASP.NET データ バインドにも使用します。 データ バインディング式には、XPath 式が含まれています。 および<xref:System.Xml.IXmlNamespaceResolver>名前空間の参照を解決するオブジェクト。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。 ページで、に対してをバインドする場合、`container`パラメーターでなければなりません`Page`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Eval">
+      <MemberSignature Language="C#" Value="public static string Eval (object container, string xPath, string format, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string Eval(object container, string xPath, string format, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Eval(System.Object,System.String,System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">XPath クエリから、<c>コンテナー</c>バインドされたコントロール プロパティに格納されるプロパティの値にします。</param>
+        <param name="format">.NET Framework 形式文字列で使用されるものに似ています<see cref="M:System.String.Format(System.String,System.Object)" />、変換する、<see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト (データ バインディング式の評価の結果) に、<see cref="T:System.String" />要求側のブラウザーで表示できます。</param>
+        <param name="resolver">XPath 式の名前空間プレフィックスの解決に使用する <see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクト。</param>
+        <summary>実行時にデータ バインディングの XPath 式を評価し、結果の要求元のブラウザーで表示されるテキストを書式設定を使用して、 <see cref="T:System.Xml.IXmlNamespaceResolver" /> XPath 式の名前空間プレフィックスを解決するのには指定されたオブジェクト。</summary>
+        <returns>A<see cref="T:System.String" />データ バインディング式と文字列型への変換の評価の結果です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Eval%2A>メソッド、ブラウザーに表示されるテキスト文字列を XML ノードのキャストを簡略化する場合に宣言します。 これを行うには、配置する必要があります、 \<% #、% > タグで、データ バインディング式を囲む、標準の ASP.NET データ バインドにも使用します。 データ バインディング式には、XPath 式が含まれています。 および<xref:System.Xml.IXmlNamespaceResolver>名前空間の参照を解決するオブジェクト。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。 ページで、に対してをバインドする場合、`container`パラメーターでなければなりません`Page`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Select">
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>実行時に、XPath のデータ バインディング式を使用して、ノードの一覧を返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オーバー ロードされたを使用することができます<xref:System.Web.UI.XPathBinder.Select%2A>メソッド宣言する場合、XPath クエリを使用して、ノードのセットの取得を簡単にします。 これを行うには、配置する必要があります、 \<% #、% > タグで、XPath クエリを標準の ASP.NET データ バインドにも使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable Select (object container, string xPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable Select(object container, string xPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Select(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">ノードの一覧を取得する XPath クエリ。</param>
+        <summary>実行時に、XPath のデータ バインディング式を使用して、ノードの一覧を返します。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Select%28System.Object%2CSystem.String%29>メソッド宣言する場合、XPath クエリを使用して、ノードのセットの取得を簡単にします。 これを行うには、配置する必要があります、 \<% #、% > タグで、XPath クエリを標準の ASP.NET データ バインドにも使用します。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、 <xref:System.Web.UI.WebControls.XmlDataSource> 、テンプレートを持つコントロール<xref:System.Web.UI.WebControls.Repeater>コントロールに XML データを表示します。 この例では、2 つの部分があります。  
+  
+-   XML データを表示する Web フォーム ページです。  
+  
+-   データを含む XML ファイルです。  
+  
+ この例の最初の部分がを介してアクセスされる XML データを表示する Web フォーム ページを示しています、<xref:System.Web.UI.WebControls.XmlDataSource>コントロール。 A<xref:System.Web.UI.WebControls.Repeater>コントロールを使用して、簡略化された<xref:System.Web.UI.XPathBinder.Eval%28System.Object%2CSystem.String%29>XML 内のデータ項目にバインドするメソッドの構文を文書化する、<xref:System.Web.UI.WebControls.XmlDataSource>を表します。 使用して、<xref:System.Web.UI.XPathBinder.Select%28System.Object%2CSystem.String%29>を取得する方法、<xref:System.Collections.IEnumerable>を一覧表示し、遅延バインディングとして割り当てる<xref:System.Web.UI.WebControls.Repeater.DataSource%2A>プロパティを<xref:System.Web.UI.WebControls.Repeater>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/CS/xmlds14cs.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.WebControls.XmlDataSource_14#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.UI.WebControls.XmlDataSource_14/VB/xmlds14vb.aspx#1)]  
+  
+ 2 番目の例では、XML ファイル、Web フォーム ページに表示されるデータのソースが前述のように使用される Order.xml を提供します。  
+  
+```  
+<?xml version="1.0" encoding="iso-8859-1"?>  
+  <orders>  
+    <order>  
+      <customer id="12345" />  
+      <customername>  
+        <firstn>John</firstn>  
+        <lastn>Doe</lastn>  
+      </customername>  
+      <transaction id="12345" />  
+      <shipaddress>  
+        <address1>1234 Tenth Avenue</address1>  
+        <city>Bellevue</city>  
+        <state>Washington</state>  
+        <zip>98001</zip>  
+      </shipaddress>  
+      <summary>  
+        <item dept="tools">screwdriver</item>  
+        <item dept="tools">hammer</item>  
+        <item dept="plumbing">fixture</item>  
+      </summary>  
+    </order>  
+  </orders>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="container" /> パラメーターまたは <paramref name="xpath" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">指定されたオブジェクト<paramref name="container" />されませんが、<see cref="T:System.Xml.XPath.IXPathNavigable" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">現在のノード、<see cref="T:System.Xml.XPath.XPathNodeIterator" />関連付けられている XML ノードはありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Select">
+      <MemberSignature Language="C#" Value="public static System.Collections.IEnumerable Select (object container, string xPath, System.Xml.IXmlNamespaceResolver resolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.IEnumerable Select(object container, string xPath, class System.Xml.IXmlNamespaceResolver resolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.XPathBinder.Select(System.Object,System.String,System.Xml.IXmlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Object" />
+        <Parameter Name="xPath" Type="System.String" />
+        <Parameter Name="resolver" Type="System.Xml.IXmlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="container"><see cref="T:System.Xml.XPath.IXPathNavigable" />オブジェクト参照に対して評価される式。 これは、ページの指定した言語で有効なオブジェクト識別子である必要があります。</param>
+        <param name="xPath">ノードの一覧を取得する XPath クエリ。</param>
+        <param name="resolver">XPath 式の名前空間プレフィックスの解決に使用する <see cref="T:System.Xml.IXmlNamespaceResolver" /> オブジェクト。</param>
+        <summary>実行時に、XPath のデータ バインディング式を使用して、使用して、ノードの一覧を返す、 <see cref="T:System.Xml.IXmlNamespaceResolver" /> XPath 式の名前空間プレフィックスを解決するのには指定されたオブジェクト。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />ノードの一覧です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、<xref:System.Web.UI.XPathBinder.Select%2A>メソッド宣言する場合、XPath クエリを使用して、ノードのセットの取得を簡単にします。 これを行うには、配置する必要があります、 \<% #、% > タグで、XPath クエリを標準の ASP.NET データ バインドにも使用と<xref:System.Xml.IXmlNamespaceResolver>名前空間の参照を解決するオブジェクト。  
+  
+ リストの ASP.NET サーバー コントロールのいずれかのように<xref:System.Web.UI.WebControls.DataList>、 <xref:System.Web.UI.WebControls.DataGrid>、または<xref:System.Web.UI.WebControls.Repeater>、`container`パラメーターでなければなりません`Container.DataItem`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

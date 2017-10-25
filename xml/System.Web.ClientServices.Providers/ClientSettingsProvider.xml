@@ -1,0 +1,426 @@
+<Type Name="ClientSettingsProvider" FullName="System.Web.ClientServices.Providers.ClientSettingsProvider">
+  <TypeSignature Language="C#" Value="public class ClientSettingsProvider : System.Configuration.SettingsProvider, System.Configuration.IApplicationSettingsProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ClientSettingsProvider extends System.Configuration.SettingsProvider implements class System.Configuration.IApplicationSettingsProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.Providers.ClientSettingsProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.SettingsProvider</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Configuration.IApplicationSettingsProvider</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Security.SecurityCritical</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>Web 設定サービスからユーザーの設定を取得する Windows ベースのアプリケーションを有効にします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用するアプリケーションを構成することによって既存の Web 設定サービスからユーザーの設定を取得するクライアント アプリケーション サービスを使用することができます、<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>クラスです。 詳細については、「 [How to: Configure Client Application Services](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)」を参照してください。 構成するとすれば、およびから派生したアプリケーション設定クラスを介してユーザー設定<xref:System.Configuration.ApplicationSettingsBase>を使用するように構成し、<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>クラスです。 使用することができます[!INCLUDE[vsprvs](~/includes/vsprvs-md.md)]を生成する、 `Settings` 、プロジェクトのクラス (としてアクセス`Properties.Settings.Default`C# の場合と`My.Settings`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])。 アプリケーション設定の詳細については、「[アプリケーション設定の概要](~/docs/framework/winforms/advanced/application-settings-overview.md)」を参照してください。  
+  
+ 現在を取得する<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>を通じて、 <xref:System.Configuration.ApplicationSettingsBase.Providers%2A?displayProperty=nameWithType> 、完全修飾を使用してプロパティ<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>キーとしてのクラス名。 使用して、プロバイダーを取得することも、<xref:System.Configuration.SettingsLoadedEventArgs.Provider%2A?displayProperty=nameWithType>プロパティを処理するとき、<xref:System.Configuration.ApplicationSettingsBase.SettingsLoaded?displayProperty=nameWithType>イベント。  
+  
+> [!NOTE]
+>  このクラスに含まれる、<xref:System.Security.SecurityCriticalAttribute>クラス レベルのクラスのすべてのメンバーに適用します。 直前の呼び出し元は透過的セキュリティまたは部分的に信頼された、実行時に例外がスローされます。 セキュリティ クリティカルな型とメンバーの詳細については、次を参照してください。[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+> [!NOTE]
+>  このクラスには、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>派生クラスに完全信頼アクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このイベントを使用して、正常に保存されなかった設定の一覧を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#304](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#304)]
+ [!code-vb[ClientApplicationServices#304](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#304)]  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+    <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このクラスは、部分的に信頼されているまたは透過的なコードでは使用できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ClientSettingsProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.ClientServices.Providers.ClientSettingsProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  このクラスに含まれる、<xref:System.Security.SecurityCriticalAttribute>クラス レベルのクラスのすべてのメンバーに適用します。 直前の呼び出し元は透過的セキュリティまたは部分的に信頼された、実行時に例外がスローされます。 セキュリティ クリティカルな型とメンバーの詳細については、次を参照してください。[透過的セキュリティ コード、レベル 2](~/docs/framework/misc/security-transparent-code-level-2.md)です。  
+  
+> [!NOTE]
+>  このクラスには、すべてのメンバーに適用されるクラス レベルの継承確認要求が含まれています。 A<xref:System.Security.SecurityException>派生クラスに完全信頼アクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)と[継承確認要求](http://msdn.microsoft.com/en-us/28b9adbb-8f08-4f10-b856-dbf59eb932d9)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientSettingsProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロパティは、このクラスでは使用されません。</summary>
+        <value>プロバイダーのアプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しても効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPreviousVersion">
+      <MemberSignature Language="C#" Value="public System.Configuration.SettingsPropertyValue GetPreviousVersion (System.Configuration.SettingsContext context, System.Configuration.SettingsProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Configuration.SettingsPropertyValue GetPreviousVersion(class System.Configuration.SettingsContext context, class System.Configuration.SettingsProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.GetPreviousVersion(System.Configuration.SettingsContext,System.Configuration.SettingsProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="property" Type="System.Configuration.SettingsProperty" />
+      </Parameters>
+      <Docs>
+        <param name="context">このパラメーターは、このメソッドでは使用されません。</param>
+        <param name="property">以前のバージョンを取得するプロパティを表します。</param>
+        <summary>指定したプロパティの以前のバージョンを取得します。</summary>
+        <returns>指定したプロパティの以前のバージョンを表します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーションの設定のシステムと、アプリケーション コードで使用することは意図されていない内部使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />と Web 設定サービスに、<see cref="P:System.Web.ClientServices.Providers.ClientSettingsProvider.ServiceUri" />場所は利用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyMetadata">
+      <MemberSignature Language="C#" Value="public static System.Configuration.SettingsPropertyCollection GetPropertyMetadata (string serviceUri);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Configuration.SettingsPropertyCollection GetPropertyMetadata(string serviceUri) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.GetPropertyMetadata(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceUri" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="serviceUri">プロパティ メタデータを取得する Web 設定サービス。</param>
+        <summary>指定された Web 設定サービスから取得したすべてのプロパティのメタデータのコレクションを取得します。</summary>
+        <returns>プロパティ メタデータ。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyValues">
+      <MemberSignature Language="C#" Value="public override System.Configuration.SettingsPropertyValueCollection GetPropertyValues (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection propertyCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Configuration.SettingsPropertyValueCollection GetPropertyValues(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection propertyCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.GetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.SettingsPropertyValueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="propertyCollection" Type="System.Configuration.SettingsPropertyCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在使用されているアプリケーションを記述します。</param>
+        <param name="propertyCollection">A<see cref="T:System.Configuration.SettingsPropertyCollection" />取得するのには、値が設定プロパティのグループを含むです。</param>
+        <summary>指定したアプリケーション インスタンスと設定のプロパティ グループのプロパティの値の設定のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.Configuration.SettingsPropertyValueCollection" />指定した設定のプロパティ グループの値を格納します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">プロバイダーのフレンドリ名。</param>
+        <param name="config">このプロバイダーの構成で指定されたプロバイダーに固有の属性を表す名前/値ペアのコレクション。</param>
+        <summary>プロバイダーを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーションの設定のシステムと、アプリケーション コードで使用することは意図されていない内部使用されます。  
+  
+ [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)]機能拡張モデルの呼び出し、<xref:System.Web.ClientServices.Providers.ClientSettingsProvider.Initialize%2A>初期化するメソッドを<xref:System.Web.ClientServices.Providers.ClientSettingsProvider>アプリケーション構成ファイルに情報を使用しています。 このメソッドは、次の Web 設定サービスの構成属性を認識します。  
+  
+-   name  
+  
+-   説明  
+  
+-   connectionStringName  
+  
+-   serviceUri  
+  
+ これらの属性の詳細については、次を参照してください。[する方法: クライアント アプリケーション サービスを構成する](~/docs/framework/common-client-technologies/how-to-configure-client-application-services.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="name" /> は <see cref="F:System.String.Empty" /> です。  
+  
+ または  
+  
+ <paramref name="config" />認識されない値が含まれています。</exception>
+        <exception cref="T:System.InvalidOperationException">これは、<see cref="T:System.Web.ClientServices.Providers.ClientRoleProvider" />は既に初期化されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="public void Reset (System.Configuration.SettingsContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Reset(class System.Configuration.SettingsContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.Reset(System.Configuration.SettingsContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+      </Parameters>
+      <Docs>
+        <param name="context">このパラメーターは、このメソッドでは使用されません。</param>
+        <summary>すべてのユーザー設定を既定値にリセットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーションの設定のシステムと、アプリケーション コードで使用することは意図されていない内部使用されます。 Web 設定を既定値にリセットするには通常使用する、<xref:System.Configuration.ApplicationSettingsBase.Reset%2A?displayProperty=nameWithType>メソッドは、プロジェクトの`Settings`クラス (として、通常はアクセス`Properties.Settings.Default`C# の場合と`My.Settings`で[!INCLUDE[vbprvb](~/includes/vbprvb-md.md)])。 呼び出しても、以前にキャッシュされた値に Web 設定を戻すことができます、<xref:System.Configuration.ApplicationSettingsBase.Reload%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Net.WebException"><see cref="P:System.Web.ClientServices.ConnectivityStatus.IsOffline" />プロパティの値が<see langword="false" />と Web 設定サービスに、<see cref="P:System.Web.ClientServices.Providers.ClientSettingsProvider.ServiceUri" />場所は利用できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ServiceUri">
+      <MemberSignature Language="C#" Value="public static string ServiceUri { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property string ServiceUri" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.ClientSettingsProvider.ServiceUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を Web サービスの場所。</summary>
+        <value>Web 設定サービスの URI。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定することができます、<xref:System.Web.ClientServices.Providers.ClientSettingsProvider.ServiceUri%2A>アプリケーション コードがプロパティでは、アプリケーション構成ファイルでの値を設定して通常されます。 これにより、コードを再コンパイルしなくても、サービスの場所を変更することができます。  
+  
+ サービスの場所をプログラムで設定すると、"Profile_JSON_AppService.axd"で終わるは常に、URI の完全なサービスを指定する必要があります。  
+  
+> [!NOTE]
+>  このクラスには、クラス レベルのすべてのメンバーに適用されるリンク確認要求が含まれています。 A<xref:System.Security.SecurityException>直前の呼び出し元に完全信頼アクセス許可があるない場合にスローされます。 セキュリティ要求の詳細については、「[リンク確認要求](~/docs/framework/misc/link-demands.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、Web 設定サービスの場所をプログラムで設定する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#303](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#303)]
+ [!code-vb[ClientApplicationServices#303](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#303)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetPropertyValues">
+      <MemberSignature Language="C#" Value="public override void SetPropertyValues (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyValueCollection propertyValueCollection);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetPropertyValues(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyValueCollection propertyValueCollection) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.SetPropertyValues(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="propertyValueCollection" Type="System.Configuration.SettingsPropertyValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">A<see cref="T:System.Configuration.SettingsContext" />現在のアプリケーションの使用状況を記述します。</param>
+        <param name="propertyValueCollection">A<see cref="T:System.Configuration.SettingsPropertyValueCollection" />を設定するプロパティの設定のグループを表すです。</param>
+        <summary>指定した設定のグループのプロパティの値を設定します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SettingsSaved">
+      <MemberSignature Language="C#" Value="public event EventHandler&lt;System.Web.ClientServices.Providers.SettingsSavedEventArgs&gt; SettingsSaved;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler`1&lt;class System.Web.ClientServices.Providers.SettingsSavedEventArgs&gt; SettingsSaved" />
+      <MemberSignature Language="DocId" Value="E:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler&lt;System.Web.ClientServices.Providers.SettingsSavedEventArgs&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティ値を Web 設定サービスに保存する設定プロバイダーが試行した後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、設定が正常に保存されていない場合でも設定プロバイダーが、設定サービスにアクセスした後に発生します。 プロバイダーが、設定を保存できなかった理由の 1 つは、かどうか、現在のユーザーがログアウトしています。使用することができます、<xref:System.Web.ClientServices.Providers.SettingsSavedEventArgs.FailedSettingsList%2A?displayProperty=nameWithType>プロパティを確認するかどうか、設定を保存できませんでした。  
+  
+ 設定プロバイダーは、プロバイダーをスローする代わりになる設定サービスにアクセスできない場合、このイベントは発生しませんが、<xref:System.Net.WebException>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このイベントを使用して、正常に保存されなかった設定の一覧を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#304](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#304)]
+ [!code-vb[ClientApplicationServices#304](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#304)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Upgrade">
+      <MemberSignature Language="C#" Value="public void Upgrade (System.Configuration.SettingsContext context, System.Configuration.SettingsPropertyCollection properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Upgrade(class System.Configuration.SettingsContext context, class System.Configuration.SettingsPropertyCollection properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.ClientSettingsProvider.Upgrade(System.Configuration.SettingsContext,System.Configuration.SettingsPropertyCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.Configuration.SettingsContext" />
+        <Parameter Name="properties" Type="System.Configuration.SettingsPropertyCollection" />
+      </Parameters>
+      <Docs>
+        <param name="context">使用しません。</param>
+        <param name="properties">使用しません。</param>
+        <summary>このメソッドは、このクラスでは使用されません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを呼び出しても、何も効果はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

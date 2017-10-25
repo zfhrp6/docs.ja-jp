@@ -1,0 +1,199 @@
+<Type Name="ActivityDelegate" FullName="System.Activities.ActivityDelegate">
+  <TypeSignature Language="C#" Value="public abstract class ActivityDelegate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ActivityDelegate extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.ActivityDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Handler")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アクティビティベースのコールバックを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アクティビティ デリゲートを使用すると、アクティビティ作成者は、特定の署名を持つコールバックを公開できます。アクティビティのユーザーは、この署名用のアクティビティベースのハンドラーを提供できます。 2 種類のアクティビティ デリゲートがあります。<xref:System.Activities.ActivityAction%601> は、戻り値を持たないアクティビティ デリゲートを呼び出すために使用され、<xref:System.Activities.ActivityFunc%601> は戻り値を持つアクティビティ デリゲートを呼び出すために使用されます。 アクティビティ デリゲートは、子アクティビティが特定の署名を持つように制限する必要がある場合に便利です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ActivityDelegate ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityDelegate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトを初期化するために、派生クラスのコンストラクターによって呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayName">
+      <MemberSignature Language="C#" Value="public string DisplayName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DisplayName" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ActivityDelegate.DisplayName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デバッグ、検証、例外処理、および追跡に使用する省略可能な表示名を取得または設定します。</summary>
+        <value>デバッグ、検証、例外処理、および追跡に使用する表示名。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetResultArgument">
+      <MemberSignature Language="C#" Value="protected virtual System.Activities.DelegateOutArgument GetResultArgument ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.Activities.DelegateOutArgument GetResultArgument() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityDelegate.GetResultArgument" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Activities.DelegateOutArgument</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスで実装された場合、<see cref="T:System.Activities.DelegateOutArgument" /> の <see cref="T:System.Activities.ActivityDelegate" /> を返します。</summary>
+        <returns><see cref="T:System.Activities.ActivityDelegate" /> の out 引数。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Handler">
+      <MemberSignature Language="C#" Value="public System.Activities.Activity Handler { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Activities.Activity Handler" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.ActivityDelegate.Handler" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Activities.Activity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Activities.ActivityDelegate" /> によって表されるアクティビティを取得または設定します。</summary>
+        <value>この <see cref="T:System.Activities.ActivityDelegate" /> によって表されるアクティビティ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは実行時に読み取り専用です。 実行時に値が設定された場合は、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnGetRuntimeDelegateArguments">
+      <MemberSignature Language="C#" Value="protected virtual void OnGetRuntimeDelegateArguments (System.Collections.Generic.IList&lt;System.Activities.RuntimeDelegateArgument&gt; runtimeDelegateArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnGetRuntimeDelegateArguments(class System.Collections.Generic.IList`1&lt;class System.Activities.RuntimeDelegateArgument&gt; runtimeDelegateArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityDelegate.OnGetRuntimeDelegateArguments(System.Collections.Generic.IList{System.Activities.RuntimeDelegateArgument})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="runtimeDelegateArguments" Type="System.Collections.Generic.IList&lt;System.Activities.RuntimeDelegateArgument&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="runtimeDelegateArguments">ランタイム引数が入力される一覧。</param>
+        <summary><see cref="T:System.Activities.ActivityDelegate" /> 用のランタイム引数の一覧を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 派生クラスでオーバーライドされた場合、このメソッドを使用して <xref:System.Activities.ActivityDelegate> によって使用される引数をカスタマイズできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeDisplayName">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeDisplayName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeDisplayName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityDelegate.ShouldSerializeDisplayName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.Activities.ActivityDelegate.DisplayName" /> プロパティ値を XAML にシリアル化する必要があるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />、場合、<see cref="P:System.Activities.ActivityDelegate.DisplayName" />プロパティの値が、それ以外のシリアル化する必要があります<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Activities.ActivityDelegate.ShouldSerializeDisplayName%2A>返します`true`場合、<xref:System.Activities.ActivityDelegate.DisplayName%2A>で明示的に設定された、<xref:System.Activities.ActivityDelegate>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.ActivityDelegate.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.String" /> を格納する <see cref="T:System.Activities.ActivityDelegate" /> の <see cref="P:System.Activities.ActivityDelegate.DisplayName" /> 表現を返します。</summary>
+        <returns><see cref="T:System.Activities.ActivityDelegate" /> を格納する <see cref="P:System.Activities.ActivityDelegate.DisplayName" /> の表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

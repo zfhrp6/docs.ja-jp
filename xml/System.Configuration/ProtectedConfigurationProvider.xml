@@ -1,0 +1,181 @@
+<Type Name="ProtectedConfigurationProvider" FullName="System.Configuration.ProtectedConfigurationProvider">
+  <TypeSignature Language="C#" Value="public abstract class ProtectedConfigurationProvider : System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ProtectedConfigurationProvider extends System.Configuration.Provider.ProviderBase" />
+  <TypeSignature Language="DocId" Value="T:System.Configuration.ProtectedConfigurationProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.Provider.ProviderBase</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロバイダーを作成する保護された構成データを暗号化および暗号化の基本クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションで使用する機密情報を保護する構成ファイルのセクションを暗号化できます。 これにより、セキュリティが困難になります未承認のアクセスの場合でも、攻撃者が、構成ファイルへのアクセスが向上します。  
+  
+ .NET Framework には、構成ファイルのセクションを暗号化するために使用する 2 つの保護構成プロバイダーが含まれています。 <xref:System.Configuration.RsaProtectedConfigurationProvider>クラスの使用、<xref:System.Security.Cryptography.RSACryptoServiceProvider>構成セクションを暗号化します。 <xref:System.Configuration.DpapiProtectedConfigurationProvider>クラスでは、Windows データ保護 API (DPAPI) を使用して構成セクションを暗号化します。  
+  
+ RSA または DPAPI プロバイダー以外のアルゴリズムを使用して機密情報を暗号化する必要があります。 ここでは、カスタム保護されている構成プロバイダーを作成することができます。 <xref:System.Configuration.ProtectedConfigurationProvider>抽象基本クラスを独自の保護された構成プロバイダーを作成するから継承する必要があります。  
+  
+ 標準またはカスタム プロバイダーを使用するかどうかに構成されていることを確認する必要があります、`add`内の要素、`providers`のセクションで、`configProtectedData`構成セクション。 (詳しくは、次の例を参照してください)。  
+  
+ 詳細については、「[保護構成プロバイダーを実装する](http://msdn.microsoft.com/library/afc329e4-ef37-4915-b419-b37c745d2865)です。  
+  
+> [!NOTE]
+>  ASP.NET には、暗号化された構成データが検出されると、透過的に構成されているプロバイダーを使用して復号化を実行します。 必要なプロバイダーを構成することを確認する以外、側では、アクションは必要ありません。  
+  
+   
+  
+## Examples  
+ 次の例は、カスタムを実装する方法を示しています。<xref:System.Configuration.ProtectedConfigurationProvider>です。  
+  
+ このプロバイダーを構成する次の構成の抜粋に示すように、必要がありますインストールするグローバル アセンブリ キャッシュ (GAC)。 参照してください[保護構成プロバイダーを実装する](http://msdn.microsoft.com/library/afc329e4-ef37-4915-b419-b37c745d2865)詳細についてはします。  
+  
+ [!code-csharp[System.Configuration.ProtectedConfigurationProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/CS/ProtectedConfigurationProviderLib.cs#1)]
+ [!code-vb[System.Configuration.ProtectedConfigurationProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/VB/ProtectedConfigurationProviderLib.vb#1)]  
+  
+ 次の例は、以前のユーザー設定を使用する方法を示しています。<xref:System.Configuration.ProtectedConfigurationProvider>です。  
+  
+ [!code-csharp[System.Configuration.UsingProtectedConfigurationProvider#11](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.UsingProtectedConfigurationProvider/CS/ProtectedConfigurationProvider.cs#11)]
+ [!code-vb[System.Configuration.UsingProtectedConfigurationProvider#11](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.UsingProtectedConfigurationProvider/VB/ProtectedConfigurationProvider.vb#11)]  
+  
+ 次は、上記の例で使用される構成ファイルの抜粋です。  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>  
+<configuration>  
+  
+  <configProtectedData >  
+    <providers>  
+      <clear />  
+      <add keyContainerName="pcKey.txt"   
+        name="TripleDESProtectedConfigurationProvider"  
+type="Samples.Aspnet.TripleDESProtectedConfigurationProvider, protectedconfigurationproviderlib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=79e01ae0f5cfc66f, processorArchitecture=MSIL" />  
+    </providers>  
+  
+  </configProtectedData >  
+  
+  <connectionStrings>  
+    <add name="NorthwindConnectionString"   
+      connectionString="Data Source=webnetue2;Initial Catalog=Northwind;User ID=aspnet_test;Password=test"  
+providerName="System.Data.SqlClient" />  
+  </connectionStrings>  
+  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ProtectedConfigurationProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ProtectedConfigurationProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Configuration.ProtectedConfigurationProvider" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <block subset="none" type="overrides">
+          <para>必要に応じて、クラスによっては、このコンス トラクターをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrypt">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XmlNode Decrypt (System.Xml.XmlNode encrypted_node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode Decrypt(class System.Xml.XmlNode encrypted_node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ProtectedConfigurationProvider.Decrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="encryptedNode" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="encrypted_node">To be added.</param>
+        <summary>渡されたを復号化<see cref="T:System.Xml.XmlNode" />構成ファイルからのオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />復号化されたデータを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Configuration.ProtectedConfigurationProvider.Decrypt%2A>カスタム復号化を実行するメソッド。  
+  
+ [!code-csharp[System.Configuration.ProtectedConfigurationProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/CS/ProtectedConfigurationProviderLib.cs#2)]
+ [!code-vb[System.Configuration.ProtectedConfigurationProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/VB/ProtectedConfigurationProviderLib.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムの暗号化解除を実行するには、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="Encrypt">
+      <MemberSignature Language="C#" Value="public abstract System.Xml.XmlNode Encrypt (System.Xml.XmlNode node);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Xml.XmlNode Encrypt(class System.Xml.XmlNode node) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Configuration.ProtectedConfigurationProvider.Encrypt(System.Xml.XmlNode)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNode</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="node" Type="System.Xml.XmlNode" />
+      </Parameters>
+      <Docs>
+        <param name="node"><see cref="T:System.Xml.XmlNode" />を暗号化するオブジェクト。</param>
+        <summary>渡された暗号化<see cref="T:System.Xml.XmlNode" />構成ファイルからのオブジェクト。</summary>
+        <returns><see cref="T:System.Xml.XmlNode" />暗号化されたデータを含むオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、使用する方法を示しています。<xref:System.Configuration.ProtectedConfigurationProvider.Encrypt%2A>カスタム暗号化を実行します。  
+  
+ [!code-csharp[System.Configuration.ProtectedConfigurationProvider#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/CS/ProtectedConfigurationProviderLib.cs#3)]
+ [!code-vb[System.Configuration.ProtectedConfigurationProvider#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Configuration.ProtectedConfigurationProvider/VB/ProtectedConfigurationProviderLib.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>カスタムの暗号化を実行するには、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

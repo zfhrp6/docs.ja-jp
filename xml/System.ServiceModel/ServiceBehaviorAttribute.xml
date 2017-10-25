@@ -1,0 +1,998 @@
+<Type Name="ServiceBehaviorAttribute" FullName="System.ServiceModel.ServiceBehaviorAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ServiceBehaviorAttribute : Attribute, System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ServiceBehaviorAttribute extends System.Attribute implements class System.ServiceModel.Description.IServiceBehavior" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.ServiceBehaviorAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Description.IServiceBehavior</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Class)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>サービス コントラクトの実装の内部実行動作を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性をサービスの実装に適用して、サービス全体の実行動作を指定します  (メソッド レベルの実行動作を指定するには、<xref:System.ServiceModel.OperationBehaviorAttribute> 属性を使用します)。この属性を適用できるのはサービスの実装だけです。 実施例については、次を参照してください。、[サービスの動作サンプル](http://msdn.microsoft.com/en-us/4e3c6513-a7ff-4b35-8dcf-b5506c6f39a7)です。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute> プロパティは、共通機能を有効にする [!INCLUDE[indigo1](~/includes/indigo1-md.md)] プログラミング モデルの機能で、このプロパティがない場合は、開発者がこの共通機能を実装する必要があります。 これらおよびその他の動作に関する詳細については、次を参照してください。[サービスの実行時の動作を指定する](~/docs/framework/wcf/specifying-service-run-time-behavior.md)です。 基になるランタイム プロパティの詳細については、次のプロパティ セットの一部を参照してください[ServiceHost を拡張して、サービス モデル レイヤー](~/docs/framework/wcf/extending/extending-servicehost-and-the-service-model-layer.md)です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.AddressFilterMode%2A> プロパティは、ディスパッチャー システムが、要求を処理するエンドポイントを検索するために使用するフィルターの種類を指定します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown%2A> プロパティは、チャネルが閉じられ、残っているすべてのメッセージの処理をサービスが終了した時点でセッションを自動的に閉じます。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> プロパティは、内部スレッド モデルを制御して、再入可能またはマルチスレッド サービスのサポートを有効にします。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName%2A> プロパティは、構成ファイル内で `name` 要素の `<service>` 属性で使用する名前を宣言するために使用されます。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> プロパティは、メッセージの処理では必要がない余分なシリアル化情報をランタイムが無視できるようにします。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> プロパティは、サービス内の未処理の例外を SOAP エラーとして返すかどうかを指定します。 これは、デバッグのみを目的としています。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティは、クライアントとのメッセージ交換時にサービスとサービス オブジェクトをリサイクルするかどうかを指定します。また、リサイクルする場合は、どの時点でリサイクルするかを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A> プロパティは、シリアル化されるオブジェクト グラフ内の項目数を制限します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.Name%2A> プロパティと <xref:System.ServiceModel.ServiceBehaviorAttribute.Namespace%2A> プロパティは、サービス要素の WSDL 表現の名前と名前空間を制御します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> プロパティは、トランザクションの完了時にサービス オブジェクトをリサイクルするかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose%2A> プロパティは、セッションの終了時に未解決のトランザクションを完了するかどうかを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> プロパティは、コントラクトがサポートするトランザクションの分離レベルを指定します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> プロパティは、トランザクションを完了しなければならない期間を指定します。この期間内に完了しない場合、トランザクションは中止されます。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext%2A> プロパティは、受信したメソッド呼び出しをユーザー インターフェイス スレッドと自動的に同期するかどうかを示します。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand%2A> プロパティは、`MustUnderstand` としてマークされた SOAP ヘッダーが間違いなく理解されたことを確認する必要があるかどうかをシステムに通知します。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> プロパティは、アプリケーション構成ファイルを使用して設定することもできます。 詳細については、「<xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A>」を参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.ServiceBehaviorAttribute> プロパティを示しています。 `BehaviorService` クラスは、次のことを示すために <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性を使用します。  
+  
+-   サービス オブジェクトは、トランザクションの完了時にリサイクルされます。  
+  
+-   セッションごとに 1 つのサービス オブジェクトが存在します。  
+  
+-   サービスはシングル スレッドであり、再入呼び出しをサポートしません。  
+  
+ さらに、<xref:System.ServiceModel.OperationBehaviorAttribute> 値は操作レベルで、`TxWork` メソッドがフロー トランザクションに自動的に登録するかまたはこの処理のための新しいトランザクションを作成するかどうか、および未処理の例外が発生しない場合にトランザクションが自動的にコミットされるかどうかを示します。  
+  
+ [!code-csharp[OperationBehaviorAttribute1#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute1#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute1/vb/services.vb#2)]  
+  
+ 次のコード例が適切に動作するには、基になるバインドでフロー トランザクションがサポートされている必要があります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> を使用するフロー トランザクションをサポートするには、コードまたはアプリケーション構成ファイル内で <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> プロパティを `true` に設定します。 次のコード例は、前のサンプルの構成ファイルを示しています。  
+  
+ [!code-xml[OperationBehaviorAttribute1#1](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ServiceBehaviorAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.ServiceBehaviorAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute> の既定値は、次のとおりです。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.AddressFilterMode%2A> に <xref:System.ServiceModel.AddressFilterMode.Exact> が設定されています。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> に <xref:System.ServiceModel.ConcurrencyMode.Single> が設定されています。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName%2A> プロパティは、名前空間で修飾された型名であり、アセンブリ情報を含みません。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A> プロパティは 64 KB に設定されます。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.Name%2A> プロパティは、サービスの種類の名前であり、名前空間もアセンブリ情報も含みません。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.Namespace%2A> プロパティが "http://tempuri.org" です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> プロパティが `true` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> は `false` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext%2A> は `true` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose%2A> プロパティが `false` です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> プロパティが <xref:System.Transactions.IsolationLevel.Unspecified> です。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> プロパティが <xref:System.TimeSpan.Zero> に設定されている。  
+  
+-   <xref:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand%2A> プロパティが `true` です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddressFilterMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.AddressFilterMode AddressFilterMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.AddressFilterMode AddressFilterMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.AddressFilterMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.AddressFilterMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ディスパッチャーが受信メッセージを適切なエンドポイントにルーティングするために使用する <see cref="T:System.ServiceModel.AddressFilterMode" /> を取得または設定します。</summary>
+        <value>ディスパッチャーが受信メッセージを適切なエンドポイントにルーティングするために使用する <see cref="T:System.ServiceModel.AddressFilterMode" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.AddressFilterMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticSessionShutdown">
+      <MemberSignature Language="C#" Value="public bool AutomaticSessionShutdown { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutomaticSessionShutdown" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クライアントが出力セッションを閉じたときにセッションを自動的に閉じるかどうかを指定します。</summary>
+        <value>
+          クライアントが出力セッションを閉じたときにサービスがセッションを自動的に閉じる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、クライアントが出力セッションを閉じ、残っているすべてのメッセージの処理をサービスが終了した時点で、サービスはセッションを閉じます。 <xref:System.ServiceModel.ServiceBehaviorAttribute.AutomaticSessionShutdown%2A> を `false` に設定すると、サーバーがセッションを自動的に閉じることはなく、セッションの有効期間のカスタム制御が可能です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ConcurrencyMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.ConcurrencyMode ConcurrencyMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.ConcurrencyMode ConcurrencyMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.ConcurrencyMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスが、1 つのスレッド、複数のスレッド、または再入呼び出しをサポートするかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.ConcurrencyMode" /> 値の 1 つ。既定値は <see cref="F:System.ServiceModel.ConcurrencyMode.Single" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、サービスのインスタンスが 1 つのスレッドまたは同時に実行する複数のスレッドを処理できるかどうか、またシングル スレッドの場合は再入をサポートしているかどうかを示します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> プロパティは、他のいくつかの設定と相互関係があります。 たとえば、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> 値を <xref:System.ServiceModel.InstanceContextMode.Single> に設定した場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> 値を <xref:System.ServiceModel.ConcurrencyMode.Multiple> に設定しない限り、サービスが一度に処理できるのは 1 つのメッセージだけです。 このプロパティと <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> プロパティを組み合わせて、特定の動作を設定することもできます。 詳細については、「[セッション、インスタンス化、および同時実行](~/docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+  
+ <xref:System.ServiceModel.ConcurrencyMode> を <xref:System.ServiceModel.ConcurrencyMode.Single> に設定すると、サービスのインスタンスを 1 つずつのスレッド実行に制限するようシステムに指示します。それにより、スレッドの問題に対応することから解放されます。 <xref:System.ServiceModel.ConcurrencyMode.Multiple> の値は、サービス オブジェクトを複数のスレッドで一度に実行できることを示します。 この場合は、開発者がスレッド セーフを確保する必要があります。  
+  
+ <xref:System.ServiceModel.ConcurrencyMode.Reentrant>同時に 1 つのスレッドへのアクセスを制限します。操作は処理中に他のメッセージ操作に加わることなしです。 操作の進行中に、別のサービスに対する呼び出しがコール アウトした場合は、操作に対する現在のメッセージのロックは失われ、他のメッセージの処理が可能になります。 サービスのコール アウトが戻ると、ロックが再度確立され、元のメッセージを最後まで処理するか、別のコール アウトが発生するまで処理を続行できます。  
+  
+> [!IMPORTANT]
+>  にもかかわらず<xref:System.ServiceModel.ConcurrencyMode.Single>インスタンスを制限、同時実行の 1 つのスレッドにサービスの設定も必要<xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentCalls%2A>を 1 に、順序不定なメッセージはありません。  
+>   
+>  また、コールアウトの前に一貫性のあるオブジェクトの状態のままにする必要が、操作のローカル データがコール アウト後有効であることを確認する必要があります。 サービス インスタンスは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] チャネルを介して別のサービスを呼び出すことによってのみロックを解除されます。 この場合、呼び出されたサービスはコールバック経由で最初のサービスに再入できます。 最初のサービスが再入可能でない場合、以降の呼び出しはデッドロック状態になります。 詳細については、「<xref:System.ServiceModel.ConcurrencyMode>」を参照してください。  
+  
+ 処理中の操作から送信呼び出しが行われている間は、その操作にとってローカルではないデータを変更することができます。 ローカル状態のデータは、元のメッセージの処理を再開するときに有効であることが保証されています。この結果、開発者は、送信呼び出しを行う前に、ローカル以外のデータが他の受信呼び出しにとって有効であることを保証し、送信呼び出しが戻った後で、ローカル以外のデータを再検証する必要があります。  
+  
+ 次の擬似コードは、再入を正常にサポートするために必要なパターンを示しています。  
+  
+```csharp  
+public void MyMethod()  
+{  
+  this.SomeNonLocalDataState;  
+  // Here you need to clean nonlocal state for other users  
+  OutboundProxy proxy = new OutboundProxy();  
+  int returnValue = proxy.CallOutOfOperation();  
+  // Ensure that this.SomeNonLocalDataState is valid for continued use.  
+  this.ModifyNonLocalState;  
+  return returnValue;  
+}  
+  
+```  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> が <xref:System.ServiceModel.ConcurrencyMode.Reentrant> のときに、送信呼び出しで Begin/End 非同期呼び出しパターンを使用すると、例外が発生します。 非同期の送信呼び出しでは、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> が <xref:System.ServiceModel.ConcurrencyMode.Multiple> である操作を必要とします。この場合は、開発者が同期問題を処理する必要があります。  
+  
+ 通常、同時実行モードに違反するインスタンスにメッセージが届いた場合は、そのインスタンスが使用可能になるまで、またはタイムアウトになるまで、メッセージは待機します。  
+  
+ さらに、<xref:System.ServiceModel.ConcurrencyMode> が <xref:System.ServiceModel.ConcurrencyMode.Single> に設定され、再入可能呼び出しが、インスタンスが解放されるまで待機する間ブロックされた場合、システムはデッドロックを検出し、例外をスローします。  
+  
+> [!NOTE]
+>  <xref:System.InvalidOperationException> プロパティに <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> が設定されているときに、`true` が<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> の場合は、実行時に <xref:System.ServiceModel.ConcurrencyMode.Single> がスローされます。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> が true に設定された操作があるときに `false` を <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A?displayProperty=nameWithType> に設定する場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を<xref:System.ServiceModel.ConcurrencyMode.Reentrant> に明示的に設定する必要があることに注意してください。 <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> の既定値は `true` であるため、この設定を行わなかった場合は検証例外がスローされます。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> と他のプロパティの間には、ランタイム動作を変更する可能性がある相互関係があります。 これらの相互作用の詳細については、次を参照してください。[セッション、インスタンス化、および同時実行](~/docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.ConcurrencyMode.Single>、<xref:System.ServiceModel.ConcurrencyMode.Reentrant>、および <xref:System.ServiceModel.ConcurrencyMode.Multiple> の各使用方法の相違を示します。 このサンプルは、その背後に実際の実装がないとコンパイルできませんが、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] によるスレッド保証と、それが操作コードに対して持つ意味を示しています。  
+  
+ [!code-csharp[C_BestPractices-Concurrency#1](~/samples/snippets/csharp/VS_Snippets_CFX/c_bestpractices-concurrency/cs/reentrantandmultiple.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.ConcurrencyMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConfigurationName">
+      <MemberSignature Language="C#" Value="public string ConfigurationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ConfigurationName" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーション構成ファイル内でサービス要素を検索するために使用される値を取得または設定します。</summary>
+        <value>構成ファイル内で検索される値。 既定値は、アセンブリ情報を持たない完全修飾型名です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値を使用して、構成ファイル内の特定のサービスを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が空の文字列です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureOrderedDispatch">
+      <MemberSignature Language="C#" Value="public bool EnsureOrderedDispatch { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnsureOrderedDispatch" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.EnsureOrderedDispatch" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービスの順番どおりのディスパッチが保証されるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          サービスの順序付けられたディスパッチは保証されている場合は <see langword="True" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWellKnownSingleton">
+      <MemberSignature Language="C#" Value="public object GetWellKnownSingleton ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object GetWellKnownSingleton() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.GetWellKnownSingleton" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>サービスを実装し、サービスのシングルトン インスタンスとして使用されるオブジェクトを取得します。シングルトン インスタンスがない場合は <see langword="null" /> を取得します。</summary>
+        <returns>サービスの実装。 既定値は <see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `null` 以外の値は、サービスに向けられたすべてのメッセージのディスパッチ先となるサービス インスタンスを提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IgnoreExtensionDataObject">
+      <MemberSignature Language="C#" Value="public bool IgnoreExtensionDataObject { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IgnoreExtensionDataObject" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>不明なシリアル化データをネットワークで送信するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          不明なシリアル化データが送信されない場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ あるタイプが <xref:System.Runtime.Serialization.IExtensibleDataObject> インターフェイスを実装する場合、そのタイプに逆シリアル化するときに、ネットワークで受信した未知の追加データを保存します。 たとえば、タイプ `Person` にメンバー `FirstName` と `LastName` があり、`PhoneNumber` という要素が加わる場合、その要素は保存されます。 後でこのタイプをシリアル化するときに、`PhoneNumber` が再発行されます。 問題は、サービスによってエクスポートされる `Person` のスキーマに含まれているのは `FirstName` と `LastName` だけであるために、[!INCLUDE[indigo1](~/includes/indigo1-md.md)] によりスキーマが無効なインスタンスが生成されることです。 厳しいスキーマ コンプライアンスが重要な場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> を `true` に設定すると、この再発行動作をオフにすることができます。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> では、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] の設定に関係なく、常に (受信と送信の両方で) 既知のデータを処理し、追加データを受信しても例外をスローしません。 使用してこのプロパティを設定することも、 [ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> の使用と <xref:System.Runtime.Serialization.IExtensibleDataObject> の実装を示しています。 この例では、<xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> を `false` に設定することで、クライアントが認識する追加データがクライアントにそのまま返送 (ラウンドトリップ) されます。  
+  
+ [!code-csharp[DCAContainerNoValidation#1](~/samples/snippets/csharp/VS_Snippets_CFX/dcacontainernovalidation/cs/services.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IncludeExceptionDetailInFaults">
+      <MemberSignature Language="C#" Value="public bool IncludeExceptionDetailInFaults { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IncludeExceptionDetailInFaults" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一般的な未処理の実行例外を <see cref="T:System.ServiceModel.FaultException`1" /> 型の <see cref="T:System.ServiceModel.ExceptionDetail" /> に変換してエラー メッセージとして送信するように指定する値を取得または設定します。 この属性は、開発時にサービスのトラブルシューティングを行う場合にのみ、<see langword="true" /> に設定します。</summary>
+        <value>
+          未処理の例外を SOAP エラーとして返す場合は <see langword="true" />、それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ デバッグを目的として、例外情報をクライアントにフローできるようにするには、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A> を `true` に設定します。 このプロパティは、要求 - 応答または双方向のメッセージングのいずれかをサポートするバインドを必要とします。  
+  
+ すべてのマネージ アプリケーションで、操作エラーは <xref:System.Exception> オブジェクトにより表されます。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] アプリケーションなどの SOAP ベースのアプリケーションでは、サービス操作を実装するメソッドは、SOAP エラー メッセージを使用してエラー情報を通信します。 [!INCLUDE[indigo2](~/includes/indigo2-md.md)] アプリケーションは、両方の型のエラー システムで実行されるため、クライアントに送信する必要があるマネージ例外情報は、例外から SOAP エラーに変換される必要があります。 詳細については、次を参照してください。[を指定すると処理のエラー コントラクトおよびサービスの](~/docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)します。  
+  
+ 開発中は、デバッグを支援するために、その他の例外もクライアントに返すようにサービスを設定することができます。 これは開発専用の機能なので、展開されたサービスで使用しないでください。  
+  
+ 開発時のデバッグを容易にするには設定、<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A>に`true`コードまたはアプリケーション構成ファイルを使用しています。  
+  
+ 有効な場合は、サービスが自動的に安全な例外情報を呼び出し元に返します。 このようなエラーは、<xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> オブジェクトとしてクライアントに表示されます。  
+  
+> [!IMPORTANT]
+>  設定<xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A>に`true`サービス メソッドの例外の内部に関する情報を取得できるようにクライアント; は、サービス アプリケーションを一時的にデバッグする方法としてのみお勧めします。 さらに、このようにして未処理のマネージ例外を返すメソッドの WSDL には、<xref:System.ServiceModel.FaultException%601> 型の <xref:System.ServiceModel.ExceptionDetail> のコントラクトが含まれません。 クライアントは、デバッグ情報を適切に取得するために、不明な SOAP エラーの可能性について想定しておく必要があります。  
+  
+ このプロパティを設定`true`することもできます、アプリケーション構成ファイルを使用して、 [ &lt;serviceDebug&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicedebug.md)要素は、次のコード例に示すようです。  
+  
+ [!code-xml[OperationBehaviorAttribute1#10](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/hostapplication.exe.config#10)]   
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.ServiceBehaviorAttribute> プロパティを示しています。 `BehaviorService` クラスは、次のことを示すために <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性を使用します。  
+  
+-   実装メソッドは、UI スレッド上で起動します。  
+  
+-   セッションごとに 1 つのサービス オブジェクトが存在します。  
+  
+-   サービスはシングル スレッドであり、再入呼び出しをサポートしません。  
+  
+ さらに、<xref:System.ServiceModel.OperationBehaviorAttribute> 値は操作レベルで、`TxWork` メソッドがフロー トランザクションに自動的に登録するかまたはこの処理のための新しいトランザクションを作成するかどうか、および未処理の例外が発生しない場合にトランザクションが自動的にコミットされるかどうかを示します。  
+  
+ [!code-csharp[OperationBehaviorAttribute1#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute1#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute1/vb/services.vb#2)]  
+  
+ 次のコード例が適切に動作するには、基になるバインドでフロー トランザクションがサポートされている必要があります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> を使用するフロー トランザクションをサポートするには、コードまたはアプリケーション構成ファイル内で <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> プロパティを `true` に設定します。 次のコード例は、前のサンプルの構成ファイルを示しています。  
+  
+ [!code-xml[OperationBehaviorAttribute1#1](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceContextMode">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.InstanceContextMode InstanceContextMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.InstanceContextMode InstanceContextMode" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.InstanceContextMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいサービス オブジェクトが作成されるかどうかを示す値を取得または設定します。</summary>
+        <value><see cref="T:System.ServiceModel.InstanceContextMode" /> 値のいずれか。既定値は <see cref="F:System.ServiceModel.InstanceContextMode.PerSession" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.InstanceContextMode> プロパティを使用して、新しいサービス オブジェクトがいつ作成されるかを指定します。 サービス オブジェクトは通信チャネルに直接的には接続されないため、サービス オブジェクトの有効期間は、クライアント アプリケーションとサービス アプリケーション間のチャネルの有効期間に依存しません。 既定値の <xref:System.ServiceModel.InstanceContextMode.PerSession> は、クライアント アプリケーションとサービス アプリケーションの間で新しい通信セッションが確立されたときに、新しいサービス オブジェクトを作成するようにサービス アプリケーションに指示します。 同じセッションでの後続の呼び出しは、同じオブジェクトによって処理されます。  
+  
+ <xref:System.ServiceModel.InstanceContextMode.PerSession> は、各サービス オブジェクトが、1 つのクライアント チャネルからの要求を処理することを示します。  
+  
+> [!NOTE]
+>  <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> プロパティは、他のいくつかの設定と相互関係があります。 たとえば、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> 値を <xref:System.ServiceModel.InstanceContextMode.Single> に設定した場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> 値を <xref:System.ServiceModel.ConcurrencyMode.Multiple> に設定しない限り、サービスが一度に処理できるのは 1 つのメッセージだけです。 このプロパティと <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> プロパティを組み合わせて、特定の動作を設定することもできます。 詳細については、「[セッション、インスタンス化、および同時実行](~/docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)です。  
+  
+ シングルトン有効期間動作 (ホスト アプリケーションが <xref:System.ServiceModel.ServiceHost.%23ctor%2A> コンストラクターを呼び出し、サービスとして使用するオブジェクトを渡す場合など) では、サービス クラスで <xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> を `Single` に設定する必要があります。これを行わなかった場合は、実行時に例外がスローされます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.ServiceModel.ServiceBehaviorAttribute> プロパティを示しています。 `BehaviorService` クラスは、次のことを示すために <xref:System.ServiceModel.ServiceBehaviorAttribute> 属性を使用します。  
+  
+-   実装メソッドは、UI スレッド上で起動します。  
+  
+-   セッションごとに 1 つのサービス オブジェクトが存在します。  
+  
+-   サービスはシングル スレッドであり、再入呼び出しをサポートしません。  
+  
+ さらに、<xref:System.ServiceModel.OperationBehaviorAttribute> 値は操作レベルで、`TxWork` メソッドがフロー トランザクションに自動的に登録するかまたはこの処理のための新しいトランザクションを作成するかどうか、および未処理の例外が発生しない場合にトランザクションが自動的にコミットされるかどうかを示します。  
+  
+ [!code-csharp[OperationBehaviorAttribute1#2](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/services.cs#2)]
+ [!code-vb[OperationBehaviorAttribute1#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/operationbehaviorattribute1/vb/services.vb#2)]  
+  
+ 次のコード例が適切に動作するには、基になるバインドでフロー トランザクションがサポートされている必要があります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> を使用するフロー トランザクションをサポートするには、コードまたはアプリケーション構成ファイル内で <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> プロパティを `true` に設定します。 次のコード例は、前のサンプルの構成ファイルを示しています。  
+  
+ [!code-xml[OperationBehaviorAttribute1#1](~/samples/snippets/csharp/VS_Snippets_CFX/operationbehaviorattribute1/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.ServiceModel.InstanceContextMode" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxItemsInObjectGraph">
+      <MemberSignature Language="C#" Value="public int MaxItemsInObjectGraph { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MaxItemsInObjectGraph" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(2147483647)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シリアル化されるオブジェクトで許可される項目の最大数を取得または設定します。</summary>
+        <value>オブジェクトで許可される最大アイテム数。 既定は 65536 バイト (64 KB) です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクト グラフでシリアル化されるアイテム数を制限する <xref:System.ServiceModel.ServiceBehaviorAttribute.MaxItemsInObjectGraph%2A> プロパティを使用します。 使用してこのプロパティを設定することも、 [ &lt;dataContractSerializer&gt; ](~/docs/framework/configure-apps/file-schema/wcf/datacontractserializer-element.md)アプリケーション構成ファイル内の要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) でのサービス要素の名前属性の値を取得または設定します。</summary>
+        <value>エクスポート時の <see langword="&lt;wsdl:service&gt;" /> 要素内の名前属性の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Web サービス記述言語 (WSDL) でのサービスのターゲット名前属性の値を取得または設定します。</summary>
+        <value><see langword="targetNamespace" /> 要素を含む <see langword="&lt;wsdl:definitions&gt;" /> 要素の <see langword="&lt;wsdl:service&gt;" /> 属性の値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ReleaseServiceInstanceOnTransactionComplete">
+      <MemberSignature Language="C#" Value="public bool ReleaseServiceInstanceOnTransactionComplete { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ReleaseServiceInstanceOnTransactionComplete" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のトランザクションの完了時にサービス オブジェクトを解放するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          サービス オブジェクトが解放される場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> が true に設定された操作があるときに `false` を <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A?displayProperty=nameWithType> に設定する場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> を<xref:System.ServiceModel.ConcurrencyMode.Reentrant> に明示的に設定する必要があることに注意してください。 <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> の既定値は `true` であるため、この設定を行わなかった場合は検証例外がスローされます。  
+  
+ さらに、サービスがサービス オブジェクトを <xref:System.ServiceModel.ServiceHost.%23ctor%28System.Object%2CSystem.Uri%5B%5D%29?displayProperty=nameWithType> コンストラクターに渡すことで作成される場合、このプロパティの値は、`false` であるかのように処理されることを認識しておくことが重要です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、トランザクションの分離レベルを <xref:System.Transactions.IsolationLevel.ReadCommitted> に設定し、同時トランザクションのサポートを無効にし、操作の呼び出しからのフロー トランザクションを要求し、未処理の例外が発生しなかった場合はサービスのトランザクションを自動的にコミットします。  
+  
+ [!code-csharp[SBA.Transactions#2](~/samples/snippets/csharp/VS_Snippets_CFX/sba.transactions/cs/services.cs#2)]
+ [!code-vb[SBA.Transactions#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/sba.transactions/vb/services.vb#2)]  
+  
+ 次のコード例が適切に動作するには、基になるバインドでフロー トランザクションがサポートされている必要があります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> を使用するフロー トランザクションをサポートするには、コードまたはアプリケーション構成ファイル内で <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> プロパティを `true` に設定します。 次のコード例は、前のサンプルの構成ファイルを示しています。  
+  
+ [!code-xml[SBA.Transactions#1](~/samples/snippets/csharp/VS_Snippets_CFX/sba.transactions/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetWellKnownSingleton">
+      <MemberSignature Language="C#" Value="public void SetWellKnownSingleton (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetWellKnownSingleton(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.SetWellKnownSingleton(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">サービスのシングルトン インスタンス。</param>
+        <summary>サービスを実装し、サービスのシングルトン インスタンスとして使用されるオブジェクトを指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、サービスを宛先とするすべてのメッセージのディスパッチ先となるサービス インスタンスを提供します。  
+  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.SetWellKnownSingleton%2A> を `null` 以外の値に設定する場合は、<xref:System.ServiceModel.ServiceBehaviorAttribute.InstanceContextMode%2A> を <xref:System.ServiceModel.InstanceContextMode.Single> に設定する必要があります。これを行わないと、<xref:System.InvalidOperationException> がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">設定値が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeConfigurationName">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeConfigurationName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeConfigurationName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.ShouldSerializeConfigurationName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ConfigurationName" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeReleaseServiceInstanceOnTransactionComplete">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeReleaseServiceInstanceOnTransactionComplete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeReleaseServiceInstanceOnTransactionComplete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.ShouldSerializeReleaseServiceInstanceOnTransactionComplete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransactionAutoCompleteOnSessionClose">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransactionAutoCompleteOnSessionClose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransactionAutoCompleteOnSessionClose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.ShouldSerializeTransactionAutoCompleteOnSessionClose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransactionIsolationLevel">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransactionIsolationLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransactionIsolationLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.ShouldSerializeTransactionIsolationLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeTransactionTimeout">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeTransactionTimeout ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeTransactionTimeout() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.ShouldSerializeTransactionTimeout" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.AddBindingParameters">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.AddBindingParameters (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase, System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, System.ServiceModel.Channels.BindingParameterCollection parameters);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.AddBindingParameters(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase, class System.Collections.ObjectModel.Collection`1&lt;class System.ServiceModel.Description.ServiceEndpoint&gt; endpoints, class System.ServiceModel.Channels.BindingParameterCollection parameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#AddBindingParameters(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase,System.Collections.ObjectModel.Collection{System.ServiceModel.Description.ServiceEndpoint},System.ServiceModel.Channels.BindingParameterCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+        <Parameter Name="endpoints" Type="System.Collections.ObjectModel.Collection&lt;System.ServiceModel.Description.ServiceEndpoint&gt;" />
+        <Parameter Name="parameters" Type="System.ServiceModel.Channels.BindingParameterCollection" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <param name="endpoints">サービス エンドポイント。</param>
+        <param name="parameters">バインドが動作をサポートするために必要なデータ オブジェクト。</param>
+        <summary>動作プロパティをサポートするバインディングにカスタム データ オブジェクトを渡します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.ApplyDispatchBehavior (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.ApplyDispatchBehavior(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#ApplyDispatchBehavior(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <summary>動作プロパティをサポートするようにサービス ランタイムをカスタマイズします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ServiceModel.Description.IServiceBehavior.Validate">
+      <MemberSignature Language="C#" Value="void IServiceBehavior.Validate (System.ServiceModel.Description.ServiceDescription description, System.ServiceModel.ServiceHostBase serviceHostBase);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ServiceModel.Description.IServiceBehavior.Validate(class System.ServiceModel.Description.ServiceDescription description, class System.ServiceModel.ServiceHostBase serviceHostBase) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.ServiceBehaviorAttribute.System#ServiceModel#Description#IServiceBehavior#Validate(System.ServiceModel.Description.ServiceDescription,System.ServiceModel.ServiceHostBase)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="description" Type="System.ServiceModel.Description.ServiceDescription" />
+        <Parameter Name="serviceHostBase" Type="System.ServiceModel.ServiceHostBase" />
+      </Parameters>
+      <Docs>
+        <param name="description">サービスの説明。</param>
+        <param name="serviceHostBase">サービス ホスト。</param>
+        <summary>サービスの説明とサービス ホストが動作をサポートできることを確認します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionAutoCompleteOnSessionClose">
+      <MemberSignature Language="C#" Value="public bool TransactionAutoCompleteOnSessionClose { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool TransactionAutoCompleteOnSessionClose" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionAutoCompleteOnSessionClose" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のセッションがエラーなしで閉じたときに、保留中のトランザクションを完了するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          現在のセッションがエラーなしで閉じたときに、保留中のトランザクションを完了する場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionIsolationLevel">
+      <MemberSignature Language="C#" Value="public System.Transactions.IsolationLevel TransactionIsolationLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Transactions.IsolationLevel TransactionIsolationLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Transactions.IsolationLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サービス内で作成される新しいトランザクションと、クライアントからフローされる受信トランザクションの分離レベルを指定します。</summary>
+        <value>トランザクションの分離レベルを指定する <see cref="T:System.Transactions.IsolationLevel" /> 値。 既定値は、<see cref="F:System.Transactions.IsolationLevel.Unspecified" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ トランザクションが実行する際の分離レベルにより、他のトランザクションで変更が加えられたときのデータの処理方法、およびこうした変更から保護するためにトランザクションがロックを保持する期間が決定されます。 たとえば、既定値 <xref:System.Transactions.IsolationLevel.Unspecified> は、トランザクションが完了するまで更新または挿入できないことを指定します。  
+  
+ このプロパティは、クライアントからフローされる受信トランザクションの分離レベルを制限するために使用することもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、トランザクションの分離レベルを <xref:System.Transactions.IsolationLevel.ReadCommitted> に設定し、同時トランザクションをサポートせず、メソッドの呼び出しからのフロー トランザクションを必要とし、未処理の例外が発生しない場合にトランザクションを自動的にコミットします。  
+  
+ [!code-csharp[SBA.Transactions#2](~/samples/snippets/csharp/VS_Snippets_CFX/sba.transactions/cs/services.cs#2)]
+ [!code-vb[SBA.Transactions#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/sba.transactions/vb/services.vb#2)]  
+  
+ 次のコード例が適切に動作するには、基になるバインドでフロー トランザクションがサポートされている必要があります。 たとえば、<xref:System.ServiceModel.WSHttpBinding> を使用するフロー トランザクションをサポートするには、コードまたはアプリケーション構成ファイル内で <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A> プロパティを `true` に設定します。 次のコード例は、前のサンプルの構成ファイルを示しています。  
+  
+ [!code-xml[SBA.Transactions#1](~/samples/snippets/csharp/VS_Snippets_CFX/sba.transactions/cs/hostapplication.exe.config#1)]   
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が、<see cref="T:System.Transactions.IsolationLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TransactionTimeout">
+      <MemberSignature Language="C#" Value="public string TransactionTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string TransactionTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>トランザクションを完了する必要がある制限時間を取得または設定します。</summary>
+        <value>トランザクションが完了するか自動的に中止される制限時間を表す <see cref="T:System.TimeSpan" /> オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値は、<xref:System.ServiceModel.Dispatcher.ChannelDispatcher.TransactionTimeout%2A?displayProperty=nameWithType> プロパティを設定します。 使用してこのプロパティを設定することも、 [ &lt;serviceTimeouts&gt; ](~/docs/framework/configure-apps/file-schema/wcf/servicetimeouts.md)アプリケーション構成ファイル内の要素。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルでは、トランザクション タイムアウト時間として 3 分間を指定しています。  
+  
+ [!code-csharp[SBA.TransactionTimeout#2](~/samples/snippets/csharp/VS_Snippets_CFX/sba.transactiontimeout/cs/services.cs#2)]
+ [!code-vb[SBA.TransactionTimeout#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/sba.transactiontimeout/vb/services.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">値が null です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">値が <see cref="F:System.TimeSpan.Zero" /> 未満であるか、<see cref="F:System.TimeSpan.MaxValue" /> を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSynchronizationContext">
+      <MemberSignature Language="C#" Value="public bool UseSynchronizationContext { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseSynchronizationContext" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の同期コンテキストを使用して実行スレッドを選択するかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          サービスのすべての呼び出しが、<see langword="true" /> で指定されたスレッドで実行する必要がある場合は <see cref="T:System.Threading.SynchronizationContext" />、それ以外の場合は <see langword="false" />。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、一部のアプリケーションに必要なユーザー インターフェイス スレッド アフィニティを提供します。 たとえば、Windows フォーム アプリケーションは、シングルトン サービス オブジェクトとして登録されている可能性があります。 この場合、サービスのすべての呼び出しは、Windows フォーム スレッドで実行する必要があります。 <xref:System.ServiceModel.ServiceBehaviorAttribute.UseSynchronizationContext%2A> が `true` に設定されている既定のケースでは、<xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> からキャプチャされたスレッドで実行されるサービスへのすべての呼び出しが同期処理されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateMustUnderstand">
+      <MemberSignature Language="C#" Value="public bool ValidateMustUnderstand { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ValidateMustUnderstand" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>システムまたはアプリケーションで SOAP <see langword="MustUnderstand" /> ヘッダー処理を強制的に行うかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          システムが SOAP ヘッダー <see langword="true" /> 処理を実行する場合は <see langword="MustUnderstand" />、それ以外の場合は <see langword="false" />、つまり、アプリケーションがこの処理を実行することを示します。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.ServiceBehaviorAttribute.ValidateMustUnderstand%2A> プロパティを使用して、到達したメッセージ ヘッダーの検証の実施をオフにします。 通常の実行では、メッセージ ヘッダーを <xref:System.ServiceModel.Channels.MessageHeaders.UnderstoodHeaders%2A> プロパティと比較し、到着したヘッダーがサービスによって明示的に処理されることを確認します。 この確認を無効にするには、このプロパティを `false` に設定します。 `false` に設定すると、アプリケーションは、MustUnderstand="true" とマークされたヘッダーがないか確認し、1 つ以上のヘッダーが理解されなかった場合は、エラーを返す必要があります。 これは、アプリケーションが受信する SOAP メッセージをすべて受け入れ (型指定のあるメッセージとないメッセージを使用する場合など)、カスタム ヘッダー処理を行うことになっている場合に便利です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

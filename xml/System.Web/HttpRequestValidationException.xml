@@ -1,0 +1,123 @@
+<Type Name="HttpRequestValidationException" FullName="System.Web.HttpRequestValidationException">
+  <TypeSignature Language="C#" Value="public sealed class HttpRequestValidationException : System.Web.HttpException" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit HttpRequestValidationException extends System.Web.HttpException" />
+  <TypeSignature Language="DocId" Value="T:System.Web.HttpRequestValidationException" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.HttpException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>悪意のある入力文字列がクライアントから要求データの一部として受信したときにスローされる例外。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制約と、ユーザー入力の検証を悪意のある入力文字列に依存するハッカーの攻撃を防ぐために Web アプリケーションに不可欠です。 クロスサイト スクリプティング攻撃は、そのようなハッキングの 1 つの例です。 さまざまな形式での入力を要求で他のマルウェアまたは望ましくないデータ型を渡すことができます。 アプリケーション内の低レベルに渡されるデータの種類を制限すると、プログラマは、コードを使用している場所に適切な検証方法を配置しない場合でも、予期しないイベントができなくなります。  
+  
+ 要求の検証は、悪意のあるクライアントの入力を検出し、要求の処理を中止するには、この例外をスローします。 要求の中止、クロスサイト スクリプティング攻撃など、アプリケーションのセキュリティを侵害するを指定できます。 アプリケーションは、すべての入力を要求の中止に関してを明示的にチェックすることを強くお勧めします。 ただし、要求の検証を無効に設定してできます、`validateRequest`ディレクティブ内の属性`false`次の例のように。  
+  
+ `<%@ Page validateRequest="false" %>`  
+  
+ を、アプリケーションの要求の検証を無効にするには、変更またはアプリケーションとセットの Web.config ファイルを作成する必要があります、`validateRequest`の属性、`pages`セクション`false`次の例のように。  
+  
+```  
+<configuration>   
+  <system.web>   
+    <pages validateRequest="false" />   
+  </system.web>   
+</configuration>   
+```  
+  
+ サーバー上のすべてのアプリケーションの要求の検証を無効にするには、Machine.config ファイルには、この変更を行うことができます。  
+  
+> [!NOTE]
+>  アプリケーションが ASP.NET によって実行される要求の検証だけでなくすべての入力を明示的にチェックすることを強くお勧めします。 要求の検証機能は、すべてをキャッチできません攻撃する場合に、特に、アプリケーション ロジックに対して作成されたものです。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用して、悪意のあるユーザーの入力を確認する方法を示しています、<xref:System.Web.HttpRequestValidationException>です。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[HttpRequestValidationException#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HttpRequestValidationException/CS/httprequestvalidationexception_cs.aspx#1)]
+ [!code-aspx-vb[HttpRequestValidationException#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/HttpRequestValidationException/VB/HttpRequestValidationException_VB.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestValidationException ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRequestValidationException.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.HttpRequestValidationException" /> クラスの新しいインスタンスを作成します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestValidationException (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRequestValidationException.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">エラーを説明する文字列。</param>
+        <summary>新たに作成<see cref="T:System.Web.HttpRequestValidationException" />指定したエラー メッセージで例外。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容、`message`パラメーターは、ヒューマンするものでは読み取り可能です。 呼び出し元、<xref:System.Web.HttpRequestValidationException.%23ctor%28System.String%29>コンス トラクターがいることを確認するために必要な`message`文字列はローカライズされています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRequestValidationException (string message, Exception innerException);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string message, class System.Exception innerException) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.HttpRequestValidationException.#ctor(System.String,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="innerException" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">例外の原因を説明するエラー メッセージ。</param>
+        <param name="innerException">現在の例外の原因となった例外。 このパラメーターがない場合<see langword="null" />で現在の例外が発生、<see langword="catch" />ブロックは、内部例外を処理します。</param>
+        <summary>指定したエラー メッセージと、例外の原因である内部例外への参照を使用して、<see cref="T:System.Web.HttpRequestValidationException" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前の例外の直接の結果としてスローされる例外については、<xref:System.Exception.InnerException%2A> プロパティに、前の例外への参照が格納されます。 <xref:System.Exception.InnerException%2A>に渡されたものと同じ値を返します、<xref:System.Web.HttpRequestValidationException.%23ctor%28System.String%2CSystem.Exception%29>コンス トラクター、または`null`場合、<xref:System.Exception.InnerException%2A>プロパティには、内部例外値を指定しない、<xref:System.Web.HttpRequestValidationException.%23ctor%28System.String%2CSystem.Exception%29>コンス トラクターです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

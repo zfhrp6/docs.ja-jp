@@ -1,0 +1,482 @@
+<Type Name="Transform" FullName="System.Security.Cryptography.Xml.Transform">
+  <TypeSignature Language="C#" Value="public abstract class Transform" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Transform extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.Xml.Transform" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>指定したすべての抽象基本クラスを表す<see langword="&lt;Transform&gt;" />XML デジタル署名で使用できる要素が派生します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 署名と検証を実行するときに、<`Transform`> 要素は、署名者が署名されたデータ オブジェクトを変換する方法について説明します。  ドキュメントの検証を使用して、<`Transform`> 同じ方法で署名されたデータを変換する要素。  検証ツールは、同じ方法で署名されたデータを変換することはできない場合に、ドキュメントを確認することはできません。  
+  
+ 派生するクラスを使用して、<xref:System.Security.Cryptography.Xml.Transform>クラスのたびに、暗号化された XML ドキュメントまたは署名付き XML ドキュメントには、1 つまたは複数の変換オブジェクトを追加する必要があります。  
+  
+ 詳細については、`<Transform>`要素、www.w3.org/TR/xmldsig-core/ に World Wide Web Consortium (W3C) から入手できますが、XMLDSIG の仕様または www.w3.org/TR/xmlenc-core/ で W3C から利用できる XML 暗号化の仕様を参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Transform ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.Xml.Transform" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Algorithm">
+      <MemberSignature Language="C#" Value="public string Algorithm { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Algorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.Algorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、Uniform Resource Identifier () を現在の変換で実行されるアルゴリズムを識別します。</summary>
+        <value>現在の実行アルゴリズムを識別する URI を<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティに対応、<xref:System.Security.Cryptography.Xml.Transform.Algorithm%2A>の属性、 `<Transform>` XMLDSIG シグネチャ内の要素。 たとえば、URI Base64 デコード変換用のアルゴリズムは、http://www.w3.org/2000/09/xmldsig#base64 XMLDSIG の仕様 (セクション 6.6.2) として定義されます。  
+  
+ 簡単に関連付けられている静的フィールドのいずれかを使用してこの値を設定することができます、<xref:System.Security.Cryptography.Xml.SignedXml>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Context { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement Context" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Xml.XmlElement" />するドキュメントのコンテキストを表すオブジェクト、現在<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクトが実行されています。</summary>
+        <value><see cref="T:System.Xml.XmlElement" />するドキュメントのコンテキストを表すオブジェクト、現在<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクトが実行されています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ドキュメントに署名するとき、<xref:System.Security.Cryptography.Xml.Transform.Context%2A>プロパティに渡される値を表します、<xref:System.Security.Cryptography.Xml.SignedXml>コンス トラクターです。  ドキュメントを検証するときに、<xref:System.Security.Cryptography.Xml.Transform.Context%2A>プロパティを表す<xref:System.Security.Cryptography.Xml.Signature>オブジェクト。  
+  
+ <xref:System.Security.Cryptography.Xml.Transform.Context%2A>署名の計算と確認には、中に、変換が呼び出される前に、プロパティが自動的に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDigestedOutput">
+      <MemberSignature Language="C#" Value="public virtual byte[] GetDigestedOutput (System.Security.Cryptography.HashAlgorithm hash);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance unsigned int8[] GetDigestedOutput(class System.Security.Cryptography.HashAlgorithm hash) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.GetDigestedOutput(System.Security.Cryptography.HashAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hash" Type="System.Security.Cryptography.HashAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="hash"><see cref="T:System.Security.Cryptography.HashAlgorithm" />ダイジェストを作成するために使用します。</param>
+        <summary>派生クラスでオーバーライドされると、関連付けのダイジェストを返します、<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <returns>関連付けられている、ダイジェスト、<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetInnerXml">
+      <MemberSignature Language="C#" Value="protected abstract System.Xml.XmlNodeList GetInnerXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Xml.XmlNodeList GetInnerXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.GetInnerXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlNodeList</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、パラメーターの XML 表現を返します、<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクトは、XMLDSIG のサブ要素として含まれるに適した<see langword="&lt;Transform&gt;" />要素。</summary>
+        <returns>現在の記述に必要な変換に固有のコンテンツを表す XML ノードの一覧<see cref="T:System.Security.Cryptography.Xml.Transform" />、XMLDSIG 内のオブジェクト<see langword="&lt;Transform&gt;" />要素。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 場合、<xref:System.Security.Cryptography.Xml.Transform>オブジェクトを表す XPath 式を使用して XPath 変換`self::text()`への呼び出し<xref:System.Security.Cryptography.Xml.Transform.GetInnerXml%2A>結果、<xref:System.Xml.XmlNodeList>を次の XML 要素を表すオブジェクト。  
+  
+```  
+<XPath>   
+  self::text()   
+</XPath>  
+```  
+  
+ この要素の変換に固有のコンテンツに対応、 `<Transform>` XMLDSIG の仕様のセクション 4.3.3.4 で定義されている要素です。 上記の XPath 変換、全体の`<Transform>`要素は、次のようにします。  
+  
+```  
+<Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116">   
+  <XPath>   
+    self::text()   
+  </XPath>   
+</Transform>  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public abstract object GetOutput ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetOutput() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.GetOutput" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在の出力を返します<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetOutput">
+      <MemberSignature Language="C#" Value="public abstract object GetOutput (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetOutput(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.GetOutput(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">返される出力の型。 これは内の型のいずれかを指定する必要があります、<see cref="P:System.Security.Cryptography.Xml.Transform.OutputTypes" />プロパティです。</param>
+        <summary>派生クラスでオーバーライドされると、現在の出力を返します<see cref="T:System.Security.Cryptography.Xml.Transform" />指定した型のオブジェクト。</summary>
+        <returns>現在の出力<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクトとして指定した型のオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.Xml.Transform.GetOutput%2A>は以前の呼び出しによって設定された値、実行後に、メソッドは、現在の変換の出力を返します、<xref:System.Security.Cryptography.Xml.Transform.LoadInput%2A>メソッドです。  
+  
+ 返されるオブジェクトの種類は型のオブジェクトのいずれかを指定する必要があります、<xref:System.Security.Cryptography.Xml.Transform.OutputTypes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetXml">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement GetXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Xml.XmlElement GetXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.GetXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の XML 表現を返します<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <returns>現在の XML 表現<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlElement>の XML スキーマに準拠しているこのメソッドによって返されるオブジェクト、 `<Transform>` XMLDSIG の仕様のセクション 4.3.3.4 で定義された要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InputTypes">
+      <MemberSignature Language="C#" Value="public abstract Type[] InputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] InputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.InputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると場合に、有効な入力値をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.Transform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <value>現在の有効な入力の型の配列<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクトです。 これらの種類のいずれかのオブジェクトのみを渡すことができます、 <see cref="M:System.Security.Cryptography.Xml.Transform.LoadInput(System.Object)" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列、<xref:System.Security.Cryptography.Xml.Transform.InputTypes%2A>ために、プロパティは、少なくとも 1 つの要素を含める必要がありますすべて<xref:System.Security.Cryptography.Xml.Transform>オブジェクトに有効な入力として少なくとも 1 つの型を使用する必要があります。  
+  
+ A<xref:System.Security.Cryptography.Xml.Transform>オブジェクト通常、次の種類の 1 つ以上入力として受け取ります。 <xref:System.IO.Stream>、 <xref:System.Xml.XmlDocument>、または<xref:System.Xml.XmlNodeList>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInnerXml">
+      <MemberSignature Language="C#" Value="public abstract void LoadInnerXml (System.Xml.XmlNodeList nodeList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadInnerXml(class System.Xml.XmlNodeList nodeList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.LoadInnerXml(System.Xml.XmlNodeList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="nodeList" Type="System.Xml.XmlNodeList" />
+      </Parameters>
+      <Docs>
+        <param name="nodeList"><see cref="T:System.Xml.XmlNodeList" />現在の変換に固有のコンテンツを指定するオブジェクト<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、指定した解析<see cref="T:System.Xml.XmlNodeList" />オブジェクトの変換に固有のコンテンツとして、<see langword="&lt;Transform&gt;" />要素、現在の内部状態を構成および<see cref="T:System.Security.Cryptography.Xml.Transform" />と一致するオブジェクト、<see langword="&lt;Transform&gt;" />要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドはのサブ要素を処理するために使用する`<Transform>`要素。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadInput">
+      <MemberSignature Language="C#" Value="public abstract void LoadInput (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void LoadInput(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.Xml.Transform.LoadInput(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在読み込む入力<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</param>
+        <summary>派生クラスでオーバーライドされると、現在、指定された入力を読み込みます<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入力オブジェクトの種類は内の型のいずれかを指定する必要があります、<xref:System.Security.Cryptography.Xml.Transform.InputTypes%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OutputTypes">
+      <MemberSignature Language="C#" Value="public abstract Type[] OutputTypes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type[] OutputTypes" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.OutputTypes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされるから可能な出力をされている型の配列を取得、 <see cref="M:System.Security.Cryptography.Xml.Transform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</summary>
+        <value>現在の有効な出力型の配列<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト以外のオブジェクトのみを次のいずれかの型はから返されます、 <see cref="M:System.Security.Cryptography.Xml.Transform.GetOutput" /> 、現在のメソッド<see cref="T:System.Security.Cryptography.Xml.Transform" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列、<xref:System.Security.Cryptography.Xml.Transform.OutputTypes%2A>すべて変換が出力として少なくとも 1 つの型を生成する必要がありますので、プロパティは、少なくとも 1 つの要素を含める必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropagatedNamespaces">
+      <MemberSignature Language="C#" Value="public System.Collections.Hashtable PropagatedNamespaces { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Hashtable PropagatedNamespaces" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Hashtable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Collections.Hashtable" />シグネチャに反映される名前空間を含むオブジェクトです。</summary>
+        <value>A<see cref="T:System.Collections.Hashtable" />シグネチャに反映される名前空間を含むオブジェクトです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ XML 名前空間は、同じ名前を持つドキュメント内の別の要素を区別するために使用されます。  
+  
+ <xref:System.Collections.Hashtable>のキー、<xref:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces%2A>プロパティには、名前空間プレフィックスおよび<xref:System.Collections.Hashtable>値は、名前空間の Uniform Resource Identifier (Uri)。  
+  
+ <xref:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces%2A>署名の計算と確認には、中に、変換が呼び出される前に、プロパティが自動的に設定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><see cref="P:System.Security.Cryptography.Xml.Transform.PropagatedNamespaces" />プロパティに設定された<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resolver">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlResolver Resolver { set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlResolver Resolver" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.Xml.Transform.Resolver" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Xml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlResolver</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の設定<see cref="T:System.Xml.XmlResolver" />オブジェクト。</summary>
+        <value>現在の <see cref="T:System.Xml.XmlResolver" /> オブジェクト。 このプロパティの既定値、<see cref="T:System.Xml.XmlSecureResolver" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.XmlResolver>クラスによって、Uniform Resource Identifier () をという名前の外部 XML リソースを解決します。 XML ファイルの作成元を信頼していない場合、URI でという名前のコンピューター リソースにアクセスする XML ファイルを許可する場合がありますされません。 <xref:System.Security.Cryptography.Xml.Transform.Resolver%2A>プロパティでは、XML ファイルがコンピューター リソースに異なるを指定しているアクセスのレベルを制御できます。<xref:System.Xml.XmlResolver>オブジェクト。 任意のアクセスを許可しないようにする場合このプロパティを設定することができます`null`(`Nothing` Visual Basic で)。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,101 @@
+<Type Name="XmlIgnoreAttribute" FullName="System.Xml.Serialization.XmlIgnoreAttribute">
+  <TypeSignature Language="C#" Value="public class XmlIgnoreAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XmlIgnoreAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Xml.Serialization.XmlIgnoreAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>指示、<see cref="M:System.Xml.Serialization.XmlSerializer.Serialize(System.IO.TextWriter,System.Object)" />のメソッド、<see cref="T:System.Xml.Serialization.XmlSerializer" />パブリック フィールドまたはパブリックの読み取り/書き込みプロパティ値をシリアル化しません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xml.Serialization.XmlIgnoreAttribute>を制御する属性のファミリに属するどの<xref:System.Xml.Serialization.XmlSerializer>オブジェクトを逆シリアル化またはシリアル化します。 適用する場合、 <xref:System.Xml.Serialization.XmlIgnoreAttribute> 、クラスの任意のメンバーに、<xref:System.Xml.Serialization.XmlSerializer>クラスのインスタンスを逆シリアル化またはシリアル化するときに、メンバーは無視されます。 類似する属性の一覧については、次を参照してください。[コントロール XML シリアル化する属性](~/docs/standard/serialization/attributes-that-control-xml-serialization.md)です。  
+  
+ による動作をオーバーライドすることができます、<xref:System.Xml.Serialization.XmlIgnoreAttribute>作成することで、<xref:System.Xml.Serialization.XmlAttributes>オブジェクト、および設定の<xref:System.Xml.Serialization.XmlAttributes.XmlIgnore%2A>プロパティを`false`です。 必要な<xref:System.Xml.Serialization.XmlAttributeOverrides.Add%2A>、<xref:System.Xml.Serialization.XmlAttributes>オブジェクトのインスタンスを<xref:System.Xml.Serialization.XmlAttributeOverrides>クラスです。 最後に、使用する必要があります、<xref:System.Xml.Serialization.XmlAttributeOverrides>オブジェクトのインスタンスを構築するために、<xref:System.Xml.Serialization.XmlSerializer>クラスを呼び出す前に、<xref:System.Xml.Serialization.XmlSerializer.Serialize%2A>または<xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A>メソッドです。  
+  
+ [XML スキーマ定義ツール (Xsd.exe)](~/docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)ときどき生成、<xref:System.Xml.Serialization.XmlIgnoreAttribute>スキーマ ファイル (.xsd) からクラスを作成するときにします。 値の型設定できないために、この動作が発生した`null`、すべての XML データ型を指定できますが、します。 値の型にマップされる XML 型に到達したときにツールが 2 つのフィールドを作成するそのため、: 値と別の特別なフィールドの形式を保持する 1 つ`fieldnameSpecified`、どこで、`fieldname`はフィールドまたはプロパティの名前に置換します。 注意してください、ただし、スキーマでは、要素に最小出現回数がないことを指定する場合にのみ、この特別なフィールドが生成されたこと (minOccurs =「0」)、要素に既定値はありません。 <xref:System.Xml.Serialization.XmlSerializer>を設定し、この特別なフィールドのフィールドまたはプロパティの値が設定されているかどうかを決定するを確認します。 特別なフィールドはシリアル化する必要がありますいないため、ツールが適用される、<xref:System.Xml.Serialization.XmlIgnoreAttribute>にします。  
+  
+ 属性の使用方法の詳細については、次を参照してください。[属性](~/docs/standard/attributes/index.md)です。  
+  
+> [!NOTE]
+>  語を使用できます`XmlIgnore`時間が長いではなく、コードで<xref:System.Xml.Serialization.XmlIgnoreAttribute>です。  
+  
+   
+  
+## Examples  
+ 次の例は、という名前のクラスを示しています。 `Group`、という名前のフィールドが含まれています`Comment`です。 例では、<xref:System.Xml.Serialization.XmlIgnoreAttribute>のフィールドに指示するため、<xref:System.Xml.Serialization.XmlSerializer>クラスのインスタンスを逆シリアル化またはシリアル化するときに、フィールドを無視します。  
+  
+ [!code-cpp[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XmlIgnoreAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xml.Serialization.XmlIgnoreAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.XmlSerializer</AssemblyName>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xml.Serialization.XmlIgnoreAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、という名前のクラスを示しています。 `Group`、という名前のフィールドが含まれています`Comment`です。 例では、<xref:System.Xml.Serialization.XmlIgnoreAttribute>のフィールドに指示するため、<xref:System.Xml.Serialization.XmlSerializer>クラスのインスタンスを逆シリアル化またはシリアル化するときに、フィールドを無視します。  
+  
+ [!code-cpp[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic XmlIgnoreAttribute.XmlIgnoreAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

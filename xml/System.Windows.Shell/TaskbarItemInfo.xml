@@ -1,0 +1,435 @@
+<Type Name="TaskbarItemInfo" FullName="System.Windows.Shell.TaskbarItemInfo">
+  <TypeSignature Language="C#" Value="public sealed class TaskbarItemInfo : System.Windows.Freezable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit TaskbarItemInfo extends System.Windows.Freezable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Shell.TaskbarItemInfo" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Freezable</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>タスク バーのサムネイルを表示する方法に関する情報を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.TaskbarItemInfo>クラスのマネージ ラッパーを提供する[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーの機能です。 Windows シェルとタスク バーをネイティブ Api の詳細については、次を参照してください。[タスク バーの拡張機能](http://go.microsoft.com/fwlink/?LinkId=178479)します。 <xref:System.Windows.Shell.TaskbarItemInfo>として公開される、<xref:System.Windows.Window.TaskbarItemInfo%2A?displayProperty=nameWithType>依存関係プロパティに、<xref:System.Windows.Window>です。  
+  
+ [!INCLUDE[win7](~/includes/win7-md.md)]タスク バーは、タスク バーの項目を使用して、ユーザー状態を通信して、ウィンドウを最小化または非表示にするときに、一般的なタスクを公開することができます拡張機能を提供します。 によって公開される機能、<xref:System.Windows.Shell.TaskbarItemInfo>クラスより古いバージョンの Windows で使用できる[!INCLUDE[win7](~/includes/win7-md.md)]です。 使用するアプリケーション、<xref:System.Windows.Shell.TaskbarItemInfo>クラスは、Windows の以前のバージョンも実行できます。 ただし、これらのタスク バーの拡張機能では使用できない、以前のバージョン。  
+  
+ [!INCLUDE[win7](~/includes/win7-md.md)]、一部のタスク バーの機能は、ユーザーの設定によって、使用できるでない可能性があります。 たとえば、タスク バーの機能は利用できない場合[!INCLUDE[TLA#tla_aero](~/includes/tlasharptla-aero-md.md)]が無効になっているか、管理者特権を持つかどうか、アプリケーションを開始します。 アプリケーションでのタスク バーの拡張機能に依存しないユーザーと対話するには、他の方法を提供する必要があります[!INCLUDE[win7](~/includes/win7-md.md)]です。  
+  
+ 通常、タスク バーの右端にある通知領域にプログラム アイコンはユーザーにアプリケーションの状態を通信するために使用されます。 既定では、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーには、通知領域にプログラム アイコンが非表示にします。 ただし、設定することができます、<xref:System.Windows.Shell.TaskbarItemInfo.Overlay%2A>メッセージング アプリケーションのオンライン状態などの状態を通信するために、タスク バー ボタンにイメージを追加するプロパティです。 オーバーレイ イメージを使用して、通知領域にプログラム アイコンを表示することはできない場合でも、アプリケーションの状態を表示できます。 タスク バー ボタンに設定してタスクの実行の進行状況を表示することも、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>と<xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>プロパティです。  
+  
+ [!INCLUDE[win7](~/includes/win7-md.md)]タスク バー ボタンの上にマウス ポインターを移動すると、タスク バーには、アプリケーションのサムネイルが表示されます。 既定では、全体のアプリケーション ウィンドウが表示されます。 設定して、サムネイルに表示するウィンドウの特定の部分を指定することができます、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin%2A>プロパティです。 指定することも、<xref:System.Windows.Shell.TaskbarItemInfo.Description%2A>タスク バーのサムネイルの上のツールヒントに表示されます。 ユーザー設定のため、サムネイルが表示されない場合でも、ツールヒントが表示されます。  
+  
+ アプリケーション ウィンドウを切り替えずに一般的なタスクへのアクセスを提供するタスク バーのサムネイルには、ボタンを追加できます。 たとえば、Media Player のウィンドウは、再生、一時停止、転送、およびアプリケーションが最小化したときにできる戻るボタンがタスク バーのサムネイルからメディアの再生を制御を提供します。 タスク バーのサムネイルのボタンがによって表される<xref:System.Windows.Shell.ThumbButtonInfo>に含まれているオブジェクトとは、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos%2A>コレクション。  
+  
+ 次の図の拡張機能、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バー。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーの拡張機能  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.TaskbarItemInfo>マークアップでします。 <xref:System.Windows.Shell.TaskbarItemInfo>のコレクションを格納<xref:System.Windows.Shell.ThumbButtonInfo>タスク バーの項目からの再生と停止のコマンドにアクセスを提供するオブジェクト。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ 次のマークアップとコードの完全コンテキストに、前の例を示します。 アプリケーションを使用して、 <xref:System.ComponentModel.BackgroundWorker> 0 から 100 までがカウントし、ユーザー インターフェイスで、進行状況を表示します。 タスクを開始し、タスク バー プレビューから停止できます。 進行状況は、タスク バー ボタンに表示されます。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#001](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#001)]  
+  
+ [!code-csharp[Shell_TaskbarItemSample#100](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml.cs#100)]
+ [!code-vb[Shell_TaskbarItemSample#100](~/samples/snippets/visualbasic/VS_Snippets_Wpf/shell_taskbaritemsample/vb/mainwindow.xaml.vb#100)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TaskbarItemInfo ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.TaskbarItemInfo.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Shell.TaskbarItemInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Shell.TaskbarItemInfo.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Description">
+      <MemberSignature Language="C#" Value="public string Description { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Description" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.Description" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスク バー項目のツールヒントのテキストを設定します。</summary>
+        <value>タスク バー項目のツールヒントのテキストです。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ マウス ポインターがタスク バー ボタン上に、タスク バーのサムネイル上のツールヒントが表示されます。 ユーザー設定のために、タスク バーのサムネイルが表示されない場合は、ツール ヒントは引き続き表示されます。  
+  
+ 次の図に、タスク バー<xref:System.Windows.Shell.TaskbarItemInfo.Description%2A>ツールヒント。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーの説明  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.TaskbarItemInfo>マークアップとセットに、<xref:System.Windows.Shell.TaskbarItemInfo.Description%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DescriptionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty DescriptionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty DescriptionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.DescriptionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.Description" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Overlay">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.ImageSource Overlay { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.ImageSource Overlay" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.Overlay" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.ImageSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスク バー ボタンのプログラム アイコンの上に表示されるイメージを設定します。</summary>
+        <value>タスク バー ボタンのプログラム アイコンの上に表示されるイメージです。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーにアプリケーションの状態を通信するためにタスク バー ボタンのプログラム アイコンには、イメージを追加できます。 オーバーレイが静的なを使用して、またはアニメーション化<xref:System.Windows.Media.ImageSource>タスク バー ボタンのアイコンの右下隅の上に置くことです。 ユーザーが小さいアイコンを表示する、タスク バーを設定する場合は、オーバーレイは表示されません。  
+  
+ 通常、タスク バーの右端にある通知領域にプログラム アイコンはユーザーにアプリケーションの状態を通信するために使用されます。 [!INCLUDE[win7](~/includes/win7-md.md)]、通知領域にプログラム アイコンは、既定では、そのため、小さい状態を通信するために役立ちます。 タスク バー ボタンのオーバーレイを使用する[!INCLUDE[win7](~/includes/win7-md.md)]通知領域にアイコンが非表示の場合は、状態を通信するためにします。 アプリケーションでは、Windows のバージョンを検出でき、オペレーティング システムを適切な方法で通知を提供することができます。  
+  
+ オーバーレイのイメージが適切なサイズで描画します。 場合、<xref:System.Windows.Media.ImageSource>を表す、 <xref:System.Drawing.Icon>、適切なビットの深さも使用します。  
+  
+ 次の図に、タスク バー<xref:System.Windows.Shell.TaskbarItemInfo.Overlay%2A>です。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーのオーバーレイ  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.TaskbarItemInfo>マークアップとセットに、<xref:System.Windows.Shell.TaskbarItemInfo.Overlay%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ 次の例は、コードで <xref:System.Windows.Shell.TaskbarItemInfo.Overlay%2A> プロパティを設定する方法を示しています。  
+  
+ [!code-csharp[Shell_TaskbarItemSample#121](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml.cs#121)]
+ [!code-vb[Shell_TaskbarItemSample#121](~/samples/snippets/visualbasic/VS_Snippets_Wpf/shell_taskbaritemsample/vb/mainwindow.xaml.vb#121)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OverlayProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty OverlayProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty OverlayProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.OverlayProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.Overlay" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressState">
+      <MemberSignature Language="C#" Value="public System.Windows.Shell.TaskbarItemProgressState ProgressState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Shell.TaskbarItemProgressState ProgressState" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.ProgressState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Shell.TaskbarItemProgressState</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスク バー ボタンの進行状況インジケーターを表示する方法を示す値を設定します。</summary>
+        <value>タスク バー ボタンの進行状況インジケーターを表示する方法を示す列挙値。 既定値は、<see cref="F:System.Windows.Shell.TaskbarItemProgressState.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行時間の長いタスクの進行状況を通信するには、進行状況インジケーターで表示することによって、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バー ボタンをクリックします。 インジケーターの色はによって決定されます、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>プロパティのいずれかが含まれています、<xref:System.Windows.Shell.TaskbarItemProgressState>列挙値。 ときに、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>は<xref:System.Windows.Shell.TaskbarItemProgressState.Normal>インジケーターが緑色です。 ときに<xref:System.Windows.Shell.TaskbarItemProgressState.Paused>、黄色のインジケーターがします。 ときに<xref:System.Windows.Shell.TaskbarItemProgressState.Error>、赤のインジケーターがします。 これらの状態の<xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>プロパティでは、進行状況インジケーターで塗りつぶすがタスク バー ボタンの量を決定します。 <xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>その他の値は無視されます<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>です。 <xref:System.Windows.Shell.TaskbarItemProgressState.Indeterminate>全体のタスク バー ボタン、緑色の点滅インジケーターを表示します。 インジケーターは表示されません<xref:System.Windows.Shell.TaskbarItemProgressState.None>です。  
+  
+ 次の図は、タスク バーの進行状況インジケーターで、<xref:System.Windows.Shell.TaskbarItemProgressState.Normal>状態です。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーの進行状況インジケーター  
+  
+   
+  
+## Examples  
+ 次の例は、コードで <xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A> プロパティを設定する方法を示しています。 ハンドラーで状態が設定されて、<xref:System.ComponentModel.BackgroundWorker.RunWorkerCompleted?displayProperty=nameWithType>をバック グラウンド タスクが、ユーザーによって停止したかどうかを示すイベントが、エラーで終了するか正常に終了します。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-csharp[Shell_TaskbarItemSample#120](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml.cs#120)]
+ [!code-vb[Shell_TaskbarItemSample#120](~/samples/snippets/visualbasic/VS_Snippets_Wpf/shell_taskbaritemsample/vb/mainwindow.xaml.vb#120)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressStateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ProgressStateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ProgressStateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.ProgressStateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.ProgressState" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressValue">
+      <MemberSignature Language="C#" Value="public double ProgressValue { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 ProgressValue" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.ProgressValue" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスク バー ボタンの進行状況インジケーターの充填率を示す値を設定します。</summary>
+        <value>タスク バー ボタンの進行状況インジケーターの充填率を示す値です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>プロパティは 0.0 ~ 1.0 の値として表されます。 および拡大の番号は、それらの範囲内に強制されます。 <xref:System.Double.NaN>0 に変換します。  
+  
+ 実行時間の長いタスクの進行状況を通信するには、進行状況インジケーターで表示することによって、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バー ボタンをクリックします。 インジケーターの色はによって決定されます、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>プロパティのいずれかが含まれています、<xref:System.Windows.Shell.TaskbarItemProgressState>列挙値。 場合、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>プロパティは<xref:System.Windows.Shell.TaskbarItemProgressState.Normal>、 <xref:System.Windows.Shell.TaskbarItemProgressState.Paused>、または<xref:System.Windows.Shell.TaskbarItemProgressState.Error>、<xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>プロパティは、進行状況インジケーターの充填率を決定します。 <xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A>いくつかの値は無視されます<xref:System.Windows.Shell.TaskbarItemInfo.ProgressState%2A>です。 <xref:System.Windows.Shell.TaskbarItemProgressState.Indeterminate>全体のタスク バー ボタン、緑色の点滅インジケーターを表示します。 インジケーターは表示されません<xref:System.Windows.Shell.TaskbarItemProgressState.None>です。  
+  
+ 次の図に、タスク バーの進行状況インジケーターで、 <xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A> 82% です。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーの進行状況インジケーター  
+  
+   
+  
+## Examples  
+ 次の例は、コードで <xref:System.Windows.Shell.TaskbarItemInfo.ProgressValue%2A> プロパティを設定する方法を示しています。 ハンドラーで、値が設定されて、<xref:System.ComponentModel.BackgroundWorker.ProgressChanged?displayProperty=nameWithType>をバック グラウンド タスクの現在の進行状況を示すイベント。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-csharp[Shell_TaskbarItemSample#130](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml.cs#130)]
+ [!code-vb[Shell_TaskbarItemSample#130](~/samples/snippets/visualbasic/VS_Snippets_Wpf/shell_taskbaritemsample/vb/mainwindow.xaml.vb#130)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressValueProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ProgressValueProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ProgressValueProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.ProgressValueProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.ProgressValue" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbButtonInfos">
+      <MemberSignature Language="C#" Value="public System.Windows.Shell.ThumbButtonInfoCollection ThumbButtonInfos { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Shell.ThumbButtonInfoCollection ThumbButtonInfos" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Shell.ThumbButtonInfoCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.Windows.Shell.ThumbButtonInfo" />オブジェクトに関連付けられている、<see cref="T:System.Windows.Window" />です。</summary>
+        <value>コレクション<see cref="T:System.Windows.Shell.ThumbButtonInfo" />オブジェクトに関連付けられている、<see cref="T:System.Windows.Window" />です。 既定値は空のコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスク バーのサムネイルがなくても、アプリケーション ウィンドウに切り替えるには、一般的なタスクにユーザーのアクセスを提供するには、ボタンを追加できます。 たとえば、Windows Media Player は、アプリケーションが最小化したときのタスク バーのサムネイルからユーザー コントロールのメディアの再生に便利なプレイ、一時停止、転送、および戻るボタンを提供します。 タスク バーのサムネイルのボタンがによって表される<xref:System.Windows.Shell.ThumbButtonInfo>に含まれているオブジェクトとは、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos%2A>コレクション。  
+  
+ [!INCLUDE[win7](~/includes/win7-md.md)]シェルは、タスク バーのサムネイルで、最大で 7 つのボタンを許可します。 7 つ以上の場合<xref:System.Windows.Shell.ThumbButtonInfo>オブジェクトに追加されます、 <xref:System.Windows.Shell.ThumbButtonInfoCollection>、追加のオブジェクトは、オーバーフローとして扱われます。 ボタンの場合は<xref:System.Windows.Visibility.Collapsed>、表示されている要素がない、およびその領域が予約されていません。 この場合、追加のボタンで、<xref:System.Windows.Shell.ThumbButtonInfoCollection>オーバーフローが表示されます。  
+  
+ 次の図は、2 つの親指ボタンの一連のタスク バー プレビューを示します。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーのつまみをボタンします。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.TaskbarItemInfo>マークアップでします。 <xref:System.Windows.Shell.TaskbarItemInfo>のコレクションを格納<xref:System.Windows.Shell.ThumbButtonInfo>タスク バーの項目からの再生と停止のコマンドにアクセスを提供するオブジェクト。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbButtonInfosProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ThumbButtonInfosProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ThumbButtonInfosProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfosProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.ThumbButtonInfos" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbnailClipMargin">
+      <MemberSignature Language="C#" Value="public System.Windows.Thickness ThumbnailClipMargin { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Thickness ThumbnailClipMargin" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Thickness</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタスク バーのサムネイルに表示される、アプリケーション ウィンドウのクライアント領域の一部を指定する値を設定します。</summary>
+        <value>タスク バーのサムネイルに表示される、アプリケーション ウィンドウのクライアント領域の一部を指定する値。 既定値は空の <see cref="T:System.Windows.Thickness" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定では、[!INCLUDE[win7](~/includes/win7-md.md)]タスク バーには、アプリケーション ウィンドウのクライアント領域のスケーリングされたサムネイルが表示されます。 設定することができます、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin%2A>サムネイルに表示されているクライアント ウィンドウのトリミングされた領域を指定するプロパティです。 たとえば、このプロパティは、アプリケーションのツールバーを除外するときにウィンドウ コンテンツのサムネイルにフォーカスする場合に便利です。 このプロパティは、表示されていないアプリケーション ウィンドウで、サムネイルでコンテンツを表示する使用できません。  
+  
+ 設定して、サムネイルに表示される領域を指定します、<xref:System.Windows.Thickness>領域の周りの境界線のです。 罫線は、クライアント ウィンドウの端から開始し、指定した量によって達するまで内側に向かって拡張します。 枠線内のコンテンツは、サムネイルに表示されます。  
+  
+ 次の図に、境界を定義する、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin%2A>です。  
+  
+ ![サムネイルのクリップ マージン](~/add/media/wpfshell-clipmargin.png "サムネイルのクリップ マージン")  
+サムネイルのクリップ領域の枠線  
+  
+ 次の図は、クリップされたサムネイルのプレビューを示します。  
+  
+ ![タスク バー項目情報のサンプル](~/add/media/wpfshell-taskbariteminfo.png "タスクバー項目情報のサンプル")  
+Windows タスク バーのサムネイルのプレビュー  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.Shell.TaskbarItemInfo>マークアップとセットに、<xref:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Windows.Shell.TaskbarItemInfo>クラスです。  
+  
+ [!code-xaml[Shell_TaskbarItemSample#010](~/samples/snippets/csharp/VS_Snippets_Wpf/shell_taskbaritemsample/cs/mainwindow.xaml#010)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ThumbnailClipMarginProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ThumbnailClipMarginProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ThumbnailClipMarginProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMarginProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Shell.TaskbarItemInfo.ThumbnailClipMargin" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

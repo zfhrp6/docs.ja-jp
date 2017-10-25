@@ -1,0 +1,756 @@
+<Type Name="WorkflowInstance" FullName="System.Workflow.Runtime.WorkflowInstance">
+  <TypeSignature Language="C#" Value="public sealed class WorkflowInstance" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit WorkflowInstance extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.Runtime.WorkflowInstance" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ワークフロー インスタンスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ <xref:System.Workflow.Runtime.WorkflowInstance> クラスは、ワークフロー インスタンスの実行の制御に使用できるメソッドおよびプロパティを公開します。本質的には、ワークフロー ランタイム エンジンが使用する実際のワークフロー インスタンスのプロキシです。 ホストまたはサービスは、<xref:System.Workflow.Runtime.WorkflowInstance> クラスに含まれる適切なメソッドを呼び出すことによって、ワークフロー インスタンスに関するアクションの実行をワークフロー ランタイム エンジンに指示することができます。  要求されたアクションが無効だった場合、たとえば既に完成しているワークフロー インスタンスについて <xref:System.Workflow.Runtime.WorkflowInstance.Load%2A> をホストが呼び出した場合は、該当する例外が発生します。  
+  
+> [!NOTE]
+>  ホスト アプリケーションでの呼び出しが返されないためにワークフロー インスタンスが応答しなくなった場合、このインスタンスを回復するための方法は、ランタイムを再起動する以外にありません。 ただし、インスタンスが強制的にアンロード、中止、または中断された場合は、<xref:System.Workflow.Runtime.WorkflowInstance.Resume%2A?displayProperty=nameWithType> メソッドを呼び出すことによってインスタンスを継続することができます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフロー ホストで <xref:System.Workflow.Runtime.WorkflowInstance> を作成および開始する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime> のインスタンスを作成してサービスをランタイムに追加し、推奨される <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトの作成方法を示します。 このコードは <xref:System.Workflow.Runtime.WorkflowInstance> メソッドを呼び出し、既に作成されている型をそれに渡すことによって、<xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> を初期化します。 <xref:System.Workflow.Runtime.WorkflowInstance> は、<xref:System.Workflow.Runtime.WorkflowInstance.Start%2A> メソッドの呼び出しによって起動されます。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#260](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#260)]
+ [!code-vb[WF_Samples#260](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#260)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Abort">
+      <MemberSignature Language="C#" Value="public void Abort ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Abort() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Abort" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー インスタンスを中止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは同期式で中止されます。つまり、メソッドはワークフロー インスタンスが中止された後に返されます。 ワークフロー ランタイム エンジンはメモリ内のワークフロー インスタンスを無効にし、<xref:System.Workflow.Runtime.WorkflowEnvironment.WorkBatch%2A> をクリアします。 ワークフロー インスタンスが永続性サービスを使用していた場合、最後の永続性ポイント以降に実行された作業はすべて破棄されます。 ワークフロー インスタンスが中止されると、ワークフロー ランタイム エンジンは <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowAborted> イベントを発生させます。 <xref:System.Workflow.Runtime.WorkflowRuntime.GetWorkflow%2A> を呼び出すことにより、ワークフロー インスタンスを再度読み込んで、その最後の永続性ポイントから開始することができます。  
+  
+ `Abort` は <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A> と次の点で異なります。`Abort` はメモリ内のワークフロー インスタンスをクリアするだけで、最後の永続性ポイントからワークフロー インスタンスを再開できます。Terminate はメモリ内のワークフロー インスタンスをクリアし、インスタンスがメモリからクリアされたことを永続性サービスに通知します。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> の場合、これは、終了時にそのワークフロー インスタンスのすべての状態情報がデータベースから削除されることを意味します。 既に保存されている永続性ポイントからワークフロー インスタンスを再度読み込むことはできません。  
+  
+   
+  
+## Examples  
+ Workflow1 型のワークフロー インスタンスに対する Abort を呼び出す例を次に示します。  
+  
+ [!code-csharp[WF_Samples#13](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#13)]
+ [!code-vb[WF_Samples#13](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#13)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyWorkflowChanges">
+      <MemberSignature Language="C#" Value="public void ApplyWorkflowChanges (System.Workflow.ComponentModel.WorkflowChanges workflowChanges);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyWorkflowChanges(class System.Workflow.ComponentModel.WorkflowChanges workflowChanges) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.ApplyWorkflowChanges(System.Workflow.ComponentModel.WorkflowChanges)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="workflowChanges" Type="System.Workflow.ComponentModel.WorkflowChanges" />
+      </Parameters>
+      <Docs>
+        <param name="workflowChanges">ワークフロー インスタンスの動的更新の内容を指定する <see cref="T:System.Workflow.ComponentModel.WorkflowChanges" />。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.WorkflowChanges" /> オブジェクトで指定された変更をワークフロー インスタンスに適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスがまだ中断していない場合、ワークフロー ランタイム エンジンはインスタンスを一時的に中断してから変更を適用します。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトの ApplyWorkflowChanges を呼び出す方法を次のコード例に示します。  この例は、Mainform.cs ファイルに含まれている注文処理ステート マシンの SDK サンプルです。  詳細については、次を参照してください。、 [Ordering 状態マシン サンプル](http://msdn.microsoft.com/en-us/59272cf4-bc98-439c-bcfa-b66999ebce5c)です。  
+  
+ [!code-csharp[WF_Samples#89](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#89)]
+ [!code-vb[WF_Samples#89](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#89)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnqueueItem">
+      <MemberSignature Language="C#" Value="public void EnqueueItem (IComparable queueName, object item, System.Workflow.Runtime.IPendingWork pendingWork, object workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnqueueItem(class System.IComparable queueName, object item, class System.Workflow.Runtime.IPendingWork pendingWork, object workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.EnqueueItem(System.IComparable,System.Object,System.Workflow.Runtime.IPendingWork,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="pendingWork" Type="System.Workflow.Runtime.IPendingWork" />
+        <Parameter Name="workItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="queueName"><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の名前。</param>
+        <param name="item">キューに登録するオブジェクト。</param>
+        <param name="pendingWork"><see cref="T:System.Workflow.Runtime.IPendingWork" />送信者をできるようにするときに通知する<c>項目</c>配信されます。</param>
+        <param name="workItem"><see cref="T:System.Workflow.Runtime.IPendingWork" /> メソッドに渡すオブジェクト。</param>
+        <summary>指定したワークフロー キューへのメッセージの同期ポストを行います。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した `item` に <xref:System.Workflow.Runtime.WorkflowQueue> を送信します。 メッセージが配信されたときに通知を受けるには、サービスに <xref:System.Workflow.Runtime.IPendingWork> を実装して、`workItem` および <xref:System.Workflow.Runtime.IPendingWork> オブジェクトを <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> に渡します。 そのような通知が不要な場合は、`Nothing` と `pendingWork` に null 参照 (Visual Basic の場合は `workItem`) を渡します。  
+  
+ このメソッドをステート マシン ワークフローで使用すると、"キュー '{0}' は有効ではありません" というメッセージを持つ例外が発生する場合があります。 これは、ステート マシンの現在の状態では特定のイベントの処理方法を識別できないときに起こります。 たとえば、現在の状態以外の状態に、キュー '{0}' で表現される <xref:System.Workflow.Activities.EventDrivenActivity> を含む <xref:System.Workflow.Activities.HandleExternalEventActivity> が含まれている場合です。  
+  
+> [!NOTE]
+>  メッセージは、送信された順序でワークフロー インスタンスで受信されるとは限りません。 たとえば、既存のキュー (キュー A) でメッセージを受信し、ワークフローによって別のキュー (キュー B) が生成され、最初のメッセージの後に送信された別のメッセージをリッスンする場合は、2 番目のメッセージが最初に届き、キューがまだ作成されていないために受信されない場合があります。 この問題を回避するには、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> を使用して、2 番目のキューが存在することを確認するまで、2 番目のメッセージを送信しないようにする必要があります。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> を使用する方法を次のコード例に示します。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントが発生すると、この例で定義されている `OnWorkflowIdled` メソッドが呼び出されます。 このメソッドは、<xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> プロパティを使用してアイドル状態のワークフローを特定し、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> メソッドを呼び出してキューに登録されているワークフロー インスタンスの項目のコレクションを取得します。 コードはコレクション全体を取得するまで繰り返され、ワークフローをアイドル状態にしたイベントを待機しているアクティビティを特定します。 その後、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> メソッドとイベント キュー アイテムの名前を使用して、ワークフロー キューに例外を送信します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#261](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#261)]
+ [!code-vb[WF_Samples#261](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#261)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。  
+  
+ または  
+  
+ <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> で指定された <paramref name="queueName" /> が存在しません。  
+  
+ または  
+  
+ <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> で指定された <paramref name="queueName" /> が無効になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="EnqueueItemOnIdle">
+      <MemberSignature Language="C#" Value="public void EnqueueItemOnIdle (IComparable queueName, object item, System.Workflow.Runtime.IPendingWork pendingWork, object workItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void EnqueueItemOnIdle(class System.IComparable queueName, object item, class System.Workflow.Runtime.IPendingWork pendingWork, object workItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle(System.IComparable,System.Object,System.Workflow.Runtime.IPendingWork,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="queueName" Type="System.IComparable" />
+        <Parameter Name="item" Type="System.Object" />
+        <Parameter Name="pendingWork" Type="System.Workflow.Runtime.IPendingWork" />
+        <Parameter Name="workItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="queueName"><see cref="T:System.Workflow.Runtime.WorkflowQueue" /> の名前。</param>
+        <param name="item">キューに登録するオブジェクト。</param>
+        <param name="pendingWork"><see cref="T:System.Workflow.Runtime.IPendingWork" />送信者をできるようにするときに通知する<c>項目</c>配信されます。</param>
+        <param name="workItem"><see cref="T:System.Workflow.Runtime.IPendingWork" /> メソッドに渡すオブジェクト。</param>
+        <summary>ワークフローがアイドル状態のときに、指定したワークフロー キューにメッセージをポストします。 <see cref="M:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle(System.IComparable,System.Object,System.Workflow.Runtime.IPendingWork,System.Object)" /> は、ワークフローがアイドル ポイントに達するまで待機し、ワークフロー スケジューラがアイドル状態である (つまりアクティブな操作が実行されていない) ことを確認した後にキューに登録します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスがアイドル状態になるまで待機してから、指定した `item` に <xref:System.Workflow.Runtime.WorkflowQueue> を送信します。 ワークフロー インスタンスが中断状態のときに <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItemOnIdle%2A> を呼び出すと、ワークフロー ランタイム エンジンは <xref:System.InvalidOperationException> をスローします。 メッセージが配信されたときに通知を受けるには、サービスに <xref:System.Workflow.Runtime.IPendingWork> を実装して、`workItem` および <xref:System.Workflow.Runtime.IPendingWork> オブジェクトを <xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> に渡します。 そのような通知が不要な場合は、`Nothing` と `pendingWork` に null 参照 (Visual Basic の場合は `workItem`) を渡します。  
+  
+ このメソッドをステート マシン ワークフローで使用すると、"キュー '{0}' は有効ではありません" というメッセージを含む例外が発生する場合があります。 これは、ステート マシンの現在の状態では特定のイベントの処理方法を識別できないときに起こります。 たとえば、現在の状態以外の状態に、キュー '{0}' で表現される <xref:System.Workflow.Activities.EventDrivenActivity> を含む <xref:System.Workflow.Activities.HandleExternalEventActivity> が含まれている場合です。  
+  
+   
+  
+## Examples  
+ 次の例は、`EnqueueItemOnIdle` メソッドを使用してワークフロー インスタンスに情報を送信する方法を示しています。 最初に WorkflowInstance オブジェクトが作成されて開始されます。次に <xref:System.Workflow.Runtime.IPendingWork> インターフェイスを実装するオブジェクトが作成されます。 `EnqueueItemOnIdle`呼び出されます、キュー名、エンキューされた項目および pendingWork オブジェクトのメソッドに渡される作業項目の文字列値で渡すことです。  
+  
+ [!code-csharp[WF_Samples#12](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#12)]
+ [!code-vb[WF_Samples#12](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="queueName" /> が null 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。  
+  
+ または  
+  
+ ワークフロー インスタンスが中断されています。  
+  
+ または  
+  
+ <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> で指定された <paramref name="queueName" /> が存在しません。  
+  
+ または  
+  
+ <see cref="T:System.Workflow.Runtime.WorkflowQueue" /> で指定された <paramref name="queueName" /> が無効になっています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">比較対象のオブジェクト。</param>
+        <summary>指定したオブジェクトが <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> と等しいかどうかを示す値を返します。</summary>
+        <returns>
+          指定したオブジェクトがこの <see langword="true" /> に等しい場合は <see cref="T:System.Workflow.Runtime.WorkflowInstance" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ オブジェクトは、<xref:System.Workflow.Runtime.WorkflowInstance> クラスのインスタンスで、この <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> と同じ <xref:System.Workflow.Runtime.WorkflowInstance> を持っている必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー インスタンスのハッシュ コードを返します。</summary>
+        <returns>この <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> のハッシュ コード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.GetHashCode%2A> は、<xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> の値に基づいて計算されたハッシュ コードを返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowDefinition">
+      <MemberSignature Language="C#" Value="public System.Workflow.ComponentModel.Activity GetWorkflowDefinition ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Workflow.ComponentModel.Activity GetWorkflowDefinition() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.GetWorkflowDefinition" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.ComponentModel.Activity</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このワークフロー インスタンスのルート アクティビティを取得します。</summary>
+        <returns><see cref="T:System.Workflow.ComponentModel.Activity" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ルート アクティビティを使用して、ワークフローのアクティビティ階層を移動できます。  
+  
+ このメソッドはスレッド セーフではないため、ホストはこのメソッドの呼び出しを同期させる必要があります。  
+  
+   
+  
+## Examples  
+ ワークフロー インスタンスからワークフロー定義を取得する例を次に示します。  この例は、Mainform.cs ファイルに含まれている注文処理ステート マシンの SDK サンプルです。  詳細については、次を参照してください。、 [Ordering 状態マシン サンプル](http://msdn.microsoft.com/en-us/59272cf4-bc98-439c-bcfa-b66999ebce5c)です。  
+  
+ [!code-csharp[WF_Samples#86](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets1.cs#86)]
+ [!code-vb[WF_Samples#86](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets1.vb#86)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowNextTimerExpiration">
+      <MemberSignature Language="C#" Value="public DateTime GetWorkflowNextTimerExpiration ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.DateTime GetWorkflowNextTimerExpiration() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.GetWorkflowNextTimerExpiration" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.DateTime</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> にタイマー メッセージが配信されるようスケジュールされている次の特定時点を返します。</summary>
+        <returns>この <see cref="P:System.Workflow.Runtime.TimerEventSubscription.ExpiresAt" /> にタイマー メッセージが配信される次の <see cref="T:System.Workflow.Runtime.WorkflowInstance" /> 時刻を表す DateTime 値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowNextTimerExpiration%2A> メソッドを使用してワークフロー タイマー メッセージがさらにキューに登録されるかどうかを判断する方法を示しています。 この例は、Program.cs ファイルに含まれているワークフローのスレッド処理の SDK サンプルです。 詳細については、次を参照してください。[ワークフロー スレッド処理サンプル](http://msdn.microsoft.com/en-us/5b650be7-09fa-47db-a2f6-523dc8ea5ee9)です。  
+  
+ [!code-csharp[WF_Samples#284](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#284)]
+ [!code-vb[WF_Samples#284](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#284)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetWorkflowQueueData">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Runtime.WorkflowQueueInfo&gt; GetWorkflowQueueData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.Workflow.Runtime.WorkflowQueueInfo&gt; GetWorkflowQueueData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.Workflow.Runtime.WorkflowQueueInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このワークフロー インスタンスに関連付けられたワークフロー キューでの保留中の項目および定期受信されたアクティビティを格納した、<see cref="T:System.Workflow.Runtime.WorkflowQueueInfo" /> オブジェクトのコレクションを取得します。</summary>
+        <returns><see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" /> オブジェクトの <see cref="T:System.Workflow.Runtime.WorkflowQueueInfo" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> は、<xref:System.Workflow.Runtime.WorkflowQueueInfo> オブジェクトのコレクションを返します。各オブジェクトはこのワークフロー インスタンスに関連付けられたワークフロー キューのうちの 1 つに対応し、その状態に関する情報を格納します。 <xref:System.Workflow.Runtime.WorkflowQueueInfo.Items%2A?displayProperty=nameWithType> は <xref:System.Workflow.Runtime.WorkflowQueue> での保留中の項目を格納し、<xref:System.Workflow.Runtime.WorkflowQueueInfo.SubscribedActivityNames%2A?displayProperty=nameWithType> は <xref:System.Workflow.Runtime.WorkflowQueue> での項目配信のために定期受信されたアクティビティのリストを格納します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> メソッドを使用して、<xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトに関連付けられたすべてのワークフロー キューの状態に関する情報を取得する方法を示しています。 <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントが発生すると、この例で定義されている `OnWorkflowIdled` メソッドが呼び出されます。 このメソッドは、<xref:System.Workflow.Runtime.WorkflowEventArgs.WorkflowInstance%2A> プロパティを使用してアイドル状態のワークフローを特定し、<xref:System.Workflow.Runtime.WorkflowInstance.GetWorkflowQueueData%2A> メソッドを呼び出してキューに登録されているワークフロー インスタンスの項目のコレクションを取得します。 コードはコレクション全体を取得するまで繰り返され、ワークフローをアイドル状態にしたイベントを待機しているアクティビティを特定します。 その後、<xref:System.Workflow.Runtime.WorkflowInstance.EnqueueItem%2A> メソッドとイベント キュー アイテムの名前を使用して、ワークフロー キューに例外を送信します。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#261](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#261)]
+ [!code-vb[WF_Samples#261](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#261)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="InstanceId">
+      <MemberSignature Language="C#" Value="public Guid InstanceId { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Guid InstanceId" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowInstance.InstanceId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Guid</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ワークフロー インスタンスの一意の識別子を取得します。</summary>
+        <value>ワークフロー インスタンスの <see cref="T:System.Guid" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> を使用して、ワークフロー インスタンスを参照できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> プロパティを使用して <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトに関する情報を取得する方法を、次のコード例に示します。 最初のコード スニペットは、<xref:System.Workflow.Runtime.WorkflowInstance> という名前の `instanceId` 変数を作成します。  
+  
+ [!code-csharp[WF_Samples#210](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#210)]
+ [!code-vb[WF_Samples#210](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#210)]  
+  
+ 2 番目のスニペットは、<xref:System.Workflow.Runtime.WorkflowInstance.InstanceId%2A> メソッドが呼び出されると、`OrderEventArgs` コンストラクター呼び出しの最初のオブジェクトとして `CallBackForApproval` プロパティを使用します。  
+  
+ このコード例は、OrderServiceImple.cs ファイルから抜粋した Listen SDK サンプルの一部です。 詳細については、次を参照してください。[リッスン サンプル](http://msdn.microsoft.com/en-us/1cec0e82-7544-429f-b717-0fc25eb42b7f)です。  
+  
+ [!code-csharp[WF_Samples#211](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets19.cs#211)]
+ [!code-vb[WF_Samples#211](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets19.vb#211)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Load">
+      <MemberSignature Language="C#" Value="public void Load ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Load() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Load" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>以前にアンロードされたワークフロー インスタンスを読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.Load%2A> は同期式です。ワークフロー インスタンスを読み込める場合、<xref:System.Workflow.Runtime.WorkflowInstance.Load%2A> は、ワークフロー インスタンスがメモリに読み込まれてワークフロー ランタイム エンジンによってスケジュールされた後に返されます。 ランタイムが <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowLoaded> イベントを発生させるタイミングは、永続性サービスがワークフロー インスタンスをメモリに復元し終えてからワークフロー ランタイム エンジンがインスタンスをスケジュールし始めるまでの間です。  
+  
+   
+  
+## Examples  
+ 以前にアンロードされた <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトを読み込む方法を次の例に示します。  
+  
+ [!code-csharp[WF_Samples#10](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#10)]
+ [!code-vb[WF_Samples#10](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#10)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ReloadTrackingProfiles">
+      <MemberSignature Language="C#" Value="public void ReloadTrackingProfiles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ReloadTrackingProfiles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.ReloadTrackingProfiles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このワークフロー インスタンスの追跡プロファイルを再度読み込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ランタイム追跡インフラストラクチャは、このワークフロー インスタンスの追跡チャネルに関連付けられた各 <xref:System.Workflow.Runtime.Tracking.TrackingProfile> を再度読み込みます。 ワークフロー インスタンスがまだ中断状態になっていない場合、ワークフローは、追跡プロファイルが再度読み込まれる間、ランタイム追跡インフラストラクチャによって一時的に中断させられます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Resume" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>中断状態になっているワークフロー インスタンスの実行を再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ホストは <xref:System.Workflow.Runtime.WorkflowInstance.Resume%2A> を呼び出して、中断された状態のワークフロー インスタンスの実行を再開できます。 ワークフロー インスタンスが中断状態になっていない場合、アクションは実行されません。 ランタイムは、ワークフロー インスタンスが再開される直前に、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowResumed> イベントを発生させます。  
+  
+   
+  
+## Examples  
+ 中断状態のワークフロー インスタンスに対する Resume を呼び出す例を次に示します。  この例は保留と終了の SDK サンプルです。  詳細については、次を参照してください。[保留と終了のサンプル](http://msdn.microsoft.com/en-us/f4dffa58-d01e-44fb-b5a1-3b283d2c4517)です。  
+  
+ [!code-csharp[WF_Samples#172](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets11.cs#172)]
+ [!code-vb[WF_Samples#172](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets11.vb#172)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Start">
+      <MemberSignature Language="C#" Value="public void Start ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Start() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Start" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ワークフロー インスタンスの実行を開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.Start%2A> は、このワークフロー インスタンスのルート アクティビティに対する <xref:System.Workflow.ComponentModel.ActivityExecutionContext.ExecuteActivity%2A> を呼び出します。 <xref:System.Workflow.Runtime.WorkflowInstance.Start%2A> は、例外を検出すると、<xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A> を呼び出すことによってワークフロー インスタンスを終了します。この呼び出しの際、例外の <xref:System.Exception.Message%2A> プロパティを終了の理由として渡します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、ワークフロー ホストで <xref:System.Workflow.Runtime.WorkflowInstance.Start%2A> メソッドを使用して <xref:System.Workflow.Runtime.WorkflowInstance> を開始する方法を示しています。 このコードでは、<xref:System.Workflow.Runtime.WorkflowRuntime> のインスタンスを作成してサービスをランタイムに追加し、推奨される <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトの作成方法を示します。 これは <xref:System.Type> オブジェクトを作成し、作成したオブジェクトをホストが関連付けられたワークフロー オブジェクトの 1 つにキャストします。 次にこのコードは、<xref:System.Workflow.Runtime.WorkflowInstance> メソッドを呼び出し、既に作成されている型をそれに渡すことによって、<xref:System.Workflow.Runtime.WorkflowRuntime.CreateWorkflow%2A> を初期化します。 <xref:System.Workflow.Runtime.WorkflowInstance> は、<xref:System.Workflow.Runtime.WorkflowInstance.Start%2A> メソッドの呼び出しによって起動されます。  
+  
+ このコード例は、Program.cs ファイルに含まれている、ワークフローのキャンセルを示す SDK サンプルの一部です。 詳細については、次を参照してください。[のワークフローの取り消し](http://msdn.microsoft.com/en-us/d5077f56-a78b-48e7-825c-f6c77c8e54fb)です。  
+  
+ [!code-csharp[WF_Samples#260](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#260)]
+ [!code-vb[WF_Samples#260](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#260)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。  
+  
+ または  
+  
+ ワークフロー インスタンスが既に開始されています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspend">
+      <MemberSignature Language="C#" Value="public void Suspend (string error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Suspend(string error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Suspend(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="error" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="error">ワークフロー インスタンスを中断する理由の説明。</param>
+        <summary>ワークフロー インスタンスを中断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは同期式で中断されます。 ワークフロー インスタンスが既に中断している場合、アクションは実行されません。それ以外の場合、ワークフロー ランタイム エンジンはワークフロー インスタンスを中断し、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowSuspended> イベントを発生させ、`reason` に <xref:System.Workflow.Runtime.WorkflowSuspendedEventArgs> を渡します。  
+  
+> [!NOTE]
+>  <xref:System.Workflow.Runtime.WorkflowInstance.Suspend%2A> は、ワークフロー インスタンスをアンロードしません。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトに対する Suspend を呼び出す方法を次のコード例に示します。  
+  
+ [!code-csharp[WF_Samples#9](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#9)]
+ [!code-vb[WF_Samples#9](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Terminate">
+      <MemberSignature Language="C#" Value="public void Terminate (string error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Terminate(string error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Terminate(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="error" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="error">ワークフロー インスタンスを終了する理由の説明。</param>
+        <summary>ワークフロー インスタンスを同期式で終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスは同期式で終了します。 ホストは <xref:System.Workflow.Runtime.WorkflowInstance.Terminate%2A> を呼び出すことによってワークフロー インスタンスを終了します。 ワークフロー ランタイム エンジンは、メモリ内のワークフロー インスタンスをクリアし、インスタンスがメモリからクリアされたことを永続性サービスに通知します。 <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService> の場合、これは、終了時にそのワークフロー インスタンスのすべての状態情報がデータベースから削除されることを意味します。 既に保存されている永続性ポイントからワークフロー インスタンスを再度読み込むことはできません。  
+  
+ メモリ内のワークフロー インスタンスがクリアされて永続性サービスに終了が通知されると、`Terminate` メソッドは <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowTerminated> イベントを発生させ、`reason` に含まれる <xref:System.Exception.Message%2A> の <xref:System.Workflow.ComponentModel.WorkflowTerminatedException> プロパティに <xref:System.Workflow.Runtime.WorkflowTerminatedEventArgs> を渡します。  
+  
+ `Terminate` は <xref:System.Workflow.Runtime.WorkflowInstance.Abort%2A> と次の点で異なります。Terminate はメモリ内のワークフロー インスタンスをクリアして永続性サービスに終了を通知します。`Abort` はメモリ内のワークフロー インスタンスをクリアするだけで、最後の永続性ポイントからワークフロー インスタンスを再開できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance> オブジェクトに対する Terminate を呼び出す方法を次のコード例に示します。  
+  
+ [!code-csharp[WF_Samples#8](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#8)]
+ [!code-vb[WF_Samples#8](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンが実行されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryUnload">
+      <MemberSignature Language="C#" Value="public bool TryUnload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool TryUnload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.TryUnload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メモリ内のワークフロー インスタンスが中断状態またはアイドル状態のときに、そのワークフロー インスタンスを永続ストアにアンロードします。</summary>
+        <returns>
+          ワークフロー インスタンスがアンロードされた場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ワークフロー インスタンスがアイドル状態または中断状態の場合、<xref:System.Workflow.Runtime.WorkflowInstance.TryUnload%2A> は永続性サービスを使用することによって、メモリからワークフロー インスタンスを削除し、削除したワークフロー インスタンスをデータ ストアに永続化します。 <xref:System.Workflow.Runtime.WorkflowRuntime> に登録された永続性サービスがない場合、<xref:System.Workflow.Runtime.WorkflowInstance.TryUnload%2A> は <xref:System.InvalidOperationException> をスローします。 ランタイムを発生させる場合は、ワークフロー インスタンスが正常に永続化、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded>イベント、および返します`true`です。 <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A>返します`false`が終了した場合は、ワークフロー インスタンスが既にアンロードされてが中止されました。 または、既に完了します。  
+  
+ ホストは <xref:System.Workflow.Runtime.WorkflowInstance.TryUnload%2A> を使用して、アイドル状態のワークフローのシステム リソースを再利用できます。  
+  
+   
+  
+## Examples  
+ 次の例は、<xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowIdled> イベントが発生したときに TryUnload メソッドを使用してワークフローをアンロードする方法を示しています。 この例は、Program.cs ファイルに含まれている永続性サービスの使用の SDK サンプルです。 詳細については、次を参照してください。[を使用した永続性サービス サンプル](http://msdn.microsoft.com/en-us/3176b7e7-ae49-4d5c-802b-85032d6ebde6)です。  
+  
+ [!code-csharp[WF_Samples#280](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets24.cs#280)]
+ [!code-vb[WF_Samples#280](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets24.vb#280)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンに登録されている永続性サービスがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unload">
+      <MemberSignature Language="C#" Value="public void Unload ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Unload() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.Runtime.WorkflowInstance.Unload" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>メモリ内のワークフロー インスタンスを永続ストアにアンロードします。 この呼び出しは、現在のスケジュール済み作業が完了するまで、またはトランザクション スコープが終了するまでブロックされます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A> は同期的です。つまり、実行するアクションが完了した後に制御が戻ります。 ワークフロー インスタンスがアイドル状態でない場合、ランタイムはインスタンスを中断できるまで待機します。 インスタンスを中断できるのは、現在のスケジュール済み作業項目の完了後のみです。この完了のタイミングは通常、現在実行中のアクティビティがその <xref:System.Workflow.ComponentModel.Activity.Execute%2A> メソッドから返されたときです。 ただし、インスタンスが <xref:System.Workflow.ComponentModel.TransactionScopeActivity> を実行している場合、インスタンスを中断できるのは、トランザクション スコープが実行を完了してからです。 アンロードは次に、永続性サービスを使用することによって、メモリからワークフロー インスタンスを削除し、削除したワークフロー インスタンスをデータ ストアに永続化します。 <xref:System.Workflow.Runtime.WorkflowRuntime> に登録された永続性サービスがない場合、<xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A> は <xref:System.InvalidOperationException> をスローします。 ワークフロー インスタンスが正常に永続化されると、ランタイムは <xref:System.Workflow.Runtime.WorkflowRuntime.WorkflowUnloaded> イベントを発生させます。  
+  
+ ホストは <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A> を使用して、アイドル状態のワークフローのシステム リソースを再利用できます。  
+  
+   
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowInstance.Unload%2A> オブジェクトでの <xref:System.Workflow.Runtime.WorkflowInstance> の呼び出しを次の例に示します。  
+  
+ [!code-csharp[WF_Samples#11](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#11)]
+ [!code-vb[WF_Samples#11](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">ワークフロー ランタイム エンジンに登録されている永続性サービスがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WorkflowRuntime">
+      <MemberSignature Language="C#" Value="public System.Workflow.Runtime.WorkflowRuntime WorkflowRuntime { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Workflow.Runtime.WorkflowRuntime WorkflowRuntime" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.Runtime.WorkflowInstance.WorkflowRuntime" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Workflow.Runtime.WorkflowRuntime</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このワークフロー インスタンスの <see cref="T:System.Workflow.Runtime.WorkflowRuntime" /> を取得します。</summary>
+        <value>このワークフロー インスタンスが動作する実行環境を表す <see cref="T:System.Workflow.Runtime.WorkflowRuntime" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.Runtime.WorkflowRuntime> オブジェクトの実行環境 <xref:System.Workflow.Runtime.WorkflowInstance> にアクセスする例を次に示します。  
+  
+ [!code-csharp[WF_Samples#7](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#7)]
+ [!code-vb[WF_Samples#7](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

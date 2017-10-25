@@ -1,0 +1,230 @@
+<Type Name="GetManifestCompletedEventArgs" FullName="System.Deployment.Application.GetManifestCompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class GetManifestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit GetManifestCompletedEventArgs extends System.ComponentModel.AsyncCompletedEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Deployment.Application.GetManifestCompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Deployment</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ComponentModel.AsyncCompletedEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>データを提供、<see cref="E:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted" />のイベント<see cref="T:System.Deployment.Application.InPlaceHostingManager" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して<xref:System.Deployment.Application.GetManifestCompletedEventArgs>に関する情報を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションの配置マニフェストとアプリケーション マニフェストをダウンロードした後です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、使用する方法を示しています。<xref:System.Deployment.Application.InPlaceHostingManager>をインストールする、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]をクライアント コンピューターでプログラムによってアプリケーションです。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#1)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActivationContext">
+      <MemberSignature Language="C#" Value="public ActivationContext ActivationContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ActivationContext ActivationContext" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.ActivationContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ActivationContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のコンテキストを取得[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value><see cref="T:System.ActivationContext" />現在のアプリケーションのコンテキストを表すオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationIdentity">
+      <MemberSignature Language="C#" Value="public ApplicationIdentity ApplicationIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ApplicationIdentity ApplicationIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.ApplicationIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ApplicationIdentity</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>説明を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value><see cref="T:System.ApplicationIdentity" /> オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationManifest">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader ApplicationManifest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlReader ApplicationManifest" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.ApplicationManifest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]この配置のアプリケーション マニフェスト。</summary>
+        <value><see cref="T:System.Xml.XmlReader" />アプリケーション マニフェストを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この変数を使用して、必要がある依存関係の一覧など、アプリケーション マニフェストから信頼情報、および表示情報を取得することができます。 このドキュメントの構造の詳細については、次を参照してください。 [ClickOnce アプリケーション マニフェスト](http://msdn.microsoft.com/library/29570cec-4e53-4660-a850-abc4fa150243)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、内からアプリケーション マニフェストを確認する方法を示しています、<xref:System.Deployment.Application.InPlaceHostingManager.GetManifestCompleted>イベント ハンドラーを既定では、アプリケーションが完全な信頼を必要とするかどうかを判断します。  
+  
+ [!code-csharp[System.Deployment.Application.InPlaceHostingManager#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/CS/Form1.cs#5)]
+ [!code-vb[System.Deployment.Application.InPlaceHostingManager#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Deployment.Application.InPlaceHostingManager/VB/Form1.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeploymentManifest">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlReader DeploymentManifest { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlReader DeploymentManifest" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.DeploymentManifest" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlReader</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]この展開の配置マニフェスト。</summary>
+        <value><see cref="T:System.Xml.XmlReader" />を表す、配置マニフェスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCached">
+      <MemberSignature Language="C#" Value="public bool IsCached { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCached" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.IsCached" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションをキャッシュします。</summary>
+        <value>
+          <see langword="true" />アプリケーションがキャッシュに保存する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogFilePath">
+      <MemberSignature Language="C#" Value="public string LogFilePath { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string LogFilePath" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.LogFilePath" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>場所を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]エラー ログ。</summary>
+        <value>A<see cref="T:System.String" />の場所を含む、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]エラー ログ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProductName">
+      <MemberSignature Language="C#" Value="public string ProductName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ProductName" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.ProductName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>名前を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value>A<see cref="T:System.String" />の製品名を表す、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーション、アプリケーションのメイン実行可能ファイルのアセンブリのメタデータに格納されています。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubscriptionIdentity">
+      <MemberSignature Language="C#" Value="public string SubscriptionIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string SubscriptionIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.SubscriptionIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>サブスクリプションを識別する文字列を取得します。</summary>
+        <value>サブスクリプションを識別する情報を含む文字列。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportUri">
+      <MemberSignature Language="C#" Value="public Uri SupportUri { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri SupportUri" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.SupportUri" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>製品のサポートを受けるアクセスできる Web ページのユーザーの場所を取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value>A<see cref="T:System.Uri" />で見つかった値を含む、 <c>supportUrl</c>の配置マニフェストの属性<c>&lt;説明&gt;</c>タグ。 詳細については、次を参照してください。 [ClickOnce 配置マニフェスト](http://msdn.microsoft.com/library/8457e615-e3b6-4990-8dcf-11bc590e4e9b)です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public Version Version { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Version Version" />
+      <MemberSignature Language="DocId" Value="P:System.Deployment.Application.GetManifestCompletedEventArgs.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Deployment</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Version</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>更新プログラムのバージョンを取得、[!INCLUDE[ndptecclick](~/includes/ndptecclick-md.md)]アプリケーションです。</summary>
+        <value>A<see cref="T:System.Version" />ダウンロードしたマニフェスト内に含まれるバージョン番号を表します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

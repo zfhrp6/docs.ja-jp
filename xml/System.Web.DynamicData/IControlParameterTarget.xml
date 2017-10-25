@@ -1,0 +1,88 @@
+<Type Name="IControlParameterTarget" FullName="System.Web.DynamicData.IControlParameterTarget">
+  <TypeSignature Language="C#" Value="public interface IControlParameterTarget" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IControlParameterTarget" />
+  <TypeSignature Language="DocId" Value="T:System.Web.DynamicData.IControlParameterTarget" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DynamicData</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>インスタンスのデータを提供するためにクラスを実装する必要があるメンバーを定義、<see cref="T:System.Web.DynamicData.DynamicControlParameter" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ として設定できます。 このインターフェイスを実装するコントロール、<xref:System.Web.DynamicData.DynamicControlParameter.ControlId%2A>のプロパティ、<xref:System.Web.DynamicData.DynamicControlParameter>オブジェクト。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FilteredColumn">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaColumn FilteredColumn { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaColumn FilteredColumn" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.IControlParameterTarget.FilteredColumn" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaColumn</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用可能な場合に、パラメーターが適用される、列を取得します。</summary>
+        <value>列をパラメーターが適用される、使用可能な場合です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを実装することはオプションです。 A<xref:System.Web.DynamicData.FilterUserControl>オブジェクトを提供できる、コントロールがなど、<xref:System.Web.UI.WebControls.GridView>コントロールはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyNameExpression">
+      <MemberSignature Language="C#" Value="public string GetPropertyNameExpression (string columnName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetPropertyNameExpression(string columnName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.DynamicData.IControlParameterTarget.GetPropertyNameExpression(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="columnName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="columnName">列の名前。</param>
+        <summary>コントロール パラメーターのプロパティ名として使用できる式を取得します。</summary>
+        <returns>コントロール パラメーターのプロパティ名として使用できる式です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Table">
+      <MemberSignature Language="C#" Value="public System.Web.DynamicData.MetaTable Table { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.DynamicData.MetaTable Table" />
+      <MemberSignature Language="DocId" Value="P:System.Web.DynamicData.IControlParameterTarget.Table" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DynamicData</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.DynamicData.MetaTable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このプロバイダーによって提供されるデータの種類を取得します。</summary>
+        <value>このプロバイダーによって提供されるデータの型。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,361 @@
+<Type Name="ProfileSection" FullName="System.Web.Configuration.ProfileSection">
+  <TypeSignature Language="C#" Value="public sealed class ProfileSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProfileSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.ProfileSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Web.Configuration.ProfileSection" />クラスをプログラムでアクセスおよび変更する方法を提供する、<see langword="profile" />構成ファイルのセクションです。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProfileSection>クラスは、プログラムからアクセスし、構成ファイルの内容を変更する方法を提供`profile`セクションです。 `profile`構成ファイルのセクションは、ユーザー プロファイル用にスキーマを指定します。 ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`と呼ばれるクラスを生成するセクション`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 `ProfileCommon`クラス定義がで定義されたプロパティに基づいて、`profile`構成ファイルのセクションです。 クラスを使用すると、アクセスし、個々 のプロファイルの値を変更できます。 ユーザー プロファイルごとに、このクラスのインスタンスが作成され、個々 のプロファイルの値を使用して、コードでアクセスできることができます、<xref:System.Web.HttpContext.Profile%2A?displayProperty=nameWithType>プロパティです。 プロファイル機能の詳細についてに追加の[!INCLUDE[vstecasplong](~/includes/vstecasplong-md.md)]を参照してください[ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+   
+  
+## Examples  
+ 次の構成ファイルの抜粋は、宣言のいくつかのプロパティの値を指定する方法を示します、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+```  
+<system.web>  
+  <profile enabled = "true"   
+     defaultProvider="AspNetSqlProfileProvider">  
+    <providers>  
+      <add  name="AspNetSqlProfileProvider"  
+        type="System.Web.Profile.SqlProfileProvider"  
+        connectionStringName="LocalSqlServer"  
+        applicationName="/"  
+        description="Stores and retrieves profile data from the   
+local Microsoft SQL Server database" />  
+    </providers>  
+    <properties>  
+      <add name = "FirstName"/>  
+      <add name = "LastName"/>  
+      <add name = "FavoriteURLs" type =  
+        "System.Collection.Specialized.StringCollection, System"   
+        serializeAs = "Xml"/>        
+      <add name = "ShoppingCart" type =   
+        "MyCommerce.ShoppingCart, MyCommerce"   
+        serializeAs = "Binary"/>  
+      <group name = "SiteColors" >  
+        <add name = "BackGround"/>  
+        <add name = "SideBar"/>  
+        <add name = "ForeGroundText"/>  
+        <add name = "ForeGroundBorders"/>  
+      </group>  
+      <group name="Forums">  
+        <add name = "HasAvatar" type="bool" provider="Forums"/>  
+        <add name = "LastLogin" type="DateTime" provider="Forums"/>  
+        <add name = "TotalPosts" type="int" provider="Forums"/>  
+      </group>  
+    </properties>  
+  </profile>  
+</system.web>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.ProfileSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#3)]
+ [!code-vb[System.Web.Configuration.ProfileSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProfileSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.ProfileSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.ProfileSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、このコンス トラクターに使用される既定の設定を示します。  
+  
+|設定|既定値|  
+|-------------|-------------------|  
+|<xref:System.Web.Configuration.ProfileSection.DefaultProvider%2A>|"AspNetSqlProfileProvider"です。|  
+|<xref:System.Web.Configuration.ProfileSection.Enabled%2A>|`true`。|  
+|<xref:System.Web.Configuration.ProfileSection.Inherits%2A>|空の文字列 ("")。|  
+|<xref:System.Web.Configuration.ProfileSection.PropertySettings%2A>|空の <xref:System.Web.Configuration.RootProfilePropertySettingsCollection>。|  
+|<xref:System.Web.Configuration.ProfileSection.Providers%2A>|空の <xref:System.Configuration.ProviderSettingsCollection>。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutomaticSaveEnabled">
+      <MemberSignature Language="C#" Value="public bool AutomaticSaveEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AutomaticSaveEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.AutomaticSaveEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("automaticSaveEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはユーザー プロファイル情報への変更がページの終了時に自動的に保存するかどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />プロファイル情報がページ終了時に自動的に保存されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Configuration.ProfileSection.AutomaticSaveEnabled%2A>プロパティは`false`、しない限り、個々 のプロファイルに変更が保存されない、<xref:System.Web.Profile.ProfileBase.Save%2A>のメソッド、`ProfileCommon`クラスがコードで呼び出されます。 ときに、<xref:System.Web.Configuration.ProfileSection.AutomaticSaveEnabled%2A>プロパティは`true`、<xref:System.Web.Profile.ProfileModule.ProfileAutoSaving>イベントでは、コードを自動保存の動作をオーバーライドすることもできます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.AutomaticSaveEnabled%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#4)]
+ [!code-vb[System.Web.Configuration.ProfileSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultProvider">
+      <MemberSignature Language="C#" Value="public string DefaultProvider { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.DefaultProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("defaultProvider", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または既定のプロファイル プロバイダーの名前を設定します。</summary>
+        <value>プロバイダーの名前、<see cref="P:System.Web.Configuration.ProfileSection.Providers" />コレクション、または空の文字列 ("") です。 既定値は"AspNetSqlProfileProvider"</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイル プロバイダーは、ユーザー プロファイルの値が格納されているデータ ソースを指します。 プロファイル プロバイダーを指定することができます、`providers`のサブセクション、`profile`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.DefaultProvider%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#5)]
+ [!code-vb[System.Web.Configuration.ProfileSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のプロファイル機能が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET コンパイル システムを生成する場合、 <see langword="ProfileCommon" /> 、それ以外の個々 のユーザー プロファイルに関する情報にアクセスするために使用できるクラス<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Web.Configuration.ProfileSection.Enabled%2A>プロパティは`false`プロファイル機能を無効にすると、および ASP.NET コードからユーザー プロファイル情報にアクセスすることはできません。  
+  
+ このプロパティが`true`、ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`と呼ばれるクラスを生成するセクション`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.Enabled%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#9](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#9)]
+ [!code-vb[System.Web.Configuration.ProfileSection#9](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#9)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Inherits">
+      <MemberSignature Language="C#" Value="public string Inherits { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Inherits" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.Inherits" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("inherits", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタム型から派生した型の参照を設定を取得または<see cref="T:System.Web.Profile.ProfileBase" />です。</summary>
+        <value>有効な型の参照、または空の文字列 ("") です。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ASP.NET コンパイル システムを実行時にで指定された情報を使用して、`profile`のクラスを生成する構成セクションと呼ばれる`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 このクラスは、提供情報をカスタマイズするには設定、<xref:System.Web.Configuration.ProfileSection.Inherits%2A>プロパティから派生する型を作成するの名前を<xref:System.Web.Profile.ProfileBase>、コンパイル システムでは、このカスタム型はの基底クラスとして使用し、`ProfileCommon`です。  
+  
+> [!NOTE]
+>  型の参照を提供する場合、<xref:System.Web.Configuration.ProfileSection.Inherits%2A>プロパティで定義されていない独自のカスタム型でプロパティを定義することができます、`property`要素。  
+  
+ プロファイル機能の詳細についてに追加の[!INCLUDE[vstecasplong](~/includes/vstecasplong-md.md)]を参照してください[ASP.NET プロファイル プロパティの概要](http://msdn.microsoft.com/library/89439440-92ea-48c3-a4bd-dea40307899d)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.Inherits%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#6)]
+ [!code-vb[System.Web.Configuration.ProfileSection#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PropertySettings">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.RootProfilePropertySettingsCollection PropertySettings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.RootProfilePropertySettingsCollection PropertySettings" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.PropertySettings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("properties")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.RootProfilePropertySettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.Configuration.RootProfilePropertySettingsCollection" />のコレクション<see cref="T:System.Web.Configuration.ProfilePropertySettings" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.Configuration.RootProfilePropertySettingsCollection" />内で定義されたすべてのプロパティを格納しているオブジェクト、<see langword="properties" />のサブセクション、<see langword="profile" />構成ファイルのセクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.ProfileSection.PropertySettings%2A>プロパティは、<xref:System.Web.Configuration.RootProfilePropertySettingsCollection>のコレクションを提供する<xref:System.Web.Configuration.ProfilePropertySettings>オブジェクトと一連の<xref:System.Web.Configuration.ProfileGroupSettings>オブジェクトをそれぞれ提供するその他の名前付きコレクション<xref:System.Web.Configuration.ProfilePropertySettings>オブジェクト。 これらのコレクションと呼ばれるクラスを動的に生成する ASP.NET コンパイル エンジンによって使用される`ProfileCommon`から派生した<xref:System.Web.Profile.ProfileBase>です。 プロパティ、`ProfileCommon`クラスは、2 つのコレクションで定義されたプロパティで構成されます。 さらに、各グループのプロパティの`ProfileCommon`クラスは、そのグループに対して定義されている、独自のプロパティに含まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.PropertySettings%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#7)]
+ [!code-vb[System.Web.Configuration.ProfileSection#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Providers">
+      <MemberSignature Language="C#" Value="public System.Configuration.ProviderSettingsCollection Providers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ProviderSettingsCollection Providers" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.ProfileSection.Providers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("providers")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ProviderSettingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Configuration.ProviderSettings" /> オブジェクトのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Configuration.ProviderSettingsCollection" />内で定義されているプロバイダーを格納している、<see langword="providers" />のサブセクション、<see langword="profile" />構成ファイルのセクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロファイル プロバイダーは、ユーザー プロファイルの値が格納されているデータ ソースを指します。 プロファイル プロバイダーを指定することができます、`providers`のサブセクション、`profile`構成ファイルのセクションです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.ProfileSection.Providers%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.ProfileSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.ProfileSection#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/CS/profilesection.cs#8)]
+ [!code-vb[System.Web.Configuration.ProfileSection#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.ProfileSection/VB/profilesection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

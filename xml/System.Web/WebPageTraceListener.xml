@@ -1,0 +1,249 @@
+<Type Name="WebPageTraceListener" FullName="System.Web.WebPageTraceListener">
+  <TypeSignature Language="C#" Value="public class WebPageTraceListener : System.Diagnostics.TraceListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebPageTraceListener extends System.Diagnostics.TraceListener" />
+  <TypeSignature Language="DocId" Value="T:System.Web.WebPageTraceListener" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Diagnostics.TraceListener</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>誘導するリスナーを提供<see cref="T:System.Diagnostics.Trace" />メッセージを ASP.NET Web ページの出力。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.Security.Permissions.HostProtectionAttribute>このクラスに適用される属性が次<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティ値:<xref:System.Security.Permissions.HostProtectionResource.Synchronization>です。 <xref:System.Security.Permissions.HostProtectionAttribute> は、デスクトップ アプリケーション (通常、アイコンのダブルクリック、コマンドの入力、またはブラウザーへの URL の入力により起動されます) には影響しません。 詳細については、次を参照してください。、<xref:System.Security.Permissions.HostProtectionAttribute>クラスまたは[SQL Server プログラミングとホスト保護属性](~/docs/framework/performance/sql-server-programming-and-host-protection-attributes.md)です。  
+  
+ <xref:System.Web.WebPageTraceListener>クラスに書き込まれるトレース メッセージを転送する、 <xref:System.Diagnostics.Trace> ASP.NET Web ページの出力チャネルのログです。 追加することによりトレース転送を有効にすることができます、<xref:System.Web.WebPageTraceListener>にリスナーとして、Web.config ファイルにオブジェクト、 [trace 要素 (ASP.NET 設定スキーマ)](http://msdn.microsoft.com/en-us/05f08d15-1e2c-4c56-84d1-b1d7ba039af6)のサブセクション、 [ &lt;system.diagnostics&gt;](~/docs/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element.md)セクションです。 追加することも、<xref:System.Web.WebPageTraceListener>リスナー コレクションにプログラムでします。 追加することによってこれは、一般的には、<xref:System.Web.WebPageTraceListener>アプリケーションの起動中にコレクションを使用して、 `Application_Start` Global.asax ファイル内のメソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例をルーティングする方法を示しています<xref:System.Diagnostics.Trace>Web へのメッセージが出力を形成します。 一般的な Web フォームを格納するコード例を示しています、<xref:System.Web.UI.WebControls.BulletedList>と<xref:System.Web.UI.WebControls.AccessDataSource>コントロール。 Web フォームでトレースが有効にして、トレース出力は、レポートが表示される Web フォームに追加されます。 内のトレース メッセージを確認することができます、**トレース情報**トレースの出力テーブル。 有効にした場合、<xref:System.Web.WebPageTraceListener>カテゴリで両方トレース メッセージが表示する、構成ファイルに正しく`"Trace Test"`です。 ただし、有効にしていない場合、<xref:System.Web.WebPageTraceListener>に書き込まれるトレース メッセージのみを参照してください、<xref:System.Web.TraceContext>オブジェクト。  
+  
+ [!code-aspx-csharp[System.Web.Trace_2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Trace_2/CS/form2cs.aspx#1)]
+ [!code-aspx-vb[System.Web.Trace_2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Trace_2/VB/form2vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebPageTraceListener ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.WebPageTraceListener" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType severity, int id, string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType severity, int32 id, string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="eventCache">A<see cref="T:System.Diagnostics.TraceEventCache" />スレッド Id と、スタック トレース情報を現在のプロセスが含まれています。</param>
+        <param name="source">出力を編成するために使用するカテゴリ名。</param>
+        <param name="severity"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーは、指定されたシステムとイベント データを使用してには、イベント メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.TraceEvent%2A>メソッドは、イベント メッセージを書き込みます、<xref:System.Web.TraceContext>オブジェクトを使用して`source`カテゴリとしてと`message`メッセージとして。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceEvent">
+      <MemberSignature Language="C#" Value="public override void TraceEvent (System.Diagnostics.TraceEventCache eventCache, string source, System.Diagnostics.TraceEventType severity, int id, string format, params object[] args);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void TraceEvent(class System.Diagnostics.TraceEventCache eventCache, string source, valuetype System.Diagnostics.TraceEventType severity, int32 id, string format, object[] args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="eventCache" Type="System.Diagnostics.TraceEventCache" />
+        <Parameter Name="source" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="args" Type="System.Object[]">
+          <Attributes>
+            <Attribute>
+              <AttributeName>System.ParamArray</AttributeName>
+            </Attribute>
+          </Attributes>
+        </Parameter>
+      </Parameters>
+      <Docs>
+        <param name="eventCache">A<see cref="T:System.Diagnostics.TraceEventCache" />スレッド Id と、スタック トレース情報を現在のプロセスが含まれています。</param>
+        <param name="source">出力を編成するために使用するカテゴリ名。</param>
+        <param name="severity"><see cref="T:System.Diagnostics.TraceEventType" /> 値のいずれか。</param>
+        <param name="id">イベントの数値識別子。</param>
+        <param name="format">書式指定文字列内のオブジェクトに対応する、0 個以上の書式項目を含んでいる<c>args</c>です。</param>
+        <param name="args">書式指定する 0 個以上のオブジェクトの配列。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーは、指定されたシステムとイベント データを使用してには、ローカライズされたイベント メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.TraceEvent%2A>メソッドの呼び出し、<xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29>渡してメソッド`format`と`args`を使用して、<xref:System.Globalization.CultureInfo.InvariantCulture%2A>トレース ビューアー、Web ページに書き込むメッセージとして文字列を書式設定するプロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.Write(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーには、メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.Write%2A>メソッドからに書き込まれません、<xref:System.Diagnostics.Trace>構成ファイルで有効になっている場合でも、出力オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Write">
+      <MemberSignature Language="C#" Value="public override void Write (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Write(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.Write(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーには、カテゴリ名とメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.Write%2A>メソッドからに書き込まれません、<xref:System.Diagnostics.Trace>構成ファイルで有効になっている場合でも、出力オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.WriteLine(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーには、メッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.WriteLine%2A>メソッドからに書き込まれません、<xref:System.Diagnostics.Trace>構成ファイルで有効になっている場合でも、出力オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteLine">
+      <MemberSignature Language="C#" Value="public override void WriteLine (string message, string category);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void WriteLine(string message, string category) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.WebPageTraceListener.WriteLine(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="category" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">書き込むメッセージ。</param>
+        <param name="category">出力を編成するために使用するカテゴリ名。</param>
+        <summary>Web ページまたは ASP.NET トレース ビューアーには、カテゴリ名とメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.WebPageTraceListener.WriteLine%2A>メソッドからに書き込まれません、<xref:System.Diagnostics.Trace>構成ファイルで有効になっている場合でも、出力オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

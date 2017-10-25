@@ -1,0 +1,976 @@
+<Type Name="BindingManagerBase" FullName="System.Windows.Forms.BindingManagerBase">
+  <TypeSignature Language="C#" Value="public abstract class BindingManagerBase" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit BindingManagerBase extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.BindingManagerBase" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>すべての管理<see cref="T:System.Windows.Forms.Binding" />を同じデータ ソースおよびデータ メンバーにバインドされているオブジェクト。 このクラスは抽象クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase>同じデータ ソースにバインドされている Windows フォームのデータ バインド コントロールの同期を有効にします。 (単純なコントロールをデータ ソースにバインドの詳細については、次を参照してください、<xref:System.Windows.Forms.Binding>クラスです。)。たとえば、2 つのフォームが含まれている<xref:System.Windows.Forms.TextBox>を別々 の列が、同じデータ ソースにバインドされるコントロールです。 データ ソースがあります、<xref:System.Data.DataTable>を格納している顧客名、列が姓と名を含めることがあります。 2 つのコントロールは、同時に同じ顧客に対して正しい姓と名を表示するために同期する必要があります。 <xref:System.Windows.Forms.CurrencyManager>から継承される、<xref:System.Windows.Forms.BindingManagerBase>クラス、データ ソースの現在のアイテムへのポインターを維持することにより、この同期を実行します。 <xref:System.Windows.Forms.TextBox>コントロールは、同じ行の情報を表示するようにするため、現在の項目にバインドされます。 現在の項目が変更されたときに、<xref:System.Windows.Forms.CurrencyManager>バインドされているコントロールのデータを更新することができるようにすべてに通知します。 さらに、設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>内の行を指定するプロパティ、<xref:System.Data.DataTable>コントロールをポイントします。 データ ソースに存在する行数を確認するには<xref:System.Windows.Forms.BindingManagerBase.Count%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.CurrencyManager>データ ソース、必ずしもは現在の項目のポインターを保持しないためにが必要です。 たとえば、配列と<xref:System.Collections.ArrayList>オブジェクトには、データ ソースを指定できますが、現在の項目を返すプロパティはありません。 現在の項目を取得する、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>プロパティです。  
+  
+ <xref:System.Windows.Forms.PropertyManager>からも継承、 <xref:System.Windows.Forms.BindingManagerBase>、データ ソースの現在のオブジェクトのプロパティではなく、オブジェクトの現在のプロパティを維持するために使用されます。 このためを設定しようとして、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>または<xref:System.Windows.Forms.BindingManagerBase.Count%2A>プロパティを<xref:System.Windows.Forms.PropertyManager>も何も起こりません。  
+  
+ 作成する、<xref:System.Windows.Forms.BindingManagerBase>を使用して、<xref:System.Windows.Forms.BindingContext>クラスは、どちらかを返します、<xref:System.Windows.Forms.CurrencyManager>または<xref:System.Windows.Forms.PropertyManager>、管理されているデータ ソースによって異なります。  
+  
+ ソリューションのプログラマが直接コントロールをバインドすることをお勧め、<xref:System.Windows.Forms.BindingSource>コンポーネントで、データ ソースと実際のターゲット データ ソースへのデータ コネクタの両方として機能します。 <xref:System.Windows.Forms.BindingSource>両方の単純または複雑なデータ バインディング、コントロールとそのターゲットの間の通貨の管理などを大幅に簡略化します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingContext>を返す、<xref:System.Windows.Forms.BindingManagerBase>特定のデータ ソース。 (この例では宣言されている`myBindingManagerBase`モジュールの宣言セクションにします)。例では、イベント デリゲートを追加し、<xref:System.Windows.Forms.BindingManagerBase.CurrentChanged>と<xref:System.Windows.Forms.BindingManagerBase.PositionChanged>イベント。 最後に、例には 4 つのメソッドが含まれます (`MoveNext`、 `MovePrevious`、 `MoveFirst`、および`MoveLast`) をインクリメントまたはデクリメント、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティ、およびセット、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>一覧の最初と最後の行にします。 使用して、一覧の最後の行を決定、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>プロパティです。  
+  
+ [!code-cpp[Classic BindingManagerBase Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承する場合<see cref="T:System.Windows.Forms.BindingManagerBase" />、次の抽象メンバーをオーバーライドする必要があります: <see cref="M:System.Windows.Forms.BindingManagerBase.AddNew" />、 <see cref="P:System.Windows.Forms.BindingManagerBase.Count" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit" />、 <see cref="P:System.Windows.Forms.BindingManagerBase.Current" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.EndCurrentEdit" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.GetItemProperties" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.OnCurrentChanged(System.EventArgs)" />、 <see cref="P:System.Windows.Forms.BindingManagerBase.Position" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.RemoveAt(System.Int32)" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.ResumeBinding" />、 <see cref="M:System.Windows.Forms.BindingManagerBase.SuspendBinding" />、および<see cref="M:System.Windows.Forms.BindingManagerBase.UpdateIsBinding" />です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BindingManagerBase ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Forms.BindingManagerBase" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターは、設定、<xref:System.Windows.Forms.BindingManagerBase.Bindings%2A>プロパティを`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddNew">
+      <MemberSignature Language="C#" Value="public abstract void AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、基になるリストに新しい項目を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.AddNew%2A>メソッドは、その項目の種類の既定のコンス トラクターを使用して、基になるリストに新しい項目を追加します。 <xref:System.Windows.Forms.BindingManagerBase.AddNew%2A>主に使用されるもので、カスタム コンポーネントを複雑なデータ バインディング サポートを追加するプログラマがします。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.AddNew%2A>カスタマイズした設定を作成するための独自のコードを挿入するアプリケーション プログラマは、次のパターンを使用して実装よくされます。  
+  
+1.  <xref:System.Windows.Forms.BindingManagerBase.AddNew%2A> は、<xref:System.Windows.Forms.BindingSource.AddingNew> イベントを発生させます。  
+  
+2.  処理することにより、プログラマがカスタム項目を指定できます、<xref:System.Windows.Forms.BindingSource.AddingNew>イベントと設定、<xref:System.ComponentModel.AddingNewEventArgs.NewObject%2A>のプロパティ、<xref:System.ComponentModel.AddingNewEventArgs>新しい項目へのパラメーターです。 それ以外の場合、コンポーネントは、既定のコンス トラクターを使用して項目を作成する必要があります。  
+  
+3.  データ ソースを実装しない場合、<xref:System.ComponentModel.IEditableObject>インターフェイス、項目がすぐに、データ ソースおよび基になるリストに追加します。 このインターフェイスがサポートされているかどうかは、によって、追加のトランザクション、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>と<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BindingComplete">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.BindingCompleteEventHandler BindingComplete;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.BindingCompleteEventHandler BindingComplete" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingManagerBase.BindingComplete" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingCompleteEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>データ バインディング操作の完了時に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントは、次には、データ バインディング操作の完了後に発生します。  
+  
+-   バインド コントロールのプロパティに、データ ソースから情報をプッシュします。  
+  
+-   その関連付けられたデータ ソースにバインドされたコントロールから情報を取得します。  
+  
+ この状態を調べることで決定できますは、このイベントは、バインディング操作の完了状態に関係なく発生注意してください、<xref:System.Windows.Forms.BindingCompleteEventArgs.BindingCompleteState%2A>のプロパティ、<xref:System.Windows.Forms.BindingCompleteEventArgs>イベントに関連付けられたパラメーター。 <xref:System.Windows.Forms.BindingCompleteEventArgs>エラーと例外の情報が含まれてもことがあります。 たとえばにデータ ソースから null 値をプッシュしようとしています。 バインド操作、<xref:System.Windows.Forms.DateTimePicker>コントロールは、例外を後に生成、<xref:System.DateTime>することはできません`null`です。 ここでは、バインディングの操作が正常に完了しない、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベントを発生させるし、イベントのバインドが失敗した試行で情報が含まれます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、処理する方法を示します、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>イベント コントロール値のいずれかが変更されたときに、同じデータ ソースにバインドされている複数のコントロールの同期は保持を確認してください。 この例を実行するには、Windows フォームと呼び出しにコードを貼り付けます、`InitializeControlsAndData`フォームのコンス トラクターからのメソッドまたは<xref:System.Windows.Forms.Form.Load>イベント処理メソッドです。  
+  
+ [!code-csharp[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/CS/Form1.cs#11)]
+ [!code-vb[System.Windows.Forms.BindingSourceMultipleControls#11](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingSourceMultipleControls/VB/Form1.vb#11)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bindings">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.BindingsCollection Bindings { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.BindingsCollection Bindings" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingManagerBase.Bindings" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingsCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>管理されているバインディングのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.Windows.Forms.BindingsCollection" />を格納している、<see cref="T:System.Windows.Forms.Binding" />これによって管理されるオブジェクト<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を取得、<xref:System.Windows.Forms.BindingManagerBase>特定のデータ ソース。 使用して、<xref:System.Windows.Forms.BindingManagerBase.Bindings%2A>各コントロールの概要情報を印刷するプロパティが、同じデータ ソースにバインドします。  
+  
+ [!code-cpp[Classic BindingManagerBase.Bindings Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Bindings Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.Bindings Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.Bindings Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.Bindings Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.Bindings Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CancelCurrentEdit">
+      <MemberSignature Language="C#" Value="public abstract void CancelCurrentEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CancelCurrentEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在の編集をキャンセルします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースを実装する場合にのみ、このメソッドがサポートされて、<xref:System.ComponentModel.IEditableObject>インターフェイスです。 オブジェクトを実装しない場合、<xref:System.ComponentModel.IEditableObject>インターフェイス、データに加えられた変更は破棄されません。  
+  
+ 呼び出す、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>メソッド原因、<xref:System.Windows.Forms.Binding.Format>イベントが発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、両方を示しています、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>と<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>メソッドです。 呼び出すと、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>メソッド、データに加えられた変更は破棄されます。 呼び出すと、<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>メソッド、変更が保持されます。  
+  
+ [!code-cpp[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CPP/canceledit.cpp#1)]
+ [!code-csharp[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CS/canceledit.cs#1)]
+ [!code-vb[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/VB/canceledit.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public abstract int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingManagerBase.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、<see cref="T:System.Windows.Forms.BindingManagerBase" /> によって管理される行の数を取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.BindingManagerBase" /> によって管理される行の数。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>によって管理される行の一覧の最後の項目を決定するプロパティ、<xref:System.Windows.Forms.BindingManagerBase>です。 進むには最後の項目、設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティを<xref:System.Windows.Forms.BindingManagerBase.Count%2A>から 1 を引いたプロパティの値。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します 4 つの方法を設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティです。 `MoveNext`メソッド、プロパティを 1 つインクリメントします。 `MovePrevious`メソッド、プロパティを 1 つです。 `MoveFirst`メソッド、プロパティを 0 に設定します。 `MoveLast`メソッドの値にプロパティを設定する、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>から 1 を引いたプロパティです。  
+  
+ [!code-cpp[Classic BindingManagerBase.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Current">
+      <MemberSignature Language="C#" Value="public abstract object Current { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Current" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingManagerBase.Current" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在のオブジェクトを取得します。</summary>
+        <value><see cref="T:System.Object" />の現在のオブジェクトを表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.Current%2A>オブジェクトには、データ ソースの現在のアイテムの値が含まれています。 現在の項目の値を使用する、項目をキャストする必要があります、<xref:System.Type>に含まれるオブジェクトの<xref:System.Windows.Forms.Binding.DataSource%2A>です。 たとえば、<xref:System.Data.DataTable>含む<xref:System.Data.DataRowView>オブジェクト。 現在のオブジェクトの種類を確認するには<xref:System.Object.GetType%2A>と<xref:System.Type.ToString%2A>メソッドです。  
+  
+> [!NOTE]
+>  ときに、<xref:System.Windows.Forms.Binding.DataSource%2A>は、 <xref:System.Data.DataSet>、 <xref:System.Data.DataViewManager>、または<xref:System.Data.DataTable>、実際にバインドする、<xref:System.Data.DataView>です。 その結果、各<xref:System.Windows.Forms.BindingManagerBase.Current%2A>オブジェクトが、<xref:System.Data.DataRowView>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>内のオブジェクト、<xref:System.Windows.Forms.BindingManagerBase>で、<xref:System.Windows.Forms.BindingManagerBase.CurrentChanged>イベント。 この例では、データ ソースが、<xref:System.Data.DataTable>を含む、<xref:System.Data.DataColumn>という名前`CustName`です。  
+  
+ [!code-cpp[Classic BindingManagerBase.Current Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.Current Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.Current Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingManagerBase.CurrentChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在バインドされている項目が変更されると発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.CurrentChanged>イベントが発生するたびに、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>プロパティの変更、または<xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged>イベントが発生します。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例の値を表示する、<xref:System.Windows.Forms.BindingManagerBase.Current%2A>内のオブジェクト、<xref:System.Windows.Forms.BindingManagerBase>で、<xref:System.Windows.Forms.BindingManagerBase.CurrentChanged>イベント。 この例では、データ ソースが、<xref:System.Data.DataTable>を含む、<xref:System.Data.DataColumn>という名前`CustName`です。  
+  
+ [!code-cpp[Classic BindingManagerBase.Current Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.Current Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.Current Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.Current Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentItemChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler CurrentItemChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler CurrentItemChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingManagerBase.CurrentItemChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在バインドされている項目の状態が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged>イベント現在バインドされている項目の状態の変更があるたびに発生します。 これは、この項目のプロパティのいずれかが変更された場合、または、項目自体は交換または移動する場合に発生します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.BindingManagerBase>、ように、<xref:System.Windows.Forms.PropertyManager>または<xref:System.Windows.Forms.CurrencyManager>です。 インスタンスを名前`BindingManagerBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.BindingManagerBase.CurrentItemChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#82](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#82)]
+ [!code-vb[System.Windows.Forms.EventExamples#82](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#82)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataError">
+      <MemberSignature Language="C#" Value="public event System.Windows.Forms.BindingManagerDataErrorEventHandler DataError;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.Forms.BindingManagerDataErrorEventHandler DataError" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingManagerBase.DataError" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.BindingManagerDataErrorEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="T:System.Exception" />によって自動的に処理されますが、<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、表示、共通言語仕様 (CLS) のレポートの準拠の例外のみです。 発生した例外の種類を決定するには、このイベントを処理し、確認、<xref:System.Windows.Forms.BindingManagerDataErrorEventArgs.Exception%2A>のプロパティ、<xref:System.Windows.Forms.BindingManagerDataErrorEventArgs>です。  
+  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.BindingManagerBase.DataError>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ 実行するには、コード例から継承する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.BindingManagerBase>、ように、<xref:System.Windows.Forms.PropertyManager>または<xref:System.Windows.Forms.CurrencyManager>です。 インスタンスを名前`BindingManagerBase1`にイベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.BindingManagerBase.DataError>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#83](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#83)]
+ [!code-vb[System.Windows.Forms.EventExamples#83](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#83)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndCurrentEdit">
+      <MemberSignature Language="C#" Value="public abstract void EndCurrentEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EndCurrentEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.EndCurrentEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、現在の編集を終了します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ ソースを実装する場合にのみ、このメソッドがサポートされて、<xref:System.ComponentModel.IEditableObject>インターフェイスです。 その場合は、変更は保存されます。 オブジェクトを実装しない場合、<xref:System.ComponentModel.IEditableObject>インターフェイス、データに加えられた変更は保存されません。  
+  
+   
+  
+## Examples  
+ 次のコード例では、両方を示しています、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>と<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>メソッドです。 呼び出すと、<xref:System.Windows.Forms.BindingManagerBase.CancelCurrentEdit%2A>メソッド、データに加えられた変更は破棄されます。 呼び出すと、<xref:System.Windows.Forms.BindingManagerBase.EndCurrentEdit%2A>メソッド、変更が保持されます。  
+  
+ [!code-cpp[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CPP/canceledit.cpp#1)]
+ [!code-csharp[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/CS/canceledit.cs#1)]
+ [!code-vb[BindingManagerBase.CancelCurrentEdit Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase.CancelCurrentEdit Example/VB/canceledit.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptorCollection GetItemProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.GetItemProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、バインディングのプロパティ記述子のコレクションを取得します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />を表すバインディングのプロパティ記述子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>を返すメソッドを<xref:System.ComponentModel.PropertyDescriptorCollection>です。 例では、印刷、<xref:System.ComponentModel.MemberDescriptor.Name%2A>と現在の値<xref:System.Data.DataColumn>を使用して、<xref:System.ComponentModel.PropertyDescriptor.GetValue%2A>のメソッド、<xref:System.ComponentModel.PropertyDescriptor>です。  
+  
+ [!code-cpp[Classic BindingManagerBase.GetItemProperties Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.GetItemProperties Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.GetItemProperties Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.PropertyDescriptorCollection GetItemProperties (System.Collections.ArrayList dataSources, System.Collections.ArrayList listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.Collections.ArrayList dataSources, class System.Collections.ArrayList listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.GetItemProperties(System.Collections.ArrayList,System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dataSources" Type="System.Collections.ArrayList" />
+        <Parameter Name="listAccessors" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="dataSources"><see cref="T:System.Collections.ArrayList" />データ ソースを含むです。</param>
+        <param name="listAccessors"><see cref="T:System.Collections.ArrayList" />テーブルのバインドされたプロパティを格納します。</param>
+        <summary>指定されたを使用して、バインディングのプロパティ記述子のコレクションを取得<see cref="T:System.Collections.ArrayList" />です。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />を表すバインディングのプロパティ記述子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、データ バインド コントロールを作成する開発者によって使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemProperties">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.PropertyDescriptorCollection GetItemProperties (Type listType, int offset, System.Collections.ArrayList dataSources, System.Collections.ArrayList listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetItemProperties(class System.Type listType, int32 offset, class System.Collections.ArrayList dataSources, class System.Collections.ArrayList listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.GetItemProperties(System.Type,System.Int32,System.Collections.ArrayList,System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listType" Type="System.Type" />
+        <Parameter Name="offset" Type="System.Int32" />
+        <Parameter Name="dataSources" Type="System.Collections.ArrayList" />
+        <Parameter Name="listAccessors" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="listType"><see cref="T:System.Type" />のバインドされたリストです。</param>
+        <param name="offset">メソッドの再帰的な呼び出しに使用するカウンター。</param>
+        <param name="dataSources"><see cref="T:System.Collections.ArrayList" />データ ソースを含むです。</param>
+        <param name="listAccessors"><see cref="T:System.Collections.ArrayList" />テーブルのバインドされたプロパティを格納します。</param>
+        <summary>これによって管理されるアイテムのプロパティの一覧を取得<see cref="T:System.Windows.Forms.BindingManagerBase" />です。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />を表すバインディングのプロパティ記述子。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 開発者はこのオーバー ロードを使用して、データ バインド コントロールを作成します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Windows.Forms.BindingManagerBase.GetItemProperties%2A>を返すメソッドを<xref:System.ComponentModel.PropertyDescriptorCollection>の<xref:System.Windows.Forms.BindingManagerBase>です。 例を印刷し、<xref:System.ComponentModel.MemberDescriptor.Name%2A>と<xref:System.ComponentModel.PropertyDescriptor.PropertyType%2A>それぞれの<xref:System.ComponentModel.PropertyDescriptor>コレクション内で。  
+  
+ [!code-cpp[Classic BindingManagerBase.GetItemProperties2 Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties2 Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.GetItemProperties2 Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties2 Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.GetItemProperties2 Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.GetItemProperties2 Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListName">
+      <MemberSignature Language="C#" Value="protected abstract string GetListName (System.Collections.ArrayList listAccessors);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance string GetListName(class System.Collections.ArrayList listAccessors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.GetListName(System.Collections.ArrayList)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listAccessors" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="listAccessors"><see cref="T:System.Collections.ArrayList" />テーブルのバインドされたプロパティを格納します。</param>
+        <summary>派生クラスでオーバーライドされると、バインディングのためのデータを提供するリストの名前を取得します。</summary>
+        <returns>バインディングのためのデータを提供するリストの名前。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBindingSuspended">
+      <MemberSignature Language="C#" Value="public bool IsBindingSuspended { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsBindingSuspended" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingManagerBase.IsBindingSuspended" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>バインディングが中断されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />バインディングが中断されている以外の場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnBindingComplete">
+      <MemberSignature Language="C#" Value="protected void OnBindingComplete (System.Windows.Forms.BindingCompleteEventArgs args);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void OnBindingComplete(class System.Windows.Forms.BindingCompleteEventArgs args) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="args" Type="System.Windows.Forms.BindingCompleteEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="args">イベント データを格納している <see cref="T:System.Windows.Forms.BindingCompleteEventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.BindingComplete" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.OnBindingComplete%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingManagerBase.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingManagerBase.OnBindingComplete(System.Windows.Forms.BindingCompleteEventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCurrentChanged">
+      <MemberSignature Language="C#" Value="protected abstract void OnCurrentChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnCurrentChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.OnCurrentChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.CurrentChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.OnCurrentChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingManagerBase.OnCurrentChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingManagerBase.OnCurrentChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="onCurrentChangedHandler">
+      <MemberSignature Language="C#" Value="protected EventHandler onCurrentChangedHandler;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.EventHandler onCurrentChangedHandler" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.BindingManagerBase.onCurrentChangedHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを指定します、<see cref="E:System.Windows.Forms.BindingManagerBase.CurrentChanged" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCurrentItemChanged">
+      <MemberSignature Language="C#" Value="protected abstract void OnCurrentItemChanged (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig newslot virtual instance void OnCurrentItemChanged(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.OnCurrentItemChanged(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.CurrentItemChanged" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.OnCurrentItemChanged%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingManagerBase.OnCurrentItemChanged(System.EventArgs)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingManagerBase.OnCurrentItemChanged(System.EventArgs)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="OnDataError">
+      <MemberSignature Language="C#" Value="protected void OnDataError (Exception e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig instance void OnDataError(class System.Exception e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.OnDataError(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="e"><see cref="T:System.Exception" />の原因となった、<see cref="E:System.Windows.Forms.BindingManagerBase.DataError" />イベントが発生します。</param>
+        <summary><see cref="E:System.Windows.Forms.BindingManagerBase.DataError" /> イベントを発生させます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベントを発生させると、イベント ハンドラーがデリゲートから呼び出されます。 詳細については、「[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)」を参照してください。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.OnDataError%2A> メソッドを使用すると、デリゲートを結び付けずに、派生クラスでイベントを処理することもできます。 派生クラスでイベントを処理する場合は、この手法をお勧めします。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生クラスで <see cref="M:System.Windows.Forms.BindingManagerBase.OnDataError(System.Exception)" /> をオーバーライドする場合は、登録されているデリゲートがイベントを受け取ることができるように、基本クラスの <see cref="M:System.Windows.Forms.BindingManagerBase.OnDataError(System.Exception)" /> メソッドを呼び出してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="onPositionChangedHandler">
+      <MemberSignature Language="C#" Value="protected EventHandler onPositionChangedHandler;" />
+      <MemberSignature Language="ILAsm" Value=".field family class System.EventHandler onPositionChangedHandler" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Forms.BindingManagerBase.onPositionChangedHandler" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ハンドラーを指定します、<see cref="E:System.Windows.Forms.BindingManagerBase.PositionChanged" />イベント。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Position">
+      <MemberSignature Language="C#" Value="public abstract int Position { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Position" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.BindingManagerBase.Position" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、このデータ ソースにバインドされたコントロールが指す、基になるリストでの位置を取得または設定します。</summary>
+        <value>基になるリストの中での位置を指定する、0 から始まるインデックス番号。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティで保持されている基になるリストの反復を<xref:System.Windows.Forms.BindingManagerBase>です。 最初の項目に移動するには、設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>を 0 にします。 リストの末尾に移動して、設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>の値に、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>から 1 を引いたプロパティです。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.PositionChanged>イベントが発生したときに、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティ値が変更されます。  
+  
+   
+  
+## Examples  
+ 次のコード例に示します 4 つの方法を設定、<xref:System.Windows.Forms.BindingManagerBase.Position%2A>プロパティです。 `MoveNext`メソッド、プロパティを 1 つインクリメントします。 `MovePrevious`メソッド、プロパティを 1 つです。 `MoveFirst`メソッド、プロパティを 0 に設定して、`MoveLast`メソッドの値にプロパティを設定する、<xref:System.Windows.Forms.BindingManagerBase.Count%2A>から 1 を引いたプロパティです。  
+  
+ [!code-cpp[Classic BindingManagerBase.Count Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.Count Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.Count Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.Count Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PositionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler PositionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler PositionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.BindingManagerBase.PositionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>値の後に発生する、<see cref="P:System.Windows.Forms.BindingManagerBase.Position" />プロパティが変更されました。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Windows.Forms.Binding>のコレクションに追加し、<xref:System.Windows.Forms.Binding>オブジェクトに対する、<xref:System.Windows.Forms.TextBox>コントロール。 例を取得し、<xref:System.Windows.Forms.BindingManagerBase>のデータ ソースし、データへのデリゲートを追加、<xref:System.Windows.Forms.BindingManagerBase.PositionChanged>イベント。  
+  
+ [!code-cpp[Classic BindingManagerBase.PositionChanged Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic BindingManagerBase.PositionChanged Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic BindingManagerBase.PositionChanged Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic BindingManagerBase.PositionChanged Example/CS/source.cs#1)]
+ [!code-vb[Classic BindingManagerBase.PositionChanged Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic BindingManagerBase.PositionChanged Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PullData">
+      <MemberSignature Language="C#" Value="protected void PullData ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PullData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.PullData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ バインド コントロールからデータ ソースにデータをプルします。情報は返しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.PullData%2A>メソッドは、データ ソースにデータ バインド コントロールから情報をプルするプログラムによる方法です。 通常、コントロールが自動的に更新がバインドされているデータ ソース フォーカスが離れたときから、コントロールの標準オペレーションの必要はありません。  
+  
+ <xref:System.Windows.Forms.BindingManagerBase.PullData%2A>発生させる、<xref:System.Windows.Forms.BindingManagerBase.BindingComplete>必要に応じてソース イベントとデータの変更イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PushData">
+      <MemberSignature Language="C#" Value="protected void PushData ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance void PushData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.PushData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースからデータ バインド コントロールにデータをプッシュします。情報は返しません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.PushData%2A>メソッドは、データ バインド コントロールにデータ ソースから情報をプッシュするプログラムによる方法です。 このメソッドは、データ ソースを実装する場合は必要ありません、<xref:System.ComponentModel.IBindingList?displayProperty=nameWithType>ため、インターフェイス、<xref:System.ComponentModel.IBindingList.ListChanged?displayProperty=nameWithType>イベントが自動的に切り替わるのカレンシー マネージャー使用して更新します。  
+  
+ このメソッドが発行された場合は、<xref:System.Windows.Forms.BindingManagerBase.PullData%2A>操作が実行される、<xref:System.Windows.Forms.BindingManagerBase.PushData%2A>メソッドからの値は、すぐに`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public abstract void RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する行のインデックス。</param>
+        <summary>派生クラスでオーバーライドされると、基になるリストから指定されたインデックスに対応する行を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.RemoveAt%2A>メソッドは、メソッドの動作方法について判断を基になるデータ ソースに依存します。 (を参照してください、<xref:System.Windows.Forms.Binding>サポートされるデータ ソースの一覧のクラスです)。クラスを実装する<xref:System.Collections.IList>、 <xref:System.ComponentModel.IBindingList>、または<xref:System.ComponentModel.ITypedList>も厳密に型指定されたを実装するクラス<xref:System.Collections.IList>、<xref:System.Windows.Forms.BindingManagerBase.RemoveAt%2A>メソッドが実際にその内容を削除する代わりに基になるリスト内の行を削除します。  
+  
+ 基になるリストが実装されている場合、 <xref:System.ComponentModel.IBindingList> 、インターフェイス、<xref:System.ComponentModel.IBindingList.AllowRemove%2A>プロパティを返す必要があります`true`です。 基になるリストが実装されている場合、 <xref:System.Collections.IList> 、インターフェイス、<xref:System.Collections.IList.IsFixedSize%2A>プロパティを返す必要があります`false`です。  
+  
+   
+  
+## Examples  
+ [!code-cpp[BindingManagerBase_RemoveAt#1](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase_RemoveAt/CPP/bindingmanagerbase_removeat.cpp#1)]
+ [!code-csharp[BindingManagerBase_RemoveAt#1](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase_RemoveAt/CS/bindingmanagerbase_removeat.cs#1)]
+ [!code-vb[BindingManagerBase_RemoveAt#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase_RemoveAt/VB/bindingmanagerbase_removeat.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.IndexOutOfRangeException">指定した位置に行がない<paramref name="index" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ResumeBinding">
+      <MemberSignature Language="C#" Value="public abstract void ResumeBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ResumeBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.ResumeBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データ連結を再開します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A>および<xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A>一時的な中断およびデータ バインディングを再開できるようにする方法は 2 つです。 通常、検証が行われる前に、データ フィールドを編集するユーザーを許可する必要がある場合は、データ バインディングを中断します。 たとえば、ユーザーが 2 番目のフィールドに従ってフィールドを変更する必要があります。それ以外の場合、最初のフィールドを検証するエラーが発生する 2 番目のフィールドとなります。  
+  
+   
+  
+## Examples  
+ [!code-cpp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CPP/bindingmanagerbase_suspend_resume_binding.cpp#2)]
+ [!code-csharp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CS/bindingmanagerbase_suspend_resume_binding.cs#2)]
+ [!code-vb[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/VB/bindingmanagerbase_suspend_resume_binding.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SuspendBinding">
+      <MemberSignature Language="C#" Value="public abstract void SuspendBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SuspendBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.SuspendBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、データ連結を中断します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.SuspendBinding%2A>および<xref:System.Windows.Forms.BindingManagerBase.ResumeBinding%2A>一時的な中断およびデータ バインディングを再開できるようにする方法は 2 つです。 通常、検証が行われる前に、データ フィールドを編集するユーザーを許可する必要がある場合は、データ バインディングを中断します。 たとえば、ユーザーが 2 番目のフィールドに従ってフィールドを変更する必要があります。それ以外の場合、最初のフィールドを検証するエラーが発生する 2 番目のフィールドとなります。  
+  
+   
+  
+## Examples  
+ [!code-cpp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/cpp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CPP/bindingmanagerbase_suspend_resume_binding.cpp#2)]
+ [!code-csharp[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/csharp/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/CS/bindingmanagerbase_suspend_resume_binding.cs#2)]
+ [!code-vb[BindingManagerBase_Suspend_Resume_Binding#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/BindingManagerBase_Suspend_Resume_Binding/VB/bindingmanagerbase_suspend_resume_binding.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UpdateIsBinding">
+      <MemberSignature Language="C#" Value="protected abstract void UpdateIsBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void UpdateIsBinding() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.BindingManagerBase.UpdateIsBinding" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、バインディングを更新します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.BindingManagerBase.UpdateIsBinding%2A>メソッドは、バインドされたコントロールとそのデータ ソース間のデータ バインディングを更新します。 複合データ バインディング シナリオも、基になるリストの先頭に、現在の位置をリセットします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

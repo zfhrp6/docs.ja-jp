@@ -1,0 +1,1190 @@
+<Type Name="Interlocked" FullName="System.Threading.Interlocked">
+  <TypeSignature Language="C#" Value="public static class Interlocked" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit Interlocked extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Interlocked" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>複数のスレッドで共有される変数にアトミックの操作を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスのメソッドは、スレッドの他のスレッドからアクセスできる変数を更新中に、スケジューラがコンテキストを切り替えたときに、または 2 つのスレッドが別々 のプロセッサで同時に実行するときに発生するエラーを防ぐ。 このクラスのメンバーでは、例外はスローされません。  
+  
+ <xref:System.Threading.Interlocked.Increment%2A>と<xref:System.Threading.Interlocked.Decrement%2A>メソッド インクリメントまたは変数をデクリメントし、単一の操作で、結果の値を格納します。 ほとんどのコンピューターで、変数をインクリメントする、次の手順を必要とする、分割不可能な操作ではありません。  
+  
+1.  レジスタに、インスタンス変数から値を読み込みます。  
+  
+2.  インクリメントまたはデクリメント値。  
+  
+3.  インスタンスの変数に値を格納します。  
+  
+ 使用しない場合<xref:System.Threading.Interlocked.Increment%2A>と<xref:System.Threading.Interlocked.Decrement%2A>、最初の 2 つの手順を実行した後に、スレッド プリエンプションの対象ことができます。 別のスレッドは、すべての 3 つの手順を実行し、できます。 最初のスレッドが実行を再開インスタンス変数の値を上書き、インクリメントまたはデクリメントが 2 番目のスレッドによって実行されるの影響が失われます。  
+  
+ <xref:System.Threading.Interlocked.Exchange%2A>メソッドが、指定された変数の値をアトミックに交換します。 <xref:System.Threading.Interlocked.CompareExchange%2A>メソッド、2 つの操作を組み合わせて: 比較の結果に基づいて、変数のいずれかで格納する 3 つ目と 2 つの値を比較する値します。 比較および交換操作は、アトミックな操作として実行されます。  
+  
+   
+  
+## Examples  
+ 次のコード例では、スレッド セーフであるリソースのロック メカニズムを示します。  
+  
+ [!code-cpp[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+    <threadsafe>この型はスレッド セーフです。</threadsafe>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static int Add (ref int location1, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Add(int32&amp; location1, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Add(System.Int32@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int32&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="location1">加算する最初の値を含む変数。 2 つの値の合計が格納されている<c>location1</c>です。</param>
+        <param name="value">整数を追加する値<c>location1</c>です。</param>
+        <summary>分割不可能な操作として、2 つの 32 ビット整数を加算し、最初の整数を合計で置き換えます。</summary>
+        <returns>格納された新しい値<paramref name="location1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理: 場合位置にある値`location1`は<xref:System.Int32?displayProperty=nameWithType>と`value`1 に設定されて、結果は<xref:System.Int32?displayProperty=nameWithType>以外の場合は`value`が 2 の場合、結果は (<xref:System.Int32?displayProperty=nameWithType> + 1) などです。 例外をスローすることはありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public static long Add (ref long location1, long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Add(int64&amp; location1, int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Add(System.Int64@,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int64&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="location1">加算する最初の値を含む変数。 2 つの値の合計が格納されている<c>location1</c>です。</param>
+        <param name="value">整数を追加する値<c>location1</c>です。</param>
+        <summary>分割不可能な操作として、2 つの 64 ビット整数を加算し、最初の整数を合計で置き換えます。</summary>
+        <returns>格納された新しい値<paramref name="location1" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理: 場合位置にある値`location1`は<xref:System.Int64?displayProperty=nameWithType>と`value`1 に設定されて、結果は<xref:System.Int64?displayProperty=nameWithType>以外の場合は`value`が 2 の場合、結果は (<xref:System.Int64?displayProperty=nameWithType> + 1) などです。 例外をスローすることはありません。  
+  
+ <xref:System.Threading.Interlocked.Read%2A>メソッドおよびの 64 ビットのオーバー ロード、 <xref:System.Threading.Interlocked.Increment%2A>、 <xref:System.Threading.Interlocked.Decrement%2A>、および<xref:System.Threading.Interlocked.Add%2A>メソッドは、システムでのみアトミック本当にここで、 <xref:System.IntPtr?displayProperty=nameWithType> 64 ビット長。 他のシステムでは、これらのメソッドはに関する、互いが他のデータにアクセスする手段と分割不可能なです。 したがって、32 ビット システムでスレッド セーフである、64 ビット値へのアクセスできる必要のメンバーを<xref:System.Threading.Interlocked>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static double CompareExchange (ref double location1, double value, double comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 CompareExchange(float64&amp; location1, float64 value, float64 comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.Double@,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Double&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Double" />
+        <Parameter Name="comparand" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="location1">値は、移行先<c>比較対照値</c>され、場合によって置き換えられます。</param>
+        <param name="value">比較した結果が等しい場合に比較先の値を置き換える値。</param>
+        <param name="comparand">位置にある値と比較される値<c>location1</c>です。</param>
+        <summary>2 つの倍精度浮動小数点数が等しいかどうかを比較します。等しい場合は、最初の値を置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 戻り値<xref:System.Threading.Interlocked.CompareExchange%2A>の元の値は、`location1`交換が行われるかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例は、累計を実行中のスレッド セーフであるメソッドを示します<xref:System.Double>値。 2 つのスレッドの系列を追加する<xref:System.Double>スレッド セーフであるメソッドと通常の加算を使用して値を合計を比較する、スレッドが完了します。 デュアル プロセッサのコンピューターでは、合計に大きな違いがあります。  
+  
+ メソッドでは、スレッド セーフである、実行中の合計の初期値を保存し、<xref:System.Threading.Interlocked.CompareExchange%2A>メソッドは、古い合計新しく計算された合計の交換に使用します。 戻り値が累計の保存値と等しくない場合は、し、別のスレッドが更新合計いたしました。 その場合は、実行中の合計を更新しようとするを繰り返す必要があります。  
+  
+ [!code-csharp[System.Threading.Interlocked CompareExchange Double#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange Double/cs/source.cs#1)]
+ [!code-vb[System.Threading.Interlocked CompareExchange Double#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange Double/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static int CompareExchange (ref int location1, int value, int comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 CompareExchange(int32&amp; location1, int32 value, int32 comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.Int32@,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int32&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int32" />
+        <Parameter Name="comparand" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="location1">値は、移行先<c>比較対照値</c>され、場合によって置き換えられます。</param>
+        <param name="value">比較した結果が等しい場合に比較先の値を置き換える値。</param>
+        <param name="comparand">位置にある値と比較される値<c>location1</c>です。</param>
+        <summary>2 つの 32 ビット符号付き整数が等しいかどうかを比較します。等しい場合は、最初の値を置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 戻り値<xref:System.Threading.Interlocked.CompareExchange%2A>の元の値は、`location1`交換が行われるかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例では、集計途中経過を蓄積するスレッド セーフな方法を示します。 実行中の合計の初期値を保存し、<xref:System.Threading.Interlocked.CompareExchange%2A>メソッドは、古い合計新しく計算された合計の交換に使用します。 戻り値が累計の保存値と等しくない場合は、し、別のスレッドが更新合計いたしました。 その場合は、実行中の合計を更新しようとするを繰り返す必要があります。  
+  
+> [!NOTE]
+>  <xref:System.Threading.Interlocked.Add%2A>メソッド、.NET Framework version 2.0 で導入されたは整数にスレッド セーフである集計途中経過を蓄積する方が便利な方法を提供します。  
+  
+ [!code-cpp[System.Threading.Interlocked CompareExchange0#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange0/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Interlocked CompareExchange0#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange0/CS/source.cs#1)]
+ [!code-vb[System.Threading.Interlocked CompareExchange0#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange0/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static long CompareExchange (ref long location1, long value, long comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 CompareExchange(int64&amp; location1, int64 value, int64 comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.Int64@,System.Int64,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int64&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int64" />
+        <Parameter Name="comparand" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="location1">値は、移行先<c>比較対照値</c>され、場合によって置き換えられます。</param>
+        <param name="value">比較した結果が等しい場合に比較先の値を置き換える値。</param>
+        <param name="comparand">位置にある値と比較される値<c>location1</c>です。</param>
+        <summary>2 つの 64 ビット符号付き整数が等しいかどうかを比較します。等しい場合は、最初の値を置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 戻り値<xref:System.Threading.Interlocked.CompareExchange%2A>の元の値は、`location1`交換が行われるかどうか。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static IntPtr CompareExchange (ref IntPtr location1, IntPtr value, IntPtr comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int CompareExchange(native int&amp; location1, native int value, native int comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.IntPtr@,System.IntPtr,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.IntPtr&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.IntPtr" />
+        <Parameter Name="comparand" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="location1">転送先<see cref="T:System.IntPtr" />の値と比較値を持つ<c>比較対照値</c>なり、場合によって置き換え<c>値</c>です。</param>
+        <param name="value"><see cref="T:System.IntPtr" />比較結果が等しい場合は、送信先の値を置き換えます。</param>
+        <param name="comparand"><see cref="T:System.IntPtr" />位置にある値と比較する<c>location1</c>です。</param>
+        <summary>2 つのプラットフォーム固有のハンドルまたはポインターが等しいかどうかを比較します。等しい場合は、最初の 1 つを置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 このメソッドの戻り値の元の値は、`location1`交換が行われるかどうか。  
+  
+> [!NOTE]
+>  <xref:System.IntPtr>プラットフォーム固有の型。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static object CompareExchange (ref object location1, object value, object comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object CompareExchange(object&amp; location1, object value, object comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.Object@,System.Object,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="comparand" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="location1">対象オブジェクトと比較される<c>比較対照値</c>され、場合によって置き換えられます。</param>
+        <param name="value">比較結果が等しい場合は、対象オブジェクトを置き換えるオブジェクト。</param>
+        <param name="comparand">位置にあるオブジェクトと比較されるオブジェクト<c>location1</c>です。</param>
+        <summary>2 つのオブジェクトの参照が等値であるかどうかを比較します。等しい場合は、最初のオブジェクトを置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`内のオブジェクトと`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 戻り値<xref:System.Threading.Interlocked.CompareExchange%2A>の元の値は、`location1`交換が行われるかどうか。  
+  
+ .NET framework version 2.0 では、以降、<xref:System.Threading.Interlocked.CompareExchange%60%601%28%60%600%40%2C%60%600%2C%60%600%29>メソッドのオーバー ロードは、参照型の場合、タイプ セーフな代替手段を提供します。  
+  
+> [!NOTE]
+>  オブジェクトが参照の等価比較なく<xref:System.Object.Equals%2A?displayProperty=nameWithType>です。 その結果、同じ 2 つのボックス化されたインスタンス値の型 (たとえば、整数 3) 常に等しくない場合に表示され、操作は実行されません。 値型では、このオーバー ロードを使用しないでください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange">
+      <MemberSignature Language="C#" Value="public static float CompareExchange (ref float location1, float value, float comparand);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 CompareExchange(float32&amp; location1, float32 value, float32 comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange(System.Single@,System.Single,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Single&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Single" />
+        <Parameter Name="comparand" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="location1">値は、移行先<c>比較対照値</c>され、場合によって置き換えられます。</param>
+        <param name="value">比較した結果が等しい場合に比較先の値を置き換える値。</param>
+        <param name="comparand">位置にある値と比較される値<c>location1</c>です。</param>
+        <summary>2 つの単精度浮動小数点数が等しいかどうかを比較します。等しい場合は、最初の値を置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換操作は、アトミックな操作として実行されます。 戻り値<xref:System.Threading.Interlocked.CompareExchange%2A>の元の値は、`location1`交換が行われるかどうか。  
+  
+   
+  
+## Examples  
+ 次のコード例は、累計を実行中のスレッド セーフであるメソッドを示します<xref:System.Single>値。 2 つのスレッドの系列を追加する<xref:System.Single>スレッド セーフであるメソッドと通常の加算を使用して値を合計を比較する、スレッドが完了します。 デュアル プロセッサのコンピューターでは、合計に大きな違いがあります。  
+  
+ メソッドでは、スレッド セーフである、実行中の合計の初期値を保存し、<xref:System.Threading.Interlocked.CompareExchange%2A>メソッドは、古い合計新しく計算された合計の交換に使用します。 戻り値が累計の保存値と等しくない場合は、し、別のスレッドが更新合計いたしました。 その場合は、実行中の合計を更新しようとするを繰り返す必要があります。  
+  
+ [!code-csharp[System.Threading.Interlocked CompareExchange Single#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange Single/cs/source.cs#1)]
+ [!code-vb[System.Threading.Interlocked CompareExchange Single#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked CompareExchange Single/vb/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CompareExchange&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T CompareExchange&lt;T&gt; (ref T location1, T value, T comparand) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T CompareExchange&lt;class T&gt;(!!T&amp; location1, !!T value, !!T comparand) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.CompareExchange``1(``0@,``0,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="location1" Type="T&amp;" RefType="ref" />
+        <Parameter Name="value" Type="T" />
+        <Parameter Name="comparand" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">使用する種類<c>location1</c>、<c>値</c>、および<c>比較対照値</c>です。 この型は、参照型である必要があります。</typeparam>
+        <param name="location1">値は、移行先<c>比較対照値</c>され、場合によって置き換えられます。 これは参照パラメーターです (C# では <see langword="ref" />、Visual Basic では <see langword="ByRef" />)。</param>
+        <param name="value">比較した結果が等しい場合に比較先の値を置き換える値。</param>
+        <param name="comparand">位置にある値と比較される値<c>location1</c>です。</param>
+        <summary>指定された参照型の 2 つのインスタンスを比較<paramref name="T" />等しいかどうかと、それらが等しい場合は、最初の 1 つを置き換えます。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`comparand`値と`location1`しが等しいか、`value`に格納されて`location1`です。 それ以外の場合は演算が実行されません。 比較および交換は、アトミックな操作として実行されます。 このメソッドの戻り値の元の値は、`location1`交換が行われるかどうか。  
+  
+ このメソッドは、参照型のみをサポートします。 オーバー ロードがあります、<xref:System.Threading.Interlocked.CompareExchange%2A>値型のメソッド<xref:System.Int32>、 <xref:System.Int64>、 <xref:System.IntPtr>、 <xref:System.Single>、および<xref:System.Double>、他の値型のサポートはありません。  
+  
+> [!NOTE]
+>  このメソッドはオーバー ロードを置き換える、<xref:System.Threading.Interlocked.CompareExchange%28System.Object%40%2CSystem.Object%2CSystem.Object%29>後者に遅延バインディング アクセスする対象のオブジェクトを必要とするため、メソッドをオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrement">
+      <MemberSignature Language="C#" Value="public static int Decrement (ref int location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Decrement(int32&amp; location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Decrement(System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int32&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="location">値がデクリメントされる変数。</param>
+        <summary>分割不可能な操作として、指定した変数をデクリメントし、結果を格納します。</summary>
+        <returns>デクリメントされた値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理します。 場合`location`  =  <xref:System.Int32?displayProperty=nameWithType>、 `location` - 1 =<xref:System.Int32?displayProperty=nameWithType>です。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次の例では、中間値と 1,000 の乱数を生成する必要な範囲は 0 から 1,000 にランダムな番号の数を決定します。 中間値、変数の数を追跡するために`midpointCount`は 1,000 に等しいとデクリメントたびに設定する乱数ジェネレーターは、中間値を返します。 3 つのスレッドは、乱数を生成するため、<xref:System.Threading.Interlocked.Decrement%28System.Int32%40%29>複数のスレッドを更新しないことを確認するメソッドが呼び出された`midpointCount`同時にします。 ロックは、乱数ジェネレーターとを保護するためも使用されている、<xref:System.Threading.CountdownEvent>オブジェクトを使用していることを確認、`Main`メソッドが 3 つのスレッドの前に実行を完了します。  
+  
+ [!code-csharp[System.Threading.Interlocked.Decrement#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.interlocked.decrement/cs/decrement1.cs#1)]
+ [!code-vb[System.Threading.Interlocked.Decrement#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.interlocked.decrement/vb/decrement1.vb#1)]  
+  
+ 次の例と似ていますが、以前を使用する点を除いて、50,000 の中間点のランダムな整数を生成するスレッド プロシージャの代わりにします。 この例では、ラムダ式が置き換えられます、`GenerateNumbers`スレッド プロシージャを呼び出すまで、<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>メソッドが不要、<xref:System.Threading.CountdownEvent>オブジェクト。  
+  
+ [!code-csharp[System.Threading.Interlocked.Decrement#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.interlocked.decrement/cs/decrement2.cs#2)]
+ [!code-vb[System.Threading.Interlocked.Decrement#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.interlocked.decrement/vb/decrement2.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Decrement">
+      <MemberSignature Language="C#" Value="public static long Decrement (ref long location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Decrement(int64&amp; location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Decrement(System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int64&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="location">値がデクリメントされる変数。</param>
+        <summary>分割不可能な操作として、指定した変数をデクリメントしてその結果を格納します。</summary>
+        <returns>デクリメントされた値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理します。 場合`location`  =  <xref:System.Int64?displayProperty=nameWithType>、 `location` - 1 =<xref:System.Int64?displayProperty=nameWithType>です。 例外をスローすることはありません。  
+  
+ <xref:System.Threading.Interlocked.Read%2A>メソッドおよびの 64 ビットのオーバー ロード、 <xref:System.Threading.Interlocked.Increment%2A>、 <xref:System.Threading.Interlocked.Decrement%2A>、および<xref:System.Threading.Interlocked.Add%2A>メソッドは、システムでのみアトミック本当にここで、 <xref:System.IntPtr?displayProperty=nameWithType> 64 ビット長。 他のシステムでは、これらのメソッドはに関する、互いが他のデータにアクセスする手段と分割不可能なです。 したがって、32 ビット システムでスレッド セーフである、64 ビット値へのアクセスできる必要のメンバーを<xref:System.Threading.Interlocked>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static double Exchange (ref double location1, double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Exchange(float64&amp; location1, float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.Double@,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Double&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した値を倍精度浮動小数点数として設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static int Exchange (ref int location1, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Exchange(int32&amp; location1, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.Int32@,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int32&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した値を 32 ビット符号付き整数として設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、スレッド セーフであるリソースのロック メカニズムを示します。  
+  
+ [!code-cpp[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/CPP/class1.cpp#1)]
+ [!code-csharp[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/CS/class1.cs#1)]
+ [!code-vb[System.Threading.Interlocked.Exchange Int32 Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange Int32 Example/VB/class1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static long Exchange (ref long location1, long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Exchange(int64&amp; location1, int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.Int64@,System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Int64&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した値を 64 ビット符号付き整数として設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static IntPtr Exchange (ref IntPtr location1, IntPtr value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig native int Exchange(native int&amp; location1, native int value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.IntPtr@,System.IntPtr)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.IntPtr&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.IntPtr" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、プラットフォーム固有のハンドルまたはポインターに指定した値を設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static object Exchange (ref object location1, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object Exchange(object&amp; location1, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.Object@,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Object&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した値をオブジェクトとして設定し、元のオブジェクトへの参照を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ .NET framework version 2.0 では、以降、<xref:System.Threading.Interlocked.Exchange%60%601%28%60%600%40%2C%60%600%29>メソッドのオーバー ロードは、参照型の場合、タイプ セーフな代替手段を提供します。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する構文を示しています。`Exchange`により、どの参照型のオブジェクト。  
+  
+ [!code-cpp[System.Threading.Interlocked.Exchange#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange/CPP/source.cpp#1)]
+ [!code-csharp[System.Threading.Interlocked.Exchange#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange/CS/source.cs#1)]
+ [!code-vb[System.Threading.Interlocked.Exchange#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange">
+      <MemberSignature Language="C#" Value="public static float Exchange (ref float location1, float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 Exchange(float32&amp; location1, float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange(System.Single@,System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location1" Type="System.Single&amp;" RefType="ref" />
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="location1">指定した値に設定する変数。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した値を単精度浮動小数点数として設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exchange&lt;T&gt;">
+      <MemberSignature Language="C#" Value="public static T Exchange&lt;T&gt; (ref T location1, T value) where T : class;" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig !!T Exchange&lt;class T&gt;(!!T&amp; location1, !!T value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Exchange``1(``0@,``0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>T</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="T">
+          <Constraints>
+            <ParameterAttribute>ReferenceTypeConstraint</ParameterAttribute>
+          </Constraints>
+        </TypeParameter>
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="location1" Type="T&amp;" RefType="ref" />
+        <Parameter Name="value" Type="T" />
+      </Parameters>
+      <Docs>
+        <typeparam name="T">使用する種類<c>location1</c>と<c>値</c>です。 この型は、参照型である必要があります。</typeparam>
+        <param name="location1">指定した値に設定する変数。 これは参照パラメーターです (C# では <see langword="ref" />、Visual Basic では <see langword="ByRef" />)。</param>
+        <param name="value">値、 <c>location1</c>パラメーターを設定します。</param>
+        <summary>分割不可能な操作として、指定した型 <paramref name="T" /> の変数に指定した値を設定し、元の値を返します。</summary>
+        <returns><paramref name="location1" /> の元の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、参照型のみをサポートします。 オーバー ロードがあります、<xref:System.Threading.Interlocked.Exchange%2A>のメソッド、 <xref:System.Int32>、 <xref:System.Int64>、 <xref:System.IntPtr>、 <xref:System.Single>、および<xref:System.Double>値の型が、他の値型はサポートされていません。  
+  
+> [!NOTE]
+>  このメソッドはオーバー ロードを置き換える、<xref:System.Threading.Interlocked.Exchange%28System.Object%40%2CSystem.Object%29>後者を対象オブジェクトの遅延バインディング アクセスを必要とするため、メソッドをオーバー ロードします。  
+  
+   
+  
+## Examples  
+ 次の例では、タスクが 10 個がそれぞれが 100 の 10 文字の部分に値を生成するを起動します。 次にアルファベット順で最初は部品番号。  
+  
+ [!code-csharp[System.Threading.Interlocked.Exchange#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange/CS/Exchange5.cs#2)]
+ [!code-vb[System.Threading.Interlocked.Exchange#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Threading.Interlocked.Exchange/VB/Exchange5.vb#2)]  
+  
+ この例では、`firstWidget`を並べ替え順序で最初に発生する ID を格納する変数。 生成された各 ID と比較、`firstWidget`値。  新しい値には、現在の値が前にある場合`firstWidget`例では、並べ替え順序において、<xref:System.Threading.Interlocked.Exchange%2A>メソッドに新しい値を割り当てる`firstWidget`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location1" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Increment">
+      <MemberSignature Language="C#" Value="public static int Increment (ref int location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 Increment(int32&amp; location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Increment(System.Int32@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int32&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="location">値がインクリメントされる変数。</param>
+        <summary>分割不可能な操作として、指定した変数をインクリメントし、結果を格納します。</summary>
+        <returns>インクリメントされた値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理します。 場合`location`  =  <xref:System.Int32?displayProperty=nameWithType>、 `location` + 1 =<xref:System.Int32?displayProperty=nameWithType>です。 例外をスローすることはありません。  
+  
+   
+  
+## Examples  
+ 次の例では、中間値と 1,000 の乱数を生成する必要な範囲は 0 から 1,000 にランダムな番号の数を決定します。 中間値、変数の数を追跡するために`midpointCount`を 0 に設定および 10,000 に達するまで、乱数ジェネレーターが中間値を返すたびに増分されます。 3 つのスレッドは、乱数を生成するため、<xref:System.Threading.Interlocked.Increment%28System.Int32%40%29>複数のスレッドを更新しないことを確認するメソッドが呼び出された`midpointCount`同時にします。 ロックは、乱数ジェネレーターとを保護するためも使用されている、<xref:System.Threading.CountdownEvent>オブジェクトを使用していることを確認、`Main`メソッドが 3 つのスレッドの前に実行を完了します。  
+  
+ [!code-csharp[System.Threading.Interlocked.Increment2#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.interlocked.increment2/cs/increment3.cs#3)]
+ [!code-vb[System.Threading.Interlocked.Increment2#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.interlocked.increment2/vb/Increment3.vb#3)]  
+  
+ 次の例と似ていますが、以前を使用する点を除いて、50,000 の中間点のランダムな整数を生成するスレッド プロシージャの代わりにします。 この例では、ラムダ式が置き換えられます、`GenerateNumbers`スレッド プロシージャを呼び出すまで、<xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>メソッドが不要、<xref:System.Threading.CountdownEvent>オブジェクト。  
+  
+ [!code-csharp[System.Threading.Interlocked.Increment2#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.interlocked.increment2/cs/increment4.cs#4)]
+ [!code-vb[System.Threading.Interlocked.Increment2#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.interlocked.increment2/vb/Increment4.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Increment">
+      <MemberSignature Language="C#" Value="public static long Increment (ref long location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Increment(int64&amp; location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Increment(System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ConstrainedExecution.ReliabilityContract(System.Runtime.ConstrainedExecution.Consistency.WillNotCorruptState, System.Runtime.ConstrainedExecution.Cer.Success)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int64&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="location">値がインクリメントされる変数。</param>
+        <summary>分割不可能な操作として、指定した変数をインクリメントし、結果を格納します。</summary>
+        <returns>インクリメントされた値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがラップすることによって、オーバーフロー状態を処理します。 場合`location`  =  <xref:System.Int64?displayProperty=nameWithType>、 `location` + 1 =<xref:System.Int64?displayProperty=nameWithType>です。 例外をスローすることはありません。  
+  
+ <xref:System.Threading.Interlocked.Read%2A>メソッドおよびの 64 ビットのオーバー ロード、 <xref:System.Threading.Interlocked.Increment%2A>、 <xref:System.Threading.Interlocked.Decrement%2A>、および<xref:System.Threading.Interlocked.Add%2A>メソッドは、システムでのみアトミック本当にここで、 <xref:System.IntPtr?displayProperty=nameWithType> 64 ビット長。 他のシステムでは、これらのメソッドはに関する、互いが他のデータにアクセスする手段と分割不可能なです。 したがって、32 ビット システムでスレッド セーフである、64 ビット値へのアクセスできる必要のメンバーを<xref:System.Threading.Interlocked>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NullReferenceException"><paramref name="location" /> のアドレスは null ポインターです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryBarrier">
+      <MemberSignature Language="C#" Value="public static void MemoryBarrier ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MemoryBarrier() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.MemoryBarrier" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>次のようにメモリ アクセスを同期: 現在のスレッドを実行するプロセッサが命令を並べ替えることはできませんを呼び出す前にこのような方法でそのメモリにアクセスする<see cref="M:System.Threading.Interlocked.MemoryBarrier" />への呼び出しの後のメモリ アクセスより後に実行<see cref="M:System.Threading.Interlocked.MemoryBarrier" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが追加された、<xref:System.Threading.Interlocked>クラス内で、[!INCLUDE[net_v45](~/includes/net-v45-md.md)]のラッパーである; 便宜を図って、<xref:System.Threading.Thread.MemoryBarrier%2A?displayProperty=nameWithType>メソッドです。  
+  
+ <xref:System.Threading.Interlocked.MemoryBarrier%2A>順序付け (たとえば、複数の Intel Itanium プロセッサを採用しているシステム) と脆弱なメモリをマルチプロセッサ システムでのみが必要です。  
+  
+ ほとんどの目的で、c#`lock`ステートメントでは、Visual Basic`SyncLock`ステートメント、または<xref:System.Threading.Monitor>クラスは、データを同期する簡単な方法を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MemoryBarrierProcessWide">
+      <MemberSignature Language="C#" Value="public static void MemoryBarrierProcessWide ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void MemoryBarrierProcessWide() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.MemoryBarrierProcessWide" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public static long Read (ref long location);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 Read(int64&amp; location) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Interlocked.Read(System.Int64@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="location" Type="System.Int64&amp;" RefType="ref" />
+      </Parameters>
+      <Docs>
+        <param name="location">読み込む 64 ビット値。</param>
+        <summary>分割不可能な操作として 64 ビット値を読み込んで返します。</summary>
+        <returns>読み込まれた値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Threading.Interlocked.Read%2A>メソッドは、64 ビットの読み取り操作はアトミックが存在するので、64 ビット システムで必要ではありません。 32 ビット システムで 64 ビットの読み取り操作を使用して実行しない限り、アトミックできない<xref:System.Threading.Interlocked.Read%2A>です。  
+  
+ <xref:System.Threading.Interlocked.Read%2A>メソッドおよびの 64 ビットのオーバー ロード、 <xref:System.Threading.Interlocked.Increment%2A>、 <xref:System.Threading.Interlocked.Decrement%2A>、および<xref:System.Threading.Interlocked.Add%2A>メソッドは、システムでのみアトミック本当にここで、 <xref:System.IntPtr?displayProperty=nameWithType> 64 ビット長。 他のシステムでは、これらのメソッドはに関する、互いが他のデータにアクセスする手段と分割不可能なです。 したがって、32 ビット システムでスレッド セーフである、64 ビット値へのアクセスできる必要のメンバーを<xref:System.Threading.Interlocked>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.IntPtr>プラットフォーム固有の型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

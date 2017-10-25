@@ -1,0 +1,66 @@
+<Type Name="WebServiceErrorEvent" FullName="System.Web.Management.WebServiceErrorEvent">
+  <TypeSignature Language="C#" Value="public class WebServiceErrorEvent : System.Web.Management.WebRequestErrorEvent" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WebServiceErrorEvent extends System.Web.Management.WebRequestErrorEvent" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Management.WebServiceErrorEvent" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Management.WebRequestErrorEvent</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web サービスのエラーに関する情報を含むイベントを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Management.WebServiceErrorEvent>イベントは、Web サービス要求中にエラーが発生した場合に発生します。 アプリケーションは、このイベントを使用してを使用して、使用される要求に関連する情報を取得することができます、<xref:System.Web.Management.WebRequestInformation>と<xref:System.Web.Management.WebThreadInformation>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebServiceErrorEvent (string message, object eventSource, Exception exception);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig specialname rtspecialname instance void .ctor(string message, object eventSource, class System.Exception exception) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Management.WebServiceErrorEvent.#ctor(System.String,System.Object,System.Exception)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="eventSource" Type="System.Object" />
+        <Parameter Name="exception" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="message">イベントの説明。</param>
+        <param name="eventSource">イベントのソースであるオブジェクト。</param>
+        <param name="exception">エラーに関連付けられている例外。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Web.Management.WebServiceErrorEvent" />クラスを指定したイベントのパラメーターを使用します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WebServiceErrorEventCode">
+      <MemberSignature Language="C#" Value="public static int WebServiceErrorEventCode { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property int32 WebServiceErrorEventCode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Management.WebServiceErrorEvent.WebServiceErrorEventCode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のエラー イベントに関連付けられているコードを取得します。</summary>
+        <value>このイベントに関連付けられているコードの数です。 イベント コードについては、次を参照してください。<see cref="T:System.Web.Management.WebEventCodes" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,84 @@
+<Type Name="IWebActionable" FullName="System.Web.UI.WebControls.WebParts.IWebActionable">
+  <TypeSignature Language="C#" Value="public interface IWebActionable" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IWebActionable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.IWebActionable" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>により、<see cref="T:System.Web.UI.WebControls.WebParts.WebPart" />コントロールまたはその他のサーバー コントロール動詞のコレクションを含めることです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の動詞<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールは、ユーザーがユーザー インターフェイス (UI) で実行できるアクション。 通常、動詞は、ボタン、リンク、またはメニュー項目などのクリック可能なコントロールでは、UI で表されます。 Web パーツ コントロール セットを提供に既定で使用可能な標準の動詞<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールおよびその他のサーバー コントロール (など、カスタム ASP.NET、およびユーザー コントロール) として機能することができます<xref:System.Web.UI.WebControls.WebParts.WebPart>に配置すると制御<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase>ゾーンです。 標準的な動詞閉じるが含まれて、最小限に抑える、復元、削除、編集、およびエクスポートします。  
+  
+ 使用するためのカスタム動詞を作成することもできます。<xref:System.Web.UI.WebControls.WebParts.WebPart>およびサーバー コントロールです。 <xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスとその<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>プロパティのカスタム動詞をコントロールに統合する方法を示します。 <xref:System.Web.UI.WebControls.WebParts.WebPart>クラスが実装する、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスし、その 1 つのプロパティを実装します。 継承されたコントロールにカスタム動詞を追加する、<xref:System.Web.UI.WebControls.WebParts.WebPart>オーバーライドする必要があります、クラス、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A?displayProperty=nameWithType>プロパティ、カスタム動詞をコレクションに追加し、コレクションを返します。 によって参照されるコレクション、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A?displayProperty=nameWithType>プロパティにカスタム動詞のみが含まれています。 標準的な動詞は、このコレクションには含まれません。 既定の戻り値の<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A?displayProperty=nameWithType>プロパティに、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールが`null`が既定ではありませんカスタム動詞コレクションに、します。  
+  
+ ないサーバー コントロールにカスタム動詞を追加する<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールには、1 つの余分な手順が必要です。 ような場合、コントロールを実装する必要がありますも、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスし、実装、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>プロパティです。  
+  
+ カスタム動詞を追加した後、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>コレクション、Web パーツ コントロール セットを自動的に処理、他の必要な手順についてを作成してカスタム動詞を表示します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.UI.WebControls.WebParts.IWebActionable> インターフェイスの簡単な実装を示します。 このコード例の最初の部分は、ユーザー コントロールのインターフェイスを実装する方法を示しています。 ユーザー コントロールを実装する、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>を 2 つのカスタム動詞を作成し、動詞のいずれかのユーザーがクリックしたときに呼び出されるメソッドを定義するプロパティです。 わかりやすくするため、同じメソッドを使用して、両方の動詞です。 メソッドは、という名前のプロパティの値を更新`VerbCounterClicks`です。 コードを`Page_Load`メソッドへのアクセス、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A>コレクションにカスタム動詞の合計数を表示するコントロールのプロパティです。 この数は、標準の Web パーツの動詞には含まれません。  
+  
+> [!IMPORTANT]
+>  この例には、ユーザー入力を受け付けるテキスト ボックスがあります。これにより、セキュリティが脆弱になる可能性があります。 既定では、ASP.NET Web ページによって、ユーザー入力にスクリプトまたは HTML 要素が含まれていないかどうかが検証されます。 詳細については、次を参照してください。[スクリプト悪用概要](http://msdn.microsoft.com/library/772c7312-211a-4eb3-8d6e-eec0aa1dcc07)です。  
+  
+ [!code-aspx-csharp[WebParts_IWebActionable_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/CS/usercontrolverbcs.ascx#2)]
+ [!code-aspx-vb[WebParts_IWebActionable_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/VB/usercontrolverbvb.ascx#2)]  
+  
+ コード例の 2 番目の部分は、ユーザー コントロールをホストする .aspx ページです。 コントロールがで参照されているため、 <xref:System.Web.UI.WebControls.WebParts.WebPartZone> ASP.NET 内のユーザー コントロールをラップする実行時に、コントロール、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart>を制御し、として扱われます、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロール。 ブラウザーでページを読み込んだ後はによって参照されるコレクション内の数のカスタム動詞をコントロールの下部にラベルが表示されるに注意してください、<xref:System.Web.UI.WebControls.WebParts.GenericWebPart.Verbs%2A>プロパティです。 動詞メニュー、コントロールをクリックして、動詞のいずれかをクリックすると、別のラベルが表示されるカスタム動詞がクリックしてされた回数の合計数を表示にも注意してください。  
+  
+ [!code-aspx-csharp[WebParts_IWebActionable_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/CS/usercontrolverbhostcs.aspx#1)]
+ [!code-aspx-vb[WebParts_IWebActionable_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/VB/usercontrolverbhostvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Verbs">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.WebParts.WebPartVerbCollection Verbs" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.WebPartVerbCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>カスタムのコレクションへの参照を取得<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />オブジェクト。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerbCollection" />を含むカスタム<see cref="T:System.Web.UI.WebControls.WebParts.WebPartVerb" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>プロパティを参照してカスタム動詞のコレクション (存在する場合) のヘッダーの動詞メニューに追加される、<xref:System.Web.UI.WebControls.WebParts.WebPart>またはその他のサーバー コントロールです。 <xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>コレクションに、標準への参照が含まれていない<xref:System.Web.UI.WebControls.WebParts.WebPartVerb>Web パーツ コントロールに提供されるオブジェクトなどの設定、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.CloseVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.DeleteVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.EditVerb%2A>、 <xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.RestoreVerb%2A>、または<xref:System.Web.UI.WebControls.WebParts.WebPartZoneBase.MinimizeVerb%2A>です。  
+  
+ 派生したカスタム動詞をカスタム コントロールを追加する開発者向け、<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスをオーバーライドするだけで、<xref:System.Web.UI.WebControls.WebParts.WebPart.Verbs%2A>プロパティを<xref:System.Web.UI.WebControls.WebParts.WebPart>クラスを実装します。  
+  
+ ユーザー コントロール、またはカスタム コントロールではないカスタム動詞を追加する開発者向け、<xref:System.Web.UI.WebControls.WebParts.WebPart>コントロールを実装する必要があります、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>インターフェイスの実装を提供することによって、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>プロパティです。  
+  
+   
+  
+## Examples  
+ 使用を次のコード例に示します、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>ユーザー コントロールに実装されているプロパティ。 このコード例の完全なコードのセクションの例で確認できます、<xref:System.Web.UI.WebControls.WebParts.IWebActionable>クラスの概要に関するトピック。  
+  
+ 次のコード例の部分のカスタム実装を示しています、<xref:System.Web.UI.WebControls.WebParts.IWebActionable.Verbs%2A>ユーザー コントロール内のプロパティです。  
+  
+ [!code-csharp[WebParts_IWebActionable_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/CS/usercontrolverbcs.ascx#3)]
+ [!code-vb[WebParts_IWebActionable_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_IWebActionable_Overview/VB/usercontrolverbvb.ascx#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

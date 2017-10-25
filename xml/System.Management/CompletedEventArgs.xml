@@ -1,0 +1,89 @@
+<Type Name="CompletedEventArgs" FullName="System.Management.CompletedEventArgs">
+  <TypeSignature Language="C#" Value="public class CompletedEventArgs : System.Management.ManagementEventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CompletedEventArgs extends System.Management.ManagementEventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Management.CompletedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Management</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Management.ManagementEventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>イベント データを保持、<see cref="E:System.Management.ManagementOperationObserver.Completed" />イベント。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、メソッドを非同期的に呼び出します。 **Win32_Process.Create** Calc.exe の新しいプロセスを作成するメソッドが呼び出されます。  
+  
+ [!code-csharp[wminet_CompletedEventArgs#1](~/samples/snippets/csharp/VS_Snippets_WindowsServer/wminet_CompletedEventArgs/cs/CompletedEventArgs.cs#1)]
+ [!code-vb[wminet_CompletedEventArgs#1](~/samples/snippets/visualbasic/VS_Snippets_WindowsServer/wminet_CompletedEventArgs/vb/CompletedEventArgs.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Status">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementStatus Status { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Management.ManagementStatus Status" />
+      <MemberSignature Language="DocId" Value="P:System.Management.CompletedEventArgs.Status" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作の完了ステータスを取得します。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementStatus" />列挙値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ A<xref:System.Management.ManagementStatus>操作のステータスを示す値。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StatusObject">
+      <MemberSignature Language="C#" Value="public System.Management.ManagementBaseObject StatusObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Management.ManagementBaseObject StatusObject" />
+      <MemberSignature Language="DocId" Value="P:System.Management.CompletedEventArgs.StatusObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Management</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Management.ManagementBaseObject</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>WMI オブジェクト内の他の状態情報を取得します。 null でもかまいません。</summary>
+        <value>返します、<see cref="T:System.Management.ManagementBaseObject" />操作の完了に関する状態情報を格納します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+## <a name="property-value"></a>プロパティ値  
+ `null`場合は、エラーは行われませんでした。 プロバイダー拡張エラー情報をサポートする場合は null でない場合は、提供される場合があります。  
+  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ 直前の呼び出し元に対する完全な信頼。 このメンバーは、部分的に信頼されているコードから使用することはできません。 詳細については、次を参照してください。[部分信頼コードからライブラリを使用して](~/docs/framework/misc/using-libraries-from-partially-trusted-code.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

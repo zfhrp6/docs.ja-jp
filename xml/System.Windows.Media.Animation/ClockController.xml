@@ -1,0 +1,343 @@
+<Type Name="ClockController" FullName="System.Windows.Media.Animation.ClockController">
+  <TypeSignature Language="C#" Value="public sealed class ClockController : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ClockController extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Animation.ClockController" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="T:System.Windows.Media.Animation.Clock" /> を対話的に制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Media.Animation.ClockController>対話形式で作業を開始、一時停止、再開、シーク、スキップ、停止、および削除する、<xref:System.Windows.Media.Animation.Clock>です。 ルート レベルのクロックのみ対話的に制御できます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Begin">
+      <MemberSignature Language="C#" Value="public void Begin ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Begin() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Begin" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲットを設定<see cref="P:System.Windows.Media.Animation.ClockController.Clock" />を次のタイマー刻みで開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドにより、ターゲット<xref:System.Windows.Media.Animation.Clock>かのように動作する、<xref:System.Windows.Media.Animation.Timeline>オブジェクトの<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>が次のタイマー刻みの時刻に設定します。 タイムラインの実際<xref:System.Windows.Media.Animation.Timeline.BeginTime%2A>設定は無視されます (ただし、変更されていない)。  
+  
+ このメソッドは変更対象のクロックの<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.ClockState.Active>です。 <xref:System.Windows.Media.Animation.ClockController.Begin%2A>メソッドでは一時停止しているクロックは再開されません。  
+  
+ このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 副作用として、適切なイベントも発生しないというそれまでの間です。 このメソッドの呼び出しをトリガー、<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>と<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clock">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Animation.Clock Clock { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Animation.Clock Clock" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ClockController.Clock" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Animation.Clock</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Media.Animation.Clock" />これによって制御される<see cref="T:System.Windows.Media.Animation.ClockController" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Animation.Clock" />これによって制御される<see cref="T:System.Windows.Media.Animation.ClockController" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Pause">
+      <MemberSignature Language="C#" Value="public void Pause ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Pause() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Pause" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲットを停止する<see cref="T:System.Windows.Media.Animation.Clock" />進行します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止すること、<xref:System.Windows.Media.Animation.Clock>その現在の状態、および一時停止に関係なく、クロック変わらないので、現在の状態。 クロックを一時停止中に<xref:System.Windows.Media.Animation.ClockState.Active>、 <xref:System.Windows.Media.Animation.ClockState.Stopped>、または<xref:System.Windows.Media.Animation.ClockState.Filling>です。 クロックを再開する唯一の方法を使用して、<xref:System.Windows.Media.Animation.ClockController.Resume%2A>メソッドです。 クロックを暗黙的に一時停止するには、その子が一時停止します。  
+  
+ 対象のクロックが既に一時停止すると、このメソッドを呼び出しても効果はありません。  
+  
+ クロックを一時停止、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Remove() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Remove" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>削除、<see cref="T:System.Windows.Media.Animation.Clock" />これに関連付けられている<see cref="T:System.Windows.Media.Animation.ClockController" />からプロパティをアニメーション化します。 時計とその子クロックでは、これらのプロパティは反映されなくなります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドがトリガー、<xref:System.Windows.Media.Animation.Clock.RemoveRequested>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、削除し、それ以外の場合、時計を対話的に制御する方法を示します。  
+  
+ [!code-csharp[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/csharp/VS_Snippets_Wpf/ClockController_procedural_snip/CSharp/SeekAlignedToLastTickExample.cs#clockcontrollerseekexample)]
+ [!code-vb[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClockController_procedural_snip/visualbasic/seekalignedtolasttickexample.vb#clockcontrollerseekexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resume">
+      <MemberSignature Language="C#" Value="public void Resume ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Resume() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Resume" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>により、<see cref="T:System.Windows.Media.Animation.Clock" />進行を再開するを一時停止します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一時停止または再開することができます、<xref:System.Windows.Media.Animation.Clock>その現在の状態、および一時停止または再開に関係なく、クロック変わらないので、現在の状態。 クロックを一時停止中に<xref:System.Windows.Media.Animation.ClockState.Active>、 <xref:System.Windows.Media.Animation.ClockState.Stopped>、または<xref:System.Windows.Media.Animation.ClockState.Filling>です。 一時停止しているクロックを再開する唯一の方法を使用して、<xref:System.Windows.Media.Animation.ClockController.Resume%2A>メソッドです。 クロックを暗黙的に再開するには、その子が再開されます。 一時停止されていないクロックにこのメソッドを呼び出しても効果はありません。  
+  
+ 一時停止しているクロックを再開する、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Seek">
+      <MemberSignature Language="C#" Value="public void Seek (TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Seek(valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Seek(System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">シーク オフセットを、対象のクロックの時間で表した値。 このオフセットは、クロックの<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.BeginTime" />または<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.Duration" />の値に応じて、<c>原点</c>です。</param>
+        <param name="origin">指定したオフセットが対象のクロックの基準としたかどうかを示す値<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.BeginTime" />または<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.Duration" />です。</param>
+        <summary>ターゲットをシーク<see cref="P:System.Windows.Media.Animation.ClockController.Clock" />を次の目盛りを刻んだときに指定の量。 対象のクロックが停止している場合は、このシークによって再びアクティブになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作は保持しません、<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントにこの時計のタイムラインの設定: 時計がように扱わ、タイムラインは、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ このメソッドは、クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.ClockState.Active>です。 このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 副作用として、適切なイベントもは発生しないというそれまでの間です。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベント。  
+  
+ 対象のクロックは、子を持つ、現在の時刻も更新されます。  
+  
+   
+  
+## Examples  
+ 次の例は、シークを使用する方法を示しています、<xref:System.Windows.Media.Animation.ClockController>です。  
+  
+ [!code-csharp[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/csharp/VS_Snippets_Wpf/ClockController_procedural_snip/CSharp/SeekAlignedToLastTickExample.cs#clockcontrollerseekexample)]
+ [!code-vb[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClockController_procedural_snip/visualbasic/seekalignedtolasttickexample.vb#clockcontrollerseekexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SeekAlignedToLastTick">
+      <MemberSignature Language="C#" Value="public void SeekAlignedToLastTick (TimeSpan offset, System.Windows.Media.Animation.TimeSeekOrigin origin);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SeekAlignedToLastTick(valuetype System.TimeSpan offset, valuetype System.Windows.Media.Animation.TimeSeekOrigin origin) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick(System.TimeSpan,System.Windows.Media.Animation.TimeSeekOrigin)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offset" Type="System.TimeSpan" />
+        <Parameter Name="origin" Type="System.Windows.Media.Animation.TimeSeekOrigin" />
+      </Parameters>
+      <Docs>
+        <param name="offset">シーク オフセットを、対象のクロックの時間で表した値。 このオフセットは、クロックの<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.BeginTime" />または<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.Duration" />の値に応じて、<c>原点</c>です。</param>
+        <param name="origin">指定したオフセットが対象のクロックの基準としたかどうかを示す値<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.BeginTime" />または<see cref="F:System.Windows.Media.Animation.TimeSeekOrigin.Duration" />です。</param>
+        <summary>ターゲットをシーク<see cref="T:System.Windows.Media.Animation.Clock" />をすぐに指定の量。 対象のクロックが停止している場合は、このシークによって再びアクティブになります。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ シーク操作は保持しません、<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>または<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>アカウントにこの時計のタイムラインの設定: 時計がように扱わ、タイムラインは、 <xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A> 1 およびいない<xref:System.Windows.Media.Animation.ParallelTimeline.SlipBehavior%2A>です。  
+  
+ <xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A>最後のクロック ティックのクロックの検索する時間を配置します。 値は直ちに期限への変更を反映するように更新される<xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A>画面では、画面の更新までは、これらの変更は示しません場合でも、します。  
+  
+ 対象のクロックは、子を持つ、現在の時刻も更新されます。  
+  
+ このメソッドは、クロックの変更<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.ClockState.Active>です。  
+  
+ ストーリーのシーク、<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベント。  
+  
+   
+  
+## Examples  
+ 次の例では、両方を示しています、<xref:System.Windows.Media.Animation.ClockController.Seek%2A>と<xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A>のメソッド、<xref:System.Windows.Media.Animation.ClockController>です。  
+  
+ [!code-csharp[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/csharp/VS_Snippets_Wpf/ClockController_procedural_snip/CSharp/SeekAlignedToLastTickExample.cs#clockcontrollerseekexample)]
+ [!code-vb[ClockController_procedural_snip#ClockControllerSeekExample](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClockController_procedural_snip/visualbasic/seekalignedtolasttickexample.vb#clockcontrollerseekexample)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkipToFill">
+      <MemberSignature Language="C#" Value="public void SkipToFill ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SkipToFill() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.SkipToFill" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲットの現在の時間を進める<see cref="T:System.Windows.Media.Animation.Clock" />アクティブな期間の終了にします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは進めます対象のクロックの現在の時刻をアクティブな期間の終了この時点で、クロックの動作がで指定された、<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>の設定、<xref:System.Windows.Media.Animation.Timeline>です。 場合、タイムラインの<xref:System.Windows.Media.Animation.Timeline.FillBehavior%2A>プロパティに設定されている<xref:System.Windows.Media.Animation.FillBehavior.HoldEnd>、時計を塗りつぶします。 プロパティが設定されている場合<xref:System.Windows.Media.Animation.FillBehavior.Stop>、クロックが停止します。  
+  
+ このメソッドは場合のみ有効対象のクロックの<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>は<xref:System.Windows.Media.Animation.ClockState.Active>します。  
+  
+ このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 副作用として、適切なイベントもは発生しないというそれまでの間です。  
+  
+ 期間のトリガーをその fill にストーリー ボードを進める、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SpeedRatio">
+      <MemberSignature Language="C#" Value="public double SpeedRatio { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 SpeedRatio" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Animation.ClockController.SpeedRatio" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のターゲットの対話型速度<see cref="T:System.Windows.Media.Animation.Clock" />です。</summary>
+        <value>対象のクロックの対話速度を記述するゼロより大きい有限値。 この値の値に乗算、<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />の時計の<see cref="T:System.Windows.Media.Animation.Timeline" />します。 たとえば場合、タイムラインの<see cref="P:System.Windows.Media.Animation.Timeline.SpeedRatio" />0.5 と<see cref="T:System.Windows.Media.Animation.ClockController" />オブジェクトの<see cref="P:System.Windows.Media.Animation.ClockController.SpeedRatio" />3.0 では、タイムラインが移動する標準の速度の 1.5 倍 (0.5 * 3.0) では、します。 既定値は 1.0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定しても次の目盛りまでは影響しません。 このプロパティを設定する前にその値を取得すると次の目盛りに古い値が表示されますに発生します。 このプロパティでは、次のタイマー刻みの後に新しい値を返します。  
+  
+ このプロパティの設定は、基になるタイムラインの値を変更しない<xref:System.Windows.Media.Animation.Timeline.SpeedRatio%2A>です。  
+  
+ 対象のクロックのこのプロパティの設定はトリガー<xref:System.Windows.Media.Animation.Clock.CurrentGlobalSpeedInvalidated>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Stop">
+      <MemberSignature Language="C#" Value="public void Stop ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Stop() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Animation.ClockController.Stop" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ターゲットを停止する<see cref="T:System.Windows.Media.Animation.Clock" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは変更対象のクロックの<xref:System.Windows.Media.Animation.Clock.CurrentState%2A>に<xref:System.Windows.Media.Animation.Clock.Stopped%2A>です。  
+  
+ A<xref:System.Windows.Media.Animation.Clock.Stopped%2A>クロックを使用して再起動することができます、 <xref:System.Windows.Media.Animation.ClockController.Begin%2A>、 <xref:System.Windows.Media.Animation.ClockController.Seek%2A>、または<xref:System.Windows.Media.Animation.ClockController.SeekAlignedToLastTick%2A>メソッドです。  
+  
+ このメソッドには、次のチェック マークが処理されるまで、タイミング ツリーに影響はありません。 副作用として、適切なイベントもは発生しないというそれまでの間です。  
+  
+ クロックを停止する、<xref:System.Windows.Media.Animation.Timeline.CurrentGlobalSpeedInvalidated>と<xref:System.Windows.Media.Animation.Clock.CurrentStateInvalidated>イベント、ではなく、<xref:System.Windows.Media.Animation.Clock.Completed>イベント。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

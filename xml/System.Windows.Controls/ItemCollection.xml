@@ -1,0 +1,1673 @@
+<Type Name="ItemCollection" FullName="System.Windows.Controls.ItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class ItemCollection : System.Windows.Data.CollectionView, System.Collections.IList, System.ComponentModel.ICollectionViewLiveShaping, System.ComponentModel.IEditableCollectionViewAddNewItem, System.ComponentModel.IItemProperties, System.Windows.IWeakEventListener" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ItemCollection extends System.Windows.Data.CollectionView implements class System.Collections.ICollection, class System.Collections.IEnumerable, class System.Collections.IList, class System.ComponentModel.ICollectionViewLiveShaping, class System.ComponentModel.IEditableCollectionView, class System.ComponentModel.IEditableCollectionViewAddNewItem, class System.ComponentModel.IItemProperties, class System.Windows.IWeakEventListener" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.ItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Data.CollectionView</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.IList</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICollectionViewLiveShaping</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IEditableCollectionViewAddNewItem</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.ComponentModel.IItemProperties</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Windows.IWeakEventListener</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンテンツを構成項目の一覧を保持する<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.ItemCollection>オブジェクト、文字列などの項目のコレクションを保持[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]ノード、要素、およびその他のコレクション。 <xref:System.Windows.Controls.ItemsControl>内のデータを使用して、<xref:System.Windows.Controls.ItemCollection>その内容を生成します。 複数のコレクションを集計する場合は、割り当てる、<xref:System.Windows.Data.CompositeCollection>を<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のプロパティ、<xref:System.Windows.Controls.ItemsControl>です。  
+  
+ いずれかを使用して、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティまたは<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>のコンテンツの生成に使用するコレクションを指定するプロパティ、<xref:System.Windows.Controls.ItemsControl>です。 ときに、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティが設定されて、<xref:System.Windows.Controls.ItemsControl.Items%2A>読み取り専用的に固定サイズ コレクションが行われます。 つまり、使用している場合、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティ、追加、削除、または変更できません内の項目、<xref:System.Windows.Controls.ItemCollection>直接です。  
+  
+ <xref:System.Windows.Controls.ItemCollection><xref:System.Windows.Data.CollectionView>し、したがって並べ替え、グループ化、およびフィルター処理など、コレクション ビューの機能を提供します。 詳細については、「<xref:System.Windows.Controls.ItemCollection.SortDescriptions%2A>「<xref:System.Windows.Controls.ItemCollection.Filter%2A>および「<xref:System.Windows.Controls.ItemCollection.GroupDescriptions%2A>」を参照してください。  
+  
+ コレクション ビューの詳細については、次を参照してください。[データ バインディングの概要](~/docs/framework/wpf/data/data-binding-overview.md)です。  
+  
+   
+  
+## Examples  
+ ある場合、 <xref:System.Windows.Controls.ItemsControl>、ように、<xref:System.Windows.Controls.ListBox>コンテンツを持つ、使用することができます、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティへのアクセスを<xref:System.Windows.Controls.ItemCollection>ビューであります。 ビューになっているために、並べ替え、フィルター処理、およびグループ化などのビューに関連する機能を使用できます。 ItemsSource が設定されている場合、ビューの操作を委任するビューに ItemsSource コレクションに対するに注意してください。 そのため、ItemCollection は、並べ替え、フィルター処理、および委任されたビューには、それらがサポートされている場合にのみをグループ化をサポートします。  
+  
+ 次の例の内容を並べ替える方法を示しています、<xref:System.Windows.Controls.ListBox>という`myListBox`です。 この例では`Content`によって並べ替えするプロパティの名前を指定します。  
+  
+ [!code-csharp[ListBoxSort_snip#Sort](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxSort_snip/CSharp/Window1.xaml.cs#sort)]
+ [!code-vb[ListBoxSort_snip#Sort](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ListBoxSort_snip/visualbasic/window1.xaml.vb#sort)]  
+  
+ これを行うときに、ビューが可能性がありますまたはデータを設定する方法に応じて、既定のビューができない可能性がありますを<xref:System.Windows.Controls.ItemsControl>です。 たとえば、ときに、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティにバインド、 <xref:System.Windows.Data.CollectionViewSource>、ビューを使用して取得した、<xref:System.Windows.Controls.ItemsControl.Items%2A>プロパティは既定のビューではありません。  
+  
+ 場合、<xref:System.Windows.Controls.ItemsControl>がバインドされて (を使用している、<xref:System.Windows.Controls.ItemsControl.ItemsSource%2A>プロパティ)、既定のビューを取得するには、次を行うことができます。  
+  
+ [!code-csharp[GroupingSample#MyView](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml.cs#myview)]
+ [!code-vb[GroupingSample#MyView](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GroupingSample/visualbasic/window1.xaml.vb#myview)]  
+[!code-csharp[GroupingSample#GetView](~/samples/snippets/csharp/VS_Snippets_Wpf/GroupingSample/CSharp/Window1.xaml.cs#getview)]
+[!code-vb[GroupingSample#GetView](~/samples/snippets/visualbasic/VS_Snippets_Wpf/GroupingSample/visualbasic/window1.xaml.vb#getview)]  
+  
+ 代わりに、フィルター処理、並べ替え、およびグループ化の条件を指定できます[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を使用して<xref:System.Windows.Data.CollectionViewSource>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public int Add (object newItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance int32 Add(object newItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.Add(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newItem">コレクションに追加する項目。</param>
+        <summary><see cref="T:System.Windows.Controls.ItemCollection" /> に項目を追加します。</summary>
+        <returns>位置の 0 から始まるインデックス、オブジェクトが追加されている場合は-1、項目を追加することはできません。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは ItemsSource モードです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeLiveFiltering">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveFiltering { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveFiltering" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanChangeLiveFiltering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューがデータのリアルタイム フィルター処理のオン/オフ切り替えをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          コレクション ビューがライブ フィルター処理のオン/オフ切り替えをサポートしている場合は、<see langword="true" />。それ以外の場合は、<see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeLiveGrouping">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveGrouping { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveGrouping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanChangeLiveGrouping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが、オンまたはオフに、オンにするリアルタイムでデータのグループ化をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクション ビューは、オンまたはオフ; オンにするライブのグループ化をサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanChangeLiveSorting">
+      <MemberSignature Language="C#" Value="public bool CanChangeLiveSorting { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanChangeLiveSorting" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanChangeLiveSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが同時にリアルタイムでデータの並べ替えを有効または無効をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクション ビューは、オンまたはオフ; 上のライブの並べ替えをサポートしている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanFilter">
+      <MemberSignature Language="C#" Value="public override bool CanFilter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanFilter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanFilter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション ビューがフィルター処理をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このビューは、フィルター処理をサポートしている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションには、フィルターのコールバックを割り当てる前にフィルター処理をサポートするかどうかを確認するこのプロパティを使用して、<xref:System.Windows.Controls.ItemCollection.Filter%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanGroup">
+      <MemberSignature Language="C#" Value="public override bool CanGroup { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション ビューがグループ化をサポートするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションにグループ化がサポートされている場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用して、現在の実装が使用する前にグループ化をサポートするかどうかをテストする、<xref:System.Windows.Controls.ItemCollection.GroupDescriptions%2A>プロパティを追加する<xref:System.ComponentModel.GroupDescription>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanSort">
+      <MemberSignature Language="C#" Value="public override bool CanSort { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CanSort" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CanSort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション ビューが並べ替えをサポートしているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />このビューは、並べ替えをサポートする場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコレクションが使用する前に並べ替えをサポートしているかどうか確認するには、このプロパティを使用して、<xref:System.Windows.Controls.ItemCollection.SortDescriptions%2A>プロパティを追加する<xref:System.ComponentModel.SortDescription>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コレクションをクリアし、コレクション内の現在のすべての項目の参照を解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用する方法を示します。 例では、`sbar`は、<xref:System.Windows.Controls.Primitives.StatusBar>にあるコントロール、<xref:System.Windows.Controls.ItemsControl>です。  
+  
+ [!code-csharp[StatusBar#MakeProgressBar](~/samples/snippets/csharp/VS_Snippets_Wpf/StatusBar/CSharp/Window1.xaml.cs#makeprogressbar)]
+ [!code-vb[StatusBar#MakeProgressBar](~/samples/snippets/visualbasic/VS_Snippets_Wpf/StatusBar/visualbasic/window1.xaml.vb#makeprogressbar)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Controls.ItemCollection" />に<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モード。 (ときに、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />プロパティが設定されて、<see cref="P:System.Windows.Controls.ItemsControl.Items" />読み取り専用的に固定サイズ コレクションが行われる)。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Contains">
+      <MemberSignature Language="C#" Value="public override bool Contains (object containItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Contains(object containItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.Contains(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="containItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="containItem">確認する対象のオブジェクト。</param>
+        <summary>指定した項目がこのビューでかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />項目がこのコレクションに所属しており、アクティブなフィルターです。 を渡すことを示すためにそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">コピー先の配列。</param>
+        <param name="index">コピー先の配列内の 0 から始まるインデックス。</param>
+        <summary>特定の配列インデックスを開始位置として、配列にコレクションの要素をコピーします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="array" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">転送先<paramref name="array" />が多次元です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="index" />パラメーターが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public override int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内のレコードの数を取得します。</summary>
+        <value>コレクションが初期化されていないコレクション内の項目の数または 0 の場合または内のコレクションがないかどうか、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentItem">
+      <MemberSignature Language="C#" Value="public override object CurrentItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object CurrentItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CurrentItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビュー内の現在の項目を取得します。</summary>
+        <value>ビューの現在のオブジェクトまたは<see langword="null" />コレクションが初期化されていない場合、または内のコレクションが存在しない場合、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モード。  
+  
+ 既定では、コレクションの最初の項目が現在のアイテムとして開始します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CurrentPosition">
+      <MemberSignature Language="C#" Value="public override int CurrentPosition { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CurrentPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.CurrentPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の項目をビュー内の序数位置を取得します。</summary>
+        <value>序数の位置内で、ビュー、または-1 の場合は、現在の項目のコレクションが初期化されていないまたは内のコレクションがないかどうか、<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モード。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeferRefresh">
+      <MemberSignature Language="C#" Value="public override IDisposable DeferRefresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.IDisposable DeferRefresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.DeferRefresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IDisposable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビューの変更をマージして自動更新を遅延させるために使用できる遅延サイクルを入力します。</summary>
+        <returns>呼び出し元のオブジェクトを破棄するために使用できる <see cref="T:System.IDisposable" /> オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは通常作成に使用する`using`スコープし、し、スコープ内で複数のビューを変更する呼び出しを配置します。 これにより、遅延サイクルが終了するまで、自動更新が遅延します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Filter">
+      <MemberSignature Language="C#" Value="public override Predicate&lt;object&gt; Filter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Predicate`1&lt;object&gt; Filter" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.Filter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Predicate&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>項目をビューに含めることが適切であるかどうかを決定するために使用されるコールバックを取得または設定します。</summary>
+        <value>項目をビューに含めることが適切であるかどうかを決定するために使用されるメソッド。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.ItemCollection.CanFilter%2A>プロパティを現在の実装は、このプロパティに null 以外の値を割り当てる前にフィルター処理をサポートするかどうかをテストします。  
+  
+   
+  
+## Examples  
+ 関連する例を参照してください。[する方法: ビューのフィルター データ](~/docs/framework/wpf/data/how-to-filter-data-in-a-view.md)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">フィルター処理することはサポートされていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetItemAt">
+      <MemberSignature Language="C#" Value="public override object GetItemAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object GetItemAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.GetItemAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目が存在する場所の 0 から始まるインデックス。</param>
+        <summary>このビューでは、指定した 0 から始まるインデックス位置にある項目を返します。</summary>
+        <returns>このビューで指定した 0 から始まるインデックスにある項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、並べ替え、フィルター処理、またはグループ化を使用してビューに設定されている条件を使用してインデックスを評価、<xref:System.Windows.Data.CollectionView.SortDescriptions%2A>または<xref:System.Windows.Data.CollectionView.Filter%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="index" /> が範囲外です。</exception>
+        <exception cref="T:System.InvalidOperationException">コレクションが初期化されていない、またはバインドに<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />指定、<see langword="null" />値。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GroupDescriptions">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ObservableCollection&lt;System.ComponentModel.GroupDescription&gt; GroupDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;class System.ComponentModel.GroupDescription&gt; GroupDescriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.GroupDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.ComponentModel.GroupDescription&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.ComponentModel.GroupDescription" />項目をグループ化する方法を定義するオブジェクト。</summary>
+        <value><see cref="T:System.ComponentModel.GroupDescription" /> オブジェクトの <see cref="T:System.Collections.ObjectModel.ObservableCollection`1" />。 コレクションはグループ レベルでインデックスを作成します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.ItemCollection.CanGroup%2A>プロパティを現在の実装は、追加する前にグループ化をサポートするかどうかをテストする<xref:System.ComponentModel.GroupDescription>オブジェクト。  
+  
+> [!NOTE]
+>  このプロパティは、のみオブジェクトにアクセスして、コレクションなどのさまざまなメソッドを使用して設定できます`Add`です。 コレクション オブジェクトにアクセスするプロパティは、コレクション自体は読み取り/書き込み中には、読み取り専用です。  
+  
+   
+  
+## Examples  
+ 関連する例を参照してください。<xref:System.Windows.Data.PropertyGroupDescription>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Groups">
+      <MemberSignature Language="C#" Value="public override System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;object&gt; Groups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyObservableCollection`1&lt;object&gt; Groups" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.Groups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyObservableCollection&lt;System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>に従って構築される最上位レベルのグループを取得、<see cref="P:System.Windows.Controls.ItemCollection.GroupDescriptions" />です。</summary>
+        <value>トップレベル グループに基づいて構築される、<see cref="P:System.Windows.Controls.ItemCollection.GroupDescriptions" />です。 既定値は <see langword="null" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IndexOf">
+      <MemberSignature Language="C#" Value="public override int IndexOf (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 IndexOf(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.IndexOf(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">コレクション内で検索するオブジェクト。</param>
+        <summary>指定した項目があるこのコレクションにインデックスを返します。</summary>
+        <returns>項目がコレクションに存在しない場合は-1、コレクション内の項目のインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Insert">
+      <MemberSignature Language="C#" Value="public void Insert (int insertIndex, object insertItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Insert(int32 insertIndex, object insertItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.Insert(System.Int32,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="insertIndex" Type="System.Int32" />
+        <Parameter Name="insertItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="insertIndex">項目を挿入する位置を示す 0 から始まるインデックス。</param>
+        <param name="insertItem">挿入する項目。</param>
+        <summary>コレクション内の指定したインデックス位置に要素を挿入します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 指定した位置の後にすべての項目は、いずれかで下へ移動されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは ItemsSource モードです。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrentAfterLast">
+      <MemberSignature Language="C#" Value="public override bool IsCurrentAfterLast { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentAfterLast" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsCurrentAfterLast" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューの現在の項目がコレクションの末尾を越えるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ビューの現在の項目がコレクションの末尾を越える場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCurrentBeforeFirst">
+      <MemberSignature Language="C#" Value="public override bool IsCurrentBeforeFirst { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCurrentBeforeFirst" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsCurrentBeforeFirst" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ビューの現在の項目がコレクションの先頭を越えるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />ビューの現在の項目がコレクションの先頭を越える場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public override bool IsEmpty { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEmpty" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsEmpty" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>結果の (フィルター選択された) ビューが空かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />結果のビューが空である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveFiltering">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveFiltering { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveFiltering" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsLiveFiltering" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムでデータをフィルター処理が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータをフィルター処理が有効である場合<see langword="false" />ライブ フィルター処理が有効でない場合です。<see langword="null" />コレクション ビューがライブ フィルター処理を実装するかどうかを確認できない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveGrouping">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveGrouping { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveGrouping" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsLiveGrouping" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムでデータをグループ化が有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータをグループ化が有効である場合<see langword="false" />ライブのグループ化が有効でない場合<see langword="null" />コレクション ビューがライブのグループ化を実装するかどうかを確認できない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLiveSorting">
+      <MemberSignature Language="C#" Value="public Nullable&lt;bool&gt; IsLiveSorting { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Nullable`1&lt;bool&gt; IsLiveSorting" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.IsLiveSorting" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Nullable&lt;System.Boolean&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、リアルタイムで並べ替えが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />リアルタイムでデータの並べ替えが有効である場合<see langword="false" />ライブ並べ替えが有効でない場合です。<see langword="null" />コレクション ビューがライブ並べ替えを実装するかどうかを確認できない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public object this[int index] { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">項目の 0 から始まるインデックス。</param>
+        <summary>取得または指定された 0 から始まるインデックス位置の項目を設定します。</summary>
+        <value>取得したオブジェクトまたは指定したインデックスに設定されているオブジェクトです。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">コレクションは初期化されていません、既に設定する項目が別の論理親またはコレクション<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モード。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveFilteringProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveFilteringProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveFilteringProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.LiveFilteringProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータをフィルター処理に参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータをフィルター処理に参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveGroupingProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveGroupingProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveGroupingProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.LiveGroupingProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータをグループ化に参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータをグループ化に参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LiveSortingProperties">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ObservableCollection&lt;string&gt; LiveSortingProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ObservableCollection`1&lt;string&gt; LiveSortingProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.LiveSortingProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ObservableCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リアルタイムでデータの並べ替えに参加しているプロパティを指定する文字列のコレクションを取得します。</summary>
+        <value>リアルタイムでデータの並べ替えに参加しているプロパティを指定する文字列のコレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentTo">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentTo (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentTo(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentTo(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item"><see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> として設定する項目。</param>
+        <summary>としてコレクション内の指定した項目の設定、<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />です。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentToFirst">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentToFirst ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentToFirst() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentToFirst" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー内の最初の項目が <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> になるように設定します。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentToLast">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentToLast ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentToLast() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentToLast" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー内の最後の項目が <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> になるように設定します。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentToNext">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentToNext ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentToNext() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentToNext" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー内の <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> の後の項目を <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> として設定します。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentToPosition">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentToPosition (int position);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentToPosition(int32 position) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentToPosition(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="position">として設定する項目の 0 から始まるインデックス、<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />です。</param>
+        <summary>指定したインデックスにある項目を、ビュー内の <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> になるように設定します。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MoveCurrentToPrevious">
+      <MemberSignature Language="C#" Value="public override bool MoveCurrentToPrevious ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MoveCurrentToPrevious() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.MoveCurrentToPrevious" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ビュー内の <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> の前の項目を <see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" /> として設定します。</summary>
+        <returns>
+          <see langword="true" />示すために、結果として得られる<see cref="P:System.Windows.Controls.ItemCollection.CurrentItem" />ビュー内の項目は、それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NeedsRefresh">
+      <MemberSignature Language="C#" Value="public override bool NeedsRefresh { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NeedsRefresh" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.NeedsRefresh" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを更新する必要があるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />コレクションを更新する必要がある場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PassesFilter">
+      <MemberSignature Language="C#" Value="public override bool PassesFilter (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool PassesFilter(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.PassesFilter(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">テストするオブジェクト。</param>
+        <summary>指定した項目がこのビューに属しているかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" />指定した項目がこのビューに属しているかをフィルターがないことを指定するのには、このコレクション ビューの設定します。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定した項目がこのビューに属しているかを決定するコレクションの変更通知中に通常使用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RefreshOverride">
+      <MemberSignature Language="C#" Value="protected override void RefreshOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void RefreshOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.RefreshOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Remove">
+      <MemberSignature Language="C#" Value="public void Remove (object removeItem);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Remove(object removeItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="removeItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="removeItem">削除するオブジェクト。</param>
+        <summary>コレクションまたはビューから指定した項目の参照を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションから項目が削除されると、インデックス値が大きいと残りの項目コレクションのサイズを折りたたみますいずれかによって、インデックスをデクリメントします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Controls.ItemCollection" />は読み取り専用になっているため<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モードまたは DeferRefresh が有効にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveAt">
+      <MemberSignature Language="C#" Value="public void RemoveAt (int removeIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void RemoveAt(int32 removeIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="removeIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="removeIndex">削除する項目の 0 から始まるインデックス。</param>
+        <summary>コレクションまたはビューの指定したインデックスにある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクションから項目が削除されると、インデックス値が大きいと残りの項目コレクションのサイズを折りたたみますいずれかによって、インデックスをデクリメントします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Controls.ItemCollection" />は読み取り専用になっているため<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />モードまたは DeferRefresh が有効にします。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">インデックスが範囲外です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SortDescriptions">
+      <MemberSignature Language="C#" Value="public override System.ComponentModel.SortDescriptionCollection SortDescriptions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.SortDescriptionCollection SortDescriptions" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.SortDescriptions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.SortDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得<see cref="T:System.ComponentModel.SortDescription" />ビューで、コレクション内の項目の並べ替え方法を記述するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.SortDescription" />ビューで、コレクション内の項目の並べ替え方法を記述するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Controls.ItemCollection.CanSort%2A>プロパティを現在の実装は、追加する前に並べ替えをサポートするかどうかをテストする<xref:System.ComponentModel.SortDescription>オブジェクトを<xref:System.ComponentModel.SortDescriptionCollection>です。  
+  
+> [!NOTE]
+>  このプロパティは、のみオブジェクトにアクセスして、コレクションなどのさまざまなメソッドを使用して設定できます`Add`です。 コレクション オブジェクトにアクセスするプロパティは、コレクション自体は読み取り/書き込み中には、読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceCollection">
+      <MemberSignature Language="C#" Value="public override System.Collections.IEnumerable SourceCollection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable SourceCollection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.SourceCollection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコレクション ビューの基となる並べ替えおよびフィルターのコレクションを取得します。</summary>
+        <value><see cref="T:System.Collections.IEnumerable" />されたオブジェクトを基になるコレクション、ユーザー指定<see cref="P:System.Windows.Controls.ItemsControl.ItemsSource" />コレクション。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.IsSynchronized">
+      <MemberSignature Language="C#" Value="bool System.Collections.ICollection.IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.ICollection.IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#Collections#ICollection#IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value>
+          <see langword="true" /> へのアクセスが同期されている (スレッド セーフである) 場合は <see cref="T:System.Collections.ICollection" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.ICollection.SyncRoot">
+      <MemberSignature Language="C#" Value="object System.Collections.ICollection.SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.Collections.ICollection.SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#Collections#ICollection#SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value><see cref="T:System.Collections.ICollection" /> へのアクセスを同期するために使用できるオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsFixedSize">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsFixedSize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsFixedSize" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#Collections#IList#IsFixedSize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value>
+          <see langword="true" /> が固定サイズの場合は <see cref="T:System.Collections.IList" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Collections.IList.IsReadOnly">
+      <MemberSignature Language="C#" Value="bool System.Collections.IList.IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.Collections.IList.IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#Collections#IList#IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <value>
+          <see cref="T:System.Collections.IList" /> が読み取り専用である場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.AddNew">
+      <MemberSignature Language="C#" Value="object IEditableCollectionView.AddNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.IEditableCollectionView.AddNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#AddNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい項目をコレクションに追加します。</summary>
+        <returns>コレクションに追加された新しい項目。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CanAddNew">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionView.CanAddNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionView.CanAddNew" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CanAddNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しい項目をコレクションに追加できるかどうかを示す値を取得します。</summary>
+        <value>
+          新しい項目をコレクションに追加できる場合は <see langword="true" />、それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CanCancelEdit">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionView.CanCancelEdit { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionView.CanCancelEdit" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CanCancelEdit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューが保留中の変更を破棄して、編集されたオブジェクトの元の値を復元できるかどうかを示す値を取得します。</summary>
+        <value>
+          コレクション ビューが保留中の変更を破棄して、編集されたオブジェクトの元の値を復元できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CancelEdit">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.CancelEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.CancelEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CancelEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集トランザクションを終了し、可能な場合は、項目の元の値を復元します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CancelNew">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.CancelNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.CancelNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CancelNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加トランザクションを終了し、保留中の新しい項目を破棄します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CanRemove">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionView.CanRemove { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionView.CanRemove" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CanRemove" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションから項目を削除できるかどうかを示す値を取得します。</summary>
+        <value>
+          コレクションから項目を削除できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CommitEdit">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.CommitEdit ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.CommitEdit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CommitEdit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>編集トランザクションを終了し、保留中の変更を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CommitNew">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.CommitNew ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.CommitNew() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CommitNew" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>追加トランザクションを終了し、保留中の新しい項目を保存します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CurrentAddItem">
+      <MemberSignature Language="C#" Value="object System.ComponentModel.IEditableCollectionView.CurrentAddItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.ComponentModel.IEditableCollectionView.CurrentAddItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CurrentAddItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在の追加トランザクション処理中に追加される項目を取得します。</summary>
+        <value>場合は追加される項目<see cref="P:System.ComponentModel.IEditableCollectionView.IsAddingNew" />は<see langword="true" />、それ以外の<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.CurrentEditItem">
+      <MemberSignature Language="C#" Value="object System.ComponentModel.IEditableCollectionView.CurrentEditItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object System.ComponentModel.IEditableCollectionView.CurrentEditItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#CurrentEditItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集されているコレクション内の項目を取得します。</summary>
+        <value><see cref="P:System.ComponentModel.IEditableCollectionView.IsEditingItem" /> が <see langword="true" /> である場合は、編集されているコレクション内の項目。それ以外の場合は、<see langword="null" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.EditItem">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.EditItem (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.EditItem(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#EditItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">編集する項目。</param>
+        <summary>指定した項目の編集トランザクションを開始します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.IsAddingNew">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionView.IsAddingNew { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionView.IsAddingNew" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#IsAddingNew" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>追加トランザクションが実行中かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />追加トランザクションが実行中である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.IsEditingItem">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionView.IsEditingItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionView.IsEditingItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#IsEditingItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>編集トランザクションが実行中かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />編集トランザクションが実行中である場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition">
+      <MemberSignature Language="C#" Value="System.ComponentModel.NewItemPlaceholderPosition System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ComponentModel.NewItemPlaceholderPosition System.ComponentModel.IEditableCollectionView.NewItemPlaceholderPosition" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#NewItemPlaceholderPosition" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.NewItemPlaceholderPosition</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション ビューにある新しい項目のプレースホルダーの位置を取得または設定します。</summary>
+        <value>コレクション ビューにある新しい項目のプレースホルダーの位置を指定する列挙値の 1 つ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.Remove">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.Remove (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.Remove(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#Remove(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">削除する項目。</param>
+        <summary>指定した項目をコレクションから削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionView.RemoveAt">
+      <MemberSignature Language="C#" Value="void IEditableCollectionView.RemoveAt (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.ComponentModel.IEditableCollectionView.RemoveAt(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionView#RemoveAt(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">削除する項目の位置。</param>
+        <summary>コレクション内の指定した位置にある項目を削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionView> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionViewAddNewItem.AddNewItem">
+      <MemberSignature Language="C#" Value="object IEditableCollectionViewAddNewItem.AddNewItem (object newItem);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance object System.ComponentModel.IEditableCollectionViewAddNewItem.AddNewItem(object newItem) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionViewAddNewItem#AddNewItem(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="newItem" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="newItem">コレクションに追加するオブジェクト。</param>
+        <summary>指定したオブジェクトをコレクションに追加します。</summary>
+        <returns>コレクションに追加されたオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionViewAddNewItem> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IEditableCollectionViewAddNewItem.CanAddNewItem">
+      <MemberSignature Language="C#" Value="bool System.ComponentModel.IEditableCollectionViewAddNewItem.CanAddNewItem { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool System.ComponentModel.IEditableCollectionViewAddNewItem.CanAddNewItem" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IEditableCollectionViewAddNewItem#CanAddNewItem" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定したオブジェクトをコレクションに追加できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、指定したオブジェクトをコレクションに追加できます。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IEditableCollectionViewAddNewItem> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.ComponentModel.IItemProperties.ItemProperties">
+      <MemberSignature Language="C#" Value="System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ComponentModel.ItemPropertyInfo&gt; System.ComponentModel.IItemProperties.ItemProperties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;class System.ComponentModel.ItemPropertyInfo&gt; System.ComponentModel.IItemProperties.ItemProperties" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.ItemCollection.System#ComponentModel#IItemProperties#ItemProperties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.ComponentModel.ItemPropertyInfo&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクション内の項目で使用可能なプロパティに関する情報を含むコレクションを取得します。</summary>
+        <value>コレクション内の項目で使用可能なプロパティに関する情報を含むコレクションです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.ComponentModel.IItemProperties> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.IWeakEventListener.ReceiveWeakEvent">
+      <MemberSignature Language="C#" Value="bool IWeakEventListener.ReceiveWeakEvent (Type managerType, object sender, EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance bool System.Windows.IWeakEventListener.ReceiveWeakEvent(class System.Type managerType, object sender, class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.ItemCollection.System#Windows#IWeakEventListener#ReceiveWeakEvent(System.Type,System.Object,System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="managerType" Type="System.Type" />
+        <Parameter Name="sender" Type="System.Object" />
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="managerType">型、<see cref="T:System.Windows.WeakEventManager" />このメソッドを呼び出します。</param>
+        <param name="sender">イベントを発生させたオブジェクト。</param>
+        <param name="e">イベント データ。</param>
+        <summary>中央のイベント マネージャーからイベントを受信します。</summary>
+        <returns>
+          <see langword="true" />リスナーがイベントを処理する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Windows.Controls.ItemCollection> のインスタンスが <xref:System.Windows.IWeakEventListener> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

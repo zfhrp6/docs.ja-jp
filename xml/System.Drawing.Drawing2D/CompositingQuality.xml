@@ -1,0 +1,121 @@
+<Type Name="CompositingQuality" FullName="System.Drawing.Drawing2D.CompositingQuality">
+  <TypeSignature Language="C#" Value="public enum CompositingQuality" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed CompositingQuality extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Drawing2D.CompositingQuality" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>合成時に使用する品質レベルを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 合成は、元のピクセルが結果としてピクセルを生成するために、移行先ピクセルと組み合わせると、レンダリング中に行われます。 合成の品質は直接画質の出力に関連して、レンダリング時間に反比例します。 品質が高くなるほど、レンダリングに時間が遅くなります。 これは、品質レベルが高いほどより周囲のピクセルを複合時に考慮する必要があるためです。 線形の品質画質がわずかに下がります速度で既定の品質を提供することによってセキュリティが侵害 (AssumeLinear) を設定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AssumeLinear">
+      <MemberSignature Language="C#" Value="AssumeLinear" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality AssumeLinear = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.AssumeLinear" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>線形の値を想定しています。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定の品質。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="GammaCorrected">
+      <MemberSignature Language="C#" Value="GammaCorrected" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality GammaCorrected = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.GammaCorrected" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ガンマ補正を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HighQuality">
+      <MemberSignature Language="C#" Value="HighQuality" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality HighQuality = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.HighQuality" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高品質では、低速の複合です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="HighSpeed">
+      <MemberSignature Language="C#" Value="HighSpeed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality HighSpeed = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.HighSpeed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>高速で低品質です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Invalid">
+      <MemberSignature Language="C#" Value="Invalid" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Drawing.Drawing2D.CompositingQuality Invalid = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Drawing.Drawing2D.CompositingQuality.Invalid" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Drawing2D.CompositingQuality</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>無効な品質。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,186 @@
+<Type Name="ComponentResourceManager" FullName="System.ComponentModel.ComponentResourceManager">
+  <TypeSignature Language="C#" Value="public class ComponentResourceManager : System.Resources.ResourceManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ComponentResourceManager extends System.Resources.ResourceManager" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.ComponentResourceManager" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Resources.ResourceManager</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コンポーネントまたはオブジェクトのリソースを列挙するためには、単純な機能を提供します。 <see cref="T:System.ComponentModel.ComponentResourceManager" />クラスは、<see cref="T:System.Resources.ResourceManager" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.ComponentModel.ComponentResourceManager>にイメージ リソースを割り当てる、<xref:System.Windows.Forms.ToolStripItem.Image%2A>プロパティ<xref:System.Windows.Forms.ToolStripButton>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.ContextMenuStrip#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStrip/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ContextMenuStrip#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStrip/VB/form1.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentResourceManager ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentResourceManager.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ComponentModel.ComponentResourceManager" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComponentResourceManager (Type t);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type t) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentResourceManager.#ctor(System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="t" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="t">A<see cref="T:System.Type" />元となる、<see cref="T:System.ComponentModel.ComponentResourceManager" />リソース ファイルを検索するためのすべての情報を派生します。</param>
+        <summary>作成、<see cref="T:System.ComponentModel.ComponentResourceManager" />から、指定した情報に基づいて、サテライト アセンブリにリソースを検索する<see cref="T:System.Type" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、使用する方法を示します<xref:System.ComponentModel.ComponentResourceManager>にイメージ リソースを割り当てる、<xref:System.Windows.Forms.ToolStripItem.Image%2A>プロパティ<xref:System.Windows.Forms.ToolStripButton>コントロール。  
+  
+ [!code-csharp[System.Windows.Forms.ContextMenuStrip#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStrip/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ContextMenuStrip#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStrip/VB/form1.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyResources">
+      <MemberSignature Language="C#" Value="public void ApplyResources (object value, string objectName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ApplyResources(object value, string objectName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentResourceManager.ApplyResources(System.Object,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="objectName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />を適用するプロパティ値を格納します。</param>
+        <param name="objectName">A<see cref="T:System.String" />リソース内を検索するオブジェクトの名前を格納しています。</param>
+        <summary>オブジェクトのプロパティの対応するリソースの値を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、開発環境で使用される現在のカルチャのすべてのリソースをチェックします。 形式でキーを使用してリソースを見つけるにはその`objectName.propertyName`ここで、`objectName`パラメーターとして渡されると`propertyName`プロパティの名前を指定します。 そのリソースの適用、`value`オブジェクトの対応するプロパティです。 一致するプロパティがない場合は、リソースは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> または <paramref name="objectName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplyResources">
+      <MemberSignature Language="C#" Value="public virtual void ApplyResources (object value, string objectName, System.Globalization.CultureInfo culture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void ApplyResources(object value, string objectName, class System.Globalization.CultureInfo culture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.ComponentResourceManager.ApplyResources(System.Object,System.String,System.Globalization.CultureInfo)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="objectName" Type="System.String" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />を適用するプロパティ値を格納します。</param>
+        <param name="objectName">A<see cref="T:System.String" />リソース内を検索するオブジェクトの名前を格納しています。</param>
+        <param name="culture">リソースを適用する対象のカルチャ。</param>
+        <summary>オブジェクトのプロパティの対応するリソースの値を適用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、指定されたカルチャのすべてのリソースをチェックします。 場合`culture`は`null`、現在のカルチャが使用されます。  
+  
+ <xref:System.ComponentModel.ComponentResourceManager.ApplyResources%2A>メソッドの形式でキーを使用してリソースを検索しようとしました。`objectName.propertyName`ここで、`objectName`パラメーターとして渡されると`propertyName`プロパティの名前を指定します。 そのリソースの適用、`value`オブジェクトの対応するプロパティです。 一致するプロパティがない場合は、リソースは無視されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> または <paramref name="objectName" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,263 @@
+<Type Name="XamlTypeMapper" FullName="System.Windows.Markup.XamlTypeMapper">
+  <TypeSignature Language="C#" Value="public class XamlTypeMapper" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlTypeMapper extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Markup.XamlTypeMapper" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XAML 要素名を適切な CLR にマップ<see cref="T:System.Type" />アセンブリ。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XamlTypeMapper>別のコンテキストを提供する高度な WPF シナリオの一部である<xref:System.Windows.Markup.XamlReader>と<xref:System.Windows.Markup.XamlWriter>です。 [!INCLUDE[net_v40_short](~/includes/net-v40-short-md.md)] 、WPF アプリケーションを検討してくださいオーバーライド<xref:System.Xaml.XamlSchemaContext>使用しようとするのではなく、このシナリオの<xref:System.Windows.Markup.XamlTypeMapper>します。  
+  
+ <xref:System.Windows.Markup.XamlTypeMapper>アプリケーションよりも直接的な手法をカスタム マッピング情報を XAML パーサーを提供するために使用できる<xref:System.Windows.Markup.XmlnsDefinitionAttribute>アセンブリ コードの値。 アセンブリでは、すべての CLR 名前空間の統合または再コンパイルすることがなく既存のアセンブリを追加するだけで XAML の準備完了である型を参照するのに役立ちます。 この場合があります<xref:System.Windows.Markup.XmlnsDefinitionAttribute>属性設定します。  
+  
+ 通常を作成する、<xref:System.Windows.Markup.XamlTypeMapper>インスタンスを指定するために、<xref:System.Windows.Markup.ParserContext.XamlTypeMapper%2A>のプロパティの値、<xref:System.Windows.Markup.ParserContext>です。 <xref:System.Windows.Markup.ParserContext>さらのコンテキストとして使用できます、<xref:System.Windows.Markup.XamlReader.Load%28System.IO.Stream%2CSystem.Windows.Markup.ParserContext%29?displayProperty=nameWithType>呼び出します。  
+  
+## <a name="default-mapper"></a>既定のマッパー  
+ 使用して既定のマッパーを取得することができます、<xref:System.Windows.Markup.XamlTypeMapper.DefaultMapper%2A>静的プロパティです。 既定のマッパーは、既定のアセンブリ リストでのみ機能します。 アセンブリに関する特定の情報はありません (で定義されている<xref:System.Windows.Markup.XamlTypeMapper>コンス トラクター) を使用します。  
+  
+<a name="xamlTextUsage_XamlTypeMapper"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeMapper (string[] assemblyNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] assemblyNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.#ctor(System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyNames">アセンブリ名の配列、<see cref="T:System.Windows.Markup.XamlTypeMapper" />を使用してください。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.XamlTypeMapper" />アセンブリの配列を指定してクラス名、<see cref="T:System.Windows.Markup.XamlTypeMapper" />を使用してください。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assemblyNames" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeMapper (string[] assemblyNames, System.Windows.Markup.NamespaceMapEntry[] namespaceMaps);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string[] assemblyNames, class System.Windows.Markup.NamespaceMapEntry[] namespaceMaps) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.#ctor(System.String[],System.Windows.Markup.NamespaceMapEntry[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="assemblyNames" Type="System.String[]" />
+        <Parameter Name="namespaceMaps" Type="System.Windows.Markup.NamespaceMapEntry[]" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyNames">アセンブリ名の配列、<see cref="T:System.Windows.Markup.XamlTypeMapper" />を使用してください。</param>
+        <param name="namespaceMaps">マップの名前空間の配列、<see cref="T:System.Windows.Markup.XamlTypeMapper" />を使用してください。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Markup.XamlTypeMapper" />クラス、アセンブリ名の指定した配列を使用して、指定した名前空間にマップします。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assemblyNames" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddMappingProcessingInstruction">
+      <MemberSignature Language="C#" Value="public void AddMappingProcessingInstruction (string xmlNamespace, string clrNamespace, string assemblyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddMappingProcessingInstruction(string xmlNamespace, string clrNamespace, string assemblyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.AddMappingProcessingInstruction(System.String,System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="clrNamespace" Type="System.String" />
+        <Parameter Name="assemblyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlNamespace">XML 名前空間のプレフィックス.</param>
+        <param name="clrNamespace">マップする型を含む CLR 名前空間。</param>
+        <param name="assemblyName">CLR 名前空間を含むアセンブリです。</param>
+        <summary>アセンブリ、XML 名前空間と CLR 名前空間の間のマッピングを定義し、これらを追加、<see cref="T:System.Windows.Markup.XamlTypeMapper" />情報。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Markup.XamlTypeMapper.AddMappingProcessingInstruction%2A>マッピングを追加するプログラムによる方法です。  たとえば、次の XAML mapping 命令のさまざまな部分のパラメーターに対応している、 <xref:System.Windows.Markup.XamlTypeMapper.AddMappingProcessingInstruction%2A>:  
+  
+```  
+<Window xmlns:SDK="clr-namespace:Samples;assembly=SDKSamples">  
+...  
+```  
+  
+ `xmlNamespace`は`SDK`、`clrNamespace`は`Samples`、および`assemblyName`は`SDKSamples`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlNamespace" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="clrNamespace" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="assemblyName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowInternalType">
+      <MemberSignature Language="C#" Value="protected virtual bool AllowInternalType (Type type);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance bool AllowInternalType(class System.Type type) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.AllowInternalType(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="type" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="type">アクセスの種類。</param>
+        <summary>アクセス許可を要求、<see cref="T:System.Windows.Markup.XamlTypeMapper" />と呼ばれる特定の内部型へのアクセスに完全な信頼の種類を派生します。</summary>
+        <returns>
+          <see langword="true" />内部の型にアクセスできる場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラスによってオーバーライドされていない場合<xref:System.Windows.Markup.XamlTypeMapper.AllowInternalType%2A>は常に返します`false`です。  
+  
+ サブクラスによってオーバーライドされると、動作になっているはず<xref:System.Windows.Markup.XamlTypeMapper.AllowInternalType%2A>返す必要があります`true`内部の型は、アクセス、それ以外の場合`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultMapper">
+      <MemberSignature Language="C#" Value="public static System.Windows.Markup.XamlTypeMapper DefaultMapper { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Markup.XamlTypeMapper DefaultMapper" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Markup.XamlTypeMapper.DefaultMapper" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Markup.XamlTypeMapper</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インスタンスを取得、<see cref="T:System.Windows.Markup.XamlTypeMapper" />いずれかが指定されていない場合に使用します。</summary>
+        <value>既定のタイプ マッパー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のマッパーは、既定のアセンブリ リストでのみ機能します。 アセンブリに関する特定の情報はありません (で定義されている<xref:System.Windows.Markup.XamlTypeMapper>コンス トラクター) を使用します。 既定のアセンブリ リストは、現在の実装: `WindowsBase`、 `PresentationCore`、`PresentationFramework`です。  
+  
+ 既定のマッパーを使用しても、使用できないことカスタム アセンブリ/種類 XAML でまったくとは限りません。 カスタム型とアセンブリを使用する場合とのマッピングを作成する従来の XAML の手法を使用し、必要がありますに過ぎません`xmlns`型またはアセンブリが参照される場所、型マッパー API ではなく各 XAML ページ内の属性です。 詳細については、次を参照してください。 [XAML 名前空間と WPF XAML のマッピングの Namespace](~/docs/framework/wpf/advanced/xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetType">
+      <MemberSignature Language="C#" Value="public Type GetType (string xmlNamespace, string localName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Type GetType(string xmlNamespace, string localName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.GetType(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="xmlNamespace" Type="System.String" />
+        <Parameter Name="localName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xmlNamespace">指定された XML 名前空間プレフィックス。</param>
+        <param name="localName">取得、マップされている XAML 要素の"local"名前<see cref="T:System.Type" />用です。 このコンテキストでローカル意味と、指定したマップ<c>xmlNamespace</c>です。</param>
+        <summary>CLR の取得<see cref="T:System.Type" />名を使用して、指定された XML 名前空間プレフィックスと要素を指定された XAML 要素がマップされています。</summary>
+        <returns><see cref="T:System.Type" />オブジェクト、または<see langword="null" />マッピングできませんでした。 解決された場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型が見つからない場合、提供された情報にマップされる`null`が返されます。  
+  
+ 一部として、プレフィックスを含めないでください`localName`です。 XAML 要素の情報を付けるいずれかの分離に`xmlNamespace`と`localName`この API 呼び出しのコンポーネントです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xmlNamespace" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="localName" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetAssemblyPath">
+      <MemberSignature Language="C#" Value="public void SetAssemblyPath (string assemblyName, string assemblyPath);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetAssemblyPath(string assemblyName, string assemblyPath) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Markup.XamlTypeMapper.SetAssemblyPath(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="assemblyName" Type="System.String" />
+        <Parameter Name="assemblyPath" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="assemblyName">拡張機能または指定されたパスはなく、アセンブリの短い名前 (に相当<see cref="P:System.Reflection.AssemblyName.Name" />)。</param>
+        <param name="assemblyPath">アセンブリのファイル パス。 アセンブリのパスは、ファイル拡張子を含むファイルの完全パスである必要があります。</param>
+        <summary>アセンブリの読み込み時に使用するパスを指定します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="assemblyName" /> は <see langword="null" /> です  
+  
+ または  
+  
+ <paramref name="assemblyPath" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Windows.Markup.XamlParseException">
+          <paramref name="assemblyName" /> は <see cref="F:System.String.Empty" /> です  
+  
+ または  
+  
+ <paramref name="assemblyPath" /> は <see cref="F:System.String.Empty" /> です  
+  
+ または  
+  
+ <paramref name="assemblyPath" />ファイル拡張子を含むファイルの完全パスではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

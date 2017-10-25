@@ -1,0 +1,402 @@
+<Type Name="XamlTypeName" FullName="System.Xaml.Schema.XamlTypeName">
+  <TypeSignature Language="C#" Value="public class XamlTypeName" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XamlTypeName extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.Schema.XamlTypeName" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("{{{Namespace}}}{Name}{TypeArgStringForDebugger}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>名前と名前空間の観点から XAML 型を指定するための手段を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.XamlType>一方、XAML 型システムで、型情報クラスは、<xref:System.Xaml.Schema.XamlTypeName>は、その型を指定するさまざまな方法を提供するデータ構造です。 <xref:System.Xaml.Schema.XamlTypeName>生成するための静的ヘルパー メソッドも提供、 <xref:System.Xaml.Schema.XamlTypeName> XAML 名前空間の既存の型の識別子を解決することによってです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Xaml.Schema.XamlTypeName" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeName (System.Xaml.XamlType xamlType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Xaml.XamlType xamlType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.#ctor(System.Xaml.XamlType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlType" Type="System.Xaml.XamlType" />
+      </Parameters>
+      <Docs>
+        <param name="xamlType">既存の <see cref="T:System.Xaml.XamlType" />。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Schema.XamlTypeName" />クラス、既存の<see cref="T:System.Xaml.XamlType" />します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="xamlType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeName (string xamlNamespace, string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xamlNamespace, string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.#ctor(System.String,System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">XAML 名前空間名を含むです。</param>
+        <param name="name">作成する型の名前、<see cref="T:System.Xaml.Schema.XamlTypeName" />用です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Schema.XamlTypeName" />クラス、名前と名前空間の文字列に基づいています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public XamlTypeName (string xamlNamespace, string name, System.Collections.Generic.IEnumerable&lt;System.Xaml.Schema.XamlTypeName&gt; typeArguments);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string xamlNamespace, string name, class System.Collections.Generic.IEnumerable`1&lt;class System.Xaml.Schema.XamlTypeName&gt; typeArguments) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.#ctor(System.String,System.String,System.Collections.Generic.IEnumerable{System.Xaml.Schema.XamlTypeName})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="xamlNamespace" Type="System.String" />
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="typeArguments" Type="System.Collections.Generic.IEnumerable&lt;System.Xaml.Schema.XamlTypeName&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="xamlNamespace">XAML 名前空間を含む<c>名前</c>です。</param>
+        <param name="name">作成する型の名前、<see cref="T:System.Xaml.Schema.XamlTypeName" />用です。</param>
+        <param name="typeArguments">それぞれの必要があります、型引数の配列、<see cref="T:System.Xaml.Schema.XamlTypeName" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Xaml.Schema.XamlTypeName" />クラス、名前と名前空間の文字列だけでなく、型引数の配列に基づいています。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、ジェネリック型とその型の型引数を指定する場合に使用するシグネチャです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeName.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構築するために使用される名前を取得<see cref="T:System.Xaml.Schema.XamlTypeName" />です。</summary>
+        <value>型の名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xaml.XamlType>構築するために使用された<xref:System.Xaml.Schema.XamlTypeName>の値<xref:System.Xaml.Schema.XamlTypeName.Name%2A>は<xref:System.Xaml.XamlType.Name%2A?displayProperty=nameWithType>します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Namespace">
+      <MemberSignature Language="C#" Value="public string Namespace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Namespace" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeName.Namespace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構築するために使用される XAML 名前空間識別子を取得<see cref="T:System.Xaml.Schema.XamlTypeName" />です。</summary>
+        <value>XAML 名前空間識別子。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xaml.XamlType>構築するために使用された<xref:System.Xaml.Schema.XamlTypeName>の値<xref:System.Xaml.Schema.XamlTypeName.Namespace%2A>は`xamlType.GetXamlNamespaces()[0]`します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Xaml.Schema.XamlTypeName Parse (string typeName, System.Xaml.IXamlNamespaceResolver namespaceResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Xaml.Schema.XamlTypeName Parse(string typeName, class System.Xaml.IXamlNamespaceResolver namespaceResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.Parse(System.String,System.Xaml.IXamlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.Schema.XamlTypeName</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="namespaceResolver" Type="System.Xaml.IXamlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">作成する型の名前、<see cref="T:System.Xaml.Schema.XamlTypeName" />の値します。</param>
+        <param name="namespaceResolver">実装するオブジェクトまたはサービス プロバイダー<see cref="T:System.Xaml.IXamlNamespaceResolver" />です。</param>
+        <summary>提供、<see cref="T:System.Xaml.Schema.XamlTypeName" />値型の名前と名前空間にマークアップ プレフィックスを解決できるオブジェクトに基づいています。</summary>
+        <returns>作成された <see cref="T:System.Xaml.Schema.XamlTypeName" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> または <paramref name="namespaceResolver" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">文字列を解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ParseList">
+      <MemberSignature Language="C#" Value="public static System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt; ParseList (string typeNameList, System.Xaml.IXamlNamespaceResolver namespaceResolver);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Collections.Generic.IList`1&lt;class System.Xaml.Schema.XamlTypeName&gt; ParseList(string typeNameList, class System.Xaml.IXamlNamespaceResolver namespaceResolver) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.ParseList(System.String,System.Xaml.IXamlNamespaceResolver)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeNameList" Type="System.String" />
+        <Parameter Name="namespaceResolver" Type="System.Xaml.IXamlNamespaceResolver" />
+      </Parameters>
+      <Docs>
+        <param name="typeNameList">複数の種類を表す文字列。</param>
+        <param name="namespaceResolver">実装するオブジェクトまたはサービス プロバイダー<see cref="T:System.Xaml.IXamlNamespaceResolver" />です。</param>
+        <summary>提供、<see cref="T:System.Xaml.Schema.XamlTypeName" />値、複数の型名を指定できる文字列および名前空間にマークアップ プレフィックスを解決できるオブジェクトに基づいています。</summary>
+        <returns>作成された <see cref="T:System.Xaml.Schema.XamlTypeName" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 入れ子にされた型名または複数の種類名解析操作でこのメソッドで有効になっているの BNF を次に示します。  
+  
+```  
+NestedTypeName = Name | Name '+' NestedTypeName  
+TypeName = NestedTypeName | NestedTypeName ‘[]’  
+XamlTypeName = Prefix ‘:’ TypeName TypeArgs  | TypeName TypeArgs  
+TypeArgs = empty | ‘(‘ XamlTypeNameList ‘)’  
+XamlTypeNameList = XamlTypeName XamlTypeNameList1  
+XamlTypeNameList1 = empty | ‘,’ XamlTypeNameList  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeNameList" /> または <paramref name="namespaceResolver" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.FormatException">文字列を解析できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この値に変換します<see cref="T:System.Xaml.Schema.XamlTypeName" />をそれと等価な文字列形式。</summary>
+        <returns>等価な文字列形式をこの<see cref="T:System.Xaml.Schema.XamlTypeName" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この署名は呼び出すことと同じ<xref:System.Xaml.Schema.XamlTypeName.ToString%28System.Xaml.INamespacePrefixLookup%29>を渡して、`null`の`prefixLookup`します。 s  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (System.Xaml.INamespacePrefixLookup prefixLookup);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.Xaml.INamespacePrefixLookup prefixLookup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.ToString(System.Xaml.INamespacePrefixLookup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="prefixLookup" Type="System.Xaml.INamespacePrefixLookup" />
+      </Parameters>
+      <Docs>
+        <param name="prefixLookup">プレフィックス検索サービスの参照。</param>
+        <summary>この値に変換します<see cref="T:System.Xaml.Schema.XamlTypeName" />それと等価な文字列形式を使用できるマークアップの構文では、型のオブジェクト要素の使用をします。</summary>
+        <returns>使用状況のプレフィックス付き文字列です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="P:System.Xaml.Schema.XamlTypeName.Namespace" />この<see cref="T:System.Xaml.Schema.XamlTypeName" />は<see langword="null" />します。  
+  
+ または  
+  
+ <see cref="P:System.Xaml.Schema.XamlTypeName.Name" /> が無効です。  
+  
+ または  
+  
+ プレフィックスを検索できませんでした。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt; typeNameList, System.Xaml.INamespacePrefixLookup prefixLookup);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(class System.Collections.Generic.IList`1&lt;class System.Xaml.Schema.XamlTypeName&gt; typeNameList, class System.Xaml.INamespacePrefixLookup prefixLookup) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.ToString(System.Collections.Generic.IList{System.Xaml.Schema.XamlTypeName},System.Xaml.INamespacePrefixLookup)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeNameList" Type="System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt;" />
+        <Parameter Name="prefixLookup" Type="System.Xaml.INamespacePrefixLookup" />
+      </Parameters>
+      <Docs>
+        <param name="typeNameList">型のリスト。</param>
+        <param name="prefixLookup">プレフィックス検索サービスの参照。</param>
+        <summary>この値に変換します<see cref="T:System.Xaml.Schema.XamlTypeName" />それと等価な文字列形式を使用できるマークアップの構文では複数の種類のオブジェクト要素の使用にします。</summary>
+        <returns>型のすべての結果の連結された文字列。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="prefixLookup" /> または <paramref name="typeNameList" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParse">
+      <MemberSignature Language="C#" Value="public static bool TryParse (string typeName, System.Xaml.IXamlNamespaceResolver namespaceResolver, out System.Xaml.Schema.XamlTypeName result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParse(string typeName, class System.Xaml.IXamlNamespaceResolver namespaceResolver, [out] class System.Xaml.Schema.XamlTypeName&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.TryParse(System.String,System.Xaml.IXamlNamespaceResolver,System.Xaml.Schema.XamlTypeName@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeName" Type="System.String" />
+        <Parameter Name="namespaceResolver" Type="System.Xaml.IXamlNamespaceResolver" />
+        <Parameter Name="result" Type="System.Xaml.Schema.XamlTypeName&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="typeName">作成する型の名前、<see cref="T:System.Xaml.Schema.XamlTypeName" />の値します。</param>
+        <param name="namespaceResolver">実装するオブジェクトまたはサービス プロバイダー<see cref="T:System.Xaml.IXamlNamespaceResolver" />です。</param>
+        <param name="result">Out パラメーターを含む、作成した<see cref="T:System.Xaml.Schema.XamlTypeName" />場合は、戻り値は<see langword="true" />します。</param>
+        <summary>提供、<see cref="T:System.Xaml.Schema.XamlTypeName" />値型の名前と名前空間にマークアップ プレフィックスを解決できるオブジェクトに基づいています。</summary>
+        <returns>
+          <see langword="true" />解析が成功した場合と<paramref name="result" />役に立つ値が含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeName" /> または <paramref name="namespaceResolver" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TryParseList">
+      <MemberSignature Language="C#" Value="public static bool TryParseList (string typeNameList, System.Xaml.IXamlNamespaceResolver namespaceResolver, out System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt; result);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryParseList(string typeNameList, class System.Xaml.IXamlNamespaceResolver namespaceResolver, [out] class System.Collections.Generic.IList`1&lt;class System.Xaml.Schema.XamlTypeName&gt;&amp; result) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Xaml.Schema.XamlTypeName.TryParseList(System.String,System.Xaml.IXamlNamespaceResolver,System.Collections.Generic.IList{System.Xaml.Schema.XamlTypeName}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="typeNameList" Type="System.String" />
+        <Parameter Name="namespaceResolver" Type="System.Xaml.IXamlNamespaceResolver" />
+        <Parameter Name="result" Type="System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="typeNameList">複数の種類を表す文字列。</param>
+        <param name="namespaceResolver">実装するオブジェクトまたはサービス プロバイダー<see cref="T:System.Xaml.IXamlNamespaceResolver" />です。</param>
+        <param name="result">Out パラメーターを含む、作成した<see cref="T:System.Xaml.Schema.XamlTypeName" />場合は、戻り値は<see langword="true" />します。</param>
+        <summary>提供、<see cref="T:System.Xaml.Schema.XamlTypeName" />値、複数の型名を指定できる文字列および名前空間にマークアップ プレフィックスを解決できるオブジェクトに基づいています。</summary>
+        <returns>
+          <see langword="true" />解析が成功した場合と<paramref name="result" />役に立つ値が含まれています。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="typeNameList" /> または <paramref name="namespaceResolver" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="TypeArguments">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt; TypeArguments { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;class System.Xaml.Schema.XamlTypeName&gt; TypeArguments" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.Schema.XamlTypeName.TypeArguments" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Xaml.Schema.XamlTypeName&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>構築するために使用される型引数を取得<see cref="T:System.Xaml.Schema.XamlTypeName" />です。</summary>
+        <value>存在する場合の型引数。 null も指定できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.Xaml.XamlType>構築するために使用された<xref:System.Xaml.Schema.XamlTypeName>の値<xref:System.Xaml.Schema.XamlTypeName.TypeArguments%2A>から形成される<xref:System.Xaml.XamlType.TypeArguments%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

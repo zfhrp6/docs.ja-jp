@@ -1,0 +1,122 @@
+<Type Name="ApplicationSecurityManager" FullName="System.Security.Policy.ApplicationSecurityManager">
+  <TypeSignature Language="C#" Value="public static class ApplicationSecurityManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit ApplicationSecurityManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Policy.ApplicationSecurityManager" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>マニフェストでアクティブ化されるアプリケーションの信頼の決定を管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationSecurityManager>クラスは、マニフェストに基づくアプリケーションの実行に不可欠な情報を提供します。 <xref:System.Security.Policy.ApplicationSecurityManager.ApplicationTrustManager%2A>プロパティは、アプリケーションが信頼されているかどうかを判断する、信頼マネージャーを識別します。 <xref:System.Security.Policy.ApplicationSecurityManager.DetermineApplicationTrust%2A>メソッドは、アプリケーションが信頼されているかどうかを決定するマネージャー アプリケーションの信頼を呼び出します。 <xref:System.Security.Policy.ApplicationSecurityManager.UserApplicationTrusts%2A>プロパティには、ユーザーのキャッシュされた信頼性の決定が含まれています。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ApplicationTrustManager">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.IApplicationTrustManager ApplicationTrustManager { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Policy.IApplicationTrustManager ApplicationTrustManager" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityManager.ApplicationTrustManager" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.IApplicationTrustManager</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のアプリケーション信頼マネージャーを取得します。</summary>
+        <value><see cref="T:System.Security.Policy.IApplicationTrustManager" />を表す現在の信頼マネージャー。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在のリリースでは、カスタム実装は、1 つだけの信頼マネージャーの<xref:System.Security.Policy.IApplicationTrustManager>インターフェイスです。 信頼マネージャーの既定の実装では、許可をユーザーにアプリケーションをインストールし、アプリケーションに付与されるアクセス許可を昇格するように求められます。 その他の信頼マネージャーの実装では、別のユーザー エクスペリエンスがあります。 たとえば、実装は情報をユーザーに確認するのではなく、信頼されたアプリケーションは、エンタープライズ リストを確認する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.Policy.PolicyException">このアプリケーションのポリシーには、信頼マネージャーはありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">表示およびポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="DetermineApplicationTrust">
+      <MemberSignature Language="C#" Value="public static bool DetermineApplicationTrust (ActivationContext activationContext, System.Security.Policy.TrustManagerContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DetermineApplicationTrust(class System.ActivationContext activationContext, class System.Security.Policy.TrustManagerContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Policy.ApplicationSecurityManager.DetermineApplicationTrust(System.ActivationContext,System.Security.Policy.TrustManagerContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="activationContext" Type="System.ActivationContext" />
+        <Parameter Name="context" Type="System.Security.Policy.TrustManagerContext" />
+      </Parameters>
+      <Docs>
+        <param name="activationContext"><see cref="T:System.ActivationContext" />アプリケーションのアクティベーション コンテキストを識別します。</param>
+        <param name="context">A<see cref="T:System.Security.Policy.TrustManagerContext" />信頼マネージャーのアプリケーションのコンテキストを識別します。</param>
+        <summary>ユーザーが要求されたアクセス許可セットを実行する指定されたアプリケーションを承認するかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定されたアプリケーションを実行するにはそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Policy.ApplicationSecurityManager.DetermineApplicationTrust%2A>使用して、構成された<xref:System.Security.Policy.ApplicationSecurityManager.ApplicationTrustManager%2A>プロパティを設定、アプリケーション マニフェストに要求されたアクセス許可を持つ、指定したアプリケーションの実行を許可するかどうかを判断します。 信頼マネージャーの動作は、信頼マネージャーの実装に依存し、情報が渡された、`context`パラメーター。 信頼マネージャーの既定の動作では、ユーザーの承認を決定するユーザー インターフェイス (UI) ダイアログ ボックスを選択します。 ただし、信頼マネージャーは、企業データベースによる決定など、他の条件に基づいて、アプリケーションの信頼の状態も確認できます。 によって、信頼の決定を永続化できる、`context`パラメーターのプロパティおよび信頼マネージャーの実装です。 将来をするために呼び出す場合は、アプリケーションの信頼は、ユーザー ダイアログ ボックスに基づいた意思決定の永続化、<xref:System.Security.Policy.ApplicationSecurityManager>はそのアプリケーションの要求ごとに UI ダイアログ ボックスではないです。 <xref:System.Security.Policy.ApplicationSecurityManager.DetermineApplicationTrust%2A>アプリケーションが、ローカル システムにダウンロードされる前に、マニフェストの後に呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="activationContext" /> パラメーターが <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UserApplicationTrusts">
+      <MemberSignature Language="C#" Value="public static System.Security.Policy.ApplicationTrustCollection UserApplicationTrusts { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Security.Policy.ApplicationTrustCollection UserApplicationTrusts" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Policy.ApplicationSecurityManager.UserApplicationTrusts" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Policy.ApplicationTrustCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザーのキャッシュされた信頼性の決定を含んだアプリケーションの信頼コレクションを取得します。</summary>
+        <value><see cref="T:System.Security.Policy.ApplicationTrustCollection" />ユーザーのキャッシュされた信頼性の決定を格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などのコレクションのメソッドを使用して、コレクション内の信頼の決定が保持される、<xref:System.Security.Policy.ApplicationTrustCollection.Add%2A>メソッドまたは<xref:System.Security.Policy.ApplicationTrustCollection.Remove%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">表示およびポリシーを変更する権限です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.ControlPolicy" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

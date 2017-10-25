@@ -1,0 +1,328 @@
+<Type Name="PeerCollaborationPermission" FullName="System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission">
+  <TypeSignature Language="C#" Value="public sealed class PeerCollaborationPermission : System.Security.CodeAccessPermission, System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit PeerCollaborationPermission extends System.Security.CodeAccessPermission implements class System.Security.Permissions.IUnrestrictedPermission" />
+  <TypeSignature Language="DocId" Value="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.CodeAccessPermission</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Security.Permissions.IUnrestrictedPermission</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>または、定義で使用される値を指定<see cref="N:System.Net.PeerToPeer.Collaboration" />オブジェクトのアクセス許可。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値<xref:System.Security.Permissions>すべてのローカルおよびコラボレーション サービスにアクセスするイントラネット ゾーンのアプリケーションと、インターネット ゾーンのアプリケーションのアクセス許可が与えられていません。 つまり、既定のアクセス許可が変更された、すべてのリンク ローカルおよびサイト ローカルがない場合のアプリケーションが、ピア ツー ピア コラボレーションのサービスへのアクセス権を持つが、グローバル アプリケーション アクセスできません。  
+  
+ このクラスは、派生ではありません。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PeerCollaborationPermission (System.Security.Permissions.PermissionState state);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.PermissionState state) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.#ctor(System.Security.Permissions.PermissionState)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="state" Type="System.Security.Permissions.PermissionState" />
+      </Parameters>
+      <Docs>
+        <param name="state"><see cref="T:System.Security.Permissions.PermissionState" /> 列挙値の値の 1 つ。</param>
+        <summary>
+          <see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />の新しいインスタンスを初期化します。 コンストラクターが呼び出されるときに、このインスタンスの初期の <see cref="T:System.Security.Permissions.PermissionState" /> が渡されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この型のインスタンスは、アクセス許可によって保護されているリソースへのアクセスがありませんか、か、それらのリソースに無制限にフル アクセスします。  
+  
+ 状態が場合<xref:System.Security.Permissions.PermissionState.Unrestricted>、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission>インスタンスは、すべての要求を渡します。 状態には、その他の値が含まれている場合、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission>インスタンスがすべての要求が失敗します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Copy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Copy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Copy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成し、現在のコピーを返します<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />です。</summary>
+        <returns>A<see cref="T:System.Object" />の現在のインスタンスのコピーを格納している<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コピー、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission>インスタンスが、同じリソースへのアクセス、元のアクセス許可を付与します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FromXml">
+      <MemberSignature Language="C#" Value="public override void FromXml (System.Security.SecurityElement e);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void FromXml(class System.Security.SecurityElement e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.FromXml(System.Security.SecurityElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Security.SecurityElement" />
+      </Parameters>
+      <Docs>
+        <param name="e">アクセス許可の再構築に使用する XML エンコード。</param>
+        <summary>セキュリティ オブジェクトのエンコーディングの XML オブジェクト モデルを表します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、汎用 XML オブジェクト モデルとして使用するのではなく、セキュリティ システムで使用するための単純な XML オブジェクト モデルの軽量な実装を目的としています。  
+  
+ このクラスは継承できません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">-   パラメーターは、有効なアクセス許可要素ではありません。  
+  
+-   パラメーターは、有効な型またはクラスには含まれません。  
+  
+-   パラメーターのバージョン番号はサポートされていません。</exception>
+        <exception cref="T:System.ArgumentNullException">パラメーターが <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Intersect">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Intersect (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Intersect(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Intersect(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">アクセス許可<see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Intersect(System.Security.IPermission)" />現在のアクセス許可を持つ。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>作成して、現在の積集合であるアクセス許可を返します<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />と、指定した<paramref name="target" />権限です。</summary>
+        <returns>現在の積集合を表す新しいアクセス許可<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />と、指定した<paramref name="target" />権限です。 この新しいアクセス許可は、<see langword="null" />参照 (<see langword="Nothing" /> Visual Basic で)、積集合が空の場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 2 つのアクセス許可の積集合は、一連の両方に共通する操作を説明する権限です。 元の両方の権限を通過する要求だけでは、積集合を渡されます。  
+  
+ 次のステートメントである必要は`true`のすべての実装、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Intersect%2A>メソッドです。 X と Y を<xref:System.Security.IPermission>いないはオブジェクト参照を`null`参照 (`Nothing` Visual Basic で)。  
+  
+-   X.Intersect(X) は、X と等しい値を返します。  
+  
+-   X.Intersect(Y) は、Y.Intersect(X) と同じ値を返します。  
+  
+-   X.Intersect (、`null`参照) を返します、`null`参照します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">ターゲット パラメーターではありません、<see langword="null" />参照 (<see langword="Nothing" /> Visual Basic で) し、現在のアクセス許可と同じクラスのインスタンスではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSubsetOf">
+      <MemberSignature Language="C#" Value="public override bool IsSubsetOf (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsSubsetOf(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.IsSubsetOf(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">サブセット リレーションシップをテストするアクセス許可。 このアクセス許可は、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>決定するかどうか、現在<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />の指定されたサブセットです<paramref name="target" />権限です。</summary>
+        <returns>
+          <see langword="True" />場合、現在<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />指定のアクセス許可のサブセットである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 現在<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission>指定のアクセス許可のサブセットである場合は、現在のアクセス許可を指定した権限によって完全に含まれる一連の操作を指定します。 アクセスを表すアクセス許可など、"*C:\example.txt*「へのアクセスを表すアクセス許可のサブセットである」*c:\\*"です。 このメソッドが戻る場合`true`、現在のアクセス許可は、アクセスは保護されたリソースには、指定した権限を表します。  
+  
+ 次のステートメントである必要は`true`のすべての実装、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.IsSubsetOf%2A>メソッドです。 X、Y、Z の表す<xref:System.Security.IPermission>されないオブジェクトを`null`参照 (`Nothing` Visual Basic で)。  
+  
+-   X.IsSubsetOf(X) 返します`true`です。  
+  
+-   X および Y が同じアクセス許可のセットを表す場合にのみ、X.IsSubsetOf(Y) は Y.IsSubsetOf(X) と同じ値を返します。  
+  
+-   X.IsSubsetOf(Y) と Y.IsSubsetOf(Z) 両方を返す場合`true`、X.IsSubsetOf(Z) 返します`true`です。  
+  
+ X は、空を表す場合[IPermission](http://go.microsoft.com/fwlink?LinkID=98303)なし のアクセス許可の状態を持つオブジェクトを Y である IPermission オブジェクトを表します、`null`参照 (`Nothing` Visual Basic で)、X.IsSubsetOf(Y) を返します`true`です。 Z も空のアクセス許可である場合、複合は操作 X.Union(Z) を設定します。IsSubsetOf(Y) も返します`true`ため、 <xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Union%2A> 2 つの空のアクセス許可は、空のアクセス許可。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パラメーターが <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUnrestricted">
+      <MemberSignature Language="C#" Value="public bool IsUnrestricted ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsUnrestricted() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.IsUnrestricted" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定する値を返すかどうか、現在<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />は制限されません。</summary>
+        <returns>
+          <see langword="True" />現在のアクセス許可が無制限ではない場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 無制限のアクセス許可は、アクセス許可によって保護されていると、すべてのリソースへのアクセスを表します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToXml">
+      <MemberSignature Language="C#" Value="public override System.Security.SecurityElement ToXml ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.SecurityElement ToXml() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.ToXml" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.SecurityElement</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>XML エンコードを作成、<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />と現在の状態。</summary>
+        <returns>状態情報を含む、アクセス許可の XML エンコード。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 一般に、アクセス許可クラスのメソッドは、インフラストラクチャによって使用され、アプリケーションで使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Union">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission Union (System.Security.IPermission target);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission Union(class System.Security.IPermission target) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Union(System.Security.IPermission)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="target" Type="System.Security.IPermission" />
+      </Parameters>
+      <Docs>
+        <param name="target">現在のアクセス許可と結合するアクセス許可。 これは、現在のアクセス許可と同じ型であることが必要です。</param>
+        <summary>現在の和集合であるアクセス許可を作成<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />と、指定した<paramref name="target" />権限です。</summary>
+        <returns>表す新しいアクセス許可、 <see cref="M:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Union(System.Security.IPermission)" /> 、現在の<see cref="T:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission" />と、指定した権限です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出しの結果<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission.Union%2A>を現在の両方で表されるすべての操作を表すアクセス許可は、<xref:System.Net.PeerToPeer.Collaboration.PeerCollaborationPermission>と、指定した権限です。 いずれかのアクセス許可に適合する要求は、その共用体を渡します。  
+  
+ 次のステートメントである必要は`true`共用体のメソッドのすべての実装です。 X と Y を<xref:System.Security.IPermission>されないオブジェクトを`null`参照 (`Nothing` Visual Basic で)。  
+  
+-   X.Union(X) では、X と同じ値を持つオブジェクトを返します。  
+  
+-   X.Union(Y) は、Y.Union(X) によって返されるオブジェクトと同じ値を持つオブジェクトを返します。  
+  
+-   X.Union (、`null`参照 (`Nothing` Visual basic)) を同じ X 値を持つオブジェクトを返します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">パラメーターが <see langword="null" /> 参照 (Visual Basic の場合は <see langword="Nothing" />) です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,127 @@
+<Type Name="XpsFont" FullName="System.Windows.Xps.Packaging.XpsFont">
+  <TypeSignature Language="C#" Value="public class XpsFont : System.Windows.Xps.Packaging.XpsResource" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit XpsFont extends System.Windows.Xps.Packaging.XpsResource" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Xps.Packaging.XpsFont" />
+  <AssemblyInfo>
+    <AssemblyName>ReachFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Xps.Packaging.XpsResource</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>内のフォントを表す、<see cref="T:System.Windows.Xps.Packaging.XpsDocument" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsFont>クラスにパブリック コンス トラクターがありません。  
+  
+ 使用して、<xref:System.Windows.Xps.Packaging.IXpsFixedPageWriter.AddFont%2A>フォントを追加し、新しいドキュメント内の参照を取得します。  
+  
+ 使用して、<xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.GetFont%2A>既存のドキュメントにフォントへの参照を取得します。  
+  
+ 設定に基づいて<xref:System.Windows.Xps.Serialization.XpsSerializationManager>と<xref:System.Windows.Xps.Serialization.XpsPackagingPolicy>など<xref:System.Windows.Xps.Serialization.FontSubsetterCommitPolicies>と<xref:System.Windows.Xps.Packaging.PackageInterleavingOrder>のフラッシュ操作、<xref:System.Windows.Xps.Packaging.XpsResource.Commit%2A>のメソッド、<xref:System.Windows.Xps.Packaging.XpsFont>クラスは、全体まで遅れる可能性があります<xref:System.Windows.Xps.Packaging.XpsDocument>が閉じられます。  
+  
+   
+  
+## Examples  
+ 次の例は、フォントを追加する方法を示しています、<xref:System.Windows.Xps.Packaging.XpsDocument>です。  
+  
+ [!code-cpp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/cpp/VS_Snippets_Wpf/XpsCreate/CPP/XpsCreate.cpp#xpscreateaddpageresources)]
+ [!code-csharp[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/csharp/VS_Snippets_Wpf/XpsCreate/CSharp/XpsCreate.cs#xpscreateaddpageresources)]
+ [!code-vb[XpsCreate#XpsCreateAddPageResources](~/samples/snippets/visualbasic/VS_Snippets_Wpf/XpsCreate/visualbasic/xpscreate.vb#xpscreateaddpageresources)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsObfuscated">
+      <MemberSignature Language="C#" Value="public bool IsObfuscated { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsObfuscated" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsFont.IsObfuscated" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォントが隠蔽されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、フォントを難読化します。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ フォントの難読化の詳細については、セクションを参照して 2.1.7.3「埋め込みフォントを難読化」で、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsRestricted">
+      <MemberSignature Language="C#" Value="public bool IsRestricted { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsRestricted" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Xps.Packaging.XpsFont.IsRestricted" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはこのフォントを使用するテキストを変更できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />このフォントを使用するテキストを変更または編集できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 制限されているフォントの使用に関する詳細については、次を参照してください。、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ObfuscateFontData">
+      <MemberSignature Language="C#" Value="public static void ObfuscateFontData (byte[] fontData, Guid guid);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ObfuscateFontData(unsigned int8[] fontData, valuetype System.Guid guid) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Xps.Packaging.XpsFont.ObfuscateFontData(System.Byte[],System.Guid)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>ReachFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="fontData" Type="System.Byte[]" />
+        <Parameter Name="guid" Type="System.Guid" />
+      </Parameters>
+      <Docs>
+        <param name="fontData">難読化する書体データ。</param>
+        <param name="guid">[!INCLUDE[TLA#tla_guid](~/includes/tlasharptla-guid-md.md)]を使用して難読化する、<c>を</c>です。</param>
+        <summary>フォントのフォント データを難読化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Xps.Packaging.XpsFont.ObfuscateFontData%2A>メソッドは、使用することが義務づけられます難読化時に独自のフォントにライセンスを提供します。  
+  
+ このメソッドは、暗号化を提供していないときに、<xref:System.Windows.Xps.Packaging.XpsFont.ObfuscateFontData%2A>メソッドは、独自の解凍からユーザーを阻止するために使用できます[!INCLUDE[TLA#tla_opentype](~/includes/tlasharptla-opentype-md.md)]フォントおよびその他の使用方法については個別にインストールします。  
+  
+ フォントの難読化の詳細については、セクションを参照して 2.1.7.3「埋め込みフォントを難読化」で、 *XPS XML Paper Specification ()*ダウンロード[http://go.microsoft.com/fwlink/?LinkID=65761](http://go.microsoft.com/fwlink/?LinkID=65761)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

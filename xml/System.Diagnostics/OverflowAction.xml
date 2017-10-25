@@ -1,0 +1,93 @@
+<Type Name="OverflowAction" FullName="System.Diagnostics.OverflowAction">
+  <TypeSignature Language="C#" Value="public enum OverflowAction" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed OverflowAction extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Diagnostics.OverflowAction" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>最大ファイル サイズに達したイベント ログにエントリを処理する方法を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのイベント ログでは、最大サイズの制限とその制限内に新しいエントリを書き込むための規則を指定する構成可能な設定がします。 イベント ログが、その最大サイズに達すると、次の規則のいずれかを指定できます。  
+  
+-   新しいエントリは破棄されます。  
+  
+-   新しいエントリは、古いエントリに上書きされます。  
+  
+-   新しいエントリは、破棄するかや、既存のエントリの古さに応じて既存のエントリが上書きされます。  
+  
+ 使用して、<xref:System.Diagnostics.EventLog.ModifyOverflowPolicy%2A>のオーバーフロー動作を設定するメソッドを<xref:System.Diagnostics.EventLog>です。 現在の構成された動作を確認して、<xref:System.Diagnostics.EventLog>を通じてその<xref:System.Diagnostics.EventLog.OverflowAction%2A>プロパティです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DoNotOverwrite">
+      <MemberSignature Language="C#" Value="DoNotOverwrite" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.OverflowAction DoNotOverwrite = int32(-1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.OverflowAction.DoNotOverwrite" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.OverflowAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント ログがいっぱいで、新しいエントリは破棄されるときに、既存のエントリが保持されることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteAsNeeded">
+      <MemberSignature Language="C#" Value="OverwriteAsNeeded" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.OverflowAction OverwriteAsNeeded = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.OverflowAction.OverwriteAsNeeded" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.OverflowAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>新しいエントリでは、イベント ログがいっぱいになったときに、最も古いエントリが上書きされることを示します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="OverwriteOlder">
+      <MemberSignature Language="C#" Value="OverwriteOlder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Diagnostics.OverflowAction OverwriteOlder = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Diagnostics.OverflowAction.OverwriteOlder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.OverflowAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定されて、新しいイベントが古いイベントを上書きすることを示します、<see cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" />プロパティの値は、イベント ログがいっぱいです。 新しいイベントが破棄されるは、イベント ログがいっぱいで、によって指定されたよりも、古いイベントがない場合、<see cref="P:System.Diagnostics.EventLog.MinimumRetentionDays" />プロパティの値。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、ローカル コンピューターで定義されたイベント ログを列挙し、各イベント ログの構成の詳細を表示します。  
+  
+ [!code-cpp[EventLogProperties#2](~/samples/snippets/cpp/VS_Snippets_CLR/EventLogProperties/CPP/source.cpp#2)]
+ [!code-csharp[EventLogProperties#2](~/samples/snippets/csharp/VS_Snippets_CLR/EventLogProperties/CS/source.cs#2)]
+ [!code-vb[EventLogProperties#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/EventLogProperties/VB/source.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

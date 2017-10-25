@@ -1,0 +1,85 @@
+<Type Name="HierarchicalDataSourceConverter" FullName="System.Web.UI.Design.HierarchicalDataSourceConverter">
+  <TypeSignature Language="C#" Value="public class HierarchicalDataSourceConverter : System.Web.UI.Design.DataSourceConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit HierarchicalDataSourceConverter extends System.Web.UI.Design.DataSourceConverter" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.HierarchicalDataSourceConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.DataSourceConverter</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>現在のコンポーネントにアクセス可能な階層データ ソースの一覧を取得する型コンバーターを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.HierarchicalDataSourceConverter>クラスは、現在のデザイン時コンポーネントにアクセスできる階層的なデータ ソースの一覧の取得に使用できるメソッドを提供します。  
+  
+ <xref:System.Web.UI.Design.HierarchicalDataSourceConverter>型コンバーターを使用して Microsoft Visual Studio でソース データの一覧に表示される値を指定する、**プロパティ**ウィンドウです。  
+  
+> [!CAUTION]
+>  実行する型コンバーターに直接アクセスする必要がありますしません。 代わりに、適切なコンバーターを使用して、<xref:System.ComponentModel.TypeDescriptor>クラスです。 詳細については、例を参照してください。<xref:System.ComponentModel.TypeConverter>です。  
+  
+ 型コンバーターの詳細については、次を参照してください。、<xref:System.ComponentModel.TypeConverter>基底クラスと[する方法: 実行する型コンバーターを実装する](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)です。  
+  
+   
+  
+## Examples  
+ 次のコード例を関連付ける方法を示しています、<xref:System.Web.UI.Design.HierarchicalDataSourceConverter>をカスタム コントロール内に含まれる階層データ ソース プロパティを設定します。  
+  
+ [!code-csharp[HierarchicalDataSourceConverter#1](~/samples/snippets/csharp/VS_Snippets_WebNet/HierarchicalDataSourceConverter/CS/HierarchicalDataSourceControl.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HierarchicalDataSourceConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HierarchicalDataSourceConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.HierarchicalDataSourceConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidDataSource">
+      <MemberSignature Language="C#" Value="protected override bool IsValidDataSource (System.ComponentModel.IComponent component);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsValidDataSource(class System.ComponentModel.IComponent component) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.HierarchicalDataSourceConverter.IsValidDataSource(System.ComponentModel.IComponent)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="component" Type="System.ComponentModel.IComponent" />
+      </Parameters>
+      <Docs>
+        <param name="component">有効なデータ ソースとして確認するコンポーネント。</param>
+        <summary>指定したコンポーネントがこのコンバーターに対して有効なデータ ソースであるかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="component" />実装<see cref="T:System.Web.UI.IHierarchicalEnumerable" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.DataSourceConverter.GetStandardValues%2A>メソッドを使用、<xref:System.Web.UI.Design.HierarchicalDataSourceConverter.IsValidDataSource%2A>標準アクセスできるデータ ソースとして使用可能なコンポーネントを調べます。 <xref:System.Web.UI.Design.HierarchicalDataSourceConverter>クラス、有効なデータ ソースを実装するコンポーネント、<xref:System.Web.UI.IHierarchicalEnumerable>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

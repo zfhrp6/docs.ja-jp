@@ -1,0 +1,52 @@
+<Type Name="IXamlSchemaContextProvider" FullName="System.Xaml.IXamlSchemaContextProvider">
+  <TypeSignature Language="C#" Value="public interface IXamlSchemaContextProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IXamlSchemaContextProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Xaml.IXamlSchemaContextProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Xaml</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>XAML スキーマ コンテキスト情報は、型コンバーターおよびマークアップ拡張機能を提供するサービスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Xaml.IXamlSchemaContextProvider>サービスは 1 つのプロパティを提供<xref:System.Xaml.IXamlSchemaContextProvider.SchemaContext%2A>です。  
+  
+ 使用して、<xref:System.Xaml.IXamlSchemaContextProvider>サービスとその<xref:System.Xaml.IXamlSchemaContextProvider.SchemaContext%2A>プロパティまたは型コンバーターの実装が、マークアップ拡張機能からのアクティブな XAML スキーマ コンテキストが必要とします。 最も顕著な XAML 型を解決する、オブジェクト グラフを作成するため、バッキング型に、XAML に関連する多くの操作は、使用可能な XAML スキーマ コンテキストに依存します。 ただし、多くのシナリオでは、特定のフレームワークによって提供される、XAML スキーマ コンテキストを使用することができます。 または、CLR とバックアップ リフレクションを使用する .NET Framework XAML サービスによって提供される既定の XAML スキーマ コンテキストを使用することができ、任意の CLR で定義された型に必要な XAML スキーマ コンテキストを提供できます。  
+  
+ <xref:System.Xaml.IXamlSchemaContextProvider>サービスは、値コンバーターの実装は、カスタムの XAML スキーマ コンテキストがサポートされているときに呼び出す可能性がありますが見込まれる実装のため、主に関連します。 サービスの仮想メソッドのエントリ ポイントのパラメーターから取得できます<xref:System.ComponentModel.TypeConverter>または<xref:System.Windows.Markup.MarkupExtension>そのレポート サービスのコンテキスト。 または特定の XAML リーダーまたは XAML ライターの専用のプロパティから直接スキーマ コンテキストを代わりに取得することができます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="SchemaContext">
+      <MemberSignature Language="C#" Value="public System.Xaml.XamlSchemaContext SchemaContext { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xaml.XamlSchemaContext SchemaContext" />
+      <MemberSignature Language="DocId" Value="P:System.Xaml.IXamlSchemaContextProvider.SchemaContext" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Xaml</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Xaml.XamlSchemaContext</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Xaml.XamlSchemaContext" />サービス コンテキストによって報告されます。</summary>
+        <value>サービス コンテキストによって報告される XAML スキーマ コンテキスト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、返された<xref:System.Xaml.XamlSchemaContext>アセンブリ内のすべての種類の一覧を取得するなどの操作またはマッピング アセンブリについての詳細を取得するためです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

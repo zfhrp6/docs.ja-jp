@@ -1,0 +1,132 @@
+<Type Name="LinkLabelLinkClickedEventArgs" FullName="System.Windows.Forms.LinkLabelLinkClickedEventArgs">
+  <TypeSignature Language="C#" Value="public class LinkLabelLinkClickedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit LinkLabelLinkClickedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.LinkLabelLinkClickedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.LinkLabel.LinkClicked" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、処理を示します、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinkLabelLinkClickedEventArgs (System.Windows.Forms.LinkLabel.Link link);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.LinkLabel/Link link) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LinkLabelLinkClickedEventArgs.#ctor(System.Windows.Forms.LinkLabel.Link)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="link" Type="System.Windows.Forms.LinkLabel+Link" />
+      </Parameters>
+      <Docs>
+        <param name="link"><see cref="T:System.Windows.Forms.LinkLabel.Link" />がクリックしてされました。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LinkLabelLinkClickedEventArgs" />指定されたリンクを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public LinkLabelLinkClickedEventArgs (System.Windows.Forms.LinkLabel.Link link, System.Windows.Forms.MouseButtons button);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Forms.LinkLabel/Link link, valuetype System.Windows.Forms.MouseButtons button) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.LinkLabelLinkClickedEventArgs.#ctor(System.Windows.Forms.LinkLabel.Link,System.Windows.Forms.MouseButtons)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="link" Type="System.Windows.Forms.LinkLabel+Link" />
+        <Parameter Name="button" Type="System.Windows.Forms.MouseButtons" />
+      </Parameters>
+      <Docs>
+        <param name="link"><see cref="T:System.Windows.Forms.LinkLabel.Link" />がクリックしてされました。</param>
+        <param name="button"><see cref="T:System.Windows.Forms.MouseButtons" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Forms.LinkLabelLinkClickedEventArgs" />した、指定されたリンクと、指定されたマウス ボタンをクリックします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Button">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.MouseButtons Button { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Forms.MouseButtons Button" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabelLinkClickedEventArgs.Button" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.MouseButtons</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>リンクをクリックすると、マウス ボタンを取得します。</summary>
+        <value><see cref="T:System.Windows.Forms.MouseButtons" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.LinkLabel.LinkClicked?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.LinkLabel>という`LinkLabel1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.LinkLabel.LinkClicked?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#461](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#461)]
+ [!code-vb[System.Windows.Forms.EventExamples#461](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#461)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Link">
+      <MemberSignature Language="C#" Value="public System.Windows.Forms.LinkLabel.Link Link { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Forms.LinkLabel/Link Link" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.LinkLabelLinkClickedEventArgs.Link" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.LinkLabel+Link</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Forms.LinkLabel.Link" />がクリックしてされました。</summary>
+        <value>上のリンク、<see cref="T:System.Windows.Forms.LinkLabel" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例では、使用方法を示します、<xref:System.Windows.Forms.LinkLabel>を複数のクラス<xref:System.Windows.Forms.LinkArea>フォームにラベルを表示する、定義されたセクションです。 設定の例を示します、 <xref:System.Windows.Forms.Label.AutoSize%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkBehavior%2A>、 <xref:System.Windows.Forms.LinkLabel.DisabledLinkColor%2A>、 <xref:System.Windows.Forms.LinkLabel.LinkColor%2A>、および<xref:System.Windows.Forms.LinkLabel.VisitedLinkColor%2A>の外観をカスタマイズするプロパティ、<xref:System.Windows.Forms.LinkLabel>です。 最初の<xref:System.Windows.Forms.LinkArea>を使用して指定は、<xref:System.Windows.Forms.LinkLabel.LinkArea%2A?displayProperty=nameWithType>プロパティです。 追加のリンクに追加、<xref:System.Windows.Forms.LinkLabel>を使用して、<xref:System.Windows.Forms.LinkLabel.LinkCollection.Add%2A?displayProperty=nameWithType>メソッドです。 例のハンドル、 <xref:System.Windows.Forms.LinkLabel.LinkClicked> 、ハイパーリンク、Web ブラウザーを開始し、表示するイベント、<xref:System.Windows.Forms.MessageBox>の他のリンク。  
+  
+ [!code-cpp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CPP/linklabel.cpp#1)]
+ [!code-csharp[System.Windows.Forms.LinkLabel#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/CS/linklabel.cs#1)]
+ [!code-vb[System.Windows.Forms.LinkLabel#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.LinkLabel/VB/linklabel.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

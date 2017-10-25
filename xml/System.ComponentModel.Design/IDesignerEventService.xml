@@ -1,0 +1,226 @@
+<Type Name="IDesignerEventService" FullName="System.ComponentModel.Design.IDesignerEventService">
+  <TypeSignature Language="C#" Value="public interface IDesignerEventService" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IDesignerEventService" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.IDesignerEventService" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>ルート デザイナーが追加および削除されたとき、選択したコンポーネントが変更されたとき、および現在のルート デザイナーが変更されたときにイベント通知を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.IDesignerEventService>新しいルート デザイナーの作成、変更、または破棄されると、通知を提供します。 ルート デザイナーは、ドキュメントのデザイナー ビューの基本コンポーネントのデザイン時サポートを提供します。 <xref:System.ComponentModel.Design.IDesignerEventService.SelectionChanged>イベントは、現在のコンポーネントの選択が変更されたときに通知を提供します。  
+  
+   
+  
+## Examples  
+ この例を使用するデザイナー、<xref:System.ComponentModel.Design.IDesignerEventService>をコントロールにイベント通知を表示します。 この例を使用するには、クラス ライブラリにコードをコンパイルします。 新しい Windows フォーム プロジェクトにライブラリへの参照を追加し、ライブラリ内のコントロールを追加、**ツールボックス**です。  インスタンスを追加、`DesignerMonitor`コントロールをフォームのデザイン モードでします。 コントロールを右クリックし、をクリックして、`Start monitoring`コマンドによって生成されるイベントの通知を表示する、<xref:System.ComponentModel.Design.IDesignerEventService>です。  
+  
+ [!code-cpp[IDesignerEventServiceExample#1](~/samples/snippets/cpp/VS_Snippets_Winforms/IDesignerEventServiceExample/CPP/source.cpp#1)]
+ [!code-vb[IDesignerEventServiceExample#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/IDesignerEventServiceExample/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ActiveDesigner">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.IDesignerHost ActiveDesigner { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.IDesignerHost ActiveDesigner" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerEventService.ActiveDesigner" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.IDesignerHost</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在アクティブなドキュメントのルート デザイナーを取得します。</summary>
+        <value>現在アクティブなドキュメント、または<see langword="null" />アクティブなドキュメントが存在しない場合。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ActiveDesignerChanged">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.ActiveDesignerEventHandler ActiveDesignerChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.ActiveDesignerEventHandler ActiveDesignerChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerEventService.ActiveDesignerChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.ActiveDesignerEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のルート デザイナーが変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントには、ユーザーを開くか、またはドキュメントを閉じる、新しいドキュメントにフォーカスを設定することがあります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerCreated">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerEventHandler DesignerCreated;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerEventHandler DesignerCreated" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerEventService.DesignerCreated" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ルート デザイナーが作成されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、新しいドキュメントが読み込まれているし、ユーザー入力の準備ができています。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DesignerDisposed">
+      <MemberSignature Language="C#" Value="public event System.ComponentModel.Design.DesignerEventHandler DesignerDisposed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.ComponentModel.Design.DesignerEventHandler DesignerDisposed" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerEventService.DesignerDisposed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのルート デザイナーが破棄されるときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、ドキュメントがときに破棄するが、ドキュメントが実際にはそれ自体の破棄を開始する前に発生します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Designers">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.Design.DesignerCollection Designers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ComponentModel.Design.DesignerCollection Designers" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.IDesignerEventService.Designers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.DesignerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>開発環境で現在アクティブなデザイン ドキュメントのルート デザイナーのコレクションを取得します。</summary>
+        <value>A<see cref="T:System.ComponentModel.Design.DesignerCollection" />作成され、まだ破棄されているルート デザイナーを格納します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectionChanged">
+      <MemberSignature Language="C#" Value="public event EventHandler SelectionChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler SelectionChanged" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.IDesignerEventService.SelectionChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のデザイン ビューで選択されている内容が変更されたときに発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、ユーザーが現在アクティブなドキュメントの選択を変更すると、ユーザーの切り替え、新しいドキュメントをからになります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

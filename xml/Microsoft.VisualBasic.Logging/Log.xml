@@ -1,0 +1,692 @@
+<Type Name="Log" FullName="Microsoft.VisualBasic.Logging.Log">
+  <TypeSignature Language="C#" Value="public class Log" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit Log extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Logging.Log" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティとイベントと例外の情報をアプリケーションのログ リスナーに書き込むためのメソッドを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Application.Log`オブジェクトにアクセスするための簡単なエントリ ポイントを提供する、 [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]services のログ記録します。 `WriteEntry`と`WriteException`メソッドは、アプリケーションのログ リスナーにメッセージを書き込みます。 リスナーは、アプリケーションの構成ファイルで構成できます。 詳細については、次を参照してください。[チュートリアル: 変更場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)と[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)です。  
+  
+ `My.Application.Log`オブジェクトはクライアント アプリケーションでのみ使用できます。 Web アプリケーションを使用して`My.Log`です。 詳細については、「<xref:Microsoft.VisualBasic.Logging.AspLog>」を参照してください。  
+  
+ 次の表に、関連するタスクの例については、`My.Application.Log`オブジェクト。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|イベント情報をアプリケーションのログ リスナーに書き込む|[方法: ログ メッセージを書き込む](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|例外情報をアプリケーションのログ リスナーに書き込む|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|場所を特定する`My.Application.Log`情報を書き込みます|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+   
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Log ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Logging.Log" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Log (string name);" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor(string name) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="name">
+          <see cref="T:System.String" />。 指定する名前、<see cref="P:Microsoft.VisualBasic.Logging.Log.TraceSource" />プロパティ オブジェクト。</param>
+        <summary><see cref="T:Microsoft.VisualBasic.Logging.Log" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultFileLogWriter">
+      <MemberSignature Language="C#" Value="public Microsoft.VisualBasic.Logging.FileLogTraceListener DefaultFileLogWriter { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.VisualBasic.Logging.FileLogTraceListener DefaultFileLogWriter" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.VisualBasic.Logging.FileLogTraceListener</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ファイルを取得、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />の基になるオブジェクト、<see langword="Log" />オブジェクト。</summary>
+        <value>返します、<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />の基になるオブジェクト、<see langword="Log" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには現在の構成を決定する、<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>オブジェクト。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="InitializeWithDefaultsSinceNoConfigExists">
+      <MemberSignature Language="C#" Value="protected virtual void InitializeWithDefaultsSinceNoConfigExists ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblynewslot virtual instance void InitializeWithDefaultsSinceNoConfigExists() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.InitializeWithDefaultsSinceNoConfigExists" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新たに作成<see cref="T:Microsoft.VisualBasic.Logging.FileLogTraceListener" />オブジェクトを追加して、<see cref="P:System.Diagnostics.TraceSource.Listeners" />コレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが新たに作成<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>、その名前に設定`FileLog`、重大度レベルとメッセージをログに記録するように構成および<xref:System.Diagnostics.SourceLevels.Information>およびそれ以降。 新しい<xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>にオブジェクトが追加し、<xref:System.Diagnostics.TraceSource.Listeners%2A>コレクション。  
+  
+ <xref:Microsoft.VisualBasic.Logging.Log.%23ctor%2A>場合、メソッドを呼び出して、<xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A>プロパティが構成されていません。 トレース ソースは、アプリケーションの構成ファイルで構成できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceSource">
+      <MemberSignature Language="C#" Value="public System.Diagnostics.TraceSource TraceSource { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Diagnostics.TraceSource TraceSource" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Logging.Log.TraceSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Diagnostics.TraceSource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Diagnostics.TraceSource" />の基になるオブジェクト、<see langword="Log" />オブジェクト。</summary>
+        <value>返します、<see cref="T:System.Diagnostics.TraceSource" />の基になるオブジェクト、<see langword="Log" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用するには現在の構成を決定する、`Log`オブジェクト。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ これは、高度なメンバーの場合です。選択しないと、IntelliSense が表示されない、**すべて**タブです。  
+  
+ 次の表に、関連するタスクの例、`TraceSource`プロパティです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|各情報の取得、`Log`オブジェクトのログ リスナーです。|[トラブルシューティング : ログ リスナー](~/docs/visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEntry">
+      <MemberSignature Language="C#" Value="public void WriteEntry (string message);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteEntry(string message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteEntry(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">必須です。 記録するメッセージ。 場合<c>メッセージ</c>は<see langword="Nothing" />、空の文字列を使用します。</param>
+        <summary>アプリケーションのログ リスナーにメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteEntry`メソッドは、アプリケーションのイベント ログ リスナーにメッセージを書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteEntry`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、`id`に書き込まれたログが次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteEntry`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|イベント情報をアプリケーションのログ リスナーに書き込む|[方法: ログ メッセージを書き込む](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|場所を特定する`Log`情報を書き込みます|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteEntry`に`My.Log.WriteEntry`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEntry">
+      <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.TraceEventType severity);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteEntry(string message, valuetype System.Diagnostics.TraceEventType severity) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteEntry(System.String,System.Diagnostics.TraceEventType)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+      </Parameters>
+      <Docs>
+        <param name="message">必須です。 記録するメッセージ。 場合<c>メッセージ</c>は<see langword="Nothing" />、空の文字列を使用します。</param>
+        <param name="severity">メッセージの種類。 既定では、<see langword="TraceEventType.Information" />です。</param>
+        <summary>アプリケーションのログ リスナーにメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteEntry`メソッドは、アプリケーションのイベント ログ リスナーにメッセージを書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteEntry`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、`id`に書き込まれたログが次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteEntry`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|イベント情報をアプリケーションのログ リスナーに書き込む|[方法: ログ メッセージを書き込む](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|場所を特定する`Log`情報を書き込みます|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteEntry`に`My.Log.WriteEntry`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">メッセージの種類がのいずれか、<see cref="T:System.Diagnostics.TraceEventType" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteEntry">
+      <MemberSignature Language="C#" Value="public void WriteEntry (string message, System.Diagnostics.TraceEventType severity, int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteEntry(string message, valuetype System.Diagnostics.TraceEventType severity, int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteEntry(System.String,System.Diagnostics.TraceEventType,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="message">必須です。 記録するメッセージ。 場合<c>メッセージ</c>は<see langword="Nothing" />、空の文字列を使用します。</param>
+        <param name="severity">メッセージの種類。 既定では、<see langword="TraceEventType.Information" />です。</param>
+        <param name="id">関連付けに使用される通常のメッセージ識別子です。 関連する既定では、 <c>entryType</c>表で説明します。</param>
+        <summary>アプリケーションのログ リスナーにメッセージを書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteEntry`メソッドは、アプリケーションのイベント ログ リスナーにメッセージを書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteEntry`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、`id`に書き込まれたログが次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteEntry`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|イベント情報をアプリケーションのログ リスナーに書き込む|[方法: ログ メッセージを書き込む](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|場所を特定する`Log`情報を書き込みます|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例では、 `My.Application.Log.WriteEntry` メソッドを使用してトレース情報をログに記録する方法を示します。 詳細については、次を参照してください。[する方法: ログ メッセージの書き込み](~/docs/visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#11)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteEntry`に`My.Log.WriteEntry`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">メッセージの種類がのいずれか、<see cref="T:System.Diagnostics.TraceEventType" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteException">
+      <MemberSignature Language="C#" Value="public void WriteException (Exception ex);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteException(class System.Exception ex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteException(System.Exception)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+      </Parameters>
+      <Docs>
+        <param name="ex">必須です。 ログに記録する例外。</param>
+        <summary>例外情報をアプリケーションのログ リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteException`メソッドは、例外がアプリケーションのイベント ログ リスナーに含まれる情報を書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteException`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、ログに書き込まれる識別子が次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteException`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|アプリケーションのイベント ログ リスナーには、例外情報を書き込みます。|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|`Log` が情報を書き込む場所を取得します。|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、`My.Application.Log.WriteException`メソッドの例外の記録をします。 `Dim` 行と `MsgBox` 行のコメントを解除すると、<xref:System.NullReferenceException> 例外が発生します。 詳細については、次を参照してください。[する方法: 例外をログ出力](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#10)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteException`に`My.Log.WriteException`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ex" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteException">
+      <MemberSignature Language="C#" Value="public void WriteException (Exception ex, System.Diagnostics.TraceEventType severity, string additionalInfo);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteException(class System.Exception ex, valuetype System.Diagnostics.TraceEventType severity, string additionalInfo) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteException(System.Exception,System.Diagnostics.TraceEventType,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="additionalInfo" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="ex">必須です。 ログに記録する例外。</param>
+        <param name="severity">メッセージの種類。 既定では、<see cref="F:System.Diagnostics.TraceEventType.Error" />です。</param>
+        <param name="additionalInfo">メッセージに追加する文字列。 既定では、これは、空の文字列です。</param>
+        <summary>例外情報をアプリケーションのログ リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteException`メソッドは、例外がアプリケーションのイベント ログ リスナーに含まれる情報を書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteException`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、ログに書き込まれる識別子が次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteException`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|アプリケーションのイベント ログ リスナーには、例外情報を書き込みます。|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|`Log` が情報を書き込む場所を取得します。|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、`My.Application.Log.WriteException`メソッドの例外の記録をします。 `Dim` 行と `MsgBox` 行のコメントを解除すると、<xref:System.NullReferenceException> 例外が発生します。 詳細については、次を参照してください。[する方法: 例外をログ出力](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#10)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteException`に`My.Log.WriteException`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ex" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">メッセージの種類がのいずれか、<see cref="T:System.Diagnostics.TraceEventType" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteException">
+      <MemberSignature Language="C#" Value="public void WriteException (Exception ex, System.Diagnostics.TraceEventType severity, string additionalInfo, int id);" />
+      <MemberSignature Language="ILAsm" Value=".method public instance void WriteException(class System.Exception ex, valuetype System.Diagnostics.TraceEventType severity, string additionalInfo, int32 id) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Logging.Log.WriteException(System.Exception,System.Diagnostics.TraceEventType,System.String,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="ex" Type="System.Exception" />
+        <Parameter Name="severity" Type="System.Diagnostics.TraceEventType" />
+        <Parameter Name="additionalInfo" Type="System.String" />
+        <Parameter Name="id" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="ex">必須です。 ログに記録する例外。</param>
+        <param name="severity">メッセージの種類。 既定では、<see cref="F:System.Diagnostics.TraceEventType.Error" />です。</param>
+        <param name="additionalInfo">メッセージに追加する文字列。 既定では、これは、空の文字列です。</param>
+        <param name="id">関連付けに使用される通常のメッセージ識別子です。 関連する既定では、 <c>entryType</c> 「解説」セクションの表で説明します。</param>
+        <summary>例外情報をアプリケーションのログ リスナーに書き込みます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `WriteException`メソッドは、例外がアプリケーションのイベント ログ リスナーに含まれる情報を書き込みます。  
+  
+ クライアント アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Application.Log`オブジェクト。 Web アプリケーションで、`Log`オブジェクトは、を通じて利用、`My.Log`オブジェクト。  
+  
+ リスナーが受信先のログの詳細、`WriteException`メソッドのメッセージを参照してください[チュートリアル: を決定する場所 My.Application.Log 書き込みます情報](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)です。 既定のログ リスナーを変更することができます。 詳しくは、「[アプリケーション ログの使用](~/docs/visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)」をご覧ください。  
+  
+ 受け取らないオーバー ロードでは、`id`引数、ログに書き込まれる識別子が次の表で定義されています。  
+  
+|`severity`|既定値`id`|  
+|----------------|------------------|  
+|<xref:System.Diagnostics.TraceEventType.Information>|0|  
+|<xref:System.Diagnostics.TraceEventType.Warning>|1|  
+|<xref:System.Diagnostics.TraceEventType.Error>|2|  
+|<xref:System.Diagnostics.TraceEventType.Critical>|3|  
+|<xref:System.Diagnostics.TraceEventType.Start>|4|  
+|<xref:System.Diagnostics.TraceEventType.Stop>|5|  
+|<xref:System.Diagnostics.TraceEventType.Suspend>|6|  
+|<xref:System.Diagnostics.TraceEventType.Resume>|7|  
+|<xref:System.Diagnostics.TraceEventType.Verbose>|9|  
+|<xref:System.Diagnostics.TraceEventType.Transfer>|9|  
+  
+ 次の表に、関連するタスクの例については、`WriteException`メソッドです。  
+  
+|目的|参照トピック|  
+|--------|---------|  
+|アプリケーションのイベント ログ リスナーには、例外情報を書き込みます。|[方法 : 例外をログに記録する](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|`Log` が情報を書き込む場所を取得します。|[チュートリアル : My.Application.Log による情報の書き込み先の確認](~/docs/visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|------------------|---------------|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|**はい**|  
+  
+   
+  
+## Examples  
+ この例を使用する方法を示しています、`My.Application.Log.WriteException`メソッドの例外の記録をします。 `Dim` 行と `MsgBox` 行のコメントを解除すると、<xref:System.NullReferenceException> 例外が発生します。 詳細については、次を参照してください。[する方法: 例外をログ出力](~/docs/visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)です。  
+  
+ [!code-vb[VbVbalrMyApplicationLog#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#10)]  
+  
+ このコード例は、クライアント アプリケーション内でのみ実行できます。 変更`My.Application.Log.WriteException`に`My.Log.WriteException`Web アプリケーション用。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="ex" /> は <see langword="Nothing" /> です。</exception>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">メッセージの種類がのいずれか、<see cref="T:System.Diagnostics.TraceEventType" />列挙値。</exception>
+        <exception cref="T:System.Security.SecurityException">部分信頼コードでは、メソッドを呼び出しますが、完全な信頼を必要とするイベント ログ リスナーに書き込みます。</exception>
+        <permission cref="T:System.Security.Permissions.FileIOPermission">ファイルとフォルダーにアクセスする機能を制御します。 関連する列挙値:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

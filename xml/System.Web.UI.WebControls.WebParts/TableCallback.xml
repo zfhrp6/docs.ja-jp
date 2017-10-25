@@ -1,0 +1,50 @@
+<Type Name="TableCallback" FullName="System.Web.UI.WebControls.WebParts.TableCallback">
+  <TypeSignature Language="C#" Value="public delegate void TableCallback(ICollection tableData);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TableCallback extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.TableCallback" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="tableData" Type="System.Collections.ICollection" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="tableData">プロバイダーから取得するデータ。</param>
+    <summary>プロバイダーからテーブル データを取得するときに呼び出すメソッドを参照します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Web パーツ コントロールを実装すると、<xref:System.Web.UI.WebControls.WebParts.IWebPartTable>インターフェイスでは、Web パーツの接続、コンシューマーまたはトランスフォーマー プロバイダーとして機能する必要がありますの取得や、プロバイダーからテーブル データを処理します。 <xref:System.Web.UI.WebControls.WebParts.TableCallback>デリゲートは、プロバイダーのデータを処理するために呼び出すメソッドを表します。  
+  
+ <xref:System.Web.UI.WebControls.WebParts.IWebPartTable.GetTableData%2A>メソッドが含まれています、<xref:System.Web.UI.WebControls.WebParts.TableCallback>パラメーターを委任します。  
+  
+   
+  
+## Examples  
+ 次のコード例には、という名前の Web パーツ コントロールが含まれています。`TableProviderWebPart`テーブルの形式でデータのプロバイダーとして機能します。 コントロールには実装が含まれています、<xref:System.Web.UI.WebControls.WebParts.IWebPartTable.GetTableData%2A>メソッドで、型のパラメーターを受け取る<xref:System.Web.UI.WebControls.WebParts.TableCallback>です。 このメソッドによって表されるメソッドを呼び出し、<xref:System.Web.UI.WebControls.WebParts.TableCallback>テーブル データの受け渡しを委任します。  
+  
+ [!code-csharp[WebParts_TableCallback_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_TableCallback_Overview/CS/tableprovider.cs#1)]
+ [!code-vb[WebParts_TableCallback_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_TableCallback_Overview/VB/tableprovider.vb#1)]  
+  
+ `OnPreRender`メソッドは、コンシューマーは`GetTableData`で`TableProviderWebPart`し、その`GetTableData`メソッドに次のコード例に示すように、テーブル データと共に呼び出すデリゲートとして。  
+  
+ [!code-csharp[WebParts_TableCallback_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_TableCallback_Overview/CS/tableconsumerwebpart.cs#2)]
+ [!code-vb[WebParts_TableCallback_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_TableCallback_Overview/VB/tableconsumerwebpart.vb#2)]  
+  
+ 次の例で示すように、2 つのコントロールとの接続が、Web ページに含まれます。  
+  
+ [!code-aspx-csharp[WebParts_TableCallback_Overview#3](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_TableCallback_Overview/CS/TableConnection.aspx#3)]
+ [!code-aspx-vb[WebParts_TableCallback_Overview#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_TableCallback_Overview/VB/TableConnection.aspx#3)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

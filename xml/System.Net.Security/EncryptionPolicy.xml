@@ -1,0 +1,118 @@
+<Type Name="EncryptionPolicy" FullName="System.Net.Security.EncryptionPolicy">
+  <TypeSignature Language="C#" Value="public enum EncryptionPolicy" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed EncryptionPolicy extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Security.EncryptionPolicy" />
+  <AssemblyInfo>
+    <AssemblyName>System.Net.Security</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>使用する暗号化ポリシーです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.Security.EncryptionPolicy>を必要と、許可、または暗号化を防ぐために設定することができます。  
+  
+   
+  
+## Examples  
+ <xref:System.Net.Security.EncryptionPolicy> SSL/TLS セッションに適用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="AllowNoEncryption">
+      <MemberSignature Language="C#" Value="AllowNoEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.EncryptionPolicy AllowNoEncryption = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.EncryptionPolicy.AllowNoEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.EncryptionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>その完全な暗号化を使用する、必要に応じて、サーバーが同意する場合に NULL 暗号 (暗号化なし) を許可します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoEncryption">
+      <MemberSignature Language="C#" Value="NoEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.EncryptionPolicy NoEncryption = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.EncryptionPolicy.NoEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.EncryptionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化を禁止し、他のエンドポイントが NULL の暗号を処理できる場合に NULL の暗号を使用することを要求します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RequireEncryption">
+      <MemberSignature Language="C#" Value="RequireEncryption" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Net.Security.EncryptionPolicy RequireEncryption = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Net.Security.EncryptionPolicy.RequireEncryption" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.Security</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.EncryptionPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>暗号化を要求して、NULL の暗号を決して許可しないでです。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

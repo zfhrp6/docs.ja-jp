@@ -1,0 +1,275 @@
+<Type Name="FederatedPassiveSecurityTokenServiceOperations" FullName="System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations">
+  <TypeSignature Language="C#" Value="public static class FederatedPassiveSecurityTokenServiceOperations" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit FederatedPassiveSecurityTokenServiceOperations extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations" />
+  <AssemblyInfo>
+    <AssemblyName>System.IdentityModel.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>通常、フェデレーション パッシブ セキュリティ トークン サービスによって実行される操作をカプセル化するためのユーティリティ クラス。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 分離コードからの入力方向の処理にカスタム STS のインスタンスを起動するには、このクラスによって公開される静的メソッドを呼び出すパッシブ セキュリティ トークン サービス (STS) を実装するときに、Ws-federation 要求メッセージを使用します。 派生することによってカスタム STS を実装する、<xref:System.IdentityModel.SecurityTokenService>クラスです。  
+  
+   
+  
+## Examples  
+ このトピックで使用されているコード例がから取得した、`Custom Token`サンプルです。 このサンプルは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供し、SWT トークンを提供できる、パッシブ STS の実装が含まれています。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードを呼び出すことで Ws-federation 要求を処理するカスタム パッシブ STS を呼び出す方法を示しています、<xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29>の背後にあるコードからメソッド、`default.aspx.cs`ファイル。  
+  
+ [!code-csharp[WIFCustomTokenSTS#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/default.aspx.cs#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public static void ProcessRequest (System.Web.HttpRequest request, System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.SecurityTokenService sts, System.Web.HttpResponse response);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProcessRequest(class System.Web.HttpRequest request, class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.SecurityTokenService sts, class System.Web.HttpResponse response) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest(System.Web.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.IdentityModel.SecurityTokenService,System.Web.HttpResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="sts" Type="System.IdentityModel.SecurityTokenService" />
+        <Parameter Name="response" Type="System.Web.HttpResponse" />
+      </Parameters>
+      <Docs>
+        <param name="request">受信 HTTP 要求。</param>
+        <param name="principal">この要求に関連付けられているプリンシパル。</param>
+        <param name="sts">セキュリティ トークン サービス (STS) を使用してトークンを発行します。</param>
+        <param name="response">発信 HTTP 応答。</param>
+        <summary>受信した Ws-federation パッシブ プロトコル要求を処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ このトピックで使用されているコード例がから取得した、`Custom Token`サンプルです。 このサンプルは、Simple Web Token (SWT) の処理を有効にするカスタム クラスを提供し、SWT トークンを提供できる、パッシブ STS の実装が含まれています。 WIF およびそれらをダウンロードする場所についてこのサンプルと使用可能なその他のサンプルについては、次を参照してください。 [WIF コード サンプル インデックス](~/docs/framework/security/wif-code-sample-index.md)です。 次のコードを呼び出すことで Ws-federation 要求を処理するカスタム パッシブ STS を呼び出す方法を示しています、<xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest%28System.Web.HttpRequest%2CSystem.Security.Claims.ClaimsPrincipal%2CSystem.IdentityModel.SecurityTokenService%2CSystem.Web.HttpResponse%29>の背後にあるコードからメソッド、`default.aspx.cs`ファイル。  
+  
+ [!code-csharp[WIFCustomTokenSTS#1](~/samples/snippets/csharp/VS_Snippets_Misc/wifcustomtokensts/cs/passivests/default.aspx.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="sts" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="response" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessRequest">
+      <MemberSignature Language="C#" Value="public static void ProcessRequest (System.Web.HttpRequest request, System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.SecurityTokenService sts, System.Web.HttpResponse response, System.IdentityModel.Services.WSFederationSerializer federationSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProcessRequest(class System.Web.HttpRequest request, class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.SecurityTokenService sts, class System.Web.HttpResponse response, class System.IdentityModel.Services.WSFederationSerializer federationSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessRequest(System.Web.HttpRequest,System.Security.Claims.ClaimsPrincipal,System.IdentityModel.SecurityTokenService,System.Web.HttpResponse,System.IdentityModel.Services.WSFederationSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="sts" Type="System.IdentityModel.SecurityTokenService" />
+        <Parameter Name="response" Type="System.Web.HttpResponse" />
+        <Parameter Name="federationSerializer" Type="System.IdentityModel.Services.WSFederationSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="request">受信 HTTP 要求。</param>
+        <param name="principal">この要求に関連付けられているプリンシパル。</param>
+        <param name="sts">セキュリティ トークン サービス (STS) を使用してトークンを発行します。</param>
+        <param name="response">発信 HTTP 応答。</param>
+        <param name="federationSerializer">Ws-federation パッシブ プロトコル メッセージを処理するために使用するシリアライザー。</param>
+        <summary>指定した Ws-federation シリアライザーを使用して、受信した Ws-federation パッシブ プロトコル要求を処理します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="request" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="sts" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="response" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSignInRequest">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.SignInResponseMessage ProcessSignInRequest (System.IdentityModel.Services.SignInRequestMessage requestMessage, System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.SecurityTokenService sts);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Services.SignInResponseMessage ProcessSignInRequest(class System.IdentityModel.Services.SignInRequestMessage requestMessage, class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.SecurityTokenService sts) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessSignInRequest(System.IdentityModel.Services.SignInRequestMessage,System.Security.Claims.ClaimsPrincipal,System.IdentityModel.SecurityTokenService)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SignInResponseMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestMessage" Type="System.IdentityModel.Services.SignInRequestMessage" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="sts" Type="System.IdentityModel.SecurityTokenService" />
+      </Parameters>
+      <Docs>
+        <param name="requestMessage">着信のサインイン メッセージを要求します。</param>
+        <param name="principal">要求に関連付けられているプリンシパル。</param>
+        <param name="sts">セキュリティ トークン サービス (STS) を使用してトークンを発行します。</param>
+        <summary>受信した Ws-federation パッシブ プロトコル SignIn 要求を処理します。</summary>
+        <returns>サインイン応答メッセージの要求を処理の結果です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestMessage" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="sts" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSignInRequest">
+      <MemberSignature Language="C#" Value="public static System.IdentityModel.Services.SignInResponseMessage ProcessSignInRequest (System.IdentityModel.Services.SignInRequestMessage requestMessage, System.Security.Claims.ClaimsPrincipal principal, System.IdentityModel.SecurityTokenService sts, System.IdentityModel.Services.WSFederationSerializer federationSerializer);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.IdentityModel.Services.SignInResponseMessage ProcessSignInRequest(class System.IdentityModel.Services.SignInRequestMessage requestMessage, class System.Security.Claims.ClaimsPrincipal principal, class System.IdentityModel.SecurityTokenService sts, class System.IdentityModel.Services.WSFederationSerializer federationSerializer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessSignInRequest(System.IdentityModel.Services.SignInRequestMessage,System.Security.Claims.ClaimsPrincipal,System.IdentityModel.SecurityTokenService,System.IdentityModel.Services.WSFederationSerializer)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.IdentityModel.Services.SignInResponseMessage</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestMessage" Type="System.IdentityModel.Services.SignInRequestMessage" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="sts" Type="System.IdentityModel.SecurityTokenService" />
+        <Parameter Name="federationSerializer" Type="System.IdentityModel.Services.WSFederationSerializer" />
+      </Parameters>
+      <Docs>
+        <param name="requestMessage">着信のサインイン メッセージを要求します。</param>
+        <param name="principal">要求に関連付けられているプリンシパル。</param>
+        <param name="sts">セキュリティ トークン サービス (STS) を使用してトークンを発行します。</param>
+        <param name="federationSerializer">Ws-federation パッシブ プロトコル メッセージを処理するために使用するシリアライザー。</param>
+        <summary>指定した Ws-federation シリアライザーを使用して、受信した Ws-federation パッシブ プロトコル SignIn 要求を処理します。</summary>
+        <returns>サインイン応答メッセージの要求を処理の結果です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="requestMessage" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="sts" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSignInResponse">
+      <MemberSignature Language="C#" Value="public static void ProcessSignInResponse (System.IdentityModel.Services.SignInResponseMessage signInResponseMessage, System.Web.HttpResponse httpResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProcessSignInResponse(class System.IdentityModel.Services.SignInResponseMessage signInResponseMessage, class System.Web.HttpResponse httpResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessSignInResponse(System.IdentityModel.Services.SignInResponseMessage,System.Web.HttpResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="signInResponseMessage" Type="System.IdentityModel.Services.SignInResponseMessage" />
+        <Parameter Name="httpResponse" Type="System.Web.HttpResponse" />
+      </Parameters>
+      <Docs>
+        <param name="signInResponseMessage">処理されるサインイン応答メッセージ。</param>
+        <param name="httpResponse">発信 HTTP 応答。</param>
+        <summary>サインイン応答メッセージを処理します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この一般的な方法では、このメソッドは、プロセスには、<xref:System.IdentityModel.Services.SignInResponseMessage>オーバー ロードされたいずれかから返された<xref:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessSignInRequest%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="signInResponseMessage" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="httpResponse" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ProcessSignOutRequest">
+      <MemberSignature Language="C#" Value="public static void ProcessSignOutRequest (System.IdentityModel.Services.FederationMessage requestMessage, System.Security.Claims.ClaimsPrincipal principal, string reply, System.Web.HttpResponse httpResponse);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void ProcessSignOutRequest(class System.IdentityModel.Services.FederationMessage requestMessage, class System.Security.Claims.ClaimsPrincipal principal, string reply, class System.Web.HttpResponse httpResponse) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.IdentityModel.Services.FederatedPassiveSecurityTokenServiceOperations.ProcessSignOutRequest(System.IdentityModel.Services.FederationMessage,System.Security.Claims.ClaimsPrincipal,System.String,System.Web.HttpResponse)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.IdentityModel.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="requestMessage" Type="System.IdentityModel.Services.FederationMessage" />
+        <Parameter Name="principal" Type="System.Security.Claims.ClaimsPrincipal" />
+        <Parameter Name="reply" Type="System.String" />
+        <Parameter Name="httpResponse" Type="System.Web.HttpResponse" />
+      </Parameters>
+      <Docs>
+        <param name="requestMessage">サインアウト要求を表す Ws-federation の受信メッセージ。 既定では、インスタンスでなければなりません<see cref="T:System.IdentityModel.Services.SignOutRequestMessage" />または<see cref="T:System.IdentityModel.Services.SignOutCleanupRequestMessage" />です。</param>
+        <param name="principal">要求に関連付けられているプリンシパル。</param>
+        <param name="reply">後にリダイレクトする応答 URL サインアウトします。</param>
+        <param name="httpResponse">発信 HTTP 応答。</param>
+        <summary>受信した Ws-federation パッシブ プロトコル SignOut 要求を処理します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="httpRequest" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="principal" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="httpResponse" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <paramref name="httpRequest" />インスタンスではない<see cref="T:System.IdentityModel.Services.SignOutRequestMessage" />または<see cref="T:System.IdentityModel.Services.SignOutCleanupRequestMessage" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

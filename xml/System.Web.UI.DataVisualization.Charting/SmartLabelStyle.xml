@@ -1,0 +1,518 @@
+<Type Name="SmartLabelStyle" FullName="System.Web.UI.DataVisualization.Charting.SmartLabelStyle">
+  <TypeSignature Language="C#" Value="public class SmartLabelStyle" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SmartLabelStyle extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.DataVisualization</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("Enabled")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Web.UI.DataVisualization.Charting.NoNameExpandableObjectConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メソッドと重複するデータ ポイント ラベルの問題を解決するのにはポイント ラベルの位置を規則に基づくインテリジェントなデータを実行するためのプロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ スマート ラベルを有効にすると、グラフには、ユーザー定義のルールのセットに基づいて、重複するデータ ポイント ラベルが再配置します。  
+  
+ 引き出し線は、リンクをデータ ポイント ラベルに描画されます。 引き出し線の表示属性を制御できます。 Visual 属性には、色、スタイル、および線の幅が含まれます。 <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutStyle%2A>と<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineAnchorCapStyle%2A>プロパティは、装飾、引き出し線の最後に表示される矢印などを制御します。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineColor%2A>プロパティは、いずれかに設定することができます<xref:System.Drawing.Color>オブジェクト。 色を設定する引き出し線の色を設定した場合も自動的には、<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineAnchorCapStyle%2A>とによって定義される装飾、<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutStyle%2A>です。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineWidth%2A>プロパティは、引き出し線のピクセル幅を制御します。 このプロパティの使用の装飾をスケールしても、<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineAnchorCapStyle%2A>と<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutStyle%2A>です。  
+  
+ スマート ラベルの移動は、いくつかの動きに関連するプロパティを使用して制御できます。 移動の方向の距離の規則が定義して、ラベルをプロット エリアのままにする許可がデータ ポイントかどうか。 既定の移動の規則は、ほとんどの問題を解決通常されます。 <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MaxMovingDistance%2A>データからピクセル単位で最大距離は、ポイントのデータ ポイント ラベルが重なる場合は移動できるようにすることを指定する値を定義します。 <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MinMovingDistance%2A>プロパティは、最小距離 (ピクセル単位)、データからポイントのデータ ポイント ラベルが重なる場合移動することを指定する値を定義します。 データ ポイント ラベルを再配置する必要があると、ラベルが収まるようには、少なくとも、ピクセル数を指定して移動します。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.IsOverlappedHidden%2A>プロパティは、重なりの問題は解決できない場合に、ラベルを非表示にするかどうかを示します。 場合、<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.IsOverlappedHidden%2A>プロパティは`true`で指定された領域内のデータ ポイントに描画されることはできませんと<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MinMovingDistance%2A>と<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MaxMovingDistance%2A>で許可されている方向<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MovingDirection%2A>、データ ポイント ラベルは描画されません。  
+  
+ <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MovingDirection%2A>プロパティをデータ ポイント ラベルを移動できる方向を定義します。 このプロパティでは 1 つ<xref:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles>値または複数のビット演算 OR<xref:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles>値。 既定値はすべてのビット演算 OR<xref:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles>値、ポイント、データの中央に点を除いてすべての可能な方向の位置を変更できるようにします。  
+  
+ スマート ラベルは、次の種類のグラフはサポートされていません。  
+  
+-   横棒グラフ: バーと 100% 積み上げ横棒グラフ。  
+  
+-   図形グラフ: ドーナツ グラフ、極座標、レーダー グラフ、円です。  
+  
+-   範囲グラフ: の範囲、範囲縦棒および範囲横棒グラフ。  
+  
+-   積み上げ面グラフ: 積み上げ面グラフと 100% 積み上げ面グラフ。  
+  
+   
+  
+## Examples  
+  
+```vb  
+Imports System.Web.UI.DataVisualization.Charting  
+  
+Private Function SetSmartLabelsOptions()  
+  
+   ' Enabling the SmartLabels™ attribute.  
+   Chart1.Series("Series1").SmartLabels.Enabled = true  
+  
+   ' Set the callout style.  
+   Chart1.Series("Series1").SmartLabels.CalloutStyle = LabelCalloutStyle.Underlined  
+  
+   ' Set the callout line color.  
+   Chart1.Series("Series1").SmartLabels.CalloutLineColor = Color.Goldenrod;  
+  
+   ' Set the callout line style.  
+   Chart1.Series("Series1").SmartLabels.CalloutLineStyle = ChartDashStyle.Dash  
+  
+   ' Set the callout line width.  
+   Chart1.Series("Series1").SmartLabels.CalloutLineWidth = 3   
+  
+   ' Set the callout line anchor cap.  
+   Chart1.Series("Series1").SmartLabels.CalloutLineAnchorCap = LineAnchorCap.Arrow  
+End Function  
+```  
+  
+```csharp  
+using System.Web.UI.DataVisualization.Charting  
+  
+private void SetSmartLabelsOptions()  
+{  
+   // Enabling the SmartLabels™ attribute.  
+   Chart1.Series["Series1"].SmartLabels.Enabled = true;  
+  
+   // Set the callout style.  
+   Chart1.Series["Series1"].SmartLabels.CalloutStyle = LabelCalloutStyle.Underlined;  
+  
+   // Set the callout line color.  
+   Chart1.Series["Series1"].SmartLabels.CalloutLineColor = Color.Goldenrod;  
+  
+   // Set the callout line style.  
+   Chart1.Series["Series1"].SmartLabels.CalloutLineStyle = ChartDashStyle.Dash;  
+  
+   // Set the callout line width.  
+   Chart1.Series["Series1"].SmartLabels.CalloutLineWidth = 3;  
+  
+   // Set the callout line anchor cap.  
+   Chart1.Series["Series1"].SmartLabels.CalloutLineAnchorCap = LineAnchorCap.Arrow;  
+}  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SmartLabelStyle ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowOutsidePlotArea">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LabelOutsidePlotAreaStyle AllowOutsidePlotArea { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.LabelOutsidePlotAreaStyle AllowOutsidePlotArea" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.AllowOutsidePlotArea" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LabelOutsidePlotAreaStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを指定するフラグを設定するかどうか、<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />プロット エリアの外に描画できるオブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.LabelOutsidePlotAreaStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutBackColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color CalloutBackColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalloutBackColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutBackColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Transparent")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの引き出し線の背景色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、のみ適用可能な場合に、<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutStyle%2A>の値に設定されて<xref:System.Web.UI.DataVisualization.Charting.LabelCalloutStyle.Box>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutLineAnchorCapStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LineAnchorCapStyle CalloutLineAnchorCapStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.LineAnchorCapStyle CalloutLineAnchorCapStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineAnchorCapStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LineAnchorCapStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの引き出し線のアンカー キャップのスタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.LineAnchorCapStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutLineColor">
+      <MemberSignature Language="C#" Value="public virtual System.Drawing.Color CalloutLineColor { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Color CalloutLineColor" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineColor" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Drawing.Color), "Black")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.ChartColorEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.ColorConverter))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの引き出し線の色を設定します。</summary>
+        <value><see cref="T:System.Drawing.Color" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutLineDashStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.ChartDashStyle CalloutLineDashStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.ChartDashStyle CalloutLineDashStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineDashStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.Attribute)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.ChartDashStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの引き出し線のスタイルを設定します。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.ChartDashStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutLineWidth">
+      <MemberSignature Language="C#" Value="public virtual int CalloutLineWidth { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CalloutLineWidth" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutLineWidth" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(1)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはラベルの引き出し線の幅を設定します。</summary>
+        <value><see langword="integer" /> 値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CalloutStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LabelCalloutStyle CalloutStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.LabelCalloutStyle CalloutStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.CalloutStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LabelCalloutStyle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の位置が変更されたの引き出し線のスタイル<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />オブジェクト。</summary>
+        <value><see cref="T:System.Web.UI.DataVisualization.Charting.LabelCalloutStyle" /> 列挙値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public virtual bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.ParenthesizePropertyName(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはかを示すフラグを設定するかどうか、<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />アルゴリズムが有効になっています。</summary>
+        <value>
+          <see langword="True" />場合は、アルゴリズムは、データ ポイント ラベルが重ならないようにするのには適用されます。 <see langword="False" />データ ポイント ラベルが重なっている場合は実行されません。 既定値は <see langword="True" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMarkerOverlappingAllowed">
+      <MemberSignature Language="C#" Value="public virtual bool IsMarkerOverlappingAllowed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMarkerOverlappingAllowed" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.IsMarkerOverlappingAllowed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはデータ ポイントのラベルとポイント マーカーの重なりが許可されているかどうかを指定するフラグを設定します。</summary>
+        <value>
+          <see langword="True" />データ ポイントの場合は、ラベルとポイント マーカーの重なりが許可されます。 <see langword="False" />データ ポイントのラベルはポイント マーカーに重なるをできなくなります。 既定値は <see langword="false" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsOverlappedHidden">
+      <MemberSignature Language="C#" Value="public virtual bool IsOverlappedHidden { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsOverlappedHidden" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.IsOverlappedHidden" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または位置を変更できないのラベルの重なりは非表示かどうかを示すフラグを設定します。</summary>
+        <value>
+          <see langword="True" />重なっている場合、ラベルを非表示する場合。 <see langword="False" />ラベルの重なりはない非表示にする場合。 既定値は <see langword="True" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合は、ポイントは、プロパティで指定された領域内に描画されることはできません<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MinMovingDistance%2A>と<xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MaxMovingDistance%2A>で許可されている方向で、 <xref:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MovingDirection%2A>、プロパティ、およびこのプロパティは`true`、データ ポイント ラベルは描画されません。  
+  
+> [!NOTE]
+>  スマート ラベルにのみ機能ときに、<xref:System.Web.UI.DataVisualization.Charting.LabelStyle.Angle%2A>プロパティが 0 に設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MaxMovingDistance">
+      <MemberSignature Language="C#" Value="public virtual double MaxMovingDistance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MaxMovingDistance" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MaxMovingDistance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(30)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定で最大距離 (ピクセル単位) をオーバー ラップした<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />オブジェクトをマーカーから移動することができます。</summary>
+        <value><see langword="double" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データからピクセル単位で最大距離は、ポイントのデータ ポイント ラベルが重なる場合は移動できるようにすることを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinMovingDistance">
+      <MemberSignature Language="C#" Value="public virtual double MinMovingDistance { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 MinMovingDistance" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MinMovingDistance" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最小距離 (ピクセル単位) をオーバー ラップした<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />オブジェクトをマーカーから移動することができます。</summary>
+        <value><see langword="double" /> 値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、データ ポイント ラベルが重なる場合に移動する許可される最小距離 (ピクセル単位)、データからのポイントを指定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MovingDirection">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles MovingDirection { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles MovingDirection" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.DataVisualization.Charting.SmartLabelStyle.MovingDirection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.DataVisualization</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(typeof(System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles), "Top, Bottom, Right, Left, TopLeft, TopRight, BottomLeft, BottomRight")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Editor("System.Web.UI.Design.DataVisualization.Charting.FlagsEnumUITypeEditor, System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35", "System.Drawing.Design.UITypeEditor, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定する方向をオーバー ラップした<see cref="T:System.Web.UI.DataVisualization.Charting.SmartLabelStyle" />を移動するオブジェクトを許可します。</summary>
+        <value>A<see cref="T:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles" />列挙値または複数のビットごとの OR が<see cref="T:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles" />値。 既定値はすべてのビットごとの OR<see cref="T:System.Web.UI.DataVisualization.Charting.LabelAlignmentStyles" />ポイント、データの中央に点を除いて、すべての方向に再配置を許可する値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

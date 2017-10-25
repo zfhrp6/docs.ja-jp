@@ -1,0 +1,118 @@
+<Type Name="RegistrationConnectionType" FullName="System.Runtime.InteropServices.RegistrationConnectionType">
+  <TypeSignature Language="C#" Value="public enum RegistrationConnectionType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RegistrationConnectionType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.RegistrationConnectionType" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>クラス オブジェクトへの接続の種類を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内の値、<xref:System.Runtime.InteropServices.RegistrationConnectionType>列挙体で使用される、`flags`のパラメーター、<xref:System.Runtime.InteropServices.RegistrationServices.RegisterTypeForComClients%2A>メソッドです。 これらの値は、COM で定義されているものと同じ**REGCLS**として使用される列挙体、 `flags` COM API の呼び出しでパラメーター`CoRegisterClassObject`です。  
+  
+ 詳細については`CoRegisterClassObject`と**REGCLS**列挙型では、MSDN ライブラリを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="MultipleUse">
+      <MemberSignature Language="C#" Value="MultipleUse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.RegistrationConnectionType MultipleUse = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.RegistrationConnectionType.MultipleUse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.RegistrationConnectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出すことで、クラス オブジェクトに複数のアプリケーションが接続できる<see langword="CoGetClassObject" />です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="MultiSeparate">
+      <MemberSignature Language="C#" Value="MultiSeparate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.RegistrationConnectionType MultiSeparate = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.RegistrationConnectionType.MultiSeparate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.RegistrationConnectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>レジスタは、CLSCTX_LOCAL_SERVER と CLSCTX_INPROC_SERVER クラス ファクトリを区切ります。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleUse">
+      <MemberSignature Language="C#" Value="SingleUse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.RegistrationConnectionType SingleUse = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.RegistrationConnectionType.SingleUse" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.RegistrationConnectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションが使用して、クラス オブジェクトに接続されると<see langword="CoGetClassObject" />、クラス オブジェクトがこれには、他のアプリケーションが接続することはできないように、パブリック ビューから削除します。 シングル ドキュメント インターフェイス (SDI) アプリケーションは、この値が通常使用されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Surrogate">
+      <MemberSignature Language="C#" Value="Surrogate" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.RegistrationConnectionType Surrogate = int32(8)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.RegistrationConnectionType.Surrogate" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.RegistrationConnectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クラスのオブジェクトは、DLL のサーバーの実行に使用されるサロゲート プロセスです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Suspended">
+      <MemberSignature Language="C#" Value="Suspended" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Runtime.InteropServices.RegistrationConnectionType Suspended = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Runtime.InteropServices.RegistrationConnectionType.Suspended" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Runtime.InteropServices.RegistrationConnectionType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>呼び出しがあるまで、指定された CLSID の登録とアクティブ化要求を中断<see langword="CoResumeClassObjects" />です。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

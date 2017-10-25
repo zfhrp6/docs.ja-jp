@@ -1,0 +1,168 @@
+<Type Name="CompilationRelaxationsAttribute" FullName="System.Runtime.CompilerServices.CompilationRelaxationsAttribute">
+  <TypeSignature Language="C#" Value="public class CompilationRelaxationsAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CompilationRelaxationsAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.CompilationRelaxationsAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Module | System.AttributeTargets.Class | System.AttributeTargets.Method)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>共通言語ランタイムの just-in-time (JIT) コンパイラによって生成されたコードの厳格度を制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Runtime.CompilerServices.CompilationRelaxationsAttribute>属性をアセンブリのコンパイルのパラメーターを指定するアセンブリ。  使用して、<xref:System.Runtime.CompilerServices.CompilationRelaxations>コンパイル オプションを指定する列挙体です。  
+  
+ Microsoft .NET Framework version 1.0 では、この属性は無視されます。  
+  
+ クラスは、<xref:System.Runtime.CompilerServices>コンパイラ ライターの使用のみ。  
+  
+   
+  
+## Examples  
+ 次の例では、適用する方法、<xref:System.Runtime.CompilerServices.CompilationRelaxationsAttribute>です。  
+  
+ [!code-csharp[Runtime.CompilerServices.CompilationRelaxationsAttribute#1](~/samples/snippets/csharp/VS_Snippets_CLR/Runtime.CompilerServices.CompilationRelaxationsAttribute/cs/example.cs#1)]
+ [!code-vb[Runtime.CompilerServices.CompilationRelaxationsAttribute#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Runtime.CompilerServices.CompilationRelaxationsAttribute/vb/example.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilationRelaxationsAttribute (int relaxations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 relaxations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CompilationRelaxationsAttribute.#ctor(System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relaxations" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="relaxations">コンパイル リラクゼーションです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.CompilerServices.CompilationRelaxationsAttribute" />指定コンパイル リラクゼーションを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Runtime.CompilerServices.CompilationRelaxationsAttribute>属性をアセンブリのコンパイルのパラメーターを指定するアセンブリ。  
+  
+ Microsoft .NET Framework version 1.0 では、この属性は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompilationRelaxationsAttribute (System.Runtime.CompilerServices.CompilationRelaxations relaxations);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Runtime.CompilerServices.CompilationRelaxations relaxations) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.CompilerServices.CompilationRelaxationsAttribute.#ctor(System.Runtime.CompilerServices.CompilationRelaxations)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="relaxations" Type="System.Runtime.CompilerServices.CompilationRelaxations" />
+      </Parameters>
+      <Docs>
+        <param name="relaxations"><see cref="T:System.Runtime.CompilerServices.CompilationRelaxations" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Runtime.CompilerServices.CompilationRelaxations" /> 値を使用して、<see cref="T:System.Runtime.CompilerServices.CompilationRelaxationsAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 適用、<xref:System.Runtime.CompilerServices.CompilationRelaxationsAttribute>属性をアセンブリのコンパイルのパラメーターを指定するアセンブリ。  
+  
+ Microsoft .NET Framework version 1.0 では、この属性は無視されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CompilationRelaxations">
+      <MemberSignature Language="C#" Value="public int CompilationRelaxations { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 CompilationRelaxations" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.CompilerServices.CompilationRelaxationsAttribute.CompilationRelaxations" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>現在のオブジェクトを構築したときに指定したコンパイル リラクゼーションを取得します。</summary>
+        <value>コンパイル リラクゼーションでは、現在のオブジェクトを構築したときを指定します。  
+  
+ 使用して、<see cref="T:System.Runtime.CompilerServices.CompilationRelaxations" />列挙が、<see cref="P:System.Runtime.CompilerServices.CompilationRelaxationsAttribute.CompilationRelaxations" />プロパティです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

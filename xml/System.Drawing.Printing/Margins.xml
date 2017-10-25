@@ -1,0 +1,397 @@
+<Type Name="Margins" FullName="System.Drawing.Printing.Margins">
+  <TypeSignature Language="C#" Value="public class Margins : ICloneable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit Margins extends System.Object implements class System.ICloneable" />
+  <TypeSignature Language="DocId" Value="T:System.Drawing.Printing.Margins" />
+  <AssemblyInfo>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ICloneable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Drawing.Printing.MarginsConverter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>印刷ページの余白のサイズを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Drawing.Printing.Margins>で余白の幅を操作するクラスが使用される<xref:System.Drawing.Printing.PageSettings>と<xref:System.Drawing.Printing.PrintController>です。 <xref:System.Drawing.Printing.MarginsConverter>このクラスの型記述子です。  
+  
+ <xref:System.Drawing.Printing.Margins.Left%2A>、 <xref:System.Drawing.Printing.Margins.Right%2A>、 <xref:System.Drawing.Printing.Margins.Top%2A>、および<xref:System.Drawing.Printing.Margins.Bottom%2A>余白を定義するプロパティです。 <xref:System.Drawing.Printing.Margins.Clone%2A>作成に同一<xref:System.Drawing.Printing.Margins>です。 <xref:System.Drawing.Printing.Margins.Equals%2A>かどうかを別のオブジェクトと同じサイズ、<xref:System.Drawing.Printing.Margins>です。  
+  
+ 印刷の詳細については、次を参照してください。、<xref:System.Drawing.Printing>名前空間の概要です。  
+  
+   
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例の既定ページ設定をドキュメントの 1 インチの余白をそれぞれの側。  
+  
+ [!code-cpp[Classic Margins Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Margins ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Drawing.Printing.Margins" /> 1 インチ ワイド余白を持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Margins (int left, int right, int top, int bottom);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(int32 left, int32 right, int32 top, int32 bottom) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="left" Type="System.Int32" />
+        <Parameter Name="right" Type="System.Int32" />
+        <Parameter Name="top" Type="System.Int32" />
+        <Parameter Name="bottom" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="left">左余白、100 分の 1 インチにします。</param>
+        <param name="right">右余白をインチの部分の 1/100。</param>
+        <param name="top">上余白インチの部分の 1/100。</param>
+        <param name="bottom">下の余白部分インチの 1/100。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Drawing.Printing.Margins" />クラスに、指定した left、right、top、上下の余白。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例の既定ページ設定をドキュメントの 1 インチ幅の余白をそれぞれの側。  
+  
+ [!code-cpp[Classic Margins Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><paramref name="left" />パラメーターの値が 0 未満です。  
+  
+ または  
+  
+ <paramref name="right" />パラメーターの値が 0 未満です。  
+  
+ または  
+  
+ <paramref name="top" />パラメーターの値が 0 未満です。  
+  
+ または  
+  
+ <paramref name="bottom" />パラメーターの値が 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bottom">
+      <MemberSignature Language="C#" Value="public int Bottom { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Bottom" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.Margins.Bottom" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または下余白をインチの 100 分に設定します。</summary>
+        <value>下の余白部分インチの 1/100。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白 (ミリメートル単位) を測定する場合は乗算余白の幅するミリメートル単位で 3.937 によってインチの 100 分に正しい測定値を決定します。 たとえば、25 mm の余白を実行する場合に、乗算で 3.937 は 98 丸められる場合です。 適切な設定し、 <xref:System.Drawing.Printing.Margins> 98 メンバー。  
+  
+   
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例では、幅、および上で 1 インチの左と右の余白と上下の余白の幅を 1.5 インチをドキュメントの既定のページ設定を設定します。  
+  
+ [!code-cpp[Classic Margins.Left Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins.Left Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins.Left Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins.Left Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins.Left Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins.Left Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.Margins.Bottom" />プロパティが 0 より小さい値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public object Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトのメンバーごとの複製を取得します。</summary>
+        <returns>このオブジェクトの複製。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">これと比較するオブジェクト<see cref="T:System.Drawing.Printing.Margins" />です。</param>
+        <summary>これと比較<see cref="T:System.Drawing.Printing.Margins" />を指定した<see cref="T:System.Object" />次元が同じであるかどうかを決定します。</summary>
+        <returns>
+          <see langword="true" />指定したオブジェクトがある場合、<see cref="T:System.Drawing.Printing.Margins" />と、同じ<see cref="P:System.Drawing.Printing.Margins.Top" />、 <see cref="P:System.Drawing.Printing.Margins.Bottom" />、<see cref="P:System.Drawing.Printing.Margins.Right" />と<see cref="P:System.Drawing.Printing.Margins.Left" />値としてこの<see cref="T:System.Drawing.Printing.Margins" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>計算し、左、右、上、および上下の余白の幅に基づくハッシュ コードを取得します。</summary>
+        <returns>左、右、上、および上下の余白に基づくハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Left">
+      <MemberSignature Language="C#" Value="public int Left { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Left" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.Margins.Left" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または左の余白の幅を 100 分の 1 インチに設定します。</summary>
+        <value>左余白の幅インチの部分の 1/100。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白 (ミリメートル単位) を測定する場合は乗算余白の幅するミリメートル単位で 3.937 によってインチの 100 分に正しい測定値を決定します。 たとえば、25 mm の余白を実行する場合に、乗算で 3.937 は 98 丸められる場合です。 適切な設定し、 <xref:System.Drawing.Printing.Margins> 98 メンバー。  
+  
+   
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例では、幅、および上で 1 インチの左と右の余白と上下の余白の幅を 1.5 インチをドキュメントの既定のページ設定を設定します。  
+  
+ [!code-cpp[Classic Margins.Left Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins.Left Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins.Left Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins.Left Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins.Left Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins.Left Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.Margins.Left" />プロパティが 0 より小さい値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Drawing.Printing.Margins m1, System.Drawing.Printing.Margins m2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(class System.Drawing.Printing.Margins m1, class System.Drawing.Printing.Margins m2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.op_Equality(System.Drawing.Printing.Margins,System.Drawing.Printing.Margins)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m1" Type="System.Drawing.Printing.Margins" />
+        <Parameter Name="m2" Type="System.Drawing.Printing.Margins" />
+      </Parameters>
+      <Docs>
+        <param name="m1">最初の<see cref="T:System.Drawing.Printing.Margins" />等しいかどうかを比較します。</param>
+        <param name="m2">2 番目<see cref="T:System.Drawing.Printing.Margins" />等しいかどうかを比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Drawing.Printing.Margins" />次元が同じであるかどうかを決定します。</summary>
+        <returns>
+          <see langword="true" />示すために、 <see cref="P:System.Drawing.Printing.Margins.Left" />、 <see cref="P:System.Drawing.Printing.Margins.Right" />、 <see cref="P:System.Drawing.Printing.Margins.Top" />、および<see cref="P:System.Drawing.Printing.Margins.Bottom" />両方の余白のプロパティ値が同じである、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Drawing.Printing.Margins.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Drawing.Printing.Margins m1, System.Drawing.Printing.Margins m2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(class System.Drawing.Printing.Margins m1, class System.Drawing.Printing.Margins m2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.op_Inequality(System.Drawing.Printing.Margins,System.Drawing.Printing.Margins)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="m1" Type="System.Drawing.Printing.Margins" />
+        <Parameter Name="m2" Type="System.Drawing.Printing.Margins" />
+      </Parameters>
+      <Docs>
+        <param name="m1">最初の<see cref="T:System.Drawing.Printing.Margins" />非等値を比較します。</param>
+        <param name="m2">2 番目<see cref="T:System.Drawing.Printing.Margins" />非等値を比較します。</param>
+        <summary>比較する 2 つ<see cref="T:System.Drawing.Printing.Margins" />を幅の異なるいるかどうかを判断します。</summary>
+        <returns>
+          <see langword="true" />指定する場合、 <see cref="P:System.Drawing.Printing.Margins.Left" />、 <see cref="P:System.Drawing.Printing.Margins.Right" />、 <see cref="P:System.Drawing.Printing.Margins.Top" />、または<see cref="P:System.Drawing.Printing.Margins.Bottom" />両方の余白のプロパティが等しくない。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[この演算子を同等の方法は、します。<xref:System.Drawing.Printing.Margins.Equals%28System.Object%29?displayProperty=nameWithType>]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Right">
+      <MemberSignature Language="C#" Value="public int Right { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Right" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.Margins.Right" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または右の余白の幅を 100 分の 1 インチに設定します。</summary>
+        <value>右余白の幅インチの部分の 1/100。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白 (ミリメートル単位) を測定する場合は乗算余白の幅するミリメートル単位で 3.937 によってインチの 100 分に正しい測定値を決定します。 たとえば、25 mm の余白を実行する場合に、乗算 3.937 によっては 98 切り捨てください。 適切な設定し、 <xref:System.Drawing.Printing.Margins> 98 メンバー。  
+  
+   
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例では、幅、および上で 1 インチの左と右の余白と上下の余白の幅を 1.5 インチをドキュメントの既定のページ設定を設定します。  
+  
+ [!code-cpp[Classic Margins.Left Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins.Left Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins.Left Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins.Left Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins.Left Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins.Left Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.Margins.Right" />プロパティが 0 より小さい値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Top">
+      <MemberSignature Language="C#" Value="public int Top { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Top" />
+      <MemberSignature Language="DocId" Value="P:System.Drawing.Printing.Margins.Top" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または上部余白の幅を 100 分の 1 インチに設定します。</summary>
+        <value>上部余白の幅を 100 インチです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 余白 (ミリメートル単位) を測定する場合は乗算余白の幅するミリメートル単位で 3.937 によってインチの 100 分に正しい測定値を決定します。 たとえば、25 mm の余白を実行する場合に、乗算で 3.937 は 98 丸められる場合です。 適切な設定し、 <xref:System.Drawing.Printing.Margins> 98 メンバー。  
+  
+   
+  
+## Examples  
+ 使用して、 <xref:System.Drawing>、 <xref:System.Drawing.Printing>、および<xref:System.IO>この例の名前空間。  
+  
+ 次のコード例では、幅、および上で 1 インチの左と右の余白と上下の余白の幅を 1.5 インチをドキュメントの既定のページ設定を設定します。  
+  
+ [!code-cpp[Classic Margins.Left Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic Margins.Left Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic Margins.Left Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic Margins.Left Example/CS/source.cs#1)]
+ [!code-vb[Classic Margins.Left Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic Margins.Left Example/VB/source.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException"><see cref="P:System.Drawing.Printing.Margins.Top" />プロパティが 0 より小さい値に設定します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Drawing.Printing.Margins.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Drawing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>変換、<see cref="T:System.Drawing.Printing.Margins" />を文字列にします。</summary>
+        <returns><see cref="T:System.String" /> の <see cref="T:System.Drawing.Printing.Margins" /> 表現。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

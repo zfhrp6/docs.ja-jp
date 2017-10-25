@@ -1,0 +1,122 @@
+<Type Name="PartChromeType" FullName="System.Web.UI.WebControls.WebParts.PartChromeType">
+  <TypeSignature Language="C#" Value="public enum PartChromeType" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PartChromeType extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.WebParts.PartChromeType" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Web パーツ コントロールを囲む境界線の種類を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パーツ コントロールの<xref:System.Web.UI.WebControls.WebParts.PartChromeType>列挙が囲まれて Web パーツ コントロールの境界線の種類を決定します。 オプションは、タイトル バーの表示のみ、境界線のみ、タイトル バー、罫線、またはどちらも含まれます。  
+  
+ 列挙値の既定値に設定されている場合、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>パーツ コントロールのプロパティ、コントロールはからその設定が継承、<xref:System.Web.UI.WebControls.WebParts.WebZone.PartChromeType%2A>コントロールを含むゾーンのプロパティです。  
+  
+   
+  
+## Examples  
+ コード例を以下の宣言を使用して、<xref:System.Web.UI.WebControls.WebParts.PartChromeType>カスタムを使用して列挙<xref:System.Web.UI.WebControls.WebParts.WebPart>ASP.NET Web ページで参照されているコントロール。 コード例を実行するには、このソース コードをコンパイルする必要があります。 コンパイルするには明示的にし、Web サイトの Bin フォルダーまたはグローバル アセンブリ キャッシュに結果として得られるアセンブリを配置できます。 またはを動的にコンパイルされる実行時に、サイトの App_Code フォルダー内のソース コードを配置することができます。 両方のコンパイル方法を示すチュートリアルでは、次を参照してください。[チュートリアル: カスタム Web サーバー コントロールの開発と](http://msdn.microsoft.com/library/6d90782a-a1a4-45a6-b2d4-cf6362b83b08)です。  
+  
+ 例では、最初の部分には、カスタム コントロールは、名前付きコードが含まれています。`TextDisplayWebPart`です。 コントロールがから派生するので<xref:System.Web.UI.WebControls.WebParts.WebPart>、共通のプロパティも継承を<xref:System.Web.UI.WebControls.WebParts.Part>など、クラスを提供、<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>を使用して、プロパティ、<xref:System.Web.UI.WebControls.WebParts.PartChromeType>列挙体として戻り値の型。  
+  
+ [!code-csharp[WebParts_Part_Overview#2](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/textdisplaywebpart.cs#2)]
+ [!code-vb[WebParts_Part_Overview#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/textdisplaywebpart.vb#2)]  
+  
+ なお、Web の宣言型マークアップでページで、2 番目のインスタンス、`TextDisplayWebPart`コントロール セットの<xref:System.Web.UI.WebControls.WebParts.Part.ChromeType%2A>TitleOnly するプロパティ値。 ブラウザーでページを読み込むと、2 つ目のコントロールのインスタンスを最小化されたが表示されます。 2 つ目のコントロールを展開すると、境界線なしのタイトル バーのみがあります。  
+  
+ [!code-aspx-csharp[WebParts_Part_Overview#1](~/samples/snippets/csharp/VS_Snippets_WebNet/WebParts_Part_Overview/CS/partoverviewcs.aspx#1)]
+ [!code-aspx-vb[WebParts_Part_Overview#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/WebParts_Part_Overview/VB/partoverviewvb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="BorderOnly">
+      <MemberSignature Language="C#" Value="BorderOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PartChromeType BorderOnly = int32(4)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PartChromeType.BorderOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界線のみ、タイトル バーなし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PartChromeType Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PartChromeType.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>一部のコントロールから継承された設定に罫線を含むゾーンです。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PartChromeType None = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PartChromeType.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>境界線とタイトル バーなし。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleAndBorder">
+      <MemberSignature Language="C#" Value="TitleAndBorder" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PartChromeType TitleAndBorder = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PartChromeType.TitleAndBorder" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイトル バーと境界線です。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleOnly">
+      <MemberSignature Language="C#" Value="TitleOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.UI.WebControls.WebParts.PartChromeType TitleOnly = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.UI.WebControls.WebParts.PartChromeType.TitleOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WebParts.PartChromeType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイトル バーのみ、境界線なし。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

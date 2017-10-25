@@ -1,0 +1,124 @@
+<Type Name="IExtension&lt;T&gt;" FullName="System.ServiceModel.IExtension&lt;T&gt;">
+  <TypeSignature Language="C#" Value="public interface IExtension&lt;T&gt; where T : IExtensibleObject&lt;T&gt;" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IExtension`1&lt;(class System.ServiceModel.IExtensibleObject`1&lt;!T&gt;) T&gt;" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.IExtension`1" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <TypeParameters>
+    <TypeParameter Name="T">
+      <Constraints>
+        <InterfaceName>System.ServiceModel.IExtensibleObject&lt;T&gt;</InterfaceName>
+      </Constraints>
+    </TypeParameter>
+  </TypeParameters>
+  <Interfaces />
+  <Docs>
+    <typeparam name="T">カスタム動作を実装するオブジェクト。</typeparam>
+    <summary>オブジェクトが集約を介して別のオブジェクトを拡張できるようにします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、拡張可能オブジェクト パターンを使用して新しい状態または動作を追加することで、<xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType> オブジェクト (<xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType>、<xref:System.ServiceModel.ServiceHost?displayProperty=nameWithType>、<xref:System.ServiceModel.InstanceContext?displayProperty=nameWithType>、および <xref:System.ServiceModel.OperationContext?displayProperty=nameWithType> の各クラス) を拡張できます。 拡張可能オブジェクト パターンは、[!INCLUDE[indigo2](~/includes/indigo2-md.md)] では、既存のランタイム クラスに新しい機能を付け加えて拡張するため、またはオブジェクトに新しい状態の機能を追加するために使用されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Attach">
+      <MemberSignature Language="C#" Value="public void Attach (T owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Attach(!T owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.IExtension`1.Attach(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この拡張を集約する拡張可能オブジェクト。</param>
+        <summary>集約されているときに拡張オブジェクトがそれを認識できるようにします。 拡張が <see cref="P:System.ServiceModel.IExtensibleObject`1.Extensions" /> プロパティに追加されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、拡張の現在のインスタンスが属する <xref:System.ServiceModel.IExtensibleObject%601> オブジェクトを追跡します。 この呼び出しは、イベントを処理するか、所有者のプロパティを検査するチャンスを拡張に与えます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、このメソッドを使用して、拡張の現在のインスタンスが属する <xref:System.ServiceModel.IExtensibleObject%601> オブジェクトを追跡する方法を示しています。  
+  
+```csharp  
+InstanceContext owner;  
+  
+public void Attach(InstanceContext owner)  
+{  
+  this.owner = owner;   
+}  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Detach">
+      <MemberSignature Language="C#" Value="public void Detach (T owner);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Detach(!T owner) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.IExtension`1.Detach(`0)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="owner" Type="T" />
+      </Parameters>
+      <Docs>
+        <param name="owner">この拡張を集約する拡張可能オブジェクト。</param>
+        <summary>もう集約されていないことをオブジェクトが認識できるようにします。 拡張が <see cref="P:System.ServiceModel.IExtensibleObject`1.Extensions" /> プロパティから削除されたときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 拡張が削除されていることを認識するには、<xref:System.ServiceModel.IExtension%601.Detach%2A> メソッドを使用します。 拡張は、これを使用して、拡張オブジェクトに関するイベントをアンフックできます。 さらに、拡張は、追加された拡張は削除できないことを示すために、このメソッドから <xref:System.InvalidOperationException?displayProperty=nameWithType> をスローできます。  
+  
+ このメソッドは、所有者オブジェクトが破棄されている場合または閉じている場合は呼び出されません。 必要に応じて、適切な <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> イベントをフックするか、適切なインターフェイス (<xref:System.ServiceModel.OperationContext?displayProperty=nameWithType> 用) を実装して、所有者のライフサイクルを観察するかどうかは、拡張または拡張を追加するコードに依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

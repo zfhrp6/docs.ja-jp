@@ -1,0 +1,89 @@
+<Type Name="SettingsSavedEventArgs" FullName="System.Web.ClientServices.Providers.SettingsSavedEventArgs">
+  <TypeSignature Language="C#" Value="public class SettingsSavedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit SettingsSavedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Web.ClientServices.Providers.SettingsSavedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=nameWithType>イベント後に発生設定プロバイダー設定サービスにアクセスする場合でも、設定が正常に保存されませんでした。 プロバイダーが、設定を保存できなかった理由の 1 つは、かどうか、現在のユーザーがログアウトしています。使用することができます、<xref:System.Web.ClientServices.Providers.SettingsSavedEventArgs.FailedSettingsList%2A>プロパティを確認するかどうか、設定を保存できませんでした。  
+  
+ 設定プロバイダーは、プロバイダーをスローする代わりになる設定サービスにアクセスできない場合、このイベントは発生しませんが、<xref:System.Net.WebException>です。  
+  
+ イベント処理の詳細については、次を参照してください。 [NIB: イベントの利用](http://msdn.microsoft.com/en-us/01e4f1bc-e55e-413f-98c7-6588493e5f67)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このクラスを使用して、正常に保存されなかった設定の一覧を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#304](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#304)]
+ [!code-vb[ClientApplicationServices#304](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#304)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SettingsSavedEventArgs (System.Collections.Generic.IEnumerable&lt;string&gt; failedSettingsList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;string&gt; failedSettingsList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.ClientServices.Providers.SettingsSavedEventArgs.#ctor(System.Collections.Generic.IEnumerable{System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="failedSettingsList" Type="System.Collections.Generic.IEnumerable&lt;System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="failedSettingsList">この設定は、設定プロバイダーは保存できませんでした。</param>
+        <summary><see cref="T:System.Web.ClientServices.Providers.SettingsSavedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FailedSettingsList">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.ReadOnlyCollection&lt;string&gt; FailedSettingsList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.ReadOnlyCollection`1&lt;string&gt; FailedSettingsList" />
+      <MemberSignature Language="DocId" Value="P:System.Web.ClientServices.Providers.SettingsSavedEventArgs.FailedSettingsList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.ReadOnlyCollection&lt;System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>設定を取得、<see cref="T:System.Web.ClientServices.Providers.ClientSettingsProvider" />をサーバーに保存できませんでした。</summary>
+        <value>この設定は、保存されませんでした。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロバイダーが、設定を保存できなかった理由の 1 つは、かどうか、現在のユーザーがログアウトしています。使用することができます、<xref:System.Web.ClientServices.Providers.SettingsSavedEventArgs.FailedSettingsList%2A>プロパティを確認するかどうか、設定を保存できませんでした。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このプロパティを使用して、正常に保存されなかった設定の一覧を表示する方法を示します。  
+  
+ [!code-csharp[ClientApplicationServices#304](~/samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#304)]
+ [!code-vb[ClientApplicationServices#304](~/samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#304)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

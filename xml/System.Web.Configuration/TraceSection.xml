@@ -1,0 +1,325 @@
+<Type Name="TraceSection" FullName="System.Web.Configuration.TraceSection">
+  <TypeSignature Language="C#" Value="public sealed class TraceSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed TraceSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.TraceSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ASP.NET トレース サービスを構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.TraceSection>クラスは、プログラムからアクセスし、構成ファイルの内容を変更する方法を提供`trace`セクションです。 トレースのセクションでは、ASP.NET のトレース機能と制御トレース結果を収集、格納、および表示する方法を構成します。  
+  
+ トレースを有効にすると、各ページ要求は、ページ出力に追加したりできる、アプリケーションのトレース ログに格納されているトレース メッセージを生成します。 ASP.NET トレース ビューアー (Trace.axd) を使用して、トレース ログの内容を表示することができます。  
+  
+> [!NOTE]
+>  要素は、Machine.config ファイルと Web.config ファイルで、構成階層のセクションでは許可します。 Web のサブディレクトリの構成ファイルでは許可されません。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.TraceSection>型です。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#1)]
+ [!code-vb[System.Web.Configuration.TraceSection2#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TraceSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.TraceSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>既定の設定を使用して <see cref="T:System.Web.Configuration.TraceSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("enabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のトレース サービスが有効になっているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />トレースが有効である場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.Enabled%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#7](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#7)]
+ [!code-vb[System.Web.Configuration.TraceSection2#7](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LocalOnly">
+      <MemberSignature Language="C#" Value="public bool LocalOnly { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool LocalOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.LocalOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("localOnly", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のトレース ビューアー (Trace.axd) では、提供されているかの要求のみにホストの Web サーバーからを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ASP.NET トレース viewer (Trace.axd) がある場合の要求にのみ、ホスト Web サーバーからです。それ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.LocalOnly%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#6](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#6)]
+ [!code-vb[System.Web.Configuration.TraceSection2#6](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MostRecent">
+      <MemberSignature Language="C#" Value="public bool MostRecent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MostRecent" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.MostRecent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mostRecent", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または最新の要求が常に、サーバーに保存するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />最新の要求は常に、トレース ログに格納されている場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求がで指定された要求の数に達するまで、到着した順序でトレース ログに格納されている、<xref:System.Web.Configuration.TraceSection.RequestLimit%2A>プロパティです。 要求の制限に達したときと<xref:System.Web.Configuration.TraceSection.MostRecent%2A>は`true`古い要求は自動的に破棄され、および、ログに追加される新しい要求が続行します。 要求の制限に達したときと<xref:System.Web.Configuration.TraceSection.MostRecent%2A>は`false`、ログから以前の要求が削除されるか、要求の制限を増やすまで、新しい要求は破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.MostRecent%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#4)]
+ [!code-vb[System.Web.Configuration.TraceSection2#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PageOutput">
+      <MemberSignature Language="C#" Value="public bool PageOutput { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool PageOutput" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.PageOutput" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("pageOutput", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のトレース情報が各ページの出力に追加されるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />トレース情報が各ページに追加される場合それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.PageOutput%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#2)]
+ [!code-vb[System.Web.Configuration.TraceSection2#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequestLimit">
+      <MemberSignature Language="C#" Value="public int RequestLimit { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RequestLimit" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.RequestLimit" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("requestLimit", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.IntegerValidator(MinValue=0)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET がトレース情報を格納する対象のアプリケーションへの要求の最大数を示す値を設定します。</summary>
+        <value>サーバーに格納するための要求の最大数。 既定値は 10 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 要求の最大制限は 10,000 です。 10,000 を超える値が指定されている場合、サイレント モードで切り捨てられます 10,000 に ASP.NET によって。  
+  
+ <xref:System.Web.Configuration.TraceSection.MostRecent%2A>プロパティを取得またはサーバーに格納されている要求が最新の要求または、最初の要求が到着するかどうかを決定する値を設定します。  
+  
+ **注**要求の数がこの設定によって課せられる制限を超えた場合および<xref:System.Web.Configuration.TraceSection.MostRecent%2A>は`false`要求は、トレース ログに格納します。 場合<xref:System.Web.Configuration.TraceSection.MostRecent%2A>は`true`、最新の要求がこの設定によって課せられる制限値格納されているし、古い要求は破棄されます。  
+  
+   
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.RequestLimit%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#5)]
+ [!code-vb[System.Web.Configuration.TraceSection2#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TraceMode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.TraceDisplayMode TraceMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.TraceDisplayMode TraceMode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.TraceMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("traceMode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.TraceDisplayMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または ASP.NET のトレース情報が表示される順序を設定します。</summary>
+        <value>1 つ、<see cref="T:System.Web.Configuration.TraceDisplayMode" />トレース情報が表示される順序を示す値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.TraceMode%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#8](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#8)]
+ [!code-vb[System.Web.Configuration.TraceSection2#8](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WriteToDiagnosticsTrace">
+      <MemberSignature Language="C#" Value="public bool WriteToDiagnosticsTrace { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WriteToDiagnosticsTrace" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.TraceSection.WriteToDiagnosticsTrace" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("writeToDiagnosticsTrace", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはのインスタンスにページ トレース内で出力メッセージが転送されるかどうかを示す値を設定、<see cref="T:System.Diagnostics.Trace" />クラスです。</summary>
+        <value>
+          <see langword="true" />トレース メッセージに送信された場合、<see cref="T:System.Diagnostics.Trace" />クラスです。 それ以外の場合、<see langword="false" />です。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.TraceSection.WriteToDiagnosticsTrace%2A> プロパティの使用方法を示しています。 このコード例に示されている例の一部である、<xref:System.Web.Configuration.TraceSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.TraceSection2#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/CS/tracesection.cs#3)]
+ [!code-vb[System.Web.Configuration.TraceSection2#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.TraceSection2/VB/tracesection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

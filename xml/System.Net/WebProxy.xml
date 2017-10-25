@@ -1,0 +1,1075 @@
+<Type Name="WebProxy" FullName="System.Net.WebProxy">
+  <TypeSignature Language="C#" Value="public class WebProxy : System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit WebProxy extends System.Object implements class System.Net.IWebProxy, class System.Runtime.Serialization.ISerializable" />
+  <TypeSignature Language="DocId" Value="T:System.Net.WebProxy" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Net.WebProxy</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Runtime.Serialization.ISerializable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>HTTP プロキシ設定を格納して、<see cref="T:System.Net.WebRequest" />クラスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>クラスには、プロキシ設定が含まれていますを<xref:System.Net.WebRequest>Web プロキシが要求を送信するために使用するかどうかを決定するインスタンスを使用します。 グローバルな Web プロキシ設定をコンピューターおよびアプリケーション構成ファイル、およびアプリケーションで指定できますがのインスタンスを使用して、 <xref:System.Net.WebProxy> Web プロキシの使用方法をカスタマイズするクラス。 <xref:System.Net.WebProxy>クラスの基本実装されて、<xref:System.Net.IWebProxy>インターフェイスです。  
+  
+ Web プロキシ クラスのインスタンスを取得するには、次の方法のいずれかを使用できます。  
+  
+-   <xref:System.Net.WebProxy.%23ctor%2A>コンス トラクターです。  
+  
+-   <xref:System.Net.WebProxy.GetDefaultProxy%2A> メソッド。  
+  
+-   <xref:System.Net.GlobalProxySelection.Select%2A> メソッド。  
+  
+ これらの各メソッドを指定、<xref:System.Net.WebProxy>さらにすることができますのインスタンスをカスタマイズです。 これらの違いは、アプリケーションに返される前に、インスタンスを初期化する方法です。 <xref:System.Net.WebProxy.%23ctor%2A>コンス トラクターのインスタンスを返します、<xref:System.Net.WebProxy>クラス、<xref:System.Net.WebProxy.Address%2A>プロパティに設定`null`です。 要求を使用する場合、<xref:System.Net.WebProxy>この状態では、プロキシなしでインスタンスが要求を送信するために使用します。  
+  
+ <xref:System.Net.WebProxy.GetDefaultProxy%2A>メソッドのインスタンスを返します、<xref:System.Net.WebProxy>クラス、 <xref:System.Net.WebProxy.Address%2A>、 <xref:System.Net.WebProxy.BypassProxyOnLocal%2A>、および<xref:System.Net.WebProxy.BypassList%2A>プロパティが Internet Explorer 5.5 以降を使用する値に設定します。  
+  
+ <xref:System.Net.GlobalProxySelection.Select%2A>メソッドのインスタンスを返します、<xref:System.Net.WebProxy>とクラス プロパティの Internet Explorer および構成ファイルの設定の組み合わせに従って設定します。  
+  
+ <xref:System.Net.WebProxy>クラスには、自動検出と自動プロキシ構成スクリプトの実行がサポートしています。 この機能は、Web プロキシの自動検出 (WPAD) とも呼ばれます。 自動プロキシ構成を使用する場合、構成スクリプトは、通常 wpad.dat 必要がありますにある、ダウンロード、コンパイル、および実行します。 これらの操作が成功した場合は、スクリプトは、要求に対して使用できるプロキシを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例を割り当て、<xref:System.Net.WebProxy>インスタンスを<xref:System.Net.WebRequest>インスタンス。 <xref:System.Net.WebRequest>インスタンスでは、プロキシを使用して、外部のインターネット リソースに接続します。 (たとえば、wpad による機能の使用方法を示す、ドキュメントを参照して、<xref:System.Net.IWebProxyScript>クラスです)。  
+  
+ [!code-cpp[Classic WebProxy Example#1](~/samples/snippets/cpp/VS_Snippets_Remoting/Classic WebProxy Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic WebProxy Example#1](~/samples/snippets/csharp/VS_Snippets_Remoting/Classic WebProxy Example/CS/source.cs#1)]
+ [!code-vb[Classic WebProxy Example#1](~/samples/snippets/visualbasic/VS_Snippets_Remoting/Classic WebProxy Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.WebProxy" /> クラスの空のインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定のコンス トラクターの空のインスタンスを初期化します、<xref:System.Net.WebProxy>クラス、<xref:System.Net.WebProxy.Address%2A>プロパティに設定`null`です。  
+  
+ ときに、<xref:System.Net.WebProxy.Address%2A>プロパティは`null`、<xref:System.Net.WebProxy.IsBypassed%2A>メソッドを返します。`true`と<xref:System.Net.WebProxy.GetProxy%2A>宛先アドレスを返します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#1)]
+ [!code-csharp[NCLWebProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (string Address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string Address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="Address">プロキシ サーバーの URI。</param>
+        <summary>指定した URI を使用して、<see cref="T:System.Net.WebProxy" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、<xref:System.Uri>インスタンスを含む`Address`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#6](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#6)]
+ [!code-csharp[NCLWebProxy#6](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#6)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="Address" />無効な URI です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (Uri Address);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri Address) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.Uri)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="Address">A<see cref="T:System.Uri" />プロキシ サーバーのアドレスを格納するインスタンス。</param>
+        <summary>指定された <see cref="T:System.Net.WebProxy" /> インスタンスから <see cref="T:System.Uri" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、`Address`パラメーター。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#2)]
+ [!code-csharp[NCLWebProxy#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected WebProxy (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">シリアル化データです。</param>
+        <param name="streamingContext">シリアル化されたデータのコンテキスト。</param>
+        <summary>インスタンスを初期化、<see cref="T:System.Net.WebProxy" />クラスのシリアル化されたコンテンツを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、システムを逆シリアル化、<xref:System.Net.WebProxy>インスタンス以外のアプリケーション操作を呼び出すことはできます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (string Address, bool BypassOnLocal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string Address, bool BypassOnLocal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.String" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Address">プロキシ サーバーの URI。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebProxy" />クラスの指定した URI と設定をバイパスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、<xref:System.Uri>インスタンスを含む`Address`と<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#7)]
+ [!code-csharp[NCLWebProxy#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="Address" />無効な URI です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (string Host, int Port);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string Host, int32 Port) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.String,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Host" Type="System.String" />
+        <Parameter Name="Port" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="Host">プロキシ ホストの名前です。</param>
+        <param name="Port">上のポート番号<c>ホスト</c>を使用します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebProxy" />指定されたホストとポート番号を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、<xref:System.Uri>フォーム http:// のインスタンス`Host`:`Port`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#5](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#5)]
+ [!code-csharp[NCLWebProxy#5](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">結合して形成された URI<paramref name="Host" />と<paramref name="Port" />は有効な URI ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (Uri Address, bool BypassOnLocal);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri Address, bool BypassOnLocal) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.Uri,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.Uri" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="Address">A<see cref="T:System.Uri" />プロキシ サーバーのアドレスを格納するインスタンス。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebProxy" />クラス、<see cref="T:System.Uri" />をインスタンス化し、設定をバイパスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定`Address`を使用して、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#3](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#3)]
+ [!code-csharp[NCLWebProxy#3](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (string Address, bool BypassOnLocal, string[] BypassList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string Address, bool BypassOnLocal, string[] BypassList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.String,System.Boolean,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.String" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+        <Parameter Name="BypassList" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Address">プロキシ サーバーの URI。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="BypassList">バイパスするサーバーの Uri を含む正規表現文字列の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebProxy" />した指定した URI、設定すると、バイパスをバイパスする Uri の一覧です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、<xref:System.Uri>インスタンスを含む`Address`、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`、および<xref:System.Net.WebProxy.BypassList%2A>プロパティに設定`BypassList`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#8](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#8)]
+ [!code-csharp[NCLWebProxy#8](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#8)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="Address" />無効な URI です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (Uri Address, bool BypassOnLocal, string[] BypassList);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri Address, bool BypassOnLocal, string[] BypassList) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.Uri,System.Boolean,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.Uri" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+        <Parameter Name="BypassList" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="Address">A<see cref="T:System.Uri" />プロキシ サーバーのアドレスを格納するインスタンス。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="BypassList">バイパスするサーバーの Uri を含む正規表現文字列の配列。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Net.WebProxy" /> 、指定したクラス<see cref="T:System.Uri" />インスタンス、バイパスを設定してバイパスする Uri の一覧です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定`Address`、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`、および<xref:System.Net.WebProxy.BypassList%2A>プロパティに設定`BypassList`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#4](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#4)]
+ [!code-csharp[NCLWebProxy#4](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (string Address, bool BypassOnLocal, string[] BypassList, System.Net.ICredentials Credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string Address, bool BypassOnLocal, string[] BypassList, class System.Net.ICredentials Credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.String,System.Boolean,System.String[],System.Net.ICredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.String" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+        <Parameter Name="BypassList" Type="System.String[]" />
+        <Parameter Name="Credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="Address">プロキシ サーバーの URI。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="BypassList">バイパスするサーバーの Uri を含む正規表現文字列の配列。</param>
+        <param name="Credentials"><see cref="T:System.Net.ICredentials" />認証用のプロキシ サーバーに送信するインスタンス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Net.WebProxy" />クラスの指定した URI、設定をバイパスするには Uri と資格情報の一覧をバイパスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定、<xref:System.Uri>インスタンスを含む`Address`、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`、<xref:System.Net.WebProxy.BypassList%2A>プロパティに設定`BypassList`、および<xref:System.Net.WebProxy.Credentials%2A>プロパティに設定`Credentials`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#9](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#9)]
+ [!code-csharp[NCLWebProxy#9](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#9)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.UriFormatException">
+          <paramref name="Address" />無効な URI です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WebProxy (Uri Address, bool BypassOnLocal, string[] BypassList, System.Net.ICredentials Credentials);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri Address, bool BypassOnLocal, string[] BypassList, class System.Net.ICredentials Credentials) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.#ctor(System.Uri,System.Boolean,System.String[],System.Net.ICredentials)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="Address" Type="System.Uri" />
+        <Parameter Name="BypassOnLocal" Type="System.Boolean" />
+        <Parameter Name="BypassList" Type="System.String[]" />
+        <Parameter Name="Credentials" Type="System.Net.ICredentials" />
+      </Parameters>
+      <Docs>
+        <param name="Address">A<see cref="T:System.Uri" />プロキシ サーバーのアドレスを格納するインスタンス。</param>
+        <param name="BypassOnLocal">
+          <see langword="true" />ローカル アドレスに対してプロキシをバイパスするにはそれ以外の場合、<see langword="false" />です。</param>
+        <param name="BypassList">バイパスするサーバーの Uri を含む正規表現文字列の配列。</param>
+        <param name="Credentials"><see cref="T:System.Net.ICredentials" />認証用のプロキシ サーバーに送信するインスタンス。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Net.WebProxy" /> 、指定したクラス<see cref="T:System.Uri" />インスタンス、バイパスするには Uri と資格情報の一覧の設定をバイパスします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy>でインスタンスを初期化、<xref:System.Net.WebProxy.Address%2A>プロパティに設定`Address`、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティに設定`BypassOnLocal`、<xref:System.Net.WebProxy.BypassList%2A>プロパティに設定`BypassList`、および<xref:System.Net.WebProxy.Credentials%2A>プロパティに設定`Credentials`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このコンス トラクターを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#13](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#13)]
+ [!code-csharp[NCLWebProxy#13](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#13)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Address">
+      <MemberSignature Language="C#" Value="public Uri Address { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri Address" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.Address" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロキシ サーバーのアドレスを設定します。</summary>
+        <value>A<see cref="T:System.Uri" />プロキシ サーバーのアドレスを格納するインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.Address%2A>プロパティには、プロキシ サーバーのアドレスが含まれています。 自動プロキシ検出が有効でないと、自動構成スクリプトが指定されていないときに、<xref:System.Net.WebProxy.Address%2A>プロパティおよび<xref:System.Net.WebProxy.BypassList%2A>要求に使用するプロキシを決定します。  
+  
+ ときに、<xref:System.Net.WebProxy.Address%2A>プロパティは`null`要求がプロキシをバイパスし、宛先ホストに直接接続します。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Net.WebProxy>オブジェクトを含むその<xref:System.Net.WebProxy.Address%2A>です。  
+  
+ [!code-cpp[NCLAutoProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLAutoProxy/CPP/proxy.cpp#1)]
+ [!code-csharp[NCLAutoProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAutoProxy/CS/proxy.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassArrayList">
+      <MemberSignature Language="C#" Value="public System.Collections.ArrayList BypassArrayList { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ArrayList BypassArrayList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.BypassArrayList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ArrayList</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロキシ サーバーを使用しないアドレスの一覧を取得します。</summary>
+        <value><see cref="T:System.Collections.ArrayList" />の一覧を格納している<see cref="P:System.Net.WebProxy.BypassList" />アクセス時にプロキシ サーバーを使用して Uri を表す配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.BypassList%2A>は Uri を記述する正規表現文字列の配列のリストを<xref:System.Net.WebRequest>インスタンスに直接の代わりにプロキシ サーバーを介してアクセスします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassList">
+      <MemberSignature Language="C#" Value="public string[] BypassList { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string[] BypassList" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.BypassList" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプロキシ サーバーを使用しないアドレスの配列を設定します。</summary>
+        <value>記述する正規表現の Uri をアクセスするときにプロキシ サーバーを使用しないの一覧を格納する配列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.BypassList%2A>プロパティには、Uri を表す正規表現の配列が含まれています。 を、<xref:System.Net.WebRequest>インスタンスに直接の代わりにプロキシ サーバーを介してアクセスします。  
+  
+   
+  
+## Examples  
+ 次のコード例のプロパティを表示する、<xref:System.Net.WebProxy>オブジェクトを含むその<xref:System.Net.WebProxy.BypassList%2A>プロパティです。  
+  
+ [!code-cpp[NCLAutoProxy#1](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLAutoProxy/CPP/proxy.cpp#1)]
+ [!code-csharp[NCLAutoProxy#1](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAutoProxy/CS/proxy.cs#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassProxyOnLocal">
+      <MemberSignature Language="C#" Value="public bool BypassProxyOnLocal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BypassProxyOnLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.BypassProxyOnLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ローカル アドレスでプロキシ サーバーをバイパスするかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ローカル アドレスのプロキシ サーバーをバイパスする場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定、<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>プロパティを決定するかどうか<xref:System.Net.WebRequest>インスタンスは、ローカル インターネット リソースにアクセスするときにプロキシ サーバーを使用します。  
+  
+ <xref:System.Net.WebProxy.BypassProxyOnLocal%2A> が `true` の場合、ローカル インターネット リソースへの要求はプロキシ サーバーを使用しません。 ローカルの要求は http://webserver/と同様に、URI でピリオド (.) の不足によって識別されるまたは http://localhost、http://loopback、http://127.0.0.1 など、ローカル サーバーにアクセスします。 <xref:System.Net.WebProxy.BypassProxyOnLocal%2A> が `false` の場合、すべてのインターネット要求はプロキシ サーバー経由で行われます。  
+  
+> [!NOTE]
+>  ピリオドを使用する URI を持つローカル ホストへの要求は、プロキシを使用します。 このような場合、プロキシを使用しないようににホストのエントリを作成、<xref:System.Net.WebProxy.BypassList%2A>です。  
+  
+   
+  
+## Examples  
+ このプロパティを設定するコンス トラクターを呼び出し、このプロパティの値を取得するコード例を次に示します。  
+  
+ [!code-cpp[NCLWebProxy#7](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#7)]
+ [!code-csharp[NCLWebProxy#7](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#7)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateDefaultProxy">
+      <MemberSignature Language="C#" Value="public static System.Net.IWebProxy CreateDefaultProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.IWebProxy CreateDefaultProxy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.CreateDefaultProxy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.IWebProxy</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Credentials">
+      <MemberSignature Language="C#" Value="public System.Net.ICredentials Credentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Net.ICredentials Credentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.Credentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.ICredentials</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>認証用のプロキシ サーバーに送信する資格情報を取得または設定します。</summary>
+        <value><see cref="T:System.Net.ICredentials" />認証用のプロキシ サーバーに送信するための資格情報を格納しているインスタンス。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.Credentials%2A>プロパティには 407 (プロキシ認証) の HTTP ステータス コードへの応答でプロキシ サーバーに送信する認証の資格情報が含まれています。 クライアントのほとんどのシナリオで使用する必要があります、 <xref:System.Net.CredentialCache.DefaultCredentials%2A>、これは、現在ログオンしているユーザーの資格情報。 これを行うには、設定、<xref:System.Net.WebProxy.UseDefaultCredentials%2A>プロパティを`true`このプロパティを設定する代わりにします。  
+  
+> [!NOTE]
+>  設定した場合、<xref:System.Net.WebProxy.Credentials%2A>プロパティ以外の資格情報を<xref:System.Net.CredentialCache.DefaultCredentials%2A>、設定、<xref:System.Net.WebProxy.UseDefaultCredentials%2A>プロパティを`true`により、<xref:System.InvalidOperationException>です。 これを回避するに設定する必要があります、<xref:System.Net.WebProxy.Credentials%2A>プロパティを`null`設定する前に、<xref:System.Net.WebProxy.UseDefaultCredentials%2A>プロパティを`true`です。 同様に、いずれかにこのプロパティを設定することはできないときの値<xref:System.Net.WebProxy.UseDefaultCredentials%2A>は`true`します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティを設定しようとしたときに、<see cref="P:System.Net.WebProxy.UseDefaultCredentials" />プロパティに設定された<see langword="true" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultProxy">
+      <MemberSignature Language="C#" Value="public static System.Net.WebProxy GetDefaultProxy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Net.WebProxy GetDefaultProxy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.GetDefaultProxy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Obsolete("This method has been deprecated. Please use the proxy selected for you by default. http://go.microsoft.com/fwlink/?linkid=14202")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.WebProxy</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>Internet Explorer の非動的のプロキシ設定を読み取ります。</summary>
+        <returns>A<see cref="T:System.Net.WebProxy" />から Internet Explorer 5.5 以降、動的ではないプロキシ設定を格納しているインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.GetDefaultProxy%2A>を読み取ってで Internet Explorer 5.5 以降では、格納されている非動的のプロキシ設定を作成、<xref:System.Net.WebProxy>これらの設定のインスタンス。  
+  
+ <xref:System.Net.WebProxy.GetDefaultProxy%2A>メソッドが Internet Explorer で実行するスクリプト、自動構成エントリ、または DHCP または DNS の検索から生成されるすべての動的な設定を取得できません。  
+  
+ アプリケーションを使用する必要があります、<xref:System.Net.WebRequest.DefaultWebProxy%2A?displayProperty=nameWithType>プロパティおよび<xref:System.Net.WebRequest.GetSystemWebProxy%2A?displayProperty=nameWithType>メソッドの代わりに、<xref:System.Net.WebProxy.GetDefaultProxy%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメソッドを呼び出すことを示します。  
+  
+ [!code-cpp[NCLWebProxy#11](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#11)]
+ [!code-csharp[NCLWebProxy#11](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#11)]  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Net.WebPermission">ネットワーク リソースに無制限のアクセス許可。 関連付けられた列挙:<see cref="F:System.Security.Permissions.PermissionState.Unrestricted" />です。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="GetObjectData">
+      <MemberSignature Language="C#" Value="protected virtual void GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データの読み込み先となる <see cref="T:System.Runtime.Serialization.SerializationInfo" />。</param>
+        <param name="streamingContext">このシリアル化の転送先を指定する <see cref="T:System.Runtime.Serialization.StreamingContext" />。</param>
+        <summary><see cref="T:System.Runtime.Serialization.SerializationInfo" /> に、ターゲット オブジェクトをシリアル化するために必要なデータを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 含まれる任意のオブジェクト、<xref:System.Runtime.Serialization.SerializationInfo>自動的に追跡され、フォーマッタによってシリアル化します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProxy">
+      <MemberSignature Language="C#" Value="public Uri GetProxy (Uri destination);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Uri GetProxy(class System.Uri destination) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.GetProxy(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destination" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="destination"><see cref="T:System.Uri" />要求のインターネット リソースのインスタンス。</param>
+        <summary>要求のプロキシの URI を返します。</summary>
+        <returns><see cref="T:System.Uri" />リソースがバイパス リストにある場合、インターネット リソースのインスタンス、それ以外の場合、<see cref="T:System.Uri" />プロキシのインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.GetProxy%2A>メソッドの取得、URI、<xref:System.Net.WebRequest>インターネット リソースにアクセスするインスタンスを使用します。  
+  
+ <xref:System.Net.WebProxy.GetProxy%2A>比較`destination`の内容で<xref:System.Net.WebProxy.BypassList%2A>を使用して、<xref:System.Net.WebProxy.IsBypassed%2A>メソッドです。 場合<xref:System.Net.WebProxy.IsBypassed%2A>を返します`true`、<xref:System.Net.WebProxy.GetProxy%2A>返します`destination`と<xref:System.Net.WebRequest>インスタンスは、プロキシ サーバーを使用しません。  
+  
+ 場合`destination`に含まれていない<xref:System.Net.WebProxy.BypassList%2A>、<xref:System.Net.WebRequest>インスタンスがプロキシ サーバーを使用し、<xref:System.Net.WebProxy.Address%2A>プロパティが返されます。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.WebProxy>オブジェクトし、リソースの選択されているプロキシを取得するには、このメソッドを呼び出します。  
+  
+ [!code-cpp[NCLAutoProxy#2](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLAutoProxy/CPP/proxy.cpp#2)]
+ [!code-csharp[NCLAutoProxy#2](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLAutoProxy/CS/proxy.cs#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destination" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsBypassed">
+      <MemberSignature Language="C#" Value="public bool IsBypassed (Uri host);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsBypassed(class System.Uri host) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.IsBypassed(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="host" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="host"><see cref="T:System.Uri" />プロキシの使用方法を確認するホストのインスタンス。</param>
+        <summary>指定したホストにプロキシ サーバーを使用するかどうかを示します。</summary>
+        <returns>
+          <see langword="true" />プロキシ サーバーを使用しない必要がある場合<paramref name="host" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Net.WebProxy.IsBypassed%2A>インターネット リソースにアクセスするときにプロキシ サーバーをバイパスするかどうかを決定するメソッドを使用します。  
+  
+ <xref:System.Net.WebProxy.BypassProxyOnLocal%2A>と<xref:System.Net.WebProxy.BypassList%2A>プロパティの戻り値の制御、<xref:System.Net.WebProxy.IsBypassed%2A>メソッドです。  
+  
+ <xref:System.Net.WebProxy.IsBypassed%2A>返します`true`次の条件のいずれか。  
+  
+-   場合<xref:System.Net.WebProxy.BypassProxyOnLocal%2A>は`true`と`host`ローカルの URI です。 ローカルの要求は、http://webserver/"のように、URI でピリオド (.) の不足により識別されます。  
+  
+-   場合`host`内の正規表現と一致する<xref:System.Net.WebProxy.BypassList%2A>です。  
+  
+-   <xref:System.Net.WebProxy.Address%2A> が `null` の場合。  
+  
+ その他のすべての条件を返す`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例を作成、<xref:System.Net.WebProxy>オブジェクトし、バイパス リストが適切に設定するかどうかを確認するには、このメソッドを呼び出します。  
+  
+ [!code-cpp[NCLWebProxy#12](~/samples/snippets/cpp/VS_Snippets_Remoting/NCLWebProxy/CPP/nclwebproxy.cpp#12)]
+ [!code-csharp[NCLWebProxy#12](~/samples/snippets/csharp/VS_Snippets_Remoting/NCLWebProxy/CS/nclwebproxy.cs#12)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="host" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Runtime.Serialization.ISerializable.GetObjectData">
+      <MemberSignature Language="C#" Value="void ISerializable.GetObjectData (System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Runtime.Serialization.ISerializable.GetObjectData(class System.Runtime.Serialization.SerializationInfo serializationInfo, valuetype System.Runtime.Serialization.StreamingContext streamingContext) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.WebProxy.System#Runtime#Serialization#ISerializable#GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serializationInfo" Type="System.Runtime.Serialization.SerializationInfo" />
+        <Parameter Name="streamingContext" Type="System.Runtime.Serialization.StreamingContext" />
+      </Parameters>
+      <Docs>
+        <param name="serializationInfo">データを読み込む先の <see cref="T:System.Runtime.Serialization.SerializationInfo" /> オブジェクト。</param>
+        <param name="streamingContext">A<see cref="T:System.Runtime.Serialization.StreamingContext" />構造を示すこのシリアル化のシリアル化先。</param>
+        <summary>シリアル化データとシリアル化する、システムで使用されるコンテキストを作成、<see cref="T:System.Net.WebProxy" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ システムは、オブジェクトをシリアル化するには、このメソッドを呼び出しますアプリケーションは、直接呼び出しません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseDefaultCredentials">
+      <MemberSignature Language="C#" Value="public bool UseDefaultCredentials { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UseDefaultCredentials" />
+      <MemberSignature Language="DocId" Value="P:System.Net.WebProxy.UseDefaultCredentials" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Net.WebProxy</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />値を制御するのかどうか、<see cref="P:System.Net.CredentialCache.DefaultCredentials" />要求と共に送信されます。</summary>
+        <value>
+          <see langword="true" />場合は既定の資格情報が使用されます。それ以外の場合、<see langword="false" />です。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを設定`true`この要求が行われるときに<xref:System.Net.WebProxy>オブジェクト認証が必要、サーバーによって要求された場合、現在ログオンしているユーザーの資格情報を使用します。 クライアント アプリケーションでは、これはほとんどのシナリオでは、目的の動作です。 中間層アプリケーションの場合、このプロパティを使用する代わりに、ASP.NET アプリケーションなど、通常、設定、<xref:System.Net.WebProxy.Credentials%2A>プロパティが代わりに、要求が行われるクライアントの資格情報をします。  
+  
+ 次の表は、設定の効果を示しています、<xref:System.Net.WebProxy.UseDefaultCredentials%2A>の値に基づいて、値、<xref:System.Net.WebProxy.Credentials%2A>プロパティです。  
+  
+|<xref:System.Net.WebProxy.Credentials%2A> の値|<xref:System.Net.WebProxy.UseDefaultCredentials%2A> の値|効果|  
+|----------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|------------|  
+|<xref:System.Net.CredentialCache.DefaultCredentials%2A>|`true`|影響しません。|  
+|<xref:System.Net.CredentialCache.DefaultCredentials%2A>|`false`|<xref:System.Net.WebProxy.Credentials%2A> が `null` に設定されます。|  
+|`null`|`true`|<xref:System.Net.WebProxy.Credentials%2A> が <xref:System.Net.CredentialCache.DefaultCredentials%2A> に設定されます。|  
+|以外の値のいずれかの<xref:System.Net.CredentialCache.DefaultCredentials%2A>または`null`|`true` または `false`|設定<xref:System.Net.WebProxy.UseDefaultCredentials%2A>例外をスローします。|  
+  
+ 場合<xref:System.Net.WebProxy.UseDefaultCredentials%2A>は`false`、変更することができます、<xref:System.Net.WebProxy.Credentials%2A>プロパティを任意の資格情報。 場合<xref:System.Net.WebProxy.UseDefaultCredentials%2A>は`true`、変更、<xref:System.Net.WebProxy.Credentials%2A>プロパティから<xref:System.Net.CredentialCache.DefaultCredentials%2A>(ときに設定されている値、<xref:System.Net.WebProxy.UseDefaultCredentials%2A>プロパティに設定されている`true`) 例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">このプロパティを設定しようとしたときに、<see cref="P:System.Net.WebProxy.Credentials" />プロパティには、既定の資格情報以外の資格情報が含まれています。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

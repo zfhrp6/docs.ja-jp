@@ -1,0 +1,204 @@
+<Type Name="ITextProvider" FullName="System.Windows.Automation.Provider.ITextProvider">
+  <TypeSignature Language="C#" Value="public interface ITextProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITextProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.Provider.ITextProvider" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationProvider</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("3589c92c-63f3-4367-99bb-ada653b77cf2")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.InterfaceType(System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>テキストを格納しているコントロールへの、UI オートメーション クライアントのアクセスをサポートするメソッドとプロパティを公開します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サポートする UI オートメーション プロバイダーに実装される、<xref:System.Windows.Automation.TextPattern>コントロール パターン。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DocumentRange">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ITextRangeProvider DocumentRange { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Automation.Provider.ITextRangeProvider DocumentRange" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ITextProvider.DocumentRange" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ITextRangeProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドキュメントのメイン テキストを囲むテキスト範囲を取得します。</summary>
+        <value>To be added.</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ヘッダー、脚注、または注釈などの補助テキストは、含まれていない場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSelection">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ITextRangeProvider[] GetSelection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.ITextRangeProvider[] GetSelection() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITextProvider.GetSelection" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ITextRangeProvider[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の 1 つ以上のテキスト選択に関連付けられている、非結合テキスト範囲のコレクションを取得します。</summary>
+        <returns>非結合テキスト範囲のコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキスト選択範囲をサポートする UI オートメーション プロバイダーの場合、プロバイダー必要がありますこのメソッドを実装およびを返すことも、<xref:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection%2A>値。  
+  
+ テキストが選択されていない場合<xref:System.Windows.Automation.Provider.ITextProvider.GetSelection%2A>システム カーソル (テキスト挿入ポイント) の位置にある低次元テキスト範囲 (空の範囲) が返されます。  
+  
+ システム カーソル (テキスト挿入ポイント) が存在しない場合<xref:System.Windows.Automation.Provider.ITextProvider.GetSelection%2A>null 参照を返す可能性があります (`Nothing`で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">UI オートメーション プロバイダーがテキスト選択をサポートしていない場合。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisibleRanges">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ITextRangeProvider[] GetVisibleRanges ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.ITextRangeProvider[] GetVisibleRanges() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITextProvider.GetVisibleRanges" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ITextRangeProvider[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>テキスト コンテナーから非結合テキスト範囲の配列を取得します。それぞれのテキスト範囲は部分的に表示されている最初の行から始まり、部分的に表示されている最後の行の末尾で終わります。</summary>
+        <returns>コンテナーまたは空の配列に含まれる表示テキスト範囲のコレクション。 null 参照 ([!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)] では <see langword="Nothing" />) は返されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI オートメーション プロバイダーは、ある手順に戻って、多くても、コンテナー内で表示されるテキスト範囲を確認します。  
+  
+ 非結合テキスト範囲は、テキスト コンテナーのコンテンツが重なったウィンドウまたはその他のオブジェクトによって隠されるとき、または複数列のレイアウトとテキストのコンテナーが 1 つまたは多くの列が部分的にスクロール見えないに発生する可能性があります。  
+  
+ テキストが表示されていない場合 (空) の低次元テキスト範囲が返されます。 テキスト コンテナーが空の場合、またはすべてのテキストのスクロールされて見えない場合に、この空の範囲を返すことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RangeFromChild">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ITextRangeProvider RangeFromChild (System.Windows.Automation.Provider.IRawElementProviderSimple childElement);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.ITextRangeProvider RangeFromChild(class System.Windows.Automation.Provider.IRawElementProviderSimple childElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITextProvider.RangeFromChild(System.Windows.Automation.Provider.IRawElementProviderSimple)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ITextRangeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="childElement" Type="System.Windows.Automation.Provider.IRawElementProviderSimple" />
+      </Parameters>
+      <Docs>
+        <param name="childElement">囲まれたオブジェクト。</param>
+        <summary>イメージ、ハイパーリンク、その他の埋め込みオブジェクトなどの子要素を囲むテキスト範囲を取得します。</summary>
+        <returns>子要素に及ぶ範囲。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ UI オートメーション プロバイダーは、渡された要素のテキスト コンテナーの子であることを確認する必要があります。  
+  
+ 子要素が存在する範囲でテキストがない場合は、低次元 (空) の範囲が返されます。  
+  
+ `childElement`パラメーターの子、<xref:System.Windows.Automation.AutomationElement>に関連付けられている、<xref:System.Windows.Automation.TextPattern>またはの子の配列から、<xref:System.Windows.Automation.Text.TextPatternRange>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">子要素が null 参照 (<see langword="Nothing" />で[!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)])。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RangeFromPoint">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.Provider.ITextRangeProvider RangeFromPoint (System.Windows.Point screenLocation);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Windows.Automation.Provider.ITextRangeProvider RangeFromPoint(valuetype System.Windows.Point screenLocation) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Automation.Provider.ITextProvider.RangeFromPoint(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Provider.ITextRangeProvider</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="screenLocation" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="screenLocation">画面座標での位置。</param>
+        <summary>指定した画面座標の最も近くにある低次元 (空の) テキスト範囲を返します。</summary>
+        <returns>指定した位置の最も近くにある低次元テキスト範囲。 null 参照 ([!INCLUDE[TLA#tla_visualbnet](~/includes/tlasharptla-visualbnet-md.md)] では <see langword="Nothing" />) は返されません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 画面座標が、イメージ、ハイパーリンク、または他の埋め込みオブジェクトの座標を子オブジェクトを囲むテキスト範囲が返されます。  
+  
+ によって非表示のテキストは無視されませんので<xref:System.Windows.Automation.Provider.ITextProvider.RangeFromPoint%2A>から表示されるテキストの特定の時点に最も近い低次元テキスト範囲が返されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">特定の時点が外の場合、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]テキストのパターンに関連付けられた要素。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SupportedTextSelection">
+      <MemberSignature Language="C#" Value="public System.Windows.Automation.SupportedTextSelection SupportedTextSelection { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Automation.SupportedTextSelection SupportedTextSelection" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationProvider</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.SupportedTextSelection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>テキスト プロバイダーが選択をサポートするかどうかを指定する値を取得し、選択をサポートする場合はサポートされる選択の種類を取得します。</summary>
+        <value><see cref="T:System.Windows.Automation.SupportedTextSelection" /> の <see langword="None" />、<see langword="Single" />、または <see langword="Multiple" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

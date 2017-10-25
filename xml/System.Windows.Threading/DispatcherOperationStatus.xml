@@ -1,0 +1,93 @@
+<Type Name="DispatcherOperationStatus" FullName="System.Windows.Threading.DispatcherOperationStatus">
+  <TypeSignature Language="C#" Value="public enum DispatcherOperationStatus" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed DispatcherOperationStatus extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Threading.DispatcherOperationStatus" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>状態の有効な値について説明します、<see cref="T:System.Windows.Threading.DispatcherOperation" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Threading.DispatcherOperation>への呼び出し後に返される<xref:System.Windows.Threading.Dispatcher.BeginInvoke%2A>です。  <xref:System.Windows.Threading.DispatcherOperation>でのデリゲートの対話に使用できる、<xref:System.Windows.Threading.Dispatcher>操作の優先順位を変更または操作の中止などのキューです。  
+  
+ 各段階、<xref:System.Windows.Threading.DispatcherOperation>は保留中の実行、および完了します。  任意の時点で 操作の完了前に、ステータスは、"中断"に設定できます。  
+  
+<a name="xamlTextUsage_DispatcherOperationStatus"></a>   
+## <a name="xaml-text-usage"></a>XAML テキストの使用方法  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Aborted">
+      <MemberSignature Language="C#" Value="Aborted" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherOperationStatus Aborted = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherOperationStatus.Aborted" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が中止されました。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Completed">
+      <MemberSignature Language="C#" Value="Completed" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherOperationStatus Completed = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherOperationStatus.Completed" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この操作が完了します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Executing">
+      <MemberSignature Language="C#" Value="Executing" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherOperationStatus Executing = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherOperationStatus.Executing" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作は実行を開始しましたが完了していません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pending">
+      <MemberSignature Language="C#" Value="Pending" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Threading.DispatcherOperationStatus Pending = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Threading.DispatcherOperationStatus.Pending" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Threading.DispatcherOperationStatus</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が保留中とがまだ、<see cref="T:System.Windows.Threading.Dispatcher" />キュー。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

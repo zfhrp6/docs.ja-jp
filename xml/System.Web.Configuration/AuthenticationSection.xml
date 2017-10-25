@@ -1,0 +1,228 @@
+<Type Name="AuthenticationSection" FullName="System.Web.Configuration.AuthenticationSection">
+  <TypeSignature Language="C#" Value="public sealed class AuthenticationSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed AuthenticationSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Configuration.AuthenticationSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web アプリケーションの認証を構成します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AuthenticationSection>クラスをプログラムでアクセスおよび変更する方法を提供する、`authentication`構成ファイルのセクションです。  
+  
+> [!NOTE]
+>  <xref:System.Web.Configuration.AuthenticationSection>セクション プロパティによって定義された制限に従って、構成ファイルの関連するセクションに情報を書き込むことが<xref:System.Configuration.SectionInformation.AllowDefinition%2A>値がある<xref:System.Configuration.ConfigurationAllowDefinition.MachineToApplication>です。 階層では許可されませんレベルで構成ファイルに書き込みをしようとすると、パーサーによって生成されたエラー メッセージが発生します。 ただし、このクラスを使用すると、階層内の任意のレベルで構成情報を読み取る。 安全性とスケーラビリティは、データベースなど、外部のリポジトリを使用して、ユーザーの資格情報を保持することをお勧めします。  
+  
+   
+  
+## Examples  
+ このセクションでは、2 つのコード例を示します。 最初のいくつかの属性の宣言の値を指定する方法を説明、`authentication`セクションでは、のメンバーとしてアクセスすることも、<xref:System.Web.Configuration.AuthenticationSection>クラスです。 2 つ目は、使用する方法を示します、<xref:System.Web.Configuration.AuthenticationSection>クラスです。  
+  
+ 次の構成ファイルの例は、宣言によっての値を指定する方法を示しています、`authentication`セクションです。  
+  
+> [!NOTE]
+>  使用する場合、`credentials`セクションに説明されているガイドラインに従うことを確認する[ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。 スケーラビリティとセキュリティの強化は、ユーザーの資格情報を格納する外部のデータベースを使用することお勧めします。 アプリケーション セキュリティで保護された ASP.NET の構築の詳細については、Microsoft MSDN Web サイト (http://msdn.microsoft.com) を「セキュリティで保護する ASP.NET アプリケーションの」を検索し、"ビルドのセキュリティで保護された ASP.NET アプリケーション: 認証、承認、およびセキュリティ保護通信"です。  
+  
+```  
+<authentication mode="Forms">  
+  <forms name="MyAppCookieName" loginUrl="login.aspx">  
+    <credentials passwordFormat="SHA1">  
+      <user name="Kim"  
+         password="07B7F3EE06F278DB966BE960E7CBBD103DF30CA6"/>  
+      <user name="John"  
+         password="BA56E5E0366D003E98EA1C7F04ABF8FCB3753889"/>  
+    </credentials>  
+  </forms>  
+</authentication>  
+```  
+  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.AuthenticationSection>クラスです。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#1)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public AuthenticationSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.AuthenticationSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Configuration.AuthenticationSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Configuration.AuthenticationSection.%23ctor%2A>コンス トラクターは、コードから直接使用するものではありません。 ASP.NET 構成システムによって呼び出されます。 インスタンスを取得する、<xref:System.Web.Configuration.AuthenticationSection>クラスを使用して、<xref:System.Configuration.Configuration.GetSection%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、取得する方法を示します、<xref:System.Web.Configuration.AuthenticationSection>オブジェクト。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#2)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Forms">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.FormsAuthenticationConfiguration Forms { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.FormsAuthenticationConfiguration Forms" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AuthenticationSection.Forms" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("forms")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.FormsAuthenticationConfiguration</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Web.Configuration.AuthenticationSection.Forms" />要素のプロパティです。</summary>
+        <value>A<see cref="P:System.Web.Configuration.AuthenticationSection.Forms" />フォーム ベースの認証時に使用される情報が含まれる要素のプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.AuthenticationSection.Forms%2A>要素のプロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#5](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#5)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#5](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Mode">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.AuthenticationMode Mode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.Configuration.AuthenticationMode Mode" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AuthenticationSection.Mode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("mode", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.AuthenticationMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または認証モードを設定します。</summary>
+        <value><see cref="T:System.Web.Configuration.AuthenticationMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、<xref:System.Web.Configuration.AuthenticationSection.Mode%2A> プロパティの使用方法を示しています。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#4](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#4)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#4](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Passport">
+      <MemberSignature Language="C#" Value="public System.Web.Configuration.PassportAuthentication Passport { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.Configuration.PassportAuthentication Passport" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AuthenticationSection.Passport" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("passport")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Obsolete("This property is obsolete. The Passport authentication product is no longer supported and has been superseded by Live ID.")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.Configuration.PassportAuthentication</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="P:System.Web.Configuration.AuthenticationSection.Passport" />要素のプロパティです。</summary>
+        <value>A <see cref="P:System.Web.Configuration.AuthenticationSection.Passport" /> passport ベースの認証時に使用される情報が含まれる要素のプロパティです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Web.Configuration.AuthenticationSection.Passport%2A>要素のプロパティです。  
+  
+ [!code-csharp[System.Web.Configuration.AuthenticationSection#3](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/CS/authenticationsection.cs#3)]
+ [!code-vb[System.Web.Configuration.AuthenticationSection#3](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Configuration.AuthenticationSection/VB/authenticationsection.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Configuration.AuthenticationSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Reset">
+      <MemberSignature Language="C#" Value="protected override void Reset (System.Configuration.ConfigurationElement parentElement);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void Reset(class System.Configuration.ConfigurationElement parentElement) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Configuration.AuthenticationSection.Reset(System.Configuration.ConfigurationElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="parentElement" Type="System.Configuration.ConfigurationElement" />
+      </Parameters>
+      <Docs>
+        <param name="parentElement">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

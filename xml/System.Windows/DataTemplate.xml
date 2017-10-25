@@ -1,0 +1,274 @@
+<Type Name="DataTemplate" FullName="System.Windows.DataTemplate">
+  <TypeSignature Language="C#" Value="public class DataTemplate : System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataTemplate extends System.Windows.FrameworkTemplate" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.DataTemplate" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkTemplate</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.DictionaryKeyProperty("DataTemplateKey")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>データ オブジェクトの視覚的な構造をについて説明します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.DataTemplate>データ オブジェクトの視覚エフェクトを指定します。 <xref:System.Windows.DataTemplate>バインドするときに、オブジェクトが特に便利ですが、<xref:System.Windows.Controls.ItemsControl>など、<xref:System.Windows.Controls.ListBox>コレクション全体にします。 詳細については、なし、<xref:System.Windows.Controls.ListBox>コレクション内のオブジェクトの文字列形式を表示します。 その場合は、使用することができます、<xref:System.Windows.DataTemplate>データ オブジェクトの外観を定義します。 内容、<xref:System.Windows.DataTemplate>データ オブジェクトの視覚的な構造になります。  
+  
+ 詳細については、次を参照してください。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+   
+  
+## Examples  
+ 次の例を作成する方法を示しています、<xref:System.Windows.DataTemplate>インラインです。 <xref:System.Windows.DataTemplate> 3 つの各データ項目が表示されるように指定<xref:System.Windows.Controls.TextBlock>内の要素、<xref:System.Windows.Controls.StackPanel>です。 この例では、データ オブジェクトと呼ばれるクラス`Task`です。 <xref:System.Windows.Controls.TextBlock>のプロパティにこのテンプレート内の要素がバインドされている、`Task`クラスです。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#Inline](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#inline)]  
+  
+ 定義する方が一般的な<xref:System.Windows.DataTemplate>で次の例のように、再利用可能なオブジェクトにするためのリソース セクション。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#R1](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r1)]  
+[!code-xaml[DataTemplatingIntro_snip#AsResource](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#asresource)]  
+[!code-xaml[DataTemplatingIntro_snip#R2](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#r2)]  
+  
+ これで、次の例のように、`myTaskTemplate` をリソースとして使用できるようになります。  
+  
+ [!code-xaml[DataTemplatingIntro_snip#MyTaskTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataTemplatingIntro_snip/CSharp/Window1.xaml#mytasktemplate)]  
+  
+ 完全なサンプルについては、「[Introduction to Data Templating Sample](http://go.microsoft.com/fwlink/?LinkID=160009)」(データ テンプレート サンプルの概要) をご覧ください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTemplate.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.DataTemplate" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataTemplate (object dataType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(object dataType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTemplate.#ctor(System.Object)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="dataType" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="dataType">場合は、テンプレート オブジェクトのデータを対象には、データ オブジェクトの型名です。</param>
+        <summary>指定した <see cref="T:System.Windows.DataTemplate" /> プロパティを使用して、<see cref="P:System.Windows.DataTemplate.DataType" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ クラスの型名、参照を使用して、 [X:type マークアップ拡張機能](~/docs/framework/xaml-services/x-type-markup-extension.md)します。 テンプレートを使用する場合[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ、これは、データのタグ名を表す文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataTemplateKey">
+      <MemberSignature Language="C#" Value="public object DataTemplateKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataTemplateKey" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTemplate.DataTemplateKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定のキーを取得、<see cref="T:System.Windows.DataTemplate" />です。</summary>
+        <value>既定のキー、<see cref="T:System.Windows.DataTemplate" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 設定しない場合、 [X:key ディレクティブ](~/docs/framework/xaml-services/x-key-directive.md)上、<xref:System.Windows.DataTemplate>内にある、 <xref:System.Windows.ResourceDictionary>、<xref:System.Windows.DataTemplate.DataTemplateKey%2A>キーとして使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataType">
+      <MemberSignature Language="C#" Value="public object DataType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object DataType" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTemplate.DataType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(null)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.Ambient</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.DataTemplate" /> が対象としている型を取得または設定します。</summary>
+        <value>既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティとよく似ています、<xref:System.Windows.Style.TargetType%2A>のプロパティ、<xref:System.Windows.Style>クラスです。 ときにこのプロパティを設定するデータ型を指定せず、 `x:Key`、<xref:System.Windows.DataTemplate>その種類のデータ オブジェクトに自動的に適用されます。 実行すると、`x:Key`が暗黙的に設定します。 そのため、これを割り当てる場合<xref:System.Windows.DataTemplate>、`x:Key`値、暗黙的なをオーバーライドする`x:Key`と<xref:System.Windows.DataTemplate>自動的には適用されません。  
+  
+ なおをバインドする場合、<xref:System.Windows.Controls.ContentControl>のコレクションに`Task`、オブジェクト、<xref:System.Windows.Controls.ContentControl>使用しない、<xref:System.Windows.DataTemplate>自動的にします。 これは、ためのバインドに、<xref:System.Windows.Controls.ContentControl>詳細については、全体のコレクションまたは個々 のオブジェクトにバインドするかどうかを区別する必要があります。 場合、<xref:System.Windows.Controls.ContentControl>の選択の追跡は、<xref:System.Windows.Controls.ItemsControl>の種類を設定できます、<xref:System.Windows.Data.Binding.Path%2A>のプロパティ、<xref:System.Windows.Controls.ContentControl>へのバインド"`/`"を現在のアイテムを興味のあることを示します。 例については、次を参照してください。[する方法: コレクションと選択内容に基づいて情報を表示するバインド](~/docs/framework/wpf/data/how-to-bind-to-a-collection-and-display-information-based-on-selection.md)です。 それ以外の場合、指定する必要があります、<xref:System.Windows.DataTemplate>設定して明示的に、<xref:System.Windows.Controls.ContentControl.ContentTemplate%2A>プロパティです。  
+  
+ <xref:System.Windows.DataTemplate.DataType%2A>がある場合、プロパティが特に便利ですが、<xref:System.Windows.Data.CompositeCollection>さまざまな種類のデータ オブジェクト。  
+  
+ このプロパティは、既定の名前空間に含まれていない XML 要素をターゲットとする場合、名前空間、名前空間の指定子を持つ要素名の前する必要があります。 XML 用に LINQ を通じて公開される xml では、かっこをエスケープ シーケンスの前に、中かっこで名前空間が表示されます。  
+  
+```xaml  
+<DataTemplate DataType="{}{http://myNamespace}Details">  
+```  
+  
+ インスタンスによって確立された名前空間の指定子によって、要素名の前に XPath を介して公開される xml、 <xref:System.Windows.Data.XmlNamespaceMapping>:  
+  
+```xaml  
+<DataTemplate DataType="mn:Details">  
+```  
+  
+<a name="xamlAttributeUsage_DataType"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object DataType="typeName"/>  
+```  
+  
+<a name="xamlValues_DataType"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *型名*  
+ テンプレートはオブジェクトのデータとしている場合、このプロパティは、(文字列) として、データ オブジェクトの型名を表します。 クラスの型名、参照を使用して、 [X:type マークアップ拡張機能](~/docs/framework/xaml-services/x-type-markup-extension.md)します。 テンプレートを使用する場合[!INCLUDE[TLA#tla_xml](~/includes/tlasharptla-xml-md.md)]データ、このプロパティには、XML 要素名が含まれています。 XML 要素の既定以外の名前空間の指定に関する詳細については、ドキュメントの解説を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Triggers">
+      <MemberSignature Language="C#" Value="public System.Windows.TriggerCollection Triggers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.TriggerCollection Triggers" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.DataTemplate.Triggers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("VisualTree")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.DependsOn("Template")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.TriggerCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プロパティの値を適用または 1 つまたは複数の条件に基づいてアクションを実行するトリガーのコレクションを取得します。</summary>
+        <value>トリガー オブジェクトのコレクション。 既定値は <see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データ テンプレート内でトリガーを作成する場合、トリガーの set アクセス操作子プロパティを設定、データ テンプレートのスコープ内にあります。 それ以外の場合、データを含む型を対象とするスタイルを使用してトリガーを作成するのには適切な場合があります。 バインドする場合など、 <xref:System.Windows.Controls.ListBox> 、コンテナーは、コントロール、<xref:System.Windows.Controls.ListBoxItem>オブジェクト。 スコープ内ではないプロパティを設定するトリガーを使用している場合、 <xref:System.Windows.DataTemplate>、作成する適切な場合があります、<xref:System.Windows.Controls.ListBoxItem>スタイルを設定し、そのスタイル内でトリガーを作成します。 詳細については、DataTemplate に属している新機能を参照してくださいしますか。[データ テンプレートの概要](~/docs/framework/wpf/data/data-templating-overview.md)です。  
+  
+> [!NOTE]
+>  このプロパティのみ設定できます[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]に示すコレクション構文を使用して、またはコレクション オブジェクトにアクセスして追加などのさまざまなメソッドを使用します。 コレクション オブジェクト自体にアクセスするプロパティは読み取り専用で、コレクション自体は読み取り/書き込みです。  
+  
+<a name="xamlPropertyElementUsage_Triggers"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Triggers>  
+    OneOrMoreTriggers  
+  </object.Triggers>  
+</object>  
+```  
+  
+<a name="xamlValues_Triggers"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *OneOrMoreTriggers*  
+ 0 個以上<xref:System.Windows.TriggerBase>オブジェクト。  
+  
+   
+  
+## Examples  
+ 次<xref:System.Windows.DataTemplate>の使用例を示します、<xref:System.Windows.DataTemplate.Triggers%2A>プロパティです。  
+  
+ [!code-xaml[DataBindingLab#AuctionItemDataTemplate](~/samples/snippets/csharp/VS_Snippets_Wpf/DataBindingLab/CSharp/DataBindingLabApp.xaml#auctionitemdatatemplate)]  
+  
+ サンプル全体については、次を参照してください。[データ バインディング デモ](http://go.microsoft.com/fwlink/?LinkID=163703)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ValidateTemplatedParent">
+      <MemberSignature Language="C#" Value="protected override void ValidateTemplatedParent (System.Windows.FrameworkElement templatedParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void ValidateTemplatedParent(class System.Windows.FrameworkElement templatedParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.DataTemplate.ValidateTemplatedParent(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="templatedParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="templatedParent">要素にこのテンプレートが適用されます。</param>
+        <summary>一連のルールに対してテンプレートの親を確認します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドは、次の規則を使用します。  
+  
+-   `templatedParent` Null 以外にする必要があります<xref:System.Windows.FrameworkElement>です。  
+  
+-   <xref:System.Windows.DataTemplate>に適用する必要があります、<xref:System.Windows.Controls.ContentPresenter>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

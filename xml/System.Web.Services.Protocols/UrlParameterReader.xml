@@ -1,0 +1,74 @@
+<Type Name="UrlParameterReader" FullName="System.Web.Services.Protocols.UrlParameterReader">
+  <TypeSignature Language="C#" Value="public class UrlParameterReader : System.Web.Services.Protocols.ValueCollectionParameterReader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UrlParameterReader extends System.Web.Services.Protocols.ValueCollectionParameterReader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.UrlParameterReader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.ValueCollectionParameterReader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>SOAP メッセージではなく URL のクエリ文字列でエンコードされた名前と値ペアの HTTP を使用して実装されている Web サービスの受信要求パラメーターを読み取ります。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.UrlParameterReader>その他のクラスの<xref:System.Web.Services.Protocols>名前空間は、HTTP GET 要求および HTTP POST 操作で Web サービスの .NET Framework の実装をサポートします。 Web サービスのライター、リーダー シリアル化および逆、それぞれ、パラメーターまたは Web メソッドの戻り値のオブジェクトと、HTTP 要求または応答のストリームの間です。 Web サービスのライター、リーダーは、HTTP トランスポートを使用しますが、SOAP 標準を使用してメッセージを交換しません。  
+  
+ <xref:System.Web.Services.Protocols.UrlParameterReader>クラスには、サービス側のメソッドが用意されています<xref:System.Web.Services.Protocols.UrlParameterReader.Read%2A>は、HTTP にエンコードされたパラメーターの名前/値ペアを要求 URL のクエリ文字列を読み取れません。 たとえば、URL で`http://contoso.com?a=1&b=2`、`a`と`b`パラメーター名と`1`と`2`その値は、します。  
+  
+ 通常必要はありませんを使用する<xref:System.Web.Services.Protocols.UrlParameterReader>直接です。 ASP.NET 構成ファイル (Web.config) のときに HTTP GET Web サービスが有効になって`protocols`要素が含まれています、`add`要素の名前属性の値は"`HttpGet`"です。 <xref:System.Web.Services.Protocols.UrlParameterReader>クラスは、HTTP GET Web サービスが有効になっているし、該当する HTTP 要求を受け取るときに自動的に使用します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UrlParameterReader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlParameterReader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.UrlParameterReader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Read">
+      <MemberSignature Language="C#" Value="public override object[] Read (System.Web.HttpRequest request);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance object[] Read(class System.Web.HttpRequest request) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.UrlParameterReader.Read(System.Web.HttpRequest)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="request" Type="System.Web.HttpRequest" />
+      </Parameters>
+      <Docs>
+        <param name="request">A <see cref="T:System.Net.WebResponse" /> objectcontaining HTML URL でエンコードされた名前/値ペア。</param>
+        <summary>Web メソッドのパラメーター値に HTTP 要求のクエリ文字列でエンコードされた名前/値ペアを読み取ります。</summary>
+        <returns>名前/値ペアの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Services.Protocols.UrlParameterReader.Read%2A>メソッドの内容を使用して、<xref:System.Web.HttpRequest>オブジェクトの<xref:System.Web.HttpRequest.QueryString%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

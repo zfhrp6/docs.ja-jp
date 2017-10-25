@@ -1,0 +1,277 @@
+<Type Name="SolidColorBrush" FullName="System.Windows.Media.SolidColorBrush">
+  <TypeSignature Language="C#" Value="public sealed class SolidColorBrush : System.Windows.Media.Brush" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SolidColorBrush extends System.Windows.Media.Brush" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.SolidColorBrush" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Brush</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>純色で領域を塗りつぶします。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 便宜上、<xref:System.Windows.Media.Brushes>クラスは、一般的に使用される一連の<xref:System.Windows.Media.SolidColorBrush>などのオブジェクト<xref:System.Windows.Media.Brushes.Blue%2A>と<xref:System.Windows.Media.Brushes.Yellow%2A>です。  
+  
+ **Freezable 機能:**から継承しているため、<xref:System.Windows.Freezable>クラス、<xref:System.Windows.Media.SolidColorBrush>クラスには、いくつかの特別な機能が用意されています:<xref:System.Windows.Media.SolidColorBrush>オブジェクトを複数のオブジェクト間で共有として宣言された、パフォーマンスを向上させるためには読み取り専用に、複製、およびスレッド セーフです。 によって提供されるさまざまな機能の詳細については<xref:System.Windows.Freezable>、オブジェクトを参照してください、 [Freezable オブジェクトの概要](~/docs/framework/wpf/advanced/freezable-objects-overview.md)です。  
+  
+<a name="xamlAttributeUsage_SolidColorBrush"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="predefinedBrushName"/>  
+- or -  
+<object property="#rgb"/>  
+- or -  
+<object property="#argb"/>  
+- or -  
+<object property="#rrggbb"/>  
+- or -  
+<object property="#aarrggbb"/>  
+- or -  
+<object property="sc#scA,scR,scG,scB"/>  
+- or -  
+<object property="ContextColor profileUri alphaValue,colorValue"/>  
+```  
+  
+<a name="xamlValues_SolidColorBrush"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *predefinedBrushName*  
+ によって定義されるブラシの名前、<xref:System.Windows.Media.Brushes>クラスなど<xref:System.Windows.Media.Brushes.Blue%2A>または<xref:System.Windows.Media.Brushes.Orange%2A>です。  
+  
+ *rgb*  
+ このブラシの説明を 3 桁の 16 進数<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。 最初の桁を指定、色の<xref:System.Windows.Media.Color.R%2A>値、2 番目の数字を指定します、<xref:System.Windows.Media.Color.G%2A>値、および 3 番目の桁を指定します、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`00F` のようにします。  
+  
+ *argb*  
+ このブラシの説明を 4 桁の 16 進数<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。 最初の桁を指定、色の<xref:System.Windows.Media.Color.A%2A>値、2 番目の数字を指定します、<xref:System.Windows.Media.Color.R%2A>値に設定する次の桁を指定します、<xref:System.Windows.Media.Color.G%2A>値、および最後の桁を指定します、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`F00F` のようにします。  
+  
+ *rrggbb*  
+ このブラシを説明する 6 桁の 16 進数<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。 最初の 2 桁の指定、色の<xref:System.Windows.Media.Color.R%2A>値に設定する次の 2 つの指定、<xref:System.Windows.Media.Color.G%2A>値、および最後の 2 つを指定、<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`0000FF` のようにします。  
+  
+ *aarrggbb*  
+ このブラシの説明を 8 桁 16 進数<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。 最初の 2 桁の指定、色の<xref:System.Windows.Media.Color.A%2A>値に設定する次の 2 つの指定、<xref:System.Windows.Media.Color.R%2A>値に設定する次の 2 つの指定その<xref:System.Windows.Media.Color.G%2A>値、および最後の 2 つを指定その<xref:System.Windows.Media.Color.B%2A>値。 たとえば、`FF0000FF` のようにします。  
+  
+ *scA*  
+ <xref:System.Single>  
+  
+ <xref:System.Windows.Media.Color.ScA%2A>このブラシの値<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。  
+  
+ *scR*  
+ <xref:System.Single>  
+  
+ <xref:System.Windows.Media.Color.ScR%2A>このブラシの値<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。  
+  
+ *scG*  
+ <xref:System.Single>  
+  
+ <xref:System.Windows.Media.Color.ScG%2A>このブラシの値<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。  
+  
+ *scB*  
+ <xref:System.Single>  
+  
+ <xref:System.Windows.Media.Color.ScB%2A>このブラシの値<xref:System.Windows.Media.SolidColorBrush.Color%2A>です。  
+  
+ *は*  
+ <xref:System.Uri?displayProperty=nameWithType>  
+  
+ [!INCLUDE[TLA#tla_icc](~/includes/tlasharptla-icc-md.md)]または[!INCLUDE[TLA#tla_icm](~/includes/tlasharptla-icm-md.md)]カラー プロファイル。  
+  
+ *alphaValue*  
+ <xref:System.Single?displayProperty=nameWithType>  
+  
+ アルファ チャネルのカラー値。 値の範囲は 0.0 ~ 1.0 です。  
+  
+ *colorValue*  
+ カラー プロファイルのカラー チャネルを表す値を 3 ~ 8 個のコンマ区切りの一覧。 値の範囲は 0.0 ~ 1.0 です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SolidColorBrush ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.SolidColorBrush" />色またはアニメーションを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SolidColorBrush (System.Windows.Media.Color color);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Windows.Media.Color color) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.#ctor(System.Windows.Media.Color)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="color" Type="System.Windows.Media.Color" />
+      </Parameters>
+      <Docs>
+        <param name="color">塗りつぶしを適用する色です。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.SolidColorBrush" /> を使用して、<see cref="T:System.Windows.Media.Color" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.SolidColorBrush Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.SolidColorBrush Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.SolidColorBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.SolidColorBrush" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.SolidColorBrush CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.SolidColorBrush CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.SolidColorBrush</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.SolidColorBrush" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Color">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Color Color { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.Color Color" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.SolidColorBrush.Color" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Color</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.SolidColorBrush" /> の色を取得または設定します。</summary>
+        <value>ブラシの色。 既定値は <see cref="P:System.Windows.Media.Colors.Transparent" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みの色の一覧は、次を参照してください。、<xref:System.Windows.Media.Colors>クラスです。 システム カラーの一覧は、次を参照してください。、<xref:System.Windows.SystemColors>クラスです。  
+  
+<a name="dependencyPropertyInfo_Color"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.SolidColorBrush.ColorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ColorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ColorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ColorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.SolidColorBrush.ColorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.SolidColorBrush.Color" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeserializeFrom">
+      <MemberSignature Language="C#" Value="public static object DeserializeFrom (System.IO.BinaryReader reader);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig object DeserializeFrom(class System.IO.BinaryReader reader) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.SolidColorBrush.DeserializeFrom(System.IO.BinaryReader)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="reader" Type="System.IO.BinaryReader" />
+      </Parameters>
+      <Docs>
+        <param name="reader">バイナリ リーダーを読み取り、<see cref="T:System.Windows.Media.SolidColorBrush" />からです。</param>
+        <summary>このメンバーは、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] インフラストラクチャをサポートしますが、独自に作成したコードから直接使用するためのものではありません。</summary>
+        <returns>逆シリアル化された <see cref="T:System.Windows.Media.SolidColorBrush" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

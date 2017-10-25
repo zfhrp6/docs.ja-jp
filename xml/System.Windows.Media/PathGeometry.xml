@@ -1,0 +1,474 @@
+<Type Name="PathGeometry" FullName="System.Windows.Media.PathGeometry">
+  <TypeSignature Language="C#" Value="public sealed class PathGeometry : System.Windows.Media.Geometry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed PathGeometry extends System.Windows.Media.Geometry" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.PathGeometry" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Media.Geometry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Figures")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>円弧、曲線、楕円、線、および四角形で構成できる複雑な図形を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 各<xref:System.Windows.Media.PathGeometry>オブジェクトのコレクションを定義する<xref:System.Windows.Media.PathFigure>オブジェクト。 各、<xref:System.Windows.Media.PathFigure>オブジェクトが 1 つ以上ので構成される<xref:System.Windows.Media.PathSegment>などのオブジェクト<xref:System.Windows.Media.ArcSegment>と<xref:System.Windows.Media.LineSegment>、実際には、図形を定義します。  
+  
+ 塗りつぶし領域、<xref:System.Windows.Media.PathGeometry>がすべて格納されているを実行して定義されて<xref:System.Windows.Media.PathFigure>を持つオブジェクトの<xref:System.Windows.Media.PathFigure.IsFilled%2A>プロパティに設定`true`を適用して、<xref:System.Windows.Media.PathGeometry.FillRule%2A>囲まれた領域を特定します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGeometry ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Media.PathGeometry" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGeometry (System.Collections.Generic.IEnumerable&lt;System.Windows.Media.PathFigure&gt; figures);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Media.PathFigure&gt; figures) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Media.PathFigure})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="figures" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Media.PathFigure&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="figures"><see cref="P:System.Windows.Media.PathGeometry.Figures" />の<see cref="T:System.Windows.Media.PathGeometry" />の内容を説明する、<see cref="T:System.Windows.Shapes.Path" />です。</param>
+        <summary>指定した <see cref="T:System.Windows.Media.PathGeometry" /> を使用して、<see cref="P:System.Windows.Media.PathGeometry.Figures" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PathGeometry (System.Collections.Generic.IEnumerable&lt;System.Windows.Media.PathFigure&gt; figures, System.Windows.Media.FillRule fillRule, System.Windows.Media.Transform transform);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IEnumerable`1&lt;class System.Windows.Media.PathFigure&gt; figures, valuetype System.Windows.Media.FillRule fillRule, class System.Windows.Media.Transform transform) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Media.PathFigure},System.Windows.Media.FillRule,System.Windows.Media.Transform)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="figures" Type="System.Collections.Generic.IEnumerable&lt;System.Windows.Media.PathFigure&gt;" />
+        <Parameter Name="fillRule" Type="System.Windows.Media.FillRule" />
+        <Parameter Name="transform" Type="System.Windows.Media.Transform" />
+      </Parameters>
+      <Docs>
+        <param name="figures"><see cref="P:System.Windows.Media.PathGeometry.Figures" />の<see cref="T:System.Windows.Media.PathGeometry" />の内容を説明する、<see cref="T:System.Windows.Shapes.Path" />です。</param>
+        <param name="fillRule"><see cref="T:System.Windows.Media.PathGeometry" /> の <see cref="P:System.Windows.Media.PathGeometry.FillRule" />。</param>
+        <param name="transform"><see cref="P:System.Windows.Media.Geometry.Transform" />適用される変換を指定します。</param>
+        <summary>新しいインスタンスを初期化、 <see cref="T:System.Windows.Media.PathGeometry" /> 、指定したクラス<see cref="P:System.Windows.Media.PathGeometry.Figures" />、 <see cref="P:System.Windows.Media.PathGeometry.FillRule" />、および<see cref="P:System.Windows.Media.Geometry.Transform" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddGeometry">
+      <MemberSignature Language="C#" Value="public void AddGeometry (System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddGeometry(class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.AddGeometry(System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">パスに追加するジオメトリ。</param>
+        <summary>指定された変換<see cref="T:System.Windows.Media.Geometry" />のコレクションに<see cref="T:System.Windows.Media.PathFigure" />オブジェクトし、パスに追加します。   **注:**場合、指定した<see cref="T:System.Windows.Media.Geometry" />はアニメーションからの変換<see cref="T:System.Windows.Media.Geometry" />に<see cref="T:System.Windows.Media.PathFigure" />情報の一部が失われる場合があります。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Windows.Rect Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Rect Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PathGeometry.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Rect</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Rect" />これの境界ボックスを指定する<see cref="T:System.Windows.Media.PathGeometry" />オブジェクト。   **注:**をこのメソッドが、ペンを考慮されません。</summary>
+        <value>境界ボックスのこの<see cref="T:System.Windows.Media.PathGeometry" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アニメーションが存在する場合、基本の値、<xref:System.Windows.Media.Geometry>オブジェクトを使用して、境界ボックスを計算します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clear">
+      <MemberSignature Language="C#" Value="public void Clear ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Clear() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.Clear" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>すべて削除<see cref="T:System.Windows.Media.PathFigure" />オブジェクトからこの<see cref="T:System.Windows.Media.PathGeometry" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry Clone ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.PathGeometry Clone() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.Clone" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.PathGeometry" /> の変更可能な複製を作成し、このオブジェクトの値の詳細コピーを作成します。 このメソッドは、依存関係プロパティをコピーするときにリソース参照とデータ バインディングをコピーしますが (ただし、これらは解決されなくなる場合があります)、アニメーションやその現在の値はコピーしません。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティが <see langword="true." /> であった場合でも、<see langword="false" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.Clone%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValue">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathGeometry CloneCurrentValue ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Windows.Media.PathGeometry CloneCurrentValue() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.CloneCurrentValue" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.PathGeometry" /> オブジェクトの変更可能な複製を作成し、このオブジェクトの現在値の詳細コピーを作成します。 リソース参照、データ バインディング、アニメーションはコピーされませんが、それらの現在値はコピーされます。</summary>
+        <returns>現在のオブジェクトの変更可能な複製。 複製されたオブジェクトの <see cref="P:System.Windows.Freezable.IsFrozen" /> プロパティは、ソースの <see langword="false" /> プロパティが <see cref="P:System.Windows.Freezable.IsFrozen" /> であった場合でも、<see langword="true" /> になります。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変更可能なコピーを生成するためにこのメソッドが使用される固定された<xref:System.Windows.Freezable>オブジェクト (または any<xref:System.Windows.Freezable>オブジェクト)。 便宜上は、このメソッドは、厳密に型指定された実装が継承したバージョンをシャドウします。  
+  
+ 詳細については、「<xref:System.Windows.Freezable.CloneCurrentValue%2A?displayProperty=nameWithType>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateFromGeometry">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.PathGeometry CreateFromGeometry (System.Windows.Media.Geometry geometry);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Media.PathGeometry CreateFromGeometry(class System.Windows.Media.Geometry geometry) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.CreateFromGeometry(System.Windows.Media.Geometry)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathGeometry</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="geometry" Type="System.Windows.Media.Geometry" />
+      </Parameters>
+      <Docs>
+        <param name="geometry">作成元のジオメトリ、<see cref="T:System.Windows.Media.PathGeometry" />です。</param>
+        <summary>作成、<see cref="T:System.Windows.Media.PathGeometry" />の指定したバージョン<see cref="T:System.Windows.Media.Geometry" />します。</summary>
+        <returns>A<see cref="T:System.Windows.Media.PathGeometry" />の指定された現在の値から作成された<see cref="T:System.Windows.Media.Geometry" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいを構築するときに、現在のアニメーション化された値が使用される場合は、指定したジオメトリがアニメーション化<xref:System.Windows.Media.PathGeometry>(ただし、それ自体のアニメーションはコピーされません)。 ジオメトリがアニメーション化されている場合、変換の有効桁数の一部が失われる可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Figures">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.PathFigureCollection Figures { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.PathFigureCollection Figures" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PathGeometry.Figures" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.PathFigureCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のコレクション<see cref="T:System.Windows.Media.PathFigure" />パスのコンテンツを記述するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.Windows.Media.PathFigure" />パスのコンテンツを記述するオブジェクト。 各<see cref="T:System.Windows.Media.PathFigure" />図形について説明します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="xamlAttributeUsage_Figures"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object Figures="moveAndDrawCommands"/>  
+```  
+  
+<a name="xamlPropertyElementUsage_Figures"></a>   
+## <a name="xaml-property-element-usage"></a>XAML プロパティ要素の使用  
+  
+```  
+<object>  
+  <object.Figures>  
+    oneOrMoreFigures  
+  </object.Figures>  
+</object>  
+```  
+  
+<a name="xamlValues_Figures"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *moveAndDrawCommands*  
+ 1 つまたは複数移動し、コマンドを描画します。 参照してください[パス マークアップ構文](~/docs/framework/wpf/graphics-multimedia/path-markup-syntax.md)です。  
+  
+ *oneOrMoreFigures*  
+ <xref:System.Windows.Media.PathFigure?displayProperty=nameWithType>  
+  
+ 1 つまたは複数<xref:System.Windows.Media.PathFigure>オブジェクト。  
+  
+<a name="dependencyPropertyInfo_Figures"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.PathGeometry.FiguresProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FiguresProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FiguresProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FiguresProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.PathGeometry.FiguresProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.PathGeometry.Figures" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillRule">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.FillRule FillRule { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Media.FillRule FillRule" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.PathGeometry.FillRule" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.FillRule</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>これに含まれる交差する領域の方法を決定する値の設定を取得または<see cref="T:System.Windows.Media.PathGeometry" />結合されます。</summary>
+        <value>示す方法、これの交差領域<see cref="T:System.Windows.Media.PathGeometry" />結合されます。  既定値は<c>EvenOdd</c>です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ **EvenOdd**そのポイントから任意の方向に無制限に光線を描画し、その光線が交差する特定の形状からのパス セグメントの数をカウントで図形上のポイントの"insideness"を決定します。 この数値が偶数の場合は、ポイントは内側にあります。偶数の場合は、ポイントは外側にあります。  
+  
+ **0 以外**し、そのポイントから任意の方向に無制限に光線を描画し、形状のセグメントが光線と交差する場所を調べることで、図形上のポイントの"insideness"を決定します。 0 からカウントを開始し、パス セグメントが左から右に射線と交わるたびに 1 を加算し、パス セグメントが右から左に射線と交わるたびに 1 を減算します。 交差のカウント後、結果が 0 の場合は、ポイントは、パスの外側にあります。 それ以外の場合は、内側にあります。  
+  
+ ![塗りつぶし規則の図](~/add/media/ref-mil-fillrule-stars.PNG "塗りつぶし規則の図")  
+FillRule の例  
+  
+<a name="dependencyPropertyInfo_FillRule"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Media.PathGeometry.FillRuleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FillRuleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FillRuleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FillRuleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Media.PathGeometry.FillRuleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Media.PathGeometry.FillRule" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPointAtFractionLength">
+      <MemberSignature Language="C#" Value="public void GetPointAtFractionLength (double progress, out System.Windows.Point point, out System.Windows.Point tangent);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetPointAtFractionLength(float64 progress, [out] valuetype System.Windows.Point&amp; point, [out] valuetype System.Windows.Point&amp; tangent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.GetPointAtFractionLength(System.Double,System.Windows.Point@,System.Windows.Point@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="progress" Type="System.Double" />
+        <Parameter Name="point" Type="System.Windows.Point&amp;" RefType="out" />
+        <Parameter Name="tangent" Type="System.Windows.Point&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="progress">長さの割合<see cref="T:System.Windows.Media.PathGeometry" />です。</param>
+        <param name="point">このメソッドが戻るときにこの場所が含まれています<see cref="T:System.Windows.Media.PathGeometry" />その長さの指定した割合にします。 このパラメーターは初期化せずに渡されます。</param>
+        <param name="tangent">このメソッドが戻るときに、正接のベクトルが含まれています。 このパラメーターは初期化せずに渡されます。</param>
+        <summary>取得、<see cref="T:System.Windows.Point" />とこの正接ベクター<see cref="T:System.Windows.Media.PathGeometry" />その長さの指定した割合にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEmpty">
+      <MemberSignature Language="C#" Value="public override bool IsEmpty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsEmpty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.IsEmpty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうかこの<see cref="T:System.Windows.Media.PathGeometry" />オブジェクトが空です。</summary>
+        <returns>**true**この<see cref="T:System.Windows.Media.PathGeometry" />が空であるそれ以外の場合、 **false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MayHaveCurves">
+      <MemberSignature Language="C#" Value="public override bool MayHaveCurves ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool MayHaveCurves() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.MayHaveCurves" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうかこの<see cref="T:System.Windows.Media.PathGeometry" />オブジェクトが曲線のセグメントを持つことがあります。</summary>
+        <returns>**true**場合は、この<see cref="T:System.Windows.Media.PathGeometry" />オブジェクトが曲線のセグメントを持つことがあります。 それ以外の場合、 **false**です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnChanged">
+      <MemberSignature Language="C#" Value="protected override void OnChanged ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnChanged() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.PathGeometry.OnChanged" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

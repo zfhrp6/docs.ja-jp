@@ -1,0 +1,86 @@
+<Type Name="KeyStates" FullName="System.Windows.Input.KeyStates">
+  <TypeSignature Language="C#" Value="public enum KeyStates" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed KeyStates extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.KeyStates" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>キーの状態を定義する定数を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Input.KeyStates>クラスは、ビット フィールド (フラグ) 列挙型。 したがって、キーは、複数の状態にできます。  たとえば、キー ダウン状態も Toggled 状態可能性があります。  ビット演算を使用して、キーの状態を正確に判断します。  
+  
+   
+  
+## Examples  
+ 次の例の色を変更する、<xref:System.Windows.Controls.Button>場合、<xref:System.Windows.Input.KeyStates.Toggled>に渡されたキーの<xref:System.Windows.Input.KeyEventArgs>がダウンしています。 演算を使用して、キーの状態を判断`AND`操作します。  キーが Toggled 状態、およびダウン状態にあるなど、複数の状態であるかどうかを決定すると同じ手法を使用できます。  
+  
+ [!code-csharp[keyargssnippetsample#KeyEventArgsKeyStatesDown](~/samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeystatesdown)]
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyStatesDown](~/samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeystatesdown)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Down">
+      <MemberSignature Language="C#" Value="Down" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.KeyStates Down = unsigned int8(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.KeyStates.Down" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが押されるとします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="None">
+      <MemberSignature Language="C#" Value="None" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.KeyStates None = unsigned int8(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.KeyStates.None" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが押されていません。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Toggled">
+      <MemberSignature Language="C#" Value="Toggled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Windows.Input.KeyStates Toggled = unsigned int8(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.KeyStates.Toggled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.KeyStates</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーが切り替えられるとします。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

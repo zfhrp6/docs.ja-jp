@@ -1,0 +1,1110 @@
+<Type Name="PrintServer" FullName="System.Printing.PrintServer">
+  <TypeSignature Language="C#" Value="public class PrintServer : System.Printing.PrintSystemObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi PrintServer extends System.Printing.PrintSystemObject" />
+  <TypeSignature Language="DocId" Value="T:System.Printing.PrintServer" />
+  <AssemblyInfo>
+    <AssemblyName>System.Printing</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Printing.PrintSystemObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>通常、コンピューターが、専用のハードウェアのプリント サーバー アプライアンスであることができますが、プリント サーバーで印刷キューを管理します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プログラムがのプロパティに値を書き込む場合<xref:System.Printing.PrintServer>、ある変更も何も起こりませんで表されるコンピューター渡されるまで、<xref:System.Printing.PrintServer>オブジェクト。 変更をコミットするを使用して、<xref:System.Printing.PrintServer.Commit%2A>オブジェクトのメソッドです。  
+  
+ 同様に、他のアプリケーションは、コンピューターの実際のプリント サーバーのプロパティを変更することがあります。 確認する、 <xref:System.Printing.PrintServer> 、プログラムのオブジェクトが最新の値を使用して、<xref:System.Printing.PrintServer.Refresh%2A>オブジェクトのメソッドです。  
+  
+> [!CAUTION]
+>  クラス内で、 <xref:System.Printing> Windows サービスや ASP.NET アプリケーションまたはサービス内で使用する名前空間はサポートされていません。 パフォーマンスと実行時の例外をサービス低下のいずれかのようなアプリケーションからこれらのクラスを使用しようと、予期しない問題が生じる可能性があります。  
+  
+ Windows フォーム アプリケーションから印刷する場合を参照してください、<xref:System.Drawing.Printing>名前空間。  
+  
+   
+  
+## Examples  
+ 次の例は、のインスタンスを作成する方法を示しています。<xref:System.Printing.PrintServer>です。  
+  
+ [!code-csharp[PrintServerCreate#_CreatePrintServer](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintServerCreate/CSharp/PrintServerCreate.cs#_createprintserver)]
+ [!code-vb[PrintServerCreate#_CreatePrintServer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintServerCreate/visualbasic/printservercreate.vb#_createprintserver)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Printing.PrintServer" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="desiredAccess">プログラムのニーズのプリント サーバーのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />クラスをローカル プリント サーバーを表す、指定した代入<see cref="T:System.Printing.PrintSystemDesiredAccess" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Printing.PrintServer>など、ローカル プリント サーバーのプロパティで初期化されます<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、プリント サーバーの完全なパス。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />を指定されたパスを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例は、このコンス トラクターを使用してのインスタンスを作成する方法を示しています。<xref:System.Printing.PrintServer>です。  
+  
+ [!code-csharp[PrintServerCreate#_CreatePrintServer](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintServerCreate/CSharp/PrintServerCreate.cs#_createprintserver)]
+ [!code-vb[PrintServerCreate#_CreatePrintServer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintServerCreate/visualbasic/printservercreate.vb#_createprintserver)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path, System.Printing.PrintServerIndexedProperty[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Printing.PrintServerIndexedProperty[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintServerIndexedProperty[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="propertiesFilter" Type="System.Printing.PrintServerIndexedProperty[]" />
+      </Parameters>
+      <Docs>
+        <param name="path">プリント サーバーの名前と完全なパス</param>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティです。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />クラスを指定して<see cref="T:System.Printing.PrintServerIndexedProperty" />を決定するプロパティが初期化される配列。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path, System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、プリント サーバーの完全なパス。</param>
+        <param name="desiredAccess">プログラムのニーズのプリント サーバーのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />を指定したパスおよび必要なアクセス権を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例では、このコンス トラクターを使用して、可能性のあるエラー状態のすべてのプリンターを調査する方法を示します。  
+  
+ [!code-cpp[PrinterStatusSurvey#SurveyQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/PrinterStatusSurvey/CPP/Program.cpp#surveyqueues)]
+ [!code-csharp[PrinterStatusSurvey#SurveyQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/PrinterStatusSurvey/CSharp/Program.cs#surveyqueues)]
+ [!code-vb[PrinterStatusSurvey#SurveyQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrinterStatusSurvey/visualbasic/program.vb#surveyqueues)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path, string[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String,System.String[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、プリント サーバーの完全なパス。</param>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティの名前の配列。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />を指定したパスおよびプロパティのフィルターを持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path, System.Printing.PrintServerIndexedProperty[] propertiesFilter, System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, valuetype System.Printing.PrintServerIndexedProperty[] propertiesFilter, valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String,System.Printing.PrintServerIndexedProperty[],System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="propertiesFilter" Type="System.Printing.PrintServerIndexedProperty[]" />
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">プリント サーバーの名前と完全なパス</param>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティです。</param>
+        <param name="desiredAccess">プログラムのニーズのプリント サーバーのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />クラスし、指定されたパスを提供、<see cref="T:System.Printing.PrintServerIndexedProperty" />配列、および必要なアクセス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public PrintServer (string path, string[] propertiesFilter, System.Printing.PrintSystemDesiredAccess desiredAccess);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string path, string[] propertiesFilter, valuetype System.Printing.PrintSystemDesiredAccess desiredAccess) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.#ctor(System.String,System.String[],System.Printing.PrintSystemDesiredAccess)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="path" Type="System.String" />
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+        <Parameter Name="desiredAccess" Type="System.Printing.PrintSystemDesiredAccess" />
+      </Parameters>
+      <Docs>
+        <param name="path">名前と、プリント サーバーの完全なパス。</param>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティの名前の配列。</param>
+        <param name="desiredAccess">プログラムのニーズのプリント サーバーのアクセスの種類を指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Printing.PrintServer" />を指定したパス、プロパティ フィルター、および必要なアクセス権を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`path`は`null`、<xref:System.Printing.PrintServer>ローカル プリント サーバーを表すし、が初期化されると、そのプロパティなど<xref:System.Printing.PrintServer.Name%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintServerException">
+          <paramref name="desiredAccess" />値にのみ適用できるは、<see cref="T:System.Printing.PrintQueue" />オブジェクトは、<see cref="T:System.Printing.LocalPrintServer" />オブジェクト。 たとえば、<see cref="F:System.Printing.PrintSystemDesiredAccess.UsePrinter" /> のようにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="BeepEnabled">
+      <MemberSignature Language="C#" Value="public bool BeepEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool BeepEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.BeepEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリント サーバーにプリンターにエラー状態への応答で音が鳴るかどうかを示す値を設定します。</summary>
+        <value>
+          <see cref="T:System.Boolean" />
+          <see langword="true" />プリント サーバーにするとエラーに応答音が鳴る場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Commit">
+      <MemberSignature Language="C#" Value="public override void Commit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Commit() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.Commit" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトによって表される、プリント サーバーに書き込むことで、プリント サーバー オブジェクトのプロパティにプログラムで行った変更をコミットします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メソッドでは、する必要があります、<xref:System.Printing.PrintServer>でオブジェクトは作成<xref:System.Printing.PrintSystemDesiredAccess.AdministrateServer>権限です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintSystemException">一部のプロパティはコミットされません。</exception>
+        <exception cref="T:System.Printing.PrintCommitAttributesException">一部のプロパティをコミットできませんでした。  
+  
+ \- または  
+  
+ <see cref="T:System.Printing.PrintServer" />のための十分な権限を持つオブジェクトが作成されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultPortThreadPriority">
+      <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority DefaultPortThreadPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority DefaultPortThreadPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.DefaultPortThreadPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しないでください。</summary>
+        <value>スレッドの優先度。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSchedulerPriority">
+      <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority DefaultSchedulerPriority { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority DefaultSchedulerPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.DefaultSchedulerPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>使用しないでください。</summary>
+        <value>既定のスケジューラ スレッドの優先度。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DefaultSpoolDirectory">
+      <MemberSignature Language="C#" Value="public string DefaultSpoolDirectory { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string DefaultSpoolDirectory" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.DefaultSpoolDirectory" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリント サーバーのスプール ファイルが配置されているパスを設定します。</summary>
+        <value>A<see cref="T:System.String" />スプール ファイルのフォルダーの完全なパスを識別します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeletePrintQueue">
+      <MemberSignature Language="C#" Value="public static bool DeletePrintQueue (System.Printing.PrintQueue printQueue);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DeletePrintQueue(class System.Printing.PrintQueue printQueue) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.DeletePrintQueue(System.Printing.PrintQueue)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueue" Type="System.Printing.PrintQueue" />
+      </Parameters>
+      <Docs>
+        <param name="printQueue">削除されるキューです。</param>
+        <summary>指定された削除<see cref="T:System.Printing.PrintQueue" />プリント サーバーからです。</summary>
+        <returns>
+          <see langword="true" />場合は、キューは正常に削除されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeletePrintQueue">
+      <MemberSignature Language="C#" Value="public static bool DeletePrintQueue (string printQueueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool DeletePrintQueue(string printQueueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.DeletePrintQueue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">削除されるキューの名前。</param>
+        <summary>プリント サーバーから指定した名前の印刷キューを削除します。</summary>
+        <returns>
+          <see langword="true" />場合は、キューは正常に削除されました。それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventLog">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintServerEventLoggingTypes EventLog { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Printing.PrintServerEventLoggingTypes EventLog" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.EventLog" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintServerEventLoggingTypes</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリント サーバー ログに記録するイベントの種類を設定します。</summary>
+        <value>値<see cref="T:System.Printing.PrintServerEventLoggingTypes" />プリント サーバーによって提供されるイベント ログの種類を識別します。 既定値は、<see cref="F:System.Printing.PrintServerEventLoggingTypes.LogPrintingErrorEvents" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue GetPrintQueue (string printQueueName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue GetPrintQueue(string printQueueName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueue(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">印刷キューの名前。</param>
+        <summary>プリント サーバーから名前付きの印刷キューへの参照を取得します。</summary>
+        <returns><see cref="T:System.Printing.PrintQueue" />プリント サーバーから指定した名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue GetPrintQueue (string printQueueName, string[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue GetPrintQueue(string printQueueName, string[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueue(System.String,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">印刷キューの名前。</param>
+        <param name="propertiesFilter">返されたキューで初期化されるプロパティの名前。</param>
+        <summary>プリント サーバーから指定した印刷キューを取得します。</summary>
+        <returns><see cref="T:System.Printing.PrintQueue" />プリント サーバーから指定した名前です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>印刷キューのコレクションを取得、プリント サーバーによってホストされます。</summary>
+        <returns><see cref="T:System.Printing.PrintQueueCollection" />プリント サーバー上の印刷キューのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用して、によってホストされている印刷キューを一覧表示する方法を示しています、<xref:System.Printing.PrintServer>です。  
+  
+ [!code-csharp[PrintServerCreate#_CreatePrintServer](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintServerCreate/CSharp/PrintServerCreate.cs#_createprintserver)]
+ [!code-vb[PrintServerCreate#_CreatePrintServer](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintServerCreate/visualbasic/printservercreate.vb#_createprintserver)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues (System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues(valuetype System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.EnumeratedPrintQueueTypes[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="enumerationFlag" Type="System.Printing.EnumeratedPrintQueueTypes[]" />
+      </Parameters>
+      <Docs>
+        <param name="enumerationFlag">コレクション内にある印刷キューの種類を表す値の配列。</param>
+        <summary>印刷キューで名前が指定された型のコレクションを取得<see cref="T:System.Printing.EnumeratedPrintQueueTypes" />プリント サーバーによってホストされているとします。</summary>
+        <returns><see cref="T:System.Printing.PrintQueueCollection" />プリント サーバー上の指定した型の印刷キューのです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、このメソッドを使用して、使用可能な印刷キューのサブセットを取得する方法を示します。  
+  
+ [!code-cpp[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](~/samples/snippets/cpp/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/CPP/Program.cpp#listsubsetofprintqueues)]
+ [!code-csharp[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](~/samples/snippets/csharp/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/CSharp/Program.cs#listsubsetofprintqueues)]
+ [!code-vb[EnumerateSubsetOfPrintQueues#ListSubsetOfPrintQueues](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EnumerateSubsetOfPrintQueues/visualbasic/program.vb#listsubsetofprintqueues)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues (System.Printing.PrintQueueIndexedProperty[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues(valuetype System.Printing.PrintQueueIndexedProperty[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.PrintQueueIndexedProperty[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.Printing.PrintQueueIndexedProperty[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティです。</param>
+        <summary>プリント サーバーによってホストされで指定されているプロパティでのみ初期化されている印刷キューのコレクションを取得、<see cref="T:System.Printing.PrintQueueIndexedProperty" />配列。</summary>
+        <returns>A<see cref="T:System.Printing.PrintQueueCollection" />のメンバーのみが初期化されるプロパティで指定された<paramref name="propertiesFilter" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues (string[] propertiesFilter);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues(string[] propertiesFilter) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues(System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">初期化されるキューのプロパティの名前。</param>
+        <summary>プリント サーバーによってホストされ、指定されたプロパティでのみ初期化されるの印刷キューのコレクションを取得します。</summary>
+        <returns><see cref="T:System.Printing.PrintQueueCollection" />で指定されているプロパティにのみ、プリント サーバー上の印刷キューの各印刷キューが初期化される<paramref name="propertiesFilter" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues (System.Printing.PrintQueueIndexedProperty[] propertiesFilter, System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues(valuetype System.Printing.PrintQueueIndexedProperty[] propertiesFilter, valuetype System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues(System.Printing.PrintQueueIndexedProperty[],System.Printing.EnumeratedPrintQueueTypes[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.Printing.PrintQueueIndexedProperty[]" />
+        <Parameter Name="enumerationFlag" Type="System.Printing.EnumeratedPrintQueueTypes[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">コンス トラクターによって初期化されるプロパティです。</param>
+        <param name="enumerationFlag">コレクション内の印刷キューの種類を表す値の配列。</param>
+        <summary>指定した型の印刷キューのコレクションを取得します。 これらの印刷キューがで指定されているプロパティでのみ初期化、<see cref="T:System.Printing.PrintQueueIndexedProperty" />配列。</summary>
+        <returns><see cref="T:System.Printing.PrintQueueCollection" />プリント サーバーの。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コレクション内のキューが記載されているプロパティでのみ初期化、<xref:System.Printing.PrintQueueIndexedProperty>配列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPrintQueues">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueueCollection GetPrintQueues (string[] propertiesFilter, System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueueCollection GetPrintQueues(string[] propertiesFilter, valuetype System.Printing.EnumeratedPrintQueueTypes[] enumerationFlag) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.GetPrintQueues(System.String[],System.Printing.EnumeratedPrintQueueTypes[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueueCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertiesFilter" Type="System.String[]" />
+        <Parameter Name="enumerationFlag" Type="System.Printing.EnumeratedPrintQueueTypes[]" />
+      </Parameters>
+      <Docs>
+        <param name="propertiesFilter">初期化されるキューのプロパティの名前。</param>
+        <param name="enumerationFlag">コレクション内に返される印刷キューの種類を表す値の配列。</param>
+        <summary>指定したは、印刷キューのコレクションを取得<see cref="T:System.Printing.EnumeratedPrintQueueTypes" />され、指定されたプロパティでのみ初期化されます。</summary>
+        <returns>A<see cref="T:System.Printing.PrintQueueCollection" />指定した型の印刷キューの各印刷キューが初期化されて、指定されたプロパティのみです。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue InstallPrintQueue (string printQueueName, string driverName, string[] portNames, string printProcessorName, System.Printing.IndexedProperties.PrintPropertyDictionary initialParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue InstallPrintQueue(string printQueueName, string driverName, string[] portNames, string printProcessorName, class System.Printing.IndexedProperties.PrintPropertyDictionary initialParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.IndexedProperties.PrintPropertyDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="driverName" Type="System.String" />
+        <Parameter Name="portNames" Type="System.String[]" />
+        <Parameter Name="printProcessorName" Type="System.String" />
+        <Parameter Name="initialParameters" Type="System.Printing.IndexedProperties.PrintPropertyDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">新しいキューの名前。</param>
+        <param name="driverName">パスと、プリンター ドライバーの名前。</param>
+        <param name="portNames">新しいキューを使用するポートの Id。</param>
+        <param name="printProcessorName">プリント プロセッサの名前。</param>
+        <param name="initialParameters">パラメーターは初期化です。</param>
+        <summary>プリント サーバーの印刷キュー、および関連付けられているプリンター ドライバーをインストールします。</summary>
+        <returns>新しい <see cref="T:System.Printing.PrintQueue" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、このメソッドを使用する方法を示します (上と呼ばれる、<xref:System.Printing.LocalPrintServer>からメソッドを継承するオブジェクト<xref:System.Printing.PrintServer>) と場所、ポート、および共有の状態のみで既存のプリンターのプロパティとは異なる 2 つ目のプリンターをインストールします。  
+  
+ [!code-csharp[ClonePrinter#ClonePrinter](~/samples/snippets/csharp/VS_Snippets_Wpf/ClonePrinter/CSharp/Program.cs#cloneprinter)]
+ [!code-vb[ClonePrinter#ClonePrinter](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ClonePrinter/visualbasic/program.vb#cloneprinter)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue InstallPrintQueue (string printQueueName, string driverName, string[] portNames, string printProcessorName, System.Printing.PrintQueueAttributes printQueueAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue InstallPrintQueue(string printQueueName, string driverName, string[] portNames, string printProcessorName, valuetype System.Printing.PrintQueueAttributes printQueueAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="driverName" Type="System.String" />
+        <Parameter Name="portNames" Type="System.String[]" />
+        <Parameter Name="printProcessorName" Type="System.String" />
+        <Parameter Name="printQueueAttributes" Type="System.Printing.PrintQueueAttributes" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">新しいキューの名前。</param>
+        <param name="driverName">パスと、プリンター ドライバーの名前。</param>
+        <param name="portNames">新しいキューを使用するポートの Id。</param>
+        <param name="printProcessorName">プリント プロセッサの名前。</param>
+        <param name="printQueueAttributes">新しいキューのフラグとしての属性です。</param>
+        <summary>プリント サーバーの印刷キュー、および関連付けられているプリンター ドライバーをインストールします。</summary>
+        <returns>新しく作成された <see cref="T:System.Printing.PrintQueue" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue InstallPrintQueue (string printQueueName, string driverName, string[] portNames, string printProcessorName, System.Printing.PrintQueueAttributes printQueueAttributes, System.Printing.PrintQueueStringProperty printQueueProperty, int printQueuePriority, int printQueueDefaultPriority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue InstallPrintQueue(string printQueueName, string driverName, string[] portNames, string printProcessorName, valuetype System.Printing.PrintQueueAttributes printQueueAttributes, class System.Printing.PrintQueueStringProperty printQueueProperty, int32 printQueuePriority, int32 printQueueDefaultPriority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes,System.Printing.PrintQueueStringProperty,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="driverName" Type="System.String" />
+        <Parameter Name="portNames" Type="System.String[]" />
+        <Parameter Name="printProcessorName" Type="System.String" />
+        <Parameter Name="printQueueAttributes" Type="System.Printing.PrintQueueAttributes" />
+        <Parameter Name="printQueueProperty" Type="System.Printing.PrintQueueStringProperty" />
+        <Parameter Name="printQueuePriority" Type="System.Int32" />
+        <Parameter Name="printQueueDefaultPriority" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">新しいキューの名前。</param>
+        <param name="driverName">パスと、プリンター ドライバーの名前。</param>
+        <param name="portNames">新しいキューを使用するポートの Id。</param>
+        <param name="printProcessorName">プリント プロセッサの名前。</param>
+        <param name="printQueueAttributes">新しいキューのフラグとしての属性です。</param>
+        <param name="printQueueProperty">コメント、場所、または、新しいキューの共有名です。</param>
+        <param name="printQueuePriority">プリント サーバーによってホストされている他のキューに対して印刷キューの優先順位を指定する 1 ~ 99 の値。</param>
+        <param name="printQueueDefaultPriority">キューに送信される印刷ジョブの既定の優先順位を指定する 1 から 99 の値。</param>
+        <summary>プリント サーバーの優先順位付けされた印刷キュー、および関連付けられているプリンター ドライバーをインストールします。</summary>
+        <returns>新しく作成された <see cref="T:System.Printing.PrintQueue" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、`printQueueProperty`パラメーターを初期化する、1 つのみのいずれか、キューの<xref:System.Printing.PrintQueue.ShareName%2A>、 <xref:System.Printing.PrintQueue.Comment%2A>、または<xref:System.Printing.PrintQueue.Location%2A>プロパティです。 1 つ以上を初期化する場合は、使用、<xref:System.Printing.PrintServer.InstallPrintQueue%28System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Printing.PrintQueueAttributes%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Int32%2CSystem.Int32%29>このメソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InstallPrintQueue">
+      <MemberSignature Language="C#" Value="public System.Printing.PrintQueue InstallPrintQueue (string printQueueName, string driverName, string[] portNames, string printProcessorName, System.Printing.PrintQueueAttributes printQueueAttributes, string printQueueShareName, string printQueueComment, string printQueueLocation, string printQueueSeparatorFile, int printQueuePriority, int printQueueDefaultPriority);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Printing.PrintQueue InstallPrintQueue(string printQueueName, string driverName, string[] portNames, string printProcessorName, valuetype System.Printing.PrintQueueAttributes printQueueAttributes, string printQueueShareName, string printQueueComment, string printQueueLocation, string printQueueSeparatorFile, int32 printQueuePriority, int32 printQueueDefaultPriority) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.InstallPrintQueue(System.String,System.String,System.String[],System.String,System.Printing.PrintQueueAttributes,System.String,System.String,System.String,System.String,System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Printing.PrintQueue</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="printQueueName" Type="System.String" />
+        <Parameter Name="driverName" Type="System.String" />
+        <Parameter Name="portNames" Type="System.String[]" />
+        <Parameter Name="printProcessorName" Type="System.String" />
+        <Parameter Name="printQueueAttributes" Type="System.Printing.PrintQueueAttributes" />
+        <Parameter Name="printQueueShareName" Type="System.String" />
+        <Parameter Name="printQueueComment" Type="System.String" />
+        <Parameter Name="printQueueLocation" Type="System.String" />
+        <Parameter Name="printQueueSeparatorFile" Type="System.String" />
+        <Parameter Name="printQueuePriority" Type="System.Int32" />
+        <Parameter Name="printQueueDefaultPriority" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="printQueueName">新しいキューの名前。</param>
+        <param name="driverName">パスと、プリンター ドライバーの名前。</param>
+        <param name="portNames">新しいキューを使用するポートの Id。</param>
+        <param name="printProcessorName">プリント プロセッサの名前。</param>
+        <param name="printQueueAttributes">新しいキューのフラグとしての属性です。</param>
+        <param name="printQueueShareName">新しいキューの共有名です。</param>
+        <param name="printQueueComment">内のユーザーに表示されているキューに関するコメント、 [!INCLUDE[TLA#tla_win](~/includes/tlasharptla-win-md.md)] UI。</param>
+        <param name="printQueueLocation">新しいキューの場所です。</param>
+        <param name="printQueueSeparatorFile">各印刷ジョブの先頭に挿入されているファイルのパス。</param>
+        <param name="printQueuePriority">プリント サーバーによってホストされている他のキューに対してキューの優先順位を指定する 1 ~ 99 の値。</param>
+        <param name="printQueueDefaultPriority">キューに送信される新しい印刷ジョブの既定の優先順位を指定する 1 ~ 99 の値です。</param>
+        <summary>プリント サーバーの共有、優先順位付きの印刷キュー、および関連付けられているプリンター ドライバーをインストールします。</summary>
+        <returns>新しく作成された <see cref="T:System.Printing.PrintQueue" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 3 つのキューのすべてを初期化したくない場合<xref:System.Printing.PrintQueue.ShareName%2A>、 <xref:System.Printing.PrintQueue.Comment%2A>、または<xref:System.Printing.PrintQueue.Location%2A>プロパティの 1 つ以上の空の文字列を渡すことができます`printQueueShareName`、 `printQueueComment`、および`printQueueLocation`です。 これらのプロパティの 1 つを初期化する場合は、使用、<xref:System.Printing.PrintServer.InstallPrintQueue%28System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Printing.PrintQueueAttributes%2CSystem.Printing.PrintQueueStringProperty%2CSystem.Int32%2CSystem.Int32%29>このメソッドのオーバー ロードします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalDispose">
+      <MemberSignature Language="C#" Value="protected override sealed void InternalDispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void InternalDispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.InternalDispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptions</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.Printing.PrintServer" /> によって使用されているアンマネージ リソースを解放します。オプションでマネージ リソースも解放できます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDelayInitialized">
+      <MemberSignature Language="C#" Value="protected bool IsDelayInitialized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDelayInitialized" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.IsDelayInitialized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかの初期化、<see cref="T:System.Printing.PrintServer" />プロパティが延期されました。</summary>
+        <value>
+          <see langword="true" />初期化が延期されている場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MajorVersion">
+      <MemberSignature Language="C#" Value="public int MajorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MajorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.MajorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムのメジャー バージョンを取得します。</summary>
+        <value><see cref="T:System.Int32" />オペレーティング システムのメジャー バージョンを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンの Windows を[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)]実行できます (10 進数) の次の主要ながあり、マイナー (小数点の左側) のバージョン番号。  
+  
+-   [!INCLUDE[TLA#tla_winxp](~/includes/tlasharptla-winxp-md.md)]: 5.1  
+  
+-   [!INCLUDE[TLA#tla_winnetsvrfam](~/includes/tlasharptla-winnetsvrfam-md.md)]: 5.2  
+  
+-   [!INCLUDE[TLA#tla_winvista](~/includes/tlasharptla-winvista-md.md)]: 6.0  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MinorVersion">
+      <MemberSignature Language="C#" Value="public int MinorVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 MinorVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.MinorVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オペレーティング システムのメジャー バージョン内のマイナー バージョンを取得します。</summary>
+        <value><see cref="T:System.Int32" />オペレーティング システムのマイナー バージョンを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バージョンの Windows を[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)]実行できます (10 進数) の次の主要ながあり、マイナー (小数点の左側) のバージョン番号。  
+  
+-   [!INCLUDE[TLA#tla_winxp](~/includes/tlasharptla-winxp-md.md)]: 5.1  
+  
+-   [!INCLUDE[TLA#tla_winnetsvrfam](~/includes/tlasharptla-winnetsvrfam-md.md)]: 5.2  
+  
+-   [!INCLUDE[TLA#tla_winvista](~/includes/tlasharptla-winvista-md.md)]: 6.0  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public override sealed string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>プリント サーバーの名前を取得します。</summary>
+        <value>プリント サーバーの名前です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Printing.PrintSystemException">プロパティが初期化されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="NetPopup">
+      <MemberSignature Language="C#" Value="public bool NetPopup { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NetPopup" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.NetPopup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリント サーバーまたはクライアント コンピューターのいずれかに印刷ジョブが完了したら通知を送信するかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />クライアント コンピューターに通知が送信される場合<see langword="false" />場合は、プリント サーバーに通知が送信されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PortThreadPriority">
+      <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority PortThreadPriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority PortThreadPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.PortThreadPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンターに I/O を管理するプロセスのスレッドの優先度のポートを設定します。</summary>
+        <value>A<see cref="T:System.Threading.ThreadPriority" />プリンター ポートを管理するプロセスのスレッドの優先度を識別する列挙値。 既定値は、<see cref="F:System.Threading.ThreadPriority.Normal" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サーバーのポート スレッドは、スプール ファイルの読み取り、データを処理し、データをプリンターに送信ポート モニターにデータを送信します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Refresh">
+      <MemberSignature Language="C#" Value="public override void Refresh ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Refresh() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Printing.PrintServer.Refresh" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>プロパティを更新、<see cref="T:System.Printing.PrintServer" />オブジェクトの各プロパティ値が、オブジェクトが表すプリント サーバーの対応する属性値と一致するようにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティに対して行った変更を加えた、<xref:System.Printing.PrintServer>が失われる場合、<xref:System.Printing.PrintServer.Refresh%2A>メソッドを実行します。 この損失は発生するような変更、オブジェクトを表すプリント サーバーに場合<xref:System.Printing.PrintServer.Commit%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Printing.PrintSystemException">一部のプロパティを更新できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartJobOnPoolEnabled">
+      <MemberSignature Language="C#" Value="public bool RestartJobOnPoolEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RestartJobOnPoolEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.RestartJobOnPoolEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンター プールが有効になっている場合、エラーが発生した後に、ユーザーがジョブを再開できるかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />プリンターのプールが有効な場合は、ジョブを再開することができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のプログラムをこの値を設定する管理者のアクセス許可が必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RestartJobOnPoolTimeout">
+      <MemberSignature Language="C#" Value="public int RestartJobOnPoolTimeout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 RestartJobOnPoolTimeout" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.RestartJobOnPoolTimeout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはプリンター プールが有効になっているときにエラーが発生した場合は、ジョブを再起動するまでの待機時間を示す値を設定します。</summary>
+        <value>ジョブが再起動されるまでの分単位の待機時間。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出し元のプログラムをこの値を設定する管理者のアクセス許可が必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SchedulerPriority">
+      <MemberSignature Language="C#" Value="public System.Threading.ThreadPriority SchedulerPriority { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Threading.ThreadPriority SchedulerPriority" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.SchedulerPriority" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.ThreadPriority</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーションから印刷キューに印刷ジョブをルーティングするプロセスのスレッドの優先順位を設定します。</summary>
+        <value>A<see cref="T:System.Threading.ThreadPriority" />プロセスのスケジュール設定、プリント サーバーのスレッドの優先度を識別する列挙値。 既定値は、<see cref="F:System.Threading.ThreadPriority.Normal" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SubSystemVersion">
+      <MemberSignature Language="C#" Value="public byte SubSystemVersion { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance unsigned int8 SubSystemVersion" />
+      <MemberSignature Language="DocId" Value="P:System.Printing.PrintServer.SubSystemVersion" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Printing</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>印刷スプーラ システムのバージョンを取得します。</summary>
+        <value>A<see cref="T:System.Byte" />印刷スプーラー システムのバージョンを識別します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実際には、このプロパティの値は常の値と同じ<xref:System.Printing.PrintServer.MajorVersion%2A>後者が型である点を除いて<xref:System.Int32>です。  
+  
+ バージョンの Windows を[!INCLUDE[TLA#tla_winfx](~/includes/tlasharptla-winfx-md.md)]実行できます (10 進数) の次の主要ながあり、マイナー (小数点の左側) のバージョン番号。  
+  
+-   [!INCLUDE[TLA#tla_winxp](~/includes/tlasharptla-winxp-md.md)]: 5.1  
+  
+-   [!INCLUDE[TLA#tla_winnetsvrfam](~/includes/tlasharptla-winnetsvrfam-md.md)]: 5.2  
+  
+-   [!INCLUDE[TLA#tla_winvista](~/includes/tlasharptla-winvista-md.md)]: 6.0  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

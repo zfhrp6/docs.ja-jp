@@ -1,0 +1,1612 @@
+<Type Name="Matrix" FullName="System.Windows.Media.Matrix">
+  <TypeSignature Language="C#" Value="public struct Matrix : IFormattable" />
+  <TypeSignature Language="ILAsm" Value=".class public sequential ansi serializable sealed beforefieldinit Matrix extends System.ValueType implements class System.IFormattable" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Matrix" />
+  <AssemblyInfo>
+    <AssemblyName>WindowsBase</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IFormattable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Media.MatrixConverter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Media.Converters.MatrixValueSerializer))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>2 次元空間での変換に使用される 3 x 3 アフィン変換行列を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換に 3 x 3 マトリックスが使用される、 [!INCLUDE[TLA2#tla_2d](~/includes/tla2sharptla-2d-md.md)] x と y の平面。 アフィン変換行列を乗算するためには、変換後の線形変換、回転などと、傾斜 (傾斜) の任意の数を形成します。 アフィン変換行列が最後の列 (0, 0, 1) を指定する必要があるは最初の 2 つの列内のメンバーだけです。  ベクターが、列ベクターではなく行ベクターとして表されることに注意してください。  
+  
+ A [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)] <xref:System.Windows.Media.Matrix>行優先順を使用して格納され、次の構造になっています。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+ 最後の行メンバー<xref:System.Windows.Media.Matrix.OffsetX%2A>と<xref:System.Windows.Media.Matrix.OffsetY%2A>、平行移動の値を表します。  
+  
+ メソッドとプロパティで、変換行列は通常、6 つのみのメンバーを持つベクトルとしてよう指定します。  
+  
+ (<xref:System.Windows.Media.Matrix.M11%2A>, <xref:System.Windows.Media.Matrix.M12%2A>, <xref:System.Windows.Media.Matrix.M21%2A>, <xref:System.Windows.Media.Matrix.M22%2A>, <xref:System.Windows.Media.Matrix.OffsetX%2A>, <xref:System.Windows.Media.Matrix.OffsetY%2A>)  
+  
+ 使用できますが、<xref:System.Windows.Media.Matrix>個々 のポイントに変換するには、直接構造体、または、 <xref:System.Windows.Media.MatrixTransform> 、オブジェクトを変換する[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]をマトリックスを直接操作せずにオブジェクトを変換できるようにするクラスのセットも提供: <xref:System.Windows.Media.RotateTransform>、 <xref:System.Windows.Media.ScaleTransform>、<xref:System.Windows.Media.SkewTransform>と<xref:System.Windows.Media.TranslateTransform>です。  
+  
+<a name="xamlAttributeUsage_Matrix"></a>   
+## <a name="xaml-attribute-usage"></a>XAML 属性の使用方法  
+  
+```  
+<object property="m11, m12, m21, m22, offsetX, offsetY"/>  
+- or -  
+<object property="Identity"/>  
+```  
+  
+<a name="xamlValues_Matrix"></a>   
+## <a name="xaml-values"></a>XAML 値  
+ *m11*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 最初の行とこれの最初の列の値<xref:System.Windows.Media.Matrix>です。 詳細については、<xref:System.Windows.Media.Matrix.M11%2A> プロパティを参照してください。  
+  
+ *m12*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 最初の行と 2 番目の列の値。 詳細については、<xref:System.Windows.Media.Matrix.M12%2A> プロパティを参照してください。  
+  
+ *m21*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 2 番目の行の最初の列の値です。 詳細については、<xref:System.Windows.Media.Matrix.M21%2A> プロパティを参照してください。  
+  
+ *m22*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 2 番目の行と 2 番目の列の値。 詳細については、<xref:System.Windows.Media.Matrix.M22%2A> プロパティを参照してください。  
+  
+ *offsetX*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 3 行目と 3 番目の列の値。 詳細については、<xref:System.Windows.Media.Matrix.OffsetX%2A> プロパティを参照してください。  
+  
+ *offsetY*  
+ <xref:System.Double?displayProperty=nameWithType>  
+  
+ 3 番目の行と 2 番目の列の値。 詳細については、<xref:System.Windows.Media.Matrix.OffsetY%2A> プロパティを参照してください。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Matrix (double m11, double m12, double m21, double m22, double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(float64 m11, float64 m12, float64 m21, float64 m22, float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="m11" Type="System.Double" />
+        <Parameter Name="m12" Type="System.Double" />
+        <Parameter Name="m21" Type="System.Double" />
+        <Parameter Name="m22" Type="System.Double" />
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="m11">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.M11" />係数。</param>
+        <param name="m12">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.M12" />係数。</param>
+        <param name="m21">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.M21" />係数。</param>
+        <param name="m22">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.M22" />係数。</param>
+        <param name="offsetX">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.OffsetX" />係数。</param>
+        <param name="offsetY">新しい<see cref="T:System.Windows.Media.Matrix" />構造体の<see cref="P:System.Windows.Media.Matrix.OffsetY" />係数。</param>
+        <summary><see cref="T:System.Windows.Media.Matrix" /> 構造体の新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Append">
+      <MemberSignature Language="C#" Value="public void Append (System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Append(valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Append(System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Windows.Media.Matrix" />構造に追加する<see cref="T:System.Windows.Media.Matrix" />構造体。</param>
+        <summary>指定した追加<see cref="T:System.Windows.Media.Matrix" />をこの構造体<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、これを乗算することと同じ<xref:System.Windows.Media.Matrix>パラメーターで構造`matrix`です。  行列の乗算は可換性ただし、この操作は、パラメーターを乗算することと同じではありません`matrix`この<xref:System.Windows.Media.Matrix>構造体です。 つまり、(この * `matrix`) と同じではありません (`matrix` * この)。  
+  
+   
+  
+## Examples  
+ 次の例は、追加する方法を示します、<xref:System.Windows.Media.Matrix>を別の構造<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixRotateAboutPointExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixrotateaboutpointexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Determinant">
+      <MemberSignature Language="C#" Value="public double Determinant { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 Determinant" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.Determinant" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この行列式を取得<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>この列の行列式<see cref="T:System.Windows.Media.Matrix" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例の行列式を取得する方法を示しています、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixDeterminantExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixdeterminantexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Equals">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>指定した 2 つあるかどうかを判定<see cref="T:System.Windows.Media.Matrix" />構造体が同じ値を持ちます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Media.Matrix>構造が等しいかどうか。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixequalityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object o);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object o) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="o" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="o">比較対象の <see cref="T:System.Object" />。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Object" />は、<see cref="T:System.Windows.Media.Matrix" />これと同じである構造<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="o" />は、<see cref="T:System.Windows.Media.Matrix" />これと同じである構造<see cref="T:System.Windows.Media.Matrix" />構造体です。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Media.Matrix>構造が等しいかどうか。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixequalityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public bool Equals (System.Windows.Media.Matrix value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool Equals(valuetype System.Windows.Media.Matrix value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Equals(System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="value">インスタンス<see cref="T:System.Windows.Media.Matrix" />このインスタンスと比較します。</param>
+        <summary>決定するかどうか、指定した<see cref="T:System.Windows.Media.Matrix" />構造体がこのインスタンスと同じです。</summary>
+        <returns>
+          <see langword="true" />インスタンスが等しい場合はそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Media.Matrix>構造が等しいかどうか。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixequalityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public static bool Equals (System.Windows.Media.Matrix matrix1, System.Windows.Media.Matrix matrix2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Equals(valuetype System.Windows.Media.Matrix matrix1, valuetype System.Windows.Media.Matrix matrix2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Equals(System.Windows.Media.Matrix,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix1" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="matrix2" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix1">比較する最初の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <param name="matrix2">比較する 2 番目の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <summary>指定した 2 つあるかどうかを判定<see cref="T:System.Windows.Media.Matrix" />構造は同じです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="matrix1" />と<paramref name="matrix2" />同じである、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この <see cref="T:System.Windows.Media.Matrix" /> 構造体のハッシュ コードを返します。</summary>
+        <returns>対象のインスタンスのハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasInverse">
+      <MemberSignature Language="C#" Value="public bool HasInverse { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasInverse" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.HasInverse" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Matrix" />構造が反転できます。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Media.Matrix" /> 、逆の操作が、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をチェックするかどうか、<xref:System.Windows.Media.Matrix>が反転できます。 反転できる場合、<xref:System.Windows.Media.Matrix>が逆です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixInverseExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixinverseexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Identity">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Matrix Identity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Media.Matrix Identity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.Identity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>Id を取得<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <value>Id 行列。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id 行列係数 [1, 1]、[2, 2] [3, 3] で、値 1 では、係数の残りの部分では 0 の値。 設定に関連しているこの<xref:System.Windows.Media.Matrix.M11%2A>と<xref:System.Windows.Media.Matrix.M22%2A>1 と<xref:System.Windows.Media.Matrix.M12%2A>、 <xref:System.Windows.Media.Matrix.M21%2A>、 <xref:System.Windows.Media.Matrix.OffsetX%2A>、および<xref:System.Windows.Media.Matrix.OffsetY%2A>を 0 にします。 アフィン行列では、実装を[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、 <xref:System.Windows.Media.Matrix>、構造体、係数 [3, 1]、[3, 2]、[3.3] 0,0,1 の値をそれぞれ保持するには暗黙的に指定します。  
+  
+||||  
+|-|-|-|  
+|1|0|0|  
+|0|1|0|  
+|0|0|1|  
+  
+ Id 行列に、<xref:System.Windows.Media.Matrix.ToString%2A>メソッドは、文字列の係数の代わりに"Id"を返します、<xref:System.Windows.Media.Matrix>です。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Matrix.Identity%2A>行列。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixIdentityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixidentityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Invert">
+      <MemberSignature Language="C#" Value="public void Invert ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Invert() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Invert" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、場合、<xref:System.Windows.Media.Matrix>構造が反転できます。 反転できる場合、<xref:System.Windows.Media.Matrix>構造体を反転します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixInverseExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixinverseexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException"><see cref="T:System.Windows.Media.Matrix" />構造は反転できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsIdentity">
+      <MemberSignature Language="C#" Value="public bool IsIdentity { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsIdentity" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.IsIdentity" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Media.Matrix" />構造が単位行列。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Media.Matrix" />構造体は、行列、それ以外の<see langword="false" />します。 既定値は、<see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id 行列係数 [1, 1]、[2, 2] [3, 3] で、値 1 では、係数の残りの部分では 0 の値。 設定に関連しているこの<xref:System.Windows.Media.Matrix.M11%2A>と<xref:System.Windows.Media.Matrix.M22%2A>1 と<xref:System.Windows.Media.Matrix.M12%2A>、 <xref:System.Windows.Media.Matrix.M21%2A>、 <xref:System.Windows.Media.Matrix.OffsetX%2A>、および<xref:System.Windows.Media.Matrix.OffsetY%2A>を 0 にします。 アフィン行列では、実装を[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、<xref:System.Windows.Media.Matrix>構造体、係数 [3, 1]、[3, 2]、[3.3] 0,0,1 の値をそれぞれ保持するには暗黙的に指定します。  
+  
+||||  
+|-|-|-|  
+|1|0|0|  
+|0|1|0|  
+|0|0|1|  
+  
+ Id 行列に、<xref:System.Windows.Media.Matrix.ToString%2A>メソッドは、文字列""、係数ではなくの Id を返します、<xref:System.Windows.Media.Matrix>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="M11">
+      <MemberSignature Language="C#" Value="public double M11 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 M11" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.M11" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>最初の行とこれの最初の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>最初の行とこれの最初の列の値<see cref="T:System.Windows.Media.Matrix" />です。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>に値を代入する方法と構造体、 <xref:System.Windows.Media.Matrix> 、宣言されているとき、および構造体を宣言します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="M12">
+      <MemberSignature Language="C#" Value="public double M12 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 M12" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.M12" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この最初の行と 2 番目の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>この最初の行と 2 番目の列の値<see cref="T:System.Windows.Media.Matrix" />です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のレイアウト、<xref:System.Windows.Media.Matrix>です。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+   
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>に値を代入する方法と構造体、 <xref:System.Windows.Media.Matrix> 、宣言されているとき、および構造体を宣言します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="M21">
+      <MemberSignature Language="C#" Value="public double M21 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 M21" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.M21" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>2 番目の行とこれの最初の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>2 番目の行とこれの最初の列の値<see cref="T:System.Windows.Media.Matrix" />です。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のレイアウト、<xref:System.Windows.Media.Matrix>です。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+   
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>に値を代入する方法と構造体、 <xref:System.Windows.Media.Matrix> 、宣言されているとき、および構造体を宣言します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="M22">
+      <MemberSignature Language="C#" Value="public double M22 { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 M22" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.M22" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 2 番目の行と 2 番目の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>この 2 番目の行と 2 番目の列の値<see cref="T:System.Windows.Media.Matrix" />構造体。 既定値は 1 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表のレイアウト、<xref:System.Windows.Media.Matrix>構造体。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+   
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>に値を代入する方法と構造体、 <xref:System.Windows.Media.Matrix> 、宣言されているとき、および構造体を宣言します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Matrix Multiply (System.Windows.Media.Matrix trans1, System.Windows.Media.Matrix trans2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Matrix Multiply(valuetype System.Windows.Media.Matrix trans1, valuetype System.Windows.Media.Matrix trans2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Multiply(System.Windows.Media.Matrix,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="trans1" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="trans2" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="trans1">最初の<see cref="T:System.Windows.Media.Matrix" />乗算する構造体。</param>
+        <param name="trans2">2 番目<see cref="T:System.Windows.Media.Matrix" />乗算する構造体。</param>
+        <summary>乗算、<see cref="T:System.Windows.Media.Matrix" />別構造<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <returns><paramref name="trans1" /> と <paramref name="trans2" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行列乗算は可換ではありません。 乗算`trans1`によって`trans2`を乗算することと同じではない`trans2`によって`trans1`です。  
+  
+   
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetX">
+      <MemberSignature Language="C#" Value="public double OffsetX { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OffsetX" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.OffsetX" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>3 番目の行とこれの最初の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>3 番目の行とこれの最初の列の値<see cref="T:System.Windows.Media.Matrix" />構造体。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Matrix.OffsetX%2A>プロパティと呼ばれる x 軸に沿った座標領域を平行移動量を指定するためです。  
+  
+ 次の表のレイアウト、<xref:System.Windows.Media.Matrix>です。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OffsetY">
+      <MemberSignature Language="C#" Value="public double OffsetY { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance float64 OffsetY" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Matrix.OffsetY" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この 3 番目の行と 2 番目の列の値の設定を取得または<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <value>この 3 番目の行と 2 番目の列の値<see cref="T:System.Windows.Media.Matrix" />構造体。 既定値は 0 です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Media.Matrix.OffsetY%2A>プロパティと呼ばれる、y 軸に沿った座標領域を平行移動量を指定するためです。  
+  
+ 次の表のレイアウト、<xref:System.Windows.Media.Matrix>です。  
+  
+||||  
+|-|-|-|  
+|<xref:System.Windows.Media.Matrix.M11%2A>|<xref:System.Windows.Media.Matrix.M12%2A>|0|  
+|<xref:System.Windows.Media.Matrix.M21%2A>|<xref:System.Windows.Media.Matrix.M22%2A>|0|  
+|<xref:System.Windows.Media.Matrix.OffsetX%2A>|<xref:System.Windows.Media.Matrix.OffsetY%2A>|1|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Equality">
+      <MemberSignature Language="C#" Value="public static bool operator == (System.Windows.Media.Matrix matrix1, System.Windows.Media.Matrix matrix2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Equality(valuetype System.Windows.Media.Matrix matrix1, valuetype System.Windows.Media.Matrix matrix2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.op_Equality(System.Windows.Media.Matrix,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix1" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="matrix2" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix1">比較する最初の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <param name="matrix2">比較する 2 番目の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <summary>指定した 2 つあるかどうかを判定<see cref="T:System.Windows.Media.Matrix" />構造は同じです。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="matrix1" />と<paramref name="matrix2" />同じである、それ以外の場合は、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Media.Matrix>構造が等しいかどうか。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixequalityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Inequality">
+      <MemberSignature Language="C#" Value="public static bool operator != (System.Windows.Media.Matrix matrix1, System.Windows.Media.Matrix matrix2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname bool op_Inequality(valuetype System.Windows.Media.Matrix matrix1, valuetype System.Windows.Media.Matrix matrix2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.op_Inequality(System.Windows.Media.Matrix,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix1" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="matrix2" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix1">比較する最初の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <param name="matrix2">比較する 2 番目の <see cref="T:System.Windows.Media.Matrix" /> 構造体。</param>
+        <summary>指定した 2 つあるかどうかを判定<see cref="T:System.Windows.Media.Matrix" />構造体が同じではありません。</summary>
+        <returns>
+          <see langword="true" />場合<paramref name="matrix1" />と<paramref name="matrix2" />がないと同じ。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  A<xref:System.Windows.Media.Matrix>倍精度の値を格納します。 の値、<xref:System.Double>算術演算子は、2 つの比較を実行時に、有効桁数を失うことができます<xref:System.Double>論理的に等価である構造体が失敗する可能性があります。  
+  
+   
+  
+## Examples  
+ 次の例は、2 つをチェックする方法を示します<xref:System.Windows.Media.Matrix>構造が等しいかどうか。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixEqualityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixequalityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="op_Multiply">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Matrix operator * (System.Windows.Media.Matrix trans1, System.Windows.Media.Matrix trans2);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig specialname valuetype System.Windows.Media.Matrix op_Multiply(valuetype System.Windows.Media.Matrix trans1, valuetype System.Windows.Media.Matrix trans2) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.op_Multiply(System.Windows.Media.Matrix,System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="trans1" Type="System.Windows.Media.Matrix" />
+        <Parameter Name="trans2" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="trans1">最初の<see cref="T:System.Windows.Media.Matrix" />乗算する構造体。</param>
+        <param name="trans2">2 番目<see cref="T:System.Windows.Media.Matrix" />乗算する構造体。</param>
+        <summary>乗算、<see cref="T:System.Windows.Media.Matrix" />別構造<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <returns><paramref name="trans1" /> と <paramref name="trans2" /> を乗算した結果。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 行列乗算は可換ではありません。 乗算`trans1`によって`trans2`を乗算することと同じではない`trans2`によって`trans1`です。  
+  
+   
+  
+## Examples  
+ 次の例は、2 を乗算する方法を示しています。<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixMultiplicationExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixmultiplicationexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Parse">
+      <MemberSignature Language="C#" Value="public static System.Windows.Media.Matrix Parse (string source);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype System.Windows.Media.Matrix Parse(string source) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Parse(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Matrix</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="source" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="source"><see cref="T:System.String" />マトリックスの表現。</param>
+        <summary>変換、<see cref="T:System.String" />マトリックスの表現をそれと同等に<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <returns>該当するショートカットは、<see cref="T:System.Windows.Media.Matrix" />構造体。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例に行列の文字列形式に変換する方法を示しています、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixParseExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixparseexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Prepend">
+      <MemberSignature Language="C#" Value="public void Prepend (System.Windows.Media.Matrix matrix);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Prepend(valuetype System.Windows.Media.Matrix matrix) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Prepend(System.Windows.Media.Matrix)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="matrix" Type="System.Windows.Media.Matrix" />
+      </Parameters>
+      <Docs>
+        <param name="matrix"><see cref="T:System.Windows.Media.Matrix" />にこれを付加する構造体<see cref="T:System.Windows.Media.Matrix" />構造体。</param>
+        <summary>指定した前に付加<see cref="T:System.Windows.Media.Matrix" />構造をこの<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この操作は、パラメーターを乗算することと同じ`matrix`この<xref:System.Windows.Media.Matrix>構造体。 行列の乗算は可換性ただし、この操作は、これを乗算することと同じではないため<xref:System.Windows.Media.Matrix>パラメーターで構造`matrix`です。 つまり、 `matrix` * これはこれと同じ *`matrix`です。  
+  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、前に付加する方法を示しています、<xref:System.Windows.Media.Matrix>別に<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixPrependExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixprependexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Rotate">
+      <MemberSignature Language="C#" Value="public void Rotate (double angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Rotate(float64 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Rotate(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度。</param>
+        <summary>この配信元の指定された角度の回転を適用<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を回転させる方法を示しています、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixRotateExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixrotateexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateAt">
+      <MemberSignature Language="C#" Value="public void RotateAt (double angle, double centerX, double centerY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateAt(float64 angle, float64 centerX, float64 centerY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.RotateAt(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Double" />
+        <Parameter Name="centerX" Type="System.Double" />
+        <Parameter Name="centerY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="angle">この行列の回転の角度の角度。</param>
+        <param name="centerX">この行列の回転の中心点の x 座標。</param>
+        <param name="centerY">この行列の回転の中心点の y 座標。</param>
+        <summary>指定した点に関するこのマトリックスを回転します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を回転させる方法を示しています、<xref:System.Windows.Media.Matrix>指定した点です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixRotateAboutPointExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixrotateaboutpointexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotateAtPrepend">
+      <MemberSignature Language="C#" Value="public void RotateAtPrepend (double angle, double centerX, double centerY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotateAtPrepend(float64 angle, float64 centerX, float64 centerY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.RotateAtPrepend(System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Double" />
+        <Parameter Name="centerX" Type="System.Double" />
+        <Parameter Name="centerY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="angle">回転角度 (度単位)。</param>
+        <param name="centerX">回転の中心の x 座標。</param>
+        <param name="centerY">回転の中心の y 座標。</param>
+        <summary>これを指定した位置に指定された角度の回転<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、回転をする方法を示しています、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixPrependRotateExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixprependrotateexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RotatePrepend">
+      <MemberSignature Language="C#" Value="public void RotatePrepend (double angle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void RotatePrepend(float64 angle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.RotatePrepend(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="angle" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="angle">前に付加する回転の角度。</param>
+        <summary>これを指定された角度の回転<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、回転をする方法を示しています、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixPrependRotateExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixprependrotateexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Scale">
+      <MemberSignature Language="C#" Value="public void Scale (double scaleX, double scaleY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Scale(float64 scaleX, float64 scaleY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Scale(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Double" />
+        <Parameter Name="scaleY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">これをスケールする値<see cref="T:System.Windows.Media.Matrix" />x 軸にします。</param>
+        <param name="scaleY">これをスケールする値<see cref="T:System.Windows.Media.Matrix" />y 軸に沿ってです。</param>
+        <summary>これを指定したスケール ベクターを追加<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をスケーリングする方法を示しています、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixScaleExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixscaleexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleAt">
+      <MemberSignature Language="C#" Value="public void ScaleAt (double scaleX, double scaleY, double centerX, double centerY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleAt(float64 scaleX, float64 scaleY, float64 centerX, float64 centerY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.ScaleAt(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Double" />
+        <Parameter Name="scaleY" Type="System.Double" />
+        <Parameter Name="centerX" Type="System.Double" />
+        <Parameter Name="centerY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">これを拡大または縮小する量<see cref="T:System.Windows.Media.Matrix" />x 軸にします。</param>
+        <param name="scaleY">これを拡大または縮小する量<see cref="T:System.Windows.Media.Matrix" />y 軸に沿ってです。</param>
+        <param name="centerX">スケール操作の中心点の x 座標。</param>
+        <param name="centerY">スケール操作の中心点の y 座標。</param>
+        <summary>このスケーリング<see cref="T:System.Windows.Media.Matrix" />を指定した点に関する指定の量。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例をスケーリングする方法を示しています、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixScaleExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixscaleexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScaleAtPrepend">
+      <MemberSignature Language="C#" Value="public void ScaleAtPrepend (double scaleX, double scaleY, double centerX, double centerY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScaleAtPrepend(float64 scaleX, float64 scaleY, float64 centerX, float64 centerY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.ScaleAtPrepend(System.Double,System.Double,System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Double" />
+        <Parameter Name="scaleY" Type="System.Double" />
+        <Parameter Name="centerX" Type="System.Double" />
+        <Parameter Name="centerY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">X 軸のスケール ファクター。</param>
+        <param name="scaleY">Y 軸のスケール ファクター。</param>
+        <param name="centerX">スケール操作が実行される点の x 座標。</param>
+        <param name="centerY">スケール操作が実行される点の y 座標。</param>
+        <summary>この指定した点に関する指定された小数点以下桁数を先頭<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、スケールをする方法を示しています、<xref:System.Windows.Media.Matrix>です。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixPrependScaleExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixprependscaleexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScalePrepend">
+      <MemberSignature Language="C#" Value="public void ScalePrepend (double scaleX, double scaleY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void ScalePrepend(float64 scaleX, float64 scaleY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.ScalePrepend(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="scaleX" Type="System.Double" />
+        <Parameter Name="scaleY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="scaleX">これをスケールする値<see cref="T:System.Windows.Media.Matrix" />x 軸に沿って構造体。</param>
+        <param name="scaleY">これをスケールする値<see cref="T:System.Windows.Media.Matrix" />y 軸に沿って構造体。</param>
+        <summary>指定したスケール ベクターをこの前に付加<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、スケールをする方法を示しています、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixPrependScaleExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixprependscaleexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetIdentity">
+      <MemberSignature Language="C#" Value="public void SetIdentity ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetIdentity() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.SetIdentity" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この変更<see cref="T:System.Windows.Media.Matrix" />単位行列に構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Id 行列係数 [1, 1]、[2, 2] [3, 3] で、値 1 では、係数の残りの部分では 0 の値。 設定に関連しているこの<xref:System.Windows.Media.Matrix.M11%2A>と<xref:System.Windows.Media.Matrix.M22%2A>1 と<xref:System.Windows.Media.Matrix.M12%2A>、 <xref:System.Windows.Media.Matrix.M21%2A>、 <xref:System.Windows.Media.Matrix.OffsetX%2A>、および<xref:System.Windows.Media.Matrix.OffsetY%2A>を 0 にします。 アフィン行列では、実装を[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]を使用して、<xref:System.Windows.Media.Matrix>構造体、係数 [3, 1]、[3, 2]、[3.3] 0,0,1 の値をそれぞれ保持するには暗黙的に指定します。  
+  
+||||  
+|-|-|-|  
+|1|0|0|  
+|0|1|0|  
+|0|0|1|  
+  
+ Id 行列に、<xref:System.Windows.Media.Matrix.ToString%2A>メソッドは、文字列""、係数ではなくの Id を返します、<xref:System.Windows.Media.Matrix>です。  
+  
+   
+  
+## Examples  
+ 次の例は、オンにする方法を示しています、<xref:System.Windows.Media.Matrix>単位行列に構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixIdentityExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixidentityexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Skew">
+      <MemberSignature Language="C#" Value="public void Skew (double skewX, double skewY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Skew(float64 skewX, float64 skewY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Skew(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skewX" Type="System.Double" />
+        <Parameter Name="skewY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="skewX">これを傾斜する x 方向の角度<see cref="T:System.Windows.Media.Matrix" />です。</param>
+        <param name="skewY">これを傾斜する y 次元の角度<see cref="T:System.Windows.Media.Matrix" />です。</param>
+        <summary>X および y に指定した角度のずれの追加をこのディメンション<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ この例では、傾斜、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixSkewExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixskewexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SkewPrepend">
+      <MemberSignature Language="C#" Value="public void SkewPrepend (double skewX, double skewY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SkewPrepend(float64 skewX, float64 skewY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.SkewPrepend(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="skewX" Type="System.Double" />
+        <Parameter Name="skewY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="skewX">これを傾斜する x 方向の角度<see cref="T:System.Windows.Media.Matrix" />です。</param>
+        <param name="skewY">これを傾斜する y 次元の角度<see cref="T:System.Windows.Media.Matrix" />です。</param>
+        <summary>前に付加 x および y に指定した角度のずれをこのディメンション<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ この例にずれを付加する方法を示しています、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixSkewPrependExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixskewprependexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.IFormattable.ToString">
+      <MemberSignature Language="C#" Value="string IFormattable.ToString (string format, IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.IFormattable.ToString(string format, class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.System#IFormattable#ToString(System.String,System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.String" />
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="format">使用する書式。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) の種類に対して定義されている既定の形式を使用する、<see cref="T:System.IFormattable" />実装します。</param>
+        <param name="provider">値を書式設定するために使用するプロバイダー。  
+  
+ または  
+  
+ Null 参照 (<see langword="Nothing" /> Visual Basic で) オペレーティング システムの現在のロケール設定から数値書式指定情報を取得します。</param>
+        <summary>指定された書式を使用して現在のインスタンスの値を書式設定します。</summary>
+        <returns>指定された書式の現在のインスタンスの値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="ToString">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Windows.Media.Matrix>構造体は、行列、文字列"Identity"が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public override string ToString ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string ToString() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.ToString" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <returns>A<see cref="T:System.String" />を含む、 <see cref="P:System.Windows.Media.Matrix.M11" />、 <see cref="P:System.Windows.Media.Matrix.M12" />、 <see cref="P:System.Windows.Media.Matrix.M21" />、 <see cref="P:System.Windows.Media.Matrix.M22" />、 <see cref="P:System.Windows.Media.Matrix.OffsetX" />、および<see cref="P:System.Windows.Media.Matrix.OffsetY" />この値<see cref="T:System.Windows.Media.Matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Windows.Media.Matrix>は、<xref:System.Windows.Media.Matrix.Identity%2A>マトリックス、"Identity"が返される文字列。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public string ToString (IFormatProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ToString(class System.IFormatProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.ToString(System.IFormatProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IFormatProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">カルチャに固有の書式設定情報。</param>
+        <summary>作成、<see cref="T:System.String" />表現<see cref="T:System.Windows.Media.Matrix" />カルチャに固有の書式情報を含む構造体。</summary>
+        <returns>A<see cref="T:System.String" />を含む、 <see cref="P:System.Windows.Media.Matrix.M11" />、 <see cref="P:System.Windows.Media.Matrix.M12" />、 <see cref="P:System.Windows.Media.Matrix.M21" />、 <see cref="P:System.Windows.Media.Matrix.M22" />、 <see cref="P:System.Windows.Media.Matrix.OffsetX" />、および<see cref="P:System.Windows.Media.Matrix.OffsetY" />この値<see cref="T:System.Windows.Media.Matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この場合<xref:System.Windows.Media.Matrix>構造体は、行列、文字列"Identity"が返されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="Transform">
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>これによって、指定したポイント、ポイント、ベクター、またはベクターの配列の配列を変換<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>ポイントやベクトルを変換します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Point Transform (System.Windows.Point point);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Point Transform(valuetype System.Windows.Point point) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Transform(System.Windows.Point)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Point</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="point" Type="System.Windows.Point" />
+      </Parameters>
+      <Docs>
+        <param name="point">変換対象のポイント。</param>
+        <summary>指定した点の変換、<see cref="T:System.Windows.Media.Matrix" />結果を返します。</summary>
+        <returns>変換した結果<paramref name="point" />この<see cref="T:System.Windows.Media.Matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>ポイントやベクトルを変換します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Windows.Point[] points);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(valuetype System.Windows.Point[] points) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Transform(System.Windows.Point[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="points" Type="System.Windows.Point[]" />
+      </Parameters>
+      <Docs>
+        <param name="points">変換する点です。 配列内の元のポイントは、変換後の値に置き換えられます。</param>
+        <summary>これによって、指定したポイントを変換<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>ポイントやベクトルを変換します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public System.Windows.Vector Transform (System.Windows.Vector vector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Windows.Vector Transform(valuetype System.Windows.Vector vector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Transform(System.Windows.Vector)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Vector</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vector" Type="System.Windows.Vector" />
+      </Parameters>
+      <Docs>
+        <param name="vector">変換するベクトル。</param>
+        <summary>これによって、指定したベクトルを変換<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <returns>変換した結果<paramref name="vector" />この<see cref="T:System.Windows.Media.Matrix" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>ポイントやベクトルを変換します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Transform">
+      <MemberSignature Language="C#" Value="public void Transform (System.Windows.Vector[] vectors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Transform(valuetype System.Windows.Vector[] vectors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Transform(System.Windows.Vector[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="vectors" Type="System.Windows.Vector[]" />
+      </Parameters>
+      <Docs>
+        <param name="vectors">変換するベクトル。 配列内の元のベクターは、変換後の値に置き換えられます。</param>
+        <summary>これによって、指定したベクトルを変換<see cref="T:System.Windows.Media.Matrix" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Media.Matrix>ポイントやベクトルを変換します。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTransformExamples_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtransformexamples_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Translate">
+      <MemberSignature Language="C#" Value="public void Translate (double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Translate(float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.Translate(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">これをオフセットする量<see cref="T:System.Windows.Media.Matrix" />x 軸にします。</param>
+        <param name="offsetY">これをオフセットする量<see cref="T:System.Windows.Media.Matrix" />y 軸に沿ってです。</param>
+        <summary>これを指定したオフセットの翻訳を追加<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 例を次に翻訳を追加する方法、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTranslateExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtranslateexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TranslatePrepend">
+      <MemberSignature Language="C#" Value="public void TranslatePrepend (double offsetX, double offsetY);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void TranslatePrepend(float64 offsetX, float64 offsetY) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Matrix.TranslatePrepend(System.Double,System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>WindowsBase</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="offsetX" Type="System.Double" />
+        <Parameter Name="offsetY" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="offsetX">これをオフセットする量<see cref="T:System.Windows.Media.Matrix" />x 軸にします。</param>
+        <param name="offsetY">これをオフセットする量<see cref="T:System.Windows.Media.Matrix" />y 軸に沿ってです。</param>
+        <summary>これを指定したオフセットの変換<see cref="T:System.Windows.Media.Matrix" />構造体。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 複合変換では、個々 の変換の順序が重要です。 など、回転、まずしてから、スケール、変換、最初に変換する場合、回転し、スケールよりも異なる結果が得です。 順序は重要な理由の 1 つは、座標系の原点を基準の回転とスケーリングのような変換を行うことです。 原点を中心とするオブジェクトをスケーリングすると、原点から離れているオブジェクトをスケーリング異なる結果が生成されます。 同様に、原点を中心とするオブジェクトを回転させるには、原点から離れているオブジェクトを回転異なる結果が生成されます。  
+  
+   
+  
+## Examples  
+ 例を次に上に翻訳を付加する方法、<xref:System.Windows.Media.Matrix>構造体。  
+  
+ [!code-csharp[MatrixExamples_snip#MatrixTranslatePrependExample_csharp](~/samples/snippets/csharp/VS_Snippets_Wpf/MatrixExamples_snip/CSharp/MatrixExample.cs#matrixtranslateprependexample_csharp)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

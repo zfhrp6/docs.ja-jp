@@ -1,0 +1,135 @@
+<Type Name="ComVisibleAttribute" FullName="System.Runtime.InteropServices.ComVisibleAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComVisibleAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComVisibleAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComVisibleAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Enum | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Field | System.AttributeTargets.Interface | System.AttributeTargets.Delegate, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>個々のマネージ型またはマネージ メンバーから COM への、またはアセンブリ内のすべての型から COM へのアクセシビリティを制御します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、アセンブリ、インターフェイス、クラス、構造体、デリゲート、列挙型、フィールド、メソッド、またはプロパティに適用できます。  
+  
+ 既定値は`true`、マネージ型が COM から参照 この属性が表示されているパブリック マネージ アセンブリと型を作成する必要はありません。既定では COM に表示されます。 のみ`public`型が表示されることができます。 属性は、それ以外の場合を使用することはできません`internal`または`protected`型または非表示の型のメンバーを表示する com から参照可能です。  
+  
+ 属性を設定`false`アセンブリ上すべて非表示に`public`アセンブリ内の型。 ことができます選択的に、アセンブリ内の型表示個々 の型を設定して`true`です。 属性を設定`false`特定の種類にその型とそのメンバーを非表示にします。 ただし、することはできません型のメンバー表示されている型が表示されない場合。 属性を設定`false`の型は、その型がタイプ ライブラリにエクスポートされるがように以外のクラスが登録されていません。 インターフェイスはアンマネージに応答しない`QueryInterface`呼び出しです。  
+  
+ クラスとそのメンバーを明示的に設定しない限り`false`、継承されたクラスは、元のクラスで表示される COM の基本クラスのメンバーを公開できます。 たとえば、ClassA に設定する`false`のメンバーに属性を適用しないと、クラスとそのメンバーが COM に表示されません。 ただし、ClassA から派生して ClassB ClassB を COM にエクスポートすると、ClassA メンバーが ClassB の表示の基本クラスのメンバーになります。  
+  
+ エクスポート処理の詳細については、次を参照してください。[アセンブリからタイプ ライブラリの変換の要約](http://msdn.microsoft.com/en-us/3a37eefb-a76c-4000-9080-7dbbf66a4896)です。  
+  
+   
+  
+## Examples  
+ 次の例では、そのメンバーが表示されるように、クラスの COM に対して可視性を制御する方法を示します。 設定して`ComVisibleAttribute`に`false`で`MyClass`(`SampleClass` Visual Basic の例で)、および`false`で`MyMethod`と`MyProperty`、誤ってメンバーを公開する、COM に継承によって回避できます。  
+  
+ [!code-cpp[Classic ComVisibleAttribute Example#1](~/samples/snippets/cpp/VS_Snippets_CLR_Classic/classic ComVisibleAttribute Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic ComVisibleAttribute Example#1](~/samples/snippets/csharp/VS_Snippets_CLR_Classic/classic ComVisibleAttribute Example/CS/source.cs#1)]
+ [!code-vb[Classic ComVisibleAttribute Example#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_Classic/classic ComVisibleAttribute Example/VB/source.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComVisibleAttribute (bool visibility);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(bool visibility) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComVisibleAttribute.#ctor(System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="visibility" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="visibility">
+          <see langword="true" />型が COM; から参照できることを示すそれ以外の場合、<see langword="false" />です。 既定値は、<see langword="true" /> です。</param>
+        <summary><see langword="ComVisibleAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 型を COM から参照できるようにする属性を設定`true`です。 COM から型を非表示に属性を設定します。`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public bool Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Value" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComVisibleAttribute.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>COM 型が表示されるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />型を表示する場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,59 @@
+<Type Name="RefreshMode" FullName="System.Data.Objects.RefreshMode">
+  <TypeSignature Language="C#" Value="public enum RefreshMode" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed RefreshMode extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Objects.RefreshMode" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Entity</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>Object Services によって追跡されるオブジェクトのプロパティの変更を保持するか、データ ソースのプロパティ値と置き換えるかを指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ [変更の保存と同時実行の管理](http://msdn.microsoft.com/en-us/b8378601-4f26-4a05-a24a-f50aeb68610e)  
+  
+ [方法: オブジェクト コンテキスト内のデータの同時実行の管理](http://msdn.microsoft.com/en-us/25ffe70d-ce97-4f0a-8ae0-22b7c40f748a)  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ClientWins">
+      <MemberSignature Language="C#" Value="ClientWins" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.RefreshMode ClientWins = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.RefreshMode.ClientWins" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.RefreshMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストでのオブジェクトに対するプロパティの変更は、データ ソースの値によって置き換えられません。 次に <see cref="M:System.Data.Objects.ObjectContext.SaveChanges" /> を呼び出したときに、これらの変更がデータ ソースに送信されます。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="StoreWins">
+      <MemberSignature Language="C#" Value="StoreWins" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.Objects.RefreshMode StoreWins = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.Objects.RefreshMode.StoreWins" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Entity</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.Objects.RefreshMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>オブジェクト コンテキストでのオブジェクトに対するプロパティの変更は、データ ソースの値によって置き換えられます。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

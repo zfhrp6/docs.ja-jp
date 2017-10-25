@@ -1,0 +1,154 @@
+<Type Name="CodeSnippetCompileUnit" FullName="System.CodeDom.CodeSnippetCompileUnit">
+  <TypeSignature Language="C#" Value="public class CodeSnippetCompileUnit : System.CodeDom.CodeCompileUnit" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CodeSnippetCompileUnit extends System.CodeDom.CodeCompileUnit" />
+  <TypeSignature Language="DocId" Value="T:System.CodeDom.CodeSnippetCompileUnit" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.CodeDom</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.CodeDom.CodeCompileUnit</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ClassInterface(System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>コンパイル可能なリテラルのコード フラグメントを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.CodeDom.CodeSnippetCompileUnit>変更しなくても、ソースに直接含まれているコードのリテラルのブロックを表すことができます。  
+  
+ A<xref:System.CodeDom.CodeSnippetCompileUnit>を文字列として、元の形式で正確に、コードのセクションを格納します。 CodeDOM は、リテラルのコード フラグメントを変換できません。 リテラル コード フラグメントでは、格納され、元の形式で出力することができます。 リテラルのコードが含まれている codeDOM オブジェクトは、開発者が既に対象言語でコードをカプセル化できるように提供されます。  
+  
+ <xref:System.CodeDom.CodeSnippetCompileUnit.Value%2A>プロパティが文字列としてのリテラルのコード フラグメントに含まれています。 <xref:System.CodeDom.CodeSnippetCompileUnit.LinePragma%2A>プロパティは省略可能であり、ソース コード ドキュメント内のコードの位置を指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.CodeDom.CodeSnippetCompileUnit>リテラルのコードを表す文字列を使用してクラスです。  
+  
+ [!code-cpp[CodeDomSampleBatch#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomSampleBatch/CPP/class1.cpp#8)]
+ [!code-csharp[CodeDomSampleBatch#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomSampleBatch/CS/class1.cs#8)]
+ [!code-vb[CodeDomSampleBatch#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomSampleBatch/VB/class1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeSnippetCompileUnit ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeSnippetCompileUnit.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.CodeDom.CodeSnippetCompileUnit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用する場合も設定し、<xref:System.CodeDom.CodeSnippetCompileUnit.Value%2A>プロパティです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CodeSnippetCompileUnit (string value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.CodeDom.CodeSnippetCompileUnit.#ctor(System.String)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="value">表すリテラルのコード フラグメントです。</param>
+        <summary><see cref="T:System.CodeDom.CodeSnippetCompileUnit" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例は、の新しいインスタンスを作成する方法を示します、<xref:System.CodeDom.CodeSnippetCompileUnit>リテラルのコードを表す文字列を使用してクラスです。  
+  
+ [!code-cpp[CodeDomSampleBatch#8](~/samples/snippets/cpp/VS_Snippets_CLR/CodeDomSampleBatch/CPP/class1.cpp#8)]
+ [!code-csharp[CodeDomSampleBatch#8](~/samples/snippets/csharp/VS_Snippets_CLR/CodeDomSampleBatch/CS/class1.cs#8)]
+ [!code-vb[CodeDomSampleBatch#8](~/samples/snippets/visualbasic/VS_Snippets_CLR/CodeDomSampleBatch/VB/class1.vb#8)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LinePragma">
+      <MemberSignature Language="C#" Value="public System.CodeDom.CodeLinePragma LinePragma { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.CodeDom.CodeLinePragma LinePragma" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeSnippetCompileUnit.LinePragma" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.CodeDom.CodeLinePragma</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはソース コード ドキュメント内のコードの場所の行とファイルの情報を設定します。</summary>
+        <value>A<see cref="T:System.CodeDom.CodeLinePragma" />コード フラグメントの位置を示すです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.CodeDom.CodeSnippetCompileUnit.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.CodeDom</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表すリテラルのコード フラグメントです。</summary>
+        <value>リテラルのコード フラグメントにします。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

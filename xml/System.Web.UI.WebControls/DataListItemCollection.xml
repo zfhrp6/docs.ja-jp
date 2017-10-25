@@ -1,0 +1,274 @@
+<Type Name="DataListItemCollection" FullName="System.Web.UI.WebControls.DataListItemCollection">
+  <TypeSignature Language="C#" Value="public sealed class DataListItemCollection : System.Collections.ICollection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DataListItemCollection extends System.Object implements class System.Collections.ICollection, class System.Collections.IEnumerable" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.DataListItemCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Collections.ICollection</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.WebControls.DataListItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataList" />コントロール。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.DataListItemCollection>クラスのコレクションを表します<xref:System.Web.UI.WebControls.DataListItem>順番のデータ項目を表す、<xref:System.Web.UI.WebControls.DataList>コントロール。 プログラムで取得する<xref:System.Web.UI.WebControls.DataListItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataList>コントロールを使用して、次のメソッドのいずれか。  
+  
+-   1 つを取得するインデクサーを使用して<xref:System.Web.UI.WebControls.DataListItem>配列表記を使用して、コレクションからオブジェクト。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataListItemCollection.CopyTo%2A>にコレクションの内容をコピーする方法、<xref:System.Array?displayProperty=nameWithType>オブジェクトをコレクションから項目を取得するために使用されます。  
+  
+-   使用して、<xref:System.Web.UI.WebControls.DataListItemCollection.GetEnumerator%2A>メソッドを作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>コレクションから項目を取得するために使用するインターフェイスです。  
+  
+ <xref:System.Web.UI.WebControls.DataListItemCollection.Count%2A>プロパティ コレクション内のアイテムの合計数を指定およびコレクションの上限を確認に一般的に使用します。  
+  
+   
+  
+## Examples  
+ 次の例は、の形式でデータ ソースを作成、<xref:System.Data.DataView>を制御し、バインドを<xref:System.Web.UI.WebControls.DataList>コントロール マークアップで宣言します。 これは、後、基になるの内容を表示<xref:System.Web.UI.WebControls.DataListItemCollection>ページ上のオブジェクト。  
+  
+ [!code-aspx-csharp[DataListItemCollection#1](~/samples/snippets/csharp/VS_Snippets_WebNet/DataListItemCollection/CS/datalistitemcollection.cs.aspx#1)]
+ [!code-aspx-vb[DataListItemCollection#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/DataListItemCollection/VB/datalistitemcollection.vb.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataListItemCollection (System.Collections.ArrayList items);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.ArrayList items) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataListItemCollection.#ctor(System.Collections.ArrayList)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="items" Type="System.Collections.ArrayList" />
+      </Parameters>
+      <Docs>
+        <param name="items">A<see cref="T:System.Collections.ArrayList" />コレクションの初期化に使用する項目を含むオブジェクト。</param>
+        <summary><see cref="T:System.Web.UI.WebControls.DataListItemCollection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを使用して作成しの新しいインスタンスを初期化、<xref:System.Web.UI.WebControls.DataListItemCollection>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyTo">
+      <MemberSignature Language="C#" Value="public void CopyTo (Array array, int index);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void CopyTo(class System.Array array, int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataListItemCollection.CopyTo(System.Array,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="array" Type="System.Array" />
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="array">0 から始まる<see cref="T:System.Array" />オブジェクトからコピーされた項目を受信する、<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />コレクション。</param>
+        <param name="index">指定した最初の位置<see cref="T:System.Array" />内容のコピーを受け取るオブジェクト。</param>
+        <summary>これからすべての項目をコピー<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />を指定したコレクション<see cref="T:System.Array" />オブジェクト、指定したインデックスから始まる、<see cref="T:System.Array" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 内容をコピーするには、このメソッドを使用して、<xref:System.Web.UI.WebControls.DataListItemCollection>に指定されたコレクション<xref:System.Array?displayProperty=nameWithType>オブジェクト、指定したインデックスから始まります。  
+  
+> [!NOTE]
+>  `array`パラメーターは、0 から始まるである必要があります<xref:System.Array?displayProperty=nameWithType>オブジェクト。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Count">
+      <MemberSignature Language="C#" Value="public int Count { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 Count" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemCollection.Count" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>数を取得<see cref="T:System.Web.UI.WebControls.DataListItem" />コレクション内のオブジェクト。</summary>
+        <value>数<see cref="T:System.Web.UI.WebControls.DataListItem" />コレクション内のオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.WebControls.DataListItemCollection.Count%2A>の数を決定するプロパティ<xref:System.Web.UI.WebControls.DataListItem>内のオブジェクト、<xref:System.Web.UI.WebControls.DataListItemCollection>コレクション。 <xref:System.Web.UI.WebControls.DataListItemCollection.Count%2A>プロパティは通常、コレクションのバインド上の決定にコレクションを反復処理する場合に使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEnumerator">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerator GetEnumerator ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IEnumerator GetEnumerator() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.DataListItemCollection.GetEnumerator" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>返します、<see cref="T:System.Collections.IEnumerator" />すべてを含むインターフェイス<see cref="T:System.Web.UI.WebControls.DataListItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />です。</summary>
+        <returns>A<see cref="T:System.Collections.IEnumerator" />すべてを含むインターフェイス<see cref="T:System.Web.UI.WebControls.DataListItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、作成、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>することが簡単に反復各項目を取得する、<xref:System.Web.UI.WebControls.DataListItemCollection>コレクション。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>コレクションで示される現在の項目を取得するプロパティです。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>コレクション内の次の項目に移動します。  
+  
+ 使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子を移動する方法は、最初の位置をバックアップします。  
+  
+> [!NOTE]
+>  作成した後、<xref:System.Collections.IEnumerator?displayProperty=nameWithType>オブジェクト、またはを使用して、<xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType>列挙子をコレクションの最初の項目に移動するメソッドを呼び出す必要があります、<xref:System.Collections.IEnumerator.MoveNext%2A?displayProperty=nameWithType>メソッドです。 によって表される項目のそれ以外の場合、<xref:System.Collections.IEnumerator.Current%2A?displayProperty=nameWithType>プロパティが定義されていません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemCollection.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Web.UI.WebControls.DataListItem" />内のオブジェクト、<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />変更できます。</summary>
+        <value>
+          常に <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは常に返します`false`ことを示す、<xref:System.Web.UI.WebControls.DataListItemCollection>常に書き込むことができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsSynchronized">
+      <MemberSignature Language="C#" Value="public bool IsSynchronized { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsSynchronized" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemCollection.IsSynchronized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.DataListItemCollection" /> へのアクセスが同期されている (スレッド セーフである) かどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="false" />すべてのケース。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティはから派生した、<xref:System.Collections.ICollection?displayProperty=nameWithType>クラスし、常にオーバーライド`false`です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.IsSynchronized%2A>プロパティを参照してください、<xref:System.Collections.ICollection.IsSynchronized%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Item">
+      <MemberSignature Language="C#" Value="public System.Web.UI.WebControls.DataListItem this[int index] { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.DataListItem Item(int32)" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemCollection.Item(System.Int32)" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.DataListItem</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス、<see cref="T:System.Web.UI.WebControls.DataListItem" />コレクションを取得します。</param>
+        <summary>取得、<see cref="T:System.Web.UI.WebControls.DataListItem" />オブジェクト、コレクション内の指定したインデックス位置。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.DataListItem" />コレクション内の指定したインデックスにあるオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このインデクサーを使用して、取得、<xref:System.Web.UI.WebControls.DataListItem>オブジェクトから、<xref:System.Web.UI.WebControls.DataListItemCollection>配列表記を使用して指定したインデックス位置。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SyncRoot">
+      <MemberSignature Language="C#" Value="public object SyncRoot { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SyncRoot" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.DataListItemCollection.SyncRoot" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アクセスを同期するために使用できるオブジェクトを取得、<see cref="T:System.Web.UI.WebControls.DataListItemCollection" />コレクション。</summary>
+        <value>A<see cref="T:System.Object" />コレクションへのアクセスを同期するために使用できます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この実装で返されるオブジェクトは、<xref:System.Web.UI.WebControls.DataListItemCollection>オブジェクト自体です。  
+  
+ 詳細については、<xref:System.Web.UI.WebControls.DataGridColumnCollection.SyncRoot%2A>プロパティを参照してください、<xref:System.Collections.ICollection.SyncRoot%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Collections.ICollection?displayProperty=nameWithType>インターフェイスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

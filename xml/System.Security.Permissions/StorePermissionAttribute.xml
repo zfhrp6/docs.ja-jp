@@ -1,0 +1,334 @@
+<Type Name="StorePermissionAttribute" FullName="System.Security.Permissions.StorePermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class StorePermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StorePermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.StorePermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.StorePermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>使用される値。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 <xref:System.Security.Permissions.StorePermissionAttribute>属性は、宣言型セキュリティにのみ使用します。 命令型のセキュリティを使用して、<xref:System.Security.Permissions.StorePermission>クラスです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StorePermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StorePermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Security.Permissions.StorePermissionAttribute" />指定したセキュリティ アクションを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddToStore">
+      <MemberSignature Language="C#" Value="public bool AddToStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AddToStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.AddToStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアに追加する、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ストアに追加する機能が使用できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ上の理由から、信頼性の高いコードにのみこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StorePermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Security.Permissions.StorePermission" /> を作成して返します。</summary>
+        <returns>A<see cref="T:System.Security.Permissions.StorePermission" />属性に対応します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータは、このメソッドで返される、アクセス許可オブジェクトから作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateStore">
+      <MemberSignature Language="C#" Value="public bool CreateStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool CreateStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.CreateStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアを作成する、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ストアを作成することができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 新しいストアが呼び出すことによって作成された、<xref:System.Security.Cryptography.X509Certificates.X509Store.Open%2A?displayProperty=nameWithType>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteStore">
+      <MemberSignature Language="C#" Value="public bool DeleteStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DeleteStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.DeleteStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアを削除する、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ストアを削除する機能が使用できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能がによって公開されていない、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateCertificates">
+      <MemberSignature Language="C#" Value="public bool EnumerateCertificates { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnumerateCertificates" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.EnumerateCertificates" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストア内の証明書を列挙する、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />証明書を列挙する機能が使用できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プライバシー上の理由から、完全に信頼されたコードだけにこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EnumerateStores">
+      <MemberSignature Language="C#" Value="public bool EnumerateStores { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool EnumerateStores" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.EnumerateStores" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアの列挙が、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />列挙する機能の格納が許可された場合です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この機能がによって公開されていない、<xref:System.Security.Cryptography.X509Certificates.X509Store>クラスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Flags">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.StorePermissionFlags Flags { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.StorePermissionFlags Flags" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.Flags" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.StorePermissionFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアのアクセス許可を設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.StorePermissionFlags" /> 値のビットごとの組み合わせ。 既定値は、<see cref="F:System.Security.Permissions.StorePermissionFlags.NoFlags" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!CAUTION]
+>  これらのフラグの多くは強力であり、信頼性の高いコードにのみ許可するストアへのアクセスを許可します。  
+  
+ 最も強力なフラグは<xref:System.Security.Permissions.StorePermissionFlags.AddToStore>、 <xref:System.Security.Permissions.StorePermissionFlags.CreateStore>、 <xref:System.Security.Permissions.StorePermissionFlags.DeleteStore>、および<xref:System.Security.Permissions.StorePermissionFlags.AllFlags>です。 これらのフラグの使用によって生じる特定の脅威は、個々 のフラグの説明を参照してください。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OpenStore">
+      <MemberSignature Language="C#" Value="public bool OpenStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool OpenStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.OpenStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアを開くため、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ストアを開くことができる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 機能ストアを開くには、(これはプライバシーの問題を発生させます) 証明書を列挙するを追加または証明書を削除できるよう (これはセキュリティ上の問題を発生させます) は含まれません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveFromStore">
+      <MemberSignature Language="C#" Value="public bool RemoveFromStore { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RemoveFromStore" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StorePermissionAttribute.RemoveFromStore" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはストアから証明書を削除する、コードが許可されているかどうかを示す値を設定します。</summary>
+        <value>
+          <see langword="true" />ストアから証明書を削除する機能が使用できる場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サービス拒否攻撃につながる証明書を削除するため、信頼性の高いコードにのみこのアクセス許可を付与する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

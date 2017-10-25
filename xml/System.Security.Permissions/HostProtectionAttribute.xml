@@ -1,0 +1,545 @@
+<Type Name="HostProtectionAttribute" FullName="System.Security.Permissions.HostProtectionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class HostProtectionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit HostProtectionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.HostProtectionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Delegate, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ホスト保護要件を決める宣言セキュリティ アクションの使用を許可します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性は、共通言語ランタイムと実装ホストの保護、SQL Server などをホストするアンマネージ アプリケーションのみに影響します。 コードがホスト保護されていないクライアント アプリケーションまたはサーバーで実行される場合、この属性は "消滅" します。つまり、検出されないため適用されません。 HPA を適用すると、セキュリティ アクションはクラスまたはメソッドが公開するホスト リソースに基づいてリンク確認要求を作成します。  
+  
+> [!IMPORTANT]
+>  この属性の目的は、セキュリティ動作ではなく、ホスト固有のプログラミング モデルのガイドラインを強制することです。  リンク確認要求はプログラミング モデルの要件への準拠を確認するために使われますが、<xref:System.Security.Permissions.HostProtectionAttribute> はセキュリティ アクセス許可ではありません。  
+  
+ ホストにプログラミング モデルの要件がない場合、リンク確認要求は発生しません。  
+  
+ この属性は次のものを識別します。  
+  
+-   ホスト プログラミング モデルには適合しないが、それ以外の問題はないメソッドまたはクラス。  
+  
+-   ホスト プログラミング モデルに適合せず、サーバーが管理するユーザー コードが不安定になる可能性があるメソッドまたはクラス。  
+  
+-   ホスト プログラミング モデルに適合せず、サーバー プロセス自体が不安定になる可能性があるメソッドまたはクラス。  
+  
+> [!NOTE]
+>  ホストで保護された環境で実行する可能性のあるアプリケーションによって呼び出されるクラス ライブラリを作成する場合は、<xref:System.Security.Permissions.HostProtectionResource> リソース カテゴリを公開するメンバーにこの属性を適用する必要があります。 この属性を持つ .NET Framework クラス ライブラリのメンバーについては、直前の呼び出し元だけがチェックされます。  カスタムのライブラリ メンバーについても、同じように直前の呼び出し元がチェックされるようにする必要があります。  
+  
+> [!NOTE]
+>  使用しないで、 [Ngen.exe (ネイティブ イメージ ジェネレーター)](~/docs/framework/tools/ngen-exe-native-image-generator.md)によって保護されているアセンブリのネイティブ イメージを作成する、<xref:System.Security.Permissions.HostProtectionAttribute>です。 完全に信頼された環境でイメージが常に読み込まれるに関係なく、 <xref:System.Security.Permissions.HostProtectionAttribute>、し、イメージが読み込まれていない部分信頼環境でします。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、 <xref:System.Security.Permissions.HostProtectionAttribute> 、さまざまな属性<xref:System.Security.Permissions.HostProtectionResource>値。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#1)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#1)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionAttribute ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.HostProtectionAttribute.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.Security.Permissions.HostProtectionAttribute" /> クラスの新しいインスタンスを既定値で初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターを作成、<xref:System.Security.Permissions.HostProtectionAttribute>すべてのブール型プロパティ設定`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HostProtectionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.HostProtectionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.SecurityAction" /> 値を使用して、<see cref="T:System.Security.Permissions.HostProtectionAttribute" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは使用できません。 インフラストラクチャの使用目的がします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="action" /> が <see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" /> ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.HostProtectionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいホスト保護のアクセス許可を作成して返します。</summary>
+        <returns>現在の属性に対応する <see cref="T:System.Security.IPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、このメソッドが返す属性に対応するアクセス許可から作成されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalProcessMgmt">
+      <MemberSignature Language="C#" Value="public bool ExternalProcessMgmt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExternalProcessMgmt" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.ExternalProcessMgmt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部プロセス管理が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          外部プロセス管理が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部プロセス管理を公開するコードを作成したり他のプロセスを破棄します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.ExternalProcessMgmt%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#5](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#5)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#5](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#5)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#5](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExternalThreading">
+      <MemberSignature Language="C#" Value="public bool ExternalThreading { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ExternalThreading" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.ExternalThreading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>外部スレッド処理が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          外部スレッド処理が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 外部スレッド処理を公開するコードを作成またはホストに害を及ぼす可能性のある、それ自体以外のスレッドを操作します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.ExternalThreading%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#6)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#6)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MayLeakOnAbort">
+      <MemberSignature Language="C#" Value="public bool MayLeakOnAbort { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool MayLeakOnAbort" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.MayLeakOnAbort" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>操作が終了した場合にリソースがメモリをリークする可能性があるかどうかを示す値を取得または設定します。</summary>
+        <value>
+          終了時にリソースがメモリをリークする可能性がある場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コードがセーフ ハンドルまたはリソースの解放を確保するその他の手段によって保護されていなければ、終了時にリソース リークが発生する可能性があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Resources">
+      <MemberSignature Language="C#" Value="public System.Security.Permissions.HostProtectionResource Resources { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Permissions.HostProtectionResource Resources" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.Resources" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Permissions.HostProtectionResource</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ホストに害を及ぼす可能性がある機能のカテゴリを指定するフラグを取得または設定します。</summary>
+        <value><see cref="T:System.Security.Permissions.HostProtectionResource" /> 値のビットごとの組み合わせ。 既定値は、<see cref="F:System.Security.Permissions.HostProtectionResource.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Permissions.HostProtectionResource>フラグは、ホストに害を及ぼす可能性のあるいるメソッドまたはクラスによって公開されるリソースを指定します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.Resources%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#2)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#2)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SecurityInfrastructure">
+      <MemberSignature Language="C#" Value="public bool SecurityInfrastructure { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SecurityInfrastructure" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.SecurityInfrastructure" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>セキュリティ インフラストラクチャが公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          セキュリティ インフラストラクチャが公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用、<xref:System.Security.Principal.WindowsIdentity>ユーザーを偽装するオブジェクトがセキュリティ インフラストラクチャを公開するための例を示します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.SecurityInfrastructure%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#4)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#4)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfAffectingProcessMgmt">
+      <MemberSignature Language="C#" Value="public bool SelfAffectingProcessMgmt { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SelfAffectingProcessMgmt" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.SelfAffectingProcessMgmt" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自己作用型のプロセス管理が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          自己作用型のプロセス管理が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自己作用型の処理管理コードと、現在のプロセスを終了し、サーバーが終了する可能性があります。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.SelfAffectingProcessMgmt%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#2)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#2)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelfAffectingThreading">
+      <MemberSignature Language="C#" Value="public bool SelfAffectingThreading { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SelfAffectingThreading" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.SelfAffectingThreading" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>自己作用型のスレッド処理が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          自己作用型のスレッド処理が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 自己作用型のスレッドは、ユーザー コードにのみ影響を与えるようにスレッドを操作します。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.SelfAffectingThreading%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#3)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#3)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SharedState">
+      <MemberSignature Language="C#" Value="public bool SharedState { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool SharedState" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.SharedState" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>共有状態が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          共有状態が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに<xref:System.Security.Permissions.HostProtectionAttribute.SharedState%2A>は`true`状態が公開されることを示しますスレッド間で共有されることです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.SharedState%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#3)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#3)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Synchronization">
+      <MemberSignature Language="C#" Value="public bool Synchronization { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Synchronization" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.Synchronization" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>同期が公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          同期が公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.Synchronization%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#6)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#6)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#6](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#6)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UI">
+      <MemberSignature Language="C#" Value="public bool UI { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UI" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.HostProtectionAttribute.UI" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ユーザー インターフェイスが公開されているかどうかを示す値を取得または設定します。</summary>
+        <value>
+          ユーザー インターフェイスが公開されている場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次のコード例の使用を示しています、<xref:System.Security.Permissions.HostProtectionAttribute>属性が、<xref:System.Security.Permissions.HostProtectionAttribute.UI%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Security.Permissions.HostProtectionAttribute>クラスです。  
+  
+ [!code-cpp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CPP/hostprotectionattribute.cpp#3)]
+ [!code-csharp[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/CS/hostprotectionattribute.cs#3)]
+ [!code-vb[System.Security.Permissions.HostProtectionAttribute.1.1#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Security.Permissions.HostProtectionAttribute.1.1/VB/hostprotectionattribute.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

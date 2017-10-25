@@ -1,0 +1,282 @@
+<Type Name="MouseBinding" FullName="System.Windows.Input.MouseBinding">
+  <TypeSignature Language="C#" Value="public class MouseBinding : System.Windows.Input.InputBinding" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MouseBinding extends System.Windows.Input.InputBinding" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Input.MouseBinding" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Input.InputBinding</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>バインド、<see cref="T:System.Windows.Input.MouseGesture" />を<see cref="T:System.Windows.Input.RoutedCommand" />(または別<see cref="T:System.Windows.Input.ICommand" />実装)。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Input.MouseBinding>関連付けます、<xref:System.Windows.Input.MouseGesture>で、<xref:System.Windows.Input.ICommand>実装します。 <xref:System.Windows.Input.RoutedCommand>プライマリの実装、<xref:System.Windows.Input.ICommand>のためのインターフェイス、[!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]システムのコマンドを実行します。 通常、<xref:System.Windows.Input.MouseGesture>が実行すると、コマンドが呼び出されるコマンドの動作は、さらに影響を受けるコマンド固有の要因によってなどが、<xref:System.Windows.Input.CanExecuteRoutedEventArgs.CanExecute%2A>値。  コマンド実行の詳細については、次を参照してください。、[コマンド実行の概要](~/docs/framework/wpf/advanced/commanding-overview.md)です。  
+  
+ 定義するときに、<xref:System.Windows.Input.MouseBinding>で[!INCLUDE[TLA#tla_xaml](~/includes/tlasharptla-xaml-md.md)]、2 つの方法を指定する、<xref:System.Windows.Input.MouseGesture>です。 最初の方法を確立するために、<xref:System.Windows.Input.MouseBinding>で[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]を定義するのには、<xref:System.Windows.Input.MouseBinding.Gesture%2A>の属性、<xref:System.Windows.Input.MouseBinding>により、1 つの文字列としてのマウス操作と修飾子を指定する構文の要素です。 たとえば、"CTRL + 左クリック"です。 2 番目の方法は、定義する、<xref:System.Windows.Input.MouseBinding.MouseAction%2A>の属性、<xref:System.Windows.Input.MouseBinding>要素。 設定のどちらの方法、<xref:System.Windows.Input.MouseGesture>は同じと同一の基になるオブジェクトの変更がある場合は、両方の競合が使用されます。  場合と、<xref:System.Windows.Input.MouseBinding.MouseAction%2A>と<xref:System.Windows.Input.MouseBinding.Gesture%2A>属性設定されて、ジェスチャが無効です。 一般に、お勧めのみに使用する、<xref:System.Windows.Input.KeyBinding.Gesture%2A>属性から[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]場合でも、修飾子を指定しないです。 このあいまいさが回避、最も簡潔な構文、説明およびシリアル化の最も簡単な表現を提供します。  
+  
+ A<xref:System.Windows.Input.MouseBinding>登録することによって特定のオブジェクトで、またはクラス レベルで定義できます、<xref:System.Windows.Input.CommandManager.RegisterClassInputBinding%2A>上、<xref:System.Windows.Input.CommandManager>クラスです。 定義する最も一般的な方法、<xref:System.Windows.Input.MouseBinding>コントロール テンプレートの設定では、<xref:System.Windows.UIElement.InputBindings%2A>プロパティ[!INCLUDE[TLA2#tla_xaml](~/includes/tla2sharptla-xaml-md.md)]1 つまたは複数を宣言することによって<xref:System.Windows.Input.MouseBinding>または<xref:System.Windows.Input.KeyBinding>要素。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、<xref:System.Windows.Input.MouseBinding>にバインドする、<xref:System.Windows.Input.MouseGesture>を<xref:System.Windows.Input.RoutedCommand>です。  
+  
+ [!code-xaml[commandlibrarysnippets#MouseBindingMouseGestureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#mousebindingmousegesturexaml)]  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingaddedtoinputbinding)]
+ [!code-vb[commandlibrarysnippets#MouseBindingAddedToInputBinding](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingaddedtoinputbinding)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseBinding ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Input.MouseBinding" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MouseBinding (System.Windows.Input.ICommand command, System.Windows.Input.MouseGesture gesture);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Input.ICommand command, class System.Windows.Input.MouseGesture gesture) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.#ctor(System.Windows.Input.ICommand,System.Windows.Input.MouseGesture)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="command" Type="System.Windows.Input.ICommand" />
+        <Parameter Name="gesture" Type="System.Windows.Input.MouseGesture" />
+      </Parameters>
+      <Docs>
+        <param name="command">ジェスチャに関連付けられているコマンド。</param>
+        <param name="gesture">コマンドに関連付けられているジェスチャ。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Input.MouseBinding" />クラス、指定したコマンドとマウス ジェスチャを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例は、バインドする方法を示しています、<xref:System.Windows.Input.ICommand>で、<xref:System.Windows.Input.MouseGesture>を使用して、<xref:System.Windows.Input.MouseBinding.MouseAction%2A>です。  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingAddedCommand](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindingaddedcommand)]
+ [!code-vb[commandlibrarysnippets#MouseBindingAddedCommand](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindingaddedcommand)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.CloneCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトのプロパティの基本 (アニメーション化されていない) 値をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneCurrentValueCore">
+      <MemberSignature Language="C#" Value="protected override void CloneCurrentValueCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void CloneCurrentValueCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.CloneCurrentValueCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>指定したオブジェクトのプロパティの現在の値をコピーします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstanceCore">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Freezable CreateInstanceCore ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Freezable CreateInstanceCore() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.CreateInstanceCore" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Freezable</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>インスタンスを作成、<see cref="T:System.Windows.Input.MouseBinding" />です。</summary>
+        <returns>新しいオブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Gesture">
+      <MemberSignature Language="C#" Value="public override System.Windows.Input.InputGesture Gesture { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Input.InputGesture Gesture" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseBinding.Gesture" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter(typeof(System.Windows.Input.MouseGestureConverter))</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Windows.Markup.ValueSerializer(typeof(System.Windows.Input.MouseGestureValueSerializer))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.InputGesture</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定に関連付けられたジェスチャ<see cref="T:System.Windows.Input.MouseBinding" />です。</summary>
+        <value>ジェスチャ。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Input.MouseGesture>は、<xref:System.Windows.Input.MouseAction>のセットの有無<xref:System.Windows.Input.ModifierKeys>です。  異なり、 <xref:System.Windows.Input.KeyGesture>、<xref:System.Windows.Input.MouseGesture>関連付けられている修飾子キーが存在する必要はありません。  
+  
+   
+  
+## Examples  
+ 次の例の間のバインドを作成する方法を説明する、<xref:System.Windows.Input.MouseGesture>を<xref:System.Windows.Input.RoutedCommand>です。  
+  
+ [!code-xaml[commandlibrarysnippets#MouseBindingGestureXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#mousebindinggesturexaml)]  
+  
+ [!code-csharp[commandlibrarysnippets#MouseBindingGesture](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml.cs#mousebindinggesture)]
+ [!code-vb[commandlibrarysnippets#MouseBindingGesture](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CommandLibrarySnippets/visualbasic/window1.xaml.vb#mousebindinggesture)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <see cref="P:System.Windows.Input.MouseBinding.Gesture" /> が <see langword="null" /> に設定されます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.GetAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>基本プロパティ値 (アニメーション化されていない値) を使用して、インスタンスを、指定した <see cref="T:System.Windows.Freezable" /> の固定された複製にします。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCurrentValueAsFrozenCore">
+      <MemberSignature Language="C#" Value="protected override void GetCurrentValueAsFrozenCore (System.Windows.Freezable sourceFreezable);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void GetCurrentValueAsFrozenCore(class System.Windows.Freezable sourceFreezable) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Input.MouseBinding.GetCurrentValueAsFrozenCore(System.Windows.Freezable)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceFreezable" Type="System.Windows.Freezable" />
+      </Parameters>
+      <Docs>
+        <param name="sourceFreezable">複製する対象のオブジェクト。</param>
+        <summary>現在のインスタンスを指定の固定された複製を作成<see cref="T:System.Windows.Freezable" />です。 オブジェクトに、アニメーション化された依存関係プロパティが存在する場合、現在アニメーション化されている値がコピーされます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseAction">
+      <MemberSignature Language="C#" Value="public System.Windows.Input.MouseAction MouseAction { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Input.MouseAction MouseAction" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Input.MouseBinding.MouseAction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Input.MouseAction</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Input.MouseAction" />これに関連付けられている<see cref="T:System.Windows.Input.MouseBinding" />です。</summary>
+        <value>マウス操作。  既定値は、<see cref="F:System.Windows.Input.MouseAction.None" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、 <xref:System.Windows.Input.KeyGesture>、<xref:System.Windows.Input.MouseGesture>修飾子キーに関連付けられるする必要はありません。  したがって、<xref:System.Windows.Input.MouseAction>単独でなど<xref:System.Windows.Input.MouseAction.MiddleClick>、有効なことができます<xref:System.Windows.Input.MouseGesture>です。  
+  
+   
+  
+## Examples  
+ 次の例の間のバインドを作成する方法を示しています、<xref:System.Windows.Input.MouseAction>と<xref:System.Windows.Input.RoutedCommand>です。  
+  
+ [!code-xaml[commandlibrarysnippets#MouseBindingMouseActionXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/CommandLibrarySnippets/CSharp/Window1.xaml#mousebindingmouseactionxaml)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseActionProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MouseActionProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MouseActionProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Input.MouseBinding.MouseActionProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Input.MouseBinding.MouseAction" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

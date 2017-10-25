@@ -1,0 +1,185 @@
+<Type Name="WindowClass" FullName="Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass">
+  <TypeSignature Language="C#" Value="public class WindowClass" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowClass extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>アプリケーション マニフェストのウィンドウ クラスを表します。</summary>
+    <remarks>To be added.</remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowClass ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowClass (string name, bool versioned);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string name, bool versioned) cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.#ctor(System.String,System.Boolean)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="versioned" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">クラスの名前。</param>
+        <param name="versioned">登録に使用される内部ウィンドウ クラスの名前に、ウィンドウ クラスを格納するアセンブリのバージョンが含まれているかどうかを制御します。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass" />クラス、ウィンドウ クラスのバージョン管理状態に関する情報を指定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `versioned`パラメーター コントロール登録に使用される内部ウィンドウ クラスの名前かどうかにはをウィンドウ クラスを含むアセンブリのバージョンが含まれています。 この属性の値を指定できます`yes`または`no`です。 既定値は、`yes` です。 値`no`サイド バイ サイド コンポーネントと同等の非--バイ サイド コンポーネントによって、同じウィンドウ クラスが定義されているし、同じウィンドウ クラスとして扱われるようにする場合にのみに使用する必要があります。 ウィンドウ クラスの登録に関する通常の規則が適用されるに注意してください。 対象となるバージョンがないために、ウィンドウ クラスを登録する最初のコンポーネントが、それを登録することにのみです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ウィンドウ クラスの名前を取得します。</summary>
+        <value>ウィンドウ クラスの名前。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Versioned">
+      <MemberSignature Language="C#" Value="public bool Versioned { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Versioned" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Versioned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>登録に使用される内部ウィンドウ クラスの名前に、ウィンドウ クラスを含むアセンブリのバージョンを含めるかどうかを制御する値を取得します。</summary>
+        <value>
+          <see langword="yes" />登録で使用されている名前には、アセンブリのバージョンが含まれている場合それ以外の場合、<see langword="no" />です。 既定値は、<see langword="yes" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 登録に使用される内部ウィンドウ クラスの名前かどうかは、このプロパティのコントロールには、ウィンドウ クラスを含むアセンブリのバージョンが含まれています。 この属性の値を指定できます`yes`または`no`です。 既定値は、`yes` です。 値`no`サイド バイ サイド コンポーネントと同等の非--バイ サイド コンポーネントによって、同じウィンドウ クラスが定義されているし、同じウィンドウ クラスとして扱われるようにする場合にのみに使用する必要があります。 ウィンドウ クラスの登録に関する通常の規則が適用されるに注意してください。 対象となるバージョンがないために、ウィンドウ クラスを登録する最初のコンポーネントが、それを登録することにのみです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XmlName">
+      <MemberSignature Language="C#" Value="public string XmlName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlName" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.XmlName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("Name")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Name" /> プロパティを XML ファイルにシリアル化するために使用されるプロパティを取得または設定します。</summary>
+        <value><see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Name" /> プロパティの値。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="XmlVersioned">
+      <MemberSignature Language="C#" Value="public string XmlVersioned { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string XmlVersioned" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.XmlVersioned" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.Build.Tasks.v4.0</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlAttribute("Versioned")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Versioned" /> プロパティを XML ファイルにシリアル化するために使用されるプロパティを取得または設定します。</summary>
+        <value><see cref="P:Microsoft.Build.Tasks.Deployment.ManifestUtilities.WindowClass.Versioned" /> プロパティの値。</value>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

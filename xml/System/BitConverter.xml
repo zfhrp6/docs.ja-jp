@@ -1,0 +1,1616 @@
+<Type Name="BitConverter" FullName="System.BitConverter">
+  <TypeSignature Language="C#" Value="public static class BitConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit BitConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.BitConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>基本データ型をバイト配列に、バイト配列を基本データ型に変換します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter>クラスは、一連のバイトとしての基本的な形式で値型を操作します。 バイトは 8 ビット符号なし整数として定義されます。 <xref:System.BitConverter>クラスに次の表に示すようにで変換する各プリミティブ型の配列 (バイト単位) の静的メソッドが含まれます。  
+  
+|型|バイトに変換する|バイトの変換から|  
+|----------|------------------------|--------------------------|  
+|<xref:System.Boolean>|<xref:System.BitConverter.GetBytes%28System.Boolean%29>|<xref:System.BitConverter.ToBoolean%2A>|  
+|<xref:System.Char>|<xref:System.BitConverter.GetBytes%28System.Char%29>|<xref:System.BitConverter.ToChar%2A>|  
+|<xref:System.Double>|<xref:System.BitConverter.GetBytes%28System.Double%29><br /><br /> または<br /><br /> <xref:System.BitConverter.DoubleToInt64Bits%28System.Double%29>|<xref:System.BitConverter.ToDouble%2A><br /><br /> または<br /><br /> <xref:System.BitConverter.Int64BitsToDouble%2A>|  
+|<xref:System.Int16>|<xref:System.BitConverter.GetBytes%28System.Int16%29>|<xref:System.BitConverter.ToInt16%2A>|  
+|<xref:System.Int32>|<xref:System.BitConverter.GetBytes%28System.Int32%29>|<xref:System.BitConverter.ToInt32%2A>|  
+|<xref:System.Int64>|<xref:System.BitConverter.GetBytes%28System.Int64%29>|<xref:System.BitConverter.ToInt64%2A>|  
+|<xref:System.Single>|<xref:System.BitConverter.GetBytes%28System.Single%29>|<xref:System.BitConverter.ToSingle%2A>|  
+|<xref:System.UInt16>|<xref:System.BitConverter.GetBytes%28System.UInt16%29>|<xref:System.BitConverter.ToUInt16%2A>|  
+|<xref:System.UInt32>|<xref:System.BitConverter.GetBytes%28System.UInt32%29>|<xref:System.BitConverter.ToUInt32%2A>|  
+|<xref:System.UInt64>|<xref:System.BitConverter.GetBytes%28System.UInt64%29>|<xref:System.BitConverter.ToUInt64%2A>|  
+  
+ 使用する場合<xref:System.BitConverter>メソッド、データのラウンド トリップをことを確認して、<xref:System.BitConverter.GetBytes%2A>オーバー ロードおよび`To`*型*メソッドが同じ型を指定します。 次の例のように、復元を呼び出すことによって、符号付き整数を表す配列、<xref:System.BitConverter.ToUInt32%2A>メソッドが元とは異なる値になります。 詳細については、エントリを参照してください。[署名以外から 10 進数とビットごとの値を使用する](http://go.microsoft.com/fwlink/?LinkId=186999)、BCL チームのブログでします。  
+  
+ [!code-csharp[System.BitConverter.Class#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.Class/CS/example1.cs#3)]
+ [!code-vb[System.BitConverter.Class#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.Class/VB/example1.vb#3)]  
+  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドのオーバー ロード (によって返された整数のビットの順序だけでなく、<xref:System.BitConverter.DoubleToInt64Bits%2A>メソッドとによって返される 16 進数の文字列の順序、<xref:System.BitConverter.ToString%28System.Byte%5B%5D%29>メソッド) コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。 同様に、配列内のバイトの順序によって返されると、 `To`*値をとります*メソッドおよび<xref:System.BitConverter.ToChar%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。 アーキテクチャのエンディアンがによって示される、<xref:System.BitConverter.IsLittleEndian>を返すプロパティ`true`リトル エンディアンのシステム上と`false`ビッグ エンディアン システムでします。 リトル エンディアンのシステムでは、下位バイトには、上位バイトが先頭に置きます。 ビッグ エンディアン システムでは、上位バイトには、下位バイトが先頭に置きます。 次の表に、整数 1,234,567,890 (0x499602D2) を渡すことに起因するバイト配列に違いを示しています、<xref:System.BitConverter.GetBytes%28System.Int32%29>メソッドです。 バイトは、インデックス 3 バイトをインデックス 0 位置のバイトから順に一覧表示されます。  
+  
+|||  
+|-|-|  
+|リトル エンディアン|D2 02 96 49|  
+|ビッグ エンディアン|49 96-02 D2|  
+  
+ 一部のメソッドの戻り値は、システムのアーキテクチャに依存しているためコンピューターの境界を超えるバイト データを送信する際は注意。  
+  
+-   同じエンディアンにデータを送受信するすべてのシステムが保証されますが場合、データに何も実行ができます。  
+  
+-   システム データを送受信するには別のエンディアンを設定できる場合では、常に特定の順序でデータを送信するようにします。 つまり、配列内のバイトの順序は、送信前に、または受信して元に戻す必要があります。 一般的な方法では、ネットワーク バイト順 (ビッグ エンディアン順) でデータを転送します。 次の例では、ネットワークのバイト順で整数値を送信するための実装を提供します。  
+  
+     [!code-csharp[System.BitConverter.Class#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.Class/CS/networkorder1.cs#4)]
+     [!code-vb[System.BitConverter.Class#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.Class/VB/networkorder1.vb#4)]  
+  
+-   呼び出すシステム データを送受信することができる場合、別のエンディアンを持ち、符号付き整数のデータが転送で構成されます、<xref:System.Net.IPAddress.HostToNetworkOrder%2A?displayProperty=nameWithType>ネットワーク バイト オーダーにデータを変換するメソッドと<xref:System.Net.IPAddress.NetworkToHostOrder%2A?displayProperty=nameWithType>受信者が必要な順序に変換するメソッド。  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかの使用を示しています。<xref:System.BitConverter>クラスのメソッドです。  
+  
+ [!code-cpp[System.BitConverter.Class#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.Class/CPP/bitconv.cpp#1)]
+ [!code-csharp[System.BitConverter.Class#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.Class/CS/bitconv.cs#1)]
+ [!code-vb[System.BitConverter.Class#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.Class/VB/bitconv.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="DoubleToInt64Bits">
+      <MemberSignature Language="C#" Value="public static long DoubleToInt64Bits (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 DoubleToInt64Bits(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.DoubleToInt64Bits(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>指定した倍精度浮動小数点数を 64 ビット符号付き整数に変換します。</summary>
+        <returns>値があると等価の 64 ビット符号付き整数<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返された整数のビットの順序、<xref:System.BitConverter.DoubleToInt64Bits%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかのビット パターンを変換<xref:System.Double>値<xref:System.Int64>の値を使った、`DoubleToInt64Bits`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.DoubleInt64#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/CPP/dbltobits.cpp#2)]
+ [!code-csharp[System.BitConverter.DoubleInt64#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/CS/dbltobits.cs#2)]
+ [!code-vb[System.BitConverter.DoubleInt64#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/VB/dbltobits.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (bool value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(bool value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="value">ブール値。</param>
+        <summary>バイト配列として指定したブール値を返します。</summary>
+        <returns>長さ 1 のバイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ バイト配列に変換することができますに戻す、<xref:System.Boolean>値を呼び出して、<xref:System.BitConverter.ToBoolean%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次の例のビット パターンの変換<xref:System.Boolean>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.Others#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CPP/bytesbool.cpp#1)]
+ [!code-csharp[System.BitConverter.GetBytes.Others#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CS/bytesbool.cs#1)]
+ [!code-vb[System.BitConverter.GetBytes.Others#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/VB/bytesbool.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (char value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(char value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Char)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Char" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する文字。</param>
+        <summary>バイト配列として指定した Unicode 文字値を返します。</summary>
+        <returns>長さが 2 バイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.Char>(Unicode 文字) の値を<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.Others#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CPP/byteschar.cpp#2)]
+ [!code-csharp[System.BitConverter.GetBytes.Others#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CS/byteschar.cs#2)]
+ [!code-vb[System.BitConverter.GetBytes.Others#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/VB/byteschar.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (double value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(float64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Double)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Double" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した倍精度浮動小数点値を返します。</summary>
+        <returns>長さが 8 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.Double>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.Others#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CPP/bytesdouble.cpp#4)]
+ [!code-csharp[System.BitConverter.GetBytes.Others#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CS/bytesdouble.cs#4)]
+ [!code-vb[System.BitConverter.GetBytes.Others#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/VB/bytesdouble.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (short value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Int16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int16" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 16 ビット符号付き整数値を返します。</summary>
+        <returns>長さが 2 バイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.Int16>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.SInts#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CPP/bytesint16.cpp#3)]
+ [!code-csharp[System.BitConverter.GetBytes.SInts#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CS/bytesint16.cs#3)]
+ [!code-vb[System.BitConverter.GetBytes.SInts#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/VB/bytesint16.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 32 ビット符号付き整数値を返します。</summary>
+        <returns>長さ 4 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.Int32>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.SInts#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CPP/bytesint32.cpp#2)]
+ [!code-csharp[System.BitConverter.GetBytes.SInts#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CS/bytesint32.cs#2)]
+ [!code-vb[System.BitConverter.GetBytes.SInts#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/VB/bytesint32.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 64 ビット符号付き整数値を返します。</summary>
+        <returns>長さが 8 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.BitConverter.GetBytes%2A>内の各要素を変換する方法、<xref:System.Int64>配列を<xref:System.Byte>配列。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.SInts#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CPP/bytesint64.cpp#1)]
+ [!code-csharp[System.BitConverter.GetBytes.SInts#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/CS/bytesint64.cs#1)]
+ [!code-vb[System.BitConverter.GetBytes.SInts#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.SInts/VB/bytesint64.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した単精度浮動小数点値を返します。</summary>
+        <returns>長さ 4 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.Single>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.Others#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CPP/bytessingle.cpp#3)]
+ [!code-csharp[System.BitConverter.GetBytes.Others#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/CS/bytessingle.cs#3)]
+ [!code-vb[System.BitConverter.GetBytes.Others#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.Others/VB/bytessingle.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (ushort value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(unsigned int16 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.UInt16)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt16" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 16 ビット符号なし整数値を返します。</summary>
+        <returns>長さが 2 バイト配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.UInt16>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.UInts#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CPP/bytesuint16.cpp#3)]
+ [!code-csharp[System.BitConverter.GetBytes.UInts#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CS/bytesuint16.cs#3)]
+ [!code-vb[System.BitConverter.GetBytes.UInts#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/VB/bytesuint16.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (uint value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(unsigned int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.UInt32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt32" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 32 ビット符号なし整数値を返します。</summary>
+        <returns>長さ 4 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.UInt32>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.UInts#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CPP/bytesuint32.cpp#2)]
+ [!code-csharp[System.BitConverter.GetBytes.UInts#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CS/bytesuint32.cs#2)]
+ [!code-vb[System.BitConverter.GetBytes.UInts#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/VB/bytesuint32.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetBytes">
+      <MemberSignature Language="C#" Value="public static byte[] GetBytes (ulong value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int8[] GetBytes(unsigned int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.GetBytes(System.UInt64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.UInt64" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>バイト配列として指定した 64 ビット符号なし整数値を返します。</summary>
+        <returns>長さが 8 バイトの配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ によって返される配列内のバイトの順序、<xref:System.BitConverter.GetBytes%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例のビット パターンの変換<xref:System.UInt64>値<xref:System.Byte>アレイで、`GetBytes`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.GetBytes.UInts#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CPP/bytesuint64.cpp#1)]
+ [!code-csharp[System.BitConverter.GetBytes.UInts#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/CS/bytesuint64.cs#1)]
+ [!code-vb[System.BitConverter.GetBytes.UInts#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.GetBytes.UInts/VB/bytesuint64.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Int32BitsToSingle">
+      <MemberSignature Language="C#" Value="public static float Int32BitsToSingle (int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 Int32BitsToSingle(int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.Int32BitsToSingle(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Int64BitsToDouble">
+      <MemberSignature Language="C#" Value="public static double Int64BitsToDouble (long value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 Int64BitsToDouble(int64 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.Int64BitsToDouble(System.Int64)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Int64" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換する数値。</param>
+        <summary>指定した 64 ビット符号付き整数を倍精度浮動小数点数に変換します。</summary>
+        <returns>倍精度浮動小数点値を持つは等価<paramref name="value" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、`value`によって返される整数は、<xref:System.BitConverter.DoubleToInt64Bits%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、いくつかのビット パターンを変換<xref:System.Int64>値<xref:System.Double>の値を使った、`Int64BitsToDouble`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.DoubleInt64#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/CPP/bitstodbl.cpp#1)]
+ [!code-csharp[System.BitConverter.DoubleInt64#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/CS/bitstodbl.cs#1)]
+ [!code-vb[System.BitConverter.DoubleInt64#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.DoubleInt64/VB/bitstodbl.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsLittleEndian">
+      <MemberSignature Language="C#" Value="public static readonly bool IsLittleEndian;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly bool IsLittleEndian" />
+      <MemberSignature Language="DocId" Value="F:System.BitConverter.IsLittleEndian" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このコンピューターのアーキテクチャにデータを格納するバイト順 ("エンディアン") を示します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 別のコンピューターのアーキテクチャでは、異なるバイト順を使用してデータを格納します。 「ビッグ エンディアン」では、最上位バイトが左端の単語の上を意味します。 「リトル エンディアン」では、最上位バイトが単語の右端にことを意味します。  
+  
+> [!NOTE]
+>  値を取得せず、バイトの順序に、ホスト コンピューター ネットワーク バイト オーダーからを変換できます、<xref:System.BitConverter.IsLittleEndian?displayProperty=nameWithType>フィールドに 16 ビット、32 ビットまたは 64 ビット整数値を渡すことによって、<xref:System.Net.IPAddress.HostToNetworkOrder%2A?displayProperty=nameWithType>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例の使用を示しています、`IsLittleEndian`フィールドです。  
+  
+ [!code-cpp[System.BitConverter.Class#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.Class/CPP/littleend.cpp#2)]
+ [!code-csharp[System.BitConverter.Class#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.Class/CS/littleend.cs#2)]
+ [!code-vb[System.BitConverter.Class#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.Class/VB/littleend.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SingleToInt32Bits">
+      <MemberSignature Language="C#" Value="public static int SingleToInt32Bits (float value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 SingleToInt32Bits(float32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.SingleToInt32Bits(System.Single)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Single" />
+      </Parameters>
+      <Docs>
+        <param name="value">To be added.</param>
+        <summary>To be added.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ToBoolean">
+      <MemberSignature Language="C#" Value="public static bool ToBoolean (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool ToBoolean(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToBoolean(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内のバイトのインデックス<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にあるバイトから変換するブール値を返します。</summary>
+        <returns>
+          <see langword="true" />場合にあるバイト<paramref name="startIndex" />で<paramref name="value" />は 0 以外。 それ以外の場合、は<see langword="false" />します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換する、<xref:System.Boolean>値をバイト表現を呼び出し、<xref:System.BitConverter.ToBoolean%2A>メソッドです。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Boolean>の値を使った、`ToBoolean`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.Others#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CPP/batobool.cpp#1)]
+ [!code-csharp[System.BitConverter.ToXXX.Others#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CS/batobool.cs#1)]
+ [!code-vb[System.BitConverter.ToXXX.Others#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/VB/batobool.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToChar">
+      <MemberSignature Language="C#" Value="public static char ToChar (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig char ToChar(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToChar(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Char</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 2 つのバイトから変換された Unicode 文字を返します。</summary>
+        <returns>文字が先頭の 2 バイトで形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToChar%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 1 に、<xref:System.Char>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Char>値 (Unicode 文字) と、`ToChar`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.Others#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CPP/batochar.cpp#2)]
+ [!code-csharp[System.BitConverter.ToXXX.Others#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CS/batochar.cs#2)]
+ [!code-vb[System.BitConverter.ToXXX.Others#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/VB/batochar.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さに等しくなる<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToDouble">
+      <MemberSignature Language="C#" Value="public static double ToDouble (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float64 ToDouble(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToDouble(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Double</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列内の指定位置にある 8 バイトから変換された倍精度浮動小数点数を返します。</summary>
+        <returns>倍精度浮動小数点数が 8 バイトの先頭で形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToDouble%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ を 7、<xref:System.Double>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Double>の値を使った、`ToDouble`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.Others#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CPP/batodouble.cpp#3)]
+ [!code-csharp[System.BitConverter.ToXXX.Others#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CS/batodouble.cs#3)]
+ [!code-vb[System.BitConverter.ToXXX.Others#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/VB/batodouble.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />7、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToInt16">
+      <MemberSignature Language="C#" Value="public static short ToInt16 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int16 ToInt16(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToInt16(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 2 つのバイトから変換された 16 ビット符号付き整数を返します。</summary>
+        <returns>16 ビット符号付き整数が先頭の 2 バイトで形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToInt16%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 1 に、<xref:System.Int16>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Int16>の値を使った、`ToInt16`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.SInts#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/CPP/batoint16.cpp#1)]
+ [!code-csharp[System.BitConverter.ToXXX.SInts#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/CS/batoint16.cs#1)]
+ [!code-vb[System.BitConverter.ToXXX.SInts#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/VB/batoint16.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さに等しくなる<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToInt32">
+      <MemberSignature Language="C#" Value="public static int ToInt32 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 ToInt32(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToInt32(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 4 つのバイトから変換された 32 ビット符号付き整数を返します。</summary>
+        <returns>始まる 4 バイトで 32 ビット符号付き整数が形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToInt32%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 3、<xref:System.Int32>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください。<xref:System.BitConverter>です。  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.BitConverter.ToInt32%2A>メソッドを作成<xref:System.Int32>値と 8 バイト配列の上限の 4 バイト 4 バイトの配列から。 使用して、<xref:System.BitConverter.GetBytes%28System.Int32%29>と<xref:System.BitConverter.ToInt32%2A>ラウンドト リップするメソッド、<xref:System.Int32>値。  
+  
+ [!code-csharp[System.BitConverter.ToInt32#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.bitconverter.toint32/cs/toint32.cs#1)]
+ [!code-vb[System.BitConverter.ToInt32#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.bitconverter.toint32/vb/toint32.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />3、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToInt64">
+      <MemberSignature Language="C#" Value="public static long ToInt64 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int64 ToInt64(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToInt64(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列内の指定位置にある 8 バイトから変換された 64 ビット符号付き整数を返します。</summary>
+        <returns>64 ビット符号付き整数が 8 バイトの先頭で形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToInt64%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ を 7、<xref:System.Int64>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Int64>の値を使った、`ToInt64`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.SInts#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/CPP/batoint64.cpp#3)]
+ [!code-csharp[System.BitConverter.ToXXX.SInts#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/CS/batoint64.cs#3)]
+ [!code-vb[System.BitConverter.ToXXX.SInts#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.SInts/VB/batoint64.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />7、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToSingle">
+      <MemberSignature Language="C#" Value="public static float ToSingle (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig float32 ToSingle(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToSingle(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Single</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 4 つのバイトから変換された単精度浮動小数点数を返します。</summary>
+        <returns>始まる 4 バイト単精度浮動小数点数が形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToSingle%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 3、<xref:System.Single>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください。<xref:System.BitConverter>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.Single>の値を使った、`ToSingle`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.Others#4](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CPP/batosingle.cpp#4)]
+ [!code-csharp[System.BitConverter.ToXXX.Others#4](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/CS/batosingle.cs#4)]
+ [!code-vb[System.BitConverter.ToXXX.Others#4](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.Others/VB/batosingle.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />3、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (byte[] value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(unsigned int8[] value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToString(System.Byte[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <summary>指定されたバイト配列の各要素の数値を等価の 16 進数文字列形式に変換します。</summary>
+        <returns>16 進数のペアの文字列をそれぞれのペアに対応する要素を表し、ハイフンで区切った<paramref name="value" />。 たとえば、"7 f-2c-4A-00"です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべての要素`value`変換されます。 によって返される 16 進数の文字列の順序、<xref:System.BitConverter.ToString%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例に変換<xref:System.Byte>に配列<xref:System.String>オブジェクトと、`ToString`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToString#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToString/CPP/batostring.cpp#1)]
+ [!code-csharp[System.BitConverter.ToString#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToString/CS/batostring.cs#1)]
+ [!code-vb[System.BitConverter.ToString#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToString/VB/batostring.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToString(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイトの指定した部分配列の各要素の数値を等価の 16 進数文字列形式に変換します。</summary>
+        <returns>16 進数のペアの文字列をそれぞれのペアがのサブ配列の対応する要素を表し、ハイフンで区切った<paramref name="value" />。 たとえば、"7 f-2c-4A-00"です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 配列の位置から要素`startIndex`配列の末尾に変換されます。 によって返される 16 進数の文字列の順序、<xref:System.BitConverter.ToString%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次のコード例の一部の変換、<xref:System.Byte>配列内の指定した開始`startIndex`を<xref:System.String>で、`ToString`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToString#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToString/CPP/batostringii.cpp#2)]
+ [!code-csharp[System.BitConverter.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToString/CS/batostringii.cs#2)]
+ [!code-vb[System.BitConverter.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToString/VB/batostringii.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToString">
+      <MemberSignature Language="C#" Value="public static string ToString (byte[] value, int startIndex, int length);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig string ToString(unsigned int8[] value, int32 startIndex, int32 length) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToString(System.Byte[],System.Int32,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+        <Parameter Name="length" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <param name="length">配列要素の数<c>値</c>に変換します。</param>
+        <summary>バイトの指定した部分配列の各要素の数値を等価の 16 進数文字列形式に変換します。</summary>
+        <returns>16 進数のペアの文字列をそれぞれのペアがのサブ配列の対応する要素を表し、ハイフンで区切った<paramref name="value" />。 たとえば、"7 f-2c-4A-00"です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `length`要素配列位置から`startIndex`変換されます。 場合`length`等しい場合は 0 を返します<xref:System.String?displayProperty=nameWithType>です。  
+  
+ によって返される 16 進数の文字列の順序、<xref:System.BitConverter.ToString%2A>メソッドは、コンピューターのアーキテクチャは、リトル エンディアンまたはビッグ エンディアンかどうかによって異なります。  
+  
+   
+  
+## Examples  
+ 次の例では、 <xref:System.BitConverter.ToString%2A> 、指定したバイト配列の一部を変換する方法の`startIndex`と指定した`length`文字列にします。  
+  
+ [!code-cpp[System.BitConverter.ToString#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToString/CPP/batostringii.cpp#2)]
+ [!code-csharp[System.BitConverter.ToString#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToString/CS/batostringii.cs#2)]
+ [!code-vb[System.BitConverter.ToString#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToString/VB/batostringii.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" /> または <paramref name="length" /> が 0 未満です。  
+  
+ または  
+  
+ <paramref name="startIndex" />0 より大きい値は、長さ以上<paramref name="value" />です。</exception>
+        <exception cref="T:System.ArgumentException">組み合わせ<paramref name="startIndex" />と<paramref name="length" />内での位置が指定されていません<paramref name="value" />です。 つまり、<paramref name="startIndex" />パラメーターがの長さより大きい<paramref name="value" />マイナス、<paramref name="length" />パラメーター。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUInt16">
+      <MemberSignature Language="C#" Value="public static ushort ToUInt16 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int16 ToUInt16(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToUInt16(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt16</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 2 つのバイトから変換された 16 ビット符号なし整数を返します。</summary>
+        <returns>16 ビット符号なし整数が先頭の 2 バイトで形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToUInt16%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 1 に、<xref:System.UInt16>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.UInt16>の値を使った、`ToUInt16`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.UInts#1](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CPP/batouint16.cpp#1)]
+ [!code-csharp[System.BitConverter.ToXXX.UInts#1](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CS/batouint16.cs#1)]
+ [!code-vb[System.BitConverter.ToXXX.UInts#1](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/VB/batouint16.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さに等しくなる<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUInt32">
+      <MemberSignature Language="C#" Value="public static uint ToUInt32 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int32 ToUInt32(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToUInt32(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列の指定した位置にある 4 つのバイトから変換された 32 ビット符号なし整数を返します。</summary>
+        <returns>始まる 4 バイトで 32 ビット符号なし整数が形成される<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToUInt32%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ 3、<xref:System.UInt32>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.UInt32>の値を使った、`ToUInt32`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.UInts#2](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CPP/batouint32.cpp#2)]
+ [!code-csharp[System.BitConverter.ToXXX.UInts#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CS/batouint32.cs#2)]
+ [!code-vb[System.BitConverter.ToXXX.UInts#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/VB/batouint32.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />3、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ToUInt64">
+      <MemberSignature Language="C#" Value="public static ulong ToUInt64 (byte[] value, int startIndex);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig unsigned int64 ToUInt64(unsigned int8[] value, int32 startIndex) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.BitConverter.ToUInt64(System.Byte[],System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.CLSCompliant(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.UInt64</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Byte[]" />
+        <Parameter Name="startIndex" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="value">バイト配列。</param>
+        <param name="startIndex">内の開始位置<c>値</c>です。</param>
+        <summary>バイト配列内の指定位置にある 8 バイトから変換された 64 ビット符号なし整数を返します。</summary>
+        <returns>64 ビット符号なし整数が 8 バイトから開始して形成された<paramref name="startIndex" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.BitConverter.ToUInt64%2A>メソッドは、インデックスからのバイトを変換`startIndex`に`startIndex`+ を 7、<xref:System.UInt64>値。 配列内のバイトの順序は、コンピューター システムのアーキテクチャのエンディアンを反映する必要があります。詳細については、の「解説」セクションを参照してください、<xref:System.BitConverter>クラスに関するトピック。  
+  
+   
+  
+## Examples  
+ 次のコード例は、の要素を変換します。<xref:System.Byte>に配列<xref:System.UInt64>の値を使った、`ToUInt64`メソッドです。  
+  
+ [!code-cpp[System.BitConverter.ToXXX.UInts#3](~/samples/snippets/cpp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CPP/batouint64.cpp#3)]
+ [!code-csharp[System.BitConverter.ToXXX.UInts#3](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/CS/batouint64.cs#3)]
+ [!code-vb[System.BitConverter.ToXXX.UInts#3](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.BitConverter.ToXXX.UInts/VB/batouint64.vb#3)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="startIndex" />長さ以上<paramref name="value" />7、マイナスの長さ以下<paramref name="value" />から 1 を減算します。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="value" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentOutOfRangeException">
+          <paramref name="startIndex" />0 の長さより大きいか小さい<paramref name="value" />から 1 を減算します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

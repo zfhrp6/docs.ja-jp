@@ -1,0 +1,43 @@
+<Type Name="IRecyclingItemContainerGenerator" FullName="System.Windows.Controls.Primitives.IRecyclingItemContainerGenerator">
+  <TypeSignature Language="C#" Value="public interface IRecyclingItemContainerGenerator : System.Windows.Controls.Primitives.IItemContainerGenerator" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IRecyclingItemContainerGenerator implements class System.Windows.Controls.Primitives.IItemContainerGenerator" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Primitives.IRecyclingItemContainerGenerator" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Controls.Primitives.IItemContainerGenerator</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>拡張、<see cref="T:System.Windows.Controls.Primitives.IItemContainerGenerator" />生成 UI コンテンツを再利用するインターフェイスです。 ホストに代わってユーザー インターフェイス (UI) のコンテンツを生成するクラスは、このインターフェイスを実装します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Recycle">
+      <MemberSignature Language="C#" Value="public void Recycle (System.Windows.Controls.Primitives.GeneratorPosition position, int count);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Recycle(valuetype System.Windows.Controls.Primitives.GeneratorPosition position, int32 count) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Primitives.IRecyclingItemContainerGenerator.Recycle(System.Windows.Controls.Primitives.GeneratorPosition,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="position" Type="System.Windows.Controls.Primitives.GeneratorPosition" />
+        <Parameter Name="count" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="position">再利用する最初の要素の 0 から始まるインデックス。 <c>位置</c>以前に生成された (実際) アイテムを参照する必要があります。</param>
+        <param name="count">再利用すると、要素の数を開始位置として<c>位置</c>です。</param>
+        <summary>データ項目から項目のコンテナーの関連付けを解除しが再利用できる後で他のデータ項目のために、コンテナーを保存します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

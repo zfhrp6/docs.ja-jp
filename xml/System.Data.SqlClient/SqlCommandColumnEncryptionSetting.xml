@@ -1,0 +1,97 @@
+<Type Name="SqlCommandColumnEncryptionSetting" FullName="System.Data.SqlClient.SqlCommandColumnEncryptionSetting">
+  <TypeSignature Language="C#" Value="public enum SqlCommandColumnEncryptionSetting" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed SqlCommandColumnEncryptionSetting extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Data.SqlClient.SqlCommandColumnEncryptionSetting" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>暗号化された列を読み書きするときにデータを送受信する方法を指定します。 クエリによっては、暗号化されていない列を使用する場合に Always Encrypted ドライバーの処理をバイパスすることにより、パフォーマンスの影響が軽減される可能性があります。 暗号化を回避したり、プレーンテキスト データにアクセスしたりするためにこれらの設定値を使用することはできません。 詳細については、「 [Always Encrypted (データベース エンジン)](https://msdn.microsoft.com/library/mt163865.aspx)</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   クエリの Always Encrypted が無効になっているし、クエリがパラメーターである暗号化された (暗号化された列に対応する) 必要があるパラメーター、クエリは失敗します。  
+  
+-   クエリの Always Encrypted が無効になっている、クエリは、暗号化された列から結果を返す場合は、クエリは暗号化された値を返します。 暗号化された値は、varbinary データ型があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Disabled">
+      <MemberSignature Language="C#" Value="Disabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlCommandColumnEncryptionSetting Disabled = int32(3)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlCommandColumnEncryptionSetting.Disabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommandColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリで Always Encrypted を無効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="Enabled" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlCommandColumnEncryptionSetting Enabled = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlCommandColumnEncryptionSetting.Enabled" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommandColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クエリで Always Encrypted を有効にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ResultSetOnly">
+      <MemberSignature Language="C#" Value="ResultSetOnly" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlCommandColumnEncryptionSetting ResultSetOnly = int32(2)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlCommandColumnEncryptionSetting.ResultSetOnly" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommandColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ドライバーでコマンドの結果だけを Always Encrypted ルーチンで処理するよう指定します。 コマンドに暗号化が必要なパラメーターがない場合にこの値を使用します。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UseConnectionSetting">
+      <MemberSignature Language="C#" Value="UseConnectionSetting" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Data.SqlClient.SqlCommandColumnEncryptionSetting UseConnectionSetting = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Data.SqlClient.SqlCommandColumnEncryptionSetting.UseConnectionSetting" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Data.SqlClient.SqlCommandColumnEncryptionSetting</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>接続文字列で、コマンドが Always Encrypted 設定を既定として設定するように指定します。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

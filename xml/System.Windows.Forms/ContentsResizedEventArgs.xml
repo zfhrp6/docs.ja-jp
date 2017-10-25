@@ -1,0 +1,89 @@
+<Type Name="ContentsResizedEventArgs" FullName="System.Windows.Forms.ContentsResizedEventArgs">
+  <TypeSignature Language="C#" Value="public class ContentsResizedEventArgs : EventArgs" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContentsResizedEventArgs extends System.EventArgs" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ContentsResizedEventArgs" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.EventArgs</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary><see cref="E:System.Windows.Forms.RichTextBox.ContentsResized" /> イベントのデータを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このイベントは、新しいテキストをそのまま使用する必要の外接する四角形が変化したときに発生します。 コントロール内のテキストでは、複数の行にわたって、要求された四角形に、コントロールの幅は常になります。 このイベントを処理するには複数行の自動サイズ変更を実装するコントロールで<xref:System.Windows.Forms.RichTextBox>コントロール。 <xref:System.Windows.Forms.ContentsResizedEventArgs>の要求されたサイズを識別、<xref:System.Windows.Forms.RichTextBox>です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、この型の使用を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.ContentsResized>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.ContentsResized>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#537](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#537)]
+ [!code-vb[System.Windows.Forms.EventExamples#537](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#537)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContentsResizedEventArgs (System.Drawing.Rectangle newRectangle);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Drawing.Rectangle newRectangle) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ContentsResizedEventArgs.#ctor(System.Drawing.Rectangle)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="newRectangle" Type="System.Drawing.Rectangle" />
+      </Parameters>
+      <Docs>
+        <param name="newRectangle">A<see cref="T:System.Drawing.Rectangle" />の要求されたサイズを指定する、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</param>
+        <summary><see cref="T:System.Windows.Forms.ContentsResizedEventArgs" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NewRectangle">
+      <MemberSignature Language="C#" Value="public System.Drawing.Rectangle NewRectangle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle NewRectangle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ContentsResizedEventArgs.NewRectangle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>要求したサイズを表す、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</summary>
+        <value>A<see cref="T:System.Drawing.Rectangle" />の要求されたサイズを表す、<see cref="T:System.Windows.Forms.RichTextBox" />コントロール。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テキストが入力されている場合、<xref:System.Windows.Forms.RichTextBox>コントロール、<xref:System.Windows.Forms.RichTextBox>コントロールは、すべてのコントロールの内容を表示するために、コントロールの適切なサイズを決定します。 使用することができます、<xref:System.Windows.Forms.ContentsResizedEventArgs.NewRectangle%2A>のイベント ハンドラーのプロパティ、<xref:System.Windows.Forms.RichTextBox.ContentsResized>のイベント、<xref:System.Windows.Forms.RichTextBox>すべてのコントロールの内容を表示するコントロールの適切なサイズを制御します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.RichTextBox.ContentsResized?displayProperty=nameWithType>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.RichTextBox>という`RichTextBox1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.RichTextBox.ContentsResized?displayProperty=nameWithType>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#537](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#537)]
+ [!code-vb[System.Windows.Forms.EventExamples#537](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#537)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

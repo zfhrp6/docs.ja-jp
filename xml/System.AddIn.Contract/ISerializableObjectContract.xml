@@ -1,0 +1,67 @@
+<Type Name="ISerializableObjectContract" FullName="System.AddIn.Contract.ISerializableObjectContract">
+  <TypeSignature Language="C#" Value="public interface ISerializableObjectContract : System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ISerializableObjectContract implements class System.AddIn.Contract.Collections.IRemoteArgumentCollectionContract, class System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract, class System.AddIn.Contract.Collections.IRemoteArgumentEnumerableContract, class System.AddIn.Contract.IContract" />
+  <TypeSignature Language="DocId" Value="T:System.AddIn.Contract.ISerializableObjectContract" />
+  <AssemblyInfo>
+    <AssemblyName>System.AddIn.Contract</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.AddIn.Contract.Collections.IRemoteArgumentDictionaryContract</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>シリアル化可能なオブジェクトに関する情報を提供するコントラクトを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="GetCanonicalName">
+      <MemberSignature Language="C#" Value="public string GetCanonicalName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetCanonicalName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.ISerializableObjectContract.GetCanonicalName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトの種類の正規名を返しますこれ<see cref="T:System.AddIn.Contract.ISerializableObjectContract" />について説明します。</summary>
+        <returns>オブジェクトの種類の正規名この<see cref="T:System.AddIn.Contract.ISerializableObjectContract" />について説明します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 正規の名前は、完全修飾型名など、グローバルに一意の名前です。 形式の文字列\<*アセンブリ名*>、 \<*完全修飾型名*> マネージ型のことをお勧めします。 形式の文字列\<*タイプ ライブラリ名*>、 \<*型名*> COM 型のことをお勧めします。  
+  
+ 型がパブリッシュされた後は、型の正規の名前は変わりません。 既に型を使用しているクライアントとの間のコンポーネント区切り互換性の将来のバージョンにある種類の正規名を変更します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetSerializableObjectData">
+      <MemberSignature Language="C#" Value="public System.AddIn.Contract.SerializableObjectData GetSerializableObjectData ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance valuetype System.AddIn.Contract.SerializableObjectData GetSerializableObjectData() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.AddIn.Contract.ISerializableObjectContract.GetSerializableObjectData" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.AddIn.Contract</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.AddIn.Contract.SerializableObjectData</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトを逆シリアル化のために使用できるデータを返すこの<see cref="T:System.AddIn.Contract.ISerializableObjectContract" />について説明します。</summary>
+        <returns>A<see cref="T:System.AddIn.Contract.SerializableObjectData" />オブジェクトに関するデータを格納しているこの<see cref="T:System.AddIn.Contract.ISerializableObjectContract" />について説明します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

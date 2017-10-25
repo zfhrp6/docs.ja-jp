@@ -1,0 +1,182 @@
+<Type Name="StrongNameIdentityPermissionAttribute" FullName="System.Security.Permissions.StrongNameIdentityPermissionAttribute">
+  <TypeSignature Language="C#" Value="public sealed class StrongNameIdentityPermissionAttribute : System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed beforefieldinit StrongNameIdentityPermissionAttribute extends System.Security.Permissions.CodeAccessSecurityAttribute" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Permissions.CodeAccessSecurityAttribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct | System.AttributeTargets.Constructor | System.AttributeTargets.Method, AllowMultiple=true, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Security.Permissions.StrongNameIdentityPermission" /> のセキュリティ アクションを、宣言セキュリティを使用してコードに適用できるようにします。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  以降で、 [!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、id アクセス許可は使用されません。  
+>   
+>  .NET Framework バージョン 1.0 および 1.1 では、呼び出し元のアセンブリが完全に信頼されている場合でも id アクセス許可の要求は効果的です。 呼び出し元のアセンブリが、完全な信頼がありますが、id アクセス許可の確認要求が失敗したアセンブリが要求されている条件を満たしていない場合。 .NET Framework のバージョンでは、id アクセス許可の 2.0 以降の要求は、呼び出し元アセンブリに完全な信頼がある場合は、有効ではありません。 これには、特殊なケースとして id アクセス許可の処理方法を排除すること、すべての権限の一貫性が保証されします。  
+  
+ 許可されている宣言のスコープによって異なります、<xref:System.Security.Permissions.SecurityAction>のために使用します。 厳密名ツール (Sn.exe) を実行して、この属性のキー文字列を取得するには、トークンと公開キーのオプションを (**Sn** **-tp** *keyfile* `)` Authenticode 署名を持つファイルと比較します。 詳細については、「[Sn.exe (厳密名ツール)](~/docs/framework/tools/sn-exe-strong-name-tool.md)」を参照してください。  
+  
+ セキュリティ属性によって宣言されたセキュリティ情報は、属性の対象のメタデータに格納され、実行時に、システムによってアクセスされます。 セキュリティ属性は、宣言型セキュリティにのみ使用されます。 命令型のセキュリティのアクセス許可の対応するクラスを使用します。  
+  
+ <xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute>アセンブリ レベルでのパブリック メンバーのアクセス要件を厳密な名前を定義する属性を使用できます。 .NET Framework version 2.0 以降にも使用できます、<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性をそのアセンブリ内のすべての非パブリックな型が別のアセンブリから参照できることを指定します。 詳細については、次を参照してください。[フレンド アセンブリ](http://msdn.microsoft.com/library/df0c70ea-2c2a-4bdc-9526-df951ad2d055)または[ビルド内にありません: フレンド アセンブリ (Visual Basic)](http://msdn.microsoft.com/en-us/80e7a33a-ca91-450b-a00e-c5a7986e228c)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public StrongNameIdentityPermissionAttribute (System.Security.Permissions.SecurityAction action);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(valuetype System.Security.Permissions.SecurityAction action) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermissionAttribute.#ctor(System.Security.Permissions.SecurityAction)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.Security.Permissions.SecurityAction" />
+      </Parameters>
+      <Docs>
+        <param name="action"><see cref="T:System.Security.Permissions.SecurityAction" /> 値のいずれか。</param>
+        <summary>指定した <see cref="T:System.Security.Permissions.StrongNameIdentityPermissionAttribute" /> を使用して、<see cref="T:System.Security.Permissions.SecurityAction" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreatePermission">
+      <MemberSignature Language="C#" Value="public override System.Security.IPermission CreatePermission ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance class System.Security.IPermission CreatePermission() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Permissions.StrongNameIdentityPermissionAttribute.CreatePermission" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.IPermission</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Security.Permissions.StrongNameIdentityPermission" /> を作成して返します。</summary>
+        <returns>この属性に対応する <see cref="T:System.Security.Permissions.StrongNameIdentityPermission" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、アプリケーション コードからではなく、セキュリティ システムからのみ呼び出す必要があります。  
+  
+ コンパイル時に、属性は、セキュリティの宣言をメタデータのシリアル化された形式に変換されます。 メタデータの宣言セキュリティ データは、この属性に対応する権限をこのメソッドが返すから作成されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">キーがあるため、メソッドが失敗しました<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public string Name { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Name" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermissionAttribute.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または厳密な名前 id の名前を設定します。</summary>
+        <value>比較対象のセキュリティ プロバイダーによって指定された名前の名前です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 厳密な名前のアセンブリには、公開キー、名前、およびバージョンが含まれています。 厳密な名前の名前の部分は、単純なアセンブリの名前です。つまり、ファイル拡張子のないアセンブリの名前。 たとえば、mylibrary.dll を参照するには、次のように設定します。、<xref:System.Security.Permissions.StrongNameIdentityPermissionAttribute.Name%2A>プロパティを"mylibrary"です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PublicKey">
+      <MemberSignature Language="C#" Value="public string PublicKey { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string PublicKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermissionAttribute.PublicKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または 16 進数文字列として表現される厳密な名前 id の公開キーの値を設定します。</summary>
+        <value>16 進数文字列として表現される厳密な名前 id の公開キー値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Version">
+      <MemberSignature Language="C#" Value="public string Version { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Version" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Permissions.StrongNameIdentityPermissionAttribute.Version" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または厳密な名前 id のバージョンを設定します。</summary>
+        <value>厳密な名前 id のバージョン番号。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

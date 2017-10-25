@@ -1,0 +1,676 @@
+<Type Name="Panel" FullName="System.Windows.Controls.Panel">
+  <TypeSignature Language="C#" Value="public abstract class Panel : System.Windows.FrameworkElement, System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit Panel extends System.Windows.FrameworkElement implements class System.Windows.Markup.IAddChild" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Panel" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationFramework</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.FrameworkElement</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Windows.Markup.IAddChild</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.Localizability(System.Windows.LocalizationCategory.Ignore)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.Markup.ContentProperty("Children")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>すべての基底クラスを提供<see cref="T:System.Windows.Controls.Panel" />要素。 使用して<see cref="T:System.Windows.Controls.Panel" />要素を配置し、Windows Presentation Foundation (WPF) アプリケーション内の子オブジェクトを整列します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ A<xref:System.Windows.Controls.Panel>のコレクションを格納<xref:System.Windows.UIElement>では、オブジェクト、<xref:System.Windows.Controls.Panel.Children%2A>プロパティです。 追加する、<xref:System.Windows.UIElement>に子、<xref:System.Windows.Controls.Panel>に暗黙的に追加して、<xref:System.Windows.Controls.UIElementCollection>の<xref:System.Windows.Controls.Panel>要素。  
+  
+ [!INCLUDE[TLA2#tla_winclient](~/includes/tla2sharptla-winclient-md.md)]包括的なスイートは、派生<xref:System.Windows.Controls.Panel>実装では、多くの複雑なレイアウトを有効にします。 新しいレイアウト コンテナーを実装する場合は、使用、<xref:System.Windows.FrameworkElement.MeasureOverride%2A>と<xref:System.Windows.FrameworkElement.ArrangeOverride%2A>メソッドです。 これらのメソッドを使用する方法のデモについては、次を参照してください。[カスタム コンテンツの折り返しパネル サンプルを作成する](http://go.microsoft.com/fwlink/?LinkID=159979)です。  
+  
+ <xref:System.Windows.Controls.Panel>要素は受け取りませんマウス イベントやスタイラス イベント場合、<xref:System.Windows.Controls.Panel.Background%2A>が定義されていません。 イベント ハンドル マウスまたはスタイラスする必要がありますが、用の背景をしない場合、<xref:System.Windows.Controls.Panel>を使用して<xref:System.Windows.Media.Brushes.Transparent%2A>です。  
+  
+ パネルの要素では、フォーカスは既定では表示されません。 フォーカスを受け取るパネルの要素を強制するには、設定、<xref:System.Windows.UIElement.Focusable%2A>プロパティを`true`です。  
+  
+   
+  
+## Examples  
+ 次の例を使用する方法を示しています、 <xref:System.Windows.Controls.Panel.Children%2A> 2 を追加するプロパティ<xref:System.Windows.Controls.Button>オブジェクトを<xref:System.Windows.Controls.StackPanel>です。  
+  
+ [!code-xaml[StackPanel_snip#StackPanelExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/StackPanel_snip/CS/StackPanelExample.xaml#stackpanelexamplewholepage)] 
+ [!code-csharp[Stackpanel_Procedural_snip#StackPanelExampleWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/Stackpanel_Procedural_snip/CSharp/StackpanelExample.cs#stackpanelexamplewholepage)] 
+ [!code-vb[Stackpanel_Procedural_snip#StackPanelExampleWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/Stackpanel_Procedural_snip/visualbasic/stackpanelexample.vb#stackpanelexamplewholepage)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected Panel ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Panel" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Background">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush Background { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush Background" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.Background" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Media.Brush" />の枠線の間の領域の塗りつぶしに使用される、<see cref="T:System.Windows.Controls.Panel" />です。</summary>
+        <value><see cref="T:System.Windows.Media.Brush" /> この既定値は<see langword="null" />します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Panel>要素は受け取りませんマウス イベントやスタイラス イベント場合、<xref:System.Windows.Controls.Panel.Background%2A>が定義されていません。 イベント ハンドル マウスまたはスタイラスする必要がありますが、用の背景をしない場合、<xref:System.Windows.Controls.Panel>を使用して<xref:System.Windows.Media.Brushes.Transparent%2A>です。  
+  
+<a name="dependencyPropertyInfo_Background"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Panel.BackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.AffectsRender%2A>, <xref:System.Windows.FrameworkPropertyMetadata.SubPropertiesDoNotAffectRender%2A>|  
+  
+   
+  
+## Examples  
+ 次の例のセット、<xref:System.Windows.Controls.Panel.Background%2A>の<xref:System.Windows.Controls.Grid>を<xref:System.Windows.Media.RadialGradientBrush>です。  
+  
+ [!code-xaml[PanelBackground#1](~/samples/snippets/csharp/VS_Snippets_Wpf/panelbackground/CS/mainwindow.xaml#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty BackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty BackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Panel.BackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Panel.Background" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Children">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.UIElementCollection Children { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.UIElementCollection Children" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.Children" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Content)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.UIElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.UIElementCollection" />これの子要素の<see cref="T:System.Windows.Controls.Panel" />します。</summary>
+        <value><see cref="T:System.Windows.Controls.UIElementCollection" /> 既定値は空の <see cref="T:System.Windows.Controls.UIElementCollection" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Panel.Children%2A>のコレクション、<xref:System.Windows.Controls.Panel>要素のみで構成できます<xref:System.Windows.UIElement>オブジェクト。 追加する、<xref:System.Windows.UIElement>に子、<xref:System.Windows.Controls.Panel>に暗黙的に追加して、<xref:System.Windows.Controls.UIElementCollection>の<xref:System.Windows.Controls.Panel>要素。  
+  
+ このコレクションを使用しない派生<xref:System.Windows.Controls.Panel>クラス; 使用して、<xref:System.Windows.Controls.Panel.InternalChildren%2A>コレクション代わりにします。  
+  
+ このプロパティを返します`null`場合、<xref:System.Windows.Controls.Panel>データにバインドします。  
+  
+   
+  
+## Examples  
+ 次のコード例を使用する方法を示しています、<xref:System.Windows.Controls.Panel.Children%2A>プロパティを追加する、<xref:System.Windows.UIElement>子を<xref:System.Windows.Controls.Panel>要素。  
+  
+ [!code-csharp[framesnips#FrameNavigateSetup](~/samples/snippets/csharp/VS_Snippets_Wpf/FrameSnips/CSharp/Window1.xaml.cs#framenavigatesetup)]
+ [!code-vb[framesnips#FrameNavigateSetup](~/samples/snippets/visualbasic/VS_Snippets_Wpf/FrameSnips/visualbasic/window1.xaml.vb#framenavigatesetup)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUIElementCollection">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Controls.UIElementCollection CreateUIElementCollection (System.Windows.FrameworkElement logicalParent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Windows.Controls.UIElementCollection CreateUIElementCollection(class System.Windows.FrameworkElement logicalParent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.CreateUIElementCollection(System.Windows.FrameworkElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.UIElementCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="logicalParent" Type="System.Windows.FrameworkElement" />
+      </Parameters>
+      <Docs>
+        <param name="logicalParent">作成するコレクションの論理上の親要素です。</param>
+        <summary>新しい <see cref="T:System.Windows.Controls.UIElementCollection" /> を作成します。</summary>
+        <returns>指定した論理親を持つ要素の順序付きコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、生成された<xref:System.Windows.Controls.UIElementCollection>またはレイアウトの増分更新を実行する子要素に関する情報をキャッシュします。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetVisualChild">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Media.Visual GetVisualChild (int index);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Media.Visual GetVisualChild(int32 index) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.GetVisualChild(System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Visual</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="index">インデックス位置、<see cref="T:System.Windows.Media.Visual" />子。</param>
+        <summary>取得、<see cref="T:System.Windows.Media.Visual" />これの子<see cref="T:System.Windows.Controls.Panel" />指定したインデックス位置にあります。</summary>
+        <returns>A<see cref="T:System.Windows.Media.Visual" />親の子<see cref="T:System.Windows.Controls.Panel" />要素。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetZIndex">
+      <MemberSignature Language="C#" Value="public static int GetZIndex (System.Windows.UIElement element);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig int32 GetZIndex(class System.Windows.UIElement element) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.GetZIndex(System.Windows.UIElement)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+      </Parameters>
+      <Docs>
+        <param name="element">取得する対象の要素、<see cref="P:System.Windows.Controls.Panel.ZIndex" />値。</param>
+        <summary>値を取得、<see cref="P:System.Windows.Controls.Panel.ZIndex" />指定された要素のプロパティです。</summary>
+        <returns><see cref="P:System.Windows.Controls.Panel.ZIndex" />要素の位置。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">要素が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="HasLogicalOrientation">
+      <MemberSignature Language="C#" Value="protected virtual bool HasLogicalOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasLogicalOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.HasLogicalOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Controls.Panel" />その子孫 1 つのディメンションを整列します。</summary>
+        <value>
+          <see langword="true" />場合の向き、 <see cref="T:System.Windows.Controls.Panel" /> 1 つのディメンションでは、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのみ panel 要素の間で<xref:System.Windows.Controls.StackPanel>返します`true`その方向が 1 つのディメンションであるため、します。  サブクラス<xref:System.Windows.Controls.Panel>このプロパティを上書きすることができます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasLogicalOrientationPublic">
+      <MemberSignature Language="C#" Value="public bool HasLogicalOrientationPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasLogicalOrientationPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.HasLogicalOrientationPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうかこの<see cref="T:System.Windows.Controls.Panel" />その子孫 1 つのディメンションを整列します。</summary>
+        <value>
+          <see langword="true" />場合の向き、 <see cref="T:System.Windows.Controls.Panel" /> 1 つのディメンションでは、それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 定義済みのみ panel 要素の間で<xref:System.Windows.Controls.StackPanel>返します`true`その方向が 1 つのディメンションであるため、します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="InternalChildren">
+      <MemberSignature Language="C#" Value="protected System.Windows.Controls.UIElementCollection InternalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.UIElementCollection InternalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.InternalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.UIElementCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Windows.Controls.UIElementCollection" />の子要素です。</summary>
+        <value>順序付けられたコレクション<see cref="T:System.Windows.UIElement" />オブジェクト。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるコレクションには、コードに直接追加される項目およびデータ バインディングによって生成される項目が含まれています。  
+  
+ クラスから派生した<xref:System.Windows.Controls.Panel>の代わりに、このプロパティを使用する必要があります、<xref:System.Windows.Controls.Panel.Children%2A>などの内部の上書きのプロパティ、<xref:System.Windows.UIElement.MeasureCore%2A>と<xref:System.Windows.UIElement.ArrangeCore%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemsHost">
+      <MemberSignature Language="C#" Value="public bool IsItemsHost { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsItemsHost" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.IsItemsHost" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>このことを示す値の設定を取得または<see cref="T:System.Windows.Controls.Panel" />のコンテナー[!INCLUDE[TLA#tla_ui](~/includes/tlasharptla-ui-md.md)]によって生成される項目、<see cref="T:System.Windows.Controls.ItemsControl" />です。</summary>
+        <value>
+          <see langword="true" />場合のこのインスタンス<see cref="T:System.Windows.Controls.Panel" />項目は、ホストは、それ以外の<see langword="false" />します。 既定値は <see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ データは、このプロパティをバインドすることはできません。  
+  
+<a name="dependencyPropertyInfo_IsItemsHost"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Panel.IsItemsHostProperty>|  
+|メタデータ プロパティに設定します。`true`|<xref:System.Windows.FrameworkPropertyMetadata.IsNotDataBindable%2A>|  
+  
+   
+  
+## Examples  
+ 次の例では、<xref:System.Windows.Controls.ControlTemplate>を水平方向を作成する<xref:System.Windows.Controls.ListBox>です。 水平<xref:System.Windows.Controls.StackPanel>内に指定されて、<xref:System.Windows.Controls.ControlTemplate>です。 <xref:System.Windows.Controls.Panel.IsItemsHost%2A>プロパティに設定されている`true`上、<xref:System.Windows.Controls.StackPanel>パネルで、生成された項目に配置することを示します。 この方法を指定すると、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>を使用せず、コントロールのユーザーによって置き換えることができません、<xref:System.Windows.Controls.ControlTemplate>です。 そのため、テンプレートを使用せずに交換するのには、パネルをしないようにすることがわかって場合にのみ、この作成を行います。  
+  
+ [!code-xaml[StylingIntroSnippet#ListBoxCT](~/samples/snippets/csharp/VS_Snippets_Wpf/StylingIntroSnippet/CS/window1.xaml#listboxct)]   
+  
+ また、設定することができます、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A?displayProperty=nameWithType>プロパティです。 次の例のセット、<xref:System.Windows.Controls.ItemsControl.ItemsPanel%2A>で、<xref:System.Windows.Style>の<xref:System.Windows.Controls.ListBox>です。  
+  
+ [!code-xaml[listboxhorizontal#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ListBoxHorizontal/CS/window1.xaml#1)]   
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemsHostProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsItemsHostProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsItemsHostProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Panel.IsItemsHostProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Panel.IsItemsHost" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この論理上の子要素を反復処理できる列挙子を取得<see cref="T:System.Windows.Controls.Panel" />要素。</summary>
+        <value><see cref="T:System.Collections.IEnumerator" />。 このプロパティには既定値はありません。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOrientation">
+      <MemberSignature Language="C#" Value="protected virtual System.Windows.Controls.Orientation LogicalOrientation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation LogicalOrientation" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.LogicalOrientation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Orientation" />パネルは、1 つのディメンションだけでレイアウトをサポートしている場合、パネルのです。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" />パネルのです。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ サブクラス<xref:System.Windows.Controls.Panel>このプロパティを上書きすることができます。 場合<xref:System.Windows.Controls.Panel.HasLogicalOrientation%2A>は`false`、このプロパティの値を無視する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalOrientationPublic">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Orientation LogicalOrientationPublic { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Controls.Orientation LogicalOrientationPublic" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.LogicalOrientationPublic" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Orientation</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Orientation" />パネルは、1 つのディメンションだけでレイアウトをサポートしている場合、パネルのです。</summary>
+        <value><see cref="T:System.Windows.Controls.Orientation" />パネルのです。 このプロパティには既定値はありません。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合<xref:System.Windows.Controls.Panel.HasLogicalOrientation%2A>は`false`、このプロパティの値を無視する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnIsItemsHostChanged">
+      <MemberSignature Language="C#" Value="protected virtual void OnIsItemsHostChanged (bool oldIsItemsHost, bool newIsItemsHost);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnIsItemsHostChanged(bool oldIsItemsHost, bool newIsItemsHost) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.OnIsItemsHostChanged(System.Boolean,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="oldIsItemsHost" Type="System.Boolean" />
+        <Parameter Name="newIsItemsHost" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="oldIsItemsHost">変更前のプロパティ値。</param>
+        <param name="newIsItemsHost">変更後のプロパティ値。</param>
+        <summary>示します、<see cref="P:System.Windows.Controls.Panel.IsItemsHost" />プロパティ値が変更されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnRender">
+      <MemberSignature Language="C#" Value="protected override void OnRender (System.Windows.Media.DrawingContext dc);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnRender(class System.Windows.Media.DrawingContext dc) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.OnRender(System.Windows.Media.DrawingContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="dc" Type="System.Windows.Media.DrawingContext" />
+      </Parameters>
+      <Docs>
+        <param name="dc"><see cref="T:System.Windows.Media.DrawingContext" />を描画するオブジェクト。</param>
+        <summary>内容を描画する<see cref="T:System.Windows.Media.DrawingContext" />のレンダー パス中にオブジェクトを<see cref="T:System.Windows.Controls.Panel" />要素。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnVisualChildrenChanged">
+      <MemberSignature Language="C#" Value="protected override void OnVisualChildrenChanged (System.Windows.DependencyObject visualAdded, System.Windows.DependencyObject visualRemoved);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnVisualChildrenChanged(class System.Windows.DependencyObject visualAdded, class System.Windows.DependencyObject visualRemoved) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.OnVisualChildrenChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="visualAdded" Type="System.Windows.DependencyObject" />
+        <Parameter Name="visualRemoved" Type="System.Windows.DependencyObject" />
+      </Parameters>
+      <Docs>
+        <param name="visualAdded"><see cref="T:System.Windows.Media.Visual" />をコレクションに追加されました。</param>
+        <param name="visualRemoved"><see cref="T:System.Windows.Media.Visual" />ですが、コレクションから削除されました。</param>
+        <summary>呼び出されたときに、<see cref="T:System.Windows.Media.VisualCollection" />ビジュアル オブジェクトの変更します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Controls.Panel.ZIndex%2A>値は、子要素が追加またはコレクションから削除されたときに自動的に再計算されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetZIndex">
+      <MemberSignature Language="C#" Value="public static void SetZIndex (System.Windows.UIElement element, int value);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SetZIndex(class System.Windows.UIElement element, int32 value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.SetZIndex(System.Windows.UIElement,System.Int32)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.UIElement" />
+        <Parameter Name="value" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="element">プロパティ値を適用する要素。</param>
+        <param name="value">この要素が表示される、z 平面上の順序。</param>
+        <summary>値を設定、<see cref="P:System.Windows.Controls.Panel.ZIndex" />添付プロパティを指定された要素。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 大なり、`value`の指定された`element`可能性が高く、`element`が前面に表示します。 同様に場合、`element`が比較的低い`value`、`element`はバック グラウンドで表示される可能性があります。 たとえば、`element`を持つ、 `value` 5 の上に表示されます、`element`を持つ、`value`は 4 で、さらに上に表示されます、`element`第 3 の値を設定しています。 負の値が許可され、この優先順位のパターンが続行されます。  
+  
+ メンバー、<xref:System.Windows.Controls.Panel.Children%2A>と等しいコレクション<xref:System.Windows.Controls.Panel.ZIndex%2A>値がビジュアル ツリー内に出現する順序で表示されます。 メンバーを反復処理して、子のインデックス位置を指定できます、<xref:System.Windows.Controls.Panel.Children%2A>コレクション。  
+  
+   
+  
+## Examples  
+ 次の例でコード内の値を設定する方法を示しています、<xref:System.Windows.Controls.Panel.ZIndex%2A>プロパティ (を使用して、<xref:System.Windows.Controls.Panel.SetZIndex%2A>メソッド)。  
+  
+ [!code-cpp[canvasz-order#2](~/samples/snippets/cpp/VS_Snippets_Wpf/CanvasZ-Order/CPP/CanvasZ-Order.cpp#2)]
+ [!code-csharp[canvasz-order#2](~/samples/snippets/csharp/VS_Snippets_Wpf/CanvasZ-Order/Csharp/CanvasZ-Order.cs#2)]
+ [!code-vb[canvasz-order#2](~/samples/snippets/visualbasic/VS_Snippets_Wpf/CanvasZ-Order/VisualBasic/CanvasZ-Order.vb#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">要素が<see langword="null" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeChildren">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeChildren ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeChildren() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.ShouldSerializeChildren" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>指定するかどうか、<see cref="P:System.Windows.Controls.Panel.Children" />パネルのコレクションをシリアル化する必要があります。</summary>
+        <returns>
+          <see langword="true" />場合、<see cref="P:System.Windows.Controls.Panel.Children" />コレクションがシリアル化された、それ以外にする必要があります<see langword="false" />です。 <see cref="P:System.Windows.Controls.Panel.Children" />が空でない場合にのみコレクションをシリアル化および not<see langword="null" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddChild">
+      <MemberSignature Language="C#" Value="void IAddChild.AddChild (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddChild(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.System#Windows#Markup#IAddChild#AddChild(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">子として追加するオブジェクト。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Windows.Markup.IAddChild.AddText">
+      <MemberSignature Language="C#" Value="void IAddChild.AddText (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Windows.Markup.IAddChild.AddText(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Panel.System#Windows#Markup#IAddChild#AddText(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">オブジェクトに追加する文字列。</param>
+        <summary>この型またはメンバーは、[!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualChildrenCount">
+      <MemberSignature Language="C#" Value="protected override int VisualChildrenCount { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 VisualChildrenCount" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Panel.VisualChildrenCount" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>子の数を取得<see cref="T:System.Windows.Media.Visual" />のこのインスタンス内のオブジェクト<see cref="T:System.Windows.Controls.Panel" />です。</summary>
+        <value>子の数<see cref="T:System.Windows.Media.Visual" />オブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ZIndexProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ZIndexProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ZIndexProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Panel.ZIndexProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationFramework</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Panel.ZIndex" /> 添付プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

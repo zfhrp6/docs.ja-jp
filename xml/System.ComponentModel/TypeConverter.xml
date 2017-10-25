@@ -1,0 +1,1789 @@
+<Type Name="TypeConverter" FullName="System.ComponentModel.TypeConverter">
+  <TypeSignature Language="C#" Value="public class TypeConverter" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit TypeConverter extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.TypeConverter" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>型変換する値の他の型への標準値およびサブプロパティへのアクセスのための統一された方法を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターの最も一般的な型は、いずれかのテキスト表現との間に変換します。 クラスの型コンバーターは、クラスにバインドされて、<xref:System.ComponentModel.TypeConverterAttribute>です。 この属性がオーバーライドされない限り、このクラスから継承するすべてのクラスは基底クラスとして同じの型コンバーターを使用します。  
+  
+> [!NOTE]
+>  一般的な種類のシステムの目的で、直接アクセスしないで実行する型コンバーター。 代わりに、適切なコンバーターを使用してアクセス<xref:System.ComponentModel.TypeDescriptor>です。 詳細については、提供されたコード例を参照してください。  
+  
+ **注**XAML の目的で、XAML プロセッサがの検索、<xref:System.ComponentModel.TypeConverterAttribute>経由ではなく、直接<xref:System.ComponentModel.TypeDescriptor>です。 行う必要がある場合の<xref:System.ComponentModel.TypeDescriptor>インスタンスをコードまたは WPF の共有インスタンスを作成する、リソースが参照することがなく直接構築するために許容される<xref:System.ComponentModel.TypeDescriptor>または他のリフレクションおよび型システムをサポートします。  
+  
+ 派生したクラス<xref:System.ComponentModel.TypeConverter>は多くの場合は、XAML プロセッサは属性値または初期化のテキスト値のマークアップ (これは文字列では本質的に) に変換する方法の一部として参照し、実行時の表現のオブジェクトを生成します。 通常、XAML の型変換動作をサポートするカスタム型の作成者を実装する、<xref:System.ComponentModel.TypeConverter>独自一意をサポートするクラス`ConvertFrom`文字列からの動作です。 この動作は、XAML 属性の値として指定された文字列からの型変換を有効にし、解析済みのオブジェクト グラフのオブジェクトを生成できるように、文字列からオブジェクトを作成するために必要なサポートされるように、XAML プロセッサを提供します。 カスタム型のメンバー、またはカスタムの型が適用することによって示される<xref:System.ComponentModel.TypeConverterAttribute>、定義する属性で参照するカスタム<xref:System.ComponentModel.TypeConverter>実装します。 詳細については、次を参照してください。[型コンバーターの XAML の概要の](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md)します。  
+  
+   
+  
+## Examples  
+ 次のコード例では、型コンバーターのインスタンスを作成し、クラスにバインドする方法を示します。 コンバーターを実装するクラス`MyClassConverter`から継承する必要があります、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ [!code-cpp[Classic TypeConverter Example#1](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverter Example/CPP/source.cpp#1)]
+ [!code-csharp[Classic TypeConverter Example#1](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverter Example/CS/source.cs#1)]
+ [!code-vb[Classic TypeConverter Example#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverter Example/VB/source.vb#1)]  
+  
+ 列挙型を持つプロパティがある場合は、プロパティを設定する前に、列挙値が有効かどうかを確認します。 次のコード例では、列挙が呼び出されることが必要です`MyPropertyEnum`は宣言されています。  
+  
+ [!code-cpp[Classic TypeConverter Example#2](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverter Example/CPP/source.cpp#2)]
+ [!code-csharp[Classic TypeConverter Example#2](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverter Example/CS/source.cs#2)]
+ [!code-vb[Classic TypeConverter Example#2](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverter Example/VB/source.vb#2)]  
+  
+ 別の一般的な型コンバーターの使用では、オブジェクトを文字列に変換します。 次のコード例の名前を出力、<xref:System.Drawing.Color>変数に格納されている`c`です。  
+  
+ [!code-cpp[Classic TypeConverter Example#3](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverter Example/CPP/source.cpp#3)]
+ [!code-csharp[Classic TypeConverter Example#3](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverter Example/CS/source.cs#3)]
+ [!code-vb[Classic TypeConverter Example#3](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverter Example/VB/source.vb#3)]  
+  
+ 次のコード例に示すように、その名前から値を変換するのに型コンバーターを使用できます。  
+  
+ [!code-cpp[Classic TypeConverter Example#4](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverter Example/CPP/source.cpp#4)]
+ [!code-csharp[Classic TypeConverter Example#4](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverter Example/CS/source.cs#4)]
+ [!code-vb[Classic TypeConverter Example#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverter Example/VB/source.vb#4)]  
+  
+ 次のコード例では、オブジェクトがサポートする標準の値のセットを印刷する型コンバーターを使用できます。  
+  
+ [!code-cpp[Classic TypeConverter Example#5](~/samples/snippets/cpp/VS_Snippets_Winforms/Classic TypeConverter Example/CPP/source.cpp#5)]
+ [!code-csharp[Classic TypeConverter Example#5](~/samples/snippets/csharp/VS_Snippets_Winforms/Classic TypeConverter Example/CS/source.cs#5)]
+ [!code-vb[Classic TypeConverter Example#5](~/samples/snippets/visualbasic/VS_Snippets_Winforms/Classic TypeConverter Example/VB/source.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+    <block subset="none" type="overrides">
+      <para>継承<see cref="T:System.ComponentModel.TypeConverter" />を独自の変換要件を実装します。 このクラスから継承する場合は、次のメソッドをオーバーライドできます。  
+  
+-   カスタム型の変換をサポートするためにオーバーライド、 <see cref="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.Type)" />、 <see cref="M:System.ComponentModel.TypeConverter.CanConvertTo(System.Type)" />、 <see cref="M:System.ComponentModel.TypeConverter.ConvertFrom(System.Object)" />、および<see cref="M:System.ComponentModel.TypeConverter.ConvertTo(System.Object,System.Type)" />メソッドです。  
+  
+-   型に変換する値を変更するオブジェクトを再作成する必要があります、オーバーライド、<see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />と<see cref="M:System.ComponentModel.TypeConverter.GetCreateInstanceSupported" />メソッドです。  
+  
+-   型に変換するプロパティをサポートする、オーバーライド、<see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />と<see cref="M:System.ComponentModel.TypeConverter.GetPropertiesSupported" />メソッドです。 変換するクラスには、プロパティがないとプロパティを実装する必要があります、使用することができる場合、<see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" />プロパティ記述子を実装するためのベースとしてのクラスです。 継承する場合<see cref="T:System.ComponentModel.TypeConverter.SimplePropertyDescriptor" />、オーバーライドする必要があります、<see cref="M:System.ComponentModel.PropertyDescriptor.GetValue(System.Object)" />と<see cref="M:System.ComponentModel.PropertyDescriptor.SetValue(System.Object,System.Object)" />メソッドです。  
+  
+-   型に変換する標準的な値をサポートする、オーバーライド、 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />、 <see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesExclusive" />、<see cref="M:System.ComponentModel.TypeConverter.GetStandardValuesSupported" />と<see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" />メソッドです。  
+  
+ <block subset="none" type="note"><para>  
+ として、派生型をマークすることがあります<see langword="internal" />または<see langword="private" />で、型のインスタンスを作成できますが、<see cref="T:System.ComponentModel.TypeDescriptor" />クラスです。 呼び出し元を有することにより、安全でないコードが信頼されているとは書き込みません。 代わりに呼び出し元が部分的な信頼で、型のインスタンスを作成可能性がありますを前提としています。  
+  
+</para></block>  
+  
+ [全般] (XAML ではない) 目的の型コンバーターの詳細については、次を参照してください。[する方法: 実行する型コンバーターの実装](http://msdn.microsoft.com/library/90373a3f-d8c8-492d-841c-945d62393c56)または[一般的な型変換](http://msdn.microsoft.com/library/49253ae6-7657-4810-82ab-1176a6feeada)です。</para>
+    </block>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public TypeConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.TypeConverter" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public bool CanConvertFrom (Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanConvertFrom(class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="sourceType">A<see cref="T:System.Type" />から変換する型を表すです。</param>
+        <summary>このコンバーターが、指定された型のオブジェクトをこのコンバーターの型に変換できるかどうかを返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。 値が戻りません`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertFrom">
+      <MemberSignature Language="C#" Value="public virtual bool CanConvertFrom (System.ComponentModel.ITypeDescriptorContext context, Type sourceType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Type sourceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="sourceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="sourceType">A<see cref="T:System.Type" />から変換する型を表すです。</param>
+        <summary>このコンバーターが、指定したコンテキストを使用して、指定された型のオブジェクトをこのコンバーターの型に変換できるかどうかを返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが戻る、このクラスに実装された`false`がない限り、`sourceType`は、<xref:System.ComponentModel.Design.Serialization.InstanceDescriptor>です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public bool CanConvertTo (Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool CanConvertTo(class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CanConvertTo(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="destinationType">A<see cref="T:System.Type" />に変換する型を表すです。</param>
+        <summary>このコンバーターが、オブジェクトを指定した型に変換できるかどうかを返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`destinationType`文字列型の既定の実装は、<xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>は常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CanConvertTo">
+      <MemberSignature Language="C#" Value="public virtual bool CanConvertTo (System.ComponentModel.ITypeDescriptorContext context, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool CanConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="destinationType">A<see cref="T:System.Type" />に変換する型を表すです。</param>
+        <summary>このコンバーターが指定のコンテキストを使用して、オブジェクトを指定の型に変換できるかどうかを返します。</summary>
+        <returns>
+          コンバーターが変換を実行できる場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 場合`destinationType`文字列型の既定の実装は、<xref:System.ComponentModel.TypeConverter.CanConvertTo%2A>は常に返します`true`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public object ConvertFrom (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFrom(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFrom(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値をこのコンバーターの型に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFrom">
+      <MemberSignature Language="C#" Value="public virtual object ConvertFrom (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertFrom(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />現在のカルチャとして使用します。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定したコンテキストとカルチャ情報を使用して、指定されたオブジェクトをこのコンバーターの型に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、XAML の型変換動作をサポートするカスタム型の作成者を実装する、<xref:System.ComponentModel.TypeConverter>をサポートするクラス<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>文字列からの動作です。 この動作は、XAML 属性の値として指定された文字列からの型変換を有効にし、解析済みのオブジェクト グラフのオブジェクトを生成できるように、文字列からオブジェクトを作成するために必要なサポートされるように、XAML プロセッサを提供します。 カスタム型のメンバー、またはカスタムの型が適用することによって示される<xref:System.ComponentModel.TypeConverterAttribute>、定義する属性で参照するカスタム<xref:System.ComponentModel.TypeConverter>実装します。  
+  
+ XAML の目的で、通常を指定しないに基づいて分岐実装`culture`です。 これは、XAML がコンテキストでは、開発環境、プリコンパイル済みランタイムのカルチャに固有の情報 XAML は、XAML の型変換に関連するではないためです。 詳細については、次を参照してください。[型コンバーターの XAML の概要の](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md)します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。  
+  
+ XAML とカスタムの型をサポートするために使用される型コンバーターの実装パターンの次を参照してください。[型コンバーターの XAML の概要の](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md)します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromInvariantString">
+      <MemberSignature Language="C#" Value="public object ConvertFromInvariantString (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFromInvariantString(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFromInvariantString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">変換対象の <see cref="T:System.String" />。</param>
+        <summary>インバリアント カルチャを使用して、このコンバーターの型指定された文字列に変換します。</summary>
+        <returns><see cref="T:System.Object" />変換されたテキストを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromInvariantString">
+      <MemberSignature Language="C#" Value="public object ConvertFromInvariantString (System.ComponentModel.ITypeDescriptorContext context, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFromInvariantString(class System.ComponentModel.ITypeDescriptorContext context, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFromInvariantString(System.ComponentModel.ITypeDescriptorContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="text">変換対象の <see cref="T:System.String" />。</param>
+        <summary>指定した文字列をインバリアント カルチャと、指定したコンテキストを使用して、このコンバーターの型に変換します。</summary>
+        <returns><see cref="T:System.Object" />変換されたテキストを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、適切なオブジェクトに変換できない場合は、例外が発生します。 既定の実装を常に返します`null`です。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromString">
+      <MemberSignature Language="C#" Value="public object ConvertFromString (string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFromString(string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFromString(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="text">変換対象のオブジェクトのテキスト表現。</param>
+        <summary>指定したテキストをオブジェクトに変換します。</summary>
+        <returns><see cref="T:System.Object" />変換されたテキストを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装を常に返します`null`です。  
+  
+   
+  
+## Examples  
+ この関数の例は、次を参照してください。、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">文字列は、適切なオブジェクトに変換できません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromString">
+      <MemberSignature Language="C#" Value="public object ConvertFromString (System.ComponentModel.ITypeDescriptorContext context, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFromString(class System.ComponentModel.ITypeDescriptorContext context, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFromString(System.ComponentModel.ITypeDescriptorContext,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="text">変換対象の <see cref="T:System.String" />。</param>
+        <summary>指定したコンテキストを使用してオブジェクトを指定されたテキストに変換します。</summary>
+        <returns><see cref="T:System.Object" />変換されたテキストを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、適切なオブジェクトに変換できない場合は、例外が発生します。 既定の実装を常に返します`null`です。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertFromString">
+      <MemberSignature Language="C#" Value="public object ConvertFromString (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, string text);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertFromString(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, string text) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertFromString(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="text" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />。 <see langword="null" /> を渡すと、現在のカルチャが使用されます。</param>
+        <param name="text">変換対象の <see cref="T:System.String" />。</param>
+        <summary>指定したコンテキストとカルチャ情報を使用してオブジェクトを指定されたテキストに変換します。</summary>
+        <returns><see cref="T:System.Object" />変換されたテキストを表すです。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 文字列は、適切なオブジェクトに変換できない場合は、例外が発生します。 既定の実装を常に返します`null`です。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public object ConvertTo (object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object ConvertTo(object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertTo(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" />に変換する、<c>値</c>へのパラメーターです。</param>
+        <summary>指定した値オブジェクトを引数を使用して、指定した型に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 最も一般的な型との間の変換には、文字列オブジェクトです。 この実装を呼び出す<xref:System.Object.ToString%2A>オブジェクトのオブジェクトが有効な場合、および変換先の型が文字列の場合。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destinationType" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertTo">
+      <MemberSignature Language="C#" Value="public virtual object ConvertTo (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object ConvertTo(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />。 <see langword="null" /> を渡すと、現在のカルチャが使用されます。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <param name="destinationType"><see cref="T:System.Type" />に変換する、<c>値</c>へのパラメーターです。</param>
+        <summary>指定したコンテキストとカルチャ情報を使用して、指定した値オブジェクトを、指定した型に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 変換する最も一般的な型は、文字列オブジェクトとの間です。 この実装を呼び出す<xref:System.Object.ToString%2A>オブジェクトのオブジェクトが有効な場合、および変換先の型が文字列の場合。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 通常、XAML の型変換動作をサポートするカスタム型の作成者を実装する、<xref:System.ComponentModel.TypeConverter>をサポートするクラス<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>文字列からの動作です。 これらの型コンバーターを実装することがありますも<xref:System.ComponentModel.TypeConverter.ConvertTo%2A>XAML にシリアル化をサポートするためにします。  
+  
+ は一部の XAML シリアル化のシナリオを適切に対処できない<xref:System.ComponentModel.TypeConverter>だけです。 このような場合でも定義するために必要な場合があります、<xref:System.Windows.Markup.ValueSerializer>によって行われるシリアル化のケースを処理する<xref:System.ComponentModel.TypeConverter.ConvertTo%2A>です。 詳細については、「<xref:System.Windows.Markup.ValueSerializer>」を参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="destinationType" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+        <block subset="none" type="overrides">
+          <para>独自の変換要件を指定するには、このメソッドをオーバーライドします。  
+  
+ XAML とカスタムの型をサポートするために使用される型コンバーターの実装パターンの次を参照してください。[型コンバーターの XAML の概要の](~/docs/framework/xaml-services/type-converters-for-xaml-overview.md)します。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToInvariantString">
+      <MemberSignature Language="C#" Value="public string ConvertToInvariantString (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConvertToInvariantString(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertToInvariantString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値をカルチャに依存しない文字列形式に変換します。</summary>
+        <returns>A<see cref="T:System.String" />を表す値を変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `context`パラメーターを使用するをこのコンバーターの呼び出される環境に関する追加情報を抽出します。 これは、 `null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 値のフォーマッタの実装によっては、オブジェクトのインスタンスを再作成する値のフォーマッタに返される文字列を渡すことがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToInvariantString">
+      <MemberSignature Language="C#" Value="public string ConvertToInvariantString (System.ComponentModel.ITypeDescriptorContext context, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConvertToInvariantString(class System.ComponentModel.ITypeDescriptorContext context, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertToInvariantString(System.ComponentModel.ITypeDescriptorContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値を指定したコンテキストを使用して、カルチャに依存しない文字列形式に変換します。</summary>
+        <returns>A<see cref="T:System.String" />を表す値を変換します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 値のフォーマッタの実装によっては、オブジェクトのインスタンスを再作成する値のフォーマッタに返される文字列を渡すことがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToString">
+      <MemberSignature Language="C#" Value="public string ConvertToString (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConvertToString(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertToString(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値を文字列形式に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 値のフォーマッタの実装によっては、オブジェクトのインスタンスを再作成する値のフォーマッタに返される文字列を渡すことがあります。  
+  
+   
+  
+## Examples  
+ この関数の例は、次を参照してください。、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToString">
+      <MemberSignature Language="C#" Value="public string ConvertToString (System.ComponentModel.ITypeDescriptorContext context, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConvertToString(class System.ComponentModel.ITypeDescriptorContext context, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertToString(System.ComponentModel.ITypeDescriptorContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値を指定されたコンテキストを使用して、文字列形式に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 値のフォーマッタの実装によっては、オブジェクトのインスタンスを再作成する値のフォーマッタに返される文字列を渡すことがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ConvertToString">
+      <MemberSignature Language="C#" Value="public string ConvertToString (System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance string ConvertToString(class System.ComponentModel.ITypeDescriptorContext context, class System.Globalization.CultureInfo culture, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.ConvertToString(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="culture" Type="System.Globalization.CultureInfo" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="culture"><see cref="T:System.Globalization.CultureInfo" />。 <see langword="null" /> を渡すと、現在のカルチャが使用されます。</param>
+        <param name="value">変換対象の <see cref="T:System.Object" />。</param>
+        <summary>指定した値を指定したコンテキストとカルチャ情報を使用して、文字列形式に変換します。</summary>
+        <returns>変換後の値を表す <see cref="T:System.Object" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 値のフォーマッタの実装によっては、オブジェクトのインスタンスを再作成する値のフォーマッタに返される文字列を渡すことがあります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.NotSupportedException">変換を実行することはできません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public object CreateInstance (System.Collections.IDictionary propertyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance object CreateInstance(class System.Collections.IDictionary propertyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="propertyValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="propertyValues"><see cref="T:System.Collections.IDictionary" />を表す新しいプロパティの値のディクショナリ。</param>
+        <summary>再作成、<see cref="T:System.Object" />オブジェクトのプロパティ値のセットを指定します。</summary>
+        <returns><see cref="T:System.Object" />を表す、指定された<see cref="T:System.Collections.IDictionary" />、または<see langword="null" />場合は、オブジェクトを作成できません。 このメソッドは常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不変であって変更可能なプロパティを提供するオブジェクトに対してこのメソッドを使用します。  
+  
+ によって提供される、ディクショナリ、`propertyValues`パラメーターが、一連の名前/値ペアを持つ各プロパティのいずれかから返された<xref:System.ComponentModel.TypeConverter.GetProperties%2A>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateInstance">
+      <MemberSignature Language="C#" Value="public virtual object CreateInstance (System.ComponentModel.ITypeDescriptorContext context, System.Collections.IDictionary propertyValues);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object CreateInstance(class System.ComponentModel.ITypeDescriptorContext context, class System.Collections.IDictionary propertyValues) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.CreateInstance(System.ComponentModel.ITypeDescriptorContext,System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="propertyValues" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="propertyValues"><see cref="T:System.Collections.IDictionary" />の新しいプロパティの値。</param>
+        <summary>この <see cref="T:System.ComponentModel.TypeConverter" /> を関連付ける型のインスタンスを作成します。指定されたコンテキストと、与えられているオブジェクトのプロパティ値のセットを使用します。</summary>
+        <returns><see cref="T:System.Object" />を表す、指定された<see cref="T:System.Collections.IDictionary" />、または<see langword="null" />場合は、オブジェクトを作成できません。 このメソッドは常に <see langword="null" /> を返します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 不変であって変更可能なプロパティを提供するオブジェクトに対してこのメソッドを使用します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型からその値を変更するオブジェクトを再作成する必要がある場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。  
+  
+ によって提供される、ディクショナリ、<paramref name="propertyValues" />パラメーターが、一連の名前/値ペアを持つ各プロパティのいずれかから返された<see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConvertFromException">
+      <MemberSignature Language="C#" Value="protected Exception GetConvertFromException (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception GetConvertFromException(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetConvertFromException(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />変換、または<see langword="null" />オブジェクトが使用できない場合。</param>
+        <summary>変換を実行できないときにスローする例外を返します。</summary>
+        <returns><see cref="T:System.Exception" />変換を実行できない場合にスローされる例外を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">自動的にこのメソッドによってスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConvertToException">
+      <MemberSignature Language="C#" Value="protected Exception GetConvertToException (object value, Type destinationType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.Exception GetConvertToException(object value, class System.Type destinationType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetConvertToException(System.Object,System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Exception</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="destinationType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="value"><see cref="T:System.Object" />変換、または<see langword="null" />オブジェクトが使用できない場合。</param>
+        <param name="destinationType">A<see cref="T:System.Type" />変換変換しようとする型を表すです。</param>
+        <summary>変換を実行できないときにスローする例外を返します。</summary>
+        <returns><see cref="T:System.Exception" />変換を実行できない場合にスローされる例外を表すです。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.NotSupportedException">自動的にこのメソッドによってスローされます。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreateInstanceSupported">
+      <MemberSignature Language="C#" Value="public bool GetCreateInstanceSupported ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetCreateInstanceSupported() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetCreateInstanceSupported" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトの値を変更するへの呼び出しが必要かどうかを返します、<see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />メソッドを新しい値を作成します。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトのプロパティを変更する必要への呼び出しであるかどうかは<see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />; 新しい値を作成するそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetCreateInstanceSupported">
+      <MemberSignature Language="C#" Value="public virtual bool GetCreateInstanceSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetCreateInstanceSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetCreateInstanceSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>このオブジェクトの値を変更するへの呼び出しが必要かどうかを返します<see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />指定したコンテキストを使用して、新しい値を作成します。</summary>
+        <returns>
+          <see langword="true" />このオブジェクトのプロパティを変更する必要への呼び出しであるかどうかは<see cref="M:System.ComponentModel.TypeConverter.CreateInstance(System.Collections.IDictionary)" />; 新しい値を作成するそれ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型からその値を変更するオブジェクトを再作成する必要がある場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetProperties (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">プロパティを取得する対象となる配列の型を指定する <see cref="T:System.Object" />。</param>
+        <summary>value パラメーターに指定された配列型のプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このデータ型について公開されているプロパティを持つまたは<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`null`です。  
+  
+ 既定では、型はプロパティを返しません。 このメソッドの簡単な実装を呼び出すことができます<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>の正しいデータ型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value">プロパティを取得する対象となる配列の型を指定する <see cref="T:System.Object" />。</param>
+        <summary>指定したコンテキストを使用して、値パラメーターで指定された配列型のプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このデータ型について公開されているプロパティを持つまたは<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ このメソッドは常に返します、このクラスに実装された`null`です。  
+  
+ 既定では、型はプロパティを返しません。 このメソッドの簡単な実装を呼び出すことができます<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>の正しいデータ型。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties (System.ComponentModel.ITypeDescriptorContext context, object value, Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.ComponentModel.ITypeDescriptorContext context, object value, class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetProperties(System.ComponentModel.ITypeDescriptorContext,System.Object,System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value">プロパティを取得する対象となる配列の型を指定する <see cref="T:System.Object" />。</param>
+        <param name="attributes">型の配列<see cref="T:System.Attribute" />フィルターとして使用されます。</param>
+        <summary>指定されたコンテキストと属性を使用して、値パラメーターで指定された配列型のプロパティのコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />このデータ型について公開されているプロパティを持つまたは<see langword="null" />プロパティがない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型のプロパティをサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。  
+  
+ 属性の配列は、配列をフィルター処理に使用されます。 属性が混在していることができます<see cref="T:System.Type" />と<see cref="T:System.Attribute" />オブジェクト。 フィルター処理は、次のルールによって定義されます。  
+  
+-   A <see cref="T:System.Type" /> ; ワイルドカードとして扱われるを持つプロパティと一致する、<see cref="T:System.Type" />属性のセットにします。  
+  
+-   プロパティがない場合、<see cref="T:System.Attribute" />同じクラスのプロパティに含まれていない、返される配列。  
+  
+-   属性がのインスタンスの場合<see cref="T:System.Attribute" />プロパティは完全に一致する必要があります、または返される配列に含まれていません。  
+  
+-   場合、<see cref="T:System.Attribute" />インスタンスが指定されて、既定のプロパティは、のインスタンスがない場合でも返される配列に含まれている、<see cref="T:System.Attribute" />プロパティにします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesSupported">
+      <MemberSignature Language="C#" Value="public bool GetPropertiesSupported ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetPropertiesSupported() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetPropertiesSupported" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このオブジェクトにプロパティがサポートしているかどうかを返します。</summary>
+        <returns>
+          このオブジェクトのプロパティを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertiesSupported">
+      <MemberSignature Language="C#" Value="public virtual bool GetPropertiesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetPropertiesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetPropertiesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>指定したコンテキストを使用して、このオブジェクトがプロパティをサポートするかどうかを返します。</summary>
+        <returns>
+          このオブジェクトのプロパティを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.ComponentModel.TypeConverter.GetProperties(System.Object)" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型のプロパティをサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public System.Collections.ICollection GetStandardValues ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.Collections.ICollection GetStandardValues() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValues" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.ICollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型コンバーターが対象のデータ型の既定のコンテキストから標準値のコレクションを返します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> 、有効な値の標準セットを含むまたは<see langword="null" />データ型が標準値セットをサポートしていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`null`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValues">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.TypeConverter.StandardValuesCollection GetStandardValues (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.TypeConverter/StandardValuesCollection GetStandardValues(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValues(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter+StandardValuesCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />コンバーターが呼び出される環境に関する追加情報を抽出するために使用する書式指定コンテキストを提供します。 このパラメーターまたはこのパラメーターのプロパティを指定できます<see langword="null" />です。</param>
+        <summary>フォーマット コンテキストが提供されている場合、この型コンバーターが対象とするデータ型の標準値のコレクションを返します。</summary>
+        <returns>A <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> 、有効な値の標準セットを保持するか、<see langword="null" />データ型が標準値セットをサポートしていない場合。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実装されている<xref:System.ComponentModel.TypeConverter>、このメソッドは常に返します`null`です。  
+  
+   
+  
+## Examples  
+ この関数の例は、次を参照してください。、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public bool GetStandardValuesExclusive ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetStandardValuesExclusive() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValuesExclusive" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> から返された標準値のコレクションが、排他的なリストかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> から返された <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> が、有効値の排他的なリストの場合は <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />。他の値も有効である場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ 列挙型の値リストのように、リストが排他的な場合は、他の値は有効ではありません。 リストが排他的ではない場合、<xref:System.ComponentModel.TypeConverter.GetStandardValues%2A> メソッドが提供する標準値に加えて、他にも有効な値が存在する可能性があります。 値が排他的である場合、<xref:System.ComponentModel.TypeConverter.GetStandardValues%2A> で返されるリストでこれらの値を編集することはできません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesExclusive">
+      <MemberSignature Language="C#" Value="public virtual bool GetStandardValuesExclusive (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetStandardValuesExclusive(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValuesExclusive(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>指定したコンテキストを使用して、<see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" /> から返された標準値のコレクションが有効値の排他的なリストかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> から返された <see cref="T:System.ComponentModel.TypeConverter.StandardValuesCollection" /> が、有効値の排他的なリストの場合は <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />。他の値も有効である場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ 列挙型の値リストのように、リストが排他的な場合は、他の値は有効ではありません。 リストが排他的ではない場合、<xref:System.ComponentModel.TypeConverter.GetStandardValues%2A> メソッドが提供する標準値に加えて、他にも有効な値が存在する可能性があります。 値が排他的である場合、<xref:System.ComponentModel.TypeConverter.GetStandardValues%2A> で返されるリストでこれらの値を編集することはできません。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、<paramref name="context" /> パラメーターを使用します。 このパラメーターを指定できます<see langword="null" />、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す<see langword="null" />です。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public bool GetStandardValuesSupported ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool GetStandardValuesSupported() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValuesSupported" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>リストから選択できる標準値セットをオブジェクトがサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          オブジェクトがサポートしている標準値セットを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetStandardValuesSupported">
+      <MemberSignature Language="C#" Value="public virtual bool GetStandardValuesSupported (System.ComponentModel.ITypeDescriptorContext context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool GetStandardValuesSupported(class System.ComponentModel.ITypeDescriptorContext context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.GetStandardValuesSupported(System.ComponentModel.ITypeDescriptorContext)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <summary>指定したコンテキストを使用して、リストから選択できる標準値セットをオブジェクトがサポートするかどうかを示す値を返します。</summary>
+        <returns>
+          オブジェクトがサポートしている標準値セットを見つけるために <see langword="true" /> を呼び出す必要がある場合は <see cref="M:System.ComponentModel.TypeConverter.GetStandardValues" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは常に返します、このクラスに実装された`false`です。  
+  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、標準の値をサポートしている場合は、このメソッドをオーバーライドします。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public bool IsValid (object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsValid(object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="value">有効性をテストするオブジェクト。</param>
+        <summary>指定した値オブジェクトがこの型に対して有効かどうかを返します。</summary>
+        <returns>
+          <see langword="true" />指定した値がこのオブジェクトの有効な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 以降で[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.ComponentModel.TypeConverter.IsValid%2A>メソッドからの例外のキャッチ、<xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>と<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>メソッドです。 入力値の型が発生した場合<xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>を返す`false`、入力値が発生した場合または<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>で例外が発生する、<xref:System.ComponentModel.TypeConverter.IsValid%2A>メソッドを返します。`false`です。  
+  
+ 従来の動作を有効にするには、application1.exe.config など、アプリケーションの構成ファイルに次の行を挿入します。  
+  
+```xml  
+<configuration>  
+  <appSettings>  
+    <add key="UseCompatibleTypeConverterBehavior" value="true" />  
+  </appSettings>  
+</configuration>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、検証可能な標準の値をサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" />かどうかをするのではなく、型の中で値を検証するメソッドが使用される<paramref name="value" />指定された型に変換できます。 たとえば、<see cref="M:System.ComponentModel.TypeConverter.IsValid(System.Object)" />の特定の値が列挙型の有効なかどうかを判断するために使用できます。 例については、「<see cref="T:System.ComponentModel.EnumConverter" />」を参照してください。  
+  
+ 独自に記述することができます<c>WillConvertSucceed</c>メソッドをラップすることによって、<see cref="Overload:System.ComponentModel.TypeConverter.ConvertTo" />と<see cref="Overload:System.ComponentModel.TypeConverter.ConvertFrom" />例外ブロック内のメソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValid">
+      <MemberSignature Language="C#" Value="public virtual bool IsValid (System.ComponentModel.ITypeDescriptorContext context, object value);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance bool IsValid(class System.ComponentModel.ITypeDescriptorContext context, object value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="context" Type="System.ComponentModel.ITypeDescriptorContext" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="context"><see cref="T:System.ComponentModel.ITypeDescriptorContext" />形式コンテキストを提供します。</param>
+        <param name="value"><see cref="T:System.Object" />の有効性をテストします。</param>
+        <summary>指定した値オブジェクトが、この型に対して有効か、指定したコンテキストに対して有効かを返します。</summary>
+        <returns>
+          <see langword="true" />指定した値がこのオブジェクトの有効な場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンバーターが呼び出される環境に関する追加情報を抽出するには、`context` パラメーターを使用します。 このパラメーターを指定できます`null`、ので、常に確認します。 また、コンテキスト オブジェクトのプロパティを返す`null`です。  
+  
+ 以降で[!INCLUDE[net_v40_long](~/includes/net-v40-long-md.md)]、<xref:System.ComponentModel.TypeConverter.IsValid%2A>メソッドからの例外のキャッチ、<xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>と<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>メソッドです。 入力値の型が発生した場合<xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A>を返す`false`、入力値が発生した場合または<xref:System.ComponentModel.TypeConverter.ConvertFrom%2A>で例外が発生する、<xref:System.ComponentModel.TypeConverter.IsValid%2A>メソッドを返します。`false`です。  
+  
+ 従来の動作を有効にするには、application1.exe.config など、アプリケーションの構成ファイルに次の行を挿入します。  
+  
+```xml  
+<configuration>  
+  <appSettings>  
+    <add key="UseCompatibleTypeConverterBehavior" value="true" />  
+  </appSettings>  
+</configuration>  
+```  
+  
+   
+  
+## Examples  
+ この関数の例は、次を参照してください。、<xref:System.ComponentModel.TypeConverter>クラスです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>変換する型は、検証可能な標準の値をサポートしている場合は、このメソッドをオーバーライドします。  
+  
+ <see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" />かどうかをするのではなく、型の中で値を検証するメソッドが使用される<paramref name="value" />指定された型に変換できます。 たとえば、<see cref="M:System.ComponentModel.TypeConverter.IsValid(System.ComponentModel.ITypeDescriptorContext,System.Object)" />の特定の値が列挙型の有効なかどうかを判断するために使用できます。 例については、「<see cref="T:System.ComponentModel.EnumConverter" />」を参照してください。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="SortProperties">
+      <MemberSignature Language="C#" Value="protected System.ComponentModel.PropertyDescriptorCollection SortProperties (System.ComponentModel.PropertyDescriptorCollection props, string[] names);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance class System.ComponentModel.PropertyDescriptorCollection SortProperties(class System.ComponentModel.PropertyDescriptorCollection props, string[] names) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.TypeConverter.SortProperties(System.ComponentModel.PropertyDescriptorCollection,System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="props" Type="System.ComponentModel.PropertyDescriptorCollection" />
+        <Parameter Name="names" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="props">A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />を並べ替えるプロパティを持ちます。</param>
+        <param name="names">順序の名前の配列、コレクションに表示されるプロパティを必要とします。</param>
+        <summary>プロパティのコレクションを並べ替えます。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />並べ替え済みのプロパティを格納します。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既にに含まれていない名前の配列、コレクション内のすべてのプロパティは、最後にアルファベット順に追加されます。 場合、`names`パラメーターが空の配列または`null`コレクション内のすべてのプロパティがアルファベット順に並べ替えられます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

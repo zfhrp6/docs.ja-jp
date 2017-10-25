@@ -1,0 +1,46 @@
+<Type Name="AssemblyLoadEventHandler" FullName="System.AssemblyLoadEventHandler">
+  <TypeSignature Language="C#" Value="public delegate void AssemblyLoadEventHandler(object sender, AssemblyLoadEventArgs args);" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable sealed AssemblyLoadEventHandler extends System.MulticastDelegate" />
+  <TypeSignature Language="DocId" Value="T:System.AssemblyLoadEventHandler" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.Extensions</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Parameters>
+    <Parameter Name="sender" Type="System.Object" />
+    <Parameter Name="args" Type="System.AssemblyLoadEventArgs" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>System.Void</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="sender">イベントのソース。</param>
+    <param name="args">イベント データを格納している <see cref="T:System.AssemblyLoadEventArgs" />。</param>
+    <summary>処理するメソッドを表す、<see cref="E:System.AppDomain.AssemblyLoad" />のイベント、<see cref="T:System.AppDomain" />です。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.AssemblyLoadEventHandler>への応答で呼び出されるメソッドを指定に使用される、<xref:System.AppDomain.AssemblyLoad>イベント。 インスタンスを関連付ける<xref:System.AssemblyLoadEventHandler>と、イベントをイベントのインスタンスに追加します。 によって参照されるメソッド、<xref:System.AssemblyLoadEventHandler>アセンブリが読み込まれるまで常に呼び出されます、<xref:System.AssemblyLoadEventHandler>イベントから削除されます。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Type>

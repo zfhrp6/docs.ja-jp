@@ -1,0 +1,386 @@
+<Type Name="UndoEngine" FullName="System.ComponentModel.Design.UndoEngine">
+  <TypeSignature Language="C#" Value="public abstract class UndoEngine : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit UndoEngine extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Design.UndoEngine" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>デザイン時に、汎用の元に戻す/やり直し機能を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.UndoEngine>抽象クラスはデザイン時に元に戻す機能の既定の実装を提供します。 元に戻す単位では、単一の取り消し可能な作業単位を表します。 スタックにこのユニットが追加され、ユーザーは、各アクションを元に戻すスタックをたどってことができます。 元に戻すユニット通常が設計に切り替えるには、その呼び出し元に戻すが 2 回開始状態にアプリケーションを取得することを意味します。  
+  
+ <xref:System.ComponentModel.Design.UndoEngine>クラスには、デザイナー内で実行されているオブジェクトの次の特性を活用します。  
+  
+-   デザイナー ローダーでは、すべての関連オブジェクトをいくつかの形式に永続化できます。  
+  
+-   すべてのオブジェクトは、プロパティが変更されたときに、プロパティ変更通知を生成します。  
+  
+-   <xref:System.ComponentModel.Design.IDesignerHost>またがる複数の小規模なアクションを元に戻すアクションを作成するために使用するトランザクションの概念を提供します。  
+  
+ これらの機能と<xref:System.ComponentModel.Design.UndoEngine>自動的に必要なすべての元に戻す単位を作成することができます。  
+  
+> [!NOTE]
+>  プロパティ値は直接変更しないでください。 <xref:System.ComponentModel.Design.UndoEngine>クラスでは、適切なを使用する必要があります<xref:System.ComponentModel.TypeDescriptor>プロパティ値を変更します。  
+  
+ <xref:System.ComponentModel.Design.UndoEngine>変更通知を作成するモニターには、単位が元に戻したり、自体ユニットは、シリアル化されたオブジェクトの状態で構成されます。 次の表は、サービスに必要なときに<xref:System.ComponentModel.Design.UndoEngine>を作成します。  
+  
+|サービス|説明|  
+|-------------|-----------------|  
+|<xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>|前に、と変更が加えられた後は、コンポーネントのプロパティとオブジェクトの値を保存します。|  
+|<xref:System.ComponentModel.Design.IComponentChangeService>|コンポーネントに加えられた変更を元に戻すエンジンに通知します。|  
+|<xref:System.ComponentModel.Design.IDesignerHost>|トランザクションを追跡するために使用します。|  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.Design.UndoEngine>クラスに必要な<xref:System.ComponentModel.Design.Serialization.ComponentSerializationService>と<xref:System.ComponentModel.Design.IComponentChangeService>はデザイン時にのみ使用します。  
+  
+ 元に戻すエンジンは、トランザクションを追跡し、トランザクションを含む単一の取り消し単位を作成します。 その結果、元に戻すエンジンは、取り消し可能なアクションの期間にわたってコントロールを持ちます。 また、トランザクションの名前を指定できます、ため取り消し可能なアクションは、現在のトランザクションから名前を継承します。 使用できるトランザクションがないと、変更が報告された、元に戻すエンジンは、元に戻す名 (たとえば、「プロパティの変更 'Text'」) の変更の種類に基づいて作成します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected UndoEngine (IServiceProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.IServiceProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.#ctor(System.IServiceProvider)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="provider" Type="System.IServiceProvider" />
+      </Parameters>
+      <Docs>
+        <param name="provider">親サービス プロバイダー。</param>
+        <summary><see cref="T:System.ComponentModel.Design.UndoEngine" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.UndoEngine>からいくつかのサービスが必要です、`provider`パラメーターを有効にします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="provider" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">必要なサービスが見つかりません。 参照してください<see cref="T:System.ComponentModel.Design.UndoEngine" />必要なサービスです。 このサービスを削除した場合は、代わりを指定することを確認します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddUndoUnit">
+      <MemberSignature Language="C#" Value="protected abstract void AddUndoUnit (System.ComponentModel.Design.UndoEngine.UndoUnit unit);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddUndoUnit(class System.ComponentModel.Design.UndoEngine/UndoUnit unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.AddUndoUnit(System.ComponentModel.Design.UndoEngine.UndoUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.ComponentModel.Design.UndoEngine+UndoUnit" />
+      </Parameters>
+      <Docs>
+        <param name="unit">Undo ユニットを追加するには</param>
+        <summary>追加、<see cref="T:System.ComponentModel.Design.UndoEngine.UndoUnit" />元に戻すスタックにします。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成、`unit`パラメーターを呼び出して、<xref:System.ComponentModel.Design.UndoEngine.CreateUndoUnit%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateUndoUnit">
+      <MemberSignature Language="C#" Value="protected virtual System.ComponentModel.Design.UndoEngine.UndoUnit CreateUndoUnit (string name, bool primary);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.ComponentModel.Design.UndoEngine/UndoUnit CreateUndoUnit(string name, bool primary) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.CreateUndoUnit(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.Design.UndoEngine+UndoUnit</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="primary" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="name">作成する単位の名前。</param>
+        <param name="primary">
+          <see langword="true" />一連の入れ子になったユニットです。 最初に作成するには<see langword="false" />後続の入れ子になった単位を作成します。</param>
+        <summary>新しい <see cref="T:System.ComponentModel.Design.UndoEngine.UndoUnit" /> を作成します。</summary>
+        <returns>新しい<see cref="T:System.ComponentModel.Design.UndoEngine.UndoUnit" />指定した名前です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の実装、<xref:System.ComponentModel.Design.UndoEngine.CreateUndoUnit%2A>メソッドは単に新しい返します<xref:System.ComponentModel.Design.UndoEngine.UndoUnit>です。  
+  
+ 既定では、<xref:System.ComponentModel.Design.UndoEngine>で何も行われません、`primary`パラメーターは、元に戻すなど、COM に関係するの実装によって`Microsoft.VisualStudio.OLE.Interop.IOleParentUndoUnit`デザイン パターン、一次単位とその子の違いを確認する必要があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DiscardUndoUnit">
+      <MemberSignature Language="C#" Value="protected virtual void DiscardUndoUnit (System.ComponentModel.Design.UndoEngine.UndoUnit unit);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void DiscardUndoUnit(class System.ComponentModel.Design.UndoEngine/UndoUnit unit) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.DiscardUndoUnit(System.ComponentModel.Design.UndoEngine.UndoUnit)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="unit" Type="System.ComponentModel.Design.UndoEngine+UndoUnit" />
+      </Parameters>
+      <Docs>
+        <param name="unit">破棄する単位。</param>
+        <summary>破棄、<see cref="T:System.ComponentModel.Design.UndoEngine.UndoUnit" />です。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 前に、<xref:System.ComponentModel.Design.UndoEngine.DiscardUndoUnit%2A>メソッドが呼び出されると、元に戻す単位が閉じられ、元に戻します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>
+          <see cref="T:System.ComponentModel.Design.UndoEngine" /> によって使用されているすべてのリソースを解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="protected virtual void Dispose (bool disposing);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void Dispose(bool disposing) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.Dispose(System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="disposing" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="disposing">
+          マネージ リソースとアンマネージ リソースの両方を解放する場合は <see langword="true" />。アンマネージ リソースだけを解放する場合は <see langword="false" />。</param>
+        <summary><see cref="T:System.ComponentModel.Design.UndoEngine" /> によって使用されているアンマネージ リソースを解放し、オプションでマネージ リソースも解放します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Enabled">
+      <MemberSignature Language="C#" Value="public bool Enabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool Enabled" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.UndoEngine.Enabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>有効または無効にします<see cref="T:System.ComponentModel.Design.UndoEngine" />です。</summary>
+        <value>
+          <see cref="T:System.ComponentModel.Design.UndoEngine" /> が有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRequiredService">
+      <MemberSignature Language="C#" Value="protected object GetRequiredService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetRequiredService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.GetRequiredService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの型。</param>
+        <summary>要求したサービスを取得します。</summary>
+        <returns>要求したサービス場合が見つかりました。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <paramref name="serviceType" />必要ですが見つかりません。 このサービスを削除した場合は、代わりを指定することを確認します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetService">
+      <MemberSignature Language="C#" Value="protected object GetService (Type serviceType);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig instance object GetService(class System.Type serviceType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.GetService(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">取得するサービスの型。</param>
+        <summary>要求したサービスを取得します。</summary>
+        <returns>要求したサービスまたは<see langword="null" />要求されたサービスが見つからない場合。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="serviceType" /> は <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUndoing">
+      <MemberSignature Language="C#" Value="protected virtual void OnUndoing (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUndoing(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.OnUndoing(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.UndoEngine.Undoing" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnUndone">
+      <MemberSignature Language="C#" Value="protected virtual void OnUndone (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void OnUndone(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Design.UndoEngine.OnUndone(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベント データを格納している <see cref="T:System.EventArgs" />。</param>
+        <summary><see cref="E:System.ComponentModel.Design.UndoEngine.Undone" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undoing">
+      <MemberSignature Language="C#" Value="public event EventHandler Undoing;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Undoing" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.UndoEngine.Undoing" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す操作が実行される直前に発生します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UndoInProgress">
+      <MemberSignature Language="C#" Value="public bool UndoInProgress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool UndoInProgress" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Design.UndoEngine.UndoInProgress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す操作が行われていることを示します。</summary>
+        <value>
+          <see langword="true" />場合は、元に戻す操作が進行中です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Undone">
+      <MemberSignature Language="C#" Value="public event EventHandler Undone;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler Undone" />
+      <MemberSignature Language="DocId" Value="E:System.ComponentModel.Design.UndoEngine.Undone" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>元に戻す操作が実行された直後後に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.Design.UndoEngine.Undone>イベントが常に発生する場合でも、例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

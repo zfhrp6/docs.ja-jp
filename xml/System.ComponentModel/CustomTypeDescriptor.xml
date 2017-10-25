@@ -1,0 +1,604 @@
+<Type Name="CustomTypeDescriptor" FullName="System.ComponentModel.CustomTypeDescriptor">
+  <TypeSignature Language="C#" Value="public abstract class CustomTypeDescriptor : System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit CustomTypeDescriptor extends System.Object implements class System.ComponentModel.ICustomTypeDescriptor" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.CustomTypeDescriptor" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ComponentModel.ICustomTypeDescriptor</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>単純な既定の実装を提供、<see cref="T:System.ComponentModel.ICustomTypeDescriptor" />インターフェイスです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 同様に<xref:System.ComponentModel.TypeDescriptionProvider>、<xref:System.ComponentModel.CustomTypeDescriptor>型の親オブジェクトに依存している<xref:System.ComponentModel.ICustomTypeDescriptor>構築時に指定します。 これによりから派生したクラス<xref:System.ComponentModel.CustomTypeDescriptor>選択的にメソッドをオーバーライドします。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CustomTypeDescriptor ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.CustomTypeDescriptor" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターは、他の呼び出しに相当<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A?displayProperty=nameWithType>はパラメーターを持つコンス トラクター`null`です。  
+  
+ すべてのメソッド、<xref:System.ComponentModel.CustomTypeDescriptor>これで作成されたコンス トラクターは既定値を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected CustomTypeDescriptor (System.ComponentModel.ICustomTypeDescriptor parent);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor(class System.ComponentModel.ICustomTypeDescriptor parent) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.#ctor(System.ComponentModel.ICustomTypeDescriptor)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="parent" Type="System.ComponentModel.ICustomTypeDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="parent">親のカスタム型記述子。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.ComponentModel.CustomTypeDescriptor" />クラス、親のカスタム型記述子を使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`parent`パラメーターは`null`すべて、<xref:System.ComponentModel.CustomTypeDescriptor>メソッドは既定値を返します。 それ以外の場合、すべて<xref:System.ComponentModel.CustomTypeDescriptor>メソッドのメソッドに代行させるは`parent`します。  
+  
+ ほとんど<xref:System.ComponentModel.CustomTypeDescriptor>メソッドが返す`null`既定です。 次の表は、戻り値を返さないメソッドの`null`既定です。  
+  
+|メソッド|既定の戻り値|  
+|------------|--------------------------|  
+|<xref:System.ComponentModel.CustomTypeDescriptor.GetAttributes%2A>|空の属性コレクション (<xref:System.ComponentModel.AttributeCollection.Empty?displayProperty=nameWithType>)。|  
+|<xref:System.ComponentModel.CustomTypeDescriptor.GetConverter%2A>|既定値<xref:System.ComponentModel.TypeConverter>インスタンス。|  
+|<xref:System.ComponentModel.CustomTypeDescriptor.GetEvents%2A>|空のイベント コレクション (<xref:System.ComponentModel.EventDescriptorCollection.Empty?displayProperty=nameWithType>)。|  
+|<xref:System.ComponentModel.CustomTypeDescriptor.GetProperties%2A>|空のプロパティ コレクション (<xref:System.ComponentModel.PropertyDescriptorCollection.Empty?displayProperty=nameWithType>)。|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAttributes">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.AttributeCollection GetAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.AttributeCollection GetAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表される型のカスタム属性のコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.AttributeCollection" />型の属性を含むです。 既定値は、<see cref="F:System.ComponentModel.AttributeCollection.Empty" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetAttributes%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetClassName">
+      <MemberSignature Language="C#" Value="public virtual string GetClassName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetClassName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetClassName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるクラスの完全修飾名を返します。</summary>
+        <returns>この型記述子によって記述される型の完全修飾クラス名を格納している <see cref="T:System.String" />。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  <xref:System.ComponentModel.CustomTypeDescriptor.GetClassName%2A>静的メソッドではないあり、したがって、スレッド セーフであることには保証されません。  
+  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetClassName%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetComponentName">
+      <MemberSignature Language="C#" Value="public virtual string GetComponentName ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance string GetComponentName() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetComponentName" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるクラスの名前を返します。</summary>
+        <returns>A<see cref="T:System.String" />この型記述子を記述するコンポーネントのインスタンスの名前を含むです。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetComponentName%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetConverter">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.TypeConverter GetConverter ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.TypeConverter GetConverter() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetConverter" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.TypeConverter</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表される型の型コンバーターを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.TypeConverter" />この型記述子によって表される型のです。 既定値は、新しく作成された<see cref="T:System.ComponentModel.TypeConverter" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetConverter%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultEvent">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptor GetDefaultEvent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptor GetDefaultEvent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetDefaultEvent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトの既定のイベントのイベント記述子を返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptor" />のこの型記述子によって表されるオブジェクトの既定のイベントです。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetDefaultEvent%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDefaultProperty">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptor GetDefaultProperty ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptor GetDefaultProperty() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetDefaultProperty" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptor</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトの既定のプロパティのプロパティ記述子を返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptor" />この型記述子によって表されるオブジェクトの既定のプロパティです。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetDefaultProperty%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditor">
+      <MemberSignature Language="C#" Value="public virtual object GetEditor (Type editorBaseType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetEditor(class System.Type editorBaseType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetEditor(System.Type)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="editorBaseType" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="editorBaseType">取得するエディターの基本データ型。</param>
+        <summary>この型記述子によって表されるクラスに関連付けるには、指定した型のエディターを返します。</summary>
+        <returns>この型記述子によって表されるクラスに関連付けるには、指定された型のエディターです。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetEditor%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetEvents">
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトのイベント記述子のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.CustomTypeDescriptor.GetEvents%2A>メソッドは、この型記述子を表すオブジェクトのイベント記述子のコレクションを返します。 返されるコレクションをフィルター処理するには、省略可能な属性の配列を指定することがあります。 かどうかは親が指定されていない、このメソッドを返します<xref:System.ComponentModel.EventDescriptorCollection.Empty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection GetEvents ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection GetEvents() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetEvents" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトのイベント記述子のコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />この型記述子によって表されるオブジェクトのイベント記述子を格納します。 既定値は、<see cref="F:System.ComponentModel.EventDescriptorCollection.Empty" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetEvents%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEvents">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.EventDescriptorCollection GetEvents (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.EventDescriptorCollection GetEvents(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetEvents(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.EventDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">フィルターとして使用する属性の配列。 これは、<see langword="null" />です。</param>
+        <summary>この型記述子によって表されるオブジェクトのイベント記述子のフィルター選択されたコレクションを返します。</summary>
+        <returns><see cref="T:System.ComponentModel.EventDescriptorCollection" />この型記述子によって表されるオブジェクトのイベント記述子を格納します。 既定値は、<see cref="F:System.ComponentModel.EventDescriptorCollection.Empty" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`attributes`を返されるコレクションをフィルター処理するパラメーターです。  
+  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetEvents%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <MemberGroup MemberName="GetProperties">
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトのプロパティ記述子のコレクションを返します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ComponentModel.CustomTypeDescriptor.GetProperties%2A>メソッドは、この型記述子を表すオブジェクトのプロパティ記述子のコレクションを返します。 返されるコレクションをフィルター処理するには、省略可能な属性の配列を指定することがあります。 かどうかは親が指定されていない、このメソッドを返します<xref:System.ComponentModel.PropertyDescriptorCollection.Empty>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </MemberGroup>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetProperties" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>この型記述子によって表されるオブジェクトのプロパティ記述子のコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />この型記述子によって表されるオブジェクトのプロパティ記述子を格納します。 既定値は、<see cref="F:System.ComponentModel.PropertyDescriptorCollection.Empty" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetProperties%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperties">
+      <MemberSignature Language="C#" Value="public virtual System.ComponentModel.PropertyDescriptorCollection GetProperties (Attribute[] attributes);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ComponentModel.PropertyDescriptorCollection GetProperties(class System.Attribute[] attributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetProperties(System.Attribute[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ComponentModel.PropertyDescriptorCollection</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="attributes" Type="System.Attribute[]" />
+      </Parameters>
+      <Docs>
+        <param name="attributes">フィルターとして使用する属性の配列。 これは、<see langword="null" />です。</param>
+        <summary>この型記述子によって表されるオブジェクトのプロパティ記述子のフィルター選択されたコレクションを返します。</summary>
+        <returns>A<see cref="T:System.ComponentModel.PropertyDescriptorCollection" />この型記述子によって表されるオブジェクトのプロパティ記述子を格納します。 既定値は、<see cref="F:System.ComponentModel.PropertyDescriptorCollection.Empty" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用することができます、`attributes`を返されるコレクションをフィルター処理するパラメーターです。 ルールをフィルター処理には、次を参照してください。<xref:System.ComponentModel.TypeDescriptor.GetProperties%2A>です。  
+  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetProperties%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPropertyOwner">
+      <MemberSignature Language="C#" Value="public virtual object GetPropertyOwner (System.ComponentModel.PropertyDescriptor pd);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetPropertyOwner(class System.ComponentModel.PropertyDescriptor pd) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.CustomTypeDescriptor.GetPropertyOwner(System.ComponentModel.PropertyDescriptor)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.TypeConverter</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="pd" Type="System.ComponentModel.PropertyDescriptor" />
+      </Parameters>
+      <Docs>
+        <param name="pd">所有するオブジェクトを取得する対象のプロパティ記述子。</param>
+        <summary>指定したプロパティ記述子によって記述されたプロパティを含むオブジェクトを返します。</summary>
+        <returns><see cref="T:System.Object" />型記述子によって指定された特定のプロパティを所有しています。 既定値は、<see langword="null" /> です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 親のカスタム型記述子が渡された場合、<xref:System.ComponentModel.CustomTypeDescriptor.%23ctor%2A>コンス トラクター、<xref:System.ComponentModel.CustomTypeDescriptor.GetPropertyOwner%2A>メソッドは、親の対応するメソッドを呼び出します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,205 @@
+<Type Name="SecurityState" FullName="System.Security.SecurityState">
+  <TypeSignature Language="C#" Value="public abstract class SecurityState" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit SecurityState extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Security.SecurityState" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>操作のセキュリティの状態を要求するための基本クラスを提供、<see cref="T:System.AppDomainManager" />オブジェクト。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 実行するセキュリティ上重要な動作を指定するプロパティを含むクラスを提供するには、このクラスから継承する必要があります。 <xref:System.Security.SecurityState>に派生クラスからインスタンス化されるオブジェクトが渡される、<xref:System.AppDomainManager.CheckSecuritySettings%2A?displayProperty=nameWithType>ホストは、そのアクションを実行するかどうかを調べます。 既定の実装、<xref:System.AppDomainManager.CheckSecuritySettings%2A>メソッドは常に返します`false`です。  許可されている操作を検出するために、メソッドをオーバーライドする必要があります。  
+  
+ たとえば、ライブラリ コードで Web カメラにアクセスする場合は作成する、`WebcamSecurityState`オブジェクトと呼び出し、<xref:System.Security.SecurityState.EnsureState%2A>メソッドを次の例で示すように、ホストが Web カメラのアクセスを許可するかどうかを判断します。  (のコードを検索する`WebcamSecurityState`「例」セクションでします。)  
+  
+```  
+WebcamSecurityState securityState = new WebcamSecurityState("Safe access to Webcam", WebcamSecurityOptions.SafeAccess);  
+try  
+{  
+   securityState.EnsureState();  
+   // Allocate memory.  
+   }  
+catch (ApplicationException e)  
+{  
+    // Handle any exception that is thrown.  
+    System.Diagnostics.Debug.WriteLine(e.Message);  
+}  
+```  
+  
+ 呼び出しを処理する、<xref:System.AppDomainManager>を認識できる必要があります`WebcamSecurityState`のオーバーライドによって、<xref:System.AppDomainManager.CheckSecuritySettings%2A?displayProperty=nameWithType>メソッドを次の例で示すようにします。  
+  
+```  
+[SecurityCritical]  
+public override bool CheckSecuritySettings(System.Security.SecurityState securityState)  
+{  
+   switch (securityState.ToString())  
+   {  
+      case "WebcamSecurityState":  
+      {  
+          if ((securityState as WebcamSecurityState).Options == WebcamSecurityOptions.SafeAccess)  
+              return PromptUser((securityState as WebcamSecurityState).Description);  
+           return false;  
+      }  
+   }  
+      return false;  
+}  
+private bool PromptUser(string text)  
+{  
+   // Replace the OpenFileDialog with a custom user prompt.  
+   OpenFileDialog o = new OpenFileDialog();  
+   o.Title = text;  
+   if (o.ShowDialog() == DialogResult.OK)  
+      return true;  
+   else  
+      return false;  
+}  
+  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、オーバーライドする方法を示します、<xref:System.Security.SecurityState>クラスです。  
+  
+```  
+[SecurityCritical]  
+public enum WebcamSecurityOptions  
+    {  
+        SafeAccess,  
+        FullAccess  
+    }  
+[SecurityCritical]  
+public class WebcamSecurityState : SecurityState  
+{  
+    public WebcamSecurityState(string description, WebcamSecurityOptions options)  
+    {  
+        Options = options;  
+        Description = description;  
+    }  
+    public WebcamSecurityOptions Options { get; set; }  
+    public string Description { get; set; }  
+    public override void EnsureState()  
+    {  
+       if (!IsStateAvailable())  
+           throw new ApplicationException("WebcamSecurityState not available");  
+    }  
+ }  
+  
+```  
+  
+ ]]></format>
+    </remarks>
+    <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このクラスは、部分的に信頼されているまたは透過的なコードでは使用できません。</permission>
+    <permission cref="F:System.Security.Permissions.SecurityAction.InheritanceDemand">継承時の完全な信頼。 部分信頼コードでこのクラスは継承できません。</permission>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected SecurityState ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityState.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.SecurityState" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+    <Member MemberName="EnsureState">
+      <MemberSignature Language="C#" Value="public abstract void EnsureState ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void EnsureState() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityState.EnsureState" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>派生クラスでオーバーライドされると、確実で表される状態<see cref="T:System.Security.SecurityState" />は、ホストで使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの実装は、次の例のようにする必要があります。  
+  
+```  
+public override void EnsureState()  
+{  
+    if (!IsStateAvailable())  
+          throw new ApplicationException("WebcamSecurityState not available");  
+}  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsStateAvailable">
+      <MemberSignature Language="C#" Value="public bool IsStateAvailable ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsStateAvailable() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.SecurityState.IsStateAvailable" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Permissions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>示す値を取得するかどうかのこの実装の状態、<see cref="T:System.Security.SecurityState" />クラスは、現在のホストで使用できます。</summary>
+        <returns>
+          <see langword="true" />状態がある場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.SecurityState.IsStateAvailable%2A>呼び出し、<xref:System.AppDomainManager.CheckSecuritySettings%2A?displayProperty=nameWithType>メソッドをこのクラスで表される状態は、ホストで使用するかどうかを判断します。  
+  
+ 参照してください、<xref:System.Security.SecurityState>クラスの実装例については、<xref:System.AppDomainManager.CheckSecuritySettings%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.SecurityCriticalAttribute">直前の呼び出し元に対する完全な信頼が必要です。 このメンバーは、部分的に信頼されているまたは透過的なコードで使用することはできません。</permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

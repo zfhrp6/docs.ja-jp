@@ -1,0 +1,124 @@
+<Type Name="TaskExtensions" FullName="System.Threading.Tasks.TaskExtensions">
+  <TypeSignature Language="C#" Value="public static class TaskExtensions" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit TaskExtensions extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Threading.Tasks.TaskExtensions" />
+  <AssemblyInfo>
+    <AssemblyName>System.Threading.Tasks</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>特定の種類を操作するための静的 (Visual Basic では Shared) メソッドのセットを提供の<see cref="T:System.Threading.Tasks.Task" />インスタンス。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Unwrap">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task Unwrap (this System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&gt; task);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task Unwrap(class System.Threading.Tasks.Task`1&lt;class System.Threading.Tasks.Task&gt; task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskExtensions.Unwrap(System.Threading.Tasks.Task{System.Threading.Tasks.Task})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <param name="task"><see langword="Task&lt;Task&gt;" /> (C#) または<see langword="Task (Of Task)" />ラップを解除する (Visual Basic)。</param>
+        <summary>プロキシを作成<see cref="T:System.Threading.Tasks.Task" />の非同期操作を表す、<see cref="M:System.Threading.Tasks.TaskScheduler.TryExecuteTaskInline(System.Threading.Tasks.Task,System.Boolean)" />です。</summary>
+        <returns>指定された非同期操作を表すタスク<see langword="System.Threading.Tasks.Task(Of Task)" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ タスクを返すことができると便利です、 <xref:System.Threading.Tasks.Task%601>、内側のタスクが、外側の一部として実行された作業を表す、<xref:System.Threading.Tasks.Task%601>です。 ただしになるので、 `Task<Task>` (c#) または`Task (Of Task)`(Visual Basic)、慎重にで処理しない場合が発生することが予期しない動作します。 Unwrap プロキシをこのようなタスクのすべての非同期操作を表すタスクを作成することでこの問題を解決します。  
+  
+   
+  
+## Examples  
+ 次の例では、タスクのラップを解除する方法を示します。  
+  
+ [!code-csharp[System.Threading.Tasks.TaskExtensions#01](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.threading.tasks.taskextensions/cs/unwrap.cs#01)]
+ [!code-vb[System.Threading.Tasks.TaskExtensions#01](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.threading.tasks.taskextensions/vb/unwrap.vb#01)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">この例外がスローされる場合は、<paramref name="task" />引数が null です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Unwrap&lt;TResult&gt;">
+      <MemberSignature Language="C#" Value="public static System.Threading.Tasks.Task&lt;TResult&gt; Unwrap&lt;TResult&gt; (this System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt; task);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Threading.Tasks.Task`1&lt;!!TResult&gt; Unwrap&lt;TResult&gt;(class System.Threading.Tasks.Task`1&lt;class System.Threading.Tasks.Task`1&lt;!!TResult&gt;&gt; task) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Threading.Tasks.TaskExtensions.Unwrap``1(System.Threading.Tasks.Task{System.Threading.Tasks.Task{``0}})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Threading.Tasks</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Threading.Tasks.Task&lt;TResult&gt;</ReturnType>
+      </ReturnValue>
+      <TypeParameters>
+        <TypeParameter Name="TResult" />
+      </TypeParameters>
+      <Parameters>
+        <Parameter Name="task" Type="System.Threading.Tasks.Task&lt;System.Threading.Tasks.Task&lt;TResult&gt;&gt;" RefType="this" />
+      </Parameters>
+      <Docs>
+        <typeparam name="TResult">タスクの結果の型。</typeparam>
+        <param name="task"><see langword="Task&lt;Task&lt;T&gt;&gt;" /> (C#) または<see langword="Task (Of Task(Of T))" />ラップを解除する (Visual Basic)。</param>
+        <summary>プロキシを作成<see cref="T:System.Threading.Tasks.Task" />の非同期操作を表す、 <see langword="Task&lt;Task&lt;T&gt;&gt;" /> (c#) または<see langword="Task (Of Task(Of T))" />(Visual Basic の場合)。</summary>
+        <returns>A <see cref="T:System.Threading.Tasks.Task" /> 、指定された非同期操作を表す<see langword="Task&lt;Task&lt;T&gt;&gt;" />(c#) または<see langword="Task (Of Task(Of T))" />(Visual Basic の場合)。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返すことができると便利です、<xref:System.Threading.Tasks.Task>から、<xref:System.Threading.Tasks.Task>ここで、内部<xref:System.Threading.Tasks.Task>、外側の一部として実行された作業を表す<xref:System.Threading.Tasks.Task>です。 ただしになるので、 `Task<Task<T>>` (c#) または`Task (Of Task(Of T))`(Visual Basic)、慎重にで処理しない場合が発生することが予期しない動作します。 Unwrap プロキシを作成することでこの問題を解決<xref:System.Threading.Tasks.Task%601>などのすべての非同期操作を表す、 `Task<Task<T>>` (c#) または`Task (Of Task(Of T))`(Visual Basic の場合)。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">この例外がスローされる場合は、<paramref name="task" />引数が null です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

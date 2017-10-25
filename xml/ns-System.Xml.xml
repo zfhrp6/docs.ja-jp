@@ -1,0 +1,244 @@
+<Namespace Name="System.Xml">
+  <Docs>
+    <summary><see cref="N:System.Xml" /> 名前空間は、XML を処理するための標準ベースのサポートを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="std"></a>   
+## <a name="supported-standards"></a>サポートされている標準  
+ <xref:System.Xml>名前空間は、これらの標準をサポートしています。  
+  
+-   XML 1.0 では、DTD のサポートを含む: [http://www.w3.org/TR/2006/REC-xml-20060816/](http://www.w3.org/TR/2006/REC-xml-20060816/)  
+  
+-   XML 名前空間両方ストリーム レベルと DOM: [http://www.w3.org/TR/REC-xml-names/](http://www.w3.org/TR/REC-xml-names/)  
+  
+-   XML スキーマ: [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema)  
+  
+-   XPath 式: [http://www.w3.org/TR/xpath](http://www.w3.org/TR/xpath)  
+  
+-   XSLT 変換: [http://www.w3.org/TR/xslt](http://www.w3.org/TR/xslt)  
+  
+-   DOM Level 1 Core: [http://www.w3.org/TR/REC-DOM-Level-1/](http://www.w3.org/TR/REC-DOM-Level-1/)  
+  
+-   DOM Level 2 Core: [http://www.w3.org/TR/DOM-Level-2/](http://www.w3.org/TR/DOM-Level-2/)  
+  
+ セクションを参照して[と W3C 仕様の相違](#diff)W3C 勧告の XML クラスが異なる 2 つのケースにします。  
+  
+<a name="related"></a>   
+## <a name="related-namespaces"></a>関連する名前空間  
+ .NET Framework には、XML 関連の操作用の他の名前空間も用意されています。 一覧、説明、およびリンクの場合は、次を参照してください。、 [System.Xml 名前空間](http://msdn.microsoft.com/library/gg145036.aspx)web ページ。  
+  
+<a name="async"></a>   
+## <a name="processing-xml-asynchronously"></a>XML を非同期的に処理  
+ <xref:System.Xml.XmlReader?displayProperty=nameWithType>と<xref:System.Xml.XmlWriter?displayProperty=nameWithType>クラスに基づく非同期メソッドの数に含まれる、します。 これらのメソッドは、文字列の名前の末尾に"Async"で識別できます。 これらのメソッドに、同期コードに似た非同期コードを記述して、既存の同期コードを簡単に非同期コードに移行することができます。  
+  
+-   非同期のメソッドを使用して、アプリではかなりのネットワーク ストリームの待機時間が存在します。 メモリ ストリームまたはローカル ファイル ストリームの読み取り/書き込み操作の非同期 Api を使用しないでください。 入力ストリーム<xref:System.Xml.XmlTextReader>、および<xref:System.Xml.XmlTextWriter>同様の非同期操作をサポートする必要があります。 それ以外の場合、スレッドは I/O 操作がブロックされます。  
+  
+-   お勧めしません、同期および非同期の関数呼び出しを混在させるを使用する忘れた可能性がありますので、`await`キーワードまたは非同期のいずれかが必要な同期 API を使用します。  
+  
+-   設定しないでください、<xref:System.Xml.XmlReaderSettings.Async%2A?displayProperty=nameWithType>または<xref:System.Xml.XmlWriterSettings.Async%2A?displayProperty=nameWithType>フラグを`true`非同期メソッドを使用しない場合。  
+  
+-   指定するを忘れた場合、`await`キーワード、非同期メソッドを呼び出すと、結果は非確定的な: 予期した結果または例外が表示される可能性があります。  
+  
+-   ときに、<xref:System.Xml.XmlReader>オブジェクトが大きなテキスト ノードを読み取って、部分的なテキストの値のみをキャッシュし、取得するため、テキスト ノードを返す可能性があります、<xref:System.Xml.XmlReader.Value%2A?displayProperty=nameWithType>プロパティは、I/O 操作によってブロックされる可能性があります。 使用して、<xref:System.Xml.XmlReader.GetValueAsync%2A>非同期モードで、テキスト値を取得または使用するメソッド、<xref:System.Xml.XmlReader.ReadValueChunkAsync%2A>チャンク単位で大規模なテキストを読み取るメソッドをブロックします。  
+  
+-   使用する場合、<xref:System.Xml.XmlWriter>オブジェクトを呼び出し、<xref:System.Xml.XmlWriter.FlushAsync%2A>メソッドを呼び出す前に<xref:System.Xml.XmlWriter.Close%2A>I/O 操作がブロックされないようにします。  
+  
+<a name="diff"></a>   
+## <a name="differences-from-the-w3c-specs"></a>W3C 仕様の違い  
+ モデル グループのスキーマ コンポーネントに制約を含む 2 つの場合、<xref:System.Xml>名前空間は、W3C の推奨事項とは異なります。  
+  
+ **要素の宣言での一貫性:**  
+  
+ 場合によっては、代替グループを使用している場合に、<xref:System.Xml>実装には、「スキーマ コンポーネントの制約:: 要素宣言一貫性のある、」に記載されているを満たしていません、 [Group Schema Components」モデルに対する制約](http://go.microsoft.com/fwlink/?LinkId=137029)W3C の仕様のセクションです。  
+  
+ たとえば、次のスキーマには、同じ名前を持つ要素が含まれていますが、同じコンテンツ モデルとの置換グループに異なる型を使用します。 これは通常、エラーになりますが、<xref:System.Xml> では、このスキーマがエラーなしでコンパイルおよび検証されます。  
+  
+```  
+<?xml version="1.0" encoding="utf-8" ?>   
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">  
+  
+   <xs:element name="e1" type="t1"/>  
+   <xs:complexType name="t1"/>  
+  
+   <xs:element name="e2" type="t2" substitutionGroup="e1"/>  
+      <xs:complexType name="t2">  
+         <xs:complexContent>  
+            <xs:extension base="t1">  
+         </xs:extension>  
+      </xs:complexContent>  
+   </xs:complexType>  
+  
+   <xs:complexType name="t3">  
+      <xs:sequence>  
+         <xs:element ref="e1"/>  
+         <xs:element name="e2" type="xs:int"/>  
+      </xs:sequence>  
+   </xs:complexType>  
+</xs:schema>  
+```  
+  
+ このスキーマでは、型 `t3` に要素のシーケンスが含まれます。 置換が実行されるため、シーケンスの要素 `e1` の参照は、`e1` 型の要素 `t1` または `e2` 型の要素 `t2` になる場合があります。 後者の場合は 2 つのシーケンスになる`e2`要素、型のいずれかが`t2`され、他の型の`xs:int`します。  
+  
+ **一意のパーティクル属性:**  
+  
+ 次の条件下で、<xref:System.Xml>実装は、"スキーマ コンポーネントの制約:: 一意のパーティクル属性、」に記載されているを満たさない、 [Group Schema Components」モデルに対する制約](http://go.microsoft.com/fwlink/?LinkId=137029)W3C の仕様のセクションです。  
+  
+-   グループ内の要素の 1 つが、別の要素を参照している。  
+  
+-   参照されている要素が代替グループの head 要素である。  
+  
+-   代替グループには、グループ内の要素のいずれかと同じ名前を持つ要素が含まれています。  
+  
+-   代替グループの要素がない固定された、代替グループの head 要素と同じ名前を持つ要素を参照する要素の基数 (minOccurs < maxOccurs)。  
+  
+-   代替グループを参照する要素の定義には、同じ名前の substitution グループ要素を持つ要素の定義が前に付きます。  
+  
+ たとえば、次のスキーマでは、コンテンツ モデルがあいまいであるためにコンパイル エラーが発生するはずですが、<xref:System.Xml> では、このスキーマがエラーなしでコンパイルされます。  
+  
+```  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">  
+  
+  <xs:element name="e1" type="xs:int"/>  
+  <xs:element name="e2" type="xs:int" substitutionGroup="e1"/>  
+  
+  <xs:complexType name="t3">  
+    <xs:sequence>  
+      <xs:element ref="e1" minOccurs="0" maxOccurs="1"/>  
+      <xs:element name="e2" type="xs:int" minOccurs="0" maxOccurs="1"/>  
+    </xs:sequence>  
+  </xs:complexType>  
+  
+  <xs:element name="e3" type="t3"/>  
+</xs:schema>  
+```  
+  
+ 上記のスキーマに対して次の XML を検証しようとすると場合、検証は、次のメッセージで失敗します。"要素 'e3' に無効な子要素 'e2'。"および<xref:System.Xml.Schema.XmlSchemaValidationException>例外がスローされます。  
+  
+```  
+<e3>  
+  <e2>1</e2>  
+  <e2>2</e2>  
+</e3>  
+```  
+  
+ この問題を回避するには、XSD ドキュメント内の要素の宣言を交換することができます。 例:  
+  
+```  
+<xs:sequence>  
+  <xs:element ref="e1" minOccurs="0" maxOccurs="1"/>  
+  <xs:element name="e2" type="xs:int" minOccurs="0" maxOccurs="1"/>  
+</xs:sequence>  
+```  
+  
+ これを次のようにします。  
+  
+```  
+<xs:sequence>  
+  <xs:element name="e2" type="xs:int" minOccurs="0" maxOccurs="1"/>  
+  <xs:element ref="e1" minOccurs="0" maxOccurs="1"/>  
+</xs:sequence>  
+```  
+  
+ 同じような問題の別の例を次に示します。  
+  
+```  
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">  
+   <xs:element name="e1" type="xs:string"/>  
+   <xs:element name="e2" type="xs:string" substitutionGroup="e1"/>  
+  
+   <xs:complexType name="t3">  
+      <xs:sequence>  
+         <xs:element ref="e1" minOccurs="0" maxOccurs="1"/>  
+         <xs:element name="e2" type="xs:int" minOccurs="0" maxOccurs="1"/>  
+      </xs:sequence>  
+   </xs:complexType>  
+   <xs:element name="e3" type="t3"/>  
+</xs:schema>  
+```  
+  
+ 上記のスキーマに対して次の XML を検証しようとすると、検証は、次の例外で失敗します"未処理の例外: System.Xml.Schema.XmlSchemaValidationException: 'e2' el 要素は無効です - 値 'abc' が正しくないデータ型 ' http://www.w3.org/2001/XMLSchema:int' - 'abc' 文字列が有効な Int32 値ではありません。"。\  
+  
+```  
+<e3><e2>abc</e2></e3>  
+```  
+  
+<a name="security"></a>   
+## <a name="security-considerations"></a>セキュリティの考慮事項  
+ 型とメンバー、<xref:System.Xml>名前空間に依存します。 次のセクションでは、XML テクノロジに固有のセキュリティの問題について説明します。 詳細については、特定のクラスとメンバーが示されているを参照してくださいを参照してください、 [XML のデベロッパー センター](http://go.microsoft.com/fwlink/?linkid=42458)の技術情報については、ダウンロード、ニュースグループ、および XML 開発者向けの他のリソース。  
+  
+ なおを使用するときに、<xref:System.Xml>型およびメンバーを XML には、潜在的なプライバシーに影響のあるデータが含まれている場合、エンドユーザーのプライバシーを尊重するようにアプリを実装する必要があります。  
+  
+ **外部アクセス**  
+  
+ いくつかの XML テクノロジには、処理中に他のドキュメントを取得する機能があります。 たとえば、解析中のドキュメントにドキュメント型定義 (DTD) が存在する可能性があります。 解析中のドキュメントによって参照されている外部ドキュメントにも、DTD が存在する可能性があります。 XML スキーマ定義言語 (XSD) および XSLT テクノロジにも、他のファイルから情報を取り込む機能があります。 これらの外部リソースには、いくつかのセキュリティに関する注意事項を表示できます。 たとえば、アプリ信頼済みのサイトからのみファイルを取得して、ファイルが取得されたと悪意のあるデータが含まれていないことを確認します。  
+  
+ <xref:System.Xml.XmlUrlResolver>クラスは、XML ドキュメントを読み込むとエンティティ、Dtd またはスキーマなどの外部リソースを解決するには、インポートまたはインクルード ディレクティブを使用します。  
+  
+ このクラスをオーバーライドしを指定することができます、<xref:System.Xml.XmlResolver>を使用するオブジェクト。 制御対象外の (信頼できない) リソースを開く場合には、<xref:System.Xml.XmlSecureResolver> クラスを使用します。 <xref:System.Xml.XmlSecureResolver> は <xref:System.Xml.XmlResolver> をラップしたもので、元の <xref:System.Xml.XmlResolver> がアクセスできるリソースを制限できます。  
+  
+ **サービス拒否が起こる**  
+  
+ 次のシナリオは、サービス不能攻撃に対する脆弱性が低いと考えられます。これは、<xref:System.Xml> クラスによって、そのような攻撃に対する保護手段が提供されるためです。  
+  
+-   テキスト XML データの解析。  
+  
+-   バイナリの XML データは、Microsoft SQL Server によって生成された場合は、バイナリの XML データを解析します。  
+  
+-   データ ソースからファイル システム、ストリーム、<xref:System.IO.TextWriter>、または <xref:System.Text.StringBuilder> への XML ドキュメントおよびフラグメントの書き込み。  
+  
+-   <xref:System.Xml.XmlReader> オブジェクトを使用し、<xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> が <xref:System.Xml.DtdProcessing.Prohibit> に設定されている場合のドキュメント オブジェクト モデル (DOM) オブジェクトへのドキュメントの読み込み。  
+  
+-   DOM オブジェクトの移動。  
+  
+ サービス不能攻撃の心配がある場合、または信頼できない環境を使用している場合、次のシナリオは推奨されません。  
+  
+-   DTD 処理。  
+  
+-   スキーマ処理。 これには、信頼されていないスキーマのスキーマ コレクションへの追加、信頼されていないスキーマのコンパイル、および信頼されていないスキーマを使用した検証が含まれます。  
+  
+-   XSLT 処理。  
+  
+-   ユーザーから提供されたバイナリ XML データの任意のスリームの解析。  
+  
+-   クエリ、編集、ドキュメント間でのサブツリーの移動、DOM オブジェクトの保存などの DOM 操作。  
+  
+ サービス拒否攻撃を懸念される場合、または信頼されていないソースを扱う場合は、DTD 処理を有効にしないでください。 これは既定で無効に<xref:System.Xml.XmlReader>オブジェクトを<xref:System.Xml.XmlReader.Create%2A>メソッドを作成します。  
+  
+> [!NOTE]
+>  <xref:System.Xml.XmlTextReader> では、DTD 処理が既定で許可されます。 <xref:System.Xml.XmlTextReader.DtdProcessing%2A?displayProperty=nameWithType> プロパティを使用してこの機能を無効にします。  
+  
+ 使用することができます DTD 処理を有効にした場合、<xref:System.Xml.XmlSecureResolver>リソースを制限するクラスを<xref:System.Xml.XmlReader>にアクセスできます。 XML 処理に対するメモリと時間制限できるようにアプリを設計することもできます。 たとえば、ASP.NET アプリケーションでタイムアウト制限を構成できます。  
+  
+ **処理の考慮事項**  
+  
+ XML ドキュメントには他のファイルへの参照を含めることが可能なため、XML ドキュメントの解析に必要な処理能力を確定することは困難です。 たとえば、XML ドキュメントには DTD を含めることができます。 DTD にネストされたエントリや複合コンテンツ モデルが含まれている場合、ドキュメントの解析に長い時間がかかることがあります。  
+  
+ <xref:System.Xml.XmlReader> を使用するときには、<xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A> プロパティを設定することで、解析可能なドキュメントのサイズを制限できます。 エンティティの展開により生成される文字数を制限するには、<xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A> プロパティを設定します。 これらのプロパティの設定例については、該当するトピックを参照してください。  
+  
+ XSD および XSLT テクノロジには、処理パフォーマンスに影響する可能性のある追加機能があります。 たとえば、比較的小さなドキュメントの評価時に大量の時間を必要とする XML スキーマを作成することが可能です。 また、XSLT スタイル シート内にスクリプト ブロックを埋め込むことも可能です。 どちらの場合は、アプリに潜在的なセキュリティ脅威をもたらします。  
+  
+ アプリを作成するを使用する場合、<xref:System.Xml.Xsl.XslCompiledTransform>クラスで、次の項目とその関連事項に注意してください。  
+  
+-   XSLT スクリプトは既定で無効になっています。 XSLT スクリプトは、スクリプトのサポートが必要であり、完全に信頼された環境で作業している場合のみ有効にします。  
+  
+-   XSLT `document()` 関数は既定で無効になっています。 `document()` 関数を有効にした場合は、<xref:System.Xml.XmlSecureResolver> オブジェクトを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡すことによって、アクセス可能なリソースを制限してください。  
+  
+-   拡張オブジェクトは既定で有効になっています。 拡張オブジェクトを含む <xref:System.Xml.Xsl.XsltArgumentList> オブジェクトが <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドに渡されると、拡張オブジェクトは使用されます。  
+  
+-   XSLT スタイル シートには、他のファイルへの参照や埋め込みのスクリプト ブロックを含めることができます。 悪意のあるユーザーがこれを悪用して、コンピューターがリソース不足に陥るまでシステムに処理を行わせようとするデータやスタイル シートを提供する可能性があります。  
+  
+-   混在信頼環境で実行されている XSLT アプリケーションは、スタイル シートのなりすましになります。 たとえば、悪意のあるユーザーは、有害なスタイル シートを含むオブジェクトを読み込み、それを <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> メソッドを呼び出して変換を実行する別のユーザーに渡す可能性があります。  
+  
+ これらのセキュリティ上の問題は、スタイル シートが信頼されたソースからのものでない限り、スクリプトや `document()` 関数を有効にしないこと、および信頼されていないソースからの <xref:System.Xml.Xsl.XslCompiledTransform> オブジェクト、XSLT スタイル シート、または XML ソース データを受け入れないことによって軽減できます。  
+  
+ **例外処理**  
+  
+ 下位レベルのコンポーネントによってスローされる例外は、アプリを公開しないようにするパスの情報を公開することができます。 アプリは、例外をキャッチして適切に処理する必要があります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+</Namespace>

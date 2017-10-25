@@ -1,0 +1,88 @@
+<Type Name="HtmlTableRow+HtmlTableCellControlCollection" FullName="System.Web.UI.HtmlControls.HtmlTableRow+HtmlTableCellControlCollection">
+  <TypeSignature Language="C#" Value="protected class HtmlTableRow.HtmlTableCellControlCollection : System.Web.UI.ControlCollection" />
+  <TypeSignature Language="ILAsm" Value=".class nested protected auto ansi beforefieldinit HtmlTableRow/HtmlTableCellControlCollection extends System.Web.UI.ControlCollection" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.ControlCollection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コレクションを表します<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />のセルは、オブジェクト、<see cref="T:System.Web.UI.HtmlControls.HtmlTableRow" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection>クラスのコレクションを表します<xref:System.Web.UI.HtmlControls.HtmlTableCell>オブジェクトに対する、<xref:System.Web.UI.HtmlControls.HtmlTableRow>コントロール。 コレクションの最後にコントロールを追加することができます、<xref:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection.Add%2A>メソッドを持つコレクション内の指定したインデックス位置にある、または、<xref:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection.AddAt%2A>メソッドです。  
+  
+ 型のコントロールだけ<xref:System.Web.UI.HtmlControls.HtmlTableCell>に追加することができます、<xref:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection>コレクション。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Add">
+      <MemberSignature Language="C#" Value="public override void Add (System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Add(class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection.Add(System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="child">コレクションに追加する <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定した <see cref="T:System.Web.UI.Control" /> オブジェクトをコレクションに追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されたコントロールは、必ず、<xref:System.Web.UI.HtmlControls.HtmlTableCell>コントロール。 それ以外の場合、<xref:System.ArgumentException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">追加されたコントロールは、型でなければなりません<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="AddAt">
+      <MemberSignature Language="C#" Value="public override void AddAt (int index, System.Web.UI.Control child);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddAt(int32 index, class System.Web.UI.Control child) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.HtmlControls.HtmlTableRow.HtmlTableCellControlCollection.AddAt(System.Int32,System.Web.UI.Control)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="index" Type="System.Int32" />
+        <Parameter Name="child" Type="System.Web.UI.Control" />
+      </Parameters>
+      <Docs>
+        <param name="index">子コントロールを追加する位置を示す、配列内の位置。</param>
+        <param name="child">コレクションに追加する <see cref="T:System.Web.UI.Control" />。</param>
+        <summary>指定した追加<see cref="T:System.Web.UI.Control" />オブジェクトを指定したインデックス位置にあるコレクション。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 追加されたコントロールは、必ず、<xref:System.Web.UI.HtmlControls.HtmlTableCell>コントロール。 それ以外の場合、<xref:System.ArgumentException>例外がスローされます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">追加されたコントロールは、型でなければなりません<see cref="T:System.Web.UI.HtmlControls.HtmlTableCell" />です。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

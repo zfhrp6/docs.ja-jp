@@ -1,0 +1,1488 @@
+<Type Name="CngKey" FullName="System.Security.Cryptography.CngKey">
+  <TypeSignature Language="C#" Value="public sealed class CngKey : IDisposable" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CngKey extends System.Object implements class System.IDisposable" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.CngKey" />
+  <AssemblyInfo>
+    <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+    <AssemblyVersion>4.3.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Core</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.IDisposable</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>CNG (Cryptography Next Generation) オブジェクトと共に使用されるキーのコア機能を定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このクラスは、NCrypt キー、いない BCrypt キーをラップします。 NCrypt では、CNG キー記憶域機能を提供するのサブセットです。 BCrypt は、乱数の生成、ハッシュ関数、署名、暗号化キーなどの基本の暗号サービスを提供するサブセットです。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CngKey ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Algorithm">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngAlgorithm Algorithm { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngAlgorithm Algorithm" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.Algorithm" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngAlgorithm</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーに使用されるアルゴリズムを取得します。</summary>
+        <value>暗号化アルゴリズムの名前を指定するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AlgorithmGroup">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngAlgorithmGroup AlgorithmGroup { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngAlgorithmGroup AlgorithmGroup" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.AlgorithmGroup" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngAlgorithmGroup</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーによって使用されているアルゴリズム グループを取得します。</summary>
+        <value>暗号化アルゴリズム グループの名前を指定するオブジェクト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Create (System.Security.Cryptography.CngAlgorithm algorithm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Create(class System.Security.Cryptography.CngAlgorithm algorithm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Create(System.Security.Cryptography.CngAlgorithm)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.Security.Cryptography.CngAlgorithm" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">使用される、キー アルゴリズムです。</param>
+        <summary>作成、<see cref="T:System.Security.Cryptography.CngKey" />指定したアルゴリズムで使用できるオブジェクト。</summary>
+        <returns>短期のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロード、つまり、キーは一時的な名前のないキーを作成する (つまり、これは保存されません)。 また、既定値を作成<xref:System.Security.Cryptography.CngKeyCreationParameters>、既定値を指定するオブジェクト<xref:System.Security.Cryptography.CngProvider>とキーの他の高度なパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="algorithm" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">キー コンテナーを作成する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Create (System.Security.Cryptography.CngAlgorithm algorithm, string keyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Create(class System.Security.Cryptography.CngAlgorithm algorithm, string keyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Create(System.Security.Cryptography.CngAlgorithm,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.Security.Cryptography.CngAlgorithm" />
+        <Parameter Name="keyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">使用される、キー アルゴリズムです。</param>
+        <param name="keyName">キー名。 名前が指定されていない場合、キーは保存されません。</param>
+        <summary>作成、名前付き<see cref="T:System.Security.Cryptography.CngKey" />を指定したアルゴリズムを提供するオブジェクト。</summary>
+        <returns>指定したアルゴリズムを提供する永続化されたまたは短期のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`keyName`は提供された場合、このオーバー ロードは、永続化されたキーを作成します。 場合`keyName`が提供されていない場合、キーは一時的になります。 このオーバー ロードは、既定値も作成<xref:System.Security.Cryptography.CngKeyCreationParameters>、既定値を指定するオブジェクト<xref:System.Security.Cryptography.CngProvider>とキーの他の高度なパラメーターです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="algorithm" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">キー コンテナーを作成する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Create (System.Security.Cryptography.CngAlgorithm algorithm, string keyName, System.Security.Cryptography.CngKeyCreationParameters creationParameters);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Create(class System.Security.Cryptography.CngAlgorithm algorithm, string keyName, class System.Security.Cryptography.CngKeyCreationParameters creationParameters) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Create(System.Security.Cryptography.CngAlgorithm,System.String,System.Security.Cryptography.CngKeyCreationParameters)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="algorithm" Type="System.Security.Cryptography.CngAlgorithm" />
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="creationParameters" Type="System.Security.Cryptography.CngKeyCreationParameters" />
+      </Parameters>
+      <Docs>
+        <param name="algorithm">使用される、キー アルゴリズムです。</param>
+        <param name="keyName">キー名。 名前が指定されていない場合、キーは保存されません。</param>
+        <param name="creationParameters">方法の場合、高度なパラメーターを指定するオブジェクトを含む、<see cref="T:System.Security.Cryptography.CngProvider" />です。</param>
+        <summary>作成、名前付き<see cref="T:System.Security.Cryptography.CngKey" />指定されたキーの作成パラメーターを使用して、指定したアルゴリズムを提供するオブジェクト。</summary>
+        <returns>指定したアルゴリズムを提供する永続化されたまたは短期のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合`keyName`は提供された場合、このオーバー ロードは、永続化されたキーを作成します。 場合`keyName`が提供されていない場合、キーは一時的になります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="algorithm" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">キー コンテナーを作成する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Create" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void Delete() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Delete" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>オブジェクトに関連付けられているキーを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-   呼び出すと、<xref:System.Security.Cryptography.CngKey.Delete%2A>メソッド、一時的なキー、キーのハンドルが閉じられます。  
+  
+ 呼び出すと、<xref:System.Security.Cryptography.CngKey.Delete%2A>メソッド名前付きのキーを<xref:System.Security.Cryptography.CngKey>名前付きのキーを削除した後、オブジェクトを使用できなくできます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException">削除されたキーにアクセスしようとしました。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermission">データに署名する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Delete" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Dispose">
+      <MemberSignature Language="C#" Value="public void Dispose ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Dispose() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Dispose" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.CngKey" /> クラスの現在のインスタンスによって使用されているすべてのリソースを解放します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Security.Cryptography.CngKey.Dispose%2A> を使い終わったら <xref:System.Security.Cryptography.CngKey> を呼び出します。 <xref:System.Security.Cryptography.CngKey.Dispose%2A> メソッドによって、<xref:System.Security.Cryptography.CngKey> は使用不可の状態になります。 呼び出した後<xref:System.Security.Cryptography.CngKey.Dispose%2A>へのすべての参照を解放する必要があります、<xref:System.Security.Cryptography.CngKey>ガベージ コレクターがメモリを再利用できるようにする、<xref:System.Security.Cryptography.CngKey>占有されていた。 詳細については、次を参照してください。[アンマネージ リソースのクリーンアップ](~/docs/standard/garbage-collection/unmanaged.md)と[Dispose メソッドの実装](~/docs/standard/garbage-collection/implementing-dispose.md)です。  
+  
+> [!NOTE]
+>  <xref:System.Security.Cryptography.CngKey.Dispose%2A> への最後の参照を解放する前に、必ず <xref:System.Security.Cryptography.CngKey> を呼び出してください。 そうしないと、ガベージ コレクターが <xref:System.Security.Cryptography.CngKey> オブジェクトの `Finalize` メソッドを呼び出すまで、使用されているリソースは解放されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (string keyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string keyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Exists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <summary>名前付きのキーが既定のキー記憶域プロバイダー (KSP) に存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />KSP は、既定の名前付きのキーが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の KSP は<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (string keyName, System.Security.Cryptography.CngProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string keyName, class System.Security.Cryptography.CngProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Exists(System.String,System.Security.Cryptography.CngProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="provider" Type="System.Security.Cryptography.CngProvider" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <param name="provider">キーの確認に KSP。</param>
+        <summary>名前付きのキーが指定されたキー格納プロバイダー (KSP) に存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定されたプロバイダーの名前付きのキーが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は KSP 以外 KSP 内のキーの有無を確認するこのオーバー ロードを使用して<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Exists">
+      <MemberSignature Language="C#" Value="public static bool Exists (string keyName, System.Security.Cryptography.CngProvider provider, System.Security.Cryptography.CngKeyOpenOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Exists(string keyName, class System.Security.Cryptography.CngProvider provider, valuetype System.Security.Cryptography.CngKeyOpenOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Exists(System.String,System.Security.Cryptography.CngProvider,System.Security.Cryptography.CngKeyOpenOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="provider" Type="System.Security.Cryptography.CngProvider" />
+        <Parameter Name="options" Type="System.Security.Cryptography.CngKeyOpenOptions" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <param name="provider">キーの検索に KSP。</param>
+        <param name="options">キーを開くためのオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>指定したオプションに従って名前付きのキーが指定されたキー格納プロバイダー (KSP) に存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定されたプロバイダーの名前付きのキーが存在する場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用して、既定以外の KSP でキーの存在を確認する<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>、および開いているキーのオプションを指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Export">
+      <MemberSignature Language="C#" Value="public byte[] Export (System.Security.Cryptography.CngKeyBlobFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance unsigned int8[] Export(class System.Security.Cryptography.CngKeyBlobFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Export(System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Byte[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="format" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="format">キー BLOB の形式を指定するオブジェクト。</param>
+        <summary>指定された形式で、BLOB、キー マテリアルにエクスポートします。</summary>
+        <returns>指定された形式でキー マテリアルを格納する BLOB です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ Cryptography Next Generation (CNG) は、基になるキー格納プロバイダー (KSP) をサポートする任意の形式でエクスポートを許可します。 たとえば、Windows Vista では、既定の KSP に (これは<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>) のみの秘密キーのエクスポートを許可、 <xref:System.Security.Cryptography.CngKeyBlobFormat.Pkcs8PrivateBlob%2A>、<xref:System.Security.Cryptography.CngKeyBlobFormat.EccPrivateBlob%2A>と<xref:System.Security.Cryptography.CngKeyBlobFormat.OpaqueTransportBlob%2A>形式です。 この制限は、基になる KSP によって制御されます。 別の KSP を使用すると、その他の形式が表示される場合があります。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="format" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。 通常、<see cref="P:System.Security.Cryptography.CngKey.ExportPolicy" />キーをエクスポートすることはできません。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermission">データに署名する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Export" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportPolicy">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngExportPolicies ExportPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CngExportPolicies ExportPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.ExportPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngExportPolicies</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーで使用されるポリシーのエクスポートを取得します。</summary>
+        <value>キーのポリシーのエクスポートを指定するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ポリシーのエクスポートは、エクスポートの頻度と、キーの形式を制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetProperty">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngProperty GetProperty (string name, System.Security.Cryptography.CngPropertyOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance valuetype System.Security.Cryptography.CngProperty GetProperty(string name, valuetype System.Security.Cryptography.CngPropertyOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.GetProperty(System.String,System.Security.Cryptography.CngPropertyOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngProperty</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="options" Type="System.Security.Cryptography.CngPropertyOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name">目的のプロパティの名前。</param>
+        <param name="options">名前付きのプロパティのオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>名前およびプロパティのオプションのセットを指定してプロパティを取得します。</summary>
+        <returns>指定したプロパティの生の値を格納するオブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドの目的は、任意のキーのプロパティの値を返すです。 プロパティを取得する一般的な方法は、によって提供されるプロパティのアクセサーを使用して、<xref:System.Security.Cryptography.CngKey>クラスです。 <xref:System.Security.Cryptography.CngKey>すべてではなく、いくつかのプロパティのラッパーを提供します。 <xref:System.Security.Cryptography.CngKey.GetProperty%2A>メソッドがラップされていないプロパティの値にアクセスする、主に使用します。  
+  
+ このメソッドは、次の場合に便利です。  
+  
+-   オペレーティング システムの新しいバージョンには、新しいラッパーを持たない Cryptography Next Generation (CNG) キー プロパティがサポートしています。  
+  
+-   キーには、カスタム プロパティを追加します。  
+  
+ `options`パラメーターを明示的に、次を示すために使用します。  
+  
+-   プロパティが組み込まれている、またはカスタムかどうか。  
+  
+-   かどうかキーを持つプロパティを永続化する必要があります。  
+  
+ これらのオプションは、プロパティ、またはプロパティが見つかりません値に一致する必要があります。  
+  
+ <xref:System.Security.Cryptography.CryptographicException>プロパティが見つからない場合にスローされます。 呼び出す必要があります、<xref:System.Security.Cryptography.CngKey.HasProperty%2A>メソッドをラップする代わりに例外を回避するには、最初のメソッドの呼び出し、`try/catch`ブロックします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Handle">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle Handle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle Handle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.Handle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ネイティブのキー (NCRYPT_KEY_HANDLE) を表すセーフ ハンドルを取得します。</summary>
+        <value>キーを表すセーフ ハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるハンドルは、現在のハンドルの重複する<xref:System.Security.Cryptography.CngKey>オブジェクト。 永続化場合でも、現在<xref:System.Security.Cryptography.CngKey>が破棄され、個別の破棄する必要があります。  
+  
+ 現在のオブジェクトとが影響を受けることがなく任意の順序でハンドルを解放することができます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProperty">
+      <MemberSignature Language="C#" Value="public bool HasProperty (string name, System.Security.Cryptography.CngPropertyOptions options);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool HasProperty(string name, valuetype System.Security.Cryptography.CngPropertyOptions options) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.HasProperty(System.String,System.Security.Cryptography.CngPropertyOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="options" Type="System.Security.Cryptography.CngPropertyOptions" />
+      </Parameters>
+      <Docs>
+        <param name="name">確認対象プロパティ名。</param>
+        <param name="options">名前付きのプロパティのオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>キーの指定したプロパティが存在するかどうかを確認します。</summary>
+        <returns>
+          <see langword="true" />指定したプロパティが見つかった場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `options`パラメーターを明示的に、次を示すために使用します。  
+  
+-   プロパティが組み込まれている、またはカスタムかどうか。  
+  
+-   かどうかキーを持つプロパティを永続化する必要があります。  
+  
+ これらのオプションは、プロパティ、またはプロパティが見つかりません値に一致する必要があります。  
+  
+ プロパティ設定されている場合でも、このメソッドが正常に動作`false`またはゼロです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="name" /> は <see langword="null" /> です。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Import (byte[] keyBlob, System.Security.Cryptography.CngKeyBlobFormat format);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Import(unsigned int8[] keyBlob, class System.Security.Cryptography.CngKeyBlobFormat format) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Import(System.Byte[],System.Security.Cryptography.CngKeyBlobFormat)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyBlob" Type="System.Byte[]" />
+        <Parameter Name="format" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+      </Parameters>
+      <Docs>
+        <param name="keyBlob">キー情報を格納する配列。</param>
+        <param name="format">形式を指定するオブジェクト、 <c>keyBlob</c>配列。</param>
+        <summary>既定のキー記憶域プロバイダー (KSP) に指定されたキー マテリアルをインポートして、指定した書式を使用して、新しいキーを作成します。</summary>
+        <returns>新しいキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定の KSP は<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>します。  
+  
+> [!IMPORTANT]
+>  Windows 7 および Windows Server 2008 R2 の前に Windows オペレーティング システムでは一部 CNG キー バイナリ ラージ オブジェクト (BLOB) の形式はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyBlob" /> または <paramref name="format" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Import">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Import (byte[] keyBlob, System.Security.Cryptography.CngKeyBlobFormat format, System.Security.Cryptography.CngProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Import(unsigned int8[] keyBlob, class System.Security.Cryptography.CngKeyBlobFormat format, class System.Security.Cryptography.CngProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Import(System.Byte[],System.Security.Cryptography.CngKeyBlobFormat,System.Security.Cryptography.CngProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyBlob" Type="System.Byte[]" />
+        <Parameter Name="format" Type="System.Security.Cryptography.CngKeyBlobFormat" />
+        <Parameter Name="provider" Type="System.Security.Cryptography.CngProvider" />
+      </Parameters>
+      <Docs>
+        <param name="keyBlob">キー情報を格納する配列。</param>
+        <param name="format">形式を指定するオブジェクト、 <c>keyBlob</c>配列。</param>
+        <param name="provider">KSP。</param>
+        <summary>指定したキー マテリアルを、指定した形式を使用して指定のキー記憶域プロバイダー (KSP) にインポートすることで、新しいキーを作成します。</summary>
+        <returns>新しいキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!IMPORTANT]
+>  Windows 7 および Windows Server 2008 R2 の前に Windows オペレーティング システムでは一部 CNG キー バイナリ ラージ オブジェクト (BLOB) の形式はサポートされていません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyBlob" />、<paramref name="format" />、または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermission">データに署名する権限です。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Import" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="IsEphemeral">
+      <MemberSignature Language="C#" Value="public bool IsEphemeral { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsEphemeral" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.IsEphemeral" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの永続性の状態を取得します。</summary>
+        <value>
+          <see langword="true" />場合は、キーは短期です。それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、キーが一時的かどうかを決定 (つまり、キーが存在するハンドルの有効期間中にのみ)、または保存している (つまり、キーが存在するハンドルとは無関係に)。  
+  
+ 戻り値は、キーを取得するために使用されるメソッドに依存します。  
+  
+-   キーが開いていない場合、<xref:System.Security.Cryptography.CngKey.Open%28Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle%2CSystem.Security.Cryptography.CngKeyHandleOpenOptions%29>メソッド オーバー ロードを共通言語ランタイム (CLR) がキーを管理して、短期であるかを判断できます。  
+  
+-   キーが開かれた場合、<xref:System.Security.Cryptography.CngKey.Open%28Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle%2CSystem.Security.Cryptography.CngKeyHandleOpenOptions%29>メソッド オーバー ロードを CLR がわかりません短期であるか。 そのため、キーが永続化すると見なされます。 ただし、このメソッドが、CLR によって作成されるキーへのハンドルを開くに使用されている場合、CLR は短期があるかどうかを判断することのようになります。  
+  
+ このプロパティには、パブリックな setter; にありません。これは、読み取り専用です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMachineKey">
+      <MemberSignature Language="C#" Value="public bool IsMachineKey { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMachineKey" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.IsMachineKey" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーのスコープ (コンピューターまたはユーザー) を取得します。</summary>
+        <value>
+          <see langword="true" />キーが、コンピューター全体にわたる; 使用可能な場合<see langword="false" />キー場合は、現在のユーザーに対してのみです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyName">
+      <MemberSignature Language="C#" Value="public string KeyName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string KeyName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.KeyName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの名前を取得します。</summary>
+        <value>キー名。 値は、キーが短期の場合は、<see langword="null" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeySize">
+      <MemberSignature Language="C#" Value="public int KeySize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 KeySize" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.KeySize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーのサイズをビット単位で取得します。</summary>
+        <value>キー サイズ (ビット単位)。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="KeyUsage">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngKeyUsages KeyUsage { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Security.Cryptography.CngKeyUsages KeyUsage" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.KeyUsage" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKeyUsages</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーによって指定された暗号化操作を取得します。</summary>
+        <value>キー使用法を指定する列挙値のビットごとの組み合わせ。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Open (string keyName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Open(string keyName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Open(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Security.Cryptography.CngKey" />という名前のキーの既存を表すオブジェクト。</summary>
+        <returns>既存のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードは、次の既定値を使用します。  
+  
+-   キー格納プロバイダー (KSP):<xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>です。 使用して、<xref:System.Security.Cryptography.CngKey.Open%28System.String%2CSystem.Security.Cryptography.CngProvider%29>を別の KSP を指定する場合、オーバー ロードします。  
+  
+-   キーを開くオプション:<xref:System.Security.Cryptography.CngKeyOpenOptions?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">開くには、キー コンテナー アクセスを許可します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Open" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Open (Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle keyHandle, System.Security.Cryptography.CngKeyHandleOpenOptions keyHandleOpenOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Open(class Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle keyHandle, valuetype System.Security.Cryptography.CngKeyHandleOpenOptions keyHandleOpenOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Open(Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle,System.Security.Cryptography.CngKeyHandleOpenOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyHandle" Type="Microsoft.Win32.SafeHandles.SafeNCryptKeyHandle" />
+        <Parameter Name="keyHandleOpenOptions" Type="System.Security.Cryptography.CngKeyHandleOpenOptions" />
+      </Parameters>
+      <Docs>
+        <param name="keyHandle">既存のキーへのハンドル。</param>
+        <param name="keyHandleOpenOptions">示す列挙値の 1 つかどうか<c>keyHandle</c>短期キーまたは名前付きキーを表します。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Security.Cryptography.CngKey" />オブジェクトを既存のキーのハンドルを使用します。</summary>
+        <returns>既存のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオーバー ロードを使用して、CNG クラス プラットフォームに依存している場合でも起動または C++ のマネージ相互運用機能の高度なユーザーを使用します。 たとえば、NCRYPT_KEY_HANDLE としてキーを返すネイティブ ライブラリがある場合は、このオーバー ロードできるように、キー ラップするマネージ ラッパーを作成して、操作に CNG のクラスを使用します。  
+  
+ そのハンドルを使用して、キーを開くと、するキーの一時的な状態を確認できずする必要があります自分で指定します。 いくつかのプロパティ、<xref:System.Security.Cryptography.CngKey>クラスが正しいようにこの値に依存します。 したがって、正しいフラグ値を渡すことを確認、<xref:System.Security.Cryptography.CngKey.Open%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyHandle" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="keyHandle" />無効か、形式が正しくないか、既に閉じられています。 キーが共通言語ランタイム (CLR) によって作成される一時的なキーである場合にもこの例外がスローされますが、<see cref="F:System.Security.Cryptography.CngKeyHandleOpenOptions.EphemeralKey" />値が指定されていません。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Open (string keyName, System.Security.Cryptography.CngProvider provider);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Open(string keyName, class System.Security.Cryptography.CngProvider provider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Open(System.String,System.Security.Cryptography.CngProvider)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="provider" Type="System.Security.Cryptography.CngProvider" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <param name="provider">キーを含む KSP。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Security.Cryptography.CngKey" />既存を表すオブジェクトが指定されたキー格納プロバイダー (KSP) を使用して、キーをという名前です。</summary>
+        <returns>既存のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Security.Cryptography.CngKey.Open%28System.String%29>メソッド オーバー ロードをこのオーバー ロードにより、プロバイダーを指定できます。 さらに、既定の<xref:System.Security.Cryptography.CngKeyOpenOptions>値<xref:System.Security.Cryptography.CngKeyOpenOptions.None>が作成され、キーにバインドします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">開くには、キー コンテナー アクセスを許可します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Open" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Open">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.CngKey Open (string keyName, System.Security.Cryptography.CngProvider provider, System.Security.Cryptography.CngKeyOpenOptions openOptions);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.CngKey Open(string keyName, class System.Security.Cryptography.CngProvider provider, valuetype System.Security.Cryptography.CngKeyOpenOptions openOptions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.Open(System.String,System.Security.Cryptography.CngProvider,System.Security.Cryptography.CngKeyOpenOptions)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngKey</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="keyName" Type="System.String" />
+        <Parameter Name="provider" Type="System.Security.Cryptography.CngProvider" />
+        <Parameter Name="openOptions" Type="System.Security.Cryptography.CngKeyOpenOptions" />
+      </Parameters>
+      <Docs>
+        <param name="keyName">キー名。</param>
+        <param name="provider">キーを含む KSP。</param>
+        <param name="openOptions">(コンピューターまたはユーザーの記憶域) からキーを開いた場所と、UI のプロンプトを抑制するかどうかなど、キーを開くためのオプションを指定する列挙値のビットごとの組み合わせ。</param>
+        <summary>インスタンスを作成、<see cref="T:System.Security.Cryptography.CngKey" />既存を表すオブジェクトが、指定されたキー格納プロバイダー (KSP) と開いているキーのオプションを使用して、キーをという名前です。</summary>
+        <returns>既存のキー。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 異なり、<xref:System.Security.Cryptography.CngKey.Open%28System.String%29>メソッドのオーバー ロードは、このオーバー ロードすることができますオプションを開く、プロバイダーとキーの両方を指定します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="keyName" /> または <paramref name="provider" /> が <see langword="null" /> です。</exception>
+        <exception cref="T:System.PlatformNotSupportedException">Cryptography Next Generation (CNG) は、このシステムではサポートされていません。</exception>
+        <exception cref="T:System.Security.Cryptography.CryptographicException">上記以外のすべてのエラー。</exception>
+        <permission cref="T:System.Security.Permissions.KeyContainerPermissionAccessEntryCollection">開くには、キー コンテナー アクセスを許可します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.Demand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.KeyContainerPermissionFlags.Open" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="ParentWindowHandle">
+      <MemberSignature Language="C#" Value="public IntPtr ParentWindowHandle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance native int ParentWindowHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.ParentWindowHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>set: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.IntPtr</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはキーへのアクセスによるユーザー インターフェイス (UI) プロンプトを使用するウィンドウ ハンドル (HWND) を設定します。</summary>
+        <value>キーの親ウィンドウ ハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの親ウィンドウ ハンドルを使用する UI のプロンプトでスマート カード暗証番号 (pin) メッセージが表示されます。 この値は、永続化されたキーを持つは保持されません。  
+  
+ 常にユーザー インターフェイスを表示するキーには、このプロパティを設定することをお勧めします。 既定値は使用しない`null`のようなキーです。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="Provider">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngProvider Provider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngProvider Provider" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.Provider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngProvider</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーを管理するキー記憶域プロバイダー (KSP) を取得します。</summary>
+        <value>キーを管理する KSP。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProviderHandle">
+      <MemberSignature Language="C#" Value="public Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle ProviderHandle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle ProviderHandle" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.ProviderHandle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>Microsoft.Win32.SafeHandles.SafeNCryptProviderHandle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キー格納プロバイダー (KSP) へのネイティブ ハンドル (NCRYPT_PROV_HANDLE、) を取得します。</summary>
+        <value>KSP へのハンドル。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 返されるハンドルは、現在のハンドルの重複する<xref:System.Security.Cryptography.CngKey>オブジェクト。 永続化場合でも、現在<xref:System.Security.Cryptography.CngKey>が破棄され、個別の破棄する必要があります。  
+  
+ 現在のオブジェクトとが影響を受けることがなく任意の順序でハンドルを解放することができます。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="SetProperty">
+      <MemberSignature Language="C#" Value="public void SetProperty (System.Security.Cryptography.CngProperty property);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void SetProperty(valuetype System.Security.Cryptography.CngProperty property) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.CngKey.SetProperty(System.Security.Cryptography.CngProperty)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="property" Type="System.Security.Cryptography.CngProperty" />
+      </Parameters>
+      <Docs>
+        <param name="property">キー プロパティを設定します。</param>
+        <summary>キーの名前付きプロパティを設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドを使用して、既存のキーを新しいカスタム プロパティを追加することができます、<xref:System.Security.Cryptography.CngProperty>オブジェクト。 設定されたオプション、<xref:System.Security.Cryptography.CngProperty>オブジェクト内のオプションと一致する必要があります、<xref:System.Security.Cryptography.CngKey.GetProperty%2A>呼び出します。 それ以外の場合、プロパティが見つかりません。  
+  
+ ]]></format>
+        </remarks>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">アンマネージ コードを呼び出すアクセス許可。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。 関連する列挙。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode" /></permission>
+      </Docs>
+    </Member>
+    <Member MemberName="UIPolicy">
+      <MemberSignature Language="C#" Value="public System.Security.Cryptography.CngUIPolicy UIPolicy { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Security.Cryptography.CngUIPolicy UIPolicy" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.UIPolicy" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.CngUIPolicy</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーにアクセスするためのユーザー インターフェイス (UI) を制御するパラメーターを取得します。</summary>
+        <value>UI を表示するための構成パラメーターを格納するオブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ キーの UI ポリシーがと共に使用される UI は、スマート カード PIN プロンプトなどメッセージが表示されます。 このポリシーは、保護されたキーのパスワード ダイアログ ボックスも制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UniqueName">
+      <MemberSignature Language="C#" Value="public string UniqueName { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string UniqueName" />
+      <MemberSignature Language="DocId" Value="P:System.Security.Cryptography.CngKey.UniqueName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Security.Cryptography.Cng</AssemblyName>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+        <AssemblyVersion>4.3.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.Core</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>get: System.Security.SecuritySafeCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>キーの一意の名前を取得します。</summary>
+        <value>キーの代替名です。 値は、キーが短期の場合は、<see langword="null" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティは、キーにアクセスするときに使用できる代替名を取得します。 元のキー名で保存されるキーを一意に識別されない場合は、このプロパティを使用することができます。 <xref:System.Security.Cryptography.CngProvider.MicrosoftSoftwareKeyStorageProvider%2A>プロパティは、このプロパティとキーのファイル名を返します。 によって返される名、<xref:System.Security.Cryptography.CngProvider.MicrosoftSmartCardKeyStorageProvider%2A>実装に依存します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

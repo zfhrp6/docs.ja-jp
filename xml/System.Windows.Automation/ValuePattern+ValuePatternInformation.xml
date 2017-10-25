@@ -1,0 +1,90 @@
+<Type Name="ValuePattern+ValuePatternInformation" FullName="System.Windows.Automation.ValuePattern+ValuePatternInformation">
+  <TypeSignature Language="C#" Value="public struct ValuePattern.ValuePatternInformation" />
+  <TypeSignature Language="ILAsm" Value=".class nested public sequential ansi sealed beforefieldinit ValuePattern/ValuePatternInformation extends System.ValueType" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Automation.ValuePattern.ValuePatternInformation" />
+  <AssemblyInfo>
+    <AssemblyName>UIAutomationClient</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ValueType</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>プロパティの値にアクセスできるように、<see cref="T:System.Windows.Automation.ValuePattern" />オブジェクトを使用してその<see cref="P:System.Windows.Automation.ValuePattern.Current" />または<see cref="P:System.Windows.Automation.ValuePattern.Cached" />アクセサー。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="IsReadOnly">
+      <MemberSignature Language="C#" Value="public bool IsReadOnly { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsReadOnly" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ValuePattern.ValuePatternInformation.IsReadOnly" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>指定する値を取得するかどうかの値、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]要素は読み取り専用です。</summary>
+        <value>
+          <see langword="true" />値が読み取り専用の場合<see langword="false" />場合は、変更することができます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コントロールが必要、 <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> 'éý'`true`とその<xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>に設定`false`、クライアントへの呼び出しを試行する前に<xref:System.Windows.Automation.ValuePattern.SetValue%2A>です。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.AutomationElement>をサポートする、<xref:System.Windows.Automation.ValuePattern>コントロール パターンにはその<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>ユーザー指定の値に設定します。  
+  
+ [!code-csharp[UIAValuePattern_snip#103](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAValuePattern_snip/CSharp/UIAValuePattern_snippets.cs#103)]
+ [!code-vb[UIAValuePattern_snip#103](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAValuePattern_snip/VisualBasic/UIAValuePattern_snippets.vb#103)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Value">
+      <MemberSignature Language="C#" Value="public string Value { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Value" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Automation.ValuePattern.ValuePatternInformation.Value" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>UIAutomationClient</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)] 要素の値を取得します。</summary>
+        <value>値、[!INCLUDE[TLA2#tla_uiautomation](~/includes/tla2sharptla-uiautomation-md.md)]を文字列としての要素。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 単一行エディット コントロールを介してその内容にプログラムでアクセスをサポートする<xref:System.Windows.Automation.ValuePattern>です。 ただし、複数行エディット コントロールをサポートしていない、<xref:System.Windows.Automation.ValuePattern>コントロール パターン。  
+  
+ 取得する複数行のテキスト コンテンツの編集コントロールのコントロールをサポートする必要があります、<xref:System.Windows.Automation.TextPattern>コントロール パターン。 ただし、<xref:System.Windows.Automation.TextPattern>コントロールの値の設定をサポートしていません。  
+  
+ <xref:System.Windows.Automation.ValuePattern>書式設定情報や部分文字列の値の取得はサポートされません。 <xref:System.Windows.Automation.TextPattern>コントロール パターンは、これらのシナリオで使用する必要があります。  
+  
+   
+  
+## Examples  
+ 次の例で、<xref:System.Windows.Automation.ValuePattern>ターゲット コントロールから取得したオブジェクトが現在を取得する関数に渡される<xref:System.Windows.Automation.ValuePattern>プロパティの値。  
+  
+ [!code-csharp[UIAValuePattern_snip#102](~/samples/snippets/csharp/VS_Snippets_Wpf/UIAValuePattern_snip/CSharp/UIAValuePattern_snippets.cs#102)]
+ [!code-vb[UIAValuePattern_snip#102](~/samples/snippets/visualbasic/VS_Snippets_Wpf/UIAValuePattern_snip/VisualBasic/UIAValuePattern_snippets.vb#102)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

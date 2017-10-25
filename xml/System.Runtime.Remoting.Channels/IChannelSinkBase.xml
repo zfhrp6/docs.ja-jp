@@ -1,0 +1,57 @@
+<Type Name="IChannelSinkBase" FullName="System.Runtime.Remoting.Channels.IChannelSinkBase">
+  <TypeSignature Language="C#" Value="public interface IChannelSinkBase" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract IChannelSinkBase" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.Remoting.Channels.IChannelSinkBase" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>チャネル シンクの基底インターフェイスを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ チャネル シンクは、基になるチャネルだけでなく、リモート オブジェクトにメッセージを送信するトランスポート機構によって使用されるストリーム経由でやり取りされるメッセージにアクセスできるようにするプラグインのポイントを提供します。 シンク プロバイダーのチェーン内のチャネル シンクが相互リンクされているし、すべてのチャネルのメッセージはこのチェーンをメッセージのシリアル化および転送します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.Collections.IDictionary Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IDictionary Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.Remoting.Channels.IChannelSinkBase.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>シンクのプロパティにアクセスする使用されるディクショナリを取得します。</summary>
+        <value>使用される、シンクのプロパティにアクセスすることができます、ディクショナリまたは<see langword="null" />チャネル シンクがプロパティをサポートしていない場合。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ プロパティがこのチャネル シンクに存在しない場合は、次のシンク チェーン内にプロパティのアクセス要求を委任します。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Security.SecurityException">直前の呼び出し元には、インフラストラクチャのアクセス許可がありません。</exception>
+        <permission cref="T:System.Security.Permissions.SecurityPermission">インフラストラクチャ コードを操作します。 要求値:<see cref="F:System.Security.Permissions.SecurityAction.LinkDemand" />です。アクセス許可の値。<see cref="F:System.Security.Permissions.SecurityPermissionFlag.Infrastructure" /></permission>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

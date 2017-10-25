@@ -1,0 +1,326 @@
+<Type Name="MessageDescription" FullName="System.ServiceModel.Description.MessageDescription">
+  <TypeSignature Language="C#" Value="public class MessageDescription" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageDescription extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Description.MessageDescription" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Diagnostics.DebuggerDisplay("Action={action}, Direction={direction}, MessageType={messageType}")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>メッセージの説明を表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.ServiceModel.Description.MessageDescription> には、メッセージのヘッダー部分と本文部分にアクセスするための <xref:System.ServiceModel.Description.MessageDescription.Headers%2A> プロパティと <xref:System.ServiceModel.Description.MessageDescription.Body%2A> プロパティが含まれています。 メッセージが受信と送信のどちらであるかは、<xref:System.ServiceModel.Description.MessageDescription.Direction%2A> プロパティによって示されます。 また、メッセージの目的を示す URI を指定できる <xref:System.ServiceModel.Description.MessageDescription.Action%2A> プロパティも用意されています。  
+  
+   
+  
+## Examples  
+ <xref:System.ServiceModel.Description.MessageDescription> クラスの <xref:System.ServiceModel.Description.OperationDescription.Messages%2A> プロパティから返される <xref:System.ServiceModel.Description.OperationDescription> を使用する例を次に示します。 このコードではエンドポイントのコレクションが反復処理され、各エンドポイントの名前とエンドポイント内の各操作の名前が出力されます。  
+  
+ [!code-csharp[DataContractSerializerOperationBehavior#2](~/samples/snippets/csharp/VS_Snippets_CFX/datacontractserializeroperationbehavior/cs/source.cs#2)]
+ [!code-vb[DataContractSerializerOperationBehavior#2](~/samples/snippets/visualbasic/VS_Snippets_CFX/datacontractserializeroperationbehavior/vb/source.vb#2)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageDescription (string action, System.ServiceModel.Description.MessageDirection direction);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string action, valuetype System.ServiceModel.Description.MessageDirection direction) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MessageDescription.#ctor(System.String,System.ServiceModel.Description.MessageDirection)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="action" Type="System.String" />
+        <Parameter Name="direction" Type="System.ServiceModel.Description.MessageDirection" />
+      </Parameters>
+      <Docs>
+        <param name="action">メッセージの目的を示す、SOAP メッセージのアクション パラメーター。</param>
+        <param name="direction">
+          メッセージが受信の場合は <see cref="F:System.ServiceModel.Description.MessageDirection.Input" />。送信の場合は <see cref="F:System.ServiceModel.Description.MessageDirection.Output" />。</param>
+        <summary>指定したアクションと方向を使用して、<see cref="T:System.ServiceModel.Description.MessageDescription" /> クラスのインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="direction" /> が <see cref="F:System.ServiceModel.Description.MessageDirection.Input" /> でも <see cref="F:System.ServiceModel.Description.MessageDirection.Output" /> でもありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Action">
+      <MemberSignature Language="C#" Value="public string Action { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Action" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.Action" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージの目的を示す、SOAP メッセージのアクション パラメーターを取得または設定します。</summary>
+        <value>アクション URI を格納している <see cref="T:System.String" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このオプション パラメーターを使用して、メッセージの目的を示す URI を指定できます。 これは、SOAP 1.2 で、SOAP 1.1 の SOAPAction HTTP ヘッダー フィールドと同様の目的で使用されます。  
+  
+ アクション パラメーターの値は、RFC 2396 で定義されている絶対 URI 参照です。 SOAP 1.2 仕様では、URI が解決可能である必要はありません。 URI はグローバルに一意で時間が経過しても一定である必要があります。  
+  
+ ファイアウォールなどのサーバーは、アクション パラメーターのプレゼンスと内容を使用して SOAP メッセージをフィルター処理し、内部メッセージ ハンドラーへの SOAP メッセージのディスパッチを容易にします。 アクション パラメーターは、セキュリティで保護されない形式のアクセス承認として使用しないでください。  
+  
+ アクション パラメーターの使用はオプションです。 SOAP の受信者はこれを処理を最適化するためのヒントとして使用できますが、動作するためには必要としません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Body">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessageBodyDescription Body { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.MessageBodyDescription Body" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.Body" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessageBodyDescription</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージの本文を取得します。</summary>
+        <value>メッセージの本文を含んでいる <see cref="T:System.ServiceModel.Description.MessagePartDescriptionCollection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP 本文は、SOAP の最終の受信者に情報を送信するための機構を提供します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Direction">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessageDirection Direction { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Description.MessageDirection Direction" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.Direction" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessageDirection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージが受信と送信のどちらであるかを示す方向を取得します。</summary>
+        <value>メッセージがサービス側から見て受信と送信のどちらであるかを示す <see cref="T:System.ServiceModel.Description.MessageDirection" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 受信は、メッセージがクライアントからサーバーに送信されることを示します。 これが <xref:System.ServiceModel.Description.MessageDirection.Input> 方向です。 送信は、メッセージがサーバーからクライアントに送信されることを示します。 これが <xref:System.ServiceModel.Description.MessageDirection.Output> 方向です。 これらの用語は、クライアント側から見ると混乱を招く可能性があります。クライアント側では、実際には <xref:System.ServiceModel.Description.MessageDirection.Input> とマークされているメッセージが送信され、<xref:System.ServiceModel.Description.MessageDirection.Output> とマークされているメッセージが受信されるからです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HasProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool HasProtectionLevel { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool HasProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.HasProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Description.MessageDescription.ProtectionLevel" /> が設定されているかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" /> が設定されている場合は <see cref="P:System.ServiceModel.Description.MessageDescription.ProtectionLevel" />。それ以外の場合は <see langword="false" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Headers">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessageHeaderDescriptionCollection Headers { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.MessageHeaderDescriptionCollection Headers" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.Headers" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessageHeaderDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのヘッダーの説明を取得します。</summary>
+        <value>SOAP メッセージのヘッダーの説明を含んでいる <see cref="T:System.ServiceModel.Description.MessageHeaderDescriptionCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageType">
+      <MemberSignature Language="C#" Value="public Type MessageType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type MessageType" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.MessageType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージ コントラクトの種類を識別する型を取得または設定します。</summary>
+        <value>メッセージ コントラクトの種類を識別する <see cref="T:System.Type" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ メッセージ型には `null` を指定できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Description.MessagePropertyDescriptionCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Description.MessagePropertyDescriptionCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel.Primitives</AssemblyName>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Description.MessagePropertyDescriptionCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>SOAP メッセージのプロパティの説明を取得します。</summary>
+        <value>SOAP メッセージのプロパティの説明を含んでいる <see cref="T:System.ServiceModel.Description.MessagePropertyDescriptionCollection" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProtectionLevel">
+      <MemberSignature Language="C#" Value="public System.Net.Security.ProtectionLevel ProtectionLevel { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Security.ProtectionLevel ProtectionLevel" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Description.MessageDescription.ProtectionLevel" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Net.Security.ProtectionLevel</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メッセージに必要なセキュリティ サービスを取得または設定します。</summary>
+        <value>メッセージに必要なセキュリティ サービスを指定する <see cref="T:System.Net.Security.ProtectionLevel" /> の値。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ セキュリティ サービスは、メッセージに含まれるデータの機密性、整合性、および認証を確保するために使用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException">設定値が有効な <see cref="T:System.Net.Security.ProtectionLevel" /> 値ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldSerializeProtectionLevel">
+      <MemberSignature Language="C#" Value="public bool ShouldSerializeProtectionLevel ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool ShouldSerializeProtectionLevel() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Description.MessageDescription.ShouldSerializeProtectionLevel" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="P:System.ServiceModel.Description.MessageDescription.ProtectionLevel" /> プロパティが既定値から変更されたためにシリアル化する必要があるかどうかを示す値を返します。</summary>
+        <returns>
+          <see langword="true" /> プロパティ値をシリアル化する必要がある場合は <see cref="P:System.ServiceModel.Description.MessageDescription.ProtectionLevel" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

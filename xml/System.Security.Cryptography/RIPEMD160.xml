@@ -1,0 +1,146 @@
+<Type Name="RIPEMD160" FullName="System.Security.Cryptography.RIPEMD160">
+  <TypeSignature Language="C#" Value="public abstract class RIPEMD160 : System.Security.Cryptography.HashAlgorithm" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit RIPEMD160 extends System.Security.Cryptography.HashAlgorithm" />
+  <TypeSignature Language="DocId" Value="T:System.Security.Cryptography.RIPEMD160" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Security.Cryptography.HashAlgorithm</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>MD160 ハッシュ アルゴリズムのすべての実装の継承元となる抽象クラスを表します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ハッシュ関数マップ バイナリ文字列、任意の長さの固定長のバイナリ文字列を小規模にします。 暗号ハッシュ関数になっていないこと、同じ値にハッシュされる 2 つの異なる入力を検索するためのプロパティ対応するデータにも一致する場合は、2 組のデータのハッシュが一致する必要があります。 ハッシュで予期しない変更を大規模なデータの結果を少し変更します。  
+  
+ Ripemd-160 は、160 ビットの暗号ハッシュ関数です。 これは MD4、MD5、および RIPEMD 128 ビットのハッシュ関数の代わりとして使用するものです。 RIPEMD は、ヨーロッパ プロジェクト RIPE (競合整合性プリミティブ、1988 1992) 評価のフレームワークに開発されました。  
+  
+> [!NOTE]
+>  <xref:System.Security.Cryptography.RIPEMD160>セキュリティで保護されたハッシュ アルゴリズム sha-256、sha-512、派生クラスで置き換えられました。 <xref:System.Security.Cryptography.SHA256>および<xref:System.Security.Cryptography.SHA512>セキュリティおよびよりもパフォーマンスが向上を提供して<xref:System.Security.Cryptography.RIPEMD160>です。 使用して<xref:System.Security.Cryptography.RIPEMD160>レガシ アプリケーションとデータとの互換性のみです。  
+  
+   
+  
+## Examples  
+ 次のコード例を計算、<xref:System.Security.Cryptography.RIPEMD160>ディレクトリ内のすべてのファイルのハッシュ。  
+  
+ [!code-cpp[RIPEMD160#1](~/samples/snippets/cpp/VS_Snippets_CLR/RIPEMD160/CPP/ripemd160.cpp#1)]
+ [!code-csharp[RIPEMD160#1](~/samples/snippets/csharp/VS_Snippets_CLR/RIPEMD160/CS/ripemd160.cs#1)]
+ [!code-vb[RIPEMD160#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RIPEMD160/vb/ripemd160.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected RIPEMD160 ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RIPEMD160.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Security.Cryptography.RIPEMD160" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。 詳細については、<xref:System.Security.Cryptography.RIPEMD160Managed> クラスを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を計算、<xref:System.Security.Cryptography.RIPEMD160>ディレクトリ内のすべてのファイルのハッシュ。  
+  
+ [!code-cpp[RIPEMD160#1](~/samples/snippets/cpp/VS_Snippets_CLR/RIPEMD160/CPP/ripemd160.cpp#1)]
+ [!code-csharp[RIPEMD160#1](~/samples/snippets/csharp/VS_Snippets_CLR/RIPEMD160/CS/ripemd160.cs#1)]
+ [!code-vb[RIPEMD160#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RIPEMD160/vb/ripemd160.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RIPEMD160 Create ();" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.RIPEMD160 Create() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RIPEMD160.Create" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RIPEMD160</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>既定の実装のインスタンスを作成、<see cref="T:System.Security.Cryptography.RIPEMD160" />ハッシュ アルゴリズム。</summary>
+        <returns>新しいインスタンス、<see cref="T:System.Security.Cryptography.RIPEMD160" />ハッシュ アルゴリズム。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。 詳細については、<xref:System.Security.Cryptography.RIPEMD160Managed> クラスを参照してください。  
+  
+   
+  
+## Examples  
+ 次のコード例を計算、<xref:System.Security.Cryptography.RIPEMD160>ディレクトリ内のすべてのファイルのハッシュ。  
+  
+ [!code-cpp[RIPEMD160#1](~/samples/snippets/cpp/VS_Snippets_CLR/RIPEMD160/CPP/ripemd160.cpp#1)]
+ [!code-csharp[RIPEMD160#1](~/samples/snippets/csharp/VS_Snippets_CLR/RIPEMD160/CS/ripemd160.cs#1)]
+ [!code-vb[RIPEMD160#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/RIPEMD160/vb/ripemd160.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">アルゴリズムは、連邦情報処理規格 (FIPS) モードを有効にすると、とともに使用されましたが、FIPS 互換ではありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public static System.Security.Cryptography.RIPEMD160 Create (string hashName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Security.Cryptography.RIPEMD160 Create(string hashName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Security.Cryptography.RIPEMD160.Create(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Security.Cryptography.RIPEMD160</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="hashName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="hashName">特定の実装の名前<see cref="T:System.Security.Cryptography.RIPEMD160" />を使用します。</param>
+        <summary>指定した実装のインスタンスを作成、<see cref="T:System.Security.Cryptography.RIPEMD160" />ハッシュ アルゴリズム。</summary>
+        <returns><see cref="T:System.Security.Cryptography.RIPEMD160" /> の指定した実装の新しいインスタンス。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 抽象クラスのインスタンスを作成することはできません。 アプリケーション コードでは、派生クラスの新しいインスタンスが作成されます。 詳細については、<xref:System.Security.Cryptography.RIPEMD160Managed> クラスを参照してください。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Reflection.TargetInvocationException">によって説明されているアルゴリズム、<paramref name="hashName" />パラメーターが有効になっている、連邦情報処理規格 (FIPS) モードで使用されましたが FIPS 互換ではありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

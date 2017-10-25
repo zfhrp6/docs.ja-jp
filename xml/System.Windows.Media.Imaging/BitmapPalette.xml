@@ -1,0 +1,140 @@
+<Type Name="BitmapPalette" FullName="System.Windows.Media.Imaging.BitmapPalette">
+  <TypeSignature Language="C#" Value="public sealed class BitmapPalette : System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit BitmapPalette extends System.Windows.Threading.DispatcherObject" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Media.Imaging.BitmapPalette" />
+  <AssemblyInfo>
+    <AssemblyName>PresentationCore</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Threading.DispatcherObject</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>サポートされているイメージの種類に利用可能なカラー パレットを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ のみ[!INCLUDE[TLA#tla_tiff](~/includes/tlasharptla-tiff-md.md)]と[!INCLUDE[TLA#tla_gif](~/includes/tlasharptla-gif-md.md)]イメージ パレット サポートします。 その他の種類の画像を使用して、定義するただし、<xref:System.Windows.Media.Imaging.BitmapPalette>です。 定義しようとすると、<xref:System.Windows.Media.Imaging.BitmapPalette>例外; でサポートされていないビットマップ形式は行われませんの指定された<xref:System.Windows.Media.Imaging.BitmapPalette>は単に無視されます。  
+  
+ [!INCLUDE[TLA#tla_winclient](~/includes/tlasharptla-winclient-md.md)]カスタムの色パレットとによって定義される定義済みのパレットの両方をサポート、<xref:System.Windows.Media.Imaging.BitmapPalettes>クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、カスタム定義<xref:System.Windows.Media.Imaging.BitmapPalette>しを新しい適用<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ [!code-csharp[bitmapframeexample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#1)]
+ [!code-vb[bitmapframeexample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#1)]  
+  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapPalette>イメージからです。  
+  
+ [!code-csharp[bitmapframeexample#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#5)]
+ [!code-vb[bitmapframeexample#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#5)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapPalette (System.Collections.Generic.IList&lt;System.Windows.Media.Color&gt; colors);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Media.Color&gt; colors) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapPalette.#ctor(System.Collections.Generic.IList{System.Windows.Media.Color})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="colors" Type="System.Collections.Generic.IList&lt;System.Windows.Media.Color&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="colors">カスタム パレットに追加する色。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />指定した色を持つクラス。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、カスタム定義<xref:System.Windows.Media.Imaging.BitmapPalette>しを新しい適用<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ [!code-csharp[bitmapframeexample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#1)]
+ [!code-vb[bitmapframeexample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="colors" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.InvalidOperationException"><paramref name="colors" />パラメーターが 1 より小さいか、256 を超えています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public BitmapPalette (System.Windows.Media.Imaging.BitmapSource bitmapSource, int maxColorCount);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Windows.Media.Imaging.BitmapSource bitmapSource, int32 maxColorCount) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Media.Imaging.BitmapPalette.#ctor(System.Windows.Media.Imaging.BitmapSource,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Security.SecurityCritical</AttributeName>
+        </Attribute>
+      </Attributes>
+      <Parameters>
+        <Parameter Name="bitmapSource" Type="System.Windows.Media.Imaging.BitmapSource" />
+        <Parameter Name="maxColorCount" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="bitmapSource">パレットの読み取り元またはその構築元となるソース ビットマップ。</param>
+        <param name="maxColorCount">最大数は、新しい色<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />を使用できます。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />クラスに基づいて、指定された<see cref="T:System.Windows.Media.Imaging.BitmapSource" />です。 新しい<see cref="T:System.Windows.Media.Imaging.BitmapPalette" />は指定した最大色数に限定されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、`bitmapSource`定義済みのパレットには既に、対応するパレットが返されます。 それ以外の場合、新しいパレットは、ビットマップの分析から構成されます。  
+  
+   
+  
+## Examples  
+ 次の例は、取得する方法を示します、<xref:System.Windows.Media.Imaging.BitmapPalette>イメージからです。  
+  
+ [!code-csharp[bitmapframeexample#5](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#5)]
+ [!code-vb[bitmapframeexample#5](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#5)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="bitmapSource" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Colors">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IList&lt;System.Windows.Media.Color&gt; Colors { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IList`1&lt;valuetype System.Windows.Media.Color&gt; Colors" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Media.Imaging.BitmapPalette.Colors" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>PresentationCore</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IList&lt;System.Windows.Media.Color&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>パレットに定義されている色を取得します。</summary>
+        <value>色パレットの定義の一覧。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ 次の例では、カスタム定義<xref:System.Windows.Media.Imaging.BitmapPalette>しを新しい適用<xref:System.Windows.Media.Imaging.BitmapSource>です。  
+  
+ [!code-csharp[bitmapframeexample#1](~/samples/snippets/csharp/VS_Snippets_Wpf/BitmapFrameExample/CSharp/BitmapFrame.cs#1)]
+ [!code-vb[bitmapframeexample#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#1)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

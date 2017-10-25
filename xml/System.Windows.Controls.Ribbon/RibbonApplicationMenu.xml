@@ -1,0 +1,565 @@
+<Type Name="RibbonApplicationMenu" FullName="System.Windows.Controls.Ribbon.RibbonApplicationMenu">
+  <TypeSignature Language="C#" Value="public class RibbonApplicationMenu : System.Windows.Controls.Ribbon.RibbonMenuButton" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi RibbonApplicationMenu extends System.Windows.Controls.Ribbon.RibbonMenuButton" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.RibbonApplicationMenu" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Ribbon.RibbonMenuButton</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="ItemContainerStyle", StyleTargetType=typeof(System.Windows.Controls.Ribbon.RibbonApplicationMenuItem))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_PopupToggleButton", Type=typeof(System.Windows.Controls.Ribbon.RibbonToggleButton))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_Popup", Type=typeof(System.Windows.Controls.Primitives.Popup))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_SubmenuPlaceholder", Type=typeof(System.Windows.FrameworkElement))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_FooterPaneContentPresenter", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_AuxiliaryPaneContentPresenter", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>使用されているアプリケーション メニューを表す、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ すべてのリボンには、リボンの最初のタブとしてアプリケーション メニューが含まれます。 その他のリボン タブでは、ドキュメントの内容を操作するためのコントロールを含めます。 これに対し、アプリケーション メニューは、ファイルを操作するためのコマンドのメニューを表示します。 例には、従来の作成、開く、保存、およびファイルを印刷するファイル メニューで go コマンドが含まれます。 プログラムのオプションと [終了] コマンドにアクセスすることも使用されます。  
+  
+ 次の図は、リボン コントロールのアプリケーション メニューを示します。  
+  
+ ![リボンのアプリケーション メニュー](~/add/media/wpfribbon-appmenu.png "リボンのアプリケーション メニュー")  
+  
+ <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>をホストできる<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem>と<xref:System.Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem>オブジェクト。 アプリケーションのメニューがあります、*補助ウィンドウ*と*フッター ウィンドウ*追加のコンテンツをホストすることができます。 <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent%2A>プロパティ ホスト、<xref:System.Windows.Controls.Ribbon.RibbonGallery>最近使ったドキュメントの一覧を表示する使用するが一般的です。 <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent%2A>プロパティは通常プログラムのオプションと [終了] コマンドへのアクセスを有効にするボタンをホストします。  
+  
+ 次に、アプリケーション メニュー内の要素の一般的な階層を示します。  
+  
+-   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent%2A>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonButton>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent%2A>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonGallery>  
+  
+   
+  
+## Examples  
+ 次の例は、以前のように、[アプリケーション] メニューを示します。  
+  
+ [!code-xaml[Ribbon_Snippets#AppMenuFull](~/samples/snippets/csharp/VS_Snippets_Wpf/ribbon_snippets/cs/ribbonwindow1.xaml#appmenufull)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public RibbonApplicationMenu ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationMenu" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContent">
+      <MemberSignature Language="C#" Value="public object AuxiliaryPaneContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object AuxiliaryPaneContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーション メニュー補助ウィンドウの内容を設定します。</summary>
+        <value>アプリケーション メニュー補助ウィンドウの内容。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのメニューがあります、*補助ウィンドウ*追加のコンテンツをホストすることができます。 <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent%2A>プロパティ ホスト、<xref:System.Windows.Controls.Ribbon.RibbonGallery>最近使ったドキュメントの一覧を表示する使用するが一般的です。  
+  
+ 次の図は、リボン コントロールのアプリケーション メニューを示します。 補助ウィンドウは、最近使ったドキュメントの一覧をホストします。  
+  
+ ![リボンのアプリケーション メニュー](~/add/media/wpfribbon-appmenu.png "リボンのアプリケーション メニュー")  
+  
+<a name="dependencyPropertyInfo_AuxiliaryPaneContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、以前のアプリケーション メニューの補助型 ウィンドウの内容を示します。  
+  
+ [!code-xaml[Ribbon_Snippets#AppMenuAuxPane](~/samples/snippets/csharp/VS_Snippets_Wpf/ribbon_snippets/cs/ribbonwindow1.xaml#appmenuauxpane)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AuxiliaryPaneContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AuxiliaryPaneContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate AuxiliaryPaneContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate AuxiliaryPaneContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーション メニュー補助ウィンドウの内容を表示するために使用するテンプレートを設定します。</summary>
+        <value>アプリケーションのメニューの補助ウィンドウの内容の表示に使用されるテンプレートです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_AuxiliaryPaneContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AuxiliaryPaneContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AuxiliaryPaneContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContentTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector AuxiliaryPaneContentTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector AuxiliaryPaneContentTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を選択するためのカスタム ロジックを<see cref="T:System.Windows.DataTemplate" />アプリケーション メニュー補助ペインの内容の表示に使用します。</summary>
+        <value>カスタム<see cref="T:System.Windows.Controls.DataTemplateSelector" />ロジックを提供し、返しますオブジェクト、<see cref="T:System.Windows.DataTemplate" />です。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplate%2A>コンテンツの視覚エフェクトを指定するプロパティです。 ある場合は 1 つ以上のテンプレートが定義され、使用するテンプレートを選択するロジックを指定するし、このプロパティを使用します。 場合、このプロパティは無視されます、<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplate%2A>プロパティを設定します。  
+  
+<a name="dependencyPropertyInfo_AuxiliaryPaneContentTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AuxiliaryPaneContentTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty AuxiliaryPaneContentTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty AuxiliaryPaneContentTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContentTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContent">
+      <MemberSignature Language="C#" Value="public object FooterPaneContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object FooterPaneContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーション メニューの フッター ウィンドウの内容を設定します。</summary>
+        <value>アプリケーション メニューの フッター ウィンドウの内容。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのメニューがあります、*フッター ウィンドウ*追加のコンテンツをホストすることができます。 <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent%2A>プロパティは通常プログラムのオプションと [終了] コマンドへのアクセスを有効にするボタンをホストします。  
+  
+ 次の図は、リボン コントロールのアプリケーション メニューを示します。 フッター ペイン ホスト、**終了**ボタンをクリックします。  
+  
+ ![リボンのアプリケーション メニュー](~/add/media/wpfribbon-appmenu.png "リボンのアプリケーション メニュー")  
+  
+<a name="dependencyPropertyInfo_FooterPaneContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、以前のアプリケーション メニューのフッター ペインのコンテンツを示します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FooterPaneContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FooterPaneContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate FooterPaneContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate FooterPaneContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはアプリケーション メニューの フッター ペインの内容を表示するために使用するテンプレートを設定します。</summary>
+        <value>アプリケーション メニューの フッター ウィンドウの内容の表示に使用されるテンプレートです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_FooterPaneContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FooterPaneContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FooterPaneContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContentTemplateSelector">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.DataTemplateSelector FooterPaneContentTemplateSelector { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.DataTemplateSelector FooterPaneContentTemplateSelector" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateSelector" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.DataTemplateSelector</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を選択するためのカスタム ロジックを<see cref="T:System.Windows.DataTemplate" />アプリケーション メニューの フッター ウィンドウの内容の表示に使用します。</summary>
+        <value>カスタム<see cref="T:System.Windows.Controls.DataTemplateSelector" />ロジックを提供し、返しますオブジェクト、<see cref="T:System.Windows.DataTemplate" />です。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplate%2A>コンテンツの視覚エフェクトを指定するプロパティです。 ある場合は 1 つ以上のテンプレートが定義され、使用するテンプレートを選択するロジックを指定するし、このプロパティを使用します。 場合、このプロパティは無視されます、<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplate%2A>プロパティを設定します。  
+  
+<a name="dependencyPropertyInfo_FooterPaneContentTemplateSelector"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateSelectorProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FooterPaneContentTemplateSelectorProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FooterPaneContentTemplateSelectorProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FooterPaneContentTemplateSelectorProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateSelectorProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContentTemplateSelector" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem" /> オブジェクトを返します。</summary>
+        <returns>アイテムのコンテナーである新しいメニュー項目オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected override bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">テストする項目。</param>
+        <summary>示す値を返すかどうか、指定した項目が (またはが対象になります) 独自のコンテナーです。</summary>
+        <returns>
+          <see langword="true" />項目がの場合、 <see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem" />、 <see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem" />、または<see cref="T:System.Windows.Controls.Ribbon.RibbonSeparator" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnActivatingKeyTip">
+      <MemberSignature Language="C#" Value="protected override void OnActivatingKeyTip (System.Windows.Controls.ActivatingKeyTipEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnActivatingKeyTip(class System.Windows.Controls.ActivatingKeyTipEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.OnActivatingKeyTip(System.Windows.Controls.ActivatingKeyTipEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.ActivatingKeyTipEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">アクティベーションに関するデータが含まれています。</param>
+        <summary>KeyTip またはアクセラレータ キーが押されたときに呼び出されます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいテンプレートが適用されたときの <see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationMenu" /> のビジュアル ツリーを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードまたは内部プロセス (リビルド レイアウト パスなど) が <xref:System.Windows.FrameworkElement.ApplyTemplate%2A> メソッドを呼び出すと、このメソッドが必ず呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコントロールの新しい <see cref="T:System.Windows.Automation.Peers.RibbonApplicationMenuAutomationPeer" /> オブジェクトを作成します。</summary>
+        <returns>このコントロールの新しいオートメーション ピア オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewKeyDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShouldApplyItemContainerStyle">
+      <MemberSignature Language="C#" Value="protected override bool ShouldApplyItemContainerStyle (System.Windows.DependencyObject container, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool ShouldApplyItemContainerStyle(class System.Windows.DependencyObject container, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.RibbonApplicationMenu.ShouldApplyItemContainerStyle(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="container" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="container">コンテナー要素。</param>
+        <param name="item">コンテナーが適用される項目。</param>
+        <summary>スタイルを適用するかどうかを示す値を返します、<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyle" />または<see cref="P:System.Windows.Controls.ItemsControl.ItemContainerStyleSelector" />プロパティを指定した項目のコンテナー要素。</summary>
+        <returns>
+          <see langword="false" />場合<paramref name="container" />は、 <see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem" />、 <see cref="T:System.Windows.Controls.Ribbon.RibbonSeparator" />、または<see cref="T:System.Windows.Controls.Ribbon.RibbonGallery" />以外の場合、基底の実装によって返される値。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

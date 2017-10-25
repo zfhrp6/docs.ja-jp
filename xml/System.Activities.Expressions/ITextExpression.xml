@@ -1,0 +1,90 @@
+<Type Name="ITextExpression" FullName="System.Activities.Expressions.ITextExpression">
+  <TypeSignature Language="C#" Value="public interface ITextExpression" />
+  <TypeSignature Language="ILAsm" Value=".class public interface auto ansi abstract ITextExpression" />
+  <TypeSignature Language="DocId" Value="T:System.Activities.Expressions.ITextExpression" />
+  <AssemblyInfo>
+    <AssemblyName>System.Activities</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Interfaces />
+  <Docs>
+    <summary>テキストの式を表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="ExpressionText">
+      <MemberSignature Language="C#" Value="public string ExpressionText { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ExpressionText" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Expressions.ITextExpression.ExpressionText" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>評価される式のテキストを取得します。</summary>
+        <value>評価対象の式のテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExpressionTree">
+      <MemberSignature Language="C#" Value="public System.Linq.Expressions.Expression GetExpressionTree ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Linq.Expressions.Expression GetExpressionTree() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Activities.Expressions.ITextExpression.GetExpressionTree" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Linq.Expressions.Expression</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>式ツリーを取得します。</summary>
+        <returns>式ツリー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Language">
+      <MemberSignature Language="C#" Value="public string Language { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Language" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Expressions.ITextExpression.Language" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>インターフェイスのテキスト式に適用される言語情報を取得します。</summary>
+        <value>言語については、インターフェイスのテキスト式に適用されます。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RequiresCompilation">
+      <MemberSignature Language="C#" Value="public bool RequiresCompilation { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool RequiresCompilation" />
+      <MemberSignature Language="DocId" Value="P:System.Activities.Expressions.ITextExpression.RequiresCompilation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Activities</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ITextExpression がコンパイルを必要とするかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="True" />ITextExpression コンパイルが必要な場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,178 @@
+<Type Name="DiagnosticSection" FullName="System.ServiceModel.Configuration.DiagnosticSection">
+  <TypeSignature Language="C#" Value="public sealed class DiagnosticSection : System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit DiagnosticSection extends System.Configuration.ConfigurationSection" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Configuration.DiagnosticSection" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationSection</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>ランタイムの検査と管理を行う管理者が使用できる設定を定義する構成セクションを表します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DiagnosticSection ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Configuration.DiagnosticSection.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.DiagnosticSection" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EndToEndTracing">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.EndToEndTracingElement EndToEndTracing { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.EndToEndTracingElement EndToEndTracing" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.EndToEndTracing" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("endToEndTracing", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.EndToEndTracingElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Configuration.EndToEndTracingElement" /> インスタンスに指定されているエンドツーエンドの追跡構成設定を取得します。</summary>
+        <value>エンドツーエンドの追跡構成設定を含む <see cref="T:System.ServiceModel.Configuration.EndToEndTracingElement" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EtwProviderId">
+      <MemberSignature Language="C#" Value="public string EtwProviderId { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string EtwProviderId" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.EtwProviderId" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("etwProviderId", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Configuration.StringValidator(MinLength=32)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベントを ETW セッションに書き込むイベント追跡プロバイダーの識別子を取得します。</summary>
+        <value><see cref="T:System.String" /> を返します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageLogging">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Configuration.MessageLoggingElement MessageLogging { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.Configuration.MessageLoggingElement MessageLogging" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("messageLogging", Options=System.Configuration.ConfigurationPropertyOptions.None)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Configuration.MessageLoggingElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>[!INCLUDE[indigo1](~/includes/indigo1-md.md)] メッセージ ログの設定について説明します。</summary>
+        <value><see cref="T:System.ServiceModel.Configuration.MessageLoggingElement" /> メッセージ ログの設定について説明する [!INCLUDE[indigo2](~/includes/indigo2-md.md)]。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PerformanceCounters">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Diagnostics.PerformanceCounterScope PerformanceCounters { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.ServiceModel.Diagnostics.PerformanceCounterScope PerformanceCounters" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.PerformanceCounters" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("performanceCounters", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Diagnostics.PerformanceCounterScope</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリのパフォーマンス カウンターが有効であるかどうかを指定する値を取得または設定します。</summary>
+        <value>アセンブリの有効にするパフォーマンス カウンターの種類を指定する <see cref="T:System.ServiceModel.Diagnostics.PerformanceCounterScope" /> の有効な値。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WmiProviderEnabled">
+      <MemberSignature Language="C#" Value="public bool WmiProviderEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WmiProviderEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Configuration.DiagnosticSection.WmiProviderEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("wmiProviderEnabled", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アセンブリの WMI プロバイダーが有効であるかどうかを指定する値を取得または設定します。</summary>
+        <value>
+          アセンブリの WMI プロバイダーが有効な場合は <see langword="true" />。それ以外の場合は <see langword="false" />。 既定値は、<see langword="false" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーが [!INCLUDE[indigo2](~/includes/indigo2-md.md)] の検査および制御機能に対する実行時アクセス権を取得するには、WMI プロバイダーが必要です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,227 @@
+<Type Name="ComposablePart" FullName="System.ComponentModel.Composition.Primitives.ComposablePart">
+  <TypeSignature Language="C#" Value="public abstract class ComposablePart" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract beforefieldinit ComposablePart extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.ComponentModel.Composition.Primitives.ComposablePart" />
+  <AssemblyInfo>
+    <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>オブジェクトのインポートし、エクスポートされたオブジェクトを生成するコンポーザブル パーツの抽象基本クラスを定義します。</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="protected ComposablePart ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePart.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Activate">
+      <MemberSignature Language="C#" Value="public virtual void Activate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Activate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePart.Activate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>部分のすべてのインポートが設定されている、およびエクスポートを取得するときに呼び出されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドが呼び出されると、さらにインポートできます以外は設定されませんを非アクティブ化する、呼び出しが行われます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExportDefinitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ExportDefinition&gt; ExportDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.ExportDefinition&gt; ExportDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePart.ExportDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ExportDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />パートによって提供される、エクスポートされたオブジェクトを記述するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />によって提供される、エクスポートされたオブジェクトを記述するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>からオブジェクトが作成された、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>オブジェクト、このプロパティは、その結果を返す必要があります<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ExportDefinitions%2A>です。  
+  
+ このプロパティのオーバーライドが返りません`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>がありませんエクスポート、空を返す<xref:System.Collections.Generic.IEnumerable%601>コレクション代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetExportedValue">
+      <MemberSignature Language="C#" Value="public abstract object GetExportedValue (System.ComponentModel.Composition.Primitives.ExportDefinition definition);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance object GetExportedValue(class System.ComponentModel.Composition.Primitives.ExportDefinition definition) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePart.GetExportedValue(System.ComponentModel.Composition.Primitives.ExportDefinition)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ExportDefinition" />
+      </Parameters>
+      <Docs>
+        <param name="definition">1 つ、<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />オブジェクトから、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePart.ExportDefinitions" />を返す、エクスポートされるオブジェクトを記述するプロパティです。</param>
+        <summary>指定した説明されているエクスポートされたオブジェクトを取得<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />オブジェクト。</summary>
+        <returns>により記述されたエクスポートされるオブジェクト<paramref name="definition" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException">により記述されたエクスポートされるオブジェクトを取得中にエラーが発生しました、<see cref="T:System.ComponentModel.Composition.Primitives.ExportDefinition" />です。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="definition" />取得されませんでした、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePart.ExportDefinitions" />プロパティを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">によって示される 1 つまたは複数の前提条件インポート<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.IsPrerequisite" />、設定されていません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ImportDefinitions">
+      <MemberSignature Language="C#" Value="public abstract System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ImportDefinition&gt; ImportDefinitions { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.ImportDefinition&gt; ImportDefinitions" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePart.ImportDefinitions" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.ImportDefinition&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コレクションを取得、<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />部分で必要なインポートされたオブジェクトを記述するオブジェクト。</summary>
+        <value>コレクション<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />に必要なインポートされたオブジェクトを記述するオブジェクト、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>からオブジェクトが作成された、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>オブジェクト、このプロパティは、その結果を返す必要があります<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.ImportDefinitions%2A>です。  
+  
+ このプロパティのオーバーライドが返りません`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>がありません imports、空を返す<xref:System.Collections.Generic.IEnumerable%601>コレクション代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.Generic.IDictionary&lt;string,object&gt; Metadata { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, object&gt; Metadata" />
+      <MemberSignature Language="DocId" Value="P:System.ComponentModel.Composition.Primitives.ComposablePart.Metadata" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.Object&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>メタデータを取得、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />オブジェクト。</summary>
+        <value>メタデータ、<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />オブジェクト。 既定値は、空、読み取り専用<see cref="T:System.Collections.Generic.IDictionary`2" />オブジェクト。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>からオブジェクトが作成された、<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition>オブジェクト、このプロパティは、その結果を返す必要があります<xref:System.ComponentModel.Composition.Primitives.ComposablePartDefinition.Metadata%2A>です。  
+  
+ このプロパティのオーバーライドが読み取り専用に返す必要があります<xref:System.Collections.Generic.IDictionary%602>などの大文字と小文字、非言語的な比較演算子でオブジェクト<xref:System.StringComparer.Ordinal%2A>、返す必要がありますしない`null`です。 場合、<xref:System.ComponentModel.Composition.Primitives.ComposablePart>にありませんメタデータを含む、空を返す<xref:System.Collections.Generic.IDictionary%602>代わりにします。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />のオブジェクトは破棄されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SetImport">
+      <MemberSignature Language="C#" Value="public abstract void SetImport (System.ComponentModel.Composition.Primitives.ImportDefinition definition, System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt; exports);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void SetImport(class System.ComponentModel.Composition.Primitives.ImportDefinition definition, class System.Collections.Generic.IEnumerable`1&lt;class System.ComponentModel.Composition.Primitives.Export&gt; exports) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ComponentModel.Composition.Primitives.ComposablePart.SetImport(System.ComponentModel.Composition.Primitives.ImportDefinition,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ComponentModel.Composition</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="definition" Type="System.ComponentModel.Composition.Primitives.ImportDefinition" />
+        <Parameter Name="exports" Type="System.Collections.Generic.IEnumerable&lt;System.ComponentModel.Composition.Primitives.Export&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="definition">オブジェクトの 1 つ、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePart.ImportDefinitions" />設定へのインポートを指定するプロパティです。</param>
+        <param name="exports">コレクション<see cref="T:System.ComponentModel.Composition.Primitives.Export" />で説明されているインポートを設定する対象のオブジェクト<c>定義</c>です。</param>
+        <summary>指定した説明されているインポート設定<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />指定したエクスポートによって満たされるオブジェクト。</summary>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ObjectDisposedException"><see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />のオブジェクトは破棄されました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="definition" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="exports" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.ComponentModel.Composition.Primitives.ComposablePartException">により記述されたインポートの設定にエラーが発生しました、<see cref="T:System.ComponentModel.Composition.Primitives.ImportDefinition" />オブジェクト。</exception>
+        <exception cref="T:System.ArgumentException">
+          <paramref name="definition" />取得されませんでした、<see cref="P:System.ComponentModel.Composition.Primitives.ComposablePart.ImportDefinitions" />プロパティを<see cref="T:System.ComponentModel.Composition.Primitives.ComposablePart" />です。  
+  
+ または  
+  
+ <paramref name="exports" />ある要素を含む<see langword="null" />です。  
+  
+ または  
+  
+ <paramref name="exports" />空と<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" />は<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />します。  
+  
+ または  
+  
+ <paramref name="exports" />複数の要素が含まれていますと<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.Cardinality" />は<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ZeroOrOne" />または<see cref="F:System.ComponentModel.Composition.Primitives.ImportCardinality.ExactlyOne" />です。</exception>
+        <exception cref="T:System.InvalidOperationException">
+          <see cref="M:System.ComponentModel.Composition.Primitives.ComposablePart.SetImport(System.ComponentModel.Composition.Primitives.ImportDefinition,System.Collections.Generic.IEnumerable{System.ComponentModel.Composition.Primitives.Export})" />以前に呼び出されて、<see cref="P:System.ComponentModel.Composition.Primitives.ImportDefinition.IsRecomposable" />は<see langword="false" />します。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

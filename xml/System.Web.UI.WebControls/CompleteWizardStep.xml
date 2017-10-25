@@ -1,0 +1,121 @@
+<Type Name="CompleteWizardStep" FullName="System.Web.UI.WebControls.CompleteWizardStep">
+  <TypeSignature Language="C#" Value="public sealed class CompleteWizardStep : System.Web.UI.WebControls.TemplatedWizardStep" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit CompleteWizardStep extends System.Web.UI.WebControls.TemplatedWizardStep" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.WebControls.CompleteWizardStep" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.WebControls.TemplatedWizardStep</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary><see cref="T:System.Web.UI.WebControls.CreateUserWizard" /> コントロールによるユーザー アカウント作成の最終ステップのテンプレートを定義します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompleteWizardStep>クラスから派生して<xref:System.Web.UI.WebControls.TemplatedWizardStep>によって使用されると、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。 既定では、<xref:System.Web.UI.WebControls.CompleteWizardStep>後の手順が表示されます、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順です。 <xref:System.Web.UI.WebControls.CompleteWizardStep>手順に必要な手順では、<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CompleteWizardStep ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.WebControls.CompleteWizardStep.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.WebControls.CompleteWizardStep" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="StepType">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.WebControls.WizardStepType StepType { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Web.UI.WebControls.WizardStepType StepType" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompleteWizardStep.StepType" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Filterable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.Themeable(false)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.WizardStepType</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定のユーザー インターフェイス (UI) の表示の種類、<see cref="T:System.Web.UI.WebControls.CompleteWizardStep" />のページ、<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。</summary>
+        <value><see cref="F:System.Web.UI.WebControls.WizardStepType.Complete" />列挙値を<see cref="T:System.Web.UI.WebControls.WizardStepType" />列挙します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.WebControls.CompleteWizardStep.StepType%2A>プロパティの最後のユーザー アカウントの作成手順を表示する UI のナビゲーションの種類を指定 (、<xref:System.Web.UI.WebControls.CreateUserWizardStep>手順) の<xref:System.Web.UI.WebControls.CreateUserWizard>コントロール。  
+  
+> [!CAUTION]
+>  <xref:System.Web.UI.WebControls.CompleteWizardStep.StepType%2A>プロパティのオーバーライド、<xref:System.Web.UI.WebControls.WizardStepBase.StepType%2A?displayProperty=nameWithType>いることを確認するプロパティ<xref:System.Web.UI.WebControls.CompleteWizardStep>に常に設定されている、<xref:System.Web.UI.WebControls.WizardStepType.Complete>の値、<xref:System.Web.UI.WebControls.WizardStepType>列挙します。 設定しようとすると、<xref:System.Web.UI.WebControls.CompleteWizardStep.StepType%2A>プロパティを別の値になります、<xref:System.InvalidOperationException>です。  
+  
+ テーマまたはスタイル シート テーマによっては、このプロパティを設定できません。 詳細については、次を参照してください。<xref:System.Web.UI.ThemeableAttribute>と[ASP.NET のテーマとスキン](http://msdn.microsoft.com/library/5df3ebbd-d46c-4502-9406-02f9df4ef2c3)です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">設定しようとしましたが、<see cref="P:System.Web.UI.WebControls.CompleteWizardStep.StepType" />プロパティです。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public override string Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string Title" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.WebControls.CompleteWizardStep.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Localizable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の最後のユーザー アカウントの作成手順を表示するタイトルを<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。</summary>
+        <value>最後のユーザー アカウントの作成手順を使用するタイトルを<see cref="T:System.Web.UI.WebControls.CreateUserWizard" />コントロール。 既定値は、「完了」です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティの値を設定すると、デザイナーのツールを使用して、リソース ファイルに自動的に保存できます。 詳細については、次を参照してください。<xref:System.ComponentModel.LocalizableAttribute>と[グローバリゼーションとローカリゼーション](http://msdn.microsoft.com/library/8ef3838e-9d05-4236-9dd0-ceecff9df80d)です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

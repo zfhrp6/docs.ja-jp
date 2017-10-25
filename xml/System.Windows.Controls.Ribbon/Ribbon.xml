@@ -1,0 +1,1764 @@
+<Type Name="Ribbon" FullName="System.Windows.Controls.Ribbon.Ribbon">
+  <TypeSignature Language="C#" Value="public class Ribbon : System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Ribbon extends System.Windows.Controls.Primitives.Selector" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Controls.Ribbon.Ribbon" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Windows.Controls.Primitives.Selector</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="ContextualTabGroupStyle", StyleTargetType=typeof(System.Windows.Controls.Ribbon.RibbonContextualTabGroup))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.StyleTypedProperty(Property="TabHeaderStyle", StyleTargetType=typeof(System.Windows.Controls.Ribbon.RibbonTabHeader))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ContextualTabGroupItemsControl", Type=typeof(System.Windows.Controls.Ribbon.RibbonContextualTabGroupItemsControl))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_TitlePanel", Type=typeof(System.Windows.Controls.Ribbon.Primitives.RibbonTitlePanel))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_TitleHost", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="QatTopHost", Type=typeof(System.Windows.Controls.Grid))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_HelpPane", Type=typeof(System.Windows.Controls.ContentPresenter))</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Windows.TemplatePart(Name="PART_ITEMSPRESENTERPOPUP", Type=typeof(System.Windows.Controls.Primitives.Popup))</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ホストしているクイック アクセス ツールバー、アプリケーションのメニュー リボン ユーザー インターフェイスのルート要素を表すし、タブです。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リボンは、一連のアプリケーション ウィンドウの上部にあるタブに、アプリケーションの機能を編成するコマンド バーです。 これには、従来のメニュー バーとツールバーの両方が置き換えられます。  
+  
+ <xref:System.Windows.Controls.Ribbon.Ribbon>クラスは、Windows Presentation Foundation (WPF) で、リボン ユーザー インターフェイス (UI) のルート要素です。 <xref:System.Windows.Controls.Ribbon.Ribbon>クラスのホスト、 <xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar>、 <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>、1 つまたは複数のおよび<xref:System.Windows.Controls.Ribbon.RibbonTab>コントロール。 これらのコントロールは、さまざまなアプリケーション コマンドへのアクセスを有効にするボタンとメニューのコントロールをホストします。  
+  
+ リボン要素の一般的な階層を次に示します。  
+  
+-   <xref:System.Windows.Controls.Ribbon.Ribbon>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContent%2A?displayProperty=nameWithType>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonButton>, <xref:System.Windows.Controls.Ribbon.RibbonRadioButton>, <xref:System.Windows.Controls.Ribbon.RibbonToggleButton>, <xref:System.Windows.Controls.Ribbon.RibbonCheckBox>, <xref:System.Windows.Controls.Ribbon.RibbonTextBox>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonComboBox>、<xref:System.Windows.Controls.Ribbon.RibbonMenuButton>、<xref:System.Windows.Controls.Ribbon.RibbonSplitButton>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar.CustomizeMenuButton%2A>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenuItem>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.FooterPaneContent%2A>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu.AuxiliaryPaneContent%2A>  
+  
+    -   <xref:System.Windows.Controls.Ribbon.RibbonTab>  
+  
+        -   <xref:System.Windows.Controls.Ribbon.RibbonGroup>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonButton>, <xref:System.Windows.Controls.Ribbon.RibbonRadioButton>, <xref:System.Windows.Controls.Ribbon.RibbonToggleButton>, <xref:System.Windows.Controls.Ribbon.RibbonCheckBox>, <xref:System.Windows.Controls.Ribbon.RibbonTextBox>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonComboBox>、<xref:System.Windows.Controls.Ribbon.RibbonMenuButton>、<xref:System.Windows.Controls.Ribbon.RibbonSplitButton>  
+  
+            -   <xref:System.Windows.Controls.Ribbon.RibbonControlGroup>  
+  
+   
+  
+## Examples  
+ 次の例では、[ヘルプ] ウィンドウとクイック アクセス ツールバーの要素を追加、Visual Studio 2010 テンプレートによって作成される単純なリボンを示します。  
+  
+ [!code-xaml[Ribbon_Snippets#RibbonDefault](~/samples/snippets/csharp/VS_Snippets_Wpf/ribbon_snippets/cs/mainwindow.xaml#ribbondefault)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Ribbon ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.Ribbon" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationMenu">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Ribbon.RibbonApplicationMenu ApplicationMenu { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Ribbon.RibbonApplicationMenu ApplicationMenu" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ApplicationMenu" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.RibbonApplicationMenu</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.Ribbon.RibbonApplicationMenu" />これの子である論理<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。</summary>
+        <value>この論理子であるアプリケーション メニュー リボン<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、<xref:System.Windows.Controls.Ribbon.Ribbon.ApplicationMenu%2A>プロパティに関連付けるには、<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>オブジェクトを<xref:System.Windows.Controls.Ribbon.Ribbon>です。  
+  
+<a name="dependencyPropertyInfo_ApplicationMenu"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.ApplicationMenuProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+   
+  
+## Examples  
+ 次の例では、アプリケーション メニューは、リボン コントロールにアタッチされている単純なを示します。 その他の例については、「<xref:System.Windows.Controls.Ribbon.RibbonApplicationMenu>」を参照してください。  
+  
+```xaml  
+xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"  
+...  
+<ribbon:Ribbon >  
+    <ribbon:Ribbon.ApplicationMenu>  
+        <ribbon:RibbonApplicationMenu SmallImageSource="Images\SmallIcon.png">  
+            <ribbon:RibbonApplicationMenuItem Header="Hello _Ribbon"  
+                                              x:Name="MenuItem1"  
+                                              ImageSource="Images\LargeIcon.png"/>  
+        </ribbon:RibbonApplicationMenu>  
+    </ribbon:Ribbon.ApplicationMenu>  
+    <ribbon:RibbonTab>  
+        <!-- Ribbon content goes here. -->  
+    </ribbon:RibbonTab>  
+</ribbon:Ribbon >  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationMenuProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ApplicationMenuProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ApplicationMenuProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ApplicationMenuProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.ApplicationMenu" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush CheckedBackground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush CheckedBackground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.CheckedBackground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景を描画するために使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />チェックされた状態にある場合を制御します。</summary>
+        <value>背景の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />チェックされた状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CheckedBackground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.CheckedBackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedBackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CheckedBackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CheckedBackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.CheckedBackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.CheckedBackground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedBorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush CheckedBorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush CheckedBorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.CheckedBorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />チェックされた状態にある場合を制御します。</summary>
+        <value>外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />チェックされた状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_CheckedBorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.CheckedBorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CheckedBorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty CheckedBorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty CheckedBorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.CheckedBorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.CheckedBorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Collapsed">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Collapsed;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Collapsed" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Ribbon.Ribbon.Collapsed" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsCollapsed" />にプロパティが変更された<see langword="true" />と<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />が折りたたまれています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CollapsedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent CollapsedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent CollapsedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.CollapsedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Ribbon.Ribbon.Collapsed" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupHeaderTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate ContextualTabGroupHeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate ContextualTabGroupHeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupHeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の表示に使用されるテンプレート<see cref="P:System.Windows.Controls.Ribbon.RibbonContextualTabGroup.Header" />の項目を<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />です。</summary>
+        <value>表示に使用されるテンプレート<see cref="P:System.Windows.Controls.Ribbon.RibbonContextualTabGroup.Header" />の項目を<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />です。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ContextualTabGroupHeaderTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupHeaderTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupHeaderTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContextualTabGroupHeaderTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContextualTabGroupHeaderTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupHeaderTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupHeaderTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroups">
+      <MemberSignature Language="C#" Value="public System.Collections.ObjectModel.Collection&lt;System.Windows.Controls.Ribbon.RibbonContextualTabGroup&gt; ContextualTabGroups { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.ObjectModel.Collection`1&lt;class System.Windows.Controls.Ribbon.RibbonContextualTabGroup&gt; ContextualTabGroups" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroups" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Bindable(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.ObjectModel.Collection&lt;System.Windows.Controls.Ribbon.RibbonContextualTabGroup&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>すべてを含むコレクションを取得、<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />の項目を<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>コレクション<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />の項目を<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />; が存在する場合は、それ以外の場合、新しい空のコレクション。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用する、*コンテキスト タブ*特定のコンテキスト内のみで関連するコマンドのグループを表示します。 コンテキスト タブ グループに表示されるか指定した条件に基づいて非表示になります。 たとえば、インク ツール タブ グループについては、タブレットの入力が検出されると、または図ツールのタブ グループは、イメージ オブジェクトを選択すると表示される可能性があるときに、表示される可能性があります。  
+  
+   
+  
+## Examples  
+ 例を次に、<xref:System.Windows.Controls.Ribbon.RibbonTab>という**ペン**内にある、**インク ツール**コンテキスト タブのグループです。  
+  
+```xaml  
+</ribbon:Ribbon>  
+    <ribbon:RibbonTab Name="Pens" Header="Pens" ContextualTabGroupHeader="Ink Tools" >  
+    <!-- Ribbon Tab Content -->  
+    </ribbon:RibbonTab>  
+    <ribbon:Ribbon.ContextualTabGroups>  
+        <ribbon:RibbonContextualTabGroup Header="Ink Tools" Visibility="Visible" Background="Green" />  
+    </ribbon:Ribbon.ContextualTabGroups>  
+</ribbon:Ribbon>  
+  
+```  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupsSource">
+      <MemberSignature Language="C#" Value="public System.Collections.IEnumerable ContextualTabGroupsSource { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerable ContextualTabGroupsSource" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupsSource" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerable</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" /> 項目のコンテンツの生成に使用するコレクションを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" /> 項目のコンテンツの生成に使用するコレクション。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ContextualTabGroupHeadersSource"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupsSourceProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupsSourceProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContextualTabGroupsSourceProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContextualTabGroupsSourceProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupsSourceProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupsSource" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style ContextualTabGroupStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style ContextualTabGroupStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を表示するときに使用されているスタイル<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />の項目を<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>すべてに適用されるスタイル<see cref="T:System.Windows.Controls.Ribbon.RibbonContextualTabGroup" />の項目を<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ContextualTabGroupHeaderStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ContextualTabGroupStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ContextualTabGroupStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ContextualTabGroupStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.ContextualTabGroupStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Expanded">
+      <MemberSignature Language="C#" Value="public event System.Windows.RoutedEventHandler Expanded;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.Windows.RoutedEventHandler Expanded" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Controls.Ribbon.Ribbon.Expanded" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>発生したときに、<see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsCollapsed" />にプロパティが変更された<see langword="false" />と<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />が展開されています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ExpandedEvent">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.RoutedEvent ExpandedEvent;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.RoutedEvent ExpandedEvent" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ExpandedEvent" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.RoutedEvent</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="E:System.Windows.Controls.Ribbon.Ribbon.Expanded" /> ルーティング イベントを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush FocusedBackground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush FocusedBackground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.FocusedBackground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景を描画するために使用するブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />Focused 状態のコントロールです。</summary>
+        <value>背景の描画に使用するブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />Focused 状態のコントロールです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_FocusedBackground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.FocusedBackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedBackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FocusedBackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FocusedBackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.FocusedBackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.FocusedBackground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedBorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush FocusedBorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush FocusedBorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.FocusedBorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の外側の境界線の描画に使用するブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />Focused 状態のコントロールです。</summary>
+        <value>外側の境界線の描画に使用するブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />Focused 状態のコントロールです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リボン コントロールのキーボード フォーカスを移動、alt キーを押しながら KeyTip の文字キーを押しながら方向キーを使用して移動します。  
+  
+<a name="dependencyPropertyInfo_FocusedBorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.FocusedBorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="FocusedBorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty FocusedBorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty FocusedBorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.FocusedBorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.FocusedBorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override System.Windows.DependencyObject GetContainerForItemOverride ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.DependencyObject GetContainerForItemOverride() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.GetContainerForItemOverride" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyObject</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しい <see cref="T:System.Windows.Controls.Ribbon.RibbonTab" /> オブジェクトを返します。</summary>
+        <returns>新しい<see cref="T:System.Windows.Controls.Ribbon.RibbonTab" />コンテナー オブジェクトからの項目を表示するために使用、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPaneContent">
+      <MemberSignature Language="C#" Value="public object HelpPaneContent { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object HelpPaneContent" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContent" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、[ヘルプ] ウィンドウの内容を設定します。</summary>
+        <value>[ヘルプ] ウィンドウの内容。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーションのヘルプ コンテンツにアクセスするユーザーを有効にする [ヘルプ] ウィンドウの内容を設定することができます。 通常、設定、<xref:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContent%2A>プロパティを 1 つの別個のヘルプ ウィンドウを起動するボタンです。 ただし、[ヘルプ] ウィンドウへのコンテンツを定義できます。 設定して、レイアウトとコンテンツの外観を指定できます、<xref:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentTemplate%2A>プロパティです。  
+  
+<a name="dependencyPropertyInfo_HelpPaneContent"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPaneContentProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HelpPaneContentProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HelpPaneContentProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContent" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPaneContentTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate HelpPaneContentTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate HelpPaneContentTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または、[ヘルプ] ウィンドウの内容を表示するために使用するテンプレートを設定します。</summary>
+        <value>[ヘルプ] ウィンドウの内容の表示に使用されるテンプレートです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_HelpPaneContentTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="HelpPaneContentTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty HelpPaneContentTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty HelpPaneContentTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.HelpPaneContentTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollapsed">
+      <MemberSignature Language="C#" Value="public bool IsCollapsed { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsCollapsed" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.IsCollapsed" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはを示す値を設定するかどうか、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />が折りたたまれています。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />が折りたたまれている、それ以外の<see langword="false" />します。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ リボンは、アプリケーション ウィンドウのサイズを変更し、有意義な方法でリボンを表示するための十分な領域がないときに自動的に折りたたみます。 リボンが折りたたまれている場合は、ビューからすべてのリボン要素が表示されません。  
+  
+ リボンが折りたたまれているときに、<xref:System.Windows.Controls.Ribbon.Ribbon.Collapsed>イベントが発生します。 リボンを展開すると、<xref:System.Windows.Controls.Ribbon.Ribbon.Expanded>イベントが発生します。  
+  
+<a name="dependencyPropertyInfo_IsCollapsed"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.IsCollapsedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsCollapsedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsCollapsedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsCollapsedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.IsCollapsedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsCollapsed" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDropDownOpen">
+      <MemberSignature Language="C#" Value="public bool IsDropDownOpen { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsDropDownOpen" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうかのドロップダウン リスト、<see cref="T:System.Windows.Controls.Ribbon.RibbonTab" />が開いています。</summary>
+        <value>
+          <see langword="true" />場合のドロップダウン リスト、<see cref="T:System.Windows.Controls.Ribbon.RibbonTab" />が開かれている場合は、<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ときに、<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimized%2A>プロパティは`true`、クイック アクセス ツールバー、アプリケーション メニューおよびタブ ヘッダーが表示されるが、タブの内容がドロップダウン リストでは格納され、既定では表示されません。 ユーザー タブ ヘッダーを選択すると、ボックスの一覧のタブが開かれ、その内容が表示されます。 選択または選択解除 タブのヘッダーを切り替えます、<xref:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen%2A>間プロパティ`true`と`false`です。  
+  
+ 場合、<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimized%2A>プロパティは`false`、<xref:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen%2A>プロパティも`false`します。  
+  
+<a name="dependencyPropertyInfo_IsDropDownOpen"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpenProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsDropDownOpenProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsDropDownOpenProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsDropDownOpenProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpenProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHostedInRibbonWindow">
+      <MemberSignature Language="C#" Value="public bool IsHostedInRibbonWindow { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsHostedInRibbonWindow" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.IsHostedInRibbonWindow" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>示す値を取得するかどうか、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />にホストされている、<see cref="T:System.Windows.Controls.Ribbon.RibbonWindow" />です。</summary>
+        <value>
+          <see langword="true" />場合、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />でホストされる、 <see cref="T:System.Windows.Controls.Ribbon.RibbonWindow" />、それ以外の<see langword="false" />します。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_IsHostedInRibbonWindow"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.IsHostedInRibbonWindowProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsHostedInRibbonWindowProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsHostedInRibbonWindowProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsHostedInRibbonWindowProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.IsHostedInRibbonWindowProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsHostedInRibbonWindow" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsItemItsOwnContainerOverride">
+      <MemberSignature Language="C#" Value="protected override bool IsItemItsOwnContainerOverride (object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance bool IsItemItsOwnContainerOverride(object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.IsItemItsOwnContainerOverride(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="item">テストする項目。</param>
+        <summary>示す値を返すかどうか、指定した項目が (またはが対象になります) 独自のコンテナーです。</summary>
+        <returns>
+          <see langword="true" />項目がの場合、 <see cref="T:System.Windows.Controls.Ribbon.RibbonTab" />、それ以外の<see langword="false" />します。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMinimized">
+      <MemberSignature Language="C#" Value="public bool IsMinimized { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool IsMinimized" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.IsMinimized" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />最小限に抑えられます。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Controls.Ribbon.Ribbon" /> 、それ以外の最小化された<see langword="false" />です。 登録済みの既定値は <see langword="false" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ユーザーがリボンを最小化、リボンを右クリックして**リボンを最小化**コンテキスト メニュー。 ときに、<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimized%2A>プロパティは`true`、クイック アクセス ツールバー、アプリケーション メニューおよびタブ ヘッダーが表示されるが、タブの内容がドロップダウン リストでは格納され、既定では表示されません。 ユーザー タブ ヘッダーを選択すると、ボックスの一覧のタブが開かれ、その内容が表示されます。  
+  
+ 場合、<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimized%2A>プロパティは`true`を選択すると、またはタブ ヘッダーの切り替えの選択を解除する、<xref:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen%2A>間プロパティ`true`と`false`です。 場合、<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimized%2A>プロパティは`false`、<xref:System.Windows.Controls.Ribbon.Ribbon.IsDropDownOpen%2A>プロパティも`false`します。  
+  
+<a name="dependencyPropertyInfo_IsMinimized"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.IsMinimizedProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsMinimizedProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty IsMinimizedProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty IsMinimizedProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.IsMinimizedProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.IsMinimized" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LogicalChildren">
+      <MemberSignature Language="C#" Value="protected override System.Collections.IEnumerator LogicalChildren { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.IEnumerator LogicalChildren" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.LogicalChildren" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IEnumerator</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Collections.IEnumerator" />の子要素を反復処理する、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseOverBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush MouseOverBackground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush MouseOverBackground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.MouseOverBackground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景を描画するために使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />MouseOver 状態にある場合を制御します。</summary>
+        <value>背景の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />MouseOver 状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_MouseOverBackground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.MouseOverBackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseOverBackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MouseOverBackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MouseOverBackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.MouseOverBackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.MouseOverBackground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseOverBorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush MouseOverBorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush MouseOverBorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.MouseOverBorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />MouseOver 状態にある場合を制御します。</summary>
+        <value>外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />MouseOver 状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_MouseOverBorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.MouseOverBorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MouseOverBorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty MouseOverBorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty MouseOverBorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.MouseOverBorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.MouseOverBorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnApplyTemplate">
+      <MemberSignature Language="C#" Value="public override void OnApplyTemplate ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void OnApplyTemplate() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnApplyTemplate" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>新しいテンプレートが適用されたときの <see cref="T:System.Windows.Controls.Ribbon.Ribbon" /> のビジュアル ツリーを構築します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ アプリケーション コードまたは内部プロセス (リビルド レイアウト パスなど) が <xref:System.Windows.FrameworkElement.ApplyTemplate%2A> メソッドを呼び出すと、このメソッドが必ず呼び出されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnCreateAutomationPeer">
+      <MemberSignature Language="C#" Value="protected override System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance class System.Windows.Automation.Peers.AutomationPeer OnCreateAutomationPeer() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnCreateAutomationPeer" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Automation.Peers.AutomationPeer</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このコントロールの新しい <see cref="T:System.Windows.Automation.Peers.RibbonAutomationPeer" /> オブジェクトを作成します。</summary>
+        <returns>このコントロールの新しいオートメーション ピア オブジェクト。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnItemsChanged">
+      <MemberSignature Language="C#" Value="protected override void OnItemsChanged (System.Collections.Specialized.NotifyCollectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnItemsChanged(class System.Collections.Specialized.NotifyCollectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnItemsChanged(System.Collections.Specialized.NotifyCollectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Collections.Specialized.NotifyCollectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary>現在の選択範囲を更新しで項目が変更されたときに、ヘッダーの同期、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnKeyDown">
+      <MemberSignature Language="C#" Value="protected override void OnKeyDown (System.Windows.Input.KeyEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnKeyDown(class System.Windows.Input.KeyEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnKeyDown(System.Windows.Input.KeyEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.KeyEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.KeyDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnMouseDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnMouseDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.MouseDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseDown">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseDown (System.Windows.Input.MouseButtonEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseDown(class System.Windows.Input.MouseButtonEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnPreviewMouseDown(System.Windows.Input.MouseButtonEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseButtonEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.PreviewMouseDown" /> イベントのクラス処理を提供します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreviewMouseWheel">
+      <MemberSignature Language="C#" Value="protected override void OnPreviewMouseWheel (System.Windows.Input.MouseWheelEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnPreviewMouseWheel(class System.Windows.Input.MouseWheelEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Input.MouseWheelEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.UIElement.MouseWheel" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 上にマウス ポインターが、マウス ホイールを回転している、<xref:System.Windows.Controls.Ribbon.Ribbon>により、<xref:System.Windows.Controls.Ribbon.Ribbon>タブのスケールが切り替わります。  
+  
+ この実装を示します、<xref:System.Windows.UIElement.MouseWheel>イベントを処理するには、<xref:System.Windows.RoutedEventArgs.Handled%2A>にイベント データのプロパティ`true`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnSelectionChanged">
+      <MemberSignature Language="C#" Value="protected override void OnSelectionChanged (System.Windows.Controls.SelectionChangedEventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void OnSelectionChanged(class System.Windows.Controls.SelectionChangedEventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.OnSelectionChanged(System.Windows.Controls.SelectionChangedEventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.Windows.Controls.SelectionChangedEventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Windows.Controls.Primitives.Selector.SelectionChanged" /> イベントのクラス処理を提供します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでの単一選択の強制、<xref:System.Windows.Controls.Ribbon.Ribbon>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PrepareContainerForItemOverride">
+      <MemberSignature Language="C#" Value="protected override void PrepareContainerForItemOverride (System.Windows.DependencyObject element, object item);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig virtual instance void PrepareContainerForItemOverride(class System.Windows.DependencyObject element, object item) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Controls.Ribbon.Ribbon.PrepareContainerForItemOverride(System.Windows.DependencyObject,System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="element" Type="System.Windows.DependencyObject" />
+        <Parameter Name="item" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="element">要素の表示に使用される、<c>項目</c>です。</param>
+        <param name="item">表示する項目、<see cref="P:System.Windows.Controls.ItemsControl.Items" />コレクション。</param>
+        <summary>指定した要素に指定した項目が表示されるように準備します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PressedBackground">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush PressedBackground { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush PressedBackground" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.PressedBackground" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の背景を描画するために使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />押された状態にある場合を制御します。</summary>
+        <value>背景の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />押された状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_PressedBackground"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.PressedBackgroundProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PressedBackgroundProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PressedBackgroundProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PressedBackgroundProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.PressedBackgroundProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.PressedBackground" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PressedBorderBrush">
+      <MemberSignature Language="C#" Value="public System.Windows.Media.Brush PressedBorderBrush { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Media.Brush PressedBorderBrush" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.PressedBorderBrush" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Media.Brush</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />押された状態にある場合を制御します。</summary>
+        <value>外側の境界線の描画に使用されるブラシ<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />押された状態にある場合を制御します。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_PressedBorderBrush"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.PressedBorderBrushProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="PressedBorderBrushProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty PressedBorderBrushProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty PressedBorderBrushProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.PressedBorderBrushProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.PressedBorderBrush" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuickAccessToolBar">
+      <MemberSignature Language="C#" Value="public System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar QuickAccessToolBar { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar QuickAccessToolBar" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBar" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Controls.Ribbon.RibbonQuickAccessToolBar" />これの子である論理<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>この論理子では、クイック アクセス ツールバー<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_QuichAccessToolBar"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBarProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="QuickAccessToolBarProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty QuickAccessToolBarProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty QuickAccessToolBarProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBarProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.QuickAccessToolBar" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowQuickAccessToolBarOnTop">
+      <MemberSignature Language="C#" Value="public bool ShowQuickAccessToolBarOnTop { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ShowQuickAccessToolBarOnTop" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.ShowQuickAccessToolBarOnTop" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または上にあるクイック アクセス ツールバーを表示するかどうかを示す値を設定、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>
+          <see langword="true" />クイック アクセス ツールバーが前に示した場合、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。<see langword="false" />下クイック アクセス ツールバーが表示されている場合、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。 登録済みの既定値は <see langword="true" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_ShowQuickAccessToolbarOnTop"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.ShowQuickAccessToolBarOnTopProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ShowQuickAccessToolBarOnTopProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty ShowQuickAccessToolBarOnTopProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty ShowQuickAccessToolBarOnTopProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.ShowQuickAccessToolBarOnTopProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.ShowQuickAccessToolBarOnTop" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabHeaderStyle">
+      <MemberSignature Language="C#" Value="public System.Windows.Style TabHeaderStyle { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.Style TabHeaderStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.TabHeaderStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはタブ ヘッダーを表示するときに使用されるスタイルを設定します。</summary>
+        <value>タブ ヘッダーを表示するときに使用されるスタイルです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TabHeaderStyle"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.TabHeaderStyleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabHeaderStyleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TabHeaderStyleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TabHeaderStyleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.TabHeaderStyleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.TabHeaderStyle" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabHeaderTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate TabHeaderTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate TabHeaderTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.TabHeaderTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定 タブのヘッダーを表示するために使用するテンプレートです。</summary>
+        <value>タブ ヘッダーを表示するために使用されるテンプレートです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TabHeaderTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.TabHeaderTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TabHeaderTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TabHeaderTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TabHeaderTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.TabHeaderTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.TabHeaderTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Title">
+      <MemberSignature Language="C#" Value="public object Title { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object Title" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.Title" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>この資料のタイトルを取得または<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。</summary>
+        <value>この資料のタイトル<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />コントロール。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 通常、設定、<xref:System.Windows.Window.Title%2A>プロパティを<xref:System.Windows.Controls.Ribbon.RibbonWindow>設定ではなく、<xref:System.Windows.Controls.Ribbon.Ribbon.Title%2A?displayProperty=nameWithType>プロパティです。  
+  
+ <xref:System.Windows.Controls.Ribbon.Ribbon.Title%2A?displayProperty=nameWithType>のタイトル バーに表示される、<xref:System.Windows.Controls.Ribbon.RibbonWindow>場合、<xref:System.Windows.Window.Title%2A?displayProperty=nameWithType>のプロパティ、<xref:System.Windows.Controls.Ribbon.RibbonWindow>は`null`します。 場合、<xref:System.Windows.Window.Title%2A?displayProperty=nameWithType>プロパティは使用されません`null`、<xref:System.Windows.Controls.Ribbon.RibbonWindow>の代わりにタイトルが表示される、<xref:System.Windows.Controls.Ribbon.Ribbon.Title%2A?displayProperty=nameWithType>値。  
+  
+ 場合、<xref:System.Windows.Controls.Ribbon.Ribbon>でホストされる、<xref:System.Windows.Window>の代わりに、 <xref:System.Windows.Controls.Ribbon.RibbonWindow>、<xref:System.Windows.Controls.Ribbon.Ribbon.Title%2A?displayProperty=nameWithType>クイック アクセス ツールバー、横にあるを次に、<xref:System.Windows.Window.Title%2A?displayProperty=nameWithType>です。  
+  
+<a name="dependencyPropertyInfo_Title"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.TitleProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TitleProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TitleProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.TitleProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.Title" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleTemplate">
+      <MemberSignature Language="C#" Value="public System.Windows.DataTemplate TitleTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Windows.DataTemplate TitleTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.TitleTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DataTemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の表示に使用するテンプレート、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />タイトルです。</summary>
+        <value>表示するために使用するテンプレート、<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />タイトルです。 登録済みの既定値は <see langword="null" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_TitleTemplate"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.TitleTemplateProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TitleTemplateProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty TitleTemplateProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty TitleTemplateProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.TitleTemplateProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.TitleTemplate" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowIconVisibility">
+      <MemberSignature Language="C#" Value="public System.Windows.Visibility WindowIconVisibility { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Windows.Visibility WindowIconVisibility" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Controls.Ribbon.Ribbon.WindowIconVisibility" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Visibility</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Windows.Visibility" />のアイコン、<see cref="T:System.Windows.Controls.Ribbon.RibbonWindow" />を格納している<see cref="T:System.Windows.Controls.Ribbon.Ribbon" />です。</summary>
+        <value>アイコンの可視性を指定する列挙値の 1 つ。 登録済みの既定値は <see cref="F:System.Windows.Visibility.Visible" /> です。 新機能に影響を与える値の詳細については、次を参照してください。[依存関係プロパティの値の優先順位](~/docs/framework/wpf/advanced/dependency-property-value-precedence.md)です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+<a name="dependencyPropertyInfo_WindowIconVisibility"></a>   
+## <a name="dependency-property-information"></a>依存プロパティ情報  
+  
+|||  
+|-|-|  
+|識別子のフィールド|<xref:System.Windows.Controls.Ribbon.Ribbon.WindowIconVisibilityProperty>|  
+|メタデータ プロパティに設定します。`true`|なし|  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="WindowIconVisibilityProperty">
+      <MemberSignature Language="C#" Value="public static readonly System.Windows.DependencyProperty WindowIconVisibilityProperty;" />
+      <MemberSignature Language="ILAsm" Value=".field public static initonly class System.Windows.DependencyProperty WindowIconVisibilityProperty" />
+      <MemberSignature Language="DocId" Value="F:System.Windows.Controls.Ribbon.Ribbon.WindowIconVisibilityProperty" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Controls.Ribbon</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.DependencyProperty</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Controls.Ribbon.Ribbon.WindowIconVisibility" /> 依存関係プロパティを識別します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

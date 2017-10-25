@@ -1,0 +1,525 @@
+<Type Name="WindowsTokenRoleProvider" FullName="System.Web.Security.WindowsTokenRoleProvider">
+  <TypeSignature Language="C#" Value="public class WindowsTokenRoleProvider : System.Web.Security.RoleProvider" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit WindowsTokenRoleProvider extends System.Web.Security.RoleProvider" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Security.WindowsTokenRoleProvider" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Security.RoleProvider</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Windows グループのメンバーシップから ASP.NET アプリケーションにロール情報を取得します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider>クラスは、Windows セキュリティ グループに基づく Windows ユーザーのロール情報を取得する読み取り専用のロールのメンバーシップ プロバイダー。 Windows 認証モードを使用して、IIS の認証設定が匿名認証を無効にされる ASP.NET アプリケーションで最も便利です。 許可するか、特定の Windows グループのユーザーのメンバーシップに基づいてアクセスを拒否する ASP.NET アプリケーションを構成することができます。  
+  
+ 使用することはできません、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスを作成またはロールを削除または Windows グループのメンバーシップに基づいているロールのメンバーシップを変更します。 この機能は、Windows オペレーティング システムによって管理されます。 <xref:System.Web.Security.WindowsTokenRoleProvider>クラスのみでサポート、<xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>と<xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser%2A>のメソッド、<xref:System.Web.Security.RoleProvider>抽象クラスです。  
+  
+   
+  
+## Examples  
+ 次の例では、ASP.NET アプリケーションの Web.config ファイルを示します。 アプリケーションが、Windows 認証を使用することを指定し、 <xref:System.Web.Security.WindowsTokenRoleProvider> Windows ユーザーのロール情報を取得するクラス。 要素は、builtin \administrators グループのユーザーだけがアプリケーションへのアクセスを許可されることを指定します。  
+  
+```  
+<configuration>  
+  <system.web>  
+    <authentication mode="Windows" />  
+  
+    <authorization>  
+      <allow roles="BUILTIN\Administrators" />  
+        <deny users="*" />  
+      </authorization>  
+  
+    <roleManager defaultProvider="WindowsProvider"   
+      enabled="true"  
+      cacheRolesInCookie="false">  
+      <providers>  
+        <add  
+          name="WindowsProvider"  
+          type="System.Web.Security.WindowsTokenRoleProvider" />  
+      </providers>  
+    </roleManager>  
+  
+  </system.web>  
+</configuration>  
+```  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public WindowsTokenRoleProvider ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Security.WindowsTokenRoleProvider" /> クラスのインスタンスを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider.%23ctor%2A>コンス トラクターがのインスタンスを作成する ASP.NET によって呼び出されます、<xref:System.Web.Security.WindowsTokenRoleProvider>アプリケーションの構成で指定したクラスです。 このコンス トラクターは、コードから使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddUsersToRoles">
+      <MemberSignature Language="C#" Value="public override void AddUsersToRoles (string[] usernames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void AddUsersToRoles(string[] usernames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.AddUsersToRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">指定したロールに追加するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定されたユーザー名の割り当て先となるロール名の文字列配列。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでサポートされていない、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスと常にスローされます、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="ApplicationName">
+      <MemberSignature Language="C#" Value="public override string ApplicationName { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string ApplicationName" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Security.WindowsTokenRoleProvider.ApplicationName" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>アプリケーションの名前を取得または設定します。</summary>
+        <value>アプリケーションの名前。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ などの他のロール プロバイダーとは異なり、 <xref:System.Web.Security.SqlRoleProvider>、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスは、アプリケーションにロール情報を関連付けません。 代わりに、ロールの詳細については、ローカル コンピューター上の Windows グループから取得されます。 使用する同じサーバー上の複数のアプリケーション、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスは、常に同じロール情報を共有します。 ただし、 `applicationName` 、アプリケーションの Web.config ファイルで構成することができます、<xref:System.Web.Security.WindowsTokenRoleProvider.ApplicationName%2A>ロール情報を取得するプロパティは使用されません。  
+  
+   
+  
+## Examples  
+ 次の例にある要素を示しています、 `system.web` ASP.NET アプリケーションの Web.config ファイルのセクションです。 アプリケーションの指定<xref:System.Web.Security.WindowsTokenRoleProvider>インスタンスとセット、<xref:System.Web.Security.WindowsTokenRoleProvider.ApplicationName%2A>プロパティを`MyApplication`です。  
+  
+```  
+<roleManager defaultProvider="WindowsProvider"   
+  enabled="true"  
+  cacheRolesInCookie="false">  
+  <providers>  
+    <add  
+      name="WindowsProvider"  
+      type="System.Web.Security.WindowsTokenRoleProvider"   
+      applicationName="MyApplication" />  
+  </providers>  
+</roleManager>  
+```  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Web.HttpException">設定しようとしましたが、<see cref="P:System.Web.Security.WindowsTokenRoleProvider.ApplicationName" />プロパティがない呼び出し元によって<see cref="F:System.Web.AspNetHostingPermissionLevel.High" />ASP.NET ホスティング アクセス許可。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">設定しようとしましたが、<see cref="P:System.Web.Security.WindowsTokenRoleProvider.ApplicationName" />が 256 文字より長い文字列にします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateRole">
+      <MemberSignature Language="C#" Value="public override void CreateRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void CreateRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.CreateRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">作成するロールの名前。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでサポートされていない、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスと常にスローされます、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DeleteRole">
+      <MemberSignature Language="C#" Value="public override bool DeleteRole (string roleName, bool throwOnPopulatedRole);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool DeleteRole(string roleName, bool throwOnPopulatedRole) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.DeleteRole(System.String,System.Boolean)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="throwOnPopulatedRole" Type="System.Boolean" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">削除するロールの名前。</param>
+        <param name="throwOnPopulatedRole">場合<see langword="true" />、1 つまたは複数のメンバーを格納しているロールを削除しようとすると、例外がスローされます。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <returns>なし。 メソッドでサポートされていない、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスと常にスロー、<see cref="T:System.Configuration.Provider.ProviderException" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="FindUsersInRole">
+      <MemberSignature Language="C#" Value="public override string[] FindUsersInRole (string roleName, string usernameToMatch);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] FindUsersInRole(string roleName, string usernameToMatch) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.FindUsersInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+        <Parameter Name="usernameToMatch" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">検索範囲とするロール。</param>
+        <param name="usernameToMatch">ロールで検索するユーザー名。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <returns>なし。 メソッドでサポートされていない、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスと常にスロー、<see cref="T:System.Configuration.Provider.ProviderException" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetAllRoles">
+      <MemberSignature Language="C#" Value="public override string[] GetAllRoles ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetAllRoles() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.GetAllRoles" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <returns>なし。 メソッドでサポートされていない、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスと常にスロー、<see cref="T:System.Configuration.Provider.ProviderException" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetRolesForUser">
+      <MemberSignature Language="C#" Value="public override string[] GetRolesForUser (string username);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetRolesForUser(string username) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">Domain \username という形式での Windows グループの一覧を取得するユーザー。</param>
+        <summary>ユーザーが、Windows グループの一覧を取得します。</summary>
+        <returns>指定したユーザーが含まれているすべての Windows グループの名前を含んでいる文字列配列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドは、<xref:System.Web.Security.Roles>指定のユーザーが Windows グループの一覧を Windows オペレーティング システムから取得するクラス。 <xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser%2A> LOGON_USER サーバー変数で識別されるメソッドは、現在ログオンしているユーザーに対してのみ呼び出すことができます。 値が指定した場合、`username`パラメーターが、現在ログオンしているユーザーの名前ではありません、<xref:System.Configuration.Provider.ProviderException?displayProperty=nameWithType>がスローされます。  
+  
+ 詳細については、ASP.NET と Windows 認証は、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、<xref:System.Web.Security.WindowsTokenRoleProvider.GetRolesForUser%2A>を指定したユーザー ロールの一覧を取得する方法へのロールの一覧をバインドし、<xref:System.Web.UI.WebControls.GridView>コントロール。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.WindowsTokenRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.WindowsTokenRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/viewrolescs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.WindowsTokenRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/viewrolesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">現在実行中のユーザーが認証された持たない<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Web.UI.Page.User" />です。 HTTP 以外の場合、現在実行中のユーザーが認証された<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Threading.Thread.CurrentPrincipal" />です。  
+  
+ または  
+  
+ <paramref name="username" />一致しません、 <see cref="P:System.Security.Principal.WindowsIdentity.Name" /> 、現在の<see cref="T:System.Security.Principal.WindowsIdentity" />します。  
+  
+ または  
+  
+ ユーザーの Windows グループ情報の取得中にエラーが発生しました。</exception>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Web.HttpException">信頼レベルより小さい<see cref="F:System.Web.AspNetHostingPermissionLevel.Low" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="GetUsersInRole">
+      <MemberSignature Language="C#" Value="public override string[] GetUsersInRole (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string[] GetUsersInRole(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.GetUsersInRole(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String[]</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">ユーザーの一覧を取得するロールの名前。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <returns>なし。 メソッドでサポートされていない、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスと常にスロー、<see cref="T:System.Configuration.Provider.ProviderException" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Initialize">
+      <MemberSignature Language="C#" Value="public override void Initialize (string name, System.Collections.Specialized.NameValueCollection config);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void Initialize(string name, class System.Collections.Specialized.NameValueCollection config) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="name" Type="System.String" />
+        <Parameter Name="config" Type="System.Collections.Specialized.NameValueCollection" />
+      </Parameters>
+      <Docs>
+        <param name="name">名前、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />インスタンスを初期化します。</param>
+        <param name="config">A<see cref="T:System.Collections.Specialized.NameValueCollection" />のオプションの名前と構成の値を含むコンス トラクター、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスです。</param>
+        <summary>ASP.NET アプリケーションの構成ファイルで指定されたプロパティ値を持つ Windows トークンのロール プロバイダーを初期化します。 このメソッドはコードから直接使用するためのものではありません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider.Initialize%2A>メソッドの初期化、<xref:System.Web.Security.WindowsTokenRoleProvider>プロパティ値を持つクラスは、ASP.NET アプリケーション構成ファイル (Web.config) で指定し、コードから直接使用するものではありません。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="config" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException"><see langword="applicationName" />構成には属性が 256 文字より長い。  
+  
+ または  
+  
+ このアプリケーション構成ファイル<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />インスタンスには、認識されない属性が含まれています。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInRole">
+      <MemberSignature Language="C#" Value="public bool IsUserInRole (string username, System.Security.Principal.WindowsBuiltInRole role);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance bool IsUserInRole(string username, valuetype System.Security.Principal.WindowsBuiltInRole role) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole(System.String,System.Security.Principal.WindowsBuiltInRole)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="role" Type="System.Security.Principal.WindowsBuiltInRole" />
+      </Parameters>
+      <Docs>
+        <param name="username">Domain \username という形式で検索するユーザー名。</param>
+        <param name="role">検索対象の Windows ロール。</param>
+        <summary>指定したユーザーが指定されたビルトイン Windows ロールかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定したユーザーが指定された Windows ロールの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>メソッドでは、ユーザーがで説明されている一般的な Windows の役割のいずれかでがかどうかを確認することができます、<xref:System.Security.Principal.WindowsBuiltInRole>列挙します。 このメソッドは、複数の言語にローカライズされているアプリケーションに役立ちます。 このオーバー ロード、<xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>メソッドではありませんの一部、<xref:System.Web.Security.RoleProvider>基底クラスと、キャストによってのみアクセスできる、<xref:System.Web.Security.Roles.Provider%2A>のプロパティ、<xref:System.Web.Security.Roles>クラスの<xref:System.Web.Security.WindowsTokenRoleProvider>型です。  
+  
+ 呼び出すことができます、<xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>だけ現在のログオンとユーザーの LOGON_USER サーバー変数によって識別されるメソッド。 値が指定した場合、`username`パラメーターが、現在ログオンしているユーザーの名前ではありません、<xref:System.Web.HttpException>がスローされます。  
+  
+ <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>メソッドは、LOGON_USER サーバー変数によって識別される現在ログオンしているユーザーに対してのみ呼び出すことができます。 現在ログオンしているユーザーは、Windows 認証済みユーザーである必要があります。 ASP.NET および Windows 認証の詳細については、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+   
+  
+## Examples  
+ プログラムで、次のコード例は、現在ログオンしているユーザーがアプリケーションのロール情報を表示するユーザーを許可する前に、管理者ロールがかどうかを確認します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.WindowsTokenRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.WindowsTokenRoleProvider#2](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/ViewRoles2cs.aspx#2)]
+ [!code-aspx-vb[System.Web.Security.WindowsTokenRoleProvider#2](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/ViewRoles2vb.aspx#2)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">現在実行中のユーザーが認証された持たない<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Web.UI.Page.User" />です。 HTTP 以外の場合、現在実行中のユーザーが認証された<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Threading.Thread.CurrentPrincipal" />です。  
+  
+ または  
+  
+ <paramref name="username" />一致しません、 <see cref="P:System.Security.Principal.WindowsIdentity.Name" /> 、現在の<see cref="T:System.Security.Principal.WindowsIdentity" />します。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="IsUserInRole">
+      <MemberSignature Language="C#" Value="public override bool IsUserInRole (string username, string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool IsUserInRole(string username, string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="username" Type="System.String" />
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="username">Domain \username という形式で検索するユーザー名。</param>
+        <param name="roleName">フォーム DOMAIN\rolename で検索する Windows グループです。</param>
+        <summary>指定したユーザーが指定された Windows グループかどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />指定されたユーザー名が指定された Windows グループの場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>メソッドによって呼び出されます、<xref:System.Web.Security.Roles>クラスおよび<xref:System.Security.Principal.IPrincipal.IsInRole%2A>のメソッド、<xref:System.Web.UI.Page.User%2A>プロパティをユーザーが Windows グループかどうかを判断します。 呼び出すことができます、<xref:System.Web.Security.WindowsTokenRoleProvider.IsUserInRole%2A>だけ現在のログオンとユーザーの LOGON_USER サーバー変数によって識別されるメソッド。 現在ログオンしているユーザーは、Windows 認証済みユーザーである必要があります。 ASP.NET および Windows 認証の詳細については、次を参照してください。 [ASP.NET 認証](http://msdn.microsoft.com/library/fc10b0ef-4ce4-4a7f-9174-886325221ee1)です。  
+  
+   
+  
+## Examples  
+ プログラムで、次のコード例は、現在ログオンしているユーザーがアプリケーションのロール情報を表示するユーザーを許可する前に、管理者ロールがかどうかを確認します。 ロール管理をできるようにする Web.config ファイルの例は、次を参照してください。<xref:System.Web.Security.WindowsTokenRoleProvider>です。  
+  
+ [!code-aspx-csharp[System.Web.Security.WindowsTokenRoleProvider#1](~/samples/snippets/csharp/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/CS/viewrolescs.aspx#1)]
+ [!code-aspx-vb[System.Web.Security.WindowsTokenRoleProvider#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/System.Web.Security.WindowsTokenRoleProvider/VB/viewrolesvb.aspx#1)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException">
+          <paramref name="username" /> は <see langword="null" /> です。  
+  
+ -または-  
+  
+ <paramref name="roleName" /> は <see langword="null" /> です。</exception>
+        <exception cref="T:System.Configuration.Provider.ProviderException">現在実行中のユーザーが認証された持たない<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Web.UI.Page.User" />です。 HTTP 以外の場合、現在実行中のユーザーが認証された<see cref="T:System.Security.Principal.WindowsIdentity" />にアタッチされている<see cref="P:System.Threading.Thread.CurrentPrincipal" />です。  
+  
+ または  
+  
+ <paramref name="username" />一致しません、 <see cref="P:System.Security.Principal.WindowsIdentity.Name" /> 、現在の<see cref="T:System.Security.Principal.WindowsIdentity" />します。  
+  
+ または  
+  
+ ユーザーの Windows グループ情報の取得中にエラーが発生しました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RemoveUsersFromRoles">
+      <MemberSignature Language="C#" Value="public override void RemoveUsersFromRoles (string[] usernames, string[] roleNames);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void RemoveUsersFromRoles(string[] usernames, string[] roleNames) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.RemoveUsersFromRoles(System.String[],System.String[])" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="usernames" Type="System.String[]" />
+        <Parameter Name="roleNames" Type="System.String[]" />
+      </Parameters>
+      <Docs>
+        <param name="usernames">指定したロールに追加するユーザー名の文字列配列。</param>
+        <param name="roleNames">指定されたユーザー名の割り当て先となるロール名の文字列配列。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメソッドでサポートされていない、<xref:System.Web.Security.WindowsTokenRoleProvider>クラスと常にスローされます、<xref:System.Configuration.Provider.ProviderException>です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RoleExists">
+      <MemberSignature Language="C#" Value="public override bool RoleExists (string roleName);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool RoleExists(string roleName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Security.WindowsTokenRoleProvider.RoleExists(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="roleName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="roleName">データ ソースで検索するロールの名前。</param>
+        <summary>このメソッドは、Windows トークンのロール プロバイダーでサポートされていません。</summary>
+        <returns>なし。 メソッドでサポートされていない、<see cref="T:System.Web.Security.WindowsTokenRoleProvider" />クラスと常にスロー、<see cref="T:System.Configuration.Provider.ProviderException" />です。</returns>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.Configuration.Provider.ProviderException">サポートされていないメソッドが呼び出されました。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

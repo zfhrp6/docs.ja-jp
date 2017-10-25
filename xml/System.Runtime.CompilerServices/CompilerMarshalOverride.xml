@@ -1,0 +1,36 @@
+<Type Name="CompilerMarshalOverride" FullName="System.Runtime.CompilerServices.CompilerMarshalOverride">
+  <TypeSignature Language="C#" Value="public static class CompilerMarshalOverride" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi abstract sealed beforefieldinit CompilerMarshalOverride extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.CompilerServices.CompilerMarshalOverride" />
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.CompilerServices.VisualC</AssemblyName>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>マーシャ リングする場合は、実際の型と変数の変更後のインスタンスが異なることを示します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Runtime.CompilerServices.CompilerMarshalOverride>クラスは、正しいサイズを使用してマーシャ リングする共通言語ランタイムを使用できます。  
+  
+ 共通言語ランタイムの動作は、一部の言語と互換性がありません。 たとえば、C++ ブール変数は値として処理 1 バイト、共通言語ランタイムがそれらに一致するように、4 バイトの値をマーシャ リング中に、 `BOOLEAN` Microsoft Win32 API によって定義された型。  このような問題を回避するには、C++ コンパイラは、いずれかでは、この修飾子`wchar_t`または`bool`パラメーターまたは関数の戻り値。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members />
+</Type>

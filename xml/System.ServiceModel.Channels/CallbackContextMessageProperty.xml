@@ -1,0 +1,357 @@
+<Type Name="CallbackContextMessageProperty" FullName="System.ServiceModel.Channels.CallbackContextMessageProperty">
+  <TypeSignature Language="C#" Value="public class CallbackContextMessageProperty : System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi serializable beforefieldinit CallbackContextMessageProperty extends System.Object implements class System.ServiceModel.Channels.IMessageProperty" />
+  <TypeSignature Language="DocId" Value="T:System.ServiceModel.Channels.CallbackContextMessageProperty" />
+  <AssemblyInfo>
+    <AssemblyName>System.ServiceModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.ServiceModel.Channels.IMessageProperty</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Docs>
+    <summary>内容を表す、<see langword="wsc:CallbackContext" />メッセージ ヘッダーをコンテキスト交換プロトコルをサポートするチャネルを使用する場合。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト交換プロトコルを使用すると、永続化サービス間の双方向通信が可能になります。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackContextMessageProperty (System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.#ctor(System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="context">通信が行われているクライアントおよびサービス インスタンスによる識別が可能なメッセージに格納されている情報。</param>
+        <summary>コンテキストを指定して、<see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackContextMessageProperty (System.ServiceModel.EndpointAddress callbackAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress callbackAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.#ctor(System.ServiceModel.EndpointAddress)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="callbackAddress" Type="System.ServiceModel.EndpointAddress" />
+      </Parameters>
+      <Docs>
+        <param name="callbackAddress">コールバック アドレス。</param>
+        <summary>指定した <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> を使用して、<see cref="T:System.ServiceModel.EndpointAddress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバック アドレスは、クライアントにコールバックするためにサービスによって使用されるエンドポイント アドレスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackContextMessageProperty (System.ServiceModel.EndpointAddress listenAddress, System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.ServiceModel.EndpointAddress listenAddress, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.#ctor(System.ServiceModel.EndpointAddress,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listenAddress" Type="System.ServiceModel.EndpointAddress" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="listenAddress">クライアントがリッスンするエンドポイント アドレス。</param>
+        <param name="context">通信が行われているクライアントおよびサービス インスタンスによる識別が可能なメッセージに格納されている情報。</param>
+        <summary><see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> およびコンテキスト情報を格納している <see cref="T:System.ServiceModel.EndpointAddress" /> を指定して、<see cref="T:System.Collections.Generic.IDictionary`2" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ コンテキスト情報には、クライアント インスタンスと対話に関する情報が含まれる場合があります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackContextMessageProperty (string listenAddress, System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(string listenAddress, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listenAddress" Type="System.String" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="listenAddress">クライアントがリッスンするエンドポイント アドレス。</param>
+        <param name="context">通信が行われているクライアントおよびサービス インスタンスによる識別が可能なメッセージに格納されている情報。</param>
+        <summary>指定したリッスン アドレスとコンテキスト情報を使用して、<see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CallbackContextMessageProperty (Uri listenAddress, System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Uri listenAddress, class System.Collections.Generic.IDictionary`2&lt;string, string&gt; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.#ctor(System.Uri,System.Collections.Generic.IDictionary{System.String,System.String})" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="listenAddress" Type="System.Uri" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;" />
+      </Parameters>
+      <Docs>
+        <param name="listenAddress">クライアントがリッスンするエンドポイント アドレス。</param>
+        <param name="context">通信が行われているクライアントおよびサービス インスタンスによる識別が可能なメッセージに格納されている情報。</param>
+        <summary>指定したリッスン アドレスとコンテキスト情報を使用して、<see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrReplaceInMessage">
+      <MemberSignature Language="C#" Value="public void AddOrReplaceInMessage (System.ServiceModel.Channels.Message message);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOrReplaceInMessage(class System.ServiceModel.Channels.Message message) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.AddOrReplaceInMessage(System.ServiceModel.Channels.Message)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+      </Parameters>
+      <Docs>
+        <param name="message">コールバック コンテキスト メッセージ プロパティを追加または置換するためのメッセージ。</param>
+        <summary>指定したメッセージ内の現在の <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスを追加または置換します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddOrReplaceInMessageProperties">
+      <MemberSignature Language="C#" Value="public void AddOrReplaceInMessageProperties (System.ServiceModel.Channels.MessageProperties properties);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void AddOrReplaceInMessageProperties(class System.ServiceModel.Channels.MessageProperties properties) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.AddOrReplaceInMessageProperties(System.ServiceModel.Channels.MessageProperties)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コールバック コンテキスト メッセージ プロパティの追加先にするメッセージ プロパティ コレクション。</param>
+        <summary>指定したメッセージ プロパティ コレクション内の現在の <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスを追加または置換します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CallbackAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress CallbackAddress { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.ServiceModel.EndpointAddress CallbackAddress" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CallbackContextMessageProperty.CallbackAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コールバック アドレスを取得します。</summary>
+        <value>コールバック アドレスが格納されている <see cref="T:System.ServiceModel.EndpointAddress" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコールバック アドレスは、クライアントを呼び出すためにサーバーによって使用されるエンドポイント アドレスです。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Context">
+      <MemberSignature Language="C#" Value="public System.Collections.Generic.IDictionary&lt;string,string&gt; Context { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Collections.Generic.IDictionary`2&lt;string, string&gt; Context" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CallbackContextMessageProperty.Context" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> に関連付けられたコンテキストを取得します。</summary>
+        <value>コンテキスト。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCallbackAddress">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.EndpointAddress CreateCallbackAddress (Uri listenAddress);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance class System.ServiceModel.EndpointAddress CreateCallbackAddress(class System.Uri listenAddress) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.CreateCallbackAddress(System.Uri)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.EndpointAddress</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listenAddress" Type="System.Uri" />
+      </Parameters>
+      <Docs>
+        <param name="listenAddress">リッスン URI。</param>
+        <summary>クライアントの <paramref name="listenAddress" /> とそのコンテキストを、サービスに送信される単一のコールバック アドレスにマージします。</summary>
+        <returns><see cref="T:System.ServiceModel.EndpointAddress" /> のインスタンス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateCopy">
+      <MemberSignature Language="C#" Value="public System.ServiceModel.Channels.IMessageProperty CreateCopy ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.ServiceModel.Channels.IMessageProperty CreateCopy() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.CreateCopy" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.ServiceModel.Channels.IMessageProperty</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスのコピーを作成します。</summary>
+        <returns><see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスのコピー。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetListenAddressAndContext">
+      <MemberSignature Language="C#" Value="public void GetListenAddressAndContext (out System.ServiceModel.EndpointAddress listenAddress, out System.Collections.Generic.IDictionary&lt;string,string&gt; context);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig instance void GetListenAddressAndContext([out] class System.ServiceModel.EndpointAddress&amp; listenAddress, [out] class System.Collections.Generic.IDictionary`2&lt;string, string&gt;&amp; context) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.GetListenAddressAndContext(System.ServiceModel.EndpointAddress@,System.Collections.Generic.IDictionary{System.String,System.String}@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="listenAddress" Type="System.ServiceModel.EndpointAddress&amp;" RefType="out" />
+        <Parameter Name="context" Type="System.Collections.Generic.IDictionary&lt;System.String,System.String&gt;&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="listenAddress">リッスン アドレスを格納するための参照。</param>
+        <param name="context">通信が行われているクライアントおよびサービス インスタンスによる識別が可能なメッセージに格納されている情報。</param>
+        <summary>リッスン アドレスとコンテキスト データを <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスから取得します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Name">
+      <MemberSignature Language="C#" Value="public static string Name { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property string Name" />
+      <MemberSignature Language="DocId" Value="P:System.ServiceModel.Channels.CallbackContextMessageProperty.Name" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> クラスのプロパティ名を取得します。</summary>
+        <value>プロパティ名。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.Message message, out System.ServiceModel.Channels.CallbackContextMessageProperty contextMessageProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.Message message, [out] class System.ServiceModel.Channels.CallbackContextMessageProperty&amp; contextMessageProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.TryGet(System.ServiceModel.Channels.Message,System.ServiceModel.Channels.CallbackContextMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="message" Type="System.ServiceModel.Channels.Message" />
+        <Parameter Name="contextMessageProperty" Type="System.ServiceModel.Channels.CallbackContextMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="message">コールバック コンテキスト メッセージ プロパティの取得元にするメッセージ。</param>
+        <param name="contextMessageProperty">コールバック コンテキスト メッセージ プロパティ インスタンスを格納するための参照。</param>
+        <summary>指定されたメッセージから <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスの取得を試みます。</summary>
+        <returns>
+          <see langword="true" />コールバック コンテキスト メッセージ プロパティが正常に取得される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="TryGet">
+      <MemberSignature Language="C#" Value="public static bool TryGet (System.ServiceModel.Channels.MessageProperties properties, out System.ServiceModel.Channels.CallbackContextMessageProperty contextMessageProperty);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool TryGet(class System.ServiceModel.Channels.MessageProperties properties, [out] class System.ServiceModel.Channels.CallbackContextMessageProperty&amp; contextMessageProperty) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.ServiceModel.Channels.CallbackContextMessageProperty.TryGet(System.ServiceModel.Channels.MessageProperties,System.ServiceModel.Channels.CallbackContextMessageProperty@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.ServiceModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="properties" Type="System.ServiceModel.Channels.MessageProperties" />
+        <Parameter Name="contextMessageProperty" Type="System.ServiceModel.Channels.CallbackContextMessageProperty&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="properties">コールバック コンテキスト メッセージ プロパティの取得元にするメッセージ プロパティ コレクション。</param>
+        <param name="contextMessageProperty">コールバック コンテキスト メッセージ プロパティ インスタンスを格納するための参照。</param>
+        <summary>指定されたメッセージ プロパティから <see cref="T:System.ServiceModel.Channels.CallbackContextMessageProperty" /> インスタンスの取得を試みます。</summary>
+        <returns>
+          <see langword="true" />コールバック コンテキスト メッセージ プロパティが正常に取得される場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

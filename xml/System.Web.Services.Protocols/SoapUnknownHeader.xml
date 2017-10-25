@@ -1,0 +1,88 @@
+<Type Name="SoapUnknownHeader" FullName="System.Web.Services.Protocols.SoapUnknownHeader">
+  <TypeSignature Language="C#" Value="public sealed class SoapUnknownHeader : System.Web.Services.Protocols.SoapHeader" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit SoapUnknownHeader extends System.Web.Services.Protocols.SoapHeader" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Services.Protocols.SoapUnknownHeader" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Services</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.Services.Protocols.SoapHeader</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>XML Web サービスの受信者や XML Web サービス クライアントで認識できませんでしたという SOAP ヘッダーから受信したデータを表します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ SOAP クライアントでは、SOAP ヘッダーの形式で必要なパラメーターを超える追加のデータと XML Web サービスを呼び出すことがあります。 ASP.NET または XML Web サービス クライアントを使用して作成された XML Web サービスは、認識していませんでした XML Web サービスは、適用することによって作成された時に任意の SOAP ヘッダーを表示できます、<xref:System.Web.Services.Protocols.SoapHeaderAttribute>で、<xref:System.Web.Services.Protocols.SoapHeaderAttribute.MemberName%2A>いずれかの配列のプロパティ<xref:System.Web.Services.Protocols.SoapHeader>、 <xref:System.Web.Services.Protocols.SoapHeader>、<xref:System.Web.Services.Protocols.SoapUnknownHeader>または配列の<xref:System.Web.Services.Protocols.SoapUnknownHeader>XML Web サービス メソッドにします。 指定する、<xref:System.Type>の<xref:System.Web.Services.Protocols.SoapUnknownHeader>、XML Web サービスの形式で SOAP ヘッダーの内容を表示することができます、<xref:System.Xml.XmlElement>です。  
+  
+   
+  
+## Examples  
+ `MyWebService` XML Web サービスを受け入れるし、処理、`MyHeader`への呼び出しと共に送信される SOAP ヘッダー、 `MyWebMethod` XML Web サービス メソッドです。 さらに、`MyWebMethod`以外の任意の SOAP ヘッダーを受信、 `MyHeader` SOAP ヘッダー。  
+  
+  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public SoapUnknownHeader ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.Services.Protocols.SoapUnknownHeader.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.Services.Protocols.SoapUnknownHeader" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Element">
+      <MemberSignature Language="C#" Value="public System.Xml.XmlElement Element { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Xml.XmlElement Element" />
+      <MemberSignature Language="DocId" Value="P:System.Web.Services.Protocols.SoapUnknownHeader.Element" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Services</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Xml.Serialization.XmlIgnore</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Xml.XmlElement</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または SOAP 要求または応答に XML ヘッダー要素を設定します。</summary>
+        <value><see cref="T:System.Xml.XmlElement" /> SOAP ヘッダーの生の XML を表すです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ かどうか、XML Web サービス メソッドは、XML Web サービスの作成時に把握していない、SOAP ヘッダーを処理する必要が処理できる、 <xref:System.Xml.XmlElement> SOAP ヘッダーの生の XML を表すクラス。  
+  
+   
+  
+## Examples  
+ 次`MyWebService`XML Web サービス以外の場合を含め、すべての SOAP ヘッダーを受信する、 `MyHeader` SOAP ヘッダーを知っています。 `MyWebMethod` XML Web サービス メソッドでは、文字列として渡された最後の不明な SOAP ヘッダーの XML 属性をクライアントに返します。  
+  
+  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,207 @@
+<Type Name="ProxyElement" FullName="System.Net.Configuration.ProxyElement">
+  <TypeSignature Language="C#" Value="public sealed class ProxyElement : System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ProxyElement extends System.Configuration.ConfigurationElement" />
+  <TypeSignature Language="DocId" Value="T:System.Net.Configuration.ProxyElement" />
+  <AssemblyInfo>
+    <AssemblyName>System</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Configuration.ConfigurationElement</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Web プロキシ サーバーの構成設定を識別します。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 次の表は、構成の属性の[&lt;プロキシ&gt;要素 (ネットワーク設定)](~/docs/framework/configure-apps/file-schema/network/proxy-element-network-settings.md)このクラスに対応する構成要素。  
+  
+|要素|説明|  
+|-------------|-----------------|  
+|`proxyaddress`|使用する Web プロキシ サーバーを識別する URI。|  
+|`bypassonlocal`|ローカル リソースに対して Web プロキシをバイパスするかどうかを判断します。|  
+|`usesystemdefault`|Internet Explorer Web プロキシ設定を使用するかどうかを制御します。|  
+|`useDefaultCredentialsForScriptDownload`|構成スクリプトにアクセスするときに、既定の資格情報を使用するかどうかを制御します。|  
+|`scriptDownloadInterval`|構成スクリプトが更新されるまでの経過秒数を指定します。|  
+|`scriptDownloadTimeout`|構成スクリプトをダウンロードする秒数を指定します。|  
+|`useDefaultCredentials`|Web プロキシにアクセスするときに、既定の資格情報を使用するかどうかを制御します。|  
+  
+ このクラスを使用して指定し、構成を使用した要求に使用する Web プロキシ サーバーを<xref:System.Net.WebRequest>と<xref:System.Net.WebClient>クラスです。  
+  
+ このクラスは、構成ファイルに格納できる情報にプログラムでアクセスを提供します。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ProxyElement ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Net.Configuration.ProxyElement.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Net.Configuration.ProxyElement" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+-  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AutoDetect">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.ProxyElement.AutoDetectValues AutoDetect { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Configuration.ProxyElement/AutoDetectValues AutoDetect" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.AutoDetect" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("autoDetect", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.ProxyElement+AutoDetectValues</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Net.Configuration.ProxyElement.AutoDetectValues" />値の Web プロキシが自動的に検出するかどうかを制御します。</summary>
+        <value>
+          <see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.True" />場合、<see cref="T:System.Net.WebProxy" />が自動的に検出します。<see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.False" />場合、<see cref="T:System.Net.WebProxy" />が自動的に検出されない; または<see cref="F:System.Net.Configuration.ProxyElement.AutoDetectValues.Unspecified" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="BypassOnLocal">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.ProxyElement.BypassOnLocalValues BypassOnLocal { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Configuration.ProxyElement/BypassOnLocalValues BypassOnLocal" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.BypassOnLocal" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("bypassonlocal", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.ProxyElement+BypassOnLocalValues</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または Web プロキシ サーバーを使用してローカル リソースを取得するかどうかを示す値を設定します。</summary>
+        <value><see cref="T:System.Net.Configuration.ProxyElement.BypassOnLocalValues" />  
+  
+ Web プロキシ サーバーを使用してローカル リソースを取得するかどうかを示す値です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この構成要素では、LAN 上のリソースに対する要求がプロキシ サーバーに送信されるか、リソースが存在するホストに直接送信するかどうかを制御します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Properties">
+      <MemberSignature Language="C#" Value="protected override System.Configuration.ConfigurationPropertyCollection Properties { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Configuration.ConfigurationPropertyCollection Properties" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.Properties" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Configuration.ConfigurationPropertyCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>To be added.</summary>
+        <value>To be added.</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProxyAddress">
+      <MemberSignature Language="C#" Value="public Uri ProxyAddress { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ProxyAddress" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.ProxyAddress" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("proxyaddress")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または使用する Web プロキシ サーバーを識別する URI を設定します。</summary>
+        <value>A <see cref="T:System.String" /> URI を含むです。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ScriptLocation">
+      <MemberSignature Language="C#" Value="public Uri ScriptLocation { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Uri ScriptLocation" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.ScriptLocation" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("scriptLocation")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Uri</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Uri" />自動プロキシ検出スクリプトの場所を指定する値。</summary>
+        <value>A<see cref="T:System.Uri" />自動プロキシ検出スクリプトの場所を指定します。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="UseSystemDefault">
+      <MemberSignature Language="C#" Value="public System.Net.Configuration.ProxyElement.UseSystemDefaultValues UseSystemDefault { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Net.Configuration.ProxyElement/UseSystemDefaultValues UseSystemDefault" />
+      <MemberSignature Language="DocId" Value="P:System.Net.Configuration.ProxyElement.UseSystemDefault" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Configuration.ConfigurationProperty("usesystemdefault", DefaultValue=Mono.Cecil.CustomAttributeArgument)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Net.Configuration.ProxyElement+UseSystemDefaultValues</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定、<see cref="T:System.Boolean" />値の Internet Explorer Web プロキシ設定を使用するかどうかを制御します。</summary>
+        <value>
+          <see langword="true" />検出し、既定値を構成するかどうか、Internet Explorer の LAN の設定が使用されます<see cref="T:System.Net.WebProxy" />要求に対して使用されます。 それ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

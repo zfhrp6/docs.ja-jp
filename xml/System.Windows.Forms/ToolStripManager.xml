@@ -1,0 +1,566 @@
+<Type Name="ToolStripManager" FullName="System.Windows.Forms.ToolStripManager">
+  <TypeSignature Language="C#" Value="public sealed class ToolStripManager" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed ToolStripManager extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:System.Windows.Forms.ToolStripManager" />
+  <AssemblyInfo>
+    <AssemblyName>System.Windows.Forms</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>コントロール<see cref="T:System.Windows.Forms.ToolStrip" />レンダリングはラフティング、およびマージ<see cref="T:System.Windows.Forms.MenuStrip" />、 <see cref="T:System.Windows.Forms.ToolStripDropDownMenu" />、および<see cref="T:System.Windows.Forms.ToolStripMenuItem" />オブジェクト。 このクラスは継承できません。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStripManager>サポートしている<xref:System.Windows.Forms.ToolStrip>-全体のアプリケーション、マージ、設定、およびレンダラー オプションなどのタスクに関連します。 オーバー ロードされた<xref:System.Windows.Forms.ToolStripManager.Merge%2A>メソッド結合<xref:System.Windows.Forms.ToolStrip>コントロールには、相互し、オーバー ロードされた<xref:System.Windows.Forms.ToolStripManager.RevertMerge%2A>メソッドは、マージ操作を元に戻します。  
+  
+ 使用して、<xref:System.Windows.Forms.ToolStripRenderer>クラス、<xref:System.Windows.Forms.ToolStripManager>描画およびレイアウト スタイルよりさらに多くの制御とカスタマイズ機能を取得するためにクラスです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メニュー項目のマージのすべての一般的なシナリオを示します。  
+  
+ [!code-csharp[System.Windows.Forms.ContextMenuStripMerge#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/CS/form1.cs#1)]
+ [!code-vb[System.Windows.Forms.ContextMenuStripMerge#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/VB/form1.vb#1)]  
+  
+ 次のコード例に示しますへの呼び出し<xref:System.Windows.Forms.ToolStripManager>とそのメンバーの一部です。  
+  
+ [!code-cpp[System.Windows.Forms.ToolStrip1#8](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/CPP/form1.cpp#8)]
+ [!code-csharp[System.Windows.Forms.ToolStrip1#8](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/CS/form1.cs#8)]
+ [!code-vb[System.Windows.Forms.ToolStrip1#8](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip1/VB/form1.vb#8)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="FindToolStrip">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ToolStrip FindToolStrip (string toolStripName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig class System.Windows.Forms.ToolStrip FindToolStrip(string toolStripName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.FindToolStrip(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStrip</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="toolStripName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="toolStripName">名前を指定する文字列、<see cref="T:System.Windows.Forms.ToolStrip" />または派生<see cref="T:System.Windows.Forms.ToolStrip" />検索する型。</param>
+        <summary>指定した検索<see cref="T:System.Windows.Forms.ToolStrip" />から派生した型または<see cref="T:System.Windows.Forms.ToolStrip" />です。</summary>
+        <returns><see cref="T:System.Windows.Forms.ToolStrip" />またはその派生型で指定された 1 つ、<paramref name="toolStripName" />パラメーター、または<see langword="null" />場合、<see cref="T:System.Windows.Forms.ToolStrip" />が見つかりません。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.FindToolStrip%2A>を検索する方法、<xref:System.Windows.Forms.ToolStrip>から派生したオブジェクトまたは<xref:System.Windows.Forms.ToolStrip>です。 派生型<xref:System.Windows.Forms.ToolStrip>は<xref:System.Windows.Forms.StatusStrip>、 <xref:System.Windows.Forms.MenuStrip>、 <xref:System.Windows.Forms.ToolStripDropDown>、 <xref:System.Windows.Forms.ToolStripDropDownMenu>、および<xref:System.Windows.Forms.ContextMenuStrip>です。 検索のオブジェクトが具体的にがない場合、<xref:System.Windows.Forms.ToolStrip>が、必要に応じて戻り値の型をキャストこれらの派生型のいずれか。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを使用して、<xref:System.Windows.Forms.ToolStripManager.FindToolStrip%2A>メソッドです。 この例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripManager.Renderer%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#80](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#80)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#80](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#80)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsShortcutDefined">
+      <MemberSignature Language="C#" Value="public static bool IsShortcutDefined (System.Windows.Forms.Keys shortcut);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsShortcutDefined(valuetype System.Windows.Forms.Keys shortcut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.IsShortcutDefined(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shortcut" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="shortcut">検索するショートカット キー。</param>
+        <summary>いずれかで指定したショートカット キーを使用するかどうかを示す値を取得、<see cref="T:System.Windows.Forms.ToolStrip" />フォームのコントロールです。</summary>
+        <returns>
+          <see langword="true" />ショートカット キーが使用する場合<see cref="T:System.Windows.Forms.ToolStrip" />フォームです。 それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="IsValidShortcut">
+      <MemberSignature Language="C#" Value="public static bool IsValidShortcut (System.Windows.Forms.Keys shortcut);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool IsValidShortcut(valuetype System.Windows.Forms.Keys shortcut) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.IsValidShortcut(System.Windows.Forms.Keys)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="shortcut" Type="System.Windows.Forms.Keys" />
+      </Parameters>
+      <Docs>
+        <param name="shortcut">有効かどうかを確認する対象のショートカット キー。</param>
+        <summary>定義されたショートカット キーが有効かどうかを示す値を取得します。</summary>
+        <returns>
+          <see langword="true" />ショートカット キーが無効である場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 有効なショートカット キーから f12 キーを単独で関数キー F1ファンクション キーには、CTRL、alt キーを押し、または shift キーを押し修飾子です。または、CTRL、alt キーを押し、または shift キーを押し修飾子を持つ他のキー。 CTRL、alt キーを押し、または SHIFT キーおよびファンクション キー以外のキーは、有効なショートカット キー単独で使用される場合。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadSettings">
+      <MemberSignature Language="C#" Value="public static void LoadSettings (System.Windows.Forms.Form targetForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LoadSettings(class System.Windows.Forms.Form targetForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.LoadSettings(System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForm" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="targetForm"><see cref="T:System.Windows.Forms.Form" />名前がキーでもある設定します。</param>
+        <summary>設定を読み込みます、指定された<see cref="T:System.Windows.Forms.Form" />の完全な名前を使用して、<see cref="T:System.Windows.Forms.Form" />設定キーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip>デザイン時のフォームではないコントロール時刻、<xref:System.Windows.Forms.ToolStrip>設定が保存から削除されます、<xref:System.Windows.Forms.Form>設定が読み込まれるときにします。 設定をリセットするには、コメント アウト、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>のままにし、<xref:System.Windows.Forms.ToolStripManager.SaveSettings%2A>行です。 すべての設定は読み込まれませんとこの最新の状態を保持します。 コメントを削除すると、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>行、それらの設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="targetForm" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="LoadSettings">
+      <MemberSignature Language="C#" Value="public static void LoadSettings (System.Windows.Forms.Form targetForm, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void LoadSettings(class System.Windows.Forms.Form targetForm, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.LoadSettings(System.Windows.Forms.Form,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetForm" Type="System.Windows.Forms.Form" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetForm"><see cref="T:System.Windows.Forms.Form" />設定の読み込み先となるためです。</param>
+        <param name="key">A<see cref="T:System.String" />これの設定キーを表す<see cref="T:System.Windows.Forms.Form" />です。</param>
+        <summary>指定した設定を読み込みます<see cref="T:System.Windows.Forms.Form" />設定の指定したキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip>デザイン時のフォームではないコントロール時刻、<xref:System.Windows.Forms.ToolStrip>設定が保存から削除されます、<xref:System.Windows.Forms.Form>設定が読み込まれるときにします。 設定をリセットするには、コメント アウト、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>のままにし、<xref:System.Windows.Forms.ToolStripManager.SaveSettings%2A>行です。 すべての設定は読み込まれませんとこの最新の状態を保持します。 コメントを削除すると、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>行、それらの設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> パラメーターは <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="public static bool Merge (System.Windows.Forms.ToolStrip sourceToolStrip, string targetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Merge(class System.Windows.Forms.ToolStrip sourceToolStrip, string targetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.Merge(System.Windows.Forms.ToolStrip,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceToolStrip" Type="System.Windows.Forms.ToolStrip" />
+        <Parameter Name="targetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceToolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />と組み合わせることを<see cref="T:System.Windows.Forms.ToolStrip" />によって参照される、 <c>targetName</c>パラメーター。</param>
+        <param name="targetName">名前、<see cref="T:System.Windows.Forms.ToolStrip" />を受け取る、<see cref="T:System.Windows.Forms.ToolStrip" />によって参照される、 <c>sourceToolStrip</c>パラメーター。</param>
+        <summary>2 つを組み合わせた<see cref="T:System.Windows.Forms.ToolStrip" />同じ種類のオブジェクト。</summary>
+        <returns>
+          <see langword="true" />マージが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.Merge%2A?displayProperty=nameWithType>メソッドを結合する<xref:System.Windows.Forms.ToolStrip>などのオブジェクトと同一の入力<xref:System.Windows.Forms.ToolStrip>を他のオブジェクト<xref:System.Windows.Forms.ToolStrip>オブジェクト、<xref:System.Windows.Forms.MenuStrip>を他のオブジェクト<xref:System.Windows.Forms.MenuStrip>オブジェクト、およびなです。  
+  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.Merge%2A?displayProperty=nameWithType>メソッドを結合する<xref:System.Windows.Forms.ToolStrip>さまざまな種類のオブジェクト。  
+  
+ <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A?displayProperty=nameWithType>プロパティに設定する必要があります`true`両方の<xref:System.Windows.Forms.ToolStrip>オブジェクト、およびソースとターゲットの種類が同じにする必要がありますか、このメソッドが戻る`false`です。  
+  
+> [!NOTE]
+>  2 つを使用する必要がある場合<xref:System.Windows.Forms.MenuStrip>設定、MDI 子フォーム上のコントロール<xref:System.Windows.Forms.Form.IsMdiContainer%2A>に`true`フォーム親の 1 つだけの内容と結合、<xref:System.Windows.Forms.MenuStrip>コントロール。 使用して<xref:System.Windows.Forms.ToolStripManager.Merge%2A>追加の子の内容をマージする<xref:System.Windows.Forms.MenuStrip>MDI 親フォームのコントロールです。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sourceToolStrip" /> パラメーターまたは <paramref name="targetName" /> パラメーターが <see langword="null" /> です。</exception>
+        <exception cref="T:System.ArgumentException"><paramref name="sourceToolStrip" />または<paramref name="targetName" />パラメーターが指す同じ<see cref="T:System.Windows.Forms.ToolStrip" />です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Merge">
+      <MemberSignature Language="C#" Value="public static bool Merge (System.Windows.Forms.ToolStrip sourceToolStrip, System.Windows.Forms.ToolStrip targetToolStrip);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool Merge(class System.Windows.Forms.ToolStrip sourceToolStrip, class System.Windows.Forms.ToolStrip targetToolStrip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.Merge(System.Windows.Forms.ToolStrip,System.Windows.Forms.ToolStrip)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceToolStrip" Type="System.Windows.Forms.ToolStrip" />
+        <Parameter Name="targetToolStrip" Type="System.Windows.Forms.ToolStrip" />
+      </Parameters>
+      <Docs>
+        <param name="sourceToolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />と組み合わせることを<see cref="T:System.Windows.Forms.ToolStrip" />によって参照される、 <c>targetToolStrip</c>パラメーター。</param>
+        <param name="targetToolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />を受け取る、<see cref="T:System.Windows.Forms.ToolStrip" />によって参照される、 <c>sourceToolStrip</c>パラメーター。</param>
+        <summary>2 つを組み合わせた<see cref="T:System.Windows.Forms.ToolStrip" />さまざまな種類のオブジェクト。</summary>
+        <returns>
+          <see langword="true" />マージが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.Merge%2A?displayProperty=nameWithType>メソッドを結合する<xref:System.Windows.Forms.ToolStrip>さまざまな種類のオブジェクト。  
+  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.Merge%2A?displayProperty=nameWithType>メソッドを結合する<xref:System.Windows.Forms.ToolStrip>などのオブジェクトと同一の入力<xref:System.Windows.Forms.ToolStrip>を他のオブジェクト<xref:System.Windows.Forms.ToolStrip>オブジェクト、<xref:System.Windows.Forms.MenuStrip>を他のオブジェクト<xref:System.Windows.Forms.MenuStrip>オブジェクト、およびなです。  
+  
+ <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A?displayProperty=nameWithType>プロパティに設定する必要があります`true`両方の<xref:System.Windows.Forms.ToolStrip>オブジェクト、またはこのメソッドが返す`false`です。  
+  
+> [!NOTE]
+>  2 つを使用する必要がある場合<xref:System.Windows.Forms.MenuStrip>設定、MDI 子フォーム上のコントロール<xref:System.Windows.Forms.Form.IsMdiContainer%2A>に`true`フォーム親の 1 つだけの内容と結合、<xref:System.Windows.Forms.MenuStrip>コントロール。 使用して<xref:System.Windows.Forms.ToolStripManager.Merge%2A>追加の子の内容をマージする<xref:System.Windows.Forms.MenuStrip>MDI 親フォームのコントロールです。  
+  
+   
+  
+## Examples  
+ 次のコード例では、指定された選択項目に基づいてメニュー項目をマージします。 この例で使用できる例の一部である、<xref:System.Windows.Forms.ToolStripManager>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.ContextMenuStripMerge#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ContextMenuStripMerge#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Renderer">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ToolStripRenderer Renderer { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property class System.Windows.Forms.ToolStripRenderer Renderer" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripManager.Renderer" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripRenderer</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームの既定の描画スタイルを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripRenderer" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ これは、<xref:System.Windows.Forms.ToolStripManager.Renderer%2A>プロパティが使用されるときに、 <xref:System.Windows.Forms.ToolStrip.RenderMode%2A> 、現在のプロパティ<xref:System.Windows.Forms.ToolStrip>に設定されている<xref:System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode>です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、個々 にプロフェッショナル向けのカスタム レンダラーを適用する方法を示します<xref:System.Windows.Forms.ToolStrip>または全体としてアプリケーションにします。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#70](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#70)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#70](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#70)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RendererChanged">
+      <MemberSignature Language="C#" Value="public static event EventHandler RendererChanged;" />
+      <MemberSignature Language="ILAsm" Value=".event class System.EventHandler RendererChanged" />
+      <MemberSignature Language="DocId" Value="E:System.Windows.Forms.ToolStripManager.RendererChanged" />
+      <MemberType>Event</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.EventHandler</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary><see cref="P:System.Windows.Forms.ToolStripManager.Renderer" /> プロパティの値が変更された場合に発生します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ イベント処理の詳細については、次を参照してください。[イベント](http://msdn.microsoft.com/library/b6f65241-e0ad-4590-a99f-200ce741bb1f)です。  
+  
+> [!CAUTION]
+>  メモリ リークを防ぐためには、アプリケーションが破棄されるときにこのイベントを無効にします。  
+  
+   
+  
+## Examples  
+ 次のコード例では、このメンバーの使用方法を示します。 例では、イベント ハンドラーは発生するときに報告、<xref:System.Windows.Forms.ToolStripManager.RendererChanged>イベント。 このレポートでは、イベントが発生し、デバッグに役立つを学習するのに役立ちます。 複数のイベントまたは頻繁に発生するイベントを報告するための交換を検討<xref:System.Windows.Forms.MessageBox.Show%2A?displayProperty=nameWithType>で<xref:System.Console.WriteLine%2A?displayProperty=nameWithType>またはメッセージを複数行に追加する<xref:System.Windows.Forms.TextBox>です。  
+  
+ コード例を実行する型のインスタンスを含むプロジェクトに貼り付けること<xref:System.Windows.Forms.ToolStripManager>という`ToolStripManager1`です。 イベント ハンドラーが関連付けられていることを確認してください、<xref:System.Windows.Forms.ToolStripManager.RendererChanged>イベント。  
+  
+ [!code-csharp[System.Windows.Forms.EventExamples#603](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/CS/EventExamples.cs#603)]
+ [!code-vb[System.Windows.Forms.EventExamples#603](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.EventExamples/VB/EventExamples.vb#603)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RenderMode">
+      <MemberSignature Language="C#" Value="public static System.Windows.Forms.ToolStripManagerRenderMode RenderMode { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property valuetype System.Windows.Forms.ToolStripManagerRenderMode RenderMode" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripManager.RenderMode" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Windows.Forms.ToolStripManagerRenderMode</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>フォームの既定のテーマを取得または設定します。</summary>
+        <value><see cref="T:System.Windows.Forms.ToolStripManagerRenderMode" /> 値のいずれか。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Windows.Forms.ToolStripManager.RenderMode%2A>プロパティを取得または設定によって、アプリケーションを描画するかどうかを<xref:System.Windows.Forms.ToolStripProfessionalRenderer>、 <xref:System.Windows.Forms.ToolStripSystemRenderer>、または、カスタマイズされた<xref:System.Windows.Forms.ToolStripRenderer>です。  
+  
+   
+  
+## Examples  
+ 次のコード例に示しますを使用して、<xref:System.Windows.Forms.ToolStripManager.RenderMode%2A>プロパティです。 この例に示されている例の一部である、<xref:System.Windows.Forms.ToolStripManager.Renderer%2A>プロパティです。  
+  
+ [!code-csharp[System.Windows.Forms.ToolStrip.Misc#80](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/CS/Program.cs#80)]
+ [!code-vb[System.Windows.Forms.ToolStrip.Misc#80](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.Misc/VB/Program.vb#80)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ComponentModel.InvalidEnumArgumentException">値に設定されていない、<see cref="T:System.Windows.Forms.ToolStripManagerRenderMode" />値。</exception>
+        <exception cref="T:System.NotSupportedException">
+          <see cref="T:System.Windows.Forms.ToolStripManagerRenderMode" />設定されている<see cref="F:System.Windows.Forms.ToolStripManagerRenderMode.Custom" />; を使用して、<see cref="P:System.Windows.Forms.ToolStripManager.Renderer" />プロパティ代わりにします。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="RevertMerge">
+      <MemberSignature Language="C#" Value="public static bool RevertMerge (string targetName);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RevertMerge(string targetName) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.RevertMerge(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetName" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="targetName">名前、<see cref="T:System.Windows.Forms.ToolStripItem" />をマージ操作を取り消します。</param>
+        <summary>2 つの結合を元に戻します<see cref="T:System.Windows.Forms.ToolStrip" />オブジェクトを返す、<see cref="T:System.Windows.Forms.ToolStrip" />指定した名前をマージし、以前のすべてため取り消されましたマージ操作前に、の状態にします。</summary>
+        <returns>
+          <see langword="true" />マージを元に戻してが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A?displayProperty=nameWithType>プロパティに設定する必要があります`true`両方の<xref:System.Windows.Forms.ToolStrip>オブジェクト、またはこのメソッドが返す`false`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RevertMerge">
+      <MemberSignature Language="C#" Value="public static bool RevertMerge (System.Windows.Forms.ToolStrip targetToolStrip);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RevertMerge(class System.Windows.Forms.ToolStrip targetToolStrip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.RevertMerge(System.Windows.Forms.ToolStrip)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetToolStrip" Type="System.Windows.Forms.ToolStrip" />
+      </Parameters>
+      <Docs>
+        <param name="targetToolStrip"><see cref="T:System.Windows.Forms.ToolStripItem" />をマージ操作を取り消します。</param>
+        <summary>2 つの結合を元に戻します<see cref="T:System.Windows.Forms.ToolStrip" />オブジェクト、指定した返す<see cref="T:System.Windows.Forms.ToolStrip" />をマージし、以前のすべてため取り消されましたマージ操作前に、の状態にします。</summary>
+        <returns>
+          <see langword="true" />マージを元に戻してが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A?displayProperty=nameWithType>プロパティに設定する必要があります`true`両方の<xref:System.Windows.Forms.ToolStrip>オブジェクト、またはこのメソッドが返す`false`です。  
+  
+   
+  
+## Examples  
+ 次のコード例では、メニュー項目のマージ元に戻します。 この例で使用できる例の一部である、<xref:System.Windows.Forms.ToolStripManager>クラスの概要です。  
+  
+ [!code-csharp[System.Windows.Forms.ContextMenuStripMerge#4](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/CS/form1.cs#4)]
+ [!code-vb[System.Windows.Forms.ContextMenuStripMerge#4](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ContextMenuStripMerge/VB/form1.vb#4)]  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="RevertMerge">
+      <MemberSignature Language="C#" Value="public static bool RevertMerge (System.Windows.Forms.ToolStrip targetToolStrip, System.Windows.Forms.ToolStrip sourceToolStrip);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig bool RevertMerge(class System.Windows.Forms.ToolStrip targetToolStrip, class System.Windows.Forms.ToolStrip sourceToolStrip) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.RevertMerge(System.Windows.Forms.ToolStrip,System.Windows.Forms.ToolStrip)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="targetToolStrip" Type="System.Windows.Forms.ToolStrip" />
+        <Parameter Name="sourceToolStrip" Type="System.Windows.Forms.ToolStrip" />
+      </Parameters>
+      <Docs>
+        <param name="targetToolStrip">名前、<see cref="T:System.Windows.Forms.ToolStripItem" />をマージ操作を取り消します。</param>
+        <param name="sourceToolStrip"><see cref="T:System.Windows.Forms.ToolStrip" />とマージされたこと、 <c>targetToolStrip</c>です。</param>
+        <summary>2 つの結合を元に戻します<see cref="T:System.Windows.Forms.ToolStrip" />オブジェクト、両方を返す<see cref="T:System.Windows.Forms.ToolStrip" />マージ操作のマージと以前のすべてため取り消されました前に、状態を制御します。</summary>
+        <returns>
+          <see langword="true" />マージを元に戻してが成功した場合それ以外の場合、<see langword="false" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A?displayProperty=nameWithType>プロパティに設定する必要があります`true`両方の<xref:System.Windows.Forms.ToolStrip>オブジェクト、またはこのメソッドが返す`false`です。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sourceToolStrip" /> が <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveSettings">
+      <MemberSignature Language="C#" Value="public static void SaveSettings (System.Windows.Forms.Form sourceForm);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SaveSettings(class System.Windows.Forms.Form sourceForm) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.SaveSettings(System.Windows.Forms.Form)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceForm" Type="System.Windows.Forms.Form" />
+      </Parameters>
+      <Docs>
+        <param name="sourceForm"><see cref="T:System.Windows.Forms.Form" />名前がキーでもある設定します。</param>
+        <summary>設定を保存、指定された<see cref="T:System.Windows.Forms.Form" />の完全な名前を使用して、<see cref="T:System.Windows.Forms.Form" />設定キーとして。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip>デザイン時のフォームではないコントロール時刻、<xref:System.Windows.Forms.ToolStrip>設定が保存から削除されます、<xref:System.Windows.Forms.Form>設定が読み込まれるときにします。 設定をリセットするには、コメント アウト、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>のままにし、<xref:System.Windows.Forms.ToolStripManager.SaveSettings%2A>行です。 すべての設定は読み込まれませんとこの最新の状態を保持します。 コメントを削除すると、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>行、それらの設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="sourceForm" /> パラメーターが <see langword="null" /> です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="SaveSettings">
+      <MemberSignature Language="C#" Value="public static void SaveSettings (System.Windows.Forms.Form sourceForm, string key);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig void SaveSettings(class System.Windows.Forms.Form sourceForm, string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Windows.Forms.ToolStripManager.SaveSettings(System.Windows.Forms.Form,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="sourceForm" Type="System.Windows.Forms.Form" />
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="sourceForm"><see cref="T:System.Windows.Forms.Form" />設定を保存します。</param>
+        <param name="key">A<see cref="T:System.String" />これの設定キーを表す<see cref="T:System.Windows.Forms.Form" />です。</param>
+        <summary>指定した設定を保存<see cref="T:System.Windows.Forms.Form" />設定の指定したキーを使用します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Windows.Forms.ToolStrip>デザイン時のフォームではないコントロール時刻、<xref:System.Windows.Forms.ToolStrip>設定が保存から削除されます、<xref:System.Windows.Forms.Form>設定が読み込まれるときにします。 設定をリセットするには、コメント アウト、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>のままにし、<xref:System.Windows.Forms.ToolStripManager.SaveSettings%2A>行です。 すべての設定は読み込まれませんとこの最新の状態を保持します。 コメントを削除すると、<xref:System.Windows.Forms.ToolStripManager.LoadSettings%2A>行、それらの設定が適用されます。  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentNullException"><paramref name="key" /> パラメーターは <see langword="null" /> または空です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="VisualStylesEnabled">
+      <MemberSignature Language="C#" Value="public static bool VisualStylesEnabled { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property bool VisualStylesEnabled" />
+      <MemberSignature Language="DocId" Value="P:System.Windows.Forms.ToolStripManager.VisualStylesEnabled" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Windows.Forms</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定を示す値かどうか、 <see cref="T:System.Windows.Forms.ToolStrip" /> themes visual スタイル情報を使用して描画します。</summary>
+        <value>
+          <see langword="true" />場合、 <see cref="T:System.Windows.Forms.ToolStripItem" /> 、それ以外のテーマを使用してレンダリングされる<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

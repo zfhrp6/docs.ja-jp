@@ -1,0 +1,216 @@
+<Type Name="Mouse" FullName="Microsoft.VisualBasic.Devices.Mouse">
+  <TypeSignature Language="C#" Value="public class Mouse" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi Mouse extends System.Object" />
+  <TypeSignature Language="DocId" Value="T:Microsoft.VisualBasic.Devices.Mouse" />
+  <AssemblyInfo>
+    <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+    <AssemblyVersion>10.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>形式と、ローカル コンピューターにインストールされているマウスの構成に関する情報を取得するためには、プロパティを提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Mouse`オブジェクトは、コンピューターのマウスに関する情報を検索する方法を提供: かどうか、マウス ボタンが入れ替わること、およびマウスのホイールに関する詳細。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Mouse.WheelExists`と`My.Computer.Mouse.WheelScrollLines`プロパティをそれを回転させると、マウスにスクロール ホイール、およびスクロールにどの程度を確認します。  
+  
+ [!code-vb[VbVbalrMyComputer#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#26)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public Mouse ();" />
+      <MemberSignature Language="ILAsm" Value=".method public specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:Microsoft.VisualBasic.Devices.Mouse.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:Microsoft.VisualBasic.Devices.Mouse" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Mouse`オブジェクトは、コンピューターのマウスに関する情報を検索する方法を提供: マウス ボタンが入れ替わっているかどうかと、マウス ホイールに関する詳細。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ButtonsSwapped">
+      <MemberSignature Language="C#" Value="public bool ButtonsSwapped { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool ButtonsSwapped" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />左右のマウス ボタンの機能が入れ替わっているかどうかを示すです。</summary>
+        <value>A<see langword="Boolean" />値を持つ<see langword="True" />スワップ、それ以外の左右のマウス ボタンの機能が表示された場合に<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Mouse.ButtonsSwapped`プロパティ。  
+  
+-   同様の機能を提供、<xref:System.Windows.Forms.SystemInformation.MouseButtonsSwapped%2A>プロパティです。  
+  
+-   コードを実行しているコンピューターに関する情報を提供します。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Mouse.ButtonsSwapped`の左右のマウス ボタンの機能が入れ替わっているかどうかを決定するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#35)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コンピューターにインストールされているマウスがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WheelExists">
+      <MemberSignature Language="C#" Value="public bool WheelExists { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool WheelExists" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Mouse.WheelExists" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see langword="Boolean" />を示すかどうかは、マウスにスクロール ホイールが付いています。</summary>
+        <value>ブール値を持つ<see langword="True" />マウスにスクロール ホイールです。 それ以外の場合<see langword="False" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ `My.Computer.Mouse.WheelExists`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.SystemInformation.MouseWheelPresent%2A>プロパティです。  
+  
+ 値を確認する必要があります、`My.Computer.Mouse.WheelExists`プロパティにアクセスする前に、<xref:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines%2A>プロパティで、マウスにスクロール ホイールがない場合は、例外をスローします。  
+  
+ `My.Computer.Mouse.WheelExists`プロパティは、コードを実行しているコンピューターに関する情報を提供します。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例では、`My.Computer.Mouse.WheelExists`プロパティをマウス ホイールを回転したときにマウス スクロール ホイールがある場合、およびスクロールをどの程度を判断します。  
+  
+ [!code-vb[VbVbalrMyComputer#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">コンピューターにインストールされているマウスがありません。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="WheelScrollLines">
+      <MemberSignature Language="C#" Value="public int WheelScrollLines { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 WheelScrollLines" />
+      <MemberSignature Language="DocId" Value="P:Microsoft.VisualBasic.Devices.Mouse.WheelScrollLines" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>Microsoft.VisualBasic</AssemblyName>
+        <AssemblyVersion>10.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>1 つの段階を回転させた場合は、マウス ホイールをスクロールする量を示す数を取得します。</summary>
+        <value><see langword="Integer" /> 1 ノッチを回転したときは、マウス ホイールをスクロールする量を示すです。 正の値は、負の値を 1 画面ずつスクロールことを示し、その数の行をスクロールを示します。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このプロパティを使用すると、スクロール バーを持つ複数行のコントロールの上または下にスクロールするのに行数を判断します。  
+  
+ `My.Computer.Mouse.WheelScrollLines`プロパティと同様の機能を提供する、<xref:System.Windows.Forms.SystemInformation.MouseWheelScrollLines%2A>プロパティです。  
+  
+ このプロパティは、マウスにスクロール ホイールがない場合に例外をスローするためを確認してください、マウスをチェックしてスクロール ホイールが付いて、`My.Computer.Mouse.WheelExists`プロパティです。  
+  
+ このプロパティは、コードを実行しているコンピューターに関する情報を提供します。  
+  
+## <a name="availability-by-project-type"></a>プロジェクトの種類別の可用性  
+  
+|プロジェクトの種類|使用可能|  
+|-|-|  
+|Windows アプリケーション|**はい**|  
+|クラス ライブラリ|**はい**|  
+|コンソール アプリケーション|**はい**|  
+|Windows コントロール ライブラリ|**はい**|  
+|Web コントロール ライブラリ|いいえ|  
+|Windows サービス|**はい**|  
+|Web サイト|いいえ|  
+  
+   
+  
+## Examples  
+ この例かどうかをマウス スクロール ホイールを使用して、`My.Computer.Mouse.WheelExists`マウス ホイールを回転したときにスクロールする量を決定するプロパティです。  
+  
+ [!code-vb[VbVbalrMyComputer#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#26)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.InvalidOperationException">マウスにスクロール ホイールがありません。</exception>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

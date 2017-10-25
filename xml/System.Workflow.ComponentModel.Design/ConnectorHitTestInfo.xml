@@ -1,0 +1,171 @@
+<Type Name="ConnectorHitTestInfo" FullName="System.Workflow.ComponentModel.Design.ConnectorHitTestInfo">
+  <TypeSignature Language="C#" Value="public class ConnectorHitTestInfo : System.Workflow.ComponentModel.Design.HitTestInfo" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ConnectorHitTestInfo extends System.Workflow.ComponentModel.Design.HitTestInfo" />
+  <TypeSignature Language="DocId" Value="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" />
+  <AssemblyInfo>
+    <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Workflow.ComponentModel.Design.HitTestInfo</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Obsolete("The System.Workflow.* types are deprecated.  Instead, please use the new types from System.Activities.*")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+          <see cref="T:System.Workflow.ComponentModel.Design.StructuredCompositeActivityDesigner" /> 内の指定した座標にあるコネクタとそれを継承したすべてのクラスに関する情報を格納します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+  
+> [!NOTE]
+>  [!INCLUDE[DeprecatedContent](~/includes/deprecatedcontent-md.md)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ConnectorHitTestInfo (System.Workflow.ComponentModel.Design.CompositeActivityDesigner compositeActivityDesigner, System.Workflow.ComponentModel.Design.HitTestLocations flags, int connector);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Workflow.ComponentModel.Design.CompositeActivityDesigner compositeActivityDesigner, valuetype System.Workflow.ComponentModel.Design.HitTestLocations flags, int32 connector) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.#ctor(System.Workflow.ComponentModel.Design.CompositeActivityDesigner,System.Workflow.ComponentModel.Design.HitTestLocations,System.Int32)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="compositeActivityDesigner" Type="System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />
+        <Parameter Name="flags" Type="System.Workflow.ComponentModel.Design.HitTestLocations" />
+        <Parameter Name="connector" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="compositeActivityDesigner">コネクタが含まれる <see cref="T:System.Workflow.ComponentModel.Design.CompositeActivityDesigner" />。</param>
+        <param name="flags">ユーザーがクリックしたコネクタ上の場所を定義する <see cref="T:System.Workflow.ComponentModel.Design.HitTestLocations" />。</param>
+        <param name="connector">クリックされたコネクタのインデックス識別子。</param>
+        <summary><see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Examples  
+ <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner> クラスから派生したデザイナーの新しい分岐の追加の例を、次に示します。  <xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.CanInsertActivities%2A> が `true` を返した場合、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A> メソッドを使用して新しい分岐が作成されます。 <xref:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo> メソッドのパラメーターとして、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.InsertActivities%2A> オブジェクトが作成されます。 これが完了すると、<xref:System.Workflow.ComponentModel.Design.CompositeActivityDesigner.EnsureVisibleContainedDesigner%2A> メソッドが使用され、新しく追加された分岐がワークフロー デザイナーに表示されるようになります。  
+  
+ [!code-csharp[wf_Samples#29](~/samples/snippets/csharp/VS_Snippets_CFX/wf_samples/cs/snippets.cs#29)]
+ [!code-vb[wf_Samples#29](~/samples/snippets/visualbasic/VS_Snippets_CFX/wf_samples/vb/snippets.vb#29)]  
+  
+ ]]></format>
+        </remarks>
+        <exception cref="T:System.ArgumentException">コンストラクター呼び出しの前に、コネクタのインデックスが 0 未満に設定されていました。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="Bounds">
+      <MemberSignature Language="C#" Value="public override System.Drawing.Rectangle Bounds { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Drawing.Rectangle Bounds" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.Bounds" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Drawing.Rectangle</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>クリックされたコネクタの外接する四角形を取得します。</summary>
+        <value>クリックされたコネクタの境界となる <see cref="T:System.Drawing.Rectangle" />。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Equals">
+      <MemberSignature Language="C#" Value="public override bool Equals (object obj);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance bool Equals(object obj) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.Equals(System.Object)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="obj" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="obj">現在の <see cref="T:System.Object" /> と比較する <see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" />。</param>
+        <summary>指定した <see cref="T:System.Object" /> が現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" /> と等しいかどうかを示します。</summary>
+        <returns>
+          指定した <see langword="true" /> が現在の <see cref="T:System.Object" /> と等しい場合は <see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" />。それ以外の場合は <see langword="false" />。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetHashCode">
+      <MemberSignature Language="C#" Value="public override int GetHashCode ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 GetHashCode() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.GetHashCode" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" /> のハッシュ コードを返します。</summary>
+        <returns>現在の <see cref="T:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo" /> のハッシュ コード。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MapToIndex">
+      <MemberSignature Language="C#" Value="public override int MapToIndex ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance int32 MapToIndex() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.MapToIndex" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>ユーザーがクリックしたコネクタのインデックスを返します。</summary>
+        <returns>ユーザーがクリックしたコネクタのインデックス。</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SelectableObject">
+      <MemberSignature Language="C#" Value="public override object SelectableObject { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance object SelectableObject" />
+      <MemberSignature Language="DocId" Value="P:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.SelectableObject" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Workflow.ComponentModel</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Object</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>ヒットした領域に関連付けられた選択可能オブジェクトを取得します。</summary>
+        <value>ユーザーがクリックした領域に関連付けられた選択可能な <see cref="T:System.Object" />。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo.SelectableObject%2A> は、常に現在の <xref:System.Workflow.ComponentModel.Design.ConnectorHitTestInfo> を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

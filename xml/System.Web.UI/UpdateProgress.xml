@@ -1,0 +1,645 @@
+<Type Name="UpdateProgress" FullName="System.Web.UI.UpdateProgress">
+  <TypeSignature Language="C#" Value="public class UpdateProgress : System.Web.UI.Control, System.Web.UI.IAttributeAccessor, System.Web.UI.IScriptControl" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit UpdateProgress extends System.Web.UI.Control implements class System.Web.UI.IAttributeAccessor, class System.Web.UI.IScriptControl" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.UpdateProgress" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web.Extensions</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Control</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.Web.UI.IAttributeAccessor</InterfaceName>
+    </Interface>
+    <Interface>
+      <InterfaceName>System.Web.UI.IScriptControl</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.ComponentModel.DefaultProperty("AssociatedUpdatePanelID")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.ComponentModel.Designer("System.Web.UI.Design.UpdateProgressDesigner, System.Web.Extensions.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Drawing.ToolboxBitmap(typeof(EmbeddedResourceFinder), "System.Web.Resources.UpdateProgress.bmp")</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.ParseChildren(true)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Web.UI.PersistChildren(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ブラウザーに視覚的フィードバックを提供するときに 1 つまたは複数の内容<see cref="T:System.Web.UI.UpdatePanel" />コントロールが更新されます。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このトピックの内容  
+  
+-   [はじめに](#introduction)  
+  
+-   [UpdatePanel コントロールと、UpdateProgress の関連付け](#associating_an_updateprogress_with_an_updatepanel_control)  
+  
+-   [UpdateProgress コントロールの内容を指定します。](#specifying_the_content_of_the_updateprogress_control)  
+  
+-   [UpdateProgress のコントロールのページの追加](#putting_updateprogress_controls_on_the_page)  
+  
+-   [UpdateProgress のコントロールが表示されるときにカスタマイズします。](#customizing_when_updateprogress_controls_are_displayed)  
+  
+-   [CSS スタイルを適用します。](#applying_styles)  
+  
+-   [宣言型の構文](#declarative_syntax)  
+  
+<a name="introduction"></a>   
+## <a name="introduction"></a>はじめに  
+ <xref:System.Web.UI.UpdateProgress>コントロールでは、部分ページ レンダリングの進行状況に関するフィードバックを提供することができます。 ポストバックまたは最初のページのレンダリングの<xref:System.Web.UI.UpdateProgress>コントロールの内容は表示されません。  
+  
+ ページは、複数を含めることができます<xref:System.Web.UI.UpdateProgress>コントロール。 1 つずつ関連付けることができる、さまざまな<xref:System.Web.UI.UpdatePanel>コントロール。 1 つを使用する代わりに、<xref:System.Web.UI.UpdateProgress>を制御し、すべてに関連付ける、<xref:System.Web.UI.UpdatePanel>ページ上のコントロールです。  
+  
+ <xref:System.Web.UI.UpdateProgress>レンダリングを制御、`div`要素を表示するかに応じて非表示にポストバックが発生元とするかどうかを<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>のプロパティ、<xref:System.Web.UI.UpdateProgress>コントロールを設定します。  
+  
+<a name="associating_an_updateprogress_with_an_updatepanel_control"></a>   
+## <a name="associating-an-updateprogress-with-an-updatepanel-control"></a>UpdatePanel コントロールと、UpdateProgress の関連付け  
+ 関連付ける<xref:System.Web.UI.UpdateProgress>と制御、<xref:System.Web.UI.UpdatePanel>コントロールを設定して、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>のプロパティ、<xref:System.Web.UI.UpdateProgress>コントロール。 ポストバック イベントの発生元と内、 <xref:System.Web.UI.UpdatePanel> 、関連付けられたすべての制御<xref:System.Web.UI.UpdateProgress>コントロールが表示されます。 設定しない場合、 <xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A> 、プロパティ、<xref:System.Web.UI.UpdateProgress>コントロールは、いずれかの内側から発信される非同期ポストバックの進行状況を表示<xref:System.Web.UI.UpdatePanel>コントロール。 すべてのコントロール パネルのトリガーのも表示されます。  
+  
+ <xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>プロパティは、次の影響に<xref:System.Web.UI.UpdateProgress>動作を制御します。  
+  
+-   ときに、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>プロパティが設定されていない、<xref:System.Web.UI.UpdateProgress>ポストバックの次のコントロールが表示されます。  
+  
+    -   内から送信されるポストバック<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+    -   非同期のトリガーのいずれかであるコントロールから送信されるポストバック<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+-   ときに、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>プロパティに設定されている、 <xref:System.Web.UI.UpdatePanel> ID を制御、 <xref:System.Web.UI.UpdateProgress> 、関連付けられている内から送信されるポストバックのコントロールが表示される<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ 場合、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>プロパティが存在しない、コントロールに設定されて、<xref:System.Web.UI.UpdateProgress>コントロールは表示されません。  
+  
+ 場合、<xref:System.Web.UI.UpdatePanel.ChildrenAsTriggers%2A>のプロパティ、<xref:System.Web.UI.UpdatePanel>コントロールに設定されている`false`ポストバックの発生元と内、 <xref:System.Web.UI.UpdatePanel> 、関連付けられたすべての制御<xref:System.Web.UI.UpdateProgress>コントロールは引き続き表示されます。  
+  
+<a name="specifying_the_content_of_the_updateprogress_control"></a>   
+## <a name="specifying-the-content-of-the-updateprogress-control"></a>UpdateProgress コントロールの内容を指定します。  
+ 使用して、<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>によって表示されるメッセージを指定するプロパティ、<xref:System.Web.UI.UpdateProgress>コントロール。 場合、<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>ときに何も表示プロパティが空の場合、<xref:System.Web.UI.UpdateProgress>コントロールが表示されます。  
+  
+ テンプレートには、HTML およびマークアップを含めることができます。 たとえば、ポストバックを処理しているユーザーに通知するアニメーションのイメージを表示できます。 部分ページ更新プログラムを停止するにはユーザーがクリックされるボタンを表示することもできます。 さらに、進行中は 1 つは、他のすべてのポストバックを防ぐことができます。 次の例では、これらのタスクの実行に使用できるクライアント スクリプトを示します。  
+  
+ [!code-aspx-csharp[System.Web.UI.UpdateProgress4#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.UpdateProgress4/CS/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.UpdateProgress4#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.UpdateProgress4/VB/default.aspx#1)]  
+  
+ 設定して、コード例を使用することができます、`onClick`の属性、 `HtmlButton` "AbortPostBack()"を制御します。 詳細については、メソッド、およびクラスのプロパティを参照してください。  
+  
+<a name="putting_updateprogress_controls_on_the_page"></a>   
+## <a name="putting-updateprogress-controls-on-the-page"></a>UpdateProgress のコントロールのページの追加  
+ <xref:System.Web.UI.UpdateProgress>内部または外部他のコントロールが表示できる<xref:System.Web.UI.UpdatePanel>コントロール。 表示、<xref:System.Web.UI.UpdateProgress>コントロールのテンプレートがどこに依存しない、<xref:System.Web.UI.UpdateProgress>コントロールがあります。 入れ子になった<xref:System.Web.UI.UpdatePanel>親パネル内のコントロールは、子のパネルです。 その場合は、すべてが子パネル内に送信されるポストバック<xref:System.Web.UI.UpdateProgress>子パネルと表示される親パネルに関連付けられているコントロール。 のみ親パネルの直下の子コントロールのポストバックを生成する場合、<xref:System.Web.UI.UpdateProgress>親パネルに関連付けられているコントロールが表示されます。  
+  
+<a name="customizing_when_updateprogress_controls_are_displayed"></a>   
+## <a name="customizing-when-updateprogress-controls-are-displayed"></a>UpdateProgress のコントロールが表示されるときにカスタマイズします。  
+ 既定では、 <xref:System.Web.UI.UpdateProgress> .5 秒 (500 ミリ秒) を待機する前に、その内容が表示されます。 これは、コントロールが非同期ポストバックが非常に高速の場合の点滅するを防ぐのに役立ちます。 設定して、遅延を指定することができます、<xref:System.Web.UI.UpdateProgress.DisplayAfter%2A>プロパティです。  
+  
+ ときにさらに細かく制御する必要がある場合、<xref:System.Web.UI.UpdateProgress>コントロールが表示されたら、用のクライアント スクリプトを指定することができます、およびクラスのイベントです。 `beginRequest` 、イベント ハンドラーを表す DOM 要素を表示することができます、<xref:System.Web.UI.UpdateProgress>コントロール。 `endRequest`イベント ハンドラーを隠すことができます。  
+  
+ 表示するクライアント スクリプトを指定する必要があります、<xref:System.Web.UI.UpdateProgress>とき、対象を制御<xref:System.Web.UI.UpdatePanel>コントロールは、次の状況で更新します。  
+  
+-   コントロールからのポストバックが、パネルの場合は、非同期ポストバック トリガーとして登録されているし、は、<xref:System.Web.UI.UpdateProgress>ページ上のコントロールです。 ただし、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>パネルの id プロパティが設定されていません。  
+  
+-   使用してコントロールからのポストバックが非同期ポストバック コントロールとして登録するときに、<xref:System.Web.UI.ScriptManager.RegisterAsyncPostBackControl%2A>のメソッド、<xref:System.Web.UI.ScriptManager>コントロール。  
+  
+<a name="applying_styles"></a>   
+## <a name="applying-css-styles"></a>CSS スタイルを適用します。  
+ <xref:System.Web.UI.UpdateProgress>コントロールが expando 属性を受け入れます。 これによって、コントロールをレンダリングする HTMLelements の CSS クラスを設定します。 たとえば、次の例に示すようにマークアップを作成する可能性があります。  
+  
+```  
+<asp:UpdateProgress runat="server" class="myStyle">  
+</asp: UpdateProgress>   
+```  
+  
+ 前の例では、マークアップに HTML の表示、次のように、ページの実行時に。  
+  
+```  
+<div id="ctl00_MainContent_UpdateProgress1" class="myStyle">  
+</div>  
+```  
+  
+<a name="declarative_syntax"></a>   
+## <a name="declarative-syntax"></a>宣言型の構文  
+  
+```  
+<asp:UpdateProgress  
+    AssociatedUpdatePanelID="string"  
+    DisplayAfter="integer"  
+    DynamicLayout="True|False"  
+    EnableTheming="True|False"  
+    EnableViewState="True|False"  
+    ID="string"  
+    OnDataBinding="DataBinding event handler"  
+    OnDisposed="Disposed event handler"  
+    OnInit="Init event handler"  
+    OnLoad="Load event handler"  
+    OnPreRender="PreRender event handler"  
+    OnUnload="Unload event handler"  
+    runat="server"  
+    SkinID="string"  
+    Visible="True|False"  
+>  
+        <ProgressTemplate>  
+            <!-- child controls -->  
+        </ProgressTemplate>  
+</asp:UpdateProgress>  
+```  
+  
+   
+  
+## Examples  
+ 次の例は、使用するさまざまな方法を示して、<xref:System.Web.UI.UpdateProgress>非同期ポストバック中に進行状況を表示するコントロール。  
+  
+ 次の例を示します<xref:System.Web.UI.UpdateProgress>という 2 つの処理の進行状況を表示するコントロール<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.UpdateProgress1#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.UpdateProgress1/CS/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.UpdateProgress1#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.UpdateProgress1/VB/default.aspx#1)]  
+  
+ 次の例を示して 2<xref:System.Web.UI.UpdateProgress>コントロール。 各コントロールに関連付けられている進行状況を表示する<xref:System.Web.UI.UpdatePanel>コントロール。  
+  
+ [!code-aspx-csharp[System.Web.UI.UpdateProgress2#1](~/samples/snippets/csharp/VS_Snippets_Atlas/System.Web.UI.UpdateProgress2/CS/default.aspx#1)]
+ [!code-aspx-vb[System.Web.UI.UpdateProgress2#1](~/samples/snippets/visualbasic/VS_Snippets_Atlas/System.Web.UI.UpdateProgress2/VB/default.aspx#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public UpdateProgress ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.UpdateProgress" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 作成するときに、<xref:System.Web.UI.UpdateProgress>動的に制御から継承するカスタム テンプレートを作成する、<xref:System.Web.UI.ITemplate>コントロール。 内のマークアップを指定する、<xref:System.Web.UI.ITemplate.InstantiateIn%2A>メソッド、および設定、<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>の動的に作成されたプロパティ<xref:System.Web.UI.UpdateProgress>カスタム テンプレートの新しいインスタンスを制御します。 作成するときに<xref:System.Web.UI.UpdateProgress>コントロールを動的に行う必要があります中または前に、<xref:System.Web.UI.Control.PreRender>ページのイベントです。 作成する場合、<xref:System.Web.UI.UpdateProgress>ページ ライフ サイクルは、進行状況の後半のコントロールは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AssociatedUpdatePanelID">
+      <MemberSignature Language="C#" Value="public string AssociatedUpdatePanelID { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string AssociatedUpdatePanelID" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.TypeConverter("System.Web.UI.Design.UpdateProgressAssociatedUpdatePanelIDConverter")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.IDReferenceProperty(typeof(System.Web.UI.UpdatePanel))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の ID、<see cref="T:System.Web.UI.UpdatePanel" />コントロールによって、<see cref="T:System.Web.UI.UpdateProgress" />コントロールの状態を表示します。</summary>
+        <value>関連付けられている ID<see cref="T:System.Web.UI.UpdatePanel" />コントロール。 既定値は空の文字列です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 既定値は空の文字列、つまり、<xref:System.Web.UI.UpdateProgress>コントロールに関連付けられていない特定<xref:System.Web.UI.UpdatePanel>コントロール。 そのため、非同期ポストバック由来のいずれかの内側<xref:System.Web.UI.UpdatePanel>コントロールまたはコントロール パネルの原因の場合のトリガーであるからのポストバック、<xref:System.Web.UI.UpdateProgress>を表示するコントロールの<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>コンテンツ。  
+  
+ 設定することができます、<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>プロパティを同じ名前付けコンテナーは、親の名前付けコンテナーまたはページ コントロール。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Attributes">
+      <MemberSignature Language="C#" Value="public System.Web.UI.AttributeCollection Attributes { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.AttributeCollection Attributes" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.Attributes" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.WebSysDescription("WebControl_Attributes")</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.AttributeCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはカスケード スタイル シート (CSS) 属性を設定、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。</summary>
+        <value>CSS 属性の名前。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Controls">
+      <MemberSignature Language="C#" Value="public override System.Web.UI.ControlCollection Controls { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ControlCollection Controls" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.Controls" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ControlCollection</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得、<see cref="T:System.Web.UI.ControlCollection" />の子を表すオブジェクトを制御、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。</summary>
+        <value>子コントロールのコレクション、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="CreateChildControls">
+      <MemberSignature Language="C#" Value="protected override void CreateChildControls ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void CreateChildControls() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.CreateChildControls" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>呼ばれる任意の子を作成するコントロールを<see cref="T:System.Web.UI.UpdateProgress" />コントロールがポストバックまたはレンダリングの準備が含まれています。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DataBind">
+      <MemberSignature Language="C#" Value="public override void DataBind ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void DataBind() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.DataBind" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>データ ソースのバインド、<see cref="T:System.Web.UI.UpdateProgress" />コントロールとそのすべての子コントロール。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="DisplayAfter">
+      <MemberSignature Language="C#" Value="public int DisplayAfter { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance int32 DisplayAfter" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.DisplayAfter" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(500)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Int32</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または値を設定します (ミリ秒) の前に、<see cref="T:System.Web.UI.UpdateProgress" />コントロールが表示されます。</summary>
+        <value>前に、のミリ秒数を表す整数、<see cref="T:System.Web.UI.UpdateProgress" />コントロールの実行中のテンプレートが表示されます。 既定値は、500 ミリ秒 (.5 秒) です。</value>
+        <remarks>To be added.</remarks>
+        <exception cref="T:System.ArgumentOutOfRangeException"><see cref="P:System.Web.UI.UpdateProgress.DisplayAfter" />プロパティが 0 未満です。</exception>
+      </Docs>
+    </Member>
+    <Member MemberName="DynamicLayout">
+      <MemberSignature Language="C#" Value="public bool DynamicLayout { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool DynamicLayout" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.DynamicLayout" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Category("Behavior")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.ComponentModel.DefaultValue(true)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または進行状況のテンプレートを動的にレンダリングするかどうかを決定する値を設定します。</summary>
+        <value>
+          <see langword="true" />進行状況のテンプレートが動的に表示される場合それ以外の場合、<see langword="false" />です。 既定値は <see langword="true" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UpdateProgress.DynamicLayout%2A>プロパティは、必要な場合にのみ、実行中のテンプレートの内容の領域が ページで割り当てられるかどうかを決定します。  
+  
+ ときに、<xref:System.Web.UI.UpdateProgress.DynamicLayout%2A>プロパティは`true`ページが最初に表示される場合、進行中のテンプレートの内容の領域が割り当てられていません。 代わりに、ページは、必要な場合に、内容を表示する動的に変更します。 `style`のプロパティ、 `div` 、表示されるマークアップで進行中のテンプレートが含まれる要素の`display`属性に設定されている`none`です。  
+  
+ ときに、<xref:System.Web.UI.UpdateProgress.DynamicLayout%2A>プロパティは`false`、ページが最初にレンダリングされるときに、進行中のテンプレートの内容の領域が割り当てられると、<xref:System.Web.UI.UpdateProgress>コントロールの内容は、ページ レイアウトの一部では物理的にします。 `style`のプロパティ、 `div` 、表示されるマークアップで進行中のテンプレートが含まれる要素、`display`属性に設定されている`block`、および`visibility`属性が最初に設定されている`hidden`です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; GetScriptDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.GetScriptDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Web.UI.UpdateProgress/&lt;GetScriptDescriptors&gt;d__29))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>コントロールに必要なコンポーネント、動作、およびクライアントの一覧を返します、<see cref="T:System.Web.UI.UpdateProgress" />コントロールのクライアントの機能です。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />を含むコレクション<see cref="T:System.Web.UI.ScriptDescriptor" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UpdateProgress>コントロールに必要な[!INCLUDE[atlaslib_current_ext](~/includes/atlaslib-current-ext-md.md)]クライアント ライブラリです。 このクライアント クラスが登録されている、<xref:System.Web.UI.UpdateProgress.GetScriptDescriptors%2A>メソッドおよび<xref:System.Web.UI.UpdateProgress.AssociatedUpdatePanelID%2A>、 <xref:System.Web.UI.UpdateProgress.DisplayAfter%2A>、および<xref:System.Web.UI.UpdateProgress.DynamicLayout%2A>プロパティの値。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetScriptReferences">
+      <MemberSignature Language="C#" Value="protected virtual System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.IteratorStateMachine(typeof(System.Web.UI.UpdateProgress/&lt;GetScriptReferences&gt;d__28))</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>クライアント スクリプトの一覧のライブラリ依存関係を返します、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。</summary>
+        <returns><see cref="T:System.Collections.IEnumerable" />を含むコレクション<see cref="T:System.Web.UI.ScriptReference" />オブジェクト。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UpdateProgress>コントロールには、任意のサーバー scriptdependencies はありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="OnPreRender">
+      <MemberSignature Language="C#" Value="protected override void OnPreRender (EventArgs e);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void OnPreRender(class System.EventArgs e) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.OnPreRender(System.EventArgs)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="e" Type="System.EventArgs" />
+      </Parameters>
+      <Docs>
+        <param name="e">イベントのデータ。</param>
+        <summary><see cref="E:System.Web.UI.Control.PreRender" /> イベントを発生させます。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="ProgressTemplate">
+      <MemberSignature Language="C#" Value="public System.Web.UI.ITemplate ProgressTemplate { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.ITemplate ProgressTemplate" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.UpdateProgress.ProgressTemplate" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.ComponentModel.Browsable(false)</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Web.UI.PersistenceMode(System.Web.UI.PersistenceMode.InnerProperty)</AttributeName>
+        </Attribute>
+      </Attributes>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.ITemplate</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得または設定の内容を定義するテンプレート、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。</summary>
+        <value><see cref="T:System.Web.UI.ITemplate" />の内容を定義するインスタンス、<see cref="T:System.Web.UI.UpdateProgress" />コントロール。 既定値は、<see langword="null" /> です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ テンプレートを定義する必要があります。 中に例外をスローするそれ以外の場合、<xref:System.Web.UI.UpdateProgress>コントロールの`Init`イベント。 指定することができます、<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>するマークアップを追加することにより宣言によってプロパティ、`ProgressTemplate`要素。 内のマークアップが存在しない場合、`ProgressTemplate`要素、何も表示されません、<xref:System.Web.UI.UpdateProgress>コントロール。  
+  
+ 作成する場合は<xref:System.Web.UI.UpdateProgress>動的に制御を継承するカスタム テンプレートを作成することができます、<xref:System.Web.UI.ITemplate>コントロール。 内のマークアップを指定する、<xref:System.Web.UI.ITemplate.InstantiateIn%2A>メソッド、および設定、<xref:System.Web.UI.UpdateProgress.ProgressTemplate%2A>の動的に作成されたプロパティ<xref:System.Web.UI.UpdateProgress>カスタム テンプレートの新しいインスタンスを制御します。 作成する場合<xref:System.Web.UI.UpdateProgress>コントロールに動的にように中または前に、<xref:System.Web.UI.Control.PreRender>ページのイベントです。 作成する場合、<xref:System.Web.UI.UpdateProgress>ページ ライフ サイクルは、進行状況の後半のコントロールは表示されません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Render">
+      <MemberSignature Language="C#" Value="protected override void Render (System.Web.UI.HtmlTextWriter writer);" />
+      <MemberSignature Language="ILAsm" Value=".method familyorassemblyhidebysig virtual instance void Render(class System.Web.UI.HtmlTextWriter writer) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.Render(System.Web.UI.HtmlTextWriter)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="writer" Type="System.Web.UI.HtmlTextWriter" />
+      </Parameters>
+      <Docs>
+        <param name="writer">HTML コンテンツをレンダリングする出力ストリームを表すオブジェクト。</param>
+        <summary>描画された内容を書き込みます、<see cref="T:System.Web.UI.UpdateProgress" />コントロールでは、指定されたを使用して、ブラウザーを<see cref="T:System.Web.UI.HtmlTextWriter" />オブジェクト。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.UpdateProgress.Render%2A>の機能を拡張するメソッドがコントロールの開発者によって使用される、<xref:System.Web.UI.UpdateProgress>コントロール。  
+  
+ <xref:System.Web.UI.UpdateProgress.Render%2A>メソッドの表示内容を書き込みます、<xref:System.Web.UI.UpdateProgress>コントロールでは、指定されたを使用して、ブラウザーを<xref:System.Web.UI.HtmlTextWriter>オブジェクト。 オーバーライドする場合、<xref:System.Web.UI.UpdateProgress.Render%2A>派生クラスでメソッドの呼び出し、基本クラスの<xref:System.Web.UI.UpdateProgress.Render%2A>メソッドの子を制御できるように、<xref:System.Web.UI.UpdateProgress>コントロールを表示します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.GetAttribute">
+      <MemberSignature Language="C#" Value="string IAttributeAccessor.GetAttribute (string key);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance string System.Web.UI.IAttributeAccessor.GetAttribute(string key) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.System#Web#UI#IAttributeAccessor#GetAttribute(System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">返される属性の名前。</param>
+        <summary>指定した名前を使用して、Web コントロールの属性を返します。</summary>
+        <returns>属性の値。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.UpdateProgress> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IAttributeAccessor.SetAttribute">
+      <MemberSignature Language="C#" Value="void IAttributeAccessor.SetAttribute (string key, string value);" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance void System.Web.UI.IAttributeAccessor.SetAttribute(string key, string value) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.System#Web#UI#IAttributeAccessor#SetAttribute(System.String,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="key" Type="System.String" />
+        <Parameter Name="value" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="key">設定する属性名です。</param>
+        <param name="value">設定する属性の値。</param>
+        <summary>指定されたユーザー コントロールの属性の値を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.UpdateProgress> のインスタンスが <xref:System.Web.UI.IAttributeAccessor> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IScriptControl.GetScriptDescriptors">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt; IScriptControl.GetScriptDescriptors ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptDescriptor&gt; System.Web.UI.IScriptControl.GetScriptDescriptors() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.System#Web#UI#IScriptControl#GetScriptDescriptors" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptDescriptor&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IScriptControl.GetScriptDescriptors" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Web.UI.ScriptDescriptor" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.UpdateProgress> のインスタンスが <xref:System.Web.UI.IScriptControl> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="System.Web.UI.IScriptControl.GetScriptReferences">
+      <MemberSignature Language="C#" Value="System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt; IScriptControl.GetScriptReferences ();" />
+      <MemberSignature Language="ILAsm" Value=".method hidebysig newslot virtual instance class System.Collections.Generic.IEnumerable`1&lt;class System.Web.UI.ScriptReference&gt; System.Web.UI.IScriptControl.GetScriptReferences() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.UpdateProgress.System#Web#UI#IScriptControl#GetScriptReferences" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web.Extensions</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.Generic.IEnumerable&lt;System.Web.UI.ScriptReference&gt;</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>このメンバーの詳細については、「<see cref="M:System.Web.UI.IScriptControl.GetScriptReferences" />」をご覧ください。</summary>
+        <returns><see cref="T:System.Web.UI.ScriptReference" /> オブジェクトのコレクション。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このメンバーは、明示的なインターフェイス メンバーの実装です。 これは、<xref:System.Web.UI.UpdateProgress> のインスタンスが <xref:System.Web.UI.IScriptControl> インターフェイスにキャストされる場合にのみ、使用できます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

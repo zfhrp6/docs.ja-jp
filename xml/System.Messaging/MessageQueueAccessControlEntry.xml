@@ -1,0 +1,123 @@
+<Type Name="MessageQueueAccessControlEntry" FullName="System.Messaging.MessageQueueAccessControlEntry">
+  <TypeSignature Language="C#" Value="public class MessageQueueAccessControlEntry : System.Messaging.AccessControlEntry" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit MessageQueueAccessControlEntry extends System.Messaging.AccessControlEntry" />
+  <TypeSignature Language="DocId" Value="T:System.Messaging.MessageQueueAccessControlEntry" />
+  <AssemblyInfo>
+    <AssemblyName>System.Messaging</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Messaging.AccessControlEntry</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>(ユーザー、グループ、またはコンピューター) メッセージ キュー タスクを実行する、トラスティのアクセス権を指定します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Messaging.MessageQueueAccessControlEntry>トラスティに適用する権限を指定するクラス。 これらの権限には、ピーク、受信すると、またはメッセージを送信するが含まれます。表示または変更するキューのプロパティまたは権限。キューを削除します。 <xref:System.Messaging.MessageQueue>クラスの<xref:System.Messaging.MessageQueue.SetPermissions%2A>メソッドは、このクラスのインスタンスをメソッドに直接渡すまたはのインスタンスに追加のオーバー ロード<xref:System.Messaging.AccessControlList>一度に 1 つ以上のトラスティの権利を追加できるようにします。 新しいアクセス権がユーザーと、キューにアクセスできるグループを識別する、キューの随意アクセス制御リスト (DACL) の末尾に追加されます。  
+  
+ 一部の例外は、新しい権利を追加する場所とその影響についての一般的な説明があります。 詳細については、「<xref:System.Messaging>」を参照してください。  
+  
+ オーバー ロード、<xref:System.Messaging.MessageQueueAccessControlEntry.%23ctor%2A>コンス トラクターで指定する、<xref:System.Messaging.AccessControlEntryType>またはトラスティに権限を拒否するかどうかを示すことです。 権限を許可またはリソースの DACL で拒否の順序は、トラスティは、指定した権限を持っているかどうかに影響します。 たとえば、トラスティに権限が付与されて既にとエントリを後で追加する場合に拒否されるシステムでは、権限の付与を最初に検出される、ため、ユーザーに権限を許可する可能性がありますを意図していた、拒否されます。 この動作をオーバーライドする 2 つのエントリの種類を使用することができます:`Set`と`Revoke`です。 どのアクセスでは、権限が決定する方法を制御する方法の詳細については、次を参照してください。、<xref:System.Messaging.AccessControlEntryType>列挙トピックです。  
+  
+ <xref:System.Messaging.MessageQueueAccessControlEntry>クラスがアクセスできるように、メッセージ キュー システム自体に使用できるアクセス制御リスト (Acl) に基づいたセキュリティ機能に関連付けられています。 これとは異なるはによって実装され、コード アクセス セキュリティ、<xref:System.Messaging.MessageQueuePermission>および関連クラスです。 メッセージ キューのコード アクセス セキュリティは、キューに固有の操作またはセキュリティ制御の対象であるアプリケーションが必要となるキュー アクセスを定義します。これらの操作を実行またはそれ自体にアクセスを受信するためにアプリケーションの右側は表しません。 トピックを参照して[&#91;\<topic://cpconcodeaccesssecurity > & #93 です。](http://msdn.microsoft.com/en-us/23a20143-241d-4fe5-9d9f-3933fd594c03)コード アクセス セキュリティの詳細についてはします。  
+  
+ トラスティのメッセージ キューのアクセス許可を設定するには、新しいインスタンスを作成、<xref:System.Messaging.AccessControlEntry.Trustee%2A>クラスし、のオーバー ロードに渡す、<xref:System.Messaging.MessageQueueAccessControlEntry.%23ctor%2A>コンス トラクターです。 メッセージ キューのアクセス権のいずれかのインスタンスを渡すことによって指定<xref:System.Messaging.MessageQueueAccessRights>コンス トラクターにかを設定して、 <xref:System.Messaging.MessageQueueAccessControlEntry.MessageQueueAccessRights%2A> 、既存のプロパティ<xref:System.Messaging.MessageQueueAccessControlEntry>インスタンス。  
+  
+ 渡すことができますし、<xref:System.Messaging.MessageQueueAccessControlEntry>インスタンスに直接、<xref:System.Messaging.MessageQueue.SetPermissions%2A?displayProperty=nameWithType>メソッド、またはのインスタンスにエントリを追加または<xref:System.Messaging.AccessControlList>呼び出す前に<xref:System.Messaging.MessageQueue.SetPermissions%2A>です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueAccessControlEntry (System.Messaging.Trustee trustee, System.Messaging.MessageQueueAccessRights rights);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.Trustee trustee, valuetype System.Messaging.MessageQueueAccessRights rights) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueAccessControlEntry.#ctor(System.Messaging.Trustee,System.Messaging.MessageQueueAccessRights)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="trustee" Type="System.Messaging.Trustee" />
+        <Parameter Name="rights" Type="System.Messaging.MessageQueueAccessRights" />
+      </Parameters>
+      <Docs>
+        <param name="trustee">A<see cref="T:System.Messaging.Trustee" />ユーザー、グループ、コンピューター、ドメイン、または別名を指定します。</param>
+        <param name="rights">ビットごとの組み合わせ、<see cref="T:System.Messaging.MessageQueueAccessRights" />トラスティを許可する権限の組み合わせを定義する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueueAccessControlEntry" />クラス、指定したトラスティを指定したメッセージ キューのアクセス権を付与します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのオーバー ロードを使用して、指定したトラスティに権限を付与します。 指定した権限、`rights`パラメーターがのメンバーのビットごとの組み合わせ、<xref:System.Messaging.MessageQueueAccessRights>ビット フラグは、メッセージの受信、消去、キュー、およびキューのプロパティを設定するとこのような権限が含まれています。 コンス トラクターは、このインスタンスの設定に渡す権限を使用して<xref:System.Messaging.MessageQueueAccessControlEntry.MessageQueueAccessRights%2A>プロパティです。  
+  
+ このインスタンスを渡す<xref:System.Messaging.MessageQueueAccessControlEntry>のオーバー ロードに直接、<xref:System.Messaging.MessageQueue.SetPermissions%2A>このトラスティに対してのみ権限を与えるかをこのインスタンスを追加する方法、<xref:System.Messaging.AccessControlList>呼び出す前に<xref:System.Messaging.MessageQueue.SetPermissions%2A>を許可または一度に複数のトラスティに対する権限を拒否します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public MessageQueueAccessControlEntry (System.Messaging.Trustee trustee, System.Messaging.MessageQueueAccessRights rights, System.Messaging.AccessControlEntryType entryType);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Messaging.Trustee trustee, valuetype System.Messaging.MessageQueueAccessRights rights, valuetype System.Messaging.AccessControlEntryType entryType) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Messaging.MessageQueueAccessControlEntry.#ctor(System.Messaging.Trustee,System.Messaging.MessageQueueAccessRights,System.Messaging.AccessControlEntryType)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="trustee" Type="System.Messaging.Trustee" />
+        <Parameter Name="rights" Type="System.Messaging.MessageQueueAccessRights" />
+        <Parameter Name="entryType" Type="System.Messaging.AccessControlEntryType" />
+      </Parameters>
+      <Docs>
+        <param name="trustee">A<see cref="T:System.Messaging.Trustee" />ユーザー、グループ、コンピューター、ドメイン、または別名を指定します。</param>
+        <param name="rights">ビットごとの組み合わせ、<see cref="T:System.Messaging.MessageQueueAccessRights" />トラスティを許可する権限の組み合わせを定義する値。</param>
+        <param name="entryType">1 つ、<see cref="T:System.Messaging.AccessControlEntryType" />拒否、設定または指定された権限を取り消すを許可するかどうかを指定する値。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Messaging.MessageQueueAccessControlEntry" />クラスは、指定したトラスティとメッセージ キューのアクセス権を使用します。 アクセスの種類 (など<see langword="Allow" />または<see langword="Deny" />) を渡すエントリの種類によって定義されます。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ このコンス トラクターのオーバー ロードを使用して、許可または指定されたトラスティに権限を拒否します。 指定した権限、`rights`パラメーターがのメンバーのビットごとの組み合わせ、<xref:System.Messaging.MessageQueueAccessRights>ビット フラグは、メッセージの受信、消去、キュー、およびキューのプロパティを設定するとこのような権限が含まれています。 コンス トラクターは、このインスタンスの設定に渡す権限を使用して<xref:System.Messaging.MessageQueueAccessControlEntry.MessageQueueAccessRights%2A>プロパティです。  
+  
+ 許可または拒否する権限の詳細については、次を参照してください。、<xref:System.Messaging.AccessControlEntryType>トピックです。 2 つのメンバー、`Allow`と`Deny`、既存と矛盾する可能性がある可能性がありますアクセス権のため、権限が付与される最終的にするかどうか、権限がキューの随意アクセス制御リスト (DACL) に出現する順序に影響します。 その他の 2 つのメンバーでは、`Set`と`Revoke`、既存の権限を上書きします。 動作は、アプリケーションに適用するメンバーを使用します。  
+  
+ このインスタンスを渡す<xref:System.Messaging.MessageQueueAccessControlEntry>のオーバー ロードに直接、<xref:System.Messaging.MessageQueue.SetPermissions%2A>許可またはこのトラスティに対してのみ権限を拒否またはとこのインスタンスを追加する方法、<xref:System.Messaging.AccessControlList>呼び出す前に<xref:System.Messaging.MessageQueue.SetPermissions%2A>を許可または一度に複数のトラスティに対する権限を拒否します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="MessageQueueAccessRights">
+      <MemberSignature Language="C#" Value="public System.Messaging.MessageQueueAccessRights MessageQueueAccessRights { get; set; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance valuetype System.Messaging.MessageQueueAccessRights MessageQueueAccessRights" />
+      <MemberSignature Language="DocId" Value="P:System.Messaging.MessageQueueAccessControlEntry.MessageQueueAccessRights" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Messaging</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Messaging.MessageQueueAccessRights</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>取得またはトラスティを適用するメッセージ キューに固有の権限のセットを設定します。</summary>
+        <value>ビットごとの組み合わせ、<see cref="T:System.Messaging.MessageQueueAccessRights" />メンバー。 既定値がによって定義された、<paramref name="rights" />パラメーターにコンス トラクターに渡されます。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Messaging.MessageQueueAccessControlEntry.MessageQueueAccessRights%2A>プロパティでは、受信、ピーク、または、メッセージの書き込みキューのプロパティを設定するなどの特定のオブジェクト権限のメッセージ キューを指定することができます。 によってこのプロパティの値を設定、<xref:System.Messaging.MessageQueueAccessControlEntry.%23ctor%2A>がコンス トラクターを変更できますのこのインスタンスを使用する前にいつでも<xref:System.Messaging.MessageQueueAccessControlEntry>への呼び出しで<xref:System.Messaging.MessageQueue.SetPermissions%2A?displayProperty=nameWithType>です。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

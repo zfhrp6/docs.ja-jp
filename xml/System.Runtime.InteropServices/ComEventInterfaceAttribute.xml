@@ -1,0 +1,168 @@
+<Type Name="ComEventInterfaceAttribute" FullName="System.Runtime.InteropServices.ComEventInterfaceAttribute">
+  <TypeSignature Language="C#" Value="public sealed class ComEventInterfaceAttribute : Attribute" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed beforefieldinit ComEventInterfaceAttribute extends System.Attribute" />
+  <TypeSignature Language="DocId" Value="T:System.Runtime.InteropServices.ComEventInterfaceAttribute" />
+  <AssemblyInfo>
+    <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <AssemblyVersion>4.0.10.0</AssemblyVersion>
+    <AssemblyVersion>4.0.20.0</AssemblyVersion>
+    <AssemblyVersion>4.1.0.0</AssemblyVersion>
+    <AssemblyVersion>4.1.1.0</AssemblyVersion>
+    <AssemblyVersion>4.2.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>mscorlib</AssemblyName>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <AssemblyInfo>
+    <AssemblyName>netstandard</AssemblyName>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Attribute</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.AttributeUsage(System.AttributeTargets.Interface, Inherited=false)</AttributeName>
+    </Attribute>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.ComVisible(true)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>ソース インターフェイスと、コクラスが COM タイプ ライブラリからインポートされるときに生成されるイベント インターフェイスのメソッドを実装するクラスとを識別します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この属性をインターフェイスに適用することができます、 [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)通常適用するタイプ ライブラリをインポートするとき。  
+  
+ ソース インターフェイスがタイプ ライブラリからインポートされると、実装されている任意のメソッド内のイベントとして生成されるイベント インターフェイスに追加されます。 Tlbimp.exe が適用される<xref:System.Runtime.InteropServices.ComEventInterfaceAttribute>イベント インターフェイスのメソッドを実装し、元のソース インターフェイスを実装するマネージ クラスを識別するイベント インターフェイスにします。 共通言語ランタイムでは、実行時にこの属性を使用して、次のタスクを実行します。  
+  
+-   関連のイベントによって公開されるインターフェイスの実装にイベント プロバイダー クラスです。  
+  
+-   イベントを元の COM ソース インターフェイスにリンクします。  
+  
+ この属性を適用することはほとんどありません。 ただし、Tlbimp.exe によって生成されるメタデータを忠実にシミュレートするメタデータを生成するソース コードを記述する場合は、各元のソース インターフェイスのイベント インターフェイスを作成する必要があります。 Tlbimp.exe がイベントをインポートする方法に関する詳細については、次を参照してください。[インポート メンバーの変換](http://msdn.microsoft.com/en-us/7a272adf-41d7-4409-b0e2-5c0c5ef5266d)です。 .NET クライアントに COM イベントを公開する方法の詳細については、次を参照してください。[する方法: COM ソースによってイベントが発生処理](http://msdn.microsoft.com/en-us/12bb67bd-91a2-4554-82fb-bdba3d2c8b04)です。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ComEventInterfaceAttribute (Type SourceInterface, Type EventProvider);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type SourceInterface, class System.Type EventProvider) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Runtime.InteropServices.ComEventInterfaceAttribute.#ctor(System.Type,System.Type)" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="SourceInterface" Type="System.Type" />
+        <Parameter Name="EventProvider" Type="System.Type" />
+      </Parameters>
+      <Docs>
+        <param name="SourceInterface">A<see cref="T:System.Type" />タイプ ライブラリから元のソース インターフェイスを格納しています。 COM は、マネージ クラスにコールバックする、このインターフェイスを使用します。</param>
+        <param name="EventProvider">A<see cref="T:System.Type" />イベント インターフェイスのメソッドを実装するクラスを格納しています。</param>
+        <summary>新しいインスタンスを初期化、<see cref="T:System.Runtime.InteropServices.ComEventInterfaceAttribute" />ソース インターフェイスとイベントのプロバイダー クラスを持つクラス。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="EventProvider">
+      <MemberSignature Language="C#" Value="public Type EventProvider { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type EventProvider" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComEventInterfaceAttribute.EventProvider" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>イベント インターフェイスのメソッドを実装するクラスを取得します。</summary>
+        <value>A<see cref="T:System.Type" />イベント インターフェイスのメソッドを実装するクラスを格納しています。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ この値がによって生成されたイベント プロバイダーのクラスの型に設定されて、 [Tlbimp.exe (タイプ ライブラリ インポーター)](~/docs/framework/tools/tlbimp-exe-type-library-importer.md)です。 Tlbimp.exe は、イベント プロバイダーとソース インターフェイスの名前を追加します。 たとえば、メソッドでは、IMyInterfaceEventProvider になります。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SourceInterface">
+      <MemberSignature Language="C#" Value="public Type SourceInterface { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Type SourceInterface" />
+      <MemberSignature Language="DocId" Value="P:System.Runtime.InteropServices.ComEventInterfaceAttribute.SourceInterface" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Runtime.InteropServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+        <AssemblyVersion>4.0.10.0</AssemblyVersion>
+        <AssemblyVersion>4.0.20.0</AssemblyVersion>
+        <AssemblyVersion>4.1.0.0</AssemblyVersion>
+        <AssemblyVersion>4.1.1.0</AssemblyVersion>
+        <AssemblyVersion>4.2.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>mscorlib</AssemblyName>
+        <AssemblyVersion>2.0.5.0</AssemblyVersion>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <AssemblyInfo>
+        <AssemblyName>netstandard</AssemblyName>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Type</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>タイプ ライブラリから元のソース インターフェイスを取得します。</summary>
+        <value>A<see cref="T:System.Type" />ソース インターフェイスを含むです。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ ソース インターフェイスがあり、少なくとも 1 つのイベント メンバー通常ソース インターフェイスの各メソッドのいずれか。 COM は、マネージ クラスにコールバックする、このインターフェイスを使用します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

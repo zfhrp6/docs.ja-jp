@@ -1,0 +1,130 @@
+<Type Name="IISVirtualRoot" FullName="System.EnterpriseServices.Internal.IISVirtualRoot">
+  <TypeSignature Language="C#" Value="public class IISVirtualRoot : System.EnterpriseServices.Internal.IComSoapIISVRoot" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit IISVirtualRoot extends System.Object implements class System.EnterpriseServices.Internal.IComSoapIISVRoot" />
+  <TypeSignature Language="DocId" Value="T:System.EnterpriseServices.Internal.IISVirtualRoot" />
+  <AssemblyInfo>
+    <AssemblyName>System.EnterpriseServices</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces>
+    <Interface>
+      <InterfaceName>System.EnterpriseServices.Internal.IComSoapIISVRoot</InterfaceName>
+    </Interface>
+  </Interfaces>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Runtime.InteropServices.Guid("d8013ef1-730b-45e2-ba24-874b7242c425")</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>作成し、インターネット インフォメーション サービス (IIS) 6.0 の仮想ルートを削除します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.EnterpriseServices.Internal.IComSoapIISVRoot>インターフェイスを作成および IIS 6.0 での仮想ルートを削除するためのメソッドを定義します。  
+  
+ このインターフェイスは実装によってのみ、<xref:System.EnterpriseServices.Internal.IISVirtualRoot>クラスし、SOAP 対応の COM + アプリケーション仮想ルートを作成するときに、.NET Framework インフラストラクチャ内でのみ使用されます。  
+  
+ <xref:System.EnterpriseServices.Internal.IComSoapIISVRoot>コード内で直接実装する必要はありません。 代わりに、使用、<xref:System.EnterpriseServices.Internal.Publish>クラスを実装する、<xref:System.EnterpriseServices.Internal.IComSoapPublisher>を含むインターフェイス、<xref:System.EnterpriseServices.Internal.IComSoapPublisher.CreateVirtualRoot%2A>と<xref:System.EnterpriseServices.Internal.IComSoapPublisher.DeleteVirtualRoot%2A>メソッドです。 ただし、<xref:System.EnterpriseServices.Internal.IComSoapPublisher.DeleteVirtualRoot%2A>で完全に実装されていない<xref:System.EnterpriseServices.Internal.Publish>です。  
+  
+ <xref:System.EnterpriseServices.Internal.IISVirtualRoot>.NET Framework によって内部的に使用されます。 コード内で直接使用する必要はありません。  
+  
+ ]]></format>
+    </remarks>
+    <forInternalUseOnly />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public IISVirtualRoot ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IISVirtualRoot.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.EnterpriseServices.Internal.IISVirtualRoot" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Create">
+      <MemberSignature Language="C#" Value="public void Create (string RootWeb, string inPhysicalDirectory, string VirtualDirectory, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Create(string RootWeb, string inPhysicalDirectory, string VirtualDirectory, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IISVirtualRoot.Create(System.String,System.String,System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="RootWeb" Type="System.String" />
+        <Parameter Name="inPhysicalDirectory" Type="System.String" />
+        <Parameter Name="VirtualDirectory" Type="System.String" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="RootWeb">値を持つ文字列<c>"IIS://localhost/W3SVC/1/ROOT"</c>ルート Web サーバーを表すです。</param>
+        <param name="inPhysicalDirectory">物理パスに対応する仮想ルートの<c>PhysicalPath</c>から、<see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />メソッドです。</param>
+        <param name="VirtualDirectory">対応する仮想ルートの名前<c>VirtualRoot</c>から<see cref="M:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot(System.String,System.String,System.String@,System.String@,System.String@,System.String@)" />です。</param>
+        <param name="Error">エラー メッセージの書き込み先の文字列。</param>
+        <summary>インターネット インフォメーション サービス (IIS) 仮想ルートを作成します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 呼び出す必要はありません、<xref:System.EnterpriseServices.Internal.IISVirtualRoot.Create%2A>コードからメソッドです。 代わりに、使用、<xref:System.EnterpriseServices.Internal.Publish.CreateVirtualRoot%2A>メソッドです。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+    <Member MemberName="Delete">
+      <MemberSignature Language="C#" Value="public void Delete (string RootWeb, string PhysicalDirectory, string VirtualDirectory, out string Error);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance void Delete(string RootWeb, string PhysicalDirectory, string VirtualDirectory, [out] string&amp; Error) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.EnterpriseServices.Internal.IISVirtualRoot.Delete(System.String,System.String,System.String,System.String@)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.EnterpriseServices</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="RootWeb" Type="System.String" />
+        <Parameter Name="PhysicalDirectory" Type="System.String" />
+        <Parameter Name="VirtualDirectory" Type="System.String" />
+        <Parameter Name="Error" Type="System.String&amp;" RefType="out" />
+      </Parameters>
+      <Docs>
+        <param name="RootWeb">ルート Web サーバーの指定に従って<c>RootWebServer</c>から、<see cref="M:System.EnterpriseServices.Internal.IComSoapPublisher.DeleteVirtualRoot(System.String,System.String,System.String@)" />メソッドです。</param>
+        <param name="PhysicalDirectory">仮想ルートからの物理パス。</param>
+        <param name="VirtualDirectory">仮想ルートの名前。</param>
+        <param name="Error">エラー メッセージの書き込み先の文字列。</param>
+        <summary>インターネット インフォメーション サービス (IIS) 仮想ルートを削除します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ パブリックになっていても、<xref:System.EnterpriseServices.Internal.IISVirtualRoot.Delete%2A>メソッドが直接呼び出されるものではありません。  
+  
+ または、<xref:System.EnterpriseServices.Internal.Publish.DeleteVirtualRoot%2A>メソッドです。 ただし、このメソッドは完全に実装されていません。  
+  
+ ]]></format>
+        </remarks>
+        <forInternalUseOnly />
+      </Docs>
+    </Member>
+  </Members>
+</Type>

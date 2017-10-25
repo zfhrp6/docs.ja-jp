@@ -1,0 +1,354 @@
+<Type Name="ContainerControlDesigner" FullName="System.Web.UI.Design.ContainerControlDesigner">
+  <TypeSignature Language="C#" Value="public class ContainerControlDesigner : System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit ContainerControlDesigner extends System.Web.UI.Design.ControlDesigner" />
+  <TypeSignature Language="DocId" Value="T:System.Web.UI.Design.ContainerControlDesigner" />
+  <AssemblyInfo>
+    <AssemblyName>System.Design</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Web.UI.Design.ControlDesigner</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>デザイン時に変更できる子コントロールやプロパティが含まれるコントロールにデザイナー機能を提供します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner>クラスは、デザイン画面で変更できるコントロールの基本デザイナー クラスを提供します。 これには、子コントロールまたは編集可能な内部プロパティを格納しているコントロールが含まれます。 <xref:System.Web.UI.Design.ContainerControlDesigner>コントロールを表す 1 つのフレームを使用した領域を提供し、デザイン時にコントロールの表示が自動的に処理します。  
+  
+ 適用、<xref:System.Web.UI.ParseChildrenAttribute>属性に関連付けられたコントロールのデザイン時動作を決定する、<xref:System.Web.UI.Design.ContainerControlDesigner>です。 適用、<xref:System.Web.UI.ParseChildrenAttribute>次のように関連付けられたコントロールの設定。  
+  
+-   `false`示す、<xref:System.Web.UI.Design.ContainerControlDesigner>子コントロールとして編集可能なデザイン領域の内容を表します。  
+  
+-   `true`示す、<xref:System.Web.UI.Design.ContainerControlDesigner>コントロールの編集可能な内部プロパティとして編集可能なデザイン領域の内容を表します。  
+  
+ コントロールの開発者は、派生し、次の一覧で定義されているいずれかの開発中は、コントロールの種類に応じていくつかの基本デザイナーからカスタム デザイナーを拡張できます。  
+  
+-   派生してコントロールをデザイン時に追加する子コントロールを使用することができます、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスです。 たとえば、<xref:System.Web.UI.Design.WebControls.PanelContainerDesigner>クラスから派生して、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスと表します、<xref:System.Web.UI.WebControls.Panel>デザイン サーフェイス上のコントロール。  
+  
+-   コントロールを 1 つまたは複数の子コントロールを持ち、コントロールを追加して、デザイン時に、デザイナーの編集可能な領域場合もありますが派生できる、<xref:System.Web.UI.Design.WebControls.CompositeControlDesigner>クラスです。  
+  
+-   カスタムのデザイン時処理が、ベースから派生できますが必要なコントロール<xref:System.Web.UI.Design.ControlDesigner>クラスです。  
+  
+> [!NOTE]
+>  <xref:System.Web.UI.Design.ContainerControlDesigner>クラスが廃止された置換<xref:System.Web.UI.Design.ReadWriteControlDesigner>クラスです。  
+  
+ 使用して、<xref:System.ComponentModel.DesignerAttribute>カスタム コントロールの実装と共にカスタム デザイナー クラスに関連付けるための属性です。 カスタム コントロールでのコントロール デザイナーを使用する方法の詳細については、次を参照してください。[チュートリアル: Web サーバー コントロールの基本コントロール デザイナーの作成](http://msdn.microsoft.com/library/27e44af0-6e12-4b7d-b17f-db35f1b6a052)です。  
+  
+   
+  
+## Examples  
+ 次のコード例は、デザイナーのクラスから派生する方法を示します、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスです。 派生した単純なコントロールの例、<xref:System.Web.UI.WebControls.CompositeControl>クラス、およびから派生する関連デザイナーを定義、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスです。 デザイナー クラスを派生のオーバーライド、<xref:System.Web.UI.Design.ContainerControlDesigner.FrameCaption%2A>と<xref:System.Web.UI.Design.ContainerControlDesigner.FrameStyle%2A>プロパティを編集可能な領域をデザイン サーフェイス上のコントロールの周囲にあるフレームをカスタマイズします。  
+  
+ [!code-csharp[SimpleContainerControlDesigner#1](~/samples/snippets/csharp/VS_Snippets_WebNet/SimpleContainerControlDesigner/CS/simplecontainercontrol.cs#1)]
+ [!code-vb[SimpleContainerControlDesigner#1](~/samples/snippets/visualbasic/VS_Snippets_WebNet/SimpleContainerControlDesigner/VB/simplecontainercontrol.vb#1)]  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public ContainerControlDesigner ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.#ctor" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary><see cref="T:System.Web.UI.Design.ContainerControlDesigner" /> クラスの新しいインスタンスを初期化します。</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AddDesignTimeCssAttributes">
+      <MemberSignature Language="C#" Value="protected virtual void AddDesignTimeCssAttributes (System.Collections.IDictionary styleAttributes);" />
+      <MemberSignature Language="ILAsm" Value=".method familyhidebysig newslot virtual instance void AddDesignTimeCssAttributes(class System.Collections.IDictionary styleAttributes) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.AddDesignTimeCssAttributes(System.Collections.IDictionary)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="styleAttributes" Type="System.Collections.IDictionary" />
+      </Parameters>
+      <Docs>
+        <param name="styleAttributes">スタイル属性のキー付きのコレクション。</param>
+        <summary>デザイン時にコントロールのスタイル属性を追加します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.AddDesignTimeCssAttributes%2A>メソッドは、コントロールのデザイン時の表示にスタイル属性のセットを追加します。 スタイル属性の値に追加する、`styleAttributes`スタイル属性名によってキー指定されたコレクション。 たとえば、としてコレクションに高さの値にアクセスできます`styleAttributes["height"]`C# の場合または`styleAttributes("height")`Microsoft Visual Basic の。  
+  
+ 関連付けられたコントロールがから派生していない場合、<xref:System.Web.UI.WebControls.WebControl>クラス、<xref:System.Web.UI.Design.ContainerControlDesigner.AddDesignTimeCssAttributes%2A>メソッドでは、属性値には追加されません、`styleAttributes`コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="AllowResize">
+      <MemberSignature Language="C#" Value="public override bool AllowResize { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool AllowResize" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ContainerControlDesigner.AllowResize" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時にコントロールのサイズを変更できるかどうかを示す値を取得します。</summary>
+        <value>
+          <see langword="true" />、コントロールのサイズを変更する場合それ以外の場合、<see langword="false" />です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 基本実装、<xref:System.Web.UI.Design.ContainerControlDesigner.AllowResize%2A>プロパティから返される`true`です。 これは、デザイナーがデザイン サーフェイス上のコントロールのサイズ変更をサポートしていることを示します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>派生したクラス、<see cref="T:System.Web.UI.Design.ContainerControlDesigner" />クラスをオーバーライドして、<see cref="P:System.Web.UI.Design.ContainerControlDesigner.AllowResize" />デザイナー サポートしていないこと、デザイン画面上のコントロールのサイズ変更を示すプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameCaption">
+      <MemberSignature Language="C#" Value="public virtual string FrameCaption { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance string FrameCaption" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ContainerControlDesigner.FrameCaption" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>コントロールのデザイン時に表示されるキャプションを取得します。</summary>
+        <value>コントロールに、デザイン時のキャプションがある場合、デザイン時に、コントロールのフレーム キャプションに使用される文字列それ以外の場合、空の文字列 ("") です。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.FrameCaption%2A>文字列は、デザイン画面上のコントロールの編集可能領域を囲むフレームに表示されるキャプション。  
+  
+ 既定のキャプション、<xref:System.Web.UI.Design.ContainerControlDesigner>フレームは、<xref:System.Web.UI.Design.ControlDesigner.ID%2A>デザイナーのインスタンスのプロパティです。 これは、通常、実行時と同じ<xref:System.Web.UI.Control.ID%2A>コントロールのプロパティです。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>クラスを派生するコントロール デザイナーの別のフレーム キャプションを設定することができます、<see cref="T:System.Web.UI.Design.ContainerControlDesigner" />クラス、およびオーバーライドし、<see cref="P:System.Web.UI.Design.ContainerControlDesigner.FrameCaption" />プロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="FrameStyle">
+      <MemberSignature Language="C#" Value="public virtual System.Web.UI.WebControls.Style FrameStyle { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance class System.Web.UI.WebControls.Style FrameStyle" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ContainerControlDesigner.FrameStyle" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.UI.WebControls.Style</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>デザイン時にコントロールのフレームに適用されるスタイルを取得します。</summary>
+        <value>A<see cref="T:System.Web.UI.WebControls.Style" />のデザイン時コントロール フレーム。</value>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.FrameStyle%2A>プロパティは、デザイン画面上のコントロールの編集可能領域を囲むフレームのスタイル プロパティを示します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>クラスを派生している場合、<see cref="T:System.Web.UI.Design.ContainerControlDesigner" />クラス、オーバーライド、<see cref="P:System.Web.UI.Design.ContainerControlDesigner.FrameStyle" />プロパティを変更する、 <see cref="T:System.Web.UI.WebControls.Style" /> border、前景の色、背景色、およびキャプションのフォント設定など、フレームのプロパティです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeCssAttributes">
+      <MemberSignature Language="C#" Value="public virtual System.Collections.IDictionary GetDesignTimeCssAttributes ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig newslot virtual instance class System.Collections.IDictionary GetDesignTimeCssAttributes() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Collections.IDictionary</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>デザイン時にコントロールのスタイル属性のコレクションを返します。</summary>
+        <returns>デザイン サーフェイス上のコントロールに適用されるスタイル属性のコレクション。 スタイル属性名は次のスタイル属性の値にアクセスするために使用するキー、<see cref="T:System.Collections.IDictionary" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes%2A>メソッドは、コントロールのデザイン時の表示にスタイル属性のコレクションを返します。  
+  
+ コントロールのデザイン時にスタイル属性の値を検証するには、返されるコレクションにキーとしてスタイル属性の名前を使用します。 スタイル属性の値は、コレクション内の文字列として格納されます。 たとえば、としてコレクションに高さの値にアクセスできます`styleAttributes["height"]`C# の場合または`styleAttributes("height")`Microsoft Visual Basic の。  
+  
+ 関連付けられたコントロールがから派生していない場合、<xref:System.Web.UI.WebControls.WebControl>クラス、<xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes%2A>メソッドが空のコレクションを返します。  
+  
+ ]]></format>
+        </remarks>
+        <block subset="none" type="overrides">
+          <para>既定の実装、<see cref="M:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeCssAttributes" />メソッドを使用してスタイル属性のコレクションの初期化、<see cref="M:System.Web.UI.Design.ContainerControlDesigner.AddDesignTimeCssAttributes(System.Collections.IDictionary)" />メソッドです。 派生したコントロール デザイナー内のスタイルを操作するため、<see cref="T:System.Web.UI.Design.ContainerControlDesigner" />クラス、オーバーライド、<see cref="M:System.Web.UI.Design.ContainerControlDesigner.AddDesignTimeCssAttributes(System.Collections.IDictionary)" />メソッドです。</para>
+        </block>
+      </Docs>
+    </Member>
+    <Member MemberName="GetDesignTimeHtml">
+      <MemberSignature Language="C#" Value="public override string GetDesignTimeHtml (System.Web.UI.Design.DesignerRegionCollection regions);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetDesignTimeHtml(class System.Web.UI.Design.DesignerRegionCollection regions) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeHtml(System.Web.UI.Design.DesignerRegionCollection)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="regions" Type="System.Web.UI.Design.DesignerRegionCollection" />
+      </Parameters>
+      <Docs>
+        <param name="regions">デザイナー領域のコレクション。</param>
+        <summary>デザイン時にコントロールを表すために使用される HTML マークアップを返します。</summary>
+        <returns>コントロールを表す HTML マークアップ文字列。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ 使用して、<xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeHtml%28System.Web.UI.Design.DesignerRegionCollection%29>コントロールの HTML を取得します。 編集可能なデザイン領域に含まれる子コントロールは、その関連付けられたコントロールのデザイナーを使用して表示されます。  
+  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.GetDesignTimeHtml%28System.Web.UI.Design.DesignerRegionCollection%29>メソッドは、新しい初期化<xref:System.Web.UI.Design.EditableDesignerRegion>を通じて領域に関連付けられているコントロール、および返しますの編集可能領域のオブジェクト、`regions`コレクション。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override string GetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.GetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+      </Parameters>
+      <Docs>
+        <param name="region">コントロール内に含まれる編集可能なデザイン領域。</param>
+        <summary>デザイン時にコントロールの編集可能な領域の内容を返します。</summary>
+        <returns>含まれる領域の永続化されたコンテンツ、<see cref="T:System.Web.UI.Design.ContainerControlDesigner" />です。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner>クラスは、デザイナー領域のコレクションではなく 1 つのデザイナー領域を実装します。 したがって、`region`パラメーターは無視されます、および<xref:System.Web.UI.Design.ContainerControlDesigner.GetEditableDesignerRegionContent%2A>メソッドがコントロール デザイナー内に含まれている 1 つのデザイナーの領域の内容を返します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="GetPersistenceContent">
+      <MemberSignature Language="C#" Value="public override string GetPersistenceContent ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance string GetPersistenceContent() cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.GetPersistenceContent" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.String</ReturnType>
+      </ReturnValue>
+      <Parameters />
+      <Docs>
+        <summary>永続化できるコントロール コンテンツをデザイン時に返します。</summary>
+        <returns>
+          <see langword="null" />。</returns>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner.GetPersistenceContent%2A>メソッドを返します。`null`ことを示す、<xref:System.Web.UI.Design.ContainerControlDesigner>クラスには、永続化の内部コンテンツがありません。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="NoWrap">
+      <MemberSignature Language="C#" Value="protected virtual bool NoWrap { get; }" />
+      <MemberSignature Language="ILAsm" Value=".property instance bool NoWrap" />
+      <MemberSignature Language="DocId" Value="P:System.Web.UI.Design.ContainerControlDesigner.NoWrap" />
+      <MemberType>Property</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Boolean</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>HTML を使用するかどうかを示す値を取得<see langword="nowrap" />テーブルの属性です。</summary>
+        <value>
+          <see langword="true" />HTML を使用する<see langword="nowrap" />属性テーブルをそれ以外の場合、<see langword="false" />です。</value>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="SetEditableDesignerRegionContent">
+      <MemberSignature Language="C#" Value="public override void SetEditableDesignerRegionContent (System.Web.UI.Design.EditableDesignerRegion region, string content);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig virtual instance void SetEditableDesignerRegionContent(class System.Web.UI.Design.EditableDesignerRegion region, string content) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Web.UI.Design.ContainerControlDesigner.SetEditableDesignerRegionContent(System.Web.UI.Design.EditableDesignerRegion,System.String)" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Design</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Void</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="region" Type="System.Web.UI.Design.EditableDesignerRegion" />
+        <Parameter Name="content" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="region">コントロール内に含まれる編集可能なデザイン領域。</param>
+        <param name="content">編集可能なデザイン領域に割り当てる内容。</param>
+        <summary>デザイン時にコントロールの編集可能な領域の内容を設定します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.UI.Design.ContainerControlDesigner>クラスは、デザイナー領域のコレクションではなく 1 つのデザイナー領域を実装します。 したがって、`region`パラメーターは無視されます、および<xref:System.Web.UI.Design.ContainerControlDesigner.SetEditableDesignerRegionContent%2A>メソッドがコントロール デザイナー内に含まれている 1 つのデザイナーの領域の内容を設定します。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

@@ -1,0 +1,61 @@
+<Type Name="DataServiceHost" FullName="System.Data.Services.DataServiceHost">
+  <TypeSignature Language="C#" Value="public class DataServiceHost : System.ServiceModel.Web.WebServiceHost" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit DataServiceHost extends System.ServiceModel.Web.WebServiceHost" />
+  <TypeSignature Language="DocId" Value="T:System.Data.Services.DataServiceHost" />
+  <AssemblyInfo>
+    <AssemblyName>System.Data.Services</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.ServiceModel.Web.WebServiceHost</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.CLSCompliant(false)</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>WCF Data Services クラスから派生する<see cref="T:System.ServiceModel.Web.WebServiceHost" />データ サービスのインスタンスを作成するために使用します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] は自律的なサーバー エンティティではありません。 Windows Communication Foundation (WCF) をはじめとする、コアのサーバー ネットワーク機能を備えた環境でホストされるコンポーネントです。 たとえば、サービスがネットワーク ソケットにバインドして、その REST (Representational State Transfer) エントリ ポイントに対する受信要求をリッスンすることはありません。 ホストが、ネットワークとの直接対話を処理し、キャッシュ、スケーラビリティ、および認証モジュールをサポートします。  
+  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] は、特定のホストからその実装を抽出する汎用ホスト インターフェイス <xref:System.Data.Services.IDataServiceHost> を定義します。 このことが、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] を多様なホスティング環境で運用することを可能にしています。 詳細については、次を参照してください。[データ サービスのホスティング](~/docs/framework/data/wcf/hosting-the-data-service-wcf-data-services.md)です。  
+  
+ ]]></format>
+    </remarks>
+    <altCompliant cref="None ." />
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public DataServiceHost (Type serviceType, Uri[] baseAddresses);" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor(class System.Type serviceType, class System.Uri[] baseAddresses) cil managed" />
+      <MemberSignature Language="DocId" Value="M:System.Data.Services.DataServiceHost.#ctor(System.Type,System.Uri[])" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Data.Services</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="serviceType" Type="System.Type" />
+        <Parameter Name="baseAddresses" Type="System.Uri[]" />
+      </Parameters>
+      <Docs>
+        <param name="serviceType">ホストに対して [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] を関連付けます。</param>
+        <param name="baseAddresses">ホストの URI。</param>
+        <summary><see cref="T:System.Data.Services.DataServiceHost" /> の [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] をインスタンス化します。</summary>
+        <remarks>
+          <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ [!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] は、特定のホストからその実装を抽出する汎用ホスト インターフェイス <xref:System.Data.Services.IDataServiceHost> を定義します。 このことが、[!INCLUDE[ssAstoria](~/includes/ssastoria-md.md)] を多様なホスティング環境で運用することを可能にしています。 このインターフェイスと混同しない<xref:System.Data.Services.DataServiceHost>登録とアクティブ化サービスの代わりに処理します。 この場合、既定の <xref:System.Data.Services.IDataServiceHost> が使用されます。  
+  
+ ]]></format>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

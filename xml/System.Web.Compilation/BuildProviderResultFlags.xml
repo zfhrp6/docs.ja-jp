@@ -1,0 +1,62 @@
+<Type Name="BuildProviderResultFlags" FullName="System.Web.Compilation.BuildProviderResultFlags">
+  <TypeSignature Language="C#" Value="public enum BuildProviderResultFlags" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi sealed BuildProviderResultFlags extends System.Enum" />
+  <TypeSignature Language="DocId" Value="T:System.Web.Compilation.BuildProviderResultFlags" />
+  <AssemblyInfo>
+    <AssemblyName>System.Web</AssemblyName>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>仮想パスが構築されたときに、必要な動作を示します。</summary>
+    <remarks>
+      <format type="text/markdown"><![CDATA[  
+  
+## Remarks  
+ <xref:System.Web.Compilation.BuildProviderResultFlags>から結果を示す値が使用されます、<xref:System.Web.Compilation.BuildProvider.GetResultFlags%2A?displayProperty=nameWithType>メソッドです。 列挙値では、ASP.NET ビルド環境で仮想パスが構築された後に必要なアクションを示します。 <xref:System.Web.Compilation.BuildProviderResultFlags>のインスタンスを使用するときに、ASP.NET ビルド環境によって値が使用される、<xref:System.Web.Compilation.BuildProvider>ファイルをビルドおよびコンパイル済みのアセンブリをロードするクラス。  
+  
+ ]]></format>
+    </remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Default">
+      <MemberSignature Language="C#" Value="Default" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.BuildProviderResultFlags Default = int32(0)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.BuildProviderResultFlags.Default" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildProviderResultFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>既定値です。特別な操作は必要ありませんコンパイル後にします。</summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ShutdownAppDomainOnChange">
+      <MemberSignature Language="C#" Value="ShutdownAppDomainOnChange" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype System.Web.Compilation.BuildProviderResultFlags ShutdownAppDomainOnChange = int32(1)" />
+      <MemberSignature Language="DocId" Value="F:System.Web.Compilation.BuildProviderResultFlags.ShutdownAppDomainOnChange" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyName>System.Web</AssemblyName>
+        <AssemblyVersion>4.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>System.Web.Compilation.BuildProviderResultFlags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>仮想パスのコンパイルでは、含まれている必要があります<see cref="T:System.AppDomain" />アンロードし、再起動します。 これは、高度なコンパイルのシナリオで使用してのみ通常、使用する必要があります、<see cref="F:System.Web.Compilation.BuildProviderResultFlags.Default" />値。</summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
